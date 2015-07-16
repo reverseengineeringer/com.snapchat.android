@@ -1,44 +1,44 @@
 package com.snapchat.android.discover.ui.media;
 
-import abq;
-import aby;
-import adf;
+import acq;
+import acy;
+import aef;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
-import azm;
-import ban;
-import bgk;
-import cgb;
+import bal;
+import bbo;
+import bhk;
+import chc;
 import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics;
 import com.squareup.otto.Bus;
 
 public abstract class DiscoverEditionPageView
   extends FrameLayout
 {
-  public final adf l;
-  public final aby m;
-  public final abq n;
+  public final aef l;
+  public final acy m;
+  public final acq n;
   public final DiscoverUsageAnalytics o;
-  protected final azm p;
-  public final bgk q;
+  protected final bal p;
+  public final bhk q;
   public final Bus r;
   public a s;
   
   public DiscoverEditionPageView(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, aby.a(), abq.a(), new DiscoverUsageAnalytics(), adf.a(), azm.a(), new bgk(), ban.a());
+    this(paramContext, paramAttributeSet, acy.a(), acq.a(), new DiscoverUsageAnalytics(), aef.a(), bal.a(), new bhk(), bbo.a());
   }
   
-  public DiscoverEditionPageView(Context paramContext, AttributeSet paramAttributeSet, aby paramaby, abq paramabq, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, adf paramadf, azm paramazm, bgk parambgk, Bus paramBus)
+  public DiscoverEditionPageView(Context paramContext, AttributeSet paramAttributeSet, acy paramacy, acq paramacq, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, aef paramaef, bal parambal, bhk parambhk, Bus paramBus)
   {
     super(paramContext, paramAttributeSet);
-    m = paramaby;
-    n = paramabq;
+    m = paramacy;
+    n = paramacq;
     o = paramDiscoverUsageAnalytics;
-    l = paramadf;
-    p = paramazm;
-    q = parambgk;
+    l = paramaef;
+    p = parambal;
+    q = parambhk;
     r = paramBus;
   }
   
@@ -56,12 +56,12 @@ public abstract class DiscoverEditionPageView
   
   public abstract boolean g();
   
-  public void q_()
+  public void o_()
   {
     s = null;
   }
   
-  public void setAutoAdvanceListener(@cgb a parama)
+  public void setAutoAdvanceListener(@chc a parama)
   {
     s = parama;
   }

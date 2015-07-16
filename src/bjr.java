@@ -5,34 +5,50 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bjr
+  extends bil
 {
-  @SerializedName("ad_insertion_config")
-  protected bjq adInsertionConfig;
-  @SerializedName("ad_request_config")
-  protected bjs adRequestConfig;
-  @SerializedName("ad_unit_id")
-  protected String adUnitId;
-  @SerializedName("targeting_parameters")
-  protected Map<String, String> targetingParameters;
+  @SerializedName("here_auth")
+  protected bjc hereAuth;
+  @SerializedName("presences")
+  protected Map<String, Boolean> presences;
+  @SerializedName("receiving_video")
+  protected Boolean receivingVideo;
+  @SerializedName("supports_here")
+  protected Boolean supportsHere;
   
-  public final bjq a()
+  public final Map<String, Boolean> a()
   {
-    return adInsertionConfig;
+    return presences;
   }
   
-  public final bjs b()
+  public final void a(Map<String, Boolean> paramMap)
   {
-    return adRequestConfig;
+    presences = paramMap;
   }
   
-  public final String c()
+  public final Boolean b()
   {
-    return adUnitId;
+    return supportsHere;
   }
   
-  public final Map<String, String> d()
+  public final void b(Boolean paramBoolean)
   {
-    return targetingParameters;
+    supportsHere = paramBoolean;
+  }
+  
+  public final Boolean c()
+  {
+    return receivingVideo;
+  }
+  
+  public final void c(Boolean paramBoolean)
+  {
+    receivingVideo = paramBoolean;
+  }
+  
+  public final bjc d()
+  {
+    return hereAuth;
   }
   
   public boolean equals(Object paramObject)
@@ -44,12 +60,12 @@ public class bjr
       return false;
     }
     paramObject = (bjr)paramObject;
-    return new EqualsBuilder().append(adInsertionConfig, adInsertionConfig).append(adRequestConfig, adRequestConfig).append(adUnitId, adUnitId).append(targetingParameters, targetingParameters).isEquals();
+    return new EqualsBuilder().append(presences, presences).append(supportsHere, supportsHere).append(receivingVideo, receivingVideo).append(hereAuth, hereAuth).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(adInsertionConfig).append(adRequestConfig).append(adUnitId).append(targetingParameters).toHashCode();
+    return new HashCodeBuilder().append(presences).append(supportsHere).append(receivingVideo).append(hereAuth).toHashCode();
   }
   
   public String toString()

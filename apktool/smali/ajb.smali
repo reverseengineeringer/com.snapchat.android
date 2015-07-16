@@ -1,183 +1,297 @@
-.class public final Lajb;
-.super Lcom/snapchat/android/model/StoryGroup;
+.class public abstract Lajb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lajf;
 
-# static fields
-.field public static final MY_STORY_ID:Ljava/lang/String; = "my_story_ads79sdf"
 
-.field private static sInstance:Lajb;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lajf;"
+    }
+.end annotation
+
+
+# instance fields
+.field protected final a:Laxn;
+
+.field private final b:Lalw;
+
+.field private final c:Ljava/util/Map;
+    .annotation runtime Lbxp;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/util/Set",
+            "<",
+            "Lajf$a;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 2
+.method protected constructor <init>(Lalw;Laxn;)V
+    .locals 1
+    .param p1    # Lalw;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Laxn;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 16
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryGroup;-><init>()V
+    .line 29
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
-    const-string v0, "my_story_ads79sdf"
+    .line 25
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    iput-object v0, p0, Lajb;->mStoryId:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    .line 18
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    iput-object v0, p0, Lajb;->c:Ljava/util/Map;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0c0178
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lajb;->mDisplayName:Ljava/lang/String;
-
-    .line 19
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lajb;->mStorySnapLogbooks:Ljava/util/List;
-
-    .line 20
-    return-void
-.end method
-
-.method public static declared-synchronized a()Lajb;
-    .locals 2
-
-    .prologue
-    .line 23
-    const-class v1, Lajb;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Lajb;->sInstance:Lajb;
-
-    if-nez v0, :cond_0
-
-    .line 24
-    new-instance v0, Lajb;
-
-    invoke-direct {v0}, Lajb;-><init>()V
-
-    sput-object v0, Lajb;->sInstance:Lajb;
-
-    .line 26
-    :cond_0
-    sget-object v0, Lajb;->sInstance:Lajb;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 23
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method public static declared-synchronized b()V
-    .locals 2
-
-    .prologue
     .line 30
-    const-class v0, Lajb;
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    monitor-enter v0
+    move-result-object v0
 
-    const/4 v1, 0x0
+    check-cast v0, Lalw;
 
-    :try_start_0
-    sput-object v1, Lajb;->sInstance:Lajb;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-object v0, p0, Lajb;->b:Lalw;
 
     .line 31
-    monitor-exit v0
+    invoke-static {p2}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Laxn;
+
+    iput-object v0, p0, Lajb;->a:Laxn;
+
+    .line 32
     return-void
-
-    .line 30
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/StorySnapLogbook;",
-            ">;)V"
-        }
+.method protected final a(Ljava/lang/String;Lajf$a;)V
+    .locals 5
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lajf$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation build Lcbr;
     .end annotation
 
     .prologue
-    .line 34
-    iget-object v0, p0, Lajb;->mStorySnapLogbooks:Ljava/util/List;
+    .line 42
+    iget-object v1, p0, Lajb;->c:Ljava/util/Map;
 
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    monitor-enter v1
 
-    .line 35
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    .line 43
+    :try_start_0
+    iget-object v0, p0, Lajb;->c:Ljava/util/Map;
 
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 44
+    iget-object v0, p0, Lajb;->c:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
+    check-cast v0, Ljava/util/Set;
 
-    .line 36
-    const-string v2, "my_story_ads79sdf"
+    invoke-interface {v0, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    iput-object v2, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStoryId:Ljava/lang/String;
+    .line 45
+    monitor-exit v1
 
-    .line 37
-    iget-object v0, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    .line 56
+    :goto_0
+    return-void
 
-    const-string v2, "my_story_ads79sdf"
+    .line 47
+    :cond_0
+    iget-object v0, p0, Lajb;->c:Ljava/util/Map;
 
-    iput-object v2, v0, Lajr;->mStoryId:Ljava/lang/String;
+    new-instance v2, Ljava/util/HashSet;
+
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
+
+    invoke-interface {v0, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 48
+    iget-object v0, p0, Lajb;->c:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    invoke-interface {v0, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 49
+    new-instance v0, Laly$a;
+
+    invoke-direct {v0}, Laly$a;-><init>()V
+
+    iput-object p1, v0, Laly$a;->e:Ljava/lang/String;
+
+    iput-object p1, v0, Laly$a;->d:Ljava/lang/String;
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    const-string v4, "CAMERA"
+
+    aput-object v4, v2, v3
+
+    iput-object v2, v0, Laly$a;->h:[Ljava/lang/String;
+
+    invoke-virtual {v0}, Laly$a;->a()Laly;
+
+    move-result-object v0
+
+    .line 54
+    new-instance v2, Laiv;
+
+    iget-object v3, p0, Lajb;->a:Laxn;
+
+    invoke-direct {v2, v3, p0}, Laiv;-><init>(Laxn;Lajb;)V
+
+    .line 55
+    iget-object v3, p0, Lajb;->b:Lalw;
+
+    invoke-virtual {v3, v0, v2}, Lalw;->a(Laly;Lalw$a;)V
+
+    .line 56
+    monitor-exit v1
 
     goto :goto_0
 
-    .line 39
-    :cond_0
-    iget-object v0, p0, Lajb;->mStorySnapLogbooks:Ljava/util/List;
+    :catchall_0
+    move-exception v0
 
-    invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 40
+    throw v0
+.end method
+
+.method public a(Ljava/lang/String;Z)V
+    .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation build Lcbr;
+    .end annotation
+
+    .prologue
+    .line 66
+    iget-object v1, p0, Lajb;->c:Ljava/util/Map;
+
+    monitor-enter v1
+
+    .line 67
+    :try_start_0
+    iget-object v0, p0, Lajb;->c:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    .line 68
+    if-nez v0, :cond_0
+
+    .line 69
+    monitor-exit v1
+
+    .line 78
+    :goto_0
     return-void
+
+    .line 71
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lajf$a;
+
+    .line 72
+    if-eqz p2, :cond_1
+
+    .line 73
+    invoke-interface {v0}, Lajf$a;->a()V
+
+    goto :goto_1
+
+    .line 78
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    .line 75
+    :cond_1
+    :try_start_1
+    invoke-interface {v0}, Lajf$a;->b()V
+
+    goto :goto_1
+
+    .line 78
+    :cond_2
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
 .end method

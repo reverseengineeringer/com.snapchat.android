@@ -1,13 +1,21 @@
 public final class ben
 {
-  private final int mRequestTaskId = -1;
+  public final aji mMediabryo;
+  public final boolean mShouldGoToSendTo;
   
-  public ben()
+  public ben(@chc aji paramaji)
   {
-    this((byte)0);
+    this(paramaji, false);
   }
   
-  private ben(byte paramByte) {}
+  public ben(@chc aji paramaji, boolean paramBoolean)
+  {
+    if (paramaji == null) {
+      throw new NullPointerException();
+    }
+    mMediabryo = paramaji;
+    mShouldGoToSendTo = paramBoolean;
+  }
 }
 
 /* Location:

@@ -1,227 +1,214 @@
-.class public final Lbqb;
-.super Ljavax/net/ssl/SSLSocketFactory;
+.class public final enum Lbqb;
+.super Ljava/lang/Enum;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "Lbqb;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final enum a:Lbqb;
+
+.field public static final enum b:Lbqb;
+
+.field public static final enum c:Lbqb;
+
+.field private static final synthetic e:[Lbqb;
 
 
 # instance fields
-.field a:Ljavax/net/ssl/SSLSocketFactory;
-
-.field private b:Lbtl;
-
-.field private c:Lbsw;
+.field final d:I
 
 
 # direct methods
-.method public constructor <init>(Ljavax/net/ssl/SSLSocketFactory;Lbtl;Lbsw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .prologue
-    .line 26
-    invoke-direct {p0}, Ljavax/net/ssl/SSLSocketFactory;-><init>()V
+    const/4 v5, 0x0
 
-    .line 28
-    iput-object p1, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    .line 23
+    new-instance v0, Lbqb;
+
+    const-string v1, "NO_CACHE"
+
+    invoke-direct {v0, v1, v5, v3}, Lbqb;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lbqb;->a:Lbqb;
 
     .line 30
-    iput-object p2, p0, Lbqb;->b:Lbtl;
+    new-instance v0, Lbqb;
 
-    .line 31
-    iput-object p3, p0, Lbqb;->c:Lbsw;
+    const-string v1, "NO_STORE"
 
-    .line 32
+    invoke-direct {v0, v1, v3, v4}, Lbqb;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lbqb;->b:Lbqb;
+
+    .line 33
+    new-instance v0, Lbqb;
+
+    const-string v1, "OFFLINE"
+
+    const/4 v2, 0x4
+
+    invoke-direct {v0, v1, v4, v2}, Lbqb;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lbqb;->c:Lbqb;
+
+    .line 19
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lbqb;
+
+    sget-object v1, Lbqb;->a:Lbqb;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lbqb;->b:Lbqb;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lbqb;->c:Lbqb;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lbqb;->e:[Lbqb;
+
     return-void
 .end method
 
-.method private a(Ljava/net/Socket;)Ljava/net/Socket;
-    .locals 5
+.method private constructor <init>(Ljava/lang/String;II)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)V"
+        }
+    .end annotation
 
     .prologue
-    .line 54
-    if-eqz p1, :cond_0
+    .line 49
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    :try_start_0
-    instance-of v1, p1, Ljavax/net/ssl/SSLSocket;
+    .line 50
+    iput p3, p0, Lbqb;->d:I
 
-    if-eqz v1, :cond_0
+    .line 51
+    return-void
+.end method
 
-    new-instance v2, Lbqa;
+.method public static a(I)Z
+    .locals 1
 
-    move-object v0, p1
+    .prologue
+    .line 36
+    sget-object v0, Lbqb;->a:Lbqb;
 
-    check-cast v0, Ljavax/net/ssl/SSLSocket;
+    iget v0, v0, Lbqb;->d:I
 
-    move-object v1, v0
+    and-int/2addr v0, p0
 
-    iget-object v3, p0, Lbqb;->b:Lbtl;
+    if-nez v0, :cond_0
 
-    iget-object v4, p0, Lbqb;->c:Lbsw;
+    const/4 v0, 0x1
 
-    invoke-direct {v2, v1, v3, v4}, Lbqa;-><init>(Ljavax/net/ssl/SSLSocket;Lbtl;Lbsw;)V
-    :try_end_0
-    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-object p1, v2
-
-    .line 61
-    :cond_0
     :goto_0
-    return-object p1
+    return v0
 
-    .line 55
-    :catch_0
-    move-exception v1
-
-    throw v1
-
-    .line 57
-    :catch_1
-    move-exception v1
-
-    invoke-static {v1}, Lbtd;->a(Ljava/lang/Throwable;)V
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-
-# virtual methods
-.method public final createSocket()Ljava/net/Socket;
+.method public static b(I)Z
     .locals 1
 
     .prologue
-    .line 108
-    iget-object v0, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
+    .line 40
+    sget-object v0, Lbqb;->b:Lbqb;
 
-    invoke-virtual {v0}, Ljavax/net/ssl/SSLSocketFactory;->createSocket()Ljava/net/Socket;
+    iget v0, v0, Lbqb;->d:I
 
-    move-result-object v0
+    and-int/2addr v0, p0
 
-    .line 109
-    invoke-direct {p0, v0}, Lbqb;->a(Ljava/net/Socket;)Ljava/net/Socket;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    return-object v0
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final createSocket(Ljava/lang/String;I)Ljava/net/Socket;
-    .locals 1
-
-    .prologue
-    .line 84
-    iget-object v0, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
-
-    invoke-virtual {v0, p1, p2}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/lang/String;I)Ljava/net/Socket;
-
-    move-result-object v0
-
-    .line 85
-    invoke-direct {p0, v0}, Lbqb;->a(Ljava/net/Socket;)Ljava/net/Socket;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;
-    .locals 1
-
-    .prologue
-    .line 90
-    iget-object v0, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;
-
-    move-result-object v0
-
-    .line 91
-    invoke-direct {p0, v0}, Lbqb;->a(Ljava/net/Socket;)Ljava/net/Socket;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;
-    .locals 1
-
-    .prologue
-    .line 96
-    iget-object v0, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
-
-    invoke-virtual {v0, p1, p2}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/InetAddress;I)Ljava/net/Socket;
-
-    move-result-object v0
-
-    .line 97
-    invoke-direct {p0, v0}, Lbqb;->a(Ljava/net/Socket;)Ljava/net/Socket;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;
-    .locals 1
-
-    .prologue
-    .line 102
-    iget-object v0, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;
-
-    move-result-object v0
-
-    .line 103
-    invoke-direct {p0, v0}, Lbqb;->a(Ljava/net/Socket;)Ljava/net/Socket;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
-    .locals 1
-
-    .prologue
-    .line 77
-    iget-object v0, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
-
-    move-result-object v0
-
-    .line 78
-    invoke-direct {p0, v0}, Lbqb;->a(Ljava/net/Socket;)Ljava/net/Socket;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getDefaultCipherSuites()[Ljava/lang/String;
+.method public static c(I)Z
     .locals 1
 
     .prologue
     .line 44
-    iget-object v0, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
+    sget-object v0, Lbqb;->c:Lbqb;
 
-    invoke-virtual {v0}, Ljavax/net/ssl/SSLSocketFactory;->getDefaultCipherSuites()[Ljava/lang/String;
+    iget v0, v0, Lbqb;->d:I
+
+    and-int/2addr v0, p0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lbqb;
+    .locals 1
+
+    .prologue
+    .line 19
+    const-class v0, Lbqb;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
+
+    check-cast v0, Lbqb;
 
     return-object v0
 .end method
 
-.method public final getSupportedCipherSuites()[Ljava/lang/String;
+.method public static values()[Lbqb;
     .locals 1
 
     .prologue
-    .line 49
-    iget-object v0, p0, Lbqb;->a:Ljavax/net/ssl/SSLSocketFactory;
+    .line 19
+    sget-object v0, Lbqb;->e:[Lbqb;
 
-    invoke-virtual {v0}, Ljavax/net/ssl/SSLSocketFactory;->getSupportedCipherSuites()[Ljava/lang/String;
+    invoke-virtual {v0}, [Lbqb;->clone()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, [Lbqb;
 
     return-object v0
 .end method

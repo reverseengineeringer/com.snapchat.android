@@ -1,15 +1,15 @@
 package com.snapchat.android.fragments.captcha;
 
-import afo;
-import afo.a;
+import ago;
+import ago.a;
 import android.content.Context;
 import android.widget.GridView;
 import java.util.List;
 
 final class CaptchaFragment$1
-  extends afo
+  extends ago
 {
-  CaptchaFragment$1(CaptchaFragment paramCaptchaFragment, Context paramContext, List paramList, afo.a parama)
+  CaptchaFragment$1(CaptchaFragment paramCaptchaFragment, Context paramContext, List paramList, ago.a parama)
   {
     super(paramContext, paramList, parama);
   }

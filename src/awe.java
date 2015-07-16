@@ -1,19 +1,15 @@
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
+import java.util.PriorityQueue;
 
-public final class awe
-  extends BitmapDrawable
+public final class awe<E>
+  extends PriorityQueue<E>
 {
-  public final awd mLoaderTask;
-  
-  public awe(Resources paramResources, Bitmap paramBitmap, awd paramawd)
+  public final boolean offer(E paramE)
   {
-    super(paramResources, paramBitmap);
-    mLoaderTask = paramawd;
+    if (contains(paramE)) {
+      return false;
+    }
+    return super.offer(paramE);
   }
-  
-  public static final class a {}
 }
 
 /* Location:

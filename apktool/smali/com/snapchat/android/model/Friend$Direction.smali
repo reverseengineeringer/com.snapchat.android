@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 125
+    .line 126
     new-instance v0, Lcom/snapchat/android/model/Friend$Direction;
 
     const-string v1, "UNKNOWN"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$Direction;->UNKNOWN:Lcom/snapchat/android/model/Friend$Direction;
 
-    .line 126
+    .line 127
     new-instance v0, Lcom/snapchat/android/model/Friend$Direction;
 
     const-string v1, "INCOMING"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$Direction;->INCOMING:Lcom/snapchat/android/model/Friend$Direction;
 
-    .line 127
+    .line 128
     new-instance v0, Lcom/snapchat/android/model/Friend$Direction;
 
     const-string v1, "OUTGOING"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$Direction;->OUTGOING:Lcom/snapchat/android/model/Friend$Direction;
 
-    .line 128
+    .line 129
     new-instance v0, Lcom/snapchat/android/model/Friend$Direction;
 
     const-string v1, "BOTH"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$Direction;->BOTH:Lcom/snapchat/android/model/Friend$Direction;
 
-    .line 124
+    .line 125
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/snapchat/android/model/Friend$Direction;
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 124
+    .line 125
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -129,7 +129,7 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 134
     :try_start_0
     invoke-static {p0}, Lcom/snapchat/android/model/Friend$Direction;->valueOf(Ljava/lang/String;)Lcom/snapchat/android/model/Friend$Direction;
     :try_end_0
@@ -137,7 +137,7 @@
 
     move-result-object v0
 
-    .line 135
+    .line 136
     :goto_0
     return-object v0
 
@@ -153,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 125
     const-class v0, Lcom/snapchat/android/model/Friend$Direction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -169,7 +169,7 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 125
     sget-object v0, Lcom/snapchat/android/model/Friend$Direction;->$VALUES:[Lcom/snapchat/android/model/Friend$Direction;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/model/Friend$Direction;->clone()Ljava/lang/Object;

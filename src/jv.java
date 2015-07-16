@@ -2,21 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class jv
-  extends lt
+  extends ml
 {
-  public Long charCount;
-  private final String eventName = "PROFILE_USERNAME_SEARCH_PERFORM";
-  public Long keystrokeCount;
+  private String additionalInfo;
+  private final String eventName = "PROFILE_MY_FRIENDS_FRIEND_REQUEST_SENT";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_USERNAME_SEARCH_PERFORM");
-    if (charCount != null) {
-      localHashMap.put("char_count", charCount);
-    }
-    if (keystrokeCount != null) {
-      localHashMap.put("keystroke_count", keystrokeCount);
+    localHashMap.put("event_name", "PROFILE_MY_FRIENDS_FRIEND_REQUEST_SENT");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -35,23 +31,14 @@ public final class jv
         return false;
       }
       paramObject = (jv)paramObject;
-      if (charCount != null)
-      {
-        if (charCount.equals(charCount)) {}
-      }
-      else {
-        while (charCount != null) {
-          return false;
-        }
-      }
-      if (keystrokeCount == null) {
+      if (additionalInfo == null) {
         break;
       }
-    } while (keystrokeCount.equals(keystrokeCount));
+    } while (additionalInfo.equals(additionalInfo));
     for (;;)
     {
       return false;
-      if (keystrokeCount == null) {
+      if (additionalInfo == null) {
         break;
       }
     }
@@ -59,15 +46,10 @@ public final class jv
   
   public final int hashCode()
   {
-    int j = 0;
-    int k = super.hashCode();
-    if (charCount != null) {}
-    for (int i = charCount.hashCode();; i = 0)
-    {
-      if (keystrokeCount != null) {
-        j = keystrokeCount.hashCode();
-      }
-      return (i + k * 31) * 31 + j;
+    int j = super.hashCode();
+    if (additionalInfo != null) {}
+    for (int i = additionalInfo.hashCode();; i = 0) {
+      return i + j * 31;
     }
   }
 }

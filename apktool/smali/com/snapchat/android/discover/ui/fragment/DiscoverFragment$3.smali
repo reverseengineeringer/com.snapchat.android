@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 224
+    .line 223
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$3;->a:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 227
+    .line 226
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$3;->a:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
 
-    .line 228
+    .line 227
     return-void
 .end method

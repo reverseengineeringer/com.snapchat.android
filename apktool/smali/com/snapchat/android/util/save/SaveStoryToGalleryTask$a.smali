@@ -48,7 +48,7 @@
 .method public final done(Lcom/snapchat/videotranscoder/task/Task$Status;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$Status;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -60,11 +60,6 @@
 
     .line 194
     :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask$a;->val$transcodingDoneSynchronizationObject:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
-
-    .line 195
     monitor-exit v1
 
     return-void

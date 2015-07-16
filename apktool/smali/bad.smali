@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lbac;",
+        "Laej;",
         ">;"
     }
 .end annotation
@@ -23,60 +23,7 @@
 
 
 # instance fields
-.field private final anrDetectorProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lbkz;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final contextProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Landroid/content/Context;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final crashSamplerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazi;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final exceptionHandlerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazp;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final releaseManagerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final module:Lbaa;
 
 
 # direct methods
@@ -84,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 12
+    .line 7
     const-class v0, Lbad;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -106,39 +53,14 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method private constructor <init>(Lbaa;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazi;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lbkz;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazp;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Landroid/content/Context;",
-            ">;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 20
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
+    .line 12
     sget-boolean v0, Lbad;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -151,129 +73,33 @@
 
     throw v0
 
-    .line 22
+    .line 13
     :cond_0
-    iput-object p1, p0, Lbad;->crashSamplerProvider:Ljavax/inject/Provider;
+    iput-object p1, p0, Lbad;->module:Lbaa;
 
-    .line 23
-    sget-boolean v0, Lbad;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 24
-    :cond_1
-    iput-object p2, p0, Lbad;->anrDetectorProvider:Ljavax/inject/Provider;
-
-    .line 25
-    sget-boolean v0, Lbad;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_2
-
-    if-nez p3, :cond_2
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 26
-    :cond_2
-    iput-object p3, p0, Lbad;->releaseManagerProvider:Ljavax/inject/Provider;
-
-    .line 27
-    sget-boolean v0, Lbad;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_3
-
-    if-nez p4, :cond_3
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 28
-    :cond_3
-    iput-object p4, p0, Lbad;->exceptionHandlerProvider:Ljavax/inject/Provider;
-
-    .line 29
-    sget-boolean v0, Lbad;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_4
-
-    if-nez p5, :cond_4
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 30
-    :cond_4
-    iput-object p5, p0, Lbad;->contextProvider:Ljavax/inject/Provider;
-
-    .line 31
+    .line 14
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuo;
-    .locals 6
+.method public static a(Lbaa;)Lbvp;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljavax/inject/Provider",
+            "Lbaa;",
+            ")",
+            "Lbvp",
             "<",
-            "Lazi;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lbkz;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazp;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Landroid/content/Context;",
-            ">;)",
-            "Lbuo",
-            "<",
-            "Lbac;",
+            "Laej;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 39
+    .line 26
     new-instance v0, Lbad;
 
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lbad;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v0, p0}, Lbad;-><init>(Lbaa;)V
 
     return-object v0
 .end method
@@ -281,53 +107,24 @@
 
 # virtual methods
 .method public final synthetic get()Ljava/lang/Object;
-    .locals 6
+    .locals 2
 
     .prologue
-    .line 12
-    new-instance v0, Lbac;
+    .line 7
+    invoke-static {}, Laej;->a()Laej;
 
-    iget-object v1, p0, Lbad;->crashSamplerProvider:Ljavax/inject/Provider;
+    move-result-object v0
 
-    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    move-result-object v1
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    check-cast v1, Lazi;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v2, p0, Lbad;->anrDetectorProvider:Ljavax/inject/Provider;
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    throw v0
 
-    move-result-object v2
-
-    check-cast v2, Lbkz;
-
-    iget-object v3, p0, Lbad;->releaseManagerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/snapchat/android/util/debug/ReleaseManager;
-
-    iget-object v4, p0, Lbad;->exceptionHandlerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v4}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lazp;
-
-    iget-object v5, p0, Lbad;->contextProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v5}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/content/Context;
-
-    invoke-direct/range {v0 .. v5}, Lbac;-><init>(Lazi;Lbkz;Lcom/snapchat/android/util/debug/ReleaseManager;Lazp;Landroid/content/Context;)V
-
+    :cond_0
     return-object v0
 .end method

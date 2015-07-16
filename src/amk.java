@@ -1,13 +1,20 @@
-import android.content.Context;
-import android.content.Intent;
+import java.util.Collections;
+import java.util.Comparator;
 
-public abstract interface amk
+final class amk
+  implements Comparator<aly>
 {
-  public abstract Intent a();
+  private final alv a;
   
-  public abstract void a(Context paramContext);
+  private amk(@chc alv paramalv)
+  {
+    a = paramalv;
+  }
   
-  public abstract void f();
+  public static Comparator<aly> a(alv paramalv)
+  {
+    return Collections.reverseOrder(new amk(paramalv));
+  }
 }
 
 /* Location:

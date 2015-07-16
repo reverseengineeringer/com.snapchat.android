@@ -1,143 +1,141 @@
-import android.content.Context;
+import android.content.ContentResolver;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Bitmap.Config;
-import com.snapchat.android.Timber;
-import com.snapchat.android.util.cache.CacheType;
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
-import org.apache.commons.io.FileUtils;
+import android.graphics.BitmapFactory.Options;
+import android.util.DisplayMetrics;
 
 public final class axd
-  extends awp
 {
-  private static final String TAG = "ZipFileCache";
+  private static final String TAG = "BitmapDecoder";
+  @chc
+  private axl mBitmapOptionsProvider;
+  @chc
+  private final awo mBitmapPool;
+  @chc
+  private final ContentResolver mContentResolver;
+  @chc
+  private final DisplayMetrics mDisplayMetrics;
+  @chc
+  private ny mMemoryAnalytics;
+  @chc
+  private final Resources mResources;
   
-  public axd(CacheType paramCacheType)
+  public axd(@chc DisplayMetrics paramDisplayMetrics, @chc ContentResolver paramContentResolver, @chc Resources paramResources, @chc awo paramawo)
   {
-    super(paramCacheType, 10080L);
+    this(paramDisplayMetrics, paramContentResolver, paramResources, paramawo, new axl(), new ny());
   }
   
-  private static boolean a(String paramString, @cgb ZipInputStream paramZipInputStream)
+  private axd(@chc DisplayMetrics paramDisplayMetrics, @chc ContentResolver paramContentResolver, @chc Resources paramResources, @chc awo paramawo, @chc axl paramaxl, @chc ny paramny)
   {
-    Object localObject2 = paramZipInputStream.getNextEntry();
-    Object localObject3;
-    if (localObject2 != null)
+    mDisplayMetrics = paramDisplayMetrics;
+    mContentResolver = paramContentResolver;
+    mResources = paramResources;
+    mBitmapPool = paramawo;
+    mBitmapOptionsProvider = paramaxl;
+    mMemoryAnalytics = paramny;
+  }
+  
+  @awj
+  @chc
+  public final awm a(@chc axf paramaxf, int paramInt1, int paramInt2, boolean paramBoolean)
+  {
+    paramaxf.a(mContentResolver, mResources);
+    int i;
+    if (paramInt1 > 0)
     {
-      Object localObject1 = null;
-      try
+      i = paramInt1;
+      paramInt1 = paramInt2;
+      if (paramInt2 > 0) {}
+    }
+    else
+    {
+      localObject1 = new BitmapFactory.Options();
+      inJustDecodeBounds = true;
+      paramaxf.a((BitmapFactory.Options)localObject1);
+      if ((outHeight <= 0) || (outWidth <= 0))
       {
-        localObject2 = new File(paramString + "/" + ((ZipEntry)localObject2).getName());
-        localObject3 = ((File)localObject2).getParentFile();
-        if ((!((File)localObject3).exists()) && (!((File)localObject3).mkdirs())) {
-          throw new IOException("Could not create directory " + localObject3);
-        }
+        paramInt1 = outWidth;
+        paramInt1 = outHeight;
+        return new awm();
       }
-      finally
-      {
-        paramZipInputStream = (ZipInputStream)localObject1;
+      i = outWidth;
+      paramInt1 = outHeight;
+    }
+    if ((i <= 0) || (paramInt1 <= 0))
+    {
+      localObject1 = new BitmapFactory.Options();
+      inJustDecodeBounds = false;
+      inMutable = true;
+      inPreferredConfig = Bitmap.Config.ARGB_8888;
+      if (inBitmap == null) {
+        break label226;
       }
     }
-    for (;;)
+    for (paramBoolean = true;; paramBoolean = false)
     {
-      bfo.a(paramZipInputStream);
-      throw paramString;
-      if ((((File)localObject2).exists()) && (!((File)localObject2).delete())) {
-        throw new IOException("Could not delete file " + localObject2);
-      }
-      if (!((File)localObject2).createNewFile()) {
-        throw new IOException("Could not create new file " + localObject2);
-      }
-      localObject3 = new byte['Ѐ'];
-      localObject2 = new BufferedOutputStream(new FileOutputStream((File)localObject2), 1024);
       try
       {
-        for (;;)
-        {
-          int i = paramZipInputStream.read((byte[])localObject3);
-          if (i == -1) {
-            break;
-          }
-          ((BufferedOutputStream)localObject2).write((byte[])localObject3, 0, i);
+        localObject2 = paramaxf.a((BitmapFactory.Options)localObject1);
+        if (localObject2 == null) {
+          break label237;
         }
-        ((BufferedOutputStream)localObject2).flush();
-        bfo.a((Closeable)localObject2);
+        localObject2 = new awm((Bitmap)localObject2, paramBoolean);
+        return (awm)localObject2;
+      }
+      catch (OutOfMemoryError paramaxf)
+      {
+        Object localObject2;
+        ny.a(paramaxf);
+        return new awm();
+      }
+      catch (IllegalArgumentException localIllegalArgumentException)
+      {
+        label226:
+        localBitmap = inBitmap;
+        paramInt2 = outWidth;
+        paramInt2 = outHeight;
+        if (inPreferredConfig != null) {
+          break label360;
+        }
+      }
+      localObject2 = axl.a(mDisplayMetrics, i, paramInt1);
+      localObject1 = localObject2;
+      if (mBitmapPool == null) {
         break;
       }
-      finally
-      {
-        paramZipInputStream = (ZipInputStream)localObject2;
-      }
-      return true;
+      inBitmap = mBitmapPool.a((BitmapFactory.Options)localObject2, paramBoolean);
+      localObject1 = localObject2;
+      break;
     }
-  }
-  
-  public final Bitmap a(Context paramContext, @cgb String paramString, ayc paramayc)
-  {
-    throw new UnsupportedOperationException("Not supported by ZipFileCache");
-  }
-  
-  public final Bitmap a(Context paramContext, @cgb String paramString, ayc paramayc, Bitmap.Config paramConfig)
-  {
-    throw new UnsupportedOperationException("Not supported by ZipFileCache");
-  }
-  
-  @caq
-  @cgc
-  protected final String a(byte[] paramArrayOfByte, int paramInt)
-  {
-    File localFile1 = new File(mCacheType.getDirectory() + "/" + mCacheType.generateFilename());
-    try
+    label237:
+    Bitmap localBitmap;
+    Object localObject1 = "null";
+    label278:
+    if (localBitmap != null)
     {
-      File localFile2 = mCacheType.getDirectory();
-      if ((!localFile2.exists()) && (!localFile2.mkdirs()))
-      {
-        Timber.c("ZipFileCache", "Failed to create directory " + localFile2.getAbsolutePath(), new Object[0]);
-        return null;
+      localBitmap.getWidth();
+      localBitmap.getHeight();
+      localBitmap.isMutable();
+      localBitmap.isRecycled();
+      if (localBitmap.getConfig() != null) {
+        break label373;
       }
-      if (localFile1.exists()) {
-        FileUtils.deleteDirectory(localFile1);
-      }
-      localFile1.mkdirs();
-      paramArrayOfByte = new ZipInputStream(new ByteArrayInputStream(paramArrayOfByte, 0, paramInt));
-      try
-      {
-        a(localFile1.getAbsolutePath(), paramArrayOfByte);
-        return localFile1.getAbsolutePath();
-      }
-      finally
-      {
-        bfo.a(paramArrayOfByte);
-      }
-      return null;
     }
-    catch (FileNotFoundException paramArrayOfByte)
+    label360:
+    label373:
+    for (localObject1 = "null";; localObject1 = localBitmap.getConfig().name())
     {
-      Timber.a("ZipFileCache", paramArrayOfByte);
-      return null;
+      localObject1 = axl.a(mDisplayMetrics, i, paramInt1);
+      inBitmap = null;
+      paramaxf = paramaxf.a((BitmapFactory.Options)localObject1);
+      if (paramaxf == null) {
+        break;
+      }
+      return new awm(paramaxf, false);
+      localObject1 = inPreferredConfig.name();
+      break label278;
     }
-    catch (IOException paramArrayOfByte)
-    {
-      Timber.c("ZipFileCache", "Failed to write file...", new Object[0]);
-      Timber.a("ZipFileCache", paramArrayOfByte);
-    }
-  }
-  
-  public final void a(@cgb String paramString, @cgb Bitmap paramBitmap, @cgb Bitmap.CompressFormat paramCompressFormat)
-  {
-    throw new UnsupportedOperationException("Not supported by ZipFileCache");
-  }
-  
-  public final byte[] a(@cgb String paramString)
-  {
-    throw new UnsupportedOperationException("Not supported by ZipFileCache");
   }
 }
 

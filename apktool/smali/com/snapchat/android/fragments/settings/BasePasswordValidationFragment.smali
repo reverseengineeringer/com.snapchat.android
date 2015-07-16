@@ -31,7 +31,7 @@
 .method public final a(Ljava/lang/String;)V
     .locals 3
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -111,7 +111,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->f(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->f(Landroid/content/Context;)V
 
     .line 57
     :cond_0
@@ -130,7 +130,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->J()Landroid/view/Window;
 
     move-result-object v1
 
@@ -142,7 +142,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 64
     return-void
@@ -153,7 +153,7 @@
 
     .prologue
     .line 36
-    const v0, 0x7f040099
+    const v0, 0x7f04009b
 
     const/4 v1, 0x0
 
@@ -164,7 +164,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 37
-    const v0, 0x7f0a0371
+    const v0, 0x7f0a0370
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->c(I)Landroid/view/View;
 
@@ -176,7 +176,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0378
+    const v0, 0x7f0a0377
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->c(I)Landroid/view/View;
 
@@ -194,9 +194,9 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
-    const v0, 0x7f0a0379
+    const v0, 0x7f0a0378
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->c(I)Landroid/view/View;
 
@@ -204,7 +204,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->c:Landroid/view/View;
 
-    const v0, 0x7f0a0376
+    const v0, 0x7f0a0375
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->c(I)Landroid/view/View;
 
@@ -212,7 +212,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->d:Landroid/view/View;
 
-    const v0, 0x7f0a0377
+    const v0, 0x7f0a0376
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->c(I)Landroid/view/View;
 
@@ -230,7 +230,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0375
+    const v0, 0x7f0a0374
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->c(I)Landroid/view/View;
 

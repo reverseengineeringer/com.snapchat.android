@@ -1,153 +1,90 @@
 .class public final Lvc;
-.super Lbfe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lbfe",
-        "<",
-        "Lut;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Luh;
 
 
 # instance fields
-.field private final a:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lut;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private mString:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lazo;Lbfe$a;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1    # Ljava/util/List;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lazo;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lbfe$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lut;",
-            ">;",
-            "Lazo;",
-            "Lbfe$a",
-            "<",
-            "Lut;",
-            ">;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 23
-    invoke-direct {p0, p2, p3}, Lbfe;-><init>(Lazo;Lbfe$a;)V
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
-    iput-object p1, p0, Lvc;->a:Ljava/util/List;
+    .line 15
+    iput-object p1, p0, Lvc;->mString:Ljava/lang/String;
 
-    .line 25
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Ljava/lang/String;)Ljava/util/List;
+.method public final a(Ljava/lang/String;)Lbmv;
     .locals 4
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/List",
-            "<",
-            "Lut;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
-    .line 30
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 20
+    const/4 v0, 0x2
 
-    move-result v0
+    new-array v0, v0, [Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    .line 31
-    iget-object v0, p0, Lvc;->a:Ljava/util/List;
+    const-string v2, "Content-Disposition"
 
-    .line 40
-    :goto_0
-    return-object v0
+    aput-object v2, v0, v1
 
-    .line 34
-    :cond_0
-    new-instance v1, Ljava/util/ArrayList;
+    const/4 v1, 0x1
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    .line 35
-    iget-object v0, p0, Lvc;->a:Ljava/util/List;
+    const-string v3, "form-data; name=\""
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    :cond_1
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    const-string v3, "\""
 
-    move-result v0
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_2
+    move-result-object v2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Lbmv;->a([Ljava/lang/String;)Lbmv;
 
     move-result-object v0
 
-    check-cast v0, Lut;
+    return-object v0
+.end method
 
-    .line 36
-    invoke-interface {v0, p1}, Lut;->a(Ljava/lang/String;)Z
+.method public final a()Lbnc;
+    .locals 2
 
-    move-result v3
+    .prologue
+    .line 25
+    sget-object v0, Lub;->STRING_MEDIA_TYPE:Lbmx;
 
-    if-eqz v3, :cond_1
+    iget-object v1, p0, Lvc;->mString:Ljava/lang/String;
 
-    .line 37
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lbnc;->a(Lbmx;Ljava/lang/String;)Lbnc;
 
-    goto :goto_1
+    move-result-object v0
 
-    :cond_2
-    move-object v0, v1
-
-    .line 40
-    goto :goto_0
+    return-object v0
 .end method

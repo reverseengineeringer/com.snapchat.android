@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.settings;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.squareup.otto.Bus;
 
 final class SettingsFragment$20
@@ -13,7 +13,7 @@ final class SettingsFragment$20
   
   public final void onClick(View paramView)
   {
-    ban.a().a(new bdw(new NotificationSettingsFragment()));
+    bbo.a().a(new bev(new NotificationSettingsFragment()));
   }
 }
 

@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class ja
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "PROFILE_MY_CONTACTS_FRIEND_DELETE";
+  public Long charCount;
+  private final String eventName = "PROFILE_ADDRESS_BOOK_SEARCH_CLEAR";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_MY_CONTACTS_FRIEND_DELETE");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "PROFILE_ADDRESS_BOOK_SEARCH_CLEAR");
+    if (charCount != null) {
+      localHashMap.put("char_count", charCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class ja
         return false;
       }
       paramObject = (ja)paramObject;
-      if (additionalInfo == null) {
+      if (charCount == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (charCount.equals(charCount));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (charCount == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class ja
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
+    if (charCount != null) {}
+    for (int i = charCount.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

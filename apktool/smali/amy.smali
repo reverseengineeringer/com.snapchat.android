@@ -1,145 +1,192 @@
 .class public final Lamy;
-.super Lamd;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lts$b;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lamd;",
-        "Lts$b",
-        "<",
-        "Lbkj;",
-        ">;"
-    }
-.end annotation
 
 
 # instance fields
-.field public a:Lbkj;
+.field protected a:[Ljava/io/File;
 
-.field public b:Z
+.field protected b:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lqf;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final c:Landroid/content/Context;
+
+.field private final d:Ljava/lang/String;
+
+.field private final e:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
 
     .prologue
-    .line 26
-    invoke-direct {p0, p1}, Lamd;-><init>(Landroid/content/Intent;)V
-
-    .line 23
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lamy;->b:Z
-
-    .line 27
-    const-class v0, Lbkj;
-
-    invoke-virtual {p0, v0, p0}, Lamy;->a(Ljava/lang/Class;Lts$b;)V
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
+    const-string v0, "^_^"
+
+    iput-object v0, p0, Lamy;->e:Ljava/lang/String;
+
+    .line 32
+    iput-object p1, p0, Lamy;->c:Landroid/content/Context;
+
+    .line 33
+    iput-object p2, p0, Lamy;->d:Ljava/lang/String;
+
+    .line 34
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Luc;)V
-    .locals 4
+.method public final a()V
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
+    .line 46
+    :try_start_0
+    iget-object v0, p0, Lamy;->c:Landroid/content/Context;
 
-    .line 20
-    check-cast p1, Lbkj;
+    const/4 v1, 0x0
 
-    invoke-virtual {p2}, Luc;->d()Z
+    invoke-static {v0, v1}, Lbaj;->a(Landroid/content/Context;Z)[Ljava/io/File;
 
-    move-result v0
+    move-result-object v0
 
-    if-nez v0, :cond_0
+    iput-object v0, p0, Lamy;->a:[Ljava/io/File;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget v0, p2, Luc;->mResponseCode:I
-
-    const/16 v1, 0x190
-
-    if-ne v0, v1, :cond_1
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    iput-object p1, p0, Lamy;->a:Lbkj;
-
+    .line 49
     :goto_0
     return-void
 
-    :cond_1
-    iget v0, p2, Luc;->mResponseCode:I
-
-    const/16 v1, 0x193
-
-    if-ne v0, v1, :cond_2
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lamy;->b:Z
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v0, Lbkj;
-
-    invoke-direct {v0}, Lbkj;-><init>()V
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lbkj;->a(Ljava/lang/Boolean;)Lbkj;
-
-    move-result-object v0
-
-    new-array v1, v2, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    const v3, 0x7f0c01c2
-
-    invoke-static {v2, v3, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lbkj;->a(Ljava/lang/String;)Lbkj;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lamy;->a:Lbkj;
+    .line 48
+    :catch_0
+    move-exception v0
 
     goto :goto_0
 .end method
 
-.method public final b()Ljava/lang/Object;
-    .locals 1
+.method public final b()V
+    .locals 7
 
     .prologue
-    .line 45
-    new-instance v0, Lpl;
+    .line 54
+    iget-object v0, p0, Lamy;->d:Ljava/lang/String;
 
-    invoke-direct {v0}, Lpl;-><init>()V
+    const-string v1, "^_^"
 
-    return-object v0
+    invoke-static {v1}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 55
+    const/4 v1, 0x1
+
+    aget-object v0, v0, v1
+
+    .line 57
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "&taskId="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 58
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v2, p0, Lamy;->a:[Ljava/io/File;
+
+    array-length v2, v2
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lamy;->b:Ljava/util/List;
+
+    .line 59
+    iget-object v2, p0, Lamy;->a:[Ljava/io/File;
+
+    array-length v3, v2
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v3, :cond_0
+
+    aget-object v4, v2, v0
+
+    .line 60
+    iget-object v5, p0, Lamy;->b:Ljava/util/List;
+
+    new-instance v6, Lqf;
+
+    invoke-direct {v6, v1, v4}, Lqf;-><init>(Ljava/lang/String;Ljava/io/File;)V
+
+    invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 59
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 62
+    :cond_0
+    return-void
 .end method
 
-.method protected final e()Ljava/lang/String;
-    .locals 1
+.method public final c()V
+    .locals 2
 
     .prologue
-    .line 40
-    const-string v0, "/loq/two_fa_recovery_code"
+    .line 66
+    iget-object v0, p0, Lamy;->b:Ljava/util/List;
 
-    return-object v0
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lqf;
+
+    .line 67
+    invoke-virtual {v0}, Lqf;->execute()V
+
+    goto :goto_0
+
+    .line 69
+    :cond_0
+    return-void
 .end method

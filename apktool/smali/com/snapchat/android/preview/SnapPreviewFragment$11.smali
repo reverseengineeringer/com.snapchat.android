@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/preview/SnapPreviewFragment$11;
-.super Lbgf;
+.super Lbhf;
 .source "SourceFile"
 
 
@@ -26,7 +26,7 @@
     .line 1408
     iput-object p1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$11;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-direct {p0, p2, p3, p4, p5}, Lbgf;-><init>(Landroid/content/Context;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
+    invoke-direct {p0, p2, p3, p4, p5}, Lbhf;-><init>(Landroid/content/Context;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
 
     return-void
 .end method
@@ -38,12 +38,12 @@
 
     .prologue
     .line 1411
-    invoke-super {p0, p1}, Lbgf;->a(Ljava/lang/Boolean;)V
+    invoke-super {p0, p1}, Lbhf;->a(Ljava/lang/Boolean;)V
 
     .line 1412
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$11;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->z(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->A(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
 
     .line 1413
     return-void

@@ -1,13 +1,8 @@
-public final class ts$a<T>
+public abstract interface ts$a
 {
-  final Class<T> mClass;
-  final ts.b<T> mJsonCallback;
+  public abstract void a();
   
-  ts$a(Class<T> paramClass, ts.b<T> paramb)
-  {
-    mClass = paramClass;
-    mJsonCallback = paramb;
-  }
+  public abstract void v_();
 }
 
 /* Location:

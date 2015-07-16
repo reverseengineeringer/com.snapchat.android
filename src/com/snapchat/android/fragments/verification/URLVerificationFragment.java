@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.fragments.settings.WebFragment;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
@@ -55,9 +54,7 @@ public class URLVerificationFragment
     paramString.appendQueryParameter("success_url", "https://support.snapchat.com/success");
     paramString.appendQueryParameter("failure_url", "https://support.snapchat.com/failure");
     paramString.appendQueryParameter("client", "chartreuse");
-    paramString = paramString.build().toString();
-    Timber.b(f, "CASH-LOG: Setting the URL to %s", new Object[] { paramString });
-    super.a(paramString);
+    super.a(paramString.build().toString());
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
@@ -79,7 +76,7 @@ public class URLVerificationFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968751, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968753, paramViewGroup, false);
     a(paramBundle);
     b.getSettings().setJavaScriptEnabled(true);
     b.setWebViewClient(new b((byte)0));
@@ -107,7 +104,7 @@ public class URLVerificationFragment
     public final boolean shouldOverrideUrlLoading(WebView paramWebView, String paramString)
     {
       URLVerificationFragment.a(URLVerificationFragment.this, true);
-      Timber.b(URLVerificationFragment.m(), "CASH-LOG: Loading the URL: %s", new Object[] { paramString });
+      URLVerificationFragment.m();
       URLVerificationFragment.b(URLVerificationFragment.this, false);
       if (paramString.equals("https://support.snapchat.com/success"))
       {

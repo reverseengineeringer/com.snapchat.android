@@ -1,43 +1,76 @@
-public class cje
-  extends cjc
+final class cje
+  extends cke
 {
-  public final cgm b;
+  static final chi a = new cje();
   
-  public cje(cgm paramcgm, cgn paramcgn)
+  private cje()
   {
-    super(paramcgn);
-    if (paramcgm == null) {
-      throw new IllegalArgumentException("The field must not be null");
-    }
-    if (!paramcgm.b()) {
-      throw new IllegalArgumentException("The field must be supported");
-    }
-    b = paramcgm;
+    super(Wz, chj.t());
   }
   
-  public long a(long paramLong, int paramInt)
+  public final int a(long paramLong)
+  {
+    int j = b.a(paramLong);
+    int i = j;
+    if (j < 0) {
+      i = -j;
+    }
+    return i;
+  }
+  
+  public final long a(long paramLong, int paramInt)
   {
     return b.a(paramLong, paramInt);
   }
   
-  public long a(long paramLong1, long paramLong2)
+  public final long a(long paramLong1, long paramLong2)
   {
     return b.a(paramLong1, paramLong2);
   }
   
-  public long c(long paramLong1, long paramLong2)
+  public final int b(long paramLong1, long paramLong2)
+  {
+    return b.b(paramLong1, paramLong2);
+  }
+  
+  public final long b(long paramLong, int paramInt)
+  {
+    cki.a(this, paramInt, 0, b.h());
+    int i = paramInt;
+    if (b.a(paramLong) < 0) {
+      i = -paramInt;
+    }
+    return super.b(paramLong, i);
+  }
+  
+  public final long c(long paramLong1, long paramLong2)
   {
     return b.c(paramLong1, paramLong2);
   }
   
-  public final boolean c()
+  public final long d(long paramLong)
   {
-    return b.c();
+    return b.d(paramLong);
   }
   
-  public long d()
+  public final long e(long paramLong)
   {
-    return b.d();
+    return b.e(paramLong);
+  }
+  
+  public final int g()
+  {
+    return 0;
+  }
+  
+  public final int h()
+  {
+    return b.h();
+  }
+  
+  public final long i(long paramLong)
+  {
+    return b.i(paramLong);
   }
 }
 

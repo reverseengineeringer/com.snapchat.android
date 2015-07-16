@@ -2,10 +2,10 @@ package com.snapchat.android.preview;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import aqb;
+import ara;
 
 final class SnapPreviewFragment$1
-  extends aqb
+  extends ara
 {
   SnapPreviewFragment$1(SnapPreviewFragment paramSnapPreviewFragment, Context paramContext, String paramString)
   {

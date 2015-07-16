@@ -2,12 +2,38 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/io/Serializable;
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lbws$c;,
-        Lbws$b;,
-        Lbws$a;
-    }
-.end annotation
+
+# instance fields
+.field public a:Ljava/lang/String;
+
+.field public b:Ljava/lang/String;
+
+.field public c:I
+
+.field public d:Ljava/lang/String;
+
+.field public e:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Lbwu;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 40
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

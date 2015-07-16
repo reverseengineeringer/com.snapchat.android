@@ -46,8 +46,8 @@ ce Snapchatter !"</string>
     <string name="add_friends_who_added_me">"ILS M'ONT AJOUTÉ"</string>
     <string name="add_from_address_book">"Ajouter à partir du carnet d'adresses"</string>
     <string name="add_from_camera_roll">Ajouter à partir de vos photos</string>
-    <string name="add_nearby">Ajouter utilisateurs à proximité</string>
-    <string name="add_nearby_friends_title">Ajouter utilisateurs à proximité</string>
+    <string name="add_nearby">Ajouter des amis à proximité</string>
+    <string name="add_nearby_friends_title">Ajouter des amis à proximité</string>
     <string name="add_nearby_prompt">Ajouter à Proximité utilise votre localisation pour trouver et ajouter des Snapchatters qui se trouvent près de vous. Votre nom sera visible par les autres Snapchatters.</string>
     <string name="add_to_your_story">Ajouter à votre Story ?</string>
     <string name="add_to_your_story_explanation">"Lorsque vous ajoutez un Snap à votre Story, les autres utilisateurs peuvent le voir autant de fois qu'ils le souhaitent pendant 24 heures. Voulez-vous ajouter ce Snap à votre Story ?"</string>
@@ -259,7 +259,6 @@ votre carte de débit."</string>
     <string name="discover_sharing_success">Snap envoyé !</string>
     <string name="discover_sharing_unavailable">"%1$s n'autorise pas l'envoi de ce Snap."</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g>Cliquez ici pour essayer Discover !</string>
     <string name="discover_unavailable">"Désolé !
 
 Discover est actuellement indisponible."</string>
@@ -309,6 +308,7 @@ Discover n'est pas encore disponible dans votre pays."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Mot de passe oublié ?</a>" "</string>
     <string name="friend_suggest_hide">Masquer</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Nouveau contact</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Ajouté récemment</string>
     <string name="friends">Amis</string>
     <string name="friends_context_block">Bloquer</string>
@@ -616,7 +616,7 @@ pour que nous soyons sûrs qu'il existe vraiment !"</string>
     <string name="snap_delete_failure">Échec de la suppression du Snap.</string>
     <string name="snap_failed_to_post">"Échec de la publication d'1 Snap."</string>
     <string name="snap_list_empty_list_msg">"Vous n'avez pas de Snaps :("</string>
-    <string name="snap_tag_help_description">Les Snapchatters peuvent vous ajouter en pointant leur appareil photo vers votre fantôme et en cliquant sur leur écran !</string>
+    <string name="snap_tag_help_description">Les Snapchatters peuvent vous ajouter en dirigeant leur appareil photo vers votre Snapcode et en touchant leur écran !</string>
     <string name="snap_tag_no_connection">Pas de connexion !</string>
     <string name="snap_to_add">"Ajouter par Snap ou capture d'écran"</string>
     <string name="snapkidz_welcome">Bienvenue sur Snapkidz !</string>
@@ -652,8 +652,6 @@ pour que nous soyons sûrs qu'il existe vraiment !"</string>
     <string name="tap_to_view_edition">Appuyez pour visionner dans Discover</string>
     <string name="tap_to_view_full_story">Appuyez pour découvrir la suite</string>
     <string name="tap_to_view_more">"Appuyez pour consulter d'autres chaînes"</string>
-    <string name="tap_to_view_snaps">Consulter les Snaps !</string>
-    <string name="tap_to_view_stories">Consulter les Stories !</string>
     <string name="tap_to_view_video_in_discover">Appuyez pour regarder cette vidéo dans Discover</string>
     <string name="too_many_attempts">Dépassement du nombre de tentatives autorisées.</string>
     <string name="tos_accept">ACCEPTER</string>

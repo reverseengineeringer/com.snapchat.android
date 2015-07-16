@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.audio;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.pipeline.Encoder;
 import com.snapchat.videotranscoder.pipeline.MediaProvider;
 import com.snapchat.videotranscoder.pipeline.StageDoneCallback;
@@ -18,7 +18,7 @@ public class AudioProvider
   private boolean mAudioExtractorDone = false;
   private long mDurationUs;
   
-  public AudioProvider(@cgb Encoder paramEncoder, @cgb VideoFileMediaSource paramVideoFileMediaSource, @cgb StageDoneCallback paramStageDoneCallback)
+  public AudioProvider(@chc Encoder paramEncoder, @chc VideoFileMediaSource paramVideoFileMediaSource, @chc StageDoneCallback paramStageDoneCallback)
   {
     super(paramEncoder, paramStageDoneCallback);
     if (paramEncoder == null) {

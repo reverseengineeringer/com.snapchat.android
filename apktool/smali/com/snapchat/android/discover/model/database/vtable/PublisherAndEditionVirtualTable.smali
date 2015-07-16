@@ -116,7 +116,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -156,7 +156,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->EDITION_ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -196,7 +196,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->NUM_CHUNKS:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -244,7 +244,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v3, v4}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -318,7 +318,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v3, v4}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -352,7 +352,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->EDITION_ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-static {v3, v4}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -392,7 +392,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v3, v4}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -432,7 +432,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->TIME_ADDED:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v3, v4}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -500,7 +500,7 @@
 
     sget-object v5, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->EDITION_ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-static {v4, v5}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -540,7 +540,7 @@
 
     sget-object v5, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v4, v5}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -580,7 +580,7 @@
 
     sget-object v5, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->TIME_ADDED:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v4, v5}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -620,7 +620,7 @@
 
     sget-object v5, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-static {v4, v5}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -662,7 +662,7 @@
 
     sget-object v5, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->ID:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v4, v5}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -678,7 +678,7 @@
 
     sget-object v5, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->EDITION_ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-static {v4, v5}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -706,7 +706,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->EDITION_ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-static {v3, v4}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -734,7 +734,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -750,7 +750,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -768,7 +768,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->TIME_ADDED:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -784,7 +784,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->TIME_ADDED:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -812,7 +812,7 @@
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->NAME:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-static {v1, v2}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v2}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -828,7 +828,7 @@
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
-    invoke-static {v1, v2}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v2}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -858,15 +858,15 @@
 .end method
 
 .method public static a(Landroid/database/Cursor;)Lcom/snapchat/android/discover/model/ChannelPage$a;
-    .locals 19
-    .annotation build Lavl;
+    .locals 20
+    .annotation build Lawj;
     .end annotation
 
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 141
+    .line 142
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -879,7 +879,7 @@
 
     move-result-object v5
 
-    .line 142
+    .line 143
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->PUBLISHER_FORMAL_NAME:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -892,7 +892,7 @@
 
     move-result-object v6
 
-    .line 143
+    .line 144
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->PUBLISHER_INTERNATIONAL_NAME:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -905,7 +905,7 @@
 
     move-result-object v7
 
-    .line 144
+    .line 145
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->PRIMARY_COLOR:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -918,7 +918,7 @@
 
     move-result-object v8
 
-    .line 145
+    .line 146
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->SECONDARY_COLOR:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -931,7 +931,7 @@
 
     move-result-object v9
 
-    .line 146
+    .line 147
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->FILLED_ICON:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -944,7 +944,7 @@
 
     move-result-object v10
 
-    .line 147
+    .line 148
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->INVERTED_ICON:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -957,7 +957,7 @@
 
     move-result-object v11
 
-    .line 148
+    .line 149
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->LOADING_ICON:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -970,7 +970,7 @@
 
     move-result-object v12
 
-    .line 149
+    .line 150
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->INTRO_MOVIE:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -983,7 +983,7 @@
 
     move-result-object v13
 
-    .line 150
+    .line 151
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->INTRO_AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -996,7 +996,7 @@
 
     move-result-object v14
 
-    .line 151
+    .line 152
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->INTRO_AD_TARGETING:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -1009,7 +1009,7 @@
 
     move-result-object v15
 
-    .line 152
+    .line 153
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->ENABLED:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -1026,7 +1026,7 @@
 
     const/4 v2, 0x1
 
-    .line 153
+    .line 154
     :goto_0
     sget-object v3, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->POSITION:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
@@ -1040,7 +1040,7 @@
 
     move-result v16
 
-    .line 154
+    .line 155
     sget-object v3, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->STORIES_PAGE_POSITION:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v3}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -1053,30 +1053,43 @@
 
     move-result v17
 
-    .line 157
-    const/4 v3, 0x0
+    .line 156
+    sget-object v3, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->PROMOTED_STORIES_PAGE_POSITION:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
-    .line 158
-    const/4 v4, 0x0
+    invoke-virtual {v3}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
 
-    .line 159
-    sget-object v18, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->CURRENT_EDITION_ID:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
-
-    invoke-virtual/range {v18 .. v18}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
-
-    move-result v18
+    move-result v3
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
-
-    invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v0, v3}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v18
 
-    if-nez v18, :cond_0
+    .line 159
+    const/4 v3, 0x0
 
     .line 160
+    const/4 v4, 0x0
+
+    .line 161
+    sget-object v19, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->CURRENT_EDITION_ID:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
+
+    invoke-virtual/range {v19 .. v19}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
+
+    move-result v19
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v19
+
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v19
+
+    if-nez v19, :cond_0
+
+    .line 162
     sget-object v3, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->CURRENT_EDITION_ID:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v3}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -1089,25 +1102,25 @@
 
     move-result-object v3
 
-    .line 163
+    .line 165
     :cond_0
-    sget-object v18, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->NUM_CHUNKS:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
+    sget-object v19, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->NUM_CHUNKS:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
-    invoke-virtual/range {v18 .. v18}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
+    invoke-virtual/range {v19 .. v19}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
 
-    move-result v18
+    move-result v19
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v18
+    move-result v19
 
-    if-nez v18, :cond_1
+    if-nez v19, :cond_1
 
-    .line 164
+    .line 166
     sget-object v4, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->NUM_CHUNKS:Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     invoke-virtual {v4}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->getColumnNumber()I
@@ -1120,83 +1133,89 @@
 
     move-result v4
 
-    .line 167
+    .line 169
     :cond_1
-    new-instance v18, Lcom/snapchat/android/discover/model/ChannelPage$a;
+    new-instance v19, Lcom/snapchat/android/discover/model/ChannelPage$a;
 
-    invoke-direct/range {v18 .. v18}, Lcom/snapchat/android/discover/model/ChannelPage$a;-><init>()V
+    invoke-direct/range {v19 .. v19}, Lcom/snapchat/android/discover/model/ChannelPage$a;-><init>()V
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v5, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->a:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v6, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->b:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v7, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->c:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v8, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->d:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v9, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->e:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v10, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->h:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v11, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->i:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v12, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->j:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iput-object v13, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->k:Ljava/lang/String;
 
     move/from16 v0, v16
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v19
 
     iput v0, v1, Lcom/snapchat/android/discover/model/ChannelPage$a;->m:I
 
     move/from16 v0, v17
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v19
 
     iput v0, v1, Lcom/snapchat/android/discover/model/ChannelPage$a;->n:I
 
-    move-object/from16 v0, v18
+    move/from16 v0, v18
+
+    move-object/from16 v1, v19
+
+    iput v0, v1, Lcom/snapchat/android/discover/model/ChannelPage$a;->o:I
+
+    move-object/from16 v0, v19
 
     iput-boolean v2, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->l:Z
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
-    iput-object v3, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->o:Ljava/lang/String;
+    iput-object v3, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->p:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
-    iput v4, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->p:I
+    iput v4, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->q:I
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
-    iput-object v14, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->u:Ljava/lang/String;
+    iput-object v14, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->v:Ljava/lang/String;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
-    iput-object v15, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->v:Ljava/lang/String;
+    iput-object v15, v0, Lcom/snapchat/android/discover/model/ChannelPage$a;->w:Ljava/lang/String;
 
-    return-object v18
+    return-object v19
 
-    .line 152
+    .line 153
     :cond_2
     const/4 v2, 0x0
 
@@ -1232,7 +1251,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 126
     const-string v0, "PublisherAndEdition"
 
     return-object v0
@@ -1242,17 +1261,17 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 131
     sget-object v0, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable;->d:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final c()[Lzw;
+.method public final c()[Laav;
     .locals 1
 
     .prologue
-    .line 135
+    .line 136
     invoke-static {}, Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;->values()[Lcom/snapchat/android/discover/model/database/vtable/PublisherAndEditionVirtualTable$ChannelSchema;
 
     move-result-object v0

@@ -1,49 +1,122 @@
-import android.hardware.Camera.Parameters;
-import android.hardware.Camera.Size;
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.camera.model.CameraModel;
-import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
-import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper.TranscodingEnabled;
-import javax.inject.Inject;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.camera.cameradecor.CameraDecor.CameraDecorInterface;
+import com.snapchat.android.fragments.addfriends.FriendsContactsToggleFragment;
+import com.squareup.otto.Bus;
 
 public final class wn
+  extends wj
 {
-  @Inject
-  protected CameraModel a;
-  @Inject
-  protected wq b;
-  private final TranscodingPreferencesWrapper c;
+  private final bdz n;
+  private final Bus o;
   
-  @Inject
-  public wn()
+  public wn(Context paramContext, RelativeLayout paramRelativeLayout, CameraDecor.CameraDecorInterface paramCameraDecorInterface, bdz parambdz)
   {
-    this(TranscodingPreferencesWrapper.a());
+    this(paramContext, paramRelativeLayout, paramCameraDecorInterface, parambdz, bbo.a());
   }
   
-  private wn(TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper)
+  private wn(Context paramContext, RelativeLayout paramRelativeLayout, CameraDecor.CameraDecorInterface paramCameraDecorInterface, bdz parambdz, Bus paramBus)
   {
-    SnapchatApplication.b().c().a(this);
-    c = paramTranscodingPreferencesWrapper;
-  }
-  
-  @cgc
-  public final aue a()
-  {
-    Object localObject = a.h;
-    if (localObject == null) {}
-    do
+    super(paramContext, paramRelativeLayout, paramCameraDecorInterface);
+    n = parambdz;
+    o = paramBus;
+    f.setVisibility(4);
+    g.setVisibility(4);
+    switch (n.mOriginatingFragment)
     {
-      return null;
-      localObject = ((wc.b)localObject).c();
-    } while (localObject == null);
-    if (TranscodingPreferencesWrapper.b() == TranscodingPreferencesWrapper.TranscodingEnabled.ENABLED) {}
-    for (boolean bool = true;; bool = false)
-    {
-      wq localwq = b;
-      int i = a.c;
-      Camera.Size localSize = ((Camera.Parameters)localObject).getPreviewSize();
-      return localwq.a((Camera.Parameters)localObject, i, width / height, bool);
     }
+    for (;;)
+    {
+      a();
+      return;
+      f.setBackgroundResource(2130837537);
+      f.setOnClickListener(new View.OnClickListener()
+      {
+        public final void onClick(View paramAnonymousView)
+        {
+          a.a(1, true);
+        }
+      });
+      f.setVisibility(0);
+      continue;
+      g.setBackgroundResource(2130837527);
+      g.setOnClickListener(new View.OnClickListener()
+      {
+        public final void onClick(View paramAnonymousView)
+        {
+          a.a(3, true);
+        }
+      });
+      g.setVisibility(0);
+      continue;
+      g.setBackgroundResource(2130837527);
+      g.setOnClickListener(new View.OnClickListener()
+      {
+        public final void onClick(View paramAnonymousView)
+        {
+          wn.a(wn.this);
+        }
+      });
+      g.setVisibility(0);
+    }
+  }
+  
+  private void i()
+  {
+    FriendsContactsToggleFragment localFriendsContactsToggleFragment = new FriendsContactsToggleFragment();
+    Bundle localBundle = new Bundle();
+    localBundle.putString("selected_friend_username", n.mRecipients);
+    localFriendsContactsToggleFragment.setArguments(localBundle);
+    o.a(new bev(localFriendsContactsToggleFragment));
+    o.a(new bbu());
+    o.a(new bdr(0));
+  }
+  
+  public final void b() {}
+  
+  public final void c() {}
+  
+  protected final void c(boolean paramBoolean)
+  {
+    super.c(paramBoolean);
+    if ((paramBoolean) && (n != null)) {}
+    switch (n.mOriginatingFragment)
+    {
+    default: 
+      return;
+    case 1: 
+      g.setVisibility(4);
+      return;
+    }
+    f.setVisibility(4);
+  }
+  
+  public final boolean f()
+  {
+    int i = n.mOriginatingFragment;
+    switch (i)
+    {
+    default: 
+      a.a(i, true);
+    }
+    for (;;)
+    {
+      if (n.mIsDoubleTap) {
+        AnalyticsEvents.j(false);
+      }
+      return true;
+      i();
+    }
+  }
+  
+  protected final boolean h()
+  {
+    return false;
   }
 }
 

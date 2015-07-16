@@ -1,12 +1,25 @@
-public abstract interface us$a
+public final class us$a
 {
-  public abstract void c_();
+  bgk mBuffer;
+  public Exception mCaughtException;
+  private String mNetworkType;
+  String mRequestId;
+  long mResponseBodySize;
+  int mResponseCode = 0;
+  ux mResponseHeaders = new ux();
+  String mResponseMessage;
+  private final String mUrl;
   
-  public abstract void d();
+  public us$a(String paramString1, String paramString2)
+  {
+    mUrl = paramString1;
+    mNetworkType = paramString2;
+  }
   
-  public abstract void d_();
-  
-  public abstract void e_();
+  public final us a()
+  {
+    return new us(mUrl, mNetworkType, mResponseCode, mResponseMessage, mBuffer, mResponseHeaders, mRequestId, mCaughtException, mResponseBodySize, (byte)0);
+  }
 }
 
 /* Location:

@@ -1,199 +1,545 @@
 .class public Lbhb;
-.super Lbhl;
+.super Landroid/os/AsyncTask;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/os/AsyncTask",
+        "<",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "Ljava/lang/String;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field private static final JPEG_COMPRESSION:I = 0x5f
+
+.field private static final TAG:Ljava/lang/String; = "SaveImageToGalleryTask"
+
+
 # instance fields
-.field protected amount:Ljava/lang/Integer;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "amount"
+.field private final mBitmap:Landroid/graphics/Bitmap;
+    .annotation build Lchd;
     .end annotation
 .end field
 
-.field protected createdAt:Ljava/lang/Long;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "created_at"
-    .end annotation
-.end field
+.field private final mCameraEventAnalytics:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
-.field protected currencyCode:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "currency_code"
-    .end annotation
-.end field
+.field protected final mContext:Landroid/content/Context;
 
-.field protected message:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "message"
-    .end annotation
-.end field
+.field private final mNotifications:Lbhc;
 
-.field protected paymentId:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "payment_id"
+.field private final mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+.field private final mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+
+.field private final mSaveToSnapchatDirectory:Z
+
+.field private final mStorySnap:Lakl;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method private constructor <init>(Landroid/content/Context;Lakl;Landroid/graphics/Bitmap;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Z)V
+    .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lakl;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .param p3    # Landroid/graphics/Bitmap;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .param p4    # Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .param p5    # Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Lbhl;-><init>()V
+    .line 86
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 20
+    .line 87
+    if-nez p2, :cond_0
+
+    if-nez p3, :cond_0
+
+    .line 88
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "storySnap and bitmap are both null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 91
+    :cond_0
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
+
+    iput-object v0, p0, Lbhb;->mContext:Landroid/content/Context;
+
+    .line 92
+    iput-object p2, p0, Lbhb;->mStorySnap:Lakl;
+
+    .line 93
+    iput-object p3, p0, Lbhb;->mBitmap:Landroid/graphics/Bitmap;
+
+    .line 94
+    iput-object p4, p0, Lbhb;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+
+    .line 95
+    invoke-static {p5}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    iput-object v0, p0, Lbhb;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    .line 96
+    invoke-static {}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->a()Lcom/snapchat/android/analytics/CameraEventAnalytics;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbhb;->mCameraEventAnalytics:Lcom/snapchat/android/analytics/CameraEventAnalytics;
+
+    .line 97
+    invoke-static {}, Lbhc;->a()Lbhc;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbhb;->mNotifications:Lbhc;
+
+    .line 98
+    iput-boolean p6, p0, Lbhb;->mSaveToSnapchatDirectory:Z
+
+    .line 99
     return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lakl;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
+    .locals 7
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lakl;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .param p4    # Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 50
+    const/4 v3, 0x0
+
+    const/4 v6, 0x1
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v6}, Lbhb;-><init>(Landroid/content/Context;Lakl;Landroid/graphics/Bitmap;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Z)V
+
+    .line 51
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/graphics/Bitmap;)V
+    .locals 7
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Landroid/graphics/Bitmap;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 77
+    sget-object v5, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->NONE:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v3, p2
+
+    move-object v4, v2
+
+    invoke-direct/range {v0 .. v6}, Lbhb;-><init>(Landroid/content/Context;Lakl;Landroid/graphics/Bitmap;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Z)V
+
+    .line 79
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/graphics/Bitmap;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
+    .locals 7
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Landroid/graphics/Bitmap;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .param p4    # Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 65
+    const/4 v2, 0x0
+
+    const/4 v6, 0x1
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v6}, Lbhb;-><init>(Landroid/content/Context;Lakl;Landroid/graphics/Bitmap;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Z)V
+
+    .line 66
+    return-void
+.end method
+
+.method private varargs b()Ljava/lang/String;
+    .locals 7
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 112
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Laxr;->b()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ".jpg"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 114
+    iget-object v1, p0, Lbhb;->mStorySnap:Lakl;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lbhb;->mStorySnap:Lakl;
+
+    iget-object v3, p0, Lbhb;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1, v3}, Lakl;->a(Landroid/content/Context;)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    .line 115
+    :goto_0
+    if-nez v1, :cond_2
+
+    .line 138
+    :cond_0
+    :goto_1
+    return-object v0
+
+    .line 114
+    :cond_1
+    iget-object v1, p0, Lbhb;->mBitmap:Landroid/graphics/Bitmap;
+
+    goto :goto_0
+
+    .line 121
+    :cond_2
+    iget-boolean v3, p0, Lbhb;->mSaveToSnapchatDirectory:Z
+
+    if-eqz v3, :cond_3
+
+    .line 122
+    new-instance v3, Ljava/io/File;
+
+    invoke-static {}, Laxr;->a()Ljava/io/File;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    .line 125
+    :try_start_0
+    new-instance v4, Ljava/io/FileOutputStream;
+
+    invoke-direct {v4, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    .line 126
+    sget-object v5, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const/16 v6, 0x5f
+
+    invoke-virtual {v1, v5, v6, v4}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+
+    .line 127
+    invoke-virtual {v4}, Ljava/io/FileOutputStream;->flush()V
+
+    .line 128
+    invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 133
+    iget-object v4, p0, Lbhb;->mContext:Landroid/content/Context;
+
+    if-eqz v4, :cond_0
+
+    .line 134
+    iget-object v4, p0, Lbhb;->mContext:Landroid/content/Context;
+
+    invoke-static {v4, v3}, Laxr;->a(Landroid/content/Context;Ljava/io/File;)V
+
+    .line 138
+    :cond_3
+    iget-object v3, p0, Lbhb;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    invoke-static {v3, v1, v2, v0}, Landroid/provider/MediaStore$Images$Media;->insertImage(Landroid/content/ContentResolver;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    .line 129
+    :catch_0
+    move-exception v1
+
+    .line 130
+    new-instance v2, Lcom/snapchat/android/analytics/framework/ErrorMetric;
+
+    const-string v3, "failed to save image"
+
+    invoke-direct {v2, v3}, Lcom/snapchat/android/analytics/framework/ErrorMetric;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/Throwable;)Lcom/snapchat/android/analytics/framework/ErrorMetric;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->e()V
+
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 95
-    iget-object v0, p0, Lbhb;->paymentId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .prologue
-    .line 178
-    if-ne p1, p0, :cond_0
-
-    .line 179
-    const/4 v0, 0x1
-
-    .line 185
-    :goto_0
-    return v0
-
-    .line 181
-    :cond_0
-    instance-of v0, p1, Lbhb;
-
-    if-nez v0, :cond_1
-
-    .line 182
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 184
-    :cond_1
-    check-cast p1, Lbhb;
-
-    .line 185
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
-
-    iget-object v1, p0, Lbhb;->createdAt:Ljava/lang/Long;
-
-    iget-object v2, p1, Lbhb;->createdAt:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhb;->paymentId:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhb;->paymentId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhb;->amount:Ljava/lang/Integer;
-
-    iget-object v2, p1, Lbhb;->amount:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhb;->currencyCode:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhb;->currencyCode:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhb;->message:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhb;->message:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public hashCode()I
+.method public a()V
     .locals 2
 
     .prologue
-    .line 167
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 172
+    iget-object v0, p0, Lbhb;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
 
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+    sget-object v1, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->NONE:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
 
-    iget-object v1, p0, Lbhb;->createdAt:Ljava/lang/Long;
+    if-eq v0, v1, :cond_0
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 173
+    iget-object v0, p0, Lbhb;->mNotifications:Lbhc;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lbhc;->d()V
 
-    iget-object v1, p0, Lbhb;->paymentId:Ljava/lang/String;
+    .line 176
+    :cond_0
+    iget-object v0, p0, Lbhb;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    if-eqz v0, :cond_1
 
-    move-result-object v0
+    .line 177
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Lbhb;->amount:Ljava/lang/Integer;
+    iget-object v1, p0, Lbhb;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->b(ZLcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;)V
 
-    move-result-object v0
-
-    iget-object v1, p0, Lbhb;->currencyCode:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhb;->message:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
-
-    move-result v0
-
-    return v0
+    .line 179
+    :cond_1
+    return-void
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 1
+.method public a(Ljava/lang/String;)V
+    .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
     .line 162
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Lbhb;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    sget-object v1, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->ALL:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    if-ne v0, v1, :cond_0
+
+    .line 163
+    iget-object v0, p0, Lbhb;->mNotifications:Lbhc;
+
+    invoke-virtual {v0}, Lbhc;->c()V
+
+    .line 166
+    :cond_0
+    iget-object v0, p0, Lbhb;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+
+    if-eqz v0, :cond_1
+
+    .line 167
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lbhb;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+
+    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->a(ZLcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;)V
+
+    .line 169
+    :cond_1
+    return-void
+.end method
+
+.method public b(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 150
+    iget-object v0, p0, Lbhb;->mBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_0
+
+    .line 151
+    iget-object v0, p0, Lbhb;->mBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 154
+    :cond_0
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 155
+    invoke-virtual {p0, p1}, Lbhb;->a(Ljava/lang/String;)V
+
+    .line 159
+    :goto_0
+    return-void
+
+    .line 157
+    :cond_1
+    invoke-virtual {p0}, Lbhb;->a()V
+
+    goto :goto_0
+.end method
+
+.method protected synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 24
+    invoke-direct {p0}, Lbhb;->b()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 0
+
+    .prologue
+    .line 24
+    check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Lbhb;->b(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public onPreExecute()V
+    .locals 2
+
+    .prologue
+    .line 143
+    iget-object v0, p0, Lbhb;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    sget-object v1, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->ALL:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    if-ne v0, v1, :cond_0
+
+    .line 144
+    iget-object v0, p0, Lbhb;->mNotifications:Lbhc;
+
+    invoke-virtual {v0}, Lbhc;->b()V
+
+    .line 146
+    :cond_0
+    return-void
 .end method

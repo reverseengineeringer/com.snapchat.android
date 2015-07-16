@@ -1,21 +1,14 @@
-import android.os.Process;
-
 public final class bgu
-  implements Runnable
 {
-  final Runnable a;
-  final int b;
-  
-  public bgu(Runnable paramRunnable, int paramInt)
+  public static int a(long paramLong1, long paramLong2)
   {
-    a = paramRunnable;
-    b = paramInt;
-  }
-  
-  public final void run()
-  {
-    Process.setThreadPriority(b);
-    a.run();
+    if (paramLong1 < paramLong2) {
+      return -1;
+    }
+    if (paramLong1 == paramLong2) {
+      return 0;
+    }
+    return 1;
   }
 }
 

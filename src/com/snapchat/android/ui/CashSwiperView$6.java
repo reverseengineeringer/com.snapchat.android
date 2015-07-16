@@ -3,7 +3,7 @@ package com.snapchat.android.ui;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.media.MediaPlayer;
-import atz;
+import aux;
 
 final class CashSwiperView$6
   implements ValueAnimator.AnimatorUpdateListener
@@ -12,7 +12,7 @@ final class CashSwiperView$6
   
   public final void onAnimationUpdate(ValueAnimator paramValueAnimator)
   {
-    float f = atz.a((float)Math.log(((Float)paramValueAnimator.getAnimatedValue()).floatValue()));
+    float f = aux.a((float)Math.log(((Float)paramValueAnimator.getAnimatedValue()).floatValue()));
     if (CashSwiperView.b(a) != null) {
       CashSwiperView.b(a).setVolume(f, f);
     }

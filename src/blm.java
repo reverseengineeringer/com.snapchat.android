@@ -1,35 +1,61 @@
-public final class blm
+import com.google.gson.annotations.SerializedName;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+public class blm
 {
-  public final String a;
-  public final String b;
+  @SerializedName("logged")
+  protected Boolean logged;
+  @SerializedName("message")
+  protected String message;
+  @SerializedName("param")
+  protected String param;
+  @SerializedName("status")
+  protected Integer status;
   
-  public blm(String paramString1, String paramString2)
+  public final blm a(Boolean paramBoolean)
   {
-    a = paramString1;
-    b = paramString2;
+    logged = paramBoolean;
+    return this;
   }
   
-  public final boolean equals(Object paramObject)
+  public final blm a(String paramString)
   {
-    return ((paramObject instanceof blm)) && (bmp.a(a, a)) && (bmp.a(b, b));
+    message = paramString;
+    return this;
   }
   
-  public final int hashCode()
+  public final Boolean a()
   {
-    int j = 0;
-    if (b != null) {}
-    for (int i = b.hashCode();; i = 0)
-    {
-      if (a != null) {
-        j = a.hashCode();
-      }
-      return (i + 899) * 31 + j;
+    return logged;
+  }
+  
+  public final String b()
+  {
+    return message;
+  }
+  
+  public boolean equals(Object paramObject)
+  {
+    if (paramObject == this) {
+      return true;
     }
+    if (!(paramObject instanceof blm)) {
+      return false;
+    }
+    paramObject = (blm)paramObject;
+    return new EqualsBuilder().append(logged, logged).append(status, status).append(message, message).append(param, param).isEquals();
   }
   
-  public final String toString()
+  public int hashCode()
   {
-    return a + " realm=\"" + b + "\"";
+    return new HashCodeBuilder().append(logged).append(status).append(message).append(param).toHashCode();
+  }
+  
+  public String toString()
+  {
+    return ToStringBuilder.reflectionToString(this);
   }
 }
 

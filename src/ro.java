@@ -1,38 +1,91 @@
-import javax.inject.Provider;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.api2.cash.ScCashResponsePayload.Status;
+import com.snapchat.android.api2.cash.blockers.BlockerOrder;
+import com.snapchat.android.fragments.cash.CashPhoneVerificationFragment;
+import com.snapchat.android.fragments.cash.CashPhoneVerificationFragment.a;
+import com.snapchat.android.fragments.cash.IneligibleCashFragment;
+import com.snapchat.android.model.CashTransaction;
+import com.squareup.otto.Bus;
+import java.util.List;
+import javax.inject.Inject;
 
 public final class ro
-  implements buj<rn>
+  extends rl
 {
-  private final Provider<xr> mCashCardManagerProvider;
-  private final Provider<qg> mCashErrorReporterProvider;
-  private final Provider<sn> mSquareProvider;
-  private final buj<qv> supertypeInjector;
+  private static final String TAG = "PhoneNumberBlocker";
+  @Inject
+  protected yt mReceivingCashManager;
   
-  static
+  public ro()
   {
-    if (!ro.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    SnapchatApplication.b().c().a(this);
+  }
+  
+  private boolean e()
+  {
+    if (akr.ap() == ScCashResponsePayload.Status.NON_US_USER)
     {
-      $assertionsDisabled = bool;
+      super.b(null, false);
+      bbo.a().a(new bev(new IneligibleCashFragment()));
+      mReceivingCashManager.a(zi.a());
+      return true;
+    }
+    if (akr.f())
+    {
+      super.a(null, true);
+      return true;
+    }
+    return false;
+  }
+  
+  protected final void a()
+  {
+    super.a();
+  }
+  
+  public final void a(@chd CashTransaction paramCashTransaction)
+  {
+    if (e()) {
       return;
     }
+    paramCashTransaction = new CashPhoneVerificationFragment();
+    CashPhoneVerificationFragment.a local1 = new CashPhoneVerificationFragment.a()
+    {
+      public final void a()
+      {
+        if (ro.a(ro.this))
+        {
+          AnalyticsEvents.O();
+          return;
+        }
+        b(null, false);
+      }
+      
+      public final void b()
+      {
+        AnalyticsEvents.P();
+        ro.this.a();
+      }
+    };
+    b = false;
+    a = local1;
+    bbo.a().a(new bev(paramCashTransaction));
   }
   
-  private ro(buj<qv> parambuj, Provider<sn> paramProvider, Provider<xr> paramProvider1, Provider<qg> paramProvider2)
+  protected final void a(@chd List<rl> paramList, boolean paramBoolean)
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mSquareProvider = paramProvider;
-    assert (paramProvider1 != null);
-    mCashCardManagerProvider = paramProvider1;
-    assert (paramProvider2 != null);
-    mCashErrorReporterProvider = paramProvider2;
+    super.a(paramList, paramBoolean);
   }
   
-  public static buj<rn> a(buj<qv> parambuj, Provider<sn> paramProvider, Provider<xr> paramProvider1, Provider<qg> paramProvider2)
+  protected final void b(@chd List<rl> paramList, boolean paramBoolean)
   {
-    return new ro(parambuj, paramProvider, paramProvider1, paramProvider2);
+    super.b(paramList, paramBoolean);
+  }
+  
+  public final BlockerOrder c()
+  {
+    return BlockerOrder.PHONE_NUMBER_BLOCKER;
   }
 }
 

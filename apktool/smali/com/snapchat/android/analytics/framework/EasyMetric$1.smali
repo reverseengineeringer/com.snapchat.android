@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 340
+    .line 363
     iput-object p1, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$1;->b:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     iput-boolean p2, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$1;->a:Z
@@ -44,13 +44,13 @@
     .locals 2
 
     .prologue
-    .line 343
+    .line 366
     iget-object v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$1;->b:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     iget-boolean v1, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$1;->a:Z
 
     invoke-static {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Lcom/snapchat/android/analytics/framework/EasyMetric;Z)V
 
-    .line 344
+    .line 367
     return-void
 .end method

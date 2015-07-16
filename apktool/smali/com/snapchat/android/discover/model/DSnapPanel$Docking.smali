@@ -175,14 +175,14 @@
 
 .method public static valueOfIgnoreCase(Ljava/lang/String;)Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
     .locals 1
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
     .line 78
     const-string v0, "TOP"
 
-    invoke-static {v0, p0}, Laui;->c(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, p0}, Lavg;->c(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -199,7 +199,7 @@
     :cond_0
     const-string v0, "CENTER"
 
-    invoke-static {v0, p0}, Laui;->c(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, p0}, Lavg;->c(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -214,7 +214,7 @@
     :cond_1
     const-string v0, "BOTTOM"
 
-    invoke-static {v0, p0}, Laui;->c(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, p0}, Lavg;->c(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 

@@ -229,6 +229,18 @@
     .locals 1
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/content/SnapchatProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/content/SnapchatProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 69
     const/4 v0, 0x0
 
@@ -239,11 +251,11 @@
     .locals 9
 
     .prologue
+    const/4 v4, 0x0
+
     const/4 v5, 0x0
 
-    const/4 v7, 0x1
-
-    const/4 v6, 0x0
+    const/4 v3, 0x1
 
     .line 74
     sget-object v0, Lcom/snapchat/android/content/SnapchatProvider;->e:Landroid/content/UriMatcher;
@@ -253,35 +265,23 @@
     move-result v1
 
     .line 75
-    const-string v0, "SnapchatProvider"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "query "
 
-    const-string v3, "query "
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
+    const-string v2, " -> "
 
-    const-string v3, " -> "
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 78
     const-string v0, "limit"
@@ -326,34 +326,13 @@
 
     move-result-object v1
 
-    invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
     .line 88
-    const-string v2, "SnapchatProvider"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "CODE_CHAT_BY_CONVERSATION_ID "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v6, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 89
     sget-object v2, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->CONVERSATION_ID:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->getColumnName()Ljava/lang/String;
@@ -368,9 +347,9 @@
     invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteQueryBuilder;->appendWhere(Ljava/lang/CharSequence;)V
 
     .line 91
-    new-array v2, v7, [Ljava/lang/String;
+    new-array v2, v3, [Ljava/lang/String;
 
-    aput-object v1, v2, v6
+    aput-object v1, v2, v4
 
     invoke-static {p4, v2}, Lcom/snapchat/android/content/SnapchatProvider;->a([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
 
@@ -378,15 +357,6 @@
 
     .line 96
     :pswitch_2
-    const-string v1, "SnapchatProvider"
-
-    const-string v2, "CODE_CHAT_ALL"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 97
     const-string v1, "Chat"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->setTables(Ljava/lang/String;)V
@@ -450,21 +420,12 @@
 
     .line 103
     :pswitch_3
-    const-string v1, "SnapchatProvider"
-
-    const-string v2, "CODE_HTTP_METRICS_ALL"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 104
     const-string v1, "HttpMetrics"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->setTables(Ljava/lang/String;)V
 
     .line 105
-    sget-object v1, Laaq;->b:Ljava/util/HashMap;
+    sget-object v1, Labp;->b:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->setProjectionMap(Ljava/util/Map;)V
 
@@ -508,21 +469,12 @@
 
     .line 115
     :pswitch_4
-    const-string v1, "SnapchatProvider"
-
-    const-string v2, "CODE_VERIFIED_DEVICE_ALL"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 116
     const-string v1, "VerifiedDeviceTable"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->setTables(Ljava/lang/String;)V
 
     .line 117
-    sget-object v1, Labf;->a:Ljava/util/HashMap;
+    sget-object v1, Lacf;->a:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->setProjectionMap(Ljava/util/Map;)V
 
@@ -562,19 +514,10 @@
 
     move-object v4, p4
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 127
     :pswitch_5
-    const-string v1, "SnapchatProvider"
-
-    const-string v2, "CODE_DISCOVER_PUBLISHER_EDITION_ALL"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 128
     const-string v1, "PublisherAndEdition"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->setTables(Ljava/lang/String;)V
@@ -620,34 +563,13 @@
 
     move-result-object v1
 
-    invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
     .line 138
-    const-string v2, "SnapchatProvider"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "CODE_DISCOVER_DSNAPS_BY_EDITION_ID "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v6, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 139
     sget-object v2, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable$DSnapPageSchema;->EDITION_ID:Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable$DSnapPageSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable$DSnapPageSchema;->getColumnName()Ljava/lang/String;
@@ -662,9 +584,9 @@
     invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteQueryBuilder;->appendWhere(Ljava/lang/CharSequence;)V
 
     .line 141
-    new-array v2, v7, [Ljava/lang/String;
+    new-array v2, v3, [Ljava/lang/String;
 
-    aput-object v1, v2, v6
+    aput-object v1, v2, v4
 
     invoke-static {p4, v2}, Lcom/snapchat/android/content/SnapchatProvider;->a([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
 
@@ -712,15 +634,6 @@
 
     .line 153
     :pswitch_7
-    const-string v1, "SnapchatProvider"
-
-    const-string v2, "CODE_DISCOVER_DSNAPS_ALL"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 155
     const-string v1, "DSnapPage"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->setTables(Ljava/lang/String;)V

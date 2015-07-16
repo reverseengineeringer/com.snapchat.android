@@ -26,7 +26,7 @@
 .method protected addOrRetrieveMixerTrack(Landroid/media/MediaFormat;)I
     .locals 2
     .param p1    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

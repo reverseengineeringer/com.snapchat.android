@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.signup;
 
-import ajx;
+import akr;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.widget.EditText;
-import aol;
+import aph;
 import java.util.Set;
 
 final class PickUsernameFragment$2
@@ -18,16 +18,16 @@ final class PickUsernameFragment$2
   {
     boolean bool = true;
     Set localSet;
-    aol localaol;
+    aph localaph;
     FragmentActivity localFragmentActivity;
     String str1;
     String str2;
     if ((PickUsernameFragment.b(a) != null) && ((what == 1) || (what == 2)))
     {
       localSet = PickUsernameFragment.a(a);
-      localaol = PickUsernameFragment.d(a);
+      localaph = PickUsernameFragment.d(a);
       localFragmentActivity = PickUsernameFragment.b(a);
-      str1 = ajx.G();
+      str1 = akr.G();
       str2 = PickUsernameFragment.c(a).getText().toString();
       if (what != 1) {
         break label155;
@@ -35,12 +35,12 @@ final class PickUsernameFragment$2
     }
     for (;;)
     {
-      paramMessage = localaol.b(localFragmentActivity);
+      paramMessage = localaph.b(localFragmentActivity);
       paramMessage.putExtra("op_code", 1020);
       paramMessage.putExtra("email", str1);
       paramMessage.putExtra("requested_username", str2);
       paramMessage.putExtra("refresh_suggestions", bool);
-      localSet.add(Integer.valueOf(localaol.a(localFragmentActivity, paramMessage)));
+      localSet.add(Integer.valueOf(localaph.a(localFragmentActivity, paramMessage)));
       a.a(PickUsernameFragment.UsernameState.IN_PROGRESS);
       return;
       label155:

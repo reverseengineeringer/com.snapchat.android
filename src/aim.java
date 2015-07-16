@@ -1,182 +1,103 @@
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
-import android.graphics.Bitmap;
-import com.snapchat.android.model.MediaMailingMetadata;
-import com.snapchat.android.model.Mediabryo;
-import com.snapchat.android.model.Mediabryo.a;
-import com.snapchat.android.ui.swipefilters.FilterPageType;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.location.LocationManager;
+import android.preference.PreferenceManager;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.database.SharedPreferenceKey;
+import com.squareup.otto.Bus;
 
-public abstract class aim
-  extends Mediabryo
+public final class aim
 {
-  public oi mBaseFilter;
-  public apo mCaptionAnalyticData;
-  public String mCaptionStyleDescription;
-  public String mCaptionText;
-  public Bitmap mCompositeImageBitmap;
-  public int mGeofilterImpressions;
-  public final nc mGeofilterSwipeMetaData;
-  public boolean mHasDrawing;
-  public oi mStackedFilter;
-  public int mSwipeFilterNumDoubleSwipes;
-  public int mSwipeFilterNumSingleSwipes;
-  public double mViewTimeSec;
-  private final cn mViewTimeStopWatch;
+  private final Context a;
+  private final LocationManager b;
   
-  protected aim(aim.a<?> parama)
+  public aim()
   {
-    super(parama);
-    mCaptionText = mCaptionText;
-    mHasDrawing = mHasDrawing;
-    mSwipeFilterNumDoubleSwipes = mSwipeFilterNumDoubleSwipes;
-    mSwipeFilterNumSingleSwipes = mSwipeFilterNumSingleSwipes;
-    mGeofilterImpressions = mGeofilterImpressions;
-    mGeofilterSwipeMetaData = mGeofilterSwipeMetaData;
-    mCaptionStyleDescription = mCaptionStyleDescription;
-    mCaptionAnalyticData = mCaptionAnalyticData;
-    mCompositeImageBitmap = mCompositeImageBitmap;
-    mBaseFilter = mBaseFilter;
-    mStackedFilter = mStackedFilter;
-    mViewTimeSec = 0.0D;
-    mViewTimeStopWatch = mViewTimeStopWatch;
+    this(SnapchatApplication.b());
   }
   
-  private static boolean a(@cgc oi paramoi)
+  private aim(Context paramContext)
   {
-    return (paramoi != null) && (c == FilterPageType.GEOFILTER);
+    this(paramContext, (LocationManager)paramContext.getSystemService("location"));
   }
   
-  public final int a(@cgb Context paramContext)
+  private aim(Context paramContext, LocationManager paramLocationManager)
   {
-    if (mIsChatMedia) {
-      return 3;
+    a = paramContext;
+    b = paramLocationManager;
+  }
+  
+  public static void a(boolean paramBoolean)
+  {
+    akr.j(paramBoolean);
+    bbo.a().a(new bci());
+  }
+  
+  public final AlertDialog a(@chc final Context paramContext, final aim.a parama)
+  {
+    final SharedPreferences localSharedPreferences = PreferenceManager.getDefaultSharedPreferences(paramContext);
+    final akr localakr = new akr();
+    AlertDialog.Builder localBuilder = new AlertDialog.Builder(paramContext);
+    localBuilder.setTitle(2131493217);
+    if (akr.bo()) {
+      localBuilder.setMessage(2131493540);
     }
-    return super.a(paramContext);
-  }
-  
-  public abstract aim a();
-  
-  public void a(@cgc Bitmap paramBitmap)
-  {
-    mCompositeImageBitmap = paramBitmap;
-  }
-  
-  public final void b()
-  {
-    if (mViewTimeStopWatch.a) {
-      mViewTimeStopWatch.b();
-    }
-    mViewTimeStopWatch.a();
-  }
-  
-  public final void c()
-  {
-    if (mViewTimeStopWatch.a)
+    for (;;)
     {
-      mViewTimeStopWatch.b();
-      mViewTimeSec += mViewTimeStopWatch.a(TimeUnit.MILLISECONDS) * 1.0D / 1000.0D;
-    }
-    Iterator localIterator = mGeofilterSwipeMetaData.mData.values().iterator();
-    while (localIterator.hasNext()) {
-      ((nd)localIterator.next()).a();
+      localBuilder.setCancelable(false);
+      localBuilder.setPositiveButton(2131493269, new DialogInterface.OnClickListener()
+      {
+        public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+        {
+          paramAnonymousDialogInterface = localSharedPreferences.edit();
+          paramAnonymousDialogInterface.putBoolean(SharedPreferenceKey.ALLOWED_GPS.getKey(), true);
+          paramAnonymousDialogInterface.apply();
+          aim.a(true);
+          akr.i(false);
+          if (!akr.bp())
+          {
+            paramAnonymousDialogInterface = new Intent("android.settings.LOCATION_SOURCE_SETTINGS");
+            paramAnonymousDialogInterface.addFlags(268435456);
+            paramContext.startActivity(paramAnonymousDialogInterface);
+          }
+          if (parama != null) {
+            parama.a(true);
+          }
+        }
+      });
+      localBuilder.setNegativeButton(2131493144, new DialogInterface.OnClickListener()
+      {
+        public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+        {
+          if (parama != null) {
+            parama.a(false);
+          }
+        }
+      });
+      return localBuilder.create();
+      localBuilder.setMessage(2131493215);
     }
   }
   
-  public final boolean d()
+  public final boolean a()
   {
-    return (a(mBaseFilter)) || (a(mStackedFilter));
+    return b.isProviderEnabled("gps");
   }
   
-  @cgc
-  public final String e()
+  public final boolean b()
   {
-    if (a(mBaseFilter)) {
-      return mBaseFilter.b;
-    }
-    return mStackedFilter.b;
+    return b.isProviderEnabled("network");
   }
   
-  public final void f()
+  public static abstract interface a
   {
-    Mediabryo.a(new Bitmap[] { mCompositeImageBitmap });
-    mCompositeImageBitmap = null;
-  }
-  
-  public static abstract class a<T extends a<T>>
-    extends Mediabryo.a<T>
-  {
-    oi mBaseFilter;
-    apo mCaptionAnalyticData;
-    String mCaptionStyleDescription;
-    public String mCaptionText;
-    Bitmap mCompositeImageBitmap;
-    int mGeofilterImpressions;
-    nc mGeofilterSwipeMetaData;
-    boolean mHasDrawing;
-    oi mStackedFilter;
-    int mSwipeFilterNumDoubleSwipes;
-    int mSwipeFilterNumSingleSwipes;
-    cn mViewTimeStopWatch;
-    
-    public a()
-    {
-      mClientId = (ajx.l() + "~" + UUID.randomUUID().toString()).toUpperCase(Locale.US);
-      mViewTimeStopWatch = new cn();
-    }
-    
-    public final T a(aim paramaim)
-    {
-      mClientId = Mediabryo.a(paramaim);
-      mTime = Mediabryo.b(paramaim);
-      mVideoUri = Mediabryo.c(paramaim);
-      mOverlayBitmap = Mediabryo.d(paramaim);
-      mRawImageBitmap = Mediabryo.e(paramaim);
-      mOverlayPath = Mediabryo.f(paramaim);
-      mPreviewConfiguration = Mediabryo.g(paramaim);
-      mSnapType = Mediabryo.h(paramaim);
-      mIsChatMedia = Mediabryo.i(paramaim);
-      mIsReply = Mediabryo.j(paramaim);
-      mIsFrontFacingSnap = Mediabryo.k(paramaim);
-      mIsFlashOn = Mediabryo.l(paramaim);
-      mIsZipUpload = Mediabryo.m(paramaim);
-      mSnapOrientation = Mediabryo.n(paramaim);
-      mMediaExtras = Mediabryo.o(paramaim);
-      mMediaMailingMetadata = Mediabryo.p(paramaim).a();
-      mTimerValueOrDuration = Mediabryo.q(paramaim);
-      mShouldEnableSmartFilters = Mediabryo.r(paramaim);
-      mShouldEnableVisualFilters = Mediabryo.s(paramaim);
-      mCaptionText = aim.a(paramaim);
-      mHasDrawing = aim.b(paramaim);
-      mSwipeFilterNumSingleSwipes = aim.c(paramaim);
-      mSwipeFilterNumDoubleSwipes = aim.d(paramaim);
-      mGeofilterImpressions = aim.e(paramaim);
-      mGeofilterSwipeMetaData = aim.f(paramaim);
-      mCaptionStyleDescription = aim.g(paramaim);
-      mCaptionAnalyticData = aim.h(paramaim);
-      mCompositeImageBitmap = aim.i(paramaim);
-      mBaseFilter = aim.j(paramaim);
-      mStackedFilter = aim.k(paramaim);
-      mViewTimeStopWatch = aim.l(paramaim);
-      return this;
-    }
-    
-    protected final void a()
-    {
-      super.a();
-      if (mGeofilterSwipeMetaData == null) {
-        mGeofilterSwipeMetaData = new nc();
-      }
-    }
-    
-    public aim b()
-    {
-      return null;
-    }
+    public abstract void a(boolean paramBoolean);
   }
 }
 

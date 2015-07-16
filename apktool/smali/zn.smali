@@ -2,96 +2,157 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lzm;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic a:Z
+
 
 # instance fields
-.field private final a:Lcom/squareup/otto/Bus;
-
-.field private final b:Latx;
+.field private final b:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyw;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 23
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 8
+    const-class v0, Lzn;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    new-instance v1, Latx;
+    move-result v0
 
-    invoke-direct {v1}, Latx;-><init>()V
+    if-nez v0, :cond_0
 
-    invoke-direct {p0, v0, v1}, Lzn;-><init>(Lcom/squareup/otto/Bus;Latx;)V
+    const/4 v0, 0x1
 
-    .line 24
+    :goto_0
+    sput-boolean v0, Lzn;->a:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyw;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 12
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 13
+    sget-boolean v0, Lzn;->a:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 14
+    :cond_0
+    iput-object p1, p0, Lzn;->b:Ljavax/inject/Provider;
+
+    .line 15
     return-void
 .end method
 
-.method private constructor <init>(Lcom/squareup/otto/Bus;Latx;)V
-    .locals 0
+.method public static a(Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyw;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lzm;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
     .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lzn;
 
-    .line 27
-    iput-object p1, p0, Lzn;->a:Lcom/squareup/otto/Bus;
+    invoke-direct {v0, p0}, Lzn;-><init>(Ljavax/inject/Provider;)V
 
-    .line 28
-    iput-object p2, p0, Lzn;->b:Latx;
-
-    .line 29
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 7
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
     .prologue
-    const/4 v5, 0x1
+    .line 8
+    check-cast p1, Lzm;
 
-    const/4 v4, 0x0
+    if-nez p1, :cond_0
 
-    .line 36
-    new-array v0, v4, [Ljava/lang/Object;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-static {p1, v0}, Latx;->a(I[Ljava/lang/Object;)Ljava/lang/String;
+    const-string v1, "Cannot inject members into a null reference"
 
-    move-result-object v2
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    .line 37
-    const-string v0, "TutorialToolTipGenerator"
+    throw v0
 
-    const-string v1, "Showing tutorial tool tip: %s"
+    :cond_0
+    iget-object v0, p0, Lzn;->b:Ljavax/inject/Provider;
 
-    new-array v3, v5, [Ljava/lang/Object;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    aput-object v2, v3, v4
+    move-result-object v0
 
-    invoke-static {v0, v1, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    check-cast v0, Lyw;
 
-    .line 39
-    new-instance v0, Lbbg;
+    iput-object v0, p1, Lzm;->c:Lyw;
 
-    const/4 v1, 0x0
-
-    const/high16 v3, -0x4c000000
-
-    const/4 v4, -0x1
-
-    const-string v6, "TutorialToolTipGenerator"
-
-    invoke-direct/range {v0 .. v6}, Lbbg;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;IIZLjava/lang/String;)V
-
-    .line 42
-    iget-object v1, p0, Lzn;->a:Lcom/squareup/otto/Bus;
-
-    invoke-virtual {v1, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 43
     return-void
 .end method

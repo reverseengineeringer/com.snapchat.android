@@ -1,97 +1,32 @@
-import android.os.SystemClock;
-import android.text.TextUtils;
+import android.graphics.Bitmap;
+import com.snapchat.android.SnapchatApplication;
 
-public class ajc
-  implements agk
+public final class ajc
+  extends ajb<Bitmap>
 {
-  protected static final long LOCATION_CACHE_LIFETIME_MILLIS = 10800000L;
-  private final bgk mClock;
-  @cgc
-  public String mCustomDescription;
-  @cgc
-  public String mCustomTitle;
-  public String mDisplayName;
-  public String mFriendName;
-  public aiu mGeofence;
-  public boolean mIsLocalStory;
-  private boolean mIsWhitelisted;
-  String mStoryGroupDisplayName;
-  public String mStoryId;
-  private long mTimeLeft;
-  long mTimestamp;
-  public String mVenue;
+  private final awn b;
   
   public ajc()
   {
-    this(new bgk());
+    this(axo.GEOFILTER_CACHE, new awn(SnapchatApplication.b()), alw.a());
   }
   
-  private ajc(bgk parambgk)
+  private ajc(@chc axn paramaxn, @chc awn paramawn, @chc alw paramalw)
   {
-    mClock = parambgk;
+    super(paramalw, paramaxn);
+    b = ((awn)co.a(paramawn));
   }
   
-  public ajc(bin parambin)
+  @cbr
+  public final void b(@chc String paramString, @chc ajf.a parama)
   {
-    if (parambin != null)
+    
+    if ((a.d(paramString)) && (a.a(paramString) != null))
     {
-      mStoryId = parambin.a();
-      mDisplayName = parambin.b();
-      if (parambin.c() != null) {
-        mGeofence = new aiu(parambin.c());
-      }
-      mStoryGroupDisplayName = parambin.d();
-      mVenue = parambin.e();
-      mFriendName = parambin.f();
-      mIsLocalStory = aud.a(parambin.g());
-      mIsWhitelisted = aud.a(parambin.h());
-      mTimeLeft = aud.a(parambin.i());
+      parama.a();
+      return;
     }
-    mClock = new bgk();
-  }
-  
-  public ajc(String paramString1, String paramString2)
-  {
-    mStoryId = paramString1;
-    mDisplayName = paramString2;
-    mGeofence = null;
-    mVenue = null;
-    mClock = new bgk();
-  }
-  
-  public boolean b()
-  {
-    if ((mIsWhitelisted) && (mTimeLeft > 0L)) {
-      if (SystemClock.elapsedRealtime() - mTimestamp <= mTimeLeft) {}
-    }
-    while (SystemClock.elapsedRealtime() - mTimestamp > 10800000L)
-    {
-      return true;
-      return false;
-    }
-    return false;
-  }
-  
-  public final String d()
-  {
-    return mDisplayName;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if (this == paramObject) {
-      return true;
-    }
-    if (!(paramObject instanceof ajc)) {
-      return false;
-    }
-    paramObject = (ajc)paramObject;
-    return TextUtils.equals(mStoryId, mStoryId);
-  }
-  
-  public int hashCode()
-  {
-    return mStoryId.hashCode() + 629;
+    a(paramString, parama);
   }
 }
 

@@ -4,25 +4,30 @@
 
 
 # instance fields
-.field public event:Landroid/view/KeyEvent;
+.field public mConversation:Lcom/snapchat/android/model/chat/ChatConversation;
 
-.field public keyCode:I
+.field public mCount:J
+
+.field public mCreatedAt:J
 
 
 # direct methods
-.method public constructor <init>(ILandroid/view/KeyEvent;)V
+.method public constructor <init>(Lcom/snapchat/android/model/chat/ChatConversation;JJ)V
     .locals 0
 
     .prologue
-    .line 9
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10
-    iput p1, p0, Lbbv;->keyCode:I
-
-    .line 11
-    iput-object p2, p0, Lbbv;->event:Landroid/view/KeyEvent;
-
     .line 12
+    iput-object p1, p0, Lbbv;->mConversation:Lcom/snapchat/android/model/chat/ChatConversation;
+
+    .line 13
+    iput-wide p4, p0, Lbbv;->mCount:J
+
+    .line 14
+    iput-wide p2, p0, Lbbv;->mCreatedAt:J
+
+    .line 15
     return-void
 .end method

@@ -4,12 +4,12 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import java.util.List;
-import qv;
-import qv.a;
-import rv;
+import rl;
+import rl.a;
+import sl;
 
 final class CashSettingsFragment$5$1
   implements DialogInterface.OnClickListener
@@ -21,21 +21,21 @@ final class CashSettingsFragment$5$1
     CashSettingsFragment.a(a.a).setVisibility(0);
     CashSettingsFragment.b(a.a).setVisibility(8);
     paramDialogInterface = CashSettingsFragment.l();
-    mListener = new qv.a()
+    mListener = new rl.a()
     {
-      public final void a(@cgb qv paramAnonymousqv) {}
+      public final void a(@chc rl paramAnonymousrl) {}
       
-      public final void a(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+      public final void a(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean)
       {
         CashSettingsFragment.a(a.a, null);
       }
       
-      public final void b(@cgb qv paramAnonymousqv)
+      public final void b(@chc rl paramAnonymousrl)
       {
         CashSettingsFragment.a(a.a, Integer.valueOf(2131492954));
       }
       
-      public final void b(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+      public final void b(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean)
       {
         CashSettingsFragment.a(a.a, Integer.valueOf(2131492954));
       }

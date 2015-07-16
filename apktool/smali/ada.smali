@@ -1,248 +1,724 @@
 .class public final Lada;
-.super Ljava/lang/Object;
+.super Laos;
 .source "SourceFile"
 
 
 # instance fields
-.field final a:Lacw;
+.field private final e:Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;
 
-.field final b:Ladf;
+.field private final f:Lcom/squareup/otto/Bus;
 
-.field final c:Ladj;
+.field private final g:Laef;
 
-.field d:Landroid/database/Cursor;
+.field private final h:Landroid/content/res/Resources;
 
-.field final e:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/discover/model/ChannelPage;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final i:Lcom/snapchat/android/util/debug/ReleaseManager;
 
-.field final f:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final j:Lakr;
 
-.field g:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/discover/model/ChannelPage;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final k:Lcom/snapchat/android/discover/model/ChannelPage;
 
-.field final h:Ljava/util/Comparator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Comparator",
-            "<",
-            "Lacx;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final l:Lcom/snapchat/android/discover/model/DSnapPage;
 
-.field final i:Ljava/util/Comparator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Comparator",
-            "<",
-            "Lcom/snapchat/android/discover/model/ChannelPage;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final m:Lcom/snapchat/android/discover/model/DSnapPanel;
 
-.field final j:Ljava/util/Comparator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Comparator",
-            "<",
-            "Lcom/snapchat/android/discover/model/ChannelPage;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final k:Lbgk;
+.field private final n:Lacr;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method private constructor <init>(Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;Laot;Laef;Lcom/squareup/otto/Bus;Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;Landroid/content/res/Resources;Lcom/snapchat/android/util/debug/ReleaseManager;Lakr;Lacr;)V
+    .locals 8
 
     .prologue
-    .line 56
-    invoke-static {}, Lacw;->a()Lacw;
-
-    move-result-object v0
-
-    invoke-static {}, Ladf;->a()Ladf;
-
-    move-result-object v1
-
-    invoke-static {}, Ladj;->a()Ladj;
-
-    move-result-object v2
-
-    new-instance v3, Lbgk;
-
-    invoke-direct {v3}, Lbgk;-><init>()V
-
-    invoke-direct {p0, v0, v1, v2, v3}, Lada;-><init>(Lacw;Ladf;Ladj;Lbgk;)V
-
     .line 58
+    const-string v3, ""
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    const-wide/16 v6, -0x1
+
+    move-object v2, p0
+
+    invoke-direct/range {v2 .. v7}, Laos;-><init>(Ljava/lang/String;JJ)V
+
+    .line 59
+    iput-object p3, p0, Lada;->g:Laef;
+
+    .line 60
+    iput-object p1, p0, Lada;->e:Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;
+
+    .line 61
+    iput-object p4, p0, Lada;->f:Lcom/squareup/otto/Bus;
+
+    .line 62
+    iput-object p5, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    .line 63
+    iput-object p7, p0, Lada;->m:Lcom/snapchat/android/discover/model/DSnapPanel;
+
+    .line 64
+    iput-object p6, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    .line 65
+    invoke-virtual {p2, p0}, Laot;->a(Laos;)V
+
+    .line 66
+    move-object/from16 v0, p8
+
+    iput-object v0, p0, Lada;->h:Landroid/content/res/Resources;
+
+    .line 67
+    move-object/from16 v0, p9
+
+    iput-object v0, p0, Lada;->i:Lcom/snapchat/android/util/debug/ReleaseManager;
+
+    .line 68
+    move-object/from16 v0, p10
+
+    iput-object v0, p0, Lada;->j:Lakr;
+
+    .line 69
+    move-object/from16 v0, p11
+
+    iput-object v0, p0, Lada;->n:Lacr;
+
+    .line 70
     return-void
 .end method
 
-.method private constructor <init>(Lacw;Ladf;Ladj;Lbgk;)V
-    .locals 1
+.method public constructor <init>(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;Landroid/content/res/Resources;Lacr;)V
+    .locals 12
 
     .prologue
-    .line 64
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 47
+    new-instance v1, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;
 
-    .line 46
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-direct {v1}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;-><init>()V
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-static {}, Laot;->a()Laot;
 
-    iput-object v0, p0, Lada;->e:Ljava/util/List;
+    move-result-object v2
 
-    .line 49
-    new-instance v0, Ljava/util/HashSet;
+    invoke-static {}, Laef;->a()Laef;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    move-result-object v3
 
-    iput-object v0, p0, Lada;->f:Ljava/util/Set;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
-    .line 175
-    new-instance v0, Lada$1;
+    move-result-object v4
 
-    invoke-direct {v0, p0}, Lada$1;-><init>(Lada;)V
+    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->a()Lcom/snapchat/android/util/debug/ReleaseManager;
 
-    iput-object v0, p0, Lada;->h:Ljava/util/Comparator;
+    move-result-object v9
 
-    .line 194
-    new-instance v0, Lada$2;
+    invoke-static {}, Lakr;->a()Lakr;
 
-    invoke-direct {v0, p0}, Lada$2;-><init>(Lada;)V
+    move-result-object v10
 
-    iput-object v0, p0, Lada;->i:Ljava/util/Comparator;
+    move-object v0, p0
 
-    .line 213
-    new-instance v0, Lada$3;
+    move-object v5, p1
 
-    invoke-direct {v0, p0}, Lada$3;-><init>(Lada;)V
+    move-object v6, p2
 
-    iput-object v0, p0, Lada;->j:Ljava/util/Comparator;
+    move-object v7, p3
 
-    .line 65
-    iput-object p1, p0, Lada;->a:Lacw;
+    move-object/from16 v8, p4
 
-    .line 66
-    iput-object p2, p0, Lada;->b:Ladf;
+    move-object/from16 v11, p5
 
-    .line 67
-    iput-object p3, p0, Lada;->c:Ladj;
+    invoke-direct/range {v0 .. v11}, Lada;-><init>(Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;Laot;Laef;Lcom/squareup/otto/Bus;Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;Landroid/content/res/Resources;Lcom/snapchat/android/util/debug/ReleaseManager;Lakr;Lacr;)V
 
-    .line 68
-    iput-object p4, p0, Lada;->k:Lbgk;
-
-    .line 69
+    .line 50
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Ljava/util/List;Ljava/util/Comparator;)[I
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/discover/model/ChannelPage;",
-            ">;",
-            "Ljava/util/Comparator",
-            "<",
-            "Lcom/snapchat/android/discover/model/ChannelPage;",
-            ">;)[I"
-        }
-    .end annotation
+.method public final a()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 162
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    iput-object v0, p0, Lada;->g:Ljava/util/List;
-
-    .line 163
-    iget-object v0, p0, Lada;->g:Ljava/util/List;
-
-    invoke-static {v0, p2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    .line 165
-    iget-object v0, p0, Lada;->g:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    new-array v2, v0, [I
-
-    .line 167
+    .line 74
     const/4 v0, 0x0
 
-    move v1, v0
+    return-object v0
+.end method
 
+.method public final a(J)V
+    .locals 12
+
+    .prologue
+    .line 79
+    iget-object v0, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    if-nez v0, :cond_0
+
+    .line 134
     :goto_0
-    iget-object v0, p0, Lada;->g:Ljava/util/List;
+    return-void
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    .line 85
+    :cond_0
+    iget-object v0, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    move-result v0
+    if-eqz v0, :cond_1
 
-    if-ge v1, v0, :cond_0
+    iget-object v0, p0, Lada;->m:Lcom/snapchat/android/discover/model/DSnapPanel;
 
-    .line 168
-    iget-object v0, p0, Lada;->g:Ljava/util/List;
+    if-nez v0, :cond_5
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 86
+    :cond_1
+    const-string v0, "splash"
+
+    .line 87
+    iget-object v1, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    iget-object v1, v1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    iget-object v2, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    iget-object v2, v2, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
+
+    iget-object v3, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    invoke-virtual {v3}, Lcom/snapchat/android/discover/model/ChannelPage;->d()Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lada;->g:Laef;
+
+    iget-object v5, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    iget-object v5, v5, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Laef;->d(Ljava/lang/String;)I
+
+    move-result v4
+
+    iget-object v5, p0, Lada;->n:Lacr;
+
+    iget-object v5, v5, Lacr;->c:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+
+    invoke-virtual {v5}, Lcom/snapchat/android/discover/model/EditionOpenOrigin;->getSourceType()Llv;
+
+    move-result-object v5
+
+    new-instance v6, Lhr;
+
+    invoke-direct {v6}, Lhr;-><init>()V
+
+    iput-object v1, v6, Lhr;->publisherId:Ljava/lang/String;
+
+    iput-object v2, v6, Lhr;->editionId:Ljava/lang/String;
+
+    iput-object v3, v6, Lhr;->splashId:Ljava/lang/String;
+
+    iput-object v5, v6, Lhr;->source:Llv;
+
+    if-gez v4, :cond_4
+
+    const/4 v1, 0x1
+
+    :goto_1
+    if-nez v1, :cond_2
+
+    int-to-long v2, v4
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v6, Lhr;->snapIndexCount:Ljava/lang/Long;
+
+    const-wide/16 v2, 0x0
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v6, Lhr;->snapIndexPos:Ljava/lang/Long;
+
+    :cond_2
+    invoke-static {v6}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    .line 123
+    :goto_2
+    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->k()Z
+
+    invoke-static {}, Lakr;->aO()Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    iget-object v1, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    if-eqz v1, :cond_3
+
+    iget-object v1, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-boolean v1, v1, Lcom/snapchat/android/discover/model/DSnapPage;->o:Z
+
+    if-eqz v1, :cond_3
+
+    .line 125
+    new-instance v1, Lbcg;
+
+    iget-object v2, p0, Lada;->h:Landroid/content/res/Resources;
+
+    const v3, 0x7f0c010d
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    iget v3, v3, Lcom/snapchat/android/discover/model/ChannelPage;->h:I
+
+    iget-object v4, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    iget v4, v4, Lcom/snapchat/android/discover/model/ChannelPage;->i:I
+
+    iget-object v5, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    invoke-virtual {v5}, Lcom/snapchat/android/discover/model/DSnapPage;->i()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v1, v2, v3, v4, v5}, Lbcg;-><init>(Ljava/lang/CharSequence;IILjava/lang/String;)V
+
+    .line 130
+    iget-object v2, p0, Lada;->f:Lcom/squareup/otto/Bus;
+
+    invoke-virtual {v2, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 133
+    :cond_3
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object v0, v1, v2
+
+    goto/16 :goto_0
+
+    .line 87
+    :cond_4
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    .line 93
+    :cond_5
+    iget-object v0, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/DSnapPage;->e()Lcom/snapchat/android/discover/model/DSnapPanel;
 
     move-result-object v0
 
-    check-cast v0, Lcom/snapchat/android/discover/model/ChannelPage;
+    iget-object v1, p0, Lada;->m:Lcom/snapchat/android/discover/model/DSnapPanel;
 
-    iget v0, v0, Lcom/snapchat/android/discover/model/ChannelPage;->f:I
+    if-ne v0, v1, :cond_b
 
-    .line 169
-    aput v1, v2, v0
+    .line 94
+    const-string v0, "longform"
 
-    .line 167
-    add-int/lit8 v0, v1, 0x1
+    .line 95
+    iget-object v1, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
 
-    move v1, v0
+    iget-object v1, v1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
 
-    goto :goto_0
+    iget-object v2, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    .line 172
-    :cond_0
-    return-object v2
+    iget-object v2, v2, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+
+    iget-object v3, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v3, v3, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
+
+    iget-object v4, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v4, v4, Lcom/snapchat/android/discover/model/DSnapPage;->d:Ljava/lang/String;
+
+    iget-object v5, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v5, v5, Lcom/snapchat/android/discover/model/DSnapPage;->k:Ljava/lang/Integer;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    iget-object v6, p0, Lada;->m:Lcom/snapchat/android/discover/model/DSnapPanel;
+
+    iget-object v6, v6, Lcom/snapchat/android/discover/model/DSnapPanel;->g:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+
+    iget-object v7, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v7, v7, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    iget-object v8, p0, Lada;->g:Laef;
+
+    iget-object v9, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v9, v9, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+
+    invoke-virtual {v8, v9}, Laef;->d(Ljava/lang/String;)I
+
+    move-result v8
+
+    iget-object v9, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget v9, v9, Lcom/snapchat/android/discover/model/DSnapPage;->e:I
+
+    iget-object v10, p0, Lada;->g:Laef;
+
+    iget-object v11, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v11, v11, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+
+    invoke-virtual {v10, v11}, Laef;->e(Ljava/lang/String;)I
+
+    move-result v10
+
+    iget-object v11, p0, Lada;->n:Lacr;
+
+    iget-object v11, v11, Lacr;->c:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+
+    invoke-virtual {v11}, Lcom/snapchat/android/discover/model/EditionOpenOrigin;->getSourceType()Llv;
+
+    move-result-object v11
+
+    if-nez v5, :cond_8
+
+    new-instance v4, Lhf;
+
+    invoke-direct {v4}, Lhf;-><init>()V
+
+    iput-object v1, v4, Lhf;->publisherId:Ljava/lang/String;
+
+    iput-object v2, v4, Lhf;->editionId:Ljava/lang/String;
+
+    iput-object v3, v4, Lhf;->dsnapId:Ljava/lang/String;
+
+    invoke-static {v6}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->b(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
+
+    move-result-object v1
+
+    iput-object v1, v4, Lhf;->longformType:Lih;
+
+    iput-object v11, v4, Lhf;->source:Llv;
+
+    if-gez v8, :cond_7
+
+    const/4 v1, 0x1
+
+    :goto_3
+    if-nez v1, :cond_6
+
+    add-int/lit8 v1, v7, 0x1
+
+    int-to-long v2, v8
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    iput-object v2, v4, Lhf;->snapIndexCount:Ljava/lang/Long;
+
+    int-to-long v2, v1
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v4, Lhf;->snapIndexPos:Ljava/lang/Long;
+
+    :cond_6
+    invoke-static {v4}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    goto/16 :goto_2
+
+    :cond_7
+    const/4 v1, 0x0
+
+    goto :goto_3
+
+    :cond_8
+    new-instance v3, Lgt;
+
+    invoke-direct {v3}, Lgt;-><init>()V
+
+    iput-object v1, v3, Lgt;->publisherId:Ljava/lang/String;
+
+    iput-object v2, v3, Lgt;->editionId:Ljava/lang/String;
+
+    iput-object v4, v3, Lgt;->adsnapId:Ljava/lang/String;
+
+    invoke-static {v6}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->b(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lgt;->longformType:Lih;
+
+    iput-object v11, v3, Lgt;->source:Llv;
+
+    if-gez v8, :cond_a
+
+    const/4 v1, 0x1
+
+    :goto_4
+    if-nez v1, :cond_9
+
+    add-int/lit8 v1, v7, 0x1
+
+    int-to-long v4, v8
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    iput-object v2, v3, Lgt;->snapIndexCount:Ljava/lang/Long;
+
+    int-to-long v4, v1
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lgt;->snapIndexPos:Ljava/lang/Long;
+
+    int-to-long v4, v9
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lgt;->adIndexPos:Ljava/lang/Long;
+
+    int-to-long v4, v10
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lgt;->adIndexCount:Ljava/lang/Long;
+
+    :cond_9
+    invoke-static {v3}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    goto/16 :goto_2
+
+    :cond_a
+    const/4 v1, 0x0
+
+    goto :goto_4
+
+    .line 108
+    :cond_b
+    const-string v0, "top snap"
+
+    .line 109
+    iget-object v1, p0, Lada;->k:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    iget-object v1, v1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    iget-object v2, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v2, v2, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+
+    iget-object v3, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v3, v3, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
+
+    iget-object v4, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v4, v4, Lcom/snapchat/android/discover/model/DSnapPage;->d:Ljava/lang/String;
+
+    iget-object v5, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v5, v5, Lcom/snapchat/android/discover/model/DSnapPage;->k:Ljava/lang/Integer;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    iget-object v6, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v6, v6, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    iget-object v7, p0, Lada;->g:Laef;
+
+    iget-object v8, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v8, v8, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+
+    invoke-virtual {v7, v8}, Laef;->d(Ljava/lang/String;)I
+
+    move-result v7
+
+    iget-object v8, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget v8, v8, Lcom/snapchat/android/discover/model/DSnapPage;->e:I
+
+    iget-object v9, p0, Lada;->g:Laef;
+
+    iget-object v10, p0, Lada;->l:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    iget-object v10, v10, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+
+    invoke-virtual {v9, v10}, Laef;->e(Ljava/lang/String;)I
+
+    move-result v9
+
+    iget-object v10, p0, Lada;->m:Lcom/snapchat/android/discover/model/DSnapPanel;
+
+    iget-object v10, v10, Lcom/snapchat/android/discover/model/DSnapPanel;->g:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+
+    iget-object v11, p0, Lada;->n:Lacr;
+
+    iget-object v11, v11, Lacr;->c:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+
+    invoke-virtual {v11}, Lcom/snapchat/android/discover/model/EditionOpenOrigin;->getSourceType()Llv;
+
+    move-result-object v11
+
+    if-nez v5, :cond_e
+
+    new-instance v4, Lhk;
+
+    invoke-direct {v4}, Lhk;-><init>()V
+
+    iput-object v1, v4, Lhk;->publisherId:Ljava/lang/String;
+
+    iput-object v2, v4, Lhk;->editionId:Ljava/lang/String;
+
+    iput-object v3, v4, Lhk;->dsnapId:Ljava/lang/String;
+
+    invoke-static {v10}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
+
+    move-result-object v1
+
+    iput-object v1, v4, Lhk;->mediaType:Lih;
+
+    iput-object v11, v4, Lhk;->source:Llv;
+
+    if-gez v7, :cond_d
+
+    const/4 v1, 0x1
+
+    :goto_5
+    if-nez v1, :cond_c
+
+    add-int/lit8 v1, v6, 0x1
+
+    int-to-long v2, v7
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    iput-object v2, v4, Lhk;->snapIndexCount:Ljava/lang/Long;
+
+    int-to-long v2, v1
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v4, Lhk;->snapIndexPos:Ljava/lang/Long;
+
+    :cond_c
+    invoke-static {v4}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    goto/16 :goto_2
+
+    :cond_d
+    const/4 v1, 0x0
+
+    goto :goto_5
+
+    :cond_e
+    new-instance v3, Lgx;
+
+    invoke-direct {v3}, Lgx;-><init>()V
+
+    iput-object v1, v3, Lgx;->publisherId:Ljava/lang/String;
+
+    iput-object v2, v3, Lgx;->editionId:Ljava/lang/String;
+
+    iput-object v4, v3, Lgx;->adsnapId:Ljava/lang/String;
+
+    invoke-static {v10}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lgx;->mediaType:Lih;
+
+    iput-object v11, v3, Lgx;->source:Llv;
+
+    if-gez v7, :cond_10
+
+    const/4 v1, 0x1
+
+    :goto_6
+    if-nez v1, :cond_f
+
+    add-int/lit8 v1, v6, 0x1
+
+    int-to-long v4, v7
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    iput-object v2, v3, Lgx;->snapIndexCount:Ljava/lang/Long;
+
+    int-to-long v4, v1
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lgx;->snapIndexPos:Ljava/lang/Long;
+
+    int-to-long v4, v8
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lgx;->adIndexPos:Ljava/lang/Long;
+
+    int-to-long v4, v9
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lgx;->adIndexCount:Ljava/lang/Long;
+
+    :cond_f
+    invoke-static {v3}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    goto/16 :goto_2
+
+    :cond_10
+    const/4 v1, 0x0
+
+    goto :goto_6
 .end method

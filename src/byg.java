@@ -1,23 +1,6 @@
-public final class byg
-  implements bxg
+public abstract interface byg
 {
-  public final bxk a(bwz parambwz, String paramString)
-  {
-    try
-    {
-      parambwz = new Double(paramString);
-      return new bxk(new Double(Math.toDegrees(parambwz.doubleValue())).toString(), 0);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Invalid argument.", parambwz);
-    }
-  }
-  
-  public final String a()
-  {
-    return "toDegrees";
-  }
+  public abstract String a();
 }
 
 /* Location:

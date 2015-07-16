@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;
 
     const-string v1, "EXPIRE"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;->SKIP:Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;
 
-    .line 44
+    .line 45
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;
@@ -100,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -110,7 +110,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 45
     const-class v0, Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -126,7 +126,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 45
     sget-object v0, Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;->$VALUES:[Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;->clone()Ljava/lang/Object;

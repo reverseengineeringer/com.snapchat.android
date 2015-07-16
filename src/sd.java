@@ -1,65 +1,121 @@
-import android.text.TextUtils;
-import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.api2.cash.blockers.BlockerOrder;
+import com.snapchat.android.api2.cash.square.data.CardStatus;
+import com.snapchat.android.api2.cash.square.data.CashPayment;
+import com.snapchat.android.api2.cash.square.data.CashPayment.State;
+import com.snapchat.android.model.CashTransaction;
+import com.snapchat.android.model.CashTransaction.TransactionStatus;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import javax.inject.Inject;
 
 public final class sd
-  extends sh<sd.b>
+  extends rl
 {
-  final String mExpiration;
-  final String mPan;
-  private final String mPaymentId;
-  final String mPostalCode;
-  final String mSecurityCode;
+  private static final String TAG = "SQInitiatePaymentBlocker";
+  @Inject
+  protected yn mCashCardManager;
+  @Inject
+  protected qw mCashErrorReporter;
+  @Inject
+  protected td mSquareProvider;
   
-  public sd(@cgc String paramString1, @cgb String paramString2, @cgb String paramString3, @cgb String paramString4, @cgb String paramString5, @cgb sh.a parama)
+  public sd()
   {
-    super(parama);
-    mPan = paramString2;
-    mExpiration = paramString3;
-    mSecurityCode = paramString4;
-    mPostalCode = paramString5;
-    mPaymentId = paramString1;
-    a(sd.b.class, this);
+    SnapchatApplication.b().c().a(this);
   }
   
-  public sd(@cgb String paramString1, @cgb String paramString2, @cgb String paramString3, @cgb String paramString4, @cgb sh.a parama)
+  public final void a(@chc final CashTransaction paramCashTransaction)
   {
-    this(null, paramString1, paramString2, paramString3, paramString4, parama);
-  }
-  
-  public final Object b()
-  {
-    return new sd.a();
-  }
-  
-  public final String e()
-  {
-    if (!TextUtils.isEmpty(mPaymentId)) {
-      return "cash/payments/" + mPaymentId + "/card";
+    if (mCashCardManager.a() == null)
+    {
+      paramCashTransaction = new ArrayList();
+      paramCashTransaction.add(new rx());
+      b(paramCashTransaction, true);
+      return;
     }
-    return "cash/card";
+    new ss(paramCashTransaction, mCashCardManager.a(), new ta()
+    {
+      public final void a(int paramAnonymousInt)
+      {
+        List localList = td.a(sd.this, paramAnonymousInt);
+        if (localList != null)
+        {
+          sd.b(sd.this, localList);
+          return;
+        }
+        AnalyticsEvents.a("SQUARE_INITIATE_PAYMENT_FAILED", paramAnonymousInt);
+        qw.a(2131493290, new Object[0]);
+        sd.c(sd.this);
+      }
+      
+      public final void a(@chc CashPayment paramAnonymousCashPayment)
+      {
+        mState.name();
+        Object localObject = td.a(mState, mCancellationReason);
+        paramCashTransaction.a((CashTransaction.TransactionStatus)localObject);
+        if (mState == CashPayment.State.CANCELED)
+        {
+          td.a(mCancellationReason);
+          if (localObject == CashTransaction.TransactionStatus.SENDER_CANCELED)
+          {
+            sd.a(sd.this);
+            return;
+          }
+          sd.b(sd.this);
+          return;
+        }
+        tq localtq = mBlockers;
+        if (localtq != null)
+        {
+          localObject = localtq.b();
+          Iterator localIterator = ((List)localObject).iterator();
+          do
+          {
+            paramAnonymousCashPayment = (CashPayment)localObject;
+            if (!localIterator.hasNext()) {
+              break;
+            }
+            paramAnonymousCashPayment = (rl)localIterator.next();
+          } while (!(paramAnonymousCashPayment instanceof rz));
+          paramAnonymousCashPayment = aut.a(paramAnonymousCashPayment);
+          sd.a(sd.this, paramAnonymousCashPayment);
+          return;
+        }
+        paramAnonymousCashPayment = null;
+        if (paramAnonymousCashPayment != null)
+        {
+          localObject = paramAnonymousCashPayment.iterator();
+          do
+          {
+            if (!((Iterator)localObject).hasNext()) {
+              break;
+            }
+          } while (((rl)((Iterator)localObject).next()).d());
+        }
+        for (boolean bool = false;; bool = true)
+        {
+          sd.a(sd.this, paramAnonymousCashPayment, bool);
+          if (localtq == null) {
+            break;
+          }
+          paramAnonymousCashPayment = mCardBlocker;
+          if ((paramAnonymousCashPayment == null) || (mCardStatus != CardStatus.EXPIRED)) {
+            break;
+          }
+          AnalyticsEvents.m("CARD_EXPIRED");
+          qw.a(2131493286, new Object[0]);
+          return;
+        }
+      }
+    }).execute();
   }
   
-  @tx
-  final class a
+  public final BlockerOrder c()
   {
-    @SerializedName("expiration")
-    final String expiration = mExpiration;
-    @SerializedName("pan")
-    final String pan = mPan;
-    @SerializedName("postal_code")
-    final String postalCode = mPostalCode;
-    @SerializedName("security_code")
-    final String securityCode = mSecurityCode;
-    
-    a() {}
-  }
-  
-  public static class b
-    extends si
-  {
-    @SerializedName("card_token")
-    @cgc
-    public String cardToken;
+    return BlockerOrder.SQ_INITIATE_PAYMENT_BLOCKER;
   }
 }
 

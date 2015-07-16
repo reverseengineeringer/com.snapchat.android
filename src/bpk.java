@@ -1,102 +1,78 @@
 import android.graphics.Bitmap;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Looper;
-import android.os.Message;
+import android.graphics.drawable.Drawable;
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.WeakReference;
 
-public final class bpk
+abstract class bpk<T>
 {
-  public final HandlerThread a;
-  final bom b;
-  final Handler c;
-  long d;
-  long e;
-  long f;
-  long g;
-  long h;
-  long i;
-  long j;
-  long k;
-  int l;
-  int m;
-  int n;
+  final bqe a;
+  final bqh b;
+  final WeakReference<T> c;
+  final boolean d;
+  final int e;
+  final int f;
+  final int g;
+  final Drawable h;
+  final String i;
+  final Object j;
+  boolean k;
+  boolean l;
   
-  bpk(bom parambom)
+  bpk(bqe parambqe, T paramT, bqh parambqh, int paramInt1, int paramInt2, int paramInt3, Drawable paramDrawable, String paramString, Object paramObject, boolean paramBoolean)
   {
-    b = parambom;
-    a = new HandlerThread("Picasso-Stats", 10);
-    a.start();
-    bpo.a(a.getLooper());
-    c = new bpk.a(a.getLooper(), this);
-  }
-  
-  final void a()
-  {
-    c.sendEmptyMessage(0);
-  }
-  
-  final void a(Bitmap paramBitmap, int paramInt)
-  {
-    int i1 = bpo.a(paramBitmap);
-    c.sendMessage(c.obtainMessage(paramInt, i1, 0));
-  }
-  
-  static final class a
-    extends Handler
-  {
-    private final bpk a;
-    
-    public a(Looper paramLooper, bpk parambpk)
+    a = parambqe;
+    b = parambqh;
+    if (paramT == null)
     {
-      super();
-      a = parambpk;
-    }
-    
-    public final void handleMessage(final Message paramMessage)
-    {
-      long l;
-      switch (what)
-      {
-      default: 
-        bpd.a.post(new Runnable()
-        {
-          public final void run()
-          {
-            throw new AssertionError("Unhandled stats message." + paramMessagewhat);
-          }
-        });
-        return;
-      case 0: 
-        paramMessage = a;
-        d += 1L;
-        return;
-      case 1: 
-        paramMessage = a;
-        e += 1L;
-        return;
-      case 2: 
-        localbpk = a;
-        l = arg1;
-        m += 1;
-        g = (l + g);
-        i = m;
-        j = (g / i);
-        return;
-      case 3: 
-        localbpk = a;
-        l = arg1;
-        n += 1;
-        h = (l + h);
-        i = m;
-        k = (h / i);
-        return;
+      parambqe = null;
+      c = parambqe;
+      e = paramInt1;
+      f = paramInt2;
+      d = paramBoolean;
+      g = paramInt3;
+      h = paramDrawable;
+      i = paramString;
+      if (paramObject == null) {
+        break label90;
       }
-      bpk localbpk = a;
-      paramMessage = (Long)obj;
-      l += 1;
-      f += paramMessage.longValue();
-      int i = l;
-      i = (f / i);
+    }
+    for (;;)
+    {
+      j = paramObject;
+      return;
+      parambqe = new bpk.a(this, paramT, l);
+      break;
+      label90:
+      paramObject = this;
+    }
+  }
+  
+  abstract void a();
+  
+  abstract void a(Bitmap paramBitmap, bqe.d paramd);
+  
+  void b()
+  {
+    l = true;
+  }
+  
+  T c()
+  {
+    if (c == null) {
+      return null;
+    }
+    return (T)c.get();
+  }
+  
+  static final class a<M>
+    extends WeakReference<M>
+  {
+    final bpk a;
+    
+    public a(bpk parambpk, M paramM, ReferenceQueue<? super M> paramReferenceQueue)
+    {
+      super(paramReferenceQueue);
+      a = parambpk;
     }
   }
 }

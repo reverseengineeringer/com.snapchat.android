@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 2475
+    .line 2573
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$16;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,30 +44,30 @@
 
     const/4 v4, 0x0
 
-    .line 2478
+    .line 2576
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$16;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$16;->a:Lcom/snapchat/android/ui/CashSwiperView$SwipeActivationMethod;
 
     invoke-static {v0}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Lcom/snapchat/android/ui/CashSwiperView$SwipeActivationMethod;)V
 
-    .line 2479
+    .line 2577
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$16;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$16;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->p()V
 
-    .line 2480
+    .line 2578
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$16;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$16;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->b(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbgr;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->b(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbhr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -126,10 +126,10 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/CashSwiperView;->a(I)V
 
-    .line 2481
+    .line 2579
     return-void
 
-    .line 2480
+    .line 2578
     :cond_0
     new-instance v1, Landroid/media/MediaPlayer;
 

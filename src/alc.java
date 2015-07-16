@@ -1,111 +1,209 @@
-import android.os.Bundle;
-import android.os.SystemClock;
+import android.net.Uri;
 import android.text.TextUtils;
-import com.snapchat.android.networkmanager.DownloadPriority;
-import java.util.Set;
+import com.snapchat.android.model.Mediabryo;
+import com.snapchat.android.model.chat.ChatMedia;
+import com.snapchat.android.model.chat.ChatMedia.MediaType;
+import com.snapchat.android.model.chat.ChatMedia.a;
 
 public final class alc
+  extends ChatMedia
 {
-  public final boolean a;
-  public final DownloadPriority b;
-  public final DownloadPriority c;
-  public final String d;
-  public final String e;
-  public final String f;
-  public final ala g;
-  public final String h;
-  public final Object i;
-  public final long j;
-  public final ali k;
+  public static final String TYPE = "dsnap";
+  public String mAdId;
+  public int mCaption;
+  public String mDSnapId;
+  public int mDrawing;
+  public String mEditionId;
+  public final Object mExtractionLock = new Object();
+  public String mFilterInfo;
+  public String mFilterVisual;
+  public boolean mIsExtracted = false;
+  public boolean mLinkToLongform;
+  private String mOverlayPath;
+  public String mPublisherFormalName;
+  public String mPublisherInternationalName;
+  public String mPublisherName;
+  private String mUri;
+  public float mVideoHeight;
+  private Uri mVideoUri;
+  public float mVideoWidth;
+  private float mViewportHeight;
+  private float mViewportWidth;
+  private float mViewportX;
+  private float mViewportY;
   
-  public alc(String paramString1, String paramString2, DownloadPriority paramDownloadPriority1, DownloadPriority paramDownloadPriority2, boolean paramBoolean, long paramLong, String paramString3, String paramString4, ala paramala, ali paramali, Object paramObject)
+  public alc(aji paramaji)
   {
-    d = paramString1;
-    e = paramString2;
-    f = paramString3;
-    h = paramString4;
-    g = paramala;
-    b = paramDownloadPriority1;
-    c = paramDownloadPriority2;
-    a = paramBoolean;
-    j = paramLong;
-    k = paramali;
-    i = paramObject;
+    super(paramaji);
+    mMediaType = ChatMedia.MediaType.fromSnapMediaType(paramaji.h());
+    paramaji = (aeb)mMediaExtras;
+    if (paramaji != null)
+    {
+      f(l);
+      g(m);
+    }
   }
   
-  @cgb
-  public final String a()
+  public alc(alc.a parama)
   {
-    if (e != null) {
-      return e;
+    super(parama);
+  }
+  
+  public alc(bif parambif)
+  {
+    super(parambif);
+    if ((parambif.b()) && (parambif.a().b()))
+    {
+      parambif = parambif.a().a().b();
+      if (parambif == null) {
+        break label72;
+      }
     }
-    return d;
+    label72:
+    for (parambif = ChatMedia.MediaType.valueOf(parambif.toUpperCase());; parambif = ChatMedia.MediaType.IMAGE)
+    {
+      mMediaType = parambif;
+      return;
+      parambif = null;
+      break;
+    }
+  }
+  
+  @chc
+  private static String a(@chd String paramString1, @chc String paramString2)
+  {
+    if (TextUtils.isEmpty(paramString1))
+    {
+      paramString1 = paramString2;
+      if (paramString2.indexOf('-') > 0) {
+        paramString1 = paramString2.split("-")[0].trim();
+      }
+      return paramString1;
+    }
+    return paramString1;
+  }
+  
+  public final Uri K()
+  {
+    return mVideoUri;
+  }
+  
+  public final String L()
+  {
+    return mOverlayPath;
+  }
+  
+  public final boolean M()
+  {
+    return (X()) && (mOverlayPath != null);
+  }
+  
+  public final boolean N()
+  {
+    return mMediaType == ChatMedia.MediaType.VIDEO;
+  }
+  
+  public final float S()
+  {
+    return mViewportX;
+  }
+  
+  public final float T()
+  {
+    return mViewportY;
+  }
+  
+  public final float V()
+  {
+    return mViewportWidth;
+  }
+  
+  public final float W()
+  {
+    return mViewportHeight;
+  }
+  
+  public final boolean X()
+  {
+    return (mMediaType == ChatMedia.MediaType.VIDEO) || (mMediaType == ChatMedia.MediaType.VIDEO_NO_SOUND);
+  }
+  
+  public final void a(aco paramaco)
+  {
+    if (paramaco != null)
+    {
+      mEditionId = e;
+      mPublisherName = b;
+      mPublisherFormalName = c;
+      mPublisherInternationalName = a(d, b);
+      mDSnapId = f;
+      mAdId = g;
+      mViewportX = k;
+      mViewportY = l;
+      mViewportWidth = m;
+      mViewportHeight = n;
+      mVideoWidth = o;
+      mVideoHeight = p;
+      mCaption = r;
+      mDrawing = s;
+      mFilterInfo = t;
+      mFilterVisual = u;
+      mLinkToLongform = q;
+      setChanged();
+      notifyObservers();
+    }
+  }
+  
+  public final void a(aeb paramaeb)
+  {
+    if (paramaeb != null)
+    {
+      mEditionId = d;
+      mPublisherName = a;
+      mPublisherFormalName = b;
+      mPublisherInternationalName = a(c, a);
+      mDSnapId = e;
+      mAdId = x;
+      mViewportX = f;
+      mViewportY = g;
+      mViewportWidth = h;
+      mViewportHeight = i;
+      mVideoWidth = j;
+      mVideoHeight = k;
+      mCaption = q;
+      mDrawing = r;
+      mFilterInfo = s;
+      mFilterVisual = t;
+      mLinkToLongform = n;
+      setChanged();
+      notifyObservers();
+    }
+  }
+  
+  public final void a(@chc Uri paramUri, @chd String paramString)
+  {
+    mVideoUri = paramUri;
+    mOverlayPath = paramString;
+    setChanged();
+    notifyObservers();
+  }
+  
+  public final String h()
+  {
+    return "dsnap";
   }
   
   public final String toString()
   {
-    return String.format("[%s %s]", new Object[] { g, f });
+    return "ChatSharedDSnap{mAdId='" + mAdId + '\'' + ", mUri='" + mUri + '\'' + ", mVideoUri=" + mVideoUri + ", mOverlayPath='" + mOverlayPath + '\'' + ", mEditionId='" + mEditionId + '\'' + ", mPublisherName='" + mPublisherName + '\'' + ", mDSnapId='" + mDSnapId + '\'' + ", mViewportX=" + mViewportX + ", mViewportY=" + mViewportY + ", mViewportWidth=" + mViewportWidth + ", mViewportHeight=" + mViewportHeight + ", mVideoWidth=" + mVideoWidth + ", mVideoHeight=" + mVideoHeight + ", mIsExtracted=" + mIsExtracted + ", mIsLoaded='" + mIsLoaded + ", mLinkToLongform=" + mLinkToLongform + ", mMediaType=" + mMediaType + '}';
   }
   
   public static final class a
+    extends ChatMedia.a
   {
-    public DownloadPriority a = DownloadPriority.LOW;
-    public DownloadPriority b = DownloadPriority.BACKGROUND_LOWEST;
-    public boolean c = false;
-    public String d;
-    public String e;
-    public Bundle f;
-    public String g = "Unknown";
-    public String[] h;
-    public Object i;
-    public Long j = null;
-    private final bgk k;
-    private ali l;
-    private String m;
-    
-    public a()
+    public a(String paramString1, String paramString2)
     {
-      this(bglmClock);
-    }
-    
-    private a(bgk parambgk)
-    {
-      k = parambgk;
-    }
-    
-    public final a a(@cgb String paramString1, @cgb String paramString2, int paramInt)
-    {
-      l = new ali(paramString1, paramString2, System.currentTimeMillis() + paramInt * 86400000L);
-      return this;
-    }
-    
-    public final alc a()
-    {
-      if (TextUtils.isEmpty(d)) {
-        throw new IllegalArgumentException("url cannot be null or empty");
-      }
-      if (a == null) {
-        throw new IllegalArgumentException("priority cannot be null");
-      }
-      if (b == null) {
-        throw new IllegalArgumentException("fallback priority cannot be null");
-      }
-      if ((h == null) || (h.length <= 0)) {
-        throw new IllegalArgumentException("context cannot be null or empty");
-      }
-      if (TextUtils.isEmpty(e)) {
-        throw new IllegalArgumentException("key cannot be null or empty");
-      }
-      if (j == null) {
-        j = Long.valueOf(SystemClock.elapsedRealtime());
-      }
-      if (m == null) {
-        m = h[0];
-      }
-      if (!ala.a.contains(m)) {
-        throw new IllegalArgumentException("media type is invalid");
-      }
-      return new alc(atq.a(d, f), e, a, b, c, j.longValue(), g, m, new ala(h), l, i, (byte)0);
+      super(paramString2);
     }
   }
 }

@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.video;
 
 import android.graphics.Bitmap;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.cts.InputSurface;
 import com.snapchat.videotranscoder.cts.OutputSurface;
 import com.snapchat.videotranscoder.cts.OutputSurfaceFactory;
@@ -24,7 +24,7 @@ public class ImageProvider
   private final int mTotalFrames;
   private final long mUsPerFrame;
   
-  protected ImageProvider(@cgb TranscodingResources paramTranscodingResources, @cgb OutputSurfaceFactory paramOutputSurfaceFactory, @cgb Encoder paramEncoder, @cgb Bitmap paramBitmap, int paramInt, long paramLong, @cgb StageDoneCallback paramStageDoneCallback)
+  protected ImageProvider(@chc TranscodingResources paramTranscodingResources, @chc OutputSurfaceFactory paramOutputSurfaceFactory, @chc Encoder paramEncoder, @chc Bitmap paramBitmap, int paramInt, long paramLong, @chc StageDoneCallback paramStageDoneCallback)
   {
     super(paramEncoder, paramStageDoneCallback);
     if (paramTranscodingResources == null) {
@@ -54,7 +54,7 @@ public class ImageProvider
     mOutputSurface = paramOutputSurfaceFactory.createOutputSurface(paramTranscodingResources, new ImageTransformationMatrix().adjustForTranscoderTransformation(), paramBitmap);
   }
   
-  public ImageProvider(@cgb TranscodingResources paramTranscodingResources, @cgb Encoder paramEncoder, @cgb Bitmap paramBitmap, int paramInt, long paramLong, @cgb StageDoneCallback paramStageDoneCallback)
+  public ImageProvider(@chc TranscodingResources paramTranscodingResources, @chc Encoder paramEncoder, @chc Bitmap paramBitmap, int paramInt, long paramLong, @chc StageDoneCallback paramStageDoneCallback)
   {
     this(paramTranscodingResources, new OutputSurfaceFactory(), paramEncoder, paramBitmap, paramInt, paramLong, paramStageDoneCallback);
   }

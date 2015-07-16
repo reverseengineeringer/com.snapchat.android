@@ -1,705 +1,348 @@
 .class public final Lbuc;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/net/URLStreamHandlerFactory;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lbuc$a;
-    }
-.end annotation
-
-
-# static fields
-.field private static final a:Ljava/lang/Object;
-
-.field private static b:Lbuc;
-
 
 # instance fields
-.field private c:Ljava/util/LinkedList;
-
-.field private d:Z
-
-.field private e:Z
+.field a:Landroid/content/SharedPreferences;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 54
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lbuc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILbtl;Lbsw;)V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 87
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 58
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Lbuc;->c:Ljava/util/LinkedList;
-
-    .line 60
-    iput-boolean v1, p0, Lbuc;->d:Z
-
-    .line 61
-    iput-boolean v1, p0, Lbuc;->e:Z
-
-    .line 89
-    sget v0, Lbuc$a;->c:I
-
-    if-eq p1, v0, :cond_0
-
-    sget v0, Lbuc$a;->a:I
-
-    if-ne p1, v0, :cond_1
-
-    .line 93
-    :cond_0
-    iget-object v0, p0, Lbuc;->c:Ljava/util/LinkedList;
-
-    new-instance v1, Lbtv;
-
-    invoke-direct {v1, p2, p3}, Lbtv;-><init>(Lbtl;Lbsw;)V
-
-    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    .line 96
-    :cond_1
-    sget v0, Lbuc$a;->c:I
-
-    if-eq p1, v0, :cond_2
-
-    sget v0, Lbuc$a;->b:I
-
-    if-ne p1, v0, :cond_3
-
-    .line 97
-    :cond_2
-    iget-object v0, p0, Lbuc;->c:Ljava/util/LinkedList;
-
-    new-instance v1, Lbtx;
-
-    invoke-direct {v1, p2, p3}, Lbtx;-><init>(Lbtl;Lbsw;)V
-
-    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    .line 99
-    :cond_3
-    return-void
-.end method
-
-.method public static a()Lbuc;
-    .locals 1
-
-    .prologue
-    .line 74
-    sget-object v0, Lbuc;->b:Lbuc;
-
-    return-object v0
-.end method
-
-.method private declared-synchronized d()Z
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 3
 
     .prologue
-    const/4 v0, 0x0
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 148
-    monitor-enter p0
+    .line 26
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :try_start_0
-    sget-object v1, Lbuc;->a:Ljava/lang/Object;
+    const-string v1, "com.crittercism."
 
-    monitor-enter v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 149
-    :try_start_1
-    sget-object v2, Lbuc;->b:Lbuc;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eq v2, p0, :cond_0
+    move-result-object v0
 
-    .line 150
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    const-string v1, ".usermetadata"
 
-    .line 162
-    :goto_0
-    monitor-exit p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return v0
+    move-result-object v0
 
-    .line 154
-    :cond_0
-    :try_start_2
-    iget-boolean v0, p0, Lbuc;->d:Z
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    move-result-object v0
 
-    .line 155
-    invoke-static {}, Lbuc;->e()Z
+    .line 28
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbuc;->a:Landroid/content/SharedPreferences;
+
+    .line 30
+    iget-object v0, p0, Lbuc;->a:Landroid/content/SharedPreferences;
+
+    const-string v1, "data"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
-    .line 156
-    const/4 v0, 0x0
+    .line 32
+    new-instance v0, Lorg/json/JSONObject;
 
-    iput-boolean v0, p0, Lbuc;->d:Z
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 157
-    const/4 v0, 0x0
-
-    sput-object v0, Lbuc;->b:Lbuc;
-
-    .line 160
-    :cond_1
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 162
-    :try_start_3
-    iget-boolean v0, p0, Lbuc;->d:Z
-
-    goto :goto_0
-
-    .line 160
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    .line 148
-    :catchall_1
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method private static e()Z
-    .locals 8
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 196
-    const-class v2, Ljava/net/URL;
-
-    .line 197
-    invoke-virtual {v2}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
-
-    move-result-object v3
-
-    .line 198
-    array-length v4, v3
-
-    move v2, v1
-
-    :goto_0
-    if-ge v2, v4, :cond_1
-
-    aget-object v5, v3, v2
-
-    .line 199
-    const-class v6, Ljava/net/URLStreamHandlerFactory;
-
-    invoke-virtual {v5}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    .line 201
+    .line 35
     :try_start_0
-    sget v6, Lbtg;->f:I
+    const-string v1, "username"
 
-    .line 203
-    const/4 v6, 0x1
+    const-string v2, "anonymous"
 
-    invoke-virtual {v5, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->putOpt(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 204
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v5, v6, v7}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 205
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-
-    .line 211
-    const/4 v5, 0x0
-
-    invoke-static {v5}, Ljava/net/URL;->setURLStreamHandlerFactory(Ljava/net/URLStreamHandlerFactory;)V
+    .line 36
+    invoke-direct {p0, v0}, Lbuc;->a(Lorg/json/JSONObject;)V
     :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 229
-    :goto_1
-    return v0
-
-    .line 215
-    :catch_0
-    move-exception v5
-
-    invoke-static {}, Lbtd;->c()V
-
-    .line 198
+    .line 41
     :cond_0
-    :goto_2
-    add-int/lit8 v2, v2, 0x1
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
 
     goto :goto_0
-
-    .line 217
-    :catch_1
-    move-exception v5
-
-    invoke-static {}, Lbtd;->c()V
-
-    goto :goto_2
-
-    .line 224
-    :catch_2
-    move-exception v5
-
-    invoke-static {}, Lbtd;->c()V
-
-    goto :goto_2
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_1
 .end method
 
-.method private static f()Z
+.method private a(Lorg/json/JSONObject;)V
     .locals 9
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    .line 234
-    const-class v0, Ljava/net/URL;
-
-    .line 235
-    invoke-virtual {v0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
+    .line 51
+    invoke-virtual {p0}, Lbuc;->a()Lorg/json/JSONObject;
 
     move-result-object v5
 
-    .line 236
-    array-length v6, v5
+    .line 53
+    invoke-virtual {v5}, Lorg/json/JSONObject;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 54
+    invoke-virtual {p1}, Lorg/json/JSONObject;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    .line 55
+    invoke-direct {p0, p1}, Lbuc;->b(Lorg/json/JSONObject;)V
+
+    .line 56
+    invoke-virtual {p0, v3}, Lbuc;->a(Z)V
+
+    .line 103
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 63
+    :cond_1
+    invoke-virtual {p1}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    move v1, v2
+
+    .line 66
+    :cond_2
+    :goto_1
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    .line 67
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 68
+    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->opt(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    .line 69
+    invoke-virtual {v5, v0}, Lorg/json/JSONObject;->opt(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    .line 70
+    if-nez v8, :cond_5
 
     move v4, v3
 
-    :goto_0
-    if-ge v4, v6, :cond_2
-
-    aget-object v7, v5, v4
-
-    .line 237
-    const-class v0, Ljava/util/Hashtable;
-
-    invoke-virtual {v7}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 238
-    invoke-virtual {v7}, Ljava/lang/reflect/Field;->getGenericType()Ljava/lang/reflect/Type;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/reflect/ParameterizedType;
-
-    .line 239
-    invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
-
-    move-result-object v1
-
-    aget-object v1, v1, v3
-
-    check-cast v1, Ljava/lang/Class;
-
-    .line 240
-    invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
-
-    move-result-object v0
-
-    aget-object v0, v0, v2
-
-    check-cast v0, Ljava/lang/Class;
-
-    .line 241
-    const-class v8, Ljava/lang/String;
-
-    invoke-virtual {v8, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const-class v1, Ljava/net/URLStreamHandler;
-
-    invoke-virtual {v1, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 243
-    :try_start_0
-    sget v0, Lbtg;->g:I
-
-    .line 245
-    const/4 v0, 0x1
-
-    invoke-virtual {v7, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-
-    .line 247
-    const/4 v0, 0x0
-
-    invoke-virtual {v7, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Hashtable;
-
-    check-cast v0, Ljava/util/Hashtable;
-
-    .line 248
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/util/Hashtable;->clear()V
-
-    .line 249
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {v7, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
-
-    move v0, v2
-
-    .line 264
-    :goto_1
-    return v0
-
-    .line 253
-    :catch_0
-    move-exception v0
-
-    invoke-static {}, Lbtd;->c()V
-
-    .line 236
-    :cond_1
+    .line 73
     :goto_2
-    add-int/lit8 v0, v4, 0x1
+    if-eqz v8, :cond_4
 
-    move v4, v0
+    .line 74
+    instance-of v4, v7, Lorg/json/JSONObject;
+
+    if-nez v4, :cond_3
+
+    instance-of v4, v7, Lorg/json/JSONArray;
+
+    if-eqz v4, :cond_7
+
+    .line 80
+    :cond_3
+    invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 81
+    invoke-virtual {v8}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 82
+    invoke-virtual {v8, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_6
+
+    move v4, v3
+
+    .line 89
+    :cond_4
+    :goto_3
+    if-eqz v4, :cond_2
+
+    .line 91
+    :try_start_0
+    invoke-virtual {v5, v0, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move v1, v3
+
+    .line 95
+    goto :goto_1
+
+    :cond_5
+    move v4, v2
+
+    .line 70
+    goto :goto_2
+
+    :cond_6
+    move v4, v2
+
+    .line 82
+    goto :goto_3
+
+    .line 84
+    :cond_7
+    invoke-virtual {v8, v7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_8
+
+    move v4, v3
+
+    goto :goto_3
+
+    :cond_8
+    move v4, v2
+
+    goto :goto_3
+
+    .line 99
+    :cond_9
+    if-eqz v1, :cond_0
+
+    .line 100
+    invoke-direct {p0, v5}, Lbuc;->b(Lorg/json/JSONObject;)V
+
+    .line 101
+    invoke-virtual {p0, v3}, Lbuc;->a(Z)V
 
     goto :goto_0
 
-    .line 256
-    :catch_1
+    :catch_0
     move-exception v0
-
-    invoke-static {}, Lbtd;->c()V
-
-    goto :goto_2
-
-    .line 259
-    :catch_2
-    move-exception v0
-
-    invoke-static {}, Lbtd;->c()V
-
-    goto :goto_2
-
-    :cond_2
-    move v0, v3
 
     goto :goto_1
+.end method
+
+.method private b(Lorg/json/JSONObject;)V
+    .locals 3
+
+    .prologue
+    .line 106
+    iget-object v0, p0, Lbuc;->a:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 107
+    const-string v1, "data"
+
+    invoke-virtual {p1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 108
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    .line 109
+    return-void
 .end method
 
 
 # virtual methods
-.method public final b()Z
+.method public final a()Lorg/json/JSONObject;
     .locals 3
 
     .prologue
-    const/4 v0, 0x1
+    .line 112
+    iget-object v0, p0, Lbuc;->a:Landroid/content/SharedPreferences;
 
-    .line 123
-    sget-object v1, Lbuc;->a:Ljava/lang/Object;
+    const-string v1, "data"
 
-    monitor-enter v1
+    const-string v2, "{}"
 
-    .line 124
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 113
     :try_start_0
-    sget-object v2, Lbuc;->b:Lbuc;
+    new-instance v0, Lorg/json/JSONObject;
 
-    if-eqz v2, :cond_1
-
-    .line 126
-    sget-object v2, Lbuc;->b:Lbuc;
-
-    if-ne v2, p0, :cond_0
-
-    :goto_0
-    monitor-exit v1
-
-    .line 138
-    :goto_1
-    return v0
-
-    .line 126
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 129
-    :cond_1
-    iget-boolean v0, p0, Lbuc;->d:Z
-
-    if-nez v0, :cond_2
-
-    iget-boolean v0, p0, Lbuc;->e:Z
+    invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-nez v0, :cond_2
-
-    .line 131
-    :try_start_1
-    invoke-static {p0}, Ljava/net/URL;->setURLStreamHandlerFactory(Ljava/net/URLStreamHandlerFactory;)V
-
-    .line 132
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lbuc;->d:Z
-
-    .line 133
-    sput-object p0, Lbuc;->b:Lbuc;
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 136
-    :cond_2
-    :goto_2
-    :try_start_2
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 138
-    iget-boolean v0, p0, Lbuc;->d:Z
-
-    goto :goto_1
-
-    .line 136
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_2
-.end method
-
-.method public final declared-synchronized c()Z
-    .locals 4
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v0, 0x0
-
-    .line 324
-    monitor-enter p0
-
-    .line 326
-    :try_start_0
-    invoke-direct {p0}, Lbuc;->d()Z
-
-    .line 328
-    iget-boolean v2, p0, Lbuc;->d:Z
-
-    if-eqz v2, :cond_2
-
-    .line 329
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Lbuc;->e:Z
-
-    .line 330
-    invoke-static {}, Lbuc;->f()Z
-
-    move-result v2
-
-    .line 333
-    :goto_0
-    iget-boolean v3, p0, Lbuc;->d:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v3, :cond_0
-
-    if-eqz v2, :cond_1
-
-    :cond_0
-    move v0, v1
-
-    :cond_1
-    monitor-exit p0
-
-    return v0
-
-    .line 324
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_2
-    move v2, v0
-
-    goto :goto_0
-.end method
-
-.method public final createURLStreamHandler(Ljava/lang/String;)Ljava/net/URLStreamHandler;
-    .locals 4
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 168
-    :try_start_0
-    iget-boolean v0, p0, Lbuc;->e:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lbuc;->c:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbtt;
-
-    invoke-virtual {v0}, Lbtt;->a()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 176
+    .line 121
     :goto_0
     return-object v0
 
-    :cond_1
-    move-object v0, v1
-
-    .line 168
-    goto :goto_0
-
-    .line 169
+    .line 118
     :catch_0
     move-exception v0
 
-    throw v0
+    new-instance v0, Lorg/json/JSONObject;
 
-    .line 171
-    :catch_1
-    move-exception v0
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 172
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Lbuc;->e:Z
-
-    .line 173
-    invoke-static {v0}, Lbtd;->a(Ljava/lang/Throwable;)V
-
-    move-object v0, v1
-
-    .line 176
     goto :goto_0
+.end method
+
+.method public final a(Z)V
+    .locals 2
+
+    .prologue
+    .line 133
+    iget-object v0, p0, Lbuc;->a:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "dirty"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    .line 134
+    return-void
 .end method

@@ -1,78 +1,214 @@
 import android.content.Context;
-import android.database.Cursor;
-import android.support.v7.widget.RecyclerView.a;
-import android.support.v7.widget.RecyclerView.b;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import com.snapchat.android.discover.model.EditionOpenOrigin;
-import com.snapchat.android.discover.ui.ChannelView;
-import com.snapchat.android.discover.ui.OpenChannelAnimationView;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.widget.ImageView;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.analytics.ChatPerformanceAnalytics;
+import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics;
+import com.snapchat.android.discover.model.ChannelPage;
+import com.snapchat.android.discover.model.database.table.EditionTable;
+import com.snapchat.android.discover.model.database.table.PublisherChannelTable;
+import com.snapchat.android.discover.model.server.DiscoverLinkStatusResult;
+import com.snapchat.android.discover.model.server.DiscoverLinkStatusResult.LinkStatus;
+import com.snapchat.android.util.debug.ReleaseManager;
+import com.squareup.otto.Bus;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
 
 public final class ael
-  extends RecyclerView.a<adr>
 {
-  final aeh c;
-  final OpenChannelAnimationView d;
-  protected final View.OnClickListener e = new View.OnClickListener()
+  final afg a;
+  public final Bus b;
+  public final aem c;
+  public final alw d;
+  public final DiscoverUsageAnalytics e;
+  final PublisherChannelTable f;
+  final EditionTable g;
+  final Context h;
+  public final Object i = new Object();
+  public final Map<String, ael.c> j = new HashMap();
+  public final Map<String, aem.a> k = new HashMap();
+  public final Map<String, ael.c> l = new HashMap();
+  public final ChatPerformanceAnalytics m;
+  public boolean n = false;
+  public final acx.a o = new acx.a()
   {
-    public final void onClick(View paramAnonymousView)
+    public final void a(String paramAnonymousString1, String paramAnonymousString2, String paramAnonymousString3, String paramAnonymousString4, long paramAnonymousLong, DiscoverLinkStatusResult.LinkStatus paramAnonymousLinkStatus, int paramAnonymousInt, bku paramAnonymousbku, bkw paramAnonymousbkw)
     {
-      paramAnonymousView = (ChannelView)paramAnonymousView;
-      c.a(paramAnonymousView, d, EditionOpenOrigin.DISCOVER);
+      EasyMetric localEasyMetric = m.a("DISCOVER_SHARE_LINK_VALIDATION", paramAnonymousString1);
+      if (localEasyMetric != null) {
+        localEasyMetric.a("link_status", paramAnonymousLinkStatus.name()).b(false);
+      }
+      paramAnonymousString2 = new DiscoverLinkStatusResult(paramAnonymousString2, paramAnonymousString3, paramAnonymousString4, paramAnonymousLinkStatus, paramAnonymousLong, paramAnonymousInt, paramAnonymousbku, paramAnonymousbkw);
+      a(paramAnonymousString1, paramAnonymousString2);
     }
   };
-  private final adj f;
-  private final LayoutInflater g;
-  private Cursor h;
   
-  private ael(Context paramContext, aeh paramaeh, adj paramadj, OpenChannelAnimationView paramOpenChannelAnimationView)
+  public ael()
   {
-    c = paramaeh;
-    g = ((LayoutInflater)paramContext.getSystemService("layout_inflater"));
-    f = paramadj;
-    h = null;
-    d = paramOpenChannelAnimationView;
-    if (a.a()) {
-      throw new IllegalStateException("Cannot change whether this adapter has stable IDs while the adapter has registered observers.");
-    }
-    b = true;
+    this(afg.a(), bbo.a(), new aem(), alw.a(), new DiscoverUsageAnalytics(), SnapchatApplication.b(), PublisherChannelTable.a(), EditionTable.a(), ChatPerformanceAnalytics.a());
   }
   
-  public ael(Context paramContext, aeh paramaeh, OpenChannelAnimationView paramOpenChannelAnimationView)
+  private ael(afg paramafg, Bus paramBus, aem paramaem, alw paramalw, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, Context paramContext, PublisherChannelTable paramPublisherChannelTable, EditionTable paramEditionTable, ChatPerformanceAnalytics paramChatPerformanceAnalytics)
   {
-    this(paramContext, paramaeh, adj.a(), paramOpenChannelAnimationView);
+    a = paramafg;
+    b = paramBus;
+    c = paramaem;
+    d = paramalw;
+    e = paramDiscoverUsageAnalytics;
+    h = paramContext;
+    f = paramPublisherChannelTable;
+    g = paramEditionTable;
+    m = paramChatPerformanceAnalytics;
   }
   
-  public final int a()
+  private void a(String paramString, @chc final ael.c paramc)
   {
-    if (h == null) {
-      return 0;
-    }
-    return h.getCount();
-  }
-  
-  public final Cursor a(Cursor paramCursor)
-  {
-    Object localObject;
-    if (paramCursor == h) {
-      localObject = null;
-    }
-    Cursor localCursor;
-    do
+    if ((b) && (d != null))
     {
-      return (Cursor)localObject;
-      localCursor = h;
-      h = paramCursor;
-      localObject = localCursor;
-    } while (paramCursor == null);
-    a.b();
-    return localCursor;
+      paramString = c;
+      paramString = d;
+      if (d.mLinkStatus != DiscoverLinkStatusResult.LinkStatus.FAILED) {
+        l.put(d.mDSnapId, paramc);
+      }
+      if (d.mLinkStatus != DiscoverLinkStatusResult.LinkStatus.NOT_AVAILABLE) {
+        avf.SERIAL_EXECUTOR_FOR_SQL_WRITE_OPS.execute(new Runnable()
+        {
+          public final void run()
+          {
+            if (paramcd.mChannelListResponse != null) {
+              PublisherChannelTable.a(h, paramcd.mChannelListResponse);
+            }
+            if ((paramcd.mLinkStatus == DiscoverLinkStatusResult.LinkStatus.ARCHIVED) && (paramcd.mEditionChunkResponse != null)) {
+              EditionTable.a(h, paramcd.mEditionChunkResponse, paramcc, paramcd.mEditionId);
+            }
+          }
+        });
+      }
+      if (e != null)
+      {
+        paramString = c;
+        paramString = d;
+        bhp.a(new Runnable()
+        {
+          public final void run()
+          {
+            paramce.a(paramcd, paramcc);
+          }
+        });
+      }
+    }
   }
   
-  public final long b(int paramInt)
+  static boolean a(ael.c paramc)
   {
-    return paramInt;
+    return (a) && (d != null) && (b);
+  }
+  
+  public final void a(String paramString, DiscoverLinkStatusResult paramDiscoverLinkStatusResult)
+  {
+    for (;;)
+    {
+      ael.c localc;
+      synchronized (i)
+      {
+        localc = (ael.c)j.get(paramString);
+        if (localc == null) {
+          return;
+        }
+        d = paramDiscoverLinkStatusResult;
+        a(paramString, localc);
+        if (a(localc))
+        {
+          j.remove(paramString);
+          return;
+        }
+      }
+      j.put(paramString, localc);
+    }
+  }
+  
+  public final void a(String paramString1, String arg2, @chd String paramString3)
+  {
+    for (;;)
+    {
+      ael.c localc;
+      synchronized (i)
+      {
+        localc = (ael.c)j.get(paramString1);
+        if (localc == null) {
+          return;
+        }
+        b = true;
+        c = paramString3;
+        a(paramString1, localc);
+        if (a(localc))
+        {
+          j.remove(paramString1);
+          return;
+        }
+      }
+      j.put(paramString1, localc);
+    }
+  }
+  
+  public static abstract interface a
+  {
+    public abstract void a(DiscoverLinkStatusResult paramDiscoverLinkStatusResult, @chd String paramString);
+    
+    public abstract void a(boolean paramBoolean);
+  }
+  
+  final class b
+    implements afg.a
+  {
+    private final String b;
+    
+    b(String paramString)
+    {
+      b = paramString;
+    }
+    
+    public final void a(ImageView arg1, Drawable paramDrawable, Bundle paramBundle, boolean paramBoolean)
+    {
+      paramDrawable = ael.this;
+      paramBundle = b;
+      for (;;)
+      {
+        ael.c localc;
+        synchronized (i)
+        {
+          localc = (ael.c)j.get(paramBundle);
+          if (localc == null) {
+            return;
+          }
+          a = true;
+          if (e != null) {
+            e.a(paramBoolean);
+          }
+          if (ael.a(localc))
+          {
+            j.remove(paramBundle);
+            return;
+          }
+        }
+        j.put(paramBundle, localc);
+      }
+    }
+  }
+  
+  public final class c
+  {
+    boolean a;
+    boolean b;
+    @chd
+    public String c;
+    public DiscoverLinkStatusResult d;
+    public ael.a e;
+    
+    public c() {}
   }
 }
 

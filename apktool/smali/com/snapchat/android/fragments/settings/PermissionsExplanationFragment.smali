@@ -21,7 +21,7 @@
 
     .prologue
     .line 18
-    const v0, 0x7f040082
+    const v0, 0x7f040084
 
     const/4 v1, 0x0
 
@@ -32,7 +32,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/PermissionsExplanationFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 19
-    const v0, 0x7f0a02b8
+    const v0, 0x7f0a02b7
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/PermissionsExplanationFragment;->c(I)Landroid/view/View;
 

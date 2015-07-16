@@ -53,7 +53,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 116
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/email/EmailSettingsFragment$2;->a:Lcom/snapchat/android/fragments/settings/email/EmailSettingsFragment;

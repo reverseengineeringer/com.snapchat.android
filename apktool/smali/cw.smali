@@ -1,137 +1,235 @@
-.class public abstract Lcw;
+.class abstract Lcw;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Map$Entry;
 
 
 # annotations
 .annotation build Lcd;
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lcw$a;
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Ljava/util/Map$Entry",
+        "<TK;TV;>;"
     }
 .end annotation
 
 
-# static fields
-.field static final a:Lcw;
-
-.field static final b:Lcw;
-
-.field static final c:Lcw;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .prologue
-    .line 72
-    new-instance v0, Lcw$1;
-
-    invoke-direct {v0}, Lcw$1;-><init>()V
-
-    sput-object v0, Lcw;->a:Lcw;
-
-    .line 108
-    new-instance v0, Lcw$a;
-
-    const/4 v1, -0x1
-
-    invoke-direct {v0, v1}, Lcw$a;-><init>(I)V
-
-    sput-object v0, Lcw;->b:Lcw;
-
-    .line 110
-    new-instance v0, Lcw$a;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lcw$a;-><init>(I)V
-
-    sput-object v0, Lcw;->c:Lcw;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 62
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(B)V
-    .locals 0
-
-    .prologue
-    .line 61
-    invoke-direct {p0}, Lcw;-><init>()V
-
-    return-void
-.end method
-
-.method public static a()Lcw;
-    .locals 1
-
-    .prologue
-    .line 69
-    sget-object v0, Lcw;->a:Lcw;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public abstract a(II)Lcw;
-.end method
-
-.method public abstract a(JJ)Lcw;
-.end method
-
-.method public abstract a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lcw;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Comparable",
-            "<*>;",
-            "Ljava/lang/Comparable",
-            "<*>;)",
-            "Lcw;"
-        }
-    .end annotation
-.end method
-
-.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Lcw;
+.method public equals(Ljava/lang/Object;)Z
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2    # Ljava/lang/Object;
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end param
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 47
+    instance-of v1, p1, Ljava/util/Map$Entry;
+
+    if-eqz v1, :cond_0
+
+    .line 48
+    check-cast p1, Ljava/util/Map$Entry;
+
+    .line 49
+    invoke-virtual {p0}, Lcw;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcm;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Lcw;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcm;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 52
+    :cond_0
+    return v0
+.end method
+
+.method public abstract getKey()Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;TT;",
-            "Ljava/util/Comparator",
-            "<TT;>;)",
-            "Lcw;"
+            "()TK;"
         }
     .end annotation
 .end method
 
-.method public abstract a(ZZ)Lcw;
+.method public abstract getValue()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TV;"
+        }
+    .end annotation
 .end method
 
-.method public abstract b()I
+.method public hashCode()I
+    .locals 3
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 56
+    invoke-virtual {p0}, Lcw;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 57
+    invoke-virtual {p0}, Lcw;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    .line 58
+    if-nez v1, :cond_0
+
+    move v1, v0
+
+    :goto_0
+    if-nez v2, :cond_1
+
+    :goto_1
+    xor-int/2addr v0, v1
+
+    return v0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    goto :goto_1
 .end method
 
-.method public abstract b(ZZ)Lcw;
+.method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TV;)TV;"
+        }
+    .end annotation
+
+    .prologue
+    .line 43
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 5
+
+    .prologue
+    .line 65
+    invoke-virtual {p0}, Lcw;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcw;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

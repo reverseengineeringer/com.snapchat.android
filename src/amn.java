@@ -1,52 +1,52 @@
-import android.content.Intent;
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.ProfileEventAnalytics;
-import com.snapchat.android.api2.framework.HttpMethod;
-
-public final class amn
-  extends amd
-  implements ts.b<bjd>
+public abstract class amn
+  implements alw.a
 {
-  private final String a;
-  private final ProfileEventAnalytics b;
+  protected final axn a;
+  protected final String b;
   
-  public amn(Intent paramIntent)
+  public amn(axn paramaxn, String paramString)
   {
-    super(paramIntent);
-    a = avb.a(paramIntent.getByteArrayExtra("snapTag"));
-    Timber.c("SnapTagOperation", "SnapTag - " + a, new Object[0]);
-    b = ProfileEventAnalytics.a();
-    a(bjd.class, this);
+    a = ((axn)co.a(paramaxn));
+    b = ((String)co.a(paramString));
   }
   
-  public final Object b()
+  public final void a(aly paramaly)
   {
-    return new amn.a(a);
+    throw new UnsupportedOperationException("onCanceled has not been implemented for media downloads.");
   }
   
-  public final HttpMethod c()
+  public final void a(aly paramaly, bgl parambgl, us paramus)
   {
-    return HttpMethod.POST;
-  }
-  
-  protected final String e()
-  {
-    return "/bq/snaptag";
-  }
-  
-  @tn
-  public static final class a
-    extends pl
-  {
-    @SerializedName("snaptag")
-    final String a;
-    
-    a(String paramString)
+    paramaly = null;
+    if ((paramus != null) && (paramus.d())) {}
+    try
     {
-      a = paramString;
+      a(parambgl);
+      for (;;)
+      {
+        a(paramus, paramaly);
+        return;
+      }
+    }
+    catch (Exception paramaly)
+    {
+      for (;;) {}
     }
   }
+  
+  protected void a(bgl parambgl)
+  {
+    co.a(parambgl);
+    if (mSize > 0) {}
+    for (boolean bool = true;; bool = false)
+    {
+      co.a(bool);
+      a.a(b, mBuffer, mSize);
+      return;
+    }
+  }
+  
+  public abstract void a(us paramus, Exception paramException);
 }
 
 /* Location:

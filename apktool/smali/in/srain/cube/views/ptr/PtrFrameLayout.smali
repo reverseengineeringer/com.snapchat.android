@@ -13,9 +13,9 @@
 
 
 # static fields
-.field private static a:I
+.field public static a:Z
 
-.field public static b:Z
+.field private static g:I
 
 .field private static h:B
 
@@ -37,21 +37,21 @@
 
 .field private G:Landroid/view/MotionEvent;
 
-.field private H:Lbuu;
+.field private H:Lbvv;
 
 .field private I:I
 
 .field private J:J
 
-.field protected final c:Ljava/lang/String;
+.field protected final b:Ljava/lang/String;
 
-.field protected d:Landroid/view/View;
+.field protected c:Landroid/view/View;
 
-.field protected e:I
+.field protected d:I
 
-.field f:Z
+.field e:Z
 
-.field public g:Z
+.field public f:Z
 
 .field private j:I
 
@@ -69,9 +69,9 @@
 
 .field private q:Landroid/view/View;
 
-.field private r:Lbut;
+.field private r:Lbvu;
 
-.field private s:Lbur;
+.field private s:Lbvs;
 
 .field private t:Lin/srain/cube/views/ptr/PtrFrameLayout$a;
 
@@ -98,10 +98,10 @@
     .line 28
     const/4 v0, 0x0
 
-    sput-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sput-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     .line 29
-    sput v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:I
+    sput v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->g:I
 
     .line 31
     sput-byte v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->h:B
@@ -158,11 +158,11 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:I
+    sget v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->g:I
 
     add-int/lit8 v1, v1, 0x1
 
-    sput v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:I
+    sput v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->g:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -172,10 +172,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     .line 35
-    iput v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:I
+    iput v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:I
 
     .line 37
     iput v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->j:I
@@ -207,14 +207,14 @@
     iput-boolean v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->p:Z
 
     .line 45
-    iput-boolean v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->f:Z
+    iput-boolean v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:Z
 
     .line 47
-    new-instance v0, Lbut;
+    new-instance v0, Lbvu;
 
-    invoke-direct {v0}, Lbut;-><init>()V
+    invoke-direct {v0}, Lbvu;-><init>()V
 
-    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
     .line 51
     new-instance v0, Landroid/graphics/PointF;
@@ -236,7 +236,7 @@
     iput-boolean v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->A:Z
 
     .line 59
-    iput-boolean v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->g:Z
+    iput-boolean v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->f:Z
 
     .line 60
     iput v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->B:I
@@ -265,7 +265,7 @@
 
     move-result-object v0
 
-    sget-boolean v1, Lbuy;->f:Z
+    sget-boolean v1, Lbvz;->f:Z
 
     if-nez v1, :cond_0
 
@@ -274,7 +274,7 @@
     .line 88
     :cond_0
     :goto_0
-    sget-object v0, Lbuv$d;->PtrFrameLayout:[I
+    sget-object v0, Lbvw$d;->PtrFrameLayout:[I
 
     invoke-virtual {p1, p2, v0, v3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -359,13 +359,13 @@
     .line 102
     const/4 v1, 0x6
 
-    iget-boolean v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->f:Z
+    iget-boolean v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
-    iput-boolean v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->f:Z
+    iput-boolean v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:Z
 
     .line 103
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
@@ -401,7 +401,7 @@
 
     .line 86
     :cond_2
-    sput-boolean v4, Lbuy;->f:Z
+    sput-boolean v4, Lbvz;->f:Z
 
     new-instance v1, Landroid/util/DisplayMetrics;
 
@@ -423,17 +423,17 @@
 
     iget v0, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    sput v0, Lbuy;->a:I
+    sput v0, Lbvz;->a:I
 
     iget v0, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    sput v0, Lbuy;->b:I
+    sput v0, Lbvz;->b:I
 
     iget v0, v1, Landroid/util/DisplayMetrics;->density:F
 
-    sput v0, Lbuy;->c:F
+    sput v0, Lbvz;->c:F
 
-    sget v0, Lbuy;->a:I
+    sget v0, Lbvz;->a:I
 
     int-to-float v0, v0
 
@@ -443,9 +443,9 @@
 
     float-to-int v0, v0
 
-    sput v0, Lbuy;->d:I
+    sput v0, Lbvz;->d:I
 
-    sget v0, Lbuy;->b:I
+    sget v0, Lbvz;->b:I
 
     int-to-float v0, v0
 
@@ -455,7 +455,7 @@
 
     float-to-int v0, v0
 
-    sput v0, Lbuy;->e:I
+    sput v0, Lbvz;->e:I
 
     goto/16 :goto_0
 .end method
@@ -507,12 +507,12 @@
     if-nez v0, :cond_1
 
     .line 338
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_0
 
     .line 339
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "has reached the top"
 
@@ -541,12 +541,12 @@
     if-gez v0, :cond_3
 
     .line 348
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_2
 
     .line 349
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "over top"
 
@@ -582,9 +582,9 @@
 
     if-eqz v0, :cond_6
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v0}, Lbut;->a()Z
+    invoke-virtual {v0}, Lbvu;->a()Z
 
     move-result v0
 
@@ -596,15 +596,15 @@
 
     iput-byte v12, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->z:B
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v0, p0}, Lbut;->b(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
+    invoke-virtual {v0, p0}, Lbvu;->b(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
 
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "PtrUIHandler: onUIRefreshPrepare, mAutoScrollRefreshTag %s"
 
@@ -629,11 +629,11 @@
 
     if-eqz v0, :cond_6
 
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "send cancel event"
 
@@ -705,11 +705,11 @@
 
     if-eqz v0, :cond_8
 
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_7
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "send down event"
 
@@ -759,19 +759,19 @@
 
     if-nez v0, :cond_9
 
-    iget-boolean v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->f:Z
+    iget-boolean v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:Z
 
     if-eqz v0, :cond_9
 
     iget v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->w:I
 
-    iget v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:I
+    iget v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:I
 
     if-ge v0, v1, :cond_9
 
     iget v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->v:I
 
-    iget v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:I
+    iget v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:I
 
     if-lt v0, v1, :cond_9
 
@@ -799,11 +799,11 @@
     invoke-direct {p0}, Lin/srain/cube/views/ptr/PtrFrameLayout;->b()Z
 
     :cond_a
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_b
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "updatePos: change: %s, current: %s last: %s, top: %s, headerHeight: %s"
 
@@ -835,7 +835,7 @@
 
     const/4 v3, 0x3
 
-    iget-object v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getTop()I
 
@@ -864,7 +864,7 @@
 
     invoke-virtual {v0, v10}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     invoke-virtual {v0, v10}, Landroid/view/View;->offsetTopAndBottom(I)V
 
@@ -884,15 +884,15 @@
     move v7, v9
 
     :goto_2
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v0}, Lbut;->a()Z
+    invoke-virtual {v0}, Lbvu;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
     iget-boolean v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->A:Z
 
@@ -904,7 +904,7 @@
 
     move-object v1, p0
 
-    invoke-virtual/range {v0 .. v7}, Lbut;->a(Lin/srain/cube/views/ptr/PtrFrameLayout;ZBIIFF)V
+    invoke-virtual/range {v0 .. v7}, Lbvu;->a(Lin/srain/cube/views/ptr/PtrFrameLayout;ZBIIFF)V
 
     .line 356
     :cond_c
@@ -1059,17 +1059,17 @@
 
     if-nez p1, :cond_1
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbuu;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbvv;
 
     if-eqz v0, :cond_1
 
     .line 618
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_0
 
     .line 619
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "notifyUIRefreshComplete mRefreshCompleteHook run."
 
@@ -1077,9 +1077,9 @@
 
     .line 622
     :cond_0
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbuu;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbvv;
 
-    iget-byte v1, v0, Lbuu;->b:B
+    iget-byte v1, v0, Lbvv;->b:B
 
     packed-switch v1, :pswitch_data_0
 
@@ -1092,34 +1092,34 @@
     :pswitch_1
     const/4 v1, 0x1
 
-    iput-byte v1, v0, Lbuu;->b:B
+    iput-byte v1, v0, Lbvv;->b:B
 
-    invoke-virtual {v0}, Lbuu;->run()V
+    invoke-virtual {v0}, Lbvv;->run()V
 
     goto :goto_0
 
     :pswitch_2
-    invoke-virtual {v0}, Lbuu;->a()V
+    invoke-virtual {v0}, Lbvv;->a()V
 
     goto :goto_0
 
     .line 625
     :cond_1
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v0}, Lbut;->a()Z
+    invoke-virtual {v0}, Lbvu;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
     .line 626
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_2
 
     .line 627
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "PtrUIHandler: onUIRefreshComplete"
 
@@ -1127,9 +1127,9 @@
 
     .line 629
     :cond_2
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v0, p0}, Lbut;->d(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
+    invoke-virtual {v0, p0}, Lbvu;->d(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
 
     .line 631
     :cond_3
@@ -1184,7 +1184,7 @@
     :cond_2
     iget v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->v:I
 
-    iget v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:I
+    iget v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:I
 
     if-lt v0, v1, :cond_0
 
@@ -1201,36 +1201,36 @@
 
     iput-wide v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->J:J
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v0}, Lbut;->a()Z
+    invoke-virtual {v0}, Lbvu;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v0, p0}, Lbut;->c(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
+    invoke-virtual {v0, p0}, Lbvu;->c(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
 
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "PtrUIHandler: onUIRefreshBegin"
 
     invoke-static {v0, v1}, Lin/srain/cube/util/CLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_4
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbur;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbvs;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbur;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbvs;
 
-    invoke-interface {v0, p0}, Lbur;->a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
+    invoke-interface {v0, p0}, Lbvs;->a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
 
     goto :goto_0
 .end method
@@ -1272,26 +1272,26 @@
     if-nez v2, :cond_2
 
     .line 531
-    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v2}, Lbut;->a()Z
+    invoke-virtual {v2}, Lbvu;->a()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
     .line 532
-    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
-    invoke-virtual {v2, p0}, Lbut;->a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
+    invoke-virtual {v2, p0}, Lbvu;->a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
 
     .line 533
-    sget-boolean v2, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v2, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v2, :cond_1
 
     .line 534
-    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v3, "PtrUIHandler: onUIReset"
 
@@ -1339,12 +1339,12 @@
     if-lez v0, :cond_1
 
     .line 603
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_0
 
     .line 604
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "performRefreshComplete do nothing, scrolling: %s, auto refresh: %s"
 
@@ -1390,12 +1390,12 @@
 
 
 # virtual methods
-.method public final a(Lbus;)V
+.method public final a(Lbvt;)V
     .locals 2
 
     .prologue
     .line 701
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbut;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->r:Lbvu;
 
     if-nez p1, :cond_1
 
@@ -1408,21 +1408,21 @@
     :cond_1
     if-eqz v0, :cond_0
 
-    iget-object v1, v0, Lbut;->a:Lbus;
+    iget-object v1, v0, Lbvu;->a:Lbvt;
 
     if-nez v1, :cond_2
 
-    iput-object p1, v0, Lbut;->a:Lbus;
+    iput-object p1, v0, Lbvu;->a:Lbvt;
 
     goto :goto_0
 
     :cond_2
     :goto_1
-    iget-object v1, v0, Lbut;->a:Lbus;
+    iget-object v1, v0, Lbvu;->a:Lbvt;
 
     if-eqz v1, :cond_3
 
-    iget-object v1, v0, Lbut;->a:Lbus;
+    iget-object v1, v0, Lbvu;->a:Lbvt;
 
     if-ne v1, p1, :cond_3
 
@@ -1431,11 +1431,11 @@
     :goto_2
     if-nez v1, :cond_0
 
-    iget-object v1, v0, Lbut;->b:Lbut;
+    iget-object v1, v0, Lbvu;->b:Lbvu;
 
     if-eqz v1, :cond_4
 
-    iget-object v0, v0, Lbut;->b:Lbut;
+    iget-object v0, v0, Lbvu;->b:Lbvu;
 
     goto :goto_1
 
@@ -1445,13 +1445,13 @@
     goto :goto_2
 
     :cond_4
-    new-instance v1, Lbut;
+    new-instance v1, Lbvu;
 
-    invoke-direct {v1}, Lbut;-><init>()V
+    invoke-direct {v1}, Lbvu;-><init>()V
 
-    iput-object p1, v1, Lbut;->a:Lbus;
+    iput-object p1, v1, Lbvu;->a:Lbvt;
 
-    iput-object v1, v0, Lbut;->b:Lbut;
+    iput-object v1, v0, Lbvu;->b:Lbvu;
 
     goto :goto_0
 .end method
@@ -1470,12 +1470,12 @@
     if-lez v0, :cond_1
 
     .line 546
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_0
 
     .line 547
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "call onRelease after scroll abort"
 
@@ -1516,12 +1516,12 @@
     if-lez v0, :cond_1
 
     .line 555
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_0
 
     .line 556
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "call onRelease after scroll finish"
 
@@ -1553,7 +1553,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
@@ -1599,12 +1599,12 @@
     if-lez v0, :cond_5
 
     .line 264
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_4
 
     .line 265
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v3, "call onRelease when user release"
 
@@ -1729,7 +1729,7 @@
     invoke-virtual {v3, v4, v5}, Landroid/graphics/PointF;->set(FF)V
 
     .line 298
-    iget-boolean v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->g:Z
+    iget-boolean v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->f:Z
 
     if-eqz v3, :cond_9
 
@@ -1824,18 +1824,18 @@
 
     .line 311
     :goto_4
-    sget-boolean v4, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v4, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v4, :cond_c
 
     .line 312
-    iget-object v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbur;
+    iget-object v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbvs;
 
     if-eqz v4, :cond_10
 
-    iget-object v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbur;
+    iget-object v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbvs;
 
-    invoke-interface {v4}, Lbur;->a()Z
+    invoke-interface {v4}, Lbvs;->a()Z
 
     move-result v4
 
@@ -1845,7 +1845,7 @@
 
     .line 313
     :goto_5
-    iget-object v7, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v7, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v8, "ACTION_MOVE: offsetY:%s, mCurrentPos: %s, moveUp: %s, canMoveUp: %s, moveDown: %s: canMoveDown: %s"
 
@@ -1905,13 +1905,13 @@
     :cond_c
     if-eqz v5, :cond_11
 
-    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbur;
+    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbvs;
 
     if-eqz v2, :cond_11
 
-    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbur;
+    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbvs;
 
-    invoke-interface {v2}, Lbur;->a()Z
+    invoke-interface {v2}, Lbvs;->a()Z
 
     move-result v2
 
@@ -1993,12 +1993,12 @@
     const/4 v6, 0x0
 
     .line 570
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_0
 
     .line 571
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "refreshComplete"
 
@@ -2006,14 +2006,14 @@
 
     .line 574
     :cond_0
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbuu;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbvv;
 
     if-eqz v0, :cond_1
 
     .line 575
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbuu;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbvv;
 
-    iput-byte v6, v0, Lbuu;->b:B
+    iput-byte v6, v0, Lbvv;->b:B
 
     .line 578
     :cond_1
@@ -2037,12 +2037,12 @@
     if-gtz v0, :cond_4
 
     .line 580
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_2
 
     .line 581
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "performRefreshComplete at once"
 
@@ -2068,12 +2068,12 @@
     invoke-virtual {p0, v1, v2, v3}, Lin/srain/cube/views/ptr/PtrFrameLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 591
-    sget-boolean v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v1, :cond_3
 
     .line 592
-    iget-object v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v2, "performRefreshComplete after delay: %s"
 
@@ -2139,7 +2139,7 @@
 
     .prologue
     .line 693
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     return-object v0
 .end method
@@ -2193,7 +2193,7 @@
 
     .prologue
     .line 739
-    iget v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:I
+    iget v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:I
 
     return v0
 .end method
@@ -2273,7 +2273,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     if-nez v0, :cond_2
 
@@ -2284,11 +2284,11 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     .line 126
     :cond_2
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     if-eqz v0, :cond_3
 
@@ -2308,7 +2308,7 @@
     move-result-object v0
 
     .line 130
-    instance-of v2, v1, Lbus;
+    instance-of v2, v1, Lbvt;
 
     if-eqz v2, :cond_5
 
@@ -2319,7 +2319,7 @@
 
     .line 147
     :goto_0
-    iput-object v0, v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iput-object v0, v1, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     .line 164
     :cond_4
@@ -2331,7 +2331,7 @@
 
     .line 133
     :cond_5
-    instance-of v2, v0, Lbus;
+    instance-of v2, v0, Lbvt;
 
     if-eqz v2, :cond_6
 
@@ -2352,7 +2352,7 @@
 
     .line 138
     :cond_6
-    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     if-nez v2, :cond_7
 
@@ -2375,7 +2375,7 @@
     if-nez v2, :cond_9
 
     .line 145
-    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v2, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     if-ne v2, v1, :cond_8
 
@@ -2408,7 +2408,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     goto :goto_1
 
@@ -2446,10 +2446,10 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 161
-    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     .line 162
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lin/srain/cube/views/ptr/PtrFrameLayout;->addView(Landroid/view/View;)V
 
@@ -2523,11 +2523,11 @@
     invoke-virtual {v7, v4, v0, v5, v6}, Landroid/view/View;->layout(IIII)V
 
     :cond_0
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2545,7 +2545,7 @@
 
     add-int/2addr v0, v1
 
-    iget-object v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2553,7 +2553,7 @@
 
     add-int/2addr v1, v2
 
-    iget-object v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v3, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -2561,7 +2561,7 @@
 
     add-int/2addr v3, v0
 
-    iget-object v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v4, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     invoke-virtual {v4, v2, v0, v1, v3}, Landroid/view/View;->layout(IIII)V
 
@@ -2634,16 +2634,16 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:I
+    iput v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:I
 
     .line 183
     :cond_0
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
     .line 190
-    iget-object v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:Landroid/view/View;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2812,18 +2812,18 @@
 
     .prologue
     .line 743
-    iput p1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:I
+    iput p1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:I
 
     .line 744
     return-void
 .end method
 
-.method public setPtrHandler(Lbur;)V
+.method public setPtrHandler(Lbvs;)V
     .locals 0
 
     .prologue
     .line 697
-    iput-object p1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbur;
+    iput-object p1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->s:Lbvs;
 
     .line 698
     return-void
@@ -2834,7 +2834,7 @@
 
     .prologue
     .line 763
-    iput-boolean p1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->f:Z
+    iput-boolean p1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:Z
 
     .line 764
     return-void
@@ -2858,25 +2858,25 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->e:I
+    iput v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->d:I
 
     .line 736
     return-void
 .end method
 
-.method public setRefreshCompleteHook(Lbuu;)V
+.method public setRefreshCompleteHook(Lbvv;)V
     .locals 1
 
     .prologue
     .line 460
-    iput-object p1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbuu;
+    iput-object p1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->H:Lbvv;
 
     .line 461
     new-instance v0, Lin/srain/cube/views/ptr/PtrFrameLayout$1;
 
     invoke-direct {v0, p0}, Lin/srain/cube/views/ptr/PtrFrameLayout$1;-><init>(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
 
-    iput-object v0, p1, Lbuu;->a:Ljava/lang/Runnable;
+    iput-object v0, p1, Lbvv;->a:Ljava/lang/Runnable;
 
     .line 470
     return-void

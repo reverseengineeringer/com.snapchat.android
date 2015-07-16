@@ -1,33 +1,39 @@
-import java.io.File;
-import org.json.JSONArray;
-import org.json.JSONException;
-
 public final class brp
-  extends bri
+  extends brl
 {
-  private brp(File paramFile)
+  private int g;
+  
+  public brp(brg parambrg, int paramInt)
   {
-    super(paramFile);
+    super(parambrg);
+    g = paramInt;
   }
   
-  public final Object a()
+  protected final brg g()
   {
-    try
+    if ((a.c().equals("HEAD")) || ((g >= 100) && (g <= 199)) || (g == 204) || (g == 304)) {}
+    for (int i = 1; i != 0; i = 0)
     {
-      JSONArray localJSONArray = new JSONArray((String)super.a());
-      return localJSONArray;
+      a.b(a());
+      return a.b();
     }
-    catch (JSONException localJSONException) {}
-    return null;
-  }
-  
-  public static final class a
-    extends brx
-  {
-    public final bri a(File paramFile)
+    if (f) {
+      return new brj(this);
+    }
+    if (d)
     {
-      return new brp(paramFile, (byte)0);
+      if (e > 0) {
+        return new brh(this, e);
+      }
+      a.b(a());
+      return a.b();
     }
+    if (a.c().equals("CONNECT"))
+    {
+      a.b(a());
+      return a.b();
+    }
+    return new brk(this);
   }
 }
 

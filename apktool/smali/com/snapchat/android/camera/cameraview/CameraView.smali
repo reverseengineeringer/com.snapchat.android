@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lvl;
+.implements Lwh;
 
 
 # annotations
@@ -22,7 +22,7 @@
 
 .field public c:Landroid/view/TextureView;
 
-.field private final d:Lno;
+.field private final d:Lof;
 
 .field private final e:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
@@ -63,11 +63,11 @@
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/cameraview/CameraView;->addView(Landroid/view/View;)V
 
     .line 58
-    invoke-static {}, Lno;->a()Lno;
+    invoke-static {}, Lof;->a()Lof;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/camera/cameraview/CameraView;->d:Lno;
+    iput-object v0, p0, Lcom/snapchat/android/camera/cameraview/CameraView;->d:Lof;
 
     .line 59
     invoke-static {}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->a()Lcom/snapchat/android/analytics/CameraEventAnalytics;
@@ -80,12 +80,12 @@
     return-void
 .end method
 
-.method private a(Laue;)Landroid/graphics/Bitmap;
+.method private a(Lavc;)Landroid/graphics/Bitmap;
     .locals 5
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -110,31 +110,31 @@
     invoke-virtual {p0, v4}, Lcom/snapchat/android/camera/cameraview/CameraView;->setDrawingCacheEnabled(Z)V
 
     .line 122
-    invoke-virtual {p1}, Laue;->b()I
+    invoke-virtual {p1}, Lavc;->b()I
 
     move-result v0
 
     .line 123
-    invoke-virtual {p1}, Laue;->a()I
+    invoke-virtual {p1}, Lavc;->a()I
 
     move-result v1
 
     .line 125
-    new-instance v2, Lxh;
+    new-instance v2, Lyd;
 
-    invoke-direct {v2}, Lxh;-><init>()V
+    invoke-direct {v2}, Lyd;-><init>()V
 
     .line 126
-    invoke-static {v2, v0, v1}, Laur;->a(Landroid/util/DisplayMetrics;II)Landroid/graphics/BitmapFactory$Options;
+    invoke-static {v2, v0, v1}, Lavp;->a(Landroid/util/DisplayMetrics;II)Landroid/graphics/BitmapFactory$Options;
 
     move-result-object v2
 
     .line 127
-    invoke-static {}, Lavq;->a()Lavq;
+    invoke-static {}, Lawo;->a()Lawo;
 
     move-result-object v3
 
-    invoke-virtual {v3, v2, v4}, Lavq;->a(Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
+    invoke-virtual {v3, v2, v4}, Lawo;->a(Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
@@ -225,7 +225,7 @@
 
     .prologue
     .line 155
-    sget-boolean v0, Lasu;->HAS_SURFACE_TEXTURE_RECORDING:Z
+    sget-boolean v0, Latt;->HAS_SURFACE_TEXTURE_RECORDING:Z
 
     if-eqz v0, :cond_1
 
@@ -263,7 +263,7 @@
     goto :goto_0
 .end method
 
-.method public final a(Laue;Lvm;)V
+.method public final a(Lavc;Lwi;)V
     .locals 2
 
     .prologue
@@ -275,25 +275,25 @@
     invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->a(Z)V
 
     .line 109
-    invoke-direct {p0, p1}, Lcom/snapchat/android/camera/cameraview/CameraView;->a(Laue;)Landroid/graphics/Bitmap;
+    invoke-direct {p0, p1}, Lcom/snapchat/android/camera/cameraview/CameraView;->a(Lavc;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     .line 110
-    invoke-interface {p2, v0}, Lvm;->a(Landroid/graphics/Bitmap;)V
+    invoke-interface {p2, v0}, Lwi;->a(Landroid/graphics/Bitmap;)V
 
     .line 111
     return-void
 .end method
 
-.method public final a(Laue;Lxh;)V
+.method public final a(Lavc;Lyd;)V
     .locals 7
-    .param p1    # Laue;
-        .annotation build Lcgb;
+    .param p1    # Lavc;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Lxh;
-        .annotation build Lcgb;
+    .param p2    # Lyd;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -301,18 +301,18 @@
     const/high16 v6, 0x3f800000    # 1.0f
 
     .line 206
-    iget v0, p2, Lxh;->heightPixels:I
+    iget v0, p2, Lyd;->heightPixels:I
 
     int-to-float v0, v0
 
-    iget v1, p2, Lxh;->widthPixels:I
+    iget v1, p2, Lyd;->widthPixels:I
 
     int-to-float v1, v1
 
     div-float/2addr v0, v1
 
     .line 208
-    invoke-virtual {p1}, Laue;->c()D
+    invoke-virtual {p1}, Lavc;->c()D
 
     move-result-wide v2
 

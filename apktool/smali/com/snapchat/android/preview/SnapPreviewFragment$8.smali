@@ -49,7 +49,7 @@
     .line 1108
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$8;->a:Landroid/view/View;
 
-    const v2, 0x7f0a02f0
+    const v2, 0x7f0a02ef
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -67,14 +67,14 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lajx;->h(Z)V
+    invoke-static {v0}, Lakr;->h(Z)V
 
     .line 1111
-    invoke-static {}, Lajq;->a()Lajq;
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lajq;->d()Ljava/util/List;
+    invoke-virtual {v0}, Lakk;->d()Ljava/util/List;
 
     move-result-object v0
 

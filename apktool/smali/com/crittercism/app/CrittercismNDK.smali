@@ -127,7 +127,7 @@
 
     .line 124
     :cond_2
-    invoke-static {}, Lbtd;->g()V
+    invoke-static {}, Lbue;->g()V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -210,7 +210,7 @@
     :catch_0
     move-exception v1
 
-    invoke-static {}, Lbtd;->f()V
+    invoke-static {}, Lbue;->f()V
 
     .line 153
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
@@ -225,7 +225,7 @@
     const/4 v0, 0x0
 
     .line 199
-    invoke-static {}, Lbtd;->b()V
+    invoke-static {}, Lbue;->b()V
 
     .line 202
     :try_start_0
@@ -284,7 +284,7 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {}, Lbtd;->e()V
+    invoke-static {}, Lbue;->e()V
 
     .line 221
     :goto_1
@@ -397,7 +397,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+    invoke-static {v1, v0}, Lkkkkkk/xkkkxk;->bООООО041E(Landroid/content/res/AssetManager;Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v0
 

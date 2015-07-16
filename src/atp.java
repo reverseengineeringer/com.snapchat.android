@@ -1,31 +1,4 @@
-import javax.inject.Provider;
-
-public final class atp
-  implements buo<ato>
-{
-  private final Provider<azp> gracefulExceptionHandlerProvider;
-  
-  static
-  {
-    if (!atp.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
-  }
-  
-  private atp(Provider<azp> paramProvider)
-  {
-    assert (paramProvider != null);
-    gracefulExceptionHandlerProvider = paramProvider;
-  }
-  
-  public static buo<ato> a(Provider<azp> paramProvider)
-  {
-    return new atp(paramProvider);
-  }
-}
+public final class atp {}
 
 /* Location:
  * Qualified Name:     atp

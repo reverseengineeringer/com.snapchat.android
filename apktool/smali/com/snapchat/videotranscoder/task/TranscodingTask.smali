@@ -38,11 +38,11 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -194,11 +194,11 @@
 .method private concatenateBitmap(Lcom/snapchat/videotranscoder/task/BitmapMediaSource;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)Z
     .locals 8
     .param p1    # Lcom/snapchat/videotranscoder/task/BitmapMediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -266,11 +266,11 @@
 .method private concatenateImageFile(Lcom/snapchat/videotranscoder/task/ImageFileMediaSource;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)Z
     .locals 8
     .param p1    # Lcom/snapchat/videotranscoder/task/ImageFileMediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -355,11 +355,11 @@
 .method private concatenateVideoFile(Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)Z
     .locals 6
     .param p1    # Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -418,7 +418,7 @@
 .method private runInternal(Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .locals 10
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -980,7 +980,7 @@
 .method public run(Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .locals 4
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

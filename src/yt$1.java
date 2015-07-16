@@ -1,25 +1,32 @@
+import com.snapchat.android.model.CashTransaction;
+import com.snapchat.android.model.chat.CashFeedItem;
+import com.snapchat.android.model.chat.StatefulChatFeedItem;
+import com.squareup.otto.Bus;
+
 final class yt$1
-  implements Runnable
+  implements qt.a
 {
-  yt$1(yt paramyt, aim paramaim, boolean paramBoolean1, boolean paramBoolean2) {}
+  yt$1(yt paramyt, CashFeedItem paramCashFeedItem, yt.a parama) {}
   
-  public final void run()
+  public final void a()
   {
-    if (awx.a(a) != null)
-    {
-      if (b)
-      {
-        d.f(a);
-        d.g(a);
-      }
-      if (c)
-      {
-        d.h(a);
-        d.i(a);
-      }
-      return;
-    }
-    d.b(a, b, c);
+    yt.b();
+    a.d();
+    String str = a.mSender;
+    a.mCashTransaction.a();
+    c.a();
+    bbo.a().a(new bca(a.Y(), a.d()));
+    b.a();
+  }
+  
+  public final void b()
+  {
+    yt.b();
+    a.d();
+    String str = a.mSender;
+    a.mCashTransaction.a();
+    bbo.a().a(new bca(a.Y(), a.d()));
+    b.b();
   }
 }
 

@@ -331,13 +331,7 @@
 
     :cond_1
     :try_start_0
-    iget-object v4, p0, Lcom/google/android/gms/internal/zzdn;->zznh:Ljava/lang/Object;
-
     invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    invoke-virtual {v4, v0, v1}, Ljava/lang/Object;->wait(J)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -511,10 +505,6 @@
     :try_start_1
     iput v0, p0, Lcom/google/android/gms/internal/zzdn;->zzsH:I
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzdn;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
-
     monitor-exit v1
 
     return-void
@@ -609,10 +599,6 @@
 
     :try_start_0
     iput p1, p0, Lcom/google/android/gms/internal/zzdn;->zzsH:I
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzdn;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
     monitor-exit v1
 

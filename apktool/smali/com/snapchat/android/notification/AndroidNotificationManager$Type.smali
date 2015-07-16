@@ -78,7 +78,7 @@
 
     const/4 v4, 0x0
 
-    .line 109
+    .line 111
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "SNAP"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->SNAP:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 110
+    .line 112
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "CHAT"
@@ -96,7 +96,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CHAT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 111
+    .line 113
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "ADDFRIEND"
@@ -105,7 +105,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->ADDFRIEND:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 112
+    .line 114
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "REPLAY"
@@ -114,7 +114,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->REPLAY:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 113
+    .line 115
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "TYPING"
@@ -123,7 +123,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->TYPING:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 114
+    .line 116
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "SCREENSHOT"
@@ -134,7 +134,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->SCREENSHOT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 115
+    .line 117
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "CHAT_SCREENSHOT"
@@ -147,7 +147,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CHAT_SCREENSHOT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 116
+    .line 118
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "HERE_SCREENSHOT"
@@ -160,7 +160,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->HERE_SCREENSHOT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 117
+    .line 119
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "STORIES"
@@ -173,7 +173,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->STORIES:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 118
+    .line 120
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "CASH"
@@ -186,7 +186,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CASH:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 119
+    .line 121
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "CASH_MESSAGE"
@@ -199,7 +199,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CASH_MESSAGE:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 122
+    .line 124
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "FAILED_SNAP_AND_CHAT"
@@ -212,7 +212,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->FAILED_SNAP_AND_CHAT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 123
+    .line 125
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "FAILED_CHAT_NOT_FRIENDS"
@@ -225,7 +225,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->FAILED_CHAT_NOT_FRIENDS:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 124
+    .line 126
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "UPLOAD_LOGS_REQUEST"
@@ -238,7 +238,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->UPLOAD_LOGS_REQUEST:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 125
+    .line 127
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "FAILED_CASH"
@@ -251,7 +251,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->FAILED_CASH:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 128
+    .line 130
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     const-string v1, "EMAIL_VERIFIED"
@@ -264,7 +264,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->EMAIL_VERIFIED:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 106
+    .line 108
     const/16 v0, 0x10
 
     new-array v0, v0, [Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
@@ -369,13 +369,13 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 136
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 135
+    .line 137
     iput p3, p0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->a:I
 
-    .line 136
+    .line 138
     return-void
 .end method
 
@@ -383,7 +383,7 @@
     .locals 1
 
     .prologue
-    .line 106
+    .line 108
     const-class v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -399,7 +399,7 @@
     .locals 1
 
     .prologue
-    .line 106
+    .line 108
     sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->$VALUES:[Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->clone()Ljava/lang/Object;
@@ -417,7 +417,7 @@
     .locals 1
 
     .prologue
-    .line 139
+    .line 141
     iget v0, p0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->a:I
 
     return v0
@@ -427,7 +427,7 @@
     .locals 2
 
     .prologue
-    .line 143
+    .line 145
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "LANDING_PAGE_ACTION_FROM_NOTIF_TYPE"

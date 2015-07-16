@@ -1,19 +1,22 @@
 package com.snapchat.android.fragments.stories;
 
-import ajg;
-import ajo;
-import android.view.View;
-import android.view.View.OnClickListener;
+import agh;
+import android.content.Context;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.FriendAction;
+import com.snapchat.android.model.FriendAction.BlockReason;
 
 final class StoriesAdapter$11
-  implements View.OnClickListener
+  extends agh
 {
-  StoriesAdapter$11(StoriesAdapter paramStoriesAdapter, ajg paramajg) {}
-  
-  public final void onClick(View paramView)
+  StoriesAdapter$11(StoriesAdapter paramStoriesAdapter, Context paramContext, Friend paramFriend1, Friend paramFriend2)
   {
-    ((ajo)a).p();
-    b.notifyDataSetChanged();
+    super(paramContext, paramFriend1);
+  }
+  
+  protected final void a(FriendAction.BlockReason paramBlockReason)
+  {
+    new StoriesAdapter.c(c, FriendAction.BLOCK, a, a.l(), a.mUserId, a.a(), null, paramBlockReason, (byte)0).execute();
   }
 }
 

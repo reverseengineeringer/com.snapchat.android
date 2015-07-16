@@ -1,31 +1,53 @@
-import android.util.SparseArray;
+import java.util.Iterator;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public enum bra
+public final class bra
 {
-  private static SparseArray f;
-  int e;
+  JSONObject a = new JSONObject();
   
-  static
+  private bra(brv parambrv, List paramList)
   {
-    SparseArray localSparseArray = new SparseArray();
-    f = localSparseArray;
-    localSparseArray.put(0, a);
-    f.put(1, b);
-  }
-  
-  private bra(int paramInt1)
-  {
-    e = paramInt1;
-  }
-  
-  public static bra a(int paramInt)
-  {
-    bra localbra2 = (bra)f.get(paramInt);
-    bra localbra1 = localbra2;
-    if (localbra2 == null) {
-      localbra1 = c;
+    paramList.size();
+    JSONArray localJSONArray1 = new JSONArray();
+    JSONArray localJSONArray2 = new JSONArray();
+    localJSONArray2.put(parambrv.a());
+    localJSONArray2.put(parambrv.b());
+    localJSONArray2.put(parambrv.c());
+    localJSONArray2.put("4.5.4");
+    localJSONArray2.put(parambrv.d());
+    localJSONArray1.put(localJSONArray2);
+    localJSONArray2 = new JSONArray();
+    localJSONArray2.put(buk.a.a());
+    localJSONArray2.put(parambrv.e());
+    localJSONArray2.put(parambrv.g());
+    localJSONArray2.put(parambrv.f());
+    localJSONArray2.put(parambrv.h());
+    localJSONArray1.put(localJSONArray2);
+    parambrv = new JSONArray();
+    paramList = paramList.iterator();
+    while (paramList.hasNext()) {
+      parambrv.put(((btc)paramList.next()).e());
     }
-    return localbra1;
+    localJSONArray1.put(parambrv);
+    a.put("d", localJSONArray1);
+  }
+  
+  public static bra a(brv parambrv, List paramList)
+  {
+    try
+    {
+      parambrv = new bra(parambrv, paramList);
+      return parambrv;
+    }
+    catch (JSONException parambrv)
+    {
+      new StringBuilder("Unable to generate APM request's JSON: ").append(parambrv);
+      bue.e();
+    }
+    return null;
   }
 }
 

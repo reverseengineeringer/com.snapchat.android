@@ -1,244 +1,156 @@
 .class public final Lrk;
-.super Ljava/lang/Object;
+.super Lqs;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuj;
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lrk$b;,
+        Lrk$a;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
+        "Lqs",
         "<",
-        "Lrj;",
+        "Lrk$b;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
 # instance fields
-.field private final mCashErrorReporterProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final mAmount:I
 
-.field private final mSquareProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
-.field private final supertypeInjector:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final mIsRain:Z
+
+.field private final mMessage:Ljava/lang/String;
+
+.field private final mRecipient:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/String;ILcom/snapchat/android/util/CashUtils$CurrencyCode;Ljava/lang/String;ZLqs$a;)V
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Lcom/snapchat/android/util/CashUtils$CurrencyCode;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p6    # Lqs$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 10
-    const-class v0, Lrk;
+    .line 30
+    invoke-direct {p0, p6}, Lqs;-><init>(Lqs$a;)V
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    .line 32
+    iput-object p1, p0, Lrk;->mRecipient:Ljava/lang/String;
 
-    move-result v0
+    .line 33
+    iput p2, p0, Lrk;->mAmount:I
 
-    if-nez v0, :cond_0
+    .line 34
+    iput-object p3, p0, Lrk;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
-    const/4 v0, 0x1
+    .line 35
+    iput-object p4, p0, Lrk;->mMessage:Ljava/lang/String;
 
-    :goto_0
-    sput-boolean v0, Lrk;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 17
-    sget-boolean v0, Lrk;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 18
-    :cond_0
-    iput-object p1, p0, Lrk;->supertypeInjector:Lbuj;
-
-    .line 19
-    sget-boolean v0, Lrk;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 20
-    :cond_1
-    iput-object p2, p0, Lrk;->mCashErrorReporterProvider:Ljavax/inject/Provider;
-
-    .line 21
-    sget-boolean v0, Lrk;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_2
-
-    if-nez p3, :cond_2
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 22
-    :cond_2
-    iput-object p3, p0, Lrk;->mSquareProvider:Ljavax/inject/Provider;
-
-    .line 23
-    return-void
-.end method
-
-.method public static a(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lrj;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
     .line 36
-    new-instance v0, Lrk;
+    iput-boolean p5, p0, Lrk;->mIsRain:Z
 
-    invoke-direct {v0, p0, p1, p2}, Lrk;-><init>(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    .line 38
+    const-class v0, Lrk$b;
+
+    invoke-virtual {p0, v0, p0}, Lrk;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 39
+    return-void
+.end method
+
+.method static synthetic a(Lrk;)Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 18
+    iget-object v0, p0, Lrk;->mRecipient:Ljava/lang/String;
 
     return-object v0
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method static synthetic b(Lrk;)I
+    .locals 1
 
     .prologue
-    .line 10
-    check-cast p1, Lrj;
+    .line 18
+    iget v0, p0, Lrk;->mAmount:I
 
-    if-nez p1, :cond_0
+    return v0
+.end method
 
-    new-instance v0, Ljava/lang/NullPointerException;
+.method static synthetic c(Lrk;)Lcom/snapchat/android/util/CashUtils$CurrencyCode;
+    .locals 1
 
-    const-string v1, "Cannot inject members into a null reference"
+    .prologue
+    .line 18
+    iget-object v0, p0, Lrk;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    throw v0
+.method static synthetic d(Lrk;)Ljava/lang/String;
+    .locals 1
 
-    :cond_0
-    iget-object v0, p0, Lrk;->supertypeInjector:Lbuj;
+    .prologue
+    .line 18
+    iget-object v0, p0, Lrk;->mMessage:Ljava/lang/String;
 
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
+    return-object v0
+.end method
 
-    iget-object v0, p0, Lrk;->mCashErrorReporterProvider:Ljavax/inject/Provider;
+.method static synthetic e(Lrk;)Z
+    .locals 1
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .prologue
+    .line 18
+    iget-boolean v0, p0, Lrk;->mIsRain:Z
 
-    move-result-object v0
+    return v0
+.end method
 
-    check-cast v0, Lqg;
 
-    iput-object v0, p1, Lrj;->mCashErrorReporter:Lqg;
+# virtual methods
+.method protected final getPath()Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Lrk;->mSquareProvider:Ljavax/inject/Provider;
+    .prologue
+    .line 43
+    const-string v0, "/cash/validate_transaction"
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 1
 
-    check-cast v0, Lsn;
+    .prologue
+    .line 62
+    new-instance v0, Lrk$a;
 
-    iput-object v0, p1, Lrj;->mSquareProvider:Lsn;
+    invoke-direct {v0, p0}, Lrk$a;-><init>(Lrk;)V
 
-    return-void
+    return-object v0
 .end method

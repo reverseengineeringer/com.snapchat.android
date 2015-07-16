@@ -1,78 +1,60 @@
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileChannel.MapMode;
+import java.nio.channels.WritableByteChannel;
 
-public class fh<E>
-  extends AbstractList<E>
+public final class fh
+  implements fg
 {
-  private static final fi c = fi.a(fh.class);
-  List<E> a;
-  Iterator<E> b;
+  FileChannel a;
+  String b;
   
-  public fh(List<E> paramList, Iterator<E> paramIterator)
+  public fh(File paramFile)
   {
-    a = paramList;
-    b = paramIterator;
+    a = new FileInputStream(paramFile).getChannel();
+    b = paramFile.getName();
   }
   
-  public E get(int paramInt)
+  public final int a(ByteBuffer paramByteBuffer)
   {
-    if (a.size() > paramInt) {
-      return (E)a.get(paramInt);
-    }
-    if (b.hasNext())
-    {
-      a.add(b.next());
-      return (E)get(paramInt);
-    }
-    throw new NoSuchElementException();
+    return a.read(paramByteBuffer);
   }
   
-  public Iterator<E> iterator()
+  public final long a()
   {
-    new Iterator()
-    {
-      int a = 0;
-      
-      public final boolean hasNext()
-      {
-        return (a < a.size()) || (b.hasNext());
-      }
-      
-      public final E next()
-      {
-        for (;;)
-        {
-          if (a < a.size())
-          {
-            List localList = a;
-            int i = a;
-            a = (i + 1);
-            return (E)localList.get(i);
-          }
-          a.add(b.next());
-        }
-      }
-      
-      public final void remove()
-      {
-        throw new UnsupportedOperationException();
-      }
-    };
+    return a.size();
   }
   
-  public int size()
+  public final long a(long paramLong1, long paramLong2, WritableByteChannel paramWritableByteChannel)
   {
-    c.a("potentially expensive size() call");
-    c.a("blowup running");
-    for (;;)
-    {
-      if (!b.hasNext()) {
-        return a.size();
-      }
-      a.add(b.next());
-    }
+    return a.transferTo(paramLong1, paramLong2, paramWritableByteChannel);
+  }
+  
+  public final ByteBuffer a(long paramLong1, long paramLong2)
+  {
+    return a.map(FileChannel.MapMode.READ_ONLY, paramLong1, paramLong2);
+  }
+  
+  public final void a(long paramLong)
+  {
+    a.position(paramLong);
+  }
+  
+  public final long b()
+  {
+    return a.position();
+  }
+  
+  public final void close()
+  {
+    a.close();
+  }
+  
+  public final String toString()
+  {
+    return b;
   }
 }
 

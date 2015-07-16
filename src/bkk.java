@@ -5,28 +5,57 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bkk
 {
-  @SerializedName("display_name")
-  protected String displayName;
-  @SerializedName("distance")
-  protected Double distance;
-  @SerializedName("user_id")
-  protected String userId;
-  @SerializedName("username")
-  protected String username;
+  @SerializedName("screenshotted")
+  protected Boolean screenshotted;
+  @SerializedName("storypointer")
+  protected bkl storypointer;
+  @SerializedName("timestamp")
+  protected Long timestamp;
+  @SerializedName("viewer")
+  protected String viewer;
+  
+  public final bkk a(bkl parambkl)
+  {
+    storypointer = parambkl;
+    return this;
+  }
+  
+  public final bkk a(Boolean paramBoolean)
+  {
+    screenshotted = paramBoolean;
+    return this;
+  }
+  
+  public final bkk a(Long paramLong)
+  {
+    timestamp = paramLong;
+    return this;
+  }
+  
+  public final bkk a(String paramString)
+  {
+    viewer = paramString;
+    return this;
+  }
   
   public final String a()
   {
-    return userId;
+    return viewer;
   }
   
-  public final String b()
+  public final Boolean b()
   {
-    return username;
+    return screenshotted;
   }
   
-  public final String c()
+  public final Long c()
   {
-    return displayName;
+    return timestamp;
+  }
+  
+  public final bkl d()
+  {
+    return storypointer;
   }
   
   public final boolean equals(Object paramObject)
@@ -38,12 +67,12 @@ public final class bkk
       return false;
     }
     paramObject = (bkk)paramObject;
-    return new EqualsBuilder().append(userId, userId).append(username, username).append(displayName, displayName).append(distance, distance).isEquals();
+    return new EqualsBuilder().append(viewer, viewer).append(screenshotted, screenshotted).append(timestamp, timestamp).append(storypointer, storypointer).isEquals();
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(userId).append(username).append(displayName).append(distance).toHashCode();
+    return new HashCodeBuilder().append(viewer).append(screenshotted).append(timestamp).append(storypointer).toHashCode();
   }
   
   public final String toString()

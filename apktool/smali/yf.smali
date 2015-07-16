@@ -3,323 +3,288 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lald;
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;",
+        ">;"
+    }
+.end annotation
 
 
 # static fields
-.field private static f:Lyf;
+.field static final synthetic a:Z
 
 
 # instance fields
-.field public a:Lakc;
-
-.field public final b:Lyq;
-
-.field public c:Ljava/util/Map;
+.field private final b:Lbvk;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Map",
+            "Lbvk",
             "<",
-            "Ljava/lang/String;",
-            "Landroid/os/Handler;",
+            "Lcom/snapchat/android/util/WaitDoneHandler;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public d:Z
+.field private final c:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lye;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public e:I
+.field private final d:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private g:Z
+.field private final e:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lban;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method private constructor <init>()V
-    .locals 2
-
-    .prologue
-    .line 49
-    invoke-static {}, Lale;->a()Lale;
-
-    move-result-object v0
-
-    invoke-static {}, Lyq;->a()Lyq;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Lyf;-><init>(Lale;Lyq;)V
-
-    .line 50
-    return-void
-.end method
-
-.method private constructor <init>(Lale;Lyq;)V
+.method static constructor <clinit>()V
     .locals 1
-    .param p1    # Lale;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lyq;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 54
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 10
+    const-class v0, Lyf;
 
-    .line 46
-    const/4 v0, 0x0
-
-    iput v0, p0, Lyf;->e:I
-
-    .line 55
-    iput-object p2, p0, Lyf;->b:Lyq;
-
-    .line 56
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lyf;->c:Ljava/util/Map;
-
-    .line 57
-    invoke-virtual {p1, p0}, Lale;->a(Lald;)V
-
-    .line 58
-    return-void
-.end method
-
-.method public static declared-synchronized a()Lyf;
-    .locals 2
-
-    .prologue
-    .line 65
-    const-class v1, Lyf;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Lyf;->f:Lyf;
-
-    if-nez v0, :cond_0
-
-    .line 66
-    new-instance v0, Lyf;
-
-    invoke-direct {v0}, Lyf;-><init>()V
-
-    sput-object v0, Lyf;->f:Lyf;
-
-    .line 68
-    :cond_0
-    sget-object v0, Lyf;->f:Lyf;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 65
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method public static declared-synchronized b()V
-    .locals 4
-
-    .prologue
-    .line 72
-    const-class v1, Lyf;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Lyf;->f:Lyf;
-
-    if-eqz v0, :cond_1
-
-    .line 73
-    sget-object v0, Lyf;->f:Lyf;
-
-    iget-object v0, v0, Lyf;->c:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    :goto_0
+    sput-boolean v0, Lyf;->a:Z
 
-    check-cast v0, Landroid/os/Handler;
+    return-void
 
-    .line 74
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    .line 72
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-
-    .line 76
     :cond_0
     const/4 v0, 0x0
 
-    :try_start_1
-    sput-object v0, Lyf;->f:Lyf;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    goto :goto_0
+.end method
 
-    .line 78
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/WaitDoneHandler;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lye;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lban;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 17
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 18
+    sget-boolean v0, Lyf;->a:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 19
+    :cond_0
+    iput-object p1, p0, Lyf;->b:Lbvk;
+
+    .line 20
+    sget-boolean v0, Lyf;->a:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 21
     :cond_1
-    monitor-exit v1
+    iput-object p2, p0, Lyf;->c:Ljavax/inject/Provider;
 
+    .line 22
+    sget-boolean v0, Lyf;->a:Z
+
+    if-nez v0, :cond_2
+
+    if-nez p3, :cond_2
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 23
+    :cond_2
+    iput-object p3, p0, Lyf;->d:Ljavax/inject/Provider;
+
+    .line 24
+    sget-boolean v0, Lyf;->a:Z
+
+    if-nez v0, :cond_3
+
+    if-nez p4, :cond_3
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 25
+    :cond_3
+    iput-object p4, p0, Lyf;->e:Ljavax/inject/Provider;
+
+    .line 26
     return-void
+.end method
+
+.method public static a(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/WaitDoneHandler;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lye;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lban;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 40
+    new-instance v0, Lyf;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lyf;-><init>(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/net/NetworkInfo;)V
-    .locals 4
-    .param p1    # Landroid/net/NetworkInfo;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
     .prologue
-    .line 92
-    const-string v0, "ChatConnectionMonitor"
+    .line 10
+    check-cast p1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;
 
-    const-string v1, "CHAT-LOG: ChatConnectionMonitor onConnectivityChanged %s"
+    if-nez p1, :cond_0
 
-    const/4 v2, 0x1
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const-string v1, "Cannot inject members into a null reference"
 
-    const/4 v3, 0x0
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    aput-object p1, v2, v3
+    throw v0
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    :cond_0
+    iget-object v0, p0, Lyf;->b:Lbvk;
 
-    .line 93
-    if-eqz p1, :cond_0
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
 
-    .line 94
-    invoke-virtual {p1}, Landroid/net/NetworkInfo;->isConnected()Z
+    iget-object v0, p0, Lyf;->c:Ljavax/inject/Provider;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lyf;->g:Z
-
-    if-eqz v0, :cond_0
-
-    .line 96
-    iget-object v0, p0, Lyf;->a:Lakc;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lyf;->a:Lakc;
-
-    invoke-virtual {v0}, Lakc;->e()Ljava/util/List;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    check-cast v0, Lye;
 
-    move-result-object v1
+    iput-object v0, p1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->d:Lye;
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lyf;->d:Ljavax/inject/Provider;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/snapchat/android/model/chat/ChatConversation;
+    check-cast v0, Lcom/snapchat/android/camera/model/CameraModel;
 
-    const/4 v2, 0x3
+    iput-object v0, p1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->e:Lcom/snapchat/android/camera/model/CameraModel;
 
-    const/4 v3, 0x0
+    iget-object v0, p0, Lyf;->e:Ljavax/inject/Provider;
 
-    invoke-virtual {v0, v2, v3}, Lcom/snapchat/android/model/chat/ChatConversation;->a(ILaje;)I
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object v0
 
-    .line 99
-    :cond_0
+    check-cast v0, Lban;
+
+    iput-object v0, p1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->f:Lban;
+
     return-void
-.end method
-
-.method public final a(Z)V
-    .locals 3
-
-    .prologue
-    .line 81
-    iput-boolean p1, p0, Lyf;->g:Z
-
-    .line 83
-    if-eqz p1, :cond_0
-
-    .line 84
-    const/4 v0, 0x0
-
-    iput v0, p0, Lyf;->e:I
-
-    .line 88
-    :goto_0
-    return-void
-
-    .line 86
-    :cond_0
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    const-string v1, "CHAT_SESSIONS_ESTABLISHED"
-
-    invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
-
-    const-string v1, "count"
-
-    iget v2, p0, Lyf;->e:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    goto :goto_0
 .end method

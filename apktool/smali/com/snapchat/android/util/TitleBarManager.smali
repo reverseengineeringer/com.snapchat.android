@@ -4,7 +4,7 @@
 
 
 # annotations
-.annotation build Lavl;
+.annotation build Lawj;
 .end annotation
 
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -69,14 +69,12 @@
 
 # virtual methods
 .method public final a()V
-    .locals 9
+    .locals 8
 
     .prologue
-    const/16 v8, 0x800
+    const/16 v7, 0x800
 
-    const/16 v7, 0x400
-
-    const/4 v6, 0x0
+    const/16 v6, 0x400
 
     .line 160
     iget-boolean v0, p0, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarUpdateInProgress:Z
@@ -109,15 +107,6 @@
     .line 175
     if-eqz v0, :cond_0
 
-    .line 176
-    const-string v0, "TitleBarManager"
-
-    const-string v1, "Update was in progress. Wait."
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 189
     :goto_0
     return-void
@@ -129,45 +118,27 @@
     if-eqz v0, :cond_1
 
     .line 181
-    const-string v0, "TitleBarManager"
-
-    const-string v1, "Showing title bar."
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 182
     iget-object v0, p0, Lcom/snapchat/android/util/TitleBarManager;->mWindow:Landroid/view/Window;
 
-    invoke-virtual {v0, v8}, Landroid/view/Window;->addFlags(I)V
+    invoke-virtual {v0, v7}, Landroid/view/Window;->addFlags(I)V
 
     .line 183
     iget-object v0, p0, Lcom/snapchat/android/util/TitleBarManager;->mWindow:Landroid/view/Window;
 
-    invoke-virtual {v0, v7}, Landroid/view/Window;->clearFlags(I)V
+    invoke-virtual {v0, v6}, Landroid/view/Window;->clearFlags(I)V
 
     goto :goto_0
 
     .line 185
     :cond_1
-    const-string v0, "TitleBarManager"
-
-    const-string v1, "Hiding title bar."
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 186
     iget-object v0, p0, Lcom/snapchat/android/util/TitleBarManager;->mWindow:Landroid/view/Window;
 
-    invoke-virtual {v0, v7}, Landroid/view/Window;->addFlags(I)V
+    invoke-virtual {v0, v6}, Landroid/view/Window;->addFlags(I)V
 
     .line 187
     iget-object v0, p0, Lcom/snapchat/android/util/TitleBarManager;->mWindow:Landroid/view/Window;
 
-    invoke-virtual {v0, v8}, Landroid/view/Window;->clearFlags(I)V
+    invoke-virtual {v0, v7}, Landroid/view/Window;->clearFlags(I)V
 
     goto :goto_0
 .end method

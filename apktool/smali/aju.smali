@@ -3,55 +3,59 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Laju$a;
-    }
-.end annotation
-
-
 # instance fields
-.field public mNumWithOnlyUnreadChats:I
+.field public end:Lcht;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "end"
+    .end annotation
+.end field
 
-.field public mNumWithOnlyUnviewedCash:I
+.field public start:Lcht;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "start"
+    .end annotation
+.end field
 
-.field public mNumWithUnviewedContent:I
 
-
-# direct methods
-.method private constructor <init>(Laju$a;)V
-    .locals 1
-
-    .prologue
-    .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 17
-    iget v0, p1, Laju$a;->numWithUnviewedContent:I
-
-    iput v0, p0, Laju;->mNumWithUnviewedContent:I
-
-    .line 18
-    iget v0, p1, Laju$a;->numWithOnlyUnviewedChats:I
-
-    iput v0, p0, Laju;->mNumWithOnlyUnreadChats:I
-
-    .line 19
-    iget v0, p1, Laju$a;->numWithOnlyUnviewedCash:I
-
-    iput v0, p0, Laju;->mNumWithOnlyUnviewedCash:I
-
-    .line 20
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Laju$a;B)V
-    .locals 0
+# virtual methods
+.method public final a(Lcht;)Z
+    .locals 2
 
     .prologue
-    .line 10
-    invoke-direct {p0, p1}, Laju;-><init>(Laju$a;)V
+    const/4 v0, 0x0
 
-    return-void
+    .line 34
+    iget-object v1, p0, Laju;->start:Lcht;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Laju;->end:Lcht;
+
+    if-nez v1, :cond_1
+
+    .line 37
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    iget-object v1, p0, Laju;->start:Lcht;
+
+    invoke-virtual {v1, p1}, Lcht;->c(Lcic;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Laju;->end:Lcht;
+
+    invoke-virtual {v1, p1}, Lcht;->b(Lcic;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method

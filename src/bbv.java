@@ -1,14 +1,16 @@
-import android.view.KeyEvent;
+import com.snapchat.android.model.chat.ChatConversation;
 
 public final class bbv
 {
-  public KeyEvent event;
-  public int keyCode;
+  public ChatConversation mConversation;
+  public long mCount;
+  public long mCreatedAt;
   
-  public bbv(int paramInt, KeyEvent paramKeyEvent)
+  public bbv(ChatConversation paramChatConversation, long paramLong1, long paramLong2)
   {
-    keyCode = paramInt;
-    event = paramKeyEvent;
+    mConversation = paramChatConversation;
+    mCount = paramLong2;
+    mCreatedAt = paramLong1;
   }
 }
 

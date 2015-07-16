@@ -1,45 +1,82 @@
-import android.graphics.Bitmap;
-import android.net.Uri;
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.Inflater;
 
-public abstract interface bos
+final class bos
 {
-  public abstract bos.a a(Uri paramUri, int paramInt);
-  
-  public abstract void a();
-  
-  public static final class a
+  int a;
+  final cax b = cbe.a(c);
+  private final cbd c = new cbd(new cbb(paramcax)new Inflater
   {
-    final InputStream a;
-    final Bitmap b;
-    final boolean c;
-    final long d;
-    
-    public a(InputStream paramInputStream, boolean paramBoolean, long paramLong)
+    public final long a(cav paramAnonymouscav, long paramAnonymousLong)
     {
-      if (paramInputStream == null) {
-        throw new IllegalArgumentException("Stream may not be null.");
-      }
-      a = paramInputStream;
-      b = null;
-      c = paramBoolean;
-      d = paramLong;
+      if (a == 0) {}
+      do
+      {
+        return -1L;
+        paramAnonymousLong = super.a(paramAnonymouscav, Math.min(paramAnonymousLong, a));
+      } while (paramAnonymousLong == -1L);
+      a = ((int)(a - paramAnonymousLong));
+      return paramAnonymousLong;
     }
+  }, new Inflater()
+  {
+    public final int inflate(byte[] paramAnonymousArrayOfByte, int paramAnonymousInt1, int paramAnonymousInt2)
+    {
+      int j = super.inflate(paramAnonymousArrayOfByte, paramAnonymousInt1, paramAnonymousInt2);
+      int i = j;
+      if (j == 0)
+      {
+        i = j;
+        if (needsDictionary())
+        {
+          setDictionary(bow.a);
+          i = super.inflate(paramAnonymousArrayOfByte, paramAnonymousInt1, paramAnonymousInt2);
+        }
+      }
+      return i;
+    }
+  });
+  
+  public bos(cax paramcax) {}
+  
+  private cay a()
+  {
+    int i = b.h();
+    return b.c(i);
   }
   
-  public static final class b
-    extends IOException
+  public final List<bom> a(int paramInt)
   {
-    final boolean a;
-    final int b;
-    
-    public b(String paramString, int paramInt1, int paramInt2)
-    {
-      super();
-      a = bpa.c(paramInt1);
-      b = paramInt2;
+    a += paramInt;
+    int i = b.h();
+    if (i < 0) {
+      throw new IOException("numberOfPairs < 0: " + i);
     }
+    if (i > 1024) {
+      throw new IOException("numberOfPairs > 1024: " + i);
+    }
+    ArrayList localArrayList = new ArrayList(i);
+    paramInt = 0;
+    while (paramInt < i)
+    {
+      cay localcay1 = a().c();
+      cay localcay2 = a();
+      if (c.length == 0) {
+        throw new IOException("name.size == 0");
+      }
+      localArrayList.add(new bom(localcay1, localcay2));
+      paramInt += 1;
+    }
+    if (a > 0)
+    {
+      c.b();
+      if (a != 0) {
+        throw new IOException("compressedLimit > 0: " + a);
+      }
+    }
+    return localArrayList;
   }
 }
 

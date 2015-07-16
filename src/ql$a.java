@@ -1,12 +1,19 @@
 import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.api2.cash.ScCashResponsePayload;
 
-public class ql$a
-  extends ScCashResponsePayload
+@ud
+public final class ql$a
+  extends qc
 {
-  @SerializedName("access_token")
-  @cgc
-  public xq accessToken;
+  @SerializedName("friend")
+  final String friend;
+  @SerializedName("hide")
+  final boolean hide;
+  
+  ql$a(ql paramql)
+  {
+    friend = mFriend;
+    hide = mHide;
+  }
 }
 
 /* Location:

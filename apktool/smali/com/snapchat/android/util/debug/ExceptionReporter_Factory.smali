@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/util/debug/ExceptionReporter_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lazo;",
+        "Lban;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Lazo;",
+            "Lban;",
             ">;"
         }
     .end annotation
@@ -127,14 +127,14 @@
 
 
 # virtual methods
-.method public final get()Lazo;
+.method public final get()Lban;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Lazo;
+    new-instance v0, Lban;
 
-    invoke-direct {v0}, Lazo;-><init>()V
+    invoke-direct {v0}, Lban;-><init>()V
 
     return-object v0
 .end method
@@ -144,7 +144,7 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/util/debug/ExceptionReporter_Factory;->get()Lazo;
+    invoke-virtual {p0}, Lcom/snapchat/android/util/debug/ExceptionReporter_Factory;->get()Lban;
 
     move-result-object v0
 

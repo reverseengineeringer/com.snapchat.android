@@ -12,16 +12,16 @@
 
 
 # instance fields
-.field private final c:Lxc;
+.field private final c:Lxy;
 
-.field private final d:Lxd;
+.field private final d:Lxz;
 
 .field private e:I
 
 .field private f:Z
 
 .field private g:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper$a;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -32,21 +32,21 @@
 
     .prologue
     .line 37
-    new-instance v0, Lxc;
+    new-instance v0, Lxy;
 
-    invoke-direct {v0}, Lxc;-><init>()V
+    invoke-direct {v0}, Lxy;-><init>()V
 
-    new-instance v1, Lxd;
+    new-instance v1, Lxz;
 
-    invoke-direct {v1}, Lxd;-><init>()V
+    invoke-direct {v1}, Lxz;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0, v1}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lxc;Lxd;)V
+    invoke-direct {p0, p1, p2, v0, v1}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lxy;Lxz;)V
 
     .line 38
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lxc;Lxd;)V
+.method private constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lxy;Lxz;)V
     .locals 3
 
     .prologue
@@ -64,11 +64,11 @@
     iput-object v0, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->g:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper$a;
 
     .line 50
-    new-instance v0, Lanj;
+    new-instance v0, Laog;
 
-    invoke-direct {v0, p0}, Lanj;-><init>(Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;)V
+    invoke-direct {v0, p0}, Laog;-><init>(Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;)V
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setOnScrolledListener(Lcom/snapchat/android/ui/VerticalSwipeLayout$a;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->a(Lcom/snapchat/android/ui/VerticalSwipeLayout$a;)V
 
     .line 44
     const/4 v0, 0x1
@@ -99,10 +99,10 @@
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 45
-    iput-object p3, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->c:Lxc;
+    iput-object p3, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->c:Lxy;
 
     .line 46
-    iput-object p4, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->d:Lxd;
+    iput-object p4, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->d:Lxz;
 
     .line 47
     return-void
@@ -169,39 +169,39 @@
     .line 92
     const/high16 v0, 0x437f0000    # 255.0f
 
-    iget-object v1, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->c:Lxc;
+    iget-object v1, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->c:Lxy;
 
-    iget v2, v1, Lxc;->c:I
+    iget v2, v1, Lxy;->c:I
 
     div-int v2, p2, v2
 
-    iget-object v3, v1, Lxc;->b:Lxe;
+    iget-object v3, v1, Lxy;->b:Lya;
 
-    invoke-virtual {v3, v2, p2}, Lxe;->a(II)F
+    invoke-virtual {v3, v2, p2}, Lya;->a(II)F
 
     move-result v3
 
-    iget-object v4, v1, Lxc;->b:Lxe;
+    iget-object v4, v1, Lxy;->b:Lya;
 
     add-int/lit8 v5, v2, 0x1
 
-    invoke-virtual {v4, v5, p2}, Lxe;->a(II)F
+    invoke-virtual {v4, v5, p2}, Lya;->a(II)F
 
     move-result v4
 
-    iget-object v5, v1, Lxc;->a:Lxc$a;
+    iget-object v5, v1, Lxy;->a:Lxy$a;
 
-    invoke-interface {v5, v2}, Lxc$a;->a(I)F
+    invoke-interface {v5, v2}, Lxy$a;->a(I)F
 
     move-result v5
 
     mul-float/2addr v3, v5
 
-    iget-object v1, v1, Lxc;->a:Lxc$a;
+    iget-object v1, v1, Lxy;->a:Lxy$a;
 
     add-int/lit8 v2, v2, 0x1
 
-    invoke-interface {v1, v2}, Lxc$a;->a(I)F
+    invoke-interface {v1, v2}, Lxy$a;->a(I)F
 
     move-result v1
 
@@ -245,11 +245,11 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->d:Lxd;
+    iget-object v1, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->d:Lxz;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2, p2}, Lxd;->a(II)F
+    invoke-virtual {v1, v2, p2}, Lxz;->a(II)F
 
     move-result v1
 
@@ -264,11 +264,11 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v1, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->d:Lxd;
+    iget-object v1, p0, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->d:Lxz;
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, v2, p2}, Lxd;->a(II)F
+    invoke-virtual {v1, v2, p2}, Lxz;->a(II)F
 
     move-result v1
 
@@ -332,7 +332,7 @@
 .method public setCameraViewFlipperListener(Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper$a;)V
     .locals 0
     .param p1    # Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper$a;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

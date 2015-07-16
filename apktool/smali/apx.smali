@@ -1,152 +1,350 @@
 .class public final Lapx;
-.super Ljava/lang/Object;
+.super Lcom/snapchat/android/ui/SnapchatResource;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lapx$4;
+        Lapx$a;
     }
 .end annotation
 
 
+# static fields
+.field protected static final a:Landroid/support/v4/util/LruCache;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/support/v4/util/LruCache",
+            "<",
+            "Ljava/lang/String;",
+            "Landroid/graphics/Bitmap;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final d:Ljava/lang/Object;
+
+.field private static e:Z
+
+
 # instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lcom/snapchat/android/model/StoryGroup;
-
-.field final c:Lnl;
-
-.field final d:Lbgc;
+.field private final f:Lcom/snapchat/android/model/chat/ChatMedia;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;)V
-    .locals 2
-
-    .prologue
-    .line 36
-    invoke-static {}, Lnl;->a()Lnl;
-
-    move-result-object v0
-
-    invoke-static {}, Lbgc;->a()Lbgc;
-
-    move-result-object v1
-
-    invoke-direct {p0, p1, p2, v0, v1}, Lapx;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;Lnl;Lbgc;)V
-
-    .line 38
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;Lnl;Lbgc;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .prologue
     .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lapx;->d:Ljava/lang/Object;
 
     .line 45
-    iput-object p1, p0, Lapx;->a:Landroid/content/Context;
+    const/4 v0, 0x0
 
-    .line 46
-    iput-object p2, p0, Lapx;->b:Lcom/snapchat/android/model/StoryGroup;
-
-    .line 47
-    iput-object p3, p0, Lapx;->c:Lnl;
+    sput-boolean v0, Lapx;->e:Z
 
     .line 48
-    iput-object p4, p0, Lapx;->d:Lbgc;
-
-    .line 49
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 10
-
-    .prologue
-    const-wide/16 v8, 0x0
-
-    .line 90
-    iget-object v0, p0, Lapx;->b:Lcom/snapchat/android/model/StoryGroup;
-
-    iget-object v0, v0, Lcom/snapchat/android/model/StoryGroup;->mActionState:Lcom/snapchat/android/model/StoryGroup$ActionState;
-
-    .line 91
-    sget-object v1, Lcom/snapchat/android/model/StoryGroup$ActionState;->SAVING:Lcom/snapchat/android/model/StoryGroup$ActionState;
-
-    if-eq v0, v1, :cond_0
-
-    sget-object v1, Lcom/snapchat/android/model/StoryGroup$ActionState;->SAVED:Lcom/snapchat/android/model/StoryGroup$ActionState;
-
-    if-ne v0, v1, :cond_1
-
-    .line 92
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Can only save one story at a time."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 95
-    :cond_1
-    iget-object v0, p0, Lapx;->b:Lcom/snapchat/android/model/StoryGroup;
-
-    sget-object v1, Lcom/snapchat/android/model/StoryGroup$ActionState;->SAVING:Lcom/snapchat/android/model/StoryGroup$ActionState;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/StoryGroup;->a(Lcom/snapchat/android/model/StoryGroup$ActionState;)V
-
-    .line 97
-    new-instance v4, Lapx$2;
-
-    iget-object v0, p0, Lapx;->b:Lcom/snapchat/android/model/StoryGroup;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/model/StoryGroup;->l()Ljava/util/Collection;
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
-    invoke-direct {v4, p0, v0}, Lapx$2;-><init>(Lapx;Ljava/util/Collection;)V
+    invoke-virtual {v0}, Ljava/lang/Runtime;->maxMemory()J
 
-    iget-object v1, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mMutex:Ljava/lang/Object;
+    move-result-wide v0
+
+    const-wide/16 v2, 0x400
+
+    div-long/2addr v0, v2
+
+    long-to-int v0, v0
+
+    .line 51
+    const v1, 0x3dcccccd    # 0.1f
+
+    int-to-float v0, v0
+
+    mul-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    .line 52
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "ImageResource LruCache size = "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " kilobytes"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 54
+    new-instance v1, Lapx$1;
+
+    invoke-direct {v1, v0}, Lapx$1;-><init>(I)V
+
+    sput-object v1, Lapx;->a:Landroid/support/v4/util/LruCache;
+
+    .line 70
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/snapchat/android/model/chat/ChatMedia;Lcom/snapchat/android/ui/SnapchatResource$a;)V
+    .locals 1
+
+    .prologue
+    .line 74
+    invoke-direct {p0}, Lcom/snapchat/android/ui/SnapchatResource;-><init>()V
+
+    .line 75
+    iput-object p1, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    .line 76
+    sget-object v0, Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;->NOT_LOADED:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    iput-object v0, p0, Lapx;->b:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    .line 77
+    invoke-virtual {p0, p2}, Lapx;->a(Lcom/snapchat/android/ui/SnapchatResource$a;)V
+
+    .line 78
+    return-void
+.end method
+
+.method private a(Landroid/content/Context;Ljava/lang/String;Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;Z)Landroid/graphics/Bitmap;
+    .locals 7
+
+    .prologue
+    const/4 v6, 0x0
+
+    .line 193
+    .line 196
+    :try_start_0
+    iget-object v0, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    instance-of v0, v0, Lalc;
+
+    if-eqz v0, :cond_3
+
+    .line 197
+    sget-object v0, Laxo;->DISCOVER_SHARE:Laxn;
+
+    check-cast v0, Lcom/snapchat/android/util/cache/DiscoverShareCache;
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 199
+    :try_start_1
+    iget-object v1, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/model/chat/ChatMedia;->D()Lcom/snapchat/android/model/chat/ChatMedia$MediaType;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/snapchat/android/model/chat/ChatMedia$MediaType;->IMAGE:Lcom/snapchat/android/model/chat/ChatMedia$MediaType;
+
+    if-ne v1, v2, :cond_2
+
+    .line 200
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-virtual {v0, p1, p2, p3, v1}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
+
+    move-result-object v2
+
+    .line 208
+    :goto_0
+    if-nez v2, :cond_0
+
+    .line 209
+    :try_start_2
+    iget-object v1, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    check-cast v1, Lalc;
+
+    const/4 v3, 0x0
+
+    iput-boolean v3, v1, Lalc;->mIsExtracted:Z
+
+    .line 210
+    iget-object v1, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/model/chat/ChatMedia;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->c(Ljava/lang/String;)V
+    :try_end_2
+    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_2
+
+    :cond_0
+    move-object v0, v2
+
+    .line 230
+    :cond_1
+    :goto_1
+    return-object v0
+
+    .line 203
+    :cond_2
+    :try_start_3
+    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    sget-object v5, Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;->VIDEO_THUMBNAIL:Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-virtual/range {v0 .. v5}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Landroid/graphics/Bitmap;
+    :try_end_3
+    .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_1
+
+    move-result-object v2
+
+    goto :goto_0
+
+    .line 216
+    :cond_3
+    :try_start_4
+    sget-object v1, Laxo;->MY_SNAP_IMAGE_CACHE:Laxn;
+    :try_end_4
+    .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_0
+
+    .line 217
+    const/4 v0, 0x0
+
+    :try_start_5
+    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-virtual {v1, p1, p2, v0, v2}, Laxn;->a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    :try_end_5
+    .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_5} :catch_3
+
+    move-result-object v0
+
+    .line 219
+    if-nez v0, :cond_1
+
+    .line 220
+    :try_start_6
+    sget-object v1, Laxo;->CHAT_MEDIA_IMAGE_CACHE:Laxn;
+
+    .line 221
+    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-virtual {v1, p1, p2, p3, v2}, Laxn;->a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    :try_end_6
+    .catch Ljava/lang/RuntimeException; {:try_start_6 .. :try_end_6} :catch_4
+
+    move-result-object v0
+
+    goto :goto_1
+
+    .line 225
+    :catch_0
+    move-exception v0
+
+    move-object v1, v6
+
+    move-object v0, v6
+
+    :goto_2
+    if-eqz p4, :cond_1
+
+    if-eqz v1, :cond_1
+
+    .line 226
+    invoke-virtual {v1, p2}, Laxn;->c(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 225
+    :catch_1
+    move-exception v1
+
+    move-object v1, v0
+
+    move-object v0, v6
+
+    goto :goto_2
+
+    :catch_2
+    move-exception v1
+
+    move-object v1, v0
+
+    move-object v0, v2
+
+    goto :goto_2
+
+    :catch_3
+    move-exception v0
+
+    move-object v0, v6
+
+    goto :goto_2
+
+    :catch_4
+    move-exception v2
+
+    goto :goto_2
+.end method
+
+.method static synthetic a(Lapx;)Lcom/snapchat/android/model/chat/ChatMedia;
+    .locals 1
+
+    .prologue
+    .line 36
+    iget-object v0, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    return-object v0
+.end method
+
+.method public static a(Z)V
+    .locals 3
+
+    .prologue
+    .line 237
+    sget-object v1, Lapx;->d:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 238
     :try_start_0
-    iget-object v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mStatus:Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;
+    sput-boolean p0, Lapx;->e:Z
 
-    sget-object v2, Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;->INITIALIZED:Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;
+    .line 239
+    sget-object v0, Lapx;->a:Landroid/support/v4/util/LruCache;
 
-    if-eq v0, v2, :cond_2
+    const/4 v2, -0x1
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    invoke-virtual {v0, v2}, Landroid/support/v4/util/LruCache;->trimToSize(I)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 240
+    const/4 v0, 0x0
 
-    const-string v3, "Already executed this task. Status: "
+    sput-boolean v0, Lapx;->e:Z
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 241
+    monitor-exit v1
 
-    iget-object v3, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mStatus:Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -156,138 +354,283 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
+.end method
 
-    :cond_2
+.method static synthetic b()Z
+    .locals 1
+
+    .prologue
+    .line 36
+    sget-boolean v0, Lapx;->e:Z
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/content/Context;)Landroid/graphics/Bitmap;
+    .locals 4
+
+    .prologue
+    .line 86
+    sget-object v1, Lapx;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 87
+    :try_start_0
+    sget-object v0, Lapx;->a:Landroid/support/v4/util/LruCache;
+
+    iget-object v2, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/ChatMedia;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/support/v4/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    .line 88
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 89
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v1, "getImageBitmap - memory cache lookup: "
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    if-nez v0, :cond_2
+
+    const-string v1, "MISS"
+
+    :goto_0
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " status "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lapx;->b:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 91
+    if-nez v0, :cond_3
+
+    .line 92
+    iget-object v1, p0, Lapx;->b:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    sget-object v2, Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;->LOADING:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    if-eq v1, v2, :cond_0
+
+    .line 93
+    sget-object v1, Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;->NOT_LOADED:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    invoke-virtual {p0, v1}, Lapx;->a(Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;)V
+
+    .line 95
+    :cond_0
+    iget-object v1, p0, Lapx;->b:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    sget-object v2, Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;->LOADED:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    if-eq v1, v2, :cond_1
+
+    iget-object v1, p0, Lapx;->b:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    sget-object v2, Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;->LOADING:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    if-eq v1, v2, :cond_1
+
+    sget-object v1, Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;->LOADING:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    invoke-virtual {p0, v1}, Lapx;->a(Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;)V
+
+    new-instance v1, Lapx$a;
+
+    sget-object v2, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+
+    invoke-direct {v1, p0, p1, v2}, Lapx$a;-><init>(Lapx;Landroid/content/Context;Ljavax/inject/Provider;)V
+
+    sget-object v2, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Void;
+
+    invoke-virtual {v1, v2, v3}, Lapx$a;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 99
+    :cond_1
+    :goto_1
+    return-object v0
+
+    .line 88
+    :catchall_0
+    move-exception v0
+
     :try_start_1
-    sget-object v0, Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;->RUNNING:Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;
-
-    iput-object v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mStatus:Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;
-
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-wide v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mTimeoutMs:J
+    throw v0
 
-    cmp-long v0, v0, v8
+    .line 89
+    :cond_2
+    const-string v1, "HIT"
 
-    if-eqz v0, :cond_3
+    goto :goto_0
 
-    iget-object v1, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mMutex:Ljava/lang/Object;
+    .line 97
+    :cond_3
+    sget-object v1, Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;->LOADED:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+
+    invoke-virtual {p0, v1}, Lapx;->a(Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;)V
+
+    goto :goto_1
+.end method
+
+.method protected final a(Landroid/content/Context;Ljava/lang/String;Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;)Landroid/graphics/Bitmap;
+    .locals 6
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 164
+    move v4, v2
+
+    .line 166
+    :goto_0
+    const/4 v0, 0x2
+
+    if-lt v4, v0, :cond_0
+
+    move v0, v1
+
+    .line 167
+    :goto_1
+    invoke-direct {p0, p1, p2, p3, v0}, Lapx;->a(Landroid/content/Context;Ljava/lang/String;Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v3
+
+    .line 168
+    if-eqz v3, :cond_1
+
+    .line 169
+    iget-object v0, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/chat/ChatMedia;->d(Z)V
+
+    .line 170
+    iget-object v0, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    invoke-virtual {v0, v4, v5}, Lcom/snapchat/android/model/chat/ChatMedia;->f(J)V
+
+    .line 172
+    sget-object v1, Lapx;->d:Ljava/lang/Object;
 
     monitor-enter v1
 
-    :try_start_2
-    iget-object v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mTimeoutExecutor:Ljava/util/concurrent/ScheduledExecutorService;
+    .line 174
+    :try_start_0
+    sget-object v0, Lapx;->a:Landroid/support/v4/util/LruCache;
 
-    new-instance v2, Lcom/snapchat/android/api/LoadAllStorySnapsTask$1;
+    invoke-virtual {v0, p2, v3}, Landroid/support/v4/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v2, v4}, Lcom/snapchat/android/api/LoadAllStorySnapsTask$1;-><init>(Lcom/snapchat/android/api/LoadAllStorySnapsTask;)V
+    .line 175
+    monitor-exit v1
 
-    iget-wide v6, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mTimeoutMs:J
+    move-object v0, v3
 
-    sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    .line 182
+    :goto_2
+    return-object v0
 
-    invoke-interface {v0, v2, v6, v7, v3}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    :cond_0
+    move v0, v2
+
+    .line 166
+    goto :goto_1
+
+    .line 175
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    .line 178
+    :cond_1
+    iget-object v3, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    invoke-virtual {v3, v2}, Lcom/snapchat/android/model/chat/ChatMedia;->d(Z)V
+
+    .line 181
+    if-eqz v0, :cond_2
+
+    .line 182
+    const/4 v0, 0x0
+
+    goto :goto_2
+
+    .line 184
+    :cond_2
+    add-int/lit8 v0, v4, 0x1
+
+    .line 185
+    const-wide/16 v4, 0xc8
+
+    invoke-static {v4, v5}, Lbhp;->a(J)V
+
+    move v4, v0
+
+    .line 186
+    goto :goto_0
+.end method
+
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 81
+    iget-object v0, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lapx;->f:Lcom/snapchat/android/model/chat/ChatMedia;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/ChatMedia;->d()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mTimeoutFuture:Ljava/util/concurrent/ScheduledFuture;
-
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    :cond_3
-    invoke-virtual {v4}, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->c()V
-
-    invoke-virtual {v4}, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->d()V
-
-    iget-object v6, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mMutex:Ljava/lang/Object;
-
-    monitor-enter v6
-
-    :try_start_3
-    iget-object v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mStatus:Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;
-
-    sget-object v1, Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;->RUNNING:Lcom/snapchat/android/api/LoadAllStorySnapsTask$Status;
-
-    if-ne v0, v1, :cond_4
-
-    iget-wide v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mPollFrequencyMs:J
-
-    cmp-long v0, v0, v8
-
-    if-eqz v0, :cond_4
-
-    iget-object v7, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mMutex:Ljava/lang/Object;
-
-    monitor-enter v7
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    :try_start_4
-    new-instance v0, Lcom/snapchat/android/api/LoadAllStorySnapsTask$2;
-
-    invoke-direct {v0, v4}, Lcom/snapchat/android/api/LoadAllStorySnapsTask$2;-><init>(Lcom/snapchat/android/api/LoadAllStorySnapsTask;)V
-
-    iput-object v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mPollingTask:Ljava/util/TimerTask;
-
-    new-instance v0, Ljava/util/Timer;
-
-    invoke-direct {v0}, Ljava/util/Timer;-><init>()V
-
-    iput-object v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mPollingTimer:Ljava/util/Timer;
-
-    iget-object v0, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mPollingTimer:Ljava/util/Timer;
-
-    iget-object v1, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mPollingTask:Ljava/util/TimerTask;
-
-    iget-wide v2, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mPollFrequencyMs:J
-
-    iget-wide v4, v4, Lcom/snapchat/android/api/LoadAllStorySnapsTask;->mPollFrequencyMs:J
-
-    invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
-
-    monitor-exit v7
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    :cond_4
-    :try_start_5
-    monitor-exit v6
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_3
-
-    return-void
-
-    :catchall_1
-    move-exception v0
-
-    :try_start_6
-    monitor-exit v1
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
-    throw v0
-
-    :catchall_2
-    move-exception v0
-
-    :try_start_7
-    monitor-exit v7
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    :try_start_8
-    throw v0
-
-    :catchall_3
-    move-exception v0
-
-    monitor-exit v6
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_3
-
-    throw v0
+    goto :goto_0
 .end method

@@ -1,4 +1,4 @@
-.class public interface abstract Lbgr$a;
+.class public final Lbgr$a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -9,11 +9,10 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
+    accessFlags = 0x1
     name = "a"
 .end annotation
 
 
-# virtual methods
-.method public abstract a(Landroid/view/View;)V
-.end method
+# instance fields
+.field final synthetic this$0:Lbgr;

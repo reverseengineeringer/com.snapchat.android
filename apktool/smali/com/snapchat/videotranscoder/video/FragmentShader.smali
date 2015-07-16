@@ -21,7 +21,7 @@
 .method private constructor <init>(Ljava/lang/String;)V
     .locals 0
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

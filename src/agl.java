@@ -1,64 +1,60 @@
-import android.content.Context;
-import android.support.v7.widget.RecyclerView.a;
-import android.support.v7.widget.RecyclerView.b;
-import android.support.v7.widget.RecyclerView.s;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
-import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
+import com.google.gson.annotations.SerializedName;
 import com.snapchat.android.model.Friend;
-import com.snapchat.android.model.FriendAction;
-import com.snapchat.android.util.AlertDialogUtils;
-import com.snapchat.android.util.AlertDialogUtils.YesNoOption;
-import com.snapchat.android.util.AlertDialogUtils.a;
-import java.util.List;
+import com.snapchat.android.stories.StoriesSection;
+import java.util.ArrayList;
 
 public final class agl
-  extends RecyclerView.a<agl.a>
+  extends Friend
 {
-  final Context c;
-  final List<Friend> d;
-  final String e;
-  final ajx f;
+  @SerializedName("username")
+  public String a;
+  @SerializedName("display_name")
+  public String b;
+  @SerializedName("keywords")
+  public ArrayList<String> c = new ArrayList();
+  @SerializedName("description")
+  public String d;
   
-  public agl(Context paramContext, List<Friend> paramList, ajx paramajx)
+  public agl()
   {
-    c = paramContext;
-    d = paramList;
-    e = c.getString(2131493117);
-    f = paramajx;
+    super(null);
   }
   
-  public final int a()
+  public final StoriesSection a(boolean paramBoolean)
   {
-    return d.size();
+    return StoriesSection.LIVE;
   }
   
-  protected final void e(int paramInt)
+  public final String a()
   {
-    if ((paramInt >= 0) && (paramInt < a()))
-    {
-      d.remove(paramInt);
-      d(paramInt);
-      return;
+    return b;
+  }
+  
+  public final boolean b()
+  {
+    return (super.b()) || (auk.f(a, akp.g()));
+  }
+  
+  public final boolean equals(@chd Object paramObject)
+  {
+    if (this == paramObject) {
+      return true;
     }
-    a.b();
+    if (!(paramObject instanceof agl)) {
+      return false;
+    }
+    paramObject = (agl)paramObject;
+    return a.equals(a);
   }
   
-  public static final class a
-    extends RecyclerView.s
+  public final int hashCode()
   {
-    public TextView k;
-    public View l;
-    public View m;
-    
-    public a(View paramView)
-    {
-      super();
-      k = ((TextView)paramView.findViewById(2131361916));
-      l = paramView.findViewById(2131361917);
-      m = paramView.findViewById(2131361918);
-    }
+    return a.hashCode();
+  }
+  
+  public final String l()
+  {
+    return a;
   }
 }
 

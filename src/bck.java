@@ -1,4 +1,12 @@
-public final class bck {}
+public final class bck
+{
+  public String mFeedItemId;
+  
+  public bck(String paramString)
+  {
+    mFeedItemId = paramString;
+  }
+}
 
 /* Location:
  * Qualified Name:     bck

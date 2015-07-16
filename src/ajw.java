@@ -1,18 +1,32 @@
+import android.content.res.Resources;
+import com.snapchat.android.SnapchatApplication;
+
 public final class ajw
+  extends ajy
 {
-  private static final String TAG = "UserDatabaseLoader";
-  private final bgk mClock;
-  final nf mLifecycleAnalytics;
+  private static ajw sInstance;
   
-  public ajw()
+  private ajw()
   {
-    this(nf.a(), bglmClock);
+    super("my_story_ads79sdf", SnapchatApplication.b().getResources().getString(2131493240));
   }
   
-  private ajw(nf paramnf, bgk parambgk)
+  public static ajw a()
   {
-    mLifecycleAnalytics = paramnf;
-    mClock = parambgk;
+    try
+    {
+      if (sInstance == null) {
+        sInstance = new ajw();
+      }
+      ajw localajw = sInstance;
+      return localajw;
+    }
+    finally {}
+  }
+  
+  public final boolean b()
+  {
+    return false;
   }
 }
 

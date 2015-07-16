@@ -33,7 +33,7 @@
 
 .field private d:Landroid/widget/ListView;
 
-.field private e:Labi;
+.field private e:Laci;
 
 .field private f:Landroid/widget/TextView;
 
@@ -251,7 +251,7 @@
     return-void
 .end method
 
-.method private a([Lzw;)V
+.method private a([Laav;)V
     .locals 5
 
     .prologue
@@ -276,7 +276,7 @@
     aget-object v3, p1, v0
 
     .line 200
-    invoke-interface {v3}, Lzw;->getColumnNumber()I
+    invoke-interface {v3}, Laav;->getColumnNumber()I
 
     move-result v4
 
@@ -288,7 +288,7 @@
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 202
-    invoke-interface {v3}, Lzw;->getColumnName()Ljava/lang/String;
+    invoke-interface {v3}, Laav;->getColumnName()Ljava/lang/String;
 
     move-result-object v4
 
@@ -300,7 +300,7 @@
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 204
-    invoke-interface {v3}, Lzw;->getDataType()Lcom/snapchat/android/database/DataType;
+    invoke-interface {v3}, Laav;->getDataType()Lcom/snapchat/android/database/DataType;
 
     move-result-object v3
 
@@ -364,11 +364,23 @@
     .locals 3
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/dev/DbBrowserActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/dev/DbBrowserActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 54
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 55
-    const v0, 0x7f040046
+    const v0, 0x7f040047
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/dev/DbBrowserActivity;->setContentView(I)V
 
@@ -406,16 +418,16 @@
     iput-object v0, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->g:Landroid/widget/TextView;
 
     .line 60
-    new-instance v0, Labi;
+    new-instance v0, Laci;
 
-    invoke-direct {v0, p0}, Labi;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Laci;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->e:Labi;
+    iput-object v0, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->e:Laci;
 
     .line 61
     iget-object v0, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->b:Landroid/widget/ListView;
 
-    iget-object v1, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->e:Labi;
+    iget-object v1, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->e:Laci;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -570,7 +582,7 @@
     if-eqz v0, :cond_0
 
     .line 142
-    new-instance v0, Labj;
+    new-instance v0, Lacj;
 
     iget-object v1, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->h:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
@@ -578,13 +590,13 @@
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Labj;-><init>(Landroid/content/Context;Lcom/snapchat/android/database/table/DbTable;)V
+    invoke-direct {v0, p0, v1}, Lacj;-><init>(Landroid/content/Context;Lcom/snapchat/android/database/table/DbTable;)V
 
     goto :goto_0
 
     .line 144
     :cond_0
-    new-instance v0, Labj;
+    new-instance v0, Lacj;
 
     iget-object v1, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->i:Lcom/snapchat/android/database/vtable/DbVirtualTable$DatabaseVirtualTable;
 
@@ -592,7 +604,7 @@
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Labj;-><init>(Landroid/content/Context;Lcom/snapchat/android/database/vtable/DbVirtualTable;)V
+    invoke-direct {v0, p0, v1}, Lacj;-><init>(Landroid/content/Context;Lcom/snapchat/android/database/vtable/DbVirtualTable;)V
 
     goto :goto_0
 
@@ -713,11 +725,11 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/snapchat/android/database/table/DbTable;->b()[Lzw;
+    invoke-virtual {v2}, Lcom/snapchat/android/database/table/DbTable;->b()[Laav;
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/snapchat/android/dev/DbBrowserActivity;->a([Lzw;)V
+    invoke-direct {p0, v2}, Lcom/snapchat/android/dev/DbBrowserActivity;->a([Laav;)V
 
     :cond_0
     :goto_2
@@ -725,22 +737,22 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->e:Labi;
+    iget-object v3, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->e:Laci;
 
     instance-of v4, v2, Landroid/database/MatrixCursor;
 
     if-nez v4, :cond_5
 
     :goto_3
-    iput-boolean v0, v3, Labi;->a:Z
+    iput-boolean v0, v3, Laci;->a:Z
 
-    iget-object v0, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->e:Labi;
+    iget-object v0, p0, Lcom/snapchat/android/dev/DbBrowserActivity;->e:Laci;
 
     invoke-static {v2}, Lcom/snapchat/android/dev/DbBrowserActivity;->a(Landroid/database/Cursor;)Landroid/database/Cursor;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Labi;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
+    invoke-virtual {v0, v1}, Laci;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
 
     goto :goto_0
 
@@ -845,11 +857,11 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/snapchat/android/database/vtable/DbVirtualTable;->c()[Lzw;
+    invoke-virtual {v2}, Lcom/snapchat/android/database/vtable/DbVirtualTable;->c()[Laav;
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/snapchat/android/dev/DbBrowserActivity;->a([Lzw;)V
+    invoke-direct {p0, v2}, Lcom/snapchat/android/dev/DbBrowserActivity;->a([Laav;)V
 
     goto/16 :goto_2
 

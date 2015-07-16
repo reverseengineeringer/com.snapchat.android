@@ -1,204 +1,148 @@
 .class public final Lqj;
-.super Ljava/lang/Object;
+.super Ltx;
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
+.implements Lui$b;
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lqj$a;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
+        "Ltx;",
+        "Lui$b",
         "<",
-        "Lqh;",
+        "Lqj$a;",
         ">;"
     }
 .end annotation
 
 
 # static fields
-.field static final synthetic $assertionsDisabled:Z
+.field private static final PATH:Ljava/lang/String; = "/loq/device_id"
+
+.field private static final TAG:Ljava/lang/String; = "GetDeviceTokenTask"
 
 
 # instance fields
-.field private final mScProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqs;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final mSquareProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final mDeviceTokenManager:Layy;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 8
-    const-class v0, Lqj;
+    .line 23
+    invoke-static {}, Layy;->a()Layy;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    move-result-object v0
 
-    move-result v0
+    invoke-direct {p0, v0}, Lqj;-><init>(Layy;)V
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lqj;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqs;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 14
-    sget-boolean v0, Lqj;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 15
-    :cond_0
-    iput-object p1, p0, Lqj;->mScProvider:Ljavax/inject/Provider;
-
-    .line 16
-    sget-boolean v0, Lqj;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 17
-    :cond_1
-    iput-object p2, p0, Lqj;->mSquareProvider:Ljavax/inject/Provider;
-
-    .line 18
+    .line 24
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
+.method private constructor <init>(Layy;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqs;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lqh;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
+    .line 27
+    invoke-direct {p0}, Ltx;-><init>()V
+
+    .line 28
+    iput-object p1, p0, Lqj;->mDeviceTokenManager:Layy;
+
+    .line 29
+    const-class v0, Lqj$a;
+
+    invoke-virtual {p0, v0, p0}, Lqj;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
     .line 30
-    new-instance v0, Lqj;
-
-    invoke-direct {v0, p0, p1}, Lqj;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method protected final getPath()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 8
-    check-cast p1, Lqh;
+    .line 34
+    const-string v0, "/loq/device_id"
 
-    if-nez p1, :cond_0
+    return-object v0
+.end method
 
-    new-instance v0, Ljava/lang/NullPointerException;
+.method public final synthetic getRequestPayload()Ljava/lang/Object;
+    .locals 1
 
-    const-string v1, "Cannot inject members into a null reference"
+    .prologue
+    .line 14
+    new-instance v0, Lqp;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Lqp;-><init>()V
 
-    throw v0
+    return-object v0
+.end method
 
-    :cond_0
-    iget-object v0, p0, Lqj;->mScProvider:Ljavax/inject/Provider;
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 3
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .prologue
+    .line 14
+    check-cast p1, Lqj$a;
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    check-cast v0, Lqs;
+    if-eqz p1, :cond_0
 
-    iput-object v0, p1, Lqh;->mScProvider:Lqs;
+    iget-object v1, p1, Lqj$a;->mTokenId:Ljava/lang/String;
 
-    iget-object v0, p0, Lqj;->mSquareProvider:Ljavax/inject/Provider;
+    if-eqz v1, :cond_0
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, p1, Lqj$a;->mTokenValue:Ljava/lang/String;
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    check-cast v0, Lsn;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput-object v0, p1, Lqh;->mSquareProvider:Lsn;
+    const-string v1, "Received new device token from the server "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    new-instance v0, Layx;
+
+    iget-object v1, p1, Lqj$a;->mTokenId:Ljava/lang/String;
+
+    iget-object v2, p1, Lqj$a;->mTokenValue:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2}, Layx;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
+    iget-object v1, p0, Lqj;->mDeviceTokenManager:Layy;
+
+    invoke-virtual {v1, v0}, Layy;->a(Layx;)V
 
     return-void
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "GetDeviceTokenTask did not successfully return a new device token "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
 .end method

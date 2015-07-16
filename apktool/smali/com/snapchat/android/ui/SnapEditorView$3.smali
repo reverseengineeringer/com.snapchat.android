@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public final onError(Landroid/media/MediaPlayer;II)Z
-    .locals 7
+    .locals 6
 
     .prologue
     const/4 v0, 0x1
@@ -53,37 +53,31 @@
     const/4 v1, 0x0
 
     .line 501
-    const-string v2, "SnapEditorView"
+    const/4 v2, 0x3
 
-    const-string v3, "Media player onError what=%s extra=%d retryCount=%d"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x3
+    invoke-static {p2}, Laok;->a(I)Ljava/lang/String;
 
-    new-array v4, v4, [Ljava/lang/Object;
+    move-result-object v3
 
-    invoke-static {p2}, Lann;->a(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v4, v1
+    aput-object v3, v2, v1
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v4, v0
+    aput-object v3, v2, v0
 
-    const/4 v5, 0x2
+    const/4 v3, 0x2
 
-    iget v6, p0, Lcom/snapchat/android/ui/SnapEditorView$3;->a:I
+    iget v4, p0, Lcom/snapchat/android/ui/SnapEditorView$3;->a:I
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v4, v5
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v4, v2, v3
 
     .line 504
     iget v2, p0, Lcom/snapchat/android/ui/SnapEditorView$3;->a:I
@@ -91,15 +85,6 @@
     if-lez v2, :cond_0
 
     .line 505
-    const-string v2, "SnapEditorView"
-
-    const-string v3, "Retrying video playback following error"
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v1}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 509
     iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView$3;->c:Lcom/snapchat/android/ui/SnapEditorView;
 
     invoke-static {v1}, Lcom/snapchat/android/ui/SnapEditorView;->c(Lcom/snapchat/android/ui/SnapEditorView;)Lcom/snapchat/android/ui/SnapVideoView;

@@ -1,11 +1,11 @@
 .class final Lcom/snapchat/android/fragments/addfriends/ProfileFragment$5;
-.super Lbgb;
+.super Lbhb;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->r()V
+    value = Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->t()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,10 +23,10 @@
     .locals 0
 
     .prologue
-    .line 1013
+    .line 1074
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-direct {p0, p2, p3}, Lbgb;-><init>(Landroid/content/Context;Landroid/graphics/Bitmap;)V
+    invoke-direct {p0, p2, p3}, Lbhb;-><init>(Landroid/content/Context;Landroid/graphics/Bitmap;)V
 
     return-void
 .end method
@@ -37,26 +37,17 @@
     .locals 4
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 1029
-    const-string v0, "ProfileFragment"
-
-    const-string v1, "profile images - shared image failed to be inserted into media store"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1031
+    .line 1090
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
-    invoke-virtual {v0, v3}, Lcom/snapchat/android/ui/ProfilePictureView;->b(Z)V
+    const/4 v1, 0x0
 
-    .line 1032
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/ProfilePictureView;->b(Z)V
+
+    .line 1093
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -70,52 +61,35 @@
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1034
+    .line 1095
     return-void
 .end method
 
 .method protected final a(Ljava/lang/String;)V
-    .locals 4
+    .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 1016
-    const-string v0, "ProfileFragment"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "profile images - shared image was inserted into media store successfully! "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1019
+    .line 1077
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
-    invoke-virtual {v0, v3}, Lcom/snapchat/android/ui/ProfilePictureView;->b(Z)V
+    const/4 v1, 0x0
 
-    .line 1020
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/ProfilePictureView;->b(Z)V
+
+    .line 1081
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.SEND"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1021
+    .line 1082
     const-string v1, "android.intent.extra.STREAM"
 
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -124,17 +98,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 1022
+    .line 1083
     const-string v1, "image/jpeg"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1024
+    .line 1085
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->k(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->j(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -144,6 +118,6 @@
 
     invoke-virtual {v1, v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->startActivity(Landroid/content/Intent;)V
 
-    .line 1025
+    .line 1086
     return-void
 .end method

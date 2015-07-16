@@ -27,7 +27,7 @@
     .locals 3
 
     .prologue
-    .line 1009
+    .line 1088
     invoke-static {}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->values()[Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
 
     move-result-object v0
@@ -101,7 +101,7 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_e
 
-    .line 290
+    .line 324
     :goto_3
     invoke-static {}, Lcom/snapchat/android/discover/model/MediaState;->values()[Lcom/snapchat/android/discover/model/MediaState;
 
@@ -240,7 +240,7 @@
     :try_end_b
     .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_6
 
-    .line 161
+    .line 181
     :goto_b
     invoke-static {}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;->values()[Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;
 

@@ -261,7 +261,6 @@ Jag vill va med!"</string>
     <string name="discover_sharing_success">Snap skickad!</string>
     <string name="discover_sharing_unavailable">%1$s tillåter inte att denna Snap skickas.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Tryck här för att testa Discover!</string>
     <string name="discover_unavailable">"Sorry!
 
 Discover är för närvarande inte tillgängligt."</string>
@@ -312,6 +311,7 @@ inte tillgängligt i din region."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Glömt ditt lösenord?</a>" "</string>
     <string name="friend_suggest_hide">Göm</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Ny kontakt</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Gick nyligen med</string>
     <string name="friends">Vänner</string>
     <string name="friends_context_block">Blockera</string>
@@ -623,7 +623,7 @@ skicka pengar?"</string>
     <string name="snap_delete_failure">Kunde inte radera Snap.</string>
     <string name="snap_failed_to_post">"Det gick inte att skicka 1 Snap. "</string>
     <string name="snap_list_empty_list_msg">Du har inga Snaps :(</string>
-    <string name="snap_tag_help_description">Snapchatters kan lägga till dig genom att rikta sin kamera mot ditt spöke och trycka på sin skärm!</string>
+    <string name="snap_tag_help_description">Snapchattare kan lägga till dig genom att peka sin kamera på din Snapkod och trycka på sin skärm!</string>
     <string name="snap_tag_no_connection">Ingen anslutning!</string>
     <string name="snap_to_add">Snap eller foto att lägga till</string>
     <string name="snapkidz_welcome">Välkommen till Snapkidz!</string>
@@ -659,8 +659,6 @@ skicka pengar?"</string>
     <string name="tap_to_view_edition">Tryck för att se i Discover</string>
     <string name="tap_to_view_full_story">Tryck för att se hela inslaget</string>
     <string name="tap_to_view_more">Tryck för att utforska andra kanaler</string>
-    <string name="tap_to_view_snaps">Tryck för att se Snaps!</string>
-    <string name="tap_to_view_stories">Tryck för att se Stories!</string>
     <string name="tap_to_view_video_in_discover">Tryck för att se denna video i Discover</string>
     <string name="too_many_attempts">"För många försök.
 "</string>
@@ -669,7 +667,7 @@ skicka pengar?"</string>
     <string name="tos_privacy_policy">Sekretessvillkor</string>
     <string name="tos_terms">Våra %1$s och %2$s har ändrats. När du knackar på Godkänn samtycker du till Snapchats reviderade %3$s och %4$s.</string>
     <string name="tos_terms_of_use">Användarvillkor</string>
-    <string name="turn_on_high_accuracy">Please enable Location Services with High Accuracy location mode (GPS) on your device.</string>
+    <string name="turn_on_high_accuracy">Aktivera platstjänster med hög precision för lokalisering (GPS) på din enhet.</string>
     <string name="two_fa_disabled_phone_verification_info">Verifiera ett telefonnummer innan du använder inloggningsverifiering.</string>
     <string name="two_fa_disabled_settings_help_verified">Om detta nummer är fel, <a href="">kan du ändra det</a></string>
     <string name="two_fa_password_validation_explanation">Av säkerhetsskäl, skriv in ditt lösenord.</string>

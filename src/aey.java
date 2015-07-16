@@ -1,17 +1,63 @@
-public final class aey
+import android.view.View;
+import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics.ViewStatus;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.DSnapPanel;
+import com.snapchat.android.discover.model.DSnapPanel.MediaType;
+import com.snapchat.android.discover.ui.DSnapView;
+import java.util.List;
+
+@awj
+public abstract class aey
 {
-  public final String a;
-  public final String b;
-  public final String c;
-  public final boolean d;
+  protected afq j;
   
-  public aey(String paramString1, String paramString2, String paramString3, boolean paramBoolean)
+  @chd
+  public abstract aji a(View paramView, aeb paramaeb, List<View> paramList);
+  
+  public abstract DiscoverUsageAnalytics.ViewStatus a(long paramLong);
+  
+  public void a(@chc afq paramafq)
   {
-    a = paramString1;
-    b = paramString2;
-    c = paramString3;
-    d = paramBoolean;
+    j = paramafq;
   }
+  
+  public abstract void a(DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel);
+  
+  public abstract boolean a(DSnapView paramDSnapView, DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel);
+  
+  public abstract void c();
+  
+  public abstract View d();
+  
+  public abstract DSnapPanel.MediaType e();
+  
+  public void f() {}
+  
+  public void g() {}
+  
+  public boolean i()
+  {
+    return false;
+  }
+  
+  public long j()
+  {
+    return -1L;
+  }
+  
+  public long k()
+  {
+    return -1L;
+  }
+  
+  public void m_()
+  {
+    if (j != null) {
+      j.b();
+    }
+  }
+  
+  public void n_() {}
 }
 
 /* Location:

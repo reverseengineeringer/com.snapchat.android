@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Z)V
+    value = Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->b(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 380
+    .line 374
     iput-object p1, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$8;->a:Lorg/json/JSONArray;
 
     iput-wide p2, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$8;->b:J
@@ -48,7 +48,7 @@
     .locals 6
 
     .prologue
-    .line 383
+    .line 377
     const-string v0, "https://sc-analytics.appspot.com/analytics/bz"
 
     iget-object v1, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$8;->a:Lorg/json/JSONArray;
@@ -59,6 +59,6 @@
 
     invoke-static/range {v0 .. v5}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/String;Lorg/json/JSONArray;JJ)V
 
-    .line 385
+    .line 379
     return-void
 .end method

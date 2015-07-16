@@ -9,15 +9,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import ban;
-import bap;
+import bbo;
+import bbq;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.ui.TextureVideoView;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.eventbus.CameraDisplayState;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
-import nf;
+import nw;
 
 public class SnapTagHelpFragment
   extends SnapchatFragment
@@ -34,9 +34,9 @@ public class SnapTagHelpFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    nf.d();
-    mFragmentLayout = paramLayoutInflater.inflate(2130968742, paramViewGroup, false);
-    b = ((TextureVideoView)c(2131362729));
+    nw.d();
+    mFragmentLayout = paramLayoutInflater.inflate(2130968744, paramViewGroup, false);
+    b = ((TextureVideoView)c(2131362728));
     mFragmentLayout.setOnTouchListener(new View.OnTouchListener()
     {
       public final boolean onTouch(View paramAnonymousView, MotionEvent paramAnonymousMotionEvent)
@@ -48,7 +48,7 @@ public class SnapTagHelpFragment
         return true;
       }
     });
-    nf.e();
+    nw.e();
     return mFragmentLayout;
   }
   
@@ -56,13 +56,13 @@ public class SnapTagHelpFragment
   {
     super.onPause();
     b.a();
-    ban.a().a(new bap(CameraDisplayState.SHOW));
+    bbo.a().a(new bbq(CameraDisplayState.SHOW));
   }
   
   public void onResume()
   {
     super.onResume();
-    ban.a().a(new bap(CameraDisplayState.CLOSE));
+    bbo.a().a(new bbq(CameraDisplayState.CLOSE));
     b.setVideoPath(a);
     b.seekTo(0);
     b.start();

@@ -1,7 +1,7 @@
 package com.snapchat.android;
 
-import ajv;
-import ajx;
+import akp;
+import akr;
 import android.app.Activity;
 import android.app.KeyguardManager;
 import android.app.KeyguardManager.KeyguardLock;
@@ -19,26 +19,26 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.Loader;
-import auh;
+import avf;
 import az;
-import aza;
-import azg;
-import azi;
-import azk;
-import azs;
-import azs.3;
-import azv;
-import azw;
-import bac;
-import ban;
-import ber;
-import bgp;
-import bkz;
-import bkz.1;
-import buz;
-import bva;
-import bvj;
-import bwi;
+import azy;
+import baf;
+import bah;
+import baj;
+import bar;
+import bar.3;
+import bau;
+import bav;
+import bbc;
+import bbo;
+import bfq;
+import bhp;
+import bma;
+import bma.1;
+import bwa;
+import bwb;
+import bwk;
+import bxj;
 import cf;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.framework.AnalyticsPlatform;
@@ -51,9 +51,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Executor;
 import javax.inject.Inject;
-import mi;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
+import mz;
 import net.hockeyapp.android.NativeCrashManager;
-import nf;
+import nw;
 
 public abstract class SnapchatActivity
   extends FragmentActivity
@@ -65,13 +67,13 @@ public abstract class SnapchatActivity
   @Inject
   public AnalyticsPlatformRegistry mAnalyticsPlatformRegistry;
   @Inject
-  public bac mAnrReporter;
-  private azw mCrashManager = new azw();
+  public bbc mAnrReporter;
+  private bav mCrashManager = new bav();
   @Inject
-  public azi mCrashSampler;
+  public bah mCrashSampler;
   private ScAnalyticsEventEngine mEventEngine = ScAnalyticsEventEngine.a();
-  public azv mShakeReporter = new azv();
-  protected ajv mUser;
+  public bau mShakeReporter = new bau();
+  protected akp mUser;
   @cf
   protected boolean mWaitingForActivityResult = false;
   private boolean performPostponedTasksFromOnResume = false;
@@ -82,7 +84,7 @@ public abstract class SnapchatActivity
     {
       paramIntent = paramIntent.getStringExtra("FROM");
       String str = getClass().getSimpleName();
-      Timber.c("SnapchatActivity", "logTransition " + paramIntent + " -> " + str, new Object[0]);
+      new StringBuilder("logTransition ").append(paramIntent).append(" -> ").append(str);
       AnalyticsEvents.c(paramIntent, str);
     }
   }
@@ -90,7 +92,7 @@ public abstract class SnapchatActivity
   public static final String gatherLogsAsString()
   {
     if (ReleaseManager.f()) {
-      return azk.a();
+      return baj.a();
     }
     return "";
   }
@@ -100,15 +102,15 @@ public abstract class SnapchatActivity
     return mIsCrittercismInitialized;
   }
   
-  protected void a(ajv paramajv)
+  protected void a(akp paramakp)
   {
-    Timber.c("SnapchatActivity", "onUserLoaded " + paramajv, new Object[0]);
+    new StringBuilder("onUserLoaded ").append(paramakp);
     if (performPostponedTasksFromOnResume)
     {
       mAnalyticsPlatformRegistry.a(this);
       performPostponedTasksFromOnResume = false;
     }
-    ban.a().a(new ber(paramajv));
+    bbo.a().a(new bfq(paramakp));
   }
   
   public void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -121,6 +123,8 @@ public abstract class SnapchatActivity
   
   public void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
     ((SnapchatApplication)getApplication()).c().a(this);
     if (paramBundle != null) {
@@ -140,17 +144,17 @@ public abstract class SnapchatActivity
       ((KeyguardManager)getSystemService("keyguard")).newKeyguardLock(getLocalClassName()).disableKeyguard();
       if (ReleaseManager.h())
       {
-        paramBundle = new azs();
-        bgp.a(auh.SERIAL_EXECUTOR_FOR_DEBUGGING, new azs.3(paramBundle));
+        paramBundle = new bar();
+        bhp.a(avf.SERIAL_EXECUTOR_FOR_DEBUGGING, new bar.3(paramBundle));
       }
       getSupportLoaderManager().initLoader$71be8de6(800, new LoaderManager.LoaderCallbacks()
       {
-        public final Loader<ajv> onCreateLoader(int paramAnonymousInt, Bundle paramAnonymousBundle)
+        public final Loader<akp> onCreateLoader(int paramAnonymousInt, Bundle paramAnonymousBundle)
         {
-          return new mi(SnapchatActivity.this, nf.a());
+          return new mz(SnapchatActivity.this, nw.a());
         }
         
-        public final void onLoaderReset(Loader<ajv> paramAnonymousLoader) {}
+        public final void onLoaderReset(Loader<akp> paramAnonymousLoader) {}
       });
       return;
     }
@@ -181,16 +185,16 @@ public abstract class SnapchatActivity
     if (mCrashSampler.b())
     {
       long l1 = System.currentTimeMillis();
-      if ((this != null) && (bvj.a(this)))
+      if ((this != null) && (bwk.a(this)))
       {
         Object localObject = getSharedPreferences("HockeyApp", 0);
         long l2 = ((SharedPreferences)localObject).getLong("startTime" + hashCode(), 0L);
-        long l3 = ((SharedPreferences)localObject).getLong("usageTime" + buz.b, 0L);
+        long l3 = ((SharedPreferences)localObject).getLong("usageTime" + bwa.b, 0L);
         if (l2 > 0L)
         {
           localObject = ((SharedPreferences)localObject).edit();
-          ((SharedPreferences.Editor)localObject).putLong("usageTime" + buz.b, l1 - l2 + l3);
-          bwi.a((SharedPreferences.Editor)localObject);
+          ((SharedPreferences.Editor)localObject).putLong("usageTime" + bwa.b, l1 - l2 + l3);
+          bxj.a((SharedPreferences.Editor)localObject);
         }
       }
     }
@@ -205,13 +209,13 @@ public abstract class SnapchatActivity
     ScAnalyticsEventEngine.b();
     if (mCrashSampler.b())
     {
-      bva.a(this, "c06b8797877eb662616000c11de0d338", mCrashManager);
+      bwb.a(this, "c06b8797877eb662616000c11de0d338", mCrashManager);
       long l = System.currentTimeMillis();
       if (this != null)
       {
         localObject = getSharedPreferences("HockeyApp", 0).edit();
         ((SharedPreferences.Editor)localObject).putLong("startTime" + hashCode(), l);
-        bwi.a((SharedPreferences.Editor)localObject);
+        bxj.a((SharedPreferences.Editor)localObject);
       }
     }
   }
@@ -238,7 +242,7 @@ public abstract class SnapchatActivity
         mActivity = this;
         mSensorManager = ((SensorManager)getSystemService("sensor"));
         mCanSendReports = true;
-        mBugReporter = new azg(ReleaseManager.a());
+        mBugReporter = new baf(ReleaseManager.a());
         localObject = mShakeReporter;
         mSensorManager.registerListener((SensorEventListener)localObject, mSensorManager.getDefaultSensor(1), 1);
       }
@@ -249,7 +253,7 @@ public abstract class SnapchatActivity
       throw new IllegalStateException("You must call registerListener() before detectAnrs()");
       mAnalyticsPlatformRegistry.a(this);
     }
-    Object localObject = new bkz.1((bkz)localObject, this);
+    Object localObject = new bma.1((bma)localObject, this);
     AsyncTask.THREAD_POOL_EXECUTOR.execute((Runnable)localObject);
   }
   
@@ -257,23 +261,19 @@ public abstract class SnapchatActivity
   {
     super.onStop();
     Object localObject = mAnalyticsPlatformRegistry;
-    if (ajx.H()) {
-      Timber.b("AnalyticsPlatformRegistry", "User is logged into SnapKidz. Aborting.", new Object[0]);
-    }
-    for (;;)
+    if (!akr.H())
     {
-      if (ReleaseManager.f())
-      {
-        mShakeReporter.a();
-        localObject = mShakeReporter;
-        mActivity = null;
-        mBugReporter = null;
-      }
-      return;
       localObject = a.iterator();
       while (((Iterator)localObject).hasNext()) {
         ((AnalyticsPlatform)((Iterator)localObject).next()).b(this);
       }
+    }
+    if (ReleaseManager.f())
+    {
+      mShakeReporter.a();
+      localObject = mShakeReporter;
+      mActivity = null;
+      mBugReporter = null;
     }
   }
   

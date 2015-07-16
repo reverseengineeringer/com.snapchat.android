@@ -8,7 +8,7 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.URLSpan;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import cgb;
+import chc;
 
 public class LinkFriendlyTextView
   extends TextView
@@ -17,11 +17,11 @@ public class LinkFriendlyTextView
   {
     super(paramContext, paramAttributeSet);
     setMovementMethod(LinkMovementMethod.getInstance());
-    setLinkTextColor(paramContext.getResources().getColor(2131230771));
+    setLinkTextColor(paramContext.getResources().getColor(2131230772));
     a(this);
   }
   
-  private static void a(@cgb TextView paramTextView)
+  private static void a(@chc TextView paramTextView)
   {
     Spannable localSpannable = (Spannable)paramTextView.getText();
     if (localSpannable == null) {
@@ -50,7 +50,7 @@ public class LinkFriendlyTextView
       super();
     }
     
-    public void updateDrawState(@cgb TextPaint paramTextPaint)
+    public void updateDrawState(@chc TextPaint paramTextPaint)
     {
       super.updateDrawState(paramTextPaint);
       paramTextPaint.setUnderlineText(false);

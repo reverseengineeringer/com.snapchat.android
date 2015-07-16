@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Labz$a;
+.implements Lacz$a;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 513
+    .line 512
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 # virtual methods
 .method public final a(Z)V
     .locals 2
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .prologue
-    .line 519
+    .line 518
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->g(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->f(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
 
     move-result-object v0
 
@@ -55,6 +55,6 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->post(Ljava/lang/Runnable;)Z
 
-    .line 531
+    .line 530
     return-void
 .end method

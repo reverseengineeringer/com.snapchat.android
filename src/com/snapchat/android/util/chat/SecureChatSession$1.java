@@ -1,6 +1,5 @@
 package com.snapchat.android.util.chat;
 
-import com.snapchat.android.Timber;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -9,7 +8,7 @@ final class SecureChatSession$1
 {
   public final void rejectedExecution(Runnable paramRunnable, ThreadPoolExecutor paramThreadPoolExecutor)
   {
-    Timber.g("SecureChatSession", "rejecting execution of runnable, shutdown=" + paramThreadPoolExecutor.isShutdown(), new Object[0]);
+    new StringBuilder("rejecting execution of runnable, shutdown=").append(paramThreadPoolExecutor.isShutdown());
   }
 }
 

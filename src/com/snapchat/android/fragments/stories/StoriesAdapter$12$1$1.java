@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.stories;
 
-import aom.a;
+import api.a;
 import com.snapchat.android.util.AlertDialogUtils;
 
 final class StoriesAdapter$12$1$1
-  implements aom.a
+  implements api.a
 {
   StoriesAdapter$12$1$1(StoriesAdapter.12.1 param1) {}
   

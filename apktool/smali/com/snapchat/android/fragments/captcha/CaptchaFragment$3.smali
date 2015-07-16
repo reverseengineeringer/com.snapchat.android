@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field final synthetic a:Lafo;
+.field final synthetic a:Lago;
 
 .field final synthetic b:Ljava/lang/String;
 
@@ -26,14 +26,14 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/captcha/CaptchaFragment;Lafo;Ljava/lang/String;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/captcha/CaptchaFragment;Lago;Ljava/lang/String;)V
     .locals 0
 
     .prologue
     .line 135
     iput-object p1, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->c:Lcom/snapchat/android/fragments/captcha/CaptchaFragment;
 
-    iput-object p2, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->a:Lafo;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->a:Lago;
 
     iput-object p3, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->b:Ljava/lang/String;
 
@@ -66,11 +66,11 @@
 
     .line 140
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->a:Lafo;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->a:Lago;
 
     new-instance v1, Ljava/util/ArrayList;
 
-    iget-object v2, v0, Lafo;->a:Ljava/util/List;
+    iget-object v2, v0, Lago;->a:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -78,7 +78,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    iget-object v0, v0, Lafo;->a:Ljava/util/List;
+    iget-object v0, v0, Lago;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -95,9 +95,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lafo$b;
+    check-cast v0, Lago$b;
 
-    iget-boolean v0, v0, Lafo$b;->a:Z
+    iget-boolean v0, v0, Lago$b;->a:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -109,19 +109,19 @@
 
     .line 141
     :cond_1
-    new-instance v0, Lpd;
+    new-instance v0, Lpu;
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->b:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->c:Lcom/snapchat/android/fragments/captcha/CaptchaFragment;
 
-    invoke-direct {v0, v2, v1, v3}, Lpd;-><init>(Ljava/lang/String;Ljava/util/List;Lpd$a;)V
+    invoke-direct {v0, v2, v1, v3}, Lpu;-><init>(Ljava/lang/String;Ljava/util/List;Lpu$a;)V
 
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v4, [Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Lpd;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1, v2}, Lpu;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 143
     iget-object v0, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;->c:Lcom/snapchat/android/fragments/captcha/CaptchaFragment;

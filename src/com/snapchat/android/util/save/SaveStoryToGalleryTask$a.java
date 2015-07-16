@@ -1,19 +1,15 @@
 package com.snapchat.android.util.save;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.task.Task.DoneCallback;
 import com.snapchat.videotranscoder.task.Task.Status;
 
 final class SaveStoryToGalleryTask$a
   implements Task.DoneCallback
 {
-  public final void done(@cgb Task.Status arg1)
+  public final void done(@chc Task.Status arg1)
   {
-    synchronized (val$transcodingDoneSynchronizationObject)
-    {
-      val$transcodingDoneSynchronizationObject.notify();
-      return;
-    }
+    synchronized (val$transcodingDoneSynchronizationObject) {}
   }
 }
 

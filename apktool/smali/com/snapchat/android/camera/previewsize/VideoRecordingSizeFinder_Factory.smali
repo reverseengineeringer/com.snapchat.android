@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/camera/previewsize/VideoRecordingSizeFinder_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lwq;",
+        "Lxm;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Lwq;",
+            "Lxm;",
             ">;"
         }
     .end annotation
@@ -132,21 +132,21 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/previewsize/VideoRecordingSizeFinder_Factory;->get()Lwq;
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/previewsize/VideoRecordingSizeFinder_Factory;->get()Lxm;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final get()Lwq;
+.method public final get()Lxm;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Lwq;
+    new-instance v0, Lxm;
 
-    invoke-direct {v0}, Lwq;-><init>()V
+    invoke-direct {v0}, Lxm;-><init>()V
 
     return-object v0
 .end method

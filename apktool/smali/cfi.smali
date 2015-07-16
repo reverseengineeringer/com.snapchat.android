@@ -1,17 +1,18 @@
-.class public final Lcfi;
+.class public interface abstract annotation Lcfi;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
 
-# direct methods
-.method public static a(I)Ljava/lang/Object;
-    .locals 1
 
-    .prologue
-    .line 23
-    new-instance v0, Ljava/lang/Integer;
+# annotations
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
-    invoke-direct {v0, p0}, Ljava/lang/Integer;-><init>(I)V
-
-    return-object v0
-.end method
+.annotation runtime Ljava/lang/annotation/Target;
+    value = {
+        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;
+    }
+.end annotation

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbur;
+.implements Lbhr$a;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 413
+    .line 436
     iput-object p1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$19;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,65 +36,29 @@
 
 
 # virtual methods
-.method public final a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-    .locals 1
+.method public final a(Landroid/view/View;)V
+    .locals 2
 
     .prologue
-    .line 421
+    .line 439
     iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$19;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->j(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->g(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Lbhr;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lin/srain/cube/views/ptr/PtrFrameLayout;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
-    .line 422
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/EditText;
+
+    new-instance v1, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$19$1;
+
+    invoke-direct {v1, p0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$19$1;-><init>(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$19;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 456
     return-void
-.end method
-
-.method public final a()Z
-    .locals 4
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 417
-    iget-object v2, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$19;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
-
-    invoke-static {v2}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->i(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Landroid/support/v7/widget/LinearLayoutManager;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/support/v7/widget/LinearLayoutManager;->l()I
-
-    move-result v3
-
-    invoke-virtual {v2, v1, v3, v0}, Landroid/support/v7/widget/LinearLayoutManager;->a(IIZ)Landroid/view/View;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    const/4 v2, -0x1
-
-    :goto_0
-    if-nez v2, :cond_1
-
-    :goto_1
-    return v0
-
-    :cond_0
-    invoke-static {v2}, Landroid/support/v7/widget/LinearLayoutManager;->a(Landroid/view/View;)I
-
-    move-result v2
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_1
 .end method

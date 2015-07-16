@@ -2,355 +2,1001 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lyy;
-
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lyw$b;,
         Lyw$a;
     }
 .end annotation
 
+.annotation runtime Ljavax/inject/Singleton;
+.end annotation
 
-# instance fields
-.field private final a:Ljavax/inject/Provider;
+
+# static fields
+.field private static c:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljavax/inject/Provider",
+            "Ljava/util/Map",
             "<",
-            "Lajv;",
-            ">;"
+            "Ljava/lang/String;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/model/chat/CashFeedItem;",
+            ">;>;"
         }
     .end annotation
 .end field
 
-.field private final b:Lcom/squareup/otto/Bus;
 
-.field private final c:Lyw$a;
+# instance fields
+.field protected a:Lqt;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
 
-.field private final d:Laol;
-
-.field private final e:Lnp;
+.field protected b:Lnq;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 36
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 48
+    new-instance v0, Ljava/util/HashMap;
 
-    move-result-object v1
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    sget-object v2, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    sput-object v0, Lyw;->c:Ljava/util/Map;
 
-    new-instance v3, Lyw$a;
-
-    invoke-direct {v3}, Lyw$a;-><init>()V
-
-    invoke-static {}, Laol;->a()Laol;
-
-    move-result-object v4
-
-    invoke-static {}, Lnp;->a()Lnp;
-
-    move-result-object v5
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, Lyw;-><init>(Lcom/squareup/otto/Bus;Ljavax/inject/Provider;Lyw$a;Laol;Lnp;)V
-
-    .line 38
     return-void
 .end method
 
-.method private constructor <init>(Lcom/squareup/otto/Bus;Ljavax/inject/Provider;Lyw$a;Laol;Lnp;)V
+.method public constructor <init>()V
     .locals 0
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+
+    .prologue
+    .line 57
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static a(Lcom/snapchat/android/model/chat/ChatConversation;IZ)Lcom/snapchat/android/model/chat/CashFeedItem;
+    .locals 4
+    .param p0    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation build Lchc;
+    .end annotation
+
+    .prologue
+    .line 66
+    new-instance v0, Lcom/snapchat/android/model/CashTransaction$a;
+
+    iget-object v1, p0, Lcom/snapchat/android/model/chat/ChatConversation;->mMyUsername:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/snapchat/android/model/chat/ChatConversation;->mTheirUsername:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2, p1}, Lcom/snapchat/android/model/CashTransaction$a;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
+
+    iput-boolean p2, v0, Lcom/snapchat/android/model/CashTransaction$a;->mFromRain:Z
+
+    invoke-virtual {v0}, Lcom/snapchat/android/model/CashTransaction$a;->a()Lcom/snapchat/android/model/CashTransaction;
+
+    move-result-object v0
+
+    .line 68
+    invoke-static {}, Lakr;->ao()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/snapchat/android/model/CashTransaction;->mProvider:Ljava/lang/String;
+
+    .line 71
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {p0, v2, v3}, Lcom/snapchat/android/model/chat/ChatConversation;->b(J)J
+
+    move-result-wide v2
+
+    .line 72
+    iput-wide v2, v0, Lcom/snapchat/android/model/CashTransaction;->mCreatedTimestamp:J
+
+    .line 73
+    iput-wide v2, v0, Lcom/snapchat/android/model/CashTransaction;->mUpdatedTimestamp:J
+
+    .line 75
+    new-instance v1, Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    invoke-direct {v1, v0}, Lcom/snapchat/android/model/chat/CashFeedItem;-><init>(Lcom/snapchat/android/model/CashTransaction;)V
+
+    .line 76
+    sget-object v0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->SENDING:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+
+    iput-object v0, v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+
+    .line 77
+    return-object v1
+.end method
+
+.method private a(Lcom/snapchat/android/model/chat/ChatConversation;Lcom/snapchat/android/model/chat/CashFeedItem;Ljava/util/List;)Lqt$a;
+    .locals 1
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/model/chat/CashFeedItem;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Ljava/util/List;
+        .annotation build Lchc;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/squareup/otto/Bus;",
-            "Ljavax/inject/Provider",
+            "Lcom/snapchat/android/model/chat/ChatConversation;",
+            "Lcom/snapchat/android/model/chat/CashFeedItem;",
+            "Ljava/util/List",
             "<",
-            "Lajv;",
-            ">;",
-            "Lyw$a;",
-            "Laol;",
-            "Lnp;",
-            ")V"
+            "Lcom/snapchat/android/model/chat/CashFeedItem;",
+            ">;)",
+            "Lqt$a;"
         }
     .end annotation
 
     .prologue
-    .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 253
+    new-instance v0, Lyw$6;
 
-    .line 43
-    iput-object p1, p0, Lyw;->b:Lcom/squareup/otto/Bus;
+    invoke-direct {v0, p0, p2, p3, p1}, Lyw$6;-><init>(Lyw;Lcom/snapchat/android/model/chat/CashFeedItem;Ljava/util/List;Lcom/snapchat/android/model/chat/ChatConversation;)V
 
-    .line 44
-    iput-object p2, p0, Lyw;->a:Ljavax/inject/Provider;
-
-    .line 45
-    iput-object p3, p0, Lyw;->c:Lyw$a;
-
-    .line 46
-    iput-object p4, p0, Lyw;->d:Laol;
-
-    .line 47
-    iput-object p5, p0, Lyw;->e:Lnp;
-
-    .line 48
-    return-void
+    return-object v0
 .end method
 
-.method private c(Laje;)V
-    .locals 7
+.method public static a(Ljava/lang/String;Ljava/util/List;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/model/chat/CashFeedItem;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    const/4 v6, 0x0
+    .line 284
+    if-eqz p1, :cond_0
 
-    const/4 v5, 0x1
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    .line 73
-    iget-object v0, p0, Lyw;->a:Ljavax/inject/Provider;
+    move-result v0
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    if-eqz v0, :cond_1
+
+    .line 295
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 287
+    :cond_1
+    sget-object v0, Lyw;->c:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Ljava/util/Map;
 
-    .line 74
-    if-eqz v0, :cond_0
+    .line 288
+    if-nez v0, :cond_3
 
-    .line 75
-    instance-of v1, p1, Lajr;
+    .line 289
+    new-instance v0, Ljava/util/HashMap;
 
-    if-eqz v1, :cond_2
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    move-object v1, p1
+    move-object v1, v0
 
-    .line 76
-    check-cast v1, Lajr;
+    .line 291
+    :goto_1
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    iget-boolean v2, v1, Lajr;->mWas404ResponseReceived:Z
+    move-result-object v2
 
-    if-eqz v2, :cond_1
+    :goto_2
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    const-string v2, "SnapConsumptionRecorder"
+    move-result v0
 
-    const-string v3, "SNAP-VIEW: MARKING story snap %s as viewed due to 404"
+    if-eqz v0, :cond_2
 
-    new-array v4, v5, [Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    aput-object v1, v4, v6
+    move-result-object v0
 
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    check-cast v0, Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    .line 292
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_2
+
+    .line 294
+    :cond_2
+    sget-object v0, Lyw;->c:Ljava/util/Map;
+
+    invoke-interface {v0, p0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_3
+    move-object v1, v0
+
+    goto :goto_1
+.end method
+
+.method static synthetic b(Ljava/lang/String;Ljava/util/List;)V
+    .locals 3
+
+    .prologue
+    .line 46
+    sget-object v0, Lyw;->c:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
 
     :goto_0
-    invoke-static {v0, v1, v5}, Lava;->a(Lajv;Lajr;Z)V
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v1, p0, Lyw;->b:Lcom/squareup/otto/Bus;
+    move-result v1
 
-    new-instance v2, Lbdy;
+    if-eqz v1, :cond_0
 
-    invoke-direct {v2}, Lbdy;-><init>()V
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+    move-result-object v1
 
-    .line 80
-    :goto_1
-    instance-of v1, p1, Lajr;
+    check-cast v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_5
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lajv;->mStoryViewRecordsSinceLastServerChange:Ljava/util/Map;
+    goto :goto_0
 
+    :cond_0
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lyw;->c:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lcom/snapchat/android/model/chat/CashFeedItem;Lyw$a;)V
+    .locals 3
+    .param p1    # Lcom/snapchat/android/model/chat/CashFeedItem;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lyw$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 81
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/CashFeedItem;->Z()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    iget-object v2, p1, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    .line 83
+    iget-object v0, p0, Lyw;->a:Lqt;
+
+    new-instance v1, Lyw$1;
+
+    invoke-direct {v1, p0, p1, p2}, Lyw$1;-><init>(Lyw;Lcom/snapchat/android/model/chat/CashFeedItem;Lyw$a;)V
+
+    invoke-virtual {v0, p1, v1}, Lqt;->a(Lcom/snapchat/android/model/chat/CashFeedItem;Lqt$a;)V
+
+    .line 96
+    return-void
+.end method
+
+.method protected final a(Lcom/snapchat/android/model/chat/ChatConversation;Lcom/snapchat/android/model/chat/CashFeedItem;)V
+    .locals 4
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/model/chat/CashFeedItem;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v3, 0x1
+
+    .line 136
+    new-array v0, v3, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    .line 137
+    iget-object v0, p0, Lyw;->a:Lqt;
+
+    new-instance v1, Lyw$3;
+
+    invoke-direct {v1, p0, p2, p1}, Lyw$3;-><init>(Lyw;Lcom/snapchat/android/model/chat/CashFeedItem;Lcom/snapchat/android/model/chat/ChatConversation;)V
+
+    invoke-virtual {v0, p2, v1}, Lqt;->c(Lcom/snapchat/android/model/chat/CashFeedItem;Lqt$a;)V
+
+    .line 156
+    sget-object v0, Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;->SENDING:Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;
+
+    invoke-virtual {p1, p2, v0}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;)V
+
+    .line 157
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
+
+    move-result-object v0
+
+    new-instance v1, Lbca;
+
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->Y()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v3}, Lbca;-><init>(Ljava/lang/String;Z)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 158
+    return-void
+.end method
+
+.method public final a(Lcom/snapchat/android/model/chat/ChatConversation;Lcom/snapchat/android/model/chat/CashFeedItem;Ljava/lang/String;Lyw$b;)V
+    .locals 5
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/model/chat/CashFeedItem;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Lyw$b;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 100
+    const/4 v0, 0x4
+
+    new-array v1, v0, [Ljava/lang/Object;
+
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    aput-object v0, v1, v4
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->Z()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v0
+
+    const/4 v0, 0x2
+
+    iget-object v2, p2, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v0
+
+    const/4 v2, 0x3
+
+    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    move-object v0, p3
+
+    :goto_0
+    aput-object v0, v1, v2
+
+    .line 103
+    iget-object v0, p2, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
+
+    iput-object p3, v0, Lcom/snapchat/android/model/CashTransaction;->mMessage:Ljava/lang/String;
+
+    .line 104
+    iget-boolean v0, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mIsStub:Z
+
+    if-eqz v0, :cond_0
+
+    .line 105
+    iput-boolean v4, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mIsStub:Z
+
+    .line 107
+    :cond_0
+    iget-object v0, p0, Lyw;->a:Lqt;
+
+    new-instance v1, Lyw$2;
+
+    invoke-direct {v1, p0, p2, p1, p4}, Lyw$2;-><init>(Lyw;Lcom/snapchat/android/model/chat/CashFeedItem;Lcom/snapchat/android/model/chat/ChatConversation;Lyw$b;)V
+
+    invoke-virtual {v0, p2, v1}, Lqt;->b(Lcom/snapchat/android/model/chat/CashFeedItem;Lqt$a;)V
+
+    .line 130
+    return-void
+
+    .line 100
+    :cond_1
+    const/4 v0, 0x5
+
+    invoke-virtual {p3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    invoke-virtual {p3, v4, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public final a(Lcom/snapchat/android/model/chat/ChatConversation;Lcom/snapchat/android/model/chat/CashFeedItem;Lyw$b;)V
+    .locals 4
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/model/chat/CashFeedItem;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Lyw$b;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 163
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->P()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lpg;
+    .line 164
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    invoke-direct {v0}, Lpg;-><init>()V
+    const-string v1, "SendingCashManager fetchTransactionStatusAndResolveBlockers should only be called on failed CashFeedItems!"
 
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    new-array v2, v6, [Ljava/lang/String;
+    throw v0
 
-    invoke-virtual {v0, v1, v2}, Lpg;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    .line 82
+    .line 168
     :cond_0
-    :goto_2
-    return-void
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->o()V
 
-    .line 76
-    :cond_1
-    const-string v2, "SnapConsumptionRecorder"
+    .line 169
+    sget-object v0, Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;->SENDING:Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;
 
-    const-string v3, "SNAP-VIEW: MARKING story snap %s as viewed"
+    invoke-virtual {p1, p2, v0}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;)V
 
-    new-array v4, v5, [Ljava/lang/Object;
+    .line 171
+    iget-object v0, p2, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
 
-    aput-object v1, v4, v6
+    iget-boolean v0, v0, Lcom/snapchat/android/model/CashTransaction;->mIsInFlight:Z
 
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-nez v0, :cond_1
 
-    goto :goto_0
+    .line 172
+    new-array v0, v1, [Ljava/lang/Object;
 
-    .line 78
-    :cond_2
-    invoke-virtual {p1}, Laje;->t()Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    invoke-virtual {v0}, Lajv;->t()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    const-string v1, "SnapConsumptionRecorder"
-
-    const-string v2, "SNAP-VIEW: MARKING snap %s as viewed and replay available"
-
-    new-array v3, v5, [Ljava/lang/Object;
-
-    aput-object p1, v3, v6
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-virtual {p1}, Laje;->A_()V
-
-    :goto_3
-    invoke-static {p1}, Lnp;->d(Laje;)V
-
-    iget-object v1, p1, Laje;->mSender:Ljava/lang/String;
-
-    invoke-static {v1}, Lym;->b(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_3
+    aput-object v1, v0, v2
 
-    invoke-static {}, Lyn;->a()Lyn;
+    .line 174
+    iget-object v0, p0, Lyw;->a:Lqt;
+
+    new-instance v1, Lyw$4;
+
+    invoke-direct {v1, p0, p2, p3, p1}, Lyw$4;-><init>(Lyw;Lcom/snapchat/android/model/chat/CashFeedItem;Lyw$b;Lcom/snapchat/android/model/chat/ChatConversation;)V
+
+    invoke-virtual {v0, p2, v1}, Lqt;->d(Lcom/snapchat/android/model/chat/CashFeedItem;Lqt$a;)V
+
+    .line 220
+    :goto_0
+    return-void
+
+    .line 195
+    :cond_1
+    new-array v0, v1, [Ljava/lang/Object;
+
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v0, v2
+
+    .line 199
+    iget-object v0, p0, Lyw;->a:Lqt;
+
+    new-instance v1, Lyw$5;
+
+    invoke-direct {v1, p0, p2, p3, p1}, Lyw$5;-><init>(Lyw;Lcom/snapchat/android/model/chat/CashFeedItem;Lyw$b;Lcom/snapchat/android/model/chat/ChatConversation;)V
+
+    invoke-virtual {v0, p2, v1}, Lqt;->c(Lcom/snapchat/android/model/chat/CashFeedItem;Lqt$a;)V
+
+    .line 217
+    sget-object v0, Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;->SENDING:Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;
+
+    invoke-virtual {p1, p2, v0}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;)V
+
+    .line 218
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
+
+    move-result-object v0
+
+    new-instance v1, Lbca;
+
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->Y()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1, v5}, Lyn;->a(Lcom/snapchat/android/model/chat/ChatConversation;Z)V
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
 
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Lbca;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    goto :goto_0
+.end method
+
+.method public final a(Lcom/snapchat/android/model/chat/ChatConversation;Ljava/util/List;)V
+    .locals 4
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/snapchat/android/model/chat/ChatConversation;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/model/chat/CashFeedItem;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    .line 224
+    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 225
+    invoke-interface {p2, v3}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    .line 226
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->P()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 227
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "SendingCashManager retrySendCash should only be called on failed CashFeedItems!"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 231
+    :cond_0
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->o()V
+
+    .line 233
+    iget-object v1, v0, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
+
+    iget-boolean v1, v1, Lcom/snapchat/android/model/CashTransaction;->mIsInFlight:Z
+
+    if-nez v1, :cond_2
+
+    .line 234
+    new-array v1, v2, [Ljava/lang/Object;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v3
+
+    .line 236
+    iget-object v1, p0, Lyw;->a:Lqt;
+
+    invoke-direct {p0, p1, v0, p2}, Lyw;->a(Lcom/snapchat/android/model/chat/ChatConversation;Lcom/snapchat/android/model/chat/CashFeedItem;Ljava/util/List;)Lqt$a;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v0, v2}, Lqt;->d(Lcom/snapchat/android/model/chat/CashFeedItem;Lqt$a;)V
+
+    .line 247
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 239
+    :cond_2
+    new-array v1, v2, [Ljava/lang/Object;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v3
+
+    .line 243
+    iget-object v1, p0, Lyw;->a:Lqt;
+
+    invoke-direct {p0, p1, v0, p2}, Lyw;->a(Lcom/snapchat/android/model/chat/ChatConversation;Lcom/snapchat/android/model/chat/CashFeedItem;Ljava/util/List;)Lqt$a;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v0, v2}, Lqt;->c(Lcom/snapchat/android/model/chat/CashFeedItem;Lqt$a;)V
+
+    goto :goto_0
+.end method
+
+.method public final b(Lcom/snapchat/android/model/chat/ChatConversation;Ljava/util/List;)V
+    .locals 5
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/List;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/snapchat/android/model/chat/ChatConversation;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/model/chat/CashFeedItem;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 306
+    iget-object v0, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
+
+    invoke-static {v0, p2}, Lyw;->a(Ljava/lang/String;Ljava/util/List;)V
+
+    .line 307
+    sget-object v0, Lyw;->c:Ljava/util/Map;
+
+    iget-object v1, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map;
+
+    .line 308
+    if-nez v0, :cond_1
+
+    .line 379
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 312
+    :cond_1
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    .line 313
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_2
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    .line 314
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->i()Z
+
+    move-result v3
+
+    if-nez v3, :cond_7
+
+    .line 318
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->h()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 319
+    iget-object v3, v0, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
+
+    iget-object v3, v3, Lcom/snapchat/android/model/CashTransaction;->mTransactionStatus:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
+
+    .line 320
+    invoke-static {v0}, Layg;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    .line 321
+    sget-object v4, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->EXPIRED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
+
+    if-ne v3, v4, :cond_4
+
+    .line 322
+    iget-object v3, v0, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
+
+    invoke-virtual {v3}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->r(Ljava/lang/String;)V
+
+    .line 333
     :cond_3
-    iget-object v1, p0, Lyw;->b:Lcom/squareup/otto/Bus;
+    :goto_2
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
 
-    new-instance v2, Lbbl;
+    move-result-object v3
 
-    iget-object v3, p1, Laje;->mSender:Ljava/lang/String;
-
-    invoke-direct {v2, v3}, Lbbl;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
+    .line 323
     :cond_4
-    const-string v1, "SnapConsumptionRecorder"
+    sget-object v4, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->CANCELED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    const-string v2, "SNAP-VIEW: MARKING snap %s as viewed"
+    if-ne v3, v4, :cond_3
 
-    new-array v3, v5, [Ljava/lang/Object;
+    .line 324
+    iget-object v3, v0, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
 
-    aput-object p1, v3, v6
+    invoke-virtual {v3}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
 
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v3
 
-    invoke-virtual {p1}, Laje;->o()V
-
-    goto :goto_3
-
-    .line 80
-    :cond_5
-    iget-object v0, p0, Lyw;->d:Laol;
-
-    invoke-virtual {v0}, Laol;->d()I
+    invoke-static {v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->s(Ljava/lang/String;)V
 
     goto :goto_2
-.end method
 
+    .line 327
+    :cond_5
+    sget-object v4, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->COMPLETED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-# virtual methods
-.method public final a(J)V
-    .locals 0
+    if-ne v3, v4, :cond_6
 
-    .prologue
-    .line 53
-    return-void
-.end method
+    .line 328
+    iget-object v3, v0, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
 
-.method public final a(Laje;)V
-    .locals 5
+    invoke-virtual {v3}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
 
-    .prologue
-    .line 57
-    const-string v0, "SnapConsumptionRecorder"
+    move-result-object v3
 
-    const-string v1, "SNAP-VIEW: onTimerFinish %s"
+    invoke-static {v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->p(Ljava/lang/String;)V
 
-    const/4 v2, 0x1
+    goto :goto_2
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .line 329
+    :cond_6
+    sget-object v4, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->RECIPIENT_CANCELED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    const/4 v3, 0x0
+    if-ne v3, v4, :cond_3
 
-    invoke-virtual {p1}, Laje;->d()Ljava/lang/String;
+    .line 330
+    const-string v3, "USER_DETERMINED_INELIGIBLE"
 
-    move-result-object v4
+    invoke-static {v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->q(Ljava/lang/String;)V
 
-    aput-object v4, v2, v3
+    goto :goto_2
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 335
+    :cond_7
+    iget-object v3, v0, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
 
-    .line 58
-    invoke-direct {p0, p1}, Lyw;->c(Laje;)V
+    iget-boolean v3, v3, Lcom/snapchat/android/model/CashTransaction;->mFailToSendReleaseMessage:Z
 
-    .line 59
-    return-void
-.end method
+    if-eqz v3, :cond_2
 
-.method public final b(Laje;)V
-    .locals 5
+    .line 336
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
 
-    .prologue
-    .line 63
-    const-string v0, "SnapConsumptionRecorder"
+    move-result-object v3
 
-    const-string v1, "SNAP-VIEW: onTimerSkipped %s"
+    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    goto :goto_1
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .line 340
+    :cond_8
+    invoke-interface {v1}, Ljava/util/Map;->isEmpty()Z
 
-    const/4 v3, 0x0
+    move-result v0
 
-    invoke-virtual {p1}, Laje;->d()Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    move-result-object v4
+    .line 344
+    const/4 v0, 0x1
 
-    aput-object v4, v2, v3
+    new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    const/4 v2, 0x0
 
-    .line 64
-    invoke-direct {p0, p1}, Lyw;->c(Laje;)V
+    invoke-interface {v1}, Ljava/util/Map;->size()I
 
-    .line 65
-    return-void
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v0, v2
+
+    .line 346
+    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    iget-object v2, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
+
+    new-instance v3, Lyw$7;
+
+    invoke-direct {v3, p0, v1, p1}, Lyw$7;-><init>(Lyw;Ljava/util/Map;Lcom/snapchat/android/model/chat/ChatConversation;)V
+
+    new-instance v1, Lrf;
+
+    invoke-direct {v1, v0, v2, v3}, Lrf;-><init>(Ljava/util/Collection;Ljava/lang/String;Lrf$a;)V
+
+    invoke-virtual {v1}, Lrf;->execute()V
+
+    goto/16 :goto_0
 .end method

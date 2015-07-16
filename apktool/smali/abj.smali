@@ -1,358 +1,190 @@
 .class public final Labj;
-.super Landroid/support/v4/content/AsyncTaskLoader;
+.super Lcom/snapchat/android/database/table/StorySnapTable;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/support/v4/content/AsyncTaskLoader",
-        "<",
-        "Landroid/database/Cursor;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field private a:Landroid/database/Cursor;
-
-.field private final b:Lcom/snapchat/android/database/table/DbTable;
-
-.field private final c:Lcom/snapchat/android/database/vtable/DbVirtualTable;
+# static fields
+.field private static a:Labj;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/snapchat/android/database/table/DbTable;)V
-    .locals 1
-
-    .prologue
-    .line 23
-    invoke-direct {p0, p1}, Landroid/support/v4/content/AsyncTaskLoader;-><init>(Landroid/content/Context;)V
-
-    .line 24
-    iput-object p2, p0, Labj;->b:Lcom/snapchat/android/database/table/DbTable;
-
-    .line 25
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Labj;->c:Lcom/snapchat/android/database/vtable/DbVirtualTable;
-
-    .line 26
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lcom/snapchat/android/database/vtable/DbVirtualTable;)V
-    .locals 1
-
-    .prologue
-    .line 29
-    invoke-direct {p0, p1}, Landroid/support/v4/content/AsyncTaskLoader;-><init>(Landroid/content/Context;)V
-
-    .line 30
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Labj;->b:Lcom/snapchat/android/database/table/DbTable;
-
-    .line 31
-    iput-object p2, p0, Labj;->c:Lcom/snapchat/android/database/vtable/DbVirtualTable;
-
-    .line 32
-    return-void
-.end method
-
-.method private a(Landroid/database/Cursor;)V
+.method private constructor <init>()V
     .locals 2
 
     .prologue
-    .line 49
-    invoke-virtual {p0}, Labj;->isReset()Z
+    .line 23
+    new-instance v0, Layv;
 
-    move-result v0
+    invoke-direct {v0}, Layv;-><init>()V
 
-    if-eqz v0, :cond_1
+    invoke-static {}, Lakr;->a()Lakr;
 
-    .line 50
-    if-eqz p1, :cond_0
+    move-result-object v1
 
-    .line 51
-    invoke-interface {p1}, Landroid/database/Cursor;->close()V
+    invoke-direct {p0, v0, v1}, Labj;-><init>(Layv;Lakr;)V
 
-    .line 65
-    :cond_0
-    :goto_0
+    .line 24
     return-void
+.end method
 
-    .line 55
-    :cond_1
-    iget-object v0, p0, Labj;->a:Landroid/database/Cursor;
+.method private constructor <init>(Layv;Lakr;)V
+    .locals 1
 
-    .line 56
-    iput-object p1, p0, Labj;->a:Landroid/database/Cursor;
+    .prologue
+    .line 28
+    sget-object v0, Lazh;->FRIEND_STORY_KEYS_AND_IVS:Lazf;
 
-    .line 58
-    invoke-virtual {p0}, Labj;->isStarted()Z
+    invoke-direct {p0, p2, p1, v0}, Lcom/snapchat/android/database/table/StorySnapTable;-><init>(Lakr;Layv;Lazf;)V
 
-    move-result v1
+    .line 29
+    return-void
+.end method
 
-    if-eqz v1, :cond_2
+.method public static declared-synchronized a()Labj;
+    .locals 2
 
-    .line 59
-    invoke-super {p0, p1}, Landroid/support/v4/content/AsyncTaskLoader;->deliverResult(Ljava/lang/Object;)V
+    .prologue
+    .line 32
+    const-class v1, Labj;
 
-    .line 62
-    :cond_2
-    if-eqz v0, :cond_0
+    monitor-enter v1
 
-    if-eq v0, p1, :cond_0
+    :try_start_0
+    sget-object v0, Labj;->a:Labj;
 
-    invoke-interface {v0}, Landroid/database/Cursor;->isClosed()Z
+    if-nez v0, :cond_0
 
-    move-result v1
+    .line 33
+    new-instance v0, Labj;
 
-    if-nez v1, :cond_0
+    invoke-direct {v0}, Labj;-><init>()V
 
-    .line 63
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+    sput-object v0, Labj;->a:Labj;
 
-    goto :goto_0
+    .line 35
+    :cond_0
+    sget-object v0, Labj;->a:Labj;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 32
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final synthetic deliverResult(Ljava/lang/Object;)V
-    .locals 0
+.method protected final a(Lakp;)Ljava/util/Collection;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lakp;",
+            ")",
+            "Ljava/util/Collection",
+            "<",
+            "Lakl;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 17
-    check-cast p1, Landroid/database/Cursor;
-
-    invoke-direct {p0, p1}, Labj;->a(Landroid/database/Cursor;)V
-
-    return-void
-.end method
-
-.method public final synthetic loadInBackground()Ljava/lang/Object;
-    .locals 8
-
-    .prologue
-    const/4 v4, 0x0
-
-    const/4 v3, 0x0
-
-    .line 17
-    invoke-virtual {p0}, Labj;->getContext()Landroid/content/Context;
+    .line 50
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
+    invoke-virtual {v0}, Lakk;->k()Ljava/util/Collection;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/database/DatabaseHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
 
-    move-result-object v0
+    move-result v1
 
-    iget-object v1, p0, Labj;->b:Lcom/snapchat/android/database/table/DbTable;
+    mul-int/lit8 v1, v1, 0xa
 
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Labj;->b:Lcom/snapchat/android/database/table/DbTable;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/database/table/DbTable;->c()Ljava/lang/String;
+    invoke-static {v1}, Ldt;->a(I)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    iget-object v2, p0, Labj;->b:Lcom/snapchat/android/database/table/DbTable;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v2}, Lcom/snapchat/android/database/table/DbTable;->b()[Lzw;
-
-    move-result-object v5
-
-    array-length v6, v5
-
-    new-array v2, v6, [Ljava/lang/String;
+    move-result-object v2
 
     :goto_0
-    if-ge v4, v6, :cond_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    aget-object v7, v5, v4
+    move-result v0
 
-    invoke-interface {v7}, Lzw;->getColumnName()Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    move-result-object v7
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    aput-object v7, v2, v4
+    move-result-object v0
 
-    add-int/lit8 v4, v4, 0x1
+    check-cast v0, Lcom/snapchat/android/model/StoryCollection;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/model/StoryCollection;->f()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_0
 
+    .line 51
     :cond_0
-    move-object v4, v3
+    new-instance v0, Layv;
 
-    move-object v5, v3
+    invoke-direct {v0}, Layv;-><init>()V
 
-    move-object v6, v3
+    sget-object v2, Lazh;->FRIEND_STORY_KEYS_AND_IVS:Lazf;
 
-    move-object v7, v3
+    invoke-virtual {v0, v1, v2}, Layv;->a(Ljava/util/List;Lazf;)V
 
-    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    .line 52
+    return-object v1
+.end method
+
+.method protected final a(Ljava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lakl;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 45
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v0
 
-    :goto_1
+    invoke-virtual {v0, p1}, Lakk;->d(Ljava/util/List;)V
+
+    .line 46
+    return-void
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 40
+    const-string v0, "FriendStorySnapTable"
+
     return-object v0
-
-    :cond_1
-    iget-object v1, p0, Labj;->c:Lcom/snapchat/android/database/vtable/DbVirtualTable;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/database/vtable/DbVirtualTable;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Labj;->c:Lcom/snapchat/android/database/vtable/DbVirtualTable;
-
-    invoke-virtual {v2}, Lcom/snapchat/android/database/vtable/DbVirtualTable;->c()[Lzw;
-
-    move-result-object v5
-
-    array-length v6, v5
-
-    new-array v2, v6, [Ljava/lang/String;
-
-    :goto_2
-    if-ge v4, v6, :cond_2
-
-    aget-object v7, v5, v4
-
-    invoke-interface {v7}, Lzw;->getColumnName()Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v2, v4
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_2
-
-    :cond_2
-    move-object v4, v3
-
-    move-object v5, v3
-
-    move-object v6, v3
-
-    move-object v7, v3
-
-    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    goto :goto_1
-.end method
-
-.method public final synthetic onCanceled(Ljava/lang/Object;)V
-    .locals 1
-
-    .prologue
-    .line 17
-    check-cast p1, Landroid/database/Cursor;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-interface {p1}, Landroid/database/Cursor;->close()V
-
-    :cond_0
-    return-void
-.end method
-
-.method protected final onReset()V
-    .locals 1
-
-    .prologue
-    .line 91
-    invoke-super {p0}, Landroid/support/v4/content/AsyncTaskLoader;->onReset()V
-
-    .line 93
-    invoke-virtual {p0}, Labj;->onStopLoading()V
-
-    .line 95
-    iget-object v0, p0, Labj;->a:Landroid/database/Cursor;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Labj;->a:Landroid/database/Cursor;
-
-    invoke-interface {v0}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 96
-    iget-object v0, p0, Labj;->a:Landroid/database/Cursor;
-
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    .line 98
-    :cond_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Labj;->a:Landroid/database/Cursor;
-
-    .line 99
-    return-void
-.end method
-
-.method protected final onStartLoading()V
-    .locals 1
-
-    .prologue
-    .line 69
-    iget-object v0, p0, Labj;->a:Landroid/database/Cursor;
-
-    if-eqz v0, :cond_0
-
-    .line 70
-    iget-object v0, p0, Labj;->a:Landroid/database/Cursor;
-
-    invoke-direct {p0, v0}, Labj;->a(Landroid/database/Cursor;)V
-
-    .line 72
-    :cond_0
-    invoke-virtual {p0}, Labj;->takeContentChanged()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Labj;->a:Landroid/database/Cursor;
-
-    if-nez v0, :cond_2
-
-    .line 73
-    :cond_1
-    invoke-virtual {p0}, Labj;->forceLoad()V
-
-    .line 75
-    :cond_2
-    return-void
-.end method
-
-.method protected final onStopLoading()V
-    .locals 0
-
-    .prologue
-    .line 79
-    invoke-virtual {p0}, Labj;->cancelLoad()Z
-
-    .line 80
-    return-void
 .end method

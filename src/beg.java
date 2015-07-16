@@ -1,10 +1,10 @@
 public final class beg
 {
-  public String mCaptionText;
+  public boolean enablePaging;
   
-  public beg(String paramString)
+  public beg(boolean paramBoolean)
   {
-    mCaptionText = paramString;
+    enablePaging = paramBoolean;
   }
 }
 

@@ -1,14 +1,14 @@
+import android.graphics.Bitmap;
+
 public final class bcz
 {
-  public final boolean mIsDoubleTap;
-  public final int mOriginatingFragment;
-  public final String mRecipients;
+  public Bitmap mBitmap;
+  public int mProfileImageIndex;
   
-  public bcz(String paramString, int paramInt, boolean paramBoolean)
+  public bcz(Bitmap paramBitmap, int paramInt)
   {
-    mRecipients = paramString;
-    mOriginatingFragment = paramInt;
-    mIsDoubleTap = paramBoolean;
+    mBitmap = paramBitmap;
+    mProfileImageIndex = paramInt;
   }
 }
 

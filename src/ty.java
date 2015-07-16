@@ -1,11 +1,23 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-public @interface ty {}
+public final class ty
+  implements uh
+{
+  private byte[] mByteStream;
+  
+  public ty(byte[] paramArrayOfByte)
+  {
+    mByteStream = paramArrayOfByte;
+  }
+  
+  public final bmv a(String paramString)
+  {
+    return bmv.a(new String[] { "Content-Disposition", "form-data; name=\"" + paramString + "\"; filename=\"" + paramString + "\"" });
+  }
+  
+  public final bnc a()
+  {
+    return bnc.a(ub.BYTE_STREAM_MEDIA_TYPE, mByteStream);
+  }
+}
 
 /* Location:
  * Qualified Name:     ty

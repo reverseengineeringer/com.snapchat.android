@@ -1,20 +1,24 @@
 package com.snapchat.android.ui.listeners;
 
 import android.support.v7.widget.RecyclerView.s;
+import android.view.MotionEvent;
+import r;
 
 public abstract interface SwipeableRecyclerViewItemTouchListener$d<VH extends RecyclerView.s>
 {
-  public abstract int a(VH paramVH);
+  public abstract int a(@r VH paramVH);
   
-  public abstract void a(VH paramVH, boolean paramBoolean);
+  public abstract void a(@r VH paramVH, MotionEvent paramMotionEvent);
   
-  public abstract boolean a(VH paramVH, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4);
+  public abstract void a(@r VH paramVH, boolean paramBoolean);
   
-  public abstract boolean b(VH paramVH);
+  public abstract boolean a(@r VH paramVH, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4);
   
-  public abstract float c(VH paramVH);
+  public abstract boolean b(@r VH paramVH);
   
-  public abstract void d(VH paramVH);
+  public abstract float c(@r VH paramVH);
+  
+  public abstract void d(@r VH paramVH);
 }
 
 /* Location:

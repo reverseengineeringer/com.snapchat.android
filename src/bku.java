@@ -1,46 +1,27 @@
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
-import java.util.Map;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class bku
+public class bku
 {
-  @SerializedName("id")
-  protected String id;
-  @SerializedName("items")
-  protected List<bkw> items;
-  @SerializedName("items_v2")
-  protected List<bkw> itemsV2;
-  @SerializedName("name")
-  protected String name;
-  @SerializedName("properties")
-  protected Map<String, String> properties;
-  @SerializedName("type")
-  protected String type;
+  @SerializedName("channels")
+  protected List<bkv> channels;
+  @SerializedName("generation_ts")
+  protected Long generationTs;
   
-  public final String a()
+  public final List<bkv> a()
   {
-    return type;
+    return channels;
   }
   
-  public final boolean b()
+  public final Long b()
   {
-    return properties != null;
+    return generationTs;
   }
   
-  public final List<bkw> c()
-  {
-    return itemsV2;
-  }
-  
-  public final boolean d()
-  {
-    return itemsV2 != null;
-  }
-  
-  public final boolean equals(Object paramObject)
+  public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -49,15 +30,15 @@ public final class bku
       return false;
     }
     paramObject = (bku)paramObject;
-    return new EqualsBuilder().append(id, id).append(name, name).append(type, type).append(properties, properties).append(items, items).append(itemsV2, itemsV2).isEquals();
+    return new EqualsBuilder().append(channels, channels).append(generationTs, generationTs).isEquals();
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    return new HashCodeBuilder().append(id).append(name).append(type).append(properties).append(items).append(itemsV2).toHashCode();
+    return new HashCodeBuilder().append(channels).append(generationTs).toHashCode();
   }
   
-  public final String toString()
+  public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

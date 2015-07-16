@@ -6,8 +6,10 @@ import org.json.JSONObject;
 public class AuthDetails
 {
   private long expires;
+  private String mac;
   private String salt;
   private String signature;
+  private String token;
   private long userId;
   
   private static String bytesToHexString(byte[] paramArrayOfByte)
@@ -40,6 +42,11 @@ public class AuthDetails
     return Long.valueOf(expires);
   }
   
+  public String getMac()
+  {
+    return mac;
+  }
+  
   public String getSalt()
   {
     return salt;
@@ -48,6 +55,11 @@ public class AuthDetails
   public String getSignature()
   {
     return signature;
+  }
+  
+  public String getToken()
+  {
+    return token;
   }
   
   public Long getUserId()
@@ -60,6 +72,11 @@ public class AuthDetails
     expires = paramLong.longValue();
   }
   
+  public void setMac(String paramString)
+  {
+    mac = paramString;
+  }
+  
   public void setSalt(String paramString)
   {
     salt = paramString;
@@ -68,6 +85,11 @@ public class AuthDetails
   public void setSignature(String paramString)
   {
     signature = paramString;
+  }
+  
+  public void setToken(String paramString)
+  {
+    token = paramString;
   }
   
   public void setUserId(Long paramLong)

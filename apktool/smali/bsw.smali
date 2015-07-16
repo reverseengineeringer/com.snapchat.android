@@ -2,120 +2,118 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field public static final a:Lbsw;
+
+
 # instance fields
-.field private a:Landroid/net/ConnectivityManager;
+.field private volatile b:I
+
+.field private final c:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 34
+    .line 9
+    new-instance v0, Lbsw;
+
+    invoke-direct {v0}, Lbsw;-><init>()V
+
+    sput-object v0, Lbsw;->a:Lbsw;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 2
+
+    .prologue
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
-    if-nez p1, :cond_0
+    .line 6
+    const/4 v0, 0x1
 
-    .line 36
-    invoke-static {}, Lbtd;->e()V
+    iput v0, p0, Lbsw;->b:I
 
-    .line 51
-    :goto_0
+    .line 14
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lbsw;->c:J
+
+    .line 15
     return-void
+.end method
 
-    .line 41
-    :cond_0
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+.method private declared-synchronized b()I
+    .locals 2
 
-    move-result-object v0
+    .prologue
+    .line 18
+    monitor-enter p0
 
-    .line 42
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    :try_start_0
+    iget v0, p0, Lbsw;->b:I
 
-    move-result-object v1
+    add-int/lit8 v1, v0, 0x1
 
-    .line 43
-    const-string v2, "android.permission.ACCESS_NETWORK_STATE"
+    iput v1, p0, Lbsw;->b:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+    monitor-exit p0
 
-    move-result v0
+    return v0
 
-    .line 45
-    if-nez v0, :cond_1
+    :catchall_0
+    move-exception v0
 
-    .line 46
-    const-string v0, "connectivity"
+    monitor-exit p0
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/ConnectivityManager;
-
-    iput-object v0, p0, Lbsw;->a:Landroid/net/ConnectivityManager;
-
-    goto :goto_0
-
-    .line 49
-    :cond_1
-    invoke-static {}, Lbtd;->e()V
-
-    goto :goto_0
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final a()Lbra;
-    .locals 2
+.method public final a()Ljava/lang/String;
+    .locals 4
 
     .prologue
-    .line 57
-    iget-object v0, p0, Lbsw;->a:Landroid/net/ConnectivityManager;
+    .line 22
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-nez v0, :cond_0
+    const-string v1, "1."
 
-    .line 58
-    sget-object v0, Lbra;->c:Lbra;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 68
-    :goto_0
-    return-object v0
+    iget-wide v2, p0, Lbsw;->c:J
 
-    .line 61
-    :cond_0
-    iget-object v0, p0, Lbsw;->a:Landroid/net/ConnectivityManager;
-
-    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 63
-    if-eqz v0, :cond_1
+    const-string v1, "."
 
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-direct {p0}, Lbsw;->b()I
 
     move-result v1
 
-    if-nez v1, :cond_2
-
-    .line 64
-    :cond_1
-    sget-object v0, Lbra;->d:Lbra;
-
-    goto :goto_0
-
-    .line 67
-    :cond_2
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v0
-
-    .line 68
-    invoke-static {v0}, Lbra;->a(I)Lbra;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    goto :goto_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

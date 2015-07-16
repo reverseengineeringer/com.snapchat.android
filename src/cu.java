@@ -1,20 +1,21 @@
-import java.util.Collection;
-
+@cc
 @cd
-public final class cu
+public abstract class cu
 {
-  static final ch a = new ch(", ").a("null");
-  
-  static StringBuilder a(int paramInt)
+  private static final cu a = new cu()
   {
-    ct.a(paramInt, "size");
-    return new StringBuilder((int)Math.min(paramInt * 8L, 1073741824L));
+    public final long a()
+    {
+      return System.nanoTime();
+    }
+  };
+  
+  public static cu b()
+  {
+    return a;
   }
   
-  static <T> Collection<T> a(Iterable<T> paramIterable)
-  {
-    return (Collection)paramIterable;
-  }
+  public abstract long a();
 }
 
 /* Location:

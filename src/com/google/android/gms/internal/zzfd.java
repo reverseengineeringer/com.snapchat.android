@@ -56,22 +56,7 @@ public class zzfd
   
   private boolean zzd(long paramLong)
   {
-    paramLong = 60000L - (SystemClock.elapsedRealtime() - paramLong);
-    if (paramLong <= 0L) {
-      return false;
-    }
-    try
-    {
-      zznh.wait(paramLong);
-      return true;
-    }
-    catch (InterruptedException localInterruptedException)
-    {
-      for (;;)
-      {
-        zzhx.zzac("waitWithTimeout_lock interrupted");
-      }
-    }
+    return 60000L - (SystemClock.elapsedRealtime() - paramLong) > 0L;
   }
   
   public void onServiceConnected(ComponentName arg1, IBinder paramIBinder)
@@ -81,7 +66,6 @@ public class zzfd
       zzuY.zzx(paramIBinder);
       zzdx();
       zzuW = true;
-      zznh.notify();
       return;
     }
   }

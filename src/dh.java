@@ -1,46 +1,28 @@
-import java.util.Map.Entry;
-import javax.annotation.Nullable;
-
 @cd
-final class dh<K, V>
-  extends dc<V>
+final class dh
 {
-  private final df<K, V> a;
+  private static int a = 1073741824;
   
-  dh(df<K, V> paramdf)
+  static int a()
   {
-    a = paramdf;
-  }
-  
-  public final dw<V> a()
-  {
-    return dl.a(a.c().a());
-  }
-  
-  public final boolean contains(@Nullable Object paramObject)
-  {
-    return (paramObject != null) && (dj.a(a(), paramObject));
-  }
-  
-  final de<V> d()
-  {
-    new da()
+    int k = Math.max(2, 2);
+    int j = Integer.highestOneBit(k);
+    int i = j;
+    if (k > (int)(1.2D * j))
     {
-      final dc<V> c()
-      {
-        return dh.this;
-      }
-      
-      public final V get(int paramAnonymousInt)
-      {
-        return (V)((Map.Entry)b.get(paramAnonymousInt)).getValue();
-      }
-    };
+      i = j << 1;
+      if (i <= 0) {}
+    }
+    else
+    {
+      return i;
+    }
+    return a;
   }
   
-  public final int size()
+  static int a(int paramInt)
   {
-    return a.size();
+    return 461845907 * Integer.rotateLeft(-862048943 * paramInt, 15);
   }
 }
 

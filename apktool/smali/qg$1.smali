@@ -1,6 +1,9 @@
-.class final synthetic Lqg$1;
+.class final Lqg$1;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -9,177 +12,126 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
+# instance fields
+.field final synthetic this$0:Lqg;
+
+.field final synthetic val$networkResult:Lus;
+
+.field final synthetic val$response:Lbli;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lqg;Lus;Lbli;)V
+    .locals 0
 
     .prologue
-    .line 27
-    invoke-static {}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->values()[Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+    .line 226
+    iput-object p1, p0, Lqg$1;->this$0:Lqg;
+
+    iput-object p2, p0, Lqg$1;->val$networkResult:Lus;
+
+    iput-object p3, p0, Lqg$1;->val$response:Lbli;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 4
+
+    .prologue
+    .line 229
+    iget-object v0, p0, Lqg$1;->this$0:Lqg;
+
+    iget-object v0, v0, Lqg;->mUserProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    array-length v0, v0
+    check-cast v0, Lakp;
 
-    new-array v0, v0, [I
+    .line 230
+    iget-object v1, p0, Lqg$1;->val$networkResult:Lus;
 
-    sput-object v0, Lqg$1;->$SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
-
-    :try_start_0
-    sget-object v0, Lqg$1;->$SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
-
-    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->NO_VERIFIED_PHONE:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->ordinal()I
+    invoke-virtual {v1}, Lus;->d()Z
 
     move-result v1
 
-    const/4 v2, 0x1
+    if-eqz v1, :cond_1
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_6
+    iget-object v1, p0, Lqg$1;->val$response:Lbli;
 
+    if-eqz v1, :cond_1
+
+    .line 232
+    iget-object v1, p0, Lqg$1;->val$response:Lbli;
+
+    invoke-virtual {v1}, Lbli;->c()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Boolean;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 233
+    iget-object v1, p0, Lqg$1;->this$0:Lqg;
+
+    iget-object v2, p0, Lqg$1;->val$response:Lbli;
+
+    invoke-virtual {v1, v2, v0}, Lqg;->a(Lbli;Lakp;)V
+
+    .line 240
     :goto_0
-    :try_start_1
-    sget-object v0, Lqg$1;->$SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
+    iget-object v0, p0, Lqg$1;->this$0:Lqg;
 
-    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->NON_US_USER:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+    iget-object v1, p0, Lqg$1;->val$response:Lbli;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->ordinal()I
+    iget-object v2, p0, Lqg$1;->val$networkResult:Lus;
 
-    move-result v1
+    invoke-virtual {v0, v1, v2}, Lqg;->a(Lbli;Lus;)V
 
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_5
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lqg$1;->$SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
-
-    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->INVALID_AMOUNT:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_4
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lqg$1;->$SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
-
-    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->SERVICE_NOT_AVAILABLE_TO_RECIPIENT:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :goto_3
-    :try_start_4
-    sget-object v0, Lqg$1;->$SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
-
-    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->NO_NETWORK:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_2
-
-    :goto_4
-    :try_start_5
-    sget-object v0, Lqg$1;->$SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
-
-    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->LOCKED_ACCOUNT:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_1
-
-    :goto_5
-    :try_start_6
-    sget-object v0, Lqg$1;->$SwitchMap$com$snapchat$android$api2$cash$ScCashResponsePayload$Status:[I
-
-    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->UNKNOWN:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_0
-
-    :goto_6
+    .line 241
     return-void
 
-    :catch_0
-    move-exception v0
+    .line 235
+    :cond_0
+    iget-object v1, p0, Lqg$1;->this$0:Lqg;
 
-    goto :goto_6
+    iget-object v2, p0, Lqg$1;->val$networkResult:Lus;
 
-    :catch_1
-    move-exception v0
+    iget-object v3, p0, Lqg$1;->val$response:Lbli;
 
-    goto :goto_5
+    invoke-virtual {v3}, Lbli;->b()Ljava/lang/String;
 
-    :catch_2
-    move-exception v0
+    move-result-object v3
 
-    goto :goto_4
+    invoke-virtual {v1, v2, v3, v0}, Lqg;->a(Lus;Ljava/lang/String;Lakp;)V
 
-    :catch_3
-    move-exception v0
+    goto :goto_0
 
-    goto :goto_3
+    .line 238
+    :cond_1
+    iget-object v1, p0, Lqg$1;->this$0:Lqg;
 
-    :catch_4
-    move-exception v0
+    iget-object v2, p0, Lqg$1;->val$networkResult:Lus;
 
-    goto :goto_2
+    iget-object v3, p0, Lqg$1;->val$networkResult:Lus;
 
-    :catch_5
-    move-exception v0
+    iget-object v3, v3, Lus;->mResponseMessage:Ljava/lang/String;
 
-    goto :goto_1
-
-    :catch_6
-    move-exception v0
+    invoke-virtual {v1, v2, v3, v0}, Lqg;->a(Lus;Ljava/lang/String;Lakp;)V
 
     goto :goto_0
 .end method

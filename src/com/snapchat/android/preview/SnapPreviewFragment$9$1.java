@@ -11,7 +11,7 @@ final class SnapPreviewFragment$9$1
   
   public final void onAnimationEnd(Animation paramAnimation)
   {
-    SnapPreviewFragment.y(a.a).setVisibility(8);
+    SnapPreviewFragment.z(a.a).setVisibility(8);
   }
   
   public final void onAnimationRepeat(Animation paramAnimation) {}

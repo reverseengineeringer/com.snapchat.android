@@ -100,7 +100,7 @@
 
     const/4 v3, 0x0
 
-    .line 127
+    .line 136
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_PAGE_VIEW"
@@ -109,7 +109,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_PAGE_VIEW:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 129
+    .line 138
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_DISPLAY_NAME_CHANGE"
@@ -118,7 +118,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_DISPLAY_NAME_CHANGE:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 133
+    .line 142
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_PICTURES_PAGE_VIEW"
@@ -127,7 +127,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_PICTURES_PAGE_VIEW:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 134
+    .line 143
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_PICTURES_DELETE_PICTURES"
@@ -136,7 +136,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_PICTURES_DELETE_PICTURES:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 135
+    .line 144
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_PICTURES_TAKE_NEW_PICTURES"
@@ -145,7 +145,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_PICTURES_TAKE_NEW_PICTURES:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 136
+    .line 145
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_PICTURES_SHARE_PICTURES"
@@ -156,7 +156,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_PICTURES_SHARE_PICTURES:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 139
+    .line 148
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_ADDED_ME_PAGE_VIEW"
@@ -167,7 +167,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_ADDED_ME_PAGE_VIEW:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 140
+    .line 149
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIEND_REQUEST_DISPLAY"
@@ -178,7 +178,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIEND_REQUEST_DISPLAY:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 142
+    .line 151
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIEND_REQUEST_ACCEPT"
@@ -189,7 +189,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIEND_REQUEST_ACCEPT:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 143
+    .line 152
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIEND_REQUEST_IGNORE"
@@ -200,7 +200,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIEND_REQUEST_IGNORE:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 144
+    .line 153
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIEND_REQUEST_BLOCK"
@@ -211,7 +211,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIEND_REQUEST_BLOCK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 145
+    .line 154
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIEND_BLOCK"
@@ -222,7 +222,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIEND_BLOCK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 148
+    .line 157
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_ADD_FRIENDS_PAGE_VIEW"
@@ -233,7 +233,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_ADD_FRIENDS_PAGE_VIEW:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 149
+    .line 158
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_ADD_BY_USERNAME_CLICK"
@@ -244,7 +244,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_ADD_BY_USERNAME_CLICK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 150
+    .line 159
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_ADD_BY_CONTACTS_CLICK"
@@ -255,7 +255,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_ADD_BY_CONTACTS_CLICK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 151
+    .line 160
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_ADD_BY_SNAPCODE_CLICK"
@@ -266,7 +266,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_ADD_BY_SNAPCODE_CLICK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 152
+    .line 161
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_ADD_BY_CAMERAROLL_CLICK"
@@ -277,7 +277,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_ADD_BY_CAMERAROLL_CLICK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 153
+    .line 162
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_ADD_NEARBY_CLICK"
@@ -288,7 +288,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_ADD_NEARBY_CLICK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 154
+    .line 163
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIENDS_REQUESTS_SENT"
@@ -299,7 +299,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIENDS_REQUESTS_SENT:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 155
+    .line 164
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_CONTACT_ADD_CLICK"
@@ -310,7 +310,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_CONTACT_ADD_CLICK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 158
+    .line 167
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_MY_CONTACTS_PAGE_VIEW"
@@ -321,7 +321,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_MY_CONTACTS_PAGE_VIEW:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 159
+    .line 168
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIEND_SCORE_DISPLAY"
@@ -332,7 +332,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIEND_SCORE_DISPLAY:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 160
+    .line 169
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIEND_NAME_EDIT"
@@ -343,7 +343,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIEND_NAME_EDIT:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 161
+    .line 170
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_FRIEND_DELETE"
@@ -354,7 +354,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_FRIEND_DELETE:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 162
+    .line 171
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_CONTACT_NAME_EDIT"
@@ -365,7 +365,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_CONTACT_NAME_EDIT:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 163
+    .line 172
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_CONTACT_BLOCK"
@@ -376,7 +376,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_CONTACT_BLOCK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 164
+    .line 173
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_CONTACT_UNBLOCK"
@@ -387,7 +387,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_CONTACT_UNBLOCK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 167
+    .line 176
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_SUGGESTED_FRIENDS_REQUEST_HIDDEN"
@@ -398,7 +398,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_SUGGESTED_FRIENDS_REQUEST_HIDDEN:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 170
+    .line 179
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     const-string v1, "PROFILE_EMPTY_ADDRESS_BOOK"
@@ -409,7 +409,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->PROFILE_EMPTY_ADDRESS_BOOK:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
-    .line 126
+    .line 135
     const/16 v0, 0x1d
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
@@ -592,7 +592,7 @@
     .end annotation
 
     .prologue
-    .line 126
+    .line 135
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -602,7 +602,7 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 135
     const-class v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -618,7 +618,7 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 135
     sget-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->$VALUES:[Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetrics;->clone()Ljava/lang/Object;

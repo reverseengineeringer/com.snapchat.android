@@ -1,19 +1,32 @@
+import java.util.ArrayList;
+
 public final class bzr
-  extends bza
+  implements byh
 {
-  public bzr()
+  public final byl a(bya parambya, String paramString)
   {
-    super("-", 5, (byte)0);
+    paramString = byk.d(paramString);
+    if (paramString.size() != 3) {
+      throw new byi("Two string arguments and one integer argument are required.");
+    }
+    try
+    {
+      parambya = new Integer(byk.a((String)paramString.get(0), a).indexOf(byk.a((String)paramString.get(1), a), ((Integer)paramString.get(2)).intValue()));
+      return new byl(parambya.toString(), 0);
+    }
+    catch (byi parambya)
+    {
+      throw new byi(parambya.getMessage(), parambya);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("Two string arguments and one integer argument are required.", parambya);
+    }
   }
   
-  public final double a(double paramDouble)
+  public final String a()
   {
-    return -paramDouble;
-  }
-  
-  public final double a(double paramDouble1, double paramDouble2)
-  {
-    return new Double(paramDouble1 - paramDouble2).doubleValue();
+    return "indexOf";
   }
 }
 

@@ -1,84 +1,25 @@
-import java.net.InetAddress;
-import java.net.Socket;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
-
-public final class bqb
-  extends SSLSocketFactory
+public enum bqb
 {
-  SSLSocketFactory a;
-  private btl b;
-  private bsw c;
+  final int d;
   
-  public bqb(SSLSocketFactory paramSSLSocketFactory, btl parambtl, bsw parambsw)
+  private bqb(int paramInt)
   {
-    a = paramSSLSocketFactory;
-    b = parambtl;
-    c = parambsw;
+    d = paramInt;
   }
   
-  private Socket a(Socket paramSocket)
+  public static boolean a(int paramInt)
   {
-    Object localObject = paramSocket;
-    if (paramSocket != null) {
-      localObject = paramSocket;
-    }
-    try
-    {
-      if ((paramSocket instanceof SSLSocket)) {
-        localObject = new bqa((SSLSocket)paramSocket, b, c);
-      }
-      return (Socket)localObject;
-    }
-    catch (ThreadDeath paramSocket)
-    {
-      throw paramSocket;
-    }
-    catch (Throwable localThrowable)
-    {
-      btd.a(localThrowable);
-    }
-    return paramSocket;
+    return (ad & paramInt) == 0;
   }
   
-  public final Socket createSocket()
+  public static boolean b(int paramInt)
   {
-    return a(a.createSocket());
+    return (bd & paramInt) == 0;
   }
   
-  public final Socket createSocket(String paramString, int paramInt)
+  public static boolean c(int paramInt)
   {
-    return a(a.createSocket(paramString, paramInt));
-  }
-  
-  public final Socket createSocket(String paramString, int paramInt1, InetAddress paramInetAddress, int paramInt2)
-  {
-    return a(a.createSocket(paramString, paramInt1, paramInetAddress, paramInt2));
-  }
-  
-  public final Socket createSocket(InetAddress paramInetAddress, int paramInt)
-  {
-    return a(a.createSocket(paramInetAddress, paramInt));
-  }
-  
-  public final Socket createSocket(InetAddress paramInetAddress1, int paramInt1, InetAddress paramInetAddress2, int paramInt2)
-  {
-    return a(a.createSocket(paramInetAddress1, paramInt1, paramInetAddress2, paramInt2));
-  }
-  
-  public final Socket createSocket(Socket paramSocket, String paramString, int paramInt, boolean paramBoolean)
-  {
-    return a(a.createSocket(paramSocket, paramString, paramInt, paramBoolean));
-  }
-  
-  public final String[] getDefaultCipherSuites()
-  {
-    return a.getDefaultCipherSuites();
-  }
-  
-  public final String[] getSupportedCipherSuites()
-  {
-    return a.getSupportedCipherSuites();
+    return (cd & paramInt) != 0;
   }
 }
 

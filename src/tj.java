@@ -1,68 +1,32 @@
-import com.snapchat.android.SnapchatApplication;
+import javax.inject.Provider;
 
 public final class tj
+  implements bvk<ti>
 {
-  private boolean mConnectionReleased = false;
-  private long mDuration;
-  private String mMethod;
-  private boolean mNeedToSaveMetrics = true;
-  private String mPath;
-  private long mReceivedBytes;
-  private long mRequestTime;
-  private boolean mResponseStatusReady = false;
-  private long mSentBytes;
-  private int mStatusCode;
-  private String mStatusLine;
+  private final Provider<yn> mCashCardManagerProvider;
+  private final bvk<tg> supertypeInjector;
   
-  private void a()
+  static
   {
-    aaq.a(SnapchatApplication.b(), mRequestTime, mMethod, mPath, mSentBytes, mReceivedBytes, mDuration, mStatusLine, mStatusCode);
-  }
-  
-  public final void a(long paramLong1, long paramLong2)
-  {
-    try
+    if (!tj.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      mReceivedBytes = paramLong1;
-      mSentBytes = paramLong2;
-      mConnectionReleased = true;
-      if ((mResponseStatusReady) && (mNeedToSaveMetrics))
-      {
-        a();
-        mNeedToSaveMetrics = false;
-      }
+      $assertionsDisabled = bool;
       return;
-    }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
     }
   }
   
-  public final void a(String paramString1, String paramString2, String paramString3, int paramInt, long paramLong1, long paramLong2)
+  private tj(bvk<tg> parambvk, Provider<yn> paramProvider)
   {
-    try
-    {
-      mMethod = paramString1;
-      mPath = paramString2;
-      mStatusLine = paramString3;
-      mStatusCode = paramInt;
-      mRequestTime = paramLong1;
-      mDuration = paramLong2;
-      mResponseStatusReady = true;
-      if ((mConnectionReleased) && (mNeedToSaveMetrics))
-      {
-        a();
-        mNeedToSaveMetrics = false;
-      }
-      return;
-    }
-    finally
-    {
-      paramString1 = finally;
-      throw paramString1;
-    }
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mCashCardManagerProvider = paramProvider;
+  }
+  
+  public static bvk<ti> a(bvk<tg> parambvk, Provider<yn> paramProvider)
+  {
+    return new tj(parambvk, paramProvider);
   }
 }
 

@@ -25,15 +25,15 @@
     .locals 0
 
     .prologue
-    .line 1138
+    .line 1145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1139
+    .line 1146
     iput-object p1, p0, Lcom/snapchat/android/notification/AndroidNotificationManager$b;->a:Ljava/lang/String;
 
-    .line 1140
+    .line 1147
     iput-object p2, p0, Lcom/snapchat/android/notification/AndroidNotificationManager$b;->b:Ljava/lang/String;
 
-    .line 1141
+    .line 1148
     return-void
 .end method

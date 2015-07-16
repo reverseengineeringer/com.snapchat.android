@@ -10,231 +10,678 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Landroid/view/View;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
+
+# static fields
+.field public static final DEFAULT_BASE_HOST:Ljava/lang/String; = "feelinsonice-hrd.appspot.com"
+
+.field public static final DEFAULT_BASE_URL:Ljava/lang/String; = "https://feelinsonice-hrd.appspot.com"
+
+.field protected static final DEFAULT_DIRECTORY_URL:Ljava/lang/String; = "https://list.suproo.com"
+
+.field private static DEFAULT_ENDPOINT_SET:Lajn; = null
+
+.field protected static DEFAULT_PROXY_ENDPOINT:Lajz; = null
+
+.field private static final ENABLED:Z = false
+
+.field public static final PINNED_ENDPOINT:Ljava/lang/String; = "https://app.snapchat.com"
+
+.field public static final SNAPCHAT_SQUARE_SANDBOX_URL:Ljava/lang/String; = "https://cash-dot-feelinsonice-hrd.appspot.com"
+
+.field private static final SQUARE_BASE_URL:Ljava/lang/String; = "https://cash.square.com"
+
+.field private static final SQUARE_SANDBOX_URL:Ljava/lang/String; = "https://cash.square-sandbox.com"
+
+.field private static final SQUARE_URL:Ljava/lang/String; = "https://sc-connect.squareup.com"
+
+.field private static final USING_CACHES:Z = true
+
+.field private static final VALID_URL_ENDINGS:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static sInstance:Lbgr;
 
 
 # instance fields
-.field private mCallback:Lbgr$a;
+.field private mEndpointSet:Lajn;
 
-.field private mLayout:Landroid/view/View;
-
-.field private mResourceId:I
-
-.field private mStubId:I
-
-.field private mView:Landroid/view/View;
+.field private mLastPingResults:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "TT;"
+            "Ljava/util/Map",
+            "<",
+            "Lajz;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private mLastRefreshTime:J
+
+.field private mPingStartTime:J
+
+.field public mProxyEndpoint:Lajz;
+
+.field private mProxyEndpointsToPingTimes:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Lajz;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private mRequestsFinished:I
+
+.field private mTempEndpointSets:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lajn;",
+            ">;"
         }
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;II)V
+.method static constructor <clinit>()V
+    .locals 3
+
+    .prologue
+    .line 58
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "snapchat.com"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-string v2, "suproo.com"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    const-string v2, "feelinsonice-hrd.appspot.com"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    const-string v2, "addlive.io"
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, Lbgr;->VALID_URL_ENDINGS:Ljava/util/List;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 8
+
+    .prologue
+    const/4 v1, 0x0
+
+    const/4 v7, 0x1
+
+    const/4 v6, 0x0
+
+    .line 72
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 65
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lbgr;->mTempEndpointSets:Ljava/util/List;
+
+    .line 67
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lbgr;->mProxyEndpointsToPingTimes:Ljava/util/Map;
+
+    .line 73
+    new-instance v0, Ljava/util/ArrayList;
+
+    new-array v2, v7, [Ljava/lang/String;
+
+    const-string v3, "https://cnc.addlive.io"
+
+    aput-object v3, v2, v6
+
+    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    new-array v3, v7, [Ljava/lang/String;
+
+    const-string v4, "https://test.suproo.com/proxy/cnc"
+
+    aput-object v4, v3, v6
+
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    new-instance v3, Lajz;
+
+    const-string v4, "https://feelinsonice-hrd.appspot.com"
+
+    const-string v5, "https://feelinsonice-hrd.appspot.com"
+
+    invoke-direct {v3, v4, v5, v0, v6}, Lajz;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;I)V
+
+    new-instance v0, Lajz;
+
+    const-string v4, "https://test.suproo.com"
+
+    const-string v5, "https://test.suproo.com"
+
+    invoke-direct {v0, v4, v5, v2, v7}, Lajz;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;I)V
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Lajz;
+
+    aput-object v3, v4, v6
+
+    aput-object v0, v4, v7
+
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    new-array v4, v7, [Ljava/lang/String;
+
+    const-string v5, "https://list.suproo.com"
+
+    aput-object v5, v4, v6
+
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-direct {v0, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    new-instance v4, Lajn;
+
+    invoke-direct {v4, v2, v0}, Lajn;-><init>(Ljava/util/List;Ljava/util/List;)V
+
+    sput-object v4, Lbgr;->DEFAULT_ENDPOINT_SET:Lajn;
+
+    sput-object v3, Lbgr;->DEFAULT_PROXY_ENDPOINT:Lajz;
+
+    .line 76
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->ENDPOINT_SET:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
+
+    move-result-object v2
+
+    const-class v3, Lajn;
+
+    invoke-virtual {v2, v0, v3}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lajn;
+
+    :goto_0
+    iput-object v0, p0, Lbgr;->mEndpointSet:Lajn;
+
+    .line 77
+    iget-object v0, p0, Lbgr;->mEndpointSet:Lajn;
+
+    if-nez v0, :cond_0
+
+    .line 78
+    sget-object v0, Lbgr;->DEFAULT_ENDPOINT_SET:Lajn;
+
+    iput-object v0, p0, Lbgr;->mEndpointSet:Lajn;
+
+    .line 81
+    :cond_0
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PROXY_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
+
+    move-result-object v1
+
+    const-class v2, Lajz;
+
+    invoke-virtual {v1, v0, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lajz;
+
+    :goto_1
+    iput-object v0, p0, Lbgr;->mProxyEndpoint:Lajz;
+
+    .line 82
+    iget-object v0, p0, Lbgr;->mProxyEndpoint:Lajz;
+
+    if-nez v0, :cond_1
+
+    .line 83
+    sget-object v0, Lbgr;->DEFAULT_PROXY_ENDPOINT:Lajz;
+
+    iput-object v0, p0, Lbgr;->mProxyEndpoint:Lajz;
+
+    .line 86
+    :cond_1
+    invoke-direct {p0}, Lbgr;->g()Ljava/util/Map;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbgr;->mLastPingResults:Ljava/util/Map;
+
+    .line 87
+    iget-object v0, p0, Lbgr;->mLastPingResults:Ljava/util/Map;
+
+    if-nez v0, :cond_2
+
+    .line 88
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lbgr;->mLastPingResults:Ljava/util/Map;
+
+    .line 90
+    :cond_2
+    return-void
+
+    :cond_3
+    move-object v0, v1
+
+    .line 76
+    goto :goto_0
+
+    :cond_4
+    move-object v0, v1
+
+    .line 81
+    goto :goto_1
+.end method
+
+.method public static declared-synchronized a()Lbgr;
+    .locals 2
+
+    .prologue
+    .line 93
+    const-class v1, Lbgr;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lbgr;->sInstance:Lbgr;
+
+    if-nez v0, :cond_0
+
+    .line 94
+    new-instance v0, Lbgr;
+
+    invoke-direct {v0}, Lbgr;-><init>()V
+
+    sput-object v0, Lbgr;->sInstance:Lbgr;
+
+    .line 96
+    :cond_0
+    sget-object v0, Lbgr;->sInstance:Lbgr;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 93
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public static d()Z
     .locals 1
 
     .prologue
-    .line 18
+    .line 407
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, p3, v0}, Lbgr;-><init>(Landroid/view/View;IILbgr$a;)V
-
-    .line 19
-    return-void
+    return v0
 .end method
 
-.method public constructor <init>(Landroid/view/View;IILbgr$a;)V
-    .locals 0
+.method public static e()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 495
+    invoke-static {}, Lbal;->c()Z
 
-    .line 29
-    iput-object p1, p0, Lbgr;->mLayout:Landroid/view/View;
+    move-result v0
 
-    .line 30
-    iput p2, p0, Lbgr;->mStubId:I
+    if-eqz v0, :cond_0
 
-    .line 31
-    iput p3, p0, Lbgr;->mResourceId:I
+    .line 496
+    const-string v0, "https://cash.square-sandbox.com"
 
-    .line 32
-    iput-object p4, p0, Lbgr;->mCallback:Lbgr$a;
+    .line 498
+    :goto_0
+    return-object v0
 
-    .line 33
-    return-void
+    :cond_0
+    const-string v0, "https://sc-connect.squareup.com"
+
+    goto :goto_0
 .end method
 
+.method public static f()Ljava/lang/String;
+    .locals 1
 
-# virtual methods
-.method public final a()Landroid/view/View;
-    .locals 2
+    .prologue
+    .line 502
+    invoke-static {}, Lbal;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 503
+    const-string v0, "https://cash.square-sandbox.com"
+
+    .line 505
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const-string v0, "https://cash.square.com"
+
+    goto :goto_0
+.end method
+
+.method private g()Ljava/util/Map;
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TT;"
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Lajz;",
+            "Ljava/lang/Long;",
+            ">;"
         }
     .end annotation
 
     .prologue
-    .line 40
-    iget-object v0, p0, Lbgr;->mView:Landroid/view/View;
+    const/4 v0, 0x0
 
-    if-nez v0, :cond_1
+    .line 301
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    .line 41
-    iget-object v0, p0, Lbgr;->mLayout:Landroid/view/View;
+    move-result-object v1
 
-    iget v1, p0, Lbgr;->mStubId:I
+    invoke-static {v1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object v1
 
-    move-result-object v0
+    .line 302
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PING_RESULTS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    check-cast v0, Landroid/view/ViewStub;
+    invoke-virtual {v2}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
 
-    .line 42
-    if-eqz v0, :cond_0
+    move-result-object v2
 
-    .line 43
-    invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 45
+    move-result-object v1
+
+    .line 303
+    if-nez v1, :cond_0
+
+    .line 316
+    :goto_0
+    return-object v0
+
+    .line 306
     :cond_0
-    iget-object v0, p0, Lbgr;->mLayout:Landroid/view/View;
+    new-instance v0, Lbgr$1;
 
-    iget v1, p0, Lbgr;->mResourceId:I
+    invoke-direct {v0, p0}, Lbgr$1;-><init>(Lbgr;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0}, Lbgr$1;->getType()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    iput-object v0, p0, Lbgr;->mView:Landroid/view/View;
+    .line 307
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
 
-    .line 46
-    iget-object v0, p0, Lbgr;->mCallback:Lbgr$a;
+    move-result-object v2
+
+    invoke-virtual {v2, v1, v0}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map;
+
+    .line 311
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    .line 312
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 47
-    iget-object v0, p0, Lbgr;->mCallback:Lbgr$a;
-
-    iget-object v1, p0, Lbgr;->mView:Landroid/view/View;
-
-    invoke-interface {v0, v1}, Lbgr$a;->a(Landroid/view/View;)V
-
-    .line 50
-    :cond_1
-    iget-object v0, p0, Lbgr;->mView:Landroid/view/View;
-
-    return-object v0
-.end method
-
-.method public final a(I)V
-    .locals 1
-
-    .prologue
-    .line 86
-    iget-object v0, p0, Lbgr;->mView:Landroid/view/View;
-
-    if-nez v0, :cond_0
-
-    if-eqz p1, :cond_0
-
-    .line 90
-    :goto_0
-    return-void
-
-    .line 89
-    :cond_0
-    invoke-virtual {p0}, Lbgr;->a()Landroid/view/View;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
+    check-cast v0, Ljava/util/Map$Entry;
 
+    .line 313
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
+
+    move-result-object v4
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    const-class v5, Lajz;
+
+    invoke-virtual {v4, v1, v5}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lajz;
+
+    .line 314
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_1
+    move-object v0, v2
+
+    .line 316
     goto :goto_0
 .end method
 
-.method public final a(Lbgr$a;)V
-    .locals 2
+
+# virtual methods
+.method public final declared-synchronized b()V
+    .locals 0
 
     .prologue
-    .line 73
-    iput-object p1, p0, Lbgr;->mCallback:Lbgr$a;
+    .line 126
+    monitor-enter p0
 
-    .line 75
-    invoke-virtual {p0}, Lbgr;->b()Z
+    monitor-exit p0
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 76
-    iget-object v0, p0, Lbgr;->mCallback:Lbgr$a;
-
-    iget-object v1, p0, Lbgr;->mView:Landroid/view/View;
-
-    invoke-interface {v0, v1}, Lbgr$a;->a(Landroid/view/View;)V
-
-    .line 78
-    :cond_0
     return-void
 .end method
 
-.method public final b()Z
-    .locals 1
+.method public final c()Ljava/util/List;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 57
-    iget-object v0, p0, Lbgr;->mView:Landroid/view/View;
+    .line 399
+    new-instance v1, Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v0, 0x1
+    .line 400
+    iget-object v0, p0, Lbgr;->mProxyEndpoint:Lajz;
+
+    iget-object v0, v0, Lajz;->mAddliveBaseUrls:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
 
     :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    .prologue
-    .line 65
-    iget-object v0, p0, Lbgr;->mView:Landroid/view/View;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lbgr;->mView:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :cond_0
-    const/4 v0, 0x0
+    check-cast v0, Ljava/lang/String;
+
+    .line 401
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "/resolve_streamer.do"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
+
+    .line 403
+    :cond_0
+    return-object v1
 .end method

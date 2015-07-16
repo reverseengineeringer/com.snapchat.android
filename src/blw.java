@@ -1,81 +1,99 @@
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import com.google.gson.annotations.SerializedName;
+import java.util.List;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class blw
 {
-  private static final Pattern c = Pattern.compile("([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)/([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)");
-  private static final Pattern d = Pattern.compile(";\\s*(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)=(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)|\"([^\"]*)\"))?");
-  final String a;
-  final String b;
-  private final String e;
-  private final String f;
+  @SerializedName("background")
+  protected String background;
+  @SerializedName("background_type")
+  protected String backgroundType;
+  @SerializedName("docking")
+  protected String docking;
+  @SerializedName("file")
+  protected String file;
+  @SerializedName("images")
+  protected List<String> images;
+  @SerializedName("mode")
+  protected String mode;
+  @SerializedName("overlay")
+  protected String overlay;
+  @SerializedName("sponsored_overlay")
+  protected String sponsoredOverlay;
+  @SerializedName("video_first_frame")
+  protected String videoFirstFrame;
+  @SerializedName("video_id")
+  protected String videoId;
+  @SerializedName("z_index")
+  protected Integer zIndex;
   
-  private blw(String paramString1, String paramString2, String paramString3, String paramString4)
+  public final String a()
   {
-    e = paramString1;
-    a = paramString2;
-    f = paramString3;
-    b = paramString4;
+    return file;
   }
   
-  public static blw a(String paramString)
+  public final String b()
   {
-    Object localObject1 = c.matcher(paramString);
-    if (!((Matcher)localObject1).lookingAt()) {
-      return null;
-    }
-    String str2 = ((Matcher)localObject1).group(1).toLowerCase(Locale.US);
-    String str3 = ((Matcher)localObject1).group(2).toLowerCase(Locale.US);
-    Matcher localMatcher = d.matcher(paramString);
-    int i = ((Matcher)localObject1).end();
-    Object localObject2;
-    for (localObject1 = null;; localObject1 = localObject2)
-    {
-      if (i >= paramString.length()) {
-        break label189;
-      }
-      localMatcher.region(i, paramString.length());
-      if (!localMatcher.lookingAt()) {
-        break;
-      }
-      String str1 = localMatcher.group(1);
-      if ((str1 != null) && (str1.equalsIgnoreCase("charset")))
-      {
-        if (localMatcher.group(2) != null) {}
-        for (str1 = localMatcher.group(2);; str1 = localMatcher.group(3))
-        {
-          localObject2 = str1;
-          if (localObject1 == null) {
-            break;
-          }
-          localObject2 = str1;
-          if (str1.equalsIgnoreCase((String)localObject1)) {
-            break;
-          }
-          throw new IllegalArgumentException("Multiple different charsets: " + paramString);
-        }
-      }
-      localObject2 = localObject1;
-      i = localMatcher.end();
-    }
-    label189:
-    return new blw(paramString, str2, str3, (String)localObject1);
+    return background;
+  }
+  
+  public final String c()
+  {
+    return backgroundType;
+  }
+  
+  public final String d()
+  {
+    return overlay;
+  }
+  
+  public final String e()
+  {
+    return videoId;
   }
   
   public final boolean equals(Object paramObject)
   {
-    return ((paramObject instanceof blw)) && (e.equals(e));
+    if (paramObject == this) {
+      return true;
+    }
+    if (!(paramObject instanceof blw)) {
+      return false;
+    }
+    paramObject = (blw)paramObject;
+    return new EqualsBuilder().append(file, file).append(images, images).append(background, background).append(backgroundType, backgroundType).append(overlay, overlay).append(videoId, videoId).append(mode, mode).append(docking, docking).append(sponsoredOverlay, sponsoredOverlay).append(videoFirstFrame, videoFirstFrame).append(zIndex, zIndex).isEquals();
+  }
+  
+  public final String f()
+  {
+    return mode;
+  }
+  
+  public final String g()
+  {
+    return docking;
+  }
+  
+  public final String h()
+  {
+    return videoFirstFrame;
   }
   
   public final int hashCode()
   {
-    return e.hashCode();
+    return new HashCodeBuilder().append(file).append(images).append(background).append(backgroundType).append(overlay).append(videoId).append(mode).append(docking).append(sponsoredOverlay).append(videoFirstFrame).append(zIndex).toHashCode();
+  }
+  
+  public final Integer i()
+  {
+    return zIndex;
   }
   
   public final String toString()
   {
-    return e;
+    return ToStringBuilder.reflectionToString(this);
   }
 }
 

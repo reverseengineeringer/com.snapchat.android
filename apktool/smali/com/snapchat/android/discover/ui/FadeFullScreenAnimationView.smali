@@ -15,7 +15,7 @@
 # instance fields
 .field private a:Landroid/graphics/Bitmap;
 
-.field private b:Lavq;
+.field private b:Lawo;
 
 .field private c:Landroid/content/Context;
 
@@ -28,17 +28,17 @@
 
     .prologue
     .line 30
-    invoke-static {}, Lavq;->a()Lavq;
+    invoke-static {}, Lawo;->a()Lawo;
 
     move-result-object v0
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/snapchat/android/discover/ui/FadeFullScreenAnimationView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lavq;)V
+    invoke-direct {p0, p1, p2, v0}, Lcom/snapchat/android/discover/ui/FadeFullScreenAnimationView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lawo;)V
 
     .line 31
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lavq;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lawo;)V
     .locals 1
 
     .prologue
@@ -57,7 +57,7 @@
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/FadeFullScreenAnimationView;->c:Landroid/content/Context;
 
     .line 36
-    iput-object p3, p0, Lcom/snapchat/android/discover/ui/FadeFullScreenAnimationView;->b:Lavq;
+    iput-object p3, p0, Lcom/snapchat/android/discover/ui/FadeFullScreenAnimationView;->b:Lawo;
 
     .line 37
     return-void
@@ -75,7 +75,7 @@
 
 .method private c()V
     .locals 6
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
@@ -119,16 +119,16 @@
 
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v0, v2, v3, v4}, Laur;->a(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/BitmapFactory$Options;
+    invoke-static {v0, v2, v3, v4}, Lavp;->a(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/BitmapFactory$Options;
 
     move-result-object v0
 
     .line 86
-    iget-object v2, p0, Lcom/snapchat/android/discover/ui/FadeFullScreenAnimationView;->b:Lavq;
+    iget-object v2, p0, Lcom/snapchat/android/discover/ui/FadeFullScreenAnimationView;->b:Lawo;
 
     const/4 v3, 0x1
 
-    invoke-virtual {v2, v0, v3}, Lavq;->a(Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
+    invoke-virtual {v2, v0, v3}, Lawo;->a(Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -150,7 +150,7 @@
 
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v0, v2, v3}, Laur;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v0, v2, v3}, Lavp;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 

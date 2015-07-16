@@ -1,10 +1,11 @@
 package com.snapchat.android.ui.listeners;
 
 import android.support.v7.widget.RecyclerView.s;
+import r;
 
 public abstract interface SwipeableRecyclerViewItemTouchListener$a<VH extends RecyclerView.s>
 {
-  public abstract void e(VH paramVH);
+  public abstract void e(@r VH paramVH);
 }
 
 /* Location:

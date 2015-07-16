@@ -1,5 +1,5 @@
 .class public Lcom/snapchat/videotranscoder/mp4/SnapMetadataBox;
-.super Leu;
+.super Lfd;
 .source "SourceFile"
 
 
@@ -15,7 +15,7 @@
     .line 15
     const-string v0, "smet"
 
-    invoke-direct {p0, v0}, Leu;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lfd;-><init>(Ljava/lang/String;)V
 
     .line 16
     return-void

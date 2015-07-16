@@ -5,40 +5,40 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
-import anj;
-import cgc;
+import aog;
+import chd;
 import com.snapchat.android.ui.VerticalSwipeLayout;
-import xc;
-import xc.a;
-import xd;
-import xe;
+import xy;
+import xy.a;
+import xz;
+import ya;
 
 public class CameraViewFlipper
   extends VerticalSwipeLayout
 {
-  private final xc c;
-  private final xd d;
+  private final xy c;
+  private final xz d;
   private int e;
   private boolean f = false;
-  @cgc
+  @chd
   private a g = null;
   
   public CameraViewFlipper(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, new xc(), new xd());
+    this(paramContext, paramAttributeSet, new xy(), new xz());
   }
   
-  private CameraViewFlipper(Context paramContext, AttributeSet paramAttributeSet, xc paramxc, xd paramxd)
+  private CameraViewFlipper(Context paramContext, AttributeSet paramAttributeSet, xy paramxy, xz paramxz)
   {
     super(paramContext, paramAttributeSet);
-    setOnScrolledListener(new anj(this));
+    a(new aog(this));
     paramContext = paramContext.obtainStyledAttributes(paramAttributeSet, new int[] { 16842964 });
     try
     {
       e = paramContext.getColor(0, 0);
       paramContext.recycle();
-      c = paramxc;
-      d = paramxd;
+      c = paramxy;
+      d = paramxz;
       return;
     }
     finally
@@ -88,7 +88,7 @@ public class CameraViewFlipper
     }
   }
   
-  public void setCameraViewFlipperListener(@cgc a parama)
+  public void setCameraViewFlipperListener(@chd a parama)
   {
     g = parama;
   }

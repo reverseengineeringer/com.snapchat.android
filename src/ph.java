@@ -1,165 +1,325 @@
+import android.graphics.Bitmap;
+import android.location.Location;
 import android.os.Bundle;
-import android.os.SystemClock;
-import com.snapchat.android.analytics.framework.ErrorMetric;
+import android.text.TextUtils;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.Timber;
+import com.snapchat.android.analytics.NetworkAnalytics;
+import com.snapchat.android.database.table.DbTable.DatabaseTable;
 import com.snapchat.android.model.MediaMailingMetadata;
-import com.snapchat.android.model.MediaMailingMetadata.UploadStatus;
+import com.snapchat.android.model.MediaMailingMetadata.PostStatus;
 import com.snapchat.android.model.Mediabryo;
 import com.snapchat.android.model.Mediabryo.SnapType;
+import com.squareup.otto.Bus;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class ph
-  extends ot
+  extends pk
 {
-  private static final String TASK_NAME = "UploadMediaTask";
-  @cgb
-  public byte[] mData;
-  protected int mDataLength;
-  public MediaMailingMetadata mMediaMailingMetadata;
-  private final ni mMessagingAnalytics;
-  private final ajn mSnapWomb;
-  public aim mSnapbryo;
-  protected ajv mUser = ajv.g();
-  private final wz mVideoTranscoder;
+  private static final Integer LOCATION_DECIMAL_PLACES_PRECISION = Integer.valueOf(4);
+  private static final String PATH = "/bq/post_story";
+  private static final String TAG = "PostStorySnapTask";
+  private static final String TASK_NAME = "PostStorySnapTask";
+  private ain mLocationProvider;
+  protected NetworkAnalytics mNetworkAnalytics;
+  private ama mNetworkStatusManager;
+  protected ph.a mPostStorySnapCallback;
+  private byte[] mRawThumbnailData;
+  protected boolean mRequestSuccessful = false;
+  private final aki mSnapWomb;
+  protected aji mSnapbryo;
+  private final akk mStoryLibrary;
+  protected final bgj mVideoMetadataFetcher;
   
-  public ph(aim paramaim)
+  public ph(aji paramaji, ph.a parama)
   {
-    this(paramaim, mMediaMailingMetadata, ajn.a(), wz.a(), ni.a());
+    this(paramaji, parama, ain.a(), ama.a(), akk.a(), aki.a(), new bgj());
   }
   
-  private ph(aim paramaim, MediaMailingMetadata paramMediaMailingMetadata, ajn paramajn, wz paramwz, ni paramni)
+  private ph(aji paramaji, ph.a parama, ain paramain, ama paramama, akk paramakk, aki paramaki, bgj parambgj)
   {
-    mSnapbryo = paramaim;
-    mMediaMailingMetadata = paramMediaMailingMetadata;
-    mSnapWomb = paramajn;
-    mVideoTranscoder = paramwz;
-    mMessagingAnalytics = paramni;
+    if (mSnapType != Mediabryo.SnapType.SNAP) {
+      throw new IllegalArgumentException("Invalid snap type!");
+    }
+    mSnapbryo = paramaji;
+    mPostStorySnapCallback = parama;
+    mNetworkAnalytics = NetworkAnalytics.a();
+    mLocationProvider = paramain;
+    mNetworkStatusManager = paramama;
+    mStoryLibrary = paramakk;
+    mSnapWomb = paramaki;
+    mVideoMetadataFetcher = parambgj;
+    if (akr.t()) {
+      mRawThumbnailData = a(paramaji);
+    }
   }
   
-  private void a(byte[] paramArrayOfByte)
+  private static double a(double paramDouble)
   {
-    mData = paramArrayOfByte;
-    if (mData == null) {}
-    for (int i = 0;; i = mData.length)
+    double d = Math.pow(10.0D, LOCATION_DECIMAL_PLACES_PRECISION.intValue());
+    return Math.round(paramDouble * d) / d;
+  }
+  
+  public static void a(@chc Bundle paramBundle, @chc aji paramaji, @chd byte[] paramArrayOfByte1, @chd byte[] paramArrayOfByte2, @chd ain paramain)
+  {
+    paramBundle.putString("client_id", mClientId);
+    paramBundle.putInt("type", paramaji.h());
+    paramBundle.putString("time", String.valueOf(mTimerValueOrDuration));
+    Object localObject2 = mCaptionText;
+    Object localObject1 = localObject2;
+    if (localObject2 == null) {
+      localObject1 = "";
+    }
+    paramBundle.putString("caption_text_display", (String)localObject1);
+    if (paramArrayOfByte1 != null) {
+      paramBundle.putByteArray("thumbnail_data", paramArrayOfByte1);
+    }
+    paramaji = (akg)mMediaMailingMetadata;
+    paramBundle.putLong("story_timestamp", mTimeOfFirstAttempt);
+    paramaji = mPostToStories;
+    paramBundle.putBoolean("my_story", false);
+    if (!paramaji.isEmpty())
     {
-      mDataLength = i;
-      return;
+      paramArrayOfByte1 = new HashMap();
+      localObject1 = paramaji.iterator();
+      while (((Iterator)localObject1).hasNext())
+      {
+        localObject2 = (ajy)((Iterator)localObject1).next();
+        if ((localObject2 instanceof ajw))
+        {
+          paramBundle.putBoolean("my_story", true);
+        }
+        else
+        {
+          paramaji = mGeofence;
+          if (paramaji != null) {}
+          for (paramaji = mId;; paramaji = "")
+          {
+            paramArrayOfByte1.put(mStoryId, paramaji);
+            break;
+          }
+        }
+      }
+      paramBundle.putString("shared_ids", aul.a().toJson(paramArrayOfByte1));
+      if (!paramArrayOfByte1.isEmpty())
+      {
+        if ((akr.t()) && (paramArrayOfByte2 != null)) {
+          paramBundle.putByteArray("raw_thumbnail_data", paramArrayOfByte2);
+        }
+        if (paramain != null)
+        {
+          paramaji = paramain.d();
+          if (paramaji != null)
+          {
+            paramBundle.putString("lat", Double.toString(a(paramaji.getLatitude())));
+            paramBundle.putString("long", Double.toString(a(paramaji.getLongitude())));
+          }
+        }
+      }
     }
   }
   
-  private void d()
+  public static byte[] a(@chc aji paramaji)
   {
-    boolean bool = mMediaMailingMetadata.b();
-    if (mSnapbryo.mSnapType == Mediabryo.SnapType.SNAP) {
-      bool = mMediaMailingMetadata).mShouldExecutePostStoryTaskAfterUpload | bool;
-    }
-    while (bool) {
+    paramaji = mRawImageBitmap;
+    if (paramaji != null) {
       try
       {
-        if (mSnapbryo.mSnapType == Mediabryo.SnapType.SNAP)
+        paramaji = avp.d(paramaji);
+        return paramaji;
+      }
+      catch (OutOfMemoryError paramaji) {}
+    }
+    return null;
+  }
+  
+  public static byte[] a(aji paramaji, bgj parambgj)
+  {
+    Object localObject = null;
+    if ((paramaji.h() == 1) || (paramaji.h() == 2))
+    {
+      byte[] arrayOfByte = axo.MY_STORY_SNAP_THUMBNAIL_CACHE.a(mClientId);
+      String str = axo.MY_SNAP_VIDEO_CACHE.b(mClientId);
+      localObject = arrayOfByte;
+      if (arrayOfByte == null)
+      {
+        localObject = arrayOfByte;
+        if (str != null)
         {
-          new yt().e(mSnapbryo);
-          return;
+          Bitmap localBitmap = parambgj.b(str);
+          localObject = arrayOfByte;
+          if (localBitmap != null)
+          {
+            localObject = avp.a(localBitmap, mCompositeImageBitmap);
+            localBitmap.recycle();
+          }
+          mTimerValueOrDuration = (parambgj.a(str) / 1000.0D);
         }
-        new ys().a(mSnapbryo);
-        return;
       }
-      catch (abw.b localb)
+    }
+    return (byte[])localObject;
+  }
+  
+  protected static void d()
+  {
+    bbo.a().a(new bdn());
+    akp.g().a(new DbTable.DatabaseTable[] { DbTable.DatabaseTable.MY_POSTED_STORYSNAPS, DbTable.DatabaseTable.MY_SNAP_IMAGE_FILES, DbTable.DatabaseTable.MY_SNAP_VIDEO_FILES, DbTable.DatabaseTable.FAILED_POST_SNAPBRYOS });
+  }
+  
+  protected alp a(String... paramVarArgs)
+  {
+    paramVarArgs = pt.a(a(), b(), null);
+    super.a(paramVarArgs);
+    paramVarArgs = Timber.a(String.format("result json = %s and result = %s", new Object[] { mResultJson, paramVarArgs.toString() })).iterator();
+    while (paramVarArgs.hasNext())
+    {
+      String str = (String)paramVarArgs.next();
+      c();
+    }
+    if (mStatusCode == 202)
+    {
+      mRequestSuccessful = true;
+      if (TextUtils.isEmpty(mResultJson)) {
+        break label214;
+      }
+      try
       {
-        new ErrorMetric(localb.getMessage()).a(localb).d();
-        return;
+        paramVarArgs = (alp)aul.a().fromJson(mResultJson, alp.class);
+        return paramVarArgs;
+      }
+      catch (JsonSyntaxException paramVarArgs)
+      {
+        mFailureMessage = (paramVarArgs.getMessage() + " in " + c() + ": " + mResultJson);
+        throw new JsonSyntaxException(mFailureMessage);
       }
     }
+    if (mStatusCode == 401)
+    {
+      m401Error = true;
+      return null;
+    }
+    if (mStatusCode == 404) {
+      m404Error = true;
+    }
+    label214:
+    return null;
   }
   
-  @caq
-  protected final aku a(String... paramVarArgs)
+  protected String a()
   {
-    if (mSnapbryo.mSnapType == Mediabryo.SnapType.DISCOVER) {
-      a(awr.a.a().a(mSnapbryo));
+    return "/bq/post_story";
+  }
+  
+  protected final void a(alp paramalp)
+  {
+    super.c(paramalp);
+    NetworkAnalytics localNetworkAnalytics = mNetworkAnalytics;
+    String str1 = mSnapbryo.mClientId;
+    int i = mStatusCode;
+    long l1 = mReceivedBytes;
+    String str2 = mReachability;
+    long l2 = mElapsedTime;
+    bjx localbjx;
+    if (paramalp == null)
+    {
+      localbjx = null;
+      localNetworkAnalytics.a("STORY_POST_DELAY", str1, i, l1, str2, localbjx, false);
+      localNetworkAnalytics.a("SNAP_SENT_STORY_DUMMY", str1, "/bq/post_story", i, str2, l2);
+      if (!mRequestSuccessful) {
+        break label108;
+      }
+      b(paramalp);
     }
     for (;;)
     {
-      if (mData == null) {
-        mSnapWomb.a(mSnapbryo);
-      }
-      mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.UPLOADING);
-      return super.a(paramVarArgs);
-      awx.a();
-      a(awx.a(mSnapbryo));
-    }
-  }
-  
-  public String a()
-  {
-    return "/ph/upload";
-  }
-  
-  public void a(aku paramaku)
-  {
-    super.a(paramaku);
-  }
-  
-  public void a(String paramString, int paramInt)
-  {
-    ni.a(mSnapbryo, SystemClock.elapsedRealtime() - mStartMillis, mDataLength, false, bfp.b());
-    if (mMediaMailingMetadata.mUploadStatus == MediaMailingMetadata.UploadStatus.WILL_UPLOAD_AFTER_SAVE) {}
-    for (;;)
-    {
+      d();
       return;
-      if (!mMediaMailingMetadata.mRetried)
-      {
-        mMediaMailingMetadata.mRetried = true;
-        new ph(mSnapbryo, mMediaMailingMetadata, mSnapWomb, mVideoTranscoder, mMessagingAnalytics).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
-      }
-      while (g() == 413)
-      {
-        paramString = new ErrorMetric("413 REQUEST_ENTITY_TOO_LARGE");
-        if (mSnapbryo.mBaseFilter != null) {
-          paramString.a("filter", mSnapbryo.mBaseFilter.a);
-        }
-        paramString.a("size", Integer.valueOf(mDataLength));
-        paramString.a("type", Integer.valueOf(mSnapbryo.h()));
-        paramString.d();
-        return;
-        mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.FAILED);
-        d();
+      localbjx = server_info;
+      break;
+      label108:
+      if (m404Error) {
+        f();
+      } else if (paramalp == null) {
+        a("Connection Lost", mStatusCode);
+      } else {
+        a(message, mStatusCode);
       }
     }
   }
   
-  public Bundle b()
+  protected final void a(String paramString, int paramInt)
+  {
+    paramString = mSnapbryo.mMediaMailingMetadata;
+    if (!mRetried)
+    {
+      if (!mNetworkStatusManager.d())
+      {
+        mSnapWomb.a(mSnapbryo, MediaMailingMetadata.PostStatus.FAILED);
+        return;
+      }
+      mRetried = true;
+      e();
+      return;
+    }
+    mPostStorySnapCallback.b(mSnapbryo);
+  }
+  
+  protected Bundle b()
   {
     Bundle localBundle = new Bundle();
-    localBundle.putString("username", ajx.l());
+    localBundle.putString("username", akr.l());
     localBundle.putString("media_id", mSnapbryo.mClientId);
-    if (mSnapbryo.mSnapType == Mediabryo.SnapType.DISCOVER) {
-      localBundle.putString("type", Integer.toString(4));
-    }
-    for (;;)
-    {
-      localBundle.putByteArray("data", mData);
-      return localBundle;
-      localBundle.putString("type", Integer.toString(mSnapbryo.h()));
-    }
+    po.a(localBundle, mSnapbryo);
+    byte[] arrayOfByte = a(mSnapbryo, mVideoMetadataFetcher);
+    a(localBundle, mSnapbryo, arrayOfByte, mRawThumbnailData, mLocationProvider);
+    return localBundle;
   }
   
-  public void b(aku paramaku)
+  protected final void b(alp paramalp)
   {
-    if (mMediaMailingMetadata.mUploadStatus == MediaMailingMetadata.UploadStatus.WILL_UPLOAD_AFTER_SAVE) {
-      return;
+    mPostStorySnapCallback.a(mSnapbryo);
+    if (json != null) {
+      mStoryLibrary.a(new akl(json.story));
     }
-    mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.UPLOADED);
-    ni.a(mSnapbryo, SystemClock.elapsedRealtime() - mStartMillis, mDataLength, true, bfp.b());
-    d();
+    if (group_stories != null) {
+      mStoryLibrary.c(group_stories);
+    }
   }
   
-  public String c()
+  protected String c()
   {
-    return "UploadMediaTask";
+    return "PostStorySnapTask";
   }
   
-  public final class a
-    extends Exception
-  {}
+  protected void e()
+  {
+    new ph(mSnapbryo, mPostStorySnapCallback, mLocationProvider, mNetworkStatusManager, mStoryLibrary, mSnapWomb, mVideoMetadataFetcher).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
+  }
+  
+  protected final void f()
+  {
+    new pi(mSnapbryo, mPostStorySnapCallback).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
+  }
+  
+  public static abstract interface a
+  {
+    public abstract void a(aji paramaji);
+    
+    public abstract void b(aji paramaji);
+  }
+  
+  public final class b
+  {
+    @SerializedName("story")
+    @chd
+    public bkh story;
+  }
 }
 
 /* Location:

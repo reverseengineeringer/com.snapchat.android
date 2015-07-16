@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings;
 
-import auc;
+import ava;
 import com.snapchat.android.database.SharedPreferenceKey;
 
 final class DeveloperSettingsFragment$2$1
@@ -10,7 +10,7 @@ final class DeveloperSettingsFragment$2$1
   
   public final void run()
   {
-    auc.a(SharedPreferenceKey.REGISTRATION_CONTACTBOOK_EXPERIMENT.getKey(), a);
+    ava.a(SharedPreferenceKey.REGISTRATION_CONTACTBOOK_EXPERIMENT.getKey(), a);
   }
 }
 

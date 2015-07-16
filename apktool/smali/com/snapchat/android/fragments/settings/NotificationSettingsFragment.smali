@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final a:Lajx;
+.field private final a:Lakr;
 
 
 # direct methods
@@ -13,17 +13,17 @@
 
     .prologue
     .line 22
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;-><init>(Lajx;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;-><init>(Lakr;)V
 
     .line 23
     return-void
 .end method
 
-.method private constructor <init>(Lajx;)V
+.method private constructor <init>(Lakr;)V
     .locals 0
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -39,18 +39,18 @@
     invoke-direct {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>()V
 
     .line 28
-    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->a:Lajx;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->a:Lakr;
 
     .line 29
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;)Lajx;
+.method static synthetic a(Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;)Lakr;
     .locals 1
 
     .prologue
     .line 18
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->a:Lajx;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->a:Lakr;
 
     return-object v0
 .end method
@@ -62,7 +62,7 @@
 
     .prologue
     .line 33
-    const v2, 0x7f04007f
+    const v2, 0x7f040080
 
     const/4 v3, 0x0
 
@@ -79,7 +79,7 @@
     iput-object v2, v0, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 35
-    const v2, 0x7f0a0065
+    const v2, 0x7f0a0067
 
     move-object/from16 v0, p0
 
@@ -95,7 +95,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a02a8
+    const v2, 0x7f0a02a7
 
     move-object/from16 v0, p0
 
@@ -107,7 +107,7 @@
 
     check-cast v16, Landroid/widget/CheckBox;
 
-    const v2, 0x7f0a02ab
+    const v2, 0x7f0a02aa
 
     move-object/from16 v0, p0
 
@@ -117,7 +117,7 @@
 
     check-cast v7, Landroid/widget/CheckBox;
 
-    const v2, 0x7f0a02ae
+    const v2, 0x7f0a02ad
 
     move-object/from16 v0, p0
 
@@ -127,7 +127,7 @@
 
     check-cast v6, Landroid/widget/CheckBox;
 
-    const v2, 0x7f0a02b1
+    const v2, 0x7f0a02b0
 
     move-object/from16 v0, p0
 
@@ -137,7 +137,7 @@
 
     check-cast v4, Landroid/widget/CheckBox;
 
-    const v2, 0x7f0a02b4
+    const v2, 0x7f0a02b3
 
     move-object/from16 v0, p0
 
@@ -147,7 +147,7 @@
 
     check-cast v5, Landroid/widget/CheckBox;
 
-    const v2, 0x7f0a02a7
+    const v2, 0x7f0a02a6
 
     move-object/from16 v0, p0
 
@@ -165,7 +165,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a02a9
+    const v2, 0x7f0a02a8
 
     move-object/from16 v0, p0
 
@@ -181,7 +181,7 @@
 
     invoke-virtual {v11, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a02af
+    const v2, 0x7f0a02ae
 
     move-object/from16 v0, p0
 
@@ -197,7 +197,7 @@
 
     invoke-virtual {v8, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a02ac
+    const v2, 0x7f0a02ab
 
     move-object/from16 v0, p0
 
@@ -213,7 +213,7 @@
 
     invoke-virtual {v10, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a02b2
+    const v2, 0x7f0a02b1
 
     move-object/from16 v0, p0
 
@@ -229,7 +229,7 @@
 
     invoke-virtual {v9, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v2, 0x7f0a02aa
+    const v2, 0x7f0a02a9
 
     move-object/from16 v0, p0
 
@@ -237,7 +237,7 @@
 
     move-result-object v15
 
-    const v2, 0x7f0a02b0
+    const v2, 0x7f0a02af
 
     move-object/from16 v0, p0
 
@@ -245,7 +245,7 @@
 
     move-result-object v12
 
-    const v2, 0x7f0a02ad
+    const v2, 0x7f0a02ac
 
     move-object/from16 v0, p0
 
@@ -253,7 +253,7 @@
 
     move-result-object v14
 
-    const v2, 0x7f0a02b3
+    const v2, 0x7f0a02b2
 
     move-object/from16 v0, p0
 
@@ -271,7 +271,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    invoke-static {}, Lajx;->bL()Z
+    invoke-static {}, Lakr;->bG()Z
 
     move-result v2
 
@@ -279,25 +279,25 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    invoke-static {}, Lajx;->bH()Z
+    invoke-static {}, Lakr;->bC()Z
 
     move-result v2
 
     invoke-virtual {v4, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    invoke-static {}, Lajx;->bI()Z
+    invoke-static {}, Lakr;->bD()Z
 
     move-result v2
 
     invoke-virtual {v5, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    invoke-static {}, Lajx;->bK()Z
+    invoke-static {}, Lakr;->bF()Z
 
     move-result v2
 
     invoke-virtual {v7, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    invoke-static {}, Lajx;->bJ()Z
+    invoke-static {}, Lakr;->bE()Z
 
     move-result v2
 

@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract a()Ljava/util/Date;
+.method public abstract a(Lbsl;Lbsl;Ljava/lang/String;Landroid/content/Context;Lbrv;Lbud;)Lbtj;
 .end method

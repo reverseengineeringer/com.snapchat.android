@@ -1,18 +1,8 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.util.CashUtils.CurrencyCode;
-
-public final class sz
+public abstract interface sz
 {
-  @SerializedName("amount")
-  private final int mAmount;
-  @SerializedName("currency_code")
-  @cgb
-  private final String mCurrencyCode = CashUtils.CurrencyCode.USD.name();
+  public abstract void a(int paramInt);
   
-  public sz(int paramInt)
-  {
-    mAmount = paramInt;
-  }
+  public abstract void a(@chc tm paramtm);
 }
 
 /* Location:

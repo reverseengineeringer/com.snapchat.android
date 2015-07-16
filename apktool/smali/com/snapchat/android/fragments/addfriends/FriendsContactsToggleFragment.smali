@@ -2,9 +2,13 @@
 .super Lcom/snapchat/android/util/fragment/SnapchatFragment;
 .source "SourceFile"
 
+# interfaces
+.implements Lagj$a;
+.implements Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$a;
+
 
 # instance fields
-.field private a:Lafj;
+.field private a:Lagj;
 
 .field private b:Landroid/view/View;
 
@@ -14,9 +18,13 @@
 
 .field private e:Landroid/support/v4/view/ViewPager;
 
-.field private final f:Lajx;
+.field private final f:Lakr;
 
 .field private final g:Lcom/snapchat/android/analytics/ProfileEventAnalytics;
+
+.field private h:Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;
+
+.field private i:Lcom/snapchat/android/fragments/addfriends/AddressBookFragment;
 
 
 # direct methods
@@ -24,8 +32,8 @@
     .locals 2
 
     .prologue
-    .line 49
-    invoke-static {}, Lajx;->a()Lajx;
+    .line 55
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v0
 
@@ -33,13 +41,13 @@
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;-><init>(Lajx;Lcom/snapchat/android/analytics/ProfileEventAnalytics;)V
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;-><init>(Lakr;Lcom/snapchat/android/analytics/ProfileEventAnalytics;)V
 
-    .line 50
+    .line 56
     return-void
 .end method
 
-.method private constructor <init>(Lajx;Lcom/snapchat/android/analytics/ProfileEventAnalytics;)V
+.method private constructor <init>(Lakr;Lcom/snapchat/android/analytics/ProfileEventAnalytics;)V
     .locals 0
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -51,16 +59,16 @@
     .end annotation
 
     .prologue
-    .line 54
+    .line 60
     invoke-direct {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>()V
 
-    .line 55
-    iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->f:Lajx;
+    .line 61
+    iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->f:Lakr;
 
-    .line 56
+    .line 62
     iput-object p2, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->g:Lcom/snapchat/android/analytics/ProfileEventAnalytics;
 
-    .line 57
+    .line 63
     return-void
 .end method
 
@@ -68,7 +76,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 39
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->b:Landroid/view/View;
 
     return-object v0
@@ -78,8 +86,18 @@
     .locals 0
 
     .prologue
-    .line 36
+    .line 39
     invoke-direct {p0, p1}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(Z)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;ZLkf;)V
+    .locals 0
+
+    .prologue
+    .line 39
+    invoke-direct {p0, p1, p2}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a(ZLkf;)V
 
     return-void
 .end method
@@ -88,17 +106,53 @@
     .locals 0
 
     .prologue
-    .line 36
+    .line 39
     invoke-static {p0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->b(Z)V
 
     return-void
+.end method
+
+.method private a(ZLkf;)V
+    .locals 1
+
+    .prologue
+    .line 240
+    if-eqz p1, :cond_1
+
+    .line 241
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->h:Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;
+
+    if-eqz v0, :cond_0
+
+    .line 242
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->h:Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;
+
+    invoke-virtual {v0, p2}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->a(Lkf;)V
+
+    .line 249
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 245
+    :cond_1
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->i:Lcom/snapchat/android/fragments/addfriends/AddressBookFragment;
+
+    if-eqz v0, :cond_0
+
+    .line 246
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->i:Lcom/snapchat/android/fragments/addfriends/AddressBookFragment;
+
+    invoke-virtual {v0, p2}, Lcom/snapchat/android/fragments/addfriends/AddressBookFragment;->a(Lkf;)V
+
+    goto :goto_0
 .end method
 
 .method static synthetic b(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)Landroid/view/View;
     .locals 1
 
     .prologue
-    .line 36
+    .line 39
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c:Landroid/view/View;
 
     return-object v0
@@ -108,13 +162,13 @@
     .locals 3
 
     .prologue
-    .line 159
+    .line 170
     if-eqz p0, :cond_1
 
-    .line 160
+    .line 171
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MY_FRIENDS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 164
+    .line 175
     :cond_0
     const/4 v1, 0x0
 
@@ -127,20 +181,20 @@
     :goto_0
     invoke-static {v1, v0}, Lcom/snapchat/android/analytics/ProfileEventAnalytics;->a(Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Z)V
 
-    .line 168
+    .line 179
     return-void
 
-    .line 164
+    .line 175
     :cond_1
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MY_CONTACTS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-static {}, Lajx;->Z()Z
+    invoke-static {}, Lakr;->Z()Z
 
     move-result v1
 
@@ -157,12 +211,12 @@
     goto :goto_0
 .end method
 
-.method static synthetic c(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)Lafj;
+.method static synthetic c(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)Lagj;
     .locals 1
 
     .prologue
-    .line 36
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a:Lafj;
+    .line 39
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a:Lagj;
 
     return-object v0
 .end method
@@ -171,33 +225,33 @@
     .locals 2
 
     .prologue
-    .line 184
+    .line 195
     if-eqz p1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 185
+    .line 196
     :goto_0
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->d:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 186
+    .line 197
     return-void
 
-    .line 184
+    .line 195
     :cond_0
     const/16 v0, 0x8
 
     goto :goto_0
 .end method
 
-.method static synthetic d(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)Lajx;
+.method static synthetic d(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)Lakr;
     .locals 1
 
     .prologue
-    .line 36
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->f:Lajx;
+    .line 39
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->f:Lakr;
 
     return-object v0
 .end method
@@ -206,7 +260,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 39
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->e:Landroid/support/v4/view/ViewPager;
 
     return-object v0
@@ -216,7 +270,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 39
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->mFragmentLayout:Landroid/view/View;
 
     return-object v0
@@ -224,31 +278,145 @@
 
 
 # virtual methods
+.method public final H()V
+    .locals 2
+
+    .prologue
+    .line 236
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->e:Landroid/support/v4/view/ViewPager;
+
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sget-object v1, Lkf;->SWIPE_LEFT:Lkf;
+
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a(ZLkf;)V
+
+    .line 237
+    return-void
+
+    .line 236
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final a(ILandroid/support/v4/app/Fragment;)V
+    .locals 1
+
+    .prologue
+    .line 221
+    if-nez p1, :cond_1
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->h:Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;
+
+    if-nez v0, :cond_1
+
+    .line 222
+    check-cast p2, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;
+
+    iput-object p2, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->h:Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;
+
+    .line 226
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 223
+    :cond_1
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_0
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->i:Lcom/snapchat/android/fragments/addfriends/AddressBookFragment;
+
+    if-nez v0, :cond_0
+
+    .line 224
+    check-cast p2, Lcom/snapchat/android/fragments/addfriends/AddressBookFragment;
+
+    iput-object p2, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->i:Lcom/snapchat/android/fragments/addfriends/AddressBookFragment;
+
+    goto :goto_0
+.end method
+
 .method protected final e()V
     .locals 1
 
     .prologue
-    .line 154
+    .line 165
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->e()V
 
-    .line 155
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->b:Landroid/view/View;
+    .line 166
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->e:Landroid/support/v4/view/ViewPager;
 
-    invoke-virtual {v0}, Landroid/view/View;->isShown()Z
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
     invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->b(Z)V
 
-    .line 156
+    .line 167
     return-void
+
+    .line 166
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final k()Lalw;
+.method public final g()Z
+    .locals 2
+
+    .prologue
+    .line 230
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->e:Landroid/support/v4/view/ViewPager;
+
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sget-object v1, Lkf;->BACK_BUTTON:Lkf;
+
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a(ZLkf;)V
+
+    .line 231
+    invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->g()Z
+
+    move-result v0
+
+    return v0
+
+    .line 230
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final k()Lamt;
     .locals 1
 
     .prologue
-    .line 190
+    .line 201
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$6;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$6;-><init>(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)V
@@ -257,16 +425,14 @@
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 6
+    .locals 7
 
     .prologue
-    const v3, 0x7f0c0141
+    .line 67
+    invoke-static {}, Lnw;->d()V
 
-    .line 61
-    invoke-static {}, Lnf;->d()V
-
-    .line 63
-    const v0, 0x7f040067
+    .line 69
+    const v0, 0x7f040068
 
     const/4 v1, 0x0
 
@@ -276,8 +442,8 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->mFragmentLayout:Landroid/view/View;
 
-    .line 64
-    const v0, 0x7f0a0243
+    .line 70
+    const v0, 0x7f0a0241
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(I)Landroid/view/View;
 
@@ -287,32 +453,36 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->e:Landroid/support/v4/view/ViewPager;
 
-    .line 66
+    .line 72
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 68
+    .line 74
     if-eqz v0, :cond_0
 
-    .line 69
+    .line 75
     const-string v1, "selected_friend_username"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 74
+    .line 80
     :goto_0
-    new-instance v0, Lafj;
+    new-instance v0, Lagj;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v1
 
-    invoke-virtual {p0, v3}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->getString(I)Ljava/lang/String;
+    const v2, 0x7f0c0141
+
+    invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v2
+
+    const v3, 0x7f0c00d2
 
     invoke-virtual {p0, v3}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->getString(I)Ljava/lang/String;
 
@@ -320,19 +490,21 @@
 
     iget-object v5, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mWindowConfiguration:Lcom/snapchat/android/ui/window/WindowConfiguration;
 
-    invoke-direct/range {v0 .. v5}, Lafj;-><init>(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
+    move-object v6, p0
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a:Lafj;
+    invoke-direct/range {v0 .. v6}, Lagj;-><init>(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/ui/window/WindowConfiguration;Lagj$a;)V
 
-    .line 76
+    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a:Lagj;
+
+    .line 83
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->e:Landroid/support/v4/view/ViewPager;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a:Lafj;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a:Lagj;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
-    .line 78
-    const v0, 0x7f0a023f
+    .line 85
+    const v0, 0x7f0a023d
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(I)Landroid/view/View;
 
@@ -340,8 +512,8 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 79
-    const v1, 0x7f0a0241
+    .line 86
+    const v1, 0x7f0a023f
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(I)Landroid/view/View;
 
@@ -349,8 +521,8 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 80
-    const v2, 0x7f0a0240
+    .line 87
+    const v2, 0x7f0a023e
 
     invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(I)Landroid/view/View;
 
@@ -358,8 +530,8 @@
 
     iput-object v2, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->b:Landroid/view/View;
 
-    .line 81
-    const v2, 0x7f0a0242
+    .line 88
+    const v2, 0x7f0a0240
 
     invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(I)Landroid/view/View;
 
@@ -367,8 +539,8 @@
 
     iput-object v2, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c:Landroid/view/View;
 
-    .line 82
-    const v2, 0x7f0a002d
+    .line 89
+    const v2, 0x7f0a002e
 
     invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(I)Landroid/view/View;
 
@@ -376,7 +548,7 @@
 
     iput-object v2, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->d:Landroid/view/View;
 
-    .line 84
+    .line 91
     iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->e:Landroid/support/v4/view/ViewPager;
 
     new-instance v3, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$1;
@@ -385,21 +557,21 @@
 
     invoke-virtual {v2, v3}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    .line 113
+    .line 122
     new-instance v2, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$2;
 
     invoke-direct {v2, p0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$2;-><init>(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 121
+    .line 130
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$3;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$3;-><init>(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)V
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 130
+    .line 139
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->d:Landroid/view/View;
 
     new-instance v1, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$4;
@@ -408,8 +580,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 147
-    const v0, 0x7f0a001e
+    .line 158
+    const v0, 0x7f0a001f
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(I)Landroid/view/View;
 
@@ -421,32 +593,32 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 148
-    invoke-static {}, Lnf;->e()V
+    .line 159
+    invoke-static {}, Lnw;->e()V
 
-    .line 149
+    .line 160
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->mFragmentLayout:Landroid/view/View;
 
     return-object v0
 
-    .line 71
+    .line 77
     :cond_0
     const/4 v4, 0x0
 
     goto/16 :goto_0
 .end method
 
-.method public refreshOnGrantAccessToContactsEvent(Lbbu;)V
+.method public refreshOnGrantAccessToContactsEvent(Lbcu;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 204
-    iget-boolean v0, p1, Lbbu;->mHasGivenAccessToContacts:Z
+    .line 215
+    iget-boolean v0, p1, Lbcu;->mHasGivenAccessToContacts:Z
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->c(Z)V
 
-    .line 205
+    .line 216
     return-void
 .end method

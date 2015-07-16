@@ -1,7 +1,7 @@
 package com.snapchat.android.fragments.chat;
 
 import com.snapchat.android.ui.LockingAboveTheFoldListView;
-import yi;
+import ze;
 
 final class ChatFragment$13
   implements Runnable

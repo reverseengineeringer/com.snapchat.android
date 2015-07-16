@@ -1,70 +1,89 @@
-public final class cgo
-  extends IllegalArgumentException
+import java.lang.reflect.Modifier;
+
+final class cgo
+  extends cgk
+  implements cgh
 {
-  public String a;
-  private final cgi b;
-  private final cgn c;
-  private final String d;
-  private final Number e;
-  private final String f;
-  private final Number g;
-  private final Number h;
+  Class d;
   
-  public cgo(cgi paramcgi, Number paramNumber1, Number paramNumber2, Number paramNumber3)
+  cgo(int paramInt, String paramString, Class paramClass1, Class[] paramArrayOfClass1, String[] paramArrayOfString, Class[] paramArrayOfClass2, Class paramClass2)
   {
-    super(a(a, paramNumber1, paramNumber2, paramNumber3, null));
-    b = paramcgi;
-    c = null;
-    d = a;
-    e = paramNumber1;
-    f = null;
-    g = paramNumber2;
-    h = paramNumber3;
-    a = super.getMessage();
+    super(paramInt, paramString, paramClass1, paramArrayOfClass1, paramArrayOfString, paramArrayOfClass2);
+    d = paramClass2;
   }
   
-  public cgo(cgi paramcgi, Number paramNumber, String paramString)
+  protected final String a(cgr paramcgr)
   {
-    super(a(a, paramNumber, null, null, paramString));
-    b = paramcgi;
-    c = null;
-    d = a;
-    e = paramNumber;
-    f = null;
-    g = null;
-    h = null;
-    a = super.getMessage();
-  }
-  
-  public cgo(cgi paramcgi, String paramString) {}
-  
-  private static String a(String paramString1, Number paramNumber1, Number paramNumber2, Number paramNumber3, String paramString2)
-  {
-    paramString1 = new StringBuilder("Value ").append(paramNumber1).append(" for ").append(paramString1).append(' ');
-    if (paramNumber2 == null) {
-      if (paramNumber3 == null) {
-        paramString1.append("is not supported");
+    StringBuffer localStringBuffer = new StringBuffer();
+    if (e == -1) {
+      e = Integer.parseInt(a(0), 16);
+    }
+    int i = e;
+    Object localObject;
+    if (!d)
+    {
+      localObject = "";
+      localStringBuffer.append((String)localObject);
+      if (b)
+      {
+        if (d == null) {
+          d = b(6);
+        }
+        localStringBuffer.append(paramcgr.a(d));
+      }
+      if (b) {
+        localStringBuffer.append(" ");
+      }
+      localObject = c();
+      if (g == null) {
+        g = c().getName();
+      }
+      localStringBuffer.append(paramcgr.a((Class)localObject, g, e));
+      localStringBuffer.append(".");
+      if (f == null) {
+        f = a(1);
+      }
+      localStringBuffer.append(f);
+      localObject = a();
+      if (localObject != null)
+      {
+        if (b) {
+          break label290;
+        }
+        if (localObject.length != 0) {
+          break label279;
+        }
+        localStringBuffer.append("()");
+      }
+      label211:
+      localObject = b();
+      if ((c) && (localObject != null) && (localObject.length != 0)) {
+        break label316;
       }
     }
     for (;;)
     {
-      if (paramString2 != null) {
-        paramString1.append(": ").append(paramString2);
+      return localStringBuffer.toString();
+      localObject = Modifier.toString(i);
+      if (((String)localObject).length() == 0)
+      {
+        localObject = "";
+        break;
       }
-      return paramString1.toString();
-      paramString1.append("must not be larger than ").append(paramNumber3);
-      continue;
-      if (paramNumber3 == null) {
-        paramString1.append("must not be smaller than ").append(paramNumber2);
-      } else {
-        paramString1.append("must be in the range [").append(paramNumber2).append(',').append(paramNumber3).append(']');
-      }
+      localObject = (String)localObject + " ";
+      break;
+      label279:
+      localStringBuffer.append("(..)");
+      break label211;
+      label290:
+      localStringBuffer.append("(");
+      paramcgr.a(localStringBuffer, (Class[])localObject);
+      localStringBuffer.append(")");
+      break label211;
+      label316:
+      localStringBuffer.append(" throws ");
+      paramcgr.a(localStringBuffer, (Class[])localObject);
     }
-  }
-  
-  public final String getMessage()
-  {
-    return a;
   }
 }
 

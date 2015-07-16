@@ -45,7 +45,7 @@
 
 
 # virtual methods
-.method protected final a(Lbkr;)V
+.method protected final a(Lbls;)V
     .locals 0
 
     .prologue
@@ -97,7 +97,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/ReturningUserPhoneVerificationFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 106
     return-void
@@ -164,7 +164,7 @@
     invoke-virtual {v0}, Landroid/widget/EditText;->clearFocus()V
 
     .line 77
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -178,14 +178,14 @@
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 112
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbet;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbfs;)V
 
     .line 113
     return-void

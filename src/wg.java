@@ -1,8 +1,49 @@
-public abstract interface wg
+import android.hardware.Camera;
+import android.hardware.Camera.CameraInfo;
+
+public final class wg
 {
-  public abstract void a(wc.b paramb, int paramInt);
+  public static double a(@chc yd paramyd)
+  {
+    return heightPixels / widthPixels;
+  }
   
-  public abstract void b(int paramInt);
+  public static int a(int paramInt1, int paramInt2)
+  {
+    if (paramInt1 > paramInt2) {
+      return paramInt2;
+    }
+    if (paramInt1 < 0) {
+      return 0;
+    }
+    return paramInt1;
+  }
+  
+  @chd
+  public static Camera a(int paramInt)
+  {
+    try
+    {
+      Camera localCamera = Camera.open(paramInt);
+      return localCamera;
+    }
+    catch (RuntimeException localRuntimeException) {}
+    return null;
+  }
+  
+  public static Camera.CameraInfo[] a()
+  {
+    int j = Camera.getNumberOfCameras();
+    Camera.CameraInfo[] arrayOfCameraInfo = new Camera.CameraInfo[j];
+    int i = 0;
+    while (i < j)
+    {
+      arrayOfCameraInfo[i] = new Camera.CameraInfo();
+      Camera.getCameraInfo(i, arrayOfCameraInfo[i]);
+      i += 1;
+    }
+    return arrayOfCameraInfo;
+  }
 }
 
 /* Location:

@@ -1,14 +1,9 @@
-import android.content.Context;
-
-public final class bor$1
-  implements Runnable
+final class bor$1
+  implements bor
 {
-  public bor$1(bor parambor) {}
-  
-  public final void run()
+  public final void a(boy paramboy)
   {
-    bor.c localc = a.n;
-    a.b.unregisterReceiver(localc);
+    paramboy.a(boj.k);
   }
 }
 

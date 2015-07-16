@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field protected a:Lajv;
+.field protected a:Lakp;
 
 .field private final b:Landroid/support/v7/widget/RecyclerView$c;
 
@@ -25,7 +25,7 @@
 
 .field private f:Landroid/support/v7/widget/RecyclerView$h;
 
-.field private g:Lagl;
+.field private g:Lahi;
 
 
 # direct methods
@@ -63,9 +63,9 @@
     const/4 v1, 0x0
 
     .line 23
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lagl;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lahi;
 
-    invoke-virtual {v0}, Lagl;->a()I
+    invoke-virtual {v0}, Lahi;->a()I
 
     move-result v0
 
@@ -96,25 +96,25 @@
 
 .method private i()V
     .locals 2
-    .annotation build Lccm;
+    .annotation build Lcdn;
     .end annotation
 
     .prologue
     .line 114
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lakp;
 
     if-nez v0, :cond_0
 
     .line 115
-    invoke-static {}, Lajv;->g()Lajv;
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lajv;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lakp;
 
     .line 118
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lakp;
 
     if-eqz v0, :cond_1
 
@@ -126,16 +126,16 @@
     .line 120
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->c:Ljava/util/List;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lajv;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lakp;
 
-    invoke-virtual {v1}, Lajv;->r()Ljava/util/List;
+    invoke-virtual {v1}, Lakp;->r()Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 121
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lagl;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lahi;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView$a;->a:Landroid/support/v7/widget/RecyclerView$b;
 
@@ -164,7 +164,7 @@
 
     .prologue
     .line 62
-    const v0, 0x7f04000b
+    const v0, 0x7f04000c
 
     const/4 v1, 0x0
 
@@ -175,7 +175,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 64
-    const v0, 0x7f0a001e
+    const v0, 0x7f0a001f
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->c(I)Landroid/view/View;
 
@@ -231,7 +231,7 @@
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$h;)V
 
     .line 72
-    new-instance v0, Lagl;
+    new-instance v0, Lahi;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -239,18 +239,18 @@
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->c:Ljava/util/List;
 
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v3
 
-    invoke-direct {v0, v1, v2, v3}, Lagl;-><init>(Landroid/content/Context;Ljava/util/List;Lajx;)V
+    invoke-direct {v0, v1, v2, v3}, Lahi;-><init>(Landroid/content/Context;Ljava/util/List;Lakr;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lagl;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lahi;
 
     .line 73
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->e:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lagl;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lahi;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$a;)V
 
@@ -268,11 +268,11 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onStart()V
 
     .line 81
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lagl;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lahi;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->b:Landroid/support/v7/widget/RecyclerView$c;
 
-    invoke-virtual {v0, v1}, Lagl;->a(Landroid/support/v7/widget/RecyclerView$c;)V
+    invoke-virtual {v0, v1}, Lahi;->a(Landroid/support/v7/widget/RecyclerView$c;)V
 
     .line 82
     return-void
@@ -286,37 +286,37 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onStop()V
 
     .line 87
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lagl;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->g:Lahi;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->b:Landroid/support/v7/widget/RecyclerView$c;
 
-    invoke-virtual {v0, v1}, Lagl;->b(Landroid/support/v7/widget/RecyclerView$c;)V
+    invoke-virtual {v0, v1}, Lahi;->b(Landroid/support/v7/widget/RecyclerView$c;)V
 
     .line 88
     return-void
 .end method
 
-.method public onUserLoadedEvent(Lber;)V
+.method public onUserLoadedEvent(Lbfq;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 132
     if-eqz p1, :cond_0
 
-    iget-object v0, p1, Lber;->user:Lajv;
+    iget-object v0, p1, Lbfq;->user:Lakp;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lakp;
 
     if-nez v0, :cond_0
 
     .line 133
-    iget-object v0, p1, Lber;->user:Lajv;
+    iget-object v0, p1, Lbfq;->user:Lakp;
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lajv;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->a:Lakp;
 
     .line 134
     invoke-direct {p0}, Lcom/snapchat/android/fragments/settings/BlockedUsersFragment;->i()V

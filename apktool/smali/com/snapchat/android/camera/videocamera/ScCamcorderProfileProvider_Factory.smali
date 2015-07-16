@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/camera/videocamera/ScCamcorderProfileProvider_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lxi;",
+        "Lye;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Lxi;",
+            "Lye;",
             ">;"
         }
     .end annotation
@@ -132,21 +132,21 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/videocamera/ScCamcorderProfileProvider_Factory;->get()Lxi;
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/videocamera/ScCamcorderProfileProvider_Factory;->get()Lye;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final get()Lxi;
+.method public final get()Lye;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Lxi;
+    new-instance v0, Lye;
 
-    invoke-direct {v0}, Lxi;-><init>()V
+    invoke-direct {v0}, Lye;-><init>()V
 
     return-object v0
 .end method

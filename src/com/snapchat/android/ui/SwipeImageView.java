@@ -12,20 +12,19 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import aqh;
-import arn;
-import arq;
-import arr;
-import arv;
-import atk;
-import auh;
-import aur;
-import avh;
-import ban;
-import bgp;
-import cgb;
-import cgc;
-import com.snapchat.android.Timber;
+import arf;
+import asm;
+import asp;
+import asq;
+import asu;
+import aui;
+import avf;
+import avp;
+import awf;
+import bbo;
+import bhp;
+import chc;
+import chd;
 import com.snapchat.android.ui.layertype.LayerType;
 import com.snapchat.android.ui.swipefilters.FilterPageType;
 import com.squareup.otto.Bus;
@@ -36,15 +35,15 @@ import java.util.List;
 public class SwipeImageView
   extends FrameLayout
 {
-  public arv<arn> a;
+  public asu<asm> a;
   SwipeViewState b;
   Bitmap c;
   boolean d = false;
   public FrameLayout e;
   public boolean f = false;
-  private final arq g;
-  private final arr h;
-  private final atk i;
+  private final asp g;
+  private final asq h;
+  private final aui i;
   private int j = 0;
   private int k = 0;
   private a l;
@@ -56,12 +55,12 @@ public class SwipeImageView
   
   public SwipeImageView(Context paramContext, AttributeSet paramAttributeSet) {}
   
-  public SwipeImageView(Context paramContext, AttributeSet paramAttributeSet, LayerType paramLayerType, arq paramarq, arr paramarr, atk paramatk)
+  public SwipeImageView(Context paramContext, AttributeSet paramAttributeSet, LayerType paramLayerType, asp paramasp, asq paramasq, aui paramaui)
   {
     super(paramContext, paramAttributeSet);
-    g = paramarq;
-    h = paramarr;
-    i = paramatk;
+    g = paramasp;
+    h = paramasq;
+    i = paramaui;
     setWillNotDraw(false);
     setLayerType(paramLayerType.getFrameworkLayerValue(), null);
   }
@@ -70,12 +69,12 @@ public class SwipeImageView
   {
     Paint localPaint = new Paint();
     localPaint.setShader(new BitmapShader(paramBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-    paramBitmap = aur.b(paramBitmap, getContext());
+    paramBitmap = avp.b(paramBitmap, getContext());
     localPaint.getShader().setLocalMatrix(paramBitmap);
     return localPaint;
   }
   
-  @cgc
+  @chd
   public final FilterPageType a(int paramInt)
   {
     
@@ -88,37 +87,35 @@ public class SwipeImageView
   public final void a()
   {
     
-    if (c == null)
-    {
-      Timber.e("SwipeImageView", "setBaseImage() has not been called; aborting.", new Object[0]);
+    if (c == null) {
       return;
     }
     Object localObject = b(c);
     Iterator localIterator = a.a().iterator();
     while (localIterator.hasNext()) {
-      ((arn)localIterator.next()).a((Paint)localObject);
+      ((asm)localIterator.next()).a((Paint)localObject);
     }
     localObject = getCurrentPage();
     if (localObject != null) {
       if (f) {
-        break label138;
+        break label127;
       }
     }
-    label138:
+    label127:
     for (boolean bool = true;; bool = false)
     {
-      ((arn)localObject).a(bool, c);
+      ((asm)localObject).a(bool, c);
       invalidate();
-      new AsyncTask() {}.executeOnExecutor(auh.MISCELLANEOUS_EXECUTOR, new Void[0]);
+      new AsyncTask() {}.executeOnExecutor(avf.MISCELLANEOUS_EXECUTOR, new Void[0]);
       return;
     }
   }
   
-  public final void a(arn paramarn)
+  public final void a(asm paramasm)
   {
-    paramarn = paramarn.d();
-    if (paramarn != null) {
-      e.addView(paramarn);
+    paramasm = paramasm.d();
+    if (paramasm != null) {
+      e.addView(paramasm);
     }
   }
   
@@ -133,14 +130,14 @@ public class SwipeImageView
     }
   }
   
-  public void addView(@cgb View paramView)
+  public void addView(@chc View paramView)
   {
     super.addView(paramView);
     e.bringToFront();
   }
   
-  @cgc
-  public arn getCurrentPage()
+  @chd
+  public asm getCurrentPage()
   {
     if (a.b() == 0) {
       return null;
@@ -171,13 +168,13 @@ public class SwipeImageView
   public void onAttachedToWindow()
   {
     super.onAttachedToWindow();
-    ban.a().c(this);
+    bbo.a().c(this);
   }
   
   public void onDetachedFromWindow()
   {
     super.onDetachedFromWindow();
-    ban.a().b(this);
+    bbo.a().b(this);
   }
   
   public void onDraw(Canvas paramCanvas)
@@ -189,8 +186,8 @@ public class SwipeImageView
       localObject1 = g;
       localObject2 = b;
       localObject3 = a;
-      localLayerType = aqh.a(getLayerType());
-      if (((arv)localObject3).b() != 0) {
+      localLayerType = arf.a(getLayerType());
+      if (((asu)localObject3).b() != 0) {
         break label212;
       }
       paramCanvas.drawRect(0.0F, 0.0F, paramCanvas.getWidth(), paramCanvas.getHeight(), a);
@@ -203,19 +200,19 @@ public class SwipeImageView
       paramCanvas = a.a().iterator();
       while (paramCanvas.hasNext())
       {
-        localObject1 = (arn)paramCanvas.next();
+        localObject1 = (asm)paramCanvas.next();
         if ((localObject1 != a.a(b.a)) && (localObject1 != a.a(b.b)) && (localObject1 != a.a(b.d)) && (localObject1 != a.a(b.c)))
         {
-          localObject1 = ((arn)localObject1).d();
+          localObject1 = ((asm)localObject1).d();
           if (localObject1 != null) {
             ((View)localObject1).setVisibility(4);
           }
         }
       }
-      m = arq.a((arv)localObject3, ((SwipeViewState)localObject2).a(true), ((SwipeViewState)localObject2).a(false));
-      n = arq.a((arv)localObject3, ((SwipeViewState)localObject2).b(true), ((SwipeViewState)localObject2).b(false));
-      Paint localPaint = ((arq)localObject1).a(((arv)localObject3).a(m));
-      localObject3 = ((arq)localObject1).a(((arv)localObject3).a(n));
+      m = asp.a((asu)localObject3, ((SwipeViewState)localObject2).a(true), ((SwipeViewState)localObject2).a(false));
+      n = asp.a((asu)localObject3, ((SwipeViewState)localObject2).b(true), ((SwipeViewState)localObject2).b(false));
+      Paint localPaint = ((asp)localObject1).a(((asu)localObject3).a(m));
+      localObject3 = ((asp)localObject1).a(((asu)localObject3).a(n));
       float f1 = ((SwipeViewState)localObject2).f();
       if ((localPaint == a) && (localObject3 == a)) {
         paramCanvas.drawRect(0.0F, 0.0F, paramCanvas.getWidth(), paramCanvas.getHeight(), a);
@@ -244,10 +241,10 @@ public class SwipeImageView
     Object localObject1 = a;
     Object localObject2 = getContext();
     int i1;
-    if (((arv)localObject1).b() != 0)
+    if (((asu)localObject1).b() != 0)
     {
-      n = avh.a((Context)localObject2);
-      i1 = avh.h((Context)localObject2);
+      n = awf.a((Context)localObject2);
+      i1 = awf.h((Context)localObject2);
       if (!paramCanvas.c()) {
         break label656;
       }
@@ -256,7 +253,7 @@ public class SwipeImageView
       }
       m = 1;
       if (m != 0) {
-        arr.a((arv)localObject1, n, i1, e, paramCanvas.a(true), paramCanvas.b(true));
+        asq.a((asu)localObject1, n, i1, e, paramCanvas.a(true), paramCanvas.b(true));
       }
       if (a == b) {
         break label650;
@@ -264,7 +261,7 @@ public class SwipeImageView
       m = 1;
       label605:
       if (m != 0) {
-        arr.a((arv)localObject1, n, i1, e, paramCanvas.a(false), paramCanvas.b(false));
+        asq.a((asu)localObject1, n, i1, e, paramCanvas.a(false), paramCanvas.b(false));
       }
     }
     for (;;)
@@ -278,9 +275,9 @@ public class SwipeImageView
       m = 0;
       break label605;
       label656:
-      arr.a((arv)localObject1, n, i1, a);
+      asq.a((asu)localObject1, n, i1, a);
       if (l) {
-        arr.a((arv)localObject1, n, i1, c);
+        asq.a((asu)localObject1, n, i1, c);
       }
     }
   }
@@ -296,14 +293,14 @@ public class SwipeImageView
     {
       m = 1;
       if (c == null) {
-        break label180;
+        break label139;
       }
       if (c.getWidth() <= c.getHeight()) {
-        break label148;
+        break label122;
       }
       n = 1;
       if (m == n) {
-        break label154;
+        break label128;
       }
       bool = true;
       label49:
@@ -311,18 +308,13 @@ public class SwipeImageView
       if (d)
       {
         if ((j == paramInt1) && (k == paramInt2)) {
-          break label160;
+          break label134;
         }
         j = paramInt1;
         k = paramInt2;
         m = 1;
         label90:
-        if (m != 0)
-        {
-          Timber.c("SwipeImageView", "The orientation of the current bitmap does not match the one of the canvas. (%d, %d)", new Object[] { Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) });
-          if (l == null) {
-            break label165;
-          }
+        if ((m != 0) && (l != null)) {
           l.i();
         }
       }
@@ -333,36 +325,33 @@ public class SwipeImageView
       return;
       m = 0;
       break;
-      label148:
+      label122:
       n = 0;
       break label40;
-      label154:
+      label128:
       bool = false;
       break label49;
-      label160:
+      label134:
       m = 0;
       break label90;
-      label165:
-      Timber.f("SwipeImageView", "Cannot handle the orientation change because mSnapPreviewRotationListener is null", new Object[0]);
-      continue;
-      label180:
+      label139:
       d = false;
     }
   }
   
-  public boolean onTouchEvent(@cgb MotionEvent paramMotionEvent)
+  public boolean onTouchEvent(@chc MotionEvent paramMotionEvent)
   {
-    arn localarn = getCurrentPage();
-    if (localarn == null) {
+    asm localasm = getCurrentPage();
+    if (localasm == null) {
       return false;
     }
-    localarn.d().dispatchTouchEvent(paramMotionEvent);
+    localasm.d().dispatchTouchEvent(paramMotionEvent);
     return true;
   }
   
-  public void setFilterPageProvider(arv paramarv)
+  public void setFilterPageProvider(asu paramasu)
   {
-    a = paramarv;
+    a = paramasu;
   }
   
   public void setSnapPreviewRotationListener(a parama)
@@ -377,9 +366,9 @@ public class SwipeImageView
   
   public void setVisibilityOfPreviewOnlyContent(int paramInt)
   {
-    arn localarn = getCurrentPage();
-    if (localarn != null) {
-      localarn.a(paramInt);
+    asm localasm = getCurrentPage();
+    if (localasm != null) {
+      localasm.a(paramInt);
     }
   }
   

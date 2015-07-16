@@ -6,30 +6,30 @@
 # virtual methods
 .method public abstract a(Landroid/app/Activity;)V
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method
 
 .method public abstract a(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p5    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -62,7 +62,7 @@
 
 .method public abstract b(Landroid/app/Activity;)V
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method

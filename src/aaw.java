@@ -1,14 +1,31 @@
-public final class aaw
-  extends zx
+import com.snapchat.android.database.table.IdToFileTable;
+import java.util.Collection;
+import java.util.Map.Entry;
+
+public class aaw
+  extends IdToFileTable
 {
-  private static final aaw a = new aaw();
+  private final String a;
+  private final axn b;
   
-  private aaw()
+  public aaw(@chc String paramString, @chc axn paramaxn)
   {
-    super("ReceivedSnapImageFileTable", awq.SNAP_RECEIVED_IMAGE_CACHE);
+    a = paramString;
+    b = paramaxn;
   }
   
-  public static aaw a()
+  protected final Collection<Map.Entry<String, axn.a>> a(akp paramakp)
+  {
+    return b.d();
+  }
+  
+  public final void b(akp paramakp)
+  {
+    b.a(f());
+    b.a(true);
+  }
+  
+  public final String c()
   {
     return a;
   }

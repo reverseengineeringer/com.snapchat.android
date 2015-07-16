@@ -20,11 +20,11 @@
 # instance fields
 .field final synthetic a:Lcom/snapchat/android/service/SnapchatService;
 
-.field private final b:Lamk;
+.field private final b:Lanh;
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/service/SnapchatService;Lamk;)V
+.method public constructor <init>(Lcom/snapchat/android/service/SnapchatService;Lanh;)V
     .locals 0
 
     .prologue
@@ -34,7 +34,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 348
-    iput-object p2, p0, Lcom/snapchat/android/service/SnapchatService$b;->b:Lamk;
+    iput-object p2, p0, Lcom/snapchat/android/service/SnapchatService$b;->b:Lanh;
 
     .line 349
     return-void
@@ -48,7 +48,7 @@
     .prologue
     .line 353
     :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$b;->b:Lamk;
+    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$b;->b:Lanh;
 
     iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService$b;->a:Lcom/snapchat/android/service/SnapchatService;
 
@@ -56,7 +56,7 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lamk;->a(Landroid/content/Context;)V
+    invoke-interface {v0, v1}, Lanh;->a(Landroid/content/Context;)V
 
     .line 354
     invoke-static {}, Lcom/snapchat/android/service/SnapchatService;->a()Landroid/os/Handler;
@@ -67,9 +67,9 @@
 
     iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService$b;->a:Lcom/snapchat/android/service/SnapchatService;
 
-    iget-object v3, p0, Lcom/snapchat/android/service/SnapchatService$b;->b:Lamk;
+    iget-object v3, p0, Lcom/snapchat/android/service/SnapchatService$b;->b:Lanh;
 
-    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/service/SnapchatService$a;-><init>(Lcom/snapchat/android/service/SnapchatService;Lamk;)V
+    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/service/SnapchatService$a;-><init>(Lcom/snapchat/android/service/SnapchatService;Lanh;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_0
@@ -84,38 +84,24 @@
     move-exception v0
 
     .line 358
-    new-instance v1, Lob;
+    new-instance v1, Los;
 
-    iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService$b;->b:Lamk;
+    iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService$b;->b:Lanh;
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v1, v2, v0}, Lob;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Los;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 359
-    const-string v0, "SnapchatService"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "ProcessRunnable halted "
 
-    const-string v3, "ProcessRunnable halted "
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 360
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
@@ -139,11 +125,11 @@
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$b;->a:Lcom/snapchat/android/service/SnapchatService;
 
-    invoke-static {v0}, Lcom/snapchat/android/service/SnapchatService;->b(Lcom/snapchat/android/service/SnapchatService;)Lazo;
+    invoke-static {v0}, Lcom/snapchat/android/service/SnapchatService;->b(Lcom/snapchat/android/service/SnapchatService;)Lban;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lazo;->a(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1}, Lban;->a(Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method

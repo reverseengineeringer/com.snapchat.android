@@ -1,18 +1,14 @@
-import java.util.Map.Entry;
-
 final class dl$1
-  extends dw<V>
+  extends cv<E>
 {
-  dl$1(dw paramdw) {}
-  
-  public final boolean hasNext()
+  dl$1(dl paramdl, int paramInt1, int paramInt2)
   {
-    return a.hasNext();
+    super(paramInt1, paramInt2);
   }
   
-  public final V next()
+  protected final E a(int paramInt)
   {
-    return (V)((Map.Entry)a.next()).getValue();
+    return (E)a.get(paramInt);
   }
 }
 

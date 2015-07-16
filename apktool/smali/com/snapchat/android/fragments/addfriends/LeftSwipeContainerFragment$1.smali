@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 77
+    .line 91
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,48 +40,67 @@
     .locals 0
 
     .prologue
-    .line 96
+    .line 118
     return-void
 .end method
 
 .method public final onPageScrolled(IFI)V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 80
-    if-nez p1, :cond_0
-
-    const v0, 0x3d4ccccd    # 0.05f
-
-    cmpg-float v0, p2, v0
-
-    if-gtz v0, :cond_0
-
-    .line 83
+    .line 94
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->a(Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;)Lmu;
 
     move-result-object v0
 
+    iget-object v0, v0, Lmu;->a:Landroid/support/v4/app/Fragment;
+
+    .line 95
+    if-nez p1, :cond_0
+
+    const v1, 0x3d4ccccd    # 0.05f
+
+    cmpg-float v1, p2, v1
+
+    if-gtz v1, :cond_0
+
+    .line 98
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->a(Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;)Landroid/view/View;
+    invoke-virtual {v1}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
-    .line 84
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->b(Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;)Landroid/view/View;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-static {v1, v2}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
+    .line 99
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
-    .line 86
+    invoke-virtual {v1}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
+
+    .line 100
+    instance-of v1, v0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$a;
+
+    if-eqz v1, :cond_0
+
+    .line 101
+    check-cast v0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$a;
+
+    invoke-interface {v0}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment$a;->H()V
+
+    .line 104
     :cond_0
     return-void
 .end method
@@ -90,6 +109,6 @@
     .locals 0
 
     .prologue
-    .line 91
+    .line 113
     return-void
 .end method

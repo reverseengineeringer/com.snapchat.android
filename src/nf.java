@@ -1,97 +1,103 @@
-import android.content.Intent;
-import android.os.SystemClock;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
-import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import com.snapchat.android.util.debug.ReleaseManager;
-import java.util.HashMap;
-import java.util.Map;
-import javax.inject.Singleton;
+import android.os.Bundle;
+import android.text.TextUtils;
+import com.snapchat.android.ads.AdRequestError;
+import com.snapchat.android.ads.AdRequestError.ErrorCode;
 
-@Singleton
 public final class nf
 {
-  public static final String APP_STARTUP_TIMED_METRIC = "APP_STARTUP_TIMED";
-  public static final String FIRST_MEDIA_OPENED_METRIC = "FIRST_MEDIA_OPENED";
-  private static final nf INSTANCE = new nf();
-  public static final String OLD_APP_STARTUP_TIMED_METRIC = "APP_STARTUP_TIMED_9_3";
-  private static final String TAG = "LifecycleAnalytics";
-  public static final String USER_LOAD_TIME_METRIC = "USER_LOAD_TIME";
-  private final DictionaryEasyMetric mDictionaryEasyMetric;
-  public boolean mDidLoadFromDatabase;
-  private final ScAnalyticsEventEngine mEventEngine;
-  private final EasyMetric.EasyMetricFactory mMetricFactory;
-  public EasyMetric mOldStartupMetric;
-  private final aux mStartupContext;
-  public EasyMetric mStartupMetric;
-  public EasyMetric mUserLoadMetric;
+  private static final String AD_KEY_PARAM = "ad_key";
+  public static final String AD_NO_FILL_STRING = "NO-FILL";
+  public final AdRequestError mAdRequestError;
+  public final Bundle mAdResponseFieldBundle;
+  public int mAdStreamPosition;
+  long mImpressionViewThreshold;
+  public final String mTransformedUrl;
   
-  private nf()
+  private nf(String paramString, AdRequestError paramAdRequestError, Bundle paramBundle, long paramLong)
   {
-    this(DictionaryEasyMetric.a(), aux.a(), ScAnalyticsEventEngine.a(), new EasyMetric.EasyMetricFactory());
+    mTransformedUrl = paramString;
+    mAdRequestError = paramAdRequestError;
+    mAdResponseFieldBundle = paramBundle;
+    mImpressionViewThreshold = paramLong;
   }
   
-  private nf(DictionaryEasyMetric paramDictionaryEasyMetric, aux paramaux, ScAnalyticsEventEngine paramScAnalyticsEventEngine, EasyMetric.EasyMetricFactory paramEasyMetricFactory)
+  @chd
+  public final Boolean a()
   {
-    mDictionaryEasyMetric = paramDictionaryEasyMetric;
-    mStartupContext = paramaux;
-    mEventEngine = paramScAnalyticsEventEngine;
-    mMetricFactory = paramEasyMetricFactory;
-  }
-  
-  public static nf a()
-  {
-    return INSTANCE;
-  }
-  
-  public static void a(@cgb Intent paramIntent)
-  {
-    HashMap localHashMap = new HashMap();
-    localHashMap.put("open_state", "NORMAL");
-    localHashMap.put("intent_action", paramIntent.getAction());
-    new EasyMetric("APP_OPEN").a(localHashMap).d();
-    ScAnalyticsEventEngine.a(new fr());
-  }
-  
-  public static void d()
-  {
-    if (ReleaseManager.f()) {
-      azz.a(azz.b());
+    boolean bool = false;
+    if ((mAdRequestError != null) && (mAdRequestError.mErrorCode == AdRequestError.ErrorCode.CONTENT_NO_FILL))
+    {
+      i = 1;
+      if (i == 0) {
+        if ((mAdRequestError == null) || (mAdRequestError.mErrorCode != AdRequestError.ErrorCode.ERROR_CODE_NO_FILL)) {
+          break label66;
+        }
+      }
+    }
+    label66:
+    for (int i = 1;; i = 0)
+    {
+      if (i != 0) {
+        bool = true;
+      }
+      return Boolean.valueOf(bool);
+      i = 0;
+      break;
     }
   }
   
-  public static void e()
+  public final boolean b()
   {
-    if (ReleaseManager.f())
+    return (mAdRequestError == null) || (a().booleanValue());
+  }
+  
+  @chd
+  public final String c()
+  {
+    if ((mAdRequestError != null) || (TextUtils.isEmpty(mTransformedUrl))) {}
+    label127:
+    for (;;)
     {
-      String str = azz.b();
-      long l = azz.b(str);
-      Object localObject = INSTANCE;
-      if (mStartupMetric != null)
+      return null;
+      if ((mAdResponseFieldBundle != null) && (mAdResponseFieldBundle.containsKey("ad_key"))) {
+        return mAdResponseFieldBundle.getString("ad_key");
+      }
+      int i = mTransformedUrl.indexOf("?");
+      if (i >= 0)
       {
-        localObject = mStartupMetric;
-        if (((EasyMetric)localObject).c())
+        String[] arrayOfString1 = mTransformedUrl.substring(i + 1).split("&");
+        int j = arrayOfString1.length;
+        i = 0;
+        for (;;)
         {
-          ((EasyMetric)localObject).a(str, Long.valueOf(l));
-          Timber.a("EasyMetric", SystemClock.elapsedRealtime() - b + ", " + str + " ELAPSED_TIME " + l, new Object[0]);
+          if (i >= j) {
+            break label127;
+          }
+          String[] arrayOfString2 = arrayOfString1[i].split("=");
+          if (arrayOfString2[0].equals("ad_key"))
+          {
+            if (arrayOfString2.length <= 1) {
+              break;
+            }
+            return arrayOfString2[1];
+          }
+          i += 1;
         }
       }
     }
   }
   
-  public final void b()
+  public static final class a
   {
-    mStartupMetric = null;
-    mDictionaryEasyMetric.a("FIRST_MEDIA_OPENED");
-  }
-  
-  public final void c()
-  {
-    mStartupMetric = EasyMetric.EasyMetricFactory.b("APP_STARTUP_TIMED").b();
-    mOldStartupMetric = EasyMetric.EasyMetricFactory.b("APP_STARTUP_TIMED_9_3").b();
-    mDictionaryEasyMetric.a("FIRST_MEDIA_OPENED", true);
+    AdRequestError mAdRequestError;
+    Bundle mAdResponseFieldBundle;
+    private long mImpressionViewThresholdMilliSeconds;
+    String mTransformedUrl;
+    
+    public final nf a()
+    {
+      return new nf(mTransformedUrl, mAdRequestError, mAdResponseFieldBundle, mImpressionViewThresholdMilliSeconds, (byte)0);
+    }
   }
 }
 

@@ -2,12 +2,11 @@ package com.snapchat.android.fragments.addfriends;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import auh;
-import com.snapchat.android.Timber;
+import avf;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import ih;
-import ix;
-import pa;
+import is;
+import jj;
+import pr;
 
 final class AddFriendsFragment$8
   implements View.OnClickListener
@@ -17,20 +16,20 @@ final class AddFriendsFragment$8
   public final void onClick(View paramView)
   {
     AddFriendsFragment.d(a);
-    new pa("updateSearchableByPhoneNumber", new String[] { "1" }).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    new pr("updateSearchableByPhoneNumber", new String[] { "1" }).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     AddFriendsFragment.c(a);
-    paramView = a.C;
+    paramView = a.D;
     switch (com.snapchat.android.analytics.ProfileEventAnalytics.1.$SwitchMap$com$snapchat$android$analytics$AnalyticsEvents$AnalyticsContext[paramView.ordinal()])
     {
     case 7: 
     default: 
-      Timber.f("ProfileEventAnalytics", "onProfileContactPermissionContinue  - Unknown context " + paramView, new Object[0]);
+      new StringBuilder("onProfileContactPermissionContinue  - Unknown context ").append(paramView);
       return;
     case 6: 
-      ScAnalyticsEventEngine.a(new ih());
+      ScAnalyticsEventEngine.a(new is());
       return;
     }
-    ScAnalyticsEventEngine.a(new ix());
+    ScAnalyticsEventEngine.a(new jj());
   }
 }
 

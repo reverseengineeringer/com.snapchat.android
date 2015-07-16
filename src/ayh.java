@@ -1,36 +1,61 @@
-import com.snapchat.android.util.crypto.SlightlySecurePreferencesKeyType;
+import android.os.Build.VERSION;
+import android.text.TextUtils;
 
-public class ayh
+public final class ayh
 {
-  public final String mKey;
-  public final SlightlySecurePreferencesKeyType mType;
+  private static final int SUPPLEMENTARY_ENDING_INDEX = 65039;
+  private static final int SUPPLEMENTARY_STARTING_INDEX = 65024;
+  private static final int[][] emojiRanges;
   
-  public ayh(String paramString, SlightlySecurePreferencesKeyType paramSlightlySecurePreferencesKeyType)
+  static
   {
-    mKey = paramString;
-    mType = paramSlightlySecurePreferencesKeyType;
+    int[] arrayOfInt1 = { 126976, 131071 };
+    int[] arrayOfInt2 = { 1041637, 1041646 };
+    emojiRanges = new int[][] { arrayOfInt1, { 8352, 11263 }, arrayOfInt2 };
   }
   
-  public boolean equals(Object paramObject)
+  @awj
+  public static boolean a()
   {
-    if (this == paramObject) {
-      return true;
-    }
-    if (!(paramObject instanceof ayh)) {
+    return Build.VERSION.SDK_INT >= 16;
+  }
+  
+  @awj
+  public static boolean a(@chd String paramString, boolean paramBoolean)
+  {
+    if ((paramString == null) || (TextUtils.isEmpty(paramString.trim()))) {}
+    label48:
+    label143:
+    for (;;)
+    {
       return false;
+      int j = 0;
+      int k = 0;
+      if (j >= paramString.length()) {
+        break;
+      }
+      int m = paramString.codePointAt(j);
+      int[][] arrayOfInt = emojiRanges;
+      int n = arrayOfInt.length;
+      int i = 0;
+      if (i < n)
+      {
+        int[] arrayOfInt1 = arrayOfInt[i];
+        if ((m < arrayOfInt1[0]) || (m > arrayOfInt1[1])) {}
+      }
+      for (i = 1;; i = 0)
+      {
+        if ((i == 0) && ((!paramBoolean) || (!Character.isWhitespace(m))) && ((j <= 0) || (m < 65024) || (m > 65039) || (k == 0))) {
+          break label143;
+        }
+        j += Character.charCount(m);
+        k = i;
+        break;
+        i += 1;
+        break label48;
+      }
     }
-    paramObject = (ayh)paramObject;
-    return mKey.equals(mKey);
-  }
-  
-  public int hashCode()
-  {
-    return mKey.hashCode();
-  }
-  
-  public String toString()
-  {
-    return mKey;
+    return true;
   }
 }
 

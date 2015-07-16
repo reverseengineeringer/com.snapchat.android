@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.sendto;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import no;
+import of;
 
 final class SendToFragment$10
   implements View.OnClickListener

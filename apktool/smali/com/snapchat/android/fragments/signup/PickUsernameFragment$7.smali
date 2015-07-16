@@ -88,7 +88,7 @@
 
     invoke-direct {v1, v2, v0}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;-><init>(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;Ljava/lang/String;)V
 
-    sget-object v0, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v0, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     const/4 v2, 0x0
 
@@ -109,7 +109,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 370
     return-void

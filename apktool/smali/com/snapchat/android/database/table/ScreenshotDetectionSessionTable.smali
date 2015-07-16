@@ -14,7 +14,7 @@
     value = {
         "Lcom/snapchat/android/database/table/DbTable",
         "<",
-        "Lanv;",
+        "Laos;",
         ">;"
     }
 .end annotation
@@ -84,7 +84,7 @@
     const/4 v0, 0x0
 
     .line 18
-    check-cast p1, Lanv;
+    check-cast p1, Laos;
 
     if-nez p1, :cond_1
 
@@ -93,11 +93,11 @@
     return-object v0
 
     :cond_1
-    new-instance v1, Laad;
+    new-instance v1, Labc;
 
-    invoke-direct {v1}, Laad;-><init>()V
+    invoke-direct {v1}, Labc;-><init>()V
 
-    instance-of v2, p1, Lanz;
+    instance-of v2, p1, Laow;
 
     if-eqz v2, :cond_2
 
@@ -106,40 +106,40 @@
     :goto_1
     sget-object v2, Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;->SENDER:Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;
 
-    iget-object v3, p1, Lanv;->a:Ljava/lang/String;
+    iget-object v3, p1, Laos;->a:Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v2, Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;->START_TIME:Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;
 
-    iget-wide v4, p1, Lanv;->b:J
+    iget-wide v4, p1, Laos;->b:J
 
-    invoke-virtual {v1, v2, v4, v5}, Laad;->a(Lzw;J)Laad;
+    invoke-virtual {v1, v2, v4, v5}, Labc;->a(Laav;J)Labc;
 
     sget-object v2, Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;->END_TIME:Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;
 
-    iget-wide v4, p1, Lanv;->c:J
+    iget-wide v4, p1, Laos;->c:J
 
-    invoke-virtual {v1, v2, v4, v5}, Laad;->a(Lzw;J)Laad;
+    invoke-virtual {v1, v2, v4, v5}, Labc;->a(Laav;J)Labc;
 
     sget-object v2, Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;->TYPE:Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;
 
-    invoke-virtual {v1, v2, v0}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v0}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;->EXTRA:Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable$ViewingSessionSchema;
 
-    invoke-virtual {p1}, Lanv;->a()Ljava/lang/String;
+    invoke-virtual {p1}, Laos;->a()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v0, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v0, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
-    iget-object v0, v1, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v1, Labc;->a:Landroid/content/ContentValues;
 
     goto :goto_0
 
     :cond_2
-    instance-of v2, p1, Lanu;
+    instance-of v2, p1, Laor;
 
     if-eqz v2, :cond_0
 
@@ -149,7 +149,7 @@
 .end method
 
 .method protected final synthetic a(Landroid/database/Cursor;)Ljava/lang/Object;
-    .locals 26
+    .locals 25
 
     .prologue
     .line 18
@@ -221,75 +221,71 @@
 
     move-result-object v2
 
-    new-instance v8, Latt;
+    new-instance v8, Laur;
 
-    invoke-direct {v8}, Latt;-><init>()V
+    invoke-direct {v8}, Laur;-><init>()V
 
-    const-class v9, Lanz$a;
+    const-class v9, Laow$a;
 
     const/4 v10, 0x0
 
-    invoke-virtual {v8, v2, v9, v10}, Latt;->a(Ljava/lang/String;Ljava/lang/Class;Z)Ljava/lang/Object;
+    invoke-virtual {v8, v2, v9, v10}, Laur;->a(Ljava/lang/String;Ljava/lang/Class;Z)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lanz$a;
+    check-cast v2, Laow$a;
 
     if-nez v2, :cond_0
 
-    new-instance v2, Lanz;
+    new-instance v2, Laow;
 
-    invoke-direct/range {v2 .. v7}, Lanz;-><init>(Ljava/lang/String;JJ)V
+    invoke-direct/range {v2 .. v7}, Laow;-><init>(Ljava/lang/String;JJ)V
 
     :goto_0
     return-object v2
 
     :cond_0
-    new-instance v9, Lanz;
+    new-instance v9, Laow;
 
-    iget-object v10, v2, Lanz$a;->c:Ljava/lang/String;
+    iget-object v10, v2, Laow$a;->c:Ljava/lang/String;
 
-    iget-boolean v11, v2, Lanz$a;->g:Z
+    iget-boolean v11, v2, Laow$a;->f:Z
 
-    iget-wide v12, v2, Lanz$a;->f:D
+    iget-wide v12, v2, Laow$a;->e:D
 
-    iget-object v0, v2, Lanz$a;->a:Ljava/lang/String;
+    iget-object v0, v2, Laow$a;->a:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    iget-object v0, v2, Lanz$a;->b:Ljava/lang/String;
+    iget-object v0, v2, Laow$a;->b:Ljava/lang/String;
 
     move-object/from16 v19, v0
 
-    iget-object v0, v2, Lanz$a;->d:Ljava/lang/String;
+    iget-object v0, v2, Laow$a;->d:Ljava/lang/String;
 
     move-object/from16 v20, v0
 
-    iget-object v0, v2, Lanz$a;->i:Llr;
+    iget-object v0, v2, Laow$a;->h:Lmj;
 
     move-object/from16 v21, v0
 
-    iget-boolean v0, v2, Lanz$a;->h:Z
+    iget-boolean v0, v2, Laow$a;->g:Z
 
     move/from16 v22, v0
 
-    iget-object v0, v2, Lanz$a;->e:Ljava/lang/String;
+    iget-object v0, v2, Laow$a;->i:Ljava/lang/String;
 
     move-object/from16 v23, v0
 
-    iget-object v0, v2, Lanz$a;->j:Ljava/lang/String;
+    iget v0, v2, Laow$a;->j:I
 
-    move-object/from16 v24, v0
-
-    iget v0, v2, Lanz$a;->k:I
-
-    move/from16 v25, v0
+    move/from16 v24, v0
 
     move-wide v14, v4
 
     move-wide/from16 v16, v6
 
-    invoke-direct/range {v9 .. v25}, Lanz;-><init>(Ljava/lang/String;ZDJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Llr;ZLjava/lang/String;Ljava/lang/String;I)V
+    invoke-direct/range {v9 .. v24}, Laow;-><init>(Ljava/lang/String;ZDJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lmj;ZLjava/lang/String;I)V
 
     move-object v2, v9
 
@@ -304,9 +300,9 @@
 
     if-eqz v2, :cond_2
 
-    new-instance v2, Lanu;
+    new-instance v2, Laor;
 
-    invoke-direct/range {v2 .. v7}, Lanu;-><init>(Ljava/lang/String;JJ)V
+    invoke-direct/range {v2 .. v7}, Laor;-><init>(Ljava/lang/String;JJ)V
 
     goto :goto_0
 
@@ -316,41 +312,41 @@
     goto :goto_0
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
-            "Lanv;",
+            "Laos;",
             ">;"
         }
     .end annotation
 
     .prologue
     .line 99
-    invoke-static {}, Lanw;->a()Lanw;
+    invoke-static {}, Laot;->a()Laot;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lanw;->b()Ljava/util/List;
+    invoke-virtual {v0}, Laot;->b()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
+.method public final b(Lakp;)V
     .locals 4
 
     .prologue
     const/4 v1, 0x0
 
     .line 70
-    invoke-static {}, Lanw;->a()Lanw;
+    invoke-static {}, Laot;->a()Laot;
 
     move-result-object v0
 
@@ -358,16 +354,16 @@
 
     move-result-object v1
 
-    iget-object v2, v0, Lanw;->b:Ljava/util/LinkedList;
+    iget-object v2, v0, Laot;->b:Ljava/util/LinkedList;
 
     monitor-enter v2
 
     :try_start_0
-    iget-object v3, v0, Lanw;->b:Ljava/util/LinkedList;
+    iget-object v3, v0, Laot;->b:Ljava/util/LinkedList;
 
     invoke-virtual {v3}, Ljava/util/LinkedList;->clear()V
 
-    iget-object v0, v0, Lanw;->b:Ljava/util/LinkedList;
+    iget-object v0, v0, Laot;->b:Ljava/util/LinkedList;
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedList;->addAll(Ljava/util/Collection;)Z
 
@@ -385,7 +381,7 @@
     throw v0
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue

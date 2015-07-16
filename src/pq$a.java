@@ -1,14 +1,15 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.model.Friend;
-
-@tn
 public final class pq$a
-  extends pl
 {
-  @SerializedName("request_username")
-  String request_username = this$0.mFriend.h();
+  public String onValue;
+  public String studyId;
+  public String variable;
   
-  public pq$a(pq parampq) {}
+  pq$a(String paramString1, String paramString2, String paramString3)
+  {
+    studyId = paramString1;
+    variable = paramString2;
+    onValue = paramString3;
+  }
 }
 
 /* Location:

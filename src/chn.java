@@ -1,53 +1,21 @@
-final class chn
-  extends cjm
+public abstract class chn
+  implements Comparable<chn>
 {
-  private final chl b;
+  public abstract long a(long paramLong, int paramInt);
   
-  chn(chl paramchl, cgm paramcgm)
-  {
-    super(cgi.n(), paramcgm);
-    b = paramchl;
-  }
+  public abstract long a(long paramLong1, long paramLong2);
   
-  public final int a(long paramLong)
-  {
-    chl localchl = b;
-    return localchl.b(paramLong, localchl.a(paramLong));
-  }
+  public abstract cho a();
   
-  public final int c(long paramLong)
-  {
-    int i = b.a(paramLong);
-    if (b.c(i)) {
-      return 366;
-    }
-    return 365;
-  }
+  public abstract int b(long paramLong1, long paramLong2);
   
-  protected final int c(long paramLong, int paramInt)
-  {
-    int i = 365;
-    chl.L();
-    if ((paramInt > 365) || (paramInt <= 0)) {
-      i = c(paramLong);
-    }
-    return i;
-  }
+  public abstract boolean b();
   
-  public final cgm e()
-  {
-    return b.g;
-  }
+  public abstract long c(long paramLong1, long paramLong2);
   
-  public final int g()
-  {
-    return 1;
-  }
+  public abstract boolean c();
   
-  public final int h()
-  {
-    return chl.L();
-  }
+  public abstract long d();
 }
 
 /* Location:

@@ -9,8 +9,8 @@
 # instance fields
 .field public a:I
 
-.field public b:Lxv;
-    .annotation build Lcgb;
+.field public b:Lyr;
+    .annotation build Lchc;
     .end annotation
 .end field
 
@@ -19,7 +19,7 @@
 .field public d:Z
 
 .field private e:Landroid/graphics/drawable/Drawable;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
@@ -54,7 +54,7 @@
     iput-object p1, p0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->f:Landroid/content/Context;
 
     .line 36
-    sget-object v0, Lmd$a;->ParticleSparkleView:[I
+    sget-object v0, Lmv$a;->ParticleSparkleView:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
@@ -88,7 +88,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->f:Landroid/content/Context;
 
-    invoke-static {v0, v1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -100,7 +100,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->f:Landroid/content/Context;
 
-    invoke-static {v0, v1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -163,9 +163,9 @@
     invoke-virtual {v0, p0}, Lcom/snapchat/android/ui/cash/ParticleView;->setAnimationListener(Lcom/snapchat/android/ui/cash/ParticleView$a;)V
 
     .line 110
-    iget-object v1, p0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->b:Lxv;
+    iget-object v1, p0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->b:Lyr;
 
-    invoke-interface {v1}, Lxv;->a()Landroid/graphics/Point;
+    invoke-interface {v1}, Lyr;->a()Landroid/graphics/Point;
 
     move-result-object v1
 
@@ -356,13 +356,13 @@
 
     .prologue
     .line 124
-    iget-object v0, p0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->b:Lxv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->b:Lyr;
 
     invoke-virtual {p1}, Lcom/snapchat/android/ui/cash/ParticleView;->getCenterPoint()Landroid/graphics/Point;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lxv;->a(Landroid/graphics/Point;)V
+    invoke-interface {v0, v1}, Lyr;->a(Landroid/graphics/Point;)V
 
     .line 125
     invoke-virtual {p0, p1}, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->removeView(Landroid/view/View;)V

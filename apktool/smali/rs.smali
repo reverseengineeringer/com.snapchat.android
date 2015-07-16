@@ -1,111 +1,198 @@
 .class public final Lrs;
-.super Lqv;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lrr;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic $assertionsDisabled:Z
+
+
+# instance fields
+.field private final mCashErrorReporterProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lqw;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final supertypeInjector:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 17
-    invoke-direct {p0}, Lqv;-><init>()V
+    .line 9
+    const-class v0, Lrs;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lrs;->$assertionsDisabled:Z
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lqw;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 15
+    sget-boolean v0, Lrs;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 16
+    :cond_0
+    iput-object p1, p0, Lrs;->supertypeInjector:Lbvk;
+
+    .line 17
+    sget-boolean v0, Lrs;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 18
+    :cond_1
+    iput-object p2, p0, Lrs;->mCashErrorReporterProvider:Ljavax/inject/Provider;
+
+    .line 19
+    return-void
+.end method
+
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lqw;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lrr;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 31
+    new-instance v0, Lrs;
+
+    invoke-direct {v0, p0, p1}, Lrs;-><init>(Lbvk;Ljavax/inject/Provider;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method protected final a()V
-    .locals 0
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
     .prologue
-    .line 71
-    invoke-super {p0}, Lqv;->a()V
+    .line 9
+    check-cast p1, Lrr;
 
-    .line 72
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Cannot inject members into a null reference"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lrs;->supertypeInjector:Lbvk;
+
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lrs;->mCashErrorReporterProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lqw;
+
+    iput-object v0, p1, Lrr;->mCashErrorReporter:Lqw;
+
     return-void
-.end method
-
-.method public final a(Lcom/snapchat/android/model/CashTransaction;)V
-    .locals 3
-    .param p1    # Lcom/snapchat/android/model/CashTransaction;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 21
-    iget-object v0, p1, Lcom/snapchat/android/model/CashTransaction;->mTransactionId:Ljava/lang/String;
-
-    new-instance v1, Lrs$1;
-
-    invoke-direct {v1, p0, p1}, Lrs$1;-><init>(Lrs;Lcom/snapchat/android/model/CashTransaction;)V
-
-    new-instance v2, Lsg;
-
-    invoke-direct {v2, v0, v1}, Lsg;-><init>(Ljava/lang/String;Lsk;)V
-
-    invoke-virtual {v2}, Lsg;->f()V
-
-    .line 54
-    return-void
-.end method
-
-.method protected final a(Ljava/util/List;Z)V
-    .locals 0
-    .param p1    # Ljava/util/List;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lqv;",
-            ">;Z)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 59
-    invoke-super {p0, p1, p2}, Lqv;->a(Ljava/util/List;Z)V
-
-    .line 60
-    return-void
-.end method
-
-.method protected final b(Ljava/util/List;Z)V
-    .locals 0
-    .param p1    # Ljava/util/List;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lqv;",
-            ">;Z)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 65
-    invoke-super {p0, p1, p2}, Lqv;->b(Ljava/util/List;Z)V
-
-    .line 66
-    return-void
-.end method
-
-.method public final c()Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
-    .locals 1
-
-    .prologue
-    .line 76
-    sget-object v0, Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;->SQ_RETRIEVE_RECEIVING_CASH_PAYMENT_BLOCKER:Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
-
-    return-object v0
 .end method

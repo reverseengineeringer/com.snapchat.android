@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 592
+    .line 589
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$20;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,17 +42,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 595
+    .line 592
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$20;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     iget-boolean v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->h:Z
 
     if-eqz v0, :cond_0
 
-    .line 600
+    .line 597
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$20;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->i(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Landroid/view/inputmethod/InputMethodManager;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->h(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 602
+    .line 599
     :cond_0
     return v2
 .end method

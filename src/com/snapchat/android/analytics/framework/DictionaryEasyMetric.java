@@ -2,9 +2,9 @@ package com.snapchat.android.analytics.framework;
 
 import android.os.SystemClock;
 import android.util.Pair;
-import aud;
-import bgk;
-import bgl;
+import avb;
+import bhk;
+import bhl;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,17 +16,17 @@ public class DictionaryEasyMetric
   public final Map<String, Map<String, Object>> c = new HashMap();
   public final Map<String, Map<String, Object>> d = new HashMap();
   public final Object e = new Object();
-  private final bgk f;
+  private final bhk f;
   private final EasyMetric.EasyMetricFactory g;
   
   protected DictionaryEasyMetric()
   {
-    this(bglmClock, new EasyMetric.EasyMetricFactory());
+    this(bhlmClock, new EasyMetric.EasyMetricFactory());
   }
   
-  private DictionaryEasyMetric(bgk parambgk, EasyMetric.EasyMetricFactory paramEasyMetricFactory)
+  private DictionaryEasyMetric(bhk parambhk, EasyMetric.EasyMetricFactory paramEasyMetricFactory)
   {
-    f = parambgk;
+    f = parambhk;
     g = paramEasyMetricFactory;
   }
   
@@ -35,7 +35,7 @@ public class DictionaryEasyMetric
     return h;
   }
   
-  private void d(String paramString)
+  private void c(String paramString)
   {
     if (a.containsKey(paramString)) {
       a.remove(paramString);
@@ -71,7 +71,7 @@ public class DictionaryEasyMetric
   {
     synchronized (e)
     {
-      d(paramString);
+      c(paramString);
       return;
     }
   }
@@ -99,7 +99,7 @@ public class DictionaryEasyMetric
       EasyMetric localEasyMetric = EasyMetric.EasyMetricFactory.a(paramString);
       if (a.containsKey(paramString))
       {
-        localEasyMetric.a(SystemClock.elapsedRealtime() - aud.a((Long)a.get(paramString)));
+        localEasyMetric.a(SystemClock.elapsedRealtime() - avb.a((Long)a.get(paramString)));
         Object localObject2 = new EasyMetric.MemoryStats();
         localObject2 = new Pair((EasyMetric.MemoryStats)b.get(paramString), localObject2);
         localEasyMetric.a((EasyMetric.MemoryStats)first, (EasyMetric.MemoryStats)second);
@@ -111,17 +111,8 @@ public class DictionaryEasyMetric
         }
         localEasyMetric.a(false);
       }
-      d(paramString);
+      c(paramString);
       return;
-    }
-  }
-  
-  public final boolean c(String paramString)
-  {
-    synchronized (e)
-    {
-      boolean bool = a.containsKey(paramString);
-      return bool;
     }
   }
 }

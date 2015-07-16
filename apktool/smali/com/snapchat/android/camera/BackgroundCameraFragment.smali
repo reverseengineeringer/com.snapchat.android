@@ -23,11 +23,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/camera/BackgroundCameraFragment;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/camera/BackgroundCameraFragment;)V
 
     .line 28
     return-void
@@ -40,7 +40,7 @@
 
     .prologue
     .line 39
-    const v0, 0x7f040008
+    const v0, 0x7f040009
 
     return v0
 .end method
@@ -50,13 +50,13 @@
 
     .prologue
     .line 44
-    new-instance v0, Lvo;
+    new-instance v0, Lwk;
 
     invoke-virtual {p0}, Lcom/snapchat/android/camera/BackgroundCameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p1}, Lvo;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;)V
+    invoke-direct {v0, v1, p1}, Lwk;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;)V
 
     return-object v0
 .end method
@@ -68,9 +68,9 @@
     .line 55
     iget-object v0, p0, Lcom/snapchat/android/camera/BackgroundCameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
-    check-cast v0, Lvo;
+    check-cast v0, Lwk;
 
-    iget-object v0, v0, Lvo;->b:Landroid/widget/RelativeLayout;
+    iget-object v0, v0, Lwk;->b:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/RelativeLayout;->setBackgroundColor(I)V
 

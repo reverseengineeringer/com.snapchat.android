@@ -1,34 +1,12 @@
-import javax.inject.Inject;
+import com.snapchat.android.ui.swipefilters.FilterPageType;
 
-public final class atb
+@awj
+public abstract class atb
+  extends asm
 {
-  public static final int MAX_CARD_LENGTH_WITHOUT_SPACES = 16;
-  
-  public static boolean a(String paramString)
+  public final FilterPageType b()
   {
-    if (paramString.length() != 16) {
-      return false;
-    }
-    int j = paramString.length() - 1;
-    int i = 0;
-    if (j >= 0)
-    {
-      int k = Character.getNumericValue(paramString.charAt(j));
-      if (j % 2 == 0)
-      {
-        int m = k * 2;
-        k = m;
-        if (m > 9) {
-          k = m % 10 + m / 10;
-        }
-      }
-      for (i = k + i;; i = k + i)
-      {
-        j -= 1;
-        break;
-      }
-    }
-    return i % 10 == 0;
+    return FilterPageType.INFOFILTER;
   }
 }
 

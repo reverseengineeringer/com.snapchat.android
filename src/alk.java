@@ -1,102 +1,50 @@
-import android.net.NetworkInfo;
-import com.snapchat.android.Timber;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.chat.ChatConversation;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import javax.inject.Provider;
 
 public final class alk
+  implements vr
 {
-  public static final Provider<alk> a = new Provider() {};
-  public final ExecutorService b;
-  private final ale c;
-  private final pk d;
+  private final vq mConversationFeedItemProvider;
+  private final List<vp> mConversations = new ArrayList();
+  private final Provider<akp> mUserProvider;
   
-  public alk()
+  public alk(vq paramvq, Provider<akp> paramProvider)
   {
-    this(new pk(), Executors.newSingleThreadExecutor(all.a()), ale.a());
+    mConversationFeedItemProvider = paramvq;
+    mUserProvider = paramProvider;
+    c();
   }
   
-  private alk(pk parampk, ExecutorService paramExecutorService, ale paramale)
+  public final List<vp> a()
   {
-    c = paramale;
-    d = parampk;
-    b = paramExecutorService;
+    return mConversations;
   }
   
-  @avl
-  protected final uc a(alc paramalc, bfl parambfl)
+  public final void b() {}
+  
+  public final void c()
   {
-    Object localObject1 = c.b();
-    String str;
-    if (localObject1 != null)
+    mConversations.clear();
+    mConversations.addAll(mConversationFeedItemProvider.a());
+    Iterator localIterator = ((akp)mUserProvider.get()).l().iterator();
+    label115:
+    while (localIterator.hasNext())
     {
-      str = ((NetworkInfo)localObject1).getTypeName();
-      if ((localObject1 != null) && (((NetworkInfo)localObject1).getType() != 1)) {
-        break label84;
-      }
-    }
-    label84:
-    for (int i = 1;; i = 0)
-    {
-      if (ajx.m()) {
-        break label89;
-      }
-      parambfl = new IllegalStateException("Attempting to download media when user is logged out");
-      paramalc = new uc.a(d, str);
-      mCaughtException = parambfl;
-      return paramalc.a();
-      str = "Unknown";
-      break;
-    }
-    label89:
-    if ((i == 0) && (a))
-    {
-      parambfl = new alf("Operation only allowed on wifi");
-      paramalc = new uc.a(d, str);
-      mCaughtException = parambfl;
-      return paramalc.a();
-    }
-    Object localObject2;
-    if (i != null)
-    {
-      i = 1;
-      if (i == 0) {
-        break label199;
-      }
-      localObject1 = d;
-      localObject2 = i;
-      if (localObject2 != null) {
-        break label183;
-      }
-      parambfl = pk.a((String)localObject1, parambfl);
-    }
-    for (;;)
-    {
-      try
+      Friend localFriend = (Friend)localIterator.next();
+      if (zi.b(localFriend.l()) != null) {}
+      for (int i = 1;; i = 0)
       {
-        parambfl = parambfl.i();
-        return parambfl;
+        if (i != 0) {
+          break label115;
+        }
+        mConversations.add(new ChatConversation(akr.l(), localFriend.l(), true));
+        break;
       }
-      catch (Exception parambfl)
-      {
-        label183:
-        label199:
-        Timber.f("DownloadExecutor", "DOWNLOAD-MANAGER: Exception caught executing download request %s: %s", new Object[] { paramalc, parambfl });
-        paramalc = new uc.a(d, str);
-        mCaughtException = parambfl;
-      }
-      i = 0;
-      break;
-      parambfl = new px((String)localObject1, parambfl, localObject2);
-      continue;
-      parambfl = pk.a(d, parambfl);
     }
-    return paramalc.a();
-  }
-  
-  public static abstract interface a
-  {
-    public abstract void a(@cgb alk paramalk, @cgb alc paramalc, @cgb bfl parambfl, @cgc uc paramuc, @cgc Object paramObject);
   }
 }
 

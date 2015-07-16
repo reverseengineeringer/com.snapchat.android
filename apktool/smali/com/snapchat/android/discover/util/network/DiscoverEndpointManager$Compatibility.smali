@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 37
+    .line 40
     new-instance v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     const-string v1, "SUPPORTED"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->SUPPORTED:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    .line 41
+    .line 44
     new-instance v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     const-string v1, "NOT_SUPPORTED"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->NOT_SUPPORTED:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    .line 45
+    .line 48
     new-instance v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     const-string v1, "REGION_NOT_SUPPORTED"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->REGION_NOT_SUPPORTED:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    .line 49
+    .line 52
     new-instance v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     const-string v1, "DEVICE_NOT_SUPPORTED"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->DEVICE_NOT_SUPPORTED:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    .line 53
+    .line 56
     new-instance v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     const-string v1, "UNKNOWN"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->UNKNOWN:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    .line 33
+    .line 36
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
@@ -136,24 +136,24 @@
     .end annotation
 
     .prologue
-    .line 33
+    .line 36
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
 .method public static fromString(Ljava/lang/String;)Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
-    .locals 4
+    .locals 2
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 59
+    .line 62
     if-eqz p0, :cond_0
 
-    .line 61
+    .line 64
     :try_start_0
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -167,29 +167,23 @@
 
     move-result-object v0
 
-    .line 66
+    .line 69
     :goto_0
     return-object v0
 
-    .line 63
+    .line 66
     :catch_0
     move-exception v0
 
-    const-string v0, "DiscoverEndpointManager"
+    const/4 v0, 0x1
 
-    const-string v1, "Unknown compatibility value %s"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    const/4 v1, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    aput-object p0, v0, v1
 
-    const/4 v3, 0x0
-
-    aput-object p0, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 66
+    .line 69
     :cond_0
     sget-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->NOT_SUPPORTED:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
@@ -200,7 +194,7 @@
     .locals 1
 
     .prologue
-    .line 33
+    .line 36
     const-class v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -216,7 +210,7 @@
     .locals 1
 
     .prologue
-    .line 33
+    .line 36
     sget-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->$VALUES:[Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->clone()Ljava/lang/Object;

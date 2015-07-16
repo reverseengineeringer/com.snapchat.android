@@ -1,18 +1,18 @@
 package com.snapchat.android.preview;
 
-import aex;
-import aho;
-import aho.1;
-import ahs;
-import aim;
-import ajc;
-import ajj.a;
-import ajk;
-import ajl;
-import ajm;
-import ajq;
-import ajv;
-import ajx;
+import afx;
+import aik;
+import aik.1;
+import aio;
+import aji;
+import ajy;
+import akf.a;
+import akg;
+import akh;
+import akk;
+import akp;
+import akr;
+import aku;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.AnimatorSet.Builder;
@@ -54,47 +54,46 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
-import anh;
-import anh.a;
-import apg.a;
-import api;
-import aqb;
-import arn;
-import asv;
-import aur;
-import aut;
-import avh;
-import avl;
-import avq;
-import awx;
-import axc;
-import ban;
-import bap;
-import bas;
-import baw;
-import bba;
-import bbc;
-import bbh;
-import bbi;
-import bcl;
-import bco;
-import bcz;
-import bdj;
-import bdn;
-import bdt;
-import bel;
-import ber;
-import bfj;
-import bgb;
-import bgf;
-import bgp;
-import bgr;
-import bgr.a;
-import bgt;
-import boh;
-import cgb;
+import aoe;
+import aoe.a;
+import aqc.a;
+import aqe;
+import ara;
+import asm;
+import atu;
+import avp;
+import avr;
+import awf;
+import awj;
+import awo;
+import axv;
+import aya;
+import bbo;
+import bbq;
+import bbt;
+import bbx;
+import bcb;
+import bcc;
+import bch;
+import bci;
+import bdl;
+import bdo;
+import bdz;
+import bej;
+import ben;
+import bet;
+import bfk;
+import bfq;
+import bgj;
+import bhb;
+import bhf;
+import bhp;
+import bhr;
+import bhr.a;
+import bht;
+import bpi;
+import chc;
 import com.snapchat.android.LandingPageActivity;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.CameraEventAnalytics;
 import com.snapchat.android.analytics.CameraEventAnalytics.CameraContext;
@@ -102,6 +101,7 @@ import com.snapchat.android.analytics.CameraEventAnalytics.SaveSnapContext;
 import com.snapchat.android.analytics.NetworkAnalytics;
 import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.MediaMailingMetadata;
@@ -138,96 +138,96 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import net.simonvt.numberpicker.SnapchatTimePicker;
 import net.simonvt.numberpicker.SnapchatTimePicker.e;
-import no;
-import np;
-import oj;
-import wz;
-import ys;
-import yt;
+import of;
+import og;
+import pa;
+import xu;
+import zo;
+import zp;
 
-@avl
+@awj
 public class SnapPreviewFragment
   extends SnapchatFragment
-  implements anh.a, apg.a, SnapEditorView.b, SwipeImageView.a
+  implements aoe.a, aqc.a, SnapEditorView.b, SwipeImageView.a
 {
   private View A;
   private int B;
-  private bgr<View> C;
+  private bhr<View> C;
   private CheckBox D;
-  private bgr<View> E;
-  private bgr<View> F;
+  private bhr<View> E;
+  private bhr<View> F;
   private InChatSnapEvent G;
   private QuickSnapEvent H;
   private ImageButton I;
   private boolean J = false;
-  private LinkedHashSet<ajc> K = new LinkedHashSet();
-  private bgr<View> L;
-  private bgr<SendToBottomPanelView> M;
+  private LinkedHashSet<ajy> K = new LinkedHashSet();
+  private bhr<View> L;
+  private bhr<SendToBottomPanelView> M;
   private DictionaryEasyMetric N;
-  private final oj O;
-  private final aho P;
-  private ajv Q;
+  private final pa O;
+  private final aik P;
+  private akp Q;
   private SnapEditorView.a R;
-  private final yt S;
-  private final ys T;
-  private final no U;
+  private final zp S;
+  private final zo T;
+  private final of U;
   private final NetworkAnalytics V;
-  private final wz W;
-  private final bfj X;
-  private final ahs Y;
+  private final xu W;
+  private final bgj X;
+  private final aio Y;
   private final Bus Z;
-  public aim a;
-  private final avq aa;
+  public aji a;
+  private final awo aa;
   private boolean ab = false;
   private Handler ac = new Handler();
   private a ad;
   private long ae = -1L;
   public SnapEditorView b;
-  protected anh c;
-  public bcz d;
-  public aex e;
-  public final bgt f;
+  protected aoe c;
+  public bdz d;
+  public afx e;
+  public final bht f;
   private CanvasViewBase g;
   private TextView h;
   private ImageButton i;
-  private bgr<View> j;
+  private bhr<View> j;
   private boolean k = false;
   private boolean l = false;
   private Button m;
-  private bgr<ImageButton> n;
-  private bgr<View> o;
-  private bgr<View> p;
-  private bgr<ImageButton> q;
+  private bhr<ImageButton> n;
+  private bhr<View> o;
+  private bhr<View> p;
+  private bhr<ImageButton> q;
   private View r;
   private ImageButton s;
   private ImageButton t;
-  private asv u;
+  private atu u;
   private int v;
   private SharedPreferences w;
-  private bgr<SnapchatTimePicker> x;
+  private bhr<SnapchatTimePicker> x;
   private View y;
-  private bgr<RelativeLayout> z;
+  private bhr<RelativeLayout> z;
   
   public SnapPreviewFragment()
   {
-    this(new yt(), new ys(), no.a(), NetworkAnalytics.a(), new oj(), wz.a(), new bfj(), aho.a(), new bgt(), ban.a(), ahs.c(), avq.a());
+    this(new zp(), new zo(), of.a(), NetworkAnalytics.a(), new pa(), xu.a(), new bgj(), aik.a(), new bht(), bbo.a(), aio.c(), awo.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private SnapPreviewFragment(yt paramyt, ys paramys, no paramno, NetworkAnalytics paramNetworkAnalytics, oj paramoj, wz paramwz, bfj parambfj, aho paramaho, bgt parambgt, Bus paramBus, ahs paramahs, avq paramavq)
+  private SnapPreviewFragment(zp paramzp, zo paramzo, of paramof, NetworkAnalytics paramNetworkAnalytics, pa parampa, xu paramxu, bgj parambgj, aik paramaik, bht parambht, Bus paramBus, aio paramaio, awo paramawo)
   {
-    S = paramyt;
-    T = paramys;
-    U = paramno;
+    S = paramzp;
+    T = paramzo;
+    U = paramof;
     V = paramNetworkAnalytics;
-    O = paramoj;
-    W = paramwz;
-    X = parambfj;
-    P = paramaho;
-    f = parambgt;
+    O = parampa;
+    W = paramxu;
+    X = parambgj;
+    P = paramaik;
+    f = parambht;
     Z = paramBus;
-    Y = paramahs;
-    aa = paramavq;
+    Y = paramaio;
+    aa = paramawo;
   }
   
   private void A()
@@ -237,7 +237,7 @@ public class SnapPreviewFragment
     String str2 = "";
     for (String str1 = ""; localIterator.hasNext(); str1 = ", ")
     {
-      ajc localajc = (ajc)localIterator.next();
+      ajy localajy = (ajy)localIterator.next();
       str2 = str2 + str1 + mDisplayName;
     }
     ((SendToBottomPanelView)M.a()).setText(str2);
@@ -247,7 +247,7 @@ public class SnapPreviewFragment
   {
     RelativeLayout.LayoutParams localLayoutParams = (RelativeLayout.LayoutParams)r.getLayoutParams();
     localLayoutParams.addRule(12, 0);
-    localLayoutParams.addRule(2, 2131362615);
+    localLayoutParams.addRule(2, 2131362614);
     r.setLayoutParams(localLayoutParams);
     M.a(0);
     ((SendToBottomPanelView)M.a()).setAlpha(1.0F);
@@ -307,7 +307,7 @@ public class SnapPreviewFragment
     if (paramBoolean)
     {
       i1 = 0;
-      ((bgr)localObject).a(i1);
+      ((bhr)localObject).a(i1);
       localObject = i;
       if (!paramBoolean) {
         break label137;
@@ -382,7 +382,7 @@ public class SnapPreviewFragment
       ((ImageButton)localObject).setAlpha(f1);
       localObject = u;
       if (!paramBoolean) {
-        ((asv)localObject).a(1.0F);
+        ((atu)localObject).a(1.0F);
       }
       mBounceEnabled = paramBoolean;
       return;
@@ -406,9 +406,9 @@ public class SnapPreviewFragment
   
   private void u()
   {
-    ajl localajl = a.mPreviewConfiguration;
-    if ((localajl != null) && (mShouldHideSystemUi)) {
-      Z.a(new bdt(false));
+    akh localakh = a.mPreviewConfiguration;
+    if ((localakh != null) && (mShouldHideSystemUi)) {
+      Z.a(new bet(false));
     }
   }
   
@@ -425,20 +425,20 @@ public class SnapPreviewFragment
           if (!n()) {
             return;
           }
-          SnapPreviewFragment.u(SnapPreviewFragment.this).a("SNAP_SENT_DELAY", imClientId, "preview_screen");
+          SnapPreviewFragment.v(SnapPreviewFragment.this).a("SNAP_SENT_DELAY", imClientId, "preview_screen");
           paramAnonymousView = imMediaMailingMetadata;
           if (!paramAnonymousView.d().isEmpty())
           {
-            SnapPreviewFragment.a(SnapPreviewFragment.this, ajv.a(getActivity()));
-            SnapPreviewFragment.v(SnapPreviewFragment.this).e();
+            SnapPreviewFragment.a(SnapPreviewFragment.this, akp.a(getActivity()));
+            SnapPreviewFragment.w(SnapPreviewFragment.this).e();
           }
-          aim localaim;
+          aji localaji;
           if (imSnapType == Mediabryo.SnapType.SNAP)
           {
-            paramAnonymousView = (ajk)paramAnonymousView;
+            paramAnonymousView = (akg)paramAnonymousView;
             if (!mPostToStories.isEmpty())
             {
-              localaim = SnapPreviewFragment.i(SnapPreviewFragment.this);
+              localaji = SnapPreviewFragment.i(SnapPreviewFragment.this);
               if (paramAnonymousView.d().isEmpty()) {
                 break label222;
               }
@@ -447,11 +447,11 @@ public class SnapPreviewFragment
           label222:
           for (boolean bool = true;; bool = false)
           {
-            AnalyticsEvents.a(localaim, true, bool, "SEND_TO_SCREEN");
-            SnapPreviewFragment.w(SnapPreviewFragment.this).a(new bap(CameraDisplayState.SHOW));
-            SnapPreviewFragment.w(SnapPreviewFragment.this).a(new bba());
-            SnapPreviewFragment.w(SnapPreviewFragment.this).a(new bdn(SnapPreviewFragment.i(SnapPreviewFragment.this)));
-            ((SendToBottomPanelView)SnapPreviewFragment.x(SnapPreviewFragment.this).a()).setSendButtonOnClickListener(null);
+            AnalyticsEvents.a(localaji, true, bool, "SEND_TO_SCREEN");
+            SnapPreviewFragment.x(SnapPreviewFragment.this).a(new bbq(CameraDisplayState.SHOW));
+            SnapPreviewFragment.x(SnapPreviewFragment.this).a(new bcb());
+            SnapPreviewFragment.x(SnapPreviewFragment.this).a(new ben(SnapPreviewFragment.i(SnapPreviewFragment.this)));
+            ((SendToBottomPanelView)SnapPreviewFragment.y(SnapPreviewFragment.this).a()).setSendButtonOnClickListener(null);
             return;
           }
         }
@@ -479,7 +479,7 @@ public class SnapPreviewFragment
           if (!localIterator.hasNext()) {
             break;
           }
-          localObject1 = (ajc)localIterator.next();
+          localObject1 = (ajy)localIterator.next();
           localObject4 = (String)localObject4 + (String)localObject3 + mDisplayName;
           localObject3 = ", ";
         }
@@ -491,9 +491,9 @@ public class SnapPreviewFragment
             if (!n()) {
               return;
             }
-            SnapPreviewFragment.w(SnapPreviewFragment.this).a(new bdn(SnapPreviewFragment.i(SnapPreviewFragment.this), true));
-            new EasyMetric("TAP_RECIPIENTS_IN_PREVIEW").d();
-            ((SendToBottomPanelView)SnapPreviewFragment.x(SnapPreviewFragment.this).a()).setOnClickListener(null);
+            SnapPreviewFragment.x(SnapPreviewFragment.this).a(new ben(SnapPreviewFragment.i(SnapPreviewFragment.this), true));
+            new EasyMetric("TAP_RECIPIENTS_IN_PREVIEW").e();
+            ((SendToBottomPanelView)SnapPreviewFragment.y(SnapPreviewFragment.this).a()).setOnClickListener(null);
           }
         });
       }
@@ -501,7 +501,7 @@ public class SnapPreviewFragment
       while (((Iterator)localObject3).hasNext())
       {
         localObject4 = (Friend)((Iterator)localObject3).next();
-        localObject2 = (String)localObject2 + (String)localObject1 + ((Friend)localObject4).k();
+        localObject2 = (String)localObject2 + (String)localObject1 + ((Friend)localObject4).e();
         localObject1 = ", ";
       }
       ((SendToBottomPanelView)M.a()).setText((String)localObject2);
@@ -512,7 +512,7 @@ public class SnapPreviewFragment
         localObject1 = (SendToBottomPanelView)M.a();
         if ((c == null) || (!c.isStarted()))
         {
-          f1 = avh.a(b) / 2.0F;
+          f1 = awf.a(b) / 2.0F;
           localObject2 = ObjectAnimator.ofFloat(a, "translationY", new float[] { -1.0F * f1 });
           ((ObjectAnimator)localObject2).setDuration(200L);
           ((ObjectAnimator)localObject2).addListener(new SendToBottomPanelView.1((SendToBottomPanelView)localObject1));
@@ -540,7 +540,7 @@ public class SnapPreviewFragment
     }
     z();
     C();
-    if (aut.a(a)) {
+    if (avr.a(a)) {
       y.setVisibility(4);
     }
     for (;;)
@@ -557,7 +557,7 @@ public class SnapPreviewFragment
   {
     if (getActivity() != null)
     {
-      Window localWindow = H();
+      Window localWindow = J();
       if (localWindow != null)
       {
         WindowManager.LayoutParams localLayoutParams = localWindow.getAttributes();
@@ -569,21 +569,21 @@ public class SnapPreviewFragment
   
   private void x()
   {
-    Z.a(new bel(TitleBarManager.Visibility.HIDDEN));
+    Z.a(new bfk(TitleBarManager.Visibility.HIDDEN));
     int i1;
     label299:
     boolean bool;
     label316:
     label336:
-    no localno;
+    of localof;
     EasyMetric localEasyMetric;
-    if (aut.a(a))
+    if (avr.a(a))
     {
       y.setVisibility(4);
       h.setVisibility(8);
       D.setVisibility(0);
       if (getUserVisibleHint()) {
-        Z.a(new baw(1));
+        Z.a(new bbx(1));
       }
       s.setOnClickListener(new View.OnClickListener()
       {
@@ -605,7 +605,7 @@ public class SnapPreviewFragment
           SnapPreviewFragment.c(SnapPreviewFragment.this).a(true);
         }
       });
-      o.a(new bgr.a()
+      o.a(new bhr.a()
       {
         public final void a(View paramAnonymousView)
         {
@@ -641,7 +641,7 @@ public class SnapPreviewFragment
           imMediaMailingMetadata.mSavedInGallery = true;
         }
       });
-      z.a(new bgr.a()
+      z.a(new bhr.a()
       {
         public final void a(View paramAnonymousView)
         {
@@ -661,23 +661,23 @@ public class SnapPreviewFragment
           }
         }
       });
-      L.a(new bgr.a()
+      L.a(new bhr.a()
       {
         public final void a(View paramAnonymousView)
         {
-          ((ListView)paramAnonymousView.findViewById(2131362727)).setAdapter(c);
+          ((ListView)paramAnonymousView.findViewById(2131362726)).setAdapter(c);
         }
       });
       A.setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
         {
-          if (ajx.J())
+          if (akr.J())
           {
             SnapPreviewFragment.n(SnapPreviewFragment.this).show();
             return;
           }
-          if (ajq.a().d().size() > 1)
+          if (akk.a().d().size() > 1)
           {
             SnapPreviewFragment.o(SnapPreviewFragment.this);
             return;
@@ -693,10 +693,12 @@ public class SnapPreviewFragment
       {
         public final void onClick(View paramAnonymousView)
         {
-          if (!SnapPreviewFragment.q(SnapPreviewFragment.this)) {
-            SnapPreviewFragment.r(SnapPreviewFragment.this);
+          if (!SnapPreviewFragment.q(SnapPreviewFragment.this))
+          {
+            rmPrepareSnapMetric = EasyMetric.EasyMetricFactory.b("PREPARE_SNAP").b();
+            SnapPreviewFragment.s(SnapPreviewFragment.this);
           }
-          SnapPreviewFragment.s(SnapPreviewFragment.this);
+          SnapPreviewFragment.t(SnapPreviewFragment.this);
         }
       });
       D.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
@@ -712,7 +714,7 @@ public class SnapPreviewFragment
           }
         }
       });
-      b.getCaptionView().setIsVideoSnap(aut.a(a));
+      b.getCaptionView().setIsVideoSnap(avr.a(a));
       if (R != null) {
         break label541;
       }
@@ -741,9 +743,9 @@ public class SnapPreviewFragment
         s.setVisibility(8);
       }
       g.a(v);
-      v = avh.d(getActivity());
-      localno = U;
-      bool = avh.b(v);
+      v = awf.d(getActivity());
+      localof = U;
+      bool = awf.b(v);
       if (mSnapCaptureMetric != null)
       {
         localEasyMetric = mSnapCaptureMetric;
@@ -760,11 +762,11 @@ public class SnapPreviewFragment
     {
       localEasyMetric.a("orientation", localObject).b(false);
       mSnapCaptureMetric = null;
-      localno.b();
+      localof.b();
       O.a = a.h();
       return;
       if ((getUserVisibleHint()) && (a.mSnapType != Mediabryo.SnapType.DISCOVER)) {
-        Z.a(new baw(-1));
+        Z.a(new bbx(-1));
       }
       t();
       break;
@@ -792,22 +794,22 @@ public class SnapPreviewFragment
     }
   }
   
-  public final void a(ajc paramajc, boolean paramBoolean)
+  public final void a(ajy paramajy, boolean paramBoolean)
   {
     if (paramBoolean) {
-      K.add(paramajc);
+      K.add(paramajy);
     }
     for (;;)
     {
       A();
       return;
-      K.remove(paramajc);
+      K.remove(paramajy);
     }
   }
   
   public final void a(SwipeImageView paramSwipeImageView)
   {
-    if (ajx.ab()) {}
+    if (akr.aa()) {}
     FilterPageType localFilterPageType2;
     do
     {
@@ -827,16 +829,16 @@ public class SnapPreviewFragment
   
   public final void a(SwipeImageView paramSwipeImageView, boolean paramBoolean)
   {
-    bgp.b(new aho.1(P));
+    bhp.b(new aik.1(P));
     if (paramBoolean)
     {
       if (!F.c()) {
         break label48;
       }
       F.a(8);
-      ajx.i(true);
+      akr.i(true);
     }
-    while (ajx.ab())
+    while (akr.aa())
     {
       return;
       label48:
@@ -860,9 +862,9 @@ public class SnapPreviewFragment
     a(1.0F);
   }
   
-  public final boolean a(ajc paramajc)
+  public final boolean a(ajy paramajy)
   {
-    return K.contains(paramajc);
+    return K.contains(paramajy);
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
@@ -877,7 +879,7 @@ public class SnapPreviewFragment
     Y.b();
     w();
     J = false;
-    if ((v != avh.d(getActivity())) || (R != null)) {
+    if ((v != awf.d(getActivity())) || (R != null)) {
       x();
     }
     if (a != null)
@@ -886,12 +888,12 @@ public class SnapPreviewFragment
       t();
       a.f();
     }
-    Z.a(new bel(TitleBarManager.Visibility.HIDDEN));
+    Z.a(new bfk(TitleBarManager.Visibility.HIDDEN));
     SnapEditorView localSnapEditorView;
     boolean bool;
-    if ((a != null) && (aut.a(a)))
+    if ((a != null) && (avr.a(a)))
     {
-      b.a((ajm)a);
+      b.a((aku)a);
       localSnapEditorView = b;
       if (!D.isChecked())
       {
@@ -907,9 +909,14 @@ public class SnapPreviewFragment
       bool = false;
       break;
       if (a.mSnapType != Mediabryo.SnapType.DISCOVER) {
-        Z.a(new baw(-1));
+        Z.a(new bbx(-1));
       }
     }
+  }
+  
+  public final boolean f_()
+  {
+    return true;
   }
   
   public final boolean g()
@@ -936,7 +943,7 @@ public class SnapPreviewFragment
     }
     if (g.c())
     {
-      new aqb(getActivity(), getString(2131492920))
+      new ara(getActivity(), getString(2131492920))
       {
         protected final void a()
         {
@@ -951,17 +958,17 @@ public class SnapPreviewFragment
       }.show();
       return true;
     }
-    if ((a != null) && (aut.a(a)) && (e == null)) {
+    if ((a != null) && (avr.a(a)) && (e == null)) {
       CameraEventAnalytics.a().a(CameraEventAnalytics.CameraContext.CANCEL_PREVIEW);
     }
     if ((a == null) || (e != null)) {}
     for (;;)
     {
-      Z.a(new bap(CameraDisplayState.SHOW));
+      Z.a(new bbq(CameraDisplayState.SHOW));
       if (H == null) {
         break;
       }
-      Z.a(new bas());
+      Z.a(new bbt());
       return true;
       if (a.mSnapType == Mediabryo.SnapType.DISCOVER)
       {
@@ -970,23 +977,18 @@ public class SnapPreviewFragment
       else
       {
         localObject = S;
-        aim localaim = a;
-        b.b(localaim);
-        if ((localaim instanceof ajm))
+        aji localaji = a;
+        b.b(localaji);
+        if ((localaji instanceof aku))
         {
-          localObject = ((ajm)localaim).n();
+          localObject = ((aku)localaji).n();
           if (localObject != null) {
-            axc.a((String)localObject);
+            aya.a((String)localObject);
           }
         }
       }
     }
     return false;
-  }
-  
-  public final boolean g_()
-  {
-    return true;
   }
   
   public final void i()
@@ -995,7 +997,7 @@ public class SnapPreviewFragment
     x();
   }
   
-  public final boolean l_()
+  public final boolean j_()
   {
     return true;
   }
@@ -1020,10 +1022,10 @@ public class SnapPreviewFragment
     Object localObject2;
     FragmentShader.Filter localFilter;
     int i1;
-    ajm localajm;
+    aku localaku;
     Bitmap localBitmap1;
-    label293:
-    label299:
+    label280:
+    label286:
     do
     {
       do
@@ -1035,10 +1037,10 @@ public class SnapPreviewFragment
           localObject1 = getActivity();
           localObject2 = b.b.getCurrentPage();
           if (localObject2 != null) {
-            ((arn)localObject2).i();
+            ((asm)localObject2).i();
           }
           localObject1 = b.b((Context)localObject1);
-          if (!aut.a(a)) {
+          if (!avr.a(a)) {
             break;
           }
           b.c();
@@ -1056,29 +1058,28 @@ public class SnapPreviewFragment
         i1 = (int)(X.a(a.mVideoUri.getPath()) / 1000.0D);
         a.mTimerValueOrDuration = i1;
       }
-      if (!(a instanceof ajm)) {
-        break label665;
+      if (!(a instanceof aku)) {
+        break label640;
       }
-      localajm = (ajm)a;
+      localaku = (aku)a;
       if (a.mSnapType != Mediabryo.SnapType.DISCOVER) {
-        break label649;
+        break label624;
       }
       localBitmap1 = mFirstFrameBitmap;
       if (localBitmap1 != null) {
         break;
       }
-      Timber.f("SnapPreviewFragment", "Videobryo has no first frame bitmap.", new Object[0]);
       if (ReleaseManager.f()) {
         throw new IllegalArgumentException("Videobryo has no first frame bitmap.");
       }
       i1 = 0;
       if (i1 != 0) {
-        break label649;
+        break label624;
       }
       i1 = 0;
       bool1 = bool2;
     } while (i1 == 0);
-    label306:
+    label293:
     if (!b.getCaptionView().i()) {
       a.mCaptionText = b.getCaptionView().getText();
     }
@@ -1105,13 +1106,12 @@ public class SnapPreviewFragment
         localObject2 = aa.a(i2, i1, Bitmap.Config.ARGB_8888);
         localObject1 = localObject2;
         if (localObject2 == null) {
-          localObject1 = aur.a(i2, i1, Bitmap.Config.ARGB_8888);
+          localObject1 = avp.a(i2, i1, Bitmap.Config.ARGB_8888);
         }
         if (localObject1 != null) {
-          break label596;
+          break label571;
         }
         localObject1 = String.format("Failed to create bitmap for raw image (width=%d, height=%d)", new Object[] { Integer.valueOf(i2), Integer.valueOf(i1) });
-        Timber.f("SnapPreviewFragment", (String)localObject1, new Object[0]);
         if (!ReleaseManager.f()) {
           break;
         }
@@ -1119,8 +1119,8 @@ public class SnapPreviewFragment
         i2 = localBitmap2.getWidth();
       }
       i1 = 0;
-      break label293;
-      label596:
+      break label280;
+      label571:
       localObject2 = new Canvas((Bitmap)localObject1);
       if (localBitmap1 != null) {
         ((Canvas)localObject2).drawBitmap(localBitmap1, 0.0F, 0.0F, null);
@@ -1130,13 +1130,13 @@ public class SnapPreviewFragment
       }
       mRawImageBitmap = ((Bitmap)localObject1);
       i1 = 1;
-      break label293;
-      label649:
+      break label280;
+      label624:
       mShaderFilter = localFilter;
-      W.a(localajm);
-      label665:
+      W.a(localaku);
+      label640:
       i1 = 1;
-      break label299;
+      break label286;
       bool1 = bool2;
       if (localObject1 == null) {
         break;
@@ -1146,7 +1146,7 @@ public class SnapPreviewFragment
       }
       a.a((Bitmap)localObject1);
       a.mTimerValueOrDuration = B;
-      break label306;
+      break label293;
     }
   }
   
@@ -1165,42 +1165,42 @@ public class SnapPreviewFragment
     if (paramBundle != null) {
       w = PreferenceManager.getDefaultSharedPreferences(paramBundle);
     }
-    s = ((ImageButton)c(2131362273));
-    m = ((Button)c(2131362275));
-    i = ((ImageButton)c(2131362274));
-    t = ((ImageButton)c(2131362709));
-    p = new bgr(mFragmentLayout, 2131362713, 2131362722);
-    h = ((TextView)c(2131362715));
-    y = c(2131362714);
-    A = c(2131362716);
-    E = new bgr(mFragmentLayout, 2131362717, 2131362725);
-    F = new bgr(mFragmentLayout, 2131362718, 2131362728);
-    D = ((CheckBox)c(2131362277));
-    I = ((ImageButton)c(2131362278));
-    L = new bgr(mFragmentLayout, 2131362719, 2131362726);
-    M = new bgr(mFragmentLayout, 2131362720, 2131362615);
-    o = new bgr(mFragmentLayout, 2131362712, 2131362703);
-    j = new bgr(mFragmentLayout, 2131362712, 2131362704);
-    C = new bgr(mFragmentLayout, 2131362712, 2131362706);
-    n = new bgr(mFragmentLayout, 2131362712, 2131362705);
-    q = new bgr(mFragmentLayout, 2131362712, 2131362707);
-    s.setOnTouchListener(new asv(s));
-    i.setOnTouchListener(new asv(i));
-    y.setOnTouchListener(new asv(y));
-    u = new asv(t);
+    s = ((ImageButton)c(2131362271));
+    m = ((Button)c(2131362273));
+    i = ((ImageButton)c(2131362272));
+    t = ((ImageButton)c(2131362708));
+    p = new bhr(mFragmentLayout, 2131362712, 2131362721);
+    h = ((TextView)c(2131362714));
+    y = c(2131362713);
+    A = c(2131362715);
+    E = new bhr(mFragmentLayout, 2131362716, 2131362724);
+    F = new bhr(mFragmentLayout, 2131362717, 2131362727);
+    D = ((CheckBox)c(2131362275));
+    I = ((ImageButton)c(2131362276));
+    L = new bhr(mFragmentLayout, 2131362718, 2131362725);
+    M = new bhr(mFragmentLayout, 2131362719, 2131362614);
+    o = new bhr(mFragmentLayout, 2131362711, 2131362702);
+    j = new bhr(mFragmentLayout, 2131362711, 2131362703);
+    C = new bhr(mFragmentLayout, 2131362711, 2131362705);
+    n = new bhr(mFragmentLayout, 2131362711, 2131362704);
+    q = new bhr(mFragmentLayout, 2131362711, 2131362706);
+    s.setOnTouchListener(new atu(s));
+    i.setOnTouchListener(new atu(i));
+    y.setOnTouchListener(new atu(y));
+    u = new atu(t);
     t.setOnTouchListener(u);
-    A.setOnTouchListener(new asv(A));
-    D.setOnTouchListener(new asv(D));
-    I.setOnTouchListener(new asv(I));
-    if ((ajx.d() == 0) && (!ajx.M())) {
+    A.setOnTouchListener(new atu(A));
+    D.setOnTouchListener(new atu(D));
+    I.setOnTouchListener(new atu(I));
+    if ((akr.d() == 0) && (!akr.M())) {
       E.a(0);
     }
     for (;;)
     {
-      z = new bgr(mFragmentLayout, 2131362721, 2131362730);
-      x = new bgr(mFragmentLayout, 2131362721, 2131362731);
-      r = c(2131362276);
-      b = ((SnapEditorView)c(2131362702));
+      z = new bhr(mFragmentLayout, 2131362720, 2131362729);
+      x = new bhr(mFragmentLayout, 2131362720, 2131362730);
+      r = c(2131362274);
+      b = ((SnapEditorView)c(2131362701));
       b.a(paramBundle);
       b.setSnapPreviewRotationListener(this);
       b.setInterface(this);
@@ -1209,16 +1209,16 @@ public class SnapPreviewFragment
       g = b.getCanvasView();
       x();
       g.setColor(g.getColor());
-      c = new anh(getActivity(), ajq.a().d(), this);
+      c = new aoe(getActivity(), akk.a().d(), this);
       return;
-      if (!ajx.O()) {
+      if (!akr.O()) {
         y();
       }
     }
   }
   
-  @boh
-  public void onColorPickedEvent(bbc parambbc)
+  @bpi
+  public void onColorPickedEvent(bcc parambcc)
   {
     SnapCaptionView localSnapCaptionView = b.getCaptionView();
     if ((!(localSnapCaptionView instanceof FatCaptionView)) || (!localSnapCaptionView.g()))
@@ -1247,11 +1247,11 @@ public class SnapPreviewFragment
     if ((a == null) && ((paramBundle instanceof LandingPageActivity)))
     {
       paramBundle = ((LandingPageActivity)paramBundle).h();
-      if ((paramBundle == null) || (!(mMediabryo instanceof aim)))
+      if ((paramBundle == null) || (!(mMediabryo instanceof aji)))
       {
-        paramLayoutInflater = new ajj.a();
+        paramLayoutInflater = new akf.a();
         mSnapType = Mediabryo.SnapType.SNAP;
-        a = ((ajj.a)paramLayoutInflater).c();
+        a = ((akf.a)paramLayoutInflater).c();
         l = true;
         getActivity().onBackPressed();
         return mFragmentLayout;
@@ -1261,7 +1261,7 @@ public class SnapPreviewFragment
     if (a == null) {
       throw new NullPointerException();
     }
-    mFragmentLayout = paramLayoutInflater.inflate(2130968735, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968737, paramViewGroup, false);
     f.mView = mFragmentLayout;
     if ((a.h() == 0) && (a.mRawImageBitmap == null)) {
       f.a();
@@ -1277,9 +1277,9 @@ public class SnapPreviewFragment
       a.j();
       a = null;
     }
-    WindowManager.LayoutParams localLayoutParams = H().getAttributes();
+    WindowManager.LayoutParams localLayoutParams = J().getAttributes();
     flags |= 0x200;
-    H().setAttributes(localLayoutParams);
+    J().setAttributes(localLayoutParams);
   }
   
   public void onDestroyView()
@@ -1294,18 +1294,18 @@ public class SnapPreviewFragment
     if (O.b + O.c > 0) {
       AnalyticsEvents.a(a);
     }
-    np.a();
-    np.d(a);
+    og.a();
+    og.d(a);
     b.b();
     b = null;
     R = null;
-    WindowManager.LayoutParams localLayoutParams = H().getAttributes();
+    WindowManager.LayoutParams localLayoutParams = J().getAttributes();
     flags |= 0x200;
-    H().setAttributes(localLayoutParams);
-    Z.a(new baw(1));
+    J().setAttributes(localLayoutParams);
+    Z.a(new bbx(1));
   }
   
-  @boh
+  @bpi
   public void onDrawingEvent(DrawingEvent paramDrawingEvent)
   {
     if (ad != null)
@@ -1343,11 +1343,11 @@ public class SnapPreviewFragment
     C.a().setBackgroundColor(g.getLastColor());
   }
   
-  @boh
-  public void onEditCaptionEvent(bbh parambbh)
+  @bpi
+  public void onEditCaptionEvent(bch parambch)
   {
     E.a(8);
-    ajx.N();
+    akr.N();
     i.setVisibility(0);
     p.a(4);
     F.a(8);
@@ -1378,8 +1378,8 @@ public class SnapPreviewFragment
     u();
   }
   
-  @boh
-  public void onEnableFiltersEvent(bbi parambbi)
+  @bpi
+  public void onEnableFiltersEvent(bci parambci)
   {
     if (ad != null)
     {
@@ -1393,8 +1393,8 @@ public class SnapPreviewFragment
     b.setMediabryo(a);
   }
   
-  @boh
-  public void onInChatSnapEvent(@cgb InChatSnapEvent paramInChatSnapEvent)
+  @bpi
+  public void onInChatSnapEvent(@chc InChatSnapEvent paramInChatSnapEvent)
   {
     G = paramInChatSnapEvent;
     v();
@@ -1403,8 +1403,8 @@ public class SnapPreviewFragment
     }
   }
   
-  @boh
-  public void onNoFilterEvent(bcl parambcl)
+  @bpi
+  public void onNoFilterEvent(bdl parambdl)
   {
     b.setMediabryo(a);
   }
@@ -1424,21 +1424,21 @@ public class SnapPreviewFragment
     Z.b(b.getCaptionView());
   }
   
-  @boh
-  public void onPostToStoriesUpdatedEvent(bco parambco)
+  @bpi
+  public void onPostToStoriesUpdatedEvent(bdo parambdo)
   {
     if (c != null)
     {
-      parambco = c;
-      List localList = ajq.a().d();
-      parambco.clear();
-      parambco.addAll(localList);
+      parambdo = c;
+      List localList = akk.a().d();
+      parambdo.clear();
+      parambdo.addAll(localList);
       c.notifyDataSetChanged();
     }
   }
   
-  @boh
-  public void onQuickSnapEvent(@cgb QuickSnapEvent paramQuickSnapEvent)
+  @bpi
+  public void onQuickSnapEvent(@chc QuickSnapEvent paramQuickSnapEvent)
   {
     H = paramQuickSnapEvent;
     v();
@@ -1459,8 +1459,8 @@ public class SnapPreviewFragment
     a(k);
   }
   
-  @boh
-  public void onUserLoadedEvent(ber paramber)
+  @bpi
+  public void onUserLoadedEvent(bfq parambfq)
   {
     Q = user;
   }
@@ -1493,7 +1493,7 @@ public class SnapPreviewFragment
   
   public final void q()
   {
-    if (ajx.ab()) {}
+    if (akr.aa()) {}
     while (ad == null) {
       return;
     }
@@ -1511,7 +1511,7 @@ public class SnapPreviewFragment
     public final void run()
     {
       if (!a) {
-        SnapPreviewFragment.A(SnapPreviewFragment.this);
+        SnapPreviewFragment.B(SnapPreviewFragment.this);
       }
     }
   }

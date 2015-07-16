@@ -1,14 +1,30 @@
+import javax.annotation.Nullable;
+
 @cd
-final class ct
+public final class ct
 {
-  static int a(int paramInt, String paramString)
+  public static String a(@Nullable String paramString)
   {
-    if (paramInt < 0)
-    {
-      paramString = String.valueOf(String.valueOf(paramString));
-      throw new IllegalArgumentException(paramString.length() + 40 + paramString + " cannot be negative but was: " + paramInt);
+    String str = paramString;
+    if (paramString == null) {
+      str = "";
     }
-    return paramInt;
+    return str;
+  }
+  
+  @Nullable
+  public static String b(@Nullable String paramString)
+  {
+    String str = paramString;
+    if (c(paramString)) {
+      str = null;
+    }
+    return str;
+  }
+  
+  public static boolean c(@Nullable String paramString)
+  {
+    return (paramString == null) || (paramString.length() == 0);
   }
 }
 

@@ -2,7 +2,7 @@ package com.snapchat.android.preview;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import bgr;
+import bhr;
 
 final class SnapPreviewFragment$19
   implements View.OnClickListener

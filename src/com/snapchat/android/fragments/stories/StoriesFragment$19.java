@@ -4,30 +4,30 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import atj;
-import ban;
-import bdw;
-import bgr;
-import bgr.a;
+import auh;
+import bbo;
+import bev;
+import bhr;
+import bhr.a;
 import com.snapchat.android.fragments.addfriends.AddFriendsFragment;
 import com.squareup.otto.Bus;
 
 final class StoriesFragment$19
-  implements bgr.a
+  implements bhr.a
 {
   StoriesFragment$19(StoriesFragment paramStoriesFragment) {}
   
   public final void a(View paramView)
   {
-    paramView = a.m.a();
+    paramView = a.l.a();
     a.getActivity().getAssets();
-    atj.a(paramView);
-    ((Button)a.m.a()).setBackgroundResource(StoriesFragment.n());
-    ((Button)a.m.a()).setOnClickListener(new View.OnClickListener()
+    auh.a(paramView);
+    ((Button)a.l.a()).setBackgroundResource(StoriesFragment.o());
+    ((Button)a.l.a()).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(new AddFriendsFragment()));
+        bbo.a().a(new bev(new AddFriendsFragment()));
       }
     });
   }

@@ -1,16 +1,16 @@
 package com.snapchat.android.ui.diagnostics;
 
-import ala;
-import alb.c;
+import alv;
+import alw.c;
 
 final class DiagnosticsView$d$1
   implements Runnable
 {
-  DiagnosticsView$d$1(DiagnosticsView.d paramd, ala paramala) {}
+  DiagnosticsView$d$1(DiagnosticsView.d paramd, alv paramalv) {}
   
   public final void run()
   {
-    alb.c[] arrayOfc = b.a;
+    alw.c[] arrayOfc = b.a;
     int j = arrayOfc.length;
     int i = 0;
     while (i < j)

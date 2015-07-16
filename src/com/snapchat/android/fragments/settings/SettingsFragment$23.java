@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.view.View;
 import android.view.View.OnClickListener;
-import asr;
+import atq;
 import com.snapchat.android.analytics.AnalyticsEvents;
 
 final class SettingsFragment$23
@@ -24,7 +24,7 @@ final class SettingsFragment$23
       public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
       {
         AnalyticsEvents.h(true);
-        asr.a(a.getActivity());
+        atq.a(a.getActivity());
       }
     });
     paramView.setButton(-2, a.getString(2131493256), new DialogInterface.OnClickListener()

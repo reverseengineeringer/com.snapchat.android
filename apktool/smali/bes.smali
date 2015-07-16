@@ -4,30 +4,20 @@
 
 
 # instance fields
-.field public mFeedListItem:Landroid/view/View;
-
-.field public mIsFlinging:Z
+.field public final mKey:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Z)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    .line 14
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
-    const/4 v0, 0x0
+    iput-object p1, p0, Lbes;->mKey:Ljava/lang/String;
 
-    iput-boolean v0, p0, Lbes;->mIsFlinging:Z
-
-    .line 15
-    iput-object p1, p0, Lbes;->mFeedListItem:Landroid/view/View;
-
-    .line 16
-    iput-boolean p2, p0, Lbes;->mIsFlinging:Z
-
-    .line 17
+    .line 11
     return-void
 .end method

@@ -40,7 +40,7 @@
     .locals 4
 
     .prologue
-    const v3, 0x7f0a0021
+    const v3, 0x7f0a0022
 
     const/4 v2, 0x0
 
@@ -94,9 +94,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lbdx;
+    new-instance v1, Lbew;
 
-    invoke-direct {v1}, Lbdx;-><init>()V
+    invoke-direct {v1}, Lbew;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

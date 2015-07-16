@@ -1,21 +1,14 @@
-import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnCompletionListener;
-import com.snapchat.android.ui.TextureVideoView;
-
 final class aeu$1
-  implements MediaPlayer.OnCompletionListener
+  implements aww
 {
   aeu$1(aeu paramaeu) {}
   
-  public final void onCompletion(MediaPlayer paramMediaPlayer)
+  public final void a(awm paramawm, awv paramawv)
   {
-    paramMediaPlayer = a.e;
-    if (paramMediaPlayer != null) {
-      paramMediaPlayer.r_();
+    if (a.j != null) {
+      a.j.b();
     }
-    if (a.d) {
-      a.b.start();
-    }
+    a.a = true;
   }
 }
 

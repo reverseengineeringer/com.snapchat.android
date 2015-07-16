@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.signup;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import co;
+import ct;
 
 final class SignupFragment$1
   implements View.OnClickListener
@@ -12,7 +12,7 @@ final class SignupFragment$1
   
   public final void onClick(View paramView)
   {
-    if (!co.c(SignupFragment.a(a))) {
+    if (!ct.c(SignupFragment.a(a))) {
       SignupFragment.b(a).setText(SignupFragment.a(a));
     }
   }

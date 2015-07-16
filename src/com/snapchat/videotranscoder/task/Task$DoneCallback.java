@@ -1,10 +1,10 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
+import chc;
 
 public abstract interface Task$DoneCallback
 {
-  public abstract void done(@cgb Task.Status paramStatus);
+  public abstract void done(@chc Task.Status paramStatus);
 }
 
 /* Location:

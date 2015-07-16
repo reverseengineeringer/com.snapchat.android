@@ -1,139 +1,65 @@
-import android.view.View;
-import com.snapchat.android.fragments.chat.ChatFragment;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.snapchat.android.model.chat.ChatFeedItem;
-import com.snapchat.android.model.chat.ChatFeedItem.a;
-import java.util.List;
+import android.graphics.Bitmap;
 
-public class akf
-  implements ChatFeedItem
+public final class akf
+  extends aji
 {
-  private static final String HEADER_ID_SUFFIX = "CHAT_HEADER";
-  public String mId;
-  public final String mSender;
-  public long mTimestamp;
+  private static final int JPEG_ENCODING_QUALITY = 60;
+  private final oh mSnapbryoAnalytics;
   
-  public akf(String paramString, ChatFeedItem paramChatFeedItem)
+  protected akf(akf.a parama)
   {
-    mSender = paramString;
-    if (paramChatFeedItem != null)
+    super(parama);
+    mSnapbryoAnalytics = mSnapbryoAnalytics;
+  }
+  
+  private akf n()
+  {
+    return ((akf.a)new akf.a().a(this)).c();
+  }
+  
+  @chd
+  public final byte[] g()
+  {
+    Bitmap localBitmap = mCompositeImageBitmap;
+    if (localBitmap == null)
     {
-      mTimestamp = paramChatFeedItem.W();
-      mId = (ChatFragment.a(paramChatFeedItem) + "CHAT_HEADER");
-      return;
+      oh.a(this, "Null Composite Image Bitmap");
+      return null;
     }
-    mTimestamp = System.currentTimeMillis();
-    mId = "TODAY_DUMMY_HEADER";
-  }
-  
-  public final boolean N()
-  {
-    return false;
-  }
-  
-  public final boolean O()
-  {
-    return false;
-  }
-  
-  public final boolean P()
-  {
-    return true;
-  }
-  
-  public final boolean Q()
-  {
-    return false;
-  }
-  
-  public final long W()
-  {
-    return mTimestamp;
-  }
-  
-  public final int a(ChatConversation paramChatConversation)
-  {
-    return -1;
-  }
-  
-  public final ChatFeedItem.a a(@cgb View paramView, @cgc ChatConversation paramChatConversation)
-  {
-    return null;
-  }
-  
-  public final String a()
-  {
-    return "";
-  }
-  
-  public final String al()
-  {
-    return null;
-  }
-  
-  public final boolean am()
-  {
-    return false;
-  }
-  
-  public final boolean ao()
-  {
-    return false;
-  }
-  
-  public final long b(ChatConversation paramChatConversation)
-  {
-    return mTimestamp;
-  }
-  
-  public String b()
-  {
-    return null;
-  }
-  
-  public final long c(ChatConversation paramChatConversation)
-  {
-    return mTimestamp;
-  }
-  
-  public final boolean c()
-  {
-    return false;
-  }
-  
-  public String d()
-  {
-    return mId;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if ((paramObject instanceof akf)) {
-      return mId.equals(((akf)paramObject).d());
+    localBitmap = avp.e(localBitmap);
+    if (localBitmap == null)
+    {
+      oh.a(this, "Null Composite Image Bitmap after SnapMediaUtils.downscaleBitmapForUpload");
+      return null;
     }
-    return false;
+    return avp.b(localBitmap);
   }
   
-  public int hashCode()
+  public final int h()
   {
-    return mId.hashCode();
+    return 0;
   }
   
-  public final String j()
-  {
-    return mSender;
-  }
+  public final void i() {}
   
-  public final List<String> k()
-  {
-    return null;
-  }
-  
-  public final void p() {}
-  
-  public final boolean q()
+  public final boolean m()
   {
     return false;
+  }
+  
+  public static final class a
+    extends aji.a<a>
+  {
+    oh mSnapbryoAnalytics;
+    
+    public final akf c()
+    {
+      super.a();
+      if (mSnapbryoAnalytics == null) {
+        mSnapbryoAnalytics = new oh();
+      }
+      return new akf(this);
+    }
   }
 }
 

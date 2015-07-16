@@ -1,8 +1,8 @@
 package com.snapchat.android;
 
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import ban;
-import bbt;
+import bbo;
+import bct;
 import com.squareup.otto.Bus;
 
 final class SnapkidzHomeActivity$1
@@ -12,7 +12,7 @@ final class SnapkidzHomeActivity$1
   
   public final void onGlobalLayout()
   {
-    ban.a().a(new bbt());
+    bbo.a().a(new bct());
   }
 }
 

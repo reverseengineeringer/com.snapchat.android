@@ -4,15 +4,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import aov;
+import apu;
 
 final class MyStoryView$4
   implements View.OnClickListener
 {
-  MyStoryView$4(MyStoryView paramMyStoryView, aov paramaov, ImageView paramImageView, TextView paramTextView) {}
+  MyStoryView$4(MyStoryView paramMyStoryView, apu paramapu, ImageView paramImageView, TextView paramTextView) {}
   
   public final void onClick(View paramView)
   {
+    MyStoryView.d(d).a();
     paramView = d;
     if (!MyStoryView.f(d)) {}
     for (boolean bool = true;; bool = false)

@@ -17,39 +17,39 @@ import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
-import aur;
-import avl;
-import avq;
+import avp;
+import awj;
+import awo;
 
 public class FadeFullScreenAnimationView
   extends ImageView
 {
   private Bitmap a = null;
-  private avq b;
+  private awo b;
   private Context c;
   private b d = null;
   
   public FadeFullScreenAnimationView(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, avq.a());
+    this(paramContext, paramAttributeSet, awo.a());
   }
   
-  public FadeFullScreenAnimationView(Context paramContext, AttributeSet paramAttributeSet, avq paramavq)
+  public FadeFullScreenAnimationView(Context paramContext, AttributeSet paramAttributeSet, awo paramawo)
   {
     super(paramContext, paramAttributeSet);
     c = paramContext;
-    b = paramavq;
+    b = paramawo;
   }
   
-  @avl
+  @awj
   private void c()
   {
     if ((a == null) && (getWidth() > 0) && (getHeight() > 0))
     {
-      Object localObject = aur.a(c.getResources().getDisplayMetrics(), getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+      Object localObject = avp.a(c.getResources().getDisplayMetrics(), getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
       a = b.a((BitmapFactory.Options)localObject, true);
       if (a == null) {
-        a = aur.a(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        a = avp.a(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
       }
       if (a != null)
       {

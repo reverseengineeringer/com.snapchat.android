@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class ka
-  extends lt
+  extends ml
 {
-  public Boolean dialogAction;
-  private final String eventName = "REGISTRATION_USER_CONFIRM_TERMINATE_SIGNUP_DIALOG";
+  public Long charCount;
+  private final String eventName = "PROFILE_MY_FRIENDS_SEARCH_CLEAR";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_CONFIRM_TERMINATE_SIGNUP_DIALOG");
-    if (dialogAction != null) {
-      localHashMap.put("dialog_action", dialogAction);
+    localHashMap.put("event_name", "PROFILE_MY_FRIENDS_SEARCH_CLEAR");
+    if (charCount != null) {
+      localHashMap.put("char_count", charCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class ka
         return false;
       }
       paramObject = (ka)paramObject;
-      if (dialogAction == null) {
+      if (charCount == null) {
         break;
       }
-    } while (dialogAction.equals(dialogAction));
+    } while (charCount.equals(charCount));
     for (;;)
     {
       return false;
-      if (dialogAction == null) {
+      if (charCount == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class ka
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (dialogAction != null) {}
-    for (int i = dialogAction.hashCode();; i = 0) {
+    if (charCount != null) {}
+    for (int i = charCount.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

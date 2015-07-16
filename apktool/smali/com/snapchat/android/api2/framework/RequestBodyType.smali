@@ -155,10 +155,10 @@
 .method public static typeOf(Ljava/lang/Object;)Lcom/snapchat/android/api2/framework/RequestBodyType;
     .locals 2
     .param p0    # Ljava/lang/Object;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
@@ -168,14 +168,14 @@
     move-result-object v0
 
     .line 23
-    instance-of v1, p0, Luf;
+    instance-of v1, p0, Luw;
 
     if-eqz v1, :cond_0
 
     .line 24
-    check-cast p0, Luf;
+    check-cast p0, Luw;
 
-    iget-object v0, p0, Luf;->mType:Lcom/snapchat/android/api2/framework/RequestBodyType;
+    iget-object v0, p0, Luw;->mType:Lcom/snapchat/android/api2/framework/RequestBodyType;
 
     .line 36
     :goto_0
@@ -183,7 +183,7 @@
 
     .line 25
     :cond_0
-    const-class v1, Ltx;
+    const-class v1, Lun;
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
@@ -198,7 +198,7 @@
 
     .line 27
     :cond_1
-    const-class v1, Ltn;
+    const-class v1, Lud;
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
@@ -213,7 +213,7 @@
 
     .line 29
     :cond_2
-    const-class v1, Lty;
+    const-class v1, Luo;
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 

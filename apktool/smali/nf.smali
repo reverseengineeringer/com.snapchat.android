@@ -4,350 +4,292 @@
 
 
 # annotations
-.annotation runtime Ljavax/inject/Singleton;
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lnf$a;
+    }
 .end annotation
 
 
 # static fields
-.field public static final APP_STARTUP_TIMED_METRIC:Ljava/lang/String; = "APP_STARTUP_TIMED"
+.field private static final AD_KEY_PARAM:Ljava/lang/String; = "ad_key"
 
-.field public static final FIRST_MEDIA_OPENED_METRIC:Ljava/lang/String; = "FIRST_MEDIA_OPENED"
-
-.field private static final INSTANCE:Lnf;
-
-.field public static final OLD_APP_STARTUP_TIMED_METRIC:Ljava/lang/String; = "APP_STARTUP_TIMED_9_3"
-
-.field private static final TAG:Ljava/lang/String; = "LifecycleAnalytics"
-
-.field public static final USER_LOAD_TIME_METRIC:Ljava/lang/String; = "USER_LOAD_TIME"
+.field public static final AD_NO_FILL_STRING:Ljava/lang/String; = "NO-FILL"
 
 
 # instance fields
-.field private final mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+.field public final mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
 
-.field public mDidLoadFromDatabase:Z
+.field public final mAdResponseFieldBundle:Landroid/os/Bundle;
 
-.field private final mEventEngine:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
+.field public mAdStreamPosition:I
 
-.field private final mMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+.field mImpressionViewThreshold:J
 
-.field public mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-.field private final mStartupContext:Laux;
-
-.field public mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-.field public mUserLoadMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+.field public final mTransformedUrl:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 33
-    new-instance v0, Lnf;
-
-    invoke-direct {v0}, Lnf;-><init>()V
-
-    sput-object v0, Lnf;->INSTANCE:Lnf;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 4
-
-    .prologue
-    .line 52
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a()Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    move-result-object v0
-
-    invoke-static {}, Laux;->a()Laux;
-
-    move-result-object v1
-
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a()Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
-
-    move-result-object v2
-
-    new-instance v3, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-
-    invoke-direct {v3}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
-
-    invoke-direct {p0, v0, v1, v2, v3}, Lnf;-><init>(Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Laux;Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
-
-    .line 54
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Laux;Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
+.method private constructor <init>(Ljava/lang/String;Lcom/snapchat/android/ads/AdRequestError;Landroid/os/Bundle;J)V
     .locals 0
 
     .prologue
-    .line 59
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
-    iput-object p1, p0, Lnf;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    .line 24
+    iput-object p1, p0, Lnf;->mTransformedUrl:Ljava/lang/String;
 
-    .line 61
-    iput-object p2, p0, Lnf;->mStartupContext:Laux;
+    .line 25
+    iput-object p2, p0, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
 
-    .line 62
-    iput-object p3, p0, Lnf;->mEventEngine:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
+    .line 26
+    iput-object p3, p0, Lnf;->mAdResponseFieldBundle:Landroid/os/Bundle;
 
-    .line 63
-    iput-object p4, p0, Lnf;->mMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+    .line 27
+    iput-wide p4, p0, Lnf;->mImpressionViewThreshold:J
 
-    .line 64
+    .line 28
     return-void
 .end method
 
-.method public static a()Lnf;
-    .locals 1
+.method synthetic constructor <init>(Ljava/lang/String;Lcom/snapchat/android/ads/AdRequestError;Landroid/os/Bundle;JB)V
+    .locals 0
 
     .prologue
-    .line 67
-    sget-object v0, Lnf;->INSTANCE:Lnf;
+    .line 11
+    invoke-direct/range {p0 .. p5}, Lnf;-><init>(Ljava/lang/String;Lcom/snapchat/android/ads/AdRequestError;Landroid/os/Bundle;J)V
 
-    return-object v0
-.end method
-
-.method public static a(Landroid/content/Intent;)V
-    .locals 3
-    .param p0    # Landroid/content/Intent;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 106
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    .line 107
-    const-string v1, "open_state"
-
-    const-string v2, "NORMAL"
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 108
-    const-string v1, "intent_action"
-
-    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 109
-    new-instance v1, Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    const-string v2, "APP_OPEN"
-
-    invoke-direct {v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/util/Map;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
-
-    .line 112
-    new-instance v0, Lfr;
-
-    invoke-direct {v0}, Lfr;-><init>()V
-
-    .line 113
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
-
-    .line 114
-    return-void
-.end method
-
-.method public static d()V
-    .locals 1
-
-    .prologue
-    .line 185
-    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 186
-    invoke-static {}, Lazz;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lazz;->a(Ljava/lang/String;)V
-
-    .line 188
-    :cond_0
-    return-void
-.end method
-
-.method public static e()V
-    .locals 10
-
-    .prologue
-    .line 191
-    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 192
-    invoke-static {}, Lazz;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 193
-    invoke-static {v0}, Lazz;->b(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    .line 194
-    sget-object v1, Lnf;->INSTANCE:Lnf;
-
-    iget-object v4, v1, Lnf;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    if-eqz v4, :cond_0
-
-    iget-object v1, v1, Lnf;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->c()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v0, v4}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    const-string v4, "EasyMetric"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    iget-wide v8, v1, Lcom/snapchat/android/analytics/framework/EasyMetric;->b:J
-
-    sub-long/2addr v6, v8
-
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v5, ", "
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " ELAPSED_TIME "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v4, v0, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 196
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final a()Ljava/lang/Boolean;
+    .locals 4
+    .annotation build Lchd;
+    .end annotation
 
     .prologue
-    .line 168
+    const/4 v1, 0x1
+
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lnf;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    .line 59
+    iget-object v2, p0, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
 
-    .line 169
-    iget-object v0, p0, Lnf;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    if-eqz v2, :cond_2
 
-    const-string v1, "FIRST_MEDIA_OPENED"
+    iget-object v2, p0, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;)V
+    iget-object v2, v2, Lcom/snapchat/android/ads/AdRequestError;->mErrorCode:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
 
-    .line 170
-    return-void
+    sget-object v3, Lcom/snapchat/android/ads/AdRequestError$ErrorCode;->CONTENT_NO_FILL:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
+
+    if-ne v2, v3, :cond_2
+
+    move v2, v1
+
+    :goto_0
+    if-nez v2, :cond_0
+
+    iget-object v2, p0, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
+
+    iget-object v2, v2, Lcom/snapchat/android/ads/AdRequestError;->mErrorCode:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
+
+    sget-object v3, Lcom/snapchat/android/ads/AdRequestError$ErrorCode;->ERROR_CODE_NO_FILL:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
+
+    if-ne v2, v3, :cond_3
+
+    move v2, v1
+
+    :goto_1
+    if-eqz v2, :cond_1
+
+    :cond_0
+    move v0, v1
+
+    :cond_1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_2
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_3
+    move v2, v0
+
+    goto :goto_1
 .end method
 
-.method public final c()V
-    .locals 3
+.method public final b()Z
+    .locals 1
 
     .prologue
-    .line 173
-    const-string v0, "APP_STARTUP_TIMED"
+    .line 75
+    iget-object v0, p0, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->b(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
+    invoke-virtual {p0}, Lnf;->a()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    iput-object v0, p0, Lnf;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    .line 174
-    const-string v0, "APP_STARTUP_TIMED_9_3"
+    move-result v0
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->b(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 9
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    const/4 v8, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v0, 0x0
+
+    .line 88
+    iget-object v1, p0, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lnf;->mTransformedUrl:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 113
+    :cond_0
+    :goto_0
+    return-object v0
+
+    .line 93
+    :cond_1
+    iget-object v1, p0, Lnf;->mAdResponseFieldBundle:Landroid/os/Bundle;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lnf;->mAdResponseFieldBundle:Landroid/os/Bundle;
+
+    const-string v3, "ad_key"
+
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 94
+    iget-object v0, p0, Lnf;->mAdResponseFieldBundle:Landroid/os/Bundle;
+
+    const-string v1, "ad_key"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
+    goto :goto_0
 
-    move-result-object v0
+    .line 97
+    :cond_2
+    iget-object v1, p0, Lnf;->mTransformedUrl:Ljava/lang/String;
 
-    iput-object v0, p0, Lnf;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    const-string v3, "?"
 
-    .line 175
-    iget-object v0, p0, Lnf;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    invoke-virtual {v1, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    const-string v1, "FIRST_MEDIA_OPENED"
+    move-result v1
 
-    const/4 v2, 0x1
+    .line 98
+    if-ltz v1, :cond_0
 
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Z)V
+    .line 100
+    iget-object v3, p0, Lnf;->mTransformedUrl:Ljava/lang/String;
 
-    .line 176
-    return-void
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 101
+    const-string v3, "&"
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 102
+    array-length v4, v3
+
+    move v1, v2
+
+    :goto_1
+    if-ge v1, v4, :cond_0
+
+    aget-object v5, v3, v1
+
+    .line 103
+    const-string v6, "="
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 104
+    aget-object v6, v5, v2
+
+    .line 105
+    const-string v7, "ad_key"
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    .line 107
+    array-length v1, v5
+
+    if-le v1, v8, :cond_0
+
+    .line 108
+    aget-object v0, v5, v8
+
+    goto :goto_0
+
+    .line 102
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
 .end method

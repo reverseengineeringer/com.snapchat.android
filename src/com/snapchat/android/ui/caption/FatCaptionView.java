@@ -7,12 +7,12 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
-import app;
-import avh;
-import bbc;
-import bbh;
-import bbt;
-import boh;
+import aqo;
+import awf;
+import bcc;
+import bch;
+import bct;
+import bpi;
 
 public class FatCaptionView
   extends SnapCaptionView<FatCaptionEditText>
@@ -150,12 +150,12 @@ public class FatCaptionView
   
   protected XmlResourceParser getLayout()
   {
-    return getResources().getLayout(2130968601);
+    return getResources().getLayout(2130968602);
   }
   
   protected double getOrientationAngle()
   {
-    switch (avh.d(getContext()))
+    switch (awf.d(getContext()))
     {
     case 0: 
     default: 
@@ -168,14 +168,14 @@ public class FatCaptionView
     return -1.5707963267948966D;
   }
   
-  @boh
-  public void onCaptionColorPickedEvent(app paramapp)
+  @bpi
+  public void onCaptionColorPickedEvent(aqo paramaqo)
   {
     ((FatCaptionEditText)b).setColor(mColor);
   }
   
-  @boh
-  public void onEditCaptionEvent(bbh parambbh)
+  @bpi
+  public void onEditCaptionEvent(bch parambch)
   {
     if (mIsEditing)
     {
@@ -185,8 +185,8 @@ public class FatCaptionView
     setBackgroundColor(0);
   }
   
-  @boh
-  public void onGlobalLayoutEvent(bbt parambbt)
+  @bpi
+  public void onGlobalLayoutEvent(bct parambct)
   {
     if (!b).m) {
       ((FatCaptionEditText)b).e();
@@ -194,9 +194,9 @@ public class FatCaptionView
     if ((!b).f) && (b).k)) {
       ((FatCaptionEditText)b).b();
     }
-    parambbt = getRootView();
+    parambct = getRootView();
     Rect localRect = new Rect();
-    parambbt.getWindowVisibleDisplayFrame(localRect);
+    parambct.getWindowVisibleDisplayFrame(localRect);
     int i = c - (bottom - top);
     if (i > 100)
     {

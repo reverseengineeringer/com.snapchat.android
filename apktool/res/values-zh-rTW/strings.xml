@@ -262,7 +262,6 @@ Snapcash 。"</string>
     <string name="discover_sharing_success">Snap 已傳送！</string>
     <string name="discover_sharing_unavailable">%1$s 不允許傳送此 Snap。</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> 點擊此處查看 Discover！</string>
     <string name="discover_unavailable">"很抱歉！
 
 Discover 目前無法使用。"</string>
@@ -313,6 +312,7 @@ Discover 目前無法在您的裝置使用。"</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">忘記您的密碼？</a>" "</string>
     <string name="friend_suggest_hide">隱藏</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - 新聯絡人</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - 最近加入</string>
     <string name="friends">朋友</string>
     <string name="friends_context_block">封鎖</string>
@@ -622,7 +622,7 @@ Discover 目前無法在您的裝置使用。"</string>
     <string name="snap_delete_failure">無法刪除快照。</string>
     <string name="snap_failed_to_post">1 張快照發佈失敗</string>
     <string name="snap_list_empty_list_msg">您沒有任何快照 :(</string>
-    <string name="snap_tag_help_description">Snapchatter 可用相機瞄準您的影像，並觸擊其螢幕，即可新增您！</string>
+    <string name="snap_tag_help_description">Snapchatter 可用相機瞄準您的 Snapcode，並觸擊其螢幕，即可新增您！</string>
     <string name="snap_tag_no_connection">沒有連線！</string>
     <string name="snap_to_add">使用 Snap 或截圖以新增</string>
     <string name="snapkidz_welcome">歡迎來到 Snapkidz！</string>
@@ -658,8 +658,6 @@ Discover 目前無法在您的裝置使用。"</string>
     <string name="tap_to_view_edition">觸擊以在 Discover 中觀看</string>
     <string name="tap_to_view_full_story">觸擊以觀看完整故事</string>
     <string name="tap_to_view_more">觸擊以探索其他頻道</string>
-    <string name="tap_to_view_snaps">點擊查看Snaps!</string>
-    <string name="tap_to_view_stories">點擊查看故事!</string>
     <string name="tap_to_view_video_in_discover">觸擊以在 Discover 中觀看這段影片</string>
     <string name="too_many_attempts">"嘗試次數過多。
 "</string>

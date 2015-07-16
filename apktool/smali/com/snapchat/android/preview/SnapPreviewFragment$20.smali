@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbgr$a;
+.implements Lbhr$a;
 
 
 # annotations
@@ -41,7 +41,7 @@
 
     .prologue
     .line 881
-    const v0, 0x7f0a03a7
+    const v0, 0x7f0a03a6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -52,7 +52,7 @@
     .line 882
     iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$20;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    iget-object v1, v1, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Lanh;
+    iget-object v1, v1, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Laoe;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 

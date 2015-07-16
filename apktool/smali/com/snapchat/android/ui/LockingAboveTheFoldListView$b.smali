@@ -18,7 +18,7 @@
 .method public abstract b()Z
 .end method
 
-.method public abstract c()Lapv;
+.method public abstract c()Laqu;
 .end method
 
 .method public abstract d()[I

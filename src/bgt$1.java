@@ -1,14 +1,10 @@
-import android.view.ViewTreeObserver.OnPreDrawListener;
+import com.google.gson.reflect.TypeToken;
+import java.util.Map;
 
 final class bgt$1
-  implements ViewTreeObserver.OnPreDrawListener
+  extends TypeToken<Map<String, String>>
 {
   bgt$1(bgt parambgt) {}
-  
-  public final boolean onPreDraw()
-  {
-    return false;
-  }
 }
 
 /* Location:

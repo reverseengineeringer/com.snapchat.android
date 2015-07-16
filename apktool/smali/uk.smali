@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvk;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuo",
+        "Lbvk",
         "<",
         "Luj;",
         ">;"
@@ -23,12 +23,23 @@
 
 
 # instance fields
-.field private final contextProvider:Ljavax/inject/Provider;
+.field private final mGsonWrapperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Landroid/content/Context;",
+            "Laum;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mNetworkInterfaceProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lut;",
             ">;"
         }
     .end annotation
@@ -62,23 +73,27 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Ljavax/inject/Provider;)V
+.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Landroid/content/Context;",
+            "Lut;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laum;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 12
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
+    .line 14
     sget-boolean v0, Luk;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -91,24 +106,45 @@
 
     throw v0
 
-    .line 14
-    :cond_0
-    iput-object p1, p0, Luk;->contextProvider:Ljavax/inject/Provider;
-
     .line 15
+    :cond_0
+    iput-object p1, p0, Luk;->mNetworkInterfaceProvider:Ljavax/inject/Provider;
+
+    .line 16
+    sget-boolean v0, Luk;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 17
+    :cond_1
+    iput-object p2, p0, Luk;->mGsonWrapperProvider:Ljavax/inject/Provider;
+
+    .line 18
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;)Lbuo;
+.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Landroid/content/Context;",
+            "Lut;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laum;",
             ">;)",
-            "Lbuo",
+            "Lbvk",
             "<",
             "Luj;",
             ">;"
@@ -116,32 +152,53 @@
     .end annotation
 
     .prologue
-    .line 23
+    .line 30
     new-instance v0, Luk;
 
-    invoke-direct {v0, p0}, Luk;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, p0, p1}, Luk;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
     .prologue
     .line 8
-    new-instance v1, Luj;
+    check-cast p1, Luj;
 
-    iget-object v0, p0, Luk;->contextProvider:Ljavax/inject/Provider;
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Cannot inject members into a null reference"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Luk;->mNetworkInterfaceProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Context;
+    check-cast v0, Lut;
 
-    invoke-direct {v1, v0}, Luj;-><init>(Landroid/content/Context;)V
+    iput-object v0, p1, Luj;->mNetworkInterface:Lut;
 
-    return-object v1
+    iget-object v0, p0, Luk;->mGsonWrapperProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laum;
+
+    iput-object v0, p1, Luj;->mGsonWrapper:Laum;
+
+    return-void
 .end method

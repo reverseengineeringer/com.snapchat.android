@@ -88,20 +88,20 @@
     .line 18
     new-instance v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
 
-    const-string v1, "SENDING"
+    const-string v1, "FAILED"
 
     invoke-direct {v0, v1, v6}, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->SENDING:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
+    sput-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->FAILED:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
 
     .line 19
     new-instance v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
 
-    const-string v1, "FAILED"
+    const-string v1, "SENDING"
 
     invoke-direct {v0, v1, v7}, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->FAILED:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
+    sput-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->SENDING:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
 
     .line 20
     new-instance v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
@@ -153,11 +153,11 @@
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->SENDING:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
+    sget-object v1, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->FAILED:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->FAILED:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
+    sget-object v1, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->SENDING:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
 
     aput-object v1, v0, v7
 

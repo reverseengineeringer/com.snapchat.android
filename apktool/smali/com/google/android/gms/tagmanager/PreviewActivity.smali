@@ -44,6 +44,18 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
 
+    invoke-virtual {p0}, Lcom/google/android/gms/tagmanager/PreviewActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/tagmanager/PreviewActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     :try_start_0
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 

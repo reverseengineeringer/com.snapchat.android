@@ -6,9 +6,9 @@
 # instance fields
 .field public a:Landroid/widget/ImageView;
 
-.field private final b:Ladf;
+.field private final b:Laef;
 
-.field private final c:Ladq;
+.field private final c:Laeq;
 
 .field private d:Landroid/widget/ImageView;
 
@@ -18,7 +18,7 @@
 
 
 # direct methods
-.method protected constructor <init>(Landroid/content/Context;Ladq;Ladf;)V
+.method protected constructor <init>(Landroid/content/Context;Laeq;Laef;)V
     .locals 0
 
     .prologue
@@ -26,10 +26,10 @@
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 57
-    iput-object p2, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Ladq;
+    iput-object p2, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Laeq;
 
     .line 58
-    iput-object p3, p0, Lcom/snapchat/android/discover/ui/ChannelView;->b:Ladf;
+    iput-object p3, p0, Lcom/snapchat/android/discover/ui/ChannelView;->b:Laef;
 
     .line 59
     return-void
@@ -43,27 +43,27 @@
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 40
-    invoke-static {}, Ladf;->a()Ladf;
+    invoke-static {}, Laef;->a()Laef;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->b:Ladf;
+    iput-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->b:Laef;
 
     .line 41
-    new-instance v0, Ladq;
+    new-instance v0, Laeq;
 
-    invoke-direct {v0}, Ladq;-><init>()V
+    invoke-direct {v0}, Laeq;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Ladq;
+    iput-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Laeq;
 
     .line 42
-    iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Ladq;
+    iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Laeq;
 
     new-instance v1, Lcom/snapchat/android/discover/ui/ChannelView$1;
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/discover/ui/ChannelView$1;-><init>(Lcom/snapchat/android/discover/ui/ChannelView;)V
 
-    iput-object v1, v0, Ladq;->d:Laeg$a;
+    iput-object v1, v0, Laeq;->d:Lafg$a;
 
     .line 50
     invoke-direct {p0}, Lcom/snapchat/android/discover/ui/ChannelView;->c()V
@@ -98,11 +98,11 @@
 
     .line 134
     :cond_1
-    iget-object v1, p0, Lcom/snapchat/android/discover/ui/ChannelView;->b:Ladf;
+    iget-object v1, p0, Lcom/snapchat/android/discover/ui/ChannelView;->b:Laef;
 
     iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ladf;->b(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Laef;->b(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -180,7 +180,7 @@
     .line 81
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->d:Landroid/widget/ImageView;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     .line 82
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->d:Landroid/widget/ImageView;
@@ -188,15 +188,15 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 83
-    iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Ladq;
+    iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Laeq;
 
-    iput-object v1, v0, Ladq;->a:Ljava/lang/String;
+    iput-object v1, v0, Laeq;->a:Ljava/lang/String;
 
-    iput-object v1, v0, Ladq;->b:Landroid/graphics/drawable/Drawable;
+    iput-object v1, v0, Laeq;->b:Landroid/graphics/drawable/Drawable;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Ladq;->c:Z
+    iput-boolean v1, v0, Laeq;->c:Z
 
     .line 85
     :cond_0
@@ -220,9 +220,9 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Ladq;
+    iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Laeq;
 
-    iget-boolean v0, v0, Ladq;->c:Z
+    iget-boolean v0, v0, Laeq;->c:Z
 
     if-eqz v0, :cond_0
 
@@ -254,7 +254,7 @@
     if-eqz v0, :cond_0
 
     .line 108
-    iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Ladq;
+    iget-object v0, p0, Lcom/snapchat/android/discover/ui/ChannelView;->c:Laeq;
 
     iget-object v1, p0, Lcom/snapchat/android/discover/ui/ChannelView;->d:Landroid/widget/ImageView;
 
@@ -266,7 +266,7 @@
 
     move-result v3
 
-    invoke-virtual {v0, v1, v2, v3}, Ladq;->a(Landroid/widget/ImageView;Lcom/snapchat/android/discover/model/ChannelPage;Z)V
+    invoke-virtual {v0, v1, v2, v3}, Laeq;->a(Landroid/widget/ImageView;Lcom/snapchat/android/discover/model/ChannelPage;Z)V
 
     .line 111
     invoke-direct {p0}, Lcom/snapchat/android/discover/ui/ChannelView;->c()V
@@ -361,7 +361,7 @@
 .method public setChannelPage(Lcom/snapchat/android/discover/model/ChannelPage;)V
     .locals 6
     .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -399,7 +399,7 @@
 
     .line 66
     :cond_2
-    invoke-static {}, Lcw;->a()Lcw;
+    invoke-static {}, Lda;->a()Lda;
 
     move-result-object v0
 
@@ -407,7 +407,7 @@
 
     iget-object v5, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
 
-    invoke-virtual {v0, v4, v5}, Lcw;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lcw;
+    invoke-virtual {v0, v4, v5}, Lda;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lda;
 
     move-result-object v0
 
@@ -423,7 +423,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v0, v4, v5}, Lcw;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lcw;
+    invoke-virtual {v0, v4, v5}, Lda;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lda;
 
     move-result-object v0
 
@@ -443,7 +443,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v0, v4, v5}, Lcw;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lcw;
+    invoke-virtual {v0, v4, v5}, Lda;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lda;
 
     move-result-object v0
 
@@ -463,7 +463,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v0, v4, v5}, Lcw;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lcw;
+    invoke-virtual {v0, v4, v5}, Lda;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lda;
 
     move-result-object v0
 
@@ -471,7 +471,7 @@
 
     iget v5, p1, Lcom/snapchat/android/discover/model/ChannelPage;->h:I
 
-    invoke-virtual {v0, v4, v5}, Lcw;->a(II)Lcw;
+    invoke-virtual {v0, v4, v5}, Lda;->a(II)Lda;
 
     move-result-object v0
 
@@ -479,7 +479,7 @@
 
     iget v5, p1, Lcom/snapchat/android/discover/model/ChannelPage;->i:I
 
-    invoke-virtual {v0, v4, v5}, Lcw;->a(II)Lcw;
+    invoke-virtual {v0, v4, v5}, Lda;->a(II)Lda;
 
     move-result-object v4
 
@@ -505,11 +505,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v4, v5, v0}, Lcw;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lcw;
+    invoke-virtual {v4, v5, v0}, Lda;->a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lda;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcw;->b()I
+    invoke-virtual {v0}, Lda;->b()I
 
     move-result v0
 
@@ -608,7 +608,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/view/View;I)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/view/View;I)V
 
     .line 160
     :goto_0
@@ -620,7 +620,7 @@
 
     const/4 v1, 0x4
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/view/View;I)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/view/View;I)V
 
     goto :goto_0
 .end method

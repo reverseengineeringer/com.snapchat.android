@@ -12,8 +12,8 @@ public final class R$color
   public static final int common_signin_btn_light_text_disabled = 2131230755;
   public static final int common_signin_btn_light_text_focused = 2131230756;
   public static final int common_signin_btn_light_text_pressed = 2131230757;
-  public static final int common_signin_btn_text_dark = 2131230816;
-  public static final int common_signin_btn_text_light = 2131230817;
+  public static final int common_signin_btn_text_dark = 2131230818;
+  public static final int common_signin_btn_text_light = 2131230819;
 }
 
 /* Location:

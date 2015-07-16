@@ -1,11 +1,11 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.settings.email.EmailSettingsFragment;
 import com.snapchat.android.fragments.settings.email.EmailVerificationSentFragment;
 import com.squareup.otto.Bus;
@@ -18,12 +18,12 @@ final class SettingsFragment$10
   public final void onClick(View paramView)
   {
     SettingsFragment.a(a);
-    if (TextUtils.isEmpty(ajx.bn()))
+    if (TextUtils.isEmpty(akr.bk()))
     {
-      ban.a().a(new bdw(new EmailSettingsFragment(), EmailSettingsFragment.class.getSimpleName(), null));
+      bbo.a().a(new bev(new EmailSettingsFragment(), EmailSettingsFragment.class.getSimpleName(), null));
       return;
     }
-    ban.a().a(new bdw(new EmailVerificationSentFragment()));
+    bbo.a().a(new bev(new EmailVerificationSentFragment()));
   }
 }
 

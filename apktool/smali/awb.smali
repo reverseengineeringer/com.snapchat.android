@@ -1,65 +1,79 @@
-.class public Lawb;
-.super Landroid/os/AsyncTask;
+.class public final Lawb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/os/AsyncTask",
-        "<",
-        "Ljava/lang/Void;",
-        "Ljava/lang/Void;",
-        "Landroid/graphics/Bitmap;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field private mBitmap:Landroid/graphics/Bitmap;
-
-.field private mDisplayMetrics:Landroid/util/DisplayMetrics;
+# static fields
+.field private static final TAG:Ljava/lang/String; = "SystemProperties"
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;Landroid/util/DisplayMetrics;)V
-    .locals 0
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 5
 
     .prologue
-    .line 16
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    .line 23
+    :try_start_0
+    const-string v0, "android.os.SystemProperties"
 
-    .line 17
-    iput-object p1, p0, Lawb;->mBitmap:Landroid/graphics/Bitmap;
-
-    .line 18
-    iput-object p2, p0, Lawb;->mDisplayMetrics:Landroid/util/DisplayMetrics;
-
-    .line 19
-    return-void
-.end method
-
-
-# virtual methods
-.method protected synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    .prologue
-    .line 12
-    iget-object v0, p0, Lawb;->mBitmap:Landroid/graphics/Bitmap;
-
-    iget-object v1, p0, Lawb;->mDisplayMetrics:Landroid/util/DisplayMetrics;
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iget-object v2, p0, Lawb;->mDisplayMetrics:Landroid/util/DisplayMetrics;
-
-    iget v2, v2, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    invoke-static {v0, v1, v2}, Lavu;->a(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
+    .line 24
+    const-string v1, "get"
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Class;
+
+    const/4 v3, 0x0
+
+    const-class v4, Ljava/lang/String;
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
+
+    const-class v4, Ljava/lang/String;
+
+    aput-object v4, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    .line 25
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object p0, v2, v3
+
+    const/4 v3, 0x1
+
+    aput-object p1, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 27
+    :goto_0
     return-object v0
+
+    :catch_0
+    move-exception v0
+
+    move-object v0, p1
+
+    goto :goto_0
 .end method

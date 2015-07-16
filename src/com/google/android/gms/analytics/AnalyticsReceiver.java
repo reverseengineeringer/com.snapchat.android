@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public final class AnalyticsReceiver
   extends BroadcastReceiver
@@ -14,6 +16,8 @@ public final class AnalyticsReceiver
   
   public final void onReceive(Context paramContext, Intent arg2)
   {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     Intent localIntent = new Intent(paramContext, AnalyticsService.class);
     synchronized (zzmz)
     {

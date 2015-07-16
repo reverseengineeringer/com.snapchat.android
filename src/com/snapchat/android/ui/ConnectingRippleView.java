@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.os.SystemClock;
 import android.view.View;
-import avh;
+import awf;
 
 public class ConnectingRippleView
   extends View
@@ -23,11 +23,11 @@ public class ConnectingRippleView
   {
     super(paramContext);
     a.setStyle(Paint.Style.STROKE);
-    float f1 = avh.a(1.0F, paramContext);
+    float f1 = awf.a(1.0F, paramContext);
     a.setStrokeWidth(f1);
     a.setColor(11711154);
     a.setAntiAlias(true);
-    b = avh.a(3.0F, paramContext);
+    b = awf.a(3.0F, paramContext);
   }
   
   protected void onDraw(Canvas paramCanvas)

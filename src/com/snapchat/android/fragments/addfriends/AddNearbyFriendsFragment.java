@@ -1,15 +1,15 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afa;
-import afe;
-import afg;
-import ahq;
-import ahq.a;
-import ajv;
-import ajx;
-import alw;
-import alx;
-import alx.a;
+import aga;
+import age;
+import agg;
+import aim;
+import aim.a;
+import akp;
+import akr;
+import amt;
+import amu;
+import amu.a;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.app.AlertDialog;
@@ -27,22 +27,23 @@ import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import android.widget.TextView;
-import aol;
-import atx;
-import ban;
-import bbp;
-import bcw;
-import beh;
-import bgk;
-import bkk;
-import boh;
+import aph;
+import auv;
+import bbo;
+import bcp;
+import bdw;
+import bfg;
+import bhk;
+import bll;
+import bpi;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.analytics.ProfileEventAnalytics;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
+import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.FriendAction;
 import com.snapchat.android.notification.AndroidNotificationManager.Type;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.squareup.otto.Bus;
@@ -52,59 +53,61 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import javax.inject.Provider;
+import kd;
+import kf;
 import r;
 
 public class AddNearbyFriendsFragment
   extends SwipeableFriendsFragment
   implements FindNearbyFriendsWorker.a
 {
-  private final bgk A;
+  private int A;
+  private final bhk B;
   protected Set<String> a = new HashSet();
   protected Set<String> b = new HashSet();
   protected Set<String> c = new HashSet();
-  private atx m;
-  private ahq n;
-  private final ProfileEventAnalytics o;
-  private FindNearbyFriendsWorker p;
-  private View q;
-  private ImageView r;
+  private auv n;
+  private aim o;
+  private final ProfileEventAnalytics p;
+  private FindNearbyFriendsWorker q;
+  private View r;
   private ImageView s;
-  private AlertDialog t;
-  private boolean u = false;
-  private ajx v;
-  private final EasyMetric.EasyMetricFactory w;
-  private long x;
-  private int y;
+  private ImageView t;
+  private AlertDialog u;
+  private boolean v = false;
+  private akr w;
+  private final EasyMetric.EasyMetricFactory x;
+  private long y;
   private int z;
   
   public AddNearbyFriendsFragment()
   {
-    this(aol.a(), ajv.UNSAFE_USER_PROVIDER, new atx(), new ahq(), ajx.a(), new bgk(), new EasyMetric.EasyMetricFactory());
+    this(aph.a(), akp.UNSAFE_USER_PROVIDER, new auv(), new aim(), akr.a(), new bhk(), new EasyMetric.EasyMetricFactory());
   }
   
-  private AddNearbyFriendsFragment(aol paramaol, Provider<ajv> paramProvider, atx paramatx, ahq paramahq, ajx paramajx, bgk parambgk, EasyMetric.EasyMetricFactory paramEasyMetricFactory)
+  private AddNearbyFriendsFragment(aph paramaph, Provider<akp> paramProvider, auv paramauv, aim paramaim, akr paramakr, bhk parambhk, EasyMetric.EasyMetricFactory paramEasyMetricFactory)
   {
-    super(paramaol, paramProvider);
+    super(paramaph, paramProvider);
     g = null;
-    m = paramatx;
-    n = paramahq;
-    v = paramajx;
-    o = ProfileEventAnalytics.a();
-    A = parambgk;
-    w = paramEasyMetricFactory;
+    n = paramauv;
+    o = paramaim;
+    w = paramakr;
+    p = ProfileEventAnalytics.a();
+    B = parambhk;
+    x = paramEasyMetricFactory;
   }
   
   private void a(AlertDialog paramAlertDialog)
   {
-    t();
-    t = paramAlertDialog;
-    t.show();
+    u();
+    u = paramAlertDialog;
+    u.show();
   }
   
-  private List<Friend> b(List<bkk> paramList)
+  private List<Friend> b(List<bll> paramList)
   {
-    ajv localajv = (ajv)e.get();
-    if (localajv == null) {
+    akp localakp = (akp)e.get();
+    if (localakp == null) {
       return new LinkedList();
     }
     LinkedList localLinkedList1 = new LinkedList();
@@ -112,25 +115,25 @@ public class AddNearbyFriendsFragment
     paramList = paramList.iterator();
     while (paramList.hasNext())
     {
-      bkk localbkk = (bkk)paramList.next();
-      if (!a.contains(localbkk.a()))
+      bll localbll = (bll)paramList.next();
+      if (!a.contains(localbll.a()))
       {
-        a.add(localbkk.a());
-        Friend localFriend = localajv.a(localbkk.b());
+        a.add(localbll.a());
+        Friend localFriend = localakp.a(localbll.b());
         if (localFriend == null)
         {
-          localLinkedList2.add(new Friend(localbkk.b(), localbkk.c()));
+          localLinkedList2.add(new Friend(localbll.b(), localbll.c()));
         }
         else if (!mIsBlocked)
         {
           localLinkedList1.add(localFriend);
-          if (!localFriend.j()) {
-            mDisplayName = localbkk.c();
+          if (!localFriend.n()) {
+            mDisplayName = localbll.c();
           }
         }
         else
         {
-          Timber.c("AddNearbyFriendsFrag", "Redacting blocked snapchatter: " + localFriend.h(), new Object[0]);
+          new StringBuilder("Redacting blocked snapchatter: ").append(localFriend.l());
         }
       }
     }
@@ -138,25 +141,25 @@ public class AddNearbyFriendsFragment
     return localLinkedList2;
   }
   
-  private void r()
+  private void t()
   {
-    Object localObject = (ajv)e.get();
+    Object localObject = (akp)e.get();
     if (localObject != null)
     {
-      localObject = ((ajv)localObject).a(b, Integer.MAX_VALUE).iterator();
+      localObject = ((akp)localObject).a(b, Integer.MAX_VALUE).iterator();
       while (((Iterator)localObject).hasNext())
       {
         Friend localFriend = (Friend)((Iterator)localObject).next();
-        c.add(localFriend.h());
+        c.add(localFriend.l());
       }
-      m();
+      n();
     }
   }
   
-  private void t()
+  private void u()
   {
-    if ((t != null) && (t.isShowing())) {
-      t.cancel();
+    if ((u != null) && (u.isShowing())) {
+      u.cancel();
     }
   }
   
@@ -169,22 +172,22 @@ public class AddNearbyFriendsFragment
   
   public final void a(FindNearbyFriendsWorker.InterruptReason paramInterruptReason)
   {
-    q.setVisibility(8);
+    r.setVisibility(8);
     switch (7.b[paramInterruptReason.ordinal()])
     {
     default: 
       throw new IllegalArgumentException("Unrecognized interrupt reason!");
     case 1: 
-      j.setText("");
       k.setText("");
-      a(n.a(getActivity(), new ahq.a()
+      l.setText("");
+      a(o.a(getActivity(), new aim.a()
       {
         public final void a(boolean paramAnonymousBoolean)
         {
           if (paramAnonymousBoolean)
           {
             AddNearbyFriendsFragment.b(AddNearbyFriendsFragment.this);
-            ajx.aV();
+            akr.aS();
             return;
           }
           getActivity().onBackPressed();
@@ -192,15 +195,15 @@ public class AddNearbyFriendsFragment
       }));
       return;
     case 2: 
-      j.setText("");
       k.setText("");
+      l.setText("");
       paramInterruptReason = new AlertDialog.Builder(getActivity());
       paramInterruptReason.setMessage(2131492903).setCancelable(false).setPositiveButton(2131493269, new DialogInterface.OnClickListener()
       {
         public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
         {
           AddNearbyFriendsFragment.b(AddNearbyFriendsFragment.this);
-          ajx.aV();
+          akr.aS();
           AddNearbyFriendsFragment.c(AddNearbyFriendsFragment.this).a();
         }
       }).setNegativeButton(2131493259, new DialogInterface.OnClickListener()
@@ -214,41 +217,39 @@ public class AddNearbyFriendsFragment
       return;
     case 3: 
     case 4: 
-      j.setText(2131493330);
-      k.setText(2131493526);
+      k.setText(2131493330);
+      l.setText(2131493526);
       return;
     case 5: 
-      if (l.isEmpty()) {
-        j.setText(2131493253);
+      if (m.isEmpty()) {
+        k.setText(2131493253);
       }
       for (;;)
       {
-        k.setText(2131493526);
+        l.setText(2131493526);
         return;
-        j.setText("");
+        k.setText("");
       }
     }
-    j.setText(2131493252);
-    k.setText(2131493526);
+    k.setText(2131493252);
+    l.setText(2131493526);
   }
   
-  public final void a(@r List<bkk> arg1)
+  public final void a(@r List<bll> arg1)
   {
-    if (??? == null)
-    {
-      Timber.c("AddNearbyFriendsFrag", "Null snapchatter list received", new Object[0]);
+    if (??? == null) {
       return;
     }
-    Timber.c("AddNearbyFriendsFrag", "Found snapchatters from server: " + ???.toString(), new Object[0]);
+    new StringBuilder("Found snapchatters from server: ").append(???.toString());
     List localList = b(???);
     if (localList.size() != 0) {}
     for (;;)
     {
-      synchronized (l)
+      synchronized (this.m)
       {
-        l.addAll(localList);
-        m();
-        int i1 = r.getHeight();
+        this.m.addAll(localList);
+        n();
+        int m = s.getHeight();
         ??? = new int[2];
         h.getLocationOnScreen(???);
         int j = ???[1];
@@ -256,20 +257,20 @@ public class AddNearbyFriendsFragment
         if (h.getChildCount() > 0) {
           i = j + h.getLastVisiblePosition() * h.getChildAt(0).getHeight();
         }
-        ??? = s;
+        ??? = t;
         int k = ???.getMeasuredHeight();
-        int i2 = ???.getMeasuredWidth();
-        int i3 = ???.getDrawable().getIntrinsicHeight();
-        int i4 = ???.getDrawable().getIntrinsicWidth();
+        int i1 = ???.getMeasuredWidth();
+        int i2 = ???.getDrawable().getIntrinsicHeight();
+        int i3 = ???.getDrawable().getIntrinsicWidth();
         j = k;
-        if (k / i3 > i2 / i4) {
-          j = i3 * i2 / i4;
+        if (k / i2 > i1 / i3) {
+          j = i2 * i1 / i3;
         }
-        if (i1 < i + j)
+        if (m < i + j)
         {
           f = 0.3F;
-          if (r.getAlpha() != f) {
-            r.animate().alpha(f).setDuration(400L).setListener(new Animator.AnimatorListener()
+          if (s.getAlpha() != f) {
+            s.animate().alpha(f).setDuration(400L).setListener(new Animator.AnimatorListener()
             {
               public final void onAnimationCancel(Animator paramAnonymousAnimator)
               {
@@ -294,13 +295,26 @@ public class AddNearbyFriendsFragment
               }
             }).start();
           }
-          this.j.setText(2131493503);
-          this.k.setText(2131492921);
+          this.k.setText(2131493503);
+          l.setText(2131492921);
           return;
         }
       }
       float f = 0.1F;
     }
+  }
+  
+  protected final void a(kf paramkf)
+  {
+    int i = m.size();
+    int j = g.a(FriendAction.ADD, false);
+    int k = g.a(FriendAction.BLOCK, false);
+    kd localkd = new kd();
+    exitEvent = paramkf;
+    nearbyFriendCount = Long.valueOf(i);
+    nearbyFriendAddCount = Long.valueOf(j);
+    nearbyFriendBlockCount = Long.valueOf(k);
+    ScAnalyticsEventEngine.a(localkd);
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
@@ -316,44 +330,43 @@ public class AddNearbyFriendsFragment
   
   protected final int i()
   {
-    return 2130968582;
+    return 2130968583;
   }
   
-  public final alw k()
+  public final amt k()
   {
-    new alw()
+    new amt()
     {
-      public final boolean a(alx.a paramAnonymousa)
+      public final boolean a(amu.a paramAnonymousa)
       {
-        return alx.g.contains(c);
+        return amu.g.contains(c);
       }
       
-      public final boolean b(alx.a paramAnonymousa)
+      public final boolean b(amu.a paramAnonymousa)
       {
-        boolean bool = false;
         if (c == AndroidNotificationManager.Type.ADDFRIEND)
         {
-          Timber.c("AddNearbyFriendsFrag", "Dropping non-silent add friend notification for user: " + a, new Object[0]);
-          bool = true;
+          new StringBuilder("Dropping non-silent add friend notification for user: ").append(a);
+          return true;
         }
-        return bool;
+        return false;
       }
     };
   }
   
-  protected final afe l()
+  protected final age m()
   {
-    return new afg(c, m);
+    return new agg(c, n);
   }
   
-  protected final void m()
+  protected final void n()
   {
     if (g != null) {
       g.notifyDataSetChanged();
     }
   }
   
-  protected final FriendListProperty n()
+  protected final FriendListProperty o()
   {
     FriendListProperty localFriendListProperty = new FriendListProperty(FriendListProperty.TouchMode.SWIPEABLE, FriendListProperty.Style.WHITE_TEXT);
     j = true;
@@ -361,29 +374,24 @@ public class AddNearbyFriendsFragment
     return localFriendListProperty;
   }
   
-  protected final Integer o()
-  {
-    return Integer.valueOf(2130968581);
-  }
-  
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     paramLayoutInflater = super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    i.setOnClickListener(new View.OnClickListener()
+    j.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         AddNearbyFriendsFragment.a(AddNearbyFriendsFragment.this);
       }
     });
-    r();
-    q = c(2131361889);
-    p = new FindNearbyFriendsWorker(getActivity(), this);
-    r = ((ImageView)c(2131361891));
-    s = ((ImageView)c(2131361890));
-    x = SystemClock.elapsedRealtime();
-    y = 0;
+    t();
+    r = c(2131361891);
+    q = new FindNearbyFriendsWorker(getActivity(), this);
+    s = ((ImageView)c(2131361893));
+    t = ((ImageView)c(2131361892));
+    y = SystemClock.elapsedRealtime();
     z = 0;
+    A = 0;
     EasyMetric.EasyMetricFactory.a("ANF_LOAD_VIEW").b(true);
     return paramLayoutInflater;
   }
@@ -391,16 +399,16 @@ public class AddNearbyFriendsFragment
   public void onPause()
   {
     super.onPause();
-    if (p.b()) {
-      p.a(FindNearbyFriendsWorker.InterruptReason.INTENTIONAL);
+    if (q.b()) {
+      q.a(FindNearbyFriendsWorker.InterruptReason.INTENTIONAL);
     }
-    t();
+    u();
   }
   
-  @boh
-  public void onRefreshOnFriendActionEvent(bcw parambcw)
+  @bpi
+  public void onRefreshOnFriendActionEvent(bdw parambdw)
   {
-    super.a(parambcw);
+    super.a(parambdw);
     Friend localFriend = mFriend;
     if (localFriend != null) {
       switch (7.a[mAction.ordinal()])
@@ -409,23 +417,23 @@ public class AddNearbyFriendsFragment
     }
     for (;;)
     {
-      ban.a().a(new bbp());
+      bbo.a().a(new bcp());
       return;
-      l.remove(localFriend);
+      m.remove(localFriend);
       g.a(localFriend);
-      z += 1;
-      EasyMetric.EasyMetricFactory.a("ANF_BLOCK").a("name", localFriend.h()).b(true);
+      A += 1;
+      EasyMetric.EasyMetricFactory.a("ANF_BLOCK").a("name", localFriend.l()).b(true);
       continue;
-      b.add(localFriend.h());
-      y += 1;
-      EasyMetric.EasyMetricFactory.a("ANF_ADD").a("name", localFriend.h()).b(true);
+      b.add(localFriend.l());
+      z += 1;
+      EasyMetric.EasyMetricFactory.a("ANF_ADD").a("name", localFriend.l()).b(true);
     }
   }
   
   public void onResume()
   {
     super.onResume();
-    p.a();
+    q.a();
   }
   
   public void onStop()
@@ -434,26 +442,31 @@ public class AddNearbyFriendsFragment
     a.clear();
     b.clear();
     c.clear();
-    EasyMetric.EasyMetricFactory.a("ANF_SESSION_END").a("snapchattersFound", Integer.valueOf(l.size())).a("snapchattersAdded", Integer.valueOf(y)).a("snapchattersBlocked", Integer.valueOf(z)).a("sessionDuration", Long.valueOf(SystemClock.elapsedRealtime() - x)).b(true);
+    EasyMetric.EasyMetricFactory.a("ANF_SESSION_END").a("snapchattersFound", Integer.valueOf(m.size())).a("snapchattersAdded", Integer.valueOf(z)).a("snapchattersBlocked", Integer.valueOf(A)).a("sessionDuration", Long.valueOf(SystemClock.elapsedRealtime() - y)).b(true);
   }
   
-  @boh
-  public void onSyncAllCompletedEvent(beh parambeh)
+  @bpi
+  public void onSyncAllCompletedEvent(bfg parambfg)
   {
-    r();
+    t();
   }
   
-  public final void p()
+  protected final Integer p()
   {
-    j.setText(2131493383);
-    k.setText(2131492921);
-    q.setVisibility(0);
+    return Integer.valueOf(2130968582);
   }
   
   public final void q()
   {
-    j.setText(2131493503);
-    k.setText(2131492921);
+    k.setText(2131493383);
+    l.setText(2131492921);
+    r.setVisibility(0);
+  }
+  
+  public final void r()
+  {
+    k.setText(2131493503);
+    l.setText(2131492921);
   }
 }
 

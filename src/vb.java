@@ -1,8 +1,31 @@
-import com.snapchat.android.app.feature.messaging.feed.ui.fragment.FeedFragment.a;
+import android.content.Context;
+import javax.inject.Provider;
 
-public abstract interface vb
+public final class vb
+  implements bvp<va>
 {
-  public abstract FeedFragment.a k();
+  private final Provider<Context> contextProvider;
+  
+  static
+  {
+    if (!vb.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
+  }
+  
+  private vb(Provider<Context> paramProvider)
+  {
+    assert (paramProvider != null);
+    contextProvider = paramProvider;
+  }
+  
+  public static bvp<va> a(Provider<Context> paramProvider)
+  {
+    return new vb(paramProvider);
+  }
 }
 
 /* Location:

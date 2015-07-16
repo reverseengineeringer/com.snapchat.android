@@ -1,11 +1,27 @@
+import org.lucasr.twowayview.TwoWayView;
+import org.lucasr.twowayview.TwoWayView.OnScrollListener;
+
 final class apm$1
-  implements Runnable
+  implements TwoWayView.OnScrollListener
 {
   apm$1(apm paramapm) {}
   
-  public final void run()
+  public final void onScroll(TwoWayView paramTwoWayView, int paramInt1, int paramInt2, int paramInt3)
   {
-    apm.a(a);
+    paramInt1 += paramInt2;
+    if ((a.f != -1) && (a.f == paramInt1)) {
+      return;
+    }
+    a.f = paramInt1;
+    a.m();
+  }
+  
+  public final void onScrollStateChanged(TwoWayView paramTwoWayView, int paramInt)
+  {
+    if (paramInt != 0) {
+      return;
+    }
+    a.d();
   }
 }
 

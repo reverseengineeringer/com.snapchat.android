@@ -43,47 +43,37 @@
     .line 49
     invoke-static {}, Lcom/snapchat/android/scan/FirstAutoScanNotificationView;->a()Ljava/lang/String;
 
-    move-result-object v0
-
-    const-string v1, "More info!"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 50
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbbx;
+    new-instance v1, Lbcx;
 
-    invoke-direct {v1}, Lbbx;-><init>()V
+    invoke-direct {v1}, Lbcx;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 51
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v3
 
-    invoke-static {}, Lafi;->a()Lafi;
+    invoke-static {}, Lagi;->a()Lagi;
 
     move-result-object v4
 
-    invoke-direct {v2, v3, v4}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;-><init>(Lcom/squareup/otto/Bus;Lafi;)V
+    invoke-direct {v2, v3, v4}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;-><init>(Lcom/squareup/otto/Bus;Lagi;)V
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

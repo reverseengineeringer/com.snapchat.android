@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.video;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.pipeline.Encoder;
 import com.snapchat.videotranscoder.pipeline.MediaProvider;
 import com.snapchat.videotranscoder.pipeline.StageDoneCallback;
@@ -19,7 +19,7 @@ public class VideoProvider
   private VideoExtractor mVideoExtractor;
   private boolean mVideoExtractorDone = false;
   
-  public VideoProvider(@cgb TranscodingResources paramTranscodingResources, @cgb Encoder paramEncoder, @cgb VideoFileMediaSource paramVideoFileMediaSource, @cgb StageDoneCallback paramStageDoneCallback)
+  public VideoProvider(@chc TranscodingResources paramTranscodingResources, @chc Encoder paramEncoder, @chc VideoFileMediaSource paramVideoFileMediaSource, @chc StageDoneCallback paramStageDoneCallback)
   {
     super(paramEncoder, paramStageDoneCallback);
     if (paramTranscodingResources == null) {

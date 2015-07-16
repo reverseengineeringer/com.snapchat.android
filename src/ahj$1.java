@@ -1,26 +1,43 @@
-import com.addlive.platform.InitProgressChangedEvent;
-import com.addlive.platform.InitState;
-import com.addlive.platform.InitStateChangedEvent;
-import com.addlive.platform.PlatformInitListener;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.framework.EasyMetric;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.CheckBox;
+import com.snapchat.android.model.chat.ChatConversation;
 
 final class ahj$1
-  implements PlatformInitListener
+  implements View.OnClickListener
 {
-  ahj$1(ahj paramahj) {}
+  ahj$1(ahj paramahj, ahj.a parama, ChatConversation paramChatConversation) {}
   
-  public final void onInitProgressChanged(InitProgressChangedEvent paramInitProgressChangedEvent) {}
-  
-  public final void onInitStateChanged(InitStateChangedEvent paramInitStateChangedEvent)
+  public final void onClick(View paramView)
   {
-    if (paramInitStateChangedEvent.getState() == InitState.INITIALIZED)
+    if (akr.X())
     {
-      a.f();
+      paramView = new AlertDialog.Builder(ahj.a(c));
+      View localView = ahj.b(c).inflate(2130968631, null);
+      if (localView == null) {
+        throw new NullPointerException();
+      }
+      final CheckBox localCheckBox = (CheckBox)localView.findViewById(2131362131);
+      localCheckBox.setText(2131493602);
+      paramView.setView(localView).setTitle(2131493415).setPositiveButton(2131493269, new DialogInterface.OnClickListener()
+      {
+        public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+        {
+          if (localCheckBox.isChecked()) {
+            akr.Y();
+          }
+          ahj.a(c, a, b);
+        }
+      }).setNegativeButton(2131492952, null);
+      paramView.create().show();
       return;
     }
-    Timber.f("livechat", "Failed to initialize the AddLive SDK: %s (ERR: %d)", new Object[] { paramInitStateChangedEvent.getErrMessage(), Integer.valueOf(paramInitStateChangedEvent.getErrCode()) });
-    new EasyMetric("HERE_INIT_FAILED").a(false);
+    ahj.a(c, a, b);
   }
 }
 

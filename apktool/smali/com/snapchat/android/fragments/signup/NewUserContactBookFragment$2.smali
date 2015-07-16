@@ -47,11 +47,11 @@
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment$2;->a:Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->b(Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;)Lafa;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->b(Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;)Laga;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lafa;->isEmpty()Z
+    invoke-virtual {v0}, Laga;->isEmpty()Z
 
     move-result v0
 
@@ -92,7 +92,7 @@
     add-int/lit8 v2, v2, 0x1
 
     :cond_0
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->g()Z
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Z
 
     move-result v0
 
@@ -143,9 +143,9 @@
 
     if-eqz v1, :cond_3
 
-    iget-object v1, v4, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->d:Lafa;
+    iget-object v1, v4, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->d:Laga;
 
-    iget-object v1, v1, Lafa;->d:Ljava/util/HashSet;
+    iget-object v1, v1, Laga;->e:Ljava/util/HashSet;
 
     invoke-virtual {v1}, Ljava/util/HashSet;->size()I
 
@@ -157,9 +157,9 @@
 
     int-to-long v0, v0
 
-    iget-object v4, v4, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->d:Lafa;
+    iget-object v4, v4, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->d:Laga;
 
-    iget-object v4, v4, Lafa;->d:Ljava/util/HashSet;
+    iget-object v4, v4, Laga;->e:Ljava/util/HashSet;
 
     invoke-virtual {v4}, Ljava/util/HashSet;->size()I
 
@@ -167,29 +167,29 @@
 
     int-to-long v4, v4
 
-    new-instance v6, Lkb;
+    new-instance v6, Lkt;
 
-    invoke-direct {v6}, Lkb;-><init>()V
+    invoke-direct {v6}, Lkt;-><init>()V
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    iput-object v2, v6, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iput-object v2, v6, Lkt;->contactFoundCount:Ljava/lang/Long;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    iput-object v0, v6, Lkb;->friendAddCount:Ljava/lang/Long;
+    iput-object v0, v6, Lkt;->friendAddCount:Ljava/lang/Long;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    iput-object v0, v6, Lkb;->contactInviteCount:Ljava/lang/Long;
+    iput-object v0, v6, Lkt;->contactInviteCount:Ljava/lang/Long;
 
-    invoke-static {v6}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v6}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 156
     :goto_3

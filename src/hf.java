@@ -2,70 +2,32 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class hf
-  extends lt
+  extends ml
 {
-  public Long caption;
-  public Boolean drawing;
   public String dsnapId;
   public String editionId;
-  private final String eventName = "DISCOVER_SNAP_SHARE_SEND";
-  private String filter;
-  private String filterGeofence;
-  public hm filterInfo;
-  private String filterSponsor;
-  private String filterType;
-  public ho filterVisual;
-  public hy mediaType;
+  private final String eventName = "DISCOVER_SNAP_LONGFORM_SCREENSHOT";
+  public ih longformType;
   public String publisherId;
-  public Long recipientCount;
   public Long snapIndexCount;
   public Long snapIndexPos;
-  public Double snapTimeSec;
-  private ld source;
-  public Double timeViewed;
+  public lv source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "DISCOVER_SNAP_SHARE_SEND");
-    if (caption != null) {
-      localHashMap.put("caption", caption);
-    }
-    if (drawing != null) {
-      localHashMap.put("drawing", drawing);
-    }
+    localHashMap.put("event_name", "DISCOVER_SNAP_LONGFORM_SCREENSHOT");
     if (dsnapId != null) {
       localHashMap.put("dsnap_id", dsnapId);
     }
     if (editionId != null) {
       localHashMap.put("edition_id", editionId);
     }
-    if (filter != null) {
-      localHashMap.put("filter", filter);
-    }
-    if (filterGeofence != null) {
-      localHashMap.put("filter_geofence", filterGeofence);
-    }
-    if (filterInfo != null) {
-      localHashMap.put("filter_info", filterInfo);
-    }
-    if (filterSponsor != null) {
-      localHashMap.put("filter_sponsor", filterSponsor);
-    }
-    if (filterType != null) {
-      localHashMap.put("filter_type", filterType);
-    }
-    if (filterVisual != null) {
-      localHashMap.put("filter_visual", filterVisual);
-    }
-    if (mediaType != null) {
-      localHashMap.put("media_type", mediaType);
+    if (longformType != null) {
+      localHashMap.put("longform_type", longformType);
     }
     if (publisherId != null) {
       localHashMap.put("publisher_id", publisherId);
-    }
-    if (recipientCount != null) {
-      localHashMap.put("recipient_count", recipientCount);
     }
     if (snapIndexCount != null) {
       localHashMap.put("snap_index_count", snapIndexCount);
@@ -73,14 +35,8 @@ public final class hf
     if (snapIndexPos != null) {
       localHashMap.put("snap_index_pos", snapIndexPos);
     }
-    if (snapTimeSec != null) {
-      localHashMap.put("snap_time_sec", snapTimeSec);
-    }
     if (source != null) {
       localHashMap.put("source", source);
-    }
-    if (timeViewed != null) {
-      localHashMap.put("time_viewed", timeViewed);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -99,24 +55,6 @@ public final class hf
         return false;
       }
       paramObject = (hf)paramObject;
-      if (caption != null)
-      {
-        if (caption.equals(caption)) {}
-      }
-      else {
-        while (caption != null) {
-          return false;
-        }
-      }
-      if (drawing != null)
-      {
-        if (drawing.equals(drawing)) {}
-      }
-      else {
-        while (drawing != null) {
-          return false;
-        }
-      }
       if (dsnapId != null)
       {
         if (dsnapId.equals(dsnapId)) {}
@@ -135,66 +73,12 @@ public final class hf
           return false;
         }
       }
-      if (filter != null)
+      if (longformType != null)
       {
-        if (filter.equals(filter)) {}
+        if (longformType.equals(longformType)) {}
       }
       else {
-        while (filter != null) {
-          return false;
-        }
-      }
-      if (filterGeofence != null)
-      {
-        if (filterGeofence.equals(filterGeofence)) {}
-      }
-      else {
-        while (filterGeofence != null) {
-          return false;
-        }
-      }
-      if (filterInfo != null)
-      {
-        if (filterInfo.equals(filterInfo)) {}
-      }
-      else {
-        while (filterInfo != null) {
-          return false;
-        }
-      }
-      if (filterSponsor != null)
-      {
-        if (filterSponsor.equals(filterSponsor)) {}
-      }
-      else {
-        while (filterSponsor != null) {
-          return false;
-        }
-      }
-      if (filterType != null)
-      {
-        if (filterType.equals(filterType)) {}
-      }
-      else {
-        while (filterType != null) {
-          return false;
-        }
-      }
-      if (filterVisual != null)
-      {
-        if (filterVisual.equals(filterVisual)) {}
-      }
-      else {
-        while (filterVisual != null) {
-          return false;
-        }
-      }
-      if (mediaType != null)
-      {
-        if (mediaType.equals(mediaType)) {}
-      }
-      else {
-        while (mediaType != null) {
+        while (longformType != null) {
           return false;
         }
       }
@@ -204,15 +88,6 @@ public final class hf
       }
       else {
         while (publisherId != null) {
-          return false;
-        }
-      }
-      if (recipientCount != null)
-      {
-        if (recipientCount.equals(recipientCount)) {}
-      }
-      else {
-        while (recipientCount != null) {
           return false;
         }
       }
@@ -234,32 +109,14 @@ public final class hf
           return false;
         }
       }
-      if (snapTimeSec != null)
-      {
-        if (snapTimeSec.equals(snapTimeSec)) {}
-      }
-      else {
-        while (snapTimeSec != null) {
-          return false;
-        }
-      }
-      if (source != null)
-      {
-        if (source.equals(source)) {}
-      }
-      else {
-        while (source != null) {
-          return false;
-        }
-      }
-      if (timeViewed == null) {
+      if (source == null) {
         break;
       }
-    } while (timeViewed.equals(timeViewed));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (timeViewed == null) {
+      if (source == null) {
         break;
       }
     }
@@ -267,8 +124,8 @@ public final class hf
   
   public final int hashCode()
   {
-    int i13 = 0;
-    int i14 = super.hashCode();
+    int i2 = 0;
+    int i3 = super.hashCode();
     int i;
     int j;
     label39:
@@ -277,118 +134,41 @@ public final class hf
     int m;
     label70:
     int n;
-    label86:
-    int i1;
-    label102:
-    int i2;
-    label118:
-    int i3;
-    label134:
-    int i4;
-    label150:
-    int i5;
-    label166:
-    int i6;
-    label182:
-    int i7;
-    label198:
-    int i8;
-    label214:
-    int i9;
-    label230:
-    int i10;
-    label246:
-    int i11;
-    if (caption != null)
+    if (dsnapId != null)
     {
-      i = caption.hashCode();
-      if (drawing == null) {
-        break label407;
-      }
-      j = drawing.hashCode();
-      if (dsnapId == null) {
-        break label412;
-      }
-      k = dsnapId.hashCode();
+      i = dsnapId.hashCode();
       if (editionId == null) {
-        break label417;
+        break label165;
       }
-      m = editionId.hashCode();
-      if (filter == null) {
-        break label423;
+      j = editionId.hashCode();
+      if (longformType == null) {
+        break label170;
       }
-      n = filter.hashCode();
-      if (filterGeofence == null) {
-        break label429;
-      }
-      i1 = filterGeofence.hashCode();
-      if (filterInfo == null) {
-        break label435;
-      }
-      i2 = filterInfo.hashCode();
-      if (filterSponsor == null) {
-        break label441;
-      }
-      i3 = filterSponsor.hashCode();
-      if (filterType == null) {
-        break label447;
-      }
-      i4 = filterType.hashCode();
-      if (filterVisual == null) {
-        break label453;
-      }
-      i5 = filterVisual.hashCode();
-      if (mediaType == null) {
-        break label459;
-      }
-      i6 = mediaType.hashCode();
+      k = longformType.hashCode();
       if (publisherId == null) {
-        break label465;
+        break label175;
       }
-      i7 = publisherId.hashCode();
-      if (recipientCount == null) {
-        break label471;
-      }
-      i8 = recipientCount.hashCode();
+      m = publisherId.hashCode();
       if (snapIndexCount == null) {
-        break label477;
+        break label181;
       }
-      i9 = snapIndexCount.hashCode();
+      n = snapIndexCount.hashCode();
+      label86:
       if (snapIndexPos == null) {
-        break label483;
-      }
-      i10 = snapIndexPos.hashCode();
-      if (snapTimeSec == null) {
-        break label489;
-      }
-      i11 = snapTimeSec.hashCode();
-      label262:
-      if (source == null) {
-        break label495;
+        break label187;
       }
     }
-    label407:
-    label412:
-    label417:
-    label423:
-    label429:
-    label435:
-    label441:
-    label447:
-    label453:
-    label459:
-    label465:
-    label471:
-    label477:
-    label483:
-    label489:
-    label495:
-    for (int i12 = source.hashCode();; i12 = 0)
+    label165:
+    label170:
+    label175:
+    label181:
+    label187:
+    for (int i1 = snapIndexPos.hashCode();; i1 = 0)
     {
-      if (timeViewed != null) {
-        i13 = timeViewed.hashCode();
+      if (source != null) {
+        i2 = source.hashCode();
       }
-      return (i12 + (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i14 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i13;
+      return (i1 + (n + (m + (k + (j + (i + i3 * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i2;
       i = 0;
       break;
       j = 0;
@@ -399,28 +179,6 @@ public final class hf
       break label70;
       n = 0;
       break label86;
-      i1 = 0;
-      break label102;
-      i2 = 0;
-      break label118;
-      i3 = 0;
-      break label134;
-      i4 = 0;
-      break label150;
-      i5 = 0;
-      break label166;
-      i6 = 0;
-      break label182;
-      i7 = 0;
-      break label198;
-      i8 = 0;
-      break label214;
-      i9 = 0;
-      break label230;
-      i10 = 0;
-      break label246;
-      i11 = 0;
-      break label262;
     }
   }
 }

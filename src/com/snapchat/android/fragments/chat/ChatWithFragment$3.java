@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.chat;
 
-import afy.b;
+import agy.b;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,7 +15,7 @@ final class ChatWithFragment$3
   
   public final void onItemClick(AdapterView<?> paramAdapterView, View paramView, int paramInt, long paramLong)
   {
-    ChatFragment.a(getTagb.h());
+    ChatFragment.a(getTagb.l());
     ((LandingPageActivity)a.getActivity()).a(0, false);
     a.getActivity().onBackPressed();
   }

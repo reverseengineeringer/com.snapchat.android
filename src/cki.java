@@ -1,158 +1,54 @@
 public final class cki
-  extends cgk
 {
-  private static final int d;
-  private final cgk e;
-  private final cki.a[] f = new cki.a[d + 1];
-  
-  static
+  public static int a(long paramLong)
   {
-    try
-    {
-      Integer localInteger = Integer.getInteger("org.joda.time.tz.CachedDateTimeZone.size");
-      if (localInteger == null)
-      {
-        i = 512;
-        d = i - 1;
-        return;
-      }
+    if ((-2147483648L <= paramLong) && (paramLong <= 2147483647L)) {
+      return (int)paramLong;
     }
-    catch (SecurityException localSecurityException)
-    {
-      for (;;)
-      {
-        Object localObject = null;
-        continue;
-        int i = ((Integer)localObject).intValue() - 1;
-        int j = 0;
-        while (i > 0)
-        {
-          j += 1;
-          i >>= 1;
-        }
-        i = 1 << j;
-      }
+    throw new ArithmeticException("Value cannot fit in an int: " + paramLong);
+  }
+  
+  public static long a(long paramLong1, long paramLong2)
+  {
+    long l = paramLong1 + paramLong2;
+    if (((paramLong1 ^ l) < 0L) && ((paramLong1 ^ paramLong2) >= 0L)) {
+      throw new ArithmeticException("The calculation caused an overflow: " + paramLong1 + " + " + paramLong2);
+    }
+    return l;
+  }
+  
+  public static void a(chi paramchi, int paramInt1, int paramInt2, int paramInt3)
+  {
+    if ((paramInt1 < paramInt2) || (paramInt1 > paramInt3)) {
+      throw new chp(paramchi.a(), Integer.valueOf(paramInt1), Integer.valueOf(paramInt2), Integer.valueOf(paramInt3));
     }
   }
   
-  private cki(cgk paramcgk)
+  public static void a(chj paramchj, int paramInt1, int paramInt2, int paramInt3)
   {
-    super(c);
-    e = paramcgk;
-  }
-  
-  public static cki a(cgk paramcgk)
-  {
-    if ((paramcgk instanceof cki)) {
-      return (cki)paramcgk;
-    }
-    return new cki(paramcgk);
-  }
-  
-  private cki.a h(long paramLong)
-  {
-    int i = (int)(paramLong >> 32);
-    cki.a[] arrayOfa = f;
-    int j = i & d;
-    Object localObject2 = arrayOfa[j];
-    Object localObject1;
-    if (localObject2 != null)
-    {
-      localObject1 = localObject2;
-      if ((int)(a >> 32) == i) {}
-    }
-    else
-    {
-      long l1 = 0xFFFFFFFF00000000 & paramLong;
-      localObject1 = new cki.a(e, l1);
-      localObject2 = localObject1;
-      long l2;
-      for (paramLong = l1;; paramLong = l2)
-      {
-        l2 = e.f(paramLong);
-        if ((l2 == paramLong) || (l2 > (l1 | 0xFFFFFFFF))) {
-          break;
-        }
-        cki.a locala = new cki.a(e, l2);
-        c = locala;
-        localObject2 = locala;
-      }
-      arrayOfa[j] = localObject1;
-    }
-    return (cki.a)localObject1;
-  }
-  
-  public final String a(long paramLong)
-  {
-    for (cki.a locala = h(paramLong);; locala = c) {
-      if ((c == null) || (paramLong < c.a))
-      {
-        if (d == null) {
-          d = b.a(a);
-        }
-        return d;
-      }
+    if ((paramInt1 < paramInt2) || (paramInt1 > paramInt3)) {
+      throw new chp(paramchj, Integer.valueOf(paramInt1), Integer.valueOf(paramInt2), Integer.valueOf(paramInt3));
     }
   }
   
-  public final int b(long paramLong)
+  public static boolean a(Object paramObject1, Object paramObject2)
   {
-    for (cki.a locala = h(paramLong);; locala = c) {
-      if ((c == null) || (paramLong < c.a))
-      {
-        if (e == Integer.MIN_VALUE) {
-          e = b.b(a);
-        }
-        return e;
-      }
-    }
-  }
-  
-  public final boolean c()
-  {
-    return e.c();
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (this == paramObject) {
+    if (paramObject1 == paramObject2) {
       return true;
     }
-    if ((paramObject instanceof cki)) {
-      return e.equals(e);
+    if ((paramObject1 == null) || (paramObject2 == null)) {
+      return false;
     }
-    return false;
+    return paramObject1.equals(paramObject2);
   }
   
-  public final long f(long paramLong)
+  public static long b(long paramLong1, long paramLong2)
   {
-    return e.f(paramLong);
-  }
-  
-  public final long g(long paramLong)
-  {
-    return e.g(paramLong);
-  }
-  
-  public final int hashCode()
-  {
-    return e.hashCode();
-  }
-  
-  static final class a
-  {
-    public final long a;
-    public final cgk b;
-    a c;
-    String d;
-    int e = Integer.MIN_VALUE;
-    private int f = Integer.MIN_VALUE;
-    
-    a(cgk paramcgk, long paramLong)
-    {
-      a = paramLong;
-      b = paramcgk;
+    long l = paramLong1 - paramLong2;
+    if (((paramLong1 ^ l) < 0L) && ((paramLong1 ^ paramLong2) < 0L)) {
+      throw new ArithmeticException("The calculation caused an overflow: " + paramLong1 + " - " + paramLong2);
     }
+    return l;
   }
 }
 

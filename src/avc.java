@@ -1,73 +1,70 @@
-import android.content.SharedPreferences.Editor;
-import com.snapchat.android.database.SharedPreferenceKey;
-import com.snapchat.android.model.Friend;
-import com.snapchat.android.util.FriendSectionizer.FriendSection;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import javax.validation.constraints.NotNull;
-
 public final class avc
 {
-  private static final avc INSTANCE = new avc();
+  private static final int HIGH_QUALITY_CUTOFF = 720;
+  private static final double SIMILARITY_THRESHOLD = 0.02D;
+  protected final int mHeight;
+  protected final int mWidth;
   
-  public static avc a()
+  public avc(int paramInt1, int paramInt2)
   {
-    return INSTANCE;
+    mWidth = paramInt1;
+    mHeight = paramInt2;
   }
   
-  public static ArrayList<Friend> a(@NotNull ajv paramajv, FriendSectionizer.FriendSection paramFriendSection)
+  public final int a()
   {
-    ArrayList localArrayList = new ArrayList();
-    HashSet localHashSet = new HashSet();
-    localHashSet.addAll(paramajv.o());
-    localHashSet.addAll(paramajv.q());
-    localHashSet.addAll(paramajv.r());
-    paramajv = paramajv.s().iterator();
-    while (paramajv.hasNext())
+    return mWidth;
+  }
+  
+  public final avc a(double paramDouble)
+  {
+    return new avc((int)(mWidth * paramDouble), (int)(mHeight * paramDouble));
+  }
+  
+  public final boolean a(avc paramavc)
+  {
+    return ((mHeight > mHeight) && (mWidth > mWidth)) || ((mWidth > mHeight) && (mHeight > mWidth));
+  }
+  
+  public final int b()
+  {
+    return mHeight;
+  }
+  
+  public final boolean b(avc paramavc)
+  {
+    return ((mHeight >= mHeight) && (mWidth >= mWidth)) || ((mWidth >= mHeight) && (mHeight >= mWidth));
+  }
+  
+  public final double c()
+  {
+    return mWidth / mHeight;
+  }
+  
+  public final int d()
+  {
+    return mWidth * mHeight;
+  }
+  
+  public final boolean e()
+  {
+    return (mHeight >= 720) && (mWidth >= 720);
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if (!(paramObject instanceof avc)) {}
+    do
     {
-      Friend localFriend = (Friend)paramajv.next();
-      if (!localHashSet.contains(localFriend))
-      {
-        mFriendSection = paramFriendSection;
-        localArrayList.add(localFriend);
-      }
-    }
-    return localArrayList;
+      return false;
+      paramObject = (avc)paramObject;
+    } while ((mWidth != mWidth) || (mHeight != mHeight) || (!getClass().equals(paramObject.getClass())));
+    return true;
   }
   
-  public static void a(bkp parambkp, @NotNull ajv paramajv)
+  public final int hashCode()
   {
-    if (!parambkp.b()) {
-      return;
-    }
-    parambkp = parambkp.a();
-    ajx.a();
-    long l = System.currentTimeMillis();
-    Object localObject = ajx.bt();
-    while (((List)localObject).size() > 10) {
-      ((List)localObject).remove(((List)localObject).size() - 1);
-    }
-    ((List)localObject).add(0, Long.valueOf(l));
-    ajx.b().putString(SharedPreferenceKey.IDENTITY_SUGGESTED_FRIEND_FIND_TIMESTAMPS.getKey(), avb.a((Collection)localObject, "~")).apply();
-    localObject = new ArrayList();
-    parambkp = parambkp.iterator();
-    while (parambkp.hasNext()) {
-      ((List)localObject).add(new Friend((bkn)parambkp.next()));
-    }
-    paramajv.b((List)localObject);
-  }
-  
-  public static boolean a(ajv paramajv, ajx paramajx)
-  {
-    if ((paramajv == null) || (paramajx == null) || (paramajv.s().size() == 0) || (ajx.bt() == null) || (ajx.bt().size() == 0)) {
-      return true;
-    }
-    paramajv = (Long)ajx.bt().get(0);
-    return Long.valueOf(System.currentTimeMillis()).longValue() - paramajv.longValue() > ajx.bu() * 3600000L;
+    return (mWidth + 41) * 41 + mWidth;
   }
 }
 

@@ -1,604 +1,355 @@
 .class public final Laft;
-.super Lafu;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lakl;
-.implements Lakm$a;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Laft$a;
+    }
+.end annotation
 
 
 # instance fields
-.field private final o:Lakk;
+.field final a:Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;
 
-.field private final p:Labp;
+.field private final b:Lpm;
 
-.field private q:Z
-
-.field private r:Z
-
-.field private s:Ljava/lang/Long;
+.field private final c:Lalt;
 
 
 # direct methods
-.method public constructor <init>(Lafr$c;Ladl;)V
-    .locals 2
-    .param p1    # Lafr$c;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>()V
+    .locals 3
 
     .prologue
-    .line 41
-    invoke-direct {p0, p1, p2}, Lafu;-><init>(Lafr$c;Ladl;)V
+    .line 33
+    invoke-static {}, Lpm;->a()Lpm;
 
-    .line 36
-    const/4 v0, 0x0
+    move-result-object v0
 
-    iput-boolean v0, p0, Laft;->r:Z
+    new-instance v1, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;
 
-    .line 43
-    new-instance v1, Lakm;
+    invoke-direct {v1}, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;-><init>()V
 
-    iget-object v0, p1, Lafr$c;->a:Lcom/snapchat/android/model/chat/ChatFeedItem;
+    invoke-static {}, Lalt;->a()Lalt;
 
-    check-cast v0, Lakh;
+    move-result-object v2
 
-    invoke-direct {v1, p1, v0, p0}, Lakm;-><init>(Lafr$c;Lcom/snapchat/android/model/chat/ChatMedia;Lakm$a;)V
+    invoke-direct {p0, v0, v1, v2}, Laft;-><init>(Lpm;Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;Lalt;)V
 
-    iput-object v1, p0, Laft;->o:Lakk;
-
-    .line 44
-    new-instance v0, Labp;
-
-    invoke-direct {v0}, Labp;-><init>()V
-
-    iput-object v0, p0, Laft;->p:Labp;
-
-    .line 45
-    iget-object v0, p0, Laft;->o:Lakk;
-
-    invoke-interface {v0, p0}, Lakk;->a(Lakl;)V
-
-    .line 46
+    .line 35
     return-void
 .end method
 
-.method private l()V
-    .locals 2
+.method private constructor <init>(Lpm;Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;Lalt;)V
+    .locals 0
 
     .prologue
-    .line 148
-    iget-object v0, p0, Laft;->d:Landroid/widget/TextView;
+    .line 40
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v1, 0x7f0c0078
+    .line 41
+    iput-object p1, p0, Laft;->b:Lpm;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+    .line 42
+    iput-object p2, p0, Laft;->a:Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;
 
-    .line 149
-    iget-object v0, p0, Laft;->e:Landroid/widget/TextView;
+    .line 43
+    iput-object p3, p0, Laft;->c:Lalt;
 
-    const v1, 0x7f0c029f
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
-
-    .line 150
+    .line 44
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 5
+.method final a(Ljava/util/List;)Lcom/snapchat/android/discover/ui/media/VideoProperties;
+    .locals 14
+    .annotation build Lchd;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lbkz;",
+            ">;)",
+            "Lcom/snapchat/android/discover/ui/media/VideoProperties;"
+        }
+    .end annotation
 
     .prologue
-    .line 71
-    iget-object v0, p0, Laft;->n:Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;
+    const/4 v4, 0x0
 
-    iget-object v1, p0, Laft;->a:Lakh;
+    const/4 v8, 0x1
 
-    invoke-virtual {v1}, Lakh;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "DISCOVER_SHARE_LOCKED_VIDEO_LOAD"
-
-    invoke-virtual {v0, v2, v1}, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    const-string v2, "DISCOVER_SHARE_LOCKED_VIDEO_LOAD"
-
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v2
-
-    const-string v3, "reachability"
-
-    iget-object v4, v0, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->mNetworkStatusManager:Lale;
-
-    invoke-virtual {v4}, Lale;->f()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v2
-
-    const-string v3, "DISCOVER_SHARE_LOCKED_VIDEO_LOAD"
-
-    invoke-virtual {v0, v3, v1, v2}, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
-
-    .line 73
-    :cond_0
-    invoke-super {p0}, Lafu;->a()V
-
-    .line 75
-    iget-boolean v0, p0, Laft;->q:Z
-
-    if-nez v0, :cond_1
-
-    .line 76
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Laft;->q:Z
-
-    .line 77
-    iget-object v0, p0, Laft;->o:Lakk;
-
-    invoke-interface {v0}, Lakk;->b()V
-
-    .line 78
-    iget-object v0, p0, Laft;->o:Lakk;
-
-    invoke-interface {v0}, Lakk;->a()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 79
-    iget-object v0, p0, Laft;->o:Lakk;
-
-    invoke-interface {v0}, Lakk;->c()V
-
-    .line 82
-    :cond_1
-    return-void
-.end method
-
-.method public final b()V
-    .locals 8
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 86
-    iget-object v0, p0, Laft;->s:Ljava/lang/Long;
-
-    if-nez v0, :cond_0
+    const/4 v3, 0x0
 
     .line 87
-    iget-object v0, p0, Laft;->n:Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;
+    new-instance v9, Ljava/util/ArrayList;
 
-    iget-object v2, p0, Laft;->a:Lakh;
+    invoke-direct {v9, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    invoke-virtual {v2}, Lakh;->d()Ljava/lang/String;
+    .line 88
+    new-instance v0, Laft$a;
 
-    move-result-object v2
+    invoke-direct {v0}, Laft$a;-><init>()V
 
-    const/4 v3, 0x1
+    invoke-static {v9, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    iget-boolean v4, p0, Laft;->r:Z
+    move v2, v3
 
-    invoke-virtual {v0, v2, v3, v4}, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->b(Ljava/lang/String;ZZ)V
-
-    .line 91
-    :cond_0
-    invoke-super {p0}, Lafu;->b()V
-
-    .line 93
-    iget-boolean v0, p0, Laft;->q:Z
-
-    if-eqz v0, :cond_1
+    move-object v1, v4
 
     .line 94
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laft;->q:Z
-
-    .line 95
-    iget-object v0, p0, Laft;->o:Lakk;
-
-    invoke-interface {v0}, Lakk;->d()V
-
-    .line 96
-    iget-object v0, p0, Laft;->o:Lakk;
-
-    invoke-interface {v0}, Lakk;->f()V
-
-    .line 99
-    :cond_1
-    iget-object v0, p0, Laft;->j:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;
-
-    if-nez v0, :cond_3
-
-    move-object v0, v1
-
-    .line 101
     :goto_0
-    iget-object v2, p0, Laft;->s:Ljava/lang/Long;
-
-    if-nez v2, :cond_4
-
-    move-object v2, v1
-
-    .line 103
-    :goto_1
-    iget-object v3, p0, Laft;->o:Lakk;
-
-    invoke-interface {v3}, Lakk;->g()J
-
-    move-result-wide v4
-
-    const-wide/16 v6, -0x1
-
-    cmp-long v3, v4, v6
-
-    if-nez v3, :cond_5
-
-    move-object v3, v1
-
-    .line 105
-    :goto_2
-    iget-boolean v4, p0, Laft;->k:Z
-
-    if-eqz v4, :cond_6
-
-    iget-object v4, p0, Laft;->a:Lakh;
-
-    iget-object v4, v4, Lakh;->mAdId:Ljava/lang/String;
-
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_6
-
-    .line 106
-    iget-object v4, p0, Laft;->a:Lakh;
-
-    invoke-virtual {p0}, Laft;->j()Z
-
-    move-result v5
-
-    invoke-static {v4, v5, v2, v0, v3}, Lna;->b(Lakh;ZLjava/lang/Double;Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;Ljava/lang/Double;)V
-
-    .line 113
-    :cond_2
-    :goto_3
-    iput-object v1, p0, Laft;->s:Ljava/lang/Long;
-
-    .line 114
-    return-void
-
-    .line 99
-    :cond_3
-    iget-object v0, p0, Laft;->j:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;
-
-    iget-object v0, v0, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;->mLinkStatus:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
-
-    goto :goto_0
-
-    .line 101
-    :cond_4
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    iget-object v4, p0, Laft;->s:Ljava/lang/Long;
-
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    invoke-static {v2, v3}, Lavf;->a(J)D
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v2
-
-    goto :goto_1
-
-    .line 103
-    :cond_5
-    iget-object v3, p0, Laft;->o:Lakk;
-
-    invoke-interface {v3}, Lakk;->g()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Lavf;->a(J)D
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    goto :goto_2
-
-    .line 108
-    :cond_6
-    iget-object v4, p0, Laft;->a:Lakh;
-
-    iget-object v4, v4, Lakh;->mDSnapId:Ljava/lang/String;
-
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_2
-
-    .line 109
-    iget-object v4, p0, Laft;->a:Lakh;
-
-    invoke-virtual {p0}, Laft;->j()Z
-
-    move-result v5
-
-    invoke-static {v4, v5, v2, v0, v3}, Lna;->a(Lakh;ZLjava/lang/Double;Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;Ljava/lang/Double;)V
-
-    goto :goto_3
-.end method
-
-.method public final c()V
-    .locals 1
-
-    .prologue
-    .line 118
-    invoke-super {p0}, Lafu;->c()V
-
-    .line 120
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laft;->q:Z
-
-    .line 121
-    iget-object v0, p0, Laft;->o:Lakk;
-
-    invoke-interface {v0}, Lakk;->e()V
-
-    .line 122
-    return-void
-.end method
-
-.method public final d()V
-    .locals 8
-
-    .prologue
-    const/4 v1, 0x0
-
-    const/4 v4, 0x1
-
-    const/4 v7, 0x0
-
-    .line 129
-    const-string v0, "ChatDiscoverVideoViewingSession"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Could not play video for ChatShareDSnap\n"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p0, Laft;->a:Lakh;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 131
-    iget-object v0, p0, Laft;->n:Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;
-
-    iget-object v2, p0, Laft;->a:Lakh;
-
-    invoke-virtual {v2}, Lakh;->d()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2, v7, v4}, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->b(Ljava/lang/String;ZZ)V
-
-    .line 134
-    iput-boolean v4, p0, Laft;->r:Z
-
-    .line 135
-    invoke-virtual {p0}, Laft;->j()Z
+    invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-ge v2, v0, :cond_5
 
-    iget-object v0, p0, Laft;->j:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;
+    .line 95
+    invoke-interface {v9, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    iget-object v0, v0, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;->mLinkStatus:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
+    move-result-object v0
 
-    .line 136
-    :goto_0
-    sget-object v2, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->ARCHIVED:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
+    check-cast v0, Lbkz;
 
-    if-eq v0, v2, :cond_0
-
-    sget-object v2, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->LIVE:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
-
-    if-ne v0, v2, :cond_1
-
-    .line 138
-    :cond_0
-    invoke-direct {p0}, Laft;->l()V
-
-    .line 140
-    :cond_1
-    iget-object v0, p0, Laft;->a:Lakh;
-
-    iget-object v0, v0, Lakh;->mPublisherName:Ljava/lang/String;
-
-    iget-object v2, p0, Laft;->a:Lakh;
-
-    iget-object v2, v2, Lakh;->mDSnapId:Ljava/lang/String;
-
-    iget-object v3, p0, Laft;->a:Lakh;
-
-    iget v3, v3, Lakh;->mVideoWidth:F
-
-    iget-object v4, p0, Laft;->a:Lakh;
-
-    iget v4, v4, Lakh;->mVideoHeight:F
-
-    const-string v5, "DISCOVER_SHARED_VIDEO_PLAYBACK_ERROR"
-
-    invoke-static {v5}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    .line 96
+    invoke-virtual {v0}, Lbkz;->f()Ljava/lang/String;
 
     move-result-object v5
 
-    const-string v6, "publisher_name"
+    if-eqz v5, :cond_7
 
-    invoke-virtual {v5, v6, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    const-string v5, "MP4"
 
-    move-result-object v0
+    invoke-virtual {v0}, Lbkz;->f()Ljava/lang/String;
 
-    const-string v5, "dsnap_id"
+    move-result-object v6
 
-    invoke-virtual {v0, v5, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    sget-object v7, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    move-result-object v0
+    invoke-virtual {v6, v7}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    const-string v2, "video_width"
+    move-result-object v6
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v3
+    move-result v5
 
-    invoke-virtual {v0, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    if-eqz v5, :cond_7
 
-    move-result-object v0
+    .line 102
+    if-eqz v1, :cond_0
 
-    const-string v2, "video_height"
+    invoke-virtual {v0}, Lbkz;->b()Ljava/lang/Integer;
 
-    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v5
 
-    move-result-object v3
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {v0, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    move-result v5
 
-    move-result-object v0
+    invoke-virtual {v0}, Lbkz;->c()Ljava/lang/Integer;
 
-    invoke-virtual {v0, v7}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
+    move-result-object v6
 
-    .line 144
-    iput-object v1, p0, Laft;->s:Ljava/lang/Long;
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
-    .line 145
-    return-void
+    move-result v6
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
+
+    move-result v5
+
+    invoke-virtual {v0}, Lbkz;->b()Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    invoke-virtual {v0}, Lbkz;->c()Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
+
+    move-result v6
+
+    iget-object v7, p0, Laft;->b:Lpm;
+
+    iget v7, v7, Lpm;->mMaxVideoHeight:I
+
+    iget-object v10, p0, Laft;->b:Lpm;
+
+    iget v10, v10, Lpm;->mMaxVideoWidth:I
+
+    invoke-static {v7, v10}, Ljava/lang/Math;->max(II)I
+
+    move-result v7
+
+    iget-object v10, p0, Laft;->b:Lpm;
+
+    iget v10, v10, Lpm;->mMaxVideoHeight:I
+
+    iget-object v11, p0, Laft;->b:Lpm;
+
+    iget v11, v11, Lpm;->mMaxVideoWidth:I
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->min(II)I
+
+    move-result v10
+
+    if-gt v5, v7, :cond_1
+
+    if-gt v6, v10, :cond_1
+
+    move v5, v8
+
+    :goto_1
+    if-eqz v5, :cond_7
+
+    iget-object v5, p0, Laft;->a:Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;
+
+    iget-object v5, v5, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;->b:Lakn;
+
+    const-string v6, "STREAMING"
+
+    const-string v7, "BANDWIDTH_USAGE_FACTOR"
+
+    const v10, 0x3f333333    # 0.7f
+
+    invoke-virtual {v5, v6, v7, v10}, Lakn;->a(Ljava/lang/String;Ljava/lang/String;F)F
+
+    move-result v5
+
+    iget-object v10, p0, Laft;->c:Lalt;
+
+    invoke-virtual {v10}, Lalt;->b()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v6}, Lalt;->a(Ljava/lang/String;)Lamf;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lamf;->a()J
+
+    move-result-wide v6
+
+    const-wide/16 v12, 0x0
+
+    cmp-long v11, v6, v12
+
+    if-eqz v11, :cond_2
+
+    :goto_2
+    long-to-float v6, v6
+
+    mul-float/2addr v5, v6
+
+    float-to-int v5, v5
+
+    invoke-virtual {v0}, Lbkz;->a()Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    if-gt v6, v5, :cond_4
+
+    move v5, v8
+
+    :goto_3
+    if-eqz v5, :cond_7
+
+    .line 94
+    :cond_0
+    :goto_4
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    move-object v1, v0
+
+    goto/16 :goto_0
+
+    :cond_1
+    move v5, v3
+
+    .line 102
+    goto :goto_1
 
     :cond_2
-    move-object v0, v1
+    iget-object v6, v10, Lalt;->a:Lama;
 
-    .line 135
-    goto :goto_0
-.end method
+    invoke-virtual {v6}, Lama;->e()Z
 
-.method protected final e()V
-    .locals 1
+    move-result v6
 
-    .prologue
-    .line 154
-    iget-boolean v0, p0, Laft;->r:Z
+    if-eqz v6, :cond_3
 
-    if-eqz v0, :cond_0
+    const-wide/32 v6, 0x2dc6c0
 
-    .line 155
-    invoke-direct {p0}, Laft;->l()V
+    goto :goto_2
 
-    .line 159
-    :goto_0
-    return-void
+    :cond_3
+    const-wide/32 v6, 0x927c0
 
-    .line 157
-    :cond_0
-    invoke-super {p0}, Lafu;->e()V
+    goto :goto_2
 
-    goto :goto_0
-.end method
+    :cond_4
+    move v5, v3
 
-.method protected final f()V
-    .locals 1
+    goto :goto_3
 
-    .prologue
-    .line 163
-    iget-boolean v0, p0, Laft;->r:Z
+    .line 109
+    :cond_5
+    if-eqz v1, :cond_6
 
-    if-eqz v0, :cond_0
+    .line 110
+    new-array v0, v8, [Ljava/lang/Object;
 
-    .line 164
-    invoke-direct {p0}, Laft;->l()V
+    aput-object v1, v0, v3
 
-    .line 168
-    :goto_0
-    return-void
+    .line 111
+    new-instance v4, Lcom/snapchat/android/discover/ui/media/VideoProperties;
 
-    .line 166
-    :cond_0
-    invoke-super {p0}, Lafu;->f()V
+    invoke-virtual {v1}, Lbkz;->e()Ljava/lang/String;
 
-    goto :goto_0
-.end method
+    move-result-object v0
 
-.method public final g()V
-    .locals 3
+    sget-object v2, Lcom/snapchat/android/discover/ui/media/VideoProperties$Protocol;->MP4:Lcom/snapchat/android/discover/ui/media/VideoProperties$Protocol;
 
-    .prologue
-    const/4 v2, 0x0
+    invoke-virtual {v1}, Lbkz;->a()Ljava/lang/Integer;
 
-    .line 172
-    iget-object v0, p0, Laft;->n:Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;
+    move-result-object v3
 
-    iget-object v1, p0, Laft;->a:Lakh;
-
-    invoke-virtual {v1}, Lakh;->d()Ljava/lang/String;
+    invoke-virtual {v1}, Lbkz;->d()Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1, v2, v2}, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->b(Ljava/lang/String;ZZ)V
+    invoke-direct {v4, v0, v2, v3, v1}, Lcom/snapchat/android/discover/ui/media/VideoProperties;-><init>(Ljava/lang/String;Lcom/snapchat/android/discover/ui/media/VideoProperties$Protocol;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
-    .line 174
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    .line 114
+    :cond_6
+    return-object v4
 
-    move-result-wide v0
+    :cond_7
+    move-object v0, v1
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iput-object v0, p0, Laft;->s:Ljava/lang/Long;
-
-    .line 175
-    return-void
+    goto :goto_4
 .end method

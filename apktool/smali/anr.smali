@@ -1,5 +1,5 @@
-.class public Lanr;
-.super Ljava/lang/Object;
+.class public final Lanr;
+.super Lana;
 .source "SourceFile"
 
 
@@ -11,350 +11,248 @@
 .end annotation
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
-
-
 # instance fields
-.field public final b:Ljava/util/concurrent/Executor;
+.field public final a:J
 
-.field public c:I
+.field public b:Z
 
-.field public d:D
+.field private final c:Laxn;
 
-.field public final e:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final d:Lakr;
 
-.field public final f:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final e:Lcom/squareup/otto/Bus;
 
-.field public final g:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final h:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public i:J
-
-.field public j:I
-
-.field k:D
-
-.field private final l:Lcom/snapchat/android/scan/SnapScan;
-
-.field private m:I
-
-.field private n:I
-
-.field private final o:Lans;
-
-.field private final p:Lanr$a;
+.field private final f:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Intent;)V
+    .locals 6
 
     .prologue
-    .line 22
-    const-class v0, Lanr;
+    .line 38
+    sget-object v2, Laxo;->PROFILE_IMAGE_CACHE:Laxn;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-static {}, Lakr;->a()Lakr;
 
-    move-result-object v0
+    move-result-object v3
 
-    sput-object v0, Lanr;->a:Ljava/lang/String;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
-    return-void
-.end method
+    move-result-object v4
 
-.method public constructor <init>(IIILans;)V
-    .locals 7
+    invoke-static {}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils;->a()Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
-    .prologue
-    .line 55
-    new-instance v1, Lcom/snapchat/android/scan/SnapScan;
-
-    invoke-direct {v1}, Lcom/snapchat/android/scan/SnapScan;-><init>()V
-
-    sget-object v2, Lauh;->SERIAL_BACKGROUND_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    move-result-object v5
 
     move-object v0, p0
 
-    move v3, p1
+    move-object v1, p1
 
-    move v4, p2
+    invoke-direct/range {v0 .. v5}, Lanr;-><init>(Landroid/content/Intent;Laxn;Lakr;Lcom/squareup/otto/Bus;Lcom/snapchat/android/util/profileimages/ProfileImageUtils;)V
 
-    move v5, p3
-
-    move-object v6, p4
-
-    invoke-direct/range {v0 .. v6}, Lanr;-><init>(Lcom/snapchat/android/scan/SnapScan;Ljava/util/concurrent/Executor;IIILans;)V
-
-    .line 57
+    .line 40
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/scan/SnapScan;Ljava/util/concurrent/Executor;IIILans;)V
+.method private constructor <init>(Landroid/content/Intent;Laxn;Lakr;Lcom/squareup/otto/Bus;Lcom/snapchat/android/util/profileimages/ProfileImageUtils;)V
     .locals 4
 
     .prologue
-    const/4 v2, 0x0
+    .line 45
+    invoke-direct {p0, p1}, Lana;-><init>(Landroid/content/Intent;)V
 
-    .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 46
+    const-string v0, "last_deleted"
 
-    .line 62
-    iput-object p1, p0, Lanr;->l:Lcom/snapchat/android/scan/SnapScan;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    .line 63
-    iput-object p2, p0, Lanr;->b:Ljava/util/concurrent/Executor;
+    move-result-wide v2
 
-    .line 64
-    iput p3, p0, Lanr;->c:I
+    invoke-virtual {p1, v0, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    .line 65
-    iput p4, p0, Lanr;->m:I
+    move-result-wide v0
 
-    .line 66
-    iput p5, p0, Lanr;->n:I
+    iput-wide v0, p0, Lanr;->a:J
 
-    .line 67
-    iput-object p6, p0, Lanr;->o:Lans;
+    .line 47
+    iput-object p2, p0, Lanr;->c:Laxn;
 
-    .line 68
+    .line 48
+    iput-object p3, p0, Lanr;->d:Lakr;
+
+    .line 49
+    iput-object p4, p0, Lanr;->e:Lcom/squareup/otto/Bus;
+
+    .line 50
+    iput-object p5, p0, Lanr;->f:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
+
+    .line 51
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lanr;->p:Lanr$a;
+    iput-boolean v0, p0, Lanr;->b:Z
 
-    .line 70
-    const-wide/high16 v0, 0x4014000000000000L    # 5.0
-
-    iput-wide v0, p0, Lanr;->d:D
-
-    .line 71
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lanr;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 72
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lanr;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 73
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lanr;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 74
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    const-wide/16 v2, 0x0
-
-    invoke-direct {v0, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lanr;->h:Ljava/util/concurrent/atomic/AtomicLong;
-
-    .line 75
+    .line 52
     return-void
-.end method
-
-.method public static a(J)D
-    .locals 4
-
-    .prologue
-    .line 244
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v0
-
-    sub-long/2addr v0, p0
-
-    long-to-double v0, v0
-
-    const-wide v2, 0x41cdcd6500000000L    # 1.0E9
-
-    div-double/2addr v0, v2
-
-    return-wide v0
-.end method
-
-.method static synthetic a(Lanr;D)D
-    .locals 1
-
-    .prologue
-    .line 21
-    iput-wide p1, p0, Lanr;->k:D
-
-    return-wide p1
-.end method
-
-.method static synthetic a(Lanr;)I
-    .locals 1
-
-    .prologue
-    .line 21
-    iget v0, p0, Lanr;->m:I
-
-    return v0
-.end method
-
-.method static synthetic b(J)D
-    .locals 2
-
-    .prologue
-    .line 21
-    invoke-static {p0, p1}, Lanr;->a(J)D
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method static synthetic b(Lanr;)I
-    .locals 1
-
-    .prologue
-    .line 21
-    iget v0, p0, Lanr;->n:I
-
-    return v0
-.end method
-
-.method static synthetic b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 21
-    sget-object v0, Lanr;->a:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic c(Lanr;)Lcom/snapchat/android/scan/SnapScan;
-    .locals 1
-
-    .prologue
-    .line 21
-    iget-object v0, p0, Lanr;->l:Lcom/snapchat/android/scan/SnapScan;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lanr;)I
-    .locals 2
-
-    .prologue
-    .line 21
-    iget v0, p0, Lanr;->j:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lanr;->j:I
-
-    return v0
-.end method
-
-.method static synthetic e(Lanr;)Ljava/util/concurrent/atomic/AtomicBoolean;
-    .locals 1
-
-    .prologue
-    .line 21
-    iget-object v0, p0, Lanr;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    return-object v0
-.end method
-
-.method static synthetic f(Lanr;)Lanr$a;
-    .locals 1
-
-    .prologue
-    .line 21
-    iget-object v0, p0, Lanr;->p:Lanr$a;
-
-    return-object v0
-.end method
-
-.method static synthetic g(Lanr;)J
-    .locals 2
-
-    .prologue
-    .line 21
-    iget-wide v0, p0, Lanr;->i:J
-
-    return-wide v0
-.end method
-
-.method static synthetic h(Lanr;)I
-    .locals 1
-
-    .prologue
-    .line 21
-    iget v0, p0, Lanr;->j:I
-
-    return v0
-.end method
-
-.method static synthetic i(Lanr;)D
-    .locals 2
-
-    .prologue
-    .line 21
-    iget-wide v0, p0, Lanr;->k:D
-
-    return-wide v0
-.end method
-
-.method static synthetic j(Lanr;)Lans;
-    .locals 1
-
-    .prologue
-    .line 21
-    iget-object v0, p0, Lanr;->o:Lans;
-
-    return-object v0
-.end method
-
-.method static synthetic k(Lanr;)Ljava/util/concurrent/atomic/AtomicBoolean;
-    .locals 1
-
-    .prologue
-    .line 21
-    iget-object v0, p0, Lanr;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final getMethod()Lcom/snapchat/android/api2/framework/HttpMethod;
+    .locals 1
 
     .prologue
-    const/4 v2, 0x0
+    .line 73
+    sget-object v0, Lcom/snapchat/android/api2/framework/HttpMethod;->POST:Lcom/snapchat/android/api2/framework/HttpMethod;
 
-    .line 216
-    iget-object v0, p0, Lanr;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 4
 
-    .line 217
-    iget-object v0, p0, Lanr;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    .prologue
+    .line 64
+    new-instance v0, Lanr$a;
 
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-direct {v0}, Lanr$a;-><init>()V
 
-    .line 218
-    sget-object v0, Lanr;->a:Ljava/lang/String;
+    iget-wide v2, p0, Lanr;->a:J
 
-    const-string v1, "Disable Scanner..."
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    move-result-object v1
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Lanr$a;->a(Ljava/lang/Long;)Lblb;
 
-    .line 219
+    move-result-object v0
+
+    invoke-static {v0}, Lanr;->buildAuthPayload(Lbhy;)Lbhy;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected final l_()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 78
+    const-string v0, "/bq/delete_profile_data"
+
+    return-object v0
+.end method
+
+.method public final onResult(Lus;)V
+    .locals 6
+    .param p1    # Lus;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v5, 0x0
+
+    const/4 v4, 0x1
+
+    .line 83
+    invoke-super {p0, p1}, Lana;->onResult(Lus;)V
+
+    .line 88
+    iget v0, p1, Lus;->mResponseCode:I
+
+    const/16 v1, 0x194
+
+    if-eq v0, v1, :cond_0
+
+    iget v0, p1, Lus;->mResponseCode:I
+
+    const/16 v1, 0xc8
+
+    if-ne v0, v1, :cond_2
+
+    .line 89
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "profile images - delete succeeded with timestamp: "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v2, p0, Lanr;->a:J
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 90
+    iput-boolean v4, p0, Lanr;->b:Z
+
+    .line 91
+    iget-wide v0, p0, Lanr;->a:J
+
+    iget-object v2, p0, Lanr;->c:Laxn;
+
+    invoke-static {v0, v1, v2}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils;->a(JLaxn;)V
+
+    .line 92
+    iget-wide v0, p0, Lanr;->a:J
+
+    invoke-static {v0, v1}, Lakr;->c(J)V
+
+    .line 94
+    iget-wide v0, p0, Lanr;->a:J
+
+    invoke-static {}, Lakr;->z()J
+
+    move-result-wide v2
+
+    cmp-long v0, v0, v2
+
+    if-lez v0, :cond_1
+
+    .line 95
+    invoke-static {v4}, Lakr;->d(Z)V
+
+    .line 102
+    :cond_1
+    :goto_0
     return-void
+
+    .line 98
+    :cond_2
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget-wide v2, p0, Lanr;->a:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    aput-object v1, v0, v5
+
+    invoke-virtual {p1}, Lus;->e()Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v0, v4
+
+    .line 99
+    iput-boolean v5, p0, Lanr;->b:Z
+
+    .line 100
+    iget-object v0, p0, Lanr;->e:Lcom/squareup/otto/Bus;
+
+    new-instance v1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
+
+    sget-object v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
+
+    const v3, 0x7f0c00d8
+
+    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;I)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    goto :goto_0
 .end method

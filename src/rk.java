@@ -1,35 +1,73 @@
-import javax.inject.Provider;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.api2.cash.ScCashResponsePayload;
+import com.snapchat.android.util.CashUtils.CurrencyCode;
 
 public final class rk
-  implements buj<rj>
+  extends qs<rk.b>
 {
-  private final Provider<qg> mCashErrorReporterProvider;
-  private final Provider<sn> mSquareProvider;
-  private final buj<qv> supertypeInjector;
+  private final int mAmount;
+  private final CashUtils.CurrencyCode mCurrencyCode;
+  private final boolean mIsRain;
+  private final String mMessage;
+  private final String mRecipient;
   
-  static
+  public rk(@chc String paramString1, int paramInt, @chc CashUtils.CurrencyCode paramCurrencyCode, @chc String paramString2, boolean paramBoolean, @chc qs.a parama)
   {
-    if (!rk.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
+    super(parama);
+    mRecipient = paramString1;
+    mAmount = paramInt;
+    mCurrencyCode = paramCurrencyCode;
+    mMessage = paramString2;
+    mIsRain = paramBoolean;
+    registerCallback(rk.b.class, this);
   }
   
-  private rk(buj<qv> parambuj, Provider<qg> paramProvider, Provider<sn> paramProvider1)
+  protected final String getPath()
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mCashErrorReporterProvider = paramProvider;
-    assert (paramProvider1 != null);
-    mSquareProvider = paramProvider1;
+    return "/cash/validate_transaction";
   }
   
-  public static buj<rj> a(buj<qv> parambuj, Provider<qg> paramProvider, Provider<sn> paramProvider1)
+  public final Object getRequestPayload()
   {
-    return new rk(parambuj, paramProvider, paramProvider1);
+    return new rk.a();
+  }
+  
+  @ud
+  final class a
+    extends qc
+  {
+    @SerializedName("amount")
+    final int amount = rk.b(rk.this);
+    @SerializedName("currency_code")
+    final String currencyCode = rk.c(rk.this).name();
+    @SerializedName("rain")
+    final boolean isRain = rk.e(rk.this);
+    @SerializedName("message")
+    final String message = rk.d(rk.this);
+    @SerializedName("recipient")
+    final String recipient = rk.a(rk.this);
+    
+    a() {}
+  }
+  
+  public static class b
+    extends ScCashResponsePayload
+  {
+    @SerializedName("created_at")
+    @chd
+    public long createdAt;
+    @SerializedName("recipient_id")
+    @chd
+    public String recipientId;
+    @SerializedName("sender_id")
+    @chd
+    public String senderId;
+    @SerializedName("signature")
+    @chd
+    public String signature;
+    @SerializedName("transaction_id")
+    @chd
+    public String transactionId;
   }
 }
 

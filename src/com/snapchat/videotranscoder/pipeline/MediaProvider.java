@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.pipeline;
 
-import cgb;
+import chc;
 
 public abstract class MediaProvider
   extends Stage
@@ -8,7 +8,7 @@ public abstract class MediaProvider
   private static final String TAG = "MediaProvider";
   public Encoder mEncoder;
   
-  public MediaProvider(@cgb Encoder paramEncoder, @cgb StageDoneCallback paramStageDoneCallback)
+  public MediaProvider(@chc Encoder paramEncoder, @chc StageDoneCallback paramStageDoneCallback)
   {
     super(paramStageDoneCallback);
     mEncoder = paramEncoder;

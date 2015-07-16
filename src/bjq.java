@@ -3,43 +3,18 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class bjq
+public class bjq
+  extends bji
 {
-  @SerializedName("first_on_resume")
-  protected Integer firstOnResume;
-  @SerializedName("first_on_start")
-  protected Integer firstOnStart;
-  @SerializedName("interval")
-  protected Integer interval;
-  @SerializedName("min_snaps_after_ad")
-  protected Integer minSnapsAfterAd;
+  @SerializedName("ping_id")
+  protected String pingId;
   
-  public final Integer a()
+  public final String a()
   {
-    return firstOnResume;
+    return pingId;
   }
   
-  public final boolean b()
-  {
-    return firstOnResume != null;
-  }
-  
-  public final Integer c()
-  {
-    return interval;
-  }
-  
-  public final Integer d()
-  {
-    return minSnapsAfterAd;
-  }
-  
-  public final boolean e()
-  {
-    return minSnapsAfterAd != null;
-  }
-  
-  public final boolean equals(Object paramObject)
+  public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -48,25 +23,15 @@ public final class bjq
       return false;
     }
     paramObject = (bjq)paramObject;
-    return new EqualsBuilder().append(firstOnResume, firstOnResume).append(interval, interval).append(minSnapsAfterAd, minSnapsAfterAd).append(firstOnStart, firstOnStart).isEquals();
+    return new EqualsBuilder().append(pingId, pingId).isEquals();
   }
   
-  public final Integer f()
+  public int hashCode()
   {
-    return firstOnStart;
+    return new HashCodeBuilder().append(pingId).toHashCode();
   }
   
-  public final boolean g()
-  {
-    return firstOnStart != null;
-  }
-  
-  public final int hashCode()
-  {
-    return new HashCodeBuilder().append(firstOnResume).append(interval).append(minSnapsAfterAd).append(firstOnStart).toHashCode();
-  }
-  
-  public final String toString()
+  public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

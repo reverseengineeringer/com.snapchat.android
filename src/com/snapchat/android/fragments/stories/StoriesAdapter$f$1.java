@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.stories;
 
-import ahc;
+import ahz;
 
 final class StoriesAdapter$f$1
   implements Runnable

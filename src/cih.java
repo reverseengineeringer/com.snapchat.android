@@ -1,23 +1,84 @@
+import java.io.Serializable;
+
 public abstract class cih
-  implements cij
+  extends cie
+  implements chy, Serializable
 {
-  public long a(Object paramObject)
+  public volatile long a;
+  public volatile chg b;
+  
+  public cih()
   {
-    return cgj.a();
+    this(chk.a(), cjd.M());
   }
   
-  public cgf b(Object paramObject)
+  public cih(long paramLong)
   {
-    return cgj.a(null);
+    this(paramLong, cjd.M());
   }
   
-  public String toString()
+  public cih(long paramLong, chg paramchg)
   {
-    StringBuilder localStringBuilder = new StringBuilder("Converter[");
-    if (a() == null) {}
-    for (String str = "null";; str = a().getName()) {
-      return str + "]";
+    b = chk.a(paramchg);
+    paramchg = b;
+    a = paramLong;
+  }
+  
+  public cih(long paramLong, chl paramchl)
+  {
+    this(paramLong, cjd.b(paramchl));
+  }
+  
+  public cih(chg paramchg)
+  {
+    b = chk.a(paramchg);
+    long l = b.a(1, 1, 1, 0, 0, 0, 0);
+    paramchg = b;
+    a = l;
+  }
+  
+  public cih(Object paramObject)
+  {
+    cjm localcjm = aa;
+    if (paramObject == null) {}
+    for (Object localObject = null;; localObject = paramObject.getClass())
+    {
+      localObject = (cjp)localcjm.a((Class)localObject);
+      if (localObject == null) {
+        break;
+      }
+      b = chk.a(((cjp)localObject).b(paramObject));
+      long l = ((cjp)localObject).a(paramObject);
+      paramObject = b;
+      a = l;
+      return;
     }
+    localObject = new StringBuilder("No instant converter found for type: ");
+    if (paramObject == null) {}
+    for (paramObject = "null";; paramObject = paramObject.getClass().getName()) {
+      throw new IllegalArgumentException((String)paramObject);
+    }
+  }
+  
+  public void a(long paramLong)
+  {
+    chg localchg = b;
+    a = paramLong;
+  }
+  
+  public void a(chg paramchg)
+  {
+    b = chk.a(paramchg);
+  }
+  
+  public final long c()
+  {
+    return a;
+  }
+  
+  public final chg d()
+  {
+    return b;
   }
 }
 

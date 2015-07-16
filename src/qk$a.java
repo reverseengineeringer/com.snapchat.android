@@ -1,15 +1,18 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.api2.cash.ScCashResponsePayload;
+import java.util.List;
 
-public class qk$a
-  extends ScCashResponsePayload
+public abstract interface qk$a
 {
-  @SerializedName("phone_number")
-  @cgc
-  public String phoneNumber;
-  @SerializedName("signature")
-  @cgc
-  public String signature;
+  public abstract void a();
+  
+  public abstract void a(@chc akv paramakv);
+  
+  public abstract void a(@chc String paramString);
+  
+  public abstract void a(@chc List<ajr> paramList);
+  
+  public abstract void b(@chc List<ajy> paramList);
+  
+  public abstract void c(@chc List<ajr> paramList);
 }
 
 /* Location:

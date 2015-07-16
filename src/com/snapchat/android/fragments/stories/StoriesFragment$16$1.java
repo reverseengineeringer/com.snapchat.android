@@ -11,18 +11,12 @@ final class StoriesFragment$16$1
   {
     if (a)
     {
-      StoriesFragment.g(b.a).a();
-      StoriesFragment.g(b.a).setContentDescription("Pulsing");
+      StoriesFragment.f(b.a).setFilled(true);
+      StoriesFragment.f(b.a).setContentDescription("Filled");
       return;
     }
-    DiscoverButtonView localDiscoverButtonView = StoriesFragment.g(b.a);
-    if (a)
-    {
-      a = false;
-      localDiscoverButtonView.removeCallbacks(b);
-      localDiscoverButtonView.invalidate();
-    }
-    StoriesFragment.g(b.a).setContentDescription("Not Pulsing");
+    StoriesFragment.f(b.a).setFilled(false);
+    StoriesFragment.f(b.a).setContentDescription("Not Filled");
   }
 }
 

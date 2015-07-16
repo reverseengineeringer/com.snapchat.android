@@ -1,98 +1,107 @@
 .class public final Labg;
-.super Landroid/app/AlertDialog;
+.super Lcom/snapchat/android/database/table/SnapbryoTable;
 .source "SourceFile"
 
 
+# static fields
+.field private static a:Labg;
+
+
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 20
-    invoke-direct {p0, p1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
+    .line 14
+    new-instance v0, Labg;
 
-    .line 22
-    const v0, 0x7f0c000a
+    invoke-direct {v0}, Labg;-><init>()V
 
-    const/4 v1, 0x1
+    sput-object v0, Labg;->a:Labg;
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v1, v2
-
-    invoke-static {p1, v0, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 23
-    invoke-virtual {p0, v0}, Labg;->setTitle(Ljava/lang/CharSequence;)V
-
-    .line 25
-    const v0, 0x7f0c0002
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 26
-    const/4 v1, -0x1
-
-    new-instance v2, Labg$1;
-
-    invoke-direct {v2, p0, p2}, Labg$1;-><init>(Labg;Ljava/lang/String;)V
-
-    invoke-virtual {p0, v1, v0, v2}, Labg;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
-
-    .line 33
-    const v0, 0x7f0c0058
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 34
-    const/4 v1, -0x2
-
-    new-instance v2, Labg$2;
-
-    invoke-direct {v2, p0}, Labg$2;-><init>(Labg;)V
-
-    invoke-virtual {p0, v1, v0, v2}, Labg;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
-
-    .line 39
     return-void
 .end method
 
-.method protected static a(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 9
+.method private constructor <init>()V
+    .locals 0
 
     .prologue
-    const/4 v2, 0x0
+    .line 16
+    invoke-direct {p0}, Lcom/snapchat/android/database/table/SnapbryoTable;-><init>()V
 
-    .line 42
-    new-instance v0, Lpp;
-
-    sget-object v1, Lcom/snapchat/android/model/FriendAction;->ADD:Lcom/snapchat/android/model/FriendAction;
-
-    const/4 v6, 0x0
-
-    move-object v3, p0
-
-    move-object v4, p1
-
-    move-object v5, v2
-
-    move-object v7, v2
-
-    move-object v8, v2
-
-    invoke-direct/range {v0 .. v8}, Lpp;-><init>(Lcom/snapchat/android/model/FriendAction;Lcom/snapchat/android/model/Friend;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Lcom/snapchat/android/model/FriendAction$BlockReason;)V
-
-    .line 44
-    invoke-virtual {v0}, Lpp;->f()V
-
-    .line 45
     return-void
+.end method
+
+.method public static a()Labg;
+    .locals 1
+
+    .prologue
+    .line 19
+    sget-object v0, Labg;->a:Labg;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method protected final a(Lakp;)Ljava/util/Collection;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lakp;",
+            ")",
+            "Ljava/util/Collection",
+            "<",
+            "Laji;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 34
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-static {}, Laki;->a()Laki;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Laki;->d()Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    return-object v0
+.end method
+
+.method public final b(Lakp;)V
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 29
+    invoke-static {}, Laki;->a()Laki;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v1}, Labg;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Laki;->a(Ljava/util/List;)V
+
+    .line 30
+    return-void
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 24
+    const-string v0, "FailedPostSnapbryoTable"
+
+    return-object v0
 .end method

@@ -1,12 +1,4 @@
-public final class bcd
-{
-  public String sourceId;
-  
-  public bcd(@cgb String paramString)
-  {
-    sourceId = paramString;
-  }
-}
+public final class bcd {}
 
 /* Location:
  * Qualified Name:     bcd

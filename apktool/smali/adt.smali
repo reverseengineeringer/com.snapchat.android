@@ -1,157 +1,86 @@
-.class public final Ladt;
-.super Ladz;
+.class final Ladt;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private final d:Landroid/content/Context;
-
-.field private e:Ladn;
+.field private final a:Lbhk;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lady;)V
+.method public constructor <init>()V
+    .locals 1
+
+    .prologue
+    .line 15
+    new-instance v0, Lbhk;
+
+    invoke-direct {v0}, Lbhk;-><init>()V
+
+    invoke-direct {p0, v0}, Ladt;-><init>(Lbhk;)V
+
+    .line 16
+    return-void
+.end method
+
+.method private constructor <init>(Lbhk;)V
     .locals 0
 
     .prologue
+    .line 18
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 19
-    invoke-direct {p0, p2}, Ladz;-><init>(Lady;)V
+    iput-object p1, p0, Ladt;->a:Lbhk;
 
     .line 20
-    iput-object p1, p0, Ladt;->d:Landroid/content/Context;
-
-    .line 21
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Lcom/snapchat/android/discover/ui/DSnapView;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;)Z
-    .locals 3
+.method public static a(Lcom/snapchat/android/discover/model/DSnapPage;JJI)Z
+    .locals 7
 
     .prologue
-    .line 25
-    invoke-super {p0, p1, p2, p3}, Ladz;->a(Lcom/snapchat/android/discover/ui/DSnapView;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;)Z
+    const/4 v0, 0x0
 
-    .line 26
-    new-instance v0, Ladn;
+    .line 34
+    const-wide/16 v2, 0x0
 
-    iget-object v1, p0, Ladt;->d:Landroid/content/Context;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    invoke-direct {v0, v1}, Ladn;-><init>(Landroid/content/Context;)V
+    move-result-wide v4
 
-    iput-object v0, p0, Ladt;->e:Ladn;
+    sub-long/2addr v4, p1
 
-    .line 27
-    iget-object v0, p0, Ladt;->e:Ladn;
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
 
-    iget-object v0, v0, Ladn;->c:Landroid/view/View;
+    move-result-wide v2
 
-    iput-object v0, p0, Ladt;->a:Landroid/view/View;
+    .line 35
+    const-wide/32 v4, 0x36ee80
 
-    .line 28
-    iget-object v0, p0, Ladt;->e:Ladn;
+    mul-long/2addr v4, p3
 
-    iget-object v0, v0, Ladn;->d:Landroid/widget/FrameLayout;
+    .line 36
+    cmp-long v1, v2, v4
 
-    iput-object v0, p0, Ladt;->b:Landroid/widget/FrameLayout;
+    if-lez v1, :cond_1
 
-    .line 29
-    iget-object v0, p0, Ladt;->e:Ladn;
+    .line 40
+    :cond_0
+    :goto_0
+    return v0
 
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/ui/DSnapView;->getPublisherPrimaryColor()I
+    :cond_1
+    iget-object v1, p0, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/ui/DSnapView;->getPublisherSecondaryColor()I
+    if-ge v1, p5, :cond_0
 
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Ladn;->a(II)V
-
-    .line 30
-    iget-object v0, p0, Ladt;->e:Ladn;
-
-    new-instance v1, Ladt$1;
-
-    invoke-direct {v1, p0, p1}, Ladt$1;-><init>(Ladt;Lcom/snapchat/android/discover/ui/DSnapView;)V
-
-    invoke-virtual {v0, v1}, Ladn;->a(Landroid/view/View$OnClickListener;)V
-
-    .line 36
     const/4 v0, 0x1
 
-    return v0
-.end method
-
-.method public final c()V
-    .locals 4
-
-    .prologue
-    .line 53
-    invoke-super {p0}, Ladz;->c()V
-
-    .line 54
-    iget-object v0, p0, Ladt;->e:Ladn;
-
-    iget-object v1, v0, Ladn;->g:Landroid/widget/ImageView;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, v0, Ladn;->b:Lavs;
-
-    iget-object v2, v0, Ladn;->g:Landroid/widget/ImageView;
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v2, v3}, Lavs;->a(Landroid/widget/ImageView;Z)V
-
-    :cond_0
-    iget-object v1, v0, Ladn;->c:Landroid/view/View;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, v0, Ladn;->a:Lapd;
-
-    const v2, 0x7f040055
-
-    iget-object v0, v0, Ladn;->c:Landroid/view/View;
-
-    invoke-virtual {v1, v2, v0}, Lapd;->a(ILandroid/view/View;)V
-
-    .line 55
-    :cond_1
-    return-void
-.end method
-
-.method public final o_()V
-    .locals 1
-
-    .prologue
-    .line 41
-    invoke-super {p0}, Ladz;->o_()V
-
-    .line 42
-    iget-object v0, p0, Ladt;->e:Ladn;
-
-    invoke-virtual {v0}, Ladn;->a()V
-
-    .line 43
-    return-void
-.end method
-
-.method public final p_()V
-    .locals 1
-
-    .prologue
-    .line 47
-    invoke-super {p0}, Ladz;->p_()V
-
-    .line 48
-    iget-object v0, p0, Ladt;->e:Ladn;
-
-    invoke-virtual {v0}, Ladn;->b()V
-
-    .line 49
-    return-void
+    goto :goto_0
 .end method

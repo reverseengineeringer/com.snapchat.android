@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 203
+    .line 212
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;
 
     const-string v1, "Yes"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;->Yes:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;
 
-    .line 204
+    .line 213
     new-instance v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;
 
     const-string v1, "No"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;->No:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;
 
-    .line 202
+    .line 211
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 202
+    .line 211
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 207
+    .line 216
     if-eqz p0, :cond_0
 
     sget-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;->Yes:Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;
@@ -113,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 211
     const-class v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -129,7 +129,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 211
     sget-object v0, Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;->$VALUES:[Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/ProfileEventAnalytics$ProfilePageMetricsBoolean;->clone()Ljava/lang/Object;

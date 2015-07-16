@@ -1,21 +1,24 @@
 package com.snapchat.android.database.table;
 
-import bjr;
-import cgb;
-import cgc;
-import ck;
+import bkn;
+import bks;
+import chc;
+import chd;
+import co;
 
 public final class StoryMetadataTable$a
 {
   public final String a;
-  public final bjr b;
-  public final int c;
+  public final bks b;
+  public final bkn c;
+  public final int d;
   
-  public StoryMetadataTable$a(@cgb String paramString, @cgc bjr parambjr, int paramInt)
+  public StoryMetadataTable$a(@chc String paramString, @chd bks parambks, @chd bkn parambkn, int paramInt)
   {
-    a = ((String)ck.a(paramString));
-    b = parambjr;
-    c = paramInt;
+    a = ((String)co.a(paramString));
+    b = parambks;
+    c = parambkn;
+    d = paramInt;
   }
   
   public final boolean equals(Object paramObject)

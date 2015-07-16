@@ -27,8 +27,8 @@ final class ColorPickerView$1
           paramAnonymousAnimation = new AlphaAnimation(0.0F, 1.0F);
           paramAnonymousAnimation.setDuration(140L);
           paramAnonymousAnimation.setFillAfter(true);
-          a.findViewById(2131362839).startAnimation(paramAnonymousAnimation);
-          a.findViewById(2131362838).startAnimation(paramAnonymousAnimation);
+          a.findViewById(2131362832).startAnimation(paramAnonymousAnimation);
+          a.findViewById(2131362831).startAnimation(paramAnonymousAnimation);
         }
       });
       ColorPickerView.h(a).startAnimation(ColorPickerView.g(a));

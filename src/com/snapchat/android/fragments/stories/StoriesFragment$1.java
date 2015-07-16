@@ -5,19 +5,19 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
-import bgr;
-import bgr.a;
+import bhr;
+import bhr.a;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
-import pb.a;
+import ps.a;
 
 final class StoriesFragment$1
-  implements bgr.a
+  implements bhr.a
 {
   StoriesFragment$1(StoriesFragment paramStoriesFragment) {}
   
   public final void a(View paramView)
   {
-    ((EditText)a.j.a()).addTextChangedListener(new TextWatcher()
+    ((EditText)a.i.a()).addTextChangedListener(new TextWatcher()
     {
       public final void afterTextChanged(Editable paramAnonymousEditable) {}
       
@@ -33,8 +33,8 @@ final class StoriesFragment$1
         }
         for (;;)
         {
-          a.p();
-          a.r();
+          a.q();
+          a.t();
           return;
           StoriesFragment.c(a).a(paramAnonymousCharSequence.toString());
           StoriesFragment.a(a).setFastScrollAlwaysVisible(false);

@@ -1,6 +1,6 @@
 package com.snapchat.android.ui.here;
 
-import ahl.a;
+import aih.a;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,13 +8,13 @@ import android.hardware.Camera.CameraInfo;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import aqg;
-import aue;
-import ban;
-import bao;
-import boh;
-import cgb;
-import cgc;
+import are;
+import avc;
+import bbo;
+import bbp;
+import bpi;
+import chc;
+import chd;
 import com.addlive.service.AddLiveService.VideoFrameMetadata;
 import com.snapchat.android.model.chat.ChatConversation;
 import com.snapchat.android.ui.ChatCameraButton.a;
@@ -22,10 +22,10 @@ import com.squareup.otto.Bus;
 
 public abstract class StreamView
   extends FrameLayout
-  implements ahl.a, ChatCameraButton.a
+  implements aih.a, ChatCameraButton.a
 {
   protected static final AddLiveService.VideoFrameMetadata j = new AddLiveService.VideoFrameMetadata();
-  protected static final aqg k = new aqg();
+  protected static final are k = new are();
   
   public StreamView(Context paramContext)
   {
@@ -53,47 +53,49 @@ public abstract class StreamView
     k.b();
   }
   
-  public static void setCameraPreviewSize(aue paramaue)
+  public static void setCameraPreviewSize(avc paramavc)
   {
-    j.setWidth(paramaue.a());
-    j.setHeight(paramaue.b());
+    j.setWidth(paramavc.a());
+    j.setHeight(paramavc.b());
     k.b();
   }
   
-  public abstract void a(@cgb Activity paramActivity, @cgb a parama);
+  public abstract void a(@chc Activity paramActivity, @chc a parama);
   
   public abstract void a(ChatConversation paramChatConversation);
   
   public abstract void b();
   
-  public abstract void b(@cgb DisconnectReason paramDisconnectReason);
-  
-  public abstract void b(boolean paramBoolean);
+  public abstract void b(@chc DisconnectReason paramDisconnectReason);
   
   public abstract void c();
   
+  public abstract void c(boolean paramBoolean);
+  
   public abstract boolean d();
   
-  protected void dispatchDraw(@cgb Canvas paramCanvas)
+  protected void dispatchDraw(@chc Canvas paramCanvas)
   {
     super.dispatchDraw(paramCanvas);
   }
   
   public abstract boolean e();
   
+  public abstract boolean getPresence();
+  
   public void onAttachedToWindow()
   {
     super.onAttachedToWindow();
-    ban.a().c(this);
+    bbo.a().c(this);
   }
   
-  @boh
-  public abstract void onCameraReadyEvent(bao parambao);
+  @bpi
+  public abstract void onCameraReadyEvent(bbp parambbp);
   
   public void onDetachedFromWindow()
   {
     super.onDetachedFromWindow();
-    ban.a().b(this);
+    bbo.a().b(this);
   }
   
   protected abstract void onSizeChanged(int paramInt1, int paramInt2, int paramInt3, int paramInt4);
@@ -103,7 +105,7 @@ public abstract class StreamView
     return super.onTouchEvent(paramMotionEvent);
   }
   
-  public abstract void setCanStreamVideo(boolean paramBoolean, @cgc DisconnectReason paramDisconnectReason);
+  public abstract void setCanStreamVideo(boolean paramBoolean, @chd DisconnectReason paramDisconnectReason);
   
   public static abstract interface a
   {

@@ -40,8 +40,8 @@
 
 .field public mIsZipUpload:Z
 
-.field public mMediaExtras:Laiz;
-    .annotation build Lcgc;
+.field public mMediaExtras:Lajv;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -53,7 +53,7 @@
 
 .field public mOverlayPath:Ljava/lang/String;
 
-.field public mPreviewConfiguration:Lajl;
+.field public mPreviewConfiguration:Lakh;
 
 .field public mRawImageBitmap:Landroid/graphics/Bitmap;
 
@@ -125,9 +125,9 @@
     iput-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mOverlayPath:Ljava/lang/String;
 
     .line 49
-    iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo$a;->mPreviewConfiguration:Lajl;
+    iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo$a;->mPreviewConfiguration:Lakh;
 
-    iput-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lajl;
+    iput-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lakh;
 
     .line 50
     iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo$a;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
@@ -165,9 +165,9 @@
     iput v0, p0, Lcom/snapchat/android/model/Mediabryo;->mSnapOrientation:I
 
     .line 57
-    iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo$a;->mMediaExtras:Laiz;
+    iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo$a;->mMediaExtras:Lajv;
 
-    iput-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mMediaExtras:Laiz;
+    iput-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mMediaExtras:Lajv;
 
     .line 58
     iget-wide v0, p1, Lcom/snapchat/android/model/Mediabryo$a;->mTimerValueOrDuration:D
@@ -200,9 +200,9 @@
     if-nez v0, :cond_0
 
     .line 67
-    new-instance v0, Lajk;
+    new-instance v0, Lakg;
 
-    invoke-direct {v0}, Lajk;-><init>()V
+    invoke-direct {v0}, Lakg;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
@@ -247,11 +247,11 @@
     if-eqz v2, :cond_0
 
     .line 312
-    invoke-static {}, Lavq;->a()Lavq;
+    invoke-static {}, Lawo;->a()Lawo;
 
     move-result-object v3
 
-    invoke-virtual {v3, v2}, Lavq;->a(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v3, v2}, Lawo;->a(Landroid/graphics/Bitmap;)V
 
     .line 310
     :cond_0
@@ -314,12 +314,12 @@
     return-object v0
 .end method
 
-.method public static synthetic g(Lcom/snapchat/android/model/Mediabryo;)Lajl;
+.method public static synthetic g(Lcom/snapchat/android/model/Mediabryo;)Lakh;
     .locals 1
 
     .prologue
     .line 26
-    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lajl;
+    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lakh;
 
     return-object v0
 .end method
@@ -394,12 +394,12 @@
     return v0
 .end method
 
-.method public static synthetic o(Lcom/snapchat/android/model/Mediabryo;)Laiz;
+.method public static synthetic o(Lcom/snapchat/android/model/Mediabryo;)Lajv;
     .locals 1
 
     .prologue
     .line 26
-    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mMediaExtras:Laiz;
+    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mMediaExtras:Lajv;
 
     return-object v0
 .end method
@@ -449,13 +449,13 @@
 .method public a(Landroid/content/Context;)I
     .locals 1
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 254
-    invoke-static {p1}, Lavh;->d(Landroid/content/Context;)I
+    invoke-static {p1}, Lawf;->d(Landroid/content/Context;)I
 
     move-result v0
 
@@ -535,7 +535,7 @@
 .end method
 
 .method public abstract g()[B
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end method
 

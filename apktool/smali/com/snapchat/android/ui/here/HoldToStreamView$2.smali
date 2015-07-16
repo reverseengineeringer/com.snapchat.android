@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1038
+    .line 1070
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$2;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -39,7 +39,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1041
+    .line 1073
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$2;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->k(Lcom/snapchat/android/ui/here/HoldToStreamView;)Z
@@ -48,11 +48,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 1050
+    .line 1082
     :goto_0
     return v2
 
-    .line 1044
+    .line 1076
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$2;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
@@ -64,14 +64,14 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1045
+    .line 1077
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$2;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     sget-object v1, Lcom/snapchat/android/camera/model/CameraModel$CameraType;->FRONT_FACING:Lcom/snapchat/android/camera/model/CameraModel$CameraType;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/ui/here/HoldToStreamView;->a(Lcom/snapchat/android/ui/here/HoldToStreamView;Lcom/snapchat/android/camera/model/CameraModel$CameraType;)Lcom/snapchat/android/camera/model/CameraModel$CameraType;
 
-    .line 1049
+    .line 1081
     :goto_1
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$2;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 1047
+    .line 1079
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$2;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 

@@ -1,177 +1,68 @@
-import com.snapchat.android.fragments.stories.StoriesAdapter.StoriesViewType;
-import com.snapchat.android.model.StoryCollection;
-import com.snapchat.android.stories.StoriesSection;
-import com.snapchat.android.stories.StoriesThumbnailType;
-import java.util.List;
-import javax.inject.Provider;
-
-public class ajg
-  extends StoryCollection
-  implements ahb
+public final class ajg
+  implements ajf.a
 {
-  private final StoryCollection mWrappedStoryCollection;
+  private final ajf.a a;
+  private volatile int b;
+  private volatile int c = 0;
   
-  public ajg(StoryCollection paramStoryCollection)
+  ajg(int paramInt, @chc ajf.a parama)
   {
-    this(paramStoryCollection, ajv.UNSAFE_USER_PROVIDER);
+    b = paramInt;
+    a = ((ajf.a)co.a(parama));
   }
   
-  private ajg(StoryCollection paramStoryCollection, Provider<ajv> paramProvider)
+  /* Error */
+  private void c()
   {
-    super(paramStoryCollection.e(), paramStoryCollection.w(), paramProvider, paramStoryCollection.s());
-    mWrappedStoryCollection = paramStoryCollection;
-    mUsername = mUsername;
-    mUserHasSeenInFeed = mUserHasSeenInFeed;
+    // Byte code:
+    //   0: aload_0
+    //   1: monitorenter
+    //   2: aload_0
+    //   3: aload_0
+    //   4: getfield 21	ajg:b	I
+    //   7: iconst_1
+    //   8: isub
+    //   9: putfield 21	ajg:b	I
+    //   12: aload_0
+    //   13: getfield 21	ajg:b	I
+    //   16: ifne +19 -> 35
+    //   19: aload_0
+    //   20: getfield 19	ajg:c	I
+    //   23: ifne +15 -> 38
+    //   26: aload_0
+    //   27: getfield 28	ajg:a	Lajf$a;
+    //   30: invokeinterface 32 1 0
+    //   35: aload_0
+    //   36: monitorexit
+    //   37: return
+    //   38: aload_0
+    //   39: getfield 28	ajg:a	Lajf$a;
+    //   42: invokeinterface 34 1 0
+    //   47: goto -12 -> 35
+    //   50: astore_1
+    //   51: aload_0
+    //   52: monitorexit
+    //   53: aload_1
+    //   54: athrow
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	55	0	this	ajg
+    //   50	4	1	localObject	Object
+    // Exception table:
+    //   from	to	target	type
+    //   2	35	50	finally
+    //   38	47	50	finally
   }
   
-  public String a()
+  public final void a()
   {
-    return atm.e(h(), ajv.g());
+    c();
   }
   
-  public final List<ajr> a(int paramInt, ajr paramajr)
+  public final void b()
   {
-    paramajr = super.x();
-    return paramajr.subList(Math.max(0, paramajr.size() - paramInt), paramajr.size());
-  }
-  
-  public final void a(int paramInt)
-  {
-    mWrappedStoryCollection.a(paramInt);
-  }
-  
-  public final boolean a(@cgb ajr arg1)
-  {
-    for (;;)
-    {
-      synchronized (mUnviewedStorySnaps)
-      {
-        if (!mUnviewedStorySnaps.isEmpty())
-        {
-          bool = true;
-          return bool;
-        }
-      }
-      boolean bool = false;
-    }
-  }
-  
-  public final int b(@cgb ajr arg1)
-  {
-    synchronized (mUnviewedStorySnaps)
-    {
-      int i = mUnviewedStorySnaps.size();
-      return i;
-    }
-  }
-  
-  public final boolean b()
-  {
-    synchronized (mStorySnapsMutex)
-    {
-      return (!mStorySnaps.isEmpty()) && (((ajr)mStorySnaps.get(0)).aw());
-    }
-  }
-  
-  public final ajr c(@cgb ajr arg1)
-  {
-    synchronized (mStorySnapsMutex)
-    {
-      int i = mUnviewedStorySnaps.size() - 2;
-      if (i >= 0)
-      {
-        ajr localajr = (ajr)mUnviewedStorySnaps.get(i);
-        return localajr;
-      }
-      return null;
-    }
-  }
-  
-  public final StoriesAdapter.StoriesViewType c()
-  {
-    return StoriesAdapter.StoriesViewType.DEFAULT;
-  }
-  
-  public final int d()
-  {
-    return mWrappedStoryCollection.d();
-  }
-  
-  public final ajr d(@cgb ajr paramajr)
-  {
-    return A();
-  }
-  
-  public final List<ajr> e()
-  {
-    return w();
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if ((paramObject instanceof ajg)) {
-      return mUsername.equals(((ajg)paramObject).h());
-    }
-    return false;
-  }
-  
-  public final List<ajr> f()
-  {
-    return super.x();
-  }
-  
-  public final boolean g()
-  {
-    if (super.g()) {
-      return true;
-    }
-    return mUnviewedStorySnaps.isEmpty();
-  }
-  
-  public int hashCode()
-  {
-    return (mUsername.hashCode() + 527) * 31 + "recentStoryCollection".hashCode();
-  }
-  
-  public final StoriesSection i()
-  {
-    if (E()) {
-      return StoriesSection.LIVE;
-    }
-    return StoriesSection.RECENT_UPDATES;
-  }
-  
-  public final boolean j()
-  {
-    return atm.d(h(), ajv.g());
-  }
-  
-  public final String k()
-  {
-    return atm.e(h(), ajv.g());
-  }
-  
-  public final boolean l()
-  {
-    return true;
-  }
-  
-  public auz m()
-  {
-    if (E()) {}
-    for (StoriesThumbnailType localStoriesThumbnailType = StoriesThumbnailType.OLDEST_SNAP_THUMBNAIL_WITHOUT_DECAY;; localStoriesThumbnailType = StoriesThumbnailType.SOME_SNAPS) {
-      return new auz(localStoriesThumbnailType, super.x(), mUsername + "&recentStoryCollection");
-    }
-  }
-  
-  public final boolean n()
-  {
-    return C();
-  }
-  
-  public final boolean o()
-  {
-    return B();
+    c += 1;
+    c();
   }
 }
 

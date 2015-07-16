@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lco;->c(Ljava/lang/String;)Z
+    invoke-static {v0}, Lct;->c(Ljava/lang/String;)Z
 
     move-result v0
 

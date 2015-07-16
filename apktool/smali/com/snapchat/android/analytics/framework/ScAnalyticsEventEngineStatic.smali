@@ -103,7 +103,17 @@
     return-void
 .end method
 
-.method static synthetic a(Lhk;J)J
+.method static synthetic a(J)J
+    .locals 0
+
+    .prologue
+    .line 45
+    sput-wide p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->f:J
+
+    return-wide p0
+.end method
+
+.method static synthetic a(Lht;J)J
     .locals 11
 
     .prologue
@@ -112,9 +122,7 @@
     const/4 v10, 0x1
 
     .line 45
-    invoke-static {p1, p2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->g(J)V
-
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -136,9 +144,9 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lhk;->clientTs:Ljava/lang/Double;
+    iput-object v1, p0, Lht;->clientTs:Ljava/lang/Double;
 
-    iput-object v0, p0, Lhk;->sessionId:Ljava/lang/String;
+    iput-object v0, p0, Lht;->sessionId:Ljava/lang/String;
 
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
 
@@ -146,7 +154,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lhk;->userAgent:Ljava/lang/String;
+    iput-object v0, p0, Lht;->userAgent:Ljava/lang/String;
 
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
 
@@ -154,9 +162,9 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lhk;->friendCount:Ljava/lang/Long;
+    iput-object v0, p0, Lht;->friendCount:Ljava/lang/Long;
 
-    invoke-virtual {p0}, Lhk;->a()Ljava/util/Map;
+    invoke-virtual {p0}, Lht;->a()Ljava/util/Map;
 
     move-result-object v1
 
@@ -180,7 +188,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lazk;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Lbaj;->a(Ljava/lang/String;)V
 
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->i:Lcom/google/gson/Gson;
 
@@ -208,7 +216,7 @@
 
     if-ltz v0, :cond_2
 
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->w()Z
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->t()Z
 
     move-result v0
 
@@ -227,7 +235,7 @@
 
     invoke-virtual {v4, v0, v1}, Lcom/snapchat/android/analytics/framework/DatabaseHelper;->a(J)V
 
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->z()J
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->w()J
 
     move-result-wide v0
 
@@ -238,7 +246,7 @@
     move-wide v0, v2
 
     :cond_1
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v2
 
@@ -269,7 +277,7 @@
 
     if-ltz v0, :cond_4
 
-    invoke-static {v10}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Z)V
+    invoke-static {v10}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->b(Z)V
 
     :cond_3
     :goto_0
@@ -298,17 +306,15 @@
 .end method
 
 .method private static a(Ljava/lang/String;Lorg/json/JSONArray;)Ljava/lang/Integer;
-    .locals 7
+    .locals 5
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 416
+    .line 410
     new-instance v1, Lorg/apache/http/client/methods/HttpPost;
 
     invoke-direct {v1, p0}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
 
-    .line 419
+    .line 413
     :try_start_0
     new-instance v0, Lorg/apache/http/entity/StringEntity;
 
@@ -322,34 +328,34 @@
 
     invoke-virtual {v1, v0}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
     :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_6
 
-    .line 427
+    .line 418
     :goto_0
     new-instance v0, Lorg/apache/http/params/BasicHttpParams;
 
     invoke-direct {v0}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
 
-    .line 428
+    .line 422
     const/16 v2, 0x2710
 
     invoke-static {v0, v2}, Lorg/apache/http/params/HttpConnectionParams;->setSoTimeout(Lorg/apache/http/params/HttpParams;I)V
 
-    .line 429
+    .line 423
     new-instance v2, Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-direct {v2, v0}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>(Lorg/apache/http/params/HttpParams;)V
 
-    .line 431
+    .line 425
     const/4 v0, 0x0
 
-    .line 434
+    .line 428
     :try_start_1
     invoke-interface {v2, v1}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
 
     move-result-object v1
 
-    .line 435
+    .line 429
     invoke-interface {v1}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
     move-result-object v1
@@ -360,77 +366,65 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
     :try_end_1
-    .catch Lorg/apache/http/conn/HttpHostConnectException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_1 .. :try_end_1} :catch_3
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
-    .catch Ljava/lang/AssertionError; {:try_start_1 .. :try_end_1} :catch_5
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Lorg/apache/http/conn/HttpHostConnectException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/net/UnknownHostException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/AssertionError; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_5
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result-object v0
 
-    .line 453
+    .line 447
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 454
+    .line 448
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
 
     invoke-interface {v1}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
 
-    .line 458
+    .line 452
     :cond_0
     :goto_1
     return-object v0
 
-    .line 420
+    .line 432
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 424
-    const-string v2, "com.amplitude.api.Amplitude"
+    invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
-    invoke-virtual {v0}, Ljava/io/UnsupportedEncodingException;->toString()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    new-array v3, v4, [Ljava/lang/Object;
+    .line 448
+    invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
-    invoke-static {v2, v0, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v1
 
-    goto :goto_0
+    invoke-interface {v1}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
 
-    .line 438
+    goto :goto_1
+
+    .line 434
     :catch_1
     move-exception v1
 
-    :try_start_2
-    const-string v1, "com.amplitude.api.Amplitude"
-
-    const-string v3, "No service, will attempt to re-upload events later."
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 453
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 454
+    .line 448
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
@@ -439,31 +433,17 @@
 
     goto :goto_1
 
-    .line 440
+    .line 436
     :catch_2
     move-exception v1
 
-    :try_start_3
-    const-string v1, "com.amplitude.api.Amplitude"
-
-    const-string v3, "No service, will attempt to re-upload events later."
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 453
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 454
+    .line 448
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
@@ -472,34 +452,17 @@
 
     goto :goto_1
 
-    .line 441
+    .line 438
     :catch_3
     move-exception v1
 
-    .line 442
-    :try_start_4
-    const-string v3, "com.amplitude.api.Amplitude"
-
-    invoke-virtual {v1}, Lorg/apache/http/client/ClientProtocolException;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v3, v1, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    .line 453
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 454
+    .line 448
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
@@ -508,34 +471,30 @@
 
     goto :goto_1
 
-    .line 443
+    .line 439
     :catch_4
     move-exception v1
 
-    .line 444
-    :try_start_5
-    const-string v3, "com.amplitude.api.Amplitude"
+    .line 441
+    const/4 v3, 0x1
 
-    invoke-virtual {v1}, Ljava/io/IOException;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    :try_start_2
+    new-array v3, v3, [Ljava/lang/Object;
 
     const/4 v4, 0x0
 
-    new-array v4, v4, [Ljava/lang/Object;
+    aput-object v1, v3, v4
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-static {v3, v1, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    .line 453
+    .line 447
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 454
+    .line 448
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
@@ -544,83 +503,39 @@
 
     goto :goto_1
 
-    .line 445
+    .line 442
     :catch_5
     move-exception v1
 
+    .line 445
+    const/4 v3, 0x1
+
+    :try_start_3
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    aput-object v1, v3, v4
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
     .line 447
-    :try_start_6
-    const-string v3, "com.amplitude.api.Amplitude"
-
-    const-string v4, "Exception:"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aput-object v1, v5, v6
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    .line 453
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
-
-    .line 454
-    invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
-
-    goto/16 :goto_1
 
     .line 448
-    :catch_6
-    move-exception v1
-
-    .line 451
-    :try_start_7
-    const-string v3, "com.amplitude.api.Amplitude"
-
-    const-string v4, "Exception:"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    aput-object v1, v5, v6
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-
-    .line 453
-    invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    .line 454
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
 
     invoke-interface {v1}, Lorg/apache/http/conn/ClientConnectionManager;->shutdown()V
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    .line 453
+    .line 447
     :catchall_0
     move-exception v0
 
@@ -630,7 +545,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 454
+    .line 448
     invoke-interface {v2}, Lorg/apache/http/client/HttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object v1
@@ -639,26 +554,29 @@
 
     :cond_1
     throw v0
+
+    :catch_6
+    move-exception v0
+
+    goto/16 :goto_0
 .end method
 
 .method public static a()V
     .locals 2
 
     .prologue
-    .line 170
-    const-string v0, "uploadEvents()"
-
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/String;)Z
+    .line 168
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->s()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 180
+    .line 178
     :goto_0
     return-void
 
-    .line 174
+    .line 172
     :cond_0
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a:Lcom/snapchat/android/analytics/framework/WorkerThread;
 
@@ -671,18 +589,8 @@
     goto :goto_0
 .end method
 
-.method static synthetic a(J)V
-    .locals 0
-
-    .prologue
-    .line 45
-    invoke-static {p0, p1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->g(J)V
-
-    return-void
-.end method
-
 .method public static declared-synchronized a(Landroid/content/Context;Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;)V
-    .locals 4
+    .locals 2
 
     .prologue
     .line 75
@@ -690,45 +598,31 @@
 
     monitor-enter v1
 
-    if-nez p0, :cond_0
-
-    .line 76
-    :try_start_0
-    const-string v0, "com.amplitude.api.Amplitude"
-
-    const-string v2, "Argument context cannot be null in initialize()"
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-nez p0, :cond_1
 
     .line 86
+    :cond_0
     :goto_0
     monitor-exit v1
 
     return-void
 
     .line 79
-    :cond_0
-    if-nez p1, :cond_1
+    :cond_1
+    if-eqz p1, :cond_0
 
-    .line 80
-    :try_start_1
-    const-string v0, "com.amplitude.api.Amplitude"
+    .line 84
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    const-string v2, "Argument userProperties cannot be null in initialize()"
+    move-result-object v0
 
-    const/4 v3, 0x0
+    sput-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
 
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .line 85
+    sput-object p1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
@@ -739,29 +633,13 @@
     monitor-exit v1
 
     throw v0
-
-    .line 84
-    :cond_1
-    :try_start_2
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
-
-    .line 85
-    sput-object p1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_0
 .end method
 
 .method private static a(Ljava/lang/Runnable;)V
     .locals 2
 
     .prologue
-    .line 162
+    .line 160
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -770,16 +648,16 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 163
+    .line 161
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a:Lcom/snapchat/android/analytics/framework/WorkerThread;
 
     invoke-virtual {v0, p0}, Lcom/snapchat/android/analytics/framework/WorkerThread;->a(Ljava/lang/Runnable;)V
 
-    .line 167
+    .line 165
     :goto_0
     return-void
 
-    .line 165
+    .line 163
     :cond_0
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
@@ -806,7 +684,7 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v1, :cond_0
 
     :try_start_0
     invoke-virtual {p1, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
@@ -823,25 +701,8 @@
 
     goto :goto_0
 
-    :catch_0
-    move-exception v0
-
-    const-string v1, "com.amplitude.api.Amplitude"
-
-    invoke-virtual {v0}, Lorg/json/JSONException;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     :cond_0
-    :goto_1
-    return-void
-
-    :cond_1
-    invoke-static {}, Lajt;->a()Lajt;
+    invoke-static {}, Lakn;->a()Lakn;
 
     move-result-object v0
 
@@ -851,11 +712,11 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v0, v1, v2, v3}, Lajt;->a(Ljava/lang/String;Ljava/lang/String;F)F
+    invoke-virtual {v0, v1, v2, v3}, Lakn;->a(Ljava/lang/String;Ljava/lang/String;F)F
 
     move-result v0
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v1
 
@@ -877,7 +738,7 @@
 
     move v0, v7
 
-    :goto_2
+    :goto_1
     if-eqz v0, :cond_6
 
     new-instance v0, Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask;
@@ -888,28 +749,20 @@
 
     invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask;->i()Luc;
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask;->executeSynchronously()Lus;
 
     move-result-object v0
 
-    iget v0, v0, Luc;->mResponseCode:I
+    iget v0, v0, Lus;->mResponseCode:I
 
     if-nez v0, :cond_5
 
-    const-string v0, "com.amplitude.api.Amplitude"
-
-    const-string v1, "Failed to obtain a response from server.  Will retry later."
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     const/4 v0, 0x0
 
-    :goto_3
+    :goto_2
     move-object v1, v0
 
-    :goto_4
+    :goto_3
     if-eqz v1, :cond_9
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -918,71 +771,61 @@
 
     const/16 v2, 0x1f4
 
-    if-lt v0, v2, :cond_2
+    if-lt v0, v2, :cond_1
 
     const/16 v2, 0x257
 
-    if-le v0, v2, :cond_3
+    if-le v0, v2, :cond_2
 
-    :cond_2
+    :cond_1
     const/16 v2, 0x191
 
     if-ne v0, v2, :cond_7
 
-    :cond_3
+    :cond_2
     move v0, v7
 
-    :goto_5
+    :goto_4
     if-eqz v0, :cond_8
 
-    const-string v0, "com.amplitude.api.Amplitude"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Event upload failed, with code "
 
-    const-string v3, "Event upload failed, with code "
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, ", will attempt to re-upload later"
 
-    const-string v2, ", will attempt to re-upload later"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move v0, v6
 
-    :goto_6
-    if-nez v0, :cond_0
+    :goto_5
+    if-nez v0, :cond_3
 
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0, v6}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    goto :goto_1
+    :cond_3
+    :goto_6
+    return-void
 
     :cond_4
     move v0, v6
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_6
     invoke-static {p0, p1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/String;Lorg/json/JSONArray;)Ljava/lang/Integer;
@@ -991,12 +834,12 @@
 
     move-object v1, v0
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
     move v0, v6
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_8
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -1017,22 +860,25 @@
 
     move v0, v7
 
+    goto :goto_5
+
+    :catch_0
+    move-exception v0
+
     goto :goto_6
 
     :cond_9
     move v0, v6
 
-    goto :goto_6
+    goto :goto_5
 .end method
 
-.method public static a(Lls;)V
+.method public static a(Lmk;)V
     .locals 3
 
     .prologue
     .line 89
-    const-string v0, "logEvent()"
-
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/String;)Z
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->s()Z
 
     move-result v0
 
@@ -1051,21 +897,19 @@
     .line 94
     new-instance v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;
 
-    invoke-direct {v2, p0, v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;-><init>(Lls;J)V
+    invoke-direct {v2, p0, v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;-><init>(Lmk;J)V
 
     invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/Runnable;)V
 
     goto :goto_0
 .end method
 
-.method public static a(Llt;)V
+.method public static a(Lml;)V
     .locals 3
 
     .prologue
     .line 104
-    const-string v0, "logEvent()"
-
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/String;)Z
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->s()Z
 
     move-result v0
 
@@ -1084,43 +928,100 @@
     .line 109
     new-instance v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;
 
-    invoke-direct {v2, p0, v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;-><init>(Llt;J)V
+    invoke-direct {v2, p0, v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;-><init>(Lml;J)V
 
     invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/Runnable;)V
 
     goto :goto_0
 .end method
 
-.method private static a(Z)V
+.method static synthetic a(Z)Z
+    .locals 0
+
+    .prologue
+    .line 45
+    sput-boolean p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d:Z
+
+    return p0
+.end method
+
+.method public static b()V
+    .locals 3
+
+    .prologue
+    .line 253
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->s()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-boolean v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d:Z
+
+    if-eqz v0, :cond_1
+
+    .line 280
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 257
+    :cond_1
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    .line 259
+    new-instance v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$5;
+
+    invoke-direct {v2, v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$5;-><init>(J)V
+
+    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+.end method
+
+.method static synthetic b(J)V
+    .locals 2
+
+    .prologue
+    .line 45
+    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a:Lcom/snapchat/android/analytics/framework/WorkerThread;
+
+    sget-object v1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/WorkerThread;->b(Ljava/lang/Runnable;)V
+
+    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/analytics/framework/DatabaseHelper;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Lcom/snapchat/android/analytics/framework/DatabaseHelper;->b(J)V
+
+    return-void
+.end method
+
+.method private static b(Z)V
     .locals 12
 
     .prologue
     const-wide v10, 0x408f400000000000L    # 1000.0
 
-    const/4 v9, 0x0
-
-    .line 355
-    invoke-static {}, Lajx;->m()Z
+    .line 349
+    invoke-static {}, Lakr;->m()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 356
-    const-string v0, "com.amplitude.api.Amplitude"
-
-    const-string v1, "Attempt to update server when not logged in. Aborting upload."
-
-    new-array v2, v9, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 392
+    .line 384
     :cond_0
     :goto_0
     return-void
 
-    .line 361
+    .line 355
     :cond_1
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -1132,14 +1033,14 @@
 
     if-nez v0, :cond_0
 
-    .line 362
+    .line 356
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/snapchat/android/analytics/framework/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/analytics/framework/DatabaseHelper;
 
     move-result-object v1
 
-    .line 364
+    .line 358
     if-eqz p0, :cond_3
 
     const/16 v0, 0x64
@@ -1150,7 +1051,7 @@
 
     move-result-object v1
 
-    .line 365
+    .line 359
     iget-object v0, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Long;
@@ -1159,33 +1060,33 @@
 
     move-result-wide v2
 
-    .line 366
+    .line 360
     iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v1, Lorg/json/JSONArray;
 
-    .line 367
+    .line 361
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
     move-result v0
 
     int-to-long v4, v0
 
-    .line 369
+    .line 363
     const-wide/16 v6, 0x0
 
     cmp-long v0, v4, v6
 
     if-eqz v0, :cond_0
 
-    .line 376
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->w()Z
+    .line 370
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->t()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 377
+    .line 371
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -1194,9 +1095,9 @@
 
     div-double/2addr v6, v10
 
-    new-instance v0, Lfs;
+    new-instance v0, Lgb;
 
-    invoke-direct {v0}, Lfs;-><init>()V
+    invoke-direct {v0}, Lgb;-><init>()V
 
     sget-object v8, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
 
@@ -1204,7 +1105,7 @@
 
     move-result-object v8
 
-    iput-object v8, v0, Llt;->userId:Ljava/lang/String;
+    iput-object v8, v0, Lml;->userId:Ljava/lang/String;
 
     sget-object v8, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
 
@@ -1212,7 +1113,7 @@
 
     move-result-object v8
 
-    iput-object v8, v0, Lhk;->userAgent:Ljava/lang/String;
+    iput-object v8, v0, Lht;->userAgent:Ljava/lang/String;
 
     sget-object v8, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
 
@@ -1220,21 +1121,21 @@
 
     move-result-object v8
 
-    iput-object v8, v0, Lhk;->friendCount:Ljava/lang/Long;
+    iput-object v8, v0, Lht;->friendCount:Ljava/lang/Long;
 
     invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v8
 
-    iput-object v8, v0, Lhk;->clientTs:Ljava/lang/Double;
+    iput-object v8, v0, Lht;->clientTs:Ljava/lang/Double;
 
     invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v6
 
-    iput-object v6, v0, Lhk;->clientUploadTs:Ljava/lang/Double;
+    iput-object v6, v0, Lht;->clientUploadTs:Ljava/lang/Double;
 
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->x()J
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()J
 
     move-result-wide v6
 
@@ -1246,19 +1147,9 @@
 
     move-result-object v6
 
-    iput-object v6, v0, Lfs;->firstFailureTs:Ljava/lang/Double;
+    iput-object v6, v0, Lgb;->firstFailureTs:Ljava/lang/Double;
 
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->y()J
-
-    move-result-wide v6
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    iput-object v6, v0, Lfs;->rejectedEventCount:Ljava/lang/Long;
-
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->z()J
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->v()J
 
     move-result-wide v6
 
@@ -1266,7 +1157,17 @@
 
     move-result-object v6
 
-    iput-object v6, v0, Lfs;->overflowedEventCount:Ljava/lang/Long;
+    iput-object v6, v0, Lgb;->rejectedEventCount:Ljava/lang/Long;
+
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->w()J
+
+    move-result-wide v6
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v6
+
+    iput-object v6, v0, Lgb;->overflowedEventCount:Ljava/lang/Long;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1285,7 +1186,7 @@
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 380
+    .line 374
     :cond_2
     :goto_2
     :try_start_2
@@ -1301,151 +1202,186 @@
 
     goto/16 :goto_0
 
-    .line 387
+    .line 382
     :catch_0
     move-exception v0
 
-    .line 388
-    sget-object v1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v1, v9}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    const/4 v1, 0x0
 
-    .line 389
-    const-string v1, "com.amplitude.api.Amplitude"
-
-    invoke-virtual {v0}, Lorg/json/JSONException;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v2, v9, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     goto/16 :goto_0
 
-    .line 364
+    .line 358
     :cond_3
     const/4 v0, -0x1
 
     goto/16 :goto_1
 
-    .line 377
     :catch_1
     move-exception v0
-
-    :try_start_3
-    const-string v0, "com.amplitude.api.Amplitude"
-
-    const-string v6, "Unable to add failure event to upload event list."
-
-    const/4 v7, 0x0
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v6, v7}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_3
-    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_0
 
     goto :goto_2
 .end method
 
-.method private static declared-synchronized a(Ljava/lang/String;)Z
-    .locals 5
+.method public static c()V
+    .locals 4
 
     .prologue
-    const/4 v0, 0x0
+    .line 289
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->s()Z
 
-    .line 557
-    const-class v1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;
+    move-result v0
 
-    monitor-enter v1
+    if-eqz v0, :cond_0
 
-    :try_start_0
-    sget-object v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
+    sget-boolean v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d:Z
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_1
 
-    .line 558
-    const-string v2, "com.amplitude.api.Amplitude"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "context cannot be null, set context with initialize() before calling "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 566
-    :goto_0
-    monitor-exit v1
-
-    return v0
-
-    .line 562
+    .line 339
     :cond_0
-    :try_start_1
-    sget-object v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
+    :goto_0
+    return-void
 
-    if-nez v2, :cond_1
-
-    .line 563
-    const-string v2, "com.amplitude.api.Amplitude"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "userPrefs cannot be null, set userPrefs with initialize() before calling "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 557
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-
-    .line 566
+    .line 292
     :cond_1
-    const/4 v0, 0x1
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    .line 293
+    new-instance v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$6;
+
+    invoke-direct {v2, v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$6;-><init>(J)V
+
+    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/Runnable;)V
+
+    .line 326
+    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a:Lcom/snapchat/android/analytics/framework/WorkerThread;
+
+    sget-object v1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/WorkerThread;->b(Ljava/lang/Runnable;)V
+
+    .line 327
+    new-instance v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$7;
+
+    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$7;-><init>()V
+
+    sput-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e:Ljava/lang/Runnable;
+
+    .line 338
+    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a:Lcom/snapchat/android/analytics/framework/WorkerThread;
+
+    sget-object v1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e:Ljava/lang/Runnable;
+
+    const-wide/16 v2, 0x3e80
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/analytics/framework/WorkerThread;->a(Ljava/lang/Runnable;J)V
 
     goto :goto_0
 .end method
 
-.method static synthetic b(J)J
+.method static synthetic c(J)V
+    .locals 6
+
+    .prologue
+    .line 45
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/snapchat/android/analytics/framework/Constants;->d:Ljava/lang/String;
+
+    invoke-interface {v1, v2, p0, p1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/snapchat/android/analytics/framework/Constants;->g:Ljava/lang/String;
+
+    invoke-interface {v2, v3, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->i:Ljava/lang/String;
+
+    const-wide/16 v2, 0x0
+
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v2
+
+    const-wide/16 v4, 0x1
+
+    add-long/2addr v2, v4
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->i:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->r()J
+
+    move-result-wide v0
+
+    sub-long v0, p0, v0
+
+    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->h(J)J
+
+    move-result-wide v0
+
+    new-instance v4, Lgd;
+
+    invoke-direct {v4}, Lgd;-><init>()V
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    iput-object v2, v4, Lgd;->sessionSeqNum:Ljava/lang/Long;
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iput-object v0, v4, Lgd;->sinceLastSessionSec:Ljava/lang/Long;
+
+    invoke-static {v4}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lml;)V
+
+    return-void
+.end method
+
+.method static synthetic d(J)J
     .locals 2
 
     .prologue
@@ -1457,40 +1393,17 @@
     return-wide v0
 .end method
 
-.method public static b()V
-    .locals 3
+.method static synthetic d()Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
+    .locals 1
 
     .prologue
-    .line 272
-    const-string v0, "startSession()"
+    .line 45
+    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 295
-    :goto_0
-    return-void
-
-    .line 275
-    :cond_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    .line 277
-    new-instance v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$5;
-
-    invoke-direct {v2, v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$5;-><init>(J)V
-
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/Runnable;)V
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method static synthetic c(J)D
+.method static synthetic e(J)D
     .locals 4
 
     .prologue
@@ -1504,73 +1417,29 @@
     return-wide v0
 .end method
 
-.method public static c()V
-    .locals 4
-
-    .prologue
-    .line 298
-    const-string v0, "endSession()"
-
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 345
-    :goto_0
-    return-void
-
-    .line 301
-    :cond_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    .line 302
-    new-instance v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$6;
-
-    invoke-direct {v2, v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$6;-><init>(J)V
-
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Ljava/lang/Runnable;)V
-
-    .line 332
-    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a:Lcom/snapchat/android/analytics/framework/WorkerThread;
-
-    sget-object v1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/WorkerThread;->b(Ljava/lang/Runnable;)V
-
-    .line 333
-    new-instance v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$7;
-
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$7;-><init>()V
-
-    sput-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e:Ljava/lang/Runnable;
-
-    .line 343
-    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a:Lcom/snapchat/android/analytics/framework/WorkerThread;
-
-    sget-object v1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e:Ljava/lang/Runnable;
-
-    const-wide/16 v2, 0x3e80
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/analytics/framework/WorkerThread;->a(Ljava/lang/Runnable;J)V
-
-    goto :goto_0
-.end method
-
-.method static synthetic d()Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
+.method static synthetic e()V
     .locals 1
 
     .prologue
     .line 45
-    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->b(Z)V
+
+    return-void
+.end method
+
+.method static synthetic f()Ljava/util/concurrent/atomic/AtomicBoolean;
+    .locals 1
+
+    .prologue
+    .line 45
+    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-object v0
 .end method
 
-.method static synthetic d(J)V
+.method static synthetic f(J)V
     .locals 0
 
     .prologue
@@ -1580,26 +1449,14 @@
     return-void
 .end method
 
-.method static synthetic e()V
-    .locals 1
-
-    .prologue
-    .line 45
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Z)V
-
-    return-void
-.end method
-
-.method static synthetic e(J)V
+.method static synthetic g(J)V
     .locals 6
 
     .prologue
     const-wide/16 v0, 0x0
 
     .line 45
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->y()J
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->v()J
 
     move-result-wide v2
 
@@ -1608,7 +1465,7 @@
     if-nez v4, :cond_0
 
     :goto_0
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v2
 
@@ -1634,198 +1491,14 @@
     goto :goto_0
 .end method
 
-.method static synthetic f()Ljava/util/concurrent/atomic/AtomicBoolean;
+.method static synthetic g()Z
     .locals 1
 
     .prologue
     .line 45
-    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    return-object v0
-.end method
-
-.method private static f(J)V
-    .locals 6
-
-    .prologue
-    .line 225
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d:Z
-
-    .line 228
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    .line 230
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/snapchat/android/analytics/framework/Constants;->d:Ljava/lang/String;
-
-    invoke-interface {v1, v2, p0, p1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 232
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 233
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/snapchat/android/analytics/framework/Constants;->g:Ljava/lang/String;
-
-    invoke-interface {v2, v3, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 235
-    sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->i:Ljava/lang/String;
-
-    const-wide/16 v2, 0x0
-
-    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
-
-    move-result-wide v2
-
-    const-wide/16 v4, 0x1
-
-    add-long/2addr v2, v4
-
-    .line 236
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->i:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 238
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->v()J
-
-    move-result-wide v0
-
-    .line 239
-    sub-long v0, p0, v0
-
-    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->h(J)J
-
-    move-result-wide v0
-
-    .line 242
-    new-instance v4, Lfu;
-
-    invoke-direct {v4}, Lfu;-><init>()V
-
-    .line 243
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    iput-object v2, v4, Lfu;->sessionSeqNum:Ljava/lang/Long;
-
-    .line 244
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iput-object v0, v4, Lfu;->sinceLastSessionSec:Ljava/lang/Long;
-
-    .line 245
-    invoke-static {v4}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Llt;)V
-
-    .line 246
-    return-void
-.end method
-
-.method static synthetic g()Ljava/lang/Runnable;
-    .locals 1
-
-    .prologue
-    .line 45
-    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e:Ljava/lang/Runnable;
-
-    return-object v0
-.end method
-
-.method private static g(J)V
-    .locals 4
-
-    .prologue
-    .line 249
     sget-boolean v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d:Z
 
-    if-eqz v0, :cond_1
-
-    .line 268
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 252
-    :cond_1
-    sput-wide p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->f:J
-
-    .line 254
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->v()J
-
-    move-result-wide v0
-
-    .line 255
-    sub-long v0, p0, v0
-
-    const-wide/16 v2, 0x3a98
-
-    cmp-long v0, v0, v2
-
-    if-gez v0, :cond_2
-
-    .line 258
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    .line 259
-    sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->g:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 260
-    if-nez v0, :cond_0
-
-    .line 262
-    invoke-static {p0, p1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->f(J)V
-
-    goto :goto_0
-
-    .line 266
-    :cond_2
-    invoke-static {p0, p1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->f(J)V
-
-    goto :goto_0
+    return v0
 .end method
 
 .method static synthetic h()J
@@ -1833,7 +1506,7 @@
 
     .prologue
     .line 45
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -1852,14 +1525,14 @@
     .locals 4
 
     .prologue
-    .line 580
+    .line 574
     long-to-double v0, p0
 
     const-wide v2, 0x408f400000000000L    # 1000.0
 
     div-double/2addr v0, v2
 
-    .line 581
+    .line 575
     invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
 
     move-result-wide v0
@@ -1872,7 +1545,7 @@
 
     .prologue
     .line 45
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->v()J
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->r()J
 
     move-result-wide v0
 
@@ -1880,38 +1553,27 @@
 .end method
 
 .method private static i(J)V
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 632
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->w()Z
+    .line 626
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->t()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 633
-    const-string v0, "com.amplitude.api.Amplitude"
-
-    const-string v1, "First failure has already occurred - aborting overwrite of first failure timestamp."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 639
     :goto_0
     return-void
 
-    .line 637
+    .line 631
     :cond_0
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 638
+    .line 632
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -1927,51 +1589,19 @@
     goto :goto_0
 .end method
 
-.method static synthetic j()Landroid/content/Context;
+.method static synthetic j()Landroid/content/SharedPreferences;
     .locals 1
 
     .prologue
     .line 45
-    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic k()V
-    .locals 1
-
-    .prologue
-    .line 45
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d:Z
-
-    return-void
-.end method
-
-.method static synthetic l()Z
-    .locals 1
-
-    .prologue
-    .line 45
-    sget-boolean v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d:Z
-
-    return v0
-.end method
-
-.method static synthetic m()Landroid/content/SharedPreferences;
-    .locals 1
-
-    .prologue
-    .line 45
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic n()J
+.method static synthetic k()J
     .locals 2
 
     .prologue
@@ -1981,50 +1611,36 @@
     return-wide v0
 .end method
 
-.method static synthetic o()V
+.method static synthetic l()Landroid/content/Context;
     .locals 1
 
     .prologue
     .line 45
-    const/4 v0, 0x0
+    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
 
-    sput-boolean v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d:Z
-
-    return-void
+    return-object v0
 .end method
 
-.method static synthetic p()J
-    .locals 2
-
-    .prologue
-    .line 45
-    const-wide/16 v0, -0x1
-
-    sput-wide v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->f:J
-
-    return-wide v0
-.end method
-
-.method static synthetic q()Z
+.method static synthetic m()Z
     .locals 1
 
     .prologue
     .line 45
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->w()Z
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->t()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method static synthetic r()V
+.method static synthetic n()V
     .locals 6
 
     .prologue
     const-wide/16 v4, 0x0
 
     .line 45
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -2057,7 +1673,7 @@
     return-void
 .end method
 
-.method static synthetic s()Ljava/util/concurrent/atomic/AtomicBoolean;
+.method static synthetic o()Ljava/util/concurrent/atomic/AtomicBoolean;
     .locals 1
 
     .prologue
@@ -2067,23 +1683,23 @@
     return-object v0
 .end method
 
-.method static synthetic t()V
+.method static synthetic p()V
     .locals 1
 
     .prologue
     .line 45
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Z)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->b(Z)V
 
     return-void
 .end method
 
-.method private static u()Landroid/content/SharedPreferences;
+.method private static q()Landroid/content/SharedPreferences;
     .locals 3
 
     .prologue
-    .line 199
+    .line 197
     sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2125,16 +1741,16 @@
     return-object v0
 .end method
 
-.method private static v()J
+.method private static r()J
     .locals 4
 
     .prologue
-    .line 203
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    .line 201
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 204
+    .line 202
     sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->e:Ljava/lang/String;
 
     const-wide/16 v2, -0x1
@@ -2146,12 +1762,60 @@
     return-wide v0
 .end method
 
-.method private static w()Z
+.method private static declared-synchronized s()Z
+    .locals 3
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 551
+    const-class v1, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c:Landroid/content/Context;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v2, :cond_1
+
+    .line 560
+    :cond_0
+    :goto_0
+    monitor-exit v1
+
+    return v0
+
+    .line 556
+    :cond_1
+    :try_start_1
+    sget-object v2, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v2, :cond_0
+
+    .line 560
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    .line 551
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method private static t()Z
     .locals 4
 
     .prologue
-    .line 618
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->x()J
+    .line 612
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()J
 
     move-result-wide v0
 
@@ -2172,16 +1836,16 @@
     goto :goto_0
 .end method
 
-.method private static x()J
+.method private static u()J
     .locals 4
 
     .prologue
-    .line 627
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    .line 621
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 628
+    .line 622
     sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->l:Ljava/lang/String;
 
     const-wide/16 v2, -0x1
@@ -2193,16 +1857,16 @@
     return-wide v0
 .end method
 
-.method private static y()J
+.method private static v()J
     .locals 4
 
     .prologue
-    .line 646
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    .line 640
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 647
+    .line 641
     sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->j:Ljava/lang/String;
 
     const-wide/16 v2, 0x0
@@ -2214,16 +1878,16 @@
     return-wide v0
 .end method
 
-.method private static z()J
+.method private static w()J
     .locals 4
 
     .prologue
-    .line 665
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->u()Landroid/content/SharedPreferences;
+    .line 659
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->q()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 666
+    .line 660
     sget-object v1, Lcom/snapchat/android/analytics/framework/Constants;->k:Ljava/lang/String;
 
     const-wide/16 v2, 0x0

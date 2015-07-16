@@ -1,46 +1,26 @@
-import android.content.Context;
-import android.content.res.Resources;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-import com.snapchat.android.SnapchatApplication;
+import android.graphics.Paint;
+import com.snapchat.android.ui.swipefilters.FilterPageType;
 
 public final class asp
-  extends asn
 {
-  public final CheckBox k;
-  private final View l;
+  public Paint a;
   
-  public asp(View paramView)
+  public static int a(asu paramasu, int paramInt1, int paramInt2)
   {
-    super(null, paramView);
-    k = ((CheckBox)paramView.findViewById(2131362623));
-    l = paramView.findViewById(2131361920);
+    if (paramasu.b(paramInt1) == FilterPageType.BACKGROUNDFILTER) {
+      return paramInt1;
+    }
+    return paramInt2;
   }
   
-  public final void a(Context paramContext)
+  public final Paint a(asm paramasm)
   {
-    super.q();
-    a.setOnClickListener(null);
-    b(-16777216);
-    c(paramContext.getResources().getColor(2131230761));
-    k.setOnCheckedChangeListener(null);
-    k.setVisibility(8);
-    k.setScaleX(1.0F);
-    k.setScaleY(1.0F);
-    v();
-    w();
-  }
-  
-  public final void c(int paramInt)
-  {
-    l.setBackgroundColor(paramInt);
-  }
-  
-  public final void q()
-  {
-    a(SnapchatApplication.b());
+    Paint localPaint = paramasm.c();
+    paramasm = localPaint;
+    if (localPaint == null) {
+      paramasm = a;
+    }
+    return paramasm;
   }
 }
 

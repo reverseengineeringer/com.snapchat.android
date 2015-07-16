@@ -834,21 +834,16 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/data/DataHolder;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
     return-void
 
     :cond_1
-    :try_start_1
     iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder;->zzOa:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 
@@ -856,8 +851,6 @@
 
     :catchall_0
     move-exception v0
-
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     throw v0
 .end method

@@ -1,25 +1,17 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.EditText;
-import bgr;
-import bgr.a;
 
 final class FeedFragment$17
-  implements bgr.a
+  implements View.OnClickListener
 {
   FeedFragment$17(FeedFragment paramFeedFragment) {}
   
-  public final void a(View paramView)
+  public final void onClick(View paramView)
   {
-    FeedFragment.f(a).a().setOnClickListener(new View.OnClickListener()
-    {
-      public final void onClick(View paramAnonymousView)
-      {
-        ((EditText)FeedFragment.g(a).a()).setText("");
-      }
-    });
+    a.getActivity().onBackPressed();
   }
 }
 

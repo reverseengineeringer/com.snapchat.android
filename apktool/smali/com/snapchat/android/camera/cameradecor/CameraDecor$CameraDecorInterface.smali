@@ -42,7 +42,7 @@
 .method public abstract i()Landroid/support/v4/app/FragmentActivity;
 .end method
 
-.method public abstract k_()Z
+.method public abstract i_()Z
 .end method
 
 .method public abstract l()Z

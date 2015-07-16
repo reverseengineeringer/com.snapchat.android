@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 429
+    .line 427
     iput-object p1, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$2;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,10 +42,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 432
+    .line 430
     iget-object v1, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$2;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/signup/SignupFragment;->m(Lcom/snapchat/android/fragments/signup/SignupFragment;)Landroid/widget/EditText;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/signup/SignupFragment;->k(Lcom/snapchat/android/fragments/signup/SignupFragment;)Landroid/widget/EditText;
 
     move-result-object v1
 
@@ -53,7 +53,7 @@
 
     move-result-object v1
 
-    .line 433
+    .line 431
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
@@ -62,12 +62,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 434
+    .line 432
     iget-object v1, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$2;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/signup/SignupFragment;->l(Lcom/snapchat/android/fragments/signup/SignupFragment;)V
+    invoke-static {v1}, Lcom/snapchat/android/fragments/signup/SignupFragment;->j(Lcom/snapchat/android/fragments/signup/SignupFragment;)V
 
-    .line 437
+    .line 435
     :goto_0
     return v0
 

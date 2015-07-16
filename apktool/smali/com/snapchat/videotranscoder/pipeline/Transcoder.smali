@@ -47,15 +47,15 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/pipeline/Mixer;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;)V
     .locals 5
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/Mixer;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -316,30 +316,30 @@
 
 .method public abstract createAudioProvider(Lcom/snapchat/videotranscoder/pipeline/Encoder;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;)Lcom/snapchat/videotranscoder/pipeline/MediaProvider;
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/Encoder;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method
 
 .method public abstract createVideoProvider(Lcom/snapchat/videotranscoder/pipeline/Encoder;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;)Lcom/snapchat/videotranscoder/pipeline/MediaProvider;
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/Encoder;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method
@@ -444,7 +444,7 @@
 .method public transcode(Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

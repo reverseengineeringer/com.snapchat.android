@@ -1,280 +1,210 @@
 .class public final Ladw;
-.super Ladz;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Ladw$1;
-    }
-.end annotation
+# static fields
+.field private static final b:Ladw;
 
 
 # instance fields
-.field private final d:Landroid/view/LayoutInflater;
+.field public a:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ladx;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private e:Landroid/widget/ImageView;
-
-.field private f:Lavp;
+.field private final c:Lbhk;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lady;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 33
-    const-string v0, "layout_inflater"
+    .line 29
+    new-instance v0, Ladw;
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {v0}, Ladw;-><init>()V
 
-    move-result-object v0
+    sput-object v0, Ladw;->b:Ladw;
 
-    check-cast v0, Landroid/view/LayoutInflater;
-
-    new-instance v1, Lavp;
-
-    invoke-direct {v1, p1}, Lavp;-><init>(Landroid/content/Context;)V
-
-    invoke-direct {p0, v0, p2, v1}, Ladw;-><init>(Landroid/view/LayoutInflater;Lady;Lavp;)V
-
-    .line 35
     return-void
 .end method
 
-.method private constructor <init>(Landroid/view/LayoutInflater;Lady;Lavp;)V
-    .locals 0
+.method private constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 41
-    invoke-direct {p0, p2}, Ladz;-><init>(Lady;)V
+    .line 38
+    new-instance v0, Lbhk;
 
+    invoke-direct {v0}, Lbhk;-><init>()V
+
+    invoke-direct {p0, v0}, Ladw;-><init>(Lbhk;)V
+
+    .line 39
+    return-void
+.end method
+
+.method private constructor <init>(Lbhk;)V
+    .locals 1
+
+    .prologue
     .line 42
-    iput-object p1, p0, Ladw;->d:Landroid/view/LayoutInflater;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 27
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Ladw;->a:Ljava/util/Map;
 
     .line 43
-    iput-object p3, p0, Ladw;->f:Lavp;
+    iput-object p1, p0, Ladw;->c:Lbhk;
 
     .line 44
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Landroid/view/View;Ladb;Ljava/util/List;)Laim;
+.method public static a()Ladw;
     .locals 1
-    .param p3    # Ljava/util/List;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Ladb;",
-            "Ljava/util/List",
-            "<",
-            "Landroid/view/View;",
-            ">;)",
-            "Laim;"
-        }
-    .end annotation
 
     .prologue
-    .line 83
-    iget-object v0, p0, Ladw;->e:Landroid/widget/ImageView;
-
-    invoke-interface {p3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 84
-    iget-object v0, p0, Ladw;->c:Lady;
-
-    invoke-virtual {v0, p1, p2, p3}, Lady;->a(Landroid/view/View;Ladb;Ljava/util/List;)Laim;
-
-    move-result-object v0
+    .line 34
+    sget-object v0, Ladw;->b:Ladw;
 
     return-object v0
 .end method
 
-.method public final a(Lcom/snapchat/android/discover/ui/DSnapView;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;)Z
-    .locals 4
+
+# virtual methods
+.method public final a(Ljava/util/List;)I
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;",
+            ">;)I"
+        }
+    .end annotation
 
     .prologue
-    const/4 v3, 0x1
-
-    .line 48
-    invoke-super {p0, p1, p2, p3}, Ladz;->a(Lcom/snapchat/android/discover/ui/DSnapView;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;)Z
-
-    .line 49
-    iget-object v0, p0, Ladw;->d:Landroid/view/LayoutInflater;
-
-    const v1, 0x7f040056
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ladw;->a:Landroid/view/View;
-
-    .line 50
-    iget-object v0, p0, Ladw;->a:Landroid/view/View;
-
-    const v1, 0x7f0a01f5
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/FrameLayout;
-
-    iput-object v0, p0, Ladw;->b:Landroid/widget/FrameLayout;
-
     .line 51
-    iget-object v0, p0, Ladw;->a:Landroid/view/View;
+    iget-object v0, p0, Ladw;->a:Ljava/util/Map;
 
-    const v1, 0x7f0a01f9
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 53
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Landroid/widget/ImageView;
-
-    iput-object v0, p0, Ladw;->e:Landroid/widget/ImageView;
+    if-eqz v0, :cond_0
 
     .line 54
-    sget-object v0, Ladw$1;->a:[I
-
-    iget-object v1, p3, Lcom/snapchat/android/discover/model/DSnapPanel;->d:Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$Docking;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 63
-    const/16 v0, 0xa
-
-    move v1, v0
-
-    .line 65
-    :goto_0
-    iget-object v0, p0, Ladw;->e:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
-
-    .line 66
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
+    const/4 v0, 0x0
 
     .line 67
-    iget-object v1, p0, Ladw;->e:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 69
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p2, Lcom/snapchat/android/discover/model/DSnapPage;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p3, Lcom/snapchat/android/discover/model/DSnapPanel;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 70
-    new-instance v1, Lavx$a;
-
-    invoke-direct {v1}, Lavx$a;-><init>()V
-
-    iget-object v2, p0, Ladw;->e:Landroid/widget/ImageView;
-
-    iput-object v2, v1, Lavx$a;->mImageView:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v0}, Lavx$a;->a(Ljava/lang/String;)Lavx$a;
-
-    move-result-object v0
-
-    iput-boolean v3, v0, Lavx$a;->mRequireExactDimensions:Z
-
-    invoke-virtual {v0}, Lavx$a;->a()Lavx;
-
-    move-result-object v0
-
-    .line 75
-    iget-object v1, p0, Ladw;->f:Lavp;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Lavy;
-
-    invoke-virtual {v1, v0, v2}, Lavp;->a(Lavx;[Lavy;)V
-
-    .line 77
-    return v3
-
-    .line 56
-    :pswitch_0
-    const/16 v0, 0xc
-
-    move v1, v0
+    :goto_0
+    return v0
 
     .line 57
-    goto :goto_0
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 58
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;
 
     .line 59
-    :pswitch_1
-    const/16 v0, 0xf
+    if-eqz v1, :cond_1
 
-    move v1, v0
+    iget-object v3, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->a:Ljava/lang/String;
+
+    iget-object v4, v1, Ladx;->a:Ljava/lang/String;
+
+    invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
 
     .line 60
+    :cond_1
+    new-instance v1, Ladx;
+
+    iget-object v3, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->a:Ljava/lang/String;
+
+    iget-object v4, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->b:Ljava/lang/String;
+
+    invoke-direct {v1, v3, v4}, Ladx;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 61
+    iget-object v3, p0, Ladw;->a:Ljava/util/Map;
+
+    iget-object v4, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->a:Ljava/lang/String;
+
+    invoke-interface {v3, v4, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 64
+    :cond_2
+    new-instance v3, Lchh;
+
+    iget-wide v4, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->c:J
+
+    invoke-direct {v3, v4, v5}, Lchh;-><init>(J)V
+
+    invoke-virtual {v1, v3}, Ladx;->a(Lchh;)V
+
+    goto :goto_1
+
+    .line 67
+    :cond_3
+    iget-object v0, p0, Ladw;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->size()I
+
+    move-result v0
+
     goto :goto_0
-
-    .line 54
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method
 
-.method public final c()V
-    .locals 2
+.method public final a(Ljava/lang/String;)Ladx;
+    .locals 1
 
     .prologue
-    .line 89
-    invoke-super {p0}, Ladz;->c()V
+    .line 117
+    iget-object v0, p0, Ladw;->a:Ljava/util/Map;
 
-    .line 90
-    iget-object v0, p0, Ladw;->f:Lavp;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, p0, Ladw;->e:Landroid/widget/ImageView;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lavp;->a(Landroid/widget/ImageView;)V
+    check-cast v0, Ladx;
 
-    .line 91
-    return-void
+    return-object v0
 .end method

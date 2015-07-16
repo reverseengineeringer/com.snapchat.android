@@ -1,130 +1,93 @@
-.class public final Lazf;
+.class public Lazf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuo;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
-        "<",
-        "Ladj;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
 
 # instance fields
-.field private final module:Lazc;
+.field public final mKey:Ljava/lang/String;
+
+.field public final mType:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
+    .locals 0
 
     .prologue
-    .line 7
-    const-class v0, Lazf;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lazf;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lazc;)V
-    .locals 1
-
-    .prologue
-    .line 11
+    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
-    sget-boolean v0, Lazf;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
     .line 13
-    :cond_0
-    iput-object p1, p0, Lazf;->module:Lazc;
+    iput-object p1, p0, Lazf;->mKey:Ljava/lang/String;
 
     .line 14
+    iput-object p2, p0, Lazf;->mType:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
+
+    .line 15
     return-void
-.end method
-
-.method public static a(Lazc;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lazc;",
-            ")",
-            "Lbuo",
-            "<",
-            "Ladj;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 26
-    new-instance v0, Lazf;
-
-    invoke-direct {v0, p0}, Lazf;-><init>(Lazc;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
+.method public equals(Ljava/lang/Object;)Z
     .locals 2
 
     .prologue
-    .line 7
-    invoke-static {}, Ladj;->a()Ladj;
+    .line 35
+    if-ne p0, p1, :cond_0
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    if-nez v0, :cond_0
+    .line 38
+    :goto_0
+    return v0
 
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
+    .line 36
     :cond_0
+    instance-of v0, p1, Lazf;
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    .line 37
+    :cond_1
+    check-cast p1, Lazf;
+
+    .line 38
+    iget-object v0, p0, Lazf;->mKey:Ljava/lang/String;
+
+    iget-object v1, p1, Lazf;->mKey:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    .prologue
+    .line 43
+    iget-object v0, p0, Lazf;->mKey:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 48
+    iget-object v0, p0, Lazf;->mKey:Ljava/lang/String;
+
     return-object v0
 .end method

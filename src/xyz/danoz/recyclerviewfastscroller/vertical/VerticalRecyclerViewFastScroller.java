@@ -3,13 +3,13 @@ package xyz.danoz.recyclerviewfastscroller.vertical;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import ckr.b;
-import cks;
-import cks.a;
-import ckt;
-import ckv;
-import ckw;
-import ckx;
+import cls.b;
+import clt;
+import clt.a;
+import clu;
+import clw;
+import clx;
+import cly;
 import r;
 import xyz.danoz.recyclerviewfastscroller.AbsRecyclerViewFastScroller;
 
@@ -17,9 +17,9 @@ public class VerticalRecyclerViewFastScroller
   extends AbsRecyclerViewFastScroller
 {
   @r
-  private ckx f;
+  private cly f;
   @r
-  private ckt g;
+  private clu g;
   
   public VerticalRecyclerViewFastScroller(Context paramContext)
   {
@@ -38,21 +38,21 @@ public class VerticalRecyclerViewFastScroller
   
   protected final void a()
   {
-    cks localcks = new cks(new cks.a()new cks.a
+    clt localclt = new clt(new clt.a()new clt.a
     {
       public final float a()
       {
         return VerticalRecyclerViewFastScroller.a(VerticalRecyclerViewFastScroller.this).getY();
       }
-    }, new cks.a()
+    }, new clt.a()
     {
       public final float a()
       {
         return VerticalRecyclerViewFastScroller.b(VerticalRecyclerViewFastScroller.this).getY() + VerticalRecyclerViewFastScroller.c(VerticalRecyclerViewFastScroller.this).getHeight() - VerticalRecyclerViewFastScroller.d(VerticalRecyclerViewFastScroller.this).getHeight();
       }
     });
-    f = new ckw(localcks);
-    g = new ckt(localcks);
+    f = new clx(localclt);
+    g = new clu(localclt);
   }
   
   public final void a(float paramFloat)
@@ -65,11 +65,11 @@ public class VerticalRecyclerViewFastScroller
   
   protected int getLayoutResourceId()
   {
-    return ckr.b.vertical_recycler_fast_scroller_layout;
+    return cls.b.vertical_recycler_fast_scroller_layout;
   }
   
   @r
-  protected ckv getScrollProgressCalculator()
+  protected clw getScrollProgressCalculator()
   {
     return f;
   }

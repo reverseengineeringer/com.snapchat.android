@@ -20,43 +20,33 @@
     .locals 3
 
     .prologue
-    .line 32
-    const-string v1, "GcmMessageReceiver"
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
 
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
+    .line 32
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v2, "onReceive intent="
+    const-string v1, "onReceive intent="
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v2, ", extras="
+    const-string v1, ", extras="
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
     if-nez p2, :cond_0
 
     const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 35
     new-instance v0, Landroid/content/ComponentName;
@@ -93,9 +83,9 @@
     move-result-object v0
 
     .line 43
-    invoke-static {}, Lni;->a()Lni;
+    invoke-static {}, Lnz;->a()Lnz;
 
-    invoke-static {v0}, Lni;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lnz;->b(Ljava/lang/String;)V
 
     .line 44
     return-void

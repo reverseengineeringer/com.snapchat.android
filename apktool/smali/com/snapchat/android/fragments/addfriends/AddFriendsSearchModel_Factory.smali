@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/fragments/addfriends/AddFriendsSearchModel_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lafd;",
+        "Lagd;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Lafd;",
+            "Lagd;",
             ">;"
         }
     .end annotation
@@ -127,14 +127,14 @@
 
 
 # virtual methods
-.method public final get()Lafd;
+.method public final get()Lagd;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Lafd;
+    new-instance v0, Lagd;
 
-    invoke-direct {v0}, Lafd;-><init>()V
+    invoke-direct {v0}, Lagd;-><init>()V
 
     return-object v0
 .end method
@@ -144,7 +144,7 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsSearchModel_Factory;->get()Lafd;
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsSearchModel_Factory;->get()Lagd;
 
     move-result-object v0
 

@@ -1,103 +1,68 @@
-import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
-import com.snapchat.android.analytics.ProfileEventAnalytics;
-import com.snapchat.android.camera.ui.viewflipper.CameraViewFlipper;
-import com.snapchat.android.ui.VerticalSwipeLayout;
-import com.snapchat.android.ui.VerticalSwipeLayout.a;
-import com.snapchat.android.util.TitleBarManager.Visibility;
+import android.content.Context;
+import android.content.Intent;
+import android.text.TextUtils;
+import com.snapchat.android.api2.framework.HttpMethod;
 import com.squareup.otto.Bus;
+import java.util.Arrays;
 
 public final class anj
-  implements VerticalSwipeLayout.a
+  extends ana
 {
-  private final CameraViewFlipper a;
-  private final Bus b;
-  private final ProfileEventAnalytics c;
+  private final String a;
   
-  public anj(CameraViewFlipper paramCameraViewFlipper)
+  public anj(Intent paramIntent)
   {
-    this(paramCameraViewFlipper, ban.a());
+    super(paramIntent);
+    a = paramIntent.getStringExtra("ImageId");
   }
   
-  private anj(CameraViewFlipper paramCameraViewFlipper, Bus paramBus)
+  public final void a(Context paramContext)
   {
-    a = paramCameraViewFlipper;
-    b = paramBus;
-    c = ProfileEventAnalytics.a();
-  }
-  
-  public final void a(int paramInt1, int paramInt2, int paramInt3)
-  {
-    if ((!a.isEnabled()) || ((paramInt2 == paramInt3) && (paramInt1 == 2))) {}
-    do
-    {
-      return;
-      b.a(new bel(TitleBarManager.Visibility.HIDDEN));
-    } while ((!a.b) || (paramInt2 != 1) || (paramInt3 == 1));
-    b.a(new bdg(false));
-  }
-  
-  public final void c(int paramInt)
-  {
-    if (!a.isEnabled()) {}
-    int i;
-    label71:
-    label104:
-    label113:
-    do
-    {
-      do
-      {
-        return;
-        a.getContext();
-        if (paramInt == 0)
-        {
-          ProfileEventAnalytics.a(AnalyticsEvents.AnalyticsContext.PROFILE_MAIN_PAGE, false);
-          if (!ajx.aS()) {
-            ajx.aT();
-          }
-          localObject = ajv.g();
-          if ((localObject == null) || (((ajv)localObject).h() <= 0)) {
-            break;
-          }
-          i = 1;
-          if ((i == 0) || (ajx.aW())) {
-            break label171;
-          }
-          i = 1;
-          if (i != 0) {
-            ajx.aX();
-          }
-        }
-      } while (!a.isEnabled());
-      if ((paramInt != 0) || (a.getInProfilePictureView())) {
-        break label176;
-      }
-      i = 1;
-      if (i == 0) {
-        break label181;
-      }
-      localObject = TitleBarManager.Visibility.VISIBLE;
-      b.a(new bel((TitleBarManager.Visibility)localObject));
-    } while (!a.b);
-    Object localObject = b;
-    if (paramInt == 1) {}
-    for (boolean bool = true;; bool = false)
-    {
-      ((Bus)localObject).a(new bdg(bool));
-      return;
-      i = 0;
-      break;
-      label171:
-      i = 0;
-      break label71;
-      label176:
-      i = 0;
-      break label104;
-      label181:
-      localObject = TitleBarManager.Visibility.HIDDEN;
-      break label113;
+    if (!TextUtils.isEmpty(a)) {
+      super.a(paramContext);
     }
   }
+  
+  public final HttpMethod getMethod()
+  {
+    return HttpMethod.POST;
+  }
+  
+  public final Object getRequestPayload()
+  {
+    return buildAuthPayload(new anj.a().a(a).b("SVG"));
+  }
+  
+  protected final String l_()
+  {
+    return "/bq/snaptag_download";
+  }
+  
+  public final void onResult(@chc us paramus)
+  {
+    super.onResult(paramus);
+    if (!paramus.d()) {
+      new StringBuilder("profile images - failed to download snaptag. ").append(paramus.e());
+    }
+    paramus = mBuffer;
+    if (paramus != null) {}
+    try
+    {
+      paramus = Arrays.copyOf(paramus.b(), paramus.a());
+      axo.PROFILE_IMAGE_CACHE.a("snaptag", paramus, paramus.length);
+      bbo.a().a(new bes("snaptag"));
+      return;
+    }
+    catch (axq paramus)
+    {
+      new StringBuilder("Failed to store the downloaded snaptag ").append(paramus);
+    }
+  }
+  
+  @ud
+  public static final class a
+    extends bkd
+  {}
 }
 
 /* Location:

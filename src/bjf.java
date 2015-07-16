@@ -1,48 +1,67 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
-import java.util.Map;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bjf
+  extends bhy
 {
-  @SerializedName("friend_stories")
-  protected List<bhv> friendStories;
-  @SerializedName("friend_stories_delta")
-  protected Boolean friendStoriesDelta;
-  @SerializedName("mature_content_text")
-  protected Map<String, String> matureContentText;
-  @SerializedName("my_group_stories")
-  protected List<bim> myGroupStories;
-  @SerializedName("my_stories")
-  protected List<bji> myStories;
-  @SerializedName("server_info")
-  protected biw serverInfo;
+  @SerializedName("application_id")
+  protected String applicationId;
+  @SerializedName("attestation")
+  protected String attestation;
+  @SerializedName("dsig")
+  protected String dsig;
+  @SerializedName("dtoken1i")
+  protected String dtoken1i;
+  @SerializedName("height")
+  protected Integer height;
+  @SerializedName("max_video_height")
+  protected Integer maxVideoHeight;
+  @SerializedName("max_video_width")
+  protected Integer maxVideoWidth;
+  @SerializedName("nt")
+  protected String nt;
+  @SerializedName("password")
+  protected String password;
+  @SerializedName("pre_auth_token")
+  protected String preAuthToken;
+  @SerializedName("ptoken")
+  protected String ptoken;
+  @SerializedName("sflag")
+  protected String sflag;
+  @SerializedName("width")
+  protected Integer width;
   
-  public final List<bji> a()
+  public final void a(Integer paramInteger)
   {
-    return myStories;
+    height = paramInteger;
   }
   
-  public final boolean b()
+  public final void a(String paramString)
   {
-    return myStories != null;
+    preAuthToken = paramString;
   }
   
-  public final List<bhv> c()
+  public final void b(Integer paramInteger)
   {
-    return friendStories;
+    width = paramInteger;
   }
   
-  public final List<bim> d()
+  public final void b(String paramString)
   {
-    return myGroupStories;
+    password = paramString;
   }
   
-  public final boolean e()
+  public final void c(Integer paramInteger)
   {
-    return myGroupStories != null;
+    maxVideoHeight = paramInteger;
+  }
+  
+  public final void d(Integer paramInteger)
+  {
+    maxVideoWidth = paramInteger;
   }
   
   public boolean equals(Object paramObject)
@@ -54,32 +73,65 @@ public class bjf
       return false;
     }
     paramObject = (bjf)paramObject;
-    return new EqualsBuilder().append(myStories, myStories).append(friendStories, friendStories).append(myGroupStories, myGroupStories).append(matureContentText, matureContentText).append(friendStoriesDelta, friendStoriesDelta).append(serverInfo, serverInfo).isEquals();
-  }
-  
-  public final Boolean f()
-  {
-    return friendStoriesDelta;
-  }
-  
-  public final biw g()
-  {
-    return serverInfo;
-  }
-  
-  public final boolean h()
-  {
-    return serverInfo != null;
+    return new EqualsBuilder().append(preAuthToken, preAuthToken).append(password, password).append(ptoken, ptoken).append(dtoken1i, dtoken1i).append(dsig, dsig).append(nt, nt).append(height, height).append(width, width).append(maxVideoHeight, maxVideoHeight).append(maxVideoWidth, maxVideoWidth).append(applicationId, applicationId).append(attestation, attestation).append(sflag, sflag).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(myStories).append(friendStories).append(myGroupStories).append(matureContentText).append(friendStoriesDelta).append(serverInfo).toHashCode();
+    return new HashCodeBuilder().append(preAuthToken).append(password).append(ptoken).append(dtoken1i).append(dsig).append(nt).append(height).append(width).append(maxVideoHeight).append(maxVideoWidth).append(applicationId).append(attestation).append(sflag).toHashCode();
+  }
+  
+  public final void i(String paramString)
+  {
+    ptoken = paramString;
+  }
+  
+  public final void j(String paramString)
+  {
+    dtoken1i = paramString;
+  }
+  
+  public final void k(String paramString)
+  {
+    dsig = paramString;
+  }
+  
+  public final void l(String paramString)
+  {
+    nt = paramString;
+  }
+  
+  public final void m(String paramString)
+  {
+    applicationId = paramString;
+  }
+  
+  public final void n(String paramString)
+  {
+    attestation = paramString;
+  }
+  
+  public final void o(String paramString)
+  {
+    sflag = paramString;
   }
   
   public String toString()
   {
-    return ToStringBuilder.reflectionToString(this);
+    String str2 = ToStringBuilder.reflectionToString(this);
+    String str3 = String.valueOf(password);
+    String str1 = str2;
+    if (!StringUtils.isEmpty(str2))
+    {
+      str1 = str2;
+      if (StringUtils.length(str3) > 0)
+      {
+        str1 = "password" + "=";
+        String str4 = StringUtils.repeat('*', StringUtils.length(str3) + 0);
+        str1 = str2.replace(str1 + str3, str1 + str4);
+      }
+    }
+    return str1;
   }
 }
 

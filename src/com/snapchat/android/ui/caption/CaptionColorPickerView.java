@@ -2,8 +2,8 @@ package com.snapchat.android.ui.caption;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import app;
-import ban;
+import aqo;
+import bbo;
 import com.snapchat.android.ui.ColorPickerView;
 import com.squareup.otto.Bus;
 
@@ -17,7 +17,7 @@ public class CaptionColorPickerView
   
   protected final void a(int paramInt)
   {
-    ban.a().a(new app(paramInt));
+    bbo.a().a(new aqo(paramInt));
   }
 }
 

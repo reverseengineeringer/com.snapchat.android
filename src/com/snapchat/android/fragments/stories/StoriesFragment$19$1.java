@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.stories;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.addfriends.AddFriendsFragment;
 import com.squareup.otto.Bus;
 
@@ -14,7 +14,7 @@ final class StoriesFragment$19$1
   
   public final void onClick(View paramView)
   {
-    ban.a().a(new bdw(new AddFriendsFragment()));
+    bbo.a().a(new bev(new AddFriendsFragment()));
   }
 }
 

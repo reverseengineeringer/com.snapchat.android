@@ -1,22 +1,41 @@
-.class public final Lzq;
-.super Lzp;
+.class public interface abstract Lzq;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation runtime Ljavax/inject/Singleton;
-.end annotation
+# virtual methods
+.method public abstract a(Lajk;)V
+    .param p1    # Lajk;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
 
+.method public abstract a(Laka;Lajk;)V
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lajk;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
+.method public abstract a(Laka;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;I)V
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
 
-    .prologue
-    .line 10
-    invoke-direct {p0}, Lzp;-><init>()V
-
-    return-void
+.method public abstract d(Laka;)V
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 .end method

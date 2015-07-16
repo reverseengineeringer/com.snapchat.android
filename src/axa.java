@@ -1,15 +1,27 @@
-import java.io.File;
+import android.text.TextUtils;
+import android.widget.ImageView;
 
 public final class axa
+  implements aww
 {
-  private static final long MIN_NUM_FREE_BYTES = 10L;
-  public static File sExternalCacheDirectory;
-  public static File sInternalCacheDirectory;
-  
-  public static void a(File paramFile1, File paramFile2)
+  public final void a(awm paramawm, awv paramawv)
   {
-    sInternalCacheDirectory = paramFile1;
-    sExternalCacheDirectory = paramFile2;
+    
+    if (mBitmap != null)
+    {
+      ImageView localImageView = mImageView;
+      if (localImageView != null)
+      {
+        Object localObject = localImageView.getDrawable();
+        if ((localObject instanceof axc))
+        {
+          localObject = (axc)localObject;
+          if (TextUtils.equals(mRequestId, mLoaderTask.mRequest.mRequestId)) {
+            localImageView.setImageBitmap(mBitmap);
+          }
+        }
+      }
+    }
   }
 }
 

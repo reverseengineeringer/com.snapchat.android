@@ -1,15 +1,32 @@
-import android.support.v7.widget.RecyclerView.s;
-import android.view.ViewGroup;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.net.Uri;
+import java.io.InputStream;
 
-public abstract interface bpq<VH extends RecyclerView.s>
+class bpq
+  extends bqj
 {
-  public abstract int a();
+  final Context a;
   
-  public abstract VH a(ViewGroup paramViewGroup);
+  bpq(Context paramContext)
+  {
+    a = paramContext;
+  }
   
-  public abstract void c(VH paramVH, int paramInt);
+  public boolean a(bqh parambqh)
+  {
+    return "content".equals(d.getScheme());
+  }
   
-  public abstract long e(int paramInt);
+  public bqj.a b(bqh parambqh)
+  {
+    return new bqj.a(c(parambqh), bqe.d.b);
+  }
+  
+  final InputStream c(bqh parambqh)
+  {
+    return a.getContentResolver().openInputStream(d);
+  }
 }
 
 /* Location:

@@ -51,7 +51,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment$3;->a:Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;->b(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;)Laol;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;->b(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;)Laph;
 
     move-result-object v1
 
@@ -61,7 +61,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Laol;->a(Landroid/content/Context;)I
+    invoke-virtual {v1, v2}, Laph;->a(Landroid/content/Context;)I
 
     move-result v1
 

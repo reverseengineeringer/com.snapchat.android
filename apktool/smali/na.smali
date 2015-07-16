@@ -6,978 +6,896 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lna$1;
+        Lna$a;
     }
 .end annotation
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "ChatEventAnalytics"
+.field public static final AD_RESPONSE_CONTENT_PARAM:Ljava/lang/String; = "content"
 
-.field private static final sInstance:Lna;
+.field public static final AD_RESPONSE_CONTENT_TYPE_PARAM:Ljava/lang/String; = "type"
+
+.field public static final AD_RESPONSE_DURATION_PARAM:Ljava/lang/String; = "duration"
+
+.field public static final AD_RESPONSE_IMAGE_MEDIA_TYPE:Ljava/lang/String; = "image"
+
+.field public static final AD_RESPONSE_IMP_URL_PARAM:Ljava/lang/String; = "imp-url"
+
+.field public static final AD_RESPONSE_MEDIA_ZIPPED_WITH_OVERLAY_PARAM:Ljava/lang/String; = "media_zipped_with_overlay"
+
+.field public static final AD_RESPONSE_THIRD_PARTY_TRACK_URLS_PARAM:Ljava/lang/String; = "third_party_urls"
+
+.field private static final APP_ID:Ljava/lang/String; = "snapchat"
+
+.field private static final INSTANCE:Lna;
+
+.field private static final PATTERN:Ljava/util/regex/Pattern;
+
+.field private static final TAG:Ljava/lang/String; = "AdManager"
 
 
 # instance fields
-.field private final mScAnalyticsEventEngine:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
+.field protected final mAdResponseControllerMap:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lna$a;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public mAppContext:Landroid/content/Context;
+
+.field public final mConfiguration:Lnb;
+
+.field public final mUIThreadHandler:Landroid/os/Handler;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 41
+    .line 53
     new-instance v0, Lna;
 
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a()Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
+    invoke-direct {v0}, Lna;-><init>()V
+
+    sput-object v0, Lna;->INSTANCE:Lna;
+
+    .line 57
+    const-string v0, "(?i)<html><body[^>]*>(.*)</body></html>"
+
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lna;->PATTERN:Ljava/util/regex/Pattern;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    .prologue
+    .line 64
+    new-instance v0, Lnb;
+
+    invoke-direct {v0}, Lnb;-><init>()V
+
+    invoke-direct {p0, v0}, Lna;-><init>(Lnb;)V
+
+    .line 65
+    return-void
+.end method
+
+.method private constructor <init>(Lnb;)V
+    .locals 2
+    .param p1    # Lnb;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 68
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 60
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lna;-><init>(Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;)V
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    sput-object v0, Lna;->sInstance:Lna;
+    iput-object v0, p0, Lna;->mUIThreadHandler:Landroid/os/Handler;
 
+    .line 69
+    iput-object p1, p0, Lna;->mConfiguration:Lnb;
+
+    .line 70
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lna;->mAdResponseControllerMap:Ljava/util/Map;
+
+    .line 71
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;)V
-    .locals 0
-    .annotation build Lcf;
+.method protected static a(Landroid/os/Bundle;)Ljava/util/List;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/Bundle;",
+            ")",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
     .end annotation
 
     .prologue
-    .line 49
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x1
 
-    .line 50
-    iput-object p1, p0, Lna;->mScAnalyticsEventEngine:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
+    const/4 v2, 0x0
 
-    .line 51
-    return-void
-.end method
+    .line 557
+    new-instance v0, Ljava/util/ArrayList;
 
-.method private static a(Lakh;)Lhg;
-    .locals 6
-    .param p0    # Lakh;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcf;
-    .end annotation
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .prologue
-    const/4 v0, 0x1
+    .line 559
+    if-nez p0, :cond_0
 
-    const/4 v1, 0x0
-
-    .line 154
-    new-instance v2, Lhg;
-
-    invoke-direct {v2}, Lhg;-><init>()V
-
-    .line 155
-    iget-object v3, p0, Lakh;->mPublisherName:Ljava/lang/String;
-
-    iput-object v3, v2, Lhg;->publisherId:Ljava/lang/String;
-
-    .line 156
-    iget-object v3, p0, Lakh;->mEditionId:Ljava/lang/String;
-
-    iput-object v3, v2, Lhg;->editionId:Ljava/lang/String;
-
-    .line 157
-    iget-object v3, p0, Lakh;->mDSnapId:Ljava/lang/String;
-
-    iput-object v3, v2, Lhg;->dsnapId:Ljava/lang/String;
-
-    .line 158
-    invoke-static {p0}, Lna;->e(Lakb;)Lhy;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lhg;->mediaType:Lhy;
-
-    .line 160
-    iget v3, p0, Lakh;->mCaption:I
-
-    const/4 v4, -0x1
-
-    if-eq v3, v4, :cond_0
-
-    .line 161
-    iget v3, p0, Lakh;->mCaption:I
-
-    int-to-long v4, v3
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lhg;->caption:Ljava/lang/Long;
-
-    .line 164
-    :cond_0
-    iget v3, p0, Lakh;->mDrawing:I
-
-    if-ne v3, v0, :cond_3
-
-    .line 165
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, v2, Lhg;->drawing:Ljava/lang/Boolean;
-
-    .line 167
-    iget-object v0, p0, Lakh;->mFilterVisual:Ljava/lang/String;
-
-    if-eqz v0, :cond_1
-
-    .line 169
-    :try_start_0
-    iget-object v0, p0, Lakh;->mFilterVisual:Ljava/lang/String;
-
-    invoke-static {v0}, Lho;->valueOf(Ljava/lang/String;)Lho;
-
-    move-result-object v0
-
-    .line 170
-    iput-object v0, v2, Lhg;->filterVisual:Lho;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 177
-    :cond_1
-    :goto_1
-    iget-object v0, p0, Lakh;->mFilterInfo:Ljava/lang/String;
-
-    if-eqz v0, :cond_2
-
-    .line 179
-    :try_start_1
-    iget-object v0, p0, Lakh;->mFilterInfo:Ljava/lang/String;
-
-    invoke-static {v0}, Lhm;->valueOf(Ljava/lang/String;)Lhm;
-
-    move-result-object v0
-
-    .line 180
-    iput-object v0, v2, Lhg;->filterInfo:Lhm;
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 186
-    :cond_2
-    :goto_2
-    return-object v2
-
-    :cond_3
-    move v0, v1
-
-    .line 164
-    goto :goto_0
-
-    .line 172
-    :catch_0
-    move-exception v0
-
-    const-string v0, "ChatEventAnalytics"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Invalid filter visual type "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v4, p0, Lakh;->mFilterVisual:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    .line 182
-    :catch_1
-    move-exception v0
-
-    const-string v0, "ChatEventAnalytics"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Invalid filter info type "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v4, p0, Lakh;->mFilterInfo:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v3, v1}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_2
-.end method
-
-.method private static a(Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;)Ljava/lang/Long;
-    .locals 2
-    .param p0    # Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcf;
-    .end annotation
-
-    .prologue
-    .line 264
-    sget-object v0, Lna$1;->$SwitchMap$com$snapchat$android$discover$model$server$DiscoverLinkStatusResult$LinkStatus:[I
-
-    invoke-virtual {p0}, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 271
-    const/4 v0, 0x0
-
+    .line 575
     :goto_0
     return-object v0
 
-    .line 266
-    :pswitch_0
-    const-wide/16 v0, 0x1
+    .line 563
+    :cond_0
+    const-string v1, "imp-url"
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
-    move-result-object v0
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 564
+    const-string v1, "imp-url"
+
+    invoke-virtual {p0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 569
+    :goto_1
+    const-string v1, "third_party_urls"
+
+    invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 570
+    const-string v1, "third_party_urls"
+
+    invoke-virtual {p0, v1}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_0
 
-    .line 269
-    :pswitch_1
-    const-wide/16 v0, 0x0
+    .line 566
+    :cond_1
+    new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    aput-object p0, v1, v2
 
-    move-result-object v0
+    goto :goto_1
+
+    .line 572
+    :cond_2
+    new-array v1, v3, [Ljava/lang/Object;
+
+    aput-object p0, v1, v2
 
     goto :goto_0
-
-    .line 264
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
 .end method
 
 .method public static a()Lna;
     .locals 1
 
     .prologue
-    .line 45
-    sget-object v0, Lna;->sInstance:Lna;
+    .line 82
+    sget-object v0, Lna;->INSTANCE:Lna;
 
     return-object v0
 .end method
 
-.method public static a(Lakb;)V
-    .locals 3
-    .param p0    # Lakb;
-        .annotation build Lcgb;
+.method static synthetic b()Ljava/util/regex/Pattern;
+    .locals 1
+
+    .prologue
+    .line 41
+    sget-object v0, Lna;->PATTERN:Ljava/util/regex/Pattern;
+
+    return-object v0
+.end method
+
+.method private static e(Lnc;)Landroid/os/Bundle;
+    .locals 4
+    .param p0    # Lnc;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 54
-    instance-of v0, p0, Lakg;
+    .line 326
+    invoke-virtual {p0}, Lnc;->c()Landroid/os/Bundle;
+
+    move-result-object v2
+
+    .line 327
+    invoke-static {}, Lakr;->a()Lakr;
+
+    move-result-object v0
+
+    .line 329
+    if-eqz v0, :cond_0
+
+    .line 330
+    invoke-static {}, Lakr;->ad()Ljava/util/Map;
+
+    move-result-object v0
+
+    .line 332
+    if-eqz v0, :cond_0
+
+    .line 333
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 56
-    new-instance v0, Lfx;
-
-    invoke-direct {v0}, Lfx;-><init>()V
-
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
-
-    .line 61
-    :goto_0
-    return-void
-
-    .line 58
-    :cond_0
-    new-instance v2, Lfy;
-
-    invoke-direct {v2}, Lfy;-><init>()V
-
-    instance-of v0, p0, Laki;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lakb;->al()Ljava/lang/String;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    check-cast v0, Ljava/util/Map$Entry;
 
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    const-wide/16 v0, 0x0
-
-    :goto_1
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iput-object v0, v2, Lfy;->charCount:Ljava/lang/Long;
-
-    :cond_1
-    invoke-static {p0}, Lna;->e(Lakb;)Lhy;
-
-    move-result-object v0
-
-    iput-object v0, v2, Lfy;->mediaType:Lhy;
-
-    .line 59
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
-
-    goto :goto_0
-
-    .line 58
-    :cond_2
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    goto :goto_1
-.end method
-
-.method public static a(Lakh;ZLjava/lang/Double;Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;Ljava/lang/Double;)V
-    .locals 6
-    .param p0    # Lakh;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Double;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p4    # Ljava/lang/Double;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 88
-    invoke-static {p0}, Lna;->a(Lakh;)Lhg;
+    .line 334
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 90
-    iput-object p2, v1, Lhg;->timeViewed:Ljava/lang/Double;
+    check-cast v1, Ljava/lang/String;
 
-    .line 91
-    if-eqz p1, :cond_0
-
-    .line 92
-    sget-object v0, Lna$1;->$SwitchMap$com$snapchat$android$discover$model$server$DiscoverLinkStatusResult$LinkStatus:[I
-
-    invoke-virtual {p3}, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->ordinal()I
-
-    move-result v2
-
-    aget v0, v0, v2
-
-    packed-switch v0, :pswitch_data_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iput-object v0, v1, Lhg;->snapAvailable:Ljava/lang/Long;
-
-    .line 93
-    invoke-static {p3}, Lna;->a(Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;)Ljava/lang/Long;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, v1, Lhg;->editionAvailable:Ljava/lang/Long;
+    check-cast v0, Ljava/lang/String;
 
-    .line 95
+    invoke-virtual {v2, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 338
     :cond_0
-    iput-object p4, v1, Lhg;->snapTimeSec:Ljava/lang/Double;
-
-    .line 96
-    invoke-virtual {p0}, Lakh;->V()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    if-eqz p2, :cond_1
-
-    if-eqz p4, :cond_1
-
-    .line 97
-    invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v2
-
-    invoke-virtual {p4}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v4
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Double;->compare(DD)I
-
-    move-result v0
-
-    if-ltz v0, :cond_2
-
-    const/4 v0, 0x1
-
-    :goto_1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, v1, Lhg;->fullView:Ljava/lang/Boolean;
-
-    .line 99
-    :cond_1
-    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
-
-    .line 100
-    return-void
-
-    .line 92
-    :pswitch_0
-    const-wide/16 v2, 0x1
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :pswitch_1
-    const-wide/16 v2, 0x0
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 97
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    .line 92
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    return-object v2
 .end method
 
-.method private static b(Lakh;)Lgs;
-    .locals 6
-    .param p0    # Lakh;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcf;
-    .end annotation
+
+# virtual methods
+.method protected final a(Ljava/lang/String;)V
+    .locals 2
 
     .prologue
+    .line 548
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "https://"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 549
     const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    .line 191
-    new-instance v2, Lgs;
+    aput-object p1, v0, v1
 
-    invoke-direct {v2}, Lgs;-><init>()V
-
-    .line 192
-    iget-object v3, p0, Lakh;->mPublisherName:Ljava/lang/String;
-
-    iput-object v3, v2, Lgs;->publisherId:Ljava/lang/String;
-
-    .line 193
-    iget-object v3, p0, Lakh;->mEditionId:Ljava/lang/String;
-
-    iput-object v3, v2, Lgs;->editionId:Ljava/lang/String;
-
-    .line 194
-    iget-object v3, p0, Lakh;->mAdId:Ljava/lang/String;
-
-    iput-object v3, v2, Lgs;->adsnapId:Ljava/lang/String;
-
-    .line 195
-    invoke-static {p0}, Lna;->e(Lakb;)Lhy;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lgs;->mediaType:Lhy;
-
-    .line 197
-    iget v3, p0, Lakh;->mCaption:I
-
-    const/4 v4, -0x1
-
-    if-eq v3, v4, :cond_0
-
-    .line 198
-    iget v3, p0, Lakh;->mCaption:I
-
-    int-to-long v4, v3
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lgs;->caption:Ljava/lang/Long;
-
-    .line 201
-    :cond_0
-    iget v3, p0, Lakh;->mDrawing:I
-
-    if-ne v3, v0, :cond_3
-
-    .line 202
+    .line 553
     :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    return-void
 
-    move-result-object v0
+    .line 552
+    :cond_0
+    new-instance v0, Lna$3;
 
-    iput-object v0, v2, Lgs;->drawing:Ljava/lang/Boolean;
+    invoke-direct {v0, p0, p1}, Lna$3;-><init>(Lna;Ljava/lang/String;)V
 
-    .line 204
-    iget-object v0, p0, Lakh;->mFilterVisual:Ljava/lang/String;
+    invoke-virtual {v0}, Lul;->execute()V
 
-    if-eqz v0, :cond_1
-
-    .line 206
-    :try_start_0
-    iget-object v0, p0, Lakh;->mFilterVisual:Ljava/lang/String;
-
-    invoke-static {v0}, Lho;->valueOf(Ljava/lang/String;)Lho;
-
-    move-result-object v0
-
-    .line 207
-    iput-object v0, v2, Lgs;->filterVisual:Lho;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 214
-    :cond_1
-    :goto_1
-    iget-object v0, p0, Lakh;->mFilterInfo:Ljava/lang/String;
-
-    if-eqz v0, :cond_2
-
-    .line 216
-    :try_start_1
-    iget-object v0, p0, Lakh;->mFilterInfo:Ljava/lang/String;
-
-    invoke-static {v0}, Lhm;->valueOf(Ljava/lang/String;)Lhm;
-
-    move-result-object v0
-
-    .line 217
-    iput-object v0, v2, Lgs;->filterInfo:Lhm;
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 223
-    :cond_2
-    :goto_2
-    return-object v2
-
-    :cond_3
-    move v0, v1
-
-    .line 201
     goto :goto_0
-
-    .line 209
-    :catch_0
-    move-exception v0
-
-    const-string v0, "ChatEventAnalytics"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Invalid filter visual type "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v4, p0, Lakh;->mFilterVisual:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    .line 219
-    :catch_1
-    move-exception v0
-
-    const-string v0, "ChatEventAnalytics"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Invalid filter info type "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v4, p0, Lakh;->mFilterInfo:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v3, v1}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_2
 .end method
 
-.method public static b(Lakb;)V
-    .locals 6
-    .param p0    # Lakb;
-        .annotation build Lcgb;
+.method public final a(Lnc;)V
+    .locals 4
+    .param p1    # Lnc;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 64
-    instance-of v0, p0, Lakg;
+    const/4 v3, 0x1
 
-    if-eqz v0, :cond_0
+    const/4 v2, 0x0
 
-    .line 66
-    new-instance v0, Lgb;
+    .line 177
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
 
-    invoke-direct {v0}, Lgb;-><init>()V
+    move-result-object v0
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    .line 178
+    new-array v1, v3, [Ljava/lang/Object;
 
-    .line 71
-    :goto_0
-    return-void
+    aput-object v0, v1, v2
 
-    .line 68
+    .line 181
+    iget-object v1, p0, Lna;->mAdResponseControllerMap:Ljava/util/Map;
+
+    invoke-interface {v1, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 182
+    new-array v1, v3, [Ljava/lang/Object;
+
+    aput-object v0, v1, v2
+
+    .line 184
     :cond_0
-    new-instance v0, Lga;
+    return-void
+.end method
 
-    invoke-direct {v0}, Lga;-><init>()V
+.method public final a(Lnc;J)V
+    .locals 8
+    .param p1    # Lnc;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    invoke-static {p0}, Lna;->e(Lakb;)Lhy;
+    .prologue
+    const/4 v6, 0x2
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    .line 190
+    new-array v0, v6, [Ljava/lang/Object;
+
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, v0, Lga;->mediaType:Lhy;
+    aput-object v1, v0, v4
 
-    invoke-virtual {p0}, Lakb;->z()J
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    aput-object v1, v0, v5
+
+    .line 192
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-array v1, v6, [Ljava/lang/Object;
+
+    aput-object v0, v1, v4
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    aput-object v2, v1, v5
+
+    iget-object v1, p0, Lna;->mConfiguration:Lnb;
+
+    invoke-virtual {p1}, Lnc;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v1, v1, Lnb;->mStudySettings:Lakn;
+
+    const-string v3, "AdManager"
+
+    invoke-virtual {v1, v3, v2}, Lakn;->a(Ljava/lang/String;Ljava/lang/String;)J
 
     move-result-wide v2
 
-    invoke-virtual {p0}, Lakb;->W()J
+    cmp-long v1, p2, v2
 
-    move-result-wide v4
+    if-ltz v1, :cond_0
 
-    sub-long/2addr v2, v4
+    invoke-virtual {p0, p1}, Lna;->c(Lnc;)V
 
-    long-to-double v2, v2
+    .line 193
+    :goto_0
+    return-void
 
-    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
+    .line 192
+    :cond_0
+    const/4 v1, 0x3
 
-    mul-double/2addr v2, v4
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const-wide v4, 0x408f400000000000L    # 1000.0
+    aput-object v0, v1, v4
 
-    div-double/2addr v2, v4
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    move-result-object v0
 
-    move-result-object v1
+    aput-object v0, v1, v5
 
-    iput-object v1, v0, Lga;->ackTimeSec:Ljava/lang/Double;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    .line 69
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    move-result-object v0
+
+    aput-object v0, v1, v6
 
     goto :goto_0
 .end method
 
-.method public static b(Lakh;ZLjava/lang/Double;Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;Ljava/lang/Double;)V
-    .locals 6
-    .param p0    # Lakh;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Double;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p4    # Ljava/lang/Double;
-        .annotation build Lcgc;
+.method public final a(Lnc;Lne;)V
+    .locals 2
+    .param p1    # Lnc;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 105
-    invoke-static {p0}, Lna;->b(Lakh;)Lgs;
-
-    move-result-object v1
-
-    .line 107
-    iput-object p2, v1, Lgs;->timeViewed:Ljava/lang/Double;
-
-    .line 108
-    if-eqz p1, :cond_0
-
-    .line 109
-    invoke-static {p3}, Lna;->a(Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iput-object v0, v1, Lgs;->editionAvailable:Ljava/lang/Long;
-
-    .line 111
-    :cond_0
-    iput-object p4, v1, Lgs;->snapTimeSec:Ljava/lang/Double;
-
-    .line 112
-    invoke-virtual {p0}, Lakh;->V()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    if-eqz p2, :cond_1
-
-    if-eqz p4, :cond_1
-
-    .line 113
-    invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v2
-
-    invoke-virtual {p4}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v4
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Double;->compare(DD)I
-
-    move-result v0
-
-    if-ltz v0, :cond_2
-
     const/4 v0, 0x1
 
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    .line 107
+    iget-object v0, p0, Lna;->mUIThreadHandler:Landroid/os/Handler;
+
+    new-instance v1, Lna$1;
+
+    invoke-direct {v1, p0, p1, p2}, Lna$1;-><init>(Lna;Lnc;Lne;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 131
+    return-void
+.end method
+
+.method public final a(Lnf;J)V
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    .line 257
+    if-nez p1, :cond_1
+
+    .line 275
+    :cond_0
     :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    return-void
+
+    .line 261
+    :cond_1
+    invoke-virtual {p1}, Lnf;->a()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    iput-object v0, v1, Lgs;->fullView:Ljava/lang/Boolean;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    .line 115
-    :cond_1
-    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    move-result v0
 
-    .line 116
-    return-void
+    if-nez v0, :cond_2
 
-    .line 113
-    :cond_2
-    const/4 v0, 0x0
+    iget-wide v0, p1, Lnf;->mImpressionViewThreshold:J
+
+    cmp-long v0, p2, v0
+
+    if-gez v0, :cond_2
+
+    .line 263
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    aput-object v1, v0, v2
+
+    aput-object p1, v0, v3
 
     goto :goto_0
-.end method
 
-.method public static c(Lakb;)V
-    .locals 2
-    .param p0    # Lakb;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+    .line 266
+    :cond_2
+    if-nez p1, :cond_3
 
-    .prologue
-    .line 74
-    new-instance v0, Lfw;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Lfw;-><init>()V
+    .line 267
+    :goto_1
+    if-nez v0, :cond_4
 
-    invoke-static {p0}, Lna;->e(Lakb;)Lhy;
+    .line 268
+    new-array v0, v3, [Ljava/lang/Object;
 
-    move-result-object v1
+    aput-object p1, v0, v2
 
-    iput-object v1, v0, Lfw;->mediaType:Lhy;
+    goto :goto_0
 
-    .line 76
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    .line 266
+    :cond_3
+    iget-object v0, p1, Lnf;->mAdResponseFieldBundle:Landroid/os/Bundle;
 
-    .line 77
-    return-void
-.end method
+    goto :goto_1
 
-.method public static d(Lakb;)V
-    .locals 2
-    .param p0    # Lakb;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+    .line 271
+    :cond_4
+    invoke-static {v0}, Lna;->a(Landroid/os/Bundle;)Ljava/util/List;
 
-    .prologue
-    .line 80
-    new-instance v0, Lfz;
+    move-result-object v0
 
-    invoke-direct {v0}, Lfz;-><init>()V
-
-    invoke-static {p0}, Lna;->e(Lakb;)Lhy;
+    .line 272
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    iput-object v1, v0, Lfz;->mediaType:Lhy;
+    :goto_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 82
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
-
-    .line 83
-    return-void
-.end method
-
-.method private static e(Lakb;)Lhy;
-    .locals 2
-    .param p0    # Lakb;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcf;
-    .end annotation
-
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 232
-    instance-of v0, p0, Laki;
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 233
-    sget-object v0, Lhy;->TEXT:Lhy;
-
-    .line 246
-    :goto_0
-    return-object v0
-
-    .line 234
-    :cond_0
-    instance-of v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;
-
-    if-eqz v0, :cond_1
-
-    .line 235
-    check-cast p0, Lcom/snapchat/android/model/chat/ChatMedia;
-
-    .line 236
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/ChatMedia;->C()Lcom/snapchat/android/model/chat/ChatMedia$MediaType;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 237
-    sget-object v1, Lna$1;->$SwitchMap$com$snapchat$android$model$chat$ChatMedia$MediaType:[I
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/ChatMedia$MediaType;->ordinal()I
+    .line 273
+    invoke-virtual {p0, v0}, Lna;->a(Ljava/lang/String;)V
+
+    goto :goto_2
+.end method
+
+.method protected final b(Lnc;Lne;)Lna$a;
+    .locals 7
+    .param p1    # Lnc;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lne;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v2, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v5, 0x1
+
+    .line 343
+    iget-object v0, p0, Lna;->mConfiguration:Lnb;
+
+    iget-object v0, v0, Lnb;->mStudySettings:Lakn;
+
+    const-string v1, "AdManager"
+
+    const-string v3, "is_active"
+
+    invoke-virtual {v0, v1, v3, v5}, Lakn;->a(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v0
 
-    aget v0, v1, v0
+    if-nez v0, :cond_1
 
-    packed-switch v0, :pswitch_data_0
+    .line 344
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
 
-    .line 246
+    move-result-object v0
+
+    new-instance v3, Lcom/snapchat/android/ads/AdRequestError;
+
+    sget-object v1, Lcom/snapchat/android/ads/AdRequestError$ErrorCode;->ADMANAGER_INACTIVE:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
+
+    const-string v4, "AdManager is inactive"
+
+    invoke-direct {v3, v1, v4}, Lcom/snapchat/android/ads/AdRequestError;-><init>(Lcom/snapchat/android/ads/AdRequestError$ErrorCode;Ljava/lang/String;)V
+
+    iget-object v1, p0, Lna;->mAdResponseControllerMap:Ljava/util/Map;
+
+    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lna$a;
+
+    if-eqz v0, :cond_0
+
+    invoke-static {v0}, Lna$a;->a(Lna$a;)Lnf;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3
+
+    invoke-static {v0}, Lna$a;->a(Lna$a;)Lnf;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lnf;->mAdResponseFieldBundle:Landroid/os/Bundle;
+
+    :goto_0
+    invoke-virtual {v0, v3, v1}, Lna$a;->a(Lcom/snapchat/android/ads/AdRequestError;Landroid/os/Bundle;)V
+
+    .line 357
+    :cond_0
+    :goto_1
+    return-object v2
+
+    .line 349
     :cond_1
-    const/4 v0, 0x0
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lna;->mAdResponseControllerMap:Ljava/util/Map;
+
+    invoke-interface {v1, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    new-array v0, v5, [Ljava/lang/Object;
+
+    aput-object p1, v0, v6
+
+    :cond_2
+    new-instance v0, Lcom/google/android/gms/ads/doubleclick/PublisherAdView;
+
+    iget-object v1, p0, Lna;->mAppContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/ads/doubleclick/PublisherAdView;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {p1}, Lnc;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/ads/doubleclick/PublisherAdView;->setAdUnitId(Ljava/lang/String;)V
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Lcom/google/android/gms/ads/AdSize;
+
+    new-instance v2, Lcom/google/android/gms/ads/AdSize;
+
+    const/16 v3, 0x140
+
+    const/16 v4, 0x32
+
+    invoke-direct {v2, v3, v4}, Lcom/google/android/gms/ads/AdSize;-><init>(II)V
+
+    aput-object v2, v1, v6
+
+    sget-object v2, Lcom/google/android/gms/ads/AdSize;->SMART_BANNER:Lcom/google/android/gms/ads/AdSize;
+
+    aput-object v2, v1, v5
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/ads/doubleclick/PublisherAdView;->setAdSizes([Lcom/google/android/gms/ads/AdSize;)V
+
+    new-instance v2, Lna$a;
+
+    invoke-direct {v2, p0, p1, p2, v0}, Lna$a;-><init>(Lna;Lnc;Lne;Lcom/google/android/gms/ads/doubleclick/PublisherAdView;)V
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/ads/doubleclick/PublisherAdView;->setOnCustomRenderedAdLoadedListener(Lcom/google/android/gms/ads/doubleclick/OnCustomRenderedAdLoadedListener;)V
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/ads/doubleclick/PublisherAdView;->setAdListener(Lcom/google/android/gms/ads/AdListener;)V
+
+    iget-object v0, p0, Lna;->mAdResponseControllerMap:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 352
+    new-instance v0, Lcom/google/android/gms/ads/mediation/admob/AdMobExtras;
+
+    invoke-static {p1}, Lna;->e(Lnc;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/ads/mediation/admob/AdMobExtras;-><init>(Landroid/os/Bundle;)V
+
+    new-instance v1, Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest$Builder;
+
+    invoke-direct {v1}, Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest$Builder;-><init>()V
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest$Builder;->addNetworkExtras(Lcom/google/android/gms/ads/mediation/NetworkExtras;)Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5}, Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest$Builder;->setManualImpressionsEnabled(Z)Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest$Builder;->build()Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest;
+
+    move-result-object v0
+
+    .line 355
+    iget-object v1, v2, Lna$a;->mAdView:Lcom/google/android/gms/ads/doubleclick/PublisherAdView;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/ads/doubleclick/PublisherAdView;->loadAd(Lcom/google/android/gms/ads/doubleclick/PublisherAdRequest;)V
+
+    goto :goto_1
+
+    :cond_3
+    move-object v1, v2
 
     goto :goto_0
+.end method
 
-    .line 239
-    :pswitch_0
-    sget-object v0, Lhy;->IMAGE:Lhy;
+.method public final b(Lnc;)V
+    .locals 2
+    .param p1    # Lnc;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    goto :goto_0
+    .prologue
+    .line 199
+    iget-object v0, p0, Lna;->mAdResponseControllerMap:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 201
+    invoke-virtual {p0, p1}, Lna;->c(Lnc;)V
+
+    .line 203
+    :cond_0
+    return-void
+.end method
+
+.method protected final c(Lnc;)V
+    .locals 2
+
+    .prologue
+    .line 236
+    if-nez p1, :cond_0
+
+    .line 247
+    :goto_0
+    return-void
 
     .line 241
-    :pswitch_1
-    sget-object v0, Lhy;->VIDEO:Lhy;
+    :cond_0
+    iget-object v0, p0, Lna;->mAdResponseControllerMap:Ljava/util/Map;
 
-    goto :goto_0
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lna$a;
+
+    .line 242
+    if-eqz v0, :cond_1
 
     .line 243
-    :pswitch_2
-    sget-object v0, Lhy;->VIDEO_NO_SOUND:Lhy;
+    invoke-virtual {v0}, Lna$a;->a()V
 
     goto :goto_0
 
-    .line 237
-    nop
+    .line 245
+    :cond_1
+    const/4 v0, 0x1
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    goto :goto_0
+.end method
+
+.method protected final d(Lnc;)V
+    .locals 2
+
+    .prologue
+    .line 361
+    if-nez p1, :cond_0
+
+    .line 366
+    :goto_0
+    return-void
+
+    .line 365
+    :cond_0
+    iget-object v0, p0, Lna;->mAdResponseControllerMap:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lnc;->b()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
 .end method

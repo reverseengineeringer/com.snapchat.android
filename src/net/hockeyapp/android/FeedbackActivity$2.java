@@ -3,8 +3,8 @@ package net.hockeyapp.android;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import bvi;
-import bvq;
+import bwj;
+import bwr;
 
 final class FeedbackActivity$2
   extends Handler
@@ -14,7 +14,7 @@ final class FeedbackActivity$2
   public final void handleMessage(Message paramMessage)
   {
     int i = 0;
-    FeedbackActivity.a(a, new bvq());
+    FeedbackActivity.a(a, new bwr());
     Object localObject;
     String str;
     if ((paramMessage != null) && (paramMessage.getData() != null))
@@ -24,7 +24,7 @@ final class FeedbackActivity$2
       str = ((Bundle)localObject).getString("feedback_status");
       localObject = ((Bundle)localObject).getString("request_type");
       if ((((String)localObject).equals("send")) && ((paramMessage == null) || (Integer.parseInt(str) != 201))) {
-        aa).a = bvi.a(1036);
+        aa).a = bwj.a(1036);
       }
     }
     for (;;)
@@ -52,9 +52,9 @@ final class FeedbackActivity$2
       }
       else
       {
-        aa).a = bvi.a(1037);
+        aa).a = bwj.a(1037);
         continue;
-        aa).a = bvi.a(1036);
+        aa).a = bwj.a(1036);
       }
     }
   }

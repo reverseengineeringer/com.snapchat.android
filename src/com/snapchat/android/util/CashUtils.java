@@ -1,11 +1,10 @@
 package com.snapchat.android.util;
 
-import ajx;
+import akr;
 import android.text.TextUtils;
-import axi;
-import cgb;
-import cgc;
-import com.snapchat.android.Timber;
+import ayg;
+import chc;
+import chd;
 import com.snapchat.android.api2.cash.ScCashResponsePayload.Status;
 import com.snapchat.android.model.CashTransaction;
 import com.snapchat.android.model.CashTransaction.TransactionStatus;
@@ -19,8 +18,8 @@ public final class CashUtils
 {
   private static final String TAG = "CashUtils";
   
-  @cgc
-  public static CashFeedItem a(@cgb ChatConversation paramChatConversation, @cgc CashFeedItem paramCashFeedItem1, @cgc CashFeedItem paramCashFeedItem2)
+  @chd
+  public static CashFeedItem a(@chc ChatConversation paramChatConversation, @chd CashFeedItem paramCashFeedItem1, @chd CashFeedItem paramCashFeedItem2)
   {
     CashTransaction localCashTransaction;
     int i;
@@ -95,10 +94,10 @@ public final class CashUtils
       }
       i = 0;
       break;
-      Timber.g("CashUtils", "CASH-LOG: Cash Item %s is being updated", new Object[] { paramCashFeedItem1.d() });
+      paramCashFeedItem1.d();
       paramChatConversation = mCashTransaction;
       if (mTransactionStatus.equals(mTransactionStatus)) {
-        if (axi.a(paramCashFeedItem1)) {
+        if (ayg.a(paramCashFeedItem1)) {
           paramChatConversation.b(localCashTransaction);
         }
       }
@@ -110,10 +109,10 @@ public final class CashUtils
         mCreatedTimestamp = mCreatedTimestamp;
         mUpdatedTimestamp = mUpdatedTimestamp;
         paramChatConversation = paramCashFeedItem1;
-        if (paramCashFeedItem2.i() == null) {
+        if (paramCashFeedItem2.l() == null) {
           break;
         }
-        mIterToken = paramCashFeedItem2.i();
+        mIterToken = paramCashFeedItem2.l();
         return paramCashFeedItem1;
         paramChatConversation.a(localCashTransaction);
         continue;
@@ -124,9 +123,9 @@ public final class CashUtils
       paramChatConversation.a(paramCashFeedItem2);
       return paramCashFeedItem2;
       if (paramCashFeedItem1 == null) {
-        break label509;
+        break label483;
       }
-      Timber.g("CashUtils", "CASH-LOG: Cash Item is not found on server for %s ", new Object[] { paramCashFeedItem1.d() });
+      paramCashFeedItem1.d();
       paramCashFeedItem2 = mCashTransaction;
       paramChatConversation = paramCashFeedItem1;
     } while (mTransactionStatus.equals(CashTransaction.TransactionStatus.INITIATED));
@@ -138,7 +137,7 @@ public final class CashUtils
     mIsViewedBySender = true;
     mIsSavedBySender = false;
     return paramCashFeedItem1;
-    label509:
+    label483:
     return null;
   }
   
@@ -155,12 +154,12 @@ public final class CashUtils
     return (paramStatus != ScCashResponsePayload.Status.NON_US_USER) && (paramStatus != ScCashResponsePayload.Status.UNDER_AGE_LIMIT) && (paramStatus != ScCashResponsePayload.Status.LOCKED_ACCOUNT) && (paramStatus != ScCashResponsePayload.Status.SERVICE_NOT_AVAILABLE_TO_RECIPIENT);
   }
   
-  public static boolean a(@cgc Friend paramFriend)
+  public static boolean a(@chd Friend paramFriend)
   {
-    return (paramFriend != null) && (ajx.ao()) && (a(ajx.aq())) && (a(paramFriend.s()));
+    return (paramFriend != null) && (akr.an()) && (a(akr.ap())) && (a(paramFriend.r()));
   }
   
-  public static boolean a(@cgb String paramString, @cgb CashFeedItem paramCashFeedItem)
+  public static boolean a(@chc String paramString, @chc CashFeedItem paramCashFeedItem)
   {
     if (!TextUtils.equals(paramString, mSender)) {}
     do

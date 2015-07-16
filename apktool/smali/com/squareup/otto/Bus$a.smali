@@ -17,11 +17,11 @@
 # instance fields
 .field final a:Ljava/lang/Object;
 
-.field final b:Lbod;
+.field final b:Lbpe;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lbod;)V
+.method public constructor <init>(Ljava/lang/Object;Lbpe;)V
     .locals 0
 
     .prologue
@@ -32,7 +32,7 @@
     iput-object p1, p0, Lcom/squareup/otto/Bus$a;->a:Ljava/lang/Object;
 
     .line 472
-    iput-object p2, p0, Lcom/squareup/otto/Bus$a;->b:Lbod;
+    iput-object p2, p0, Lcom/squareup/otto/Bus$a;->b:Lbpe;
 
     .line 473
     return-void

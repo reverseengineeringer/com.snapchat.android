@@ -1,195 +1,191 @@
 .class public final Lsd;
-.super Lsh;
+.super Lrl;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lsd$b;,
-        Lsd$a;
-    }
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lsh",
-        "<",
-        "Lsd$b;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field private static final TAG:Ljava/lang/String; = "SQInitiatePaymentBlocker"
 
 
 # instance fields
-.field final mExpiration:Ljava/lang/String;
+.field protected mCashCardManager:Lyn;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
 
-.field final mPan:Ljava/lang/String;
+.field protected mCashErrorReporter:Lqw;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
 
-.field private final mPaymentId:Ljava/lang/String;
-
-.field final mPostalCode:Ljava/lang/String;
-
-.field final mSecurityCode:Ljava/lang/String;
+.field protected mSquareProvider:Ltd;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lsh$a;)V
+.method public constructor <init>()V
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p4    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p5    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p6    # Lsh$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 30
-    invoke-direct {p0, p6}, Lsh;-><init>(Lsh$a;)V
+    .line 38
+    invoke-direct {p0}, Lrl;-><init>()V
 
-    .line 31
-    iput-object p2, p0, Lsd;->mPan:Ljava/lang/String;
+    .line 39
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    .line 32
-    iput-object p3, p0, Lsd;->mExpiration:Ljava/lang/String;
+    move-result-object v0
 
-    .line 33
-    iput-object p4, p0, Lsd;->mSecurityCode:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
-    .line 34
-    iput-object p5, p0, Lsd;->mPostalCode:Ljava/lang/String;
+    move-result-object v0
 
-    .line 35
-    iput-object p1, p0, Lsd;->mPaymentId:Ljava/lang/String;
+    invoke-interface {v0, p0}, Lazy;->a(Lsd;)V
 
-    .line 36
-    const-class v0, Lsd$b;
-
-    invoke-virtual {p0, v0, p0}, Lsd;->a(Ljava/lang/Class;Lts$b;)V
-
-    .line 37
+    .line 40
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lsh$a;)V
-    .locals 7
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p4    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p5    # Lsh$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method static synthetic a(Lsd;)V
+    .locals 0
 
     .prologue
-    .line 41
+    .line 28
+    invoke-virtual {p0}, Lsd;->b()V
+
+    return-void
+.end method
+
+.method static synthetic a(Lsd;Ljava/util/List;)V
+    .locals 1
+
+    .prologue
+    .line 28
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lsd;->a(Ljava/util/List;Z)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lsd;Ljava/util/List;Z)V
+    .locals 0
+
+    .prologue
+    .line 28
+    invoke-virtual {p0, p1, p2}, Lsd;->a(Ljava/util/List;Z)V
+
+    return-void
+.end method
+
+.method static synthetic b(Lsd;)V
+    .locals 2
+
+    .prologue
+    .line 28
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v0, v1}, Lsd;->a(Ljava/util/List;Z)V
+
+    return-void
+.end method
+
+.method static synthetic b(Lsd;Ljava/util/List;)V
+    .locals 1
+
+    .prologue
+    .line 28
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lsd;->b(Ljava/util/List;Z)V
+
+    return-void
+.end method
+
+.method static synthetic c(Lsd;)V
+    .locals 2
+
+    .prologue
+    .line 28
+    const/4 v0, 0x0
+
     const/4 v1, 0x0
 
-    move-object v0, p0
+    invoke-virtual {p0, v0, v1}, Lsd;->b(Ljava/util/List;Z)V
 
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Lsd;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lsh$a;)V
-
-    .line 42
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/lang/Object;
-    .locals 1
+.method public final a(Lcom/snapchat/android/model/CashTransaction;)V
+    .locals 3
+    .param p1    # Lcom/snapchat/android/model/CashTransaction;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 67
-    new-instance v0, Lsd$a;
+    .line 44
+    iget-object v0, p0, Lsd;->mCashCardManager:Lyn;
 
-    invoke-direct {v0, p0}, Lsd$a;-><init>(Lsd;)V
+    invoke-virtual {v0}, Lyn;->a()Ljava/lang/String;
 
-    return-object v0
-.end method
-
-.method public final e()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 46
-    iget-object v0, p0, Lsd;->mPaymentId:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
+    move-result-object v0
 
     if-nez v0, :cond_0
 
+    .line 46
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
     .line 47
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Lrx;
 
-    const-string v1, "cash/payments/"
+    invoke-direct {v1}, Lrx;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lsd;->mPaymentId:Ljava/lang/String;
+    .line 48
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0, v1}, Lsd;->b(Ljava/util/List;Z)V
 
-    move-result-object v0
-
-    const-string v1, "/card"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 49
+    .line 137
     :goto_0
-    return-object v0
+    return-void
 
+    .line 52
     :cond_0
-    const-string v0, "cash/card"
+    iget-object v0, p0, Lsd;->mCashCardManager:Lyn;
+
+    invoke-virtual {v0}, Lyn;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Lsd$1;
+
+    invoke-direct {v1, p0, p1}, Lsd$1;-><init>(Lsd;Lcom/snapchat/android/model/CashTransaction;)V
+
+    new-instance v2, Lss;
+
+    invoke-direct {v2, p1, v0, v1}, Lss;-><init>(Lcom/snapchat/android/model/CashTransaction;Ljava/lang/String;Lta;)V
+
+    invoke-virtual {v2}, Lss;->execute()V
 
     goto :goto_0
+.end method
+
+.method public final c()Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+    .locals 1
+
+    .prologue
+    .line 148
+    sget-object v0, Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;->SQ_INITIATE_PAYMENT_BLOCKER:Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+
+    return-object v0
 .end method

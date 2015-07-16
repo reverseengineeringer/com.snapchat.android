@@ -1,22 +1,25 @@
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.EditionOpenOrigin;
+import java.util.ArrayList;
+import java.util.List;
+
 public final class afw
 {
-  public final afw.a a;
-  private final ov b;
+  public final String a;
+  public final EditionOpenOrigin b;
+  public final List<DSnapPage> c = new ArrayList();
   
-  public afw()
+  public afw(@chc String paramString, @chc EditionOpenOrigin paramEditionOpenOrigin)
   {
-    this(ov.a(), new afw.a());
+    a = paramString;
+    b = paramEditionOpenOrigin;
   }
   
-  private afw(ov paramov, afw.a parama)
+  public afw(@chc String paramString, @chc EditionOpenOrigin paramEditionOpenOrigin, List<DSnapPage> paramList)
   {
-    b = paramov;
-    a = parama;
-  }
-  
-  public static final class a
-  {
-    public adl a;
+    a = paramString;
+    b = paramEditionOpenOrigin;
+    c.addAll(paramList);
   }
 }
 

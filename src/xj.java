@@ -1,49 +1,49 @@
+import android.hardware.Camera.Parameters;
+import android.hardware.Camera.Size;
+import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.camera.model.CameraModel;
-import com.snapchat.android.camera.videocamera.VideoCameraHandler;
-import com.snapchat.android.util.WaitDoneHandler;
-import javax.inject.Provider;
+import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
+import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper.TranscodingEnabled;
+import javax.inject.Inject;
 
 public final class xj
-  implements buj<VideoCameraHandler>
 {
-  private final buj<WaitDoneHandler> b;
-  private final Provider<xi> c;
-  private final Provider<CameraModel> d;
-  private final Provider<azo> e;
+  @Inject
+  protected CameraModel a;
+  @Inject
+  protected xm b;
+  private final TranscodingPreferencesWrapper c;
   
-  static
+  @Inject
+  public xj()
   {
-    if (!xj.class.desiredAssertionStatus()) {}
+    this(TranscodingPreferencesWrapper.a());
+  }
+  
+  private xj(TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper)
+  {
+    SnapchatApplication.b().c().a(this);
+    c = paramTranscodingPreferencesWrapper;
+  }
+  
+  @chd
+  public final avc a()
+  {
+    Object localObject = a.h;
+    if (localObject == null) {}
+    do
+    {
+      return null;
+      localObject = ((wy.b)localObject).c();
+    } while (localObject == null);
+    if (TranscodingPreferencesWrapper.b() == TranscodingPreferencesWrapper.TranscodingEnabled.ENABLED) {}
     for (boolean bool = true;; bool = false)
     {
-      a = bool;
-      return;
+      xm localxm = b;
+      int i = a.c;
+      Camera.Size localSize = ((Camera.Parameters)localObject).getPreviewSize();
+      return localxm.a((Camera.Parameters)localObject, i, width / height, bool);
     }
-  }
-  
-  private xj(buj<WaitDoneHandler> parambuj, Provider<xi> paramProvider, Provider<CameraModel> paramProvider1, Provider<azo> paramProvider2)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-    if ((!a) && (paramProvider1 == null)) {
-      throw new AssertionError();
-    }
-    d = paramProvider1;
-    if ((!a) && (paramProvider2 == null)) {
-      throw new AssertionError();
-    }
-    e = paramProvider2;
-  }
-  
-  public static buj<VideoCameraHandler> a(buj<WaitDoneHandler> parambuj, Provider<xi> paramProvider, Provider<CameraModel> paramProvider1, Provider<azo> paramProvider2)
-  {
-    return new xj(parambuj, paramProvider, paramProvider1, paramProvider2);
   }
 }
 

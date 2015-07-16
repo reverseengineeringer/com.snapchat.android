@@ -2,124 +2,129 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvp;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvp",
+        "<",
+        "Lxv;",
+        ">;"
+    }
+.end annotation
+
 
 # static fields
-.field private static final GRACEFUL_EXCEPTION_WARNING:Ljava/lang/String; = "See logs for error output: "
-
-.field private static final TAG:Ljava/lang/String; = "GracefulExceptionHandler"
+.field static final synthetic $assertionsDisabled:Z
 
 
 # instance fields
-.field private final mBus:Lcom/squareup/otto/Bus;
-
-.field private final mCrashSampler:Lazi;
-
-.field private final mReleaseManager:Lcom/snapchat/android/util/debug/ReleaseManager;
+.field private final module:Lazj;
 
 
 # direct methods
-.method constructor <init>(Lazi;Lcom/snapchat/android/util/debug/ReleaseManager;)V
+.method static constructor <clinit>()V
     .locals 1
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
 
     .prologue
-    .line 29
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 7
+    const-class v0, Lazp;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    invoke-direct {p0, p1, p2, v0}, Lazp;-><init>(Lazi;Lcom/snapchat/android/util/debug/ReleaseManager;Lcom/squareup/otto/Bus;)V
+    move-result v0
 
-    .line 30
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lazp;->$assertionsDisabled:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lazj;)V
+    .locals 1
+
+    .prologue
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    sget-boolean v0, Lazp;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 13
+    :cond_0
+    iput-object p1, p0, Lazp;->module:Lazj;
+
+    .line 14
     return-void
 .end method
 
-.method private constructor <init>(Lazi;Lcom/snapchat/android/util/debug/ReleaseManager;Lcom/squareup/otto/Bus;)V
-    .locals 0
+.method public static a(Lazj;)Lbvp;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lazj;",
+            ")",
+            "Lbvp",
+            "<",
+            "Lxv;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 26
+    new-instance v0, Lazp;
 
-    .line 34
-    iput-object p1, p0, Lazp;->mCrashSampler:Lazi;
+    invoke-direct {v0, p0}, Lazp;-><init>(Lazj;)V
 
-    .line 35
-    iput-object p2, p0, Lazp;->mReleaseManager:Lcom/snapchat/android/util/debug/ReleaseManager;
-
-    .line 36
-    iput-object p3, p0, Lazp;->mBus:Lcom/squareup/otto/Bus;
-
-    .line 37
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 5
-    .param p1    # Ljava/lang/Throwable;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 2
 
     .prologue
-    .line 40
-    const-string v0, "GracefulExceptionHandler"
+    .line 7
+    invoke-static {}, Lxv;->a()Lxv;
 
-    invoke-static {v0, p1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v0
 
-    .line 41
-    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->b()Z
+    if-nez v0, :cond_0
 
-    move-result v0
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    if-eqz v0, :cond_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    .line 42
-    iget-object v0, p0, Lazp;->mBus:Lcom/squareup/otto/Bus;
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
+    throw v0
 
-    sget-object v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "See logs for error output: "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 44
     :cond_0
-    iget-object v0, p0, Lazp;->mCrashSampler:Lazi;
-
-    invoke-virtual {v0}, Lazi;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 45
-    invoke-static {p1}, Laz;->a(Ljava/lang/Throwable;)V
-
-    .line 47
-    :cond_1
-    return-void
+    return-object v0
 .end method

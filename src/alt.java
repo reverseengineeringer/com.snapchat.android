@@ -1,39 +1,62 @@
-import android.os.Bundle;
-import com.snapchat.android.networkmanager.DownloadPriority;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class alt
-  extends alu
 {
-  private volatile byte[] f;
+  private static final alt b = new alt();
+  public final ama a;
+  private final Object c = new Object();
+  private final Map<String, amf> d = new HashMap();
   
-  public alt()
+  private alt()
   {
-    this(alb.a());
+    this(ama.a());
   }
   
-  private alt(alb paramalb)
+  private alt(ama paramama)
   {
-    super(paramalb);
+    a = paramama;
   }
   
-  protected final boolean a(bfl parambfl)
+  public static alt a()
   {
-    boolean bool = false;
-    if (parambfl != null)
+    return b;
+  }
+  
+  @chc
+  public final amf a(String paramString)
+  {
+    synchronized (c)
     {
-      f = new byte[mSize];
-      System.arraycopy(mBuffer, 0, f, 0, mSize);
-      bool = true;
+      amf localamf2 = (amf)d.get(paramString);
+      amf localamf1 = localamf2;
+      if (localamf2 == null)
+      {
+        localamf1 = new amf();
+        d.put(paramString, localamf1);
+      }
+      return localamf1;
     }
-    return bool;
   }
   
-  public final byte[] a(String paramString1, Bundle paramBundle, DownloadPriority paramDownloadPriority1, DownloadPriority paramDownloadPriority2, String paramString2, String paramString3)
+  @chc
+  public final String b()
   {
-    if (b(paramString1, paramBundle, paramDownloadPriority1, paramDownloadPriority2, paramString2, paramString3)) {
-      return f;
+    int i = 1;
+    Object localObject = a.c();
+    if ((localObject != null) && (((WifiInfo)localObject).getSSID() != null) && (((WifiInfo)localObject).getBSSID() != null)) {
+      return String.format("WIFI-%s-%s", new Object[] { ((WifiInfo)localObject).getSSID(), ((WifiInfo)localObject).getBSSID() });
     }
-    return null;
+    localObject = a.b();
+    if ((localObject != null) && (((NetworkInfo)localObject).isConnected()) && (((NetworkInfo)localObject).getType() == 0)) {}
+    while (i != 0)
+    {
+      return "WAN";
+      i = 0;
+    }
+    return "NO_NETWORK";
   }
 }
 

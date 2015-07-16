@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 295
+    .line 292
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$5;->c:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$5;->a:Landroid/widget/TextView;
@@ -48,10 +48,10 @@
     .locals 4
 
     .prologue
-    .line 298
+    .line 295
     mul-int/lit8 v0, p2, 0x64
 
-    .line 299
+    .line 296
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$5;->a:Landroid/widget/TextView;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -74,14 +74,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 300
+    .line 297
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$5;->b:Landroid/content/SharedPreferences;
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    .line 301
+    .line 298
     sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_RELEASE_DELAY_TIMER:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     invoke-virtual {v2}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
@@ -90,10 +90,10 @@
 
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 302
+    .line 299
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 303
+    .line 300
     return-void
 .end method
 
@@ -101,7 +101,7 @@
     .locals 0
 
     .prologue
-    .line 307
+    .line 304
     return-void
 .end method
 
@@ -109,6 +109,6 @@
     .locals 0
 
     .prologue
-    .line 311
+    .line 308
     return-void
 .end method

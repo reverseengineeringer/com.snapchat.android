@@ -91,9 +91,9 @@
     .line 100
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment$9;->m:Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;)Lajx;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;)Lakr;
 
-    invoke-static {p2}, Lajx;->E(Z)V
+    invoke-static {p2}, Lakr;->D(Z)V
 
     .line 102
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment$9;->a:Landroid/widget/CheckBox;
@@ -179,7 +179,7 @@
 
     invoke-direct {v1, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     .line 118
     return-void

@@ -1,4 +1,4 @@
-.class Lpq$b;
+.class public final Lpq$b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -9,38 +9,54 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x9
     name = "b"
 .end annotation
 
 
 # instance fields
-.field exists:Z
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "exists"
+.field mABTestForFeature:Lpq$a;
+    .annotation build Lchd;
     .end annotation
 .end field
 
-.field logged:Z
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "logged"
-    .end annotation
-.end field
+.field mFeatureName:Ljava/lang/String;
 
-.field throttled:Z
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "throttled"
-    .end annotation
-.end field
+.field mOnByDefault:Z
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method constructor <init>(Ljava/lang/String;Lpq$a;)V
+    .locals 1
 
     .prologue
-    .line 60
+    .line 76
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, p2, v0}, Lpq$b;-><init>(Ljava/lang/String;Lpq$a;B)V
+
+    .line 77
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;Lpq$a;B)V
+    .locals 1
+
+    .prologue
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 84
+    iput-object p1, p0, Lpq$b;->mFeatureName:Ljava/lang/String;
+
+    .line 85
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lpq$b;->mOnByDefault:Z
+
+    .line 87
+    iput-object p2, p0, Lpq$b;->mABTestForFeature:Lpq$a;
+
+    .line 88
     return-void
 .end method

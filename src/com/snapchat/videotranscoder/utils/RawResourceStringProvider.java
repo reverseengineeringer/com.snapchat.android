@@ -2,14 +2,14 @@ package com.snapchat.videotranscoder.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
-import cgb;
+import chc;
 
 public class RawResourceStringProvider
 {
   private static final String TAG = "RawResourceStringProvider";
   private final Resources mResources;
   
-  public RawResourceStringProvider(@cgb Context paramContext)
+  public RawResourceStringProvider(@chc Context paramContext)
   {
     if (paramContext == null) {
       throw new NullPointerException("context is null");

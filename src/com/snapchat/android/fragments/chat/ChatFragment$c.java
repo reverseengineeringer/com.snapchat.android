@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.chat;
 
-import afr;
+import agr;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
-import axf;
+import ayd;
 import com.snapchat.android.model.chat.ChatConversation;
 import java.util.List;
-import td;
+import tt;
 
 final class ChatFragment$c
   implements AbsListView.OnScrollListener
@@ -20,14 +20,14 @@ final class ChatFragment$c
     if (paramInt == 0) {
       ChatFragment.M(a);
     }
-    if ((!ChatFragment.t(a).isEmpty()) && (paramAbsListView.getFirstVisiblePosition() < 20) && (!ChatFragment.u(a).isEmpty()) && (ChatFragment.f(a) != null))
+    if ((!ChatFragment.t(a).isEmpty()) && (paramAbsListView.getFirstVisiblePosition() < ChatFragment.z()) && (!ChatFragment.u(a).isEmpty()) && (ChatFragment.f(a) != null))
     {
       paramAbsListView = ChatFragment.N(a);
       if (mRenderSize >= mMessageCount) {
-        break label91;
+        break label92;
       }
     }
-    label91:
+    label92:
     for (paramInt = 1; paramInt != 0; paramInt = 0)
     {
       ChatFragment.O(a);

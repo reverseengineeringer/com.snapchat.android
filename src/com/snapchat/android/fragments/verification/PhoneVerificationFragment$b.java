@@ -1,20 +1,20 @@
 package com.snapchat.android.fragments.verification;
 
-import ajx;
-import aku;
+import akr;
+import alp;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import avh;
+import awf;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.util.AlertDialogUtils;
 import java.util.concurrent.TimeUnit;
-import ot;
+import pk;
 
 final class PhoneVerificationFragment$b
-  extends ot
+  extends pk
 {
   private final String b;
   private String c = null;
@@ -46,14 +46,14 @@ final class PhoneVerificationFragment$b
     return "/bq/phone_verify";
   }
   
-  protected final void a(aku paramaku)
+  protected final void a(alp paramalp)
   {
     if (a.isAdded())
     {
       a.l.setVisibility(8);
       a.g.setEnabled(true);
     }
-    super.a(paramaku);
+    super.a(paramalp);
   }
   
   protected final void a(String paramString, int paramInt)
@@ -64,7 +64,7 @@ final class PhoneVerificationFragment$b
       a.m = "";
       a.t();
       PhoneVerificationFragment.a(a, paramString);
-      avh.a(a.e, a.g);
+      awf.a(a.e, a.g);
     }
     a.a(paramString);
     RegistrationAnalytics.e();
@@ -74,7 +74,7 @@ final class PhoneVerificationFragment$b
   {
     Bundle localBundle = new Bundle();
     localBundle.putString("action", b);
-    localBundle.putString("username", ajx.l());
+    localBundle.putString("username", akr.l());
     localBundle.putString("phoneNumber", a.m);
     localBundle.putString("countryCode", PhoneVerificationFragment.p(a));
     localBundle.putBoolean("skipConfirmation", a.x());
@@ -84,11 +84,11 @@ final class PhoneVerificationFragment$b
     return localBundle;
   }
   
-  protected final void b(aku paramaku)
+  protected final void b(alp paramalp)
   {
-    super.b(paramaku);
+    super.b(paramalp);
     if (!TextUtils.isEmpty(message_format)) {
-      ajx.v(message_format);
+      akr.v(message_format);
     }
     if (a.isAdded())
     {

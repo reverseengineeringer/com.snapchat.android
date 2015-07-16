@@ -1,13 +1,13 @@
 package com.snapchat.android.fragments.settings;
 
-import ahq;
-import ahq.a;
-import ahs;
-import aib;
-import aid;
-import aie;
-import ajq;
-import ajx;
+import aim;
+import aim.a;
+import aio;
+import aix;
+import aiz;
+import aja;
+import akk;
+import akr;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
@@ -22,49 +22,49 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
-import atx;
-import auh;
-import awp;
-import ban;
-import bco;
-import bdw;
+import auv;
+import avf;
+import axn;
+import bbo;
+import bdo;
+import bev;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
 import java.util.List;
 import java.util.Map;
-import pf;
+import pw;
 
 public class AdditionalServicesFragment
   extends SnapchatFragment
 {
-  private final ahq a;
-  private final atx b;
+  private final aim a;
+  private final auv b;
   private boolean c;
   private CheckBox d;
   
   public AdditionalServicesFragment()
   {
-    this(new ahq(), new atx());
+    this(new aim(), new auv());
   }
   
   @SuppressLint({"ValidFragment"})
-  private AdditionalServicesFragment(ahq paramahq, atx paramatx)
+  private AdditionalServicesFragment(aim paramaim, auv paramauv)
   {
-    a = paramahq;
-    b = paramatx;
+    a = paramaim;
+    b = paramauv;
   }
   
   public final void i()
   {
     SharedPreferences localSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-    ahq localahq = new ahq();
+    aim localaim = new aim();
     if (d.isChecked())
     {
-      if ((!localSharedPreferences.getBoolean(SharedPreferenceKey.ALLOWED_GPS.getKey(), false)) || (!ajx.ab()))
+      if ((!localSharedPreferences.getBoolean(SharedPreferenceKey.ALLOWED_GPS.getKey(), false)) || (!akr.aa()))
       {
-        localahq.a(getActivity(), new ahq.a()
+        localaim.a(getActivity(), new aim.a()
         {
           public final void a(boolean paramAnonymousBoolean)
           {
@@ -79,21 +79,21 @@ public class AdditionalServicesFragment
         }).show();
         return;
       }
-      ajx.i(false);
-      ahq.a(true);
+      akr.i(false);
+      aim.a(true);
       AnalyticsEvents.a("TOGGLE_SETTING_FILTERS", true);
       c = true;
       return;
     }
-    ahq.a(false);
+    aim.a(false);
     AnalyticsEvents.a("TOGGLE_SETTING_FILTERS", false);
     c = true;
   }
   
-  public View onCreateView(final LayoutInflater paramLayoutInflater, final ViewGroup paramViewGroup, Bundle paramBundle)
+  public View onCreateView(final LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968583, paramViewGroup, false);
-    c(2131361893).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968584, paramViewGroup, false);
+    c(2131361895).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
@@ -104,16 +104,14 @@ public class AdditionalServicesFragment
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(new PermissionsExplanationFragment()));
+        bbo.a().a(new bev(new PermissionsExplanationFragment()));
       }
     });
-    d = ((CheckBox)c(2131361900));
-    paramLayoutInflater = (CheckBox)c(2131361903);
-    paramViewGroup = (CheckBox)c(2131361905);
-    d.setChecked(ajx.ab());
-    paramLayoutInflater.setChecked(ajx.ac());
-    paramViewGroup.setChecked(ajx.aa());
-    c(2131361896).setOnClickListener(new View.OnClickListener()
+    d = ((CheckBox)c(2131361902));
+    paramLayoutInflater = (CheckBox)c(2131361905);
+    d.setChecked(akr.aa());
+    paramLayoutInflater.setChecked(akr.ab());
+    c(2131361898).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
@@ -127,25 +125,12 @@ public class AdditionalServicesFragment
         }
       }
     });
-    c(2131361902).setOnClickListener(new View.OnClickListener()
+    c(2131361904).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         paramAnonymousView = paramLayoutInflater;
         if (!paramLayoutInflater.isChecked()) {}
-        for (boolean bool = true;; bool = false)
-        {
-          paramAnonymousView.setChecked(bool);
-          return;
-        }
-      }
-    });
-    c(2131361904).setOnClickListener(new View.OnClickListener()
-    {
-      public final void onClick(View paramAnonymousView)
-      {
-        paramAnonymousView = paramViewGroup;
-        if (!paramViewGroup.isChecked()) {}
         for (boolean bool = true;; bool = false)
         {
           paramAnonymousView.setChecked(bool);
@@ -165,40 +150,31 @@ public class AdditionalServicesFragment
       public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
       {
         AdditionalServicesFragment.b(AdditionalServicesFragment.this);
-        ajx.l(paramAnonymousBoolean);
+        akr.k(paramAnonymousBoolean);
         AnalyticsEvents.a("TOGGLE_SETTING_FLASH", paramAnonymousBoolean);
       }
     });
-    paramViewGroup.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-    {
-      public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
-      {
-        AdditionalServicesFragment.b(AdditionalServicesFragment.this);
-        ajx.j(paramAnonymousBoolean);
-        AnalyticsEvents.a("TOGGLE_SETTING_REPLAY", paramAnonymousBoolean);
-      }
-    });
-    ((TextView)c(2131361898)).append(" " + atx.a(2131493484, new Object[] { atx.a(2131493601, new Object[0]) }));
+    ((TextView)c(2131361900)).append(" " + auv.a(2131493484, new Object[] { auv.a(2131493599, new Object[0]) }));
     return mFragmentLayout;
   }
   
   public void onPause()
   {
     super.onPause();
-    ahs localahs;
-    aib localaib;
+    aio localaio;
+    aix localaix;
     if (c)
     {
-      new pf().executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
-      if (!ajx.ab())
+      new pw().executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
+      if (!akr.aa())
       {
-        localahs = ahs.c();
-        if (localahs != null)
+        localaio = aio.c();
+        if (localaio != null)
         {
           d = "{}";
           ??? = a;
           a.d();
-          localaib = b;
+          localaix = b;
           if (!g) {}
         }
       }
@@ -209,7 +185,7 @@ public class AdditionalServicesFragment
       d.b();
       c = null;
       b.mPostToStories.clear();
-      ban.a().a(new bco());
+      bbo.a().a(new bdo());
       return;
     }
   }
@@ -217,9 +193,9 @@ public class AdditionalServicesFragment
   public void onResume()
   {
     super.onResume();
-    TextView localTextView1 = (TextView)c(2131361898);
-    TextView localTextView2 = (TextView)c(2131361899);
-    if (!ajx.ab())
+    TextView localTextView1 = (TextView)c(2131361900);
+    TextView localTextView2 = (TextView)c(2131361901);
+    if (!akr.aa())
     {
       localTextView1.setVisibility(8);
       localTextView2.setVisibility(0);

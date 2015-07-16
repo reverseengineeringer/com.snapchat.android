@@ -44,7 +44,7 @@
     .line 38
     const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -70,7 +70,7 @@
     .line 43
     const/high16 v0, 0x40400000    # 3.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 

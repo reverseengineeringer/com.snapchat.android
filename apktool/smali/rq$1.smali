@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqc$a;
+.implements Lcom/snapchat/android/util/AlertDialogUtils$a;
 
 
 # annotations
@@ -20,18 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lrq;
 
-.field final synthetic val$transaction:Lcom/snapchat/android/model/CashTransaction;
+.field final synthetic val$isFromRain:Z
 
 
 # direct methods
-.method constructor <init>(Lrq;Lcom/snapchat/android/model/CashTransaction;)V
+.method constructor <init>(Lrq;Z)V
     .locals 0
 
     .prologue
-    .line 40
+    .line 37
     iput-object p1, p0, Lrq$1;->this$0:Lrq;
 
-    iput-object p2, p0, Lrq$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
+    iput-boolean p2, p0, Lrq$1;->val$isFromRain:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,172 +40,68 @@
 
 
 # virtual methods
-.method public final a(Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;I)V
-    .locals 2
-    .param p1    # Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a(Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;)V
+    .locals 3
 
     .prologue
-    .line 90
-    iget-object v0, p0, Lrq$1;->this$0:Lrq;
+    .line 40
+    sget-object v0, Lrq$2;->$SwitchMap$com$snapchat$android$util$AlertDialogUtils$YesNoOption:[I
 
-    invoke-static {v0, p2}, Lsn;->a(Lqv;I)Ljava/util/List;
+    invoke-virtual {p1}, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;->ordinal()I
 
-    move-result-object v0
+    move-result v1
 
-    .line 92
-    if-eqz v0, :cond_0
+    aget v0, v0, v1
 
-    .line 93
-    iget-object v1, p0, Lrq$1;->this$0:Lrq;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v1, v0}, Lrq;->b(Lrq;Ljava/util/List;)V
-
-    .line 105
+    .line 54
     :goto_0
     return-void
 
-    .line 95
-    :cond_0
-    iget-object v0, p0, Lrq$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
-
-    if-eqz v0, :cond_1
-
-    .line 96
-    iget-object v0, p0, Lrq$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
-
-    iget-object v0, v0, Lcom/snapchat/android/model/CashTransaction;->mSenderUsername:Ljava/lang/String;
-
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 97
-    const-string v0, "SQUARE_PHONE_VERIFICATION_FAILED"
-
-    invoke-static {v0, p2}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Ljava/lang/String;I)V
-
-    .line 98
-    const v0, 0x7f0c01aa
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Lqg;->a(I[Ljava/lang/Object;)V
-
-    .line 103
-    :cond_1
-    :goto_1
-    iget-object v0, p0, Lrq$1;->this$0:Lrq;
-
-    invoke-static {v0}, Lrq;->c(Lrq;)V
-
-    goto :goto_0
-
-    .line 100
-    :cond_2
-    const-string v0, "SQUARE_PHONE_VERIFICATION_FAILED"
-
-    invoke-static {v0, p2}, Lcom/snapchat/android/analytics/AnalyticsEvents;->b(Ljava/lang/String;I)V
-
-    goto :goto_1
-.end method
-
-.method public final a(Lcom/snapchat/android/api2/cash/ScCashResponsePayload;)V
-    .locals 5
-    .param p1    # Lcom/snapchat/android/api2/cash/ScCashResponsePayload;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 43
-    const-string v0, "SQPhoneNumberBlocker"
-
-    const-string v1, "CASH-LOG: SUCCESS received phone signature"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 44
-    check-cast p1, Lqk$a;
-
-    .line 47
-    iget-object v0, p1, Lqk$a;->phoneNumber:Ljava/lang/String;
+    .line 42
+    :pswitch_0
+    iget-boolean v0, p0, Lrq$1;->val$isFromRain:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p1, Lqk$a;->signature:Ljava/lang/String;
-
-    if-nez v0, :cond_1
+    .line 43
+    invoke-static {}, Lakr;->am()V
 
     .line 48
+    :goto_1
+    :pswitch_1
+    iget-object v0, p0, Lrq$1;->this$0:Lrq;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Lrq;->a(Ljava/util/List;Z)V
+
+    goto :goto_0
+
+    .line 45
     :cond_0
+    invoke-static {}, Lakr;->al()V
+
+    goto :goto_1
+
+    .line 51
+    :pswitch_2
     iget-object v0, p0, Lrq$1;->this$0:Lrq;
 
     invoke-static {v0}, Lrq;->a(Lrq;)V
 
-    .line 87
-    :goto_0
-    return-void
-
-    .line 52
-    :cond_1
-    new-instance v0, Lrq$1$1;
-
-    invoke-direct {v0, p0}, Lrq$1$1;-><init>(Lrq$1;)V
-
-    .line 78
-    iget-object v1, p0, Lrq$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lrq$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
-
-    iget-boolean v1, v1, Lcom/snapchat/android/model/CashTransaction;->mIsInFlight:Z
-
-    if-nez v1, :cond_2
-
-    .line 79
-    new-instance v1, Lse;
-
-    iget-object v2, p0, Lrq$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
-
-    iget-object v2, v2, Lcom/snapchat/android/model/CashTransaction;->mTransactionId:Ljava/lang/String;
-
-    iget-object v3, p1, Lqk$a;->phoneNumber:Ljava/lang/String;
-
-    iget-object v4, p1, Lqk$a;->signature:Ljava/lang/String;
-
-    invoke-direct {v1, v2, v3, v4, v0}, Lse;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lsh$a;)V
-
-    invoke-virtual {v1}, Lse;->f()V
-
     goto :goto_0
 
-    .line 84
-    :cond_2
-    new-instance v1, Lse;
+    .line 40
+    nop
 
-    iget-object v2, p1, Lqk$a;->phoneNumber:Ljava/lang/String;
-
-    iget-object v3, p1, Lqk$a;->signature:Ljava/lang/String;
-
-    invoke-direct {v1, v2, v3, v0}, Lse;-><init>(Ljava/lang/String;Ljava/lang/String;Lsh$a;)V
-
-    invoke-virtual {v1}, Lse;->f()V
-
-    goto :goto_0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method

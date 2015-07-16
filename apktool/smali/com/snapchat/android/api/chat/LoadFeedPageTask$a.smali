@@ -12,8 +12,3 @@
     accessFlags = 0x609
     name = "a"
 .end annotation
-
-
-# virtual methods
-.method public abstract a(Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;)V
-.end method

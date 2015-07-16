@@ -4,7 +4,7 @@
 
 
 # annotations
-.annotation runtime Lbwq;
+.annotation runtime Lbxr;
 .end annotation
 
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -29,11 +29,11 @@
 
 .field public e:Z
 
-.field public f:Laue;
+.field public f:Lavc;
 
 .field public g:Z
 
-.field public h:Lwc$b;
+.field public h:Lwy$b;
 
 .field public i:Z
 
@@ -57,7 +57,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
-    invoke-static {}, Lvk;->a()[Landroid/hardware/Camera$CameraInfo;
+    invoke-static {}, Lwg;->a()[Landroid/hardware/Camera$CameraInfo;
 
     move-result-object v0
 
@@ -164,7 +164,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v0}, Lauc;->a(Ljava/lang/String;I)V
+    invoke-static {v1, v0}, Lava;->a(Ljava/lang/String;I)V
 
     .line 59
     return-void
@@ -370,7 +370,7 @@
 
 .method public final e()Landroid/hardware/Camera$CameraInfo;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue

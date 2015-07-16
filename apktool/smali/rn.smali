@@ -1,89 +1,24 @@
 .class public final Lrn;
-.super Lqv;
+.super Lrl;
 .source "SourceFile"
-
-
-# static fields
-.field private static final TAG:Ljava/lang/String; = "SQInitiatePaymentBlocker"
-
-
-# instance fields
-.field protected mCashCardManager:Lxr;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
-
-.field protected mCashErrorReporter:Lqg;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
-
-.field protected mSquareProvider:Lsn;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 38
-    invoke-direct {p0}, Lqv;-><init>()V
+    .line 12
+    invoke-direct {p0}, Lrl;-><init>()V
 
-    .line 39
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
-
-    move-result-object v0
-
-    invoke-interface {v0, p0}, Laza;->a(Lrn;)V
-
-    .line 40
     return-void
 .end method
 
 .method static synthetic a(Lrn;)V
-    .locals 0
-
-    .prologue
-    .line 28
-    invoke-virtual {p0}, Lrn;->b()V
-
-    return-void
-.end method
-
-.method static synthetic a(Lrn;Ljava/util/List;)V
-    .locals 1
-
-    .prologue
-    .line 28
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p1, v0}, Lrn;->a(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic a(Lrn;Ljava/util/List;Z)V
-    .locals 0
-
-    .prologue
-    .line 28
-    invoke-virtual {p0, p1, p2}, Lrn;->a(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic b(Lrn;)V
     .locals 2
 
     .prologue
-    .line 28
+    .line 12
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -93,28 +28,12 @@
     return-void
 .end method
 
-.method static synthetic b(Lrn;Ljava/util/List;)V
-    .locals 1
+.method static synthetic b(Lrn;)V
+    .locals 0
 
     .prologue
-    .line 28
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p1, v0}, Lrn;->b(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic c(Lrn;)V
-    .locals 2
-
-    .prologue
-    .line 28
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lrn;->b(Ljava/util/List;Z)V
+    .line 12
+    invoke-virtual {p0}, Lrn;->a()V
 
     return-void
 .end method
@@ -124,69 +43,52 @@
 .method public final a(Lcom/snapchat/android/model/CashTransaction;)V
     .locals 3
     .param p1    # Lcom/snapchat/android/model/CashTransaction;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 44
-    const-string v0, "SQInitiatePaymentBlocker"
+    .line 15
+    invoke-static {}, Lakr;->T()Z
 
-    const-string v1, "CASH-LOG: ATTEMPT resolve SQInitiatePaymentBlocker"
+    move-result v0
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .line 16
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 45
-    iget-object v0, p0, Lrn;->mCashCardManager:Lxr;
-
-    invoke-virtual {v0}, Lxr;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    .line 46
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 47
-    new-instance v1, Lrh;
-
-    invoke-direct {v1}, Lrh;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 48
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v0, v1}, Lrn;->b(Ljava/util/List;Z)V
+    invoke-virtual {p0, v0, v1}, Lrn;->a(Ljava/util/List;Z)V
 
-    .line 137
+    .line 32
     :goto_0
     return-void
 
-    .line 52
+    .line 20
     :cond_0
-    iget-object v0, p0, Lrn;->mCashCardManager:Lxr;
+    new-instance v0, Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment;
 
-    invoke-virtual {v0}, Lxr;->a()Ljava/lang/String;
+    invoke-direct {v0}, Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment;-><init>()V
 
-    move-result-object v0
-
+    .line 21
     new-instance v1, Lrn$1;
 
-    invoke-direct {v1, p0, p1}, Lrn$1;-><init>(Lrn;Lcom/snapchat/android/model/CashTransaction;)V
+    invoke-direct {v1, p0}, Lrn$1;-><init>(Lrn;)V
 
-    new-instance v2, Lsc;
+    iput-object v1, v0, Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment;->a:Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment$a;
 
-    invoke-direct {v2, p1, v0, v1}, Lsc;-><init>(Lcom/snapchat/android/model/CashTransaction;Ljava/lang/String;Lsk;)V
+    .line 31
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
-    invoke-virtual {v2}, Lsc;->f()V
+    move-result-object v1
+
+    new-instance v2, Lbev;
+
+    invoke-direct {v2, v0}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+
+    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
@@ -195,8 +97,8 @@
     .locals 1
 
     .prologue
-    .line 148
-    sget-object v0, Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;->SQ_INITIATE_PAYMENT_BLOCKER:Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+    .line 36
+    sget-object v0, Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;->LOCAL_SQ_ACCEPT_TERMS_BLOCKER:Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
 
     return-object v0
 .end method

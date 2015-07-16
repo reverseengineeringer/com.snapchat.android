@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 129
+    .line 127
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment$6;->a:Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,14 +36,22 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 1
 
     .prologue
-    .line 132
+    .line 130
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment$6;->a:Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;->i()V
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;->b(Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;)Z
+
+    .line 131
+    invoke-static {p2}, Lakr;->k(Z)V
+
+    .line 132
+    const-string v0, "TOGGLE_SETTING_FLASH"
+
+    invoke-static {v0, p2}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Ljava/lang/String;Z)V
 
     .line 133
     return-void

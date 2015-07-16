@@ -1,36 +1,11 @@
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
-import android.os.SystemClock;
+import com.snapchat.android.util.chat.UrlType;
 
-public class aus
-  extends TransitionDrawable
+final class aus
 {
-  private int mDuration;
-  private long mStartTimeMillis;
-  
-  public aus(Drawable[] paramArrayOfDrawable)
-  {
-    super(paramArrayOfDrawable);
-  }
-  
-  public void a() {}
-  
-  public void draw(Canvas paramCanvas)
-  {
-    super.draw(paramCanvas);
-    if (SystemClock.uptimeMillis() - mStartTimeMillis > mDuration) {
-      a();
-    }
-  }
-  
-  public void startTransition(int paramInt)
-  {
-    super.startTransition(paramInt);
-    mDuration = paramInt;
-    mStartTimeMillis = SystemClock.uptimeMillis();
-    invalidateSelf();
-  }
+  int end;
+  int start;
+  UrlType type = UrlType.LINK;
+  String url;
 }
 
 /* Location:

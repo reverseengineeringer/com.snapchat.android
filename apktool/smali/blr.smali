@@ -3,79 +3,185 @@
 .source "SourceFile"
 
 
+# instance fields
+.field protected id:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "id"
+    .end annotation
+.end field
+
+.field protected lastLogin:Ljava/lang/Long;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "last_login"
+    .end annotation
+.end field
+
+.field protected name:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "name"
+    .end annotation
+.end field
+
+
 # direct methods
-.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method public constructor <init>()V
+    .locals 2
+
+    .prologue
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 33
+    const-wide/16 v0, 0x0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lblr;->lastLogin:Ljava/lang/Long;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 56
+    iget-object v0, p0, Lblr;->id:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 83
+    iget-object v0, p0, Lblr;->name:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final c()Ljava/lang/Long;
+    .locals 1
+
+    .prologue
+    .line 110
+    iget-object v0, p0, Lblr;->lastLogin:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 29
-    :try_start_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 133
+    if-ne p1, p0, :cond_0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 134
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 140
+    :goto_0
+    return v0
 
-    move-result-object v0
+    .line 136
+    :cond_0
+    instance-of v0, p1, Lblr;
 
-    const-string v1, ":"
+    if-nez v0, :cond_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 137
+    const/4 v0, 0x0
 
-    move-result-object v0
+    goto :goto_0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 139
+    :cond_1
+    check-cast p1, Lblr;
 
-    move-result-object v0
+    .line 140
+    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    move-result-object v0
+    iget-object v1, p0, Lblr;->id:Ljava/lang/String;
 
-    .line 30
-    const-string v1, "ISO-8859-1"
+    iget-object v2, p1, Lblr;->id:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
-
-    move-result-object v0
-
-    .line 31
-    invoke-static {v0}, Lbzx;->a([B)Lbzx;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lbzx;->c:[B
-
-    invoke-static {v0}, Lbzt;->a([B)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    .line 32
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lblr;->name:Ljava/lang/String;
 
-    const-string v2, "Basic "
+    iget-object v2, p1, Lblr;->name:Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+    iget-object v1, p0, Lblr;->lastLogin:Ljava/lang/Long;
+
+    iget-object v2, p1, Lblr;->lastLogin:Ljava/lang/Long;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .prologue
+    .line 124
+    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+
+    iget-object v1, p0, Lblr;->id:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblr;->name:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblr;->lastLogin:Ljava/lang/Long;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 119
+    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-
-    .line 34
-    :catch_0
-    move-exception v0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
 .end method

@@ -2,12 +2,12 @@ package com.snapchat.android.stories.ui;
 
 import android.content.Context;
 import android.content.res.Resources;
-import aom.a;
+import api.a;
 import com.snapchat.android.notification.AndroidNotificationManager;
 import com.squareup.otto.Bus;
 
 final class MyStoryView$2$1
-  implements aom.a
+  implements api.a
 {
   MyStoryView$2$1(MyStoryView.2 param2) {}
   

@@ -4,25 +4,25 @@
 
 
 # instance fields
-.field public mSuccess:Z
+.field public mFromPreview:Z
+
+.field public mMediabryo:Laji;
 
 
 # direct methods
-.method public constructor <init>(Z)V
-    .locals 1
+.method public constructor <init>(Laji;Z)V
+    .locals 0
 
     .prologue
-    .line 9
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lbeo;->mSuccess:Z
-
-    .line 10
-    iput-boolean p1, p0, Lbeo;->mSuccess:Z
-
     .line 11
+    iput-object p1, p0, Lbeo;->mMediabryo:Laji;
+
+    .line 12
+    iput-boolean p2, p0, Lbeo;->mFromPreview:Z
+
+    .line 13
     return-void
 .end method

@@ -1,7 +1,5 @@
 package com.snapchat.android.camera.videocamera;
 
-import com.snapchat.android.Timber;
-
 final class VideoCameraHandler$1
   implements Runnable
 {
@@ -16,7 +14,7 @@ final class VideoCameraHandler$1
     }
     catch (IllegalStateException localIllegalStateException)
     {
-      Timber.f("VideoCameraHandler", "Callback attempted illegally: " + localIllegalStateException.getMessage(), new Object[0]);
+      new StringBuilder("Callback attempted illegally: ").append(localIllegalStateException.getMessage());
     }
   }
 }

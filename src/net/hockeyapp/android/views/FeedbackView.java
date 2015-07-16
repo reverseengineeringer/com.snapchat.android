@@ -24,7 +24,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import bvi;
+import bwj;
 
 public class FeedbackView
   extends LinearLayout
@@ -91,7 +91,7 @@ public class FeedbackView
     ((EditText)localObject).setTextColor(-7829368);
     ((EditText)localObject).setTextSize(2, 15.0F);
     ((EditText)localObject).setTypeface(null, 0);
-    ((EditText)localObject).setHint(bvi.a(1026));
+    ((EditText)localObject).setHint(bwj.a(1026));
     ((EditText)localObject).setHintTextColor(-3355444);
     a(paramContext, (EditText)localObject);
     c.addView((View)localObject);
@@ -106,7 +106,7 @@ public class FeedbackView
     ((EditText)localObject).setTextColor(-7829368);
     ((EditText)localObject).setTextSize(2, 15.0F);
     ((EditText)localObject).setTypeface(null, 0);
-    ((EditText)localObject).setHint(bvi.a(1027));
+    ((EditText)localObject).setHint(bwj.a(1027));
     ((EditText)localObject).setHintTextColor(-3355444);
     a(paramContext, (EditText)localObject);
     c.addView((View)localObject);
@@ -121,7 +121,7 @@ public class FeedbackView
     ((EditText)localObject).setTextColor(-7829368);
     ((EditText)localObject).setTextSize(2, 15.0F);
     ((EditText)localObject).setTypeface(null, 0);
-    ((EditText)localObject).setHint(bvi.a(1028));
+    ((EditText)localObject).setHint(bwj.a(1028));
     ((EditText)localObject).setHintTextColor(-3355444);
     a(paramContext, (EditText)localObject);
     c.addView((View)localObject);
@@ -139,7 +139,7 @@ public class FeedbackView
     ((EditText)localObject).setTextSize(2, 15.0F);
     ((EditText)localObject).setTypeface(null, 0);
     ((EditText)localObject).setMinimumHeight(j);
-    ((EditText)localObject).setHint(bvi.a(1029));
+    ((EditText)localObject).setHint(bwj.a(1029));
     ((EditText)localObject).setHintTextColor(-3355444);
     a(paramContext, (EditText)localObject);
     c.addView((View)localObject);
@@ -162,7 +162,7 @@ public class FeedbackView
     ((Button)localObject).setLayoutParams(localLayoutParams);
     ((Button)localObject).setBackgroundDrawable(getButtonSelector());
     ((Button)localObject).setPadding(j, i, j, i);
-    ((Button)localObject).setText(bvi.a(1031));
+    ((Button)localObject).setText(bwj.a(1031));
     ((Button)localObject).setTextColor(-1);
     ((Button)localObject).setTextSize(2, 15.0F);
     c.addView((View)localObject);
@@ -177,7 +177,7 @@ public class FeedbackView
     ((Button)localObject).setLayoutParams(localLayoutParams);
     ((Button)localObject).setBackgroundDrawable(getButtonSelector());
     ((Button)localObject).setPadding(j, i, j, i);
-    ((Button)localObject).setText(bvi.a(1032));
+    ((Button)localObject).setText(bwj.a(1032));
     ((Button)localObject).setTextColor(-1);
     ((Button)localObject).setTextSize(2, 15.0F);
     c.addView((View)localObject);
@@ -191,7 +191,7 @@ public class FeedbackView
     ((TextView)localObject).setEllipsize(TextUtils.TruncateAt.END);
     ((TextView)localObject).setShadowLayer(1.0F, 0.0F, 1.0F, -1);
     ((TextView)localObject).setSingleLine(true);
-    ((TextView)localObject).setText(bvi.a(1030));
+    ((TextView)localObject).setText(bwj.a(1030));
     ((TextView)localObject).setTextColor(-7829368);
     ((TextView)localObject).setTextSize(2, 15.0F);
     ((TextView)localObject).setTypeface(null, 0);
@@ -219,7 +219,7 @@ public class FeedbackView
     ((Button)localObject).setBackgroundDrawable(getButtonSelector());
     ((Button)localObject).setPadding(0, i, 0, i);
     ((Button)localObject).setGravity(17);
-    ((Button)localObject).setText(bvi.a(1033));
+    ((Button)localObject).setText(bwj.a(1033));
     ((Button)localObject).setTextColor(-1);
     ((Button)localObject).setTextSize(2, 15.0F);
     e.addView((View)localObject);
@@ -235,7 +235,7 @@ public class FeedbackView
     ((Button)localObject).setBackgroundDrawable(getButtonSelector());
     ((Button)localObject).setPadding(0, i, 0, i);
     ((Button)localObject).setGravity(17);
-    ((Button)localObject).setText(bvi.a(1034));
+    ((Button)localObject).setText(bwj.a(1034));
     ((Button)localObject).setTextColor(-1);
     ((Button)localObject).setTextSize(2, 15.0F);
     weight = 1.0F;

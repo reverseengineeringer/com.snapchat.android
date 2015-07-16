@@ -20,9 +20,9 @@
 # instance fields
 .field final synthetic this$1:Lcom/snapchat/android/util/chat/SecureChatSession$a;
 
-.field final synthetic val$localInputStream:Laxk;
+.field final synthetic val$localInputStream:Layi;
 
-.field final synthetic val$localOutputStream:Laxl;
+.field final synthetic val$localOutputStream:Layj;
 
 .field final synthetic val$localSslSocket:Ljavax/net/ssl/SSLSocket;
 
@@ -30,7 +30,7 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/util/chat/SecureChatSession$a;Ljava/util/concurrent/atomic/AtomicBoolean;Ljavax/net/ssl/SSLSocket;Laxl;Laxk;)V
+.method constructor <init>(Lcom/snapchat/android/util/chat/SecureChatSession$a;Ljava/util/concurrent/atomic/AtomicBoolean;Ljavax/net/ssl/SSLSocket;Layj;Layi;)V
     .locals 0
 
     .prologue
@@ -41,9 +41,9 @@
 
     iput-object p3, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localSslSocket:Ljavax/net/ssl/SSLSocket;
 
-    iput-object p4, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localOutputStream:Laxl;
+    iput-object p4, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localOutputStream:Layj;
 
-    iput-object p5, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localInputStream:Laxk;
+    iput-object p5, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localInputStream:Layi;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -56,42 +56,33 @@
     .locals 3
 
     .prologue
-    const/4 v2, 0x0
-
     .line 475
     iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$timeoutCanceled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 476
-    const-string v0, "SecureChatSession"
-
-    const-string v1, "CHAT-LOG: SecureChatSession DISCONNECT due to ConnectMessage timeout"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 477
     iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localSslSocket:Ljavax/net/ssl/SSLSocket;
 
-    invoke-static {v0}, Lbfo;->a(Ljava/net/Socket;)V
+    invoke-static {v0}, Lbgo;->a(Ljava/net/Socket;)V
 
     .line 478
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localOutputStream:Laxl;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localOutputStream:Layj;
 
-    invoke-static {v0}, Lbfo;->a(Ljava/io/Closeable;)V
+    invoke-static {v0}, Lbgo;->a(Ljava/io/Closeable;)V
 
     .line 479
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localInputStream:Laxk;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$1;->val$localInputStream:Layi;
 
-    invoke-static {v0}, Lbfo;->a(Ljava/io/Closeable;)V
+    invoke-static {v0}, Lbgo;->a(Ljava/io/Closeable;)V
 
     .line 481
     :cond_0

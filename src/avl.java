@@ -1,13 +1,45 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import android.os.SystemClock;
+import org.apache.http.annotation.NotThreadSafe;
 
-@Inherited
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.TYPE, java.lang.annotation.ElementType.CONSTRUCTOR, java.lang.annotation.ElementType.METHOD})
-public @interface avl {}
+@NotThreadSafe
+public final class avl
+{
+  public long mAccumulatedTimeMillis;
+  private final bhk mClock;
+  private long mCurrentIntervalStartTimeMillis;
+  public boolean mIsAccumulating;
+  
+  public avl()
+  {
+    this(new bhk());
+  }
+  
+  private avl(bhk parambhk)
+  {
+    mClock = parambhk;
+    mAccumulatedTimeMillis = 0L;
+    mCurrentIntervalStartTimeMillis = -1L;
+    mIsAccumulating = false;
+  }
+  
+  public final void a()
+  {
+    if (!mIsAccumulating)
+    {
+      mIsAccumulating = true;
+      mCurrentIntervalStartTimeMillis = SystemClock.elapsedRealtime();
+    }
+  }
+  
+  public final void b()
+  {
+    if (mIsAccumulating)
+    {
+      mAccumulatedTimeMillis += SystemClock.elapsedRealtime() - mCurrentIntervalStartTimeMillis;
+      mIsAccumulating = false;
+    }
+  }
+}
 
 /* Location:
  * Qualified Name:     avl

@@ -20,7 +20,7 @@
 .method public setDisplayedIcon(Lcom/snapchat/android/model/Snap;)V
     .locals 6
     .param p1    # Lcom/snapchat/android/model/Snap;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -31,7 +31,7 @@
     iput-wide v0, p0, Lcom/snapchat/android/ui/FrivolousAnimationView;->c:J
 
     .line 33
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Snap;->ah()Lcom/snapchat/android/model/Snap$ClientSnapStatus;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Snap;->af()Lcom/snapchat/android/model/Snap$ClientSnapStatus;
 
     move-result-object v0
 
@@ -41,12 +41,12 @@
     if-ne v0, v1, :cond_2
 
     .line 39
-    instance-of v0, p1, Laji;
+    instance-of v0, p1, Lake;
 
     if-eqz v0, :cond_1
 
     .line 40
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Snap;->ae()I
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Snap;->ac()I
 
     move-result v0
 
@@ -61,7 +61,7 @@
 
     .line 42
     :cond_1
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Snap;->ad()I
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Snap;->ab()I
 
     move-result v0
 
@@ -74,7 +74,7 @@
     if-ne v0, v1, :cond_3
 
     .line 46
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Snap;->af()I
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Snap;->ad()I
 
     move-result v0
 

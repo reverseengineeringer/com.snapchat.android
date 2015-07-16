@@ -1,28 +1,38 @@
+import android.hardware.Camera;
+import android.hardware.Camera.PreviewCallback;
+import android.os.Handler;
+import android.os.Looper;
+
 public final class xe
+  implements Camera.PreviewCallback
 {
-  private final int a;
+  private final Handler a;
+  private final wy.b b;
+  private final wy.a c;
   
-  public xe()
+  public xe(Handler paramHandler, wy.b paramb, wy.a parama)
   {
-    this(amResolution.b());
+    a = paramHandler;
+    c = parama;
+    b = paramb;
   }
   
-  private xe(int paramInt)
+  public final void a()
   {
-    a = paramInt;
+    if (a != null) {
+      a.getLooper().quit();
+    }
   }
   
-  public final float a(int paramInt1, int paramInt2)
+  public final void onPreviewFrame(final byte[] paramArrayOfByte, Camera paramCamera)
   {
-    int i = paramInt2 / a;
-    paramInt2 %= a;
-    if (paramInt1 == i) {
-      return (a - paramInt2) / a;
-    }
-    if (paramInt1 == i + 1) {
-      return paramInt2 / a;
-    }
-    return 0.0F;
+    a.post(new Runnable()
+    {
+      public final void run()
+      {
+        xe.b(xe.this).a(paramArrayOfByte, xe.a(xe.this));
+      }
+    });
   }
 }
 

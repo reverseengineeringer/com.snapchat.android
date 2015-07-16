@@ -1,4 +1,14 @@
-public final class bbt {}
+public final class bbt
+{
+  public boolean mShouldReturnToChatFragment = true;
+  
+  public bbt() {}
+  
+  public bbt(byte paramByte)
+  {
+    mShouldReturnToChatFragment = false;
+  }
+}
 
 /* Location:
  * Qualified Name:     bbt

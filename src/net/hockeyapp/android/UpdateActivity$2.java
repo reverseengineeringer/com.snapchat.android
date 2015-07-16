@@ -1,25 +1,25 @@
 package net.hockeyapp.android;
 
-import bvm;
-import bvn;
-import bvp;
-import bvy;
+import bwn;
+import bwo;
+import bwq;
+import bwz;
 
 final class UpdateActivity$2
-  extends bvp
+  extends bwq
 {
   UpdateActivity$2(UpdateActivity paramUpdateActivity) {}
   
   public final String a(int paramInt)
   {
-    bvn localbvn = bvm.b();
-    if (localbvn != null) {
-      return localbvn.a(paramInt);
+    bwo localbwo = bwn.b();
+    if (localbwo != null) {
+      return localbwo.a(paramInt);
     }
     return null;
   }
   
-  public final void a(bvy parambvy)
+  public final void a(bwz parambwz)
   {
     a.b();
   }

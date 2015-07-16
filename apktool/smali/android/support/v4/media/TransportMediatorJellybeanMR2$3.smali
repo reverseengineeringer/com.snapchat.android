@@ -37,6 +37,10 @@
     .locals 2
 
     .prologue
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 64
     :try_start_0
     const-string v0, "android.intent.extra.KEY_EVENT"

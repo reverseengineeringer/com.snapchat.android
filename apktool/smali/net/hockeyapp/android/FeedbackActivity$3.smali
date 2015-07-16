@@ -45,11 +45,11 @@
     .line 592
     iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity$3;->a:Lnet/hockeyapp/android/FeedbackActivity;
 
-    new-instance v3, Lbvq;
+    new-instance v3, Lbwr;
 
-    invoke-direct {v3}, Lbvq;-><init>()V
+    invoke-direct {v3}, Lbwr;-><init>()V
 
-    invoke-static {v0, v3}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;Lbvq;)Lbvq;
+    invoke-static {v0, v3}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;Lbwr;)Lbwr;
 
     .line 594
     if-eqz p1, :cond_3
@@ -72,13 +72,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lbvu;
+    check-cast v0, Lbwv;
 
     .line 597
     if-eqz v0, :cond_3
 
     .line 598
-    iget-object v3, v0, Lbvu;->a:Ljava/lang/String;
+    iget-object v3, v0, Lbwv;->a:Ljava/lang/String;
 
     const-string v4, "success"
 
@@ -89,12 +89,12 @@
     if-eqz v3, :cond_1
 
     .line 602
-    iget-object v2, v0, Lbvu;->c:Ljava/lang/String;
+    iget-object v2, v0, Lbwv;->c:Ljava/lang/String;
 
     if-eqz v2, :cond_2
 
     .line 604
-    sget-object v2, Lbwi$a;->a:Lbwi;
+    sget-object v2, Lbxj$a;->a:Lbxj;
 
     iget-object v3, p0, Lnet/hockeyapp/android/FeedbackActivity$3;->a:Lnet/hockeyapp/android/FeedbackActivity;
 
@@ -102,14 +102,14 @@
 
     move-result-object v3
 
-    iget-object v4, v0, Lbvu;->c:Ljava/lang/String;
+    iget-object v4, v0, Lbwv;->c:Ljava/lang/String;
 
-    invoke-virtual {v2, v3, v4}, Lbwi;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v2, v3, v4}, Lbxj;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 606
     iget-object v2, p0, Lnet/hockeyapp/android/FeedbackActivity$3;->a:Lnet/hockeyapp/android/FeedbackActivity;
 
-    invoke-static {v2, v0}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;Lbvu;)V
+    invoke-static {v2, v0}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;Lbwv;)V
 
     .line 607
     iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity$3;->a:Lnet/hockeyapp/android/FeedbackActivity;

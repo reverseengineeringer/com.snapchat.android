@@ -1,15 +1,38 @@
-import com.snapchat.android.model.Friend;
-import java.util.List;
+import android.support.v7.widget.RecyclerView.a;
+import javax.inject.Provider;
 
-public abstract interface ahe
+public final class ahe
+  implements bvk<ahd>
 {
-  public abstract List<Friend> a();
+  private final bvk<RecyclerView.a<ato>> b;
+  private final Provider<ban> c;
   
-  public abstract List<Friend> b();
+  static
+  {
+    if (!ahe.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
+  }
   
-  public abstract List<Friend> c();
+  private ahe(bvk<RecyclerView.a<ato>> parambvk, Provider<ban> paramProvider)
+  {
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider;
+  }
   
-  public abstract List<Friend> d();
+  public static bvk<ahd> a(bvk<RecyclerView.a<ato>> parambvk, Provider<ban> paramProvider)
+  {
+    return new ahe(parambvk, paramProvider);
+  }
 }
 
 /* Location:

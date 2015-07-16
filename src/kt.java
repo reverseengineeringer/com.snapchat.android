@@ -2,17 +2,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kt
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_PHONE_FAIL";
+  public Long contactFoundCount;
+  public Long contactInviteCount;
+  private final String eventName = "REGISTRATION_USER_CONTACT_FIND_SUCCESS";
+  public Long friendAddCount;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_PHONE_FAIL");
+    localHashMap.put("event_name", "REGISTRATION_USER_CONTACT_FIND_SUCCESS");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
+    }
+    if (contactFoundCount != null) {
+      localHashMap.put("contact_found_count", contactFoundCount);
+    }
+    if (contactInviteCount != null) {
+      localHashMap.put("contact_invite_count", contactInviteCount);
+    }
+    if (friendAddCount != null) {
+      localHashMap.put("friend_add_count", friendAddCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +43,41 @@ public final class kt
         return false;
       }
       paramObject = (kt)paramObject;
-      if (additionalInfo == null) {
+      if (additionalInfo != null)
+      {
+        if (additionalInfo.equals(additionalInfo)) {}
+      }
+      else {
+        while (additionalInfo != null) {
+          return false;
+        }
+      }
+      if (contactFoundCount != null)
+      {
+        if (contactFoundCount.equals(contactFoundCount)) {}
+      }
+      else {
+        while (contactFoundCount != null) {
+          return false;
+        }
+      }
+      if (contactInviteCount != null)
+      {
+        if (contactInviteCount.equals(contactInviteCount)) {}
+      }
+      else {
+        while (contactInviteCount != null) {
+          return false;
+        }
+      }
+      if (friendAddCount == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (friendAddCount.equals(friendAddCount));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (friendAddCount == null) {
         break;
       }
     }
@@ -46,10 +85,34 @@ public final class kt
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
-      return i + j * 31;
+    int m = 0;
+    int n = super.hashCode();
+    int i;
+    int j;
+    if (additionalInfo != null)
+    {
+      i = additionalInfo.hashCode();
+      if (contactFoundCount == null) {
+        break label99;
+      }
+      j = contactFoundCount.hashCode();
+      label39:
+      if (contactInviteCount == null) {
+        break label104;
+      }
+    }
+    label99:
+    label104:
+    for (int k = contactInviteCount.hashCode();; k = 0)
+    {
+      if (friendAddCount != null) {
+        m = friendAddCount.hashCode();
+      }
+      return (k + (j + (i + n * 31) * 31) * 31) * 31 + m;
+      i = 0;
+      break;
+      j = 0;
+      break label39;
     }
   }
 }

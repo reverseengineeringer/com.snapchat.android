@@ -16,6 +16,10 @@
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
 
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     const-string v0, "referrer"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;

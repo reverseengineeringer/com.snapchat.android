@@ -1,123 +1,87 @@
 .class public final Laip;
-.super Lbfm;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Laip$a;
-    }
-.end annotation
-
-
 # static fields
-.field private static final TAG:Ljava/lang/String; = "DecryptedSnapVideo"
+.field private static final c:Laip;
 
 
 # instance fields
-.field private final mCache:Lawp;
+.field final a:Ljava/lang/Object;
 
-.field private final mKey:Ljava/lang/String;
-
-.field private final mOverlay:Landroid/graphics/Bitmap;
-    .annotation build Lcgc;
-    .end annotation
-.end field
+.field b:Lakv;
 
 
 # direct methods
-.method private constructor <init>(Lawp;Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .locals 0
-    .param p1    # Lawp;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Landroid/graphics/Bitmap;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 26
-    invoke-direct {p0}, Lbfm;-><init>()V
+    .line 9
+    new-instance v0, Laip;
 
-    .line 27
-    iput-object p1, p0, Laip;->mCache:Lawp;
+    invoke-direct {v0}, Laip;-><init>()V
 
-    .line 28
-    iput-object p2, p0, Laip;->mKey:Ljava/lang/String;
+    sput-object v0, Laip;->c:Laip;
 
-    .line 29
-    iput-object p3, p0, Laip;->mOverlay:Landroid/graphics/Bitmap;
-
-    .line 30
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lawp;Ljava/lang/String;Landroid/graphics/Bitmap;B)V
-    .locals 0
+.method private constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 16
-    invoke-direct {p0, p1, p2, p3}, Laip;-><init>(Lawp;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    .line 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 10
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Laip;->a:Ljava/lang/Object;
+
+    .line 14
     return-void
+.end method
+
+.method public static a()Laip;
+    .locals 1
+
+    .prologue
+    .line 17
+    sget-object v0, Laip;->c:Laip;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 2
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 38
-    invoke-virtual {p0}, Laip;->f()V
-
-    .line 39
-    iget-object v0, p0, Laip;->mCache:Lawp;
-
-    iget-object v1, p0, Laip;->mKey:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lawp;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Landroid/graphics/Bitmap;
-    .locals 1
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 48
-    invoke-virtual {p0}, Laip;->f()V
-
-    .line 49
-    iget-object v0, p0, Laip;->mOverlay:Landroid/graphics/Bitmap;
-
-    return-object v0
-.end method
-
-.method protected final c()V
+.method public final b()Lakv;
     .locals 2
 
     .prologue
-    .line 57
-    iget-object v0, p0, Laip;->mCache:Lawp;
+    .line 21
+    iget-object v1, p0, Laip;->a:Ljava/lang/Object;
 
-    iget-object v1, p0, Laip;->mKey:Ljava/lang/String;
+    monitor-enter v1
 
-    invoke-virtual {v0, v1}, Lawp;->c(Ljava/lang/String;)V
+    .line 22
+    :try_start_0
+    iget-object v0, p0, Laip;->b:Lakv;
 
-    .line 58
-    return-void
+    monitor-exit v1
+
+    return-object v0
+
+    .line 23
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

@@ -1,17 +1,15 @@
+import com.google.gson.annotations.SerializedName;
+
+@ud
 public final class anq$a
+  extends qc
 {
-  final aje a;
-  final awz b;
+  @SerializedName("new_password")
+  String a;
   
-  public anq$a(@cgb aje paramaje)
+  public anq$a(anq paramanq, @chc String paramString)
   {
-    this(paramaje, new awz());
-  }
-  
-  private anq$a(@cgb aje paramaje, @cgb awz paramawz)
-  {
-    a = ((aje)ck.a(paramaje));
-    b = ((awz)ck.a(paramawz));
+    a = paramString;
   }
 }
 

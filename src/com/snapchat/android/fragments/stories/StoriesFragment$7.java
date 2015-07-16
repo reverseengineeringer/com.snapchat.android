@@ -13,8 +13,8 @@ final class StoriesFragment$7
   
   public final void onAnimationEnd(Animator paramAnimator)
   {
-    b.o();
-    b.q();
+    b.p();
+    b.r();
     StoriesFragment.a(b, null);
   }
   

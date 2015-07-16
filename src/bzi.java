@@ -1,25 +1,22 @@
 public final class bzi
-  extends bza
+  implements byh
 {
-  public bzi()
+  public final byl a(bya parambya, String paramString)
   {
-    super(">", 4);
+    try
+    {
+      parambya = new Double(paramString);
+      return new byl(new Double(Math.toRadians(parambya.doubleValue())).toString(), 0);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("Invalid argument.", parambya);
+    }
   }
   
-  public final double a(double paramDouble1, double paramDouble2)
+  public final String a()
   {
-    if (paramDouble1 > paramDouble2) {
-      return 1.0D;
-    }
-    return 0.0D;
-  }
-  
-  public final String a(String paramString1, String paramString2)
-  {
-    if (paramString1.compareTo(paramString2) > 0) {
-      return "1.0";
-    }
-    return "0.0";
+    return "toRadians";
   }
 }
 

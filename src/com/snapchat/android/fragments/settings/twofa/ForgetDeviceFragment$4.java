@@ -2,10 +2,10 @@ package com.snapchat.android.fragments.settings.twofa;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import apz;
+import aqy;
 
 final class ForgetDeviceFragment$4
-  extends apz
+  extends aqy
 {
   ForgetDeviceFragment$4(ForgetDeviceFragment paramForgetDeviceFragment, Context paramContext, String paramString)
   {

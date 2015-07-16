@@ -32,18 +32,18 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-import bvi;
-import bvo;
-import bvq;
-import bvr;
-import bvt;
-import bvu;
-import bwb;
-import bwc;
-import bwd;
-import bwi;
-import bwi.a;
-import bwk;
+import bwj;
+import bwp;
+import bwr;
+import bws;
+import bwu;
+import bwv;
+import bxc;
+import bxd;
+import bxe;
+import bxj;
+import bxj.a;
+import bxl;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -51,6 +51,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 import net.hockeyapp.android.views.AttachmentListView;
 import net.hockeyapp.android.views.AttachmentView;
 import net.hockeyapp.android.views.FeedbackView;
@@ -78,19 +80,19 @@ public class FeedbackActivity
   private ScrollView o;
   private LinearLayout p;
   private ListView q;
-  private bwc r;
+  private bxd r;
   private Handler s;
-  private bwb t;
+  private bxc t;
   private Handler u;
   private String v;
-  private bvq w;
-  private bvo x;
-  private ArrayList<bvt> y;
+  private bwr w;
+  private bwp x;
+  private ArrayList<bwu> y;
   private boolean z;
   
   private void a()
   {
-    B = bwi.a.a.a(this);
+    B = bxj.a.a.a(this);
     if ((B == null) || (z))
     {
       b(false);
@@ -102,14 +104,14 @@ public class FeedbackActivity
   
   private void a(EditText paramEditText, int paramInt)
   {
-    paramEditText.setError(bvi.a(paramInt));
+    paramEditText.setError(bwj.a(paramInt));
     a(true);
   }
   
   private void a(String paramString1, String paramString2, String paramString3, String paramString4, String paramString5, List<Uri> paramList, String paramString6, Handler paramHandler, boolean paramBoolean)
   {
-    r = new bwc(e, paramString1, paramString2, paramString3, paramString4, paramString5, paramList, paramString6, paramHandler, paramBoolean);
-    bwd.a(r);
+    r = new bxd(e, paramString1, paramString2, paramString3, paramString4, paramString5, paramList, paramString6, paramHandler, paramBoolean);
+    bxe.a(r);
   }
   
   public final void a(boolean paramBoolean)
@@ -145,7 +147,7 @@ public class FeedbackActivity
     Context localContext;
     if (!A)
     {
-      localObject = bwi.a.a;
+      localObject = bxj.a.a;
       localContext = e;
       if (localContext == null)
       {
@@ -171,7 +173,7 @@ public class FeedbackActivity
     else
     {
       j.setText("");
-      if (bwi.a.a.a(e) == null) {
+      if (bxj.a.a.a(e) == null) {
         break label468;
       }
       i.setVisibility(8);
@@ -261,7 +263,7 @@ public class FeedbackActivity
       if (j != null) {
         ((InputMethodManager)getSystemService("input_method")).hideSoftInputFromWindow(j.getWindowToken(), 0);
       }
-      paramView = bwi.a.a.a(e);
+      paramView = bxj.a.a.a(e);
       String str1 = g.getText().toString().trim();
       String str2 = h.getText().toString().trim();
       String str3 = i.getText().toString().trim();
@@ -287,12 +289,12 @@ public class FeedbackActivity
         a(j, 1043);
         return;
       }
-      if (!bwk.b(str2))
+      if (!bxl.b(str2))
       {
         a(h, 1039);
         return;
       }
-      Object localObject = bwi.a.a;
+      Object localObject = bxj.a.a;
       Context localContext = e;
       if (localContext != null)
       {
@@ -308,7 +310,7 @@ public class FeedbackActivity
       }
       for (;;)
       {
-        bwi.a(b);
+        bxj.a(b);
         localObject = ((AttachmentListView)findViewById(8209)).getAttachments();
         a(v, str1, str2, str3, str4, (List)localObject, paramView, s, false);
         return;
@@ -328,7 +330,7 @@ public class FeedbackActivity
       z = true;
       return;
     }
-    a(v, null, null, null, null, null, bwi.a.a.a(e), s, true);
+    a(v, null, null, null, null, null, bxj.a.a.a(e), s, true);
   }
   
   public boolean onContextItemSelected(MenuItem paramMenuItem)
@@ -360,9 +362,11 @@ public class FeedbackActivity
   
   public void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
     setContentView(new FeedbackView(this));
-    setTitle(bvi.a(1035));
+    setTitle(bwj.a(1035));
     e = this;
     Bundle localBundle = getIntent().getExtras();
     if (localBundle != null) {
@@ -381,7 +385,7 @@ public class FeedbackActivity
         public final void handleMessage(Message paramAnonymousMessage)
         {
           int i = 0;
-          FeedbackActivity.a(FeedbackActivity.this, new bvq());
+          FeedbackActivity.a(FeedbackActivity.this, new bwr());
           Object localObject;
           String str;
           if ((paramAnonymousMessage != null) && (paramAnonymousMessage.getData() != null))
@@ -391,7 +395,7 @@ public class FeedbackActivity
             str = ((Bundle)localObject).getString("feedback_status");
             localObject = ((Bundle)localObject).getString("request_type");
             if ((((String)localObject).equals("send")) && ((paramAnonymousMessage == null) || (Integer.parseInt(str) != 201))) {
-              aa = bvi.a(1036);
+              aa = bwj.a(1036);
             }
           }
           for (;;)
@@ -419,9 +423,9 @@ public class FeedbackActivity
             }
             else
             {
-              aa = bvi.a(1037);
+              aa = bwj.a(1037);
               continue;
-              aa = bvi.a(1036);
+              aa = bwj.a(1036);
             }
           }
         }
@@ -430,18 +434,18 @@ public class FeedbackActivity
       {
         public final void handleMessage(Message paramAnonymousMessage)
         {
-          FeedbackActivity.a(FeedbackActivity.this, new bvq());
+          FeedbackActivity.a(FeedbackActivity.this, new bwr());
           int i;
           if ((paramAnonymousMessage != null) && (paramAnonymousMessage.getData() != null))
           {
-            paramAnonymousMessage = (bvu)paramAnonymousMessage.getData().getSerializable("parse_feedback_response");
+            paramAnonymousMessage = (bwv)paramAnonymousMessage.getData().getSerializable("parse_feedback_response");
             if (paramAnonymousMessage != null) {
               if (a.equalsIgnoreCase("success"))
               {
                 if (c == null) {
                   break label130;
                 }
-                bwi.a.a.a(FeedbackActivity.c(FeedbackActivity.this), c);
+                bxj.a.a.a(FeedbackActivity.c(FeedbackActivity.this), c);
                 FeedbackActivity.a(FeedbackActivity.this, paramAnonymousMessage);
                 FeedbackActivity.d(FeedbackActivity.this);
                 i = 1;
@@ -532,7 +536,7 @@ public class FeedbackActivity
       paramDialog.setMessage(w.a);
       return;
     }
-    paramDialog.setMessage(bvi.a(1040));
+    paramDialog.setMessage(bwj.a(1040));
   }
   
   protected void onRestoreInstanceState(Bundle paramBundle)
@@ -553,7 +557,7 @@ public class FeedbackActivity
   {
     if (r != null)
     {
-      bwc localbwc = r;
+      bxd localbxd = r;
       a = null;
       b = null;
     }

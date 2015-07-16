@@ -21,10 +21,12 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
-import bvi;
+import bwj;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Stack;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 import net.hockeyapp.android.views.PaintView;
 
 public class PaintActivity
@@ -61,6 +63,8 @@ public class PaintActivity
   
   public void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
     paramBundle = (Uri)getIntent().getExtras().getParcelable("imageUri");
     b = a(paramBundle, paramBundle.getLastPathSegment());
@@ -88,15 +92,15 @@ public class PaintActivity
     paramBundle.addView(localLinearLayout);
     localLinearLayout.addView(a);
     setContentView(paramBundle);
-    Toast.makeText(this, bvi.a(1536), 1000).show();
+    Toast.makeText(this, bwj.a(1536), 1000).show();
   }
   
   public boolean onCreateOptionsMenu(Menu paramMenu)
   {
     super.onCreateOptionsMenu(paramMenu);
-    paramMenu.add(0, 1, 0, bvi.a(1537));
-    paramMenu.add(0, 2, 0, bvi.a(1538));
-    paramMenu.add(0, 3, 0, bvi.a(1539));
+    paramMenu.add(0, 1, 0, bwj.a(1537));
+    paramMenu.add(0, 2, 0, bwj.a(1538));
+    paramMenu.add(0, 3, 0, bwj.a(1539));
     return true;
   }
   
@@ -116,7 +120,7 @@ public class PaintActivity
           finish();
         }
       };
-      new AlertDialog.Builder(this).setMessage(bvi.a(1540)).setPositiveButton(bvi.a(1542), paramKeyEvent).setNegativeButton(bvi.a(1541), paramKeyEvent).show();
+      new AlertDialog.Builder(this).setMessage(bwj.a(1540)).setPositiveButton(bwj.a(1542), paramKeyEvent).setNegativeButton(bwj.a(1541), paramKeyEvent).show();
       return true;
     }
     return super.onKeyDown(paramInt, paramKeyEvent);

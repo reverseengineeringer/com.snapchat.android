@@ -33,10 +33,7 @@ final class zzpf$zzb
       Log.wtf("LocationClientImpl", "onAddGeofenceResult called multiple times");
       return;
     }
-    zzpf localzzpf1 = zzand;
-    zzpf localzzpf2 = zzand;
-    localzzpf2.getClass();
-    localzzpf1.zza(new zzpf.zza(localzzpf2, zzanb, paramInt, paramArrayOfString));
+    zzand.zza(new zzpf.zza(zzand, zzanb, paramInt, paramArrayOfString));
     zzand = null;
     zzanb = null;
     zzanc = null;
@@ -49,10 +46,7 @@ final class zzpf$zzb
       Log.wtf("LocationClientImpl", "onRemoveGeofencesByPendingIntentResult called multiple times");
       return;
     }
-    zzpf localzzpf1 = zzand;
-    zzpf localzzpf2 = zzand;
-    localzzpf2.getClass();
-    localzzpf1.zza(new zzpf.zzc(localzzpf2, 1, zzanc, paramInt, paramPendingIntent));
+    zzand.zza(new zzpf.zzc(zzand, 1, zzanc, paramInt, paramPendingIntent));
     zzand = null;
     zzanb = null;
     zzanc = null;
@@ -65,10 +59,7 @@ final class zzpf$zzb
       Log.wtf("LocationClientImpl", "onRemoveGeofencesByRequestIdsResult called multiple times");
       return;
     }
-    zzpf localzzpf1 = zzand;
-    zzpf localzzpf2 = zzand;
-    localzzpf2.getClass();
-    localzzpf1.zza(new zzpf.zzc(localzzpf2, 2, zzanc, paramInt, paramArrayOfString));
+    zzand.zza(new zzpf.zzc(zzand, 2, zzanc, paramInt, paramArrayOfString));
     zzand = null;
     zzanb = null;
     zzanc = null;

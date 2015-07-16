@@ -1,70 +1,119 @@
-import android.util.Base64;
-import android.util.Log;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.Timber;
-import com.snapchat.android.util.crypto.CbcEncryptionAlgorithm;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import com.snapchat.android.SnapchatApplication;
+import java.util.HashSet;
+import java.util.Set;
 
-public class ama
+public final class ama
 {
-  @SerializedName("id")
-  public String a;
-  @SerializedName("sn")
-  public String b;
-  @SerializedName("sts")
-  public long c;
-  @SerializedName("m")
-  public int d;
-  @SerializedName("zipped")
-  public boolean e;
-  @SerializedName("timer")
-  public double f;
-  @SerializedName("cap_text")
-  public String g;
-  @SerializedName("cap_ori")
-  public long h;
-  @SerializedName("cap_pos")
-  public double i;
+  private static ama d = new ama();
+  public final Object a = new Object();
+  public final Set<alz> b = new HashSet();
+  public NetworkInfo c;
+  private final ConnectivityManager e;
+  private final WifiManager f;
   
-  public static ama a(@cgb String paramString)
+  private ama()
   {
-    Object localObject = paramString.split(":");
-    if (localObject.length != 2)
-    {
-      Timber.a("SnapPushMetadata", "SNAP-LOG: Snap push doesn't contain both IV and metadata! " + paramString, new Object[0]);
-      return null;
-    }
-    paramString = ajx.F();
-    if (paramString == null)
-    {
-      Timber.a("SnapPushMetadata", "SNAP-LOG: User auth token is null!", new Object[0]);
-      return null;
-    }
-    paramString = paramString.getBytes();
-    byte[] arrayOfByte = Base64.decode(localObject[0], 0);
-    localObject = Base64.decode(localObject[1], 0);
-    paramString = new CbcEncryptionAlgorithm(paramString, arrayOfByte).b((byte[])localObject, "no dataId provided");
-    if (paramString == null)
-    {
-      Timber.a("SnapPushMetadata", "SNAP-LOG: Snap push decrypted metadata is null!", new Object[0]);
-      return null;
-    }
-    try
-    {
-      paramString = (ama)atn.a().fromJson(new String(paramString), ama.class);
-      return paramString;
-    }
-    catch (JsonSyntaxException paramString)
-    {
-      Timber.f("SnapPushMetadata", "SNAP-LOG: Error deserializing decrypted snap push metadata: " + Log.getStackTraceString(paramString), new Object[0]);
-    }
-    return null;
+    this(SnapchatApplication.b());
   }
   
-  public String toString()
+  private ama(Context paramContext) {}
+  
+  private ama(ConnectivityManager paramConnectivityManager, WifiManager paramWifiManager)
   {
-    return "SnapPushMetadata{mId='" + a + '\'' + ", mSender='" + b + '\'' + ", mTimestamp=" + c + ", mMediaType=" + d + ", mZipped=" + e + ", mDisplayTime=" + f + ", mCaptionText='" + g + '\'' + ", mCaptionOrientation=" + h + ", mCaptionPosition=" + i + '}';
+    e = paramConnectivityManager;
+    f = paramWifiManager;
+  }
+  
+  public static ama a()
+  {
+    return d;
+  }
+  
+  public static String a(NetworkInfo paramNetworkInfo)
+  {
+    if (paramNetworkInfo != null) {
+      return paramNetworkInfo.toString();
+    }
+    return "None";
+  }
+  
+  public final void a(alz paramalz)
+  {
+    synchronized (a)
+    {
+      b.add(paramalz);
+      return;
+    }
+  }
+  
+  @chd
+  public final NetworkInfo b()
+  {
+    synchronized (a)
+    {
+      c = e.getActiveNetworkInfo();
+      NetworkInfo localNetworkInfo = c;
+      return localNetworkInfo;
+    }
+  }
+  
+  public final void b(alz paramalz)
+  {
+    synchronized (a)
+    {
+      b.remove(paramalz);
+      return;
+    }
+  }
+  
+  @chd
+  public final WifiInfo c()
+  {
+    Object localObject2 = a;
+    WifiInfo localWifiInfo = null;
+    try
+    {
+      if (e()) {
+        localWifiInfo = f.getConnectionInfo();
+      }
+      return localWifiInfo;
+    }
+    finally {}
+  }
+  
+  public final boolean d()
+  {
+    NetworkInfo localNetworkInfo = b();
+    return (localNetworkInfo != null) && (localNetworkInfo.isConnected());
+  }
+  
+  public final boolean e()
+  {
+    NetworkInfo localNetworkInfo = b();
+    return (localNetworkInfo != null) && (localNetworkInfo.isConnected()) && (localNetworkInfo.getType() == 1);
+  }
+  
+  @chc
+  public final String f()
+  {
+    NetworkInfo localNetworkInfo = b();
+    String str = "unknown";
+    if ((localNetworkInfo != null) && (localNetworkInfo.isConnectedOrConnecting()))
+    {
+      if (localNetworkInfo.getType() == 1) {
+        str = "wifi";
+      }
+      while (localNetworkInfo.getType() != 0) {
+        return str;
+      }
+      return "wwan";
+    }
+    return "not_reachable";
   }
 }
 

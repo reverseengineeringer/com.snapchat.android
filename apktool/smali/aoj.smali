@@ -1,222 +1,119 @@
-.class public final Laoj;
-.super Ljava/lang/Object;
+.class Laoj;
+.super Landroid/os/AsyncTask;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/os/AsyncTask",
+        "<",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "Laon;",
+        ">;"
+    }
+.end annotation
+
+
 # instance fields
-.field private final a:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/Intent;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final a:Laka;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Laka;)V
+    .locals 0
 
     .prologue
-    .line 25
-    const/4 v0, 0x0
+    .line 14
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    invoke-direct {p0, v0}, Laoj;-><init>(B)V
+    .line 15
+    iput-object p1, p0, Laoj;->a:Laka;
 
-    .line 26
-    return-void
-.end method
-
-.method private constructor <init>(B)V
-    .locals 2
-
-    .prologue
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 29
-    new-instance v0, Ljava/util/ArrayList;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    iput-object v0, p0, Laoj;->a:Ljava/util/List;
-
-    .line 30
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Ljava/lang/Class",
-            "<*>;)",
-            "Landroid/content/Intent;"
-        }
-    .end annotation
+.method protected synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
     .prologue
-    .line 42
-    monitor-enter p0
+    const/4 v5, 0x0
 
-    :try_start_0
-    iget-object v0, p0, Laoj;->a:Ljava/util/List;
+    .line 11
+    new-instance v1, Laon$a;
 
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+    iget-object v0, p0, Laoj;->a:Laka;
 
-    move-result v0
+    invoke-direct {v1, v0}, Laon$a;-><init>(Laka;)V
 
-    if-eqz v0, :cond_1
+    iget-object v0, v1, Laon$a;->a:Laka;
 
-    .line 43
-    const-string v0, "IntentPool"
-
-    const-string v1, "Running out of Intents in the pool. Create one more!"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 44
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    .line 56
-    :cond_0
-    new-instance v1, Landroid/content/ComponentName;
-
-    invoke-direct {v1, p1, p2}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    .line 57
-    const-string v1, "from_pool"
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 58
-    monitor-exit p0
-
-    return-object v0
-
-    .line 46
-    :cond_1
-    :try_start_1
-    const-string v0, "IntentPool"
-
-    const-string v1, "Retrieve an Intent from the pool!"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 47
-    iget-object v0, p0, Laoj;->a:Ljava/util/List;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Laka;->K()Laxw;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Intent;
+    if-nez v0, :cond_0
 
-    .line 50
-    invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+    new-instance v0, Laon;
 
-    move-result-object v1
-
-    .line 51
-    invoke-virtual {v1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    .line 52
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 42
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized a(Landroid/content/Intent;)V
-    .locals 3
-
-    .prologue
-    .line 67
-    monitor-enter p0
-
-    :try_start_0
-    const-string v0, "IntentPool"
-
-    const-string v1, "Puts the intent back into the pool"
+    iget-object v1, v1, Laon$a;->a:Laka;
 
     const/4 v2, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-direct {v0, v1, v2, v5}, Laon;-><init>(Laka;Lajl;B)V
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    :goto_0
+    return-object v0
 
-    .line 68
-    iget-object v0, p0, Laoj;->a:Ljava/util/List;
+    :cond_0
+    iget-object v0, v1, Laon$a;->b:Laxx;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v2, v1, Laon$a;->a:Laka;
 
-    .line 69
-    monitor-exit p0
+    invoke-virtual {v2}, Laka;->K()Laxw;
 
+    move-result-object v2
+
+    iget-object v3, v1, Laon$a;->a:Laka;
+
+    invoke-virtual {v3}, Laka;->h()Z
+
+    move-result v3
+
+    iget-object v4, v1, Laon$a;->a:Laka;
+
+    invoke-virtual {v4}, Laka;->Z()Z
+
+    move-result v4
+
+    invoke-virtual {v0, v2, v3, v4}, Laxx;->a(Laxw;ZZ)Lajl;
+
+    move-result-object v2
+
+    new-instance v0, Laon;
+
+    iget-object v1, v1, Laon$a;->a:Laka;
+
+    invoke-direct {v0, v1, v2, v5}, Laon;-><init>(Laka;Lajl;B)V
+
+    goto :goto_0
+.end method
+
+.method protected synthetic onCancelled(Ljava/lang/Object;)V
+    .locals 0
+
+    .prologue
+    .line 11
+    check-cast p1, Laon;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Laon;->e()V
+
+    :cond_0
     return-void
-
-    .line 67
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

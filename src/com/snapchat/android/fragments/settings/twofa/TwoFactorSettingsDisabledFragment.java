@@ -1,8 +1,6 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import ajx;
-import amk;
-import anc;
+import akr;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
@@ -20,10 +18,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import aok;
-import aol;
-import atr;
-import atx;
+import anh;
+import anz;
+import apg;
+import aph;
+import aup;
+import auv;
 import cf;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.ui.LinkTextViewUtils.CustomURLSpan;
@@ -37,21 +37,21 @@ public class TwoFactorSettingsDisabledFragment
 {
   protected ProgressBar a;
   private Button b;
-  private final ajx c;
-  private final atr d;
-  private final aol e;
+  private final akr c;
+  private final aup d;
+  private final aph e;
   private TextView f;
   private TextView g;
   private final Set<Integer> h = new HashSet();
-  private aok i = new aok()
+  private apg i = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (TwoFactorSettingsDisabledFragment.a(TwoFactorSettingsDisabledFragment.this).contains(Integer.valueOf(i)))
       {
         TwoFactorSettingsDisabledFragment.a(TwoFactorSettingsDisabledFragment.this).remove(Integer.valueOf(i));
-        if ((paramAnonymousamk instanceof anc)) {
+        if ((paramAnonymousanh instanceof anz)) {
           TwoFactorSettingsDisabledFragment.a(TwoFactorSettingsDisabledFragment.this, b);
         }
       }
@@ -60,16 +60,16 @@ public class TwoFactorSettingsDisabledFragment
   
   public TwoFactorSettingsDisabledFragment()
   {
-    this(aol.a(), new atr(), ajx.a());
+    this(aph.a(), new aup(), akr.a());
   }
   
   @SuppressLint({"ValidFragment"})
   @cf
-  private TwoFactorSettingsDisabledFragment(aol paramaol, atr paramatr, ajx paramajx)
+  private TwoFactorSettingsDisabledFragment(aph paramaph, aup paramaup, akr paramakr)
   {
-    e = paramaol;
-    d = paramatr;
-    c = paramajx;
+    e = paramaph;
+    d = paramaup;
+    c = paramakr;
   }
   
   public final boolean g()
@@ -82,31 +82,31 @@ public class TwoFactorSettingsDisabledFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968766, paramViewGroup, false);
-    c(2131362796).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968768, paramViewGroup, false);
+    c(2131362789).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         getActivity().onBackPressed();
       }
     });
-    f = ((TextView)c(2131362799));
-    g = ((TextView)c(2131362800));
-    if (TextUtils.isEmpty(ajx.e()))
+    f = ((TextView)c(2131362792));
+    g = ((TextView)c(2131362793));
+    if (TextUtils.isEmpty(akr.e()))
     {
-      f.setText(atx.a(null, 2131493548, new Object[] { atx.a(null, 2131493574, new Object[0]) }));
+      f.setText(auv.a(null, 2131493546, new Object[] { auv.a(null, 2131493572, new Object[0]) }));
       g.setVisibility(8);
     }
     for (;;)
     {
-      b = ((Button)c(2131362801));
-      a = ((ProgressBar)c(2131362802));
+      b = ((Button)c(2131362794));
+      a = ((ProgressBar)c(2131362795));
       b.setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
         {
           TwoFactorSettingsDisabledFragment.b(TwoFactorSettingsDisabledFragment.this);
-          if (TextUtils.isEmpty(ajx.e()))
+          if (TextUtils.isEmpty(akr.e()))
           {
             TwoFactorSettingsDisabledFragment.i();
             return;
@@ -118,16 +118,16 @@ public class TwoFactorSettingsDisabledFragment
         }
       });
       return mFragmentLayout;
-      f.setText(atx.a(null, 2131493548, new Object[] { PhoneNumberUtils.formatNumber(ajx.e()) }));
+      f.setText(auv.a(null, 2131493546, new Object[] { PhoneNumberUtils.formatNumber(akr.e()) }));
       g.setVisibility(0);
-      g.setText(2131493544);
+      g.setText(2131493542);
       paramBundle = getActivity();
       paramLayoutInflater = g;
       paramViewGroup = new LinkTextViewUtils.a()
       {
         public final void a() {}
       };
-      paramLayoutInflater.setLinkTextColor(paramBundle.getResources().getColor(2131230771));
+      paramLayoutInflater.setLinkTextColor(paramBundle.getResources().getColor(2131230772));
       paramLayoutInflater.setMovementMethod(LinkMovementMethod.getInstance());
       paramBundle = (Spannable)paramLayoutInflater.getText();
       if (paramBundle == null) {

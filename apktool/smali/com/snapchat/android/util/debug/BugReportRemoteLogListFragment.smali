@@ -30,7 +30,7 @@
     const/4 v6, 0x0
 
     .line 64
-    invoke-static {}, Lajv;->g()Lajv;
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v0
 
@@ -46,7 +46,7 @@
 
     .line 70
     :cond_0
-    invoke-virtual {v0}, Lajv;->o()Ljava/util/List;
+    invoke-virtual {v0}, Lakp;->o()Ljava/util/List;
 
     move-result-object v0
 
@@ -74,7 +74,7 @@
     check-cast v0, Lcom/snapchat/android/model/Friend;
 
     .line 73
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -170,17 +170,17 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 5
     .param p2    # Landroid/view/ViewGroup;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Landroid/os/Bundle;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
     .line 33
-    const v0, 0x7f040011
+    const v0, 0x7f040012
 
     const/4 v1, 0x0
 
@@ -201,7 +201,7 @@
     check-cast v0, Landroid/widget/ListView;
 
     .line 37
-    new-instance v2, Lazh;
+    new-instance v2, Lbag;
 
     invoke-virtual {p0}, Lcom/snapchat/android/util/debug/BugReportRemoteLogListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -211,7 +211,7 @@
 
     move-result-object v4
 
-    invoke-direct {v2, v3, v4}, Lazh;-><init>(Landroid/content/Context;[Ljava/lang/String;)V
+    invoke-direct {v2, v3, v4}, Lbag;-><init>(Landroid/content/Context;[Ljava/lang/String;)V
 
     .line 38
     invoke-virtual {v0, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V

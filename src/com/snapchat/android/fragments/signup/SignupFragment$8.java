@@ -11,7 +11,7 @@ final class SignupFragment$8
   
   public final boolean onEditorAction(TextView paramTextView, int paramInt, KeyEvent paramKeyEvent)
   {
-    SignupFragment.l(a);
+    SignupFragment.j(a);
     return true;
   }
 }

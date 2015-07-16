@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.addfriends;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.settings.WebFragment;
 import com.squareup.otto.Bus;
 
@@ -14,7 +14,7 @@ final class AddFriendsBySnapcodeSetupFragment$4
   
   public final void onClick(View paramView)
   {
-    ban.a().a(new bdw(new WebFragment("https://support.snapchat.com/a/add-snapcodes", a.getString(2131492867), false, null)));
+    bbo.a().a(new bev(new WebFragment("https://support.snapchat.com/a/add-snapcodes", a.getString(2131492867), false, null)));
   }
 }
 

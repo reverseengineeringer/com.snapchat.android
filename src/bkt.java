@@ -3,57 +3,31 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bkt
+public final class bkt
 {
-  @SerializedName("allowed_to_use_cash")
-  protected String allowedToUseCash;
-  @SerializedName("is_two_fa_enabled")
-  protected Boolean isTwoFaEnabled;
-  @SerializedName("logged")
-  protected Boolean logged;
-  @SerializedName("message")
-  protected String message;
-  @SerializedName("verification_needed")
-  protected bkr verificationNeeded;
+  @SerializedName("first_position")
+  protected Integer firstPosition;
+  @SerializedName("minimum_remaining")
+  protected Integer minimumRemaining;
+  @SerializedName("timeout")
+  protected Integer timeout;
   
-  public final bkt a(Boolean paramBoolean)
+  public final Integer a()
   {
-    logged = paramBoolean;
-    return this;
+    return firstPosition;
   }
   
-  public final bkt a(String paramString)
+  public final Integer b()
   {
-    message = paramString;
-    return this;
+    return minimumRemaining;
   }
   
-  public final Boolean a()
+  public final Integer c()
   {
-    return logged;
+    return timeout;
   }
   
-  public final String b()
-  {
-    return message;
-  }
-  
-  public final Boolean c()
-  {
-    return isTwoFaEnabled;
-  }
-  
-  public final String d()
-  {
-    return allowedToUseCash;
-  }
-  
-  public final bkr e()
-  {
-    return verificationNeeded;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -62,15 +36,15 @@ public class bkt
       return false;
     }
     paramObject = (bkt)paramObject;
-    return new EqualsBuilder().append(logged, logged).append(message, message).append(isTwoFaEnabled, isTwoFaEnabled).append(allowedToUseCash, allowedToUseCash).append(verificationNeeded, verificationNeeded).isEquals();
+    return new EqualsBuilder().append(firstPosition, firstPosition).append(minimumRemaining, minimumRemaining).append(timeout, timeout).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(logged).append(message).append(isTwoFaEnabled).append(allowedToUseCash).append(verificationNeeded).toHashCode();
+    return new HashCodeBuilder().append(firstPosition).append(minimumRemaining).append(timeout).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

@@ -31,11 +31,11 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/task/TranscodingTask;Lcom/snapchat/videotranscoder/task/MediaSource;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .locals 2
     .param p2    # Lcom/snapchat/videotranscoder/task/MediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

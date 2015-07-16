@@ -1,53 +1,155 @@
 .class public final Lbzr;
-.super Lbza;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbyh;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 0
 
     .prologue
-    .line 28
-    const-string v0, "-"
+    .line 35
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x5
-
-    const/4 v2, 0x0
-
-    invoke-direct {p0, v0, v1, v2}, Lbza;-><init>(Ljava/lang/String;IB)V
-
-    .line 29
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(D)D
-    .locals 3
+.method public final a(Lbya;Ljava/lang/String;)Lbyl;
+    .locals 6
 
     .prologue
-    .line 52
-    neg-double v0, p1
+    const/4 v5, 0x0
 
-    return-wide v0
+    .line 72
+    const-string v1, "Two string arguments and one integer argument are required."
+
+    .line 76
+    invoke-static {p2}, Lbyk;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    .line 79
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    const/4 v3, 0x3
+
+    if-eq v0, v3, :cond_0
+
+    .line 80
+    new-instance v0, Lbyi;
+
+    invoke-direct {v0, v1}, Lbyi;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 84
+    :cond_0
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iget-char v3, p1, Lbya;->a:C
+
+    invoke-static {v0, v3}, Lbyk;->a(Ljava/lang/String;C)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 86
+    const/4 v0, 0x1
+
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iget-char v4, p1, Lbya;->a:C
+
+    invoke-static {v0, v4}, Lbyk;->a(Ljava/lang/String;C)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 88
+    const/4 v0, 0x2
+
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    .line 89
+    new-instance v2, Ljava/lang/Integer;
+
+    invoke-virtual {v3, v4, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
+
+    move-result v0
+
+    invoke-direct {v2, v0}, Ljava/lang/Integer;-><init>(I)V
+    :try_end_0
+    .catch Lbyi; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    .line 96
+    new-instance v0, Lbyl;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, v5}, Lbyl;-><init>(Ljava/lang/String;I)V
+
+    return-object v0
+
+    .line 90
+    :catch_0
+    move-exception v0
+
+    .line 91
+    new-instance v1, Lbyi;
+
+    invoke-virtual {v0}, Lbyi;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Lbyi;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
+
+    throw v1
+
+    .line 92
+    :catch_1
+    move-exception v0
+
+    .line 93
+    new-instance v2, Lbyi;
+
+    invoke-direct {v2, v1, v0}, Lbyi;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
+
+    throw v2
 .end method
 
-.method public final a(DD)D
-    .locals 5
+.method public final a()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 40
-    new-instance v0, Ljava/lang/Double;
-
-    sub-double v2, p1, p3
-
-    invoke-direct {v0, v2, v3}, Ljava/lang/Double;-><init>(D)V
-
     .line 42
-    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+    const-string v0, "indexOf"
 
-    move-result-wide v0
-
-    return-wide v0
+    return-object v0
 .end method

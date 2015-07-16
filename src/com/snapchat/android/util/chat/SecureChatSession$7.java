@@ -1,7 +1,5 @@
 package com.snapchat.android.util.chat;
 
-import com.snapchat.android.Timber;
-
 final class SecureChatSession$7
   implements Runnable
 {
@@ -9,7 +7,6 @@ final class SecureChatSession$7
   
   public final void run()
   {
-    Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession CONNECT after being disconnected due to ping timeout", new Object[0]);
     this$0.b();
   }
 }

@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field a:Lafr$c;
+.field a:Lagr$c;
 
-.field b:Lafr$c;
+.field b:Lagr$c;
 
 .field c:F
 
@@ -25,14 +25,14 @@
 
 
 # direct methods
-.method constructor <init>(Lafr$c;Lafr$c;FF)V
+.method constructor <init>(Lagr$c;Lagr$c;FF)V
     .locals 0
-    .param p1    # Lafr$c;
-        .annotation build Lcgc;
+    .param p1    # Lagr$c;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .param p2    # Lafr$c;
-        .annotation build Lcgc;
+    .param p2    # Lagr$c;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -41,10 +41,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 148
-    iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatMediaExpansionCalculator$b;->a:Lafr$c;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatMediaExpansionCalculator$b;->a:Lagr$c;
 
     .line 149
-    iput-object p2, p0, Lcom/snapchat/android/fragments/chat/ChatMediaExpansionCalculator$b;->b:Lafr$c;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/chat/ChatMediaExpansionCalculator$b;->b:Lagr$c;
 
     .line 150
     iput p3, p0, Lcom/snapchat/android/fragments/chat/ChatMediaExpansionCalculator$b;->c:F

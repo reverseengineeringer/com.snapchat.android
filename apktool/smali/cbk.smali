@@ -1,18 +1,17 @@
-.class public interface abstract annotation Lcbk;
+.class public interface abstract Lcbk;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/annotation/Annotation;
+.implements Ljava/io/Closeable;
 
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->CLASS:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+# virtual methods
+.method public abstract E_()Lcbl;
+.end method
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+.method public abstract a(Lcav;J)J
+.end method
+
+.method public abstract close()V
+.end method

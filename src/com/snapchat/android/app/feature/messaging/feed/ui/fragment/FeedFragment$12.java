@@ -1,20 +1,26 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.snapchat.android.analytics.CameraEventAnalytics;
-import com.snapchat.android.analytics.CameraEventAnalytics.CameraContext;
+import android.widget.TextView;
+import bhr;
+import bhr.a;
 
 final class FeedFragment$12
-  implements View.OnClickListener
+  implements bhr.a
 {
   FeedFragment$12(FeedFragment paramFeedFragment) {}
   
-  public final void onClick(View paramView)
+  public final void a(View paramView)
   {
-    FeedFragment.c(a).a(CameraEventAnalytics.CameraContext.CAMERA_BUTTON);
-    a.getActivity().onBackPressed();
+    ((TextView)FeedFragment.b(a).a()).setOnClickListener(new View.OnClickListener()
+    {
+      public final void onClick(View paramAnonymousView)
+      {
+        paramAnonymousView.setVisibility(8);
+        FeedFragment.a(a).setVisibility(0);
+      }
+    });
   }
 }
 

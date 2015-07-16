@@ -1,10 +1,37 @@
-public abstract interface yy
+import javax.inject.Provider;
+
+public final class yy
+  implements bvk<yw>
 {
-  public abstract void a(long paramLong);
+  private final Provider<qt> b;
+  private final Provider<nq> c;
   
-  public abstract void a(aje paramaje);
+  static
+  {
+    if (!yy.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
+  }
   
-  public abstract void b(aje paramaje);
+  private yy(Provider<qt> paramProvider, Provider<nq> paramProvider1)
+  {
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    b = paramProvider;
+    if ((!a) && (paramProvider1 == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider1;
+  }
+  
+  public static bvk<yw> a(Provider<qt> paramProvider, Provider<nq> paramProvider1)
+  {
+    return new yy(paramProvider, paramProvider1);
+  }
 }
 
 /* Location:

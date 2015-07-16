@@ -1,40 +1,35 @@
-import java.lang.reflect.Constructor;
+import java.net.URL;
+import java.util.Map;
 
-public final class bts
+final class bts
+  extends btt
 {
-  public static Constructor a(String paramString, String[] paramArrayOfString)
+  private bsl a;
+  private bsl b;
+  private brv c;
+  private URL d;
+  private String e;
+  private btj f;
+  
+  bts(bsl parambsl1, bsl parambsl2, brv parambrv, URL paramURL, btj parambtj)
   {
-    paramString = Class.forName(paramString).getDeclaredConstructors();
-    int j = 0;
-    while (j < paramString.length)
-    {
-      Class[] arrayOfClass = paramString[j].getParameterTypes();
-      int i;
-      if (arrayOfClass.length != paramArrayOfString.length) {
-        i = 0;
-      }
-      while (i != 0)
-      {
-        return paramString[j];
-        i = 0;
-        for (;;)
-        {
-          if (i >= arrayOfClass.length) {
-            break label79;
-          }
-          if (!arrayOfClass[i].getName().equals(paramArrayOfString[i]))
-          {
-            i = 0;
-            break;
-          }
-          i += 1;
-        }
-        label79:
-        i = 1;
-      }
-      j += 1;
-    }
-    return null;
+    String str = a;
+    b = parambsl1;
+    a = parambsl2;
+    c = parambrv;
+    d = paramURL;
+    e = a;
+    f = parambtj;
+  }
+  
+  public final void a()
+  {
+    a.a(b);
+    bth localbth = new bth(c);
+    String str = e;
+    bsl localbsl = b;
+    a.put(str, bsha);
+    new btv(localbth, new btn(d), true, f).run();
   }
 }
 

@@ -10,7 +10,7 @@
 
 .field private final c:Landroid/content/Context;
 
-.field private final d:Lbvs;
+.field private final d:Lbwt;
 
 .field private final e:Landroid/net/Uri;
 
@@ -48,7 +48,7 @@
     .line 98
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lnet/hockeyapp/android/views/AttachmentView;->d:Lbvs;
+    iput-object v0, p0, Lnet/hockeyapp/android/views/AttachmentView;->d:Lbwt;
 
     .line 99
     iput-object p3, p0, Lnet/hockeyapp/android/views/AttachmentView;->e:Landroid/net/Uri;
@@ -93,7 +93,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/view/ViewGroup;Lbvs;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/view/ViewGroup;Lbwt;)V
     .locals 4
 
     .prologue
@@ -109,16 +109,16 @@
     iput-object p2, p0, Lnet/hockeyapp/android/views/AttachmentView;->a:Landroid/view/ViewGroup;
 
     .line 129
-    iput-object p3, p0, Lnet/hockeyapp/android/views/AttachmentView;->d:Lbvs;
+    iput-object p3, p0, Lnet/hockeyapp/android/views/AttachmentView;->d:Lbwt;
 
     .line 130
     new-instance v0, Ljava/io/File;
 
-    invoke-static {}, Lbuz;->a()Ljava/io/File;
+    invoke-static {}, Lbwa;->a()Ljava/io/File;
 
     move-result-object v1
 
-    invoke-virtual {p3}, Lbvs;->a()Ljava/lang/String;
+    invoke-virtual {p3}, Lbwt;->a()Ljava/lang/String;
 
     move-result-object v2
 
@@ -131,7 +131,7 @@
     iput-object v0, p0, Lnet/hockeyapp/android/views/AttachmentView;->e:Landroid/net/Uri;
 
     .line 131
-    iget-object v0, p3, Lbvs;->c:Ljava/lang/String;
+    iget-object v0, p3, Lbwt;->c:Ljava/lang/String;
 
     iput-object v0, p0, Lnet/hockeyapp/android/views/AttachmentView;->f:Ljava/lang/String;
 
@@ -174,7 +174,7 @@
 
     iget-object v2, p0, Lnet/hockeyapp/android/views/AttachmentView;->e:Landroid/net/Uri;
 
-    invoke-static {v1, v2}, Lbwh;->a(Landroid/content/Context;Landroid/net/Uri;)I
+    invoke-static {v1, v2}, Lbxi;->a(Landroid/content/Context;Landroid/net/Uri;)I
 
     move-result v1
 
@@ -223,7 +223,7 @@
 
     invoke-static {v6, v7, v5}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    invoke-static {v5, v2, v1}, Lbwh;->a(Landroid/graphics/BitmapFactory$Options;II)I
+    invoke-static {v5, v2, v1}, Lbxi;->a(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v1
 
@@ -818,12 +818,12 @@
 
 
 # virtual methods
-.method public getAttachment()Lbvs;
+.method public getAttachment()Lbwt;
     .locals 1
 
     .prologue
     .line 142
-    iget-object v0, p0, Lnet/hockeyapp/android/views/AttachmentView;->d:Lbvs;
+    iget-object v0, p0, Lnet/hockeyapp/android/views/AttachmentView;->d:Lbwt;
 
     return-object v0
 .end method

@@ -1,13 +1,57 @@
+import android.os.SystemClock;
+import com.snapchat.android.util.debug.ReleaseManager;
+
 public final class bav
+  extends bwc
 {
-  public float mBrightness;
+  public long mOnCreateMillis;
+  public int mOnResumeCycles;
+  public long mOnResumeMillis;
   
-  public bav(float paramFloat)
+  public final boolean a()
   {
-    if (((paramFloat < 0.0F) || (paramFloat > 1.0F)) && (paramFloat != -1.0F)) {
-      throw new RuntimeException("Brightness must be a float between 0 and 1, or WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE");
+    return true;
+  }
+  
+  public final String b()
+  {
+    long l = SystemClock.elapsedRealtime();
+    StringBuilder localStringBuilder = new StringBuilder();
+    if (mOnCreateMillis != 0L)
+    {
+      localStringBuilder.append("Millis since onCreate: ");
+      localStringBuilder.append(l - mOnCreateMillis);
+      localStringBuilder.append("\n");
     }
-    mBrightness = paramFloat;
+    if (mOnResumeMillis != 0L)
+    {
+      localStringBuilder.append("Millis since onResume: ");
+      localStringBuilder.append(l - mOnResumeMillis);
+      localStringBuilder.append("\n");
+    }
+    if (mOnResumeCycles != 0)
+    {
+      localStringBuilder.append("Number of onResume cycles: ");
+      localStringBuilder.append(mOnResumeCycles);
+      localStringBuilder.append("\n");
+    }
+    return localStringBuilder.toString();
+  }
+  
+  public final String c()
+  {
+    if (ReleaseManager.f()) {
+      return akr.l();
+    }
+    return null;
+  }
+  
+  public final String d()
+  {
+    if (ReleaseManager.f()) {
+      return akr.G();
+    }
+    return null;
   }
 }
 

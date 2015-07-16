@@ -18,7 +18,7 @@ final class CardLinkFragment$4
     }
     for (;;)
     {
-      AnalyticsEvents.v(a.name());
+      AnalyticsEvents.u(a.name());
       CardLinkFragment.j(b).setVisibility(8);
       CardLinkFragment.c(b);
       return;

@@ -1,36 +1,43 @@
-import javax.inject.Provider;
+import android.os.Build;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class yc
-  implements buj<ya>
 {
-  private final Provider<qd> b;
-  private final Provider<mz> c;
+  private static yc a;
+  private static final Map<String, Collection<avc>> b = new HashMap() {};
   
-  static
+  public static yc a()
   {
-    if (!yc.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    try
     {
-      a = bool;
-      return;
+      if (a == null) {
+        a = new yc();
+      }
+      yc localyc = a;
+      return localyc;
     }
+    finally {}
   }
   
-  private yc(Provider<qd> paramProvider, Provider<mz> paramProvider1)
+  public static Collection<avc> b()
   {
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
+    Collection localCollection = (Collection)b.get(Build.MODEL);
+    if (localCollection != null) {
+      return localCollection;
     }
-    b = paramProvider;
-    if ((!a) && (paramProvider1 == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider1;
+    return Collections.emptySet();
   }
   
-  public static buj<ya> a(Provider<qd> paramProvider, Provider<mz> paramProvider1)
+  public static int c()
   {
-    return new yc(paramProvider, paramProvider1);
+    if ((Build.MODEL.equals("HTCEVOV4G")) || (Build.MODEL.equals("ADR6400L")) || (Build.MODEL.equals("HTC PH39100")) || (Build.MODEL.equals("HTC Sensation 4G")) || (Build.MODEL.equals("ADR6350"))) {
+      return 180;
+    }
+    return 0;
   }
 }
 

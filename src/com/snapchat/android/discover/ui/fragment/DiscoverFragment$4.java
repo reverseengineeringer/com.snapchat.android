@@ -1,7 +1,7 @@
 package com.snapchat.android.discover.ui.fragment;
 
-import aeh;
-import aey;
+import afh;
+import afy;
 import com.snapchat.android.discover.model.EditionOpenOrigin;
 import com.snapchat.android.discover.ui.ChannelGroupView;
 import com.snapchat.android.discover.ui.ChannelView;
@@ -9,7 +9,7 @@ import com.snapchat.android.discover.ui.ChannelView;
 final class DiscoverFragment$4
   implements Runnable
 {
-  DiscoverFragment$4(DiscoverFragment paramDiscoverFragment, aey paramaey) {}
+  DiscoverFragment$4(DiscoverFragment paramDiscoverFragment, afy paramafy) {}
   
   public final void run()
   {

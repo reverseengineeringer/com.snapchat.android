@@ -1,18 +1,26 @@
-.class public interface abstract annotation Lcar;
+.class public interface abstract Lcar;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
 
+# virtual methods
+.method public abstract a(D)D
+.end method
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->CLASS:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+.method public abstract a(DD)D
+.end method
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+.method public abstract a()Ljava/lang/String;
+.end method
+
+.method public abstract a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.end method
+
+.method public abstract b()I
+.end method
+
+.method public abstract c()I
+.end method
+
+.method public abstract d()Z
+.end method

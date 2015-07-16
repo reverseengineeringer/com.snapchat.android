@@ -1,187 +1,41 @@
-.class final Lcah;
-.super Ljava/lang/Object;
+.class public final Lcah;
+.super Lcab;
 .source "SourceFile"
 
 
-# static fields
-.field static a:Lcag;
-
-.field static b:J
-
-
 # direct methods
-.method private constructor <init>()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     .prologue
-    .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 28
+    const-string v0, "/"
 
-    .line 34
+    const/4 v1, 0x6
+
+    invoke-direct {p0, v0, v1}, Lcab;-><init>(Ljava/lang/String;I)V
+
+    .line 29
     return-void
 .end method
 
-.method static a()Lcag;
-    .locals 6
+
+# virtual methods
+.method public final a(DD)D
+    .locals 5
 
     .prologue
-    .line 37
-    const-class v1, Lcah;
-
-    monitor-enter v1
-
-    .line 38
-    :try_start_0
-    sget-object v0, Lcah;->a:Lcag;
-
-    if-eqz v0, :cond_0
-
-    .line 39
-    sget-object v0, Lcah;->a:Lcag;
-
     .line 40
-    iget-object v2, v0, Lcag;->f:Lcag;
+    new-instance v0, Ljava/lang/Double;
 
-    sput-object v2, Lcah;->a:Lcag;
+    div-double v2, p1, p3
 
-    .line 41
-    const/4 v2, 0x0
-
-    iput-object v2, v0, Lcag;->f:Lcag;
+    invoke-direct {v0, v2, v3}, Ljava/lang/Double;-><init>(D)V
 
     .line 42
-    sget-wide v2, Lcah;->b:J
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
-    const-wide/16 v4, 0x800
+    move-result-wide v0
 
-    sub-long/2addr v2, v4
-
-    sput-wide v2, Lcah;->b:J
-
-    .line 43
-    monitor-exit v1
-
-    .line 46
-    :goto_0
-    return-object v0
-
-    .line 45
-    :cond_0
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 46
-    new-instance v0, Lcag;
-
-    invoke-direct {v0}, Lcag;-><init>()V
-
-    goto :goto_0
-
-    .line 45
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method static a(Lcag;)V
-    .locals 8
-
-    .prologue
-    const-wide/16 v6, 0x800
-
-    .line 50
-    iget-object v0, p0, Lcag;->f:Lcag;
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcag;->g:Lcag;
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
-
-    .line 51
-    :cond_1
-    iget-boolean v0, p0, Lcag;->d:Z
-
-    if-eqz v0, :cond_2
-
-    .line 58
-    :goto_0
-    return-void
-
-    .line 52
-    :cond_2
-    const-class v1, Lcah;
-
-    monitor-enter v1
-
-    .line 53
-    :try_start_0
-    sget-wide v2, Lcah;->b:J
-
-    add-long/2addr v2, v6
-
-    const-wide/32 v4, 0x10000
-
-    cmp-long v0, v2, v4
-
-    if-lez v0, :cond_3
-
-    monitor-exit v1
-
-    goto :goto_0
-
-    .line 58
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    .line 54
-    :cond_3
-    :try_start_1
-    sget-wide v2, Lcah;->b:J
-
-    add-long/2addr v2, v6
-
-    sput-wide v2, Lcah;->b:J
-
-    .line 55
-    sget-object v0, Lcah;->a:Lcag;
-
-    iput-object v0, p0, Lcag;->f:Lcag;
-
-    .line 56
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcag;->c:I
-
-    iput v0, p0, Lcag;->b:I
-
-    .line 57
-    sput-object p0, Lcah;->a:Lcag;
-
-    .line 58
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
+    return-wide v0
 .end method

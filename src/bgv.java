@@ -1,46 +1,28 @@
-import com.google.gson.annotations.SerializedName;
-import java.util.Map;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
+import com.snapchat.android.util.profileimages.ProfileImageUtils;
+import java.util.List;
+import java.util.concurrent.Executor;
 
-public final class bgv
+public class bgv
 {
-  @SerializedName("ad_unit_id")
-  protected String adUnitId;
-  @SerializedName("targeting_parameters")
-  protected Map<String, String> targetingParameters;
+  private static final String TAG = bgv.class.getSimpleName();
+  private final axn mCache;
+  final Executor mExecutor;
+  private final String mKey;
+  private final ProfileImageUtils mProfileImageUtils;
   
-  public final String a()
+  public bgv(String paramString)
   {
-    return adUnitId;
+    this(avf.HIGH_PRIORITY_EXECUTOR, axo.PROFILE_IMAGE_CACHE, paramString, ProfileImageUtils.a());
   }
   
-  public final Map<String, String> b()
+  private bgv(Executor paramExecutor, axn paramaxn, String paramString, ProfileImageUtils paramProfileImageUtils)
   {
-    return targetingParameters;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
-    }
-    if (!(paramObject instanceof bgv)) {
-      return false;
-    }
-    paramObject = (bgv)paramObject;
-    return new EqualsBuilder().append(adUnitId, adUnitId).append(targetingParameters, targetingParameters).isEquals();
-  }
-  
-  public final int hashCode()
-  {
-    return new HashCodeBuilder().append(adUnitId).append(targetingParameters).toHashCode();
-  }
-  
-  public final String toString()
-  {
-    return ToStringBuilder.reflectionToString(this);
+    mExecutor = paramExecutor;
+    mCache = paramaxn;
+    mKey = paramString;
+    mProfileImageUtils = paramProfileImageUtils;
   }
 }
 

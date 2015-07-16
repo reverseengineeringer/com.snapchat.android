@@ -1,389 +1,275 @@
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.SparseArray;
-import com.snapchat.android.Timber;
-import com.snapchat.android.database.schema.VerifiedDeviceSchema;
-import com.snapchat.android.operation.identity.UpdateVerifiedDeviceOperation.Action;
-import com.snapchat.android.service.SnapchatService;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
+import android.media.MediaPlayer.OnErrorListener;
+import android.media.MediaPlayer.OnInfoListener;
+import android.media.MediaPlayer.OnPreparedListener;
+import android.os.Environment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.rendering.SnapMediaRenderer;
+import com.snapchat.android.rendering.SnapMediaRenderer.ErrorCode;
+import com.snapchat.android.rendering.SnapMediaRenderer.a;
+import com.snapchat.android.ui.SnapVideoView;
+import com.snapchat.android.util.debug.ReleaseManager;
+import com.snapchat.android.util.eventbus.CameraDisplayState;
+import com.squareup.otto.Bus;
 
 public final class aol
+  implements SnapMediaRenderer
 {
-  private static final Set<String> e = di.a("request_id", "from_pool", "CalledOnLoginOrOnResume", "FromNotification");
-  private static aol f;
-  public final Map<Integer, Intent> a;
-  public aoj b;
-  public Context c;
-  @bwo
-  public final SparseArray<HashSet<aok>> d = new SparseArray();
-  private Integer g = Integer.valueOf(0);
-  
-  private aol(Map<Integer, Intent> paramMap)
+  protected static final MediaPlayer.OnErrorListener e = new MediaPlayer.OnErrorListener()
   {
-    a = paramMap;
-    h();
-  }
-  
-  public static int a(@cgc amk paramamk)
-  {
-    int j = -1;
-    int i = j;
-    if (paramamk != null)
+    public final boolean onError(MediaPlayer paramAnonymousMediaPlayer, int paramAnonymousInt1, int paramAnonymousInt2)
     {
-      paramamk = paramamk.a();
-      i = j;
-      if (paramamk != null) {
-        i = paramamk.getIntExtra("request_id", -1);
+      aok.a(paramAnonymousInt1);
+      return true;
+    }
+  };
+  private static String f = "VideoSnapRenderer";
+  protected final MediaPlayer.OnInfoListener a = new MediaPlayer.OnInfoListener()
+  {
+    public final boolean onInfo(MediaPlayer paramAnonymousMediaPlayer, int paramAnonymousInt1, int paramAnonymousInt2)
+    {
+      aok.b(paramAnonymousInt1);
+      if (paramAnonymousInt1 == 3) {
+        aol.a(aol.this);
+      }
+      return false;
+    }
+  };
+  protected final MediaPlayer.OnPreparedListener b = new MediaPlayer.OnPreparedListener()
+  {
+    public final void onPrepared(MediaPlayer paramAnonymousMediaPlayer)
+    {
+      aol.b(aol.this).d();
+      paramAnonymousMediaPlayer.getDuration();
+      paramAnonymousMediaPlayer.getVideoWidth();
+      paramAnonymousMediaPlayer.getVideoHeight();
+      aol.a(aol.this, paramAnonymousMediaPlayer);
+      aol.d(aol.this).setLooping(aol.c(aol.this));
+      if (aol.b(aol.this).ai() == 2) {
+        aol.d(aol.this).setVolume(0.0F, 0.0F);
+      }
+      paramAnonymousMediaPlayer = new avc(paramAnonymousMediaPlayer.getVideoWidth(), paramAnonymousMediaPlayer.getVideoHeight());
+      aol.a(aol.this, paramAnonymousMediaPlayer);
+      aol.e(aol.this).a(aol.d(aol.this).getDuration(), aol.d(aol.this).getVideoWidth(), aol.d(aol.this).getVideoHeight());
+      if (att.SUPPORTS_MEDIA_INFO_VIDEO_RENDERING_START) {
+        aol.d(aol.this).setOnInfoListener(a);
       }
     }
-    return i;
-  }
-  
-  public static aol a()
+  };
+  protected final MediaPlayer.OnCompletionListener c = new MediaPlayer.OnCompletionListener()
   {
-    try
+    public final void onCompletion(MediaPlayer paramAnonymousMediaPlayer)
     {
-      if (f == null) {
-        f = new aol(Collections.synchronizedMap(new HashMap()));
+      if (paramAnonymousMediaPlayer.isLooping())
+      {
+        aol.b(aol.this);
+        return;
       }
-      aol localaol = f;
-      return localaol;
+      aol.b(aol.this);
+      aol.e(aol.this).b();
     }
-    finally {}
-  }
-  
-  public static boolean a(@cgc Intent paramIntent)
+  };
+  protected final MediaPlayer.OnErrorListener d = new MediaPlayer.OnErrorListener()
   {
-    return (paramIntent != null) && (paramIntent.hasExtra("request_id"));
-  }
-  
-  public static int b(@cgc amk paramamk)
-  {
-    int j = -1;
-    int i = j;
-    if (paramamk != null)
+    public final boolean onError(MediaPlayer paramAnonymousMediaPlayer, int paramAnonymousInt1, int paramAnonymousInt2)
     {
-      paramamk = paramamk.a();
-      i = j;
-      if (paramamk != null) {
-        i = paramamk.getIntExtra("op_code", -1);
+      aok.a(paramAnonymousInt1);
+      aol.b(aol.this);
+      if ((paramAnonymousInt1 == 1) && (!aol.f(aol.this)) && (aol.g(aol.this) != null))
+      {
+        aol.b(aol.this);
+        aol.h(aol.this);
+        aol.a(aol.this, null);
+        aol.i(aol.this).setVideoPath(aol.g(aol.this));
+        if (aol.j(aol.this)) {
+          aol.i(aol.this).start();
+        }
+        return true;
+      }
+      aol.e(aol.this).a(SnapMediaRenderer.ErrorCode.PLAYBACK_ERROR);
+      AnalyticsEvents.b(paramAnonymousInt1, paramAnonymousInt2);
+      return true;
+    }
+  };
+  private final LayoutInflater g;
+  private final Bus h;
+  private final axr i;
+  private final aom j;
+  private ViewGroup k;
+  private View l;
+  private SnapVideoView m;
+  private ImageView n;
+  private SnapMediaRenderer.a o;
+  private MediaPlayer p;
+  private boolean q;
+  private boolean r;
+  private aka s;
+  private aon t;
+  private String u;
+  private boolean v;
+  
+  public aol(@chc Context paramContext)
+  {
+    this((LayoutInflater)paramContext.getSystemService("layout_inflater"), bbo.a(), new axr(), new aom(paramContext));
+  }
+  
+  private aol(LayoutInflater paramLayoutInflater, Bus paramBus, axr paramaxr, aom paramaom)
+  {
+    g = paramLayoutInflater;
+    h = paramBus;
+    i = paramaxr;
+    j = paramaom;
+  }
+  
+  private void e()
+  {
+    AnalyticsEvents.d(s instanceof akl);
+    o.a();
+  }
+  
+  private void f()
+  {
+    bhp.a();
+    n.setImageBitmap(null);
+    if (t != null)
+    {
+      t.e();
+      t = null;
+    }
+  }
+  
+  public final void a()
+  {
+    aka localaka = s;
+    bhp.a();
+    if (s == null)
+    {
+      if (ReleaseManager.f()) {
+        throw new RuntimeException("Start called for null snap");
       }
     }
-    return i;
-  }
-  
-  public static int b(@cgb Intent paramIntent)
-  {
-    return paramIntent.getIntExtra("request_id", -1);
-  }
-  
-  public static void b()
-  {
-    try
+    else
     {
-      f.h();
+      l.bringToFront();
+      n.setVisibility(0);
+      m.setVisibility(0);
+      m.start();
+      q = true;
+      if (!att.SUPPORTS_MEDIA_INFO_VIDEO_RENDERING_START) {
+        e();
+      }
+    }
+  }
+  
+  public final void a(@chc aka paramaka, boolean paramBoolean, @chc SnapMediaRenderer.a parama)
+  {
+    int i1 = 1;
+    bhp.a();
+    o = parama;
+    s = paramaka;
+    r = paramBoolean;
+    v = false;
+    if ("mounted".equals(Environment.getExternalStorageState())) {}
+    while (i1 == 0)
+    {
+      o.a(SnapMediaRenderer.ErrorCode.EXTERNAL_STORAGE_REQUIRED);
+      return;
+      i1 = 0;
+    }
+    if (axy.sExternalCacheDirectory == null) {
+      axy.a(SnapchatApplication.b().getCacheDir(), SnapchatApplication.b().getExternalCacheDir());
+    }
+    h.a(new bbq(CameraDisplayState.CLOSE));
+    k.setVisibility(0);
+    if (m.getVisibility() == 8) {
+      m.setVisibility(4);
+    }
+    m.setOnCompletionListener(c);
+    m.setOnErrorListener(d);
+    m.setOnPreparedListener(b);
+    parama = j;
+    b = new aom.1(parama, paramaka, new aom.a()
+    {
+      public final void a(aon paramAnonymousaon)
+      {
+        paramAnonymousaon.a();
+        aol.a(aol.this, paramAnonymousaon);
+      }
+    });
+    b.executeOnExecutor(a, new Void[0]);
+  }
+  
+  public final void a(@chc ViewGroup paramViewGroup)
+  {
+    k = paramViewGroup;
+    l = g.inflate(2130968746, k, false);
+    m = ((SnapVideoView)l.findViewById(2131362731));
+    n = ((ImageView)l.findViewById(2131362732));
+    k.addView(l);
+  }
+  
+  public final void a(boolean paramBoolean)
+  {
+    aka localaka = s;
+    bhp.a();
+    if (paramBoolean) {
+      m.pause();
+    }
+    while (!q) {
       return;
     }
-    finally
+    m.start();
+  }
+  
+  public final void b()
+  {
+    Object localObject = s;
+    bhp.a();
+    localObject = j;
+    if (b != null)
     {
-      localObject = finally;
-      throw ((Throwable)localObject);
+      b.cancel(false);
+      b = null;
     }
-  }
-  
-  @avl
-  private Integer c(Intent arg1)
-  {
-    Bundle localBundle1 = ???.getExtras();
-    if (localBundle1 == null) {
-      throw new NullPointerException();
-    }
-    label259:
-    label266:
-    for (;;)
+    o = null;
+    s = null;
+    u = null;
+    q = false;
+    f();
+    if (p != null)
     {
-      Set localSet;
-      Intent localIntent;
-      Bundle localBundle2;
-      synchronized (a)
-      {
-        localSet = e;
-        Iterator localIterator1 = a.values().iterator();
-        if (!localIterator1.hasNext()) {
-          break label259;
-        }
-        localIntent = (Intent)localIterator1.next();
-        localBundle2 = localIntent.getExtras();
-        if (localBundle2 == null) {
-          throw new NullPointerException();
-        }
-      }
-      if (((Bundle)localObject1).size() == localBundle2.size())
-      {
-        Iterator localIterator2 = localBundle2.keySet().iterator();
-        String str;
-        int i;
-        for (;;)
-        {
-          if (localIterator2.hasNext())
-          {
-            str = (String)localIterator2.next();
-            if (!localSet.contains(str)) {
-              if (!((Bundle)localObject1).containsKey(str)) {
-                i = 0;
-              }
-            }
-          }
-        }
-        for (;;)
-        {
-          if (i == 0) {
-            break label266;
-          }
-          i = localIntent.getIntExtra("request_id", -1);
-          return Integer.valueOf(i);
-          Object localObject2 = localBundle2.get(str);
-          Object localObject3 = ((Bundle)localObject1).get(str);
-          if (localObject2 == null)
-          {
-            Timber.c("SnapchatServiceManager", "pending request id key [" + str + "] has value null!", new Object[0]);
-            if (localObject3 == null) {
-              break;
-            }
-            i = 0;
-            continue;
-          }
-          if (localObject2.equals(localObject3)) {
-            break;
-          }
-          i = 0;
-          continue;
-          return null;
-          i = 1;
-        }
-      }
+      p.setOnInfoListener(null);
+      p = null;
     }
+    m.setOnPreparedListener(null);
+    m.setOnCompletionListener(null);
+    m.setOnErrorListener(e);
+    m.stopPlayback();
+    n.setVisibility(8);
   }
   
-  private void h()
+  public final void c()
   {
-    g = Integer.valueOf(0);
-    a.clear();
-    b = new aoj();
+    aka localaka = s;
+    bhp.a();
+    n.setVisibility(0);
+    m.setVisibility(0);
   }
   
-  public final int a(Context paramContext)
+  public final void d()
   {
-    Intent localIntent = b(paramContext);
-    localIntent.putExtra("op_code", 1023);
-    return a(paramContext, localIntent);
-  }
-  
-  public final int a(Context paramContext, int paramInt, byte[] paramArrayOfByte)
-  {
-    Intent localIntent = b(paramContext);
-    localIntent.putExtra("op_code", 1009);
-    localIntent.putExtra("snapTagVersion", paramInt);
-    localIntent.putExtra("snapTag", paramArrayOfByte);
-    localIntent.putExtra("timestamp", System.currentTimeMillis());
-    return a(paramContext, localIntent);
-  }
-  
-  public final int a(@cgb Context paramContext, @cgb Intent paramIntent)
-  {
-    Timber.c("SnapchatServiceManager", "startCommand with op code: " + paramIntent.getIntExtra("op_code", -1), new Object[0]);
-    g.intValue();
-    Integer localInteger = Integer.valueOf(g.intValue() + 1);
-    g = localInteger;
-    int i = localInteger.intValue();
-    paramIntent.putExtra("request_id", i);
-    localInteger = c(paramIntent);
-    if (localInteger == null)
-    {
-      Timber.c("SnapchatServiceManager", "Start service with the new request " + paramIntent, new Object[0]);
-      a.put(Integer.valueOf(i), paramIntent);
-      paramContext.startService(paramIntent);
-      return i;
-    }
-    Timber.c("SnapchatServiceManager", "Do not start service if there is a pending operation with the request " + paramIntent, new Object[0]);
-    b.a(paramIntent);
-    return localInteger.intValue();
-  }
-  
-  public final int a(Context paramContext, String paramString)
-  {
-    Intent localIntent = b(paramContext);
-    localIntent.putExtra("op_code", 1015);
-    localIntent.putExtra("email", paramString);
-    return a(paramContext, localIntent);
-  }
-  
-  public final int a(Context paramContext, String paramString1, String paramString2)
-  {
-    Intent localIntent = b(paramContext);
-    localIntent.putExtra("op_code", 1028);
-    localIntent.putExtra("size", paramString1);
-    localIntent.putExtra("username_image", paramString2);
-    return a(paramContext, localIntent);
-  }
-  
-  public final int a(Context paramContext, String paramString1, String paramString2, @cgc String paramString3)
-  {
-    Intent localIntent = b(paramContext);
-    localIntent.putExtra("op_code", 1012);
-    localIntent.putExtra("action", paramString1);
-    localIntent.putExtra("param", paramString2);
-    localIntent.putExtra("password", paramString3);
-    return a(paramContext, localIntent);
-  }
-  
-  public final int a(Context paramContext, boolean paramBoolean1, boolean paramBoolean2)
-  {
-    Intent localIntent = b(paramContext);
-    localIntent.putExtra("op_code", 1002);
-    localIntent.putExtra("use_cache", paramBoolean1);
-    localIntent.putExtra("only_new_contact", paramBoolean2);
-    return a(paramContext, localIntent);
-  }
-  
-  public final int a(List<bkq> paramList)
-  {
-    Intent localIntent = b(c);
-    localIntent.putExtra("op_code", 1032);
-    localIntent.putExtra("action", UpdateVerifiedDeviceOperation.Action.SAVE);
-    ArrayList localArrayList = new ArrayList();
-    if (paramList != null)
-    {
-      paramList = paramList.iterator();
-      while (paramList.hasNext())
-      {
-        bkq localbkq = (bkq)paramList.next();
-        localArrayList.add(aadaDEVICE_IDaaDEVICE_NAMEbaLAST_LOGINclongValuea);
-      }
-    }
-    localIntent.putParcelableArrayListExtra("verified_devices", localArrayList);
-    return a(c, localIntent);
-  }
-  
-  public final int a(boolean paramBoolean1, boolean paramBoolean2)
-  {
-    Intent localIntent = b(c);
-    localIntent.putExtra("op_code", 1026);
-    localIntent.putExtra("FromNotification", paramBoolean1);
-    localIntent.putExtra("CalledOnLoginOrOnResume", paramBoolean2);
-    return a(c, localIntent);
-  }
-  
-  public final Intent a(Context paramContext, double paramDouble1, double paramDouble2, Float paramFloat, long paramLong, String paramString)
-  {
-    paramContext = b(paramContext);
-    paramContext.putExtra("op_code", 1025);
-    paramContext.putExtra("lat", paramDouble1);
-    paramContext.putExtra("long", paramDouble2);
-    if (paramFloat != null) {
-      paramContext.putExtra("accuracyMeters", paramFloat);
-    }
-    paramContext.putExtra("totalPollingDurationMillis", paramLong);
-    paramContext.putExtra("action", paramString);
-    return paramContext;
-  }
-  
-  @avl
-  public final void a(int paramInt, aok paramaok)
-  {
-    Timber.c("SnapchatServiceManager", "registerListener " + paramaok + " to operation " + paramInt, new Object[0]);
-    synchronized (d)
-    {
-      HashSet localHashSet2 = (HashSet)d.get(paramInt);
-      HashSet localHashSet1 = localHashSet2;
-      if (localHashSet2 == null) {
-        localHashSet1 = new HashSet();
-      }
-      localHashSet1.add(paramaok);
-      d.append(paramInt, localHashSet1);
-      return;
-    }
-  }
-  
-  public final int b(Context paramContext, String paramString)
-  {
-    Intent localIntent = b(paramContext);
-    localIntent.putExtra("op_code", 1016);
-    localIntent.putExtra("password", paramString);
-    return a(paramContext, localIntent);
-  }
-  
-  public final Intent b(Context paramContext)
-  {
-    return b.a(paramContext, SnapchatService.class);
-  }
-  
-  @avl
-  public final void b(int paramInt, aok paramaok)
-  {
-    Timber.c("SnapchatServiceManager", "unregisterListener " + paramaok + " from operation " + paramInt, new Object[0]);
-    synchronized (d)
-    {
-      HashSet localHashSet = (HashSet)d.get(paramInt);
-      if (localHashSet != null) {
-        localHashSet.remove(paramaok);
-      }
-      return;
-    }
-  }
-  
-  public final int c()
-  {
-    Intent localIntent = b(c);
-    localIntent.putExtra("op_code", 1032);
-    localIntent.putExtra("action", UpdateVerifiedDeviceOperation.Action.DELETE_ALL);
-    return a(c, localIntent);
-  }
-  
-  public final int c(Context paramContext, String paramString)
-  {
-    Intent localIntent = b(paramContext);
-    localIntent.putExtra("op_code", 1010);
-    localIntent.putExtra("ImageId", paramString);
-    return a(paramContext, localIntent);
-  }
-  
-  public final int d()
-  {
-    Intent localIntent = b(c);
-    localIntent.putExtra("op_code", 1013);
-    return a(c, localIntent);
-  }
-  
-  public final int e()
-  {
-    Timber.c("SnapchatServiceManager", "Creating and executing logout intent", new Object[0]);
-    Intent localIntent = b(c);
-    localIntent.putExtra("op_code", 1014);
-    return a(c, localIntent);
-  }
-  
-  public final int f()
-  {
-    Intent localIntent = b(c);
-    localIntent.putExtra("op_code", 1027);
-    localIntent.putExtra("FromNotification", false);
-    localIntent.putExtra("CalledOnLoginOrOnResume", false);
-    return a(c, localIntent);
-  }
-  
-  public final boolean g()
-  {
-    return !a.isEmpty();
+    aka localaka = s;
+    bhp.a();
+    n.setVisibility(8);
+    m.setVisibility(8);
+    f();
   }
 }
 

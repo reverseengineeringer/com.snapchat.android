@@ -1,39 +1,23 @@
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
-import android.net.Uri;
+import android.os.Looper;
+import com.squareup.otto.Bus;
 
-final class bpj
-  extends bpi
+public abstract interface bpj
 {
-  private final Context a;
-  
-  bpj(Context paramContext)
+  public static final bpj a = new bpj()
   {
-    a = paramContext;
-  }
-  
-  public final boolean a(bpg parambpg)
+    public final void a(Bus paramAnonymousBus) {}
+  };
+  public static final bpj b = new bpj()
   {
-    if (e != 0) {
-      return true;
-    }
-    return "android.resource".equals(d.getScheme());
-  }
-  
-  public final bpi.a b(bpg parambpg)
-  {
-    Resources localResources = bpo.a(a, parambpg);
-    int i = bpo.a(localResources, parambpg);
-    BitmapFactory.Options localOptions = d(parambpg);
-    if (a(localOptions))
+    public final void a(Bus paramAnonymousBus)
     {
-      BitmapFactory.decodeResource(localResources, i, localOptions);
-      a(h, i, localOptions, parambpg);
+      if (Looper.myLooper() != Looper.getMainLooper()) {
+        throw new IllegalStateException("Event bus " + paramAnonymousBus + " accessed from non-main thread " + Looper.myLooper());
+      }
     }
-    return new bpi.a(BitmapFactory.decodeResource(localResources, i, localOptions), bpd.d.b);
-  }
+  };
+  
+  public abstract void a(Bus paramBus);
 }
 
 /* Location:

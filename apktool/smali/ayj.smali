@@ -2,130 +2,92 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/io/Closeable;
 
-# static fields
-.field public static final CHAT_MEDIA_KEYS_AND_IVS:Layh;
 
-.field public static final CREDIT_CARD_TOKEN:Layh;
+# instance fields
+.field private final mGson:Laum;
 
-.field public static final DEVICE_TOKEN_1_KEY_AND_IV:Layh;
-
-.field public static final FRIEND_STORY_KEYS_AND_IVS:Layh;
-
-.field public static final MESSAGING_GATEWAY_INFO:Layh;
-
-.field public static final MY_STORY_KEYS_AND_IVS:Layh;
-
-.field public static final PER_CONVERSATION_AUTH:Layh;
-
-.field public static final SNAPS_ON_EXTERNAL_STORAGE_KEYS_AND_IVS:Layh;
-
-.field public static final SQ_AUTH_TOKEN:Layh;
+.field private final mOutputStream:Ljava/io/DataOutputStream;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/io/OutputStream;Laum;)V
+    .locals 2
+
+    .prologue
+    .line 22
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 23
+    new-instance v0, Ljava/io/DataOutputStream;
+
+    new-instance v1, Ljava/io/BufferedOutputStream;
+
+    invoke-direct {v1, p1}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    invoke-direct {v0, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    iput-object v0, p0, Layj;->mOutputStream:Ljava/io/DataOutputStream;
+
+    .line 24
+    iput-object p2, p0, Layj;->mGson:Laum;
+
+    .line 25
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lbji;)V
     .locals 3
 
     .prologue
-    .line 10
-    new-instance v0, Layh;
+    .line 28
+    iget-object v0, p0, Layj;->mGson:Laum;
 
-    const-string v1, "messagingGatewayInfo"
+    invoke-virtual {v0, p1}, Laum;->a(Ljava/lang/Object;)Ljava/lang/String;
 
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
+    move-result-object v0
 
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
+    .line 29
+    sget-object v1, Lorg/apache/commons/io/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    sput-object v0, Layj;->MESSAGING_GATEWAY_INFO:Layh;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    .line 14
-    new-instance v0, Layh;
-
-    const-string v1, "perConversationAuth/"
-
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
-
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
-
-    sput-object v0, Layj;->PER_CONVERSATION_AUTH:Layh;
-
-    .line 18
-    new-instance v0, Layh;
-
-    const-string v1, "myStorySnapKeysAndIvs"
-
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
-
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
-
-    sput-object v0, Layj;->MY_STORY_KEYS_AND_IVS:Layh;
-
-    .line 22
-    new-instance v0, Layh;
-
-    const-string v1, "snapsOnExternalStorageKeysAndIvs"
-
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_DIFFERENT_USER_LOGIN:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
-
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
-
-    sput-object v0, Layj;->SNAPS_ON_EXTERNAL_STORAGE_KEYS_AND_IVS:Layh;
-
-    .line 26
-    new-instance v0, Layh;
-
-    const-string v1, "friendStorySnapKeysAndIvs"
-
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
-
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
-
-    sput-object v0, Layj;->FRIEND_STORY_KEYS_AND_IVS:Layh;
+    move-result-object v0
 
     .line 30
-    new-instance v0, Layh;
+    iget-object v1, p0, Layj;->mOutputStream:Ljava/io/DataOutputStream;
 
-    const-string v1, "chatMediaKeysAndIvs"
+    array-length v2, v0
 
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
+    invoke-virtual {v1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
+    .line 31
+    iget-object v1, p0, Layj;->mOutputStream:Ljava/io/DataOutputStream;
 
-    sput-object v0, Layj;->CHAT_MEDIA_KEYS_AND_IVS:Layh;
+    invoke-virtual {v1, v0}, Ljava/io/DataOutputStream;->write([B)V
 
-    .line 34
-    new-instance v0, Layh;
+    .line 32
+    iget-object v0, p0, Layj;->mOutputStream:Ljava/io/DataOutputStream;
 
-    const-string v1, "creditCardToken"
+    invoke-virtual {v0}, Ljava/io/DataOutputStream;->flush()V
 
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_DIFFERENT_USER_LOGIN:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
+    .line 33
+    return-void
+.end method
 
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
+.method public final close()V
+    .locals 1
 
-    sput-object v0, Layj;->CREDIT_CARD_TOKEN:Layh;
+    .prologue
+    .line 37
+    iget-object v0, p0, Layj;->mOutputStream:Ljava/io/DataOutputStream;
+
+    invoke-virtual {v0}, Ljava/io/DataOutputStream;->close()V
 
     .line 38
-    new-instance v0, Layh;
-
-    const-string v1, "sqAuthToken"
-
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
-
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
-
-    sput-object v0, Layj;->SQ_AUTH_TOKEN:Layh;
-
-    .line 42
-    new-instance v0, Layh;
-
-    const-string v1, "deviceToken1KeyAndIv"
-
-    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_ALWAYS_PERSIST:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
-
-    invoke-direct {v0, v1, v2}, Layh;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
-
-    sput-object v0, Layj;->DEVICE_TOKEN_1_KEY_AND_IV:Layh;
-
     return-void
 .end method

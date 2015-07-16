@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.signup;
 
-import afa;
+import aga;
 import android.util.Pair;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,7 +10,7 @@ import com.snapchat.android.model.Friend;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import kb;
+import kt;
 
 final class NewUserContactBookFragment$2
   implements View.OnClickListener
@@ -39,7 +39,7 @@ final class NewUserContactBookFragment$2
       if (localFriend.b()) {
         j = k + 1;
       }
-      if (!localFriend.g()) {
+      if (!localFriend.h()) {
         break label227;
       }
       i += 1;
@@ -58,11 +58,11 @@ final class NewUserContactBookFragment$2
       paramView.a(bool, j);
       if (bool)
       {
-        AnalyticsEvents.a(i, j, d.d.size());
+        AnalyticsEvents.a(i, j, d.e.size());
         long l1 = i;
         long l2 = j;
-        long l3 = d.d.size();
-        paramView = new kb();
+        long l3 = d.e.size();
+        paramView = new kt();
         contactFoundCount = Long.valueOf(l1);
         friendAddCount = Long.valueOf(l2);
         contactInviteCount = Long.valueOf(l3);

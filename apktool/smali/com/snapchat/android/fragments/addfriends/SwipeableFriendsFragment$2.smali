@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 221
+    .line 243
     invoke-static {}, Lcom/snapchat/android/model/FriendAction;->values()[Lcom/snapchat/android/model/FriendAction;
 
     move-result-object v0

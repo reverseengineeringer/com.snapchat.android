@@ -4,24 +4,20 @@
 
 
 # instance fields
-.field public code:Ljava/lang/String;
+.field public final shouldShow:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Z)V
     .locals 0
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 11
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
-    iput-object p1, p0, Lbet;->code:Ljava/lang/String;
+    .line 11
+    iput-boolean p1, p0, Lbet;->shouldShow:Z
 
-    .line 13
+    .line 12
     return-void
 .end method

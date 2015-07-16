@@ -37,61 +37,47 @@
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 4
 
     .prologue
-    const/4 v5, 0x0
-
     .line 399
-    const-string v0, "SnapchatService"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "mStopRunnable mFutureList.size()="
 
-    const-string v2, "mStopRunnable mFutureList.size()="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService$1;->a:Lcom/snapchat/android/service/SnapchatService;
 
-    iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService$1;->a:Lcom/snapchat/android/service/SnapchatService;
-
-    invoke-static {v2}, Lcom/snapchat/android/service/SnapchatService;->d(Lcom/snapchat/android/service/SnapchatService;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/snapchat/android/service/SnapchatService;->d(Lcom/snapchat/android/service/SnapchatService;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    const-string v2, " hasPendingIntents="
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService$1;->a:Lcom/snapchat/android/service/SnapchatService;
+    move-result-object v0
 
-    invoke-static {v2}, Lcom/snapchat/android/service/SnapchatService;->c(Lcom/snapchat/android/service/SnapchatService;)Laol;
+    const-string v1, " hasPendingIntents="
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Laol;->g()Z
+    move-result-object v0
 
-    move-result v2
+    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService$1;->a:Lcom/snapchat/android/service/SnapchatService;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1}, Lcom/snapchat/android/service/SnapchatService;->c(Lcom/snapchat/android/service/SnapchatService;)Laph;
 
     move-result-object v1
 
-    new-array v2, v5, [Ljava/lang/Object;
+    invoke-virtual {v1}, Laph;->g()Z
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 401
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$1;->a:Lcom/snapchat/android/service/SnapchatService;
@@ -108,11 +94,11 @@
 
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$1;->a:Lcom/snapchat/android/service/SnapchatService;
 
-    invoke-static {v0}, Lcom/snapchat/android/service/SnapchatService;->c(Lcom/snapchat/android/service/SnapchatService;)Laol;
+    invoke-static {v0}, Lcom/snapchat/android/service/SnapchatService;->c(Lcom/snapchat/android/service/SnapchatService;)Laph;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laol;->g()Z
+    invoke-virtual {v0}, Laph;->g()Z
 
     move-result v0
 
@@ -132,21 +118,17 @@
     sub-long/2addr v0, v2
 
     .line 403
-    const-string v2, "SnapchatService"
+    const/4 v2, 0x1
 
-    const-string v3, "Stop service which lived for %d ms"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
+    const/4 v3, 0x0
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    aput-object v0, v4, v5
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v2, v3
 
     .line 404
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$1;->a:Lcom/snapchat/android/service/SnapchatService;

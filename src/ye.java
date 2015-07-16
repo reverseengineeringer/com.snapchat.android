@@ -1,11 +1,6 @@
-public abstract interface ye
-{
-  public abstract void a();
-  
-  public abstract void b();
-  
-  public abstract void c();
-}
+import javax.inject.Inject;
+
+public final class ye {}
 
 /* Location:
  * Qualified Name:     ye

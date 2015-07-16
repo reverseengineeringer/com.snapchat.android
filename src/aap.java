@@ -1,26 +1,56 @@
-import com.snapchat.android.SnapchatApplication;
+import android.os.SystemClock;
+import java.util.HashMap;
+import java.util.Map;
 
-public final class aap
-  extends aan
+public class aap
 {
-  private static aap a = new aap();
+  public final Map<String, Long> a = new HashMap();
+  private final bhk b;
   
-  private aap()
+  public aap()
   {
-    super("HasSeenPostToOurStoryDialog", SnapchatApplication.b().c().c());
+    this(new bhk());
   }
   
-  public static aap a()
+  private aap(bhk parambhk)
   {
-    try
-    {
-      aap localaap = a;
-      return localaap;
+    b = parambhk;
+  }
+  
+  public final boolean a(@chc String paramString)
+  {
+    return a.containsKey(paramString);
+  }
+  
+  public final void b(@chc String paramString)
+  {
+    if (!a.containsKey(paramString)) {
+      a.put(paramString, Long.valueOf(SystemClock.elapsedRealtime()));
     }
-    finally
+  }
+  
+  public static final class a
+  {
+    public static long a = 604800000L;
+    public final String b;
+    public final long c;
+    private final bhk d;
+    
+    private a(@chc bhk parambhk, @chc String paramString, long paramLong)
     {
-      localObject = finally;
-      throw ((Throwable)localObject);
+      d = parambhk;
+      b = paramString;
+      c = paramLong;
+    }
+    
+    public a(@chc String paramString, long paramLong)
+    {
+      this(new bhk(), paramString, paramLong);
+    }
+    
+    public final boolean a()
+    {
+      return SystemClock.elapsedRealtime() - c > a;
     }
   }
 }

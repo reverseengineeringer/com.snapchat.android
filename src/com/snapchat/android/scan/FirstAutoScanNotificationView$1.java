@@ -1,12 +1,11 @@
 package com.snapchat.android.scan;
 
-import afi;
+import agi;
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bbx;
-import bdw;
-import com.snapchat.android.Timber;
+import bbo;
+import bcx;
+import bev;
 import com.snapchat.android.fragments.addfriends.AddFriendsBySnapcodeSetupFragment;
 import com.squareup.otto.Bus;
 
@@ -17,9 +16,9 @@ final class FirstAutoScanNotificationView$1
   
   public final void onClick(View paramView)
   {
-    Timber.c(FirstAutoScanNotificationView.a(), "More info!", new Object[0]);
-    ban.a().a(new bbx());
-    ban.a().a(new bdw(new AddFriendsBySnapcodeSetupFragment(ban.a(), afi.a())));
+    FirstAutoScanNotificationView.a();
+    bbo.a().a(new bcx());
+    bbo.a().a(new bev(new AddFriendsBySnapcodeSetupFragment(bbo.a(), agi.a())));
   }
 }
 

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lwr;
+.implements Lxn;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1435
+    .line 1433
     iput-object p1, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 1435
+    .line 1433
     invoke-direct {p0, p1}, Lcom/snapchat/android/camera/CameraFragment$a;-><init>(Lcom/snapchat/android/camera/CameraFragment;)V
 
     return-void
@@ -50,51 +50,51 @@
     .locals 1
 
     .prologue
-    .line 1453
+    .line 1451
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     invoke-virtual {v0, p1}, Lcom/snapchat/android/camera/cameraview/CameraView;->setScaleX(F)V
 
-    .line 1454
+    .line 1452
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     invoke-virtual {v0, p2}, Lcom/snapchat/android/camera/cameraview/CameraView;->setScaleY(F)V
 
-    .line 1455
+    .line 1453
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     invoke-virtual {v0, p3}, Lcom/snapchat/android/camera/cameraview/CameraView;->setTranslationY(F)V
 
-    .line 1456
+    .line 1454
     return-void
 .end method
 
-.method public final a(Lvm;)V
+.method public final a(Lwi;)V
     .locals 3
 
     .prologue
-    .line 1460
+    .line 1458
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-nez v0, :cond_0
 
-    .line 1462
+    .line 1460
     :goto_0
     return-void
 
-    .line 1461
+    .line 1459
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->m:Lvw;
+    iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->m:Lws;
 
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
@@ -102,11 +102,11 @@
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/camera/CameraFragment;->b(Lcom/snapchat/android/camera/CameraFragment;)Lvv;
+    invoke-static {v2}, Lcom/snapchat/android/camera/CameraFragment;->b(Lcom/snapchat/android/camera/CameraFragment;)Lwr;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, p1, v2}, Lvw;->b(Lvl;Lvm;Lvv;)V
+    invoke-virtual {v0, v1, p1, v2}, Lws;->b(Lwh;Lwi;Lwr;)V
 
     goto :goto_0
 .end method
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    .line 1438
+    .line 1436
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 1443
+    .line 1441
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
@@ -147,14 +147,14 @@
     .locals 2
 
     .prologue
-    .line 1448
+    .line 1446
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/CameraFragment;->b(Z)V
 
-    .line 1449
+    .line 1447
     return-void
 .end method
 
@@ -162,7 +162,7 @@
     .locals 1
 
     .prologue
-    .line 1466
+    .line 1464
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$a;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;

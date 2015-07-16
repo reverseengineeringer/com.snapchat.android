@@ -3,7 +3,7 @@ package com.snapchat.android.ui;
 import android.text.TextPaint;
 import android.text.style.URLSpan;
 import android.view.View;
-import cgb;
+import chc;
 
 public final class LinkTextViewUtils
 {
@@ -23,7 +23,7 @@ public final class LinkTextViewUtils
       a.a();
     }
     
-    public void updateDrawState(@cgb TextPaint paramTextPaint)
+    public void updateDrawState(@chc TextPaint paramTextPaint)
     {
       super.updateDrawState(paramTextPaint);
       paramTextPaint.setUnderlineText(false);

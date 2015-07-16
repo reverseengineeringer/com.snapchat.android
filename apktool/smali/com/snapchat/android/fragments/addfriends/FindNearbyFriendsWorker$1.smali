@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$a;->p()V
+    invoke-interface {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$a;->q()V
 
     .line 106
     return-void

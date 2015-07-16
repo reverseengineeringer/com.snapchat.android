@@ -1,16 +1,34 @@
-import java.io.InputStream;
+import com.snapchat.android.util.TitleBarManager.LockedState;
+import com.snapchat.android.util.TitleBarManager.Visibility;
 
-public abstract interface bfk
+public final class bfk
 {
-  public abstract int a();
+  @chd
+  public TitleBarManager.LockedState mLockedState;
+  @chd
+  public TitleBarManager.Visibility mUnlockedVisibility;
+  @chd
+  public TitleBarManager.Visibility mVisibility;
   
-  public abstract int a(@cgb InputStream paramInputStream, @cgc bfk.a parama);
-  
-  public abstract byte[] b();
-  
-  public static abstract interface a
+  public bfk(TitleBarManager.LockedState paramLockedState)
   {
-    public abstract void a(int paramInt);
+    mVisibility = null;
+    mUnlockedVisibility = null;
+    mLockedState = paramLockedState;
+  }
+  
+  public bfk(TitleBarManager.Visibility paramVisibility)
+  {
+    mVisibility = paramVisibility;
+    mUnlockedVisibility = paramVisibility;
+    mLockedState = null;
+  }
+  
+  public bfk(TitleBarManager.Visibility paramVisibility, TitleBarManager.LockedState paramLockedState)
+  {
+    mVisibility = paramVisibility;
+    mUnlockedVisibility = null;
+    mLockedState = paramLockedState;
   }
 }
 

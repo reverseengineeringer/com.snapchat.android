@@ -1,5 +1,5 @@
 .class public final Lamz$a;
-.super Lpl;
+.super Lbhw;
 .source "SourceFile"
 
 
@@ -13,37 +13,23 @@
     name = "a"
 .end annotation
 
-.annotation runtime Ltn;
+.annotation runtime Lud;
 .end annotation
 
 
 # instance fields
-.field a:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "new_password"
-    .end annotation
-.end field
-
-.field final synthetic b:Lamz;
+.field final synthetic a:Lamz;
 
 
 # direct methods
-.method public constructor <init>(Lamz;Ljava/lang/String;)V
+.method public constructor <init>(Lamz;)V
     .locals 0
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 46
-    iput-object p1, p0, Lamz$a;->b:Lamz;
+    .line 142
+    iput-object p1, p0, Lamz$a;->a:Lamz;
 
-    invoke-direct {p0}, Lpl;-><init>()V
+    invoke-direct {p0}, Lbhw;-><init>()V
 
-    .line 47
-    iput-object p2, p0, Lamz$a;->a:Ljava/lang/String;
-
-    .line 48
     return-void
 .end method

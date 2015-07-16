@@ -1,38 +1,11 @@
-.class public abstract Lasj;
+.class public interface abstract Lasj;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public a()V
-    .locals 0
-
-    .prologue
-    .line 23
-    return-void
+.method public abstract a(Lasi;)V
 .end method
 
-.method public abstract a(Lcom/snapchat/android/ui/SwipeImageView;Larw;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/snapchat/android/ui/SwipeImageView;",
-            "Larw",
-            "<",
-            "Larn;",
-            ">;)V"
-        }
-    .end annotation
+.method public abstract a(Lasi;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;)V
 .end method

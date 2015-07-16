@@ -28,10 +28,10 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 3
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     .line 137
     :try_start_0
@@ -60,21 +60,15 @@
     move-exception v0
 
     .line 141
-    const-string v1, "GlCameraPreview"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const-string v2, "System.loadLibrary(\"LocalPreview\") failed: %s."
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     invoke-virtual {v0}, Ljava/lang/UnsatisfiedLinkError;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v3, v4
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v2
 
     goto :goto_0
 .end method
@@ -82,7 +76,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -158,13 +152,13 @@
 
     const v2, 0x7f060004
 
-    invoke-static {v1, v2}, Lbfb;->a(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {v1, v2}, Lbgb;->a(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
     const v2, 0x8b31
 
-    invoke-static {v2, v1}, Lbfc;->a(ILjava/lang/String;)I
+    invoke-static {v2, v1}, Lbgc;->a(ILjava/lang/String;)I
 
     move-result v2
 
@@ -172,13 +166,13 @@
 
     const v3, 0x7f060003
 
-    invoke-static {v1, v3}, Lbfb;->a(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {v1, v3}, Lbgb;->a(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
     const v3, 0x8b30
 
-    invoke-static {v3, v1}, Lbfc;->a(ILjava/lang/String;)I
+    invoke-static {v3, v1}, Lbgc;->a(ILjava/lang/String;)I
 
     move-result v3
 
@@ -234,29 +228,17 @@
 
     if-nez v2, :cond_2
 
-    const-string v2, "ShaderHelper"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v3, "Error compiling program: "
 
-    const-string v4, "Error compiling program: "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {v1}, Landroid/opengl/GLES20;->glGetProgramInfoLog(I)Ljava/lang/String;
 
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v0, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {v1}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
@@ -421,8 +403,6 @@
 
     :try_start_0
     iput-boolean v0, v1, Lcom/snapchat/android/util/gl/GlTextureView$a;->mRenderRequested:Z
-
-    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
 
     monitor-exit v1
 

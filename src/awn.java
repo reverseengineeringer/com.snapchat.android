@@ -1,51 +1,107 @@
-import android.graphics.Bitmap.Config;
-import android.graphics.BitmapFactory.Options;
-import android.util.DisplayMetrics;
+import android.content.Context;
+import android.content.res.Resources;
+import android.text.TextUtils;
+import android.widget.ImageView;
+import java.util.concurrent.ExecutorService;
+import org.apache.commons.lang3.ArrayUtils;
 
 public final class awn
 {
-  public static BitmapFactory.Options a(DisplayMetrics paramDisplayMetrics, int paramInt1, int paramInt2)
+  private static final String TAG = "BitmapLoader";
+  private final axc.a mAsyncDrawableFactory;
+  private final axd mBitmapDecoder;
+  private final awq mBitmapRecycling;
+  private final ExecutorService mExecutor;
+  private final Resources mResources;
+  private final axb.a mTaskFactory;
+  
+  public awn(@chc Context paramContext)
   {
-    Bitmap.Config localConfig = Bitmap.Config.ARGB_8888;
-    BitmapFactory.Options localOptions = new BitmapFactory.Options();
-    inJustDecodeBounds = false;
-    inSampleSize = b(paramDisplayMetrics, paramInt1, paramInt2);
-    inMutable = true;
-    inPreferredConfig = localConfig;
-    outHeight = paramInt2;
-    outWidth = paramInt1;
-    return localOptions;
+    this(paramContext.getResources(), new awq(), new axb.a(), new axc.a(), new axd(paramContext.getResources().getDisplayMetrics(), paramContext.getContentResolver(), paramContext.getResources(), awo.a()), avf.HIGH_PRIORITY_EXECUTOR);
   }
   
-  private static int b(DisplayMetrics paramDisplayMetrics, int paramInt1, int paramInt2)
+  private awn(Resources paramResources, awq paramawq, axb.a parama, axc.a parama1, axd paramaxd, ExecutorService paramExecutorService)
   {
-    int m = Math.min(widthPixels, 3379);
-    int n = Math.min(heightPixels, 3379);
-    int k = 1;
-    int j = 1;
-    int i = k;
-    if (paramInt1 > m)
+    mResources = paramResources;
+    mBitmapRecycling = paramawq;
+    mTaskFactory = parama;
+    mAsyncDrawableFactory = parama1;
+    mBitmapDecoder = paramaxd;
+    mExecutor = paramExecutorService;
+  }
+  
+  @cbr
+  public final awm a(@chc awv paramawv)
+  {
+    bhp.b();
+    return mBitmapDecoder.a(mBitmapSource, mWidth, mHeight, mRequireExactDimensions);
+  }
+  
+  public final void a(@chd ImageView paramImageView)
+  {
+    if (paramImageView == null) {
+      return;
+    }
+    paramImageView.getId();
+    mBitmapRecycling.a(paramImageView, true);
+  }
+  
+  @awj
+  @cdn
+  public final void a(@chc awv paramawv, @chc aww... paramVarArgs)
+  {
+    bhp.a();
+    ImageView localImageView = mImageView;
+    String str = mRequestId;
+    int i;
+    if (localImageView == null) {
+      i = 0;
+    }
+    for (;;)
     {
-      i = k;
-      if (paramInt2 > n)
+      Object localObject;
+      if (i != 0)
       {
-        paramInt2 /= 2;
-        k = paramInt1 / 2;
-        paramInt1 = j;
-        while ((paramInt2 / paramInt1 > n) && (k / paramInt1 > m)) {
-          paramInt1 *= 2;
-        }
-        i = paramInt1;
-        if (paramInt2 / paramInt1 == n)
-        {
-          i = paramInt1;
-          if (k / paramInt1 == m) {
-            i = paramInt1 * 2;
-          }
+        localObject = mRequestId;
+        localImageView.getId();
+        paramVarArgs = (aww[])ArrayUtils.add(paramVarArgs, 0, new axa());
+        paramVarArgs = axb.a.a(paramawv, mBitmapDecoder, paramVarArgs);
+        localImageView.setImageDrawable(new axc(mResources, mPlaceholderBitmap, paramVarArgs));
+        paramVarArgs.executeOnExecutor(mExecutor, new String[] { mRequestId });
+      }
+      return;
+      if (localImageView != null)
+      {
+        localObject = localImageView.getDrawable();
+        if ((localObject instanceof axc)) {
+          localObject = mLoaderTask;
         }
       }
+      for (;;)
+      {
+        if (localObject != null)
+        {
+          if (TextUtils.equals(mRequest.mRequestId, str))
+          {
+            i = 0;
+            break;
+            localObject = null;
+            continue;
+          }
+          str = mRequest.mRequestId;
+          ((axb)localObject).cancel(true);
+        }
+      }
+      i = 1;
     }
-    return i;
+  }
+  
+  @awj
+  @cdn
+  public final void b(@chc awv paramawv, @chc aww... paramVarArgs)
+  {
+    bhp.a();
+    axb.a.a(paramawv, mBitmapDecoder, paramVarArgs).executeOnExecutor(mExecutor, new String[] { mRequestId });
   }
 }
 

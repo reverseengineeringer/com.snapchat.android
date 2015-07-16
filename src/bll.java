@@ -1,79 +1,54 @@
-import java.security.Principal;
-import java.security.PublicKey;
-import java.security.cert.Certificate;
-import java.security.cert.X509Certificate;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import javax.net.ssl.SSLPeerUnverifiedException;
+import com.google.gson.annotations.SerializedName;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bll
 {
-  public static final bll a = new bll(new bll.a(), (byte)0);
-  private final Map<String, List<bzx>> b;
+  @SerializedName("display_name")
+  protected String displayName;
+  @SerializedName("distance")
+  protected Double distance;
+  @SerializedName("user_id")
+  protected String userId;
+  @SerializedName("username")
+  protected String username;
   
-  private bll(bll.a parama)
+  public final String a()
   {
-    b = bmp.a(a);
+    return userId;
   }
   
-  private static bzx a(X509Certificate paramX509Certificate)
+  public final String b()
   {
-    return bmp.a(bzx.a(paramX509Certificate.getPublicKey().getEncoded()));
+    return username;
   }
   
-  public static String a(Certificate paramCertificate)
+  public final String c()
   {
-    if (!(paramCertificate instanceof X509Certificate)) {
-      throw new IllegalArgumentException("Certificate pinning requires X509 certificates");
-    }
-    return "sha1/" + bzt.a(ac);
+    return displayName;
   }
   
-  public final void a(String paramString, List<Certificate> paramList)
+  public final boolean equals(Object paramObject)
   {
-    int j = 0;
-    List localList = (List)b.get(paramString);
-    if (localList == null) {
-      return;
+    if (paramObject == this) {
+      return true;
     }
-    int k = paramList.size();
-    int i = 0;
-    for (;;)
-    {
-      if (i >= k) {
-        break label70;
-      }
-      if (localList.contains(a((X509Certificate)paramList.get(i)))) {
-        break;
-      }
-      i += 1;
+    if (!(paramObject instanceof bll)) {
+      return false;
     }
-    label70:
-    StringBuilder localStringBuilder = new StringBuilder("Certificate pinning failure!\n  Peer certificate chain:");
-    k = paramList.size();
-    i = 0;
-    while (i < k)
-    {
-      X509Certificate localX509Certificate = (X509Certificate)paramList.get(i);
-      localStringBuilder.append("\n    ").append(a(localX509Certificate)).append(": ").append(localX509Certificate.getSubjectDN().getName());
-      i += 1;
-    }
-    localStringBuilder.append("\n  Pinned certificates for ").append(paramString).append(":");
-    k = localList.size();
-    i = j;
-    while (i < k)
-    {
-      paramString = (bzx)localList.get(i);
-      localStringBuilder.append("\n    sha1/").append(bzt.a(c));
-      i += 1;
-    }
-    throw new SSLPeerUnverifiedException(localStringBuilder.toString());
+    paramObject = (bll)paramObject;
+    return new EqualsBuilder().append(userId, userId).append(username, username).append(displayName, displayName).append(distance, distance).isEquals();
   }
   
-  public static final class a
+  public final int hashCode()
   {
-    final Map<String, List<bzx>> a = new LinkedHashMap();
+    return new HashCodeBuilder().append(userId).append(username).append(displayName).append(distance).toHashCode();
+  }
+  
+  public final String toString()
+  {
+    return ToStringBuilder.reflectionToString(this);
   }
 }
 

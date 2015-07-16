@@ -10,17 +10,17 @@ import android.view.View.MeasureSpec;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.Transformation;
-import bus;
-import buu;
-import buw;
-import buw.c;
+import bvt;
+import bvv;
+import bvx;
+import bvx.c;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 
 public class MaterialHeader
   extends View
-  implements bus
+  implements bvt
 {
-  private buw a;
+  private bvx a;
   private float b = 1.0F;
   private PtrFrameLayout c;
   private Animation d = new Animation()
@@ -53,8 +53,8 @@ public class MaterialHeader
   
   private void a()
   {
-    a = new buw(getContext(), this);
-    buw localbuw = a;
+    a = new bvx(getContext(), this);
+    bvx localbvx = a;
     b = -1;
     a.v = -1;
     a.setCallback(this);
@@ -131,7 +131,7 @@ public class MaterialHeader
   
   public void setColorSchemeColors(int[] paramArrayOfInt)
   {
-    buw localbuw = a;
+    bvx localbvx = a;
     a.a(paramArrayOfInt);
     a.k = 0;
     invalidate();
@@ -139,7 +139,7 @@ public class MaterialHeader
   
   public void setPtrFrameLayout(PtrFrameLayout paramPtrFrameLayout)
   {
-    final buu local2 = new buu()
+    final bvv local2 = new bvv()
     {
       public final void run()
       {

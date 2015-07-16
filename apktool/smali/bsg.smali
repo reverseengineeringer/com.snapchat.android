@@ -1,85 +1,157 @@
 .class public final Lbsg;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lbsx;
+
 
 # instance fields
-.field public a:Ljava/util/Map;
+.field private a:Lorg/json/JSONObject;
+
+.field private b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lbqu;)V
-    .locals 3
+.method public constructor <init>()V
+    .locals 2
 
     .prologue
-    .line 29
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
-    new-instance v0, Ljava/util/HashMap;
+    .line 16
+    sget-object v0, Lbsw;->a:Lbsw;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-virtual {v0}, Lbsw;->a()Ljava/lang/String;
 
-    iput-object v0, p0, Lbsg;->a:Ljava/util/Map;
+    move-result-object v0
 
-    .line 32
-    iget-object v0, p0, Lbsg;->a:Ljava/util/Map;
+    iput-object v0, p0, Lbsg;->b:Ljava/lang/String;
 
-    const-string v1, "app_id"
+    .line 17
+    new-instance v0, Lbsm;
 
-    invoke-interface {p1}, Lbqu;->a()Ljava/lang/String;
+    invoke-direct {v0}, Lbsm;-><init>()V
 
-    move-result-object v2
+    new-instance v1, Lbsp$c;
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v1}, Lbsp$c;-><init>()V
 
-    .line 33
-    iget-object v0, p0, Lbsg;->a:Ljava/util/Map;
+    invoke-virtual {v0, v1}, Lbsm;->a(Lbso;)Lbsm;
 
-    const-string v1, "hashed_device_id"
+    move-result-object v0
 
-    invoke-interface {p1}, Lbqu;->c()Ljava/lang/String;
+    new-instance v1, Lbsp$b;
 
-    move-result-object v2
+    invoke-direct {v1}, Lbsp$b;-><init>()V
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lbsm;->a(Lbso;)Lbsm;
 
-    .line 34
-    iget-object v0, p0, Lbsg;->a:Ljava/util/Map;
+    move-result-object v0
 
-    const-string v1, "library_version"
+    new-instance v1, Lbsp$f;
 
-    const-string v2, "4.5.4"
+    invoke-direct {v1}, Lbsp$f;-><init>()V
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lbsm;->a(Lbso;)Lbsm;
 
-    .line 35
+    move-result-object v0
+
+    new-instance v1, Lbsp$k;
+
+    invoke-direct {v1}, Lbsp$k;-><init>()V
+
+    invoke-virtual {v0, v1}, Lbsm;->a(Lbso;)Lbsm;
+
+    move-result-object v0
+
+    new-instance v1, Lbsp$n;
+
+    invoke-direct {v1}, Lbsp$n;-><init>()V
+
+    invoke-virtual {v0, v1}, Lbsm;->a(Lbso;)Lbsm;
+
+    move-result-object v0
+
+    new-instance v1, Lbsp$p;
+
+    invoke-direct {v1}, Lbsp$p;-><init>()V
+
+    invoke-virtual {v0, v1}, Lbsm;->a(Lbso;)Lbsm;
+
+    move-result-object v0
+
+    new-instance v1, Lbsp$u;
+
+    invoke-direct {v1}, Lbsp$u;-><init>()V
+
+    invoke-virtual {v0, v1}, Lbsm;->a(Lbso;)Lbsm;
+
+    move-result-object v0
+
+    new-instance v1, Lbsp$v;
+
+    invoke-direct {v1}, Lbsp$v;-><init>()V
+
+    invoke-virtual {v0, v1}, Lbsm;->a(Lbso;)Lbsm;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lbsm;->a()Lorg/json/JSONObject;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbsg;->a:Lorg/json/JSONObject;
+
+    .line 27
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)Lbsg;
-    .locals 1
+.method public final a(Ljava/io/OutputStream;)V
+    .locals 3
 
     .prologue
-    .line 44
-    iget-object v0, p0, Lbsg;->a:Ljava/util/Map;
+    .line 34
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 45
-    return-object p0
+    .line 35
+    const-string v1, "app_state"
+
+    iget-object v2, p0, Lbsg;->a:Lorg/json/JSONObject;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 36
+    new-instance v1, Lorg/json/JSONObject;
+
+    invoke-direct {v1, v0}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
+
+    .line 37
+    invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 38
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
+
+    .line 39
+    return-void
 .end method
 
-.method public final a(Ljava/lang/String;Lorg/json/JSONArray;)Lbsg;
+.method public final b()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 60
-    iget-object v0, p0, Lbsg;->a:Ljava/util/Map;
+    .line 43
+    iget-object v0, p0, Lbsg;->b:Ljava/lang/String;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 61
-    return-object p0
+    return-object v0
 .end method

@@ -21,7 +21,7 @@
 .method public static a(Ljava/lang/String;)Lcom/snapchat/android/fragments/settings/SecurityGhostFragment;
     .locals 3
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -85,7 +85,7 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 35
@@ -110,29 +110,15 @@
 
     .line 40
     :cond_0
-    const-string v0, "SecurityGhostFragment"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "onCreate - mText "
 
-    const-string v2, "onCreate - mText "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/SecurityGhostFragment;->a:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/SecurityGhostFragment;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 41
     return-void
@@ -143,7 +129,7 @@
 
     .prologue
     .line 45
-    const v0, 0x7f040092
+    const v0, 0x7f040094
 
     const/4 v1, 0x0
 
@@ -154,7 +140,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/SecurityGhostFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 47
-    const v0, 0x7f0a032d
+    const v0, 0x7f0a032c
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/SecurityGhostFragment;->c(I)Landroid/view/View;
 
@@ -167,7 +153,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 48
-    const v0, 0x7f0a032a
+    const v0, 0x7f0a0329
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/SecurityGhostFragment;->c(I)Landroid/view/View;
 

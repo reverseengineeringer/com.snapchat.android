@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
+.implements Lbvp;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuj",
+        "Lbvp",
         "<",
         "Lyj;",
         ">;"
@@ -23,12 +23,12 @@
 
 
 # instance fields
-.field private final b:Ljavax/inject/Provider;
+.field private final b:Lbvk;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljavax/inject/Provider",
+            "Lbvk",
             "<",
-            "Lya;",
+            "Lyj;",
             ">;"
         }
     .end annotation
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 8
+    .line 7
     const-class v0, Lyk;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -62,23 +62,23 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Ljavax/inject/Provider;)V
+.method private constructor <init>(Lbvk;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljavax/inject/Provider",
+            "Lbvk",
             "<",
-            "Lya;",
+            "Lyj;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 12
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
+    .line 12
     sget-boolean v0, Lyk;->a:Z
 
     if-nez v0, :cond_0
@@ -91,24 +91,24 @@
 
     throw v0
 
-    .line 14
+    .line 13
     :cond_0
-    iput-object p1, p0, Lyk;->b:Ljavax/inject/Provider;
+    iput-object p1, p0, Lyk;->b:Lbvk;
 
-    .line 15
+    .line 14
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;)Lbuj;
+.method public static a(Lbvk;)Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljavax/inject/Provider",
+            "Lbvk",
             "<",
-            "Lya;",
+            "Lyj;",
             ">;)",
-            "Lbuj",
+            "Lbvp",
             "<",
             "Lyj;",
             ">;"
@@ -116,43 +116,28 @@
     .end annotation
 
     .prologue
-    .line 26
+    .line 24
     new-instance v0, Lyk;
 
-    invoke-direct {v0, p0}, Lyk;-><init>(Ljavax/inject/Provider;)V
+    invoke-direct {v0, p0}, Lyk;-><init>(Lbvk;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final synthetic get()Ljava/lang/Object;
     .locals 2
 
     .prologue
-    .line 8
-    check-cast p1, Lyj;
+    .line 7
+    new-instance v0, Lyj;
 
-    if-nez p1, :cond_0
+    invoke-direct {v0}, Lyj;-><init>()V
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    iget-object v1, p0, Lyk;->b:Lbvk;
 
-    const-string v1, "Cannot inject members into a null reference"
+    invoke-interface {v1, v0}, Lbvk;->a(Ljava/lang/Object;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iget-object v0, p0, Lyk;->b:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lya;
-
-    iput-object v0, p1, Lyj;->a:Lya;
-
-    return-void
+    return-object v0
 .end method

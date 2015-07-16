@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laok;
+.implements Lapg;
 
 
 # annotations
@@ -36,14 +36,14 @@
 
 
 # virtual methods
-.method public final a(Lamk;)V
+.method public final a(Lanh;)V
     .locals 4
 
     .prologue
     const/4 v3, 0x1
 
     .line 108
-    invoke-static {p1}, Laol;->a(Lamk;)I
+    invoke-static {p1}, Laph;->a(Lanh;)I
 
     move-result v0
 
@@ -64,7 +64,7 @@
 
     if-eqz v1, :cond_0
 
-    instance-of v1, p1, Lang;
+    instance-of v1, p1, Laod;
 
     if-eqz v1, :cond_0
 
@@ -82,10 +82,10 @@
     invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     .line 111
-    check-cast p1, Lang;
+    check-cast p1, Laod;
 
     .line 113
-    iget-boolean v0, p1, Lang;->b:Z
+    iget-boolean v0, p1, Laod;->b:Z
 
     if-eqz v0, :cond_1
 
@@ -105,7 +105,7 @@
 
     .line 117
     :cond_1
-    iget-object v0, p1, Lang;->a:Lbkj;
+    iget-object v0, p1, Laod;->a:Lblk;
 
     .line 118
     iget-object v1, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment$2;->a:Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;
@@ -131,11 +131,11 @@
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setEnabled(Z)V
 
     .line 121
-    invoke-virtual {v0}, Lbkj;->a()Ljava/lang/Boolean;
+    invoke-virtual {v0}, Lblk;->a()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v1
 
@@ -178,7 +178,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0}, Lbkj;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lblk;->b()Ljava/lang/String;
 
     move-result-object v0
 

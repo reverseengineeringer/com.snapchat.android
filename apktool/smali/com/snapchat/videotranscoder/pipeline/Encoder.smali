@@ -23,15 +23,15 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/pipeline/Mixer;Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;Z)V
     .locals 7
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/Mixer;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -82,19 +82,19 @@
 .method protected constructor <init>(Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;Lcom/snapchat/videotranscoder/pipeline/Mixer;Lcom/snapchat/videotranscoder/pipeline/Codec;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/pipeline/Mixer;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/Codec;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -129,7 +129,7 @@
 # virtual methods
 .method public abstract addOrRetrieveMixerTrack(Landroid/media/MediaFormat;)I
     .param p1    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method

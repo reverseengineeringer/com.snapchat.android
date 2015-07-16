@@ -62,7 +62,7 @@
     iput v0, p0, Lcom/snapchat/android/ui/FitWidthViewGroup;->b:I
 
     .line 44
-    sget-object v0, Lmd$a;->FitWidthViewGroup:[I
+    sget-object v0, Lmv$a;->FitWidthViewGroup:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 

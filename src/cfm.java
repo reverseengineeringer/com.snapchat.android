@@ -1,10 +1,15 @@
-abstract class cfm
-  extends cfo
-  implements cff
+public final class cfm
+  extends RuntimeException
 {
-  cfm(int paramInt, String paramString, Class paramClass)
+  Throwable a;
+  
+  public cfm() {}
+  
+  public cfm(String paramString, Throwable paramThrowable) {}
+  
+  public final Throwable getCause()
   {
-    super(paramInt, paramString, paramClass);
+    return a;
   }
 }
 

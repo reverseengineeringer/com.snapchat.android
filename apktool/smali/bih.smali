@@ -4,39 +4,27 @@
 
 
 # instance fields
-.field protected height:Ljava/lang/Integer;
+.field protected cashTransaction:Lbic;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "height"
+        value = "cash_transaction"
     .end annotation
 .end field
 
-.field protected iv:Ljava/lang/String;
+.field protected chatMessage:Lbif;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "iv"
+        value = "chat_message"
     .end annotation
 .end field
 
-.field protected key:Ljava/lang/String;
+.field protected iterToken:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "key"
+        value = "iter_token"
     .end annotation
 .end field
 
-.field protected mediaId:Ljava/lang/String;
+.field protected snap:Lbiy;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "media_id"
-    .end annotation
-.end field
-
-.field protected mediaType:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "media_type"
-    .end annotation
-.end field
-
-.field protected width:Ljava/lang/Integer;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "width"
+        value = "snap"
     .end annotation
 .end field
 
@@ -46,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 16
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,107 +42,83 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Integer;)Lbih;
+.method public final a(Lbif;)Lbih;
     .locals 0
 
     .prologue
-    .line 126
-    iput-object p1, p0, Lbih;->width:Ljava/lang/Integer;
+    .line 57
+    iput-object p1, p0, Lbih;->chatMessage:Lbif;
 
-    .line 127
+    .line 58
     return-object p0
 .end method
 
-.method public final a(Ljava/lang/String;)Lbih;
-    .locals 0
-
-    .prologue
-    .line 45
-    iput-object p1, p0, Lbih;->mediaId:Ljava/lang/String;
-
-    .line 46
-    return-object p0
-.end method
-
-.method public final a()Ljava/lang/String;
+.method public final a()Lbiy;
     .locals 1
 
     .prologue
-    .line 50
-    iget-object v0, p0, Lbih;->mediaId:Ljava/lang/String;
+    .line 44
+    iget-object v0, p0, Lbih;->snap:Lbiy;
 
     return-object v0
 .end method
 
-.method public final b(Ljava/lang/Integer;)Lbih;
-    .locals 0
-
-    .prologue
-    .line 144
-    iput-object p1, p0, Lbih;->height:Ljava/lang/Integer;
-
-    .line 145
-    return-object p0
-.end method
-
-.method public final b(Ljava/lang/String;)Lbih;
-    .locals 0
-
-    .prologue
-    .line 81
-    iput-object p1, p0, Lbih;->key:Ljava/lang/String;
-
-    .line 82
-    return-object p0
-.end method
-
-.method public final b()Ljava/lang/String;
+.method public final b()Z
     .locals 1
 
     .prologue
-    .line 68
-    iget-object v0, p0, Lbih;->mediaType:Ljava/lang/String;
+    .line 48
+    iget-object v0, p0, Lbih;->snap:Lbiy;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final c()Lbif;
+    .locals 1
+
+    .prologue
+    .line 62
+    iget-object v0, p0, Lbih;->chatMessage:Lbif;
 
     return-object v0
 .end method
 
-.method public final c(Ljava/lang/String;)Lbih;
-    .locals 0
-
-    .prologue
-    .line 105
-    iput-object p1, p0, Lbih;->iv:Ljava/lang/String;
-
-    .line 106
-    return-object p0
-.end method
-
-.method public final c()Ljava/lang/String;
+.method public final d()Z
     .locals 1
 
     .prologue
-    .line 86
-    iget-object v0, p0, Lbih;->key:Ljava/lang/String;
+    .line 66
+    iget-object v0, p0, Lbih;->chatMessage:Lbif;
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final d()Ljava/lang/String;
+.method public final e()Lbic;
     .locals 1
 
     .prologue
-    .line 113
-    iget-object v0, p0, Lbih;->iv:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/lang/Integer;
-    .locals 1
-
-    .prologue
-    .line 131
-    iget-object v0, p0, Lbih;->width:Ljava/lang/Integer;
+    .line 80
+    iget-object v0, p0, Lbih;->cashTransaction:Lbic;
 
     return-object v0
 .end method
@@ -163,79 +127,63 @@
     .locals 3
 
     .prologue
-    .line 175
+    .line 122
     if-ne p1, p0, :cond_0
 
-    .line 176
+    .line 123
     const/4 v0, 0x1
 
-    .line 182
+    .line 129
     :goto_0
     return v0
 
-    .line 178
+    .line 125
     :cond_0
     instance-of v0, p1, Lbih;
 
     if-nez v0, :cond_1
 
-    .line 179
+    .line 126
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 181
+    .line 128
     :cond_1
     check-cast p1, Lbih;
 
-    .line 182
+    .line 129
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbih;->mediaId:Ljava/lang/String;
+    iget-object v1, p0, Lbih;->snap:Lbiy;
 
-    iget-object v2, p1, Lbih;->mediaId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbih;->mediaType:Ljava/lang/String;
-
-    iget-object v2, p1, Lbih;->mediaType:Ljava/lang/String;
+    iget-object v2, p1, Lbih;->snap:Lbiy;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbih;->key:Ljava/lang/String;
+    iget-object v1, p0, Lbih;->chatMessage:Lbif;
 
-    iget-object v2, p1, Lbih;->key:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbih;->iv:Ljava/lang/String;
-
-    iget-object v2, p1, Lbih;->iv:Ljava/lang/String;
+    iget-object v2, p1, Lbih;->chatMessage:Lbif;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbih;->width:Ljava/lang/Integer;
+    iget-object v1, p0, Lbih;->cashTransaction:Lbic;
 
-    iget-object v2, p1, Lbih;->width:Ljava/lang/Integer;
+    iget-object v2, p1, Lbih;->cashTransaction:Lbic;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbih;->height:Ljava/lang/Integer;
+    iget-object v1, p0, Lbih;->iterToken:Ljava/lang/String;
 
-    iget-object v2, p1, Lbih;->height:Ljava/lang/Integer;
+    iget-object v2, p1, Lbih;->iterToken:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -248,56 +196,84 @@
     goto :goto_0
 .end method
 
-.method public final f()Ljava/lang/Integer;
+.method public final f()Z
     .locals 1
 
     .prologue
-    .line 149
-    iget-object v0, p0, Lbih;->height:Ljava/lang/Integer;
+    .line 84
+    iget-object v0, p0, Lbih;->cashTransaction:Lbic;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final g()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 98
+    iget-object v0, p0, Lbih;->iterToken:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public final h()Z
+    .locals 1
+
+    .prologue
+    .line 102
+    iget-object v0, p0, Lbih;->iterToken:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public final hashCode()I
     .locals 2
 
     .prologue
-    .line 163
+    .line 112
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbih;->mediaId:Ljava/lang/String;
+    iget-object v1, p0, Lbih;->snap:Lbiy;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbih;->mediaType:Ljava/lang/String;
+    iget-object v1, p0, Lbih;->chatMessage:Lbif;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbih;->key:Ljava/lang/String;
+    iget-object v1, p0, Lbih;->cashTransaction:Lbic;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbih;->iv:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbih;->width:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbih;->height:Ljava/lang/Integer;
+    iget-object v1, p0, Lbih;->iterToken:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -314,7 +290,7 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 107
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

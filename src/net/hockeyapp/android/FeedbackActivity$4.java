@@ -2,10 +2,10 @@ package net.hockeyapp.android;
 
 import android.widget.ListView;
 import android.widget.TextView;
-import bvo;
-import bvr;
-import bvt;
-import bvu;
+import bwp;
+import bws;
+import bwu;
+import bwv;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.Iterator;
 final class FeedbackActivity$4
   implements Runnable
 {
-  FeedbackActivity$4(FeedbackActivity paramFeedbackActivity, bvu parambvu) {}
+  FeedbackActivity$4(FeedbackActivity paramFeedbackActivity, bwv parambwv) {}
   
   public final void run()
   {
@@ -34,7 +34,7 @@ final class FeedbackActivity$4
       FeedbackActivity.f(b).setText(String.format("Last Updated: %s", new Object[] { localSimpleDateFormat.format((Date)localObject2) }));
       if (FeedbackActivity.g(b) == null)
       {
-        FeedbackActivity.a(b, new bvo(FeedbackActivity.c(b), FeedbackActivity.e(b)));
+        FeedbackActivity.a(b, new bwp(FeedbackActivity.c(b), FeedbackActivity.e(b)));
         FeedbackActivity.h(b).setAdapter(FeedbackActivity.g(b));
         return;
       }
@@ -52,8 +52,8 @@ final class FeedbackActivity$4
         localObject1 = FeedbackActivity.e(b).iterator();
         while (((Iterator)localObject1).hasNext())
         {
-          localObject2 = (bvt)((Iterator)localObject1).next();
-          bvo localbvo = FeedbackActivity.g(b);
+          localObject2 = (bwu)((Iterator)localObject1).next();
+          bwp localbwp = FeedbackActivity.g(b);
           if ((localObject2 != null) && (a != null)) {
             a.add(localObject2);
           }

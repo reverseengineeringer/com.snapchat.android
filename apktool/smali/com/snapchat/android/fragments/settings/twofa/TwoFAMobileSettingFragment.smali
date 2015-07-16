@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method protected final a(Lbkr;)V
+.method protected final a(Lbls;)V
     .locals 0
 
     .prologue
@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     .line 91
     :cond_0
@@ -100,7 +100,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAMobileSettingFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 107
     return-void
@@ -111,11 +111,11 @@
 
     .prologue
     .line 69
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;
 
@@ -133,7 +133,7 @@
 
     move-result-object v4
 
-    invoke-direct {v1, v2, v3, v4}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3, v4}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -141,12 +141,12 @@
     return-void
 .end method
 
-.method protected final m()Lbks$a;
+.method protected final m()Lblt$a;
     .locals 1
 
     .prologue
     .line 95
-    sget-object v0, Lbks$a;->TWO_FA_TYPE:Lbks$a;
+    sget-object v0, Lblt$a;->TWO_FA_TYPE:Lblt$a;
 
     return-object v0
 .end method
@@ -156,7 +156,7 @@
 
     .prologue
     .line 37
-    const v0, 0x7f0400c5
+    const v0, 0x7f0400c7
 
     const/4 v1, 0x0
 
@@ -182,7 +182,7 @@
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFAMobileSettingFragment;->o()V
 
     .line 45
-    const v0, 0x7f0a040c
+    const v0, 0x7f0a0405
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFAMobileSettingFragment;->c(I)Landroid/view/View;
 
@@ -195,7 +195,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 53
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -204,7 +204,7 @@
     .line 54
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAMobileSettingFragment;->g:Landroid/widget/EditText;
 
-    invoke-static {}, Lajx;->e()Ljava/lang/String;
+    invoke-static {}, Lakr;->e()Ljava/lang/String;
 
     move-result-object v1
 
@@ -227,7 +227,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lajx;->aF()Z
+    invoke-static {}, Lakr;->aE()Z
 
     move-result v0
 
@@ -236,7 +236,7 @@
     .line 57
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAMobileSettingFragment;->e:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     goto :goto_0
 .end method
@@ -257,14 +257,14 @@
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 113
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbet;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbfs;)V
 
     .line 114
     return-void

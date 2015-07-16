@@ -1,11 +1,11 @@
 package com.snapchat.android.fragments.addfriends;
 
-import bkf;
+import blg;
 
 final class FindNearbyFriendsWorker$5
   implements Runnable
 {
-  FindNearbyFriendsWorker$5(FindNearbyFriendsWorker paramFindNearbyFriendsWorker, bkf parambkf) {}
+  FindNearbyFriendsWorker$5(FindNearbyFriendsWorker paramFindNearbyFriendsWorker, blg paramblg) {}
   
   public final void run()
   {

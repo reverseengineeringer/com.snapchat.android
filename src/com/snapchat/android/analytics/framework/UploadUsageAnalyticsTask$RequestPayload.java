@@ -1,12 +1,12 @@
 package com.snapchat.android.analytics.framework;
 
 import com.google.gson.annotations.SerializedName;
-import pl;
-import tn;
+import qc;
+import ud;
 
-@tn
+@ud
 public class UploadUsageAnalyticsTask$RequestPayload
-  extends pl
+  extends qc
 {
   @SerializedName("events")
   final String a;

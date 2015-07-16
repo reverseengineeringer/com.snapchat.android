@@ -14,7 +14,7 @@
     value = {
         "Lcom/snapchat/android/database/table/DbTable",
         "<",
-        "Lakb;",
+        "Lakw;",
         ">;"
     }
 .end annotation
@@ -285,27 +285,13 @@
     invoke-virtual {v0, v1, p4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 88
-    const-string v1, "ChatsReceivedInLastHourTable"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "insert "
 
-    const-string v3, "insert "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 90
     invoke-static {p0}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
@@ -480,16 +466,16 @@
     return-object v0
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
-            "Lakb;",
+            "Lakw;",
             ">;"
         }
     .end annotation
@@ -501,7 +487,7 @@
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
+.method public final b(Lakp;)V
     .locals 0
 
     .prologue
@@ -509,7 +495,7 @@
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue

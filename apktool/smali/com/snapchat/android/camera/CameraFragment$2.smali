@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1134
+    .line 1132
     iput-object p1, p0, Lcom/snapchat/android/camera/CameraFragment$2;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,9 +40,9 @@
     .locals 0
 
     .prologue
-    .line 1136
+    .line 1134
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 1137
+    .line 1135
     return-void
 .end method

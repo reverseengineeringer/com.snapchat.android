@@ -1,15 +1,15 @@
-.class public final Lne;
+.class public interface abstract Lne;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# virtual methods
+.method public abstract a(Ljava/lang/String;)Landroid/os/Bundle;
+.end method
 
-    .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+.method public abstract a(Lnf;)V
+    .param p1    # Lnf;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 .end method

@@ -8,22 +8,22 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.animation.Transformation;
-import bus;
-import bux;
-import buy;
+import bvt;
+import bvy;
+import bvz;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import java.util.ArrayList;
 
 public class StoreHouseHeader
   extends View
-  implements bus
+  implements bvt
 {
-  public ArrayList<bux> a = new ArrayList();
-  private int b = buy.a(1.0F);
+  public ArrayList<bvy> a = new ArrayList();
+  private int b = bvz.a(1.0F);
   private float c = 1.0F;
-  private int d = buy.a(40.0F);
+  private int d = bvz.a(40.0F);
   private float e = 0.7F;
-  private int f = buy.a / 2;
+  private int f = bvz.a / 2;
   private float g = 0.0F;
   private int h = 0;
   private int i = 0;
@@ -63,12 +63,12 @@ public class StoreHouseHeader
   
   private int getBottomOffset()
   {
-    return getPaddingBottom() + buy.a(10.0F);
+    return getPaddingBottom() + bvz.a(10.0F);
   }
   
   private int getTopOffset()
   {
-    return getPaddingTop() + buy.a(10.0F);
+    return getPaddingTop() + bvz.a(10.0F);
   }
   
   private void setProgress(float paramFloat)
@@ -82,7 +82,7 @@ public class StoreHouseHeader
     int i1 = 0;
     while (i1 < a.size())
     {
-      ((bux)a.get(i1)).a(f);
+      ((bvy)a.get(i1)).a(f);
       i1 += 1;
     }
   }
@@ -127,14 +127,14 @@ public class StoreHouseHeader
     if (i1 < i3)
     {
       paramCanvas.save();
-      bux localbux = (bux)a.get(i1);
+      bvy localbvy = (bvy)a.get(i1);
       float f1 = j;
       float f3 = a.x + f1;
       f1 = k;
       float f4 = a.y + f1;
       if (s)
       {
-        localbux.getTransformation(getDrawingTime(), r);
+        localbvy.getTransformation(getDrawingTime(), r);
         paramCanvas.translate(f3, f4);
       }
       label191:
@@ -150,7 +150,7 @@ public class StoreHouseHeader
           if (f2 != 0.0F) {
             break label191;
           }
-          localbux.a(f);
+          localbvy.a(f);
         }
         f1 = (1.0F - e) * i1 / i3;
         f5 = e;
@@ -158,7 +158,7 @@ public class StoreHouseHeader
           break label251;
         }
         paramCanvas.translate(f3, f4);
-        localbux.a(l);
+        localbvy.a(l);
       }
       label251:
       if (f2 <= f1) {}
@@ -170,7 +170,7 @@ public class StoreHouseHeader
         localMatrix.postRotate(360.0F * f1);
         localMatrix.postScale(f1, f1);
         localMatrix.postTranslate(f3 + f5 * (1.0F - f1), f4 + f6 * (1.0F - f1));
-        localbux.a(f1 * l);
+        localbvy.a(f1 * l);
         paramCanvas.concat(localMatrix);
         break;
       }
@@ -222,12 +222,12 @@ public class StoreHouseHeader
         if (m <= b)
         {
           int n = a.size();
-          bux localbux = (bux)a.get(m % n);
-          localbux.setFillAfter(false);
-          localbux.setFillEnabled(true);
-          localbux.setFillBefore(false);
-          localbux.setDuration(StoreHouseHeader.c(StoreHouseHeader.this));
-          localbux.a(StoreHouseHeader.d(StoreHouseHeader.this), StoreHouseHeader.e(StoreHouseHeader.this));
+          bvy localbvy = (bvy)a.get(m % n);
+          localbvy.setFillAfter(false);
+          localbvy.setFillEnabled(true);
+          localbvy.setFillBefore(false);
+          localbvy.setDuration(StoreHouseHeader.c(StoreHouseHeader.this));
+          localbvy.a(StoreHouseHeader.d(StoreHouseHeader.this), StoreHouseHeader.e(StoreHouseHeader.this));
         }
         i += 1;
       }

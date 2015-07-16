@@ -1,352 +1,175 @@
-.class final Lblf;
+.class public Lblf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
-    .annotation build Lcgb;
+.field protected lastAddressBookUpdatedDate:Ljava/lang/Long;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "last_address_book_updated_date"
+    .end annotation
+.end field
+
+.field protected results:Ljava/util/List;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "results"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbiu;",
+            ">;"
+        }
     .end annotation
 .end field
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>()V
+    .locals 2
 
     .prologue
-    .line 21
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
-    if-nez p1, :cond_0
+    .line 29
+    const-wide/16 v0, 0x0
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+    move-result-object v0
 
-    throw v0
+    iput-object v0, p0, Lblf;->lastAddressBookUpdatedDate:Ljava/lang/Long;
 
-    .line 24
-    :cond_0
-    iput-object p1, p0, Lblf;->a:Ljava/lang/String;
-
-    .line 25
     return-void
-.end method
-
-.method static b(Ljava/io/BufferedReader;)Ljava/lang/String;
-    .locals 3
-    .param p0    # Ljava/io/BufferedReader;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 56
-    :cond_0
-    invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    const-string v1, "\"main\" .*"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 57
-    :cond_1
-    invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    const-string v1, "  \\| .*"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    .line 59
-    :cond_2
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 60
-    const-string v2, "AppNotRespondingError\n"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 61
-    :goto_0
-    if-eqz v0, :cond_3
-
-    const-string v2, " *"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    .line 62
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 63
-    const/16 v0, 0xa
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 64
-    invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 67
-    :cond_3
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method final a(Ljava/io/BufferedReader;)J
-    .locals 9
-    .param p1    # Ljava/io/BufferedReader;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lbiu;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    const/4 v8, 0x0
+    .line 52
+    iget-object v0, p0, Lblf;->results:Ljava/util/List;
 
-    .line 43
-    const-string v0, ""
+    return-object v0
+.end method
 
-    .line 46
+.method public final b()Ljava/lang/Long;
+    .locals 1
+
+    .prologue
+    .line 79
+    iget-object v0, p0, Lblf;->lastAddressBookUpdatedDate:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .prologue
+    .line 101
+    if-ne p1, p0, :cond_0
+
+    .line 102
+    const/4 v0, 0x1
+
+    .line 108
     :goto_0
-    invoke-virtual {p1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    return v0
 
-    move-result-object v1
-
-    .line 47
-    if-nez v1, :cond_0
-
-    const-wide/16 v0, -0x1
-
-    .line 49
-    :goto_1
-    return-wide v0
-
-    .line 48
+    .line 104
     :cond_0
-    new-instance v2, Ljava/lang/StringBuilder;
+    instance-of v0, p1, Lblf;
 
-    const-string v3, "Cmd line: "
+    if-nez v0, :cond_1
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p0, Lblf;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    .line 49
-    const-string v1, "----- .*at "
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    aget-object v0, v0, v1
-
-    const-string v1, " -----"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    aget-object v2, v0, v8
-
-    const-string v0, "yyyy-MM-dd HH:mm:ss"
-
-    invoke-static {v0}, Lcjv;->a(Ljava/lang/String;)Lcjw;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcjw;->b()Lcjy;
-
-    move-result-object v1
-
+    .line 105
     const/4 v0, 0x0
 
-    invoke-virtual {v3, v0}, Lcjw;->b(Lcgf;)Lcgf;
+    goto :goto_0
 
-    move-result-object v0
-
-    new-instance v4, Lcjz;
-
-    iget-object v5, v3, Lcjw;->c:Ljava/util/Locale;
-
-    iget-object v6, v3, Lcjw;->f:Ljava/lang/Integer;
-
-    iget v7, v3, Lcjw;->g:I
-
-    invoke-direct {v4, v0, v5, v6, v7}, Lcjz;-><init>(Lcgf;Ljava/util/Locale;Ljava/lang/Integer;I)V
-
-    invoke-interface {v1, v4, v2, v8}, Lcjy;->a(Lcjz;Ljava/lang/String;I)I
-
-    move-result v1
-
-    if-ltz v1, :cond_4
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-lt v1, v5, :cond_7
-
-    invoke-virtual {v4, v2}, Lcjz;->a(Ljava/lang/String;)J
-
-    move-result-wide v6
-
-    iget-boolean v1, v3, Lcjw;->d:Z
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, v4, Lcjz;->c:Ljava/lang/Integer;
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, v4, Lcjz;->c:Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v1}, Lcgk;->a(I)Lcgk;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcgf;->a(Lcgk;)Lcgf;
-
-    move-result-object v0
-
+    .line 107
     :cond_1
-    :goto_2
-    new-instance v1, Lcgg;
+    check-cast p1, Lblf;
 
-    invoke-direct {v1, v6, v7, v0}, Lcgg;-><init>(JLcgf;)V
+    .line 108
+    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
-    iget-object v0, v3, Lcjw;->e:Lcgk;
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    if-eqz v0, :cond_6
+    iget-object v1, p0, Lblf;->results:Ljava/util/List;
 
-    iget-object v0, v3, Lcjw;->e:Lcgk;
+    iget-object v2, p1, Lblf;->results:Ljava/util/List;
 
-    iget-object v2, v1, Lchg;->b:Lcgf;
-
-    invoke-virtual {v2, v0}, Lcgf;->a(Lcgk;)Lcgf;
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcgj;->a(Lcgf;)Lcgf;
+    iget-object v1, p0, Lblf;->lastAddressBookUpdatedDate:Ljava/lang/Long;
 
-    move-result-object v2
+    iget-object v2, p1, Lblf;->lastAddressBookUpdatedDate:Ljava/lang/Long;
 
-    iget-object v0, v1, Lchg;->b:Lcgf;
-
-    if-ne v2, v0, :cond_3
-
-    move-object v0, v1
-
-    :goto_3
-    iget-wide v0, v0, Lchg;->a:J
-
-    goto/16 :goto_1
-
-    :cond_2
-    iget-object v1, v4, Lcjz;->b:Lcgk;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, v4, Lcjz;->b:Lcgk;
-
-    invoke-virtual {v0, v1}, Lcgf;->a(Lcgk;)Lcgf;
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    goto :goto_2
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
 
-    :cond_3
-    new-instance v0, Lcgg;
+    move-result v0
 
-    iget-wide v4, v1, Lchg;->a:J
+    goto :goto_0
+.end method
 
-    invoke-direct {v0, v4, v5, v2}, Lcgg;-><init>(JLcgf;)V
+.method public hashCode()I
+    .locals 2
 
-    goto :goto_3
+    .prologue
+    .line 93
+    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
-    :cond_4
-    xor-int/lit8 v0, v1, -0x1
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    :goto_4
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    iget-object v1, p0, Lblf;->results:Ljava/util/List;
 
-    invoke-static {v2, v0}, Lckb;->b(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lblf;->lastAddressBookUpdatedDate:Ljava/lang/Long;
 
-    throw v1
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
-    :cond_5
-    move-object v0, v1
+    move-result-object v0
 
-    .line 51
-    goto/16 :goto_0
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
 
-    :cond_6
-    move-object v0, v1
+    move-result v0
 
-    goto :goto_3
+    return v0
+.end method
 
-    :cond_7
-    move v0, v1
+.method public toString()Ljava/lang/String;
+    .locals 1
 
-    goto :goto_4
+    .prologue
+    .line 88
+    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

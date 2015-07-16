@@ -1,228 +1,148 @@
-import java.io.Serializable;
+import com.google.gson.Gson;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonSerializer;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.internal..Gson.Preconditions;
+import com.google.gson.internal.Streams;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
-public final class er
+public final class er<T>
+  extends TypeAdapter<T>
 {
-  public static final class a
-    implements Serializable
+  private final JsonSerializer<T> a;
+  private final JsonDeserializer<T> b;
+  private final Gson c;
+  private final TypeToken<T> d;
+  private final TypeAdapterFactory e;
+  private TypeAdapter<T> f;
+  
+  private er(JsonSerializer<T> paramJsonSerializer, JsonDeserializer<T> paramJsonDeserializer, Gson paramGson, TypeToken<T> paramTypeToken, TypeAdapterFactory paramTypeAdapterFactory)
   {
-    int a = 0;
-    long b = 0L;
-    boolean c;
-    String d = "";
-    boolean e = false;
-    int f = 1;
-    boolean g;
-    String h = "";
-    er.a.a i = er.a.a.a;
-    private boolean j;
-    private boolean k;
-    private boolean l;
-    private boolean m;
-    private boolean n;
-    private boolean o;
-    private String p = "";
-    
-    public final a a()
-    {
-      c = false;
-      d = "";
-      return this;
+    a = paramJsonSerializer;
+    b = paramJsonDeserializer;
+    c = paramGson;
+    d = paramTypeToken;
+    e = paramTypeAdapterFactory;
+  }
+  
+  private TypeAdapter<T> a()
+  {
+    TypeAdapter localTypeAdapter = f;
+    if (localTypeAdapter != null) {
+      return localTypeAdapter;
     }
-    
-    public final a a(int paramInt)
-    {
-      j = true;
-      a = paramInt;
-      return this;
+    localTypeAdapter = c.getDelegateAdapter(e, d);
+    f = localTypeAdapter;
+    return localTypeAdapter;
+  }
+  
+  public static TypeAdapterFactory a(TypeToken<?> paramTypeToken, Object paramObject)
+  {
+    return new er.a(paramObject, paramTypeToken, false, null, (byte)0);
+  }
+  
+  public static TypeAdapterFactory a(Class<?> paramClass, Object paramObject)
+  {
+    return new er.a(paramObject, null, false, paramClass, (byte)0);
+  }
+  
+  public static TypeAdapterFactory b(TypeToken<?> paramTypeToken, Object paramObject)
+  {
+    if (paramTypeToken.getType() == paramTypeToken.getRawType()) {}
+    for (boolean bool = true;; bool = false) {
+      return new er.a(paramObject, paramTypeToken, bool, null, (byte)0);
     }
-    
-    public final a a(long paramLong)
-    {
-      k = true;
-      b = paramLong;
-      return this;
+  }
+  
+  public final T read(JsonReader paramJsonReader)
+  {
+    if (b == null) {
+      return (T)a().read(paramJsonReader);
     }
-    
-    public final a a(er.a.a parama)
-    {
-      if (parama == null) {
-        throw new NullPointerException();
-      }
-      n = true;
-      i = parama;
-      return this;
+    paramJsonReader = Streams.parse(paramJsonReader);
+    if (paramJsonReader.isJsonNull()) {
+      return null;
     }
-    
-    public final a a(a parama)
+    return (T)b.deserialize(paramJsonReader, d.getType(), c.a);
+  }
+  
+  public final void write(JsonWriter paramJsonWriter, T paramT)
+  {
+    if (a == null)
     {
-      if (j) {
-        a(a);
-      }
-      if (k) {
-        a(b);
-      }
-      if (c) {
-        a(d);
-      }
-      if (l) {
-        a(e);
-      }
-      if (m) {
-        b(f);
-      }
-      if (g) {
-        b(h);
-      }
-      if (n) {
-        a(i);
-      }
-      if (o) {
-        c(p);
-      }
-      return this;
+      a().write(paramJsonWriter, paramT);
+      return;
     }
-    
-    public final a a(String paramString)
+    if (paramT == null)
     {
-      if (paramString == null) {
-        throw new NullPointerException();
-      }
-      c = true;
-      d = paramString;
-      return this;
+      paramJsonWriter.nullValue();
+      return;
     }
+    Streams.write(a.serialize(paramT, d.getType(), c.b), paramJsonWriter);
+  }
+  
+  static final class a
+    implements TypeAdapterFactory
+  {
+    private final TypeToken<?> a;
+    private final boolean b;
+    private final Class<?> c;
+    private final JsonSerializer<?> d;
+    private final JsonDeserializer<?> e;
     
-    public final a a(boolean paramBoolean)
+    private a(Object paramObject, TypeToken<?> paramTypeToken, boolean paramBoolean, Class<?> paramClass)
     {
-      l = true;
-      e = paramBoolean;
-      return this;
-    }
-    
-    public final a b()
-    {
-      g = false;
-      h = "";
-      return this;
-    }
-    
-    public final a b(int paramInt)
-    {
-      m = true;
-      f = paramInt;
-      return this;
-    }
-    
-    public final a b(String paramString)
-    {
-      if (paramString == null) {
-        throw new NullPointerException();
-      }
-      g = true;
-      h = paramString;
-      return this;
-    }
-    
-    public final boolean b(a parama)
-    {
-      if (parama == null) {}
-      do
+      JsonSerializer localJsonSerializer;
+      if ((paramObject instanceof JsonSerializer))
       {
-        return false;
-        if (this == parama) {
-          return true;
+        localJsonSerializer = (JsonSerializer)paramObject;
+        d = localJsonSerializer;
+        if (!(paramObject instanceof JsonDeserializer)) {
+          break label85;
         }
-      } while ((a != a) || (b != b) || (!d.equals(d)) || (e != e) || (f != f) || (!h.equals(h)) || (i != i) || (!p.equals(p)) || (o != o));
-      return true;
-    }
-    
-    public final a c()
-    {
-      n = false;
-      i = er.a.a.a;
-      return this;
-    }
-    
-    public final a c(String paramString)
-    {
-      if (paramString == null) {
-        throw new NullPointerException();
-      }
-      o = true;
-      p = paramString;
-      return this;
-    }
-    
-    public final a d()
-    {
-      o = false;
-      p = "";
-      return this;
-    }
-    
-    public final boolean equals(Object paramObject)
-    {
-      return ((paramObject instanceof a)) && (b((a)paramObject));
-    }
-    
-    public final int hashCode()
-    {
-      int i2 = 1231;
-      int i3 = a;
-      int i4 = Long.valueOf(b).hashCode();
-      int i5 = d.hashCode();
-      int i1;
-      int i6;
-      int i7;
-      int i8;
-      int i9;
-      if (e)
-      {
-        i1 = 1231;
-        i6 = f;
-        i7 = h.hashCode();
-        i8 = i.hashCode();
-        i9 = p.hashCode();
-        if (!o) {
-          break label140;
+        paramObject = (JsonDeserializer)paramObject;
+        label35:
+        e = ((JsonDeserializer)paramObject);
+        if ((d == null) && (e == null)) {
+          break label90;
         }
       }
-      for (;;)
+      label85:
+      label90:
+      for (boolean bool = true;; bool = false)
       {
-        return (((((i1 + (((i3 + 2173) * 53 + i4) * 53 + i5) * 53) * 53 + i6) * 53 + i7) * 53 + i8) * 53 + i9) * 53 + i2;
-        i1 = 1237;
+        .Gson.Preconditions.checkArgument(bool);
+        a = paramTypeToken;
+        b = paramBoolean;
+        c = paramClass;
+        return;
+        localJsonSerializer = null;
         break;
-        label140:
-        i2 = 1237;
+        paramObject = null;
+        break label35;
       }
     }
     
-    public final String toString()
+    public final <T> TypeAdapter<T> create(Gson paramGson, TypeToken<T> paramTypeToken)
     {
-      StringBuilder localStringBuilder = new StringBuilder();
-      localStringBuilder.append("Country Code: ").append(a);
-      localStringBuilder.append(" National Number: ").append(b);
-      if ((l) && (e)) {
-        localStringBuilder.append(" Leading Zero(s): true");
+      boolean bool;
+      if (a != null) {
+        if ((a.equals(paramTypeToken)) || ((b) && (a.getType() == paramTypeToken.getRawType()))) {
+          bool = true;
+        }
       }
-      if (m) {
-        localStringBuilder.append(" Number of leading zeros: ").append(f);
+      while (bool)
+      {
+        return new er(d, e, paramGson, paramTypeToken, this, (byte)0);
+        bool = false;
+        continue;
+        bool = c.isAssignableFrom(paramTypeToken.getRawType());
       }
-      if (c) {
-        localStringBuilder.append(" Extension: ").append(d);
-      }
-      if (n) {
-        localStringBuilder.append(" Country Code Source: ").append(i);
-      }
-      if (o) {
-        localStringBuilder.append(" Preferred Domestic Carrier Code: ").append(p);
-      }
-      return localStringBuilder.toString();
-    }
-    
-    public static enum a
-    {
-      private a() {}
+      return null;
     }
   }
 }

@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 53
+    .line 54
     new-instance v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     const-string v1, "INTRO_VIDEO"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INTRO_VIDEO:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
-    .line 54
+    .line 55
     new-instance v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     const-string v1, "FILLED_ICON"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
-    .line 55
+    .line 56
     new-instance v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     const-string v1, "INVERTED_ICON"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
-    .line 56
+    .line 57
     new-instance v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     const-string v1, "LOADING_ICON"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
-    .line 52
+    .line 53
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 53
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -129,7 +129,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 53
     const-class v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -145,7 +145,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 53
     sget-object v0, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->$VALUES:[Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->clone()Ljava/lang/Object;

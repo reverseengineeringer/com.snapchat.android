@@ -1,82 +1,42 @@
-.class public Lfh;
-.super Ljava/util/AbstractList;
+.class public final Lfh;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<E:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/util/AbstractList",
-        "<TE;>;"
-    }
-.end annotation
-
-
-# static fields
-.field private static final c:Lfi;
+# interfaces
+.implements Lfg;
 
 
 # instance fields
-.field a:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<TE;>;"
-        }
-    .end annotation
-.end field
+.field a:Ljava/nio/channels/FileChannel;
 
-.field b:Ljava/util/Iterator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Iterator",
-            "<TE;>;"
-        }
-    .end annotation
-.end field
+.field b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/io/File;)V
     .locals 1
 
     .prologue
-    .line 13
-    const-class v0, Lfh;
+    .line 19
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lfi;->a(Ljava/lang/Class;)Lfi;
+    .line 20
+    new-instance v0, Ljava/io/FileInputStream;
+
+    invoke-direct {v0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    invoke-virtual {v0}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
     move-result-object v0
 
-    sput-object v0, Lfh;->c:Lfi;
+    iput-object v0, p0, Lfh;->a:Ljava/nio/channels/FileChannel;
 
-    return-void
-.end method
+    .line 21
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
-.method public constructor <init>(Ljava/util/List;Ljava/util/Iterator;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<TE;>;",
-            "Ljava/util/Iterator",
-            "<TE;>;)V"
-        }
-    .end annotation
+    move-result-object v0
 
-    .prologue
-    .line 18
-    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
-
-    .line 19
-    iput-object p1, p0, Lfh;->a:Ljava/util/List;
-
-    .line 20
-    iput-object p2, p0, Lfh;->b:Ljava/util/Iterator;
+    iput-object v0, p0, Lfh;->b:Ljava/lang/String;
 
     .line 22
     return-void
@@ -84,138 +44,120 @@
 
 
 # virtual methods
-.method public get(I)Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)TE;"
-        }
-    .end annotation
-
-    .prologue
-    .line 37
-    iget-object v0, p0, Lfh;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-le v0, p1, :cond_0
-
-    .line 38
-    iget-object v0, p0, Lfh;->a:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 42
-    :goto_0
-    return-object v0
-
-    .line 40
-    :cond_0
-    iget-object v0, p0, Lfh;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 41
-    iget-object v0, p0, Lfh;->a:Ljava/util/List;
-
-    iget-object v1, p0, Lfh;->b:Ljava/util/Iterator;
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 42
-    invoke-virtual {p0, p1}, Lfh;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 44
-    :cond_1
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-.end method
-
-.method public iterator()Ljava/util/Iterator;
+.method public final a(Ljava/nio/ByteBuffer;)I
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Iterator",
-            "<TE;>;"
-        }
-    .end annotation
 
     .prologue
-    .line 51
-    new-instance v0, Lfh$1;
+    .line 41
+    iget-object v0, p0, Lfh;->a:Ljava/nio/channels/FileChannel;
 
-    invoke-direct {v0, p0}, Lfh$1;-><init>(Lfh;)V
-
-    return-object v0
-.end method
-
-.method public size()I
-    .locals 2
-
-    .prologue
-    .line 76
-    sget-object v0, Lfh;->c:Lfi;
-
-    const-string v1, "potentially expensive size() call"
-
-    invoke-virtual {v0, v1}, Lfi;->a(Ljava/lang/String;)V
-
-    .line 77
-    sget-object v0, Lfh;->c:Lfi;
-
-    const-string v1, "blowup running"
-
-    invoke-virtual {v0, v1}, Lfi;->a(Ljava/lang/String;)V
-
-    :goto_0
-    iget-object v0, p0, Lfh;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 78
-    iget-object v0, p0, Lfh;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-virtual {v0, p1}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;)I
 
     move-result v0
 
     return v0
+.end method
 
-    .line 77
-    :cond_0
-    iget-object v0, p0, Lfh;->a:Ljava/util/List;
+.method public final a()J
+    .locals 2
 
-    iget-object v1, p0, Lfh;->b:Ljava/util/Iterator;
+    .prologue
+    .line 45
+    iget-object v0, p0, Lfh;->a:Ljava/nio/channels/FileChannel;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->size()J
 
-    move-result-object v1
+    move-result-wide v0
 
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    return-wide v0
+.end method
 
-    goto :goto_0
+.method public final a(JJLjava/nio/channels/WritableByteChannel;)J
+    .locals 7
+
+    .prologue
+    .line 57
+    iget-object v1, p0, Lfh;->a:Ljava/nio/channels/FileChannel;
+
+    move-wide v2, p1
+
+    move-wide v4, p3
+
+    move-object v6, p5
+
+    invoke-virtual/range {v1 .. v6}, Ljava/nio/channels/FileChannel;->transferTo(JJLjava/nio/channels/WritableByteChannel;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final a(JJ)Ljava/nio/ByteBuffer;
+    .locals 7
+
+    .prologue
+    .line 61
+    iget-object v0, p0, Lfh;->a:Ljava/nio/channels/FileChannel;
+
+    sget-object v1, Ljava/nio/channels/FileChannel$MapMode;->READ_ONLY:Ljava/nio/channels/FileChannel$MapMode;
+
+    move-wide v2, p1
+
+    move-wide v4, p3
+
+    invoke-virtual/range {v0 .. v5}, Ljava/nio/channels/FileChannel;->map(Ljava/nio/channels/FileChannel$MapMode;JJ)Ljava/nio/MappedByteBuffer;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(J)V
+    .locals 1
+
+    .prologue
+    .line 53
+    iget-object v0, p0, Lfh;->a:Ljava/nio/channels/FileChannel;
+
+    invoke-virtual {v0, p1, p2}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
+
+    .line 54
+    return-void
+.end method
+
+.method public final b()J
+    .locals 2
+
+    .prologue
+    .line 49
+    iget-object v0, p0, Lfh;->a:Ljava/nio/channels/FileChannel;
+
+    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->position()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final close()V
+    .locals 1
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lfh;->a:Ljava/nio/channels/FileChannel;
+
+    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->close()V
+
+    .line 66
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 70
+    iget-object v0, p0, Lfh;->b:Ljava/lang/String;
+
+    return-object v0
 .end method

@@ -1,5 +1,5 @@
 .class public final Lcom/snapchat/android/util/cache/DiscoverShareCache;
-.super Lawp;
+.super Laxn;
 .source "SourceFile"
 
 
@@ -24,7 +24,7 @@
     .line 33
     const-wide/16 v0, 0x5a0
 
-    invoke-direct {p0, p1, v0, v1}, Lawp;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+    invoke-direct {p0, p1, v0, v1}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
 
     .line 34
     return-void
@@ -120,13 +120,13 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Ljava/lang/String;Layc;)Landroid/graphics/Bitmap;
+.method public final a(Landroid/content/Context;Ljava/lang/String;Laza;)Landroid/graphics/Bitmap;
     .locals 1
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -136,23 +136,23 @@
     .line 75
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Landroid/content/Context;Ljava/lang/String;Layc;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/content/Context;Ljava/lang/String;Layc;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.method public final a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .locals 6
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -172,20 +172,20 @@
 
     move-object v4, p4
 
-    invoke-virtual/range {v0 .. v5}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Landroid/content/Context;Ljava/lang/String;Layc;Landroid/graphics/Bitmap$Config;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Landroid/graphics/Bitmap;
+    invoke-virtual/range {v0 .. v5}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/content/Context;Ljava/lang/String;Layc;Landroid/graphics/Bitmap$Config;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Landroid/graphics/Bitmap;
+.method public final a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Landroid/graphics/Bitmap;
     .locals 1
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .annotation runtime Ljava/lang/Deprecated;
@@ -197,7 +197,7 @@
 
     move-result-object v0
 
-    invoke-super {p0, p1, v0, p3, p4}, Lawp;->a(Landroid/content/Context;Ljava/lang/String;Layc;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-super {p0, p1, v0, p3, p4}, Laxn;->a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -207,44 +207,30 @@
 .method public final a(Ljava/lang/String;[BLcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Ljava/lang/String;
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .prologue
-    const/4 v0, 0x0
-
     .line 109
     if-nez p1, :cond_2
 
     .line 110
-    const-string v1, "DiscoverShareCache"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v1, "put: Trying to put null key in "
 
-    const-string v3, "put: Trying to put null key in "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/snapchat/android/util/cache/DiscoverShareCache;->mCacheType:Lcom/snapchat/android/util/cache/CacheType;
 
-    iget-object v3, p0, Lcom/snapchat/android/util/cache/DiscoverShareCache;->mCacheType:Lcom/snapchat/android/util/cache/CacheType;
+    invoke-virtual {v1}, Lcom/snapchat/android/util/cache/CacheType;->name()Ljava/lang/String;
 
-    invoke-virtual {v3}, Lcom/snapchat/android/util/cache/CacheType;->name()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v0}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 111
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->e()Z
@@ -270,7 +256,7 @@
 
     .line 115
     :cond_2
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
     .line 117
     if-eqz p2, :cond_3
@@ -278,7 +264,7 @@
     array-length v0, p2
 
     .line 119
-    :cond_3
+    :goto_1
     invoke-static {p1, p3}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->c(Ljava/lang/String;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Ljava/lang/String;
 
     move-result-object v2
@@ -297,34 +283,44 @@
     move-result-object v0
 
     .line 125
-    :goto_1
+    :goto_2
     if-eqz v0, :cond_1
 
     .line 126
-    iget-object v1, p0, Lcom/snapchat/android/util/cache/DiscoverShareCache;->mKeyToUri:Ljava/util/Map;
+    iget-object v1, p0, Lcom/snapchat/android/util/cache/DiscoverShareCache;->mKeyToItemMap:Ljava/util/Map;
 
-    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Laxn$a;->a(Ljava/lang/String;)Laxn$a;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
+
+    .line 117
+    :cond_3
+    const/4 v0, 0x0
+
+    goto :goto_1
 
     :cond_4
     move-object v0, v1
 
-    goto :goto_1
+    goto :goto_2
 .end method
 
-.method public final a(Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap$CompressFormat;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;Layc;)V
+.method public final a(Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap$CompressFormat;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;Laza;)V
     .locals 2
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/graphics/Bitmap;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/graphics/Bitmap$CompressFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -348,7 +344,7 @@
     if-eqz p5, :cond_0
 
     .line 66
-    invoke-interface {p5, v0}, Layc;->a([B)[B
+    invoke-interface {p5, v0}, Laza;->a([B)[B
 
     move-result-object v0
 
@@ -363,13 +359,13 @@
 .method public final a(Ljava/lang/String;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)[B
     .locals 1
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .prologue
@@ -378,7 +374,7 @@
 
     move-result-object v0
 
-    invoke-super {p0, v0}, Lawp;->a(Ljava/lang/String;)[B
+    invoke-super {p0, v0}, Laxn;->a(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -388,7 +384,7 @@
 .method public final b(Ljava/lang/String;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Ljava/lang/String;
     .locals 1
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -398,7 +394,7 @@
 
     move-result-object v0
 
-    invoke-super {p0, v0}, Lawp;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-super {p0, v0}, Laxn;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -408,7 +404,7 @@
 .method public final c(Ljava/lang/String;)V
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -432,7 +428,7 @@
 
     move-result-object v3
 
-    invoke-super {p0, v3}, Lawp;->c(Ljava/lang/String;)V
+    invoke-super {p0, v3}, Laxn;->c(Ljava/lang/String;)V
 
     .line 133
     add-int/lit8 v0, v0, 0x1

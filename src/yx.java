@@ -1,73 +1,29 @@
-import android.os.SystemClock;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 public final class yx
+  implements bvp<yw>
 {
-  public final Object a = new Object();
-  public final Set<yy> b = new LinkedHashSet();
-  public final aje c;
-  public final boolean d;
-  public long e = Long.MAX_VALUE;
-  public long f = Long.MAX_VALUE;
-  private final bgk g;
+  private final bvk<yw> b;
   
-  public yx(aje paramaje, boolean paramBoolean)
+  static
   {
-    this(new bgk(), paramaje, paramBoolean);
-  }
-  
-  private yx(bgk parambgk, aje paramaje, boolean paramBoolean)
-  {
-    g = parambgk;
-    c = paramaje;
-    d = paramBoolean;
-  }
-  
-  public final long a()
-  {
-    if (!c()) {
-      throw new IllegalStateException("Countdown not yet started for this snap.");
-    }
-    if (b()) {
-      return e;
-    }
-    long l = SystemClock.elapsedRealtime();
-    return Math.max(0L, f - l);
-  }
-  
-  public final void a(yy paramyy)
-  {
-    synchronized (a)
+    if (!yx.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      b.add(paramyy);
+      a = bool;
       return;
     }
   }
   
-  public final boolean b()
+  private yx(bvk<yw> parambvk)
   {
-    return e != Long.MAX_VALUE;
-  }
-  
-  public final boolean c()
-  {
-    return f != Long.MAX_VALUE;
-  }
-  
-  public final Set<yy> d()
-  {
-    LinkedHashSet localLinkedHashSet = new LinkedHashSet();
-    synchronized (a)
-    {
-      localLinkedHashSet.addAll(b);
-      return localLinkedHashSet;
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
     }
+    b = parambvk;
   }
   
-  public final String toString()
+  public static bvp<yw> a(bvk<yw> parambvk)
   {
-    return String.format("[Countdown snap:%s]", new Object[] { c });
+    return new yx(parambvk);
   }
 }
 

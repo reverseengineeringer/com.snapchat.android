@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.cash;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import avh;
+import awf;
 
 final class CashPhoneVerificationFragment$1
   implements View.OnClickListener
@@ -12,7 +12,7 @@ final class CashPhoneVerificationFragment$1
   
   public final void onClick(View paramView)
   {
-    avh.a(a.getActivity(), CashPhoneVerificationFragment.a(a));
+    awf.a(a.getActivity(), CashPhoneVerificationFragment.a(a));
     a.getActivity().onBackPressed();
   }
 }

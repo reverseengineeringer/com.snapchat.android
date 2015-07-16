@@ -1,66 +1,41 @@
-import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 @cd
-abstract class cr<K, V>
-  implements Map.Entry<K, V>
+final class cr<T>
+  extends cn<T>
 {
-  public boolean equals(@Nullable Object paramObject)
+  private final T a;
+  
+  cr(T paramT)
   {
-    boolean bool2 = false;
-    boolean bool1 = bool2;
-    if ((paramObject instanceof Map.Entry))
-    {
-      paramObject = (Map.Entry)paramObject;
-      bool1 = bool2;
-      if (cj.a(getKey(), ((Map.Entry)paramObject).getKey()))
-      {
-        bool1 = bool2;
-        if (cj.a(getValue(), ((Map.Entry)paramObject).getValue())) {
-          bool1 = true;
-        }
-      }
-    }
-    return bool1;
+    a = paramT;
   }
   
-  public abstract K getKey();
-  
-  public abstract V getValue();
-  
-  public int hashCode()
+  public final T a(T paramT)
   {
-    int j = 0;
-    Object localObject1 = getKey();
-    Object localObject2 = getValue();
-    int i;
-    if (localObject1 == null)
-    {
-      i = 0;
-      if (localObject2 != null) {
-        break label36;
-      }
-    }
-    for (;;)
-    {
-      return j ^ i;
-      i = localObject1.hashCode();
-      break;
-      label36:
-      j = localObject2.hashCode();
-    }
+    co.a(paramT, "use Optional.orNull() instead of Optional.or(null)");
+    return (T)a;
   }
   
-  public V setValue(V paramV)
+  public final boolean equals(@Nullable Object paramObject)
   {
-    throw new UnsupportedOperationException();
+    if ((paramObject instanceof cr))
+    {
+      paramObject = (cr)paramObject;
+      return a.equals(a);
+    }
+    return false;
   }
   
-  public String toString()
+  public final int hashCode()
   {
-    String str1 = String.valueOf(String.valueOf(getKey()));
-    String str2 = String.valueOf(String.valueOf(getValue()));
-    return str1.length() + 1 + str2.length() + str1 + "=" + str2;
+    return 1502476572 + a.hashCode();
+  }
+  
+  public final String toString()
+  {
+    String str = String.valueOf(String.valueOf(a));
+    return str.length() + 13 + "Optional.of(" + str + ")";
   }
 }
 

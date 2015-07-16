@@ -1,9 +1,4 @@
-public final class bbr
-{
-  bbr.a mListener;
-  
-  public static abstract interface a {}
-}
+public final class bbr {}
 
 /* Location:
  * Qualified Name:     bbr

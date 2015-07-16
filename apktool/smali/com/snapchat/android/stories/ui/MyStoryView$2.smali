@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 146
+    .line 150
     iput-object p1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$2;->a:Lcom/snapchat/android/stories/ui/MyStoryView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,10 +40,10 @@
     .locals 3
 
     .prologue
-    .line 149
+    .line 153
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$2;->a:Lcom/snapchat/android/stories/ui/MyStoryView;
 
-    invoke-static {v0}, Lcom/snapchat/android/stories/ui/MyStoryView;->e(Lcom/snapchat/android/stories/ui/MyStoryView;)Laom;
+    invoke-static {v0}, Lcom/snapchat/android/stories/ui/MyStoryView;->e(Lcom/snapchat/android/stories/ui/MyStoryView;)Lapi;
 
     move-result-object v0
 
@@ -57,8 +57,8 @@
 
     invoke-direct {v2, p0}, Lcom/snapchat/android/stories/ui/MyStoryView$2$1;-><init>(Lcom/snapchat/android/stories/ui/MyStoryView$2;)V
 
-    invoke-virtual {v0, v1, v2}, Laom;->b(Lcom/snapchat/android/model/StorySnapLogbook;Laom$a;)V
+    invoke-virtual {v0, v1, v2}, Lapi;->b(Lcom/snapchat/android/model/StorySnapLogbook;Lapi$a;)V
 
-    .line 171
+    .line 175
     return-void
 .end method

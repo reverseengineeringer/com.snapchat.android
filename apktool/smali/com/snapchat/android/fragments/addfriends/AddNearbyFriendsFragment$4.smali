@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 309
+    .line 313
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$4;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 316
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$4;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)Lajx;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)Lakr;
 
-    invoke-static {}, Lajx;->aV()V
+    invoke-static {}, Lakr;->aS()V
 
-    .line 313
+    .line 317
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$4;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->a()V
 
-    .line 314
+    .line 318
     return-void
 .end method

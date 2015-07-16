@@ -1,29 +1,46 @@
-import com.snapchat.android.ui.layertype.LayerType;
-import java.util.HashMap;
-import java.util.Map;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.view.View;
 
 public final class aqh
+  extends aqg
 {
-  protected static final LayerType a = LayerType.HARDWARE;
-  private static final Map<Integer, LayerType> b;
-  
-  static
+  public aqh(View paramView1, View paramView2)
   {
-    HashMap localHashMap = new HashMap(LayerType.values().length);
-    b = localHashMap;
-    localHashMap.put(Integer.valueOf(0), LayerType.NONE);
-    b.put(Integer.valueOf(2), LayerType.HARDWARE);
-    b.put(Integer.valueOf(1), LayerType.SOFTWARE);
+    super(paramView1, paramView2, 0L);
   }
   
-  public static LayerType a(int paramInt)
+  public aqh(View paramView1, View paramView2, long paramLong)
   {
-    LayerType localLayerType2 = (LayerType)b.get(Integer.valueOf(paramInt));
-    LayerType localLayerType1 = localLayerType2;
-    if (localLayerType2 == null) {
-      localLayerType1 = a;
+    super(paramView1, paramView2, paramLong);
+  }
+  
+  public final ObjectAnimator a()
+  {
+    float f = awf.a(c) / 2.0F;
+    return ObjectAnimator.ofFloat(b, "translationY", new float[] { f });
+  }
+  
+  protected final ObjectAnimator b()
+  {
+    return ObjectAnimator.ofFloat(c, "alpha", new float[] { 0.0F });
+  }
+  
+  public final void onAnimationCancel(Animator paramAnimator)
+  {
+    b.setTranslationY(0.0F);
+    c.setAlpha(1.0F);
+    c.setVisibility(0);
+  }
+  
+  public final void onAnimationEnd(Animator paramAnimator)
+  {
+    if (d) {
+      return;
     }
-    return localLayerType1;
+    b.setTranslationY(0.0F);
+    c.setAlpha(1.0F);
+    c.setVisibility(8);
   }
 }
 

@@ -1,274 +1,102 @@
 .class public Lbgw;
-.super Lbgy;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String;
+
+
 # instance fields
-.field protected checksumsDict:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "checksums_dict"
-    .end annotation
-.end field
+.field private final mCache:Laxn;
 
-.field protected featuresMap:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "features_map"
-    .end annotation
-.end field
+.field public final mExecutor:Ljava/util/concurrent/Executor;
 
-.field protected height:Ljava/lang/Integer;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "height"
-    .end annotation
-.end field
-
-.field protected maxVideoHeight:Ljava/lang/Integer;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "max_video_height"
-    .end annotation
-.end field
-
-.field protected maxVideoWidth:Ljava/lang/Integer;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "max_video_width"
-    .end annotation
-.end field
-
-.field protected width:Ljava/lang/Integer;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "width"
-    .end annotation
-.end field
+.field private final mProfileImageUtils:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 17
-    invoke-direct {p0}, Lbgy;-><init>()V
+    .line 20
+    const-class v0, Lbgw;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lbgw;->TAG:Ljava/lang/String;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Ljava/lang/Integer;)Lbgw;
-    .locals 0
-
-    .prologue
-    .line 61
-    iput-object p1, p0, Lbgw;->height:Ljava/lang/Integer;
-
-    .line 62
-    return-object p0
-.end method
-
-.method public final a(Ljava/lang/String;)Lbgw;
-    .locals 0
-
-    .prologue
-    .line 43
-    iput-object p1, p0, Lbgw;->checksumsDict:Ljava/lang/String;
-
-    .line 44
-    return-object p0
-.end method
-
-.method public final b(Ljava/lang/Integer;)Lbgw;
-    .locals 0
-
-    .prologue
-    .line 79
-    iput-object p1, p0, Lbgw;->width:Ljava/lang/Integer;
-
-    .line 80
-    return-object p0
-.end method
-
-.method public final b(Ljava/lang/String;)Lbgw;
-    .locals 0
-
-    .prologue
-    .line 133
-    iput-object p1, p0, Lbgw;->featuresMap:Ljava/lang/String;
-
-    .line 134
-    return-object p0
-.end method
-
-.method public final c(Ljava/lang/Integer;)Lbgw;
-    .locals 0
-
-    .prologue
-    .line 97
-    iput-object p1, p0, Lbgw;->maxVideoHeight:Ljava/lang/Integer;
-
-    .line 98
-    return-object p0
-.end method
-
-.method public final d(Ljava/lang/Integer;)Lbgw;
-    .locals 0
-
-    .prologue
-    .line 115
-    iput-object p1, p0, Lbgw;->maxVideoWidth:Ljava/lang/Integer;
-
-    .line 116
-    return-object p0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
+.method public constructor <init>()V
     .locals 3
 
     .prologue
-    .line 164
-    if-ne p1, p0, :cond_0
+    .line 26
+    sget-object v0, Lavf;->HIGH_PRIORITY_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    .line 165
-    const/4 v0, 0x1
+    sget-object v1, Laxo;->PROFILE_IMAGE_CACHE:Laxn;
 
-    .line 171
-    :goto_0
-    return v0
+    invoke-static {}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils;->a()Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
-    .line 167
-    :cond_0
-    instance-of v0, p1, Lbgw;
+    move-result-object v2
 
-    if-nez v0, :cond_1
+    invoke-direct {p0, v0, v1, v2}, Lbgw;-><init>(Ljava/util/concurrent/Executor;Laxn;Lcom/snapchat/android/util/profileimages/ProfileImageUtils;)V
 
-    .line 168
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 170
-    :cond_1
-    check-cast p1, Lbgw;
-
-    .line 171
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
-
-    iget-object v1, p0, Lbgw;->checksumsDict:Ljava/lang/String;
-
-    iget-object v2, p1, Lbgw;->checksumsDict:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->height:Ljava/lang/Integer;
-
-    iget-object v2, p1, Lbgw;->height:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->width:Ljava/lang/Integer;
-
-    iget-object v2, p1, Lbgw;->width:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->maxVideoHeight:Ljava/lang/Integer;
-
-    iget-object v2, p1, Lbgw;->maxVideoHeight:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->maxVideoWidth:Ljava/lang/Integer;
-
-    iget-object v2, p1, Lbgw;->maxVideoWidth:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->featuresMap:Ljava/lang/String;
-
-    iget-object v2, p1, Lbgw;->featuresMap:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
-
-    move-result v0
-
-    goto :goto_0
+    .line 27
+    return-void
 .end method
 
-.method public hashCode()I
-    .locals 2
+.method private constructor <init>(Ljava/util/concurrent/Executor;Laxn;Lcom/snapchat/android/util/profileimages/ProfileImageUtils;)V
+    .locals 0
 
     .prologue
-    .line 152
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 29
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+    .line 30
+    iput-object p1, p0, Lbgw;->mExecutor:Ljava/util/concurrent/Executor;
 
-    iget-object v1, p0, Lbgw;->checksumsDict:Ljava/lang/String;
+    .line 31
+    iput-object p2, p0, Lbgw;->mCache:Laxn;
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 32
+    iput-object p3, p0, Lbgw;->mProfileImageUtils:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->height:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->width:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->maxVideoHeight:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->maxVideoWidth:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgw;->featuresMap:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
-
-    move-result v0
-
-    return v0
+    .line 33
+    return-void
 .end method
 
-.method public toString()Ljava/lang/String;
+.method static synthetic a(Lbgw;)Laxn;
     .locals 1
 
     .prologue
-    .line 147
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+    .line 19
+    iget-object v0, p0, Lbgw;->mCache:Laxn;
 
-    move-result-object v0
+    return-object v0
+.end method
+
+.method static synthetic a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 19
+    sget-object v0, Lbgw;->TAG:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic b(Lbgw;)Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
+    .locals 1
+
+    .prologue
+    .line 19
+    iget-object v0, p0, Lbgw;->mProfileImageUtils:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
     return-object v0
 .end method

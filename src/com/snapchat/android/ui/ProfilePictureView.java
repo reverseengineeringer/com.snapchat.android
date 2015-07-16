@@ -21,9 +21,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
-import asv;
+import atu;
 import com.snapchat.android.ui.camera.TakeSnapButton;
-import fl;
+import fu;
 
 public class ProfilePictureView
   extends RelativeLayout
@@ -132,7 +132,7 @@ public class ProfilePictureView
       i1 = 0;
       break;
       i1 = paramView.getId();
-      if (i1 != 2131362567) {
+      if (i1 != 2131362566) {
         break label121;
       }
     } while (!s);
@@ -141,7 +141,7 @@ public class ProfilePictureView
     {
       public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
       {
-        ProfilePictureView.d(ProfilePictureView.this).q();
+        ProfilePictureView.d(ProfilePictureView.this).r();
       }
     }).setNegativeButton(2131492952, new DialogInterface.OnClickListener()
     {
@@ -153,36 +153,36 @@ public class ProfilePictureView
     paramView.create().show();
     return;
     label121:
-    if (i1 == 2131362569)
+    if (i1 == 2131362568)
     {
-      r.r();
+      r.t();
       return;
     }
-    if (i1 == 2131362572)
+    if (i1 == 2131362571)
     {
-      r.o();
+      r.p();
       return;
     }
-    r.n();
+    r.o();
   }
   
   protected void onFinishInflate()
   {
     super.onFinishInflate();
-    j = ((ImageButton)findViewById(2131362567));
-    k = ((ImageButton)findViewById(2131362569));
-    l = ((ProgressBar)findViewById(2131362570));
-    m = ((ImageButton)findViewById(2131362573));
-    n = ((TakeSnapButton)findViewById(2131362572));
-    b = ((TextView)findViewById(2131362564));
-    c = ((TextView)findViewById(2131362565));
-    d = ((TextView)findViewById(2131362566));
-    q = ((ViewGroup)findViewById(2131362571));
-    o = ((ViewGroup)findViewById(2131362563));
+    j = ((ImageButton)findViewById(2131362566));
+    k = ((ImageButton)findViewById(2131362568));
+    l = ((ProgressBar)findViewById(2131362569));
+    m = ((ImageButton)findViewById(2131362572));
+    n = ((TakeSnapButton)findViewById(2131362571));
+    b = ((TextView)findViewById(2131362563));
+    c = ((TextView)findViewById(2131362564));
+    d = ((TextView)findViewById(2131362565));
+    q = ((ViewGroup)findViewById(2131362570));
+    o = ((ViewGroup)findViewById(2131362562));
     o.setLayerType(1, null);
-    j.setOnTouchListener(new asv(j));
-    k.setOnTouchListener(new asv(k));
-    m.setOnTouchListener(new asv(m));
+    j.setOnTouchListener(new atu(j));
+    k.setOnTouchListener(new atu(k));
+    m.setOnTouchListener(new atu(m));
     setOnClickListener(this);
     j.setOnClickListener(this);
     k.setOnClickListener(this);
@@ -208,7 +208,7 @@ public class ProfilePictureView
     }
   }
   
-  public void setSnapcodeSvg(fl paramfl)
+  public void setSnapcodeSvg(fu paramfu)
   {
     if (p == null)
     {
@@ -228,14 +228,12 @@ public class ProfilePictureView
       o.addView(p, (ViewGroup.LayoutParams)localObject);
       p.setVisibility(4);
     }
-    paramfl = paramfl.a();
-    p.setImageDrawable(paramfl);
+    paramfu = paramfu.a();
+    p.setImageDrawable(paramfu);
   }
   
   public static abstract interface a
   {
-    public abstract void n();
-    
     public abstract void o();
     
     public abstract void p();
@@ -243,6 +241,8 @@ public class ProfilePictureView
     public abstract void q();
     
     public abstract void r();
+    
+    public abstract void t();
   }
 }
 

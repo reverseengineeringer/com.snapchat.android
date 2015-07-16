@@ -1,4 +1,12 @@
-public final class bcl {}
+public final class bcl
+{
+  public String mFriendUsername;
+  
+  public bcl(String paramString)
+  {
+    mFriendUsername = paramString;
+  }
+}
 
 /* Location:
  * Qualified Name:     bcl

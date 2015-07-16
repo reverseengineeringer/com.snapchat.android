@@ -1,7 +1,10 @@
+import javax.inject.Provider;
+
 public final class ayw
-  implements buo<aol>
+  implements bvk<ayv>
 {
-  private final ayl module;
+  private final Provider<aum> mGsonProvider;
+  private final Provider<aze> mSlightlySecurePreferencesProvider;
   
   static
   {
@@ -13,15 +16,17 @@ public final class ayw
     }
   }
   
-  private ayw(ayl paramayl)
+  private ayw(Provider<aze> paramProvider, Provider<aum> paramProvider1)
   {
-    assert (paramayl != null);
-    module = paramayl;
+    assert (paramProvider != null);
+    mSlightlySecurePreferencesProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mGsonProvider = paramProvider1;
   }
   
-  public static buo<aol> a(ayl paramayl)
+  public static bvk<ayv> a(Provider<aze> paramProvider, Provider<aum> paramProvider1)
   {
-    return new ayw(paramayl);
+    return new ayw(paramProvider, paramProvider1);
   }
 }
 

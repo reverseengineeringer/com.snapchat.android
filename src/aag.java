@@ -1,41 +1,37 @@
-import com.snapchat.android.database.table.SnapbryoTable;
-import java.util.ArrayList;
-import java.util.Collection;
+import android.content.Context;
+import android.graphics.Bitmap;
 
-public final class aag
-  extends SnapbryoTable
+public abstract class aag
+  implements aah.a
 {
-  private static aag a;
+  private static final String TAG = "BuildThumbnailTask";
+  private final awn mBitmapLoader;
+  public final axn mCache;
+  public final String mCacheKey;
+  public final aah mDownloader;
+  public final String mUrl;
   
-  public static aag a()
+  public aag(Context paramContext, String paramString1, String paramString2)
   {
-    try
-    {
-      if (a == null) {
-        a = new aag();
-      }
-      aag localaag = a;
-      return localaag;
-    }
-    finally {}
+    this(new awn(paramContext), new aah(), axo.STORY_SNAP_RECEIVED_THUMBNAIL_CACHE, paramString1, paramString2);
   }
   
-  protected final Collection<aim> a(ajv paramajv)
+  private aag(awn paramawn, aah paramaah, axn paramaxn, String paramString1, String paramString2)
   {
-    paramajv = ajn.a();
-    return new ArrayList(paramajv.a(mFailedChatMediaSnapbryos));
+    mDownloader = paramaah;
+    mCache = paramaxn;
+    mBitmapLoader = paramawn;
+    mUrl = paramString1;
+    mCacheKey = paramString2;
   }
   
-  public final void b(ajv paramajv)
+  public final void a(int paramInt)
   {
-    paramajv = ajn.a();
-    mFailedChatMediaSnapbryos = paramajv.c(a(null, null));
+    awv localawv = new awv.a().a(mUrl, mCache, mCacheKey).a();
+    a(mBitmapLoader.a(localawv).mBitmap);
   }
   
-  public final String c()
-  {
-    return "FailedChatMediaSnapbryoTable";
-  }
+  public abstract void a(@chd Bitmap paramBitmap);
 }
 
 /* Location:

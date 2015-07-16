@@ -4,77 +4,104 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lch;->a(Ljava/lang/String;)Lch;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lch;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic b:Ljava/lang/String;
-
-.field final synthetic c:Lch;
-
-
 # direct methods
-.method constructor <init>(Lch;Lch;Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 219
-    iput-object p1, p0, Lch$1;->c:Lch;
-
-    iput-object p3, p0, Lch$1;->b:Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p2, v0}, Lch;-><init>(Lch;B)V
+    .line 67
+    invoke-direct {p0}, Lch;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Lch;
-    .locals 2
+.method public final a(C)Z
+    .locals 3
 
     .prologue
-    .line 225
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    const/4 v0, 0x1
 
-    const-string v1, "already specified useForNull"
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    .line 70
+    sparse-switch p1, :sswitch_data_0
 
-    throw v0
-.end method
+    .line 87
+    const/16 v2, 0x2000
 
-.method final a(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .locals 1
-    .param p1    # Ljava/lang/Object;
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end param
+    if-lt p1, v2, :cond_0
 
-    .prologue
-    .line 221
-    if-nez p1, :cond_0
+    const/16 v2, 0x200a
 
-    iget-object v0, p0, Lch$1;->b:Ljava/lang/String;
+    if-gt p1, v2, :cond_0
 
     :goto_0
-    return-object v0
+    :sswitch_0
+    return v0
+
+    :sswitch_1
+    move v0, v1
+
+    .line 85
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lch$1;->c:Lch;
+    move v0, v1
 
-    invoke-virtual {v0, p1}, Lch;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
+    .line 87
     goto :goto_0
+
+    .line 70
+    :sswitch_data_0
+    .sparse-switch
+        0x9 -> :sswitch_0
+        0xa -> :sswitch_0
+        0xb -> :sswitch_0
+        0xc -> :sswitch_0
+        0xd -> :sswitch_0
+        0x20 -> :sswitch_0
+        0x85 -> :sswitch_0
+        0x1680 -> :sswitch_0
+        0x2007 -> :sswitch_1
+        0x2028 -> :sswitch_0
+        0x2029 -> :sswitch_0
+        0x205f -> :sswitch_0
+        0x3000 -> :sswitch_0
+    .end sparse-switch
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;)Z
+    .locals 1
+
+    .prologue
+    .line 67
+    check-cast p1, Ljava/lang/Character;
+
+    invoke-super {p0, p1}, Lch;->a(Ljava/lang/Character;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 93
+    const-string v0, "CharMatcher.BREAKING_WHITESPACE"
+
+    return-object v0
 .end method

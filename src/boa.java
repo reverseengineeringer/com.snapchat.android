@@ -1,223 +1,226 @@
-import java.security.cert.CertificateParsingException;
-import java.security.cert.X509Certificate;
+import java.net.Proxy;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLSession;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public final class boa
-  implements HostnameVerifier
 {
-  public static final boa a = new boa();
-  private static final Pattern b = Pattern.compile("([0-9a-fA-F]*:[0-9a-fA-F:.]*)|([\\d.]+)");
+  static final String a = bno.b();
+  public static final String b = a + "-Sent-Millis";
+  public static final String c = a + "-Received-Millis";
+  public static final String d = a + "-Selected-Protocol";
+  private static final Comparator<String> e = new Comparator() {};
   
-  public static List<String> a(X509Certificate paramX509Certificate)
+  static
   {
-    List localList = a(paramX509Certificate, 7);
-    paramX509Certificate = a(paramX509Certificate, 2);
-    ArrayList localArrayList = new ArrayList(localList.size() + paramX509Certificate.size());
-    localArrayList.addAll(localList);
-    localArrayList.addAll(paramX509Certificate);
+    bno.a();
+  }
+  
+  public static long a(bmv parambmv)
+  {
+    return b(parambmv.a("Content-Length"));
+  }
+  
+  public static long a(bnb parambnb)
+  {
+    return a(c);
+  }
+  
+  public static long a(bnd parambnd)
+  {
+    return a(f);
+  }
+  
+  public static bnb a(bmi parambmi, bnd parambnd, Proxy paramProxy)
+  {
+    if (c == 407) {
+      return parambmi.b(paramProxy, parambnd);
+    }
+    return parambmi.a(paramProxy, parambnd);
+  }
+  
+  public static List<bmn> a(bmv parambmv, String paramString)
+  {
+    ArrayList localArrayList = new ArrayList();
+    int k = a.length / 2;
+    int i = 0;
+    while (i < k)
+    {
+      if (paramString.equalsIgnoreCase(parambmv.a(i)))
+      {
+        String str1 = parambmv.b(i);
+        int j = 0;
+        while (j < str1.length())
+        {
+          int m = bnu.a(str1, j, " ");
+          String str2 = str1.substring(j, m).trim();
+          j = bnu.a(str1, m);
+          if (!str1.regionMatches(true, j, "realm=\"", 0, 7)) {
+            break;
+          }
+          j += 7;
+          m = bnu.a(str1, j, "\"");
+          String str3 = str1.substring(j, m);
+          j = bnu.a(str1, bnu.a(str1, m + 1, ",") + 1);
+          localArrayList.add(new bmn(str2, str3));
+        }
+      }
+      i += 1;
+    }
     return localArrayList;
   }
   
-  private static List<String> a(X509Certificate paramX509Certificate, int paramInt)
+  public static void a(bnb.a parama, Map<String, List<String>> paramMap)
   {
-    localArrayList = new ArrayList();
-    try
+    Iterator localIterator = paramMap.entrySet().iterator();
+    while (localIterator.hasNext())
     {
-      paramX509Certificate = paramX509Certificate.getSubjectAlternativeNames();
-      if (paramX509Certificate == null) {
-        return Collections.emptyList();
-      }
-      paramX509Certificate = paramX509Certificate.iterator();
-      while (paramX509Certificate.hasNext())
+      paramMap = (Map.Entry)localIterator.next();
+      String str = (String)paramMap.getKey();
+      if ((("Cookie".equalsIgnoreCase(str)) || ("Cookie2".equalsIgnoreCase(str))) && (!((List)paramMap.getValue()).isEmpty()))
       {
-        Object localObject = (List)paramX509Certificate.next();
-        if ((localObject != null) && (((List)localObject).size() >= 2))
+        paramMap = (List)paramMap.getValue();
+        if (paramMap.size() == 1) {}
+        StringBuilder localStringBuilder;
+        for (paramMap = (String)paramMap.get(0);; paramMap = localStringBuilder.toString())
         {
-          Integer localInteger = (Integer)((List)localObject).get(0);
-          if ((localInteger != null) && (localInteger.intValue() == paramInt))
+          d.a(str, paramMap);
+          break;
+          localStringBuilder = new StringBuilder();
+          int j = paramMap.size();
+          int i = 0;
+          while (i < j)
           {
-            localObject = (String)((List)localObject).get(1);
-            if (localObject != null) {
-              localArrayList.add(localObject);
+            if (i > 0) {
+              localStringBuilder.append("; ");
             }
+            localStringBuilder.append((String)paramMap.get(i));
+            i += 1;
           }
         }
       }
-      return localArrayList;
-    }
-    catch (CertificateParsingException paramX509Certificate)
-    {
-      return Collections.emptyList();
     }
   }
   
-  private static boolean a(String paramString1, String paramString2)
+  public static boolean a(bnd parambnd, bmv parambmv, bnb parambnb)
   {
-    if ((paramString1 == null) || (paramString1.length() == 0) || (paramString1.startsWith(".")) || (paramString1.endsWith(".."))) {}
-    String str;
-    int i;
-    do
+    parambnd = d(parambnd).iterator();
+    while (parambnd.hasNext())
     {
-      do
-      {
-        do
-        {
-          do
-          {
-            return false;
-          } while ((paramString2 == null) || (paramString2.length() == 0) || (paramString2.startsWith(".")) || (paramString2.endsWith("..")));
-          str = paramString1;
-          if (!paramString1.endsWith(".")) {
-            str = paramString1 + '.';
-          }
-          paramString1 = paramString2;
-          if (!paramString2.endsWith(".")) {
-            paramString1 = paramString2 + '.';
-          }
-          paramString1 = paramString1.toLowerCase(Locale.US);
-          if (!paramString1.contains("*")) {
-            return str.equals(paramString1);
-          }
-        } while ((!paramString1.startsWith("*.")) || (paramString1.indexOf('*', 1) != -1) || (str.length() < paramString1.length()) || ("*.".equals(paramString1)));
-        paramString1 = paramString1.substring(1);
-      } while (!str.endsWith(paramString1));
-      i = str.length() - paramString1.length();
-    } while ((i > 0) && (str.lastIndexOf('.', i - 1) != -1));
+      String str = (String)parambnd.next();
+      if (!bnq.a(parambmv.c(str), c.c(str))) {
+        return false;
+      }
+    }
     return true;
   }
   
-  public final boolean verify(String paramString, SSLSession paramSSLSession)
+  static boolean a(String paramString)
   {
+    return (!"Connection".equalsIgnoreCase(paramString)) && (!"Keep-Alive".equalsIgnoreCase(paramString)) && (!"Proxy-Authenticate".equalsIgnoreCase(paramString)) && (!"Proxy-Authorization".equalsIgnoreCase(paramString)) && (!"TE".equalsIgnoreCase(paramString)) && (!"Trailers".equalsIgnoreCase(paramString)) && (!"Transfer-Encoding".equalsIgnoreCase(paramString)) && (!"Upgrade".equalsIgnoreCase(paramString));
+  }
+  
+  private static long b(String paramString)
+  {
+    if (paramString == null) {
+      return -1L;
+    }
     try
     {
-      paramSSLSession = (X509Certificate)paramSSLSession.getPeerCertificates()[0];
-      int j;
-      int i;
-      label95:
-      bnz localbnz;
-      if (b.matcher(paramString).matches())
-      {
-        paramSSLSession = a(paramSSLSession, 7);
-        j = paramSSLSession.size();
-        i = 0;
-        if (i >= j) {
-          break label725;
-        }
-        if (paramString.equalsIgnoreCase((String)paramSSLSession.get(i))) {
-          return true;
-        }
-      }
-      else
-      {
-        String str = paramString.toLowerCase(Locale.US);
-        paramString = a(paramSSLSession, 2);
-        int k = paramString.size();
-        j = 0;
-        i = 0;
-        if (j < k)
-        {
-          if (!a(str, (String)paramString.get(j))) {
-            break label727;
-          }
-          return true;
-        }
-        if (i == 0)
-        {
-          localbnz = new bnz(paramSSLSession.getSubjectX500Principal());
-          c = 0;
-          d = 0;
-          e = 0;
-          f = 0;
-          g = a.toCharArray();
-          paramSSLSession = localbnz.a();
-          if (paramSSLSession != null) {
-            break label715;
-          }
-          paramString = null;
-          while (paramString != null)
-          {
-            return a(str, paramString);
-            label200:
-            paramString = "";
-            if (c == b) {
-              paramString = null;
-            } else {
-              switch (g[c])
-              {
-              }
-            }
-          }
-        }
-      }
-      for (;;)
-      {
-        paramString = localbnz.c();
-        while (!"cn".equalsIgnoreCase(paramSSLSession))
-        {
-          if (c < b) {
-            break label587;
-          }
-          paramString = null;
-          break;
-          c += 1;
-          d = c;
-          e = d;
-          if (c == b) {
-            throw new IllegalStateException("Unexpected end of DN: " + a);
-          }
-          if (g[c] == '"') {
-            for (c += 1; (c < b) && (g[c] == ' '); c += 1) {}
-          }
-          if (g[c] == '\\') {
-            g[e] = localbnz.d();
-          }
-          for (;;)
-          {
-            c += 1;
-            e += 1;
-            break;
-            g[e] = g[c];
-          }
-          paramString = new String(g, d, e - d);
-          continue;
-          paramString = localbnz.b();
-        }
-        label587:
-        if ((g[c] != ',') && (g[c] != ';') && (g[c] != '+')) {
-          throw new IllegalStateException("Malformed DN: " + a);
-        }
-        c += 1;
-        paramSSLSession = localbnz.a();
-        if (paramSSLSession == null)
-        {
-          throw new IllegalStateException("Malformed DN: " + a);
-          return false;
-          label715:
-          break label200;
-          i += 1;
-          break;
-          label725:
-          return false;
-          label727:
-          j += 1;
-          i = 1;
-          break label95;
-        }
-        break label200;
-      }
-      return false;
+      long l = Long.parseLong(paramString);
+      return l;
     }
-    catch (SSLException paramString) {}
+    catch (NumberFormatException paramString) {}
+    return -1L;
+  }
+  
+  public static Map<String, List<String>> b(bmv parambmv)
+  {
+    TreeMap localTreeMap = new TreeMap(e);
+    int j = a.length / 2;
+    int i = 0;
+    while (i < j)
+    {
+      String str1 = parambmv.a(i);
+      String str2 = parambmv.b(i);
+      ArrayList localArrayList = new ArrayList();
+      List localList = (List)localTreeMap.get(str1);
+      if (localList != null) {
+        localArrayList.addAll(localList);
+      }
+      localArrayList.add(str2);
+      localTreeMap.put(str1, Collections.unmodifiableList(localArrayList));
+      i += 1;
+    }
+    return Collections.unmodifiableMap(localTreeMap);
+  }
+  
+  public static boolean b(bnd parambnd)
+  {
+    return d(parambnd).contains("*");
+  }
+  
+  public static bmv c(bnd parambnd)
+  {
+    Set localSet = d(parambnd);
+    if (localSet.isEmpty()) {
+      return new bmv.a().a();
+    }
+    parambnd = h.a.c;
+    bmv.a locala = new bmv.a();
+    int i = 0;
+    int j = a.length / 2;
+    while (i < j)
+    {
+      String str = parambnd.a(i);
+      if (localSet.contains(str)) {
+        locala.a(str, parambnd.b(i));
+      }
+      i += 1;
+    }
+    return locala.a();
+  }
+  
+  private static Set<String> d(bnd parambnd)
+  {
+    Object localObject1 = Collections.emptySet();
+    bmv localbmv = f;
+    int k = a.length / 2;
+    int i = 0;
+    while (i < k)
+    {
+      Object localObject2 = localObject1;
+      if ("Vary".equalsIgnoreCase(localbmv.a(i)))
+      {
+        localObject2 = localbmv.b(i);
+        parambnd = (bnd)localObject1;
+        if (((Set)localObject1).isEmpty()) {
+          parambnd = new TreeSet(String.CASE_INSENSITIVE_ORDER);
+        }
+        localObject1 = ((String)localObject2).split(",");
+        int m = localObject1.length;
+        int j = 0;
+        for (;;)
+        {
+          localObject2 = parambnd;
+          if (j >= m) {
+            break;
+          }
+          parambnd.add(localObject1[j].trim());
+          j += 1;
+        }
+      }
+      i += 1;
+      localObject1 = localObject2;
+    }
+    return (Set<String>)localObject1;
   }
 }
 

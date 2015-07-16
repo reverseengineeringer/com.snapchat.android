@@ -1,9 +1,17 @@
 public final class ob
-  extends RuntimeException
 {
-  public ob(String paramString, Throwable paramThrowable)
+  public final ban mExceptionReporter;
+  public final pm mScreenParameterProvider;
+  
+  public ob()
   {
-    super(paramString, paramThrowable);
+    this(new ban(), pm.a());
+  }
+  
+  private ob(ban paramban, pm parampm)
+  {
+    mExceptionReporter = paramban;
+    mScreenParameterProvider = parampm;
   }
 }
 

@@ -10,9 +10,9 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import atz;
-import avh;
-import bgr;
+import aux;
+import awf;
+import bhr;
 import com.snapchat.android.ui.CashReceiverView;
 import com.snapchat.android.ui.CashReceiverView.3;
 import com.snapchat.android.ui.CashReceiverView.4;
@@ -59,10 +59,10 @@ final class ChatFragment$18
         }
         ImageView localImageView = new ImageView(localCashReceiverView.getContext());
         localImageView.setImageDrawable(localCashReceiverView.getResources().getDrawable(2130837672));
-        localImageView.setLayoutParams(new ViewGroup.LayoutParams((int)avh.a(72.0F, localCashReceiverView.getContext()), (int)avh.a(36.0F, localCashReceiverView.getContext())));
+        localImageView.setLayoutParams(new ViewGroup.LayoutParams((int)awf.a(72.0F, localCashReceiverView.getContext()), (int)awf.a(36.0F, localCashReceiverView.getContext())));
         localImageView.setTag("FALLING_DOLLAR_TAG");
-        float f4 = atz.a().nextFloat();
-        float f5 = 0.9F + atz.a().nextFloat() * 0.2F;
+        float f4 = aux.a().nextFloat();
+        float f5 = 0.9F + aux.a().nextFloat() * 0.2F;
         localImageView.setScaleX(f5);
         localImageView.setScaleY(f5);
         int k = 0;
@@ -77,16 +77,16 @@ final class ChatFragment$18
           }
         }
         localCashReceiverView.addView(localImageView, k);
-        float f1 = avh.a(3.33F - 1.66F * f4, localCashReceiverView.getContext());
-        float f2 = avh.a(0.2F + 0.1F * f4, localCashReceiverView.getContext());
-        float f3 = avh.a(0.0015F + -5.0E-4F * f4, localCashReceiverView.getContext());
-        f4 = avh.a(133.0F * f5 + f4 * -66.0F, localCashReceiverView.getContext());
+        float f1 = awf.a(3.33F - 1.66F * f4, localCashReceiverView.getContext());
+        float f2 = awf.a(0.2F + 0.1F * f4, localCashReceiverView.getContext());
+        float f3 = awf.a(0.0015F + -5.0E-4F * f4, localCashReceiverView.getContext());
+        f4 = awf.a(133.0F * f5 + f4 * -66.0F, localCashReceiverView.getContext());
         f5 = localCashReceiverView.getMeasuredWidth();
-        float f6 = atz.a().nextFloat();
+        float f6 = aux.a().nextFloat();
         float f7 = getLayoutParamswidth / 2.0F;
-        float f8 = (float)(6.283185307179586D * atz.a().nextFloat());
+        float f8 = (float)(6.283185307179586D * aux.a().nextFloat());
         float f9 = -getLayoutParamsheight;
-        float f10 = avh.a(5.0F, localCashReceiverView.getContext());
+        float f10 = awf.a(5.0F, localCashReceiverView.getContext());
         ValueAnimator localValueAnimator = ValueAnimator.ofFloat(new float[] { 0.0F, 1.0F });
         localValueAnimator.setDuration(5000L);
         localValueAnimator.setInterpolator(new LinearInterpolator());
@@ -97,15 +97,15 @@ final class ChatFragment$18
         {
           localImageView = new ImageView(localCashReceiverView.getContext());
           localImageView.setImageResource(2130837671);
-          k = (int)avh.a(9.0F, localCashReceiverView.getContext());
-          int m = (int)avh.a(18.0F, localCashReceiverView.getContext());
-          f1 = 0.9F + 0.2F * atz.a().nextFloat();
+          k = (int)awf.a(9.0F, localCashReceiverView.getContext());
+          int m = (int)awf.a(18.0F, localCashReceiverView.getContext());
+          f1 = 0.9F + 0.2F * aux.a().nextFloat();
           localImageView.setScaleX(f1);
           localImageView.setScaleY(f1);
           localImageView.setLayoutParams(new ViewGroup.LayoutParams(k, m));
           localImageView.setTag("CAUGHT_DOLLAR_TAG");
           c.addView(localImageView);
-          f2 = -2.0F + 2.0F * atz.a().nextFloat();
+          f2 = -2.0F + 2.0F * aux.a().nextFloat();
           if ((!d) || (a % 2 != 0))
           {
             f1 = f2;
@@ -119,9 +119,9 @@ final class ChatFragment$18
           {
             f1 = f2 + 32.0F;
           }
-          localImageView.setTranslationX(avh.a(f1, localCashReceiverView.getContext()));
-          localImageView.setTranslationY(avh.a(4.0F + 2.0F * atz.a().nextFloat(), localCashReceiverView.getContext()));
-          localImageView.setRotation(-30.0F + 60.0F * atz.a().nextFloat());
+          localImageView.setTranslationX(awf.a(f1, localCashReceiverView.getContext()));
+          localImageView.setTranslationY(awf.a(4.0F + 2.0F * aux.a().nextFloat(), localCashReceiverView.getContext()));
+          localImageView.setRotation(-30.0F + 60.0F * aux.a().nextFloat());
         }
         b.add(Long.valueOf(SystemClock.elapsedRealtime()));
         a += 1;

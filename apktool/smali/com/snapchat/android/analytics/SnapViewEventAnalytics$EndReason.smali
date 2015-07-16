@@ -44,7 +44,7 @@
 # instance fields
 .field private final mEventName:Ljava/lang/String;
 
-.field private final mExitEvent:Lhl;
+.field private final mExitEvent:Lhu;
 
 
 # direct methods
@@ -69,9 +69,9 @@
 
     const-string v2, "finished_viewing"
 
-    sget-object v3, Lhl;->AUTO_ADVANCE:Lhl;
+    sget-object v3, Lhu;->AUTO_ADVANCE:Lhu;
 
-    invoke-direct {v0, v1, v5, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhl;)V
+    invoke-direct {v0, v1, v5, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhu;)V
 
     sput-object v0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->FINISHED_VIEWING:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
@@ -82,9 +82,9 @@
 
     const-string v2, "finished_viewing"
 
-    sget-object v3, Lhl;->TAP:Lhl;
+    sget-object v3, Lhu;->TAP:Lhu;
 
-    invoke-direct {v0, v1, v6, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhl;)V
+    invoke-direct {v0, v1, v6, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhu;)V
 
     sput-object v0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->TAP_PAST_END:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
@@ -95,9 +95,9 @@
 
     const-string v2, "user_exited"
 
-    sget-object v3, Lhl;->SWIPE_DOWN:Lhl;
+    sget-object v3, Lhu;->SWIPE_DOWN:Lhu;
 
-    invoke-direct {v0, v1, v7, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhl;)V
+    invoke-direct {v0, v1, v7, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhu;)V
 
     sput-object v0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->SWIPED_DOWN:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
@@ -108,9 +108,9 @@
 
     const-string v2, "back_pressed"
 
-    sget-object v3, Lhl;->BACK_PRESSED:Lhl;
+    sget-object v3, Lhu;->BACK_PRESSED:Lhu;
 
-    invoke-direct {v0, v1, v8, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhl;)V
+    invoke-direct {v0, v1, v8, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhu;)V
 
     sput-object v0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->BACK_PRESSED:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
@@ -121,9 +121,9 @@
 
     const-string v2, "kicked_out"
 
-    sget-object v3, Lhl;->ERROR:Lhl;
+    sget-object v3, Lhu;->ERROR:Lhu;
 
-    invoke-direct {v0, v1, v9, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhl;)V
+    invoke-direct {v0, v1, v9, v2, v3}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhu;)V
 
     sput-object v0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->KICKED_OUT:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
@@ -136,9 +136,9 @@
 
     const-string v3, "enter_background"
 
-    sget-object v4, Lhl;->ENTER_BACKGROUND:Lhl;
+    sget-object v4, Lhu;->ENTER_BACKGROUND:Lhu;
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhl;)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhu;)V
 
     sput-object v0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->ENTER_BACKGROUND:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
@@ -151,9 +151,9 @@
 
     const-string v3, "error"
 
-    sget-object v4, Lhl;->ERROR:Lhl;
+    sget-object v4, Lhu;->ERROR:Lhu;
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhl;)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;-><init>(Ljava/lang/String;ILjava/lang/String;Lhu;)V
 
     sput-object v0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->ERROR:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
@@ -199,13 +199,13 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;Lhl;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;Lhu;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lhl;",
+            "Lhu;",
             ")V"
         }
     .end annotation
@@ -218,7 +218,7 @@
     iput-object p3, p0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->mEventName:Ljava/lang/String;
 
     .line 37
-    iput-object p4, p0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->mExitEvent:Lhl;
+    iput-object p4, p0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->mExitEvent:Lhu;
 
     .line 38
     return-void
@@ -268,12 +268,12 @@
     return-object v0
 .end method
 
-.method public final getExitEvent()Lhl;
+.method public final getExitEvent()Lhu;
     .locals 1
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->mExitEvent:Lhl;
+    iget-object v0, p0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->mExitEvent:Lhu;
 
     return-object v0
 .end method

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcks$a;
+.implements Lclt$a;
 
 
 # annotations

@@ -33,6 +33,8 @@
 
 .field public static final REMOTE_END_DIED:I = 0x7d6
 
+.field public static final SMERR_COMM_AUTH_ERROR:I = 0x7d4
+
 
 # direct methods
 .method public constructor <init>()V

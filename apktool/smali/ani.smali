@@ -3,202 +3,95 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lanh;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic a:Z
+.implements Lanh;
 
 
 # instance fields
-.field private final b:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lapf",
-            "<",
-            "Lajc;",
-            ">;>;"
-        }
-    .end annotation
-.end field
+.field private final a:Landroid/content/Intent;
 
-.field private final c:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lzs;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/content/Intent;)V
     .locals 1
 
     .prologue
-    .line 10
-    const-class v0, Lani;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lani;->a:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lapf",
-            "<",
-            "Lajc;",
-            ">;>;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lzs;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 15
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
-    sget-boolean v0, Lani;->a:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 17
-    :cond_0
-    iput-object p1, p0, Lani;->b:Lbuj;
-
-    .line 18
-    sget-boolean v0, Lani;->a:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 19
-    :cond_1
-    iput-object p2, p0, Lani;->c:Ljavax/inject/Provider;
-
     .line 20
+    iput-object p1, p0, Lani;->a:Landroid/content/Intent;
+
+    .line 21
+    const-string v0, "url"
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lani;->b:Ljava/lang/String;
+
+    .line 22
     return-void
-.end method
-
-.method public static a(Lbuj;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lapf",
-            "<",
-            "Lajc;",
-            ">;>;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lzs;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lanh;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 32
-    new-instance v0, Lani;
-
-    invoke-direct {v0, p0, p1}, Lani;-><init>(Lbuj;Ljavax/inject/Provider;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final a()Landroid/content/Intent;
+    .locals 1
 
     .prologue
-    .line 10
-    check-cast p1, Lanh;
+    .line 26
+    iget-object v0, p0, Lani;->a:Landroid/content/Intent;
 
-    if-nez p1, :cond_0
+    return-object v0
+.end method
 
-    new-instance v0, Ljava/lang/NullPointerException;
+.method public final a(Landroid/content/Context;)V
+    .locals 3
 
-    const-string v1, "Cannot inject members into a null reference"
+    .prologue
+    .line 31
+    iget-object v0, p0, Lani;->b:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    if-nez v0, :cond_0
+
+    :try_start_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
+    .line 32
+    :catch_0
+    move-exception v0
+
+    :goto_0
+    return-void
+
+    .line 31
     :cond_0
-    iget-object v0, p0, Lani;->b:Lbuj;
+    new-instance v1, Lorg/apache/http/impl/client/DefaultHttpClient;
 
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
+    invoke-direct {v1}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>()V
 
-    iget-object v0, p0, Lani;->c:Ljavax/inject/Provider;
+    new-instance v2, Lorg/apache/http/client/methods/HttpGet;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    invoke-direct {v2, v0}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    check-cast v0, Lzs;
+    goto :goto_0
+.end method
 
-    iput-object v0, p1, Lanh;->a:Lzs;
+.method public final b()V
+    .locals 0
 
+    .prologue
+    .line 37
     return-void
 .end method

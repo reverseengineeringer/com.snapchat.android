@@ -16,7 +16,7 @@
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;"
         }
     .end annotation
@@ -46,7 +46,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
-    sget-object v0, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    sget-object v0, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
     iput-object v0, p0, Lcom/snapchat/android/analytics/framework/UserPropertiesProvider;->b:Ljavax/inject/Provider;
 
@@ -71,13 +71,13 @@
 
     .prologue
     .line 28
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -95,7 +95,7 @@
 
     .prologue
     .line 32
-    invoke-static {}, Lbfs;->a()Ljava/lang/String;
+    invoke-static {}, Lbgs;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -113,12 +113,12 @@
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Lakp;
 
     .line 40
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v1
 
@@ -133,7 +133,7 @@
     return-object v0
 
     :cond_1
-    invoke-virtual {v0}, Lajv;->p()I
+    invoke-virtual {v0}, Lakp;->p()I
 
     move-result v0
 

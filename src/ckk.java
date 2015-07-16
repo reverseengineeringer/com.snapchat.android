@@ -1,116 +1,73 @@
-import java.text.DateFormatSymbols;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.io.Serializable;
 
 public final class ckk
-  implements ckm
+  extends chn
+  implements Serializable
 {
-  private HashMap<Locale, Map<String, Map<String, Object>>> a = a();
+  public static final chn a = new ckk();
   
-  private static HashMap a()
+  public final long a(long paramLong, int paramInt)
   {
-    return new HashMap(7);
+    return cki.a(paramLong, paramInt);
   }
   
-  private String[] c(Locale paramLocale, String paramString1, String paramString2)
+  public final long a(long paramLong1, long paramLong2)
   {
-    Object localObject3 = null;
-    if ((paramLocale == null) || (paramString1 == null) || (paramString2 == null))
+    return cki.a(paramLong1, paramLong2);
+  }
+  
+  public final cho a()
+  {
+    return cho.a();
+  }
+  
+  public final int b(long paramLong1, long paramLong2)
+  {
+    return cki.a(cki.b(paramLong1, paramLong2));
+  }
+  
+  public final boolean b()
+  {
+    return true;
+  }
+  
+  public final long c(long paramLong1, long paramLong2)
+  {
+    return cki.b(paramLong1, paramLong2);
+  }
+  
+  public final boolean c()
+  {
+    return true;
+  }
+  
+  public final long d()
+  {
+    return 1L;
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    boolean bool2 = false;
+    boolean bool1 = bool2;
+    if ((paramObject instanceof ckk))
     {
-      paramLocale = null;
-      return paramLocale;
-    }
-    for (;;)
-    {
-      int i;
-      try
-      {
-        Object localObject1 = (Map)a.get(paramLocale);
-        if (localObject1 != null) {
-          break label381;
-        }
-        Object localObject2 = a;
-        localObject1 = a();
-        ((HashMap)localObject2).put(paramLocale, localObject1);
-        Object localObject4 = (Map)((Map)localObject1).get(paramString1);
-        localObject2 = localObject4;
-        if (localObject4 == null)
-        {
-          localObject4 = a();
-          ((Map)localObject1).put(paramString1, localObject4);
-          localObject2 = cgj.a(Locale.ENGLISH).getZoneStrings();
-          int j = localObject2.length;
-          i = 0;
-          if (i >= j) {
-            break label375;
-          }
-          localObject1 = localObject2[i];
-          if ((localObject1 == null) || (localObject1.length != 5) || (!paramString1.equals(localObject1[0]))) {
-            break label384;
-          }
-          localObject2 = cgj.a(paramLocale).getZoneStrings();
-          j = localObject2.length;
-          i = 0;
-          paramLocale = (Locale)localObject3;
-          if (i < j)
-          {
-            paramLocale = localObject2[i];
-            if ((paramLocale == null) || (paramLocale.length != 5) || (!paramString1.equals(paramLocale[0]))) {
-              break label393;
-            }
-          }
-          localObject2 = localObject4;
-          if (localObject1 != null)
-          {
-            localObject2 = localObject4;
-            if (paramLocale != null)
-            {
-              ((Map)localObject4).put(localObject1[2], new String[] { paramLocale[2], paramLocale[1] });
-              if (!localObject1[2].equals(localObject1[4])) {
-                continue;
-              }
-              ((Map)localObject4).put(localObject1[4] + "-Summer", new String[] { paramLocale[4], paramLocale[3] });
-              localObject2 = localObject4;
-            }
-          }
-        }
-        paramLocale = (String[])((Map)localObject2).get(paramString2);
-        break;
-        ((Map)localObject4).put(localObject1[4], new String[] { paramLocale[4], paramLocale[3] });
-        localObject2 = localObject4;
-        continue;
-        localObject1 = null;
+      bool1 = bool2;
+      if (1L == 1L) {
+        bool1 = true;
       }
-      finally {}
-      label375:
-      continue;
-      label381:
-      continue;
-      label384:
-      i += 1;
-      continue;
-      label393:
-      i += 1;
     }
+    return bool1;
   }
   
-  public final String a(Locale paramLocale, String paramString1, String paramString2)
+  public final int hashCode()
   {
-    paramLocale = c(paramLocale, paramString1, paramString2);
-    if (paramLocale == null) {
-      return null;
-    }
-    return paramLocale[0];
+    return 1;
   }
   
-  public final String b(Locale paramLocale, String paramString1, String paramString2)
+  public final String toString()
   {
-    paramLocale = c(paramLocale, paramString1, paramString2);
-    if (paramLocale == null) {
-      return null;
-    }
-    return paramLocale[1];
+    return "DurationField[millis]";
   }
 }
 

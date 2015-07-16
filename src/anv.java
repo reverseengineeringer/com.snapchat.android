@@ -1,26 +1,27 @@
-public abstract class anv
+import android.content.Intent;
+
+public final class anv
+  extends ana
+  implements ui.b<blk>
 {
-  public final String a;
-  public long b;
-  public long c;
-  protected final aol d;
+  public blk a;
+  public boolean b = false;
   
-  public anv(String paramString, long paramLong1, long paramLong2)
+  public anv(Intent paramIntent)
   {
-    this(paramString, paramLong1, paramLong2, aol.a());
+    super(paramIntent);
+    registerCallback(blk.class, this);
   }
   
-  private anv(String paramString, long paramLong1, long paramLong2, aol paramaol)
+  public final Object getRequestPayload()
   {
-    a = paramString;
-    b = paramLong1;
-    c = paramLong2;
-    d = paramaol;
+    return new qc();
   }
   
-  public abstract String a();
-  
-  public abstract void a(long paramLong);
+  protected final String l_()
+  {
+    return "/loq/two_fa_recovery_code";
+  }
 }
 
 /* Location:

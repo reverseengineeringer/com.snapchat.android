@@ -1,32 +1,198 @@
-.class final Lahg;
+.class public final Lahg;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lcom/snapchat/android/fragments/sendto/SendToFragment;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic a:Z
+
 
 # instance fields
-.field final a:Ljava/lang/String;
+.field private final b:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field b:Lorg/json/JSONObject;
+.field private final c:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Laas;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 28
+    .line 9
+    const-class v0, Lahg;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lahg;->a:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laas;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    iput-object p1, p0, Lahg;->a:Ljava/lang/String;
+    .line 15
+    sget-boolean v0, Lahg;->a:Z
 
-    .line 30
-    new-instance v0, Lorg/json/JSONObject;
+    if-nez v0, :cond_0
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    if-nez p1, :cond_0
 
-    iput-object v0, p0, Lahg;->b:Lorg/json/JSONObject;
+    new-instance v0, Ljava/lang/AssertionError;
 
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 16
+    :cond_0
+    iput-object p1, p0, Lahg;->b:Lbvk;
+
+    .line 17
+    sget-boolean v0, Lahg;->a:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 18
+    :cond_1
+    iput-object p2, p0, Lahg;->c:Ljavax/inject/Provider;
+
+    .line 19
+    return-void
+.end method
+
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laas;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/fragments/sendto/SendToFragment;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
     .line 31
+    new-instance v0, Lahg;
+
+    invoke-direct {v0, p0, p1}, Lahg;-><init>(Lbvk;Ljavax/inject/Provider;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
+
+    .prologue
+    .line 9
+    check-cast p1, Lcom/snapchat/android/fragments/sendto/SendToFragment;
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Cannot inject members into a null reference"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lahg;->b:Lbvk;
+
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lahg;->c:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laas;
+
+    iput-object v0, p1, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a:Laas;
+
     return-void
 .end method

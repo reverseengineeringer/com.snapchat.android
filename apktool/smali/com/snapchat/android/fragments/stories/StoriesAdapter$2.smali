@@ -45,7 +45,7 @@
 
     .prologue
     .line 558
-    new-instance v0, Lapx;
+    new-instance v0, Laqw;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$2;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
@@ -55,27 +55,27 @@
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$2;->a:Lcom/snapchat/android/model/StoryGroup;
 
-    invoke-direct {v0, v1, v2}, Lapx;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;)V
+    invoke-direct {v0, v1, v2}, Laqw;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;)V
 
-    iget-object v1, v0, Lapx;->b:Lcom/snapchat/android/model/StoryGroup;
+    iget-object v1, v0, Laqw;->b:Lcom/snapchat/android/model/StoryGroup;
 
     sget-object v2, Lcom/snapchat/android/model/StoryGroup$ActionState;->CONFIRMING_SAVE:Lcom/snapchat/android/model/StoryGroup$ActionState;
 
     invoke-virtual {v1, v2}, Lcom/snapchat/android/model/StoryGroup;->a(Lcom/snapchat/android/model/StoryGroup$ActionState;)V
 
-    iget-object v1, v0, Lapx;->a:Landroid/content/Context;
+    iget-object v1, v0, Laqw;->a:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    invoke-static {}, Lajx;->aH()Z
+    invoke-static {}, Lakr;->aG()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    iget-object v2, v0, Lapx;->a:Landroid/content/Context;
+    iget-object v2, v0, Laqw;->a:Landroid/content/Context;
 
     const v3, 0x7f0c01fd
 
@@ -91,9 +91,9 @@
 
     const/4 v4, 0x0
 
-    new-instance v5, Lapx$1;
+    new-instance v5, Laqw$1;
 
-    invoke-direct {v5, v0}, Lapx$1;-><init>(Lapx;)V
+    invoke-direct {v5, v0}, Laqw$1;-><init>(Laqw;)V
 
     invoke-static {v2, v3, v1, v4, v5}, Lcom/snapchat/android/util/AlertDialogUtils;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;ZLcom/snapchat/android/util/AlertDialogUtils$a;)V
 
@@ -103,7 +103,7 @@
 
     .line 558
     :cond_0
-    invoke-virtual {v0}, Lapx;->a()V
+    invoke-virtual {v0}, Laqw;->a()V
 
     goto :goto_0
 .end method

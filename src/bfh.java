@@ -1,20 +1,4 @@
-import android.media.MediaMetadataRetriever;
-
-public final class bfh
-{
-  public static MediaMetadataRetriever a(MediaMetadataRetriever paramMediaMetadataRetriever, String paramString)
-  {
-    try
-    {
-      paramMediaMetadataRetriever.setDataSource(paramString);
-      return paramMediaMetadataRetriever;
-    }
-    catch (RuntimeException paramMediaMetadataRetriever)
-    {
-      throw new bew();
-    }
-  }
-}
+public final class bfh {}
 
 /* Location:
  * Qualified Name:     bfh

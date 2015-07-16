@@ -1,34 +1,34 @@
 package com.snapchat.android.fragments.chat;
 
-import alw;
-import alx;
-import alx.a;
+import amt;
+import amu;
+import amu.a;
 import android.text.TextUtils;
 import com.snapchat.android.model.Friend;
 import java.util.Set;
-import yi;
+import ze;
 
 final class ChatFragment$21
-  implements alw
+  implements amt
 {
   ChatFragment$21(ChatFragment paramChatFragment) {}
   
-  public final boolean a(alx.a parama)
+  public final boolean a(amu.a parama)
   {
     if (ChatFragment.n(a).b()) {}
     do
     {
       return false;
-      if ((alx.h.contains(c)) && (!TextUtils.equals(a.f.h(), a))) {
+      if ((amu.h.contains(c)) && (!TextUtils.equals(a.f.l(), a))) {
         return true;
       }
-    } while (!ChatFragment.z().contains(c));
+    } while (!ChatFragment.A().contains(c));
     return true;
   }
   
-  public final boolean b(alx.a parama)
+  public final boolean b(amu.a parama)
   {
-    return (alx.h.contains(c)) && (a.f != null) && (TextUtils.equals(a.f.h(), a));
+    return (amu.h.contains(c)) && (a.f != null) && (TextUtils.equals(a.f.l(), a));
   }
 }
 

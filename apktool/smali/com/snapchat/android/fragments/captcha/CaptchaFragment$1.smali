@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/fragments/captcha/CaptchaFragment$1;
-.super Lafo;
+.super Lago;
 .source "SourceFile"
 
 
@@ -19,14 +19,14 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/captcha/CaptchaFragment;Landroid/content/Context;Ljava/util/List;Lafo$a;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/captcha/CaptchaFragment;Landroid/content/Context;Ljava/util/List;Lago$a;)V
     .locals 0
 
     .prologue
     .line 114
     iput-object p1, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$1;->b:Lcom/snapchat/android/fragments/captcha/CaptchaFragment;
 
-    invoke-direct {p0, p2, p3, p4}, Lafo;-><init>(Landroid/content/Context;Ljava/util/List;Lafo$a;)V
+    invoke-direct {p0, p2, p3, p4}, Lago;-><init>(Landroid/content/Context;Ljava/util/List;Lago$a;)V
 
     return-void
 .end method

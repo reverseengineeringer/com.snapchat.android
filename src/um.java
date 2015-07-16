@@ -1,14 +1,4 @@
-public final class um
-  implements un
-{
-  public final long a(int paramInt)
-  {
-    if (paramInt <= 0) {
-      return 0L;
-    }
-    return 1 << paramInt - 1;
-  }
-}
+public final class um {}
 
 /* Location:
  * Qualified Name:     um

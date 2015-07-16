@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 847
+    .line 858
     iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity$2;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,17 +40,17 @@
     .locals 2
 
     .prologue
-    .line 850
+    .line 861
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$2;->a:Lcom/snapchat/android/LandingPageActivity;
 
     iget-object v0, v0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbbt;
+    new-instance v1, Lbct;
 
-    invoke-direct {v1}, Lbbt;-><init>()V
+    invoke-direct {v1}, Lbct;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 851
+    .line 862
     return-void
 .end method

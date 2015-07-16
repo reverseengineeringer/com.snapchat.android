@@ -1,11 +1,14 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.io.Closeable;
 
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.FIELD})
-public @interface cbk {}
+public abstract interface cbk
+  extends Closeable
+{
+  public abstract cbl E_();
+  
+  public abstract long a(cav paramcav, long paramLong);
+  
+  public abstract void close();
+}
 
 /* Location:
  * Qualified Name:     cbk

@@ -1,54 +1,54 @@
-import com.snapchat.android.util.StartupPath;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 public final class aux
 {
-  private static StartupPath mStartupPath = StartupPath.UNKNOWN;
-  private static aux sStartupContext = new aux();
-  private boolean isAppStart = false;
+  private static final Random sRandom = new Random();
   
-  public static aux a()
+  public static float a(float paramFloat)
   {
-    return sStartupContext;
+    return Math.min(Math.max(paramFloat, 0.0F), 1.0F);
   }
   
-  public static StartupPath b()
+  public static int a(int paramInt)
   {
-    return mStartupPath;
+    int i = 1;
+    while (i < paramInt) {
+      i <<= 1;
+    }
+    return i;
   }
   
-  public final void a(int paramInt)
+  public static long a(List<Long> paramList)
   {
-    switch (aux.1.$SwitchMap$com$snapchat$android$util$StartupContext$Checkpoint[(paramInt - 1)])
+    if ((paramList != null) && (!paramList.isEmpty()))
     {
-    default: 
-      mStartupPath = StartupPath.UNKNOWN;
-      return;
-    case 1: 
-      mStartupPath = StartupPath.FROM_KILLED_STATE;
-      isAppStart = true;
-      return;
-    case 2: 
-      if (!isAppStart) {
-        mStartupPath = StartupPath.FROM_DESTROYED_STATE;
+      int i = paramList.size();
+      int j = i / 2;
+      if (i % 2 == 0)
+      {
+        long l = ((Long)paramList.get(j)).longValue();
+        return (((Long)paramList.get(j - 1)).longValue() + l) / 2L;
       }
-      isAppStart = false;
-      return;
+      return ((Long)paramList.get(j)).longValue();
     }
-    mStartupPath = StartupPath.FROM_BACKGROUNDED_STATE;
+    return 0L;
   }
   
-  public static enum a
+  public static Random a()
   {
-    static
-    {
-      ACTIVITY_CREATE_CHECKPOINT$6dad94c5 = 2;
-      ACTIVITY_RESTART_CHECKPOINT$6dad94c5 = 3;
+    return sRandom;
+  }
+  
+  public static long b(List<Long> paramList)
+  {
+    if (paramList.size() == 0) {
+      return 0L;
     }
-    
-    public static int[] a()
-    {
-      return (int[])$VALUES$25e79240.clone();
-    }
+    Iterator localIterator = paramList.iterator();
+    for (long l = 0L; localIterator.hasNext(); l = ((Long)localIterator.next()).longValue() + l) {}
+    return l / paramList.size();
   }
 }
 

@@ -5,13 +5,13 @@ import android.content.res.Resources;
 import android.util.AttributeSet;
 import android.view.animation.AlphaAnimation;
 import android.widget.RelativeLayout;
-import apn;
-import apn.1;
+import aqm;
+import aqm.1;
 
 public class AutofocusCrosshair
   extends RelativeLayout
 {
-  public final apn a = new apn(this);
+  public final aqm a = new aqm(this);
   public final int b = (int)getResources().getDimension(2131296264);
   
   public AutofocusCrosshair(Context paramContext, AttributeSet paramAttributeSet)
@@ -21,10 +21,10 @@ public class AutofocusCrosshair
     int i = b;
     paramAttributeSet = new AlphaAnimation(1.0F, 0.0F);
     paramAttributeSet.setDuration(600L);
-    paramContext.addAnimation(apn.a(i));
-    paramContext.addAnimation(apn.a());
+    paramContext.addAnimation(aqm.a(i));
+    paramContext.addAnimation(aqm.a());
     paramContext.addAnimation(paramAttributeSet);
-    paramContext.setAnimationListener(new apn.1(paramContext));
+    paramContext.setAnimationListener(new aqm.1(paramContext));
   }
   
   protected void onMeasure(int paramInt1, int paramInt2)

@@ -1,34 +1,58 @@
-import java.io.IOException;
+import com.google.gson.annotations.SerializedName;
+import java.util.List;
+import java.util.Map;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public enum blz
+public final class blz
 {
-  private final String e;
+  @SerializedName("channels")
+  protected List<blv> channels;
+  @SerializedName("id")
+  protected String id;
+  @SerializedName("name")
+  protected String name;
+  @SerializedName("properties")
+  protected Map<String, String> properties;
+  @SerializedName("type")
+  protected String type;
   
-  private blz(String paramString)
+  public final String a()
   {
-    e = paramString;
+    return type;
   }
   
-  public static blz a(String paramString)
+  public final Map<String, String> b()
   {
-    if (paramString.equals(ae)) {
-      return a;
+    return properties;
+  }
+  
+  public final List<blv> c()
+  {
+    return channels;
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if (paramObject == this) {
+      return true;
     }
-    if (paramString.equals(be)) {
-      return b;
+    if (!(paramObject instanceof blz)) {
+      return false;
     }
-    if (paramString.equals(de)) {
-      return d;
-    }
-    if (paramString.equals(ce)) {
-      return c;
-    }
-    throw new IOException("Unexpected protocol: " + paramString);
+    paramObject = (blz)paramObject;
+    return new EqualsBuilder().append(id, id).append(name, name).append(type, type).append(properties, properties).append(channels, channels).isEquals();
+  }
+  
+  public final int hashCode()
+  {
+    return new HashCodeBuilder().append(id).append(name).append(type).append(properties).append(channels).toHashCode();
   }
   
   public final String toString()
   {
-    return e;
+    return ToStringBuilder.reflectionToString(this);
   }
 }
 

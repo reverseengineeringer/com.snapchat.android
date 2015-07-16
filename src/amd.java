@@ -1,37 +1,66 @@
-import android.content.Intent;
-import com.snapchat.android.analytics.AnalyticsEvents;
-import com.snapchat.android.analytics.AnalyticsEvents.LogoutReason;
+import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
+import com.snapchat.android.util.debug.ReleaseManager;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
 
-public abstract class amd
-  extends amg
+public final class amd
 {
-  protected ajv h = ajv.g();
+  public final Map<String, amc> a = du.a();
+  public final Object b = new Object();
+  private final ami c;
+  private final bhk d;
+  private final ReleaseManager e;
   
-  public amd(Intent paramIntent)
+  public amd()
   {
-    super(paramIntent);
+    this(new ami(), new bhk(), ReleaseManager.a());
   }
   
-  public void a(@cgb uc paramuc)
+  private amd(ami paramami, bhk parambhk, ReleaseManager paramReleaseManager)
   {
-    super.a(paramuc);
-    if ((i()) && (mResponseCode == 401))
+    c = paramami;
+    d = parambhk;
+    e = paramReleaseManager;
+  }
+  
+  public static String a(@chc amc paramamc)
+  {
+    return b(e, a);
+  }
+  
+  private static String b(@chc String paramString1, @chc String paramString2)
+  {
+    return paramString1 + ":" + paramString2;
+  }
+  
+  public final Collection<amc> a()
+  {
+    synchronized (b)
     {
-      AnalyticsEvents.a(AnalyticsEvents.LogoutReason.AUTHENTICATION_ERROR);
-      aol.a().e();
+      ArrayList localArrayList = dt.a(a.values());
+      return localArrayList;
     }
   }
   
-  public abstract String e();
-  
-  public boolean i()
+  public final void a(@chc String paramString1, @chc String paramString2)
   {
-    return true;
-  }
-  
-  public final String n_()
-  {
-    return azm.b("dummy") + e();
+    synchronized (b)
+    {
+      paramString1 = (amc)a.remove(b(paramString1, paramString2));
+      if (paramString1 != null)
+      {
+        paramString2 = c;
+        EasyMetric localEasyMetric = EasyMetric.EasyMetricFactory.a("DATA_CONSUMED");
+        localEasyMetric.a("requestId", b);
+        localEasyMetric.a("type", e);
+        localEasyMetric.a("return_size_bytes", Integer.valueOf(d));
+        localEasyMetric.a("reachability", a.f());
+        localEasyMetric.a(false);
+      }
+      return;
+    }
   }
 }
 

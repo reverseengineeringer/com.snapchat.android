@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 25
+    .line 26
     new-instance v0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
     const-string v1, "NOT_STARTED"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;->NOT_STARTED:Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
-    .line 29
+    .line 30
     new-instance v0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
     const-string v1, "TIMING"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;->TIMING:Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
-    .line 33
+    .line 34
     new-instance v0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
     const-string v1, "REPORTED"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;->REPORTED:Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
-    .line 21
+    .line 22
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 21
+    .line 22
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 21
+    .line 22
     const-class v0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 21
+    .line 22
     sget-object v0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;->$VALUES:[Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;->clone()Ljava/lang/Object;

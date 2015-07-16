@@ -1,7 +1,7 @@
 package com.snapchat.android.util;
 
-import cgk;
-import ckn;
+import chl;
+import clo;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.TimeZone;
 
 public class DateTimeZoneProvider
-  implements ckn
+  implements clo
 {
   public static final Set<String> AVAILABLE_IDS;
   
@@ -20,21 +20,21 @@ public class DateTimeZoneProvider
     localHashSet.addAll(Arrays.asList(TimeZone.getAvailableIDs()));
   }
   
-  public final cgk a(String paramString)
+  public final chl a(String paramString)
   {
     if (paramString == null) {
-      return cgk.a;
+      return chl.a;
     }
     paramString = TimeZone.getTimeZone(paramString);
     if (paramString == null) {
-      return cgk.a;
+      return chl.a;
     }
     int j = paramString.getRawOffset();
     int i = j;
     if (paramString.inDaylightTime(new Date())) {
       i = j + paramString.getDSTSavings();
     }
-    return cgk.a(i);
+    return chl.a(i);
   }
   
   public final Set a()

@@ -7,7 +7,7 @@ import android.os.Parcelable.Creator;
 import android.text.Editable;
 import android.util.AttributeSet;
 import android.view.View.BaseSavedState;
-import cgb;
+import chc;
 
 public class StickyEndEditText
   extends BackNavigationEditText
@@ -64,7 +64,7 @@ public class StickyEndEditText
       super();
     }
     
-    public void writeToParcel(@cgb Parcel paramParcel, int paramInt)
+    public void writeToParcel(@chc Parcel paramParcel, int paramInt)
     {
       super.writeToParcel(paramParcel, paramInt);
       paramParcel.writeString(a);

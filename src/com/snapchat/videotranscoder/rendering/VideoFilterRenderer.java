@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.rendering;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.audio.AudioExtractor;
 import com.snapchat.videotranscoder.audio.AudioTrackDecoder;
 import com.snapchat.videotranscoder.cts.InputSurface;
@@ -45,12 +45,12 @@ public class VideoFilterRenderer
   private VideoFilterDecoder mVideoFilterDecoder;
   private volatile boolean mVideoFilterDecoderDone = false;
   
-  public VideoFilterRenderer(@cgb TranscodingResources paramTranscodingResources, @cgb VideoFileMediaSource paramVideoFileMediaSource, @cgb InputSurface paramInputSurface)
+  public VideoFilterRenderer(@chc TranscodingResources paramTranscodingResources, @chc VideoFileMediaSource paramVideoFileMediaSource, @chc InputSurface paramInputSurface)
   {
     this(paramTranscodingResources, paramVideoFileMediaSource, paramInputSurface, Executors.newCachedThreadPool());
   }
   
-  protected VideoFilterRenderer(@cgb TranscodingResources paramTranscodingResources, @cgb VideoFileMediaSource paramVideoFileMediaSource, @cgb InputSurface paramInputSurface, @cgb ExecutorService paramExecutorService)
+  protected VideoFilterRenderer(@chc TranscodingResources paramTranscodingResources, @chc VideoFileMediaSource paramVideoFileMediaSource, @chc InputSurface paramInputSurface, @chc ExecutorService paramExecutorService)
   {
     if (!Utils.getInstance().haveLooper("VideoFilterRenderer")) {
       throw new SetupException("There is no looper thread");
@@ -105,7 +105,7 @@ public class VideoFilterRenderer
     mAudioExtractor.abort();
   }
   
-  public void changeFilter(@cgb FragmentShader.Filter paramFilter1, @cgb FragmentShader.Filter paramFilter2)
+  public void changeFilter(@chc FragmentShader.Filter paramFilter1, @chc FragmentShader.Filter paramFilter2)
   {
     mChangedShaders = true;
     mLeftFilter = paramFilter1;
@@ -215,7 +215,7 @@ public class VideoFilterRenderer
     }
   }
   
-  public void render(@cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  public void render(@chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     if (mAudioThread != null) {
       mExecutor.execute(mAudioThread);

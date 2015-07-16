@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field private final enforcer:Lboi;
+.field private final enforcer:Lbpj;
 
 .field private final eventsToDispatch:Ljava/lang/ThreadLocal;
     .annotation system Ldalvik/annotation/Signature;
@@ -46,7 +46,7 @@
     .end annotation
 .end field
 
-.field private final handlerFinder:Lbof;
+.field private final handlerFinder:Lbpg;
 
 .field private final handlersByType:Ljava/util/concurrent/ConcurrentMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -57,7 +57,7 @@
             "<*>;",
             "Ljava/util/Set",
             "<",
-            "Lbod;",
+            "Lbpe;",
             ">;>;"
         }
     .end annotation
@@ -83,7 +83,7 @@
             "<",
             "Ljava/lang/Class",
             "<*>;",
-            "Lboe;",
+            "Lbpf;",
             ">;"
         }
     .end annotation
@@ -91,33 +91,33 @@
 
 
 # direct methods
-.method public constructor <init>(Lboi;)V
+.method public constructor <init>(Lbpj;)V
     .locals 1
 
     .prologue
     .line 143
     const-string v0, "default"
 
-    invoke-direct {p0, p1, v0}, Lcom/squareup/otto/Bus;-><init>(Lboi;Ljava/lang/String;)V
+    invoke-direct {p0, p1, v0}, Lcom/squareup/otto/Bus;-><init>(Lbpj;Ljava/lang/String;)V
 
     .line 144
     return-void
 .end method
 
-.method private constructor <init>(Lboi;Ljava/lang/String;)V
+.method private constructor <init>(Lbpj;Ljava/lang/String;)V
     .locals 1
 
     .prologue
     .line 153
-    sget-object v0, Lbof;->a:Lbof;
+    sget-object v0, Lbpg;->a:Lbpg;
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/squareup/otto/Bus;-><init>(Lboi;Ljava/lang/String;Lbof;)V
+    invoke-direct {p0, p1, p2, v0}, Lcom/squareup/otto/Bus;-><init>(Lbpj;Ljava/lang/String;Lbpg;)V
 
     .line 154
     return-void
 .end method
 
-.method private constructor <init>(Lboi;Ljava/lang/String;Lbof;)V
+.method private constructor <init>(Lbpj;Ljava/lang/String;Lbpg;)V
     .locals 1
 
     .prologue
@@ -160,13 +160,13 @@
     iput-object v0, p0, Lcom/squareup/otto/Bus;->flattenHierarchyCache:Ljava/util/Map;
 
     .line 164
-    iput-object p1, p0, Lcom/squareup/otto/Bus;->enforcer:Lboi;
+    iput-object p1, p0, Lcom/squareup/otto/Bus;->enforcer:Lbpj;
 
     .line 165
     iput-object p2, p0, Lcom/squareup/otto/Bus;->identifier:Ljava/lang/String;
 
     .line 166
-    iput-object p3, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbof;
+    iput-object p3, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbpg;
 
     .line 167
     return-void
@@ -181,7 +181,7 @@
             "<*>;)",
             "Ljava/util/Set",
             "<",
-            "Lbod;",
+            "Lbpe;",
             ">;"
         }
     .end annotation
@@ -258,18 +258,18 @@
     if-eqz v0, :cond_2
 
     .line 363
-    iget-object v1, v0, Lcom/squareup/otto/Bus$a;->b:Lbod;
+    iget-object v1, v0, Lcom/squareup/otto/Bus$a;->b:Lbpe;
 
-    iget-boolean v1, v1, Lbod;->c:Z
+    iget-boolean v1, v1, Lbpe;->c:Z
 
     if-eqz v1, :cond_1
 
     .line 367
     iget-object v1, v0, Lcom/squareup/otto/Bus$a;->a:Ljava/lang/Object;
 
-    iget-object v0, v0, Lcom/squareup/otto/Bus$a;->b:Lbod;
+    iget-object v0, v0, Lcom/squareup/otto/Bus$a;->b:Lbpe;
 
-    invoke-static {v1, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;Lbod;)V
+    invoke-static {v1, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;Lbpe;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -301,7 +301,7 @@
     goto :goto_0
 .end method
 
-.method private static a(Lbod;Lboe;)V
+.method private static a(Lbpe;Lbpf;)V
     .locals 4
 
     .prologue
@@ -310,7 +310,7 @@
 
     .line 245
     :try_start_0
-    invoke-virtual {p1}, Lboe;->a()Ljava/lang/Object;
+    invoke-virtual {p1}, Lbpf;->a()Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -355,18 +355,18 @@
 
     .line 252
     :cond_0
-    invoke-static {v0, p0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;Lbod;)V
+    invoke-static {v0, p0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;Lbpe;)V
 
     goto :goto_1
 .end method
 
-.method private static a(Ljava/lang/Object;Lbod;)V
+.method private static a(Ljava/lang/Object;Lbpe;)V
     .locals 4
 
     .prologue
     .line 384
     :try_start_0
-    iget-boolean v0, p1, Lbod;->c:Z
+    iget-boolean v0, p1, Lbpe;->c:Z
 
     if-nez v0, :cond_0
 
@@ -376,7 +376,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p1}, Lbod;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Lbpe;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -444,9 +444,9 @@
     .line 384
     :cond_0
     :try_start_1
-    iget-object v0, p1, Lbod;->b:Ljava/lang/reflect/Method;
+    iget-object v0, p1, Lbpe;->b:Ljava/lang/reflect/Method;
 
-    iget-object v1, p1, Lbod;->a:Ljava/lang/Object;
+    iget-object v1, p1, Lbpe;->a:Ljava/lang/Object;
 
     const/4 v2, 0x1
 
@@ -665,9 +665,9 @@
 
     .line 316
     :cond_0
-    iget-object v0, p0, Lcom/squareup/otto/Bus;->enforcer:Lboi;
+    iget-object v0, p0, Lcom/squareup/otto/Bus;->enforcer:Lbpj;
 
-    invoke-interface {v0, p0}, Lboi;->a(Lcom/squareup/otto/Bus;)V
+    invoke-interface {v0, p0}, Lbpj;->a(Lcom/squareup/otto/Bus;)V
 
     .line 318
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -749,7 +749,7 @@
 
     move-object v1, v0
 
-    check-cast v1, Lbod;
+    check-cast v1, Lbpe;
 
     .line 327
     iget-object v0, p0, Lcom/squareup/otto/Bus;->eventsToDispatch:Ljava/lang/ThreadLocal;
@@ -762,7 +762,7 @@
 
     new-instance v5, Lcom/squareup/otto/Bus$a;
 
-    invoke-direct {v5, p1, v1}, Lcom/squareup/otto/Bus$a;-><init>(Ljava/lang/Object;Lbod;)V
+    invoke-direct {v5, p1, v1}, Lcom/squareup/otto/Bus$a;-><init>(Ljava/lang/Object;Lbpe;)V
 
     invoke-virtual {v0, v5}, Ljava/util/concurrent/ConcurrentLinkedQueue;->offer(Ljava/lang/Object;)Z
 
@@ -781,14 +781,14 @@
     :cond_3
     if-nez v1, :cond_4
 
-    instance-of v0, p1, Lboc;
+    instance-of v0, p1, Lbpd;
 
     if-nez v0, :cond_4
 
     .line 333
-    new-instance v0, Lboc;
+    new-instance v0, Lbpd;
 
-    invoke-direct {v0, p0, p1}, Lboc;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p0, p1}, Lbpd;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {p0, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -825,14 +825,14 @@
 
     .line 266
     :cond_0
-    iget-object v0, p0, Lcom/squareup/otto/Bus;->enforcer:Lboi;
+    iget-object v0, p0, Lcom/squareup/otto/Bus;->enforcer:Lbpj;
 
-    invoke-interface {v0, p0}, Lboi;->a(Lcom/squareup/otto/Bus;)V
+    invoke-interface {v0, p0}, Lbpj;->a(Lcom/squareup/otto/Bus;)V
 
     .line 268
-    iget-object v0, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbof;
+    iget-object v0, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbpg;
 
-    invoke-interface {v0, p1}, Lbof;->a(Ljava/lang/Object;)Ljava/util/Map;
+    invoke-interface {v0, p1}, Lbpg;->a(Ljava/lang/Object;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -872,19 +872,19 @@
 
     move-result-object v2
 
-    check-cast v2, Lboe;
+    check-cast v2, Lbpf;
 
     .line 272
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lboe;
+    check-cast v0, Lbpf;
 
     .line 274
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0, v2}, Lboe;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Lbpf;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -931,17 +931,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lboe;
+    check-cast v0, Lbpf;
 
-    iput-boolean v6, v0, Lboe;->b:Z
+    iput-boolean v6, v0, Lbpf;->b:Z
 
     goto :goto_0
 
     .line 282
     :cond_3
-    iget-object v0, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbof;
+    iget-object v0, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbpg;
 
-    invoke-interface {v0, p1}, Lbof;->b(Ljava/lang/Object;)Ljava/util/Map;
+    invoke-interface {v0, p1}, Lbpg;->b(Ljava/lang/Object;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -1045,7 +1045,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lbod;
+    check-cast v1, Lbpe;
 
     .line 294
     invoke-interface {v0, v1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
@@ -1055,7 +1055,7 @@
     if-eqz v5, :cond_6
 
     .line 295
-    iput-boolean v6, v1, Lbod;->c:Z
+    iput-boolean v6, v1, Lbpe;->c:Z
 
     goto :goto_2
 
@@ -1088,14 +1088,14 @@
 
     .line 189
     :cond_0
-    iget-object v0, p0, Lcom/squareup/otto/Bus;->enforcer:Lboi;
+    iget-object v0, p0, Lcom/squareup/otto/Bus;->enforcer:Lbpj;
 
-    invoke-interface {v0, p0}, Lboi;->a(Lcom/squareup/otto/Bus;)V
+    invoke-interface {v0, p0}, Lbpj;->a(Lcom/squareup/otto/Bus;)V
 
     .line 191
-    iget-object v0, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbof;
+    iget-object v0, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbpg;
 
-    invoke-interface {v0, p1}, Lbof;->a(Ljava/lang/Object;)Ljava/util/Map;
+    invoke-interface {v0, p1}, Lbpg;->a(Ljava/lang/Object;)Ljava/util/Map;
 
     move-result-object v3
 
@@ -1126,7 +1126,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lboe;
+    check-cast v1, Lbpf;
 
     .line 195
     iget-object v2, p0, Lcom/squareup/otto/Bus;->producersByType:Ljava/util/concurrent/ConcurrentMap;
@@ -1135,7 +1135,7 @@
 
     move-result-object v2
 
-    check-cast v2, Lboe;
+    check-cast v2, Lbpf;
 
     .line 197
     if-eqz v2, :cond_2
@@ -1159,7 +1159,7 @@
 
     move-result-object v0
 
-    iget-object v1, v1, Lboe;->a:Ljava/lang/Object;
+    iget-object v1, v1, Lbpf;->a:Ljava/lang/Object;
 
     .line 199
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1176,7 +1176,7 @@
 
     move-result-object v0
 
-    iget-object v1, v2, Lboe;->a:Ljava/lang/Object;
+    iget-object v1, v2, Lbpf;->a:Ljava/lang/Object;
 
     .line 200
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1236,18 +1236,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lbod;
+    check-cast v0, Lbpe;
 
     .line 205
-    invoke-static {v0, v1}, Lcom/squareup/otto/Bus;->a(Lbod;Lboe;)V
+    invoke-static {v0, v1}, Lcom/squareup/otto/Bus;->a(Lbpe;Lbpf;)V
 
     goto :goto_0
 
     .line 210
     :cond_3
-    iget-object v0, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbof;
+    iget-object v0, p0, Lcom/squareup/otto/Bus;->handlerFinder:Lbpg;
 
-    invoke-interface {v0, p1}, Lbof;->b(Ljava/lang/Object;)Ljava/util/Map;
+    invoke-interface {v0, p1}, Lbpg;->b(Ljava/lang/Object;)Ljava/util/Map;
 
     move-result-object v3
 
@@ -1354,12 +1354,12 @@
 
     move-result-object v1
 
-    check-cast v1, Lboe;
+    check-cast v1, Lbpf;
 
     .line 228
     if-eqz v1, :cond_6
 
-    iget-boolean v3, v1, Lboe;->b:Z
+    iget-boolean v3, v1, Lbpf;->b:Z
 
     if-eqz v3, :cond_6
 
@@ -1387,20 +1387,20 @@
 
     move-result-object v0
 
-    check-cast v0, Lbod;
+    check-cast v0, Lbpe;
 
     .line 231
-    iget-boolean v4, v1, Lboe;->b:Z
+    iget-boolean v4, v1, Lbpf;->b:Z
 
     if-eqz v4, :cond_6
 
     .line 232
-    iget-boolean v4, v0, Lbod;->c:Z
+    iget-boolean v4, v0, Lbpe;->c:Z
 
     if-eqz v4, :cond_7
 
     .line 235
-    invoke-static {v0, v1}, Lcom/squareup/otto/Bus;->a(Lbod;Lboe;)V
+    invoke-static {v0, v1}, Lcom/squareup/otto/Bus;->a(Lbpe;Lbpf;)V
 
     goto :goto_2
 

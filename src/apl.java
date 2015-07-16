@@ -1,148 +1,152 @@
-import java.util.Iterator;
+import android.text.TextUtils;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
+import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
+import com.snapchat.android.model.Friend;
 
 public final class apl
-  extends bfm
 {
-  public final bj a;
-  public final bj b;
-  public bh<apl.b> c = new bh();
-  public boolean d = false;
-  public bff e = bff.a();
-  public bff f = bff.a();
-  private bff g = bff.a();
+  private static final apl c = new apl();
+  public final ama a;
+  public apl.a b;
+  private final ScAnalyticsEventEngine d;
+  private final EasyMetric.EasyMetricFactory e;
+  private final auk f;
+  private final bhk g;
   
-  public apl()
+  private apl()
   {
-    this(avk.a());
+    this(ScAnalyticsEventEngine.a(), new auk(), new EasyMetric.EasyMetricFactory(), new bhk(), ama.a());
   }
   
-  private apl(@cgb bj parambj1, @cgb bj parambj2)
+  private apl(ScAnalyticsEventEngine paramScAnalyticsEventEngine, auk paramauk, EasyMetric.EasyMetricFactory paramEasyMetricFactory, bhk parambhk, ama paramama)
   {
-    a = ((bj)ck.a(parambj1));
-    b = ((bj)ck.a(parambj2));
-    parambj1 = new apl.a((byte)0);
-    a.a(parambj1);
-    b.a(parambj1);
-    a.b = false;
-    b.b = false;
+    d = paramScAnalyticsEventEngine;
+    f = paramauk;
+    e = paramEasyMetricFactory;
+    g = parambhk;
+    a = paramama;
+    b = null;
   }
   
-  private apl(@cgb bp parambp)
+  public static double a(double paramDouble)
   {
-    this(parambp.a(), parambp.a());
+    return Math.round(paramDouble * 10.0D) / 10.0D;
   }
   
-  public final apl a(@cgb bff parambff)
+  public static apl a()
   {
-    f();
-    ck.a(parambff);
-    if (d)
+    return c;
+  }
+  
+  public static ih a(int paramInt)
+  {
+    switch (paramInt)
     {
-      a.b(x);
-      b.b(y);
-      return this;
+    default: 
+      return ih.IMAGE;
+    case 1: 
+      return ih.VIDEO;
     }
-    g = parambff;
-    return this;
+    return ih.VIDEO_NO_SOUND;
   }
   
-  public final apl a(@cgb bl parambl)
+  public static boolean a(@chc akl paramakl)
   {
-    f();
-    ck.a(parambl);
-    a.a(parambl);
-    b.a(parambl);
-    return this;
+    return a(auk.a(mUsername, akp.g()));
   }
   
-  public final apl a(boolean paramBoolean)
+  private static boolean a(@chd Friend paramFriend)
   {
-    f();
-    if (d == paramBoolean) {
-      return this;
+    return (paramFriend != null) && (mIsLocalStory);
+  }
+  
+  public static boolean a(@chc String paramString)
+  {
+    return a(auk.a(paramString, akp.g()));
+  }
+  
+  public static long b(boolean paramBoolean)
+  {
+    if (paramBoolean) {
+      return 0L;
     }
-    if (paramBoolean)
+    return 1L;
+  }
+  
+  public static void b(@chc akl paramakl)
+  {
+    md localmd = new md();
+    storyType = c(paramakl);
+    posterId = mUsername;
+    storySnapId = paramakl.d();
+    if (a(paramakl)) {
+      geoFence = "LOCAL";
+    }
+    storySnapId = paramakl.d();
+    snapTime = Double.valueOf(paramakl.G());
+    ScAnalyticsEventEngine.a(localmd);
+  }
+  
+  public static mj c(@chc akl paramakl)
+  {
+    if (mIsShared) {
+      return mj.OUR;
+    }
+    if (TextUtils.equals(mStoryId, "my_story_ads79sdf")) {
+      return mj.MY;
+    }
+    if (paramakl.aC()) {
+      return mj.BRAND;
+    }
+    return mj.USER;
+  }
+  
+  public final void a(long paramLong)
+  {
+    if (b == null) {
+      b = new apl.a();
+    }
+    b.i = paramLong;
+  }
+  
+  public final void a(@chc String paramString, @chc fz paramfz)
+  {
+    lx locallx = new lx();
+    posterId = paramString;
+    additionalInfo = paramfz;
+    viewLocation = b.c;
+    storyType = mj.OUR;
+    if (a(paramString)) {
+      geoFence = "LOCAL";
+    }
+    ScAnalyticsEventEngine.a(locallx);
+  }
+  
+  public final void a(boolean paramBoolean)
+  {
+    if (b == null) {
+      b = new apl.a();
+    }
+    apl.a locala = b;
+    if (paramBoolean) {}
+    for (long l = 0L;; l = 1L)
     {
-      if (f != null)
-      {
-        a.c(f.x);
-        b.c(f.y);
-      }
-      if (e != null)
-      {
-        a.a(e.x);
-        b.a(e.y);
-      }
-      if (g != null)
-      {
-        a.b(g.x);
-        b.b(g.y);
-      }
-      double d1 = a.h;
-      a.b(d1 + 1.0D);
-      a.b(d1);
-      d1 = b.h;
-      b.b(d1 + 1.0D);
-      b.b(d1);
-    }
-    for (;;)
-    {
-      d = paramBoolean;
-      return this;
-      g = new bff(a.h, b.h);
-      e = new bff(a.d.a, b.d.a);
-      f = new bff(a.d.b, b.d.b);
+      c = Long.valueOf(l);
+      return;
     }
   }
   
-  public final apl b(boolean paramBoolean)
+  public static final class a
   {
-    f();
-    a.b = paramBoolean;
-    b.b = paramBoolean;
-    return this;
-  }
-  
-  public final void c()
-  {
-    a.a();
-    b.a();
-    c.a();
-  }
-  
-  final class a
-    implements bn
-  {
-    private a() {}
-    
-    public final void a()
-    {
-      if ((d) && (a.b()) && (b.b()))
-      {
-        Iterator localIterator = c.iterator();
-        while (localIterator.hasNext()) {
-          ((apl.b)localIterator.next()).a();
-        }
-      }
-    }
-    
-    public final void a(bj parambj)
-    {
-      if (d)
-      {
-        parambj = c.iterator();
-        while (parambj.hasNext()) {
-          ((apl.b)parambj.next()).a(apl.this);
-        }
-      }
-    }
-  }
-  
-  public static abstract interface b
-  {
-    public abstract void a();
-    
-    public abstract void a(@cgb apl paramapl);
+    public boolean a = false;
+    public Long b = Long.valueOf(0L);
+    public Long c = Long.valueOf(0L);
+    public double d = 0.0D;
+    public hu e;
+    public mj f = null;
+    public String g = null;
+    public boolean h = false;
+    public long i = -1L;
   }
 }
 

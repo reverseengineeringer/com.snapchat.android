@@ -1,28 +1,38 @@
-import android.content.Intent;
-import android.net.Uri;
-import android.text.TextUtils;
-import javax.inject.Inject;
+import com.snapchat.android.database.table.SnapbryoTable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public final class abh
+  extends SnapbryoTable
 {
-  @cgc
-  public static String a(@cgc Intent paramIntent)
+  private static abh a;
+  
+  public static abh a()
   {
-    if (paramIntent == null) {}
-    do
+    try
     {
-      do
-      {
-        do
-        {
-          return null;
-          paramIntent = paramIntent.getData();
-        } while (paramIntent == null);
-        paramIntent = paramIntent.getPath();
-      } while ((paramIntent == null) || (!paramIntent.matches("/add/.+")));
-      paramIntent = paramIntent.substring(5);
-    } while ((TextUtils.isEmpty(paramIntent)) || (paramIntent.length() > 32));
-    return paramIntent;
+      if (a == null) {
+        a = new abh();
+      }
+      abh localabh = a;
+      return localabh;
+    }
+    finally {}
+  }
+  
+  protected final Collection<aji> a(akp paramakp)
+  {
+    return new ArrayList(aki.a().g());
+  }
+  
+  public final void b(akp paramakp)
+  {
+    aki.a().b(a(null, null));
+  }
+  
+  public final String c()
+  {
+    return "FailedSendDSnapbryoTable";
   }
 }
 

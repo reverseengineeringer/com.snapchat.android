@@ -2,21 +2,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class ga
-  extends lt
+  extends ml
 {
-  public Double ackTimeSec;
-  private final String eventName = "CHAT_CHAT_VIEW";
-  public hy mediaType;
+  private final String eventName = "APP_APPLICATION_OPEN";
+  private String notificationType;
+  private ii openState;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "CHAT_CHAT_VIEW");
-    if (ackTimeSec != null) {
-      localHashMap.put("ack_time_sec", ackTimeSec);
+    localHashMap.put("event_name", "APP_APPLICATION_OPEN");
+    if (notificationType != null) {
+      localHashMap.put("notification_type", notificationType);
     }
-    if (mediaType != null) {
-      localHashMap.put("media_type", mediaType);
+    if (openState != null) {
+      localHashMap.put("open_state", openState);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -35,23 +35,23 @@ public final class ga
         return false;
       }
       paramObject = (ga)paramObject;
-      if (ackTimeSec != null)
+      if (notificationType != null)
       {
-        if (ackTimeSec.equals(ackTimeSec)) {}
+        if (notificationType.equals(notificationType)) {}
       }
       else {
-        while (ackTimeSec != null) {
+        while (notificationType != null) {
           return false;
         }
       }
-      if (mediaType == null) {
+      if (openState == null) {
         break;
       }
-    } while (mediaType.equals(mediaType));
+    } while (openState.equals(openState));
     for (;;)
     {
       return false;
-      if (mediaType == null) {
+      if (openState == null) {
         break;
       }
     }
@@ -61,11 +61,11 @@ public final class ga
   {
     int j = 0;
     int k = super.hashCode();
-    if (ackTimeSec != null) {}
-    for (int i = ackTimeSec.hashCode();; i = 0)
+    if (notificationType != null) {}
+    for (int i = notificationType.hashCode();; i = 0)
     {
-      if (mediaType != null) {
-        j = mediaType.hashCode();
+      if (openState != null) {
+        j = openState.hashCode();
       }
       return (i + k * 31) * 31 + j;
     }

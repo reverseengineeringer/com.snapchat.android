@@ -1,29 +1,40 @@
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import com.snapchat.android.SnapkidzSettingsActivity;
+import com.snapchat.android.camera.cameradecor.CameraDecor.CameraDecorInterface;
+
 public final class wo
-  implements buo<wn>
+  extends wj
 {
-  private final buj<wn> b;
-  
-  static
+  public wo(Context paramContext, RelativeLayout paramRelativeLayout, CameraDecor.CameraDecorInterface paramCameraDecorInterface)
   {
-    if (!wo.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    super(paramContext, paramRelativeLayout, paramCameraDecorInterface);
+    g.setVisibility(8);
+    f.setBackgroundResource(2130837541);
+    f.setOnClickListener(new View.OnClickListener()
     {
-      a = bool;
-      return;
-    }
+      public final void onClick(View paramAnonymousView)
+      {
+        paramAnonymousView = a.i();
+        paramAnonymousView.startActivityForResult(new Intent(paramAnonymousView, SnapkidzSettingsActivity.class), 1000);
+      }
+    });
   }
   
-  private wo(buj<wn> parambuj)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-  }
+  public final void b() {}
   
-  public static buo<wn> a(buj<wn> parambuj)
+  public final void c() {}
+  
+  protected final void c(boolean paramBoolean) {}
+  
+  protected final boolean h()
   {
-    return new wo(parambuj);
+    return false;
   }
 }
 

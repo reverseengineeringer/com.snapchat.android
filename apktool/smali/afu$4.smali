@@ -1,6 +1,9 @@
-.class final synthetic Lafu$4;
+.class final Lafu$4;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/media/MediaPlayer$OnErrorListener;
 
 
 # annotations
@@ -9,114 +12,126 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic a:[I
+# instance fields
+.field final synthetic a:Lafu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lafu;)V
+    .locals 0
 
     .prologue
-    .line 266
-    invoke-static {}, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->values()[Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
+    .line 285
+    iput-object p1, p0, Lafu$4;->a:Lafu;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onError(Landroid/media/MediaPlayer;II)Z
+    .locals 6
+
+    .prologue
+    const/4 v5, 0x2
+
+    const/4 v4, 0x0
+
+    const/4 v3, 0x1
+
+    .line 288
+    const-string v0, "Error=%s extra=%d"
+
+    new-array v1, v5, [Ljava/lang/Object;
+
+    invoke-static {p2}, Laok;->a(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v4
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v1, v3
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    array-length v0, v0
+    .line 290
+    iget-object v1, p0, Lafu$4;->a:Lafu;
 
-    new-array v0, v0, [I
+    iget v1, v1, Lafu;->f:I
 
-    sput-object v0, Lafu$4;->a:[I
+    if-lez v1, :cond_1
 
-    :try_start_0
-    sget-object v0, Lafu$4;->a:[I
+    .line 295
+    iget-object v0, p0, Lafu$4;->a:Lafu;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->LIVE:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
+    iget v1, v0, Lafu;->f:I
 
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->ordinal()I
+    add-int/lit8 v1, v1, -0x1
 
-    move-result v1
+    iput v1, v0, Lafu;->f:I
 
-    const/4 v2, 0x1
+    .line 296
+    new-array v0, v3, [Ljava/lang/Object;
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_3
+    iget-object v1, p0, Lafu$4;->a:Lafu;
 
+    iget v1, v1, Lafu;->f:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v4
+
+    .line 298
+    iget-object v0, p0, Lafu$4;->a:Lafu;
+
+    iget-object v0, v0, Lafu;->b:Lcom/snapchat/android/ui/TextureVideoView;
+
+    new-instance v1, Lafu$4$1;
+
+    invoke-direct {v1, p0}, Lafu$4$1;-><init>(Lafu$4;)V
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/TextureVideoView;->post(Ljava/lang/Runnable;)Z
+
+    .line 319
+    :cond_0
     :goto_0
-    :try_start_1
-    sget-object v0, Lafu$4;->a:[I
+    return v3
 
-    sget-object v1, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->ARCHIVED:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
+    .line 309
+    :cond_1
+    new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->ordinal()I
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v1
+    move-result-object v2
 
-    const/4 v2, 0x2
+    aput-object v2, v1, v4
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_2
+    .line 312
+    iget-object v1, p0, Lafu$4;->a:Lafu;
 
-    :goto_1
-    :try_start_2
-    sget-object v0, Lafu$4;->a:[I
+    iget-object v1, v1, Lafu;->e:Lafq;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->NOT_AVAILABLE:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
+    .line 313
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_1
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lafu$4;->a:[I
-
-    sget-object v1, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->FAILED:Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
-
-    :goto_3
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_3
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_2
-
-    :catch_2
-    move-exception v0
-
-    goto :goto_1
-
-    :catch_3
-    move-exception v0
+    .line 314
+    invoke-interface {v1, v0}, Lafq;->a(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

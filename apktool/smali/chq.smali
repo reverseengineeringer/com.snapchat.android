@@ -1,209 +1,88 @@
-.class final Lchq;
-.super Lcjb;
+.class public final Lchq;
+.super Ljava/lang/IllegalArgumentException;
 .source "SourceFile"
 
 
-# instance fields
-.field private final a:Ljava/lang/String;
-
-
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(JLjava/lang/String;)V
+    .locals 5
 
     .prologue
-    .line 51
-    invoke-static {}, Lcgi;->w()Lcgi;
+    .line 63
+    const-string v0, "yyyy-MM-dd\'T\'HH:mm:ss.SSS"
+
+    invoke-static {v0}, Lckw;->a(Ljava/lang/String;)Lckx;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcjb;-><init>(Lcgi;)V
+    new-instance v1, Lchr;
 
-    .line 52
-    iput-object p1, p0, Lchq;->a:Ljava/lang/String;
+    invoke-direct {v1, p1, p2}, Lchr;-><init>(J)V
 
-    .line 53
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(J)I
-    .locals 1
-
-    .prologue
-    .line 62
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final a(Ljava/util/Locale;)I
-    .locals 1
-
-    .prologue
-    .line 131
-    iget-object v0, p0, Lchq;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final a(JLjava/lang/String;Ljava/util/Locale;)J
-    .locals 3
-
-    .prologue
-    .line 73
-    iget-object v0, p0, Lchq;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, "1"
-
-    invoke-virtual {v0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 74
-    new-instance v0, Lcgo;
-
-    invoke-static {}, Lcgi;->w()Lcgi;
+    invoke-virtual {v0, v1}, Lckx;->a(Lcia;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p3}, Lcgo;-><init>(Lcgi;Ljava/lang/String;)V
+    if-eqz p3, :cond_0
 
-    throw v0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 76
+    const-string v2, " ("
+
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, ")"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Illegal instant due to time zone offset transition (daylight savings time \'gap\'): "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 64
+    return-void
+
+    .line 63
     :cond_0
-    return-wide p1
+    const-string v0, ""
+
+    goto :goto_0
 .end method
 
-.method public final a(ILjava/util/Locale;)Ljava/lang/String;
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    .line 126
-    iget-object v0, p0, Lchq;->a:Ljava/lang/String;
+    .line 53
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    return-object v0
-.end method
-
-.method public final b(JI)J
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 67
-    invoke-static {p0, p3, v0, v0}, Lcjh;->a(Lcgh;III)V
-
-    .line 68
-    return-wide p1
-.end method
-
-.method public final d(J)J
-    .locals 2
-
-    .prologue
-    .line 81
-    const-wide/high16 v0, -0x8000000000000000L
-
-    return-wide v0
-.end method
-
-.method public final d()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 106
-    invoke-static {}, Lcgn;->l()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e(J)J
-    .locals 2
-
-    .prologue
-    .line 86
-    const-wide v0, 0x7fffffffffffffffL
-
-    return-wide v0
-.end method
-
-.method public final e()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 111
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final f(J)J
-    .locals 2
-
-    .prologue
-    .line 91
-    const-wide/high16 v0, -0x8000000000000000L
-
-    return-wide v0
-.end method
-
-.method public final g()I
-    .locals 1
-
-    .prologue
-    .line 116
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final g(J)J
-    .locals 2
-
-    .prologue
-    .line 96
-    const-wide/high16 v0, -0x8000000000000000L
-
-    return-wide v0
-.end method
-
-.method public final h()I
-    .locals 1
-
-    .prologue
-    .line 121
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final h(J)J
-    .locals 2
-
-    .prologue
-    .line 101
-    const-wide/high16 v0, -0x8000000000000000L
-
-    return-wide v0
+    .line 54
+    return-void
 .end method

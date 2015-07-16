@@ -1,138 +1,65 @@
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import android.widget.ImageView;
-import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics.ViewStatus;
+import com.snapchat.android.discover.model.ChannelPage;
 import com.snapchat.android.discover.model.DSnapPage;
-import com.snapchat.android.discover.model.DSnapPanel;
-import com.snapchat.android.discover.model.DSnapPanel.MediaType;
-import com.snapchat.android.discover.ui.DSnapView;
-import com.snapchat.android.model.Mediabryo.SnapType;
-import com.snapchat.android.ui.FitWidthImageView;
-import com.snapchat.android.ui.FitWidthViewGroup;
-import java.util.List;
+import com.snapchat.android.networkmanager.DownloadPriority;
 
-public final class adu
-  extends ady
+final class adu
+  extends adn
 {
-  boolean a;
-  private final Context b;
-  private final avp c;
-  private final aev d;
-  private FrameLayout e;
-  private FitWidthViewGroup f;
-  private ImageView g;
-  private avy h = new avy()
+  public adu()
   {
-    public final void a(avo paramAnonymousavo, avx paramAnonymousavx)
+    this(new akr(), aef.a(), new add(), new adt());
+  }
+  
+  private adu(akr paramakr, aef paramaef, add paramadd, adt paramadt)
+  {
+    super(paramakr, paramaef, paramadd, paramadt);
+  }
+  
+  public final boolean a(adf paramadf, DSnapPage paramDSnapPage, aly.a parama)
+  {
+    boolean bool = false;
+    int i;
+    if ((a == null) || (a.e == null) || (!a.e.equals(g)))
     {
-      if (j != null) {
-        j.b();
+      i = 0;
+      if (i == 0) {
+        break label164;
       }
-      a = true;
-    }
-  };
-  
-  public adu(Context paramContext)
-  {
-    this(paramContext, new avp(paramContext), new aev());
-  }
-  
-  private adu(Context paramContext, avp paramavp, aev paramaev)
-  {
-    b = paramContext;
-    c = paramavp;
-    d = paramaev;
-  }
-  
-  public final aim a(View paramView, adb paramadb, @cgb List<View> paramList)
-  {
-    if (f != null)
-    {
-      paramList = avu.a(f, paramList);
-      aev.a(paramadb, 0, 0, paramList.getWidth(), paramList.getHeight());
-      paramView = new ajl.a();
-      mShouldHideSystemUi = true;
-      paramView = paramView.a();
-      ajj.a locala = new ajj.a();
-      mSnapType = Mediabryo.SnapType.DISCOVER;
-      locala = (ajj.a)locala;
-      mShouldEnableVisualFilters = false;
-      locala = (ajj.a)locala;
-      mRawImageBitmap = paramList;
-      locala = (ajj.a)locala;
-      mWidth = paramList.getWidth();
-      locala = (ajj.a)locala;
-      mHeight = paramList.getHeight();
-      paramList = (ajj.a)locala;
-      mMediaExtras = paramadb;
-      paramadb = (ajj.a)paramList;
-      mPreviewConfiguration = paramView;
-      return ((ajj.a)paramadb).c();
-    }
-    return null;
-  }
-  
-  public final DiscoverUsageAnalytics.ViewStatus a(long paramLong)
-  {
-    return DiscoverUsageAnalytics.ViewStatus.COMPLETED;
-  }
-  
-  public final void a(DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel) {}
-  
-  public final boolean a(DSnapView paramDSnapView, DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
-  {
-    e = new FrameLayout(b);
-    paramDSnapView = new FrameLayout.LayoutParams(-1, -1);
-    gravity = 17;
-    e.setLayoutParams(paramDSnapView);
-    f = new FitWidthViewGroup(b);
-    g = new FitWidthImageView(b);
-    switch (adu.2.a[i.ordinal()])
-    {
-    default: 
-      f.setGravity(1);
+      bool = true;
     }
     for (;;)
     {
-      f.addView(g);
-      g.setAdjustViewBounds(true);
-      paramDSnapPage = c + a;
-      paramDSnapPanel = new avx.a();
-      mImageView = g;
-      paramDSnapPage = paramDSnapPanel.a(paramDSnapPage);
-      mRequireExactDimensions = true;
-      paramDSnapPage = paramDSnapPage.a();
-      c.a(paramDSnapPage, new avy[] { h });
-      e.addView(f, paramDSnapView);
-      return true;
-      f.setGravity(2);
-      continue;
-      f.setGravity(0);
-    }
-  }
-  
-  public final void c()
-  {
-    c.a(g);
-  }
-  
-  public final View d()
-  {
-    return e;
-  }
-  
-  public final DSnapPanel.MediaType e()
-  {
-    return DSnapPanel.MediaType.IMAGE;
-  }
-  
-  public final void o_()
-  {
-    if ((a) && (j != null)) {
-      j.b();
+      return bool;
+      if (b != null) {}
+      int k;
+      for (i = b.f.intValue();; i = 0)
+      {
+        int j = b.a.a("DISCOVER_V2", "WAN_NUM_DSNAPS_TO_LOAD_BEFORE_CURRENT", 1);
+        k = b.a.a("DISCOVER_V2", "WAN_NUM_DSNAPS_TO_LOAD_AFTER_CURRENT", 100);
+        if (f.intValue() >= i - j) {
+          break label132;
+        }
+        i = 0;
+        break;
+      }
+      label132:
+      if (f.intValue() > i + k)
+      {
+        i = 0;
+        break;
+      }
+      c = false;
+      i = 1;
+      break;
+      label164:
+      if (adt.a(paramDSnapPage, c.c(h), b.a.a("DISCOVER_V2", "WAN_RECENT_CHANNEL_THRESHOLD_HOURS", 48), b.a.a("DISCOVER_V2", "WAN_RECENT_CHANNEL_NUM_DSNAPS_TO_LOAD", 1))) {
+        c = false;
+      }
+      for (i = 1; i != 0; i = 0)
+      {
+        DownloadPriority.LOW.name();
+        return true;
+      }
     }
   }
 }

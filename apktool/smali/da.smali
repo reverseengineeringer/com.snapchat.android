@@ -1,5 +1,5 @@
-.class abstract Lda;
-.super Lde;
+.class public abstract Lda;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -7,85 +7,131 @@
 .annotation build Lcd;
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "<E:",
-        "Ljava/lang/Object;",
-        ">",
-        "Lde",
-        "<TE;>;"
+        Lda$a;
     }
 .end annotation
 
 
+# static fields
+.field static final a:Lda;
+
+.field static final b:Lda;
+
+.field static final c:Lda;
+
+
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 2
+
+    .prologue
+    .line 72
+    new-instance v0, Lda$1;
+
+    invoke-direct {v0}, Lda$1;-><init>()V
+
+    sput-object v0, Lda;->a:Lda;
+
+    .line 108
+    new-instance v0, Lda$a;
+
+    const/4 v1, -0x1
+
+    invoke-direct {v0, v1}, Lda$a;-><init>(I)V
+
+    sput-object v0, Lda;->b:Lda;
+
+    .line 110
+    new-instance v0, Lda$a;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lda$a;-><init>(I)V
+
+    sput-object v0, Lda;->c:Lda;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 35
-    invoke-direct {p0}, Lde;-><init>()V
-
     .line 62
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
+.end method
+
+.method synthetic constructor <init>(B)V
+    .locals 0
+
+    .prologue
+    .line 61
+    invoke-direct {p0}, Lda;-><init>()V
+
+    return-void
+.end method
+
+.method public static a()Lda;
+    .locals 1
+
+    .prologue
+    .line 69
+    sget-object v0, Lda;->a:Lda;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method abstract c()Ldc;
+.method public abstract a(II)Lda;
+.end method
+
+.method public abstract a(JJ)Lda;
+.end method
+
+.method public abstract a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lda;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
-            "Ldc",
-            "<TE;>;"
+            "(",
+            "Ljava/lang/Comparable",
+            "<*>;",
+            "Ljava/lang/Comparable",
+            "<*>;)",
+            "Lda;"
         }
     .end annotation
 .end method
 
-.method public contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    .prologue
-    .line 41
-    invoke-virtual {p0}, Lda;->c()Ldc;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ldc;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
+.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Lda;
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;TT;",
+            "Ljava/util/Comparator",
+            "<TT;>;)",
+            "Lda;"
+        }
+    .end annotation
 .end method
 
-.method public isEmpty()Z
-    .locals 1
-
-    .prologue
-    .line 51
-    invoke-virtual {p0}, Lda;->c()Ldc;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ldc;->isEmpty()Z
-
-    move-result v0
-
-    return v0
+.method public abstract a(ZZ)Lda;
 .end method
 
-.method public size()I
-    .locals 1
+.method public abstract b()I
+.end method
 
-    .prologue
-    .line 46
-    invoke-virtual {p0}, Lda;->c()Ldc;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ldc;->size()I
-
-    move-result v0
-
-    return v0
+.method public abstract b(ZZ)Lda;
 .end method

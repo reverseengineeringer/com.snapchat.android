@@ -1,60 +1,40 @@
-import android.content.Context;
-import android.database.Cursor;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.StyleSpan;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CursorAdapter;
-import android.widget.TextView;
+import com.snapchat.android.database.table.SnapbryoTable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public final class abi
-  extends CursorAdapter
+  extends SnapbryoTable
 {
-  public boolean a = false;
-  private LayoutInflater b;
+  private static abi a;
   
-  public abi(Context paramContext)
+  public static abi a()
   {
-    super(paramContext, null);
-    b = ((LayoutInflater)paramContext.getSystemService("layout_inflater"));
-  }
-  
-  public final void bindView(View paramView, Context paramContext, Cursor paramCursor)
-  {
-    paramContext = new SpannableStringBuilder();
-    TextView localTextView = (TextView)paramView.findViewById(2131362208);
-    int i = 0;
-    while (i < paramCursor.getColumnCount())
+    try
     {
-      if ((a) || (!TextUtils.equals(paramCursor.getColumnName(i), "_id")))
-      {
-        paramContext.append("[");
-        int j = paramContext.length();
-        paramContext.append(paramCursor.getColumnName(i));
-        paramContext.setSpan(new ForegroundColorSpan(-16776961), j, paramContext.length(), 0);
-        paramContext.setSpan(new StyleSpan(1), j, paramContext.length(), 0);
-        paramContext.append(":" + paramCursor.getString(i) + "]");
-        if (i < paramCursor.getColumnCount() - 1) {
-          paramContext.append("\n");
-        }
+      if (a == null) {
+        a = new abi();
       }
-      i += 1;
+      abi localabi = a;
+      return localabi;
     }
-    if (paramCursor.getPosition() % 2 == 0) {}
-    for (float f = 0.8F;; f = 1.0F)
-    {
-      paramView.setAlpha(f);
-      localTextView.setText(paramContext);
-      return;
-    }
+    finally {}
   }
   
-  public final View newView(Context paramContext, Cursor paramCursor, ViewGroup paramViewGroup)
+  protected final Collection<aji> a(akp paramakp)
   {
-    return b.inflate(2130968647, paramViewGroup, false);
+    paramakp = aki.a();
+    return new ArrayList(paramakp.a(mFailedSendSnapbryos));
+  }
+  
+  public final void b(akp paramakp)
+  {
+    paramakp = aki.a();
+    mFailedSendSnapbryos = paramakp.c(a(null, null));
+  }
+  
+  public final String c()
+  {
+    return "FailedSendSnapbryoTable";
   }
 }
 

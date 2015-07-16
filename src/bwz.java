@@ -1,651 +1,196 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build.VERSION;
+import android.os.Environment;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.UUID;
 
-public final class bwz
+public class bwz
+  extends AsyncTask<Void, Integer, Long>
 {
-  public char a = '\'';
-  boolean b;
-  private List c = new ArrayList();
-  private Map d = new HashMap();
-  private Map e = new HashMap();
-  private bzq f = new bzp();
-  private bzq g = new bzf();
-  private boolean h;
-  private boolean i;
-  private boolean j;
-  private String k = null;
-  private Stack l = null;
-  private Stack m = null;
-  private Stack n = null;
-  private Stack o = null;
-  private bxf p = null;
+  protected Context a;
+  protected bwq b;
+  protected String c;
+  protected String d;
+  protected String e;
+  protected ProgressDialog f;
+  private String g;
   
-  public bwz()
+  public bwz(Context paramContext, String paramString, bwq parambwq)
   {
-    this('\'', true, true, true, true);
+    a = paramContext;
+    c = paramString;
+    d = (UUID.randomUUID() + ".apk");
+    e = (Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download");
+    b = parambwq;
+    g = null;
   }
   
-  public bwz(char paramChar, boolean paramBoolean1, boolean paramBoolean2, boolean paramBoolean3, boolean paramBoolean4)
+  protected static URLConnection a(URL paramURL, int paramInt)
   {
-    c.add(f);
-    c.add(g);
-    c.add(new bzb());
-    c.add(new bzr());
-    c.add(new bzn());
-    c.add(new bzg());
-    c.add(new bzh());
-    c.add(new bzo());
-    c.add(new bzl());
-    c.add(new bzk());
-    c.add(new bzj());
-    c.add(new bzi());
-    c.add(new bzc());
-    c.add(new bze());
-    c.add(new bzd());
-    c.add(new bzm());
-    h = paramBoolean1;
-    if (h)
-    {
-      a("E", new Double(2.718281828459045D).toString());
-      a("PI", new Double(3.141592653589793D).toString());
-    }
-    i = paramBoolean2;
-    j = paramBoolean3;
-    if (i) {
-      new bxw().a(this);
-    }
-    if (j) {
-      new byv().a(this);
-    }
-    if ((paramChar == '\'') || (paramChar == '"'))
-    {
-      a = paramChar;
-      b = paramBoolean4;
-      return;
-    }
-    throw new IllegalArgumentException("Invalid quote character.");
-  }
-  
-  private int a(String paramString, int paramInt, bzq parambzq1, Stack paramStack1, Stack paramStack2, boolean paramBoolean, bzq parambzq2)
-  {
-    int i1 = paramInt;
-    bzq localbzq = parambzq1;
-    if (paramBoolean)
-    {
-      i1 = paramInt;
-      localbzq = parambzq1;
-      if ((parambzq1 instanceof bzp))
-      {
-        parambzq1 = a(paramString, paramInt, paramStack2);
-        localbzq = a;
-        paramInt = b + localbzq.c();
-        paramString = a(paramString, paramInt);
-        if (paramString == null) {
-          break label111;
-        }
-        localbzq = a;
-        i1 = b;
-      }
-    }
-    if ((localbzq instanceof bzp))
-    {
-      paramStack1.push(new bxb(localbzq, parambzq2));
-      paramInt = localbzq.c() + i1;
-      label111:
-      return paramInt;
-    }
-    if ((localbzq instanceof bzf))
-    {
-      if (paramStack1.size() <= 0) {
-        break label360;
-      }
-      paramString = (bxb)paramStack1.peek();
-    }
     for (;;)
     {
-      if ((paramString != null) && (!(a instanceof bzp)))
-      {
-        a(paramStack2, paramStack1);
-        if (paramStack1.size() > 0) {
-          paramString = (bxb)paramStack1.peek();
-        } else {
-          paramString = null;
-        }
+      HttpURLConnection localHttpURLConnection = (HttpURLConnection)paramURL.openConnection();
+      localHttpURLConnection.addRequestProperty("User-Agent", "HockeySDK/Android");
+      localHttpURLConnection.setInstanceFollowRedirects(true);
+      if (Build.VERSION.SDK_INT <= 9) {
+        localHttpURLConnection.setRequestProperty("connection", "close");
       }
-      else
+      int i = localHttpURLConnection.getResponseCode();
+      if (((i != 301) && (i != 302) && (i != 303)) || (paramInt == 0)) {}
+      URL localURL;
+      do
       {
-        if (paramStack1.isEmpty()) {
-          throw new bwx("Expression is invalid.");
-        }
-        paramString = (bxb)paramStack1.pop();
-        if (!(a instanceof bzp)) {
-          throw new bwx("Expression is invalid.");
-        }
-        if (b == null) {
-          break;
-        }
-        paramStack2.push(new bxc(this, paramStack2.pop(), null, null, b));
-        break;
-        if (paramStack1.size() > 0)
-        {
-          paramString = (bxb)paramStack1.peek();
-          while ((paramString != null) && (a.b() >= localbzq.b()))
-          {
-            a(paramStack2, paramStack1);
-            if (paramStack1.size() > 0) {
-              paramString = (bxb)paramStack1.peek();
-            } else {
-              paramString = null;
-            }
-          }
-        }
-        paramStack1.push(new bxb(localbzq, parambzq2));
-        break;
-        label360:
-        paramString = null;
-      }
+        return localHttpURLConnection;
+        localURL = new URL(localHttpURLConnection.getHeaderField("Location"));
+      } while (paramURL.getProtocol().equals(localURL.getProtocol()));
+      localHttpURLConnection.disconnect();
+      paramInt -= 1;
+      paramURL = localURL;
     }
   }
   
-  private bxd a(String paramString, int paramInt)
+  public final void a()
   {
-    int i4 = paramString.length();
-    int i2 = 0;
-    int i1 = paramInt;
-    paramInt = i2;
-    if (i1 < i4)
-    {
-      if (paramString.charAt(i1) != a) {
-        break label194;
-      }
-      paramInt += 1;
-    }
-    label194:
-    for (;;)
-    {
-      if (paramInt % 2 != 1)
-      {
-        int i5 = c.size();
-        i2 = 0;
-        while (i2 < i5)
-        {
-          bzq localbzq = (bzq)c.get(i2);
-          if (localbzq.c() == 2)
-          {
-            if (i1 + 2 <= paramString.length()) {}
-            for (int i3 = i1 + 2; paramString.substring(i1, i3).equals(localbzq.a()); i3 = paramString.length()) {
-              return new bxd(localbzq, i1);
-            }
-          }
-          if (paramString.charAt(i1) == localbzq.a().charAt(0)) {
-            return new bxd(localbzq, i1);
-          }
-          i2 += 1;
-        }
-      }
-      i1 += 1;
-      break;
-      return null;
-    }
+    a = null;
+    f = null;
   }
   
-  private bxd a(String paramString, int paramInt, Stack paramStack)
+  public final void a(Context paramContext)
   {
-    bxd localbxd = null;
-    int i2 = 1;
-    int i1 = paramInt;
-    if (i2 > 0)
-    {
-      localbxd = a(paramString, i1 + 1);
-      if (localbxd == null) {
-        throw new bwx("Function is not closed.");
-      }
-      if ((a instanceof bzp)) {
-        i1 = i2 + 1;
-      }
-      for (;;)
-      {
-        int i3 = b;
-        i2 = i1;
-        i1 = i3;
-        break;
-        i1 = i2;
-        if ((a instanceof bzf)) {
-          i1 = i2 - 1;
-        }
-      }
-    }
-    paramString = paramString.substring(paramInt + 1, i1);
-    Object localObject = (bxa)paramStack.pop();
-    bzq localbzq = b;
-    localObject = a;
+    a = paramContext;
+  }
+  
+  protected void a(Long paramLong)
+  {
+    if (f != null) {}
     try
     {
-      e((String)localObject);
-      localObject = (bxg)d.get(localObject);
-      if (localObject == null) {
-        throw new bwx("A function is not defined (index=" + paramInt + ").");
-      }
-    }
-    catch (IllegalArgumentException paramString)
-    {
-      throw new bwx("Invalid function name of \"" + (String)localObject + "\".", paramString);
-    }
-    paramStack.push(new bxe((bxg)localObject, paramString, localbzq));
-    return localbxd;
-  }
-  
-  private void a(String paramString1, String paramString2)
-  {
-    e(paramString1);
-    e.put(paramString1, paramString2);
-  }
-  
-  private void a(Stack paramStack1, Stack paramStack2)
-  {
-    if (paramStack1.size() > 0) {}
-    for (Object localObject1 = paramStack1.pop();; localObject1 = null)
-    {
-      if (paramStack1.size() > 0) {}
-      for (Object localObject2 = paramStack1.pop();; localObject2 = null)
+      f.dismiss();
+      if (paramLong.longValue() > 0L)
       {
-        paramStack1.push(new bxc(this, localObject2, localObject1, popa, null));
+        b.a(this);
+        paramLong = new Intent("android.intent.action.VIEW");
+        paramLong.setDataAndType(Uri.fromFile(new File(e, d)), "application/vnd.android.package-archive");
+        paramLong.setFlags(268435456);
+        a.startActivity(paramLong);
         return;
       }
     }
-  }
-  
-  private String b(Stack paramStack1, Stack paramStack2)
-  {
-    while (paramStack1.size() > 0) {
-      a(paramStack2, paramStack1);
-    }
-    if (paramStack2.size() != 1) {
-      throw new bwx("Expression is invalid.");
-    }
-    paramStack1 = paramStack2.pop();
-    if ((paramStack1 instanceof bxc))
-    {
-      paramStack1 = ((bxc)paramStack1).a(true);
-      return paramStack1;
-    }
-    if ((paramStack1 instanceof bxa))
-    {
-      paramStack2 = (bxa)paramStack1;
-      paramStack1 = b(a);
-      if (a(paramStack1)) {}
-    }
-    label354:
-    label356:
-    label359:
-    for (;;)
+    catch (Exception localException)
     {
       try
       {
-        paramStack1 = new Double(paramStack1);
-        if (b == null) {
-          break label359;
-        }
-        paramStack1 = new Double(b.a(paramStack1.doubleValue()));
-        return paramStack1.toString();
-      }
-      catch (Exception paramStack1)
-      {
-        throw new bwx("Expression is invalid.", paramStack1);
-      }
-      if (b == null) {
-        break;
-      }
-      throw new bwx("Invalid operand for unary operator.");
-      bxe localbxe;
-      Object localObject;
-      if ((paramStack1 instanceof bxe))
-      {
-        localbxe = (bxe)paramStack1;
-        localObject = a;
-        paramStack2 = b;
-        paramStack1 = paramStack2;
-        if (b) {
-          paramStack1 = c(paramStack2);
-        }
-        paramStack1 = b(paramStack1);
-      }
-      for (;;)
-      {
-        try
+        AlertDialog.Builder localBuilder = new AlertDialog.Builder(a);
+        localBuilder.setTitle(bwj.a(b, 256));
+        if (g == null) {}
+        for (paramLong = bwj.a(b, 257);; paramLong = g)
         {
-          localObject = ((bxg)localObject).a(this, paramStack1);
-          paramStack2 = a;
-          if (b == 0)
+          localBuilder.setMessage(paramLong);
+          localBuilder.setNegativeButton(bwj.a(b, 258), new DialogInterface.OnClickListener()
           {
-            paramStack1 = new Double(paramStack2);
-            if (c == null) {
-              break label356;
+            public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+            {
+              b.a(Boolean.valueOf(false));
             }
-            paramStack1 = new Double(c.a(paramStack1.doubleValue()));
-            return paramStack1.toString();
-          }
-          paramStack1 = paramStack2;
-          if (b != 1) {
-            break label354;
-          }
-          paramStack1 = a + paramStack2 + a;
-          if (c == null) {
-            break label354;
-          }
-          throw new bwx("Invalid operand for unary operator.");
+          });
+          localBuilder.setPositiveButton(bwj.a(b, 259), new DialogInterface.OnClickListener()
+          {
+            public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+            {
+              b.a(Boolean.valueOf(true));
+            }
+          });
+          localBuilder.create().show();
+          return;
         }
-        catch (bxh paramStack1)
-        {
-          throw new bwx(paramStack1.getMessage(), paramStack1);
-        }
-        throw new bwx("Expression is invalid.");
-        return paramStack1;
+        localException = localException;
       }
+      catch (Exception paramLong) {}
     }
   }
   
-  private String d(String paramString)
+  protected void a(Integer... paramVarArgs)
   {
-    String str1 = null;
-    if (p != null) {}
-    String str2;
     try
     {
-      str1 = p.a();
-      str2 = str1;
-      if (str1 == null) {
-        str2 = (String)e.get(paramString);
-      }
-      if (str2 == null) {
-        throw new bwx("Can not resolve variable with name equal to \"" + paramString + "\".");
-      }
-    }
-    catch (bxh paramString)
-    {
-      throw new bwx(paramString.getMessage(), paramString);
-    }
-    return str2;
-  }
-  
-  private void e(String paramString)
-  {
-    if (paramString.length() == 0) {
-      throw new IllegalArgumentException("Variable is empty.");
-    }
-    int i1 = paramString.charAt(0);
-    if ((i1 >= 48) && (i1 <= 57)) {
-      throw new IllegalArgumentException("A variable or function name can not start with a number.");
-    }
-    if (paramString.indexOf('\'') >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain a quote character.");
-    }
-    if (paramString.indexOf('"') >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain a quote character.");
-    }
-    if (paramString.indexOf('{') >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain an open brace character.");
-    }
-    if (paramString.indexOf('}') >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain a closed brace character.");
-    }
-    if (paramString.indexOf('#') >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain a pound sign character.");
-    }
-    Iterator localIterator = c.iterator();
-    while (localIterator.hasNext()) {
-      if (paramString.indexOf(((bzq)localIterator.next()).a()) >= 0) {
-        throw new IllegalArgumentException("A variable or function name can not contain an operator symbol.");
-      }
-    }
-    if (paramString.indexOf("!") >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain a special character.");
-    }
-    if (paramString.indexOf("~") >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain a special character.");
-    }
-    if (paramString.indexOf("^") >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain a special character.");
-    }
-    if (paramString.indexOf(",") >= 0) {
-      throw new IllegalArgumentException("A variable or function name can not contain a special character.");
-    }
-  }
-  
-  public final String a(String paramString, boolean paramBoolean)
-  {
-    int i1 = 1;
-    if (!paramString.equals(k))
-    {
-      k = paramString;
-      if (i1 == 0) {
-        break label496;
-      }
-    }
-    label468:
-    label496:
-    label555:
-    label577:
-    for (;;)
-    {
-      Object localObject1;
-      bzq localbzq;
-      int i4;
-      int i3;
-      bxd localbxd;
-      try
+      if (f == null)
       {
-        o = new Stack();
-        n = new Stack();
-        bool = false;
-        i2 = 0;
-        localObject1 = null;
-        int i6 = paramString.length();
-        i1 = 0;
-        if (i1 >= i6) {
-          break label468;
-        }
-        localbzq = null;
-        i4 = -1;
-        i3 = paramString.charAt(i1);
-        if ((i3 == 32) || (i3 == 9) || (i3 == 10) || (i3 == 13) || (i3 == 12))
-        {
-          i3 = 1;
-          if (i3 == 0) {
-            continue;
-          }
-          i1 += 1;
-          continue;
-          n = ((Stack)l.clone());
-          o = ((Stack)m.clone());
-          i1 = 0;
-          break;
-        }
-        i3 = 0;
-        continue;
-        localbxd = a(paramString, i1);
-        i3 = i4;
-        if (localbxd == null) {
-          break label555;
-        }
-        localbzq = a;
-        i3 = b;
+        f = new ProgressDialog(a);
+        f.setProgressStyle(1);
+        f.setMessage("Loading...");
+        f.setCancelable(false);
+        f.show();
       }
-      catch (Exception paramString)
-      {
-        k = "";
-        throw new bwx(paramString.getMessage(), paramString);
-      }
-      Object localObject3 = o;
-      if (i3 == -1)
-      {
-        localObject2 = paramString.substring(i1).trim();
-        i4 = paramString.length();
-        if (((String)localObject2).length() == 0) {
-          throw new bwx("Expression is invalid.");
-        }
-      }
-      else
-      {
-        localObject2 = paramString.substring(i1, i3).trim();
-        i4 = i3;
-        continue;
-      }
-      ((Stack)localObject3).push(new bxa((String)localObject2, (bzq)localObject1));
-      boolean bool = true;
-      int i2 = 0;
-      Object localObject2 = null;
-      do
-      {
-        int i5 = i4;
-        localObject3 = localObject2;
-        if (i3 == i4)
-        {
-          if ((a.d()) && ((i2 != 0) || (i4 == 0)))
-          {
-            i1 = a.a().length() + i3;
-            if (localObject2 != null) {}
-          }
-          for (localObject1 = a;; localObject1 = null)
-          {
-            i5 = i1;
-            localObject3 = localObject1;
-            if ((a instanceof bzf)) {
-              break;
-            }
-            bool = false;
-            i2 = 1;
-            break label577;
-            throw new bwx("Consecutive unary operators are not allowed (index=" + i1 + ").");
-            i1 = a(paramString, i3, localbzq, n, o, bool, (bzq)localObject2);
-          }
-          l = ((Stack)n.clone());
-          m = ((Stack)o.clone());
-          localObject1 = b(n, o);
-          paramString = (String)localObject1;
-          if (a((String)localObject1))
-          {
-            paramString = (String)localObject1;
-            if (!paramBoolean) {
-              paramString = ((String)localObject1).substring(1, ((String)localObject1).length() - 1);
-            }
-          }
-          return paramString;
-        }
-        i1 = i5;
-        localObject1 = localObject3;
-        break label577;
-        if (i3 > i1) {
-          break;
-        }
-        i4 = i1;
-        localObject2 = localObject1;
-      } while (i3 != -1);
-    }
-  }
-  
-  public final void a(bxg parambxg)
-  {
-    e(parambxg.a());
-    if ((bxg)d.get(parambxg.a()) == null)
-    {
-      d.put(parambxg.a(), parambxg);
+      f.setProgress(paramVarArgs[0].intValue());
       return;
     }
-    throw new IllegalArgumentException("A function with the same name already exists.");
+    catch (Exception paramVarArgs) {}
   }
   
-  protected final boolean a(String paramString)
+  protected Long b()
   {
-    if ((paramString.length() > 1) && (paramString.charAt(0) == a) && (paramString.charAt(paramString.length() - 1) == a)) {
-      return true;
+    int i;
+    try
+    {
+      URLConnection localURLConnection = a(new URL(c()), 6);
+      localURLConnection.connect();
+      i = localURLConnection.getContentLength();
+      localObject = localURLConnection.getContentType();
+      if ((localObject != null) && (((String)localObject).contains("text")))
+      {
+        g = "The requested download does not appear to be a file.";
+        return Long.valueOf(0L);
+      }
+      localObject = new File(e);
+      if ((!((File)localObject).mkdirs()) && (!((File)localObject).exists())) {
+        throw new IOException("Could not create the dir(s):" + ((File)localObject).getAbsolutePath());
+      }
     }
-    if (paramString.indexOf(a) >= 0) {
-      throw new bwx("Invalid use of quotes.");
+    catch (Exception localException)
+    {
+      localException.printStackTrace();
+      return Long.valueOf(0L);
     }
-    return false;
-  }
-  
-  public final String b(String paramString)
-  {
-    int i1 = paramString.indexOf(bww.a);
-    if (i1 < 0) {
-      return paramString;
-    }
+    Object localObject = new File((File)localObject, d);
+    BufferedInputStream localBufferedInputStream = new BufferedInputStream(localException.getInputStream());
+    localObject = new FileOutputStream((File)localObject);
+    byte[] arrayOfByte = new byte['Ѐ'];
+    long l = 0L;
     for (;;)
     {
-      if (i1 >= 0)
-      {
-        String str1 = paramString;
-        if (i1 >= 0)
-        {
-          int i2 = paramString.indexOf(bww.b, i1 + 1);
-          if (i2 > i1) {
-            str1 = paramString.substring(i1 + bww.a.length(), i2);
-          }
-        }
-        else
-        {
-          try
-          {
-            e(str1);
-            String str2 = d(str1);
-            str1 = bwy.a(paramString, bww.a + str1 + bww.b, str2);
-            i1 = str1.indexOf(bww.a);
-            paramString = str1;
-          }
-          catch (IllegalArgumentException paramString)
-          {
-            throw new bwx("Invalid variable name of \"" + str1 + "\".", paramString);
-          }
-        }
+      int j = localBufferedInputStream.read(arrayOfByte);
+      if (j == -1) {
+        break;
       }
-      i1 = paramString.indexOf(bww.a);
-      if (i1 >= 0) {
-        throw new bwx("A variable has not been closed (index=" + i1 + ").");
-      }
-      return paramString;
+      l += j;
+      publishProgress(new Integer[] { Integer.valueOf(Math.round((float)l * 100.0F / i)) });
+      ((OutputStream)localObject).write(arrayOfByte, 0, j);
     }
+    ((OutputStream)localObject).flush();
+    ((OutputStream)localObject).close();
+    localBufferedInputStream.close();
+    return Long.valueOf(l);
   }
   
-  protected final String c(String paramString)
+  protected final String c()
   {
-    StringBuffer localStringBuffer = new StringBuffer();
-    if (paramString.length() > 0)
-    {
-      bwz localbwz = new bwz(a, h, i, j, b);
-      d = d;
-      e = e;
-      p = p;
-      paramString = new bwv(paramString);
-      ArrayList localArrayList = new ArrayList();
-      while (paramString.a())
-      {
-        String str = paramString.b().trim();
-        try
-        {
-          str = localbwz.a(str, true);
-          localArrayList.add(str);
-        }
-        catch (Exception paramString)
-        {
-          throw new bwx(paramString.getMessage(), paramString);
-        }
-      }
-      paramString = localArrayList.iterator();
-      while (paramString.hasNext())
-      {
-        if (localStringBuffer.length() > 0) {
-          localStringBuffer.append(',');
-        }
-        localStringBuffer.append((String)paramString.next());
-      }
-    }
-    return localStringBuffer.toString();
+    return c + "&type=apk";
   }
 }
 

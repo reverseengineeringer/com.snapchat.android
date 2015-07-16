@@ -1,356 +1,1036 @@
 .class public final Lcjg;
-.super Lcjd;
+.super Lcik;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcjg$a;,
+        Lcjg$b;,
+        Lcjg$c;
+    }
+.end annotation
+
+
 # instance fields
-.field final a:I
+.field final E:Lchh;
 
-.field final c:Lcgm;
+.field final F:Lchh;
 
-.field private final d:I
-
-.field private final e:I
+.field private transient G:Lcjg;
 
 
 # direct methods
-.method public constructor <init>(Lcgh;Lcgi;)V
-    .locals 3
+.method private constructor <init>(Lchg;Lchh;Lchh;)V
+    .locals 1
 
     .prologue
-    .line 57
-    invoke-direct {p0, p1, p2}, Lcjd;-><init>(Lcgh;Lcgi;)V
-
-    .line 59
-    invoke-virtual {p1}, Lcgh;->d()Lcgm;
-
-    move-result-object v0
-
-    .line 64
-    if-nez v0, :cond_0
-
-    .line 65
+    .line 99
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcjg;->c:Lcgm;
+    invoke-direct {p0, p1, v0}, Lcik;-><init>(Lchg;Ljava/lang/Object;)V
 
-    .line 71
-    :goto_0
-    const/16 v0, 0x64
+    .line 101
+    iput-object p2, p0, Lcjg;->E:Lchh;
 
-    iput v0, p0, Lcjg;->a:I
+    .line 102
+    iput-object p3, p0, Lcjg;->F:Lchh;
 
-    .line 73
-    invoke-virtual {p1}, Lcgh;->g()I
+    .line 103
+    return-void
+.end method
+
+.method private a(Lchi;Ljava/util/HashMap;)Lchi;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lchi;",
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ">;)",
+            "Lchi;"
+        }
+    .end annotation
+
+    .prologue
+    .line 268
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lchi;->c()Z
 
     move-result v0
 
-    .line 74
-    if-ltz v0, :cond_1
+    if-nez v0, :cond_1
 
-    div-int/lit8 v0, v0, 0x64
-
-    .line 76
-    :goto_1
-    invoke-virtual {p1}, Lcgh;->h()I
-
-    move-result v1
-
-    .line 77
-    if-ltz v1, :cond_2
-
-    div-int/lit8 v1, v1, 0x64
-
-    .line 79
-    :goto_2
-    iput v0, p0, Lcjg;->d:I
-
-    .line 80
-    iput v1, p0, Lcjg;->e:I
-
-    .line 81
-    return-void
-
-    .line 67
     :cond_0
-    new-instance v1, Lcjp;
+    move-object v0, p1
 
-    invoke-virtual {p2}, Lcgi;->x()Lcgn;
+    .line 280
+    :goto_0
+    return-object v0
 
-    move-result-object v2
+    .line 271
+    :cond_1
+    invoke-virtual {p2, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    invoke-direct {v1, v0, v2}, Lcjp;-><init>(Lcgm;Lcgn;)V
+    move-result v0
 
-    iput-object v1, p0, Lcjg;->c:Lcgm;
+    if-eqz v0, :cond_2
+
+    .line 272
+    invoke-virtual {p2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lchi;
 
     goto :goto_0
 
-    .line 74
+    .line 274
+    :cond_2
+    new-instance v0, Lcjg$a;
+
+    invoke-virtual {p1}, Lchi;->d()Lchn;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1, p2}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v3
+
+    invoke-virtual {p1}, Lchi;->e()Lchn;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1, p2}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v4
+
+    invoke-virtual {p1}, Lchi;->f()Lchn;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1, p2}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v5
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    invoke-direct/range {v0 .. v5}, Lcjg$a;-><init>(Lcjg;Lchi;Lchn;Lchn;Lchn;)V
+
+    .line 279
+    invoke-virtual {p2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+.end method
+
+.method private a(Lchn;Ljava/util/HashMap;)Lchn;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lchn;",
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ">;)",
+            "Lchn;"
+        }
+    .end annotation
+
+    .prologue
+    .line 256
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lchn;->b()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    move-object v0, p1
+
+    .line 264
+    :goto_0
+    return-object v0
+
+    .line 259
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    invoke-virtual {p2, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    div-int/lit8 v0, v0, 0x64
+    move-result v0
 
-    add-int/lit8 v0, v0, -0x1
+    if-eqz v0, :cond_2
+
+    .line 260
+    invoke-virtual {p2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lchn;
+
+    goto :goto_0
+
+    .line 262
+    :cond_2
+    new-instance v0, Lcjg$b;
+
+    invoke-direct {v0, p0, p1}, Lcjg$b;-><init>(Lcjg;Lchn;)V
+
+    .line 263
+    invoke-virtual {p2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+.end method
+
+.method public static a(Lchg;Lchy;Lchy;)Lcjg;
+    .locals 3
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 67
+    if-nez p0, :cond_0
+
+    .line 68
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Must supply a chronology"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 71
+    :cond_0
+    if-nez p1, :cond_1
+
+    move-object v0, v1
+
+    .line 72
+    :goto_0
+    if-nez p2, :cond_2
+
+    .line 74
+    :goto_1
+    if-eqz v0, :cond_3
+
+    if-eqz v1, :cond_3
+
+    .line 75
+    invoke-interface {v0, v1}, Lchy;->a(Lcia;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    .line 76
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "The lower limit must be come before than the upper limit"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 71
+    :cond_1
+    invoke-interface {p1}, Lchy;->a()Lchh;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 72
+    :cond_2
+    invoke-interface {p2}, Lchy;->a()Lchh;
+
+    move-result-object v1
 
     goto :goto_1
 
-    .line 77
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
+    .line 81
+    :cond_3
+    new-instance v2, Lcjg;
 
-    div-int/lit8 v1, v1, 0x64
+    check-cast v0, Lchh;
 
-    add-int/lit8 v1, v1, -0x1
+    check-cast v1, Lchh;
 
-    goto :goto_2
+    invoke-direct {v2, p0, v0, v1}, Lcjg;-><init>(Lchg;Lchh;Lchh;)V
+
+    return-object v2
 .end method
 
 
 # virtual methods
-.method public final a(J)I
+.method public final a(IIII)J
     .locals 3
 
     .prologue
-    .line 113
-    iget-object v0, p0, Lcjd;->b:Lcgh;
+    .line 177
+    iget-object v0, p0, Lcik;->a:Lchg;
 
-    invoke-virtual {v0, p1, p2}, Lcgh;->a(J)I
+    invoke-virtual {v0, p1, p2, p3, p4}, Lchg;->a(IIII)J
 
-    move-result v0
+    move-result-wide v0
 
-    .line 114
-    if-ltz v0, :cond_0
+    .line 178
+    const-string v2, "resulting"
 
-    .line 115
-    iget v1, p0, Lcjg;->a:I
+    invoke-virtual {p0, v0, v1, v2}, Lcjg;->a(JLjava/lang/String;)V
 
-    div-int/2addr v0, v1
+    .line 179
+    return-wide v0
+.end method
 
-    .line 117
-    :goto_0
-    return v0
+.method public final a(IIIIIII)J
+    .locals 8
 
+    .prologue
+    .line 187
+    iget-object v0, p0, Lcik;->a:Lchg;
+
+    move v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    move v6, p6
+
+    move v7, p7
+
+    invoke-virtual/range {v0 .. v7}, Lchg;->a(IIIIIII)J
+
+    move-result-wide v0
+
+    .line 190
+    const-string v2, "resulting"
+
+    invoke-virtual {p0, v0, v1, v2}, Lcjg;->a(JLjava/lang/String;)V
+
+    .line 191
+    return-wide v0
+.end method
+
+.method public final a(Lchl;)Lchg;
+    .locals 3
+
+    .prologue
+    .line 138
+    if-nez p1, :cond_0
+
+    .line 139
+    invoke-static {}, Lchl;->a()Lchl;
+
+    move-result-object p1
+
+    .line 141
     :cond_0
-    add-int/lit8 v0, v0, 0x1
+    invoke-virtual {p0}, Lcjg;->a()Lchl;
 
-    iget v1, p0, Lcjg;->a:I
+    move-result-object v0
 
-    div-int/2addr v0, v1
+    if-ne p1, v0, :cond_1
 
-    add-int/lit8 v0, v0, -0x1
+    .line 170
+    :goto_0
+    return-object p0
+
+    .line 145
+    :cond_1
+    sget-object v0, Lchl;->a:Lchl;
+
+    if-ne p1, v0, :cond_2
+
+    iget-object v0, p0, Lcjg;->G:Lcjg;
+
+    if-eqz v0, :cond_2
+
+    .line 146
+    iget-object p0, p0, Lcjg;->G:Lcjg;
 
     goto :goto_0
-.end method
 
-.method public final a(JI)J
-    .locals 3
+    .line 149
+    :cond_2
+    iget-object v0, p0, Lcjg;->E:Lchh;
 
-    .prologue
-    .line 130
-    iget-object v0, p0, Lcjd;->b:Lcgh;
+    .line 150
+    if-eqz v0, :cond_3
 
-    iget v1, p0, Lcjg;->a:I
+    .line 151
+    invoke-virtual {v0}, Lchh;->e()Lchu;
 
-    mul-int/2addr v1, p3
+    move-result-object v0
 
-    invoke-virtual {v0, p1, p2, v1}, Lcgh;->a(JI)J
+    .line 152
+    invoke-virtual {v0, p1}, Lchu;->a(Lchl;)V
 
-    move-result-wide v0
+    .line 153
+    invoke-virtual {v0}, Lchu;->a()Lchh;
 
-    return-wide v0
-.end method
+    move-result-object v0
 
-.method public final a(JJ)J
-    .locals 5
+    .line 156
+    :cond_3
+    iget-object v1, p0, Lcjg;->F:Lchh;
 
-    .prologue
-    .line 142
-    iget-object v0, p0, Lcjd;->b:Lcgh;
+    .line 157
+    if-eqz v1, :cond_4
 
-    iget v1, p0, Lcjg;->a:I
-
-    int-to-long v2, v1
-
-    mul-long/2addr v2, p3
-
-    invoke-virtual {v0, p1, p2, v2, v3}, Lcgh;->a(JJ)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final b(JJ)I
-    .locals 3
-
-    .prologue
     .line 158
-    iget-object v0, p0, Lcjd;->b:Lcgh;
+    invoke-virtual {v1}, Lchh;->e()Lchu;
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcgh;->b(JJ)I
+    move-result-object v1
 
-    move-result v0
+    .line 159
+    invoke-virtual {v1, p1}, Lchu;->a(Lchl;)V
 
-    iget v1, p0, Lcjg;->a:I
+    .line 160
+    invoke-virtual {v1}, Lchu;->a()Lchh;
 
-    div-int/2addr v0, v1
+    move-result-object v1
 
-    return v0
-.end method
+    .line 163
+    :cond_4
+    iget-object v2, p0, Lcik;->a:Lchg;
 
-.method public final b(JI)J
-    .locals 3
+    invoke-virtual {v2, p1}, Lchg;->a(Lchl;)Lchg;
 
-    .prologue
-    .line 174
-    iget v0, p0, Lcjg;->d:I
+    move-result-object v2
 
-    iget v1, p0, Lcjg;->e:I
+    invoke-static {v2, v0, v1}, Lcjg;->a(Lchg;Lchy;Lchy;)Lcjg;
 
-    invoke-static {p0, p3, v0, v1}, Lcjh;->a(Lcgh;III)V
+    move-result-object v0
 
-    .line 175
-    iget-object v0, p0, Lcjd;->b:Lcgh;
+    .line 166
+    sget-object v1, Lchl;->a:Lchl;
 
-    invoke-virtual {v0, p1, p2}, Lcgh;->a(J)I
+    if-ne p1, v1, :cond_5
 
-    move-result v0
+    .line 167
+    iput-object v0, p0, Lcjg;->G:Lcjg;
 
-    if-ltz v0, :cond_0
+    :cond_5
+    move-object p0, v0
 
-    iget v1, p0, Lcjg;->a:I
-
-    rem-int/2addr v0, v1
-
-    .line 176
-    :goto_0
-    iget-object v1, p0, Lcjd;->b:Lcgh;
-
-    iget v2, p0, Lcjg;->a:I
-
-    mul-int/2addr v2, p3
-
-    add-int/2addr v0, v2
-
-    invoke-virtual {v1, p1, p2, v0}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    return-wide v0
-
-    .line 175
-    :cond_0
-    iget v1, p0, Lcjg;->a:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    add-int/lit8 v0, v0, 0x1
-
-    iget v2, p0, Lcjg;->a:I
-
-    rem-int/2addr v0, v2
-
-    add-int/2addr v0, v1
-
+    .line 170
     goto :goto_0
 .end method
 
-.method public final c(JJ)J
-    .locals 5
+.method final a(JLjava/lang/String;)V
+    .locals 3
 
     .prologue
-    .line 162
-    iget-object v0, p0, Lcjd;->b:Lcgh;
+    .line 285
+    iget-object v0, p0, Lcjg;->E:Lchh;
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcgh;->c(JJ)J
+    if-eqz v0, :cond_0
 
-    move-result-wide v0
+    iget-wide v0, v0, Lcih;->a:J
 
-    iget v2, p0, Lcjg;->a:I
+    cmp-long v0, p1, v0
 
-    int-to-long v2, v2
+    if-gez v0, :cond_0
 
-    div-long/2addr v0, v2
+    .line 286
+    new-instance v0, Lcjg$c;
 
-    return-wide v0
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, p3, v1}, Lcjg$c;-><init>(Lcjg;Ljava/lang/String;Z)V
+
+    throw v0
+
+    .line 288
+    :cond_0
+    iget-object v0, p0, Lcjg;->F:Lchh;
+
+    if-eqz v0, :cond_1
+
+    iget-wide v0, v0, Lcih;->a:J
+
+    cmp-long v0, p1, v0
+
+    if-ltz v0, :cond_1
+
+    .line 289
+    new-instance v0, Lcjg$c;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, p3, v1}, Lcjg$c;-><init>(Lcjg;Ljava/lang/String;Z)V
+
+    throw v0
+
+    .line 291
+    :cond_1
+    return-void
 .end method
 
-.method public final d(J)J
-    .locals 5
+.method protected final a(Lcik$a;)V
+    .locals 2
 
     .prologue
-    .line 205
-    iget-object v0, p0, Lcjd;->b:Lcgh;
+    .line 209
+    new-instance v0, Ljava/util/HashMap;
 
-    .line 206
-    invoke-virtual {p0, p1, p2}, Lcjg;->a(J)I
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    move-result v1
+    .line 213
+    iget-object v1, p1, Lcik$a;->l:Lchn;
 
-    iget v2, p0, Lcjg;->a:I
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
 
-    mul-int/2addr v1, v2
+    move-result-object v1
 
-    invoke-virtual {v0, p1, p2, v1}, Lcgh;->b(JI)J
+    iput-object v1, p1, Lcik$a;->l:Lchn;
 
-    move-result-wide v2
+    .line 214
+    iget-object v1, p1, Lcik$a;->k:Lchn;
 
-    invoke-virtual {v0, v2, v3}, Lcgh;->d(J)J
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
 
-    move-result-wide v0
+    move-result-object v1
 
-    return-wide v0
+    iput-object v1, p1, Lcik$a;->k:Lchn;
+
+    .line 215
+    iget-object v1, p1, Lcik$a;->j:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->j:Lchn;
+
+    .line 216
+    iget-object v1, p1, Lcik$a;->i:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->i:Lchn;
+
+    .line 217
+    iget-object v1, p1, Lcik$a;->h:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->h:Lchn;
+
+    .line 218
+    iget-object v1, p1, Lcik$a;->g:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->g:Lchn;
+
+    .line 219
+    iget-object v1, p1, Lcik$a;->f:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->f:Lchn;
+
+    .line 221
+    iget-object v1, p1, Lcik$a;->e:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->e:Lchn;
+
+    .line 222
+    iget-object v1, p1, Lcik$a;->d:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->d:Lchn;
+
+    .line 223
+    iget-object v1, p1, Lcik$a;->c:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->c:Lchn;
+
+    .line 224
+    iget-object v1, p1, Lcik$a;->b:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->b:Lchn;
+
+    .line 225
+    iget-object v1, p1, Lcik$a;->a:Lchn;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchn;Ljava/util/HashMap;)Lchn;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->a:Lchn;
+
+    .line 229
+    iget-object v1, p1, Lcik$a;->E:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->E:Lchi;
+
+    .line 230
+    iget-object v1, p1, Lcik$a;->F:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->F:Lchi;
+
+    .line 231
+    iget-object v1, p1, Lcik$a;->G:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->G:Lchi;
+
+    .line 232
+    iget-object v1, p1, Lcik$a;->H:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->H:Lchi;
+
+    .line 233
+    iget-object v1, p1, Lcik$a;->I:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->I:Lchi;
+
+    .line 234
+    iget-object v1, p1, Lcik$a;->x:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->x:Lchi;
+
+    .line 235
+    iget-object v1, p1, Lcik$a;->y:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->y:Lchi;
+
+    .line 236
+    iget-object v1, p1, Lcik$a;->z:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->z:Lchi;
+
+    .line 237
+    iget-object v1, p1, Lcik$a;->D:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->D:Lchi;
+
+    .line 238
+    iget-object v1, p1, Lcik$a;->A:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->A:Lchi;
+
+    .line 239
+    iget-object v1, p1, Lcik$a;->B:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->B:Lchi;
+
+    .line 240
+    iget-object v1, p1, Lcik$a;->C:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->C:Lchi;
+
+    .line 242
+    iget-object v1, p1, Lcik$a;->m:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->m:Lchi;
+
+    .line 243
+    iget-object v1, p1, Lcik$a;->n:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->n:Lchi;
+
+    .line 244
+    iget-object v1, p1, Lcik$a;->o:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->o:Lchi;
+
+    .line 245
+    iget-object v1, p1, Lcik$a;->p:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->p:Lchi;
+
+    .line 246
+    iget-object v1, p1, Lcik$a;->q:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->q:Lchi;
+
+    .line 247
+    iget-object v1, p1, Lcik$a;->r:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->r:Lchi;
+
+    .line 248
+    iget-object v1, p1, Lcik$a;->s:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->s:Lchi;
+
+    .line 249
+    iget-object v1, p1, Lcik$a;->u:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->u:Lchi;
+
+    .line 250
+    iget-object v1, p1, Lcik$a;->t:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->t:Lchi;
+
+    .line 251
+    iget-object v1, p1, Lcik$a;->v:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v1
+
+    iput-object v1, p1, Lcik$a;->v:Lchi;
+
+    .line 252
+    iget-object v1, p1, Lcik$a;->w:Lchi;
+
+    invoke-direct {p0, v1, v0}, Lcjg;->a(Lchi;Ljava/util/HashMap;)Lchi;
+
+    move-result-object v0
+
+    iput-object v0, p1, Lcik$a;->w:Lchi;
+
+    .line 253
+    return-void
 .end method
 
-.method public final d()Lcgm;
+.method public final b()Lchg;
     .locals 1
 
     .prologue
-    .line 183
-    iget-object v0, p0, Lcjg;->c:Lcgm;
+    .line 129
+    sget-object v0, Lchl;->a:Lchl;
+
+    invoke-virtual {p0, v0}, Lcjg;->a(Lchl;)Lchg;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final g()I
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .prologue
-    .line 192
-    iget v0, p0, Lcjg;->d:I
+    const/4 v0, 0x1
 
+    const/4 v1, 0x0
+
+    .line 303
+    if-ne p0, p1, :cond_1
+
+    .line 310
+    :cond_0
+    :goto_0
     return v0
+
+    .line 306
+    :cond_1
+    instance-of v2, p1, Lcjg;
+
+    if-nez v2, :cond_2
+
+    move v0, v1
+
+    .line 307
+    goto :goto_0
+
+    .line 309
+    :cond_2
+    check-cast p1, Lcjg;
+
+    .line 310
+    iget-object v2, p0, Lcik;->a:Lchg;
+
+    iget-object v3, p1, Lcik;->a:Lchg;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lcjg;->E:Lchh;
+
+    iget-object v3, p1, Lcjg;->E:Lchh;
+
+    invoke-static {v2, v3}, Lcki;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lcjg;->F:Lchh;
+
+    iget-object v3, p1, Lcjg;->F:Lchh;
+
+    invoke-static {v2, v3}, Lcki;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_0
 .end method
 
-.method public final h()I
-    .locals 1
-
-    .prologue
-    .line 201
-    iget v0, p0, Lcjg;->e:I
-
-    return v0
-.end method
-
-.method public final i(J)J
+.method public final hashCode()I
     .locals 3
 
     .prologue
-    .line 210
-    iget-object v0, p0, Lcjd;->b:Lcgh;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, p1, p2}, Lcgh;->i(J)J
+    .line 323
+    const v2, 0x12ea67c5
 
-    move-result-wide v0
+    iget-object v0, p0, Lcjg;->E:Lchh;
 
-    invoke-virtual {p0, v0, v1}, Lcjg;->a(J)I
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcjg;->E:Lchh;
+
+    invoke-virtual {v0}, Lchh;->hashCode()I
 
     move-result v0
 
-    invoke-virtual {p0, p1, p2, v0}, Lcjg;->b(JI)J
+    :goto_0
+    add-int/2addr v0, v2
 
-    move-result-wide v0
+    .line 325
+    iget-object v2, p0, Lcjg;->F:Lchh;
 
-    return-wide v0
+    if-eqz v2, :cond_0
+
+    iget-object v1, p0, Lcjg;->F:Lchh;
+
+    invoke-virtual {v1}, Lchh;->hashCode()I
+
+    move-result v1
+
+    :cond_0
+    add-int/2addr v0, v1
+
+    .line 326
+    iget-object v1, p0, Lcik;->a:Lchg;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    mul-int/lit8 v1, v1, 0x7
+
+    add-int/2addr v0, v1
+
+    .line 327
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    .line 323
+    goto :goto_0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 336
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "LimitChronology["
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcik;->a:Lchg;
+
+    invoke-virtual {v1}, Lchg;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v0, p0, Lcjg;->E:Lchh;
+
+    if-nez v0, :cond_0
+
+    const-string v0, "NoLimit"
+
+    :goto_0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v0, p0, Lcjg;->F:Lchh;
+
+    if-nez v0, :cond_1
+
+    const-string v0, "NoLimit"
+
+    :goto_1
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x5d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcjg;->E:Lchh;
+
+    invoke-virtual {v0}, Lchh;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcjg;->F:Lchh;
+
+    invoke-virtual {v0}, Lchh;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_1
 .end method

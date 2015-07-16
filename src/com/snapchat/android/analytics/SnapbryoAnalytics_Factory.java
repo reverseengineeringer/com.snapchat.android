@@ -1,23 +1,23 @@
 package com.snapchat.android.analytics;
 
-import buo;
-import nq;
+import bvp;
+import oh;
 
 public enum SnapbryoAnalytics_Factory
-  implements buo<nq>
+  implements bvp<oh>
 {
   INSTANCE;
   
   private SnapbryoAnalytics_Factory() {}
   
-  public static buo<nq> create()
+  public static bvp<oh> create()
   {
     return INSTANCE;
   }
   
-  public final nq get()
+  public final oh get()
   {
-    return new nq();
+    return new oh();
   }
 }
 

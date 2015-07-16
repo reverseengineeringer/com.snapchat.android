@@ -1,171 +1,97 @@
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-import org.joda.convert.ToString;
-
-public final class cgr
-  extends chh
-  implements chb, Serializable
+final class cgr
 {
-  private static final Set<cgn> c;
-  public final long a;
-  public final cgf b;
-  private volatile transient int d;
+  static cgr j;
+  static cgr k;
+  static cgr l;
+  boolean a = true;
+  boolean b = true;
+  boolean c = false;
+  boolean d = false;
+  boolean e = false;
+  boolean f = true;
+  boolean g = true;
+  boolean h = true;
+  int i;
   
   static
   {
-    HashSet localHashSet = new HashSet();
-    c = localHashSet;
-    localHashSet.add(cgn.f());
-    c.add(cgn.g());
-    c.add(cgn.i());
-    c.add(cgn.h());
-    c.add(cgn.j());
-    c.add(cgn.k());
-    c.add(cgn.l());
+    cgr localcgr = new cgr();
+    j = localcgr;
+    a = true;
+    jb = false;
+    jc = false;
+    jd = false;
+    je = true;
+    jf = false;
+    jg = false;
+    ji = 0;
+    localcgr = new cgr();
+    k = localcgr;
+    a = true;
+    kb = true;
+    kc = false;
+    kd = false;
+    ke = false;
+    ji = 1;
+    localcgr = new cgr();
+    l = localcgr;
+    a = false;
+    lb = true;
+    lc = false;
+    ld = true;
+    le = false;
+    lh = false;
+    li = 2;
   }
   
-  public cgr()
+  static String a(String paramString)
   {
-    this(cgj.a(), cic.M());
+    int m = paramString.lastIndexOf('-');
+    if (m == -1) {
+      return paramString;
+    }
+    return paramString.substring(m + 1);
   }
   
-  public cgr(long paramLong)
+  public final String a(Class paramClass)
   {
-    this(paramLong, cic.M());
+    return a(paramClass, paramClass.getName(), a);
   }
   
-  public cgr(long paramLong, cgf paramcgf)
+  final String a(Class paramClass, String paramString, boolean paramBoolean)
   {
-    paramcgf = cgj.a(paramcgf);
-    paramLong = paramcgf.a().a(cgk.a, paramLong);
-    paramcgf = paramcgf.b();
-    a = paramcgf.u().d(paramLong);
-    b = paramcgf;
-  }
-  
-  public final int a()
-  {
-    return 3;
-  }
-  
-  public final int a(int paramInt)
-  {
-    switch (paramInt)
+    if (paramClass == null) {
+      return "ANONYMOUS";
+    }
+    if (paramClass.isArray())
     {
-    default: 
-      throw new IndexOutOfBoundsException("Invalid index: " + paramInt);
-    case 0: 
-      return b.E().a(a);
-    case 1: 
-      return b.C().a(a);
+      paramClass = paramClass.getComponentType();
+      return a(paramClass, paramClass.getName(), paramBoolean) + "[]";
     }
-    return b.u().a(a);
-  }
-  
-  public final int a(cgi paramcgi)
-  {
-    if (paramcgi == null) {
-      throw new IllegalArgumentException("The DateTimeFieldType must not be null");
-    }
-    if (!b(paramcgi)) {
-      throw new IllegalArgumentException("Field '" + paramcgi + "' is not supported");
-    }
-    return paramcgi.a(b).a(a);
-  }
-  
-  public final int a(chb paramchb)
-  {
-    if (this == paramchb) {
-      return 0;
-    }
-    if ((paramchb instanceof cgr))
+    if (paramBoolean)
     {
-      cgr localcgr = (cgr)paramchb;
-      if (b.equals(b))
+      int m = paramString.lastIndexOf('.');
+      if (m == -1) {}
+      for (;;)
       {
-        if (a < a) {
-          return -1;
-        }
-        if (a == a) {
-          return 0;
-        }
-        return 1;
+        return paramString.replace('$', '.');
+        paramString = paramString.substring(m + 1);
       }
     }
-    return super.a(paramchb);
+    return paramString.replace('$', '.');
   }
   
-  public final cgg a(cgk paramcgk)
+  public final void a(StringBuffer paramStringBuffer, Class[] paramArrayOfClass)
   {
-    paramcgk = cgj.a(paramcgk);
-    cgf localcgf = b.a(paramcgk);
-    long l = paramcgk.e(a + 21600000L);
-    return new cgg(localcgf.u().d(l), localcgf);
-  }
-  
-  protected final cgh a(int paramInt, cgf paramcgf)
-  {
-    switch (paramInt)
+    int m = 0;
+    while (m < paramArrayOfClass.length)
     {
-    default: 
-      throw new IndexOutOfBoundsException("Invalid index: " + paramInt);
-    case 0: 
-      return paramcgf.E();
-    case 1: 
-      return paramcgf.C();
-    }
-    return paramcgf.u();
-  }
-  
-  public final cgf b()
-  {
-    return b;
-  }
-  
-  public final boolean b(cgi paramcgi)
-  {
-    if (paramcgi == null) {}
-    cgn localcgn;
-    do
-    {
-      return false;
-      localcgn = paramcgi.x();
-    } while ((!c.contains(localcgn)) && (localcgn.a(b).d() < b.s().d()));
-    return paramcgi.a(b).c();
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (this == paramObject) {
-      return true;
-    }
-    if ((paramObject instanceof cgr))
-    {
-      cgr localcgr = (cgr)paramObject;
-      if (b.equals(b)) {
-        return a == a;
+      if (m > 0) {
+        paramStringBuffer.append(", ");
       }
+      paramStringBuffer.append(a(paramArrayOfClass[m]));
+      m += 1;
     }
-    return super.equals(paramObject);
-  }
-  
-  public final int hashCode()
-  {
-    int j = d;
-    int i = j;
-    if (j == 0)
-    {
-      i = super.hashCode();
-      d = i;
-    }
-    return i;
-  }
-  
-  @ToString
-  public final String toString()
-  {
-    return ckc.a.c().a(this);
   }
 }
 

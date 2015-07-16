@@ -1,6 +1,6 @@
 package com.snapchat.android.ui.smartfilters;
 
-import aiv;
+import ajr;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -10,12 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.RelativeLayout;
-import apc;
-import bgp;
-import bgq;
-import ccm;
-import cgb;
-import cgs;
+import apy;
+import bhp;
+import bhq;
+import cdn;
+import chc;
+import cht;
 import com.snapchat.android.model.server.GeofilterResponse.SponsoredSlugPosition;
 import com.snapchat.android.ui.SelfScalingImageView;
 import java.util.Date;
@@ -24,42 +24,42 @@ public class GeofilterView
   extends RelativeLayout
 {
   public final SelfScalingImageView a;
-  public final apc b;
+  public final apy b;
   public boolean c;
   private final SelfScalingImageView d;
-  private final aiv e;
-  private final bgq f;
+  private final ajr e;
+  private final bhq f;
   private float g = 1.0F;
   private int h;
   private int i;
   
-  public GeofilterView(Context paramContext, @cgb aiv paramaiv)
+  public GeofilterView(Context paramContext, @chc ajr paramajr)
   {
     super(paramContext);
-    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968680, this, true);
-    d = ((SelfScalingImageView)findViewById(2131362373));
-    a = ((SelfScalingImageView)findViewById(2131362374));
-    e = paramaiv;
+    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968681, this, true);
+    d = ((SelfScalingImageView)findViewById(2131362371));
+    a = ((SelfScalingImageView)findViewById(2131362372));
+    e = paramajr;
     c = false;
-    b = new apc(this, a);
-    f = new bgq(e, this);
+    b = new apy(this, a);
+    f = new bhq(e, this);
     b();
   }
   
-  @ccm
+  @cdn
   private void b()
   {
     
     Bitmap localBitmap;
-    bgq localbgq;
+    bhq localbhq;
     SelfScalingImageView localSelfScalingImageView;
-    if ((e.mIsDynamic) && (e.a() != null) && (e.b() != null) && (e.b().b(cgs.c())))
+    if ((e.mIsDynamic) && (e.a() != null) && (e.b() != null) && (e.b().b(cht.c())))
     {
       localBitmap = e.a();
       f.a(d, localBitmap, e.mLayoutGravity, false);
       if ((e.mIsSponsored) && (!c))
       {
-        localbgq = f;
+        localbhq = f;
         localSelfScalingImageView = a;
         if (mGeofilter.mSponsoredSlugImageUrl == null) {
           break label228;
@@ -75,7 +75,7 @@ public class GeofilterView
       {
         GeofilterResponse.SponsoredSlugPosition localSponsoredSlugPosition = mGeofilter.mSponsoredSlugPosition;
         if (localSponsoredSlugPosition != null) {}
-        switch (bgq.1.$SwitchMap$com$snapchat$android$model$server$GeofilterResponse$SponsoredSlugPosition[localSponsoredSlugPosition.ordinal()])
+        switch (bhq.1.$SwitchMap$com$snapchat$android$model$server$GeofilterResponse$SponsoredSlugPosition[localSponsoredSlugPosition.ordinal()])
         {
         default: 
           j = 85;
@@ -83,7 +83,7 @@ public class GeofilterView
       }
       for (;;)
       {
-        localbgq.a(localSelfScalingImageView, localBitmap, j, true);
+        localbhq.a(localSelfScalingImageView, localBitmap, j, true);
         return;
         localBitmap = e.mBitmap;
         break;
@@ -118,7 +118,7 @@ public class GeofilterView
   {
     if ((a != null) && (!c))
     {
-      apc localapc = b;
+      apy localapy = b;
       if (f != null)
       {
         e.cancel();
@@ -152,7 +152,7 @@ public class GeofilterView
     return e.mFilterId;
   }
   
-  public aiv getGeofilter()
+  public ajr getGeofilter()
   {
     return e;
   }

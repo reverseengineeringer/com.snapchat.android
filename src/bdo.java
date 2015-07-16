@@ -1,14 +1,4 @@
-public final class bdo
-{
-  public boolean mFromPreview;
-  public aim mMediabryo;
-  
-  public bdo(aim paramaim, boolean paramBoolean)
-  {
-    mMediabryo = paramaim;
-    mFromPreview = paramBoolean;
-  }
-}
+public final class bdo {}
 
 /* Location:
  * Qualified Name:     bdo

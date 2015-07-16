@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ltc$a;
+.implements Lts$a;
 
 
 # instance fields
-.field private a:Latw;
+.field private a:Lauu;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Latw",
+            "Lauu",
             "<",
             "Lcom/snapchat/android/model/chat/ChatConversation;",
             ">;"
@@ -53,15 +53,15 @@
 
     .prologue
     .line 97
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
     monitor-enter v1
 
     .line 98
     :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
-    invoke-virtual {v0}, Latw;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lauu;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -136,12 +136,12 @@
     return-object v0
 .end method
 
-.method static synthetic e(Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;)Latw;
+.method static synthetic e(Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;)Lauu;
     .locals 1
 
     .prologue
     .line 29
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
     return-object v0
 .end method
@@ -153,16 +153,16 @@
 
     .prologue
     .line 130
-    invoke-static {}, Lakc;->b()Lakc;
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v1
 
-    iget-object v2, v1, Lakc;->mConversations:Ljava/util/List;
+    iget-object v2, v1, Lakx;->mConversations:Ljava/util/List;
 
     monitor-enter v2
 
     :try_start_0
-    iget-object v0, v1, Lakc;->mConversations:Ljava/util/List;
+    iget-object v0, v1, Lakx;->mConversations:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -186,7 +186,7 @@
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/ChatConversation;->s()V
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/ChatConversation;->t()V
 
     invoke-interface {v3}, Ljava/util/Iterator;->remove()V
 
@@ -205,15 +205,15 @@
     const/4 v0, 0x0
 
     :try_start_1
-    iput-object v0, v1, Lakc;->mIterToken:Ljava/lang/String;
+    iput-object v0, v1, Lakx;->mIterToken:Ljava/lang/String;
 
-    invoke-virtual {v1}, Lakc;->d()V
+    invoke-virtual {v1}, Lakx;->e()V
 
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Lakc;->f()V
+    invoke-virtual {v1}, Lakx;->g()V
 
     .line 131
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->isAdded()Z
@@ -227,7 +227,7 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment$3;-><init>(Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 141
     :cond_2
@@ -241,7 +241,7 @@
     const/4 v1, 0x0
 
     .line 39
-    const v0, 0x7f040037
+    const v0, 0x7f040038
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -250,22 +250,22 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 40
-    invoke-static {}, Lakc;->b()Lakc;
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v0
 
-    iget-object v0, v0, Lakc;->mConversationsForListView:Latw;
+    iget-object v0, v0, Lakx;->mConversationsForListView:Lauu;
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
     .line 41
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
-    invoke-static {v0, v1}, Lagm;->a(Landroid/content/Context;Latw;)Lagm;
+    invoke-static {v0, v1}, Lahj;->a(Landroid/content/Context;Lauu;)Lahj;
 
     move-result-object v0
 
@@ -334,14 +334,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
     monitor-enter v1
 
     :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
-    invoke-virtual {v0}, Latw;->isEmpty()Z
+    invoke-virtual {v0}, Lauu;->isEmpty()Z
 
     move-result v0
 
@@ -381,41 +381,41 @@
     throw v0
 .end method
 
-.method public onUpdateFeedEvent(Lben;)V
+.method public onUpdateFeedEvent(Lbfm;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 116
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
     monitor-enter v1
 
     .line 117
     :try_start_0
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
     monitor-enter v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
-    invoke-virtual {v0}, Latw;->clear()V
+    invoke-virtual {v0}, Lauu;->clear()V
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
-    invoke-static {}, Lakc;->b()Lakc;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lakc;->e()Ljava/util/List;
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Latw;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v3}, Lakx;->f()Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lauu;->addAll(Ljava/util/Collection;)Z
 
     monitor-exit v2
     :try_end_1
@@ -427,9 +427,9 @@
     invoke-virtual {v0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     .line 118
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Latw;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->a:Lauu;
 
-    invoke-virtual {v0}, Latw;->isEmpty()Z
+    invoke-virtual {v0}, Lauu;->isEmpty()Z
 
     move-result v0
 
@@ -500,7 +500,7 @@
     goto :goto_0
 .end method
 
-.method public final w_()V
+.method public final v_()V
     .locals 1
 
     .prologue
@@ -521,7 +521,7 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment$4;-><init>(Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 158
     :cond_0

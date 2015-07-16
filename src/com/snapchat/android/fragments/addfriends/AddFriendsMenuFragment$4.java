@@ -2,10 +2,12 @@ package com.snapchat.android.fragments.addfriends;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
+import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.analytics.ProfileEventAnalytics;
 import com.squareup.otto.Bus;
+import kf;
 
 final class AddFriendsMenuFragment$4
   implements View.OnClickListener
@@ -14,8 +16,10 @@ final class AddFriendsMenuFragment$4
   
   public final void onClick(View paramView)
   {
-    ban.a().a(new bdw(LeftSwipeContentFragment.ADD_FRIENDS_FROM_CAMERAROLL_FRAGMENT));
+    bbo.a().a(new bev(LeftSwipeContentFragment.ADD_FRIENDS_FROM_CAMERAROLL_FRAGMENT));
     ProfileEventAnalytics.d();
+    AddFriendsMenuFragment.a(a, AnalyticsEvents.AnalyticsContext.SNAPCODE_PAGE);
+    a.a(kf.OTHER);
   }
 }
 

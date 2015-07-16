@@ -1,12 +1,12 @@
 package com.snapchat.android.ui;
 
-import apv;
+import aqu;
 
 public abstract interface LockingAboveTheFoldListView$b
 {
   public abstract boolean b();
   
-  public abstract apv c();
+  public abstract aqu c();
   
   public abstract int[] d();
   

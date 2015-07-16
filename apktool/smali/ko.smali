@@ -1,373 +1,204 @@
-.class public final Lko;
-.super Llt;
+.class public final enum Lko;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field private additionalInfo:Ljava/lang/String;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "Lko;",
+        ">;"
+    }
+.end annotation
 
-.field public editBirthdayDay:Ljava/lang/Boolean;
 
-.field public editBirthdayMonth:Ljava/lang/Boolean;
+# static fields
+.field private static final synthetic $VALUES:[Lko;
 
-.field public editBirthdayYear:Ljava/lang/Boolean;
+.field public static final enum EMAIL_EXISTS:Lko;
 
-.field private final eventName:Ljava/lang/String;
+.field public static final enum EMAIL_INVALID:Lko;
+
+.field public static final enum PASSWORD_TOO_COMMON:Lko;
+
+.field public static final enum PASSWORD_TOO_EASY:Lko;
+
+.field public static final enum PASSWORD_TOO_SHORT:Lko;
+
+.field public static final enum PASSWORD_TOO_SIMILAR_TO_EMAIL:Lko;
+
+.field public static final enum PASSWORD_TOO_SIMILAR_TO_USERNAME:Lko;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 8
 
     .prologue
+    const/4 v7, 0x4
+
+    const/4 v6, 0x3
+
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    .line 5
+    new-instance v0, Lko;
+
+    const-string v1, "EMAIL_INVALID"
+
+    invoke-direct {v0, v1, v3}, Lko;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lko;->EMAIL_INVALID:Lko;
+
+    .line 6
+    new-instance v0, Lko;
+
+    const-string v1, "EMAIL_EXISTS"
+
+    invoke-direct {v0, v1, v4}, Lko;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lko;->EMAIL_EXISTS:Lko;
+
+    .line 7
+    new-instance v0, Lko;
+
+    const-string v1, "PASSWORD_TOO_SHORT"
+
+    invoke-direct {v0, v1, v5}, Lko;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lko;->PASSWORD_TOO_SHORT:Lko;
+
+    .line 8
+    new-instance v0, Lko;
+
+    const-string v1, "PASSWORD_TOO_COMMON"
+
+    invoke-direct {v0, v1, v6}, Lko;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lko;->PASSWORD_TOO_COMMON:Lko;
+
+    .line 9
+    new-instance v0, Lko;
+
+    const-string v1, "PASSWORD_TOO_EASY"
+
+    invoke-direct {v0, v1, v7}, Lko;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lko;->PASSWORD_TOO_EASY:Lko;
+
     .line 10
-    invoke-direct {p0}, Llt;-><init>()V
+    new-instance v0, Lko;
 
-    .line 44
-    const-string v0, "REGISTRATION_USER_INITIAL_INFO_SUCCESS"
+    const-string v1, "PASSWORD_TOO_SIMILAR_TO_USERNAME"
 
-    iput-object v0, p0, Lko;->eventName:Ljava/lang/String;
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Lko;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lko;->PASSWORD_TOO_SIMILAR_TO_USERNAME:Lko;
+
+    .line 11
+    new-instance v0, Lko;
+
+    const-string v1, "PASSWORD_TOO_SIMILAR_TO_EMAIL"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Lko;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lko;->PASSWORD_TOO_SIMILAR_TO_EMAIL:Lko;
+
+    .line 4
+    const/4 v0, 0x7
+
+    new-array v0, v0, [Lko;
+
+    sget-object v1, Lko;->EMAIL_INVALID:Lko;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lko;->EMAIL_EXISTS:Lko;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lko;->PASSWORD_TOO_SHORT:Lko;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lko;->PASSWORD_TOO_COMMON:Lko;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Lko;->PASSWORD_TOO_EASY:Lko;
+
+    aput-object v1, v0, v7
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lko;->PASSWORD_TOO_SIMILAR_TO_USERNAME:Lko;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Lko;->PASSWORD_TOO_SIMILAR_TO_EMAIL:Lko;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lko;->$VALUES:[Lko;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Ljava/util/Map;
-    .locals 3
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Object;",
-            ">;"
+            "()V"
         }
     .end annotation
 
     .prologue
-    .line 51
-    new-instance v0, Ljava/util/HashMap;
+    .line 4
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    return-void
+.end method
 
-    .line 53
-    const-string v1, "event_name"
+.method public static valueOf(Ljava/lang/String;)Lko;
+    .locals 1
 
-    const-string v2, "REGISTRATION_USER_INITIAL_INFO_SUCCESS"
+    .prologue
+    .line 4
+    const-class v0, Lko;
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 54
-    iget-object v1, p0, Lko;->additionalInfo:Ljava/lang/String;
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    check-cast v0, Lko;
 
-    const-string v1, "additional_info"
-
-    iget-object v2, p0, Lko;->additionalInfo:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 55
-    :cond_0
-    iget-object v1, p0, Lko;->editBirthdayDay:Ljava/lang/Boolean;
-
-    if-eqz v1, :cond_1
-
-    const-string v1, "edit_birthday_day"
-
-    iget-object v2, p0, Lko;->editBirthdayDay:Ljava/lang/Boolean;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 56
-    :cond_1
-    iget-object v1, p0, Lko;->editBirthdayMonth:Ljava/lang/Boolean;
-
-    if-eqz v1, :cond_2
-
-    const-string v1, "edit_birthday_month"
-
-    iget-object v2, p0, Lko;->editBirthdayMonth:Ljava/lang/Boolean;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 57
-    :cond_2
-    iget-object v1, p0, Lko;->editBirthdayYear:Ljava/lang/Boolean;
-
-    if-eqz v1, :cond_3
-
-    const-string v1, "edit_birthday_year"
-
-    iget-object v2, p0, Lko;->editBirthdayYear:Ljava/lang/Boolean;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 58
-    :cond_3
-    invoke-super {p0}, Llt;->a()Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    .line 60
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public static values()[Lko;
+    .locals 1
 
     .prologue
-    const/4 v0, 0x1
+    .line 4
+    sget-object v0, Lko;->$VALUES:[Lko;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, [Lko;->clone()Ljava/lang/Object;
 
-    .line 65
-    if-ne p0, p1, :cond_1
+    move-result-object v0
 
-    .line 75
-    :cond_0
-    :goto_0
-    return v0
+    check-cast v0, [Lko;
 
-    .line 66
-    :cond_1
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_3
-
-    :cond_2
-    move v0, v1
-
-    goto :goto_0
-
-    .line 67
-    :cond_3
-    invoke-super {p0, p1}, Llt;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    move v0, v1
-
-    goto :goto_0
-
-    .line 69
-    :cond_4
-    check-cast p1, Lko;
-
-    .line 71
-    iget-object v2, p0, Lko;->additionalInfo:Ljava/lang/String;
-
-    if-eqz v2, :cond_6
-
-    iget-object v2, p0, Lko;->additionalInfo:Ljava/lang/String;
-
-    iget-object v3, p1, Lko;->additionalInfo:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_7
-
-    :cond_5
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_6
-    iget-object v2, p1, Lko;->additionalInfo:Ljava/lang/String;
-
-    if-nez v2, :cond_5
-
-    .line 72
-    :cond_7
-    iget-object v2, p0, Lko;->editBirthdayDay:Ljava/lang/Boolean;
-
-    if-eqz v2, :cond_9
-
-    iget-object v2, p0, Lko;->editBirthdayDay:Ljava/lang/Boolean;
-
-    iget-object v3, p1, Lko;->editBirthdayDay:Ljava/lang/Boolean;
-
-    invoke-virtual {v2, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_a
-
-    :cond_8
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_9
-    iget-object v2, p1, Lko;->editBirthdayDay:Ljava/lang/Boolean;
-
-    if-nez v2, :cond_8
-
-    .line 73
-    :cond_a
-    iget-object v2, p0, Lko;->editBirthdayMonth:Ljava/lang/Boolean;
-
-    if-eqz v2, :cond_c
-
-    iget-object v2, p0, Lko;->editBirthdayMonth:Ljava/lang/Boolean;
-
-    iget-object v3, p1, Lko;->editBirthdayMonth:Ljava/lang/Boolean;
-
-    invoke-virtual {v2, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_d
-
-    :cond_b
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_c
-    iget-object v2, p1, Lko;->editBirthdayMonth:Ljava/lang/Boolean;
-
-    if-nez v2, :cond_b
-
-    .line 74
-    :cond_d
-    iget-object v2, p0, Lko;->editBirthdayYear:Ljava/lang/Boolean;
-
-    if-eqz v2, :cond_e
-
-    iget-object v2, p0, Lko;->editBirthdayYear:Ljava/lang/Boolean;
-
-    iget-object v3, p1, Lko;->editBirthdayYear:Ljava/lang/Boolean;
-
-    invoke-virtual {v2, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :goto_1
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_e
-    iget-object v2, p1, Lko;->editBirthdayYear:Ljava/lang/Boolean;
-
-    if-eqz v2, :cond_0
-
-    goto :goto_1
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 80
-    invoke-super {p0}, Llt;->hashCode()I
-
-    move-result v0
-
-    .line 81
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v0, p0, Lko;->additionalInfo:Ljava/lang/String;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lko;->additionalInfo:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    :goto_0
-    add-int/2addr v0, v2
-
-    .line 82
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v0, p0, Lko;->editBirthdayDay:Ljava/lang/Boolean;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lko;->editBirthdayDay:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->hashCode()I
-
-    move-result v0
-
-    :goto_1
-    add-int/2addr v0, v2
-
-    .line 83
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v0, p0, Lko;->editBirthdayMonth:Ljava/lang/Boolean;
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lko;->editBirthdayMonth:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->hashCode()I
-
-    move-result v0
-
-    :goto_2
-    add-int/2addr v0, v2
-
-    .line 84
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lko;->editBirthdayYear:Ljava/lang/Boolean;
-
-    if-eqz v2, :cond_0
-
-    iget-object v1, p0, Lko;->editBirthdayYear:Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->hashCode()I
-
-    move-result v1
-
-    :cond_0
-    add-int/2addr v0, v1
-
-    .line 85
-    return v0
-
-    :cond_1
-    move v0, v1
-
-    .line 81
-    goto :goto_0
-
-    :cond_2
-    move v0, v1
-
-    .line 82
-    goto :goto_1
-
-    :cond_3
-    move v0, v1
-
-    .line 83
-    goto :goto_2
+    return-object v0
 .end method

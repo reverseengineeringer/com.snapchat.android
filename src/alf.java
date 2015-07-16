@@ -1,10 +1,20 @@
-public final class alf
-  extends Exception
+public abstract interface alf
 {
-  public alf(String paramString)
-  {
-    super(paramString);
-  }
+  public abstract void a(alg paramalg);
+  
+  public abstract boolean a();
+  
+  public abstract void b();
+  
+  public abstract void c();
+  
+  public abstract void d();
+  
+  public abstract void e();
+  
+  public abstract void f();
+  
+  public abstract long g();
 }
 
 /* Location:

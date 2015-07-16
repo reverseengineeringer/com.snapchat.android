@@ -1,9 +1,18 @@
-final class aoa$a
-  implements bpd.f
+import com.google.gson.annotations.SerializedName;
+
+@ud
+public final class aoa$a
+  extends qc
 {
-  public final bpg a(bpg parambpg)
+  @SerializedName("username")
+  String a;
+  @SerializedName("requested_username")
+  String b;
+  
+  public aoa$a(aoa paramaoa, @chc String paramString1, @chc String paramString2)
   {
-    throw new RuntimeException("Attempt to make request on disabled Picasso instance");
+    a = paramString1;
+    b = paramString2;
   }
 }
 

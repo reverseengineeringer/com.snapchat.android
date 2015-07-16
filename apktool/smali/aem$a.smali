@@ -1,4 +1,4 @@
-.class public final Laem$a;
+.class public interface abstract Laem$a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -9,36 +9,34 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x609
     name = "a"
 .end annotation
 
 
-# instance fields
-.field public final a:Landroid/view/View;
+# virtual methods
+.method public abstract a()V
+    .annotation build Lcbr;
+    .end annotation
+.end method
 
-.field public final b:Ljava/lang/String;
+.method public abstract a(Lcom/snapchat/android/discover/model/ChannelPage;)V
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation build Lcbr;
+    .end annotation
+.end method
 
-.field public c:Z
+.method public abstract a(Ljava/lang/String;)V
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+.end method
 
-
-# direct methods
-.method public constructor <init>(Landroid/view/View;Ljava/lang/String;Z)V
-    .locals 0
-
-    .prologue
-    .line 293
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 294
-    iput-object p1, p0, Laem$a;->a:Landroid/view/View;
-
-    .line 295
-    iput-object p2, p0, Laem$a;->b:Ljava/lang/String;
-
-    .line 296
-    iput-boolean p3, p0, Laem$a;->c:Z
-
-    .line 297
-    return-void
+.method public abstract b()Ljava/lang/String;
+    .annotation build Lchc;
+    .end annotation
 .end method

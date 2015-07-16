@@ -1,15 +1,15 @@
 package com.snapchat.android.camera.model;
 
-import buo;
+import bvp;
 
 public enum CameraModel_Factory
-  implements buo<CameraModel>
+  implements bvp<CameraModel>
 {
   INSTANCE;
   
   private CameraModel_Factory() {}
   
-  public static buo<CameraModel> create()
+  public static bvp<CameraModel> create()
   {
     return INSTANCE;
   }

@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 402
+    .line 404
     new-instance v0, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
     const-string v1, "YES"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;->YES:Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
-    .line 403
+    .line 405
     new-instance v0, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
     const-string v1, "NO"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;->NO:Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
-    .line 404
+    .line 406
     new-instance v0, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
     const-string v1, "YES_DONT_ASK_AGAIN"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;->YES_DONT_ASK_AGAIN:Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
-    .line 401
+    .line 403
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 401
+    .line 403
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 401
+    .line 403
     const-class v0, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 401
+    .line 403
     sget-object v0, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;->$VALUES:[Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;->clone()Ljava/lang/Object;

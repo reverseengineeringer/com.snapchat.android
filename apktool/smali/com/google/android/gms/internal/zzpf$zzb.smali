@@ -81,8 +81,6 @@
 
     iget-object v2, p0, Lcom/google/android/gms/internal/zzpf$zzb;->zzand:Lcom/google/android/gms/internal/zzpf;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     iget-object v3, p0, Lcom/google/android/gms/internal/zzpf$zzb;->zzanb:Lcom/google/android/gms/location/zzf$zza;
 
     invoke-direct {v1, v2, v3, p1, p2}, Lcom/google/android/gms/internal/zzpf$zza;-><init>(Lcom/google/android/gms/internal/zzpf;Lcom/google/android/gms/location/zzf$zza;I[Ljava/lang/String;)V
@@ -122,8 +120,6 @@
     new-instance v0, Lcom/google/android/gms/internal/zzpf$zzc;
 
     iget-object v1, p0, Lcom/google/android/gms/internal/zzpf$zzb;->zzand:Lcom/google/android/gms/internal/zzpf;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v2, 0x1
 
@@ -170,8 +166,6 @@
     new-instance v0, Lcom/google/android/gms/internal/zzpf$zzc;
 
     iget-object v1, p0, Lcom/google/android/gms/internal/zzpf$zzb;->zzand:Lcom/google/android/gms/internal/zzpf;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v2, 0x2
 

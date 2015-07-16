@@ -43,9 +43,9 @@
     .line 142
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment$2;->a:Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;)Lajx;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/NotificationSettingsFragment;)Lakr;
 
-    invoke-static {p2}, Lajx;->C(Z)V
+    invoke-static {p2}, Lakr;->B(Z)V
 
     .line 143
     return-void

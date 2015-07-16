@@ -1,83 +1,71 @@
-.class public final Laih;
-.super Laif;
+.class public interface abstract Laih;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "Laif",
-        "<",
-        "Ljava/lang/String;",
-        ">;"
+        Laih$a;
     }
 .end annotation
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 2
-
-    .prologue
-    .line 16
-    invoke-static {}, Lalb;->a()Lalb;
-
-    move-result-object v0
-
-    sget-object v1, Lawq;->GEOFILTER_METADATA_CACHE:Lawp;
-
-    invoke-direct {p0, v0, v1}, Laih;-><init>(Lalb;Lawp;)V
-
-    .line 17
-    return-void
-.end method
-
-.method private constructor <init>(Lalb;Lawp;)V
-    .locals 0
-    .param p1    # Lalb;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lawp;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 20
-    invoke-direct {p0, p1, p2}, Laif;-><init>(Lalb;Lawp;)V
-
-    .line 21
-    return-void
-.end method
-
-
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 13
-    const/4 v0, 0x0
-
-    return-object v0
+.method public abstract a()V
 .end method
 
-.method public final b(Ljava/lang/String;Laij$a;)V
-    .locals 0
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+.method public abstract a(Landroid/app/Activity;Laih$a;Lcom/snapchat/android/analytics/HereAnalytics;)V
+    .param p1    # Landroid/app/Activity;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Laij$a;
-        .annotation build Lcgb;
+    .param p2    # Laih$a;
+        .annotation build Lchc;
         .end annotation
     .end param
+    .param p3    # Lcom/snapchat/android/analytics/HereAnalytics;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
 
-    .prologue
-    .line 25
-    invoke-interface {p2}, Laij$a;->a()V
+.method public abstract a(Lbjc;)V
+    .param p1    # Lbjc;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
 
-    .line 26
-    return-void
+.method public abstract a(Lcom/addlive/view/ALVideoTextureView;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/ui/here/DisconnectReason;)V
+    .param p1    # Lcom/snapchat/android/ui/here/DisconnectReason;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract a([BLcom/addlive/service/AddLiveService$VideoFrameMetadata;)V
+    .param p1    # [B
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/addlive/service/AddLiveService$VideoFrameMetadata;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract b()Z
+.end method
+
+.method public abstract c()Z
+.end method
+
+.method public abstract d()V
+.end method
+
+.method public abstract e()V
 .end method

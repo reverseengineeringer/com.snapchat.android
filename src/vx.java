@@ -1,30 +1,8 @@
-public final class vx
-  implements buo<vw>
+import com.snapchat.android.app.feature.messaging.feed.ui.fragment.FeedFragment.a;
+
+public abstract interface vx
 {
-  private final buj<vw> b;
-  
-  static
-  {
-    if (!vx.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
-  }
-  
-  private vx(buj<vw> parambuj)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-  }
-  
-  public static buo<vw> a(buj<vw> parambuj)
-  {
-    return new vx(parambuj);
-  }
+  public abstract FeedFragment.a k();
 }
 
 /* Location:

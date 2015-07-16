@@ -1,46 +1,50 @@
 package com.snapchat.android.receiver;
 
-import ald;
-import ale;
+import alz;
+import ama;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import com.snapchat.android.Timber;
 import java.util.Iterator;
 import java.util.Set;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class ConnectivityReceiver
   extends BroadcastReceiver
 {
   public static final IntentFilter a = new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE");
-  private final ale b;
+  private final ama b;
   
   public ConnectivityReceiver()
   {
-    this(ale.a());
+    this(ama.a());
   }
   
-  private ConnectivityReceiver(ale paramale)
+  private ConnectivityReceiver(ama paramama)
   {
-    b = paramale;
+    b = paramama;
   }
   
   public void onReceive(Context arg1, Intent paramIntent)
   {
+    kkxxkk.b041E041EОО041EО(???);
+    xkkkxk.b041E041EООО041E(???);
     Object localObject = ((ConnectivityManager)???.getSystemService("connectivity")).getActiveNetworkInfo();
     if (localObject != null)
     {
       paramIntent = b;
       synchronized (a)
       {
-        Timber.c("NetworkStatusManager", "Network status changed from %s to %s", new Object[] { ale.a(c), ale.a((NetworkInfo)localObject) });
+        ama.a(c);
+        ama.a((NetworkInfo)localObject);
         c = ((NetworkInfo)localObject);
         localObject = b.iterator();
         if (((Iterator)localObject).hasNext()) {
-          ((ald)((Iterator)localObject).next()).a(c);
+          ((alz)((Iterator)localObject).next()).a(c);
         }
       }
     }

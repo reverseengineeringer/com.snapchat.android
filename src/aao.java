@@ -1,28 +1,11 @@
-import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.database.ClientProperty;
+import com.snapchat.android.database.SharedPreferenceKey;
+import java.util.HashMap;
 
 public final class aao
-  extends aan
 {
-  private static aao a = new aao();
-  
-  private aao()
-  {
-    super("HasSeenOurCampusStoryDialog", SnapchatApplication.b().c().b());
-  }
-  
-  public static aao a()
-  {
-    try
-    {
-      aao localaao = a;
-      return localaao;
-    }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
-    }
-  }
+  public static HashMap<String, String> a = new HashMap() {};
+  public static HashMap<String, String> b = new HashMap() {};
 }
 
 /* Location:

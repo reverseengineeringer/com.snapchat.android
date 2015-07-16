@@ -1,224 +1,286 @@
-.class public abstract Ladz;
-.super Lady;
+.class public final Ladz;
+.super Laqb;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Laqb",
+        "<",
+        "Lcom/snapchat/android/discover/model/ChannelPage;",
+        ">;"
+    }
+.end annotation
+
+
 # instance fields
-.field protected a:Landroid/view/View;
+.field protected final a:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Laes;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field protected b:Landroid/widget/FrameLayout;
+.field protected final b:Landroid/view/View$OnClickListener;
 
-.field protected c:Lady;
+.field private final c:Lafh;
 
-.field private d:Z
+.field private final d:Landroid/view/LayoutInflater;
+
+.field private final e:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
 
 # direct methods
-.method constructor <init>(Lady;)V
-    .locals 1
-
-    .prologue
-    .line 29
-    invoke-direct {p0}, Lady;-><init>()V
-
-    .line 23
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ladz;->d:Z
-
-    .line 30
-    iput-object p1, p0, Ladz;->c:Lady;
-
-    .line 31
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Landroid/view/View;Ladb;Ljava/util/List;)Laim;
-    .locals 1
-    .param p3    # Ljava/util/List;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>(Landroid/content/Context;Lafh;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;Ljava/util/List;)V
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Landroid/view/View;",
-            "Ladb;",
+            "Landroid/content/Context;",
+            "Lafh;",
+            "Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;",
             "Ljava/util/List",
             "<",
-            "Landroid/view/View;",
-            ">;)",
-            "Laim;"
+            "Lcom/snapchat/android/discover/model/ChannelPage;",
+            ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 68
-    iget-object v0, p0, Ladz;->c:Lady;
+    .line 47
+    const-string v0, "layout_inflater"
 
-    invoke-virtual {v0, p1, p2, p3}, Lady;->a(Landroid/view/View;Ladb;Ljava/util/List;)Laim;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v5
 
-    return-object v0
-.end method
+    check-cast v5, Landroid/view/LayoutInflater;
 
-.method public final a(J)Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
-    .locals 1
+    move-object v0, p0
 
-    .prologue
-    .line 83
-    iget-object v0, p0, Ladz;->c:Lady;
+    move-object v1, p1
 
-    invoke-virtual {v0, p1, p2}, Lady;->a(J)Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
+    move-object v2, p2
 
-    move-result-object v0
+    move-object v3, p3
 
-    return-object v0
-.end method
+    move-object v4, p4
 
-.method public final a(Laeq;)V
-    .locals 1
-    .param p1    # Laeq;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 73
-    iget-object v0, p0, Ladz;->c:Lady;
-
-    invoke-virtual {v0, p1}, Lady;->a(Laeq;)V
-
-    .line 74
-    return-void
-.end method
-
-.method public final a(Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;)V
-    .locals 1
-
-    .prologue
-    .line 40
-    iget-object v0, p0, Ladz;->c:Lady;
-
-    invoke-virtual {v0, p1, p2}, Lady;->a(Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;)V
-
-    .line 41
-    return-void
-.end method
-
-.method public a(Lcom/snapchat/android/discover/ui/DSnapView;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;)Z
-    .locals 1
-
-    .prologue
-    .line 35
-    iget-object v0, p0, Ladz;->c:Lady;
-
-    invoke-virtual {v0, p1, p2, p3}, Lady;->a(Lcom/snapchat/android/discover/ui/DSnapView;Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public c()V
-    .locals 1
-
-    .prologue
-    .line 93
-    iget-object v0, p0, Ladz;->c:Lady;
-
-    invoke-virtual {v0}, Lady;->c()V
-
-    .line 94
-    return-void
-.end method
-
-.method public final d()Landroid/view/View;
-    .locals 2
-
-    .prologue
-    .line 48
-    iget-boolean v0, p0, Ladz;->d:Z
-
-    if-nez v0, :cond_0
+    invoke-direct/range {v0 .. v5}, Ladz;-><init>(Landroid/content/Context;Lafh;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;Ljava/util/List;Landroid/view/LayoutInflater;)V
 
     .line 49
-    iget-object v0, p0, Ladz;->c:Lady;
-
-    invoke-virtual {v0}, Lady;->d()Landroid/view/View;
-
-    move-result-object v0
-
-    .line 50
-    iget-object v1, p0, Ladz;->b:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 51
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ladz;->d:Z
-
-    .line 53
-    :cond_0
-    iget-object v0, p0, Ladz;->a:Landroid/view/View;
-
-    return-object v0
+    return-void
 .end method
 
-.method public final e()Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+.method private constructor <init>(Landroid/content/Context;Lafh;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;Ljava/util/List;Landroid/view/LayoutInflater;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Lafh;",
+            "Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/discover/model/ChannelPage;",
+            ">;",
+            "Landroid/view/LayoutInflater;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 88
-    iget-object v0, p0, Ladz;->c:Lady;
+    .line 57
+    const v0, 0x7f040028
 
-    invoke-virtual {v0}, Lady;->e()Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+    invoke-direct {p0, p1, v0, p4}, Laqb;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
-    move-result-object v0
+    .line 40
+    new-instance v0, Ljava/util/HashMap;
 
-    return-object v0
-.end method
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-.method public final h()Z
-    .locals 1
+    iput-object v0, p0, Ladz;->a:Ljava/util/Map;
 
-    .prologue
-    .line 78
-    iget-object v0, p0, Ladz;->c:Lady;
+    .line 106
+    new-instance v0, Ladz$1;
 
-    invoke-virtual {v0}, Lady;->h()Z
+    invoke-direct {v0, p0}, Ladz$1;-><init>(Ladz;)V
 
-    move-result v0
+    iput-object v0, p0, Ladz;->b:Landroid/view/View$OnClickListener;
 
-    return v0
-.end method
-
-.method public o_()V
-    .locals 1
-
-    .prologue
     .line 58
-    iget-object v0, p0, Ladz;->c:Lady;
-
-    invoke-virtual {v0}, Lady;->o_()V
+    iput-object p5, p0, Ladz;->d:Landroid/view/LayoutInflater;
 
     .line 59
+    iput-object p2, p0, Ladz;->c:Lafh;
+
+    .line 60
+    iput-object p3, p0, Ladz;->e:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
+
+    .line 61
     return-void
 .end method
 
-.method public p_()V
+.method static synthetic a(Ladz;)Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
     .locals 1
 
     .prologue
-    .line 63
-    iget-object v0, p0, Ladz;->c:Lady;
+    .line 32
+    iget-object v0, p0, Ladz;->e:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
-    invoke-virtual {v0}, Lady;->p_()V
+    return-object v0
+.end method
 
-    .line 64
-    return-void
+.method static synthetic b(Ladz;)Lafh;
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, Ladz;->c:Lafh;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 5
+
+    .prologue
+    const/4 v4, 0x0
+
+    const v2, 0x7f0a0109
+
+    .line 66
+    if-nez p2, :cond_2
+
+    .line 67
+    iget-object v0, p0, Ladz;->d:Landroid/view/LayoutInflater;
+
+    const v1, 0x7f040028
+
+    invoke-virtual {v0, v1, p3, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object p2
+
+    .line 68
+    invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/ui/ChannelView;
+
+    .line 69
+    invoke-virtual {p2, v2, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    move-object v2, v0
+
+    .line 73
+    :goto_0
+    const v0, 0x7f0a0001
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v0, v1}, Lcom/snapchat/android/discover/ui/ChannelView;->setTag(ILjava/lang/Object;)V
+
+    .line 75
+    invoke-virtual {p0, p1}, Ladz;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/ChannelPage;
+
+    .line 76
+    invoke-virtual {v2}, Lcom/snapchat/android/discover/ui/ChannelView;->getChannelPage()Lcom/snapchat/android/discover/model/ChannelPage;
+
+    move-result-object v1
+
+    if-nez v1, :cond_3
+
+    const/4 v1, 0x0
+
+    :goto_1
+    iget-object v3, v0, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v2}, Lcom/snapchat/android/discover/ui/ChannelView;->a()V
+
+    :cond_0
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/ChannelPage;->e()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Ladz;->a:Ljava/util/Map;
+
+    iget-object v3, v0, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    invoke-interface {v1, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    iget-object v1, p0, Ladz;->a:Ljava/util/Map;
+
+    iget-object v3, v0, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Laes;
+
+    if-eqz v1, :cond_4
+
+    iget-boolean v1, v1, Laes;->a:Z
+
+    invoke-virtual {v2, v1}, Lcom/snapchat/android/discover/ui/ChannelView;->setProgressBarVisibility(Z)V
+
+    .line 77
+    :goto_2
+    invoke-virtual {v2, v0}, Lcom/snapchat/android/discover/ui/ChannelView;->setChannelPage(Lcom/snapchat/android/discover/model/ChannelPage;)V
+
+    .line 78
+    iget-object v0, p0, Ladz;->b:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {v2, v0}, Lcom/snapchat/android/discover/ui/ChannelView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 80
+    return-object p2
+
+    .line 71
+    :cond_2
+    invoke-virtual {p2, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/ui/ChannelView;
+
+    move-object v2, v0
+
+    goto :goto_0
+
+    .line 76
+    :cond_3
+    iget-object v1, v1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    goto :goto_1
+
+    :cond_4
+    invoke-virtual {v2, v4}, Lcom/snapchat/android/discover/ui/ChannelView;->setProgressBarVisibility(Z)V
+
+    goto :goto_2
 .end method

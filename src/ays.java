@@ -1,29 +1,37 @@
-import com.snapchat.android.analytics.framework.FlurryAnalyticsPlatform;
+import android.os.SystemClock;
+import com.snapchat.android.SnapchatApplication;
+import javax.inject.Inject;
 
-public final class ays
-  implements buo<FlurryAnalyticsPlatform>
+public class ays
 {
-  private final ayl module;
+  @Inject
+  protected bhk mClock;
+  public String mIv;
+  public String mKey;
+  public String mThumbnailIv;
+  public long mTimestamp;
   
-  static
+  public ays(@chc String paramString1, @chc String paramString2)
   {
-    if (!ays.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
+    this(paramString1, paramString2, null);
   }
   
-  private ays(ayl paramayl)
+  public ays(@chc String paramString1, @chc String paramString2, @chd String paramString3)
   {
-    assert (paramayl != null);
-    module = paramayl;
+    SnapchatApplication.b().c().a(this);
+    mKey = paramString1;
+    mIv = paramString2;
+    mThumbnailIv = paramString3;
+    mTimestamp = SystemClock.elapsedRealtime();
   }
   
-  public static buo<FlurryAnalyticsPlatform> a(ayl paramayl)
+  public ays(@chc String paramString1, @chc String paramString2, @chd String paramString3, long paramLong)
   {
-    return new ays(paramayl);
+    SnapchatApplication.b().c().a(this);
+    mKey = paramString1;
+    mIv = paramString2;
+    mThumbnailIv = paramString3;
+    mTimestamp = paramLong;
   }
 }
 

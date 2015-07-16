@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/SnapkidzSettingsActivity$a;
-.super Laqb;
+.super Lara;
 .source "SourceFile"
 
 
@@ -37,7 +37,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Laqb;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {p0, v0, v1}, Lara;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 99
     return-void

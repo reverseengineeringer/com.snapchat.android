@@ -1,10 +1,10 @@
 public final class bbl
 {
-  public String mFriendUsername;
+  public boolean mShouldPrepare;
   
-  public bbl(String paramString)
+  public bbl(boolean paramBoolean)
   {
-    mFriendUsername = paramString;
+    mShouldPrepare = paramBoolean;
   }
 }
 

@@ -4,7 +4,7 @@ import android.media.MediaCodec;
 import android.media.MediaCodec.BufferInfo;
 import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.utils.MimeTools;
 import com.snapchat.videotranscoder.utils.VerboseLogging;
 import java.nio.ByteBuffer;
@@ -19,12 +19,12 @@ public abstract class Encoder
   public final Mixer mMixer;
   protected int mOutputTrack = -1;
   
-  public Encoder(@cgb Mixer paramMixer, @cgb StageDoneCallback paramStageDoneCallback, @cgb EncoderConfiguration paramEncoderConfiguration, boolean paramBoolean)
+  public Encoder(@chc Mixer paramMixer, @chc StageDoneCallback paramStageDoneCallback, @chc EncoderConfiguration paramEncoderConfiguration, boolean paramBoolean)
   {
     this(paramStageDoneCallback, paramMixer, new Codec(MediaCodec.createByCodecName(MimeTools.getInstance().selectCodec(paramEncoderConfiguration.getMimeType()).getName()), paramEncoderConfiguration.getFormat(), null, null, 1, paramBoolean), paramEncoderConfiguration);
   }
   
-  protected Encoder(@cgb StageDoneCallback paramStageDoneCallback, @cgb Mixer paramMixer, @cgb Codec paramCodec, @cgb EncoderConfiguration paramEncoderConfiguration)
+  protected Encoder(@chc StageDoneCallback paramStageDoneCallback, @chc Mixer paramMixer, @chc Codec paramCodec, @chc EncoderConfiguration paramEncoderConfiguration)
   {
     super(paramStageDoneCallback);
     mMixer = paramMixer;
@@ -32,7 +32,7 @@ public abstract class Encoder
     mEncoderConfiguration = paramEncoderConfiguration;
   }
   
-  public abstract int addOrRetrieveMixerTrack(@cgb MediaFormat paramMediaFormat);
+  public abstract int addOrRetrieveMixerTrack(@chc MediaFormat paramMediaFormat);
   
   public Codec getCodec()
   {

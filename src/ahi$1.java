@@ -1,14 +1,36 @@
-import com.addlive.service.listener.AddLiveServiceListener;
-import com.addlive.service.listener.VideoFrameSizeChangedEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.FriendAction;
+import com.snapchat.android.util.AlertDialogUtils;
+import com.snapchat.android.util.AlertDialogUtils.YesNoOption;
+import com.snapchat.android.util.AlertDialogUtils.a;
 
 final class ahi$1
-  implements Runnable
+  implements View.OnClickListener
 {
-  ahi$1(ahi paramahi, VideoFrameSizeChangedEvent paramVideoFrameSizeChangedEvent) {}
+  ahi$1(ahi paramahi, ahi.a parama, Friend paramFriend) {}
   
-  public final void run()
+  public final void onClick(View paramView)
   {
-    ahi.a(b).onVideoFrameSizeChanged(a);
+    AlertDialogUtils.a(c.c, null, c.e, new AlertDialogUtils.a()
+    {
+      public final void a(AlertDialogUtils.YesNoOption paramAnonymousYesNoOption)
+      {
+        if (paramAnonymousYesNoOption == AlertDialogUtils.YesNoOption.YES)
+        {
+          paramAnonymousYesNoOption = c;
+          ahi.a locala = a;
+          Friend localFriend = b;
+          l.setVisibility(8);
+          m.setVisibility(0);
+          paramAnonymousYesNoOption = new ahi.2(paramAnonymousYesNoOption, localFriend, FriendAction.UNBLOCK, locala, localFriend);
+          mAnalyticsContext = AnalyticsEvents.AnalyticsContext.SETTINGS;
+          paramAnonymousYesNoOption.execute();
+        }
+      }
+    });
   }
 }
 

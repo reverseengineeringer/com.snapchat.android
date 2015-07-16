@@ -63,7 +63,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 324
     iget-object v0, p0, Lcom/snapchat/android/util/debug/BugReportFragment$8;->this$0:Lcom/snapchat/android/util/debug/BugReportFragment;
@@ -103,17 +103,6 @@
     :goto_0
     return-void
 
-    .line 327
-    :catch_0
-    move-exception v0
-
-    .line 329
-    const-string v1, "BugReportFragment"
-
-    invoke-static {v1, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
     .line 332
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/util/debug/BugReportFragment$8;->this$0:Lcom/snapchat/android/util/debug/BugReportFragment;
@@ -130,6 +119,12 @@
     const-string v1, "Remote Log"
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_0
+
+    .line 329
+    :catch_0
+    move-exception v0
 
     goto :goto_0
 .end method

@@ -1,16 +1,16 @@
 package com.snapchat.android.rendering;
 
-import aje;
+import aka;
 import android.view.ViewGroup;
-import cgb;
+import chc;
 
 public abstract interface SnapMediaRenderer
 {
   public abstract void a();
   
-  public abstract void a(@cgb aje paramaje, boolean paramBoolean, @cgb a parama);
+  public abstract void a(@chc aka paramaka, boolean paramBoolean, @chc a parama);
   
-  public abstract void a(@cgb ViewGroup paramViewGroup);
+  public abstract void a(@chc ViewGroup paramViewGroup);
   
   public abstract void a(boolean paramBoolean);
   

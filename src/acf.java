@@ -1,40 +1,102 @@
-import com.snapchat.android.discover.model.ChannelPage;
-import com.snapchat.android.discover.model.DSnapPage;
+import android.content.ContentValues;
+import android.text.TextUtils;
+import com.snapchat.android.database.DataType;
+import com.snapchat.android.database.schema.VerifiedDeviceSchema;
+import com.snapchat.android.database.table.DbTable;
+import com.snapchat.android.model.Snap;
+import java.util.Collection;
+import java.util.HashMap;
 
 public final class acf
+  extends DbTable
 {
-  public final ChannelPage a;
-  public final DSnapPage b;
+  public static final HashMap<String, String> a;
+  public static final String[] b;
+  private static acf c;
   
-  public acf()
+  static
   {
-    a = null;
-    b = null;
-  }
-  
-  public acf(ChannelPage paramChannelPage, DSnapPage paramDSnapPage)
-  {
-    a = paramChannelPage;
-    b = paramDSnapPage;
-  }
-  
-  public final String toString()
-  {
-    Object localObject1;
-    if (a != null)
+    int j = 0;
+    VerifiedDeviceSchema[] arrayOfVerifiedDeviceSchema = VerifiedDeviceSchema.values();
+    int k = arrayOfVerifiedDeviceSchema.length;
+    b = new String[k];
+    int i = 0;
+    while (i < k)
     {
-      localObject1 = a;
-      if (b == null) {
-        break label48;
+      b[i] = arrayOfVerifiedDeviceSchema[i].getColumnName();
+      i += 1;
+    }
+    a = new HashMap();
+    arrayOfVerifiedDeviceSchema = VerifiedDeviceSchema.values();
+    k = arrayOfVerifiedDeviceSchema.length;
+    i = j;
+    while (i < k)
+    {
+      VerifiedDeviceSchema localVerifiedDeviceSchema = arrayOfVerifiedDeviceSchema[i];
+      a.put(localVerifiedDeviceSchema.getColumnName(), localVerifiedDeviceSchema.getColumnName());
+      i += 1;
+    }
+  }
+  
+  public static acf a()
+  {
+    try
+    {
+      if (c == null) {
+        c = new acf();
       }
+      acf localacf = c;
+      return localacf;
     }
-    label48:
-    for (Object localObject2 = b;; localObject2 = "None")
+    finally {}
+  }
+  
+  protected final ContentValues a(Object paramObject)
+  {
+    return null;
+  }
+  
+  protected final Collection<Snap> a(akp paramakp)
+  {
+    return null;
+  }
+  
+  public final void b(akp paramakp) {}
+  
+  public final aav[] b()
+  {
+    return VerifiedDeviceSchema.values();
+  }
+  
+  public final String c()
+  {
+    return "VerifiedDeviceTable";
+  }
+  
+  public final void c(akp paramakp) {}
+  
+  public final String d()
+  {
+    StringBuilder localStringBuilder = new StringBuilder();
+    VerifiedDeviceSchema[] arrayOfVerifiedDeviceSchema = VerifiedDeviceSchema.values();
+    int j = arrayOfVerifiedDeviceSchema.length;
+    int i = 0;
+    while (i < j)
     {
-      return String.format("(%s, %s)", new Object[] { localObject1, localObject2 });
-      localObject1 = "None";
-      break;
+      Object localObject = arrayOfVerifiedDeviceSchema[i];
+      if (i > 0) {
+        localStringBuilder.append(", ");
+      }
+      localStringBuilder.append(((VerifiedDeviceSchema)localObject).getColumnName() + " " + ((VerifiedDeviceSchema)localObject).getDataType().toString());
+      localObject = ((VerifiedDeviceSchema)localObject).getConstraints();
+      if (!TextUtils.isEmpty((CharSequence)localObject))
+      {
+        localStringBuilder.append(" ");
+        localStringBuilder.append((String)localObject);
+      }
+      i += 1;
     }
+    return localStringBuilder.toString();
   }
 }
 

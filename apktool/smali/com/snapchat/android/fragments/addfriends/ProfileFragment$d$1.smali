@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1172
+    .line 1241
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d$1;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,43 +40,29 @@
     .locals 4
 
     .prologue
-    const/4 v3, 0x0
+    .line 1244
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 1175
-    const-string v0, "ProfileFragment"
+    const-string v1, "profile images - Capturing profile photo at index "
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "profile images - Capturing profile photo at index "
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d$1;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v1, v1, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d$1;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->i(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)I
 
-    iget-object v2, v2, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
+    move-result v1
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->j(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1176
+    .line 1245
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d$1;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lwr;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->g(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lxn;
 
     move-result-object v0
 
@@ -86,10 +72,12 @@
 
     iget-object v2, v2, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
+    const/4 v3, 0x0
+
     invoke-direct {v1, v2, v3}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;-><init>(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;B)V
 
-    invoke-interface {v0, v1}, Lwr;->a(Lvm;)V
+    invoke-interface {v0, v1}, Lxn;->a(Lwi;)V
 
-    .line 1177
+    .line 1246
     return-void
 .end method

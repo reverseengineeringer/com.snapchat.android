@@ -1,21 +1,4 @@
-import com.snapchat.android.model.Friend;
-import com.snapchat.android.model.FriendAction;
-
-public final class bcw
-{
-  @cgb
-  public FriendAction mAction = FriendAction.NONE;
-  @cgc
-  public Friend mFriend;
-  
-  public bcw() {}
-  
-  public bcw(@cgc Friend paramFriend, @cgb FriendAction paramFriendAction)
-  {
-    mFriend = paramFriend;
-    mAction = paramFriendAction;
-  }
-}
+public final class bcw {}
 
 /* Location:
  * Qualified Name:     bcw

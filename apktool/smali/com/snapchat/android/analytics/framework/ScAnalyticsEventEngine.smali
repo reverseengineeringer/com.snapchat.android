@@ -61,23 +61,23 @@
     return-void
 .end method
 
-.method public static a(Lls;)V
+.method public static a(Lmk;)V
     .locals 0
 
     .prologue
     .line 58
-    invoke-static {p0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lls;)V
+    invoke-static {p0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lmk;)V
 
     .line 59
     return-void
 .end method
 
-.method public static a(Llt;)V
+.method public static a(Lml;)V
     .locals 0
 
     .prologue
     .line 50
-    invoke-static {p0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Llt;)V
+    invoke-static {p0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lml;)V
 
     .line 51
     return-void

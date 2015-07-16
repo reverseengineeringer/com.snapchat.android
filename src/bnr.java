@@ -1,82 +1,73 @@
-import java.io.IOException;
-import java.util.ArrayList;
+import java.net.Authenticator;
+import java.net.Authenticator.RequestorType;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.PasswordAuthentication;
+import java.net.Proxy;
+import java.net.Proxy.Type;
+import java.net.URL;
 import java.util.List;
-import java.util.zip.Inflater;
 
-final class bnr
+public final class bnr
+  implements bmi
 {
-  int a;
-  final bzw b = cad.a(c);
-  private final cac c = new cac(new caa(parambzw)new Inflater
-  {
-    public final long a(bzu paramAnonymousbzu, long paramAnonymousLong)
-    {
-      if (a == 0) {}
-      do
-      {
-        return -1L;
-        paramAnonymousLong = super.a(paramAnonymousbzu, Math.min(paramAnonymousLong, a));
-      } while (paramAnonymousLong == -1L);
-      a = ((int)(a - paramAnonymousLong));
-      return paramAnonymousLong;
-    }
-  }, new Inflater()
-  {
-    public final int inflate(byte[] paramAnonymousArrayOfByte, int paramAnonymousInt1, int paramAnonymousInt2)
-    {
-      int j = super.inflate(paramAnonymousArrayOfByte, paramAnonymousInt1, paramAnonymousInt2);
-      int i = j;
-      if (j == 0)
-      {
-        i = j;
-        if (needsDictionary())
-        {
-          setDictionary(bnv.a);
-          i = super.inflate(paramAnonymousArrayOfByte, paramAnonymousInt1, paramAnonymousInt2);
-        }
-      }
-      return i;
-    }
-  });
+  public static final bmi a = new bnr();
   
-  public bnr(bzw parambzw) {}
-  
-  private bzx a()
+  private static InetAddress a(Proxy paramProxy, URL paramURL)
   {
-    int i = b.h();
-    return b.c(i);
+    if ((paramProxy != null) && (paramProxy.type() != Proxy.Type.DIRECT)) {
+      return ((InetSocketAddress)paramProxy.address()).getAddress();
+    }
+    return InetAddress.getByName(paramURL.getHost());
   }
   
-  public final List<bnl> a(int paramInt)
+  public final bnb a(Proxy paramProxy, bnd parambnd)
   {
-    a += paramInt;
-    int i = b.h();
-    if (i < 0) {
-      throw new IOException("numberOfPairs < 0: " + i);
-    }
-    if (i > 1024) {
-      throw new IOException("numberOfPairs > 1024: " + i);
-    }
-    ArrayList localArrayList = new ArrayList(i);
-    paramInt = 0;
-    while (paramInt < i)
+    List localList = parambnd.f();
+    parambnd = a;
+    URL localURL = parambnd.a();
+    int j = localList.size();
+    int i = 0;
+    while (i < j)
     {
-      bzx localbzx1 = a().c();
-      bzx localbzx2 = a();
-      if (c.length == 0) {
-        throw new IOException("name.size == 0");
+      Object localObject = (bmn)localList.get(i);
+      if ("Basic".equalsIgnoreCase(a))
+      {
+        localObject = Authenticator.requestPasswordAuthentication(localURL.getHost(), a(paramProxy, localURL), localURL.getPort(), localURL.getProtocol(), b, a, localURL, Authenticator.RequestorType.SERVER);
+        if (localObject != null)
+        {
+          paramProxy = bms.a(((PasswordAuthentication)localObject).getUserName(), new String(((PasswordAuthentication)localObject).getPassword()));
+          return parambnd.c().a("Authorization", paramProxy).a();
+        }
       }
-      localArrayList.add(new bnl(localbzx1, localbzx2));
-      paramInt += 1;
+      i += 1;
     }
-    if (a > 0)
+    return null;
+  }
+  
+  public final bnb b(Proxy paramProxy, bnd parambnd)
+  {
+    List localList = parambnd.f();
+    parambnd = a;
+    URL localURL = parambnd.a();
+    int j = localList.size();
+    int i = 0;
+    while (i < j)
     {
-      c.b();
-      if (a != 0) {
-        throw new IOException("compressedLimit > 0: " + a);
+      Object localObject = (bmn)localList.get(i);
+      if ("Basic".equalsIgnoreCase(a))
+      {
+        InetSocketAddress localInetSocketAddress = (InetSocketAddress)paramProxy.address();
+        localObject = Authenticator.requestPasswordAuthentication(localInetSocketAddress.getHostName(), a(paramProxy, localURL), localInetSocketAddress.getPort(), localURL.getProtocol(), b, a, localURL, Authenticator.RequestorType.PROXY);
+        if (localObject != null)
+        {
+          paramProxy = bms.a(((PasswordAuthentication)localObject).getUserName(), new String(((PasswordAuthentication)localObject).getPassword()));
+          return parambnd.c().a("Proxy-Authorization", paramProxy).a();
+        }
       }
+      i += 1;
     }
-    return localArrayList;
+    return null;
   }
 }
 

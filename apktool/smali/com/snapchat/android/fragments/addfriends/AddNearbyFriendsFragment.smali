@@ -15,7 +15,9 @@
 
 
 # instance fields
-.field private final A:Lbgk;
+.field private A:I
+
+.field private final B:Lbhk;
 
 .field protected a:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -50,31 +52,29 @@
     .end annotation
 .end field
 
-.field private m:Latx;
+.field private n:Lauv;
 
-.field private n:Lahq;
+.field private o:Laim;
 
-.field private final o:Lcom/snapchat/android/analytics/ProfileEventAnalytics;
+.field private final p:Lcom/snapchat/android/analytics/ProfileEventAnalytics;
 
-.field private p:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
+.field private q:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
-.field private q:Landroid/view/View;
-
-.field private r:Landroid/widget/ImageView;
+.field private r:Landroid/view/View;
 
 .field private s:Landroid/widget/ImageView;
 
-.field private t:Landroid/app/AlertDialog;
+.field private t:Landroid/widget/ImageView;
 
-.field private u:Z
+.field private u:Landroid/app/AlertDialog;
 
-.field private v:Lajx;
+.field private v:Z
 
-.field private final w:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+.field private w:Lakr;
 
-.field private x:J
+.field private final x:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
-.field private y:I
+.field private y:J
 
 .field private z:I
 
@@ -84,28 +84,28 @@
     .locals 8
 
     .prologue
-    .line 90
-    invoke-static {}, Laol;->a()Laol;
+    .line 94
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v1
 
-    sget-object v2, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    sget-object v2, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
-    new-instance v3, Latx;
+    new-instance v3, Lauv;
 
-    invoke-direct {v3}, Latx;-><init>()V
+    invoke-direct {v3}, Lauv;-><init>()V
 
-    new-instance v4, Lahq;
+    new-instance v4, Laim;
 
-    invoke-direct {v4}, Lahq;-><init>()V
+    invoke-direct {v4}, Laim;-><init>()V
 
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v5
 
-    new-instance v6, Lbgk;
+    new-instance v6, Lbhk;
 
-    invoke-direct {v6}, Lbgk;-><init>()V
+    invoke-direct {v6}, Lbhk;-><init>()V
 
     new-instance v7, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
@@ -113,89 +113,89 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v7}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;-><init>(Laol;Ljavax/inject/Provider;Latx;Lahq;Lajx;Lbgk;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
+    invoke-direct/range {v0 .. v7}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;-><init>(Laph;Ljavax/inject/Provider;Lauv;Laim;Lakr;Lbhk;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
 
-    .line 93
+    .line 97
     return-void
 .end method
 
-.method private constructor <init>(Laol;Ljavax/inject/Provider;Latx;Lahq;Lajx;Lbgk;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
+.method private constructor <init>(Laph;Ljavax/inject/Provider;Lauv;Laim;Lakr;Lbhk;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Laol;",
+            "Laph;",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;",
-            "Latx;",
-            "Lahq;",
-            "Lajx;",
-            "Lbgk;",
+            "Lauv;",
+            "Laim;",
+            "Lakr;",
+            "Lbhk;",
             "Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;",
             ")V"
         }
     .end annotation
 
     .prologue
-    .line 79
-    invoke-direct {p0, p1, p2}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;-><init>(Laol;Ljavax/inject/Provider;)V
+    .line 83
+    invoke-direct {p0, p1, p2}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;-><init>(Laph;Ljavax/inject/Provider;)V
 
-    .line 54
+    .line 58
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->a:Ljava/util/Set;
 
-    .line 55
+    .line 59
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b:Ljava/util/Set;
 
-    .line 56
+    .line 60
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c:Ljava/util/Set;
 
-    .line 64
+    .line 68
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u:Z
-
-    .line 80
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Lafa;
-
-    .line 81
-    iput-object p3, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m:Latx;
-
-    .line 82
-    iput-object p4, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->n:Lahq;
-
-    .line 83
-    iput-object p5, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->v:Lajx;
+    iput-boolean v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->v:Z
 
     .line 84
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Laga;
+
+    .line 85
+    iput-object p3, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->n:Lauv;
+
+    .line 86
+    iput-object p4, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->o:Laim;
+
+    .line 87
+    iput-object p5, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->w:Lakr;
+
+    .line 88
     invoke-static {}, Lcom/snapchat/android/analytics/ProfileEventAnalytics;->a()Lcom/snapchat/android/analytics/ProfileEventAnalytics;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->o:Lcom/snapchat/android/analytics/ProfileEventAnalytics;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->p:Lcom/snapchat/android/analytics/ProfileEventAnalytics;
 
-    .line 85
-    iput-object p6, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->A:Lbgk;
+    .line 89
+    iput-object p6, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->B:Lbhk;
 
-    .line 86
-    iput-object p7, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->w:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+    .line 90
+    iput-object p7, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->x:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
-    .line 87
+    .line 91
     return-void
 .end method
 
@@ -203,18 +203,18 @@
     .locals 1
 
     .prologue
-    .line 500
-    invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t()V
+    .line 504
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u()V
 
-    .line 501
-    iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t:Landroid/app/AlertDialog;
+    .line 505
+    iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u:Landroid/app/AlertDialog;
 
-    .line 502
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t:Landroid/app/AlertDialog;
+    .line 506
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 503
+    .line 507
     return-void
 .end method
 
@@ -222,8 +222,8 @@
     .locals 1
 
     .prologue
-    .line 45
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->p:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
+    .line 48
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->b()Z
 
@@ -231,7 +231,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->p:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->a()V
 
@@ -243,30 +243,30 @@
     .locals 0
 
     .prologue
-    .line 45
-    iput-boolean p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u:Z
+    .line 48
+    iput-boolean p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->v:Z
 
     return p1
 .end method
 
-.method static synthetic b(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)Lajx;
+.method static synthetic b(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)Lakr;
     .locals 1
 
     .prologue
-    .line 45
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->v:Lajx;
+    .line 48
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->w:Lakr;
 
     return-object v0
 .end method
 
 .method private b(Ljava/util/List;)Ljava/util/List;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List",
             "<",
-            "Lbkk;",
+            "Lbll;",
             ">;)",
             "Ljava/util/List",
             "<",
@@ -276,39 +276,39 @@
     .end annotation
 
     .prologue
-    .line 243
+    .line 247
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->e:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Lakp;
 
-    .line 244
+    .line 248
     if-nez v0, :cond_0
 
-    .line 245
+    .line 249
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    .line 268
+    .line 272
     :goto_0
     return-object v0
 
-    .line 248
+    .line 252
     :cond_0
     new-instance v3, Ljava/util/LinkedList;
 
     invoke-direct {v3}, Ljava/util/LinkedList;-><init>()V
 
-    .line 249
+    .line 253
     new-instance v2, Ljava/util/LinkedList;
 
     invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V
 
-    .line 250
+    .line 254
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -325,12 +325,12 @@
 
     move-result-object v1
 
-    check-cast v1, Lbkk;
+    check-cast v1, Lbll;
 
-    .line 251
+    .line 255
     iget-object v5, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->a:Ljava/util/Set;
 
-    invoke-virtual {v1}, Lbkk;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lbll;->a()Ljava/lang/String;
 
     move-result-object v6
 
@@ -340,35 +340,35 @@
 
     if-nez v5, :cond_1
 
-    .line 252
+    .line 256
     iget-object v5, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->a:Ljava/util/Set;
 
-    invoke-virtual {v1}, Lbkk;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lbll;->a()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-interface {v5, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 254
-    invoke-virtual {v1}, Lbkk;->b()Ljava/lang/String;
+    .line 258
+    invoke-virtual {v1}, Lbll;->b()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v0, v5}, Lajv;->a(Ljava/lang/String;)Lcom/snapchat/android/model/Friend;
+    invoke-virtual {v0, v5}, Lakp;->a(Ljava/lang/String;)Lcom/snapchat/android/model/Friend;
 
     move-result-object v5
 
-    .line 255
+    .line 259
     if-nez v5, :cond_2
 
-    .line 256
+    .line 260
     new-instance v5, Lcom/snapchat/android/model/Friend;
 
-    invoke-virtual {v1}, Lbkk;->b()Ljava/lang/String;
+    invoke-virtual {v1}, Lbll;->b()Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-virtual {v1}, Lbkk;->c()Ljava/lang/String;
+    invoke-virtual {v1}, Lbll;->c()Ljava/lang/String;
 
     move-result-object v1
 
@@ -378,24 +378,24 @@
 
     goto :goto_1
 
-    .line 257
+    .line 261
     :cond_2
     iget-boolean v6, v5, Lcom/snapchat/android/model/Friend;->mIsBlocked:Z
 
     if-nez v6, :cond_3
 
-    .line 258
+    .line 262
     invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 259
-    invoke-virtual {v5}, Lcom/snapchat/android/model/Friend;->j()Z
+    .line 263
+    invoke-virtual {v5}, Lcom/snapchat/android/model/Friend;->n()Z
 
     move-result v6
 
     if-nez v6, :cond_1
 
-    .line 260
-    invoke-virtual {v1}, Lbkk;->c()Ljava/lang/String;
+    .line 264
+    invoke-virtual {v1}, Lbll;->c()Ljava/lang/String;
 
     move-result-object v1
 
@@ -403,43 +403,29 @@
 
     goto :goto_1
 
-    .line 263
+    .line 267
     :cond_3
-    const-string v1, "AddNearbyFriendsFrag"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    const-string v6, "Redacting blocked snapchatter: "
 
-    const-string v7, "Redacting blocked snapchatter: "
+    invoke-direct {v1, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v5, v6}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
-    .line 267
+    .line 271
     :cond_4
     invoke-interface {v2, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     move-object v0, v2
 
-    .line 268
+    .line 272
     goto :goto_0
 .end method
 
@@ -447,8 +433,8 @@
     .locals 1
 
     .prologue
-    .line 45
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->p:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
+    .line 48
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
     return-object v0
 .end method
@@ -457,34 +443,34 @@
     .locals 1
 
     .prologue
-    .line 45
-    iget-boolean v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u:Z
+    .line 48
+    iget-boolean v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->v:Z
 
     return v0
 .end method
 
-.method private r()V
+.method private t()V
     .locals 3
 
     .prologue
-    .line 380
+    .line 384
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->e:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Lakp;
 
-    .line 381
+    .line 385
     if-eqz v0, :cond_1
 
-    .line 382
+    .line 386
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b:Ljava/util/Set;
 
     const v2, 0x7fffffff
 
-    invoke-virtual {v0, v1, v2}, Lajv;->a(Ljava/util/Set;I)Ljava/util/List;
+    invoke-virtual {v0, v1, v2}, Lakp;->a(Ljava/util/Set;I)Ljava/util/List;
 
     move-result-object v0
 
@@ -505,10 +491,10 @@
 
     check-cast v0, Lcom/snapchat/android/model/Friend;
 
-    .line 383
+    .line 387
     iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c:Ljava/util/Set;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -516,25 +502,25 @@
 
     goto :goto_0
 
-    .line 385
+    .line 389
     :cond_0
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m()V
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->n()V
 
-    .line 387
+    .line 391
     :cond_1
     return-void
 .end method
 
-.method private t()V
+.method private u()V
     .locals 1
 
     .prologue
-    .line 489
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t:Landroid/app/AlertDialog;
+    .line 493
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t:Landroid/app/AlertDialog;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->isShowing()Z
 
@@ -542,12 +528,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 490
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t:Landroid/app/AlertDialog;
+    .line 494
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->cancel()V
 
-    .line 492
+    .line 496
     :cond_0
     return-void
 .end method
@@ -558,7 +544,7 @@
     .locals 1
 
     .prologue
-    .line 371
+    .line 375
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_ADD_NEARBY_FRIENDS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     return-object v0
@@ -568,7 +554,7 @@
     .locals 0
 
     .prologue
-    .line 362
+    .line 366
     return-void
 .end method
 
@@ -578,14 +564,14 @@
     .prologue
     const v2, 0x7f0c0296
 
-    .line 279
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Landroid/view/View;
+    .line 283
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 281
+    .line 285
     sget-object v0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$7;->b:[I
 
     invoke-virtual {p1}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$InterruptReason;->ordinal()I
@@ -596,7 +582,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 343
+    .line 347
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Unrecognized interrupt reason!"
@@ -605,15 +591,8 @@
 
     throw v0
 
-    .line 283
+    .line 287
     :pswitch_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 284
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
 
     const-string v1, ""
@@ -621,7 +600,14 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 288
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->n:Lahq;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Landroid/widget/TextView;
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 292
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->o:Laim;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -631,33 +617,33 @@
 
     invoke-direct {v2, p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$2;-><init>(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)V
 
-    invoke-virtual {v0, v1, v2}, Lahq;->a(Landroid/content/Context;Lahq$a;)Landroid/app/AlertDialog;
+    invoke-virtual {v0, v1, v2}, Laim;->a(Landroid/content/Context;Laim$a;)Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 300
+    .line 304
     invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->a(Landroid/app/AlertDialog;)V
 
-    .line 341
+    .line 345
     :goto_0
     return-void
 
-    .line 303
+    .line 307
     :pswitch_1
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 304
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
 
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 306
+    .line 308
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Landroid/widget/TextView;
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 310
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -666,7 +652,7 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 307
+    .line 311
     const v1, 0x7f0c0027
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
@@ -697,7 +683,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 322
+    .line 326
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
@@ -706,24 +692,24 @@
 
     goto :goto_0
 
-    .line 327
+    .line 331
     :pswitch_2
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
 
     const v1, 0x7f0c01d2
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 328
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
+    .line 332
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
-    .line 331
+    .line 335
     :pswitch_3
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Ljava/util/List;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -731,24 +717,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 332
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
+    .line 336
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
 
     const v1, 0x7f0c0185
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 336
+    .line 340
     :goto_1
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
-    .line 334
+    .line 338
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
 
     const-string v1, ""
 
@@ -756,22 +742,22 @@
 
     goto :goto_1
 
-    .line 339
+    .line 343
     :pswitch_4
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
 
     const v1, 0x7f0c0184
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 340
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
+    .line 344
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     goto :goto_0
 
-    .line 281
+    .line 285
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -794,90 +780,67 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lbkk;",
+            "Lbll;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 220
+    .line 224
     if-nez p1, :cond_0
 
-    .line 221
-    const-string v0, "AddNearbyFriendsFrag"
-
-    const-string v1, "Null snapchatter list received"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 238
+    .line 242
     :goto_0
     return-void
 
-    .line 224
+    .line 228
     :cond_0
-    const-string v0, "AddNearbyFriendsFrag"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Found snapchatters from server: "
 
-    const-string v2, "Found snapchatters from server: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 226
+    .line 230
     invoke-direct {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 228
+    .line 232
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 229
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Ljava/util/List;
+    .line 233
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m:Ljava/util/List;
 
     monitor-enter v1
 
-    .line 230
+    .line 234
     :try_start_0
-    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Ljava/util/List;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 231
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m()V
+    .line 235
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->n()V
 
-    .line 232
+    .line 236
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 234
+    .line 238
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->s:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getHeight()I
 
@@ -911,6 +874,8 @@
 
     iget-object v3, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->h:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
 
+    const/4 v4, 0x0
+
     invoke-virtual {v3, v4}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -924,7 +889,7 @@
     add-int/2addr v0, v1
 
     :cond_2
-    iget-object v3, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->s:Landroid/widget/ImageView;
+    iget-object v3, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getMeasuredHeight()I
 
@@ -968,7 +933,7 @@
     const v0, 0x3e99999a    # 0.3f
 
     :goto_1
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->s:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->getAlpha()F
 
@@ -978,7 +943,7 @@
 
     if-eqz v1, :cond_4
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->s:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -1004,16 +969,16 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 236
+    .line 240
     :cond_4
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
 
     const v1, 0x7f0c027f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 237
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
+    .line 241
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Landroid/widget/TextView;
 
     const v1, 0x7f0c0039
 
@@ -1021,7 +986,7 @@
 
     goto/16 :goto_0
 
-    .line 232
+    .line 236
     :catchall_0
     move-exception v0
 
@@ -1032,18 +997,83 @@
 
     throw v0
 
-    .line 234
+    .line 238
     :cond_5
     const v0, 0x3dcccccd    # 0.1f
 
     goto :goto_1
 .end method
 
+.method protected final a(Lkf;)V
+    .locals 6
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 524
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Laga;
+
+    sget-object v2, Lcom/snapchat/android/model/FriendAction;->ADD:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v1, v2, v4}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Laga;
+
+    sget-object v3, Lcom/snapchat/android/model/FriendAction;->BLOCK:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v2, v3, v4}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v2
+
+    new-instance v3, Lkd;
+
+    invoke-direct {v3}, Lkd;-><init>()V
+
+    iput-object p1, v3, Lkd;->exitEvent:Lkf;
+
+    int-to-long v4, v0
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iput-object v0, v3, Lkd;->nearbyFriendCount:Ljava/lang/Long;
+
+    int-to-long v0, v1
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iput-object v0, v3, Lkd;->nearbyFriendAddCount:Ljava/lang/Long;
+
+    int-to-long v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iput-object v0, v3, Lkd;->nearbyFriendBlockCount:Ljava/lang/Long;
+
+    invoke-static {v3}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    .line 528
+    return-void
+.end method
+
 .method protected final b()Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;
     .locals 1
 
     .prologue
-    .line 482
+    .line 486
     sget-object v0, Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;->DRAW_BEHIND:Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;
 
     return-object v0
@@ -1053,17 +1083,17 @@
     .locals 2
 
     .prologue
-    .line 129
+    .line 133
     invoke-super {p0}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;->e()V
 
-    .line 130
+    .line 134
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_ADD_NEARBY_FRIENDS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/snapchat/android/analytics/ProfileEventAnalytics;->a(Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Z)V
 
-    .line 131
+    .line 135
     return-void
 .end method
 
@@ -1071,17 +1101,17 @@
     .locals 1
 
     .prologue
-    .line 135
-    const v0, 0x7f040006
+    .line 139
+    const v0, 0x7f040007
 
     return v0
 .end method
 
-.method public final k()Lalw;
+.method public final k()Lamt;
     .locals 1
 
     .prologue
-    .line 391
+    .line 395
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$5;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$5;-><init>(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)V
@@ -1089,48 +1119,48 @@
     return-object v0
 .end method
 
-.method protected final l()Lafe;
+.method protected final m()Lage;
     .locals 3
 
     .prologue
-    .line 366
-    new-instance v0, Lafg;
+    .line 370
+    new-instance v0, Lagg;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c:Ljava/util/Set;
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m:Latx;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->n:Lauv;
 
-    invoke-direct {v0, v1, v2}, Lafg;-><init>(Ljava/util/Set;Latx;)V
+    invoke-direct {v0, v1, v2}, Lagg;-><init>(Ljava/util/Set;Lauv;)V
 
     return-object v0
 .end method
 
-.method protected final m()V
+.method protected final n()V
     .locals 1
 
     .prologue
-    .line 173
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Lafa;
+    .line 177
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Laga;
 
     if-eqz v0, :cond_0
 
-    .line 174
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Lafa;
+    .line 178
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Laga;
 
-    invoke-virtual {v0}, Lafa;->notifyDataSetChanged()V
+    invoke-virtual {v0}, Laga;->notifyDataSetChanged()V
 
-    .line 176
+    .line 180
     :cond_0
     return-void
 .end method
 
-.method protected final n()Lcom/snapchat/android/fragments/addfriends/FriendListProperty;
+.method protected final o()Lcom/snapchat/android/fragments/addfriends/FriendListProperty;
     .locals 4
 
     .prologue
     const/4 v3, 0x1
 
-    .line 355
+    .line 359
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/FriendListProperty;
 
     sget-object v1, Lcom/snapchat/android/fragments/addfriends/FriendListProperty$TouchMode;->SWIPEABLE:Lcom/snapchat/android/fragments/addfriends/FriendListProperty$TouchMode;
@@ -1146,33 +1176,19 @@
     return-object v0
 .end method
 
-.method protected final o()Ljava/lang/Integer;
-    .locals 1
-
-    .prologue
-    .line 140
-    const v0, 0x7f040005
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 5
 
     .prologue
     const/4 v4, 0x0
 
-    .line 97
+    .line 101
     invoke-super {p0, p1, p2, p3}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
     move-result-object v1
 
-    .line 98
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->i:Landroid/view/View;
+    .line 102
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/view/View;
 
     new-instance v2, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$1;
 
@@ -1180,19 +1196,19 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 106
-    invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r()V
+    .line 110
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t()V
 
-    .line 108
-    const v0, 0x7f0a0061
+    .line 112
+    const v0, 0x7f0a0063
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c(I)Landroid/view/View;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Landroid/view/View;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r:Landroid/view/View;
 
-    .line 109
+    .line 113
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -1201,21 +1217,10 @@
 
     invoke-direct {v0, v2, p0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;-><init>(Landroid/content/Context;Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$a;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->p:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
-    .line 110
-    const v0, 0x7f0a0063
-
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r:Landroid/widget/ImageView;
-
-    .line 111
-    const v0, 0x7f0a0062
+    .line 114
+    const v0, 0x7f0a0065
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c(I)Landroid/view/View;
 
@@ -1225,20 +1230,31 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->s:Landroid/widget/ImageView;
 
-    .line 113
+    .line 115
+    const v0, 0x7f0a0064
+
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t:Landroid/widget/ImageView;
+
+    .line 117
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    iput-wide v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->x:J
+    iput-wide v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->y:J
 
-    .line 114
-    iput v4, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->y:I
-
-    .line 115
+    .line 118
     iput v4, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->z:I
 
-    .line 116
+    .line 119
+    iput v4, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->A:I
+
+    .line 120
     const-string v0, "ANF_LOAD_VIEW"
 
     invoke-static {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
@@ -1249,7 +1265,7 @@
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b(Z)V
 
-    .line 118
+    .line 122
     return-object v1
 .end method
 
@@ -1257,11 +1273,11 @@
     .locals 2
 
     .prologue
-    .line 145
+    .line 149
     invoke-super {p0}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;->onPause()V
 
-    .line 146
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->p:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
+    .line 150
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->b()Z
 
@@ -1269,42 +1285,42 @@
 
     if-eqz v0, :cond_0
 
-    .line 147
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->p:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
+    .line 151
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
     sget-object v1, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$InterruptReason;->INTENTIONAL:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$InterruptReason;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->a(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$InterruptReason;)V
 
-    .line 150
+    .line 154
     :cond_0
-    invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t()V
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->u()V
 
-    .line 151
+    .line 155
     return-void
 .end method
 
-.method public onRefreshOnFriendActionEvent(Lbcw;)V
+.method public onRefreshOnFriendActionEvent(Lbdw;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v3, 0x1
 
-    .line 181
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;->a(Lbcw;)V
+    .line 185
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;->a(Lbdw;)V
 
-    .line 182
-    iget-object v0, p1, Lbcw;->mFriend:Lcom/snapchat/android/model/Friend;
+    .line 186
+    iget-object v0, p1, Lbdw;->mFriend:Lcom/snapchat/android/model/Friend;
 
-    .line 183
+    .line 187
     if-eqz v0, :cond_0
 
-    .line 184
+    .line 188
     sget-object v1, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$7;->a:[I
 
-    iget-object v2, p1, Lbcw;->mAction:Lcom/snapchat/android/model/FriendAction;
+    iget-object v2, p1, Lbdw;->mAction:Lcom/snapchat/android/model/FriendAction;
 
     invoke-virtual {v2}, Lcom/snapchat/android/model/FriendAction;->ordinal()I
 
@@ -1314,41 +1330,41 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 205
+    .line 209
     :goto_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbbp;
+    new-instance v1, Lbcp;
 
-    invoke-direct {v1}, Lbbp;-><init>()V
+    invoke-direct {v1}, Lbcp;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 207
+    .line 211
     :cond_0
     return-void
 
-    .line 187
+    .line 191
     :pswitch_0
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Ljava/util/List;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 188
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Lafa;
+    .line 192
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->g:Laga;
 
-    invoke-virtual {v1, v0}, Lafa;->a(Lcom/snapchat/android/model/Friend;)V
+    invoke-virtual {v1, v0}, Laga;->a(Lcom/snapchat/android/model/Friend;)V
 
-    .line 189
-    iget v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->z:I
+    .line 193
+    iget v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->A:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->z:I
+    iput v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->A:I
 
-    .line 190
+    .line 194
     const-string v1, "ANF_BLOCK"
 
     invoke-static {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
@@ -1357,7 +1373,7 @@
 
     const-string v2, "name"
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1369,24 +1385,24 @@
 
     goto :goto_0
 
-    .line 194
+    .line 198
     :pswitch_1
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b:Ljava/util/Set;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 195
-    iget v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->y:I
+    .line 199
+    iget v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->z:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->y:I
+    iput v1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->z:I
 
-    .line 196
+    .line 200
     const-string v1, "ANF_ADD"
 
     invoke-static {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
@@ -1395,7 +1411,7 @@
 
     const-string v2, "name"
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1407,7 +1423,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 188
     nop
 
     :pswitch_data_0
@@ -1421,15 +1437,15 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 127
     invoke-super {p0}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;->onResume()V
 
-    .line 124
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->p:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
+    .line 128
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->a()V
 
-    .line 125
+    .line 129
     return-void
 .end method
 
@@ -1437,25 +1453,25 @@
     .locals 6
 
     .prologue
-    .line 155
+    .line 159
     invoke-super {p0}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;->onStop()V
 
-    .line 157
+    .line 161
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->a:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 158
+    .line 162
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 159
+    .line 163
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->c:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 161
+    .line 165
     const-string v0, "ANF_SESSION_END"
 
     invoke-static {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
@@ -1464,7 +1480,7 @@
 
     const-string v1, "snapchattersFound"
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Ljava/util/List;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->m:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -1480,7 +1496,7 @@
 
     const-string v1, "snapchattersAdded"
 
-    iget v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->y:I
+    iget v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->z:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1492,7 +1508,7 @@
 
     const-string v1, "snapchattersBlocked"
 
-    iget v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->z:I
+    iget v2, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->A:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1508,7 +1524,7 @@
 
     move-result-wide v2
 
-    iget-wide v4, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->x:J
+    iget-wide v4, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->y:J
 
     sub-long/2addr v2, v4
 
@@ -1524,70 +1540,84 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b(Z)V
 
-    .line 167
+    .line 171
     return-void
 .end method
 
-.method public onSyncAllCompletedEvent(Lbeh;)V
+.method public onSyncAllCompletedEvent(Lbfg;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 376
-    invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r()V
+    .line 380
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->t()V
 
-    .line 377
+    .line 381
     return-void
 .end method
 
-.method public final p()V
-    .locals 2
+.method protected final p()Ljava/lang/Integer;
+    .locals 1
 
     .prologue
-    .line 211
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
+    .line 144
+    const v0, 0x7f040006
 
-    const v1, 0x7f0c0207
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+    move-result-object v0
 
-    .line 212
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
-
-    const v1, 0x7f0c0039
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
-
-    .line 213
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->q:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 214
-    return-void
+    return-object v0
 .end method
 
 .method public final q()V
     .locals 2
 
     .prologue
-    .line 273
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->j:Landroid/widget/TextView;
+    .line 215
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
 
-    const v1, 0x7f0c027f
+    const v1, 0x7f0c0207
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 274
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
+    .line 216
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Landroid/widget/TextView;
 
     const v1, 0x7f0c0039
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 275
+    .line 217
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->r:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 218
+    return-void
+.end method
+
+.method public final r()V
+    .locals 2
+
+    .prologue
+    .line 277
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k:Landroid/widget/TextView;
+
+    const v1, 0x7f0c027f
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    .line 278
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->l:Landroid/widget/TextView;
+
+    const v1, 0x7f0c0039
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    .line 279
     return-void
 .end method

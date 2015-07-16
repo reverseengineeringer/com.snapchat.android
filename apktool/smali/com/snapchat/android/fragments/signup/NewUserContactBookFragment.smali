@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final D:Lcom/snapchat/android/analytics/RegistrationAnalytics;
+.field private final E:Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
-.field private E:Landroid/support/v4/app/FragmentActivity;
+.field private F:Landroid/support/v4/app/FragmentActivity;
 
 
 # direct methods
@@ -35,23 +35,23 @@
 
     .prologue
     .line 55
-    sget-object v0, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    sget-object v0, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
     invoke-static {}, Lcom/snapchat/android/analytics/RegistrationAnalytics;->a()Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
     move-result-object v1
 
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, p1, v2}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;-><init>(Ljavax/inject/Provider;Lcom/snapchat/android/analytics/RegistrationAnalytics;Lcom/snapchat/android/ui/window/WindowConfiguration;Lajx;)V
+    invoke-direct {p0, v0, v1, p1, v2}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;-><init>(Ljavax/inject/Provider;Lcom/snapchat/android/analytics/RegistrationAnalytics;Lcom/snapchat/android/ui/window/WindowConfiguration;Lakr;)V
 
     .line 57
     return-void
 .end method
 
-.method private constructor <init>(Ljavax/inject/Provider;Lcom/snapchat/android/analytics/RegistrationAnalytics;Lcom/snapchat/android/ui/window/WindowConfiguration;Lajx;)V
+.method private constructor <init>(Ljavax/inject/Provider;Lcom/snapchat/android/analytics/RegistrationAnalytics;Lcom/snapchat/android/ui/window/WindowConfiguration;Lakr;)V
     .locals 6
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -64,18 +64,18 @@
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;",
             "Lcom/snapchat/android/analytics/RegistrationAnalytics;",
             "Lcom/snapchat/android/ui/window/WindowConfiguration;",
-            "Lajx;",
+            "Lakr;",
             ")V"
         }
     .end annotation
 
     .prologue
     .line 62
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v1
 
@@ -91,16 +91,16 @@
 
     move-object v4, p4
 
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;-><init>(Laol;Ljavax/inject/Provider;Lcom/snapchat/android/ui/window/WindowConfiguration;Lajx;Lcom/snapchat/android/analytics/ProfileEventAnalytics;)V
+    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;-><init>(Laph;Ljavax/inject/Provider;Lcom/snapchat/android/ui/window/WindowConfiguration;Lakr;Lcom/snapchat/android/analytics/ProfileEventAnalytics;)V
 
     .line 64
-    iput-object p2, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->D:Lcom/snapchat/android/analytics/RegistrationAnalytics;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->E:Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
     .line 65
     return-void
 .end method
 
-.method private J()V
+.method private L()V
     .locals 1
 
     .prologue
@@ -111,13 +111,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Lakp;
 
     .line 248
     if-eqz v0, :cond_0
 
     .line 249
-    invoke-virtual {v0}, Lajv;->p()I
+    invoke-virtual {v0}, Lakp;->p()I
 
     move-result v0
 
@@ -127,13 +127,13 @@
 
     .line 252
     :cond_0
-    invoke-direct {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->K()V
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->M()V
 
     .line 253
     return-void
 .end method
 
-.method private K()V
+.method private M()V
     .locals 3
 
     .prologue
@@ -155,7 +155,7 @@
     move-result-object v0
 
     .line 259
-    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
 
@@ -171,7 +171,7 @@
     .line 261
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->E:Landroid/support/v4/app/FragmentActivity;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->F:Landroid/support/v4/app/FragmentActivity;
 
     const-class v2, Lcom/snapchat/android/LandingPageActivity;
 
@@ -180,7 +180,7 @@
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->startActivity(Landroid/content/Intent;)V
 
     .line 262
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->E:Landroid/support/v4/app/FragmentActivity;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->F:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->finish()V
 
@@ -193,17 +193,17 @@
 
     .prologue
     .line 42
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->D:Lcom/snapchat/android/analytics/RegistrationAnalytics;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->E:Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
     return-object v0
 .end method
 
-.method static synthetic b(Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;)Lafa;
+.method static synthetic b(Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;)Laga;
     .locals 1
 
     .prologue
     .line 42
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->d:Lafa;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->d:Laga;
 
     return-object v0
 .end method
@@ -213,31 +213,13 @@
 
     .prologue
     .line 42
-    invoke-direct {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->J()V
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->L()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final A()V
-    .locals 1
-
-    .prologue
-    .line 280
-    invoke-super {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->A()V
-
-    .line 281
-    new-instance v0, Lkd;
-
-    invoke-direct {v0}, Lkd;-><init>()V
-
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
-
-    .line 282
-    return-void
-.end method
-
 .method final a(ZI)V
     .locals 3
 
@@ -249,14 +231,14 @@
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Lakp;
 
     .line 217
     if-eqz p1, :cond_0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lajv;->p()I
+    invoke-virtual {v0}, Lakp;->p()I
 
     move-result v0
 
@@ -269,7 +251,7 @@
     .line 220
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->E:Landroid/support/v4/app/FragmentActivity;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->F:Landroid/support/v4/app/FragmentActivity;
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
@@ -283,7 +265,7 @@
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     .line 222
-    const v1, 0x7f0c02e3
+    const v1, 0x7f0c02e1
 
     new-instance v2, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment$3;
 
@@ -313,7 +295,7 @@
 
     .line 243
     :cond_0
-    invoke-direct {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->J()V
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->L()V
 
     goto :goto_0
 .end method
@@ -327,7 +309,7 @@
     const/4 v0, 0x0
 
     .line 205
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->x()Z
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->q_()Z
 
     move-result v2
 
@@ -355,7 +337,7 @@
 
     .prologue
     .line 136
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -370,7 +352,7 @@
 
     .line 138
     :cond_0
-    invoke-static {}, Lajx;->Z()Z
+    invoke-static {}, Lakr;->Z()Z
 
     move-result v0
 
@@ -383,11 +365,11 @@
 
     .line 141
     :cond_1
-    new-instance v0, Lkc;
+    new-instance v0, Lku;
 
-    invoke-direct {v0}, Lkc;-><init>()V
+    invoke-direct {v0}, Lku;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 142
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->w()V
@@ -421,14 +403,14 @@
     return v0
 .end method
 
-.method public onContactsOnSnapchatUpdatedEvent(Lbbd;)V
+.method public onContactsOnSnapchatUpdatedEvent(Lbcd;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 120
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onContactsOnSnapchatUpdatedEvent(Lbbd;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onContactsOnSnapchatUpdatedEvent(Lbcd;)V
 
     .line 121
     return-void
@@ -446,7 +428,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->E:Landroid/support/v4/app/FragmentActivity;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->F:Landroid/support/v4/app/FragmentActivity;
 
     .line 71
     return-void
@@ -461,28 +443,28 @@
     .line 75
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->NEW_USER_CONTACT_BOOK_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->C:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->D:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     .line 76
-    new-instance v0, Lagu;
+    new-instance v0, Lahr;
 
-    invoke-direct {v0}, Lagu;-><init>()V
+    invoke-direct {v0}, Lahr;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->e:Lagr;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->e:Laho;
 
     .line 77
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->e:Lagr;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->e:Laho;
 
-    invoke-virtual {v0}, Lagr;->b()Lcom/snapchat/android/util/FriendSectionizer;
+    invoke-virtual {v0}, Laho;->b()Lcom/snapchat/android/util/FriendSectionizer;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->c:Lcom/snapchat/android/util/FriendSectionizer;
 
     .line 78
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->e:Lagr;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->e:Laho;
 
-    invoke-virtual {v0}, Lagr;->a()Lcom/snapchat/android/util/FriendSectionizer;
+    invoke-virtual {v0}, Laho;->a()Lcom/snapchat/android/util/FriendSectionizer;
 
     move-result-object v0
 
@@ -495,7 +477,7 @@
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->p()V
 
     .line 82
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->t:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->u:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
 
     new-instance v1, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment$1;
 
@@ -528,27 +510,27 @@
     return-object v0
 .end method
 
-.method public onRefreshFriendExistsTask(Lbcx;)V
+.method public onRefreshFriendExistsTask(Lbdx;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 114
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onRefreshFriendExistsTask(Lbcx;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onRefreshFriendExistsTask(Lbdx;)V
 
     .line 115
     return-void
 .end method
 
-.method public onRefreshOnFriendActionEvent(Lbcw;)V
+.method public onRefreshOnFriendActionEvent(Lbdw;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 126
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onRefreshOnFriendActionEvent(Lbcw;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onRefreshOnFriendActionEvent(Lbdw;)V
 
     .line 127
     return-void
@@ -562,21 +544,21 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->w()V
 
     .line 150
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->A:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->B:Landroid/widget/Button;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
 
     .line 151
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->A:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->B:Landroid/widget/Button;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 152
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->A:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->B:Landroid/widget/Button;
 
     new-instance v1, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment$2;
 
@@ -588,17 +570,35 @@
     return-void
 .end method
 
-.method protected final y()V
+.method protected final x()V
     .locals 0
 
     .prologue
     .line 273
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->A()V
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->z()V
 
     .line 275
-    invoke-direct {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->K()V
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->M()V
 
     .line 276
+    return-void
+.end method
+
+.method protected final y()V
+    .locals 1
+
+    .prologue
+    .line 267
+    invoke-super {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->y()V
+
+    .line 268
+    new-instance v0, Lkw;
+
+    invoke-direct {v0}, Lkw;-><init>()V
+
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    .line 269
     return-void
 .end method
 
@@ -606,16 +606,16 @@
     .locals 1
 
     .prologue
-    .line 267
+    .line 280
     invoke-super {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->z()V
 
-    .line 268
-    new-instance v0, Lke;
+    .line 281
+    new-instance v0, Lkv;
 
-    invoke-direct {v0}, Lke;-><init>()V
+    invoke-direct {v0}, Lkv;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
-    .line 269
+    .line 282
     return-void
 .end method

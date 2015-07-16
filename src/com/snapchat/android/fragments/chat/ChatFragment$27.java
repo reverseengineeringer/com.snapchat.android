@@ -6,7 +6,7 @@ import android.text.Layout;
 import android.text.Selection;
 import android.text.TextWatcher;
 import android.text.style.ImageSpan;
-import axj;
+import ayh;
 import com.snapchat.android.model.chat.ChatConversation;
 import com.snapchat.android.ui.ChatCameraButton;
 import com.snapchat.android.ui.CursorCallbackEditText;
@@ -133,7 +133,7 @@ final class ChatFragment$27
     if (paramInt3 <= 2)
     {
       paramCharSequence = paramCharSequence.subSequence(paramInt1, paramInt1 + paramInt3).toString();
-      ChatFragment.g(a).setIsEmoji(axj.a(paramCharSequence, false));
+      ChatFragment.g(a).setIsEmoji(ayh.a(paramCharSequence, false));
     }
     for (;;)
     {

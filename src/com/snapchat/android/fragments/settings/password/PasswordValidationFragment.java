@@ -1,7 +1,5 @@
 package com.snapchat.android.fragments.settings.password;
 
-import amk;
-import ana;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +9,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import aok;
-import aol;
-import atx;
+import anh;
+import anx;
+import apg;
+import aph;
+import auv;
 import com.snapchat.android.fragments.settings.BasePasswordValidationFragment;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,18 +21,18 @@ import java.util.Set;
 public class PasswordValidationFragment
   extends BasePasswordValidationFragment
 {
-  private final aol f;
+  private final aph f;
   private final Set<Integer> g = new HashSet();
-  private aok h = new aok()
+  private apg h = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (PasswordValidationFragment.a(PasswordValidationFragment.this).contains(Integer.valueOf(i)))
       {
         PasswordValidationFragment.a(PasswordValidationFragment.this).remove(Integer.valueOf(i));
-        if ((paramAnonymousamk instanceof ana)) {
-          PasswordValidationFragment.a(PasswordValidationFragment.this, (ana)paramAnonymousamk);
+        if ((paramAnonymousanh instanceof anx)) {
+          PasswordValidationFragment.a(PasswordValidationFragment.this, (anx)paramAnonymousanh);
         }
       }
     }
@@ -40,20 +40,20 @@ public class PasswordValidationFragment
   
   public PasswordValidationFragment()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private PasswordValidationFragment(aol paramaol)
+  private PasswordValidationFragment(aph paramaph)
   {
-    f = paramaol;
+    f = paramaph;
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    ((TextView)c(2131362675)).setText(atx.a(null, 2131493461, new Object[0]));
-    ((TextView)c(2131362676)).setText(atx.a(null, 2131493276, new Object[0]));
+    ((TextView)c(2131362674)).setText(auv.a(null, 2131493461, new Object[0]));
+    ((TextView)c(2131362675)).setText(auv.a(null, 2131493276, new Object[0]));
     b.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)

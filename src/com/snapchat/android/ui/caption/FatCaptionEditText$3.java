@@ -2,9 +2,9 @@ package com.snapchat.android.ui.caption;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import aps;
-import ban;
-import baw;
+import aqr;
+import bbo;
+import bbx;
 import com.squareup.otto.Bus;
 
 final class FatCaptionEditText$3
@@ -37,7 +37,7 @@ final class FatCaptionEditText$3
       if ((!a.h) || (a.i)) {
         break;
       }
-      ban.a().a(new baw(-1));
+      bbo.a().a(new bbx(-1));
       return;
       i = 0;
     }

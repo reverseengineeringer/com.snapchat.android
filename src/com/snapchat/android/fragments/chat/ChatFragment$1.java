@@ -2,10 +2,10 @@ package com.snapchat.android.fragments.chat;
 
 import com.snapchat.android.api2.cash.ScCashResponsePayload;
 import com.snapchat.android.model.Friend;
-import ts.b;
+import ui.b;
 
 final class ChatFragment$1
-  implements ts.b<ScCashResponsePayload>
+  implements ui.b<ScCashResponsePayload>
 {
   ChatFragment$1(ChatFragment paramChatFragment, Friend paramFriend) {}
 }

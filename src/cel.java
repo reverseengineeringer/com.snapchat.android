@@ -1,17 +1,11 @@
-public final class cel
-  extends RuntimeException
-{
-  Throwable a;
-  
-  public cel() {}
-  
-  public cel(String paramString, Throwable paramThrowable) {}
-  
-  public final Throwable getCause()
-  {
-    return a;
-  }
-}
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.CLASS)
+@Target({java.lang.annotation.ElementType.METHOD})
+public @interface cel {}
 
 /* Location:
  * Qualified Name:     cel

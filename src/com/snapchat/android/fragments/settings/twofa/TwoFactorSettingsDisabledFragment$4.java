@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import ajx;
+import akr;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import aol;
+import aph;
 import java.util.Set;
 
 final class TwoFactorSettingsDisabledFragment$4
@@ -17,7 +17,7 @@ final class TwoFactorSettingsDisabledFragment$4
   public final void onClick(View paramView)
   {
     TwoFactorSettingsDisabledFragment.b(a);
-    if (TextUtils.isEmpty(ajx.e()))
+    if (TextUtils.isEmpty(akr.e()))
     {
       TwoFactorSettingsDisabledFragment.i();
       return;

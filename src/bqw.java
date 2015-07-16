@@ -1,14 +1,19 @@
-public abstract interface bqw
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewGroup.MarginLayoutParams;
+
+public final class bqw
 {
-  public abstract String a(String paramString1, String paramString2);
-  
-  public abstract void a(String paramString1, String paramString2, int paramInt);
-  
-  public abstract void a(String paramString1, String paramString2, String paramString3);
-  
-  public abstract int b(String paramString1, String paramString2);
-  
-  public abstract boolean c(String paramString1, String paramString2);
+  public static Rect a(View paramView)
+  {
+    paramView = paramView.getLayoutParams();
+    if ((paramView instanceof ViewGroup.MarginLayoutParams))
+    {
+      paramView = (ViewGroup.MarginLayoutParams)paramView;
+      return new Rect(leftMargin, topMargin, rightMargin, bottomMargin);
+    }
+    return new Rect();
+  }
 }
 
 /* Location:

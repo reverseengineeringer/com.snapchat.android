@@ -29,7 +29,7 @@
     .locals 3
 
     .prologue
-    .line 858
+    .line 880
     invoke-static {}, Lcom/snapchat/android/model/FriendAction;->values()[Lcom/snapchat/android/model/FriendAction;
 
     move-result-object v0
@@ -135,7 +135,7 @@
     :try_end_5
     .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_10
 
-    .line 835
+    .line 857
     :goto_5
     invoke-static {}, Lcom/snapchat/android/model/SuggestedFriendAction;->values()[Lcom/snapchat/android/model/SuggestedFriendAction;
 
@@ -162,7 +162,7 @@
     :try_end_6
     .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_f
 
-    .line 567
+    .line 589
     :goto_6
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->values()[Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
@@ -253,7 +253,7 @@
     :try_end_b
     .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_a
 
-    .line 214
+    .line 223
     :goto_b
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->values()[Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 

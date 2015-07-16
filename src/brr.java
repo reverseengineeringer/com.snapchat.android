@@ -1,8 +1,51 @@
-import org.json.JSONArray;
+import org.apache.http.util.CharArrayBuffer;
 
-public abstract interface brr
+public final class brr
+  extends brg
 {
-  public abstract JSONArray a();
+  private boolean d = false;
+  
+  public brr(brg parambrg)
+  {
+    super(parambrg);
+  }
+  
+  public final boolean a(CharArrayBuffer paramCharArrayBuffer)
+  {
+    boolean bool = false;
+    if (paramCharArrayBuffer.substringTrimmed(0, paramCharArrayBuffer.length()).length() == 0) {
+      bool = true;
+    }
+    d = bool;
+    return true;
+  }
+  
+  public final brg b()
+  {
+    if (d)
+    {
+      a.b(a());
+      return a.b();
+    }
+    b.clear();
+    return this;
+  }
+  
+  public final brg c()
+  {
+    b.clear();
+    return new brs(this);
+  }
+  
+  protected final int d()
+  {
+    return 8;
+  }
+  
+  protected final int e()
+  {
+    return 128;
+  }
 }
 
 /* Location:

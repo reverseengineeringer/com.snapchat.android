@@ -17,17 +17,17 @@
 
 # instance fields
 .field private b:Landroid/graphics/Point;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 .field private c:I
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 .field private d:Lcom/snapchat/android/ui/cash/ParticleView$a;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 

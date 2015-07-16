@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 209
+    .line 271
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$b;->d:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 209
+    .line 271
     invoke-direct {p0, p1}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$b;-><init>(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)V
 
     return-void
@@ -50,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 211
+    .line 273
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .locals 0
 
     .prologue
-    .line 215
+    .line 277
     return-void
 .end method
 
@@ -66,6 +66,6 @@
     .locals 0
 
     .prologue
-    .line 213
+    .line 275
     return-void
 .end method

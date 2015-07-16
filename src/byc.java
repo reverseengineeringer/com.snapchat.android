@@ -1,22 +1,12 @@
 public final class byc
-  implements bxg
 {
-  public final bxk a(bwz parambwz, String paramString)
-  {
-    try
-    {
-      parambwz = new Double(paramString);
-      return new bxk(new Long(Math.round(parambwz.doubleValue())).toString(), 0);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Invalid argument.", parambwz);
-    }
-  }
+  car a = null;
+  car b = null;
   
-  public final String a()
+  public byc(car paramcar1, car paramcar2)
   {
-    return "round";
+    a = paramcar1;
+    b = paramcar2;
   }
 }
 

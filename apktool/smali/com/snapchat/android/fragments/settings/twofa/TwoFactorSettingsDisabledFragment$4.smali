@@ -47,9 +47,9 @@
     .line 116
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment$4;->a:Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;->b(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;)Latr;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;->b(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;)Laup;
 
-    invoke-static {}, Lajx;->e()Ljava/lang/String;
+    invoke-static {}, Lakr;->e()Ljava/lang/String;
 
     move-result-object v0
 
@@ -76,7 +76,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment$4;->a:Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;->c(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;)Laol;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;->c(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;)Laph;
 
     move-result-object v1
 
@@ -88,7 +88,7 @@
 
     const-string v3, "sendTwoFACode"
 
-    invoke-virtual {v1, v2, v3, v5, v5}, Laol;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3, v5, v5}, Laph;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 

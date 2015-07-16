@@ -2,8 +2,8 @@ package com.snapchat.android.preview;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import bdn;
-import bgr;
+import ben;
+import bhr;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.ui.SendToBottomPanelView;
 import com.squareup.otto.Bus;
@@ -18,9 +18,9 @@ final class SnapPreviewFragment$7
     if (!a.n()) {
       return;
     }
-    SnapPreviewFragment.w(a).a(new bdn(SnapPreviewFragment.i(a), true));
-    new EasyMetric("TAP_RECIPIENTS_IN_PREVIEW").d();
-    ((SendToBottomPanelView)SnapPreviewFragment.x(a).a()).setOnClickListener(null);
+    SnapPreviewFragment.x(a).a(new ben(SnapPreviewFragment.i(a), true));
+    new EasyMetric("TAP_RECIPIENTS_IN_PREVIEW").e();
+    ((SendToBottomPanelView)SnapPreviewFragment.y(a).a()).setOnClickListener(null);
   }
 }
 

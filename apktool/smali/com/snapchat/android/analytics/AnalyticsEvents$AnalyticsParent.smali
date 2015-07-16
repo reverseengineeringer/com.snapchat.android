@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 130
+    .line 131
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsParent;
 
     const-string v1, "REGISTER_ADD_FRIENDS"
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsParent;->SEND:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsParent;
 
-    .line 129
+    .line 130
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsParent;
@@ -100,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 129
+    .line 130
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -110,7 +110,7 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 130
     const-class v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsParent;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -126,7 +126,7 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 130
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsParent;->$VALUES:[Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsParent;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsParent;->clone()Ljava/lang/Object;

@@ -14,7 +14,7 @@
     value = {
         "Lcom/snapchat/android/database/table/DbTable",
         "<",
-        "Laji;",
+        "Lake;",
         ">;"
     }
 .end annotation
@@ -124,14 +124,14 @@
 .method public static a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
     .locals 20
     .param p0    # Landroid/database/sqlite/SQLiteDatabase;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p1    # Ljava/util/Set;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -388,15 +388,15 @@
     const/4 v2, 0x1
 
     :goto_2
-    new-instance v3, Laji;
+    new-instance v3, Lake;
 
     invoke-static {v11}, Lcom/snapchat/android/model/Snap$ClientSnapStatus;->fromString(Ljava/lang/String;)Lcom/snapchat/android/model/Snap$ClientSnapStatus;
 
     move-result-object v11
 
-    invoke-direct/range {v3 .. v17}, Laji;-><init>(Ljava/lang/String;Ljava/lang/String;JJILcom/snapchat/android/model/Snap$ClientSnapStatus;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JZ)V
+    invoke-direct/range {v3 .. v17}, Lake;-><init>(Ljava/lang/String;Ljava/lang/String;JJILcom/snapchat/android/model/Snap$ClientSnapStatus;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JZ)V
 
-    invoke-virtual {v3, v2}, Laji;->d(Z)V
+    invoke-virtual {v3, v2}, Lake;->d(Z)V
 
     .line 222
     sget-object v2, Lcom/snapchat/android/database/table/SentSnapTable$SnapSchema;->CONVERSATION_ID:Lcom/snapchat/android/database/table/SentSnapTable$SnapSchema;
@@ -433,29 +433,29 @@
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 228
-    invoke-virtual {v3}, Laji;->N()Z
+    invoke-virtual {v3}, Lake;->O()Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    invoke-virtual {v3}, Laji;->m()Z
+    invoke-virtual {v3}, Lake;->n()Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
     .line 229
-    invoke-virtual {v3}, Laji;->e()V
+    invoke-virtual {v3}, Lake;->e()V
 
     .line 230
-    invoke-static {}, Lajn;->a()Lajn;
+    invoke-static {}, Laki;->a()Laki;
 
     move-result-object v5
 
-    iget-object v3, v3, Laji;->mClientId:Ljava/lang/String;
+    iget-object v3, v3, Lake;->mClientId:Ljava/lang/String;
 
-    invoke-virtual {v5, v3}, Lajn;->c(Ljava/lang/String;)V
+    invoke-virtual {v5, v3}, Laki;->c(Ljava/lang/String;)V
 
     .line 232
     :cond_3
@@ -516,7 +516,7 @@
     throw v2
 .end method
 
-.method public static a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Laji;Lcom/snapchat/android/model/Snap$TargetView;)V
+.method public static a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Lake;Lcom/snapchat/android/model/Snap$TargetView;)V
     .locals 6
 
     .prologue
@@ -551,7 +551,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Laji;->ag()Ljava/lang/String;
+    invoke-virtual {p2}, Lake;->ae()Ljava/lang/String;
 
     move-result-object v4
 
@@ -564,7 +564,7 @@
 
     move-result-object v0
 
-    iget-object v4, p2, Laji;->mClientId:Ljava/lang/String;
+    iget-object v4, p2, Lake;->mClientId:Ljava/lang/String;
 
     invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -575,7 +575,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Laji;->l()J
+    invoke-virtual {p2}, Lake;->m()J
 
     move-result-wide v4
 
@@ -592,7 +592,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Laji;->W()J
+    invoke-virtual {p2}, Lake;->U()J
 
     move-result-wide v4
 
@@ -609,7 +609,7 @@
 
     move-result-object v0
 
-    iget-object v4, p2, Laji;->mRecipient:Ljava/lang/String;
+    iget-object v4, p2, Lake;->mRecipient:Ljava/lang/String;
 
     invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -620,7 +620,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Laji;->ak()I
+    invoke-virtual {p2}, Lake;->ai()I
 
     move-result v4
 
@@ -637,7 +637,7 @@
 
     move-result-object v4
 
-    iget-boolean v0, p2, Laji;->mZipped:Z
+    iget-boolean v0, p2, Lake;->mZipped:Z
 
     if-eqz v0, :cond_2
 
@@ -657,7 +657,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Laji;->ah()Lcom/snapchat/android/model/Snap$ClientSnapStatus;
+    invoke-virtual {p2}, Lake;->af()Lcom/snapchat/android/model/Snap$ClientSnapStatus;
 
     move-result-object v4
 
@@ -674,7 +674,7 @@
 
     move-result-object v0
 
-    iget-object v4, p2, Laji;->mDisplayTime:Ljava/lang/String;
+    iget-object v4, p2, Lake;->mDisplayTime:Ljava/lang/String;
 
     invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -685,7 +685,7 @@
 
     move-result-object v0
 
-    iget-object v4, p2, Laji;->mSnapUriString:Ljava/lang/String;
+    iget-object v4, p2, Lake;->mSnapUriString:Ljava/lang/String;
 
     invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -696,7 +696,7 @@
 
     move-result-object v0
 
-    iget-wide v4, p2, Laji;->mTimeOfLastSendAttempt:J
+    iget-wide v4, p2, Lake;->mTimeOfLastSendAttempt:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -733,7 +733,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Laji;->aq()Z
+    invoke-virtual {p2}, Lake;->ao()Z
 
     move-result v4
 
@@ -747,25 +747,13 @@
     invoke-virtual {v3, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 193
-    const-string v0, "SentSnapTable"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "saveSnapInTransaction values="
 
-    const-string v4, "saveSnapInTransaction values="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 194
     const-string v0, "SentSnaps"
@@ -782,7 +770,7 @@
     move v0, v2
 
     .line 183
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_3
     move v1, v2
@@ -803,16 +791,16 @@
     return-object v0
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
-            "Laji;",
+            "Lake;",
             ">;"
         }
     .end annotation
@@ -824,7 +812,7 @@
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
+.method public final b(Lakp;)V
     .locals 0
 
     .prologue
@@ -832,7 +820,7 @@
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue

@@ -2,17 +2,17 @@ package com.snapchat.android.fragments.settings;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
-import cgb;
-import cgc;
+import bbo;
+import bev;
+import chc;
+import chd;
 import com.snapchat.android.fragments.cash.CashSettingsFragment;
 import com.squareup.otto.Bus;
 import java.util.List;
-import qv;
-import qv.a;
-import qx;
-import qy;
+import rl;
+import rl.a;
+import rn;
+import ro;
 
 final class SettingsFragment$8
   implements View.OnClickListener
@@ -21,33 +21,33 @@ final class SettingsFragment$8
   
   public final void onClick(View paramView)
   {
-    paramView = new qx();
-    final qy localqy = new qy();
-    mListener = new qv.a()
+    paramView = new rn();
+    final ro localro = new ro();
+    mListener = new rl.a()
     {
-      public final void a(@cgb qv paramAnonymousqv) {}
+      public final void a(@chc rl paramAnonymousrl) {}
       
-      public final void a(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+      public final void a(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean)
       {
-        localqy.a(null);
+        localro.a(null);
       }
       
-      public final void b(@cgb qv paramAnonymousqv) {}
+      public final void b(@chc rl paramAnonymousrl) {}
       
-      public final void b(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean) {}
+      public final void b(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean) {}
     };
-    mListener = new qv.a()
+    mListener = new rl.a()
     {
-      public final void a(@cgb qv paramAnonymousqv) {}
+      public final void a(@chc rl paramAnonymousrl) {}
       
-      public final void a(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+      public final void a(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean)
       {
-        ban.a().a(new bdw(new CashSettingsFragment()));
+        bbo.a().a(new bev(new CashSettingsFragment()));
       }
       
-      public final void b(@cgb qv paramAnonymousqv) {}
+      public final void b(@chc rl paramAnonymousrl) {}
       
-      public final void b(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean) {}
+      public final void b(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean) {}
     };
     paramView.a(null);
   }

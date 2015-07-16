@@ -453,6 +453,10 @@
     .locals 3
 
     .prologue
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 133
     invoke-direct {p0, p1}, Lcom/flurry/sdk/es;->a(Landroid/content/Context;)Z
 

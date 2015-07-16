@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.settings;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.verification.SettingsPhoneVerificationFragment;
 import com.squareup.otto.Bus;
 
@@ -14,7 +14,7 @@ final class SettingsFragment$13
   
   public final void onClick(View paramView)
   {
-    ban.a().a(new bdw(new SettingsPhoneVerificationFragment()));
+    bbo.a().a(new bev(new SettingsPhoneVerificationFragment()));
   }
 }
 

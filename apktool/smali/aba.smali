@@ -1,5 +1,5 @@
 .class public final Laba;
-.super Lcom/snapchat/android/database/table/SnapbryoTable;
+.super Lcom/snapchat/android/database/table/FriendTable;
 .source "SourceFile"
 
 
@@ -12,8 +12,8 @@
     .locals 0
 
     .prologue
-    .line 15
-    invoke-direct {p0}, Lcom/snapchat/android/database/table/SnapbryoTable;-><init>()V
+    .line 13
+    invoke-direct {p0}, Lcom/snapchat/android/database/table/FriendTable;-><init>()V
 
     return-void
 .end method
@@ -22,7 +22,7 @@
     .locals 2
 
     .prologue
-    .line 18
+    .line 16
     const-class v1, Laba;
 
     monitor-enter v1
@@ -32,14 +32,14 @@
 
     if-nez v0, :cond_0
 
-    .line 19
+    .line 17
     new-instance v0, Laba;
 
     invoke-direct {v0}, Laba;-><init>()V
 
     sput-object v0, Laba;->a:Laba;
 
-    .line 21
+    .line 19
     :cond_0
     sget-object v0, Laba;->a:Laba;
     :try_end_0
@@ -49,7 +49,7 @@
 
     return-object v0
 
-    .line 18
+    .line 16
     :catchall_0
     move-exception v0
 
@@ -60,70 +60,77 @@
 
 
 # virtual methods
-.method protected final a(Lajv;)Ljava/util/Collection;
-    .locals 3
+.method protected final a(Lakp;)Ljava/util/Collection;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
-            "Laim;",
+            "Lcom/snapchat/android/model/Friend;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 36
-    new-instance v0, Ljava/util/ArrayList;
+    .line 29
+    invoke-virtual {p1}, Lakp;->m()Ljava/util/List;
 
-    invoke-static {}, Lajn;->a()Lajn;
-
-    move-result-object v1
-
-    iget-object v2, v1, Lajn;->mSendingSnapbryos:Ljava/util/Map;
-
-    invoke-virtual {v1, v2}, Lajn;->a(Ljava/util/Map;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
-    .locals 2
+.method public final b(Lakp;)V
+    .locals 3
 
     .prologue
-    const/4 v1, 0x0
+    .line 34
+    const/4 v0, 0x0
 
-    .line 31
-    invoke-static {}, Lajn;->a()Lajn;
+    invoke-static {}, Laba;->g()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Laba;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    invoke-virtual {p0, v1, v1}, Laba;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+    iget-object v1, p1, Lakp;->mContactsNotOnSnapchat:Ljava/util/List;
 
-    move-result-object v1
+    monitor-enter v1
 
-    invoke-virtual {v0, v1}, Lajn;->c(Ljava/util/List;)Ljava/util/LinkedHashMap;
+    :try_start_0
+    iget-object v2, p1, Lakp;->mContactsNotOnSnapchat:Ljava/util/List;
 
-    move-result-object v1
+    invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    iput-object v1, v0, Lajn;->mSendingSnapbryos:Ljava/util/Map;
+    iget-object v2, p1, Lakp;->mContactsNotOnSnapchat:Ljava/util/List;
 
-    .line 32
+    invoke-interface {v2, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    monitor-exit v1
+
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
 .method public final c()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 26
-    const-string v0, "SendingSnapbryoTable"
+    .line 24
+    const-string v0, "ContactsNotOnSnapchatTable"
 
     return-object v0
 .end method

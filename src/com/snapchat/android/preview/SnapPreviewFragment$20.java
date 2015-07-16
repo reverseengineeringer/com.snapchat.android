@@ -2,16 +2,16 @@ package com.snapchat.android.preview;
 
 import android.view.View;
 import android.widget.ListView;
-import bgr.a;
+import bhr.a;
 
 final class SnapPreviewFragment$20
-  implements bgr.a
+  implements bhr.a
 {
   SnapPreviewFragment$20(SnapPreviewFragment paramSnapPreviewFragment) {}
   
   public final void a(View paramView)
   {
-    ((ListView)paramView.findViewById(2131362727)).setAdapter(a.c);
+    ((ListView)paramView.findViewById(2131362726)).setAdapter(a.c);
   }
 }
 

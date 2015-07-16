@@ -3,10 +3,10 @@ package com.snapchat.android.ui;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
-import aus;
+import avq;
 
 final class SnapEditorView$1
-  extends aus
+  extends avq
 {
   SnapEditorView$1(SnapEditorView paramSnapEditorView, Drawable[] paramArrayOfDrawable, Bitmap paramBitmap)
   {

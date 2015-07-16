@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.utils;
 
-import cgc;
+import chd;
 import java.io.File;
 
 public class FileUtils
@@ -12,7 +12,7 @@ public class FileUtils
     return sInstance;
   }
   
-  public boolean checkExists(@cgc String paramString)
+  public boolean checkExists(@chd String paramString)
   {
     if (paramString == null) {
       return false;
@@ -20,7 +20,7 @@ public class FileUtils
     return new File(paramString).exists();
   }
   
-  public boolean isNotZeroBytes(@cgc String paramString)
+  public boolean isNotZeroBytes(@chd String paramString)
   {
     if (paramString == null) {}
     while (new File(paramString).length() <= 0L) {

@@ -1,32 +1,9 @@
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.j;
-import java.util.Iterator;
-import java.util.List;
-
 public final class aqo
-  extends RecyclerView.j
+  extends bcc
 {
-  private final List<RecyclerView.j> a;
-  
-  public aqo(List<RecyclerView.j> paramList)
+  public aqo(int paramInt)
   {
-    a = paramList;
-  }
-  
-  public final void a(RecyclerView paramRecyclerView, int paramInt)
-  {
-    Iterator localIterator = a.iterator();
-    while (localIterator.hasNext()) {
-      ((RecyclerView.j)localIterator.next()).a(paramRecyclerView, paramInt);
-    }
-  }
-  
-  public final void a(RecyclerView paramRecyclerView, int paramInt1, int paramInt2)
-  {
-    Iterator localIterator = a.iterator();
-    while (localIterator.hasNext()) {
-      ((RecyclerView.j)localIterator.next()).a(paramRecyclerView, paramInt1, paramInt2);
-    }
+    super(paramInt);
   }
 }
 

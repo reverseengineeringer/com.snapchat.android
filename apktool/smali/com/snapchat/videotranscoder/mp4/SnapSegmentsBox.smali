@@ -1,5 +1,5 @@
 .class public Lcom/snapchat/videotranscoder/mp4/SnapSegmentsBox;
-.super Lev;
+.super Lfe;
 .source "SourceFile"
 
 
@@ -21,7 +21,7 @@
     .line 24
     const-string v0, "sseg"
 
-    invoke-direct {p0, v0}, Lev;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lfe;-><init>(Ljava/lang/String;)V
 
     .line 26
     const/4 v0, 0x1
@@ -149,7 +149,7 @@
 .method public setSnapSegments(Lcom/snapchat/videotranscoder/mp4/SnapSegments;)V
     .locals 0
     .param p1    # Lcom/snapchat/videotranscoder/mp4/SnapSegments;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

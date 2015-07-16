@@ -1,13 +1,14 @@
-import android.content.ContentResolver;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory.Options;
+import android.animation.Animator;
+import android.animation.Animator.AnimatorListener;
 
-public abstract interface awh
+public abstract class awh
+  implements Animator.AnimatorListener
 {
-  public abstract Bitmap a(BitmapFactory.Options paramOptions);
+  public void onAnimationCancel(Animator paramAnimator) {}
   
-  public abstract void a(ContentResolver paramContentResolver, Resources paramResources);
+  public void onAnimationRepeat(Animator paramAnimator) {}
+  
+  public void onAnimationStart(Animator paramAnimator) {}
 }
 
 /* Location:

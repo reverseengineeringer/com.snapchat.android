@@ -1,23 +1,12 @@
-import com.snapchat.android.api2.cash.ScCashResponsePayload;
-import com.snapchat.android.api2.cash.ScCashResponsePayload.Status;
-
-public abstract class qc<T extends ScCashResponsePayload>
-  extends tg
-  implements ts.b<T>
+@ud
+public class qc
+  extends bhy
 {
-  private static final String TAG = "BasicScCashRequestTask";
-  private final qc.a mCallback;
-  
-  protected qc(@cgb qc.a parama)
+  public qc()
   {
-    mCallback = parama;
-  }
-  
-  public static abstract interface a
-  {
-    public abstract void a(@cgb ScCashResponsePayload.Status paramStatus, int paramInt);
-    
-    public abstract void a(@cgb ScCashResponsePayload paramScCashResponsePayload);
+    c(String.valueOf(System.currentTimeMillis()));
+    e(pj.a(a()));
+    g(akr.l());
   }
 }
 

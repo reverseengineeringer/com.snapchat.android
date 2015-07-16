@@ -16,17 +16,16 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import ats;
-import aui;
-import avh;
-import cgb;
-import cgc;
-import com.snapchat.android.Timber;
+import auq;
+import avg;
+import awf;
+import chc;
+import chd;
 
 public class ChatCameraButton
   extends View
 {
-  @cgc
+  @chd
   public MediaPlayer a;
   private a b;
   private Handler c = new Handler();
@@ -39,7 +38,7 @@ public class ChatCameraButton
   private final Paint j;
   private final Drawable k;
   private final Drawable l;
-  @cgb
+  @chc
   private Paint m;
   private final float n;
   private final RectF o;
@@ -59,28 +58,28 @@ public class ChatCameraButton
     super(paramContext, paramAttributeSet);
     d = a(paramContext, 2131230759);
     e = a(paramContext, 2131230727);
-    f = a(paramContext, 2131230770);
-    j = a(paramContext, 2131230803);
+    f = a(paramContext, 2131230771);
+    j = a(paramContext, 2131230804);
     k = getResources().getDrawable(2130837681);
     l = getResources().getDrawable(2130837682);
     m = d;
     g = new Paint();
     g.setColor(-1);
     g.setTextAlign(Paint.Align.CENTER);
-    g.setTextSize(getResources().getDimensionPixelSize(2131296417));
+    g.setTextSize(getResources().getDimensionPixelSize(2131296418));
     h = new Paint();
     h.setColor(-1);
     h.setAntiAlias(true);
     h.setStyle(Paint.Style.STROKE);
-    float f1 = avh.a(4.0F, paramContext);
+    float f1 = awf.a(4.0F, paramContext);
     h.setStrokeWidth(f1);
     i = new Paint();
     i.setColor(-1);
     i.setAntiAlias(true);
     i.setStyle(Paint.Style.STROKE);
-    f1 = avh.a(7.0F, paramContext);
+    f1 = awf.a(7.0F, paramContext);
     i.setStrokeWidth(f1);
-    n = avh.a(10.0F, paramContext);
+    n = awf.a(10.0F, paramContext);
     o = new RectF();
     p = new RectF();
     u = false;
@@ -104,7 +103,7 @@ public class ChatCameraButton
     };
     if (!isInEditMode())
     {
-      if (aui.c(Build.MODEL, "GT-S7500")) {
+      if (avg.c(Build.MODEL, "GT-S7500")) {
         a = MediaPlayer.create(paramContext, 2131099655);
       }
     }
@@ -227,8 +226,8 @@ public class ChatCameraButton
       }
       l1 %= 800L;
       f1 = 0.33F * getHeight();
-      float f2 = ats.a(getWidth() / 2 - f1, getWidth() * 0.13999999F, (float)l1 / 800.0F);
-      float f3 = ats.a(getWidth() / 2 + f1, getWidth() * 0.86F, (float)l1 / 800.0F);
+      float f2 = auq.a(getWidth() / 2 - f1, getWidth() * 0.13999999F, (float)l1 / 800.0F);
+      float f3 = auq.a(getWidth() / 2 + f1, getWidth() * 0.86F, (float)l1 / 800.0F);
       p.set(f2, getHeight() / 2 - f1, f3, f1 + getHeight() / 2);
       i2 = 255 - (int)((float)l1 * 255.0F / 800.0F);
       if (i2 >= 0) {}
@@ -266,7 +265,7 @@ public class ChatCameraButton
     o.set(0.0F, 0.0F, paramInt1, paramInt2);
   }
   
-  public boolean onTouchEvent(@cgb MotionEvent paramMotionEvent)
+  public boolean onTouchEvent(@chc MotionEvent paramMotionEvent)
   {
     if (b != null) {
       b.a(paramMotionEvent);
@@ -327,7 +326,7 @@ public class ChatCameraButton
           }
           catch (IllegalStateException localIllegalStateException)
           {
-            Timber.e("ChatCameraButton", "Failed to play sound effect: " + localIllegalStateException.getMessage(), new Object[0]);
+            new StringBuilder("Failed to play sound effect: ").append(localIllegalStateException.getMessage());
           }
         }
       }
@@ -341,7 +340,7 @@ public class ChatCameraButton
   
   public static abstract interface a
   {
-    public abstract void a(@cgb MotionEvent paramMotionEvent);
+    public abstract void a(@chc MotionEvent paramMotionEvent);
   }
 }
 

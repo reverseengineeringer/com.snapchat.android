@@ -1,261 +1,169 @@
-import javax.security.auth.x500.X500Principal;
+import java.net.Proxy;
+import java.net.Proxy.Type;
+import java.net.Socket;
 
-final class bnz
+public final class bnz
+  implements boh
 {
-  final String a;
-  final int b;
-  int c;
-  int d;
-  int e;
-  int f;
-  char[] g;
+  private final bnx a;
+  private final bnv b;
   
-  public bnz(X500Principal paramX500Principal)
+  public bnz(bnx parambnx, bnv parambnv)
   {
-    a = paramX500Principal.getName("RFC2253");
-    b = a.length();
+    a = parambnx;
+    b = parambnv;
   }
   
-  private int a(int paramInt)
+  public final bne a(bnd parambnd)
   {
-    if (paramInt + 1 >= b) {
-      throw new IllegalStateException("Malformed DN: " + a);
-    }
-    int i = g[paramInt];
-    if ((i >= 48) && (i <= 57))
-    {
-      i -= 48;
-      paramInt = g[(paramInt + 1)];
-      if ((paramInt < 48) || (paramInt > 57)) {
-        break label160;
-      }
-      paramInt -= 48;
+    Object localObject;
+    if (!bnx.c(parambnd)) {
+      localObject = b.a(0L);
     }
     for (;;)
     {
-      return (i << 4) + paramInt;
-      if ((i >= 97) && (i <= 102))
+      return new bob(f, cbe.a((cbk)localObject));
+      if ("chunked".equalsIgnoreCase(parambnd.a("Transfer-Encoding")))
       {
-        i -= 87;
-        break;
-      }
-      if ((i >= 65) && (i <= 70))
-      {
-        i -= 55;
-        break;
-      }
-      throw new IllegalStateException("Malformed DN: " + a);
-      label160:
-      if ((paramInt >= 97) && (paramInt <= 102))
-      {
-        paramInt -= 87;
+        localObject = b;
+        bnx localbnx = a;
+        if (e != 4) {
+          throw new IllegalStateException("state: " + e);
+        }
+        e = 5;
+        localObject = new bnv.c((bnv)localObject, localbnx);
       }
       else
       {
-        if ((paramInt < 65) || (paramInt > 70)) {
-          break label200;
-        }
-        paramInt -= 55;
-      }
-    }
-    label200:
-    throw new IllegalStateException("Malformed DN: " + a);
-  }
-  
-  private char e()
-  {
-    int i = a(c);
-    c += 1;
-    if (i < 128) {
-      return (char)i;
-    }
-    if ((i >= 192) && (i <= 247))
-    {
-      int j;
-      int m;
-      int k;
-      if (i <= 223)
-      {
-        j = 1;
-        i &= 0x1F;
-        m = 0;
-        k = i;
-        i = m;
-      }
-      for (;;)
-      {
-        if (i >= j) {
-          break label198;
-        }
-        c += 1;
-        if ((c == b) || (g[c] != '\\'))
+        long l = boa.a(parambnd);
+        if (l != -1L)
         {
-          return '?';
-          if (i <= 239)
-          {
-            j = 2;
-            i &= 0xF;
-            break;
+          localObject = b.a(l);
+        }
+        else
+        {
+          localObject = b;
+          if (e != 4) {
+            throw new IllegalStateException("state: " + e);
           }
-          j = 3;
-          i &= 0x7;
-          break;
+          e = 5;
+          localObject = new bnv.f((bnv)localObject, (byte)0);
         }
-        c += 1;
-        m = a(c);
-        c += 1;
-        if ((m & 0xC0) != 128) {
-          return '?';
-        }
-        k = (k << 6) + (m & 0x3F);
-        i += 1;
       }
-      label198:
-      return (char)k;
     }
-    return '?';
   }
   
-  final String a()
+  public final cbj a(bnb parambnb, long paramLong)
   {
-    while ((c < b) && (g[c] == ' ')) {
-      c += 1;
-    }
-    if (c == b) {
-      return null;
-    }
-    d = c;
-    for (c += 1; (c < b) && (g[c] != '=') && (g[c] != ' '); c += 1) {}
-    if (c >= b) {
-      throw new IllegalStateException("Unexpected end of DN: " + a);
-    }
-    e = c;
-    if (g[c] == ' ')
+    if ("chunked".equalsIgnoreCase(parambnb.a("Transfer-Encoding")))
     {
-      while ((c < b) && (g[c] != '=') && (g[c] == ' ')) {
-        c += 1;
+      parambnb = b;
+      if (e != 1) {
+        throw new IllegalStateException("state: " + e);
       }
-      if ((g[c] != '=') || (c == b)) {
-        throw new IllegalStateException("Unexpected end of DN: " + a);
+      e = 2;
+      return new bnv.b(parambnb, (byte)0);
+    }
+    if (paramLong != -1L)
+    {
+      parambnb = b;
+      if (e != 1) {
+        throw new IllegalStateException("state: " + e);
+      }
+      e = 2;
+      return new bnv.d(parambnb, paramLong, (byte)0);
+    }
+    throw new IllegalStateException("Cannot stream a request body without chunked encoding or a known content length!");
+  }
+  
+  public final void a()
+  {
+    b.a();
+  }
+  
+  public final void a(bnb parambnb)
+  {
+    a.b();
+    Object localObject = a.c.b.b.type();
+    bna localbna = a.c.g;
+    StringBuilder localStringBuilder = new StringBuilder();
+    localStringBuilder.append(b);
+    localStringBuilder.append(' ');
+    int i;
+    if ((!parambnb.e()) && (localObject == Proxy.Type.HTTP))
+    {
+      i = 1;
+      if (i == 0) {
+        break label136;
+      }
+      localStringBuilder.append(parambnb.a());
+    }
+    for (;;)
+    {
+      localStringBuilder.append(' ');
+      localStringBuilder.append(boc.a(localbna));
+      localObject = localStringBuilder.toString();
+      b.a(c, (String)localObject);
+      return;
+      i = 0;
+      break;
+      label136:
+      localStringBuilder.append(boc.a(parambnb.a()));
+    }
+  }
+  
+  public final void a(bod parambod)
+  {
+    bnv localbnv = b;
+    if (e != 1) {
+      throw new IllegalStateException("state: " + e);
+    }
+    e = 3;
+    parambod.a(d);
+  }
+  
+  public final bnd.a b()
+  {
+    return b.c();
+  }
+  
+  public final void c()
+  {
+    bnv localbnv;
+    if (d())
+    {
+      localbnv = b;
+      f = 1;
+      if (e == 0)
+      {
+        f = 0;
+        bnj.b.a(a, b);
       }
     }
     do
     {
-      c += 1;
-    } while ((c < b) && (g[c] == ' '));
-    if ((e - d > 4) && (g[(d + 3)] == '.') && ((g[d] == 'O') || (g[d] == 'o')) && ((g[(d + 1)] == 'I') || (g[(d + 1)] == 'i')) && ((g[(d + 2)] == 'D') || (g[(d + 2)] == 'd'))) {
-      d += 4;
-    }
-    return new String(g, d, e - d);
+      return;
+      localbnv = b;
+      f = 2;
+    } while (e != 0);
+    e = 6;
+    b.c.close();
   }
   
-  final String b()
+  public final boolean d()
   {
-    if (c + 4 >= b) {
-      throw new IllegalStateException("Unexpected end of DN: " + a);
-    }
-    d = c;
-    int k;
-    for (c += 1;; c += 1)
+    if ("close".equalsIgnoreCase(a.l.a("Connection"))) {}
+    for (;;)
     {
-      if ((c == b) || (g[c] == '+') || (g[c] == ',') || (g[c] == ';')) {
-        e = c;
-      }
-      for (;;)
+      return false;
+      if (!"close".equalsIgnoreCase(a.d().a("Connection")))
       {
-        k = e - d;
-        if ((k >= 5) && ((k & 0x1) != 0)) {
-          break label301;
-        }
-        throw new IllegalStateException("Unexpected end of DN: " + a);
-        if (g[c] != ' ') {
-          break;
-        }
-        e = c;
-        for (c += 1; (c < b) && (g[c] == ' '); c += 1) {}
-      }
-      if ((g[c] >= 'A') && (g[c] <= 'F'))
-      {
-        localObject = g;
-        i = c;
-        localObject[i] = ((char)(localObject[i] + ' '));
-      }
-    }
-    label301:
-    Object localObject = new byte[k / 2];
-    int i = 0;
-    int j = d + 1;
-    while (i < localObject.length)
-    {
-      localObject[i] = ((byte)a(j));
-      j += 2;
-      i += 1;
-    }
-    return new String(g, d, k);
-  }
-  
-  final String c()
-  {
-    d = c;
-    e = c;
-    do
-    {
-      for (;;)
-      {
-        if (c >= b) {
-          return new String(g, d, e - d);
-        }
-        switch (g[c])
-        {
-        default: 
-          arrayOfChar = g;
-          i = e;
-          e = (i + 1);
-          arrayOfChar[i] = g[c];
-          c += 1;
-          break;
-        case '+': 
-        case ',': 
-        case ';': 
-          return new String(g, d, e - d);
-        case '\\': 
-          arrayOfChar = g;
-          i = e;
-          e = (i + 1);
-          arrayOfChar[i] = d();
-          c += 1;
+        if (b.e == 6) {}
+        for (int i = 1; i == 0; i = 0) {
+          return true;
         }
       }
-      f = e;
-      c += 1;
-      char[] arrayOfChar = g;
-      int i = e;
-      e = (i + 1);
-      arrayOfChar[i] = ' ';
-      while ((c < b) && (g[c] == ' '))
-      {
-        arrayOfChar = g;
-        i = e;
-        e = (i + 1);
-        arrayOfChar[i] = ' ';
-        c += 1;
-      }
-    } while ((c != b) && (g[c] != ',') && (g[c] != '+') && (g[c] != ';'));
-    return new String(g, d, f - d);
-  }
-  
-  final char d()
-  {
-    c += 1;
-    if (c == b) {
-      throw new IllegalStateException("Unexpected end of DN: " + a);
     }
-    switch (g[c])
-    {
-    default: 
-      return e();
-    }
-    return g[c];
   }
 }
 

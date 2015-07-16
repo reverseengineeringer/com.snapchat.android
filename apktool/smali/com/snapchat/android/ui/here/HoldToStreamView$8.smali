@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 723
+    .line 741
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$8;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,13 +40,13 @@
     .locals 1
 
     .prologue
-    .line 726
+    .line 744
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$8;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView;->a:Lcom/snapchat/android/ui/here/StreamView$a;
 
     invoke-interface {v0}, Lcom/snapchat/android/ui/here/StreamView$a;->p()V
 
-    .line 727
+    .line 745
     return-void
 .end method

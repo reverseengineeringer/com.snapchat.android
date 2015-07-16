@@ -1,22 +1,12 @@
-public final class bye
-  implements bxg
+final class bye
 {
-  public final bxk a(bwz parambwz, String paramString)
-  {
-    try
-    {
-      parambwz = new Double(paramString);
-      return new bxk(new Double(Math.sqrt(parambwz.doubleValue())).toString(), 0);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Invalid argument.", parambwz);
-    }
-  }
+  car a = null;
+  int b = -1;
   
-  public final String a()
+  public bye(car paramcar, int paramInt)
   {
-    return "sqrt";
+    a = paramcar;
+    b = paramInt;
   }
 }
 

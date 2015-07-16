@@ -1,75 +1,49 @@
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import com.snapchat.android.model.StoryCollection;
-import com.squareup.otto.Bus;
-import java.util.List;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.model.chat.ChatFeedItem;
 
 public final class aor
-  extends apf<StoryCollection>
+  extends aos
 {
-  private final LayoutInflater a;
-  private final auy b;
-  private final Bus c;
-  
-  public aor(Context paramContext, List<StoryCollection> paramList, auy paramauy, Bus paramBus)
+  public aor(String paramString)
   {
-    super(paramContext, 2130968693, paramList);
-    a = ((LayoutInflater)paramContext.getSystemService("layout_inflater"));
-    b = paramauy;
-    c = paramBus;
+    this(paramString, System.currentTimeMillis(), -1L);
   }
   
-  public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
+  public aor(String paramString, long paramLong1, long paramLong2)
   {
-    StoryCollection localStoryCollection;
-    Object localObject;
-    label80:
-    float f;
-    if (paramView == null)
-    {
-      paramView = a.inflate(2130968693, paramViewGroup, false);
-      paramViewGroup = new aot(paramView);
-      paramView.setTag(paramViewGroup);
-      localStoryCollection = (StoryCollection)getItem(paramInt);
-      b.setText(localStoryCollection.h());
-      localObject = b.a(localStoryCollection.m());
-      if (localObject != null) {
-        break label150;
-      }
-      a.setImageResource(2130838142);
-      localObject = a;
-      if (!localStoryCollection.n()) {
-        break label162;
-      }
-      f = 1.0F;
-      label97:
-      ((ImageView)localObject).setAlpha(f);
-      paramViewGroup = c;
-      if (!localStoryCollection.o()) {
-        break label169;
-      }
+    super(paramString, paramLong1, paramLong2);
+  }
+  
+  public final String a()
+  {
+    return "";
+  }
+  
+  public final void a(long paramLong)
+  {
+    Object localObject1 = a;
+    ChatConversation localChatConversation = akx.c().a((String)localObject1);
+    if (localChatConversation == null) {
+      return;
     }
-    label150:
-    label162:
-    label169:
-    for (paramInt = 0;; paramInt = 8)
+    localObject1 = new alb.a(akr.l(), (String)localObject1).a();
+    ((alb)localObject1).c(paramLong);
+    zm localzm = zm.a();
+    Object localObject2 = akr.l();
+    if (localObject2 != null)
     {
-      paramViewGroup.setVisibility(paramInt);
-      paramView.setOnClickListener(new aon(localStoryCollection));
-      return paramView;
-      paramViewGroup = (aot)paramView.getTag();
-      break;
-      a.setImageBitmap((Bitmap)localObject);
-      break label80;
-      f = 0.5F;
-      break label97;
+      ((alb)localObject1).c(localChatConversation.b(((alb)localObject1).U()));
+      localChatConversation.a((ChatFeedItem)localObject1);
+      bjj localbjj = new bjj().a(bjj.a.SCREENSHOT.toString());
+      localObject2 = (bif)aty.a(bji.a.CHAT_MESSAGE, (String)localObject2, localChatConversation.z(), mMessagingAuthToken);
+      ((bif)localObject2).a(((alb)localObject1).d());
+      ((bif)localObject2).a(localbjj);
+      ((bif)localObject2).b(Long.valueOf(((alb)localObject1).U()));
+      ((alb)localObject1).a(((bif)localObject2).k());
+      ((alb)localObject1).a((bif)localObject2);
+      localzm.a(localChatConversation, (akw)localObject1);
     }
+    d.d();
   }
 }
 

@@ -1,160 +1,80 @@
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Random;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.message.BasicHeader;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class bwj
-  implements HttpEntity
 {
-  private static final char[] c = "-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-  public ByteArrayOutputStream a = new ByteArrayOutputStream();
-  public String b;
-  private boolean d = false;
-  private boolean e = false;
+  private static final Map<Integer, String> a;
   
-  public bwj()
+  static
   {
-    StringBuffer localStringBuffer = new StringBuffer();
-    Random localRandom = new Random();
-    while (i < 30)
-    {
-      localStringBuffer.append(c[localRandom.nextInt(c.length)]);
-      i += 1;
+    HashMap localHashMap = new HashMap();
+    a = localHashMap;
+    localHashMap.put(Integer.valueOf(0), "Crash Data");
+    a.put(Integer.valueOf(1), "The app found information about previous crashes. Would you like to send this data to the developer?");
+    a.put(Integer.valueOf(2), "Dismiss");
+    a.put(Integer.valueOf(3), "Always send");
+    a.put(Integer.valueOf(4), "Send");
+    a.put(Integer.valueOf(256), "Download Failed");
+    a.put(Integer.valueOf(257), "The update could not be downloaded. Would you like to try again?");
+    a.put(Integer.valueOf(258), "Cancel");
+    a.put(Integer.valueOf(259), "Retry");
+    a.put(Integer.valueOf(512), "Please install the latest version to continue to use this app.");
+    a.put(Integer.valueOf(513), "Update Available");
+    a.put(Integer.valueOf(514), "Show information about the new update?");
+    a.put(Integer.valueOf(515), "Dismiss");
+    a.put(Integer.valueOf(516), "Show");
+    a.put(Integer.valueOf(768), "Build Expired");
+    a.put(Integer.valueOf(769), "This has build has expired. Please check HockeyApp for any updates.");
+    a.put(Integer.valueOf(1024), "Feedback Failed");
+    a.put(Integer.valueOf(1025), "Would you like to send your feedback again?");
+    a.put(Integer.valueOf(1026), "Name");
+    a.put(Integer.valueOf(1027), "Email");
+    a.put(Integer.valueOf(1028), "Subject");
+    a.put(Integer.valueOf(1029), "Message");
+    a.put(Integer.valueOf(1030), "Last Updated: ");
+    a.put(Integer.valueOf(1031), "Add Attachment");
+    a.put(Integer.valueOf(1032), "Send Feedback");
+    a.put(Integer.valueOf(1033), "Add a Response");
+    a.put(Integer.valueOf(1034), "Refresh");
+    a.put(Integer.valueOf(1035), "Feedback");
+    a.put(Integer.valueOf(1036), "Message couldn't be posted. Please check your input values and your connection, then try again.");
+    a.put(Integer.valueOf(1037), "No response from server. Please check your connection, then try again.");
+    a.put(Integer.valueOf(1038), "Please enter a subject");
+    a.put(Integer.valueOf(1041), "Please enter a name");
+    a.put(Integer.valueOf(1042), "Please enter an email address");
+    a.put(Integer.valueOf(1043), "Please enter a feedback text");
+    a.put(Integer.valueOf(1039), "Message couldn't be posted. Please check the format of your email address.");
+    a.put(Integer.valueOf(1040), "An error has occured");
+    a.put(Integer.valueOf(1280), "Please enter your account credentials.");
+    a.put(Integer.valueOf(1281), "Please fill in the missing account credentials.");
+    a.put(Integer.valueOf(1282), "Email");
+    a.put(Integer.valueOf(1283), "Password");
+    a.put(Integer.valueOf(1284), "Login");
+    a.put(Integer.valueOf(1536), "Draw something!");
+    a.put(Integer.valueOf(1537), "Save");
+    a.put(Integer.valueOf(1538), "Undo");
+    a.put(Integer.valueOf(1539), "Clear");
+    a.put(Integer.valueOf(1540), "Discard your drawings?");
+    a.put(Integer.valueOf(1541), "No");
+    a.put(Integer.valueOf(1542), "Yes");
+  }
+  
+  public static String a(int paramInt)
+  {
+    return a(null, paramInt);
+  }
+  
+  public static String a(bwi parambwi, int paramInt)
+  {
+    String str = null;
+    if (parambwi != null) {
+      str = parambwi.a(paramInt);
     }
-    b = localStringBuffer.toString();
-  }
-  
-  public final void a()
-  {
-    if (!e) {
-      a.write(("--" + b + "\r\n").getBytes());
+    parambwi = str;
+    if (str == null) {
+      parambwi = (String)a.get(Integer.valueOf(paramInt));
     }
-    e = true;
-  }
-  
-  public final void a(String paramString1, String paramString2, InputStream paramInputStream, String paramString3, boolean paramBoolean)
-  {
-    a();
-    try
-    {
-      paramString3 = "Content-Type: " + paramString3 + "\r\n";
-      a.write(("Content-Disposition: form-data; name=\"" + paramString1 + "\"; filename=\"" + paramString2 + "\"\r\n").getBytes());
-      a.write(paramString3.getBytes());
-      a.write("Content-Transfer-Encoding: binary\r\n\r\n".getBytes());
-      paramString1 = new byte['က'];
-      for (;;)
-      {
-        int i = paramInputStream.read(paramString1);
-        if (i == -1) {
-          break;
-        }
-        a.write(paramString1, 0, i);
-      }
-      try
-      {
-        paramInputStream.close();
-        throw paramString1;
-        a.flush();
-        if (paramBoolean) {
-          b();
-        }
-        for (;;)
-        {
-          try
-          {
-            paramInputStream.close();
-            return;
-          }
-          catch (IOException paramString1)
-          {
-            paramString1.printStackTrace();
-            return;
-          }
-          a.write(("\r\n--" + b + "\r\n").getBytes());
-        }
-      }
-      catch (IOException paramString2)
-      {
-        for (;;)
-        {
-          paramString2.printStackTrace();
-        }
-      }
-    }
-    finally {}
-  }
-  
-  public final void b()
-  {
-    if (d) {
-      return;
-    }
-    try
-    {
-      a.write(("\r\n--" + b + "--\r\n").getBytes());
-      d = true;
-      return;
-    }
-    catch (IOException localIOException)
-    {
-      for (;;)
-      {
-        localIOException.printStackTrace();
-      }
-    }
-  }
-  
-  public final void consumeContent()
-  {
-    if (isStreaming()) {
-      throw new UnsupportedOperationException("Streaming entity does not implement #consumeContent()");
-    }
-  }
-  
-  public final InputStream getContent()
-  {
-    return new ByteArrayInputStream(a.toByteArray());
-  }
-  
-  public final Header getContentEncoding()
-  {
-    return null;
-  }
-  
-  public final long getContentLength()
-  {
-    b();
-    return a.toByteArray().length;
-  }
-  
-  public final Header getContentType()
-  {
-    return new BasicHeader("Content-Type", "multipart/form-data; boundary=" + b);
-  }
-  
-  public final boolean isChunked()
-  {
-    return false;
-  }
-  
-  public final boolean isRepeatable()
-  {
-    return false;
-  }
-  
-  public final boolean isStreaming()
-  {
-    return false;
-  }
-  
-  public final void writeTo(OutputStream paramOutputStream)
-  {
-    paramOutputStream.write(a.toByteArray());
+    return parambwi;
   }
 }
 

@@ -1,45 +1,14 @@
-final class cah
+public final class cah
+  extends cab
 {
-  static cag a;
-  static long b;
-  
-  static cag a()
+  public cah()
   {
-    try
-    {
-      if (a != null)
-      {
-        cag localcag = a;
-        a = f;
-        f = null;
-        b -= 2048L;
-        return localcag;
-      }
-      return new cag();
-    }
-    finally {}
+    super("/", 6);
   }
   
-  static void a(cag paramcag)
+  public final double a(double paramDouble1, double paramDouble2)
   {
-    if ((f != null) || (g != null)) {
-      throw new IllegalArgumentException();
-    }
-    if (d) {
-      return;
-    }
-    try
-    {
-      if (b + 2048L > 65536L) {
-        return;
-      }
-    }
-    finally {}
-    b += 2048L;
-    f = a;
-    c = 0;
-    b = 0;
-    a = paramcag;
+    return new Double(paramDouble1 / paramDouble2).doubleValue();
   }
 }
 

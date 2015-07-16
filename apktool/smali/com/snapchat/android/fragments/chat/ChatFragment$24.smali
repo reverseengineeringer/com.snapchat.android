@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1023
+    .line 1046
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$24;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 1026
+    .line 1049
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$24;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
 
-    .line 1027
+    .line 1050
     return-void
 .end method

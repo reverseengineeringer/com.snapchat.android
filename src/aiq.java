@@ -1,54 +1,40 @@
-import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import com.snapchat.android.model.GeofilterMarkup;
 
 public final class aiq
-  implements aio
+  implements air<Bitmap, GeofilterMarkup>
 {
-  private final boolean mIsStory;
+  private Bitmap a;
+  private GeofilterMarkup b;
   
-  public aiq(boolean paramBoolean)
+  public aiq(Bitmap paramBitmap, GeofilterMarkup paramGeofilterMarkup)
   {
-    mIsStory = paramBoolean;
+    a = paramBitmap;
+    b = paramGeofilterMarkup;
   }
   
-  public final int a(int paramInt, aje paramaje)
+  public final void a(Bitmap paramBitmap)
   {
-    return 0;
-  }
-  
-  public final void a() {}
-  
-  public final void a(@cgb aje paramaje, @cgb SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt) {}
-  
-  public final void b() {}
-  
-  public final aje c()
-  {
-    return null;
-  }
-  
-  public final aje d()
-  {
-    return null;
-  }
-  
-  public final boolean e()
-  {
-    return mIsStory;
-  }
-  
-  public final boolean f()
-  {
-    return false;
-  }
-  
-  public final boolean g()
-  {
-    return false;
-  }
-  
-  public final int h()
-  {
-    return 0;
+    if ((a == null) || (paramBitmap == null)) {
+      return;
+    }
+    Canvas localCanvas = new Canvas(paramBitmap);
+    Paint localPaint = new Paint(1);
+    localPaint.setDither(true);
+    Object localObject = b.layoutParameters;
+    int i = (int)(xOffset * paramBitmap.getWidth());
+    int j = (int)(yOffset * paramBitmap.getHeight());
+    int k = (int)((xOffset + xSize) * paramBitmap.getWidth());
+    int m = (int)((yOffset + ySize) * paramBitmap.getHeight());
+    localCanvas.save();
+    localCanvas.rotate(rotation, (k - i) / 2 + i, (m - j) / 2 + j);
+    paramBitmap = new Rect(i, j, k, m);
+    localObject = new Rect(0, 0, a.getWidth(), a.getHeight());
+    localCanvas.drawBitmap(a, (Rect)localObject, paramBitmap, localPaint);
+    localCanvas.restore();
   }
 }
 

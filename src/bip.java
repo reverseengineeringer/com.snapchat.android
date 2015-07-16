@@ -1,11 +1,26 @@
+import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bip
-  extends bii
+public final class bip
 {
-  public boolean equals(Object paramObject)
+  @SerializedName("lat")
+  protected Double lat;
+  @SerializedName("long")
+  protected Double longValue;
+  
+  public final Double a()
+  {
+    return lat;
+  }
+  
+  public final Double b()
+  {
+    return longValue;
+  }
+  
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -13,15 +28,16 @@ public class bip
     if (!(paramObject instanceof bip)) {
       return false;
     }
-    return new EqualsBuilder().isEquals();
+    paramObject = (bip)paramObject;
+    return new EqualsBuilder().append(lat, lat).append(longValue, longValue).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().toHashCode();
+    return new HashCodeBuilder().append(lat).append(longValue).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

@@ -1,12 +1,14 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afj;
-import ajx;
-import alw;
-import alx;
-import alx.a;
+import agj;
+import agj.a;
+import akr;
+import amt;
+import amu;
+import amu.a;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
@@ -15,41 +17,58 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import avh;
-import ban;
-import bbu;
-import bdw;
-import boh;
+import awf;
+import bbo;
+import bcu;
+import bev;
+import bpi;
 import cf;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.analytics.ProfileEventAnalytics;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
 import java.util.Set;
-import nf;
+import kf;
+import nw;
 
 public class FriendsContactsToggleFragment
   extends SnapchatFragment
+  implements agj.a, LeftSwipeContainerFragment.a
 {
-  private afj a;
+  private agj a;
   private View b;
   private View c;
   private View d;
   private ViewPager e;
-  private final ajx f;
+  private final akr f;
   private final ProfileEventAnalytics g;
+  private MyFriendsFragment h;
+  private AddressBookFragment i;
   
   public FriendsContactsToggleFragment()
   {
-    this(ajx.a(), ProfileEventAnalytics.a());
+    this(akr.a(), ProfileEventAnalytics.a());
   }
   
   @SuppressLint({"ValidFragment"})
   @cf
-  private FriendsContactsToggleFragment(ajx paramajx, ProfileEventAnalytics paramProfileEventAnalytics)
+  private FriendsContactsToggleFragment(akr paramakr, ProfileEventAnalytics paramProfileEventAnalytics)
   {
-    f = paramajx;
+    f = paramakr;
     g = paramProfileEventAnalytics;
+  }
+  
+  private void a(boolean paramBoolean, kf paramkf)
+  {
+    if (paramBoolean) {
+      if (h != null) {
+        h.a(paramkf);
+      }
+    }
+    while (i == null) {
+      return;
+    }
+    i.a(paramkf);
   }
   
   private static void b(boolean paramBoolean)
@@ -64,11 +83,11 @@ public class FriendsContactsToggleFragment
       return;
       AnalyticsEvents.AnalyticsContext localAnalyticsContext = AnalyticsEvents.AnalyticsContext.PROFILE_MY_CONTACTS_PAGE;
       localObject = localAnalyticsContext;
-      if (!ajx.f()) {
+      if (!akr.f()) {
         break;
       }
       localObject = localAnalyticsContext;
-      if (!ajx.Z()) {
+      if (!akr.Z()) {
         break;
       }
       localObject = localAnalyticsContext;
@@ -78,29 +97,65 @@ public class FriendsContactsToggleFragment
   private void c(boolean paramBoolean)
   {
     if (paramBoolean) {}
-    for (int i = 0;; i = 8)
+    for (int j = 0;; j = 8)
     {
-      d.setVisibility(i);
+      d.setVisibility(j);
       return;
     }
+  }
+  
+  public final void H()
+  {
+    if (e.getCurrentItem() == 0) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a(bool, kf.SWIPE_LEFT);
+      return;
+    }
+  }
+  
+  public final void a(int paramInt, Fragment paramFragment)
+  {
+    if ((paramInt == 0) && (h == null)) {
+      h = ((MyFriendsFragment)paramFragment);
+    }
+    while ((paramInt != 1) || (i != null)) {
+      return;
+    }
+    i = ((AddressBookFragment)paramFragment);
   }
   
   protected final void e()
   {
     super.e();
-    b(b.isShown());
+    if (e.getCurrentItem() == 0) {}
+    for (boolean bool = true;; bool = false)
+    {
+      b(bool);
+      return;
+    }
   }
   
-  public final alw k()
+  public final boolean g()
   {
-    new alw()
+    if (e.getCurrentItem() == 0) {}
+    for (boolean bool = true;; bool = false)
     {
-      public final boolean a(alx.a paramAnonymousa)
+      a(bool, kf.BACK_BUTTON);
+      return super.g();
+    }
+  }
+  
+  public final amt k()
+  {
+    new amt()
+    {
+      public final boolean a(amu.a paramAnonymousa)
       {
-        return alx.g.contains(c);
+        return amu.g.contains(c);
       }
       
-      public final boolean b(alx.a paramAnonymousa)
+      public final boolean b(amu.a paramAnonymousa)
       {
         return false;
       }
@@ -109,20 +164,20 @@ public class FriendsContactsToggleFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    nf.d();
-    mFragmentLayout = paramLayoutInflater.inflate(2130968679, paramViewGroup, false);
-    e = ((ViewPager)c(2131362371));
+    nw.d();
+    mFragmentLayout = paramLayoutInflater.inflate(2130968680, paramViewGroup, false);
+    e = ((ViewPager)c(2131362369));
     paramLayoutInflater = getArguments();
     if (paramLayoutInflater != null) {}
     for (paramLayoutInflater = paramLayoutInflater.getString("selected_friend_username");; paramLayoutInflater = null)
     {
-      a = new afj(getFragmentManager(), getString(2131493185), getString(2131493185), paramLayoutInflater, mWindowConfiguration);
+      a = new agj(getFragmentManager(), getString(2131493185), getString(2131493074), paramLayoutInflater, mWindowConfiguration, this);
       e.setAdapter(a);
-      paramLayoutInflater = (TextView)c(2131362367);
-      paramViewGroup = (TextView)c(2131362369);
-      b = c(2131362368);
-      c = c(2131362370);
-      d = c(2131361837);
+      paramLayoutInflater = (TextView)c(2131362365);
+      paramViewGroup = (TextView)c(2131362367);
+      b = c(2131362366);
+      c = c(2131362368);
+      d = c(2131361838);
       e.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener()
       {
         public final void onPageSelected(int paramAnonymousInt)
@@ -130,7 +185,6 @@ public class FriendsContactsToggleFragment
           int j = 8;
           boolean bool3 = true;
           boolean bool1;
-          Object localObject;
           int i;
           if (paramAnonymousInt == 0)
           {
@@ -152,7 +206,7 @@ public class FriendsContactsToggleFragment
             i = 0;
             label59:
             if (i >= FriendsContactsToggleFragment.c(FriendsContactsToggleFragment.this).getCount()) {
-              break label152;
+              break label185;
             }
             localObject = FriendsContactsToggleFragment.c(FriendsContactsToggleFragment.this).getItem(i);
             if ((localObject instanceof SnapchatFragment)) {
@@ -167,9 +221,10 @@ public class FriendsContactsToggleFragment
           for (boolean bool2 = true;; bool2 = false)
           {
             ((SnapchatFragment)localObject).f(bool2);
-            if (bool2) {
-              FriendsContactsToggleFragment.a(bool1);
+            if (!bool2) {
+              break label152;
             }
+            FriendsContactsToggleFragment.a(bool1);
             i += 1;
             break label59;
             bool1 = false;
@@ -180,6 +235,14 @@ public class FriendsContactsToggleFragment
             break label51;
           }
           label152:
+          Object localObject = FriendsContactsToggleFragment.this;
+          if (!bool1) {}
+          for (bool2 = true;; bool2 = false)
+          {
+            FriendsContactsToggleFragment.a((FriendsContactsToggleFragment)localObject, bool2, kf.TOGGLE);
+            break;
+          }
+          label185:
           if (bool1)
           {
             localObject = FriendsContactsToggleFragment.this;
@@ -190,12 +253,12 @@ public class FriendsContactsToggleFragment
             FriendsContactsToggleFragment.a((FriendsContactsToggleFragment)localObject, bool1);
             return;
             FriendsContactsToggleFragment localFriendsContactsToggleFragment = FriendsContactsToggleFragment.this;
-            if (ajx.f())
+            if (akr.f())
             {
               FriendsContactsToggleFragment.d(FriendsContactsToggleFragment.this);
               localObject = localFriendsContactsToggleFragment;
               bool1 = bool3;
-              if (ajx.Z()) {}
+              if (akr.Z()) {}
             }
             else
             {
@@ -220,10 +283,10 @@ public class FriendsContactsToggleFragment
           boolean bool = true;
           FriendsContactsToggleFragment.e(FriendsContactsToggleFragment.this).setCurrentItem(1);
           paramAnonymousView = FriendsContactsToggleFragment.this;
-          if (ajx.f())
+          if (akr.f())
           {
             FriendsContactsToggleFragment.d(FriendsContactsToggleFragment.this);
-            if (!ajx.Z()) {}
+            if (!akr.Z()) {}
           }
           for (;;)
           {
@@ -242,27 +305,29 @@ public class FriendsContactsToggleFragment
           default: 
             return;
           case 0: 
-            ban.a().a(new bdw(LeftSwipeContentFragment.MY_FRIENDS_SEARCH_VIEW_FRAGMENT));
+            bbo.a().a(new bev(LeftSwipeContentFragment.MY_FRIENDS_SEARCH_VIEW_FRAGMENT));
             return;
           }
-          ban.a().a(new bdw(LeftSwipeContentFragment.ADDRESS_BOOK_SEARCH_VIEW_FRAGMENT));
+          paramAnonymousView = new Bundle();
+          paramAnonymousView.putBoolean("contextIsAdressBook", false);
+          bbo.a().a(new bev(LeftSwipeContentFragment.ADDRESS_BOOK_SEARCH_VIEW_FRAGMENT, paramAnonymousView));
         }
       });
-      c(2131361822).setOnClickListener(new View.OnClickListener()
+      c(2131361823).setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
         {
-          avh.a(getActivity(), FriendsContactsToggleFragment.f(FriendsContactsToggleFragment.this));
+          awf.a(getActivity(), FriendsContactsToggleFragment.f(FriendsContactsToggleFragment.this));
           getActivity().onBackPressed();
         }
       });
-      nf.e();
+      nw.e();
       return mFragmentLayout;
     }
   }
   
-  @boh
-  public void refreshOnGrantAccessToContactsEvent(bbu parambbu)
+  @bpi
+  public void refreshOnGrantAccessToContactsEvent(bcu parambcu)
   {
     c(mHasGivenAccessToContacts);
   }

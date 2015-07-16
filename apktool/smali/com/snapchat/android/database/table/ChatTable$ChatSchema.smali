@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzw;
+.implements Laav;
 
 
 # annotations
@@ -22,7 +22,7 @@
         "<",
         "Lcom/snapchat/android/database/table/ChatTable$ChatSchema;",
         ">;",
-        "Lzw;"
+        "Laav;"
     }
 .end annotation
 
@@ -104,7 +104,7 @@
 
     const/4 v2, 0x1
 
-    .line 71
+    .line 70
     new-instance v0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v1, "ID"
@@ -119,7 +119,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->ID:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 72
+    .line 71
     new-instance v0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v1, "TYPE"
@@ -134,7 +134,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->TYPE:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 73
+    .line 72
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "ACK_ID"
@@ -151,7 +151,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->ACK_ID:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 74
+    .line 73
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "RECIPIENT"
@@ -168,7 +168,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->RECIPIENT:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 75
+    .line 74
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "SENDER"
@@ -185,7 +185,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->SENDER:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 76
+    .line 75
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "IS_SAVED_BY_SENDER"
@@ -202,7 +202,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->IS_SAVED_BY_SENDER:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 77
+    .line 76
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "IS_SAVED_BY_RECIPIENT"
@@ -219,7 +219,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->IS_SAVED_BY_RECIPIENT:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 78
+    .line 77
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "IS_RELEASED_BY_RECIPIENT"
@@ -236,7 +236,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->IS_RELEASED_BY_RECIPIENT:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 79
+    .line 78
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "SEND_RECEIVE_STATUS"
@@ -253,7 +253,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->SEND_RECEIVE_STATUS:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 80
+    .line 79
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "TIMESTAMP"
@@ -270,7 +270,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->TIMESTAMP:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 81
+    .line 80
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "SEQ_NUM"
@@ -287,7 +287,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->SEQ_NUM:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 82
+    .line 81
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "USER_TEXT"
@@ -304,7 +304,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->USER_TEXT:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 83
+    .line 82
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "MEDIA_ID"
@@ -321,7 +321,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->MEDIA_ID:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 84
+    .line 83
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "CONVERSATION_ID"
@@ -338,7 +338,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->CONVERSATION_ID:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 85
+    .line 84
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "SENDER_MESSAGE_STATE_VERSION"
@@ -355,7 +355,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->SENDER_MESSAGE_STATE_VERSION:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 86
+    .line 85
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "RECIPIENT_MESSAGE_STATE_VERSION"
@@ -372,7 +372,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->RECIPIENT_MESSAGE_STATE_VERSION:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 87
+    .line 86
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "ITER_TOKEN"
@@ -389,7 +389,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->ITER_TOKEN:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 88
+    .line 87
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "HAS_LINKS"
@@ -406,7 +406,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->HAS_LINKS:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 89
+    .line 88
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "TARGET_VIEW"
@@ -423,7 +423,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->TARGET_VIEW:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 90
+    .line 89
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "RELEASED_TIMESTAMP"
@@ -440,7 +440,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->RELEASED_TIMESTAMP:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 91
+    .line 90
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "STATUS_TEXT"
@@ -457,7 +457,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->STATUS_TEXT:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 92
+    .line 91
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "MEDIA_TYPE"
@@ -474,7 +474,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->MEDIA_TYPE:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 93
+    .line 92
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "MEDIA_WIDTH"
@@ -491,7 +491,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->MEDIA_WIDTH:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 94
+    .line 93
     new-instance v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     const-string v4, "MEDIA_HEIGHT"
@@ -508,7 +508,7 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->MEDIA_HEIGHT:Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
-    .line 70
+    .line 69
     const/16 v0, 0x18
 
     new-array v0, v0, [Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
@@ -664,19 +664,19 @@
     .end annotation
 
     .prologue
-    .line 102
+    .line 101
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 103
+    .line 102
     iput p3, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->a:I
 
-    .line 104
+    .line 103
     iput-object p4, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->b:Ljava/lang/String;
 
-    .line 105
+    .line 104
     iput-object p5, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->c:Lcom/snapchat/android/database/DataType;
 
-    .line 106
+    .line 105
     return-void
 .end method
 
@@ -693,22 +693,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 108
+    .line 107
     invoke-direct {p0, p1, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 109
+    .line 108
     iput v0, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->a:I
 
-    .line 110
+    .line 109
     iput-object p2, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->b:Ljava/lang/String;
 
-    .line 111
+    .line 110
     iput-object p3, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->c:Lcom/snapchat/android/database/DataType;
 
-    .line 112
+    .line 111
     iput-object p4, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->d:Ljava/lang/String;
 
-    .line 113
+    .line 112
     return-void
 .end method
 
@@ -716,7 +716,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 69
     iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->b:Ljava/lang/String;
 
     return-object v0
@@ -726,7 +726,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 69
     iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->c:Lcom/snapchat/android/database/DataType;
 
     return-object v0
@@ -736,7 +736,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 69
     const-class v0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -752,7 +752,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 69
     sget-object v0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->$VALUES:[Lcom/snapchat/android/database/table/ChatTable$ChatSchema;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->clone()Ljava/lang/Object;
@@ -770,7 +770,7 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 121
     iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->b:Ljava/lang/String;
 
     return-object v0
@@ -780,7 +780,7 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 118
     iget v0, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->a:I
 
     return v0
@@ -790,7 +790,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 124
     iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->d:Ljava/lang/String;
 
     return-object v0
@@ -800,7 +800,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 115
     iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$ChatSchema;->c:Lcom/snapchat/android/database/DataType;
 
     return-object v0

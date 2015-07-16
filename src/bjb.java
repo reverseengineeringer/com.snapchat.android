@@ -1,73 +1,82 @@
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bjb
-  extends bhl
+public final class bjb
 {
-  @SerializedName("replayed")
-  protected Boolean replayed;
-  @SerializedName("screenshot_count")
-  protected Long screenshotCount;
-  @SerializedName("snap_id")
-  protected String snapId;
-  @SerializedName("timestamp")
-  protected Long timestamp;
-  @SerializedName("viewed")
-  protected Boolean viewed;
+  @SerializedName("auth")
+  protected bjy auth;
+  @SerializedName("conn_seq_num")
+  protected Long connSeqNum;
+  @SerializedName("conv_id")
+  protected String convId;
+  @SerializedName("from")
+  protected String from;
+  @SerializedName("to")
+  protected List<String> to;
   
-  public final Long a()
+  public final bjb a(String paramString)
   {
-    return timestamp;
+    from = paramString;
+    return this;
+  }
+  
+  public final bjb a(List<String> paramList)
+  {
+    to = paramList;
+    return this;
+  }
+  
+  public final String a()
+  {
+    return from;
+  }
+  
+  public final void a(bjy parambjy)
+  {
+    auth = parambjy;
   }
   
   public final void a(Long paramLong)
   {
-    timestamp = paramLong;
+    connSeqNum = paramLong;
   }
   
-  public final void a(String paramString)
+  public final bjb b(bjy parambjy)
   {
-    snapId = paramString;
+    auth = parambjy;
+    return this;
   }
   
-  public final String b()
+  public final bjb b(String paramString)
   {
-    return snapId;
+    convId = paramString;
+    return this;
   }
   
-  public final void b(Boolean paramBoolean)
+  public final List<String> b()
   {
-    viewed = paramBoolean;
+    return to;
   }
   
-  public final void b(Long paramLong)
+  public final String c()
   {
-    screenshotCount = paramLong;
+    return convId;
   }
   
-  public final Boolean c()
+  public final bjy d()
   {
-    return viewed;
-  }
-  
-  public final void c(Boolean paramBoolean)
-  {
-    replayed = paramBoolean;
-  }
-  
-  public final Boolean d()
-  {
-    return replayed;
+    return auth;
   }
   
   public final Long e()
   {
-    return screenshotCount;
+    return connSeqNum;
   }
   
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -76,15 +85,20 @@ public class bjb
       return false;
     }
     paramObject = (bjb)paramObject;
-    return new EqualsBuilder().append(timestamp, timestamp).append(snapId, snapId).append(viewed, viewed).append(replayed, replayed).append(screenshotCount, screenshotCount).isEquals();
+    return new EqualsBuilder().append(from, from).append(to, to).append(convId, convId).append(auth, auth).append(connSeqNum, connSeqNum).isEquals();
   }
   
-  public int hashCode()
+  public final boolean f()
   {
-    return new HashCodeBuilder().append(timestamp).append(snapId).append(viewed).append(replayed).append(screenshotCount).toHashCode();
+    return connSeqNum != null;
   }
   
-  public String toString()
+  public final int hashCode()
+  {
+    return new HashCodeBuilder().append(from).append(to).append(convId).append(auth).append(connSeqNum).toHashCode();
+  }
+  
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

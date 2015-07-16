@@ -40,9 +40,9 @@
     .locals 12
 
     .prologue
-    const/high16 v11, -0x1000000
-
     const/4 v1, 0x0
+
+    const/high16 v11, -0x1000000
 
     const/4 v10, 0x2
 
@@ -51,72 +51,33 @@
     const/4 v8, 0x0
 
     .line 280
-    if-eqz p2, :cond_2
+    if-eqz p2, :cond_1
 
     .line 281
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$4;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/SignupFragment;->e(Lcom/snapchat/android/fragments/signup/SignupFragment;)Lcom/snapchat/android/analytics/RegistrationAnalytics;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/SignupFragment;->c(Lcom/snapchat/android/fragments/signup/SignupFragment;)Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$4;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
+    new-instance v0, Llb;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/SignupFragment;->c(Lcom/snapchat/android/fragments/signup/SignupFragment;)Z
+    invoke-direct {v0}, Llb;-><init>()V
 
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$4;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/SignupFragment;->d(Lcom/snapchat/android/fragments/signup/SignupFragment;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$4;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/SignupFragment;->b(Lcom/snapchat/android/fragments/signup/SignupFragment;)Landroid/widget/EditText;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    new-instance v1, Lkj;
-
-    invoke-direct {v1}, Lkj;-><init>()V
-
-    iput-object v0, v1, Lkj;->emailSuggestion:Ljava/lang/String;
-
-    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->n()V
 
-    .line 290
+    .line 288
     :cond_0
-    :goto_1
+    :goto_0
     return-void
 
+    .line 283
     :cond_1
-    move-object v0, v1
-
-    .line 281
-    goto :goto_0
-
-    .line 285
-    :cond_2
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$4;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
     invoke-static {v0, v8}, Lcom/snapchat/android/fragments/signup/SignupFragment;->a(Lcom/snapchat/android/fragments/signup/SignupFragment;Z)Z
 
-    .line 287
+    .line 285
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$4;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/signup/SignupFragment;->b(Lcom/snapchat/android/fragments/signup/SignupFragment;)Landroid/widget/EditText;
@@ -141,7 +102,7 @@
 
     move-result-object v0
 
-    .line 288
+    .line 286
     iget-object v2, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$4;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
     const-string v3, "@"
@@ -172,37 +133,39 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
-    sget-object v0, Lcom/snapchat/android/fragments/signup/SignupFragment;->a:Ldi;
+    sget-object v0, Lcom/snapchat/android/fragments/signup/SignupFragment;->a:Ldr;
 
-    invoke-virtual {v0, v5}, Ldi;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ldr;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
-    :cond_3
-    :goto_2
-    if-eqz v1, :cond_0
+    :cond_2
+    move-object v0, v1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    :goto_1
+    if-eqz v0, :cond_0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     aget-object v3, v3, v8
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string v3, "@"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -294,21 +257,21 @@
 
     iput-object v0, v2, Lcom/snapchat/android/fragments/signup/SignupFragment;->b:Ljava/lang/String;
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    :cond_4
-    sget-object v0, Lcom/snapchat/android/fragments/signup/SignupFragment;->a:Ldi;
+    :cond_3
+    sget-object v0, Lcom/snapchat/android/fragments/signup/SignupFragment;->a:Ldr;
 
-    invoke-virtual {v0}, Ldi;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ldr;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
-    :cond_5
+    :cond_4
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -320,11 +283,14 @@
 
     move-result v7
 
-    if-gt v7, v10, :cond_5
+    if-gt v7, v10, :cond_4
 
-    if-lez v7, :cond_5
+    if-lez v7, :cond_4
 
-    move-object v1, v0
+    goto/16 :goto_1
 
-    goto/16 :goto_2
+    :cond_5
+    move-object v0, v1
+
+    goto/16 :goto_1
 .end method

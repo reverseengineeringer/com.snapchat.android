@@ -4,20 +4,20 @@
 
 
 # instance fields
-.field public mVolumeViewType:Lcom/snapchat/android/ui/CustomVolumeView$VolumeViewType;
+.field public final mSpeed:F
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/ui/CustomVolumeView$VolumeViewType;)V
+.method public constructor <init>(F)V
     .locals 0
 
     .prologue
-    .line 8
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9
-    iput-object p1, p0, Lbeu;->mVolumeViewType:Lcom/snapchat/android/ui/CustomVolumeView$VolumeViewType;
-
     .line 10
+    iput p1, p0, Lbeu;->mSpeed:F
+
+    .line 11
     return-void
 .end method

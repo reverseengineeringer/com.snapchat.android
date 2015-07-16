@@ -1,6 +1,6 @@
 public abstract interface al
 {
-  public abstract as a(ex paramex, au paramau);
+  public abstract as a(fg paramfg, au paramau);
 }
 
 /* Location:

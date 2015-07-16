@@ -42,10 +42,10 @@
 .method public final a(Lcom/snapchat/android/analytics/NotificationAnalytics$NotificationDestinationType;)J
     .locals 10
     .param p1    # Lcom/snapchat/android/analytics/NotificationAnalytics$NotificationDestinationType;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
@@ -88,9 +88,9 @@
 
     const-string v6, "type"
 
-    invoke-static {}, Laux;->a()Laux;
+    invoke-static {}, Lavv;->a()Lavv;
 
-    invoke-static {}, Laux;->b()Lcom/snapchat/android/util/StartupPath;
+    invoke-static {}, Lavv;->b()Lcom/snapchat/android/util/StartupPath;
 
     move-result-object v7
 

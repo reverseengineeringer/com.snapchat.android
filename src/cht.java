@@ -1,94 +1,163 @@
-final class cht
-  extends cji
+import java.io.Serializable;
+import org.joda.convert.ToString;
+
+public final class cht
+  extends cii
+  implements cic, Serializable
 {
-  protected final chl a;
+  public final long a;
+  public final chg b;
   
-  cht(chl paramchl)
+  public cht()
   {
-    super(cgi.s(), paramchl.Q());
-    a = paramchl;
+    this(chk.a(), cjd.M());
   }
   
-  public final int a(long paramLong)
+  public cht(byte paramByte)
   {
-    return a.a(paramLong);
+    this(0L, cjd.M());
   }
   
-  public final long a(long paramLong, int paramInt)
+  public cht(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6, int paramInt7)
+  {
+    this(paramInt1, paramInt2, paramInt3, paramInt4, paramInt5, paramInt6, paramInt7, cjd.L());
+  }
+  
+  private cht(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6, int paramInt7, chg paramchg)
+  {
+    paramchg = chk.a(paramchg).b();
+    long l = paramchg.a(paramInt1, paramInt2, paramInt3, paramInt4, paramInt5, paramInt6, paramInt7);
+    b = paramchg;
+    a = l;
+  }
+  
+  private cht(long paramLong, chg paramchg)
+  {
+    paramchg = chk.a(paramchg);
+    a = paramchg.a().a(chl.a, paramLong);
+    b = paramchg.b();
+  }
+  
+  public static cht c()
+  {
+    return new cht();
+  }
+  
+  public final int a()
+  {
+    return 4;
+  }
+  
+  public final int a(int paramInt)
+  {
+    switch (paramInt)
+    {
+    default: 
+      throw new IndexOutOfBoundsException("Invalid index: " + paramInt);
+    case 0: 
+      return b.E().a(a);
+    case 1: 
+      return b.C().a(a);
+    case 2: 
+      return b.u().a(a);
+    }
+    return b.e().a(a);
+  }
+  
+  public final int a(chj paramchj)
+  {
+    if (paramchj == null) {
+      throw new IllegalArgumentException("The DateTimeFieldType must not be null");
+    }
+    return paramchj.a(b).a(a);
+  }
+  
+  public final int a(cic paramcic)
+  {
+    if (this == paramcic) {
+      return 0;
+    }
+    if ((paramcic instanceof cht))
+    {
+      cht localcht = (cht)paramcic;
+      if (b.equals(b))
+      {
+        if (a < a) {
+          return -1;
+        }
+        if (a == a) {
+          return 0;
+        }
+        return 1;
+      }
+    }
+    return super.a(paramcic);
+  }
+  
+  protected final chi a(int paramInt, chg paramchg)
+  {
+    switch (paramInt)
+    {
+    default: 
+      throw new IndexOutOfBoundsException("Invalid index: " + paramInt);
+    case 0: 
+      return paramchg.E();
+    case 1: 
+      return paramchg.C();
+    case 2: 
+      return paramchg.u();
+    }
+    return paramchg.e();
+  }
+  
+  public final cht a(long paramLong)
+  {
+    if (paramLong == a) {
+      return this;
+    }
+    return new cht(paramLong, b);
+  }
+  
+  public final chg b()
+  {
+    return b;
+  }
+  
+  public final cht b(int paramInt)
   {
     if (paramInt == 0) {
-      return paramLong;
+      return this;
     }
-    int i = a(paramLong);
-    int j = i + paramInt;
-    if (((i ^ j) < 0) && ((i ^ paramInt) >= 0)) {
-      throw new ArithmeticException("The calculation caused an overflow: " + i + " + " + paramInt);
+    return a(b.i().a(a, paramInt));
+  }
+  
+  public final boolean b(chj paramchj)
+  {
+    if (paramchj == null) {
+      return false;
     }
-    return b(paramLong, j);
+    return paramchj.a(b).c();
   }
   
-  public final long a(long paramLong1, long paramLong2)
+  public final boolean equals(Object paramObject)
   {
-    return a(paramLong1, cjh.a(paramLong2));
-  }
-  
-  public final long b(long paramLong, int paramInt)
-  {
-    cjh.a(this, paramInt, a.N(), a.O());
-    return a.d(paramLong, paramInt);
-  }
-  
-  public final boolean b(long paramLong)
-  {
-    return a.c(a(paramLong));
-  }
-  
-  public final long c(long paramLong1, long paramLong2)
-  {
-    if (paramLong1 < paramLong2) {
-      return -a.a(paramLong2, paramLong1);
+    if (this == paramObject) {
+      return true;
     }
-    return a.a(paramLong1, paramLong2);
-  }
-  
-  public final long d(long paramLong)
-  {
-    return a.b(a(paramLong));
-  }
-  
-  public final long e(long paramLong)
-  {
-    int i = a(paramLong);
-    long l = paramLong;
-    if (paramLong != a.b(i)) {
-      l = a.b(i + 1);
+    if ((paramObject instanceof cht))
+    {
+      cht localcht = (cht)paramObject;
+      if (b.equals(b)) {
+        return a == a;
+      }
     }
-    return l;
+    return super.equals(paramObject);
   }
   
-  public final cgm e()
+  @ToString
+  public final String toString()
   {
-    return null;
-  }
-  
-  public final cgm f()
-  {
-    return a.c;
-  }
-  
-  public final int g()
-  {
-    return a.N();
-  }
-  
-  public final int h()
-  {
-    return a.O();
-  }
-  
-  public final long i(long paramLong)
-  {
-    return paramLong - d(paramLong);
+    return cld.a.b().a(this);
   }
 }
 

@@ -19,9 +19,9 @@
 
 .field private final c:Landroid/content/res/Resources;
 
-.field private final d:Lasq;
+.field private final d:Latp;
 
-.field private final e:Lauw;
+.field private final e:Lavu;
 
 
 # direct methods
@@ -38,24 +38,24 @@
 
     move-result-object v0
 
-    new-instance v1, Lasq;
+    new-instance v1, Latp;
 
-    invoke-direct {v1}, Lasq;-><init>()V
+    invoke-direct {v1}, Latp;-><init>()V
 
-    invoke-static {}, Lauw;->a()Lauw;
+    invoke-static {}, Lavu;->a()Lavu;
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/ui/window/WindowConfiguration;-><init>(Landroid/content/res/Resources;Lasq;Lauw;)V
+    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/ui/window/WindowConfiguration;-><init>(Landroid/content/res/Resources;Latp;Lavu;)V
 
     .line 77
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/res/Resources;Lasq;Lauw;)V
+.method private constructor <init>(Landroid/content/res/Resources;Latp;Lavu;)V
     .locals 0
     .param p1    # Landroid/content/res/Resources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -67,10 +67,10 @@
     iput-object p1, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->c:Landroid/content/res/Resources;
 
     .line 83
-    iput-object p2, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->d:Lasq;
+    iput-object p2, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->d:Latp;
 
     .line 84
-    iput-object p3, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->e:Lauw;
+    iput-object p3, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->e:Lavu;
 
     .line 85
     return-void
@@ -92,15 +92,6 @@
     move-result v0
 
     if-nez v0, :cond_0
-
-    .line 120
-    const-string v0, "WindowConfiguration"
-
-    const-string v2, "Attempt to set window configuration on uninitialized window"
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v1}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 127
     :goto_0
@@ -160,9 +151,9 @@
 
     if-ne p1, v0, :cond_7
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->e:Lauw;
+    iget-object v0, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->e:Lavu;
 
-    invoke-virtual {v0}, Lauw;->b()V
+    invoke-virtual {v0}, Lavu;->b()V
 
     :goto_4
     sget-object v0, Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;->DRAW_BACKGROUND_BEHIND:Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;
@@ -171,7 +162,7 @@
 
     iget-object v0, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->c:Landroid/content/res/Resources;
 
-    const v1, 0x7f0900a0
+    const v1, 0x7f0900a1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -228,9 +219,9 @@
 
     .line 126
     :cond_7
-    iget-object v0, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->e:Lauw;
+    iget-object v0, p0, Lcom/snapchat/android/ui/window/WindowConfiguration;->e:Lavu;
 
-    invoke-virtual {v0}, Lauw;->c()V
+    invoke-virtual {v0}, Lavu;->c()V
 
     goto :goto_4
 

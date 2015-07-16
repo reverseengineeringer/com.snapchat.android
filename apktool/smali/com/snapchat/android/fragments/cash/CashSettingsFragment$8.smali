@@ -43,11 +43,11 @@
     .line 249
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$8;->a:Lcom/snapchat/android/fragments/cash/CashSettingsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a:Lqh;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a:Lqx;
 
     const-string v1, "SQUARE"
 
-    invoke-virtual {v0, v1}, Lqh;->b(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lqx;->b(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -56,11 +56,11 @@
     .line 250
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$8;->a:Lcom/snapchat/android/fragments/cash/CashSettingsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a:Lqh;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a:Lqx;
 
     const-string v1, "SQUARE"
 
-    invoke-virtual {v0, v1}, Lqh;->a(Ljava/lang/String;)Lqo;
+    invoke-virtual {v0, v1}, Lqx;->a(Ljava/lang/String;)Lre;
 
     move-result-object v0
 
@@ -76,7 +76,7 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lqo;->a(Ljava/lang/String;)V
+    invoke-interface {v0, v1}, Lre;->a(Ljava/lang/String;)V
 
     .line 255
     :goto_0
@@ -84,7 +84,7 @@
 
     .line 253
     :cond_0
-    invoke-static {}, Lqh;->a()V
+    invoke-static {}, Lqx;->a()V
 
     goto :goto_0
 .end method

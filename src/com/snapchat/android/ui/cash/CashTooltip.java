@@ -26,7 +26,7 @@ public class CashTooltip
   public CashTooltip(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968612, this, true);
+    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968613, this, true);
     a = PreferenceManager.getDefaultSharedPreferences(paramContext);
     b = false;
     setAlpha(0.0F);

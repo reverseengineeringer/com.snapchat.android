@@ -33,6 +33,10 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
 
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     iget-object v0, p0, Lcom/google/android/gms/internal/zzaf$6;->zznI:Lcom/google/android/gms/internal/zzaf;
 
     const/4 v1, 0x0

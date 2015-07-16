@@ -1,4 +1,14 @@
-public final class bby {}
+import com.snapchat.android.util.chat.SnapchatUrlSpan;
+
+public final class bby
+{
+  public SnapchatUrlSpan snapchatUrlSpan;
+  
+  public bby(SnapchatUrlSpan paramSnapchatUrlSpan)
+  {
+    snapchatUrlSpan = paramSnapchatUrlSpan;
+  }
+}
 
 /* Location:
  * Qualified Name:     bby

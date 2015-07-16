@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field final synthetic a:Laov;
+.field final synthetic a:Lapu;
 
 .field final synthetic b:Landroid/widget/ImageView;
 
@@ -28,14 +28,14 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/stories/ui/MyStoryView;Laov;Landroid/widget/ImageView;Landroid/widget/TextView;)V
+.method constructor <init>(Lcom/snapchat/android/stories/ui/MyStoryView;Lapu;Landroid/widget/ImageView;Landroid/widget/TextView;)V
     .locals 0
 
     .prologue
-    .line 231
+    .line 236
     iput-object p1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->d:Lcom/snapchat/android/stories/ui/MyStoryView;
 
-    iput-object p2, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->a:Laov;
+    iput-object p2, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->a:Lapu;
 
     iput-object p3, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->b:Landroid/widget/ImageView;
 
@@ -52,7 +52,16 @@
     .locals 4
 
     .prologue
-    .line 234
+    .line 239
+    iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->d:Lcom/snapchat/android/stories/ui/MyStoryView;
+
+    invoke-static {v0}, Lcom/snapchat/android/stories/ui/MyStoryView;->d(Lcom/snapchat/android/stories/ui/MyStoryView;)Lcom/snapchat/android/stories/ui/MyStoryView$a;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/snapchat/android/stories/ui/MyStoryView$a;->a()V
+
+    .line 240
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->d:Lcom/snapchat/android/stories/ui/MyStoryView;
 
     invoke-static {v0}, Lcom/snapchat/android/stories/ui/MyStoryView;->f(Lcom/snapchat/android/stories/ui/MyStoryView;)Z
@@ -61,25 +70,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 235
+    .line 241
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->d:Lcom/snapchat/android/stories/ui/MyStoryView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Lcom/snapchat/android/stories/ui/MyStoryView;Z)Z
 
-    .line 236
+    .line 242
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->d:Lcom/snapchat/android/stories/ui/MyStoryView;
 
-    iget-object v1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->a:Laov;
+    iget-object v1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->a:Lapu;
 
     iget-object v2, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->b:Landroid/widget/ImageView;
 
     iget-object v3, p0, Lcom/snapchat/android/stories/ui/MyStoryView$5;->c:Landroid/widget/TextView;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Lcom/snapchat/android/stories/ui/MyStoryView;Laov;Landroid/widget/ImageView;Landroid/widget/TextView;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Lcom/snapchat/android/stories/ui/MyStoryView;Lapu;Landroid/widget/ImageView;Landroid/widget/TextView;)V
 
-    .line 238
+    .line 244
     :cond_0
     return-void
 .end method

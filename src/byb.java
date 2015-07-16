@@ -1,22 +1,12 @@
 public final class byb
-  implements bxg
 {
-  public final bxk a(bwz parambwz, String paramString)
-  {
-    try
-    {
-      parambwz = new Double(paramString);
-      return new bxk(new Double(Math.rint(parambwz.doubleValue())).toString(), 0);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Invalid argument.", parambwz);
-    }
-  }
+  String a = null;
+  car b = null;
   
-  public final String a()
+  public byb(String paramString, car paramcar)
   {
-    return "rint";
+    a = paramString;
+    b = paramcar;
   }
 }
 

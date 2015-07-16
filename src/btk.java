@@ -1,8 +1,8 @@
-import java.util.Date;
+import android.content.Context;
 
 public abstract interface btk
 {
-  public abstract Date a();
+  public abstract btj a(bsl parambsl1, bsl parambsl2, String paramString, Context paramContext, brv parambrv, bud parambud);
 }
 
 /* Location:

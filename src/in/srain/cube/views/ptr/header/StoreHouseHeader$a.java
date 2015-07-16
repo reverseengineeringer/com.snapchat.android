@@ -1,6 +1,6 @@
 package in.srain.cube.views.ptr.header;
 
-import bux;
+import bvy;
 import java.util.ArrayList;
 
 final class StoreHouseHeader$a
@@ -25,12 +25,12 @@ final class StoreHouseHeader$a
       if (m <= b)
       {
         int n = a.a.size();
-        bux localbux = (bux)a.a.get(m % n);
-        localbux.setFillAfter(false);
-        localbux.setFillEnabled(true);
-        localbux.setFillBefore(false);
-        localbux.setDuration(StoreHouseHeader.c(a));
-        localbux.a(StoreHouseHeader.d(a), StoreHouseHeader.e(a));
+        bvy localbvy = (bvy)a.a.get(m % n);
+        localbvy.setFillAfter(false);
+        localbvy.setFillEnabled(true);
+        localbvy.setFillBefore(false);
+        localbvy.setDuration(StoreHouseHeader.c(a));
+        localbvy.a(StoreHouseHeader.d(a), StoreHouseHeader.e(a));
       }
       i += 1;
     }

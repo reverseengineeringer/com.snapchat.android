@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/deeplink/DeepLinkParser_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Labh;",
+        "Lach;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Labh;",
+            "Lach;",
             ">;"
         }
     .end annotation
@@ -127,14 +127,14 @@
 
 
 # virtual methods
-.method public final get()Labh;
+.method public final get()Lach;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Labh;
+    new-instance v0, Lach;
 
-    invoke-direct {v0}, Labh;-><init>()V
+    invoke-direct {v0}, Lach;-><init>()V
 
     return-object v0
 .end method
@@ -144,7 +144,7 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/deeplink/DeepLinkParser_Factory;->get()Labh;
+    invoke-virtual {p0}, Lcom/snapchat/android/deeplink/DeepLinkParser_Factory;->get()Lach;
 
     move-result-object v0
 

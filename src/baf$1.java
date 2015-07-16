@@ -1,21 +1,29 @@
+import android.app.Activity;
+import android.view.View;
+import android.view.Window;
+import com.snapchat.android.LandingPageActivity;
+import java.util.HashMap;
+
 final class baf$1
   implements Runnable
 {
-  baf$1(baf parambaf, String paramString) {}
+  baf$1(baf parambaf, Activity paramActivity, bau parambau) {}
   
   public final void run()
   {
-    String str = val$stackTrace;
-    bag.a[] arrayOfa = bag.IGNORED_METHODS;
-    int j = arrayOfa.length;
-    int i = 0;
-    while (i < j)
+    baf localbaf = this$0;
+    Activity localActivity = val$activity;
+    bau localbau = val$shakeReporter;
+    View localView = localActivity.getWindow().getDecorView();
+    HashMap localHashMap = new HashMap();
+    localbaf.a(localView, localHashMap);
+    if (((localActivity instanceof LandingPageActivity)) && (((LandingPageActivity)localActivity).d()))
     {
-      bag.a locala = arrayOfa[i];
-      str = str.replaceAll(bag.a(mClassName, mMethodName), "ignore.$1");
-      i += 1;
+      bhp.a(1000L);
+      bhp.a(new baf.6(localbaf, localView, localHashMap, localActivity, localbau));
+      return;
     }
-    this$0.a(str);
+    bhp.a(new baf.7(localbaf, localView, localHashMap, localActivity, localbau));
   }
 }
 

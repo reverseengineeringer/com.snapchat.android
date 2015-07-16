@@ -1,9 +1,9 @@
 package com.snapchat.android.fragments.chat;
 
-import afy;
-import afy.a;
-import afy.b;
-import ajv;
+import agy;
+import agy.a;
+import agy.b;
+import akp;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -20,8 +20,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.Filter;
-import avh;
-import cgc;
+import awf;
+import chd;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.model.Friend;
@@ -33,13 +33,13 @@ import javax.inject.Provider;
 
 public class ChatWithFragment
   extends SnapchatFragment
-  implements afy.a
+  implements agy.a
 {
   protected final AdapterView.OnItemClickListener a = new AdapterView.OnItemClickListener()
   {
     public final void onItemClick(AdapterView<?> paramAnonymousAdapterView, View paramAnonymousView, int paramAnonymousInt, long paramAnonymousLong)
     {
-      ChatFragment.a(getTagb.h());
+      ChatFragment.a(getTagb.l());
       ((LandingPageActivity)getActivity()).a(0, false);
       getActivity().onBackPressed();
     }
@@ -51,7 +51,7 @@ public class ChatWithFragment
     public final void onScrollStateChanged(AbsListView paramAnonymousAbsListView, int paramAnonymousInt)
     {
       if (paramAnonymousInt != 0) {
-        avh.a(getActivity(), ChatWithFragment.b(ChatWithFragment.this));
+        awf.a(getActivity(), ChatWithFragment.b(ChatWithFragment.this));
       }
     }
   };
@@ -77,24 +77,24 @@ public class ChatWithFragment
     }
   };
   private StickyListHeadersListView d;
-  private afy e;
+  private agy e;
   private EditText f;
   private View g;
   private View h;
-  private final Provider<ajv> i;
+  private final Provider<akp> i;
   
   public ChatWithFragment()
   {
-    this(ajv.UNSAFE_USER_PROVIDER);
+    this(akp.UNSAFE_USER_PROVIDER);
   }
   
   @SuppressLint({"ValidFragment"})
-  private ChatWithFragment(Provider<ajv> paramProvider)
+  private ChatWithFragment(Provider<akp> paramProvider)
   {
     i = paramProvider;
   }
   
-  public final void a(@cgc List<Friend> paramList)
+  public final void a(@chd List<Friend> paramList)
   {
     if ((paramList == null) || (paramList.isEmpty()))
     {
@@ -108,23 +108,23 @@ public class ChatWithFragment
   {
     super.e();
     f.requestFocus();
-    avh.g(getActivity());
+    awf.g(getActivity());
   }
   
   public final boolean g()
   {
-    avh.a(getActivity(), mFragmentLayout);
+    awf.a(getActivity(), mFragmentLayout);
     return false;
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968628, paramViewGroup, false);
-    paramLayoutInflater = (ajv)i.get();
+    mFragmentLayout = paramLayoutInflater.inflate(2130968629, paramViewGroup, false);
+    paramLayoutInflater = (akp)i.get();
     if (paramLayoutInflater != null) {}
     for (paramLayoutInflater = paramLayoutInflater.k();; paramLayoutInflater = new ArrayList())
     {
-      e = new afy(getActivity(), paramLayoutInflater, new Friend.a(), this);
+      e = new agy(getActivity(), paramLayoutInflater, new Friend.a(), this);
       d = ((StickyListHeadersListView)c(2131362127));
       d.setAdapter(e);
       d.setFastScrollAlwaysVisible(true);
@@ -133,7 +133,7 @@ public class ChatWithFragment
       d.setOnScrollListener(b);
       f = ((EditText)c(2131362126));
       f.addTextChangedListener(c);
-      g = c(2131361836);
+      g = c(2131361837);
       g.setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)

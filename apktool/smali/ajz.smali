@@ -1,111 +1,192 @@
-.class public final Lajz;
+.class public Lajz;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private final pair:Landroid/util/Pair;
+.field public mAddliveBaseUrls:Ljava/util/List;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "addlive_proxy_list"
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroid/util/Pair",
+            "Ljava/util/List",
             "<",
-            "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 .end field
 
+.field public mBaseUrl:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "gae_proxy"
+    .end annotation
+.end field
+
+.field public mMediaBaseUrl:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "media_proxy"
+    .end annotation
+.end field
+
+.field private mPriority:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "priority"
+    .end annotation
+.end field
+
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;I)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;I)V"
+        }
+    .end annotation
 
     .prologue
-    .line 8
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9
-    new-instance v0, Landroid/util/Pair;
+    .line 25
+    iput-object p1, p0, Lajz;->mBaseUrl:Ljava/lang/String;
 
-    invoke-direct {v0, p1, p2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    .line 26
+    iput-object p2, p0, Lajz;->mMediaBaseUrl:Ljava/lang/String;
 
-    iput-object v0, p0, Lajz;->pair:Landroid/util/Pair;
+    .line 27
+    iput-object p3, p0, Lajz;->mAddliveBaseUrls:Ljava/util/List;
 
-    .line 10
+    .line 28
+    iput p4, p0, Lajz;->mPriority:I
+
+    .line 29
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .prologue
-    .line 13
-    iget-object v0, p0, Lajz;->pair:Landroid/util/Pair;
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    check-cast v0, Ljava/lang/String;
+    .line 55
+    if-ne p0, p1, :cond_1
 
-    return-object v0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 16
-    iget-object v0, p0, Lajz;->pair:Landroid/util/Pair;
-
-    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .prologue
-    .line 21
-    instance-of v0, p1, Lajz;
-
-    if-eqz v0, :cond_0
-
-    .line 22
-    iget-object v0, p0, Lajz;->pair:Landroid/util/Pair;
-
-    check-cast p1, Lajz;
-
-    iget-object v1, p1, Lajz;->pair:Landroid/util/Pair;
-
-    invoke-virtual {v0, v1}, Landroid/util/Pair;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    .line 24
+    .line 61
+    :cond_0
     :goto_0
     return v0
 
-    :cond_0
-    const/4 v0, 0x0
+    .line 57
+    :cond_1
+    instance-of v2, p1, Lajz;
+
+    if-nez v2, :cond_2
+
+    move v0, v1
+
+    .line 58
+    goto :goto_0
+
+    .line 60
+    :cond_2
+    check-cast p1, Lajz;
+
+    .line 61
+    iget-object v2, p0, Lajz;->mBaseUrl:Ljava/lang/String;
+
+    iget-object v3, p1, Lajz;->mBaseUrl:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lajz;->mMediaBaseUrl:Ljava/lang/String;
+
+    iget-object v3, p1, Lajz;->mMediaBaseUrl:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lajz;->mAddliveBaseUrls:Ljava/util/List;
+
+    iget-object v3, p1, Lajz;->mAddliveBaseUrls:Ljava/util/List;
+
+    invoke-interface {v2, v3}, Ljava/util/List;->containsAll(Ljava/util/Collection;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p1, Lajz;->mAddliveBaseUrls:Ljava/util/List;
+
+    iget-object v3, p0, Lajz;->mAddliveBaseUrls:Ljava/util/List;
+
+    invoke-interface {v2, v3}, Ljava/util/List;->containsAll(Ljava/util/Collection;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget v2, p0, Lajz;->mPriority:I
+
+    iget v3, p1, Lajz;->mPriority:I
+
+    if-eq v2, v3, :cond_0
+
+    :cond_3
+    move v0, v1
 
     goto :goto_0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 1
 
     .prologue
-    .line 29
-    iget-object v0, p0, Lajz;->pair:Landroid/util/Pair;
+    .line 71
+    iget-object v0, p0, Lajz;->mBaseUrl:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/util/Pair;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
     return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 50
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
+
+    move-result-object v0
+
+    const-class v1, Lajz;
+
+    invoke-virtual {v0, p0, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

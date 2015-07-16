@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 29
+    .line 31
     new-instance v0, Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
     const-string v1, "TOP_SNAP"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/DSnapPage$Form;->TOP_SNAP:Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
-    .line 30
+    .line 32
     new-instance v0, Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
     const-string v1, "LONGFORM"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/DSnapPage$Form;->LONGFORM:Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
-    .line 28
+    .line 30
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/snapchat/android/discover/model/DSnapPage$Form;
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 28
+    .line 30
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 28
+    .line 30
     const-class v0, Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -109,11 +109,11 @@
 
 .method public static valueOfIgnoreCase(Ljava/lang/String;)Lcom/snapchat/android/discover/model/DSnapPage$Form;
     .locals 1
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 42
+    .line 44
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 28
+    .line 30
     sget-object v0, Lcom/snapchat/android/discover/model/DSnapPage$Form;->$VALUES:[Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/discover/model/DSnapPage$Form;->clone()Ljava/lang/Object;
@@ -149,7 +149,7 @@
     .locals 1
 
     .prologue
-    .line 37
+    .line 39
     invoke-virtual {p0}, Lcom/snapchat/android/discover/model/DSnapPage$Form;->ordinal()I
 
     move-result v0
@@ -161,7 +161,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 36
     invoke-virtual {p0}, Lcom/snapchat/android/discover/model/DSnapPage$Form;->name()Ljava/lang/String;
 
     move-result-object v0

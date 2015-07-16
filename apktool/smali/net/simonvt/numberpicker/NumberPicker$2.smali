@@ -61,7 +61,7 @@
 
     move-result v0
 
-    sget v1, Lbws$b;->np__increment:I
+    sget v1, Lbxt$b;->np__increment:I
 
     if-ne v0, v1, :cond_0
 

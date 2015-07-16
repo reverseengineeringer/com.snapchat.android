@@ -1,10 +1,10 @@
 package com.snapchat.android.model;
 
-import cgb;
+import chc;
 
 public abstract interface StoryGroup$b
 {
-  public abstract void a(@cgb StoryGroup paramStoryGroup);
+  public abstract void a(@chc StoryGroup paramStoryGroup);
 }
 
 /* Location:

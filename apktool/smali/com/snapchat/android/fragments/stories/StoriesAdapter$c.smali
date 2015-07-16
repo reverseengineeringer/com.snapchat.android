@@ -1,5 +1,5 @@
 .class Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;
-.super Lpp;
+.super Lqg;
 .source "SourceFile"
 
 
@@ -22,15 +22,15 @@
 .method private constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/FriendAction;Lcom/snapchat/android/model/Friend;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/model/FriendAction$BlockReason;)V
     .locals 9
     .param p7    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 1065
+    .line 1101
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
-    .line 1066
+    .line 1102
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -49,9 +49,9 @@
 
     move-object/from16 v8, p8
 
-    invoke-direct/range {v0 .. v8}, Lpp;-><init>(Lcom/snapchat/android/model/FriendAction;Lcom/snapchat/android/model/Friend;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Lcom/snapchat/android/model/FriendAction$BlockReason;)V
+    invoke-direct/range {v0 .. v8}, Lqg;-><init>(Lcom/snapchat/android/model/FriendAction;Lcom/snapchat/android/model/Friend;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Lcom/snapchat/android/model/FriendAction$BlockReason;)V
 
-    .line 1067
+    .line 1103
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .locals 0
 
     .prologue
-    .line 1061
+    .line 1097
     invoke-direct/range {p0 .. p8}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/FriendAction;Lcom/snapchat/android/model/Friend;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/model/FriendAction$BlockReason;)V
 
     return-void
@@ -67,80 +67,80 @@
 
 
 # virtual methods
-.method protected a(Lbkh;Lajv;)V
+.method protected a(Lbli;Lakp;)V
     .locals 1
-    .param p2    # Lajv;
-        .annotation build Lcgc;
+    .param p2    # Lakp;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 1090
-    invoke-super {p0, p1, p2}, Lpp;->a(Lbkh;Lajv;)V
+    .line 1126
+    invoke-super {p0, p1, p2}, Lqg;->a(Lbli;Lakp;)V
 
-    .line 1092
+    .line 1128
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->notifyDataSetChanged()V
 
-    .line 1093
+    .line 1129
     return-void
 .end method
 
-.method public final a(Lbkh;Luc;)V
+.method public final a(Lbli;Lus;)V
     .locals 2
-    .param p1    # Lbkh;
-        .annotation build Lcgc;
+    .param p1    # Lbli;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .param p2    # Luc;
-        .annotation build Lcgb;
+    .param p2    # Lus;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lccm;
+    .annotation build Lcdn;
     .end annotation
 
     .prologue
-    .line 1081
-    invoke-super {p0, p1, p2}, Lpp;->a(Lbkh;Luc;)V
+    .line 1117
+    invoke-super {p0, p1, p2}, Lqg;->a(Lbli;Lus;)V
 
-    .line 1083
+    .line 1119
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->mFriend:Lcom/snapchat/android/model/Friend;
 
     if-eqz v0, :cond_0
 
-    .line 1084
+    .line 1120
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->mFriend:Lcom/snapchat/android/model/Friend;
 
     sget-object v1, Lcom/snapchat/android/model/FriendAction;->NONE:Lcom/snapchat/android/model/FriendAction;
 
     iput-object v1, v0, Lcom/snapchat/android/model/Friend;->mActionState:Lcom/snapchat/android/model/FriendAction;
 
-    .line 1086
+    .line 1122
     :cond_0
     return-void
 .end method
 
-.method public final f()V
+.method public execute()V
     .locals 2
 
     .prologue
-    .line 1071
+    .line 1107
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->mFriend:Lcom/snapchat/android/model/Friend;
 
     if-eqz v0, :cond_0
 
-    .line 1072
+    .line 1108
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->mFriend:Lcom/snapchat/android/model/Friend;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->mAction:Lcom/snapchat/android/model/FriendAction;
 
     iput-object v1, v0, Lcom/snapchat/android/model/Friend;->mActionState:Lcom/snapchat/android/model/FriendAction;
 
-    .line 1074
+    .line 1110
     :cond_0
-    invoke-super {p0}, Lpp;->f()V
+    invoke-super {p0}, Lqg;->execute()V
 
-    .line 1075
+    .line 1111
     return-void
 .end method

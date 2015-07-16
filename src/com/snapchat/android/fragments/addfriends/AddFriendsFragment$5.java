@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.addfriends;
 
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
-import avh;
+import awf;
 
 final class AddFriendsFragment$5
   implements View.OnFocusChangeListener
@@ -13,9 +13,9 @@ final class AddFriendsFragment$5
   {
     if (paramBoolean)
     {
-      avh.g(a.getActivity());
+      awf.g(a.getActivity());
       AddFriendsFragment.b(a);
-      a.d.j = false;
+      a.d.k = false;
     }
   }
 }

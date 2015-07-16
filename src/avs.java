@@ -1,44 +1,112 @@
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.widget.ImageView;
+import android.os.Parcelable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.PagerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
+import com.snapchat.android.util.fragment.SnapchatFragment;
 
-public final class avs
+public abstract class avs
+  extends PagerAdapter
 {
-  private final avq mBitmapPool;
+  private static final String TAG = "SnapchatPagerAdapter";
+  private FragmentTransaction mCurTransaction = null;
+  private Fragment mCurrentPrimaryItem = null;
+  public final FragmentManager mFragmentManager;
   
-  public avs()
+  public avs(FragmentManager paramFragmentManager)
   {
-    this(avq.a());
+    mFragmentManager = paramFragmentManager;
   }
   
-  private avs(avq paramavq)
+  public static String a(int paramInt1, int paramInt2)
   {
-    mBitmapPool = paramavq;
+    return "android:switcher:" + paramInt1 + ":" + paramInt2;
   }
   
-  public final void a(@cgc ImageView paramImageView, boolean paramBoolean)
+  public abstract SnapchatFragment a(ViewGroup paramViewGroup, int paramInt);
+  
+  public final void destroyItem(ViewGroup paramViewGroup, int paramInt, Object paramObject)
   {
-    boolean bool = asu.SUPPORTS_UNEQUAL_SIZE_BITMAP_REUSE;
-    if (paramImageView != null) {
-      if ((!paramBoolean) && (!bool)) {
-        break label73;
-      }
+    if (mCurTransaction == null) {
+      mCurTransaction = mFragmentManager.beginTransaction();
     }
-    label73:
-    for (int i = 1;; i = 0)
+    new StringBuilder("Detaching item #").append(paramInt).append(": f=").append(paramObject).append(" v=").append(((Fragment)paramObject).getView());
+    mCurTransaction.detach((Fragment)paramObject);
+  }
+  
+  public final void finishUpdate$52bc874c()
+  {
+    if (mCurTransaction != null)
     {
-      Object localObject = paramImageView.getDrawable();
-      if ((localObject != null) && ((localObject instanceof BitmapDrawable)) && (i != 0))
-      {
-        localObject = ((BitmapDrawable)localObject).getBitmap();
-        if (localObject != null) {
-          mBitmapPool.a((Bitmap)localObject);
-        }
-      }
-      paramImageView.setImageBitmap(null);
-      return;
+      mCurTransaction.commitAllowingStateLoss();
+      mCurTransaction = null;
+      mFragmentManager.executePendingTransactions();
     }
   }
+  
+  public final Object instantiateItem(ViewGroup paramViewGroup, int paramInt)
+  {
+    if (mCurTransaction == null) {
+      mCurTransaction = mFragmentManager.beginTransaction();
+    }
+    Object localObject = a(paramViewGroup.getId(), paramInt);
+    localObject = mFragmentManager.findFragmentByTag((String)localObject);
+    if (localObject != null)
+    {
+      new StringBuilder("Attaching item #").append(paramInt).append(": f=").append(localObject);
+      paramViewGroup = (ViewGroup)localObject;
+      if (((Fragment)localObject).isDetached()) {
+        mCurTransaction.attach((Fragment)localObject);
+      }
+    }
+    for (paramViewGroup = (ViewGroup)localObject;; paramViewGroup = (ViewGroup)localObject)
+    {
+      if (paramViewGroup != mCurrentPrimaryItem)
+      {
+        paramViewGroup.setMenuVisibility(false);
+        paramViewGroup.setUserVisibleHint(false);
+      }
+      return paramViewGroup;
+      localObject = a(paramViewGroup, paramInt);
+      new StringBuilder("Adding item #").append(paramInt).append(": f=").append(localObject);
+      mCurTransaction.add(paramViewGroup.getId(), (Fragment)localObject, a(paramViewGroup.getId(), paramInt));
+    }
+  }
+  
+  public final boolean isViewFromObject(View paramView, Object paramObject)
+  {
+    return ((Fragment)paramObject).getView() == paramView;
+  }
+  
+  public final void restoreState(Parcelable paramParcelable, ClassLoader paramClassLoader) {}
+  
+  public final Parcelable saveState()
+  {
+    return null;
+  }
+  
+  public final void setPrimaryItem$30510aeb(Object paramObject)
+  {
+    paramObject = (Fragment)paramObject;
+    if (paramObject != mCurrentPrimaryItem)
+    {
+      if (mCurrentPrimaryItem != null)
+      {
+        mCurrentPrimaryItem.setMenuVisibility(false);
+        mCurrentPrimaryItem.setUserVisibleHint(false);
+      }
+      if (paramObject != null)
+      {
+        ((Fragment)paramObject).setMenuVisibility(true);
+        ((Fragment)paramObject).setUserVisibleHint(true);
+      }
+      mCurrentPrimaryItem = ((Fragment)paramObject);
+    }
+  }
+  
+  public final void startUpdate$52bc874c() {}
 }
 
 /* Location:

@@ -14,9 +14,9 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.Transformation;
 import android.view.animation.TranslateAnimation;
 import android.widget.RelativeLayout;
-import avh;
-import ban;
-import bbc;
+import awf;
+import bbo;
+import bcc;
 import com.squareup.otto.Bus;
 
 public class ColorPickerView
@@ -54,8 +54,8 @@ public class ColorPickerView
             paramAnonymous2Animation = new AlphaAnimation(0.0F, 1.0F);
             paramAnonymous2Animation.setDuration(140L);
             paramAnonymous2Animation.setFillAfter(true);
-            findViewById(2131362839).startAnimation(paramAnonymous2Animation);
-            findViewById(2131362838).startAnimation(paramAnonymous2Animation);
+            findViewById(2131362832).startAnimation(paramAnonymous2Animation);
+            findViewById(2131362831).startAnimation(paramAnonymous2Animation);
           }
         });
         ColorPickerView.h(ColorPickerView.this).startAnimation(ColorPickerView.g(ColorPickerView.this));
@@ -67,11 +67,11 @@ public class ColorPickerView
   public ColorPickerView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968779, this, true);
-    i = findViewById(2131362842);
-    paramContext = findViewById(2131362843);
-    j = findViewById(2131362841);
-    h = findViewById(2131362837);
+    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968781, this, true);
+    i = findViewById(2131362835);
+    paramContext = findViewById(2131362836);
+    j = findViewById(2131362834);
+    h = findViewById(2131362830);
     paramAttributeSet = new View.OnTouchListener()
     {
       public final boolean onTouch(View paramAnonymousView, MotionEvent paramAnonymousMotionEvent)
@@ -98,11 +98,11 @@ public class ColorPickerView
               paramAnonymous2Animation = new ScaleAnimation(26.0F, 1.0F, 1.0F, 1.0F, 1, 1.0F, 1, 0.5F);
               paramAnonymous2Animation.setDuration(140L);
               ColorPickerView.f(ColorPickerView.this).startAnimation(paramAnonymous2Animation);
-              paramAnonymous2Animation = new TranslateAnimation((int)avh.a(-23.5F, getContext()), 0.0F, 0.0F, 0.0F);
+              paramAnonymous2Animation = new TranslateAnimation((int)awf.a(-23.5F, getContext()), 0.0F, 0.0F, 0.0F);
               paramAnonymous2Animation.setDuration(140L);
               paramAnonymous2Animation.setFillAfter(true);
               ColorPickerView.d(ColorPickerView.this).startAnimation(paramAnonymous2Animation);
-              paramAnonymous2Animation = new ColorPickerView.a(ColorPickerView.this, ColorPickerView.h(ColorPickerView.this).getWidth(), (int)avh.a(12.0F, getContext()), ColorPickerView.h(ColorPickerView.this));
+              paramAnonymous2Animation = new ColorPickerView.a(ColorPickerView.this, ColorPickerView.h(ColorPickerView.this).getWidth(), (int)awf.a(12.0F, getContext()), ColorPickerView.h(ColorPickerView.this));
               paramAnonymous2Animation.setDuration(140L);
               ColorPickerView.h(ColorPickerView.this).startAnimation(paramAnonymous2Animation);
             }
@@ -113,8 +113,8 @@ public class ColorPickerView
           });
           if (ColorPickerView.a(ColorPickerView.this))
           {
-            findViewById(2131362839).startAnimation(paramAnonymousView);
-            findViewById(2131362838).startAnimation(paramAnonymousView);
+            findViewById(2131362832).startAnimation(paramAnonymousView);
+            findViewById(2131362831).startAnimation(paramAnonymousView);
           }
           ColorPickerView.a(ColorPickerView.this, false);
           return true;
@@ -130,10 +130,10 @@ public class ColorPickerView
     j.setOnTouchListener(paramAttributeSet);
     paramContext.setOnTouchListener(paramAttributeSet);
     i.setOnTouchListener(paramAttributeSet);
-    f = new TranslateAnimation(0.0F, (int)avh.a(-23.5F, getContext()), 0.0F, 0.0F);
+    f = new TranslateAnimation(0.0F, (int)awf.a(-23.5F, getContext()), 0.0F, 0.0F);
     f.setDuration(140L);
     f.setFillAfter(true);
-    g = new a((int)avh.a(12.0F, getContext()), (int)avh.a(36.0F, getContext()), h);
+    g = new a((int)awf.a(12.0F, getContext()), (int)awf.a(36.0F, getContext()), h);
     g.setDuration(140L);
     e = new ScaleAnimation(1.0F, 26.0F, 1.0F, 1.0F, 1, 1.0F, 1, 0.5F);
     e.setDuration(140L);
@@ -142,7 +142,7 @@ public class ColorPickerView
   
   public void a(int paramInt)
   {
-    ban.a().a(new bbc(paramInt));
+    bbo.a().a(new bcc(paramInt));
   }
   
   final class a

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 280
+    .line 282
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,33 +40,33 @@
     .locals 2
 
     .prologue
-    .line 283
+    .line 285
     if-eqz p2, :cond_0
 
-    .line 290
+    .line 292
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
-    .line 291
+    .line 293
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->b(Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;)I
 
-    .line 292
+    .line 294
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->d:Lafa;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->d:Laga;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lafa;->j:Z
+    iput-boolean v1, v0, Laga;->k:Z
 
-    .line 294
+    .line 296
     :cond_0
     return-void
 .end method

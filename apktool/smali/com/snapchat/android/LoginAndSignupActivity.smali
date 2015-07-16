@@ -8,7 +8,7 @@
 
 .field private final b:Landroid/graphics/Rect;
 
-.field private final c:Lajx;
+.field private final c:Lakr;
 
 .field private d:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
@@ -19,17 +19,17 @@
 
     .prologue
     .line 61
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/LoginAndSignupActivity;-><init>(Lajx;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/LoginAndSignupActivity;-><init>(Lakr;)V
 
     .line 62
     return-void
 .end method
 
-.method public constructor <init>(Lajx;)V
+.method public constructor <init>(Lakr;)V
     .locals 1
 
     .prologue
@@ -51,7 +51,7 @@
     iput-object v0, p0, Lcom/snapchat/android/LoginAndSignupActivity;->d:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     .line 65
-    iput-object p1, p0, Lcom/snapchat/android/LoginAndSignupActivity;->c:Lajx;
+    iput-object p1, p0, Lcom/snapchat/android/LoginAndSignupActivity;->c:Lakr;
 
     .line 66
     return-void
@@ -67,7 +67,7 @@
     return-object v0
 .end method
 
-.method public static a(Lbkr;)V
+.method public static a(Lbls;)V
     .locals 4
 
     .prologue
@@ -78,42 +78,42 @@
     .line 139
     if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Lbkr;->a()Lbkr$a;
+    invoke-virtual {p0}, Lbls;->a()Lbls$a;
 
     move-result-object v0
 
-    sget-object v3, Lbkr$a;->NEEDS_PHONE_VERIFIED:Lbkr$a;
+    sget-object v3, Lbls$a;->NEEDS_PHONE_VERIFIED:Lbls$a;
 
     if-ne v0, v3, :cond_0
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lajx;->a(Z)V
+    invoke-static {v0}, Lakr;->a(Z)V
 
     .line 141
     if-eqz p0, :cond_1
 
-    invoke-virtual {p0}, Lbkr;->a()Lbkr$a;
+    invoke-virtual {p0}, Lbls;->a()Lbls$a;
 
     move-result-object v0
 
-    sget-object v3, Lbkr$a;->NEEDS_CAPTCHA:Lbkr$a;
+    sget-object v3, Lbls$a;->NEEDS_CAPTCHA:Lbls$a;
 
     if-ne v0, v3, :cond_1
 
     :goto_1
-    invoke-static {v1}, Lajx;->b(Z)V
+    invoke-static {v1}, Lakr;->b(Z)V
 
     .line 143
     if-eqz p0, :cond_2
 
-    invoke-virtual {p0}, Lbkr;->b()Ljava/lang/String;
+    invoke-virtual {p0}, Lbls;->b()Ljava/lang/String;
 
     move-result-object v0
 
     :goto_2
-    invoke-static {v0}, Lajx;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lakr;->c(Ljava/lang/String;)V
 
     .line 144
     return-void
@@ -153,7 +153,7 @@
     .locals 4
 
     .prologue
-    const v3, 0x7f0a026f
+    const v3, 0x7f0a026d
 
     const/4 v2, 0x0
 
@@ -217,7 +217,7 @@
     if-eqz v1, :cond_3
 
     .line 101
-    invoke-static {v2}, Lajx;->c(Z)V
+    invoke-static {v2}, Lakr;->c(Z)V
 
     .line 103
     invoke-static {v2}, Lcom/snapchat/android/analytics/RegistrationAnalytics;->a(Z)V
@@ -277,6 +277,18 @@
     .locals 3
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/LoginAndSignupActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/LoginAndSignupActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 70
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatCameraBackgroundActivity;->onCreate(Landroid/os/Bundle;)V
 
@@ -294,7 +306,7 @@
     move-result-object v0
 
     .line 77
-    const v1, 0x7f0a026f
+    const v1, 0x7f0a026d
 
     new-instance v2, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;
 
@@ -308,7 +320,7 @@
 
     .line 80
     :cond_0
-    const v0, 0x7f0a0270
+    const v0, 0x7f0a026e
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LoginAndSignupActivity;->findViewById(I)Landroid/view/View;
 
@@ -374,7 +386,7 @@
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {p0, v0}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 136
     return-void
@@ -392,6 +404,16 @@
     .locals 2
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/LoginAndSignupActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageCodePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kxkxxk;->bОО041EО041E041E(Ljava/lang/String;)V
+
     .line 117
     invoke-super {p0}, Lcom/snapchat/android/SnapchatCameraBackgroundActivity;->onResume()V
 

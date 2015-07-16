@@ -1,217 +1,143 @@
-.class public final Laon;
-.super Ljava/lang/Object;
+.class final Laon;
+.super Lbgm;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Laon$a;
+    }
+.end annotation
 
 
 # instance fields
-.field private final a:Lzd;
+.field private final a:Laka;
 
-.field private final b:Lng;
-
-.field private final c:Lcom/snapchat/android/analytics/SnapViewEventAnalytics;
-
-.field private final d:Laup;
-
-.field private final e:Lcom/snapchat/android/model/StoryCollection;
-
-.field private final f:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/StorySnapLogbook;",
-            ">;"
-        }
+.field private final b:Lajl;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/model/StoryCollection;)V
-    .locals 1
-    .param p1    # Lcom/snapchat/android/model/StoryCollection;
-        .annotation runtime Ljavax/validation/constraints/NotNull;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 35
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Laon;-><init>(Lcom/snapchat/android/model/StoryCollection;Ljava/util/List;)V
-
-    .line 36
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/snapchat/android/model/StoryCollection;Ljava/util/List;)V
-    .locals 7
-    .param p1    # Lcom/snapchat/android/model/StoryCollection;
-        .annotation runtime Ljavax/validation/constraints/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Lr;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/snapchat/android/model/StoryCollection;",
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/StorySnapLogbook;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 44
-    invoke-static {}, Lzd;->a()Lzd;
-
-    move-result-object v1
-
-    invoke-static {}, Lng;->a()Lng;
-
-    move-result-object v2
-
-    invoke-static {}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics;->a()Lcom/snapchat/android/analytics/SnapViewEventAnalytics;
-
-    move-result-object v3
-
-    invoke-static {}, Laup;->d()Laup;
-
-    move-result-object v4
-
-    move-object v0, p0
-
-    move-object v5, p1
-
-    move-object v6, p2
-
-    invoke-direct/range {v0 .. v6}, Laon;-><init>(Lzd;Lng;Lcom/snapchat/android/analytics/SnapViewEventAnalytics;Laup;Lcom/snapchat/android/model/StoryCollection;Ljava/util/List;)V
-
-    .line 46
-    return-void
-.end method
-
-.method private constructor <init>(Lzd;Lng;Lcom/snapchat/android/analytics/SnapViewEventAnalytics;Laup;Lcom/snapchat/android/model/StoryCollection;Ljava/util/List;)V
+.method private constructor <init>(Laka;Lajl;)V
     .locals 0
-    .param p6    # Ljava/util/List;
-        .annotation build Lr;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lzd;",
-            "Lng;",
-            "Lcom/snapchat/android/analytics/SnapViewEventAnalytics;",
-            "Laup;",
-            "Lcom/snapchat/android/model/StoryCollection;",
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/StorySnapLogbook;",
-            ">;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 27
+    invoke-direct {p0}, Lbgm;-><init>()V
 
-    .line 53
-    iput-object p1, p0, Laon;->a:Lzd;
+    .line 28
+    iput-object p1, p0, Laon;->a:Laka;
 
-    .line 54
-    iput-object p2, p0, Laon;->b:Lng;
+    .line 29
+    iput-object p2, p0, Laon;->b:Lajl;
 
-    .line 55
-    iput-object p3, p0, Laon;->c:Lcom/snapchat/android/analytics/SnapViewEventAnalytics;
+    .line 30
+    return-void
+.end method
 
-    .line 56
-    iput-object p4, p0, Laon;->d:Laup;
+.method synthetic constructor <init>(Laka;Lajl;B)V
+    .locals 0
 
-    .line 57
-    iput-object p5, p0, Laon;->e:Lcom/snapchat/android/model/StoryCollection;
+    .prologue
+    .line 20
+    invoke-direct {p0, p1, p2}, Laon;-><init>(Laka;Lajl;)V
 
-    .line 58
-    iput-object p6, p0, Laon;->f:Ljava/util/List;
-
-    .line 59
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 6
+.method public final a()Laka;
+    .locals 1
+    .annotation build Lchc;
+    .end annotation
 
     .prologue
-    .line 66
-    iget-object v0, p0, Laon;->a:Lzd;
+    .line 34
+    invoke-virtual {p0}, Laon;->f()V
 
-    iget-object v1, p0, Laon;->e:Lcom/snapchat/android/model/StoryCollection;
+    .line 35
+    iget-object v0, p0, Laon;->a:Laka;
 
-    const/4 v2, 0x3
+    return-object v0
+.end method
 
-    const/4 v3, 0x0
+.method public final b()Ljava/lang/String;
+    .locals 1
+    .annotation build Lchd;
+    .end annotation
 
-    const/4 v4, 0x1
+    .prologue
+    .line 40
+    invoke-virtual {p0}, Laon;->f()V
 
-    sget-object v5, Lcom/snapchat/android/controller/stories/StoryLoadingContext;->TAP_TO_LOAD:Lcom/snapchat/android/controller/stories/StoryLoadingContext;
+    .line 41
+    iget-object v0, p0, Laon;->b:Lajl;
 
-    invoke-virtual/range {v0 .. v5}, Lzd;->a(Lcom/snapchat/android/model/StoryCollection;ILaje;ZLcom/snapchat/android/controller/stories/StoryLoadingContext;)I
+    if-eqz v0, :cond_0
 
-    move-result v0
+    iget-object v0, p0, Laon;->b:Lajl;
 
-    if-nez v0, :cond_1
+    invoke-virtual {v0}, Lajl;->a()Ljava/lang/String;
 
-    .line 68
-    iget-object v0, p0, Laon;->c:Lcom/snapchat/android/analytics/SnapViewEventAnalytics;
+    move-result-object v0
 
-    sget-object v1, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$SnapViewEventSourceType;->STORY:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$SnapViewEventSourceType;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics;->a(Lcom/snapchat/android/analytics/SnapViewEventAnalytics$SnapViewEventSourceType;)V
-
-    .line 69
-    iget-object v0, p0, Laon;->d:Laup;
-
-    iget-object v1, p0, Laon;->e:Lcom/snapchat/android/model/StoryCollection;
-
-    iget-object v2, p0, Laon;->f:Ljava/util/List;
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    iget-object v4, v0, Laup;->mSnapView:Lcom/snapchat/android/ui/SnapView;
-
-    if-eqz v4, :cond_0
-
-    new-instance v4, Laup$c;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Laup$c;-><init>(Laup;Lcom/snapchat/android/model/StoryCollection;Ljava/util/List;Landroid/content/Context;)V
-
-    invoke-interface {v4}, Ljava/lang/Runnable;->run()V
-
-    .line 73
-    :cond_0
     :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method protected final c()V
+    .locals 1
+
+    .prologue
+    .line 55
+    iget-object v0, p0, Laon;->b:Lajl;
+
+    if-eqz v0, :cond_0
+
+    .line 56
+    iget-object v0, p0, Laon;->b:Lajl;
+
+    invoke-virtual {v0}, Lajl;->e()V
+
+    .line 58
+    :cond_0
     return-void
+.end method
 
-    .line 71
-    :cond_1
-    iget-object v0, p0, Laon;->b:Lng;
+.method public final d()Landroid/graphics/Bitmap;
+    .locals 1
+    .annotation build Lchd;
+    .end annotation
 
-    const-string v1, "story"
+    .prologue
+    .line 46
+    invoke-virtual {p0}, Laon;->f()V
 
-    const-string v2, "tap_to_load"
+    .line 47
+    iget-object v0, p0, Laon;->b:Lajl;
 
-    invoke-virtual {v0, v1, v2}, Lng;->a(Ljava/lang/String;Ljava/lang/String;)V
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Laon;->b:Lajl;
+
+    invoke-virtual {v0}, Lajl;->b()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

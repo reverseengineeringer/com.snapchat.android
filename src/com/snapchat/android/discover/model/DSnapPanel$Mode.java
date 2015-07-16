@@ -1,6 +1,6 @@
 package com.snapchat.android.discover.model;
 
-import cgb;
+import chc;
 import java.util.Locale;
 
 public enum DSnapPanel$Mode
@@ -9,7 +9,7 @@ public enum DSnapPanel$Mode
   
   private DSnapPanel$Mode() {}
   
-  @cgb
+  @chc
   public static Mode valueOfIgnoreCase(String paramString)
   {
     return valueOf(paramString.toUpperCase(Locale.ENGLISH));

@@ -17,7 +17,7 @@
 # virtual methods
 .method public abstract b(Lcom/snapchat/android/model/StorySnapLogbook;)V
     .param p1    # Lcom/snapchat/android/model/StorySnapLogbook;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method

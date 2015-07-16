@@ -17,7 +17,7 @@
         "Ljava/util/Map$Entry",
         "<",
         "Ljava/lang/String;",
-        "Ljava/lang/String;",
+        "Laxn$a;",
         ">;>;"
     }
 .end annotation
@@ -28,20 +28,20 @@
     .locals 0
 
     .prologue
-    .line 23
+    .line 24
     invoke-direct {p0}, Lcom/snapchat/android/database/table/DbTable;-><init>()V
 
-    .line 93
+    .line 97
     return-void
 .end method
 
 
 # virtual methods
 .method protected final synthetic a(Ljava/lang/Object;)Landroid/content/ContentValues;
-    .locals 3
+    .locals 6
 
     .prologue
-    .line 23
+    .line 24
     check-cast p1, Ljava/util/Map$Entry;
 
     if-nez p1, :cond_0
@@ -52,9 +52,9 @@
     return-object v0
 
     :cond_0
-    new-instance v1, Laad;
+    new-instance v1, Labc;
 
-    invoke-direct {v1}, Laad;-><init>()V
+    invoke-direct {v1}, Labc;-><init>()V
 
     sget-object v2, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->SNAP_ID:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
@@ -64,7 +64,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v0}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v0}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v2, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->FILE_PATH:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
@@ -72,11 +72,25 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v0, Laxn$a;
 
-    invoke-virtual {v1, v2, v0}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    iget-object v0, v0, Laxn$a;->mUri:Ljava/lang/String;
 
-    iget-object v0, v1, Laad;->a:Landroid/content/ContentValues;
+    invoke-virtual {v1, v2, v0}, Labc;->a(Laav;Ljava/lang/String;)Labc;
+
+    sget-object v2, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->LAST_ACCESS_MILLISECONDS:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laxn$a;
+
+    iget-wide v4, v0, Laxn$a;->mLastAccessMilliseconds:J
+
+    invoke-virtual {v1, v2, v4, v5}, Labc;->a(Laav;J)Labc;
+
+    iget-object v0, v1, Labc;->a:Landroid/content/ContentValues;
 
     goto :goto_0
 .end method
@@ -85,17 +99,17 @@
     .locals 1
 
     .prologue
-    .line 23
+    .line 24
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue
-    .line 65
+    .line 68
     invoke-static {}, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->values()[Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     move-result-object v0
@@ -107,10 +121,10 @@
     .locals 6
 
     .prologue
-    .line 56
+    .line 59
     const-string v1, "_id INTEGER PRIMARY KEY"
 
-    .line 57
+    .line 60
     invoke-static {}, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->values()[Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     move-result-object v2
@@ -124,7 +138,7 @@
 
     aget-object v4, v2, v0
 
-    .line 58
+    .line 61
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -169,19 +183,19 @@
 
     move-result-object v1
 
-    .line 57
+    .line 60
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 60
+    .line 63
     :cond_0
     return-object v1
 .end method
 
 .method public final f()Ljava/util/Map;
     .locals 8
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -190,7 +204,7 @@
             "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
-            "Ljava/lang/String;",
+            "Laxn$a;",
             ">;"
         }
     .end annotation
@@ -198,14 +212,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 28
+    .line 29
     invoke-static {}, Lcom/snapchat/android/database/table/IdToFileTable;->i()Ljava/util/concurrent/locks/Lock;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 29
+    .line 30
     iget-object v0, p0, Lcom/snapchat/android/database/table/IdToFileTable;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/IdToFileTable;->c()Ljava/lang/String;
@@ -226,7 +240,7 @@
 
     move-result-object v1
 
-    .line 31
+    .line 32
     :try_start_0
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/IdToFileTable;->m()Landroid/database/sqlite/SQLiteDatabase;
     :try_end_0
@@ -236,12 +250,12 @@
 
     if-nez v0, :cond_1
 
-    .line 49
+    .line 52
     if-eqz v1, :cond_0
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 50
+    .line 53
     :cond_0
     invoke-static {}, Lcom/snapchat/android/database/table/IdToFileTable;->i()Ljava/util/concurrent/locks/Lock;
 
@@ -252,36 +266,30 @@
     :goto_0
     return-object v2
 
-    .line 33
+    .line 34
     :cond_1
     :try_start_1
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    .line 35
-    const-string v0, "IdToFileTable"
+    .line 36
+    const/4 v0, 0x1
 
-    const-string v3, "Querying [%s] database table"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/IdToFileTable;->c()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v4, v5
+    aput-object v4, v0, v3
 
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 37
+    .line 38
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 39
+    .line 40
     :cond_2
     invoke-interface {v1}, Landroid/database/Cursor;->isAfterLast()Z
 
@@ -289,7 +297,7 @@
 
     if-nez v0, :cond_3
 
-    .line 40
+    .line 41
     sget-object v0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->SNAP_ID:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     invoke-virtual {v0}, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->getColumnNumber()I
@@ -300,6 +308,7 @@
 
     move-result-object v0
 
+    .line 42
     sget-object v3, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->FILE_PATH:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     invoke-virtual {v3}, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->getColumnNumber()I
@@ -310,9 +319,25 @@
 
     move-result-object v3
 
-    invoke-interface {v2, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 43
+    sget-object v4, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->LAST_ACCESS_MILLISECONDS:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
-    .line 44
+    invoke-virtual {v4}, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->getColumnNumber()I
+
+    move-result v4
+
+    invoke-interface {v1, v4}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v4
+
+    .line 45
+    new-instance v6, Laxn$a;
+
+    invoke-direct {v6, v3, v4, v5}, Laxn$a;-><init>(Ljava/lang/String;J)V
+
+    invoke-interface {v2, v0, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 47
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -321,13 +346,13 @@
 
     if-nez v0, :cond_2
 
-    .line 47
+    .line 52
     :cond_3
     if-eqz v1, :cond_4
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 50
+    .line 53
     :cond_4
     invoke-static {}, Lcom/snapchat/android/database/table/IdToFileTable;->i()Ljava/util/concurrent/locks/Lock;
 
@@ -337,7 +362,7 @@
 
     goto :goto_0
 
-    .line 49
+    .line 52
     :catchall_0
     move-exception v0
 
@@ -345,7 +370,7 @@
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 50
+    .line 53
     :cond_5
     invoke-static {}, Lcom/snapchat/android/database/table/IdToFileTable;->i()Ljava/util/concurrent/locks/Lock;
 

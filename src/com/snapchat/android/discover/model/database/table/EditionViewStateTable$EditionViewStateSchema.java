@@ -1,10 +1,10 @@
 package com.snapchat.android.discover.model.database.table;
 
+import aav;
 import com.snapchat.android.database.DataType;
-import zw;
 
 public enum EditionViewStateTable$EditionViewStateSchema
-  implements zw
+  implements aav
 {
   ID(DataType.TEXT, "PRIMARY KEY"),  LAST_INDEX_VIEWED("last_index_viewed", DataType.INTEGER),  VIEWED_ALL_DSNAPS("viewed_all_dsnaps", DataType.BOOLEAN);
   

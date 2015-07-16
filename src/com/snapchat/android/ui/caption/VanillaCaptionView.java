@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.DisplayMetrics;
 import android.view.View;
-import ban;
-import baw;
-import bbt;
-import boh;
+import bbo;
+import bbx;
+import bct;
+import bpi;
 import com.squareup.otto.Bus;
 
 public class VanillaCaptionView
@@ -32,7 +32,7 @@ public class VanillaCaptionView
       ((VanillaCaptionEditText)b).setGravity(17);
     }
     if (((VanillaCaptionEditText)b).e()) {
-      ban.a().a(new baw(6));
+      bbo.a().a(new bbx(6));
     }
   }
   
@@ -60,18 +60,18 @@ public class VanillaCaptionView
   
   protected XmlResourceParser getLayout()
   {
-    return getResources().getLayout(2130968602);
+    return getResources().getLayout(2130968603);
   }
   
-  @boh
-  public void onGlobalLayoutEvent(bbt parambbt)
+  @bpi
+  public void onGlobalLayoutEvent(bct parambct)
   {
     if ((!b).f) && (b).k) && (((VanillaCaptionEditText)b).getTop() != ((VanillaCaptionEditText)b).getCaptionEditPosition())) {
       ((VanillaCaptionEditText)b).setY(((VanillaCaptionEditText)b).getCaptionEditPosition());
     }
-    parambbt = getRootView();
+    parambct = getRootView();
     Rect localRect = new Rect();
-    parambbt.getWindowVisibleDisplayFrame(localRect);
+    parambct.getWindowVisibleDisplayFrame(localRect);
     int i = c - (bottom - top);
     if (i > 100)
     {

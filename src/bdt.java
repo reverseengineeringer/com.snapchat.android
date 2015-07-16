@@ -1,10 +1,10 @@
 public final class bdt
 {
-  public final boolean shouldShow;
+  public final akl mStorySnap;
   
-  public bdt(boolean paramBoolean)
+  public bdt(akl paramakl)
   {
-    shouldShow = paramBoolean;
+    mStorySnap = paramakl;
   }
 }
 

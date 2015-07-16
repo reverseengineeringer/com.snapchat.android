@@ -2,7 +2,6 @@ package com.snapchat.android.util;
 
 import android.content.Context;
 import android.widget.Toast;
-import com.snapchat.android.Timber;
 
 final class AlertDialogUtils$20
   implements Runnable
@@ -20,14 +19,10 @@ final class AlertDialogUtils$20
         AlertDialogUtils.b().show();
         return;
       }
-      Timber.e("AlertDialogUtils", "Toasting wayyy too many times " + val$string, new Object[0]);
+      new StringBuilder("Toasting wayyy too many times ").append(val$string);
       return;
     }
-    catch (IllegalStateException localIllegalStateException)
-    {
-      Timber.c("AlertDialogUtils", "Well, this is awkward.", new Object[0]);
-      Timber.a("AlertDialogUtils", localIllegalStateException);
-    }
+    catch (IllegalStateException localIllegalStateException) {}
   }
 }
 

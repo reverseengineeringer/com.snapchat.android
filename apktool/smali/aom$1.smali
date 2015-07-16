@@ -1,11 +1,11 @@
 .class final Laom$1;
-.super Lol;
+.super Laoj;
 .source "SourceFile"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Laom;->a(Lcom/snapchat/android/model/StorySnapLogbook;Laom$a;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Laom;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,125 +15,46 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/snapchat/android/model/StorySnapLogbook;
+.field final synthetic a:Laom$a;
 
-.field final synthetic b:Laom$a;
-
-.field final synthetic c:Laom;
+.field final synthetic b:Laom;
 
 
 # direct methods
-.method constructor <init>(Laom;Lcom/snapchat/android/model/StorySnapLogbook;Landroid/content/Context;Lcom/snapchat/android/model/StorySnapLogbook;Laom$a;)V
+.method constructor <init>(Laom;Laka;Laom$a;)V
     .locals 0
 
     .prologue
-    .line 64
-    iput-object p1, p0, Laom$1;->c:Laom;
+    .line 48
+    iput-object p1, p0, Laom$1;->b:Laom;
 
-    iput-object p4, p0, Laom$1;->a:Lcom/snapchat/android/model/StorySnapLogbook;
+    iput-object p3, p0, Laom$1;->a:Laom$a;
 
-    iput-object p5, p0, Laom$1;->b:Laom$a;
-
-    invoke-direct {p0, p2, p3}, Lol;-><init>(Lcom/snapchat/android/model/StorySnapLogbook;Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Laoj;-><init>(Laka;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Laku;)V
-    .locals 1
-
-    .prologue
-    .line 73
-    invoke-super {p0, p1}, Lol;->a(Laku;)V
-
-    .line 74
-    iget-object v0, p0, Laom$1;->b:Laom$a;
-
-    invoke-interface {v0}, Laom$a;->b()V
-
-    .line 75
-    return-void
-.end method
-
-.method protected final a(Ljava/lang/String;I)V
-    .locals 2
-
-    .prologue
-    .line 84
-    invoke-super {p0, p1, p2}, Lol;->a(Ljava/lang/String;I)V
-
-    .line 85
-    iget-object v0, p0, Laom$1;->a:Lcom/snapchat/android/model/StorySnapLogbook;
-
-    sget-object v1, Lcom/snapchat/android/model/StorySnapLogbook$ActionState;->READY:Lcom/snapchat/android/model/StorySnapLogbook$ActionState;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/StorySnapLogbook;->a(Lcom/snapchat/android/model/StorySnapLogbook$ActionState;)V
-
-    .line 86
-    iget-object v0, p0, Laom$1;->b:Laom$a;
-
-    invoke-interface {v0}, Laom$a;->d()V
-
-    .line 87
-    return-void
-.end method
-
-.method protected final b(Laku;)V
-    .locals 2
-
-    .prologue
-    .line 78
-    invoke-super {p0, p1}, Lol;->b(Laku;)V
-
-    .line 79
-    iget-object v0, p0, Laom$1;->a:Lcom/snapchat/android/model/StorySnapLogbook;
-
-    sget-object v1, Lcom/snapchat/android/model/StorySnapLogbook$ActionState;->DELETED:Lcom/snapchat/android/model/StorySnapLogbook$ActionState;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/StorySnapLogbook;->a(Lcom/snapchat/android/model/StorySnapLogbook$ActionState;)V
-
-    .line 80
-    iget-object v0, p0, Laom$1;->b:Laom$a;
-
-    invoke-interface {v0}, Laom$a;->c()V
-
-    .line 81
-    return-void
-.end method
-
 .method protected final synthetic onPostExecute(Ljava/lang/Object;)V
-    .locals 0
-
-    .prologue
-    .line 64
-    check-cast p1, Laku;
-
-    invoke-virtual {p0, p1}, Laom$1;->a(Laku;)V
-
-    return-void
-.end method
-
-.method protected final onPreExecute()V
     .locals 2
 
     .prologue
-    .line 67
-    invoke-super {p0}, Lol;->onPreExecute()V
+    .line 48
+    check-cast p1, Laon;
 
-    .line 68
-    iget-object v0, p0, Laom$1;->a:Lcom/snapchat/android/model/StorySnapLogbook;
+    invoke-super {p0, p1}, Laoj;->onPostExecute(Ljava/lang/Object;)V
 
-    sget-object v1, Lcom/snapchat/android/model/StorySnapLogbook$ActionState;->DELETING:Lcom/snapchat/android/model/StorySnapLogbook$ActionState;
+    iget-object v0, p0, Laom$1;->b:Laom;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/StorySnapLogbook;->a(Lcom/snapchat/android/model/StorySnapLogbook$ActionState;)V
+    const/4 v1, 0x0
 
-    .line 69
-    iget-object v0, p0, Laom$1;->b:Laom$a;
+    iput-object v1, v0, Laom;->b:Laoj;
 
-    invoke-interface {v0}, Laom$a;->a()V
+    iget-object v0, p0, Laom$1;->a:Laom$a;
 
-    .line 70
+    invoke-interface {v0, p1}, Laom$a;->a(Laon;)V
+
     return-void
 .end method

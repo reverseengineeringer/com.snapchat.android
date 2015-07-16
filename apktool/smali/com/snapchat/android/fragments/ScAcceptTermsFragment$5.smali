@@ -43,14 +43,14 @@
     .line 418
     iget-object v0, p0, Lcom/snapchat/android/fragments/ScAcceptTermsFragment$5;->a:Lcom/snapchat/android/fragments/ScAcceptTermsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->f(Lcom/snapchat/android/fragments/ScAcceptTermsFragment;)Laol;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->f(Lcom/snapchat/android/fragments/ScAcceptTermsFragment;)Laph;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laol;->e()I
+    invoke-virtual {v0}, Laph;->e()I
 
     .line 423
-    invoke-static {}, Lajx;->n()V
+    invoke-static {}, Lakr;->n()V
 
     .line 425
     iget-object v0, p0, Lcom/snapchat/android/fragments/ScAcceptTermsFragment$5;->a:Lcom/snapchat/android/fragments/ScAcceptTermsFragment;

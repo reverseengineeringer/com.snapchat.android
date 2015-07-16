@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.cts.InputSurface;
 import com.snapchat.videotranscoder.rendering.VideoFilterRenderer;
 import com.snapchat.videotranscoder.utils.TranscodingResources;
@@ -23,7 +23,7 @@ public class VideoFilterRenderingTask
   private final TranscodingResources mTranscodingResources;
   private float mVolume = 1.0F;
   
-  public VideoFilterRenderingTask(@cgb TranscodingResources paramTranscodingResources, @cgb VideoFileMediaSource paramVideoFileMediaSource, @cgb FragmentShader.Filter paramFilter1, @cgb FragmentShader.Filter paramFilter2, @cgb InputSurface paramInputSurface)
+  public VideoFilterRenderingTask(@chc TranscodingResources paramTranscodingResources, @chc VideoFileMediaSource paramVideoFileMediaSource, @chc FragmentShader.Filter paramFilter1, @chc FragmentShader.Filter paramFilter2, @chc InputSurface paramInputSurface)
   {
     if (paramTranscodingResources == null) {
       throw new NullPointerException("transcodingResources is null");
@@ -47,7 +47,7 @@ public class VideoFilterRenderingTask
     mRightFilter = paramFilter2;
   }
   
-  private void renderVideo(@cgb VideoFileMediaSource paramVideoFileMediaSource, @cgb InputSurface paramInputSurface, @cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  private void renderVideo(@chc VideoFileMediaSource paramVideoFileMediaSource, @chc InputSurface paramInputSurface, @chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     mCurrentRenderer = new VideoFilterRenderer(mTranscodingResources, paramVideoFileMediaSource, paramInputSurface);
     mCurrentRenderer.prepareThreads();
@@ -60,7 +60,7 @@ public class VideoFilterRenderingTask
     release();
   }
   
-  public void changeFilter(@cgb FragmentShader.Filter paramFilter1, @cgb FragmentShader.Filter paramFilter2)
+  public void changeFilter(@chc FragmentShader.Filter paramFilter1, @chc FragmentShader.Filter paramFilter2)
   {
     if (mCurrentRenderer == null) {
       throw new NullPointerException();
@@ -86,7 +86,7 @@ public class VideoFilterRenderingTask
   }
   
   /* Error */
-  public void run(@cgc Task.ProgressUpdateCallback arg1)
+  public void run(@chd Task.ProgressUpdateCallback arg1)
   {
     // Byte code:
     //   0: aload_0
@@ -110,94 +110,85 @@ public class VideoFilterRenderingTask
     //   34: aload_0
     //   35: iconst_1
     //   36: putfield 43	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAborted	Z
-    //   39: aload_0
-    //   40: getfield 41	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAbortLock	Ljava/lang/Object;
-    //   43: invokevirtual 134	java/lang/Object:notifyAll	()V
-    //   46: aload_1
-    //   47: monitorexit
-    //   48: return
-    //   49: astore_2
-    //   50: aload_1
-    //   51: monitorexit
-    //   52: aload_2
-    //   53: athrow
-    //   54: astore_1
-    //   55: aload_1
-    //   56: invokevirtual 137	java/lang/RuntimeException:printStackTrace	()V
+    //   39: aload_1
+    //   40: monitorexit
+    //   41: return
+    //   42: astore_2
+    //   43: aload_1
+    //   44: monitorexit
+    //   45: aload_2
+    //   46: athrow
+    //   47: astore_1
+    //   48: aload_1
+    //   49: invokevirtual 134	java/lang/RuntimeException:printStackTrace	()V
+    //   52: aload_0
+    //   53: getfield 41	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAbortLock	Ljava/lang/Object;
+    //   56: astore_1
+    //   57: aload_1
+    //   58: monitorenter
     //   59: aload_0
-    //   60: getfield 41	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAbortLock	Ljava/lang/Object;
-    //   63: astore_1
+    //   60: iconst_1
+    //   61: putfield 43	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAborted	Z
     //   64: aload_1
-    //   65: monitorenter
-    //   66: aload_0
-    //   67: iconst_1
-    //   68: putfield 43	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAborted	Z
-    //   71: aload_0
-    //   72: getfield 41	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAbortLock	Ljava/lang/Object;
-    //   75: invokevirtual 134	java/lang/Object:notifyAll	()V
-    //   78: aload_1
-    //   79: monitorexit
-    //   80: return
-    //   81: astore_2
-    //   82: aload_1
-    //   83: monitorexit
-    //   84: aload_2
-    //   85: athrow
-    //   86: astore_1
-    //   87: new 139	com/snapchat/videotranscoder/task/TranscodingException
-    //   90: dup
-    //   91: new 141	java/lang/StringBuilder
-    //   94: dup
-    //   95: ldc -113
-    //   97: invokespecial 144	java/lang/StringBuilder:<init>	(Ljava/lang/String;)V
-    //   100: aload_1
-    //   101: invokevirtual 148	java/lang/Exception:toString	()Ljava/lang/String;
-    //   104: invokevirtual 152	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    //   107: invokevirtual 153	java/lang/StringBuilder:toString	()Ljava/lang/String;
-    //   110: aload_1
-    //   111: invokespecial 156	com/snapchat/videotranscoder/task/TranscodingException:<init>	(Ljava/lang/String;Ljava/lang/Throwable;)V
-    //   114: athrow
-    //   115: astore_2
-    //   116: aload_0
-    //   117: getfield 41	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAbortLock	Ljava/lang/Object;
-    //   120: astore_1
-    //   121: aload_1
-    //   122: monitorenter
-    //   123: aload_0
-    //   124: iconst_1
-    //   125: putfield 43	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAborted	Z
-    //   128: aload_0
-    //   129: getfield 41	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAbortLock	Ljava/lang/Object;
-    //   132: invokevirtual 134	java/lang/Object:notifyAll	()V
-    //   135: aload_1
-    //   136: monitorexit
-    //   137: aload_2
-    //   138: athrow
-    //   139: astore_2
-    //   140: aload_1
-    //   141: monitorexit
-    //   142: aload_2
-    //   143: athrow
+    //   65: monitorexit
+    //   66: return
+    //   67: astore_2
+    //   68: aload_1
+    //   69: monitorexit
+    //   70: aload_2
+    //   71: athrow
+    //   72: astore_1
+    //   73: new 136	com/snapchat/videotranscoder/task/TranscodingException
+    //   76: dup
+    //   77: new 138	java/lang/StringBuilder
+    //   80: dup
+    //   81: ldc -116
+    //   83: invokespecial 141	java/lang/StringBuilder:<init>	(Ljava/lang/String;)V
+    //   86: aload_1
+    //   87: invokevirtual 145	java/lang/Exception:toString	()Ljava/lang/String;
+    //   90: invokevirtual 149	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   93: invokevirtual 150	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   96: aload_1
+    //   97: invokespecial 153	com/snapchat/videotranscoder/task/TranscodingException:<init>	(Ljava/lang/String;Ljava/lang/Throwable;)V
+    //   100: athrow
+    //   101: astore_2
+    //   102: aload_0
+    //   103: getfield 41	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAbortLock	Ljava/lang/Object;
+    //   106: astore_1
+    //   107: aload_1
+    //   108: monitorenter
+    //   109: aload_0
+    //   110: iconst_1
+    //   111: putfield 43	com/snapchat/videotranscoder/task/VideoFilterRenderingTask:mAborted	Z
+    //   114: aload_1
+    //   115: monitorexit
+    //   116: aload_2
+    //   117: athrow
+    //   118: astore_2
+    //   119: aload_1
+    //   120: monitorexit
+    //   121: aload_2
+    //   122: athrow
     // Local variable table:
     //   start	length	slot	name	signature
-    //   0	144	0	this	VideoFilterRenderingTask
-    //   49	4	2	localObject1	Object
-    //   81	4	2	localObject2	Object
-    //   115	23	2	localObject3	Object
-    //   139	4	2	localObject4	Object
+    //   0	123	0	this	VideoFilterRenderingTask
+    //   42	4	2	localObject1	Object
+    //   67	4	2	localObject2	Object
+    //   101	16	2	localObject3	Object
+    //   118	4	2	localObject4	Object
     // Exception table:
     //   from	to	target	type
-    //   34	48	49	finally
-    //   50	52	49	finally
-    //   0	27	54	java/lang/RuntimeException
-    //   66	80	81	finally
-    //   82	84	81	finally
-    //   0	27	86	java/lang/Exception
-    //   0	27	115	finally
-    //   55	59	115	finally
-    //   87	115	115	finally
-    //   123	137	139	finally
-    //   140	142	139	finally
+    //   34	41	42	finally
+    //   43	45	42	finally
+    //   0	27	47	java/lang/RuntimeException
+    //   59	66	67	finally
+    //   68	70	67	finally
+    //   0	27	72	java/lang/Exception
+    //   0	27	101	finally
+    //   48	52	101	finally
+    //   73	101	101	finally
+    //   109	116	118	finally
+    //   119	121	118	finally
   }
   
   public void setVolume(float paramFloat)
@@ -221,9 +212,8 @@ public class VideoFilterRenderingTask
   {
     synchronized (mAbortLock)
     {
-      if ((!mAborted) && (mCurrentRenderer != null)) {
-        mAbortLock.wait(100L);
-      }
+      while ((!mAborted) && (mCurrentRenderer != null)) {}
+      return;
     }
   }
 }

@@ -1,140 +1,86 @@
-import com.google.gson.annotations.SerializedName;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
+import com.snapchat.videotranscoder.task.ImageFileMediaSource;
+import com.snapchat.videotranscoder.task.MediaSource;
+import com.snapchat.videotranscoder.task.SetupException;
+import com.snapchat.videotranscoder.utils.ImageTransformationMatrix;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import java.util.Random;
 
 public final class bhd
+  extends bgm
 {
-  @SerializedName("conversation_messages")
-  protected bhe conversationMessages;
-  @SerializedName("conversation_state")
-  protected bhn conversationState;
-  @SerializedName("id")
-  protected String id;
-  @SerializedName("iter_token")
-  protected String iterToken;
-  @SerializedName("last_cash_transaction")
-  protected bhc lastCashTransaction;
-  @SerializedName("last_chat_actions")
-  protected bid lastChatActions;
-  @SerializedName("last_interaction_ts")
-  protected Long lastInteractionTs;
-  @SerializedName("last_snap")
-  protected bhy lastSnap;
-  @SerializedName("participants")
-  protected List<String> participants;
-  @SerializedName("pending_chats_for")
-  protected List<String> pendingChatsFor;
-  @SerializedName("pending_received_snaps")
-  protected List<bhy> pendingReceivedSnaps;
+  private static final String TAG = "MediaSourceFactory";
+  private final Context mContext;
+  private List<String> mDecryptedSnapImageKeysToRemove = new ArrayList();
+  public List<ajl> mDecryptedSnapVideosToRelease = new ArrayList();
+  public final ImageTransformationMatrix mImageTransformationMatrix;
+  private final Random mRandom;
+  public final axx mSnapVideoDecryptor;
   
-  public final bhd a(bhe parambhe)
+  public bhd(@chc Context paramContext)
   {
-    conversationMessages = parambhe;
-    return this;
+    this(paramContext, new Random(), new axx(), new ImageTransformationMatrix());
   }
   
-  public final String a()
+  private bhd(@chc Context paramContext, @chc Random paramRandom, @chc axx paramaxx, @chc ImageTransformationMatrix paramImageTransformationMatrix)
   {
-    return id;
-  }
-  
-  public final bhy b()
-  {
-    return lastSnap;
-  }
-  
-  public final boolean c()
-  {
-    return lastSnap != null;
-  }
-  
-  public final bid d()
-  {
-    return lastChatActions;
-  }
-  
-  public final boolean e()
-  {
-    return lastChatActions != null;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
+    if (paramContext == null) {
+      throw new NullPointerException("context is null");
     }
-    if (!(paramObject instanceof bhd)) {
-      return false;
+    mContext = paramContext;
+    mRandom = paramRandom;
+    mSnapVideoDecryptor = paramaxx;
+    mImageTransformationMatrix = paramImageTransformationMatrix;
+  }
+  
+  public final MediaSource a(@chc akl paramakl)
+  {
+    Object localObject = paramakl.a(mContext);
+    if (localObject == null) {
+      throw new SetupException("Bitmap was null");
     }
-    paramObject = (bhd)paramObject;
-    return new EqualsBuilder().append(id, id).append(participants, participants).append(lastSnap, lastSnap).append(lastChatActions, lastChatActions).append(lastCashTransaction, lastCashTransaction).append(lastInteractionTs, lastInteractionTs).append(pendingChatsFor, pendingChatsFor).append(pendingReceivedSnaps, pendingReceivedSnaps).append(conversationMessages, conversationMessages).append(iterToken, iterToken).append(conversationState, conversationState).isEquals();
+    String str = "SaveStoryToGalleryImage" + mRandom.nextLong();
+    try
+    {
+      axo.SAVE_STORY_TO_GALLERY_IMAGE_CACHE.a(str, (Bitmap)localObject, Bitmap.CompressFormat.PNG);
+      mDecryptedSnapImageKeysToRemove.add(str);
+      localObject = axo.SAVE_STORY_TO_GALLERY_IMAGE_CACHE.b(str);
+      if (localObject == null) {
+        throw new SetupException("Key not found in cache: " + str);
+      }
+    }
+    catch (axq paramakl)
+    {
+      throw new SetupException("External storage not available to write bitmap: " + paramakl.toString(), paramakl);
+    }
+    return new ImageFileMediaSource((String)localObject, (int)paramakl.G() * 1000);
   }
   
-  public final bhc f()
+  public final void c()
   {
-    return lastCashTransaction;
+    Iterator localIterator = mDecryptedSnapImageKeysToRemove.iterator();
+    while (localIterator.hasNext())
+    {
+      String str = (String)localIterator.next();
+      axo.SAVE_STORY_TO_GALLERY_IMAGE_CACHE.c(str);
+    }
+    localIterator = mDecryptedSnapVideosToRelease.iterator();
+    while (localIterator.hasNext()) {
+      ((ajl)localIterator.next()).e();
+    }
+    mDecryptedSnapImageKeysToRemove.clear();
+    mDecryptedSnapVideosToRelease.clear();
   }
   
-  public final boolean g()
+  public final void finalize()
   {
-    return lastCashTransaction != null;
-  }
-  
-  public final Long h()
-  {
-    return lastInteractionTs;
-  }
-  
-  public final int hashCode()
-  {
-    return new HashCodeBuilder().append(id).append(participants).append(lastSnap).append(lastChatActions).append(lastCashTransaction).append(lastInteractionTs).append(pendingChatsFor).append(pendingReceivedSnaps).append(conversationMessages).append(iterToken).append(conversationState).toHashCode();
-  }
-  
-  public final List<bhy> i()
-  {
-    return pendingReceivedSnaps;
-  }
-  
-  public final boolean j()
-  {
-    return pendingReceivedSnaps != null;
-  }
-  
-  public final bhe k()
-  {
-    return conversationMessages;
-  }
-  
-  public final boolean l()
-  {
-    return conversationMessages != null;
-  }
-  
-  public final String m()
-  {
-    return iterToken;
-  }
-  
-  public final boolean n()
-  {
-    return iterToken != null;
-  }
-  
-  public final bhn o()
-  {
-    return conversationState;
-  }
-  
-  public final boolean p()
-  {
-    return conversationState != null;
-  }
-  
-  public final String toString()
-  {
-    return ToStringBuilder.reflectionToString(this);
+    if ((!mDecryptedSnapImageKeysToRemove.isEmpty()) || (!mDecryptedSnapVideosToRelease.isEmpty())) {
+      e();
+    }
   }
 }
 

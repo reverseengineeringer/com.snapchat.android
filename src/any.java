@@ -1,18 +1,69 @@
+import android.content.Context;
+import android.content.Intent;
+import android.text.TextUtils;
+import com.google.gson.annotations.SerializedName;
+import java.util.Map;
+
 public final class any
-  extends anx
+  extends ana
+  implements ui.b<any.b>
 {
-  public static any a;
+  private final bhk a = new bhk();
+  private ayy b = ayy.a();
+  private String c;
+  private String d;
   
-  public final void a(String paramString1, String paramString2)
+  @cf
+  public any(Intent paramIntent)
   {
-    b = new anz(paramString1, paramString2);
-    anw.a().a(b);
+    super(paramIntent);
+    registerCallback(any.b.class, this);
   }
   
-  public final void a(String paramString1, boolean paramBoolean1, double paramDouble, String paramString2, String paramString3, String paramString4, lr paramlr, boolean paramBoolean2, String paramString5, String paramString6, int paramInt)
+  public final void a(Context paramContext)
   {
-    b = new anz(paramString1, paramBoolean1, paramDouble, System.currentTimeMillis(), -1L, paramString2, paramString3, paramString4, paramlr, paramBoolean2, paramString5, paramString6, paramInt);
-    anw.a().a(b);
+    bhp.b();
+    String str = b.c(true);
+    if (!TextUtils.isEmpty(str))
+    {
+      c = str;
+      super.a(paramContext);
+    }
+  }
+  
+  public final Object getRequestPayload()
+  {
+    String str = Long.toString(System.currentTimeMillis());
+    return new any.a(str, pj.b(str), c);
+  }
+  
+  public final String l_()
+  {
+    return "/loq/and/register_exp";
+  }
+  
+  @ud
+  static final class a
+  {
+    @SerializedName("timestamp")
+    String a;
+    @SerializedName("req_token")
+    String b;
+    @SerializedName("device_unique_id")
+    String c;
+    
+    public a(String paramString1, String paramString2, String paramString3)
+    {
+      a = paramString1;
+      b = paramString2;
+      c = paramString3;
+    }
+  }
+  
+  static class b
+  {
+    @SerializedName("study_settings")
+    public Map<String, String> a;
   }
 }
 

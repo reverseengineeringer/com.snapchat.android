@@ -1,14 +1,4 @@
-import com.snapchat.android.model.StoryGroup;
-
-public final class bdh
-{
-  public final StoryGroup storyGroup;
-  
-  public bdh(StoryGroup paramStoryGroup)
-  {
-    storyGroup = paramStoryGroup;
-  }
-}
+public final class bdh {}
 
 /* Location:
  * Qualified Name:     bdh

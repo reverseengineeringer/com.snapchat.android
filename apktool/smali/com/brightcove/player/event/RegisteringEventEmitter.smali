@@ -244,9 +244,7 @@
         value = {
             "(",
             "Ljava/lang/Class",
-            "<+",
-            "Ljava/lang/Object;",
-            ">;",
+            "<*>;",
             "Ljava/lang/Class",
             "<+",
             "Ljava/lang/annotation/Annotation;",

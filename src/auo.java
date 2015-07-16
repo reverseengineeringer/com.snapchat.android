@@ -1,59 +1,65 @@
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.preference.PreferenceManager;
-import com.snapchat.android.SnapchatApplication;
+import android.os.Bundle;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Iterator;
+import java.util.Set;
 
 public final class auo
 {
-  private static auo sInstance;
-  public SharedPreferences mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(SnapchatApplication.b());
-  public SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
-  public int numAccounts = mSharedPreferences.getInt("SnapKidzLoginManager_numAccounts", 0);
+  public static final int MAX_SUCCESSFUL_STATUS_CODE = 299;
+  public static final int MIN_SUCCESSFUL_STATUS_CODE = 200;
+  public static final int SC_ANDROID_ID_TOKEN_EXPIRED = 499;
+  private static final String TAG = "HttpUtils";
   
-  public static auo a()
+  public static String a(String paramString, Bundle paramBundle)
   {
-    try
+    if ((paramBundle == null) || (paramString == null) || (paramBundle.isEmpty())) {
+      return paramString;
+    }
+    StringBuilder localStringBuilder = new StringBuilder(paramString.length() + paramBundle.size() * 32);
+    Iterator localIterator = paramBundle.keySet().iterator();
+    while (localIterator.hasNext())
     {
-      if (sInstance == null) {
-        sInstance = new auo();
+      String str = (String)localIterator.next();
+      int i;
+      if (localStringBuilder.length() == 0)
+      {
+        localStringBuilder.append(paramString);
+        i = paramString.indexOf('?');
+        if (i == -1) {
+          localStringBuilder.append('?');
+        }
       }
-      auo localauo = sInstance;
-      return localauo;
-    }
-    finally {}
-  }
-  
-  public static void b()
-  {
-    try
-    {
-      sInstance = null;
-      return;
-    }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
-    }
-  }
-  
-  public final boolean a(String paramString)
-  {
-    return b(paramString) != -1;
-  }
-  
-  public final int b(String paramString)
-  {
-    int i = 0;
-    while (i < numAccounts)
-    {
-      String str = mSharedPreferences.getString("SnapKidzLoginManager_username_" + i, null);
-      if ((str != null) && (paramString.equals(str))) {
-        return i;
+      for (;;)
+      {
+        if (str != null) {
+          break label163;
+        }
+        try
+        {
+          throw new NullPointerException(String.format("Found null key in %s", new Object[] { paramBundle }));
+        }
+        catch (UnsupportedEncodingException localUnsupportedEncodingException) {}
+        break;
+        if (i != paramString.length() - 1)
+        {
+          localStringBuilder.append('&');
+          continue;
+          localStringBuilder.append('&');
+        }
       }
-      i += 1;
+      label163:
+      if (paramBundle.get(localUnsupportedEncodingException) == null) {
+        throw new NullPointerException(String.format("Found null value for key %s", new Object[] { localUnsupportedEncodingException }));
+      }
+      localStringBuilder.append(localUnsupportedEncodingException).append("=").append(URLEncoder.encode(paramBundle.get(localUnsupportedEncodingException).toString(), "UTF-8"));
     }
-    return -1;
+    return localStringBuilder.toString();
+  }
+  
+  public static boolean a(int paramInt)
+  {
+    return (paramInt >= 200) && (paramInt <= 299);
   }
 }
 

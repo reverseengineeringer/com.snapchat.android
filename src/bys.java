@@ -1,26 +1,22 @@
 public final class bys
-  implements bxg
+  implements byh
 {
-  public final bxk a(bwz parambwz, String paramString)
+  public final byl a(bya parambya, String paramString)
   {
     try
     {
-      parambwz = new Integer(bxj.a(paramString, a).length());
-      return new bxk(parambwz.toString(), 0);
+      parambya = new Double(paramString);
+      return new byl(new Double(Math.cos(parambya.doubleValue())).toString(), 0);
     }
-    catch (bxh parambwz)
+    catch (Exception parambya)
     {
-      throw new bxh(parambwz.getMessage(), parambwz);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("One string argument is required.", parambwz);
+      throw new byi("Invalid argument.", parambya);
     }
   }
   
   public final String a()
   {
-    return "length";
+    return "cos";
   }
 }
 

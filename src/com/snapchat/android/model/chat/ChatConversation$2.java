@@ -1,7 +1,8 @@
 package com.snapchat.android.model.chat;
 
-import ban;
-import bcp;
+import bbo;
+import bdp;
+import com.snapchat.android.livechat.AdlHelper.PresenceSource;
 import com.squareup.otto.Bus;
 
 final class ChatConversation$2
@@ -13,7 +14,7 @@ final class ChatConversation$2
   {
     ChatConversation.a(this$0);
     ChatConversation.b(this$0);
-    ban.a().a(new bcp(ChatConversation.c(this$0), false, "presence timeout (16000 seconds)"));
+    bbo.a().a(new bdp(AdlHelper.PresenceSource.CHAT_GATEWAY, ChatConversation.c(this$0), false, "presence timeout (16000 seconds)"));
   }
 }
 

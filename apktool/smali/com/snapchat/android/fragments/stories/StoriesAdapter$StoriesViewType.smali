@@ -50,7 +50,7 @@
 
     const/4 v2, 0x0
 
-    .line 133
+    .line 134
     new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     const-string v1, "DEFAULT"
@@ -59,7 +59,7 @@
 
     sput-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->DEFAULT:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
-    .line 134
+    .line 135
     new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     const-string v1, "MY_STORY_SNAP"
@@ -68,7 +68,7 @@
 
     sput-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->MY_STORY_SNAP:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
-    .line 135
+    .line 136
     new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     const-string v1, "LIVE_STORIES"
@@ -77,7 +77,7 @@
 
     sput-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->LIVE_STORIES:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
-    .line 136
+    .line 137
     new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     const-string v1, "DISCOVER"
@@ -86,7 +86,7 @@
 
     sput-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->DISCOVER:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
-    .line 130
+    .line 131
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
@@ -109,7 +109,7 @@
 
     sput-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->$VALUES:[Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
-    .line 139
+    .line 140
     invoke-static {}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->values()[Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     move-result-object v0
@@ -130,7 +130,7 @@
     .end annotation
 
     .prologue
-    .line 130
+    .line 131
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -140,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 131
     sget v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->a:I
 
     return v0
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 131
     const-class v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -166,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 131
     sget-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->$VALUES:[Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->clone()Ljava/lang/Object;

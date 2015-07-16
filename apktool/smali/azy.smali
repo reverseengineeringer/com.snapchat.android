@@ -1,147 +1,235 @@
-.class public final Lazy;
+.class public interface abstract Lazy;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuo;
-
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
-        "<",
-        "Lazx;",
-        ">;"
-    }
+.annotation runtime Lbvi;
+.end annotation
+
+.annotation runtime Ljavax/inject/Singleton;
 .end annotation
 
 
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
-# instance fields
-.field private final releaseManagerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 7
-    const-class v0, Lazy;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lazy;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    sget-boolean v0, Lazy;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 13
-    :cond_0
-    iput-object p1, p0, Lazy;->releaseManagerProvider:Ljavax/inject/Provider;
-
-    .line 14
-    return-void
-.end method
-
-.method public static a(Ljavax/inject/Provider;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;)",
-            "Lbuo",
-            "<",
-            "Lazx;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 22
-    new-instance v0, Lazy;
-
-    invoke-direct {v0, p0}, Lazy;-><init>(Ljavax/inject/Provider;)V
-
-    return-object v0
-.end method
-
-
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 2
+.method public abstract a()Layy;
+.end method
 
-    .prologue
-    .line 7
-    new-instance v1, Lazx;
+.method public abstract a(Lack;)V
+.end method
 
-    iget-object v0, p0, Lazy;->releaseManagerProvider:Ljavax/inject/Provider;
+.method public abstract a(Lacm;)V
+.end method
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+.method public abstract a(Laga;)V
+.end method
 
-    move-result-object v0
+.method public abstract a(Lagr;)V
+.end method
 
-    check-cast v0, Lcom/snapchat/android/util/debug/ReleaseManager;
+.method public abstract a(Lagy;)V
+.end method
 
-    invoke-direct {v1, v0}, Lazx;-><init>(Lcom/snapchat/android/util/debug/ReleaseManager;)V
+.method public abstract a(Lahb;)V
+.end method
 
-    return-object v1
+.method public abstract a(Lahd;)V
+.end method
+
+.method public abstract a(Lajj;)V
+.end method
+
+.method public abstract a(Laka;)V
+.end method
+
+.method public abstract a(Lakl;)V
+.end method
+
+.method public abstract a(Lakp;)V
+.end method
+
+.method public abstract a(Lann;)V
+.end method
+
+.method public abstract a(Laoe;)V
+.end method
+
+.method public abstract a(Lavn;)V
+.end method
+
+.method public abstract a(Lays;)V
+.end method
+
+.method public abstract a(Layv;)V
+.end method
+
+.method public abstract a(Lbek;)V
+.end method
+
+.method public abstract a(Lbhl;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/LandingPageActivity;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/SnapchatActivity;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/SnapchatApplication;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/analytics/CameraEventAnalytics;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/analytics/framework/EasyMetric;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/camera/BackgroundCameraFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/camera/BaseCameraFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/camera/CameraFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/database/table/UpdateSnapsAnalyticsTable;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/cash/CashSettingsFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/sendto/SendToFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/settings/WebFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/signup/LoginFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/signup/SignupFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/model/chat/ChatConversation;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/ui/cash/CardNumberEditText;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/util/chat/SecureChatSession;)V
+.end method
+
+.method public abstract a(Lpk;)V
+.end method
+
+.method public abstract a(Lqt;)V
+.end method
+
+.method public abstract a(Lqx;)V
+.end method
+
+.method public abstract a(Lro;)V
+.end method
+
+.method public abstract a(Lrr;)V
+.end method
+
+.method public abstract a(Lrt;)V
+.end method
+
+.method public abstract a(Lrv;)V
+.end method
+
+.method public abstract a(Lrx;)V
+.end method
+
+.method public abstract a(Lrz;)V
+.end method
+
+.method public abstract a(Lsb;)V
+.end method
+
+.method public abstract a(Lsd;)V
+.end method
+
+.method public abstract a(Lsg;)V
+.end method
+
+.method public abstract a(Lsj;)V
+.end method
+
+.method public abstract a(Lsl;)V
+.end method
+
+.method public abstract a(Ltd;)V
+.end method
+
+.method public abstract a(Ltg;)V
+.end method
+
+.method public abstract a(Lti;)V
+.end method
+
+.method public abstract a(Luj;)V
+.end method
+
+.method public abstract a(Lwp;)V
+.end method
+
+.method public abstract a(Lws;)V
+.end method
+
+.method public abstract a(Lwv;)V
+.end method
+
+.method public abstract a(Lxj;)V
+.end method
+
+.method public abstract a(Lyj;)V
+.end method
+
+.method public abstract a(Lyn;)V
+.end method
+
+.method public abstract a(Lyt;)V
+.end method
+
+.method public abstract a(Lzf;)V
+.end method
+
+.method public abstract a(Lzk;)V
+.end method
+
+.method public abstract a(Lzm;)V
+.end method
+
+.method public abstract b()Laaq;
+.end method
+
+.method public abstract c()Laas;
 .end method

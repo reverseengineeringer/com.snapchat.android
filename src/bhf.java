@@ -1,93 +1,88 @@
-import com.google.gson.annotations.SerializedName;
-import java.util.Map;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import android.content.Context;
+import android.net.Uri;
+import android.os.AsyncTask;
+import com.snapchat.android.analytics.CameraEventAnalytics;
+import com.snapchat.android.analytics.CameraEventAnalytics.SaveSnapContext;
+import com.snapchat.android.util.save.SaveMediaNotificationsToShow;
 
 public class bhf
-  extends bhl
+  extends AsyncTask<Void, Void, Boolean>
 {
-  @SerializedName("body")
-  protected bij body;
-  @SerializedName("chat_message_id")
-  protected String chatMessageId;
-  @SerializedName("saved_state")
-  protected Map<String, biu> savedState;
-  @SerializedName("seq_num")
-  protected Long seqNum = Long.valueOf(0L);
-  @SerializedName("timestamp")
-  protected Long timestamp = Long.valueOf(0L);
+  private static final String TAG = "SaveVideoToGalleryTask";
+  private final CameraEventAnalytics mCameraEventAnalytics;
+  private final Context mContext;
+  private ajl mDecryptedSnapVideo = null;
+  private final bhc mNotifications;
+  private final SaveMediaNotificationsToShow mNotificationsToShow;
+  private final CameraEventAnalytics.SaveSnapContext mSaveSnapContext;
+  private final axx mSnapVideoDecryptor;
+  private final akl mStorySnap;
+  private final Uri mUri;
   
-  public final bij a()
+  private bhf(@chc Context paramContext, @chc akl paramakl, @chc Uri paramUri, @chd CameraEventAnalytics.SaveSnapContext paramSaveSnapContext, @chc SaveMediaNotificationsToShow paramSaveMediaNotificationsToShow, @chc axx paramaxx, @chc bhc parambhc)
   {
-    return body;
-  }
-  
-  public final void a(bij parambij)
-  {
-    body = parambij;
-  }
-  
-  public final void a(Long paramLong)
-  {
-    seqNum = paramLong;
-  }
-  
-  public final void a(String paramString)
-  {
-    chatMessageId = paramString;
-  }
-  
-  public final void b(Long paramLong)
-  {
-    timestamp = paramLong;
-  }
-  
-  public final boolean b()
-  {
-    return body != null;
-  }
-  
-  public final String c()
-  {
-    return chatMessageId;
-  }
-  
-  public final Map<String, biu> d()
-  {
-    return savedState;
-  }
-  
-  public final Long e()
-  {
-    return seqNum;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
+    if ((paramakl == null) && (paramUri == null)) {
+      throw new NullPointerException("storySnap and videoUri are both null");
     }
-    if (!(paramObject instanceof bhf)) {
-      return false;
+    mContext = ((Context)co.a(paramContext));
+    mStorySnap = paramakl;
+    mUri = paramUri;
+    mSaveSnapContext = paramSaveSnapContext;
+    mNotificationsToShow = paramSaveMediaNotificationsToShow;
+    mSnapVideoDecryptor = paramaxx;
+    mCameraEventAnalytics = CameraEventAnalytics.a();
+    mNotifications = parambhc;
+  }
+  
+  public bhf(@chc Context paramContext, @chc akl paramakl, @chd CameraEventAnalytics.SaveSnapContext paramSaveSnapContext, @chc SaveMediaNotificationsToShow paramSaveMediaNotificationsToShow)
+  {
+    this(paramContext, paramakl, null, paramSaveSnapContext, paramSaveMediaNotificationsToShow, new axx(), bhc.a());
+  }
+  
+  public bhf(@chc Context paramContext, @chc Uri paramUri, @chd CameraEventAnalytics.SaveSnapContext paramSaveSnapContext, @chc SaveMediaNotificationsToShow paramSaveMediaNotificationsToShow)
+  {
+    this(paramContext, null, paramUri, paramSaveSnapContext, paramSaveMediaNotificationsToShow, new axx(), bhc.a());
+  }
+  
+  public void a()
+  {
+    if (mSaveSnapContext != null) {
+      CameraEventAnalytics.a(true, mSaveSnapContext);
     }
-    paramObject = (bhf)paramObject;
-    return new EqualsBuilder().append(body, body).append(chatMessageId, chatMessageId).append(savedState, savedState).append(seqNum, seqNum).append(timestamp, timestamp).isEquals();
   }
   
-  public final Long f()
+  public void a(Boolean paramBoolean)
   {
-    return timestamp;
+    if (mDecryptedSnapVideo != null) {
+      mDecryptedSnapVideo.e();
+    }
+    if (paramBoolean.booleanValue())
+    {
+      a();
+      if (mNotificationsToShow == SaveMediaNotificationsToShow.ALL) {
+        mNotifications.c();
+      }
+    }
+    do
+    {
+      return;
+      b();
+    } while (mNotificationsToShow == SaveMediaNotificationsToShow.NONE);
+    mNotifications.d();
   }
   
-  public int hashCode()
+  public void b()
   {
-    return new HashCodeBuilder().append(body).append(chatMessageId).append(savedState).append(seqNum).append(timestamp).toHashCode();
+    if (mSaveSnapContext != null) {
+      CameraEventAnalytics.b(true, mSaveSnapContext);
+    }
   }
   
-  public String toString()
+  public void onPreExecute()
   {
-    return ToStringBuilder.reflectionToString(this);
+    if (mNotificationsToShow == SaveMediaNotificationsToShow.ALL) {
+      mNotifications.b();
+    }
   }
 }
 

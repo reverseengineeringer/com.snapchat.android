@@ -261,7 +261,6 @@ for å sende til en venn."</string>
     <string name="discover_sharing_success">Snap sendt!</string>
     <string name="discover_sharing_unavailable">%1$s tillater ikke å sende denne Snappen.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Trykk her for å prøve Discover!</string>
     <string name="discover_unavailable">"Beklager! 
 
 Discover er midlertidig utilgjengelig."</string>
@@ -312,6 +311,7 @@ ikke tilgjengelig i din region."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request"> Glemt passord? </a>" "</string>
     <string name="friend_suggest_hide">Gjem</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Ny kontakt</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Ny bruker</string>
     <string name="friends">Venner</string>
     <string name="friends_context_block">Blokkér</string>
@@ -620,7 +620,7 @@ Les våre "<a href="http://www.snapchat.com/privacy"> Personvernregler </a> for 
     <string name="snap_delete_failure">Snap kunne ikke slettes.</string>
     <string name="snap_failed_to_post">1 Snap kunne ikke publiseres.</string>
     <string name="snap_list_empty_list_msg">Du har ingen Snapper :(</string>
-    <string name="snap_tag_help_description">Snapchattere kan legge deg til ved å holde kameraet sitt over spøkelset ditt og trykke på skjermen!</string>
+    <string name="snap_tag_help_description">Snapchattere kan legge deg til ved å peke kameraet sitt på din Snapcode, og trykke på skjermen!</string>
     <string name="snap_tag_no_connection">Ingen tilkobling!</string>
     <string name="snap_to_add">Snap eller ta skjermbilde for å legge til</string>
     <string name="snapkidz_welcome">Velkommen til Snapkidz!</string>
@@ -656,8 +656,6 @@ Les våre "<a href="http://www.snapchat.com/privacy"> Personvernregler </a> for 
     <string name="tap_to_view_edition">Trykk for å se i Discover</string>
     <string name="tap_to_view_full_story">Trykk for å se hele historien</string>
     <string name="tap_to_view_more">Trykk for å utforske andre kanaler</string>
-    <string name="tap_to_view_snaps">Trykk for å se Snapper!</string>
-    <string name="tap_to_view_stories">Trykk for å se Stories!</string>
     <string name="tap_to_view_video_in_discover">Trykk for å se denne videoen i Discover</string>
     <string name="too_many_attempts">For mange forsøk.</string>
     <string name="tos_accept">GODTA</string>

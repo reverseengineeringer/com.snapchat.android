@@ -1,50 +1,88 @@
-import com.snapchat.android.api2.framework.HttpMethod;
+import android.os.Bundle;
+import com.google.gson.Gson;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public final class px
-  extends tv
+  extends pk
 {
-  private final boolean mIsPostRequest;
-  private final Object mPayload;
-  private final bfk mResponseBuffer;
-  private final String mUrl;
+  private static final String FRIENDS_STORIES_PARAM = "friend_stories";
+  private static final String TASK_NAME = "UpdateStoriesTask";
+  private static final String USERNAME_PARAM = "username";
+  public static Map<String, akm> sPendingStoryViewRecords = new HashMap();
+  private List<akm> mStoryViewRecordList;
+  private String mUsername;
   
-  public px(String paramString, bfk parambfk)
+  public px()
   {
-    mUrl = paramString;
-    mResponseBuffer = parambfk;
-    mPayload = null;
-    mIsPostRequest = false;
-  }
-  
-  public px(String paramString, bfk parambfk, Object paramObject)
-  {
-    mUrl = paramString;
-    mResponseBuffer = parambfk;
-    mPayload = paramObject;
-    mIsPostRequest = true;
-  }
-  
-  public final bfk a_()
-  {
-    return mResponseBuffer;
-  }
-  
-  public final Object b()
-  {
-    return mPayload;
-  }
-  
-  public final HttpMethod c()
-  {
-    if (mIsPostRequest) {
-      return HttpMethod.POST;
+    akp localakp = akp.g();
+    mUsername = akr.l();
+    synchronized (mStoryViewRecordsSinceLastServerChange)
+    {
+      mStoryViewRecordList = new ArrayList(???.size());
+      Iterator localIterator = ???.entrySet().iterator();
+      if (localIterator.hasNext())
+      {
+        Map.Entry localEntry = (Map.Entry)localIterator.next();
+        mStoryViewRecordList.add(localEntry.getValue());
+        sPendingStoryViewRecords.put(localEntry.getKey(), localEntry.getValue());
+      }
     }
-    return HttpMethod.GET;
+    mStoryViewRecordsSinceLastServerChange.clear();
   }
   
-  public final String n_()
+  protected final String a()
   {
-    return mUrl;
+    return "/bq/update_stories";
+  }
+  
+  protected final void a(String arg1, int paramInt)
+  {
+    ??? = akp.g();
+    if (??? == null) {
+      return;
+    }
+    synchronized (mStoryViewRecordsSinceLastServerChange)
+    {
+      Iterator localIterator = mStoryViewRecordList.iterator();
+      if (localIterator.hasNext())
+      {
+        akm localakm = (akm)localIterator.next();
+        String str = mId;
+        if (!???.containsKey(str)) {
+          ???.put(str, localakm);
+        }
+        sPendingStoryViewRecords.remove(str);
+      }
+    }
+  }
+  
+  protected final Bundle b()
+  {
+    Bundle localBundle = new Bundle();
+    localBundle.putString("username", mUsername);
+    localBundle.putString("friend_stories", aul.a().toJson(mStoryViewRecordList));
+    return localBundle;
+  }
+  
+  protected final void b(alp paramalp)
+  {
+    paramalp = mStoryViewRecordList.iterator();
+    while (paramalp.hasNext())
+    {
+      akm localakm = (akm)paramalp.next();
+      sPendingStoryViewRecords.remove(mId);
+    }
+  }
+  
+  protected final String c()
+  {
+    return "UpdateStoriesTask";
   }
 }
 

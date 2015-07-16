@@ -111,7 +111,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->e()V
 
     goto :goto_0
 .end method
@@ -486,7 +486,7 @@
 
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v0, v1, v3}, Laur;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v0, v1, v3}, Lavp;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -723,7 +723,7 @@
     const/4 v1, 0x0
 
     :try_start_0
-    invoke-static {p3, v0, v1}, Laur;->a(Landroid/content/Context;IZ)Landroid/graphics/Bitmap;
+    invoke-static {p3, v0, v1}, Lavp;->a(Landroid/content/Context;IZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -745,7 +745,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/AnalyticsEvents;->f(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/AnalyticsEvents;->e(Ljava/lang/String;)V
 
     .line 259
     :goto_0

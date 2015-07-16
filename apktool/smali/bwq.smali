@@ -1,21 +1,33 @@
-.class public interface abstract annotation Lbwq;
-.super Ljava/lang/Object;
+.class public abstract Lbwq;
+.super Lbwi;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 40
+    invoke-direct {p0}, Lbwi;-><init>()V
+
+    return-void
+.end method
 
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Documented;
-.end annotation
+# virtual methods
+.method public a(Lbwz;)V
+    .locals 0
 
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+    .prologue
+    .line 45
+    return-void
+.end method
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->TYPE:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+.method public a(Ljava/lang/Boolean;)V
+    .locals 0
+
+    .prologue
+    .line 42
+    return-void
+.end method

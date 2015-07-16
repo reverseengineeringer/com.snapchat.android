@@ -65,7 +65,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment$b;-><init>(Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;ZZ)V
 
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     const/4 v2, 0x0
 

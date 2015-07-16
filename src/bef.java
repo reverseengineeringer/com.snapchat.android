@@ -1,15 +1,4 @@
-public final class bef
-{
-  public String mCaptionText;
-  public boolean mDuringPresence;
-  public int mOriginatingFragment = 0;
-  
-  public bef(String paramString, boolean paramBoolean)
-  {
-    mCaptionText = paramString;
-    mDuringPresence = paramBoolean;
-  }
-}
+public final class bef {}
 
 /* Location:
  * Qualified Name:     bef

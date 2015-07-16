@@ -12,7 +12,7 @@ public final class R$color
   public static final int closed_captioning_white = 2131230745;
   public static final int closed_captioning_yellow = 2131230746;
   public static final int color_selected = 2131230747;
-  public static final int white = 2131230811;
+  public static final int white = 2131230813;
 }
 
 /* Location:

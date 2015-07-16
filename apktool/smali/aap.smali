@@ -1,74 +1,120 @@
-.class public final Laap;
-.super Laan;
+.class public Laap;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field private static a:Laap;
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Laap$a;
+    }
+.end annotation
+
+
+# instance fields
+.field public final a:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final b:Lbhk;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 8
-    new-instance v0, Laap;
+    .line 24
+    new-instance v0, Lbhk;
 
-    invoke-direct {v0}, Laap;-><init>()V
+    invoke-direct {v0}, Lbhk;-><init>()V
 
-    sput-object v0, Laap;->a:Laap;
+    invoke-direct {p0, v0}, Laap;-><init>(Lbhk;)V
 
+    .line 25
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 2
+.method private constructor <init>(Lbhk;)V
+    .locals 1
 
     .prologue
-    .line 11
-    const-string v0, "HasSeenPostToOurStoryDialog"
+    .line 28
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    .line 20
+    new-instance v0, Ljava/util/HashMap;
 
-    move-result-object v1
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-virtual {v1}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    iput-object v0, p0, Laap;->a:Ljava/util/Map;
 
-    move-result-object v1
+    .line 29
+    iput-object p1, p0, Laap;->b:Lbhk;
 
-    invoke-interface {v1}, Laza;->c()Lzs;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Laan;-><init>(Ljava/lang/String;Lzp;)V
-
-    .line 13
+    .line 30
     return-void
 .end method
 
-.method public static declared-synchronized a()Laap;
-    .locals 2
+
+# virtual methods
+.method public final a(Ljava/lang/String;)Z
+    .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 16
-    const-class v0, Laap;
+    .line 50
+    iget-object v0, p0, Laap;->a:Ljava/util/Map;
 
-    monitor-enter v0
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    :try_start_0
-    sget-object v1, Laap;->a:Laap;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result v0
 
-    monitor-exit v0
+    return v0
+.end method
 
-    return-object v1
+.method public final b(Ljava/lang/String;)V
+    .locals 4
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    :catchall_0
-    move-exception v1
+    .prologue
+    .line 54
+    iget-object v0, p0, Laap;->a:Ljava/util/Map;
 
-    monitor-exit v0
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    throw v1
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 55
+    iget-object v0, p0, Laap;->a:Ljava/util/Map;
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 57
+    :cond_0
+    return-void
 .end method

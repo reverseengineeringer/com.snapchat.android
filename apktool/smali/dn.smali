@@ -1,129 +1,88 @@
-.class public final Ldn;
-.super Ljava/lang/Object;
+.class abstract Ldn;
+.super Ldk;
 .source "SourceFile"
 
 
 # annotations
-.annotation build Lcd;
+.annotation build Lce;
+.end annotation
+
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Ldn$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ldk",
+        "<TK;TV;>;"
+    }
 .end annotation
 
 
-# static fields
-.field static final a:[Ljava/lang/Object;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Ldn;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ldn",
+            "<TK;TV;>;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 37
-    const/4 v0, 0x0
+    .line 41
+    invoke-virtual {p1}, Ldn;->getKey()Ljava/lang/Object;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    move-result-object v0
 
-    sput-object v0, Ldn;->a:[Ljava/lang/Object;
+    invoke-virtual {p1}, Ldn;->getValue()Ljava/lang/Object;
 
+    move-result-object v1
+
+    invoke-direct {p0, v0, v1}, Ldk;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 43
     return-void
 .end method
 
-.method static a(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 3
-
-    .prologue
-    .line 239
-    if-nez p0, :cond_0
-
-    .line 240
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const/16 v2, 0x14
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "at index "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 242
-    :cond_0
-    return-object p0
-.end method
-
-.method public static a([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .locals 1
+.method constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">([TT;I)[TT;"
+            "(TK;TV;)V"
         }
     .end annotation
 
     .prologue
-    .line 61
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 36
+    invoke-direct {p0, p1, p2}, Ldk;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    move-result-object v0
+    .line 37
+    invoke-static {p1, p2}, Lcx;->a(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ljava/lang/Object;
-
-    check-cast v0, [Ljava/lang/Object;
-
-    return-object v0
+    .line 38
+    return-void
 .end method
 
-.method static b([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .locals 3
+
+# virtual methods
+.method abstract a()Ldn;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">([TT;I)[TT;"
+            "()",
+            "Ldn",
+            "<TK;TV;>;"
         }
     .end annotation
 
-    .prologue
-    const/4 v2, 0x0
-
-    .line 112
-    invoke-static {p0, p1}, Ldn;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 113
-    array-length v1, p0
-
-    invoke-static {v1, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 115
-    return-object v0
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 .end method

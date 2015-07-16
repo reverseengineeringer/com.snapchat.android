@@ -1,12 +1,21 @@
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public final class ats
 {
-  private static float[] coefficients = new float[4];
-  private static final float[] lhmatrix = { 0.0F, -0.5F, 1.0F, -0.5F, 1.0F, 0.0F, -2.5F, 1.5F, 0.0F, 0.5F, 2.0F, -1.5F, 0.0F, 0.0F, -0.5F, 0.5F };
-  private static float[] xvector = new float[4];
-  
-  public static float a(float paramFloat1, float paramFloat2, float paramFloat3)
+  public static String a(String paramString)
   {
-    return (1.0F - paramFloat3) * paramFloat1 + paramFloat3 * paramFloat2;
+    if (paramString == null) {
+      return null;
+    }
+    return ats.a.a().matcher(Normalizer.normalize(paramString, Normalizer.Form.NFD)).replaceAll("");
+  }
+  
+  static final class a
+  {
+    private static final Pattern LAZY_INSTANCE = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
   }
 }
 

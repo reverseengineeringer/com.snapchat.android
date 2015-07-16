@@ -3,28 +3,51 @@
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbjj$a;
+    }
+.end annotation
+
+
 # instance fields
-.field protected screenshotted:Ljava/lang/Boolean;
+.field protected attributes:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "screenshotted"
+        value = "attributes"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbko;",
+            ">;"
+        }
     .end annotation
 .end field
 
-.field protected storypointer:Lbjk;
+.field protected media:Lbjh;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "storypointer"
+        value = "media"
     .end annotation
 .end field
 
-.field protected timestamp:Ljava/lang/Long;
+.field protected obfuscation:Ljava/lang/Integer;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "timestamp"
+        value = "obfuscation"
     .end annotation
 .end field
 
-.field protected viewer:Ljava/lang/String;
+.field protected text:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "viewer"
+        value = "text"
+    .end annotation
+.end field
+
+.field protected type:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "type"
     .end annotation
 .end field
 
@@ -34,44 +57,33 @@
     .locals 0
 
     .prologue
-    .line 17
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbjk;)Lbjj;
-    .locals 0
+.method public final a()Lbjh;
+    .locals 1
 
     .prologue
-    .line 91
-    iput-object p1, p0, Lbjj;->storypointer:Lbjk;
-
     .line 92
-    return-object p0
+    iget-object v0, p0, Lbjj;->media:Lbjh;
+
+    return-object v0
 .end method
 
-.method public final a(Ljava/lang/Boolean;)Lbjj;
+.method public final a(Lbjh;)Lbjj;
     .locals 0
 
     .prologue
-    .line 55
-    iput-object p1, p0, Lbjj;->screenshotted:Ljava/lang/Boolean;
+    .line 87
+    iput-object p1, p0, Lbjj;->media:Lbjh;
 
-    .line 56
-    return-object p0
-.end method
-
-.method public final a(Ljava/lang/Long;)Lbjj;
-    .locals 0
-
-    .prologue
-    .line 73
-    iput-object p1, p0, Lbjj;->timestamp:Ljava/lang/Long;
-
-    .line 74
+    .line 88
     return-object p0
 .end method
 
@@ -79,49 +91,74 @@
     .locals 0
 
     .prologue
-    .line 37
-    iput-object p1, p0, Lbjj;->viewer:Ljava/lang/String;
+    .line 105
+    iput-object p1, p0, Lbjj;->type:Ljava/lang/String;
 
-    .line 38
+    .line 106
     return-object p0
 .end method
 
-.method public final a()Ljava/lang/String;
-    .locals 1
+.method public final b(Ljava/lang/String;)Lbjj;
+    .locals 0
 
     .prologue
-    .line 42
-    iget-object v0, p0, Lbjj;->viewer:Ljava/lang/String;
+    .line 127
+    iput-object p1, p0, Lbjj;->text:Ljava/lang/String;
 
-    return-object v0
+    .line 128
+    return-object p0
 .end method
 
-.method public final b()Ljava/lang/Boolean;
-    .locals 1
-
-    .prologue
-    .line 60
-    iget-object v0, p0, Lbjj;->screenshotted:Ljava/lang/Boolean;
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/lang/Long;
-    .locals 1
-
-    .prologue
-    .line 78
-    iget-object v0, p0, Lbjj;->timestamp:Ljava/lang/Long;
-
-    return-object v0
-.end method
-
-.method public final d()Lbjk;
+.method public final b()Z
     .locals 1
 
     .prologue
     .line 96
-    iget-object v0, p0, Lbjj;->storypointer:Lbjk;
+    iget-object v0, p0, Lbjj;->media:Lbjh;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 110
+    iget-object v0, p0, Lbjj;->type:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final d()Lbjj$a;
+    .locals 1
+
+    .prologue
+    .line 114
+    iget-object v0, p0, Lbjj;->type:Ljava/lang/String;
+
+    invoke-static {v0}, Lbjj$a;->a(Ljava/lang/String;)Lbjj$a;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 132
+    iget-object v0, p0, Lbjj;->text:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -130,63 +167,71 @@
     .locals 3
 
     .prologue
-    .line 120
+    .line 209
     if-ne p1, p0, :cond_0
 
-    .line 121
+    .line 210
     const/4 v0, 0x1
 
-    .line 127
+    .line 216
     :goto_0
     return v0
 
-    .line 123
+    .line 212
     :cond_0
     instance-of v0, p1, Lbjj;
 
     if-nez v0, :cond_1
 
-    .line 124
+    .line 213
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 126
+    .line 215
     :cond_1
     check-cast p1, Lbjj;
 
-    .line 127
+    .line 216
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjj;->viewer:Ljava/lang/String;
+    iget-object v1, p0, Lbjj;->media:Lbjh;
 
-    iget-object v2, p1, Lbjj;->viewer:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbjj;->screenshotted:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbjj;->screenshotted:Ljava/lang/Boolean;
+    iget-object v2, p1, Lbjj;->media:Lbjh;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjj;->timestamp:Ljava/lang/Long;
+    iget-object v1, p0, Lbjj;->type:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjj;->timestamp:Ljava/lang/Long;
+    iget-object v2, p1, Lbjj;->type:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjj;->storypointer:Lbjk;
+    iget-object v1, p0, Lbjj;->text:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjj;->storypointer:Lbjk;
+    iget-object v2, p1, Lbjj;->text:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjj;->attributes:Ljava/util/List;
+
+    iget-object v2, p1, Lbjj;->attributes:Ljava/util/List;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjj;->obfuscation:Ljava/lang/Integer;
+
+    iget-object v2, p1, Lbjj;->obfuscation:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -199,34 +244,79 @@
     goto :goto_0
 .end method
 
+.method public final f()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lbko;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 150
+    iget-object v0, p0, Lbjj;->attributes:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final g()Z
+    .locals 1
+
+    .prologue
+    .line 154
+    iget-object v0, p0, Lbjj;->attributes:Ljava/util/List;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public final hashCode()I
     .locals 2
 
     .prologue
-    .line 110
+    .line 198
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjj;->viewer:Ljava/lang/String;
+    iget-object v1, p0, Lbjj;->media:Lbjh;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjj;->screenshotted:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbjj;->type:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjj;->timestamp:Ljava/lang/Long;
+    iget-object v1, p0, Lbjj;->text:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjj;->storypointer:Lbjk;
+    iget-object v1, p0, Lbjj;->attributes:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjj;->obfuscation:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -240,13 +330,126 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 1
+    .locals 6
 
     .prologue
-    .line 105
+    const/4 v5, 0x3
+
+    .line 177
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 178
+    const-string v1, "text"
+
+    iget-object v2, p0, Lbjj;->text:Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0}, Lorg/apache/commons/lang3/StringUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    invoke-static {v2}, Lorg/apache/commons/lang3/StringUtils;->length(Ljava/lang/CharSequence;)I
+
+    move-result v3
+
+    if-le v3, v5, :cond_0
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, "="
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const/16 v4, 0x2a
+
+    invoke-static {v2}, Lorg/apache/commons/lang3/StringUtils;->length(Ljava/lang/CharSequence;)I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, -0x3
+
+    invoke-static {v4, v5}, Lorg/apache/commons/lang3/StringUtils;->repeat(CI)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 179
+    :cond_0
     return-object v0
 .end method

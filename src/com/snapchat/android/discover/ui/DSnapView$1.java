@@ -1,10 +1,10 @@
 package com.snapchat.android.discover.ui;
 
-import aby;
-import aed.a;
+import acy;
+import afd.a;
 
 final class DSnapView$1
-  implements aed.a
+  implements afd.a
 {
   DSnapView$1(DSnapView paramDSnapView) {}
   

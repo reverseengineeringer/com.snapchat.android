@@ -2,7 +2,7 @@ package com.snapchat.android.analytics.framework;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import ft;
+import gc;
 
 final class ScAnalyticsEventEngineStatic$6
   implements Runnable
@@ -11,21 +11,21 @@ final class ScAnalyticsEventEngineStatic$6
   
   public final void run()
   {
-    if (ScAnalyticsEventEngineStatic.l())
-    {
-      ft localft = new ft();
-      SharedPreferences localSharedPreferences = ScAnalyticsEventEngineStatic.m();
-      long l2 = localSharedPreferences.getLong(Constants.d, -1L);
-      long l3 = ScAnalyticsEventEngineStatic.b(a - l2);
-      long l1 = localSharedPreferences.getLong(Constants.h, 0L) + ScAnalyticsEventEngineStatic.b(a - ScAnalyticsEventEngineStatic.n());
-      userId = ScAnalyticsEventEngineStatic.d().a();
-      sessionStartTs = Double.valueOf(ScAnalyticsEventEngineStatic.c(l2));
-      sessionTimeSec = Long.valueOf(l3);
-      sessionActiveTimeSec = Long.valueOf(l1);
-      l2 = ScAnalyticsEventEngineStatic.a(localft, a);
-      localSharedPreferences.edit().putLong(Constants.f, l2).putLong(Constants.e, a).putLong(Constants.h, l1).commit();
+    if (!ScAnalyticsEventEngineStatic.g()) {
+      return;
     }
-    ScAnalyticsEventEngineStatic.o();
+    SharedPreferences localSharedPreferences = ScAnalyticsEventEngineStatic.j();
+    long l2 = localSharedPreferences.getLong(Constants.d, -1L);
+    long l3 = ScAnalyticsEventEngineStatic.d(a - l2);
+    long l1 = localSharedPreferences.getLong(Constants.h, 0L) + ScAnalyticsEventEngineStatic.d(a - ScAnalyticsEventEngineStatic.k());
+    gc localgc = new gc();
+    userId = ScAnalyticsEventEngineStatic.d().a();
+    sessionStartTs = Double.valueOf(ScAnalyticsEventEngineStatic.e(l2));
+    sessionTimeSec = Long.valueOf(l3);
+    sessionActiveTimeSec = Long.valueOf(l1);
+    l2 = ScAnalyticsEventEngineStatic.a(localgc, a);
+    localSharedPreferences.edit().putLong(Constants.f, l2).putLong(Constants.e, a).putLong(Constants.h, l1).commit();
+    ScAnalyticsEventEngineStatic.a(false);
   }
 }
 

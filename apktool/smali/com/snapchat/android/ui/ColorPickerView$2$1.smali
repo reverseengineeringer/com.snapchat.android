@@ -92,7 +92,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v1, v2}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v1
 
@@ -148,7 +148,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v3, v4}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v3
 

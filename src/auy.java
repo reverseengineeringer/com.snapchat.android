@@ -1,172 +1,66 @@
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.SystemClock;
-import android.support.v4.util.LruCache;
-import com.snapchat.android.Timber;
-import com.squareup.otto.Bus;
-import java.util.Collections;
-import java.util.List;
-import javax.inject.Singleton;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
-@Singleton
 public final class auy
 {
-  private static final auy INSTANCE = new auy();
-  private static final float LRU_CACHE_SIZE = 0.025F;
-  private static final String TAG = "StoriesThumbnailCache";
-  private static final int THUMBNAIL_EXPIRATION_MINUTES = 30;
-  private final avq mBitmapPool;
-  private final ajq mStoryLibrary;
-  private final LruCache<String, auy.a> mThumbnailCache;
-  protected final Object mThumbnailCacheMutex = new Object();
+  private static final double DEFAULT_BUCKET_ACCURACY = 10.0D;
+  private static final NumberFormat mNumberFormatter = new DecimalFormat("###,###,###");
   
-  private auy()
+  public static String a(double paramDouble, Locale paramLocale, int paramInt)
   {
-    this(ajq.a(), avq.a());
+    paramLocale = NumberFormat.getCurrencyInstance(paramLocale);
+    paramLocale.setMinimumFractionDigits(paramInt);
+    paramLocale.setGroupingUsed(true);
+    return paramLocale.format(paramDouble);
   }
   
-  private auy(ajq paramajq, avq paramavq)
+  public static String a(int paramInt)
   {
-    mStoryLibrary = paramajq;
-    mBitmapPool = paramavq;
-    int i = (int)((int)(Runtime.getRuntime().maxMemory() / 1024L) * 0.025F);
-    Timber.b("StoriesThumbnailCache", "StoriesThumbnailCache size = " + i + " kilobytes", new Object[0]);
-    mThumbnailCache = new LruCache(i) {};
-  }
-  
-  public static auy a()
-  {
-    return INSTANCE;
-  }
-  
-  @avl
-  public final Bitmap a(auz paramauz)
-  {
-    paramauz = mCacheKey;
-    paramauz = (auy.a)mThumbnailCache.get(paramauz);
-    if (paramauz == null) {
-      return null;
+    String str;
+    if (paramInt >= 0) {
+      str = "";
     }
-    return mBitmap;
-  }
-  
-  @avl
-  public final void a(Context paramContext, final auz paramauz)
-  {
-    ??? = mStorySnaps;
-    if (((List)???).contains(null))
+    while (paramInt < 1000)
     {
-      Timber.f("StoriesThumbnailCache", "getStorySnaps: Null StorySnap added to the list from feed item: " + paramauz, new Object[0]);
-      ((List)???).removeAll(Collections.singleton(null));
+      return str + paramInt;
+      str = "-";
+      paramInt *= -1;
     }
-    final List localList = Collections.unmodifiableList((List)???);
-    final String str = mCacheKey;
-    if (localList.isEmpty()) {
-      mThumbnailCache.remove(str);
+    int i = (int)(Math.log(paramInt) / Math.log(1000.0D));
+    float f = (float)(paramInt / Math.pow(1000.0D, i));
+    if (f < 100.0F) {
+      return String.format("%s%.1f%c", new Object[] { str, Float.valueOf(f), Character.valueOf("kMB".charAt(i - 1)) });
     }
-    auy.a locala;
-    int i;
-    for (;;)
-    {
-      return;
-      synchronized (mThumbnailCacheMutex)
-      {
-        locala = (auy.a)mThumbnailCache.get(str);
-        if (locala != null)
-        {
-          if (((ajr)localList.get(0)).W() != mFirstStoryTimestamp)
-          {
-            i = 1;
-            break label294;
-          }
-        }
-        else
-        {
-          if (locala != null) {
-            break label262;
-          }
-          mThumbnailCache.put(str, new auy.a(null, localList));
-          break label301;
-          label173:
-          if (i == 0) {
-            continue;
-          }
-          new asw(paramContext, localList, paramauz)
-          {
-            protected final void a(Bitmap paramAnonymousBitmap)
-            {
-              if (paramAnonymousBitmap == null)
-              {
-                auy.b(auy.this).remove(str);
-                return;
-              }
-              auy.b(auy.this).put(str, new auy.a(auy.this, paramAnonymousBitmap, localList));
-              ban.a().a(new bed(paramauz));
-            }
-          }.a();
-          return;
-        }
-        if (((ajr)localList.get(localList.size() - 1)).W() != mLastStoryTimestamp)
-        {
-          i = 1;
-          break label294;
-        }
-        if ((SystemClock.elapsedRealtime() - mThumbnailCreationTime) / 60000L < 30L) {
-          break label306;
-        }
-        i = 1;
-        break label294;
-        label262:
-        if (mIsExpired) {
-          return;
-        }
-      }
-    }
-    mIsExpired = true;
-    label294:
-    label301:
-    label306:
-    label309:
-    for (;;)
-    {
-      i = 0;
-      break label173;
-      for (;;)
-      {
-        if (i == 0) {
-          break label309;
-        }
-        break;
-        i = 1;
-        break label173;
-        i = 0;
-      }
-    }
+    return String.format("%s%d%c", new Object[] { str, Integer.valueOf((int)f), Character.valueOf("kMB".charAt(i - 1)) });
   }
   
-  public final void b()
+  @chc
+  public static String a(long paramLong)
   {
-    mThumbnailCache.trimToSize(-1);
-    awq.MY_STORY_SNAP_THUMBNAIL_CACHE.b();
-    awq.STORY_SNAP_RECEIVED_THUMBNAIL_CACHE.b();
+    double d2 = awd.a(paramLong);
+    double d1 = Math.exp(Math.floor(Math.log(d2) * 10.0D) / 10.0D);
+    d2 = Math.exp(Math.ceil(Math.log(d2) * 10.0D) / 10.0D);
+    return String.format(Locale.US, "%4.3f-%4.3f s", new Object[] { Double.valueOf(d1), Double.valueOf(d2) });
   }
   
-  final class a
+  public static String b(int paramInt)
   {
-    Bitmap mBitmap;
-    long mFirstStoryTimestamp;
-    boolean mIsExpired = false;
-    long mLastStoryTimestamp;
-    long mThumbnailCreationTime;
-    
-    public a(List<ajr> paramList)
-    {
-      mBitmap = paramList;
-      mThumbnailCreationTime = SystemClock.elapsedRealtime();
-      Object localObject;
-      mFirstStoryTimestamp = ((ajr)((List)localObject).get(0)).W();
-      mLastStoryTimestamp = ((ajr)((List)localObject).get(((List)localObject).size() - 1)).W();
+    return mNumberFormatter.format(paramInt);
+  }
+  
+  @chc
+  public static String b(long paramLong)
+  {
+    double d = paramLong / 1000.0D;
+    if (d > 11000.0D) {
+      return String.format("%d+ s", new Object[] { Integer.valueOf(11000) });
     }
+    if (d < 1000.0D) {
+      return String.format("0-%d s", new Object[] { Integer.valueOf(1000) });
+    }
+    int i = (int)(d / 1000.0D) + 1;
+    return String.format("%d-%d s", new Object[] { Integer.valueOf((i - 1) * 1000), Integer.valueOf(i * 1000) });
   }
 }
 

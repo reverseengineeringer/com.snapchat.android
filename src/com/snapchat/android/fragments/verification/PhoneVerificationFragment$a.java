@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.verification;
 
 import android.os.Handler;
-import bgo;
+import bho;
 
 final class PhoneVerificationFragment$a
-  extends bgo
+  extends bho
 {
   public PhoneVerificationFragment$a(PhoneVerificationFragment paramPhoneVerificationFragment, int paramInt, long paramLong, Handler paramHandler)
   {

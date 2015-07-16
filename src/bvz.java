@@ -1,42 +1,15 @@
-import android.content.Context;
-import java.net.URL;
-import java.net.URLConnection;
-
 public final class bvz
-  extends bvy
 {
-  public long g;
+  public static int a;
+  public static int b;
+  public static float c;
+  public static int d;
+  public static int e;
+  public static boolean f;
   
-  public bvz(Context paramContext, String paramString, bvp parambvp)
+  public static int a(float paramFloat)
   {
-    super(paramContext, paramString, parambvp);
-  }
-  
-  protected final void a(Long paramLong)
-  {
-    g = paramLong.longValue();
-    if (g > 0L)
-    {
-      b.a(this);
-      return;
-    }
-    b.a(Boolean.valueOf(false));
-  }
-  
-  protected final void a(Integer... paramVarArgs) {}
-  
-  protected final Long b()
-  {
-    try
-    {
-      long l = a(new URL(c()), 6).getContentLength();
-      return Long.valueOf(l);
-    }
-    catch (Exception localException)
-    {
-      localException.printStackTrace();
-    }
-    return Long.valueOf(0L);
+    return (int)(c * paramFloat + 0.5F);
   }
 }
 

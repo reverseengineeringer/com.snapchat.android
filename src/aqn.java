@@ -1,37 +1,64 @@
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
-import java.util.Iterator;
-import java.util.List;
+import com.snapchat.android.ui.caption.CaptionTypeEnums;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class aqn
-  implements AbsListView.OnScrollListener
 {
-  private final List<AbsListView.OnScrollListener> a;
+  public final CaptionTypeEnums a;
+  private final boolean b;
+  private final boolean c;
+  private final boolean d;
   
-  public aqn(List<AbsListView.OnScrollListener> paramList)
+  public aqn(CaptionTypeEnums paramCaptionTypeEnums, boolean paramBoolean1, boolean paramBoolean2, boolean paramBoolean3)
   {
-    a = paramList;
+    a = paramCaptionTypeEnums;
+    b = paramBoolean1;
+    c = paramBoolean2;
+    d = paramBoolean3;
   }
   
-  public final void onScroll(AbsListView paramAbsListView, int paramInt1, int paramInt2, int paramInt3)
+  public final Map<String, String> a()
   {
-    synchronized (a)
+    HashMap localHashMap = new HashMap();
+    Object localObject = a;
+    switch (aqn.1.a[localObject.ordinal()])
     {
-      Iterator localIterator = a.iterator();
-      if (localIterator.hasNext()) {
-        ((AbsListView.OnScrollListener)localIterator.next()).onScroll(paramAbsListView, paramInt1, paramInt2, paramInt3);
+    default: 
+      localObject = "";
+      localHashMap.put("caption", localObject);
+      if (b)
+      {
+        localObject = "true";
+        label71:
+        localHashMap.put("free_move_mode", localObject);
+        if (!c) {
+          break label147;
+        }
+        localObject = "true";
+        label91:
+        localHashMap.put("color_mode", localObject);
+        if (!d) {
+          break label153;
+        }
       }
+      break;
     }
-  }
-  
-  public final void onScrollStateChanged(AbsListView paramAbsListView, int paramInt)
-  {
-    synchronized (a)
+    label147:
+    label153:
+    for (localObject = "true";; localObject = "false")
     {
-      Iterator localIterator = a.iterator();
-      if (localIterator.hasNext()) {
-        ((AbsListView.OnScrollListener)localIterator.next()).onScrollStateChanged(paramAbsListView, paramInt);
-      }
+      localHashMap.put("scale_edited", localObject);
+      return localHashMap;
+      localObject = "DEFAULT";
+      break;
+      localObject = "BIG_TEXT";
+      break;
+      localObject = "BIG_TEXT_CENTER";
+      break;
+      localObject = "false";
+      break label71;
+      localObject = "false";
+      break label91;
     }
   }
 }

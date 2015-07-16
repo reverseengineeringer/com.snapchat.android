@@ -43,13 +43,13 @@
     const/4 v3, 0x0
 
     .line 687
-    sget-object v0, Lbwi$a;->a:Lbwi;
+    sget-object v0, Lbxj$a;->a:Lbxj;
 
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity$5;->a:Lnet/hockeyapp/android/FeedbackActivity;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lbwi;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Lbxj;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 689
     iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity$5;->a:Lnet/hockeyapp/android/FeedbackActivity;
@@ -80,7 +80,7 @@
     move-result-object v0
 
     .line 690
-    invoke-static {v0}, Lbwi;->a(Landroid/content/SharedPreferences$Editor;)V
+    invoke-static {v0}, Lbxj;->a(Landroid/content/SharedPreferences$Editor;)V
 
     .line 694
     iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity$5;->a:Lnet/hockeyapp/android/FeedbackActivity;

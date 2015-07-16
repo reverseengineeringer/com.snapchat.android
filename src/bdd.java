@@ -1,4 +1,12 @@
-public final class bdd {}
+public final class bdd
+{
+  public String sourceId;
+  
+  public bdd(@chc String paramString)
+  {
+    sourceId = paramString;
+  }
+}
 
 /* Location:
  * Qualified Name:     bdd

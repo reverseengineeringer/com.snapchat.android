@@ -1,25 +1,18 @@
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import com.snapchat.android.discover.controller.DiscoverMediaCategory;
 
-public final class ade
+public abstract interface ade
 {
-  private static ade b = new ade();
-  public Map<String, bjx> a = new ConcurrentHashMap();
+  public abstract void a();
   
-  public static ade a()
-  {
-    return b;
-  }
+  public abstract void a(@chc adf paramadf);
   
-  public final void a(@cgb String paramString, @cgc bjx parambjx)
-  {
-    if (parambjx == null)
-    {
-      a.remove(paramString);
-      return;
-    }
-    a.put(paramString, parambjx);
-  }
+  public abstract void a(@chc String paramString);
+  
+  public abstract void b();
+  
+  public abstract void c();
+  
+  public abstract DiscoverMediaCategory d();
 }
 
 /* Location:

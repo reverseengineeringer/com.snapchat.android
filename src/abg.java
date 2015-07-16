@@ -1,36 +1,30 @@
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import com.snapchat.android.model.FriendAction;
+import com.snapchat.android.database.table.SnapbryoTable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public final class abg
-  extends AlertDialog
+  extends SnapbryoTable
 {
-  public abg(Context paramContext, final String paramString)
+  private static abg a = new abg();
+  
+  public static abg a()
   {
-    super(paramContext);
-    setTitle(atx.a(paramContext, 2131492874, new Object[] { paramString }));
-    setButton(-1, paramContext.getString(2131492866), new DialogInterface.OnClickListener()
-    {
-      public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
-      {
-        abg.a(paramString, b);
-        paramAnonymousDialogInterface.cancel();
-      }
-    });
-    setButton(-2, paramContext.getString(2131492952), new DialogInterface.OnClickListener()
-    {
-      public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
-      {
-        paramAnonymousDialogInterface.cancel();
-      }
-    });
+    return a;
   }
   
-  protected static void a(String paramString1, String paramString2)
+  protected final Collection<aji> a(akp paramakp)
   {
-    new pp(FriendAction.ADD, null, paramString1, paramString2, null, false, null, null).f();
+    return new ArrayList(aki.a().d());
+  }
+  
+  public final void b(akp paramakp)
+  {
+    aki.a().a(a(null, null));
+  }
+  
+  public final String c()
+  {
+    return "FailedPostSnapbryoTable";
   }
 }
 

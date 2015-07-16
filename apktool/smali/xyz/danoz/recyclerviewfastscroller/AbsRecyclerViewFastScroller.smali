@@ -14,7 +14,7 @@
 
 .field public c:Landroid/support/v7/widget/RecyclerView;
 
-.field public d:Lcky;
+.field public d:Lclz;
 
 .field protected e:Landroid/support/v7/widget/RecyclerView$j;
 
@@ -25,7 +25,7 @@
 
     .prologue
     .line 33
-    sget-object v0, Lckr$c;->AbsRecyclerViewFastScroller:[I
+    sget-object v0, Lcls$c;->AbsRecyclerViewFastScroller:[I
 
     sput-object v0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->f:[I
 
@@ -86,7 +86,7 @@
 
     .line 64
     :try_start_0
-    sget v0, Lckr$c;->AbsRecyclerViewFastScroller_rfs_fast_scroller_layout:I
+    sget v0, Lcls$c;->AbsRecyclerViewFastScroller_rfs_fast_scroller_layout:I
 
     invoke-virtual {p0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getLayoutResourceId()I
 
@@ -111,7 +111,7 @@
     invoke-virtual {v0, v2, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 69
-    sget v0, Lckr$a;->scroll_bar:I
+    sget v0, Lcls$a;->scroll_bar:I
 
     invoke-virtual {p0, v0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->findViewById(I)Landroid/view/View;
 
@@ -120,7 +120,7 @@
     iput-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->a:Landroid/view/View;
 
     .line 70
-    sget v0, Lckr$a;->scroll_handle:I
+    sget v0, Lcls$a;->scroll_handle:I
 
     invoke-virtual {p0, v0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->findViewById(I)Landroid/view/View;
 
@@ -129,14 +129,14 @@
     iput-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->b:Landroid/view/View;
 
     .line 72
-    sget v0, Lckr$c;->AbsRecyclerViewFastScroller_rfs_barBackground:I
+    sget v0, Lcls$c;->AbsRecyclerViewFastScroller_rfs_barBackground:I
 
     invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     .line 73
-    sget v2, Lckr$c;->AbsRecyclerViewFastScroller_rfs_barColor:I
+    sget v2, Lcls$c;->AbsRecyclerViewFastScroller_rfs_barColor:I
 
     const v3, -0x777778
 
@@ -150,14 +150,14 @@
     invoke-static {v3, v0, v2}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;I)V
 
     .line 76
-    sget v0, Lckr$c;->AbsRecyclerViewFastScroller_rfs_handleBackground:I
+    sget v0, Lcls$c;->AbsRecyclerViewFastScroller_rfs_handleBackground:I
 
     invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     .line 77
-    sget v2, Lckr$c;->AbsRecyclerViewFastScroller_rfs_handleColor:I
+    sget v2, Lcls$c;->AbsRecyclerViewFastScroller_rfs_handleColor:I
 
     const v3, -0x777778
 
@@ -176,9 +176,9 @@
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 83
-    new-instance v0, Lckq;
+    new-instance v0, Lclr;
 
-    invoke-direct {v0, p0}, Lckq;-><init>(Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;)V
+    invoke-direct {v0, p0}, Lclr;-><init>(Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;)V
 
     invoke-virtual {p0, v0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
@@ -279,19 +279,19 @@
     return-object v0
 .end method
 
-.method public abstract getScrollProgressCalculator()Lckv;
+.method public abstract getScrollProgressCalculator()Lclw;
     .annotation build Lr;
     .end annotation
 .end method
 
-.method public getSectionIndicator()Lcky;
+.method public getSectionIndicator()Lclz;
     .locals 1
     .annotation build Lr;
     .end annotation
 
     .prologue
     .line 147
-    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->d:Lcky;
+    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->d:Lclz;
 
     return-object v0
 .end method
@@ -304,7 +304,7 @@
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
     .line 201
-    invoke-virtual {p0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getScrollProgressCalculator()Lckv;
+    invoke-virtual {p0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getScrollProgressCalculator()Lclw;
 
     move-result-object v0
 
@@ -315,13 +315,13 @@
 
     .line 206
     :cond_0
-    invoke-virtual {p0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getScrollProgressCalculator()Lckv;
+    invoke-virtual {p0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getScrollProgressCalculator()Lclw;
 
     move-result-object v0
 
     iget-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->c:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-interface {v0, v1}, Lckv;->a(Landroid/support/v7/widget/RecyclerView;)F
+    invoke-interface {v0, v1}, Lclw;->a(Landroid/support/v7/widget/RecyclerView;)F
 
     move-result v0
 
@@ -395,12 +395,12 @@
     return-void
 .end method
 
-.method public setSectionIndicator(Lcky;)V
+.method public setSectionIndicator(Lclz;)V
     .locals 0
 
     .prologue
     .line 142
-    iput-object p1, p0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->d:Lcky;
+    iput-object p1, p0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->d:Lclz;
 
     .line 143
     return-void

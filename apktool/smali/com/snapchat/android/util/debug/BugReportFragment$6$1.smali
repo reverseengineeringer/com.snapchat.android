@@ -43,7 +43,7 @@
     .line 287
     const-wide/16 v0, 0x12c
 
-    invoke-static {v0, v1}, Lbgp;->a(J)V
+    invoke-static {v0, v1}, Lbhp;->a(J)V
 
     .line 288
     iget-object v0, p0, Lcom/snapchat/android/util/debug/BugReportFragment$6$1;->this$1:Lcom/snapchat/android/util/debug/BugReportFragment$6;

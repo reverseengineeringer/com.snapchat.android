@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 567
+    .line 564
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$19$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$19;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,21 +40,21 @@
     .locals 3
 
     .prologue
-    .line 570
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 567
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-direct {v2}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;-><init>()V
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 571
+    .line 568
     return-void
 .end method

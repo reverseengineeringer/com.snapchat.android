@@ -25,7 +25,7 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 196
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     iput-object p2, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;
@@ -45,7 +45,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 153
+    .line 200
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->b(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Landroid/widget/ImageView;
@@ -56,10 +56,10 @@
 
     move-result-object v0
 
-    .line 154
+    .line 201
     if-eqz v0, :cond_0
 
-    .line 155
+    .line 202
     check-cast v0, Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 157
+    .line 204
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setY(F)V
 
-    .line 158
+    .line 205
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->b(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Landroid/widget/ImageView;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setX(F)V
 
-    .line 159
+    .line 206
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->c(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Lcom/snapchat/android/discover/ui/ChannelView;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/discover/ui/ChannelView;->addView(Landroid/view/View;I)V
 
-    .line 160
+    .line 207
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->c(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Lcom/snapchat/android/discover/ui/ChannelView;
@@ -121,7 +121,7 @@
 
     iput-object v1, v0, Lcom/snapchat/android/discover/ui/ChannelView;->a:Landroid/widget/ImageView;
 
-    .line 162
+    .line 209
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->b(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Landroid/widget/ImageView;
@@ -140,22 +140,22 @@
 
     move-result-object v0
 
-    .line 163
+    .line 210
     const-wide/16 v2, 0x32
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 164
+    .line 211
     new-instance v1, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4$1;
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4$1;-><init>(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 170
+    .line 217
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 172
+    .line 219
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->b(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Landroid/widget/ImageView;
@@ -166,12 +166,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 173
+    .line 220
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;
 
     if-eqz v0, :cond_1
 
-    .line 174
+    .line 221
+    iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
+
+    invoke-static {v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->d(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Z
+
+    .line 222
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;
 
     iget-object v1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
@@ -182,11 +187,13 @@
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;->a(Lcom/snapchat/android/discover/ui/ChannelView;)V
 
-    .line 176
+    .line 224
     :cond_1
     return-void
 
-    .line 162
+    .line 209
+    nop
+
     :array_0
     .array-data 4
         0x3f800000    # 1.0f

@@ -27,7 +27,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 110
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$2;->c:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     iput-object p2, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$2;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;
@@ -47,24 +47,24 @@
     .locals 2
 
     .prologue
-    .line 101
+    .line 113
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$2;->c:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->a(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Z
 
-    .line 102
+    .line 114
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$2;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;
 
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 115
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$2;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;
 
     iget-object v1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$2;->b:Lcom/snapchat/android/discover/ui/ChannelView;
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;->a(Lcom/snapchat/android/discover/ui/ChannelView;)V
 
-    .line 105
+    .line 117
     :cond_0
     return-void
 .end method

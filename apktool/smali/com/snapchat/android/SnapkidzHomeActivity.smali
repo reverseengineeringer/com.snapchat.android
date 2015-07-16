@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public a:Lbdj;
+.field public a:Lbej;
 
 .field private b:Z
 
@@ -37,7 +37,7 @@
     move-result-object v0
 
     .line 141
-    const v1, 0x7f0a0248
+    const v1, 0x7f0a0246
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
@@ -65,7 +65,7 @@
     if-ne p2, v0, :cond_0
 
     .line 58
-    invoke-static {p0}, Lasr;->a(Landroid/app/Activity;)V
+    invoke-static {p0}, Latq;->a(Landroid/app/Activity;)V
 
     .line 60
     :cond_0
@@ -88,15 +88,15 @@
     if-ne v0, v1, :cond_0
 
     .line 67
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -112,6 +112,18 @@
     .locals 2
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/SnapkidzHomeActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/SnapkidzHomeActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 105
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onCreate(Landroid/os/Bundle;)V
 
@@ -124,22 +136,22 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Laxa;->a(Ljava/io/File;Ljava/io/File;)V
+    invoke-static {v0, v1}, Laxy;->a(Ljava/io/File;Ljava/io/File;)V
 
     .line 107
-    invoke-static {}, Lapd;->a()Lapd;
+    invoke-static {}, Lapz;->a()Lapz;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lapd;->a(Landroid/content/Context;)V
+    invoke-virtual {v0, p0}, Lapz;->a(Landroid/content/Context;)V
 
     .line 109
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lajx;->f(Z)V
+    invoke-static {v0}, Lakr;->f(Z)V
 
     .line 110
-    const v0, 0x7f0400aa
+    const v0, 0x7f0400ac
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzHomeActivity;->setContentView(I)V
 
@@ -180,7 +192,7 @@
     invoke-direct {p0, v0, v1}, Lcom/snapchat/android/SnapkidzHomeActivity;->a(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;)V
 
     .line 119
-    const v0, 0x7f0a0248
+    const v0, 0x7f0a0246
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzHomeActivity;->findViewById(I)Landroid/view/View;
 
@@ -212,36 +224,36 @@
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onDestroy()V
 
     .line 94
-    invoke-static {}, Lapd;->a()Lapd;
+    invoke-static {}, Lapz;->a()Lapz;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lapd;->b()V
+    invoke-virtual {v0}, Lapz;->b()V
 
     .line 95
     return-void
 .end method
 
-.method public onImageSnapBitmapReadyForSnapPreview(Lbca;)V
+.method public onImageSnapBitmapReadyForSnapPreview(Lbda;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 194
-    iget-object v0, p1, Lbca;->mBitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p1, Lbda;->mBitmap:Landroid/graphics/Bitmap;
 
     .line 195
-    iget-object v1, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->a:Lbdj;
+    iget-object v1, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->a:Lbej;
 
-    iget-object v1, v1, Lbdj;->mMediabryo:Laim;
+    iget-object v1, v1, Lbej;->mMediabryo:Laji;
 
     iput-object v0, v1, Lcom/snapchat/android/model/Mediabryo;->mRawImageBitmap:Landroid/graphics/Bitmap;
 
     .line 196
-    iget-object v0, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->a:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->a:Lbej;
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzHomeActivity;->onSnapCapturedEvent(Lbdj;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzHomeActivity;->onSnapCapturedEvent(Lbej;)V
 
     .line 197
     return-void
@@ -264,13 +276,13 @@
 
     .line 77
     :cond_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbbv;
+    new-instance v1, Lbcv;
 
-    invoke-direct {v1, p1, p2}, Lbbv;-><init>(ILandroid/view/KeyEvent;)V
+    invoke-direct {v1, p1, p2}, Lbcv;-><init>(ILandroid/view/KeyEvent;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -304,14 +316,14 @@
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onPause()V
 
     .line 84
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lcom/squareup/otto/Bus;->b(Ljava/lang/Object;)V
 
     .line 85
-    invoke-static {}, Lajv;->g()Lajv;
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v0
 
@@ -321,7 +333,7 @@
     .line 87
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lajv;->a(Lajv$b;)V
+    invoke-virtual {v0, v1}, Lakp;->a(Lakp$b;)V
 
     .line 89
     :cond_0
@@ -336,7 +348,7 @@
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onResume()V
 
     .line 131
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -368,25 +380,25 @@
     return-void
 .end method
 
-.method public onSnapCapturedEvent(Lbdj;)V
+.method public onSnapCapturedEvent(Lbej;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 173
-    iput-object p1, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->a:Lbdj;
+    iput-object p1, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->a:Lbej;
 
     .line 177
-    iget-object v0, p1, Lbdj;->mMediabryo:Laim;
+    iget-object v0, p1, Lbej;->mMediabryo:Laji;
 
-    invoke-virtual {v0}, Laim;->h()I
+    invoke-virtual {v0}, Laji;->h()I
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    iget-object v0, p1, Lbdj;->mMediabryo:Laim;
+    iget-object v0, p1, Lbej;->mMediabryo:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mRawImageBitmap:Landroid/graphics/Bitmap;
 
@@ -422,36 +434,13 @@
 .end method
 
 .method public onWindowFocusChanged(Z)V
-    .locals 4
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
-
     .line 153
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onWindowFocusChanged(Z)V
 
     .line 154
-    const-string v0, "SnapkidzHomeActivity"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "On ac Should we onWindowFocusChanged has focus? "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 155
     if-eqz p1, :cond_0
 
     iget-boolean v0, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->b:Z
@@ -459,25 +448,18 @@
     if-eqz v0, :cond_0
 
     .line 156
-    const-string v0, "SnapkidzHomeActivity"
+    const/4 v0, 0x0
 
-    const-string v1, "On ac Calling onResume from window focus fn"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 157
-    iput-boolean v3, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->b:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/SnapkidzHomeActivity;->b:Z
 
     .line 158
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbcg;
+    new-instance v1, Lbdg;
 
-    invoke-direct {v1}, Lbcg;-><init>()V
+    invoke-direct {v1}, Lbdg;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

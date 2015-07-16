@@ -31,6 +31,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -499,6 +501,8 @@ public class ADLServiceImpl
     
     public void onReceive(Context paramContext, Intent paramIntent)
     {
+      kkxxkk.b041E041EОО041EО(paramContext);
+      xkkkxk.b041E041EООО041E(paramContext);
       if (paramIntent.getAction().equals("android.intent.action.HEADSET_PLUG")) {
         nativePlatform.updateAudioSettings();
       }

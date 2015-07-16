@@ -1,11 +1,69 @@
-public final class fe
+import java.nio.ByteBuffer;
+
+public abstract class fe
+  extends fc
+  implements av
 {
-  public static int a(long paramLong)
+  private int flags;
+  private int version;
+  
+  static {}
+  
+  public fe(String paramString)
   {
-    if ((paramLong > 2147483647L) || (paramLong < -2147483648L)) {
-      throw new RuntimeException("A cast to int has gone wrong. Please contact the mp4parser discussion group (" + paramLong + ")");
+    super(paramString);
+  }
+  
+  protected fe(String paramString, byte[] paramArrayOfByte)
+  {
+    super(paramString, paramArrayOfByte);
+  }
+  
+  @fj
+  public int getFlags()
+  {
+    if (!isParsed) {
+      parseDetails();
     }
-    return (int)paramLong;
+    return flags;
+  }
+  
+  @fj
+  public int getVersion()
+  {
+    if (!isParsed) {
+      parseDetails();
+    }
+    return version;
+  }
+  
+  public final long parseVersionAndFlags(ByteBuffer paramByteBuffer)
+  {
+    version = ao.c(paramByteBuffer);
+    flags = ao.b(paramByteBuffer);
+    return 4L;
+  }
+  
+  public void setFlags(int paramInt)
+  {
+    cfl localcfl = cgl.a(ajc$tjp_1, this, this, cgj.a(paramInt));
+    fi.a();
+    fi.a(localcfl);
+    flags = paramInt;
+  }
+  
+  public void setVersion(int paramInt)
+  {
+    cfl localcfl = cgl.a(ajc$tjp_0, this, this, cgj.a(paramInt));
+    fi.a();
+    fi.a(localcfl);
+    version = paramInt;
+  }
+  
+  public final void writeVersionAndFlags(ByteBuffer paramByteBuffer)
+  {
+    ap.b(paramByteBuffer, version);
+    ap.a(paramByteBuffer, flags);
   }
 }
 

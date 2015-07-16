@@ -1,29 +1,41 @@
+import java.util.Arrays;
+
 public final class xs
-  implements buo<xr>
 {
-  private final buj<xr> b;
+  public final boolean[] a = a(akr.bf());
   
-  static
+  private static boolean[] a(String paramString)
   {
-    if (!xs.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    boolean[] arrayOfBoolean = new boolean[10];
+    Arrays.fill(arrayOfBoolean, true);
+    int i = 0;
+    if ((i < 10) && (i < paramString.length()))
     {
-      a = bool;
-      return;
+      if (paramString.charAt(i) == '1') {}
+      for (int j = 1;; j = 0)
+      {
+        arrayOfBoolean[i] = j;
+        i += 1;
+        break;
+      }
     }
+    return arrayOfBoolean;
   }
   
-  private xs(buj<xr> parambuj)
+  public final int a()
   {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
+    int j = 0;
+    int i = 0;
+    while (i < 10)
+    {
+      int k = j;
+      if (a[i] == 0) {
+        k = j + 1;
+      }
+      i += 1;
+      j = k;
     }
-    b = parambuj;
-  }
-  
-  public static buo<xr> a(buj<xr> parambuj)
-  {
-    return new xs(parambuj);
+    return j;
   }
 }
 

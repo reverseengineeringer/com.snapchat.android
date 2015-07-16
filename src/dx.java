@@ -1,21 +1,17 @@
-import java.util.ListIterator;
+import java.util.Comparator;
+import javax.annotation.Nullable;
 
 @cd
-public abstract class dx<E>
-  extends dw<E>
-  implements ListIterator<E>
+public abstract class dx<T>
+  implements Comparator<T>
 {
-  @Deprecated
-  public final void add(E paramE)
+  @cd
+  public <S extends T> dx<S> a()
   {
-    throw new UnsupportedOperationException();
+    return new dv(this);
   }
   
-  @Deprecated
-  public final void set(E paramE)
-  {
-    throw new UnsupportedOperationException();
-  }
+  public abstract int compare(@Nullable T paramT1, @Nullable T paramT2);
 }
 
 /* Location:

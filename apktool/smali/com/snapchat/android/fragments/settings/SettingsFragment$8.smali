@@ -41,33 +41,33 @@
 
     .prologue
     .line 372
-    new-instance v0, Lqx;
+    new-instance v0, Lrn;
 
-    invoke-direct {v0}, Lqx;-><init>()V
+    invoke-direct {v0}, Lrn;-><init>()V
 
     .line 373
-    new-instance v1, Lqy;
+    new-instance v1, Lro;
 
-    invoke-direct {v1}, Lqy;-><init>()V
+    invoke-direct {v1}, Lro;-><init>()V
 
     .line 374
     new-instance v2, Lcom/snapchat/android/fragments/settings/SettingsFragment$8$1;
 
-    invoke-direct {v2, p0, v1}, Lcom/snapchat/android/fragments/settings/SettingsFragment$8$1;-><init>(Lcom/snapchat/android/fragments/settings/SettingsFragment$8;Lqv;)V
+    invoke-direct {v2, p0, v1}, Lcom/snapchat/android/fragments/settings/SettingsFragment$8$1;-><init>(Lcom/snapchat/android/fragments/settings/SettingsFragment$8;Lrl;)V
 
-    iput-object v2, v0, Lqv;->mListener:Lqv$a;
+    iput-object v2, v0, Lrl;->mListener:Lrl$a;
 
     .line 389
     new-instance v2, Lcom/snapchat/android/fragments/settings/SettingsFragment$8$2;
 
     invoke-direct {v2, p0}, Lcom/snapchat/android/fragments/settings/SettingsFragment$8$2;-><init>(Lcom/snapchat/android/fragments/settings/SettingsFragment$8;)V
 
-    iput-object v2, v1, Lqv;->mListener:Lqv$a;
+    iput-object v2, v1, Lrl;->mListener:Lrl$a;
 
     .line 403
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lqv;->a(Lcom/snapchat/android/model/CashTransaction;)V
+    invoke-virtual {v0, v1}, Lrl;->a(Lcom/snapchat/android/model/CashTransaction;)V
 
     .line 404
     return-void

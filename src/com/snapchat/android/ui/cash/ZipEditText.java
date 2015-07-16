@@ -6,15 +6,15 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
-import cgc;
+import chd;
 import com.snapchat.android.ui.StickyEndEditText;
-import ye;
+import za;
 
 public class ZipEditText
   extends StickyEndEditText
 {
   public boolean a = false;
-  private ye b;
+  private za b;
   
   public ZipEditText(Context paramContext, AttributeSet paramAttributeSet)
   {
@@ -38,9 +38,9 @@ public class ZipEditText
     return getText().toString().trim();
   }
   
-  public void setValidatedInputCallback(@cgc ye paramye)
+  public void setValidatedInputCallback(@chd za paramza)
   {
-    b = paramye;
+    b = paramza;
   }
   
   final class a

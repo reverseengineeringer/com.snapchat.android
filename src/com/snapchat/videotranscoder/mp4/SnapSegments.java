@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.mp4;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.utils.Debug;
 
 public class SnapSegments
@@ -8,13 +8,13 @@ public class SnapSegments
   private long[] mSegmentTimesMs;
   private String mSegmentTimesMsString = null;
   
-  public SnapSegments(@cgb String paramString)
+  public SnapSegments(@chc String paramString)
   {
     mSegmentTimesMs = parseSegmentTimes(paramString);
     validateSegmentTimes(mSegmentTimesMs);
   }
   
-  public SnapSegments(@cgb long[] paramArrayOfLong)
+  public SnapSegments(@chc long[] paramArrayOfLong)
   {
     mSegmentTimesMs = paramArrayOfLong;
     validateSegmentTimes(mSegmentTimesMs);
@@ -39,7 +39,7 @@ public class SnapSegments
     return localStringBuilder.toString();
   }
   
-  private long[] parseSegmentTimes(@cgb String paramString)
+  private long[] parseSegmentTimes(@chc String paramString)
   {
     paramString = paramString.split(",");
     if (paramString.length <= 0) {
@@ -61,7 +61,7 @@ public class SnapSegments
     return arrayOfLong;
   }
   
-  private void validateSegmentTimes(@cgb long[] paramArrayOfLong)
+  private void validateSegmentTimes(@chc long[] paramArrayOfLong)
   {
     if (paramArrayOfLong.length == 0) {
       throw new IllegalArgumentException("No segment times");

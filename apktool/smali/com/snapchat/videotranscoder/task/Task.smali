@@ -52,7 +52,7 @@
 
 .method public abstract run(Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 .end method
@@ -60,11 +60,11 @@
 .method public runAsync(Lcom/snapchat/videotranscoder/task/Task$DoneCallback;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$DoneCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -89,7 +89,7 @@
 .method protected setStatus(Lcom/snapchat/videotranscoder/task/Task$Status;)V
     .locals 0
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$Status;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

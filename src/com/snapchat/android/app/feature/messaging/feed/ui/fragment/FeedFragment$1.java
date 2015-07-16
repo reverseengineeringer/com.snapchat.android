@@ -1,26 +1,27 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
-import bgr;
-import bgr.a;
+import aka;
+import android.content.res.Resources;
+import arn;
+import zi;
 
 final class FeedFragment$1
-  implements bgr.a
+  implements arn
 {
   FeedFragment$1(FeedFragment paramFeedFragment) {}
   
-  public final void a(View paramView)
+  public final void a(aka paramaka)
   {
-    ((TextView)FeedFragment.b(a).a()).setOnClickListener(new View.OnClickListener()
+    if (a.isAdded())
     {
-      public final void onClick(View paramAnonymousView)
-      {
-        paramAnonymousView.setVisibility(8);
-        FeedFragment.a(a).setVisibility(0);
-      }
-    });
+      paramaka = zi.b(paramaka.j());
+      if (paramaka != null) {}
+    }
+    else
+    {
+      return;
+    }
+    FeedFragment.a(a, paramaka, a.getResources().getColor(2131230763));
   }
 }
 

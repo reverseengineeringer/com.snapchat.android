@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lckn;
+.implements Lclo;
 
 
 # static fields
@@ -58,7 +58,7 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Lcgk;
+.method public final a(Ljava/lang/String;)Lchl;
     .locals 3
 
     .prologue
@@ -66,7 +66,7 @@
     if-nez p1, :cond_0
 
     .line 25
-    sget-object v0, Lcgk;->a:Lcgk;
+    sget-object v0, Lchl;->a:Lchl;
 
     .line 40
     :goto_0
@@ -82,7 +82,7 @@
     if-nez v1, :cond_1
 
     .line 30
-    sget-object v0, Lcgk;->a:Lcgk;
+    sget-object v0, Lchl;->a:Lchl;
 
     goto :goto_0
 
@@ -112,7 +112,7 @@
 
     .line 40
     :cond_2
-    invoke-static {v0}, Lcgk;->a(I)Lcgk;
+    invoke-static {v0}, Lchl;->a(I)Lchl;
 
     move-result-object v0
 

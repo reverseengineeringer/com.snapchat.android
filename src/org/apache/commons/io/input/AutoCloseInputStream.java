@@ -26,7 +26,6 @@ public class AutoCloseInputStream
   protected void finalize()
   {
     close();
-    super.finalize();
   }
 }
 

@@ -1,49 +1,37 @@
-import com.snapchat.android.SnapchatApplication;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.PriorityQueue;
-import javax.inject.Inject;
+import com.snapchat.android.model.Friend;
+import javax.inject.Provider;
 
 public final class agb
+  implements bvk<aga>
 {
-  public boolean a;
-  long b;
-  public agb.a c = new agb.a(0L, 0L);
-  @Inject
-  protected bgk d;
-  PriorityQueue<agb.a> e = new PriorityQueue(5, new Comparator() {});
+  private final bvk<aqb<Friend>> b;
+  private final Provider<ban> c;
   
-  public agb()
+  static
   {
-    SnapchatApplication.b().c().a(this);
-  }
-  
-  public final void a(long paramLong)
-  {
-    Iterator localIterator = e.iterator();
-    while (localIterator.hasNext())
+    if (!agb.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      agb.a locala = (agb.a)localIterator.next();
-      if (paramLong - b > 1500L)
-      {
-        if (b > c.b) {
-          c = locala;
-        }
-        localIterator.remove();
-      }
+      a = bool;
+      return;
     }
   }
   
-  public final class a
+  private agb(bvk<aqb<Friend>> parambvk, Provider<ban> paramProvider)
   {
-    public long a;
-    public long b;
-    
-    public a(long paramLong1, long paramLong2)
-    {
-      a = paramLong1;
-      b = paramLong2;
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
     }
+    b = parambvk;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider;
+  }
+  
+  public static bvk<aga> a(bvk<aqb<Friend>> parambvk, Provider<ban> paramProvider)
+  {
+    return new agb(parambvk, paramProvider);
   }
 }
 

@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->a(I)V
+    value = Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->a(Lvs;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,20 +18,24 @@
 
 
 # instance fields
-.field final synthetic a:I
+.field final synthetic a:Ljava/lang/Runnable;
 
-.field final synthetic b:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
+.field final synthetic b:Landroid/view/View;
+
+.field final synthetic c:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;I)V
+.method constructor <init>(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 0
 
     .prologue
-    .line 1011
-    iput-object p1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->b:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
+    .line 1133
+    iput-object p1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->c:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
-    iput p2, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->a:I
+    iput-object p2, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->a:Ljava/lang/Runnable;
+
+    iput-object p3, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->b:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,64 +44,69 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final onAnimationEnd(Landroid/view/animation/Animation;)V
+    .locals 4
 
     .prologue
-    .line 1014
-    iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->b:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
+    const/4 v2, 0x0
 
-    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->s(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Z
+    .line 1141
+    new-instance v0, Landroid/view/animation/TranslateAnimation;
 
-    move-result v0
+    iget-object v1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->c:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
-    if-nez v0, :cond_0
+    invoke-static {v1}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->u(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)F
 
-    iget v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->a:I
+    move-result v1
 
-    if-lez v0, :cond_0
+    invoke-direct {v0, v1, v2, v2, v2}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
 
-    .line 1015
-    iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->b:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
+    .line 1142
+    new-instance v1, Landroid/view/animation/BounceInterpolator;
 
-    iget v1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->a:I
+    invoke-direct {v1}, Landroid/view/animation/BounceInterpolator;-><init>()V
 
-    add-int/lit8 v1, v1, -0x1
+    invoke-virtual {v0, v1}, Landroid/view/animation/TranslateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    invoke-static {v0, v1}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->a(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;I)V
+    .line 1143
+    const-wide/16 v2, 0x190
 
-    .line 1023
-    :goto_0
-    return-void
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
 
-    .line 1017
+    .line 1144
+    iget-object v1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->a:Ljava/lang/Runnable;
+
+    if-eqz v1, :cond_0
+
+    .line 1145
+    new-instance v1, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10$1;
+
+    invoke-direct {v1, p0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10$1;-><init>(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/animation/TranslateAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+    .line 1156
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->b:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
+    iget-object v1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$10;->b:Landroid/view/View;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    move-result-object v0
+    .line 1157
+    return-void
+.end method
 
-    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+.method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    move-result-object v0
+    .prologue
+    .line 1137
+    return-void
+.end method
 
-    .line 1019
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+.method public final onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    move-result-object v0
-
-    .line 1020
-    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 1021
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    goto :goto_0
+    .prologue
+    .line 1135
+    return-void
 .end method

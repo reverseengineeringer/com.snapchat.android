@@ -15,8 +15,8 @@ public class BetaSettingsFragment
 {
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968586, paramViewGroup, false);
-    c(2131361893).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968587, paramViewGroup, false);
+    c(2131361895).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {

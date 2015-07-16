@@ -110,7 +110,7 @@
     move-result-object v0
 
     .line 87
-    new-instance v1, Lej;
+    new-instance v1, Les;
 
     iget-object v2, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;->b:Lcom/google/gson/Gson;
 
@@ -122,7 +122,7 @@
 
     move-result-object v4
 
-    invoke-direct {v1, v2, v3, v4}, Lej;-><init>(Lcom/google/gson/Gson;Lcom/google/gson/TypeAdapter;Ljava/lang/reflect/Type;)V
+    invoke-direct {v1, v2, v3, v4}, Les;-><init>(Lcom/google/gson/Gson;Lcom/google/gson/TypeAdapter;Ljava/lang/reflect/Type;)V
 
     .line 89
     invoke-virtual {v1, p1, v0}, Lcom/google/gson/TypeAdapter;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V

@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import com.snapchat.android.ui.LockingAboveTheFoldListView;
-import yi;
+import ze;
 
 final class ChatFragment$29
   implements View.OnTouchListener

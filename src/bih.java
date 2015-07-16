@@ -5,72 +5,44 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bih
 {
-  @SerializedName("height")
-  protected Integer height;
-  @SerializedName("iv")
-  protected String iv;
-  @SerializedName("key")
-  protected String key;
-  @SerializedName("media_id")
-  protected String mediaId;
-  @SerializedName("media_type")
-  protected String mediaType;
-  @SerializedName("width")
-  protected Integer width;
+  @SerializedName("cash_transaction")
+  protected bic cashTransaction;
+  @SerializedName("chat_message")
+  protected bif chatMessage;
+  @SerializedName("iter_token")
+  protected String iterToken;
+  @SerializedName("snap")
+  protected biy snap;
   
-  public final bih a(Integer paramInteger)
+  public final bih a(bif parambif)
   {
-    width = paramInteger;
+    chatMessage = parambif;
     return this;
   }
   
-  public final bih a(String paramString)
+  public final biy a()
   {
-    mediaId = paramString;
-    return this;
+    return snap;
   }
   
-  public final String a()
+  public final boolean b()
   {
-    return mediaId;
+    return snap != null;
   }
   
-  public final bih b(Integer paramInteger)
+  public final bif c()
   {
-    height = paramInteger;
-    return this;
+    return chatMessage;
   }
   
-  public final bih b(String paramString)
+  public final boolean d()
   {
-    key = paramString;
-    return this;
+    return chatMessage != null;
   }
   
-  public final String b()
+  public final bic e()
   {
-    return mediaType;
-  }
-  
-  public final bih c(String paramString)
-  {
-    iv = paramString;
-    return this;
-  }
-  
-  public final String c()
-  {
-    return key;
-  }
-  
-  public final String d()
-  {
-    return iv;
-  }
-  
-  public final Integer e()
-  {
-    return width;
+    return cashTransaction;
   }
   
   public final boolean equals(Object paramObject)
@@ -82,17 +54,27 @@ public final class bih
       return false;
     }
     paramObject = (bih)paramObject;
-    return new EqualsBuilder().append(mediaId, mediaId).append(mediaType, mediaType).append(key, key).append(iv, iv).append(width, width).append(height, height).isEquals();
+    return new EqualsBuilder().append(snap, snap).append(chatMessage, chatMessage).append(cashTransaction, cashTransaction).append(iterToken, iterToken).isEquals();
   }
   
-  public final Integer f()
+  public final boolean f()
   {
-    return height;
+    return cashTransaction != null;
+  }
+  
+  public final String g()
+  {
+    return iterToken;
+  }
+  
+  public final boolean h()
+  {
+    return iterToken != null;
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(mediaId).append(mediaType).append(key).append(iv).append(width).append(height).toHashCode();
+    return new HashCodeBuilder().append(snap).append(chatMessage).append(cashTransaction).append(iterToken).toHashCode();
   }
   
   public final String toString()

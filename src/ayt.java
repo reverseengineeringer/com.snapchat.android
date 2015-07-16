@@ -1,27 +1,18 @@
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
+
 public final class ayt
-  implements buo<apd>
+  extends TypeAdapter<ays>
 {
-  private final ayl module;
-  
-  static
+  private static String a(JsonReader paramJsonReader)
   {
-    if (!ayt.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    if (paramJsonReader.peek() == JsonToken.NULL)
     {
-      $assertionsDisabled = bool;
-      return;
+      paramJsonReader.nextNull();
+      return null;
     }
-  }
-  
-  private ayt(ayl paramayl)
-  {
-    assert (paramayl != null);
-    module = paramayl;
-  }
-  
-  public static buo<apd> a(ayl paramayl)
-  {
-    return new ayt(paramayl);
+    return paramJsonReader.nextString();
   }
 }
 

@@ -11,9 +11,9 @@ public class ColognePhonetic
   
   static
   {
-    char[] arrayOfChar1 = { 214, 79 };
-    char[] arrayOfChar2 = { 223, 83 };
-    PREPROCESS_MAP = new char[][] { { 196, 65 }, { 220, 85 }, arrayOfChar1, arrayOfChar2 };
+    char[] arrayOfChar1 = { 220, 85 };
+    char[] arrayOfChar2 = { 214, 79 };
+    PREPROCESS_MAP = new char[][] { { 196, 65 }, arrayOfChar1, arrayOfChar2, { 223, 83 } };
   }
   
   private static boolean arrayContains(char[] paramArrayOfChar, char paramChar)

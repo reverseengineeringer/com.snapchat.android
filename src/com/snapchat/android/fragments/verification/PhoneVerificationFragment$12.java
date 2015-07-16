@@ -1,21 +1,21 @@
 package com.snapchat.android.fragments.verification;
 
-import ajx;
+import akr;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import aol;
-import bks.a;
+import aph;
+import blt.a;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import java.util.Set;
-import kq;
-import ks;
-import kx;
+import li;
+import lk;
+import lp;
 
 final class PhoneVerificationFragment$12
   implements View.OnClickListener
@@ -28,25 +28,25 @@ final class PhoneVerificationFragment$12
     {
       a.w();
       paramView = PhoneVerificationFragment.a(a);
-      aol localaol = PhoneVerificationFragment.h(a);
+      aph localaph = PhoneVerificationFragment.h(a);
       FragmentActivity localFragmentActivity = a.getActivity();
       String str1 = a.j.getText().toString();
       String str2 = a.m().name();
-      Intent localIntent = localaol.b(localFragmentActivity);
+      Intent localIntent = localaph.b(localFragmentActivity);
       localIntent.putExtra("op_code", 1024);
       localIntent.putExtra("action", "verifyPhoneNumber");
       localIntent.putExtra("code", str1);
       localIntent.putExtra("type", str2);
-      paramView.add(Integer.valueOf(localaol.a(localFragmentActivity, localIntent)));
+      paramView.add(Integer.valueOf(localaph.a(localFragmentActivity, localIntent)));
       paramView = a.c;
       boolean bool = PhoneVerificationFragment.i(a);
-      if (ajx.v())
+      if (akr.v())
       {
-        paramView = new ks();
+        paramView = new lk();
         autofill = Boolean.valueOf(bool);
         ScAnalyticsEventEngine.a(paramView);
-        if (ajx.v()) {
-          new EasyMetric("R01_ATTEMPT_VERIFY_WITH_CODE").d();
+        if (akr.v()) {
+          new EasyMetric("R01_ATTEMPT_VERIFY_WITH_CODE").e();
         }
       }
     }
@@ -63,14 +63,14 @@ final class PhoneVerificationFragment$12
             break;
           }
           paramView = a.c;
-        } while (!ajx.v());
-        ScAnalyticsEventEngine.a(new kq());
+        } while (!akr.v());
+        ScAnalyticsEventEngine.a(new li());
         return;
         paramView = a.c;
-      } while (!ajx.v());
-      ScAnalyticsEventEngine.a(new kx());
-    } while (!ajx.v());
-    new EasyMetric("R01_RESEND_VERIFICATION_CODE").d();
+      } while (!akr.v());
+      ScAnalyticsEventEngine.a(new lp());
+    } while (!akr.v());
+    new EasyMetric("R01_RESEND_VERIFICATION_CODE").e();
   }
 }
 

@@ -1,5 +1,5 @@
 .class final Lcx;
-.super Ldi;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -7,219 +7,159 @@
 .annotation build Lcd;
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldi",
-        "<",
-        "Ljava/lang/Object;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final a:Lcx;
-
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method static a(ILjava/lang/String;)I
+    .locals 4
 
     .prologue
-    .line 33
-    new-instance v0, Lcx;
+    .line 38
+    if-gez p0, :cond_0
 
-    invoke-direct {v0}, Lcx;-><init>()V
-
-    sput-object v0, Lcx;->a:Lcx;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 35
-    invoke-direct {p0}, Ldi;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method final a([Ljava/lang/Object;I)I
-    .locals 0
-
-    .prologue
-    .line 64
-    return p2
-.end method
-
-.method public final a()Ldw;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ldw",
-            "<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 55
-    invoke-static {}, Ldj;->a()Ldw;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Lde;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lde",
-            "<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 69
-    invoke-static {}, Lde;->e()Lde;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method final c()Z
-    .locals 1
-
-    .prologue
-    .line 85
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
-    .param p1    # Ljava/lang/Object;
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 47
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final containsAll(Ljava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection",
-            "<*>;)Z"
-        }
-    .end annotation
-
-    .prologue
-    .line 51
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-    .param p1    # Ljava/lang/Object;
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 73
-    instance-of v0, p1, Ljava/util/Set;
-
-    if-eqz v0, :cond_0
-
-    .line 74
-    check-cast p1, Ljava/util/Set;
-
-    .line 75
-    invoke-interface {p1}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v0
-
-    .line 77
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .prologue
-    .line 81
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final isEmpty()Z
-    .locals 1
-
-    .prologue
-    .line 43
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final synthetic iterator()Ljava/util/Iterator;
-    .locals 1
-
-    .prologue
-    .line 31
-    invoke-static {}, Ldj;->a()Ldw;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    .prologue
     .line 39
-    const/4 v0, 0x0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    return v0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x28
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " cannot be negative but was: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 41
+    :cond_0
+    return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method static a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 4
 
     .prologue
-    .line 89
-    const-string v0, "[]"
+    .line 30
+    if-nez p0, :cond_0
 
-    return-object v0
+    .line 31
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x18
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "null key in entry: null="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 32
+    :cond_0
+    if-nez p1, :cond_1
+
+    .line 33
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1a
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "null value in entry: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "=null"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 35
+    :cond_1
+    return-void
 .end method

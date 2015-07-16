@@ -35,23 +35,23 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;Lcom/snapchat/videotranscoder/cts/InputSurface;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p5    # Lcom/snapchat/videotranscoder/cts/InputSurface;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -158,15 +158,15 @@
 .method private renderVideo(Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;Lcom/snapchat/videotranscoder/cts/InputSurface;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .locals 3
     .param p1    # Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/cts/InputSurface;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -229,11 +229,11 @@
 .method public changeFilter(Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;)V
     .locals 1
     .param p1    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -313,7 +313,7 @@
 .method public run(Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .locals 4
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -352,11 +352,6 @@
     iput-boolean v0, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mAborted:Z
 
     .line 83
-    iget-object v0, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mAbortLock:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
-    .line 84
     monitor-exit v1
 
     :goto_0
@@ -392,11 +387,6 @@
     iput-boolean v0, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mAborted:Z
 
     .line 83
-    iget-object v0, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mAbortLock:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
-    .line 84
     monitor-exit v1
 
     goto :goto_0
@@ -457,11 +447,6 @@
     iput-boolean v2, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mAborted:Z
 
     .line 83
-    iget-object v2, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mAbortLock:Ljava/lang/Object;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->notifyAll()V
-
-    .line 84
     monitor-exit v1
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
@@ -530,7 +515,7 @@
 .end method
 
 .method public waitForAbort()V
-    .locals 4
+    .locals 2
 
     .prologue
     .line 92
@@ -539,26 +524,22 @@
     monitor-enter v1
 
     .line 93
-    :goto_0
+    :cond_0
     :try_start_0
     iget-boolean v0, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mAborted:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mCurrentRenderer:Lcom/snapchat/videotranscoder/rendering/VideoFilterRenderer;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
     .line 94
-    iget-object v0, p0, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->mAbortLock:Ljava/lang/Object;
+    :cond_1
+    monitor-exit v1
 
-    const-wide/16 v2, 0x64
+    return-void
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/Object;->wait(J)V
-
-    goto :goto_0
-
-    .line 96
     :catchall_0
     move-exception v0
 
@@ -567,12 +548,4 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-
-    :cond_0
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    return-void
 .end method

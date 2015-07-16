@@ -1,263 +1,132 @@
-.class public abstract Lmm;
-.super Ljava/lang/Object;
+.class public final enum Lmm;
+.super Ljava/lang/Enum;
 .source "SourceFile"
-
-# interfaces
-.implements Lmn;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lmm$a;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lmn;"
+        "Ljava/lang/Enum",
+        "<",
+        "Lmm;",
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final METRIC_NAME:Ljava/lang/String; = "AD_RESOLVE_TIME"
+.field private static final synthetic $VALUES:[Lmm;
 
-.field public static final METRIC_PARAM_NETWORK_TYPE:Ljava/lang/String; = "reachability"
+.field public static final enum CUSTOM:Lmm;
 
-.field public static final METRIC_PARAM_RESULT:Ljava/lang/String; = "result"
+.field public static final enum DEFAULT_SUGGESTION:Lmm;
 
-.field public static final METRIC_PARAM_TYPE:Ljava/lang/String; = "type"
-
-.field public static final METRIC_VALUE_SUCCESS:Ljava/lang/String; = "success"
-
-.field public static final METRIC_VALUE_TIMEOUT:Ljava/lang/String; = "timeout"
-
-.field public static final TAG:Ljava/lang/String; = "AdRequest"
-
-.field public static final TIMEOUT_MILLISECONDS:I = 0x2710
-
-
-# instance fields
-.field public final mAdContainer:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT;"
-        }
-    .end annotation
-.end field
-
-.field public final mAdManager:Lmj;
-
-.field protected final mCallback:Lmm$a;
-
-.field mIsComplete:Z
-
-.field public mMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-.field private final mMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-
-.field final mMutex:Ljava/lang/Object;
-
-.field public final mNetworkStatusManager:Lale;
-
-.field public final mTimeoutRunnable:Ljava/util/TimerTask;
-
-.field public final mTimeoutTimer:Ljava/util/Timer;
+.field public static final enum OTHER_SUGGESTION:Lmm;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lmj;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lale;Ljava/util/Timer;Lmm$a;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 5
+
+    .prologue
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    .line 5
+    new-instance v0, Lmm;
+
+    const-string v1, "CUSTOM"
+
+    invoke-direct {v0, v1, v2}, Lmm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmm;->CUSTOM:Lmm;
+
+    .line 6
+    new-instance v0, Lmm;
+
+    const-string v1, "DEFAULT_SUGGESTION"
+
+    invoke-direct {v0, v1, v3}, Lmm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmm;->DEFAULT_SUGGESTION:Lmm;
+
+    .line 7
+    new-instance v0, Lmm;
+
+    const-string v1, "OTHER_SUGGESTION"
+
+    invoke-direct {v0, v1, v4}, Lmm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmm;->OTHER_SUGGESTION:Lmm;
+
+    .line 4
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lmm;
+
+    sget-object v1, Lmm;->CUSTOM:Lmm;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lmm;->DEFAULT_SUGGESTION:Lmm;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lmm;->OTHER_SUGGESTION:Lmm;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lmm;->$VALUES:[Lmm;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;",
-            "Lmj;",
-            "Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;",
-            "Lale;",
-            "Ljava/util/Timer;",
-            "Lmm$a",
-            "<TT;>;)V"
+            "()V"
         }
     .end annotation
 
     .prologue
-    .line 41
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 4
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 31
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lmm;->mMutex:Ljava/lang/Object;
-
-    .line 86
-    new-instance v0, Lmm$1;
-
-    invoke-direct {v0, p0}, Lmm$1;-><init>(Lmm;)V
-
-    iput-object v0, p0, Lmm;->mTimeoutRunnable:Ljava/util/TimerTask;
-
-    .line 42
-    iput-object p4, p0, Lmm;->mNetworkStatusManager:Lale;
-
-    .line 43
-    iput-object p3, p0, Lmm;->mMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-
-    .line 44
-    iput-object p1, p0, Lmm;->mAdContainer:Ljava/lang/Object;
-
-    .line 45
-    iput-object p2, p0, Lmm;->mAdManager:Lmj;
-
-    .line 46
-    iput-object p5, p0, Lmm;->mTimeoutTimer:Ljava/util/Timer;
-
-    .line 47
-    iput-object p6, p0, Lmm;->mCallback:Lmm$a;
-
-    .line 48
     return-void
 .end method
 
-
-# virtual methods
-.method public abstract a()Ljava/lang/String;
-.end method
-
-.method public final a(Lmo;)V
-    .locals 6
-    .param p1    # Lmo;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public static valueOf(Ljava/lang/String;)Lmm;
+    .locals 1
 
     .prologue
-    .line 77
-    iget-object v1, p0, Lmm;->mMutex:Ljava/lang/Object;
+    .line 4
+    const-class v0, Lmm;
 
-    monitor-enter v1
-
-    .line 78
-    :try_start_0
-    iget-boolean v0, p0, Lmm;->mIsComplete:Z
-
-    if-eqz v0, :cond_0
-
-    .line 79
-    const-string v0, "AdRequest"
-
-    const-string v2, "Skipping transform handling from resolving ad for %s"
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    iget-object v5, p0, Lmm;->mAdContainer:Ljava/lang/Object;
-
-    aput-object v5, v3, v4
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 80
-    monitor-exit v1
-
-    .line 83
-    :goto_0
-    return-void
-
-    .line 82
-    :cond_0
-    invoke-virtual {p0, p1}, Lmm;->b(Lmo;)V
-
-    .line 83
-    monitor-exit v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method protected final b(Lmo;)V
-    .locals 3
-
-    .prologue
-    .line 102
-    iget-object v1, p0, Lmm;->mMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    if-nez p1, :cond_0
-
-    const-string v0, "timeout"
-
-    :goto_0
-    const-string v2, "result"
-
-    invoke-virtual {v1, v2, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    .line 103
-    iget-object v0, p0, Lmm;->mMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
-
-    .line 106
-    iget-object v0, p0, Lmm;->mCallback:Lmm$a;
-
-    iget-object v1, p0, Lmm;->mAdContainer:Ljava/lang/Object;
-
-    invoke-interface {v0, v1, p1}, Lmm$a;->a(Ljava/lang/Object;Lmo;)V
-
-    .line 107
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lmm;->mIsComplete:Z
-
-    .line 108
-    iget-object v0, p0, Lmm;->mTimeoutRunnable:Ljava/util/TimerTask;
-
-    invoke-virtual {v0}, Ljava/util/TimerTask;->cancel()Z
-
-    .line 109
-    iget-object v0, p0, Lmm;->mTimeoutTimer:Ljava/util/Timer;
-
-    invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
-
-    .line 110
-    return-void
-
-    .line 102
-    :cond_0
-    iget-object v0, p1, Lmo;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p1, Lmo;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
-
-    iget-object v0, v0, Lcom/snapchat/android/ads/AdRequestError;->mErrorCode:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/ads/AdRequestError$ErrorCode;->getMetricValue()Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Lmm;
 
-    :cond_1
-    const-string v0, "success"
+    return-object v0
+.end method
 
-    goto :goto_0
+.method public static values()[Lmm;
+    .locals 1
+
+    .prologue
+    .line 4
+    sget-object v0, Lmm;->$VALUES:[Lmm;
+
+    invoke-virtual {v0}, [Lmm;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lmm;
+
+    return-object v0
 .end method

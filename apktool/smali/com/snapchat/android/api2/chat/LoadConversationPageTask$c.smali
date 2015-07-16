@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field mConversation:Lbhd;
+.field mConversation:Lbid;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "conversation"
     .end annotation

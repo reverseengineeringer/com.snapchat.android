@@ -3,8 +3,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target({java.lang.annotation.ElementType.METHOD})
+@Retention(RetentionPolicy.CLASS)
+@Target({java.lang.annotation.ElementType.FIELD})
 public @interface cee {}
 
 /* Location:

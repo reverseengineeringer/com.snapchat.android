@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lamk;
+.implements Lanh;
 
 
 # annotations
@@ -33,7 +33,7 @@
 
 .field private d:Ljava/lang/String;
 
-.field private final e:Labf;
+.field private final e:Lacf;
 
 
 # direct methods
@@ -42,17 +42,17 @@
 
     .prologue
     .line 41
-    invoke-static {}, Labf;->a()Labf;
+    invoke-static {}, Lacf;->a()Lacf;
 
     move-result-object v0
 
-    invoke-direct {p0, p1, v0}, Lcom/snapchat/android/operation/identity/UpdateVerifiedDeviceOperation;-><init>(Landroid/content/Intent;Labf;)V
+    invoke-direct {p0, p1, v0}, Lcom/snapchat/android/operation/identity/UpdateVerifiedDeviceOperation;-><init>(Landroid/content/Intent;Lacf;)V
 
     .line 42
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Intent;Labf;)V
+.method private constructor <init>(Landroid/content/Intent;Lacf;)V
     .locals 2
 
     .prologue
@@ -94,7 +94,7 @@
     .line 37
     :cond_0
     :goto_0
-    iput-object p2, p0, Lcom/snapchat/android/operation/identity/UpdateVerifiedDeviceOperation;->e:Labf;
+    iput-object p2, p0, Lcom/snapchat/android/operation/identity/UpdateVerifiedDeviceOperation;->e:Lacf;
 
     .line 38
     return-void
@@ -132,11 +132,9 @@
 .end method
 
 .method public final a(Landroid/content/Context;)V
-    .locals 8
+    .locals 7
 
     .prologue
-    const/4 v7, 0x0
-
     const/4 v6, 0x0
 
     .line 51
@@ -169,14 +167,6 @@
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-
-    const-string v2, "VerifiedDeviceTable"
-
-    const-string v3, "saveVerifiedDeviceListInTransaction - beginTransaction"
-
-    new-array v4, v7, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     :try_start_0
     const-string v2, "VerifiedDeviceTable"
@@ -237,14 +227,6 @@
 
     invoke-virtual {v1, v2, v6}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    const-string v1, "VerifiedDeviceTable"
-
-    const-string v2, "saveVerifiedDeviceListInTransaction - endTransaction"
-
-    new-array v3, v7, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     throw v0
 
     :cond_0
@@ -262,14 +244,6 @@
     sget-object v1, Lcom/snapchat/android/content/SnapchatProvider;->d:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v6}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
-
-    const-string v0, "VerifiedDeviceTable"
-
-    const-string v1, "saveVerifiedDeviceListInTransaction - endTransaction"
-
-    new-array v2, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -295,7 +269,7 @@
 
     invoke-virtual {v0, v1, v6}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 61
     :pswitch_2
@@ -358,6 +332,8 @@
     goto/16 :goto_0
 
     .line 51
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -366,7 +342,7 @@
     .end packed-switch
 .end method
 
-.method public final f()V
+.method public final b()V
     .locals 0
 
     .prologue

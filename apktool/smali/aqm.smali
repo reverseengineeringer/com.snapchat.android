@@ -1,67 +1,98 @@
 .class public final Laqm;
-.super Landroid/support/v7/widget/RecyclerView$j;
+.super Landroid/view/animation/AnimationSet;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Lbaa;
-
-.field private final b:Ljava/lang/String;
+.field private final a:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Lbaa;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Landroid/view/View;)V
+    .locals 1
 
     .prologue
-    .line 17
-    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$j;-><init>()V
+    .line 26
+    const/4 v0, 0x1
 
-    .line 18
-    iput-object p1, p0, Laqm;->a:Lbaa;
-
-    .line 19
-    iput-object p2, p0, Laqm;->b:Ljava/lang/String;
-
-    .line 20
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Landroid/support/v7/widget/RecyclerView;I)V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x1
-
-    .line 24
-    if-nez p2, :cond_0
-
-    .line 25
-    iget-object v0, p0, Laqm;->a:Lbaa;
-
-    iget-object v1, p0, Laqm;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lbaa;->a(Ljava/lang/String;Z)V
-
-    .line 29
-    :goto_0
-    return-void
+    invoke-direct {p0, v0}, Landroid/view/animation/AnimationSet;-><init>(Z)V
 
     .line 27
-    :cond_0
-    iget-object v0, p0, Laqm;->a:Lbaa;
+    iput-object p1, p0, Laqm;->a:Landroid/view/View;
 
-    iput-boolean v2, v0, Lbaa;->mDeferPause:Z
-
-    goto :goto_0
+    .line 28
+    return-void
 .end method
 
-.method public final a(Landroid/support/v7/widget/RecyclerView;II)V
-    .locals 0
+.method static synthetic a(Laqm;)Landroid/view/View;
+    .locals 1
 
     .prologue
-    .line 34
-    return-void
+    .line 15
+    iget-object v0, p0, Laqm;->a:Landroid/view/View;
+
+    return-object v0
+.end method
+
+.method public static a()Landroid/view/animation/ScaleAnimation;
+    .locals 4
+
+    .prologue
+    const v2, 0x3fcccccd    # 1.6f
+
+    const v1, 0x3fa66666    # 1.3f
+
+    .line 58
+    new-instance v0, Landroid/view/animation/ScaleAnimation;
+
+    invoke-direct {v0, v2, v1, v2, v1}, Landroid/view/animation/ScaleAnimation;-><init>(FFFF)V
+
+    .line 60
+    const-wide/16 v2, 0x64
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
+
+    .line 61
+    return-object v0
+.end method
+
+.method public static a(I)Landroid/view/animation/TranslateAnimation;
+    .locals 5
+
+    .prologue
+    const/high16 v4, 0x40000000    # 2.0f
+
+    const/4 v3, 0x0
+
+    .line 50
+    int-to-float v0, p0
+
+    const v1, 0x3fcccccd    # 1.6f
+
+    mul-float/2addr v0, v1
+
+    int-to-float v1, p0
+
+    const v2, 0x3fa66666    # 1.3f
+
+    mul-float/2addr v1, v2
+
+    sub-float/2addr v0, v1
+
+    .line 51
+    new-instance v1, Landroid/view/animation/TranslateAnimation;
+
+    div-float v2, v0, v4
+
+    div-float/2addr v0, v4
+
+    invoke-direct {v1, v3, v2, v3, v0}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
+
+    .line 53
+    const-wide/16 v2, 0x64
+
+    invoke-virtual {v1, v2, v3}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
+
+    .line 54
+    return-object v1
 .end method

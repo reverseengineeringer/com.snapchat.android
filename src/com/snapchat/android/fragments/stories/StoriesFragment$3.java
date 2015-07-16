@@ -1,25 +1,17 @@
 package com.snapchat.android.fragments.stories;
 
-import bfd;
-import bur;
-import com.snapchat.android.analytics.NetworkAnalytics;
-import com.snapchat.android.analytics.NetworkAnalytics.PageContext;
-import in.srain.cube.views.ptr.PtrFrameLayout;
+import android.content.Context;
+import avw;
+import avx;
 
 final class StoriesFragment$3
-  implements bur
+  implements Runnable
 {
-  StoriesFragment$3(StoriesFragment paramStoriesFragment) {}
+  StoriesFragment$3(StoriesFragment paramStoriesFragment, Context paramContext, avx paramavx) {}
   
-  public final void a(PtrFrameLayout paramPtrFrameLayout)
+  public final void run()
   {
-    StoriesFragment.k(a).a(NetworkAnalytics.PageContext.STORY);
-    StoriesFragment.l(a);
-  }
-  
-  public final boolean a()
-  {
-    return bfd.a(StoriesFragment.a(a));
+    c.m.a(a, b);
   }
 }
 

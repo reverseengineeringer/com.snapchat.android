@@ -1,7 +1,7 @@
 package com.snapchat.android.util;
 
-import ban;
-import bbw;
+import bbo;
+import bcw;
 import com.squareup.otto.Bus;
 
 final class PhotoEffectTask$1
@@ -11,7 +11,7 @@ final class PhotoEffectTask$1
   
   public final void run()
   {
-    ban.a().a(new bbw());
+    bbo.a().a(new bcw());
   }
 }
 

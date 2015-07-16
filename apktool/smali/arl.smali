@@ -1,129 +1,111 @@
 .class public final Larl;
-.super Ljava/lang/Object;
+.super Landroid/support/v7/widget/RecyclerView$j;
 .source "SourceFile"
-
-# interfaces
-.implements Lark;
 
 
 # instance fields
-.field final a:Lark;
-
-.field private final b:Landroid/os/Handler;
+.field private final a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Landroid/support/v7/widget/RecyclerView$j;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/Handler;Lark;)V
+.method public constructor <init>(Ljava/util/List;)V
     .locals 0
-    .param p1    # Landroid/os/Handler;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lark;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/support/v7/widget/RecyclerView$j;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 14
+    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$j;-><init>()V
 
-    .line 19
-    iput-object p1, p0, Larl;->b:Landroid/os/Handler;
+    .line 15
+    iput-object p1, p0, Larl;->a:Ljava/util/List;
 
-    .line 20
-    iput-object p2, p0, Larl;->a:Lark;
-
-    .line 21
+    .line 16
     return-void
-.end method
-
-.method private static a()Z
-    .locals 1
-
-    .prologue
-    .line 53
-    invoke-static {}, Lbgp;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Larj;)V
+.method public final a(Landroid/support/v7/widget/RecyclerView;I)V
     .locals 2
 
     .prologue
-    .line 25
-    invoke-static {}, Larl;->a()Z
+    .line 20
+    iget-object v0, p0, Larl;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 26
-    iget-object v0, p0, Larl;->b:Landroid/os/Handler;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    new-instance v1, Larl$1;
+    move-result-object v0
 
-    invoke-direct {v1, p0, p1}, Larl$1;-><init>(Larl;Larj;)V
+    check-cast v0, Landroid/support/v7/widget/RecyclerView$j;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 35
-    :goto_0
-    return-void
-
-    .line 33
-    :cond_0
-    iget-object v0, p0, Larl;->a:Lark;
-
-    invoke-interface {v0, p1}, Lark;->a(Larj;)V
+    .line 21
+    invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$j;->a(Landroid/support/v7/widget/RecyclerView;I)V
 
     goto :goto_0
+
+    .line 23
+    :cond_0
+    return-void
 .end method
 
-.method public final a(Larj;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;)V
+.method public final a(Landroid/support/v7/widget/RecyclerView;II)V
     .locals 2
 
     .prologue
-    .line 39
-    invoke-static {}, Larl;->a()Z
+    .line 27
+    iget-object v0, p0, Larl;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 40
-    iget-object v0, p0, Larl;->b:Landroid/os/Handler;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    new-instance v1, Larl$2;
+    move-result-object v0
 
-    invoke-direct {v1, p0, p1, p2}, Larl$2;-><init>(Larl;Larj;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;)V
+    check-cast v0, Landroid/support/v7/widget/RecyclerView$j;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 49
-    :goto_0
-    return-void
-
-    .line 47
-    :cond_0
-    iget-object v0, p0, Larl;->a:Lark;
-
-    invoke-interface {v0, p1, p2}, Lark;->a(Larj;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;)V
+    .line 28
+    invoke-virtual {v0, p1, p2, p3}, Landroid/support/v7/widget/RecyclerView$j;->a(Landroid/support/v7/widget/RecyclerView;II)V
 
     goto :goto_0
+
+    .line 30
+    :cond_0
+    return-void
 .end method

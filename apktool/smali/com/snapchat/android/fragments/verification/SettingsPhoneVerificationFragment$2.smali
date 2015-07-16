@@ -43,7 +43,7 @@
     const/4 v4, 0x0
 
     .line 92
-    new-instance v1, Lpa;
+    new-instance v1, Lpr;
 
     const-string v2, "updateSearchableByPhoneNumber"
 
@@ -58,14 +58,14 @@
     :goto_0
     aput-object v0, v3, v4
 
-    invoke-direct {v1, v2, v3}, Lpa;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3}, Lpr;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
     .line 94
-    sget-object v0, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v0, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v4, [Ljava/lang/String;
 
-    invoke-virtual {v1, v0, v2}, Lpa;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v0, v2}, Lpr;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 95
     invoke-static {p2}, Lcom/snapchat/android/analytics/AnalyticsEvents;->b(Z)V

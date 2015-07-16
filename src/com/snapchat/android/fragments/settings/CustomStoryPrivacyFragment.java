@@ -1,8 +1,8 @@
 package com.snapchat.android.fragments.settings;
 
-import agn;
-import agn.a;
-import ajv;
+import ahk;
+import ahk.a;
+import akp;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
@@ -19,7 +19,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Filter;
-import auh;
+import avf;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.Friend.a;
@@ -27,14 +27,14 @@ import com.snapchat.android.util.fragment.SnapchatFragment;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import pa;
+import pr;
 
 public class CustomStoryPrivacyFragment
   extends SnapchatFragment
-  implements agn.a
+  implements ahk.a
 {
   private final HashSet<String> a = new HashSet();
-  private agn b;
+  private ahk b;
   private View c;
   private View d;
   private EditText e;
@@ -44,18 +44,18 @@ public class CustomStoryPrivacyFragment
   
   public final boolean a(Friend paramFriend)
   {
-    return a.contains(paramFriend.h());
+    return a.contains(paramFriend.l());
   }
   
   public final void b(Friend paramFriend)
   {
-    a.add(paramFriend.h());
+    a.add(paramFriend.l());
     b.notifyDataSetChanged();
   }
   
   public final void c(Friend paramFriend)
   {
-    a.remove(paramFriend.h());
+    a.remove(paramFriend.l());
     b.notifyDataSetChanged();
   }
   
@@ -78,10 +78,10 @@ public class CustomStoryPrivacyFragment
   
   public View onCreateView(final LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968643, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968644, paramViewGroup, false);
     h = ((InputMethodManager)getActivity().getSystemService("input_method"));
     a.addAll(gmFriendsBlockedFromSeeingMyStory);
-    b = new agn(getActivity(), ajv.g().j(), new Friend.a(), this);
+    b = new ahk(getActivity(), akp.g().j(), new Friend.a(), this);
     paramLayoutInflater = (StickyListHeadersListView)c(2131362195);
     paramLayoutInflater.setAdapter(b);
     paramLayoutInflater.setOnTouchListener(new View.OnTouchListener()
@@ -127,8 +127,8 @@ public class CustomStoryPrivacyFragment
         CustomStoryPrivacyFragment.c(CustomStoryPrivacyFragment.this);
       }
     });
-    d = c(2131361894);
-    f = c(2131361836);
+    d = c(2131361896);
+    f = c(2131361837);
     f.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -167,7 +167,7 @@ public class CustomStoryPrivacyFragment
     ArrayList localArrayList = new ArrayList(a.size());
     localArrayList.addAll(a);
     gmFriendsBlockedFromSeeingMyStory = localArrayList;
-    new pa("updateStoryPrivacy", new String[] { "CUSTOM" }).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    new pr("updateStoryPrivacy", new String[] { "CUSTOM" }).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
   }
 }
 

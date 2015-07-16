@@ -1,12 +1,6 @@
 public final class bcu
 {
-  @cgb
-  public final String friendUsername;
-  
-  public bcu(@cgb String paramString)
-  {
-    friendUsername = paramString;
-  }
+  public final boolean mHasGivenAccessToContacts = true;
 }
 
 /* Location:

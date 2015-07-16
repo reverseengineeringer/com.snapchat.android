@@ -59,11 +59,11 @@
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;->a(Lcom/snapchat/android/fragments/signup/NewUserContactBookFragment;)Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
-    new-instance v0, Lkf;
+    new-instance v0, Lkx;
 
-    invoke-direct {v0}, Lkf;-><init>()V
+    invoke-direct {v0}, Lkx;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 94
     :cond_0

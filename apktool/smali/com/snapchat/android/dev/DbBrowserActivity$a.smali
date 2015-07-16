@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/dev/DbBrowserActivity$a;
-.super Lapf;
+.super Laqb;
 .source "SourceFile"
 
 
@@ -32,13 +32,13 @@
     .end annotation
 
     .prologue
-    const v0, 0x7f040048
+    const v0, 0x7f040049
 
     .line 272
     iput-object p1, p0, Lcom/snapchat/android/dev/DbBrowserActivity$a;->a:Lcom/snapchat/android/dev/DbBrowserActivity;
 
     .line 273
-    invoke-direct {p0, p2, v0, p3}, Lapf;-><init>(Landroid/content/Context;ILjava/util/List;)V
+    invoke-direct {p0, p2, v0, p3}, Laqb;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
     .line 274
     iput v0, p0, Lcom/snapchat/android/dev/DbBrowserActivity$a;->b:I

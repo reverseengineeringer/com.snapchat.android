@@ -1,14 +1,38 @@
-import org.json.JSONObject;
+import com.snapchat.android.fragments.sendto.SendToFragment;
+import com.snapchat.android.util.fragment.SnapchatFragment;
+import javax.inject.Provider;
 
-final class ahg
+public final class ahg
+  implements bvk<SendToFragment>
 {
-  final String a;
-  JSONObject b;
+  private final bvk<SnapchatFragment> b;
+  private final Provider<aas> c;
   
-  ahg(String paramString)
+  static
   {
-    a = paramString;
-    b = new JSONObject();
+    if (!ahg.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
+  }
+  
+  private ahg(bvk<SnapchatFragment> parambvk, Provider<aas> paramProvider)
+  {
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider;
+  }
+  
+  public static bvk<SendToFragment> a(bvk<SnapchatFragment> parambvk, Provider<aas> paramProvider)
+  {
+    return new ahg(parambvk, paramProvider);
   }
 }
 

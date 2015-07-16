@@ -43,20 +43,20 @@
     .line 359
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/SettingsFragment$7;->a:Lcom/snapchat/android/fragments/settings/SettingsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/SettingsFragment;->a(Lcom/snapchat/android/fragments/settings/SettingsFragment;)Lajx;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/SettingsFragment;->a(Lcom/snapchat/android/fragments/settings/SettingsFragment;)Lakr;
 
-    invoke-static {}, Lajx;->bq()Z
+    invoke-static {}, Lakr;->bn()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 360
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;
 
@@ -74,7 +74,7 @@
 
     move-result-object v4
 
-    invoke-direct {v1, v2, v3, v4}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3, v4}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -84,17 +84,17 @@
 
     .line 364
     :cond_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;
 
     invoke-direct {v2}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;-><init>()V
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

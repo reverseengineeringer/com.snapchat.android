@@ -25,7 +25,7 @@
     .locals 3
 
     .prologue
-    .line 281
+    .line 285
     invoke-static {}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$InterruptReason;->values()[Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$InterruptReason;
 
     move-result-object v0
@@ -131,7 +131,7 @@
     :try_end_5
     .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 184
+    .line 188
     :goto_5
     invoke-static {}, Lcom/snapchat/android/model/FriendAction;->values()[Lcom/snapchat/android/model/FriendAction;
 

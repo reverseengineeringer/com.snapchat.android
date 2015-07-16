@@ -1,97 +1,139 @@
-.class public abstract Lanx;
-.super Ljava/lang/Object;
+.class public final Lanx;
+.super Lana;
 .source "SourceFile"
+
+# interfaces
+.implements Lui$b;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lanx$b;,
+        Lanx$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lana;",
+        "Lui$b",
+        "<",
+        "Lanx$b;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field protected b:Lanv;
+.field public a:Z
+
+.field public b:Ljava/lang/String;
+
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Intent;)V
+    .locals 1
 
     .prologue
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 27
+    invoke-direct {p0, p1}, Lana;-><init>(Landroid/content/Intent;)V
 
-    .line 8
+    .line 21
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lanx;->a:Z
+
+    .line 28
+    const-string v0, "password"
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lanx;->c:Ljava/lang/String;
+
+    .line 29
+    const-class v0, Lanx$b;
+
+    invoke-virtual {p0, v0, p0}, Lanx;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)V
-    .locals 4
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 2
 
     .prologue
-    .line 11
-    iget-object v0, p0, Lanx;->b:Lanv;
+    .line 66
+    new-instance v0, Lanx$a;
+
+    iget-object v1, p0, Lanx;->c:Ljava/lang/String;
+
+    invoke-direct {v0, p0, v1}, Lanx$a;-><init>(Lanx;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method protected final l_()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 61
+    const-string v0, "/bq/reauth"
+
+    return-object v0
+.end method
+
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 3
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 18
+    check-cast p1, Lanx$b;
+
+    invoke-virtual {p2}, Lus;->d()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lanx;->b:Lanv;
-
-    iget-wide v0, v0, Lanv;->c:J
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
+    iput-boolean v0, p0, Lanx;->a:Z
+
     :goto_0
-    if-eqz v0, :cond_0
-
-    .line 12
-    iget-object v0, p0, Lanx;->b:Lanv;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lanv;->c:J
-
-    .line 14
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Lanx;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 15
     return-void
 
-    .line 11
-    :cond_1
-    const/4 v0, 0x0
+    :cond_0
+    iput-boolean v1, p0, Lanx;->a:Z
+
+    if-eqz p1, :cond_1
+
+    iget-object v0, p1, Lanx$b;->a:Ljava/lang/String;
+
+    :goto_1
+    iput-object v0, p0, Lanx;->b:Ljava/lang/String;
 
     goto :goto_0
-.end method
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;)V
-.end method
+    :cond_1
+    new-array v0, v1, [Ljava/lang/Object;
 
-.method public final b()V
-    .locals 4
+    const/4 v1, 0x0
 
-    .prologue
-    .line 20
-    iget-object v0, p0, Lanx;->b:Lanv;
+    const v2, 0x7f0c01c2
 
-    if-eqz v0, :cond_0
+    invoke-static {v1, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 21
-    iget-object v0, p0, Lanx;->b:Lanv;
+    move-result-object v0
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lanv;->c:J
-
-    .line 23
-    :cond_0
-    return-void
+    goto :goto_1
 .end method

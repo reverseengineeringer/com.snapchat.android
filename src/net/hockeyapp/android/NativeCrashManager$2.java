@@ -1,9 +1,8 @@
 package net.hockeyapp.android;
 
-import ajx;
+import akr;
 import android.app.Activity;
-import buz;
-import com.snapchat.android.Timber;
+import bwa;
 import com.snapchat.android.util.debug.ReleaseManager;
 import java.io.File;
 import java.nio.charset.Charset;
@@ -25,8 +24,8 @@ final class NativeCrashManager$2
       DefaultHttpClient localDefaultHttpClient = new DefaultHttpClient();
       HttpPost localHttpPost = new HttpPost("https://rink.hockeyapp.net/api/2/apps/" + a + "/crashes/upload");
       MultipartEntity localMultipartEntity = new MultipartEntity();
-      localMultipartEntity.addPart("log", new FileBody(new File(buz.a, b)));
-      FileBody localFileBody = new FileBody(new File(buz.a, c));
+      localMultipartEntity.addPart("log", new FileBody(new File(bwa.a, b)));
+      FileBody localFileBody = new FileBody(new File(bwa.a, c));
       long l = localFileBody.getContentLength();
       if (l == 0L) {
         return;
@@ -34,8 +33,8 @@ final class NativeCrashManager$2
       localMultipartEntity.addPart("attachment0", localFileBody);
       if (ReleaseManager.f())
       {
-        localMultipartEntity.addPart("userId", new StringBody(ajx.l(), Charset.forName("UTF-8")));
-        localMultipartEntity.addPart("contact", new StringBody(ajx.G(), Charset.forName("UTF-8")));
+        localMultipartEntity.addPart("userId", new StringBody(akr.l(), Charset.forName("UTF-8")));
+        localMultipartEntity.addPart("contact", new StringBody(akr.G(), Charset.forName("UTF-8")));
       }
       localHttpPost.setEntity(localMultipartEntity);
       localDefaultHttpClient.execute(localHttpPost);
@@ -43,7 +42,7 @@ final class NativeCrashManager$2
     }
     catch (Exception localException)
     {
-      Timber.f("NativeCrashManager", "Failed to upload crashes: " + localException.getMessage(), new Object[0]);
+      new StringBuilder("Failed to upload crashes: ").append(localException.getMessage());
       return;
     }
     finally

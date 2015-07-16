@@ -1,36 +1,31 @@
 package com.snapchat.android.discover.ui.fragment;
 
-import aby;
-import abz;
-import ace;
-import adj;
-import adj.6;
-import adk;
-import adp;
-import aeh;
-import ael;
-import aew;
-import aey;
-import ala;
-import ald;
-import ale;
-import alw;
-import alx;
-import alx.a;
-import amk;
+import acy;
+import acz;
+import ade;
+import aej;
+import aej.7;
+import aej.a;
+import aek;
+import aep;
+import afh;
+import afl;
+import afw;
+import afy;
+import alv;
+import alz;
+import ama;
+import amt;
+import amu;
+import amu.a;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.database.Cursor;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
 import android.support.v7.widget.GridLayoutManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -39,16 +34,17 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import aok;
-import aol;
-import avh;
-import beh;
-import boh;
-import com.snapchat.android.Timber;
-import com.snapchat.android.content.SnapchatProvider;
+import anh;
+import apg;
+import aph;
+import awf;
+import bet;
+import bfg;
+import bpi;
+import chc;
 import com.snapchat.android.discover.controller.DiscoverMediaCategory;
+import com.snapchat.android.discover.model.ChannelPage;
 import com.snapchat.android.discover.model.EditionOpenOrigin;
-import com.snapchat.android.discover.model.database.vtable.PublisherAndEditionVirtualTable;
 import com.snapchat.android.discover.ui.ChannelGroupView;
 import com.snapchat.android.discover.ui.ChannelView;
 import com.snapchat.android.discover.ui.DiscoverLoadingStatePresenter;
@@ -60,43 +56,44 @@ import com.snapchat.android.discover.util.network.DiscoverEndpointManager.Compat
 import com.snapchat.android.discover.util.network.DiscoverEndpointManager.a;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.fragment.SnapchatFragment;
+import com.squareup.otto.Bus;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import nf;
+import nw;
 
 public class DiscoverFragment
   extends SnapchatFragment
-  implements ald, LoaderManager.LoaderCallbacks<Cursor>, DiscoverEndpointManager.a
+  implements aej.a, alz, DiscoverEndpointManager.a
 {
-  private final aol a;
+  private final aph a;
   private final DiscoverEndpointManager b;
-  private final abz c;
-  private final ale d;
+  private final acz c;
+  private final ama d;
   private final DiscoverLoadingStatePresenter e;
-  private final adj f;
-  private final aby g;
-  private final aeh h;
-  private ael i = null;
+  private final aej f;
+  private final acy g;
+  private final afh h;
+  private afl i = null;
   private ChannelGroupView j;
   private GridLayoutManager k;
   private OpenChannelAnimationView l;
   private boolean m = false;
   private Set<Integer> n = new HashSet();
-  private Cursor o;
-  private final aok p = new aok()
+  private List<ChannelPage> o;
+  private final apg p = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (DiscoverFragment.a(DiscoverFragment.this).contains(Integer.valueOf(i)))
       {
         DiscoverFragment.a(DiscoverFragment.this).remove(Integer.valueOf(i));
         if (!DiscoverFragment.b(DiscoverFragment.this).d()) {
-          DiscoverFragment.c(DiscoverFragment.this).c();
+          DiscoverFragment.c(DiscoverFragment.this).d();
         }
-        if ((DiscoverFragment.a(DiscoverFragment.this).isEmpty()) && ((paramAnonymousamk instanceof adk)) && (a == 0) && (DiscoverFragment.d(DiscoverFragment.this).a() == 0))
+        if ((DiscoverFragment.a(DiscoverFragment.this).isEmpty()) && ((paramAnonymousanh instanceof aek)) && (a == 0) && (DiscoverFragment.d(DiscoverFragment.this).a() == 0))
         {
           DiscoverFragment.e(DiscoverFragment.this).a(DiscoverLoadingStatePresenter.LoadingState.GENERIC_ERROR);
           i();
@@ -118,58 +115,41 @@ public class DiscoverFragment
   
   public DiscoverFragment()
   {
-    this(aol.a(), DiscoverEndpointManager.a(), abz.a(), ale.a(), new DiscoverLoadingStatePresenter(), adj.a(), aby.a(), aeh.a());
+    this(aph.a(), DiscoverEndpointManager.a(), acz.a(), ama.a(), new DiscoverLoadingStatePresenter(), aej.a(), acy.a(), afh.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private DiscoverFragment(aol paramaol, DiscoverEndpointManager paramDiscoverEndpointManager, abz paramabz, ale paramale, DiscoverLoadingStatePresenter paramDiscoverLoadingStatePresenter, adj paramadj, aby paramaby, aeh paramaeh)
+  private DiscoverFragment(aph paramaph, DiscoverEndpointManager paramDiscoverEndpointManager, acz paramacz, ama paramama, DiscoverLoadingStatePresenter paramDiscoverLoadingStatePresenter, aej paramaej, acy paramacy, afh paramafh)
   {
-    a = paramaol;
+    a = paramaph;
     b = paramDiscoverEndpointManager;
-    c = paramabz;
-    d = paramale;
+    c = paramacz;
+    d = paramama;
     e = paramDiscoverLoadingStatePresenter;
-    f = paramadj;
-    g = paramaby;
-    h = paramaeh;
+    f = paramaej;
+    g = paramacy;
+    h = paramafh;
   }
   
   private void a(int paramInt)
   {
     ChannelSpanSizeLookup localChannelSpanSizeLookup = new ChannelSpanSizeLookup(paramInt);
-    adp localadp = new adp(localChannelSpanSizeLookup);
+    aep localaep = new aep(localChannelSpanSizeLookup);
     k.g = localChannelSpanSizeLookup;
-    j.a(localadp);
+    j.a(localaep);
     j.removeAllViews();
   }
   
-  private void a(Cursor paramCursor)
+  private void b(@chc final List<ChannelPage> paramList)
   {
-    int i1;
-    if (paramCursor == null)
-    {
-      i1 = 0;
-      if (i1 <= 0) {
-        break label56;
-      }
-      e.a(DiscoverLoadingStatePresenter.LoadingState.LOADED);
-    }
-    for (;;)
-    {
-      if (i1 != i.a()) {
-        a(i1);
-      }
-      i.a(paramCursor);
-      return;
-      i1 = paramCursor.getCount();
-      break;
-      label56:
-      if ((m) && (n.isEmpty()) && (i1 == 0))
+    if (mFragmentLayout != null) {
+      mFragmentLayout.post(new Runnable()
       {
-        Timber.c("DiscoverFragment", "onLoadFinished - No Channels.", new Object[0]);
-        e.a(DiscoverLoadingStatePresenter.LoadingState.GENERIC_ERROR);
-        i();
-      }
+        public final void run()
+        {
+          DiscoverFragment.a(DiscoverFragment.this, paramList);
+        }
+      });
     }
   }
   
@@ -196,6 +176,16 @@ public class DiscoverFragment
     }
   }
   
+  public final void a(@chc List<ChannelPage> paramList)
+  {
+    if (!mAreLargeUiUpdatesEnabled)
+    {
+      o = paramList;
+      return;
+    }
+    b(paramList);
+  }
+  
   protected final WindowConfiguration.StatusBarDrawMode b()
   {
     return WindowConfiguration.StatusBarDrawMode.DRAW_BEHIND;
@@ -204,11 +194,9 @@ public class DiscoverFragment
   public final void c()
   {
     super.c();
-    Timber.a("DiscoverFragment", "Entering pager window.", new Object[0]);
     if (o != null)
     {
-      Timber.a("DiscoverFragment", "Swapping cursor.", new Object[0]);
-      a(o);
+      b(o);
       o = null;
     }
   }
@@ -220,35 +208,33 @@ public class DiscoverFragment
       if (i.a() == 0) {
         e.a(DiscoverLoadingStatePresenter.LoadingState.LOADING);
       }
-      Timber.c("DiscoverFragment", "Fetching discover channel list", new Object[0]);
       Set localSet = n;
-      aol localaol = a;
+      aph localaph = a;
       FragmentActivity localFragmentActivity = getActivity();
-      Intent localIntent = localaol.b(localFragmentActivity);
+      Intent localIntent = localaph.b(localFragmentActivity);
       localIntent.putExtra("op_code", 1007);
-      localSet.add(Integer.valueOf(localaol.a(localFragmentActivity, localIntent)));
+      localSet.add(Integer.valueOf(localaph.a(localFragmentActivity, localIntent)));
     }
   }
   
   protected final void e()
   {
-    nf.d();
+    nw.d();
     super.e();
     getActivity().setVolumeControlStream(3);
     c.c();
     Object localObject = g;
     DiscoverMediaCategory localDiscoverMediaCategory = DiscoverMediaCategory.HOME_PAGE;
-    Timber.c("DiscoverMediaManager", "DISCOVER-MEDIA: Retry failed media for context %s", new Object[] { localDiscoverMediaCategory });
     localObject = b.iterator();
     while (((Iterator)localObject).hasNext())
     {
-      ace localace = (ace)((Iterator)localObject).next();
-      if (localDiscoverMediaCategory.equals(localace.d())) {
-        localace.c();
+      ade localade = (ade)((Iterator)localObject).next();
+      if (localDiscoverMediaCategory.equals(localade.d())) {
+        localade.c();
       }
     }
     d.a(this);
-    nf.e();
+    nw.e();
   }
   
   protected final void f()
@@ -263,9 +249,9 @@ public class DiscoverFragment
     return h.b();
   }
   
-  protected final ala h()
+  protected final alv h()
   {
-    return new ala(new String[] { "DISCOVER" });
+    return new alv(new String[] { "DISCOVER" });
   }
   
   protected final boolean i()
@@ -273,29 +259,27 @@ public class DiscoverFragment
     NetworkInfo localNetworkInfo = d.b();
     if (getActivity().getExternalCacheDir() == null)
     {
-      Timber.a("DiscoverFragment", "No external storage available error.", new Object[0]);
       e.a(DiscoverLoadingStatePresenter.LoadingState.EXTERNAL_STORAGE_UNAVAILABLE);
       return true;
     }
     if ((localNetworkInfo == null) || (!localNetworkInfo.isConnected()))
     {
-      Timber.a("DiscoverFragment", "Network error.", new Object[0]);
       e.a(DiscoverLoadingStatePresenter.LoadingState.NETWORK_ERROR);
       return true;
     }
     return false;
   }
   
-  public final alw k()
+  public final amt k()
   {
-    new alw()
+    new amt()
     {
-      public final boolean a(alx.a paramAnonymousa)
+      public final boolean a(amu.a paramAnonymousa)
       {
-        return alx.g.contains(c);
+        return amu.g.contains(c);
       }
       
-      public final boolean b(alx.a paramAnonymousa)
+      public final boolean b(amu.a paramAnonymousa)
       {
         return false;
       }
@@ -304,40 +288,30 @@ public class DiscoverFragment
   
   public void onCreate(Bundle paramBundle)
   {
-    nf.d();
+    nw.d();
     super.onCreate(paramBundle);
-    getActivity().getSupportLoaderManager().initLoader$71be8de6(1000, this);
     paramBundle = b;
     if (this != null) {
       a.add(this);
     }
-    nf.e();
-  }
-  
-  public Loader<Cursor> onCreateLoader(int paramInt, Bundle paramBundle)
-  {
-    switch (paramInt)
-    {
-    default: 
-      return null;
-    }
-    return new CursorLoader(getActivity(), SnapchatProvider.b, PublisherAndEditionVirtualTable.a, null);
+    h.c();
+    nw.e();
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    nf.d();
-    mFragmentLayout = paramLayoutInflater.inflate(2130968653, paramViewGroup, false);
-    l = ((OpenChannelAnimationView)c(2131362267));
-    i = new ael(getActivity(), h, l);
-    c(2131362255).setOnClickListener(new View.OnClickListener()
+    nw.d();
+    mFragmentLayout = paramLayoutInflater.inflate(2130968654, paramViewGroup, false);
+    l = ((OpenChannelAnimationView)c(2131362265));
+    i = new afl(getActivity(), h, l);
+    c(2131362253).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         getActivity().onBackPressed();
       }
     });
-    j = ((ChannelGroupView)c(2131362257));
+    j = ((ChannelGroupView)c(2131362255));
     getActivity();
     k = new GridLayoutManager((byte)0);
     a(i.a());
@@ -347,56 +321,55 @@ public class DiscoverFragment
     paramViewGroup = mFragmentLayout;
     paramBundle = i;
     View.OnClickListener localOnClickListener = q;
-    a = paramViewGroup.findViewById(2131362258);
-    b = ((TextView)a.findViewById(2131362259));
-    c = ((ImageView)a.findViewById(2131362260));
-    d = paramViewGroup.findViewById(2131362261);
+    a = paramViewGroup.findViewById(2131362256);
+    b = ((TextView)a.findViewById(2131362257));
+    c = ((ImageView)a.findViewById(2131362258));
+    d = paramViewGroup.findViewById(2131362259);
     d.setClickable(false);
-    e = ((ImageView)d.findViewById(2131362262));
+    e = ((ImageView)d.findViewById(2131362260));
     d.setOnClickListener(new DiscoverLoadingStatePresenter.1(paramLayoutInflater, localOnClickListener));
-    g = paramViewGroup.findViewById(2131362264);
-    f = ((ChannelGroupView)paramViewGroup.findViewById(2131362257));
+    g = paramViewGroup.findViewById(2131362262);
+    f = ((ChannelGroupView)paramViewGroup.findViewById(2131362255));
     h = paramBundle;
     int i1 = getResourcesgetConfigurationscreenLayout & 0xF;
-    float f1 = avh.b(getActivity()) / avh.a(getActivity());
+    float f1 = awf.b(getActivity()) / awf.a(getActivity());
     if ((i1 == 1) || ((i1 == 2) && (f1 <= 1.65F))) {
-      ((ImageView)c(2131362254)).setImageResource(2130837771);
+      ((ImageView)c(2131362252)).setImageResource(2130837771);
     }
-    nf.e();
+    f.a(this);
+    nw.e();
     return mFragmentLayout;
   }
   
   public void onDestroy()
   {
     super.onDestroy();
+    f.b(this);
     b.a.remove(this);
   }
   
-  @boh
-  public void onEditionClose(aew paramaew)
+  @bpi
+  public void onEditionClose(afw paramafw)
   {
-    adj localadj = f;
+    aej localaej = f;
     List localList = c;
-    g.post(new adj.6(localadj, localList));
-    f.c();
-    j.findViewWithTag(a).invalidate();
+    h.post(new aej.7(localaej, localList));
+    f.d();
+    paramafw = j.findViewWithTag(a);
+    if (paramafw != null) {
+      paramafw.invalidate();
+    }
   }
   
-  public void onLoaderReset(Loader<Cursor> paramLoader)
-  {
-    a(0);
-    i.a(null);
-  }
-  
-  @boh
-  public void onPagedToDiscoverEvent(final aey paramaey)
+  @bpi
+  public void onPagedToDiscoverEvent(final afy paramafy)
   {
     j.post(new Runnable()
     {
       public final void run()
       {
-        ChannelView localChannelView = (ChannelView)DiscoverFragment.f(DiscoverFragment.this).findViewWithTag(paramaeya);
-        DiscoverFragment.b(DiscoverFragment.this).a(localChannelView, DiscoverFragment.g(DiscoverFragment.this), EditionOpenOrigin.CHAT, paramaeya, paramaeyb, paramaeyc, paramaeyd);
+        ChannelView localChannelView = (ChannelView)DiscoverFragment.f(DiscoverFragment.this).findViewWithTag(paramafya);
+        DiscoverFragment.b(DiscoverFragment.this).a(localChannelView, DiscoverFragment.g(DiscoverFragment.this), EditionOpenOrigin.CHAT, paramafya, paramafyb, paramafyc, paramafyd);
       }
     });
   }
@@ -404,31 +377,37 @@ public class DiscoverFragment
   public void onPause()
   {
     super.onPause();
-    h.c();
+    afh localafh = h;
+    if (localafh.d())
+    {
+      EditionViewerFragment localEditionViewerFragment = c;
+      if (a != null) {
+        localEditionViewerFragment.b(EditionViewerPager.SwipeToExitMethod.ENTER_BACKGROUND);
+      }
+    }
+    a.a(new bet(true));
     a.b(1007, p);
     n.clear();
   }
   
   public void onResume()
   {
-    nf.d();
+    nw.d();
     super.onResume();
     a.a(1007, p);
     e.a(b.b);
-    Object localObject = g;
-    Timber.c("DiscoverMediaManager", "DISCOVER-MEDIA: Checking cache consistency", new Object[0]);
-    localObject = b.iterator();
-    while (((Iterator)localObject).hasNext()) {
-      ((ace)((Iterator)localObject).next()).b();
+    Iterator localIterator = g.b.iterator();
+    while (localIterator.hasNext()) {
+      ((ade)localIterator.next()).b();
     }
     if (!i()) {
       d();
     }
-    nf.e();
+    nw.e();
   }
   
-  @boh
-  public void onSyncAllCompletedEvent(beh parambeh)
+  @bpi
+  public void onSyncAllCompletedEvent(bfg parambfg)
   {
     m = true;
   }

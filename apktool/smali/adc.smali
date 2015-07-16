@@ -2,48 +2,111 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljavax/inject/Provider;
 
-# static fields
-.field public static final a:Lawp;
 
-.field public static final b:Lawp;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljavax/inject/Provider",
+        "<",
+        "Landroid/os/Bundle;",
+        ">;"
+    }
+.end annotation
 
-.field public static final c:Lawp;
+
+# instance fields
+.field private final a:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    const-wide/32 v2, 0x9c40
+    .line 20
+    invoke-static {}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->a()Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
 
-    .line 16
-    new-instance v0, Lawp;
+    move-result-object v0
 
-    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->DISCOVER_INTRO_VIDEOS:Lcom/snapchat/android/util/cache/CacheType;
-
-    invoke-direct {v0, v1, v2, v3}, Lawp;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
-
-    sput-object v0, Ladc;->a:Lawp;
-
-    .line 18
-    new-instance v0, Laxd;
-
-    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->DISCOVER_EDITIONS_CHUNKS:Lcom/snapchat/android/util/cache/CacheType;
-
-    invoke-direct {v0, v1}, Laxd;-><init>(Lcom/snapchat/android/util/cache/CacheType;)V
-
-    sput-object v0, Ladc;->b:Lawp;
+    invoke-direct {p0, v0}, Ladc;-><init>(Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;)V
 
     .line 21
-    new-instance v0, Lawp;
-
-    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->DISCOVER_PUBLISHER_ICONS:Lcom/snapchat/android/util/cache/CacheType;
-
-    invoke-direct {v0, v1, v2, v3}, Lawp;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
-
-    sput-object v0, Ladc;->c:Lawp;
-
     return-void
+.end method
+
+.method private constructor <init>(Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;)V
+    .locals 0
+
+    .prologue
+    .line 24
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 25
+    iput-object p1, p0, Ladc;->a:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
+
+    .line 26
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Landroid/os/Bundle;
+    .locals 3
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 35
+    iget-object v0, p0, Ladc;->a:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->c()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 36
+    iget-object v0, p0, Ladc;->a:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 37
+    if-eqz v1, :cond_0
+
+    if-nez v2, :cond_1
+
+    .line 38
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 43
+    :goto_0
+    return-object v0
+
+    .line 41
+    :cond_1
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 42
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 15
+    invoke-virtual {p0}, Ladc;->a()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    return-object v0
 .end method

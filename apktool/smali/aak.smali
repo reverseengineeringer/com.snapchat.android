@@ -1,154 +1,241 @@
 .class public final Laak;
-.super Lcom/snapchat/android/database/table/StorySnapTable;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field private static a:Laak;
-
-
-# direct methods
-.method private constructor <init>()V
-    .locals 2
-
-    .prologue
-    .line 23
-    new-instance v0, Laxx;
-
-    invoke-direct {v0}, Laxx;-><init>()V
-
-    invoke-static {}, Lajx;->a()Lajx;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Laak;-><init>(Laxx;Lajx;)V
-
-    .line 24
-    return-void
-.end method
-
-.method private constructor <init>(Laxx;Lajx;)V
-    .locals 1
-
-    .prologue
-    .line 28
-    sget-object v0, Layj;->FRIEND_STORY_KEYS_AND_IVS:Layh;
-
-    invoke-direct {p0, p2, p1, v0}, Lcom/snapchat/android/database/table/StorySnapTable;-><init>(Lajx;Laxx;Layh;)V
-
-    .line 29
-    return-void
-.end method
-
-.method public static declared-synchronized a()Laak;
-    .locals 2
-
-    .prologue
-    .line 32
-    const-class v1, Laak;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Laak;->a:Laak;
-
-    if-nez v0, :cond_0
-
-    .line 33
-    new-instance v0, Laak;
-
-    invoke-direct {v0}, Laak;-><init>()V
-
-    sput-object v0, Laak;->a:Laak;
-
-    .line 35
-    :cond_0
-    sget-object v0, Laak;->a:Laak;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 32
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
+# interfaces
+.implements Lzq;
 
 
-# virtual methods
-.method protected final a(Lajv;)Ljava/util/Collection;
-    .locals 3
+# instance fields
+.field private final a:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Lajv;",
-            ")",
-            "Ljava/util/Collection",
+            "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Laaj;",
             ">;"
         }
     .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 3
 
     .prologue
-    .line 50
-    invoke-static {}, Lajq;->a()Lajq;
+    .line 21
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Laaj;
+
+    const/4 v1, 0x0
+
+    new-instance v2, Laam;
+
+    invoke-direct {v2}, Laam;-><init>()V
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    new-instance v2, Laal;
+
+    invoke-direct {v2}, Laal;-><init>()V
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ldt;->a([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lajq;->n()Ljava/util/List;
+    invoke-direct {p0, v0}, Laak;-><init>(Ljava/util/List;)V
 
-    move-result-object v0
-
-    .line 51
-    new-instance v1, Laxx;
-
-    invoke-direct {v1}, Laxx;-><init>()V
-
-    sget-object v2, Layj;->FRIEND_STORY_KEYS_AND_IVS:Layh;
-
-    invoke-virtual {v1, v0, v2}, Laxx;->a(Ljava/util/List;Layh;)V
-
-    .line 52
-    return-object v0
+    .line 22
+    return-void
 .end method
 
-.method protected final a(Ljava/util/List;)V
-    .locals 1
+.method private constructor <init>(Ljava/util/List;)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Laaj;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 45
-    invoke-static {}, Lajq;->a()Lajq;
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    .line 26
+    iput-object p1, p0, Laak;->a:Ljava/util/List;
 
-    invoke-virtual {v0, p1}, Lajq;->d(Ljava/util/List;)V
-
-    .line 46
+    .line 27
     return-void
 .end method
 
-.method public final c()Ljava/lang/String;
-    .locals 1
+
+# virtual methods
+.method public final a(Lajk;)V
+    .locals 2
+    .param p1    # Lajk;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 40
-    const-string v0, "FriendStorySnapTable"
+    .line 53
+    iget-object v0, p0, Laak;->a:Ljava/util/List;
 
-    return-object v0
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laaj;
+
+    .line 54
+    invoke-interface {v0, p1}, Laaj;->a(Lajk;)V
+
+    goto :goto_0
+
+    .line 56
+    :cond_0
+    return-void
+.end method
+
+.method public final a(Laka;Lajk;)V
+    .locals 2
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lajk;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 31
+    iget-object v0, p0, Laak;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laaj;
+
+    .line 32
+    invoke-interface {v0, p1, p2}, Laaj;->a(Laka;Lajk;)V
+
+    goto :goto_0
+
+    .line 34
+    :cond_0
+    return-void
+.end method
+
+.method public final a(Laka;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;I)V
+    .locals 2
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 46
+    iget-object v0, p0, Laak;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laaj;
+
+    .line 47
+    invoke-interface {v0, p1, p2, p3}, Laaj;->a(Laka;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;I)V
+
+    goto :goto_0
+
+    .line 49
+    :cond_0
+    return-void
+.end method
+
+.method public final d(Laka;)V
+    .locals 2
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 38
+    iget-object v0, p0, Laak;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laaj;
+
+    .line 39
+    invoke-interface {v0, p1}, Laaj;->d(Laka;)V
+
+    goto :goto_0
+
+    .line 41
+    :cond_0
+    return-void
 .end method

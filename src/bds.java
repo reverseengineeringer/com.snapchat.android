@@ -1,10 +1,10 @@
 public final class bds
 {
-  public final String mKey;
+  public String sourceId;
   
-  public bds(String paramString)
+  public bds(@chc String paramString)
   {
-    mKey = paramString;
+    sourceId = paramString;
   }
 }
 

@@ -30,7 +30,7 @@
     .locals 1
 
     .prologue
-    .line 2598
+    .line 2696
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->c:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     iput p2, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->a:I
@@ -48,7 +48,7 @@
     .locals 18
 
     .prologue
-    .line 2601
+    .line 2699
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->c:Lcom/snapchat/android/fragments/chat/ChatFragment;
@@ -59,14 +59,14 @@
 
     if-nez v2, :cond_0
 
-    .line 2602
+    .line 2700
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->c:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v2}, Lcom/snapchat/android/fragments/chat/ChatFragment;->F(Lcom/snapchat/android/fragments/chat/ChatFragment;)Z
 
-    .line 2603
+    .line 2701
     const/high16 v3, 0x43fa0000    # 500.0f
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -75,11 +75,11 @@
 
     iget-object v2, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->c:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/chat/ChatFragment;->G(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbgr;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/chat/ChatFragment;->G(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbhr;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v2}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v2
 
@@ -95,16 +95,16 @@
 
     float-to-long v4, v2
 
-    .line 2604
+    .line 2702
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->c:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/chat/ChatFragment;->G(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbgr;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/chat/ChatFragment;->G(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbhr;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v2}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v2
 
@@ -128,17 +128,17 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 2607
+    .line 2705
     :cond_0
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->c:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/chat/ChatFragment;->G(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbgr;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/chat/ChatFragment;->G(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbhr;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v2}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v3
 
@@ -250,7 +250,7 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v2
 
@@ -262,7 +262,7 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v5, v6}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v5
 
@@ -278,7 +278,7 @@
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v2
 
@@ -286,7 +286,7 @@
 
     move-result v6
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v2
 
@@ -351,7 +351,7 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v11
 
@@ -367,7 +367,7 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v10
 
@@ -383,7 +383,7 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v5
 
@@ -401,7 +401,7 @@
 
     move-result-object v6
 
-    invoke-static {v2, v6}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v6}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v7
 
@@ -415,7 +415,7 @@
 
     const v8, 0x3e4ccccd    # 0.2f
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v9
 
@@ -445,7 +445,7 @@
 
     const-wide v14, 0x401921fb54442d18L    # 6.283185307179586
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v2
 
@@ -477,7 +477,7 @@
 
     move-result-object v14
 
-    invoke-static {v9, v14}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v9, v14}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v9
 
@@ -543,7 +543,7 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v2
 
@@ -555,7 +555,7 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v5, v6}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v5
 
@@ -565,7 +565,7 @@
 
     const v7, 0x3e4ccccd    # 0.2f
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v8
 
@@ -599,7 +599,7 @@
 
     const/high16 v5, 0x40000000    # 2.0f
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v6
 
@@ -642,7 +642,7 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v2
 
@@ -652,7 +652,7 @@
 
     const/high16 v5, 0x40000000    # 2.0f
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v6
 
@@ -668,7 +668,7 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v2
 
@@ -678,7 +678,7 @@
 
     const/high16 v5, 0x42700000    # 60.0f
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v6
 
@@ -717,7 +717,7 @@
 
     goto/16 :goto_1
 
-    .line 2609
+    .line 2707
     :cond_9
     move-object/from16 v0, p0
 
@@ -731,7 +731,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 2610
+    .line 2708
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->c:Lcom/snapchat/android/fragments/chat/ChatFragment;
@@ -750,10 +750,10 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 2616
+    .line 2714
     return-void
 
-    .line 2607
+    .line 2705
     :array_0
     .array-data 4
         0x0

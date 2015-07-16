@@ -2,24 +2,48 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvk;
+
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lahx$a;,
-        Lahx$b;
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lcom/snapchat/android/fragments/stories/StoriesFragment;",
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field private static c:Ljava/lang/String;
+.field static final synthetic a:Z
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/ExecutorService;
+.field private final b:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private final b:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+.field private final c:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lach;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -27,52 +51,148 @@
     .locals 1
 
     .prologue
-    .line 22
-    const-string v0, "CONSTRUCTED_DYANMIC_GEOFILTER_DELAY"
+    .line 9
+    const-class v0, Lahx;
 
-    sput-object v0, Lahx;->c:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lahx;->a:Z
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public constructor <init>(Ljava/util/concurrent/ExecutorService;)V
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lach;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 25
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
-
-    invoke-direct {p0, p1, v0}, Lahx;-><init>(Ljava/util/concurrent/ExecutorService;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
-
-    .line 26
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/util/concurrent/ExecutorService;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
-    .locals 0
-
-    .prologue
-    .line 29
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
-    iput-object p1, p0, Lahx;->a:Ljava/util/concurrent/ExecutorService;
+    .line 15
+    sget-boolean v0, Lahx;->a:Z
 
-    .line 31
-    iput-object p2, p0, Lahx;->b:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+    if-nez v0, :cond_0
 
-    .line 32
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 16
+    :cond_0
+    iput-object p1, p0, Lahx;->b:Lbvk;
+
+    .line 17
+    sget-boolean v0, Lahx;->a:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 18
+    :cond_1
+    iput-object p2, p0, Lahx;->c:Ljavax/inject/Provider;
+
+    .line 19
     return-void
 .end method
 
-.method static synthetic a()Ljava/lang/String;
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lach;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/fragments/stories/StoriesFragment;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 18
-    sget-object v0, Lahx;->c:Ljava/lang/String;
+    .line 31
+    new-instance v0, Lahx;
+
+    invoke-direct {v0, p0, p1}, Lahx;-><init>(Lbvk;Ljavax/inject/Provider;)V
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
+
+    .prologue
+    .line 9
+    check-cast p1, Lcom/snapchat/android/fragments/stories/StoriesFragment;
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Cannot inject members into a null reference"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lahx;->b:Lbvk;
+
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lahx;->c:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lach;
+
+    iput-object v0, p1, Lcom/snapchat/android/fragments/stories/StoriesFragment;->e:Lach;
+
+    return-void
 .end method

@@ -1,46 +1,48 @@
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
+import java.util.Map;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bkg
-  extends bgy
 {
-  @SerializedName("action")
-  protected String action;
-  @SerializedName("added_by")
-  protected String addedBy;
-  @SerializedName("block_reason_id")
-  protected Integer blockReasonId;
-  @SerializedName("display")
-  protected String display;
-  @SerializedName("friend")
-  protected String friend;
-  @SerializedName("friend_id")
-  protected String friendId;
-  @SerializedName("identity_cell_index")
-  protected Integer identityCellIndex;
-  @SerializedName("identity_profile_page")
-  protected String identityProfilePage;
+  @SerializedName("friend_stories")
+  protected List<biv> friendStories;
+  @SerializedName("friend_stories_delta")
+  protected Boolean friendStoriesDelta;
+  @SerializedName("mature_content_text")
+  protected Map<String, String> matureContentText;
+  @SerializedName("my_group_stories")
+  protected List<bjm> myGroupStories;
+  @SerializedName("my_stories")
+  protected List<bkj> myStories;
+  @SerializedName("server_info")
+  protected bjx serverInfo;
   
-  public final void a(Integer paramInteger)
+  public final List<bkj> a()
   {
-    identityCellIndex = paramInteger;
+    return myStories;
   }
   
-  public final void a(String paramString)
+  public final boolean b()
   {
-    action = paramString;
+    return myStories != null;
   }
   
-  public final void b(Integer paramInteger)
+  public final List<biv> c()
   {
-    blockReasonId = paramInteger;
+    return friendStories;
   }
   
-  public final void b(String paramString)
+  public final List<bjm> d()
   {
-    friend = paramString;
+    return myGroupStories;
+  }
+  
+  public final boolean e()
+  {
+    return myGroupStories != null;
   }
   
   public boolean equals(Object paramObject)
@@ -52,32 +54,27 @@ public class bkg
       return false;
     }
     paramObject = (bkg)paramObject;
-    return new EqualsBuilder().append(action, action).append(friend, friend).append(friendId, friendId).append(addedBy, addedBy).append(identityProfilePage, identityProfilePage).append(identityCellIndex, identityCellIndex).append(display, display).append(blockReasonId, blockReasonId).isEquals();
+    return new EqualsBuilder().append(myStories, myStories).append(friendStories, friendStories).append(myGroupStories, myGroupStories).append(matureContentText, matureContentText).append(friendStoriesDelta, friendStoriesDelta).append(serverInfo, serverInfo).isEquals();
+  }
+  
+  public final Boolean f()
+  {
+    return friendStoriesDelta;
+  }
+  
+  public final bjx g()
+  {
+    return serverInfo;
+  }
+  
+  public final boolean h()
+  {
+    return serverInfo != null;
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(action).append(friend).append(friendId).append(addedBy).append(identityProfilePage).append(identityCellIndex).append(display).append(blockReasonId).toHashCode();
-  }
-  
-  public final void i(String paramString)
-  {
-    friendId = paramString;
-  }
-  
-  public final void j(String paramString)
-  {
-    addedBy = paramString;
-  }
-  
-  public final void k(String paramString)
-  {
-    identityProfilePage = paramString;
-  }
-  
-  public final void l(String paramString)
-  {
-    display = paramString;
+    return new HashCodeBuilder().append(myStories).append(friendStories).append(myGroupStories).append(matureContentText).append(friendStoriesDelta).append(serverInfo).toHashCode();
   }
   
   public String toString()

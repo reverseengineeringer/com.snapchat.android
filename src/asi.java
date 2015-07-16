@@ -1,14 +1,29 @@
-import android.widget.FrameLayout;
-import com.snapchat.android.ui.SwipeImageView;
+import com.snapchat.android.rendering.SnapMediaRenderer;
 
-public final class asi
-  extends asj
+public abstract interface asi
 {
-  public final void a(SwipeImageView paramSwipeImageView, arw<arn> paramarw)
-  {
-    e.removeAllViews();
-    paramarw.c();
-  }
+  @chc
+  public abstract aka a();
+  
+  public abstract void a(asj paramasj);
+  
+  public abstract void a(boolean paramBoolean);
+  
+  @chd
+  public abstract ajk b();
+  
+  @chc
+  public abstract SnapMediaRenderer c();
+  
+  public abstract boolean e();
+  
+  public abstract boolean f();
+  
+  public abstract void g();
+  
+  public abstract void h();
+  
+  public abstract void i();
 }
 
 /* Location:

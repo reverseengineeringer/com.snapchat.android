@@ -1,9 +1,30 @@
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.ErrorMetric;
+
 public final class ny
-  extends Exception
 {
-  public ny(double paramDouble)
+  private final aud mDeviceUtils;
+  
+  public ny()
   {
-    super("Sender was unable to see " + Double.toString(paramDouble) + "% of video");
+    this(aud.a());
+  }
+  
+  private ny(aud paramaud)
+  {
+    mDeviceUtils = paramaud;
+  }
+  
+  @Deprecated
+  public static void a(String paramString, Throwable paramThrowable)
+  {
+    new ErrorMetric("OUT_OF_MEMORY").a(paramThrowable).a("method", paramString).a("memory_class", Integer.valueOf(aud.b(SnapchatApplication.b()))).e();
+  }
+  
+  public static void a(Throwable paramThrowable)
+  {
+    new ErrorMetric("OUT_OF_MEMORY").a(paramThrowable).a("memory_class", Integer.valueOf(aud.b(SnapchatApplication.b()))).e();
   }
 }
 

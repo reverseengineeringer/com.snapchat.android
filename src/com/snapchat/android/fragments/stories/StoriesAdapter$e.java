@@ -1,37 +1,32 @@
 package com.snapchat.android.fragments.stories;
 
-import ahc;
+import ahz;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.view.ViewParent;
-import com.snapchat.android.ui.ptr.DancingGhostPtrHeader;
 import com.snapchat.android.ui.ptr.SnapchatPtrFrameLayout;
 
 final class StoriesAdapter$e
   implements View.OnLongClickListener
 {
-  private ahc b;
+  private ahz b;
   
-  public StoriesAdapter$e(StoriesAdapter paramStoriesAdapter, ahc paramahc)
+  public StoriesAdapter$e(StoriesAdapter paramStoriesAdapter, ahz paramahz)
   {
-    b = paramahc;
+    b = paramahz;
   }
   
   public final boolean onLongClick(View paramView)
   {
-    SnapchatPtrFrameLayout localSnapchatPtrFrameLayout = (SnapchatPtrFrameLayout)paramView.getRootView().findViewById(2131362762);
-    paramView = (ViewParent)paramView.getRootView().findViewById(2131362763);
-    if (b.r())
+    SnapchatPtrFrameLayout localSnapchatPtrFrameLayout = (SnapchatPtrFrameLayout)paramView.getRootView().findViewById(2131362758);
+    paramView = (ViewParent)paramView.getRootView().findViewById(2131362759);
+    if ((b.r()) && (!localSnapchatPtrFrameLayout.b()))
     {
-      if (a.getHeight() + a.getTop() > 0) {}
-      for (int i = 1; i == 0; i = 0)
-      {
-        localSnapchatPtrFrameLayout.setEnabled(false);
-        paramView.requestDisallowInterceptTouchEvent(true);
-        b.t();
-        b.d(true);
-        return true;
-      }
+      localSnapchatPtrFrameLayout.setEnabled(false);
+      paramView.requestDisallowInterceptTouchEvent(true);
+      b.t();
+      b.d(true);
+      return true;
     }
     return false;
   }

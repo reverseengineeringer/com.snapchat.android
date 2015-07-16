@@ -13,7 +13,7 @@
 
 # instance fields
 .field public status:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;

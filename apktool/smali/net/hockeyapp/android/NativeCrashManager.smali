@@ -40,13 +40,13 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->e()V
 
     goto :goto_0
 .end method
 
 .method private static a()Ljava/lang/String;
-    .locals 6
+    .locals 5
 
     .prologue
     const/4 v0, 0x0
@@ -66,7 +66,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lbuz;->a:Ljava/lang/String;
+    sget-object v3, Lbwa;->a:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -93,29 +93,6 @@
     move-result-object v3
 
     .line 121
-    const-string v1, "NativeCrashManager"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "Writing unhandled exception to: "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v1, v4, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 124
     new-instance v1, Ljava/io/BufferedWriter;
 
     new-instance v4, Ljava/io/FileWriter;
@@ -134,7 +111,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v4, Lbuz;->d:Ljava/lang/String;
+    sget-object v4, Lbwa;->d:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -159,7 +136,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v4, Lbuz;->b:Ljava/lang/String;
+    sget-object v4, Lbwa;->b:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -184,7 +161,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v4, Lbuz;->e:Ljava/lang/String;
+    sget-object v4, Lbwa;->e:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -209,7 +186,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v4, Lbuz;->g:Ljava/lang/String;
+    sget-object v4, Lbwa;->g:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -234,7 +211,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v4, Lbuz;->f:Ljava/lang/String;
+    sget-object v4, Lbwa;->f:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -324,7 +301,7 @@
     move-object v1, v0
 
     :goto_1
-    invoke-static {v1}, Lbfo;->a(Ljava/io/Closeable;)V
+    invoke-static {v1}, Lbgo;->a(Ljava/io/Closeable;)V
 
     goto :goto_0
 
@@ -341,27 +318,27 @@
     const/4 v1, 0x0
 
     .line 70
-    invoke-static {p0}, Lbuz;->a(Landroid/content/Context;)V
+    invoke-static {p0}, Lbwa;->a(Landroid/content/Context;)V
 
     .line 72
-    new-instance v0, Lazt;
+    new-instance v0, Lbas;
 
-    invoke-direct {v0}, Lazt;-><init>()V
+    invoke-direct {v0}, Lbas;-><init>()V
 
     .line 73
-    invoke-static {}, Lazt;->a()V
+    invoke-static {}, Lbas;->a()V
 
     .line 77
     :try_start_0
-    sget-object v0, Lbuz;->a:Ljava/lang/String;
+    sget-object v0, Lbwa;->a:Ljava/lang/String;
 
     invoke-static {v0}, Lnet/hockeyapp/android/NativeCrashManager;->nativeSetUpBreakpad(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 83
+    .line 79
     :goto_0
-    sget-object v0, Lbuz;->a:Ljava/lang/String;
+    sget-object v0, Lbwa;->a:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
@@ -371,7 +348,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lbuz;->a:Ljava/lang/String;
+    sget-object v3, Lbwa;->a:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -393,15 +370,22 @@
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_0
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-eqz v2, :cond_2
 
-    new-array v0, v1, [Ljava/lang/String;
+    :cond_0
+    new-instance v2, Lnet/hockeyapp/android/NativeCrashManager$1;
+
+    invoke-direct {v2}, Lnet/hockeyapp/android/NativeCrashManager$1;-><init>()V
+
+    invoke-virtual {v0, v2}, Ljava/io/File;->list(Ljava/io/FilenameFilter;)[Ljava/lang/String;
+
+    move-result-object v0
 
     .line 84
     :goto_1
@@ -418,7 +402,7 @@
     move-result-object v4
 
     .line 86
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     .line 87
     new-instance v5, Lnet/hockeyapp/android/NativeCrashManager$2;
@@ -428,43 +412,13 @@
     invoke-virtual {v5}, Lnet/hockeyapp/android/NativeCrashManager$2;->start()V
 
     .line 84
-    :cond_0
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 78
-    :catch_0
-    move-exception v0
-
     .line 79
-    const-string v2, "NativeCrashManager"
-
-    invoke-static {v2, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    .line 83
-    :cond_1
-    new-instance v2, Lnet/hockeyapp/android/NativeCrashManager$1;
-
-    invoke-direct {v2}, Lnet/hockeyapp/android/NativeCrashManager$1;-><init>()V
-
-    invoke-virtual {v0, v2}, Ljava/io/File;->list(Ljava/io/FilenameFilter;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-
     :cond_2
-    const-string v0, "NativeCrashManager"
-
-    const-string v2, "Can\'t search for exception as file path is null."
-
-    new-array v3, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     new-array v0, v1, [Ljava/lang/String;
 
     goto :goto_1
@@ -472,6 +426,11 @@
     .line 90
     :cond_3
     return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
 .end method
 
 .method private static native nativeSetUpBreakpad(Ljava/lang/String;)V

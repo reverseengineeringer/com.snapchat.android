@@ -1,44 +1,20 @@
-import java.io.Serializable;
-
-public final class cgq
-  extends che
-  implements cgz, Serializable
+final class cgq
+  implements cgi
 {
-  public final long a;
+  Class a;
+  String b;
+  int c;
   
-  public cgq()
+  cgq(Class paramClass, String paramString, int paramInt)
   {
-    a = cgj.a();
+    a = paramClass;
+    b = paramString;
+    c = paramInt;
   }
   
-  public cgq(long paramLong)
+  public final String toString()
   {
-    a = paramLong;
-  }
-  
-  public final cgg a()
-  {
-    return new cgg(a, cic.M());
-  }
-  
-  public final cgq b()
-  {
-    return this;
-  }
-  
-  public final long c()
-  {
-    return a;
-  }
-  
-  public final cgf d()
-  {
-    return cic.L();
-  }
-  
-  public final cgt e()
-  {
-    return new cgt(a, cic.M());
+    return b + ":" + c;
   }
 }
 

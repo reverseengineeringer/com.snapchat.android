@@ -1,4 +1,12 @@
-public final class bez {}
+public final class bez
+{
+  public ahy mStoriesListItem;
+  
+  public bez(ahy paramahy)
+  {
+    mStoriesListItem = paramahy;
+  }
+}
 
 /* Location:
  * Qualified Name:     bez

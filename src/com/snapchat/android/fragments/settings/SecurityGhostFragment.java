@@ -7,8 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import cgb;
-import com.snapchat.android.Timber;
+import chc;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 
@@ -17,7 +16,7 @@ public class SecurityGhostFragment
 {
   private String a;
   
-  public static SecurityGhostFragment a(@cgb String paramString)
+  public static SecurityGhostFragment a(@chc String paramString)
   {
     SecurityGhostFragment localSecurityGhostFragment = new SecurityGhostFragment();
     Bundle localBundle = new Bundle(1);
@@ -41,14 +40,14 @@ public class SecurityGhostFragment
     if (paramBundle != null) {
       a = paramBundle.getString("text_message");
     }
-    Timber.c("SecurityGhostFragment", "onCreate - mText " + a, new Object[0]);
+    new StringBuilder("onCreate - mText ").append(a);
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968722, paramViewGroup, false);
-    ((TextView)c(2131362605)).setText(a);
-    c(2131362602).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968724, paramViewGroup, false);
+    ((TextView)c(2131362604)).setText(a);
+    c(2131362601).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {

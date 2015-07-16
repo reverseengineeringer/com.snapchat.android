@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 316
+    .line 320
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$3;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 319
+    .line 323
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$3;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
 
-    .line 320
+    .line 324
     return-void
 .end method

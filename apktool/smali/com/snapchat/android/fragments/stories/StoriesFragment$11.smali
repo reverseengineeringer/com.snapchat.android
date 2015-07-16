@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1952
+    .line 1911
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$11;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,12 +37,12 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 4
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    .line 1955
+    .line 1914
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$11;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
@@ -51,33 +51,33 @@
 
     if-eqz v0, :cond_0
 
-    .line 1956
+    .line 1915
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$11;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->setSelection(I)V
+    invoke-virtual {v0, v3}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->setSelection(I)V
 
-    .line 1957
+    .line 1916
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$11;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v3}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1958
+    .line 1917
     if-eqz v0, :cond_0
 
-    .line 1959
+    .line 1918
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    .line 1963
+    .line 1922
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$11;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
@@ -89,25 +89,42 @@
 
     move-result-object v1
 
+    :cond_1
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Laoq;
+    check-cast v0, Lapm;
 
-    .line 1964
-    invoke-virtual {v0}, Laoq;->n()V
+    .line 1923
+    iget-object v2, v0, Lapm;->e:Lorg/lucasr/twowayview/TwoWayView;
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, v0, Lapm;->e:Lorg/lucasr/twowayview/TwoWayView;
+
+    invoke-virtual {v2, v3}, Lorg/lucasr/twowayview/TwoWayView;->setSelection(I)V
+
+    iget-object v0, v0, Lapm;->e:Lorg/lucasr/twowayview/TwoWayView;
+
+    invoke-virtual {v0, v3}, Lorg/lucasr/twowayview/TwoWayView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
     goto :goto_0
 
-    .line 1966
-    :cond_1
+    .line 1925
+    :cond_2
     return-void
 .end method

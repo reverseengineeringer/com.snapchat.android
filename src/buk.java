@@ -1,11 +1,56 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target({java.lang.annotation.ElementType.TYPE})
-public @interface buk {}
+public final class buk
+{
+  public static final buk a = new buk();
+  private bul b = new buk.a((byte)0);
+  private SimpleDateFormat c = null;
+  
+  private buk()
+  {
+    try
+    {
+      c = b();
+      return;
+    }
+    catch (Exception localException) {}
+  }
+  
+  private static SimpleDateFormat b()
+  {
+    SimpleDateFormat localSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
+    localSimpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+    return localSimpleDateFormat;
+  }
+  
+  public final String a()
+  {
+    return a(b.a());
+  }
+  
+  public final String a(Date paramDate)
+  {
+    if (c != null) {
+      return c.format(paramDate);
+    }
+    b();
+    return "";
+  }
+  
+  final class a
+    implements bul
+  {
+    private a() {}
+    
+    public final Date a()
+    {
+      return new Date();
+    }
+  }
+}
 
 /* Location:
  * Qualified Name:     buk

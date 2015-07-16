@@ -1,30 +1,28 @@
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.ErrorMetric;
+import android.os.Bundle;
 
 public final class nh
+  extends nc
 {
-  private final ate mDeviceUtils;
+  private static final String IDENTIFIER = "EMPTY";
   
-  public nh()
+  public final String a()
   {
-    this(ate.a());
+    return "EMPTY";
   }
   
-  private nh(ate paramate)
+  public final String b()
   {
-    mDeviceUtils = paramate;
+    return "EMPTY";
   }
   
-  @Deprecated
-  public static void a(String paramString, Throwable paramThrowable)
+  public final Bundle c()
   {
-    new ErrorMetric("OUT_OF_MEMORY").a(paramThrowable).a("method", paramString).a("memory_class", Integer.valueOf(ate.b(SnapchatApplication.b()))).d();
+    return new Bundle();
   }
   
-  public static void a(Throwable paramThrowable)
+  public final String d()
   {
-    new ErrorMetric("OUT_OF_MEMORY").a(paramThrowable).a("memory_class", Integer.valueOf(ate.b(SnapchatApplication.b()))).d();
+    return "EMPTY";
   }
 }
 

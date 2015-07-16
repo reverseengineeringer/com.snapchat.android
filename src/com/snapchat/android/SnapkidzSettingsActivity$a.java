@@ -2,10 +2,10 @@ package com.snapchat.android;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import aqb;
+import ara;
 
 final class SnapkidzSettingsActivity$a
-  extends aqb
+  extends ara
 {
   public SnapkidzSettingsActivity$a(SnapkidzSettingsActivity paramSnapkidzSettingsActivity)
   {

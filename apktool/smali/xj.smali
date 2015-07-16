@@ -2,289 +2,138 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic a:Z
-
 
 # instance fields
-.field private final b:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lcom/snapchat/android/util/WaitDoneHandler;",
-            ">;"
-        }
+.field protected a:Lcom/snapchat/android/camera/model/CameraModel;
+    .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field private final c:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lxi;",
-            ">;"
-        }
+.field protected b:Lxm;
+    .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field private final d:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final e:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazo;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final c:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
-
-    .prologue
-    .line 10
-    const-class v0, Lxj;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lxj;->a:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lcom/snapchat/android/util/WaitDoneHandler;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lxi;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazo;",
-            ">;)V"
-        }
+    .annotation runtime Ljavax/inject/Inject;
     .end annotation
 
     .prologue
-    .line 17
+    .line 30
+    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lxj;-><init>(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
+
+    .line 31
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
+    .locals 1
+
+    .prologue
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
-    sget-boolean v0, Lxj;->a:Z
+    .line 34
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    if-nez p1, :cond_0
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
-    new-instance v0, Ljava/lang/AssertionError;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    invoke-interface {v0, p0}, Lazy;->a(Lxj;)V
 
-    throw v0
+    .line 35
+    iput-object p1, p0, Lxj;->c:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
-    .line 19
-    :cond_0
-    iput-object p1, p0, Lxj;->b:Lbuj;
-
-    .line 20
-    sget-boolean v0, Lxj;->a:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 21
-    :cond_1
-    iput-object p2, p0, Lxj;->c:Ljavax/inject/Provider;
-
-    .line 22
-    sget-boolean v0, Lxj;->a:Z
-
-    if-nez v0, :cond_2
-
-    if-nez p3, :cond_2
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 23
-    :cond_2
-    iput-object p3, p0, Lxj;->d:Ljavax/inject/Provider;
-
-    .line 24
-    sget-boolean v0, Lxj;->a:Z
-
-    if-nez v0, :cond_3
-
-    if-nez p4, :cond_3
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 25
-    :cond_3
-    iput-object p4, p0, Lxj;->e:Ljavax/inject/Provider;
-
-    .line 26
+    .line 36
     return-void
-.end method
-
-.method public static a(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lcom/snapchat/android/util/WaitDoneHandler;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lxi;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazo;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 40
-    new-instance v0, Lxj;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lxj;-><init>(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final a()Lavc;
+    .locals 10
+    .annotation build Lchd;
+    .end annotation
 
     .prologue
-    .line 10
-    check-cast p1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;
+    const/4 v0, 0x0
 
-    if-nez p1, :cond_0
+    .line 41
+    iget-object v1, p0, Lxj;->a:Lcom/snapchat/android/camera/model/CameraModel;
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    iget-object v1, v1, Lcom/snapchat/android/camera/model/CameraModel;->h:Lwy$b;
 
-    const-string v1, "Cannot inject members into a null reference"
+    .line 42
+    if-nez v1, :cond_1
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
+    .line 52
     :cond_0
-    iget-object v0, p0, Lxj;->b:Lbuj;
+    :goto_0
+    return-object v0
 
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
+    .line 46
+    :cond_1
+    invoke-interface {v1}, Lwy$b;->c()Landroid/hardware/Camera$Parameters;
 
-    iget-object v0, p0, Lxj;->c:Ljavax/inject/Provider;
+    move-result-object v2
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .line 47
+    if-eqz v2, :cond_0
 
-    move-result-object v0
-
-    check-cast v0, Lxi;
-
-    iput-object v0, p1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->d:Lxi;
-
-    iget-object v0, p0, Lxj;->d:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .line 51
+    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     move-result-object v0
 
-    check-cast v0, Lcom/snapchat/android/camera/model/CameraModel;
+    sget-object v1, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->ENABLED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
-    iput-object v0, p1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->e:Lcom/snapchat/android/camera/model/CameraModel;
+    if-ne v0, v1, :cond_2
 
-    iget-object v0, p0, Lxj;->e:Ljavax/inject/Provider;
+    const/4 v6, 0x1
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .line 52
+    :goto_1
+    iget-object v1, p0, Lxj;->b:Lxm;
+
+    iget-object v0, p0, Lxj;->a:Lcom/snapchat/android/camera/model/CameraModel;
+
+    iget v3, v0, Lcom/snapchat/android/camera/model/CameraModel;->c:I
+
+    invoke-virtual {v2}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
 
     move-result-object v0
 
-    check-cast v0, Lazo;
+    iget v4, v0, Landroid/hardware/Camera$Size;->width:I
 
-    iput-object v0, p1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->f:Lazo;
+    int-to-double v4, v4
 
-    return-void
+    iget v0, v0, Landroid/hardware/Camera$Size;->height:I
+
+    int-to-double v8, v0
+
+    div-double/2addr v4, v8
+
+    invoke-virtual/range {v1 .. v6}, Lxm;->a(Landroid/hardware/Camera$Parameters;IDZ)Lavc;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 51
+    :cond_2
+    const/4 v6, 0x0
+
+    goto :goto_1
 .end method

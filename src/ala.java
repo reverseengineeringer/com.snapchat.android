@@ -1,97 +1,142 @@
-import com.snapchat.android.networkmanager.DownloadPriority;
-import java.util.ArrayList;
+import android.view.View;
+import com.snapchat.android.fragments.chat.ChatFragment;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.model.chat.ChatFeedItem;
+import com.snapchat.android.model.chat.ChatFeedItem.a;
 import java.util.List;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
-public final class ala
+public class ala
+  implements ChatFeedItem
 {
-  public static final Set<String> a = di.a("DEFAULT", "CAMERA", "FEED", "CHAT", "STORIES", "DISCOVER", new String[0]);
-  private final String b;
-  private final SortedSet<String> c;
+  private static final String HEADER_ID_SUFFIX = "CHAT_HEADER";
+  public String mId;
+  public final String mSender;
+  public long mTimestamp;
   
-  private ala(ala paramala, @cgc String paramString)
+  public ala(String paramString, ChatFeedItem paramChatFeedItem)
   {
-    c = new TreeSet(c);
-    int i = c.size();
-    if (paramString != null) {
-      c.add(paramString);
-    }
-    if (c.size() != i)
+    mSender = paramString;
+    if (paramChatFeedItem != null)
     {
-      b = (b + "; " + paramString);
+      mTimestamp = paramChatFeedItem.U();
+      mId = (ChatFragment.a(paramChatFeedItem) + "CHAT_HEADER");
       return;
     }
-    b = b;
+    mTimestamp = System.currentTimeMillis();
+    mId = "TODAY_DUMMY_HEADER";
   }
   
-  public ala(String... paramVarArgs)
+  public final boolean O()
   {
-    c = new TreeSet();
-    ArrayList localArrayList = new ArrayList(paramVarArgs.length);
-    int j = paramVarArgs.length;
-    int i = 0;
-    while (i < j)
-    {
-      String str = paramVarArgs[i];
-      if (str != null)
-      {
-        c.add(str);
-        localArrayList.add(str);
-      }
-      i += 1;
-    }
-    b = avb.a(localArrayList, "; ");
-  }
-  
-  public final ala a(String paramString)
-  {
-    return new ala(this, paramString);
-  }
-  
-  @avl
-  public final DownloadPriority a(alc paramalc)
-  {
-    int i = 1;
-    ala localala = g;
-    if (asy.a(c, c, true) > 0) {}
-    while (i != 0)
-    {
-      return b;
-      i = 0;
-    }
-    return c;
-  }
-  
-  @avl
-  public final int b(alc paramalc)
-  {
-    return asy.a(c, g.c, false);
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (this == paramObject) {}
-    do
-    {
-      return true;
-      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
-        return false;
-      }
-      paramObject = (ala)paramObject;
-    } while (c.equals(c));
     return false;
   }
   
-  public final int hashCode()
+  public final boolean P()
   {
-    return c.hashCode();
+    return false;
   }
   
-  public final String toString()
+  public final boolean Q()
   {
-    return b;
+    return true;
+  }
+  
+  public final boolean R()
+  {
+    return false;
+  }
+  
+  public final long U()
+  {
+    return mTimestamp;
+  }
+  
+  public final ChatFeedItem.a a(@chc View paramView, @chd ChatConversation paramChatConversation)
+  {
+    return null;
+  }
+  
+  public final String a()
+  {
+    return "";
+  }
+  
+  public final String aj()
+  {
+    return null;
+  }
+  
+  public final boolean ak()
+  {
+    return false;
+  }
+  
+  public final boolean am()
+  {
+    return false;
+  }
+  
+  public final int b(ChatConversation paramChatConversation)
+  {
+    return -1;
+  }
+  
+  public String b()
+  {
+    return null;
+  }
+  
+  public final long c(ChatConversation paramChatConversation)
+  {
+    return mTimestamp;
+  }
+  
+  public final boolean c()
+  {
+    return false;
+  }
+  
+  public String d()
+  {
+    return mId;
+  }
+  
+  public boolean equals(Object paramObject)
+  {
+    if ((paramObject instanceof ala)) {
+      return mId.equals(((ala)paramObject).d());
+    }
+    return false;
+  }
+  
+  public int hashCode()
+  {
+    return mId.hashCode();
+  }
+  
+  public final String j()
+  {
+    return mSender;
+  }
+  
+  public final List<String> k()
+  {
+    return null;
+  }
+  
+  public final boolean p()
+  {
+    return false;
+  }
+  
+  public final boolean q()
+  {
+    return false;
+  }
+  
+  public final boolean r()
+  {
+    return false;
   }
 }
 

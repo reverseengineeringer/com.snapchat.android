@@ -80,7 +80,6 @@ public class zzan
             try
             {
               zzhx.zzY("ContentFetchTask: waiting");
-              zznh.wait();
             }
             catch (InterruptedException localInterruptedException) {}
           }
@@ -102,7 +101,6 @@ public class zzan
     synchronized (zznh)
     {
       zzoj = false;
-      zznh.notifyAll();
       zzhx.zzY("ContentFetchThread: wakeup");
       return;
     }

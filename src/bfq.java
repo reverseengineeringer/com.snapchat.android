@@ -1,8 +1,12 @@
-import javax.inject.Provider;
-
 public final class bfq
-  implements Provider<String>
-{}
+{
+  public akp user;
+  
+  public bfq(akp paramakp)
+  {
+    user = paramakp;
+  }
+}
 
 /* Location:
  * Qualified Name:     bfq

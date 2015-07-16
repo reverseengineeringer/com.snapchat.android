@@ -1,71 +1,31 @@
-import android.content.Context;
-import android.content.res.Resources;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import com.snapchat.android.LandingPageActivity;
-
-public final class aou
-  extends apf<bjj>
+public abstract class aou
 {
-  private final Context a;
-  private final int b;
+  protected aos b;
   
-  public aou(Context paramContext)
+  public final void a(String paramString)
   {
-    super(paramContext);
-    a = paramContext;
-    b = 2130968764;
-  }
-  
-  public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
-  {
-    if (paramView == null)
-    {
-      paramView = LayoutInflater.from(getContext()).inflate(b, paramViewGroup, false);
-      paramViewGroup = new aou.a(paramView);
-      paramView.setTag(paramViewGroup);
-    }
-    for (;;)
-    {
-      final bjj localbjj = (bjj)getItem(paramInt);
-      String str = atm.e(localbjj.a(), ajv.g());
-      b.setText(str);
-      if (aud.a(localbjj.b()))
-      {
-        b.setTextColor(a.getResources().getColor(2131230765));
-        c.setVisibility(0);
+    if (b != null) {
+      if (b.c != -1L) {
+        break label44;
       }
-      paramView.setOnClickListener(new View.OnClickListener()
-      {
-        public final void onClick(View paramAnonymousView)
-        {
-          paramAnonymousView = new bee(localbjj.a());
-          ((LandingPageActivity)aou.a(aou.this)).onSwitchToChatEvent(paramAnonymousView);
-        }
-      });
-      return paramView;
-      paramViewGroup = (aou.a)paramView.getTag();
-      a.setOnClickListener(null);
-      b.setTextColor(d.a.getResources().getColor(2131230810));
-      c.setVisibility(8);
+    }
+    label44:
+    for (int i = 1;; i = 0)
+    {
+      if (i != 0) {
+        b.c = System.currentTimeMillis();
+      }
+      a(paramString, null);
+      return;
     }
   }
   
-  final class a
+  public abstract void a(String paramString1, String paramString2);
+  
+  public final void b()
   {
-    View a;
-    TextView b;
-    ImageView c;
-    
-    public a(View paramView)
-    {
-      a = paramView;
-      b = ((TextView)paramView.findViewById(2131362793));
-      c = ((ImageView)paramView.findViewById(2131362792));
+    if (b != null) {
+      b.c = System.currentTimeMillis();
     }
   }
 }

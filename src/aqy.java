@@ -1,13 +1,38 @@
-import android.view.MotionEvent;
-import com.snapchat.android.ui.snapeditormotion.SwipeHandlerType;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.os.Bundle;
 
-public abstract interface aqy
+public class aqy
+  extends AlertDialog
 {
-  public abstract SwipeHandlerType a(aph paramaph, arf paramarf, int paramInt);
+  private Context mContext;
+  private String mMessage;
   
-  public abstract SwipeHandlerType a(aph paramaph, arf paramarf, int paramInt1, int paramInt2);
+  public aqy(Context paramContext, String paramString)
+  {
+    super(paramContext);
+    mMessage = paramString;
+    mContext = paramContext;
+  }
   
-  public abstract SwipeHandlerType a(aph paramaph, arf paramarf, MotionEvent paramMotionEvent);
+  public void a() {}
+  
+  protected void onCreate(Bundle paramBundle)
+  {
+    setMessage(mMessage);
+    setCancelable(true);
+    setButton(-1, mContext.getString(2131493269), new DialogInterface.OnClickListener()
+    {
+      public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+      {
+        paramAnonymousDialogInterface.cancel();
+        a();
+      }
+    });
+    super.onCreate(paramBundle);
+  }
 }
 
 /* Location:

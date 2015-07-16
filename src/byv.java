@@ -1,39 +1,28 @@
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public final class byv
-  implements bxi
+  implements byh
 {
-  private List a = new ArrayList();
-  
-  public byv()
+  public final byl a(bya parambya, String paramString)
   {
-    a.add(new byi());
-    a.add(new byj());
-    a.add(new byk());
-    a.add(new byl());
-    a.add(new bym());
-    a.add(new byn());
-    a.add(new byo());
-    a.add(new byp());
-    a.add(new byq());
-    a.add(new byr());
-    a.add(new bys());
-    a.add(new byt());
-    a.add(new byu());
-    a.add(new byw());
-    a.add(new byx());
-    a.add(new byy());
-    a.add(new byz());
+    parambya = byk.a(paramString);
+    if (parambya.size() != 2) {
+      throw new byi("Two numeric arguments are required.");
+    }
+    try
+    {
+      parambya = new Double(Math.IEEEremainder(((Double)parambya.get(0)).doubleValue(), ((Double)parambya.get(1)).doubleValue()));
+      return new byl(parambya.toString(), 0);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("Two numeric arguments are required.", parambya);
+    }
   }
   
-  public final void a(bwz parambwz)
+  public final String a()
   {
-    Iterator localIterator = a.iterator();
-    while (localIterator.hasNext()) {
-      parambwz.a((bxg)localIterator.next());
-    }
+    return "IEEEremainder";
   }
 }
 

@@ -7,7 +7,7 @@ import android.os.Parcelable.Creator;
 import android.util.AttributeSet;
 import android.view.View.BaseSavedState;
 import android.widget.EditText;
-import cgb;
+import chc;
 import java.util.Iterator;
 import java.util.List;
 
@@ -79,7 +79,7 @@ public class CursorCallbackEditText
       super();
     }
     
-    public void writeToParcel(@cgb Parcel paramParcel, int paramInt)
+    public void writeToParcel(@chc Parcel paramParcel, int paramInt)
     {
       super.writeToParcel(paramParcel, paramInt);
       paramParcel.writeString(a);

@@ -1,16 +1,16 @@
 package com.squareup.otto;
 
-import bod;
+import bpe;
 
 final class Bus$a
 {
   final Object a;
-  final bod b;
+  final bpe b;
   
-  public Bus$a(Object paramObject, bod parambod)
+  public Bus$a(Object paramObject, bpe parambpe)
   {
     a = paramObject;
-    b = parambod;
+    b = parambpe;
   }
 }
 

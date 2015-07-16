@@ -1,62 +1,25 @@
-import java.io.IOException;
-import java.io.InterruptedIOException;
-import java.util.concurrent.TimeUnit;
-
-public class cak
+public final class cak
+  extends cab
 {
-  public static final cak b = new cak()
+  public cak()
   {
-    public final cak a(long paramAnonymousLong)
-    {
-      return this;
-    }
-    
-    public final cak a(long paramAnonymousLong, TimeUnit paramAnonymousTimeUnit)
-    {
-      return this;
-    }
-    
-    public final void g() {}
-  };
-  private long a;
-  public boolean c;
-  long d;
-  
-  public cak a(long paramLong)
-  {
-    c = true;
-    a = paramLong;
-    return this;
+    super(">=", 4);
   }
   
-  public cak a(long paramLong, TimeUnit paramTimeUnit)
+  public final double a(double paramDouble1, double paramDouble2)
   {
-    if (paramLong < 0L) {
-      throw new IllegalArgumentException("timeout < 0: " + paramLong);
+    if (paramDouble1 >= paramDouble2) {
+      return 1.0D;
     }
-    if (paramTimeUnit == null) {
-      throw new IllegalArgumentException("unit == null");
-    }
-    d = paramTimeUnit.toNanos(paramLong);
-    return this;
+    return 0.0D;
   }
   
-  public final long f()
+  public final String a(String paramString1, String paramString2)
   {
-    if (!c) {
-      throw new IllegalStateException("No deadline");
+    if (paramString1.compareTo(paramString2) >= 0) {
+      return "1.0";
     }
-    return a;
-  }
-  
-  public void g()
-  {
-    if (Thread.interrupted()) {
-      throw new InterruptedIOException();
-    }
-    if ((c) && (System.nanoTime() > a)) {
-      throw new IOException("deadline reached");
-    }
+    return "0.0";
   }
 }
 

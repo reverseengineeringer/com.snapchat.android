@@ -1,72 +1,60 @@
-import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnPreDrawListener;
 
 public final class bht
 {
-  @SerializedName("front_facing_flash")
-  protected Boolean frontFacingFlash;
-  @SerializedName("replay_snaps")
-  protected Boolean replaySnaps;
-  @SerializedName("smart_filters")
-  protected Boolean smartFilters;
-  @SerializedName("visual_filters")
-  protected Boolean visualFilters;
-  
-  public final bht a(Boolean paramBoolean)
+  protected int mCount = 0;
+  protected final ViewTreeObserver.OnPreDrawListener mOnPreDrawListener = new ViewTreeObserver.OnPreDrawListener()
   {
-    smartFilters = paramBoolean;
-    return this;
-  }
-  
-  public final Boolean a()
-  {
-    return smartFilters;
-  }
-  
-  public final bht b(Boolean paramBoolean)
-  {
-    frontFacingFlash = paramBoolean;
-    return this;
-  }
-  
-  public final Boolean b()
-  {
-    return frontFacingFlash;
-  }
-  
-  public final bht c(Boolean paramBoolean)
-  {
-    replaySnaps = paramBoolean;
-    return this;
-  }
-  
-  public final Boolean c()
-  {
-    return replaySnaps;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
-    }
-    if (!(paramObject instanceof bht)) {
+    public final boolean onPreDraw()
+    {
       return false;
     }
-    paramObject = (bht)paramObject;
-    return new EqualsBuilder().append(smartFilters, smartFilters).append(visualFilters, visualFilters).append(frontFacingFlash, frontFacingFlash).append(replaySnaps, replaySnaps).isEquals();
+  };
+  protected final ViewTreeObserver.OnPreDrawListener mOnPreDrawSkipListener = new ViewTreeObserver.OnPreDrawListener()
+  {
+    public final boolean onPreDraw()
+    {
+      if (d()) {
+        mViewTreeObserver.removeOnPreDrawListener(this);
+      }
+      return false;
+    }
+  };
+  public View mView;
+  ViewTreeObserver mViewTreeObserver;
+  
+  public final void a()
+  {
+    if ((mCount == 0) && (d())) {
+      mViewTreeObserver.addOnPreDrawListener(mOnPreDrawListener);
+    }
+    mCount += 1;
   }
   
-  public final int hashCode()
+  public final void b()
   {
-    return new HashCodeBuilder().append(smartFilters).append(visualFilters).append(frontFacingFlash).append(replaySnaps).toHashCode();
+    if (mCount > 0)
+    {
+      mCount -= 1;
+      if ((mCount == 0) && (d())) {
+        mViewTreeObserver.removeOnPreDrawListener(mOnPreDrawListener);
+      }
+    }
   }
   
-  public final String toString()
+  public final void c()
   {
-    return ToStringBuilder.reflectionToString(this);
+    if (d()) {
+      mViewTreeObserver.addOnPreDrawListener(mOnPreDrawSkipListener);
+    }
+  }
+  
+  final boolean d()
+  {
+    mViewTreeObserver = mView.getViewTreeObserver();
+    return mViewTreeObserver.isAlive();
   }
 }
 

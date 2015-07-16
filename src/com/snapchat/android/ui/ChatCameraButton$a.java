@@ -1,11 +1,11 @@
 package com.snapchat.android.ui;
 
 import android.view.MotionEvent;
-import cgb;
+import chc;
 
 public abstract interface ChatCameraButton$a
 {
-  public abstract void a(@cgb MotionEvent paramMotionEvent);
+  public abstract void a(@chc MotionEvent paramMotionEvent);
 }
 
 /* Location:

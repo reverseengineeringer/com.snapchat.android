@@ -2,7 +2,7 @@ package com.snapchat.videotranscoder.cts;
 
 import android.graphics.SurfaceTexture;
 import android.view.Surface;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.utils.TranscodingResources;
 import com.snapchat.videotranscoder.utils.VerboseLogging;
 import com.snapchat.videotranscoder.video.FragmentShader.Builder;
@@ -13,7 +13,7 @@ public class SplitOutputSurface
 {
   private static final String TAG = "SplitOutputSurface";
   
-  public SplitOutputSurface(@cgb TranscodingResources paramTranscodingResources, @cgb float[] paramArrayOfFloat)
+  public SplitOutputSurface(@chc TranscodingResources paramTranscodingResources, @chc float[] paramArrayOfFloat)
   {
     super(paramTranscodingResources, paramArrayOfFloat, null);
   }
@@ -33,7 +33,7 @@ public class SplitOutputSurface
     VerboseLogging.verboseLog("SplitOutputSurface", "new frame available");
   }
   
-  public void setShader(@cgb FragmentShader.Filter paramFilter1, @cgb FragmentShader.Filter paramFilter2)
+  public void setShader(@chc FragmentShader.Filter paramFilter1, @chc FragmentShader.Filter paramFilter2)
   {
     paramFilter1 = new FragmentShader.Builder(mTranscodingResources).enableSplit(true).setLeftFilter(paramFilter1).setRightFilter(paramFilter2).build();
     mTextureRenderer.changeFragmentShader(paramFilter1);

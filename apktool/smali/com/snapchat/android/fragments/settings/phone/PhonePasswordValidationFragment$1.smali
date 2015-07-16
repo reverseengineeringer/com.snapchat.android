@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laok;
+.implements Lapg;
 
 
 # annotations
@@ -36,12 +36,12 @@
 
 
 # virtual methods
-.method public final a(Lamk;)V
+.method public final a(Lanh;)V
     .locals 3
 
     .prologue
     .line 36
-    invoke-static {p1}, Laol;->a(Lamk;)I
+    invoke-static {p1}, Laph;->a(Lanh;)I
 
     move-result v0
 
@@ -62,7 +62,7 @@
 
     if-eqz v1, :cond_0
 
-    instance-of v1, p1, Lanc;
+    instance-of v1, p1, Lanz;
 
     if-eqz v1, :cond_0
 
@@ -82,11 +82,11 @@
     .line 39
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment$1;->a:Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;
 
-    check-cast p1, Lanc;
+    check-cast p1, Lanz;
 
-    iget-object v1, p1, Lanc;->b:Lanc$c;
+    iget-object v1, p1, Lanz;->b:Lanz$c;
 
-    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;->a(Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;Lanc$c;)V
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;->a(Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;Lanz$c;)V
 
     .line 41
     :cond_0

@@ -3,23 +3,8 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Laux$1;,
-        Laux$a;
-    }
-.end annotation
-
-
 # static fields
-.field private static mStartupPath:Lcom/snapchat/android/util/StartupPath;
-
-.field private static sStartupContext:Laux;
-
-
-# instance fields
-.field private isAppStart:Z
+.field private static final sRandom:Ljava/util/Random;
 
 
 # direct methods
@@ -27,128 +12,224 @@
     .locals 1
 
     .prologue
-    .line 9
-    new-instance v0, Laux;
+    .line 8
+    new-instance v0, Ljava/util/Random;
 
-    invoke-direct {v0}, Laux;-><init>()V
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
-    sput-object v0, Laux;->sStartupContext:Laux;
-
-    .line 10
-    sget-object v0, Lcom/snapchat/android/util/StartupPath;->UNKNOWN:Lcom/snapchat/android/util/StartupPath;
-
-    sput-object v0, Laux;->mStartupPath:Lcom/snapchat/android/util/StartupPath;
+    sput-object v0, Laux;->sRandom:Ljava/util/Random;
 
     return-void
 .end method
 
-.method protected constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laux;->isAppStart:Z
-
-    .line 28
-    return-void
-.end method
-
-.method public static a()Laux;
-    .locals 1
-
-    .prologue
-    .line 31
-    sget-object v0, Laux;->sStartupContext:Laux;
-
-    return-object v0
-.end method
-
-.method public static b()Lcom/snapchat/android/util/StartupPath;
-    .locals 1
-
-    .prologue
-    .line 47
-    sget-object v0, Laux;->mStartupPath:Lcom/snapchat/android/util/StartupPath;
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final a(I)V
+.method public static a(F)F
     .locals 2
 
     .prologue
-    .line 75
-    sget-object v0, Laux$1;->$SwitchMap$com$snapchat$android$util$StartupContext$Checkpoint:[I
+    .line 17
+    const/4 v0, 0x0
 
-    add-int/lit8 v1, p1, -0x1
+    invoke-static {p0, v0}, Ljava/lang/Math;->max(FF)F
 
-    aget v0, v0, v1
+    move-result v0
 
-    packed-switch v0, :pswitch_data_0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 92
-    sget-object v0, Lcom/snapchat/android/util/StartupPath;->UNKNOWN:Lcom/snapchat/android/util/StartupPath;
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
 
-    sput-object v0, Laux;->mStartupPath:Lcom/snapchat/android/util/StartupPath;
+    move-result v0
 
-    .line 94
-    :goto_0
-    return-void
+    return v0
+.end method
 
-    .line 77
-    :pswitch_0
-    sget-object v0, Lcom/snapchat/android/util/StartupPath;->FROM_KILLED_STATE:Lcom/snapchat/android/util/StartupPath;
+.method public static a(I)I
+    .locals 1
 
-    sput-object v0, Laux;->mStartupPath:Lcom/snapchat/android/util/StartupPath;
-
-    .line 78
+    .prologue
+    .line 21
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Laux;->isAppStart:Z
+    .line 22
+    :goto_0
+    if-ge v0, p0, :cond_0
+
+    .line 23
+    shl-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 83
-    :pswitch_1
-    iget-boolean v0, p0, Laux;->isAppStart:Z
+    .line 25
+    :cond_0
+    return v0
+.end method
+
+.method public static a(Ljava/util/List;)J
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)J"
+        }
+    .end annotation
+
+    .prologue
+    .line 34
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 35
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    .line 36
+    div-int/lit8 v1, v0, 0x2
+
+    .line 37
+    rem-int/lit8 v0, v0, 0x2
 
     if-nez v0, :cond_0
 
-    .line 84
-    sget-object v0, Lcom/snapchat/android/util/StartupPath;->FROM_DESTROYED_STATE:Lcom/snapchat/android/util/StartupPath;
+    .line 38
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    sput-object v0, Laux;->mStartupPath:Lcom/snapchat/android/util/StartupPath;
+    move-result-object v0
 
-    .line 86
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    add-int/lit8 v0, v1, -0x1
+
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    add-long/2addr v0, v2
+
+    const-wide/16 v2, 0x2
+
+    div-long/2addr v0, v2
+
+    .line 42
+    :goto_0
+    return-wide v0
+
+    .line 40
     :cond_0
-    const/4 v0, 0x0
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    iput-boolean v0, p0, Laux;->isAppStart:Z
+    move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Ljava/lang/Long;
 
-    .line 89
-    :pswitch_2
-    sget-object v0, Lcom/snapchat/android/util/StartupPath;->FROM_BACKGROUNDED_STATE:Lcom/snapchat/android/util/StartupPath;
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    sput-object v0, Laux;->mStartupPath:Lcom/snapchat/android/util/StartupPath;
+    move-result-wide v0
 
     goto :goto_0
 
-    .line 75
-    nop
+    .line 42
+    :cond_1
+    const-wide/16 v0, 0x0
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    goto :goto_0
+.end method
+
+.method public static a()Ljava/util/Random;
+    .locals 1
+
+    .prologue
+    .line 13
+    sget-object v0, Laux;->sRandom:Ljava/util/Random;
+
+    return-object v0
+.end method
+
+.method public static b(Ljava/util/List;)J
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)J"
+        }
+    .end annotation
+
+    .prologue
+    const-wide/16 v0, 0x0
+
+    .line 51
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 58
+    :goto_0
+    return-wide v0
+
+    .line 55
+    :cond_0
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    move-wide v2, v0
+
+    :goto_1
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    .line 56
+    add-long/2addr v0, v2
+
+    move-wide v2, v0
+
+    .line 57
+    goto :goto_1
+
+    .line 58
+    :cond_1
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    div-long v0, v2, v0
+
+    goto :goto_0
 .end method

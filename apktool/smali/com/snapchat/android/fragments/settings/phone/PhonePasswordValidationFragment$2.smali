@@ -51,7 +51,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment$2;->a:Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;->c(Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;)Laol;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;->c(Lcom/snapchat/android/fragments/settings/phone/PhonePasswordValidationFragment;)Laph;
 
     move-result-object v1
 
@@ -63,7 +63,7 @@
 
     const-string v3, "pwConfirmPhoneNumber"
 
-    invoke-static {}, Lajx;->e()Ljava/lang/String;
+    invoke-static {}, Lakr;->e()Ljava/lang/String;
 
     move-result-object v4
 
@@ -81,7 +81,7 @@
 
     move-result-object v5
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Laol;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3, v4, v5}, Laph;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 

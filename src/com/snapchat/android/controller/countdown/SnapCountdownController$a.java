@@ -1,19 +1,19 @@
 package com.snapchat.android.controller.countdown;
 
-import yw;
+import zs;
 
 public final class SnapCountdownController$a
 {
-  public final yw a;
+  public final zs a;
   
   SnapCountdownController$a()
   {
-    this(new yw());
+    this(new zs());
   }
   
-  private SnapCountdownController$a(yw paramyw)
+  private SnapCountdownController$a(zs paramzs)
   {
-    a = paramyw;
+    a = paramzs;
   }
 }
 

@@ -3,30 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbus;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader$a;
-    }
-.end annotation
+.implements Lbvt;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field a:Landroid/graphics/drawable/AnimationDrawable;
+
+.field private final b:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
             "<",
-            "Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader$a;",
+            "Ljava/lang/Object;",
             ">;"
         }
     .end annotation
 .end field
-
-.field b:Landroid/graphics/drawable/AnimationDrawable;
 
 .field private c:Landroid/content/Context;
 
@@ -44,14 +36,14 @@
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Ljava/util/Set;
+    iput-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Ljava/util/Set;
 
     .line 36
     invoke-virtual {p0}, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f08003f
+    const v1, 0x7f080040
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -71,7 +63,7 @@
 
     .prologue
     .line 24
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     return-object v0
 .end method
@@ -81,12 +73,12 @@
 
     .prologue
     .line 99
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     if-eqz v0, :cond_0
 
     .line 100
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
 
@@ -143,41 +135,34 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Ljava/util/Set;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
     move-result-object v0
 
-    check-cast v0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader$a;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 55
-    invoke-interface {v0}, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader$a;->a()V
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     goto :goto_0
 
     .line 57
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     const/4 v1, 0x0
 
@@ -188,7 +173,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f08003f
+    const v1, 0x7f080040
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -205,7 +190,7 @@
 
     .prologue
     .line 77
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     if-nez v0, :cond_0
 
@@ -215,7 +200,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04008a
+    const v1, 0x7f04008c
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -223,7 +208,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a0312
+    const v1, 0x7f0a0311
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -241,7 +226,7 @@
 
     check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iput-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     .line 78
     :cond_0
@@ -264,11 +249,11 @@
 
     .prologue
     .line 67
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 

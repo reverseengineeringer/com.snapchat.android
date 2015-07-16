@@ -1,10 +1,10 @@
 package xyz.danoz.recyclerviewfastscroller.sectionindicator;
 
 import android.view.ViewGroup;
-import cks.a;
+import clt.a;
 
 final class AbsSectionIndicator$2
-  implements cks.a
+  implements clt.a
 {
   AbsSectionIndicator$2(AbsSectionIndicator paramAbsSectionIndicator) {}
   

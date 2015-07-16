@@ -1,8 +1,8 @@
 package com.snapchat.android;
 
-import aim;
-import ajv;
-import ajx;
+import aji;
+import akp;
+import akr;
 import android.app.KeyguardManager;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,34 +14,36 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.Window;
-import apd;
-import asr;
-import axa;
-import ban;
-import bap;
-import bbt;
-import bbv;
-import bca;
-import bcg;
-import bdj;
-import boh;
+import apz;
+import atq;
+import axy;
+import bbo;
+import bbq;
+import bct;
+import bcv;
+import bda;
+import bdg;
+import bej;
+import bpi;
 import com.snapchat.android.camera.CameraFragment;
 import com.snapchat.android.model.Mediabryo;
 import com.snapchat.android.snapkidz.SnapKidzPreviewFragment;
 import com.snapchat.android.util.eventbus.CameraDisplayState;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class SnapkidzHomeActivity
   extends SnapchatActivity
 {
-  public bdj a;
+  public bej a;
   private boolean b = false;
   
   private void a(SnapchatFragment paramSnapchatFragment, String paramString)
   {
     FragmentTransaction localFragmentTransaction = mFragments.beginTransaction();
-    localFragmentTransaction.add(2131362376, paramSnapchatFragment, paramString);
+    localFragmentTransaction.add(2131362374, paramSnapchatFragment, paramString);
     localFragmentTransaction.addToBackStack(null);
     localFragmentTransaction.commit();
   }
@@ -49,34 +51,36 @@ public class SnapkidzHomeActivity
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
     if (paramInt2 == 707) {
-      asr.a(this);
+      atq.a(this);
     }
   }
   
   public void onBackPressed()
   {
     if (mFragments.getBackStackEntryCount() == 2) {
-      ban.a().a(new bap(CameraDisplayState.SHOW));
+      bbo.a().a(new bbq(CameraDisplayState.SHOW));
     }
     super.onBackPressed();
   }
   
   protected void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
-    axa.a(getCacheDir(), getExternalCacheDir());
-    apd.a().a(this);
-    ajx.f(true);
-    setContentView(2130968746);
+    axy.a(getCacheDir(), getExternalCacheDir());
+    apz.a().a(this);
+    akr.f(true);
+    setContentView(2130968748);
     getWindow().setBackgroundDrawable(null);
     getWindow().addFlags(1024);
     getWindow().clearFlags(2048);
     a(new CameraFragment(), "CameraFragment");
-    findViewById(2131362376).getRootView().getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
+    findViewById(2131362374).getRootView().getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
     {
       public final void onGlobalLayout()
       {
-        ban.a().a(new bbt());
+        bbo.a().a(new bct());
       }
     });
   }
@@ -84,14 +88,14 @@ public class SnapkidzHomeActivity
   protected void onDestroy()
   {
     super.onDestroy();
-    apd.a().b();
+    apz.a().b();
   }
   
-  @boh
-  public void onImageSnapBitmapReadyForSnapPreview(bca parambca)
+  @bpi
+  public void onImageSnapBitmapReadyForSnapPreview(bda parambda)
   {
-    parambca = mBitmap;
-    a.mMediabryo.mRawImageBitmap = parambca;
+    parambda = mBitmap;
+    a.mMediabryo.mRawImageBitmap = parambda;
     onSnapCapturedEvent(a);
   }
   
@@ -100,7 +104,7 @@ public class SnapkidzHomeActivity
     if (paramInt == 82) {
       return true;
     }
-    ban.a().a(new bbv(paramInt, paramKeyEvent));
+    bbo.a().a(new bcv(paramInt, paramKeyEvent));
     return super.onKeyDown(paramInt, paramKeyEvent);
   }
   
@@ -113,26 +117,26 @@ public class SnapkidzHomeActivity
   protected void onPause()
   {
     super.onPause();
-    ban.a().b(this);
-    ajv localajv = ajv.g();
-    if (localajv != null) {
-      localajv.a(null);
+    bbo.a().b(this);
+    akp localakp = akp.g();
+    if (localakp != null) {
+      localakp.a(null);
     }
   }
   
   protected void onResume()
   {
     super.onResume();
-    ban.a().c(this);
+    bbo.a().c(this);
     if (((KeyguardManager)getSystemService("keyguard")).inKeyguardRestrictedInputMode()) {
       b = true;
     }
   }
   
-  @boh
-  public void onSnapCapturedEvent(bdj parambdj)
+  @bpi
+  public void onSnapCapturedEvent(bej parambej)
   {
-    a = parambdj;
+    a = parambej;
     if ((mMediabryo.h() == 0) && (mMediabryo.mRawImageBitmap == null)) {}
     while (mFragments.getBackStackEntryCount() > 1) {
       return;
@@ -143,12 +147,10 @@ public class SnapkidzHomeActivity
   public void onWindowFocusChanged(boolean paramBoolean)
   {
     super.onWindowFocusChanged(paramBoolean);
-    Timber.c("SnapkidzHomeActivity", "On ac Should we onWindowFocusChanged has focus? " + paramBoolean, new Object[0]);
     if ((paramBoolean) && (b))
     {
-      Timber.c("SnapkidzHomeActivity", "On ac Calling onResume from window focus fn", new Object[0]);
       b = false;
-      ban.a().a(new bcg());
+      bbo.a().a(new bdg());
     }
   }
 }

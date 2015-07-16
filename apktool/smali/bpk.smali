@@ -1,4 +1,4 @@
-.class public final Lbpk;
+.class abstract Lbpk;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -10,129 +10,174 @@
     }
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
 
 # instance fields
-.field public final a:Landroid/os/HandlerThread;
+.field final a:Lbqe;
 
-.field final b:Lbom;
+.field final b:Lbqh;
 
-.field final c:Landroid/os/Handler;
+.field final c:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference",
+            "<TT;>;"
+        }
+    .end annotation
+.end field
 
-.field d:J
+.field final d:Z
 
-.field e:J
+.field final e:I
 
-.field f:J
+.field final f:I
 
-.field g:J
+.field final g:I
 
-.field h:J
+.field final h:Landroid/graphics/drawable/Drawable;
 
-.field i:J
+.field final i:Ljava/lang/String;
 
-.field j:J
+.field final j:Ljava/lang/Object;
 
-.field k:J
+.field k:Z
 
-.field l:I
-
-.field m:I
-
-.field n:I
+.field l:Z
 
 
 # direct methods
-.method constructor <init>(Lbom;)V
-    .locals 3
+.method constructor <init>(Lbqe;Ljava/lang/Object;Lbqh;IIILandroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;Z)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbqe;",
+            "TT;",
+            "Lbqh;",
+            "III",
+            "Landroid/graphics/drawable/Drawable;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Object;",
+            "Z)V"
+        }
+    .end annotation
 
     .prologue
-    .line 51
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 51
+    iput-object p1, p0, Lbpk;->a:Lbqe;
+
     .line 52
-    iput-object p1, p0, Lbpk;->b:Lbom;
+    iput-object p3, p0, Lbpk;->b:Lbqh;
 
     .line 53
-    new-instance v0, Landroid/os/HandlerThread;
+    if-nez p2, :cond_0
 
-    const-string v1, "Picasso-Stats"
+    const/4 v0, 0x0
 
-    const/16 v2, 0xa
-
-    invoke-direct {v0, v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
-
-    iput-object v0, p0, Lbpk;->a:Landroid/os/HandlerThread;
-
-    .line 54
-    iget-object v0, p0, Lbpk;->a:Landroid/os/HandlerThread;
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    :goto_0
+    iput-object v0, p0, Lbpk;->c:Ljava/lang/ref/WeakReference;
 
     .line 55
-    iget-object v0, p0, Lbpk;->a:Landroid/os/HandlerThread;
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lbpo;->a(Landroid/os/Looper;)V
+    iput p4, p0, Lbpk;->e:I
 
     .line 56
-    new-instance v0, Lbpk$a;
-
-    iget-object v1, p0, Lbpk;->a:Landroid/os/HandlerThread;
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p0}, Lbpk$a;-><init>(Landroid/os/Looper;Lbpk;)V
-
-    iput-object v0, p0, Lbpk;->c:Landroid/os/Handler;
+    iput p5, p0, Lbpk;->f:I
 
     .line 57
+    iput-boolean p10, p0, Lbpk;->d:Z
+
+    .line 58
+    iput p6, p0, Lbpk;->g:I
+
+    .line 59
+    iput-object p7, p0, Lbpk;->h:Landroid/graphics/drawable/Drawable;
+
+    .line 60
+    iput-object p8, p0, Lbpk;->i:Ljava/lang/String;
+
+    .line 61
+    if-eqz p9, :cond_1
+
+    :goto_1
+    iput-object p9, p0, Lbpk;->j:Ljava/lang/Object;
+
+    .line 62
     return-void
+
+    .line 53
+    :cond_0
+    new-instance v0, Lbpk$a;
+
+    iget-object v1, p1, Lbqe;->l:Ljava/lang/ref/ReferenceQueue;
+
+    invoke-direct {v0, p0, p2, v1}, Lbpk$a;-><init>(Lbpk;Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+
+    goto :goto_0
+
+    :cond_1
+    move-object p9, p0
+
+    .line 61
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method final a()V
-    .locals 2
+.method abstract a()V
+.end method
+
+.method abstract a(Landroid/graphics/Bitmap;Lbqe$d;)V
+.end method
+
+.method b()V
+    .locals 1
 
     .prologue
-    .line 72
-    iget-object v0, p0, Lbpk;->c:Landroid/os/Handler;
+    .line 69
+    const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    iput-boolean v0, p0, Lbpk;->l:Z
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    .line 73
+    .line 70
     return-void
 .end method
 
-.method final a(Landroid/graphics/Bitmap;I)V
-    .locals 4
+.method c()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 
     .prologue
-    .line 118
-    invoke-static {p1}, Lbpo;->a(Landroid/graphics/Bitmap;)I
+    .line 77
+    iget-object v0, p0, Lbpk;->c:Ljava/lang/ref/WeakReference;
 
-    move-result v0
+    if-nez v0, :cond_0
 
-    .line 119
-    iget-object v1, p0, Lbpk;->c:Landroid/os/Handler;
+    const/4 v0, 0x0
 
-    iget-object v2, p0, Lbpk;->c:Landroid/os/Handler;
+    :goto_0
+    return-object v0
 
-    const/4 v3, 0x0
+    :cond_0
+    iget-object v0, p0, Lbpk;->c:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v2, p2, v0, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    .line 120
-    return-void
+    goto :goto_0
 .end method

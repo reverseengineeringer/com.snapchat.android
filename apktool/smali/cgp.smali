@@ -1,88 +1,374 @@
-.class public final Lcgp;
-.super Ljava/lang/IllegalArgumentException;
+.class abstract Lcgp;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lcfo;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcgp$b;,
+        Lcgp$a;
+    }
+.end annotation
+
+
+# static fields
+.field private static a:Z
+
+.field static k:[Ljava/lang/String;
+
+.field static l:[Ljava/lang/Class;
+
+
+# instance fields
+.field private b:Ljava/lang/String;
+
+.field e:I
+
+.field f:Ljava/lang/String;
+
+.field g:Ljava/lang/String;
+
+.field h:Ljava/lang/Class;
+
+.field i:Lcgp$a;
+
+.field j:Ljava/lang/ClassLoader;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;)V
-    .locals 5
+.method static constructor <clinit>()V
+    .locals 2
 
     .prologue
-    .line 63
-    const-string v0, "yyyy-MM-dd\'T\'HH:mm:ss.SSS"
+    const/4 v1, 0x0
 
-    invoke-static {v0}, Lcjv;->a(Ljava/lang/String;)Lcjw;
+    .line 23
+    const/4 v0, 0x1
 
-    move-result-object v0
+    sput-boolean v0, Lcgp;->a:Z
 
-    new-instance v1, Lcgq;
+    .line 167
+    new-array v0, v1, [Ljava/lang/String;
 
-    invoke-direct {v1, p1, p2}, Lcgq;-><init>(J)V
+    sput-object v0, Lcgp;->k:[Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcjw;->a(Lcgz;)Ljava/lang/String;
+    .line 168
+    new-array v0, v1, [Ljava/lang/Class;
 
-    move-result-object v1
+    sput-object v0, Lcgp;->l:[Ljava/lang/Class;
 
-    if-eqz p3, :cond_0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v2, " ("
-
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, ")"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Illegal instant due to time zone offset transition (daylight savings time \'gap\'): "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    .line 64
     return-void
+.end method
 
-    .line 63
+.method constructor <init>(ILjava/lang/String;Ljava/lang/Class;)V
+    .locals 1
+
+    .prologue
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 25
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcgp;->e:I
+
+    .line 122
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcgp;->j:Ljava/lang/ClassLoader;
+
+    .line 32
+    iput p1, p0, Lcgp;->e:I
+
+    .line 33
+    iput-object p2, p0, Lcgp;->f:Ljava/lang/String;
+
+    .line 34
+    iput-object p3, p0, Lcgp;->h:Ljava/lang/Class;
+
+    .line 35
+    return-void
+.end method
+
+.method private a()Ljava/lang/ClassLoader;
+    .locals 1
+
+    .prologue
+    .line 129
+    iget-object v0, p0, Lcgp;->j:Ljava/lang/ClassLoader;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcgp;->j:Ljava/lang/ClassLoader;
+
+    .line 130
     :cond_0
-    const-string v0, ""
+    iget-object v0, p0, Lcgp;->j:Ljava/lang/ClassLoader;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method final a(I)Ljava/lang/String;
+    .locals 4
+
+    .prologue
+    const/16 v3, 0x2d
+
+    .line 142
+    const/4 v1, 0x0
+
+    .line 143
+    iget-object v0, p0, Lcgp;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v0
+
+    .line 144
+    :goto_0
+    add-int/lit8 v2, p1, -0x1
+
+    if-lez p1, :cond_0
+
+    .line 145
+    add-int/lit8 v1, v0, 0x1
+
+    .line 146
+    iget-object v0, p0, Lcgp;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v3, v1}, Ljava/lang/String;->indexOf(II)I
+
+    move-result v0
+
+    move p1, v2
+
+    goto :goto_0
+
+    .line 148
+    :cond_0
+    const/4 v2, -0x1
+
+    if-ne v0, v2, :cond_1
+
+    iget-object v0, p0, Lcgp;->b:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    .line 152
+    :cond_1
+    iget-object v2, p0, Lcgp;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected abstract a(Lcgr;)Ljava/lang/String;
+.end method
+
+.method final b(I)Ljava/lang/Class;
+    .locals 2
+
+    .prologue
+    .line 161
+    invoke-virtual {p0, p1}, Lcgp;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 162
+    invoke-direct {p0}, Lcgp;->a()Ljava/lang/ClassLoader;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcgl;->a(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method final b(Lcgr;)Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 41
+    const/4 v0, 0x0
+
+    .line 42
+    sget-boolean v1, Lcgp;->a:Z
+
+    if-eqz v1, :cond_0
+
+    .line 43
+    iget-object v1, p0, Lcgp;->i:Lcgp$a;
+
+    if-nez v1, :cond_3
+
+    .line 45
+    :try_start_0
+    new-instance v1, Lcgp$b;
+
+    invoke-direct {v1}, Lcgp$b;-><init>()V
+
+    iput-object v1, p0, Lcgp;->i:Lcgp$a;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 53
+    :cond_0
+    :goto_0
+    if-nez v0, :cond_1
+
+    .line 54
+    invoke-virtual {p0, p1}, Lcgp;->a(Lcgr;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 56
+    :cond_1
+    sget-boolean v1, Lcgp;->a:Z
+
+    if-eqz v1, :cond_2
+
+    .line 57
+    iget-object v1, p0, Lcgp;->i:Lcgp$a;
+
+    iget v2, p1, Lcgr;->i:I
+
+    invoke-interface {v1, v2, v0}, Lcgp$a;->a(ILjava/lang/String;)V
+
+    .line 59
+    :cond_2
+    return-object v0
+
+    .line 47
+    :catch_0
+    move-exception v1
+
+    const/4 v1, 0x0
+
+    sput-boolean v1, Lcgp;->a:Z
+
+    goto :goto_0
+
+    .line 50
+    :cond_3
+    iget-object v0, p0, Lcgp;->i:Lcgp$a;
+
+    iget v1, p1, Lcgr;->i:I
+
+    invoke-interface {v0, v1}, Lcgp$a;->a(I)Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method public final c()Ljava/lang/Class;
+    .locals 1
 
     .prologue
-    .line 53
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    .line 75
+    iget-object v0, p0, Lcgp;->h:Ljava/lang/Class;
 
-    .line 54
-    return-void
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Lcgp;->b(I)Ljava/lang/Class;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcgp;->h:Ljava/lang/Class;
+
+    .line 76
+    :cond_0
+    iget-object v0, p0, Lcgp;->h:Ljava/lang/Class;
+
+    return-object v0
+.end method
+
+.method final c(I)[Ljava/lang/Class;
+    .locals 6
+
+    .prologue
+    .line 181
+    invoke-virtual {p0, p1}, Lcgp;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 182
+    new-instance v1, Ljava/util/StringTokenizer;
+
+    const-string v2, ":"
+
+    invoke-direct {v1, v0, v2}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 183
+    invoke-virtual {v1}, Ljava/util/StringTokenizer;->countTokens()I
+
+    move-result v2
+
+    .line 184
+    new-array v3, v2, [Ljava/lang/Class;
+
+    .line 185
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v2, :cond_0
+
+    invoke-virtual {v1}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {p0}, Lcgp;->a()Ljava/lang/ClassLoader;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcgl;->a(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v4
+
+    aput-object v4, v3, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 186
+    :cond_0
+    return-object v3
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 62
+    sget-object v0, Lcgr;->k:Lcgr;
+
+    invoke-virtual {p0, v0}, Lcgp;->b(Lcgr;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,847 +1,617 @@
 import java.io.IOException;
+import java.io.PrintStream;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.net.ssl.SSLSocket;
 
-public final class bno
-  implements bny
+public class bno
 {
-  private static final Logger a = Logger.getLogger(bno.b.class.getName());
-  private static final bzx b = bzx.a("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
+  private static final bno a = ;
   
-  private static IOException c(String paramString, Object... paramVarArgs)
+  public static bno a()
   {
-    throw new IOException(String.format(paramString, paramVarArgs));
+    return a;
   }
   
-  public final bnj a(bzw parambzw, boolean paramBoolean)
+  public static URI a(URL paramURL)
   {
-    return new bno.c(parambzw, paramBoolean);
+    return paramURL.toURI();
   }
   
-  public final bnk a(bzv parambzv, boolean paramBoolean)
+  public static void a(String paramString)
   {
-    return new bno.d(parambzv, paramBoolean);
+    System.out.println(paramString);
   }
+  
+  public static String b()
+  {
+    return "OkHttp";
+  }
+  
+  /* Error */
+  private static bno c()
+  {
+    // Byte code:
+    //   0: ldc 53
+    //   2: invokestatic 59	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   5: pop
+    //   6: new 61	bnn
+    //   9: dup
+    //   10: aconst_null
+    //   11: ldc 63
+    //   13: iconst_1
+    //   14: anewarray 55	java/lang/Class
+    //   17: dup
+    //   18: iconst_0
+    //   19: getstatic 69	java/lang/Boolean:TYPE	Ljava/lang/Class;
+    //   22: aastore
+    //   23: invokespecial 72	bnn:<init>	(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
+    //   26: astore 5
+    //   28: new 61	bnn
+    //   31: dup
+    //   32: aconst_null
+    //   33: ldc 74
+    //   35: iconst_1
+    //   36: anewarray 55	java/lang/Class
+    //   39: dup
+    //   40: iconst_0
+    //   41: ldc 76
+    //   43: aastore
+    //   44: invokespecial 72	bnn:<init>	(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
+    //   47: astore 6
+    //   49: ldc 78
+    //   51: invokestatic 59	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   54: astore_1
+    //   55: aload_1
+    //   56: ldc 80
+    //   58: iconst_1
+    //   59: anewarray 55	java/lang/Class
+    //   62: dup
+    //   63: iconst_0
+    //   64: ldc 82
+    //   66: aastore
+    //   67: invokevirtual 86	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   70: astore_0
+    //   71: aload_1
+    //   72: ldc 88
+    //   74: iconst_1
+    //   75: anewarray 55	java/lang/Class
+    //   78: dup
+    //   79: iconst_0
+    //   80: ldc 82
+    //   82: aastore
+    //   83: invokevirtual 86	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   86: astore_1
+    //   87: ldc 90
+    //   89: invokestatic 59	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   92: pop
+    //   93: new 61	bnn
+    //   96: dup
+    //   97: ldc 92
+    //   99: ldc 94
+    //   101: iconst_0
+    //   102: anewarray 55	java/lang/Class
+    //   105: invokespecial 72	bnn:<init>	(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
+    //   108: astore_2
+    //   109: new 61	bnn
+    //   112: dup
+    //   113: aconst_null
+    //   114: ldc 96
+    //   116: iconst_1
+    //   117: anewarray 55	java/lang/Class
+    //   120: dup
+    //   121: iconst_0
+    //   122: ldc 92
+    //   124: aastore
+    //   125: invokespecial 72	bnn:<init>	(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
+    //   128: astore_3
+    //   129: new 6	bno$a
+    //   132: dup
+    //   133: aload 5
+    //   135: aload 6
+    //   137: aload_0
+    //   138: aload_1
+    //   139: aload_2
+    //   140: aload_3
+    //   141: invokespecial 99	bno$a:<init>	(Lbnn;Lbnn;Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Lbnn;Lbnn;)V
+    //   144: areturn
+    //   145: astore_0
+    //   146: ldc 101
+    //   148: invokestatic 59	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   151: pop
+    //   152: goto -146 -> 6
+    //   155: astore_0
+    //   156: ldc 103
+    //   158: invokestatic 59	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   161: astore_0
+    //   162: new 105	java/lang/StringBuilder
+    //   165: dup
+    //   166: invokespecial 106	java/lang/StringBuilder:<init>	()V
+    //   169: ldc 103
+    //   171: invokevirtual 110	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   174: ldc 112
+    //   176: invokevirtual 110	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   179: invokevirtual 115	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   182: invokestatic 59	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   185: astore_1
+    //   186: new 105	java/lang/StringBuilder
+    //   189: dup
+    //   190: invokespecial 106	java/lang/StringBuilder:<init>	()V
+    //   193: ldc 103
+    //   195: invokevirtual 110	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   198: ldc 117
+    //   200: invokevirtual 110	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   203: invokevirtual 115	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   206: invokestatic 59	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   209: astore_2
+    //   210: new 105	java/lang/StringBuilder
+    //   213: dup
+    //   214: invokespecial 106	java/lang/StringBuilder:<init>	()V
+    //   217: ldc 103
+    //   219: invokevirtual 110	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   222: ldc 119
+    //   224: invokevirtual 110	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    //   227: invokevirtual 115	java/lang/StringBuilder:toString	()Ljava/lang/String;
+    //   230: invokestatic 59	java/lang/Class:forName	(Ljava/lang/String;)Ljava/lang/Class;
+    //   233: astore_3
+    //   234: new 9	bno$b
+    //   237: dup
+    //   238: aload_0
+    //   239: ldc 121
+    //   241: iconst_2
+    //   242: anewarray 55	java/lang/Class
+    //   245: dup
+    //   246: iconst_0
+    //   247: ldc 123
+    //   249: aastore
+    //   250: dup
+    //   251: iconst_1
+    //   252: aload_1
+    //   253: aastore
+    //   254: invokevirtual 86	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   257: aload_0
+    //   258: ldc 125
+    //   260: iconst_1
+    //   261: anewarray 55	java/lang/Class
+    //   264: dup
+    //   265: iconst_0
+    //   266: ldc 123
+    //   268: aastore
+    //   269: invokevirtual 86	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   272: aload_0
+    //   273: ldc 127
+    //   275: iconst_1
+    //   276: anewarray 55	java/lang/Class
+    //   279: dup
+    //   280: iconst_0
+    //   281: ldc 123
+    //   283: aastore
+    //   284: invokevirtual 86	java/lang/Class:getMethod	(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    //   287: aload_2
+    //   288: aload_3
+    //   289: invokespecial 130	bno$b:<init>	(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/Class;Ljava/lang/Class;)V
+    //   292: astore_0
+    //   293: aload_0
+    //   294: areturn
+    //   295: astore_0
+    //   296: new 2	bno
+    //   299: dup
+    //   300: invokespecial 131	bno:<init>	()V
+    //   303: areturn
+    //   304: astore_2
+    //   305: aconst_null
+    //   306: astore_2
+    //   307: aconst_null
+    //   308: astore_3
+    //   309: goto -180 -> 129
+    //   312: astore_0
+    //   313: aconst_null
+    //   314: astore_0
+    //   315: aconst_null
+    //   316: astore_1
+    //   317: aconst_null
+    //   318: astore_3
+    //   319: aload_0
+    //   320: astore_2
+    //   321: aload_3
+    //   322: astore_0
+    //   323: aconst_null
+    //   324: astore 4
+    //   326: aload_2
+    //   327: astore_3
+    //   328: aload_0
+    //   329: astore_2
+    //   330: aload_3
+    //   331: astore_0
+    //   332: aload 4
+    //   334: astore_3
+    //   335: goto -206 -> 129
+    //   338: astore_0
+    //   339: goto -43 -> 296
+    //   342: astore_0
+    //   343: aconst_null
+    //   344: astore_0
+    //   345: aconst_null
+    //   346: astore_1
+    //   347: aconst_null
+    //   348: astore_2
+    //   349: goto -26 -> 323
+    //   352: astore_1
+    //   353: aconst_null
+    //   354: astore_1
+    //   355: aload_0
+    //   356: astore_2
+    //   357: aconst_null
+    //   358: astore_3
+    //   359: aload_1
+    //   360: astore_0
+    //   361: aload_3
+    //   362: astore_1
+    //   363: goto -40 -> 323
+    //   366: astore_2
+    //   367: aconst_null
+    //   368: astore_3
+    //   369: aload_0
+    //   370: astore_2
+    //   371: aload_3
+    //   372: astore_0
+    //   373: goto -50 -> 323
+    //   376: astore_3
+    //   377: aload_0
+    //   378: astore_3
+    //   379: aload_2
+    //   380: astore_0
+    //   381: aload_3
+    //   382: astore_2
+    //   383: goto -60 -> 323
+    //   386: astore_1
+    //   387: goto -72 -> 315
+    //   390: astore_3
+    //   391: goto -84 -> 307
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   70	68	0	localMethod	Method
+    //   145	1	0	localClassNotFoundException1	ClassNotFoundException
+    //   155	1	0	localClassNotFoundException2	ClassNotFoundException
+    //   161	133	0	localObject1	Object
+    //   295	1	0	localClassNotFoundException3	ClassNotFoundException
+    //   312	1	0	localClassNotFoundException4	ClassNotFoundException
+    //   314	18	0	localObject2	Object
+    //   338	1	0	localNoSuchMethodException1	NoSuchMethodException
+    //   342	1	0	localNoSuchMethodException2	NoSuchMethodException
+    //   344	37	0	localObject3	Object
+    //   54	293	1	localObject4	Object
+    //   352	1	1	localNoSuchMethodException3	NoSuchMethodException
+    //   354	9	1	localObject5	Object
+    //   386	1	1	localClassNotFoundException5	ClassNotFoundException
+    //   108	180	2	localObject6	Object
+    //   304	1	2	localClassNotFoundException6	ClassNotFoundException
+    //   306	51	2	localObject7	Object
+    //   366	1	2	localNoSuchMethodException4	NoSuchMethodException
+    //   370	13	2	localObject8	Object
+    //   128	244	3	localObject9	Object
+    //   376	1	3	localNoSuchMethodException5	NoSuchMethodException
+    //   378	4	3	localObject10	Object
+    //   390	1	3	localClassNotFoundException7	ClassNotFoundException
+    //   324	9	4	localObject11	Object
+    //   26	108	5	localbnn1	bnn
+    //   47	89	6	localbnn2	bnn
+    // Exception table:
+    //   from	to	target	type
+    //   0	6	145	java/lang/ClassNotFoundException
+    //   6	49	155	java/lang/ClassNotFoundException
+    //   129	145	155	java/lang/ClassNotFoundException
+    //   146	152	155	java/lang/ClassNotFoundException
+    //   156	293	295	java/lang/ClassNotFoundException
+    //   87	109	304	java/lang/ClassNotFoundException
+    //   49	71	312	java/lang/ClassNotFoundException
+    //   156	293	338	java/lang/NoSuchMethodException
+    //   49	71	342	java/lang/NoSuchMethodException
+    //   71	87	352	java/lang/NoSuchMethodException
+    //   87	109	366	java/lang/NoSuchMethodException
+    //   109	129	376	java/lang/NoSuchMethodException
+    //   71	87	386	java/lang/ClassNotFoundException
+    //   109	129	390	java/lang/ClassNotFoundException
+  }
+  
+  public void a(Socket paramSocket) {}
+  
+  public void a(Socket paramSocket, InetSocketAddress paramInetSocketAddress, int paramInt)
+  {
+    paramSocket.connect(paramInetSocketAddress, paramInt);
+  }
+  
+  public void a(SSLSocket paramSSLSocket) {}
+  
+  public void a(SSLSocket paramSSLSocket, String paramString, List<bna> paramList) {}
+  
+  public String b(SSLSocket paramSSLSocket)
+  {
+    return null;
+  }
+  
+  public void b(Socket paramSocket) {}
   
   static final class a
-    implements caj
+    extends bno
   {
-    int a;
-    byte b;
-    int c;
-    int d;
-    short e;
-    private final bzw f;
+    private final bnn<Socket> a;
+    private final bnn<Socket> b;
+    private final Method c;
+    private final Method d;
+    private final bnn<Socket> e;
+    private final bnn<Socket> f;
     
-    public a(bzw parambzw)
+    public a(bnn<Socket> parambnn1, bnn<Socket> parambnn2, Method paramMethod1, Method paramMethod2, bnn<Socket> parambnn3, bnn<Socket> parambnn4)
     {
-      f = parambzw;
+      a = parambnn1;
+      b = parambnn2;
+      c = paramMethod1;
+      d = paramMethod2;
+      e = parambnn3;
+      f = parambnn4;
     }
     
-    public final cak E_()
+    public final void a(Socket paramSocket)
     {
-      return f.E_();
-    }
-    
-    public final long a(bzu parambzu, long paramLong)
-    {
-      if (d == 0)
-      {
-        f.f(e);
-        e = 0;
-        if ((b & 0x4) == 0) {}
+      if (c == null) {
+        return;
       }
-      do
+      try
       {
-        return -1L;
-        int i = c;
-        int j = bno.a(f);
-        d = j;
-        a = j;
-        byte b1 = (byte)(f.f() & 0xFF);
-        b = ((byte)(f.f() & 0xFF));
-        if (bno.b().isLoggable(Level.FINE)) {
-          bno.b().fine(bno.b.a(true, c, a, b1, b));
-        }
-        c = (f.h() & 0x7FFFFFFF);
-        if (b1 != 9) {
-          throw bno.a("%s != TYPE_CONTINUATION", new Object[] { Byte.valueOf(b1) });
-        }
-        if (c == i) {
-          break;
-        }
-        throw bno.a("TYPE_CONTINUATION streamId changed", new Object[0]);
-        paramLong = f.a(parambzu, Math.min(paramLong, d));
-      } while (paramLong == -1L);
-      d = ((int)(d - paramLong));
-      return paramLong;
+        c.invoke(null, new Object[] { paramSocket });
+        return;
+      }
+      catch (IllegalAccessException paramSocket)
+      {
+        throw new RuntimeException(paramSocket);
+      }
+      catch (InvocationTargetException paramSocket)
+      {
+        throw new RuntimeException(paramSocket.getCause());
+      }
     }
     
-    public final void close() {}
+    public final void a(Socket paramSocket, InetSocketAddress paramInetSocketAddress, int paramInt)
+    {
+      try
+      {
+        paramSocket.connect(paramInetSocketAddress, paramInt);
+        return;
+      }
+      catch (SecurityException paramSocket)
+      {
+        paramInetSocketAddress = new IOException("Exception in connect");
+        paramInetSocketAddress.initCause(paramSocket);
+        throw paramInetSocketAddress;
+      }
+    }
+    
+    public final void a(SSLSocket paramSSLSocket, String paramString, List<bna> paramList)
+    {
+      if (paramString != null)
+      {
+        a.a(paramSSLSocket, new Object[] { Boolean.valueOf(true) });
+        b.a(paramSSLSocket, new Object[] { paramString });
+      }
+      if ((f != null) && (f.a(paramSSLSocket)))
+      {
+        paramString = new cav();
+        int j = paramList.size();
+        int i = 0;
+        while (i < j)
+        {
+          bna localbna = (bna)paramList.get(i);
+          if (localbna != bna.a)
+          {
+            paramString.a(localbna.toString().length());
+            paramString.a(localbna.toString());
+          }
+          i += 1;
+        }
+        paramString = paramString.o();
+        f.b(paramSSLSocket, new Object[] { paramString });
+      }
+    }
+    
+    public final String b(SSLSocket paramSSLSocket)
+    {
+      if (e == null) {
+        return null;
+      }
+      if (!e.a(paramSSLSocket)) {
+        return null;
+      }
+      paramSSLSocket = (byte[])e.b(paramSSLSocket, new Object[0]);
+      if (paramSSLSocket != null) {
+        return new String(paramSSLSocket, bnq.c);
+      }
+      return null;
+    }
+    
+    public final void b(Socket paramSocket)
+    {
+      if (d == null) {
+        return;
+      }
+      try
+      {
+        d.invoke(null, new Object[] { paramSocket });
+        return;
+      }
+      catch (IllegalAccessException paramSocket)
+      {
+        throw new RuntimeException(paramSocket);
+      }
+      catch (InvocationTargetException paramSocket)
+      {
+        throw new RuntimeException(paramSocket.getCause());
+      }
+    }
   }
   
   static final class b
+    extends bno
   {
-    private static final String[] a;
-    private static final String[] b;
-    private static final String[] c;
+    private final Method a;
+    private final Method b;
+    private final Method c;
+    private final Class<?> d;
+    private final Class<?> e;
     
-    static
+    public b(Method paramMethod1, Method paramMethod2, Method paramMethod3, Class<?> paramClass1, Class<?> paramClass2)
     {
-      int k = 0;
-      a = new String[] { "DATA", "HEADERS", "PRIORITY", "RST_STREAM", "SETTINGS", "PUSH_PROMISE", "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION" };
-      b = new String[64];
-      c = new String['Ā'];
-      int i = 0;
-      while (i < c.length)
+      a = paramMethod1;
+      b = paramMethod2;
+      c = paramMethod3;
+      d = paramClass1;
+      e = paramClass2;
+    }
+    
+    public final void a(SSLSocket paramSSLSocket)
+    {
+      try
       {
-        c[i] = String.format("%8s", new Object[] { Integer.toBinaryString(i) }).replace(' ', '0');
-        i += 1;
+        c.invoke(null, new Object[] { paramSSLSocket });
+        return;
       }
-      b[0] = "";
-      b[1] = "END_STREAM";
-      int[] arrayOfInt = new int[1];
-      arrayOfInt[0] = 1;
-      b[8] = "PADDED";
-      i = 0;
-      int j;
-      while (i <= 0)
+      catch (IllegalAccessException paramSSLSocket)
       {
-        j = arrayOfInt[i];
-        b[(j | 0x8)] = (b[j] + "|PADDED");
-        i += 1;
+        throw new AssertionError();
       }
-      b[4] = "END_HEADERS";
-      b[32] = "PRIORITY";
-      b[36] = "END_HEADERS|PRIORITY";
-      i = 0;
-      for (;;)
+      catch (InvocationTargetException paramSSLSocket)
       {
-        j = k;
-        if (i >= 3) {
-          break;
-        }
-        int m = new int[] { 4, 32, 36 }[i];
-        j = 0;
-        while (j <= 0)
-        {
-          int n = arrayOfInt[j];
-          b[(n | m)] = (b[n] + '|' + b[m]);
-          b[(n | m | 0x8)] = (b[n] + '|' + b[m] + "|PADDED");
-          j += 1;
-        }
-        i += 1;
-      }
-      while (j < b.length)
-      {
-        if (b[j] == null) {
-          b[j] = c[j];
-        }
-        j += 1;
+        for (;;) {}
       }
     }
     
-    static String a(boolean paramBoolean, int paramInt1, int paramInt2, byte paramByte1, byte paramByte2)
+    public final void a(SSLSocket paramSSLSocket, String paramString, List<bna> paramList)
     {
-      String str2;
+      paramString = new ArrayList(paramList.size());
+      int j = paramList.size();
+      int i = 0;
       Object localObject;
-      if (paramByte1 < a.length)
+      while (i < j)
       {
-        str2 = a[paramByte1];
-        if (paramByte2 != 0) {
-          break label92;
+        localObject = (bna)paramList.get(i);
+        if (localObject != bna.a) {
+          paramString.add(((bna)localObject).toString());
         }
-        localObject = "";
-        label24:
-        if (!paramBoolean) {
-          break label259;
-        }
+        i += 1;
       }
-      label92:
-      label225:
-      label259:
-      for (String str1 = "<<";; str1 = ">>")
+      try
       {
-        return String.format("%s 0x%08x %5d %-13s %s", new Object[] { str1, Integer.valueOf(paramInt1), Integer.valueOf(paramInt2), str2, localObject });
-        str2 = String.format("0x%02x", new Object[] { Byte.valueOf(paramByte1) });
-        break;
-        switch (paramByte1)
+        paramList = bno.class.getClassLoader();
+        localObject = d;
+        Class localClass = e;
+        paramString = new bno.c(paramString);
+        paramString = Proxy.newProxyInstance(paramList, new Class[] { localObject, localClass }, paramString);
+        a.invoke(null, new Object[] { paramSSLSocket, paramString });
+        return;
+      }
+      catch (InvocationTargetException paramSSLSocket)
+      {
+        throw new AssertionError(paramSSLSocket);
+      }
+      catch (IllegalAccessException paramSSLSocket)
+      {
+        for (;;) {}
+      }
+    }
+    
+    public final String b(SSLSocket paramSSLSocket)
+    {
+      try
+      {
+        paramSSLSocket = (bno.c)Proxy.getInvocationHandler(b.invoke(null, new Object[] { paramSSLSocket }));
+        if ((!bno.c.a(paramSSLSocket)) && (bno.c.b(paramSSLSocket) == null))
         {
-        case 5: 
-        default: 
-          if (paramByte2 >= b.length) {
-            break;
-          }
+          bnj.a.log(Level.INFO, "ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?");
+          return null;
         }
-        for (str1 = b[paramByte2];; str1 = c[paramByte2])
-        {
-          if ((paramByte1 != 5) || ((paramByte2 & 0x4) == 0)) {
-            break label225;
-          }
-          localObject = str1.replace("HEADERS", "PUSH_PROMISE");
-          break;
-          if (paramByte2 == 1)
-          {
-            localObject = "ACK";
-            break;
-          }
-          localObject = c[paramByte2];
-          break;
-          localObject = c[paramByte2];
-          break;
+        if (bno.c.a(paramSSLSocket)) {
+          return null;
         }
-        localObject = str1;
-        if (paramByte1 != 0) {
-          break label24;
-        }
-        localObject = str1;
-        if ((paramByte2 & 0x20) == 0) {
-          break label24;
-        }
-        localObject = str1.replace("PRIORITY", "COMPRESSED");
-        break label24;
+        paramSSLSocket = bno.c.b(paramSSLSocket);
+        return paramSSLSocket;
+      }
+      catch (InvocationTargetException paramSSLSocket)
+      {
+        throw new AssertionError();
+      }
+      catch (IllegalAccessException paramSSLSocket)
+      {
+        for (;;) {}
       }
     }
   }
   
   static final class c
-    implements bnj
+    implements InvocationHandler
   {
-    final bnn.a a;
-    private final bzw b;
-    private final bno.a c;
-    private final boolean d;
+    private final List<String> a;
+    private boolean b;
+    private String c;
     
-    c(bzw parambzw, boolean paramBoolean)
+    public c(List<String> paramList)
     {
-      b = parambzw;
-      d = paramBoolean;
-      c = new bno.a(b);
-      a = new bnn.a(c);
+      a = paramList;
     }
     
-    private List<bnl> a(int paramInt1, short paramShort, byte paramByte, int paramInt2)
+    public final Object invoke(Object paramObject, Method paramMethod, Object[] paramArrayOfObject)
     {
-      Object localObject1 = c;
-      c.d = paramInt1;
-      a = paramInt1;
-      c.e = paramShort;
-      c.b = paramByte;
-      c.c = paramInt2;
-      localObject1 = a;
-      while (!b.d())
+      String str = paramMethod.getName();
+      Class localClass = paramMethod.getReturnType();
+      paramObject = paramArrayOfObject;
+      if (paramArrayOfObject == null) {
+        paramObject = bnq.b;
+      }
+      if ((str.equals("supports")) && (Boolean.TYPE == localClass)) {
+        return Boolean.valueOf(true);
+      }
+      if ((str.equals("unsupported")) && (Void.TYPE == localClass))
       {
-        paramInt1 = b.f() & 0xFF;
-        if (paramInt1 == 128) {
-          throw new IOException("index == 0");
-        }
-        if ((paramInt1 & 0x80) == 128)
+        b = true;
+        return null;
+      }
+      if ((str.equals("protocols")) && (paramObject.length == 0)) {
+        return a;
+      }
+      if (((str.equals("selectProtocol")) || (str.equals("select"))) && (String.class == localClass) && (paramObject.length == 1) && ((paramObject[0] instanceof List)))
+      {
+        paramObject = (List)paramObject[0];
+        int j = ((List)paramObject).size();
+        int i = 0;
+        while (i < j)
         {
-          paramInt1 = ((bnn.a)localObject1).a(paramInt1, 127) - 1;
-          if (bnn.a.c(paramInt1))
+          if (a.contains(((List)paramObject).get(i)))
           {
-            localObject2 = bnn.a()[paramInt1];
-            a.add(localObject2);
+            paramObject = (String)((List)paramObject).get(i);
+            c = ((String)paramObject);
+            return paramObject;
           }
-          else
-          {
-            paramInt2 = ((bnn.a)localObject1).a(paramInt1 - bnn.a().length);
-            if ((paramInt2 < 0) || (paramInt2 > e.length - 1)) {
-              throw new IOException("Header index too large " + (paramInt1 + 1));
-            }
-            a.add(e[paramInt2]);
-          }
-        }
-        else if (paramInt1 == 64)
-        {
-          ((bnn.a)localObject1).a(new bnl(bnn.a(((bnn.a)localObject1).b()), ((bnn.a)localObject1).b()));
-        }
-        else if ((paramInt1 & 0x40) == 64)
-        {
-          ((bnn.a)localObject1).a(new bnl(((bnn.a)localObject1).b(((bnn.a)localObject1).a(paramInt1, 63) - 1), ((bnn.a)localObject1).b()));
-        }
-        else if ((paramInt1 & 0x20) == 32)
-        {
-          d = ((bnn.a)localObject1).a(paramInt1, 31);
-          if ((d < 0) || (d > c)) {
-            throw new IOException("Invalid dynamic table size update " + d);
-          }
-          ((bnn.a)localObject1).a();
-        }
-        else
-        {
-          bzx localbzx;
-          if ((paramInt1 == 16) || (paramInt1 == 0))
-          {
-            localObject2 = bnn.a(((bnn.a)localObject1).b());
-            localbzx = ((bnn.a)localObject1).b();
-            a.add(new bnl((bzx)localObject2, localbzx));
-          }
-          else
-          {
-            localObject2 = ((bnn.a)localObject1).b(((bnn.a)localObject1).a(paramInt1, 15) - 1);
-            localbzx = ((bnn.a)localObject1).b();
-            a.add(new bnl((bzx)localObject2, localbzx));
-          }
-        }
-      }
-      localObject1 = a;
-      Object localObject2 = new ArrayList(a);
-      a.clear();
-      return (List<bnl>)localObject2;
-    }
-    
-    private void b()
-    {
-      b.h();
-      b.f();
-    }
-    
-    public final void a()
-    {
-      if (d) {}
-      bzx localbzx;
-      do
-      {
-        return;
-        localbzx = b.c(ac.length);
-        if (bno.b().isLoggable(Level.FINE)) {
-          bno.b().fine(String.format("<< CONNECTION %s", new Object[] { localbzx.b() }));
-        }
-      } while (bno.a().equals(localbzx));
-      throw bno.a("Expected a connection header but was %s", new Object[] { localbzx.a() });
-    }
-    
-    public final boolean a(bnj.a parama)
-    {
-      boolean bool1 = true;
-      int j = 0;
-      boolean bool2 = false;
-      int i = 0;
-      int n;
-      byte b2;
-      label250:
-      label256:
-      label426:
-      label608:
-      label833:
-      do
-      {
-        do
-        {
-          try
-          {
-            b.a(9L);
-            n = bno.a(b);
-            if ((n < 0) || (n > 16384)) {
-              throw bno.a("FRAME_SIZE_ERROR: %s", new Object[] { Integer.valueOf(n) });
-            }
-          }
-          catch (IOException parama)
-          {
-            bool1 = false;
-            return bool1;
-          }
-          byte b1 = (byte)(b.f() & 0xFF);
-          b2 = (byte)(b.f() & 0xFF);
-          m = b.h() & 0x7FFFFFFF;
-          if (bno.b().isLoggable(Level.FINE)) {
-            bno.b().fine(bno.b.a(true, m, n, b1, b2));
-          }
-          switch (b1)
-          {
-          default: 
-            b.f(n);
-            return true;
-          case 0: 
-            if ((b2 & 0x1) != 0)
-            {
-              bool1 = true;
-              if ((b2 & 0x20) == 0) {
-                break label250;
-              }
-            }
-            for (k = 1;; k = 0)
-            {
-              if (k == 0) {
-                break label256;
-              }
-              throw bno.a("PROTOCOL_ERROR: FLAG_COMPRESSED without SETTINGS_COMPRESS_DATA", new Object[0]);
-              bool1 = false;
-              break;
-            }
-            if ((b2 & 0x8) != 0) {
-              i = (short)(b.f() & 0xFF);
-            }
-            k = bno.a(n, b2, i);
-            parama.a(bool1, m, b, k);
-            b.f(i);
-            return true;
-          case 1: 
-            if (m == 0) {
-              throw bno.a("PROTOCOL_ERROR: TYPE_HEADERS streamId == 0", new Object[0]);
-            }
-            if ((b2 & 0x1) != 0)
-            {
-              bool1 = true;
-              if ((b2 & 0x8) == 0) {
-                break label426;
-              }
-            }
-            for (i = (short)(b.f() & 0xFF);; i = 0)
-            {
-              k = n;
-              if ((b2 & 0x20) != 0)
-              {
-                b();
-                k = n - 5;
-              }
-              parama.a(false, bool1, m, a(bno.a(k, b2, i), i, b2, m), bnm.d);
-              return true;
-              bool1 = false;
-              break;
-            }
-          case 2: 
-            if (n != 5) {
-              throw bno.a("TYPE_PRIORITY length: %d != 5", new Object[] { Integer.valueOf(n) });
-            }
-            if (m == 0) {
-              throw bno.a("TYPE_PRIORITY streamId == 0", new Object[0]);
-            }
-            b();
-            return true;
-          case 3: 
-            if (n != 4) {
-              throw bno.a("TYPE_RST_STREAM length: %d != 4", new Object[] { Integer.valueOf(n) });
-            }
-            if (m == 0) {
-              throw bno.a("TYPE_RST_STREAM streamId == 0", new Object[0]);
-            }
-            k = b.h();
-            localObject = bni.b(k);
-            if (localObject == null) {
-              throw bno.a("TYPE_RST_STREAM unexpected error code: %d", new Object[] { Integer.valueOf(k) });
-            }
-            parama.a(m, (bni)localObject);
-            return true;
-          case 4: 
-            if (m != 0) {
-              throw bno.a("TYPE_SETTINGS streamId != 0", new Object[0]);
-            }
-            if ((b2 & 0x1) == 0) {
-              break label608;
-            }
-          }
-        } while (n == 0);
-        throw bno.a("FRAME_SIZE_ERROR ack frame should be empty!", new Object[0]);
-        if (n % 6 != 0) {
-          throw bno.a("TYPE_SETTINGS length %% 6 != 0: %s", new Object[] { Integer.valueOf(n) });
-        }
-        localObject = new bnu();
-        k = 0;
-        if (k < n)
-        {
-          i = b.g();
-          int i1 = b.h();
-          m = i;
-          switch (i)
-          {
-          default: 
-            throw bno.a("PROTOCOL_ERROR invalid settings id: %s", new Object[] { Short.valueOf(i) });
-          case 2: 
-            m = i;
-            if (i1 != 0)
-            {
-              m = i;
-              if (i1 != 1) {
-                throw bno.a("PROTOCOL_ERROR SETTINGS_ENABLE_PUSH != 0 or 1", new Object[0]);
-              }
-            }
-            break;
-          case 3: 
-            m = 4;
-          }
-          do
-          {
-            do
-            {
-              ((bnu)localObject).a(m, 0, i1);
-              k += 6;
-              break;
-              m = 7;
-            } while (i1 >= 0);
-            throw bno.a("PROTOCOL_ERROR SETTINGS_INITIAL_WINDOW_SIZE > 2^31 - 1", new Object[0]);
-            if (i1 < 16384) {
-              break label833;
-            }
-            m = i;
-          } while (i1 <= 16777215);
-          throw bno.a("PROTOCOL_ERROR SETTINGS_MAX_FRAME_SIZE: %s", new Object[] { Integer.valueOf(i1) });
-        }
-        parama.a(false, (bnu)localObject);
-      } while (((bnu)localObject).a() < 0);
-      parama = a;
-      int k = ((bnu)localObject).a();
-      c = k;
-      d = k;
-      parama.a();
-      return true;
-      if (m == 0) {
-        throw bno.a("PROTOCOL_ERROR: TYPE_PUSH_PROMISE streamId == 0", new Object[0]);
-      }
-      i = j;
-      if ((b2 & 0x8) != 0) {
-        i = (short)(b.f() & 0xFF);
-      }
-      parama.a(b.h() & 0x7FFFFFFF, a(bno.a(n - 4, b2, i), i, b2, m));
-      return true;
-      if (n != 8) {
-        throw bno.a("TYPE_PING length != 8: %s", new Object[] { Integer.valueOf(n) });
-      }
-      if (m != 0) {
-        throw bno.a("TYPE_PING streamId != 0", new Object[0]);
-      }
-      k = b.h();
-      int m = b.h();
-      bool1 = bool2;
-      if ((b2 & 0x1) != 0) {
-        bool1 = true;
-      }
-      parama.a(bool1, k, m);
-      return true;
-      if (n < 8) {
-        throw bno.a("TYPE_GOAWAY length < 8: %s", new Object[] { Integer.valueOf(n) });
-      }
-      if (m != 0) {
-        throw bno.a("TYPE_GOAWAY streamId != 0", new Object[0]);
-      }
-      k = b.h();
-      m = b.h();
-      n -= 8;
-      if (bni.b(m) == null) {
-        throw bno.a("TYPE_GOAWAY unexpected error code: %d", new Object[] { Integer.valueOf(m) });
-      }
-      Object localObject = bzx.b;
-      if (n > 0) {
-        localObject = b.c(n);
-      }
-      parama.a(k, (bzx)localObject);
-      return true;
-      if (n != 4) {
-        throw bno.a("TYPE_WINDOW_UPDATE length !=4: %s", new Object[] { Integer.valueOf(n) });
-      }
-      long l = b.h() & 0x7FFFFFFF;
-      if (l == 0L) {
-        throw bno.a("windowSizeIncrement was 0", new Object[] { Long.valueOf(l) });
-      }
-      parama.a(m, l);
-      return true;
-    }
-    
-    public final void close()
-    {
-      b.close();
-    }
-  }
-  
-  static final class d
-    implements bnk
-  {
-    private final bzv a;
-    private final boolean b;
-    private final bzu c;
-    private final bnn.b d;
-    private int e;
-    private boolean f;
-    
-    d(bzv parambzv, boolean paramBoolean)
-    {
-      a = parambzv;
-      b = paramBoolean;
-      c = new bzu();
-      d = new bnn.b(c);
-      e = 16384;
-    }
-    
-    private void a(int paramInt1, int paramInt2, byte paramByte1, byte paramByte2)
-    {
-      if (bno.b().isLoggable(Level.FINE)) {
-        bno.b().fine(bno.b.a(false, paramInt1, paramInt2, paramByte1, paramByte2));
-      }
-      if (paramInt2 > e) {
-        throw bno.b("FRAME_SIZE_ERROR length > %d: %d", new Object[] { Integer.valueOf(e), Integer.valueOf(paramInt2) });
-      }
-      if ((0x80000000 & paramInt1) != 0) {
-        throw bno.b("reserved bit set: %s", new Object[] { Integer.valueOf(paramInt1) });
-      }
-      bno.a(a, paramInt2);
-      a.g(paramByte1 & 0xFF);
-      a.g(paramByte2 & 0xFF);
-      a.e(0x7FFFFFFF & paramInt1);
-    }
-    
-    private void b(int paramInt, long paramLong)
-    {
-      if (paramLong > 0L)
-      {
-        int i = (int)Math.min(e, paramLong);
-        paramLong -= i;
-        if (paramLong == 0L) {}
-        for (byte b1 = 4;; b1 = 0)
-        {
-          a(paramInt, i, (byte)9, b1);
-          a.a_(c, i);
-          break;
-        }
-      }
-    }
-    
-    public final void a()
-    {
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      boolean bool = b;
-      if (!bool) {}
-      for (;;)
-      {
-        return;
-        if (bno.b().isLoggable(Level.FINE)) {
-          bno.b().fine(String.format(">> CONNECTION %s", new Object[] { bno.a().b() }));
-        }
-        a.b(bno.a().d());
-        a.flush();
-      }
-    }
-    
-    public final void a(int paramInt, long paramLong)
-    {
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      if ((paramLong == 0L) || (paramLong > 2147483647L)) {
-        throw bno.b("windowSizeIncrement == 0 || windowSizeIncrement > 0x7fffffffL: %s", new Object[] { Long.valueOf(paramLong) });
-      }
-      a(paramInt, 4, (byte)8, (byte)0);
-      a.e((int)paramLong);
-      a.flush();
-    }
-    
-    public final void a(int paramInt, bni parambni)
-    {
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      if (t == -1) {
-        throw new IllegalArgumentException();
-      }
-      a(paramInt, 4, (byte)3, (byte)0);
-      a.e(s);
-      a.flush();
-    }
-    
-    public final void a(int paramInt, bni parambni, byte[] paramArrayOfByte)
-    {
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      if (s == -1) {
-        throw bno.b("errorCode.httpCode == -1", new Object[0]);
-      }
-      a(0, paramArrayOfByte.length + 8, (byte)7, (byte)0);
-      a.e(paramInt);
-      a.e(s);
-      if (paramArrayOfByte.length > 0) {
-        a.b(paramArrayOfByte);
-      }
-      a.flush();
-    }
-    
-    public final void a(bnu parambnu)
-    {
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      int i = e;
-      if ((a & 0x20) != 0) {
-        i = d[5];
-      }
-      e = i;
-      a(0, 0, (byte)4, (byte)1);
-      a.flush();
-    }
-    
-    public final void a(boolean paramBoolean, int paramInt1, int paramInt2)
-    {
-      byte b1 = 0;
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      if (paramBoolean) {
-        b1 = 1;
-      }
-      a(0, 8, (byte)6, b1);
-      a.e(paramInt1);
-      a.e(paramInt2);
-      a.flush();
-    }
-    
-    public final void a(boolean paramBoolean, int paramInt1, bzu parambzu, int paramInt2)
-    {
-      byte b1 = 0;
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      if (paramBoolean) {
-        b1 = 1;
-      }
-      a(paramInt1, paramInt2, (byte)0, b1);
-      if (paramInt2 > 0) {
-        a.a_(parambzu, paramInt2);
-      }
-    }
-    
-    public final void a(boolean paramBoolean, int paramInt, List<bnl> paramList)
-    {
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      if (f) {
-        throw new IOException("closed");
-      }
-      if (c.b != 0L) {
-        throw new IllegalStateException();
-      }
-      d.a(paramList);
-      long l = c.b;
-      int i = (int)Math.min(e, l);
-      byte b1;
-      if (l == i) {
-        b1 = 4;
-      }
-      for (;;)
-      {
-        a(paramInt, i, (byte)1, b2);
-        a.a_(c, i);
-        if (l > i) {
-          b(paramInt, l - i);
-        }
-        return;
-        b1 = 0;
-        byte b2 = b1;
-        if (paramBoolean) {
-          b2 = (byte)(b1 | 0x1);
-        }
-      }
-    }
-    
-    public final void b()
-    {
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      a.flush();
-    }
-    
-    public final void b(bnu parambnu)
-    {
-      int i = 0;
-      try
-      {
-        if (f) {
-          throw new IOException("closed");
-        }
-      }
-      finally {}
-      a(0, Integer.bitCount(a) * 6, (byte)4, (byte)0);
-      int j;
-      if (i < 10)
-      {
-        if (!parambnu.a(i)) {
-          break label111;
-        }
-        if (i != 4) {
-          break label118;
-        }
-        j = 3;
-      }
-      for (;;)
-      {
-        label64:
-        a.f(j);
-        a.e(d[i]);
-        break label111;
-        a.flush();
-        return;
-        label111:
-        label118:
-        do
-        {
-          j = i;
-          break label64;
           i += 1;
-          break;
-        } while (i != 7);
-        j = 4;
+        }
+        paramObject = (String)a.get(0);
+        c = ((String)paramObject);
+        return paramObject;
       }
-    }
-    
-    public final int c()
-    {
-      return e;
-    }
-    
-    public final void close()
-    {
-      try
+      if (((str.equals("protocolSelected")) || (str.equals("selected"))) && (paramObject.length == 1))
       {
-        f = true;
-        a.close();
-        return;
+        c = ((String)paramObject[0]);
+        return null;
       }
-      finally
-      {
-        localObject = finally;
-        throw ((Throwable)localObject);
-      }
+      return paramMethod.invoke(this, (Object[])paramObject);
     }
   }
 }

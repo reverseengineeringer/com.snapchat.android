@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 79
+    .line 85
     new-instance v0, Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
 
     const-string v1, "NOT_UPDATED"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;->NOT_UPDATED:Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
 
-    .line 80
+    .line 86
     new-instance v0, Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
 
     const-string v1, "UPDATING"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;->UPDATING:Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
 
-    .line 81
+    .line 87
     new-instance v0, Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
 
     const-string v1, "UPDATED"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;->UPDATED:Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
 
-    .line 78
+    .line 84
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 84
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 84
     const-class v0, Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 84
     sget-object v0, Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;->$VALUES:[Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/model/chat/ChatConversation$SequenceNumberState;->clone()Ljava/lang/Object;

@@ -1,10 +1,10 @@
 import javax.inject.Provider;
 
 public final class qz
-  implements buj<qy>
+  implements bvk<qx>
 {
-  private final Provider<xx> mReceivingCashManagerProvider;
-  private final buj<qv> supertypeInjector;
+  private final Provider<ri> mScProvider;
+  private final Provider<td> mSquareProvider;
   
   static
   {
@@ -16,17 +16,17 @@ public final class qz
     }
   }
   
-  private qz(buj<qv> parambuj, Provider<xx> paramProvider)
+  private qz(Provider<ri> paramProvider, Provider<td> paramProvider1)
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
     assert (paramProvider != null);
-    mReceivingCashManagerProvider = paramProvider;
+    mScProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mSquareProvider = paramProvider1;
   }
   
-  public static buj<qy> a(buj<qv> parambuj, Provider<xx> paramProvider)
+  public static bvk<qx> a(Provider<ri> paramProvider, Provider<td> paramProvider1)
   {
-    return new qz(parambuj, paramProvider);
+    return new qz(paramProvider, paramProvider1);
   }
 }
 

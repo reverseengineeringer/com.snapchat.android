@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.settings.twofa;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.squareup.otto.Bus;
 
 final class TwoFactorSettingsEnabledFragment$3
@@ -13,7 +13,7 @@ final class TwoFactorSettingsEnabledFragment$3
   
   public final void onClick(View paramView)
   {
-    ban.a().a(new bdw(new RecoveryCodeFragment()));
+    bbo.a().a(new bev(new RecoveryCodeFragment()));
   }
 }
 

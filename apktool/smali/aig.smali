@@ -1,230 +1,222 @@
-.class public final Laig;
-.super Laif;
+.class final Laig;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Laif",
-        "<",
-        "Landroid/graphics/Bitmap;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field private static final b:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field private final b:Lavp;
+.field final a:Lcom/addlive/service/AddLiveService;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 3
 
     .prologue
-    .line 30
-    sget-object v0, Lawq;->GEOFILTER_CACHE:Lawp;
-
-    new-instance v1, Lavp;
-
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lavp;-><init>(Landroid/content/Context;)V
-
-    invoke-static {}, Lalb;->a()Lalb;
-
-    move-result-object v2
-
-    invoke-direct {p0, v0, v1, v2}, Laig;-><init>(Lawp;Lavp;Lalb;)V
-
-    .line 31
-    return-void
-.end method
-
-.method private constructor <init>(Lawp;Lavp;Lalb;)V
-    .locals 1
-    .param p1    # Lawp;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lavp;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lalb;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 37
-    invoke-direct {p0, p3, p1}, Laif;-><init>(Lalb;Lawp;)V
-
     .line 38
-    invoke-static {p2}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "https://cnc.addlive.io/events.store"
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Lavp;
+    sput-object v0, Laig;->b:Ljava/util/List;
 
-    iput-object v0, p0, Laig;->b:Lavp;
-
-    .line 39
     return-void
+.end method
+
+.method constructor <init>(Lcom/addlive/service/AddLiveService;)V
+    .locals 0
+
+    .prologue
+    .line 45
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 46
+    iput-object p1, p0, Laig;->a:Lcom/addlive/service/AddLiveService;
+
+    .line 47
+    return-void
+.end method
+
+.method static synthetic a(Laig;)Lcom/addlive/service/AddLiveService;
+    .locals 1
+
+    .prologue
+    .line 30
+    iget-object v0, p0, Laig;->a:Lcom/addlive/service/AddLiveService;
+
+    return-object v0
+.end method
+
+.method static synthetic a(Ljava/lang/String;J)Ljava/lang/String;
+    .locals 5
+
+    .prologue
+    .line 30
+    const-string v0, "|"
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/io/Serializable;
+
+    const/4 v2, 0x0
+
+    aput-object p0, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "HmacSHA256"
+
+    invoke-static {v1}, Ljavax/crypto/Mac;->getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;
+
+    move-result-object v1
+
+    new-instance v2, Ljavax/crypto/spec/SecretKeySpec;
+
+    const-string v3, "Ir3boG9oahw6bo9Xzei9Phei"
+
+    invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v3
+
+    const-string v4, "HmacSHA256"
+
+    invoke-direct {v2, v3, v4}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
+
+    new-instance v2, Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljavax/crypto/Mac;->doFinal([B)[B
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/apache/commons/codec/binary/Hex;->encodeHex([B)[C
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/String;-><init>([C)V
+
+    return-object v2
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 5
+.method final a()V
+    .locals 6
 
     .prologue
-    const/4 v4, 0x0
+    .line 50
+    sget-object v0, Laig;->b:Ljava/util/List;
 
-    const/4 v0, 0x0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    .line 25
-    invoke-static {}, Lbgp;->b()V
+    move-result-wide v2
 
-    if-nez p1, :cond_0
+    sget-object v1, Laig;->b:Ljava/util/List;
 
-    const-string v1, "BitmapResourceProvider"
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    const-string v2, "Uri was null can not create bitmap request"
+    move-result v1
 
-    new-array v3, v4, [Ljava/lang/Object;
+    int-to-long v4, v1
 
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    rem-long/2addr v2, v4
 
-    move-object v1, v0
+    long-to-int v1, v2
 
-    :goto_0
-    if-nez v1, :cond_2
-
-    const-string v1, "BitmapResourceProvider"
-
-    const-string v2, "Couldn\'t load bitmap"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :goto_1
-    return-object v0
-
-    :cond_0
-    iget-object v1, p0, Laig;->a:Lawp;
-
-    invoke-virtual {v1, p1}, Lawp;->a(Ljava/lang/String;)[B
-
-    move-result-object v1
-
-    if-nez v1, :cond_1
-
-    const-string v1, "BitmapResourceProvider"
-
-    const-string v2, "bytes from cache was null can not create bitmap request"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v1, p0, Laig;->a:Lawp;
-
-    invoke-virtual {v1, p1}, Lawp;->c(Ljava/lang/String;)V
-
-    move-object v1, v0
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v1, Lavx$a;
-
-    invoke-direct {v1}, Lavx$a;-><init>()V
-
-    iget-object v2, p0, Laig;->a:Lawp;
-
-    invoke-virtual {v1, p1, v2, p1, v0}, Lavx$a;->a(Ljava/lang/String;Lawp;Ljava/lang/String;Layc;)Lavx$a;
-
-    invoke-virtual {v1}, Lavx$a;->a()Lavx;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v2, p0, Laig;->b:Lavp;
-
-    invoke-virtual {v2, v1}, Lavp;->a(Lavx;)Lavo;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_3
-
-    iget-object v2, v1, Lavo;->mBitmap:Landroid/graphics/Bitmap;
-
-    if-nez v2, :cond_4
-
-    :cond_3
-    iget-object v1, p0, Laig;->a:Lawp;
-
-    invoke-virtual {v1, p1}, Lawp;->c(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_4
-    iget-object v0, v1, Lavo;->mBitmap:Landroid/graphics/Bitmap;
-
-    goto :goto_1
-.end method
-
-.method public final b(Ljava/lang/String;Laij$a;)V
-    .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Laij$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcaq;
-    .end annotation
-
-    .prologue
-    .line 44
-    invoke-static {}, Lbgp;->b()V
-
-    .line 45
-    iget-object v0, p0, Laig;->a:Lawp;
-
-    invoke-virtual {v0, p1}, Lawp;->d(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Laig;->a:Lawp;
-
-    invoke-virtual {v0, p1}, Lawp;->a(Ljava/lang/String;)[B
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    check-cast v0, Ljava/lang/String;
 
-    .line 46
-    invoke-interface {p2}, Laij$a;->a()V
+    .line 55
+    iget-object v1, p0, Laig;->a:Lcom/addlive/service/AddLiveService;
 
-    .line 50
-    :goto_0
+    const-string v2, "setProperty(global.service.eventsTrackingEndpoint"
+
+    invoke-static {v2}, Lcom/snapchat/android/livechat/AdlHelper;->a(Ljava/lang/String;)Lcom/snapchat/android/livechat/AdlHelper$c;
+
+    move-result-object v2
+
+    const-string v3, "global.service.eventsTrackingEndpoint"
+
+    invoke-interface {v1, v2, v3, v0}, Lcom/addlive/service/AddLiveService;->setProperty(Lcom/addlive/service/Responder;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 57
+    iget-object v0, p0, Laig;->a:Lcom/addlive/service/AddLiveService;
+
+    const-string v1, "setProperty(global.service.eventsTrackingSession"
+
+    invoke-static {v1}, Lcom/snapchat/android/livechat/AdlHelper;->a(Ljava/lang/String;)Lcom/snapchat/android/livechat/AdlHelper$c;
+
+    move-result-object v1
+
+    const-string v2, "global.service.eventsTrackingSession"
+
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/addlive/service/AddLiveService;->setProperty(Lcom/addlive/service/Responder;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 59
+    iget-object v0, p0, Laig;->a:Lcom/addlive/service/AddLiveService;
+
+    const-string v1, "startEventsTracking"
+
+    invoke-static {v1}, Lcom/snapchat/android/livechat/AdlHelper;->a(Ljava/lang/String;)Lcom/snapchat/android/livechat/AdlHelper$c;
+
+    move-result-object v1
+
+    const-string v2, "ADL_Performance.log"
+
+    invoke-interface {v0, v1, v2}, Lcom/addlive/service/AddLiveService;->startEventsTracking(Lcom/addlive/service/Responder;Ljava/lang/String;)V
+
+    .line 60
     return-void
-
-    .line 48
-    :cond_0
-    invoke-virtual {p0, p1, p2}, Laig;->a(Ljava/lang/String;Laij$a;)V
-
-    goto :goto_0
 .end method

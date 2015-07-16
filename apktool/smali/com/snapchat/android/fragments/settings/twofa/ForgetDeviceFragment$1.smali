@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laok;
+.implements Lapg;
 
 
 # annotations
@@ -36,12 +36,12 @@
 
 
 # virtual methods
-.method public final a(Lamk;)V
+.method public final a(Lanh;)V
     .locals 3
 
     .prologue
     .line 55
-    invoke-static {p1}, Laol;->a(Lamk;)I
+    invoke-static {p1}, Laph;->a(Lanh;)I
 
     move-result v0
 
@@ -76,18 +76,18 @@
     invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     .line 58
-    instance-of v0, p1, Lanc;
+    instance-of v0, p1, Lanz;
 
     if-eqz v0, :cond_0
 
     .line 59
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment$1;->a:Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;
 
-    check-cast p1, Lanc;
+    check-cast p1, Lanz;
 
-    iget-object v1, p1, Lanc;->b:Lanc$c;
+    iget-object v1, p1, Lanz;->b:Lanz$c;
 
-    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->a(Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;Lanc$c;)V
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->a(Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;Lanz$c;)V
 
     .line 62
     :cond_0

@@ -1,300 +1,182 @@
-import android.content.res.Resources;
-import android.net.Uri;
-import android.view.View;
-import com.snapchat.android.SnapchatApplication;
+import android.content.Context;
+import android.graphics.Bitmap;
 import com.snapchat.android.model.MediaMailingMetadata;
 import com.snapchat.android.model.Mediabryo;
-import com.snapchat.android.model.Snap;
-import com.snapchat.android.model.Snap.ClientSnapStatus;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.snapchat.android.model.chat.ChatFeedItem.FeedIconPriority;
-import com.snapchat.android.model.chat.ChatFeedItem.a;
-import com.squareup.otto.Bus;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.snapchat.android.model.Mediabryo.a;
+import com.snapchat.android.ui.swipefilters.FilterPageType;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Locale;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
-public final class aji
-  extends Snap
+public abstract class aji
+  extends Mediabryo
 {
-  public static final int TIME_TO_PRIORITIZE_SENT_ICON = 1000;
-  public static final ArrayList<Snap.ClientSnapStatus> sSentSnapStateTimeline = new ArrayList(Arrays.asList(new Snap.ClientSnapStatus[] { Snap.ClientSnapStatus.SENDING, Snap.ClientSnapStatus.FAILED, Snap.ClientSnapStatus.FAILED_AND_USER_NOTIFIED_OF_FAILURE, Snap.ClientSnapStatus.FAILED_AND_NON_RECOVERABLE, Snap.ClientSnapStatus.SENT, Snap.ClientSnapStatus.DELIVERED, Snap.ClientSnapStatus.SENT_AND_OPENED, Snap.ClientSnapStatus.SENT_AND_SCREENSHOTTED, Snap.ClientSnapStatus.SENT_AND_REPLAYED, Snap.ClientSnapStatus.SENT_AND_REPLAYED_AND_SCREENSHOTTED }));
-  public String mClientId;
-  public String mDisplayTime;
-  public boolean mIsSavableSnap;
-  public String mRecipient;
-  public String mSnapUriString;
-  public long mTimeOfLastSendAttempt;
-  public boolean mZipped;
+  public oz mBaseFilter;
+  public aqn mCaptionAnalyticData;
+  public String mCaptionStyleDescription;
+  public String mCaptionText;
+  public Bitmap mCompositeImageBitmap;
+  public int mGeofilterImpressions;
+  public final nt mGeofilterSwipeMetaData;
+  public boolean mHasDrawing;
+  public oz mStackedFilter;
+  public int mSwipeFilterNumDoubleSwipes;
+  public int mSwipeFilterNumSingleSwipes;
+  public double mViewTimeSec;
+  private final cs mViewTimeStopWatch;
   
-  public aji(aim paramaim)
+  protected aji(aji.a<?> parama)
   {
-    this(mClientId, mClientId, System.currentTimeMillis(), System.currentTimeMillis(), paramaim.h(), Snap.ClientSnapStatus.SENDING, mMediaMailingMetadata.e(), "0", mVideoUri, System.currentTimeMillis(), mIsZipUpload);
+    super(parama);
+    mCaptionText = mCaptionText;
+    mHasDrawing = mHasDrawing;
+    mSwipeFilterNumDoubleSwipes = mSwipeFilterNumDoubleSwipes;
+    mSwipeFilterNumSingleSwipes = mSwipeFilterNumSingleSwipes;
+    mGeofilterImpressions = mGeofilterImpressions;
+    mGeofilterSwipeMetaData = mGeofilterSwipeMetaData;
+    mCaptionStyleDescription = mCaptionStyleDescription;
+    mCaptionAnalyticData = mCaptionAnalyticData;
+    mCompositeImageBitmap = mCompositeImageBitmap;
+    mBaseFilter = mBaseFilter;
+    mStackedFilter = mStackedFilter;
+    mViewTimeSec = 0.0D;
+    mViewTimeStopWatch = mViewTimeStopWatch;
   }
   
-  public aji(String paramString1, String paramString2, long paramLong1, long paramLong2, int paramInt, Snap.ClientSnapStatus paramClientSnapStatus, String paramString3)
+  private static boolean a(@chd oz paramoz)
   {
-    this(paramString1, paramString2, paramLong1, paramLong2, paramInt, paramClientSnapStatus, paramString3, "0", null, System.currentTimeMillis(), false);
+    return (paramoz != null) && (c == FilterPageType.GEOFILTER);
   }
   
-  public aji(String paramString1, String paramString2, long paramLong1, long paramLong2, int paramInt, Snap.ClientSnapStatus paramClientSnapStatus, String paramString3, String paramString4, Uri paramUri, long paramLong3, boolean paramBoolean)
+  public final int a(@chc Context paramContext)
   {
-    super(paramString1, paramLong1, paramInt, paramClientSnapStatus);
-    mClientId = paramString2;
-    mSentTimestamp = paramLong2;
-    mDisplayTime = paramString4;
-    mTimeOfLastSendAttempt = paramLong3;
-    mRecipient = paramString3;
-    mDisplayTime = "0";
-    if (paramUri != null) {
-      mSnapUriString = paramUri.toString();
+    if (mIsChatMedia) {
+      return 3;
     }
-    mZipped = paramBoolean;
-    if (mTimeOfLastSendAttempt == 0L) {
-      mTimeOfLastSendAttempt = System.currentTimeMillis();
-    }
-    mIsSavableSnap = true;
+    return super.a(paramContext);
   }
   
-  private boolean n()
+  public abstract aji a();
+  
+  public void a(@chd Bitmap paramBitmap)
   {
-    switch (mClientSnapStatus)
+    mCompositeImageBitmap = paramBitmap;
+  }
+  
+  public final void b()
+  {
+    if (mViewTimeStopWatch.a) {
+      mViewTimeStopWatch.b();
+    }
+    mViewTimeStopWatch.a();
+  }
+  
+  public final void c()
+  {
+    if (mViewTimeStopWatch.a)
     {
-    default: 
-      return false;
+      mViewTimeStopWatch.b();
+      mViewTimeSec += mViewTimeStopWatch.a(TimeUnit.MILLISECONDS) * 1.0D / 1000.0D;
     }
-    return true;
-  }
-  
-  private boolean o()
-  {
-    return (mClientId == null) || (!mClientId.equals(mId));
-  }
-  
-  public final boolean N()
-  {
-    return mClientSnapStatus == Snap.ClientSnapStatus.SENDING;
-  }
-  
-  public final boolean O()
-  {
-    return (mClientSnapStatus == Snap.ClientSnapStatus.FAILED) || (mClientSnapStatus == Snap.ClientSnapStatus.FAILED_AND_USER_NOTIFIED_OF_FAILURE) || (mClientSnapStatus == Snap.ClientSnapStatus.FAILED_AND_NON_RECOVERABLE);
-  }
-  
-  public final boolean P()
-  {
-    return mClientSnapStatus == Snap.ClientSnapStatus.FAILED_AND_USER_NOTIFIED_OF_FAILURE;
-  }
-  
-  public final boolean Q()
-  {
-    return mClientSnapStatus != Snap.ClientSnapStatus.FAILED_AND_NON_RECOVERABLE;
-  }
-  
-  public final long W()
-  {
-    return mSentTimestamp;
-  }
-  
-  public final int a(@cgb ChatConversation paramChatConversation)
-  {
-    ChatFeedItem.FeedIconPriority localFeedIconPriority = ChatFeedItem.FeedIconPriority.MOST_RECENT;
-    if ((O()) && (Q())) {
-      paramChatConversation = ChatFeedItem.FeedIconPriority.FAILED;
+    Iterator localIterator = mGeofilterSwipeMetaData.mData.values().iterator();
+    while (localIterator.hasNext()) {
+      ((nu)localIterator.next()).a();
     }
-    for (;;)
+  }
+  
+  public final boolean d()
+  {
+    return (a(mBaseFilter)) || (a(mStackedFilter));
+  }
+  
+  @chd
+  public final String e()
+  {
+    if (a(mBaseFilter)) {
+      return mBaseFilter.b;
+    }
+    return mStackedFilter.b;
+  }
+  
+  public final void f()
+  {
+    Mediabryo.a(new Bitmap[] { mCompositeImageBitmap });
+    mCompositeImageBitmap = null;
+  }
+  
+  public static abstract class a<T extends a<T>>
+    extends Mediabryo.a<T>
+  {
+    oz mBaseFilter;
+    aqn mCaptionAnalyticData;
+    String mCaptionStyleDescription;
+    public String mCaptionText;
+    Bitmap mCompositeImageBitmap;
+    int mGeofilterImpressions;
+    nt mGeofilterSwipeMetaData;
+    boolean mHasDrawing;
+    oz mStackedFilter;
+    int mSwipeFilterNumDoubleSwipes;
+    int mSwipeFilterNumSingleSwipes;
+    cs mViewTimeStopWatch;
+    
+    public a()
     {
-      return paramChatConversation.ordinal();
-      if (N())
-      {
-        paramChatConversation = ChatFeedItem.FeedIconPriority.SENDING;
+      mClientId = (akr.l() + "~" + UUID.randomUUID().toString()).toUpperCase(Locale.US);
+      mViewTimeStopWatch = new cs();
+    }
+    
+    public final T a(aji paramaji)
+    {
+      mClientId = Mediabryo.a(paramaji);
+      mTime = Mediabryo.b(paramaji);
+      mVideoUri = Mediabryo.c(paramaji);
+      mOverlayBitmap = Mediabryo.d(paramaji);
+      mRawImageBitmap = Mediabryo.e(paramaji);
+      mOverlayPath = Mediabryo.f(paramaji);
+      mPreviewConfiguration = Mediabryo.g(paramaji);
+      mSnapType = Mediabryo.h(paramaji);
+      mIsChatMedia = Mediabryo.i(paramaji);
+      mIsReply = Mediabryo.j(paramaji);
+      mIsFrontFacingSnap = Mediabryo.k(paramaji);
+      mIsFlashOn = Mediabryo.l(paramaji);
+      mIsZipUpload = Mediabryo.m(paramaji);
+      mSnapOrientation = Mediabryo.n(paramaji);
+      mMediaExtras = Mediabryo.o(paramaji);
+      mMediaMailingMetadata = Mediabryo.p(paramaji).a();
+      mTimerValueOrDuration = Mediabryo.q(paramaji);
+      mShouldEnableSmartFilters = Mediabryo.r(paramaji);
+      mShouldEnableVisualFilters = Mediabryo.s(paramaji);
+      mCaptionText = aji.a(paramaji);
+      mHasDrawing = aji.b(paramaji);
+      mSwipeFilterNumSingleSwipes = aji.c(paramaji);
+      mSwipeFilterNumDoubleSwipes = aji.d(paramaji);
+      mGeofilterImpressions = aji.e(paramaji);
+      mGeofilterSwipeMetaData = aji.f(paramaji);
+      mCaptionStyleDescription = aji.g(paramaji);
+      mCaptionAnalyticData = aji.h(paramaji);
+      mCompositeImageBitmap = aji.i(paramaji);
+      mBaseFilter = aji.j(paramaji);
+      mStackedFilter = aji.k(paramaji);
+      mViewTimeStopWatch = aji.l(paramaji);
+      return this;
+    }
+    
+    protected final void a()
+    {
+      super.a();
+      if (mGeofilterSwipeMetaData == null) {
+        mGeofilterSwipeMetaData = new nt();
       }
-      else
-      {
-        paramChatConversation = localFeedIconPriority;
-        if (n())
-        {
-          paramChatConversation = localFeedIconPriority;
-          if (System.currentTimeMillis() - mSentTimestamp < 1000L) {
-            paramChatConversation = ChatFeedItem.FeedIconPriority.RECENTLY_SENT;
-          }
-        }
-      }
     }
-  }
-  
-  public final ChatFeedItem.a a(@cgb View paramView, @cgc ChatConversation paramChatConversation)
-  {
-    if ((n()) && (System.currentTimeMillis() - mSentTimestamp < 1000L))
+    
+    public aji b()
     {
-      long l1 = System.currentTimeMillis();
-      long l2 = mSentTimestamp;
-      paramView.postDelayed(new Runnable()
-      {
-        public final void run()
-        {
-          ban.a().a(new bbk());
-        }
-      }, 1000L - (l1 - l2));
+      return null;
     }
-    return new ChatFeedItem.a(a(false, false));
-  }
-  
-  public final String a()
-  {
-    Snap.ClientSnapStatus localClientSnapStatus = ah();
-    int i;
-    switch (localClientSnapStatus)
-    {
-    default: 
-      i = 2131493519;
-    }
-    for (;;)
-    {
-      return SnapchatApplication.b().getResources().getString(i);
-      i = 2131493163;
-      continue;
-      i = 2131493161;
-      continue;
-      i = 2131493292;
-      continue;
-      i = 2131493402;
-      continue;
-      i = 2131493112;
-      continue;
-      i = 2131493380;
-      continue;
-      i = 2131493367;
-      continue;
-      i = 2131493366;
-      continue;
-      i = 2131493272;
-    }
-  }
-  
-  public final void a(long paramLong)
-  {
-    mSentTimestamp = paramLong;
-  }
-  
-  public final long b(ChatConversation paramChatConversation)
-  {
-    if (q()) {
-      return 0L;
-    }
-    return c(paramChatConversation);
-  }
-  
-  public final void b(long paramLong)
-  {
-    mTimestamp = paramLong;
-  }
-  
-  public final long c(ChatConversation paramChatConversation)
-  {
-    if (i()) {
-      return mTimestamp;
-    }
-    return mSentTimestamp;
-  }
-  
-  public final boolean c()
-  {
-    return (O()) || (ah() == Snap.ClientSnapStatus.PENDING);
-  }
-  
-  public final String d()
-  {
-    return mClientId;
-  }
-  
-  public final void e()
-  {
-    mClientSnapStatus = Snap.ClientSnapStatus.FAILED;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (this == paramObject) {}
-    do
-    {
-      return true;
-      if (!(paramObject instanceof aji)) {
-        return false;
-      }
-      paramObject = (aji)paramObject;
-      if ((!o()) && (!((aji)paramObject).o())) {
-        break;
-      }
-    } while ((mClientId != null) && (mClientId.equals(mClientId)));
-    return false;
-    return aut.a(mId).equals(aut.a(mId));
-  }
-  
-  public final boolean f()
-  {
-    if (mClientSnapStatus == null) {}
-    while ((mClientSnapStatus != Snap.ClientSnapStatus.FAILED) && (mClientSnapStatus != Snap.ClientSnapStatus.FAILED_AND_USER_NOTIFIED_OF_FAILURE)) {
-      return false;
-    }
-    return true;
-  }
-  
-  public final void g()
-  {
-    mClientSnapStatus = Snap.ClientSnapStatus.SENDING;
-  }
-  
-  public final void h()
-  {
-    mClientSnapStatus = Snap.ClientSnapStatus.SENT;
-  }
-  
-  public final int hashCode()
-  {
-    return mClientId.hashCode();
-  }
-  
-  public final boolean i()
-  {
-    switch (mClientSnapStatus)
-    {
-    default: 
-      return false;
-    }
-    return true;
-  }
-  
-  public final String j()
-  {
-    return ajx.l();
-  }
-  
-  public final List<String> k()
-  {
-    ArrayList localArrayList = new ArrayList();
-    localArrayList.add(mRecipient);
-    return localArrayList;
-  }
-  
-  public final long l()
-  {
-    return mTimestamp;
-  }
-  
-  public final boolean m()
-  {
-    return System.currentTimeMillis() - mTimeOfLastSendAttempt > 45000L;
-  }
-  
-  public final void p()
-  {
-    mClientSnapStatus = Snap.ClientSnapStatus.FAILED_AND_NON_RECOVERABLE;
-  }
-  
-  public final boolean q()
-  {
-    return mClientSnapStatus == Snap.ClientSnapStatus.FAILED_AND_NON_RECOVERABLE;
   }
 }
 

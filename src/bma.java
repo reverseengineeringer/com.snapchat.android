@@ -1,204 +1,111 @@
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class bma
 {
-  final String a;
-  public final String b;
-  public final blu c;
-  public final bmb d;
-  final Object e;
-  volatile URL f;
-  private volatile URI g;
-  private volatile blj h;
+  public List<bmc> a = new ArrayList(1);
+  public Thread.UncaughtExceptionHandler b;
   
-  private bma(bma.a parama)
+  static int a(Context paramContext)
   {
-    a = a;
-    b = c;
-    c = d.a();
-    d = e;
-    if (f != null) {}
-    for (Object localObject = f;; localObject = this)
-    {
-      e = localObject;
-      f = b;
-      return;
-    }
-  }
-  
-  public final String a(String paramString)
-  {
-    return c.a(paramString);
-  }
-  
-  public final URL a()
-  {
+    PackageManager localPackageManager = paramContext.getPackageManager();
     try
     {
-      URL localURL = f;
-      if (localURL != null) {
-        return localURL;
-      }
-      localURL = new URL(a);
-      f = localURL;
-      return localURL;
+      int i = getPackageInfogetPackageName0versionCode;
+      return i;
     }
-    catch (MalformedURLException localMalformedURLException)
+    catch (PackageManager.NameNotFoundException paramContext)
     {
-      throw new RuntimeException("Malformed URL: " + a, localMalformedURLException);
+      throw new RuntimeException(paramContext);
     }
   }
   
-  public final URI b()
+  /* Error */
+  @chd
+  static bme a(bmg parambmg, java.io.FileReader paramFileReader)
   {
-    try
-    {
-      URI localURI = g;
-      if (localURI != null) {
-        return localURI;
-      }
-      bmn.a();
-      localURI = bmn.a(a());
-      g = localURI;
-      return localURI;
-    }
-    catch (URISyntaxException localURISyntaxException)
-    {
-      throw new IOException(localURISyntaxException.getMessage());
-    }
+    // Byte code:
+    //   0: aconst_null
+    //   1: astore 4
+    //   3: new 59	java/io/BufferedReader
+    //   6: dup
+    //   7: aload_1
+    //   8: invokespecial 62	java/io/BufferedReader:<init>	(Ljava/io/Reader;)V
+    //   11: astore_1
+    //   12: aload_0
+    //   13: aload_1
+    //   14: invokevirtual 67	bmg:a	(Ljava/io/BufferedReader;)J
+    //   17: lstore_2
+    //   18: lload_2
+    //   19: ldc2_w 68
+    //   22: lcmp
+    //   23: ifne +12 -> 35
+    //   26: aload 4
+    //   28: astore_0
+    //   29: aload_1
+    //   30: invokestatic 74	bmd:a	(Ljava/io/Closeable;)V
+    //   33: aload_0
+    //   34: areturn
+    //   35: aload_1
+    //   36: invokestatic 77	bmg:b	(Ljava/io/BufferedReader;)Ljava/lang/String;
+    //   39: astore 5
+    //   41: aload 4
+    //   43: astore_0
+    //   44: aload 5
+    //   46: invokestatic 83	android/text/TextUtils:isEmpty	(Ljava/lang/CharSequence;)Z
+    //   49: ifne -20 -> 29
+    //   52: aload 4
+    //   54: astore_0
+    //   55: aload 5
+    //   57: ldc 85
+    //   59: invokevirtual 90	java/lang/String:contains	(Ljava/lang/CharSequence;)Z
+    //   62: ifne -33 -> 29
+    //   65: new 92	bme
+    //   68: dup
+    //   69: lload_2
+    //   70: aload 5
+    //   72: invokespecial 95	bme:<init>	(JLjava/lang/String;)V
+    //   75: astore_0
+    //   76: goto -47 -> 29
+    //   79: astore_0
+    //   80: aload_0
+    //   81: invokevirtual 98	java/io/IOException:printStackTrace	()V
+    //   84: aload_1
+    //   85: invokestatic 74	bmd:a	(Ljava/io/Closeable;)V
+    //   88: aconst_null
+    //   89: areturn
+    //   90: astore_0
+    //   91: aload_1
+    //   92: invokestatic 74	bmd:a	(Ljava/io/Closeable;)V
+    //   95: aload_0
+    //   96: athrow
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	97	0	parambmg	bmg
+    //   0	97	1	paramFileReader	java.io.FileReader
+    //   17	53	2	l	long
+    //   1	52	4	localObject	Object
+    //   39	32	5	str	String
+    // Exception table:
+    //   from	to	target	type
+    //   12	18	79	java/io/IOException
+    //   35	41	79	java/io/IOException
+    //   44	52	79	java/io/IOException
+    //   55	76	79	java/io/IOException
+    //   12	18	90	finally
+    //   35	41	90	finally
+    //   44	52	90	finally
+    //   55	76	90	finally
+    //   80	84	90	finally
   }
   
-  public final bma.a c()
+  public final void a(bmc parambmc)
   {
-    return new bma.a(this, (byte)0);
-  }
-  
-  public final blj d()
-  {
-    blj localblj = h;
-    if (localblj != null) {
-      return localblj;
-    }
-    localblj = blj.a(c);
-    h = localblj;
-    return localblj;
-  }
-  
-  public final boolean e()
-  {
-    return a().getProtocol().equals("https");
-  }
-  
-  public final String toString()
-  {
-    StringBuilder localStringBuilder = new StringBuilder("Request{method=").append(b).append(", url=").append(a).append(", tag=");
-    if (e != this) {}
-    for (Object localObject = e;; localObject = null) {
-      return localObject + '}';
-    }
-  }
-  
-  public static final class a
-  {
-    String a;
-    URL b;
-    String c;
-    public blu.a d;
-    bmb e;
-    Object f;
-    
-    public a()
-    {
-      c = "GET";
-      d = new blu.a();
-    }
-    
-    private a(bma parambma)
-    {
-      a = a;
-      b = f;
-      c = b;
-      e = d;
-      f = e;
-      d = c.b();
-    }
-    
-    public final a a(blj paramblj)
-    {
-      paramblj = paramblj.toString();
-      if (paramblj.isEmpty()) {
-        return b("Cache-Control");
-      }
-      return a("Cache-Control", paramblj);
-    }
-    
-    public final a a(blu paramblu)
-    {
-      d = paramblu.b();
-      return this;
-    }
-    
-    public final a a(String paramString)
-    {
-      if (paramString == null) {
-        throw new IllegalArgumentException("url == null");
-      }
-      a = paramString;
-      b = null;
-      return this;
-    }
-    
-    public final a a(String paramString, bmb parambmb)
-    {
-      if ((paramString == null) || (paramString.length() == 0)) {
-        throw new IllegalArgumentException("method == null || method.length() == 0");
-      }
-      if ((parambmb != null) && (!bmx.b(paramString))) {
-        throw new IllegalArgumentException("method " + paramString + " must not have a request body.");
-      }
-      bmb localbmb = parambmb;
-      if (parambmb == null)
-      {
-        localbmb = parambmb;
-        if (bmx.b(paramString)) {
-          localbmb = bmb.a(null, bmp.a);
-        }
-      }
-      c = paramString;
-      e = localbmb;
-      return this;
-    }
-    
-    public final a a(String paramString1, String paramString2)
-    {
-      d.b(paramString1, paramString2);
-      return this;
-    }
-    
-    public final a a(URL paramURL)
-    {
-      b = paramURL;
-      a = paramURL.toString();
-      return this;
-    }
-    
-    public final bma a()
-    {
-      if (a == null) {
-        throw new IllegalStateException("url == null");
-      }
-      return new bma(this, (byte)0);
-    }
-    
-    public final a b(String paramString)
-    {
-      d.b(paramString);
-      return this;
-    }
+    a.add(parambmc);
   }
 }
 

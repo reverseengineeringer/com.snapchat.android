@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import aol;
+import aph;
 import java.util.Set;
 
 final class ChangePasswordFragment$8
@@ -17,13 +17,13 @@ final class ChangePasswordFragment$8
   public final void onClick(View paramView)
   {
     paramView = ChangePasswordFragment.a(a);
-    aol localaol = ChangePasswordFragment.d(a);
+    aph localaph = ChangePasswordFragment.d(a);
     FragmentActivity localFragmentActivity = a.getActivity();
     String str = a.a.getText().toString();
-    Intent localIntent = localaol.b(localFragmentActivity);
+    Intent localIntent = localaph.b(localFragmentActivity);
     localIntent.putExtra("op_code", 1017);
     localIntent.putExtra("new_password", str);
-    paramView.add(Integer.valueOf(localaol.a(localFragmentActivity, localIntent)));
+    paramView.add(Integer.valueOf(localaph.a(localFragmentActivity, localIntent)));
     a.i.setClickable(false);
     a.i.setText("");
     a.j.setVisibility(0);

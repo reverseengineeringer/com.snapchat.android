@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.settings;
 import android.content.Context;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import azm;
+import bal;
 import com.snapchat.android.util.AlertDialogUtils;
 
 final class DeveloperSettingsFragment$17
@@ -14,10 +14,10 @@ final class DeveloperSettingsFragment$17
   public final void onCheckedChanged(CompoundButton paramCompoundButton, boolean paramBoolean)
   {
     DeveloperSettingsFragment.c(b);
-    if (azm.d() != paramBoolean)
+    if (bal.d() != paramBoolean)
     {
       DeveloperSettingsFragment.c(b);
-      azm.b(paramBoolean);
+      bal.b(paramBoolean);
       AlertDialogUtils.c(a, "You will need to refresh your Stories page to see an update since you have changed your horizontal scroll setting! Thanks for testing TTV/HS :D", "OK");
     }
   }

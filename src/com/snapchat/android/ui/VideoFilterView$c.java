@@ -2,7 +2,6 @@ package com.snapchat.android.ui;
 
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
-import com.snapchat.android.Timber;
 import com.snapchat.videotranscoder.cts.InputSurface;
 import com.snapchat.videotranscoder.task.SetupException;
 
@@ -25,7 +24,7 @@ final class VideoFilterView$c
     {
       do
       {
-        Timber.f("VideoFilterView", "Failed to open video: " + paramSurfaceHolder.toString(), new Object[0]);
+        new StringBuilder("Failed to open video: ").append(paramSurfaceHolder.toString());
         a.a();
         VideoFilterView.d(a);
       } while (VideoFilterView.e(a) == null);
@@ -35,7 +34,6 @@ final class VideoFilterView$c
   
   public final void surfaceDestroyed(SurfaceHolder paramSurfaceHolder)
   {
-    Timber.c("VideoFilterView", "Surface destroyed!", new Object[0]);
     VideoFilterView.d(a);
   }
 }

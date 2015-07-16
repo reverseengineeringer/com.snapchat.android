@@ -2,55 +2,64 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/hardware/Camera$AutoFocusCallback;
 
-# static fields
-.field private static final a:Lxb;
+
+# instance fields
+.field private final a:Landroid/os/Handler;
+
+.field private final b:Lwy$b;
+
+.field private final c:Lwy$c;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 12
-    new-instance v0, Lxb;
-
-    invoke-direct {v0}, Lxb;-><init>()V
-
-    sput-object v0, Lxb;->a:Lxb;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Landroid/os/Handler;Lwy$b;Lwy$c;)V
     .locals 0
 
     .prologue
-    .line 14
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
+    .line 26
+    iput-object p1, p0, Lxb;->a:Landroid/os/Handler;
+
+    .line 27
+    iput-object p3, p0, Lxb;->c:Lwy$c;
+
+    .line 28
+    iput-object p2, p0, Lxb;->b:Lwy$b;
+
+    .line 29
     return-void
 .end method
 
-.method public static a(Laue;)Lxa;
+.method static synthetic a(Lxb;)Lwy$c;
     .locals 1
 
     .prologue
-    .line 23
-    new-instance v0, Lxa;
-
-    invoke-direct {v0, p0}, Lxa;-><init>(Laue;)V
+    .line 13
+    iget-object v0, p0, Lxb;->c:Lwy$c;
 
     return-object v0
 .end method
 
-.method public static a()Lxb;
-    .locals 1
+
+# virtual methods
+.method public final onAutoFocus(ZLandroid/hardware/Camera;)V
+    .locals 2
 
     .prologue
-    .line 19
-    sget-object v0, Lxb;->a:Lxb;
+    .line 33
+    iget-object v0, p0, Lxb;->a:Landroid/os/Handler;
 
-    return-object v0
+    new-instance v1, Lxb$1;
+
+    invoke-direct {v1, p0, p1}, Lxb$1;-><init>(Lxb;Z)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 39
+    return-void
 .end method

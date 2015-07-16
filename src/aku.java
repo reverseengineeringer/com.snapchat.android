@@ -1,141 +1,215 @@
-import com.snapchat.android.model.StoryGroup;
-import com.snapchat.android.model.StorySnapLogbook;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import com.snapchat.android.model.MediaMailingMetadata;
+import com.snapchat.android.model.MediaMailingMetadata.PostStatus;
+import com.snapchat.android.model.MediaMailingMetadata.SendStatus;
+import com.snapchat.android.model.MediaMailingMetadata.UploadStatus;
+import com.snapchat.android.model.Mediabryo;
+import com.snapchat.videotranscoder.task.Task.Status;
+import com.snapchat.videotranscoder.utils.ImageTransformationMatrix;
+import com.snapchat.videotranscoder.utils.ImageTransformationMatrixFactory;
+import com.snapchat.videotranscoder.video.FragmentShader.Filter;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.util.zip.ZipOutputStream;
+import org.apache.commons.io.FileUtils;
 
-@Deprecated
-public class aku
+public final class aku
+  extends aji
 {
-  @cgc
-  public List<bhu> added_friends;
-  public long added_friends_timestamp;
-  @cgc
-  public String allowed_to_use_cash;
-  @cgc
-  public String auth_token;
-  @cgc
-  public List<String> bests;
-  @cgc
-  public String birthday;
-  @cgc
-  public List<String> broken_cameras;
-  @cgc
-  public akr captcha;
-  @cgc
-  public String conv_id;
-  @cgc
-  public bhd conversation;
-  @cgc
-  public List<bhd> conversations;
-  @cgc
-  public List<bhd> conversations_response;
-  @cgc
-  public bho conversations_response_info;
-  public long current_timestamp;
-  @cgc
-  public String device_token;
-  @cgc
-  public bhr discover;
-  @cgc
-  public String email;
-  @cgc
-  public boolean enable_save_story_to_gallery;
-  @cgc
-  public boolean enable_video_transcoding_android;
-  @cgc
-  public bht feature_settings;
-  @cgc
-  public List<bhv> friend_stories;
-  @cgc
-  public List<bhu> friends;
-  @cgc
-  public bhx friends_response;
-  @cgc
-  public akt gae_proxy_update;
-  @cgc
-  public bix gateway_auth_token;
-  @cgc
-  public String gateway_server;
-  @cgc
-  public String get_channels;
-  @cgc
-  public List<StoryGroup> group_stories;
-  @cgc
-  public String id;
-  @cgc
-  public bki identity_check_response;
-  public boolean is_two_fa_enabled;
-  @cgc
-  public oq.b json;
-  public long last_address_book_updated_date;
-  public long last_replayed_snap_timestamp;
-  public long last_updated;
-  public boolean logged;
-  @cgc
-  public String media_id;
-  @cgc
-  public String message;
-  @cgc
-  public String message_format;
-  @cgc
-  public bil messaging_gateway_info;
-  @cgc
-  public String mobile;
-  @cgc
-  public String mobile_verification_key;
-  @cgc
-  public List<StorySnapLogbook> my_stories;
-  public int number_of_best_friends;
-  @cgc
-  public bhu object;
-  public boolean raw_thumbnail_upload_enabled;
-  public int received;
-  @cgc
-  public List<String> recents;
-  @cgc
-  public ArrayList<afl> result;
-  @cgc
-  public List<bhu> results;
-  public int score;
-  public boolean searchable_by_phone_number;
-  public int sent;
-  @cgc
-  public biw server_info;
-  public boolean should_call_to_verify_phone_number;
-  public boolean should_text_to_verify_phone_number;
-  public int snap_p;
-  @cgc
-  public akv snap_response;
-  @cgc
-  public String snapchat_phone_number;
-  public List<bhy> snaps;
-  public int status;
-  @cgc
-  public bjf stories_response;
-  @cgc
-  public String story_privacy;
-  @cgc
-  public akv story_response;
-  public Map<String, String> targeting;
-  public int two_fa_verified_device_num;
-  @cgc
-  public bjp updates_response;
-  @cgc
-  public String url;
-  @cgc
-  public String username;
-  @cgc
-  public bkr verification_needed;
-  @cgc
-  public boolean video_filters_enabled;
+  private static final int MAX_UPLOAD_MEDIA_SIZE = 5242880;
+  private static final String TAG = "VideoSnapbryo";
+  public Bitmap mFirstFrameBitmap;
+  public FragmentShader.Filter mShaderFilter;
+  private final aki mSnapWomb;
+  private final oh mSnapbryoAnalytics;
+  public xp mTranscodingState;
   
-  public String toString()
+  protected aku(aku.a parama)
   {
-    StringBuilder localStringBuilder = new StringBuilder("ServerResponse{logged=").append(logged).append(", username='").append(username).append('\'').append(", auth_token='").append(auth_token).append('\'').append(", device_token='").append(device_token).append('\'').append(", email='").append(email).append('\'').append(", mobile='").append(mobile).append('\'').append(", mobile_verification_key='").append(mobile_verification_key).append('\'').append(", enable_video_transcoding_android='").append(enable_video_transcoding_android).append('\'').append(", enable_save_story_to_gallery='").append(enable_save_story_to_gallery).append('\'').append(", video_filters_enabled='").append(video_filters_enabled).append('\'').append(", birthday='").append(birthday).append('\'').append(", snap_p=").append(snap_p).append(", story_privacy='").append(story_privacy).append('\'').append(", sent=").append(sent).append(", received=").append(received).append(", score=").append(score).append(", snaps=").append(snaps).append(", friends=").append(friends).append(", added_friends=").append(added_friends).append(", bests=").append(bests).append(", recents=").append(recents).append(", my_stories=").append(my_stories).append(", friend_stories=").append(friend_stories).append(", last_updated=").append(last_updated).append(", added_friends_timestamp=").append(added_friends_timestamp).append(", current_timestamp=").append(current_timestamp).append(", last_replayed_snap_timestamp=").append(last_replayed_snap_timestamp).append(", message='").append(message).append('\'').append(", status=").append(status).append(", results=").append(results).append(", object=").append(object).append(", broken_cameras=").append(broken_cameras).append(", snapchat_phone_number='").append(snapchat_phone_number).append('\'').append(", story_response=").append(story_response).append(", snap_response=").append(snap_response).append(", json=").append(json).append(", searchable_by_phone_number=").append(searchable_by_phone_number).append(", should_call_to_verify_phone_number=").append(should_call_to_verify_phone_number).append(", should_text_to_verify_phone_number=").append(should_text_to_verify_phone_number).append(", captcha=").append(captcha).append(", updates_response=").append(updates_response).append(", friends_response=").append(friends_response).append(", stories_response=").append(stories_response).append(", conversations_response=").append(conversations_response).append(", conversations_response_info=").append(conversations_response_info).append(", conversations=").append(conversations).append(", conv_id='").append(conv_id).append('\'').append(", messaging_gateway_info=").append(messaging_gateway_info).append(", id='").append(id).append('\'').append(", url='").append(url).append('\'').append(", media_id='").append(media_id).append('\'').append(", gateway_server='").append(gateway_server).append('\'').append(", gateway_auth_token=").append(gateway_auth_token).append(", conversation=").append(conversation).append(", feature_settings=").append(feature_settings).append(", number_of_best_friends=").append(number_of_best_friends).append(", server_info=").append(server_info).append(", last_address_book_updated_date=").append(last_address_book_updated_date).append(", identity_check_response=").append(identity_check_response).append(", targeting=");
-    if (targeting == null) {}
-    for (String str = null;; str = targeting.toString()) {
-      return str + ", two_fa_verified_device_num" + two_fa_verified_device_num + ", is_two_fa_enabled" + is_two_fa_enabled + ", raw_thumbnail_upload_enabled=" + raw_thumbnail_upload_enabled + '}';
+    super(parama);
+    mTranscodingState = mTranscodingState;
+    mShaderFilter = mShaderFilter;
+    mSnapWomb = mSnapWomb;
+    mSnapbryoAnalytics = mSnapbryoAnalytics;
+    mFirstFrameBitmap = mFirstFrameBitmap;
+  }
+  
+  private aku r()
+  {
+    return new aku.a().a(this).c();
+  }
+  
+  public final void a(@chd Bitmap paramBitmap)
+  {
+    super.a(paramBitmap);
+    if (mCompositeImageBitmap != null)
+    {
+      mIsZipUpload = true;
+      return;
+    }
+    mIsZipUpload = false;
+  }
+  
+  public final void a(Task.Status paramStatus)
+  {
+    mTranscodingState.a(paramStatus);
+  }
+  
+  public final void b(Task.Status paramStatus)
+  {
+    MediaMailingMetadata localMediaMailingMetadata = mMediaMailingMetadata;
+    mRetried = true;
+    mSendStatus = MediaMailingMetadata.SendStatus.FAILED;
+    localMediaMailingMetadata.a(MediaMailingMetadata.PostStatus.FAILED);
+    new StringBuilder("Transcoding failed with: ").append(paramStatus).append(" failing upload");
+    mSnapbryoAnalytics.b();
+    mSnapWomb.a(this, MediaMailingMetadata.UploadStatus.FAILED);
+  }
+  
+  @chd
+  public final byte[] g()
+  {
+    if (mVideoUri == null)
+    {
+      oh.a(this, "Null Video Uri");
+      return null;
+    }
+    Object localObject = n();
+    if (localObject == null)
+    {
+      oh.a(this, "Null Video File");
+      return null;
+    }
+    Bitmap localBitmap = mCompositeImageBitmap;
+    if (localBitmap != null)
+    {
+      try
+      {
+        String str = axr.a("Snapchat-", ".zip.nomedia");
+        awg localawg = new awg();
+        localawg.a("media~" + str, (String)localObject);
+        localawg.a("overlay~" + str, avp.a(localBitmap));
+        out.close();
+        localObject = mByteArrayOutputStream.toByteArray();
+        if (localObject == null)
+        {
+          oh.a(this, "Null Zipped Video");
+          return null;
+        }
+      }
+      catch (IOException localIOException1)
+      {
+        oh.a(this, localIOException1.getMessage());
+        return null;
+      }
+      if (localIOException1.length >= 5242880)
+      {
+        oh.a(this, String.format("Large Zipped Video (File Size: %s)", new Object[] { Integer.valueOf(localIOException1.length) }));
+        return null;
+      }
+      return localIOException1;
+    }
+    try
+    {
+      byte[] arrayOfByte = FileUtils.readFileToByteArray(new File(localIOException1));
+      if (arrayOfByte.length >= 5242880)
+      {
+        oh.a(this, String.format("Large UnZipped Video (File Size: %s)", new Object[] { Integer.valueOf(arrayOfByte.length) }));
+        return null;
+      }
+    }
+    catch (IOException localIOException2)
+    {
+      oh.a(this, localIOException2.getMessage());
+      return null;
+    }
+    return localIOException2;
+  }
+  
+  public final int h()
+  {
+    if (m()) {
+      return 2;
+    }
+    return 1;
+  }
+  
+  public final void l()
+  {
+    super.l();
+    a(new Bitmap[] { mFirstFrameBitmap });
+    mFirstFrameBitmap = null;
+  }
+  
+  public final String n()
+  {
+    if (mTranscodingState.c() == Task.Status.FINISHED) {
+      return mTranscodingState.b();
+    }
+    if (mVideoUri == null) {
+      return null;
+    }
+    return mVideoUri.getPath();
+  }
+  
+  public final boolean o()
+  {
+    return p() > 1730151L;
+  }
+  
+  public final long p()
+  {
+    if (mVideoUri != null) {
+      return axr.a(mVideoUri.getPath());
+    }
+    return 0L;
+  }
+  
+  public final float[] q()
+  {
+    ImageTransformationMatrix localImageTransformationMatrix = new ImageTransformationMatrixFactory().getTransformationMatrix(mIsFrontFacingSnap);
+    switch (mSnapOrientation)
+    {
+    default: 
+      return localImageTransformationMatrix.rotateLeft();
+    case 0: 
+      return localImageTransformationMatrix.adjustForTranscoderTransformation();
+    case 90: 
+      return localImageTransformationMatrix.rotateRight();
+    }
+    return localImageTransformationMatrix.rotate180Degrees();
+  }
+  
+  public static final class a
+    extends aji.a<a>
+  {
+    public Bitmap mFirstFrameBitmap;
+    FragmentShader.Filter mShaderFilter = FragmentShader.Filter.NORMAL;
+    aki mSnapWomb;
+    oh mSnapbryoAnalytics;
+    xp mTranscodingState = new xp();
+    
+    public final a a(aku paramaku)
+    {
+      super.a(paramaku);
+      mTranscodingState = aku.a(paramaku);
+      mShaderFilter = aku.b(paramaku);
+      mFirstFrameBitmap = aku.c(paramaku);
+      return this;
+    }
+    
+    public final aku c()
+    {
+      super.a();
+      if (mSnapbryoAnalytics == null) {
+        mSnapbryoAnalytics = new oh();
+      }
+      if (mSnapWomb == null) {
+        mSnapWomb = aki.a();
+      }
+      return new aku(this);
     }
   }
 }

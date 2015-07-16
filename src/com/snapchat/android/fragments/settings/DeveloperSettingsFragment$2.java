@@ -3,8 +3,8 @@ package com.snapchat.android.fragments.settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import auc;
-import bgp;
+import ava;
+import bhp;
 import com.snapchat.android.database.SharedPreferenceKey;
 
 final class DeveloperSettingsFragment$2
@@ -14,11 +14,11 @@ final class DeveloperSettingsFragment$2
   
   public final void onItemSelected(AdapterView<?> paramAdapterView, View paramView, final int paramInt, long paramLong)
   {
-    bgp.b(new Runnable()
+    bhp.b(new Runnable()
     {
       public final void run()
       {
-        auc.a(SharedPreferenceKey.REGISTRATION_CONTACTBOOK_EXPERIMENT.getKey(), paramInt);
+        ava.a(SharedPreferenceKey.REGISTRATION_CONTACTBOOK_EXPERIMENT.getKey(), paramInt);
       }
     });
   }

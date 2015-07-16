@@ -1,49 +1,66 @@
-.class public final Lawu;
-.super Lawp;
+.class public Lawu;
+.super Landroid/os/AsyncTask;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/os/AsyncTask",
+        "<",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "Landroid/graphics/Bitmap;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final mConfig:Landroid/graphics/Bitmap$Config;
+
+.field private final mHeight:I
+
+.field private final mWidth:I
+
+
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/util/cache/CacheType;I)V
-    .locals 2
+.method public constructor <init>(IILandroid/graphics/Bitmap$Config;)V
+    .locals 0
 
     .prologue
     .line 16
-    const-wide v0, 0x7fffffffffffffffL
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    invoke-direct {p0, p1, v0, v1}, Lawp;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+    .line 17
+    iput p1, p0, Lawu;->mWidth:I
 
     .line 18
-    if-gtz p2, :cond_0
+    iput p2, p0, Lawu;->mHeight:I
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
+    .line 19
+    iput-object p3, p0, Lawu;->mConfig:Landroid/graphics/Bitmap$Config;
 
     .line 20
-    :cond_0
-    new-instance v0, Lawu$1;
-
-    invoke-direct {v0, p0, p2, p2}, Lawu$1;-><init>(Lawu;II)V
-
-    invoke-static {v0}, Ljava/util/Collections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lawu;->mKeyToUri:Ljava/util/Map;
-
-    .line 43
     return-void
 .end method
 
 
 # virtual methods
-.method public final e()V
-    .locals 0
+.method protected synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     .prologue
-    .line 48
-    return-void
+    .line 11
+    iget v0, p0, Lawu;->mWidth:I
+
+    iget v1, p0, Lawu;->mHeight:I
+
+    iget-object v2, p0, Lawu;->mConfig:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v0, v1, v2}, Lavp;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    return-object v0
 .end method

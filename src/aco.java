@@ -1,69 +1,51 @@
-import android.os.Handler;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
-import com.snapchat.android.discover.model.DSnapPage;
-import com.snapchat.android.discover.model.MediaState;
-import java.util.Map;
-import java.util.Timer;
-import java.util.concurrent.ConcurrentHashMap;
+import com.google.gson.annotations.SerializedName;
 
-public final class aco
-  implements mm.a<DSnapPage>
+public class aco
 {
-  private final adj a;
-  private final add b;
-  private final Map<String, ack> c = new ConcurrentHashMap();
-  private final Object d = new Object();
-  
-  public aco()
-  {
-    this(adj.a(), add.a());
-  }
-  
-  private aco(adj paramadj, add paramadd)
-  {
-    b = paramadd;
-    a = paramadj;
-  }
-  
-  private void a(DSnapPage paramDSnapPage, MediaState paramMediaState)
-  {
-    adj localadj = a;
-    g.postAtFrontOfQueue(new adj.8(localadj, paramDSnapPage, paramMediaState));
-  }
-  
-  @avl
-  public final boolean a(DSnapPage paramDSnapPage)
-  {
-    synchronized (d)
-    {
-      if (c.containsKey(a))
-      {
-        Timber.e("DSnapAdResolver", "DISCOVER-MEDIA: Skipping resolve for ad %s since there is a pending request for it.", new Object[] { paramDSnapPage });
-        return false;
-      }
-      Timber.c("DSnapAdResolver", "DISCOVER-MEDIA: Requesting resolve for ad %s", new Object[] { paramDSnapPage });
-      ack localack = new ack(paramDSnapPage, this);
-      c.put(a, localack);
-      b.b(paramDSnapPage, MediaState.RESOLVING_AD);
-      paramDSnapPage = new mp.a();
-      mAdType = mAdContainer).k.intValue();
-      mChannelName = mAdContainer).h;
-      mEditionName = mAdContainer).g;
-      mPosition = mAdContainer).e;
-      mAdUnitId = mAdContainer).n;
-      mTargetingParams = ((DSnapPage)mAdContainer).h();
-      paramDSnapPage = paramDSnapPage.a();
-      mMetric = EasyMetric.EasyMetricFactory.a("AD_RESOLVE_TIME");
-      mMetric.a("type", localack.a());
-      mMetric.a("reachability", mNetworkStatusManager.f());
-      mMetric.b();
-      mAdManager.a(paramDSnapPage, localack);
-      mTimeoutTimer.schedule(mTimeoutRunnable, 10000L);
-      return true;
-    }
-  }
+  @SerializedName("type")
+  public int a;
+  @SerializedName("publisher_name")
+  public String b;
+  @SerializedName("publisher_formal_name")
+  public String c;
+  @SerializedName("publisher_international_name")
+  public String d;
+  @SerializedName("edition_id")
+  public String e;
+  @SerializedName("ds_id")
+  public String f;
+  @SerializedName("ad_id")
+  public String g;
+  @SerializedName("media_path")
+  public String h;
+  @SerializedName("overlay_path")
+  public String i;
+  @SerializedName("thumbnail_path")
+  public String j;
+  @SerializedName("x")
+  public float k;
+  @SerializedName("y")
+  public float l;
+  @SerializedName("width")
+  public float m;
+  @SerializedName("height")
+  public float n;
+  @SerializedName("video_width")
+  public float o;
+  @SerializedName("video_height")
+  public float p;
+  @SerializedName("link_to_longform")
+  public boolean q;
+  @SerializedName("caption")
+  public int r;
+  @SerializedName("drawing")
+  public int s;
+  @SerializedName("filter_info")
+  public String t;
+  @SerializedName("filter_visual")
+  public String u;
+  @SerializedName("version")
+  public int v;
 }
 
 /* Location:

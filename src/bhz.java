@@ -1,25 +1,16 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bhz
 {
-  @SerializedName("coordinates")
-  protected List<bhp> coordinates;
-  @SerializedName("id")
-  protected String id;
-  
-  public final String a()
-  {
-    return id;
-  }
-  
-  public final List<bhp> b()
-  {
-    return coordinates;
-  }
+  @SerializedName("orientation")
+  protected Long orientation = Long.valueOf(0L);
+  @SerializedName("position")
+  protected Double position;
+  @SerializedName("text")
+  protected String text;
   
   public final boolean equals(Object paramObject)
   {
@@ -30,12 +21,12 @@ public final class bhz
       return false;
     }
     paramObject = (bhz)paramObject;
-    return new EqualsBuilder().append(id, id).append(coordinates, coordinates).isEquals();
+    return new EqualsBuilder().append(text, text).append(orientation, orientation).append(position, position).isEquals();
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(id).append(coordinates).toHashCode();
+    return new HashCodeBuilder().append(text).append(orientation).append(position).toHashCode();
   }
   
   public final String toString()

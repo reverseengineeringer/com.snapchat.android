@@ -19,23 +19,23 @@
     .end annotation
 .end field
 
-.field public mAnrReporter:Lbac;
+.field public mAnrReporter:Lbbc;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field private mCrashManager:Lazw;
+.field private mCrashManager:Lbav;
 
-.field public mCrashSampler:Lazi;
+.field public mCrashSampler:Lbah;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
 .field private mEventEngine:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
 
-.field public mShakeReporter:Lazv;
+.field public mShakeReporter:Lbau;
 
-.field protected mUser:Lajv;
+.field protected mUser:Lakp;
 
 .field protected mWaitingForActivityResult:Z
     .annotation build Lcf;
@@ -56,21 +56,21 @@
     invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
 
     .line 50
-    new-instance v0, Lazw;
+    new-instance v0, Lbav;
 
-    invoke-direct {v0}, Lazw;-><init>()V
+    invoke-direct {v0}, Lbav;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashManager:Lazw;
+    iput-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashManager:Lbav;
 
     .line 52
     iput-boolean v1, p0, Lcom/snapchat/android/SnapchatActivity;->performPostponedTasksFromOnResume:Z
 
     .line 54
-    new-instance v0, Lazv;
+    new-instance v0, Lbau;
 
-    invoke-direct {v0}, Lazv;-><init>()V
+    invoke-direct {v0}, Lbau;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lazv;
+    iput-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lbau;
 
     .line 56
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a()Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
@@ -86,7 +86,7 @@
 .end method
 
 .method private a(Landroid/content/Intent;)V
-    .locals 5
+    .locals 4
 
     .prologue
     .line 239
@@ -109,37 +109,23 @@
     move-result-object v1
 
     .line 242
-    const-string v2, "SnapchatActivity"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v3, "logTransition "
 
-    const-string v4, "logTransition "
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    const-string v3, " -> "
 
-    const-string v4, " -> "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 243
     invoke-static {v0, v1}, Lcom/snapchat/android/analytics/AnalyticsEvents;->c(Ljava/lang/String;Ljava/lang/String;)V
@@ -161,7 +147,7 @@
     if-eqz v0, :cond_0
 
     .line 268
-    invoke-static {}, Lazk;->a()Ljava/lang/String;
+    invoke-static {}, Lbaj;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -187,32 +173,18 @@
 
 
 # virtual methods
-.method protected a(Lajv;)V
-    .locals 4
+.method protected a(Lakp;)V
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
-
     .line 221
-    const-string v0, "SnapchatActivity"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "onUserLoaded "
 
-    const-string v2, "onUserLoaded "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 224
     iget-boolean v0, p0, Lcom/snapchat/android/SnapchatActivity;->performPostponedTasksFromOnResume:Z
@@ -225,17 +197,19 @@
     invoke-virtual {v0, p0}, Lcom/snapchat/android/analytics/framework/AnalyticsPlatformRegistry;->a(Landroid/app/Activity;)V
 
     .line 226
-    iput-boolean v3, p0, Lcom/snapchat/android/SnapchatActivity;->performPostponedTasksFromOnResume:Z
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/snapchat/android/SnapchatActivity;->performPostponedTasksFromOnResume:Z
 
     .line 228
     :cond_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lber;
+    new-instance v1, Lbfq;
 
-    invoke-direct {v1, p1}, Lber;-><init>(Lajv;)V
+    invoke-direct {v1, p1}, Lbfq;-><init>(Lakp;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -256,9 +230,9 @@
     if-ne v0, p1, :cond_0
 
     .line 192
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lazv;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lbau;
 
-    invoke-virtual {v0}, Lazv;->b()V
+    invoke-virtual {v0}, Lbau;->b()V
 
     .line 198
     :cond_0
@@ -269,6 +243,18 @@
     .locals 4
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/SnapchatActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/SnapchatActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 79
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
@@ -279,11 +265,11 @@
 
     check-cast v0, Lcom/snapchat/android/SnapchatApplication;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/SnapchatActivity;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/SnapchatActivity;)V
 
     .line 85
     if-eqz p1, :cond_0
@@ -299,18 +285,18 @@
 
     .line 90
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashManager:Lazw;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashManager:Lbav;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lazw;->mOnCreateMillis:J
+    iput-wide v2, v0, Lbav;->mOnCreateMillis:J
 
     .line 92
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashSampler:Lazi;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashSampler:Lbah;
 
-    invoke-virtual {v0}, Lazi;->b()Z
+    invoke-virtual {v0}, Lbah;->b()Z
 
     move-result v0
 
@@ -387,18 +373,18 @@
     if-eqz v0, :cond_3
 
     .line 112
-    new-instance v0, Lazs;
+    new-instance v0, Lbar;
 
-    invoke-direct {v0}, Lazs;-><init>()V
+    invoke-direct {v0}, Lbar;-><init>()V
 
     .line 113
-    sget-object v1, Lauh;->SERIAL_EXECUTOR_FOR_DEBUGGING:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->SERIAL_EXECUTOR_FOR_DEBUGGING:Ljava/util/concurrent/ExecutorService;
 
-    new-instance v2, Lazs$3;
+    new-instance v2, Lbar$3;
 
-    invoke-direct {v2, v0}, Lazs$3;-><init>(Lazs;)V
+    invoke-direct {v2, v0}, Lbar$3;-><init>(Lbar;)V
 
-    invoke-static {v1, v2}, Lbgp;->a(Ljava/util/concurrent/ExecutorService;Ljava/lang/Runnable;)V
+    invoke-static {v1, v2}, Lbhp;->a(Ljava/util/concurrent/ExecutorService;Ljava/lang/Runnable;)V
 
     .line 116
     :cond_3
@@ -464,9 +450,9 @@
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->c()V
 
     .line 159
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashSampler:Lazi;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashSampler:Lbah;
 
-    invoke-virtual {v0}, Lazi;->b()Z
+    invoke-virtual {v0}, Lbah;->b()Z
 
     move-result v0
 
@@ -479,7 +465,7 @@
 
     if-eqz p0, :cond_0
 
-    invoke-static {p0}, Lbvj;->a(Landroid/content/Context;)Z
+    invoke-static {p0}, Lbwk;->a(Landroid/content/Context;)Z
 
     move-result v2
 
@@ -521,7 +507,7 @@
 
     invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v6, Lbuz;->b:Ljava/lang/String;
+    sget-object v6, Lbwa;->b:Ljava/lang/String;
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -551,7 +537,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v4, Lbuz;->b:Ljava/lang/String;
+    sget-object v4, Lbwa;->b:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -565,7 +551,7 @@
 
     invoke-interface {v2, v3, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    invoke-static {v2}, Lbwi;->a(Landroid/content/SharedPreferences$Editor;)V
+    invoke-static {v2}, Lbxj;->a(Landroid/content/SharedPreferences$Editor;)V
 
     .line 162
     :cond_0
@@ -580,27 +566,27 @@
     invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onResume()V
 
     .line 145
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashManager:Lazw;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashManager:Lbav;
 
-    iget v1, v0, Lazw;->mOnResumeCycles:I
+    iget v1, v0, Lbav;->mOnResumeCycles:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, v0, Lazw;->mOnResumeCycles:I
+    iput v1, v0, Lbav;->mOnResumeCycles:I
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lazw;->mOnResumeMillis:J
+    iput-wide v2, v0, Lbav;->mOnResumeMillis:J
 
     .line 147
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->b()V
 
     .line 148
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashSampler:Lazi;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashSampler:Lbah;
 
-    invoke-virtual {v0}, Lazi;->b()Z
+    invoke-virtual {v0}, Lbah;->b()Z
 
     move-result v0
 
@@ -609,9 +595,9 @@
     .line 149
     const-string v0, "c06b8797877eb662616000c11de0d338"
 
-    iget-object v1, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashManager:Lazw;
+    iget-object v1, p0, Lcom/snapchat/android/SnapchatActivity;->mCrashManager:Lbav;
 
-    invoke-static {p0, v0, v1}, Lbva;->a(Landroid/content/Context;Ljava/lang/String;Lbvb;)V
+    invoke-static {p0, v0, v1}, Lbwb;->a(Landroid/content/Context;Ljava/lang/String;Lbwc;)V
 
     .line 150
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -652,7 +638,7 @@
 
     invoke-interface {v2, v3, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    invoke-static {v2}, Lbwi;->a(Landroid/content/SharedPreferences$Editor;)V
+    invoke-static {v2}, Lbxj;->a(Landroid/content/SharedPreferences$Editor;)V
 
     .line 152
     :cond_0
@@ -699,7 +685,7 @@
     iput-boolean v0, p0, Lcom/snapchat/android/SnapchatActivity;->mWaitingForActivityResult:Z
 
     .line 128
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mUser:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mUser:Lakp;
 
     if-nez v0, :cond_1
 
@@ -715,9 +701,9 @@
     if-eqz v0, :cond_0
 
     .line 135
-    iget-object v1, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lazv;
+    iget-object v1, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lbau;
 
-    iput-object p0, v1, Lazv;->mActivity:Landroid/app/Activity;
+    iput-object p0, v1, Lbau;->mActivity:Landroid/app/Activity;
 
     const-string v0, "sensor"
 
@@ -727,26 +713,26 @@
 
     check-cast v0, Landroid/hardware/SensorManager;
 
-    iput-object v0, v1, Lazv;->mSensorManager:Landroid/hardware/SensorManager;
+    iput-object v0, v1, Lbau;->mSensorManager:Landroid/hardware/SensorManager;
 
-    iput-boolean v3, v1, Lazv;->mCanSendReports:Z
+    iput-boolean v3, v1, Lbau;->mCanSendReports:Z
 
-    new-instance v0, Lazg;
+    new-instance v0, Lbaf;
 
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->a()Lcom/snapchat/android/util/debug/ReleaseManager;
 
     move-result-object v2
 
-    invoke-direct {v0, v2}, Lazg;-><init>(Lcom/snapchat/android/util/debug/ReleaseManager;)V
+    invoke-direct {v0, v2}, Lbaf;-><init>(Lcom/snapchat/android/util/debug/ReleaseManager;)V
 
-    iput-object v0, v1, Lazv;->mBugReporter:Lazv$a;
+    iput-object v0, v1, Lbau;->mBugReporter:Lbau$a;
 
     .line 136
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lazv;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lbau;
 
-    iget-object v1, v0, Lazv;->mSensorManager:Landroid/hardware/SensorManager;
+    iget-object v1, v0, Lbau;->mSensorManager:Landroid/hardware/SensorManager;
 
-    iget-object v2, v0, Lazv;->mSensorManager:Landroid/hardware/SensorManager;
+    iget-object v2, v0, Lbau;->mSensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v2, v3}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
@@ -756,11 +742,11 @@
 
     .line 139
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mAnrReporter:Lbac;
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mAnrReporter:Lbbc;
 
-    iget-object v0, v0, Lbac;->mAnrDetector:Lbkz;
+    iget-object v0, v0, Lbbc;->mAnrDetector:Lbma;
 
-    iget-object v1, v0, Lbkz;->a:Ljava/util/List;
+    iget-object v1, v0, Lbma;->a:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
@@ -786,9 +772,9 @@
 
     .line 139
     :cond_2
-    new-instance v1, Lbkz$1;
+    new-instance v1, Lbma$1;
 
-    invoke-direct {v1, v0, p0}, Lbkz$1;-><init>(Lbkz;Landroid/content/Context;)V
+    invoke-direct {v1, v0, p0}, Lbma$1;-><init>(Lbma;Landroid/content/Context;)V
 
     sget-object v0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
@@ -799,10 +785,10 @@
 .end method
 
 .method protected onStop()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 166
     invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onStop()V
@@ -810,48 +796,12 @@
     .line 167
     iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mAnalyticsPlatformRegistry:Lcom/snapchat/android/analytics/framework/AnalyticsPlatformRegistry;
 
-    invoke-static {}, Lajx;->H()Z
+    invoke-static {}, Lakr;->H()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-nez v1, :cond_0
 
-    const-string v0, "AnalyticsPlatformRegistry"
-
-    const-string v1, "User is logged into SnapKidz. Aborting."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 169
-    :cond_0
-    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 170
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lazv;
-
-    invoke-virtual {v0}, Lazv;->a()V
-
-    .line 171
-    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lazv;
-
-    iput-object v3, v0, Lazv;->mActivity:Landroid/app/Activity;
-
-    iput-object v3, v0, Lazv;->mBugReporter:Lazv$a;
-
-    .line 173
-    :cond_1
-    return-void
-
-    .line 167
-    :cond_2
     iget-object v0, v0, Lcom/snapchat/android/analytics/framework/AnalyticsPlatformRegistry;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -874,6 +824,30 @@
     invoke-interface {v0, p0}, Lcom/snapchat/android/analytics/framework/AnalyticsPlatform;->b(Landroid/app/Activity;)V
 
     goto :goto_0
+
+    .line 169
+    :cond_0
+    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 170
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lbau;
+
+    invoke-virtual {v0}, Lbau;->a()V
+
+    .line 171
+    iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity;->mShakeReporter:Lbau;
+
+    iput-object v2, v0, Lbau;->mActivity:Landroid/app/Activity;
+
+    iput-object v2, v0, Lbau;->mBugReporter:Lbau$a;
+
+    .line 173
+    :cond_1
+    return-void
 .end method
 
 .method public final sendNotification(Ljava/lang/String;)Ljava/lang/String;

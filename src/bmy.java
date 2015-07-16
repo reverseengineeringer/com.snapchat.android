@@ -1,168 +1,174 @@
-import java.net.Proxy;
-import java.net.Proxy.Type;
-import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public final class bmy
-  implements bng
 {
-  private final bmw a;
-  private final bmu b;
+  public static final bmx a = bmx.a("multipart/mixed");
+  public static final bmx b = bmx.a("multipart/alternative");
+  public static final bmx c = bmx.a("multipart/digest");
+  public static final bmx d = bmx.a("multipart/parallel");
+  public static final bmx e = bmx.a("multipart/form-data");
+  private static final byte[] f = { 58, 32 };
+  private static final byte[] g = { 13, 10 };
+  private static final byte[] h = { 45, 45 };
+  private final cay i;
+  private bmx j = a;
+  private final List<bmv> k = new ArrayList();
+  private final List<bnc> l = new ArrayList();
   
-  public bmy(bmw parambmw, bmu parambmu)
+  public bmy()
   {
-    a = parambmw;
-    b = parambmu;
+    this(UUID.randomUUID().toString());
   }
   
-  public final bmd a(bmc parambmc)
+  private bmy(String paramString)
   {
-    Object localObject;
-    if (!bmw.c(parambmc)) {
-      localObject = b.a(0L);
+    i = cay.a(paramString);
+  }
+  
+  public final bmy a(bmv parambmv, bnc parambnc)
+  {
+    if (parambnc == null) {
+      throw new NullPointerException("body == null");
     }
-    for (;;)
+    if ((parambmv != null) && (parambmv.a("Content-Type") != null)) {
+      throw new IllegalArgumentException("Unexpected header: Content-Type");
+    }
+    if ((parambmv != null) && (parambmv.a("Content-Length") != null)) {
+      throw new IllegalArgumentException("Unexpected header: Content-Length");
+    }
+    k.add(parambmv);
+    l.add(parambnc);
+    return this;
+  }
+  
+  public final bmy a(bmx parambmx)
+  {
+    if (parambmx == null) {
+      throw new NullPointerException("type == null");
+    }
+    if (!a.equals("multipart")) {
+      throw new IllegalArgumentException("multipart != " + parambmx);
+    }
+    j = parambmx;
+    return this;
+  }
+  
+  public final bnc a()
+  {
+    if (k.isEmpty()) {
+      throw new IllegalStateException("Multipart body must have at least one part.");
+    }
+    return new bmy.a(j, i, k, l);
+  }
+  
+  static final class a
+    extends bnc
+  {
+    private final cay a;
+    private final bmx b;
+    private final List<bmv> c;
+    private final List<bnc> d;
+    private long e = -1L;
+    
+    public a(bmx parambmx, cay paramcay, List<bmv> paramList, List<bnc> paramList1)
     {
-      return new bna(f, cad.a((caj)localObject));
-      if ("chunked".equalsIgnoreCase(parambmc.a("Transfer-Encoding")))
-      {
-        localObject = b;
-        bmw localbmw = a;
-        if (e != 4) {
-          throw new IllegalStateException("state: " + e);
-        }
-        e = 5;
-        localObject = new bmu.c((bmu)localObject, localbmw);
+      if (parambmx == null) {
+        throw new NullPointerException("type == null");
       }
-      else
+      a = paramcay;
+      b = bmx.a(parambmx + "; boundary=" + paramcay.a());
+      c = bnq.a(paramList);
+      d = bnq.a(paramList1);
+    }
+    
+    private long a(caw paramcaw, boolean paramBoolean)
+    {
+      long l1 = 0L;
+      if (paramBoolean) {
+        paramcaw = new cav();
+      }
+      for (caw localcaw = paramcaw;; localcaw = null)
       {
-        long l = bmz.a(parambmc);
-        if (l != -1L)
+        int k = c.size();
+        int i = 0;
+        if (i < k)
         {
-          localObject = b.a(l);
-        }
-        else
-        {
-          localObject = b;
-          if (e != 4) {
-            throw new IllegalStateException("state: " + e);
+          Object localObject = (bmv)c.get(i);
+          bnc localbnc = (bnc)d.get(i);
+          paramcaw.b(bmy.b());
+          paramcaw.b(a);
+          paramcaw.b(bmy.c());
+          if (localObject != null)
+          {
+            int j = 0;
+            int m = a.length / 2;
+            while (j < m)
+            {
+              paramcaw.b(((bmv)localObject).a(j)).b(bmy.d()).b(((bmv)localObject).b(j)).b(bmy.c());
+              j += 1;
+            }
           }
-          e = 5;
-          localObject = new bmu.f((bmu)localObject, (byte)0);
+          localObject = localbnc.a();
+          if (localObject != null) {
+            paramcaw.b("Content-Type: ").b(((bmx)localObject).toString()).b(bmy.c());
+          }
+          l2 = localbnc.b();
+          if (l2 != -1L) {
+            paramcaw.b("Content-Length: ").j(l2).b(bmy.c());
+          }
+          while (!paramBoolean)
+          {
+            paramcaw.b(bmy.c());
+            if (!paramBoolean) {
+              break label308;
+            }
+            l1 = l2 + l1;
+            paramcaw.b(bmy.c());
+            i += 1;
+            break;
+          }
+          localcaw.p();
+          l2 = -1L;
         }
+        label308:
+        do
+        {
+          return l2;
+          ((bnc)d.get(i)).a(paramcaw);
+          break;
+          paramcaw.b(bmy.b());
+          paramcaw.b(a);
+          paramcaw.b(bmy.b());
+          paramcaw.b(bmy.c());
+          l2 = l1;
+        } while (!paramBoolean);
+        long l2 = b;
+        localcaw.p();
+        return l1 + l2;
       }
     }
-  }
-  
-  public final cai a(bma parambma, long paramLong)
-  {
-    if ("chunked".equalsIgnoreCase(parambma.a("Transfer-Encoding")))
+    
+    public final bmx a()
     {
-      parambma = b;
-      if (e != 1) {
-        throw new IllegalStateException("state: " + e);
+      return b;
+    }
+    
+    public final void a(caw paramcaw)
+    {
+      a(paramcaw, false);
+    }
+    
+    public final long b()
+    {
+      long l = e;
+      if (l != -1L) {
+        return l;
       }
-      e = 2;
-      return new bmu.b(parambma, (byte)0);
-    }
-    if (paramLong != -1L)
-    {
-      parambma = b;
-      if (e != 1) {
-        throw new IllegalStateException("state: " + e);
-      }
-      e = 2;
-      return new bmu.d(parambma, paramLong, (byte)0);
-    }
-    throw new IllegalStateException("Cannot stream a request body without chunked encoding or a known content length!");
-  }
-  
-  public final void a()
-  {
-    b.a();
-  }
-  
-  public final void a(bma parambma)
-  {
-    a.b();
-    Object localObject = a.c.b.b.type();
-    blz localblz = a.c.g;
-    StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(b);
-    localStringBuilder.append(' ');
-    int i;
-    if ((!parambma.e()) && (localObject == Proxy.Type.HTTP))
-    {
-      i = 1;
-      if (i == 0) {
-        break label136;
-      }
-      localStringBuilder.append(parambma.a());
-    }
-    for (;;)
-    {
-      localStringBuilder.append(' ');
-      localStringBuilder.append(bnb.a(localblz));
-      localObject = localStringBuilder.toString();
-      b.a(c, (String)localObject);
-      return;
-      i = 0;
-      break;
-      label136:
-      localStringBuilder.append(bnb.a(parambma.a()));
-    }
-  }
-  
-  public final void a(bnc parambnc)
-  {
-    bmu localbmu = b;
-    if (e != 1) {
-      throw new IllegalStateException("state: " + e);
-    }
-    e = 3;
-    parambnc.a(d);
-  }
-  
-  public final bmc.a b()
-  {
-    return b.c();
-  }
-  
-  public final void c()
-  {
-    bmu localbmu;
-    if (d())
-    {
-      localbmu = b;
-      f = 1;
-      if (e == 0)
-      {
-        f = 0;
-        bmi.b.a(a, b);
-      }
-    }
-    do
-    {
-      return;
-      localbmu = b;
-      f = 2;
-    } while (e != 0);
-    e = 6;
-    b.c.close();
-  }
-  
-  public final boolean d()
-  {
-    if ("close".equalsIgnoreCase(a.l.a("Connection"))) {}
-    for (;;)
-    {
-      return false;
-      if (!"close".equalsIgnoreCase(a.d().a("Connection")))
-      {
-        if (b.e == 6) {}
-        for (int i = 1; i == 0; i = 0) {
-          return true;
-        }
-      }
+      l = a(null, true);
+      e = l;
+      return l;
     }
   }
 }

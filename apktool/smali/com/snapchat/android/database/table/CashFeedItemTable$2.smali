@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 293
+    .line 294
     iput-object p1, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$2;->a:Landroid/content/Context;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -46,7 +46,7 @@
     .locals 9
 
     .prologue
-    .line 296
+    .line 297
     iget-object v0, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$2;->a:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
@@ -57,16 +57,16 @@
 
     move-result-object v2
 
-    .line 297
+    .line 298
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 299
+    .line 300
     :try_start_0
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 300
+    .line 301
     invoke-static {}, Lcom/snapchat/android/database/table/CashFeedItemTable;->f()Ljava/util/concurrent/ConcurrentHashMap;
 
     move-result-object v0
@@ -92,16 +92,14 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 301
+    .line 302
     invoke-static {}, Lcom/snapchat/android/database/table/CashFeedItemTable;->g()Ljava/lang/String;
 
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v1, "CASH-LOG: Saving a cash feed item with ID "
 
-    invoke-direct {v6, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -109,28 +107,16 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v6, 0x0
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    invoke-static {v5, v1, v6}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 302
+    .line 303
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     invoke-interface {v3, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 303
+    .line 304
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -145,7 +131,7 @@
 
     goto :goto_0
 
-    .line 322
+    .line 323
     :catchall_0
     move-exception v0
 
@@ -153,7 +139,7 @@
 
     throw v0
 
-    .line 306
+    .line 307
     :cond_0
     :try_start_1
     invoke-interface {v3}, Ljava/util/Set;->isEmpty()Z
@@ -162,16 +148,16 @@
 
     if-nez v0, :cond_1
 
-    .line 307
-    invoke-static {}, Lajx;->al()V
+    .line 308
+    invoke-static {}, Lakr;->ak()V
 
-    .line 310
+    .line 311
     :cond_1
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
-    .line 311
+    .line 312
     invoke-static {}, Lcom/snapchat/android/database/table/CashFeedItemTable;->h()Ljava/util/concurrent/ConcurrentHashMap;
 
     move-result-object v0
@@ -197,16 +183,14 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 312
+    .line 313
     invoke-static {}, Lcom/snapchat/android/database/table/CashFeedItemTable;->g()Ljava/lang/String;
 
-    move-result-object v6
-
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v1, "CASH-LOG: Deleting a cash feed item with ID "
 
-    invoke-direct {v7, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -214,28 +198,16 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v7, 0x0
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    invoke-static {v6, v1, v7}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 313
+    .line 314
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     invoke-interface {v4, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 314
+    .line 315
     const-string v1, "CashFeedItem"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -284,7 +256,7 @@
 
     goto :goto_1
 
-    .line 318
+    .line 319
     :cond_2
     invoke-static {}, Lcom/snapchat/android/database/table/CashFeedItemTable;->f()Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -296,7 +268,7 @@
 
     invoke-interface {v0, v3}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
-    .line 319
+    .line 320
     invoke-static {}, Lcom/snapchat/android/database/table/CashFeedItemTable;->h()Ljava/util/concurrent/ConcurrentHashMap;
 
     move-result-object v0
@@ -307,15 +279,15 @@
 
     invoke-interface {v0, v4}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
-    .line 320
+    .line 321
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 322
+    .line 323
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 324
+    .line 325
     const/4 v0, 0x0
 
     return-object v0
@@ -327,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 293
+    .line 294
     invoke-direct {p0}, Lcom/snapchat/android/database/table/CashFeedItemTable$2;->a()Ljava/lang/Void;
 
     move-result-object v0

@@ -1,18 +1,6 @@
-import java.util.List;
-
 public abstract interface pt$a
 {
-  public abstract void a();
-  
-  public abstract void a(@cgb aka paramaka);
-  
-  public abstract void a(@cgb String paramString);
-  
-  public abstract void a(@cgb List<aiv> paramList);
-  
-  public abstract void b(@cgb List<ajc> paramList);
-  
-  public abstract void c(@cgb List<aiv> paramList);
+  public abstract void a(bmv parambmv, bne parambne);
 }
 
 /* Location:

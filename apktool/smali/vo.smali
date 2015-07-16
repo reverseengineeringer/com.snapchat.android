@@ -1,53 +1,57 @@
 .class public final Lvo;
-.super Lcom/snapchat/android/camera/cameradecor/CameraDecor;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Larm;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Larm",
+        "<",
+        "Lvt;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public b:Landroid/widget/RelativeLayout;
+.field public a:Larm;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Larm",
+            "<",
+            "Lvs;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/widget/RelativeLayout;)V
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 14
-    const/4 v0, 0x0
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;-><init>(Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
+    return-void
+.end method
 
-    .line 15
-    if-nez p2, :cond_0
 
-    .line 16
-    new-instance v0, Ljava/lang/NullPointerException;
+# virtual methods
+.method public final bridge synthetic a(Landroid/support/v7/widget/RecyclerView$s;)V
+    .locals 0
 
-    const-string v1, "decor container can not be null"
+    .prologue
+    .line 7
+    check-cast p1, Lvt;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1, p0}, Lvt;->a(Lvo;)V
 
-    throw v0
-
-    .line 18
-    :cond_0
-    iput-object p2, p0, Lvo;->b:Landroid/widget/RelativeLayout;
-
-    .line 19
-    iget-object v0, p0, Lvo;->b:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f080028
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundColor(I)V
-
-    .line 20
     return-void
 .end method

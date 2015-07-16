@@ -1,32 +1,10 @@
-import javax.inject.Provider;
+import android.graphics.Point;
 
-public final class yr
-  implements buj<yq>
+public abstract interface yr
 {
-  private final Provider<ya> b;
+  public abstract Point a();
   
-  static
-  {
-    if (!yr.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
-  }
-  
-  private yr(Provider<ya> paramProvider)
-  {
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    b = paramProvider;
-  }
-  
-  public static buj<yq> a(Provider<ya> paramProvider)
-  {
-    return new yr(paramProvider);
-  }
+  public abstract void a(Point paramPoint);
 }
 
 /* Location:

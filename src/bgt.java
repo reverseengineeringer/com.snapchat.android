@@ -1,60 +1,93 @@
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.ViewTreeObserver.OnPreDrawListener;
+import com.google.gson.reflect.TypeToken;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public final class bgt
 {
-  protected int mCount = 0;
-  protected final ViewTreeObserver.OnPreDrawListener mOnPreDrawListener = new ViewTreeObserver.OnPreDrawListener()
+  public static final String DEFAULT_BASE_URL = "https://feelinsonice-hrd.appspot.com";
+  private static final bgt INSTANCE = new bgt();
+  private final Set<String> mDefaultEndpointRoutingSet;
+  public String mSerializedUrlRoutingMap;
+  public final Map<String, String> mUrlRoutingMap;
+  public final ReadWriteLock mUrlRoutingRWLock = new ReentrantReadWriteLock(true);
+  private final akr mUserPrefs;
+  
+  private bgt()
   {
-    public final boolean onPreDraw()
-    {
-      return false;
-    }
-  };
-  protected final ViewTreeObserver.OnPreDrawListener mOnPreDrawSkipListener = new ViewTreeObserver.OnPreDrawListener()
+    this(akr.a());
+  }
+  
+  private bgt(akr paramakr)
   {
-    public final boolean onPreDraw()
+    mUserPrefs = paramakr;
+    mSerializedUrlRoutingMap = akr.bh();
+    mUrlRoutingMap = b(mSerializedUrlRoutingMap);
+    mDefaultEndpointRoutingSet = new HashSet();
+    mDefaultEndpointRoutingSet.add("/bq/ip_routing");
+    mDefaultEndpointRoutingSet.add("/bq/ip_routing_error");
+  }
+  
+  public static bgt a()
+  {
+    return INSTANCE;
+  }
+  
+  public static void b()
+  {
+    new qm().execute();
+  }
+  
+  public final String a(@chd String paramString)
+  {
+    try
     {
-      if (d()) {
-        mViewTreeObserver.removeOnPreDrawListener(this);
+      URL localURL = new URL(paramString);
+      String str = String.format("%s://%s", new Object[] { localURL.getProtocol(), localURL.getHost() });
+      if (mDefaultEndpointRoutingSet.contains(localURL.getPath())) {
+        return paramString.replace(str, bal.b(localURL.getPath()));
       }
-      return false;
-    }
-  };
-  public View mView;
-  ViewTreeObserver mViewTreeObserver;
-  
-  public final void a()
-  {
-    if ((mCount == 0) && (d())) {
-      mViewTreeObserver.addOnPreDrawListener(mOnPreDrawListener);
-    }
-    mCount += 1;
-  }
-  
-  public final void b()
-  {
-    if (mCount > 0)
-    {
-      mCount -= 1;
-      if ((mCount == 0) && (d())) {
-        mViewTreeObserver.removeOnPreDrawListener(mOnPreDrawListener);
+      mUrlRoutingRWLock.readLock().lock();
+      try
+      {
+        if (mUrlRoutingMap.containsKey(str))
+        {
+          paramString = paramString.replace(str, (String)mUrlRoutingMap.get(str));
+          return paramString;
+        }
+        return paramString;
       }
+      finally
+      {
+        mUrlRoutingRWLock.readLock().unlock();
+      }
+      return paramString;
     }
+    catch (MalformedURLException localMalformedURLException) {}
   }
   
-  public final void c()
+  public final Map<String, String> b(String paramString)
   {
-    if (d()) {
-      mViewTreeObserver.addOnPreDrawListener(mOnPreDrawSkipListener);
-    }
+    (Map)auw.a(paramString, new TypeToken() {}.getType());
   }
   
-  final boolean d()
+  public final String c()
   {
-    mViewTreeObserver = mView.getViewTreeObserver();
-    return mViewTreeObserver.isAlive();
+    mUrlRoutingRWLock.readLock().lock();
+    try
+    {
+      String str = mSerializedUrlRoutingMap;
+      return str;
+    }
+    finally
+    {
+      mUrlRoutingRWLock.readLock().unlock();
+    }
   }
 }
 

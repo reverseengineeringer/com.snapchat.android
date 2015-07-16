@@ -1,12 +1,10 @@
-import com.snapchat.android.model.StoryGroup;
-
 public final class bem
 {
-  public StoryGroup mStoryGroup;
+  public boolean mBeingViewed;
   
-  public bem(StoryGroup paramStoryGroup)
+  public bem(boolean paramBoolean)
   {
-    mStoryGroup = paramStoryGroup;
+    mBeingViewed = paramBoolean;
   }
 }
 

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 377
+    .line 396
     iput-object p1, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment$5;->a:Lcom/snapchat/android/fragments/cash/CardLinkFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +40,12 @@
     .locals 2
 
     .prologue
-    .line 380
+    .line 399
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment$5;->a:Lcom/snapchat/android/fragments/cash/CardLinkFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->n(Lcom/snapchat/android/fragments/cash/CardLinkFragment;)Z
 
-    .line 381
+    .line 400
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment$5;->a:Lcom/snapchat/android/fragments/cash/CardLinkFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->o(Lcom/snapchat/android/fragments/cash/CardLinkFragment;)Landroid/widget/ScrollView;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->fullScroll(I)Z
 
-    .line 382
+    .line 401
     return-void
 .end method

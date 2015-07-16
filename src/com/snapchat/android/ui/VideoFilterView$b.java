@@ -1,6 +1,5 @@
 package com.snapchat.android.ui;
 
-import com.snapchat.android.Timber;
 import com.snapchat.videotranscoder.task.Task.DoneCallback;
 import com.snapchat.videotranscoder.task.Task.Status;
 
@@ -11,12 +10,9 @@ final class VideoFilterView$b
   
   public final void done(Task.Status paramStatus)
   {
-    if (paramStatus == Task.Status.FINISHED)
-    {
-      Timber.c("VideoFilterView", "Video Rendering finished successfully", new Object[0]);
-      return;
+    if (paramStatus != Task.Status.FINISHED) {
+      new StringBuilder("Video rendering is done with error status: ").append(paramStatus);
     }
-    Timber.f("VideoFilterView", "Video rendering is done with error status: " + paramStatus, new Object[0]);
   }
 }
 

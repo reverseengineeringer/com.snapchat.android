@@ -1,54 +1,42 @@
+import android.content.Context;
 import android.content.Intent;
-import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.api2.framework.HttpMethod;
+import java.util.Map;
 
-public final class and
-  extends amd
-  implements ts.b<bkm>
+public abstract class and
+  extends ui
+  implements anh
 {
-  public boolean a;
-  public bkm b;
-  private String c;
-  private String d;
+  final Intent i;
+  protected ur j;
   
-  public and(Intent paramIntent)
+  protected and(Intent paramIntent)
   {
-    super(paramIntent);
-    a = paramIntent.getBooleanExtra("refresh_suggestions", true);
-    c = paramIntent.getStringExtra("email");
-    d = paramIntent.getStringExtra("requested_username");
-    a(bkm.class, this);
+    i = paramIntent;
+    j = mProvider.a();
   }
   
-  public final Object b()
+  public final Intent a()
   {
-    return new and.a(c, d);
+    return i;
   }
   
-  public final String e()
+  public void a(Context paramContext)
   {
-    return "/bq/suggest_username";
-  }
-  
-  public final boolean i()
-  {
-    return false;
-  }
-  
-  @tn
-  public final class a
-    extends pl
-  {
-    @SerializedName("username")
-    String a;
-    @SerializedName("requested_username")
-    String b;
-    
-    public a(@cgb String paramString1, @cgb String paramString2)
+    if (akr.H())
     {
-      a = paramString1;
-      b = paramString2;
+      new StringBuilder("Do not send any network request for Snapkidz ").append(getUrl());
+      return;
     }
+    paramContext = getUrl();
+    HttpMethod localHttpMethod = getMethod();
+    bgk localbgk = getResponseBuffer();
+    Object localObject = getRequestPayload();
+    Map localMap = getHeaders(localObject);
+    onResult(j.a(paramContext, localHttpMethod, localMap, localbgk, localObject));
   }
+  
+  public void b() {}
 }
 
 /* Location:

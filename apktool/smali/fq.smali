@@ -1,432 +1,221 @@
-.class public final enum Lfq;
-.super Ljava/lang/Enum;
+.class public Lfq;
+.super Ljava/util/AbstractList;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Enum",
-        "<",
-        "Lfq;",
-        ">;"
+        "<E:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/util/AbstractList",
+        "<TE;>;"
     }
 .end annotation
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lfq;
+.field private static final c:Lfr;
 
-.field public static final enum AD_NOT_READY_DOWNLOADING:Lfq;
 
-.field public static final enum AD_NOT_READY_RESOLVING:Lfq;
+# instance fields
+.field a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<TE;>;"
+        }
+    .end annotation
+.end field
 
-.field public static final enum AD_SKIPPED_ON_PRELOAD:Lfq;
-
-.field public static final enum CLIENT_ERROR:Lfq;
-
-.field public static final enum CONTENT_NO_FILL:Lfq;
-
-.field public static final enum DFP_ERROR:Lfq;
-
-.field public static final enum FAILED:Lfq;
-
-.field public static final enum PLAYBACK_ERROR:Lfq;
-
-.field public static final enum RESUME:Lfq;
-
-.field public static final enum SERVER_INTERNAL_ERROR:Lfq;
-
-.field public static final enum SERVER_INVALID_REQUEST_ERROR:Lfq;
-
-.field public static final enum SERVER_NETWORK_ERROR:Lfq;
-
-.field public static final enum SERVER_NO_FILL_ERROR:Lfq;
-
-.field public static final enum SERVER_OTHER_ERROR:Lfq;
-
-.field public static final enum SKIPPED_ON_RESUME:Lfq;
-
-.field public static final enum TIMEOUT:Lfq;
-
-.field public static final enum failed:Lfq;
-
-.field public static final enum skipped_on_resume:Lfq;
-
-.field public static final enum timed_out:Lfq;
+.field b:Ljava/util/Iterator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Iterator",
+            "<TE;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 1
 
     .prologue
-    const/4 v7, 0x4
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 5
-    new-instance v0, Lfq;
-
-    const-string v1, "TIMEOUT"
-
-    invoke-direct {v0, v1, v3}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->TIMEOUT:Lfq;
-
-    .line 6
-    new-instance v0, Lfq;
-
-    const-string v1, "DFP_ERROR"
-
-    invoke-direct {v0, v1, v4}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->DFP_ERROR:Lfq;
-
-    .line 7
-    new-instance v0, Lfq;
-
-    const-string v1, "RESUME"
-
-    invoke-direct {v0, v1, v5}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->RESUME:Lfq;
-
-    .line 8
-    new-instance v0, Lfq;
-
-    const-string v1, "FAILED"
-
-    invoke-direct {v0, v1, v6}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->FAILED:Lfq;
-
-    .line 9
-    new-instance v0, Lfq;
-
-    const-string v1, "SKIPPED_ON_RESUME"
-
-    invoke-direct {v0, v1, v7}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->SKIPPED_ON_RESUME:Lfq;
-
-    .line 10
-    new-instance v0, Lfq;
-
-    const-string v1, "CONTENT_NO_FILL"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->CONTENT_NO_FILL:Lfq;
-
-    .line 11
-    new-instance v0, Lfq;
-
-    const-string v1, "SERVER_NO_FILL_ERROR"
-
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->SERVER_NO_FILL_ERROR:Lfq;
-
-    .line 12
-    new-instance v0, Lfq;
-
-    const-string v1, "SERVER_NETWORK_ERROR"
-
-    const/4 v2, 0x7
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->SERVER_NETWORK_ERROR:Lfq;
-
     .line 13
-    new-instance v0, Lfq;
+    const-class v0, Lfq;
 
-    const-string v1, "SERVER_INVALID_REQUEST_ERROR"
+    invoke-static {v0}, Lfr;->a(Ljava/lang/Class;)Lfr;
 
-    const/16 v2, 0x8
+    move-result-object v0
 
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->SERVER_INVALID_REQUEST_ERROR:Lfq;
-
-    .line 14
-    new-instance v0, Lfq;
-
-    const-string v1, "SERVER_INTERNAL_ERROR"
-
-    const/16 v2, 0x9
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->SERVER_INTERNAL_ERROR:Lfq;
-
-    .line 15
-    new-instance v0, Lfq;
-
-    const-string v1, "SERVER_OTHER_ERROR"
-
-    const/16 v2, 0xa
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->SERVER_OTHER_ERROR:Lfq;
-
-    .line 16
-    new-instance v0, Lfq;
-
-    const-string v1, "CLIENT_ERROR"
-
-    const/16 v2, 0xb
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->CLIENT_ERROR:Lfq;
-
-    .line 17
-    new-instance v0, Lfq;
-
-    const-string v1, "PLAYBACK_ERROR"
-
-    const/16 v2, 0xc
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->PLAYBACK_ERROR:Lfq;
-
-    .line 18
-    new-instance v0, Lfq;
-
-    const-string v1, "AD_SKIPPED_ON_PRELOAD"
-
-    const/16 v2, 0xd
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->AD_SKIPPED_ON_PRELOAD:Lfq;
-
-    .line 19
-    new-instance v0, Lfq;
-
-    const-string v1, "AD_NOT_READY_RESOLVING"
-
-    const/16 v2, 0xe
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->AD_NOT_READY_RESOLVING:Lfq;
-
-    .line 20
-    new-instance v0, Lfq;
-
-    const-string v1, "AD_NOT_READY_DOWNLOADING"
-
-    const/16 v2, 0xf
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->AD_NOT_READY_DOWNLOADING:Lfq;
-
-    .line 21
-    new-instance v0, Lfq;
-
-    const-string v1, "failed"
-
-    const/16 v2, 0x10
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->failed:Lfq;
-
-    .line 22
-    new-instance v0, Lfq;
-
-    const-string v1, "skipped_on_resume"
-
-    const/16 v2, 0x11
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->skipped_on_resume:Lfq;
-
-    .line 23
-    new-instance v0, Lfq;
-
-    const-string v1, "timed_out"
-
-    const/16 v2, 0x12
-
-    invoke-direct {v0, v1, v2}, Lfq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfq;->timed_out:Lfq;
-
-    .line 4
-    const/16 v0, 0x13
-
-    new-array v0, v0, [Lfq;
-
-    sget-object v1, Lfq;->TIMEOUT:Lfq;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lfq;->DFP_ERROR:Lfq;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lfq;->RESUME:Lfq;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lfq;->FAILED:Lfq;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lfq;->SKIPPED_ON_RESUME:Lfq;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lfq;->CONTENT_NO_FILL:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lfq;->SERVER_NO_FILL_ERROR:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Lfq;->SERVER_NETWORK_ERROR:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    sget-object v2, Lfq;->SERVER_INVALID_REQUEST_ERROR:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    sget-object v2, Lfq;->SERVER_INTERNAL_ERROR:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    sget-object v2, Lfq;->SERVER_OTHER_ERROR:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    sget-object v2, Lfq;->CLIENT_ERROR:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    sget-object v2, Lfq;->PLAYBACK_ERROR:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    sget-object v2, Lfq;->AD_SKIPPED_ON_PRELOAD:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    sget-object v2, Lfq;->AD_NOT_READY_RESOLVING:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    sget-object v2, Lfq;->AD_NOT_READY_DOWNLOADING:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
-    sget-object v2, Lfq;->failed:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
-    sget-object v2, Lfq;->skipped_on_resume:Lfq;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x12
-
-    sget-object v2, Lfq;->timed_out:Lfq;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lfq;->$VALUES:[Lfq;
+    sput-object v0, Lfq;->c:Lfr;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Ljava/util/List;Ljava/util/Iterator;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()V"
+            "(",
+            "Ljava/util/List",
+            "<TE;>;",
+            "Ljava/util/Iterator",
+            "<TE;>;)V"
         }
     .end annotation
 
     .prologue
-    .line 4
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 18
+    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
+    .line 19
+    iput-object p1, p0, Lfq;->a:Ljava/util/List;
+
+    .line 20
+    iput-object p2, p0, Lfq;->b:Ljava/util/Iterator;
+
+    .line 22
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lfq;
-    .locals 1
+
+# virtual methods
+.method public get(I)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)TE;"
+        }
+    .end annotation
 
     .prologue
-    .line 4
-    const-class v0, Lfq;
+    .line 37
+    iget-object v0, p0, Lfq;->a:Ljava/util/List;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-le v0, p1, :cond_0
+
+    .line 38
+    iget-object v0, p0, Lfq;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lfq;
+    .line 42
+    :goto_0
+    return-object v0
+
+    .line 40
+    :cond_0
+    iget-object v0, p0, Lfq;->b:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 41
+    iget-object v0, p0, Lfq;->a:Ljava/util/List;
+
+    iget-object v1, p0, Lfq;->b:Ljava/util/Iterator;
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 42
+    invoke-virtual {p0, p1}, Lfq;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 44
+    :cond_1
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Iterator",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 51
+    new-instance v0, Lfq$1;
+
+    invoke-direct {v0, p0}, Lfq$1;-><init>(Lfq;)V
 
     return-object v0
 .end method
 
-.method public static values()[Lfq;
-    .locals 1
+.method public size()I
+    .locals 2
 
     .prologue
-    .line 4
-    sget-object v0, Lfq;->$VALUES:[Lfq;
+    .line 76
+    sget-object v0, Lfq;->c:Lfr;
 
-    invoke-virtual {v0}, [Lfq;->clone()Ljava/lang/Object;
+    const-string v1, "potentially expensive size() call"
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lfr;->a(Ljava/lang/String;)V
 
-    check-cast v0, [Lfq;
+    .line 77
+    sget-object v0, Lfq;->c:Lfr;
 
-    return-object v0
+    const-string v1, "blowup running"
+
+    invoke-virtual {v0, v1}, Lfr;->a(Ljava/lang/String;)V
+
+    :goto_0
+    iget-object v0, p0, Lfq;->b:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 78
+    iget-object v0, p0, Lfq;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+
+    .line 77
+    :cond_0
+    iget-object v0, p0, Lfq;->a:Ljava/util/List;
+
+    iget-object v1, p0, Lfq;->b:Ljava/util/Iterator;
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 .end method

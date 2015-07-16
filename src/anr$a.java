@@ -1,4 +1,7 @@
-public abstract interface anr$a {}
+@ud
+public final class anr$a
+  extends blb
+{}
 
 /* Location:
  * Qualified Name:     anr.a

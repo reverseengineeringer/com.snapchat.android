@@ -20,7 +20,7 @@
 
 .method public abstract a(Ljava/lang/String;)V
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method

@@ -1,165 +1,191 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
-import com.snapchat.android.controller.stories.StoryLoadingContext;
-import com.snapchat.android.model.StoryCollection;
-import com.snapchat.android.util.eventbus.ShowDialogEvent;
-import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
-import com.squareup.otto.Bus;
+import android.os.Handler;
+import android.os.Looper;
+import com.snapchat.android.model.chat.ChatConversation;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class zd
 {
-  private static final zd b = new zd();
-  protected final zh.b a = new zh.b()
-  {
-    public final void a(zh paramAnonymouszh, int paramAnonymousInt, long paramAnonymousLong)
-    {
-      int k = 1;
-      Timber.c("StoryLoader", "StorySnap batch load %s complete, %d snaps in %dms", new Object[] { paramAnonymouszh, Integer.valueOf(paramAnonymousInt), Long.valueOf(paramAnonymousLong) });
-      Object localObject1 = a.iterator();
-      int i = 0;
-      int j = 0;
-      Object localObject2;
-      if (((Iterator)localObject1).hasNext())
-      {
-        localObject2 = (ajr)((Iterator)localObject1).next();
-        Timber.c("StoryLoader", "Batch %s item: %s", new Object[] { paramAnonymouszh, ((ajr)localObject2).aa() });
-        if (((ajr)localObject2).M()) {
-          i += 1;
-        }
-      }
-      for (;;)
-      {
-        mLoadingContext = ((StoryLoadingContext)ck.a(c));
-        break;
-        if (!((ajr)localObject2).L())
-        {
-          j += 1;
-          continue;
-          if (i > 0)
-          {
-            Timber.c("StoryLoader", "Sanitizing stories since %d StorySnaps were unable to load from batch %s", new Object[] { Integer.valueOf(i), paramAnonymouszh });
-            zd.a(zd.this).e();
-          }
-          if ((j > 0) && (d))
-          {
-            Timber.c("StoryLoader", "Displaying connection toast since %d StorySnaps failed to load from batch %s", new Object[] { Integer.valueOf(i), paramAnonymouszh });
-            zd.b(zd.this).a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131493328));
-          }
-          EasyMetric localEasyMetric;
-          if ((b != null) && (paramAnonymousInt > 0))
-          {
-            if (j != 0) {
-              break label405;
-            }
-            i = 1;
-            localObject1 = zd.c(zd.this);
-            localObject2 = b;
-            paramAnonymouszh = c;
-            if (paramAnonymouszh != StoryLoadingContext.LOAD_FROM_VIEWING)
-            {
-              localEasyMetric = EasyMetric.EasyMetricFactory.a("STORY_STORY_LOADED");
-              localEasyMetric.a("view_location", Integer.valueOf(ze.a((StoryCollection)localObject2)));
-              localEasyMetric.a("source", paramAnonymouszh.getMetricName());
-              localEasyMetric.a("reachability", a.f());
-              localEasyMetric.a("count", Integer.valueOf(paramAnonymousInt));
-              if (i == 0) {
-                break label411;
-              }
-            }
-          }
-          label405:
-          label411:
-          for (paramAnonymousInt = k;; paramAnonymousInt = 0)
-          {
-            localEasyMetric.a("success", Integer.valueOf(paramAnonymousInt));
-            localEasyMetric.a(paramAnonymousLong);
-            localEasyMetric.a(false);
-            zd.b(zd.this).a(new bcf());
-            zd.d(zd.this);
-            return;
-            i = 0;
-            break;
-          }
-        }
-      }
-    }
-  };
-  private final Bus c;
-  private final ajq d;
-  private final ze e;
+  private static zd f;
+  final tt a;
+  final ConcurrentHashMap<String, Set<Long>> b;
+  public final ConcurrentHashMap<String, Set<Long>> c;
+  final ConcurrentHashMap<String, Boolean> d;
+  final Handler e;
   
-  private zd()
+  private zd(@chc tt paramtt)
   {
-    this(ban.a(), ajq.a(), new ze());
-  }
-  
-  private zd(Bus paramBus, ajq paramajq, ze paramze)
-  {
-    c = paramBus;
-    d = paramajq;
-    e = paramze;
+    a = paramtt;
+    b = new ConcurrentHashMap();
+    c = new ConcurrentHashMap();
+    d = new ConcurrentHashMap();
+    e = new Handler(Looper.getMainLooper());
   }
   
   public static zd a()
   {
-    return b;
-  }
-  
-  private void b()
-  {
-    c.a(new bdy());
-  }
-  
-  @ccm
-  public final int a(StoryCollection paramStoryCollection)
-  {
-    return a(paramStoryCollection, 3, null, false, StoryLoadingContext.AUTO_LOADED);
-  }
-  
-  @ccm
-  public final int a(StoryCollection paramStoryCollection, int paramInt, aje paramaje, boolean paramBoolean, StoryLoadingContext paramStoryLoadingContext)
-  {
-    bgp.a();
-    paramaje = paramStoryCollection.a(paramInt, (ajr)paramaje);
-    paramStoryLoadingContext = new zh.a(paramStoryLoadingContext);
-    d = paramBoolean;
-    c = paramStoryCollection;
-    paramStoryCollection = paramaje.iterator();
-    while (paramStoryCollection.hasNext()) {
-      paramStoryLoadingContext.a((ajr)paramStoryCollection.next());
+    try
+    {
+      if (f == null) {
+        f = new zd(tt.a());
+      }
+      zd localzd = f;
+      return localzd;
     }
-    paramInt = paramStoryLoadingContext.a().a(a);
-    b();
-    return paramInt;
+    finally {}
   }
   
-  @ccm
-  public final boolean a(ajr paramajr)
+  static void a(@chc String arg0, @chc ConcurrentHashMap<String, Set<Long>> paramConcurrentHashMap, long paramLong)
   {
-    return b(paramajr);
+    if (paramConcurrentHashMap.containsKey(???)) {}
+    synchronized ((Set)paramConcurrentHashMap.get(???))
+    {
+      ???.add(Long.valueOf(paramLong));
+      return;
+      HashSet localHashSet = new HashSet();
+      paramConcurrentHashMap.put(???, localHashSet);
+      ??? = localHashSet;
+    }
   }
   
-  @ccm
-  public final boolean a(ajr paramajr, StoryLoadingContext paramStoryLoadingContext)
+  public static void b()
+  {
+    try
+    {
+      if (f != null)
+      {
+        fe.removeCallbacksAndMessages(null);
+        f = null;
+      }
+      return;
+    }
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
+    }
+  }
+  
+  public final long a(@chc String paramString)
+  {
+    paramString = (Set)b.get(paramString);
+    if (paramString != null) {
+      try
+      {
+        if (!paramString.isEmpty())
+        {
+          long l = ((Long)Collections.min(paramString)).longValue();
+          return l;
+        }
+      }
+      finally {}
+    }
+    return Long.MAX_VALUE;
+  }
+  
+  public final void a(@chc ChatConversation paramChatConversation, long paramLong)
+  {
+    final String str = mId;
+    long l = mTheirLastConnSeqNum;
+    if ((paramLong > l) || (paramLong == 0L)) {
+      if ((ad) && (mIsRecipientPresent) && (paramLong - l > 1L))
+      {
+        for (l += 1L; l < paramLong; l += 1L) {
+          a(str, c, l);
+        }
+        if (d.containsKey(str)) {
+          break label131;
+        }
+        d.put(str, Boolean.valueOf(true));
+        e.postDelayed(new Runnable()
+        {
+          public final void run()
+          {
+            d.remove(str);
+            if (c(str)) {
+              a.a(str, false);
+            }
+          }
+        }, 8000L);
+      }
+    }
+    label131:
+    do
+    {
+      return;
+      return;
+      paramChatConversation = (Set)c.get(str);
+    } while (paramChatConversation == null);
+    paramChatConversation.remove(Long.valueOf(paramLong));
+  }
+  
+  public final boolean a(@chc String paramString, long paramLong)
+  {
+    paramString = (Set)b.get(paramString);
+    if (paramString != null) {
+      try
+      {
+        Iterator localIterator = paramString.iterator();
+        while (localIterator.hasNext()) {
+          if (((Long)localIterator.next()).longValue() < paramLong) {
+            return false;
+          }
+        }
+      }
+      finally {}
+    }
+    return true;
+  }
+  
+  public final boolean b(@chc String paramString)
   {
     boolean bool = false;
-    bgp.a();
-    paramajr = new zh.a(paramStoryLoadingContext).a(paramajr);
-    d = false;
-    if (paramajr.a().a(a) > 0) {
-      bool = true;
+    paramString = (Set)b.get(paramString);
+    if (paramString != null) {
+      try
+      {
+        if (!paramString.isEmpty()) {
+          bool = true;
+        }
+        return bool;
+      }
+      finally {}
     }
-    b();
-    return bool;
+    return false;
   }
   
-  @ccm
-  public final boolean b(ajr paramajr)
+  public final boolean b(@chc String paramString, long paramLong)
   {
-    return a(paramajr, StoryLoadingContext.AUTO_LOADED);
+    paramString = (Set)b.get(paramString);
+    if (paramString != null) {
+      try
+      {
+        boolean bool = paramString.remove(Long.valueOf(paramLong));
+        return bool;
+      }
+      finally {}
+    }
+    return false;
+  }
+  
+  protected final boolean c(@chc String paramString)
+  {
+    boolean bool = false;
+    paramString = (Set)c.get(paramString);
+    if (paramString != null) {
+      try
+      {
+        if (!paramString.isEmpty()) {
+          bool = true;
+        }
+        return bool;
+      }
+      finally {}
+    }
+    return false;
   }
 }
 

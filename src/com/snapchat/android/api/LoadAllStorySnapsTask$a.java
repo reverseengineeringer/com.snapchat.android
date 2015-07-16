@@ -1,11 +1,11 @@
 package com.snapchat.android.api;
 
-import aje;
-import aje.a;
+import aka;
+import aka.a;
 import java.util.Set;
 
 final class LoadAllStorySnapsTask$a
-  implements aje.a
+  implements aka.a
 {
   private LoadAllStorySnapsTask$a(LoadAllStorySnapsTask paramLoadAllStorySnapsTask) {}
   
@@ -14,12 +14,12 @@ final class LoadAllStorySnapsTask$a
     this$0.a(LoadAllStorySnapsTask.Status.FAILED_TO_LOAD);
   }
   
-  public final void a(aje paramaje)
+  public final void a(aka paramaka)
   {
     synchronized (this$0.mMutex)
     {
-      paramaje.a(this);
-      this$0.mStorySnapsLeftToLoad.remove(paramaje);
+      paramaka.a(this);
+      this$0.mStorySnapsLeftToLoad.remove(paramaka);
       this$0.d();
       return;
     }

@@ -1,14 +1,14 @@
 package com.snapchat.videotranscoder.pipeline;
 
 import android.media.MediaFormat;
-import cgb;
+import chc;
 
 public class EncoderConfiguration
 {
   private final MediaFormat mFormat;
   private final String mMimeType;
   
-  public EncoderConfiguration(@cgb String paramString, @cgb MediaFormat paramMediaFormat)
+  public EncoderConfiguration(@chc String paramString, @chc MediaFormat paramMediaFormat)
   {
     mMimeType = paramString;
     mFormat = paramMediaFormat;

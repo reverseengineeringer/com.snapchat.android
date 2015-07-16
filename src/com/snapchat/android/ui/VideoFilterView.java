@@ -11,11 +11,10 @@ import android.view.SurfaceView;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.VideoView;
-import apj;
-import azo;
-import cgb;
-import cgc;
-import com.snapchat.android.Timber;
+import aqf;
+import ban;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.cts.InputSurface;
 import com.snapchat.videotranscoder.task.SetupException;
 import com.snapchat.videotranscoder.task.Task.DoneCallback;
@@ -31,56 +30,56 @@ import com.snapchat.videotranscoder.utils.ImageTransformationMatrix;
 import com.snapchat.videotranscoder.utils.VideoMetadataReader;
 import com.snapchat.videotranscoder.video.FragmentShader.Filter;
 import java.io.File;
-import oe;
-import wz;
+import ov;
+import xu;
 
 public class VideoFilterView
   extends SurfaceView
 {
   SurfaceHolder.Callback a = new c((byte)0);
   private Uri b;
-  private final azo c;
-  private final wz d;
+  private final ban c;
+  private final xu d;
   private int e = 1;
   private TaskExecutor f = null;
   private VideoFilterRenderingTask g = null;
   private float[] h = new ImageTransformationMatrix().rotateLeft();
-  private apj i;
+  private aqf i;
   private InputSurface j = null;
   private int k;
   private int l;
   private float m;
-  @cgc
+  @chd
   private d n = null;
   
-  public VideoFilterView(@cgb Context paramContext)
+  public VideoFilterView(@chc Context paramContext)
   {
-    this(paramContext, new azo(), wz.a());
+    this(paramContext, new ban(), xu.a());
   }
   
-  public VideoFilterView(@cgb Context paramContext, @cgc AttributeSet paramAttributeSet)
+  public VideoFilterView(@chc Context paramContext, @chd AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, 0, new azo(), wz.a());
+    this(paramContext, paramAttributeSet, 0, new ban(), xu.a());
   }
   
-  public VideoFilterView(@cgb Context paramContext, @cgc AttributeSet paramAttributeSet, int paramInt)
+  public VideoFilterView(@chc Context paramContext, @chd AttributeSet paramAttributeSet, int paramInt)
   {
-    this(paramContext, paramAttributeSet, paramInt, new azo(), wz.a());
+    this(paramContext, paramAttributeSet, paramInt, new ban(), xu.a());
   }
   
-  private VideoFilterView(@cgb Context paramContext, @cgc AttributeSet paramAttributeSet, int paramInt, @cgb azo paramazo, @cgb wz paramwz)
+  private VideoFilterView(@chc Context paramContext, @chd AttributeSet paramAttributeSet, int paramInt, @chc ban paramban, @chc xu paramxu)
   {
     super(paramContext, paramAttributeSet, paramInt);
-    c = paramazo;
-    d = paramwz;
+    c = paramban;
+    d = paramxu;
     c();
   }
   
-  private VideoFilterView(@cgb Context paramContext, @cgb azo paramazo, @cgb wz paramwz)
+  private VideoFilterView(@chc Context paramContext, @chc ban paramban, @chc xu paramxu)
   {
     super(paramContext);
-    c = paramazo;
-    d = paramwz;
+    c = paramban;
+    d = paramxu;
     c();
   }
   
@@ -112,9 +111,7 @@ public class VideoFilterView
   
   public final void a()
   {
-    if (g != null)
-    {
-      Timber.c("VideoFilterView", "Trying to stop playback", new Object[0]);
+    if (g != null) {
       i.a = null;
     }
     try
@@ -127,26 +124,22 @@ public class VideoFilterView
       {
         try
         {
-          Timber.c("VideoFilterView", "Waiting for abort", new Object[0]);
           g.waitForAbort();
-          Timber.c("VideoFilterView", "Abort finished", new Object[0]);
           g = null;
-          Timber.c("VideoFilterView", "Playback has been stopped", new Object[0]);
           return;
         }
         catch (InterruptedException localInterruptedException)
         {
-          c.b(new oe(localInterruptedException.getMessage()));
+          c.b(new ov(localInterruptedException.getMessage()));
           throw new RuntimeException("Could not release all components for video rendering! Error " + localInterruptedException.getMessage());
         }
         localTranscodingException = localTranscodingException;
-        Timber.f("VideoFilterView", localTranscodingException.toString(), new Object[] { localTranscodingException });
-        c.b(new oe(localTranscodingException.getMessage()));
+        c.b(new ov(localTranscodingException.getMessage()));
       }
     }
   }
   
-  public final boolean a(@cgb Uri paramUri, @cgb float[] paramArrayOfFloat)
+  public final boolean a(@chc Uri paramUri, @chc float[] paramArrayOfFloat)
   {
     try
     {
@@ -165,7 +158,7 @@ public class VideoFilterView
           float f1 = i2 / i1;
           i1 = getResourcesgetDisplayMetricswidthPixels;
           i2 = (int)(f1 * i1);
-          Timber.c("VideoFilterView", "Setting resolution = " + i1 + " x " + i2, new Object[0]);
+          new StringBuilder("Setting resolution = ").append(i1).append(" x ").append(i2);
           k = Math.min(i1, i2);
           l = Math.max(i1, i2);
         }
@@ -181,7 +174,7 @@ public class VideoFilterView
     }
     catch (Exception paramUri)
     {
-      Timber.f("VideoFilterView", paramUri.getMessage(), new Object[0]);
+      paramUri.getMessage();
     }
   }
   
@@ -206,7 +199,9 @@ public class VideoFilterView
     {
       public final void run()
       {
-        VideoFilterView.b(VideoFilterView.this).execute(VideoFilterView.a(VideoFilterView.this), new VideoFilterView.b(VideoFilterView.this, (byte)0), new VideoFilterView.a(VideoFilterView.this, (byte)0));
+        if (VideoFilterView.a(VideoFilterView.this) != null) {
+          VideoFilterView.b(VideoFilterView.this).execute(VideoFilterView.a(VideoFilterView.this), new VideoFilterView.b(VideoFilterView.this, (byte)0), new VideoFilterView.a(VideoFilterView.this, (byte)0));
+        }
       }
     }).start();
     e = 2;
@@ -241,12 +236,12 @@ public class VideoFilterView
     setMeasuredDimension(paramInt1, paramInt2);
   }
   
-  public void setSwipeVideoViewController(apj paramapj)
+  public void setSwipeVideoViewController(aqf paramaqf)
   {
-    i = paramapj;
+    i = paramaqf;
   }
   
-  public void setUnrecoverableErrorListener(@cgc d paramd)
+  public void setUnrecoverableErrorListener(@chd d paramd)
   {
     n = paramd;
   }
@@ -276,12 +271,12 @@ public class VideoFilterView
     {
       if (b)
       {
-        apj localapj = VideoFilterView.f(VideoFilterView.this);
+        aqf localaqf = VideoFilterView.f(VideoFilterView.this);
         a = VideoFilterView.a(VideoFilterView.this);
-        localapj.a();
+        localaqf.a();
         b = false;
       }
-      Timber.c("VideoFilterView", "Rendering is " + Integer.toString(paramInt) + "% complete", new Object[0]);
+      new StringBuilder("Rendering is ").append(Integer.toString(paramInt)).append("% complete");
     }
   }
   
@@ -292,12 +287,9 @@ public class VideoFilterView
     
     public final void done(Task.Status paramStatus)
     {
-      if (paramStatus == Task.Status.FINISHED)
-      {
-        Timber.c("VideoFilterView", "Video Rendering finished successfully", new Object[0]);
-        return;
+      if (paramStatus != Task.Status.FINISHED) {
+        new StringBuilder("Video rendering is done with error status: ").append(paramStatus);
       }
-      Timber.f("VideoFilterView", "Video rendering is done with error status: " + paramStatus, new Object[0]);
     }
   }
   
@@ -320,7 +312,7 @@ public class VideoFilterView
       {
         do
         {
-          Timber.f("VideoFilterView", "Failed to open video: " + paramSurfaceHolder.toString(), new Object[0]);
+          new StringBuilder("Failed to open video: ").append(paramSurfaceHolder.toString());
           a();
           VideoFilterView.d(VideoFilterView.this);
         } while (VideoFilterView.e(VideoFilterView.this) == null);
@@ -330,7 +322,6 @@ public class VideoFilterView
     
     public final void surfaceDestroyed(SurfaceHolder paramSurfaceHolder)
     {
-      Timber.c("VideoFilterView", "Surface destroyed!", new Object[0]);
       VideoFilterView.d(VideoFilterView.this);
     }
   }

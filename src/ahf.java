@@ -1,61 +1,74 @@
-import com.snapchat.android.i18n.LocalePatterns;
-import java.util.Locale;
+import android.text.TextUtils;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.Friend.SuggestState;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public final class ahf
+  extends bge<ahh>
 {
-  public static String a(@cgb cgg paramcgg, @cgc Locale paramLocale, boolean paramBoolean)
+  private final List<ahh> a;
+  private final List<Friend> b;
+  
+  public ahf(@chc List<ahh> paramList, @chc List<Friend> paramList1, @chc ban paramban, @chc bge.a<ahh> parama)
   {
-    Locale localLocale = paramLocale;
-    if (paramLocale == null) {
-      localLocale = Locale.US;
-    }
-    if (localLocale.equals(Locale.US)) {
-      return a(paramcgg, paramBoolean);
-    }
-    try
-    {
-      paramLocale = LocalePatterns.valueOf(localLocale.toString());
-      if (paramBoolean) {}
-      for (paramLocale = paramLocale.getMonthDayYearPattern();; paramLocale = paramLocale.getMonthDayPattern()) {
-        return cjv.a(paramLocale).a(paramcgg);
-      }
-      return a(paramcgg, paramBoolean);
-    }
-    catch (IllegalArgumentException paramLocale) {}
+    super(paramban, parama);
+    a = paramList;
+    b = paramList1;
   }
   
-  private static String a(@cgb cgg paramcgg, boolean paramBoolean)
+  private static boolean a(@chc Friend paramFriend, @chc String paramString)
   {
-    StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(new cgg.a(paramcgg, b.C()).a(Locale.US));
-    localStringBuilder.append(" ");
-    localStringBuilder.append(paramcgg.g());
-    int i = paramcgg.g();
-    String str;
-    if (i < 20) {
-      switch (i)
-      {
-      default: 
-        str = "th";
+    if (mIsBlocked) {
+      return false;
+    }
+    ArrayList localArrayList = new ArrayList();
+    localArrayList.add(paramFriend.l());
+    paramFriend = paramFriend.a();
+    if (paramFriend != null) {
+      localArrayList.addAll(Arrays.asList(paramFriend.split(" ")));
+    }
+    paramFriend = localArrayList.iterator();
+    while (paramFriend.hasNext()) {
+      if (avg.a((String)paramFriend.next(), paramString)) {
+        return true;
       }
     }
-    for (;;)
+    return false;
+  }
+  
+  @chd
+  protected final List<ahh> a(@chd String paramString)
+  {
+    if (TextUtils.isEmpty(paramString)) {
+      return a;
+    }
+    ArrayList localArrayList = new ArrayList();
+    Iterator localIterator = b.iterator();
+    int i = 0;
+    while (localIterator.hasNext())
     {
-      localStringBuilder.append(str);
-      if (paramBoolean)
-      {
-        localStringBuilder.append(", ");
-        localStringBuilder.append(paramcgg.f());
+      Friend localFriend = (Friend)localIterator.next();
+      int j = i;
+      if (avg.c(localFriend.l(), paramString)) {
+        j = 1;
       }
-      return localStringBuilder.toString();
-      i %= 10;
-      break;
-      str = "st";
-      continue;
-      str = "nd";
-      continue;
-      str = "rd";
+      i = j;
+      if (a(localFriend, paramString))
+      {
+        localArrayList.add(localFriend);
+        i = j;
+      }
     }
+    if (i == 0)
+    {
+      paramString = new Friend(paramString);
+      mSuggestionState = Friend.SuggestState.PENDING;
+      localArrayList.add(paramString);
+    }
+    return localArrayList;
   }
 }
 

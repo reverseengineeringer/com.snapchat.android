@@ -1,33 +1,25 @@
-import javax.inject.Provider;
+import com.snapchat.android.model.chat.CashFeedItem;
+import java.util.Collection;
 
-public final class re
-  implements buj<rd>
+public abstract interface re
 {
-  private final Provider<qg> mCashErrorReporterProvider;
-  private final buj<qv> supertypeInjector;
+  public abstract void a();
   
-  static
-  {
-    if (!re.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
-  }
+  public abstract void a(CashFeedItem paramCashFeedItem);
   
-  private re(buj<qv> parambuj, Provider<qg> paramProvider)
-  {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mCashErrorReporterProvider = paramProvider;
-  }
+  public abstract void a(String paramString);
   
-  public static buj<rd> a(buj<qv> parambuj, Provider<qg> paramProvider)
-  {
-    return new re(parambuj, paramProvider);
-  }
+  public abstract Collection<rl> b();
+  
+  public abstract Collection<rl> c();
+  
+  public abstract Collection<rl> d();
+  
+  public abstract Collection<rl> e();
+  
+  public abstract Collection<rl> f();
+  
+  public abstract Collection<rl> g();
 }
 
 /* Location:

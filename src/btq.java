@@ -1,65 +1,53 @@
-import java.lang.reflect.AccessibleObject;
-import java.lang.reflect.Field;
+import android.content.Context;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public final class btq
 {
-  public static Object a(Field paramField, Object paramObject)
+  List a;
+  private Context b;
+  
+  public btq(Context paramContext)
   {
-    if (paramField == null) {}
-    while (paramField == null) {
-      return null;
+    b = paramContext;
+    a = new ArrayList();
+  }
+  
+  public final void a()
+  {
+    Object localObject = new ArrayList();
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      ((ArrayList)localObject).add(new Thread((btt)localIterator.next()));
     }
-    paramField.setAccessible(true);
+    localIterator = ((ArrayList)localObject).iterator();
+    while (localIterator.hasNext()) {
+      ((Thread)localIterator.next()).start();
+    }
+    localObject = ((ArrayList)localObject).iterator();
+    while (((Iterator)localObject).hasNext()) {
+      ((Thread)((Iterator)localObject).next()).join();
+    }
+  }
+  
+  public final void a(bsl parambsl, btk parambtk, String paramString, brv parambrv)
+  {
     try
     {
-      paramField = paramField.get(paramObject);
-      return paramField;
-    }
-    catch (ThreadDeath paramField)
-    {
-      throw paramField;
-    }
-    catch (Throwable paramField)
-    {
-      throw new brz("Unable to get value of field", paramField);
-    }
-  }
-  
-  public static Field a(Class paramClass1, Class paramClass2)
-  {
-    Field[] arrayOfField = paramClass1.getDeclaredFields();
-    paramClass1 = null;
-    int i = 0;
-    while (i < arrayOfField.length)
-    {
-      Object localObject = paramClass1;
-      if (paramClass2.isAssignableFrom(arrayOfField[i].getType()))
+      if (parambsl.b() > 0)
       {
-        if (paramClass1 != null) {
-          throw new brz("Field is ambiguous: " + paramClass1.getName() + ", " + arrayOfField[i].getName());
-        }
-        localObject = arrayOfField[i];
+        bsl localbsl = parambsl.a(b);
+        parambtk = parambtk.a(localbsl, parambsl, paramString, b, parambrv, parambrv.i());
+        parambsl = new bts(localbsl, parambsl, parambrv, new btm(paramString, b).a(), parambtk);
+        a.add(parambsl);
       }
-      i += 1;
-      paramClass1 = (Class)localObject;
+      return;
     }
-    if (paramClass1 == null) {
-      throw new brz("Could not find field matching type: " + paramClass2.getName());
-    }
-    paramClass1.setAccessible(true);
-    return paramClass1;
-  }
-  
-  public static void a(AccessibleObject[] paramArrayOfAccessibleObject)
-  {
-    int i = 0;
-    while (i < paramArrayOfAccessibleObject.length)
+    finally
     {
-      AccessibleObject localAccessibleObject = paramArrayOfAccessibleObject[i];
-      if (localAccessibleObject != null) {
-        localAccessibleObject.setAccessible(true);
-      }
-      i += 1;
+      parambsl = finally;
+      throw parambsl;
     }
   }
 }

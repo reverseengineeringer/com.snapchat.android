@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1063
+    .line 1095
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$3$1;->a:Lcom/snapchat/android/ui/here/HoldToStreamView$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 4
 
     .prologue
-    .line 1066
+    .line 1098
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$3$1;->a:Lcom/snapchat/android/ui/here/HoldToStreamView$3;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView$3;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
@@ -49,7 +49,7 @@
 
     move-result-object v0
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
@@ -61,17 +61,17 @@
 
     move-result-object v3
 
-    invoke-direct {v1, v2, v3}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;Lcom/snapchat/android/camera/model/CameraModel$CameraType;)V
+    invoke-direct {v1, v2, v3}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;Lcom/snapchat/android/camera/model/CameraModel$CameraType;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1067
+    .line 1099
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$3$1;->a:Lcom/snapchat/android/ui/here/HoldToStreamView$3;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView$3;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->o(Lcom/snapchat/android/ui/here/HoldToStreamView;)Z
 
-    .line 1068
+    .line 1100
     return-void
 .end method

@@ -5,7 +5,6 @@ import android.graphics.SurfaceTexture;
 import android.opengl.GLUtils;
 import android.view.TextureView;
 import android.view.TextureView.SurfaceTextureListener;
-import com.snapchat.android.Timber;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
@@ -96,50 +95,30 @@ public abstract class GlTextureView
       if ((mEglSurface == null) || (mEglSurface == EGL10.EGL_NO_SURFACE))
       {
         i = mEgl.eglGetError();
-        if (i == 12299)
-        {
-          Timber.f("GLTextureView", "createWindowSurface returned EGL_BAD_NATIVE_WINDOW.", new Object[0]);
-          a();
+        if (i != 12299) {
+          throw new RuntimeException("createWindowSurface failed " + GLUtils.getEGLErrorString(i));
         }
       }
-      for (;;)
+      else if (!mEgl.eglMakeCurrent(mEglDisplay, mEglSurface, mEglSurface, mEglContext))
       {
-        if (mFinished) {
-          break label639;
-        }
+        throw new RuntimeException("eglMakeCurrent failed " + GLUtils.getEGLErrorString(mEgl.eglGetError()));
+      }
+      a();
+      while (!mFinished)
+      {
         b();
         mEgl.eglSwapBuffers(mEglDisplay, mEglSurface);
         i = mEgl.eglGetError();
         if (i != 12288) {
-          Timber.e("GLTextureView", "EGL error = 0x" + Integer.toHexString(i), new Object[0]);
+          new StringBuilder("EGL error = 0x").append(Integer.toHexString(i));
         }
         try
         {
-          for (;;)
-          {
-            boolean bool = mRenderRequested;
-            if (bool) {
-              break;
-            }
-            try
-            {
-              wait();
-            }
-            catch (InterruptedException localInterruptedException)
-            {
-              Timber.a("GLTextureView", localInterruptedException);
-            }
-          }
-          throw new RuntimeException("createWindowSurface failed " + GLUtils.getEGLErrorString(i));
+          while (!mRenderRequested) {}
+          mRenderRequested = false;
         }
         finally {}
-        if (mEgl.eglMakeCurrent(mEglDisplay, mEglSurface, mEglSurface, mEglContext)) {
-          break;
-        }
-        throw new RuntimeException("eglMakeCurrent failed " + GLUtils.getEGLErrorString(mEgl.eglGetError()));
-        mRenderRequested = false;
       }
-      label639:
       mEgl.eglDestroyContext(mEglDisplay, mEglContext);
       mEgl.eglDestroySurface(mEglDisplay, mEglSurface);
     }

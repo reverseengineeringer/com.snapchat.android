@@ -2,103 +2,97 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/hardware/Camera$PreviewCallback;
+
 
 # instance fields
-.field private final a:I
+.field private final a:Landroid/os/Handler;
+
+.field private final b:Lwy$b;
+
+.field private final c:Lwy$a;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 14
-    invoke-static {}, Lov;->a()Lov;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lov;->mResolution:Laue;
-
-    invoke-virtual {v0}, Laue;->b()I
-
-    move-result v0
-
-    invoke-direct {p0, v0}, Lxe;-><init>(I)V
-
-    .line 15
-    return-void
-.end method
-
-.method private constructor <init>(I)V
+.method public constructor <init>(Landroid/os/Handler;Lwy$b;Lwy$a;)V
     .locals 0
 
     .prologue
-    .line 18
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
-    iput p1, p0, Lxe;->a:I
+    .line 24
+    iput-object p1, p0, Lxe;->a:Landroid/os/Handler;
 
-    .line 20
+    .line 25
+    iput-object p3, p0, Lxe;->c:Lwy$a;
+
+    .line 26
+    iput-object p2, p0, Lxe;->b:Lwy$b;
+
+    .line 27
     return-void
+.end method
+
+.method static synthetic a(Lxe;)Lwy$b;
+    .locals 1
+
+    .prologue
+    .line 13
+    iget-object v0, p0, Lxe;->b:Lwy$b;
+
+    return-object v0
+.end method
+
+.method static synthetic b(Lxe;)Lwy$a;
+    .locals 1
+
+    .prologue
+    .line 13
+    iget-object v0, p0, Lxe;->c:Lwy$a;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(II)F
+.method public final a()V
+    .locals 1
+
+    .prologue
+    .line 40
+    iget-object v0, p0, Lxe;->a:Landroid/os/Handler;
+
+    if-eqz v0, :cond_0
+
+    .line 41
+    iget-object v0, p0, Lxe;->a:Landroid/os/Handler;
+
+    invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Looper;->quit()V
+
+    .line 43
+    :cond_0
+    return-void
+.end method
+
+.method public final onPreviewFrame([BLandroid/hardware/Camera;)V
     .locals 2
 
     .prologue
-    .line 29
-    iget v0, p0, Lxe;->a:I
-
-    div-int v0, p2, v0
-
-    .line 30
-    iget v1, p0, Lxe;->a:I
-
-    rem-int v1, p2, v1
-
     .line 31
-    if-ne p1, v0, :cond_0
+    iget-object v0, p0, Lxe;->a:Landroid/os/Handler;
 
-    .line 32
-    iget v0, p0, Lxe;->a:I
+    new-instance v1, Lxe$1;
 
-    sub-int/2addr v0, v1
+    invoke-direct {v1, p0, p1}, Lxe$1;-><init>(Lxe;[B)V
 
-    int-to-float v0, v0
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    iget v1, p0, Lxe;->a:I
-
-    int-to-float v1, v1
-
-    div-float/2addr v0, v1
-
-    .line 36
-    :goto_0
-    return v0
-
-    .line 33
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    if-ne p1, v0, :cond_1
-
-    .line 34
-    int-to-float v0, v1
-
-    iget v1, p0, Lxe;->a:I
-
-    int-to-float v1, v1
-
-    div-float/2addr v0, v1
-
-    goto :goto_0
-
-    .line 36
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    .line 37
+    return-void
 .end method

@@ -26,7 +26,14 @@ public class DateUtils
   public static final int RANGE_WEEK_RELATIVE = 3;
   public static final int RANGE_WEEK_SUNDAY = 1;
   public static final int SEMI_MONTH = 1001;
-  private static final int[][] fields = { { 14 }, { 13 }, { 12 }, { 11, 10 }, { 5, 5, 9 }, { 2, 1001 }, { 1 }, { 0 } };
+  private static final int[][] fields;
+  
+  static
+  {
+    int[] arrayOfInt1 = { 14 };
+    int[] arrayOfInt2 = { 1 };
+    fields = new int[][] { arrayOfInt1, { 13 }, { 12 }, { 11, 10 }, { 5, 5, 9 }, { 2, 1001 }, arrayOfInt2, { 0 } };
+  }
   
   private static Date add(Date paramDate, int paramInt1, int paramInt2)
   {

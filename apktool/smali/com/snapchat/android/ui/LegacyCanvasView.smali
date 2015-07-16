@@ -43,10 +43,10 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 49
     invoke-direct {p0, p1}, Lcom/snapchat/android/ui/CanvasViewBase;-><init>(Landroid/content/Context;)V
@@ -62,10 +62,10 @@
     iput v0, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->d:F
 
     .line 41
-    iput-boolean v3, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->e:Z
+    iput-boolean v1, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->e:Z
 
     .line 42
-    iput-boolean v3, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->f:Z
+    iput-boolean v1, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->f:Z
 
     .line 44
     new-instance v0, Landroid/graphics/Paint;
@@ -84,7 +84,7 @@
     move-result-object v0
 
     .line 53
-    invoke-static {p1}, Lavh;->e(Landroid/content/Context;)Z
+    invoke-static {p1}, Lawf;->e(Landroid/content/Context;)Z
 
     move-result v1
 
@@ -102,7 +102,7 @@
     iput v0, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->a:I
 
     .line 56
-    invoke-static {p1}, Lavh;->h(Landroid/content/Context;)I
+    invoke-static {p1}, Lawf;->h(Landroid/content/Context;)I
 
     move-result v0
 
@@ -147,15 +147,6 @@
     iput v0, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->d:F
 
     .line 69
-    const-string v0, "LegacyCanvasView"
-
-    const-string v1, "Canvas view instantiated"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 70
     return-void
 
     .line 58
@@ -387,18 +378,18 @@
 .end method
 
 .method public final a(I)V
-    .locals 12
+    .locals 10
 
     .prologue
-    const/4 v11, 0x3
-
-    const/high16 v10, 0x43870000    # 270.0f
-
-    const/high16 v9, 0x42b40000    # 90.0f
-
-    const/4 v5, 0x1
+    const/4 v9, 0x3
 
     const/4 v4, 0x0
+
+    const/high16 v8, 0x43870000    # 270.0f
+
+    const/high16 v7, 0x42b40000    # 90.0f
+
+    const/4 v5, 0x1
 
     .line 112
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LegacyCanvasView;->getContext()Landroid/content/Context;
@@ -451,14 +442,14 @@
     :cond_0
     if-eq v6, v5, :cond_1
 
-    if-ne v6, v11, :cond_4
+    if-ne v6, v9, :cond_3
 
     :cond_1
     move v3, v5
 
     .line 122
     :goto_1
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_4
 
     move v0, v1
 
@@ -466,7 +457,7 @@
     iput v0, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->a:I
 
     .line 123
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_5
 
     move v0, v2
 
@@ -483,43 +474,29 @@
 
     int-to-float v1, v2
 
-    if-eq v6, p1, :cond_3
+    if-eq v6, p1, :cond_2
 
-    const-string v2, "LegacyCanvasView"
+    const/4 v2, 0x2
 
-    const-string v3, "Rotate drawing from %d to %d"
-
-    const/4 v7, 0x2
-
-    new-array v7, v7, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v3
 
-    aput-object v8, v7, v4
+    aput-object v3, v2, v4
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v3
 
-    aput-object v8, v7, v5
+    aput-object v3, v2, v5
 
-    invoke-static {v2, v3, v7}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-ne v6, v5, :cond_6
 
-    if-ne v6, v5, :cond_7
-
-    invoke-static {v10, v0, v1}, Lcom/snapchat/android/ui/LegacyCanvasView;->b(FFF)Landroid/graphics/Matrix;
+    invoke-static {v8, v0, v1}, Lcom/snapchat/android/ui/LegacyCanvasView;->b(FFF)Landroid/graphics/Matrix;
 
     move-result-object v0
-
-    const-string v1, "LegacyCanvasView"
-
-    const-string v2, "went to rotation 90"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     move-object v1, v0
 
@@ -532,19 +509,10 @@
 
     iget-object v0, v0, Lcom/snapchat/android/ui/LegacyCanvasView$b;->a:Ljava/util/ArrayList;
 
-    if-nez v0, :cond_a
-
-    :cond_2
-    const-string v0, "LegacyCanvasView"
-
-    const-string v1, "Drawing is null"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-nez v0, :cond_9
 
     .line 128
-    :cond_3
+    :cond_2
     :goto_5
     iget-object v0, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->j:Lcom/snapchat/android/ui/LegacyCanvasView$b;
 
@@ -559,7 +527,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_b
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -576,81 +544,57 @@
 
     goto :goto_6
 
-    :cond_4
+    :cond_3
     move v3, v4
 
     .line 121
     goto :goto_1
 
-    :cond_5
+    :cond_4
     move v0, v2
 
     .line 122
     goto :goto_2
 
-    :cond_6
+    :cond_5
     move v0, v1
 
     .line 123
     goto :goto_3
 
     .line 126
-    :cond_7
-    if-ne v6, v11, :cond_8
+    :cond_6
+    if-ne v6, v9, :cond_7
 
-    invoke-static {v9, v0, v1}, Lcom/snapchat/android/ui/LegacyCanvasView;->b(FFF)Landroid/graphics/Matrix;
+    invoke-static {v7, v0, v1}, Lcom/snapchat/android/ui/LegacyCanvasView;->b(FFF)Landroid/graphics/Matrix;
 
     move-result-object v0
 
-    const-string v1, "LegacyCanvasView"
+    move-object v1, v0
 
-    const-string v2, "went to rotation 270"
+    goto :goto_4
 
-    new-array v3, v4, [Ljava/lang/Object;
+    :cond_7
+    if-ne p1, v5, :cond_8
 
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v7, v0, v1}, Lcom/snapchat/android/ui/LegacyCanvasView;->a(FFF)Landroid/graphics/Matrix;
+
+    move-result-object v0
 
     move-object v1, v0
 
     goto :goto_4
 
     :cond_8
-    if-ne p1, v5, :cond_9
-
-    invoke-static {v9, v0, v1}, Lcom/snapchat/android/ui/LegacyCanvasView;->a(FFF)Landroid/graphics/Matrix;
+    invoke-static {v8, v0, v1}, Lcom/snapchat/android/ui/LegacyCanvasView;->a(FFF)Landroid/graphics/Matrix;
 
     move-result-object v0
-
-    const-string v1, "LegacyCanvasView"
-
-    const-string v2, "went from rotation 90 (probz back to portrait)"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     move-object v1, v0
 
     goto :goto_4
 
     :cond_9
-    invoke-static {v10, v0, v1}, Lcom/snapchat/android/ui/LegacyCanvasView;->a(FFF)Landroid/graphics/Matrix;
-
-    move-result-object v0
-
-    const-string v1, "LegacyCanvasView"
-
-    const-string v2, "else... back to portrait from 270?"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    move-object v1, v0
-
-    goto :goto_4
-
-    :cond_a
     iget-object v0, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->j:Lcom/snapchat/android/ui/LegacyCanvasView$b;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/LegacyCanvasView$b;->a:Ljava/util/ArrayList;
@@ -664,7 +608,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -678,13 +622,13 @@
 
     goto :goto_7
 
-    :cond_b
+    :cond_a
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LegacyCanvasView;->postInvalidate()V
 
     goto :goto_5
 
     .line 132
-    :cond_c
+    :cond_b
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LegacyCanvasView;->invalidate()V
 
     goto/16 :goto_0
@@ -1117,7 +1061,7 @@
 
     iput v1, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->l:F
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
@@ -1236,7 +1180,7 @@
 
     iput-object v5, p0, Lcom/snapchat/android/ui/LegacyCanvasView;->g:Landroid/graphics/Point;
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
@@ -1260,7 +1204,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

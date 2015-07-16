@@ -19,13 +19,13 @@ public final class R$string
   public static final int depressed = 2131493113;
   public static final int dialog_closed_captioning_options_default = 2131493115;
   public static final int dialog_closed_captioning_options_title = 2131493116;
-  public static final int done = 2131493144;
-  public static final int drop_shadow = 2131493148;
+  public static final int done = 2131493143;
+  public static final int drop_shadow = 2131493147;
   public static final int no_edge = 2131493251;
   public static final int off = 2131493268;
   public static final int on = 2131493271;
   public static final int raised = 2131493343;
-  public static final int uniform = 2131493578;
+  public static final int uniform = 2131493576;
 }
 
 /* Location:

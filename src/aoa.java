@@ -1,42 +1,52 @@
-import android.content.Context;
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
 
 public final class aoa
+  extends ana
+  implements ui.b<bln>
 {
-  @cgc
-  public static bpd a(Context paramContext)
+  public boolean a;
+  public bln b;
+  private String c;
+  private String d;
+  
+  public aoa(Intent paramIntent)
   {
-    try
-    {
-      paramContext = new bpd.a(paramContext);
-      aoa.a locala = new aoa.a((byte)0);
-      if (c != null) {
-        throw new IllegalStateException("Transformer already set.");
-      }
-      c = locala;
-      paramContext = paramContext.a();
-      return paramContext;
-    }
-    catch (NullPointerException paramContext) {}
-    return null;
+    super(paramIntent);
+    a = paramIntent.getBooleanExtra("refresh_suggestions", true);
+    c = paramIntent.getStringExtra("email");
+    d = paramIntent.getStringExtra("requested_username");
+    registerCallback(bln.class, this);
   }
   
-  public static boolean a()
+  public final boolean d()
   {
-    try
-    {
-      bpd.a(null);
-      return false;
-    }
-    catch (IllegalStateException localIllegalStateException) {}
-    return true;
+    return false;
   }
   
-  static final class a
-    implements bpd.f
+  public final Object getRequestPayload()
   {
-    public final bpg a(bpg parambpg)
+    return new aoa.a(c, d);
+  }
+  
+  public final String l_()
+  {
+    return "/bq/suggest_username";
+  }
+  
+  @ud
+  public final class a
+    extends qc
+  {
+    @SerializedName("username")
+    String a;
+    @SerializedName("requested_username")
+    String b;
+    
+    public a(@chc String paramString1, @chc String paramString2)
     {
-      throw new RuntimeException("Attempt to make request on disabled Picasso instance");
+      a = paramString1;
+      b = paramString2;
     }
   }
 }

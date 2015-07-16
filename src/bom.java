@@ -1,38 +1,61 @@
-import android.graphics.Bitmap;
-
-public abstract interface bom
+public final class bom
 {
-  public static final bom a = new bom()
+  public static final cay a = cay.a(":status");
+  public static final cay b = cay.a(":method");
+  public static final cay c = cay.a(":path");
+  public static final cay d = cay.a(":scheme");
+  public static final cay e = cay.a(":authority");
+  public static final cay f = cay.a(":host");
+  public static final cay g = cay.a(":version");
+  public final cay h;
+  public final cay i;
+  final int j;
+  
+  public bom(cay paramcay1, cay paramcay2)
   {
-    public final int a()
+    h = paramcay1;
+    i = paramcay2;
+    j = (c.length + 32 + c.length);
+  }
+  
+  public bom(cay paramcay, String paramString)
+  {
+    this(paramcay, cay.a(paramString));
+  }
+  
+  public bom(String paramString1, String paramString2)
+  {
+    this(cay.a(paramString1), cay.a(paramString2));
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    boolean bool2 = false;
+    boolean bool1 = bool2;
+    if ((paramObject instanceof bom))
     {
-      return 0;
+      paramObject = (bom)paramObject;
+      bool1 = bool2;
+      if (h.equals(h))
+      {
+        bool1 = bool2;
+        if (i.equals(i)) {
+          bool1 = true;
+        }
+      }
     }
-    
-    public final Bitmap a(String paramAnonymousString)
-    {
-      return null;
-    }
-    
-    public final void a(String paramAnonymousString, Bitmap paramAnonymousBitmap) {}
-    
-    public final int b()
-    {
-      return 0;
-    }
-    
-    public final void c() {}
-  };
+    return bool1;
+  }
   
-  public abstract int a();
+  public final int hashCode()
+  {
+    return (h.hashCode() + 527) * 31 + i.hashCode();
+  }
   
-  public abstract Bitmap a(String paramString);
-  
-  public abstract void a(String paramString, Bitmap paramBitmap);
-  
-  public abstract int b();
-  
-  public abstract void c();
+  public final String toString()
+  {
+    return String.format("%s: %s", new Object[] { h.a(), i.a() });
+  }
 }
 
 /* Location:

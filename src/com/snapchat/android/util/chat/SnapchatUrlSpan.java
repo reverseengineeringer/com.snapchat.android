@@ -1,28 +1,28 @@
 package com.snapchat.android.util.chat;
 
-import ako;
+import alj;
 import android.text.style.URLSpan;
 import android.view.View;
-import ban;
-import bax;
+import bbo;
+import bby;
 import com.squareup.otto.Bus;
 
 public class SnapchatUrlSpan
   extends URLSpan
 {
-  public ako mMessage;
+  public alj mMessage;
   public UrlType mType;
   
-  public SnapchatUrlSpan(String paramString, ako paramako, UrlType paramUrlType)
+  public SnapchatUrlSpan(String paramString, alj paramalj, UrlType paramUrlType)
   {
     super(paramString);
-    mMessage = paramako;
+    mMessage = paramalj;
     mType = paramUrlType;
   }
   
   public void onClick(View paramView)
   {
-    ban.a().a(new bax(this));
+    bbo.a().a(new bby(this));
   }
 }
 

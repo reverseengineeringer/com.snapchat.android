@@ -1,5 +1,5 @@
 .class public Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask;
-.super Ltv;
+.super Lul;
 .source "SourceFile"
 
 
@@ -21,7 +21,7 @@
 
     .prologue
     .line 18
-    invoke-direct {p0}, Ltv;-><init>()V
+    invoke-direct {p0}, Lul;-><init>()V
 
     .line 19
     iput-object p1, p0, Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask;->a:Ljava/lang/String;
@@ -32,7 +32,7 @@
 
 
 # virtual methods
-.method public final synthetic b()Ljava/lang/Object;
+.method public synthetic getRequestPayload()Ljava/lang/Object;
     .locals 2
 
     .prologue
@@ -46,7 +46,7 @@
     return-object v0
 .end method
 
-.method public final n_()Ljava/lang/String;
+.method public getUrl()Ljava/lang/String;
     .locals 2
 
     .prologue
@@ -57,7 +57,7 @@
 
     const-string v1, "dummy"
 
-    invoke-static {v1}, Lazm;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lbal;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

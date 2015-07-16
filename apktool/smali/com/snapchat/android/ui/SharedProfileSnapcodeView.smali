@@ -126,7 +126,7 @@
 
     .prologue
     .line 40
-    const v0, 0x7f0a037a
+    const v0, 0x7f0a0379
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SharedProfileSnapcodeView;->findViewById(I)Landroid/view/View;
 
@@ -137,7 +137,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/SharedProfileSnapcodeView;->a:Landroid/view/ViewGroup;
 
     .line 41
-    const v0, 0x7f0a037b
+    const v0, 0x7f0a037a
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SharedProfileSnapcodeView;->findViewById(I)Landroid/view/View;
 
@@ -148,7 +148,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/SharedProfileSnapcodeView;->c:Landroid/widget/ImageView;
 
     .line 42
-    const v0, 0x7f0a037c
+    const v0, 0x7f0a037b
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SharedProfileSnapcodeView;->findViewById(I)Landroid/view/View;
 
@@ -189,7 +189,7 @@
     goto :goto_0
 .end method
 
-.method public setSnapcodeSvg(Lfl;)V
+.method public setSnapcodeSvg(Lfu;)V
     .locals 3
 
     .prologue
@@ -221,7 +221,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09008e
+    const v1, 0x7f09008f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -251,7 +251,7 @@
 
     .line 53
     :cond_0
-    invoke-virtual {p1}, Lfl;->a()Landroid/graphics/drawable/PictureDrawable;
+    invoke-virtual {p1}, Lfu;->a()Landroid/graphics/drawable/PictureDrawable;
 
     move-result-object v0
 

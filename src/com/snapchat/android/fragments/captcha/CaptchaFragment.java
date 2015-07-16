@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.captcha;
 
-import afo;
-import afo.a;
-import afo.b;
-import ajv;
-import ajx;
+import ago;
+import ago.a;
+import ago.b;
+import akp;
+import akr;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -27,12 +27,11 @@ import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import apy;
-import atj;
+import aqx;
 import auh;
-import avh;
+import avf;
+import awf;
 import com.snapchat.android.LandingPageActivity;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
@@ -43,17 +42,18 @@ import com.snapchat.android.util.fragment.SnapchatFragment;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import jx;
-import jy;
-import jz;
-import om;
-import om.b;
+import kp;
+import kq;
+import kr;
+import ml;
 import pd;
-import pd.a;
+import pd.b;
+import pu;
+import pu.a;
 
 public class CaptchaFragment
   extends SnapchatFragment
-  implements afo.a, om.b, pd.a
+  implements ago.a, pd.b, pu.a
 {
   private String a;
   private int b;
@@ -104,7 +104,7 @@ public class CaptchaFragment
         localButton.setVisibility(8);
         localTextView.setText(2131492956);
         localProgressBar.setVisibility(0);
-        new om(CaptchaFragment.this).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+        new pd(CaptchaFragment.this).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
       }
     });
   }
@@ -131,7 +131,7 @@ public class CaptchaFragment
     if (localFragmentActivity == null) {
       return;
     }
-    paramList = new afo(localFragmentActivity, paramList, this)
+    paramList = new ago(localFragmentActivity, paramList, this)
     {
       public final boolean areAllItemsEnabled()
       {
@@ -167,7 +167,7 @@ public class CaptchaFragment
         while (((Iterator)localObject).hasNext()) {
           paramAnonymousView.add(Boolean.valueOf(nexta));
         }
-        new pd(paramString, paramAnonymousView, CaptchaFragment.this).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+        new pu(paramString, paramAnonymousView, CaptchaFragment.this).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
         CaptchaFragment.a(CaptchaFragment.this).setClickable(false);
         CaptchaFragment.b(CaptchaFragment.this).setText("");
         CaptchaFragment.b(CaptchaFragment.this).setClickable(false);
@@ -180,69 +180,65 @@ public class CaptchaFragment
   
   public final void d()
   {
-    u_();
+    t_();
   }
   
   public final boolean g()
   {
-    new apy(getActivity(), f).show();
+    new aqx(getActivity(), f).show();
     return true;
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968597, paramViewGroup, false);
-    avh.a(getActivity(), mFragmentLayout);
-    new om(this).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968598, paramViewGroup, false);
+    awf.a(getActivity(), mFragmentLayout);
+    new pd(this).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     ((TextView)c(2131361959)).setText(a);
     d = ((Button)c(2131361966));
     paramLayoutInflater = d;
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
+    auh.a(paramLayoutInflater);
     e = ((ProgressBar)c(2131361967));
     h = ((RelativeLayout)c(2131361965));
     g = ((GridView)c(2131361961));
     g.setVerticalScrollBarEnabled(false);
     f = paramViewGroup.getId();
-    ScAnalyticsEventEngine.a(new jy());
+    ScAnalyticsEventEngine.a(new kq());
     return mFragmentLayout;
   }
   
-  public final void t_()
+  public final void s_()
   {
-    ajx.c(false);
+    akr.c(false);
     int j = b + 1;
     int k = c;
-    jz localjz = new jz();
+    Object localObject = new kr();
     attemptCount = Long.valueOf(j);
     imageCount = Long.valueOf(k);
-    ScAnalyticsEventEngine.a(localjz);
+    ScAnalyticsEventEngine.a((ml)localObject);
     AnalyticsEvents.a(Integer.toString(j - 1));
     AnalyticsEvents.a(true);
-    ajv.a(getActivity());
-    if (ajx.f()) {
-      try
-      {
-        getActivitymFragments.beginTransaction().replace(f, new NewUserContactBookFragment()).commit();
-        return;
-      }
-      catch (IllegalStateException localIllegalStateException)
-      {
-        Timber.f("CaptchaFragment", "Attempted to go to NewUserAddFriendsFragment", new Object[0]);
-        return;
-      }
+    akp.a(getActivity());
+    if (akr.f()) {}
+    try
+    {
+      getActivitymFragments.beginTransaction().replace(f, new NewUserContactBookFragment()).commit();
+      return;
     }
-    Object localObject = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
-    ((SharedPreferences.Editor)localObject).putBoolean(SharedPreferenceKey.BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING.getKey(), true);
+    catch (IllegalStateException localIllegalStateException) {}
+    localObject = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
+    ((SharedPreferences.Editor)localObject).putBoolean(SharedPreferenceKey.SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED.getKey(), true);
     ((SharedPreferences.Editor)localObject).apply();
-    ajx.c(false);
+    akr.c(false);
     localObject = getActivity();
     startActivity(new Intent((Context)localObject, LandingPageActivity.class));
     ((FragmentActivity)localObject).finish();
     RegistrationAnalytics.n();
+    return;
   }
   
-  public final void u_()
+  public final void t_()
   {
     if (getActivity() == null) {
       return;
@@ -256,12 +252,12 @@ public class CaptchaFragment
     b += 1;
     int j = b;
     int k = c;
-    jx localjx = new jx();
+    kp localkp = new kp();
     attemptCount = Long.valueOf(j);
     imageCount = Long.valueOf(k);
-    ScAnalyticsEventEngine.a(localjx);
+    ScAnalyticsEventEngine.a(localkp);
     AnalyticsEvents.a(false);
-    new om(this).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    new pd(this).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     a(0);
     h.setVisibility(8);
     e.setVisibility(4);

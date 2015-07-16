@@ -2,632 +2,417 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbng;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbmy$a;
+    }
+.end annotation
+
+
+# static fields
+.field public static final a:Lbmx;
+
+.field public static final b:Lbmx;
+
+.field public static final c:Lbmx;
+
+.field public static final d:Lbmx;
+
+.field public static final e:Lbmx;
+
+.field private static final f:[B
+
+.field private static final g:[B
+
+.field private static final h:[B
 
 
 # instance fields
-.field private final a:Lbmw;
+.field private final i:Lcay;
 
-.field private final b:Lbmu;
+.field private j:Lbmx;
+
+.field private final k:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbmv;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final l:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbnc;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lbmw;Lbmu;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x2
+
+    .line 38
+    const-string v0, "multipart/mixed"
+
+    invoke-static {v0}, Lbmx;->a(Ljava/lang/String;)Lbmx;
+
+    move-result-object v0
+
+    sput-object v0, Lbmy;->a:Lbmx;
+
+    .line 45
+    const-string v0, "multipart/alternative"
+
+    invoke-static {v0}, Lbmx;->a(Ljava/lang/String;)Lbmx;
+
+    move-result-object v0
+
+    sput-object v0, Lbmy;->b:Lbmx;
+
+    .line 53
+    const-string v0, "multipart/digest"
+
+    invoke-static {v0}, Lbmx;->a(Ljava/lang/String;)Lbmx;
+
+    move-result-object v0
+
+    sput-object v0, Lbmy;->c:Lbmx;
+
+    .line 60
+    const-string v0, "multipart/parallel"
+
+    invoke-static {v0}, Lbmx;->a(Ljava/lang/String;)Lbmx;
+
+    move-result-object v0
+
+    sput-object v0, Lbmy;->d:Lbmx;
+
+    .line 68
+    const-string v0, "multipart/form-data"
+
+    invoke-static {v0}, Lbmx;->a(Ljava/lang/String;)Lbmx;
+
+    move-result-object v0
+
+    sput-object v0, Lbmy;->e:Lbmx;
+
+    .line 70
+    new-array v0, v1, [B
+
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lbmy;->f:[B
+
+    .line 71
+    new-array v0, v1, [B
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lbmy;->g:[B
+
+    .line 72
+    new-array v0, v1, [B
+
+    fill-array-data v0, :array_2
+
+    sput-object v0, Lbmy;->h:[B
+
+    return-void
+
+    .line 70
+    nop
+
+    :array_0
+    .array-data 1
+        0x3at
+        0x20t
+    .end array-data
+
+    .line 71
+    nop
+
+    :array_1
+    .array-data 1
+        0xdt
+        0xat
+    .end array-data
+
+    .line 72
+    nop
+
+    :array_2
+    .array-data 1
+        0x2dt
+        0x2dt
+    .end array-data
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    .prologue
+    .line 83
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lbmy;-><init>(Ljava/lang/String;)V
+
+    .line 84
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 91
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 75
+    sget-object v0, Lbmy;->a:Lbmx;
+
+    iput-object v0, p0, Lbmy;->j:Lbmx;
+
+    .line 78
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lbmy;->k:Ljava/util/List;
+
+    .line 79
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lbmy;->l:Ljava/util/List;
+
+    .line 92
+    invoke-static {p1}, Lcay;->a(Ljava/lang/String;)Lcay;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbmy;->i:Lcay;
+
+    .line 93
+    return-void
+.end method
+
+.method static synthetic b()[B
+    .locals 1
 
     .prologue
     .line 31
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lbmy;->h:[B
 
-    .line 32
-    iput-object p1, p0, Lbmy;->a:Lbmw;
+    return-object v0
+.end method
 
-    .line 33
-    iput-object p2, p0, Lbmy;->b:Lbmu;
+.method static synthetic c()[B
+    .locals 1
 
-    .line 34
-    return-void
+    .prologue
+    .line 31
+    sget-object v0, Lbmy;->g:[B
+
+    return-object v0
+.end method
+
+.method static synthetic d()[B
+    .locals 1
+
+    .prologue
+    .line 31
+    sget-object v0, Lbmy;->f:[B
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lbmc;)Lbmd;
-    .locals 6
+.method public final a(Lbmv;Lbnc;)Lbmy;
+    .locals 2
 
     .prologue
-    const/4 v5, 0x5
+    .line 118
+    if-nez p2, :cond_0
 
-    const/4 v4, 0x4
+    .line 119
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    .line 110
-    invoke-static {p1}, Lbmw;->c(Lbmc;)Z
+    const-string v1, "body == null"
 
-    move-result v0
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    if-nez v0, :cond_0
+    throw v0
 
-    iget-object v0, p0, Lbmy;->b:Lbmu;
-
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, v2, v3}, Lbmu;->a(J)Lcaj;
-
-    move-result-object v0
-
-    .line 111
-    :goto_0
-    new-instance v1, Lbna;
-
-    iget-object v2, p1, Lbmc;->f:Lblu;
-
-    invoke-static {v0}, Lcad;->a(Lcaj;)Lbzw;
-
-    move-result-object v0
-
-    invoke-direct {v1, v2, v0}, Lbna;-><init>(Lblu;Lbzw;)V
-
-    return-object v1
-
-    .line 110
+    .line 121
     :cond_0
-    const-string v0, "chunked"
+    if-eqz p1, :cond_1
 
-    const-string v1, "Transfer-Encoding"
+    const-string v0, "Content-Type"
 
-    invoke-virtual {p1, v1}, Lbmc;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Lbmv;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    if-eqz v0, :cond_1
 
-    move-result v0
+    .line 122
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Unexpected header: Content-Type"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 124
+    :cond_1
+    if-eqz p1, :cond_2
+
+    const-string v0, "Content-Length"
+
+    invoke-virtual {p1, v0}, Lbmv;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     if-eqz v0, :cond_2
 
-    iget-object v1, p0, Lbmy;->b:Lbmu;
+    .line 125
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    iget-object v2, p0, Lbmy;->a:Lbmw;
+    const-string v1, "Unexpected header: Content-Length"
 
-    iget v0, v1, Lbmu;->e:I
-
-    if-eq v0, v4, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "state: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, v1, Lbmu;->e:I
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_1
-    iput v5, v1, Lbmu;->e:I
-
-    new-instance v0, Lbmu$c;
-
-    invoke-direct {v0, v1, v2}, Lbmu$c;-><init>(Lbmu;Lbmw;)V
-
-    goto :goto_0
-
+    .line 128
     :cond_2
-    invoke-static {p1}, Lbmz;->a(Lbmc;)J
+    iget-object v0, p0, Lbmy;->k:Ljava/util/List;
 
-    move-result-wide v0
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-wide/16 v2, -0x1
+    .line 129
+    iget-object v0, p0, Lbmy;->l:Ljava/util/List;
 
-    cmp-long v2, v0, v2
+    invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Lbmy;->b:Lbmu;
-
-    invoke-virtual {v2, v0, v1}, Lbmu;->a(J)Lcaj;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v1, p0, Lbmy;->b:Lbmu;
-
-    iget v0, v1, Lbmu;->e:I
-
-    if-eq v0, v4, :cond_4
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "state: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, v1, Lbmu;->e:I
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_4
-    iput v5, v1, Lbmu;->e:I
-
-    new-instance v0, Lbmu$f;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lbmu$f;-><init>(Lbmu;B)V
-
-    goto :goto_0
+    .line 130
+    return-object p0
 .end method
 
-.method public final a(Lbma;J)Lcai;
-    .locals 6
-
-    .prologue
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 37
-    const-string v0, "chunked"
-
-    const-string v1, "Transfer-Encoding"
-
-    invoke-virtual {p1, v1}, Lbma;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 39
-    iget-object v1, p0, Lbmy;->b:Lbmu;
-
-    iget v0, v1, Lbmu;->e:I
-
-    if-eq v0, v3, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "state: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, v1, Lbmu;->e:I
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iput v4, v1, Lbmu;->e:I
-
-    new-instance v0, Lbmu$b;
-
-    invoke-direct {v0, v1, v2}, Lbmu$b;-><init>(Lbmu;B)V
-
-    .line 44
-    :goto_0
-    return-object v0
-
-    .line 42
-    :cond_1
-    const-wide/16 v0, -0x1
-
-    cmp-long v0, p2, v0
-
-    if-eqz v0, :cond_3
-
-    .line 44
-    iget-object v1, p0, Lbmy;->b:Lbmu;
-
-    iget v0, v1, Lbmu;->e:I
-
-    if-eq v0, v3, :cond_2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "state: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, v1, Lbmu;->e:I
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    iput v4, v1, Lbmu;->e:I
-
-    new-instance v0, Lbmu$d;
-
-    invoke-direct {v0, v1, p2, p3, v2}, Lbmu$d;-><init>(Lbmu;JB)V
-
-    goto :goto_0
-
-    .line 47
-    :cond_3
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Cannot stream a request body without chunked encoding or a known content length!"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final a()V
-    .locals 1
-
-    .prologue
-    .line 52
-    iget-object v0, p0, Lbmy;->b:Lbmu;
-
-    invoke-virtual {v0}, Lbmu;->a()V
-
-    .line 53
-    return-void
-.end method
-
-.method public final a(Lbma;)V
-    .locals 5
-
-    .prologue
-    const/16 v4, 0x20
-
-    .line 72
-    iget-object v0, p0, Lbmy;->a:Lbmw;
-
-    invoke-virtual {v0}, Lbmw;->b()V
-
-    .line 73
-    iget-object v0, p0, Lbmy;->a:Lbmw;
-
-    .line 74
-    iget-object v0, v0, Lbmw;->c:Lblo;
-
-    iget-object v0, v0, Lblo;->b:Lbme;
-
-    iget-object v0, v0, Lbme;->b:Ljava/net/Proxy;
-
-    invoke-virtual {v0}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbmy;->a:Lbmw;
-
-    .line 75
-    iget-object v1, v1, Lbmw;->c:Lblo;
-
-    iget-object v1, v1, Lblo;->g:Lblz;
-
-    .line 73
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v3, p1, Lbma;->b:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Lbma;->e()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    sget-object v3, Ljava/net/Proxy$Type;->HTTP:Ljava/net/Proxy$Type;
-
-    if-ne v0, v3, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p1}, Lbma;->a()Ljava/net/URL;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    :goto_1
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-static {v1}, Lbnb;->a(Lblz;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 76
-    iget-object v1, p0, Lbmy;->b:Lbmu;
-
-    iget-object v2, p1, Lbma;->c:Lblu;
-
-    invoke-virtual {v1, v2, v0}, Lbmu;->a(Lblu;Ljava/lang/String;)V
-
-    .line 77
-    return-void
-
-    .line 73
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1}, Lbma;->a()Ljava/net/URL;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lbnb;->a(Ljava/net/URL;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_1
-.end method
-
-.method public final a(Lbnc;)V
-    .locals 4
-
-    .prologue
-    .line 56
-    iget-object v0, p0, Lbmy;->b:Lbmu;
-
-    iget v1, v0, Lbmu;->e:I
-
-    const/4 v2, 0x1
-
-    if-eq v1, v2, :cond_0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "state: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v0, v0, Lbmu;->e:I
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_0
-    const/4 v1, 0x3
-
-    iput v1, v0, Lbmu;->e:I
-
-    iget-object v0, v0, Lbmu;->d:Lbzv;
-
-    invoke-virtual {p1, v0}, Lbnc;->a(Lcai;)V
-
-    .line 57
-    return-void
-.end method
-
-.method public final b()Lbmc$a;
-    .locals 1
-
-    .prologue
-    .line 80
-    iget-object v0, p0, Lbmy;->b:Lbmu;
-
-    invoke-virtual {v0}, Lbmu;->c()Lbmc$a;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()V
+.method public final a(Lbmx;)Lbmy;
     .locals 3
 
     .prologue
-    .line 84
-    invoke-virtual {p0}, Lbmy;->d()Z
+    .line 101
+    if-nez p1, :cond_0
+
+    .line 102
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "type == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 104
+    :cond_0
+    iget-object v0, p1, Lbmx;->a:Ljava/lang/String;
+
+    const-string v1, "multipart"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
-    .line 85
-    iget-object v0, p0, Lbmy;->b:Lbmu;
+    .line 105
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const/4 v1, 0x1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iput v1, v0, Lbmu;->f:I
+    const-string v2, "multipart != "
 
-    iget v1, v0, Lbmu;->e:I
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-nez v1, :cond_0
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    iput v1, v0, Lbmu;->f:I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sget-object v1, Lbmi;->b:Lbmi;
+    move-result-object v1
 
-    iget-object v2, v0, Lbmu;->a:Lblp;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, v0, Lbmu;->b:Lblo;
+    throw v0
 
-    invoke-virtual {v1, v2, v0}, Lbmi;->a(Lblp;Lblo;)V
-
-    .line 89
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 87
+    .line 107
     :cond_1
-    iget-object v0, p0, Lbmy;->b:Lbmu;
+    iput-object p1, p0, Lbmy;->j:Lbmx;
 
-    const/4 v1, 0x2
-
-    iput v1, v0, Lbmu;->f:I
-
-    iget v1, v0, Lbmu;->e:I
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x6
-
-    iput v1, v0, Lbmu;->e:I
-
-    iget-object v0, v0, Lbmu;->b:Lblo;
-
-    iget-object v0, v0, Lblo;->c:Ljava/net/Socket;
-
-    invoke-virtual {v0}, Ljava/net/Socket;->close()V
-
-    goto :goto_0
+    .line 108
+    return-object p0
 .end method
 
-.method public final d()Z
+.method public final a()Lbnc;
     .locals 5
 
     .prologue
-    const/4 v1, 0x1
+    .line 190
+    iget-object v0, p0, Lbmy;->k:Ljava/util/List;
 
-    const/4 v0, 0x0
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    .line 93
-    const-string v2, "close"
+    move-result v0
 
-    iget-object v3, p0, Lbmy;->a:Lbmw;
+    if-eqz v0, :cond_0
 
-    iget-object v3, v3, Lbmw;->l:Lbma;
+    .line 191
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v4, "Connection"
+    const-string v1, "Multipart body must have at least one part."
 
-    invoke-virtual {v3, v4}, Lbma;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v3
+    throw v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 106
+    .line 193
     :cond_0
-    :goto_0
-    return v0
+    new-instance v0, Lbmy$a;
 
-    .line 98
-    :cond_1
-    const-string v2, "close"
+    iget-object v1, p0, Lbmy;->j:Lbmx;
 
-    iget-object v3, p0, Lbmy;->a:Lbmw;
+    iget-object v2, p0, Lbmy;->i:Lcay;
 
-    invoke-virtual {v3}, Lbmw;->d()Lbmc;
+    iget-object v3, p0, Lbmy;->k:Ljava/util/List;
 
-    move-result-object v3
+    iget-object v4, p0, Lbmy;->l:Ljava/util/List;
 
-    const-string v4, "Connection"
+    invoke-direct {v0, v1, v2, v3, v4}, Lbmy$a;-><init>(Lbmx;Lcay;Ljava/util/List;Ljava/util/List;)V
 
-    invoke-virtual {v3, v4}, Lbmc;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 102
-    iget-object v2, p0, Lbmy;->b:Lbmu;
-
-    iget v2, v2, Lbmu;->e:I
-
-    const/4 v3, 0x6
-
-    if-ne v2, v3, :cond_2
-
-    move v2, v1
-
-    :goto_1
-    if-nez v2, :cond_0
-
-    move v0, v1
-
-    .line 106
-    goto :goto_0
-
-    :cond_2
-    move v2, v0
-
-    .line 102
-    goto :goto_1
+    return-object v0
 .end method

@@ -45,26 +45,26 @@
 
 .field private q:Landroid/widget/ListView;
 
-.field private r:Lbwc;
+.field private r:Lbxd;
 
 .field private s:Landroid/os/Handler;
 
-.field private t:Lbwb;
+.field private t:Lbxc;
 
 .field private u:Landroid/os/Handler;
 
 .field private v:Ljava/lang/String;
 
-.field private w:Lbvq;
+.field private w:Lbwr;
 
-.field private x:Lbvo;
+.field private x:Lbwp;
 
 .field private y:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "Lbvt;",
+            "Lbwu;",
             ">;"
         }
     .end annotation
@@ -104,32 +104,32 @@
     return-void
 .end method
 
-.method static synthetic a(Lnet/hockeyapp/android/FeedbackActivity;Lbvo;)Lbvo;
+.method static synthetic a(Lnet/hockeyapp/android/FeedbackActivity;Lbwp;)Lbwp;
     .locals 0
 
     .prologue
     .line 75
-    iput-object p1, p0, Lnet/hockeyapp/android/FeedbackActivity;->x:Lbvo;
+    iput-object p1, p0, Lnet/hockeyapp/android/FeedbackActivity;->x:Lbwp;
 
     return-object p1
 .end method
 
-.method static synthetic a(Lnet/hockeyapp/android/FeedbackActivity;)Lbvq;
+.method static synthetic a(Lnet/hockeyapp/android/FeedbackActivity;)Lbwr;
     .locals 1
 
     .prologue
     .line 75
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->w:Lbvq;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->w:Lbwr;
 
     return-object v0
 .end method
 
-.method static synthetic a(Lnet/hockeyapp/android/FeedbackActivity;Lbvq;)Lbvq;
+.method static synthetic a(Lnet/hockeyapp/android/FeedbackActivity;Lbwr;)Lbwr;
     .locals 0
 
     .prologue
     .line 75
-    iput-object p1, p0, Lnet/hockeyapp/android/FeedbackActivity;->w:Lbvq;
+    iput-object p1, p0, Lnet/hockeyapp/android/FeedbackActivity;->w:Lbwr;
 
     return-object p1
 .end method
@@ -153,9 +153,9 @@
     const/4 v2, 0x0
 
     .line 506
-    sget-object v0, Lbwi$a;->a:Lbwi;
+    sget-object v0, Lbxj$a;->a:Lbxj;
 
-    invoke-virtual {v0, p0}, Lbwi;->a(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v0, p0}, Lbxj;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -211,7 +211,7 @@
 
     .prologue
     .line 743
-    invoke-static {p2}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {p2}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -248,7 +248,7 @@
 
     .prologue
     .line 759
-    new-instance v0, Lbwc;
+    new-instance v0, Lbxd;
 
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity;->e:Landroid/content/Context;
 
@@ -270,27 +270,27 @@
 
     move/from16 v10, p9
 
-    invoke-direct/range {v0 .. v10}, Lbwc;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Landroid/os/Handler;Z)V
+    invoke-direct/range {v0 .. v10}, Lbxd;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Landroid/os/Handler;Z)V
 
-    iput-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbwc;
+    iput-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbxd;
 
     .line 760
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbwc;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbxd;
 
-    invoke-static {v0}, Lbwd;->a(Landroid/os/AsyncTask;)V
+    invoke-static {v0}, Lbxe;->a(Landroid/os/AsyncTask;)V
 
     .line 761
     return-void
 .end method
 
-.method static synthetic a(Lnet/hockeyapp/android/FeedbackActivity;Lbvu;)V
+.method static synthetic a(Lnet/hockeyapp/android/FeedbackActivity;Lbwv;)V
     .locals 1
 
     .prologue
     .line 75
     new-instance v0, Lnet/hockeyapp/android/FeedbackActivity$4;
 
-    invoke-direct {v0, p0, p1}, Lnet/hockeyapp/android/FeedbackActivity$4;-><init>(Lnet/hockeyapp/android/FeedbackActivity;Lbvu;)V
+    invoke-direct {v0, p0, p1}, Lnet/hockeyapp/android/FeedbackActivity$4;-><init>(Lnet/hockeyapp/android/FeedbackActivity;Lbwv;)V
 
     invoke-virtual {p0, v0}, Lnet/hockeyapp/android/FeedbackActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
@@ -302,17 +302,17 @@
 
     .prologue
     .line 75
-    new-instance v0, Lbwb;
+    new-instance v0, Lbxc;
 
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity;->u:Landroid/os/Handler;
 
-    invoke-direct {v0, p0, p1, v1, p2}, Lbwb;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1, v1, p2}, Lbxc;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->t:Lbwb;
+    iput-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->t:Lbxc;
 
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->t:Lbwb;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->t:Lbxc;
 
-    invoke-static {v0}, Lbwd;->a(Landroid/os/AsyncTask;)V
+    invoke-static {v0}, Lbxe;->a(Landroid/os/AsyncTask;)V
 
     return-void
 .end method
@@ -373,12 +373,12 @@
     return-object v0
 .end method
 
-.method static synthetic g(Lnet/hockeyapp/android/FeedbackActivity;)Lbvo;
+.method static synthetic g(Lnet/hockeyapp/android/FeedbackActivity;)Lbwp;
     .locals 1
 
     .prologue
     .line 75
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->x:Lbvo;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->x:Lbwp;
 
     return-object v0
 .end method
@@ -582,7 +582,7 @@
     if-nez v0, :cond_2
 
     .line 312
-    sget-object v0, Lbwi$a;->a:Lbwi;
+    sget-object v0, Lbxj$a;->a:Lbxj;
 
     iget-object v2, p0, Lnet/hockeyapp/android/FeedbackActivity;->e:Landroid/content/Context;
 
@@ -655,11 +655,11 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 344
-    sget-object v0, Lbwi$a;->a:Lbwi;
+    sget-object v0, Lbxj$a;->a:Lbxj;
 
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity;->e:Landroid/content/Context;
 
-    invoke-virtual {v0, v1}, Lbwi;->a(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lbxj;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -730,9 +730,9 @@
 
     move-result-object v2
 
-    iput-object v2, v0, Lbwi;->a:Landroid/content/SharedPreferences;
+    iput-object v2, v0, Lbxj;->a:Landroid/content/SharedPreferences;
 
-    iget-object v2, v0, Lbwi;->a:Landroid/content/SharedPreferences;
+    iget-object v2, v0, Lbxj;->a:Landroid/content/SharedPreferences;
 
     if-nez v2, :cond_4
 
@@ -741,7 +741,7 @@
     goto :goto_1
 
     :cond_4
-    iget-object v0, v0, Lbwi;->a:Landroid/content/SharedPreferences;
+    iget-object v0, v0, Lbxj;->a:Landroid/content/SharedPreferences;
 
     const-string v2, "net.hockeyapp.android.prefs_key_name_email"
 
@@ -969,11 +969,11 @@
     invoke-virtual {v0, v1, v9}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
     :cond_0
-    sget-object v0, Lbwi$a;->a:Lbwi;
+    sget-object v0, Lbxj$a;->a:Lbxj;
 
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity;->e:Landroid/content/Context;
 
-    invoke-virtual {v0, v1}, Lbwi;->a(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lbxj;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -1097,7 +1097,7 @@
     goto/16 :goto_0
 
     :cond_4
-    invoke-static {v3}, Lbwk;->b(Ljava/lang/String;)Z
+    invoke-static {v3}, Lbxl;->b(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1112,7 +1112,7 @@
     goto/16 :goto_0
 
     :cond_5
-    sget-object v0, Lbwi$a;->a:Lbwi;
+    sget-object v0, Lbxj$a;->a:Lbxj;
 
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity;->e:Landroid/content/Context;
 
@@ -1124,19 +1124,19 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lbwi;->a:Landroid/content/SharedPreferences;
+    iput-object v1, v0, Lbxj;->a:Landroid/content/SharedPreferences;
 
-    iget-object v1, v0, Lbwi;->a:Landroid/content/SharedPreferences;
+    iget-object v1, v0, Lbxj;->a:Landroid/content/SharedPreferences;
 
     if-eqz v1, :cond_7
 
-    iget-object v1, v0, Lbwi;->a:Landroid/content/SharedPreferences;
+    iget-object v1, v0, Lbxj;->a:Landroid/content/SharedPreferences;
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    iput-object v1, v0, Lbwi;->b:Landroid/content/SharedPreferences$Editor;
+    iput-object v1, v0, Lbxj;->b:Landroid/content/SharedPreferences$Editor;
 
     if-eqz v2, :cond_6
 
@@ -1145,16 +1145,16 @@
     if-nez v4, :cond_8
 
     :cond_6
-    iget-object v1, v0, Lbwi;->b:Landroid/content/SharedPreferences$Editor;
+    iget-object v1, v0, Lbxj;->b:Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "net.hockeyapp.android.prefs_key_name_email"
 
     invoke-interface {v1, v6, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :goto_1
-    iget-object v0, v0, Lbwi;->b:Landroid/content/SharedPreferences$Editor;
+    iget-object v0, v0, Lbxj;->b:Landroid/content/SharedPreferences$Editor;
 
-    invoke-static {v0}, Lbwi;->a(Landroid/content/SharedPreferences$Editor;)V
+    invoke-static {v0}, Lbxj;->a(Landroid/content/SharedPreferences$Editor;)V
 
     :cond_7
     invoke-virtual {p0, v13}, Lnet/hockeyapp/android/FeedbackActivity;->findViewById(I)Landroid/view/View;
@@ -1178,7 +1178,7 @@
     goto/16 :goto_0
 
     :cond_8
-    iget-object v1, v0, Lbwi;->b:Landroid/content/SharedPreferences$Editor;
+    iget-object v1, v0, Lbxj;->b:Landroid/content/SharedPreferences$Editor;
 
     const-string v6, "net.hockeyapp.android.prefs_key_name_email"
 
@@ -1249,11 +1249,11 @@
     :sswitch_3
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity;->v:Ljava/lang/String;
 
-    sget-object v0, Lbwi$a;->a:Lbwi;
+    sget-object v0, Lbxj$a;->a:Lbxj;
 
     iget-object v2, p0, Lnet/hockeyapp/android/FeedbackActivity;->e:Landroid/content/Context;
 
-    invoke-virtual {v0, v2}, Lbwi;->a(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Lbxj;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -1384,6 +1384,18 @@
     .prologue
     const/4 v2, 0x0
 
+    invoke-virtual {p0}, Lnet/hockeyapp/android/FeedbackActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lnet/hockeyapp/android/FeedbackActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 203
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -1397,7 +1409,7 @@
     .line 207
     const/16 v0, 0x40b
 
-    invoke-static {v0}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v0}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1654,14 +1666,14 @@
     check-cast p2, Landroid/app/AlertDialog;
 
     .line 437
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->w:Lbvq;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->w:Lbwr;
 
     if-eqz v0, :cond_0
 
     .line 439
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->w:Lbvq;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->w:Lbwr;
 
-    iget-object v0, v0, Lbvq;->a:Ljava/lang/String;
+    iget-object v0, v0, Lbwr;->a:Ljava/lang/String;
 
     invoke-virtual {p2, v0}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
@@ -1671,7 +1683,7 @@
     :cond_0
     const/16 v0, 0x410
 
-    invoke-static {v0}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v0}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1761,20 +1773,20 @@
     const/4 v1, 0x0
 
     .line 269
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbwc;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbxd;
 
     if-eqz v0, :cond_0
 
     .line 270
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbwc;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbxd;
 
-    iput-object v1, v0, Lbwc;->a:Landroid/content/Context;
+    iput-object v1, v0, Lbxd;->a:Landroid/content/Context;
 
-    iput-object v1, v0, Lbwc;->b:Landroid/app/ProgressDialog;
+    iput-object v1, v0, Lbxd;->b:Landroid/app/ProgressDialog;
 
     .line 273
     :cond_0
-    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbwc;
+    iget-object v0, p0, Lnet/hockeyapp/android/FeedbackActivity;->r:Lbxd;
 
     return-object v0
 .end method

@@ -1,9 +1,9 @@
-.class final Ldd;
-.super Lcr;
+.class public abstract Ldd;
+.super Lde;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Ljava/util/Collection;
 
 
 # annotations
@@ -12,118 +12,301 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<K:",
-        "Ljava/lang/Object;",
-        "V:",
+        "<E:",
         "Ljava/lang/Object;",
         ">",
-        "Lcr",
-        "<TK;TV;>;",
-        "Ljava/io/Serializable;"
+        "Lde;",
+        "Ljava/util/Collection",
+        "<TE;>;"
     }
 .end annotation
 
 
-# instance fields
-.field final a:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TK;"
-        }
-    .end annotation
-.end field
-
-.field final b:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TV;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
+.method protected constructor <init>()V
     .locals 0
-    .param p1    # Ljava/lang/Object;
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/Object;
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;TV;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 34
-    invoke-direct {p0}, Lcr;-><init>()V
+    .line 53
+    invoke-direct {p0}, Lde;-><init>()V
 
-    .line 35
-    iput-object p1, p0, Ldd;->a:Ljava/lang/Object;
-
-    .line 36
-    iput-object p2, p0, Ldd;->b:Ljava/lang/Object;
-
-    .line 37
     return-void
 .end method
 
 
 # virtual methods
-.method public final getKey()Ljava/lang/Object;
+.method public add(Ljava/lang/Object;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TK;"
+            "(TE;)Z"
         }
     .end annotation
 
-    .annotation runtime Ljavax/annotation/Nullable;
+    .prologue
+    .line 84
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public addAll(Ljava/util/Collection;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection",
+            "<+TE;>;)Z"
+        }
     .end annotation
 
     .prologue
-    .line 40
-    iget-object v0, p0, Ldd;->a:Ljava/lang/Object;
+    .line 99
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method protected abstract c()Ljava/util/Collection;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection",
+            "<TE;>;"
+        }
+    .end annotation
+.end method
+
+.method public clear()V
+    .locals 1
+
+    .prologue
+    .line 109
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->clear()V
+
+    .line 110
+    return-void
+.end method
+
+.method public contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    .prologue
+    .line 79
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public containsAll(Ljava/util/Collection;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection",
+            "<*>;)Z"
+        }
+    .end annotation
+
+    .prologue
+    .line 94
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->containsAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method protected synthetic d()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 47
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final getValue()Ljava/lang/Object;
+.method public isEmpty()Z
+    .locals 1
+
+    .prologue
+    .line 74
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public iterator()Ljava/util/Iterator;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TV;"
+            "()",
+            "Ljava/util/Iterator",
+            "<TE;>;"
         }
     .end annotation
 
-    .annotation runtime Ljavax/annotation/Nullable;
-    .end annotation
-
     .prologue
-    .line 44
-    iget-object v0, p0, Ldd;->b:Ljava/lang/Object;
+    .line 59
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+.method public remove(Ljava/lang/Object;)Z
+    .locals 1
+
+    .prologue
+    .line 89
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TV;)TV;"
+            "(",
+            "Ljava/util/Collection",
+            "<*>;)Z"
         }
     .end annotation
 
     .prologue
-    .line 48
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    .line 69
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    move-result-object v0
 
-    throw v0
+    invoke-interface {v0, p1}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection",
+            "<*>;)Z"
+        }
+    .end annotation
+
+    .prologue
+    .line 104
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public size()I
+    .locals 1
+
+    .prologue
+    .line 64
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toArray()[Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 114
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->toArray()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">([TT;)[TT;"
+        }
+    .end annotation
+
+    .prologue
+    .line 119
+    invoke-virtual {p0}, Ldd;->c()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method

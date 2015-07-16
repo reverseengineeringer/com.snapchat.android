@@ -1,45 +1,65 @@
-import android.graphics.Bitmap;
-import android.support.v7.widget.RecyclerView;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.TranslateAnimation;
-import android.widget.ImageView;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class apk
 {
-  final ImageView a;
-  private final RecyclerView b;
+  private final bam a;
   
-  public apk(ImageView paramImageView, RecyclerView paramRecyclerView)
+  public apk()
   {
-    a = paramImageView;
-    b = paramRecyclerView;
+    this(bam.a());
   }
   
-  public final void a(int paramInt1, int paramInt2)
+  private apk(bam parambam)
   {
-    b.setDrawingCacheEnabled(true);
-    Object localObject = b.getDrawingCache();
-    localObject = aur.a((Bitmap)localObject, paramInt1, ((Bitmap)localObject).getWidth(), ((Bitmap)localObject).getHeight() - paramInt1);
-    b.setDrawingCacheEnabled(false);
-    a.setImageBitmap((Bitmap)localObject);
-    a.setVisibility(0);
-    localObject = new TranslateAnimation(0.0F, 0.0F, paramInt1, paramInt1 + paramInt2);
-    ((TranslateAnimation)localObject).setInterpolator(new AccelerateDecelerateInterpolator());
-    ((TranslateAnimation)localObject).setDuration(300L);
-    ((TranslateAnimation)localObject).setAnimationListener(new Animation.AnimationListener()
+    a = parambam;
+  }
+  
+  public final List<akl> a(List<akl> paramList)
+  {
+    int i = a.d();
+    if (i == -1) {
+      i = 3;
+    }
+    for (;;)
     {
-      public final void onAnimationEnd(Animation paramAnonymousAnimation)
-      {
-        a.setVisibility(8);
+      ArrayList localArrayList = new ArrayList(i);
+      if ((i == 0) || (paramList.size() == 0)) {
+        return localArrayList;
       }
-      
-      public final void onAnimationRepeat(Animation paramAnonymousAnimation) {}
-      
-      public final void onAnimationStart(Animation paramAnonymousAnimation) {}
-    });
-    a.startAnimation((Animation)localObject);
+      akl localakl = (akl)paramList.get(0);
+      localArrayList.add(localakl);
+      if (paramList.size() == 1) {
+        return localArrayList;
+      }
+      if ((i > 2) && (paramList.size() > 2))
+      {
+        long l1 = localakl.U();
+        long l3 = Math.ceil(Math.abs(((akl)paramList.get(paramList.size() - 1)).U() - l1) / (i - 1));
+        l1 -= l3;
+        int j = 1;
+        while (j < paramList.size() - 1)
+        {
+          localakl = (akl)paramList.get(j);
+          localakl.U();
+          localakl.U();
+          long l2 = l1;
+          if (localakl.U() <= l1)
+          {
+            l2 = l1 - l3;
+            localArrayList.add(localakl);
+          }
+          j += 1;
+          l1 = l2;
+        }
+      }
+      if ((i > 1) && (paramList.size() > 1)) {
+        localArrayList.add(paramList.get(paramList.size() - 1));
+      }
+      localArrayList.size();
+      String.format("Selected too many stories for thumbnail! (%d/%s)", new Object[] { Integer.valueOf(localArrayList.size()), Integer.valueOf(i) });
+      return localArrayList;
+    }
   }
 }
 

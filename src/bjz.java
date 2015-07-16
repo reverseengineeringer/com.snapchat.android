@@ -1,34 +1,21 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class bjz
+public class bjz
+  extends bjf
 {
-  @SerializedName("renditions")
-  protected List<bjy> renditions;
-  @SerializedName("type")
-  protected String type;
-  @SerializedName("url")
-  protected String url;
+  @SerializedName("age")
+  protected String age;
+  @SerializedName("birthday")
+  protected String birthday;
+  @SerializedName("email")
+  protected String email;
+  @SerializedName("study_settings")
+  protected String studySettings;
   
-  public final String a()
-  {
-    return type;
-  }
-  
-  public final String b()
-  {
-    return url;
-  }
-  
-  public final List<bjy> c()
-  {
-    return renditions;
-  }
-  
-  public final boolean equals(Object paramObject)
+  public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -37,15 +24,35 @@ public final class bjz
       return false;
     }
     paramObject = (bjz)paramObject;
-    return new EqualsBuilder().append(type, type).append(url, url).append(renditions, renditions).isEquals();
+    return new EqualsBuilder().append(email, email).append(age, age).append(birthday, birthday).append(studySettings, studySettings).isEquals();
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    return new HashCodeBuilder().append(type).append(url).append(renditions).toHashCode();
+    return new HashCodeBuilder().append(email).append(age).append(birthday).append(studySettings).toHashCode();
   }
   
-  public final String toString()
+  public final void p(String paramString)
+  {
+    email = paramString;
+  }
+  
+  public final void q(String paramString)
+  {
+    age = paramString;
+  }
+  
+  public final void r(String paramString)
+  {
+    birthday = paramString;
+  }
+  
+  public final void s(String paramString)
+  {
+    studySettings = paramString;
+  }
+  
+  public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

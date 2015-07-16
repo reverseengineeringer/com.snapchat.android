@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/ui/SnapEditorView$1;
-.super Laus;
+.super Lavq;
 .source "SourceFile"
 
 
@@ -30,7 +30,7 @@
 
     iput-object p3, p0, Lcom/snapchat/android/ui/SnapEditorView$1;->a:Landroid/graphics/Bitmap;
 
-    invoke-direct {p0, p2}, Laus;-><init>([Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {p0, p2}, Lavq;-><init>([Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method

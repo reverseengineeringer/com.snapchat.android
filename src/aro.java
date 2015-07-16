@@ -1,24 +1,26 @@
-import com.snapchat.android.ui.swipefilters.FilterPageType;
-import com.snapchat.videotranscoder.video.FragmentShader.Filter;
+import android.content.ContentResolver;
+import android.net.Uri;
+import android.provider.MediaStore.Images.Thumbnails;
 
 public final class aro
-  extends arn
+  extends bqj
 {
-  public FragmentShader.Filter b;
+  private final ContentResolver a;
   
-  public aro(FragmentShader.Filter paramFilter)
+  public aro(@chc ContentResolver paramContentResolver)
   {
-    b = paramFilter;
+    a = ((ContentResolver)co.a(paramContentResolver));
   }
   
-  public final String a()
+  public final boolean a(bqh parambqh)
   {
-    return b.name();
+    return ("content".equals(d.getScheme())) && ("media".equals(d.getAuthority()));
   }
   
-  public final FilterPageType b()
+  public final bqj.a b(bqh parambqh)
   {
-    return FilterPageType.BACKGROUNDFILTER;
+    long l = Long.parseLong(d.getLastPathSegment());
+    return new bqj.a(MediaStore.Images.Thumbnails.getThumbnail(a, l, 1, null), bqe.d.b);
   }
 }
 

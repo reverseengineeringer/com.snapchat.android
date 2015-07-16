@@ -1,21 +1,21 @@
 package com.snapchat.android.api2.chat;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.google.gson.annotations.SerializedName;
-import pl;
-import tn;
+import qc;
+import ud;
 
-@tn
+@ud
 public final class LoadConversationPageTask$b
-  extends pl
+  extends qc
 {
   @SerializedName("conversation_id")
   final String mConversationId;
   @SerializedName("offset")
   final String mOffset;
   
-  LoadConversationPageTask$b(LoadConversationPageTask paramLoadConversationPageTask, @cgb String paramString1, @cgc String paramString2)
+  LoadConversationPageTask$b(LoadConversationPageTask paramLoadConversationPageTask, @chc String paramString1, @chd String paramString2)
   {
     mConversationId = paramString1;
     mOffset = paramString2;

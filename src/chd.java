@@ -1,17 +1,13 @@
-public abstract class chd
-  extends che
-  implements cgx
-{
-  public final int f()
-  {
-    return d().E().a(c());
-  }
-  
-  public final int g()
-  {
-    return d().u().a(c());
-  }
-}
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Documented
+@Retention(RetentionPolicy.CLASS)
+@Target({java.lang.annotation.ElementType.METHOD, java.lang.annotation.ElementType.FIELD, java.lang.annotation.ElementType.PARAMETER, java.lang.annotation.ElementType.LOCAL_VARIABLE})
+public @interface chd {}
 
 /* Location:
  * Qualified Name:     chd

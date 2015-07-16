@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.audio.AudioProvider;
 import com.snapchat.videotranscoder.audio.SilenceProvider;
 import com.snapchat.videotranscoder.pipeline.Encoder;
@@ -19,7 +19,7 @@ class TranscodingTask$2
     super(paramMixer, paramEncoderConfiguration1, paramEncoderConfiguration2);
   }
   
-  protected MediaProvider createAudioProvider(@cgb Encoder paramEncoder, @cgb EncoderConfiguration paramEncoderConfiguration, @cgb StageDoneCallback paramStageDoneCallback)
+  protected MediaProvider createAudioProvider(@chc Encoder paramEncoder, @chc EncoderConfiguration paramEncoderConfiguration, @chc StageDoneCallback paramStageDoneCallback)
   {
     switch (TranscodingTask.4.$SwitchMap$com$snapchat$videotranscoder$task$VideoFileMediaSource$AudioChannelSource[val$videoMediaSource.getAudioChannelSource().ordinal()])
     {
@@ -33,7 +33,7 @@ class TranscodingTask$2
     throw new IllegalStateException("Attempt to create an audio provider for a disabled track.");
   }
   
-  protected MediaProvider createVideoProvider(@cgb Encoder paramEncoder, @cgb EncoderConfiguration paramEncoderConfiguration, @cgb StageDoneCallback paramStageDoneCallback)
+  protected MediaProvider createVideoProvider(@chc Encoder paramEncoder, @chc EncoderConfiguration paramEncoderConfiguration, @chc StageDoneCallback paramStageDoneCallback)
   {
     switch (TranscodingTask.4.$SwitchMap$com$snapchat$videotranscoder$task$VideoFileMediaSource$VideoChannelSource[val$videoMediaSource.getVideoChannelSource().ordinal()])
     {

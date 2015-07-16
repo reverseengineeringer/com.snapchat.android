@@ -1,35 +1,50 @@
-.class public final Lef;
+.class public abstract Lef;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
 
 
 # annotations
 .annotation build Lcd;
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<E:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Ljava/util/Iterator",
+        "<TE;>;"
+    }
+.end annotation
+
 
 # direct methods
-.method public static a(ZZ)I
-    .locals 1
+.method protected constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 77
-    if-ne p0, p1, :cond_0
+    .line 32
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    :goto_0
-    return v0
 
-    :cond_0
-    if-eqz p0, :cond_1
+# virtual methods
+.method public final remove()V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    const/4 v0, 0x1
+    .prologue
+    .line 43
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    goto :goto_0
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    :cond_1
-    const/4 v0, -0x1
-
-    goto :goto_0
+    throw v0
 .end method

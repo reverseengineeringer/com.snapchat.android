@@ -1,23 +1,39 @@
 package com.snapchat.android.fragments.settings;
 
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.CheckBox;
+import android.widget.TextView;
+import apw;
+import avw;
+import bam;
 
 final class DeveloperSettingsFragment$20
   implements View.OnClickListener
 {
-  DeveloperSettingsFragment$20(DeveloperSettingsFragment paramDeveloperSettingsFragment, CheckBox paramCheckBox) {}
+  DeveloperSettingsFragment$20(DeveloperSettingsFragment paramDeveloperSettingsFragment, TextView paramTextView) {}
   
-  public final void onClick(View paramView)
+  public final void onClick(final View paramView)
   {
-    paramView = a;
-    if (!a.isChecked()) {}
-    for (boolean bool = true;; bool = false)
+    paramView = a.getText().toString();
+    new apw(b.getActivity(), "Thumbnail Story Count", paramView, paramView)
     {
-      paramView.setChecked(bool);
-      return;
-    }
+      protected final void a(String paramAnonymousString)
+      {
+        try
+        {
+          int i = Integer.parseInt(paramAnonymousString);
+          DeveloperSettingsFragment.b(b).a(i);
+          a.setText(Integer.toString(i));
+          if (!TextUtils.equals(paramView, paramAnonymousString)) {
+            avw.a().b();
+          }
+          return;
+        }
+        catch (NumberFormatException paramAnonymousString) {}
+      }
+    }.show();
   }
 }
 

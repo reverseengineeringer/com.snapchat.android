@@ -1,174 +1,121 @@
 .class public final Lps;
-.super Lth;
+.super Lpk;
 .source "SourceFile"
-
-# interfaces
-.implements Lts$b;
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lps$a;
-    }
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lth;",
-        "Lts$b",
-        "<",
-        "Lps$a;",
-        ">;"
+        Lps$a;,
+        Lps$b;
     }
 .end annotation
 
 
 # static fields
-.field private static final PATH:Ljava/lang/String; = "/loq/device_id"
-
-.field private static final TAG:Ljava/lang/String; = "GetDeviceTokenTask"
+.field private static final TASK_NAME:Ljava/lang/String; = "SharedStorySearchTask"
 
 
 # instance fields
-.field private final mDeviceTokenManager:Laya;
+.field private mCallback:Lps$b;
+
+.field private mQuery:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Lps$b;)V
+    .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lps$b;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 23
-    invoke-static {}, Laya;->a()Laya;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lps;-><init>(Laya;)V
-
-    .line 24
-    return-void
-.end method
-
-.method private constructor <init>(Laya;)V
-    .locals 1
-
-    .prologue
-    .line 27
-    invoke-direct {p0}, Lth;-><init>()V
-
-    .line 28
-    iput-object p1, p0, Lps;->mDeviceTokenManager:Laya;
-
     .line 29
-    const-class v0, Lps$a;
-
-    invoke-virtual {p0, v0, p0}, Lps;->a(Ljava/lang/Class;Lts$b;)V
+    invoke-direct {p0}, Lpk;-><init>()V
 
     .line 30
+    iput-object p1, p0, Lps;->mQuery:Ljava/lang/String;
+
+    .line 31
+    iput-object p2, p0, Lps;->mCallback:Lps$b;
+
+    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Luc;)V
-    .locals 5
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 14
-    check-cast p1, Lps$a;
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_0
-
-    iget-object v1, p1, Lps$a;->mTokenId:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p1, Lps$a;->mTokenValue:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    const-string v0, "GetDeviceTokenTask"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Received new device token from the server "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    new-instance v0, Laxz;
-
-    iget-object v1, p1, Lps$a;->mTokenId:Ljava/lang/String;
-
-    iget-object v2, p1, Lps$a;->mTokenValue:Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2}, Laxz;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_0
-    iget-object v1, p0, Lps;->mDeviceTokenManager:Laya;
-
-    invoke-virtual {v1, v0}, Laya;->a(Laxz;)V
-
-    return-void
-
-    :cond_0
-    const-string v1, "GetDeviceTokenTask"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "GetDeviceTokenTask did not successfully return a new device token "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
-.end method
-
-.method public final synthetic b()Ljava/lang/Object;
+.method protected final a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 14
-    new-instance v0, Lpz;
-
-    invoke-direct {v0}, Lpz;-><init>()V
+    .line 36
+    const-string v0, "/loq/friend_search"
 
     return-object v0
 .end method
 
-.method protected final d()Ljava/lang/String;
+.method protected final b()Landroid/os/Bundle;
+    .locals 3
+
+    .prologue
+    .line 41
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 42
+    const-string v1, "username"
+
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 43
+    const-string v1, "query"
+
+    iget-object v2, p0, Lps;->mQuery:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 44
+    return-object v0
+.end method
+
+.method protected final b(Lalp;)V
+    .locals 2
+
+    .prologue
+    .line 49
+    iget-object v0, p1, Lalp;->result:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_0
+
+    .line 50
+    iget-object v0, p0, Lps;->mCallback:Lps$b;
+
+    iget-object v1, p1, Lalp;->result:Ljava/util/ArrayList;
+
+    invoke-interface {v0, v1}, Lps$b;->a(Ljava/util/ArrayList;)V
+
+    .line 52
+    :cond_0
+    return-void
+.end method
+
+.method protected final c()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 34
-    const-string v0, "/loq/device_id"
+    .line 56
+    const-string v0, "SharedStorySearchTask"
 
     return-object v0
 .end method

@@ -1,30 +1,33 @@
 package com.snapchat.android.fragments.stories;
 
-import abg;
-import abh;
-import abz;
-import abz.a;
-import acy;
-import aeh;
-import afl;
-import agw;
-import ahb;
-import ahc;
-import ahd;
-import ahr;
-import ajb;
-import ajg;
-import ajn;
-import ajo;
-import ajq;
-import ajr;
-import ajv;
-import ajv.a;
+import acg;
+import ach;
+import acz;
+import acz.a;
+import ady;
+import adz;
+import aea;
+import aej;
+import aej.a;
+import afh;
+import agl;
+import aht;
+import ahy;
+import ahz;
+import aia;
+import ain;
 import ajx;
-import ala;
-import alw;
-import alx;
-import alx.a;
+import akc;
+import aki;
+import akk;
+import akl;
+import akp;
+import akp.a;
+import akr;
+import alv;
+import amt;
+import amu;
+import amu.a;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.AnimatorSet;
@@ -35,17 +38,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.content.res.Resources.Theme;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -74,65 +71,61 @@ import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout.LayoutParams;
-import android.widget.TextView;
-import aop;
-import aoq;
-import aos;
-import apz;
-import aqb;
-import aql;
-import aqn;
-import atj;
-import atx;
+import apl;
+import apm;
+import apo;
+import aqy;
+import ara;
+import ari;
+import ark;
 import auh;
-import aup;
-import auy;
-import auz;
-import avb;
-import avl;
-import aza;
-import azm;
-import azu;
-import baa;
-import baj;
-import ban;
-import bap;
+import auv;
+import avf;
+import avn;
+import avw;
+import avx;
+import avz;
+import awj;
+import azy;
+import bal;
 import bat;
-import bbg;
-import bbs;
-import bby;
-import bcf;
-import bcj;
-import bcn;
-import bct;
-import bcv;
-import bcw;
-import bcx;
-import bcz;
-import bda;
-import bdc;
-import bdd;
-import bdh;
-import bdi;
+import bbb;
+import bbo;
+import bbq;
+import bbu;
+import bcs;
+import bcy;
+import bdf;
+import bdj;
+import bdn;
 import bdt;
 import bdv;
 import bdw;
-import bdy;
+import bdx;
 import bdz;
-import beb;
+import bea;
+import bec;
 import bed;
 import beh;
-import bem;
-import ber;
+import bei;
+import bet;
+import bev;
+import bex;
+import bey;
 import bfa;
-import bfd;
-import bgp;
-import bgr;
-import bgr.a;
-import boh;
-import bur;
-import caq;
-import cgb;
+import bfc;
+import bfg;
+import bfl;
+import bfq;
+import bfz;
+import bgd;
+import bhp;
+import bhr;
+import bhr.a;
+import bpi;
+import bvs;
+import cbr;
+import chc;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.SnapchatApplication;
@@ -146,9 +139,8 @@ import com.snapchat.android.analytics.NotificationAnalytics;
 import com.snapchat.android.analytics.NotificationAnalytics.NotificationDestinationType;
 import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import com.snapchat.android.content.SnapchatProvider;
 import com.snapchat.android.controller.stories.StoryLoadingContext;
-import com.snapchat.android.discover.model.database.vtable.PublisherAndEditionVirtualTable;
+import com.snapchat.android.discover.model.ChannelPage;
 import com.snapchat.android.discover.ui.DiscoverButtonView;
 import com.snapchat.android.discover.ui.OpenChannelAnimationView;
 import com.snapchat.android.fragments.addfriends.AddFriendsFragment;
@@ -164,7 +156,6 @@ import com.snapchat.android.stories.ui.animation.DismissAnimationView;
 import com.snapchat.android.ui.ptr.SnapchatPtrFrameLayout;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.AlertDialogUtils;
-import com.snapchat.android.util.emoji.Emoji;
 import com.snapchat.android.util.eventbus.CameraDisplayState;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
@@ -181,134 +172,143 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import javax.inject.Inject;
 import javax.inject.Provider;
-import lh;
-import li;
-import lo;
-import lt;
-import nf;
-import ng;
-import pb.a;
-import pb.b;
-import pg;
-import pu;
-import yt;
-import zd;
+import lz;
+import ma;
+import mg;
+import ml;
+import nw;
+import nx;
+import org.lucasr.twowayview.TwoWayView;
+import ps.a;
+import ps.b;
+import px;
+import ql;
+import zp;
+import zz;
 
-@avl
+@awj
 public class StoriesFragment
   extends SnapchatFragment
-  implements LoaderManager.LoaderCallbacks<Cursor>, StoriesAdapter.b, pb.b
+  implements aej.a, StoriesAdapter.b, ps.b
 {
-  private StickyListHeadersListView A;
-  private SnapchatPtrFrameLayout B;
-  private final yt C;
-  private final ajn D;
-  private String E = null;
-  private int F;
-  private final ahr G;
-  private boolean H = false;
-  private final CameraEventAnalytics I;
-  private final aop J;
-  private final NetworkAnalytics K;
-  private final DictionaryEasyMetric L;
-  private final ng M;
-  private final HashMap<String, Boolean> N = new HashMap();
-  private final baa O;
+  private InputMethodManager A;
+  private StickyListHeadersListView B;
+  private SnapchatPtrFrameLayout C;
+  private final zp D;
+  private final aki E;
+  private String F = null;
+  private int G;
+  private final ain H;
+  private boolean I = false;
+  private final CameraEventAnalytics J;
+  private final apl K;
+  private final NetworkAnalytics L;
+  private final DictionaryEasyMetric M;
+  private final nx N;
+  private final bbb O;
   private final Bus P;
-  private final abz Q;
-  private bfa R;
-  private ajg S;
-  private View T;
+  private final acz Q;
+  private bfz R;
+  private akc S;
+  private Friend T;
   private View U;
-  private bgr<View> V;
-  private ImageView W;
-  private DiscoverButtonView X;
-  private DismissAnimationView Y;
-  private final azm Z;
-  protected ajg a;
-  private aup aa;
-  private final pb.a ab = new pb.a(this);
-  private final ajx ac;
-  private final aeh ad;
-  private acy ae;
-  private boolean af = false;
-  protected List<ajg> b = new ArrayList();
-  protected ajq c;
+  private View V;
+  private bhr<View> W;
+  private ImageView X;
+  private DiscoverButtonView Y;
+  private DismissAnimationView Z;
+  protected akc a;
+  private final bal aa;
+  private avn ab;
+  private final ps.a ac = new ps.a(this);
+  private final akr ad;
+  protected List<akc> b = new ArrayList();
+  protected akk c;
   protected List<Friend> d = new ArrayList();
   @Inject
-  public abh e;
+  public ach e;
   protected StoriesAdapter f;
-  protected final ArrayList<ahb> g = new ArrayList();
+  protected final ArrayList<ahy> g = new ArrayList();
   protected boolean h;
-  boolean i = false;
-  protected bgr<EditText> j;
-  protected View k;
-  protected bgr<View> l;
-  protected bgr<Button> m;
-  protected bgr<View> n;
-  protected TextView o;
-  protected final auy p;
-  protected boolean q = false;
-  protected final Runnable r = new Runnable()
+  protected bhr<EditText> i;
+  protected View j;
+  protected bhr<View> k;
+  protected bhr<Button> l;
+  protected final avw m;
+  protected boolean n = false;
+  protected final Runnable o = new Runnable()
   {
     public final void run()
     {
       if (StoriesFragment.a(StoriesFragment.this) != null)
       {
         StoriesFragment.a(StoriesFragment.this).setSelection(0);
-        localObject = StoriesFragment.a(StoriesFragment.this).getChildAt(0);
-        if (localObject != null) {
-          ((View)localObject).requestFocus();
+        localObject1 = StoriesFragment.a(StoriesFragment.this).getChildAt(0);
+        if (localObject1 != null) {
+          ((View)localObject1).requestFocus();
         }
       }
-      Object localObject = StoriesFragment.p(StoriesFragment.this).iterator();
-      while (((Iterator)localObject).hasNext()) {
-        ((aoq)((Iterator)localObject).next()).n();
+      Object localObject1 = StoriesFragment.p(StoriesFragment.this).iterator();
+      while (((Iterator)localObject1).hasNext())
+      {
+        Object localObject2 = (apm)((Iterator)localObject1).next();
+        if (e != null)
+        {
+          e.setSelection(0);
+          localObject2 = e.getChildAt(0);
+          if (localObject2 != null) {
+            ((View)localObject2).requestFocus();
+          }
+        }
       }
     }
   };
-  private final HashMap<String, StoryGroup> s = new HashMap();
-  private final HashSet<String> t = new HashSet();
-  private final Set<afl> u = Collections.newSetFromMap(new ConcurrentHashMap());
-  private final Provider<ajv> v;
-  private final zd w;
-  private final List<Friend> x = new ArrayList();
-  private final List<aoq> y = new ArrayList();
-  private InputMethodManager z;
+  private final HashMap<String, StoryGroup> p = new HashMap();
+  private final HashSet<String> q = new HashSet();
+  private final Set<agl> r = Collections.newSetFromMap(new ConcurrentHashMap());
+  private final Provider<akp> s;
+  private final zz t;
+  private final List<Friend> u = new ArrayList();
+  private final List<apm> v = new ArrayList();
+  private final afh w;
+  private final aej x;
+  private ady y;
+  private int z = 2;
   
   public StoriesFragment()
   {
-    this(new yt(), NetworkAnalytics.a(), abz.a(), DictionaryEasyMetric.a(), ng.a(), ajn.a(), ajq.a(), ban.a(), ahr.a(), CameraEventAnalytics.a(), ajv.UNSAFE_USER_PROVIDER, auy.a(), zd.a(), aop.a(), baa.a(), azm.a(), aeh.a(), aup.d(), ajx.a());
+    this(new zp(), NetworkAnalytics.a(), acz.a(), DictionaryEasyMetric.a(), nx.a(), aki.a(), akk.a(), bbo.a(), ain.a(), CameraEventAnalytics.a(), akp.UNSAFE_USER_PROVIDER, avw.a(), zz.a(), apl.a(), bbb.b(), bal.a(), afh.a(), avn.d(), akr.a(), aej.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private StoriesFragment(yt paramyt, NetworkAnalytics paramNetworkAnalytics, abz paramabz, DictionaryEasyMetric paramDictionaryEasyMetric, ng paramng, ajn paramajn, ajq paramajq, Bus paramBus, ahr paramahr, CameraEventAnalytics paramCameraEventAnalytics, Provider<ajv> paramProvider, auy paramauy, zd paramzd, aop paramaop, baa parambaa, azm paramazm, aeh paramaeh, aup paramaup, ajx paramajx)
+  private StoriesFragment(zp paramzp, NetworkAnalytics paramNetworkAnalytics, acz paramacz, DictionaryEasyMetric paramDictionaryEasyMetric, nx paramnx, aki paramaki, akk paramakk, Bus paramBus, ain paramain, CameraEventAnalytics paramCameraEventAnalytics, Provider<akp> paramProvider, avw paramavw, zz paramzz, apl paramapl, bbb parambbb, bal parambal, afh paramafh, avn paramavn, akr paramakr, aej paramaej)
   {
     SnapchatApplication.b().c().a(this);
-    C = paramyt;
-    K = paramNetworkAnalytics;
-    Q = paramabz;
-    L = paramDictionaryEasyMetric;
-    M = paramng;
-    D = paramajn;
-    c = paramajq;
+    D = paramzp;
+    L = paramNetworkAnalytics;
+    Q = paramacz;
+    M = paramDictionaryEasyMetric;
+    N = paramnx;
+    E = paramaki;
+    c = paramakk;
     P = paramBus;
-    G = paramahr;
-    I = paramCameraEventAnalytics;
-    v = paramProvider;
-    p = paramauy;
-    w = paramzd;
-    J = paramaop;
-    O = parambaa;
-    Z = paramazm;
-    ad = paramaeh;
-    aa = paramaup;
-    ac = paramajx;
+    H = paramain;
+    J = paramCameraEventAnalytics;
+    s = paramProvider;
+    m = paramavw;
+    t = paramzz;
+    K = paramapl;
+    O = parambbb;
+    aa = parambal;
+    w = paramafh;
+    ab = paramavn;
+    ad = paramakr;
+    x = paramaej;
   }
   
   private void A()
   {
-    StoryCollection localStoryCollection = c.b(a.h());
+    StoryCollection localStoryCollection = c.b(a.l());
     if (localStoryCollection == null)
     {
       a = null;
@@ -319,12 +319,12 @@ public class StoriesFragment
     int i3 = 0;
     if (i2 < b.size())
     {
-      Object localObject = ((ajg)b.get(i2)).h();
+      Object localObject = ((akc)b.get(i2)).l();
       int i4 = i5;
       if (i5 == 0)
       {
         i4 = i5;
-        if (TextUtils.equals((CharSequence)localObject, a.h())) {
+        if (TextUtils.equals((CharSequence)localObject, a.l())) {
           i4 = 1;
         }
       }
@@ -332,11 +332,11 @@ public class StoriesFragment
       int i1 = i3;
       if (localObject != null)
       {
-        if (localStoryCollection.F() != ((StoryCollection)localObject).F()) {
-          break label184;
+        if (localStoryCollection.B() != ((StoryCollection)localObject).B()) {
+          break label166;
         }
         i1 = i3;
-        if (((ajr)((StoryCollection)localObject).e().get(0)).W() > ((ajr)localStoryCollection.e().get(0)).W()) {
+        if (((StoryCollection)localObject).d().U() > localStoryCollection.d().U()) {
           i1 = i2 + 1;
         }
       }
@@ -346,9 +346,9 @@ public class StoriesFragment
         i5 = i4;
         i3 = i1;
         break;
-        label184:
+        label166:
         i1 = i3;
-        if (localStoryCollection.F().ordinal() > ((StoryCollection)localObject).F().ordinal()) {
+        if (localStoryCollection.B().ordinal() > ((StoryCollection)localObject).B().ordinal()) {
           i1 = i2 + 1;
         }
       }
@@ -366,17 +366,17 @@ public class StoriesFragment
     a = null;
   }
   
-  @avl
+  @awj
   private void B()
   {
-    Iterator localIterator = y.iterator();
+    Iterator localIterator = v.iterator();
     while (localIterator.hasNext()) {
-      ((aoq)localIterator.next()).f();
+      ((apm)localIterator.next()).f();
     }
     localIterator = b.iterator();
     int i2 = 0;
     int i1 = 0;
-    ajg localajg;
+    akc localakc;
     int i4;
     int i3;
     int i5;
@@ -384,12 +384,12 @@ public class StoriesFragment
     {
       if (localIterator.hasNext())
       {
-        localajg = (ajg)localIterator.next();
-        if (!localajg.e().isEmpty()) {
-          if (localajg.E())
+        localakc = (akc)localIterator.next();
+        if (localakc.e() != 0) {
+          if (localakc.A())
           {
-            if (i2 >= 2) {
-              break label187;
+            if (i2 >= t.e()) {
+              break label212;
             }
             i4 = i2 + 1;
             i3 = 1;
@@ -404,16 +404,16 @@ public class StoriesFragment
     for (;;)
     {
       if ((i3 != 0) || (i4 != 0)) {
-        w.a(localajg, 3, null, false, StoryLoadingContext.AUTO_LOADED);
+        t.a(localakc, t.b(), null, false, StoryLoadingContext.AUTO_LOADED);
       }
-      if ((i2 != 3) || (i1 != 2))
+      if ((i2 != t.d()) || (i1 != t.e()))
       {
         i3 = i2;
         i2 = i1;
         i1 = i3;
         break;
-        if (i1 >= 3) {
-          break label187;
+        if (i1 >= t.d()) {
+          break label212;
         }
         i5 = i1 + 1;
         i3 = 0;
@@ -423,7 +423,7 @@ public class StoriesFragment
         continue;
       }
       return;
-      label187:
+      label212:
       i5 = i1;
       i3 = 0;
       i4 = 0;
@@ -432,23 +432,23 @@ public class StoriesFragment
     }
   }
   
-  @avl
+  @awj
   private void C()
   {
-    T.setVisibility(0);
     U.setVisibility(0);
-    if (j.b())
+    V.setVisibility(0);
+    if (i.b())
     {
-      ((EditText)j.a()).setText("");
-      ((EditText)j.a()).clearFocus();
-      z.hideSoftInputFromWindow(getView().getWindowToken(), 0);
-      j.a(4);
+      ((EditText)i.a()).setText("");
+      ((EditText)i.a()).clearFocus();
+      A.hideSoftInputFromWindow(getView().getWindowToken(), 0);
+      i.a(4);
     }
     h = false;
-    x.clear();
-    q();
-    o();
-    Iterator localIterator = ((ajv)v.get()).o().iterator();
+    u.clear();
+    r();
+    p();
+    Iterator localIterator = ((akp)s.get()).o().iterator();
     while (localIterator.hasNext())
     {
       Friend localFriend = (Friend)localIterator.next();
@@ -458,76 +458,43 @@ public class StoriesFragment
     }
   }
   
-  @avl
   private void D()
   {
-    Iterator localIterator = N.keySet().iterator();
-    while (localIterator.hasNext())
-    {
-      String str = (String)localIterator.next();
-      if (((Boolean)N.get(str)).booleanValue()) {
-        N.put(str, Boolean.valueOf(false));
-      }
-    }
-  }
-  
-  private void E()
-  {
-    Iterator localIterator = u.iterator();
+    Iterator localIterator = r.iterator();
     while (localIterator.hasNext()) {
-      if (((afl)localIterator.next()).b()) {
+      if (((agl)localIterator.next()).b()) {
         localIterator.remove();
       }
     }
   }
   
-  @avl
-  private void F()
+  @awj
+  private void E()
   {
     int i1 = b.size();
     Iterator localIterator = b.iterator();
     while (localIterator.hasNext())
     {
       StoryCollection localStoryCollection = (StoryCollection)localIterator.next();
-      if ((localStoryCollection instanceof ajo)) {
-        ((ajo)localStoryCollection).q();
-      }
-      if ((localStoryCollection == null) || (localStoryCollection.w().isEmpty())) {
+      if ((localStoryCollection == null) || (localStoryCollection.s() == 0)) {
         localIterator.remove();
       }
     }
     if (b.size() != i1) {
-      q();
+      r();
     }
   }
   
-  private void G()
+  private void F()
   {
-    A.post(r);
+    B.post(o);
   }
   
-  private List<ahb> J()
+  private List<ahy> a(@chc aia paramaia, @chc StoryGroup paramStoryGroup)
   {
     ArrayList localArrayList = new ArrayList();
-    if (A != null)
-    {
-      int i1 = Math.min(A.getCount(), g.size());
-      int i2 = Math.min(A.getLastVisiblePosition() + 1, i1);
-      i1 = A.getFirstVisiblePosition();
-      while (i1 < i2)
-      {
-        localArrayList.add((ahb)A.getItemAtPosition(i1));
-        i1 += 1;
-      }
-    }
-    return localArrayList;
-  }
-  
-  private List<ahb> a(@cgb ahd paramahd, @cgb StoryGroup paramStoryGroup)
-  {
-    ArrayList localArrayList = new ArrayList();
-    localArrayList.add(paramahd);
-    if (t.contains(paramStoryGroup.c())) {
+    localArrayList.add(paramaia);
+    if (q.contains(paramStoryGroup.c())) {
       localArrayList.addAll(paramStoryGroup.a(true));
     }
     return localArrayList;
@@ -535,22 +502,22 @@ public class StoriesFragment
   
   private void a(int paramInt)
   {
+    k.a(paramInt);
     l.a(paramInt);
-    m.a(paramInt);
   }
   
-  @avl
-  private void a(ajv paramajv)
+  @awj
+  private void a(akp paramakp)
   {
     d.clear();
-    d.addAll(paramajv.i());
+    d.addAll(paramakp.i());
   }
   
-  private void a(beh parambeh)
+  private void a(bfg parambfg)
   {
-    Object localObject = (ajv)v.get();
+    Object localObject = (akp)s.get();
     if (localObject == null) {}
-    label362:
+    label315:
     do
     {
       do
@@ -561,67 +528,60 @@ public class StoriesFragment
         for (int i1 = 1;; i1 = 0)
         {
           boolean bool2 = mCalledOnLoginOrOnResume;
-          parambeh = mUUID;
-          if ((B != null) && (B.b()))
+          parambfg = mUUID;
+          if ((C != null) && (C.a()))
           {
-            B.e();
-            K.a(parambeh);
+            C.e();
+            L.a(parambfg);
           }
-          k.setVisibility(8);
+          j.setVisibility(8);
           if (!bool1) {
-            break label362;
+            break label315;
           }
           if (i1 == 0) {
             break;
           }
           z();
+          x();
           y();
-          a((ajv)localObject);
+          a((akp)localObject);
           if (a != null) {
             A();
           }
-          q();
-          E();
+          r();
+          D();
           if ((bool2) && (getUserVisibleHint()))
           {
-            K.a(NetworkAnalytics.PageContext.STORY, parambeh);
-            if ((b.size() == 0) || (((ajg)b.get(0)).C())) {
-              K.b(NetworkAnalytics.PageContext.STORY, parambeh);
+            L.a(NetworkAnalytics.PageContext.STORY, parambfg);
+            if ((b.size() == 0) || (((akc)b.get(0)).z())) {
+              L.b(NetworkAnalytics.PageContext.STORY, parambfg);
             }
           }
           B();
-          parambeh = b.iterator();
-          while (parambeh.hasNext())
+          parambfg = c.f().iterator();
+          while (parambfg.hasNext())
           {
-            localObject = (ajg)parambeh.next();
-            if (((ajg)localObject).b()) {
-              w.a((StoryCollection)localObject);
+            localObject = (StorySnapLogbook)parambfg.next();
+            if ((!mStorySnap.M()) && (!mStorySnap.S())) {
+              t.b(mStorySnap);
             }
-          }
-        }
-        parambeh = c.f().iterator();
-        while (parambeh.hasNext())
-        {
-          localObject = (StorySnapLogbook)parambeh.next();
-          if ((!mStorySnap.L()) && (!mStorySnap.R())) {
-            w.b(mStorySnap);
           }
         }
       } while (!getUserVisibleHint());
       c.m();
-      P.a(new bcv());
+      P.a(new bdv());
       return;
     } while (!((LandingPageActivity)getActivity()).c());
     AlertDialogUtils.a(2131493084, getActivity());
   }
   
-  @avl
+  @awj
   private void a(final StoryGroup paramStoryGroup, boolean paramBoolean)
   {
     if (paramStoryGroup == null) {
       return;
     }
-    t.remove(paramStoryGroup.c());
+    q.remove(paramStoryGroup.c());
     int i3 = paramStoryGroup.k();
     int i4;
     int i2;
@@ -629,26 +589,26 @@ public class StoriesFragment
     Object localObject1;
     if ((paramBoolean) && (i3 > 0))
     {
-      i4 = A.getFirstVisiblePosition();
-      i2 = A.getLastVisiblePosition();
+      i4 = B.getFirstVisiblePosition();
+      i2 = B.getLastVisiblePosition();
       i1 = 0;
       if (i1 >= i2 - i4) {
         break label436;
       }
-      localObject1 = A.getWrappedView(i1).getTag()).P;
-      if ((!(localObject1 instanceof ahd)) || (!TextUtils.equals(((ahd)localObject1).b(), paramStoryGroup.c()))) {}
+      localObject1 = B.getWrappedView(i1).getTag()).O;
+      if ((!(localObject1 instanceof aia)) || (!TextUtils.equals(((aia)localObject1).b(), paramStoryGroup.c()))) {}
     }
     for (;;)
     {
       localObject1 = new ArrayList(i3);
-      int i5 = Math.min(i1 + i3, A.getChildCount() - 1);
+      int i5 = Math.min(i1 + i3, B.getChildCount() - 1);
       i2 = i1 + 1;
       Object localObject3;
       for (;;)
       {
         if (i2 <= i5)
         {
-          localObject2 = A.getWrappedView(i2);
+          localObject2 = B.getWrappedView(i2);
           localObject3 = ValueAnimator.ofInt(new int[] { ((View)localObject2).getMeasuredHeight(), 0 });
           ((ValueAnimator)localObject3).addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
           {
@@ -678,15 +638,15 @@ public class StoriesFragment
       label377:
       while (((Iterator)localObject2).hasNext())
       {
-        localObject3 = (ahb)((Iterator)localObject2).next();
+        localObject3 = (ahy)((Iterator)localObject2).next();
         i2 = i4 + i1 + 1;
         for (;;)
         {
           if (i2 > i4 + i1 + i3) {
             break label377;
           }
-          ahb localahb = (ahb)g.get(i2);
-          if (((localahb instanceof StorySnapLogbook)) && (((StorySnapLogbook)localahb).equals(localObject3)))
+          ahy localahy = (ahy)g.get(i2);
+          if (((localahy instanceof StorySnapLogbook)) && (((StorySnapLogbook)localahy).equals(localObject3)))
           {
             g.remove(i2);
             break;
@@ -704,8 +664,8 @@ public class StoriesFragment
         
         public final void onAnimationEnd(Animator paramAnonymousAnimator)
         {
-          o();
-          q();
+          p();
+          r();
           StoriesFragment.a(StoriesFragment.this, null);
         }
         
@@ -718,7 +678,7 @@ public class StoriesFragment
       });
       ((AnimatorSet)localObject2).start();
       return;
-      q();
+      r();
       return;
       label436:
       i1 = 0;
@@ -733,15 +693,15 @@ public class StoriesFragment
     for (;;)
     {
       return;
-      if ((!azm.d()) || (d.size() > 12)) {
+      if ((!bal.d()) || (d.size() > 12)) {
         break;
       }
       Iterator localIterator = d.iterator();
       while (localIterator.hasNext())
       {
         Friend localFriend = (Friend)localIterator.next();
-        StoryCollection localStoryCollection = c.b(localFriend.h());
-        if ((localStoryCollection != null) && (localStoryCollection.w().size() != localStoryCollection.e().size())) {
+        StoryCollection localStoryCollection = c.b(localFriend.l());
+        if ((localStoryCollection != null) && (localStoryCollection.s() != localStoryCollection.e())) {
           g.add(localFriend);
         }
       }
@@ -749,96 +709,118 @@ public class StoriesFragment
     g.addAll(d);
   }
   
-  protected static int n()
+  protected static int o()
   {
     return 2130837804;
   }
   
-  @avl
-  private void t()
+  @awj
+  private void u()
   {
     final FragmentActivity localFragmentActivity = getActivity();
-    Iterator localIterator = J().iterator();
-    while (localIterator.hasNext())
+    Object localObject = new ArrayList();
+    if (B != null)
     {
-      ahb localahb = (ahb)localIterator.next();
-      if ((localahb instanceof aoq)) {
-        ((aoq)localahb).d();
-      } else if (localahb.m() != null) {
-        bgp.b(new Runnable()
+      int i1 = Math.min(B.getCount(), g.size());
+      int i2 = Math.min(B.getLastVisiblePosition() + 1, i1);
+      i1 = B.getFirstVisiblePosition();
+      while (i1 < i2)
+      {
+        ((List)localObject).add((ahy)B.getItemAtPosition(i1));
+        i1 += 1;
+      }
+    }
+    localObject = ((List)localObject).iterator();
+    while (((Iterator)localObject).hasNext())
+    {
+      ahy localahy = (ahy)((Iterator)localObject).next();
+      if ((localahy instanceof apm)) {
+        ((apm)localahy).d();
+      } else if (localahy.p() != null) {
+        bhp.b(new Runnable()
         {
           public final void run()
           {
-            p.a(localFragmentActivity, b);
+            m.a(localFragmentActivity, b);
           }
         });
       }
     }
   }
   
-  @avl
-  private void u()
-  {
-    if (!ajx.aQ())
-    {
-      n.a(0);
-      return;
-    }
-    n.a(8);
-  }
-  
-  @avl
+  @awj
   private void v()
   {
-    ajv localajv = (ajv)v.get();
-    if (localajv == null) {
+    akp localakp = (akp)s.get();
+    if (localakp == null) {
       return;
     }
-    a(localajv);
+    a(localakp);
     x();
     y();
     z();
-    q();
+    r();
   }
   
   private void w()
   {
-    T.setVisibility(4);
-    U.setVisibility(8);
-    j.a(0);
-    ((EditText)j.a()).requestFocus();
-    z.showSoftInput(j.a(), 0);
+    U.setVisibility(4);
+    V.setVisibility(8);
+    i.a(0);
+    ((EditText)i.a()).requestFocus();
+    A.showSoftInput(i.a(), 0);
     h = true;
   }
   
   private void x()
   {
-    Iterator localIterator = y.iterator();
+    Iterator localIterator = v.iterator();
     while (localIterator.hasNext()) {
-      ((aoq)localIterator.next()).b();
+      ((apm)localIterator.next()).b();
     }
   }
   
-  @avl
+  @awj
   private void y()
   {
     b.clear();
-    b.addAll(c.o());
+    b.addAll(c.n());
   }
   
-  @avl
+  @awj
   private void z()
   {
-    s.clear();
-    s.putAll(c.mStories);
+    p.clear();
+    p.putAll(c.mStories);
   }
   
-  public final void a(ajg paramajg)
+  public final void a(akc paramakc)
   {
-    if (paramajg.equals(S))
+    if (paramakc.equals(S))
     {
-      I.a(CameraEventAnalytics.CameraContext.DOUBLE_TAP);
-      P.a(new bcz(paramajg.h(), 3, true));
+      J.a(CameraEventAnalytics.CameraContext.DOUBLE_TAP);
+      P.a(new bdz(paramakc.l(), 3, true));
+    }
+    for (;;)
+    {
+      new Handler().postDelayed(new Runnable()
+      {
+        public final void run()
+        {
+          StoriesFragment.l(StoriesFragment.this);
+        }
+      }, 450L);
+      return;
+      S = paramakc;
+    }
+  }
+  
+  public final void a(Friend paramFriend)
+  {
+    if (paramFriend.equals(T))
+    {
+      J.a(CameraEventAnalytics.CameraContext.DOUBLE_TAP);
+      P.a(new bdz(paramFriend.l(), 3, true));
     }
     for (;;)
     {
@@ -850,33 +832,54 @@ public class StoriesFragment
         }
       }, 450L);
       return;
-      S = paramajg;
+      T = paramFriend;
     }
   }
   
   public final void a(StorySnapLogbook paramStorySnapLogbook)
   {
     paramStorySnapLogbook = mStorySnap.mClientId;
-    D.a(paramStorySnapLogbook, C);
+    E.a(paramStorySnapLogbook, D);
     d();
   }
   
-  public final void a(ArrayList<afl> paramArrayList)
+  public final void a(ArrayList<agl> paramArrayList)
   {
-    u.clear();
-    u.addAll(paramArrayList);
-    E();
-    q();
+    r.clear();
+    r.addAll(paramArrayList);
+    D();
+    r();
   }
   
-  public final boolean a(Friend paramFriend)
+  @awj
+  public final void a(@chc final List<ChannelPage> paramList)
   {
-    return x.contains(paramFriend);
+    if ((y == null) || (!bal.d())) {
+      return;
+    }
+    final int i1 = z;
+    if (mFragmentLayout != null) {
+      mFragmentLayout.post(new Runnable()
+      {
+        public final void run()
+        {
+          ady localady = StoriesFragment.q(StoriesFragment.this);
+          List localList = paramList;
+          int i = i1;
+          localList = a.a(localList, i);
+          b.clear();
+          b.addAll(localList);
+          c.notifyDataSetChanged();
+          r();
+        }
+      });
+    }
+    z = 0;
   }
   
   public final boolean a(String paramString)
   {
-    return t.contains(paramString);
+    return q.contains(paramString);
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
@@ -884,127 +887,109 @@ public class StoriesFragment
     return WindowConfiguration.StatusBarDrawMode.DRAW_BEHIND;
   }
   
+  public final boolean b(Friend paramFriend)
+  {
+    return u.contains(paramFriend);
+  }
+  
   public final void d()
   {
     z();
-    q();
+    r();
   }
   
   protected final void e()
   {
-    nf.d();
-    M.b("move_to_page", "story");
+    nw.d();
+    N.b("move_to_page", "story");
     super.e();
     AnalyticsEvents.c();
     if ((getActivity() instanceof LandingPageActivity)) {
       getActivityq.a(NotificationAnalytics.NotificationDestinationType.MY_FRIENDS);
     }
-    if (!H)
+    if (!I)
     {
-      G.b();
-      H = true;
+      H.b();
+      I = true;
     }
-    P.a(new bat());
+    P.a(new bbu());
     c.m();
-    P.a(new bcv());
-    P.a(new bdd());
+    P.a(new bdv());
+    P.a(new bed());
     getActivity().setVolumeControlStream(3);
-    t();
     u();
-    if (!ajx.bz())
+    int i1 = 0;
+    while (i1 < v.size())
     {
-      ajx.bA();
-      P.a(new bbg(getString(2131493534), null, getResources().getColor(2131230784), -1, false, "StoriesFragment"));
+      ((apm)v.get(i1)).i();
+      i1 += 1;
     }
-    if (azu.b()) {
-      azu.a(getActivity());
+    if (bat.b()) {
+      bat.a(getActivity());
     }
-    i = true;
-    Iterator localIterator = J().iterator();
-    while (localIterator.hasNext())
-    {
-      Object localObject1 = (ahb)localIterator.next();
-      if ((localObject1 instanceof ajo))
-      {
-        localObject1 = ((ajo)localObject1).r();
-        if (localObject1 != null)
-        {
-          Object localObject2 = (Boolean)N.get(localObject1);
-          if ((localObject2 == null) || (!((Boolean)localObject2).booleanValue())) {
-            N.put(localObject1, Boolean.valueOf(false));
-          }
-          if (i)
-          {
-            localObject1 = N.keySet().iterator();
-            while (((Iterator)localObject1).hasNext())
-            {
-              localObject2 = (String)((Iterator)localObject1).next();
-              if (!((Boolean)N.get(localObject2)).booleanValue())
-              {
-                AnalyticsEvents.e((String)localObject2);
-                N.put(localObject2, Boolean.valueOf(true));
-              }
-            }
-          }
-        }
-      }
-    }
-    nf.e();
+    nw.e();
   }
   
   public final void e(boolean paramBoolean)
   {
-    P.a(new bap(CameraDisplayState.SHOW));
+    P.a(new bbq(CameraDisplayState.SHOW));
   }
   
   protected final void f()
   {
     super.f();
     AnalyticsEvents.d();
-    L.a("FIRST_MEDIA_OPENED");
-    M.c("exit_page", "story");
+    M.a("FIRST_MEDIA_OPENED");
+    N.c("exit_page", "story");
     Object localObject1 = new ArrayList();
     Object localObject2 = g.iterator();
     while (((Iterator)localObject2).hasNext())
     {
-      ahb localahb = (ahb)((Iterator)localObject2).next();
-      if ((localahb instanceof StoryCollection)) {
-        ((ArrayList)localObject1).add(((StoryCollection)localahb).h());
+      ahy localahy = (ahy)((Iterator)localObject2).next();
+      if ((localahy instanceof StoryCollection)) {
+        ((ArrayList)localObject1).add(((StoryCollection)localahy).l());
       }
     }
-    localObject2 = avb.a((Collection)localObject1, ",");
+    localObject2 = avz.a((Collection)localObject1, "~");
     long l1 = ((ArrayList)localObject1).size();
     if (l1 == 0L) {
-      ScAnalyticsEventEngine.a(new lh());
+      ScAnalyticsEventEngine.a(new lz());
     }
-    localObject1 = new li();
+    localObject1 = new ma();
     posterId = ((String)localObject2);
     storyCellCount = Long.valueOf(l1);
-    ScAnalyticsEventEngine.a((lt)localObject1);
-    localObject1 = new ArrayList(t).iterator();
+    int i1 = 0;
+    while (i1 < v.size())
+    {
+      ((apm)v.get(i1)).a((ma)localObject1);
+      i1 += 1;
+    }
+    ScAnalyticsEventEngine.a((ml)localObject1);
+    localObject1 = new ArrayList(q).iterator();
     while (((Iterator)localObject1).hasNext())
     {
       localObject2 = (String)((Iterator)localObject1).next();
-      a((StoryGroup)s.get(localObject2), false);
+      a((StoryGroup)p.get(localObject2), false);
     }
-    t.clear();
-    if (A != null) {
-      A.setSelectionAfterHeaderView();
+    q.clear();
+    if (B != null) {
+      B.setSelectionAfterHeaderView();
     }
     if (h) {
       C();
     }
-    F();
+    localObject1 = v.iterator();
+    while (((Iterator)localObject1).hasNext()) {
+      ((apm)((Iterator)localObject1).next()).h();
+    }
+    E();
     a = null;
-    u();
-    azu.a();
-    i = false;
-    D();
+    bat.a();
   }
   
   public final boolean g()
   {
-    if (aa.g()) {
+    if (ab.g()) {
       return true;
     }
     if (h)
@@ -1012,12 +997,17 @@ public class StoriesFragment
       C();
       return true;
     }
-    return ad.b();
+    return w.b();
   }
   
-  protected final ala h()
+  protected final alv h()
   {
-    return new ala(new String[] { "STORIES" });
+    return new alv(new String[] { "STORIES" });
+  }
+  
+  protected final boolean h_()
+  {
+    return super.isAdded();
   }
   
   public final AnalyticsEvents.AnalyticsContext i()
@@ -1030,21 +1020,16 @@ public class StoriesFragment
     return "StoriesFragment";
   }
   
-  protected final boolean j_()
+  public final amt k()
   {
-    return super.isAdded();
-  }
-  
-  public final alw k()
-  {
-    new alw()
+    new amt()
     {
-      public final boolean a(alx.a paramAnonymousa)
+      public final boolean a(amu.a paramAnonymousa)
       {
-        return alx.g.contains(c);
+        return amu.g.contains(c);
       }
       
-      public final boolean b(alx.a paramAnonymousa)
+      public final boolean b(amu.a paramAnonymousa)
       {
         return false;
       }
@@ -1056,67 +1041,53 @@ public class StoriesFragment
     return h;
   }
   
-  public final List<aoq> m()
+  public final boolean m()
   {
-    return y;
+    if (C != null) {
+      return C.b();
+    }
+    return false;
   }
   
-  protected final void o()
+  public final List<apm> n()
   {
-    if (f == null) {
-      return;
-    }
-    if ((g.size() != 0) || (f.getCount() != 0) || (h) || (!q))
-    {
-      a(8);
-      return;
-    }
-    a(0);
+    return v;
   }
   
   public void onAttach(Activity paramActivity)
   {
-    nf.d();
+    nw.d();
     super.onAttach(paramActivity);
-    R = ((bfa)paramActivity);
-    nf.e();
+    R = ((bfz)paramActivity);
+    nw.e();
   }
   
   public void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    getActivity().getSupportLoaderManager().initLoader$71be8de6(1001, this);
-  }
-  
-  public Loader<Cursor> onCreateLoader(int paramInt, Bundle paramBundle)
-  {
-    switch (paramInt)
-    {
-    default: 
-      return null;
-    }
-    return new CursorLoader(getActivity(), SnapchatProvider.b, PublisherAndEditionVirtualTable.a, null);
+    w.c();
   }
   
   public View onCreateView(LayoutInflater arg1, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    nf.d();
-    mFragmentLayout = ???.inflate(2130968752, paramViewGroup, false);
-    z = ((InputMethodManager)getActivity().getSystemService("input_method"));
-    ??? = y;
-    ae = new acy(getActivity(), ad, (OpenChannelAnimationView)c(2131362267));
+    nw.d();
+    mFragmentLayout = ???.inflate(2130968754, paramViewGroup, false);
+    A = ((InputMethodManager)getActivity().getSystemService("input_method"));
+    v.clear();
+    ??? = v;
+    y = new ady(getActivity(), w, (OpenChannelAnimationView)c(2131362265));
     paramViewGroup = new ArrayList();
-    paramViewGroup.add(ae);
-    paramViewGroup.add(new aos(getActivity(), w));
+    paramViewGroup.add(y);
+    paramViewGroup.add(new apo(getActivity(), t));
     ???.addAll(paramViewGroup);
-    T = c(2131362760);
     U = c(2131362757);
-    X = ((DiscoverButtonView)c(2131362759));
-    j = new bgr(mFragmentLayout, 2131362758, 2131362778, new bgr.a()
+    V = c(2131362754);
+    Y = ((DiscoverButtonView)c(2131362756));
+    i = new bhr(mFragmentLayout, 2131362755, 2131362771, new bhr.a()
     {
       public final void a(View paramAnonymousView)
       {
-        ((EditText)j.a()).addTextChangedListener(new TextWatcher()
+        ((EditText)i.a()).addTextChangedListener(new TextWatcher()
         {
           public final void afterTextChanged(Editable paramAnonymous2Editable) {}
           
@@ -1132,8 +1103,8 @@ public class StoriesFragment
             }
             for (;;)
             {
-              p();
-              r();
+              q();
+              t();
               return;
               StoriesFragment.c(StoriesFragment.this).a(paramAnonymous2CharSequence.toString());
               StoriesFragment.a(StoriesFragment.this).setFastScrollAlwaysVisible(false);
@@ -1144,7 +1115,7 @@ public class StoriesFragment
         });
       }
     });
-    V = new bgr(mFragmentLayout, 2131362758, 2131361836, new bgr.a()
+    W = new bhr(mFragmentLayout, 2131362755, 2131361837, new bhr.a()
     {
       public final void a(View paramAnonymousView)
       {
@@ -1152,53 +1123,39 @@ public class StoriesFragment
         {
           public final void onClick(View paramAnonymous2View)
           {
-            ((EditText)j.a()).setText("");
+            ((EditText)i.a()).setText("");
           }
         });
       }
     });
-    n = new bgr(mFragmentLayout, 2131362768, 2131362770, new bgr.a()
-    {
-      public final void a(View paramAnonymousView)
-      {
-        o = ((TextView)StoriesFragment.d(StoriesFragment.this).findViewById(2131362771));
-        o.setText(getResources().getString(2131493138, new Object[] { baj.a(Emoji.GRINNING_FACE_WITH_SMILING_EYES) }));
-      }
-    });
-    X.setOnClickListener(new View.OnClickListener()
+    Y.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         if (h) {
-          StoriesFragment.e(StoriesFragment.this);
+          StoriesFragment.d(StoriesFragment.this);
         }
-        StoriesFragment.f(StoriesFragment.this).a(4, true);
+        StoriesFragment.e(StoriesFragment.this).a(4, true);
       }
     });
     paramViewGroup = Q;
-    paramBundle = new abz.a()
+    paramBundle = new acz.a()
     {
-      @caq
+      @cbr
       public final void a(final boolean paramAnonymousBoolean)
       {
-        StoriesFragment.g(StoriesFragment.this).post(new Runnable()
+        StoriesFragment.f(StoriesFragment.this).post(new Runnable()
         {
           public final void run()
           {
             if (paramAnonymousBoolean)
             {
-              StoriesFragment.g(StoriesFragment.this).a();
-              StoriesFragment.g(StoriesFragment.this).setContentDescription("Pulsing");
+              StoriesFragment.f(StoriesFragment.this).setFilled(true);
+              StoriesFragment.f(StoriesFragment.this).setContentDescription("Filled");
               return;
             }
-            DiscoverButtonView localDiscoverButtonView = StoriesFragment.g(StoriesFragment.this);
-            if (paramAnonymousBoolean)
-            {
-              a = false;
-              localDiscoverButtonView.removeCallbacks(b);
-              localDiscoverButtonView.invalidate();
-            }
-            StoriesFragment.g(StoriesFragment.this).setContentDescription("Not Pulsing");
+            StoriesFragment.f(StoriesFragment.this).setFilled(false);
+            StoriesFragment.f(StoriesFragment.this).setContentDescription("Not Filled");
           }
         });
       }
@@ -1209,60 +1166,59 @@ public class StoriesFragment
       {
         a.add(paramBundle);
         if (Q.b()) {
-          X.a();
+          Y.setFilled(true);
         }
-        T.setOnClickListener(new View.OnClickListener()
+        U.setOnClickListener(new View.OnClickListener()
         {
           public final void onClick(View paramAnonymousView)
           {
-            StoriesFragment.h(StoriesFragment.this);
+            StoriesFragment.g(StoriesFragment.this);
           }
         });
-        c(2131362756).setOnClickListener(new View.OnClickListener()
+        c(2131362753).setOnClickListener(new View.OnClickListener()
         {
           public final void onClick(View paramAnonymousView)
           {
             getActivity().onBackPressed();
           }
         });
-        u();
-        W = ((ImageView)c(2131362764));
-        k = c(2131362767);
-        Y = ((DismissAnimationView)c(2131362769));
-        l = new bgr(mFragmentLayout, 2131362765, 2131362774);
-        m = new bgr(mFragmentLayout, 2131362766, 2131362773, new bgr.a()
+        X = ((ImageView)c(2131362760));
+        j = c(2131362763);
+        Z = ((DismissAnimationView)c(2131362764));
+        k = new bhr(mFragmentLayout, 2131362761, 2131362767);
+        l = new bhr(mFragmentLayout, 2131362762, 2131362766, new bhr.a()
         {
           public final void a(View paramAnonymousView)
           {
-            paramAnonymousView = m.a();
+            paramAnonymousView = l.a();
             getActivity().getAssets();
-            atj.a(paramAnonymousView);
-            ((Button)m.a()).setBackgroundResource(StoriesFragment.n());
-            ((Button)m.a()).setOnClickListener(new View.OnClickListener()
+            auh.a(paramAnonymousView);
+            ((Button)l.a()).setBackgroundResource(StoriesFragment.o());
+            ((Button)l.a()).setOnClickListener(new View.OnClickListener()
             {
               public final void onClick(View paramAnonymous2View)
               {
-                ban.a().a(new bdw(new AddFriendsFragment()));
+                bbo.a().a(new bev(new AddFriendsFragment()));
               }
             });
           }
         });
-        if (v.get() == null)
+        if (s.get() == null)
         {
-          k.setVisibility(0);
-          f = new StoriesAdapter(getActivity(), g, this, p);
+          j.setVisibility(0);
+          f = new StoriesAdapter(getActivity(), g, this, m);
           v();
-          A = ((StickyListHeadersListView)c(2131362763));
-          A.setAdapter(f);
-          A.setFastScrollAlwaysVisible(true);
-          A.setTextFilterEnabled(true);
-          registerForContextMenu(A);
-          A.setOnTouchListener(new View.OnTouchListener()
+          B = ((StickyListHeadersListView)c(2131362759));
+          B.setAdapter(f);
+          B.setFastScrollAlwaysVisible(true);
+          B.setTextFilterEnabled(true);
+          registerForContextMenu(B);
+          B.setOnTouchListener(new View.OnTouchListener()
           {
             public final boolean onTouch(View paramAnonymousView, MotionEvent paramAnonymousMotionEvent)
             {
               if (h) {
-                StoriesFragment.i(StoriesFragment.this).hideSoftInputFromWindow(getView().getWindowToken(), 0);
+                StoriesFragment.h(StoriesFragment.this).hideSoftInputFromWindow(getView().getWindowToken(), 0);
               }
               return false;
             }
@@ -1277,24 +1233,24 @@ public class StoriesFragment
               if (paramAnonymousInt != 0) {
                 return;
               }
-              StoriesFragment.j(StoriesFragment.this);
+              StoriesFragment.i(StoriesFragment.this);
             }
           });
-          ???.add(new aql(O, "Stories"));
-          ??? = new aqn(???);
-          A.setOnScrollListener(???);
-          B = ((SnapchatPtrFrameLayout)c(2131362762));
-          B.setPtrHandler(new bur()
+          ???.add(new ari(O, "Stories"));
+          ??? = new ark(???);
+          B.setOnScrollListener(???);
+          C = ((SnapchatPtrFrameLayout)c(2131362758));
+          C.setPtrHandler(new bvs()
           {
             public final void a(PtrFrameLayout paramAnonymousPtrFrameLayout)
             {
-              StoriesFragment.k(StoriesFragment.this).a(NetworkAnalytics.PageContext.STORY);
-              StoriesFragment.l(StoriesFragment.this);
+              StoriesFragment.j(StoriesFragment.this).a(NetworkAnalytics.PageContext.STORY);
+              StoriesFragment.k(StoriesFragment.this);
             }
             
             public final boolean a()
             {
-              return bfd.a(StoriesFragment.a(StoriesFragment.this));
+              return bgd.a(StoriesFragment.a(StoriesFragment.this));
             }
           });
           ??? = new TypedValue();
@@ -1306,106 +1262,114 @@ public class StoriesFragment
           paramBundle.getTheme().resolveAttribute(16842829, ???, true);
           ((WindowManager)paramBundle.getSystemService("window")).getDefaultDisplay().getMetrics(paramViewGroup);
           i1 = (int)TypedValue.complexToDimension(data, paramViewGroup);
-          F = i1;
-          nf.e();
+          G = i1;
+          x.a(this);
+          x.a(new aej.a[] { this });
+          nw.e();
           return mFragmentLayout;
         }
       }
-      k.setVisibility(8);
+      j.setVisibility(8);
       continue;
       label743:
       int i1 = 0;
     }
   }
   
-  @boh
-  public void onGetLocationDataTaskCompletedEvent(bbs parambbs)
+  public void onDestroy()
   {
-    a(new beh(null, true, false, new ajv.a(false, false, true, false)));
+    super.onDestroy();
+    x.b(this);
   }
   
-  @boh
-  public void onHideSnapStoryEvent(bby parambby)
+  @bpi
+  public void onGetLocationDataTaskCompletedEvent(bcs parambcs)
+  {
+    a(new bfg(null, true, false, new akp.a(false, false, true, false)));
+  }
+  
+  @bpi
+  public void onHideSnapStoryEvent(bcy parambcy)
   {
     a(WindowConfiguration.StatusBarDrawMode.DRAW_BEHIND);
     f.notifyDataSetChanged();
-    P.a(new bdt(true));
+    P.a(new bet(true));
   }
   
-  @boh
-  public void onLoadStoryMediaCompleteEvent(bcf parambcf)
+  @bpi
+  public void onLoadStoryMediaCompleteEvent(bdf parambdf)
   {
-    parambcf = b;
-    if ((parambcf.size() > 0) && (((ajg)parambcf.get(0)).C())) {
-      K.b(NetworkAnalytics.PageContext.STORY, null);
+    parambdf = b;
+    if ((parambdf.size() > 0) && (((akc)parambdf.get(0)).z())) {
+      L.b(NetworkAnalytics.PageContext.STORY, null);
     }
-  }
-  
-  public void onLoaderReset(Loader<Cursor> paramLoader)
-  {
-    if ((ae == null) || (!azm.d())) {
-      return;
-    }
-    ae.a(null, false);
   }
   
   public void onPause()
   {
     super.onPause();
     a = null;
+    Iterator localIterator = v.iterator();
+    while (localIterator.hasNext()) {
+      ((apm)localIterator.next()).j();
+    }
+    z = 2;
   }
   
-  @boh
-  public void onPostStorySnapRequestCompleteEvent(bcn parambcn)
+  @bpi
+  public void onPostStorySnapRequestCompleteEvent(bdn parambdn)
   {
     d();
   }
   
-  @boh
-  public void onRecentStoryCollectionCompletedViewingEvent(bct parambct)
+  @bpi
+  public void onRecentStoryCollectionCompletedViewingEvent(bdt parambdt)
   {
+    akl localakl = mStorySnap;
+    if ((bal.d()) && (mIsShared)) {
+      return;
+    }
     Iterator localIterator = b.iterator();
-    ajg localajg;
     do
     {
       if (!localIterator.hasNext()) {
         break;
       }
-      localajg = (ajg)localIterator.next();
-    } while ((!localajg.w().isEmpty()) || (!TextUtils.equals(localajg.h(), mStorySnap.mUsername)));
-    for (parambct = localajg;; parambct = null)
+      parambdt = (akc)localIterator.next();
+    } while ((parambdt.s() != 0) || (!TextUtils.equals(parambdt.l(), mUsername)));
+    for (;;)
     {
-      if (parambct != null)
+      if (parambdt != null)
       {
-        if ((a != null) && (!TextUtils.equals(a.h(), parambct.h())))
+        if ((a != null) && (!TextUtils.equals(a.l(), parambdt.l())))
         {
           g.remove(a);
           b.remove(a);
         }
-        a = parambct;
+        a = parambdt;
       }
-      x();
       f.notifyDataSetChanged();
-      t();
+      u();
       B();
       return;
+      parambdt = null;
     }
   }
   
-  @boh
-  public void onRefreshFriendExistsTask(bcx parambcx)
+  @bpi
+  public void onRefreshFriendExistsTask(bdx parambdx)
   {
     f.notifyDataSetChanged();
   }
   
-  @boh
-  public void onRefreshOnFriendActionEvent(bcw parambcw)
+  @bpi
+  public void onRefreshOnFriendActionEvent(bdw parambdw)
   {
     Friend localFriend = mFriend;
     if ((localFriend != null) && (mAction == FriendAction.ADD))
     {
-      x.add(localFriend);
-      if (!TextUtils.equals(localFriend.h(), y_())) {
+      u.add(localFriend);
+      if (!TextUtils.equals(localFriend.l(), x_())) {
         break label56;
       }
     }
@@ -1417,132 +1381,134 @@ public class StoriesFragment
     }
   }
   
-  @boh
-  public void onResetStoriesFragmentScrollEvent(bda parambda)
+  @bpi
+  public void onResetStoriesFragmentScrollEvent(bea parambea)
   {
-    G();
+    F();
   }
   
   public void onResume()
   {
-    nf.d();
+    nw.d();
     super.onResume();
-    H = false;
-    Object localObject = (ajv)v.get();
+    I = false;
+    Object localObject = v.iterator();
+    while (((Iterator)localObject).hasNext()) {
+      ((apm)((Iterator)localObject).next()).k();
+    }
+    localObject = (akp)s.get();
     if (localObject != null)
     {
       if (!mStoryViewRecordsSinceLastServerChange.isEmpty()) {
-        new pg().executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+        new px().executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
       }
       v();
     }
-    G();
+    F();
     localObject = getActivity().getIntent();
-    String str = abh.a((Intent)localObject);
+    String str = ach.a((Intent)localObject);
     if (str != null)
     {
       if (localObject != null) {
         ((Intent)localObject).setData(null);
       }
       w();
-      ((EditText)j.a()).setText(str);
-      if (!ajv.a(getActivity()).c(str)) {
-        new abg(getActivity(), str).show();
+      ((EditText)i.a()).setText(str);
+      if (!akp.a(getActivity()).c(str)) {
+        new acg(getActivity(), str).show();
       }
     }
-    nf.e();
+    nw.e();
   }
   
-  @boh
-  public void onSanitizeStoriesFragmentEvent(bdc parambdc)
+  @bpi
+  public void onSanitizeStoriesFragmentEvent(bec parambec)
   {
-    parambdc = (ajv)v.get();
-    if (parambdc == null) {
+    parambec = (akp)s.get();
+    if (parambec == null) {
       return;
     }
     y();
-    a(parambdc);
+    a(parambec);
     if (a != null) {
       A();
     }
-    q();
+    r();
   }
   
-  @boh
-  public void onSharedStoryButtonClickedEvent(bdh parambdh)
+  @bpi
+  public void onSharedStoryButtonClickedEvent(beh parambeh)
   {
     StoryGroup localStoryGroup = storyGroup;
     String str = localStoryGroup.e();
     if (localStoryGroup.f()) {}
-    for (parambdh = localStoryGroup.g();; parambdh = null)
+    for (parambeh = localStoryGroup.g();; parambeh = null)
     {
-      Object localObject = parambdh;
-      if (TextUtils.isEmpty(parambdh)) {
-        localObject = atx.a(null, 2131493275, new Object[] { localStoryGroup.e() });
+      Object localObject = parambeh;
+      if (TextUtils.isEmpty(parambeh)) {
+        localObject = auv.a(null, 2131493275, new Object[] { localStoryGroup.e() });
       }
-      parambdh = new apz(getActivity(), (String)localObject)
+      parambeh = new aqy(getActivity(), (String)localObject)
       {
         protected final void a() {}
       };
-      parambdh.setTitle(str);
-      parambdh.show();
+      parambeh.setTitle(str);
+      parambeh.show();
       return;
     }
   }
   
-  @boh
-  public void onSharedStoryFriendButtonClickedEvent(final bdi parambdi)
+  @bpi
+  public void onSharedStoryFriendButtonClickedEvent(final bei parambei)
   {
     final Friend localFriend = friend;
     Object localObject2 = mCustomTitle;
     Object localObject1 = localObject2;
     if (TextUtils.isEmpty((CharSequence)localObject2)) {
       if (mIsSharedStory) {
-        localObject1 = localFriend.k();
+        localObject1 = localFriend.e();
       }
     }
     for (;;)
     {
-      final StoryCollection localStoryCollection = c.b(friend.h());
+      final StoryCollection localStoryCollection = c.b(friend.l());
       String str = mCustomDescription;
       localObject2 = str;
       if (TextUtils.isEmpty(str)) {
-        localObject2 = atx.a(null, 2131492907, new Object[] { localFriend.k() });
+        localObject2 = auv.a(null, 2131492907, new Object[] { localFriend.e() });
       }
-      parambdi = new aqb(getActivity(), (String)localObject2, atx.a(null, 2131493269, new Object[0]), atx.a(null, 2131493199, new Object[0]))
+      parambei = new ara(getActivity(), (String)localObject2, auv.a(null, 2131493269, new Object[0]), auv.a(null, 2131493199, new Object[0]))
       {
         protected final void a() {}
         
         protected final void b()
         {
-          new pu(localFriend.h()).f();
+          new ql(localFriend.l()).execute();
           StoriesFragment.o(StoriesFragment.this);
           StoryCollection localStoryCollection = localStoryCollection;
-          boolean bool = parambdiisInRecentUpdates;
-          if ((localStoryCollection == null) || (localStoryCollection.e().size() == 0)) {}
-          for (;;)
+          boolean bool = parambeiisInRecentUpdates;
+          if (localStoryCollection != null)
           {
-            StoriesFragment.a(StoriesFragment.this, localFriend);
-            return;
-            ajr localajr = (ajr)localStoryCollection.e().get(0);
-            lo locallo = new lo();
-            viewLocation = Long.valueOf(aop.a(bool));
-            storyType = aop.c(localajr);
-            posterId = localStoryCollection.h();
-            if (localajr.aw()) {
-              sponsor = localajr.ax();
+            akl localakl = localStoryCollection.d();
+            if (localakl != null)
+            {
+              mg localmg = new mg();
+              viewLocation = Long.valueOf(apl.b(bool));
+              storyType = apl.c(localakl);
+              posterId = localStoryCollection.l();
+              if (apl.a(localStoryCollection.l())) {
+                geoFence = "LOCAL";
+              }
+              ScAnalyticsEventEngine.a(localmg);
             }
-            if (aop.a(localStoryCollection.h())) {
-              geoFence = "LOCAL";
-            }
-            ScAnalyticsEventEngine.a(locallo);
           }
+          StoriesFragment.a(StoriesFragment.this, localFriend);
         }
       };
-      parambdi.setTitle((CharSequence)localObject1);
-      parambdi.show();
+      parambei.setTitle((CharSequence)localObject1);
+      parambei.show();
       return;
-      localObject2 = localFriend.h();
+      localObject2 = localFriend.l();
       localObject1 = localObject2;
       if (!TextUtils.isEmpty(localFriend.a())) {
         localObject1 = (String)localObject2 + " (" + localFriend.a() + ")";
@@ -1550,61 +1516,55 @@ public class StoriesFragment
     }
   }
   
-  @boh
-  public void onSponsoredStoryViewingStartedEvent(bdv parambdv)
+  @bpi
+  public void onStoriesNotifyDatasetChangedEvent(bex parambex)
   {
     f.notifyDataSetChanged();
+    u();
   }
   
-  @boh
-  public void onStoriesNotifyDatasetChangedEvent(bdy parambdy)
+  @bpi
+  public void onStoryDismissAnimationEvent(bey parambey)
   {
-    f.notifyDataSetChanged();
-    t();
+    Z.a.start();
   }
   
-  @boh
-  public void onStoryDismissAnimationEvent(bdz parambdz)
-  {
-    Y.a.start();
-  }
-  
-  @boh
-  public void onStorySnapDeleteEvent(bcj parambcj)
+  @bpi
+  public void onStorySnapDeleteEvent(bdj parambdj)
   {
     d();
   }
   
-  @boh
-  public void onStorySnapPostEvent(beb parambeb)
+  @bpi
+  public void onStorySnapPostEvent(bfa parambfa)
   {
     d();
   }
   
-  @boh
-  public void onStoryThumbnailLoadedEvent(bed parambed)
+  @bpi
+  public void onStoryThumbnailLoadedEvent(bfc parambfc)
   {
     Object localObject = mStoriesThumbnailCacheItem;
-    if (azm.d()) {
+    if (bal.d()) {
       f.notifyDataSetChanged();
     }
     int i1 = 0;
     for (;;)
     {
-      if (i1 <= A.getChildCount())
+      if (i1 <= B.getChildCount())
       {
-        parambed = A.getWrappedView(i1);
-        if (parambed == null) {
-          break label244;
+        parambfc = B.getWrappedView(i1);
+        if (parambfc == null) {
+          break label251;
         }
-        parambed = (ImageView)parambed.findViewById(2131362455);
-        if ((parambed == null) || (!parambed.getTag().equals(mCacheKey))) {
-          break label244;
+        parambfc = (ImageView)parambfc.findViewById(2131362456);
+        if ((parambfc == null) || (parambfc.getTag() == null) || (!parambfc.getTag().equals(mCacheKey))) {
+          break label251;
         }
-        localObject = p.a((auz)localObject);
+        localObject = m.a((avx)localObject);
         if (localObject != null)
         {
-          parambed.setImageBitmap((Bitmap)localObject);
+          parambfc.setImageBitmap((Bitmap)localObject);
           localObject = new AnimationSet(true);
           ScaleAnimation localScaleAnimation = new ScaleAnimation(0.5F, 1.0F, 0.5F, 1.0F, 0.5F, 0.5F);
           localScaleAnimation.setDuration(200L);
@@ -1619,85 +1579,87 @@ public class StoriesFragment
           ((AnimationSet)localObject).addAnimation(localTranslateAnimation);
           ((AnimationSet)localObject).addAnimation(localRotateAnimation);
           ((AnimationSet)localObject).addAnimation(localAlphaAnimation);
-          parambed.startAnimation((Animation)localObject);
+          parambfc.startAnimation((Animation)localObject);
         }
       }
       return;
-      label244:
+      label251:
       i1 += 1;
     }
   }
   
-  @boh
-  public void onSyncAllCompletedEvent(beh parambeh)
+  @bpi
+  public void onSyncAllCompletedEvent(bfg parambfg)
   {
-    a(parambeh);
+    a(parambfg);
   }
   
-  @boh
-  public void onToggleStoryEvent(bem parambem)
+  @bpi
+  public void onToggleStoryEvent(bfl parambfl)
   {
-    if (E != null) {
+    if (F != null) {
       return;
     }
     final StoryGroup localStoryGroup = mStoryGroup;
-    if (t.contains(localStoryGroup.c()))
+    if (q.contains(localStoryGroup.c()))
     {
       a(localStoryGroup, true);
       return;
     }
-    t.add(localStoryGroup.c());
+    q.add(localStoryGroup.c());
     int i4 = localStoryGroup.k();
     if (i4 == 0)
     {
       f.notifyDataSetChanged();
       return;
     }
+    int i5 = B.getLastVisiblePosition();
+    int i6 = B.getFirstVisiblePosition();
     int i3 = 0;
     int i2 = 0;
     int i1;
     for (;;)
     {
       i1 = i2;
-      if (i3 >= A.getLastVisiblePosition() - A.getFirstVisiblePosition()) {
+      if (i3 >= i5 - i6) {
         break;
       }
-      parambem = A.getChildAt(i3);
-      ahb localahb = A.getWrappedView(i3).getTag()).P;
-      i2 += Math.min(parambem.getBottom(), A.getHeight()) - Math.max(parambem.getTop(), 0);
-      if ((localahb instanceof ahd))
+      parambfl = B.getChildAt(i3);
+      ahy localahy = B.getWrappedView(i3).getTag()).O;
+      i2 += Math.min(parambfl.getBottom(), B.getHeight()) - Math.max(parambfl.getTop(), 0);
+      if ((localahy instanceof aia))
       {
         i1 = i2;
-        if (((ahd)localahb).d().equals(localStoryGroup)) {
+        if (((aia)localahy).d().equals(localStoryGroup)) {
           break;
         }
       }
       i3 += 1;
     }
-    if (B.b()) {}
-    for (i2 = B.getHeaderHeight() + i1;; i2 = i1)
+    if (C.a()) {}
+    for (i2 = C.getHeaderHeight() + i1;; i2 = i1)
     {
-      parambem = (RelativeLayout.LayoutParams)W.getLayoutParams();
-      if (parambem != null)
+      parambfl = (RelativeLayout.LayoutParams)X.getLayoutParams();
+      if (parambfl != null)
       {
-        parambem.setMargins(0, i1, 0, 0);
-        W.setLayoutParams(parambem);
+        parambfl.setMargins(0, i1, 0, 0);
+        X.setLayoutParams(parambfl);
         mFragmentLayout.requestLayout();
       }
-      q();
+      r();
       a(8);
-      B.setDrawingCacheEnabled(true);
-      parambem = B.getDrawingCache();
-      if (parambem == null) {
-        parambem = null;
+      C.setDrawingCacheEnabled(true);
+      parambfl = C.getDrawingCache();
+      if (parambfl == null) {
+        parambfl = null;
       }
-      while (parambem != null)
+      while (parambfl != null)
       {
-        W.setImageBitmap(parambem);
-        W.setVisibility(0);
-        parambem = new TranslateAnimation(0.0F, 0.0F, 0.0F, F * i4);
-        parambem.setDuration(300L);
-        parambem.setAnimationListener(new Animation.AnimationListener()
+        X.setImageBitmap(parambfl);
+        X.setVisibility(0);
+        parambfl = new TranslateAnimation(0.0F, 0.0F, 0.0F, G * i4);
+        parambfl.setDuration(300L);
+        parambfl.setAnimationListener(new Animation.AnimationListener()
         {
           public final void onAnimationEnd(Animation paramAnonymousAnimation)
           {
@@ -1712,27 +1674,40 @@ public class StoriesFragment
             StoriesFragment.a(StoriesFragment.this, localStoryGroup.c());
           }
         });
-        W.startAnimation(parambem);
+        X.startAnimation(parambfl);
         return;
-        parambem = Bitmap.createBitmap(parambem, 0, i2, parambem.getWidth(), parambem.getHeight() - i2);
-        B.setDrawingCacheEnabled(false);
+        parambfl = Bitmap.createBitmap(parambfl, 0, i2, parambfl.getWidth(), parambfl.getHeight() - i2);
+        C.setDrawingCacheEnabled(false);
       }
       break;
     }
   }
   
-  @boh
-  public void onUserLoadedEvent(ber paramber)
+  @bpi
+  public void onUserLoadedEvent(bfq parambfq)
   {
     v();
     f.notifyDataSetChanged();
-    k.setVisibility(8);
-    q = true;
+    j.setVisibility(8);
+    n = true;
   }
   
   protected final void p()
   {
-    Object localObject1 = (ajv)v.get();
+    if (f == null) {
+      return;
+    }
+    if ((g.size() != 0) || (f.getCount() != 0) || (h) || (!n))
+    {
+      a(8);
+      return;
+    }
+    a(0);
+  }
+  
+  protected final void q()
+  {
+    Object localObject1 = (akp)s.get();
     if ((localObject1 == null) || (!super.isAdded())) {
       return;
     }
@@ -1741,7 +1716,7 @@ public class StoriesFragment
     Object localObject3;
     Object localObject4;
     Object localObject5;
-    if ((h) && (!TextUtils.isEmpty(((EditText)j.a()).getText())))
+    if ((h) && (!TextUtils.isEmpty(((EditText)i.a()).getText())))
     {
       bool = true;
       g.clear();
@@ -1749,7 +1724,7 @@ public class StoriesFragment
       {
         localObject2 = g;
         localObject3 = new ArrayList();
-        localObject4 = s.values().iterator();
+        localObject4 = p.values().iterator();
       }
     }
     else
@@ -1762,26 +1737,26 @@ public class StoriesFragment
         localObject5 = (StoryGroup)((Iterator)localObject4).next();
         if (((StoryGroup)localObject5).k() > 0)
         {
-          if ((localObject5 instanceof ajb))
+          if ((localObject5 instanceof ajx))
           {
-            ((List)localObject3).addAll(0, a(new agw(), (StoryGroup)localObject5));
+            ((List)localObject3).addAll(0, a(new aht(), (StoryGroup)localObject5));
             continue;
             bool = false;
             break;
           }
-          ((List)localObject3).addAll(a(new ahd((StoryGroup)localObject5), (StoryGroup)localObject5));
+          ((List)localObject3).addAll(a(new aia((StoryGroup)localObject5), (StoryGroup)localObject5));
         }
       }
       label186:
       ((ArrayList)localObject2).addAll((Collection)localObject3);
     }
-    if ((!bool) && (azm.d()))
+    if ((!bool) && (bal.d()))
     {
-      localObject2 = y.iterator();
+      localObject2 = v.iterator();
       while (((Iterator)localObject2).hasNext())
       {
-        localObject3 = (aoq)((Iterator)localObject2).next();
-        if (!((aoq)localObject3).m_()) {
+        localObject3 = (apm)((Iterator)localObject2).next();
+        if (!((apm)localObject3).k_()) {
           g.add(localObject3);
         }
       }
@@ -1794,16 +1769,16 @@ public class StoriesFragment
     {
       localObject4 = new ArrayList();
       localObject2 = new HashSet(d);
-      localObject3 = new HashSet(((ajv)localObject1).o());
-      localObject5 = ((ajv)localObject1).n().iterator();
+      localObject3 = new HashSet(((akp)localObject1).o());
+      localObject5 = ((akp)localObject1).n().iterator();
       while (((Iterator)localObject5).hasNext())
       {
         Friend localFriend = (Friend)((Iterator)localObject5).next();
-        if ((!mIsBlocked) && (!TextUtils.equals(ajx.l(), localFriend.h())) && (!((Set)localObject2).contains(localFriend)) && (!((Set)localObject3).contains(localFriend))) {
+        if ((!mIsBlocked) && (!TextUtils.equals(akr.l(), localFriend.l())) && (!((Set)localObject2).contains(localFriend)) && (!((Set)localObject3).contains(localFriend))) {
           ((List)localObject4).add(localFriend);
         }
       }
-      ((List)localObject4).addAll(((ajv)localObject1).m());
+      ((List)localObject4).addAll(((akp)localObject1).m());
       Collections.sort((List)localObject4);
       g.addAll((Collection)localObject4);
       localObject1 = new ArrayList();
@@ -1811,43 +1786,43 @@ public class StoriesFragment
       while (((Iterator)localObject3).hasNext())
       {
         localObject4 = (Friend)((Iterator)localObject3).next();
-        if ((!mIsBlocked) && (!TextUtils.equals(ajx.l(), ((Friend)localObject4).h())) && (!((Set)localObject2).contains(localObject4))) {
+        if ((!mIsBlocked) && (!TextUtils.equals(akr.l(), ((Friend)localObject4).l())) && (!((Set)localObject2).contains(localObject4))) {
           ((List)localObject1).add(localObject4);
         }
       }
       Collections.sort((List)localObject1);
       g.addAll((Collection)localObject1);
     }
-    t();
+    u();
   }
   
-  @avl
-  protected final void q()
-  {
-    p();
-    r();
-    f.notifyDataSetChanged();
-    o();
-    t();
-  }
-  
-  @avl
+  @awj
   protected final void r()
+  {
+    q();
+    t();
+    f.notifyDataSetChanged();
+    p();
+    u();
+  }
+  
+  @awj
+  protected final void t()
   {
     if (h)
     {
-      g.addAll(u);
-      f.getFilter().filter(y_());
+      g.addAll(r);
+      f.getFilter().filter(x_());
     }
   }
   
-  @cgb
-  public final String y_()
+  @chc
+  public final String x_()
   {
-    if (!j.b()) {
+    if (!i.b()) {
       return "";
     }
-    return ((EditText)j.a()).getText().toString();
+    return ((EditText)i.a()).getText().toString();
   }
 }
 

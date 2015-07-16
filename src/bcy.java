@@ -1,14 +1,4 @@
-public final class bcy
-{
-  public bbg newEvent;
-  public String sourceId;
-  
-  public bcy(@cgb String paramString, bbg parambbg)
-  {
-    sourceId = paramString;
-    newEvent = parambbg;
-  }
-}
+public final class bcy {}
 
 /* Location:
  * Qualified Name:     bcy

@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    .line 134
+    .line 135
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;
 
     const-string v1, "CAMERA"
@@ -105,7 +105,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;->DOUBLE_TAP_DISCOVER:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;
 
-    .line 133
+    .line 134
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;
@@ -150,7 +150,7 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 134
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -160,7 +160,7 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 134
     const-class v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -176,7 +176,7 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 134
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;->$VALUES:[Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;->clone()Ljava/lang/Object;

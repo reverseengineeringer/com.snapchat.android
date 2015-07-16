@@ -2,123 +2,146 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvp;
+
 
 # annotations
-.annotation build Lorg/apache/http/annotation/NotThreadSafe;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvp",
+        "<",
+        "Laum;",
+        ">;"
+    }
 .end annotation
 
 
+# static fields
+.field static final synthetic $assertionsDisabled:Z
+
+
 # instance fields
-.field public mAccumulatedTimeMillis:J
-
-.field private final mClock:Lbgk;
-
-.field private mCurrentIntervalStartTimeMillis:J
-
-.field public mIsAccumulating:Z
+.field private final gracefulExceptionHandlerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lbao;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 23
-    new-instance v0, Lbgk;
+    .line 8
+    const-class v0, Laun;
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    invoke-direct {p0, v0}, Laun;-><init>(Lbgk;)V
+    move-result v0
 
-    .line 24
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Laun;->$assertionsDisabled:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lbao;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 12
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 13
+    sget-boolean v0, Laun;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 14
+    :cond_0
+    iput-object p1, p0, Laun;->gracefulExceptionHandlerProvider:Ljavax/inject/Provider;
+
+    .line 15
     return-void
 .end method
 
-.method private constructor <init>(Lbgk;)V
-    .locals 2
+.method public static a(Ljavax/inject/Provider;)Lbvp;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lbao;",
+            ">;)",
+            "Lbvp",
+            "<",
+            "Laum;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 23
+    new-instance v0, Laun;
 
-    .line 28
-    iput-object p1, p0, Laun;->mClock:Lbgk;
+    invoke-direct {v0, p0}, Laun;-><init>(Ljavax/inject/Provider;)V
 
-    .line 29
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Laun;->mAccumulatedTimeMillis:J
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Laun;->mCurrentIntervalStartTimeMillis:J
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laun;->mIsAccumulating:Z
-
-    .line 30
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final synthetic get()Ljava/lang/Object;
     .locals 2
 
     .prologue
-    .line 36
-    iget-boolean v0, p0, Laun;->mIsAccumulating:Z
+    .line 8
+    new-instance v1, Laum;
 
-    if-nez v0, :cond_0
+    iget-object v0, p0, Laun;->gracefulExceptionHandlerProvider:Ljavax/inject/Provider;
 
-    .line 37
-    const/4 v0, 0x1
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    iput-boolean v0, p0, Laun;->mIsAccumulating:Z
+    move-result-object v0
 
-    .line 38
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    check-cast v0, Lbao;
 
-    move-result-wide v0
+    invoke-direct {v1, v0}, Laum;-><init>(Lbao;)V
 
-    iput-wide v0, p0, Laun;->mCurrentIntervalStartTimeMillis:J
-
-    .line 40
-    :cond_0
-    return-void
-.end method
-
-.method public final b()V
-    .locals 6
-
-    .prologue
-    .line 46
-    iget-boolean v0, p0, Laun;->mIsAccumulating:Z
-
-    if-eqz v0, :cond_0
-
-    .line 47
-    iget-wide v0, p0, Laun;->mAccumulatedTimeMillis:J
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Laun;->mCurrentIntervalStartTimeMillis:J
-
-    sub-long/2addr v2, v4
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Laun;->mAccumulatedTimeMillis:J
-
-    .line 48
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laun;->mIsAccumulating:Z
-
-    .line 50
-    :cond_0
-    return-void
+    return-object v1
 .end method

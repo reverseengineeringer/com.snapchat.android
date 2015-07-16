@@ -1,23 +1,22 @@
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import java.lang.ref.WeakReference;
-import org.json.JSONArray;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 
 final class bvx$2
-  implements DialogInterface.OnClickListener
+  extends Animation
 {
-  bvx$2(bvx parambvx, JSONArray paramJSONArray) {}
+  bvx$2(bvx parambvx, bvx.c paramc) {}
   
-  public final void onClick(DialogInterface paramDialogInterface, int paramInt)
+  public final void applyTransformation(float paramFloat, Transformation paramTransformation)
   {
-    bwl.a(bvx.a(b), "[]");
-    paramDialogInterface = new WeakReference(bvx.a(b));
-    if ((bwk.a().booleanValue()) && (bwk.a(paramDialogInterface).booleanValue()))
-    {
-      bvx.a(b, a);
-      return;
-    }
-    bvx.a(b, a, Boolean.valueOf(false));
+    float f1 = (float)(Math.floor(a.n / 0.8F) + 1.0D);
+    float f2 = a.l;
+    float f3 = a.m;
+    float f4 = a.l;
+    a.a(f2 + (f3 - f4) * paramFloat);
+    f2 = a.n;
+    f3 = a.n;
+    a.c((f1 - f3) * paramFloat + f2);
+    a.d(1.0F - paramFloat);
   }
 }
 

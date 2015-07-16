@@ -15,8 +15,8 @@
 .end method
 
 .method private static a(Landroid/os/Bundle;)[Landroid/telephony/SmsMessage;
-    .locals 7
-    .annotation build Lcgc;
+    .locals 6
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -72,81 +72,67 @@
     aput-object v1, v2, v3
 
     .line 67
-    const-string v1, "SmsReceiver"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    const-string v5, "getReceivedMessages - body: "
 
-    const-string v6, "getReceivedMessages - body: "
+    invoke-direct {v1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    aget-object v5, v2, v3
 
-    aget-object v6, v2, v3
-
-    invoke-virtual {v6}, Landroid/telephony/SmsMessage;->getDisplayMessageBody()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Landroid/telephony/SmsMessage;->getDisplayMessageBody()Ljava/lang/String;
 
     move-result-object v5
 
-    const-string v6, " origin: "
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v5
+    const-string v5, " origin: "
 
-    aget-object v6, v2, v3
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Landroid/telephony/SmsMessage;->getDisplayOriginatingAddress()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v6
+    aget-object v5, v2, v3
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, " service center: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Landroid/telephony/SmsMessage;->getDisplayOriginatingAddress()Ljava/lang/String;
 
     move-result-object v5
 
-    aget-object v6, v2, v3
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Landroid/telephony/SmsMessage;->getServiceCenterAddress()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v6
+    const-string v5, " service center: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    const-string v6, " subject: "
+    aget-object v5, v2, v3
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    aget-object v6, v2, v3
-
-    invoke-virtual {v6}, Landroid/telephony/SmsMessage;->getPseudoSubject()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Landroid/telephony/SmsMessage;->getServiceCenterAddress()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v5, " subject: "
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    aget-object v5, v2, v3
+
+    invoke-virtual {v5}, Landroid/telephony/SmsMessage;->getPseudoSubject()Ljava/lang/String;
 
     move-result-object v5
 
-    const/4 v6, 0x0
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v5, v6}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -169,17 +155,11 @@
     move-exception v0
 
     .line 75
-    const-string v1, "SmsReceiver"
+    const/4 v1, 0x1
 
-    const-string v2, "Failed to parse SMS messages from Intent. "
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    aput-object v0, v3, v4
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v4
 
     .line 78
     :cond_1
@@ -191,31 +171,21 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 9
+    .locals 7
 
     .prologue
-    const/4 v2, 0x0
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
 
     .line 38
-    const-string v0, "SmsReceiver"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "onReceive "
 
-    const-string v3, "onReceive "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v3, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 39
     if-eqz p2, :cond_2
@@ -227,24 +197,26 @@
 
     invoke-static {v0}, Lcom/snapchat/android/receiver/SmsReceiver;->a(Landroid/os/Bundle;)[Landroid/telephony/SmsMessage;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 41
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    array-length v0, v3
+    array-length v0, v2
 
     if-lez v0, :cond_2
 
     .line 42
-    array-length v4, v3
+    array-length v3, v2
 
-    move v1, v2
+    const/4 v0, 0x0
+
+    move v1, v0
 
     :goto_0
-    if-ge v1, v4, :cond_2
+    if-ge v1, v3, :cond_2
 
-    aget-object v0, v3, v1
+    aget-object v0, v2, v1
 
     .line 43
     if-eqz v0, :cond_0
@@ -252,30 +224,30 @@
     .line 44
     invoke-virtual {v0}, Landroid/telephony/SmsMessage;->getDisplayMessageBody()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 46
-    invoke-static {}, Lajx;->bo()Ljava/lang/String;
+    invoke-static {}, Lakr;->bl()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_1
+    if-nez v5, :cond_1
 
-    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_1
+    if-nez v5, :cond_1
 
-    const-string v6, "{0}"
+    const-string v5, "{0}"
 
-    const-string v7, "(\\d+)"
+    const-string v6, "(\\d+)"
 
-    invoke-virtual {v0, v6, v7}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v0, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -283,91 +255,79 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v5}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v0, v4}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    invoke-virtual {v6}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v0, v6}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+    invoke-virtual {v5}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v6
 
     if-eqz v6, :cond_1
 
+    invoke-virtual {v5}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->groupCount()I
 
-    move-result v6
+    move-result v5
 
-    if-lez v6, :cond_1
+    if-lez v5, :cond_1
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    invoke-virtual {v0, v6}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    invoke-virtual {v0, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
 
     .line 48
     :goto_1
-    const-string v6, "SmsReceiver"
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    const-string v6, "messageBody: "
 
-    const-string v8, "messageBody: "
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v5
+    const-string v5, " verificationCode: "
 
-    const-string v7, " verificationCode: "
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v5
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-array v7, v2, [Ljava/lang/Object;
-
-    invoke-static {v6, v5, v7}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 49
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_0
+    if-nez v4, :cond_0
 
     .line 50
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
-    move-result-object v5
+    move-result-object v4
 
-    new-instance v6, Lbet;
+    new-instance v5, Lbfs;
 
-    invoke-direct {v6, v0}, Lbet;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v0}, Lbfs;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v5, v6}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+    invoke-virtual {v4, v5}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 42
     :cond_0

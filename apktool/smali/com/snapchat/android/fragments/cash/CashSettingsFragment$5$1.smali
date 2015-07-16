@@ -67,7 +67,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 153
-    invoke-static {}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->l()Lrv;
+    invoke-static {}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->l()Lsl;
 
     move-result-object v0
 
@@ -76,12 +76,12 @@
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$5$1$1;-><init>(Lcom/snapchat/android/fragments/cash/CashSettingsFragment$5$1;)V
 
-    iput-object v1, v0, Lqv;->mListener:Lqv$a;
+    iput-object v1, v0, Lrl;->mListener:Lrl$a;
 
     .line 174
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lrv;->a(Lcom/snapchat/android/model/CashTransaction;)V
+    invoke-virtual {v0, v1}, Lsl;->a(Lcom/snapchat/android/model/CashTransaction;)V
 
     .line 175
     return-void

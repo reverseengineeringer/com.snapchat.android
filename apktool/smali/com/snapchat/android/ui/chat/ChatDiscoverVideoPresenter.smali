@@ -36,27 +36,27 @@
 .method public constructor <init>(Lcom/snapchat/android/ui/TextureVideoView;Lcom/snapchat/android/ui/ImageResourceView;Landroid/widget/ImageView;Landroid/view/View;Landroid/widget/ProgressBar;Landroid/view/ViewGroup;)V
     .locals 0
     .param p1    # Lcom/snapchat/android/ui/TextureVideoView;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/ui/ImageResourceView;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/widget/ImageView;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Landroid/view/View;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p5    # Landroid/widget/ProgressBar;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p6    # Landroid/view/ViewGroup;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -90,7 +90,7 @@
 # virtual methods
 .method public final a(Lcom/snapchat/android/ui/chat/ChatDiscoverVideoPresenter$VideoState;)V
     .locals 10
-    .annotation build Lccm;
+    .annotation build Lcdn;
     .end annotation
 
     .prologue
@@ -275,7 +275,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090031
+    const v2, 0x7f090030
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 

@@ -55,26 +55,15 @@
 
 # virtual methods
 .method public final a(Landroid/app/Activity;)V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 34
-    invoke-static {}, Lajx;->H()Z
+    invoke-static {}, Lakr;->H()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
-
-    .line 35
-    const-string v0, "AnalyticsPlatformRegistry"
-
-    const-string v1, "User is logged into SnapKidz. Aborting."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 42
     :cond_0

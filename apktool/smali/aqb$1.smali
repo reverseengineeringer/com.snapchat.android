@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Laqb;->onCreate(Landroid/os/Bundle;)V
+    value = Laqb;->notifyDataSetChanged()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 59
+    .line 75
     iput-object p1, p0, Laqb$1;->a:Laqb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,18 +36,15 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public final run()V
     .locals 1
 
     .prologue
-    .line 61
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
-
-    .line 62
+    .line 78
     iget-object v0, p0, Laqb$1;->a:Laqb;
 
-    invoke-virtual {v0}, Laqb;->a()V
+    invoke-static {v0}, Laqb;->a(Laqb;)V
 
-    .line 63
+    .line 79
     return-void
 .end method

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 3103
+    .line 3203
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$c;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 3103
+    .line 3203
     invoke-direct {p0, p1}, Lcom/snapchat/android/fragments/chat/ChatFragment$c;-><init>(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
     return-void
@@ -50,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 3129
+    .line 3229
     return-void
 .end method
 
@@ -60,23 +60,23 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 3107
+    .line 3207
     if-nez p2, :cond_0
 
-    .line 3109
+    .line 3209
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$c;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->M(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 3111
+    .line 3211
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$c;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->t(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lafr;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->t(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lagr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lafr;->isEmpty()Z
+    invoke-virtual {v0}, Lagr;->isEmpty()Z
 
     move-result v0
 
@@ -86,7 +86,9 @@
 
     move-result v0
 
-    const/16 v2, 0x14
+    invoke-static {}, Lcom/snapchat/android/fragments/chat/ChatFragment;->z()I
+
+    move-result v2
 
     if-ge v0, v2, :cond_1
 
@@ -110,16 +112,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 3115
+    .line 3215
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$c;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->N(Lcom/snapchat/android/fragments/chat/ChatFragment;)Laxf;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->N(Lcom/snapchat/android/fragments/chat/ChatFragment;)Layd;
 
     move-result-object v0
 
-    iget v2, v0, Laxf;->mRenderSize:I
+    iget v2, v0, Layd;->mRenderSize:I
 
-    iget v0, v0, Laxf;->mMessageCount:I
+    iget v0, v0, Layd;->mMessageCount:I
 
     if-ge v2, v0, :cond_2
 
@@ -128,27 +130,27 @@
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 3116
+    .line 3216
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$c;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->O(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 3124
+    .line 3224
     :cond_1
     :goto_1
     return-void
 
-    .line 3115
+    .line 3215
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 3118
+    .line 3218
     :cond_3
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$c;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->v(Lcom/snapchat/android/fragments/chat/ChatFragment;)Ltd;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->v(Lcom/snapchat/android/fragments/chat/ChatFragment;)Ltt;
 
     move-result-object v0
 
@@ -160,11 +162,11 @@
 
     iget-object v2, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
 
-    invoke-virtual {v0, v2, v1}, Ltd;->a(Ljava/lang/String;Z)Lcom/snapchat/android/api2/chat/LoadConversationPageTask$TaskStatus;
+    invoke-virtual {v0, v2, v1}, Ltt;->a(Ljava/lang/String;Z)Lcom/snapchat/android/api2/chat/LoadConversationPageTask$TaskStatus;
 
     move-result-object v0
 
-    .line 3121
+    .line 3221
     iget-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$c;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-virtual {v1, v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->a(Lcom/snapchat/android/api2/chat/LoadConversationPageTask$TaskStatus;)V

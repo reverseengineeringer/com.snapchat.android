@@ -2,582 +2,706 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lorg/apache/http/HttpEntity;
-
 
 # static fields
-.field private static final c:[C
-
-
-# instance fields
-.field public a:Ljava/io/ByteArrayOutputStream;
-
-.field public b:Ljava/lang/String;
-
-.field private d:Z
-
-.field private e:Z
+.field private static final a:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 51
-    const-string v0, "-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-    invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
-
-    move-result-object v0
-
-    sput-object v0, Lbwj;->c:[C
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 5
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 61
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 62
-    iput-boolean v0, p0, Lbwj;->e:Z
-
-    .line 63
-    iput-boolean v0, p0, Lbwj;->d:Z
-
-    .line 64
-    new-instance v1, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    iput-object v1, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    .line 67
-    new-instance v1, Ljava/lang/StringBuffer;
-
-    invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
-
-    .line 68
-    new-instance v2, Ljava/util/Random;
-
-    invoke-direct {v2}, Ljava/util/Random;-><init>()V
-
-    .line 70
-    :goto_0
-    const/16 v3, 0x1e
-
-    if-ge v0, v3, :cond_0
-
-    .line 71
-    sget-object v3, Lbwj;->c:[C
-
-    sget-object v4, Lbwj;->c:[C
-
-    array-length v4, v4
-
-    invoke-virtual {v2, v4}, Ljava/util/Random;->nextInt(I)I
-
-    move-result v4
-
-    aget-char v3, v3, v4
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 70
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 73
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbwj;->b:Ljava/lang/String;
-
-    .line 74
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
     .locals 3
 
     .prologue
-    .line 81
-    iget-boolean v0, p0, Lbwj;->e:Z
+    .line 217
+    new-instance v0, Ljava/util/HashMap;
 
-    if-nez v0, :cond_0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 82
-    iget-object v0, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
+    .line 220
+    sput-object v0, Lbwj;->a:Ljava/util/Map;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    const-string v2, "--"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lbwj;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const-string v2, "\r\n"
+    const-string v2, "Crash Data"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 221
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v2, "The app found information about previous crashes. Would you like to send this data to the developer?"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 222
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/4 v1, 0x2
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
+    const-string v2, "Dismiss"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 223
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/4 v1, 0x3
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    const-string v2, "Always send"
 
-    .line 84
-    :cond_0
-    const/4 v0, 0x1
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-boolean v0, p0, Lbwj;->e:Z
+    .line 224
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
 
-    .line 85
+    const/4 v1, 0x4
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Send"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 227
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x100
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Download Failed"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 228
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x101
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "The update could not be downloaded. Would you like to try again?"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 229
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x102
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Cancel"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 230
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x103
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Retry"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 233
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x200
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Please install the latest version to continue to use this app."
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 234
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x201
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Update Available"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 235
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x202
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Show information about the new update?"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 236
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x203
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Dismiss"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 237
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x204
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Show"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 240
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x300
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Build Expired"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 241
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x301
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "This has build has expired. Please check HockeyApp for any updates."
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 244
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x400
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Feedback Failed"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 245
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x401
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Would you like to send your feedback again?"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 246
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x402
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Name"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 247
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x403
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Email"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 248
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x404
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Subject"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 249
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x405
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Message"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 250
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x406
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Last Updated: "
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 251
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x407
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Add Attachment"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 252
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x408
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Send Feedback"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 253
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x409
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Add a Response"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 254
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x40a
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Refresh"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 255
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x40b
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Feedback"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 256
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x40c
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Message couldn\'t be posted. Please check your input values and your connection, then try again."
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 257
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x40d
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "No response from server. Please check your connection, then try again."
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 258
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x40e
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Please enter a subject"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 259
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x411
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Please enter a name"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 260
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x412
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Please enter an email address"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 261
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x413
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Please enter a feedback text"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 262
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x40f
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Message couldn\'t be posted. Please check the format of your email address."
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 263
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x410
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "An error has occured"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 266
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x500
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Please enter your account credentials."
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 267
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x501
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Please fill in the missing account credentials."
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 268
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x502
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Email"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 269
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x503
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Password"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 270
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x504
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Login"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 273
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x600
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Draw something!"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 274
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x601
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Save"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 275
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x602
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Undo"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 276
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x603
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Clear"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 277
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x604
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Discard your drawings?"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 278
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x605
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "No"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 279
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
+
+    const/16 v1, 0x606
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Yes"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 280
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;Z)V
-    .locals 4
+.method public static a(I)Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 119
-    invoke-virtual {p0}, Lbwj;->a()V
+    .line 291
+    const/4 v0, 0x0
 
-    .line 121
-    :try_start_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Content-Type: "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, p0}, Lbwj;->a(Lbwi;I)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "\r\n"
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public static a(Lbwi;I)Ljava/lang/String;
+    .locals 2
 
-    move-result-object v0
+    .prologue
+    .line 316
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 318
+    if-eqz p0, :cond_0
 
-    move-result-object v0
-
-    .line 122
-    iget-object v1, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Content-Disposition: form-data; name=\""
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "\"; filename=\""
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "\"\r\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/io/ByteArrayOutputStream;->write([B)V
-
-    .line 123
-    iget-object v1, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+    .line 319
+    invoke-virtual {p0, p1}, Lbwi;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    .line 322
+    :cond_0
+    if-nez v0, :cond_1
 
-    .line 124
-    iget-object v0, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
+    .line 323
+    sget-object v0, Lbwj;->a:Ljava/util/Map;
 
-    const-string v1, "Content-Transfer-Encoding: binary\r\n\r\n"
-
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 126
-    const/16 v0, 0x1000
+    move-result-object v0
 
-    new-array v0, v0, [B
+    check-cast v0, Ljava/lang/String;
 
-    .line 127
-    :goto_0
-    invoke-virtual {p3, v0}, Ljava/io/InputStream;->read([B)I
-
-    move-result v1
-
-    const/4 v2, -0x1
-
-    if-eq v1, v2, :cond_0
-
-    .line 129
-    iget-object v2, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v0, v3, v1}, Ljava/io/ByteArrayOutputStream;->write([BII)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    .line 143
-    :catchall_0
-    move-exception v0
-
-    .line 144
-    :try_start_1
-    invoke-virtual {p3}, Ljava/io/InputStream;->close()V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 147
-    :goto_1
-    throw v0
-
-    .line 131
-    :cond_0
-    :try_start_2
-    iget-object v0, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->flush()V
-
-    .line 133
-    if-eqz p5, :cond_1
-
-    .line 135
-    invoke-virtual {p0}, Lbwj;->b()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 144
-    :goto_2
-    :try_start_3
-    invoke-virtual {p3}, Ljava/io/InputStream;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
-
-    .line 148
-    :goto_3
-    return-void
-
-    .line 139
+    .line 326
     :cond_1
-    :try_start_4
-    iget-object v0, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "\r\n--"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lbwj;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "\r\n"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    goto :goto_2
-
-    .line 145
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_3
-
-    :catch_1
-    move-exception v1
-
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_1
-.end method
-
-.method public final b()V
-    .locals 3
-
-    .prologue
-    .line 88
-    iget-boolean v0, p0, Lbwj;->d:Z
-
-    if-eqz v0, :cond_0
-
-    .line 98
-    :goto_0
-    return-void
-
-    .line 92
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "\r\n--"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lbwj;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "--\r\n"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 97
-    :goto_1
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lbwj;->d:Z
-
-    goto :goto_0
-
-    .line 94
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_1
-.end method
-
-.method public final consumeContent()V
-    .locals 2
-
-    .prologue
-    .line 189
-    invoke-virtual {p0}, Lbwj;->isStreaming()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 190
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "Streaming entity does not implement #consumeContent()"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 192
-    :cond_0
-    return-void
-.end method
-
-.method public final getContent()Ljava/io/InputStream;
-    .locals 2
-
-    .prologue
-    .line 196
-    new-instance v0, Ljava/io/ByteArrayInputStream;
-
-    iget-object v1, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-
     return-object v0
-.end method
-
-.method public final getContentEncoding()Lorg/apache/http/Header;
-    .locals 1
-
-    .prologue
-    .line 184
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final getContentLength()J
-    .locals 2
-
-    .prologue
-    .line 153
-    invoke-virtual {p0}, Lbwj;->b()V
-
-    .line 154
-    iget-object v0, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    int-to-long v0, v0
-
-    return-wide v0
-.end method
-
-.method public final getContentType()Lorg/apache/http/Header;
-    .locals 4
-
-    .prologue
-    .line 159
-    new-instance v0, Lorg/apache/http/message/BasicHeader;
-
-    const-string v1, "Content-Type"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "multipart/form-data; boundary="
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p0, Lbwj;->b:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Lorg/apache/http/message/BasicHeader;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public final isChunked()Z
-    .locals 1
-
-    .prologue
-    .line 164
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final isRepeatable()Z
-    .locals 1
-
-    .prologue
-    .line 169
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final isStreaming()Z
-    .locals 1
-
-    .prologue
-    .line 174
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final writeTo(Ljava/io/OutputStream;)V
-    .locals 1
-
-    .prologue
-    .line 179
-    iget-object v0, p0, Lbwj;->a:Ljava/io/ByteArrayOutputStream;
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
-
-    .line 180
-    return-void
 .end method

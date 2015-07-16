@@ -2,17 +2,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kd
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_CONTACT_PERMISSION_DENY";
+  private final String eventName = "PROFILE_NEARBY_PAGE_EXIT";
+  public kf exitEvent;
+  public Long nearbyFriendAddCount;
+  public Long nearbyFriendBlockCount;
+  public Long nearbyFriendCount;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_CONTACT_PERMISSION_DENY");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "PROFILE_NEARBY_PAGE_EXIT");
+    if (exitEvent != null) {
+      localHashMap.put("exit_event", exitEvent);
+    }
+    if (nearbyFriendAddCount != null) {
+      localHashMap.put("nearby_friend_add_count", nearbyFriendAddCount);
+    }
+    if (nearbyFriendBlockCount != null) {
+      localHashMap.put("nearby_friend_block_count", nearbyFriendBlockCount);
+    }
+    if (nearbyFriendCount != null) {
+      localHashMap.put("nearby_friend_count", nearbyFriendCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +43,41 @@ public final class kd
         return false;
       }
       paramObject = (kd)paramObject;
-      if (additionalInfo == null) {
+      if (exitEvent != null)
+      {
+        if (exitEvent.equals(exitEvent)) {}
+      }
+      else {
+        while (exitEvent != null) {
+          return false;
+        }
+      }
+      if (nearbyFriendAddCount != null)
+      {
+        if (nearbyFriendAddCount.equals(nearbyFriendAddCount)) {}
+      }
+      else {
+        while (nearbyFriendAddCount != null) {
+          return false;
+        }
+      }
+      if (nearbyFriendBlockCount != null)
+      {
+        if (nearbyFriendBlockCount.equals(nearbyFriendBlockCount)) {}
+      }
+      else {
+        while (nearbyFriendBlockCount != null) {
+          return false;
+        }
+      }
+      if (nearbyFriendCount == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (nearbyFriendCount.equals(nearbyFriendCount));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (nearbyFriendCount == null) {
         break;
       }
     }
@@ -46,10 +85,34 @@ public final class kd
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
-      return i + j * 31;
+    int m = 0;
+    int n = super.hashCode();
+    int i;
+    int j;
+    if (exitEvent != null)
+    {
+      i = exitEvent.hashCode();
+      if (nearbyFriendAddCount == null) {
+        break label99;
+      }
+      j = nearbyFriendAddCount.hashCode();
+      label39:
+      if (nearbyFriendBlockCount == null) {
+        break label104;
+      }
+    }
+    label99:
+    label104:
+    for (int k = nearbyFriendBlockCount.hashCode();; k = 0)
+    {
+      if (nearbyFriendCount != null) {
+        m = nearbyFriendCount.hashCode();
+      }
+      return (k + (j + (i + n * 31) * 31) * 31) * 31 + m;
+      i = 0;
+      break;
+      j = 0;
+      break label39;
     }
   }
 }

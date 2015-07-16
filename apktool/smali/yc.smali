@@ -2,45 +2,20 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lya;",
-        ">;"
-    }
-.end annotation
-
 
 # static fields
-.field static final synthetic a:Z
+.field private static a:Lyc;
 
-
-# instance fields
-.field private final b:Ljavax/inject/Provider;
+.field private static final b:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljavax/inject/Provider",
+            "Ljava/util/Map",
             "<",
-            "Lqd;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final c:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
+            "Ljava/lang/String;",
+            "Ljava/util/Collection",
             "<",
-            "Lmz;",
-            ">;"
+            "Lavc;",
+            ">;>;"
         }
     .end annotation
 .end field
@@ -51,154 +26,169 @@
     .locals 1
 
     .prologue
-    .line 9
-    const-class v0, Lyc;
+    .line 36
+    new-instance v0, Lyc$1;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    invoke-direct {v0}, Lyc$1;-><init>()V
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lyc;->a:Z
+    sput-object v0, Lyc;->b:Ljava/util/Map;
 
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
-.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqd;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lmz;",
-            ">;)V"
-        }
-    .end annotation
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 14
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
-    sget-boolean v0, Lyc;->a:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 16
-    :cond_0
-    iput-object p1, p0, Lyc;->b:Ljavax/inject/Provider;
-
-    .line 17
-    sget-boolean v0, Lyc;->a:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 18
-    :cond_1
-    iput-object p2, p0, Lyc;->c:Ljavax/inject/Provider;
-
-    .line 19
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
+.method public static declared-synchronized a()Lyc;
+    .locals 2
+
+    .prologue
+    .line 23
+    const-class v1, Lyc;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lyc;->a:Lyc;
+
+    if-nez v0, :cond_0
+
+    .line 24
+    new-instance v0, Lyc;
+
+    invoke-direct {v0}, Lyc;-><init>()V
+
+    sput-object v0, Lyc;->a:Lyc;
+
+    .line 26
+    :cond_0
+    sget-object v0, Lyc;->a:Lyc;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 23
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public static b()Ljava/util/Collection;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljavax/inject/Provider",
+            "()",
+            "Ljava/util/Collection",
             "<",
-            "Lqd;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lmz;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lya;",
+            "Lavc;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 31
-    new-instance v0, Lyc;
+    .line 50
+    sget-object v0, Lyc;->b:Ljava/util/Map;
 
-    invoke-direct {v0, p0, p1}, Lyc;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    .line 51
+    if-eqz v0, :cond_0
+
+    :goto_0
     return-object v0
+
+    :cond_0
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public static c()I
     .locals 2
 
     .prologue
-    .line 9
-    check-cast p1, Lya;
+    .line 55
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    if-nez p1, :cond_0
+    const-string v1, "HTCEVOV4G"
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v1, "Cannot inject members into a null reference"
+    move-result v0
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    if-nez v0, :cond_0
 
-    throw v0
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
+    const-string v1, "ADR6400L"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v1, "HTC PH39100"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v1, "HTC Sensation 4G"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v1, "ADR6350"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 60
     :cond_0
-    iget-object v0, p0, Lyc;->b:Ljavax/inject/Provider;
+    const/16 v0, 0xb4
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .line 63
+    :goto_0
+    return v0
 
-    move-result-object v0
+    :cond_1
+    const/4 v0, 0x0
 
-    check-cast v0, Lqd;
-
-    iput-object v0, p1, Lya;->a:Lqd;
-
-    iget-object v0, p0, Lyc;->c:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmz;
-
-    iput-object v0, p1, Lya;->b:Lmz;
-
-    return-void
+    goto :goto_0
 .end method

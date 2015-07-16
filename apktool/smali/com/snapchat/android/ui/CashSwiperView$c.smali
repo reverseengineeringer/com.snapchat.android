@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    invoke-static {p4, v0}, Lavh;->b(FLandroid/content/Context;)F
+    invoke-static {p4, v0}, Lawf;->b(FLandroid/content/Context;)F
 
     move-result v0
 

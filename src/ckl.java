@@ -1,66 +1,106 @@
 public final class ckl
-  extends cgk
+  extends cke
 {
-  private final String d;
-  private final int e;
-  private final int f;
+  private final int a;
+  private final int c;
+  private final int d;
   
-  public ckl(String paramString1, String paramString2, int paramInt1, int paramInt2)
+  public ckl(chi paramchi, int paramInt) {}
+  
+  public ckl(chi paramchi, chj paramchj)
   {
-    super(paramString1);
-    d = paramString2;
-    e = paramInt1;
-    f = paramInt2;
+    this(paramchi, paramchj, 1);
   }
   
-  public final String a(long paramLong)
+  private ckl(chi paramchi, chj paramchj, int paramInt)
   {
-    return d;
-  }
-  
-  public final int b(long paramLong)
-  {
-    return e;
-  }
-  
-  public final int c(long paramLong)
-  {
-    return e;
-  }
-  
-  public final boolean c()
-  {
-    return true;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (this == paramObject) {}
-    do
+    super(paramchi, paramchj);
+    if (paramInt == 0) {
+      throw new IllegalArgumentException("The offset cannot be zero");
+    }
+    a = paramInt;
+    if (Integer.MIN_VALUE < paramchi.g() + paramInt) {}
+    for (c = (paramchi.g() + paramInt); Integer.MAX_VALUE > paramchi.h() + paramInt; c = Integer.MIN_VALUE)
     {
-      return true;
-      if (!(paramObject instanceof ckl)) {
-        break;
-      }
-      paramObject = (ckl)paramObject;
-    } while ((c.equals(c)) && (f == f) && (e == e));
-    return false;
-    return false;
+      d = (paramchi.h() + paramInt);
+      return;
+    }
+    d = Integer.MAX_VALUE;
+  }
+  
+  public final int a(long paramLong)
+  {
+    return super.a(paramLong) + a;
+  }
+  
+  public final long a(long paramLong, int paramInt)
+  {
+    paramLong = super.a(paramLong, paramInt);
+    cki.a(this, a(paramLong), c, d);
+    return paramLong;
+  }
+  
+  public final long a(long paramLong1, long paramLong2)
+  {
+    paramLong1 = super.a(paramLong1, paramLong2);
+    cki.a(this, a(paramLong1), c, d);
+    return paramLong1;
+  }
+  
+  public final long b(long paramLong, int paramInt)
+  {
+    cki.a(this, paramInt, c, d);
+    return super.b(paramLong, paramInt - a);
+  }
+  
+  public final boolean b(long paramLong)
+  {
+    return b.b(paramLong);
+  }
+  
+  public final long d(long paramLong)
+  {
+    return b.d(paramLong);
+  }
+  
+  public final long e(long paramLong)
+  {
+    return b.e(paramLong);
   }
   
   public final long f(long paramLong)
   {
-    return paramLong;
+    return b.f(paramLong);
+  }
+  
+  public final chn f()
+  {
+    return b.f();
+  }
+  
+  public final int g()
+  {
+    return c;
   }
   
   public final long g(long paramLong)
   {
-    return paramLong;
+    return b.g(paramLong);
   }
   
-  public final int hashCode()
+  public final int h()
   {
-    return c.hashCode() + f * 37 + e * 31;
+    return d;
+  }
+  
+  public final long h(long paramLong)
+  {
+    return b.h(paramLong);
+  }
+  
+  public final long i(long paramLong)
+  {
+    return b.i(paramLong);
   }
 }
 

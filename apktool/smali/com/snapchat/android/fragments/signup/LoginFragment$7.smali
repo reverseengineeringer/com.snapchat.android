@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/signup/LoginFragment;->o()V
+    value = Lcom/snapchat/android/fragments/signup/LoginFragment;->p()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 403
+    .line 423
     iput-object p1, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$7;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 5
 
     .prologue
-    .line 405
+    .line 425
     new-instance v0, Landroid/graphics/drawable/TransitionDrawable;
 
     const/4 v1, 0x2
@@ -73,7 +73,7 @@
 
     invoke-direct {v0, v1}, Landroid/graphics/drawable/TransitionDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
-    .line 409
+    .line 429
     iget-object v1, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$7;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/signup/LoginFragment;->h(Lcom/snapchat/android/fragments/signup/LoginFragment;)Landroid/widget/Button;
@@ -84,7 +84,7 @@
 
     move-result v1
 
-    .line 410
+    .line 430
     iget-object v2, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$7;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-static {v2}, Lcom/snapchat/android/fragments/signup/LoginFragment;->h(Lcom/snapchat/android/fragments/signup/LoginFragment;)Landroid/widget/Button;
@@ -93,7 +93,7 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 411
+    .line 431
     iget-object v2, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$7;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-static {v2}, Lcom/snapchat/android/fragments/signup/LoginFragment;->h(Lcom/snapchat/android/fragments/signup/LoginFragment;)Landroid/widget/Button;
@@ -102,11 +102,11 @@
 
     invoke-virtual {v2, v1, v1, v1, v1}, Landroid/widget/Button;->setPadding(IIII)V
 
-    .line 412
+    .line 432
     const/16 v1, 0x190
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/TransitionDrawable;->startTransition(I)V
 
-    .line 413
+    .line 433
     return-void
 .end method

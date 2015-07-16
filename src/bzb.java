@@ -1,24 +1,14 @@
 public final class bzb
-  extends bza
+  implements byh
 {
-  public bzb()
+  public final byl a(bya parambya, String paramString)
   {
-    super("+", 5, (byte)0);
+    return new byl(new Double(Math.random()).toString(), 0);
   }
   
-  public final double a(double paramDouble)
+  public final String a()
   {
-    return paramDouble;
-  }
-  
-  public final double a(double paramDouble1, double paramDouble2)
-  {
-    return new Double(paramDouble1 + paramDouble2).doubleValue();
-  }
-  
-  public final String a(String paramString1, String paramString2)
-  {
-    return new String(paramString1.substring(0, paramString1.length() - 1) + paramString2.substring(1, paramString2.length()));
+    return "random";
   }
 }
 

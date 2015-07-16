@@ -1,27 +1,42 @@
+import com.google.gson.annotations.SerializedName;
+
 public final class qi
-  implements buo<qh>
+  extends tx
+  implements ui.b<qi.b>
 {
-  private final buj<qh> membersInjector;
+  final String mConversationId;
   
-  static
+  public qi(@chc String paramString)
   {
-    if (!qi.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
+    mConversationId = paramString;
+    registerCallback(qi.b.class, this);
   }
   
-  private qi(buj<qh> parambuj)
+  protected final String getPath()
   {
-    assert (parambuj != null);
-    membersInjector = parambuj;
+    return "/loq/conversation_auth_token";
   }
   
-  public static buo<qh> a(buj<qh> parambuj)
+  public final Object getRequestPayload()
   {
-    return new qi(parambuj);
+    return new qi.a();
+  }
+  
+  @ud
+  final class a
+    extends qc
+  {
+    @SerializedName("conversation_id")
+    final String conversationId = mConversationId;
+    
+    a() {}
+  }
+  
+  static class b
+  {
+    @SerializedName("messaging_auth")
+    @chd
+    bjy messagingAuth;
   }
 }
 

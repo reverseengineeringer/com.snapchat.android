@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzw;
+.implements Laav;
 
 
 # annotations
@@ -22,7 +22,7 @@
         "<",
         "Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;",
         ">;",
-        "Lzw;"
+        "Laav;"
     }
 .end annotation
 
@@ -35,6 +35,8 @@
 .field public static final enum CURRENCY_CODE:Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
 
 .field public static final enum ID:Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
+
+.field public static final enum IS_FAIL_SEND_RELEASE_MESSAGE:Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
 
 .field public static final enum IS_FROM_SERVER:Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
 
@@ -470,8 +472,25 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->PROVIDER:Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
 
+    .line 102
+    new-instance v3, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
+
+    const-string v4, "IS_FAIL_SEND_RELEASE_MESSAGE"
+
+    const/16 v5, 0x16
+
+    const/16 v6, 0x16
+
+    const-string v7, "fail_send_release_message"
+
+    sget-object v8, Lcom/snapchat/android/database/DataType;->BOOLEAN:Lcom/snapchat/android/database/DataType;
+
+    invoke-direct/range {v3 .. v8}, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
+
+    sput-object v3, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->IS_FAIL_SEND_RELEASE_MESSAGE:Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
+
     .line 76
-    const/16 v0, 0x16
+    const/16 v0, 0x17
 
     new-array v0, v0, [Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
 
@@ -597,6 +616,12 @@
 
     aput-object v2, v0, v1
 
+    const/16 v1, 0x16
+
+    sget-object v2, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->IS_FAIL_SEND_RELEASE_MESSAGE:Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
+
+    aput-object v2, v0, v1
+
     sput-object v0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->$VALUES:[Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
 
     return-void
@@ -614,19 +639,19 @@
     .end annotation
 
     .prologue
-    .line 109
+    .line 110
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 110
+    .line 111
     iput p3, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->a:I
 
-    .line 111
+    .line 112
     iput-object p4, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->b:Ljava/lang/String;
 
-    .line 112
+    .line 113
     iput-object p5, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->c:Lcom/snapchat/android/database/DataType;
 
-    .line 113
+    .line 114
     return-void
 .end method
 
@@ -643,22 +668,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 115
+    .line 116
     invoke-direct {p0, p1, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 116
+    .line 117
     iput v0, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->a:I
 
-    .line 117
+    .line 118
     iput-object p2, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->b:Ljava/lang/String;
 
-    .line 118
+    .line 119
     iput-object p3, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->c:Lcom/snapchat/android/database/DataType;
 
-    .line 119
+    .line 120
     iput-object p4, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->d:Ljava/lang/String;
 
-    .line 120
+    .line 121
     return-void
 .end method
 
@@ -720,7 +745,7 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 130
     iget-object v0, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->b:Ljava/lang/String;
 
     return-object v0
@@ -730,7 +755,7 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 127
     iget v0, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->a:I
 
     return v0
@@ -740,7 +765,7 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 133
     iget-object v0, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->d:Ljava/lang/String;
 
     return-object v0
@@ -750,7 +775,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 124
     iget-object v0, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->c:Lcom/snapchat/android/database/DataType;
 
     return-object v0

@@ -1,95 +1,63 @@
-import android.graphics.Paint;
-import android.os.Bundle;
-import android.widget.ImageView;
-import com.snapchat.android.Timber;
-import com.snapchat.android.discover.model.ChannelPage;
-import com.snapchat.android.discover.model.ChannelPage.MediaType;
-import com.snapchat.android.discover.model.MediaState;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.support.v7.widget.GridLayoutManager.LayoutParams;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.LayoutParams;
+import android.support.v7.widget.RecyclerView.f;
+import android.support.v7.widget.RecyclerView.p;
+import android.support.v7.widget.RecyclerView.s;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.FrameLayout.LayoutParams;
+import com.snapchat.android.discover.ui.fragment.ChannelSpanSizeLookup;
 
 public final class aep
-  implements avy
+  extends RecyclerView.f
 {
-  private final ChannelPage a;
-  private final String b;
-  private final boolean c;
-  private final aeg.a d;
-  private final Bundle e;
-  private final aby f;
+  private final ChannelSpanSizeLookup a;
   
-  public aep(aby paramaby, ChannelPage paramChannelPage, String paramString, boolean paramBoolean, aeg.a parama, Bundle paramBundle)
+  public aep(ChannelSpanSizeLookup paramChannelSpanSizeLookup)
   {
-    a = paramChannelPage;
-    b = paramString;
-    c = paramBoolean;
-    d = parama;
-    e = paramBundle;
-    f = paramaby;
+    a = paramChannelSpanSizeLookup;
   }
   
-  public final void a(avo paramavo, avx paramavx)
+  public final void a(Rect paramRect, View paramView, RecyclerView paramRecyclerView, RecyclerView.p paramp)
   {
-    paramavx = mImageView;
-    aby localaby;
-    ChannelPage localChannelPage;
-    boolean bool1;
-    label98:
-    boolean bool2;
-    if (mBitmap == null)
+    paramRect.set(0, 0, 0, 0);
+    paramRect = (GridLayoutManager.LayoutParams)paramView.getLayoutParams();
+    paramView = (FrameLayout)paramView;
+    int i;
+    if (paramView.getChildCount() > 0)
     {
-      Timber.f("InternalBitmapDecodedCallback", "DISCOVER-MEDIA-BRAND-ICON: %s could not be decoded. Inverted? %b ", new Object[] { b, Boolean.valueOf(c) });
-      localaby = f;
-      localChannelPage = a;
-      if (c)
+      paramView = paramView.getChildAt(0).getLayoutParams();
+      if ((paramView instanceof FrameLayout.LayoutParams))
       {
-        paramavo = ChannelPage.MediaType.INVERTED_ICON;
-        switch (aby.1.a[paramavo.ordinal()])
-        {
-        default: 
-          bool1 = false;
-          if (bool1) {
-            a.b();
-          }
-          paramavo = null;
-          bool2 = false;
+        paramView = (FrameLayout.LayoutParams)paramView;
+        paramRecyclerView = a;
+        i = c.c();
+        paramRect = new Point();
+        paramRecyclerView.a(paramRect, i);
+        if ((x >= 0) && (y >= 0)) {
+          break label103;
         }
+        i = 17;
       }
     }
     for (;;)
     {
-      if (d != null) {
-        d.a(paramavx, paramavo, e, bool2);
-      }
+      gravity = i;
       return;
-      paramavo = ChannelPage.MediaType.FILLED_ICON;
-      break;
-      bool1 = c.b(localChannelPage, MediaState.NOT_STARTED) | false;
-      break label98;
-      bool1 = c.c(localChannelPage, MediaState.NOT_STARTED) | false;
-      break label98;
-      bool1 = c.d(localChannelPage, MediaState.NOT_STARTED) | false;
-      break label98;
-      if (paramavx != null)
+      label103:
+      if (b.mLayoutFormat[x] == 2)
       {
-        Timber.a("InternalBitmapDecodedCallback", "DISCOVER-MEDIA-BRAND-ICON: %s decoded. Inverted? %b ", new Object[] { b, Boolean.valueOf(c) });
-        paramavo = mBitmap;
-        int i = a.h;
-        bool2 = c;
-        paramavo = new aqc(paramavo);
-        if (bool2)
-        {
-          b = 2.0F;
-          a.setStrokeWidth(2.0F);
-          paramavo.invalidateSelf();
-          a.setColor(i);
-          paramavo.invalidateSelf();
+        if (y == 0) {
+          i = 8388629;
+        } else {
+          i = 8388627;
         }
-        paramavx.setImageDrawable(paramavo);
-        bool2 = true;
       }
-      else
-      {
-        paramavo = null;
-        bool2 = false;
+      else {
+        i = 17;
       }
     }
   }

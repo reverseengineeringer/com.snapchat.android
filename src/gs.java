@@ -2,54 +2,36 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class gs
-  extends lt
+  extends ml
 {
-  private Long adIndexCount;
-  private Long adIndexPos;
-  public String adsnapId;
-  public Long caption;
-  public Boolean drawing;
-  public Long editionAvailable;
-  public String editionId;
-  private final String eventName = "DISCOVER_AD_SHARE_VIEW";
+  private Long camera;
+  private Long caption;
+  private Boolean drawing;
+  private final String eventName = "DIRECT_SNAP_VIEW_EXPIRE";
   private String filter;
   private String filterGeofence;
-  public hm filterInfo;
+  private hv filterInfo;
   private String filterSponsor;
-  private String filterType;
-  public ho filterVisual;
-  public Boolean fullView;
-  public hy mediaType;
-  public String publisherId;
-  private Long snapIndexCount;
-  private Long snapIndexPos;
+  private hw filterType;
+  private hx filterVisual;
+  private Boolean flash;
+  public ih mediaType;
+  private String snapId;
   public Double snapTimeSec;
-  public Double timeViewed;
+  private lu source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "DISCOVER_AD_SHARE_VIEW");
-    if (adIndexCount != null) {
-      localHashMap.put("ad_index_count", adIndexCount);
-    }
-    if (adIndexPos != null) {
-      localHashMap.put("ad_index_pos", adIndexPos);
-    }
-    if (adsnapId != null) {
-      localHashMap.put("adsnap_id", adsnapId);
+    localHashMap.put("event_name", "DIRECT_SNAP_VIEW_EXPIRE");
+    if (camera != null) {
+      localHashMap.put("camera", camera);
     }
     if (caption != null) {
       localHashMap.put("caption", caption);
     }
     if (drawing != null) {
       localHashMap.put("drawing", drawing);
-    }
-    if (editionAvailable != null) {
-      localHashMap.put("edition_available", editionAvailable);
-    }
-    if (editionId != null) {
-      localHashMap.put("edition_id", editionId);
     }
     if (filter != null) {
       localHashMap.put("filter", filter);
@@ -69,26 +51,20 @@ public final class gs
     if (filterVisual != null) {
       localHashMap.put("filter_visual", filterVisual);
     }
-    if (fullView != null) {
-      localHashMap.put("full_view", fullView);
+    if (flash != null) {
+      localHashMap.put("flash", flash);
     }
     if (mediaType != null) {
       localHashMap.put("media_type", mediaType);
     }
-    if (publisherId != null) {
-      localHashMap.put("publisher_id", publisherId);
-    }
-    if (snapIndexCount != null) {
-      localHashMap.put("snap_index_count", snapIndexCount);
-    }
-    if (snapIndexPos != null) {
-      localHashMap.put("snap_index_pos", snapIndexPos);
+    if (snapId != null) {
+      localHashMap.put("snap_id", snapId);
     }
     if (snapTimeSec != null) {
       localHashMap.put("snap_time_sec", snapTimeSec);
     }
-    if (timeViewed != null) {
-      localHashMap.put("time_viewed", timeViewed);
+    if (source != null) {
+      localHashMap.put("source", source);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -107,30 +83,12 @@ public final class gs
         return false;
       }
       paramObject = (gs)paramObject;
-      if (adIndexCount != null)
+      if (camera != null)
       {
-        if (adIndexCount.equals(adIndexCount)) {}
+        if (camera.equals(camera)) {}
       }
       else {
-        while (adIndexCount != null) {
-          return false;
-        }
-      }
-      if (adIndexPos != null)
-      {
-        if (adIndexPos.equals(adIndexPos)) {}
-      }
-      else {
-        while (adIndexPos != null) {
-          return false;
-        }
-      }
-      if (adsnapId != null)
-      {
-        if (adsnapId.equals(adsnapId)) {}
-      }
-      else {
-        while (adsnapId != null) {
+        while (camera != null) {
           return false;
         }
       }
@@ -149,24 +107,6 @@ public final class gs
       }
       else {
         while (drawing != null) {
-          return false;
-        }
-      }
-      if (editionAvailable != null)
-      {
-        if (editionAvailable.equals(editionAvailable)) {}
-      }
-      else {
-        while (editionAvailable != null) {
-          return false;
-        }
-      }
-      if (editionId != null)
-      {
-        if (editionId.equals(editionId)) {}
-      }
-      else {
-        while (editionId != null) {
           return false;
         }
       }
@@ -224,12 +164,12 @@ public final class gs
           return false;
         }
       }
-      if (fullView != null)
+      if (flash != null)
       {
-        if (fullView.equals(fullView)) {}
+        if (flash.equals(flash)) {}
       }
       else {
-        while (fullView != null) {
+        while (flash != null) {
           return false;
         }
       }
@@ -242,30 +182,12 @@ public final class gs
           return false;
         }
       }
-      if (publisherId != null)
+      if (snapId != null)
       {
-        if (publisherId.equals(publisherId)) {}
+        if (snapId.equals(snapId)) {}
       }
       else {
-        while (publisherId != null) {
-          return false;
-        }
-      }
-      if (snapIndexCount != null)
-      {
-        if (snapIndexCount.equals(snapIndexCount)) {}
-      }
-      else {
-        while (snapIndexCount != null) {
-          return false;
-        }
-      }
-      if (snapIndexPos != null)
-      {
-        if (snapIndexPos.equals(snapIndexPos)) {}
-      }
-      else {
-        while (snapIndexPos != null) {
+        while (snapId != null) {
           return false;
         }
       }
@@ -278,14 +200,14 @@ public final class gs
           return false;
         }
       }
-      if (timeViewed == null) {
+      if (source == null) {
         break;
       }
-    } while (timeViewed.equals(timeViewed));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (timeViewed == null) {
+      if (source == null) {
         break;
       }
     }
@@ -293,8 +215,8 @@ public final class gs
   
   public final int hashCode()
   {
-    int i15 = 0;
-    int i16 = super.hashCode();
+    int i9 = 0;
+    int i10 = super.hashCode();
     int i;
     int j;
     label39:
@@ -317,118 +239,76 @@ public final class gs
     int i6;
     label182:
     int i7;
-    label198:
-    int i8;
-    label214:
-    int i9;
-    label230:
-    int i10;
-    label246:
-    int i11;
-    label262:
-    int i12;
-    label278:
-    int i13;
-    if (adIndexCount != null)
+    if (camera != null)
     {
-      i = adIndexCount.hashCode();
-      if (adIndexPos == null) {
-        break label451;
-      }
-      j = adIndexPos.hashCode();
-      if (adsnapId == null) {
-        break label456;
-      }
-      k = adsnapId.hashCode();
+      i = camera.hashCode();
       if (caption == null) {
-        break label461;
+        break label319;
       }
-      m = caption.hashCode();
+      j = caption.hashCode();
       if (drawing == null) {
-        break label467;
+        break label324;
       }
-      n = drawing.hashCode();
-      if (editionAvailable == null) {
-        break label473;
-      }
-      i1 = editionAvailable.hashCode();
-      if (editionId == null) {
-        break label479;
-      }
-      i2 = editionId.hashCode();
+      k = drawing.hashCode();
       if (filter == null) {
-        break label485;
+        break label329;
       }
-      i3 = filter.hashCode();
+      m = filter.hashCode();
       if (filterGeofence == null) {
-        break label491;
+        break label335;
       }
-      i4 = filterGeofence.hashCode();
+      n = filterGeofence.hashCode();
       if (filterInfo == null) {
-        break label497;
+        break label341;
       }
-      i5 = filterInfo.hashCode();
+      i1 = filterInfo.hashCode();
       if (filterSponsor == null) {
-        break label503;
+        break label347;
       }
-      i6 = filterSponsor.hashCode();
+      i2 = filterSponsor.hashCode();
       if (filterType == null) {
-        break label509;
+        break label353;
       }
-      i7 = filterType.hashCode();
+      i3 = filterType.hashCode();
       if (filterVisual == null) {
-        break label515;
+        break label359;
       }
-      i8 = filterVisual.hashCode();
-      if (fullView == null) {
-        break label521;
+      i4 = filterVisual.hashCode();
+      if (flash == null) {
+        break label365;
       }
-      i9 = fullView.hashCode();
+      i5 = flash.hashCode();
       if (mediaType == null) {
-        break label527;
+        break label371;
       }
-      i10 = mediaType.hashCode();
-      if (publisherId == null) {
-        break label533;
+      i6 = mediaType.hashCode();
+      if (snapId == null) {
+        break label377;
       }
-      i11 = publisherId.hashCode();
-      if (snapIndexCount == null) {
-        break label539;
-      }
-      i12 = snapIndexCount.hashCode();
-      if (snapIndexPos == null) {
-        break label545;
-      }
-      i13 = snapIndexPos.hashCode();
-      label294:
+      i7 = snapId.hashCode();
+      label198:
       if (snapTimeSec == null) {
-        break label551;
+        break label383;
       }
     }
-    label451:
-    label456:
-    label461:
-    label467:
-    label473:
-    label479:
-    label485:
-    label491:
-    label497:
-    label503:
-    label509:
-    label515:
-    label521:
-    label527:
-    label533:
-    label539:
-    label545:
-    label551:
-    for (int i14 = snapTimeSec.hashCode();; i14 = 0)
+    label319:
+    label324:
+    label329:
+    label335:
+    label341:
+    label347:
+    label353:
+    label359:
+    label365:
+    label371:
+    label377:
+    label383:
+    for (int i8 = snapTimeSec.hashCode();; i8 = 0)
     {
-      if (timeViewed != null) {
-        i15 = timeViewed.hashCode();
+      if (source != null) {
+        i9 = source.hashCode();
       }
-      return (i14 + (i13 + (i12 + (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i16 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i15;
+      return (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i10 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i9;
       i = 0;
       break;
       j = 0;
@@ -453,18 +333,6 @@ public final class gs
       break label182;
       i7 = 0;
       break label198;
-      i8 = 0;
-      break label214;
-      i9 = 0;
-      break label230;
-      i10 = 0;
-      break label246;
-      i11 = 0;
-      break label262;
-      i12 = 0;
-      break label278;
-      i13 = 0;
-      break label294;
     }
   }
 }

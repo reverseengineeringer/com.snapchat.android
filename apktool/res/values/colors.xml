@@ -43,6 +43,7 @@
     <color name="dark_yellow_semi_transparent">#ddf7eb20</color>
     <color name="divider_grey">#ffefefef</color>
     <color name="divider_red">#ffe34246</color>
+    <color name="feed_cell_grey">#fff2f2f2</color>
     <color name="friend_item_background">#ffffffff</color>
     <color name="friend_item_background_highlight">#ffe5f6f3</color>
     <color name="green">#ff03a588</color>
@@ -87,6 +88,7 @@
     <color name="snapcash_green_secondary">#ff43b549</color>
     <color name="stories_all_stories_header_text_color">#ff4d4d4d</color>
     <color name="stories_dismiss_animation_color">#ffcccccc</color>
+    <color name="stories_grey_thumbnail_color">#99b8b8b8</color>
     <color name="transparent">#00000000</color>
     <color name="ttv_my_story_overlay">#cc000000</color>
     <color name="ttv_my_story_viewer_divider">#12ffffff</color>

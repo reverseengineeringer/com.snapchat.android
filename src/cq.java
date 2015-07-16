@@ -1,59 +1,60 @@
-import java.util.NoSuchElementException;
+import java.io.Serializable;
+import javax.annotation.Nullable;
 
 @cd
-abstract class cq<E>
-  extends dx<E>
+public final class cq
 {
-  private final int a;
-  private int b;
+  private static final ck a = new ck(",");
   
-  protected cq(int paramInt1, int paramInt2)
+  public static <T> cp<T> a(@Nullable T paramT)
   {
-    ck.b(paramInt2, paramInt1);
-    a = paramInt1;
-    b = paramInt2;
-  }
-  
-  protected abstract E a(int paramInt);
-  
-  public final boolean hasNext()
-  {
-    return b < a;
-  }
-  
-  public final boolean hasPrevious()
-  {
-    return b > 0;
-  }
-  
-  public final E next()
-  {
-    if (!hasNext()) {
-      throw new NoSuchElementException();
+    if (paramT == null) {
+      return cq.b.c;
     }
-    int i = b;
-    b = (i + 1);
-    return (E)a(i);
+    return new cq.a(paramT, (byte)0);
   }
   
-  public final int nextIndex()
+  static final class a<T>
+    implements cp<T>, Serializable
   {
-    return b;
-  }
-  
-  public final E previous()
-  {
-    if (!hasPrevious()) {
-      throw new NoSuchElementException();
+    private final T a;
+    
+    private a(T paramT)
+    {
+      a = paramT;
     }
-    int i = b - 1;
-    b = i;
-    return (E)a(i);
+    
+    public final boolean a(T paramT)
+    {
+      return a.equals(paramT);
+    }
+    
+    public final boolean equals(@Nullable Object paramObject)
+    {
+      if ((paramObject instanceof a))
+      {
+        paramObject = (a)paramObject;
+        return a.equals(a);
+      }
+      return false;
+    }
+    
+    public final int hashCode()
+    {
+      return a.hashCode();
+    }
+    
+    public final String toString()
+    {
+      String str = String.valueOf(String.valueOf(a));
+      return str.length() + 20 + "Predicates.equalTo(" + str + ")";
+    }
   }
   
-  public final int previousIndex()
+  static abstract enum b
+    implements cp<Object>
   {
-    return b - 1;
+    private b() {}
   }
 }
 

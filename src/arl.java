@@ -1,53 +1,32 @@
-import android.os.Handler;
-import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.j;
+import java.util.Iterator;
+import java.util.List;
 
 public final class arl
-  implements ark
+  extends RecyclerView.j
 {
-  final ark a;
-  private final Handler b;
+  private final List<RecyclerView.j> a;
   
-  public arl(@cgb Handler paramHandler, @cgb ark paramark)
+  public arl(List<RecyclerView.j> paramList)
   {
-    b = paramHandler;
-    a = paramark;
+    a = paramList;
   }
   
-  private static boolean a()
+  public final void a(RecyclerView paramRecyclerView, int paramInt)
   {
-    return !bgp.c();
-  }
-  
-  public final void a(final arj paramarj)
-  {
-    if (a())
-    {
-      b.post(new Runnable()
-      {
-        public final void run()
-        {
-          a.a(paramarj);
-        }
-      });
-      return;
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      ((RecyclerView.j)localIterator.next()).a(paramRecyclerView, paramInt);
     }
-    a.a(paramarj);
   }
   
-  public final void a(final arj paramarj, final SnapViewSessionStopReason paramSnapViewSessionStopReason)
+  public final void a(RecyclerView paramRecyclerView, int paramInt1, int paramInt2)
   {
-    if (a())
-    {
-      b.post(new Runnable()
-      {
-        public final void run()
-        {
-          a.a(paramarj, paramSnapViewSessionStopReason);
-        }
-      });
-      return;
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      ((RecyclerView.j)localIterator.next()).a(paramRecyclerView, paramInt1, paramInt2);
     }
-    a.a(paramarj, paramSnapViewSessionStopReason);
   }
 }
 

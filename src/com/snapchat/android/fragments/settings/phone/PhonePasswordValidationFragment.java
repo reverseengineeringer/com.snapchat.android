@@ -1,8 +1,6 @@
 package com.snapchat.android.fragments.settings.phone;
 
-import ajx;
-import amk;
-import anc;
+import akr;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,9 +10,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import aok;
-import aol;
-import atx;
+import anh;
+import anz;
+import apg;
+import aph;
+import auv;
 import com.snapchat.android.fragments.settings.BasePasswordValidationFragment;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,14 +22,14 @@ import java.util.Set;
 public class PhonePasswordValidationFragment
   extends BasePasswordValidationFragment
 {
-  private final aol f;
+  private final aph f;
   private final Set<Integer> g = new HashSet();
-  private aok h = new aok()
+  private apg h = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
-      if ((PhonePasswordValidationFragment.a(PhonePasswordValidationFragment.this).contains(Integer.valueOf(i))) && ((paramAnonymousamk instanceof anc)))
+      int i = aph.a(paramAnonymousanh);
+      if ((PhonePasswordValidationFragment.a(PhonePasswordValidationFragment.this).contains(Integer.valueOf(i))) && ((paramAnonymousanh instanceof anz)))
       {
         PhonePasswordValidationFragment.a(PhonePasswordValidationFragment.this).remove(Integer.valueOf(i));
         PhonePasswordValidationFragment.a(PhonePasswordValidationFragment.this, b);
@@ -39,25 +39,25 @@ public class PhonePasswordValidationFragment
   
   public PhonePasswordValidationFragment()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private PhonePasswordValidationFragment(aol paramaol)
+  private PhonePasswordValidationFragment(aph paramaph)
   {
-    f = paramaol;
+    f = paramaph;
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    ((TextView)c(2131362675)).setText(atx.a(null, 2131493452, new Object[0]));
-    ((TextView)c(2131362676)).setText(atx.a(null, 2131493236, new Object[0]));
+    ((TextView)c(2131362674)).setText(auv.a(null, 2131493452, new Object[0]));
+    ((TextView)c(2131362675)).setText(auv.a(null, 2131493236, new Object[0]));
     b.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        PhonePasswordValidationFragment.a(PhonePasswordValidationFragment.this).add(Integer.valueOf(PhonePasswordValidationFragment.c(PhonePasswordValidationFragment.this).a(getActivity(), "pwConfirmPhoneNumber", ajx.e(), PhonePasswordValidationFragment.b(PhonePasswordValidationFragment.this).getText().toString())));
+        PhonePasswordValidationFragment.a(PhonePasswordValidationFragment.this).add(Integer.valueOf(PhonePasswordValidationFragment.c(PhonePasswordValidationFragment.this).a(getActivity(), "pwConfirmPhoneNumber", akr.e(), PhonePasswordValidationFragment.b(PhonePasswordValidationFragment.this).getText().toString())));
         PhonePasswordValidationFragment.d(PhonePasswordValidationFragment.this).setClickable(false);
         PhonePasswordValidationFragment.e(PhonePasswordValidationFragment.this).setText("");
         PhonePasswordValidationFragment.f(PhonePasswordValidationFragment.this).setVisibility(0);

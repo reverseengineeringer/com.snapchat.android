@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laom$a;
+.implements Lapi$a;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 389
+    .line 387
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,21 +42,21 @@
     .prologue
     const/4 v1, 0x1
 
+    .line 390
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
+
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->b:Lahz;
+
+    invoke-virtual {v0, v1}, Lahz;->f(Z)V
+
+    .line 391
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
+
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->b:Lahz;
+
+    invoke-virtual {v0, v1}, Lahz;->g(Z)V
+
     .line 392
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
-
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->b:Lahc;
-
-    invoke-virtual {v0, v1}, Lahc;->f(Z)V
-
-    .line 393
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
-
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->b:Lahc;
-
-    invoke-virtual {v0, v1}, Lahc;->g(Z)V
-
-    .line 394
     return-void
 .end method
 
@@ -66,21 +66,21 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 395
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
+
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->b:Lahz;
+
+    invoke-virtual {v0, v1}, Lahz;->f(Z)V
+
+    .line 396
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
+
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->b:Lahz;
+
+    invoke-virtual {v0, v1}, Lahz;->g(Z)V
+
     .line 397
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
-
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->b:Lahc;
-
-    invoke-virtual {v0, v1}, Lahc;->f(Z)V
-
-    .line 398
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
-
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->b:Lahc;
-
-    invoke-virtual {v0, v1}, Lahc;->g(Z)V
-
-    .line 399
     return-void
 .end method
 
@@ -88,7 +88,7 @@
     .locals 1
 
     .prologue
-    .line 402
+    .line 400
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
@@ -99,7 +99,7 @@
 
     invoke-interface {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->d()V
 
-    .line 403
+    .line 401
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .locals 1
 
     .prologue
-    .line 406
+    .line 404
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
@@ -118,6 +118,6 @@
 
     invoke-interface {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->d()V
 
-    .line 407
+    .line 405
     return-void
 .end method

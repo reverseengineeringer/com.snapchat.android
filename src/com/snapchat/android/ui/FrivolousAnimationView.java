@@ -1,6 +1,5 @@
 package com.snapchat.android.ui;
 
-import ajx;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -86,70 +85,70 @@ public class FrivolousAnimationView
   public void onDraw(Canvas paramCanvas)
   {
     long l1 = 0L;
-    try
-    {
-      if ((g == 0) || (d == 0)) {
-        super.onDraw(paramCanvas);
-      }
-      for (;;)
-      {
-        return;
-        if (ajx.aa()) {
-          break;
-        }
-        super.onDraw(paramCanvas);
-      }
-      paramCanvas.drawColor(0);
-    }
-    finally {}
-    if ((h == null) || (h.getHeight() != paramCanvas.getHeight()) || (h.getWidth() != paramCanvas.getWidth()))
-    {
-      h = a(g, paramCanvas, getContext());
-      if (h != null) {
-        i.setShader(new BitmapShader(h, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-      }
-    }
-    if ((e == null) || (e.getHeight() != paramCanvas.getHeight()) || (e.getWidth() != paramCanvas.getWidth()))
-    {
-      e = a(d, paramCanvas, getContext());
-      if (e != null) {
-        f.setShader(new BitmapShader(e, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-      }
-    }
-    long l2 = System.currentTimeMillis() - c;
-    if (l2 < 0L) {}
     for (;;)
     {
-      label233:
-      float f1 = 360.0F * (1.0F - (float)l1 / 500.0F);
-      a.set(0.0F, 0.0F, paramCanvas.getWidth(), paramCanvas.getHeight());
-      if (f1 >= 360.0F) {
-        if (e != null)
+      long l2;
+      float f1;
+      try
+      {
+        if ((g == 0) || (d == 0))
         {
+          super.onDraw(paramCanvas);
+          return;
+        }
+        paramCanvas.drawColor(0);
+        if ((h == null) || (h.getHeight() != paramCanvas.getHeight()) || (h.getWidth() != paramCanvas.getWidth()))
+        {
+          h = a(g, paramCanvas, getContext());
+          if (h != null) {
+            i.setShader(new BitmapShader(h, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+          }
+        }
+        if ((e == null) || (e.getHeight() != paramCanvas.getHeight()) || (e.getWidth() != paramCanvas.getWidth()))
+        {
+          e = a(d, paramCanvas, getContext());
+          if (e != null) {
+            f.setShader(new BitmapShader(e, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+          }
+        }
+        l2 = System.currentTimeMillis() - c;
+        if (l2 < 0L)
+        {
+          f1 = 360.0F * (1.0F - (float)l1 / 500.0F);
+          a.set(0.0F, 0.0F, paramCanvas.getWidth(), paramCanvas.getHeight());
+          if (f1 < 360.0F) {
+            break label328;
+          }
+          if (e == null) {
+            break label304;
+          }
           paramCanvas.drawRect(a, f);
-          break;
+          continue;
+        }
+        if (l2 <= 500L) {
+          break label294;
         }
       }
-      do
-      {
-        invalidate();
-        l1 = l2;
-        break label233;
-        if (ReleaseManager.e()) {
-          throw new RuntimeException("Could not get Frivolous animation icon bitmap");
-        }
-        super.onDraw(paramCanvas);
-        break;
-        if (e != null) {
-          paramCanvas.drawArc(a, -90.0F, f1, true, f);
-        }
-        if (h == null) {
-          break;
-        }
-        paramCanvas.drawArc(a, -90.0F + f1, 360.0F - f1, true, i);
-        break;
-      } while (l2 <= 500L);
+      finally {}
       l1 = 500L;
+      continue;
+      label294:
+      invalidate();
+      l1 = l2;
+      continue;
+      label304:
+      if (ReleaseManager.e()) {
+        throw new RuntimeException("Could not get Frivolous animation icon bitmap");
+      }
+      super.onDraw(paramCanvas);
+      continue;
+      label328:
+      if (e != null) {
+        paramCanvas.drawArc(a, -90.0F, f1, true, f);
+      }
+      if (h != null) {
+        paramCanvas.drawArc(a, -90.0F + f1, 360.0F - f1, true, i);
+      }
     }
   }
   

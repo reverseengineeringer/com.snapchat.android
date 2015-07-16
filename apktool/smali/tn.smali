@@ -1,15 +1,40 @@
-.class public interface abstract annotation Ltn;
+.class public final Ltn;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
+
+# instance fields
+.field private final mStatementDesc:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "statement_description"
+    .end annotation
+.end field
+
+.field private final mSubject:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "subject"
+    .end annotation
+.end field
 
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Documented;
-.end annotation
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+    .prologue
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 15
+    iput-object p1, p0, Ltn;->mSubject:Ljava/lang/String;
+
+    .line 16
+    iput-object p1, p0, Ltn;->mStatementDesc:Ljava/lang/String;
+
+    .line 17
+    return-void
+.end method

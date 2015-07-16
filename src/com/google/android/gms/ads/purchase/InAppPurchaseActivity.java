@@ -7,6 +7,8 @@ import android.os.RemoteException;
 import com.google.android.gms.internal.zzfp;
 import com.google.android.gms.internal.zzfu;
 import com.google.android.gms.internal.zzhx;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class InAppPurchaseActivity
   extends Activity
@@ -36,6 +38,8 @@ public class InAppPurchaseActivity
   
   protected void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
     zzAx = zzfu.zze(this);
     if (zzAx == null)

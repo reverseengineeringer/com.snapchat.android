@@ -31,14 +31,14 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 71
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;-><init>(Ljava/lang/Runtime;)V
 
-    .line 71
+    .line 72
     return-void
 .end method
 
@@ -46,29 +46,29 @@
     .locals 4
 
     .prologue
-    .line 73
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
+    .line 68
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->e:Z
 
-    .line 74
+    .line 75
     invoke-virtual {p1}, Ljava/lang/Runtime;->freeMemory()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->a:J
 
-    .line 75
+    .line 76
     invoke-virtual {p1}, Ljava/lang/Runtime;->totalMemory()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->c:J
 
-    .line 76
+    .line 77
     iget-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->c:J
 
     iget-wide v2, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->a:J
@@ -77,14 +77,14 @@
 
     iput-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->b:J
 
-    .line 77
+    .line 78
     invoke-virtual {p1}, Ljava/lang/Runtime;->maxMemory()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->d:J
 
-    .line 78
+    .line 79
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .locals 2
 
     .prologue
-    .line 55
+    .line 56
     iget-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->a:J
 
     return-wide v0
@@ -102,7 +102,7 @@
     .locals 2
 
     .prologue
-    .line 55
+    .line 56
     iget-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->b:J
 
     return-wide v0
@@ -112,7 +112,7 @@
     .locals 2
 
     .prologue
-    .line 55
+    .line 56
     iget-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->c:J
 
     return-wide v0
@@ -122,7 +122,7 @@
     .locals 2
 
     .prologue
-    .line 55
+    .line 56
     iget-wide v0, p0, Lcom/snapchat/android/analytics/framework/EasyMetric$MemoryStats;->d:J
 
     return-wide v0

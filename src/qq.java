@@ -1,9 +1,64 @@
+import android.text.TextUtils;
+import com.google.gson.annotations.SerializedName;
+import com.squareup.otto.Bus;
+
 public final class qq
-  extends th
+  extends tx
+  implements akp.b, ui.b<bkg>
 {
-  protected final String d()
+  public static final String PATH = "/bq/stories";
+  private static final String TAG = "SyncStoryTask";
+  private final Bus mBus;
+  private final String mChecksum;
+  private bjx mServerInfoResponse;
+  private final akr mUserPrefs;
+  
+  public qq()
   {
-    return "/cash/reset_account";
+    this(bbo.a(), akr.a());
+  }
+  
+  private qq(Bus paramBus, akr paramakr)
+  {
+    mBus = paramBus;
+    mUserPrefs = paramakr;
+    mChecksum = akr.ay();
+    registerCallback(bkg.class, this);
+  }
+  
+  public final void D_()
+  {
+    if ((mServerInfoResponse != null) && (mServerInfoResponse.e() == bjx.a.NOT_EQUAL))
+    {
+      if (TextUtils.equals(mChecksum, akr.ay())) {
+        akr.k(mServerInfoResponse.b());
+      }
+    }
+    else {
+      return;
+    }
+    new qq().execute();
+  }
+  
+  public final void execute()
+  {
+    mBus.a(new bfh());
+    super.execute();
+  }
+  
+  protected final String getPath()
+  {
+    return "/bq/stories";
+  }
+  
+  @ud
+  public static final class a
+    extends qc
+  {
+    @SerializedName("checksum")
+    String mChecksum;
+    @SerializedName("features_map")
+    String mFeatureMap;
   }
 }
 

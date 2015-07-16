@@ -106,26 +106,13 @@ public class zzgk
     {
       zzhx.zzY("Received ad response.");
       zzvO = paramzzgq;
-      zznh.notify();
       return;
     }
   }
   
   protected boolean zzd(long paramLong)
   {
-    paramLong = 60000L - (zzab.zzaQ().elapsedRealtime() - paramLong);
-    if (paramLong <= 0L) {
-      return false;
-    }
-    try
-    {
-      zznh.wait(paramLong);
-      return true;
-    }
-    catch (InterruptedException localInterruptedException)
-    {
-      throw new zza("Ad request cancelled.", -1);
-    }
+    return 60000L - (zzab.zzaQ().elapsedRealtime() - paramLong) > 0L;
   }
   
   protected void zzdI()

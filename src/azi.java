@@ -1,78 +1,24 @@
-import com.snapchat.android.util.debug.ReleaseManager;
-import java.util.UUID;
-
 public final class azi
+  implements aza
 {
-  protected static final double BETA_SAMPLING_RATE = 0.5D;
-  private static final azi INSTANCE = new azi();
-  protected static final double PRODUCTION_SAMPLING_RATE = 0.009999999776482582D;
-  private boolean mInitialized;
-  private final ReleaseManager mReleaseManager;
-  private boolean mShouldReportCrashes;
-  
-  private azi()
+  public final byte[] a(byte[] paramArrayOfByte)
   {
-    this(ReleaseManager.a());
+    return a(paramArrayOfByte, "no dataId provided");
   }
   
-  private azi(ReleaseManager paramReleaseManager)
+  public final byte[] a(byte[] paramArrayOfByte, String paramString)
   {
-    mReleaseManager = paramReleaseManager;
+    return paramArrayOfByte;
   }
   
-  public static azi a()
+  public final byte[] b(byte[] paramArrayOfByte)
   {
-    return INSTANCE;
+    return b(paramArrayOfByte, "no dataId provided");
   }
   
-  private static boolean a(double paramDouble)
+  public final byte[] b(byte[] paramArrayOfByte, String paramString)
   {
-    UUID localUUID = ajx.bw();
-    if (localUUID == null) {
-      return a(paramDouble, UUID.randomUUID().toString());
-    }
-    return a(paramDouble, localUUID.toString());
-  }
-  
-  private static boolean a(double paramDouble, @cgb String paramString)
-  {
-    return Math.abs(paramString.hashCode() / 2.147483647E9D) < paramDouble;
-  }
-  
-  public final boolean b()
-  {
-    for (;;)
-    {
-      try
-      {
-        if (!mInitialized)
-        {
-          if (ReleaseManager.b())
-          {
-            mShouldReportCrashes = false;
-            mInitialized = true;
-          }
-        }
-        else
-        {
-          boolean bool = mShouldReportCrashes;
-          return bool;
-        }
-        if (ReleaseManager.c())
-        {
-          mShouldReportCrashes = true;
-          continue;
-        }
-        if (!ReleaseManager.d()) {
-          break label72;
-        }
-      }
-      finally {}
-      mShouldReportCrashes = a(0.5D);
-      continue;
-      label72:
-      mShouldReportCrashes = a(0.009999999776482582D);
-    }
+    return paramArrayOfByte;
   }
 }
 

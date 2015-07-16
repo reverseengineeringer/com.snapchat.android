@@ -1,31 +1,43 @@
 .class public final Lath;
-.super Ljava/lang/Object;
+.super Lati;
 .source "SourceFile"
 
 
 # direct methods
-.method public static a(Ljava/lang/Enum;)Ljava/lang/String;
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 11
+    invoke-direct {p0}, Lati;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lcom/snapchat/android/ui/SwipeImageView;Lasv;)V
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<E:",
-            "Ljava/lang/Enum",
-            "<TE;>;>(TE;)",
-            "Ljava/lang/String;"
+            "(",
+            "Lcom/snapchat/android/ui/SwipeImageView;",
+            "Lasv",
+            "<",
+            "Lasm;",
+            ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 14
-    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    .line 15
+    iget-object v0, p1, Lcom/snapchat/android/ui/SwipeImageView;->e:Landroid/widget/FrameLayout;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    .line 16
+    invoke-virtual {p2}, Lasv;->c()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 17
+    return-void
 .end method

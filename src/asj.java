@@ -1,10 +1,10 @@
-import com.snapchat.android.ui.SwipeImageView;
+import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
 
-public abstract class asj
+public abstract interface asj
 {
-  public void a() {}
+  public abstract void a(asi paramasi);
   
-  public abstract void a(SwipeImageView paramSwipeImageView, arw<arn> paramarw);
+  public abstract void a(asi paramasi, SnapViewSessionStopReason paramSnapViewSessionStopReason);
 }
 
 /* Location:

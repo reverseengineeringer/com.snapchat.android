@@ -10,8 +10,8 @@ sdkInfo:
 packageInfo:
   forced-package-id: '127'
 versionInfo:
-  versionCode: '687'
-  versionName: 9.11.0.0
+  versionCode: '693'
+  versionName: 9.12.1.0
 compressionType: false
 sharedLibrary: false
 unknownFiles:

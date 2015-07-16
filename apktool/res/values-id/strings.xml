@@ -230,7 +230,6 @@ untuk mengirim ke teman."</string>
     <string name="discover_sharing_success">Snap dikirim!</string>
     <string name="discover_sharing_unavailable">%1$s tidak mengizinkan Snap ini dikirim.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Ketuk di sini untuk melihat Discover!</string>
     <string name="discover_unavailable">"Maaf!
 
 Discover saat ini tidak tersedia."</string>
@@ -282,6 +281,7 @@ tidak tersedia di wilayah Anda."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Lupa kata sandi?</a>" "</string>
     <string name="friend_suggest_hide">Sembunyikan</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Kontak baru</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - baru saja bergabung</string>
     <string name="friends">Teman-teman</string>
     <string name="friends_context_block">Blokir</string>
@@ -430,7 +430,7 @@ Baca "<a href="http://www.snapchat.com/privacy">Kebijakan Privasi</a> kami untuk
     <string name="problem_opening_image_file">Ada masalah saat membuka gambar yang Anda pilih. Coba lagi.</string>
     <string name="problem_searching_nearby">Ups! Ada yang salah.</string>
     <string name="profile_images_go">YAK!</string>
-    <string name="profile_images_notice">Your selfie will be shown to other Snapchatters.</string>
+    <string name="profile_images_notice">Selfiemu akan ditampilkan ke Snapchatter lain.</string>
     <string name="profile_images_ready">Bersedia</string>
     <string name="profile_images_remove">Hapus</string>
     <string name="profile_images_remove_message">Yakin ingin menghapus Gambar Profil Anda saat ini?</string>
@@ -592,7 +592,7 @@ mengirim uang?"</string>
     <string name="snap_delete_failure">Snap gagal dihapus.</string>
     <string name="snap_failed_to_post">1 Snap gagal diposting.</string>
     <string name="snap_list_empty_list_msg">Anda belum memiliki satu pun Snap :(</string>
-    <string name="snap_tag_help_description">Snapchatter bisa menambahkan Anda dengan menunjuk kamera mereka pada ikon hantu dan mengetuk layar mereka!</string>
+    <string name="snap_tag_help_description">Snapchatter bisa menambahkan Anda dengan mengarahkan kamera mereka ke Snapcode Anda dan mengetuk layar mereka!</string>
     <string name="snap_tag_no_connection">Tidak ada koneksi!</string>
     <string name="snap_to_add">Snap atau tangkap layar untuk menambahkan</string>
     <string name="snapkidz_welcome">Selamat datang di Snapkidz!</string>
@@ -628,8 +628,6 @@ mengirim uang?"</string>
     <string name="tap_to_view_edition">Ketuk untuk melihat di Discover</string>
     <string name="tap_to_view_full_story">Ketuk untuk melihat cerita lengkapnya</string>
     <string name="tap_to_view_more">Ketuk untuk menjelajahi saluran lainnya</string>
-    <string name="tap_to_view_snaps">Ketuk untuk melihat Snap!</string>
-    <string name="tap_to_view_stories">Ketuk untuk melihat Cerita!</string>
     <string name="tap_to_view_video_in_discover">Ketuk untuk melihat video ini di Discover</string>
     <string name="too_many_attempts">"Terlalu sering mencoba.
 "</string>

@@ -1,51 +1,102 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.snapchat.android.model.chat.ChatFeedItem;
+import android.content.Context;
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
 
 public final class anu
-  extends anv
+  extends ana
+  implements ui.b<blg>
 {
-  public anu(String paramString)
-  {
-    this(paramString, System.currentTimeMillis(), -1L);
-  }
+  public blg a;
+  private final double b;
+  private final double c;
+  private final Float d;
+  private final long e;
+  private final String f;
+  private final EasyMetric.EasyMetricFactory g = new EasyMetric.EasyMetricFactory();
   
-  public anu(String paramString, long paramLong1, long paramLong2)
+  public anu(Intent paramIntent)
   {
-    super(paramString, paramLong1, paramLong2);
-  }
-  
-  public final String a()
-  {
-    return "";
-  }
-  
-  public final void a(long paramLong)
-  {
-    Timber.c("ChatViewingSession", "onScreenshotDetected " + paramLong, new Object[0]);
-    Object localObject1 = a;
-    ChatConversation localChatConversation = akc.b().a((String)localObject1);
-    if (localChatConversation == null) {
+    super(paramIntent);
+    b = paramIntent.getDoubleExtra("lat", Double.MIN_VALUE);
+    c = paramIntent.getDoubleExtra("long", Double.MIN_VALUE);
+    float f1 = paramIntent.getFloatExtra("accuracyMeters", Float.MIN_VALUE);
+    if (f1 != Float.MIN_VALUE) {}
+    for (Float localFloat = Float.valueOf(f1);; localFloat = null)
+    {
+      d = localFloat;
+      e = paramIntent.getLongExtra("totalPollingDurationMillis", Long.MIN_VALUE);
+      f = paramIntent.getStringExtra("action");
+      registerCallback(blg.class, this);
       return;
     }
-    localObject1 = new akg.a(ajx.l(), (String)localObject1).a();
-    ((akg)localObject1).c(paramLong);
-    yq localyq = yq.a();
-    Object localObject2 = ajx.l();
-    if (localObject2 != null)
-    {
-      ((akg)localObject1).c(localChatConversation.b(((akg)localObject1).W()));
-      localChatConversation.a((ChatFeedItem)localObject1);
-      bij localbij = new bij().a(bij.a.SCREENSHOT.toString());
-      localObject2 = (bhf)asz.a(bii.a.CHAT_MESSAGE, (String)localObject2, localChatConversation.y(), mMessagingAuthToken);
-      ((bhf)localObject2).a(((akg)localObject1).d());
-      ((bhf)localObject2).a(localbij);
-      ((bhf)localObject2).b(Long.valueOf(((akg)localObject1).W()));
-      ((akg)localObject1).a(((bhf)localObject2).k());
-      ((akg)localObject1).a((bhf)localObject2);
-      localyq.a(localChatConversation, (akb)localObject1);
+  }
+  
+  public final void a(Context paramContext)
+  {
+    int j = 0;
+    int i;
+    if (Math.abs(b) > 90.0D) {
+      i = j;
     }
-    d.d();
+    for (;;)
+    {
+      if (i != 0) {
+        super.a(paramContext);
+      }
+      return;
+      i = j;
+      if (Math.abs(c) <= 180.0D)
+      {
+        i = j;
+        if (e >= 0L) {
+          if (!f.equals("update"))
+          {
+            i = j;
+            if (!f.equals("delete")) {}
+          }
+          else
+          {
+            i = 1;
+          }
+        }
+      }
+    }
+  }
+  
+  public final Object getRequestPayload()
+  {
+    return new anu.a(b, c, d, e, f);
+  }
+  
+  protected final String l_()
+  {
+    return "/bq/and/find_nearby_friends";
+  }
+  
+  @ud
+  public final class a
+    extends qc
+  {
+    @SerializedName("lat")
+    Double a;
+    @SerializedName("long")
+    Double b;
+    @SerializedName("accuracyMeters")
+    Float c;
+    @SerializedName("totalPollingDurationMillis")
+    Long d;
+    @SerializedName("action")
+    String e;
+    
+    public a(double paramDouble1, double paramDouble2, Float paramFloat, long paramLong, String paramString)
+    {
+      a = Double.valueOf(paramDouble1);
+      b = Double.valueOf(paramDouble2);
+      c = paramFloat;
+      d = Long.valueOf(paramLong);
+      e = paramString;
+    }
   }
 }
 

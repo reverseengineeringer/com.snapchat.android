@@ -101,7 +101,7 @@ public final class zzdn
     }
     try
     {
-      zznh.wait(Math.min(paramLong1, paramLong2));
+      Math.min(paramLong1, paramLong2);
       return;
     }
     catch (InterruptedException localInterruptedException)
@@ -154,7 +154,6 @@ public final class zzdn
           zzsG.destroy();
         }
         zzsH = -1;
-        zznh.notify();
         return;
       }
       catch (RemoteException localRemoteException)
@@ -204,7 +203,6 @@ public final class zzdn
     synchronized (zznh)
     {
       zzsH = paramInt;
-      zznh.notify();
       return;
     }
   }

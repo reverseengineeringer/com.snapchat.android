@@ -1,12 +1,12 @@
 package com.snapchat.android;
 
-import ahq.a;
-import auh;
+import aim.a;
+import avf;
 import com.snapchat.android.analytics.AnalyticsEvents;
-import pf;
+import pw;
 
 final class LandingPageActivity$6
-  implements ahq.a
+  implements aim.a
 {
   LandingPageActivity$6(LandingPageActivity paramLandingPageActivity) {}
   
@@ -15,7 +15,7 @@ final class LandingPageActivity$6
     if (paramBoolean)
     {
       AnalyticsEvents.g();
-      new pf().executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+      new pw().executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     }
   }
 }

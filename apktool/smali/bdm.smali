@@ -3,21 +3,13 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public mBeingViewed:Z
-
-
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 7
+    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
-    iput-boolean p1, p0, Lbdm;->mBeingViewed:Z
-
-    .line 9
     return-void
 .end method

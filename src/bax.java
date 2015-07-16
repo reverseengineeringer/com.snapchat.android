@@ -1,12 +1,30 @@
-import com.snapchat.android.util.chat.SnapchatUrlSpan;
+import com.snapchat.android.util.debug.ReleaseManager;
+import javax.inject.Provider;
 
 public final class bax
+  implements bvp<baw>
 {
-  public SnapchatUrlSpan snapchatUrlSpan;
+  private final Provider<ReleaseManager> releaseManagerProvider;
   
-  public bax(SnapchatUrlSpan paramSnapchatUrlSpan)
+  static
   {
-    snapchatUrlSpan = paramSnapchatUrlSpan;
+    if (!bax.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
+  }
+  
+  private bax(Provider<ReleaseManager> paramProvider)
+  {
+    assert (paramProvider != null);
+    releaseManagerProvider = paramProvider;
+  }
+  
+  public static bvp<baw> a(Provider<ReleaseManager> paramProvider)
+  {
+    return new bax(paramProvider);
   }
 }
 

@@ -1,14 +1,14 @@
 package com.snapchat.android.preview;
 
-import aim;
-import ajk;
-import ajv;
+import aji;
+import akg;
+import akp;
 import android.view.View;
 import android.view.View.OnClickListener;
-import bap;
-import bba;
-import bdn;
-import bgr;
+import bbq;
+import bcb;
+import ben;
+import bhr;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.NetworkAnalytics;
 import com.snapchat.android.model.MediaMailingMetadata;
@@ -30,20 +30,20 @@ final class SnapPreviewFragment$6
     if (!a.n()) {
       return;
     }
-    SnapPreviewFragment.u(a).a("SNAP_SENT_DELAY", ia).mClientId, "preview_screen");
+    SnapPreviewFragment.v(a).a("SNAP_SENT_DELAY", ia).mClientId, "preview_screen");
     paramView = ia).mMediaMailingMetadata;
     if (!paramView.d().isEmpty())
     {
-      SnapPreviewFragment.a(a, ajv.a(a.getActivity()));
-      SnapPreviewFragment.v(a).e();
+      SnapPreviewFragment.a(a, akp.a(a.getActivity()));
+      SnapPreviewFragment.w(a).e();
     }
-    aim localaim;
+    aji localaji;
     if (ia).mSnapType == Mediabryo.SnapType.SNAP)
     {
-      paramView = (ajk)paramView;
+      paramView = (akg)paramView;
       if (!mPostToStories.isEmpty())
       {
-        localaim = SnapPreviewFragment.i(a);
+        localaji = SnapPreviewFragment.i(a);
         if (paramView.d().isEmpty()) {
           break label222;
         }
@@ -52,11 +52,11 @@ final class SnapPreviewFragment$6
     label222:
     for (boolean bool = true;; bool = false)
     {
-      AnalyticsEvents.a(localaim, true, bool, "SEND_TO_SCREEN");
-      SnapPreviewFragment.w(a).a(new bap(CameraDisplayState.SHOW));
-      SnapPreviewFragment.w(a).a(new bba());
-      SnapPreviewFragment.w(a).a(new bdn(SnapPreviewFragment.i(a)));
-      ((SendToBottomPanelView)SnapPreviewFragment.x(a).a()).setSendButtonOnClickListener(null);
+      AnalyticsEvents.a(localaji, true, bool, "SEND_TO_SCREEN");
+      SnapPreviewFragment.x(a).a(new bbq(CameraDisplayState.SHOW));
+      SnapPreviewFragment.x(a).a(new bcb());
+      SnapPreviewFragment.x(a).a(new ben(SnapPreviewFragment.i(a)));
+      ((SendToBottomPanelView)SnapPreviewFragment.y(a).a()).setSendButtonOnClickListener(null);
       return;
     }
   }

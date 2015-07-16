@@ -1,24 +1,36 @@
-import javax.annotation.Nullable;
-
 final class ch$1
   extends ch
 {
-  ch$1(ch paramch1, ch paramch2, String paramString)
+  public final boolean a(char paramChar)
   {
-    super(paramch2, (byte)0);
-  }
-  
-  public final ch a(String paramString)
-  {
-    throw new UnsupportedOperationException("already specified useForNull");
-  }
-  
-  final CharSequence a(@Nullable Object paramObject)
-  {
-    if (paramObject == null) {
-      return b;
+    switch (paramChar)
+    {
+    default: 
+      if ((paramChar < ' ') || (paramChar > ' ')) {
+        break;
+      }
+    case '\t': 
+    case '\n': 
+    case '\013': 
+    case '\f': 
+    case '\r': 
+    case ' ': 
+    case '': 
+    case ' ': 
+    case ' ': 
+    case ' ': 
+    case ' ': 
+    case '　': 
+      return true;
+    case ' ': 
+      return false;
     }
-    return c.a(paramObject);
+    return false;
+  }
+  
+  public final String toString()
+  {
+    return "CharMatcher.BREAKING_WHITESPACE";
   }
 }
 

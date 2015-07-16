@@ -20,6 +20,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Set;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class FileProvider
   extends ContentProvider
@@ -442,6 +444,8 @@ public class FileProvider
   
   public boolean onCreate()
   {
+    kkxxkk.b041E041EОО041EО(getContext());
+    xkkkxk.b041E041EООО041E(getContext());
     return true;
   }
   

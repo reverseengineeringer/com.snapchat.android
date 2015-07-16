@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.chat;
 
-import yi;
+import ze;
 
 final class ChatFragment$11
   implements Runnable

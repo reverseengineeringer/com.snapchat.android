@@ -1,10 +1,11 @@
 public final class bdu
 {
-  public final float mSpeed;
+  @chc
+  public final String friendUsername;
   
-  public bdu(float paramFloat)
+  public bdu(@chc String paramString)
   {
-    mSpeed = paramFloat;
+    friendUsername = paramString;
   }
 }
 

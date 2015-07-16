@@ -1,13 +1,13 @@
 package com.snapchat.android.analytics.framework;
 
-import azm;
+import bal;
 import com.google.gson.annotations.SerializedName;
-import pl;
-import tn;
-import tv;
+import qc;
+import ud;
+import ul;
 
 public class UploadUsageAnalyticsTask
-  extends tv
+  extends ul
 {
   private final String a;
   
@@ -16,14 +16,14 @@ public class UploadUsageAnalyticsTask
     a = paramString;
   }
   
-  public final String n_()
+  public String getUrl()
   {
-    return azm.b("dummy") + "/analytics/bz";
+    return bal.b("dummy") + "/analytics/bz";
   }
   
-  @tn
+  @ud
   public class RequestPayload
-    extends pl
+    extends qc
   {
     @SerializedName("events")
     final String a;

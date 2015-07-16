@@ -1,43 +1,24 @@
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import com.squareup.otto.Bus;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public final class asg
-  extends asc
 {
-  private final aqx b;
+  public long a = -1L;
+  public int b = 0;
+  public boolean c = false;
+  private final bhk d;
+  private final SharedPreferences e;
   
-  public asg(aqx paramaqx)
+  public asg(Context paramContext)
   {
-    b = paramaqx;
+    this(new bhk(), PreferenceManager.getDefaultSharedPreferences(paramContext));
   }
   
-  public final String a()
+  private asg(bhk parambhk, SharedPreferences paramSharedPreferences)
   {
-    return "Weather";
-  }
-  
-  public final boolean a(MotionEvent paramMotionEvent)
-  {
-    ViewGroup localViewGroup = (ViewGroup)b.d.findViewById(2131362848);
-    Rect localRect = new Rect();
-    localViewGroup.getHitRect(localRect);
-    return localRect.contains((int)paramMotionEvent.getX(), (int)paramMotionEvent.getY());
-  }
-  
-  public final View d()
-  {
-    return b.d;
-  }
-  
-  public final void e()
-  {
-    aqx localaqx = b;
-    c.b(localaqx);
-    b.a(2130968781, d);
-    d = null;
+    d = parambhk;
+    e = paramSharedPreferences;
   }
 }
 

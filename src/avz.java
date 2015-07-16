@@ -1,24 +1,45 @@
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-import com.snapchat.android.util.profileimages.ProfileImageUtils;
+import com.google.gson.reflect.TypeToken;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
 
 public final class avz
-  extends AsyncTask<Void, Void, Bitmap>
 {
-  private Bitmap mBitmap;
-  private Bitmap mMask;
-  private ProfileImageUtils mProfileImageUtils;
-  
-  public avz(Bitmap paramBitmap1, Bitmap paramBitmap2)
+  public static String a(Collection<?> paramCollection, String paramString)
   {
-    this(paramBitmap1, paramBitmap2, ProfileImageUtils.a());
+    StringBuilder localStringBuilder = new StringBuilder();
+    paramCollection = paramCollection.iterator();
+    while (paramCollection.hasNext())
+    {
+      localStringBuilder.append(paramCollection.next());
+      if (!paramCollection.hasNext()) {
+        break;
+      }
+      localStringBuilder.append(paramString);
+    }
+    return localStringBuilder.toString();
   }
   
-  private avz(Bitmap paramBitmap1, Bitmap paramBitmap2, ProfileImageUtils paramProfileImageUtils)
+  @chd
+  public static String a(@chd byte[] paramArrayOfByte)
   {
-    mBitmap = paramBitmap1;
-    mMask = paramBitmap2;
-    mProfileImageUtils = paramProfileImageUtils;
+    Object localObject;
+    if (paramArrayOfByte == null)
+    {
+      localObject = null;
+      return (String)localObject;
+    }
+    String str = "";
+    int i = 0;
+    for (;;)
+    {
+      localObject = str;
+      if (i >= paramArrayOfByte.length) {
+        break;
+      }
+      str = str + Integer.toString((paramArrayOfByte[i] & 0xFF) + 256, 16).substring(1);
+      i += 1;
+    }
   }
 }
 

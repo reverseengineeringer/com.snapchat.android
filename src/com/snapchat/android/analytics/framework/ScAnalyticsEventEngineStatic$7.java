@@ -8,8 +8,8 @@ final class ScAnalyticsEventEngineStatic$7
 {
   public final void run()
   {
-    ScAnalyticsEventEngineStatic.m().edit().remove(Constants.h).commit();
-    ScAnalyticsEventEngineStatic.p();
+    ScAnalyticsEventEngineStatic.j().edit().remove(Constants.h).commit();
+    ScAnalyticsEventEngineStatic.a(-1L);
     ScAnalyticsEventEngineStatic.a();
   }
 }

@@ -1,11 +1,9 @@
-import com.snapchat.android.util.debug.ReleaseManager;
-import javax.inject.Provider;
+import com.snapchat.android.analytics.framework.FlurryAnalyticsPlatform;
 
 public final class azq
-  implements buo<azp>
+  implements bvp<FlurryAnalyticsPlatform>
 {
-  private final Provider<azi> crashSamplerProvider;
-  private final Provider<ReleaseManager> releaseManagerProvider;
+  private final azj module;
   
   static
   {
@@ -17,17 +15,15 @@ public final class azq
     }
   }
   
-  private azq(Provider<azi> paramProvider, Provider<ReleaseManager> paramProvider1)
+  private azq(azj paramazj)
   {
-    assert (paramProvider != null);
-    crashSamplerProvider = paramProvider;
-    assert (paramProvider1 != null);
-    releaseManagerProvider = paramProvider1;
+    assert (paramazj != null);
+    module = paramazj;
   }
   
-  public static buo<azp> a(Provider<azi> paramProvider, Provider<ReleaseManager> paramProvider1)
+  public static bvp<FlurryAnalyticsPlatform> a(azj paramazj)
   {
-    return new azq(paramProvider, paramProvider1);
+    return new azq(paramazj);
   }
 }
 

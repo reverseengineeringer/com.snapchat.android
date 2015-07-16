@@ -1,40 +1,26 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.TranslateAnimation;
+import akp;
+import aph;
+import com.snapchat.android.analytics.NetworkAnalytics;
+import com.snapchat.android.analytics.NetworkAnalytics.PageContext;
+import javax.inject.Provider;
+import nx;
 
 final class FeedFragment$8
-  implements Animation.AnimationListener
+  implements Runnable
 {
-  FeedFragment$8(FeedFragment paramFeedFragment, Runnable paramRunnable, View paramView) {}
+  FeedFragment$8(FeedFragment paramFeedFragment) {}
   
-  public final void onAnimationEnd(Animation paramAnimation)
+  public final void run()
   {
-    paramAnimation = new TranslateAnimation(FeedFragment.r(c), 0.0F, 0.0F, 0.0F);
-    paramAnimation.setInterpolator(new BounceInterpolator());
-    paramAnimation.setDuration(400L);
-    if (a != null) {
-      paramAnimation.setAnimationListener(new Animation.AnimationListener()
-      {
-        public final void onAnimationEnd(Animation paramAnonymousAnimation)
-        {
-          a.run();
-        }
-        
-        public final void onAnimationRepeat(Animation paramAnonymousAnimation) {}
-        
-        public final void onAnimationStart(Animation paramAnonymousAnimation) {}
-      });
+    if ((akp)FeedFragment.p(a).get() != null)
+    {
+      FeedFragment.q(a).a(NetworkAnalytics.PageContext.FEED);
+      FeedFragment.r(a).a("feed", "pull_to_refresh");
+      FeedFragment.s(a).f();
     }
-    b.startAnimation(paramAnimation);
   }
-  
-  public final void onAnimationRepeat(Animation paramAnimation) {}
-  
-  public final void onAnimationStart(Animation paramAnimation) {}
 }
 
 /* Location:

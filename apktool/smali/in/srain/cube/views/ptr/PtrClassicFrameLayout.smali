@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+.field private g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
 
 # direct methods
@@ -63,17 +63,17 @@
 
     invoke-direct {v0, v1}, Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+    iput-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
     .line 31
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
     invoke-virtual {p0, v0}, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->setHeaderView(Landroid/view/View;)V
 
     .line 32
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
-    invoke-virtual {p0, v0}, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a(Lbus;)V
+    invoke-virtual {p0, v0}, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a(Lbvt;)V
 
     .line 33
     return-void
@@ -86,7 +86,7 @@
 
     .prologue
     .line 36
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
     return-object v0
 .end method
@@ -96,12 +96,12 @@
 
     .prologue
     .line 45
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
     if-eqz v0, :cond_0
 
     .line 46
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
     invoke-virtual {v0, p1}, Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;->setLastUpdateTimeKey(Ljava/lang/String;)V
 
@@ -115,12 +115,12 @@
 
     .prologue
     .line 56
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
     if-eqz v0, :cond_0
 
     .line 57
-    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->a:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/PtrClassicFrameLayout;->g:Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;
 
     invoke-virtual {v0, p1}, Lin/srain/cube/views/ptr/PtrClassicDefaultHeader;->setLastUpdateTimeRelateObject(Ljava/lang/Object;)V
 

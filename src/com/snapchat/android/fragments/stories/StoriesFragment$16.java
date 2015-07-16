@@ -1,35 +1,29 @@
 package com.snapchat.android.fragments.stories;
 
-import abz.a;
-import caq;
+import acz.a;
+import cbr;
 import com.snapchat.android.discover.ui.DiscoverButtonView;
 
 final class StoriesFragment$16
-  implements abz.a
+  implements acz.a
 {
   StoriesFragment$16(StoriesFragment paramStoriesFragment) {}
   
-  @caq
+  @cbr
   public final void a(final boolean paramBoolean)
   {
-    StoriesFragment.g(a).post(new Runnable()
+    StoriesFragment.f(a).post(new Runnable()
     {
       public final void run()
       {
         if (paramBoolean)
         {
-          StoriesFragment.g(a).a();
-          StoriesFragment.g(a).setContentDescription("Pulsing");
+          StoriesFragment.f(a).setFilled(true);
+          StoriesFragment.f(a).setContentDescription("Filled");
           return;
         }
-        DiscoverButtonView localDiscoverButtonView = StoriesFragment.g(a);
-        if (paramBoolean)
-        {
-          a = false;
-          localDiscoverButtonView.removeCallbacks(b);
-          localDiscoverButtonView.invalidate();
-        }
-        StoriesFragment.g(a).setContentDescription("Not Pulsing");
+        StoriesFragment.f(a).setFilled(false);
+        StoriesFragment.f(a).setContentDescription("Not Filled");
       }
     });
   }

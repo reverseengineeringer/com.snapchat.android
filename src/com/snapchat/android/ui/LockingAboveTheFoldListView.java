@@ -13,11 +13,10 @@ import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.BaseAdapter;
-import apv;
+import aqu;
 import br;
-import cgb;
+import chc;
 import com.github.ksoichiro.android.observablescrollview.ObservableListView;
-import com.snapchat.android.Timber;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -44,38 +43,38 @@ public class LockingAboveTheFoldListView<T>
   };
   protected final Map<String, Integer> a = new HashMap();
   public boolean b;
-  public boolean c;
-  public BaseAdapter d;
-  public c<T> e;
-  private final View f;
-  private LockingAboveTheFoldListView<T>.a g;
-  private int h;
-  private float i = NaN.0F;
-  private int j;
-  private float k;
-  private float l;
-  private int m;
-  private boolean n;
-  private boolean o;
-  private View p;
-  private apv q;
-  private int r = -1;
-  private float s = -1.0F;
-  private int t;
+  private final View c;
+  private LockingAboveTheFoldListView<T>.a d;
+  private int e;
+  private float f = NaN.0F;
+  private int g;
+  private boolean h;
+  private float i;
+  private float j;
+  private int k;
+  private boolean l;
+  private boolean m;
+  private View n;
+  private aqu o;
+  private int p = -1;
+  private float q = -1.0F;
+  private int r;
+  private boolean s;
+  private boolean t;
   private boolean u;
   private boolean v;
-  private boolean w;
+  private int w;
   private boolean x;
-  private int y;
-  private boolean z;
+  private BaseAdapter y;
+  private c<T> z;
   
   public LockingAboveTheFoldListView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    f = new View(paramContext);
-    g = new a((byte)0);
+    c = new View(paramContext);
+    d = new a((byte)0);
     D = ViewConfiguration.get(paramContext).getScaledTouchSlop();
-    addFooterView(f, null, false);
+    addFooterView(c, null, false);
     super.setOnScrollListener(this);
     super.setScrollViewCallbacks(this);
   }
@@ -100,7 +99,7 @@ public class LockingAboveTheFoldListView<T>
   
   private void e()
   {
-    if (f.getBottom() + getPaddingBottom() >= getHeight()) {
+    if (c.getBottom() + getPaddingBottom() >= getHeight()) {
       return;
     }
     post(new Runnable()
@@ -114,34 +113,34 @@ public class LockingAboveTheFoldListView<T>
   
   private void setLocked(boolean paramBoolean)
   {
-    Timber.g("ObservableAboveTheFoldListView", "LockingAboveTheFoldListView setLocked to " + paramBoolean + " currently " + c, new Object[0]);
-    if (c != paramBoolean)
+    new StringBuilder("LockingAboveTheFoldListView setLocked to ").append(paramBoolean).append(" currently ").append(b);
+    if (b != paramBoolean)
     {
-      c = paramBoolean;
-      if (e != null)
+      b = paramBoolean;
+      if (z != null)
       {
-        if (!c) {
-          break label78;
+        if (!b) {
+          break label67;
         }
-        e.c(p);
+        z.c(n);
       }
     }
     return;
-    label78:
-    e.r();
+    label67:
+    z.r();
   }
   
   public final void a()
   {
-    p = null;
-    q = null;
-    r = -1;
-    s = -1.0F;
-    w = false;
-    v = false;
+    n = null;
+    o = null;
+    p = -1;
+    q = -1.0F;
     u = false;
-    x = false;
-    y = 0;
+    t = false;
+    s = false;
+    v = false;
+    w = 0;
     setLocked(false);
   }
   
@@ -157,17 +156,18 @@ public class LockingAboveTheFoldListView<T>
     if (B != null) {
       B.a(paramInt, paramBoolean1, paramBoolean2);
     }
-    if (!o) {
-      Timber.g("ObservableAboveTheFoldListView", "CHAT-LOG: LockingAboveTheFoldListView onScrollChanged but locking is disabled", new Object[0]);
+    if (!m) {
+      break label26;
     }
-    label149:
+    label26:
+    label138:
+    label254:
+    label260:
     label265:
-    label271:
-    label276:
     for (;;)
     {
       return;
-      if (!c)
+      if (!b)
       {
         int i4 = getHeight() / 2;
         int i3 = getFirstVisiblePosition();
@@ -176,7 +176,7 @@ public class LockingAboveTheFoldListView<T>
         for (;;)
         {
           if (paramInt > i5) {
-            break label276;
+            break label265;
           }
           View localView = getChildAt(paramInt - i3);
           b localb = (b)localView.getTag();
@@ -190,28 +190,28 @@ public class LockingAboveTheFoldListView<T>
             {
               i1 = 1;
               if (i1 == 0) {
-                break label265;
+                break label254;
               }
             }
             for (int i2 = 10;; i2 = 5)
             {
               if ((i7 < i4 - i2) || (i7 > i2 + i4)) {
-                break label271;
+                break label260;
               }
-              p = localView;
-              q = localb.c();
-              r = paramInt;
+              n = localView;
+              o = localb.c();
+              p = paramInt;
               setLocked(true);
               if (i1 == 0) {
                 break;
               }
-              setSelectionFromTop(paramInt, (int)(i4 - i6 / 2 - q.c() - q.d()));
-              z = true;
+              setSelectionFromTop(paramInt, (int)(i4 - i6 / 2 - o.c() - o.d()));
+              x = true;
               d();
-              z = false;
+              x = false;
               return;
               i1 = 0;
-              break label149;
+              break label138;
             }
           }
           paramInt += 1;
@@ -222,16 +222,14 @@ public class LockingAboveTheFoldListView<T>
   
   public final boolean b()
   {
-    if (Float.isNaN(i)) {
-      Timber.e("ObservableAboveTheFoldListView", "mMeasuredHeight has not been initialized yet. Aborting updateFooter().", new Object[0]);
-    }
+    if (Float.isNaN(f)) {}
     do
     {
       do
       {
         return false;
-      } while ((!b) || (getChildCount() == 0));
-      i1 = e.q();
+      } while ((!h) || (getChildCount() == 0));
+      i1 = z.q();
       i2 = getHeaderViewsCount();
       i1 = Math.max(getFirstVisiblePosition(), i1 + i2);
       i2 = getLastVisiblePosition();
@@ -243,12 +241,12 @@ public class LockingAboveTheFoldListView<T>
       if (localObject1 == null) {
         throw new NullPointerException();
       }
-      localObject1 = e.a(localObject1);
+      localObject1 = z.a(localObject1);
       localObject2 = getChildAt(i1 - getFirstVisiblePosition());
       if (localObject2 == null) {
         throw new NullPointerException();
       }
-      if (localObject2 != f)
+      if (localObject2 != c)
       {
         int i3 = ((View)localObject2).getHeight();
         a.put(localObject1, Integer.valueOf(i3));
@@ -258,6 +256,7 @@ public class LockingAboveTheFoldListView<T>
     int i2 = getMeasuredHeight() - getPaddingBottom() - getPaddingTop();
     Object localObject1 = a.entrySet().iterator();
     int i1 = 0;
+    label208:
     if (((Iterator)localObject1).hasNext())
     {
       localObject2 = (Map.Entry)((Iterator)localObject1).next();
@@ -269,40 +268,35 @@ public class LockingAboveTheFoldListView<T>
     }
     for (;;)
     {
-      i2 = i2 - i1 - m;
+      i2 = i2 - i1 - k;
       i1 = i2;
-      if (n) {
-        i1 = i2 - (int)getResources().getDimension(2131296416);
+      if (l) {
+        i1 = i2 - (int)getResources().getDimension(2131296417);
       }
       i2 = i1;
-      if (i1 < m) {
-        i2 = m;
+      if (i1 < k) {
+        i2 = k;
       }
-      return b(i2);
-      break;
+      i1 = i2;
+      if (i2 < 0) {
+        i1 = 0;
+      }
+      i1 += 1;
+      if (i1 == e) {
+        break;
+      }
+      localObject1 = c.getLayoutParams();
+      if (localObject1 == null) {
+        break;
+      }
+      e = i1;
+      height = i1;
+      c.setLayoutParams((ViewGroup.LayoutParams)localObject1);
+      y.notifyDataSetChanged();
+      e();
+      return true;
+      break label208;
     }
-  }
-  
-  public final boolean b(int paramInt)
-  {
-    int i1 = paramInt;
-    if (paramInt < 0) {
-      i1 = 0;
-    }
-    paramInt = i1 + 1;
-    if (paramInt == h) {}
-    ViewGroup.LayoutParams localLayoutParams;
-    do
-    {
-      return false;
-      localLayoutParams = f.getLayoutParams();
-    } while (localLayoutParams == null);
-    h = paramInt;
-    height = paramInt;
-    f.setLayoutParams(localLayoutParams);
-    d.notifyDataSetChanged();
-    e();
-    return true;
   }
   
   public final void c()
@@ -316,14 +310,14 @@ public class LockingAboveTheFoldListView<T>
     });
   }
   
-  public boolean dispatchTouchEvent(@cgb MotionEvent paramMotionEvent)
+  public boolean dispatchTouchEvent(@chc MotionEvent paramMotionEvent)
   {
-    if (!o) {
+    if (!m) {
       return super.dispatchTouchEvent(paramMotionEvent);
     }
     int i3 = paramMotionEvent.getAction();
     if (i3 == 0) {
-      l = paramMotionEvent.getRawY();
+      j = paramMotionEvent.getRawY();
     }
     int i5;
     int i2;
@@ -331,24 +325,24 @@ public class LockingAboveTheFoldListView<T>
     int i1;
     int i4;
     float f1;
-    if (c)
+    if (b)
     {
       i5 = 1;
       int i6;
       int i8;
       int i9;
       int i10;
-      if (c)
+      if (b)
       {
-        int[] arrayOfInt = q.a();
-        if ((arrayOfInt[1] >= 0) || (arrayOfInt[1] + q.b() <= getHeight()))
+        int[] arrayOfInt = o.a();
+        if ((arrayOfInt[1] >= 0) || (arrayOfInt[1] + o.b() <= getHeight()))
         {
           i2 = 1;
-          arrayOfInt = q.a();
-          i6 = q.c();
-          int i11 = (int)q.d();
+          arrayOfInt = o.a();
+          i6 = o.c();
+          int i11 = (int)o.d();
           i7 = arrayOfInt[1];
-          i8 = q.b();
+          i8 = o.b();
           i9 = getHeight();
           i10 = i7 + i8;
           i1 = -i6 - i11;
@@ -364,7 +358,7 @@ public class LockingAboveTheFoldListView<T>
       case 1: 
         for (;;)
         {
-          k = paramMotionEvent.getRawY();
+          i = paramMotionEvent.getRawY();
           if (i3 == 0) {
             break label883;
           }
@@ -374,60 +368,60 @@ public class LockingAboveTheFoldListView<T>
           i3 = i5;
           if (i2 != 0)
           {
-            w = true;
-            s = paramMotionEvent.getRawY();
+            u = true;
+            q = paramMotionEvent.getRawY();
             i3 = i5;
             continue;
             if ((i7 >= 0) && (i7 <= 200) && (i10 <= i9) && (i10 >= i9 - 200))
             {
-              y = i6;
-              x = true;
+              w = i6;
+              v = true;
               i3 = i5;
             }
             else if ((i7 >= 0) && (i7 <= 200))
             {
-              y = i1;
-              x = true;
+              w = i1;
+              v = true;
               i3 = i5;
             }
             else if ((i10 <= i9) && (i10 >= i9 - 200))
             {
-              y = i4;
-              x = true;
+              w = i4;
+              v = true;
               i3 = i5;
             }
             else
             {
-              y = 0;
-              x = false;
+              w = 0;
+              v = false;
               i3 = i5;
             }
           }
         }
       }
-      if (s == -1.0F)
+      if (q == -1.0F)
       {
-        s = paramMotionEvent.getRawY();
-        if (s - k <= 0.0F) {
+        q = paramMotionEvent.getRawY();
+        if (q - i <= 0.0F) {
           break label638;
         }
       }
       label638:
       for (i3 = d.b;; i3 = d.a)
       {
-        t = i3;
+        r = i3;
         i3 = i5;
-        if (Math.abs(paramMotionEvent.getRawY() - l) <= D) {
+        if (Math.abs(paramMotionEvent.getRawY() - j) <= D) {
           break;
         }
         if (i2 == 0) {
           break label866;
         }
-        f1 = paramMotionEvent.getRawY() - s;
-        if ((w) && (i8 > i9) && (((u) && (f1 < 0.0F)) || ((v) && (f1 > 0.0F)))) {
-          w = false;
+        f1 = paramMotionEvent.getRawY() - q;
+        if ((u) && (i8 > i9) && (((s) && (f1 < 0.0F)) || ((t) && (f1 > 0.0F)))) {
+          u = false;
         }
-        if ((!w) && ((t != d.b) || (f1 >= 0.0F) || (!v)) && ((t != d.b) || (f1 < 200.0F)) && ((t != d.a) || (f1 <= 0.0F) || (!u)) && ((t != d.a) || (f1 > -200.0F))) {
+        if ((!u) && ((r != d.b) || (f1 >= 0.0F) || (!t)) && ((r != d.b) || (f1 < 200.0F)) && ((r != d.a) || (f1 <= 0.0F) || (!s)) && ((r != d.a) || (f1 > -200.0F))) {
           break label646;
         }
         a();
@@ -438,8 +432,8 @@ public class LockingAboveTheFoldListView<T>
       if ((i7 >= 0) || (i10 <= i9)) {
         if ((i7 >= 0) && (i10 <= i9))
         {
-          v = true;
-          u = true;
+          t = true;
+          s = true;
           i1 = i6;
         }
       }
@@ -450,8 +444,8 @@ public class LockingAboveTheFoldListView<T>
     label904:
     for (;;)
     {
-      if (((f1 > 0.0F) && (t == d.b)) || ((f1 < 0.0F) && (t == d.a))) {
-        setSelectionFromTop(r, i1);
+      if (((f1 > 0.0F) && (r == d.b)) || ((f1 < 0.0F) && (r == d.a))) {
+        setSelectionFromTop(p, i1);
       }
       for (i1 = 0;; i1 = 1)
       {
@@ -459,42 +453,42 @@ public class LockingAboveTheFoldListView<T>
         break;
         if (i7 >= 0)
         {
-          if (u) {
+          if (s) {
             break label904;
           }
-          u = true;
-          s = paramMotionEvent.getRawY();
-          if (s - k > 0.0F) {}
+          s = true;
+          q = paramMotionEvent.getRawY();
+          if (q - i > 0.0F) {}
           for (i2 = d.b;; i2 = d.a)
           {
-            t = i2;
+            r = i2;
             break;
           }
         }
-        if (!v)
+        if (!t)
         {
-          v = true;
-          s = paramMotionEvent.getRawY();
-          if (s - k <= 0.0F) {
+          t = true;
+          q = paramMotionEvent.getRawY();
+          if (q - i <= 0.0F) {
             break label842;
           }
         }
         for (i1 = d.b;; i1 = d.a)
         {
-          t = i1;
+          r = i1;
           i1 = i4;
           break;
         }
-        v = false;
-        u = false;
+        t = false;
+        s = false;
         i3 = i5;
         break;
-        v = false;
-        u = false;
+        t = false;
+        s = false;
         i3 = i5;
         break;
         return true;
-        k = paramMotionEvent.getRawY();
+        i = paramMotionEvent.getRawY();
         return super.dispatchTouchEvent(paramMotionEvent);
       }
     }
@@ -502,7 +496,7 @@ public class LockingAboveTheFoldListView<T>
   
   public int getScrollState()
   {
-    return j;
+    return g;
   }
   
   protected void onAttachedToWindow()
@@ -519,7 +513,7 @@ public class LockingAboveTheFoldListView<T>
   protected void onMeasure(int paramInt1, int paramInt2)
   {
     super.onMeasure(paramInt1, paramInt2);
-    i = getMeasuredHeight();
+    f = getMeasuredHeight();
   }
   
   public void onScroll(AbsListView paramAbsListView, int paramInt1, int paramInt2, int paramInt3)
@@ -532,7 +526,7 @@ public class LockingAboveTheFoldListView<T>
   public void onScrollStateChanged(AbsListView paramAbsListView, int paramInt)
   {
     int i1 = 0;
-    j = paramInt;
+    g = paramInt;
     if (A != null) {
       A.onScrollStateChanged(paramAbsListView, paramInt);
     }
@@ -541,14 +535,14 @@ public class LockingAboveTheFoldListView<T>
     if (paramInt == 0)
     {
       e();
-      if ((c) && (!z))
+      if ((b) && (!x))
       {
         paramInt = i1;
-        if (c)
+        if (b)
         {
-          paramAbsListView = q.a();
+          paramAbsListView = o.a();
           i3 = getHeight();
-          i2 = q.b();
+          i2 = o.b();
           if (i2 > i3) {
             break label137;
           }
@@ -587,7 +581,7 @@ public class LockingAboveTheFoldListView<T>
   
   protected void onSizeChanged(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
   {
-    if (b)
+    if (h)
     {
       super.onSizeChanged(paramInt1, paramInt2, paramInt3, paramInt4);
       if (paramInt2 > C) {
@@ -610,12 +604,12 @@ public class LockingAboveTheFoldListView<T>
   public boolean onTouchEvent(MotionEvent paramMotionEvent)
   {
     boolean bool = super.onTouchEvent(paramMotionEvent);
-    if ((c) && (paramMotionEvent.getAction() == 1) && (x))
+    if ((b) && (paramMotionEvent.getAction() == 1) && (v))
     {
-      z = true;
+      x = true;
       d();
-      z = false;
-      setSelectionFromTop(r, y);
+      x = false;
+      setSelectionFromTop(p, w);
     }
     return bool;
   }
@@ -623,10 +617,10 @@ public class LockingAboveTheFoldListView<T>
   public void setAdapter(BaseAdapter paramBaseAdapter)
   {
     super.setAdapter(paramBaseAdapter);
-    d = paramBaseAdapter;
-    if (g != null)
+    y = paramBaseAdapter;
+    if (d != null)
     {
-      a locala = g;
+      a locala = d;
       if (a != null) {
         a.unregisterDataSetObserver(locala);
       }
@@ -637,22 +631,22 @@ public class LockingAboveTheFoldListView<T>
   
   public void setInterface(c<T> paramc)
   {
-    e = paramc;
+    z = paramc;
   }
   
   public void setIsActive(boolean paramBoolean)
   {
-    b = paramBoolean;
+    h = paramBoolean;
   }
   
   public void setLockingEnabled(boolean paramBoolean)
   {
-    o = paramBoolean;
+    m = paramBoolean;
   }
   
   public void setMinimumFooterHeight(int paramInt)
   {
-    m = paramInt;
+    k = paramInt;
   }
   
   public void setOnScrollListener(AbsListView.OnScrollListener paramOnScrollListener)
@@ -667,7 +661,7 @@ public class LockingAboveTheFoldListView<T>
   
   public void setShouldSubtractStatusBarHeightFromFooter(boolean paramBoolean)
   {
-    n = paramBoolean;
+    l = paramBoolean;
   }
   
   final class a
@@ -708,7 +702,7 @@ public class LockingAboveTheFoldListView<T>
   {
     public abstract boolean b();
     
-    public abstract apv c();
+    public abstract aqu c();
     
     public abstract int[] d();
     

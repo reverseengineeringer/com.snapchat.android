@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 473
+    .line 471
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$16;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$16;->a:Lcom/snapchat/android/model/StorySnapLogbook;
@@ -44,7 +44,20 @@
     .locals 3
 
     .prologue
-    .line 476
+    .line 474
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$16;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
+
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->m()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 475
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$16;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$16;->a:Lcom/snapchat/android/model/StorySnapLogbook;
@@ -56,6 +69,7 @@
     invoke-static {v0, v1, v2}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;Landroid/content/Context;)V
 
     .line 477
+    :cond_0
     const/4 v0, 0x1
 
     return v0

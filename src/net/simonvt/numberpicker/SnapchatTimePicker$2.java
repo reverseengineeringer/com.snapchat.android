@@ -3,7 +3,7 @@ package net.simonvt.numberpicker;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.widget.TextView;
-import bws.b;
+import bxt.b;
 
 final class SnapchatTimePicker$2
   implements View.OnLongClickListener
@@ -13,7 +13,7 @@ final class SnapchatTimePicker$2
   public final boolean onLongClick(View paramView)
   {
     SnapchatTimePicker.a(a).clearFocus();
-    if (paramView.getId() == bws.b.np__increment)
+    if (paramView.getId() == bxt.b.np__increment)
     {
       SnapchatTimePicker.b(a, true);
       return true;

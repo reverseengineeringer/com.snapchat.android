@@ -1,10 +1,14 @@
+import com.snapchat.android.util.debug.ReleaseManager;
+import javax.inject.Inject;
+
 public final class baw
 {
-  public int mRequestedOrientation;
+  private final ReleaseManager mReleaseManager;
   
-  public baw(int paramInt)
+  @Inject
+  baw(ReleaseManager paramReleaseManager)
   {
-    mRequestedOrientation = paramInt;
+    mReleaseManager = paramReleaseManager;
   }
 }
 

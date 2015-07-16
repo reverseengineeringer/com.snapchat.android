@@ -1,111 +1,101 @@
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
+import com.snapchat.android.ui.SwipeImageView;
+import com.snapchat.android.ui.SwipeViewState;
+import com.snapchat.videotranscoder.task.VideoFilterRenderingTask;
+import com.snapchat.videotranscoder.video.FragmentShader.Filter;
 
 public final class aqf
+  implements aqc.a
 {
-  protected boolean a = false;
-  protected float b = -1.0F;
-  private final aqf.a c;
-  private final Context d;
-  private float e = -1.0F;
-  private float f = -1.0F;
-  private int g = -1;
-  private VelocityTracker h;
+  public VideoFilterRenderingTask a;
+  public FragmentShader.Filter b;
+  public FragmentShader.Filter c;
+  public float d;
+  private asu e;
+  private SwipeViewState f;
   
-  public aqf(@cgb Context paramContext, @cgb aqf.a parama)
+  public aqf(asu paramasu, SwipeViewState paramSwipeViewState)
   {
-    d = paramContext;
-    c = parama;
-    int i = avh.b(d);
-    e = (i * 0.125F);
-    f = (i * 0.25F);
-    g = ((int)avh.a(200.0F, d));
+    e = paramasu;
+    f = paramSwipeViewState;
+    b = FragmentShader.Filter.NORMAL;
+    c = FragmentShader.Filter.NORMAL;
+    d = 0.0F;
   }
   
-  private void a()
-  {
-    a = false;
-    b = -1.0F;
-    if (h != null)
-    {
-      h.recycle();
-      h = null;
-    }
-  }
-  
-  public final boolean a(@cgb MotionEvent paramMotionEvent)
+  private void b()
   {
     int i = 0;
-    if (paramMotionEvent.getAction() == 1) {
-      if (a)
-      {
-        int j = ViewConfiguration.get(d).getScaledMaximumFlingVelocity();
-        paramMotionEvent = h;
-        paramMotionEvent.computeCurrentVelocity(1000, j);
-        if ((int)paramMotionEvent.getYVelocity() > g) {
-          i = 1;
-        }
-        if (i != 0)
-        {
-          c.b();
-          a();
-        }
+    int j = 1;
+    boolean bool;
+    asm localasm1;
+    FragmentShader.Filter localFilter;
+    if ((a != null) && (e.b() > 0))
+    {
+      if ((!f.l) || ((e.a(f.a) instanceof asn))) {
+        break label184;
       }
+      bool = true;
+      asm localasm2 = e.a(f.a(bool));
+      localasm1 = e.a(f.b(bool));
+      localFilter = FragmentShader.Filter.NORMAL;
+      if (!(localasm2 instanceof asn)) {
+        break label192;
+      }
+      localFilter = b;
     }
+    label184:
+    label192:
     for (;;)
     {
-      return true;
-      c.c();
-      break;
-      c.a();
-      break;
-      if (h == null) {
-        h = VelocityTracker.obtain();
-      }
-      h.addMovement(paramMotionEvent);
-      if (paramMotionEvent.getAction() == 2)
+      if (b != localFilter)
       {
-        float f1;
-        if (!a)
-        {
-          f1 = paramMotionEvent.getY();
-          if ((b != -1.0F) && (f1 - b > e)) {
-            a = true;
-          }
-        }
-        if (a)
-        {
-          f1 = Math.min(1.0F, Math.max(0.0F, (paramMotionEvent.getY() - b) / f));
-          c.a(f1);
-          if (f1 == 1.0F)
-          {
-            a();
-            c.b();
-          }
-        }
+        b = localFilter;
+        i = 1;
       }
-      while (!a)
+      localFilter = FragmentShader.Filter.NORMAL;
+      if ((localasm1 instanceof asn)) {
+        localFilter = b;
+      }
+      if (c != localFilter)
       {
-        return false;
-        if (paramMotionEvent.getAction() == 0) {
-          b = paramMotionEvent.getY();
+        c = localFilter;
+        i = j;
+      }
+      for (;;)
+      {
+        if (i != 0) {
+          a();
         }
+        return;
+        bool = false;
+        break;
       }
     }
   }
   
-  public static abstract interface a
+  public final void a()
   {
-    public abstract void a();
-    
-    public abstract void a(float paramFloat);
-    
-    public abstract void b();
-    
-    public abstract void c();
+    a.changeFilter(b, c);
   }
+  
+  public final void a(SwipeImageView paramSwipeImageView)
+  {
+    d = paramSwipeImageView.getScrollOffset();
+    if (a != null)
+    {
+      b();
+      a.changeSplit(d);
+    }
+  }
+  
+  public final void a(SwipeImageView paramSwipeImageView, boolean paramBoolean)
+  {
+    if ((paramBoolean) && (a != null)) {
+      b();
+    }
+  }
+  
+  public final void q() {}
 }
 
 /* Location:

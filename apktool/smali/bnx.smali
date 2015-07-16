@@ -6,57 +6,55 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lbnx$c;,
-        Lbnx$a;,
-        Lbnx$b;
+        Lbnx$a;
     }
 .end annotation
 
 
 # static fields
-.field static final synthetic i:Z
+.field public static final a:Lbne;
 
 
 # instance fields
-.field a:J
+.field public final b:Lbmz;
 
-.field b:J
+.field public c:Lbmp;
 
-.field final c:I
+.field public d:Lbmh;
 
-.field final d:Lbnw;
+.field public e:Lboe;
 
-.field e:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbnl;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public f:Lbnf;
 
-.field public final f:Lbnx$b;
+.field public final g:Lbnd;
 
-.field final g:Lbnx$a;
+.field public h:Lboh;
 
-.field public final h:Lbnx$c;
+.field public i:J
 
-.field private final j:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbnl;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public j:Z
 
-.field private final k:Lbnx$c;
+.field public final k:Z
 
-.field private l:Lbni;
+.field public final l:Lbnb;
+
+.field public m:Lbnb;
+
+.field public n:Lbnd;
+
+.field public o:Lbnd;
+
+.field public p:Lcbj;
+
+.field public q:Lcaw;
+
+.field public final r:Z
+
+.field public final s:Z
+
+.field public t:Lbns;
+
+.field public u:Lbnt;
 
 
 # direct methods
@@ -64,495 +62,719 @@
     .locals 1
 
     .prologue
-    .line 34
-    const-class v0, Lbnx;
+    .line 102
+    new-instance v0, Lbnx$1;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    invoke-direct {v0}, Lbnx$1;-><init>()V
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lbnx;->i:Z
+    sput-object v0, Lbnx;->a:Lbne;
 
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
-.method constructor <init>(ILbnw;ZZLjava/util/List;)V
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Lbnw;",
-            "ZZ",
-            "Ljava/util/List",
-            "<",
-            "Lbnl;",
-            ">;)V"
-        }
-    .end annotation
+.method public constructor <init>(Lbmz;Lbnb;ZZZLbmp;Lboe;Lbnd;)V
+    .locals 3
 
     .prologue
-    .line 76
+    const/4 v2, 0x0
+
+    .line 190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
-    const-wide/16 v0, 0x0
+    .line 125
+    const-wide/16 v0, -0x1
 
-    iput-wide v0, p0, Lbnx;->a:J
+    iput-wide v0, p0, Lbnx;->i:J
 
-    .line 65
-    new-instance v0, Lbnx$c;
+    .line 191
+    iput-object p1, p0, Lbnx;->b:Lbmz;
 
-    invoke-direct {v0, p0}, Lbnx$c;-><init>(Lbnx;)V
+    .line 192
+    iput-object p2, p0, Lbnx;->l:Lbnb;
 
-    iput-object v0, p0, Lbnx;->h:Lbnx$c;
+    .line 193
+    iput-boolean p3, p0, Lbnx;->k:Z
 
-    .line 66
-    new-instance v0, Lbnx$c;
+    .line 194
+    iput-boolean p4, p0, Lbnx;->r:Z
 
-    invoke-direct {v0, p0}, Lbnx$c;-><init>(Lbnx;)V
+    .line 195
+    iput-boolean p5, p0, Lbnx;->s:Z
 
-    iput-object v0, p0, Lbnx;->k:Lbnx$c;
+    .line 196
+    iput-object p6, p0, Lbnx;->c:Lbmp;
 
-    .line 73
-    const/4 v0, 0x0
+    .line 197
+    iput-object p7, p0, Lbnx;->e:Lboe;
 
-    iput-object v0, p0, Lbnx;->l:Lbni;
+    .line 198
+    iput-object v2, p0, Lbnx;->p:Lcbj;
 
-    .line 77
-    if-nez p2, :cond_0
+    .line 199
+    iput-object p8, p0, Lbnx;->g:Lbnd;
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    .line 201
+    if-eqz p6, :cond_0
 
-    const-string v1, "connection == null"
+    .line 202
+    sget-object v0, Lbnj;->b:Lbnj;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p6, p0}, Lbnj;->b(Lbmp;Lbnx;)V
 
-    throw v0
+    .line 203
+    iget-object v0, p6, Lbmp;->b:Lbnf;
 
-    .line 78
-    :cond_0
-    if-nez p5, :cond_1
+    iput-object v0, p0, Lbnx;->f:Lbnf;
 
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "requestHeaders == null"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 79
-    :cond_1
-    iput p1, p0, Lbnx;->c:I
-
-    .line 80
-    iput-object p2, p0, Lbnx;->d:Lbnw;
-
-    .line 81
-    iget-object v0, p2, Lbnw;->f:Lbnu;
-
-    .line 82
-    invoke-virtual {v0}, Lbnu;->b()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    iput-wide v0, p0, Lbnx;->b:J
-
-    .line 83
-    new-instance v0, Lbnx$b;
-
-    iget-object v1, p2, Lbnw;->e:Lbnu;
-
-    .line 84
-    invoke-virtual {v1}, Lbnu;->b()I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v2, v3, v1}, Lbnx$b;-><init>(Lbnx;JB)V
-
-    iput-object v0, p0, Lbnx;->f:Lbnx$b;
-
-    .line 85
-    new-instance v0, Lbnx$a;
-
-    invoke-direct {v0, p0}, Lbnx$a;-><init>(Lbnx;)V
-
-    iput-object v0, p0, Lbnx;->g:Lbnx$a;
-
-    .line 86
-    iget-object v0, p0, Lbnx;->f:Lbnx$b;
-
-    invoke-static {v0, p4}, Lbnx$b;->a(Lbnx$b;Z)Z
-
-    .line 87
-    iget-object v0, p0, Lbnx;->g:Lbnx$a;
-
-    invoke-static {v0, p3}, Lbnx$a;->a(Lbnx$a;Z)Z
-
-    .line 88
-    iput-object p5, p0, Lbnx;->j:Ljava/util/List;
-
-    .line 89
+    .line 207
+    :goto_0
     return-void
+
+    .line 205
+    :cond_0
+    iput-object v2, p0, Lbnx;->f:Lbnf;
+
+    goto :goto_0
 .end method
 
-.method static synthetic a(Lbnx;)Lbnw;
-    .locals 1
+.method public static a(Lbmz;Lbnb;)Lbmh;
+    .locals 12
 
     .prologue
-    .line 34
-    iget-object v0, p0, Lbnx;->d:Lbnw;
+    const/4 v6, 0x0
 
-    return-object v0
-.end method
+    .line 1054
+    invoke-virtual {p1}, Lbnb;->a()Ljava/net/URL;
 
-.method static synthetic b(Lbnx;)I
-    .locals 1
+    move-result-object v0
 
-    .prologue
-    .line 34
-    iget v0, p0, Lbnx;->c:I
+    invoke-virtual {v0}, Ljava/net/URL;->getHost()Ljava/lang/String;
 
-    return v0
-.end method
+    move-result-object v1
 
-.method static synthetic c(Lbnx;)Lbnx$c;
-    .locals 1
-
-    .prologue
-    .line 34
-    iget-object v0, p0, Lbnx;->h:Lbnx$c;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lbnx;)Lbni;
-    .locals 1
-
-    .prologue
-    .line 34
-    iget-object v0, p0, Lbnx;->l:Lbni;
-
-    return-object v0
-.end method
-
-.method private d(Lbni;)Z
-    .locals 2
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 237
-    sget-boolean v1, Lbnx;->i:Z
-
-    if-nez v1, :cond_0
-
-    invoke-static {p0}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
-
-    move-result v1
-
+    .line 1055
     if-eqz v1, :cond_0
 
-    new-instance v0, Ljava/lang/AssertionError;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    move-result v0
 
-    throw v0
+    if-nez v0, :cond_1
 
-    .line 238
+    .line 1056
     :cond_0
-    monitor-enter p0
+    new-instance v0, Ljava/net/UnknownHostException;
 
-    .line 239
-    :try_start_0
-    iget-object v1, p0, Lbnx;->l:Lbni;
+    invoke-virtual {p1}, Lbnb;->a()Ljava/net/URL;
 
-    if-eqz v1, :cond_1
+    move-result-object v1
 
-    .line 240
-    monitor-exit p0
+    invoke-virtual {v1}, Ljava/net/URL;->toString()Ljava/lang/String;
 
-    .line 249
-    :goto_0
-    return v0
+    move-result-object v1
 
-    .line 242
-    :cond_1
-    iget-object v1, p0, Lbnx;->f:Lbnx$b;
-
-    invoke-static {v1}, Lbnx$b;->a(Lbnx$b;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lbnx;->g:Lbnx$a;
-
-    invoke-static {v1}, Lbnx$a;->a(Lbnx$a;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 243
-    monitor-exit p0
-
-    goto :goto_0
-
-    .line 247
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0, v1}, Ljava/net/UnknownHostException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 245
+    .line 1062
+    :cond_1
+    invoke-virtual {p1}, Lbnb;->e()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 1063
+    iget-object v4, p0, Lbmz;->n:Ljavax/net/ssl/SSLSocketFactory;
+
+    .line 1064
+    iget-object v5, p0, Lbmz;->o:Ljavax/net/ssl/HostnameVerifier;
+
+    .line 1065
+    iget-object v6, p0, Lbmz;->p:Lbmm;
+
+    .line 1068
+    :goto_0
+    new-instance v0, Lbmh;
+
+    invoke-virtual {p1}, Lbnb;->a()Ljava/net/URL;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lbnq;->a(Ljava/net/URL;)I
+
+    move-result v2
+
+    .line 1069
+    iget-object v3, p0, Lbmz;->m:Ljavax/net/SocketFactory;
+
+    .line 1070
+    iget-object v7, p0, Lbmz;->q:Lbmi;
+
+    iget-object v8, p0, Lbmz;->e:Ljava/net/Proxy;
+
+    iget-object v9, p0, Lbmz;->f:Ljava/util/List;
+
+    .line 1071
+    iget-object v10, p0, Lbmz;->g:Ljava/util/List;
+
+    iget-object v11, p0, Lbmz;->j:Ljava/net/ProxySelector;
+
+    invoke-direct/range {v0 .. v11}, Lbmh;-><init>(Ljava/lang/String;ILjavax/net/SocketFactory;Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/HostnameVerifier;Lbmm;Lbmi;Ljava/net/Proxy;Ljava/util/List;Ljava/util/List;Ljava/net/ProxySelector;)V
+
+    return-object v0
+
     :cond_2
-    :try_start_1
-    iput-object p1, p0, Lbnx;->l:Lbni;
+    move-object v5, v6
 
-    .line 246
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-
-    .line 247
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 248
-    iget-object v0, p0, Lbnx;->d:Lbnw;
-
-    iget v1, p0, Lbnx;->c:I
-
-    invoke-virtual {v0, v1}, Lbnw;->b(I)Lbnx;
-
-    .line 249
-    const/4 v0, 0x1
+    move-object v4, v6
 
     goto :goto_0
 .end method
 
-.method static synthetic e(Lbnx;)V
-    .locals 0
-
-    .prologue
-    .line 34
-    invoke-direct {p0}, Lbnx;->f()V
-
-    return-void
-.end method
-
-.method private f()V
+.method static synthetic a(Lbnx;)Lbmp;
     .locals 1
 
     .prologue
-    .line 582
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .line 95
+    iget-object v0, p0, Lbnx;->c:Lbmp;
 
-    .line 585
-    return-void
-
-    .line 584
-    :catch_0
-    move-exception v0
-
-    new-instance v0, Ljava/io/InterruptedIOException;
-
-    invoke-direct {v0}, Ljava/io/InterruptedIOException;-><init>()V
-
-    throw v0
+    return-object v0
 .end method
 
-.method static synthetic f(Lbnx;)V
+.method public static a(Lbmv;Lbmv;)Lbmv;
+    .locals 7
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 938
+    new-instance v2, Lbmv$a;
+
+    invoke-direct {v2}, Lbmv$a;-><init>()V
+
+    .line 940
+    iget-object v1, p0, Lbmv;->a:[Ljava/lang/String;
+
+    array-length v1, v1
+
+    div-int/lit8 v3, v1, 0x2
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v3, :cond_3
+
+    .line 941
+    invoke-virtual {p0, v1}, Lbmv;->a(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 942
+    invoke-virtual {p0, v1}, Lbmv;->b(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 943
+    const-string v6, "Warning"
+
+    invoke-virtual {v6, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    const-string v6, "1"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    .line 944
+    :cond_0
+    invoke-static {v4}, Lboa;->a(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    invoke-virtual {p1, v4}, Lbmv;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    if-nez v6, :cond_2
+
+    .line 947
+    :cond_1
+    invoke-virtual {v2, v4, v5}, Lbmv$a;->a(Ljava/lang/String;Ljava/lang/String;)Lbmv$a;
+
+    .line 940
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 951
+    :cond_3
+    iget-object v1, p1, Lbmv;->a:[Ljava/lang/String;
+
+    array-length v1, v1
+
+    div-int/lit8 v1, v1, 0x2
+
+    :goto_1
+    if-ge v0, v1, :cond_5
+
+    .line 952
+    invoke-virtual {p1, v0}, Lbmv;->a(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 953
+    const-string v4, "Content-Length"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_4
+
+    .line 954
+    invoke-static {v3}, Lboa;->a(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    .line 957
+    invoke-virtual {p1, v0}, Lbmv;->b(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3, v4}, Lbmv$a;->a(Ljava/lang/String;Ljava/lang/String;)Lbmv$a;
+
+    .line 951
+    :cond_4
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    .line 961
+    :cond_5
+    invoke-virtual {v2}, Lbmv$a;->a()Lbmv;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Lbnd;)Lbnd;
     .locals 2
 
     .prologue
-    .line 34
-    sget-boolean v0, Lbnx;->i:Z
+    .line 305
+    if-eqz p0, :cond_0
 
-    if-nez v0, :cond_0
-
-    invoke-static {p0}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
-
-    move-result v0
+    iget-object v0, p0, Lbnd;->g:Lbne;
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Ljava/lang/AssertionError;
+    .line 306
+    invoke-virtual {p0}, Lbnd;->d()Lbnd$a;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    move-result-object v0
 
-    throw v0
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lbnd$a;->g:Lbne;
+
+    invoke-virtual {v0}, Lbnd$a;->a()Lbnd;
+
+    move-result-object p0
 
     :cond_0
-    monitor-enter p0
+    return-object p0
+.end method
 
-    :try_start_0
-    iget-object v0, p0, Lbnx;->f:Lbnx$b;
+.method public static a(Ljava/net/URL;)Ljava/lang/String;
+    .locals 2
 
-    invoke-static {v0}, Lbnx$b;->a(Lbnx$b;)Z
+    .prologue
+    .line 657
+    invoke-static {p0}, Lbnq;->a(Ljava/net/URL;)I
+
+    move-result v0
+
+    invoke-virtual {p0}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lbnq;->a(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-eq v0, v1, :cond_0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 658
+    invoke-virtual {p0}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Ljava/net/URL;->getPort()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 659
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public static a(Lbnd;Lbnd;)Z
+    .locals 6
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 914
+    iget v1, p1, Lbnd;->c:I
+
+    const/16 v2, 0x130
+
+    if-ne v1, v2, :cond_1
+
+    .line 930
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 921
+    :cond_1
+    iget-object v1, p0, Lbnd;->f:Lbmv;
+
+    const-string v2, "Last-Modified"
+
+    invoke-virtual {v1, v2}, Lbmv;->b(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object v1
+
+    .line 922
+    if-eqz v1, :cond_2
+
+    .line 923
+    iget-object v2, p1, Lbnd;->f:Lbmv;
+
+    const-string v3, "Last-Modified"
+
+    invoke-virtual {v2, v3}, Lbmv;->b(Ljava/lang/String;)Ljava/util/Date;
+
+    move-result-object v2
+
+    .line 924
+    if-eqz v2, :cond_2
+
+    .line 925
+    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v4
+
+    cmp-long v1, v2, v4
+
+    if-ltz v1, :cond_0
+
+    .line 930
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method static synthetic b(Lbnx;)Lboh;
+    .locals 1
+
+    .prologue
+    .line 95
+    iget-object v0, p0, Lbnx;->h:Lboh;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lbnx;)Lbnd;
+    .locals 1
+
+    .prologue
+    .line 95
+    invoke-virtual {p0}, Lbnx;->g()Lbnd;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static c(Lbnd;)Z
+    .locals 6
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
+
+    .line 591
+    iget-object v2, p0, Lbnd;->a:Lbnb;
+
+    iget-object v2, v2, Lbnb;->b:Ljava/lang/String;
+
+    const-string v3, "HEAD"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 610
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 595
+    :cond_1
+    iget v2, p0, Lbnd;->c:I
+
+    .line 596
+    const/16 v3, 0x64
+
+    if-lt v2, v3, :cond_2
+
+    const/16 v3, 0xc8
+
+    if-lt v2, v3, :cond_3
+
+    :cond_2
+    const/16 v3, 0xcc
+
+    if-eq v2, v3, :cond_3
+
+    const/16 v3, 0x130
+
+    if-eq v2, v3, :cond_3
+
+    move v0, v1
+
+    .line 599
+    goto :goto_0
+
+    .line 605
+    :cond_3
+    invoke-static {p0}, Lboa;->a(Lbnd;)J
+
+    move-result-wide v2
+
+    const-wide/16 v4, -0x1
+
+    cmp-long v2, v2, v4
+
+    if-nez v2, :cond_4
+
+    const-string v2, "chunked"
+
+    const-string v3, "Transfer-Encoding"
+
+    .line 606
+    invoke-virtual {p0, v3}, Lbnd;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    :cond_4
+    move v0, v1
+
+    .line 607
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public final a()Lbmp;
+    .locals 8
+
+    .prologue
+    .line 335
+    iget-object v0, p0, Lbnx;->b:Lbmz;
+
+    iget-object v6, v0, Lbmz;->r:Lbmq;
+
+    .line 338
+    :goto_0
+    iget-object v0, p0, Lbnx;->d:Lbmh;
+
+    invoke-virtual {v6, v0}, Lbmq;->a(Lbmh;)Lbmp;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    .line 339
+    iget-object v1, p0, Lbnx;->m:Lbnb;
+
+    iget-object v1, v1, Lbnb;->b:Ljava/lang/String;
+
+    const-string v2, "GET"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    sget-object v1, Lbnj;->b:Lbnj;
+
+    invoke-virtual {v1, v0}, Lbnj;->c(Lbmp;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 345
+    :cond_0
+    :goto_1
+    return-object v0
+
+    .line 342
+    :cond_1
+    iget-object v0, v0, Lbmp;->c:Ljava/net/Socket;
+
+    invoke-virtual {v0}, Ljava/net/Socket;->close()V
+
+    goto :goto_0
+
+    .line 344
+    :cond_2
+    iget-object v7, p0, Lbnx;->e:Lboe;
+
+    :goto_2
+    invoke-virtual {v7}, Lboe;->d()Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    invoke-virtual {v7}, Lboe;->b()Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    invoke-virtual {v7}, Lboe;->a()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    invoke-virtual {v7}, Lboe;->e()Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    iget-object v0, p0, Lbnx;->f:Lbnx$b;
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    invoke-static {v0}, Lbnx$b;->b(Lbnx$b;)Z
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lbnx;->g:Lbnx$a;
-
-    invoke-static {v0}, Lbnx$a;->a(Lbnx$a;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lbnx;->g:Lbnx$a;
-
-    invoke-static {v0}, Lbnx$a;->b(Lbnx$a;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    :cond_1
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {p0}, Lbnx;->a()Z
-
-    move-result v1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_4
-
-    sget-object v0, Lbni;->l:Lbni;
-
-    invoke-virtual {p0, v0}, Lbnx;->a(Lbni;)V
-
-    :cond_2
-    :goto_1
-    return-void
+    throw v0
 
     :cond_3
-    const/4 v0, 0x0
+    iget-object v0, v7, Lboe;->m:Ljava/util/List;
 
-    goto :goto_0
+    const/4 v1, 0x0
 
-    :catchall_0
-    move-exception v0
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result-object v0
 
-    throw v0
+    check-cast v0, Lbnf;
 
+    .line 345
     :cond_4
-    if-nez v1, :cond_2
+    new-instance v1, Lbmp;
 
-    iget-object v0, p0, Lbnx;->d:Lbnw;
+    invoke-direct {v1, v6, v0}, Lbmp;-><init>(Lbmq;Lbnf;)V
 
-    iget v1, p0, Lbnx;->c:I
-
-    invoke-virtual {v0, v1}, Lbnw;->b(I)Lbnx;
+    move-object v0, v1
 
     goto :goto_1
-.end method
 
-.method static synthetic g(Lbnx;)Lbnx$c;
-    .locals 1
-
-    .prologue
-    .line 34
-    iget-object v0, p0, Lbnx;->k:Lbnx$c;
-
-    return-object v0
-.end method
-
-.method static synthetic h(Lbnx;)V
-    .locals 3
-
-    .prologue
-    .line 34
-    iget-object v0, p0, Lbnx;->g:Lbnx$a;
-
-    invoke-static {v0}, Lbnx$a;->b(Lbnx$a;)Z
+    .line 344
+    :cond_5
+    invoke-virtual {v7}, Lboe;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_6
 
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "stream closed"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iget-object v0, p0, Lbnx;->g:Lbnx$a;
-
-    invoke-static {v0}, Lbnx$a;->a(Lbnx$a;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "stream finished"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    iget-object v0, p0, Lbnx;->l:Lbni;
-
-    if-eqz v0, :cond_2
-
-    new-instance v0, Ljava/io/IOException;
+    new-instance v0, Ljava/net/SocketException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "stream was reset: "
+    const-string v2, "No route to "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lbnx;->l:Lbni;
+    iget-object v2, v7, Lboe;->a:Lbmh;
+
+    iget-object v2, v2, Lbmh;->b:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "; exhausted proxy configurations: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, v7, Lboe;->g:Ljava/util/List;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -562,479 +784,818 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/net/SocketException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_2
-    return-void
+    :cond_6
+    iget-object v0, v7, Lboe;->g:Ljava/util/List;
+
+    iget v1, v7, Lboe;->h:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, v7, Lboe;->h:I
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/net/Proxy;
+
+    invoke-virtual {v7, v0}, Lboe;->a(Ljava/net/Proxy;)V
+
+    iput-object v0, v7, Lboe;->d:Ljava/net/Proxy;
+
+    :cond_7
+    invoke-virtual {v7}, Lboe;->b()Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    new-instance v0, Ljava/net/SocketException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "No route to "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, v7, Lboe;->a:Lbmh;
+
+    iget-object v2, v2, Lbmh;->b:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "; exhausted inet socket addresses: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, v7, Lboe;->i:Ljava/util/List;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/net/SocketException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_8
+    iget-object v0, v7, Lboe;->i:Ljava/util/List;
+
+    iget v1, v7, Lboe;->j:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, v7, Lboe;->j:I
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/net/InetSocketAddress;
+
+    invoke-virtual {v7}, Lboe;->c()V
+
+    iput-object v0, v7, Lboe;->e:Ljava/net/InetSocketAddress;
+
+    :cond_9
+    iget-object v0, v7, Lboe;->k:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    new-instance v1, Ljava/net/UnknownServiceException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v0, "No route to "
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v0, v7, Lboe;->b:Ljava/net/URI;
+
+    invoke-virtual {v0}, Ljava/net/URI;->getScheme()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_a
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v3, v7, Lboe;->b:Ljava/net/URI;
+
+    invoke-virtual {v3}, Ljava/net/URI;->getScheme()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "://"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_3
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v2, v7, Lboe;->a:Lbmh;
+
+    iget-object v2, v2, Lbmh;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "; no connection specs"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/net/UnknownServiceException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_a
+    const-string v0, "//"
+
+    goto :goto_3
+
+    :cond_b
+    invoke-virtual {v7}, Lboe;->d()Z
+
+    move-result v0
+
+    if-nez v0, :cond_d
+
+    new-instance v1, Ljava/net/SocketException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v0, "No route to "
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v0, v7, Lboe;->b:Ljava/net/URI;
+
+    invoke-virtual {v0}, Ljava/net/URI;->getScheme()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_c
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v3, v7, Lboe;->b:Ljava/net/URI;
+
+    invoke-virtual {v3}, Ljava/net/URI;->getScheme()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "://"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_4
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v2, v7, Lboe;->a:Lbmh;
+
+    iget-object v2, v2, Lbmh;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "; exhausted connection specs: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v2, v7, Lboe;->k:Ljava/util/List;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/net/SocketException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_c
+    const-string v0, "//"
+
+    goto :goto_4
+
+    :cond_d
+    iget-object v0, v7, Lboe;->k:Ljava/util/List;
+
+    iget v1, v7, Lboe;->l:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, v7, Lboe;->l:I
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbmr;
+
+    iput-object v0, v7, Lboe;->f:Lbmr;
+
+    iget-object v0, v7, Lboe;->f:Lbmr;
+
+    invoke-virtual {v7, v0}, Lboe;->a(Lbmr;)Z
+
+    move-result v5
+
+    new-instance v0, Lbnf;
+
+    iget-object v1, v7, Lboe;->a:Lbmh;
+
+    iget-object v2, v7, Lboe;->d:Ljava/net/Proxy;
+
+    iget-object v3, v7, Lboe;->e:Ljava/net/InetSocketAddress;
+
+    iget-object v4, v7, Lboe;->f:Lbmr;
+
+    invoke-direct/range {v0 .. v5}, Lbnf;-><init>(Lbmh;Ljava/net/Proxy;Ljava/net/InetSocketAddress;Lbmr;Z)V
+
+    iget-object v1, v7, Lboe;->c:Lbnp;
+
+    invoke-virtual {v1, v0}, Lbnp;->c(Lbnf;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    iget-object v1, v7, Lboe;->m:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_2
 .end method
 
-
-# virtual methods
-.method final a(J)V
+.method public final a(Lbmv;)V
     .locals 3
 
     .prologue
-    .line 562
-    iget-wide v0, p0, Lbnx;->b:J
+    .line 965
+    iget-object v0, p0, Lbnx;->b:Lbmz;
 
-    add-long/2addr v0, p1
+    iget-object v0, v0, Lbmz;->k:Ljava/net/CookieHandler;
 
-    iput-wide v0, p0, Lbnx;->b:J
+    .line 966
+    if-eqz v0, :cond_0
 
-    .line 563
-    const-wide/16 v0, 0x0
+    .line 967
+    iget-object v1, p0, Lbnx;->l:Lbnb;
 
-    cmp-long v0, p1, v0
+    invoke-virtual {v1}, Lbnb;->b()Ljava/net/URI;
 
-    if-lez v0, :cond_0
+    move-result-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
+    invoke-static {p1}, Lboa;->b(Lbmv;)Ljava/util/Map;
 
-    .line 564
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/net/CookieHandler;->put(Ljava/net/URI;Ljava/util/Map;)V
+
+    .line 969
     :cond_0
     return-void
 .end method
 
-.method public final a(Lbni;)V
-    .locals 2
-
-    .prologue
-    .line 218
-    invoke-direct {p0, p1}, Lbnx;->d(Lbni;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 222
-    :goto_0
-    return-void
-
-    .line 221
-    :cond_0
-    iget-object v0, p0, Lbnx;->d:Lbnw;
-
-    iget v1, p0, Lbnx;->c:I
-
-    invoke-virtual {v0, v1, p1}, Lbnw;->b(ILbni;)V
-
-    goto :goto_0
-.end method
-
-.method public final declared-synchronized a()Z
-    .locals 2
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 106
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v1, p0, Lbnx;->l:Lbni;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_1
-
-    .line 114
-    :cond_0
-    :goto_0
-    monitor-exit p0
-
-    return v0
-
-    .line 109
-    :cond_1
-    :try_start_1
-    iget-object v1, p0, Lbnx;->f:Lbnx$b;
-
-    invoke-static {v1}, Lbnx$b;->a(Lbnx$b;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iget-object v1, p0, Lbnx;->f:Lbnx$b;
-
-    invoke-static {v1}, Lbnx$b;->b(Lbnx$b;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    :cond_2
-    iget-object v1, p0, Lbnx;->g:Lbnx$a;
-
-    .line 110
-    invoke-static {v1}, Lbnx$a;->a(Lbnx$a;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    iget-object v1, p0, Lbnx;->g:Lbnx$a;
-
-    invoke-static {v1}, Lbnx$a;->b(Lbnx$a;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    :cond_3
-    iget-object v1, p0, Lbnx;->e:Ljava/util/List;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-nez v1, :cond_0
-
-    .line 114
-    :cond_4
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 106
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final b(Lbni;)V
-    .locals 2
-
-    .prologue
-    .line 229
-    invoke-direct {p0, p1}, Lbnx;->d(Lbni;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 233
-    :goto_0
-    return-void
-
-    .line 232
-    :cond_0
-    iget-object v0, p0, Lbnx;->d:Lbnw;
-
-    iget v1, p0, Lbnx;->c:I
-
-    invoke-virtual {v0, v1, p1}, Lbnw;->a(ILbni;)V
-
-    goto :goto_0
-.end method
-
-.method public final b()Z
+.method public final b(Lbnd;)Lbnd;
     .locals 4
 
     .prologue
-    const/4 v2, 0x0
+    .line 566
+    iget-boolean v0, p0, Lbnx;->j:Z
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_0
 
-    .line 119
-    iget v0, p0, Lbnx;->c:I
+    const-string v0, "gzip"
 
-    and-int/lit8 v0, v0, 0x1
+    iget-object v1, p0, Lbnx;->o:Lbnd;
 
-    if-ne v0, v1, :cond_0
+    const-string v2, "Content-Encoding"
 
-    move v0, v1
-
-    .line 120
-    :goto_0
-    iget-object v3, p0, Lbnx;->d:Lbnw;
-
-    iget-boolean v3, v3, Lbnw;->b:Z
-
-    if-ne v3, v0, :cond_1
-
-    :goto_1
-    return v1
-
-    :cond_0
-    move v0, v2
-
-    .line 119
-    goto :goto_0
-
-    :cond_1
-    move v1, v2
-
-    .line 120
-    goto :goto_1
-.end method
-
-.method public final declared-synchronized c()Ljava/util/List;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lbnl;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 136
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lbnx;->h:Lbnx$c;
-
-    invoke-virtual {v0}, Lbnx$c;->c()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    .line 138
-    :goto_0
-    :try_start_1
-    iget-object v0, p0, Lbnx;->e:Ljava/util/List;
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lbnx;->l:Lbni;
-
-    if-nez v0, :cond_0
-
-    .line 139
-    invoke-direct {p0}, Lbnx;->f()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 142
-    :catchall_0
-    move-exception v0
-
-    :try_start_2
-    iget-object v1, p0, Lbnx;->h:Lbnx$c;
-
-    invoke-virtual {v1}, Lbnx$c;->b()V
-
-    throw v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 136
-    :catchall_1
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    .line 142
-    :cond_0
-    :try_start_3
-    iget-object v0, p0, Lbnx;->h:Lbnx$c;
-
-    invoke-virtual {v0}, Lbnx$c;->b()V
-
-    .line 144
-    iget-object v0, p0, Lbnx;->e:Ljava/util/List;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lbnx;->e:Ljava/util/List;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    monitor-exit p0
-
-    return-object v0
-
-    .line 145
-    :cond_1
-    :try_start_4
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "stream was reset: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lbnx;->l:Lbni;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Lbnd;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-.end method
-
-.method final declared-synchronized c(Lbni;)V
-    .locals 1
-
-    .prologue
-    .line 302
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lbnx;->l:Lbni;
-
-    if-nez v0, :cond_0
-
-    .line 303
-    iput-object p1, p0, Lbnx;->l:Lbni;
-
-    .line 304
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 306
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    .line 302
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final d()Lcai;
-    .locals 2
-
-    .prologue
-    .line 205
-    monitor-enter p0
-
-    .line 206
-    :try_start_0
-    iget-object v0, p0, Lbnx;->e:Ljava/util/List;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lbnx;->b()Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
-    .line 207
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "reply before requesting the sink"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 209
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
+    .line 582
     :cond_0
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :goto_0
+    return-object p1
 
-    .line 210
-    iget-object v0, p0, Lbnx;->g:Lbnx$a;
+    .line 570
+    :cond_1
+    iget-object v0, p1, Lbnd;->g:Lbne;
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    .line 574
+    new-instance v0, Lcbc;
+
+    iget-object v1, p1, Lbnd;->g:Lbne;
+
+    invoke-virtual {v1}, Lbne;->b()Lcax;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcbc;-><init>(Lcbk;)V
+
+    .line 575
+    iget-object v1, p1, Lbnd;->f:Lbmv;
+
+    invoke-virtual {v1}, Lbmv;->b()Lbmv$a;
+
+    move-result-object v1
+
+    const-string v2, "Content-Encoding"
+
+    .line 576
+    invoke-virtual {v1, v2}, Lbmv$a;->b(Ljava/lang/String;)Lbmv$a;
+
+    move-result-object v1
+
+    const-string v2, "Content-Length"
+
+    .line 577
+    invoke-virtual {v1, v2}, Lbmv$a;->b(Ljava/lang/String;)Lbmv$a;
+
+    move-result-object v1
+
+    .line 578
+    invoke-virtual {v1}, Lbmv$a;->a()Lbmv;
+
+    move-result-object v1
+
+    .line 579
+    invoke-virtual {p1}, Lbnd;->d()Lbnd$a;
+
+    move-result-object v2
+
+    .line 580
+    invoke-virtual {v2, v1}, Lbnd$a;->a(Lbmv;)Lbnd$a;
+
+    move-result-object v2
+
+    new-instance v3, Lbob;
+
+    .line 581
+    invoke-static {v0}, Lcbe;->a(Lcbk;)Lcax;
+
+    move-result-object v0
+
+    invoke-direct {v3, v1, v0}, Lbob;-><init>(Lbmv;Lcax;)V
+
+    iput-object v3, v2, Lbnd$a;->g:Lbne;
+
+    .line 582
+    invoke-virtual {v2}, Lbnd$a;->a()Lbnd;
+
+    move-result-object p1
+
+    goto :goto_0
 .end method
 
-.method final e()V
-    .locals 2
+.method public final b()V
+    .locals 4
 
     .prologue
-    .line 289
-    sget-boolean v0, Lbnx;->i:Z
+    .line 353
+    iget-wide v0, p0, Lbnx;->i:J
 
-    if-nez v0, :cond_0
+    const-wide/16 v2, -0x1
 
-    invoke-static {p0}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+
+    .line 354
+    :cond_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lbnx;->i:J
+
+    .line 355
+    return-void
+.end method
+
+.method public final b(Ljava/net/URL;)Z
+    .locals 3
+
+    .prologue
+    .line 1046
+    iget-object v0, p0, Lbnx;->l:Lbnb;
+
+    invoke-virtual {v0}, Lbnb;->a()Ljava/net/URL;
+
+    move-result-object v0
+
+    .line 1047
+    invoke-virtual {v0}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Ljava/net/URL;->getHost()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 1048
+    invoke-static {v0}, Lbnq;->a(Ljava/net/URL;)I
+
+    move-result v1
+
+    invoke-static {p1}, Lbnq;->a(Ljava/net/URL;)I
+
+    move-result v2
+
+    if-ne v1, v2, :cond_0
+
+    .line 1049
+    invoke-virtual {v0}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Ljava/lang/AssertionError;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    :goto_0
+    return v0
 
-    throw v0
-
-    .line 291
     :cond_0
-    monitor-enter p0
+    const/4 v0, 0x0
 
-    .line 292
-    :try_start_0
-    iget-object v0, p0, Lbnx;->f:Lbnx$b;
+    goto :goto_0
+.end method
 
-    const/4 v1, 0x1
+.method public final c()Z
+    .locals 1
 
-    invoke-static {v0, v1}, Lbnx$b;->a(Lbnx$b;Z)Z
+    .prologue
+    .line 358
+    iget-object v0, p0, Lbnx;->l:Lbnb;
 
-    .line 293
-    invoke-virtual {p0}, Lbnx;->a()Z
+    iget-object v0, v0, Lbnb;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Lbny;->b(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 294
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
+    return v0
+.end method
 
-    .line 295
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public final d()Lbnd;
+    .locals 1
 
-    .line 296
-    if-nez v0, :cond_1
+    .prologue
+    .line 387
+    iget-object v0, p0, Lbnx;->o:Lbnd;
 
-    .line 297
-    iget-object v0, p0, Lbnx;->d:Lbnw;
+    if-nez v0, :cond_0
 
-    iget v1, p0, Lbnx;->c:I
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v0, v1}, Lbnw;->b(I)Lbnx;
-
-    .line 299
-    :cond_1
-    return-void
-
-    .line 295
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
+
+    .line 388
+    :cond_0
+    iget-object v0, p0, Lbnx;->o:Lbnd;
+
+    return-object v0
+.end method
+
+.method public final e()V
+    .locals 1
+
+    .prologue
+    .line 492
+    iget-object v0, p0, Lbnx;->h:Lboh;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbnx;->c:Lbmp;
+
+    if-eqz v0, :cond_0
+
+    .line 493
+    iget-object v0, p0, Lbnx;->h:Lboh;
+
+    invoke-interface {v0}, Lboh;->c()V
+
+    .line 495
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lbnx;->c:Lbmp;
+
+    .line 496
+    return-void
+.end method
+
+.method public final f()Lbmp;
+    .locals 3
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 518
+    iget-object v1, p0, Lbnx;->q:Lcaw;
+
+    if-eqz v1, :cond_2
+
+    .line 520
+    iget-object v1, p0, Lbnx;->q:Lcaw;
+
+    invoke-static {v1}, Lbnq;->a(Ljava/io/Closeable;)V
+
+    .line 526
+    :cond_0
+    :goto_0
+    iget-object v1, p0, Lbnx;->o:Lbnd;
+
+    if-nez v1, :cond_3
+
+    .line 527
+    iget-object v1, p0, Lbnx;->c:Lbmp;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lbnx;->c:Lbmp;
+
+    iget-object v1, v1, Lbmp;->c:Ljava/net/Socket;
+
+    invoke-static {v1}, Lbnq;->a(Ljava/net/Socket;)V
+
+    .line 528
+    :cond_1
+    iput-object v0, p0, Lbnx;->c:Lbmp;
+
+    .line 549
+    :goto_1
+    return-object v0
+
+    .line 521
+    :cond_2
+    iget-object v1, p0, Lbnx;->p:Lcbj;
+
+    if-eqz v1, :cond_0
+
+    .line 522
+    iget-object v1, p0, Lbnx;->p:Lcbj;
+
+    invoke-static {v1}, Lbnq;->a(Ljava/io/Closeable;)V
+
+    goto :goto_0
+
+    .line 533
+    :cond_3
+    iget-object v1, p0, Lbnx;->o:Lbnd;
+
+    iget-object v1, v1, Lbnd;->g:Lbne;
+
+    invoke-static {v1}, Lbnq;->a(Ljava/io/Closeable;)V
+
+    .line 536
+    iget-object v1, p0, Lbnx;->h:Lboh;
+
+    if-eqz v1, :cond_4
+
+    iget-object v1, p0, Lbnx;->c:Lbmp;
+
+    if-eqz v1, :cond_4
+
+    iget-object v1, p0, Lbnx;->h:Lboh;
+
+    invoke-interface {v1}, Lboh;->d()Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    .line 537
+    iget-object v1, p0, Lbnx;->c:Lbmp;
+
+    iget-object v1, v1, Lbmp;->c:Ljava/net/Socket;
+
+    invoke-static {v1}, Lbnq;->a(Ljava/net/Socket;)V
+
+    .line 538
+    iput-object v0, p0, Lbnx;->c:Lbmp;
+
+    goto :goto_1
+
+    .line 543
+    :cond_4
+    iget-object v1, p0, Lbnx;->c:Lbmp;
+
+    if-eqz v1, :cond_5
+
+    sget-object v1, Lbnj;->b:Lbnj;
+
+    iget-object v2, p0, Lbnx;->c:Lbmp;
+
+    invoke-virtual {v1, v2}, Lbnj;->a(Lbmp;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    .line 544
+    iput-object v0, p0, Lbnx;->c:Lbmp;
+
+    .line 547
+    :cond_5
+    iget-object v1, p0, Lbnx;->c:Lbmp;
+
+    .line 548
+    iput-object v0, p0, Lbnx;->c:Lbmp;
+
+    move-object v0, v1
+
+    .line 549
+    goto :goto_1
+.end method
+
+.method public final g()Lbnd;
+    .locals 4
+
+    .prologue
+    .line 828
+    iget-object v0, p0, Lbnx;->h:Lboh;
+
+    invoke-interface {v0}, Lboh;->a()V
+
+    .line 830
+    iget-object v0, p0, Lbnx;->h:Lboh;
+
+    invoke-interface {v0}, Lboh;->b()Lbnd$a;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbnx;->m:Lbnb;
+
+    .line 831
+    iput-object v1, v0, Lbnd$a;->a:Lbnb;
+
+    iget-object v1, p0, Lbnx;->c:Lbmp;
+
+    .line 832
+    iget-object v1, v1, Lbmp;->i:Lbmu;
+
+    iput-object v1, v0, Lbnd$a;->e:Lbmu;
+
+    sget-object v1, Lboa;->b:Ljava/lang/String;
+
+    iget-wide v2, p0, Lbnx;->i:J
+
+    .line 833
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lbnd$a;->a(Ljava/lang/String;Ljava/lang/String;)Lbnd$a;
+
+    move-result-object v0
+
+    sget-object v1, Lboa;->c:Ljava/lang/String;
+
+    .line 834
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lbnd$a;->a(Ljava/lang/String;Ljava/lang/String;)Lbnd$a;
+
+    move-result-object v0
+
+    .line 835
+    invoke-virtual {v0}, Lbnd$a;->a()Lbnd;
+
+    move-result-object v0
+
+    .line 837
+    iget-boolean v1, p0, Lbnx;->s:Z
+
+    if-nez v1, :cond_0
+
+    .line 838
+    invoke-virtual {v0}, Lbnd;->d()Lbnd$a;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lbnx;->h:Lboh;
+
+    .line 839
+    invoke-interface {v2, v0}, Lboh;->a(Lbnd;)Lbne;
+
+    move-result-object v0
+
+    iput-object v0, v1, Lbnd$a;->g:Lbne;
+
+    .line 840
+    invoke-virtual {v1}, Lbnd$a;->a()Lbnd;
+
+    move-result-object v0
+
+    .line 843
+    :cond_0
+    sget-object v1, Lbnj;->b:Lbnj;
+
+    iget-object v2, p0, Lbnx;->c:Lbmp;
+
+    iget-object v3, v0, Lbnd;->b:Lbna;
+
+    invoke-virtual {v1, v2, v3}, Lbnj;->a(Lbmp;Lbna;)V
+
+    .line 844
+    return-object v0
 .end method

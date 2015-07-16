@@ -1,40 +1,24 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
+import java.util.Map;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bhv
 {
-  @SerializedName("ad_placement_metadata")
-  protected bjr adPlacementMetadata;
-  @SerializedName("mature_content")
-  protected Boolean matureContent;
-  @SerializedName("stories")
-  protected List<bhw> stories;
-  @SerializedName("thumbnails")
-  protected bjm thumbnails;
-  @SerializedName("username")
-  protected String username;
+  @SerializedName("ad_unit_id")
+  protected String adUnitId;
+  @SerializedName("targeting_parameters")
+  protected Map<String, String> targetingParameters;
   
   public final String a()
   {
-    return username;
+    return adUnitId;
   }
   
-  public final List<bhw> b()
+  public final Map<String, String> b()
   {
-    return stories;
-  }
-  
-  public final boolean c()
-  {
-    return stories != null;
-  }
-  
-  public final bjr d()
-  {
-    return adPlacementMetadata;
+    return targetingParameters;
   }
   
   public final boolean equals(Object paramObject)
@@ -46,12 +30,12 @@ public final class bhv
       return false;
     }
     paramObject = (bhv)paramObject;
-    return new EqualsBuilder().append(username, username).append(stories, stories).append(matureContent, matureContent).append(adPlacementMetadata, adPlacementMetadata).append(thumbnails, thumbnails).isEquals();
+    return new EqualsBuilder().append(adUnitId, adUnitId).append(targetingParameters, targetingParameters).isEquals();
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(username).append(stories).append(matureContent).append(adPlacementMetadata).append(thumbnails).toHashCode();
+    return new HashCodeBuilder().append(adUnitId).append(targetingParameters).toHashCode();
   }
   
   public final String toString()

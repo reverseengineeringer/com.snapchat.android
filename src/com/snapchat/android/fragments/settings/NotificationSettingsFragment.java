@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -18,36 +18,36 @@ import com.snapchat.android.util.fragment.SnapchatFragment;
 public class NotificationSettingsFragment
   extends SnapchatFragment
 {
-  private final ajx a;
+  private final akr a;
   
   public NotificationSettingsFragment()
   {
-    this(ajx.a());
+    this(akr.a());
   }
   
   @SuppressLint({"ValidFragment"})
   @cf
-  private NotificationSettingsFragment(ajx paramajx)
+  private NotificationSettingsFragment(akr paramakr)
   {
-    a = paramajx;
+    a = paramakr;
   }
   
   public View onCreateView(final LayoutInflater paramLayoutInflater, final ViewGroup paramViewGroup, final Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968703, paramViewGroup, false);
-    c(2131361893).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968704, paramViewGroup, false);
+    c(2131361895).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         getActivity().onBackPressed();
       }
     });
-    paramLayoutInflater = (CheckBox)c(2131362472);
-    paramViewGroup = (CheckBox)c(2131362475);
-    paramBundle = (CheckBox)c(2131362478);
-    final CheckBox localCheckBox1 = (CheckBox)c(2131362481);
-    final CheckBox localCheckBox2 = (CheckBox)c(2131362484);
-    c(2131362471).setOnClickListener(new View.OnClickListener()
+    paramLayoutInflater = (CheckBox)c(2131362471);
+    paramViewGroup = (CheckBox)c(2131362474);
+    paramBundle = (CheckBox)c(2131362477);
+    final CheckBox localCheckBox1 = (CheckBox)c(2131362480);
+    final CheckBox localCheckBox2 = (CheckBox)c(2131362483);
+    c(2131362470).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
@@ -60,7 +60,7 @@ public class NotificationSettingsFragment
         }
       }
     });
-    final View localView1 = c(2131362473);
+    final View localView1 = c(2131362472);
     localView1.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -74,7 +74,7 @@ public class NotificationSettingsFragment
         }
       }
     });
-    final View localView2 = c(2131362479);
+    final View localView2 = c(2131362478);
     localView2.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -88,7 +88,7 @@ public class NotificationSettingsFragment
         }
       }
     });
-    final View localView3 = c(2131362476);
+    final View localView3 = c(2131362475);
     localView3.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -102,7 +102,7 @@ public class NotificationSettingsFragment
         }
       }
     });
-    final View localView4 = c(2131362482);
+    final View localView4 = c(2131362481);
     localView4.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -116,15 +116,15 @@ public class NotificationSettingsFragment
         }
       }
     });
-    final View localView5 = c(2131362474);
-    final View localView6 = c(2131362480);
-    final View localView7 = c(2131362477);
+    final View localView5 = c(2131362473);
+    final View localView6 = c(2131362479);
+    final View localView7 = c(2131362476);
     paramLayoutInflater.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
     {
       public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
       {
         NotificationSettingsFragment.a(NotificationSettingsFragment.this);
-        ajx.E(paramAnonymousBoolean);
+        akr.D(paramAnonymousBoolean);
         localCheckBox1.setEnabled(paramAnonymousBoolean);
         localCheckBox2.setEnabled(paramAnonymousBoolean);
         paramBundle.setEnabled(paramAnonymousBoolean);
@@ -141,22 +141,22 @@ public class NotificationSettingsFragment
         if (paramAnonymousBoolean) {}
         for (paramAnonymousCompoundButton = "ENABLED";; paramAnonymousCompoundButton = "DISABLED")
         {
-          new EasyMetric(paramAnonymousCompoundButton).d();
+          new EasyMetric(paramAnonymousCompoundButton).e();
           return;
         }
       }
     });
-    paramLayoutInflater.setChecked(ajx.bL());
-    localCheckBox1.setChecked(ajx.bH());
-    localCheckBox2.setChecked(ajx.bI());
-    paramViewGroup.setChecked(ajx.bK());
-    paramBundle.setChecked(ajx.bJ());
+    paramLayoutInflater.setChecked(akr.bG());
+    localCheckBox1.setChecked(akr.bC());
+    localCheckBox2.setChecked(akr.bD());
+    paramViewGroup.setChecked(akr.bF());
+    paramBundle.setChecked(akr.bE());
     localCheckBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
     {
       public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
       {
         NotificationSettingsFragment.a(NotificationSettingsFragment.this);
-        ajx.A(paramAnonymousBoolean);
+        akr.z(paramAnonymousBoolean);
       }
     });
     localCheckBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
@@ -164,7 +164,7 @@ public class NotificationSettingsFragment
       public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
       {
         NotificationSettingsFragment.a(NotificationSettingsFragment.this);
-        ajx.B(paramAnonymousBoolean);
+        akr.A(paramAnonymousBoolean);
       }
     });
     paramBundle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
@@ -172,7 +172,7 @@ public class NotificationSettingsFragment
       public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
       {
         NotificationSettingsFragment.a(NotificationSettingsFragment.this);
-        ajx.C(paramAnonymousBoolean);
+        akr.B(paramAnonymousBoolean);
       }
     });
     paramViewGroup.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
@@ -180,7 +180,7 @@ public class NotificationSettingsFragment
       public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
       {
         NotificationSettingsFragment.a(NotificationSettingsFragment.this);
-        ajx.D(paramAnonymousBoolean);
+        akr.C(paramAnonymousBoolean);
       }
     });
     return mFragmentLayout;

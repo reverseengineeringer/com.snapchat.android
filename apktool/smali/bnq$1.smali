@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbnq;
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lbnq;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lbnq;->c(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,12 +17,24 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Z
+
+
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     .prologue
-    .line 23
+    .line 240
+    iput-object p1, p0, Lbnq$1;->a:Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lbnq$1;->b:Z
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,15 +42,22 @@
 
 
 # virtual methods
-.method public final a(Lbnx;)V
-    .locals 1
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 2
 
     .prologue
-    .line 25
-    sget-object v0, Lbni;->k:Lbni;
+    .line 242
+    new-instance v0, Ljava/lang/Thread;
 
-    invoke-virtual {p1, v0}, Lbnx;->a(Lbni;)V
+    iget-object v1, p0, Lbnq$1;->a:Ljava/lang/String;
 
-    .line 26
-    return-void
+    invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    .line 243
+    iget-boolean v1, p0, Lbnq$1;->b:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setDaemon(Z)V
+
+    .line 244
+    return-object v0
 .end method

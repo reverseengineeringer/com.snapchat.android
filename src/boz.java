@@ -1,21 +1,8 @@
-public enum boz
+public abstract interface boz
 {
-  final int c;
+  public abstract bok a(cax paramcax, boolean paramBoolean);
   
-  private boz(int paramInt)
-  {
-    c = paramInt;
-  }
-  
-  static boolean a(int paramInt)
-  {
-    return (ac & paramInt) == 0;
-  }
-  
-  static boolean b(int paramInt)
-  {
-    return (bc & paramInt) == 0;
-  }
+  public abstract bol a(caw paramcaw, boolean paramBoolean);
 }
 
 /* Location:

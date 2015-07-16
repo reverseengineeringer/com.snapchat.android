@@ -1,97 +1,73 @@
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.text.TextUtils;
-import com.snapchat.android.Timber;
-import com.snapchat.android.api2.framework.HttpMethod;
-import com.snapchat.android.util.profileimages.ProfileImageUtils;
-import com.squareup.otto.Bus;
-import java.util.Arrays;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.os.AsyncTask;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.snapchat.android.util.debug.ScApplicationInfo;
+import java.io.IOException;
+import java.sql.Timestamp;
 
-public final class amw
-  extends amd
+public class amw
 {
-  private final String a;
-  private final String b;
-  private final ajx c;
-  private final awp d;
-  private final ProfileImageUtils e;
+  private Context a;
+  private String b;
   
-  public amw(Intent paramIntent)
+  public amw(Context paramContext)
   {
-    this(paramIntent, awq.PROFILE_IMAGE_CACHE, ajx.a(), ProfileImageUtils.a());
+    a = paramContext.getApplicationContext();
   }
   
-  private amw(Intent paramIntent, awp paramawp, ajx paramajx, ProfileImageUtils paramProfileImageUtils)
+  public static void a(Context paramContext, String paramString)
   {
-    super(paramIntent);
-    a = paramIntent.getStringExtra("size");
-    b = paramIntent.getStringExtra("username_image");
-    c = paramajx;
-    d = paramawp;
-    e = paramProfileImageUtils;
+    SharedPreferences localSharedPreferences = paramContext.getSharedPreferences(amw.class.getSimpleName(), 0);
+    int i = ScApplicationInfo.c(paramContext);
+    paramContext = localSharedPreferences.edit();
+    paramContext.putString("registrationId", paramString);
+    paramContext.putInt("appVersion", i);
+    long l = System.currentTimeMillis() + 604800000L;
+    new StringBuilder("Setting registration expiry time to ").append(new Timestamp(l));
+    paramContext.putLong("onServerExpirationTimeMs", l);
+    paramContext.apply();
   }
   
-  public final void a(Context paramContext)
+  public final void a(Activity paramActivity)
   {
-    if ((!TextUtils.isEmpty(a)) && (!TextUtils.isEmpty(b))) {
-      super.a(paramContext);
-    }
-  }
-  
-  public final void a(@cgb uc paramuc)
-  {
-    super.a(paramuc);
-    if (mResponseCode == 404)
+    int i = GooglePlayServicesUtil.isGooglePlayServicesAvailable(paramActivity);
+    if (i != 0)
     {
-      Timber.c("DownloadProfileImagesOperation", "profile images - download returned but user hasn't uplaoded pics before", new Object[0]);
-      ajx.e(false);
+      GooglePlayServicesUtil.getErrorDialog(i, paramActivity, 0).show();
       return;
     }
-    ajx.e(true);
-    if (!paramuc.d())
-    {
-      Timber.f("DownloadProfileImagesOperation", "profile images - download returned but did not succeed : %s ", new Object[] { paramuc.e() });
-      return;
-    }
-    paramuc = mBuffer;
-    if ((paramuc == null) || (paramuc.a() == 0))
-    {
-      Timber.c("DownloadProfileImagesOperation", "profile images - download returned but user hasn't uploaded pics before", new Object[0]);
-      ajx.e(false);
-      return;
-    }
-    Timber.c("DownloadProfileImagesOperation", "profile images - download success", new Object[0]);
-    try
-    {
-      ProfileImageUtils.b(Arrays.copyOf(paramuc.b(), paramuc.a()), d);
-      ban.a().a(new bcq());
-      return;
-    }
-    catch (Exception paramuc)
-    {
-      Timber.f("DownloadProfileImagesOperation", "profile images - deserializing data failed with error: " + paramuc, new Object[0]);
-    }
+    new amw.a((byte)0).executeOnExecutor(avf.NETWORK_EXECUTOR, new Void[0]);
   }
   
-  public final Object b()
+  final class a
+    extends AsyncTask<Void, Void, Void>
   {
-    return a(new amw.a().a(a).b(b));
+    private a() {}
+    
+    private Void a()
+    {
+      try
+      {
+        GoogleCloudMessaging localGoogleCloudMessaging = GoogleCloudMessaging.getInstance(amw.a(amw.this));
+        amw.a(amw.this, localGoogleCloudMessaging.register(new String[] { "191410808405" }));
+        new StringBuilder("Device registered, registration id = ").append(amw.b(amw.this));
+        amw.a(amw.a(amw.this), amw.b(amw.this));
+        return null;
+      }
+      catch (IOException localIOException)
+      {
+        for (;;)
+        {
+          new StringBuilder("Error :").append(localIOException.getMessage());
+        }
+      }
+    }
   }
-  
-  public final HttpMethod c()
-  {
-    return HttpMethod.POST;
-  }
-  
-  protected final String e()
-  {
-    return "/bq/download_profile_data";
-  }
-  
-  @tn
-  public static final class a
-    extends bkc
-  {}
 }
 
 /* Location:

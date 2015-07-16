@@ -26,12 +26,6 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-.field public static final enum CAMERA_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-.field public static final enum CAMERA_SWITCH:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-.field public static final enum CHAT_SENT:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
 .field public static final enum CONTENT_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
 .field public static final enum EXIT_CAMERA_VIEW:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
@@ -49,10 +43,6 @@
 .field public static final enum MEDIA_VIEW_INTERVAL:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
 .field public static final enum NOTIFICATION_OPEN:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-.field public static final enum PULL_TO_REFRESH:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-.field public static final enum RECORDING_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
 .field public static final enum SNAP_SEND_TIMED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
@@ -80,309 +70,224 @@
 
     const/4 v3, 0x0
 
-    .line 96
-    new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    const-string v1, "CHAT_SENT"
-
-    invoke-direct {v0, v1, v3}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CHAT_SENT:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    .line 97
+    .line 110
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     const-string v1, "FIRST_SNAP_DOWNLOAD"
 
-    invoke-direct {v0, v1, v4}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_SNAP_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 98
+    .line 111
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     const-string v1, "FIRST_STORY_DOWNLOAD"
 
-    invoke-direct {v0, v1, v5}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v4}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_STORY_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 99
+    .line 112
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     const-string v1, "GEOFILTER_DOWNLOAD_BITMAP"
 
-    invoke-direct {v0, v1, v6}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v5}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->GEOFILTER_DOWNLOAD_BITMAP:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 100
+    .line 113
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     const-string v1, "NOTIFICATION_OPEN"
 
-    invoke-direct {v0, v1, v7}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v6}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->NOTIFICATION_OPEN:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 101
+    .line 114
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     const-string v1, "SNAP_SEND_TIMED"
+
+    invoke-direct {v0, v1, v7}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->SNAP_SEND_TIMED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+
+    .line 115
+    new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+
+    const-string v1, "STORY_DOWNLOAD"
 
     const/4 v2, 0x5
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->SNAP_SEND_TIMED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->STORY_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 102
+    .line 117
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    const-string v1, "STORY_DOWNLOAD"
+    const-string v1, "CONTENT_READY"
 
     const/4 v2, 0x6
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->STORY_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CONTENT_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 104
+    .line 118
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    const-string v1, "PULL_TO_REFRESH"
+    const-string v1, "FIRST_ITEM_READY"
 
     const/4 v2, 0x7
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->PULL_TO_REFRESH:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_ITEM_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 105
+    .line 119
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    const-string v1, "CONTENT_READY"
+    const-string v1, "EXIT_CAMERA_VIEW"
 
     const/16 v2, 0x8
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CONTENT_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->EXIT_CAMERA_VIEW:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 106
+    .line 120
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    const-string v1, "CAMERA_DELAY"
+    const-string v1, "FIRST_MEDIA_OPENED"
 
     const/16 v2, 0x9
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CAMERA_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_MEDIA_OPENED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 107
+    .line 121
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    const-string v1, "FIRST_ITEM_READY"
+    const-string v1, "MEDIA_VIEW_INTERVAL"
 
     const/16 v2, 0xa
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_ITEM_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->MEDIA_VIEW_INTERVAL:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 108
+    .line 122
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    const-string v1, "EXIT_CAMERA_VIEW"
+    const-string v1, "SNAP_SENT_DELAY"
 
     const/16 v2, 0xb
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->EXIT_CAMERA_VIEW:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->SNAP_SENT_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 109
+    .line 123
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    const-string v1, "FIRST_MEDIA_OPENED"
+    const-string v1, "STORY_POST_DELAY"
 
     const/16 v2, 0xc
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_MEDIA_OPENED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->STORY_POST_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 110
+    .line 124
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    const-string v1, "MEDIA_VIEW_INTERVAL"
+    const-string v1, "UNKNOWN"
 
     const/16 v2, 0xd
 
     invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->MEDIA_VIEW_INTERVAL:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    .line 111
-    new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    const-string v1, "CAMERA_SWITCH"
-
-    const/16 v2, 0xe
-
-    invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CAMERA_SWITCH:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    .line 112
-    new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    const-string v1, "RECORDING_DELAY"
-
-    const/16 v2, 0xf
-
-    invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->RECORDING_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    .line 113
-    new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    const-string v1, "SNAP_SENT_DELAY"
-
-    const/16 v2, 0x10
-
-    invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->SNAP_SENT_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    .line 114
-    new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    const-string v1, "STORY_POST_DELAY"
-
-    const/16 v2, 0x11
-
-    invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->STORY_POST_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    .line 115
-    new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    const-string v1, "UNKNOWN"
-
-    const/16 v2, 0x12
-
-    invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;-><init>(Ljava/lang/String;I)V
-
     sput-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->UNKNOWN:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 95
-    const/16 v0, 0x13
+    .line 109
+    const/16 v0, 0xe
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CHAT_SENT:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_SNAP_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_SNAP_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_STORY_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_STORY_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->GEOFILTER_DOWNLOAD_BITMAP:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->GEOFILTER_DOWNLOAD_BITMAP:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->NOTIFICATION_OPEN:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->NOTIFICATION_OPEN:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v1, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->SNAP_SEND_TIMED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->SNAP_SEND_TIMED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->STORY_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->STORY_DOWNLOAD:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CONTENT_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->PULL_TO_REFRESH:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_ITEM_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CONTENT_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->EXIT_CAMERA_VIEW:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CAMERA_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_MEDIA_OPENED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_ITEM_READY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->MEDIA_VIEW_INTERVAL:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->EXIT_CAMERA_VIEW:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
+    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->SNAP_SENT_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->FIRST_MEDIA_OPENED:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->MEDIA_VIEW_INTERVAL:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->CAMERA_SWITCH:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->RECORDING_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
-    sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->SNAP_SENT_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
     sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->STORY_POST_DELAY:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0x12
+    const/16 v1, 0xd
 
     sget-object v2, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->UNKNOWN:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
@@ -402,62 +307,48 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 109
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
 .method public static fromValue(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
-    .locals 3
-    .annotation build Lcgb;
+    .locals 2
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 119
+    .line 128
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 120
-    const-string v0, "PerformanceMetric"
+    .line 129
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Failed to convert an empty string("
 
-    const-string v2, "Failed to convert an empty string("
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, ") into PerformanceMetric.EVENT"
 
-    const-string v2, ") into PerformanceMetric.EVENT"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 121
+    .line 130
     sget-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->UNKNOWN:Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
-    .line 127
+    .line 136
     :goto_0
     return-object v0
 
-    .line 125
+    .line 134
     :cond_0
     :try_start_0
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -474,7 +365,7 @@
 
     goto :goto_0
 
-    .line 127
+    .line 136
     :catch_0
     move-exception v0
 
@@ -487,7 +378,7 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 109
     const-class v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -503,7 +394,7 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 109
     sget-object v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->$VALUES:[Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/framework/PerformanceMetric$Event;->clone()Ljava/lang/Object;

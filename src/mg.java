@@ -1,89 +1,163 @@
-import android.app.Application;
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.util.debug.ReleaseManager;
-import javax.inject.Provider;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class mg
-  implements buj<SnapchatApplication>
+  extends ml
 {
-  private final buj<Application> b;
-  private final Provider<ayg> c;
-  private final Provider<ReleaseManager> d;
-  private final Provider<azx> e;
-  private final Provider<mj> f;
-  private final Provider<adj> g;
-  private final Provider<aby> h;
-  private final Provider<ov> i;
-  private final Provider<ws> j;
-  private final Provider<azn> k;
-  private final Provider<aol> l;
-  private final Provider<aeg> m;
+  private String additionalInfo;
+  private final String eventName = "STORY_STORY_HIDE";
+  public String geoFence;
+  public String posterId;
+  private String sponsor;
+  public mj storyType;
+  public Long viewLocation;
   
-  static
+  public final Map<String, Object> a()
   {
-    if (!mg.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    HashMap localHashMap = new HashMap();
+    localHashMap.put("event_name", "STORY_STORY_HIDE");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
+    }
+    if (geoFence != null) {
+      localHashMap.put("geo_fence", geoFence);
+    }
+    if (posterId != null) {
+      localHashMap.put("poster_id", posterId);
+    }
+    if (sponsor != null) {
+      localHashMap.put("sponsor", sponsor);
+    }
+    if (storyType != null) {
+      localHashMap.put("story_type", storyType);
+    }
+    if (viewLocation != null) {
+      localHashMap.put("view_location", viewLocation);
+    }
+    localHashMap.putAll(super.a());
+    return localHashMap;
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if (this == paramObject) {}
+    do
     {
-      a = bool;
-      return;
+      return true;
+      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+        return false;
+      }
+      if (!super.equals(paramObject)) {
+        return false;
+      }
+      paramObject = (mg)paramObject;
+      if (additionalInfo != null)
+      {
+        if (additionalInfo.equals(additionalInfo)) {}
+      }
+      else {
+        while (additionalInfo != null) {
+          return false;
+        }
+      }
+      if (geoFence != null)
+      {
+        if (geoFence.equals(geoFence)) {}
+      }
+      else {
+        while (geoFence != null) {
+          return false;
+        }
+      }
+      if (posterId != null)
+      {
+        if (posterId.equals(posterId)) {}
+      }
+      else {
+        while (posterId != null) {
+          return false;
+        }
+      }
+      if (sponsor != null)
+      {
+        if (sponsor.equals(sponsor)) {}
+      }
+      else {
+        while (sponsor != null) {
+          return false;
+        }
+      }
+      if (storyType != null)
+      {
+        if (storyType.equals(storyType)) {}
+      }
+      else {
+        while (storyType != null) {
+          return false;
+        }
+      }
+      if (viewLocation == null) {
+        break;
+      }
+    } while (viewLocation.equals(viewLocation));
+    for (;;)
+    {
+      return false;
+      if (viewLocation == null) {
+        break;
+      }
     }
   }
   
-  private mg(buj<Application> parambuj, Provider<ayg> paramProvider, Provider<ReleaseManager> paramProvider1, Provider<azx> paramProvider2, Provider<mj> paramProvider3, Provider<adj> paramProvider4, Provider<aby> paramProvider5, Provider<ov> paramProvider6, Provider<ws> paramProvider7, Provider<azn> paramProvider8, Provider<aol> paramProvider9, Provider<aeg> paramProvider10)
+  public final int hashCode()
   {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
+    int i1 = 0;
+    int i2 = super.hashCode();
+    int i;
+    int j;
+    label39:
+    int k;
+    label54:
+    int m;
+    if (additionalInfo != null)
+    {
+      i = additionalInfo.hashCode();
+      if (geoFence == null) {
+        break label143;
+      }
+      j = geoFence.hashCode();
+      if (posterId == null) {
+        break label148;
+      }
+      k = posterId.hashCode();
+      if (sponsor == null) {
+        break label153;
+      }
+      m = sponsor.hashCode();
+      label70:
+      if (storyType == null) {
+        break label159;
+      }
     }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
+    label143:
+    label148:
+    label153:
+    label159:
+    for (int n = storyType.hashCode();; n = 0)
+    {
+      if (viewLocation != null) {
+        i1 = viewLocation.hashCode();
+      }
+      return (n + (m + (k + (j + (i + i2 * 31) * 31) * 31) * 31) * 31) * 31 + i1;
+      i = 0;
+      break;
+      j = 0;
+      break label39;
+      k = 0;
+      break label54;
+      m = 0;
+      break label70;
     }
-    c = paramProvider;
-    if ((!a) && (paramProvider1 == null)) {
-      throw new AssertionError();
-    }
-    d = paramProvider1;
-    if ((!a) && (paramProvider2 == null)) {
-      throw new AssertionError();
-    }
-    e = paramProvider2;
-    if ((!a) && (paramProvider3 == null)) {
-      throw new AssertionError();
-    }
-    f = paramProvider3;
-    if ((!a) && (paramProvider4 == null)) {
-      throw new AssertionError();
-    }
-    g = paramProvider4;
-    if ((!a) && (paramProvider5 == null)) {
-      throw new AssertionError();
-    }
-    h = paramProvider5;
-    if ((!a) && (paramProvider6 == null)) {
-      throw new AssertionError();
-    }
-    i = paramProvider6;
-    if ((!a) && (paramProvider7 == null)) {
-      throw new AssertionError();
-    }
-    j = paramProvider7;
-    if ((!a) && (paramProvider8 == null)) {
-      throw new AssertionError();
-    }
-    k = paramProvider8;
-    if ((!a) && (paramProvider9 == null)) {
-      throw new AssertionError();
-    }
-    l = paramProvider9;
-    if ((!a) && (paramProvider10 == null)) {
-      throw new AssertionError();
-    }
-    m = paramProvider10;
-  }
-  
-  public static buj<SnapchatApplication> a(buj<Application> parambuj, Provider<ayg> paramProvider, Provider<ReleaseManager> paramProvider1, Provider<azx> paramProvider2, Provider<mj> paramProvider3, Provider<adj> paramProvider4, Provider<aby> paramProvider5, Provider<ov> paramProvider6, Provider<ws> paramProvider7, Provider<azn> paramProvider8, Provider<aol> paramProvider9, Provider<aeg> paramProvider10)
-  {
-    return new mg(parambuj, paramProvider, paramProvider1, paramProvider2, paramProvider3, paramProvider4, paramProvider5, paramProvider6, paramProvider7, paramProvider8, paramProvider9, paramProvider10);
   }
 }
 

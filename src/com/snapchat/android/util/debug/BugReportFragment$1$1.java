@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
-import auc;
+import ava;
 import com.snapchat.android.util.AlertDialogUtils;
 
 final class BugReportFragment$1$1
@@ -18,7 +18,7 @@ final class BugReportFragment$1$1
     if (paramDialogInterface.endsWith("@snapchat.com"))
     {
       if (!paramDialogInterface.equals(val$existingSendToSelfEmail)) {
-        auc.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL", paramDialogInterface);
+        ava.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL", paramDialogInterface);
       }
       BugReportFragment.b(this$1.this$0).setText(paramDialogInterface);
       BugReportFragment.a(this$1.this$0, true);

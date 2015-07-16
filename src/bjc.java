@@ -3,27 +3,64 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bjc
-  extends bgy
+public final class bjc
 {
-  @SerializedName("image")
-  protected String image;
-  @SerializedName("type")
-  protected String type;
+  @SerializedName("chat_token")
+  protected String chatToken;
+  @SerializedName("expires")
+  protected Long expires;
+  @SerializedName("mac")
+  protected String mac;
+  @SerializedName("salt")
+  protected String salt;
+  @SerializedName("scope_id")
+  protected String scopeId;
+  @SerializedName("signature")
+  protected String signature;
+  @SerializedName("user_id")
+  protected Long userId;
   
-  public final bjc a(String paramString)
+  public final String a()
   {
-    image = paramString;
-    return this;
+    return scopeId;
   }
   
-  public final bjc b(String paramString)
+  public final void a(String paramString)
   {
-    type = paramString;
-    return this;
+    scopeId = paramString;
   }
   
-  public boolean equals(Object paramObject)
+  public final Long b()
+  {
+    return userId;
+  }
+  
+  public final void b(String paramString)
+  {
+    chatToken = paramString;
+  }
+  
+  public final String c()
+  {
+    return salt;
+  }
+  
+  public final void c(String paramString)
+  {
+    mac = paramString;
+  }
+  
+  public final Long d()
+  {
+    return expires;
+  }
+  
+  public final String e()
+  {
+    return signature;
+  }
+  
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -32,15 +69,25 @@ public class bjc
       return false;
     }
     paramObject = (bjc)paramObject;
-    return new EqualsBuilder().append(image, image).append(type, type).isEquals();
+    return new EqualsBuilder().append(scopeId, scopeId).append(userId, userId).append(salt, salt).append(expires, expires).append(signature, signature).append(chatToken, chatToken).append(mac, mac).isEquals();
   }
   
-  public int hashCode()
+  public final String f()
   {
-    return new HashCodeBuilder().append(image).append(type).toHashCode();
+    return chatToken;
   }
   
-  public String toString()
+  public final String g()
+  {
+    return mac;
+  }
+  
+  public final int hashCode()
+  {
+    return new HashCodeBuilder().append(scopeId).append(userId).append(salt).append(expires).append(signature).append(chatToken).append(mac).toHashCode();
+  }
+  
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

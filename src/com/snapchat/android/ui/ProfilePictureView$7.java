@@ -10,7 +10,7 @@ final class ProfilePictureView$7
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    ProfilePictureView.d(a).q();
+    ProfilePictureView.d(a).r();
   }
 }
 

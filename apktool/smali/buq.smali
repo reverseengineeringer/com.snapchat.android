@@ -1,207 +1,958 @@
 .class public final Lbuq;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ljavax/inject/Provider;
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Ljavax/inject/Provider",
-        "<TT;>;"
+        Lbuq$a;,
+        Lbuq$b;
     }
 .end annotation
 
 
 # static fields
-.field static final synthetic a:Z
+.field public static final a:I
 
-.field private static final b:Ljava/lang/Object;
+.field public static b:I
+
+.field private static final d:Ljava/util/List;
 
 
 # instance fields
-.field private final c:Lbuo;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuo",
-            "<TT;>;"
-        }
-    .end annotation
-.end field
+.field c:Lbrc;
 
-.field private volatile d:Ljava/lang/Object;
+.field private e:Lbre;
+
+.field private f:Lbrc;
+
+.field private g:Lbvd;
+
+.field private h:Lbum;
+
+.field private i:Lbtx;
+
+.field private j:I
+
+.field private k:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
     .prologue
-    .line 26
-    const-class v0, Lbuq;
+    .line 30
+    sget v0, Lbvd$a;->b:I
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    sput v0, Lbuq;->a:I
+
+    .line 31
+    sget v0, Lbuq$b;->c:I
+
+    sput v0, Lbuq;->b:I
+
+    .line 33
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    sput-object v0, Lbuq;->d:Ljava/util/List;
+
+    .line 37
+    :try_start_0
+    new-instance v0, Ljava/net/URL;
+
+    const-string v1, "https://www.google.com"
+
+    invoke-direct {v0, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+
+    .line 38
+    const-class v1, Ljava/net/URL;
+
+    const-class v2, Ljava/net/URLStreamHandler;
+
+    invoke-static {v1, v2}, Lbur;->a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+
+    move-result-object v1
+
+    .line 39
+    invoke-static {v1, v0}, Lbur;->a(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/net/URLStreamHandler;
+
+    .line 48
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "okhttp"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
+    const/16 v1, 0x13
+
+    if-lt v0, v1, :cond_0
+
+    .line 49
+    sget v0, Lbuq$b;->a:I
+
+    sput v0, Lbuq;->b:I
+
+    .line 56
     :goto_0
-    sput-boolean v0, Lbuq;->a:Z
-
-    .line 27
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lbuq;->b:Ljava/lang/Object;
-
     return-void
 
-    .line 26
+    .line 51
     :cond_0
-    const/4 v0, 0x0
+    sget v0, Lbuq$b;->b:I
+
+    sput v0, Lbuq;->b:I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 54
+    :catch_0
+    move-exception v0
+
+    sget v0, Lbuq$b;->c:I
+
+    sput v0, Lbuq;->b:I
 
     goto :goto_0
 .end method
 
-.method private constructor <init>(Lbuo;)V
+.method public constructor <init>(Lbum;Lbtx;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuo",
-            "<TT;>;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 32
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
-    sget-object v0, Lbuq;->b:Ljava/lang/Object;
+    .line 67
+    sget v0, Lbuq;->b:I
 
-    iput-object v0, p0, Lbuq;->d:Ljava/lang/Object;
+    iput v0, p0, Lbuq;->j:I
 
-    .line 33
-    sget-boolean v0, Lbuq;->a:Z
+    .line 68
+    sget v0, Lbuq;->a:I
 
-    if-nez v0, :cond_0
+    iput v0, p0, Lbuq;->k:I
 
-    if-nez p1, :cond_0
+    .line 81
+    iput-object p1, p0, Lbuq;->h:Lbum;
 
-    new-instance v0, Ljava/lang/AssertionError;
+    .line 82
+    iput-object p2, p0, Lbuq;->i:Lbtx;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 34
-    :cond_0
-    iput-object p1, p0, Lbuq;->c:Lbuo;
-
-    .line 35
+    .line 83
     return-void
 .end method
 
-.method public static a(Lbuo;)Ljavax/inject/Provider;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lbuo",
-            "<TT;>;)",
-            "Ljavax/inject/Provider",
-            "<TT;>;"
-        }
-    .end annotation
+.method static a(Ljava/lang/Throwable;)V
+    .locals 2
 
     .prologue
-    .line 55
-    if-nez p0, :cond_0
+    .line 490
+    sget-object v1, Lbuq;->d:Ljava/util/List;
 
-    .line 56
-    new-instance v0, Ljava/lang/NullPointerException;
+    monitor-enter v1
 
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+    .line 491
+    :try_start_0
+    sget-object v0, Lbuq;->d:Ljava/util/List;
+
+    invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 492
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 494
+    invoke-static {}, Lbue;->g()V
+
+    .line 495
+    return-void
+
+    .line 492
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method static a(Ljavax/net/ssl/SSLSocketFactory;)V
+    .locals 3
+
+    .prologue
+    .line 348
+    invoke-static {}, Lorg/apache/http/conn/ssl/SSLSocketFactory;->getSocketFactory()Lorg/apache/http/conn/ssl/SSLSocketFactory;
+
+    move-result-object v0
+
+    .line 349
+    const-class v1, Lorg/apache/http/conn/ssl/SSLSocketFactory;
+
+    const-class v2, Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {v1, v2}, Lbur;->a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+
+    move-result-object v1
+
+    .line 350
+    invoke-virtual {v1, v0, p0}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 351
+    return-void
+.end method
+
+.method private static a(Ljava/net/SocketImplFactory;)Z
+    .locals 4
+
+    .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 416
+    :try_start_0
+    const-class v2, Ljava/net/Socket;
+
+    const-class v3, Ljava/net/SocketImplFactory;
+
+    invoke-static {v2, v3}, Lbur;->a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+    :try_end_0
+    .catch Lbta; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v2
+
+    .line 426
+    const/4 v3, 0x1
+
+    :try_start_1
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+
+    .line 427
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3, p0}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_3
+
+    .line 438
+    :goto_0
+    return v0
+
+    .line 420
+    :catch_0
+    move-exception v0
+
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    move v0, v1
+
+    .line 422
+    goto :goto_0
+
+    .line 428
+    :catch_1
+    move-exception v1
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    .line 430
+    :catch_2
+    move-exception v0
+
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    move v0, v1
+
+    .line 432
+    goto :goto_0
+
+    .line 433
+    :catch_3
+    move-exception v0
+
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    move v0, v1
+
+    .line 435
+    goto :goto_0
+.end method
+
+.method static c()Ljavax/net/ssl/SSLSocketFactory;
+    .locals 3
+
+    .prologue
+    .line 342
+    invoke-static {}, Lorg/apache/http/conn/ssl/SSLSocketFactory;->getSocketFactory()Lorg/apache/http/conn/ssl/SSLSocketFactory;
+
+    move-result-object v0
+
+    .line 343
+    const-class v1, Lorg/apache/http/conn/ssl/SSLSocketFactory;
+
+    const-class v2, Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-static {v1, v2}, Lbur;->a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+
+    move-result-object v1
+
+    .line 344
+    invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljavax/net/ssl/SSLSocketFactory;
+
+    return-object v0
+.end method
+
+.method public static d()V
+    .locals 3
+
+    .prologue
+    .line 498
+    sget-object v1, Lbuq;->d:Ljava/util/List;
+
+    monitor-enter v1
+
+    .line 499
+    :try_start_0
+    sget-object v0, Lbuq;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Throwable;
+
+    .line 500
+    invoke-static {v0}, Lbue;->a(Ljava/lang/Throwable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    .line 504
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
 
     throw v0
 
-    .line 58
+    .line 503
     :cond_0
-    new-instance v0, Lbuq;
+    :try_start_1
+    sget-object v0, Lbuq;->d:Ljava/util/List;
 
-    invoke-direct {v0, p0}, Lbuq;-><init>(Lbuo;)V
+    invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    return-object v0
+    .line 504
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-void
+.end method
+
+.method private e()Z
+    .locals 2
+
+    .prologue
+    .line 158
+    new-instance v0, Lbuq$a;
+
+    invoke-direct {v0, p0}, Lbuq$a;-><init>(Lbuq;)V
+
+    .line 162
+    new-instance v1, Ljava/lang/Thread;
+
+    invoke-direct {v1, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    .line 163
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
+
+    .line 165
+    :try_start_0
+    invoke-virtual {v1}, Ljava/lang/Thread;->join()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 168
+    :goto_0
+    iget-boolean v0, v0, Lbuq$a;->a:Z
+
+    .line 172
+    return v0
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+.end method
+
+.method private f()Z
+    .locals 5
+
+    .prologue
+    .line 210
+    const/4 v0, 0x0
+
+    .line 213
+    :try_start_0
+    new-instance v1, Lbvd;
+
+    iget v2, p0, Lbuq;->k:I
+
+    iget-object v3, p0, Lbuq;->h:Lbum;
+
+    iget-object v4, p0, Lbuq;->i:Lbtx;
+
+    invoke-direct {v1, v2, v3, v4}, Lbvd;-><init>(ILbum;Lbtx;)V
+
+    iput-object v1, p0, Lbuq;->g:Lbvd;
+
+    .line 218
+    iget-object v1, p0, Lbuq;->g:Lbvd;
+
+    invoke-virtual {v1}, Lbvd;->b()Z
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    .line 223
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+.end method
+
+.method private g()Z
+    .locals 6
+
+    .prologue
+    const/4 v1, 0x0
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    .line 358
+    .line 363
+    :try_start_0
+    const-class v0, Ljava/net/Socket;
+
+    const-class v4, Ljava/net/SocketImplFactory;
+
+    invoke-static {v0, v4}, Lbur;->a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    .line 364
+    const/4 v4, 0x0
+
+    invoke-static {v0, v4}, Lbur;->a(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/net/SocketImplFactory;
+    :try_end_0
+    .catch Lbta; {:try_start_0 .. :try_end_0} :catch_1
+
+    .line 370
+    if-nez v0, :cond_2
+
+    .line 372
+    :try_start_1
+    const-class v1, Ljava/net/Socket;
+
+    const-class v4, Ljava/net/SocketImpl;
+
+    invoke-static {v1, v4}, Lbur;->a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+
+    move-result-object v1
+
+    new-instance v4, Ljava/net/Socket;
+
+    invoke-direct {v4}, Ljava/net/Socket;-><init>()V
+
+    invoke-static {v1, v4}, Lbur;->a(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/net/SocketImpl;
+
+    if-nez v1, :cond_0
+
+    new-instance v0, Lbta;
+
+    const-string v1, "SocketImpl was null"
+
+    invoke-direct {v0, v1}, Lbta;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_1
+    .catch Lbta; {:try_start_1 .. :try_end_1} :catch_0
+
+    .line 373
+    :catch_0
+    move-exception v0
+
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    move v0, v2
+
+    .line 412
+    :goto_0
+    return v0
+
+    .line 365
+    :catch_1
+    move-exception v0
+
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    move v0, v2
+
+    .line 367
+    goto :goto_0
+
+    .line 372
+    :cond_0
+    :try_start_2
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_end_2
+    .catch Lbta; {:try_start_2 .. :try_end_2} :catch_0
+
+    move-result-object v1
+
+    .line 383
+    :cond_1
+    if-eqz v0, :cond_3
+
+    .line 384
+    :try_start_3
+    new-instance v1, Lbre;
+
+    iget-object v4, p0, Lbuq;->h:Lbum;
+
+    iget-object v5, p0, Lbuq;->i:Lbtx;
+
+    invoke-direct {v1, v0, v4, v5}, Lbre;-><init>(Ljava/net/SocketImplFactory;Lbum;Lbtx;)V
+
+    .line 389
+    invoke-static {v1}, Lbuq;->a(Ljava/net/SocketImplFactory;)Z
+    :try_end_3
+    .catch Lbta; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
+
+    move-object v0, v1
+
+    .line 411
+    :goto_1
+    iput-object v0, p0, Lbuq;->e:Lbre;
+
+    move v0, v3
+
+    .line 412
+    goto :goto_0
+
+    .line 377
+    :cond_2
+    instance-of v4, v0, Lbre;
+
+    if-eqz v4, :cond_1
+
+    move v0, v3
+
+    .line 379
+    goto :goto_0
+
+    .line 390
+    :cond_3
+    if-eqz v1, :cond_4
+
+    .line 391
+    :try_start_4
+    new-instance v0, Lbre;
+
+    iget-object v4, p0, Lbuq;->h:Lbum;
+
+    iget-object v5, p0, Lbuq;->i:Lbtx;
+
+    invoke-direct {v0, v1, v4, v5}, Lbre;-><init>(Ljava/lang/Class;Lbum;Lbtx;)V
+
+    .line 396
+    invoke-static {v0}, Ljava/net/Socket;->setSocketImplFactory(Ljava/net/SocketImplFactory;)V
+    :try_end_4
+    .catch Lbta; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+
+    goto :goto_1
+
+    .line 409
+    :catch_2
+    move-exception v0
+
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    move v0, v2
+
+    .line 403
+    goto :goto_0
+
+    .line 398
+    :cond_4
+    :try_start_5
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Null SocketImpl"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
+    :try_end_5
+    .catch Lbta; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
+
+    move v0, v2
+
+    .line 399
+    goto :goto_0
+
+    .line 404
+    :catch_3
+    move-exception v0
+
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    move v0, v2
+
+    .line 408
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
+.method public final a()Z
+    .locals 5
 
     .prologue
-    .line 41
-    iget-object v0, p0, Lbuq;->d:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    .line 42
-    sget-object v1, Lbuq;->b:Ljava/lang/Object;
+    .line 94
+    invoke-static {}, Lbrd;->c()Z
 
-    if-ne v0, v1, :cond_1
+    move-result v0
 
-    .line 43
-    monitor-enter p0
+    if-nez v0, :cond_1
 
-    .line 44
-    :try_start_0
-    iget-object v0, p0, Lbuq;->d:Ljava/lang/Object;
-
-    .line 45
-    sget-object v1, Lbuq;->b:Ljava/lang/Object;
-
-    if-ne v0, v1, :cond_0
-
-    .line 46
-    iget-object v0, p0, Lbuq;->c:Lbuo;
-
-    invoke-interface {v0}, Lbuo;->get()Ljava/lang/Object;
+    .line 96
+    invoke-static {}, Lbrd;->d()Ljava/lang/Throwable;
 
     move-result-object v0
 
-    iput-object v0, p0, Lbuq;->d:Ljava/lang/Object;
+    .line 97
+    invoke-static {v0}, Lbuq;->a(Ljava/lang/Throwable;)V
 
-    .line 48
+    .line 145
     :cond_0
-    monitor-exit p0
+    :goto_0
+    return v1
 
-    .line 50
+    .line 102
     :cond_1
-    return-object v0
+    :try_start_0
+    invoke-static {}, Lbrd;->e()V
+    :try_end_0
+    .catch Lbsz; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 48
-    :catchall_0
+    .line 108
+    invoke-direct {p0}, Lbuq;->g()Z
+
+    move-result v0
+
+    or-int/lit8 v0, v0, 0x0
+
+    .line 109
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x13
+
+    if-lt v1, v2, :cond_2
+
+    .line 110
+    invoke-direct {p0}, Lbuq;->e()Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    .line 128
+    :goto_1
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x11
+
+    if-lt v1, v2, :cond_5
+
+    .line 136
+    iget-object v1, p0, Lbuq;->h:Lbum;
+
+    iget-object v2, p0, Lbuq;->i:Lbtx;
+
+    invoke-static {v1, v2}, Lbvg;->a(Lbum;Lbtx;)Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    move v1, v0
+
+    .line 139
+    :goto_2
+    iget v0, p0, Lbuq;->j:I
+
+    sget v2, Lbuq$b;->a:I
+
+    if-ne v0, v2, :cond_4
+
+    .line 140
+    invoke-static {}, Ljavax/net/ssl/HttpsURLConnection;->getDefaultSSLSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
+
+    move-result-object v0
+
+    instance-of v2, v0, Lbrc;
+
+    if-eqz v2, :cond_3
+
+    check-cast v0, Lbrc;
+
+    iput-object v0, p0, Lbuq;->f:Lbrc;
+
+    :goto_3
+    or-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 104
+    :catch_0
     move-exception v0
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {}, Lbue;->f()V
 
-    throw v0
+    goto :goto_0
+
+    .line 112
+    :cond_2
+    invoke-virtual {p0}, Lbuq;->b()Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    goto :goto_1
+
+    .line 140
+    :cond_3
+    new-instance v2, Lbrc;
+
+    iget-object v3, p0, Lbuq;->h:Lbum;
+
+    iget-object v4, p0, Lbuq;->i:Lbtx;
+
+    invoke-direct {v2, v0, v3, v4}, Lbrc;-><init>(Ljavax/net/ssl/SSLSocketFactory;Lbum;Lbtx;)V
+
+    iput-object v2, p0, Lbuq;->f:Lbrc;
+
+    iget-object v0, p0, Lbuq;->f:Lbrc;
+
+    invoke-static {v0}, Ljavax/net/ssl/HttpsURLConnection;->setDefaultSSLSocketFactory(Ljavax/net/ssl/SSLSocketFactory;)V
+
+    goto :goto_3
+
+    .line 141
+    :cond_4
+    iget v0, p0, Lbuq;->j:I
+
+    sget v2, Lbuq$b;->b:I
+
+    if-ne v0, v2, :cond_0
+
+    .line 142
+    invoke-direct {p0}, Lbuq;->f()Z
+
+    move-result v0
+
+    or-int/2addr v1, v0
+
+    goto :goto_0
+
+    :cond_5
+    move v1, v0
+
+    goto :goto_2
+.end method
+
+.method public final b()Z
+    .locals 5
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 289
+    :try_start_0
+    invoke-static {}, Lbuq;->c()Ljavax/net/ssl/SSLSocketFactory;
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Lbta; {:try_start_0 .. :try_end_0} :catch_3
+
+    move-result-object v1
+
+    .line 308
+    if-nez v1, :cond_1
+
+    .line 316
+    new-instance v1, Ljava/lang/NullPointerException;
+
+    const-string v2, "Delegate factory was null"
+
+    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    .line 338
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 294
+    :catch_0
+    move-exception v1
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    .line 297
+    :catch_1
+    move-exception v1
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    .line 300
+    :catch_2
+    move-exception v1
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    .line 303
+    :catch_3
+    move-exception v1
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    .line 318
+    :cond_1
+    instance-of v2, v1, Lbrc;
+
+    if-nez v2, :cond_0
+
+    .line 322
+    new-instance v2, Lbrc;
+
+    iget-object v3, p0, Lbuq;->h:Lbum;
+
+    iget-object v4, p0, Lbuq;->i:Lbtx;
+
+    invoke-direct {v2, v1, v3, v4}, Lbrc;-><init>(Ljavax/net/ssl/SSLSocketFactory;Lbum;Lbtx;)V
+
+    .line 325
+    :try_start_1
+    invoke-static {v2}, Lbuq;->a(Ljavax/net/ssl/SSLSocketFactory;)V
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Lbta; {:try_start_1 .. :try_end_1} :catch_6
+
+    .line 337
+    iput-object v2, p0, Lbuq;->c:Lbrc;
+
+    .line 338
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    .line 326
+    :catch_4
+    move-exception v1
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    .line 329
+    :catch_5
+    move-exception v1
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    .line 332
+    :catch_6
+    move-exception v1
+
+    invoke-static {v1}, Lbuq;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
 .end method

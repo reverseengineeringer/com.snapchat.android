@@ -5,8 +5,8 @@ import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.android.model.chat.ChatConversation;
 import com.snapchat.android.model.chat.ChatFeedItem;
 import com.snapchat.android.model.chat.ChatFeedItem.a;
@@ -24,12 +24,12 @@ public class FeedReplayAnimationView
     super(paramContext, paramAttributeSet);
   }
   
-  private static boolean a(@cgb ChatFeedItem.a parama)
+  private static boolean a(@chc ChatFeedItem.a parama)
   {
     return System.currentTimeMillis() - frivolousAnimationTime <= 500L;
   }
   
-  public void setDisplayedIcon(@cgc List<ChatFeedItem> paramList, @cgc ChatConversation paramChatConversation)
+  public void setDisplayedIcon(@chd List<ChatFeedItem> paramList, @chd ChatConversation paramChatConversation)
   {
     setBackgroundResource(0);
     c = Long.MIN_VALUE;

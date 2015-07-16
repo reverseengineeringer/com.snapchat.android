@@ -1,23 +1,12 @@
+import android.graphics.Bitmap;
+import android.util.DisplayMetrics;
+
 public final class awy
+  extends awz
 {
-  @cgc
-  public final ayc mAlgorithm;
-  @cgb
-  public final awp mCache;
-  @cgb
-  public final String mKey;
-  
-  public awy(@cgb awp paramawp, @cgb String paramString, @cgc ayc paramayc)
+  public awy(Bitmap paramBitmap, DisplayMetrics paramDisplayMetrics)
   {
-    if (paramawp == null) {
-      throw new NullPointerException("cache is null");
-    }
-    if (paramString == null) {
-      throw new NullPointerException("key is null");
-    }
-    mCache = paramawp;
-    mKey = paramString;
-    mAlgorithm = paramayc;
+    super(paramBitmap, paramDisplayMetrics);
   }
 }
 

@@ -1,18 +1,40 @@
-import com.snapchat.android.discover.controller.DiscoverMediaCategory;
+import com.snapchat.android.analytics.framework.UpdateSnapsAnalyticsPlatform;
+import com.snapchat.android.database.table.DbTable;
+import com.snapchat.android.database.table.UpdateSnapsAnalyticsTable;
+import javax.inject.Provider;
 
-public abstract interface ace
+public final class ace
+  implements bvk<UpdateSnapsAnalyticsTable>
 {
-  public abstract void a();
+  private final bvk<DbTable<all>> b;
+  private final Provider<UpdateSnapsAnalyticsPlatform> c;
   
-  public abstract void a(@cgb acf paramacf);
+  static
+  {
+    if (!ace.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
+  }
   
-  public abstract void a(@cgb String paramString);
+  private ace(bvk<DbTable<all>> parambvk, Provider<UpdateSnapsAnalyticsPlatform> paramProvider)
+  {
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider;
+  }
   
-  public abstract void b();
-  
-  public abstract void c();
-  
-  public abstract DiscoverMediaCategory d();
+  public static bvk<UpdateSnapsAnalyticsTable> a(bvk<DbTable<all>> parambvk, Provider<UpdateSnapsAnalyticsPlatform> paramProvider)
+  {
+    return new ace(parambvk, paramProvider);
+  }
 }
 
 /* Location:

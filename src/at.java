@@ -1,10 +1,10 @@
 public abstract class at
-  extends ev
+  extends fe
 {
   static
   {
-    cfk localcfk = new cfk("ChunkOffsetBox.java", at.class);
-    a = localcfk.a("method-execution", localcfk.a("1", "toString", "com.coremedia.iso.boxes.ChunkOffsetBox", "", "", "", "java.lang.String"), 17);
+    cgl localcgl = new cgl("ChunkOffsetBox.java", at.class);
+    a = localcgl.a("method-execution", localcgl.a("1", "toString", "com.coremedia.iso.boxes.ChunkOffsetBox", "", "", "", "java.lang.String"), 17);
   }
   
   public at(String paramString)
@@ -16,9 +16,9 @@ public abstract class at
   
   public String toString()
   {
-    cek localcek = cfk.a(a, this, this);
-    ez.a();
-    ez.a(localcek);
+    cfl localcfl = cgl.a(a, this, this);
+    fi.a();
+    fi.a(localcfl);
     return getClass().getSimpleName() + "[entryCount=" + a().length + "]";
   }
 }

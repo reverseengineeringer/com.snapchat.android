@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     .line 116
     :cond_0

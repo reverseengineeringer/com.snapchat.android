@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1169
+    .line 1194
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$29;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,19 +40,19 @@
     .locals 2
 
     .prologue
-    .line 1172
+    .line 1197
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1173
+    .line 1198
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$29;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->m(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 1174
+    .line 1199
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$29;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->e(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lcom/snapchat/android/ui/LockingAboveTheFoldListView;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c()V
 
-    .line 1177
+    .line 1202
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1185
+    .line 1210
     :cond_0
     const/4 v0, 0x0
 

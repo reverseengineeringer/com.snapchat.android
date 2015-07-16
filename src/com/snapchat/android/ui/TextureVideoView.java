@@ -26,9 +26,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.MediaController;
 import android.widget.MediaController.MediaPlayerControl;
 import android.widget.VideoView;
-import aoz;
-import avl;
-import com.snapchat.android.Timber;
+import apv;
+import awj;
 import java.io.IOException;
 import java.util.Map;
 
@@ -290,9 +289,9 @@ public class TextureVideoView
       {
         if (D)
         {
-          n = new aoz();
+          n = new apv();
           if (o == 0) {
-            break label355;
+            break label315;
           }
           n.setAudioSessionId(o);
           n.setOnPreparedListener(h);
@@ -315,7 +314,7 @@ public class TextureVideoView
       }
       catch (IOException localIOException)
       {
-        Timber.f(i, "Unable to open content %s: %s", new Object[] { j, localIOException });
+        Uri localUri1 = j;
         l = -1;
         m = -1;
         H.onError(n, 1, 0);
@@ -325,13 +324,13 @@ public class TextureVideoView
       }
       catch (IllegalArgumentException localIllegalArgumentException)
       {
-        Timber.f(i, "Unable to open content %s: %s", new Object[] { j, localIllegalArgumentException });
+        Uri localUri2 = j;
         l = -1;
         m = -1;
         H.onError(n, 1, 0);
         return;
       }
-      label355:
+      label315:
       o = n.getAudioSessionId();
     }
   }
@@ -372,7 +371,7 @@ public class TextureVideoView
     return null;
   }
   
-  @avl
+  @awj
   public final void a()
   {
     if (n != null)
@@ -390,7 +389,7 @@ public class TextureVideoView
     }
   }
   
-  @avl
+  @awj
   public final void b()
   {
     a();
@@ -719,7 +718,7 @@ public class TextureVideoView
     setVideoURI(paramUri, null);
   }
   
-  @avl
+  @awj
   public void setVideoURI(Uri paramUri, Map<String, String> paramMap)
   {
     j = paramUri;

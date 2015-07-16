@@ -5,44 +5,29 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bki
 {
-  @SerializedName("email_pending_verification")
-  protected String emailPendingVerification;
-  @SerializedName("is_add_nearby_enabled")
-  protected Boolean isAddNearbyEnabled = Boolean.valueOf(true);
-  @SerializedName("is_email_verified")
-  protected Boolean isEmailVerified = Boolean.valueOf(false);
-  @SerializedName("is_high_accuracy_required_for_nearby")
-  protected Boolean isHighAccuracyRequiredForNearby = Boolean.valueOf(false);
-  @SerializedName("red_gear_duration_millis")
-  protected Long redGearDurationMillis = Long.valueOf(0L);
-  @SerializedName("require_phone_password_confirmed")
-  protected Boolean requirePhonePasswordConfirmed = Boolean.valueOf(false);
-  @SerializedName("suggested_friend_fetch_threshold_hours")
-  protected Integer suggestedFriendFetchThresholdHours = Integer.valueOf(168);
+  @SerializedName("screenshot_count")
+  protected Integer screenshotCount;
+  @SerializedName("view_count")
+  protected Integer viewCount;
   
-  public final Boolean a()
+  public final Integer a()
   {
-    return isEmailVerified;
+    return viewCount;
   }
   
-  public final String b()
+  public final void a(Integer paramInteger)
   {
-    return emailPendingVerification;
+    viewCount = paramInteger;
   }
   
-  public final Boolean c()
+  public final Integer b()
   {
-    return requirePhonePasswordConfirmed;
+    return screenshotCount;
   }
   
-  public final Long d()
+  public final void b(Integer paramInteger)
   {
-    return redGearDurationMillis;
-  }
-  
-  public final Integer e()
-  {
-    return suggestedFriendFetchThresholdHours;
+    screenshotCount = paramInteger;
   }
   
   public final boolean equals(Object paramObject)
@@ -54,22 +39,12 @@ public final class bki
       return false;
     }
     paramObject = (bki)paramObject;
-    return new EqualsBuilder().append(isEmailVerified, isEmailVerified).append(emailPendingVerification, emailPendingVerification).append(requirePhonePasswordConfirmed, requirePhonePasswordConfirmed).append(redGearDurationMillis, redGearDurationMillis).append(suggestedFriendFetchThresholdHours, suggestedFriendFetchThresholdHours).append(isAddNearbyEnabled, isAddNearbyEnabled).append(isHighAccuracyRequiredForNearby, isHighAccuracyRequiredForNearby).isEquals();
-  }
-  
-  public final Boolean f()
-  {
-    return isAddNearbyEnabled;
-  }
-  
-  public final Boolean g()
-  {
-    return isHighAccuracyRequiredForNearby;
+    return new EqualsBuilder().append(viewCount, viewCount).append(screenshotCount, screenshotCount).isEquals();
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(isEmailVerified).append(emailPendingVerification).append(requirePhonePasswordConfirmed).append(redGearDurationMillis).append(suggestedFriendFetchThresholdHours).append(isAddNearbyEnabled).append(isHighAccuracyRequiredForNearby).toHashCode();
+    return new HashCodeBuilder().append(viewCount).append(screenshotCount).toHashCode();
   }
   
   public final String toString()

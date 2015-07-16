@@ -30,23 +30,23 @@
 .method constructor <init>(Lcom/snapchat/android/model/chat/ChatFeedItem;Lcom/snapchat/android/model/chat/ChatFeedItem;Landroid/view/View;Landroid/view/View;Lcom/snapchat/android/fragments/chat/ChatMediaExpansionCalculator$ScrollDirection;)V
     .locals 0
     .param p1    # Lcom/snapchat/android/model/chat/ChatFeedItem;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/model/chat/ChatFeedItem;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Landroid/view/View;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Landroid/view/View;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p5    # Lcom/snapchat/android/fragments/chat/ChatMediaExpansionCalculator$ScrollDirection;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

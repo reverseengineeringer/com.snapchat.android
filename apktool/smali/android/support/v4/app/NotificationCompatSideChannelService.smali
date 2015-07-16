@@ -214,3 +214,23 @@
 
     goto :goto_0
 .end method
+
+.method public onCreate()V
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatSideChannelService;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatSideChannelService;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
+    invoke-super {p0}, Landroid/app/Service;->onCreate()V
+
+    return-void
+.end method

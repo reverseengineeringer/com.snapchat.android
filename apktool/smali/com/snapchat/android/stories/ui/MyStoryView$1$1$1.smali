@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laom$a;
+.implements Lapi$a;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 112
+    .line 116
     iput-object p1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 115
+    .line 119
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
 
     iget-object v0, v0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
@@ -61,7 +61,7 @@
 
     move-result-object v0
 
-    .line 117
+    .line 121
     iget-object v1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
 
     iget-object v1, v1, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
@@ -74,13 +74,13 @@
 
     const/high16 v2, -0x1000000
 
-    invoke-static {v0, v2}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Ljava/lang/String;I)Lbbg;
+    invoke-static {v0, v2}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Ljava/lang/String;I)Lbcg;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 118
+    .line 122
     return-void
 .end method
 
@@ -88,7 +88,7 @@
     .locals 0
 
     .prologue
-    .line 120
+    .line 124
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .locals 3
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
 
     iget-object v0, v0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    .line 125
+    .line 129
     iget-object v1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
 
     iget-object v1, v1, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
@@ -130,13 +130,13 @@
 
     const/high16 v2, -0x1000000
 
-    invoke-static {v0, v2}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Ljava/lang/String;I)Lbbg;
+    invoke-static {v0, v2}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Ljava/lang/String;I)Lbcg;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 126
+    .line 130
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
 
     iget-object v0, v0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
@@ -147,9 +147,9 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/snapchat/android/stories/ui/MyStoryView$a;->a()V
+    invoke-interface {v0}, Lcom/snapchat/android/stories/ui/MyStoryView$a;->c()V
 
-    .line 127
+    .line 131
     return-void
 .end method
 
@@ -157,7 +157,7 @@
     .locals 3
 
     .prologue
-    .line 130
+    .line 134
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
 
     iget-object v0, v0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
@@ -178,7 +178,7 @@
 
     move-result-object v0
 
-    .line 132
+    .line 136
     iget-object v1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
 
     iget-object v1, v1, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
@@ -191,12 +191,12 @@
 
     sget v2, Lcom/snapchat/android/notification/AndroidNotificationManager;->a:I
 
-    invoke-static {v0, v2}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Ljava/lang/String;I)Lbbg;
+    invoke-static {v0, v2}, Lcom/snapchat/android/stories/ui/MyStoryView;->a(Ljava/lang/String;I)Lbcg;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 134
+    .line 138
     return-void
 .end method

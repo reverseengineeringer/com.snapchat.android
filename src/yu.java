@@ -1,14 +1,30 @@
-import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
-
-public abstract interface yu
+public final class yu
+  implements bvp<yt>
 {
-  public abstract void a(@cgb aio paramaio);
+  private final bvk<yt> b;
   
-  public abstract void a(@cgb aje paramaje);
+  static
+  {
+    if (!yu.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
+  }
   
-  public abstract void a(@cgb aje paramaje, @cgb aio paramaio);
+  private yu(bvk<yt> parambvk)
+  {
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+  }
   
-  public abstract void a(@cgb aje paramaje, @cgb SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt);
+  public static bvp<yt> a(bvk<yt> parambvk)
+  {
+    return new yu(parambvk);
+  }
 }
 
 /* Location:

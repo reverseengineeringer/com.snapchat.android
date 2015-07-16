@@ -23,19 +23,19 @@
 .method public constructor <init>(Landroid/media/MediaCodec;Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;IZ)V
     .locals 3
     .param p1    # Landroid/media/MediaCodec;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/view/Surface;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Landroid/media/MediaCrypto;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -186,15 +186,15 @@
 .method private configureCodec(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
     .locals 3
     .param p1    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/view/Surface;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Landroid/media/MediaCrypto;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

@@ -1,45 +1,15 @@
-import android.app.KeyguardManager;
-import android.content.Context;
-import android.content.Intent;
-import com.snapchat.android.analytics.AnalyticsEvents;
-import com.snapchat.android.database.table.DbTable.DatabaseTable;
-import com.snapchat.android.fragments.chat.ChatFragment;
-import com.snapchat.android.model.chat.ChatConversation;
-
 public final class ame
-  implements amk
 {
-  private final Intent a;
+  public final String a;
+  public final String b;
+  public final long c;
   
-  public ame(Intent paramIntent)
+  public ame(@chc String paramString1, @chc String paramString2, long paramLong)
   {
-    a = paramIntent;
+    a = ((String)co.a(paramString2));
+    b = ((String)co.a(paramString1));
+    c = paramLong;
   }
-  
-  public final Intent a()
-  {
-    return a;
-  }
-  
-  public final void a(Context paramContext)
-  {
-    if (a == null) {
-      return;
-    }
-    Object localObject = a.getStringExtra("conversationId");
-    ajv localajv = ajv.a(paramContext);
-    localObject = ym.a((String)localObject);
-    if (localObject != null)
-    {
-      AnalyticsEvents.a(((KeyguardManager)paramContext.getSystemService("keyguard")).inKeyguardRestrictedInputMode(), ajx.l(), ((ChatConversation)localObject).q());
-      mIsUserInConversation = false;
-      ((ChatConversation)localObject).r();
-    }
-    localajv.a(new DbTable.DatabaseTable[] { DbTable.DatabaseTable.CONVERSATION });
-    ChatFragment.o();
-  }
-  
-  public final void f() {}
 }
 
 /* Location:

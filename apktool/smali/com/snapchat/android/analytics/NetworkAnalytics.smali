@@ -152,11 +152,11 @@
 .method private constructor <init>(Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
     .locals 1
     .param p1    # Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -201,23 +201,23 @@
 .method private a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
     .locals 2
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 505
+    .line 510
     iget-object v1, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mTimedMetricsMap:Ljava/util/Map;
 
     monitor-enter v1
 
-    .line 506
+    .line 511
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mTimedMetricsMap:Ljava/util/Map;
 
@@ -227,10 +227,10 @@
 
     check-cast v0, Ljava/util/Map;
 
-    .line 507
+    .line 512
     if-eqz v0, :cond_0
 
-    .line 508
+    .line 513
     invoke-interface {v0, p2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -239,7 +239,7 @@
 
     monitor-exit v1
 
-    .line 510
+    .line 515
     :goto_0
     return-object v0
 
@@ -250,7 +250,7 @@
 
     goto :goto_0
 
-    .line 511
+    .line 516
     :catchall_0
     move-exception v0
 
@@ -264,25 +264,25 @@
 .method private a(Ljava/lang/String;Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;Ljava/util/UUID;)V
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Ljava/util/UUID;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
     const/4 v3, 0x0
 
-    .line 446
+    .line 447
     invoke-direct {p0, p1, p3}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/util/UUID;)V
 
-    .line 448
+    .line 449
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v1, "from_notification"
@@ -293,48 +293,48 @@
 
     invoke-virtual {v0, p1, v1, v2, v3}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 449
+    .line 450
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v1, "context"
 
-    invoke-static {p2}, Lath;->a(Ljava/lang/Enum;)Ljava/lang/String;
+    invoke-static {p2}, Laug;->a(Ljava/lang/Enum;)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 450
+    .line 451
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     invoke-virtual {v0, p1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->b(Ljava/lang/String;)V
 
-    .line 451
+    .line 452
     return-void
 .end method
 
 .method private a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
     .locals 3
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/android/analytics/framework/EasyMetric;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 522
+    .line 527
     iget-object v1, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mTimedMetricsMap:Ljava/util/Map;
 
     monitor-enter v1
 
-    .line 523
+    .line 528
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mTimedMetricsMap:Ljava/util/Map;
 
@@ -344,24 +344,24 @@
 
     check-cast v0, Ljava/util/Map;
 
-    .line 524
+    .line 529
     if-nez v0, :cond_0
 
-    .line 525
+    .line 530
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 527
+    .line 532
     :cond_0
     invoke-interface {v0, p2, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 528
+    .line 533
     iget-object v2, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mTimedMetricsMap:Ljava/util/Map;
 
     invoke-interface {v2, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 529
+    .line 534
     monitor-exit v1
 
     return-void
@@ -379,24 +379,24 @@
 .method private a(Ljava/lang/String;Ljava/util/UUID;)V
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/util/UUID;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 472
+    .line 477
     if-nez p2, :cond_1
 
-    .line 494
+    .line 499
     :cond_0
     :goto_0
     return-void
 
-    .line 476
+    .line 481
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mRequestTaskResponseMap:Ljava/util/Map;
 
@@ -406,10 +406,10 @@
 
     check-cast v0, Ljava/util/Map;
 
-    .line 477
+    .line 482
     if-eqz v0, :cond_0
 
-    .line 478
+    .line 483
     iget-object v1, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v2, "reachability"
@@ -422,7 +422,7 @@
 
     invoke-virtual {v1, p1, v2, v3}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 479
+    .line 484
     const-string v1, "status_code"
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -435,12 +435,12 @@
 
     move-result v1
 
-    .line 480
+    .line 485
     iget-object v2, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v3, "success"
 
-    invoke-static {v1}, Latq;->a(I)Z
+    invoke-static {v1}, Lauo;->a(I)Z
 
     move-result v1
 
@@ -450,7 +450,7 @@
 
     invoke-virtual {v2, p1, v3, v1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 481
+    .line 486
     iget-object v1, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v2, "return_size_bytes"
@@ -463,7 +463,7 @@
 
     invoke-virtual {v1, p1, v2, v3}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 482
+    .line 487
     const-string v1, "server_info"
 
     invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -472,19 +472,19 @@
 
     if-eqz v1, :cond_2
 
-    .line 483
+    .line 488
     const-string v1, "server_info"
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbiw;
+    check-cast v0, Lbjx;
 
-    .line 484
-    sget-object v1, Lbiw$a;->EQUAL:Lbiw$a;
+    .line 489
+    sget-object v1, Lbjx$a;->EQUAL:Lbjx$a;
 
-    invoke-virtual {v0}, Lbiw;->e()Lbiw$a;
+    invoke-virtual {v0}, Lbjx;->e()Lbjx$a;
 
     move-result-object v2
 
@@ -492,7 +492,7 @@
 
     const/4 v1, 0x1
 
-    .line 486
+    .line 491
     :goto_1
     iget-object v2, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
@@ -504,51 +504,51 @@
 
     invoke-virtual {v2, p1, v3, v1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 487
+    .line 492
     iget-object v1, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v2, "server_latency"
 
-    invoke-virtual {v0}, Lbiw;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lbjx;->a()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v1, p1, v2, v3}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 488
+    .line 493
     iget-object v1, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v2, "response_checksum"
 
-    invoke-virtual {v0}, Lbiw;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lbjx;->b()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v1, p1, v2, v3}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 489
+    .line 494
     iget-object v1, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v2, "response_compare_result"
 
-    invoke-virtual {v0}, Lbiw;->d()Ljava/lang/String;
+    invoke-virtual {v0}, Lbjx;->d()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v1, p1, v2, v3}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 490
+    .line 495
     iget-object v1, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v2, "response_compare_results_dict"
 
-    invoke-virtual {v0}, Lbiw;->f()Ljava/lang/String;
+    invoke-virtual {v0}, Lbjx;->f()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, p1, v2, v0}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 492
+    .line 497
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mRequestTaskResponseMap:Ljava/util/Map;
 
@@ -556,7 +556,7 @@
 
     goto/16 :goto_0
 
-    .line 484
+    .line 489
     :cond_3
     const/4 v1, 0x0
 
@@ -566,72 +566,78 @@
 
 # virtual methods
 .method public final a(Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;)V
-    .locals 4
+    .locals 3
 
     .prologue
-    .line 458
-    iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    const-string v1, "PULL_TO_REFRESH"
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Z)V
-
     .line 459
-    iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    const-string v0, "PULL_TO_REFRESH"
 
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->b(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    move-result-object v0
+
+    const-string v1, "context"
+
+    invoke-static {p1}, Laug;->a(Ljava/lang/Enum;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    move-result-object v0
+
+    .line 461
     const-string v1, "PULL_TO_REFRESH"
 
-    const-string v2, "context"
+    const-string v2, "PULL_TO_REFRESH"
 
-    invoke-static {p1}, Lath;->a(Ljava/lang/Enum;)Ljava/lang/String;
+    invoke-direct {p0, v1, v2, v0}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
 
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    .line 460
+    .line 462
     return-void
 .end method
 
 .method public final a(Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;Ljava/util/UUID;)V
     .locals 1
     .param p1    # Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/util/UUID;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 415
+    .line 416
     const-string v0, "CONTENT_READY"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;Ljava/util/UUID;)V
 
-    .line 416
+    .line 417
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;IJLjava/lang/String;Lbiw;Z)V
+.method public final a(Ljava/lang/String;Ljava/lang/String;IJLjava/lang/String;Lbjx;Z)V
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p6    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p7    # Lbiw;
-        .annotation build Lcgc;
+    .param p7    # Lbjx;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -671,9 +677,9 @@
 
     if-eqz p7, :cond_0
 
-    sget-object v0, Lbiw$a;->EQUAL:Lbiw$a;
+    sget-object v0, Lbjx$a;->EQUAL:Lbjx$a;
 
-    invoke-virtual {p7}, Lbiw;->e()Lbiw$a;
+    invoke-virtual {p7}, Lbjx;->e()Lbjx$a;
 
     move-result-object v2
 
@@ -723,15 +729,15 @@
 .method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -782,22 +788,22 @@
     return-void
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;J)V
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p5    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -843,42 +849,46 @@
 
     invoke-virtual {v1, v2, p2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 266
+    move-result-object v1
+
+    invoke-virtual {v1, p6, p7}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(J)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 267
     invoke-direct {p0, p1, p2, v0}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
 
-    .line 268
+    .line 269
     return-void
 .end method
 
 .method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     .locals 5
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 304
+    .line 305
     invoke-direct {p0, p1, p3}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     move-result-object v0
 
-    .line 305
+    .line 306
     if-eqz v0, :cond_0
 
-    .line 306
+    .line 307
     const-string v1, "media_size"
 
     invoke-static {p5, p6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -899,63 +909,63 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 308
+    .line 309
     invoke-direct {p0, p1, p3, v0}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
 
-    .line 311
+    .line 312
     :cond_0
     invoke-direct {p0, p2, p3}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     move-result-object v0
 
-    .line 312
+    .line 313
     if-nez v0, :cond_1
 
-    .line 313
+    .line 314
     new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     invoke-direct {v0, p2}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
 
-    .line 315
+    .line 316
     :cond_1
     const-string v1, "path"
 
     invoke-virtual {v0, v1, p4}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 316
+    .line 317
     invoke-direct {p0, p2, p3, v0}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
 
-    .line 317
+    .line 318
     return-void
 .end method
 
 .method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZDZ)V
     .locals 5
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     const/4 v3, 0x0
 
-    .line 366
+    .line 367
     invoke-direct {p0, p1, p3}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     move-result-object v0
 
-    .line 367
+    .line 368
     if-eqz v0, :cond_0
 
-    .line 368
+    .line 369
     const-string v1, "success"
 
     invoke-static {p7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -989,16 +999,16 @@
 
     invoke-virtual {v0, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
-    .line 374
+    .line 375
     :cond_0
     invoke-direct {p0, p2, p3}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     move-result-object v1
 
-    .line 375
+    .line 376
     if-eqz v1, :cond_1
 
-    .line 376
+    .line 377
     if-eqz p7, :cond_3
 
     const-string v0, "SNAP_SENT_SUCCESS"
@@ -1021,17 +1031,17 @@
 
     invoke-virtual {v0, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
-    .line 380
+    .line 381
     :cond_1
     return-void
 
-    .line 368
+    .line 369
     :cond_2
     const-string v0, "image"
 
     goto :goto_0
 
-    .line 376
+    .line 377
     :cond_3
     const-string v0, "SNAP_SENT_FAILED"
 
@@ -1046,24 +1056,35 @@
 .method public final a(Ljava/util/UUID;)V
     .locals 2
     .param p1    # Ljava/util/UUID;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 467
+    .line 469
     const-string v0, "PULL_TO_REFRESH"
 
     invoke-direct {p0, v0, p1}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/util/UUID;)V
 
-    .line 468
-    iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    .line 470
+    const-string v0, "PULL_TO_REFRESH"
 
     const-string v1, "PULL_TO_REFRESH"
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->b(Ljava/lang/String;)V
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 469
+    move-result-object v0
+
+    .line 471
+    if-eqz v0, :cond_0
+
+    .line 472
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b(Z)V
+
+    .line 474
+    :cond_0
     return-void
 .end method
 
@@ -1073,41 +1094,41 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 433
+    .line 434
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v1, "FIRST_ITEM_READY"
 
     invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Z)V
 
-    .line 434
+    .line 435
     iget-object v0, p0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     const-string v1, "CONTENT_READY"
 
     invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Z)V
 
-    .line 435
+    .line 436
     return-void
 .end method
 
 .method public final b(Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;Ljava/util/UUID;)V
     .locals 1
     .param p1    # Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/util/UUID;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 429
+    .line 430
     const-string v0, "FIRST_ITEM_READY"
 
     invoke-direct {p0, v0, p1, p2}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;Ljava/util/UUID;)V
 
-    .line 430
+    .line 431
     return-void
 .end method

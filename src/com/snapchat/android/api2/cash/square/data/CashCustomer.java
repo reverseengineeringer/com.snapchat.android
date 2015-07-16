@@ -1,22 +1,22 @@
 package com.snapchat.android.api2.cash.square.data;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.google.gson.annotations.SerializedName;
 
 public final class CashCustomer
 {
   @SerializedName("email")
-  @cgc
+  @chd
   private final String mEmail;
   @SerializedName("id")
-  @cgb
+  @chc
   private final String mId;
   @SerializedName("phone_number")
-  @cgc
+  @chd
   private final String mPhoneNumber;
   
-  public CashCustomer(@cgb String paramString)
+  public CashCustomer(@chc String paramString)
   {
     mId = paramString;
     mEmail = null;

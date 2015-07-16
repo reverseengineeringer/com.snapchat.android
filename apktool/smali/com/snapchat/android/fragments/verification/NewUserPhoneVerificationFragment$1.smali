@@ -45,17 +45,17 @@
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->c:Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lkv;
+    new-instance v0, Lln;
 
-    invoke-direct {v0}, Lkv;-><init>()V
+    invoke-direct {v0}, Lln;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 91
     :cond_0

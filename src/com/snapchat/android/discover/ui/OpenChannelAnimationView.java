@@ -17,12 +17,19 @@ public class OpenChannelAnimationView
   public ImageView a;
   public ChannelView b = null;
   public boolean c = false;
-  private Context d;
+  public boolean d = false;
+  private Context e;
+  
+  public OpenChannelAnimationView(Context paramContext)
+  {
+    super(paramContext);
+    e = paramContext;
+  }
   
   public OpenChannelAnimationView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    d = paramContext;
+    e = paramContext;
   }
   
   public static float a(float paramFloat1, float paramFloat2)
@@ -31,6 +38,16 @@ public class OpenChannelAnimationView
   }
   
   protected void onLayout(boolean paramBoolean, int paramInt1, int paramInt2, int paramInt3, int paramInt4) {}
+  
+  void setBackgroundCircle(ImageView paramImageView)
+  {
+    a = paramImageView;
+  }
+  
+  void setChannelView(ChannelView paramChannelView)
+  {
+    b = paramChannelView;
+  }
   
   public static abstract interface a
   {

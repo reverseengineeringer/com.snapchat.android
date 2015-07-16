@@ -1,73 +1,180 @@
-import java.net.Authenticator;
-import java.net.Authenticator.RequestorType;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.PasswordAuthentication;
-import java.net.Proxy;
-import java.net.Proxy.Type;
-import java.net.URL;
+import java.net.SocketException;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.concurrent.Executor;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public final class bmq
-  implements blh
 {
-  public static final blh a = new bmq();
-  
-  private static InetAddress a(Proxy paramProxy, URL paramURL)
+  private static final bmq a;
+  private final int b;
+  private final long c;
+  private final LinkedList<bmp> d = new LinkedList();
+  private Executor e = new ThreadPoolExecutor(0, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), bnq.c("OkHttp ConnectionPool"));
+  private final Runnable f = new Runnable()
   {
-    if ((paramProxy != null) && (paramProxy.type() != Proxy.Type.DIRECT)) {
-      return ((InetSocketAddress)paramProxy.address()).getAddress();
+    public final void run()
+    {
+      bmq.a(bmq.this);
     }
-    return InetAddress.getByName(paramURL.getHost());
+  };
+  
+  static
+  {
+    String str1 = System.getProperty("http.keepAlive");
+    String str2 = System.getProperty("http.keepAliveDuration");
+    String str3 = System.getProperty("http.maxConnections");
+    if (str2 != null) {}
+    for (long l = Long.parseLong(str2); (str1 != null) && (!Boolean.parseBoolean(str1)); l = 300000L)
+    {
+      a = new bmq(0, l);
+      return;
+    }
+    if (str3 != null)
+    {
+      a = new bmq(Integer.parseInt(str3), l);
+      return;
+    }
+    a = new bmq(5, l);
   }
   
-  public final bma a(Proxy paramProxy, bmc parambmc)
+  private bmq(int paramInt, long paramLong)
   {
-    List localList = parambmc.f();
-    parambmc = a;
-    URL localURL = parambmc.a();
-    int j = localList.size();
-    int i = 0;
-    while (i < j)
-    {
-      Object localObject = (blm)localList.get(i);
-      if ("Basic".equalsIgnoreCase(a))
-      {
-        localObject = Authenticator.requestPasswordAuthentication(localURL.getHost(), a(paramProxy, localURL), localURL.getPort(), localURL.getProtocol(), b, a, localURL, Authenticator.RequestorType.SERVER);
-        if (localObject != null)
-        {
-          paramProxy = blr.a(((PasswordAuthentication)localObject).getUserName(), new String(((PasswordAuthentication)localObject).getPassword()));
-          return parambmc.c().a("Authorization", paramProxy).a();
-        }
-      }
-      i += 1;
-    }
-    return null;
+    b = paramInt;
+    c = (paramLong * 1000L * 1000L);
   }
   
-  public final bma b(Proxy paramProxy, bmc parambmc)
+  public static bmq a()
   {
-    List localList = parambmc.f();
-    parambmc = a;
-    URL localURL = parambmc.a();
-    int j = localList.size();
-    int i = 0;
-    while (i < j)
+    return a;
+  }
+  
+  private boolean b()
+  {
+    int i;
+    bmp localbmp;
+    long l3;
+    try
     {
-      Object localObject = (blm)localList.get(i);
-      if ("Basic".equalsIgnoreCase(a))
+      if (d.isEmpty()) {
+        return false;
+      }
+      ArrayList localArrayList = new ArrayList();
+      i = 0;
+      long l2 = System.nanoTime();
+      l1 = c;
+      localListIterator = d.listIterator(d.size());
+      for (;;)
       {
-        InetSocketAddress localInetSocketAddress = (InetSocketAddress)paramProxy.address();
-        localObject = Authenticator.requestPasswordAuthentication(localInetSocketAddress.getHostName(), a(paramProxy, localURL), localInetSocketAddress.getPort(), localURL.getProtocol(), b, a, localURL, Authenticator.RequestorType.PROXY);
-        if (localObject != null)
+        if (!localListIterator.hasPrevious()) {
+          break label154;
+        }
+        localbmp = (bmp)localListIterator.previous();
+        l3 = localbmp.d() + c - l2;
+        if ((l3 > 0L) && (localbmp.b())) {
+          break;
+        }
+        localListIterator.remove();
+        localArrayList.add(localbmp);
+      }
+      if (!localbmp.c()) {
+        break label292;
+      }
+    }
+    finally {}
+    long l1 = Math.min(l1, l3);
+    i += 1;
+    break label295;
+    label154:
+    ListIterator localListIterator = d.listIterator(d.size());
+    label292:
+    label295:
+    label298:
+    for (;;)
+    {
+      if ((localListIterator.hasPrevious()) && (i > b))
+      {
+        localbmp = (bmp)localListIterator.previous();
+        if (localbmp.c())
         {
-          paramProxy = blr.a(((PasswordAuthentication)localObject).getUserName(), new String(((PasswordAuthentication)localObject).getPassword()));
-          return parambmc.c().a("Proxy-Authorization", paramProxy).a();
+          ((List)localObject).add(localbmp);
+          localListIterator.remove();
+          i -= 1;
+          break label298;
         }
       }
-      i += 1;
+      else
+      {
+        if (((List)localObject).isEmpty()) {
+          return true;
+        }
+        int j = ((List)localObject).size();
+        i = 0;
+        while (i < j)
+        {
+          bnq.a(getc);
+          i += 1;
+        }
+        return true;
+      }
+      break label298;
+      break;
     }
-    return null;
+  }
+  
+  public final bmp a(bmh parambmh)
+  {
+    for (;;)
+    {
+      try
+      {
+        ListIterator localListIterator = d.listIterator(d.size());
+        if (localListIterator.hasPrevious())
+        {
+          bmp localbmp2 = (bmp)localListIterator.previous();
+          if ((b.a.equals(parambmh)) && (localbmp2.b()) && (System.nanoTime() - localbmp2.d() < c))
+          {
+            localListIterator.remove();
+            boolean bool = localbmp2.e();
+            bmp localbmp1 = localbmp2;
+            if (!bool) {}
+            try
+            {
+              bno.a().a(c);
+              localbmp1 = localbmp2;
+              if ((localbmp1 != null) && (localbmp1.e())) {
+                d.addFirst(localbmp1);
+              }
+              return localbmp1;
+            }
+            catch (SocketException localSocketException)
+            {
+              bnq.a(c);
+              bno.a();
+              bno.a("Unable to tagSocket(): " + localSocketException);
+            }
+          }
+        }
+        else
+        {
+          Object localObject = null;
+        }
+      }
+      finally {}
+    }
+  }
+  
+  final void a(bmp parambmp)
+  {
+    boolean bool = d.isEmpty();
+    d.addFirst(parambmp);
+    if (bool) {
+      e.execute(f);
+    }
   }
 }
 

@@ -1,6 +1,8 @@
+import java.util.List;
+
 public abstract interface wc$a
 {
-  public abstract void a(byte[] paramArrayOfByte, wc.b paramb);
+  public abstract void a(List<vp> paramList);
 }
 
 /* Location:

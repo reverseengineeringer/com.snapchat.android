@@ -1,34 +1,21 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bkm
+public final class bkm
 {
-  @SerializedName("error_message")
-  protected String errorMessage;
-  @SerializedName("requested_username")
-  protected String requestedUsername;
-  @SerializedName("suggestions")
-  protected List<String> suggestions;
+  @SerializedName("needs_auth")
+  protected Boolean needsAuth;
+  @SerializedName("url")
+  protected String url;
   
   public final String a()
   {
-    return errorMessage;
+    return url;
   }
   
-  public final String b()
-  {
-    return requestedUsername;
-  }
-  
-  public final List<String> c()
-  {
-    return suggestions;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -37,15 +24,15 @@ public class bkm
       return false;
     }
     paramObject = (bkm)paramObject;
-    return new EqualsBuilder().append(errorMessage, errorMessage).append(requestedUsername, requestedUsername).append(suggestions, suggestions).isEquals();
+    return new EqualsBuilder().append(needsAuth, needsAuth).append(url, url).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(errorMessage).append(requestedUsername).append(suggestions).toHashCode();
+    return new HashCodeBuilder().append(needsAuth).append(url).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

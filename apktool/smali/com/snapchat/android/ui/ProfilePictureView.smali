@@ -361,7 +361,7 @@
     move-result v0
 
     .line 109
-    const v1, 0x7f0a0307
+    const v1, 0x7f0a0306
 
     if-ne v0, v1, :cond_3
 
@@ -413,27 +413,27 @@
 
     .line 113
     :cond_3
-    const v1, 0x7f0a0309
+    const v1, 0x7f0a0308
 
     if-ne v0, v1, :cond_4
 
     .line 114
     iget-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->r:Lcom/snapchat/android/ui/ProfilePictureView$a;
 
-    invoke-interface {v0}, Lcom/snapchat/android/ui/ProfilePictureView$a;->r()V
+    invoke-interface {v0}, Lcom/snapchat/android/ui/ProfilePictureView$a;->t()V
 
     goto :goto_1
 
     .line 115
     :cond_4
-    const v1, 0x7f0a030c
+    const v1, 0x7f0a030b
 
     if-ne v0, v1, :cond_5
 
     .line 116
     iget-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->r:Lcom/snapchat/android/ui/ProfilePictureView$a;
 
-    invoke-interface {v0}, Lcom/snapchat/android/ui/ProfilePictureView$a;->o()V
+    invoke-interface {v0}, Lcom/snapchat/android/ui/ProfilePictureView$a;->p()V
 
     goto :goto_1
 
@@ -441,7 +441,7 @@
     :cond_5
     iget-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->r:Lcom/snapchat/android/ui/ProfilePictureView$a;
 
-    invoke-interface {v0}, Lcom/snapchat/android/ui/ProfilePictureView$a;->n()V
+    invoke-interface {v0}, Lcom/snapchat/android/ui/ProfilePictureView$a;->o()V
 
     goto :goto_1
 .end method
@@ -454,7 +454,7 @@
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 78
-    const v0, 0x7f0a0307
+    const v0, 0x7f0a0306
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -465,7 +465,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->j:Landroid/widget/ImageButton;
 
     .line 79
-    const v0, 0x7f0a0309
+    const v0, 0x7f0a0308
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -476,7 +476,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->k:Landroid/widget/ImageButton;
 
     .line 80
-    const v0, 0x7f0a030a
+    const v0, 0x7f0a0309
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -487,7 +487,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->l:Landroid/widget/ProgressBar;
 
     .line 81
-    const v0, 0x7f0a030d
+    const v0, 0x7f0a030c
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -498,7 +498,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->m:Landroid/widget/ImageButton;
 
     .line 82
-    const v0, 0x7f0a030c
+    const v0, 0x7f0a030b
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -509,7 +509,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->n:Lcom/snapchat/android/ui/camera/TakeSnapButton;
 
     .line 83
-    const v0, 0x7f0a0304
+    const v0, 0x7f0a0303
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -520,7 +520,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->b:Landroid/widget/TextView;
 
     .line 84
-    const v0, 0x7f0a0305
+    const v0, 0x7f0a0304
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -531,7 +531,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->c:Landroid/widget/TextView;
 
     .line 85
-    const v0, 0x7f0a0306
+    const v0, 0x7f0a0305
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -542,7 +542,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->d:Landroid/widget/TextView;
 
     .line 86
-    const v0, 0x7f0a030b
+    const v0, 0x7f0a030a
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -553,7 +553,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->q:Landroid/view/ViewGroup;
 
     .line 87
-    const v0, 0x7f0a0303
+    const v0, 0x7f0a0302
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ProfilePictureView;->findViewById(I)Landroid/view/View;
 
@@ -575,33 +575,33 @@
     .line 91
     iget-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->j:Landroid/widget/ImageButton;
 
-    new-instance v1, Lasv;
+    new-instance v1, Latu;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/ProfilePictureView;->j:Landroid/widget/ImageButton;
 
-    invoke-direct {v1, v2}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v1, v2}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 92
     iget-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->k:Landroid/widget/ImageButton;
 
-    new-instance v1, Lasv;
+    new-instance v1, Latu;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/ProfilePictureView;->k:Landroid/widget/ImageButton;
 
-    invoke-direct {v1, v2}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v1, v2}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 93
     iget-object v0, p0, Lcom/snapchat/android/ui/ProfilePictureView;->m:Landroid/widget/ImageButton;
 
-    new-instance v1, Lasv;
+    new-instance v1, Latu;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/ProfilePictureView;->m:Landroid/widget/ImageButton;
 
-    invoke-direct {v1, v2}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v1, v2}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
@@ -685,7 +685,7 @@
     return-void
 .end method
 
-.method public setSnapcodeSvg(Lfl;)V
+.method public setSnapcodeSvg(Lfu;)V
     .locals 9
 
     .prologue
@@ -791,7 +791,7 @@
 
     .line 141
     :cond_0
-    invoke-virtual {p1}, Lfl;->a()Landroid/graphics/drawable/PictureDrawable;
+    invoke-virtual {p1}, Lfu;->a()Landroid/graphics/drawable/PictureDrawable;
 
     move-result-object v0
 

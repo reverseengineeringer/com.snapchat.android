@@ -1,16 +1,4 @@
-public final class bfu
-{
-  public static int a(long paramLong1, long paramLong2)
-  {
-    if (paramLong1 < paramLong2) {
-      return -1;
-    }
-    if (paramLong1 == paramLong2) {
-      return 0;
-    }
-    return 1;
-  }
-}
+public final class bfu {}
 
 /* Location:
  * Qualified Name:     bfu

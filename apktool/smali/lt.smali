@@ -1,26 +1,41 @@
-.class public Llt;
-.super Lhk;
+.class public final Llt;
+.super Lml;
 .source "SourceFile"
 
 
 # instance fields
-.field public userId:Ljava/lang/String;
+.field private additionalInfo:Ljava/lang/String;
+
+.field private final eventName:Ljava/lang/String;
+
+.field public username:Ljava/lang/String;
+
+.field public usernameIndexPos:Ljava/lang/Long;
+
+.field public usernameSuggestion:Ljava/lang/String;
+
+.field public usernameType:Lmm;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 7
-    invoke-direct {p0}, Lhk;-><init>()V
+    .line 10
+    invoke-direct {p0}, Lml;-><init>()V
+
+    .line 52
+    const-string v0, "REGISTRATION_USER_USERNAME_SUCCESS"
+
+    iput-object v0, p0, Llt;->eventName:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/util/Map;
+.method public final a()Ljava/util/Map;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -34,35 +49,90 @@
     .end annotation
 
     .prologue
-    .line 19
+    .line 59
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 21
-    iget-object v1, p0, Llt;->userId:Ljava/lang/String;
+    .line 61
+    const-string v1, "event_name"
 
-    if-eqz v1, :cond_0
-
-    const-string v1, "user_id"
-
-    iget-object v2, p0, Llt;->userId:Ljava/lang/String;
+    const-string v2, "REGISTRATION_USER_USERNAME_SUCCESS"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 22
+    .line 62
+    iget-object v1, p0, Llt;->additionalInfo:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "additional_info"
+
+    iget-object v2, p0, Llt;->additionalInfo:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 63
     :cond_0
-    invoke-super {p0}, Lhk;->a()Ljava/util/Map;
+    iget-object v1, p0, Llt;->username:Ljava/lang/String;
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "username"
+
+    iget-object v2, p0, Llt;->username:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 64
+    :cond_1
+    iget-object v1, p0, Llt;->usernameIndexPos:Ljava/lang/Long;
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "username_index_pos"
+
+    iget-object v2, p0, Llt;->usernameIndexPos:Ljava/lang/Long;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 65
+    :cond_2
+    iget-object v1, p0, Llt;->usernameSuggestion:Ljava/lang/String;
+
+    if-eqz v1, :cond_3
+
+    const-string v1, "username_suggestion"
+
+    iget-object v2, p0, Llt;->usernameSuggestion:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 66
+    :cond_3
+    iget-object v1, p0, Llt;->usernameType:Lmm;
+
+    if-eqz v1, :cond_4
+
+    const-string v1, "username_type"
+
+    iget-object v2, p0, Llt;->usernameType:Lmm;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 67
+    :cond_4
+    invoke-super {p0}, Lml;->a()Ljava/util/Map;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 24
+    .line 69
     return-object v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
     .prologue
@@ -70,15 +140,15 @@
 
     const/4 v1, 0x0
 
-    .line 29
+    .line 74
     if-ne p0, p1, :cond_1
 
-    .line 36
+    .line 85
     :cond_0
     :goto_0
     return v0
 
-    .line 30
+    .line 75
     :cond_1
     if-eqz p1, :cond_2
 
@@ -97,9 +167,9 @@
 
     goto :goto_0
 
-    .line 31
+    .line 76
     :cond_3
-    invoke-super {p0, p1}, Lhk;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Lml;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -109,20 +179,124 @@
 
     goto :goto_0
 
-    .line 33
+    .line 78
     :cond_4
     check-cast p1, Llt;
 
-    .line 35
-    iget-object v2, p0, Llt;->userId:Ljava/lang/String;
+    .line 80
+    iget-object v2, p0, Llt;->additionalInfo:Ljava/lang/String;
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
-    iget-object v2, p0, Llt;->userId:Ljava/lang/String;
+    iget-object v2, p0, Llt;->additionalInfo:Ljava/lang/String;
 
-    iget-object v3, p1, Llt;->userId:Ljava/lang/String;
+    iget-object v3, p1, Llt;->additionalInfo:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_7
+
+    :cond_5
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_6
+    iget-object v2, p1, Llt;->additionalInfo:Ljava/lang/String;
+
+    if-nez v2, :cond_5
+
+    .line 81
+    :cond_7
+    iget-object v2, p0, Llt;->username:Ljava/lang/String;
+
+    if-eqz v2, :cond_9
+
+    iget-object v2, p0, Llt;->username:Ljava/lang/String;
+
+    iget-object v3, p1, Llt;->username:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_a
+
+    :cond_8
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_9
+    iget-object v2, p1, Llt;->username:Ljava/lang/String;
+
+    if-nez v2, :cond_8
+
+    .line 82
+    :cond_a
+    iget-object v2, p0, Llt;->usernameIndexPos:Ljava/lang/Long;
+
+    if-eqz v2, :cond_c
+
+    iget-object v2, p0, Llt;->usernameIndexPos:Ljava/lang/Long;
+
+    iget-object v3, p1, Llt;->usernameIndexPos:Ljava/lang/Long;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_d
+
+    :cond_b
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_c
+    iget-object v2, p1, Llt;->usernameIndexPos:Ljava/lang/Long;
+
+    if-nez v2, :cond_b
+
+    .line 83
+    :cond_d
+    iget-object v2, p0, Llt;->usernameSuggestion:Ljava/lang/String;
+
+    if-eqz v2, :cond_f
+
+    iget-object v2, p0, Llt;->usernameSuggestion:Ljava/lang/String;
+
+    iget-object v3, p1, Llt;->usernameSuggestion:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_10
+
+    :cond_e
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_f
+    iget-object v2, p1, Llt;->usernameSuggestion:Ljava/lang/String;
+
+    if-nez v2, :cond_e
+
+    .line 84
+    :cond_10
+    iget-object v2, p0, Llt;->usernameType:Lmm;
+
+    if-eqz v2, :cond_11
+
+    iget-object v2, p0, Llt;->usernameType:Lmm;
+
+    iget-object v3, p1, Llt;->usernameType:Lmm;
+
+    invoke-virtual {v2, v3}, Lmm;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -133,45 +307,129 @@
 
     goto :goto_0
 
-    :cond_5
-    iget-object v2, p1, Llt;->userId:Ljava/lang/String;
+    :cond_11
+    iget-object v2, p1, Llt;->usernameType:Lmm;
 
     if-eqz v2, :cond_0
 
     goto :goto_1
 .end method
 
-.method public hashCode()I
-    .locals 2
+.method public final hashCode()I
+    .locals 3
 
     .prologue
-    .line 41
-    invoke-super {p0}, Lhk;->hashCode()I
+    const/4 v1, 0x0
+
+    .line 90
+    invoke-super {p0}, Lml;->hashCode()I
 
     move-result v0
 
-    .line 42
-    mul-int/lit8 v1, v0, 0x1f
+    .line 91
+    mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v0, p0, Llt;->userId:Ljava/lang/String;
+    iget-object v0, p0, Llt;->additionalInfo:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    iget-object v0, p0, Llt;->userId:Ljava/lang/String;
+    iget-object v0, p0, Llt;->additionalInfo:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
     :goto_0
+    add-int/2addr v0, v2
+
+    .line 92
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Llt;->username:Ljava/lang/String;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Llt;->username:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    add-int/2addr v0, v2
+
+    .line 93
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Llt;->usernameIndexPos:Ljava/lang/Long;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Llt;->usernameIndexPos:Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
+
+    move-result v0
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    .line 94
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Llt;->usernameSuggestion:Ljava/lang/String;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Llt;->usernameSuggestion:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_3
+    add-int/2addr v0, v2
+
+    .line 95
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Llt;->usernameType:Lmm;
+
+    if-eqz v2, :cond_0
+
+    iget-object v1, p0, Llt;->usernameType:Lmm;
+
+    invoke-virtual {v1}, Lmm;->hashCode()I
+
+    move-result v1
+
+    :cond_0
     add-int/2addr v0, v1
 
-    .line 43
+    .line 96
     return v0
 
-    .line 42
-    :cond_0
-    const/4 v0, 0x0
+    :cond_1
+    move v0, v1
 
+    .line 91
     goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    .line 92
+    goto :goto_1
+
+    :cond_3
+    move v0, v1
+
+    .line 93
+    goto :goto_2
+
+    :cond_4
+    move v0, v1
+
+    .line 94
+    goto :goto_3
 .end method

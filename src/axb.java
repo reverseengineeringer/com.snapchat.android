@@ -1,16 +1,25 @@
-import java.io.File;
+import android.os.AsyncTask;
 
 public final class axb
+  extends AsyncTask<String, Void, awm>
 {
-  final awp mCache;
-  final File mFile;
-  final String mKey;
+  private final axd mBitmapDecoder;
+  private final aww[] mCallbacks;
+  public final awv mRequest;
   
-  public axb(@cgb awp paramawp, @cgb String paramString, File paramFile)
+  public axb(@chc awv paramawv, axd paramaxd, @chc aww... paramVarArgs)
   {
-    mKey = paramString;
-    mFile = paramFile;
-    mCache = paramawp;
+    mRequest = paramawv;
+    mBitmapDecoder = paramaxd;
+    mCallbacks = paramVarArgs;
+  }
+  
+  public static final class a
+  {
+    public static axb a(awv paramawv, axd paramaxd, aww[] paramArrayOfaww)
+    {
+      return new axb(paramawv, paramaxd, paramArrayOfaww);
+    }
   }
 }
 

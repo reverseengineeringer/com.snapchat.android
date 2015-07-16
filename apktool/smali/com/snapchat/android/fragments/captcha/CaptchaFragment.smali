@@ -3,9 +3,9 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lafo$a;
-.implements Lom$b;
-.implements Lpd$a;
+.implements Lago$a;
+.implements Lpd$b;
+.implements Lpu$a;
 
 
 # instance fields
@@ -267,7 +267,7 @@
     :cond_0
     new-instance v1, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$1;
 
-    invoke-direct {v1, p0, v0, p2, p0}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$1;-><init>(Lcom/snapchat/android/fragments/captcha/CaptchaFragment;Landroid/content/Context;Ljava/util/List;Lafo$a;)V
+    invoke-direct {v1, p0, v0, p2, p0}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$1;-><init>(Lcom/snapchat/android/fragments/captcha/CaptchaFragment;Landroid/content/Context;Ljava/util/List;Lago$a;)V
 
     .line 124
     iget-object v0, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->g:Landroid/widget/GridView;
@@ -307,7 +307,7 @@
 
     new-instance v2, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;
 
-    invoke-direct {v2, p0, v1, p1}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;-><init>(Lcom/snapchat/android/fragments/captcha/CaptchaFragment;Lafo;Ljava/lang/String;)V
+    invoke-direct {v2, p0, v1, p1}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$3;-><init>(Lcom/snapchat/android/fragments/captcha/CaptchaFragment;Lago;Ljava/lang/String;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -337,7 +337,7 @@
 
     .prologue
     .line 262
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->u_()V
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->t_()V
 
     .line 263
     return-void
@@ -348,7 +348,7 @@
 
     .prologue
     .line 103
-    new-instance v0, Lapy;
+    new-instance v0, Laqx;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -356,9 +356,9 @@
 
     iget v2, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->f:I
 
-    invoke-direct {v0, v1, v2}, Lapy;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v0, v1, v2}, Laqx;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {v0}, Lapy;->show()V
+    invoke-virtual {v0}, Laqx;->show()V
 
     .line 104
     const/4 v0, 0x1
@@ -373,7 +373,7 @@
     const/4 v3, 0x0
 
     .line 79
-    const v0, 0x7f040015
+    const v0, 0x7f040016
 
     invoke-virtual {p1, v0, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -388,18 +388,18 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 82
-    new-instance v0, Lom;
+    new-instance v0, Lpd;
 
-    invoke-direct {v0, p0}, Lom;-><init>(Lom$b;)V
+    invoke-direct {v0, p0}, Lpd;-><init>(Lpd$b;)V
 
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v3, [Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Lom;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1, v2}, Lpd;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 84
     const v0, 0x7f0a00a7
@@ -434,7 +434,7 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     .line 87
     const v0, 0x7f0a00af
@@ -482,11 +482,11 @@
     iput v0, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->f:I
 
     .line 96
-    new-instance v0, Ljy;
+    new-instance v0, Lkq;
 
-    invoke-direct {v0}, Ljy;-><init>()V
+    invoke-direct {v0}, Lkq;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 98
     iget-object v0, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->mFragmentLayout:Landroid/view/View;
@@ -494,7 +494,7 @@
     return-object v0
 .end method
 
-.method public final t_()V
+.method public final s_()V
     .locals 8
 
     .prologue
@@ -503,7 +503,7 @@
     const/4 v6, 0x0
 
     .line 200
-    invoke-static {v6}, Lajx;->c(Z)V
+    invoke-static {v6}, Lakr;->c(Z)V
 
     .line 201
     iget v0, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->b:I
@@ -512,9 +512,9 @@
 
     iget v1, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->c:I
 
-    new-instance v2, Ljz;
+    new-instance v2, Lkr;
 
-    invoke-direct {v2}, Ljz;-><init>()V
+    invoke-direct {v2}, Lkr;-><init>()V
 
     int-to-long v4, v0
 
@@ -522,7 +522,7 @@
 
     move-result-object v3
 
-    iput-object v3, v2, Ljz;->attemptCount:Ljava/lang/Long;
+    iput-object v3, v2, Lkr;->attemptCount:Ljava/lang/Long;
 
     int-to-long v4, v1
 
@@ -530,9 +530,9 @@
 
     move-result-object v1
 
-    iput-object v1, v2, Ljz;->imageCount:Ljava/lang/Long;
+    iput-object v1, v2, Lkr;->imageCount:Ljava/lang/Long;
 
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     add-int/lit8 v0, v0, -0x1
 
@@ -549,10 +549,10 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lajv;->a(Landroid/content/Context;)Lajv;
+    invoke-static {v0}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     .line 204
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -588,20 +588,6 @@
     :goto_0
     return-void
 
-    .line 205
-    :catch_0
-    move-exception v0
-
-    const-string v0, "CaptchaFragment"
-
-    const-string v1, "Attempted to go to NewUserAddFriendsFragment"
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
-
     .line 208
     :cond_0
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -616,7 +602,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
 
@@ -626,7 +612,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    invoke-static {v6}, Lajx;->c(Z)V
+    invoke-static {v6}, Lakr;->c(Z)V
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -645,9 +631,15 @@
     invoke-static {}, Lcom/snapchat/android/analytics/RegistrationAnalytics;->n()V
 
     goto :goto_0
+
+    .line 205
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
 .end method
 
-.method public final u_()V
+.method public final t_()V
     .locals 7
 
     .prologue
@@ -738,9 +730,9 @@
 
     iget v1, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->c:I
 
-    new-instance v2, Ljx;
+    new-instance v2, Lkp;
 
-    invoke-direct {v2}, Ljx;-><init>()V
+    invoke-direct {v2}, Lkp;-><init>()V
 
     int-to-long v4, v0
 
@@ -748,7 +740,7 @@
 
     move-result-object v0
 
-    iput-object v0, v2, Ljx;->attemptCount:Ljava/lang/Long;
+    iput-object v0, v2, Lkp;->attemptCount:Ljava/lang/Long;
 
     int-to-long v0, v1
 
@@ -756,22 +748,22 @@
 
     move-result-object v0
 
-    iput-object v0, v2, Ljx;->imageCount:Ljava/lang/Long;
+    iput-object v0, v2, Lkp;->imageCount:Ljava/lang/Long;
 
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     invoke-static {v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Z)V
 
     .line 251
-    new-instance v0, Lom;
+    new-instance v0, Lpd;
 
-    invoke-direct {v0, p0}, Lom;-><init>(Lom$b;)V
+    invoke-direct {v0, p0}, Lpd;-><init>(Lpd$b;)V
 
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v3, [Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Lom;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1, v2}, Lpd;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 253
     invoke-virtual {p0, v3}, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;->a(I)V

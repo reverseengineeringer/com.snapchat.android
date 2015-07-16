@@ -1,83 +1,135 @@
-import android.os.Bundle;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+import android.accounts.Account;
+import android.accounts.AccountManager;
+import android.content.Context;
+import android.util.Base64;
+import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
+import com.google.android.gms.auth.UserRecoverableAuthException;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.Builder;
+import com.google.android.gms.safetynet.SafetyNet;
+import com.snapchat.android.SnapchatApplication;
+import java.io.IOException;
+import java.security.MessageDigest;
+import java.util.concurrent.Callable;
+import javax.inject.Singleton;
+import org.apache.commons.lang3.StringUtils;
 
+@Singleton
 public final class mp
-  extends ml
 {
-  protected static final String DISCOVER_AD_PAGE_IMPRESSION_DURATION_KEY = "ad_page_impression_duration";
-  private static final String PRODUCT_ID = "discover";
-  protected static final int TITLE_SPLASH_POSITION = 0;
-  private final int mAdType;
-  private final String mAdUnitId;
-  private final String mChannelName;
-  private final String mEditionName;
-  private final int mPosition;
-  private final Map<String, String> mTargetingParams;
+  private static mp c = new mp();
+  private String a = null;
+  private String b = null;
+  private final ave d;
+  private final GoogleApiClient e;
+  private final Context f;
   
-  private mp(String paramString1, String paramString2, String paramString3, Map<String, String> paramMap, int paramInt1, int paramInt2)
+  private mp()
   {
-    mEditionName = paramString1;
-    mChannelName = paramString2;
-    mAdUnitId = paramString3;
-    mTargetingParams = paramMap;
-    mPosition = paramInt1;
-    mAdType = paramInt2;
+    this(SnapchatApplication.b().getApplicationContext(), new ave(), new GoogleApiClient.Builder(SnapchatApplication.b().getApplicationContext()).addApi(SafetyNet.API).build());
   }
   
-  public final String a()
+  private mp(Context paramContext, ave paramave, GoogleApiClient paramGoogleApiClient)
   {
-    return mAdUnitId;
+    f = paramContext;
+    d = paramave;
+    e = paramGoogleApiClient;
+  }
+  
+  public static mp a()
+  {
+    return c;
+  }
+  
+  @q
+  public final String a(final String... paramVarArgs)
+  {
+    try
+    {
+      if ((e.blockingConnect().isSuccess()) && (e.isConnected()))
+      {
+        paramVarArgs = MessageDigest.getInstance("SHA-256").digest(StringUtils.join(paramVarArgs, "|").getBytes("UTF-8"));
+        paramVarArgs = (String)d.a(new Callable() {}).call();
+        return paramVarArgs;
+      }
+    }
+    catch (Exception paramVarArgs)
+    {
+      new StringBuilder("getSignedAttestation Exception: ").append(paramVarArgs.getMessage());
+    }
+    return "ie";
   }
   
   public final String b()
   {
-    return String.format("%s-%s-%s-[%s]", new Object[] { "discover", mChannelName, mEditionName, Integer.valueOf(mPosition) });
-  }
-  
-  public final Bundle c()
-  {
-    Bundle localBundle = new Bundle();
-    Iterator localIterator = mTargetingParams.entrySet().iterator();
-    while (localIterator.hasNext())
-    {
-      Map.Entry localEntry = (Map.Entry)localIterator.next();
-      localBundle.putString((String)localEntry.getKey(), (String)localEntry.getValue());
+    if (b == null) {
+      return null;
     }
-    return localBundle;
+    return Base64.encodeToString(b.getBytes(), 11);
   }
   
+  public final void c()
+  {
+    if (a == null) {
+      return;
+    }
+    try
+    {
+      d.a(new Callable() {}).call();
+      return;
+    }
+    catch (Exception localException)
+    {
+      new StringBuilder("clearGoogleOauthToken exception: ").append(localException.getMessage());
+    }
+  }
+  
+  @q
   public final String d()
   {
-    return "ad_page_impression_duration";
-  }
-  
-  public final String toString()
-  {
-    return String.format("AdPlaceholder(%s:%s[%d]-%d)", new Object[] { mChannelName, mEditionName, Integer.valueOf(mPosition), Integer.valueOf(mAdType) });
-  }
-  
-  public static final class a
-  {
-    public int mAdType;
-    public String mAdUnitId;
-    public String mChannelName;
-    public String mEditionName;
-    public int mPosition;
-    public Map<String, String> mTargetingParams;
-    
-    public final mp a()
+    Account[] arrayOfAccount = AccountManager.get(f).getAccountsByType("com.google");
+    int j = arrayOfAccount.length;
+    final String str1 = "ng";
+    int i = 0;
+    for (;;)
     {
-      if (mEditionName == null) {
-        throw new IllegalArgumentException("editionName should not be null.");
+      if (i < j) {
+        str1 = name;
       }
-      if (mChannelName == null) {
-        throw new IllegalArgumentException("channelName should not be null.");
+      try
+      {
+        a = ((String)d.a(new Callable() {}).call());
+        new StringBuilder("getGoogleOauthToken: ").append(a);
+        b = null;
+        str1 = a;
+        return str1;
       }
-      return new mp(mEditionName, mChannelName, mAdUnitId, mTargetingParams, mPosition, mAdType, (byte)0);
+      catch (IOException localIOException)
+      {
+        new StringBuilder("getGoogleOauthToken IOException: ").append(localIOException.getMessage());
+        throw localIOException;
+      }
+      catch (GooglePlayServicesAvailabilityException localGooglePlayServicesAvailabilityException)
+      {
+        new StringBuilder("getGoogleOauthToken GooglePlayServicesAvailabilityException: ").append(localGooglePlayServicesAvailabilityException.getMessage());
+        b = localGooglePlayServicesAvailabilityException.getMessage();
+        return "pe";
+      }
+      catch (UserRecoverableAuthException localUserRecoverableAuthException)
+      {
+        new StringBuilder("getGoogleOauthToken UserRecoverableAuthException: ").append(localUserRecoverableAuthException.getMessage());
+        b = localUserRecoverableAuthException.getMessage();
+        i += 1;
+        String str2 = "ue";
+      }
+      catch (Exception localException)
+      {
+        new StringBuilder("getGoogleOauthToken GoogleAuthException: ").append(localException.getMessage());
+        b = localException.getMessage();
+      }
     }
+    return "ae";
   }
 }
 

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 917
+    .line 918
     iput-object p1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$4;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 920
+    .line 921
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$4;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/snapchat/android/ui/SnapEditorView;
@@ -54,10 +54,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setAudible(Z)V
 
-    .line 921
+    .line 922
     return-void
 
-    .line 920
+    .line 921
     :cond_0
     const/4 v0, 0x0
 

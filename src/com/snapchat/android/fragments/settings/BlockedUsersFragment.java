@@ -1,8 +1,8 @@
 package com.snapchat.android.fragments.settings;
 
-import agl;
-import ajv;
-import ajx;
+import ahi;
+import akp;
+import akr;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,9 +15,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import ber;
-import boh;
-import ccm;
+import bfq;
+import bpi;
+import cdn;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import java.util.List;
 public class BlockedUsersFragment
   extends SnapchatFragment
 {
-  protected ajv a;
+  protected akp a;
   private final RecyclerView.c b = new RecyclerView.c()
   {
     public final void a()
@@ -53,13 +53,13 @@ public class BlockedUsersFragment
   private View d;
   private RecyclerView e;
   private RecyclerView.h f;
-  private agl g;
+  private ahi g;
   
-  @ccm
+  @cdn
   private void i()
   {
     if (a == null) {
-      a = ajv.g();
+      a = akp.g();
     }
     if (a != null)
     {
@@ -76,8 +76,8 @@ public class BlockedUsersFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968587, paramViewGroup, false);
-    c(2131361822).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968588, paramViewGroup, false);
+    c(2131361823).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
@@ -90,7 +90,7 @@ public class BlockedUsersFragment
     getActivity();
     f = new LinearLayoutManager();
     e.setLayoutManager(f);
-    g = new agl(getActivity(), c, ajx.a());
+    g = new ahi(getActivity(), c, akr.a());
     e.setAdapter(g);
     return mFragmentLayout;
   }
@@ -107,10 +107,10 @@ public class BlockedUsersFragment
     g.b(b);
   }
   
-  @boh
-  public void onUserLoadedEvent(ber paramber)
+  @bpi
+  public void onUserLoadedEvent(bfq parambfq)
   {
-    if ((paramber != null) && (user != null) && (a == null))
+    if ((parambfq != null) && (user != null) && (a == null))
     {
       a = user;
       i();

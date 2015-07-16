@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field protected sections:Ljava/util/List;
+.field protected results:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "sections"
+        value = "results"
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -47,7 +47,7 @@
 
     .prologue
     .line 34
-    iget-object v0, p0, Lbkx;->sections:Ljava/util/List;
+    iget-object v0, p0, Lbkx;->results:Ljava/util/List;
 
     return-object v0
 .end method
@@ -86,9 +86,9 @@
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkx;->sections:Ljava/util/List;
+    iget-object v1, p0, Lbkx;->results:Ljava/util/List;
 
-    iget-object v2, p1, Lbkx;->sections:Ljava/util/List;
+    iget-object v2, p1, Lbkx;->results:Ljava/util/List;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -110,7 +110,7 @@
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkx;->sections:Ljava/util/List;
+    iget-object v1, p0, Lbkx;->results:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 

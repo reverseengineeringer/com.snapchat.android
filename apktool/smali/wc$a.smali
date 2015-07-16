@@ -15,5 +15,14 @@
 
 
 # virtual methods
-.method public abstract a([BLwc$b;)V
+.method public abstract a(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lvp;",
+            ">;)V"
+        }
+    .end annotation
 .end method

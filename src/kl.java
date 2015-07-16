@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kl
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_FOCUS_ON_PHONE_NUMBER";
+  private final String eventName = "PROFILE_USERNAME_PAGE_VIEW";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_FOCUS_ON_PHONE_NUMBER");
+    localHashMap.put("event_name", "PROFILE_USERNAME_PAGE_VIEW");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

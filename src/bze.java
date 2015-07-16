@@ -1,17 +1,22 @@
 public final class bze
-  extends bza
+  implements byh
 {
-  public bze()
+  public final byl a(bya parambya, String paramString)
   {
-    super("||", 1);
+    try
+    {
+      parambya = new Double(paramString);
+      return new byl(new Double(Math.sin(parambya.doubleValue())).toString(), 0);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("Invalid argument.", parambya);
+    }
   }
   
-  public final double a(double paramDouble1, double paramDouble2)
+  public final String a()
   {
-    if ((paramDouble1 == 1.0D) || (paramDouble2 == 1.0D)) {
-      return 1.0D;
-    }
-    return 0.0D;
+    return "sin";
   }
 }
 

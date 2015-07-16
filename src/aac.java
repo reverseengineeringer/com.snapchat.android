@@ -1,48 +1,56 @@
-import com.snapchat.android.database.table.FriendTable;
-import com.snapchat.android.model.Friend;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
-
 public final class aac
-  extends FriendTable
 {
-  private static aac a;
+  final int a;
+  final int b;
+  final int c;
+  private final boolean d;
+  private final int e;
+  private final int f;
   
-  public static aac a()
+  public aac(bkr parambkr, boolean paramBoolean)
   {
-    try
+    d = paramBoolean;
+    a = parambkr.c().intValue();
+    Integer localInteger;
+    if (parambkr.g())
     {
-      if (a == null) {
-        a = new aac();
+      localInteger = parambkr.f();
+      e = localInteger.intValue();
+      if (!parambkr.b()) {
+        break label106;
       }
-      aac localaac = a;
-      return localaac;
+      i = parambkr.a().intValue();
+      label57:
+      f = i;
+      if (!parambkr.e()) {
+        break label111;
+      }
+      i = parambkr.d().intValue();
+      label77:
+      b = i;
+      if (!paramBoolean) {
+        break label116;
+      }
     }
-    finally {}
-  }
-  
-  protected final Collection<Friend> a(ajv paramajv)
-  {
-    return paramajv.n();
-  }
-  
-  public final void b(ajv paramajv)
-  {
-    List localList2 = a(null, g());
-    synchronized (mContactsOnSnapchat)
+    label106:
+    label111:
+    label116:
+    for (int i = f;; i = e)
     {
-      mContactsOnSnapchat.clear();
-      mContactsOnSnapchat.addAll(localList2);
-      mContactsOnSnapchatSet.clear();
-      mContactsOnSnapchatSet.addAll(mContactsOnSnapchat);
+      c = i;
       return;
+      localInteger = parambkr.c();
+      break;
+      i = 1;
+      break label57;
+      i = 0;
+      break label77;
     }
   }
   
-  public final String c()
+  public final String toString()
   {
-    return "ContactsOnSnapchatTable";
+    return cl.a(getClass()).a("isResume", d).a("interval", a).a("minSnapsAfterAd", b).a("firstAllowedIndex", c).toString();
   }
 }
 

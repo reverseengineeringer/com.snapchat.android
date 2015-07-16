@@ -27,7 +27,7 @@
 
 .field public g:Landroid/view/View;
 
-.field public h:Lael;
+.field public h:Lafl;
 
 .field i:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
@@ -147,40 +147,34 @@
 
     invoke-direct {v0, p0, p1}, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter$2;-><init>(Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter$LoadingState;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 89
     return-void
 .end method
 
 .method public final a(Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;)V
-    .locals 5
+    .locals 3
     .param p1    # Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 70
-    const-string v0, "DiscoverLoadingStatePresenter"
+    const/4 v0, 0x2
 
-    const-string v1, "Setting compatibility %s (from %s)"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    const/4 v1, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    aput-object p1, v0, v1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x1
 
-    aput-object p1, v2, v3
+    iget-object v2, p0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->i:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    const/4 v3, 0x1
-
-    iget-object v4, p0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->i:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
-
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v1
 
     .line 72
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->i:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;

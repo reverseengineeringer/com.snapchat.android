@@ -27,11 +27,9 @@
 
 # virtual methods
 .method public final handleMessage(Landroid/os/Message;)V
-    .locals 7
+    .locals 5
 
     .prologue
-    const/4 v6, 0x0
-
     .line 37
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -52,21 +50,17 @@
     if-eq v1, v2, :cond_0
 
     .line 40
-    const-string v2, "CameraOperationHandler"
+    const/4 v2, 0x1
 
-    const-string v3, "Camera Operation [%s] is executing"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
+    const/4 v3, 0x0
 
     invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->name()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v6
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v4, v2, v3
 
     .line 43
     :cond_0
@@ -116,7 +110,7 @@
     if-eqz v2, :cond_1
 
     .line 47
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v2
 
@@ -130,33 +124,21 @@
 
     .line 50
     :cond_1
-    const-string v2, "CameraOperationHandler"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v3, ": "
+    const-string v2, ": "
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v1, v6, [Ljava/lang/Object;
-
-    invoke-static {v2, v0, v1}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 .end method

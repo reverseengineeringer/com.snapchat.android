@@ -1,198 +1,59 @@
 .class public final Lrc;
-.super Ljava/lang/Object;
+.super Ltx;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuj;
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lrb;",
-        ">;"
+        Lrc$a;
     }
 .end annotation
 
 
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
 # instance fields
-.field private final mCashErrorReporterProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final supertypeInjector:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final mFriendName:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 9
-    const-class v0, Lrc;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lrc;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 15
-    sget-boolean v0, Lrc;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 16
-    :cond_0
-    iput-object p1, p0, Lrc;->supertypeInjector:Lbuj;
-
     .line 17
-    sget-boolean v0, Lrc;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
+    invoke-direct {p0}, Ltx;-><init>()V
 
     .line 18
-    :cond_1
-    iput-object p2, p0, Lrc;->mCashErrorReporterProvider:Ljavax/inject/Provider;
+    iput-object p1, p0, Lrc;->mFriendName:Ljava/lang/String;
 
     .line 19
     return-void
 .end method
 
-.method public static a(Lbuj;Ljavax/inject/Provider;)Lbuj;
+
+# virtual methods
+.method protected final getPath()Ljava/lang/String;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lrb;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
-    .line 31
-    new-instance v0, Lrc;
-
-    invoke-direct {v0, p0, p1}, Lrc;-><init>(Lbuj;Ljavax/inject/Provider;)V
+    .line 23
+    const-string v0, "/cash/check_recipient_eligible"
 
     return-object v0
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 1
 
     .prologue
-    .line 9
-    check-cast p1, Lrb;
+    .line 34
+    new-instance v0, Lrc$a;
 
-    if-nez p1, :cond_0
+    invoke-direct {v0, p0}, Lrc$a;-><init>(Lrc;)V
 
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "Cannot inject members into a null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iget-object v0, p0, Lrc;->supertypeInjector:Lbuj;
-
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lrc;->mCashErrorReporterProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lqg;
-
-    iput-object v0, p1, Lrb;->mCashErrorReporter:Lqg;
-
-    return-void
+    return-object v0
 .end method

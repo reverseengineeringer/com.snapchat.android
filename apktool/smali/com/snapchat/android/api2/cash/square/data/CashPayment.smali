@@ -15,7 +15,7 @@
 
 # instance fields
 .field private mAction:Lcom/snapchat/android/api2/cash/square/data/CashPayment$Action;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -23,8 +23,8 @@
     .end annotation
 .end field
 
-.field private mAmount:Lsz;
-    .annotation build Lcgb;
+.field private mAmount:Ltp;
+    .annotation build Lchc;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -32,8 +32,8 @@
     .end annotation
 .end field
 
-.field public mBlockers:Lta;
-    .annotation build Lcgc;
+.field public mBlockers:Ltq;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -42,7 +42,7 @@
 .end field
 
 .field public mCancellationReason:Lcom/snapchat/android/api2/cash/square/data/CashPayment$CancellationReason;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -51,7 +51,7 @@
 .end field
 
 .field private mCapturedAt:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -60,7 +60,7 @@
 .end field
 
 .field private mCreatedAt:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -69,7 +69,7 @@
 .end field
 
 .field private mId:Ljava/lang/String;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -78,7 +78,7 @@
 .end field
 
 .field private mPaidOutAt:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -87,7 +87,7 @@
 .end field
 
 .field private mReachedRecipientAt:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -96,7 +96,7 @@
 .end field
 
 .field private mRecipient:Lcom/snapchat/android/api2/cash/square/data/CashCustomer;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -105,7 +105,7 @@
 .end field
 
 .field private mRefundedAt:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -114,7 +114,7 @@
 .end field
 
 .field private mSender:Lcom/snapchat/android/api2/cash/square/data/CashCustomer;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -123,7 +123,7 @@
 .end field
 
 .field public mState:Lcom/snapchat/android/api2/cash/square/data/CashPayment$State;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -211,7 +211,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/api2/cash/square/data/CashPayment;->mAmount:Lsz;
+    iget-object v1, p0, Lcom/snapchat/android/api2/cash/square/data/CashPayment;->mAmount:Ltp;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -235,7 +235,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/api2/cash/square/data/CashPayment;->mBlockers:Lta;
+    iget-object v1, p0, Lcom/snapchat/android/api2/cash/square/data/CashPayment;->mBlockers:Ltq;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

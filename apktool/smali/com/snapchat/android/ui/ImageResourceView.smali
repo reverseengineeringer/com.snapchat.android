@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lape;
+.implements Laqa;
 .implements Lcom/snapchat/android/ui/SnapchatResource$a;
 
 
@@ -28,7 +28,7 @@
 
 
 # instance fields
-.field protected a:Lapb;
+.field protected a:Lapx;
 
 .field protected b:I
 
@@ -94,7 +94,7 @@
     move-result-object v0
 
     .line 68
-    const v1, 0x7f0900a1
+    const v1, 0x7f0900a2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -235,7 +235,7 @@
     move-result-object v0
 
     .line 68
-    const v1, 0x7f0900a1
+    const v1, 0x7f0900a2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -376,7 +376,7 @@
     move-result-object v0
 
     .line 68
-    const v1, 0x7f0900a1
+    const v1, 0x7f0900a2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -491,14 +491,14 @@
     invoke-virtual {p0, v2}, Lcom/snapchat/android/ui/ImageResourceView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 217
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     if-eqz v0, :cond_0
 
     .line 218
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+    invoke-virtual {v0}, Lapx;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
 
     move-result-object v0
 
@@ -507,12 +507,12 @@
     if-eq v0, v1, :cond_1
 
     .line 219
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0, v2}, Lapb;->a(Lcom/snapchat/android/ui/SnapchatResource$a;)V
+    invoke-virtual {v0, v2}, Lapx;->a(Lcom/snapchat/android/ui/SnapchatResource$a;)V
 
     .line 220
-    iput-object v2, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iput-object v2, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     .line 225
     :cond_0
@@ -521,15 +521,15 @@
 
     .line 222
     :cond_1
-    invoke-static {}, Lalv;->a()Lalv;
+    invoke-static {}, Lams;->a()Lams;
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lapx;->a()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lalv;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Lams;->a(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -541,18 +541,18 @@
 
     .prologue
     .line 125
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     if-eqz v0, :cond_0
 
     .line 126
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/ImageResourceView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lapb;->a(Landroid/content/Context;)Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1}, Lapx;->a(Landroid/content/Context;)Landroid/graphics/Bitmap;
 
     .line 128
     :cond_0
@@ -599,7 +599,7 @@
 
     .line 147
     :pswitch_0
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     if-eqz v0, :cond_0
 
@@ -624,13 +624,13 @@
 
     .line 155
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/ImageResourceView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lapb;->a(Landroid/content/Context;)Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1}, Lapx;->a(Landroid/content/Context;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -653,11 +653,11 @@
 
     .line 161
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     sget-object v1, Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;->LOADING_FAILED:Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
 
-    invoke-virtual {v0, v1}, Lapb;->a(Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;)V
+    invoke-virtual {v0, v1}, Lapx;->a(Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;)V
 
     goto :goto_0
 
@@ -675,13 +675,13 @@
 
     .prologue
     .line 131
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+    invoke-virtual {v0}, Lapx;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
 
     move-result-object v0
 
@@ -689,9 +689,9 @@
 
     if-eq v0, v1, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+    invoke-virtual {v0}, Lapx;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
 
     move-result-object v0
 
@@ -715,13 +715,13 @@
 
     .prologue
     .line 139
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+    invoke-virtual {v0}, Lapx;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
 
     move-result-object v0
 
@@ -819,16 +819,16 @@
 
     .line 190
     :cond_1
-    iget-object v2, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v2, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     if-eqz v2, :cond_0
 
     .line 192
     sget-object v2, Lcom/snapchat/android/ui/ImageResourceView$1;->a:[I
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v3, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v3}, Lapb;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+    invoke-virtual {v3}, Lapx;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
 
     move-result-object v3
 
@@ -893,13 +893,13 @@
     if-eqz p1, :cond_3
 
     .line 88
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lapx;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -914,19 +914,19 @@
     if-nez v0, :cond_0
 
     .line 89
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0, v5}, Lapb;->a(Lcom/snapchat/android/ui/SnapchatResource$a;)V
+    invoke-virtual {v0, v5}, Lapx;->a(Lcom/snapchat/android/ui/SnapchatResource$a;)V
 
     .line 92
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lapx;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -947,38 +947,38 @@
     invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 94
-    new-instance v0, Lapb;
+    new-instance v0, Lapx;
 
-    invoke-direct {v0, p1, p0}, Lapb;-><init>(Lcom/snapchat/android/model/chat/ChatMedia;Lcom/snapchat/android/ui/SnapchatResource$a;)V
+    invoke-direct {v0, p1, p0}, Lapx;-><init>(Lcom/snapchat/android/model/chat/ChatMedia;Lcom/snapchat/android/ui/SnapchatResource$a;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iput-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     .line 95
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/ImageResourceView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lapb;->a(Landroid/content/Context;)Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1}, Lapx;->a(Landroid/content/Context;)Landroid/graphics/Bitmap;
 
     .line 98
     :cond_2
-    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/ChatMedia;->F()I
+    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/ChatMedia;->G()I
 
     move-result v0
 
     iput v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->b:I
 
     .line 99
-    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/ChatMedia;->G()I
+    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/ChatMedia;->H()I
 
     move-result v0
 
     iput v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->c:I
 
     .line 102
-    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/ChatMedia;->N()Z
+    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/ChatMedia;->O()Z
 
     move-result v0
 
@@ -999,7 +999,7 @@
 
     .line 105
     :cond_4
-    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/ChatMedia;->O()Z
+    invoke-virtual {p1}, Lcom/snapchat/android/model/chat/ChatMedia;->P()Z
 
     move-result v0
 
@@ -1017,9 +1017,9 @@
 
     .line 109
     :cond_5
-    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+    invoke-virtual {v0}, Lapx;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
 
     move-result-object v0
 

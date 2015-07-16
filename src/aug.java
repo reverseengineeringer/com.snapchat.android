@@ -1,47 +1,10 @@
-import android.net.NetworkInfo;
-import java.io.IOException;
-import java.util.concurrent.Callable;
+import java.util.Locale;
 
 public final class aug
 {
-  private static final long DEFAULT_INIT_MILLIS = 500L;
-  private static final long DEFAULT_MAX_MILLIS = 32000L;
-  
-  public final <T> Callable<T> a(final Callable<T> paramCallable)
+  public static <E extends Enum<E>> String a(E paramE)
   {
-    new Callable()
-    {
-      public final T call()
-      {
-        long l = val$initMills;
-        try
-        {
-          Object localObject = paramCallable.call();
-          return (T)localObject;
-        }
-        catch (IOException localIOException) {}
-        for (;;)
-        {
-          try
-          {
-            NetworkInfo localNetworkInfo = bfp.a();
-            if ((localNetworkInfo == null) || (!localNetworkInfo.isConnected())) {
-              break label75;
-            }
-            i = 1;
-            if ((i == 0) || (l > val$maxMills)) {
-              throw localIOException;
-            }
-            Thread.sleep(l);
-            l = 2L * l;
-          }
-          catch (InterruptedException localInterruptedException) {}
-          break;
-          label75:
-          int i = 0;
-        }
-      }
-    };
+    return paramE.name().toLowerCase(Locale.ENGLISH);
   }
 }
 

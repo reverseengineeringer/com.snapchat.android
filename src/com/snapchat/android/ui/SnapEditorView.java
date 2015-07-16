@@ -1,9 +1,9 @@
 package com.snapchat.android.ui;
 
-import aim;
-import aiv;
-import ajl;
-import ajm;
+import aji;
+import ajr;
+import akh;
+import aku;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -28,39 +28,37 @@ import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ann;
-import apd;
-import apg;
-import apg.a;
-import aph;
-import api;
-import apj;
-import apo;
-import aps;
-import aqy;
-import arc;
-import ard;
-import arf;
-import arn;
-import ars;
-import arv;
-import arw;
+import aok;
+import apz;
+import aqc;
+import aqc.a;
+import aqd;
+import aqe;
+import aqf;
+import aqn;
+import aqr;
+import arx;
 import asb;
-import asf;
-import atf;
-import aur;
-import aus;
-import avl;
-import azo;
+import asc;
+import ase;
+import asm;
+import asr;
+import asu;
+import asv;
+import ata;
+import ate;
+import aue;
+import avp;
+import avq;
+import awj;
 import ban;
-import bbi;
-import bbw;
-import bgp;
-import boh;
-import cgb;
-import cgc;
-import cn;
-import com.snapchat.android.Timber;
+import bbo;
+import bci;
+import bcw;
+import bhp;
+import bpi;
+import chc;
+import chd;
 import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
 import com.snapchat.android.model.Mediabryo;
 import com.snapchat.android.ui.caption.CaptionTypeEnums;
@@ -73,26 +71,27 @@ import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.PhotoEffectTask;
 import com.snapchat.videotranscoder.video.FragmentShader.Filter;
 import com.squareup.otto.Bus;
+import cs;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
-import nc;
-import nd;
-import of;
-import oj;
-import wy;
+import nt;
+import nu;
+import ow;
+import pa;
+import xt;
 
-@avl
+@awj
 public class SnapEditorView
   extends FrameLayout
-  implements apg.a, aph, aps, VideoFilterView.d
+  implements aqc.a, aqd, aqr, VideoFilterView.d
 {
   private boolean A = true;
   private MediaPlayer B;
   private int C;
-  @cgc
+  @chd
   private View.OnTouchListener D = null;
   private b E;
   private CaptionTypeEnums F = CaptionTypeEnums.NON_FAT_VANILLA_CAPTION_TYPE;
@@ -100,44 +99,44 @@ public class SnapEditorView
   private Set<Integer> H = new CopyOnWriteArraySet();
   public SnapCaptionView a;
   public SwipeImageView b;
-  public api c;
+  public aqe c;
   private final Bus d;
-  private final wy e;
-  private final azo f;
+  private final xt e;
+  private final ban f;
   private final TranscodingPreferencesWrapper g;
-  private final apd h;
+  private final apz h;
   private FitWidthViewGroup i;
   private ImageView j;
   private CanvasViewBase k;
   private ImageView l;
   private SwipeViewState m;
-  private ars n;
-  private apg o;
-  private arc p;
+  private asr n;
+  private aqc o;
+  private asb p;
   private FrameLayout q;
   private SnapVideoView r;
   private VideoFilterView s;
-  private apj t;
+  private aqf t;
   private DisplayMetrics u;
-  private arw<arn> v;
-  private oj w;
+  private asv<asm> v;
+  private pa w;
   private View x;
   private Bitmap y;
   private Bitmap z;
   
   public SnapEditorView(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, ban.a(), wy.a(), new azo(), TranscodingPreferencesWrapper.a(), apd.a());
+    this(paramContext, paramAttributeSet, bbo.a(), xt.a(), new ban(), TranscodingPreferencesWrapper.a(), apz.a());
   }
   
-  protected SnapEditorView(@cgb Context paramContext, @cgb AttributeSet paramAttributeSet, @cgb Bus paramBus, @cgb wy paramwy, @cgb azo paramazo, @cgb TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper, @cgb apd paramapd)
+  protected SnapEditorView(@chc Context paramContext, @chc AttributeSet paramAttributeSet, @chc Bus paramBus, @chc xt paramxt, @chc ban paramban, @chc TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper, @chc apz paramapz)
   {
     super(paramContext, paramAttributeSet);
     d = paramBus;
-    e = paramwy;
-    f = paramazo;
+    e = paramxt;
+    f = paramban;
     g = paramTranscodingPreferencesWrapper;
-    h = paramapd;
+    h = paramapz;
   }
   
   private void a(final Bitmap paramBitmap, boolean paramBoolean1, boolean paramBoolean2)
@@ -151,7 +150,7 @@ public class SnapEditorView
     }
     removeView(i);
     y = paramBitmap;
-    z = aur.c(y, getContext());
+    z = avp.c(y, getContext());
     if ((i1 != 0) || (paramBoolean1))
     {
       if (!b.a(z)) {
@@ -164,8 +163,8 @@ public class SnapEditorView
     {
       if (paramBoolean2)
       {
-        paramBitmap = aur.a(z, getContext());
-        paramBitmap = new aus(new Drawable[] { new ColorDrawable(0), new BitmapDrawable(getResources(), paramBitmap) })
+        paramBitmap = avp.a(z, getContext());
+        paramBitmap = new avq(new Drawable[] { new ColorDrawable(0), new BitmapDrawable(getResources(), paramBitmap) })
         {
           public final void a()
           {
@@ -188,7 +187,7 @@ public class SnapEditorView
         i1 = getResourcesgetConfigurationorientation;
         paramBitmap = v.a().iterator();
         while (paramBitmap.hasNext()) {
-          ((arn)paramBitmap.next()).a(i1, getContext());
+          ((asm)paramBitmap.next()).a(i1, getContext());
         }
       }
       b.a();
@@ -199,10 +198,10 @@ public class SnapEditorView
   {
     if (paramBoolean)
     {
-      paramLayoutInflater.inflate(2130968777, paramViewGroup);
+      paramLayoutInflater.inflate(2130968779, paramViewGroup);
       return;
     }
-    paramLayoutInflater.inflate(2130968778, paramViewGroup);
+    paramLayoutInflater.inflate(2130968780, paramViewGroup);
   }
   
   private void a(final Mediabryo paramMediabryo, final int paramInt)
@@ -234,10 +233,10 @@ public class SnapEditorView
       {
         public final boolean onError(MediaPlayer paramAnonymousMediaPlayer, int paramAnonymousInt1, int paramAnonymousInt2)
         {
-          Timber.f("SnapEditorView", "Media player onError what=%s extra=%d retryCount=%d", new Object[] { ann.a(paramAnonymousInt1), Integer.valueOf(paramAnonymousInt2), Integer.valueOf(paramInt) });
+          aok.a(paramAnonymousInt1);
+          paramAnonymousInt1 = paramInt;
           if (paramInt > 0)
           {
-            Timber.c("SnapEditorView", "Retrying video playback following error", new Object[0]);
             SnapEditorView.c(SnapEditorView.this).stopPlayback();
             SnapEditorView.c(SnapEditorView.this).postDelayed(new Runnable()
             {
@@ -255,7 +254,7 @@ public class SnapEditorView
     }
   }
   
-  private void a(@cgb Mediabryo paramMediabryo, @cgb TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper)
+  private void a(@chc Mediabryo paramMediabryo, @chc TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper)
   {
     paramTranscodingPreferencesWrapper.b(false);
     i.removeAllViews();
@@ -272,16 +271,16 @@ public class SnapEditorView
     if (i2 > 0)
     {
       i1 = i2;
-      if ((v.a(0) instanceof asf)) {
+      if ((v.a(0) instanceof ate)) {
         i1 = i2 - 1;
       }
     }
     return i1;
   }
   
-  private void setPreviewConfiguration(@cgc ajl paramajl)
+  private void setPreviewConfiguration(@chd akh paramakh)
   {
-    if (paramajl == null) {}
+    if (paramakh == null) {}
     do
     {
       return;
@@ -348,7 +347,7 @@ public class SnapEditorView
   
   public final void a(float paramFloat)
   {
-    apg localapg = o;
+    aqc localaqc = o;
     c.h = paramFloat;
     if (c.c()) {
       a.a(false);
@@ -361,20 +360,20 @@ public class SnapEditorView
     Object localObject1 = v.a(paramInt);
     if (localObject1 != null)
     {
-      ((arn)localObject1).g();
-      if (((localObject1 instanceof asb)) && ((G instanceof aim)))
+      ((asm)localObject1).g();
+      if (((localObject1 instanceof ata)) && ((G instanceof aji)))
       {
-        localObject1 = (asb)localObject1;
-        aim localaim = (aim)G;
+        localObject1 = (ata)localObject1;
+        aji localaji = (aji)G;
         int i1 = getFilteredPageCount();
         String str = b.mFilterId;
-        nc localnc = mGeofilterSwipeMetaData;
-        Object localObject2 = (nd)mData.get(str);
+        nt localnt = mGeofilterSwipeMetaData;
+        Object localObject2 = (nu)mData.get(str);
         localObject1 = localObject2;
         if (localObject2 == null)
         {
           localObject2 = mData;
-          localObject1 = new nd(str);
+          localObject1 = new nu(str);
           ((Map)localObject2).put(str, localObject1);
         }
         filterIndexCount = i1;
@@ -392,17 +391,17 @@ public class SnapEditorView
     }
   }
   
-  public final void a(@cgb ajm paramajm)
+  public final void a(@chc aku paramaku)
   {
     i.setVisibility(0);
     i.removeAllViews();
     n.a(1, mShouldEnableVisualFilters, mShouldEnableSmartFilters, mSnapType);
-    if ((wy.b()) && (mShouldEnableVisualFilters)) {}
+    if ((xt.b()) && (mShouldEnableVisualFilters)) {}
     for (boolean bool = true;; bool = false)
     {
       a((LayoutInflater)getContext().getSystemService("layout_inflater"), i, bool);
       if (!bool) {
-        break label253;
+        break label240;
       }
       s = getVideoFilterView();
       s.setUnrecoverableErrorListener(this);
@@ -411,10 +410,10 @@ public class SnapEditorView
       }
       throw new RuntimeException("Tried to play video with decoder, but VideoFilterView was null!");
     }
-    if (!s.a(mVideoUri, paramajm.q()))
+    if (!s.a(mVideoUri, paramaku.q()))
     {
-      f.a(new of("Failed to open video!"));
-      a(paramajm, g);
+      f.a(new ow("Failed to open video!"));
+      a(paramaku, g);
     }
     for (;;)
     {
@@ -427,32 +426,31 @@ public class SnapEditorView
       setPreviewConfiguration(mPreviewConfiguration);
       return;
       s.setVisibility(0);
-      Timber.c("SnapEditorView", "SnapPreviewFragment Editor playing video 1", new Object[0]);
       s.setSwipeVideoViewController(t);
       s.b();
       continue;
-      label253:
+      label240:
       r = getSnapVideoView();
-      a(paramajm, 2);
+      a(paramaku, 2);
     }
   }
   
   public final void a(Context paramContext)
   {
     d.c(this);
-    x = h.a(2130968732);
+    x = h.a(2130968734);
     addView(x);
     a = new VanillaCaptionView(paramContext);
     a.setInterface(this);
     a.setCaptionEditTextOnTouchListener(D);
-    q = ((FrameLayout)x.findViewById(2131362699));
+    q = ((FrameLayout)x.findViewById(2131362698));
     q.removeAllViews();
     q.addView(a);
     u = paramContext.getResources().getDisplayMetrics();
     m = new SwipeViewState();
-    setFilterPageStore(new arw());
-    setSwipePageController(new api(v, m));
-    b = ((SwipeImageView)x.findViewById(2131362698));
+    setFilterPageStore(new asv());
+    setSwipePageController(new aqe(v, m));
+    b = ((SwipeImageView)x.findViewById(2131362697));
     SwipeImageView localSwipeImageView = b;
     FrameLayout localFrameLayout = new FrameLayout(paramContext);
     localSwipeImageView.removeAllViews();
@@ -461,16 +459,16 @@ public class SnapEditorView
     f = false;
     e = localFrameLayout;
     localSwipeImageView.addView(e);
-    o = new apg(c, b, m);
+    o = new aqc(c, b, m);
     o.a(this);
     b.setFilterPageProvider(v);
     b.setSwipeState(m);
-    n = new ars(paramContext, b, v);
+    n = new asr(paramContext, b, v);
     o.a(n);
     d.c(n);
-    t = new apj(v, m);
+    t = new aqf(v, m);
     o.a(t);
-    i = ((FitWidthViewGroup)x.findViewById(2131362697));
+    i = ((FitWidthViewGroup)x.findViewById(2131362696));
     i.removeAllViews();
     l = new ImageView(paramContext);
     l.setVisibility(8);
@@ -478,14 +476,14 @@ public class SnapEditorView
     k = new LegacyCanvasView(paramContext);
     b.addView(k);
     C = ViewConfiguration.get(paramContext).getScaledTouchSlop();
-    p = new arc(C, this, new arf());
+    p = new asb(C, this, new ase());
   }
   
   public final void a(MotionEvent paramMotionEvent)
   {
-    arn localarn = b.getCurrentPage();
-    if (localarn == null) {}
-    for (boolean bool = false; bool; bool = localarn.a(paramMotionEvent))
+    asm localasm = b.getCurrentPage();
+    if (localasm == null) {}
+    for (boolean bool = false; bool; bool = localasm.a(paramMotionEvent))
     {
       b.dispatchTouchEvent(paramMotionEvent);
       return;
@@ -505,11 +503,11 @@ public class SnapEditorView
     {
       return;
       setMediabryo(c);
-      api localapi = c;
+      aqe localaqe = c;
       int i1 = a;
       b.c = i1;
       b.d = i1;
-      localapi = c;
+      localaqe = c;
       i1 = b;
       b.a = i1;
       b.b = i1;
@@ -522,15 +520,15 @@ public class SnapEditorView
   
   public final void a(SwipeImageView paramSwipeImageView, boolean paramBoolean)
   {
-    arn localarn;
-    oj localoj;
+    asm localasm;
+    pa localpa;
     if (paramBoolean) {
       if (w != null)
       {
         paramBoolean = m.l;
         paramSwipeImageView = v.a(c.b.a);
-        localarn = v.a(c.b.c);
-        localoj = w;
+        localasm = v.a(c.b.c);
+        localpa = w;
         if (!paramBoolean) {
           break label113;
         }
@@ -540,10 +538,10 @@ public class SnapEditorView
     for (;;)
     {
       if (paramSwipeImageView != null) {
-        localoj.a(paramSwipeImageView, e);
+        localpa.a(paramSwipeImageView, e);
       }
-      if (localarn != null) {
-        localoj.a(localarn, f);
+      if (localasm != null) {
+        localpa.a(localasm, f);
       }
       b(true);
       return;
@@ -568,7 +566,7 @@ public class SnapEditorView
     }
     final Object localObject = F;
     Context localContext = getContext();
-    switch (apr.1.a[localObject.ordinal()])
+    switch (aqq.1.a[localObject.ordinal()])
     {
     default: 
       throw new IllegalArgumentException(String.format("[%s] Caption Type is not valid", new Object[] { localObject }));
@@ -612,7 +610,7 @@ public class SnapEditorView
   
   public final void a(boolean paramBoolean, float paramFloat)
   {
-    apg localapg = o;
+    aqc localaqc = o;
     int i2 = u.widthPixels;
     c.g = paramFloat;
     Object localObject;
@@ -620,7 +618,7 @@ public class SnapEditorView
     {
       localObject = d.iterator();
       while (((Iterator)localObject).hasNext()) {
-        ((apg.a)((Iterator)localObject).next()).q();
+        ((aqc.a)((Iterator)localObject).next()).q();
       }
       c.d();
       localObject = a;
@@ -644,25 +642,25 @@ public class SnapEditorView
       c.b();
       c.n = 0.5F;
       b.invalidate();
-      localapg.a(i2);
+      localaqc.a(i2);
       return;
       if (paramBoolean)
       {
-        i1 = ((api)localObject).a(b.c, b.a());
+        i1 = ((aqe)localObject).a(b.c, b.a());
         b.d = i1;
         break;
       }
-      i1 = ((api)localObject).a(b.a, b.a());
+      i1 = ((aqe)localObject).a(b.a, b.a());
       b.b = i1;
       break;
     }
   }
   
-  @cgc
-  public final Bitmap b(@cgb Context paramContext)
+  @chd
+  public final Bitmap b(@chc Context paramContext)
   {
     k.destroyDrawingCache();
-    bgp.a();
+    bhp.a();
     Object localObject;
     int i1;
     if ((z == null) && (k.getNumberOfStrokes() <= 0) && (a.i()) && (j == null))
@@ -682,7 +680,7 @@ public class SnapEditorView
       {
         i1 = 1;
         label77:
-        if ((i1 != 0) || (b.findViewById(2131361793) != null)) {
+        if ((i1 != 0) || (b.findViewById(2131361794) != null)) {
           break label106;
         }
       }
@@ -697,10 +695,10 @@ public class SnapEditorView
       i1 = 0;
       break label77;
       b.setVisibilityOfPreviewOnlyContent(4);
-      localObject = atf.a(getWidth(), getHeight(), new View[] { j, b, a });
+      localObject = aue.a(getWidth(), getHeight(), new View[] { j, b, a });
       b.setVisibilityOfPreviewOnlyContent(0);
     } while (localObject == null);
-    return aur.a((Bitmap)localObject, G.a(paramContext));
+    return avp.a((Bitmap)localObject, G.a(paramContext));
   }
   
   public final void b()
@@ -714,7 +712,7 @@ public class SnapEditorView
     G = null;
     y = null;
     z = null;
-    h.a(2130968732, x);
+    h.a(2130968734, x);
     x = null;
   }
   
@@ -726,9 +724,7 @@ public class SnapEditorView
   
   public final void c()
   {
-    if ((s != null) && (s.getFilterRenderingTask() != null))
-    {
-      Timber.c("SnapEditorView", "Stopping playback!", new Object[0]);
+    if ((s != null) && (s.getFilterRenderingTask() != null)) {
       s.a();
     }
     if (r != null) {
@@ -738,13 +734,13 @@ public class SnapEditorView
   
   public final boolean d()
   {
-    api localapi = c;
+    aqe localaqe = c;
     return a.b(b.a) == FilterPageType.UNFILTERED;
   }
   
   public final void e()
   {
-    apg localapg = o;
+    aqc localaqc = o;
     int i2 = u.widthPixels;
     c.i = SwipeViewState.MotionState.AUTO_SCROLLING;
     SwipeViewState localSwipeViewState = c;
@@ -761,7 +757,7 @@ public class SnapEditorView
     {
       c.n = 0.2F;
       b.invalidate();
-      localapg.a(i2);
+      localaqc.a(i2);
       return;
       i1 = 0;
       break;
@@ -781,25 +777,25 @@ public class SnapEditorView
     int i2;
     if (localObject2 != null)
     {
-      ((arn)localObject2).h();
-      if (((localObject2 instanceof asb)) && ((G instanceof aim)))
+      ((asm)localObject2).h();
+      if (((localObject2 instanceof ata)) && ((G instanceof aji)))
       {
         i1 = getFilteredPageCount();
-        localObject1 = (aim)G;
+        localObject1 = (aji)G;
         i2 = c.b.a;
         localObject2 = b.mFilterId;
-        localObject1 = (nd)mGeofilterSwipeMetaData.mData.get(localObject2);
+        localObject1 = (nu)mGeofilterSwipeMetaData.mData.get(localObject2);
         if (localObject1 != null) {
-          break label141;
+          break label129;
         }
-        Timber.e(nc.TAG, "Item for " + (String)localObject2 + " is null.", new Object[0]);
+        new StringBuilder("Item for ").append((String)localObject2).append(" is null.");
       }
     }
     return;
-    label141:
+    label129:
     filterIndexCount = i1;
     filterIndexPos = i2;
-    ((nd)localObject1).a();
+    ((nu)localObject1).a();
   }
   
   public CanvasViewBase getCanvasView()
@@ -807,7 +803,7 @@ public class SnapEditorView
     return k;
   }
   
-  public apo getCaptionAnalyticsDetails()
+  public aqn getCaptionAnalyticsDetails()
   {
     return a.getCaptionAnalyticsDetails();
   }
@@ -841,17 +837,17 @@ public class SnapEditorView
   
   public FragmentShader.Filter getShaderFilter()
   {
-    apj localapj = t;
+    aqf localaqf = t;
     if (d > 0.5D) {
       return b;
     }
     return c;
   }
   
-  @cgc
+  @chd
   protected SnapVideoView getSnapVideoView()
   {
-    return (SnapVideoView)findViewById(2131362836);
+    return (SnapVideoView)findViewById(2131362829);
   }
   
   public FilterPageType getSwipeFilterType()
@@ -859,15 +855,15 @@ public class SnapEditorView
     return b.a(b.getPageIndex());
   }
   
-  @cgc
+  @chd
   protected VideoFilterView getVideoFilterView()
   {
-    return (VideoFilterView)findViewById(2131362835);
+    return (VideoFilterView)findViewById(2131362828);
   }
   
   public final void h()
   {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -876,8 +872,8 @@ public class SnapEditorView
     });
   }
   
-  @boh
-  public void onEnableFiltersEvent(bbi parambbi)
+  @bpi
+  public void onEnableFiltersEvent(bci parambci)
   {
     m.c = 0;
     m.d = 0;
@@ -887,20 +883,20 @@ public class SnapEditorView
     n.a(G.h(), G.mShouldEnableVisualFilters, G.mShouldEnableSmartFilters, G.mSnapType);
   }
   
-  @boh
-  public void onHelloWorldEvent(bbw parambbw)
+  @bpi
+  public void onHelloWorldEvent(bcw parambcw)
   {
-    parambbw = b.findViewById(2131361793);
-    if (parambbw == null)
+    parambcw = b.findViewById(2131361794);
+    if (parambcw == null)
     {
-      parambbw = getContext();
-      KarelView localKarelView = new KarelView(parambbw);
-      localKarelView.setId(2131361793);
+      parambcw = getContext();
+      KarelView localKarelView = new KarelView(parambcw);
+      localKarelView.setId(2131361794);
       b.addView(localKarelView);
-      AlertDialogUtils.a(2131493501, parambbw);
+      AlertDialogUtils.a(2131493501, parambcw);
       return;
     }
-    b.removeView(parambbw);
+    b.removeView(parambcw);
   }
   
   public boolean onInterceptTouchEvent(MotionEvent paramMotionEvent)
@@ -917,7 +913,7 @@ public class SnapEditorView
       bool1 = false;
     }
     int i1;
-    arc localarc;
+    asb localasb;
     int i3;
     int i4;
     do
@@ -942,7 +938,7 @@ public class SnapEditorView
             {
               if ((i1 == 1) || (i1 == 3))
               {
-                Timber.c("SnapEditorView", "Remove pointerId %d", new Object[] { Integer.valueOf(paramMotionEvent.getPointerId(0)) });
+                paramMotionEvent.getPointerId(0);
                 H.remove(Integer.valueOf(paramMotionEvent.getPointerId(0)));
               }
               i1 = 1;
@@ -953,7 +949,7 @@ public class SnapEditorView
               return true;
               if ((i1 == 0) && (a.b(paramMotionEvent)))
               {
-                Timber.c("SnapEditorView", "Add pointerId %d", new Object[] { Integer.valueOf(paramMotionEvent.getPointerId(0)) });
+                paramMotionEvent.getPointerId(0);
                 H.add(Integer.valueOf(paramMotionEvent.getPointerId(0)));
                 i1 = 1;
               }
@@ -964,7 +960,7 @@ public class SnapEditorView
             }
             bool1 = bool2;
           } while (a.h());
-          localarc = p;
+          localasb = p;
           i3 = paramMotionEvent.getActionMasked();
           i1 = paramMotionEvent.getActionIndex();
           i4 = paramMotionEvent.getPointerId(i1);
@@ -993,24 +989,24 @@ public class SnapEditorView
         }
       }
       if ((i1 == 0) && (i3 != 5)) {
-        break label520;
+        break label484;
       }
       if (i1 == 0) {
-        break label515;
+        break label479;
       }
       i1 = i2;
-      label423:
+      label387:
       paramMotionEvent = a.a(d, c, i1);
     }
     for (;;)
     {
-      label445:
+      label409:
       bool1 = bool2;
       if (paramMotionEvent == null) {
         break;
       }
       localObject = e;
-      switch (ard.1.a[paramMotionEvent.ordinal()])
+      switch (asc.1.a[paramMotionEvent.ordinal()])
       {
       default: 
         paramMotionEvent = null;
@@ -1021,18 +1017,18 @@ public class SnapEditorView
         return true;
         i1 = 0;
         break;
-        label515:
+        label479:
         i1 = 1;
-        break label423;
-        label520:
+        break label387;
+        label484:
         if (i3 == 2)
         {
           i1 = paramMotionEvent.getPointerCount();
           paramMotionEvent = a.a(d, c, i1, b);
-          break label445;
+          break label409;
         }
         if ((i3 != 1) && (i3 != 6) && (i3 != 3)) {
-          break label671;
+          break label635;
         }
         localObject = c;
         if ((i4 < 0) || (i4 >= 2)) {}
@@ -1050,7 +1046,7 @@ public class SnapEditorView
         continue;
         paramMotionEvent = e;
       }
-      label671:
+      label635:
       paramMotionEvent = null;
     }
   }
@@ -1063,7 +1059,7 @@ public class SnapEditorView
   public void setAudible(boolean paramBoolean)
   {
     A = paramBoolean;
-    if (wy.b())
+    if (xt.b())
     {
       setVolumeVideoFilterView(paramBoolean);
       return;
@@ -1071,7 +1067,7 @@ public class SnapEditorView
     setVolumeMediaPlayer(paramBoolean);
   }
   
-  public void setCaptionEditTextOnTouchListener(@cgc View.OnTouchListener paramOnTouchListener)
+  public void setCaptionEditTextOnTouchListener(@chd View.OnTouchListener paramOnTouchListener)
   {
     a.setCaptionEditTextOnTouchListener(paramOnTouchListener);
     D = paramOnTouchListener;
@@ -1082,9 +1078,9 @@ public class SnapEditorView
     a.setText(paramString);
   }
   
-  protected void setFilterPageStore(@cgb arw<arn> paramarw)
+  protected void setFilterPageStore(@chc asv<asm> paramasv)
   {
-    v = paramarw;
+    v = paramasv;
   }
   
   public void setInterface(b paramb)
@@ -1110,19 +1106,19 @@ public class SnapEditorView
     b.setSnapPreviewRotationListener(parama);
   }
   
-  public void setSwipeImageViewAnalytics(oj paramoj)
+  public void setSwipeImageViewAnalytics(pa parampa)
   {
-    w = paramoj;
+    w = parampa;
   }
   
-  public void setSwipeImageViewOnScrollListener(apg.a parama)
+  public void setSwipeImageViewOnScrollListener(aqc.a parama)
   {
     o.a(parama);
   }
   
-  protected void setSwipePageController(@cgb api paramapi)
+  protected void setSwipePageController(@chc aqe paramaqe)
   {
-    c = paramapi;
+    c = paramaqe;
   }
   
   public final class a

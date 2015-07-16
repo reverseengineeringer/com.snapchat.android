@@ -1,95 +1,234 @@
-.class public final Leb;
-.super Ljava/lang/Object;
+.class final Leb;
+.super Ldr;
 .source "SourceFile"
 
 
 # annotations
-.annotation build Lcc;
+.annotation build Lcd;
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<E:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ldr",
+        "<TE;>;"
+    }
 .end annotation
 
 
-# static fields
-.field private static final a:Ljava/io/OutputStream;
+# instance fields
+.field final transient a:[Ljava/lang/Object;
+    .annotation build Lcf;
+    .end annotation
+.end field
+
+.field private final b:[Ljava/lang/Object;
+
+.field private final transient c:I
+
+.field private final transient d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>([Ljava/lang/Object;I[Ljava/lang/Object;I)V
+    .locals 0
 
     .prologue
-    .line 501
-    new-instance v0, Leb$1;
+    .line 38
+    invoke-direct {p0}, Ldr;-><init>()V
 
-    invoke-direct {v0}, Leb$1;-><init>()V
+    .line 39
+    iput-object p1, p0, Leb;->b:[Ljava/lang/Object;
 
-    sput-object v0, Leb;->a:Ljava/io/OutputStream;
+    .line 40
+    iput-object p3, p0, Leb;->a:[Ljava/lang/Object;
 
+    .line 41
+    iput p4, p0, Leb;->c:I
+
+    .line 42
+    iput p2, p0, Leb;->d:I
+
+    .line 43
     return-void
 .end method
 
-.method private static a(Ljava/io/InputStream;Ljava/io/OutputStream;)J
-    .locals 6
+
+# virtual methods
+.method final a([Ljava/lang/Object;I)I
+    .locals 3
 
     .prologue
-    .line 65
-    invoke-static {p0}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 73
+    iget-object v0, p0, Leb;->b:[Ljava/lang/Object;
 
-    .line 66
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    .line 67
-    const/16 v0, 0x1000
+    iget-object v2, p0, Leb;->b:[Ljava/lang/Object;
 
-    new-array v2, v0, [B
+    array-length v2, v2
 
-    .line 68
-    const-wide/16 v0, 0x0
+    invoke-static {v0, v1, p1, p2, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 70
-    :goto_0
-    invoke-virtual {p0, v2}, Ljava/io/InputStream;->read([B)I
+    .line 74
+    iget-object v0, p0, Leb;->b:[Ljava/lang/Object;
 
-    move-result v3
+    array-length v0, v0
 
-    .line 71
-    const/4 v4, -0x1
+    add-int/2addr v0, p2
 
-    if-eq v3, v4, :cond_0
-
-    .line 72
-    const/4 v4, 0x0
-
-    invoke-virtual {p1, v2, v4, v3}, Ljava/io/OutputStream;->write([BII)V
-
-    .line 75
-    int-to-long v4, v3
-
-    add-long/2addr v0, v4
-
-    .line 76
-    goto :goto_0
-
-    .line 77
-    :cond_0
-    return-wide v0
+    return v0
 .end method
 
-.method public static a(Ljava/io/InputStream;)[B
+.method public final a()Lef;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lef",
+            "<TE;>;"
+        }
+    .end annotation
 
     .prologue
-    .line 114
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
+    .line 68
+    iget-object v0, p0, Leb;->b:[Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    .line 115
-    invoke-static {p0, v0}, Leb;->a(Ljava/io/InputStream;Ljava/io/OutputStream;)J
-
-    .line 116
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    invoke-static {v0}, Lds;->a([Ljava/lang/Object;)Lef;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method final c()Z
+    .locals 1
+
+    .prologue
+    .line 92
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 4
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 46
+    if-nez p1, :cond_0
+
+    move v0, v1
+
+    .line 55
+    :goto_0
+    return v0
+
+    .line 49
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    invoke-static {v0}, Ldh;->a(I)I
+
+    move-result v0
+
+    .line 50
+    :goto_1
+    iget-object v2, p0, Leb;->a:[Ljava/lang/Object;
+
+    iget v3, p0, Leb;->c:I
+
+    and-int/2addr v3, v0
+
+    aget-object v2, v2, v3
+
+    .line 51
+    if-nez v2, :cond_1
+
+    move v0, v1
+
+    .line 52
+    goto :goto_0
+
+    .line 54
+    :cond_1
+    invoke-virtual {v2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 55
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    .line 49
+    :cond_2
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+.end method
+
+.method final d()Ldl;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ldl",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 79
+    new-instance v0, Ldy;
+
+    iget-object v1, p0, Leb;->b:[Ljava/lang/Object;
+
+    invoke-direct {v0, p0, v1}, Ldy;-><init>(Ldj;[Ljava/lang/Object;)V
+
+    return-object v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .prologue
+    .line 88
+    iget v0, p0, Leb;->d:I
+
+    return v0
+.end method
+
+.method public final synthetic iterator()Ljava/util/Iterator;
+    .locals 1
+
+    .prologue
+    .line 27
+    iget-object v0, p0, Leb;->b:[Ljava/lang/Object;
+
+    invoke-static {v0}, Lds;->a([Ljava/lang/Object;)Lef;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final size()I
+    .locals 1
+
+    .prologue
+    .line 62
+    iget-object v0, p0, Leb;->b:[Ljava/lang/Object;
+
+    array-length v0, v0
+
+    return v0
 .end method

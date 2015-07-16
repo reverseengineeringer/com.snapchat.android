@@ -1,5 +1,5 @@
 .class public final Lajl;
-.super Ljava/lang/Object;
+.super Lbgm;
 .source "SourceFile"
 
 
@@ -11,54 +11,113 @@
 .end annotation
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String; = "DecryptedSnapVideo"
+
+
 # instance fields
-.field public final mGravity:I
+.field private final mCache:Laxn;
 
-.field public final mHeight:I
+.field private final mKey:Ljava/lang/String;
 
-.field public final mShouldHideSystemUi:Z
-
-.field public final mWidth:I
+.field private final mOverlay:Landroid/graphics/Bitmap;
+    .annotation build Lchd;
+    .end annotation
+.end field
 
 
 # direct methods
-.method private constructor <init>(Lajl$a;)V
-    .locals 1
+.method private constructor <init>(Laxn;Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    .locals 0
+    .param p1    # Laxn;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Landroid/graphics/Bitmap;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
     .prologue
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 26
+    invoke-direct {p0}, Lbgm;-><init>()V
 
-    .line 16
-    iget v0, p1, Lajl$a;->mGravity:I
+    .line 27
+    iput-object p1, p0, Lajl;->mCache:Laxn;
 
-    iput v0, p0, Lajl;->mGravity:I
+    .line 28
+    iput-object p2, p0, Lajl;->mKey:Ljava/lang/String;
 
-    .line 17
-    iget v0, p1, Lajl$a;->mWidth:I
+    .line 29
+    iput-object p3, p0, Lajl;->mOverlay:Landroid/graphics/Bitmap;
 
-    iput v0, p0, Lajl;->mWidth:I
-
-    .line 18
-    iget v0, p1, Lajl$a;->mHeight:I
-
-    iput v0, p0, Lajl;->mHeight:I
-
-    .line 19
-    iget-boolean v0, p1, Lajl$a;->mShouldHideSystemUi:Z
-
-    iput-boolean v0, p0, Lajl;->mShouldHideSystemUi:Z
-
-    .line 20
+    .line 30
     return-void
 .end method
 
-.method synthetic constructor <init>(Lajl$a;B)V
+.method public synthetic constructor <init>(Laxn;Ljava/lang/String;Landroid/graphics/Bitmap;B)V
     .locals 0
 
     .prologue
-    .line 8
-    invoke-direct {p0, p1}, Lajl;-><init>(Lajl$a;)V
+    .line 16
+    invoke-direct {p0, p1, p2, p3}, Lajl;-><init>(Laxn;Ljava/lang/String;Landroid/graphics/Bitmap;)V
 
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 2
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 38
+    invoke-virtual {p0}, Lajl;->f()V
+
+    .line 39
+    iget-object v0, p0, Lajl;->mCache:Laxn;
+
+    iget-object v1, p0, Lajl;->mKey:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Laxn;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b()Landroid/graphics/Bitmap;
+    .locals 1
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 48
+    invoke-virtual {p0}, Lajl;->f()V
+
+    .line 49
+    iget-object v0, p0, Lajl;->mOverlay:Landroid/graphics/Bitmap;
+
+    return-object v0
+.end method
+
+.method protected final c()V
+    .locals 2
+
+    .prologue
+    .line 57
+    iget-object v0, p0, Lajl;->mCache:Laxn;
+
+    iget-object v1, p0, Lajl;->mKey:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Laxn;->c(Ljava/lang/String;)V
+
+    .line 58
     return-void
 .end method

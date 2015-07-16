@@ -1,20 +1,14 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
 public final class aln
 {
-  public final Object a = new Object();
-  public final Map<String, Set<alb.a>> b = new HashMap();
-  
-  public final Set<alb.a> a(alc paramalc)
-  {
-    synchronized (a)
-    {
-      paramalc = (Set)b.remove(paramalc.a());
-      return paramalc;
-    }
-  }
+  public static final int DISCOVER_BLOB = 4;
+  public static final String DISCOVER_SHARE = bjj.a.DISCOVER_SHARE_V2.name();
+  public static final int FRIEND_REQUEST = 3;
+  public static final int FRIEND_REQUEST_IMAGE = 4;
+  public static final int FRIEND_REQUEST_VIDEO = 5;
+  public static final int FRIEND_REQUEST_VIDEO_NO_AUDIO = 6;
+  public static final int IMAGE = 0;
+  public static final int VIDEO_AUDIO = 1;
+  public static final int VIDEO_NO_AUDIO = 2;
 }
 
 /* Location:

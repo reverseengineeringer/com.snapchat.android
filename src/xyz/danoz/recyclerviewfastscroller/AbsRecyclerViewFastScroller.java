@@ -12,23 +12,23 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
-import ckq;
-import ckr.a;
-import ckr.c;
-import cku;
-import ckv;
-import cky;
+import clr;
+import cls.a;
+import cls.c;
+import clv;
+import clw;
+import clz;
 import q;
 import r;
 
 public abstract class AbsRecyclerViewFastScroller
   extends FrameLayout
 {
-  private static final int[] f = ckr.c.AbsRecyclerViewFastScroller;
+  private static final int[] f = cls.c.AbsRecyclerViewFastScroller;
   public final View a;
   public final View b;
   public RecyclerView c;
-  public cky d;
+  public clz d;
   protected RecyclerView.j e;
   
   public AbsRecyclerViewFastScroller(Context paramContext)
@@ -47,18 +47,18 @@ public abstract class AbsRecyclerViewFastScroller
     paramAttributeSet = getContext().getTheme().obtainStyledAttributes(paramAttributeSet, f, 0, 0);
     try
     {
-      paramInt = paramAttributeSet.getResourceId(ckr.c.AbsRecyclerViewFastScroller_rfs_fast_scroller_layout, getLayoutResourceId());
+      paramInt = paramAttributeSet.getResourceId(cls.c.AbsRecyclerViewFastScroller_rfs_fast_scroller_layout, getLayoutResourceId());
       ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(paramInt, this, true);
-      a = findViewById(ckr.a.scroll_bar);
-      b = findViewById(ckr.a.scroll_handle);
-      paramContext = paramAttributeSet.getDrawable(ckr.c.AbsRecyclerViewFastScroller_rfs_barBackground);
-      paramInt = paramAttributeSet.getColor(ckr.c.AbsRecyclerViewFastScroller_rfs_barColor, -7829368);
+      a = findViewById(cls.a.scroll_bar);
+      b = findViewById(cls.a.scroll_handle);
+      paramContext = paramAttributeSet.getDrawable(cls.c.AbsRecyclerViewFastScroller_rfs_barBackground);
+      paramInt = paramAttributeSet.getColor(cls.c.AbsRecyclerViewFastScroller_rfs_barColor, -7829368);
       a(a, paramContext, paramInt);
-      paramContext = paramAttributeSet.getDrawable(ckr.c.AbsRecyclerViewFastScroller_rfs_handleBackground);
-      paramInt = paramAttributeSet.getColor(ckr.c.AbsRecyclerViewFastScroller_rfs_handleColor, -7829368);
+      paramContext = paramAttributeSet.getDrawable(cls.c.AbsRecyclerViewFastScroller_rfs_handleBackground);
+      paramInt = paramAttributeSet.getColor(cls.c.AbsRecyclerViewFastScroller_rfs_handleColor, -7829368);
       a(b, paramContext, paramInt);
       paramAttributeSet.recycle();
-      setOnTouchListener(new ckq(this));
+      setOnTouchListener(new clr(this));
       return;
     }
     finally
@@ -103,9 +103,9 @@ public abstract class AbsRecyclerViewFastScroller
         public final void a(RecyclerView paramAnonymousRecyclerView, int paramAnonymousInt1, int paramAnonymousInt2)
         {
           float f = 0.0F;
-          ckv localckv = getScrollProgressCalculator();
-          if (localckv != null) {
-            f = localckv.a(paramAnonymousRecyclerView);
+          clw localclw = getScrollProgressCalculator();
+          if (localclw != null) {
+            f = localclw.a(paramAnonymousRecyclerView);
           }
           a(f);
         }
@@ -115,10 +115,10 @@ public abstract class AbsRecyclerViewFastScroller
   }
   
   @r
-  public abstract ckv getScrollProgressCalculator();
+  public abstract clw getScrollProgressCalculator();
   
   @r
-  public cky getSectionIndicator()
+  public clz getSectionIndicator()
   {
     return d;
   }
@@ -157,9 +157,9 @@ public abstract class AbsRecyclerViewFastScroller
     c = paramRecyclerView;
   }
   
-  public void setSectionIndicator(cky paramcky)
+  public void setSectionIndicator(clz paramclz)
   {
-    d = paramcky;
+    d = paramclz;
   }
 }
 

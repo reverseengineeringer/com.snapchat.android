@@ -51,7 +51,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/email/EmailSettingsFragment$6;->a:Lcom/snapchat/android/fragments/settings/email/EmailSettingsFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/email/EmailSettingsFragment;->g(Lcom/snapchat/android/fragments/settings/email/EmailSettingsFragment;)Laol;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/email/EmailSettingsFragment;->g(Lcom/snapchat/android/fragments/settings/email/EmailSettingsFragment;)Laph;
 
     move-result-object v1
 
@@ -75,7 +75,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Laol;->a(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3}, Laph;->a(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v1
 

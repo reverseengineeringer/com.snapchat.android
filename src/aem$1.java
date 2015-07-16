@@ -1,25 +1,26 @@
-import android.support.v4.view.PagerAdapter;
-import com.snapchat.android.discover.ui.fragment.EditionViewerPager;
-import com.snapchat.android.discover.ui.fragment.EditionViewerPager.SwipeToExitMethod;
-import com.snapchat.android.discover.ui.fragment.EditionViewerPager.b;
-import com.snapchat.android.discover.ui.media.DiscoverEditionPageView.a;
+import com.snapchat.android.discover.model.ChannelPage;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 final class aem$1
-  implements DiscoverEditionPageView.a
+  implements aej.a
 {
-  aem$1(aem paramaem, EditionViewerPager paramEditionViewerPager) {}
+  aem$1(aem paramaem) {}
   
-  public final void a()
+  public final void a(@chc List<ChannelPage> paramList)
   {
-    EditionViewerPager localEditionViewerPager = a;
-    if (localEditionViewerPager.getCurrentItem() == localEditionViewerPager.getAdapter().getCount() - 1)
+    synchronized (a.a)
     {
-      if (a != null) {
-        a.a(EditionViewerPager.SwipeToExitMethod.AUTO_ADVANCE);
+      a.d.clear();
+      paramList = paramList.iterator();
+      if (paramList.hasNext())
+      {
+        ChannelPage localChannelPage = (ChannelPage)paramList.next();
+        a.d.put(d, localChannelPage);
       }
-      return;
     }
-    localEditionViewerPager.setCurrentItem(localEditionViewerPager.getCurrentItem() + 1);
+    a.a();
   }
 }
 

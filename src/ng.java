@@ -1,67 +1,83 @@
-import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
+import android.os.Bundle;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public final class ng
+  extends nc
 {
-  private static final String MEDIA_VIEW_INTERVAL_EVENT = "MEDIA_VIEW_INTERVAL";
-  private static ng sInstance;
-  public final DictionaryEasyMetric mDictionaryEasyMetric;
+  protected static final String DISCOVER_AD_PAGE_IMPRESSION_DURATION_KEY = "ad_page_impression_duration";
+  private static final String PRODUCT_ID = "discover";
+  protected static final int TITLE_SPLASH_POSITION = 0;
+  private final int mAdType;
+  private final String mAdUnitId;
+  private final String mChannelName;
+  private final String mEditionName;
+  private final int mPosition;
+  private final Map<String, String> mTargetingParams;
   
-  protected ng()
+  private ng(String paramString1, String paramString2, String paramString3, Map<String, String> paramMap, int paramInt1, int paramInt2)
   {
-    this(DictionaryEasyMetric.a());
+    mEditionName = paramString1;
+    mChannelName = paramString2;
+    mAdUnitId = paramString3;
+    mTargetingParams = paramMap;
+    mPosition = paramInt1;
+    mAdType = paramInt2;
   }
   
-  private ng(DictionaryEasyMetric paramDictionaryEasyMetric)
+  public final String a()
   {
-    mDictionaryEasyMetric = paramDictionaryEasyMetric;
+    return mAdUnitId;
   }
   
-  public static ng a()
+  public final String b()
   {
-    try
+    return String.format("%s-%s-%s-[%s]", new Object[] { "discover", mChannelName, mEditionName, Integer.valueOf(mPosition) });
+  }
+  
+  public final Bundle c()
+  {
+    Bundle localBundle = new Bundle();
+    Iterator localIterator = mTargetingParams.entrySet().iterator();
+    while (localIterator.hasNext())
     {
-      if (sInstance == null) {
-        sInstance = new ng();
-      }
-      ng localng = sInstance;
-      return localng;
+      Map.Entry localEntry = (Map.Entry)localIterator.next();
+      localBundle.putString((String)localEntry.getKey(), (String)localEntry.getValue());
     }
-    finally {}
+    return localBundle;
   }
   
-  private void b(String paramString)
+  public final String d()
   {
-    mDictionaryEasyMetric.a("MEDIA_VIEW_INTERVAL", "context", paramString);
+    return "ad_page_impression_duration";
   }
   
-  public final void a(String paramString)
+  public final String toString()
   {
-    mDictionaryEasyMetric.a("MEDIA_VIEW_INTERVAL", "last_action", paramString);
+    return String.format("AdPlaceholder(%s:%s[%d]-%d)", new Object[] { mChannelName, mEditionName, Integer.valueOf(mPosition), Integer.valueOf(mAdType) });
   }
   
-  public final void a(String paramString1, String paramString2)
+  public static final class a
   {
-    c(paramString2, paramString1);
-    b(paramString2, paramString1);
-  }
-  
-  public final void a(boolean paramBoolean)
-  {
-    mDictionaryEasyMetric.a("MEDIA_VIEW_INTERVAL", paramBoolean);
-  }
-  
-  public final void b(String paramString1, String paramString2)
-  {
-    a(false);
-    b(paramString2);
-    a(paramString1);
-  }
-  
-  public final void c(String paramString1, String paramString2)
-  {
-    mDictionaryEasyMetric.a("MEDIA_VIEW_INTERVAL", "current_action", paramString1);
-    b(paramString2);
-    mDictionaryEasyMetric.b("MEDIA_VIEW_INTERVAL");
+    public int mAdType;
+    public String mAdUnitId;
+    public String mChannelName;
+    public String mEditionName;
+    public int mPosition;
+    public Map<String, String> mTargetingParams;
+    
+    public final ng a()
+    {
+      if (mEditionName == null) {
+        throw new IllegalArgumentException("editionName should not be null.");
+      }
+      if (mChannelName == null) {
+        throw new IllegalArgumentException("channelName should not be null.");
+      }
+      return new ng(mEditionName, mChannelName, mAdUnitId, mTargetingParams, mPosition, mAdType, (byte)0);
+    }
   }
 }
 

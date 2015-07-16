@@ -1,69 +1,28 @@
-import java.util.Collection;
-import java.util.Set;
-import javax.annotation.Nullable;
-
 @cd
 final class cx
-  extends di<Object>
 {
-  static final cx a = new cx();
-  
-  final int a(Object[] paramArrayOfObject, int paramInt)
+  static int a(int paramInt, String paramString)
   {
+    if (paramInt < 0)
+    {
+      paramString = String.valueOf(String.valueOf(paramString));
+      throw new IllegalArgumentException(paramString.length() + 40 + paramString + " cannot be negative but was: " + paramInt);
+    }
     return paramInt;
   }
   
-  public final dw<Object> a()
+  static void a(Object paramObject1, Object paramObject2)
   {
-    return dj.a();
-  }
-  
-  public final de<Object> b()
-  {
-    return de.e();
-  }
-  
-  final boolean c()
-  {
-    return true;
-  }
-  
-  public final boolean contains(@Nullable Object paramObject)
-  {
-    return false;
-  }
-  
-  public final boolean containsAll(Collection<?> paramCollection)
-  {
-    return paramCollection.isEmpty();
-  }
-  
-  public final boolean equals(@Nullable Object paramObject)
-  {
-    if ((paramObject instanceof Set)) {
-      return ((Set)paramObject).isEmpty();
+    if (paramObject1 == null)
+    {
+      paramObject1 = String.valueOf(String.valueOf(paramObject2));
+      throw new NullPointerException(((String)paramObject1).length() + 24 + "null key in entry: null=" + (String)paramObject1);
     }
-    return false;
-  }
-  
-  public final int hashCode()
-  {
-    return 0;
-  }
-  
-  public final boolean isEmpty()
-  {
-    return true;
-  }
-  
-  public final int size()
-  {
-    return 0;
-  }
-  
-  public final String toString()
-  {
-    return "[]";
+    if (paramObject2 == null)
+    {
+      paramObject1 = String.valueOf(String.valueOf(paramObject1));
+      throw new NullPointerException(((String)paramObject1).length() + 26 + "null value in entry: " + (String)paramObject1 + "=null");
+    }
   }
 }
 

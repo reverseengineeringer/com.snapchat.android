@@ -17,7 +17,7 @@
 .field protected a:Landroid/view/View;
 
 .field public b:Lcom/snapchat/android/fragments/cash/SecurityCodeFragment$a;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -141,7 +141,7 @@
 
     const v2, 0x7f0c0036
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -155,7 +155,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v6, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v6, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -197,7 +197,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v7, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v7, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -211,7 +211,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v6, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v6, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -232,9 +232,9 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    const v2, 0x7f0c02a0
+    const v2, 0x7f0c029e
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -250,7 +250,7 @@
 
     const v2, 0x7f0c01c3
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -271,7 +271,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v7, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v7, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -285,7 +285,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v6, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v6, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -306,9 +306,9 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    const v2, 0x7f0c02a0
+    const v2, 0x7f0c029e
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -324,7 +324,7 @@
 
     const v2, 0x7f0c01c3
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -347,7 +347,7 @@
 
     const v2, 0x7f0c0065
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -363,7 +363,7 @@
 
     const v2, 0x7f0c01c1
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -471,7 +471,7 @@
 .method public final a(Lcom/snapchat/android/api2/cash/square/data/ErrorType;I)V
     .locals 1
     .param p1    # Lcom/snapchat/android/api2/cash/square/data/ErrorType;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -481,7 +481,7 @@
 
     invoke-direct {v0, p0, p1, p2}, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment$3;-><init>(Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;Lcom/snapchat/android/api2/cash/square/data/ErrorType;I)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 146
     return-void
@@ -495,20 +495,30 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->e()V
 
     .line 53
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdg;
+    new-instance v1, Lbeg;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Lbdg;-><init>(Z)V
+    invoke-direct {v1, v2}, Lbeg;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 54
     return-void
+.end method
+
+.method public final f_()Z
+    .locals 1
+
+    .prologue
+    .line 211
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method public final g()Z
@@ -555,16 +565,6 @@
     goto :goto_0
 .end method
 
-.method public final g_()Z
-    .locals 1
-
-    .prologue
-    .line 211
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
 .method protected final i()V
     .locals 2
 
@@ -576,7 +576,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 103
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -598,7 +598,7 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment$2;-><init>(Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 118
     return-void
@@ -611,7 +611,7 @@
     const/4 v2, 0x0
 
     .line 58
-    const v0, 0x7f04001d
+    const v0, 0x7f04001e
 
     invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -636,7 +636,7 @@
 
     invoke-direct {v1, p0, v2}, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment$b;-><init>(Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;B)V
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardCvvEditText;->setValidatedInputCallback(Lye;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardCvvEditText;->setValidatedInputCallback(Lza;)V
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;->c:Lcom/snapchat/android/ui/cash/CardCvvEditText;
 
@@ -666,7 +666,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     :cond_0
     const v0, 0x7f0a00bb

@@ -173,7 +173,7 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 59
-    const v1, 0x7f040021
+    const v1, 0x7f040022
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -319,7 +319,7 @@
     const/4 v1, 0x0
 
     .line 66
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v0
 
@@ -363,7 +363,7 @@
     .line 76
     iget-object v0, p0, Lcom/snapchat/android/ui/CashReceiverView;->c:Landroid/view/ViewGroup;
 
-    invoke-static {v0}, Lavh;->a(Landroid/view/ViewGroup;)Ljava/util/List;
+    invoke-static {v0}, Lawf;->a(Landroid/view/ViewGroup;)Ljava/util/List;
 
     move-result-object v0
 
@@ -409,7 +409,7 @@
 
     .line 82
     :cond_2
-    invoke-static {p0}, Lavh;->a(Landroid/view/ViewGroup;)Ljava/util/List;
+    invoke-static {p0}, Lawf;->a(Landroid/view/ViewGroup;)Ljava/util/List;
 
     move-result-object v0
 
@@ -513,7 +513,7 @@
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     .line 143
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v0
 
@@ -529,7 +529,7 @@
 
     move-result v1
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v2
 
@@ -559,7 +559,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -571,7 +571,7 @@
     move-result v1
 
     .line 151
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v2
 
@@ -587,7 +587,7 @@
 
     move-result v3
 
-    invoke-static {}, Latz;->a()Ljava/util/Random;
+    invoke-static {}, Laux;->a()Ljava/util/Random;
 
     move-result-object v4
 
@@ -607,7 +607,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v3}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v2
 

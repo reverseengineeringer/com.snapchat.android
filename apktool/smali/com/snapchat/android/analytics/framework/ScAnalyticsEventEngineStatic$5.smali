@@ -26,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 277
+    .line 259
     iput-wide p1, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$5;->a:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,31 +40,44 @@
     .locals 6
 
     .prologue
-    .line 280
-    sget-object v0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a:Lcom/snapchat/android/analytics/framework/WorkerThread;
+    .line 262
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->g()Z
 
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->g()Ljava/lang/Runnable;
+    move-result v0
 
-    move-result-object v1
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/WorkerThread;->b(Ljava/lang/Runnable;)V
+    .line 278
+    :goto_0
+    return-void
 
-    .line 281
+    .line 265
+    :cond_0
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Z)Z
+
+    .line 266
+    iget-wide v0, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$5;->a:J
+
+    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(J)J
+
+    .line 268
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->h()J
 
     move-result-wide v0
 
-    .line 282
+    .line 269
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->i()J
 
     move-result-wide v2
 
-    .line 283
+    .line 270
     const-wide/16 v4, -0x1
 
     cmp-long v4, v0, v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     iget-wide v4, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$5;->a:J
 
@@ -74,32 +87,18 @@
 
     cmp-long v2, v2, v4
 
-    if-gez v2, :cond_0
+    if-gez v2, :cond_1
 
-    .line 286
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j()Landroid/content/Context;
+    .line 273
+    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->b(J)V
 
-    move-result-object v2
+    goto :goto_0
 
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/analytics/framework/DatabaseHelper;
-
-    move-result-object v2
-
-    .line 287
-    invoke-virtual {v2, v0, v1}, Lcom/snapchat/android/analytics/framework/DatabaseHelper;->b(J)V
-
-    .line 289
-    :cond_0
+    .line 276
+    :cond_1
     iget-wide v0, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$5;->a:J
 
-    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(J)V
+    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->c(J)V
 
-    .line 290
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->k()V
-
-    .line 292
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a()V
-
-    .line 293
-    return-void
+    goto :goto_0
 .end method

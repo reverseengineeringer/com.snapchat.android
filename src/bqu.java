@@ -1,22 +1,9 @@
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
 public abstract interface bqu
 {
-  public abstract String a();
-  
-  public abstract String b();
-  
-  public abstract String c();
-  
-  public abstract int d();
-  
-  public abstract String e();
-  
-  public abstract String f();
-  
-  public abstract String g();
-  
-  public abstract String h();
-  
-  public abstract btc i();
+  public abstract View a(RecyclerView paramRecyclerView, int paramInt);
 }
 
 /* Location:

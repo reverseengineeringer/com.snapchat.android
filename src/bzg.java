@@ -1,14 +1,22 @@
 public final class bzg
-  extends bza
+  implements byh
 {
-  public bzg()
+  public final byl a(bya parambya, String paramString)
   {
-    super("/", 6);
+    try
+    {
+      parambya = new Double(paramString);
+      return new byl(new Double(Math.tan(parambya.doubleValue())).toString(), 0);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("Invalid argument.", parambya);
+    }
   }
   
-  public final double a(double paramDouble1, double paramDouble2)
+  public final String a()
   {
-    return new Double(paramDouble1 / paramDouble2).doubleValue();
+    return "tan";
   }
 }
 

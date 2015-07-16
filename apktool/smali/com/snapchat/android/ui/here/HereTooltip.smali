@@ -44,7 +44,7 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 48
-    const v1, 0x7f04006a
+    const v1, 0x7f04006b
 
     const/4 v2, 0x1
 
@@ -87,7 +87,7 @@
 .method public final a(Lcom/snapchat/android/model/chat/ChatConversation;Z)V
     .locals 8
     .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -324,7 +324,7 @@
 
     .prologue
     .line 90
-    invoke-static {}, Lasu;->b()Z
+    invoke-static {}, Latt;->b()Z
 
     move-result v0
 

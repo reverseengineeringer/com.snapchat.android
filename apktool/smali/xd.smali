@@ -2,57 +2,66 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lxc;
+
 
 # instance fields
-.field private final a:Lxe;
+.field final a:Lxc;
+
+.field private final b:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 11
-    new-instance v0, Lxe;
-
-    invoke-direct {v0}, Lxe;-><init>()V
-
-    invoke-direct {p0, v0}, Lxd;-><init>(Lxe;)V
-
-    .line 12
-    return-void
-.end method
-
-.method private constructor <init>(Lxe;)V
+.method public constructor <init>(Landroid/os/Handler;Lxc;)V
     .locals 0
 
     .prologue
-    .line 14
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
-    iput-object p1, p0, Lxd;->a:Lxe;
+    .line 25
+    iput-object p1, p0, Lxd;->b:Landroid/os/Handler;
 
-    .line 16
+    .line 26
+    iput-object p2, p0, Lxd;->a:Lxc;
+
+    .line 27
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(II)F
+.method public final a(Lwy$b;I)V
     .locals 2
 
     .prologue
-    .line 24
-    iget-object v0, p0, Lxd;->a:Lxe;
+    .line 31
+    iget-object v0, p0, Lxd;->b:Landroid/os/Handler;
 
-    invoke-virtual {v0, p1, p2}, Lxe;->a(II)F
+    new-instance v1, Lxd$1;
 
-    move-result v0
+    invoke-direct {v1, p0, p1, p2}, Lxd$1;-><init>(Lxd;Lwy$b;I)V
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    mul-float/2addr v0, v1
+    .line 37
+    return-void
+.end method
 
-    return v0
+.method public final b(I)V
+    .locals 2
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lxd;->b:Landroid/os/Handler;
+
+    new-instance v1, Lxd$2;
+
+    invoke-direct {v1, p0, p1}, Lxd$2;-><init>(Lxd;I)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 57
+    return-void
 .end method

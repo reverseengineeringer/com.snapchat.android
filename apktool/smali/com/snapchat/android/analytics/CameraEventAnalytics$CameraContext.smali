@@ -58,7 +58,7 @@
 
     const/4 v3, 0x0
 
-    .line 89
+    .line 91
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     const-string v1, "SWIPE"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->SWIPE:Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
-    .line 90
+    .line 92
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     const-string v1, "BACK_PRESSED"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->BACK_PRESSED:Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
-    .line 91
+    .line 93
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     const-string v1, "SNAP_BUTTON"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->SNAP_BUTTON:Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
-    .line 92
+    .line 94
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     const-string v1, "DOUBLE_TAP"
@@ -94,7 +94,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->DOUBLE_TAP:Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
-    .line 93
+    .line 95
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     const-string v1, "CAMERA_BUTTON"
@@ -103,7 +103,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->CAMERA_BUTTON:Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
-    .line 94
+    .line 96
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     const-string v1, "CANCEL_PREVIEW"
@@ -114,7 +114,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->CANCEL_PREVIEW:Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
-    .line 95
+    .line 97
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     const-string v1, "KILLED_STATE"
@@ -125,7 +125,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->KILLED_STATE:Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
-    .line 96
+    .line 98
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     const-string v1, "BACKGROUND"
@@ -136,7 +136,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->BACKGROUND:Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
-    .line 88
+    .line 90
     const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
@@ -193,7 +193,7 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 90
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -203,7 +203,7 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 90
     const-class v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -219,7 +219,7 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 90
     sget-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->$VALUES:[Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/CameraEventAnalytics$CameraContext;->clone()Ljava/lang/Object;

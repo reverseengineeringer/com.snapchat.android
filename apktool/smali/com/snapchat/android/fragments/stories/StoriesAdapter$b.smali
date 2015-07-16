@@ -15,16 +15,19 @@
 
 
 # virtual methods
-.method public abstract a(Lajg;)V
+.method public abstract a(Lakc;)V
+.end method
+
+.method public abstract a(Lcom/snapchat/android/model/Friend;)V
 .end method
 
 .method public abstract a(Lcom/snapchat/android/model/StorySnapLogbook;)V
 .end method
 
-.method public abstract a(Lcom/snapchat/android/model/Friend;)Z
+.method public abstract a(Ljava/lang/String;)Z
 .end method
 
-.method public abstract a(Ljava/lang/String;)Z
+.method public abstract b(Lcom/snapchat/android/model/Friend;)Z
 .end method
 
 .method public abstract d()V
@@ -39,17 +42,20 @@
 .method public abstract l()Z
 .end method
 
-.method public abstract m()Ljava/util/List;
+.method public abstract m()Z
+.end method
+
+.method public abstract n()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Ljava/util/List",
             "<",
-            "Laoq;",
+            "Lapm;",
             ">;"
         }
     .end annotation
 .end method
 
-.method public abstract y_()Ljava/lang/String;
+.method public abstract x_()Ljava/lang/String;
 .end method

@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 333
+    .line 327
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,12 +34,12 @@
     .locals 2
 
     .prologue
-    .line 336
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->m()Landroid/content/SharedPreferences;
+    .line 330
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->j()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 337
+    .line 331
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -52,12 +52,14 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 338
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->p()J
+    .line 332
+    const-wide/16 v0, -0x1
 
-    .line 340
+    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(J)J
+
+    .line 335
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a()V
 
-    .line 341
+    .line 336
     return-void
 .end method

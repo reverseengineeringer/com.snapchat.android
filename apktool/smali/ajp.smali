@@ -1,5 +1,5 @@
 .class public final Lajp;
-.super Lajr;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -12,452 +12,192 @@
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "StoryAdSnap"
+.field public static sUsernamesToProfileInfo:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Lajp;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final mAdKey:Ljava/lang/String;
+.field private mBestFriends:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final mAdPosition:I
-
-.field public final mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-.field private final mCacheKey:Ljava/lang/String;
-
-.field private final mMediaUrl:Ljava/lang/String;
-
-.field public final mResponse:Lmo;
+.field public mScore:I
 
 
 # direct methods
-.method public constructor <init>(Lajr;Lmo;Lcom/snapchat/android/ads/AdResolutionState;)V
-    .locals 11
-    .param p1    # Lajr;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lmo;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lcom/snapchat/android/ads/AdResolutionState;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    const/4 v4, 0x0
+    .line 24
+    new-instance v0, Ljava/util/HashMap;
 
-    const/4 v7, 0x0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 43
-    move-object v0, p0
+    sput-object v0, Lajp;->sUsernamesToProfileInfo:Ljava/util/HashMap;
 
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v5, v4
-
-    move-object v6, v4
-
-    move v8, v7
-
-    move v9, v7
-
-    move v10, v7
-
-    invoke-direct/range {v0 .. v10}, Lajp;-><init>(Lajr;Lmo;Lcom/snapchat/android/ads/AdResolutionState;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIZI)V
-
-    .line 45
     return-void
 .end method
 
-.method public constructor <init>(Lajr;Lmo;Lcom/snapchat/android/ads/AdResolutionState;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIZI)V
-    .locals 2
-    .param p1    # Lajr;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lmo;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lcom/snapchat/android/ads/AdResolutionState;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p4    # Ljava/lang/String;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p5    # Ljava/lang/String;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p6    # Ljava/lang/String;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 54
-    iget-object v0, p1, Lajr;->mUsername:Ljava/lang/String;
-
-    iget-boolean v1, p1, Lajr;->mIsShared:Z
-
-    invoke-direct {p0, v0, v1}, Lajr;-><init>(Ljava/lang/String;Z)V
-
-    .line 55
-    iput-object p2, p0, Lajp;->mResponse:Lmo;
-
-    .line 56
-    iput-object p3, p0, Lajp;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-    .line 57
-    iput-object p4, p0, Lajp;->mMediaUrl:Ljava/lang/String;
-
-    .line 58
-    iput-object p5, p0, Lajp;->mCacheKey:Ljava/lang/String;
-
-    .line 59
-    iput-object p6, p0, Lajp;->mAdKey:Ljava/lang/String;
-
-    .line 60
-    iput p7, p0, Lajp;->mAdPosition:I
-
-    .line 61
-    invoke-virtual {p0, p8}, Lajp;->e(I)V
-
-    .line 62
-    invoke-virtual {p0, p9}, Lajp;->b(Z)V
-
-    .line 63
-    invoke-virtual {p0, p10}, Lajp;->b(I)V
-
-    .line 64
-    return-void
-.end method
-
-
-# virtual methods
-.method public final L()Z
-    .locals 2
-
-    .prologue
-    .line 117
-    iget-object v0, p0, Lajp;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-    sget-object v1, Lcom/snapchat/android/ads/AdResolutionState;->UNRESOLVED:Lcom/snapchat/android/ads/AdResolutionState;
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lajp;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-    sget-object v1, Lcom/snapchat/android/ads/AdResolutionState;->AD_CONSUMED:Lcom/snapchat/android/ads/AdResolutionState;
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lajp;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-    sget-object v1, Lcom/snapchat/android/ads/AdResolutionState;->RESOLVING:Lcom/snapchat/android/ads/AdResolutionState;
-
-    if-ne v0, v1, :cond_1
-
-    .line 120
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 123
-    :goto_0
-    return v0
-
-    :cond_1
-    invoke-super {p0}, Lajr;->L()Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final M()Z
+.method public constructor <init>(Ljava/util/List;I)V
     .locals 1
-
-    .prologue
-    .line 129
-    iget-object v0, p0, Lajp;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/ads/AdResolutionState;->isError()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 130
-    const/4 v0, 0x1
-
-    .line 133
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-super {p0}, Lajr;->M()Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final Y()Z
-    .locals 1
-
-    .prologue
-    .line 76
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final Z()Lcom/snapchat/android/ads/AdResolutionState;
-    .locals 1
-
-    .prologue
-    .line 91
-    iget-object v0, p0, Lajp;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-    return-object v0
-.end method
-
-.method public final aa()Ljava/lang/String;
-    .locals 3
-
-    .prologue
-    .line 149
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lci;->a(Ljava/lang/Class;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "sender"
-
-    iget-object v2, p0, Lajr;->mUsername:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "url"
-
-    iget-object v2, p0, Lajp;->mMediaUrl:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "adKey"
-
-    iget-object v2, p0, Lajp;->mAdKey:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "adPosition"
-
-    iget v2, p0, Lajp;->mAdPosition:I
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;I)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "resolution"
-
-    iget-object v2, p0, Lajp;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "cacheKey"
-
-    invoke-virtual {p0}, Lajp;->i()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "loaded"
-
-    invoke-virtual {p0}, Lajp;->L()Z
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Z)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "loading"
-
-    invoke-virtual {p0}, Lajp;->R()Z
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Z)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "unableToLoad"
-
-    invoke-virtual {p0}, Lajp;->M()Z
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Z)Lci$a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lci$a;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final ab()Z
-    .locals 1
-
-    .prologue
-    .line 107
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final ar()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 81
-    iget-object v0, p0, Lajp;->mMediaUrl:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final as()Ljava/lang/String;
-    .locals 1
-    .annotation build Lcgc;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;I)V"
+        }
     .end annotation
 
     .prologue
-    .line 97
-    iget-object v0, p0, Lajp;->mAdKey:Ljava/lang/String;
+    .line 29
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-object v0
+    .line 26
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lajp;->mBestFriends:Ljava/util/ArrayList;
+
+    .line 27
+    const/4 v0, -0x1
+
+    iput v0, p0, Lajp;->mScore:I
+
+    .line 30
+    invoke-direct {p0, p1}, Lajp;->a(Ljava/util/List;)V
+
+    .line 31
+    iput p2, p0, Lajp;->mScore:I
+
+    .line 32
+    return-void
 .end method
 
-.method public final at()I
-    .locals 1
+.method public static a(Lcom/snapchat/android/model/Friend;Lajp$a;)V
+    .locals 3
+    .param p0    # Lcom/snapchat/android/model/Friend;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p1    # Lajp$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 102
-    iget v0, p0, Lajp;->mAdPosition:I
+    .line 57
+    sget-object v0, Lajp;->sUsernamesToProfileInfo:Ljava/util/HashMap;
 
-    return v0
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lajp;
+
+    .line 58
+    if-nez v0, :cond_0
+
+    .line 59
+    new-instance v0, Lajp$1;
+
+    invoke-direct {v0, p0, p1, p0}, Lajp$1;-><init>(Lcom/snapchat/android/model/Friend;Lajp$a;Lcom/snapchat/android/model/Friend;)V
+
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lajp$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 69
+    :goto_0
+    return-void
+
+    .line 67
+    :cond_0
+    invoke-interface {p1, v0}, Lajp$a;->a(Lajp;)V
+
+    goto :goto_0
 .end method
 
-.method public final e()Z
-    .locals 1
+.method private a(Ljava/util/List;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 112
-    const/4 v0, 0x1
+    .line 35
+    iget-object v0, p0, Lajp;->mBestFriends:Ljava/util/ArrayList;
 
-    return v0
-.end method
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-.method public final i()Ljava/lang/String;
-    .locals 1
+    .line 36
+    invoke-static {}, Lakp;->g()Lakp;
 
-    .prologue
-    .line 86
-    iget-object v0, p0, Lajp;->mCacheKey:Ljava/lang/String;
+    move-result-object v1
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 38
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :goto_0
-    return-object v0
+    move-result-object v0
 
-    :cond_0
-    iget-object v0, p0, Lajp;->mCacheKey:Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
+
+    .line 39
+    iget-object v3, p0, Lajp;->mBestFriends:Ljava/util/ArrayList;
+
+    invoke-static {v0, v1}, Lauk;->e(Ljava/lang/String;Lakp;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
-.end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    .prologue
-    .line 138
-    invoke-static {p0}, Lci;->a(Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "sender"
-
-    iget-object v2, p0, Lajr;->mUsername:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "url"
-
-    iget-object v2, p0, Lajp;->mMediaUrl:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "adKey"
-
-    iget-object v2, p0, Lajp;->mAdKey:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "adPosition"
-
-    iget v2, p0, Lajp;->mAdPosition:I
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;I)Lci$a;
-
-    move-result-object v0
-
-    const-string v1, "resolution"
-
-    iget-object v2, p0, Lajp;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;Ljava/lang/Object;)Lci$a;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lci$a;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 41
+    :cond_0
+    return-void
 .end method

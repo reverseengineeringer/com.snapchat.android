@@ -1,16 +1,13 @@
 public final class aau
-  extends zx
 {
-  private static final aau a = new aau();
-  
-  private aau()
+  public static String a(String paramString1, aav paramaav1, String paramString2, aav paramaav2)
   {
-    super("MyStorySnapThumbnailFileTable", awq.MY_STORY_SNAP_THUMBNAIL_CACHE);
+    return " DELETE FROM " + paramString1 + " WHERE " + a(paramString1, paramaav1) + " IN  (  SELECT " + a(paramString1, paramaav1) + " FROM " + paramString1 + " LEFT JOIN " + paramString2 + " ON " + a(paramString1, paramaav1) + " = " + a(paramString2, paramaav2) + " WHERE " + a(paramString2, paramaav2) + " IS NULL  ) ";
   }
   
-  public static aau a()
+  public static StringBuilder a(String paramString, aav paramaav)
   {
-    return a;
+    return new StringBuilder().append(paramString).append('.').append(paramaav.getColumnName());
   }
 }
 

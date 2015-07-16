@@ -10,7 +10,7 @@ final class StoriesFragment$17
   
   public final void onClick(View paramView)
   {
-    StoriesFragment.h(a);
+    StoriesFragment.g(a);
   }
 }
 

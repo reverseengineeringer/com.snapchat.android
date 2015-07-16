@@ -1,67 +1,49 @@
+import android.text.TextUtils;
 import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.Timber;
 
 public final class su
-  extends sq
+  extends sx<sy>
 {
-  public static final int SC_TOO_MANY_ATTEMPTS_STATUS_CODE = 429;
-  private static final String TAG = "UpdateSquareSettingsTask";
-  @cgc
-  String mPasscode;
-  boolean mPasscodeEnabled;
-  @cgb
-  private su.b mUpdateSuccessListener;
+  private final String mPaymentId;
+  final String mPhoneNumber;
+  final String mSignature;
   
-  public su(@cgc String paramString, su.b paramb)
+  public su(@chd String paramString1, @chc String paramString2, @chc String paramString3, @chc sx.a parama)
   {
-    mPasscodeEnabled = false;
-    mPasscode = paramString;
-    mUpdateSuccessListener = paramb;
+    super(parama);
+    mPhoneNumber = paramString2;
+    mSignature = paramString3;
+    mPaymentId = paramString1;
+    registerCallback(sy.class, this);
   }
   
-  public su(su.b paramb)
+  public su(@chc String paramString1, @chc String paramString2, @chc sx.a parama)
   {
-    mPasscodeEnabled = true;
-    mUpdateSuccessListener = paramb;
+    this(null, paramString1, paramString2, parama);
   }
   
-  public final void a(@cgb uc paramuc)
+  public final String a()
   {
-    Timber.b("UpdateSquareSettingsTask", "CASH-LOG: UpdateSquareSettingsTask finished with status code %d", new Object[] { Integer.valueOf(mResponseCode) });
-    if (mResponseCode == 200)
-    {
-      mUpdateSuccessListener.a();
-      return;
+    if (!TextUtils.isEmpty(mPaymentId)) {
+      return "cash/payments/" + mPaymentId + "/phone-number";
     }
-    mUpdateSuccessListener.a(mResponseCode);
+    return "cash/phone-number";
   }
   
-  public final Object b()
+  public final Object getRequestPayload()
   {
     return new su.a();
   }
   
-  protected final String e()
-  {
-    return "cash/settings/passcode";
-  }
-  
-  @tx
+  @un
   final class a
   {
-    @SerializedName("passcode")
-    final String passcode = mPasscode;
-    @SerializedName("passcode_confirmation_enabled")
-    final boolean passcodeConfirmation = mPasscodeEnabled;
+    @SerializedName("phone_number")
+    final String phoneNumber = mPhoneNumber;
+    @SerializedName("signature")
+    final String signature = mSignature;
     
     a() {}
-  }
-  
-  public static abstract interface b
-  {
-    public abstract void a();
-    
-    public abstract void a(int paramInt);
   }
 }
 

@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;
-.super Lot;
+.super Lpk;
 .source "SourceFile"
 
 
@@ -17,7 +17,7 @@
 # instance fields
 .field final synthetic a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
 
-.field private b:Lajv;
+.field private b:Lakp;
 
 .field private c:Ljava/lang/String;
 
@@ -30,14 +30,14 @@
     .line 544
     iput-object p1, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
 
-    invoke-direct {p0}, Lot;-><init>()V
+    invoke-direct {p0}, Lpk;-><init>()V
 
     .line 545
-    invoke-static {}, Lajv;->g()Lajv;
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->b:Lajv;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->b:Lakp;
 
     .line 546
     iput-object p2, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->c:Ljava/lang/String;
@@ -63,7 +63,7 @@
 
     .prologue
     .line 595
-    invoke-super {p0, p1, p2}, Lot;->a(Ljava/lang/String;I)V
+    invoke-super {p0, p1, p2}, Lpk;->a(Ljava/lang/String;I)V
 
     .line 596
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
@@ -123,7 +123,7 @@
     .line 566
     const-string v1, "username"
 
-    invoke-static {}, Lajx;->G()Ljava/lang/String;
+    invoke-static {}, Lakr;->G()Ljava/lang/String;
 
     move-result-object v2
 
@@ -133,14 +133,14 @@
     return-object v0
 .end method
 
-.method protected final b(Laku;)V
+.method protected final b(Lalp;)V
     .locals 10
 
     .prologue
     const/4 v1, 0x0
 
     .line 572
-    invoke-super {p0, p1}, Lot;->b(Laku;)V
+    invoke-super {p0, p1}, Lpk;->b(Lalp;)V
 
     .line 573
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
@@ -152,18 +152,18 @@
     if-eqz v0, :cond_0
 
     .line 574
-    iget-object v0, p1, Laku;->updates_response:Lbjp;
+    iget-object v0, p1, Lalp;->updates_response:Lbkq;
 
-    invoke-static {v0}, Lajx;->a(Lbjp;)V
+    invoke-static {v0}, Lakr;->a(Lbkq;)V
 
     .line 575
-    iget-object v0, p1, Laku;->updates_response:Lbjp;
+    iget-object v0, p1, Lalp;->updates_response:Lbkq;
 
-    invoke-virtual {v0}, Lbjp;->n()Ljava/lang/String;
+    invoke-virtual {v0}, Lbkq;->n()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lajx;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lakr;->b(Ljava/lang/String;)V
 
     .line 576
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
@@ -171,16 +171,16 @@
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     .line 577
-    iget-object v0, p1, Laku;->verification_needed:Lbkr;
+    iget-object v0, p1, Lalp;->verification_needed:Lbls;
 
-    invoke-static {v0}, Lcom/snapchat/android/LoginAndSignupActivity;->a(Lbkr;)V
+    invoke-static {v0}, Lcom/snapchat/android/LoginAndSignupActivity;->a(Lbls;)V
 
     .line 579
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->r(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;)Lajx;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->r(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;)Lakr;
 
-    invoke-static {}, Lajx;->r()Z
+    invoke-static {}, Lakr;->r()Z
 
     move-result v0
 
@@ -188,27 +188,27 @@
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->r(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;)Lajx;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->r(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;)Lakr;
 
-    invoke-static {}, Lajx;->q()Z
+    invoke-static {}, Lakr;->q()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
     .line 580
-    invoke-static {v1}, Lajx;->c(Z)V
+    invoke-static {v1}, Lakr;->c(Z)V
 
     .line 581
     invoke-static {v1}, Lcom/snapchat/android/analytics/RegistrationAnalytics;->a(Z)V
 
     .line 585
     :goto_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->b:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->b:Lakp;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lajv;->a(Lajv$b;)V
+    invoke-virtual {v0, v1}, Lakp;->a(Lakp$b;)V
 
     .line 587
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
@@ -247,20 +247,20 @@
 
     move-result v5
 
-    new-instance v6, Llb;
+    new-instance v6, Llt;
 
-    invoke-direct {v6}, Llb;-><init>()V
+    invoke-direct {v6}, Llt;-><init>()V
 
     if-nez v2, :cond_2
 
-    sget-object v0, Llu;->DEFAULT_SUGGESTION:Llu;
+    sget-object v0, Lmm;->DEFAULT_SUGGESTION:Lmm;
 
     :goto_1
-    iput-object v1, v6, Llb;->username:Ljava/lang/String;
+    iput-object v1, v6, Llt;->username:Ljava/lang/String;
 
-    iput-object v0, v6, Llb;->usernameType:Llu;
+    iput-object v0, v6, Llt;->usernameType:Lmm;
 
-    iput-object v4, v6, Llb;->usernameSuggestion:Ljava/lang/String;
+    iput-object v4, v6, Llt;->usernameSuggestion:Ljava/lang/String;
 
     int-to-long v8, v5
 
@@ -268,9 +268,9 @@
 
     move-result-object v0
 
-    iput-object v0, v6, Llb;->usernameIndexPos:Ljava/lang/Long;
+    iput-object v0, v6, Llt;->usernameIndexPos:Ljava/lang/Long;
 
-    invoke-static {v6}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v6}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->F()V
 
@@ -291,12 +291,12 @@
     :cond_2
     if-nez v3, :cond_3
 
-    sget-object v0, Llu;->OTHER_SUGGESTION:Llu;
+    sget-object v0, Lmm;->OTHER_SUGGESTION:Lmm;
 
     goto :goto_1
 
     :cond_3
-    sget-object v0, Llu;->CUSTOM:Llu;
+    sget-object v0, Lmm;->CUSTOM:Lmm;
 
     goto :goto_1
 .end method
@@ -311,16 +311,16 @@
     return-object v0
 .end method
 
-.method protected final d(Laku;)V
+.method protected final d(Lalp;)V
     .locals 2
-    .param p1    # Laku;
-        .annotation build Lcgc;
+    .param p1    # Lalp;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
     .line 604
-    invoke-super {p0, p1}, Lot;->d(Laku;)V
+    invoke-super {p0, p1}, Lpk;->d(Lalp;)V
 
     .line 605
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$a;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
@@ -366,7 +366,7 @@
 
     .line 607
     :cond_1
-    iget v0, p1, Laku;->status:I
+    iget v0, p1, Lalp;->status:I
 
     goto :goto_1
 

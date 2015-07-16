@@ -3,53 +3,100 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lafw$a;
-    }
-.end annotation
-
-
 # instance fields
-.field public final a:Lafw$a;
+.field public final a:Ljava/lang/String;
 
-.field private final b:Lov;
+.field public final b:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+
+.field public final c:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/discover/model/DSnapPage;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;Lcom/snapchat/android/discover/model/EditionOpenOrigin;)V
+    .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 19
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lafw;->c:Ljava/util/List;
+
+    .line 22
+    iput-object p1, p0, Lafw;->a:Ljava/lang/String;
+
     .line 23
-    invoke-static {}, Lov;->a()Lov;
-
-    move-result-object v0
-
-    new-instance v1, Lafw$a;
-
-    invoke-direct {v1}, Lafw$a;-><init>()V
-
-    invoke-direct {p0, v0, v1}, Lafw;-><init>(Lov;Lafw$a;)V
+    iput-object p2, p0, Lafw;->b:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
 
     .line 24
     return-void
 .end method
 
-.method private constructor <init>(Lov;Lafw$a;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;Lcom/snapchat/android/discover/model/EditionOpenOrigin;Ljava/util/List;)V
+    .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/EditionOpenOrigin;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/discover/model/DSnapPage;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 32
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
-    iput-object p1, p0, Lafw;->b:Lov;
+    .line 19
+    new-instance v0, Ljava/util/ArrayList;
 
-    .line 34
-    iput-object p2, p0, Lafw;->a:Lafw$a;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 35
+    iput-object v0, p0, Lafw;->c:Ljava/util/List;
+
+    .line 28
+    iput-object p1, p0, Lafw;->a:Ljava/lang/String;
+
+    .line 29
+    iput-object p2, p0, Lafw;->b:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+
+    .line 30
+    iget-object v0, p0, Lafw;->c:Ljava/util/List;
+
+    invoke-interface {v0, p3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    .line 31
     return-void
 .end method

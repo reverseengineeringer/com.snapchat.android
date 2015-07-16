@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lls;)V
+    value = Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lmk;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,18 +18,18 @@
 
 
 # instance fields
-.field final synthetic a:Lls;
+.field final synthetic a:Lmk;
 
 .field final synthetic b:J
 
 
 # direct methods
-.method constructor <init>(Lls;J)V
+.method constructor <init>(Lmk;J)V
     .locals 0
 
     .prologue
     .line 94
-    iput-object p1, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;->a:Lls;
+    iput-object p1, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;->a:Lmk;
 
     iput-wide p2, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;->b:J
 
@@ -45,11 +45,11 @@
 
     .prologue
     .line 98
-    iget-object v0, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;->a:Lls;
+    iget-object v0, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;->a:Lmk;
 
     iget-wide v2, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$1;->b:J
 
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lhk;J)J
+    invoke-static {v0, v2, v3}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lht;J)J
 
     .line 99
     return-void

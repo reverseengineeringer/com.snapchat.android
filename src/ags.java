@@ -1,12 +1,11 @@
-import com.snapchat.android.fragments.signup.LoginFragment;
-import com.snapchat.android.util.fragment.SnapchatFragment;
+import android.widget.BaseAdapter;
 import javax.inject.Provider;
 
 public final class ags
-  implements buj<LoginFragment>
+  implements bvk<agr>
 {
-  private final buj<SnapchatFragment> b;
-  private final Provider<ayg> c;
+  private final bvk<BaseAdapter> b;
+  private final Provider<yt> c;
   
   static
   {
@@ -18,21 +17,21 @@ public final class ags
     }
   }
   
-  private ags(buj<SnapchatFragment> parambuj, Provider<ayg> paramProvider)
+  private ags(bvk<BaseAdapter> parambvk, Provider<yt> paramProvider)
   {
-    if ((!a) && (parambuj == null)) {
+    if ((!a) && (parambvk == null)) {
       throw new AssertionError();
     }
-    b = parambuj;
+    b = parambvk;
     if ((!a) && (paramProvider == null)) {
       throw new AssertionError();
     }
     c = paramProvider;
   }
   
-  public static buj<LoginFragment> a(buj<SnapchatFragment> parambuj, Provider<ayg> paramProvider)
+  public static bvk<agr> a(bvk<BaseAdapter> parambvk, Provider<yt> paramProvider)
   {
-    return new ags(parambuj, paramProvider);
+    return new ags(parambvk, paramProvider);
   }
 }
 

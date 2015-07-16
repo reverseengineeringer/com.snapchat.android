@@ -1,55 +1,54 @@
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
-import com.snapchat.android.api2.framework.HttpMethod;
-import javax.inject.Inject;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.api2.cash.square.data.CashCustomer;
+import com.snapchat.android.api2.cash.square.data.CashPayment.Action;
+import com.snapchat.android.model.CashTransaction;
 
 public final class ss
-  extends sq
+  extends tb
 {
-  private static final String TAG = "UnlinkCardTask";
-  @Inject
-  xr mCashCardManager;
-  private ss.a mUnlinkSuccessListener;
+  final String mCardToken;
+  final CashTransaction mCashTransaction;
   
-  public ss(@cgb ss.a parama)
+  public ss(@chc CashTransaction paramCashTransaction, @chc String paramString, @chc ta paramta)
   {
-    SnapchatApplication.b().c().a(this);
-    mUnlinkSuccessListener = parama;
+    super(paramta);
+    mCashTransaction = paramCashTransaction;
+    mCardToken = paramString;
   }
   
-  public final void a(@cgb uc paramuc)
+  public final String a()
   {
-    Timber.c("UnlinkCardTask", "CASH-LOG: UnlinkCardTask finished with status code %d", new Object[] { Integer.valueOf(mResponseCode) });
-    if (mResponseCode == 200)
-    {
-      ajx.aj();
-      mCashCardManager.b();
-      mUnlinkSuccessListener.a();
-      return;
-    }
-    mUnlinkSuccessListener.a(mResponseCode);
+    return "cash/payments";
   }
   
-  public final Object b()
+  public final Object getRequestPayload()
   {
-    return null;
+    return new ss.a();
   }
   
-  public final HttpMethod c()
+  @un
+  final class a
   {
-    return HttpMethod.DELETE;
-  }
-  
-  public final String e()
-  {
-    return "cash/card";
-  }
-  
-  public static abstract interface a
-  {
-    public abstract void a();
+    @SerializedName("action")
+    private String action = CashPayment.Action.SEND.name();
+    @SerializedName("card_token")
+    private String cardToken = mCardToken;
+    @SerializedName("extras")
+    private to extras = new to(mCashTransaction.mFromRain);
+    @SerializedName("id")
+    private String id = mCashTransaction.mTransactionId;
+    @SerializedName("amount_money")
+    private tp money = new tp(mCashTransaction.mAmount);
+    @SerializedName("recipient")
+    private CashCustomer recipient = new CashCustomer(mCashTransaction.mRecipientUsername);
+    @SerializedName("recipient_customization")
+    private tn recipientCustomization = new tn(mCashTransaction.mRecipientBankStatementMessage);
+    @SerializedName("sender_customization")
+    private tn senderCustomization = new tn(mCashTransaction.mSenderBankStatementMessage);
+    @SerializedName("signature")
+    private String signature = mCashTransaction.mSignature;
     
-    public abstract void a(int paramInt);
+    a() {}
   }
 }
 

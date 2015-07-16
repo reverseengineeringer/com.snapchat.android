@@ -1,14 +1,14 @@
 package com.snapchat.android.database.table;
 
-import ajv;
-import ajx;
+import aav;
+import akp;
+import akr;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-import bgp;
-import cgb;
-import com.snapchat.android.Timber;
+import bhp;
+import chc;
 import com.snapchat.android.database.DataType;
 import com.snapchat.android.database.DatabaseHelper;
 import java.util.Collection;
@@ -18,7 +18,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
-import zw;
 
 public final class FindFriendRequestCacheTable
   extends DbTable<Map.Entry<String, Long>>
@@ -38,14 +37,13 @@ public final class FindFriendRequestCacheTable
     finally {}
   }
   
-  public static void a(ajv paramajv, Map<String, Long> paramMap)
+  public static void a(akp paramakp, Map<String, Long> paramMap)
   {
-    if ((paramajv == null) || (!ajx.m())) {
+    if ((paramakp == null) || (!akr.m())) {
       return;
     }
-    paramajv = DatabaseHelper.a(ajv.y()).getWritableDatabase();
-    Timber.c("FindFriendRequestCacheTable", "saveEntriesToDatabase - beginTransaction", new Object[0]);
-    paramajv.beginTransaction();
+    paramakp = DatabaseHelper.a(akp.y()).getWritableDatabase();
+    paramakp.beginTransaction();
     try
     {
       paramMap = paramMap.entrySet().iterator();
@@ -55,90 +53,80 @@ public final class FindFriendRequestCacheTable
         ContentValues localContentValues = new ContentValues();
         localContentValues.put(NumberToTimestampSchema.HASHED_NUMBER.getColumnName(), (String)localEntry.getKey());
         localContentValues.put(NumberToTimestampSchema.REQUEST_TIMESTAMP.getColumnName(), (Long)localEntry.getValue());
-        Timber.c("FindFriendRequestCacheTable", "Save hashed phone number:" + (String)localEntry.getKey() + "requested at timestamp:" + localEntry.getValue(), new Object[0]);
-        paramajv.insertWithOnConflict("FindFriendRequestCacheTable", null, localContentValues, 5);
+        new StringBuilder("Save hashed phone number:").append((String)localEntry.getKey()).append("requested at timestamp:").append(localEntry.getValue());
+        paramakp.insertWithOnConflict("FindFriendRequestCacheTable", null, localContentValues, 5);
       }
-      paramajv.setTransactionSuccessful();
     }
     finally
     {
-      paramajv.endTransaction();
-      Timber.c("FindFriendRequestCacheTable", "saveEntriesToDatabase - endTransaction", new Object[0]);
+      paramakp.endTransaction();
     }
-    Timber.c("FindFriendRequestCacheTable", "saveEntriesToDatabase - TransactionSuccessful", new Object[0]);
-    paramajv.endTransaction();
-    Timber.c("FindFriendRequestCacheTable", "saveEntriesToDatabase - endTransaction", new Object[0]);
+    paramakp.endTransaction();
   }
   
-  public static void a(ajv paramajv, Set<String> paramSet)
+  public static void a(akp paramakp, Set<String> paramSet)
   {
     
-    if ((paramajv == null) || (!ajx.m())) {
+    if ((paramakp == null) || (!akr.m())) {
       return;
     }
-    paramajv = DatabaseHelper.a(ajv.y()).getWritableDatabase();
-    Timber.c("FindFriendRequestCacheTable", "removeEntriesFromDatabase - beginTransaction", new Object[0]);
-    paramajv.beginTransaction();
+    paramakp = DatabaseHelper.a(akp.y()).getWritableDatabase();
+    paramakp.beginTransaction();
     try
     {
       paramSet = paramSet.iterator();
       while (paramSet.hasNext())
       {
         String str = (String)paramSet.next();
-        bgp.b();
-        Timber.c("FindFriendRequestCacheTable", "delete entry for hashed phone number:" + str, new Object[0]);
-        paramajv.delete("FindFriendRequestCacheTable", NumberToTimestampSchema.HASHED_NUMBER.getColumnName() + "=?", new String[] { str });
+        bhp.b();
+        paramakp.delete("FindFriendRequestCacheTable", NumberToTimestampSchema.HASHED_NUMBER.getColumnName() + "=?", new String[] { str });
       }
-      paramajv.setTransactionSuccessful();
     }
     finally
     {
-      paramajv.endTransaction();
-      Timber.c("FindFriendRequestCacheTable", "removeEntriesFromDatabase - endTransaction", new Object[0]);
+      paramakp.endTransaction();
     }
-    Timber.c("FindFriendRequestCacheTable", "removeEntriesFromDatabase - TransactionSuccessful", new Object[0]);
-    paramajv.endTransaction();
-    Timber.c("FindFriendRequestCacheTable", "removeEntriesFromDatabase - endTransaction", new Object[0]);
+    paramakp.endTransaction();
   }
   
-  @cgb
-  public static Map<String, Long> e(ajv paramajv)
+  @chc
+  public static Map<String, Long> e(akp paramakp)
   {
     HashMap localHashMap = new HashMap();
-    if ((paramajv == null) || (!ajx.m())) {
+    if ((paramakp == null) || (!akr.m())) {
       return localHashMap;
     }
     i().lock();
-    paramajv = DatabaseHelper.a(ajv.y()).getReadableDatabase().query("FindFriendRequestCacheTable", null, null, null, null, null, null);
+    paramakp = DatabaseHelper.a(akp.y()).getReadableDatabase().query("FindFriendRequestCacheTable", null, null, null, null, null, null);
+    if (paramakp != null) {}
     try
     {
-      Timber.c("FindFriendRequestCacheTable", "Querying [%s] database table", new Object[] { "FindFriendRequestCacheTable" });
-      if ((paramajv != null) && (paramajv.moveToFirst()))
+      if (paramakp.moveToFirst())
       {
         boolean bool;
         do
         {
-          localHashMap.put(paramajv.getString(NumberToTimestampSchema.HASHED_NUMBER.getColumnNumber()), Long.valueOf(paramajv.getLong(NumberToTimestampSchema.REQUEST_TIMESTAMP.getColumnNumber())));
-          bool = paramajv.moveToNext();
+          localHashMap.put(paramakp.getString(NumberToTimestampSchema.HASHED_NUMBER.getColumnNumber()), Long.valueOf(paramakp.getLong(NumberToTimestampSchema.REQUEST_TIMESTAMP.getColumnNumber())));
+          bool = paramakp.moveToNext();
         } while (bool);
       }
       return localHashMap;
     }
     finally
     {
-      if (paramajv != null) {
-        paramajv.close();
+      if (paramakp != null) {
+        paramakp.close();
       }
       i().unlock();
     }
   }
   
-  protected final Collection<Map.Entry<String, Long>> a(ajv paramajv)
+  protected final Collection<Map.Entry<String, Long>> a(akp paramakp)
   {
     return null;
   }
   
-  public final zw[] b()
+  public final aav[] b()
   {
     return NumberToTimestampSchema.values();
   }
@@ -173,7 +161,7 @@ public final class FindFriendRequestCacheTable
   }
   
   public static enum NumberToTimestampSchema
-    implements zw
+    implements aav
   {
     HASHED_NUMBER(DataType.TEXT, "PRIMARY KEY"),  REQUEST_TIMESTAMP(DataType.LONG);
     

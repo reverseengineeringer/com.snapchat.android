@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1378
+    .line 1341
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,16 +44,16 @@
     .locals 4
 
     .prologue
-    .line 1377
+    .line 1340
     check-cast p1, Lcom/snapchat/android/model/chat/ChatFeedItem;
 
     check-cast p2, Lcom/snapchat/android/model/chat/ChatFeedItem;
 
-    invoke-interface {p2}, Lcom/snapchat/android/model/chat/ChatFeedItem;->W()J
+    invoke-interface {p2}, Lcom/snapchat/android/model/chat/ChatFeedItem;->U()J
 
     move-result-wide v0
 
-    invoke-interface {p1}, Lcom/snapchat/android/model/chat/ChatFeedItem;->W()J
+    invoke-interface {p1}, Lcom/snapchat/android/model/chat/ChatFeedItem;->U()J
 
     move-result-wide v2
 

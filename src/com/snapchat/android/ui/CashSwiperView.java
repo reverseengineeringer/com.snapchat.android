@@ -27,17 +27,17 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import atx;
-import atz;
-import avh;
-import cgb;
+import auv;
+import aux;
+import awf;
+import chc;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.ui.cash.ParticleSparkleView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import xw;
-import xw.a;
+import ys;
+import ys.a;
 
 public class CashSwiperView
   extends LinearLayout
@@ -46,7 +46,7 @@ public class CashSwiperView
   private long A;
   private Handler B;
   private ParticleSparkleView C;
-  private xw D = null;
+  private ys D = null;
   public b b;
   public MediaPlayer c;
   public ValueAnimator d;
@@ -118,12 +118,12 @@ public class CashSwiperView
       int i1;
       if (D == null)
       {
-        i1 = (int)avh.a(48.0F, getContext());
-        localObject = new xw.a();
+        i1 = (int)awf.a(48.0F, getContext());
+        localObject = new ys.a();
         b = (C.getHeight() - i1);
         a = C.getWidth();
-        c = ((int)avh.a(125.0F, getContext()) / 2);
-        D = new xw((xw.a)localObject, (byte)0);
+        c = ((int)awf.a(125.0F, getContext()) / 2);
+        D = new ys((ys.a)localObject, (byte)0);
         C.b = D;
       }
       if (getHotness() == 1.0F)
@@ -182,12 +182,12 @@ public class CashSwiperView
       i1 += 1;
     }
     setBackgroundColor(0xF2000000 | arrayOfInt[0] << 16 | arrayOfInt[1] << 8 | arrayOfInt[2]);
-    ((ImageView)paramView.findViewById(2131362290)).getDrawable().setColorFilter(avh.a(paramFloat * 1.5203D, 1.0D + 0.51032D * paramFloat));
+    ((ImageView)paramView.findViewById(2131362288)).getDrawable().setColorFilter(awf.a(paramFloat * 1.5203D, 1.0D + 0.51032D * paramFloat));
   }
   
   private void a(Context paramContext)
   {
-    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968611, this, true);
+    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968612, this, true);
     setOnTouchListener(new View.OnTouchListener()
     {
       public final boolean onTouch(View paramAnonymousView, MotionEvent paramAnonymousMotionEvent)
@@ -220,7 +220,7 @@ public class CashSwiperView
     {
       public final void onAnimationUpdate(ValueAnimator paramAnonymousValueAnimator)
       {
-        float f = atz.a((float)Math.log(((Float)paramAnonymousValueAnimator.getAnimatedValue()).floatValue()));
+        float f = aux.a((float)Math.log(((Float)paramAnonymousValueAnimator.getAnimatedValue()).floatValue()));
         if (CashSwiperView.b(CashSwiperView.this) != null) {
           CashSwiperView.b(CashSwiperView.this).setVolume(f, f);
         }
@@ -247,12 +247,12 @@ public class CashSwiperView
       f();
       return;
     }
-    setBarTextWithFade(atx.a(null, 2131493513, new Object[] { String.valueOf(j) }));
+    setBarTextWithFade(auv.a(null, 2131493513, new Object[] { String.valueOf(j) }));
   }
   
   private void f()
   {
-    setBarTextWithFade(atx.a(null, 2131493515, new Object[0]));
+    setBarTextWithFade(auv.a(null, 2131493515, new Object[0]));
   }
   
   private void g()
@@ -273,12 +273,12 @@ public class CashSwiperView
     return a;
   }
   
-  @cgb
+  @chc
   private View h()
   {
     if (s.isEmpty())
     {
-      ((LayoutInflater)getContext().getSystemService("layout_inflater")).inflate(2130968659, u);
+      ((LayoutInflater)getContext().getSystemService("layout_inflater")).inflate(2130968660, u);
       s.add(u.getChildAt(u.getChildCount() - 1));
     }
     View localView = (View)s.get(0);
@@ -313,7 +313,7 @@ public class CashSwiperView
   
   private void setUpDollarViewOnBottom(View paramView)
   {
-    avh.c(paramView);
+    awf.c(paramView);
     paramView.setTranslationY(0.0F);
     paramView.setAlpha(1.0F);
     paramView.setScaleX(0.88F);
@@ -533,7 +533,7 @@ public class CashSwiperView
     
     public final boolean onFling(MotionEvent paramMotionEvent1, MotionEvent paramMotionEvent2, float paramFloat1, float paramFloat2)
     {
-      if (avh.b(paramFloat2, getContext()) < -1500.0F) {
+      if (awf.b(paramFloat2, getContext()) < -1500.0F) {
         CashSwiperView.a(CashSwiperView.this, paramFloat2);
       }
       return true;

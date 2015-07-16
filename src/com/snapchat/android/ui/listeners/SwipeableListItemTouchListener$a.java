@@ -1,7 +1,7 @@
 package com.snapchat.android.ui.listeners;
 
 import android.view.View;
-import cgc;
+import chd;
 
 public abstract interface SwipeableListItemTouchListener$a
 {
@@ -9,11 +9,9 @@ public abstract interface SwipeableListItemTouchListener$a
   
   public abstract void a(View paramView, int paramInt, boolean paramBoolean);
   
-  public abstract void a(View paramView, boolean paramBoolean);
+  public abstract boolean a(View paramView, float paramFloat);
   
-  public abstract boolean a(View paramView, float paramFloat1, float paramFloat2, float paramFloat3);
-  
-  public abstract int b(@cgc View paramView);
+  public abstract int b(@chd View paramView);
 }
 
 /* Location:

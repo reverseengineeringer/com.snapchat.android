@@ -1,171 +1,203 @@
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.Proxy.Type;
-import java.net.ProxySelector;
-import java.net.SocketException;
-import java.net.URI;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import javax.net.ssl.SSLHandshakeException;
-import javax.net.ssl.SSLProtocolException;
 
 public final class bnd
 {
-  final blg a;
-  final URI b;
-  final bmo c;
-  Proxy d;
-  InetSocketAddress e;
-  blq f;
-  List<Proxy> g = Collections.emptyList();
-  int h;
-  List<InetSocketAddress> i = Collections.emptyList();
-  int j;
-  List<blq> k = Collections.emptyList();
-  int l;
-  final List<bme> m = new ArrayList();
-  private final bml n;
-  private final bly o;
-  private final bma p;
+  public final bnb a;
+  public final bna b;
+  public final int c;
+  public final String d;
+  public final bmu e;
+  public final bmv f;
+  public final bne g;
+  public bnd h;
+  bnd i;
+  final bnd j;
+  private volatile bmk k;
   
-  public bnd(blg paramblg, URI paramURI, bly parambly, bma parambma)
+  private bnd(bnd.a parama)
   {
-    a = paramblg;
-    b = paramURI;
-    o = parambly;
-    c = bmi.b.b(parambly);
-    n = bmi.b.c(parambly);
-    p = parambma;
-    paramblg = a;
-    if (paramblg != null) {
-      g = Collections.singletonList(paramblg);
-    }
-    for (;;)
-    {
-      h = 0;
-      return;
-      g = new ArrayList();
-      paramblg = o.j.select(paramURI);
-      if (paramblg != null) {
-        g.addAll(paramblg);
-      }
-      g.removeAll(Collections.singleton(Proxy.NO_PROXY));
-      g.add(Proxy.NO_PROXY);
-    }
+    a = a;
+    b = b;
+    c = c;
+    d = d;
+    e = e;
+    f = f.a();
+    g = g;
+    h = h;
+    i = i;
+    j = j;
   }
   
-  public final void a(bme parambme, IOException paramIOException)
+  public final int a()
   {
-    if ((b.type() != Proxy.Type.DIRECT) && (a.k != null)) {
-      a.k.connectFailed(b, b.address(), paramIOException);
-    }
-    c.a(parambme);
-    if ((!(paramIOException instanceof SSLHandshakeException)) && (!(paramIOException instanceof SSLProtocolException))) {
-      while (l < k.size())
-      {
-        parambme = k;
-        int i1 = l;
-        l = (i1 + 1);
-        parambme = (blq)parambme.get(i1);
-        boolean bool = a(parambme);
-        parambme = new bme(a, d, e, parambme, bool);
-        c.a(parambme);
-      }
-    }
+    return c;
   }
   
-  final void a(Proxy paramProxy)
+  public final String a(String paramString)
   {
-    i = new ArrayList();
-    int i1;
-    InetSocketAddress localInetSocketAddress;
-    if ((paramProxy.type() == Proxy.Type.DIRECT) || (paramProxy.type() == Proxy.Type.SOCKS))
-    {
-      paramProxy = a.b;
-      i1 = bmp.a(b);
-      if ((i1 <= 0) || (i1 > 65535)) {
-        throw new SocketException("No route to " + paramProxy + ":" + i1 + "; port is out of range");
-      }
+    paramString = f.a(paramString);
+    if (paramString != null) {
+      return paramString;
     }
-    else
+    return null;
+  }
+  
+  public final String b()
+  {
+    return d;
+  }
+  
+  public final bne c()
+  {
+    return g;
+  }
+  
+  public final bnd.a d()
+  {
+    return new bnd.a(this, (byte)0);
+  }
+  
+  public final bnd e()
+  {
+    return i;
+  }
+  
+  public final List<bmn> f()
+  {
+    if (c == 401) {}
+    for (String str = "WWW-Authenticate";; str = "Proxy-Authenticate")
     {
-      paramProxy = paramProxy.address();
-      if (!(paramProxy instanceof InetSocketAddress)) {
-        throw new IllegalArgumentException("Proxy.address() is not an InetSocketAddress: " + paramProxy.getClass());
-      }
-      localInetSocketAddress = (InetSocketAddress)paramProxy;
-      paramProxy = localInetSocketAddress.getAddress();
-      if (paramProxy == null) {}
-      for (paramProxy = localInetSocketAddress.getHostName();; paramProxy = paramProxy.getHostAddress())
-      {
-        i1 = localInetSocketAddress.getPort();
+      return boa.a(f, str);
+      if (c != 407) {
         break;
       }
     }
-    paramProxy = n.a(paramProxy);
-    int i3 = paramProxy.length;
-    int i2 = 0;
-    while (i2 < i3)
-    {
-      localInetSocketAddress = paramProxy[i2];
-      i.add(new InetSocketAddress(localInetSocketAddress, i1));
-      i2 += 1;
+    return Collections.emptyList();
+  }
+  
+  public final bmk g()
+  {
+    bmk localbmk = k;
+    if (localbmk != null) {
+      return localbmk;
     }
-    j = 0;
+    localbmk = bmk.a(f);
+    k = localbmk;
+    return localbmk;
   }
   
-  public final boolean a()
+  public final String toString()
   {
-    return h < g.size();
+    return "Response{protocol=" + b + ", code=" + c + ", message=" + d + ", url=" + a.a + '}';
   }
   
-  final boolean a(blq paramblq)
+  public static final class a
   {
-    boolean bool2 = false;
-    boolean bool1 = bool2;
-    if (paramblq != k.get(0))
+    public bnb a;
+    public bna b;
+    public int c = -1;
+    public String d;
+    public bmu e;
+    bmv.a f;
+    public bne g;
+    bnd h;
+    bnd i;
+    bnd j;
+    
+    public a()
     {
-      bool1 = bool2;
-      if (d) {
-        bool1 = true;
+      f = new bmv.a();
+    }
+    
+    private a(bnd parambnd)
+    {
+      a = a;
+      b = b;
+      c = c;
+      d = d;
+      e = e;
+      f = f.b();
+      g = g;
+      h = h;
+      i = i;
+      j = j;
+    }
+    
+    private static void a(String paramString, bnd parambnd)
+    {
+      if (g != null) {
+        throw new IllegalArgumentException(paramString + ".body != null");
+      }
+      if (h != null) {
+        throw new IllegalArgumentException(paramString + ".networkResponse != null");
+      }
+      if (i != null) {
+        throw new IllegalArgumentException(paramString + ".cacheResponse != null");
+      }
+      if (j != null) {
+        throw new IllegalArgumentException(paramString + ".priorResponse != null");
       }
     }
-    return bool1;
-  }
-  
-  public final boolean b()
-  {
-    return j < i.size();
-  }
-  
-  final void c()
-  {
-    k = new ArrayList();
-    List localList = a.j;
-    int i2 = localList.size();
-    int i1 = 0;
-    while (i1 < i2)
+    
+    public final a a(bmv parambmv)
     {
-      blq localblq = (blq)localList.get(i1);
-      if (p.e() == d) {
-        k.add(localblq);
-      }
-      i1 += 1;
+      f = parambmv.b();
+      return this;
     }
-    l = 0;
-  }
-  
-  public final boolean d()
-  {
-    return l < k.size();
-  }
-  
-  public final boolean e()
-  {
-    return !m.isEmpty();
+    
+    public final a a(bnd parambnd)
+    {
+      if (parambnd != null) {
+        a("networkResponse", parambnd);
+      }
+      h = parambnd;
+      return this;
+    }
+    
+    public final a a(String paramString1, String paramString2)
+    {
+      f.b(paramString1, paramString2);
+      return this;
+    }
+    
+    public final bnd a()
+    {
+      if (a == null) {
+        throw new IllegalStateException("request == null");
+      }
+      if (b == null) {
+        throw new IllegalStateException("protocol == null");
+      }
+      if (c < 0) {
+        throw new IllegalStateException("code < 0: " + c);
+      }
+      return new bnd(this, (byte)0);
+    }
+    
+    public final a b(bnd parambnd)
+    {
+      if (parambnd != null) {
+        a("cacheResponse", parambnd);
+      }
+      i = parambnd;
+      return this;
+    }
+    
+    public final a b(String paramString1, String paramString2)
+    {
+      f.a(paramString1, paramString2);
+      return this;
+    }
+    
+    public final a c(bnd parambnd)
+    {
+      if ((parambnd != null) && (g != null)) {
+        throw new IllegalArgumentException("priorResponse.body != null");
+      }
+      j = parambnd;
+      return this;
+    }
   }
 }
 

@@ -1,16 +1,17 @@
 package com.snapchat.android.discover.model.database.table;
 
-import aad;
-import adf;
-import adf.b;
-import ajv;
+import aau;
+import aav;
+import abc;
+import aef;
+import aef.b;
+import akp;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import cgb;
-import com.snapchat.android.Timber;
+import chc;
 import com.snapchat.android.database.DataType;
 import com.snapchat.android.database.DatabaseHelper;
 import com.snapchat.android.database.table.DbTable;
@@ -21,16 +22,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.apache.http.util.TextUtils;
-import zv;
-import zw;
 
 public final class DSnapViewStateTable
-  extends DbTable<adf.b>
+  extends DbTable<aef.b>
 {
   public static final String[] a;
   public static final HashMap<String, String> b;
   private static final DSnapViewStateTable c = new DSnapViewStateTable();
-  private final adf d;
+  private final aef d;
   
   static
   {
@@ -50,17 +49,17 @@ public final class DSnapViewStateTable
   
   protected DSnapViewStateTable()
   {
-    this(adf.a());
+    this(aef.a());
   }
   
-  private DSnapViewStateTable(adf paramadf)
+  private DSnapViewStateTable(aef paramaef)
   {
-    d = paramadf;
+    d = paramaef;
   }
   
-  private static ContentValues a(@cgb adf.b paramb)
+  private static ContentValues a(@chc aef.b paramb)
   {
-    return aadaIDa).a(DSnapViewStateSchema.TIME_LAST_VIEWED_MILLISECONDS, b).a;
+    return abcaIDa).a(DSnapViewStateSchema.TIME_LAST_VIEWED_MILLISECONDS, b).a;
   }
   
   public static DSnapViewStateTable a()
@@ -68,7 +67,7 @@ public final class DSnapViewStateTable
     return c;
   }
   
-  private static List<adf.b> a(@cgb SQLiteDatabase paramSQLiteDatabase)
+  private static List<aef.b> a(@chc SQLiteDatabase paramSQLiteDatabase)
   {
     ArrayList localArrayList = new ArrayList();
     paramSQLiteDatabase = paramSQLiteDatabase.query("DSnapViewState", a, null, null, null, null, null);
@@ -80,7 +79,7 @@ public final class DSnapViewStateTable
         boolean bool;
         do
         {
-          localArrayList.add(new adf.b(paramSQLiteDatabase.getString(DSnapViewStateSchema.ID.getColumnNumber()), paramSQLiteDatabase.getLong(DSnapViewStateSchema.TIME_LAST_VIEWED_MILLISECONDS.getColumnNumber())));
+          localArrayList.add(new aef.b(paramSQLiteDatabase.getString(DSnapViewStateSchema.ID.getColumnNumber()), paramSQLiteDatabase.getLong(DSnapViewStateSchema.TIME_LAST_VIEWED_MILLISECONDS.getColumnNumber())));
           bool = paramSQLiteDatabase.moveToNext();
         } while (bool);
       }
@@ -94,7 +93,7 @@ public final class DSnapViewStateTable
     }
   }
   
-  protected final Collection<adf.b> a(ajv paramajv)
+  protected final Collection<aef.b> a(akp paramakp)
   {
     return null;
   }
@@ -102,11 +101,9 @@ public final class DSnapViewStateTable
   public final void a(Context paramContext)
   {
     paramContext = DatabaseHelper.a(paramContext).getWritableDatabase();
-    Timber.c("DSnapViewStateTable", "safeUpdate - beginTransaction", new Object[0]);
     paramContext.beginTransaction();
     try
     {
-      Timber.c("DSnapViewStateTable", "Delete the table for DSnapViewState", new Object[0]);
       paramContext.delete("DSnapViewState", null, null);
       Iterator localIterator = d.d.values().iterator();
       ContentValues localContentValues;
@@ -115,52 +112,46 @@ public final class DSnapViewStateTable
         if (!localIterator.hasNext()) {
           break;
         }
-        localContentValues = a((adf.b)localIterator.next());
+        localContentValues = a((aef.b)localIterator.next());
       } while ((localContentValues == null) || (paramContext.insertWithOnConflict("DSnapViewState", null, localContentValues, 5) != -1L));
       throw new SQLiteException("Insertion in DB failed for DSnapViewState");
     }
     catch (SQLiteException localSQLiteException)
     {
-      Timber.f("DSnapViewState", "Error while writing to database: %s", new Object[] { localSQLiteException.getMessage() });
+      localSQLiteException.getMessage();
       return;
-      Timber.c("DSnapViewStateTable", "Remove redundant entries in DSnapViewState", new Object[0]);
-      paramContext.execSQL(zv.a("DSnapViewState", DSnapViewStateSchema.ID, "EditionChunk", EditionChunkTable.EditionChunkSchema.ID));
+      paramContext.execSQL(aau.a("DSnapViewState", DSnapViewStateSchema.ID, "EditionChunk", EditionChunkTable.EditionChunkSchema.ID));
       paramContext.setTransactionSuccessful();
       return;
     }
     finally
     {
       paramContext.endTransaction();
-      Timber.c("DSnapViewStateTable", "safeUpdate - endTransaction", new Object[0]);
     }
   }
   
-  public final void b(ajv paramajv)
+  public final void b(akp paramakp)
   {
-    paramajv = DatabaseHelper.a(ajv.y()).getReadableDatabase();
-    Timber.c("DSnapViewStateTable", "populateUserObjectFromTable - beginTransaction", new Object[0]);
-    paramajv.beginTransaction();
+    paramakp = DatabaseHelper.a(akp.y()).getReadableDatabase();
+    paramakp.beginTransaction();
     try
     {
-      Object localObject2 = a(paramajv);
-      adf localadf = d;
+      Object localObject2 = a(paramakp);
+      aef localaef = d;
       localObject2 = ((List)localObject2).iterator();
       while (((Iterator)localObject2).hasNext())
       {
-        adf.b localb = (adf.b)((Iterator)localObject2).next();
-        localadf.b(a, b);
+        aef.b localb = (aef.b)((Iterator)localObject2).next();
+        localaef.b(a, b);
       }
-      paramajv.endTransaction();
     }
     finally
     {
-      paramajv.endTransaction();
-      Timber.c("DSnapViewStateTable", "populateUserObjectFromTable - endTransaction", new Object[0]);
+      paramakp.endTransaction();
     }
-    Timber.c("DSnapViewStateTable", "populateUserObjectFromTable - endTransaction", new Object[0]);
   }
   
-  public final zw[] b()
+  public final aav[] b()
   {
     return DSnapViewStateSchema.values();
   }
@@ -170,7 +161,7 @@ public final class DSnapViewStateTable
     return "DSnapViewState";
   }
   
-  public final void c(ajv paramajv) {}
+  public final void c(akp paramakp) {}
   
   public final String d()
   {
@@ -197,7 +188,7 @@ public final class DSnapViewStateTable
   }
   
   public static enum DSnapViewStateSchema
-    implements zw
+    implements aav
   {
     ID(DataType.TEXT, "PRIMARY KEY"),  TIME_LAST_VIEWED_MILLISECONDS("time_last_viewed_milli", DataType.INTEGER);
     

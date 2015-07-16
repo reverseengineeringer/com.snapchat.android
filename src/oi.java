@@ -1,10 +1,10 @@
-import com.snapchat.android.ui.swipefilters.FilterPageType;
-
 public final class oi
+  extends Exception
 {
-  public String a = "None";
-  public String b = null;
-  public FilterPageType c = null;
+  public oi(String paramString)
+  {
+    super("User was unable to deserialize geofilter: " + paramString);
+  }
 }
 
 /* Location:

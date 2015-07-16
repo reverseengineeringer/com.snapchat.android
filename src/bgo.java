@@ -1,99 +1,51 @@
-import android.os.Handler;
-import android.os.SystemClock;
-import java.util.concurrent.atomic.AtomicBoolean;
+import android.database.Cursor;
+import java.io.Closeable;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Scanner;
 
-public abstract class bgo
+public final class bgo
 {
-  final long mCountdownInterval;
-  final long mDuration;
-  private final Runnable mFinishMessage = new Runnable()
-  {
-    public final void run()
-    {
-      b();
-    }
-  };
-  final Handler mHandler;
-  final AtomicBoolean mIsCancelled = new AtomicBoolean(false);
-  private final AtomicBoolean mIsFinished = new AtomicBoolean(false);
-  final Runnable mTickMessage = new Runnable()
-  {
-    public final void run()
-    {
-      a();
-    }
-  };
+  private static final String TAG = "CloseableUtils";
   
-  public bgo(int paramInt, long paramLong, Handler paramHandler)
+  public static void a(@chd Cursor paramCursor)
   {
-    mDuration = (paramInt * paramLong);
-    mCountdownInterval = paramLong;
-    mHandler = paramHandler;
+    if (paramCursor != null) {
+      paramCursor.close();
+    }
   }
   
-  public abstract void a();
-  
-  public abstract void b();
-  
-  public final void c()
+  public static void a(@chd Closeable paramCloseable)
   {
-    synchronized (mIsCancelled)
+    if (paramCloseable != null) {}
+    try
     {
-      mIsCancelled.set(true);
+      paramCloseable.close();
       return;
     }
-  }
-  
-  final void d()
-  {
-    synchronized (mIsCancelled)
+    catch (IncompatibleClassChangeError localIncompatibleClassChangeError)
     {
-      if (mHandler != null)
-      {
-        mHandler.post(mFinishMessage);
-        mIsFinished.set(true);
-        return;
-      }
-      b();
+      throw new RuntimeException("Caused by attempting to close " + paramCloseable.getClass().getName(), localIncompatibleClassChangeError);
     }
+    catch (IOException paramCloseable) {}
   }
   
-  public final void e()
+  public static void a(@chd Socket paramSocket)
   {
-    new Thread(new Runnable()
+    if (paramSocket != null) {}
+    try
     {
-      public final void run()
-      {
-        bgo localbgo = bgo.this;
-        long l2 = SystemClock.elapsedRealtime();
-        long l3 = mDuration + l2;
-        long l1 = l2;
-        if (l2 >= l3) {
-          localbgo.d();
-        }
-        do
-        {
-          do
-          {
-            return;
-            if (l1 >= l3) {
-              break;
-            }
-            bgp.a(mCountdownInterval);
-          } while (mIsCancelled.get());
-          if (mHandler != null) {
-            mHandler.post(mTickMessage);
-          }
-          for (;;)
-          {
-            l1 += mCountdownInterval;
-            break;
-            localbgo.a();
-          }
-        } while (mIsCancelled.get());
-        localbgo.d();
-      }
-    }).start();
+      paramSocket.close();
+      return;
+    }
+    catch (IOException paramSocket) {}
+  }
+  
+  public static void a(@chd Scanner paramScanner)
+  {
+    if (paramScanner != null) {
+      paramScanner.close();
+    }
   }
 }
 

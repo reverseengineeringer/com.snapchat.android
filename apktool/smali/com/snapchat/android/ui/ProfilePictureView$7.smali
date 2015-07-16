@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/snapchat/android/ui/ProfilePictureView$a;->q()V
+    invoke-interface {v0}, Lcom/snapchat/android/ui/ProfilePictureView$a;->r()V
 
     .line 413
     return-void

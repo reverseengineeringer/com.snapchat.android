@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.widget.TextView;
-import auh;
+import avf;
 import com.snapchat.android.analytics.AnalyticsEvents;
-import pa;
+import pr;
 
 final class SettingsFragment$14$1
   implements DialogInterface.OnClickListener
@@ -15,10 +15,10 @@ final class SettingsFragment$14$1
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    AnalyticsEvents.a(SettingsFragment.PrivacyOptions.values()[ajx.g()].toString(), SettingsFragment.PrivacyOptions.values()[paramInt].toString());
-    ajx.c(paramInt);
+    AnalyticsEvents.a(SettingsFragment.PrivacyOptions.values()[akr.g()].toString(), SettingsFragment.PrivacyOptions.values()[paramInt].toString());
+    akr.c(paramInt);
     SettingsFragment.b(a.a).setText(a.a.getResources().getStringArray(2131165197)[paramInt]);
-    new pa("updatePrivacy", new String[] { Integer.toString(paramInt) }).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    new pr("updatePrivacy", new String[] { Integer.toString(paramInt) }).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     paramDialogInterface.dismiss();
   }
 }

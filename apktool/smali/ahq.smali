@@ -2,211 +2,197 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvk;
+
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lahq$a;
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lcom/snapchat/android/fragments/signup/SignupFragment;",
+        ">;"
     }
 .end annotation
 
 
-# instance fields
-.field private final a:Landroid/content/Context;
+# static fields
+.field static final synthetic a:Z
 
-.field private final b:Landroid/location/LocationManager;
+
+# instance fields
+.field private final b:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final c:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Laze;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 25
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    .line 9
+    const-class v0, Lahq;
 
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lahq;-><init>(Landroid/content/Context;)V
-
-    .line 26
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    .prologue
-    .line 29
-    const-string v0, "location"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/LocationManager;
-
-    invoke-direct {p0, p1, v0}, Lahq;-><init>(Landroid/content/Context;Landroid/location/LocationManager;)V
-
-    .line 30
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/content/Context;Landroid/location/LocationManager;)V
-    .locals 0
-
-    .prologue
-    .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 34
-    iput-object p1, p0, Lahq;->a:Landroid/content/Context;
-
-    .line 35
-    iput-object p2, p0, Lahq;->b:Landroid/location/LocationManager;
-
-    .line 36
-    return-void
-.end method
-
-.method public static a(Z)V
-    .locals 2
-
-    .prologue
-    .line 59
-    invoke-static {p0}, Lajx;->k(Z)V
-
-    .line 60
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v0
-
-    new-instance v1, Lbbi;
-
-    invoke-direct {v1}, Lbbi;-><init>()V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 61
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Landroid/content/Context;Lahq$a;)Landroid/app/AlertDialog;
-    .locals 8
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 74
-    invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    .line 76
-    new-instance v3, Lajx;
-
-    invoke-direct {v3}, Lajx;-><init>()V
-
-    .line 77
-    new-instance v6, Landroid/app/AlertDialog$Builder;
-
-    invoke-direct {v6, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 78
-    const v0, 0x7f0c0161
-
-    invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
-
-    .line 79
-    invoke-static {}, Lajx;->br()Z
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    .line 80
-    const v0, 0x7f0c02a6
+    const/4 v0, 0x1
 
-    invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
-
-    .line 84
     :goto_0
-    const/4 v0, 0x0
+    sput-boolean v0, Lahq;->a:Z
 
-    invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+    return-void
 
-    .line 85
-    const v7, 0x7f0c0195
-
-    new-instance v0, Lahq$1;
-
-    move-object v1, p0
-
-    move-object v4, p1
-
-    move-object v5, p2
-
-    invoke-direct/range {v0 .. v5}, Lahq$1;-><init>(Lahq;Landroid/content/SharedPreferences;Lajx;Landroid/content/Context;Lahq$a;)V
-
-    invoke-virtual {v6, v7, v0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    .line 104
-    const v0, 0x7f0c0119
-
-    new-instance v1, Lahq$2;
-
-    invoke-direct {v1, p0, p2}, Lahq$2;-><init>(Lahq;Lahq$a;)V
-
-    invoke-virtual {v6, v0, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    .line 114
-    invoke-virtual {v6}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 82
     :cond_0
-    const v0, 0x7f0c015f
-
-    invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public final a()Z
-    .locals 2
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laze;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 39
-    iget-object v0, p0, Lahq;->b:Landroid/location/LocationManager;
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "gps"
+    .line 15
+    sget-boolean v0, Lahq;->a:Z
 
-    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
+    if-nez v0, :cond_0
 
-    move-result v0
+    if-nez p1, :cond_0
 
-    return v0
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 16
+    :cond_0
+    iput-object p1, p0, Lahq;->b:Lbvk;
+
+    .line 17
+    sget-boolean v0, Lahq;->a:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 18
+    :cond_1
+    iput-object p2, p0, Lahq;->c:Ljavax/inject/Provider;
+
+    .line 19
+    return-void
 .end method
 
-.method public final b()Z
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laze;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/fragments/signup/SignupFragment;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 31
+    new-instance v0, Lahq;
+
+    invoke-direct {v0, p0, p1}, Lahq;-><init>(Lbvk;Ljavax/inject/Provider;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
     .prologue
-    .line 43
-    iget-object v0, p0, Lahq;->b:Landroid/location/LocationManager;
+    .line 9
+    check-cast p1, Lcom/snapchat/android/fragments/signup/SignupFragment;
 
-    const-string v1, "network"
+    if-nez p1, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    move-result v0
+    const-string v1, "Cannot inject members into a null reference"
 
-    return v0
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lahq;->b:Lbvk;
+
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lahq;->c:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laze;
+
+    iput-object v0, p1, Lcom/snapchat/android/fragments/signup/SignupFragment;->d:Laze;
+
+    return-void
 .end method

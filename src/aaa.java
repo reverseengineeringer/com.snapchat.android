@@ -1,16 +1,15 @@
 public final class aaa
-  extends zx
 {
-  private static final aaa a = new aaa();
+  public final akn a;
   
-  private aaa()
+  public aaa()
   {
-    super("ChatMediaFiles", awq.CHAT_MEDIA_IMAGE_CACHE);
+    this(akn.a());
   }
   
-  public static aaa a()
+  private aaa(akn paramakn)
   {
-    return a;
+    a = paramakn;
   }
 }
 

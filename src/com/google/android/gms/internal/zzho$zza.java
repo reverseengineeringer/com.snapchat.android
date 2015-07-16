@@ -3,6 +3,8 @@ package com.google.android.gms.internal;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 final class zzho$zza
   extends BroadcastReceiver
@@ -11,6 +13,8 @@ final class zzho$zza
   
   public final void onReceive(Context paramContext, Intent paramIntent)
   {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     if ("android.intent.action.USER_PRESENT".equals(paramIntent.getAction())) {
       zzho.zza(zzzs, true);
     }

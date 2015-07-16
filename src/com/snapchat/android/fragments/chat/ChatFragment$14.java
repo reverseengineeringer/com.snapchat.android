@@ -1,19 +1,19 @@
 package com.snapchat.android.fragments.chat;
 
-import afr;
-import ako;
+import agr;
+import alj;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import com.snapchat.android.model.chat.ChatMedia;
 import com.snapchat.android.util.chat.SnapchatUrlSpan;
-import yl;
+import zh;
 
 final class ChatFragment$14
   implements DialogInterface.OnClickListener
 {
-  ChatFragment$14(ChatFragment paramChatFragment, SnapchatUrlSpan paramSnapchatUrlSpan, ako paramako) {}
+  ChatFragment$14(ChatFragment paramChatFragment, SnapchatUrlSpan paramSnapchatUrlSpan, alj paramalj) {}
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {

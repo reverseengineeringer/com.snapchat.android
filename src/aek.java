@@ -1,67 +1,49 @@
-import android.database.Cursor;
-import android.database.DataSetObservable;
-import android.support.v4.view.PagerAdapter;
-import com.snapchat.android.discover.analytics.EditionPerformanceAnalytics;
-import com.snapchat.android.discover.model.ChannelPage;
-import com.snapchat.android.util.debug.ReleaseManager;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import android.content.Context;
+import android.content.Intent;
+import com.snapchat.android.api2.framework.HttpMethod;
+import com.snapchat.android.discover.util.network.DiscoverEndpointManager;
 
 public final class aek
-  extends aem
+  extends ana
+  implements ui.b<bku>
 {
-  public aek(@cgb ChannelPage paramChannelPage, @cgb String paramString, @cgb abr paramabr)
+  public int a = 0;
+  private akp b;
+  private final DiscoverEndpointManager c;
+  
+  public aek(Intent paramIntent)
   {
-    this(paramChannelPage, paramString, paramabr, apd.a(), adf.a(), adj.a(), ReleaseManager.a());
+    this(paramIntent, DiscoverEndpointManager.a());
   }
   
-  private aek(@cgb ChannelPage paramChannelPage, @cgb String paramString, @cgb abr paramabr, @cgb apd paramapd, @cgb adf paramadf, @cgb adj paramadj, @cgb ReleaseManager paramReleaseManager)
+  private aek(Intent paramIntent, DiscoverEndpointManager paramDiscoverEndpointManager)
   {
-    super(paramChannelPage, paramString, paramabr, paramapd, paramadf, paramadj, paramReleaseManager);
+    super(paramIntent);
+    registerCallback(bku.class, this);
+    c = paramDiscoverEndpointManager;
   }
   
-  public final int a(int paramInt)
+  public final void a(Context paramContext)
   {
-    return paramInt;
+    b = akp.a(paramContext);
+    super.a(paramContext);
   }
   
-  public final void a(@cgc Cursor paramCursor)
+  public final void b() {}
+  
+  public final HttpMethod getMethod()
   {
-    if (paramCursor != null)
-    {
-      i = new ArrayList(paramCursor.getCount());
-      if ((paramCursor != null) && (paramCursor.moveToFirst())) {
-        do
-        {
-          localObject = b.a(paramCursor);
-          i.add(localObject);
-        } while (paramCursor.moveToNext());
-      }
-      paramCursor = a;
-      Object localObject = e;
-      ArrayList localArrayList1 = i;
-      ArrayList localArrayList2 = new ArrayList(localArrayList1.size());
-      localArrayList2.addAll(localArrayList1);
-      e.put(localObject, localArrayList2);
-      f.d.a(i);
-    }
-    for (;;)
-    {
-      mObservable.notifyChanged();
-      return;
-      i = new ArrayList();
-    }
+    return HttpMethod.GET;
   }
   
-  public final int b(int paramInt)
+  public final Object getRequestPayload()
   {
-    return paramInt;
+    return null;
   }
   
-  public final int getCount()
+  protected final String l_()
   {
-    return i.size();
+    return c.b();
   }
 }
 

@@ -1,10 +1,13 @@
-import java.util.Locale;
+import android.widget.FrameLayout;
+import com.snapchat.android.ui.SwipeImageView;
 
 public final class ath
+  extends ati
 {
-  public static <E extends Enum<E>> String a(E paramE)
+  public final void a(SwipeImageView paramSwipeImageView, asv<asm> paramasv)
   {
-    return paramE.name().toLowerCase(Locale.ENGLISH);
+    e.removeAllViews();
+    paramasv.c();
   }
 }
 

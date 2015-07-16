@@ -1,126 +1,86 @@
 .class public final Lbsm;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lbsn;
+
 
 # instance fields
-.field public a:Ljava/net/URL;
-
-.field public b:Ljava/util/Map;
-
-.field public c:I
-
-.field public d:Z
-
-.field public e:Z
-
-.field public f:Ljava/lang/String;
-
-.field public g:Z
-
-.field public h:I
+.field private a:Ljava/util/Map;
 
 
 # direct methods
-.method public constructor <init>(Ljava/net/URL;)V
-    .locals 6
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
-
-    .line 54
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
+    .line 14
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lbsm;->b:Ljava/util/Map;
+    iput-object v0, p0, Lbsm;->a:Ljava/util/Map;
 
-    .line 35
-    iput v4, p0, Lbsm;->c:I
-
-    .line 36
-    iput-boolean v5, p0, Lbsm;->d:Z
-
-    .line 37
-    iput-boolean v5, p0, Lbsm;->e:Z
-
-    .line 38
-    const-string v0, "POST"
-
-    iput-object v0, p0, Lbsm;->f:Ljava/lang/String;
-
-    .line 39
-    iput-boolean v4, p0, Lbsm;->g:Z
-
-    .line 40
-    const/16 v0, 0x9c4
-
-    iput v0, p0, Lbsm;->h:I
-
-    .line 55
-    iput-object p1, p0, Lbsm;->a:Ljava/net/URL;
-
-    .line 58
-    iget-object v0, p0, Lbsm;->b:Ljava/util/Map;
-
-    const-string v1, "User-Agent"
-
-    new-array v2, v5, [Ljava/lang/String;
-
-    const-string v3, "4.5.4"
-
-    aput-object v3, v2, v4
-
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 59
-    iget-object v0, p0, Lbsm;->b:Ljava/util/Map;
-
-    const-string v1, "Content-Type"
-
-    new-array v2, v5, [Ljava/lang/String;
-
-    const-string v3, "application/json"
-
-    aput-object v3, v2, v4
-
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 60
-    iget-object v0, p0, Lbsm;->b:Ljava/util/Map;
-
-    const-string v1, "Accept"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    const-string v3, "text/plain"
-
-    aput-object v3, v2, v4
-
-    const-string v3, "application/json"
-
-    aput-object v3, v2, v5
-
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 61
+    .line 15
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lbso;)Lbsm;
+    .locals 3
+
+    .prologue
+    .line 18
+    invoke-interface {p1}, Lbso;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 20
+    iget-object v0, p0, Lbsm;->a:Ljava/util/Map;
+
+    invoke-interface {p1}, Lbso;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p1}, Lbso;->b()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 22
+    :cond_0
+    return-object p0
+.end method
+
+.method public final a()Lorg/json/JSONObject;
+    .locals 2
+
+    .prologue
+    .line 26
+    new-instance v0, Lorg/json/JSONObject;
+
+    iget-object v1, p0, Lbsm;->a:Ljava/util/Map;
+
+    invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
+
+    return-object v0
+.end method
+
+.method public final synthetic b()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 10
+    invoke-virtual {p0}, Lbsm;->a()Lorg/json/JSONObject;
+
+    move-result-object v0
+
+    return-object v0
 .end method

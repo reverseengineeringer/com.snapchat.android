@@ -1,72 +1,121 @@
-import android.text.Html;
-import android.text.Spannable;
-import android.text.TextUtils;
-import android.text.style.TypefaceSpan;
-import android.widget.TextView;
-import com.snapchat.android.database.SharedPreferenceKey;
+import android.content.Context;
+import com.snapchat.android.SnapchatActivity;
+import com.snapchat.android.Timber.LogType;
 import com.snapchat.android.util.debug.ReleaseManager;
-import com.snapchat.android.util.emoji.Emoji;
-import java.io.UnsupportedEncodingException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class baj
 {
-  private static final String FAKE_FRIENDMOJIS = a(Emoji.HEAVY_BLACK_HEART) + " " + a(Emoji.SMILING_FACE_WITH_SMILING_EYES) + " " + a(Emoji.WHITE_MEDIUM_STAR) + " " + a(Emoji.SMIRKING_FACE) + " " + a(Emoji.GRINNING_FACE_WITH_SMILING_EYES) + " " + a(Emoji.SMILING_FACE_WITH_SUNGLASSES) + " " + a(Emoji.CLAPPING_HANDS_SIGN) + " " + a(Emoji.FIRE) + " " + a(Emoji.YELLOW_HEART);
-  private static int SMILEY_FACE_CODE_POINT = 9786;
+  public static final String ADD_LIVE_LOGS_FILE_PREFIX = "snapchat_shake2report_addlive_";
+  public static final String BITMAP_POOL_MONITOR_LOGS_FILE_PREFIX = "snapchat_shake2report_bitmap_pool_monitor_";
+  public static final String CHAT_LOGS_FILE_PREFIX = "snapchat_shake2report_chat_";
+  private static final String DEFAULT_LOG = "DEFAULT";
+  public static final String DEFAULT_LOGS_FILE_PREFIX = "snapchat_shake2report_default_";
+  public static final String DOWNLOAD_PROGRESS_LOGS_FILE_PREFIX = "snapchat_shake2report_download_progress_";
+  public static final String LOCATION_MANAGER_LOGS_FILE_PREFIX = "snapchat_shake2report_location_manager_";
+  public static final String[] LOG_FILE_PREFIXES = { "snapchat_shake2report_addlive_", "snapchat_shake2report_chat_", "snapchat_shake2report_location_manager_", "snapchat_shake2report_bitmap_pool_monitor_", "snapchat_shake2report_download_progress_", "snapchat_shake2report_default_" };
+  public static final int MAX_NUMBER_OF_LOG_FILES_TO_KEEP = 10;
+  private static final String TAG = "DebugCapturer";
+  private static final Map<String, baq> mLogs = new ConcurrentHashMap() {};
   
-  public static CharSequence a(Emoji paramEmoji)
+  public static String a()
   {
+    StringBuilder localStringBuilder = new StringBuilder();
+    Iterator localIterator = mLogs.values().iterator();
+    while (localIterator.hasNext()) {
+      localStringBuilder.append(((baq)localIterator.next()).a()).append("\n\n\n ------ >>>> New Entry <<<< -------");
+    }
+    return localStringBuilder.toString();
+  }
+  
+  public static String a(String paramString, int paramInt)
+  {
+    return paramString + paramInt + ".txt";
+  }
+  
+  public static void a(@chd String paramString)
+  {
+    if (!ReleaseManager.f()) {
+      return;
+    }
+    a("DEFAULT", new String[] { "[", new SimpleDateFormat("EEE MMM dd HH:mm:ss.SSS zzz yyyy").format(new Date()), "] ", paramString });
+  }
+  
+  private static void a(@chc String paramString, String... paramVarArgs)
+  {
+    StringBuilder localStringBuilder = new StringBuilder();
+    int i = 0;
+    while (i < 4)
+    {
+      String str = paramVarArgs[i];
+      if (str != null) {
+        localStringBuilder.append(str);
+      }
+      i += 1;
+    }
+    if (mLogs.containsKey(paramString)) {}
+    for (paramString = (baq)mLogs.get(paramString);; paramString = (baq)mLogs.get("DEFAULT"))
+    {
+      paramString.a(localStringBuilder.toString());
+      if (SnapchatActivity.m()) {
+        az.a(localStringBuilder.toString());
+      }
+      return;
+    }
+  }
+  
+  public static File[] a(Context paramContext, boolean paramBoolean)
+  {
+    localObject = new baq("snapchat_shake2report_addlive_");
     try
     {
-      paramEmoji = Html.fromHtml(new String(paramEmoji.getBytes(), "UTF-8"));
-      return paramEmoji;
-    }
-    catch (UnsupportedEncodingException paramEmoji)
-    {
-      paramEmoji.printStackTrace();
-    }
-    return "";
-  }
-  
-  public static final String a()
-  {
-    return FAKE_FRIENDMOJIS;
-  }
-  
-  public static void a(@cgb TextView paramTextView, @cgb String paramString)
-  {
-    if (axj.a())
-    {
-      Object localObject = paramTextView.getText();
-      if ((!TextUtils.isEmpty((CharSequence)localObject)) && ((localObject instanceof Spannable)))
+      BufferedReader localBufferedReader = new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(new String[] { "logcat", "-d", "-v", "threadtime", "AddLive_SDK:V", "AddLive_SDK:V", "*:S" }).getInputStream()));
+      for (;;)
       {
-        String str = ((CharSequence)localObject).toString();
-        localObject = (Spannable)localObject;
-        int i = 0;
-        while (i < str.length())
-        {
-          if (str.codePointAt(i) == SMILEY_FACE_CODE_POINT) {
-            ((Spannable)localObject).setSpan(new TypefaceSpan(paramString), i, i + 1, 0);
-          }
-          i += 1;
+        String str = localBufferedReader.readLine();
+        if (str == null) {
+          break;
         }
-        paramTextView.setText((CharSequence)localObject);
+        ((baq)localObject).a(str);
+      }
+      Iterator localIterator;
+      int i;
+      return (File[])localObject;
+    }
+    catch (IOException localIOException)
+    {
+      mLogs.put("snapchat_shake2report_addlive_", localObject);
+      localObject = new File[mLogs.size()];
+      localIterator = mLogs.values().iterator();
+      i = 0;
+      while (localIterator.hasNext())
+      {
+        localObject[i] = ((baq)localIterator.next()).a(paramContext, paramBoolean);
+        i += 1;
       }
     }
   }
   
-  public static boolean b()
+  public static String[] b()
   {
-    boolean bool2 = false;
-    boolean bool3 = auc.a(SharedPreferenceKey.DEVELOPER_OPTIONS_FAKE_FRIENDMOJI_ENABLED.getKey(), false);
-    boolean bool1 = bool2;
-    if (ReleaseManager.f())
+    String[] arrayOfString = new String[mLogs.size()];
+    Iterator localIterator = mLogs.values().iterator();
+    int i = 0;
+    while (localIterator.hasNext())
     {
-      bool1 = bool2;
-      if (bool3) {
-        bool1 = true;
-      }
+      arrayOfString[i] = nextmOutputFile.getName();
+      i += 1;
     }
-    return bool1;
+    return arrayOfString;
   }
 }
 

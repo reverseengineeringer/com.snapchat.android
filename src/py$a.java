@@ -1,12 +1,6 @@
-@tn
 public final class py$a
-  extends biy
-{
-  py$a()
-  {
-    ts.b(this);
-  }
-}
+  extends Exception
+{}
 
 /* Location:
  * Qualified Name:     py.a

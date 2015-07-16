@@ -45,7 +45,7 @@
     .end annotation
 .end field
 
-.field private final m:Laol;
+.field private final m:Laph;
 
 .field private n:Ljava/lang/String;
 
@@ -59,7 +59,7 @@
 
 .field private s:I
 
-.field private t:Laok;
+.field private t:Lapg;
 
 
 # direct methods
@@ -68,17 +68,17 @@
 
     .prologue
     .line 95
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;-><init>(Laol;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;-><init>(Laph;)V
 
     .line 96
     return-void
 .end method
 
-.method private constructor <init>(Laol;)V
+.method private constructor <init>(Laph;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -107,10 +107,10 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment$1;-><init>(Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Laok;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Lapg;
 
     .line 91
-    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laol;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laph;
 
     .line 92
     return-void
@@ -126,28 +126,28 @@
     return-object v0
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;Lamt;)V
+.method static synthetic a(Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;Lanq;)V
     .locals 5
 
     .prologue
     const/16 v2, 0x8
 
     .line 46
-    iget-boolean v0, p1, Lamt;->b:Z
+    iget-boolean v0, p1, Lanq;->b:Z
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/password/PasswordValidationFragment;
 
     invoke-direct {v2}, Lcom/snapchat/android/fragments/settings/password/PasswordValidationFragment;-><init>()V
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -155,9 +155,9 @@
     return-void
 
     :cond_0
-    iget-object v0, p1, Lamt;->a:Lbkj;
+    iget-object v0, p1, Lanq;->a:Lblk;
 
-    invoke-virtual {v0}, Lbkj;->a()Ljava/lang/Boolean;
+    invoke-virtual {v0}, Lblk;->a()Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -167,11 +167,11 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     const/4 v2, 0x0
 
@@ -181,7 +181,7 @@
 
     const v4, 0x7f0c0212
 
-    invoke-static {v3, v4, v2}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4, v2}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -189,7 +189,7 @@
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -214,9 +214,9 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-object v0, p1, Lamt;->a:Lbkj;
+    iget-object v0, p1, Lanq;->a:Lblk;
 
-    invoke-virtual {v0}, Lbkj;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lblk;->b()Ljava/lang/String;
 
     move-result-object v0
 
@@ -228,7 +228,7 @@
 .method private a(Ljava/lang/String;)V
     .locals 3
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -304,12 +304,12 @@
     return-void
 .end method
 
-.method static synthetic d(Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;)Laol;
+.method static synthetic d(Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;)Laph;
     .locals 1
 
     .prologue
     .line 46
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laph;
 
     return-object v0
 .end method
@@ -454,7 +454,7 @@
 
 
 # virtual methods
-.method protected final a(Lamz;)V
+.method protected final a(Lanw;)V
     .locals 3
 
     .prologue
@@ -465,7 +465,7 @@
 
     move-result-object v0
 
-    iget-object v1, p1, Lamz;->a:Ljava/lang/String;
+    iget-object v1, p1, Lanw;->a:Ljava/lang/String;
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -474,9 +474,9 @@
     if-eqz v0, :cond_1
 
     .line 342
-    iget-object v0, p1, Lamz;->b:Lamz$b;
+    iget-object v0, p1, Lanw;->b:Lanw$b;
 
-    iget-object v0, v0, Lamz$b;->a:Ljava/lang/String;
+    iget-object v0, v0, Lanw$b;->a:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/settings/password/PasswordStrength;->fromValue(Ljava/lang/String;)Lcom/snapchat/android/fragments/settings/password/PasswordStrength;
 
@@ -510,9 +510,9 @@
 
     .line 349
     :cond_0
-    iget-object v0, p1, Lamz;->b:Lamz$b;
+    iget-object v0, p1, Lanw;->b:Lanw$b;
 
-    iget-object v0, v0, Lamz$b;->b:Ljava/lang/String;
+    iget-object v0, v0, Lanw$b;->b:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->a(Ljava/lang/String;)V
 
@@ -555,7 +555,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->f(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->f(Landroid/content/Context;)V
 
     .line 124
     :cond_0
@@ -574,7 +574,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->J()Landroid/view/Window;
 
     move-result-object v1
 
@@ -586,7 +586,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 130
     return-void
@@ -704,7 +704,7 @@
     const/4 v4, 0x0
 
     .line 100
-    const v0, 0x7f040025
+    const v0, 0x7f040026
 
     invoke-virtual {p1, v0, p2, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -723,7 +723,7 @@
 
     sget-object v3, Lcom/snapchat/android/util/emoji/Emoji;->CONFUSED_FACE:Lcom/snapchat/android/util/emoji/Emoji;
 
-    invoke-static {v3}, Lbaj;->a(Lcom/snapchat/android/util/emoji/Emoji;)Ljava/lang/CharSequence;
+    invoke-static {v3}, Lbbj;->a(Lcom/snapchat/android/util/emoji/Emoji;)Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -741,7 +741,7 @@
 
     sget-object v3, Lcom/snapchat/android/util/emoji/Emoji;->OK_HAND_SIGN:Lcom/snapchat/android/util/emoji/Emoji;
 
-    invoke-static {v3}, Lbaj;->a(Lcom/snapchat/android/util/emoji/Emoji;)Ljava/lang/CharSequence;
+    invoke-static {v3}, Lbbj;->a(Lcom/snapchat/android/util/emoji/Emoji;)Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -759,7 +759,7 @@
 
     sget-object v3, Lcom/snapchat/android/util/emoji/Emoji;->SMILING_FACE_WITH_SUNGLASSES:Lcom/snapchat/android/util/emoji/Emoji;
 
-    invoke-static {v3}, Lbaj;->a(Lcom/snapchat/android/util/emoji/Emoji;)Ljava/lang/CharSequence;
+    invoke-static {v3}, Lbbj;->a(Lcom/snapchat/android/util/emoji/Emoji;)Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -771,7 +771,7 @@
 
     iput-object v1, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->p:Ljava/lang/String;
 
-    const v1, 0x7f08003b
+    const v1, 0x7f08003c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -779,7 +779,7 @@
 
     iput v1, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->q:I
 
-    const v1, 0x7f080039
+    const v1, 0x7f08003a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -787,7 +787,7 @@
 
     iput v1, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->r:I
 
-    const v1, 0x7f08003a
+    const v1, 0x7f08003b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -887,7 +887,7 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     const v0, 0x7f0a0107
 
@@ -972,22 +972,22 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onPause()V
 
     .line 135
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laph;
 
     const/16 v1, 0x3fa
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 136
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laph;
 
     const/16 v1, 0x3f9
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 137
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->l:Ljava/util/Set;
@@ -1006,22 +1006,22 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 109
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laph;
 
     const/16 v1, 0x3fa
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 110
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->m:Laph;
 
     const/16 v1, 0x3f9
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->t:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 111
     return-void

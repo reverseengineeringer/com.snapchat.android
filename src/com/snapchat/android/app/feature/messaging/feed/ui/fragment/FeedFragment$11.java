@@ -1,23 +1,16 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import alw;
-import alx;
-import alx.a;
-import java.util.Set;
+import android.view.View;
+import android.view.animation.TranslateAnimation;
 
 final class FeedFragment$11
-  implements alw
+  implements Runnable
 {
-  FeedFragment$11(FeedFragment paramFeedFragment) {}
+  FeedFragment$11(FeedFragment paramFeedFragment, View paramView, TranslateAnimation paramTranslateAnimation) {}
   
-  public final boolean a(alx.a parama)
+  public final void run()
   {
-    return FeedFragment.l().contains(c);
-  }
-  
-  public final boolean b(alx.a parama)
-  {
-    return alx.h.contains(c);
+    a.startAnimation(b);
   }
 }
 

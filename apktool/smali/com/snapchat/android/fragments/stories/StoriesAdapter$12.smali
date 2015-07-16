@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbgr$a;
+.implements Lbhr$a;
 
 
 # annotations
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 426
+    .line 424
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$12;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$12;->a:Lcom/snapchat/android/model/StorySnapLogbook;
@@ -44,13 +44,13 @@
     .locals 1
 
     .prologue
-    .line 429
+    .line 427
     new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$12$1;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$12$1;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter$12;)V
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 448
+    .line 446
     return-void
 .end method

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 118
+    .line 140
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 143
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/SwipeableFriendsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
 
-    .line 122
+    .line 144
     return-void
 .end method

@@ -8,10 +8,10 @@ import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import cgc;
+import chd;
 import com.snapchat.android.ui.StickyEndEditText;
 import java.util.Calendar;
-import ye;
+import za;
 
 public class CardExpiryEditText
   extends StickyEndEditText
@@ -20,7 +20,7 @@ public class CardExpiryEditText
   final Calendar b = Calendar.getInstance();
   public boolean c = false;
   private Animation d;
-  private ye e;
+  private za e;
   
   public CardExpiryEditText(Context paramContext, AttributeSet paramAttributeSet)
   {
@@ -55,9 +55,9 @@ public class CardExpiryEditText
     return localStringBuilder.toString();
   }
   
-  public void setValidatedInputCallback(@cgc ye paramye)
+  public void setValidatedInputCallback(@chd za paramza)
   {
-    e = paramye;
+    e = paramza;
   }
   
   final class a

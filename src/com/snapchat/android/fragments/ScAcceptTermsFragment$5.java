@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments;
 
-import ajx;
+import akr;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.support.v4.app.FragmentActivity;
-import aol;
+import aph;
 
 final class ScAcceptTermsFragment$5
   implements DialogInterface.OnClickListener
@@ -14,7 +14,7 @@ final class ScAcceptTermsFragment$5
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
     ScAcceptTermsFragment.f(a).e();
-    ajx.n();
+    akr.n();
     paramDialogInterface = a.getActivity();
     paramDialogInterface.setResult(1);
     paramDialogInterface.finish();

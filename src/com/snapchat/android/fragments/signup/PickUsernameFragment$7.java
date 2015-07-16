@@ -4,8 +4,8 @@ import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import auh;
-import avh;
+import avf;
+import awf;
 
 final class PickUsernameFragment$7
   implements View.OnClickListener
@@ -17,8 +17,8 @@ final class PickUsernameFragment$7
     paramView = PickUsernameFragment.c(a).getText().toString().trim();
     PickUsernameFragment.o(a).removeMessages(1);
     PickUsernameFragment.o(a).removeMessages(2);
-    new PickUsernameFragment.a(a, paramView).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
-    avh.a(PickUsernameFragment.b(a), PickUsernameFragment.c(a));
+    new PickUsernameFragment.a(a, paramView).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
+    awf.a(PickUsernameFragment.b(a), PickUsernameFragment.c(a));
   }
 }
 

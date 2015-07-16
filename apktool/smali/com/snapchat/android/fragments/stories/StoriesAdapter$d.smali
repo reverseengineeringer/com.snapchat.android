@@ -20,82 +20,76 @@
 # instance fields
 .field final synthetic a:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
-.field private final b:Lahb;
+.field private final b:Lahy;
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahb;)V
+.method public constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahy;)V
     .locals 0
 
     .prologue
-    .line 996
+    .line 1030
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 997
-    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->b:Lahb;
+    .line 1031
+    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->b:Lahy;
 
-    .line 998
+    .line 1032
     return-void
 .end method
 
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 5
+    .locals 3
 
     .prologue
-    .line 1002
+    .line 1036
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbea;
+    new-instance v1, Lbez;
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->b:Lahb;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->b:Lahy;
 
-    invoke-direct {v1, v2}, Lbea;-><init>(Lahb;)V
+    invoke-direct {v1, v2}, Lbez;-><init>(Lahy;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1003
-    const-string v0, "StoriesAdapter"
+    .line 1037
+    const/4 v0, 0x2
 
-    const-string v1, "onClick for %s %s"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    const/4 v1, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->b:Lahy;
 
-    const/4 v3, 0x0
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v4, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->b:Lahb;
+    move-result-object v2
 
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    aput-object v2, v0, v1
 
-    move-result-object v4
+    const/4 v1, 0x1
 
-    aput-object v4, v2, v3
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->b:Lahy;
 
-    const/4 v3, 0x1
+    invoke-interface {v2}, Lahy;->l()Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;->b:Lahb;
+    move-result-object v2
 
-    invoke-interface {v4}, Lahb;->h()Ljava/lang/String;
+    aput-object v2, v0, v1
 
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1005
+    .line 1039
     return-void
 .end method

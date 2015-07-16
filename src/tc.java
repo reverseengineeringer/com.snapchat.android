@@ -1,39 +1,63 @@
-import com.squareup.otto.Bus;
+import com.snapchat.android.api2.cash.square.data.CardBrand;
+import com.snapchat.android.api2.cash.square.data.CashCustomer;
 
 public final class tc
-  extends th
+  implements rd
 {
-  private tc.a mCallback;
+  @chd
+  private final tl mCardSummary;
+  @chd
+  private final CashCustomer mCashCustomer;
+  @chc
+  private final tm mCashCustomerStatus;
   
-  public tc(@cgb tc.a parama)
+  public tc(@chc tm paramtm)
   {
-    mCallback = parama;
+    mCashCustomerStatus = paramtm;
+    mCashCustomer = mCustomer;
+    mCardSummary = mCardSummary;
   }
   
-  public final void a(@cgb uc paramuc)
+  public final boolean a()
   {
-    super.a(paramuc);
-    if (paramuc.d()) {
-      mCallback.a();
-    }
-    for (;;)
+    return mCardSummary != null;
+  }
+  
+  public final boolean b()
+  {
+    return mCashCustomerStatus.mPasswordConfirmationEnabled;
+  }
+  
+  public final boolean c()
+  {
+    boolean bool2 = false;
+    boolean bool1 = bool2;
+    if (mCashCustomerStatus != null)
     {
-      ban.a().a(new ben());
-      return;
-      mCallback.w_();
+      bool1 = bool2;
+      if (mCashCustomerStatus.mNumberOfPayments > 0) {
+        bool1 = true;
+      }
     }
+    return bool1;
   }
   
-  protected final String d()
+  @chd
+  public final CardBrand d()
   {
-    return "/loq/clear_feed";
+    if (mCardSummary != null) {
+      return mCardSummary.mBrand;
+    }
+    return null;
   }
   
-  public static abstract interface a
+  @chd
+  public final String e()
   {
-    public abstract void a();
-    
-    public abstract void w_();
+    if (mCardSummary != null) {
+      return mCardSummary.mPanSuffix;
+    }
+    return null;
   }
 }
 

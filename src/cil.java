@@ -1,250 +1,213 @@
-public final class cil
+import java.io.Serializable;
+
+public abstract class cil
+  extends chg
+  implements Serializable
 {
-  final cij[] a;
-  private cil.a[] b;
-  
-  cil(cij[] paramArrayOfcij)
+  public chi A()
   {
-    a = paramArrayOfcij;
-    b = new cil.a[16];
+    return ckt.a(chj.q(), y());
   }
   
-  private cil a(int paramInt)
+  public chn B()
   {
-    cij[] arrayOfcij1 = a;
-    int m = arrayOfcij1.length;
-    if (paramInt >= m) {
-      throw new IndexOutOfBoundsException();
-    }
-    cij[] arrayOfcij2 = new cij[m - 1];
-    int j = 0;
+    return cku.a(cho.i());
+  }
+  
+  public chi C()
+  {
+    return ckt.a(chj.r(), B());
+  }
+  
+  public chn D()
+  {
+    return cku.a(cho.j());
+  }
+  
+  public chi E()
+  {
+    return ckt.a(chj.s(), D());
+  }
+  
+  public chi F()
+  {
+    return ckt.a(chj.t(), D());
+  }
+  
+  public chi G()
+  {
+    return ckt.a(chj.u(), D());
+  }
+  
+  public chn H()
+  {
+    return cku.a(cho.k());
+  }
+  
+  public chi I()
+  {
+    return ckt.a(chj.v(), H());
+  }
+  
+  public chn J()
+  {
+    return cku.a(cho.l());
+  }
+  
+  public chi K()
+  {
+    return ckt.a(chj.w(), J());
+  }
+  
+  public long a(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
+  {
+    long l = E().b(0L, paramInt1);
+    l = C().b(l, paramInt2);
+    l = u().b(l, paramInt3);
+    return e().b(l, paramInt4);
+  }
+  
+  public long a(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6, int paramInt7)
+  {
+    long l = E().b(0L, paramInt1);
+    l = C().b(l, paramInt2);
+    l = u().b(l, paramInt3);
+    l = m().b(l, paramInt4);
+    l = j().b(l, paramInt5);
+    l = g().b(l, paramInt6);
+    return d().b(l, paramInt7);
+  }
+  
+  public final long a(cic paramcic, long paramLong)
+  {
     int i = 0;
-    if (j < m)
+    int j = paramcic.a();
+    while (i < j)
     {
-      if (j == paramInt) {
-        break label82;
-      }
-      int k = i + 1;
-      arrayOfcij2[i] = arrayOfcij1[j];
-      i = k;
+      paramLong = paramcic.c(i).a(this).b(paramLong, paramcic.a(i));
+      i += 1;
     }
-    label82:
-    for (;;)
-    {
-      j += 1;
-      break;
-      return new cil(arrayOfcij2);
-    }
+    return paramLong;
   }
   
-  public final cij a(Class<?> paramClass)
+  public chn c()
   {
-    Object localObject5 = null;
-    int n = 0;
-    cil.a[] arrayOfa = b;
-    int i2 = arrayOfa.length;
-    int i;
-    int k;
-    if (paramClass == null)
-    {
-      i = 0;
-      k = i;
-    }
-    label131:
-    label585:
-    label688:
-    for (;;)
-    {
-      Object localObject1 = arrayOfa[k];
-      if (localObject1 != null)
-      {
-        if (a == paramClass)
-        {
-          return b;
-          i = paramClass.hashCode() & i2 - 1;
-          break;
-        }
-        k += 1;
-        if (k < i2) {
-          break label688;
-        }
-        i = 0;
-        break;
-      }
-      Object localObject2 = a;
-      i = localObject2.length;
-      int j = i;
-      Object localObject3 = this;
-      int m = j - 1;
-      Class localClass;
-      if (m >= 0)
-      {
-        localObject1 = localObject2[m];
-        localClass = ((cij)localObject1).a();
-        if (localClass == paramClass)
-        {
-          localObject2 = new cil.a(paramClass, (cij)localObject1);
-          paramClass = (cil.a[])arrayOfa.clone();
-          paramClass[k] = localObject2;
-          i = 0;
-        }
-      }
-      Object localObject4;
-      for (;;)
-      {
-        if (i >= i2) {
-          break label585;
-        }
-        if (paramClass[i] == null)
-        {
-          b = paramClass;
-          return (cij)localObject1;
-          if (localClass != null)
-          {
-            j = i;
-            localObject4 = localObject2;
-            localObject1 = localObject3;
-            if (paramClass != null)
-            {
-              j = i;
-              localObject4 = localObject2;
-              localObject1 = localObject3;
-              if (localClass.isAssignableFrom(paramClass)) {}
-            }
-          }
-          else
-          {
-            localObject1 = ((cil)localObject3).a(m);
-            localObject4 = a;
-            j = localObject4.length;
-          }
-          i = j;
-          localObject2 = localObject4;
-          localObject3 = localObject1;
-          j = m;
-          break;
-          localObject1 = localObject5;
-          if (paramClass == null) {
-            break label131;
-          }
-          localObject1 = localObject5;
-          if (i == 0) {
-            break label131;
-          }
-          if (i == 1)
-          {
-            localObject1 = localObject2[0];
-            break label131;
-          }
-          localObject1 = localObject2;
-          j = i;
-          for (localObject2 = localObject3;; localObject2 = localObject3)
-          {
-            int i1 = i - 1;
-            if (i1 < 0) {
-              break;
-            }
-            localObject4 = localObject1[i1].a();
-            localObject3 = localObject1;
-            i = j;
-            m = j;
-            j = i1;
-            localObject1 = localObject2;
-            localObject2 = localObject3;
-            for (;;)
-            {
-              i1 = m - 1;
-              if (i1 < 0) {
-                break;
-              }
-              m = i1;
-              if (i1 != j)
-              {
-                m = i1;
-                if (localObject2[i1].a().isAssignableFrom((Class)localObject4))
-                {
-                  localObject1 = ((cil)localObject1).a(i1);
-                  localObject2 = a;
-                  i = localObject2.length;
-                  j = i - 1;
-                  m = i1;
-                }
-              }
-            }
-            m = i;
-            localObject3 = localObject1;
-            i = j;
-            j = m;
-            localObject1 = localObject2;
-          }
-          if (j == 1)
-          {
-            localObject1 = localObject1[0];
-            break label131;
-          }
-          localObject2 = new StringBuilder();
-          ((StringBuilder)localObject2).append("Unable to find best converter for type \"");
-          ((StringBuilder)localObject2).append(paramClass.getName());
-          ((StringBuilder)localObject2).append("\" from remaining set: ");
-          i = n;
-          if (i < j)
-          {
-            paramClass = localObject1[i];
-            localObject3 = paramClass.a();
-            ((StringBuilder)localObject2).append(paramClass.getClass().getName());
-            ((StringBuilder)localObject2).append('[');
-            if (localObject3 == null) {}
-            for (paramClass = null;; paramClass = ((Class)localObject3).getName())
-            {
-              ((StringBuilder)localObject2).append(paramClass);
-              ((StringBuilder)localObject2).append("], ");
-              i += 1;
-              break;
-            }
-          }
-          throw new IllegalStateException(((StringBuilder)localObject2).toString());
-        }
-        i += 1;
-      }
-      m = i2 << 1;
-      localObject2 = new cil.a[m];
-      j = 0;
-      while (j < i2)
-      {
-        localObject3 = paramClass[j];
-        localObject4 = a;
-        if (localObject4 == null) {
-          i = 0;
-        }
-        while (localObject2[i] != null)
-        {
-          k = i + 1;
-          i = k;
-          if (k >= m)
-          {
-            i = 0;
-            continue;
-            i = localObject4.hashCode() & m - 1;
-          }
-        }
-        localObject2[i] = localObject3;
-        j += 1;
-      }
-      b = ((cil.a[])localObject2);
-      return (cij)localObject1;
-    }
+    return cku.a(cho.a());
   }
   
-  static final class a
+  public chi d()
   {
-    final Class<?> a;
-    final cij b;
-    
-    a(Class<?> paramClass, cij paramcij)
-    {
-      a = paramClass;
-      b = paramcij;
-    }
+    return ckt.a(chj.a(), c());
+  }
+  
+  public chi e()
+  {
+    return ckt.a(chj.b(), c());
+  }
+  
+  public chn f()
+  {
+    return cku.a(cho.b());
+  }
+  
+  public chi g()
+  {
+    return ckt.a(chj.c(), f());
+  }
+  
+  public chi h()
+  {
+    return ckt.a(chj.d(), f());
+  }
+  
+  public chn i()
+  {
+    return cku.a(cho.c());
+  }
+  
+  public chi j()
+  {
+    return ckt.a(chj.e(), i());
+  }
+  
+  public chi k()
+  {
+    return ckt.a(chj.f(), i());
+  }
+  
+  public chn l()
+  {
+    return cku.a(cho.d());
+  }
+  
+  public chi m()
+  {
+    return ckt.a(chj.g(), l());
+  }
+  
+  public chi n()
+  {
+    return ckt.a(chj.h(), l());
+  }
+  
+  public chn o()
+  {
+    return cku.a(cho.e());
+  }
+  
+  public chi p()
+  {
+    return ckt.a(chj.i(), l());
+  }
+  
+  public chi q()
+  {
+    return ckt.a(chj.j(), l());
+  }
+  
+  public chi r()
+  {
+    return ckt.a(chj.k(), o());
+  }
+  
+  public chn s()
+  {
+    return cku.a(cho.f());
+  }
+  
+  public chi t()
+  {
+    return ckt.a(chj.l(), s());
+  }
+  
+  public chi u()
+  {
+    return ckt.a(chj.m(), s());
+  }
+  
+  public chi v()
+  {
+    return ckt.a(chj.n(), s());
+  }
+  
+  public chn w()
+  {
+    return cku.a(cho.g());
+  }
+  
+  public chi x()
+  {
+    return ckt.a(chj.o(), w());
+  }
+  
+  public chn y()
+  {
+    return cku.a(cho.h());
+  }
+  
+  public chi z()
+  {
+    return ckt.a(chj.p(), y());
   }
 }
 

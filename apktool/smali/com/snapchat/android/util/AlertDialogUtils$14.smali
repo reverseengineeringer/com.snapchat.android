@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/util/AlertDialogUtils;->a(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;ZLpp$a;)V
+    value = Lcom/snapchat/android/util/AlertDialogUtils;->a(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;ZLqg$a;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 509
+    .line 511
     iput-object p1, p0, Lcom/snapchat/android/util/AlertDialogUtils$14;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/snapchat/android/util/AlertDialogUtils$14;->val$friend:Lcom/snapchat/android/model/Friend;
@@ -52,14 +52,14 @@
     .locals 4
 
     .prologue
-    .line 512
+    .line 514
     packed-switch p2, :pswitch_data_0
 
-    .line 521
+    .line 523
     :goto_0
     return-void
 
-    .line 514
+    .line 516
     :pswitch_0
     iget-object v0, p0, Lcom/snapchat/android/util/AlertDialogUtils$14;->val$context:Landroid/content/Context;
 
@@ -73,23 +73,23 @@
 
     goto :goto_0
 
-    .line 517
+    .line 519
     :pswitch_1
-    new-instance v0, Lafh;
+    new-instance v0, Lagh;
 
     iget-object v1, p0, Lcom/snapchat/android/util/AlertDialogUtils$14;->val$context:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$14;->val$friend:Lcom/snapchat/android/model/Friend;
 
-    sget-object v3, Lic;->SETTING_GEAR:Lic;
+    sget-object v3, Lil;->SETTING_GEAR:Lil;
 
-    invoke-direct {v0, v1, v2, v3}, Lafh;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Lic;)V
+    invoke-direct {v0, v1, v2, v3}, Lagh;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Lil;)V
 
-    invoke-virtual {v0}, Lafh;->a()V
+    invoke-virtual {v0}, Lagh;->a()V
 
     goto :goto_0
 
-    .line 512
+    .line 514
     nop
 
     :pswitch_data_0

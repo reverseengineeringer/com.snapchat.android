@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/util/system/Clock_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lbgk;",
+        "Lbhk;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Lbgk;",
+            "Lbhk;",
             ">;"
         }
     .end annotation
@@ -127,14 +127,14 @@
 
 
 # virtual methods
-.method public final get()Lbgk;
+.method public final get()Lbhk;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Lbgk;
+    new-instance v0, Lbhk;
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    invoke-direct {v0}, Lbhk;-><init>()V
 
     return-object v0
 .end method
@@ -144,7 +144,7 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/util/system/Clock_Factory;->get()Lbgk;
+    invoke-virtual {p0}, Lcom/snapchat/android/util/system/Clock_Factory;->get()Lbhk;
 
     move-result-object v0
 

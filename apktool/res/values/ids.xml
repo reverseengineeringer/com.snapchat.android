@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item type="id" name="camera_preview" />
+    <item type="id" name="channel_view_adapter_position" />
     <item type="id" name="karel_view" />
     <item type="id" name="np__decrement" />
     <item type="id" name="np__increment" />
@@ -61,14 +62,15 @@
     <item type="id" name="friend_texts_view">false</item>
     <item type="id" name="friend_profile_stub">false</item>
     <item type="id" name="friend_profile_layout">false</item>
+    <item type="id" name="list">false</item>
+    <item type="id" name="image_find_friends_cover">false</item>
+    <item type="id" name="add_friends_menu_header">false</item>
     <item type="id" name="add_by_username">false</item>
     <item type="id" name="add_from_address_book">false</item>
     <item type="id" name="add_from_screenshot">false</item>
     <item type="id" name="add_from_screenshot_divider">false</item>
     <item type="id" name="add_nearby">false</item>
     <item type="id" name="add_nearby_divider">false</item>
-    <item type="id" name="image_find_friends_cover">false</item>
-    <item type="id" name="list">false</item>
     <item type="id" name="footer">false</item>
     <item type="id" name="footer_text">false</item>
     <item type="id" name="footer_subtext">false</item>
@@ -87,8 +89,6 @@
     <item type="id" name="filters_list_separator">false</item>
     <item type="id" name="settings_front_facing_flash">false</item>
     <item type="id" name="settings_front_facing_flash_checkbox">false</item>
-    <item type="id" name="settings_replay">false</item>
-    <item type="id" name="settings_replay_checkbox">false</item>
     <item type="id" name="settings_permissions">false</item>
     <item type="id" name="camera_activity_layout">false</item>
     <item type="id" name="camera_container">false</item>
@@ -399,8 +399,6 @@
     <item type="id" name="registration_mode_spinner">false</item>
     <item type="id" name="device_token_cell">false</item>
     <item type="id" name="device_token_checkbox">false</item>
-    <item type="id" name="new_feed_option">false</item>
-    <item type="id" name="new_feed_checkbox">false</item>
     <item type="id" name="discover_endpoint_button">false</item>
     <item type="id" name="discover_endpoint_textview">false</item>
     <item type="id" name="story_thumbnails_button">false</item>
@@ -625,6 +623,8 @@
     <item type="id" name="friend_profile_loading_text">false</item>
     <item type="id" name="friend_profile_score">false</item>
     <item type="id" name="friend_profile_best_friends_list">false</item>
+    <item type="id" name="my_story_overlay_container">false</item>
+    <item type="id" name="viewer_info_container">false</item>
     <item type="id" name="view_count_container">false</item>
     <item type="id" name="views_icon">false</item>
     <item type="id" name="views_text">false</item>
@@ -636,6 +636,7 @@
     <item type="id" name="delete_button">false</item>
     <item type="id" name="viewers_list_view">false</item>
     <item type="id" name="stories_list_item">false</item>
+    <item type="id" name="stories_list_item_divider">false</item>
     <item type="id" name="friend_name_layout">false</item>
     <item type="id" name="story_dot_container">false</item>
     <item type="id" name="story_dot">false</item>
@@ -650,8 +651,6 @@
     <item type="id" name="story_settings_button_stub">false</item>
     <item type="id" name="expandable_story_button">false</item>
     <item type="id" name="add_checkbox_container">false</item>
-    <item type="id" name="stories_list_item_divider">false</item>
-    <item type="id" name="all_stories_header">false</item>
     <item type="id" name="no_new_friend_requests">false</item>
     <item type="id" name="notification_settings_scrollview">false</item>
     <item type="id" name="notification_settings_general_view">false</item>
@@ -917,8 +916,6 @@
     <item type="id" name="time_picker">false</item>
     <item type="id" name="video">false</item>
     <item type="id" name="snap_video_image_overlay">false</item>
-    <item type="id" name="horizontal_video_snap_caption_area">false</item>
-    <item type="id" name="snap_video_caption">false</item>
     <item type="id" name="boring_header">false</item>
     <item type="id" name="what_is_snapkidz">false</item>
     <item type="id" name="account_actions_delete_snapkidz">false</item>
@@ -944,17 +941,13 @@
     <item type="id" name="stories_search_stub">false</item>
     <item type="id" name="myfriends_action_bar_discover_button">false</item>
     <item type="id" name="myfriends_action_bar_search_button">false</item>
-    <item type="id" name="stories_divider">false</item>
     <item type="id" name="stories_ptrframe">false</item>
     <item type="id" name="stories_list">false</item>
     <item type="id" name="my_friends_list_image_overlay">false</item>
     <item type="id" name="no_stories_stub">false</item>
     <item type="id" name="no_friends_button_stub">false</item>
     <item type="id" name="loading_stories_from_db_progress_bar">false</item>
-    <item type="id" name="discover_tooltip_stub">false</item>
     <item type="id" name="story_dismiss_animation_view">false</item>
-    <item type="id" name="discover_tooltip">false</item>
-    <item type="id" name="discover_tooltip_textview">false</item>
     <item type="id" name="reply_icon">false</item>
     <item type="id" name="no_friends_button">false</item>
     <item type="id" name="no_stories_cover_page">false</item>

@@ -1,21 +1,25 @@
 import java.io.Closeable;
-import java.io.InputStream;
+import java.io.IOException;
 
-public abstract class bmd
-  implements Closeable
+final class bmd
 {
-  public abstract long a();
-  
-  public abstract bzw b();
-  
-  public final InputStream c()
+  static void a(@chd Closeable paramCloseable)
   {
-    return b().e();
-  }
-  
-  public void close()
-  {
-    b().close();
+    if (paramCloseable != null) {}
+    try
+    {
+      paramCloseable.close();
+      return;
+    }
+    catch (IOException paramCloseable)
+    {
+      bmf.a(paramCloseable);
+      return;
+    }
+    catch (IncompatibleClassChangeError localIncompatibleClassChangeError)
+    {
+      throw new RuntimeException("Caused by attempting to close " + paramCloseable.getClass().getName(), localIncompatibleClassChangeError);
+    }
   }
 }
 

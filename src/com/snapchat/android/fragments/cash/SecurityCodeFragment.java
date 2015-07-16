@@ -10,23 +10,23 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import avh;
-import ban;
-import bdg;
-import bgp;
-import cgb;
-import cgc;
+import awf;
+import bbo;
+import beg;
+import bhp;
+import chc;
+import chd;
 import com.snapchat.android.api2.cash.square.data.ErrorType;
 import com.snapchat.android.ui.cash.CardCvvEditText;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
-import ye;
+import za;
 
 public class SecurityCodeFragment
   extends SnapchatFragment
 {
   protected View a;
-  @cgc
+  @chd
   public a b;
   private CardCvvEditText c;
   private View d;
@@ -35,9 +35,9 @@ public class SecurityCodeFragment
   private boolean g = false;
   private boolean h = false;
   
-  public final void a(@cgc final ErrorType paramErrorType, final int paramInt)
+  public final void a(@chd final ErrorType paramErrorType, final int paramInt)
   {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -48,13 +48,13 @@ public class SecurityCodeFragment
           SecurityCodeFragment.b(SecurityCodeFragment.this).setText("");
           SecurityCodeFragment.b(SecurityCodeFragment.this).setEnabled(true);
           if (SecurityCodeFragment.b(SecurityCodeFragment.this).requestFocus()) {
-            avh.g(getActivity());
+            awf.g(getActivity());
           }
         }
         for (;;)
         {
           SecurityCodeFragment.d(SecurityCodeFragment.this).setVisibility(8);
-          SecurityCodeFragment.e(SecurityCodeFragment.this).setBackgroundColor(getResources().getColor(2131230792));
+          SecurityCodeFragment.e(SecurityCodeFragment.this).setBackgroundColor(getResources().getColor(2131230793));
           SecurityCodeFragment.b(SecurityCodeFragment.this, true);
           return;
           SecurityCodeFragment.c(SecurityCodeFragment.this);
@@ -66,7 +66,12 @@ public class SecurityCodeFragment
   public final void e()
   {
     super.e();
-    ban.a().a(new bdg(false));
+    bbo.a().a(new beg(false));
+  }
+  
+  public final boolean f_()
+  {
+    return true;
   }
   
   public final boolean g()
@@ -87,20 +92,15 @@ public class SecurityCodeFragment
     }
   }
   
-  public final boolean g_()
-  {
-    return true;
-  }
-  
   protected final void i()
   {
-    avh.a(getActivity(), mFragmentLayout);
+    awf.a(getActivity(), mFragmentLayout);
     getActivity().onBackPressed();
   }
   
   public final void l()
   {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -112,7 +112,7 @@ public class SecurityCodeFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968605, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968606, paramViewGroup, false);
     c = ((CardCvvEditText)c(2131361977));
     c.setValidatedInputCallback(new b((byte)0));
     c.addTextChangedListener(new TextWatcher()
@@ -134,7 +134,7 @@ public class SecurityCodeFragment
     });
     c.setAlpha(0.6F);
     if (c.requestFocus()) {
-      avh.g(getActivity());
+      awf.g(getActivity());
     }
     d = c(2131361979);
     e = ((TextView)c(2131361982));
@@ -153,13 +153,13 @@ public class SecurityCodeFragment
   {
     public abstract void a();
     
-    public abstract void a(@cgb String paramString);
+    public abstract void a(@chc String paramString);
     
     public abstract void b();
   }
   
   final class b
-    implements ye
+    implements za
   {
     private b() {}
     

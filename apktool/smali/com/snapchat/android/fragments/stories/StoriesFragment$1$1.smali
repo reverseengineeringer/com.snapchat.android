@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 455
+    .line 463
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 0
 
     .prologue
-    .line 478
+    .line 486
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 0
 
     .prologue
-    .line 458
+    .line 466
     return-void
 .end method
 
@@ -60,14 +60,14 @@
 
     const/4 v2, 0x0
 
-    .line 462
+    .line 470
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 463
+    .line 471
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, v1}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->setFastScrollAlwaysVisible(Z)V
 
-    .line 464
+    .line 472
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
@@ -89,44 +89,44 @@
 
     invoke-virtual {v0, v1}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->setFastScrollEnabled(Z)V
 
-    .line 465
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
-
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->b(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lbgr;
-
-    move-result-object v0
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
-
-    .line 472
-    :goto_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
-
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->p()V
-
     .line 473
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->r()V
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->b(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lbhr;
 
-    .line 474
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
+
+    .line 480
+    :goto_0
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
+
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->q()V
+
+    .line 481
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
+
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->t()V
+
+    .line 482
     return-void
 
-    .line 467
+    .line 475
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->c(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lpb$a;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->c(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lps$a;
 
     move-result-object v0
 
@@ -134,9 +134,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lpb$a;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lps$a;->a(Ljava/lang/String;)V
 
-    .line 468
+    .line 476
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
@@ -147,7 +147,7 @@
 
     invoke-virtual {v0, v2}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->setFastScrollAlwaysVisible(Z)V
 
-    .line 469
+    .line 477
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
@@ -158,16 +158,16 @@
 
     invoke-virtual {v0, v2}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->setFastScrollEnabled(Z)V
 
-    .line 470
+    .line 478
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->b(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lbgr;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->b(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lbhr;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Lbgr;->a(I)V
+    invoke-virtual {v0, v2}, Lbhr;->a(I)V
 
     goto :goto_0
 .end method

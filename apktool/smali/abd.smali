@@ -1,5 +1,5 @@
 .class public final Labd;
-.super Lzx;
+.super Laaw;
 .source "SourceFile"
 
 
@@ -27,11 +27,11 @@
 
     .prologue
     .line 11
-    const-string v0, "StorySnapVideoFileTable"
+    const-string v0, "DSnapMediaFileTable"
 
-    sget-object v1, Lawq;->STORY_RECEIVED_VIDEO_CACHE:Lawp;
+    sget-object v1, Laxo;->DSNAP_MEDIA_CACHE:Laxn;
 
-    invoke-direct {p0, v0, v1}, Lzx;-><init>(Ljava/lang/String;Lawp;)V
+    invoke-direct {p0, v0, v1}, Laaw;-><init>(Ljava/lang/String;Laxn;)V
 
     .line 12
     return-void

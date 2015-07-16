@@ -1,15 +1,11 @@
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-
 final class aqb$1
-  implements DialogInterface.OnClickListener
+  implements Runnable
 {
   aqb$1(aqb paramaqb) {}
   
-  public final void onClick(DialogInterface paramDialogInterface, int paramInt)
+  public final void run()
   {
-    paramDialogInterface.cancel();
-    a.a();
+    aqb.a(a);
   }
 }
 

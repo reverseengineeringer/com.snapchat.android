@@ -1,57 +1,117 @@
-import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.model.CashTransaction;
+import com.snapchat.android.model.chat.CashFeedItem;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public final class qt
-  extends tg
-  implements ts.b<Boolean>
 {
-  private final qt.b mCallback;
-  private final String mConversationId;
-  private final Boolean mSaved;
-  private final String mTransactionId;
-  private final Integer mVersion;
+  private static final String TAG = "BlockerManager";
+  @Inject
+  protected qx mCashProviderManager;
   
-  public qt(@cgb String paramString1, @cgb String paramString2, @cgb Boolean paramBoolean, @cgb Integer paramInteger, @cgb qt.b paramb)
+  @Inject
+  public qt()
   {
-    super(tg.EXPONENTIAL_STRATEGY);
-    mTransactionId = paramString1;
-    mConversationId = paramString2;
-    mSaved = paramBoolean;
-    mVersion = paramInteger;
-    mCallback = paramb;
-    a(Boolean.class, this);
+    SnapchatApplication.b().c().a(this);
   }
   
-  public final Object b()
+  public final void a(@chc CashFeedItem paramCashFeedItem, @chd qt.a parama)
   {
-    return new qt.a();
+    String str = mCashTransaction.mProvider;
+    if (mCashProviderManager.b(str))
+    {
+      paramCashFeedItem.a(mCashProviderManager.a("snapcash").b());
+      paramCashFeedItem.a(mCashProviderManager.a(str).b());
+      paramCashFeedItem.a(parama);
+      return;
+    }
+    qx.a();
+    parama.b();
   }
   
-  protected final String d()
+  public final void b(@chc CashFeedItem paramCashFeedItem, @chd qt.a parama)
   {
-    return "/cash/update_transaction";
+    String str = mCashTransaction.mProvider;
+    if (mCashProviderManager.b(str))
+    {
+      paramCashFeedItem.a(mCashProviderManager.a("snapcash").c());
+      paramCashFeedItem.a(mCashProviderManager.a(str).c());
+      paramCashFeedItem.a(parama);
+      return;
+    }
+    qx.a();
+    parama.b();
   }
   
-  @tn
-  final class a
-    extends pl
+  public final void c(@chc CashFeedItem paramCashFeedItem, @chd qt.a parama)
   {
-    @SerializedName("conversation_id")
-    String conversationId = qt.b(qt.this);
-    @SerializedName("saved")
-    Boolean saved = qt.c(qt.this);
-    @SerializedName("transaction_id")
-    String transactionId = qt.a(qt.this);
-    @SerializedName("version")
-    Integer version = qt.d(qt.this);
-    
-    a() {}
+    String str = mCashTransaction.mProvider;
+    if (mCashProviderManager.b(str))
+    {
+      paramCashFeedItem.a(mCashProviderManager.a("snapcash").d());
+      paramCashFeedItem.a(mCashProviderManager.a(str).d());
+      paramCashFeedItem.a(parama);
+    }
+    do
+    {
+      return;
+      qx.a();
+    } while (parama == null);
+    parama.b();
   }
   
-  public static abstract interface b
+  public final void d(@chc CashFeedItem paramCashFeedItem, @chd qt.a parama)
+  {
+    String str = mCashTransaction.mProvider;
+    if (mCashProviderManager.b(str))
+    {
+      paramCashFeedItem.a(mCashProviderManager.a("snapcash").e());
+      paramCashFeedItem.a(mCashProviderManager.a(str).e());
+      paramCashFeedItem.a(parama);
+    }
+    do
+    {
+      return;
+      qx.a();
+    } while (parama == null);
+    parama.b();
+  }
+  
+  public final void e(@chc CashFeedItem paramCashFeedItem, @chd qt.a parama)
+  {
+    String str = mCashTransaction.mProvider;
+    paramCashFeedItem.a(mCashProviderManager.a("snapcash").f());
+    if (mCashProviderManager.b(str))
+    {
+      paramCashFeedItem.a(mCashProviderManager.a(str).f());
+      paramCashFeedItem.a(parama);
+      return;
+    }
+    qx.a();
+    parama.b();
+  }
+  
+  public final void f(@chc CashFeedItem paramCashFeedItem, @chd qt.a parama)
+  {
+    String str = mCashTransaction.mProvider;
+    if (mCashProviderManager.b(str))
+    {
+      paramCashFeedItem.a(mCashProviderManager.a("snapcash").g());
+      paramCashFeedItem.a(mCashProviderManager.a(str).g());
+      paramCashFeedItem.a(parama);
+      return;
+    }
+    qx.a();
+    parama.b();
+  }
+  
+  public static abstract interface a
   {
     public abstract void a();
     
-    public abstract void a(int paramInt);
+    public abstract void b();
   }
 }
 

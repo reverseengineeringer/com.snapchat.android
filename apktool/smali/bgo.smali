@@ -1,186 +1,138 @@
-.class public abstract Lbgo;
+.class public final Lbgo;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field final mCountdownInterval:J
-
-.field final mDuration:J
-
-.field private final mFinishMessage:Ljava/lang/Runnable;
-
-.field final mHandler:Landroid/os/Handler;
-
-.field final mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field private final mIsFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field final mTickMessage:Ljava/lang/Runnable;
+# static fields
+.field private static final TAG:Ljava/lang/String; = "CloseableUtils"
 
 
 # direct methods
-.method public constructor <init>(IJLandroid/os/Handler;)V
-    .locals 2
+.method public static a(Landroid/database/Cursor;)V
+    .locals 0
+    .param p0    # Landroid/database/Cursor;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
     .prologue
-    const/4 v1, 0x0
+    .line 39
+    if-eqz p0, :cond_0
 
+    .line 40
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    .line 42
+    :cond_0
+    return-void
+.end method
+
+.method public static a(Ljava/io/Closeable;)V
+    .locals 4
+    .param p0    # Ljava/io/Closeable;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+
+    .prologue
     .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 23
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lbgo;->mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 24
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lbgo;->mIsFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 26
-    new-instance v0, Lbgo$1;
-
-    invoke-direct {v0, p0}, Lbgo$1;-><init>(Lbgo;)V
-
-    iput-object v0, p0, Lbgo;->mTickMessage:Ljava/lang/Runnable;
-
-    .line 33
-    new-instance v0, Lbgo$2;
-
-    invoke-direct {v0, p0}, Lbgo$2;-><init>(Lbgo;)V
-
-    iput-object v0, p0, Lbgo;->mFinishMessage:Ljava/lang/Runnable;
-
-    .line 47
-    int-to-long v0, p1
-
-    mul-long/2addr v0, p2
-
-    iput-wide v0, p0, Lbgo;->mDuration:J
+    if-eqz p0, :cond_0
 
     .line 48
-    iput-wide p2, p0, Lbgo;->mCountdownInterval:J
-
-    .line 49
-    iput-object p4, p0, Lbgo;->mHandler:Landroid/os/Handler;
-
-    .line 50
-    return-void
-.end method
-
-
-# virtual methods
-.method public abstract a()V
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public final c()V
-    .locals 3
-
-    .prologue
-    .line 53
-    iget-object v1, p0, Lbgo;->mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    monitor-enter v1
-
-    .line 54
     :try_start_0
-    iget-object v0, p0, Lbgo;->mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-interface {p0}, Ljava/io/Closeable;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IncompatibleClassChangeError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 55
-    monitor-exit v1
-
+    :cond_0
+    :goto_0
     return-void
 
-    :catchall_0
+    .line 51
+    :catch_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 52
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    throw v0
-.end method
+    new-instance v2, Ljava/lang/StringBuilder;
 
-.method final d()V
-    .locals 3
+    const-string v3, "Caused by attempting to close "
 
-    .prologue
-    .line 88
-    iget-object v1, p0, Lbgo;->mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    monitor-enter v1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 89
-    :try_start_0
-    iget-object v0, p0, Lbgo;->mHandler:Landroid/os/Handler;
+    move-result-object v3
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    .line 90
-    iget-object v0, p0, Lbgo;->mHandler:Landroid/os/Handler;
+    move-result-object v3
 
-    iget-object v2, p0, Lbgo;->mFinishMessage:Ljava/lang/Runnable;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    move-result-object v2
 
-    .line 94
-    :goto_0
-    iget-object v0, p0, Lbgo;->mIsFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v2, 0x1
+    move-result-object v2
 
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 95
-    monitor-exit v1
+    throw v1
 
-    return-void
-
-    .line 92
-    :cond_0
-    invoke-virtual {p0}, Lbgo;->b()V
+    .line 50
+    :catch_1
+    move-exception v0
 
     goto :goto_0
-
-    .line 95
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method
 
-.method public final e()V
-    .locals 2
+.method public static a(Ljava/net/Socket;)V
+    .locals 1
+    .param p0    # Ljava/net/Socket;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
     .prologue
-    .line 99
-    new-instance v0, Ljava/lang/Thread;
+    .line 29
+    if-eqz p0, :cond_0
 
-    new-instance v1, Lbgo$3;
+    .line 31
+    :try_start_0
+    invoke-virtual {p0}, Ljava/net/Socket;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-direct {v1, p0}, Lbgo$3;-><init>(Lbgo;)V
+    .line 34
+    :cond_0
+    :goto_0
+    return-void
 
-    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    goto :goto_0
+.end method
 
-    .line 105
+.method public static a(Ljava/util/Scanner;)V
+    .locals 0
+    .param p0    # Ljava/util/Scanner;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 76
+    if-eqz p0, :cond_0
+
+    .line 77
+    invoke-virtual {p0}, Ljava/util/Scanner;->close()V
+
+    .line 79
+    :cond_0
     return-void
 .end method

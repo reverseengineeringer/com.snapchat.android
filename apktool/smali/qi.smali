@@ -1,143 +1,111 @@
 .class public final Lqi;
-.super Ljava/lang/Object;
+.super Ltx;
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lui$b;
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lqi$b;,
+        Lqi$a;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
+        "Ltx;",
+        "Lui$b",
         "<",
-        "Lqh;",
+        "Lqi$b;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
 # instance fields
-.field private final membersInjector:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lqh;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final mConversationId:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 7
-    const-class v0, Lqi;
+    .line 26
+    invoke-direct {p0}, Ltx;-><init>()V
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    .line 27
+    iput-object p1, p0, Lqi;->mConversationId:Ljava/lang/String;
 
-    move-result v0
+    .line 29
+    const-class v0, Lqi$b;
 
-    if-nez v0, :cond_0
+    invoke-virtual {p0, v0, p0}, Lqi;->registerCallback(Ljava/lang/Class;Lui$b;)V
 
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lqi;->$assertionsDisabled:Z
-
+    .line 30
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqh;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    sget-boolean v0, Lqi;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 13
-    :cond_0
-    iput-object p1, p0, Lqi;->membersInjector:Lbuj;
-
-    .line 14
-    return-void
-.end method
-
-.method public static a(Lbuj;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqh;",
-            ">;)",
-            "Lbuo",
-            "<",
-            "Lqh;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 24
-    new-instance v0, Lqi;
-
-    invoke-direct {v0, p0}, Lqi;-><init>(Lbuj;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
+.method protected final getPath()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 34
+    const-string v0, "/loq/conversation_auth_token"
+
+    return-object v0
+.end method
+
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 45
+    new-instance v0, Lqi$a;
+
+    invoke-direct {v0, p0}, Lqi$a;-><init>(Lqi;)V
+
+    return-object v0
+.end method
+
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
     .locals 2
 
     .prologue
-    .line 7
-    new-instance v0, Lqh;
+    .line 22
+    check-cast p1, Lqi$b;
 
-    invoke-direct {v0}, Lqh;-><init>()V
+    if-eqz p1, :cond_0
 
-    iget-object v1, p0, Lqi;->membersInjector:Lbuj;
+    iget-object v0, p1, Lqi$b;->messagingAuth:Lbjy;
 
-    invoke-interface {v1, v0}, Lbuj;->a(Ljava/lang/Object;)V
+    if-nez v0, :cond_1
 
-    return-object v0
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lqi;->mConversationId:Ljava/lang/String;
+
+    invoke-static {v0}, Lzi;->a(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p1, Lqi$b;->messagingAuth:Lbjy;
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Lbjy;)V
+
+    goto :goto_0
 .end method

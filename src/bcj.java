@@ -1,4 +1,7 @@
-public final class bcj {}
+public final class bcj
+{
+  public final int pageNumber = 4;
+}
 
 /* Location:
  * Qualified Name:     bcj

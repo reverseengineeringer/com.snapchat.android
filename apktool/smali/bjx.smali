@@ -3,37 +3,36 @@
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbjx$a;
+    }
+.end annotation
+
+
 # instance fields
-.field protected accountId:Ljava/lang/String;
+.field protected responseChecksum:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "account_id"
+        value = "response_checksum"
     .end annotation
 .end field
 
-.field protected name:Ljava/lang/String;
+.field protected responseCompareResult:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "name"
+        value = "response_compare_result"
     .end annotation
 .end field
 
-.field protected videoId:Ljava/lang/String;
+.field protected responseCompareResultsDict:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "video_id"
+        value = "response_compare_results_dict"
     .end annotation
 .end field
 
-.field protected videoSequence:Ljava/util/List;
+.field protected serverLatency:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "video_sequence"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbjz;",
-            ">;"
-        }
+        value = "server_latency"
     .end annotation
 .end field
 
@@ -43,9 +42,10 @@
     .locals 0
 
     .prologue
-    .line 18
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 19
     return-void
 .end method
 
@@ -55,8 +55,8 @@
     .locals 1
 
     .prologue
-    .line 43
-    iget-object v0, p0, Lbjx;->videoId:Ljava/lang/String;
+    .line 82
+    iget-object v0, p0, Lbjx;->serverLatency:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -65,37 +65,52 @@
     .locals 1
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lbjx;->accountId:Ljava/lang/String;
+    .line 100
+    iget-object v0, p0, Lbjx;->responseChecksum:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final c()Ljava/lang/String;
+.method public final c()Z
     .locals 1
 
     .prologue
-    .line 79
-    iget-object v0, p0, Lbjx;->name:Ljava/lang/String;
+    .line 104
+    iget-object v0, p0, Lbjx;->responseChecksum:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 118
+    iget-object v0, p0, Lbjx;->responseCompareResult:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final d()Ljava/util/List;
+.method public final e()Lbjx$a;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lbjz;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
-    .line 97
-    iget-object v0, p0, Lbjx;->videoSequence:Ljava/util/List;
+    .line 122
+    iget-object v0, p0, Lbjx;->responseCompareResult:Ljava/lang/String;
+
+    invoke-static {v0}, Lbjx$a;->a(Ljava/lang/String;)Lbjx$a;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -104,63 +119,63 @@
     .locals 3
 
     .prologue
-    .line 121
+    .line 164
     if-ne p1, p0, :cond_0
 
-    .line 122
+    .line 165
     const/4 v0, 0x1
 
-    .line 128
+    .line 171
     :goto_0
     return v0
 
-    .line 124
+    .line 167
     :cond_0
     instance-of v0, p1, Lbjx;
 
     if-nez v0, :cond_1
 
-    .line 125
+    .line 168
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 127
+    .line 170
     :cond_1
     check-cast p1, Lbjx;
 
-    .line 128
+    .line 171
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjx;->videoId:Ljava/lang/String;
+    iget-object v1, p0, Lbjx;->serverLatency:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjx;->videoId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbjx;->accountId:Ljava/lang/String;
-
-    iget-object v2, p1, Lbjx;->accountId:Ljava/lang/String;
+    iget-object v2, p1, Lbjx;->serverLatency:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjx;->name:Ljava/lang/String;
+    iget-object v1, p0, Lbjx;->responseChecksum:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjx;->name:Ljava/lang/String;
+    iget-object v2, p1, Lbjx;->responseChecksum:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjx;->videoSequence:Ljava/util/List;
+    iget-object v1, p0, Lbjx;->responseCompareResult:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjx;->videoSequence:Ljava/util/List;
+    iget-object v2, p1, Lbjx;->responseCompareResult:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjx;->responseCompareResultsDict:Ljava/lang/String;
+
+    iget-object v2, p1, Lbjx;->responseCompareResultsDict:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -173,34 +188,44 @@
     goto :goto_0
 .end method
 
+.method public final f()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 140
+    iget-object v0, p0, Lbjx;->responseCompareResultsDict:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public final hashCode()I
     .locals 2
 
     .prologue
-    .line 111
+    .line 154
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjx;->videoId:Ljava/lang/String;
+    iget-object v1, p0, Lbjx;->serverLatency:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjx;->accountId:Ljava/lang/String;
+    iget-object v1, p0, Lbjx;->responseChecksum:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjx;->name:Ljava/lang/String;
+    iget-object v1, p0, Lbjx;->responseCompareResult:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjx;->videoSequence:Ljava/util/List;
+    iget-object v1, p0, Lbjx;->responseCompareResultsDict:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -217,7 +242,7 @@
     .locals 1
 
     .prologue
-    .line 106
+    .line 149
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

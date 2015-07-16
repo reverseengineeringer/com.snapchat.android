@@ -1,10 +1,10 @@
 package com.squareup.otto;
 
-import boc;
-import bod;
-import boe;
-import bof;
-import boi;
+import bpd;
+import bpe;
+import bpf;
+import bpg;
+import bpj;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Collection;
@@ -24,33 +24,33 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class Bus
 {
   public static final String DEFAULT_IDENTIFIER = "default";
-  private final boi enforcer;
+  private final bpj enforcer;
   private final ThreadLocal<ConcurrentLinkedQueue<a>> eventsToDispatch = new ThreadLocal() {};
   private final Map<Class<?>, Set<Class<?>>> flattenHierarchyCache = new HashMap();
-  private final bof handlerFinder;
-  private final ConcurrentMap<Class<?>, Set<bod>> handlersByType = new ConcurrentHashMap();
+  private final bpg handlerFinder;
+  private final ConcurrentMap<Class<?>, Set<bpe>> handlersByType = new ConcurrentHashMap();
   private final String identifier;
   private final ThreadLocal<Boolean> isDispatching = new ThreadLocal() {};
-  private final ConcurrentMap<Class<?>, boe> producersByType = new ConcurrentHashMap();
+  private final ConcurrentMap<Class<?>, bpf> producersByType = new ConcurrentHashMap();
   
-  public Bus(boi paramboi)
+  public Bus(bpj parambpj)
   {
-    this(paramboi, "default");
+    this(parambpj, "default");
   }
   
-  private Bus(boi paramboi, String paramString)
+  private Bus(bpj parambpj, String paramString)
   {
-    this(paramboi, paramString, bof.a);
+    this(parambpj, paramString, bpg.a);
   }
   
-  private Bus(boi paramboi, String paramString, bof parambof)
+  private Bus(bpj parambpj, String paramString, bpg parambpg)
   {
-    enforcer = paramboi;
+    enforcer = parambpj;
     identifier = paramString;
-    handlerFinder = parambof;
+    handlerFinder = parambpg;
   }
   
-  private Set<bod> a(Class<?> paramClass)
+  private Set<bpe> a(Class<?> paramClass)
   {
     return (Set)handlersByType.get(paramClass);
   }
@@ -80,39 +80,39 @@ public class Bus
     }
   }
   
-  private static void a(bod parambod, boe paramboe)
+  private static void a(bpe parambpe, bpf parambpf)
   {
     Object localObject1 = null;
     try
     {
-      Object localObject2 = paramboe.a();
-      paramboe = (boe)localObject2;
+      Object localObject2 = parambpf.a();
+      parambpf = (bpf)localObject2;
     }
     catch (InvocationTargetException localInvocationTargetException)
     {
       for (;;)
       {
-        a("Producer " + paramboe + " threw an exception.", localInvocationTargetException);
-        paramboe = (boe)localObject1;
+        a("Producer " + parambpf + " threw an exception.", localInvocationTargetException);
+        parambpf = (bpf)localObject1;
       }
-      a(paramboe, parambod);
+      a(parambpf, parambpe);
     }
-    if (paramboe == null) {
+    if (parambpf == null) {
       return;
     }
   }
   
-  private static void a(Object paramObject, bod parambod)
+  private static void a(Object paramObject, bpe parambpe)
   {
     try
     {
       if (!c) {
-        throw new IllegalStateException(parambod.toString() + " has been invalidated and can no longer handle events.");
+        throw new IllegalStateException(parambpe.toString() + " has been invalidated and can no longer handle events.");
       }
     }
     catch (InvocationTargetException localInvocationTargetException1)
     {
-      a("Could not dispatch event: " + paramObject.getClass() + " to handler " + parambod, localInvocationTargetException1);
+      a("Could not dispatch event: " + paramObject.getClass() + " to handler " + parambpe, localInvocationTargetException1);
       return;
     }
     try
@@ -183,16 +183,16 @@ public class Bus
         localObject2 = ((Set)localObject2).iterator();
         while (((Iterator)localObject2).hasNext())
         {
-          localObject3 = (bod)((Iterator)localObject2).next();
-          ((ConcurrentLinkedQueue)eventsToDispatch.get()).offer(new a(paramObject, (bod)localObject3));
+          localObject3 = (bpe)((Iterator)localObject2).next();
+          ((ConcurrentLinkedQueue)eventsToDispatch.get()).offer(new a(paramObject, (bpe)localObject3));
         }
       }
     }
     for (;;)
     {
       break;
-      if ((i == 0) && (!(paramObject instanceof boc))) {
-        a(new boc(this, paramObject));
+      if ((i == 0) && (!(paramObject instanceof bpd))) {
+        a(new bpd(this, paramObject));
       }
       a();
       return;
@@ -214,9 +214,9 @@ public class Bus
     {
       localObject3 = (Map.Entry)localIterator.next();
       localObject1 = (Class)((Map.Entry)localObject3).getKey();
-      localObject2 = (boe)producersByType.get(localObject1);
-      localObject3 = (boe)((Map.Entry)localObject3).getValue();
-      if ((localObject3 == null) || (!((boe)localObject3).equals(localObject2))) {
+      localObject2 = (bpf)producersByType.get(localObject1);
+      localObject3 = (bpf)((Map.Entry)localObject3).getValue();
+      if ((localObject3 == null) || (!((bpf)localObject3).equals(localObject2))) {
         throw new IllegalArgumentException("Missing event producer for an annotated method. Is " + paramObject.getClass() + " registered?");
       }
       producersByType.remove(localObject1)).b = false;
@@ -233,8 +233,8 @@ public class Bus
       localObject3 = ((Set)localObject1).iterator();
       while (((Iterator)localObject3).hasNext())
       {
-        bod localbod = (bod)((Iterator)localObject3).next();
-        if (((Collection)localObject2).contains(localbod)) {
+        bpe localbpe = (bpe)((Iterator)localObject3).next();
+        if (((Collection)localObject2).contains(localbpe)) {
           c = false;
         }
       }
@@ -254,8 +254,8 @@ public class Bus
     while (((Iterator)localObject2).hasNext())
     {
       localObject4 = (Class)((Iterator)localObject2).next();
-      localObject3 = (boe)((Map)localObject1).get(localObject4);
-      localObject5 = (boe)producersByType.putIfAbsent(localObject4, localObject3);
+      localObject3 = (bpf)((Map)localObject1).get(localObject4);
+      localObject5 = (bpf)producersByType.putIfAbsent(localObject4, localObject3);
       if (localObject5 != null) {
         throw new IllegalArgumentException("Producer method for type " + localObject4 + " found on type " + a.getClass() + ", but already registered by type " + a.getClass() + ".");
       }
@@ -264,7 +264,7 @@ public class Bus
       {
         localObject4 = ((Set)localObject4).iterator();
         while (((Iterator)localObject4).hasNext()) {
-          a((bod)((Iterator)localObject4).next(), (boe)localObject3);
+          a((bpe)((Iterator)localObject4).next(), (bpf)localObject3);
         }
       }
     }
@@ -292,7 +292,7 @@ public class Bus
     {
       localObject2 = (Map.Entry)((Iterator)paramObject).next();
       localObject1 = (Class)((Map.Entry)localObject2).getKey();
-      localObject1 = (boe)producersByType.get(localObject1);
+      localObject1 = (bpf)producersByType.get(localObject1);
       if ((localObject1 != null) && (b))
       {
         localObject2 = ((Set)((Map.Entry)localObject2).getValue()).iterator();
@@ -301,12 +301,12 @@ public class Bus
           if (!((Iterator)localObject2).hasNext()) {
             break label485;
           }
-          localObject3 = (bod)((Iterator)localObject2).next();
+          localObject3 = (bpe)((Iterator)localObject2).next();
           if (!b) {
             break;
           }
           if (c) {
-            a((bod)localObject3, (boe)localObject1);
+            a((bpe)localObject3, (bpf)localObject1);
           }
         }
       }
@@ -321,12 +321,12 @@ public class Bus
   static final class a
   {
     final Object a;
-    final bod b;
+    final bpe b;
     
-    public a(Object paramObject, bod parambod)
+    public a(Object paramObject, bpe parambpe)
     {
       a = paramObject;
-      b = parambod;
+      b = parambpe;
     }
   }
 }

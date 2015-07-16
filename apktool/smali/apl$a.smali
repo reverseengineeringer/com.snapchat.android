@@ -1,9 +1,6 @@
-.class final Lapl$a;
+.class public final Lapl$a;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lbn;
 
 
 # annotations
@@ -12,144 +9,80 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x9
     name = "a"
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lapl;
+.field public a:Z
+
+.field public b:Ljava/lang/Long;
+
+.field public c:Ljava/lang/Long;
+
+.field public d:D
+
+.field public e:Lhu;
+
+.field public f:Lmj;
+
+.field public g:Ljava/lang/String;
+
+.field public h:Z
+
+.field public i:J
 
 
 # direct methods
-.method private constructor <init>(Lapl;)V
-    .locals 0
+.method protected constructor <init>()V
+    .locals 6
 
     .prologue
-    .line 360
-    iput-object p1, p0, Lapl$a;->a:Lapl;
+    const-wide/16 v4, 0x0
 
+    const/4 v3, 0x0
+
+    const/4 v2, 0x0
+
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    .line 75
+    iput-boolean v2, p0, Lapl$a;->a:Z
 
-.method synthetic constructor <init>(Lapl;B)V
-    .locals 0
-
-    .prologue
-    .line 360
-    invoke-direct {p0, p1}, Lapl$a;-><init>(Lapl;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 2
-
-    .prologue
-    .line 372
-    iget-object v0, p0, Lapl$a;->a:Lapl;
-
-    iget-boolean v0, v0, Lapl;->d:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lapl$a;->a:Lapl;
-
-    iget-object v0, v0, Lapl;->a:Lbj;
-
-    invoke-virtual {v0}, Lbj;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lapl$a;->a:Lapl;
-
-    iget-object v0, v0, Lapl;->b:Lbj;
-
-    invoke-virtual {v0}, Lbj;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 373
-    iget-object v0, p0, Lapl$a;->a:Lapl;
-
-    iget-object v0, v0, Lapl;->c:Lbh;
-
-    invoke-virtual {v0}, Lbh;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 76
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    check-cast v0, Lapl$b;
+    iput-object v0, p0, Lapl$a;->b:Ljava/lang/Long;
 
-    .line 374
-    invoke-interface {v0}, Lapl$b;->a()V
-
-    goto :goto_0
-
-    .line 377
-    :cond_0
-    return-void
-.end method
-
-.method public final a(Lbj;)V
-    .locals 3
-
-    .prologue
-    .line 363
-    iget-object v0, p0, Lapl$a;->a:Lapl;
-
-    iget-boolean v0, v0, Lapl;->d:Z
-
-    if-eqz v0, :cond_0
-
-    .line 364
-    iget-object v0, p0, Lapl$a;->a:Lapl;
-
-    iget-object v0, v0, Lapl;->c:Lbh;
-
-    invoke-virtual {v0}, Lbh;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 77
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    check-cast v0, Lapl$b;
+    iput-object v0, p0, Lapl$a;->c:Ljava/lang/Long;
 
-    .line 365
-    iget-object v2, p0, Lapl$a;->a:Lapl;
+    .line 78
+    const-wide/16 v0, 0x0
 
-    invoke-interface {v0, v2}, Lapl$b;->a(Lapl;)V
+    iput-wide v0, p0, Lapl$a;->d:D
 
-    goto :goto_0
+    .line 80
+    iput-object v3, p0, Lapl$a;->f:Lmj;
 
-    .line 368
-    :cond_0
+    .line 81
+    iput-object v3, p0, Lapl$a;->g:Ljava/lang/String;
+
+    .line 82
+    iput-boolean v2, p0, Lapl$a;->h:Z
+
+    .line 83
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Lapl$a;->i:J
+
     return-void
 .end method

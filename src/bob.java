@@ -1,131 +1,23 @@
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-final class bob
+public final class bob
+  extends bne
 {
-  private static final Map<Class<?>, Map<Class<?>, Method>> a = new HashMap();
-  private static final Map<Class<?>, Map<Class<?>, Set<Method>>> b = new HashMap();
+  private final bmv a;
+  private final cax b;
   
-  static Map<Class<?>, boe> a(Object paramObject)
+  public bob(bmv parambmv, cax paramcax)
   {
-    Object localObject = paramObject.getClass();
-    HashMap localHashMap = new HashMap();
-    if (!a.containsKey(localObject)) {
-      a((Class)localObject);
-    }
-    localObject = (Map)a.get(localObject);
-    if (!((Map)localObject).isEmpty())
-    {
-      localObject = ((Map)localObject).entrySet().iterator();
-      while (((Iterator)localObject).hasNext())
-      {
-        Map.Entry localEntry = (Map.Entry)((Iterator)localObject).next();
-        boe localboe = new boe(paramObject, (Method)localEntry.getValue());
-        localHashMap.put(localEntry.getKey(), localboe);
-      }
-    }
-    return localHashMap;
+    a = parambmv;
+    b = paramcax;
   }
   
-  private static void a(Class<?> paramClass)
+  public final long a()
   {
-    HashMap localHashMap1 = new HashMap();
-    HashMap localHashMap2 = new HashMap();
-    Method[] arrayOfMethod = paramClass.getDeclaredMethods();
-    int j = arrayOfMethod.length;
-    int i = 0;
-    if (i < j)
-    {
-      Method localMethod = arrayOfMethod[i];
-      Object localObject1;
-      if (!localMethod.isBridge())
-      {
-        if (!localMethod.isAnnotationPresent(boh.class)) {
-          break label271;
-        }
-        localObject1 = localMethod.getParameterTypes();
-        if (localObject1.length != 1) {
-          throw new IllegalArgumentException("Method " + localMethod + " has @Subscribe annotation but requires " + localObject1.length + " arguments.  Methods must require a single argument.");
-        }
-        Object localObject2 = localObject1[0];
-        if (((Class)localObject2).isInterface()) {
-          throw new IllegalArgumentException("Method " + localMethod + " has @Subscribe annotation on " + localObject2 + " which is an interface.  Subscription must be on a concrete class type.");
-        }
-        if ((localMethod.getModifiers() & 0x1) == 0) {
-          throw new IllegalArgumentException("Method " + localMethod + " has @Subscribe annotation on " + localObject2 + " but is not 'public'.");
-        }
-        Set localSet = (Set)localHashMap1.get(localObject2);
-        localObject1 = localSet;
-        if (localSet == null)
-        {
-          localObject1 = new HashSet();
-          localHashMap1.put(localObject2, localObject1);
-        }
-        ((Set)localObject1).add(localMethod);
-      }
-      for (;;)
-      {
-        i += 1;
-        break;
-        label271:
-        if (localMethod.isAnnotationPresent(bog.class))
-        {
-          localObject1 = localMethod.getParameterTypes();
-          if (localObject1.length != 0) {
-            throw new IllegalArgumentException("Method " + localMethod + "has @Produce annotation but requires " + localObject1.length + " arguments.  Methods must require zero arguments.");
-          }
-          if (localMethod.getReturnType() == Void.class) {
-            throw new IllegalArgumentException("Method " + localMethod + " has a return type of void.  Must declare a non-void type.");
-          }
-          localObject1 = localMethod.getReturnType();
-          if (((Class)localObject1).isInterface()) {
-            throw new IllegalArgumentException("Method " + localMethod + " has @Produce annotation on " + localObject1 + " which is an interface.  Producers must return a concrete class type.");
-          }
-          if (localObject1.equals(Void.TYPE)) {
-            throw new IllegalArgumentException("Method " + localMethod + " has @Produce annotation but has no return type.");
-          }
-          if ((localMethod.getModifiers() & 0x1) == 0) {
-            throw new IllegalArgumentException("Method " + localMethod + " has @Produce annotation on " + localObject1 + " but is not 'public'.");
-          }
-          if (localHashMap2.containsKey(localObject1)) {
-            throw new IllegalArgumentException("Producer for type " + localObject1 + " has already been registered.");
-          }
-          localHashMap2.put(localObject1, localMethod);
-        }
-      }
-    }
-    a.put(paramClass, localHashMap2);
-    b.put(paramClass, localHashMap1);
+    return boa.a(a);
   }
   
-  static Map<Class<?>, Set<bod>> b(Object paramObject)
+  public final cax b()
   {
-    Object localObject = paramObject.getClass();
-    HashMap localHashMap = new HashMap();
-    if (!b.containsKey(localObject)) {
-      a((Class)localObject);
-    }
-    localObject = (Map)b.get(localObject);
-    if (!((Map)localObject).isEmpty())
-    {
-      localObject = ((Map)localObject).entrySet().iterator();
-      while (((Iterator)localObject).hasNext())
-      {
-        Map.Entry localEntry = (Map.Entry)((Iterator)localObject).next();
-        HashSet localHashSet = new HashSet();
-        Iterator localIterator = ((Set)localEntry.getValue()).iterator();
-        while (localIterator.hasNext()) {
-          localHashSet.add(new bod(paramObject, (Method)localIterator.next()));
-        }
-        localHashMap.put(localEntry.getKey(), localHashSet);
-      }
-    }
-    return localHashMap;
+    return b;
   }
 }
 

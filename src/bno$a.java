@@ -1,61 +1,127 @@
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.List;
+import javax.net.ssl.SSLSocket;
 
 final class bno$a
-  implements caj
+  extends bno
 {
-  int a;
-  byte b;
-  int c;
-  int d;
-  short e;
-  private final bzw f;
+  private final bnn<Socket> a;
+  private final bnn<Socket> b;
+  private final Method c;
+  private final Method d;
+  private final bnn<Socket> e;
+  private final bnn<Socket> f;
   
-  public bno$a(bzw parambzw)
+  public bno$a(bnn<Socket> parambnn1, bnn<Socket> parambnn2, Method paramMethod1, Method paramMethod2, bnn<Socket> parambnn3, bnn<Socket> parambnn4)
   {
-    f = parambzw;
+    a = parambnn1;
+    b = parambnn2;
+    c = paramMethod1;
+    d = paramMethod2;
+    e = parambnn3;
+    f = parambnn4;
   }
   
-  public final cak E_()
+  public final void a(Socket paramSocket)
   {
-    return f.E_();
-  }
-  
-  public final long a(bzu parambzu, long paramLong)
-  {
-    if (d == 0)
-    {
-      f.f(e);
-      e = 0;
-      if ((b & 0x4) == 0) {}
+    if (c == null) {
+      return;
     }
-    do
+    try
     {
-      return -1L;
-      int i = c;
-      int j = bno.a(f);
-      d = j;
-      a = j;
-      byte b1 = (byte)(f.f() & 0xFF);
-      b = ((byte)(f.f() & 0xFF));
-      if (bno.b().isLoggable(Level.FINE)) {
-        bno.b().fine(bno.b.a(true, c, a, b1, b));
-      }
-      c = (f.h() & 0x7FFFFFFF);
-      if (b1 != 9) {
-        throw bno.a("%s != TYPE_CONTINUATION", new Object[] { Byte.valueOf(b1) });
-      }
-      if (c == i) {
-        break;
-      }
-      throw bno.a("TYPE_CONTINUATION streamId changed", new Object[0]);
-      paramLong = f.a(parambzu, Math.min(paramLong, d));
-    } while (paramLong == -1L);
-    d = ((int)(d - paramLong));
-    return paramLong;
+      c.invoke(null, new Object[] { paramSocket });
+      return;
+    }
+    catch (IllegalAccessException paramSocket)
+    {
+      throw new RuntimeException(paramSocket);
+    }
+    catch (InvocationTargetException paramSocket)
+    {
+      throw new RuntimeException(paramSocket.getCause());
+    }
   }
   
-  public final void close() {}
+  public final void a(Socket paramSocket, InetSocketAddress paramInetSocketAddress, int paramInt)
+  {
+    try
+    {
+      paramSocket.connect(paramInetSocketAddress, paramInt);
+      return;
+    }
+    catch (SecurityException paramSocket)
+    {
+      paramInetSocketAddress = new IOException("Exception in connect");
+      paramInetSocketAddress.initCause(paramSocket);
+      throw paramInetSocketAddress;
+    }
+  }
+  
+  public final void a(SSLSocket paramSSLSocket, String paramString, List<bna> paramList)
+  {
+    if (paramString != null)
+    {
+      a.a(paramSSLSocket, new Object[] { Boolean.valueOf(true) });
+      b.a(paramSSLSocket, new Object[] { paramString });
+    }
+    if ((f != null) && (f.a(paramSSLSocket)))
+    {
+      paramString = new cav();
+      int j = paramList.size();
+      int i = 0;
+      while (i < j)
+      {
+        bna localbna = (bna)paramList.get(i);
+        if (localbna != bna.a)
+        {
+          paramString.a(localbna.toString().length());
+          paramString.a(localbna.toString());
+        }
+        i += 1;
+      }
+      paramString = paramString.o();
+      f.b(paramSSLSocket, new Object[] { paramString });
+    }
+  }
+  
+  public final String b(SSLSocket paramSSLSocket)
+  {
+    if (e == null) {
+      return null;
+    }
+    if (!e.a(paramSSLSocket)) {
+      return null;
+    }
+    paramSSLSocket = (byte[])e.b(paramSSLSocket, new Object[0]);
+    if (paramSSLSocket != null) {
+      return new String(paramSSLSocket, bnq.c);
+    }
+    return null;
+  }
+  
+  public final void b(Socket paramSocket)
+  {
+    if (d == null) {
+      return;
+    }
+    try
+    {
+      d.invoke(null, new Object[] { paramSocket });
+      return;
+    }
+    catch (IllegalAccessException paramSocket)
+    {
+      throw new RuntimeException(paramSocket);
+    }
+    catch (InvocationTargetException paramSocket)
+    {
+      throw new RuntimeException(paramSocket.getCause());
+    }
+  }
 }
 
 /* Location:

@@ -1,30 +1,11 @@
-import java.util.ArrayList;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-public final class bxp
-  implements bxg
-{
-  public final bxk a(bwz parambwz, String paramString)
-  {
-    parambwz = bxj.a(paramString);
-    if (parambwz.size() != 2) {
-      throw new bxh("Two numeric arguments are required.");
-    }
-    try
-    {
-      parambwz = new Double(Math.atan2(((Double)parambwz.get(0)).doubleValue(), ((Double)parambwz.get(1)).doubleValue()));
-      return new bxk(parambwz.toString(), 0);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Two numeric arguments are required.", parambwz);
-    }
-  }
-  
-  public final String a()
-  {
-    return "atan2";
-  }
-}
+@Retention(RetentionPolicy.RUNTIME)
+@Target({java.lang.annotation.ElementType.FIELD, java.lang.annotation.ElementType.METHOD})
+public @interface bxp {}
 
 /* Location:
  * Qualified Name:     bxp

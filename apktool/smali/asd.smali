@@ -1,116 +1,143 @@
 .class public final Lasd;
-.super Lasc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field private b:Laqw;
+# interfaces
+.implements Larx;
 
 
 # direct methods
-.method public constructor <init>(Laqw;)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Lasc;-><init>()V
+    .line 10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
-    iput-object p1, p0, Lasd;->b:Laqw;
-
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public final a(Laqd;Lase;I)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
     .locals 1
 
     .prologue
-    .line 24
-    const-string v0, "Speed"
+    .line 13
+    iget v0, p2, Lase;->c:F
+
+    .line 14
+    invoke-virtual {p2, p3}, Lase;->a(I)V
+
+    .line 15
+    invoke-interface {p1, v0}, Laqd;->a(F)V
+
+    .line 16
+    const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/view/MotionEvent;)Z
-    .locals 3
-
-    .prologue
-    .line 39
-    iget-object v0, p0, Lasd;->b:Laqw;
-
-    iget-object v0, v0, Laqw;->c:Landroid/view/View;
-
-    const v1, 0x7f0a03b3
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    new-instance v1, Landroid/graphics/Rect;
-
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getHitRect(Landroid/graphics/Rect;)V
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v2
-
-    float-to-int v2, v2
-
-    invoke-virtual {v1, v0, v2}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d()Landroid/view/View;
-    .locals 1
-
-    .prologue
-    .line 29
-    iget-object v0, p0, Lasd;->b:Laqw;
-
-    iget-object v0, v0, Laqw;->c:Landroid/view/View;
-
-    return-object v0
-.end method
-
-.method public final e()V
+.method public final a(Laqd;Lase;II)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
     .locals 4
 
     .prologue
-    .line 44
-    iget-object v0, p0, Lasd;->b:Laqw;
+    const/4 v3, 0x1
 
-    iget-object v1, v0, Laqw;->b:Lcom/squareup/otto/Bus;
+    .line 22
+    iget v0, p2, Lase;->c:F
 
-    invoke-virtual {v1, v0}, Lcom/squareup/otto/Bus;->b(Ljava/lang/Object;)V
+    iget-object v1, p2, Lase;->a:[F
 
-    iget-object v1, v0, Laqw;->a:Lapd;
+    const/4 v2, 0x0
 
-    const v2, 0x7f0400ac
+    aget v1, v1, v2
 
-    iget-object v3, v0, Laqw;->c:Landroid/view/View;
+    sub-float/2addr v0, v1
 
-    invoke-virtual {v1, v2, v3}, Lapd;->a(ILandroid/view/View;)V
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    const/4 v1, 0x0
+    move-result v0
 
-    iput-object v1, v0, Laqw;->c:Landroid/view/View;
+    int-to-float v1, p4
 
-    .line 45
-    return-void
+    cmpl-float v0, v0, v1
+
+    if-lez v0, :cond_0
+
+    if-ne p3, v3, :cond_0
+
+    invoke-interface {p1}, Laqd;->f()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 24
+    sget-object v0, Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;->SINGLE_SWIPE:Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
+
+    .line 33
+    :goto_0
+    return-object v0
+
+    .line 25
+    :cond_0
+    if-le p3, v3, :cond_1
+
+    .line 26
+    iget v0, p2, Lase;->d:F
+
+    .line 27
+    iget-object v1, p2, Lase;->a:[F
+
+    aget v1, v1, v3
+
+    sub-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    int-to-float v1, p4
+
+    cmpl-float v0, v0, v1
+
+    if-lez v0, :cond_1
+
+    invoke-interface {p1}, Laqd;->f()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 29
+    invoke-interface {p1}, Laqd;->d()Z
+
+    move-result v0
+
+    iput-boolean v0, p2, Lase;->g:Z
+
+    .line 30
+    sget-object v0, Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;->DOUBLE_SWIPE:Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
+
+    goto :goto_0
+
+    .line 33
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final a(Laqd;Lase;Landroid/view/MotionEvent;)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
+    .locals 1
+
+    .prologue
+    .line 38
+    invoke-interface {p1, p3}, Laqd;->a(Landroid/view/MotionEvent;)V
+
+    .line 39
+    sget-object v0, Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;->NO_SWIPE_STARTED:Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
+
+    return-object v0
 .end method

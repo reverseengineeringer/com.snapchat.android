@@ -5,10 +5,10 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.os.AsyncTask;
 import android.os.Handler;
-import aur;
-import ban;
-import bbw;
-import bcl;
+import avp;
+import bbo;
+import bcw;
+import bdl;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.framework.ErrorMetric;
 import com.snapchat.android.util.debug.ReleaseManager;
@@ -56,7 +56,7 @@ public class PhotoEffectTask
     }
     catch (Throwable localThrowable)
     {
-      new ErrorMetric("Photo filter failed to load library").a(localThrowable).d();
+      new ErrorMetric("Photo filter failed to load library").a(localThrowable).e();
     }
   }
   
@@ -116,7 +116,7 @@ public class PhotoEffectTask
       {
         public final void run()
         {
-          ban.a().a(new bbw());
+          bbo.a().a(new bcw());
         }
       });
       return null;
@@ -134,7 +134,7 @@ public class PhotoEffectTask
       {
         public final void run()
         {
-          ban.a().a(new bcl());
+          bbo.a().a(new bdl());
         }
       });
       return null;
@@ -192,7 +192,7 @@ public class PhotoEffectTask
       paramVarArgs = "MISS_ETIKATE";
     }
     label410:
-    paramVarArgs = aur.a(localBitmap.getWidth(), localBitmap.getHeight(), Bitmap.Config.ARGB_8888);
+    paramVarArgs = avp.a(localBitmap.getWidth(), localBitmap.getHeight(), Bitmap.Config.ARGB_8888);
     a(i, localBitmap, paramVarArgs, mContext);
     return paramVarArgs;
   }
@@ -235,14 +235,14 @@ public class PhotoEffectTask
     {
       try
       {
-        paramContext = aur.a(paramContext, 2130837874, false);
+        paramContext = avp.a(paramContext, 2130837874, false);
         if (paramContext == null) {
           throw new NullPointerException();
         }
       }
       catch (UnsatisfiedLinkError paramBitmap1)
       {
-        AnalyticsEvents.f(paramBitmap1.getMessage());
+        AnalyticsEvents.e(paramBitmap1.getMessage());
         return;
       }
       nativeLookupTablePhotoEffect(paramBitmap1, paramContext, paramBitmap2);

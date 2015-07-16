@@ -1,26 +1,30 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.api2.cash.square.data.CashCustomer;
-import com.snapchat.android.api2.cash.square.data.CashPayment;
-import java.util.List;
+import com.snapchat.android.api2.framework.HttpMethod;
 
-public class sw
+public final class sw
+  extends tb
 {
-  @SerializedName("blockers")
-  @cgc
-  private ta mBlockers;
-  @SerializedName("card_summary")
-  @cgc
-  public sv mCardSummary;
-  @SerializedName("customer")
-  @cgc
-  public CashCustomer mCustomer;
-  @SerializedName("number_of_payments")
-  public int mNumberOfPayments = 0;
-  @SerializedName("passcode_confirmation_enabled")
-  public boolean mPasswordConfirmationEnabled;
-  @SerializedName("payments")
-  @cgc
-  private List<CashPayment> mPayments;
+  private String mPaymentId;
+  
+  public sw(@chc String paramString, @chc ta paramta)
+  {
+    super(paramta);
+    mPaymentId = paramString;
+  }
+  
+  protected final String a()
+  {
+    return "cash/payments/" + mPaymentId;
+  }
+  
+  public final HttpMethod getMethod()
+  {
+    return HttpMethod.GET;
+  }
+  
+  public final Object getRequestPayload()
+  {
+    return null;
+  }
 }
 
 /* Location:

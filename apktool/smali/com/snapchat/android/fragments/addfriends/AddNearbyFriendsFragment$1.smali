@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 98
+    .line 102
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 105
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->a(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)V
 
-    .line 102
+    .line 106
     return-void
 .end method

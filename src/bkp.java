@@ -5,22 +5,15 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bkp
+  extends bhy
 {
-  @SerializedName("logged")
-  protected Boolean logged;
-  @SerializedName("message")
-  protected String message;
-  @SerializedName("suggested_friend_results")
-  protected List<bkn> suggestedFriendResults;
+  @SerializedName("story_ids")
+  protected List<String> storyIds;
   
-  public final List<bkn> a()
+  public final bkp a(List<String> paramList)
   {
-    return suggestedFriendResults;
-  }
-  
-  public final boolean b()
-  {
-    return suggestedFriendResults != null;
+    storyIds = paramList;
+    return this;
   }
   
   public boolean equals(Object paramObject)
@@ -32,12 +25,12 @@ public class bkp
       return false;
     }
     paramObject = (bkp)paramObject;
-    return new EqualsBuilder().append(suggestedFriendResults, suggestedFriendResults).append(message, message).append(logged, logged).isEquals();
+    return new EqualsBuilder().append(storyIds, storyIds).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(suggestedFriendResults).append(message).append(logged).toHashCode();
+    return new HashCodeBuilder().append(storyIds).toHashCode();
   }
   
   public String toString()

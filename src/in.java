@@ -2,17 +2,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class in
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "PROFILE_ADDRESS_BOOK_REFRESH";
+  private final String eventName = "PROFILE_ADD_FRIENDS_PAGE_EXIT";
+  public kf exitEvent;
+  public String nextPage;
+  public Long suggestFriendAddCount;
+  public Long suggestFriendCount;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_ADDRESS_BOOK_REFRESH");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "PROFILE_ADD_FRIENDS_PAGE_EXIT");
+    if (exitEvent != null) {
+      localHashMap.put("exit_event", exitEvent);
+    }
+    if (nextPage != null) {
+      localHashMap.put("next_page", nextPage);
+    }
+    if (suggestFriendAddCount != null) {
+      localHashMap.put("suggest_friend_add_count", suggestFriendAddCount);
+    }
+    if (suggestFriendCount != null) {
+      localHashMap.put("suggest_friend_count", suggestFriendCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +43,41 @@ public final class in
         return false;
       }
       paramObject = (in)paramObject;
-      if (additionalInfo == null) {
+      if (exitEvent != null)
+      {
+        if (exitEvent.equals(exitEvent)) {}
+      }
+      else {
+        while (exitEvent != null) {
+          return false;
+        }
+      }
+      if (nextPage != null)
+      {
+        if (nextPage.equals(nextPage)) {}
+      }
+      else {
+        while (nextPage != null) {
+          return false;
+        }
+      }
+      if (suggestFriendAddCount != null)
+      {
+        if (suggestFriendAddCount.equals(suggestFriendAddCount)) {}
+      }
+      else {
+        while (suggestFriendAddCount != null) {
+          return false;
+        }
+      }
+      if (suggestFriendCount == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (suggestFriendCount.equals(suggestFriendCount));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (suggestFriendCount == null) {
         break;
       }
     }
@@ -46,10 +85,34 @@ public final class in
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
-      return i + j * 31;
+    int m = 0;
+    int n = super.hashCode();
+    int i;
+    int j;
+    if (exitEvent != null)
+    {
+      i = exitEvent.hashCode();
+      if (nextPage == null) {
+        break label99;
+      }
+      j = nextPage.hashCode();
+      label39:
+      if (suggestFriendAddCount == null) {
+        break label104;
+      }
+    }
+    label99:
+    label104:
+    for (int k = suggestFriendAddCount.hashCode();; k = 0)
+    {
+      if (suggestFriendCount != null) {
+        m = suggestFriendCount.hashCode();
+      }
+      return (k + (j + (i + n * 31) * 31) * 31) * 31 + m;
+      i = 0;
+      break;
+      j = 0;
+      break label39;
     }
   }
 }

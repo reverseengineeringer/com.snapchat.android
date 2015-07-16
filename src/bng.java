@@ -1,20 +1,50 @@
-public abstract interface bng
+public enum bng
 {
-  public abstract bmd a(bmc parambmc);
+  final String e;
   
-  public abstract cai a(bma parambma, long paramLong);
+  private bng(String paramString)
+  {
+    e = paramString;
+  }
   
-  public abstract void a();
-  
-  public abstract void a(bma parambma);
-  
-  public abstract void a(bnc parambnc);
-  
-  public abstract bmc.a b();
-  
-  public abstract void c();
-  
-  public abstract boolean d();
+  public static bng a(String paramString)
+  {
+    int i = -1;
+    switch (paramString.hashCode())
+    {
+    }
+    for (;;)
+    {
+      switch (i)
+      {
+      default: 
+        throw new IllegalArgumentException("Unexpected TLS version: " + paramString);
+        if (paramString.equals("TLSv1.2"))
+        {
+          i = 0;
+          continue;
+          if (paramString.equals("TLSv1.1"))
+          {
+            i = 1;
+            continue;
+            if (paramString.equals("TLSv1"))
+            {
+              i = 2;
+              continue;
+              if (paramString.equals("SSLv3")) {
+                i = 3;
+              }
+            }
+          }
+        }
+        break;
+      }
+    }
+    return a;
+    return b;
+    return c;
+    return d;
+  }
 }
 
 /* Location:

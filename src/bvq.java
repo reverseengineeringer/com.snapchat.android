@@ -1,9 +1,17 @@
-import java.io.Serializable;
-
 public final class bvq
-  implements Serializable
 {
-  public String a;
+  public static enum a
+    implements bvk<Object>
+  {
+    private a() {}
+    
+    public final void a(Object paramObject)
+    {
+      if (paramObject == null) {
+        throw new NullPointerException();
+      }
+    }
+  }
 }
 
 /* Location:

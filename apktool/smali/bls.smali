@@ -3,154 +3,159 @@
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbls$a;
+    }
+.end annotation
+
+
 # instance fields
-.field private a:I
-
-.field private b:I
-
-.field private final c:Ljava/util/Deque;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Deque",
-            "<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
+.field protected prompt:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "prompt"
     .end annotation
 .end field
 
-.field private final d:Ljava/util/Deque;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Deque",
-            "<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final e:Ljava/util/Deque;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Deque",
-            "<",
-            "Lblk;",
-            ">;"
-        }
+.field protected type:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "type"
     .end annotation
 .end field
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 56
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
-    const/16 v0, 0x40
-
-    iput v0, p0, Lbls;->a:I
-
-    .line 38
-    const/4 v0, 0x5
-
-    iput v0, p0, Lbls;->b:I
-
-    .line 44
-    new-instance v0, Ljava/util/ArrayDeque;
-
-    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object v0, p0, Lbls;->c:Ljava/util/Deque;
-
-    .line 47
-    new-instance v0, Ljava/util/ArrayDeque;
-
-    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object v0, p0, Lbls;->d:Ljava/util/Deque;
-
-    .line 50
-    new-instance v0, Ljava/util/ArrayDeque;
-
-    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object v0, p0, Lbls;->e:Ljava/util/Deque;
-
-    .line 57
+    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method final declared-synchronized a(Lblk;)V
+.method public final a()Lbls$a;
     .locals 1
 
     .prologue
-    .line 173
-    monitor-enter p0
+    .line 74
+    iget-object v0, p0, Lbls;->type:Ljava/lang/String;
 
-    :try_start_0
-    iget-object v0, p0, Lbls;->e:Ljava/util/Deque;
+    invoke-static {v0}, Lbls$a;->a(Ljava/lang/String;)Lbls$a;
 
-    invoke-interface {v0, p1}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
 
-    .line 174
-    monitor-exit p0
-
-    return-void
-
-    .line 173
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return-object v0
 .end method
 
-.method final declared-synchronized b(Lblk;)V
-    .locals 2
+.method public final b()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 178
-    monitor-enter p0
+    .line 92
+    iget-object v0, p0, Lbls;->prompt:Ljava/lang/String;
 
-    :try_start_0
-    iget-object v0, p0, Lbls;->e:Ljava/util/Deque;
+    return-object v0
+.end method
 
-    invoke-interface {v0, p1}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .prologue
+    .line 114
+    if-ne p1, p0, :cond_0
+
+    .line 115
+    const/4 v0, 0x1
+
+    .line 121
+    :goto_0
+    return v0
+
+    .line 117
+    :cond_0
+    instance-of v0, p1, Lbls;
+
+    if-nez v0, :cond_1
+
+    .line 118
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    .line 120
+    :cond_1
+    check-cast p1, Lbls;
+
+    .line 121
+    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
+
+    iget-object v1, p0, Lbls;->type:Ljava/lang/String;
+
+    iget-object v2, p1, Lbls;->type:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbls;->prompt:Ljava/lang/String;
+
+    iget-object v2, p1, Lbls;->prompt:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    goto :goto_0
+.end method
 
-    new-instance v0, Ljava/lang/AssertionError;
+.method public final hashCode()I
+    .locals 2
 
-    const-string v1, "Call wasn\'t in-flight!"
+    .prologue
+    .line 106
+    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Lbls;->type:Ljava/lang/String;
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
-    monitor-exit p0
+    move-result-object v0
 
-    throw v0
+    iget-object v1, p0, Lbls;->prompt:Ljava/lang/String;
 
-    .line 179
-    :cond_0
-    monitor-exit p0
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
-    return-void
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 101
+    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

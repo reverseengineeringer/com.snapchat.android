@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public mMessage:Lako;
+.field public mMessage:Lalj;
 
 .field public mType:Lcom/snapchat/android/util/chat/UrlType;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lako;Lcom/snapchat/android/util/chat/UrlType;)V
+.method public constructor <init>(Ljava/lang/String;Lalj;Lcom/snapchat/android/util/chat/UrlType;)V
     .locals 0
 
     .prologue
@@ -18,7 +18,7 @@
     invoke-direct {p0, p1}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
 
     .line 16
-    iput-object p2, p0, Lcom/snapchat/android/util/chat/SnapchatUrlSpan;->mMessage:Lako;
+    iput-object p2, p0, Lcom/snapchat/android/util/chat/SnapchatUrlSpan;->mMessage:Lalj;
 
     .line 17
     iput-object p3, p0, Lcom/snapchat/android/util/chat/SnapchatUrlSpan;->mType:Lcom/snapchat/android/util/chat/UrlType;
@@ -34,13 +34,13 @@
 
     .prologue
     .line 22
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbax;
+    new-instance v1, Lbby;
 
-    invoke-direct {v1, p0}, Lbax;-><init>(Lcom/snapchat/android/util/chat/SnapchatUrlSpan;)V
+    invoke-direct {v1, p0}, Lbby;-><init>(Lcom/snapchat/android/util/chat/SnapchatUrlSpan;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

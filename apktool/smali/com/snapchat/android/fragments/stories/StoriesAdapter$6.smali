@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbgr$a;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -20,22 +20,18 @@
 # instance fields
 .field final synthetic a:Lcom/snapchat/android/model/Friend;
 
-.field final synthetic b:Lahc;
-
-.field final synthetic c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
+.field final synthetic b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;Lahc;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;)V
     .locals 0
 
     .prologue
-    .line 638
-    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
+    .line 643
+    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;->a:Lcom/snapchat/android/model/Friend;
-
-    iput-object p3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;->b:Lahc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,17 +40,21 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)V
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
     .prologue
-    .line 641
-    new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6$1;
+    .line 646
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
-    invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6$1;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;)V
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v0
 
-    .line 648
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;->a:Lcom/snapchat/android/model/Friend;
+
+    invoke-interface {v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->a(Lcom/snapchat/android/model/Friend;)V
+
+    .line 647
     return-void
 .end method

@@ -1,261 +1,158 @@
-.class public Lbhm;
-.super Lbii;
+.class public final Lbhm;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbvk;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lbhm$a;
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lbhl;",
+        ">;"
     }
 .end annotation
 
 
+# static fields
+.field static final synthetic $assertionsDisabled:Z
+
+
 # instance fields
-.field protected ackId:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ack_id"
-    .end annotation
-.end field
-
-.field protected convId:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "conv_id"
-    .end annotation
-.end field
-
-.field protected failureReason:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "failure_reason"
-    .end annotation
-.end field
-
-.field protected success:Ljava/lang/Boolean;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "success"
-    .end annotation
-.end field
-
-.field protected timestamp:Ljava/lang/Long;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "timestamp"
+.field private final mClockProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lbhk;",
+            ">;"
+        }
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Lbii;-><init>()V
+    .line 7
+    const-class v0, Lbhm;
 
-    .line 20
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lbhm;->$assertionsDisabled:Z
+
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lbhk;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    sget-boolean v0, Lbhm;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 13
+    :cond_0
+    iput-object p1, p0, Lbhm;->mClockProvider:Ljavax/inject/Provider;
+
+    .line 14
+    return-void
+.end method
+
+.method public static a(Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lbhk;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lbhl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 25
+    new-instance v0, Lbhm;
+
+    invoke-direct {v0, p0}, Lbhm;-><init>(Ljavax/inject/Provider;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Boolean;
-    .locals 1
-
-    .prologue
-    .line 83
-    iget-object v0, p0, Lbhm;->success:Ljava/lang/Boolean;
-
-    return-object v0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 101
-    iget-object v0, p0, Lbhm;->ackId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 119
-    iget-object v0, p0, Lbhm;->convId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lbhm;->failureReason:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final e()Lbhm$a;
-    .locals 1
-
-    .prologue
-    .line 141
-    iget-object v0, p0, Lbhm;->failureReason:Ljava/lang/String;
-
-    invoke-static {v0}, Lbhm$a;->a(Ljava/lang/String;)Lbhm$a;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .prologue
-    .line 184
-    if-ne p1, p0, :cond_0
-
-    .line 185
-    const/4 v0, 0x1
-
-    .line 191
-    :goto_0
-    return v0
-
-    .line 187
-    :cond_0
-    instance-of v0, p1, Lbhm;
-
-    if-nez v0, :cond_1
-
-    .line 188
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 190
-    :cond_1
-    check-cast p1, Lbhm;
-
-    .line 191
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
-
-    iget-object v1, p0, Lbhm;->success:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbhm;->success:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhm;->ackId:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhm;->ackId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhm;->convId:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhm;->convId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhm;->failureReason:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhm;->failureReason:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhm;->timestamp:Ljava/lang/Long;
-
-    iget-object v2, p1, Lbhm;->timestamp:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final f()Ljava/lang/Long;
-    .locals 1
-
-    .prologue
-    .line 159
-    iget-object v0, p0, Lbhm;->timestamp:Ljava/lang/Long;
-
-    return-object v0
-.end method
-
-.method public hashCode()I
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
     .prologue
-    .line 173
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 7
+    check-cast p1, Lbhl;
 
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+    if-nez p1, :cond_0
 
-    iget-object v1, p0, Lbhm;->success:Ljava/lang/Boolean;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    const-string v1, "Cannot inject members into a null reference"
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lbhm;->ackId:Ljava/lang/String;
+    throw v0
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    :cond_0
+    iget-object v0, p0, Lbhm;->mClockProvider:Ljavax/inject/Provider;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lbhm;->convId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbhm;->failureReason:Ljava/lang/String;
+    check-cast v0, Lbhk;
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    iput-object v0, p1, Lbhl;->mClock:Lbhk;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lbhm;->timestamp:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 168
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

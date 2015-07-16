@@ -1,29 +1,39 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import android.support.v7.widget.LinearLayoutManager;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
-import bur;
-import in.srain.cube.views.ptr.PtrFrameLayout;
+import android.widget.EditText;
+import android.widget.Filter;
+import bhr;
+import bhr.a;
+import wc;
 
 final class FeedFragment$19
-  implements bur
+  implements bhr.a
 {
   FeedFragment$19(FeedFragment paramFeedFragment) {}
   
-  public final void a(PtrFrameLayout paramPtrFrameLayout)
+  public final void a(View paramView)
   {
-    paramPtrFrameLayout.post(FeedFragment.j(a));
-  }
-  
-  public final boolean a()
-  {
-    Object localObject = FeedFragment.i(a);
-    localObject = ((LinearLayoutManager)localObject).a(0, ((LinearLayoutManager)localObject).l(), true);
-    if (localObject == null) {}
-    for (int i = -1; i == 0; i = LinearLayoutManager.a((View)localObject)) {
-      return true;
-    }
-    return false;
+    ((EditText)FeedFragment.g(a).a()).addTextChangedListener(new TextWatcher()
+    {
+      public final void afterTextChanged(Editable paramAnonymousEditable) {}
+      
+      public final void beforeTextChanged(CharSequence paramAnonymousCharSequence, int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3) {}
+      
+      public final void onTextChanged(CharSequence paramAnonymousCharSequence, int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3)
+      {
+        FeedFragment.e(a).getFilter().filter(paramAnonymousCharSequence.toString().trim());
+        if (TextUtils.isEmpty(paramAnonymousCharSequence))
+        {
+          FeedFragment.f(a).a(4);
+          return;
+        }
+        FeedFragment.f(a).a(0);
+      }
+    });
   }
 }
 

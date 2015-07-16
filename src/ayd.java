@@ -1,22 +1,13 @@
-import android.util.Base64;
-import java.security.SecureRandom;
-
 public final class ayd
 {
-  public static String a()
-  {
-    SecureRandom localSecureRandom = new SecureRandom();
-    byte[] arrayOfByte = new byte[32];
-    localSecureRandom.nextBytes(arrayOfByte);
-    return Base64.encodeToString(arrayOfByte, 0);
-  }
+  public static final int PAGE_SIZE = 30;
+  public int mMessageCount = 0;
+  public int mRenderSize = 30;
   
-  public static String b()
+  public final void a()
   {
-    SecureRandom localSecureRandom = new SecureRandom();
-    byte[] arrayOfByte = new byte[16];
-    localSecureRandom.nextBytes(arrayOfByte);
-    return Base64.encodeToString(arrayOfByte, 0);
+    mRenderSize = 30;
+    mMessageCount = 0;
   }
 }
 

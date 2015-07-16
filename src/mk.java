@@ -1,22 +1,32 @@
-public final class mk
+import java.util.HashMap;
+import java.util.Map;
+
+public class mk
+  extends ht
 {
-  static final String AD_SPLASH_IMPRESSION_DURATION_KEY = "ad_splash_impression_duration";
-  static final long DEFAULT_AD_PAGE_IMPRESSION_DURATION_MILLISECONDS = 0L;
-  static final long DEFAULT_AD_SPLASH_IMPRESSION_DURATION_MILLISECONDS = 0L;
-  static final String DEFAULT_NETWORK_CODE = "80247475";
-  static final String IS_ACTIVE_KEY = "is_active";
-  static final String NETWORK_CODE_KEY = "network_code";
-  static final String STUDY_ID = "AdManager";
-  public ajt mStudySettings;
-  
-  public mk()
+  public Map<String, Object> a()
   {
-    this(ajt.a());
+    HashMap localHashMap = new HashMap();
+    localHashMap.putAll(super.a());
+    return localHashMap;
   }
   
-  private mk(ajt paramajt)
+  public boolean equals(Object paramObject)
   {
-    mStudySettings = paramajt;
+    if (this == paramObject) {}
+    do
+    {
+      return true;
+      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+        return false;
+      }
+    } while (super.equals(paramObject));
+    return false;
+  }
+  
+  public int hashCode()
+  {
+    return super.hashCode();
   }
 }
 

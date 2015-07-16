@@ -13,20 +13,20 @@
     name = "a"
 .end annotation
 
-.annotation runtime Ltx;
+.annotation runtime Lun;
 .end annotation
 
 
 # instance fields
-.field final passcode:Ljava/lang/String;
+.field final phoneNumber:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "passcode"
+        value = "phone_number"
     .end annotation
 .end field
 
-.field final passcodeConfirmation:Z
+.field final signature:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "passcode_confirmation_enabled"
+        value = "signature"
     .end annotation
 .end field
 
@@ -38,24 +38,24 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 48
     iput-object p1, p0, Lsu$a;->this$0:Lsu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
-    iget-object v0, p0, Lsu$a;->this$0:Lsu;
-
-    iget-boolean v0, v0, Lsu;->mPasscodeEnabled:Z
-
-    iput-boolean v0, p0, Lsu$a;->passcodeConfirmation:Z
-
     .line 49
     iget-object v0, p0, Lsu$a;->this$0:Lsu;
 
-    iget-object v0, v0, Lsu;->mPasscode:Ljava/lang/String;
+    iget-object v0, v0, Lsu;->mPhoneNumber:Ljava/lang/String;
 
-    iput-object v0, p0, Lsu$a;->passcode:Ljava/lang/String;
+    iput-object v0, p0, Lsu$a;->phoneNumber:Ljava/lang/String;
+
+    .line 51
+    iget-object v0, p0, Lsu$a;->this$0:Lsu;
+
+    iget-object v0, v0, Lsu;->mSignature:Ljava/lang/String;
+
+    iput-object v0, p0, Lsu$a;->signature:Ljava/lang/String;
 
     return-void
 .end method

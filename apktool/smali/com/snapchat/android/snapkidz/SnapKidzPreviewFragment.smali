@@ -42,7 +42,7 @@
 
 .field private m:I
 
-.field private n:Lbdj;
+.field private n:Lbej;
 
 .field private o:Landroid/view/View;
 
@@ -260,7 +260,7 @@
 
     move-result-object v2
 
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     if-nez v0, :cond_0
 
@@ -272,26 +272,26 @@
     move-object v0, v1
 
     :goto_1
-    new-instance v3, Lbgf;
+    new-instance v3, Lbhf;
 
     sget-object v4, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->ALL:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
 
-    invoke-direct {v3, v2, v0, v1, v4}, Lbgf;-><init>(Landroid/content/Context;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
+    invoke-direct {v3, v2, v0, v1, v4}, Lbhf;-><init>(Landroid/content/Context;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
 
-    sget-object v0, Lauh;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v0, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/Void;
 
-    invoke-virtual {v3, v0, v1}, Lbgf;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v3, v0, v1}, Lbhf;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
-    iget-object v0, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v0, v0, Lbej;->mMediabryo:Laji;
 
     goto :goto_0
 
@@ -310,7 +310,7 @@
 
     move-result-object v0
 
-    new-instance v1, Lbgb;
+    new-instance v1, Lbhb;
 
     iget-object v2, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->a:Lcom/snapchat/android/ui/SnapEditorView;
 
@@ -322,15 +322,15 @@
 
     sget-object v4, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->ALL:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
 
-    invoke-direct {v1, v0, v2, v3, v4}, Lbgb;-><init>(Landroid/content/Context;Landroid/graphics/Bitmap;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
+    invoke-direct {v1, v0, v2, v3, v4}, Lbhb;-><init>(Landroid/content/Context;Landroid/graphics/Bitmap;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
 
-    sget-object v0, Lauh;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v0, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     const/4 v2, 0x0
 
     new-array v2, v2, [Ljava/lang/Void;
 
-    invoke-virtual {v1, v0, v2}, Lbgb;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v0, v2}, Lbhb;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     return-void
 .end method
@@ -362,7 +362,7 @@
 
     iput-wide v2, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->s:J
 
-    const v1, 0x7f0a038f
+    const v1, 0x7f0a038e
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    const v1, 0x7f0a01e4
+    const v1, 0x7f0a01e2
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -378,7 +378,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    const v1, 0x7f0a01e1
+    const v1, 0x7f0a01df
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -396,24 +396,24 @@
     const/4 v3, 0x1
 
     .line 216
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbel;
+    new-instance v1, Lbfk;
 
     sget-object v2, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    invoke-direct {v1, v2}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
+    invoke-direct {v1, v2}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 219
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
-    iget-object v0, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v0, v0, Lbej;->mMediabryo:Laji;
 
-    invoke-virtual {v0}, Laim;->h()I
+    invoke-virtual {v0}, Laji;->h()I
 
     move-result v0
 
@@ -432,15 +432,15 @@
     if-eqz v0, :cond_0
 
     .line 222
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbaw;
+    new-instance v1, Lbbx;
 
     const/4 v2, -0x1
 
-    invoke-direct {v1, v2}, Lbaw;-><init>(I)V
+    invoke-direct {v1, v2}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -506,9 +506,9 @@
     .line 236
     iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->a:Lcom/snapchat/android/ui/SnapEditorView;
 
-    iget-object v1, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v1, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
-    iget-object v1, v1, Lbdj;->mMediabryo:Laim;
+    iget-object v1, v1, Lbej;->mMediabryo:Laji;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SnapEditorView;->setMediabryo(Lcom/snapchat/android/model/Mediabryo;)V
 
@@ -524,7 +524,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->d(Landroid/content/Context;)I
+    invoke-static {v0}, Lawf;->d(Landroid/content/Context;)I
 
     move-result v0
 
@@ -545,13 +545,13 @@
     if-eqz v0, :cond_0
 
     .line 227
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbaw;
+    new-instance v1, Lbbx;
 
-    invoke-direct {v1, v3}, Lbaw;-><init>(I)V
+    invoke-direct {v1, v3}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -580,7 +580,7 @@
     if-eqz v0, :cond_0
 
     .line 290
-    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v0
 
@@ -669,7 +669,7 @@
 
     .prologue
     .line 313
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     if-nez v0, :cond_0
 
@@ -686,9 +686,9 @@
     .line 315
     new-instance v0, Ljava/io/File;
 
-    iget-object v1, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v1, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
-    iget-object v1, v1, Lbdj;->mMediabryo:Laim;
+    iget-object v1, v1, Lbej;->mMediabryo:Laji;
 
     iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
 
@@ -705,17 +705,17 @@
     :goto_1
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     goto :goto_0
 
     .line 318
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
-    iget-object v0, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v0, v0, Lbej;->mMediabryo:Laji;
 
-    invoke-virtual {v0}, Laim;->l()V
+    invoke-virtual {v0}, Laji;->l()V
 
     goto :goto_1
 .end method
@@ -730,27 +730,27 @@
     invoke-direct {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->q()V
 
     .line 278
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbel;
+    new-instance v1, Lbfk;
 
     sget-object v2, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    invoke-direct {v1, v2}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
+    invoke-direct {v1, v2}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 280
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
-    iget-object v0, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v0, v0, Lbej;->mMediabryo:Laji;
 
     .line 281
     if-eqz v0, :cond_0
 
-    invoke-static {v0}, Laut;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+    invoke-static {v0}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
 
     move-result v1
 
@@ -759,9 +759,9 @@
     .line 282
     iget-object v1, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->a:Lcom/snapchat/android/ui/SnapEditorView;
 
-    check-cast v0, Lajm;
+    check-cast v0, Laku;
 
-    invoke-virtual {v1, v0}, Lcom/snapchat/android/ui/SnapEditorView;->a(Lajm;)V
+    invoke-virtual {v1, v0}, Lcom/snapchat/android/ui/SnapEditorView;->a(Laku;)V
 
     .line 286
     :goto_0
@@ -769,15 +769,15 @@
 
     .line 284
     :cond_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbaw;
+    new-instance v1, Lbbx;
 
     const/4 v2, -0x1
 
-    invoke-direct {v1, v2}, Lbaw;-><init>(I)V
+    invoke-direct {v1, v2}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -838,7 +838,7 @@
     invoke-direct {v0, p0, v1, v2}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment$1;-><init>(Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;Landroid/content/Context;Ljava/lang/String;)V
 
     .line 264
-    invoke-virtual {v0}, Laqb;->show()V
+    invoke-virtual {v0}, Lara;->show()V
 
     .line 265
     const/4 v0, 0x1
@@ -847,7 +847,7 @@
 
     .line 268
     :cond_2
-    iget-object v1, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v1, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     if-eqz v1, :cond_0
 
@@ -901,16 +901,16 @@
     return v0
 .end method
 
-.method public onColorPickedEvent(Lbbc;)V
+.method public onColorPickedEvent(Lbcc;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 469
     iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->b:Lcom/snapchat/android/ui/CanvasViewBase;
 
-    iget v1, p1, Lbbc;->mColor:I
+    iget v1, p1, Lbcc;->mColor:I
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/CanvasViewBase;->setColor(I)V
 
@@ -955,11 +955,9 @@
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 5
+    .locals 3
 
     .prologue
-    const/4 v4, 0x0
-
     .line 86
     invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -969,45 +967,36 @@
     invoke-direct {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->q()V
 
     .line 89
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     if-nez v0, :cond_0
 
     .line 90
-    const-string v0, "SnapKidzPreviewFragment"
-
-    const-string v2, "mSnapCapturedEvent is null. Getting a new one from LandingPageActivity"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 91
     invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     check-cast v0, Lcom/snapchat/android/SnapkidzHomeActivity;
 
-    iget-object v0, v0, Lcom/snapchat/android/SnapkidzHomeActivity;->a:Lbdj;
+    iget-object v0, v0, Lcom/snapchat/android/SnapkidzHomeActivity;->a:Lbej;
 
-    iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     .line 97
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     if-nez v0, :cond_0
 
     .line 98
-    new-instance v0, Lbdj;
+    new-instance v0, Lbej;
 
     const/4 v1, 0x0
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/SnapCaptureContext;->CAMERA:Lcom/snapchat/android/util/eventbus/SnapCaptureContext;
 
-    invoke-direct {v0, v1, v2}, Lbdj;-><init>(Laim;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
+    invoke-direct {v0, v1, v2}, Lbej;-><init>(Laji;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     .line 99
     const/4 v0, 0x1
@@ -1030,16 +1019,18 @@
 
     .line 106
     :cond_0
-    const v0, 0x7f04009e
+    const v0, 0x7f0400a0
 
-    invoke-virtual {p1, v0, p2, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 109
-    const v0, 0x7f0a0392
+    const v0, 0x7f0a0391
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1048,7 +1039,7 @@
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->o:Landroid/view/View;
 
     .line 110
-    const v0, 0x7f0a0390
+    const v0, 0x7f0a038f
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1057,7 +1048,7 @@
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->d:Landroid/view/View;
 
     .line 111
-    const v0, 0x7f0a01e1
+    const v0, 0x7f0a01df
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1068,7 +1059,7 @@
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->k:Landroid/widget/ImageButton;
 
     .line 112
-    const v0, 0x7f0a01e2
+    const v0, 0x7f0a01e0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1079,7 +1070,7 @@
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c:Landroid/widget/ImageButton;
 
     .line 113
-    const v0, 0x7f0a0391
+    const v0, 0x7f0a0390
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1090,7 +1081,7 @@
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->g:Landroid/widget/ImageButton;
 
     .line 114
-    const v0, 0x7f0a0393
+    const v0, 0x7f0a0392
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1101,7 +1092,7 @@
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->i:Landroid/widget/ImageButton;
 
     .line 115
-    const v0, 0x7f0a0395
+    const v0, 0x7f0a0394
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1112,7 +1103,7 @@
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->l:Landroid/widget/ImageButton;
 
     .line 116
-    const v0, 0x7f0a038f
+    const v0, 0x7f0a038e
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1121,7 +1112,7 @@
     iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->h:Landroid/view/View;
 
     .line 118
-    const v0, 0x7f0a038e
+    const v0, 0x7f0a038d
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1205,24 +1196,24 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onDestroy()V
 
     .line 194
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
-    iget-object v0, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v0, v0, Lbej;->mMediabryo:Laji;
 
-    invoke-virtual {v0}, Laim;->l()V
+    invoke-virtual {v0}, Laji;->l()V
 
     .line 195
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbdj;
+    iput-object v0, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->n:Lbej;
 
     .line 197
-    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v0
 
@@ -1238,7 +1229,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 199
-    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v1
 
@@ -1261,7 +1252,7 @@
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SnapEditorView;->b()V
 
     .line 185
-    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v0
 
@@ -1277,7 +1268,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 187
-    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v1
 
@@ -1289,7 +1280,7 @@
 
 .method public onDrawingEvent(Lcom/snapchat/android/util/eventbus/DrawingEvent;)V
     .locals 10
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -1399,7 +1390,7 @@
 
     invoke-virtual {v2, v0, v1}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
-    const v0, 0x7f0a038f
+    const v0, 0x7f0a038e
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1407,7 +1398,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    const v0, 0x7f0a01e4
+    const v0, 0x7f0a01e2
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1415,7 +1406,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    const v0, 0x7f0a01e1
+    const v0, 0x7f0a01df
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;->c(I)Landroid/view/View;
 
@@ -1456,7 +1447,7 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onPause()V
 
     .line 149
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -1515,7 +1506,7 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 137
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 

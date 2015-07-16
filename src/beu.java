@@ -1,12 +1,10 @@
-import com.snapchat.android.ui.CustomVolumeView.VolumeViewType;
-
 public final class beu
 {
-  public CustomVolumeView.VolumeViewType mVolumeViewType;
+  public final float mSpeed;
   
-  public beu(CustomVolumeView.VolumeViewType paramVolumeViewType)
+  public beu(float paramFloat)
   {
-    mVolumeViewType = paramVolumeViewType;
+    mSpeed = paramFloat;
   }
 }
 

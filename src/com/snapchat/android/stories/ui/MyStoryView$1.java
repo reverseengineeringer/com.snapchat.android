@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.view.View;
 import android.view.View.OnClickListener;
-import aom;
-import aom.a;
-import aqb;
+import api;
+import api.a;
+import ara;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.notification.AndroidNotificationManager;
 import com.squareup.otto.Bus;
@@ -22,11 +22,11 @@ final class MyStoryView$1
     paramView = ((Resources)localObject).getString(2131493106);
     String str = ((Resources)localObject).getString(2131493110);
     localObject = ((Resources)localObject).getString(2131492952);
-    new aqb(MyStoryView.a(a), paramView, str, (String)localObject)
+    new ara(MyStoryView.a(a), paramView, str, (String)localObject)
     {
       protected final void a()
       {
-        MyStoryView.e(a).a(MyStoryView.b(a), new aom.a()
+        MyStoryView.e(a).a(MyStoryView.b(a), new api.a()
         {
           public final void a()
           {
@@ -40,7 +40,7 @@ final class MyStoryView$1
           {
             String str = MyStoryView.a(a).getResources().getString(2131493109);
             MyStoryView.c(a).a(MyStoryView.a(str, -16777216));
-            MyStoryView.d(a).a();
+            MyStoryView.d(a).c();
           }
           
           public final void d()

@@ -7,11 +7,7 @@ final class WaitDoneHandler$1
   
   public final void run()
   {
-    synchronized (val$waitDoneLock)
-    {
-      val$waitDoneLock.notifyAll();
-      return;
-    }
+    synchronized (val$waitDoneLock) {}
   }
 }
 

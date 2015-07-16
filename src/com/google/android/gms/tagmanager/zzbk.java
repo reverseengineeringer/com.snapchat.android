@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 class zzbk
   extends BroadcastReceiver
@@ -27,6 +29,8 @@ class zzbk
   
   public void onReceive(Context paramContext, Intent paramIntent)
   {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     paramContext = paramIntent.getAction();
     if ("android.net.conn.CONNECTIVITY_CHANGE".equals(paramContext))
     {

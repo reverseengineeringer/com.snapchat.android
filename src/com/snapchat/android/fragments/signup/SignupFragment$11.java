@@ -17,12 +17,12 @@ final class SignupFragment$11
     boolean bool2 = false;
     paramDatePicker = new GregorianCalendar(paramInt1, paramInt2, paramInt3);
     SignupFragment localSignupFragment = a;
-    if ((SignupFragment.n(a)) || (SignupFragment.o(a).get(1) != paramDatePicker.get(1)))
+    if ((SignupFragment.l(a)) || (SignupFragment.m(a).get(1) != paramDatePicker.get(1)))
     {
       bool1 = true;
       SignupFragment.c(localSignupFragment, bool1);
       localSignupFragment = a;
-      if ((!SignupFragment.p(a)) && (SignupFragment.o(a).get(2) == paramDatePicker.get(2))) {
+      if ((!SignupFragment.n(a)) && (SignupFragment.m(a).get(2) == paramDatePicker.get(2))) {
         break label272;
       }
     }
@@ -31,21 +31,21 @@ final class SignupFragment$11
     {
       SignupFragment.d(localSignupFragment, bool1);
       localSignupFragment = a;
-      if (!SignupFragment.q(a))
+      if (!SignupFragment.o(a))
       {
         bool1 = bool2;
-        if (SignupFragment.o(a).get(5) == paramDatePicker.get(5)) {}
+        if (SignupFragment.m(a).get(5) == paramDatePicker.get(5)) {}
       }
       else
       {
         bool1 = true;
       }
       SignupFragment.e(localSignupFragment, bool1);
-      if ((SignupFragment.o(a).get(1) != paramDatePicker.get(1)) || (SignupFragment.o(a).get(2) != paramDatePicker.get(2)) || (SignupFragment.o(a).get(5) != paramDatePicker.get(5)))
+      if ((SignupFragment.m(a).get(1) != paramDatePicker.get(1)) || (SignupFragment.m(a).get(2) != paramDatePicker.get(2)) || (SignupFragment.m(a).get(5) != paramDatePicker.get(5)))
       {
         SignupFragment.a(a, paramDatePicker);
-        SignupFragment.r(a).setText(new SimpleDateFormat("MM/dd/yyyy").format(SignupFragment.o(a).getTime()));
-        SignupFragment.f(a);
+        SignupFragment.p(a).setText(new SimpleDateFormat("MM/dd/yyyy").format(SignupFragment.m(a).getTime()));
+        SignupFragment.d(a);
         AnalyticsEvents.z();
       }
       return;

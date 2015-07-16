@@ -1,200 +1,177 @@
 .class public final Laor;
-.super Lapf;
+.super Laos;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lapf",
-        "<",
-        "Lcom/snapchat/android/model/StoryCollection;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field private final a:Landroid/view/LayoutInflater;
-
-.field private final b:Lauy;
-
-.field private final c:Lcom/squareup/otto/Bus;
-
-
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/util/List;Lauy;Lcom/squareup/otto/Bus;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/StoryCollection;",
-            ">;",
-            "Lauy;",
-            "Lcom/squareup/otto/Bus;",
-            ")V"
-        }
-    .end annotation
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 6
 
     .prologue
-    .line 32
-    const v0, 0x7f040075
+    .line 19
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    invoke-direct {p0, p1, v0, p2}, Lapf;-><init>(Landroid/content/Context;ILjava/util/List;)V
+    move-result-wide v2
 
-    .line 33
-    const-string v0, "layout_inflater"
+    const-wide/16 v4, -0x1
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-object v0, p0
 
-    move-result-object v0
+    move-object v1, p1
 
-    check-cast v0, Landroid/view/LayoutInflater;
+    invoke-direct/range {v0 .. v5}, Laor;-><init>(Ljava/lang/String;JJ)V
 
-    iput-object v0, p0, Laor;->a:Landroid/view/LayoutInflater;
+    .line 20
+    return-void
+.end method
 
-    .line 34
-    iput-object p3, p0, Laor;->b:Lauy;
+.method public constructor <init>(Ljava/lang/String;JJ)V
+    .locals 0
 
-    .line 35
-    iput-object p4, p0, Laor;->c:Lcom/squareup/otto/Bus;
+    .prologue
+    .line 23
+    invoke-direct/range {p0 .. p5}, Laos;-><init>(Ljava/lang/String;JJ)V
 
-    .line 36
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 5
+.method public final a()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    const/4 v3, 0x0
+    .line 30
+    const-string v0, ""
+
+    return-object v0
+.end method
+
+.method public final a(J)V
+    .locals 9
+
+    .prologue
+    .line 35
+    iget-object v0, p0, Laos;->a:Ljava/lang/String;
+
+    .line 38
+    invoke-static {}, Lakx;->c()Lakx;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lakx;->a(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
+
+    move-result-object v1
+
+    .line 40
+    if-nez v1, :cond_0
+
+    .line 47
+    :goto_0
+    return-void
 
     .line 42
-    if-nez p2, :cond_0
+    :cond_0
+    new-instance v2, Lalb$a;
 
-    .line 43
-    iget-object v0, p0, Laor;->a:Landroid/view/LayoutInflater;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
-    const v1, 0x7f040075
+    move-result-object v3
 
-    invoke-virtual {v0, v1, p3, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-direct {v2, v3, v0}, Lalb$a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object p2
-
-    .line 44
-    new-instance v0, Laot;
-
-    invoke-direct {v0, p2}, Laot;-><init>(Landroid/view/View;)V
-
-    .line 45
-    invoke-virtual {p2, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    move-object v1, v0
-
-    .line 50
-    :goto_0
-    invoke-virtual {p0, p1}, Laor;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/snapchat/android/model/StoryCollection;
-
-    .line 52
-    iget-object v2, v1, Laot;->b:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/model/StoryCollection;->h()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v2, p0, Laor;->b:Lauy;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/model/StoryCollection;->m()Lauz;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lauy;->a(Lauz;)Landroid/graphics/Bitmap;
+    invoke-virtual {v2}, Lalb$a;->a()Lalb;
 
     move-result-object v2
 
-    if-nez v2, :cond_1
+    .line 43
+    invoke-virtual {v2, p1, p2}, Lalb;->c(J)V
 
-    iget-object v2, v1, Laot;->a:Landroid/widget/ImageView;
+    .line 44
+    invoke-static {}, Lzm;->a()Lzm;
 
-    const v4, 0x7f02027e
+    move-result-object v3
 
-    invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    :goto_1
-    iget-object v4, v1, Laot;->a:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/model/StoryCollection;->n()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    :goto_2
-    invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setAlpha(F)V
-
-    iget-object v2, v1, Laot;->c:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/model/StoryCollection;->o()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    move v1, v3
-
-    :goto_3
-    invoke-virtual {v2, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 54
-    new-instance v1, Laon;
-
-    invoke-direct {v1, v0}, Laon;-><init>(Lcom/snapchat/android/model/StoryCollection;)V
-
-    invoke-virtual {p2, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 56
-    return-object p2
-
-    .line 47
-    :cond_0
-    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Laot;
+    if-eqz v0, :cond_1
 
-    move-object v1, v0
+    invoke-virtual {v2}, Lalb;->U()J
+
+    move-result-wide v4
+
+    invoke-virtual {v1, v4, v5}, Lcom/snapchat/android/model/chat/ChatConversation;->b(J)J
+
+    move-result-wide v4
+
+    invoke-virtual {v2, v4, v5}, Lalb;->c(J)V
+
+    invoke-virtual {v1, v2}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;)V
+
+    new-instance v4, Lbjj;
+
+    invoke-direct {v4}, Lbjj;-><init>()V
+
+    sget-object v5, Lbjj$a;->SCREENSHOT:Lbjj$a;
+
+    invoke-virtual {v5}, Lbjj$a;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Lbjj;->a(Ljava/lang/String;)Lbjj;
+
+    move-result-object v4
+
+    sget-object v5, Lbji$a;->CHAT_MESSAGE:Lbji$a;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/model/chat/ChatConversation;->z()Ljava/util/List;
+
+    move-result-object v6
+
+    iget-object v7, v1, Lcom/snapchat/android/model/chat/ChatConversation;->mMessagingAuthToken:Lbjy;
+
+    invoke-static {v5, v0, v6, v7}, Laty;->a(Lbji$a;Ljava/lang/String;Ljava/util/List;Lbjy;)Lbil;
+
+    move-result-object v0
+
+    check-cast v0, Lbif;
+
+    invoke-virtual {v2}, Lalb;->d()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Lbif;->a(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v4}, Lbif;->a(Lbjj;)V
+
+    invoke-virtual {v2}, Lalb;->U()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Lbif;->b(Ljava/lang/Long;)V
+
+    invoke-virtual {v0}, Lbif;->k()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lalb;->a(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Lalb;->a(Lbif;)V
+
+    invoke-virtual {v3, v1, v2}, Lzm;->a(Lcom/snapchat/android/model/chat/ChatConversation;Lakw;)V
+
+    .line 46
+    :cond_1
+    iget-object v0, p0, Laor;->d:Laph;
+
+    invoke-virtual {v0}, Laph;->d()I
 
     goto :goto_0
-
-    .line 52
-    :cond_1
-    iget-object v4, v1, Laot;->a:Landroid/widget/ImageView;
-
-    invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    goto :goto_1
-
-    :cond_2
-    const/high16 v2, 0x3f000000    # 0.5f
-
-    goto :goto_2
-
-    :cond_3
-    const/16 v1, 0x8
-
-    goto :goto_3
 .end method

@@ -203,10 +203,6 @@
     const-string v0, "ContentFetchTask: waiting"
 
     invoke-static {v0}, Lcom/google/android/gms/internal/zzhx;->zzY(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzan;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->wait()V
     :try_end_2
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -274,10 +270,6 @@
 
     :try_start_0
     iput-boolean v0, p0, Lcom/google/android/gms/internal/zzan;->zzoj:Z
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzan;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
     const-string v0, "ContentFetchThread: wakeup"
 

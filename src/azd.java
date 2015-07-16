@@ -1,27 +1,53 @@
+import android.util.Base64;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import org.apache.commons.io.Charsets;
+
 public final class azd
-  implements buo<aeg>
 {
-  private final azc module;
+  private static final String TAG = "SecureHash";
   
-  static
+  @chd
+  public static String a(@chd String paramString)
   {
-    if (!azd.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
+    if (paramString == null) {
+      return null;
     }
+    try
+    {
+      MessageDigest localMessageDigest = MessageDigest.getInstance("SHA-256");
+      localMessageDigest.reset();
+      paramString = Base64.encodeToString(localMessageDigest.digest(paramString.getBytes("UTF-8")), 0);
+      return paramString;
+    }
+    catch (NoSuchAlgorithmException paramString)
+    {
+      return null;
+    }
+    catch (UnsupportedEncodingException paramString) {}
+    return null;
   }
   
-  private azd(azc paramazc)
+  @chd
+  public static String b(@chd String paramString)
   {
-    assert (paramazc != null);
-    module = paramazc;
-  }
-  
-  public static buo<aeg> a(azc paramazc)
-  {
-    return new azd(paramazc);
+    if (paramString == null) {
+      return null;
+    }
+    try
+    {
+      MessageDigest localMessageDigest = MessageDigest.getInstance("SHA-1");
+      localMessageDigest.reset();
+      paramString = Base64.encodeToString(localMessageDigest.digest(paramString.getBytes(Charsets.UTF_8)), 0);
+      return paramString;
+    }
+    catch (NoSuchAlgorithmException paramString)
+    {
+      return null;
+    }
+    catch (UnsupportedEncodingException paramString) {}
+    return null;
   }
 }
 

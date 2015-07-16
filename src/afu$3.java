@@ -1,14 +1,18 @@
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnInfoListener;
 
 final class afu$3
-  implements View.OnClickListener
+  implements MediaPlayer.OnInfoListener
 {
   afu$3(afu paramafu) {}
   
-  public final void onClick(View paramView)
+  public final boolean onInfo(MediaPlayer paramMediaPlayer, int paramInt1, int paramInt2)
   {
-    a.i();
+    paramMediaPlayer = a.e;
+    if ((paramMediaPlayer != null) && (a.a) && (paramInt1 == 3)) {
+      paramMediaPlayer.b();
+    }
+    return false;
   }
 }
 

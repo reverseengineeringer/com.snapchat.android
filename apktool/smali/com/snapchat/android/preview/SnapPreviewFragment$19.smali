@@ -43,11 +43,11 @@
     .line 869
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$19;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->k(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbgr;
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->k(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbhr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lbgr;->c()Z
+    invoke-virtual {v0}, Lbhr;->c()Z
 
     move-result v0
 

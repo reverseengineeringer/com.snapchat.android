@@ -1,18 +1,6 @@
-import com.snapchat.android.stories.StoriesThumbnailType;
-import java.util.List;
-
-public final class auz
+public abstract interface auz<T>
 {
-  public final String mCacheKey;
-  final List<ajr> mStorySnaps;
-  final StoriesThumbnailType mType;
-  
-  public auz(StoriesThumbnailType paramStoriesThumbnailType, List<ajr> paramList, String paramString)
-  {
-    mType = paramStoriesThumbnailType;
-    mStorySnaps = paramList;
-    mCacheKey = paramString;
-  }
+  public abstract boolean a(T paramT);
 }
 
 /* Location:

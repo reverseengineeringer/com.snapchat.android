@@ -49,7 +49,7 @@
     .line 26
     iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader$1;->a:Lin/srain/cube/views/ptr/header/MaterialHeader;
 
-    invoke-static {v0}, Lin/srain/cube/views/ptr/header/MaterialHeader;->b(Lin/srain/cube/views/ptr/header/MaterialHeader;)Lbuw;
+    invoke-static {v0}, Lin/srain/cube/views/ptr/header/MaterialHeader;->b(Lin/srain/cube/views/ptr/header/MaterialHeader;)Lbvx;
 
     move-result-object v0
 
@@ -65,7 +65,7 @@
 
     float-to-int v1, v1
 
-    invoke-virtual {v0, v1}, Lbuw;->setAlpha(I)V
+    invoke-virtual {v0, v1}, Lbvx;->setAlpha(I)V
 
     .line 27
     iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader$1;->a:Lin/srain/cube/views/ptr/header/MaterialHeader;

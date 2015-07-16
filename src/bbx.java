@@ -1,4 +1,12 @@
-public final class bbx {}
+public final class bbx
+{
+  public int mRequestedOrientation;
+  
+  public bbx(int paramInt)
+  {
+    mRequestedOrientation = paramInt;
+  }
+}
 
 /* Location:
  * Qualified Name:     bbx

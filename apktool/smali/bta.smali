@@ -1,77 +1,28 @@
 .class public final Lbta;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lbrm;
-
-
-# instance fields
-.field public a:I
+.super Ljava/lang/Exception;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 13
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lbta;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 14
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
 
     .prologue
-    .line 25
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 9
+    invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 26
-    iput p1, p0, Lbta;->a:I
-
-    .line 27
+    .line 10
     return-void
-.end method
-
-
-# virtual methods
-.method public final declared-synchronized a(Lbqw;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    .prologue
-    .line 44
-    monitor-enter p0
-
-    :try_start_0
-    iget v0, p0, Lbta;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-interface {p1, p2, p3, v0}, Lbqw;->a(Ljava/lang/String;Ljava/lang/String;I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 45
-    monitor-exit p0
-
-    return-void
-
-    .line 44
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final synthetic b()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 7
-    iget v0, p0, Lbta;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
 .end method

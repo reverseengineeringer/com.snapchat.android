@@ -1,121 +1,121 @@
-.class public final Lbqt;
+.class public Lbqt;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/support/v7/widget/RecyclerView$i;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbqt$b;,
+        Lbqt$a;
+    }
+.end annotation
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field final a:Landroid/support/v7/widget/RecyclerView;
 
-.field public b:I
+.field public b:Lbqt$a;
+
+.field private final c:Landroid/view/GestureDetector;
+
+.field private final d:Lbqs;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lba;)V
-    .locals 3
+.method public constructor <init>(Landroid/support/v7/widget/RecyclerView;Lbqs;)V
+    .locals 4
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 15
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
-    const-string v0, "1.0"
-
-    iput-object v0, p0, Lbqt;->a:Ljava/lang/String;
-
-    .line 13
-    iput v1, p0, Lbqt;->b:I
-
-    .line 16
-    :try_start_0
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
     .line 21
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    new-instance v0, Landroid/view/GestureDetector;
+
+    invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    new-instance v2, Lbqt$b;
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    const/4 v3, 0x0
 
-    move-result-object v0
+    invoke-direct {v2, p0, v3}, Lbqt$b;-><init>(Lbqt;B)V
+
+    invoke-direct {v0, v1, v2}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+
+    iput-object v0, p0, Lbqt;->c:Landroid/view/GestureDetector;
 
     .line 22
-    iget-object v1, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-
-    iput-object v1, p0, Lbqt;->a:Ljava/lang/String;
+    iput-object p1, p0, Lbqt;->a:Landroid/support/v7/widget/RecyclerView;
 
     .line 23
-    iget v0, v0, Landroid/content/pm/PackageInfo;->versionCode:I
+    iput-object p2, p0, Lbqt;->d:Lbqs;
 
-    iput v0, p0, Lbqt;->b:I
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .line 24
+    return-void
+.end method
 
-    .line 25
-    :goto_0
-    iget-object v0, p2, Lba;->a:Ljava/lang/String;
+.method static synthetic a(Lbqt;)Lbqs;
+    .locals 1
 
-    .line 30
+    .prologue
+    .line 9
+    iget-object v0, p0, Lbqt;->d:Lbqs;
+
+    return-object v0
+.end method
+
+.method static synthetic b(Lbqt;)Landroid/support/v7/widget/RecyclerView;
+    .locals 1
+
+    .prologue
+    .line 9
+    iget-object v0, p0, Lbqt;->a:Landroid/support/v7/widget/RecyclerView;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lbqt;)Lbqt$a;
+    .locals 1
+
+    .prologue
+    .line 9
+    iget-object v0, p0, Lbqt;->b:Lbqt$a;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/view/MotionEvent;)Z
+    .locals 1
+
+    .prologue
+    .line 43
+    iget-object v0, p0, Lbqt;->b:Lbqt$a;
+
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    iget-object v0, p0, Lbqt;->c:Landroid/view/GestureDetector;
 
-    move-result v1
+    invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    if-lez v1, :cond_0
+    move-result v0
 
-    .line 31
-    iput-object v0, p0, Lbqt;->a:Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    .line 34
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
     :cond_0
-    iget-boolean v0, p2, Lba;->c:Z
-
-    if-eqz v0, :cond_1
-
-    .line 35
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lbqt;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lbqt;->b:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbqt;->a:Ljava/lang/String;
-
-    .line 37
-    :cond_1
-    return-void
-
-    :catch_0
-    move-exception v0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

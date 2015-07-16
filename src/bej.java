@@ -1,17 +1,14 @@
-import android.os.SystemClock;
+import com.snapchat.android.util.eventbus.SnapCaptureContext;
 
 public final class bej
 {
-  public final long eventTimeMilliseconds;
+  private final SnapCaptureContext mCaptureContext;
+  public final aji mMediabryo;
   
-  public bej()
+  public bej(@chc aji paramaji, @chc SnapCaptureContext paramSnapCaptureContext)
   {
-    this(SystemClock.elapsedRealtime());
-  }
-  
-  private bej(long paramLong)
-  {
-    eventTimeMilliseconds = paramLong;
+    mMediabryo = ((aji)co.a(paramaji));
+    mCaptureContext = ((SnapCaptureContext)co.a(paramSnapCaptureContext));
   }
 }
 

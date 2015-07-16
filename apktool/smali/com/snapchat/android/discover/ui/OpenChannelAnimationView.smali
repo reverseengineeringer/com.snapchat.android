@@ -19,31 +19,63 @@
 
 .field public c:Z
 
-.field private d:Landroid/content/Context;
+.field public d:Z
+
+.field private e:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
     .prologue
-    .line 37
-    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    const/4 v1, 0x0
 
-    .line 33
+    .line 41
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
+
+    .line 36
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->b:Lcom/snapchat/android/discover/ui/ChannelView;
 
-    .line 34
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->c:Z
+    .line 37
+    iput-boolean v1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->c:Z
 
     .line 38
-    iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->d:Landroid/content/Context;
+    iput-boolean v1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->d:Z
 
-    .line 39
+    .line 42
+    iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->e:Landroid/content/Context;
+
+    .line 43
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 46
+    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    .line 36
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->b:Lcom/snapchat/android/discover/ui/ChannelView;
+
+    .line 37
+    iput-boolean v1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->c:Z
+
+    .line 38
+    iput-boolean v1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->d:Z
+
+    .line 47
+    iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->e:Landroid/content/Context;
+
+    .line 48
     return-void
 .end method
 
@@ -53,7 +85,7 @@
     .prologue
     const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
-    .line 202
+    .line 250
     float-to-double v0, p0
 
     invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->pow(DD)D
@@ -81,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 26
+    .line 28
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->c:Z
@@ -93,7 +125,7 @@
     .locals 1
 
     .prologue
-    .line 26
+    .line 28
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->a:Landroid/widget/ImageView;
 
     return-object v0
@@ -103,10 +135,22 @@
     .locals 1
 
     .prologue
-    .line 26
+    .line 28
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->b:Lcom/snapchat/android/discover/ui/ChannelView;
 
     return-object v0
+.end method
+
+.method static synthetic d(Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)Z
+    .locals 1
+
+    .prologue
+    .line 28
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->d:Z
+
+    return v0
 .end method
 
 
@@ -115,6 +159,28 @@
     .locals 0
 
     .prologue
-    .line 44
+    .line 53
+    return-void
+.end method
+
+.method setBackgroundCircle(Landroid/widget/ImageView;)V
+    .locals 0
+
+    .prologue
+    .line 263
+    iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->a:Landroid/widget/ImageView;
+
+    .line 264
+    return-void
+.end method
+
+.method setChannelView(Lcom/snapchat/android/discover/ui/ChannelView;)V
+    .locals 0
+
+    .prologue
+    .line 268
+    iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->b:Lcom/snapchat/android/discover/ui/ChannelView;
+
+    .line 269
     return-void
 .end method

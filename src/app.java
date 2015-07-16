@@ -1,9 +1,21 @@
-public final class app
-  extends bbc
+import com.snapchat.android.model.StoryCollection;
+import java.util.ArrayList;
+import java.util.List;
+
+final class app
 {
-  public app(int paramInt)
+  final List<StoryCollection> a;
+  final akk b;
+  
+  public app()
   {
-    super(paramInt);
+    this(new ArrayList(), akk.a());
+  }
+  
+  private app(List<StoryCollection> paramList, akk paramakk)
+  {
+    a = paramList;
+    b = paramakk;
   }
 }
 

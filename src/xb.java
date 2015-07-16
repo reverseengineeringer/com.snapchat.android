@@ -1,15 +1,30 @@
+import android.hardware.Camera;
+import android.hardware.Camera.AutoFocusCallback;
+import android.os.Handler;
+
 public final class xb
+  implements Camera.AutoFocusCallback
 {
-  private static final xb a = new xb();
+  private final Handler a;
+  private final wy.b b;
+  private final wy.c c;
   
-  public static xa a(aue paramaue)
+  public xb(Handler paramHandler, wy.b paramb, wy.c paramc)
   {
-    return new xa(paramaue);
+    a = paramHandler;
+    c = paramc;
+    b = paramb;
   }
   
-  public static xb a()
+  public final void onAutoFocus(final boolean paramBoolean, Camera paramCamera)
   {
-    return a;
+    a.post(new Runnable()
+    {
+      public final void run()
+      {
+        xb.a(xb.this).a();
+      }
+    });
   }
 }
 

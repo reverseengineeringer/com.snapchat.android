@@ -43,16 +43,6 @@
     .line 60
     invoke-static {}, Lcom/snapchat/android/scan/FirstAutoScanNotificationView;->a()Ljava/lang/String;
 
-    move-result-object v0
-
-    const-string v1, "Set library scanning enabled! YES!"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 61
     iget-object v0, p0, Lcom/snapchat/android/scan/FirstAutoScanNotificationView$2;->a:Lcom/snapchat/android/scan/FirstAutoScanNotificationView;
 
@@ -84,13 +74,13 @@
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     .line 65
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdx;
+    new-instance v1, Lbew;
 
-    invoke-direct {v1}, Lbdx;-><init>()V
+    invoke-direct {v1}, Lbew;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

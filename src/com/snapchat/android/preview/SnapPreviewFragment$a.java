@@ -10,7 +10,7 @@ final class SnapPreviewFragment$a
   public final void run()
   {
     if (!a) {
-      SnapPreviewFragment.A(b);
+      SnapPreviewFragment.B(b);
     }
   }
 }

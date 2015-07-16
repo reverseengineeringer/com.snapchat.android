@@ -58,43 +58,21 @@
     .prologue
     const/4 v0, 0x0
 
-    const/4 v4, 0x0
-
     .line 34
-    if-nez p0, :cond_0
-
-    .line 35
-    sget-object v1, Lcom/snapchat/android/scan/SnapScan;->b:Ljava/lang/String;
-
-    const-string v2, "processBitmap: No image to scan!"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-nez p0, :cond_1
 
     .line 54
+    :cond_0
     :goto_0
     return-object v0
 
     .line 39
-    :cond_0
+    :cond_1
     sget-boolean v1, Lcom/snapchat/android/scan/SnapScan;->a:Z
 
-    if-nez v1, :cond_1
-
-    .line 40
-    sget-object v1, Lcom/snapchat/android/scan/SnapScan;->b:Ljava/lang/String;
-
-    const-string v2, "processBitmap: Cannot load SnapScan library!"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
+    if-eqz v1, :cond_0
 
     .line 44
-    :cond_1
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Landroid/graphics/Bitmap;->setHasAlpha(Z)V
@@ -109,29 +87,17 @@
     if-eq v1, v2, :cond_2
 
     .line 48
-    sget-object v1, Lcom/snapchat/android/scan/SnapScan;->b:Ljava/lang/String;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "processBitmap: Cannot scan image format: "
 
-    const-string v3, "processBitmap: Cannot scan image format: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
@@ -176,63 +142,29 @@
 .end method
 
 .method public static a(Lcom/snapchat/android/scan/SnapScan$ImageFormat;II[B)Lcom/snapchat/android/scan/SnapScanResult;
-    .locals 4
+    .locals 2
 
     .prologue
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
     .line 68
-    if-nez p0, :cond_0
-
-    .line 69
-    sget-object v1, Lcom/snapchat/android/scan/SnapScan;->b:Ljava/lang/String;
-
-    const-string v2, "processImage: No specified image format!"
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-nez p0, :cond_1
 
     .line 83
+    :cond_0
     :goto_0
     return-object v0
 
     .line 73
-    :cond_0
-    if-nez p3, :cond_1
-
-    .line 74
-    sget-object v1, Lcom/snapchat/android/scan/SnapScan;->b:Ljava/lang/String;
-
-    const-string v2, "processImage: No image to scan!"
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
+    :cond_1
+    if-eqz p3, :cond_0
 
     .line 78
-    :cond_1
     sget-boolean v1, Lcom/snapchat/android/scan/SnapScan;->a:Z
 
-    if-nez v1, :cond_2
-
-    .line 79
-    sget-object v1, Lcom/snapchat/android/scan/SnapScan;->b:Ljava/lang/String;
-
-    const-string v2, "processImage: Cannot load SnapScan library!"
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
+    if-eqz v1, :cond_0
 
     .line 83
-    :cond_2
     invoke-virtual {p0}, Lcom/snapchat/android/scan/SnapScan$ImageFormat;->ordinal()I
 
     move-result v0

@@ -1,47 +1,47 @@
 package com.snapchat.android.fragments.stories;
 
-import afl;
+import agl;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import aop;
-import aqb;
-import atx;
+import apl;
+import ara;
+import auv;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import lp;
-import lr;
-import pu;
+import mh;
+import mj;
+import ql;
 
 final class StoriesAdapter$3
   implements View.OnClickListener
 {
-  StoriesAdapter$3(StoriesAdapter paramStoriesAdapter, afl paramafl) {}
+  StoriesAdapter$3(StoriesAdapter paramStoriesAdapter, agl paramagl) {}
   
   public final void onClick(View paramView)
   {
     String str = a.d;
     paramView = str;
     if (str == null) {
-      paramView = atx.a(null, 2131492894, new Object[] { a.a() });
+      paramView = auv.a(null, 2131492894, new Object[] { a.a() });
     }
-    new aqb(StoriesAdapter.d(b), paramView, atx.a(null, 2131493269, new Object[0]), atx.a(null, 2131493577, new Object[0]))
+    new ara(StoriesAdapter.d(b), paramView, auv.a(null, 2131493269, new Object[0]), auv.a(null, 2131493575, new Object[0]))
     {
       protected final void a() {}
       
       protected final void b()
       {
-        new pu(a.h(), false).f();
-        String str = a.h();
+        new ql(a.l(), false).execute();
+        String str = a.l();
         if (!TextUtils.isEmpty(str))
         {
-          lp locallp = new lp();
-          storyType = lr.OUR;
+          mh localmh = new mh();
+          storyType = mj.OUR;
           posterId = str;
-          if (aop.a(str)) {
+          if (apl.a(str)) {
             geoFence = "LOCAL";
           }
-          ScAnalyticsEventEngine.a(locallp);
+          ScAnalyticsEventEngine.a(localmh);
         }
       }
     }.show();

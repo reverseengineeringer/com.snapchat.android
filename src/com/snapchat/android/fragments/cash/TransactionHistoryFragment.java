@@ -11,18 +11,18 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import aza;
+import azy;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.fragments.settings.WebFragment;
 import javax.inject.Inject;
-import xn;
-import xq;
+import yj;
+import ym;
 
 public class TransactionHistoryFragment
   extends WebFragment
 {
   @Inject
-  public xn a;
+  public yj a;
   
   public TransactionHistoryFragment()
   {
@@ -45,7 +45,7 @@ public class TransactionHistoryFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968751, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968753, paramViewGroup, false);
     a(paramBundle);
     b.getSettings().setJavaScriptEnabled(true);
     b.setWebViewClient(new a((byte)0));

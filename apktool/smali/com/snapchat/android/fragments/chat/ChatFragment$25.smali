@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1047
+    .line 1069
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$25;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +39,12 @@
 .method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 2
     .param p3    # Landroid/view/KeyEvent;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 1051
+    .line 1073
     const/4 v0, 0x4
 
     if-eq p2, v0, :cond_0
@@ -59,16 +59,16 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1053
+    .line 1075
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$25;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->d(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 1054
+    .line 1076
     const/4 v0, 0x1
 
-    .line 1056
+    .line 1078
     :goto_0
     return v0
 

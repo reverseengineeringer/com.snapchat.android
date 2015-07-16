@@ -2,164 +2,128 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lasj;
+
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lasj;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final a:Lasj;
 
-.field public final b:Lcom/snapchat/android/ui/SwipeImageView;
-
-.field public final c:Larw;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Larw",
-            "<",
-            "Larn;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final b:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/ui/SwipeImageView;Larw;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/snapchat/android/ui/SwipeImageView;",
-            "Larw",
-            "<",
-            "Larn;",
-            ">;)V"
-        }
-    .end annotation
+.method public constructor <init>(Landroid/os/Handler;Lasj;)V
+    .locals 0
+    .param p1    # Landroid/os/Handler;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lasj;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 24
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
-    new-instance v0, Ljava/util/ArrayList;
+    .line 19
+    iput-object p1, p0, Lask;->b:Landroid/os/Handler;
 
-    const/16 v1, 0xb
+    .line 20
+    iput-object p2, p0, Lask;->a:Lasj;
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    iput-object v0, p0, Lask;->a:Ljava/util/ArrayList;
-
-    .line 26
-    iput-object p1, p0, Lask;->b:Lcom/snapchat/android/ui/SwipeImageView;
-
-    .line 27
-    iput-object p2, p0, Lask;->c:Larw;
-
-    .line 28
+    .line 21
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()V
-    .locals 4
+.method private static a()Z
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 35
-    :goto_0
-    iget-object v0, p0, Lask;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    .line 53
+    invoke-static {}, Lbhp;->c()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 36
-    iget-object v0, p0, Lask;->a:Ljava/util/ArrayList;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lasj;
-
-    .line 37
-    iget-object v2, p0, Lask;->b:Lcom/snapchat/android/ui/SwipeImageView;
-
-    iget-object v3, p0, Lask;->c:Larw;
-
-    invoke-virtual {v0, v2, v3}, Lasj;->a(Lcom/snapchat/android/ui/SwipeImageView;Larw;)V
-
-    goto :goto_0
+    :goto_0
+    return v0
 
     :cond_0
-    move v0, v1
+    const/4 v0, 0x0
 
-    .line 39
-    :goto_1
-    iget-object v1, p0, Lask;->c:Larw;
-
-    invoke-virtual {v1}, Larw;->b()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_2
-
-    iget-object v1, p0, Lask;->c:Larw;
-
-    invoke-virtual {v1, v0}, Larw;->a(I)Larn;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Larn;->b()Lcom/snapchat/android/ui/swipefilters/FilterPageType;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/snapchat/android/ui/swipefilters/FilterPageType;->INFOFILTER:Lcom/snapchat/android/ui/swipefilters/FilterPageType;
-
-    if-ne v2, v3, :cond_1
-
-    invoke-virtual {v1}, Larn;->d()Landroid/view/View;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v1}, Larn;->d()Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/View;->bringToFront()V
-
-    :cond_1
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 40
-    :cond_2
-    return-void
+    goto :goto_0
 .end method
 
-.method public final a(Lasj;)V
-    .locals 1
+
+# virtual methods
+.method public final a(Lasi;)V
+    .locals 2
 
     .prologue
-    .line 31
-    iget-object v0, p0, Lask;->a:Ljava/util/ArrayList;
+    .line 25
+    invoke-static {}, Lask;->a()Z
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result v0
 
-    .line 32
+    if-eqz v0, :cond_0
+
+    .line 26
+    iget-object v0, p0, Lask;->b:Landroid/os/Handler;
+
+    new-instance v1, Lask$1;
+
+    invoke-direct {v1, p0, p1}, Lask$1;-><init>(Lask;Lasi;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 35
+    :goto_0
     return-void
+
+    .line 33
+    :cond_0
+    iget-object v0, p0, Lask;->a:Lasj;
+
+    invoke-interface {v0, p1}, Lasj;->a(Lasi;)V
+
+    goto :goto_0
+.end method
+
+.method public final a(Lasi;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;)V
+    .locals 2
+
+    .prologue
+    .line 39
+    invoke-static {}, Lask;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 40
+    iget-object v0, p0, Lask;->b:Landroid/os/Handler;
+
+    new-instance v1, Lask$2;
+
+    invoke-direct {v1, p0, p1, p2}, Lask$2;-><init>(Lask;Lasi;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 49
+    :goto_0
+    return-void
+
+    .line 47
+    :cond_0
+    iget-object v0, p0, Lask;->a:Lasj;
+
+    invoke-interface {v0, p1, p2}, Lasj;->a(Lasi;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;)V
+
+    goto :goto_0
 .end method

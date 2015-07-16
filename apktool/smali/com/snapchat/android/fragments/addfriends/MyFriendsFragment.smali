@@ -16,10 +16,10 @@
     .locals 0
 
     .prologue
-    .line 61
+    .line 62
     invoke-direct {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;-><init>()V
 
-    .line 62
+    .line 63
     return-void
 .end method
 
@@ -32,10 +32,10 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 67
     invoke-direct {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;-><init>(Lcom/snapchat/android/ui/window/WindowConfiguration;)V
 
-    .line 67
+    .line 68
     return-void
 .end method
 
@@ -45,12 +45,12 @@
     .locals 2
 
     .prologue
-    .line 193
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->u:Landroid/widget/TextView;
+    .line 194
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->v:Landroid/widget/TextView;
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Lafa;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
 
-    invoke-virtual {v0}, Lafa;->isEmpty()Z
+    invoke-virtual {v0}, Laga;->isEmpty()Z
 
     move-result v0
 
@@ -61,31 +61,31 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 194
+    .line 195
     return-void
 
-    .line 193
+    .line 194
     :cond_0
     const/16 v0, 0x8
 
     goto :goto_0
 .end method
 
-.method protected final a(Lajv;)V
+.method protected final a(Lakp;)V
     .locals 4
-    .param p1    # Lajv;
-        .annotation build Lcgb;
+    .param p1    # Lakp;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 166
+    .line 167
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->f:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 167
-    invoke-virtual {p1}, Lajv;->o()Ljava/util/List;
+    .line 168
+    invoke-virtual {p1}, Lakp;->o()Ljava/util/List;
 
     move-result-object v0
 
@@ -107,12 +107,12 @@
 
     check-cast v0, Lcom/snapchat/android/model/Friend;
 
-    .line 169
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    .line 170
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v3
 
@@ -126,50 +126,151 @@
 
     if-nez v2, :cond_0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->r()Z
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->q()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 172
+    .line 173
     iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->f:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 175
+    .line 176
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->f:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 176
+    .line 177
     return-void
 .end method
 
-.method protected final b(Lajv;)V
+.method protected final a(Lkf;)V
+    .locals 13
+
+    .prologue
+    const/4 v12, 0x1
+
+    const/4 v7, 0x0
+
+    .line 233
+    invoke-static {}, Lcom/snapchat/android/analytics/ProfileEventAnalytics;->a()Lcom/snapchat/android/analytics/ProfileEventAnalytics;
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    invoke-virtual {v0}, Laga;->getCount()I
+
+    move-result v1
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    invoke-virtual {v0, v7}, Laga;->a(Z)I
+
+    move-result v2
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    sget-object v3, Lcom/snapchat/android/model/FriendAction;->ADD:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v0, v3, v7}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v3
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    sget-object v4, Lcom/snapchat/android/model/FriendAction;->DELETE:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v0, v4, v7}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v4
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    sget-object v5, Lcom/snapchat/android/model/FriendAction;->BLOCK:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v0, v5, v7}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v5
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    sget-object v6, Lcom/snapchat/android/model/FriendAction;->SET_DISPLAY_NAME:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v0, v6, v7}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v6
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    invoke-virtual {v0, v12}, Laga;->a(Z)I
+
+    move-result v7
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    sget-object v8, Lcom/snapchat/android/model/FriendAction;->ADD:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v0, v8, v12}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v8
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    sget-object v9, Lcom/snapchat/android/model/FriendAction;->DELETE:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v0, v9, v12}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v9
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    sget-object v10, Lcom/snapchat/android/model/FriendAction;->BLOCK:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v0, v10, v12}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v10
+
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    sget-object v11, Lcom/snapchat/android/model/FriendAction;->SET_DISPLAY_NAME:Lcom/snapchat/android/model/FriendAction;
+
+    invoke-virtual {v0, v11, v12}, Laga;->a(Lcom/snapchat/android/model/FriendAction;Z)I
+
+    move-result v11
+
+    move-object v0, p1
+
+    invoke-static/range {v0 .. v11}, Lcom/snapchat/android/analytics/ProfileEventAnalytics;->a(Lkf;IIIIIIIIIII)V
+
+    .line 245
+    return-void
+.end method
+
+.method protected final b(Lakp;)V
     .locals 3
-    .param p1    # Lajv;
-        .annotation build Lcgb;
+    .param p1    # Lakp;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 153
-    invoke-virtual {p0, p1}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->a(Lajv;)V
+    .line 154
+    invoke-virtual {p0, p1}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->a(Lakp;)V
 
-    .line 156
+    .line 157
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->f:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
 
-    iget-object v2, p1, Lajv;->mBests:Ljava/util/List;
+    iget-object v2, p1, Lakp;->mBests:Ljava/util/List;
 
     invoke-virtual {v0, v1, v2}, Ljava/util/ArrayList;->addAll(ILjava/util/Collection;)Z
 
-    .line 157
+    .line 158
     return-void
 .end method
 
@@ -177,32 +278,32 @@
     .locals 0
 
     .prologue
-    .line 186
+    .line 187
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->w()V
 
-    .line 187
+    .line 188
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->q()V
 
-    .line 188
+    .line 189
     return-void
+.end method
+
+.method public final j_()Z
+    .locals 1
+
+    .prologue
+    .line 201
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method protected final l()I
     .locals 1
 
     .prologue
-    .line 180
+    .line 181
     const v0, 0x7f0c0177
-
-    return v0
-.end method
-
-.method public final l_()Z
-    .locals 1
-
-    .prologue
-    .line 200
-    const/4 v0, 0x1
 
     return v0
 .end method
@@ -215,7 +316,7 @@
 
     const/4 v1, 0x1
 
-    .line 141
+    .line 142
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/FriendListProperty;
 
     sget-object v3, Lcom/snapchat/android/fragments/addfriends/FriendListProperty$TouchMode;->TAPPABLE_FRIENDS:Lcom/snapchat/android/fragments/addfriends/FriendListProperty$TouchMode;
@@ -262,33 +363,31 @@
     goto :goto_0
 .end method
 
-.method public onContactsOnSnapchatUpdatedEvent(Lbbd;)V
+.method public onContactsOnSnapchatUpdatedEvent(Lbcd;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 228
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onContactsOnSnapchatUpdatedEvent(Lbbd;)V
-
     .line 229
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onContactsOnSnapchatUpdatedEvent(Lbcd;)V
+
+    .line 230
     return-void
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 7
+    .locals 5
 
     .prologue
-    const/4 v4, 0x1
-
-    const/4 v2, 0x0
-
-    .line 79
-    sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MY_FRIENDS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
-
-    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->C:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+    const/4 v3, 0x1
 
     .line 80
+    sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MY_FRIENDS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
+    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->D:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
+    .line 81
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$a;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->i:Ljavax/inject/Provider;
@@ -297,52 +396,52 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->b:Lcom/snapchat/android/util/FriendSectionizer;
 
-    .line 81
+    .line 82
     new-instance v0, Lcom/snapchat/android/util/FriendSectionizer$b;
 
     invoke-direct {v0}, Lcom/snapchat/android/util/FriendSectionizer$b;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->c:Lcom/snapchat/android/util/FriendSectionizer;
 
-    .line 82
+    .line 83
     invoke-super {p0, p1, p2, p3}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v2
 
-    .line 83
+    .line 84
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->m:Landroid/widget/TextView;
 
     const v1, 0x7f0c0177
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 85
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Lafa;
+    .line 86
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
 
-    new-instance v1, Lafn;
+    new-instance v1, Lagn;
 
-    invoke-direct {v1}, Lafn;-><init>()V
+    invoke-direct {v1}, Lagn;-><init>()V
 
-    iput-object v1, v0, Lafa;->e:Lafe;
+    iput-object v1, v0, Laga;->f:Lage;
 
-    .line 88
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Lafa;
+    .line 89
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
 
-    iput-boolean v4, v0, Lafa;->g:Z
+    iput-boolean v3, v0, Laga;->h:Z
 
-    .line 91
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Lafa;
+    .line 92
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
 
-    iput-boolean v4, v0, Lafa;->h:Z
+    iput-boolean v3, v0, Laga;->i:Z
 
-    .line 93
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->u:Landroid/widget/TextView;
+    .line 94
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->v:Landroid/widget/TextView;
 
     const v1, 0x7f0c0186
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 95
+    .line 96
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -353,15 +452,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    move v1, v2
+    const/4 v0, 0x0
+
+    move v1, v0
 
     :goto_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->f:Ljava/util/ArrayList;
@@ -380,66 +481,54 @@
 
     check-cast v0, Lcom/snapchat/android/model/Friend;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
     :goto_1
-    const-string v0, "MyFriendsFragment"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    const-string v4, "restorePreviousSelectionStatus() selected_friend_username: "
 
-    const-string v6, "restorePreviousSelectionStatus() selected_friend_username: "
+    invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v4
+    const-string v3, " selectedFriendIndex: "
 
-    const-string v5, " selectedFriendIndex: "
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v4, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     if-ltz v1, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Lafa;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
 
-    invoke-virtual {v0, v1}, Lafa;->a(I)V
+    invoke-virtual {v0, v1}, Laga;->a(I)V
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->t:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->u:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
 
-    new-instance v2, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$1;
+    new-instance v3, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$1;
 
-    invoke-direct {v2, p0, v1}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$1;-><init>(Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;I)V
+    invoke-direct {v3, p0, v1}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$1;-><init>(Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;I)V
 
-    invoke-virtual {v0, v2}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v3}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->post(Ljava/lang/Runnable;)Z
+
+    .line 97
+    :cond_0
+    return-object v2
 
     .line 96
-    :cond_0
-    return-object v3
-
-    .line 95
     :cond_1
     add-int/lit8 v0, v1, 0x1
 
@@ -453,62 +542,62 @@
     goto :goto_1
 .end method
 
-.method public onFriendProfileUpdateCompleteEvent(Lbbo;)V
+.method public onFriendProfileUpdateCompleteEvent(Lbco;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 222
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Lafa;
-
-    invoke-virtual {v0}, Lafa;->notifyDataSetChanged()V
-
     .line 223
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
+
+    invoke-virtual {v0}, Laga;->notifyDataSetChanged()V
+
+    .line 224
     return-void
 .end method
 
-.method public onRefreshFriendExistsTask(Lbcx;)V
+.method public onRefreshFriendExistsTask(Lbdx;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 206
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onRefreshFriendExistsTask(Lbcx;)V
-
     .line 207
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->onRefreshFriendExistsTask(Lbdx;)V
+
+    .line 208
     return-void
 .end method
 
-.method public onRefreshOnFriendActionEvent(Lbcw;)V
+.method public onRefreshOnFriendActionEvent(Lbdw;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 212
-    iget-object v0, p1, Lbcw;->mFriend:Lcom/snapchat/android/model/Friend;
-
     .line 213
+    iget-object v0, p1, Lbdw;->mFriend:Lcom/snapchat/android/model/Friend;
+
+    .line 214
     if-eqz v0, :cond_0
 
-    iget-object v1, p1, Lbcw;->mAction:Lcom/snapchat/android/model/FriendAction;
+    iget-object v1, p1, Lbdw;->mAction:Lcom/snapchat/android/model/FriendAction;
 
     sget-object v2, Lcom/snapchat/android/model/FriendAction;->DELETE:Lcom/snapchat/android/model/FriendAction;
 
     if-ne v1, v2, :cond_0
 
-    .line 214
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Lafa;
+    .line 215
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->d:Laga;
 
-    invoke-virtual {v1, v0}, Lafa;->a(Lcom/snapchat/android/model/Friend;)V
+    invoke-virtual {v1, v0}, Laga;->a(Lcom/snapchat/android/model/Friend;)V
 
-    .line 218
+    .line 219
     :goto_0
     return-void
 
-    .line 217
+    .line 218
     :cond_0
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->C()V
 
@@ -519,7 +608,7 @@
     .locals 2
 
     .prologue
-    .line 161
+    .line 162
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

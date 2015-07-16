@@ -1,4 +1,14 @@
-public final class bcm {}
+public final class bcm
+{
+  public String mErrorMessage;
+  public pk mOnSuccessTask;
+  
+  public bcm(String paramString)
+  {
+    mErrorMessage = paramString;
+    mOnSuccessTask = null;
+  }
+}
 
 /* Location:
  * Qualified Name:     bcm

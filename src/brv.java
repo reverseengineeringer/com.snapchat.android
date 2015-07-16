@@ -1,28 +1,22 @@
-public final class brv
+public abstract interface brv
 {
-  public static final brv a = new brv();
-  private volatile int b = 1;
-  private final long c = System.currentTimeMillis();
+  public abstract String a();
   
-  private int b()
-  {
-    try
-    {
-      int i = b;
-      b = (i + 1);
-      return i;
-    }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
-    }
-  }
+  public abstract String b();
   
-  public final String a()
-  {
-    return "1." + c + "." + b();
-  }
+  public abstract String c();
+  
+  public abstract int d();
+  
+  public abstract String e();
+  
+  public abstract String f();
+  
+  public abstract String g();
+  
+  public abstract String h();
+  
+  public abstract bud i();
 }
 
 /* Location:

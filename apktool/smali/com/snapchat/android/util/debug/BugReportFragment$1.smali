@@ -97,7 +97,7 @@
     .line 133
     const-string v2, "SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL"
 
-    invoke-static {v2}, Lauc;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lava;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 

@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvk;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuo",
+        "Lbvk",
         "<",
-        "Lazi;",
+        "Lcom/snapchat/android/util/chat/SecureChatSession;",
         ">;"
     }
 .end annotation
@@ -23,7 +23,16 @@
 
 
 # instance fields
-.field private final module:Layl;
+.field private final mGsonProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Laum;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -31,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 7
+    .line 8
     const-class v0, Layp;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -53,14 +62,23 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Layl;)V
+.method private constructor <init>(Ljavax/inject/Provider;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laum;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 11
+    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
+    .line 13
     sget-boolean v0, Layp;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -73,24 +91,26 @@
 
     throw v0
 
-    .line 13
-    :cond_0
-    iput-object p1, p0, Layp;->module:Layl;
-
     .line 14
+    :cond_0
+    iput-object p1, p0, Layp;->mGsonProvider:Ljavax/inject/Provider;
+
+    .line 15
     return-void
 .end method
 
-.method public static a(Layl;)Lbuo;
+.method public static a(Ljavax/inject/Provider;)Lbvk;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Layl;",
-            ")",
-            "Lbuo",
+            "Ljavax/inject/Provider",
             "<",
-            "Lazi;",
+            "Laum;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/chat/SecureChatSession;",
             ">;"
         }
     .end annotation
@@ -99,32 +119,40 @@
     .line 26
     new-instance v0, Layp;
 
-    invoke-direct {v0, p0}, Layp;-><init>(Layl;)V
+    invoke-direct {v0, p0}, Layp;-><init>(Ljavax/inject/Provider;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
     .prologue
-    .line 7
-    invoke-static {}, Lazi;->a()Lazi;
+    .line 8
+    check-cast p1, Lcom/snapchat/android/util/chat/SecureChatSession;
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    const-string v1, "Cannot inject members into a null reference"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_0
-    return-object v0
+    iget-object v0, p0, Layp;->mGsonProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laum;
+
+    iput-object v0, p1, Lcom/snapchat/android/util/chat/SecureChatSession;->mGson:Laum;
+
+    return-void
 .end method

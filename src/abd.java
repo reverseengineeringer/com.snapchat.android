@@ -1,11 +1,11 @@
 public final class abd
-  extends zx
+  extends aaw
 {
   private static final abd a = new abd();
   
   private abd()
   {
-    super("StorySnapVideoFileTable", awq.STORY_RECEIVED_VIDEO_CACHE);
+    super("DSnapMediaFileTable", axo.DSNAP_MEDIA_CACHE);
   }
   
   public static abd a()

@@ -1,26 +1,10 @@
-import android.content.Context;
-import android.text.TextUtils;
+import com.snapchat.android.ui.SwipeImageView;
 
-public final class ati
+public abstract class ati
 {
-  public static String a(Context paramContext, long paramLong, String paramString)
-  {
-    String str = "";
-    if (paramLong > 0L) {
-      str = ata.b(paramContext, paramLong);
-    }
-    if (TextUtils.isEmpty(str))
-    {
-      if (paramString != null) {
-        return paramString;
-      }
-      return "";
-    }
-    if (TextUtils.isEmpty(paramString)) {
-      return str;
-    }
-    return atx.a(null, 2131493170, new Object[] { str, paramString });
-  }
+  public void a() {}
+  
+  public abstract void a(SwipeImageView paramSwipeImageView, asv<asm> paramasv);
 }
 
 /* Location:

@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.util.SparseArray;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public abstract class WakefulBroadcastReceiver
   extends BroadcastReceiver
@@ -55,6 +57,12 @@ public abstract class WakefulBroadcastReceiver
       mActiveWakeLocks.put(i, paramContext);
       return paramIntent;
     }
+  }
+  
+  public void onReceive(Context paramContext, Intent paramIntent)
+  {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
   }
 }
 

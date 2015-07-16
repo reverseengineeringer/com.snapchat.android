@@ -1,4 +1,12 @@
-public final class bco {}
+public final class bco
+{
+  private boolean mSuccessful;
+  
+  public bco(boolean paramBoolean)
+  {
+    mSuccessful = paramBoolean;
+  }
+}
 
 /* Location:
  * Qualified Name:     bco

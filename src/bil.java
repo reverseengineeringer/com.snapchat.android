@@ -4,25 +4,21 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bil
+  extends bji
 {
-  @SerializedName("gateway_auth_token")
-  protected bix gatewayAuthToken;
-  @SerializedName("gateway_server")
-  protected String gatewayServer;
+  @SerializedName("header")
+  protected bjb header;
+  @SerializedName("retried")
+  protected Boolean retried;
   
-  public final bix a()
+  public final void a(bjb parambjb)
   {
-    return gatewayAuthToken;
+    header = parambjb;
   }
   
-  public final void a(String paramString)
+  public final void a(Boolean paramBoolean)
   {
-    gatewayServer = paramString;
-  }
-  
-  public final String b()
-  {
-    return gatewayServer;
+    retried = paramBoolean;
   }
   
   public boolean equals(Object paramObject)
@@ -34,12 +30,22 @@ public class bil
       return false;
     }
     paramObject = (bil)paramObject;
-    return new EqualsBuilder().append(gatewayAuthToken, gatewayAuthToken).append(gatewayServer, gatewayServer).isEquals();
+    return new EqualsBuilder().append(header, header).append(retried, retried).isEquals();
+  }
+  
+  public final bjb g()
+  {
+    return header;
+  }
+  
+  public final Boolean h()
+  {
+    return retried;
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(gatewayAuthToken).append(gatewayServer).toHashCode();
+    return new HashCodeBuilder().append(header).append(retried).toHashCode();
   }
   
   public String toString()

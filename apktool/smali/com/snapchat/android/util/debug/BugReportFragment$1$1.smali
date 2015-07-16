@@ -80,7 +80,7 @@
     .line 150
     const-string v1, "SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL"
 
-    invoke-static {v1, v0}, Lauc;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lava;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 153
     :cond_0

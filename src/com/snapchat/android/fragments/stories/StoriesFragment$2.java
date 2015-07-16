@@ -1,21 +1,25 @@
 package com.snapchat.android.fragments.stories;
 
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
+import bgd;
+import bvs;
+import com.snapchat.android.analytics.NetworkAnalytics;
+import com.snapchat.android.analytics.NetworkAnalytics.PageContext;
+import in.srain.cube.views.ptr.PtrFrameLayout;
 
 final class StoriesFragment$2
-  implements AbsListView.OnScrollListener
+  implements bvs
 {
   StoriesFragment$2(StoriesFragment paramStoriesFragment) {}
   
-  public final void onScroll(AbsListView paramAbsListView, int paramInt1, int paramInt2, int paramInt3) {}
-  
-  public final void onScrollStateChanged(AbsListView paramAbsListView, int paramInt)
+  public final void a(PtrFrameLayout paramPtrFrameLayout)
   {
-    if (paramInt != 0) {
-      return;
-    }
-    StoriesFragment.j(a);
+    StoriesFragment.j(a).a(NetworkAnalytics.PageContext.STORY);
+    StoriesFragment.k(a);
+  }
+  
+  public final boolean a()
+  {
+    return bgd.a(StoriesFragment.a(a));
   }
 }
 

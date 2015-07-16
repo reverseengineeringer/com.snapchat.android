@@ -5,9 +5,8 @@ import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdx;
-import com.snapchat.android.Timber;
+import bbo;
+import bew;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.squareup.otto.Bus;
 
@@ -18,11 +17,11 @@ final class FirstAutoScanNotificationView$2
   
   public final void onClick(View paramView)
   {
-    Timber.c(FirstAutoScanNotificationView.a(), "Set library scanning enabled! YES!", new Object[0]);
+    FirstAutoScanNotificationView.a();
     paramView = PreferenceManager.getDefaultSharedPreferences(a.getContext()).edit();
     paramView.putBoolean(SharedPreferenceKey.AUTO_LIBRARY_SCANNING_ENABLED.getKey(), true);
     paramView.commit();
-    ban.a().a(new bdx());
+    bbo.a().a(new bew());
   }
 }
 

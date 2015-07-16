@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzw;
+.implements Laav;
 
 
 # annotations
@@ -22,7 +22,7 @@
         "<",
         "Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;",
         ">;",
-        "Lzw;"
+        "Laav;"
     }
 .end annotation
 
@@ -49,6 +49,8 @@
 .field public static final enum POSITION:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
 .field public static final enum PRIMARY_COLOR:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
+
+.field public static final enum PROMOTED_STORIES_PAGE_POSITION:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
 .field public static final enum PUBLISHER_FORMAL_NAME:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
@@ -240,9 +242,24 @@
     .line 83
     new-instance v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    const-string v1, "ENABLED"
+    const-string v1, "PROMOTED_STORIES_PAGE_POSITION"
 
     const/16 v2, 0xb
+
+    const-string v3, "promoted_stories_page_position"
+
+    sget-object v4, Lcom/snapchat/android/database/DataType;->INTEGER:Lcom/snapchat/android/database/DataType;
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;-><init>(Ljava/lang/String;ILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
+
+    sput-object v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->PROMOTED_STORIES_PAGE_POSITION:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
+
+    .line 84
+    new-instance v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
+
+    const-string v1, "ENABLED"
+
+    const/16 v2, 0xc
 
     const-string v3, "enabled"
 
@@ -252,12 +269,12 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->ENABLED:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    .line 84
+    .line 85
     new-instance v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
     const-string v1, "INTRO_AD_UNIT_ID"
 
-    const/16 v2, 0xc
+    const/16 v2, 0xd
 
     const-string v3, "ad_unit_id"
 
@@ -267,12 +284,12 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    .line 85
+    .line 86
     new-instance v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
     const-string v1, "INTRO_AD_TARGETING"
 
-    const/16 v2, 0xd
+    const/16 v2, 0xe
 
     const-string v3, "targeting_parameters"
 
@@ -283,7 +300,7 @@
     sput-object v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_TARGETING:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
     .line 69
-    const/16 v0, 0xe
+    const/16 v0, 0xf
 
     new-array v0, v0, [Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
@@ -345,17 +362,23 @@
 
     const/16 v1, 0xb
 
-    sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->ENABLED:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
+    sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->PROMOTED_STORIES_PAGE_POSITION:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
+    sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->ENABLED:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
+
+    sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xe
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_TARGETING:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
@@ -378,16 +401,16 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 93
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 93
+    .line 94
     iput-object p3, p0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->a:Ljava/lang/String;
 
-    .line 94
+    .line 95
     iput-object p4, p0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->b:Lcom/snapchat/android/database/DataType;
 
-    .line 95
+    .line 96
     return-void
 .end method
 
@@ -403,15 +426,15 @@
     .end annotation
 
     .prologue
-    .line 98
+    .line 99
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0, p2, p3}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;-><init>(Ljava/lang/String;ILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
 
-    .line 99
+    .line 100
     iput-object p4, p0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->c:Ljava/lang/String;
 
-    .line 100
+    .line 101
     return-void
 .end method
 
@@ -473,7 +496,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 110
     iget-object v0, p0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->a:Ljava/lang/String;
 
     return-object v0
@@ -483,7 +506,7 @@
     .locals 1
 
     .prologue
-    .line 106
+    .line 107
     invoke-virtual {p0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->ordinal()I
 
     move-result v0
@@ -495,7 +518,7 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 113
     iget-object v0, p0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->c:Ljava/lang/String;
 
     return-object v0
@@ -505,7 +528,7 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 104
     iget-object v0, p0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->b:Lcom/snapchat/android/database/DataType;
 
     return-object v0

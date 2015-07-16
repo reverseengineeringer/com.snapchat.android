@@ -1,54 +1,52 @@
-import com.snapchat.android.model.Friend;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 
 public final class ait
 {
-  public static HashMap<String, ait> sUsernamesToProfileInfo = new HashMap();
-  private ArrayList<String> mBestFriends = new ArrayList();
-  public int mScore = -1;
+  private static String c = "CONSTRUCTED_DYANMIC_GEOFILTER_DELAY";
+  public final ExecutorService a;
+  private final EasyMetric.EasyMetricFactory b;
   
-  public ait(List<String> paramList, int paramInt)
+  public ait(ExecutorService paramExecutorService)
   {
-    a(paramList);
-    mScore = paramInt;
+    this(paramExecutorService, new EasyMetric.EasyMetricFactory());
   }
   
-  public static void a(@cgb final Friend paramFriend, @cgb final ait.a parama)
+  private ait(ExecutorService paramExecutorService, EasyMetric.EasyMetricFactory paramEasyMetricFactory)
   {
-    ait localait = (ait)sUsernamesToProfileInfo.get(paramFriend.h());
-    if (localait == null)
+    a = paramExecutorService;
+    b = paramEasyMetricFactory;
+  }
+  
+  public final class a
+    extends AsyncTask<Void, Void, Bitmap>
+  {
+    private final Bitmap b;
+    private final ait.b c;
+    private final List<air> d;
+    private final awo e;
+    
+    public a(@chc ait.b paramb, @chc List<air> paramList)
     {
-      new on(paramFriend)
-      {
-        protected final void a(aku paramAnonymousaku)
-        {
-          super.a(paramAnonymousaku);
-          parama.a((ait)ait.sUsernamesToProfileInfo.get(paramFriend.h()));
-        }
-      }.executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
-      return;
+      this(paramb, paramList, localList, awo.a());
     }
-    parama.a(localait);
-  }
-  
-  private void a(List<String> paramList)
-  {
-    mBestFriends.clear();
-    ajv localajv = ajv.g();
-    paramList = paramList.iterator();
-    while (paramList.hasNext())
+    
+    private a(@chc ait.b paramb, @chc List<air> paramList, @chc awo paramawo)
     {
-      String str = (String)paramList.next();
-      mBestFriends.add(atm.e(str, localajv));
+      b = ((Bitmap)co.a(paramb));
+      c = ((ait.b)co.a(paramList));
+      d = ((List)co.a(paramawo));
+      Object localObject;
+      e = ((awo)co.a(localObject));
     }
   }
   
-  public static abstract interface a
+  public static abstract interface b
   {
-    public abstract void a(@cgc ait paramait);
+    public abstract void a(Bitmap paramBitmap);
   }
 }
 

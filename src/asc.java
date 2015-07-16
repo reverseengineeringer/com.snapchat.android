@@ -1,13 +1,10 @@
-import com.snapchat.android.ui.swipefilters.FilterPageType;
-
-@avl
-public abstract class asc
-  extends arn
+public final class asc
 {
-  public final FilterPageType b()
-  {
-    return FilterPageType.INFOFILTER;
-  }
+  static asc a;
+  public final arx b = new asd();
+  public final arx c = new arz();
+  public final arx d = new asa();
+  public final arx e = new ary();
 }
 
 /* Location:

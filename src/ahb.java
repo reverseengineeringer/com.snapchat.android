@@ -1,26 +1,50 @@
-import com.snapchat.android.fragments.stories.StoriesAdapter.StoriesViewType;
-import com.snapchat.android.stories.StoriesSection;
+import com.snapchat.android.SnapchatApplication;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.PriorityQueue;
+import javax.inject.Inject;
 
-public abstract interface ahb
+public final class ahb
 {
-  @cgc
-  public abstract String a();
+  public boolean a;
+  long b;
+  public ahb.a c = new ahb.a(0L, 0L);
+  @Inject
+  protected bhk d;
+  PriorityQueue<ahb.a> e = new PriorityQueue(5, new Comparator() {});
   
-  public abstract StoriesAdapter.StoriesViewType c();
+  public ahb()
+  {
+    SnapchatApplication.b().c().a(this);
+  }
   
-  public abstract String h();
+  public final void a(long paramLong)
+  {
+    Iterator localIterator = e.iterator();
+    while (localIterator.hasNext())
+    {
+      ahb.a locala = (ahb.a)localIterator.next();
+      if (paramLong - b > 1500L)
+      {
+        if (b > c.b) {
+          c = locala;
+        }
+        localIterator.remove();
+      }
+    }
+  }
   
-  public abstract StoriesSection i();
-  
-  public abstract boolean j();
-  
-  @cgb
-  public abstract String k();
-  
-  public abstract boolean l();
-  
-  @cgc
-  public abstract auz m();
+  public final class a
+  {
+    public long a;
+    public long b;
+    
+    public a(long paramLong1, long paramLong2)
+    {
+      a = paramLong1;
+      b = paramLong2;
+    }
+  }
 }
 
 /* Location:

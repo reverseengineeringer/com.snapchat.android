@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="vertical" android:id="@id/stories_list_item" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/stories_list_item_divider" android:background="@color/divider_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" />
     <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/friend_name_layout" android:background="@color/my_story_sub_cell_grey" android:paddingLeft="@dimen/default_gap_2x" android:paddingTop="@dimen/story_cell_padding" android:paddingRight="@dimen/default_gap_2x" android:paddingBottom="@dimen/story_cell_padding" android:layout_width="fill_parent" android:layout_height="@dimen/story_cell_height" android:minHeight="@dimen/story_sub_cell_height" android:paddingStart="@dimen/default_gap_2x" android:paddingEnd="@dimen/default_gap_2x">
         <FrameLayout android:id="@id/story_dot_container" android:layout_width="@dimen/my_story_sub_thumbnail_height" android:layout_height="@dimen/my_story_sub_thumbnail_height" android:layout_marginLeft="@dimen/my_story_subcell_thumbnail_padding_left" android:layout_marginRight="@dimen/my_story_subcell_thumbnail_padding_right">
             <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
@@ -29,9 +30,4 @@
             <ProgressBar android:id="@id/checkbox_progress_bar" android:background="@color/transparent" android:visibility="gone" android:layout_width="@dimen/checkbox_size" android:layout_height="@dimen/checkbox_size" android:layout_marginRight="@dimen/default_gap" android:scaleType="fitXY" />
         </FrameLayout>
     </LinearLayout>
-    <View android:id="@id/stories_list_item_divider" android:background="@color/divider_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-    <FrameLayout android:id="@id/all_stories_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_gap">
-        <View android:layout_gravity="center" android:background="@color/divider_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-        <TextView android:textSize="@dimen/text_size_fine_print" android:textColor="@color/stories_all_stories_header_text_color" android:layout_gravity="center" android:background="@color/white" android:paddingLeft="@dimen/default_gap" android:paddingRight="@dimen/default_gap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stories_all_stories_header_text" />
-    </FrameLayout>
 </LinearLayout>

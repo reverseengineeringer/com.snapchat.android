@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laeg$a;
+.implements Lafg$a;
 
 
 # annotations

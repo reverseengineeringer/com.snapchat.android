@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuo",
+        "Lbvp",
         "<",
         "Lcom/snapchat/android/analytics/framework/AnalyticsPlatformRegistry;",
         ">;"
@@ -163,7 +163,7 @@
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuo;
+.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -180,7 +180,7 @@
             "<",
             "Lcom/snapchat/android/analytics/framework/UserActionTracePlatform;",
             ">;)",
-            "Lbuo",
+            "Lbvp",
             "<",
             "Lcom/snapchat/android/analytics/framework/AnalyticsPlatformRegistry;",
             ">;"

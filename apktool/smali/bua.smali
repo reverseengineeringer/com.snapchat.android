@@ -1,341 +1,302 @@
 .class public final Lbua;
-.super Ljava/io/InputStream;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbsn;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbua$a;
+    }
+.end annotation
 
 
 # instance fields
-.field private final a:Ljava/io/InputStream;
+.field public a:Z
 
-.field private final b:Lbtl;
+.field public b:Z
 
-.field private final c:Lbsb;
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:Ljava/lang/String;
+
+.field public g:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;Lbtl;Lbsb;)V
+.method public constructor <init>()V
     .locals 2
 
     .prologue
-    .line 20
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    const/4 v1, 0x5
 
-    .line 21
-    if-nez p1, :cond_0
+    const/4 v0, 0x0
 
-    .line 22
-    new-instance v0, Ljava/lang/NullPointerException;
+    .line 65
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "delegate was null"
+    .line 66
+    iput-boolean v0, p0, Lbua;->a:Z
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    .line 67
+    iput-boolean v0, p0, Lbua;->b:Z
 
-    throw v0
+    .line 68
+    iput v0, p0, Lbua;->c:I
 
-    .line 25
-    :cond_0
-    if-nez p2, :cond_1
+    .line 69
+    iput v1, p0, Lbua;->d:I
 
-    .line 26
-    new-instance v0, Ljava/lang/NullPointerException;
+    .line 70
+    iput v1, p0, Lbua;->e:I
 
-    const-string v1, "dispatch was null"
+    .line 71
+    const-string v0, "Would you mind taking a second to rate my app?  I would really appreciate it!"
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iput-object v0, p0, Lbua;->f:Ljava/lang/String;
 
-    throw v0
+    .line 72
+    const-string v0, "Rate My App"
 
-    .line 29
-    :cond_1
-    if-nez p3, :cond_2
+    iput-object v0, p0, Lbua;->g:Ljava/lang/String;
 
-    .line 30
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "stats were null"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 33
-    :cond_2
-    iput-object p1, p0, Lbua;->a:Ljava/io/InputStream;
-
-    .line 34
-    iput-object p2, p0, Lbua;->b:Lbtl;
-
-    .line 35
-    iput-object p3, p0, Lbua;->c:Lbsb;
-
-    .line 36
+    .line 73
     return-void
 .end method
 
-.method private a(II)V
+.method public constructor <init>(Lbua;)V
+    .locals 1
+
+    .prologue
+    .line 86
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 87
+    iget-boolean v0, p1, Lbua;->a:Z
+
+    iput-boolean v0, p0, Lbua;->a:Z
+
+    .line 89
+    iget-boolean v0, p1, Lbua;->b:Z
+
+    iput-boolean v0, p0, Lbua;->b:Z
+
+    .line 90
+    iget v0, p1, Lbua;->c:I
+
+    iput v0, p0, Lbua;->c:I
+
+    .line 91
+    iget v0, p1, Lbua;->d:I
+
+    iput v0, p0, Lbua;->d:I
+
+    .line 92
+    iget v0, p1, Lbua;->e:I
+
+    iput v0, p0, Lbua;->e:I
+
+    .line 93
+    iget-object v0, p1, Lbua;->f:Ljava/lang/String;
+
+    iput-object v0, p0, Lbua;->f:Ljava/lang/String;
+
+    .line 94
+    iget-object v0, p1, Lbua;->g:Ljava/lang/String;
+
+    iput-object v0, p0, Lbua;->g:Ljava/lang/String;
+
+    .line 95
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/json/JSONObject;)V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x5
+
+    const/4 v1, 0x0
+
+    .line 75
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 76
+    const-string v0, "rateMyAppEnabled"
+
+    invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lbua;->a:Z
+
+    .line 78
+    const-string v0, "hasRatedApp"
+
+    invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lbua;->b:Z
+
+    .line 79
+    const-string v0, "numAppLoads"
+
+    invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    iput v0, p0, Lbua;->c:I
+
+    .line 80
+    const-string v0, "rateAfterNumLoads"
+
+    invoke-virtual {p1, v0, v2}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    iput v0, p0, Lbua;->d:I
+
+    .line 81
+    const-string v0, "remindAfterNumLoads"
+
+    invoke-virtual {p1, v0, v2}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    iput v0, p0, Lbua;->e:I
+
+    .line 82
+    const-string v0, "rateAppMessage"
+
+    const-string v1, "Would you mind taking a second to rate my app?  I would really appreciate it!"
+
+    invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbua;->f:Ljava/lang/String;
+
+    .line 83
+    const-string v0, "rateAppTitle"
+
+    const-string v1, "Rate My App"
+
+    invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbua;->g:Ljava/lang/String;
+
+    .line 84
+    return-void
+.end method
+
+.method private d()Lorg/json/JSONObject;
     .locals 4
 
     .prologue
-    .line 62
+    .line 141
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+
+    .line 143
     :try_start_0
-    iget-object v0, p0, Lbua;->c:Lbsb;
+    const-string v1, "rateAfterNumLoads"
 
-    if-eqz v0, :cond_0
+    iget v2, p0, Lbua;->d:I
 
-    const/4 v0, -0x1
-
-    if-ne p1, v0, :cond_1
-
-    iget-object v0, p0, Lbua;->b:Lbtl;
-
-    iget-object v1, p0, Lbua;->c:Lbsb;
-
-    invoke-virtual {v0, v1}, Lbtl;->a(Lbsb;)V
-
-    .line 68
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 62
-    :cond_1
-    iget-object v0, p0, Lbua;->c:Lbsb;
-
-    int-to-long v2, p2
-
-    invoke-virtual {v0, v2, v3}, Lbsb;->a(J)V
-    :try_end_0
-    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
-
-    goto :goto_0
-
-    .line 63
-    :catch_0
-    move-exception v0
-
-    throw v0
-
-    .line 65
-    :catch_1
-    move-exception v0
-
-    invoke-static {v0}, Lbtd;->a(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method private a(Ljava/lang/Exception;)V
-    .locals 2
-
-    .prologue
-    .line 82
-    :try_start_0
-    iget-object v0, p0, Lbua;->c:Lbsb;
-
-    invoke-static {p1}, Lbsa;->a(Ljava/lang/Throwable;)Lbsa;
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
     move-result-object v1
 
-    iput-object v1, v0, Lbsb;->g:Lbsa;
+    const-string v2, "remindAfterNumLoads"
 
-    iget-object v0, p0, Lbua;->b:Lbtl;
+    iget v3, p0, Lbua;->e:I
 
-    iget-object v1, p0, Lbua;->c:Lbsb;
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    invoke-virtual {v0, v1}, Lbtl;->a(Lbsb;)V
+    move-result-object v1
+
+    const-string v2, "rateAppMessage"
+
+    iget-object v3, p0, Lbua;->f:Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    move-result-object v1
+
+    const-string v2, "rateAppTitle"
+
+    iget-object v3, p0, Lbua;->g:Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    move-result-object v1
+
+    const-string v2, "hasRatedApp"
+
+    iget-boolean v3, p0, Lbua;->b:Z
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+
+    move-result-object v1
+
+    const-string v2, "numAppLoads"
+
+    iget v3, p0, Lbua;->c:I
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+    move-result-object v1
+
+    const-string v2, "rateMyAppEnabled"
+
+    iget-boolean v3, p0, Lbua;->a:Z
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
     :try_end_0
-    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 88
+    .line 153
     :goto_0
-    return-void
+    return-object v0
 
-    .line 83
     :catch_0
-    move-exception v0
-
-    throw v0
-
-    .line 85
-    :catch_1
-    move-exception v0
-
-    invoke-static {v0}, Lbtd;->a(Ljava/lang/Throwable;)V
+    move-exception v1
 
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final available()I
+.method public final declared-synchronized a()V
     .locals 1
 
     .prologue
-    .line 40
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    .prologue
-    .line 45
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-
-    .line 46
-    return-void
-.end method
-
-.method public final mark(I)V
-    .locals 1
-
-    .prologue
-    .line 51
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
-
-    .line 52
-    return-void
-.end method
-
-.method public final markSupported()Z
-    .locals 1
-
-    .prologue
-    .line 57
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final read()I
-    .locals 2
-
-    .prologue
-    .line 97
-    :try_start_0
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v0
-
-    .line 106
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lbua;->a(II)V
-
-    .line 108
-    return v0
-
-    .line 101
-    :catch_0
-    move-exception v0
-
-    .line 102
-    invoke-direct {p0, v0}, Lbua;->a(Ljava/lang/Exception;)V
-
-    .line 103
-    throw v0
-.end method
-
-.method public final read([B)I
-    .locals 1
-
-    .prologue
-    .line 113
-    :try_start_0
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v0
-
-    .line 122
-    invoke-direct {p0, v0, v0}, Lbua;->a(II)V
-
-    .line 124
-    return v0
-
-    .line 117
-    :catch_0
-    move-exception v0
-
-    .line 118
-    invoke-direct {p0, v0}, Lbua;->a(Ljava/lang/Exception;)V
-
-    .line 119
-    throw v0
-.end method
-
-.method public final read([BII)I
-    .locals 1
-
-    .prologue
-    .line 131
-    :try_start_0
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v0
-
-    .line 140
-    invoke-direct {p0, v0, v0}, Lbua;->a(II)V
-
-    .line 142
-    return v0
-
-    .line 135
-    :catch_0
-    move-exception v0
-
-    .line 136
-    invoke-direct {p0, v0}, Lbua;->a(Ljava/lang/Exception;)V
-
-    .line 137
-    throw v0
-.end method
-
-.method public final declared-synchronized reset()V
-    .locals 1
-
-    .prologue
-    .line 148
+    .line 114
     monitor-enter p0
 
-    :try_start_0
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+    :try_start_0
+    iput-boolean v0, p0, Lbua;->a:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 149
+    .line 115
     monitor-exit p0
 
     return-void
 
-    .line 148
+    .line 114
     :catchall_0
     move-exception v0
 
@@ -344,47 +305,76 @@
     throw v0
 .end method
 
-.method public final skip(J)J
-    .locals 5
+.method public final declared-synchronized a(Lbrx;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
 
     .prologue
-    .line 153
-    iget-object v0, p0, Lbua;->a:Ljava/io/InputStream;
+    .line 158
+    monitor-enter p0
 
-    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
-
-    move-result-wide v2
-
-    .line 156
     :try_start_0
-    iget-object v0, p0, Lbua;->c:Lbsb;
+    invoke-direct {p0}, Lbua;->d()Lorg/json/JSONObject;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    .line 157
-    iget-object v0, p0, Lbua;->c:Lbsb;
+    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, v2, v3}, Lbsb;->a(J)V
+    move-result-object v0
+
+    invoke-interface {p1, p2, p3, v0}, Lbrx;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
-
-    .line 165
-    :cond_0
-    :goto_0
-    return-wide v2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 159
-    :catch_0
+    monitor-exit p0
+
+    return-void
+
+    .line 158
+    :catchall_0
     move-exception v0
+
+    monitor-exit p0
 
     throw v0
+.end method
 
-    .line 161
-    :catch_1
+.method public final synthetic b()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 11
+    invoke-direct {p0}, Lbua;->d()Lorg/json/JSONObject;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final declared-synchronized c()V
+    .locals 1
+
+    .prologue
+    .line 118
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    iput-boolean v0, p0, Lbua;->a:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 119
+    monitor-exit p0
+
+    return-void
+
+    .line 118
+    :catchall_0
     move-exception v0
 
-    invoke-static {v0}, Lbtd;->a(Ljava/lang/Throwable;)V
+    monitor-exit p0
 
-    goto :goto_0
+    throw v0
 .end method

@@ -1,10 +1,7 @@
-final class azz$a
-  extends Enum<a>
+public final class azz$a
 {
-  public static int[] a()
-  {
-    return (int[])$VALUES$16eae95.clone();
-  }
+  public azj androidModule;
+  public baa discoverModule;
 }
 
 /* Location:

@@ -1,22 +1,30 @@
-import com.snapchat.android.model.MediaMailingMetadata;
-import java.util.ArrayList;
+import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
 
-public final class ajk
-  extends MediaMailingMetadata
+public abstract interface ajk
 {
-  public ArrayList<ajc> mPostToStories = new ArrayList();
-  private String mPostToStoriesString;
-  public boolean mShouldExecutePostStoryTaskAfterUpload = false;
+  public abstract int a(int paramInt, aka paramaka);
   
-  public final MediaMailingMetadata a()
-  {
-    ajk localajk = new ajk();
-    super.a(localajk);
-    mShouldExecutePostStoryTaskAfterUpload = mShouldExecutePostStoryTaskAfterUpload;
-    mPostToStoriesString = mPostToStoriesString;
-    mPostToStories = new ArrayList(mPostToStories);
-    return localajk;
-  }
+  public abstract void a();
+  
+  public abstract void a(@chc aka paramaka, @chc SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt);
+  
+  public abstract void b();
+  
+  @chd
+  public abstract aka c();
+  
+  @chd
+  public abstract aka d();
+  
+  @Deprecated
+  public abstract boolean e();
+  
+  @Deprecated
+  public abstract boolean f();
+  
+  public abstract boolean g();
+  
+  public abstract int h();
 }
 
 /* Location:

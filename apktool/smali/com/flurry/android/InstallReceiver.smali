@@ -43,6 +43,10 @@
     .prologue
     const/4 v4, 0x4
 
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 29
     sget-object v0, Lcom/flurry/android/InstallReceiver;->a:Ljava/lang/String;
 

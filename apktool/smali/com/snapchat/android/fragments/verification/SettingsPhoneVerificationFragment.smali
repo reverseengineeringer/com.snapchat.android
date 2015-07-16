@@ -6,11 +6,11 @@
 # instance fields
 .field private a:Landroid/view/View;
 
-.field private b:Lbbm;
+.field private b:Lbcm;
 
 .field private p:Landroid/widget/Button;
 
-.field private q:Lajx;
+.field private q:Lakr;
 
 
 # direct methods
@@ -22,20 +22,20 @@
     invoke-direct {p0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;-><init>()V
 
     .line 41
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->q:Lajx;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->q:Lakr;
 
     .line 45
-    invoke-static {}, Lajx;->aF()Z
+    invoke-static {}, Lakr;->aE()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -56,7 +56,7 @@
     goto :goto_0
 .end method
 
-.method public constructor <init>(Lbbm;)V
+.method public constructor <init>(Lbcm;)V
     .locals 0
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -69,7 +69,7 @@
     invoke-direct {p0}, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;-><init>()V
 
     .line 51
-    iput-object p1, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->b:Lbbm;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->b:Lbcm;
 
     .line 52
     return-void
@@ -87,7 +87,7 @@
 
 
 # virtual methods
-.method protected final a(Lbkr;)V
+.method protected final a(Lbls;)V
     .locals 0
 
     .prologue
@@ -120,7 +120,7 @@
     const/4 v1, 0x0
 
     .line 67
-    const v0, 0x7f04007a
+    const v0, 0x7f04007b
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -144,14 +144,14 @@
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->o()V
 
     .line 75
-    invoke-static {}, Lajx;->aF()Z
+    invoke-static {}, Lakr;->aE()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 76
-    const v0, 0x7f0a0283
+    const v0, 0x7f0a0281
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->c(I)Landroid/view/View;
 
@@ -165,7 +165,7 @@
 
     .line 79
     :cond_0
-    const v0, 0x7f0a0065
+    const v0, 0x7f0a0067
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->c(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 87
-    const v0, 0x7f0a0281
+    const v0, 0x7f0a027f
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->c(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
     check-cast v0, Landroid/widget/CheckBox;
 
     .line 88
-    invoke-static {}, Lajx;->ag()Z
+    invoke-static {}, Lakr;->af()Z
 
     move-result v1
 
@@ -201,7 +201,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     .line 99
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -210,7 +210,7 @@
     .line 100
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->g:Landroid/widget/EditText;
 
-    invoke-static {}, Lajx;->e()Ljava/lang/String;
+    invoke-static {}, Lakr;->e()Ljava/lang/String;
 
     move-result-object v1
 
@@ -233,7 +233,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {}, Lajx;->aF()Z
+    invoke-static {}, Lakr;->aE()Z
 
     move-result v0
 
@@ -242,7 +242,7 @@
     .line 103
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->e:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-static {v0}, Lavh;->f(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->f(Landroid/content/Context;)V
 
     goto :goto_0
 .end method
@@ -261,20 +261,20 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 58
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 191
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbet;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbfs;)V
 
     .line 192
     return-void
@@ -288,7 +288,7 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->q()V
 
     .line 112
-    const v0, 0x7f0a0284
+    const v0, 0x7f0a0282
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->c(I)Landroid/view/View;
 
@@ -373,18 +373,18 @@
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 164
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbcm;
+    new-instance v1, Lbdm;
 
-    invoke-direct {v1}, Lbcm;-><init>()V
+    invoke-direct {v1}, Lbdm;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 166
-    invoke-static {}, Lajx;->aF()Z
+    invoke-static {}, Lakr;->aE()Z
 
     move-result v0
 
@@ -396,34 +396,34 @@
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 168
-    const v0, 0x7f0c02ce
+    const v0, 0x7f0c02cc
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->e:Landroid/support/v4/app/FragmentActivity;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/util/AlertDialogUtils;->a(ILandroid/content/Context;)V
 
     .line 169
-    invoke-static {v3}, Lajx;->p(Z)V
+    invoke-static {v3}, Lakr;->o(Z)V
 
     .line 172
-    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->b:Lbbm;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->b:Lbcm;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->b:Lbbm;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->b:Lbcm;
 
-    iget-object v0, v0, Lbbm;->mOnSuccessTask:Lot;
+    iget-object v0, v0, Lbcm;->mOnSuccessTask:Lpk;
 
     if-eqz v0, :cond_0
 
     .line 173
-    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->b:Lbbm;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/SettingsPhoneVerificationFragment;->b:Lbcm;
 
-    iget-object v0, v0, Lbbm;->mOnSuccessTask:Lot;
+    iget-object v0, v0, Lbcm;->mOnSuccessTask:Lpk;
 
     new-array v1, v3, [Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lot;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1}, Lpk;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 177
     :cond_0

@@ -6,26 +6,48 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bhx
 {
-  @SerializedName("added_friends")
-  protected List<bhu> addedFriends;
-  @SerializedName("bests")
-  protected List<String> bests;
-  @SerializedName("friends")
-  protected List<bhu> friends;
+  @SerializedName("conversations_response")
+  protected List<bid> conversationsResponse;
+  @SerializedName("conversations_response_info")
+  protected bio conversationsResponseInfo;
+  @SerializedName("discover")
+  protected bir discover;
+  @SerializedName("friends_response")
+  protected bix friendsResponse;
+  @SerializedName("identity_check_response")
+  protected blj identityCheckResponse;
+  @SerializedName("messaging_gateway_info")
+  protected bjl messagingGatewayInfo;
+  @SerializedName("server_info")
+  protected bjx serverInfo;
+  @SerializedName("stories_response")
+  protected bkg storiesResponse;
+  @SerializedName("updates_response")
+  protected bkq updatesResponse;
   
-  public final List<bhu> a()
+  public final bjx a()
   {
-    return friends;
+    return serverInfo;
   }
   
-  public final List<bhu> b()
+  public final bjl b()
   {
-    return addedFriends;
+    return messagingGatewayInfo;
   }
   
-  public final List<String> c()
+  public final boolean c()
   {
-    return bests;
+    return messagingGatewayInfo != null;
+  }
+  
+  public final bkq d()
+  {
+    return updatesResponse;
+  }
+  
+  public final boolean e()
+  {
+    return updatesResponse != null;
   }
   
   public boolean equals(Object paramObject)
@@ -37,12 +59,42 @@ public class bhx
       return false;
     }
     paramObject = (bhx)paramObject;
-    return new EqualsBuilder().append(friends, friends).append(addedFriends, addedFriends).append(bests, bests).isEquals();
+    return new EqualsBuilder().append(serverInfo, serverInfo).append(messagingGatewayInfo, messagingGatewayInfo).append(updatesResponse, updatesResponse).append(friendsResponse, friendsResponse).append(storiesResponse, storiesResponse).append(conversationsResponse, conversationsResponse).append(conversationsResponseInfo, conversationsResponseInfo).append(discover, discover).append(identityCheckResponse, identityCheckResponse).isEquals();
+  }
+  
+  public final bix f()
+  {
+    return friendsResponse;
+  }
+  
+  public final bkg g()
+  {
+    return storiesResponse;
+  }
+  
+  public final List<bid> h()
+  {
+    return conversationsResponse;
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(friends).append(addedFriends).append(bests).toHashCode();
+    return new HashCodeBuilder().append(serverInfo).append(messagingGatewayInfo).append(updatesResponse).append(friendsResponse).append(storiesResponse).append(conversationsResponse).append(conversationsResponseInfo).append(discover).append(identityCheckResponse).toHashCode();
+  }
+  
+  public final bio i()
+  {
+    return conversationsResponseInfo;
+  }
+  
+  public final bir j()
+  {
+    return discover;
+  }
+  
+  public final blj k()
+  {
+    return identityCheckResponse;
   }
   
   public String toString()

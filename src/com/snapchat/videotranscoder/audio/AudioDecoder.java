@@ -2,7 +2,7 @@ package com.snapchat.videotranscoder.audio;
 
 import android.media.MediaCodec.BufferInfo;
 import android.media.MediaFormat;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.pipeline.Codec;
 import com.snapchat.videotranscoder.pipeline.Decoder;
 import com.snapchat.videotranscoder.pipeline.Encoder;
@@ -107,7 +107,7 @@ public class AudioDecoder
     mLastTimeStamp = -1L;
   }
   
-  public void setEncoder(@cgb Encoder paramEncoder)
+  public void setEncoder(@chc Encoder paramEncoder)
   {
     mEncoderCodec = paramEncoder.getCodec();
   }

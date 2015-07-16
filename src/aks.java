@@ -1,14 +1,36 @@
+import javax.inject.Provider;
+
 public final class aks
+  implements bvk<akp>
 {
-  public static final int DISCOVER_BLOB = 4;
-  public static final String DISCOVER_SHARE = bij.a.DISCOVER_SHARE_V2.name();
-  public static final int FRIEND_REQUEST = 3;
-  public static final int FRIEND_REQUEST_IMAGE = 4;
-  public static final int FRIEND_REQUEST_VIDEO = 5;
-  public static final int FRIEND_REQUEST_VIDEO_NO_AUDIO = 6;
-  public static final int IMAGE = 0;
-  public static final int VIDEO_AUDIO = 1;
-  public static final int VIDEO_NO_AUDIO = 2;
+  private final Provider<qx> mCashProviderManagerProvider;
+  private final Provider<aze> mSlightlySecurePreferencesProvider;
+  private final Provider<akq> mUserDatabaseLoaderProvider;
+  
+  static
+  {
+    if (!aks.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
+  }
+  
+  private aks(Provider<aze> paramProvider, Provider<qx> paramProvider1, Provider<akq> paramProvider2)
+  {
+    assert (paramProvider != null);
+    mSlightlySecurePreferencesProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mCashProviderManagerProvider = paramProvider1;
+    assert (paramProvider2 != null);
+    mUserDatabaseLoaderProvider = paramProvider2;
+  }
+  
+  public static bvk<akp> a(Provider<aze> paramProvider, Provider<qx> paramProvider1, Provider<akq> paramProvider2)
+  {
+    return new aks(paramProvider, paramProvider1, paramProvider2);
+  }
 }
 
 /* Location:

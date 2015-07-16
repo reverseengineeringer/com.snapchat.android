@@ -1,31 +1,23 @@
-import com.snapchat.android.model.StoryGroup;
-import java.util.List;
-import java.util.Map;
+import android.location.Location;
 
 public final class akv
 {
-  @cgc
-  public List<StoryGroup> group_stories;
-  @cgc
-  public oq.b json;
-  @cgc
-  public Map<String, akv.a> snaps;
-  public boolean success;
+  public static final int LOCATION_CACHE_DISTANCE_MILES = 5;
+  public static final int LOCATION_CACHE_LIFETIME_MILLIS = 1200000;
+  public static final float METERS_PER_MILE = 1609.34F;
+  private final Location mLastLocation;
+  public final String mTempC;
+  public final String mTempF;
+  private final long mTimeLastRequested;
   
-  public final String toString()
+  public akv(als paramals)
   {
-    return "SnapOrStoryDoublePostResponse{success=" + success + ", snaps=" + snaps + ", json=" + json + '}';
-  }
-  
-  public static final class a
-  {
-    public String id;
-    public long timestamp;
-    
-    public final String toString()
-    {
-      return "SnapData{id='" + id + '\'' + ", timestamp=" + timestamp + '}';
-    }
+    mTimeLastRequested = mTimestamp;
+    mTempF = Integer.toString((int)mFahrenheit);
+    mTempC = Integer.toString((int)mCelsius);
+    mLastLocation = new Location("");
+    mLastLocation.setLatitude(mLatitude);
+    mLastLocation.setLongitude(mLongitude);
   }
 }
 

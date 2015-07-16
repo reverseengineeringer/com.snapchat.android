@@ -1,23 +1,15 @@
 package com.snapchat.android.discover.ui.fragment;
 
-import alw;
-import alx;
-import alx.a;
-import java.util.Set;
+import java.util.List;
 
 final class DiscoverFragment$5
-  implements alw
+  implements Runnable
 {
-  DiscoverFragment$5(DiscoverFragment paramDiscoverFragment) {}
+  DiscoverFragment$5(DiscoverFragment paramDiscoverFragment, List paramList) {}
   
-  public final boolean a(alx.a parama)
+  public final void run()
   {
-    return alx.g.contains(c);
-  }
-  
-  public final boolean b(alx.a parama)
-  {
-    return false;
+    DiscoverFragment.a(b, a);
   }
 }
 

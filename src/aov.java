@@ -1,40 +1,18 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import javax.validation.constraints.NotNull;
-
 public final class aov
+  extends aou
 {
-  public final bjh a;
-  public boolean b = false;
-  private final List<bjj> c;
-  private final List<bjj> d = new ArrayList();
+  public static aov a;
   
-  public aov(@NotNull bjh parambjh, @NotNull List<bjj> paramList)
+  public final void a(String paramString1, String paramString2)
   {
-    a = parambjh;
-    c = paramList;
-    b();
+    b = new aow(paramString1, paramString2);
+    aot.a().a(b);
   }
   
-  private void b()
+  public final void a(String paramString1, boolean paramBoolean1, double paramDouble, String paramString2, String paramString3, String paramString4, mj parammj, boolean paramBoolean2, String paramString5, int paramInt)
   {
-    Iterator localIterator = c.iterator();
-    while (localIterator.hasNext())
-    {
-      bjj localbjj = (bjj)localIterator.next();
-      if (aud.a(localbjj.b())) {
-        d.add(localbjj);
-      }
-    }
-  }
-  
-  public final List<bjj> a()
-  {
-    if (b) {
-      return d;
-    }
-    return c;
+    b = new aow(paramString1, paramBoolean1, paramDouble, System.currentTimeMillis(), -1L, paramString2, paramString3, paramString4, parammj, paramBoolean2, paramString5, paramInt);
+    aot.a().a(b);
   }
 }
 

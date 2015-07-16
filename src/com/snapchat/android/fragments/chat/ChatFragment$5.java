@@ -1,11 +1,11 @@
 package com.snapchat.android.fragments.chat;
 
-import afr;
+import agr;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.snapchat.android.model.chat.ChatConversation;
 import java.util.List;
-import td;
+import tt;
 
 final class ChatFragment$5
   implements View.OnClickListener

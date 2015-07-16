@@ -73,14 +73,14 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 44
-    const v1, 0x7f040094
+    const v1, 0x7f040096
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 46
-    const v0, 0x7f0a033a
+    const v0, 0x7f0a0339
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SendToBottomPanelView;->findViewById(I)Landroid/view/View;
 
@@ -91,7 +91,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/SendToBottomPanelView;->d:Landroid/widget/ImageView;
 
     .line 47
-    const v0, 0x7f0a033b
+    const v0, 0x7f0a033a
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SendToBottomPanelView;->findViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/SendToBottomPanelView;->e:Landroid/widget/HorizontalScrollView;
 
     .line 48
-    const v0, 0x7f0a033c
+    const v0, 0x7f0a033b
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SendToBottomPanelView;->findViewById(I)Landroid/view/View;
 
@@ -113,7 +113,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/SendToBottomPanelView;->f:Landroid/widget/LinearLayout;
 
     .line 49
-    const v0, 0x7f0a033d
+    const v0, 0x7f0a033c
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SendToBottomPanelView;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +124,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/SendToBottomPanelView;->a:Landroid/widget/TextView;
 
     .line 50
-    const v0, 0x7f0a033e
+    const v0, 0x7f0a033d
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SendToBottomPanelView;->findViewById(I)Landroid/view/View;
 
@@ -214,7 +214,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v1, v2}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v1
 

@@ -112,16 +112,16 @@
 
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/FatCaptionEditText$3;->a:Lcom/snapchat/android/ui/caption/FatCaptionEditText;
 
-    iget-object v0, v0, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->c:Laps;
+    iget-object v0, v0, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->c:Laqr;
 
     if-eqz v0, :cond_3
 
     .line 157
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/FatCaptionEditText$3;->a:Lcom/snapchat/android/ui/caption/FatCaptionEditText;
 
-    iget-object v0, v0, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->c:Laps;
+    iget-object v0, v0, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->c:Laqr;
 
-    invoke-interface {v0, v2}, Laps;->a(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Laqr;->a(Ljava/lang/String;)V
 
     .line 159
     :cond_3
@@ -145,15 +145,15 @@
     if-nez v0, :cond_0
 
     .line 163
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbaw;
+    new-instance v1, Lbbx;
 
     const/4 v2, -0x1
 
-    invoke-direct {v1, v2}, Lbaw;-><init>(I)V
+    invoke-direct {v1, v2}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

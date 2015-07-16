@@ -1,8 +1,8 @@
 package com.snapchat.android.analytics.framework;
 
 import android.content.Context;
-import ls;
-import lt;
+import mk;
+import ml;
 
 public class ScAnalyticsEventEngine
 {
@@ -18,14 +18,14 @@ public class ScAnalyticsEventEngine
     ScAnalyticsEventEngineStatic.a(paramContext, paramUserPropertiesInterface);
   }
   
-  public static void a(ls paramls)
+  public static void a(mk parammk)
   {
-    ScAnalyticsEventEngineStatic.a(paramls);
+    ScAnalyticsEventEngineStatic.a(parammk);
   }
   
-  public static void a(lt paramlt)
+  public static void a(ml paramml)
   {
-    ScAnalyticsEventEngineStatic.a(paramlt);
+    ScAnalyticsEventEngineStatic.a(paramml);
   }
   
   public static void b() {}

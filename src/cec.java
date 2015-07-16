@@ -1,33 +1,11 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-public final class cec
-{
-  public static Executor a;
-  private static Executor b;
-  private static final List<Object> c = new ArrayList();
-  
-  static
-  {
-    ScheduledExecutorService localScheduledExecutorService = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors() * 2);
-    a = localScheduledExecutorService;
-    b = localScheduledExecutorService;
-  }
-  
-  public static void a(Runnable paramRunnable)
-  {
-    if ((b instanceof ExecutorService))
-    {
-      ((ExecutorService)b).submit(paramRunnable);
-      return;
-    }
-    b.execute(paramRunnable);
-  }
-}
+@Retention(RetentionPolicy.CLASS)
+@Target({java.lang.annotation.ElementType.FIELD})
+public @interface cec {}
 
 /* Location:
  * Qualified Name:     cec

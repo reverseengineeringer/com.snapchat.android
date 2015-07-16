@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 322
+    .line 342
     iput-object p1, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$3;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 325
+    .line 345
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$3;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/signup/LoginFragment;->a(Lcom/snapchat/android/fragments/signup/LoginFragment;)Landroid/widget/EditText;
@@ -51,11 +51,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 326
+    .line 346
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$3;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/signup/LoginFragment;->e(Lcom/snapchat/android/fragments/signup/LoginFragment;)V
 
-    .line 327
+    .line 347
     return-void
 .end method

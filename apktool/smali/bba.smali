@@ -1,15 +1,17 @@
-.class public final Lbba;
+.class public interface abstract Lbba;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# virtual methods
+.method public abstract a(Lcom/snapchat/android/analytics/framework/EasyMetric;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+.end method
 
-    .prologue
-    .line 6
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract a(J)V
+.end method
 
-    return-void
+.method public varargs abstract a([Ljava/lang/String;)V
+.end method
+
+.method public varargs abstract b([Ljava/lang/String;)V
 .end method

@@ -1,21 +1,31 @@
-import com.snapchat.android.discover.model.DSnapPage;
+import javax.inject.Provider;
 
 public final class acl
-  extends acj
+  implements bvk<ack>
 {
-  private final String a;
+  private final Provider<aum> b;
   
-  public acl(String paramString)
+  static
   {
-    a = paramString;
+    if (!acl.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
   }
   
-  public final boolean a(@cgb DSnapPage paramDSnapPage)
+  private acl(Provider<aum> paramProvider)
   {
-    if (super.a(paramDSnapPage)) {
-      return g.equals(a);
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
     }
-    return false;
+    b = paramProvider;
+  }
+  
+  public static bvk<ack> a(Provider<aum> paramProvider)
+  {
+    return new acl(paramProvider);
   }
 }
 

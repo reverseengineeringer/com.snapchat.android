@@ -49,7 +49,7 @@
 
     iget-object v3, p0, Lcom/snapchat/android/SnapkidzSettingsActivity$5;->a:Lcom/snapchat/android/SnapkidzSettingsActivity;
 
-    const v4, 0x7f0c02e2
+    const v4, 0x7f0c02e0
 
     invoke-virtual {v3, v4}, Lcom/snapchat/android/SnapkidzSettingsActivity;->getString(I)Ljava/lang/String;
 

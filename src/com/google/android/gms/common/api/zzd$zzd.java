@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import java.lang.ref.WeakReference;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 class zzd$zzd
   extends BroadcastReceiver
@@ -18,6 +20,8 @@ class zzd$zzd
   
   public void onReceive(Context paramContext, Intent paramIntent)
   {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     paramIntent = paramIntent.getData();
     paramContext = null;
     if (paramIntent != null) {

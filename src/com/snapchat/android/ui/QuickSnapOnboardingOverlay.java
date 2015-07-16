@@ -37,16 +37,16 @@ public class QuickSnapOnboardingOverlay
   public QuickSnapOnboardingOverlay(Context paramContext)
   {
     super(paramContext);
-    View localView = ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968716, this, true);
+    View localView = ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968718, this, true);
     if (localView == null) {
       throw new NullPointerException();
     }
     localView.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
     if (a == -1) {
-      a = paramContext.getResources().getColor(2131230790);
+      a = paramContext.getResources().getColor(2131230791);
     }
-    c = ((FrameLayout)findViewById(2131362579));
-    d = ((FrameLayout)findViewById(2131362580));
+    c = ((FrameLayout)findViewById(2131362578));
+    d = ((FrameLayout)findViewById(2131362579));
     b = new Handler();
   }
   

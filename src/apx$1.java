@@ -1,28 +1,12 @@
-import com.snapchat.android.model.StoryGroup;
-import com.snapchat.android.model.StoryGroup.ActionState;
-import com.snapchat.android.util.AlertDialogUtils.YesNoOption;
-import com.snapchat.android.util.AlertDialogUtils.a;
+import android.graphics.Bitmap;
+import android.support.v4.util.LruCache;
 
-public final class apx$1
-  implements AlertDialogUtils.a
+final class apx$1
+  extends LruCache<String, Bitmap>
 {
-  public apx$1(apx paramapx) {}
-  
-  public final void a(AlertDialogUtils.YesNoOption paramYesNoOption)
+  apx$1(int paramInt)
   {
-    switch (apx.4.a[paramYesNoOption.ordinal()])
-    {
-    default: 
-      throw new IllegalStateException("Illegal dialog option");
-    case 1: 
-      ajx.aI();
-      a.a();
-      return;
-    case 2: 
-      a.a();
-      return;
-    }
-    a.b.a(StoryGroup.ActionState.READY);
+    super(paramInt);
   }
 }
 

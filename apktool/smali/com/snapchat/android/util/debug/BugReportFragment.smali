@@ -616,17 +616,17 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 5
     .param p2    # Landroid/view/ViewGroup;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Landroid/os/Bundle;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
     .line 90
-    const v0, 0x7f040010
+    const v0, 0x7f040011
 
     const/4 v1, 0x0
 

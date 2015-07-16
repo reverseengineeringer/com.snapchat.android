@@ -1,9 +1,9 @@
 package com.snapchat.android.ui;
 
-import aji;
+import ake;
 import android.content.Context;
 import android.util.AttributeSet;
-import cgb;
+import chc;
 import com.snapchat.android.model.Snap;
 import com.snapchat.android.model.Snap.ClientSnapStatus;
 import com.snapchat.android.model.chat.ChatFeedItem.a;
@@ -16,25 +16,25 @@ public class ChatFragmentSnapIconView
     super(paramContext, paramAttributeSet);
   }
   
-  public void setDisplayedIcon(@cgb Snap paramSnap)
+  public void setDisplayedIcon(@chc Snap paramSnap)
   {
     c = Long.MIN_VALUE;
-    Snap.ClientSnapStatus localClientSnapStatus = paramSnap.ah();
+    Snap.ClientSnapStatus localClientSnapStatus = paramSnap.af();
     if (localClientSnapStatus == Snap.ClientSnapStatus.SENT_AND_SCREENSHOTTED) {
-      if ((paramSnap instanceof aji))
+      if ((paramSnap instanceof ake))
       {
-        i = paramSnap.ae();
+        i = paramSnap.ac();
         setIconResources(i, i);
       }
     }
     do
     {
       return;
-      i = paramSnap.ad();
+      i = paramSnap.ab();
       break;
       if (localClientSnapStatus == Snap.ClientSnapStatus.SENT_AND_REPLAYED_AND_SCREENSHOTTED)
       {
-        i = paramSnap.af();
+        i = paramSnap.ad();
         setIconResources(i, i);
         return;
       }

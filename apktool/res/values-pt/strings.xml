@@ -262,7 +262,6 @@ para enviar para um amigo."</string>
     <string name="discover_sharing_success">Snap enviado!</string>
     <string name="discover_sharing_unavailable">%1$s não permite o envio deste Snap.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Toque aqui para conferir Descoberta!</string>
     <string name="discover_unavailable">Sinto muito! Descoberta não está disponível no momento.</string>
     <string name="discover_unavailable_for_device">"Sinto muito!
 
@@ -308,6 +307,7 @@ para enviar para um amigo."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Esqueceu sua senha?</a>" "</string>
     <string name="friend_suggest_hide">Ocultar</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Novo contato</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Adicionado(s) recentemente</string>
     <string name="friends">Amigos</string>
     <string name="friends_context_block">Bloquear</string>
@@ -615,7 +615,7 @@ Leia nossa "<a href="http://www.snapchat.com/privacy">Política de Privacidade</
     <string name="snap_delete_failure">Falha ao excluir Snap.</string>
     <string name="snap_failed_to_post">Falha na postagem de 1 Snap.</string>
     <string name="snap_list_empty_list_msg">Você não tem nenhum Snap :(</string>
-    <string name="snap_tag_help_description">Snapchatters podem lhe adicionar apontando a câmera em seu fantasma e pressionando a tela.</string>
+    <string name="snap_tag_help_description">Os Snapchatters podem lhe adicionar apontando a câmera para seu Snapcode e tocando a tela!</string>
     <string name="snap_tag_no_connection">Sem conexão!</string>
     <string name="snap_to_add">Faça um Snap ou um screenshot para adicionar</string>
     <string name="snapkidz_welcome">Bem-vindo ao Snapkidz!</string>
@@ -651,8 +651,6 @@ Leia nossa "<a href="http://www.snapchat.com/privacy">Política de Privacidade</
     <string name="tap_to_view_edition">Toque para ver no Discover</string>
     <string name="tap_to_view_full_story">Toque para ver a história completa</string>
     <string name="tap_to_view_more">Toque para explorar outros canais</string>
-    <string name="tap_to_view_snaps">Toque para visualizar os Snaps!</string>
-    <string name="tap_to_view_stories">Toque para visualizar as Histórias!</string>
     <string name="tap_to_view_video_in_discover">Toque para ver este video no Discover</string>
     <string name="too_many_attempts">Muitas tentativas.</string>
     <string name="tos_accept">ACEITAR</string>

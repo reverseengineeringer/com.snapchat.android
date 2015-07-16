@@ -1,11 +1,11 @@
 package com.snapchat.android.analytics.framework;
 
-import ls;
+import mk;
 
 final class ScAnalyticsEventEngineStatic$1
   implements Runnable
 {
-  ScAnalyticsEventEngineStatic$1(ls paramls, long paramLong) {}
+  ScAnalyticsEventEngineStatic$1(mk parammk, long paramLong) {}
   
   public final void run()
   {

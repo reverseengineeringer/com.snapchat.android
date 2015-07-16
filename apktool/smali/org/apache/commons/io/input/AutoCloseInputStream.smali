@@ -62,8 +62,5 @@
     invoke-virtual {p0}, Lorg/apache/commons/io/input/AutoCloseInputStream;->close()V
 
     .line 90
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    .line 91
     return-void
 .end method

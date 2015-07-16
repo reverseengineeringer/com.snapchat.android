@@ -1,16 +1,4 @@
-public final class nv
-  extends Exception
-{
-  public nv(@cgb String paramString)
-  {
-    super(paramString);
-  }
-  
-  public nv(@cgb String paramString, @cgb Exception paramException)
-  {
-    super(paramString, paramException);
-  }
-}
+public final class nv {}
 
 /* Location:
  * Qualified Name:     nv

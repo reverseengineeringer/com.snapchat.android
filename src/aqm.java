@@ -1,29 +1,36 @@
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.j;
+import android.annotation.TargetApi;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationSet;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
 
 public final class aqm
-  extends RecyclerView.j
+  extends AnimationSet
 {
-  private final baa a;
-  private final String b;
+  private final View a;
   
-  public aqm(baa parambaa, String paramString)
+  public aqm(View paramView)
   {
-    a = parambaa;
-    b = paramString;
+    super(true);
+    a = paramView;
   }
   
-  public final void a(RecyclerView paramRecyclerView, int paramInt)
+  public static ScaleAnimation a()
   {
-    if (paramInt == 0)
-    {
-      a.a(b, true);
-      return;
-    }
-    a.mDeferPause = true;
+    ScaleAnimation localScaleAnimation = new ScaleAnimation(1.6F, 1.3F, 1.6F, 1.3F);
+    localScaleAnimation.setDuration(100L);
+    return localScaleAnimation;
   }
   
-  public final void a(RecyclerView paramRecyclerView, int paramInt1, int paramInt2) {}
+  public static TranslateAnimation a(int paramInt)
+  {
+    float f = paramInt * 1.6F - paramInt * 1.3F;
+    TranslateAnimation localTranslateAnimation = new TranslateAnimation(0.0F, f / 2.0F, 0.0F, f / 2.0F);
+    localTranslateAnimation.setDuration(100L);
+    return localTranslateAnimation;
+  }
 }
 
 /* Location:

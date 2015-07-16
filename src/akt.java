@@ -1,17 +1,36 @@
-import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
+import android.util.Pair;
 
 public final class akt
 {
-  @SerializedName("gae_proxy_directory_list")
-  @cgc
-  private ArrayList<String> mDirectoryUrls;
-  @SerializedName("gae_proxy_list")
-  @cgc
-  private ArrayList<ajd> mProxies;
-  @SerializedName("gae_proxy_list_version")
-  @cgc
-  private long mVersion;
+  private final Pair<String, String> pair;
+  
+  public akt(String paramString1, String paramString2)
+  {
+    pair = new Pair(paramString1, paramString2);
+  }
+  
+  public final String a()
+  {
+    return (String)pair.first;
+  }
+  
+  public final String b()
+  {
+    return (String)pair.second;
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if ((paramObject instanceof akt)) {
+      return pair.equals(pair);
+    }
+    return false;
+  }
+  
+  public final int hashCode()
+  {
+    return pair.hashCode();
+  }
 }
 
 /* Location:

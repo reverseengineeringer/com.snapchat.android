@@ -4,78 +4,102 @@
 
 
 # instance fields
-.field protected background:Ljava/lang/String;
+.field protected dsnapsData:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "background"
-    .end annotation
-.end field
-
-.field protected backgroundType:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "background_type"
-    .end annotation
-.end field
-
-.field protected docking:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "docking"
-    .end annotation
-.end field
-
-.field protected file:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "file"
-    .end annotation
-.end field
-
-.field protected images:Ljava/util/List;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "images"
+        value = "dsnaps_data"
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
             "<",
-            "Ljava/lang/String;",
+            "Lbkw;",
             ">;"
         }
     .end annotation
 .end field
 
-.field protected mode:Ljava/lang/String;
+.field protected editionId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "mode"
+        value = "edition_id"
     .end annotation
 .end field
 
-.field protected overlay:Ljava/lang/String;
+.field protected filledIcon:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "overlay"
+        value = "filled_icon"
     .end annotation
 .end field
 
-.field protected sponsoredOverlay:Ljava/lang/String;
+.field protected introMovie:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "sponsored_overlay"
+        value = "intro_movie"
     .end annotation
 .end field
 
-.field protected videoFirstFrame:Ljava/lang/String;
+.field protected introVideoAdMetadata:Lbhv;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "video_first_frame"
+        value = "intro_video_ad_metadata"
     .end annotation
 .end field
 
-.field protected videoId:Ljava/lang/String;
+.field protected invertedIcon:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "video_id"
+        value = "inverted_icon"
     .end annotation
 .end field
 
-.field protected zIndex:Ljava/lang/Integer;
+.field protected loadingIcon:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "z_index"
+        value = "loading_icon"
+    .end annotation
+.end field
+
+.field protected name:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "name"
+    .end annotation
+.end field
+
+.field protected position:Ljava/lang/Integer;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "position"
+    .end annotation
+.end field
+
+.field protected primaryColor:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "primary_color"
+    .end annotation
+.end field
+
+.field protected promotedStoriesPagePosition:Ljava/lang/Integer;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "promoted_stories_page_position"
+    .end annotation
+.end field
+
+.field protected publisherFormalName:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "publisher_formal_name"
+    .end annotation
+.end field
+
+.field protected publisherName:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "publisher_name"
+    .end annotation
+.end field
+
+.field protected secondaryColor:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "secondary_color"
+    .end annotation
+.end field
+
+.field protected storiesPagePosition:Ljava/lang/Integer;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "stories_page_position"
     .end annotation
 .end field
 
@@ -85,7 +109,7 @@
     .locals 0
 
     .prologue
-    .line 17
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -97,28 +121,28 @@
     .locals 1
 
     .prologue
-    .line 63
-    iget-object v0, p0, Lbkv;->file:Ljava/lang/String;
+    .line 77
+    iget-object v0, p0, Lbkv;->name:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final b()Ljava/lang/String;
+.method public final b()Ljava/lang/Integer;
     .locals 1
 
     .prologue
-    .line 99
-    iget-object v0, p0, Lbkv;->background:Ljava/lang/String;
+    .line 113
+    iget-object v0, p0, Lbkv;->storiesPagePosition:Ljava/lang/Integer;
 
     return-object v0
 .end method
 
-.method public final c()Ljava/lang/String;
+.method public final c()Ljava/lang/Integer;
     .locals 1
 
     .prologue
-    .line 117
-    iget-object v0, p0, Lbkv;->backgroundType:Ljava/lang/String;
+    .line 131
+    iget-object v0, p0, Lbkv;->promotedStoriesPagePosition:Ljava/lang/Integer;
 
     return-object v0
 .end method
@@ -127,8 +151,8 @@
     .locals 1
 
     .prologue
-    .line 135
-    iget-object v0, p0, Lbkv;->overlay:Ljava/lang/String;
+    .line 149
+    iget-object v0, p0, Lbkv;->publisherName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -137,8 +161,8 @@
     .locals 1
 
     .prologue
-    .line 153
-    iget-object v0, p0, Lbkv;->videoId:Ljava/lang/String;
+    .line 167
+    iget-object v0, p0, Lbkv;->publisherFormalName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -147,119 +171,151 @@
     .locals 3
 
     .prologue
-    .line 274
+    .line 364
     if-ne p1, p0, :cond_0
 
-    .line 275
+    .line 365
     const/4 v0, 0x1
 
-    .line 281
+    .line 371
     :goto_0
     return v0
 
-    .line 277
+    .line 367
     :cond_0
     instance-of v0, p1, Lbkv;
 
     if-nez v0, :cond_1
 
-    .line 278
+    .line 368
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 280
+    .line 370
     :cond_1
     check-cast p1, Lbkv;
 
-    .line 281
+    .line 371
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkv;->file:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->name:Ljava/lang/String;
 
-    iget-object v2, p1, Lbkv;->file:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkv;->images:Ljava/util/List;
-
-    iget-object v2, p1, Lbkv;->images:Ljava/util/List;
+    iget-object v2, p1, Lbkv;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->background:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->position:Ljava/lang/Integer;
 
-    iget-object v2, p1, Lbkv;->background:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkv;->backgroundType:Ljava/lang/String;
-
-    iget-object v2, p1, Lbkv;->backgroundType:Ljava/lang/String;
+    iget-object v2, p1, Lbkv;->position:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->overlay:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->storiesPagePosition:Ljava/lang/Integer;
 
-    iget-object v2, p1, Lbkv;->overlay:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkv;->videoId:Ljava/lang/String;
-
-    iget-object v2, p1, Lbkv;->videoId:Ljava/lang/String;
+    iget-object v2, p1, Lbkv;->storiesPagePosition:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->mode:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->promotedStoriesPagePosition:Ljava/lang/Integer;
 
-    iget-object v2, p1, Lbkv;->mode:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkv;->docking:Ljava/lang/String;
-
-    iget-object v2, p1, Lbkv;->docking:Ljava/lang/String;
+    iget-object v2, p1, Lbkv;->promotedStoriesPagePosition:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->sponsoredOverlay:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->publisherName:Ljava/lang/String;
 
-    iget-object v2, p1, Lbkv;->sponsoredOverlay:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkv;->videoFirstFrame:Ljava/lang/String;
-
-    iget-object v2, p1, Lbkv;->videoFirstFrame:Ljava/lang/String;
+    iget-object v2, p1, Lbkv;->publisherName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->zIndex:Ljava/lang/Integer;
+    iget-object v1, p0, Lbkv;->publisherFormalName:Ljava/lang/String;
 
-    iget-object v2, p1, Lbkv;->zIndex:Ljava/lang/Integer;
+    iget-object v2, p1, Lbkv;->publisherFormalName:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->filledIcon:Ljava/lang/String;
+
+    iget-object v2, p1, Lbkv;->filledIcon:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->invertedIcon:Ljava/lang/String;
+
+    iget-object v2, p1, Lbkv;->invertedIcon:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->loadingIcon:Ljava/lang/String;
+
+    iget-object v2, p1, Lbkv;->loadingIcon:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->introMovie:Ljava/lang/String;
+
+    iget-object v2, p1, Lbkv;->introMovie:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->primaryColor:Ljava/lang/String;
+
+    iget-object v2, p1, Lbkv;->primaryColor:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->secondaryColor:Ljava/lang/String;
+
+    iget-object v2, p1, Lbkv;->secondaryColor:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->editionId:Ljava/lang/String;
+
+    iget-object v2, p1, Lbkv;->editionId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->dsnapsData:Ljava/util/List;
+
+    iget-object v2, p1, Lbkv;->dsnapsData:Ljava/util/List;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->introVideoAdMetadata:Lbhv;
+
+    iget-object v2, p1, Lbkv;->introVideoAdMetadata:Lbhv;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -269,15 +325,15 @@
 
     move-result v0
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method public final f()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 171
-    iget-object v0, p0, Lbkv;->mode:Ljava/lang/String;
+    .line 185
+    iget-object v0, p0, Lbkv;->filledIcon:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -286,8 +342,8 @@
     .locals 1
 
     .prologue
-    .line 189
-    iget-object v0, p0, Lbkv;->docking:Ljava/lang/String;
+    .line 203
+    iget-object v0, p0, Lbkv;->invertedIcon:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -296,8 +352,8 @@
     .locals 1
 
     .prologue
-    .line 225
-    iget-object v0, p0, Lbkv;->videoFirstFrame:Ljava/lang/String;
+    .line 221
+    iget-object v0, p0, Lbkv;->loadingIcon:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -306,72 +362,96 @@
     .locals 2
 
     .prologue
-    .line 257
+    .line 343
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkv;->file:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->images:Ljava/util/List;
+    iget-object v1, p0, Lbkv;->position:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->background:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->storiesPagePosition:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->backgroundType:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->promotedStoriesPagePosition:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->overlay:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->publisherName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->videoId:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->publisherFormalName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->mode:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->filledIcon:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->docking:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->invertedIcon:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->sponsoredOverlay:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->loadingIcon:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->videoFirstFrame:Ljava/lang/String;
+    iget-object v1, p0, Lbkv;->introMovie:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkv;->zIndex:Ljava/lang/Integer;
+    iget-object v1, p0, Lbkv;->primaryColor:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->secondaryColor:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->editionId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->dsnapsData:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkv;->introVideoAdMetadata:Lbhv;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -384,12 +464,71 @@
     return v0
 .end method
 
-.method public final i()Ljava/lang/Integer;
+.method public final i()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 243
-    iget-object v0, p0, Lbkv;->zIndex:Ljava/lang/Integer;
+    .line 239
+    iget-object v0, p0, Lbkv;->introMovie:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final j()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 257
+    iget-object v0, p0, Lbkv;->primaryColor:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final k()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 275
+    iget-object v0, p0, Lbkv;->secondaryColor:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final l()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 293
+    iget-object v0, p0, Lbkv;->editionId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final m()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lbkw;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 311
+    iget-object v0, p0, Lbkv;->dsnapsData:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final n()Lbhv;
+    .locals 1
+
+    .prologue
+    .line 329
+    iget-object v0, p0, Lbkv;->introVideoAdMetadata:Lbhv;
 
     return-object v0
 .end method
@@ -398,7 +537,7 @@
     .locals 1
 
     .prologue
-    .line 252
+    .line 338
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

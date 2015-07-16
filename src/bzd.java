@@ -1,18 +1,22 @@
 public final class bzd
-  extends bza
+  implements byh
 {
-  public bzd()
+  public final byl a(bya parambya, String paramString)
   {
-    super("!", 0, (byte)0);
+    try
+    {
+      parambya = new Double(paramString);
+      return new byl(new Long(Math.round(parambya.doubleValue())).toString(), 0);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("Invalid argument.", parambya);
+    }
   }
   
-  public final double a(double paramDouble)
+  public final String a()
   {
-    double d = 1.0D;
-    if (paramDouble == 1.0D) {
-      d = 0.0D;
-    }
-    return d;
+    return "round";
   }
 }
 

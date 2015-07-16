@@ -1,74 +1,60 @@
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.RelativeLayout.LayoutParams;
-import com.snapchat.android.discover.model.DSnapPage;
-import com.snapchat.android.discover.model.DSnapPanel;
-import com.snapchat.android.discover.ui.DSnapView;
+import android.text.TextUtils;
+import com.snapchat.android.discover.model.database.table.ChannelViewDatesTable.a;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public final class adw
-  extends adz
 {
-  private final LayoutInflater d;
-  private ImageView e;
-  private avp f;
+  private static final adw b = new adw();
+  public Map<String, adx> a = new HashMap();
+  private final bhk c;
   
-  public adw(Context paramContext, ady paramady)
+  private adw()
   {
-    this((LayoutInflater)paramContext.getSystemService("layout_inflater"), paramady, new avp(paramContext));
+    this(new bhk());
   }
   
-  private adw(LayoutInflater paramLayoutInflater, ady paramady, avp paramavp)
+  private adw(bhk parambhk)
   {
-    super(paramady);
-    d = paramLayoutInflater;
-    f = paramavp;
+    c = parambhk;
   }
   
-  public final aim a(View paramView, adb paramadb, @cgb List<View> paramList)
+  public static adw a()
   {
-    paramList.add(e);
-    return c.a(paramView, paramadb, paramList);
+    return b;
   }
   
-  public final boolean a(DSnapView paramDSnapView, DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
+  public final int a(List<ChannelViewDatesTable.a> paramList)
   {
-    super.a(paramDSnapView, paramDSnapPage, paramDSnapPanel);
-    a = d.inflate(2130968662, null);
-    b = ((FrameLayout)a.findViewById(2131362293));
-    e = ((ImageView)a.findViewById(2131362297));
-    int i;
-    switch (adw.1.a[d.ordinal()])
-    {
-    default: 
-      i = 10;
+    a.clear();
+    if (paramList.isEmpty()) {
+      return 0;
     }
-    for (;;)
+    Object localObject = null;
+    Iterator localIterator = paramList.iterator();
+    for (paramList = (List<ChannelViewDatesTable.a>)localObject; localIterator.hasNext(); paramList = (List<ChannelViewDatesTable.a>)localObject)
     {
-      paramDSnapView = (RelativeLayout.LayoutParams)e.getLayoutParams();
-      paramDSnapView.addRule(i);
-      e.setLayoutParams(paramDSnapView);
-      paramDSnapView = c + c;
-      paramDSnapPage = new avx.a();
-      mImageView = e;
-      paramDSnapView = paramDSnapPage.a(paramDSnapView);
-      mRequireExactDimensions = true;
-      paramDSnapView = paramDSnapView.a();
-      f.a(paramDSnapView, new avy[0]);
-      return true;
-      i = 12;
-      continue;
-      i = 15;
+      ChannelViewDatesTable.a locala = (ChannelViewDatesTable.a)localIterator.next();
+      if (paramList != null)
+      {
+        localObject = paramList;
+        if (TextUtils.equals(a, a)) {}
+      }
+      else
+      {
+        localObject = new adx(a, b);
+        a.put(a, localObject);
+      }
+      ((adx)localObject).a(new chh(c));
     }
+    return a.size();
   }
   
-  public final void c()
+  public final adx a(String paramString)
   {
-    super.c();
-    f.a(e);
+    return (adx)a.get(paramString);
   }
 }
 

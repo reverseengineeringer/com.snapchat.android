@@ -1,52 +1,83 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.api2.framework.HttpMethod;
+import com.google.gson.annotations.SerializedName;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
+import java.util.TreeMap;
 
-public abstract class tv
-  extends ts
+public abstract class tv<T, E>
 {
-  private static final String TAG = "HyperRequestOperation";
-  public ub mNetworkInterface = mProvider.a();
-  public final UUID mUUID = UUID.randomUUID();
+  private final Class<T> mClazz;
   
-  public void f()
+  public tv(Class<T> paramClass)
   {
-    auh.NETWORK_EXECUTOR.execute(new Runnable()
-    {
-      public final void run()
-      {
-        i();
-      }
-    });
+    mClazz = paramClass;
   }
   
-  @cgb
-  public uc i()
+  @chd
+  private static Object a(@chc Object paramObject, @chc Field paramField)
   {
-    
-    if (ajx.H())
-    {
-      Timber.f("HyperRequestOperation", "Do not send any network request for Snapkidz " + n_(), new Object[0]);
-      return new uc();
-    }
-    String str = n_();
-    Object localObject1 = c();
-    Map localMap = g();
-    bfk localbfk = a_();
-    Object localObject2 = b();
     try
     {
-      localObject1 = mNetworkInterface.a(str, (HttpMethod)localObject1, localMap, localbfk, localObject2);
-      a((uc)localObject1);
-      return (uc)localObject1;
+      paramObject = paramField.get(paramObject);
+      return paramObject;
     }
-    catch (Throwable localThrowable)
+    catch (IllegalAccessException paramObject)
     {
-      throw new RuntimeException("An error occurred while executing request: " + str, localThrowable);
+      throw new RuntimeException((Throwable)paramObject);
     }
   }
+  
+  @chc
+  private Map<String, E> a(@chc Object paramObject, @chc Class paramClass)
+  {
+    Object localObject1 = paramClass.getSuperclass();
+    int i;
+    label33:
+    Object localObject2;
+    SerializedName localSerializedName;
+    if (localObject1 == null)
+    {
+      localObject1 = new TreeMap();
+      Field[] arrayOfField = paramClass.getDeclaredFields();
+      int j = arrayOfField.length;
+      i = 0;
+      if (i >= j) {
+        break label166;
+      }
+      paramClass = arrayOfField[i];
+      if ((mClazz.isAssignableFrom(avb.b(paramClass.getType()))) && (!Modifier.isTransient(paramClass.getModifiers())) && (!paramClass.isSynthetic()))
+      {
+        paramClass.setAccessible(true);
+        localObject2 = a(paramObject, paramClass);
+        if (localObject2 != null)
+        {
+          localSerializedName = (SerializedName)paramClass.getAnnotation(SerializedName.class);
+          if (localSerializedName == null) {
+            break label158;
+          }
+        }
+      }
+    }
+    label158:
+    for (paramClass = localSerializedName.value();; paramClass = paramClass.getName())
+    {
+      ((Map)localObject1).put(paramClass, b(localObject2));
+      i += 1;
+      break label33;
+      localObject1 = a(((Class)localObject1).cast(paramObject), (Class)localObject1);
+      break;
+    }
+    label166:
+    return (Map<String, E>)localObject1;
+  }
+  
+  @chc
+  protected final Map<String, E> a(@chc Object paramObject)
+  {
+    return a(paramObject, paramObject.getClass());
+  }
+  
+  protected abstract E b(@chc Object paramObject);
 }
 
 /* Location:

@@ -5,29 +5,72 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bjh
 {
-  @SerializedName("screenshot_count")
-  protected Integer screenshotCount;
-  @SerializedName("view_count")
-  protected Integer viewCount;
+  @SerializedName("height")
+  protected Integer height;
+  @SerializedName("iv")
+  protected String iv;
+  @SerializedName("key")
+  protected String key;
+  @SerializedName("media_id")
+  protected String mediaId;
+  @SerializedName("media_type")
+  protected String mediaType;
+  @SerializedName("width")
+  protected Integer width;
   
-  public final Integer a()
+  public final bjh a(Integer paramInteger)
   {
-    return viewCount;
+    width = paramInteger;
+    return this;
   }
   
-  public final void a(Integer paramInteger)
+  public final bjh a(String paramString)
   {
-    viewCount = paramInteger;
+    mediaId = paramString;
+    return this;
   }
   
-  public final Integer b()
+  public final String a()
   {
-    return screenshotCount;
+    return mediaId;
   }
   
-  public final void b(Integer paramInteger)
+  public final bjh b(Integer paramInteger)
   {
-    screenshotCount = paramInteger;
+    height = paramInteger;
+    return this;
+  }
+  
+  public final bjh b(String paramString)
+  {
+    key = paramString;
+    return this;
+  }
+  
+  public final String b()
+  {
+    return mediaType;
+  }
+  
+  public final bjh c(String paramString)
+  {
+    iv = paramString;
+    return this;
+  }
+  
+  public final String c()
+  {
+    return key;
+  }
+  
+  public final String d()
+  {
+    return iv;
+  }
+  
+  public final Integer e()
+  {
+    return width;
   }
   
   public final boolean equals(Object paramObject)
@@ -39,12 +82,17 @@ public final class bjh
       return false;
     }
     paramObject = (bjh)paramObject;
-    return new EqualsBuilder().append(viewCount, viewCount).append(screenshotCount, screenshotCount).isEquals();
+    return new EqualsBuilder().append(mediaId, mediaId).append(mediaType, mediaType).append(key, key).append(iv, iv).append(width, width).append(height, height).isEquals();
+  }
+  
+  public final Integer f()
+  {
+    return height;
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(viewCount).append(screenshotCount).toHashCode();
+    return new HashCodeBuilder().append(mediaId).append(mediaType).append(key).append(iv).append(width).append(height).toHashCode();
   }
   
   public final String toString()

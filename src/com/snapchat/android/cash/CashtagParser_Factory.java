@@ -1,23 +1,23 @@
 package com.snapchat.android.cash;
 
-import buo;
-import xu;
+import bvp;
+import yq;
 
 public enum CashtagParser_Factory
-  implements buo<xu>
+  implements bvp<yq>
 {
   INSTANCE;
   
   private CashtagParser_Factory() {}
   
-  public static buo<xu> create()
+  public static bvp<yq> create()
   {
     return INSTANCE;
   }
   
-  public final xu get()
+  public final yq get()
   {
-    return new xu();
+    return new yq();
   }
 }
 

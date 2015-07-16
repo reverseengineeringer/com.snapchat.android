@@ -11,9 +11,9 @@ final class SignupFragment$7
   
   public final void afterTextChanged(Editable paramEditable)
   {
-    SignupFragment.f(a);
-    SignupFragment.j(a);
-    if (!SignupFragment.k(a))
+    SignupFragment.d(a);
+    SignupFragment.h(a);
+    if (!SignupFragment.i(a))
     {
       AnalyticsEvents.t();
       SignupFragment.b(a, true);

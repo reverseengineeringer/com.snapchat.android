@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
+.implements Lbvk;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuj",
+        "Lbvk",
         "<",
-        "Lyo;",
+        "Lyn;",
         ">;"
     }
 .end annotation
@@ -28,7 +28,7 @@
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lya;",
+            "Laze;",
             ">;"
         }
     .end annotation
@@ -69,7 +69,7 @@
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Lya;",
+            "Laze;",
             ">;)V"
         }
     .end annotation
@@ -99,18 +99,18 @@
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;)Lbuj;
+.method public static a(Ljavax/inject/Provider;)Lbvk;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Lya;",
+            "Laze;",
             ">;)",
-            "Lbuj",
+            "Lbvk",
             "<",
-            "Lyo;",
+            "Lyn;",
             ">;"
         }
     .end annotation
@@ -131,7 +131,7 @@
 
     .prologue
     .line 8
-    check-cast p1, Lyo;
+    check-cast p1, Lyn;
 
     if-nez p1, :cond_0
 
@@ -150,9 +150,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lya;
+    check-cast v0, Laze;
 
-    iput-object v0, p1, Lyo;->a:Lya;
+    iput-object v0, p1, Lyn;->a:Laze;
 
     return-void
 .end method

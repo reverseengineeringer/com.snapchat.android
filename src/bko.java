@@ -1,58 +1,33 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bko
-  extends bgy
+public final class bko
 {
-  @SerializedName("action")
-  protected String action;
-  @SerializedName("friend")
-  protected String friend;
-  @SerializedName("friend_id")
-  protected String friendId;
-  @SerializedName("hide")
-  protected Boolean hide;
-  @SerializedName("identity_cell_index")
-  protected Integer identityCellIndex;
-  @SerializedName("seen")
-  protected Boolean seen;
-  @SerializedName("seen_suggested_friend_list")
-  protected List<String> seenSuggestedFriendList;
+  @SerializedName("attribute")
+  protected big attribute;
+  @SerializedName("end")
+  protected Integer end;
+  @SerializedName("start")
+  protected Integer start;
   
-  public final void a(Boolean paramBoolean)
+  public final Integer a()
   {
-    seen = paramBoolean;
+    return start;
   }
   
-  public final void a(Integer paramInteger)
+  public final Integer b()
   {
-    identityCellIndex = paramInteger;
+    return end;
   }
   
-  public final void a(String paramString)
+  public final big c()
   {
-    action = paramString;
+    return attribute;
   }
   
-  public final void a(List<String> paramList)
-  {
-    seenSuggestedFriendList = paramList;
-  }
-  
-  public final void b(Boolean paramBoolean)
-  {
-    hide = paramBoolean;
-  }
-  
-  public final void b(String paramString)
-  {
-    friend = paramString;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -61,15 +36,15 @@ public class bko
       return false;
     }
     paramObject = (bko)paramObject;
-    return new EqualsBuilder().append(action, action).append(seen, seen).append(hide, hide).append(friend, friend).append(friendId, friendId).append(identityCellIndex, identityCellIndex).append(seenSuggestedFriendList, seenSuggestedFriendList).isEquals();
+    return new EqualsBuilder().append(start, start).append(end, end).append(attribute, attribute).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(action).append(seen).append(hide).append(friend).append(friendId).append(identityCellIndex).append(seenSuggestedFriendList).toHashCode();
+    return new HashCodeBuilder().append(start).append(end).append(attribute).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

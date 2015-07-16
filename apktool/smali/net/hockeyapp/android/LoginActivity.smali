@@ -13,7 +13,7 @@
 
 .field private c:I
 
-.field private d:Lbwa;
+.field private d:Lbxb;
 
 .field private e:Landroid/os/Handler;
 
@@ -244,7 +244,7 @@
     :goto_2
     if-eqz v0, :cond_3
 
-    new-instance v0, Lbwa;
+    new-instance v0, Lbxb;
 
     iget-object v2, p0, Lnet/hockeyapp/android/LoginActivity;->e:Landroid/os/Handler;
 
@@ -254,13 +254,13 @@
 
     move-object v1, p0
 
-    invoke-direct/range {v0 .. v5}, Lbwa;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;ILjava/util/Map;)V
+    invoke-direct/range {v0 .. v5}, Lbxb;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;ILjava/util/Map;)V
 
-    iput-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbwa;
+    iput-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbxb;
 
-    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbwa;
+    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbxb;
 
-    invoke-static {v0}, Lbwd;->a(Landroid/os/AsyncTask;)V
+    invoke-static {v0}, Lbxe;->a(Landroid/os/AsyncTask;)V
 
     goto :goto_0
 
@@ -309,7 +309,7 @@
     :cond_3
     const/16 v0, 0x501
 
-    invoke-static {v0}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v0}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -341,6 +341,18 @@
     .locals 2
 
     .prologue
+    invoke-virtual {p0}, Lnet/hockeyapp/android/LoginActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lnet/hockeyapp/android/LoginActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 85
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -437,18 +449,18 @@
     if-eqz v0, :cond_2
 
     .line 101
-    check-cast v0, Lbwa;
+    check-cast v0, Lbxb;
 
-    iput-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbwa;
+    iput-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbxb;
 
     .line 102
-    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbwa;
+    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbxb;
 
     iget-object v1, p0, Lnet/hockeyapp/android/LoginActivity;->e:Landroid/os/Handler;
 
-    iput-object p0, v0, Lbwa;->a:Landroid/content/Context;
+    iput-object p0, v0, Lbxb;->a:Landroid/content/Context;
 
-    iput-object v1, v0, Lbwa;->b:Landroid/os/Handler;
+    iput-object v1, v0, Lbxb;->b:Landroid/os/Handler;
 
     .line 104
     :cond_2
@@ -467,14 +479,14 @@
     if-ne p1, v1, :cond_0
 
     .line 202
-    sget-object v1, Lbvf;->b:Lbvg;
+    sget-object v1, Lbwg;->b:Lbwh;
 
     if-nez v1, :cond_0
 
     .line 203
     new-instance v1, Landroid/content/Intent;
 
-    sget-object v2, Lbvf;->a:Ljava/lang/Class;
+    sget-object v2, Lbwg;->a:Ljava/lang/Class;
 
     invoke-direct {v1, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
@@ -510,22 +522,22 @@
     const/4 v1, 0x0
 
     .line 226
-    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbwa;
+    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbxb;
 
     if-eqz v0, :cond_0
 
     .line 227
-    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbwa;
+    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbxb;
 
-    iput-object v1, v0, Lbwa;->a:Landroid/content/Context;
+    iput-object v1, v0, Lbxb;->a:Landroid/content/Context;
 
-    iput-object v1, v0, Lbwa;->b:Landroid/os/Handler;
+    iput-object v1, v0, Lbxb;->b:Landroid/os/Handler;
 
-    iput-object v1, v0, Lbwa;->c:Landroid/app/ProgressDialog;
+    iput-object v1, v0, Lbxb;->c:Landroid/app/ProgressDialog;
 
     .line 230
     :cond_0
-    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbwa;
+    iget-object v0, p0, Lnet/hockeyapp/android/LoginActivity;->d:Lbxb;
 
     return-object v0
 .end method

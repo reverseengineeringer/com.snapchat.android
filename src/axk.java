@@ -1,68 +1,36 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.ErrorMetric;
-import java.io.BufferedInputStream;
-import java.io.Closeable;
-import java.io.DataInputStream;
-import java.io.InputStream;
-import org.apache.commons.io.Charsets;
+import android.content.ContentResolver;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory.Options;
+import com.snapchat.android.util.debug.ReleaseManager;
 
 public final class axk
-  implements Closeable
+  implements axf
 {
-  protected static final String BAD_LENGTH_EXCEPTION_MESSAGE_PREFIX = "Server sent a message with a bad length: ";
-  private static final int INITIAL_BUFFER_CAPACITY = 1024;
-  protected static final int SSL_PACKET_MAX_LENGTH = 900000;
-  private static final String TAG = "SCMessageInputStream";
-  byte[] buffer = new byte['Ѐ'];
-  private final ato mGson;
-  private final DataInputStream mInputStream;
+  private final int mResourceId;
+  private Resources mResources;
   
-  public axk(InputStream paramInputStream, ato paramato)
+  public axk(int paramInt)
   {
-    mInputStream = new DataInputStream(new BufferedInputStream(paramInputStream));
-    mGson = paramato;
+    mResourceId = paramInt;
   }
   
-  public final bii a()
+  public final Bitmap a(BitmapFactory.Options paramOptions)
   {
-    int i = mInputStream.readInt();
-    if ((i <= 0) || (i > 900000))
+    if (mResources == null)
     {
-      Timber.g("SCMessageInputStream", "CHAT-LOG: SCMessageInputStream RECEIVED INVALID SSL PACKET LENGTH " + i, new Object[0]);
-      new ErrorMetric("INVALID_SSL_PACKET_RECEIVED").a("PACKET_LENGTH", Integer.valueOf(i)).d();
-      throw new RuntimeException("Server sent a message with a bad length: " + i);
-    }
-    if (buffer.length < i) {}
-    try
-    {
-      buffer = new byte[i];
-      mInputStream.readFully(buffer, 0, i);
-      String str = new String(buffer, 0, i, Charsets.UTF_8);
-      localbii = (bii)mGson.a(str, bii.class);
-      if (localbii == null) {
-        throw new RuntimeException("Unexpected message contents which parsed as null: " + str);
+      if (ReleaseManager.e()) {
+        throw new IllegalStateException("Cannot decode bitmap without calling prepare!");
       }
+      return null;
     }
-    catch (OutOfMemoryError localOutOfMemoryError)
-    {
-      bii localbii;
-      for (;;)
-      {
-        System.gc();
-        buffer = new byte[i];
-      }
-      Class localClass = asz.a(localbii.j());
-      if (localClass == null) {
-        throw new RuntimeException("Unexpected message type " + localbii.i() + " from contents: " + localOutOfMemoryError);
-      }
-      return (bii)mGson.a(localOutOfMemoryError, localClass);
-    }
+    return BitmapFactory.decodeResource(mResources, mResourceId, paramOptions);
   }
   
-  public final void close()
+  public final void a(ContentResolver paramContentResolver, Resources paramResources)
   {
-    mInputStream.close();
+    mResources = paramResources;
   }
 }
 

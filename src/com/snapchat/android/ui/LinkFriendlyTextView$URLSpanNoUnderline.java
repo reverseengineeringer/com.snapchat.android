@@ -2,7 +2,7 @@ package com.snapchat.android.ui;
 
 import android.text.TextPaint;
 import android.text.style.URLSpan;
-import cgb;
+import chc;
 
 class LinkFriendlyTextView$URLSpanNoUnderline
   extends URLSpan
@@ -12,7 +12,7 @@ class LinkFriendlyTextView$URLSpanNoUnderline
     super(paramString);
   }
   
-  public void updateDrawState(@cgb TextPaint paramTextPaint)
+  public void updateDrawState(@chc TextPaint paramTextPaint)
   {
     super.updateDrawState(paramTextPaint);
     paramTextPaint.setUnderlineText(false);

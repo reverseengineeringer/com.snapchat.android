@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbgr$a;
+.implements Lbhr$a;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 562
+    .line 559
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$19;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +40,12 @@
     .locals 2
 
     .prologue
-    .line 565
+    .line 562
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$19;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->m:Lbgr;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->l:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -57,31 +57,31 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
-    .line 566
+    .line 563
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$19;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->m:Lbgr;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->l:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/Button;
 
-    invoke-static {}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->n()I
+    invoke-static {}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->o()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundResource(I)V
 
-    .line 567
+    .line 564
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$19;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->m:Lbgr;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->l:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -93,6 +93,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 573
+    .line 570
     return-void
 .end method

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 331
+    .line 333
     iput-object p1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$7;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 0
 
     .prologue
-    .line 349
+    .line 351
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 0
 
     .prologue
-    .line 333
+    .line 335
     return-void
 .end method
 
@@ -56,14 +56,14 @@
     .locals 2
 
     .prologue
-    .line 337
+    .line 339
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$7;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->k(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lagg;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->k(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lahd;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lagg;->b()Landroid/widget/Filter;
+    invoke-virtual {v0}, Lahd;->b()Landroid/widget/Filter;
 
     move-result-object v0
 
@@ -73,14 +73,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;)V
 
-    .line 338
+    .line 340
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 340
+    .line 342
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$7;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->l(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Landroid/view/View;
@@ -91,11 +91,11 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 345
+    .line 347
     :goto_0
     return-void
 
-    .line 343
+    .line 345
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$7;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 

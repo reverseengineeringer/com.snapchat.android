@@ -1,45 +1,36 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.Locale;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class bkn
+public class bkn
 {
-  @SerializedName("display")
-  protected String display;
-  @SerializedName("id")
-  protected String id;
-  @SerializedName("is_hidden")
-  protected Boolean isHidden;
-  @SerializedName("is_new_snapchatter")
-  protected Boolean isNewSnapchatter;
-  @SerializedName("name")
-  protected String name;
-  @SerializedName("suggest_reason")
-  protected String suggestReason;
+  @SerializedName("unviewed")
+  protected bkm unviewed;
+  @SerializedName("viewed")
+  protected bkm viewed;
   
-  public final String a()
+  public final bkm a()
   {
-    return id;
+    return unviewed;
   }
   
-  public final String b()
+  public final boolean b()
   {
-    return name;
+    return unviewed != null;
   }
   
-  public final bkn.a c()
+  public final bkm c()
   {
-    return bkn.a.a(suggestReason);
+    return viewed;
   }
   
-  public final String d()
+  public final boolean d()
   {
-    return display;
+    return viewed != null;
   }
   
-  public final boolean equals(Object paramObject)
+  public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -48,45 +39,17 @@ public final class bkn
       return false;
     }
     paramObject = (bkn)paramObject;
-    return new EqualsBuilder().append(id, id).append(name, name).append(suggestReason, suggestReason).append(display, display).append(isHidden, isHidden).append(isNewSnapchatter, isNewSnapchatter).isEquals();
+    return new EqualsBuilder().append(unviewed, unviewed).append(viewed, viewed).isEquals();
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    return new HashCodeBuilder().append(id).append(name).append(suggestReason).append(display).append(isHidden).append(isNewSnapchatter).toHashCode();
+    return new HashCodeBuilder().append(unviewed).append(viewed).toHashCode();
   }
   
-  public final String toString()
+  public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
-  }
-  
-  public static enum a
-  {
-    NEW_CONTACT("new_contact"),  NEW_SNAPCHATTER("new_snapchatter"),  UNKNOWN("unknown"),  UNRECOGNIZED_VALUE("UNRECOGNIZED_VALUE");
-    
-    private final String value;
-    
-    private a(String paramString)
-    {
-      value = paramString;
-    }
-    
-    public static a a(String paramString)
-    {
-      try
-      {
-        paramString = valueOf(paramString.toUpperCase(Locale.US));
-        return paramString;
-      }
-      catch (Exception paramString) {}
-      return UNRECOGNIZED_VALUE;
-    }
-    
-    public final String toString()
-    {
-      return value;
-    }
   }
 }
 

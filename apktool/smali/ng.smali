@@ -1,195 +1,271 @@
 .class public final Lng;
-.super Ljava/lang/Object;
+.super Lnc;
 .source "SourceFile"
 
 
-# static fields
-.field private static final MEDIA_VIEW_INTERVAL_EVENT:Ljava/lang/String; = "MEDIA_VIEW_INTERVAL"
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lng$a;
+    }
+.end annotation
 
-.field private static sInstance:Lng;
+
+# static fields
+.field protected static final DISCOVER_AD_PAGE_IMPRESSION_DURATION_KEY:Ljava/lang/String; = "ad_page_impression_duration"
+
+.field private static final PRODUCT_ID:Ljava/lang/String; = "discover"
+
+.field protected static final TITLE_SPLASH_POSITION:I
 
 
 # instance fields
-.field public final mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+.field private final mAdType:I
+
+.field private final mAdUnitId:Ljava/lang/String;
+
+.field private final mChannelName:Ljava/lang/String;
+
+.field private final mEditionName:Ljava/lang/String;
+
+.field private final mPosition:I
+
+.field private final mTargetingParams:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 1
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;II)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;II)V"
+        }
+    .end annotation
 
     .prologue
-    .line 28
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a()Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    .line 31
+    invoke-direct {p0}, Lnc;-><init>()V
 
-    move-result-object v0
+    .line 32
+    iput-object p1, p0, Lng;->mEditionName:Ljava/lang/String;
 
-    invoke-direct {p0, v0}, Lng;-><init>(Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;)V
+    .line 33
+    iput-object p2, p0, Lng;->mChannelName:Ljava/lang/String;
 
-    .line 29
+    .line 34
+    iput-object p3, p0, Lng;->mAdUnitId:Ljava/lang/String;
+
+    .line 35
+    iput-object p4, p0, Lng;->mTargetingParams:Ljava/util/Map;
+
+    .line 36
+    iput p5, p0, Lng;->mPosition:I
+
+    .line 37
+    iput p6, p0, Lng;->mAdType:I
+
+    .line 38
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;)V
+.method synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;IIB)V
     .locals 0
 
     .prologue
-    .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 12
+    invoke-direct/range {p0 .. p6}, Lng;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;II)V
 
-    .line 33
-    iput-object p1, p0, Lng;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    .line 34
-    return-void
-.end method
-
-.method public static declared-synchronized a()Lng;
-    .locals 2
-
-    .prologue
-    .line 21
-    const-class v1, Lng;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Lng;->sInstance:Lng;
-
-    if-nez v0, :cond_0
-
-    .line 22
-    new-instance v0, Lng;
-
-    invoke-direct {v0}, Lng;-><init>()V
-
-    sput-object v0, Lng;->sInstance:Lng;
-
-    .line 24
-    :cond_0
-    sget-object v0, Lng;->sInstance:Lng;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 21
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method private b(Ljava/lang/String;)V
-    .locals 3
-
-    .prologue
-    .line 93
-    iget-object v0, p0, Lng;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    const-string v1, "MEDIA_VIEW_INTERVAL"
-
-    const-string v2, "context"
-
-    invoke-virtual {v0, v1, v2, p1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    .line 94
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)V
-    .locals 3
-
-    .prologue
-    .line 101
-    iget-object v0, p0, Lng;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    const-string v1, "MEDIA_VIEW_INTERVAL"
-
-    const-string v2, "last_action"
-
-    invoke-virtual {v0, v1, v2, p1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    .line 102
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 68
-    invoke-virtual {p0, p2, p1}, Lng;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 69
-    invoke-virtual {p0, p2, p1}, Lng;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 70
-    return-void
-.end method
-
-.method public final a(Z)V
-    .locals 2
-
-    .prologue
-    .line 85
-    iget-object v0, p0, Lng;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    const-string v1, "MEDIA_VIEW_INTERVAL"
-
-    invoke-virtual {v0, v1, p1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Z)V
-
-    .line 86
-    return-void
-.end method
-
-.method public final b(Ljava/lang/String;Ljava/lang/String;)V
+.method public final a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 73
-    const/4 v0, 0x0
+    .line 53
+    iget-object v0, p0, Lng;->mAdUnitId:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lng;->a(Z)V
-
-    .line 74
-    invoke-direct {p0, p2}, Lng;->b(Ljava/lang/String;)V
-
-    .line 75
-    invoke-virtual {p0, p1}, Lng;->a(Ljava/lang/String;)V
-
-    .line 76
-    return-void
+    return-object v0
 .end method
 
-.method public final c(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
+.method public final b()Ljava/lang/String;
+    .locals 4
 
     .prologue
-    .line 79
-    iget-object v0, p0, Lng;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    .line 58
+    const-string v0, "%s-%s-%s-[%s]"
 
-    const-string v1, "MEDIA_VIEW_INTERVAL"
+    const/4 v1, 0x4
 
-    const-string v2, "current_action"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v2, p1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    const/4 v2, 0x0
 
-    .line 80
-    invoke-direct {p0, p2}, Lng;->b(Ljava/lang/String;)V
+    const-string v3, "discover"
 
-    .line 81
-    iget-object v0, p0, Lng;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    aput-object v3, v1, v2
 
-    const-string v1, "MEDIA_VIEW_INTERVAL"
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->b(Ljava/lang/String;)V
+    iget-object v3, p0, Lng;->mChannelName:Ljava/lang/String;
 
-    .line 82
-    return-void
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    iget-object v3, p0, Lng;->mEditionName:Ljava/lang/String;
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    iget v3, p0, Lng;->mPosition:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 65
+    return-object v0
+.end method
+
+.method public final c()Landroid/os/Bundle;
+    .locals 4
+
+    .prologue
+    .line 42
+    new-instance v2, Landroid/os/Bundle;
+
+    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
+
+    .line 44
+    iget-object v0, p0, Lng;->mTargetingParams:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 45
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {v2, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 48
+    :cond_0
+    return-object v2
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 70
+    const-string v0, "ad_page_impression_duration"
+
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    .prologue
+    .line 105
+    const-string v0, "AdPlaceholder(%s:%s[%d]-%d)"
+
+    const/4 v1, 0x4
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lng;->mChannelName:Ljava/lang/String;
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    iget-object v3, p0, Lng;->mEditionName:Ljava/lang/String;
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    iget v3, p0, Lng;->mPosition:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    iget v3, p0, Lng;->mAdType:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

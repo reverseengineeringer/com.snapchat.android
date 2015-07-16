@@ -1,68 +1,74 @@
+import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
+
 public final class aik
-  implements aij.a
 {
-  private final aij.a a;
-  private volatile int b;
-  private volatile int c = 0;
+  static long a = -1L;
+  protected static String b = "PREVIEW_GEOFILTER_SWIPE_DELAY";
+  protected static String c = "PREVIEW_GEOFILTER_AVAILABLE_DELAY";
+  private static aik e = null;
+  long d = a;
+  private final bhk f;
+  private final EasyMetric.EasyMetricFactory g;
+  private long h = a;
+  private long i = a;
   
-  aik(int paramInt, @cgb aij.a parama)
+  private aik(bhk parambhk, EasyMetric.EasyMetricFactory paramEasyMetricFactory)
   {
-    b = paramInt;
-    a = ((aij.a)ck.a(parama));
+    f = parambhk;
+    g = paramEasyMetricFactory;
   }
   
-  /* Error */
-  private void c()
+  public static aik a()
   {
-    // Byte code:
-    //   0: aload_0
-    //   1: monitorenter
-    //   2: aload_0
-    //   3: aload_0
-    //   4: getfield 21	aik:b	I
-    //   7: iconst_1
-    //   8: isub
-    //   9: putfield 21	aik:b	I
-    //   12: aload_0
-    //   13: getfield 21	aik:b	I
-    //   16: ifne +19 -> 35
-    //   19: aload_0
-    //   20: getfield 19	aik:c	I
-    //   23: ifne +15 -> 38
-    //   26: aload_0
-    //   27: getfield 28	aik:a	Laij$a;
-    //   30: invokeinterface 32 1 0
-    //   35: aload_0
-    //   36: monitorexit
-    //   37: return
-    //   38: aload_0
-    //   39: getfield 28	aik:a	Laij$a;
-    //   42: invokeinterface 34 1 0
-    //   47: goto -12 -> 35
-    //   50: astore_1
-    //   51: aload_0
-    //   52: monitorexit
-    //   53: aload_1
-    //   54: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	55	0	this	aik
-    //   50	4	1	localObject	Object
-    // Exception table:
-    //   from	to	target	type
-    //   2	35	50	finally
-    //   38	47	50	finally
+    try
+    {
+      if (e == null) {
+        e = new aik(bhlmClock, new EasyMetric.EasyMetricFactory());
+      }
+      aik localaik = e;
+      return localaik;
+    }
+    finally {}
   }
   
-  public final void a()
+  private boolean a(long paramLong, String paramString)
   {
-    c();
+    if ((paramLong == a) || (i == a)) {
+      return false;
+    }
+    paramLong = Math.max(i - paramLong, 0L);
+    EasyMetric.EasyMetricFactory.a(paramString).a(paramLong).a(false);
+    return true;
   }
   
-  public final void b()
+  private void d()
   {
-    c += 1;
-    c();
+    if (a(h, b)) {
+      h = a;
+    }
+  }
+  
+  @cbr
+  protected final void b()
+  {
+    
+    if (h != a) {
+      return;
+    }
+    h = System.currentTimeMillis();
+    d();
+  }
+  
+  @cbr
+  public final void c()
+  {
+    bhp.b();
+    i = System.currentTimeMillis();
+    if (a(d, c)) {
+      d = a;
+    }
+    d();
   }
 }
 

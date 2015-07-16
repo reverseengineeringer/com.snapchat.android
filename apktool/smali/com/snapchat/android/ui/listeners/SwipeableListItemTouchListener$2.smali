@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 458
+    .line 457
     iput-object p1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;
 
     iput-object p2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;->a:Landroid/view/View;
@@ -41,10 +41,10 @@
 
 # virtual methods
 .method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 5
+    .locals 3
 
     .prologue
-    .line 461
+    .line 460
     iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -61,7 +61,7 @@
 
     invoke-static {v1, v0}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;F)F
 
-    .line 462
+    .line 461
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;)Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
@@ -70,11 +70,11 @@
 
     iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;
 
-    iget-object v1, v1, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v1, v1, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
-    .line 463
+    .line 462
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;)Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
@@ -89,20 +89,8 @@
 
     move-result v2
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;
+    invoke-interface {v0, v1, v2}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->a(Landroid/view/View;F)Z
 
-    invoke-static {v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->c(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;)F
-
-    move-result v3
-
-    iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;
-
-    invoke-static {v4}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->d(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;)F
-
-    move-result v4
-
-    invoke-interface {v0, v1, v2, v3, v4}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->a(Landroid/view/View;FFF)Z
-
-    .line 467
+    .line 466
     return-void
 .end method

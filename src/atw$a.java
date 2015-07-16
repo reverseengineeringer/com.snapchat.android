@@ -1,31 +1,6 @@
-import java.util.Iterator;
-
-final class atw$a
-  implements Iterator<T>
+public abstract interface atw$a
 {
-  final Iterator<T> mIterator;
-  
-  atw$a(Iterator<T> paramIterator)
-  {
-    Iterator localIterator;
-    mIterator = localIterator;
-  }
-  
-  public final boolean hasNext()
-  {
-    return mIterator.hasNext();
-  }
-  
-  public final T next()
-  {
-    return (T)mIterator.next();
-  }
-  
-  public final void remove()
-  {
-    this$0.a();
-    mIterator.remove();
-  }
+  public abstract boolean a(CharSequence paramCharSequence, int paramInt);
 }
 
 /* Location:

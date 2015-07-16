@@ -1,16 +1,26 @@
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import com.snapchat.android.model.FriendAction.BlockReason;
-import java.util.List;
+import com.snapchat.android.discover.ui.ChannelView;
+import com.snapchat.android.discover.ui.OpenChannelAnimationView;
+import com.snapchat.android.discover.ui.OpenChannelAnimationView.a;
+import com.snapchat.android.util.eventbus.CameraDisplayState;
+import com.squareup.otto.Bus;
 
 final class afh$1
-  implements DialogInterface.OnClickListener
+  implements OpenChannelAnimationView.a
 {
-  afh$1(afh paramafh, List paramList) {}
+  afh$1(afh paramafh, OpenChannelAnimationView paramOpenChannelAnimationView) {}
   
-  public final void onClick(DialogInterface paramDialogInterface, int paramInt)
+  public final void a(ChannelView paramChannelView)
   {
-    b.a((FriendAction.BlockReason)a.get(paramInt));
+    a.postDelayed(new Runnable()
+    {
+      public final void run()
+      {
+        afh.a(b).a(new bet(true));
+        afh.a(b).a(new bbq(CameraDisplayState.SHOW));
+      }
+    }, 300L);
+    a.setVisibility(8);
+    b.b = null;
   }
 }
 

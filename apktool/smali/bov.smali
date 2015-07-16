@@ -1,199 +1,255 @@
-.class final Lbov;
-.super Lboj;
+.class public final Lbov;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lboj",
-        "<",
-        "Landroid/widget/ImageView;",
-        ">;"
-    }
-.end annotation
-
-
 # instance fields
-.field m:Lbon;
+.field a:I
+
+.field b:I
+
+.field c:I
+
+.field final d:[I
 
 
 # direct methods
-.method constructor <init>(Lbpd;Landroid/widget/ImageView;Lbpg;IIILandroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;Lbon;Z)V
-    .locals 12
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 30
-    move-object v1, p0
+    .line 24
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v2, p1
+    .line 82
+    const/16 v0, 0xa
 
-    move-object v3, p2
+    new-array v0, v0, [I
 
-    move-object v4, p3
+    iput-object v0, p0, Lbov;->d:[I
 
-    move/from16 v5, p4
-
-    move/from16 v6, p5
-
-    move/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-object/from16 v9, p8
-
-    move-object/from16 v10, p9
-
-    move/from16 v11, p11
-
-    invoke-direct/range {v1 .. v11}, Lboj;-><init>(Lbpd;Ljava/lang/Object;Lbpg;IIILandroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;Z)V
-
-    .line 32
-    move-object/from16 v0, p10
-
-    iput-object v0, p0, Lbov;->m:Lbon;
-
-    .line 33
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method final a()I
     .locals 2
 
     .prologue
-    .line 56
-    iget-object v0, p0, Lbov;->c:Ljava/lang/ref/WeakReference;
+    .line 143
+    iget v0, p0, Lbov;->a:I
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    .line 57
-    if-nez v0, :cond_1
-
-    .line 66
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 60
-    :cond_1
-    iget v1, p0, Lbov;->g:I
-
-    if-eqz v1, :cond_2
-
-    .line 61
-    iget v1, p0, Lbov;->g:I
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_0
-
-    .line 62
-    :cond_2
-    iget-object v1, p0, Lbov;->h:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v1, :cond_0
-
-    .line 63
-    iget-object v1, p0, Lbov;->h:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_0
-.end method
-
-.method public final a(Landroid/graphics/Bitmap;Lbpd$d;)V
-    .locals 6
-
-    .prologue
-    .line 36
-    if-nez p1, :cond_0
-
-    .line 37
-    new-instance v0, Ljava/lang/AssertionError;
-
-    const-string v1, "Attempted to complete action with no result!\n%s"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object p0, v2, v3
-
-    .line 38
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
-
-    .line 41
-    :cond_0
-    iget-object v0, p0, Lbov;->c:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    .line 42
-    if-nez v0, :cond_1
-
-    .line 50
-    :goto_0
-    return-void
-
-    .line 46
-    :cond_1
-    iget-object v1, p0, Lbov;->a:Lbpd;
-
-    iget-object v1, v1, Lbpd;->f:Landroid/content/Context;
-
-    .line 47
-    iget-object v2, p0, Lbov;->a:Lbpd;
-
-    iget-boolean v5, v2, Lbpd;->n:Z
-
-    .line 48
-    iget-boolean v4, p0, Lbov;->d:Z
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    invoke-static/range {v0 .. v5}, Lbpe;->a(Landroid/widget/ImageView;Landroid/content/Context;Landroid/graphics/Bitmap;Lbpd$d;ZZ)V
-
-    goto :goto_0
-.end method
-
-.method final b()V
-    .locals 1
-
-    .prologue
-    .line 72
-    invoke-super {p0}, Lboj;->b()V
-
-    .line 73
-    iget-object v0, p0, Lbov;->m:Lbon;
+    and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_0
 
-    .line 74
+    iget-object v0, p0, Lbov;->d:[I
+
+    const/4 v1, 0x1
+
+    aget v0, v0, v1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, -0x1
+
+    goto :goto_0
+.end method
+
+.method final a(III)Lbov;
+    .locals 3
+
+    .prologue
+    .line 90
+    iget-object v0, p0, Lbov;->d:[I
+
+    array-length v0, v0
+
+    if-lt p1, v0, :cond_0
+
+    .line 108
+    :goto_0
+    return-object p0
+
+    .line 94
+    :cond_0
+    const/4 v0, 0x1
+
+    shl-int/2addr v0, p1
+
+    .line 95
+    iget v1, p0, Lbov;->a:I
+
+    or-int/2addr v1, v0
+
+    iput v1, p0, Lbov;->a:I
+
+    .line 96
+    and-int/lit8 v1, p2, 0x1
+
+    if-eqz v1, :cond_1
+
+    .line 97
+    iget v1, p0, Lbov;->b:I
+
+    or-int/2addr v1, v0
+
+    iput v1, p0, Lbov;->b:I
+
+    .line 101
+    :goto_1
+    and-int/lit8 v1, p2, 0x2
+
+    if-eqz v1, :cond_2
+
+    .line 102
+    iget v1, p0, Lbov;->c:I
+
+    or-int/2addr v0, v1
+
+    iput v0, p0, Lbov;->c:I
+
+    .line 107
+    :goto_2
+    iget-object v0, p0, Lbov;->d:[I
+
+    aput p3, v0, p1
+
+    goto :goto_0
+
+    .line 99
+    :cond_1
+    iget v1, p0, Lbov;->b:I
+
+    xor-int/lit8 v2, v0, -0x1
+
+    and-int/2addr v1, v2
+
+    iput v1, p0, Lbov;->b:I
+
+    goto :goto_1
+
+    .line 104
+    :cond_2
+    iget v1, p0, Lbov;->c:I
+
+    xor-int/lit8 v0, v0, -0x1
+
+    and-int/2addr v0, v1
+
+    iput v0, p0, Lbov;->c:I
+
+    goto :goto_2
+.end method
+
+.method final a(I)Z
+    .locals 3
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 113
+    shl-int v1, v0, p1
+
+    .line 114
+    iget v2, p0, Lbov;->a:I
+
+    and-int/2addr v1, v2
+
+    if-eqz v1, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lbov;->m:Lbon;
+    goto :goto_0
+.end method
 
-    .line 76
+.method public final b()I
+    .locals 2
+
+    .prologue
+    .line 197
+    iget v0, p0, Lbov;->a:I
+
+    and-int/lit16 v0, v0, 0x80
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbov;->d:[I
+
+    const/4 v1, 0x7
+
+    aget v0, v0, v1
+
+    :goto_0
+    return v0
+
     :cond_0
-    return-void
+    const/high16 v0, 0x10000
+
+    goto :goto_0
+.end method
+
+.method final b(I)I
+    .locals 5
+
+    .prologue
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    .line 124
+    .line 125
+    shl-int v0, v2, p1
+
+    iget v3, p0, Lbov;->c:I
+
+    and-int/2addr v0, v3
+
+    if-eqz v0, :cond_2
+
+    move v0, v2
+
+    :goto_0
+    if-eqz v0, :cond_3
+
+    const/4 v0, 0x2
+
+    .line 126
+    :goto_1
+    shl-int v3, v2, p1
+
+    iget v4, p0, Lbov;->b:I
+
+    and-int/2addr v3, v4
+
+    if-eqz v3, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    if-eqz v1, :cond_1
+
+    or-int/lit8 v0, v0, 0x1
+
+    .line 127
+    :cond_1
+    return v0
+
+    :cond_2
+    move v0, v1
+
+    .line 125
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_1
 .end method

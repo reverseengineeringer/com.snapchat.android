@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lalw;
+.implements Lamt;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/settings/SettingsFragment;->k()Lalw;
+    value = Lcom/snapchat/android/fragments/settings/SettingsFragment;->k()Lamt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,14 +36,14 @@
 
 
 # virtual methods
-.method public final a(Lalx$a;)Z
+.method public final a(Lamu$a;)Z
     .locals 2
 
     .prologue
     .line 669
-    sget-object v0, Lalx;->g:Ljava/util/Set;
+    sget-object v0, Lamu;->g:Ljava/util/Set;
 
-    iget-object v1, p1, Lalx$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+    iget-object v1, p1, Lamu$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -52,7 +52,7 @@
     return v0
 .end method
 
-.method public final b(Lalx$a;)Z
+.method public final b(Lamu$a;)Z
     .locals 1
 
     .prologue

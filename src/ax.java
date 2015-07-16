@@ -7,9 +7,9 @@ public class ax
   
   static
   {
-    cfk localcfk = new cfk("StaticChunkOffsetBox.java", ax.class);
-    c = localcfk.a("method-execution", localcfk.a("1", "getChunkOffsets", "com.coremedia.iso.boxes.StaticChunkOffsetBox", "", "", "", "[J"), 39);
-    b = localcfk.a("method-execution", localcfk.a("1", "setChunkOffsets", "com.coremedia.iso.boxes.StaticChunkOffsetBox", "[J", "chunkOffsets", "", "void"), 47);
+    cgl localcgl = new cgl("StaticChunkOffsetBox.java", ax.class);
+    c = localcgl.a("method-execution", localcgl.a("1", "getChunkOffsets", "com.coremedia.iso.boxes.StaticChunkOffsetBox", "", "", "", "[J"), 39);
+    b = localcgl.a("method-execution", localcgl.a("1", "setChunkOffsets", "com.coremedia.iso.boxes.StaticChunkOffsetBox", "[J", "chunkOffsets", "", "void"), 47);
   }
   
   public ax()
@@ -20,7 +20,7 @@ public class ax
   public void _parseDetails(ByteBuffer paramByteBuffer)
   {
     parseVersionAndFlags(paramByteBuffer);
-    int j = fe.a(ao.a(paramByteBuffer));
+    int j = fn.a(ao.a(paramByteBuffer));
     a = new long[j];
     int i = 0;
     for (;;)
@@ -35,9 +35,9 @@ public class ax
   
   public final long[] a()
   {
-    cek localcek = cfk.a(c, this, this);
-    ez.a();
-    ez.a(localcek);
+    cfl localcfl = cgl.a(c, this, this);
+    fi.a();
+    fi.a(localcfl);
     return a;
   }
   

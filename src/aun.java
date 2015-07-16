@@ -1,43 +1,29 @@
-import android.os.SystemClock;
-import org.apache.http.annotation.NotThreadSafe;
+import javax.inject.Provider;
 
-@NotThreadSafe
 public final class aun
+  implements bvp<aum>
 {
-  public long mAccumulatedTimeMillis;
-  private final bgk mClock;
-  private long mCurrentIntervalStartTimeMillis;
-  public boolean mIsAccumulating;
+  private final Provider<bao> gracefulExceptionHandlerProvider;
   
-  public aun()
+  static
   {
-    this(new bgk());
-  }
-  
-  private aun(bgk parambgk)
-  {
-    mClock = parambgk;
-    mAccumulatedTimeMillis = 0L;
-    mCurrentIntervalStartTimeMillis = -1L;
-    mIsAccumulating = false;
-  }
-  
-  public final void a()
-  {
-    if (!mIsAccumulating)
+    if (!aun.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      mIsAccumulating = true;
-      mCurrentIntervalStartTimeMillis = SystemClock.elapsedRealtime();
+      $assertionsDisabled = bool;
+      return;
     }
   }
   
-  public final void b()
+  private aun(Provider<bao> paramProvider)
   {
-    if (mIsAccumulating)
-    {
-      mAccumulatedTimeMillis += SystemClock.elapsedRealtime() - mCurrentIntervalStartTimeMillis;
-      mIsAccumulating = false;
-    }
+    assert (paramProvider != null);
+    gracefulExceptionHandlerProvider = paramProvider;
+  }
+  
+  public static bvp<aum> a(Provider<bao> paramProvider)
+  {
+    return new aun(paramProvider);
   }
 }
 

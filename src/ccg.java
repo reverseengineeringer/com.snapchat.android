@@ -4,7 +4,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.METHOD})
+@Target({java.lang.annotation.ElementType.TYPE})
 public @interface ccg {}
 
 /* Location:

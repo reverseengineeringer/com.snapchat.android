@@ -1,19 +1,45 @@
-import android.graphics.Bitmap;
-import android.util.LruCache;
+import com.brightcove.player.event.Event;
+import com.brightcove.player.event.EventListener;
 
 public final class aeo
-  extends LruCache<String, Bitmap>
+  implements EventListener
 {
-  private static final aeo a = new aeo();
+  private final aeo.a a;
+  private int b;
+  private int c = 0;
   
-  private aeo()
+  public aeo(@chc aeo.a parama)
   {
-    super(19);
+    a = parama;
   }
   
-  public static aeo a()
+  public final void processEvent(Event paramEvent)
   {
-    return a;
+    if (!paramEvent.getType().equals("progress")) {}
+    int i;
+    do
+    {
+      return;
+      i = paramEvent.getIntegerProperty("playheadPosition");
+      if (b != i) {
+        break;
+      }
+      c += 1;
+    } while (c != 3);
+    a.a();
+    return;
+    if (c >= 3) {
+      a.b();
+    }
+    c = 0;
+    b = i;
+  }
+  
+  public static abstract interface a
+  {
+    public abstract void a();
+    
+    public abstract void b();
   }
 }
 

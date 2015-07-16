@@ -1,117 +1,45 @@
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.model.CashTransaction;
-import com.snapchat.android.model.chat.CashFeedItem;
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import com.snapchat.android.api2.framework.HttpMethod;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
-@Singleton
 public final class qd
+  extends ul
 {
-  private static final String TAG = "BlockerManager";
-  @Inject
-  protected qh mCashProviderManager;
+  private final String mUrlEndpoint;
   
-  @Inject
-  public qd()
+  public qd(@chc String paramString, @chd Map<String, String> paramMap)
   {
-    SnapchatApplication.b().c().a(this);
-  }
-  
-  public final void a(@cgb CashFeedItem paramCashFeedItem, @cgc qd.a parama)
-  {
-    String str = mCashTransaction.mProvider;
-    if (mCashProviderManager.b(str))
+    StringBuilder localStringBuilder = new StringBuilder();
+    paramMap = paramMap.entrySet().iterator();
+    while (paramMap.hasNext())
     {
-      paramCashFeedItem.a(mCashProviderManager.a("snapcash").b());
-      paramCashFeedItem.a(mCashProviderManager.a(str).b());
-      paramCashFeedItem.a(parama);
-      return;
+      Map.Entry localEntry = (Map.Entry)paramMap.next();
+      localStringBuilder.append("&" + (String)localEntry.getKey() + "=" + (String)localEntry.getValue());
     }
-    qh.a();
-    parama.b();
+    mUrlEndpoint = (paramString + localStringBuilder.toString());
   }
   
-  public final void b(@cgb CashFeedItem paramCashFeedItem, @cgc qd.a parama)
+  public final HttpMethod getMethod()
   {
-    String str = mCashTransaction.mProvider;
-    if (mCashProviderManager.b(str))
-    {
-      paramCashFeedItem.a(mCashProviderManager.a("snapcash").c());
-      paramCashFeedItem.a(mCashProviderManager.a(str).c());
-      paramCashFeedItem.a(parama);
-      return;
-    }
-    qh.a();
-    parama.b();
+    return HttpMethod.GET;
   }
   
-  public final void c(@cgb CashFeedItem paramCashFeedItem, @cgc qd.a parama)
+  public final Object getRequestPayload()
   {
-    String str = mCashTransaction.mProvider;
-    if (mCashProviderManager.b(str))
-    {
-      paramCashFeedItem.a(mCashProviderManager.a("snapcash").d());
-      paramCashFeedItem.a(mCashProviderManager.a(str).d());
-      paramCashFeedItem.a(parama);
-    }
-    do
-    {
-      return;
-      qh.a();
-    } while (parama == null);
-    parama.b();
+    return null;
   }
   
-  public final void d(@cgb CashFeedItem paramCashFeedItem, @cgc qd.a parama)
+  public final String getUrl()
   {
-    String str = mCashTransaction.mProvider;
-    if (mCashProviderManager.b(str))
-    {
-      paramCashFeedItem.a(mCashProviderManager.a("snapcash").e());
-      paramCashFeedItem.a(mCashProviderManager.a(str).e());
-      paramCashFeedItem.a(parama);
-    }
-    do
-    {
-      return;
-      qh.a();
-    } while (parama == null);
-    parama.b();
+    return mUrlEndpoint;
   }
   
-  public final void e(@cgb CashFeedItem paramCashFeedItem, @cgc qd.a parama)
+  public final void onResult(@chc us paramus)
   {
-    String str = mCashTransaction.mProvider;
-    paramCashFeedItem.a(mCashProviderManager.a("snapcash").f());
-    if (mCashProviderManager.b(str))
-    {
-      paramCashFeedItem.a(mCashProviderManager.a(str).f());
-      paramCashFeedItem.a(parama);
-      return;
-    }
-    qh.a();
-    parama.b();
-  }
-  
-  public final void f(@cgb CashFeedItem paramCashFeedItem, @cgc qd.a parama)
-  {
-    String str = mCashTransaction.mProvider;
-    if (mCashProviderManager.b(str))
-    {
-      paramCashFeedItem.a(mCashProviderManager.a("snapcash").g());
-      paramCashFeedItem.a(mCashProviderManager.a(str).g());
-      paramCashFeedItem.a(parama);
-      return;
-    }
-    qh.a();
-    parama.b();
-  }
-  
-  public static abstract interface a
-  {
-    public abstract void a();
-    
-    public abstract void b();
+    super.onResult(paramus);
+    akr.p(paramus.d());
   }
 }
 

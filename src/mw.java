@@ -1,49 +1,27 @@
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import com.snapchat.android.util.debug.ReleaseManager;
 
 public final class mw
 {
-  String mAdUnitId;
-  public int mFirstPosition;
-  int mMinimumRemaining;
-  Bundle mTargetingParams;
-  private int mTimeoutSeconds;
+  private ReleaseManager a;
+  private akn b;
   
-  private mw(int paramInt1, int paramInt2, int paramInt3, String paramString, Bundle paramBundle)
+  public mw()
   {
-    mTimeoutSeconds = paramInt1;
-    mFirstPosition = paramInt2;
-    mMinimumRemaining = paramInt3;
-    mAdUnitId = paramString;
-    mTargetingParams = paramBundle;
+    this(akn.a(), ReleaseManager.a());
   }
   
-  public final String a()
+  private mw(akn paramakn, ReleaseManager paramReleaseManager)
   {
-    StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(mAdUnitId);
-    localStringBuilder.append("~");
-    Object localObject = new ArrayList(mTargetingParams.keySet());
-    Collections.sort((List)localObject);
-    localObject = ((List)localObject).iterator();
-    while (((Iterator)localObject).hasNext())
-    {
-      String str = (String)((Iterator)localObject).next();
-      localStringBuilder.append(str + ":" + mTargetingParams.get(str) + "|");
+    b = paramakn;
+    a = paramReleaseManager;
+  }
+  
+  public final boolean a()
+  {
+    if ((!ReleaseManager.c()) && (!ReleaseManager.b())) {
+      return false;
     }
-    return localStringBuilder.toString();
-  }
-  
-  public static final class a
-  {
-    public String mAdUnitId;
-    public int mFirstPosition = -1;
-    public int mMinimumRemaining;
-    public Bundle mTargetingParams;
-    public int mTimeoutSeconds = 600;
+    return b.a("EarlyUploadSnaps", "early_upload_snaps", false);
   }
 }
 

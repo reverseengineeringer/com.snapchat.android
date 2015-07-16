@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class io
-  extends lt
+  extends ml
 {
-  public Long charCount;
-  private final String eventName = "PROFILE_ADDRESS_BOOK_SEARCH_CLEAR";
+  private final String eventName = "PROFILE_ADD_NEARBY_PAGE_VIEW";
+  private Boolean hasLocationPermission;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_ADDRESS_BOOK_SEARCH_CLEAR");
-    if (charCount != null) {
-      localHashMap.put("char_count", charCount);
+    localHashMap.put("event_name", "PROFILE_ADD_NEARBY_PAGE_VIEW");
+    if (hasLocationPermission != null) {
+      localHashMap.put("has_location_permission", hasLocationPermission);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class io
         return false;
       }
       paramObject = (io)paramObject;
-      if (charCount == null) {
+      if (hasLocationPermission == null) {
         break;
       }
-    } while (charCount.equals(charCount));
+    } while (hasLocationPermission.equals(hasLocationPermission));
     for (;;)
     {
       return false;
-      if (charCount == null) {
+      if (hasLocationPermission == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class io
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (charCount != null) {}
-    for (int i = charCount.hashCode();; i = 0) {
+    if (hasLocationPermission != null) {}
+    for (int i = hasLocationPermission.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

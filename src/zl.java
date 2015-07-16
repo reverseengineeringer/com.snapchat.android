@@ -1,72 +1,31 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
-import com.squareup.otto.Bus;
-import java.util.LinkedList;
+import javax.inject.Provider;
 
 public final class zl
-  implements zj
+  implements bvk<zk>
 {
-  private final ajx a;
-  private final zn b;
-  private final Bus c;
-  private final LinkedList<Long> d = new LinkedList();
-  private boolean e = false;
+  private final Provider<yw> b;
   
-  public zl()
+  static
   {
-    this(new ajx(), new zn(), ban.a());
-  }
-  
-  private zl(@cgb ajx paramajx, @cgb zn paramzn, @cgb Bus paramBus)
-  {
-    a = paramajx;
-    b = paramzn;
-    c = paramBus;
-    c.c(this);
-    Timber.c("SwipeDownToExitTutorial", "Existing values: hasSeenSwipeDownTutorial:%b, hasSwipedDownInViewer:%b", new Object[] { Boolean.valueOf(ajx.bC()), Boolean.valueOf(ajx.bE()) });
-  }
-  
-  public final void a(@cgb aio paramaio) {}
-  
-  public final void a(@cgb aje paramaje)
-  {
-    if (((paramaje instanceof ajr)) && (!ajx.bE()) && (!e) && (!paramaje.Y())) {
-      if ((d.size() != 3L) || (((Long)d.peekLast()).longValue() - ((Long)d.peekFirst()).longValue() > 1500L)) {
-        break label97;
-      }
-    }
-    label97:
-    for (int i = 1;; i = 0)
+    if (!zl.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      if (i != 0)
-      {
-        e = true;
-        b.a(2131493521);
-      }
+      a = bool;
       return;
     }
   }
   
-  public final void a(@cgb aje paramaje, @cgb aio paramaio)
+  private zl(Provider<yw> paramProvider)
   {
-    e = false;
-    d.clear();
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    b = paramProvider;
   }
   
-  public final void a(@cgb aje paramaje, @cgb SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt)
+  public static bvk<zk> a(Provider<yw> paramProvider)
   {
-    if (paramSnapViewSessionStopReason == SnapViewSessionStopReason.ABORT_REQUESTED) {
-      ajx.z(true);
-    }
-  }
-  
-  @boh
-  public final void handleTapWhileViewingEvent(bej parambej)
-  {
-    if (d.size() >= 3L) {
-      d.removeFirst();
-    }
-    d.add(Long.valueOf(eventTimeMilliseconds));
+    return new zl(paramProvider);
   }
 }
 

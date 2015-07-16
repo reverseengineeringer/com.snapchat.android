@@ -1,90 +1,143 @@
-import com.snapchat.android.ui.SwipeViewState;
-import com.snapchat.android.ui.swipefilters.FilterPageType;
+import android.content.Context;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.analytics.CameraEventAnalytics.SaveSnapContext;
+import com.snapchat.android.model.StorySnapLogbook;
+import com.snapchat.android.model.StorySnapLogbook.ActionState;
+import com.snapchat.android.util.save.SaveMediaNotificationsToShow;
 
 public final class api
 {
-  public final arv a;
-  public final SwipeViewState b;
+  final apl a;
+  private final aki b;
+  private final Context c;
   
-  public api(arv paramarv, SwipeViewState paramSwipeViewState)
+  public api(Context paramContext)
   {
-    a = paramarv;
-    b = paramSwipeViewState;
+    this(paramContext, aki.a(), apl.a());
   }
   
-  public final int a(int paramInt, boolean paramBoolean)
+  private api(Context paramContext, aki paramaki, apl paramapl)
   {
-    int m = a.b();
-    if (m > 0)
-    {
-      int j;
-      FilterPageType localFilterPageType;
-      int i;
-      if (paramBoolean)
-      {
-        j = 1;
-        localFilterPageType = null;
-        if (!b.m) {
-          break label119;
-        }
-        localFilterPageType = a.b(b.a);
-        i = paramInt;
-      }
-      for (;;)
-      {
-        int k = (i + m + j) % m;
-        if ((a.b(k) == localFilterPageType) || (!a.a(k).f()))
-        {
-          i = k;
-          if (k != paramInt) {}
-        }
-        else
-        {
-          return k;
-          j = -1;
-          break;
-          label119:
-          i = paramInt;
-        }
-      }
-    }
-    return paramInt;
+    c = paramContext;
+    b = paramaki;
+    a = paramapl;
   }
   
-  public final boolean a(boolean paramBoolean)
+  public final void a(@chc final StorySnapLogbook paramStorySnapLogbook, @chc final api.a parama)
   {
-    if (paramBoolean)
+    if (mStorySnap.mFailed)
     {
-      b.b = b.a;
-      b.d = b.c;
+      String str = mStorySnap.mClientId;
+      b.a(mStoryId, str);
+      parama.c();
     }
-    label133:
-    label136:
     for (;;)
     {
-      return false;
-      int i = b.a;
-      int j = b.c;
-      b.a = b.b;
-      b.c = b.d;
-      b.l = b.m;
-      if (i != b.a)
+      AnalyticsEvents.c(mStorySnap.mClientId);
+      return;
+      new pc(paramStorySnapLogbook, c)
       {
-        i = 1;
-        if (j == b.c) {
-          break label133;
+        protected final void a(alp paramAnonymousalp)
+        {
+          super.a(paramAnonymousalp);
+          parama.b();
         }
-      }
-      for (j = 1;; j = 0)
-      {
-        if ((i == 0) && (j == 0)) {
-          break label136;
+        
+        protected final void a(String paramAnonymousString, int paramAnonymousInt)
+        {
+          super.a(paramAnonymousString, paramAnonymousInt);
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.READY);
+          parama.d();
         }
-        return true;
-        i = 0;
-        break;
-      }
+        
+        protected final void b(alp paramAnonymousalp)
+        {
+          super.b(paramAnonymousalp);
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.DELETED);
+          parama.c();
+        }
+        
+        protected final void onPreExecute()
+        {
+          super.onPreExecute();
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.DELETING);
+          parama.a();
+        }
+      }.executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     }
+  }
+  
+  @awj
+  @cdn
+  public final void b(@chc final StorySnapLogbook paramStorySnapLogbook, @chc final api.a parama)
+  {
+    akl localakl = mStorySnap;
+    if (localakl.ai() == 0) {
+      new bhb(c, localakl, CameraEventAnalytics.SaveSnapContext.STORY, SaveMediaNotificationsToShow.FAIL_ONLY)
+      {
+        protected final void a()
+        {
+          super.a();
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.READY);
+          parama.d();
+        }
+        
+        protected final void a(String paramAnonymousString)
+        {
+          super.a(paramAnonymousString);
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.SAVED);
+          apl.b(paramStorySnapLogbookmStorySnap);
+          parama.c();
+        }
+        
+        protected final void onPreExecute()
+        {
+          super.onPreExecute();
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.SAVING);
+          parama.a();
+        }
+      }.executeOnExecutor(avf.MISCELLANEOUS_EXECUTOR, new Void[0]);
+    }
+    for (;;)
+    {
+      AnalyticsEvents.a(localakl);
+      return;
+      new bhf(c, localakl, CameraEventAnalytics.SaveSnapContext.STORY, SaveMediaNotificationsToShow.FAIL_ONLY)
+      {
+        protected final void a()
+        {
+          super.a();
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.SAVED);
+          apl.b(paramStorySnapLogbookmStorySnap);
+          parama.c();
+        }
+        
+        protected final void b()
+        {
+          super.b();
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.READY);
+          parama.d();
+        }
+        
+        protected final void onPreExecute()
+        {
+          super.onPreExecute();
+          paramStorySnapLogbook.a(StorySnapLogbook.ActionState.SAVING);
+          parama.a();
+        }
+      }.executeOnExecutor(avf.MISCELLANEOUS_EXECUTOR, new Void[0]);
+    }
+  }
+  
+  public static abstract interface a
+  {
+    public abstract void a();
+    
+    public abstract void b();
+    
+    public abstract void c();
+    
+    public abstract void d();
   }
 }
 

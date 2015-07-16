@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
+import kf;
 
 public class AddressBookSearchViewFragment
   extends AddressBookFragment
@@ -13,15 +14,32 @@ public class AddressBookSearchViewFragment
   public final boolean g()
   {
     G();
+    a(kf.BACK_BUTTON);
     return false;
   }
   
   protected final void m() {}
   
+  public void onCreate(Bundle paramBundle)
+  {
+    super.onCreate(paramBundle);
+    paramBundle = getArguments();
+    if (paramBundle != null) {
+      if (!paramBundle.getBoolean("contextIsAdressBook", true)) {
+        break label34;
+      }
+    }
+    label34:
+    for (paramBundle = AnalyticsEvents.AnalyticsContext.PROFILE_ADD_FRIENDS_BY_CONTACTS_PAGE;; paramBundle = AnalyticsEvents.AnalyticsContext.PROFILE_MY_CONTACTS_SEARCH_PAGE)
+    {
+      D = paramBundle;
+      return;
+    }
+  }
+  
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     paramLayoutInflater = super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    C = AnalyticsEvents.AnalyticsContext.PROFILE_MY_CONTACTS_SEARCH_PAGE;
     m.setText(l());
     F();
     return paramLayoutInflater;

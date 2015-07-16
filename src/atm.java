@@ -1,170 +1,339 @@
-import android.text.TextUtils;
-import com.snapchat.android.fragments.settings.SettingsFragment.PrivacyOptions;
+import android.support.v4.util.SimpleArrayMap;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.CheckBox;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.analytics.AnalyticsEvents.AddFriendSourceType;
+import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
+import com.snapchat.android.analytics.ProfileEventAnalytics;
+import com.snapchat.android.analytics.RegistrationAnalytics;
+import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.model.Friend;
-import java.util.Iterator;
-import java.util.List;
+import com.snapchat.android.model.FriendAction;
+import com.snapchat.android.util.FriendSectionizer.FriendSection;
 
-public final class atm
+public class atm
+  extends atn
+  implements qg.a
 {
-  private static final atm INSTANCE = new atm();
+  final aga R;
+  protected final CheckBox S;
+  protected final ProgressBar T;
+  public final TextView U;
+  private boolean k = false;
+  private final ProfileEventAnalytics l;
   
-  public static atm a()
+  public atm(@chd aga paramaga, View paramView)
   {
-    return INSTANCE;
+    this(paramaga, paramView, (CheckBox)paramView.findViewById(2131361864), (ProgressBar)paramView.findViewById(2131361866), (TextView)paramView.findViewById(2131361861));
   }
   
-  public static Friend a(bhu parambhu, @cgb ajv paramajv)
+  private atm(@chd aga paramaga, View paramView, CheckBox paramCheckBox, ProgressBar paramProgressBar, TextView paramTextView)
   {
-    parambhu = new Friend(parambhu, paramajv);
-    paramajv.e(parambhu);
-    paramajv.d(parambhu);
-    paramajv = paramajv.q();
-    int i = paramajv.indexOf(parambhu);
-    if (i != -1) {
-      getmHasBeenAddedAsFriend = true;
-    }
-    return parambhu;
+    super(paramView, 2131362129);
+    R = paramaga;
+    S = paramCheckBox;
+    T = paramProgressBar;
+    U = paramTextView;
+    l = ProfileEventAnalytics.a();
   }
   
-  @cgb
-  public static Friend a(@cgb String paramString, @cgc ajv paramajv)
+  public final void a(int paramInt, AnalyticsEvents.AnalyticsContext paramAnalyticsContext, AnalyticsEvents.AddFriendSourceType paramAddFriendSourceType, String paramString, Friend paramFriend)
   {
-    if (paramajv != null)
+    S.setBackgroundResource(paramInt);
+    boolean bool;
+    if ((paramFriend.b()) || (auk.f(paramFriend.l(), akp.g())))
     {
-      paramajv = paramajv.a(paramString);
-      if (paramajv != null) {
-        return paramajv;
+      bool = true;
+      S.setChecked(bool);
+      CheckBox localCheckBox = S;
+      paramAnalyticsContext = new atm.a(paramAnalyticsContext, paramAddFriendSourceType, paramString, paramFriend);
+      a = -1;
+      localCheckBox.setOnClickListener(paramAnalyticsContext);
+      paramAnalyticsContext = paramFriend;
+      if (paramFriend.m()) {
+        paramAnalyticsContext = auj.a(paramFriend);
       }
+      paramAnalyticsContext = mSuggestionState;
     }
-    return new Friend(paramString);
-  }
-  
-  public static void a(String paramString1, String paramString2, ajv paramajv)
-  {
-    if (paramString1.equals(ajx.l())) {
-      ajx.g(paramString2);
-    }
-    do
+    switch (atm.1.b[paramAnalyticsContext.ordinal()])
     {
+    default: 
+    case 1: 
+    case 2: 
+      do
+      {
+        return;
+        bool = false;
+        break;
+        a(false, false);
+        return;
+        if (T != null) {
+          T.setVisibility(8);
+        }
+      } while (S == null);
+      S.setEnabled(false);
       return;
-      paramString1 = paramajv.a(paramString1);
-    } while (paramString1 == null);
-    mDisplayName = paramString2;
+    case 3: 
+      a(true, false);
+      return;
+    case 4: 
+      a(false, false);
+      return;
+    }
+    a(false, S.isChecked());
   }
   
-  public static void a(@cgb String paramString, boolean paramBoolean, @cgb ajv paramajv)
+  public final void a(AnalyticsEvents.AnalyticsContext paramAnalyticsContext, int paramInt1, int paramInt2)
   {
-    Friend localFriend = paramajv.a(paramString);
-    if (localFriend != null) {
-      mHasBeenAddedAsFriend = paramBoolean;
-    }
-    paramajv = paramajv.n().iterator();
-    while (paramajv.hasNext())
+    int i3 = 0;
+    SimpleArrayMap localSimpleArrayMap = R.a();
+    int i;
+    label26:
+    int j;
+    label40:
+    int m;
+    label54:
+    int n;
+    label68:
+    int i1;
+    label82:
+    int i2;
+    if (!localSimpleArrayMap.containsKey(FriendSectionizer.FriendSection.FRIENDS_WHO_ADDED_ME))
     {
-      localFriend = (Friend)paramajv.next();
-      if (TextUtils.equals(localFriend.h(), paramString)) {
-        mHasBeenAddedAsFriend = paramBoolean;
+      i = 0;
+      if (localSimpleArrayMap.containsKey(FriendSectionizer.FriendSection.MY_ADDRESS_BOOK)) {
+        break label164;
+      }
+      j = 0;
+      if (localSimpleArrayMap.containsKey(FriendSectionizer.FriendSection.MY_FRIENDS)) {
+        break label183;
+      }
+      m = 0;
+      if (localSimpleArrayMap.containsKey(FriendSectionizer.FriendSection.USERNAME)) {
+        break label202;
+      }
+      n = 0;
+      if (localSimpleArrayMap.containsKey(FriendSectionizer.FriendSection.ALPHABETICAL)) {
+        break label221;
+      }
+      i1 = 0;
+      if (localSimpleArrayMap.containsKey(FriendSectionizer.FriendSection.ON_SNAPCHAT)) {
+        break label240;
+      }
+      i2 = 0;
+      label96:
+      if (localSimpleArrayMap.containsKey(FriendSectionizer.FriendSection.INVITE)) {
+        break label259;
       }
     }
-  }
-  
-  public static boolean a(@cgc Friend paramFriend)
-  {
-    if (paramFriend == null) {
-      if (ajx.g() != SettingsFragment.PrivacyOptions.EVERYONE.ordinal()) {}
-    }
-    while ((!mIsLocalStory) && (!mIsSharedStory) && (!mIsBlocked))
+    for (;;)
     {
-      return true;
-      return false;
-    }
-    return false;
-  }
-  
-  public static boolean a(String paramString)
-  {
-    ajv localajv = ajv.g();
-    if (localajv == null) {
-      return false;
-    }
-    return a(localajv.a(paramString));
-  }
-  
-  @Deprecated
-  @cgb
-  public static Friend b(@cgb String paramString, @cgc ajv paramajv)
-  {
-    if (paramajv != null)
-    {
-      paramajv = paramajv.a(paramString);
-      if (paramajv != null) {
-        return paramajv;
+      switch (atm.1.a[paramAnalyticsContext.ordinal()])
+      {
+      default: 
+        return;
+        i = ((Integer)localSimpleArrayMap.get(FriendSectionizer.FriendSection.FRIENDS_WHO_ADDED_ME)).intValue();
+        break label26;
+        label164:
+        j = ((Integer)localSimpleArrayMap.get(FriendSectionizer.FriendSection.MY_ADDRESS_BOOK)).intValue();
+        break label40;
+        label183:
+        m = ((Integer)localSimpleArrayMap.get(FriendSectionizer.FriendSection.MY_FRIENDS)).intValue();
+        break label54;
+        label202:
+        n = ((Integer)localSimpleArrayMap.get(FriendSectionizer.FriendSection.USERNAME)).intValue();
+        break label68;
+        label221:
+        i1 = ((Integer)localSimpleArrayMap.get(FriendSectionizer.FriendSection.ALPHABETICAL)).intValue();
+        break label82;
+        label240:
+        i2 = ((Integer)localSimpleArrayMap.get(FriendSectionizer.FriendSection.ON_SNAPCHAT)).intValue();
+        break label96;
+        label259:
+        i3 = ((Integer)localSimpleArrayMap.get(FriendSectionizer.FriendSection.INVITE)).intValue();
       }
     }
-    return new Friend(paramString);
+    paramAnalyticsContext = new kn();
+    charCount = Long.valueOf(paramInt1);
+    keystrokeCount = Long.valueOf(paramInt2);
+    addedMeSearchCount = Long.valueOf(i);
+    addressBookSearchCount = Long.valueOf(j);
+    myFriendSearchCount = Long.valueOf(m);
+    usernameSearchCount = Long.valueOf(n);
+    ScAnalyticsEventEngine.a(paramAnalyticsContext);
+    return;
+    paramAnalyticsContext = new jb();
+    charCount = Long.valueOf(paramInt1);
+    keystrokeCount = Long.valueOf(paramInt2);
+    snapchatterCount = Long.valueOf(i2);
+    nonSnapchatterCount = Long.valueOf(i3);
+    ScAnalyticsEventEngine.a(paramAnalyticsContext);
+    return;
+    paramAnalyticsContext = new jr();
+    charCount = Long.valueOf(paramInt1);
+    keystrokeCount = Long.valueOf(paramInt2);
+    snapchatterCount = Long.valueOf(i2);
+    nonSnapchatterCount = Long.valueOf(i3);
+    ScAnalyticsEventEngine.a(paramAnalyticsContext);
+    return;
+    paramAnalyticsContext = new kb();
+    charCount = Long.valueOf(paramInt1);
+    keystrokeCount = Long.valueOf(paramInt2);
+    friendSearchCount = Long.valueOf(i1);
+    ScAnalyticsEventEngine.a(paramAnalyticsContext);
   }
   
-  @cgc
-  public static Friend c(@cgb String paramString, @cgc ajv paramajv)
+  public final void a(FriendAction paramFriendAction, boolean paramBoolean, String paramString)
   {
-    if (paramajv != null) {
-      return paramajv.b(paramString);
+    if (!paramBoolean) {
+      return;
     }
-    return null;
+    if (R != null) {
+      R.b(paramFriendAction, R.e());
+    }
+    switch (atm.1.c[paramFriendAction.ordinal()])
+    {
+    default: 
+      return;
+    case 1: 
+      a(false, true);
+      return;
+    }
+    a(false, false);
   }
   
-  public static boolean d(String paramString, @cgc ajv paramajv)
+  protected final void a(boolean paramBoolean1, boolean paramBoolean2)
   {
-    if (paramajv != null)
+    int j = 0;
+    if (paramBoolean1)
     {
-      paramString = paramajv.a(paramString);
-      if (paramString != null) {
-        return paramString.j();
+      i = 8;
+      if (S != null)
+      {
+        S.setChecked(paramBoolean2);
+        CheckBox localCheckBox = S;
+        if (paramBoolean1) {
+          break label96;
+        }
+        paramBoolean2 = true;
+        label37:
+        localCheckBox.setEnabled(paramBoolean2);
+        S.setVisibility(i);
+      }
+      if (!paramBoolean1) {
+        break label101;
       }
     }
-    return false;
+    label96:
+    label101:
+    for (int i = j;; i = 8)
+    {
+      if (T != null) {
+        T.setVisibility(i);
+      }
+      return;
+      if ((k) && (paramBoolean2))
+      {
+        i = 8;
+        break;
+      }
+      i = 0;
+      break;
+      paramBoolean2 = false;
+      break label37;
+    }
   }
   
-  public static String e(String paramString, @cgc ajv paramajv)
+  public void q()
   {
-    String str = paramString;
-    if (paramajv != null)
+    U.setVisibility(8);
+    S.setVisibility(8);
+    T.setVisibility(8);
+    S.setOnClickListener(null);
+  }
+  
+  public final void v()
+  {
+    S.setVisibility(8);
+  }
+  
+  public final void w()
+  {
+    T.setVisibility(8);
+  }
+  
+  public final class a
+    implements View.OnClickListener
+  {
+    int a;
+    private final AnalyticsEvents.AnalyticsContext c;
+    private final AnalyticsEvents.AddFriendSourceType d;
+    private final String e;
+    private final Friend f;
+    
+    public a(AnalyticsEvents.AnalyticsContext paramAnalyticsContext, AnalyticsEvents.AddFriendSourceType paramAddFriendSourceType, String paramString, Friend paramFriend)
     {
-      paramajv = paramajv.a(paramString);
-      str = paramString;
-      if (paramajv != null) {
-        str = paramajv.k();
+      c = paramAnalyticsContext;
+      d = paramAddFriendSourceType;
+      e = paramString;
+      f = paramFriend;
+      a = -1;
+    }
+    
+    public final void onClick(View paramView)
+    {
+      if (R != null)
+      {
+        paramView = R.d();
+        if ((paramView != null) && (!R.k))
+        {
+          a(R.b(), paramView.length(), R.c());
+          R.k = true;
+        }
+      }
+      boolean bool = S.isChecked();
+      Object localObject;
+      if (bool)
+      {
+        localObject = FriendAction.ADD;
+        paramView = (View)localObject;
+        if (RegistrationAnalytics.b())
+        {
+          AnalyticsEvents.g(f.l());
+          paramView = (View)localObject;
+        }
+        localObject = atm.this;
+        if (bool) {
+          break label248;
+        }
+      }
+      label248:
+      for (bool = true;; bool = false)
+      {
+        ((atm)localObject).a(true, bool);
+        localObject = new qg(f, paramView);
+        mAddSourceType = d;
+        mAnalyticsContext = c;
+        mFriendActionCompleteCallback = atm.this;
+        localObject = ((qg)localObject).a();
+        mActionMethod = il.CHECKMARK;
+        mFriendIndex = a;
+        ((qg)localObject).execute();
+        AnalyticsEvents.a(paramView, c.name(), f, d, e);
+        return;
+        localObject = FriendAction.DELETE;
+        paramView = (View)localObject;
+        if (!RegistrationAnalytics.b()) {
+          break;
+        }
+        AnalyticsEvents.h(f.l());
+        paramView = (View)localObject;
+        break;
       }
     }
-    return str;
-  }
-  
-  public static boolean f(String paramString, @cgc ajv paramajv)
-  {
-    if (paramajv == null) {
-      return false;
-    }
-    return paramajv.c(paramString);
-  }
-  
-  public static boolean g(String paramString, @cgb ajv paramajv)
-  {
-    boolean bool2 = false;
-    paramString = paramajv.a(paramString);
-    boolean bool1 = bool2;
-    if (paramString != null)
-    {
-      bool1 = bool2;
-      if (!mIsBlocked) {
-        bool1 = true;
-      }
-    }
-    return bool1;
-  }
-  
-  public static void h(String paramString, ajv paramajv)
-  {
-    paramajv.a(paramString, false);
   }
 }
 

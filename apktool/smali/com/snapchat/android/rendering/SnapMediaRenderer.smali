@@ -16,20 +16,20 @@
 .method public abstract a()V
 .end method
 
-.method public abstract a(Laje;ZLcom/snapchat/android/rendering/SnapMediaRenderer$a;)V
-    .param p1    # Laje;
-        .annotation build Lcgb;
+.method public abstract a(Laka;ZLcom/snapchat/android/rendering/SnapMediaRenderer$a;)V
+    .param p1    # Laka;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/android/rendering/SnapMediaRenderer$a;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method
 
 .method public abstract a(Landroid/view/ViewGroup;)V
     .param p1    # Landroid/view/ViewGroup;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method

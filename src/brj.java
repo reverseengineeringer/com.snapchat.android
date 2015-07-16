@@ -1,22 +1,63 @@
-public enum brj
+import org.apache.http.util.CharArrayBuffer;
+
+public final class brj
+  extends brg
 {
-  String i;
-  int j;
-  int k;
-  brk.a l;
-  brx m;
-  String n;
-  String o;
+  private int d = -1;
   
-  private brj(String paramString2, int paramInt2, int paramInt3, brk.a parama, brx parambrx, String paramString3, String paramString4)
+  public brj(brg parambrg)
   {
-    i = paramString2;
-    j = paramInt2;
-    k = paramInt3;
-    l = parama;
-    m = parambrx;
-    n = paramString3;
-    o = paramString4;
+    super(parambrg);
+  }
+  
+  public final boolean a(CharArrayBuffer paramCharArrayBuffer)
+  {
+    int i = paramCharArrayBuffer.indexOf(59);
+    int j = paramCharArrayBuffer.length();
+    if (i > 0) {}
+    for (;;)
+    {
+      try
+      {
+        d = Integer.parseInt(paramCharArrayBuffer.substringTrimmed(0, i), 16);
+        return true;
+      }
+      catch (NumberFormatException paramCharArrayBuffer)
+      {
+        return false;
+      }
+      i = j;
+    }
+  }
+  
+  public final brg b()
+  {
+    if (d == 0) {
+      return new brr(this);
+    }
+    b.clear();
+    return new bri(this, d);
+  }
+  
+  public final brg c()
+  {
+    return brt.d;
+  }
+  
+  protected final int d()
+  {
+    return 16;
+  }
+  
+  protected final int e()
+  {
+    return 256;
+  }
+  
+  public final void f()
+  {
+    a.b(a());
+    a.a(brt.d);
   }
 }
 

@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.chat;
 
 import android.view.View;
-import bgr;
-import bgr.a;
+import bhr;
+import bhr.a;
 import com.snapchat.android.ui.CashSwiperView;
 
 final class ChatFragment$12
-  implements bgr.a
+  implements bhr.a
 {
   ChatFragment$12(ChatFragment paramChatFragment) {}
   

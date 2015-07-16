@@ -1,78 +1,54 @@
 import android.content.Intent;
 import android.text.TextUtils;
-import android.util.Pair;
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.util.debug.ReleaseManager;
-import java.util.List;
+import com.snapchat.android.util.profileimages.ProfileImageUtils;
+import javax.inject.Provider;
 
 public final class anf
-  extends amd
-  implements ts.b<anf.b>
+  extends amz
 {
-  public boolean a;
-  public bkt b;
-  private final String c;
-  private String d;
-  private String e;
-  private ajx f;
-  private aya g;
-  private aol k;
-  
   public anf(Intent paramIntent)
   {
-    this(paramIntent, ajx.a(), aya.a(), aol.a());
+    this(paramIntent, akp.UNSAFE_USER_PROVIDER, pm.a(), axo.PROFILE_IMAGE_CACHE, ProfileImageUtils.a(), akr.a(), aph.a());
   }
   
-  private anf(Intent paramIntent, ajx paramajx, aya paramaya, aol paramaol)
+  @cf
+  private anf(Intent paramIntent, @chc Provider<akp> paramProvider, @chc pm parampm, @chc axn paramaxn, @chc ProfileImageUtils paramProfileImageUtils, @chc akr paramakr, @chc aph paramaph)
   {
-    super(paramIntent);
-    f = paramajx;
-    g = paramaya;
-    c = paramIntent.getStringExtra("action");
-    d = paramIntent.getStringExtra("code");
-    e = paramIntent.getStringExtra("type");
-    f = ajx.a();
-    k = paramaol;
-    a(anf.b.class, this);
+    super(paramIntent, paramProvider, parampm, paramaxn, paramProfileImageUtils, paramakr, paramaph);
   }
   
-  public final Object b()
+  public final void D_()
   {
-    anf.a locala = (anf.a)a(new anf.a().a(c).b(d).i(e));
-    if ((TextUtils.equals(c, "verifyPhoneNumber")) && (TextUtils.equals(e, TWO_FA_TYPEvalue)))
+    if ((a != null) && (bjx.a.NOT_EQUAL == a.e()))
     {
-      locala.j(ajx.l());
-      Pair localPair = g.a(ajx.l(), locala.a(), locala.b());
-      if (localPair == null) {
-        break label118;
+      if (TextUtils.equals(c, akr.aC())) {
+        akr.m(a.b());
       }
-      locala.k((String)first);
-      locala.l((String)second);
     }
-    label118:
-    while (!ReleaseManager.f()) {
-      return locala;
+    else {
+      return;
     }
-    throw new RuntimeException("null deviceTokenAndSignaturePair");
+    d.f();
   }
   
-  protected final String e()
+  protected final akp.a b(bhx parambhx)
   {
-    return "/bq/phone_verify";
+    return new akp.a(h.a(parambhx.d(), f), h.a(parambhx.f()), false, h.a(parambhx.h(), parambhx.i(), f));
   }
   
-  @tn
-  final class a
-    extends bks
+  protected final String c()
   {
-    a() {}
+    return akr.aC();
   }
   
-  public class b
-    extends bkt
+  public final Object getRequestPayload()
   {
-    @SerializedName("two_fa_verified_devices")
-    List<bkq> a;
+    return buildAuthPayload(new amz.a(this).a(c).b(pq.a().a("/loq/conversations")));
+  }
+  
+  protected final String l_()
+  {
+    return "/loq/conversations";
   }
 }
 

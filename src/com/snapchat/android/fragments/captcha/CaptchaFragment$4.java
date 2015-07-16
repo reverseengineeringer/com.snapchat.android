@@ -5,8 +5,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import auh;
-import om;
+import avf;
+import pd;
 
 final class CaptchaFragment$4
   implements View.OnClickListener
@@ -21,7 +21,7 @@ final class CaptchaFragment$4
     a.setVisibility(8);
     b.setText(2131492956);
     c.setVisibility(0);
-    new om(d).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    new pd(d).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
   }
 }
 

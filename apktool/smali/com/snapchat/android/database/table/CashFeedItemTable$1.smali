@@ -36,7 +36,7 @@
     .locals 0
 
     .prologue
-    .line 239
+    .line 240
     iput-object p1, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$1;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$1;->b:Lcom/snapchat/android/model/chat/CashFeedItem;
@@ -52,7 +52,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 242
+    .line 243
     iget-object v0, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$1;->a:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
@@ -63,10 +63,10 @@
 
     move-result-object v0
 
-    .line 243
+    .line 244
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 245
+    .line 246
     :try_start_0
     const-string v1, "CashFeedItem"
 
@@ -146,26 +146,26 @@
 
     move-result-object v1
 
-    .line 251
+    .line 252
     if-eqz v1, :cond_0
 
-    .line 252
+    .line 253
     invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
 
     move-result v2
 
-    .line 253
+    .line 254
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 254
+    .line 255
     if-lez v2, :cond_1
 
-    .line 255
+    .line 256
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 256
+    .line 257
     sget-object v2, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->TARGET_VIEW:Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;
 
     invoke-virtual {v2}, Lcom/snapchat/android/database/table/CashFeedItemTable$CashSchema;->getColumnName()Ljava/lang/String;
@@ -180,7 +180,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 257
+    .line 258
     const-string v2, "CashFeedItem"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -223,20 +223,20 @@
 
     invoke-virtual {v0, v2, v1, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 264
+    .line 265
     :goto_0
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 267
+    .line 268
     :cond_0
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 269
+    .line 270
     return-object v8
 
-    .line 262
+    .line 263
     :cond_1
     :try_start_1
     iget-object v1, p0, Lcom/snapchat/android/database/table/CashFeedItemTable$1;->b:Lcom/snapchat/android/model/chat/CashFeedItem;
@@ -249,7 +249,7 @@
 
     goto :goto_0
 
-    .line 267
+    .line 268
     :catchall_0
     move-exception v1
 
@@ -264,7 +264,7 @@
     .locals 1
 
     .prologue
-    .line 239
+    .line 240
     invoke-direct {p0}, Lcom/snapchat/android/database/table/CashFeedItemTable$1;->a()Ljava/lang/Void;
 
     move-result-object v0

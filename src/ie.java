@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class ie
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "PROFILE_ADD_NEARBY_PAGE_VIEW";
+  private final String eventName = "HERE_SESSION_AVAILABLE";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_ADD_NEARBY_PAGE_VIEW");
+    localHashMap.put("event_name", "HERE_SESSION_AVAILABLE");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

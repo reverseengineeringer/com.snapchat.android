@@ -1,16 +1,4 @@
-public final class bcp
-{
-  public final String reason;
-  public final String username;
-  public final boolean videoReceived;
-  
-  public bcp(String paramString1, boolean paramBoolean, String paramString2)
-  {
-    username = paramString1;
-    videoReceived = paramBoolean;
-    reason = paramString2;
-  }
-}
+public final class bcp {}
 
 /* Location:
  * Qualified Name:     bcp

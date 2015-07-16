@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzw;
+.implements Laav;
 
 
 # annotations
@@ -22,7 +22,7 @@
         "<",
         "Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;",
         ">;",
-        "Lzw;"
+        "Laav;"
     }
 .end annotation
 
@@ -35,6 +35,8 @@
 .field public static final enum ID:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
 .field public static final enum SERIALIZED_AD_METADATA:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
+
+.field public static final enum THUMBNAILS:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
 
 # instance fields
@@ -49,14 +51,16 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 10
+    .locals 11
 
     .prologue
+    const/4 v10, 0x3
+
     const/4 v9, 0x2
 
     const/4 v2, 0x1
 
-    .line 85
+    .line 89
     new-instance v0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
     const-string v1, "ID"
@@ -71,7 +75,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->ID:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
-    .line 86
+    .line 90
     new-instance v0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
     const-string v1, "SERIALIZED_AD_METADATA"
@@ -86,7 +90,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->SERIALIZED_AD_METADATA:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
-    .line 87
+    .line 91
     new-instance v3, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
     const-string v4, "AD_INTERVAL_INDEX"
@@ -103,8 +107,25 @@
 
     sput-object v3, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->AD_INTERVAL_INDEX:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
-    .line 84
-    const/4 v0, 0x3
+    .line 92
+    new-instance v3, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
+
+    const-string v4, "THUMBNAILS"
+
+    const-string v7, "thumbnails"
+
+    sget-object v8, Lcom/snapchat/android/database/DataType;->TEXT:Lcom/snapchat/android/database/DataType;
+
+    move v5, v10
+
+    move v6, v10
+
+    invoke-direct/range {v3 .. v8}, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
+
+    sput-object v3, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->THUMBNAILS:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
+
+    .line 88
+    const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
@@ -121,6 +142,10 @@
     sget-object v1, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->AD_INTERVAL_INDEX:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
     aput-object v1, v0, v9
+
+    sget-object v1, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->THUMBNAILS:Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
+
+    aput-object v1, v0, v10
 
     sput-object v0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->$VALUES:[Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
@@ -139,19 +164,19 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 100
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 95
+    .line 101
     iput p3, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->a:I
 
-    .line 96
+    .line 102
     iput-object p4, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->b:Ljava/lang/String;
 
-    .line 97
+    .line 103
     iput-object p5, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->c:Lcom/snapchat/android/database/DataType;
 
-    .line 98
+    .line 104
     return-void
 .end method
 
@@ -168,22 +193,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 100
+    .line 106
     invoke-direct {p0, p1, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 101
+    .line 107
     iput v0, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->a:I
 
-    .line 102
+    .line 108
     iput-object p2, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->b:Ljava/lang/String;
 
-    .line 103
+    .line 109
     iput-object p3, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->c:Lcom/snapchat/android/database/DataType;
 
-    .line 104
+    .line 110
     iput-object p4, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->d:Ljava/lang/String;
 
-    .line 105
+    .line 111
     return-void
 .end method
 
@@ -191,7 +216,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 88
     const-class v0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -207,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 88
     sget-object v0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->$VALUES:[Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->clone()Ljava/lang/Object;
@@ -225,7 +250,7 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 120
     iget-object v0, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->b:Ljava/lang/String;
 
     return-object v0
@@ -235,7 +260,7 @@
     .locals 1
 
     .prologue
-    .line 111
+    .line 117
     iget v0, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->a:I
 
     return v0
@@ -245,7 +270,7 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 123
     iget-object v0, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->d:Ljava/lang/String;
 
     return-object v0
@@ -255,7 +280,7 @@
     .locals 1
 
     .prologue
-    .line 108
+    .line 114
     iget-object v0, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$StoryMetadataTableSchema;->c:Lcom/snapchat/android/database/DataType;
 
     return-object v0

@@ -1,56 +1,64 @@
-import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
-public class bha
-  extends bhl
+public final class bha<T>
 {
-  @SerializedName("count")
-  protected Long count;
-  @SerializedName("created_at")
-  protected Long createdAt;
+  private final bgz mRandomIntegerSetGenerator;
   
-  public final Long a()
+  public bha()
   {
-    return createdAt;
+    this(new bgz());
   }
   
-  public final void a(Long paramLong)
+  private bha(bgz parambgz)
   {
-    createdAt = paramLong;
+    mRandomIntegerSetGenerator = parambgz;
   }
   
-  public final Long b()
+  public final List<T> a(List<T> paramList)
   {
-    return count;
-  }
-  
-  public final void b(Long paramLong)
-  {
-    count = paramLong;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
+    if (3 >= paramList.size()) {
+      return paramList;
     }
-    if (!(paramObject instanceof bha)) {
-      return false;
+    Object localObject2 = mRandomIntegerSetGenerator;
+    int k = paramList.size();
+    if (3 > k) {
+      throw new IllegalStateException("Must generate <= upperBound numbers!");
     }
-    paramObject = (bha)paramObject;
-    return new EqualsBuilder().append(createdAt, createdAt).append(count, count).isEquals();
-  }
-  
-  public int hashCode()
-  {
-    return new HashCodeBuilder().append(createdAt).append(count).toHashCode();
-  }
-  
-  public String toString()
-  {
-    return ToStringBuilder.reflectionToString(this);
+    Object localObject1 = new HashSet(3);
+    int i = k - 3;
+    if (i < k)
+    {
+      int j;
+      if (i == 0)
+      {
+        j = 0;
+        label69:
+        if (!((Set)localObject1).contains(Integer.valueOf(j))) {
+          break label117;
+        }
+        ((Set)localObject1).add(Integer.valueOf(i));
+      }
+      for (;;)
+      {
+        i += 1;
+        break;
+        j = mRgen.nextInt(i + 1);
+        break label69;
+        label117:
+        ((Set)localObject1).add(Integer.valueOf(j));
+      }
+    }
+    localObject2 = new ArrayList(3);
+    localObject1 = ((Set)localObject1).iterator();
+    while (((Iterator)localObject1).hasNext()) {
+      ((List)localObject2).add(paramList.get(((Integer)((Iterator)localObject1).next()).intValue()));
+    }
+    return (List<T>)localObject2;
   }
 }
 

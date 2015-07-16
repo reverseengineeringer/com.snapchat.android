@@ -1,29 +1,45 @@
-import javax.inject.Provider;
-
-public final class bgm
-  implements buj<bgl>
+public abstract class bgm
 {
-  private final Provider<bgk> mClockProvider;
+  private final bai mCrasher;
+  public boolean mIsReleased = false;
   
-  static
+  public bgm()
   {
-    if (!bgm.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    this(bai.a());
+  }
+  
+  private bgm(@chc bai parambai)
+  {
+    mCrasher = parambai;
+  }
+  
+  public abstract void c();
+  
+  public final void e()
+  {
+    if (mIsReleased)
     {
-      $assertionsDisabled = bool;
+      getClass().getName();
       return;
+    }
+    c();
+    mIsReleased = true;
+  }
+  
+  public final void f()
+  {
+    if (mIsReleased) {
+      throw new IllegalStateException(getClass().getName() + " already released!");
     }
   }
   
-  private bgm(Provider<bgk> paramProvider)
+  public void finalize()
   {
-    assert (paramProvider != null);
-    mClockProvider = paramProvider;
-  }
-  
-  public static buj<bgl> a(Provider<bgk> paramProvider)
-  {
-    return new bgm(paramProvider);
+    if (!mIsReleased)
+    {
+      getClass().getName();
+      e();
+    }
   }
 }
 

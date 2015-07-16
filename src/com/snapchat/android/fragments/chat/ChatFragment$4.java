@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.chat;
 
 import android.view.View;
 import android.widget.AbsListView.RecyclerListener;
-import avh;
+import awf;
 
 final class ChatFragment$4
   implements AbsListView.RecyclerListener
@@ -12,7 +12,7 @@ final class ChatFragment$4
   public final void onMovedToScrapHeap(View paramView)
   {
     paramView.getTag();
-    avh.b(paramView);
+    awf.b(paramView);
   }
 }
 

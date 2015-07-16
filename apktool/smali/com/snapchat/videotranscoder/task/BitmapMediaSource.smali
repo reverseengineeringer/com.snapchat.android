@@ -17,7 +17,7 @@
 .method public constructor <init>(Landroid/graphics/Bitmap;J)V
     .locals 2
     .param p1    # Landroid/graphics/Bitmap;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

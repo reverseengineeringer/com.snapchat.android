@@ -1,93 +1,79 @@
-import android.os.Bundle;
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.model.MediaMailingMetadata;
-import com.snapchat.android.model.MediaMailingMetadata.UploadStatus;
-import com.snapchat.android.model.Mediabryo;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.snapchat.android.model.chat.ChatMedia;
-import com.snapchat.android.model.chat.ChatMedia.MediaType;
-import com.snapchat.android.model.chat.StatefulChatFeedItem;
-import com.snapchat.android.model.chat.StatefulChatFeedItem.SendReceiveStatus;
-import com.snapchat.android.notification.AndroidNotificationManager;
-import com.snapchat.android.util.crypto.CbcEncryptionAlgorithm;
-import com.squareup.otto.Bus;
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public final class pj
-  extends ph
 {
-  private static final String TASK_NAME = "UploadChatMediaTask";
-  private ChatConversation mChatConversation;
-  private ChatMedia mChatMedia;
-  private AndroidNotificationManager mNotificationManager = AndroidNotificationManager.a();
-  private final ajn mSnapWomb = ajn.a();
+  private static final String PATTERN = "0001110111101110001111010101111011010001001110011000110001000110";
+  private static final String SECRET = "iEk21fuwZApXlz93750dmW22pw389dPwOk";
+  private static final String STATIC_TOKEN = "m198sOkJEn37DjqZ32lpRu76xmw288xSQ9";
+  private static final String TAG = "RequestAuthorization";
   
-  public pj(aim paramaim)
+  @chd
+  public static String a(String paramString)
   {
-    super(paramaim);
-  }
-  
-  protected final String a()
-  {
-    return "/bq/upload_chat_media";
-  }
-  
-  protected final void a(String paramString, int paramInt)
-  {
-    mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.FAILED);
-    mChatMedia.mSendReceiveStatus = StatefulChatFeedItem.SendReceiveStatus.FAILED;
-    ban.a().a(new baz(mChatConversation.mId, true));
-    mNotificationManager.a(SnapchatApplication.b(), false);
-  }
-  
-  protected final Bundle b()
-  {
-    Bundle localBundle = super.b();
-    localBundle.putString("type", ChatMedia.MediaType.IMAGE.toString());
-    localBundle.putString("conversation_id", mChatConversation.mId);
-    localBundle.putString("id", mSnapbryo.mClientId);
-    localBundle.putString("recipient", mMediaMailingMetadata.e());
-    localBundle.putByteArray("data", new CbcEncryptionAlgorithm(mChatMedia.D(), mChatMedia.E()).a(mData, "no dataId provided"));
-    return localBundle;
-  }
-  
-  protected final void b(aku paramaku)
-  {
-    mChatMedia.e(media_id);
-    mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.UPLOADED);
-    paramaku = yq.a();
-    ChatConversation localChatConversation = mChatConversation;
-    ChatMedia localChatMedia = mChatMedia;
-    localChatMedia.c(localChatConversation.b(localChatMedia.W()));
-    Object localObject = new bih().a(localChatMedia.B()).b(localChatMedia.D()).c(localChatMedia.E()).a(Integer.valueOf(localChatMedia.F())).b(Integer.valueOf(localChatMedia.G()));
-    localObject = new bij().a(bij.a.MEDIA.toString()).a((bih)localObject);
-    bhf localbhf = (bhf)asz.a(bii.a.CHAT_MESSAGE, mSender, mRecipients, mMessagingAuthToken);
-    localbhf.a((bij)localObject);
-    localbhf.a(localChatMedia.d());
-    localbhf.b(Long.valueOf(localChatMedia.W()));
-    localChatMedia.a(localbhf.k());
-    localChatMedia.a(localbhf);
-    paramaku.a(localChatConversation, localChatMedia);
-    mNotificationManager.a(SnapchatApplication.b(), true);
-  }
-  
-  protected final String c()
-  {
-    return "UploadChatMediaTask";
-  }
-  
-  protected final void onPreExecute()
-  {
-    super.onPreExecute();
-    mChatMedia = new ChatMedia(mSnapbryo);
-    mChatMedia.mSendReceiveStatus = StatefulChatFeedItem.SendReceiveStatus.SENDING;
-    mChatConversation = akc.b().a(mMediaMailingMetadata.e());
-    if (mChatConversation == null)
+    try
     {
-      cancel(true);
-      return;
+      paramString = a(akr.F(), paramString);
+      return paramString;
     }
-    mChatConversation.a(mChatMedia);
-    yn.a().a(mChatConversation, false);
+    catch (NoSuchAlgorithmException paramString)
+    {
+      return null;
+    }
+    catch (UnsupportedEncodingException paramString)
+    {
+      for (;;) {}
+    }
+  }
+  
+  public static String a(String paramString1, String paramString2)
+  {
+    paramString1 = "iEk21fuwZApXlz93750dmW22pw389dPwOk" + paramString1;
+    String str = paramString2 + "iEk21fuwZApXlz93750dmW22pw389dPwOk";
+    MessageDigest localMessageDigest = MessageDigest.getInstance("SHA-256");
+    localMessageDigest.update(paramString1.getBytes("UTF-8"));
+    paramString2 = a(localMessageDigest.digest());
+    localMessageDigest.update(str.getBytes("UTF-8"));
+    str = a(localMessageDigest.digest());
+    paramString1 = "";
+    int i = 0;
+    if (i < 64)
+    {
+      int j = "0001110111101110001111010101111011010001001110011000110001000110".charAt(i);
+      paramString1 = new StringBuilder().append(paramString1);
+      if (j == 48) {}
+      for (char c = paramString2.charAt(i);; c = str.charAt(i))
+      {
+        paramString1 = c;
+        i += 1;
+        break;
+      }
+    }
+    return paramString1;
+  }
+  
+  private static String a(byte[] paramArrayOfByte)
+  {
+    return String.format("%064x", new Object[] { new BigInteger(1, paramArrayOfByte) });
+  }
+  
+  public static String b(String paramString)
+  {
+    try
+    {
+      paramString = a("m198sOkJEn37DjqZ32lpRu76xmw288xSQ9", paramString);
+      return paramString;
+    }
+    catch (NoSuchAlgorithmException paramString)
+    {
+      return null;
+    }
+    catch (UnsupportedEncodingException paramString)
+    {
+      for (;;) {}
+    }
   }
 }
 

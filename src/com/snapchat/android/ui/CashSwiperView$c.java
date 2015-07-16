@@ -2,7 +2,7 @@ package com.snapchat.android.ui;
 
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
-import avh;
+import awf;
 
 final class CashSwiperView$c
   extends GestureDetector.SimpleOnGestureListener
@@ -11,7 +11,7 @@ final class CashSwiperView$c
   
   public final boolean onFling(MotionEvent paramMotionEvent1, MotionEvent paramMotionEvent2, float paramFloat1, float paramFloat2)
   {
-    if (avh.b(paramFloat2, a.getContext()) < -1500.0F) {
+    if (awf.b(paramFloat2, a.getContext()) < -1500.0F) {
       CashSwiperView.a(a, paramFloat2);
     }
     return true;

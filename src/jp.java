@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class jp
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "PROFILE_PAGE_VIEW";
+  private final String eventName = "PROFILE_MY_CONTACTS_PAGE_VIEW";
+  public Boolean hasContactAccess;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_PAGE_VIEW");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "PROFILE_MY_CONTACTS_PAGE_VIEW");
+    if (hasContactAccess != null) {
+      localHashMap.put("has_contact_access", hasContactAccess);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class jp
         return false;
       }
       paramObject = (jp)paramObject;
-      if (additionalInfo == null) {
+      if (hasContactAccess == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (hasContactAccess.equals(hasContactAccess));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (hasContactAccess == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class jp
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
+    if (hasContactAccess != null) {}
+    for (int i = hasContactAccess.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

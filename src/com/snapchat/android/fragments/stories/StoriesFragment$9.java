@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.stories;
 
 import android.content.Context;
-import apz;
+import aqy;
 
 final class StoriesFragment$9
-  extends apz
+  extends aqy
 {
   StoriesFragment$9(StoriesFragment paramStoriesFragment, Context paramContext, String paramString)
   {

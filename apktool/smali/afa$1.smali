@@ -1,89 +1,122 @@
-.class final Lafa$1;
-.super Landroid/os/Handler;
+.class public final synthetic Lafa$1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lafa;-><init>(Landroid/content/Context;Ljava/util/List;Lcom/snapchat/android/util/FriendSectionizer;Lafa$a;Lafe;Ljavax/inject/Provider;Lcom/snapchat/android/fragments/addfriends/FriendListProperty;Lbfy;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lafa;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1009
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic a:Lafa;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lafa;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 217
-    iput-object p1, p0, Lafa$1;->a:Lafa;
+    .line 78
+    invoke-static {}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->values()[Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    move-result-object v0
 
-    return-void
-.end method
+    array-length v0, v0
 
+    new-array v0, v0, [I
 
-# virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 2
+    sput-object v0, Lafa$1;->a:[I
 
-    .prologue
-    .line 220
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    :try_start_0
+    sget-object v0, Lafa$1;->a:[I
 
-    instance-of v0, v0, Lcom/snapchat/android/model/FriendAction;
+    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->IMAGE:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
 
-    .line 221
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    move-result v1
 
-    check-cast v0, Lcom/snapchat/android/model/FriendAction;
+    const/4 v2, 0x1
 
-    .line 222
-    sget-object v1, Lafa$3;->a:[I
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_3
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/FriendAction;->ordinal()I
-
-    move-result v0
-
-    aget v0, v1, v0
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 232
-    invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
-
-    .line 236
-    :cond_0
     :goto_0
+    :try_start_1
+    sget-object v0, Lafa$1;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->LOCAL_WEBPAGE:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_2
+
+    :goto_1
+    :try_start_2
+    sget-object v0, Lafa$1;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->VIDEO:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_1
+
+    :goto_2
+    :try_start_3
+    sget-object v0, Lafa$1;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->REMOTE_VIDEO:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
+
+    :goto_3
     return-void
 
-    .line 227
-    :pswitch_0
-    iget-object v0, p0, Lafa$1;->a:Lafa;
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v0}, Lafa;->notifyDataSetChanged()V
+    goto :goto_3
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_2
+
+    :catch_2
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_3
+    move-exception v0
 
     goto :goto_0
-
-    .line 222
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
 .end method

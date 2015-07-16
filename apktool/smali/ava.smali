@@ -3,97 +3,134 @@
 .source "SourceFile"
 
 
+# static fields
+.field private static final SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+
+
 # direct methods
-.method public static a(Lajv;Lajr;Z)V
-    .locals 3
-    .param p0    # Lajv;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p1    # Lajr;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 18
-    if-eqz p0, :cond_0
-
-    if-nez p1, :cond_1
-
-    .line 36
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 21
-    :cond_1
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    .line 15
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
 
-    iget-object v1, p1, Lajr;->mUsername:Ljava/lang/String;
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    move-result-object v0
+
+    sput-object v0, Lava;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 28
+    sget-object v0, Lava;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/lang/String;I)V
+    .locals 1
+
+    .prologue
+    .line 56
+    sget-object v0, Lava;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 57
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 44
+    sget-object v0, Lava;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 45
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;Z)Z
+    .locals 1
+
+    .prologue
+    .line 20
+    sget-object v0, Lava;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    return v0
+.end method
 
-    .line 23
-    invoke-static {}, Lajq;->a()Lajq;
+.method public static b(Ljava/lang/String;)I
+    .locals 2
 
-    move-result-object v0
+    .prologue
+    .line 40
+    sget-object v0, Lava;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
 
-    const-string v1, "my_story_ads79sdf"
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lajq;->a(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
+    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
-    move-result-object v0
+    move-result v0
 
-    .line 29
-    :goto_1
-    if-eqz v0, :cond_0
+    return v0
+.end method
 
-    .line 30
-    invoke-virtual {p1}, Lajr;->d()Ljava/lang/String;
+.method public static b(Ljava/lang/String;Z)V
+    .locals 1
 
-    move-result-object v1
+    .prologue
+    .line 48
+    sget-object v0, Lava;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/StoryCollection;->b(Ljava/lang/String;)Lajr;
-
-    move-result-object v1
-
-    .line 31
-    if-eqz v1, :cond_0
-
-    .line 32
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Lajr;->d(I)V
-
-    .line 33
-    invoke-virtual {v1}, Lajr;->C()V
-
-    .line 34
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/StoryCollection;->f(Lajr;)V
-
-    .line 35
-    invoke-virtual {v1, p2}, Lajr;->e(Z)V
-
-    goto :goto_0
-
-    .line 26
-    :cond_2
-    invoke-static {}, Lajq;->a()Lajq;
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    iget-object v1, p1, Lajr;->mUsername:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lajq;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    goto :goto_1
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 49
+    return-void
 .end method

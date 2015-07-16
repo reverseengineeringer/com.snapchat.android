@@ -1,77 +1,53 @@
-import android.view.MotionEvent;
-import com.snapchat.android.ui.snapeditormotion.SwipeHandlerType;
+import android.content.Context;
 
 public final class aqz
-  implements aqy
+  extends ara
 {
-  public final SwipeHandlerType a(aph paramaph, arf paramarf, int paramInt)
+  private final aqz.a a;
+  private final aas b;
+  private final String c;
+  
+  public aqz(Context paramContext, ajy paramajy, aas paramaas, @chd aqz.a parama)
   {
-    int j = 1;
-    if (f == b[0])
-    {
-      i = 1;
-      if (i == 0) {
-        if (b[1] == -1) {
-          break label68;
-        }
-      }
+    super(paramContext, null, paramContext.getString(2131493269), paramContext.getString(2131492952));
+    a = parama;
+    b = paramaas;
+    c = mStoryId;
+    parama = mDisplayName;
+    String str1 = mFriendName;
+    String str2 = mVenue;
+    paramaas = mCustomTitle;
+    paramContext = paramaas;
+    if (paramaas == null) {
+      paramContext = auv.a(null, 2131493318, new Object[] { parama });
     }
-    label68:
-    for (int i = j;; i = 0)
-    {
-      if (i == 0)
-      {
-        paramarf.a(paramInt);
-        paramaph.a(a[paramInt]);
-      }
-      return null;
-      i = 0;
-      break;
+    paramaas = mCustomDescription;
+    paramajy = paramaas;
+    if (paramaas == null) {
+      paramajy = auv.a(null, 2131493317, new Object[] { str2, parama, parama, str1, parama, str1 });
+    }
+    setTitle(paramContext);
+    setMessage(paramajy);
+  }
+  
+  protected final void a()
+  {
+    b.b(c);
+    if (a != null) {
+      a.a(true);
     }
   }
   
-  public final SwipeHandlerType a(aph paramaph, arf paramarf, int paramInt1, int paramInt2)
+  protected final void b()
   {
-    boolean bool = true;
-    float f;
-    if (paramInt1 > 1)
-    {
-      f = d;
-      if (Math.abs(f - a[1]) > paramInt2)
-      {
-        a[1] = Float.MAX_VALUE;
-        if (g) {
-          break label60;
-        }
-      }
-    }
-    for (;;)
-    {
-      paramaph.a(bool, f);
-      return null;
-      label60:
-      bool = false;
+    if (a != null) {
+      a.a(false);
     }
   }
   
-  public final SwipeHandlerType a(aph paramaph, arf paramarf, MotionEvent paramMotionEvent)
+  public static abstract interface a
   {
-    int i = 1;
-    if (paramarf.a())
-    {
-      paramaph.e();
-      g = false;
-      return SwipeHandlerType.NO_SWIPE_STARTED;
-    }
-    if ((a[1] == Float.MAX_VALUE) && (f == 1)) {}
-    for (;;)
-    {
-      if (i != 0) {
-        paramaph.e();
-      }
-      return null;
-      i = 0;
-    }
+    public abstract void a(boolean paramBoolean);
   }
 }
 

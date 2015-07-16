@@ -12,13 +12,13 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lakq;",
+            "Lall;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private final b:Laol;
+.field private final b:Laph;
 
 
 # direct methods
@@ -27,17 +27,17 @@
 
     .prologue
     .line 34
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;-><init>(Laol;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;-><init>(Laph;)V
 
     .line 35
     return-void
 .end method
 
-.method private constructor <init>(Laol;)V
+.method private constructor <init>(Laph;)V
     .locals 1
 
     .prologue
@@ -52,7 +52,7 @@
     iput-object v0, p0, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;->a:Ljava/util/List;
 
     .line 39
-    iput-object p1, p0, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;->b:Laol;
+    iput-object p1, p0, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;->b:Laph;
 
     .line 40
     return-void
@@ -77,9 +77,9 @@
     if-le v0, v1, :cond_0
 
     .line 119
-    iget-object v0, p0, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;->b:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;->b:Laph;
 
-    invoke-virtual {v0}, Laol;->d()I
+    invoke-virtual {v0}, Laph;->d()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -107,7 +107,7 @@
             "()",
             "Ljava/util/List",
             "<",
-            "Lakq;",
+            "Lall;",
             ">;"
         }
     .end annotation
@@ -163,7 +163,7 @@
 .method public final a(Landroid/app/Activity;)V
     .locals 0
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -175,23 +175,23 @@
 .method public final a(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
     .locals 6
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p5    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -262,15 +262,15 @@
 
     .line 55
     :cond_1
-    new-instance v2, Lakq$a;
+    new-instance v2, Lall$a;
 
-    invoke-direct {v2, p1}, Lakq$a;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, p1}, Lall$a;-><init>(Ljava/lang/String;)V
 
     .line 56
-    invoke-virtual {v2, p2}, Lakq$a;->a(Ljava/util/Map;)Lakq$a;
+    invoke-virtual {v2, p2}, Lall$a;->a(Ljava/util/Map;)Lall$a;
 
     .line 57
-    invoke-virtual {v2, p3}, Lakq$a;->a(Ljava/util/Map;)Lakq$a;
+    invoke-virtual {v2, p3}, Lall$a;->a(Ljava/util/Map;)Lall$a;
 
     .line 58
     if-eqz p4, :cond_2
@@ -320,7 +320,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v2, v0, v1}, Lakq$a;->a(Ljava/lang/String;Ljava/lang/String;)Lakq$a;
+    invoke-virtual {v2, v0, v1}, Lall$a;->a(Ljava/lang/String;Ljava/lang/String;)Lall$a;
 
     goto :goto_2
 
@@ -371,7 +371,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v1, v0}, Lakq$a;->b(Ljava/lang/String;Ljava/lang/String;)Lakq$a;
+    invoke-virtual {v2, v1, v0}, Lall$a;->b(Ljava/lang/String;Ljava/lang/String;)Lall$a;
 
     goto :goto_3
 
@@ -379,7 +379,7 @@
     :cond_3
     iget-object v0, p0, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;->a:Ljava/util/List;
 
-    invoke-virtual {v2}, Lakq$a;->a()Lakq;
+    invoke-virtual {v2}, Lall$a;->a()Lall;
 
     move-result-object v1
 
@@ -398,7 +398,7 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lakq;",
+            "Lall;",
             ">;)V"
         }
     .end annotation
@@ -439,7 +439,7 @@
             "()",
             "Ljava/util/List",
             "<",
-            "Lakq;",
+            "Lall;",
             ">;"
         }
     .end annotation
@@ -454,7 +454,7 @@
 .method public final b(Landroid/app/Activity;)V
     .locals 0
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

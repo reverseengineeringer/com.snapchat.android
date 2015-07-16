@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lwc$c;
+.implements Lwy$c;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1191
+    .line 1189
     iput-object p1, p0, Lcom/snapchat/android/camera/CameraFragment$4;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 1194
+    .line 1192
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$4;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
@@ -49,6 +49,6 @@
 
     iput-boolean v1, v0, Lcom/snapchat/android/camera/model/CameraModel;->g:Z
 
-    .line 1195
+    .line 1193
     return-void
 .end method

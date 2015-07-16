@@ -1,17 +1,16 @@
 package com.snapchat.android.analytics.framework;
 
-import ajx;
+import akr;
 import android.os.SystemClock;
-import ate;
-import aua;
-import aza;
-import bgk;
-import bgl;
-import bgp;
-import cgb;
-import cgc;
+import aud;
+import auy;
+import azy;
+import bhk;
+import bhl;
+import bhp;
+import chc;
+import chd;
 import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,7 +23,7 @@ import javax.inject.Inject;
 public class EasyMetric
 {
   private static int f = 0;
-  @cgc
+  @chd
   protected String a;
   public long b = -1L;
   @Inject
@@ -33,51 +32,52 @@ public class EasyMetric
   protected FlurryAnalyticsPlatform d;
   @Inject
   protected UserActionTracePlatform e;
-  @cgc
+  @chd
   private Map<String, Object> g;
-  @cgc
+  @chd
   private Map<String, Object> h;
-  @cgc
+  @chd
   private Map<String, Long> i;
-  @cgc
+  @chd
   private Map<String, Long> j;
-  private final bgk k;
-  private final ate l;
-  private MemoryStats m = null;
-  @cgb
-  private final List<AnalyticsPlatform> n = new ArrayList();
+  private long k = -1L;
+  private final bhk l;
+  private final aud m;
+  private MemoryStats n = null;
+  @chc
+  private final List<AnalyticsPlatform> o = new ArrayList();
   
   public EasyMetric()
   {
-    this(null, bglmClock, ate.a());
+    this(null, bhlmClock, aud.a());
   }
   
-  public EasyMetric(@cgc String paramString)
+  public EasyMetric(@chd String paramString)
   {
-    this(paramString, bglmClock, ate.a());
+    this(paramString, bhlmClock, aud.a());
   }
   
-  private EasyMetric(@cgc String paramString, bgk parambgk, ate paramate)
+  private EasyMetric(@chd String paramString, bhk parambhk, aud paramaud)
   {
     SnapchatApplication.b().c().a(this);
-    k = parambgk;
+    l = parambhk;
     a = paramString;
-    l = paramate;
+    m = paramaud;
     a(c);
     a(d);
     a(e);
   }
   
-  private EasyMetric a(@cgb AnalyticsPlatform paramAnalyticsPlatform)
+  private EasyMetric a(@chc AnalyticsPlatform paramAnalyticsPlatform)
   {
     if (paramAnalyticsPlatform == null) {
       throw new NullPointerException();
     }
-    n.add(paramAnalyticsPlatform);
+    o.add(paramAnalyticsPlatform);
     return this;
   }
   
-  private void a(@cgb MemoryStats paramMemoryStats)
+  private void a(@chc MemoryStats paramMemoryStats)
   {
     if (j == null) {
       j = new TreeMap();
@@ -95,7 +95,7 @@ public class EasyMetric
   
   private void c(boolean paramBoolean)
   {
-    Iterator localIterator = n.iterator();
+    Iterator localIterator = o.iterator();
     while (localIterator.hasNext())
     {
       AnalyticsPlatform localAnalyticsPlatform = (AnalyticsPlatform)localIterator.next();
@@ -105,25 +105,22 @@ public class EasyMetric
     }
   }
   
-  private void e()
+  private void f()
   {
     f += 1;
-    if (c())
-    {
-      a(SystemClock.elapsedRealtime() - b);
-      a(m, new MemoryStats());
-    }
-    a("year_class", l.b());
+    d();
+    a("year_class", m.b());
     if (a == null) {
       throw new NullPointerException("No event name has been set.");
     }
-    Timber.b("EasyMetric", "TRACE - " + f + " (" + a + ") " + g + " " + h + " " + i + " " + j, new Object[0]);
-    Timber.a("EasyMetric", false, true, "TRACE - " + f + " (" + a + ") " + g + " " + h + " " + i + " " + j, new Object[0]);
+    new StringBuilder("TRACE - ").append(f).append(" (").append(a).append(") ").append(g).append(" ").append(h).append(" ").append(i).append(" ").append(j);
+    new StringBuilder("TRACE - ").append(f).append(" (").append(a).append(") ").append(g).append(" ").append(h).append(" ").append(i).append(" ").append(j);
   }
   
   public final EasyMetric a(long paramLong)
   {
-    a("timeBucket", aua.a(paramLong));
+    k = paramLong;
+    a("timeBucket", auy.a(paramLong));
     if (i == null) {
       i = new TreeMap();
     }
@@ -131,13 +128,13 @@ public class EasyMetric
     return this;
   }
   
-  public final EasyMetric a(@cgb String paramString)
+  public final EasyMetric a(@chc String paramString)
   {
     a = paramString;
     return this;
   }
   
-  public final EasyMetric a(@cgb String paramString, @cgc Object paramObject)
+  public final EasyMetric a(@chc String paramString, @chd Object paramObject)
   {
     String str = paramString;
     if (paramString == null) {
@@ -154,7 +151,7 @@ public class EasyMetric
     return this;
   }
   
-  public final EasyMetric a(@cgb String paramString1, @cgb String paramString2)
+  public final EasyMetric a(@chc String paramString1, @chc String paramString2)
   {
     if (h == null) {
       h = new TreeMap();
@@ -177,13 +174,13 @@ public class EasyMetric
     return this;
   }
   
-  @cgc
+  @chd
   public final String a()
   {
     return a;
   }
   
-  public final void a(@cgc MemoryStats paramMemoryStats1, @cgb MemoryStats paramMemoryStats2)
+  public final void a(@chd MemoryStats paramMemoryStats1, @chc MemoryStats paramMemoryStats2)
   {
     a(paramMemoryStats2);
     if (paramMemoryStats1 != null)
@@ -207,19 +204,17 @@ public class EasyMetric
   @Deprecated
   public void a(boolean paramBoolean)
   {
-    if (ajx.H())
-    {
-      Timber.b("EasyMetric", "User is logged into SnapKidz. Aborting logging action.", new Object[0]);
+    if (akr.H()) {
       return;
     }
-    e();
+    f();
     c(paramBoolean);
   }
   
   public final EasyMetric b()
   {
     b = SystemClock.elapsedRealtime();
-    m = new MemoryStats();
+    n = new MemoryStats();
     return this;
   }
   
@@ -239,13 +234,11 @@ public class EasyMetric
   
   public void b(final boolean paramBoolean)
   {
-    if (ajx.H())
-    {
-      Timber.b("EasyMetric", "User is logged into SnapKidz. Aborting logging action.", new Object[0]);
+    if (akr.H()) {
       return;
     }
-    e();
-    bgp.b(new Runnable()
+    f();
+    bhp.b(new Runnable()
     {
       public void run()
       {
@@ -256,11 +249,34 @@ public class EasyMetric
   
   public final boolean c()
   {
-    return (k != null) && (b != -1L);
+    return (l != null) && (b != -1L);
+  }
+  
+  public final long d()
+  {
+    long l2 = 0L;
+    long l1 = l2;
+    if (c()) {
+      if ((l == null) || (k == -1L)) {
+        break label72;
+      }
+    }
+    label72:
+    for (int i1 = 1;; i1 = 0)
+    {
+      l1 = l2;
+      if (i1 == 0)
+      {
+        l1 = SystemClock.elapsedRealtime() - b;
+        a(l1);
+        a(n, new MemoryStats());
+      }
+      return l1;
+    }
   }
   
   @Deprecated
-  public void d()
+  public void e()
   {
     a(true);
   }

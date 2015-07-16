@@ -1,48 +1,156 @@
-.class final Lcz;
-.super Ljava/lang/Object;
+.class public final Lcz;
+.super Ldx;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # annotations
 .annotation build Lcd;
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ldx",
+        "<TT;>;",
+        "Ljava/io/Serializable;"
+    }
+.end annotation
 
-# static fields
-.field private static a:I
+
+# instance fields
+.field final a:Ljava/util/Comparator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Comparator",
+            "<TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/util/Comparator;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Comparator",
+            "<TT;>;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 54
-    const/high16 v0, 0x40000000    # 2.0f
+    .line 33
+    invoke-direct {p0}, Ldx;-><init>()V
 
-    sput v0, Lcz;->a:I
+    .line 34
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Comparator;
+
+    iput-object v0, p0, Lcz;->a:Ljava/util/Comparator;
+
+    .line 35
     return-void
 .end method
 
-.method static a(I)I
-    .locals 3
+
+# virtual methods
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TT;)I"
+        }
+    .end annotation
 
     .prologue
-    .line 47
-    const v0, 0x1b873593
+    .line 38
+    iget-object v0, p0, Lcz;->a:Ljava/util/Comparator;
 
-    const v1, -0x3361d2af    # -8.2930312E7f
+    invoke-interface {v0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    mul-int/2addr v1, p0
-
-    const/16 v2, 0xf
-
-    invoke-static {v1, v2}, Ljava/lang/Integer;->rotateLeft(II)I
-
-    move-result v1
-
-    mul-int/2addr v0, v1
+    move-result v0
 
     return v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 42
+    if-ne p1, p0, :cond_0
+
+    .line 43
+    const/4 v0, 0x1
+
+    .line 49
+    :goto_0
+    return v0
+
+    .line 45
+    :cond_0
+    instance-of v0, p1, Lcz;
+
+    if-eqz v0, :cond_1
+
+    .line 46
+    check-cast p1, Lcz;
+
+    .line 47
+    iget-object v0, p0, Lcz;->a:Ljava/util/Comparator;
+
+    iget-object v1, p1, Lcz;->a:Ljava/util/Comparator;
+
+    invoke-interface {v0, v1}, Ljava/util/Comparator;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 49
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .prologue
+    .line 53
+    iget-object v0, p0, Lcz;->a:Ljava/util/Comparator;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 57
+    iget-object v0, p0, Lcz;->a:Ljava/util/Comparator;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

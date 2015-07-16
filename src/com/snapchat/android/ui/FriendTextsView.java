@@ -8,7 +8,6 @@ import android.util.AttributeSet;
 import android.view.ViewPropertyAnimator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.snapchat.android.Timber;
 
 public class FriendTextsView
   extends LinearLayout
@@ -21,9 +20,9 @@ public class FriendTextsView
   public FriendTextsView(Context paramContext)
   {
     super(paramContext);
-    inflate(getContext(), 2130968678, this);
+    inflate(getContext(), 2130968679, this);
     a = ((TextView)findViewById(2131362129));
-    b = ((TextView)findViewById(2131362364));
+    b = ((TextView)findViewById(2131362362));
     b.setAlpha(0.0F);
     c = a.a;
   }
@@ -31,9 +30,9 @@ public class FriendTextsView
   public FriendTextsView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    inflate(getContext(), 2130968678, this);
+    inflate(getContext(), 2130968679, this);
     a = ((TextView)findViewById(2131362129));
-    b = ((TextView)findViewById(2131362364));
+    b = ((TextView)findViewById(2131362362));
     b.setAlpha(0.0F);
     c = a.a;
   }
@@ -41,16 +40,16 @@ public class FriendTextsView
   public FriendTextsView(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
   {
     super(paramContext, paramAttributeSet, paramInt);
-    inflate(getContext(), 2130968678, this);
+    inflate(getContext(), 2130968679, this);
     a = ((TextView)findViewById(2131362129));
-    b = ((TextView)findViewById(2131362364));
+    b = ((TextView)findViewById(2131362362));
     b.setAlpha(0.0F);
     c = a.a;
   }
   
   private void setSecondaryTextViewStatus(a parama)
   {
-    Timber.c("FriendListItemTextsView", "change SecondaryViewStatus FROM " + a.getText() + " TO " + c + " -> " + parama, new Object[0]);
+    new StringBuilder("change SecondaryViewStatus FROM ").append(a.getText()).append(" TO ").append(c).append(" -> ").append(parama);
     c = parama;
   }
   

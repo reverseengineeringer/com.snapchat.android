@@ -1,23 +1,16 @@
-import java.io.Serializable;
-import java.util.List;
+import in.srain.cube.views.ptr.PtrFrameLayout;
 
-public final class bvt
-  implements Serializable
+public abstract interface bvt
 {
-  public String a;
-  public String b;
-  public String c;
-  public String d;
-  public String e;
-  public String f;
-  public int g;
-  public String h;
-  public int i;
-  public String j;
-  public String k;
-  public String l;
-  public String m;
-  public List<bvs> n;
+  public abstract void a(PtrFrameLayout paramPtrFrameLayout);
+  
+  public abstract void a(PtrFrameLayout paramPtrFrameLayout, boolean paramBoolean, byte paramByte, int paramInt1, int paramInt2, float paramFloat1, float paramFloat2);
+  
+  public abstract void b(PtrFrameLayout paramPtrFrameLayout);
+  
+  public abstract void c(PtrFrameLayout paramPtrFrameLayout);
+  
+  public abstract void d(PtrFrameLayout paramPtrFrameLayout);
 }
 
 /* Location:

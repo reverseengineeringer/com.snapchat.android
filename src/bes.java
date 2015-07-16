@@ -1,14 +1,10 @@
-import android.view.View;
-
 public final class bes
 {
-  public View mFeedListItem;
-  public boolean mIsFlinging = false;
+  public final String mKey;
   
-  public bes(View paramView, boolean paramBoolean)
+  public bes(String paramString)
   {
-    mFeedListItem = paramView;
-    mIsFlinging = paramBoolean;
+    mKey = paramString;
   }
 }
 

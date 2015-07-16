@@ -1,9 +1,33 @@
-import com.snapchat.android.api2.framework.RequestBodyType;
+import javax.inject.Provider;
 
 public final class uf
+  implements bvp<ue>
 {
-  final Object mBodyObject;
-  public final RequestBodyType mType;
+  private final Provider<aum> gsonProvider;
+  private final bvk<ue> membersInjector;
+  
+  static
+  {
+    if (!uf.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
+  }
+  
+  private uf(bvk<ue> parambvk, Provider<aum> paramProvider)
+  {
+    assert (parambvk != null);
+    membersInjector = parambvk;
+    assert (paramProvider != null);
+    gsonProvider = paramProvider;
+  }
+  
+  public static bvp<ue> a(bvk<ue> parambvk, Provider<aum> paramProvider)
+  {
+    return new uf(parambvk, paramProvider);
+  }
 }
 
 /* Location:

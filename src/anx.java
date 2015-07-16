@@ -1,32 +1,48 @@
-public abstract class anx
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
+
+public final class anx
+  extends ana
+  implements ui.b<anx.b>
 {
-  protected anv b;
+  public boolean a = false;
+  public String b;
+  private final String c;
   
-  public final void a(String paramString)
+  public anx(Intent paramIntent)
   {
-    if (b != null) {
-      if (b.c != -1L) {
-        break label44;
-      }
-    }
-    label44:
-    for (int i = 1;; i = 0)
+    super(paramIntent);
+    c = paramIntent.getStringExtra("password");
+    registerCallback(anx.b.class, this);
+  }
+  
+  public final Object getRequestPayload()
+  {
+    return new anx.a(c);
+  }
+  
+  protected final String l_()
+  {
+    return "/bq/reauth";
+  }
+  
+  @ud
+  public final class a
+    extends qc
+  {
+    @SerializedName("password")
+    String a;
+    
+    public a(@chc String paramString)
     {
-      if (i != 0) {
-        b.c = System.currentTimeMillis();
-      }
-      a(paramString, null);
-      return;
+      a = paramString;
     }
   }
   
-  public abstract void a(String paramString1, String paramString2);
-  
-  public final void b()
+  public class b
   {
-    if (b != null) {
-      b.c = System.currentTimeMillis();
-    }
+    @SerializedName("message")
+    String a;
   }
 }
 

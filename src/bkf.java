@@ -1,27 +1,20 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bkf
+public final class bkf
 {
-  @SerializedName("nearby_snapchatters")
-  protected List<bkk> nearbySnapchatters;
-  @SerializedName("polling_interval_millis")
-  protected Long pollingIntervalMillis = Long.valueOf(1000L);
+  @SerializedName("postview_display_name")
+  protected String postviewDisplayName;
+  @SerializedName("preview_display_name")
+  protected String previewDisplayName;
+  @SerializedName("sponsor")
+  protected String sponsor;
+  @SerializedName("third_party_tag_url")
+  protected String thirdPartyTagUrl;
   
-  public final Long a()
-  {
-    return pollingIntervalMillis;
-  }
-  
-  public final List<bkk> b()
-  {
-    return nearbySnapchatters;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -30,15 +23,15 @@ public class bkf
       return false;
     }
     paramObject = (bkf)paramObject;
-    return new EqualsBuilder().append(pollingIntervalMillis, pollingIntervalMillis).append(nearbySnapchatters, nearbySnapchatters).isEquals();
+    return new EqualsBuilder().append(previewDisplayName, previewDisplayName).append(postviewDisplayName, postviewDisplayName).append(sponsor, sponsor).append(thirdPartyTagUrl, thirdPartyTagUrl).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(pollingIntervalMillis).append(nearbySnapchatters).toHashCode();
+    return new HashCodeBuilder().append(previewDisplayName).append(postviewDisplayName).append(sponsor).append(thirdPartyTagUrl).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

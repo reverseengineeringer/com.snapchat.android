@@ -1,78 +1,38 @@
 .class public final Lawy;
-.super Ljava/lang/Object;
+.super Lawz;
 .source "SourceFile"
 
 
-# instance fields
-.field public final mAlgorithm:Layc;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public final mCache:Lawp;
-    .annotation build Lcgb;
-    .end annotation
-.end field
-
-.field public final mKey:Ljava/lang/String;
-    .annotation build Lcgb;
-    .end annotation
-.end field
-
-
 # direct methods
-.method public constructor <init>(Lawp;Ljava/lang/String;Layc;)V
-    .locals 2
-    .param p1    # Lawp;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Layc;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
+.method public constructor <init>(Landroid/graphics/Bitmap;Landroid/util/DisplayMetrics;)V
+    .locals 0
 
     .prologue
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 17
+    invoke-direct {p0, p1, p2}, Lawz;-><init>(Landroid/graphics/Bitmap;Landroid/util/DisplayMetrics;)V
 
-    .line 21
-    if-nez p1, :cond_0
+    .line 18
+    return-void
+.end method
 
-    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "cache is null"
+# virtual methods
+.method protected final synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    .prologue
+    .line 15
+    check-cast p1, Landroid/graphics/Bitmap;
 
-    throw v0
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
-    .line 22
-    :cond_0
-    if-nez p2, :cond_1
+    move-result-object v0
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    new-instance v1, Lbda;
 
-    const-string v1, "key is null"
+    invoke-direct {v1, p1}, Lbda;-><init>(Landroid/graphics/Bitmap;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    throw v0
-
-    .line 24
-    :cond_1
-    iput-object p1, p0, Lawy;->mCache:Lawp;
-
-    .line 25
-    iput-object p2, p0, Lawy;->mKey:Ljava/lang/String;
-
-    .line 26
-    iput-object p3, p0, Lawy;->mAlgorithm:Layc;
-
-    .line 27
     return-void
 .end method

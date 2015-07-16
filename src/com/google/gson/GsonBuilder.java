@@ -4,8 +4,8 @@ import com.google.gson.internal..Gson.Preconditions;
 import com.google.gson.internal.Excluder;
 import com.google.gson.internal.bind.TypeAdapters;
 import com.google.gson.reflect.TypeToken;
-import eh;
-import ei;
+import eq;
+import er;
 import java.lang.reflect.Type;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -54,11 +54,11 @@ public final class GsonBuilder
     int i1 = i;
     int i2 = j;
     if ((localObject != null) && (!"".equals(((String)localObject).trim()))) {}
-    for (localObject = new eh((String)localObject);; localObject = new eh(i1, i2))
+    for (localObject = new eq((String)localObject);; localObject = new eq(i1, i2))
     {
-      localArrayList.add(ei.a(TypeToken.get(java.util.Date.class), localObject));
-      localArrayList.add(ei.a(TypeToken.get(Timestamp.class), localObject));
-      localArrayList.add(ei.a(TypeToken.get(java.sql.Date.class), localObject));
+      localArrayList.add(er.a(TypeToken.get(java.util.Date.class), localObject));
+      localArrayList.add(er.a(TypeToken.get(Timestamp.class), localObject));
+      localArrayList.add(er.a(TypeToken.get(java.sql.Date.class), localObject));
       do
       {
         return new Gson(a, c, d, g, k, o, m, n, l, b, localArrayList);
@@ -114,7 +114,7 @@ public final class GsonBuilder
       if (((paramObject instanceof JsonSerializer)) || ((paramObject instanceof JsonDeserializer)))
       {
         TypeToken localTypeToken = TypeToken.get(paramType);
-        e.add(ei.b(localTypeToken, paramObject));
+        e.add(er.b(localTypeToken, paramObject));
       }
       if ((paramObject instanceof TypeAdapter)) {
         e.add(TypeAdapters.newFactory(TypeToken.get(paramType), (TypeAdapter)paramObject));
@@ -136,7 +136,7 @@ public final class GsonBuilder
     {
       .Gson.Preconditions.checkArgument(bool);
       if (((paramObject instanceof JsonDeserializer)) || ((paramObject instanceof JsonSerializer))) {
-        f.add(0, ei.a(paramClass, paramObject));
+        f.add(0, er.a(paramClass, paramObject));
       }
       if ((paramObject instanceof TypeAdapter)) {
         e.add(TypeAdapters.newTypeHierarchyFactory(paramClass, (TypeAdapter)paramObject));

@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.settings.displayname;
 
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
-import avh;
+import awf;
 
 final class DisplayNameSettingsFragment$4
   implements View.OnFocusChangeListener
@@ -12,7 +12,7 @@ final class DisplayNameSettingsFragment$4
   public final void onFocusChange(View paramView, boolean paramBoolean)
   {
     if (paramBoolean) {
-      avh.g(a.getActivity());
+      awf.g(a.getActivity());
     }
   }
 }

@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Lbuu;
+.field final synthetic a:Lbvv;
 
 .field final synthetic b:Lin/srain/cube/views/ptr/header/MaterialHeader;
 
 
 # direct methods
-.method constructor <init>(Lin/srain/cube/views/ptr/header/MaterialHeader;Lbuu;)V
+.method constructor <init>(Lin/srain/cube/views/ptr/header/MaterialHeader;Lbvv;)V
     .locals 0
 
     .prologue
     .line 56
     iput-object p1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader$3;->b:Lin/srain/cube/views/ptr/header/MaterialHeader;
 
-    iput-object p2, p0, Lin/srain/cube/views/ptr/header/MaterialHeader$3;->a:Lbuu;
+    iput-object p2, p0, Lin/srain/cube/views/ptr/header/MaterialHeader$3;->a:Lbvv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,9 +45,9 @@
 
     .prologue
     .line 64
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader$3;->a:Lbuu;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader$3;->a:Lbvv;
 
-    invoke-virtual {v0}, Lbuu;->a()V
+    invoke-virtual {v0}, Lbvv;->a()V
 
     .line 65
     return-void

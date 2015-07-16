@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.stories;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import bgr;
+import bhr;
 
 final class StoriesFragment$12$1
   implements View.OnClickListener
@@ -12,7 +12,7 @@ final class StoriesFragment$12$1
   
   public final void onClick(View paramView)
   {
-    ((EditText)a.a.j.a()).setText("");
+    ((EditText)a.a.i.a()).setText("");
   }
 }
 

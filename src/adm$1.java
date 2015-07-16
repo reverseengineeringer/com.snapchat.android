@@ -1,26 +1,34 @@
-import com.snapchat.android.discover.model.ChannelPage;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.MediaState;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 
 final class adm$1
-  implements adj.a
+  implements aej.b
 {
   adm$1(adm paramadm) {}
   
-  public final void a(@cgb List<ChannelPage> paramList)
+  public final void a(@chc List<DSnapPage> paramList)
   {
-    synchronized (a.a)
+    paramList = paramList.iterator();
+    boolean bool = false;
+    if (paramList.hasNext())
     {
-      a.d.clear();
-      paramList = paramList.iterator();
-      if (paramList.hasNext())
-      {
-        ChannelPage localChannelPage = (ChannelPage)paramList.next();
-        a.d.put(d, localChannelPage);
+      DSnapPage localDSnapPage = (DSnapPage)paramList.next();
+      if (!a.c.a(localDSnapPage)) {
+        break label79;
       }
+      bool = a.b.b(localDSnapPage, MediaState.RESOLVE_NEEDED) | bool;
     }
-    a.a();
+    label79:
+    for (;;)
+    {
+      break;
+      if (bool) {
+        a.a.c();
+      }
+      return;
+    }
   }
 }
 

@@ -1,25 +1,37 @@
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
 public final class bag
-  extends bah
+  extends aqb<String>
 {
-  public static final bag.a[] IGNORED_METHODS = { new bag.a("WaitDoneHandler", "waitDone") };
-  private static final String IGNORE_PACKAGE_PREFIX = "ignore.";
-  private static final String SNAPCHAT_PACKAGE_AS_REGEX = "com\\.snapchat\\.android";
+  private Context mContext;
+  private String[] mFriends;
+  private int mLayoutId;
+  private int mSectionLeftPadding;
   
-  public static String a(String paramString1, String paramString2)
+  public bag(Context paramContext, String[] paramArrayOfString)
   {
-    return "(com\\.snapchat\\.android.*" + paramString1 + "\\." + paramString2 + ")";
+    super(paramContext, paramArrayOfString);
+    mContext = paramContext;
+    mLayoutId = 2130968595;
+    mFriends = paramArrayOfString;
+    mSectionLeftPadding = ((int)mContext.getResources().getDimension(2131296300));
   }
   
-  public static final class a
+  public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
   {
-    public final String mClassName;
-    public final String mMethodName;
-    
-    a(String paramString1, String paramString2)
-    {
-      mClassName = paramString1;
-      mMethodName = paramString2;
+    paramView = ((Activity)mContext).getLayoutInflater().inflate(mLayoutId, paramViewGroup, false);
+    paramViewGroup = (TextView)paramView.findViewById(2131361938);
+    paramViewGroup.setText(mFriends[paramInt]);
+    if (mFriends[paramInt].length() == 1) {
+      paramViewGroup.setPadding(mSectionLeftPadding, 0, 0, 0);
     }
+    return paramView;
   }
 }
 

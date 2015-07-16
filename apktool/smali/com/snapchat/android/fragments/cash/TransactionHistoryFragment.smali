@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public a:Lxn;
+.field public a:Lyj;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
@@ -31,11 +31,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;)V
 
     .line 29
     return-void
@@ -60,11 +60,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;)V
 
     .line 35
     return-void
@@ -75,7 +75,7 @@
 
     .prologue
     .line 23
-    const v0, 0x7f0a03c3
+    const v0, 0x7f0a03c0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;->c(I)Landroid/view/View;
 
@@ -133,7 +133,7 @@
     const/4 v2, 0x0
 
     .line 47
-    const v0, 0x7f0400af
+    const v0, 0x7f0400b1
 
     invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.settings;
 
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import auc;
+import ava;
 import com.snapchat.android.database.SharedPreferenceKey;
 
 final class DeveloperSettingsFragment$3
@@ -12,7 +12,7 @@ final class DeveloperSettingsFragment$3
   
   public final void onCheckedChanged(CompoundButton paramCompoundButton, boolean paramBoolean)
   {
-    auc.b(SharedPreferenceKey.DEVELOPER_OPTIONS_ADD_FRIENDS_FROM_SCREENSHOT_ENABLED.getKey(), paramBoolean);
+    ava.b(SharedPreferenceKey.DEVELOPER_OPTIONS_ADD_FRIENDS_FROM_SCREENSHOT_ENABLED.getKey(), paramBoolean);
   }
 }
 

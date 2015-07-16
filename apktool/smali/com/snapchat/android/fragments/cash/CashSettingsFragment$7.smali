@@ -89,7 +89,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
     .line 201
-    invoke-static {}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->i()Lqv;
+    invoke-static {}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->i()Lrl;
 
     move-result-object v0
 
@@ -98,10 +98,10 @@
 
     invoke-direct {v1, p0, p2}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$7$1;-><init>(Lcom/snapchat/android/fragments/cash/CashSettingsFragment$7;Z)V
 
-    iput-object v1, v0, Lqv;->mListener:Lqv$a;
+    iput-object v1, v0, Lrl;->mListener:Lrl$a;
 
     .line 242
-    invoke-virtual {v0, v3}, Lqv;->a(Lcom/snapchat/android/model/CashTransaction;)V
+    invoke-virtual {v0, v3}, Lrl;->a(Lcom/snapchat/android/model/CashTransaction;)V
 
     goto :goto_0
 .end method

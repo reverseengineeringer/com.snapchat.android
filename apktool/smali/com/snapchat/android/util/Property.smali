@@ -198,7 +198,7 @@
 # virtual methods
 .method public final get()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -213,7 +213,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/util/Property;->mDefaultValue:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lavd;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lawb;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

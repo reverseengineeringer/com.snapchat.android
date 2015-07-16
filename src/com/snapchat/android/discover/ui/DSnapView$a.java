@@ -1,6 +1,6 @@
 package com.snapchat.android.discover.ui;
 
-import aex;
+import afx;
 import com.snapchat.android.util.debug.ReleaseManager;
 import com.squareup.otto.Bus;
 
@@ -22,7 +22,7 @@ final class DSnapView$a
     {
       ReleaseManager.k();
       if (DSnapView.c(d)) {
-        DSnapView.d(d).a(new aex(a, b, c));
+        DSnapView.d(d).a(new afx(a, b, c));
       }
     }
     DSnapView.e(d);

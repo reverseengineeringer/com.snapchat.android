@@ -1,37 +1,65 @@
-import com.snapchat.android.analytics.framework.UpdateSnapsAnalyticsPlatform;
-import javax.inject.Provider;
+import android.os.Bundle;
+import com.snapchat.android.networkmanager.DownloadPriority;
+import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
 
-public final class amr
-  implements buj<amq>
+public abstract class amr
 {
-  private final buj<amd> b;
-  private final Provider<UpdateSnapsAnalyticsPlatform> c;
-  
-  static
+  final CountDownLatch a = new CountDownLatch(1);
+  final alw b;
+  volatile boolean c = false;
+  String d;
+  protected final alw.a e = new alw.a()
   {
-    if (!amr.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    public final void a(aly paramAnonymousaly)
     {
-      a = bool;
-      return;
+      c = false;
+      a.countDown();
     }
+    
+    public final void a(aly paramAnonymousaly, bgl paramAnonymousbgl, us paramAnonymousus)
+    {
+      try
+      {
+        c = a(paramAnonymousbgl);
+        return;
+      }
+      finally
+      {
+        a.countDown();
+      }
+    }
+  };
+  
+  protected amr(alw paramalw)
+  {
+    b = paramalw;
   }
   
-  private amr(buj<amd> parambuj, Provider<UpdateSnapsAnalyticsPlatform> paramProvider)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-  }
+  protected abstract boolean a(bgl parambgl);
   
-  public static buj<amq> a(buj<amd> parambuj, Provider<UpdateSnapsAnalyticsPlatform> paramProvider)
+  protected final boolean b(String paramString1, Bundle paramBundle, DownloadPriority paramDownloadPriority1, DownloadPriority paramDownloadPriority2, String paramString2, String paramString3)
   {
-    return new amr(parambuj, paramProvider);
+    d = UUID.randomUUID().toString();
+    aly.a locala = new aly.a();
+    a = paramDownloadPriority1;
+    b = paramDownloadPriority2;
+    d = paramString1;
+    e = d;
+    h = new String[] { paramString2 };
+    g = paramString3;
+    f = paramBundle;
+    paramString1 = locala.a();
+    b.a(paramString1, e);
+    try
+    {
+      a.await();
+      return c;
+    }
+    catch (InterruptedException paramString1)
+    {
+      for (;;) {}
+    }
   }
 }
 

@@ -1,16 +1,20 @@
-import com.google.gson.annotations.SerializedName;
-
-public final class sx
+public abstract class sx<T extends sy>
+  extends tg
+  implements ui.b<T>
 {
-  @SerializedName("statement_description")
-  private final String mStatementDesc;
-  @SerializedName("subject")
-  private final String mSubject;
+  private static final String TAG = "SquareBlockerRequestTask";
+  private final sx.a mCallback;
   
-  public sx(@cgc String paramString)
+  protected sx(@chc sx.a parama)
   {
-    mSubject = paramString;
-    mStatementDesc = paramString;
+    mCallback = parama;
+  }
+  
+  public static abstract interface a
+  {
+    public abstract void a(@chd sy paramsy);
+    
+    public abstract void a(@chd sy paramsy, int paramInt);
   }
 }
 

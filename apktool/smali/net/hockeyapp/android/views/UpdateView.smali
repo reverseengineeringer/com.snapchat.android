@@ -518,7 +518,7 @@
     :goto_5
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-static {}, Lbwn;->a()Landroid/graphics/drawable/Drawable;
+    invoke-static {}, Lbxo;->a()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -586,7 +586,7 @@
 
     invoke-virtual {v0, v5, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    invoke-static {}, Lbwn;->a()Landroid/graphics/drawable/Drawable;
+    invoke-static {}, Lbxo;->a()Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 

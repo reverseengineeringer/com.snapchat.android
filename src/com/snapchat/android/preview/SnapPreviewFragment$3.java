@@ -2,6 +2,8 @@ package com.snapchat.android.preview;
 
 import android.view.View;
 import android.view.View.OnClickListener;
+import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
 
 final class SnapPreviewFragment$3
   implements View.OnClickListener
@@ -10,10 +12,12 @@ final class SnapPreviewFragment$3
   
   public final void onClick(View paramView)
   {
-    if (!SnapPreviewFragment.q(a)) {
-      SnapPreviewFragment.r(a);
+    if (!SnapPreviewFragment.q(a))
+    {
+      ra).mPrepareSnapMetric = EasyMetric.EasyMetricFactory.b("PREPARE_SNAP").b();
+      SnapPreviewFragment.s(a);
     }
-    SnapPreviewFragment.s(a);
+    SnapPreviewFragment.t(a);
   }
 }
 

@@ -6,19 +6,18 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Looper;
-import auh;
-import avz;
-import com.snapchat.android.Timber;
+import avf;
+import awx;
 import com.snapchat.android.ui.ProfilePictureView;
 import com.snapchat.android.ui.ProfilePictureView.5;
 import com.snapchat.android.util.eventbus.ShowDialogEvent;
 import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
 import com.squareup.otto.Bus;
-import vm;
-import wr;
+import wi;
+import xn;
 
 final class ProfileFragment$d
-  implements vm
+  implements wi
 {
   private ProfileFragment$d(ProfileFragment paramProfileFragment) {}
   
@@ -26,30 +25,30 @@ final class ProfileFragment$d
   {
     if (paramBitmap == null)
     {
-      ProfileFragment.i(a).a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131493087));
-      a.t();
-      ProfileFragment.r(a);
+      ProfileFragment.h(a).a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131493087));
+      a.v();
+      a.i();
       return;
     }
-    new avz(paramBitmap, BitmapFactory.decodeResource(a.getResources(), 2130837836)).executeOnExecutor(auh.HIGH_PRIORITY_EXECUTOR, new Void[0]);
-    paramBitmap = a.h;
+    new awx(paramBitmap, BitmapFactory.decodeResource(a.getResources(), 2130837836), ProfileFragment.i(a)).executeOnExecutor(avf.HIGH_PRIORITY_EXECUTOR, new Void[0]);
+    paramBitmap = a.e;
     e = new AnimatorSet();
     e.play(ObjectAnimator.ofFloat(a, "alpha", new float[] { 0.0F, 1.0F }));
     e.setDuration(150L);
     e.addListener(new ProfilePictureView.5(paramBitmap));
     e.start();
-    ProfileFragment.s(a);
-    if (ProfileFragment.j(a) >= 5)
+    ProfileFragment.q(a);
+    if (ProfileFragment.i(a) >= 5)
     {
-      a.t();
+      a.v();
       return;
     }
     new Handler(Looper.getMainLooper()).postDelayed(new Runnable()
     {
       public final void run()
       {
-        Timber.c("ProfileFragment", "profile images - Capturing profile photo at index " + ProfileFragment.j(a), new Object[0]);
-        ProfileFragment.h(a).a(new ProfileFragment.d(a, (byte)0));
+        new StringBuilder("profile images - Capturing profile photo at index ").append(ProfileFragment.i(a));
+        ProfileFragment.g(a).a(new ProfileFragment.d(a, (byte)0));
       }
     }, 1000L);
   }

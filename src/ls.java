@@ -1,17 +1,24 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class ls
-  extends hk
+public final class ls
+  extends ml
 {
-  public Map<String, Object> a()
+  private String additionalInfo;
+  private final String eventName = "REGISTRATION_USER_USERNAME_PAGE_VIEW";
+  
+  public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
+    localHashMap.put("event_name", "REGISTRATION_USER_USERNAME_PAGE_VIEW");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
+    }
     localHashMap.putAll(super.a());
     return localHashMap;
   }
   
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (this == paramObject) {}
     do
@@ -20,13 +27,30 @@ public class ls
       if ((paramObject == null) || (getClass() != paramObject.getClass())) {
         return false;
       }
-    } while (super.equals(paramObject));
-    return false;
+      if (!super.equals(paramObject)) {
+        return false;
+      }
+      paramObject = (ls)paramObject;
+      if (additionalInfo == null) {
+        break;
+      }
+    } while (additionalInfo.equals(additionalInfo));
+    for (;;)
+    {
+      return false;
+      if (additionalInfo == null) {
+        break;
+      }
+    }
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return super.hashCode();
+    int j = super.hashCode();
+    if (additionalInfo != null) {}
+    for (int i = additionalInfo.hashCode();; i = 0) {
+      return i + j * 31;
+    }
   }
 }
 

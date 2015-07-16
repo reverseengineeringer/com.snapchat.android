@@ -1,20 +1,9 @@
-import com.google.gson.annotations.SerializedName;
+import java.util.List;
 
-public final class aiy
+public abstract interface aiy
 {
-  @SerializedName("end")
-  public cgs end;
-  @SerializedName("start")
-  public cgs start;
-  
-  public final boolean a(cgs paramcgs)
-  {
-    if ((start == null) || (end == null)) {}
-    while ((!start.c(paramcgs)) || (!end.b(paramcgs))) {
-      return false;
-    }
-    return true;
-  }
+  @chc
+  public abstract List<ajr> c();
 }
 
 /* Location:

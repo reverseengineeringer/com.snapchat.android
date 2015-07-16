@@ -1,6 +1,5 @@
 package com.snapchat.android.analytics.framework;
 
-import com.snapchat.android.Timber;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 final class ScAnalyticsEventEngineStatic$9
@@ -10,16 +9,16 @@ final class ScAnalyticsEventEngineStatic$9
   
   public final void run()
   {
-    DatabaseHelper localDatabaseHelper = DatabaseHelper.a(ScAnalyticsEventEngineStatic.j());
+    DatabaseHelper localDatabaseHelper = DatabaseHelper.a(ScAnalyticsEventEngineStatic.l());
     if (a == 200) {
-      if (ScAnalyticsEventEngineStatic.q()) {
-        ScAnalyticsEventEngineStatic.r();
+      if (ScAnalyticsEventEngineStatic.m()) {
+        ScAnalyticsEventEngineStatic.n();
       }
     }
     for (;;)
     {
       localDatabaseHelper.a(c);
-      ScAnalyticsEventEngineStatic.s().set(false);
+      ScAnalyticsEventEngineStatic.o().set(false);
       if (localDatabaseHelper.a() > 30L) {
         ScAnalyticsEventEngineStatic.a.a(new Runnable()
         {
@@ -29,14 +28,10 @@ final class ScAnalyticsEventEngineStatic$9
       return;
       if (b > 0L)
       {
-        if (!ScAnalyticsEventEngineStatic.q()) {
-          ScAnalyticsEventEngineStatic.d(System.currentTimeMillis());
+        if (!ScAnalyticsEventEngineStatic.m()) {
+          ScAnalyticsEventEngineStatic.f(System.currentTimeMillis());
         }
-        ScAnalyticsEventEngineStatic.e(b);
-      }
-      else
-      {
-        Timber.f("com.amplitude.api.Amplitude", "Uploaded to server with 0 events.", new Object[0]);
+        ScAnalyticsEventEngineStatic.g(b);
       }
     }
   }

@@ -1,90 +1,84 @@
+import android.text.TextUtils;
 import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.api2.cash.ScCashResponsePayload;
+import com.snapchat.android.api2.cash.ScCashResponsePayload.Status;
 import com.snapchat.android.api2.cash.blockers.BlockerOrder;
 import com.snapchat.android.model.CashTransaction;
 import java.util.List;
 import javax.inject.Inject;
 
 public final class rv
-  extends qv
+  extends rl
 {
+  private static final String TAG = "SQAccessTokenBlocker";
   @Inject
-  protected xn mCashAuthManager;
-  private boolean mRetriedAfter401 = false;
+  protected yj mCashAuthManager;
+  @Inject
+  protected qw mCashErrorReporter;
+  private boolean mForced = false;
   
   public rv()
   {
     SnapchatApplication.b().c().a(this);
   }
   
-  protected static sq a(@cgb ss.a parama)
+  public rv(boolean paramBoolean)
   {
-    return new ss(parama);
+    this();
   }
   
-  public final void a(@cgc CashTransaction paramCashTransaction)
+  public final void a(@chd final CashTransaction paramCashTransaction)
   {
-    paramCashTransaction = new rf();
-    mListener = new qv.a()
+    if (!mForced)
     {
-      public final void a(@cgb qv paramAnonymousqv)
+      ym localym = mCashAuthManager.a();
+      if ((localym != null) && (!localym.a(System.currentTimeMillis())))
       {
-        rv.c(rv.this);
+        super.a(null, true);
+        return;
       }
-      
-      public final void a(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+    }
+    new rb(new qs.a()
+    {
+      public final void a(@chc ScCashResponsePayload.Status paramAnonymousStatus, int paramAnonymousInt)
       {
-        if ((paramAnonymousList == null) || (paramAnonymousList.isEmpty()))
+        paramAnonymousStatus.name();
+        if (paramCashTransaction != null)
         {
-          rv.a(new ss.a()
-          {
-            public final void a()
-            {
-              a(null, true);
-            }
-            
-            public final void a(int paramAnonymous2Int)
-            {
-              if ((paramAnonymous2Int == 401) && (!rv.a(rv.this)))
-              {
-                rv.b(rv.this);
-                mCashAuthManager.a(null);
-                a(null);
-                return;
-              }
-              b(null, false);
-            }
-          }).f();
-          return;
+          String str = paramCashTransactionmSenderUsername;
+          if (!TextUtils.equals(akr.l(), str)) {
+            break label52;
+          }
+          AnalyticsEvents.a("GENERATE_SQUARE_ACCESS_TOKEN_FAILED", paramAnonymousInt);
         }
-        b(null, false);
+        for (;;)
+        {
+          qw.a(paramCashTransaction, paramAnonymousStatus);
+          rv.a(rv.this);
+          return;
+          label52:
+          AnalyticsEvents.b("GENERATE_SQUARE_ACCESS_TOKEN_FAILED", paramAnonymousInt);
+        }
       }
       
-      public final void b(@cgb qv paramAnonymousqv)
+      public final void a(@chc ScCashResponsePayload paramAnonymousScCashResponsePayload)
       {
-        rv.d(rv.this);
+        paramAnonymousScCashResponsePayload = (rb.a)paramAnonymousScCashResponsePayload;
+        mCashAuthManager.a(accessToken);
+        a(null, true);
       }
-      
-      public final void b(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
-      {
-        b(null, false);
-      }
-    };
-    paramCashTransaction.a(null);
+    }).execute();
   }
   
-  protected final void a(@cgc List<qv> paramList, boolean paramBoolean)
+  protected final void a(@chd List<rl> paramList, boolean paramBoolean)
   {
     super.a(paramList, paramBoolean);
   }
   
-  protected final void b(@cgc List<qv> paramList, boolean paramBoolean)
-  {
-    super.b(paramList, paramBoolean);
-  }
-  
   public final BlockerOrder c()
   {
-    return BlockerOrder.SQ_UNLINK_CARD_BLOCKER;
+    return BlockerOrder.SQ_ACCESS_TOKEN_BLOCKER;
   }
 }
 

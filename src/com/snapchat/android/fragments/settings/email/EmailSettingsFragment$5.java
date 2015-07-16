@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.settings.email;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import aol;
+import aph;
 import java.util.Set;
 
 final class EmailSettingsFragment$5

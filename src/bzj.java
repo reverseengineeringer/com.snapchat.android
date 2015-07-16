@@ -1,25 +1,32 @@
+import java.util.ArrayList;
+
 public final class bzj
-  extends bza
+  implements byh
 {
-  public bzj()
+  public final byl a(bya parambya, String paramString)
   {
-    super(">=", 4);
+    paramString = byk.c(paramString);
+    if (paramString.size() != 2) {
+      throw new byi("One string and one integer argument are required.");
+    }
+    try
+    {
+      parambya = new String(new char[] { byk.a((String)paramString.get(0), a).charAt(((Integer)paramString.get(1)).intValue()) });
+      return new byl(parambya, 1);
+    }
+    catch (byi parambya)
+    {
+      throw new byi(parambya.getMessage(), parambya);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("One string and one integer argument are required.", parambya);
+    }
   }
   
-  public final double a(double paramDouble1, double paramDouble2)
+  public final String a()
   {
-    if (paramDouble1 >= paramDouble2) {
-      return 1.0D;
-    }
-    return 0.0D;
-  }
-  
-  public final String a(String paramString1, String paramString2)
-  {
-    if (paramString1.compareTo(paramString2) >= 0) {
-      return "1.0";
-    }
-    return "0.0";
+    return "charAt";
   }
 }
 

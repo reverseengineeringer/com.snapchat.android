@@ -2,8 +2,7 @@ package com.snapchat.android.camera.videocamera;
 
 import android.media.MediaRecorder;
 import android.media.MediaRecorder.OnInfoListener;
-import bgp;
-import com.snapchat.android.Timber;
+import bhp;
 
 final class VideoCameraHandler$b
   implements MediaRecorder.OnInfoListener
@@ -17,13 +16,12 @@ final class VideoCameraHandler$b
   
   public final void onInfo(MediaRecorder paramMediaRecorder, int paramInt1, int paramInt2)
   {
-    Timber.c("VideoCameraHandler", "Video InfoListener: Info event #[%d, %d] has occured", new Object[] { Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) });
     switch (paramInt1)
     {
     default: 
       return;
     }
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {

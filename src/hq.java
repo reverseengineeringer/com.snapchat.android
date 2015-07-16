@@ -2,37 +2,61 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class hq
-  extends ls
+  extends ml
 {
-  private final String eventName = "GEOFILTER_GEOFILTER_SWIPE";
-  public Long filterCount;
-  public String filterGeofilterId;
-  public Long filterIndexCount;
-  public Long filterIndexPos;
-  public hy mediaType;
-  public Double viewTimeSec;
+  public String dsnapId;
+  public String editionId;
+  private final String eventName = "DISCOVER_SNAP_VIEW";
+  private hu exitEvent;
+  public Boolean fullView;
+  public Double mediaDisplayTimeSec;
+  public ih mediaType;
+  public String publisherId;
+  public Long snapIndexCount;
+  public Long snapIndexPos;
+  public Double snapTimeSec;
+  public lv source;
+  public Double timeViewed;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "GEOFILTER_GEOFILTER_SWIPE");
-    if (filterCount != null) {
-      localHashMap.put("filter_count", filterCount);
+    localHashMap.put("event_name", "DISCOVER_SNAP_VIEW");
+    if (dsnapId != null) {
+      localHashMap.put("dsnap_id", dsnapId);
     }
-    if (filterGeofilterId != null) {
-      localHashMap.put("filter_geofilter_id", filterGeofilterId);
+    if (editionId != null) {
+      localHashMap.put("edition_id", editionId);
     }
-    if (filterIndexCount != null) {
-      localHashMap.put("filter_index_count", filterIndexCount);
+    if (exitEvent != null) {
+      localHashMap.put("exit_event", exitEvent);
     }
-    if (filterIndexPos != null) {
-      localHashMap.put("filter_index_pos", filterIndexPos);
+    if (fullView != null) {
+      localHashMap.put("full_view", fullView);
+    }
+    if (mediaDisplayTimeSec != null) {
+      localHashMap.put("media_display_time_sec", mediaDisplayTimeSec);
     }
     if (mediaType != null) {
       localHashMap.put("media_type", mediaType);
     }
-    if (viewTimeSec != null) {
-      localHashMap.put("view_time_sec", viewTimeSec);
+    if (publisherId != null) {
+      localHashMap.put("publisher_id", publisherId);
+    }
+    if (snapIndexCount != null) {
+      localHashMap.put("snap_index_count", snapIndexCount);
+    }
+    if (snapIndexPos != null) {
+      localHashMap.put("snap_index_pos", snapIndexPos);
+    }
+    if (snapTimeSec != null) {
+      localHashMap.put("snap_time_sec", snapTimeSec);
+    }
+    if (source != null) {
+      localHashMap.put("source", source);
+    }
+    if (timeViewed != null) {
+      localHashMap.put("time_viewed", timeViewed);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -51,39 +75,48 @@ public final class hq
         return false;
       }
       paramObject = (hq)paramObject;
-      if (filterCount != null)
+      if (dsnapId != null)
       {
-        if (filterCount.equals(filterCount)) {}
+        if (dsnapId.equals(dsnapId)) {}
       }
       else {
-        while (filterCount != null) {
+        while (dsnapId != null) {
           return false;
         }
       }
-      if (filterGeofilterId != null)
+      if (editionId != null)
       {
-        if (filterGeofilterId.equals(filterGeofilterId)) {}
+        if (editionId.equals(editionId)) {}
       }
       else {
-        while (filterGeofilterId != null) {
+        while (editionId != null) {
           return false;
         }
       }
-      if (filterIndexCount != null)
+      if (exitEvent != null)
       {
-        if (filterIndexCount.equals(filterIndexCount)) {}
+        if (exitEvent.equals(exitEvent)) {}
       }
       else {
-        while (filterIndexCount != null) {
+        while (exitEvent != null) {
           return false;
         }
       }
-      if (filterIndexPos != null)
+      if (fullView != null)
       {
-        if (filterIndexPos.equals(filterIndexPos)) {}
+        if (fullView.equals(fullView)) {}
       }
       else {
-        while (filterIndexPos != null) {
+        while (fullView != null) {
+          return false;
+        }
+      }
+      if (mediaDisplayTimeSec != null)
+      {
+        if (mediaDisplayTimeSec.equals(mediaDisplayTimeSec)) {}
+      }
+      else {
+        while (mediaDisplayTimeSec != null) {
           return false;
         }
       }
@@ -96,14 +129,59 @@ public final class hq
           return false;
         }
       }
-      if (viewTimeSec == null) {
+      if (publisherId != null)
+      {
+        if (publisherId.equals(publisherId)) {}
+      }
+      else {
+        while (publisherId != null) {
+          return false;
+        }
+      }
+      if (snapIndexCount != null)
+      {
+        if (snapIndexCount.equals(snapIndexCount)) {}
+      }
+      else {
+        while (snapIndexCount != null) {
+          return false;
+        }
+      }
+      if (snapIndexPos != null)
+      {
+        if (snapIndexPos.equals(snapIndexPos)) {}
+      }
+      else {
+        while (snapIndexPos != null) {
+          return false;
+        }
+      }
+      if (snapTimeSec != null)
+      {
+        if (snapTimeSec.equals(snapTimeSec)) {}
+      }
+      else {
+        while (snapTimeSec != null) {
+          return false;
+        }
+      }
+      if (source != null)
+      {
+        if (source.equals(source)) {}
+      }
+      else {
+        while (source != null) {
+          return false;
+        }
+      }
+      if (timeViewed == null) {
         break;
       }
-    } while (viewTimeSec.equals(viewTimeSec));
+    } while (timeViewed.equals(timeViewed));
     for (;;)
     {
       return false;
-      if (viewTimeSec == null) {
+      if (timeViewed == null) {
         break;
       }
     }
@@ -111,44 +189,86 @@ public final class hq
   
   public final int hashCode()
   {
-    int i1 = 0;
-    int i2 = super.hashCode();
+    int i7 = 0;
+    int i8 = super.hashCode();
     int i;
     int j;
     label39:
     int k;
     label54:
     int m;
-    if (filterCount != null)
+    label70:
+    int n;
+    label86:
+    int i1;
+    label102:
+    int i2;
+    label118:
+    int i3;
+    label134:
+    int i4;
+    label150:
+    int i5;
+    if (dsnapId != null)
     {
-      i = filterCount.hashCode();
-      if (filterGeofilterId == null) {
-        break label143;
+      i = dsnapId.hashCode();
+      if (editionId == null) {
+        break label275;
       }
-      j = filterGeofilterId.hashCode();
-      if (filterIndexCount == null) {
-        break label148;
+      j = editionId.hashCode();
+      if (exitEvent == null) {
+        break label280;
       }
-      k = filterIndexCount.hashCode();
-      if (filterIndexPos == null) {
-        break label153;
+      k = exitEvent.hashCode();
+      if (fullView == null) {
+        break label285;
       }
-      m = filterIndexPos.hashCode();
-      label70:
+      m = fullView.hashCode();
+      if (mediaDisplayTimeSec == null) {
+        break label291;
+      }
+      n = mediaDisplayTimeSec.hashCode();
       if (mediaType == null) {
-        break label159;
+        break label297;
+      }
+      i1 = mediaType.hashCode();
+      if (publisherId == null) {
+        break label303;
+      }
+      i2 = publisherId.hashCode();
+      if (snapIndexCount == null) {
+        break label309;
+      }
+      i3 = snapIndexCount.hashCode();
+      if (snapIndexPos == null) {
+        break label315;
+      }
+      i4 = snapIndexPos.hashCode();
+      if (snapTimeSec == null) {
+        break label321;
+      }
+      i5 = snapTimeSec.hashCode();
+      label166:
+      if (source == null) {
+        break label327;
       }
     }
-    label143:
-    label148:
-    label153:
-    label159:
-    for (int n = mediaType.hashCode();; n = 0)
+    label275:
+    label280:
+    label285:
+    label291:
+    label297:
+    label303:
+    label309:
+    label315:
+    label321:
+    label327:
+    for (int i6 = source.hashCode();; i6 = 0)
     {
-      if (viewTimeSec != null) {
-        i1 = viewTimeSec.hashCode();
+      if (timeViewed != null) {
+        i7 = timeViewed.hashCode();
       }
-      return (n + (m + (k + (j + (i + i2 * 31) * 31) * 31) * 31) * 31) * 31 + i1;
+      return (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i8 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i7;
       i = 0;
       break;
       j = 0;
@@ -157,6 +277,18 @@ public final class hq
       break label54;
       m = 0;
       break label70;
+      n = 0;
+      break label86;
+      i1 = 0;
+      break label102;
+      i2 = 0;
+      break label118;
+      i3 = 0;
+      break label134;
+      i4 = 0;
+      break label150;
+      i5 = 0;
+      break label166;
     }
   }
 }

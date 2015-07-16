@@ -1,14 +1,24 @@
 import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.api2.cash.square.data.CashPayment;
+import com.snapchat.android.api2.cash.square.data.ErrorType;
 
-public final class sy
+public class sy
 {
-  @SerializedName("swipe")
-  private final boolean mSwipe;
-  
-  public sy(boolean paramBoolean)
-  {
-    mSwipe = paramBoolean;
-  }
+  @SerializedName("blockers")
+  @chd
+  public tq blockers;
+  @SerializedName("field")
+  @chd
+  public String field;
+  @SerializedName("message")
+  @chd
+  public String message;
+  @SerializedName("payment")
+  @chd
+  public CashPayment payment;
+  @SerializedName("type")
+  @chd
+  public ErrorType type;
 }
 
 /* Location:

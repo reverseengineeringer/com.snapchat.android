@@ -1,107 +1,96 @@
 .class public final Lyd;
-.super Ljava/lang/Object;
+.super Landroid/util/DisplayMetrics;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lyd$a;
-    }
-.end annotation
-
-
-# instance fields
-.field public final a:[Landroid/graphics/PointF;
-
-.field public final b:Landroid/os/Handler;
-
-.field public final c:F
-
-.field public final d:Lyd$a;
-
-
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lyd$a;)V
+.method public constructor <init>()V
     .locals 2
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lyd$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 31
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Landroid/graphics/PointF;
-
-    iput-object v0, p0, Lyd;->a:[Landroid/graphics/PointF;
-
-    .line 32
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, Lyd;->b:Landroid/os/Handler;
-
-    .line 33
-    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+    .line 24
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->getApplicationContext()Landroid/content/Context;
 
-    move-result v0
+    move-result-object v0
 
-    int-to-float v0, v0
+    const-string v1, "window"
 
-    iput v0, p0, Lyd;->c:F
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 34
-    iput-object p2, p0, Lyd;->d:Lyd$a;
+    move-result-object v0
 
-    .line 35
+    check-cast v0, Landroid/view/WindowManager;
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lyd;-><init>(Landroid/view/Display;)V
+
+    .line 26
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()V
+.method private constructor <init>(Landroid/view/Display;)V
     .locals 3
+    .param p1    # Landroid/view/Display;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
     const/4 v2, 0x0
 
-    .line 92
-    iget-object v0, p0, Lyd;->a:[Landroid/graphics/PointF;
+    .line 32
+    invoke-direct {p0}, Landroid/util/DisplayMetrics;-><init>()V
 
-    const/4 v1, 0x0
+    .line 33
+    new-instance v0, Landroid/util/DisplayMetrics;
 
-    aput-object v2, v0, v1
+    invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 93
-    iget-object v0, p0, Lyd;->a:[Landroid/graphics/PointF;
+    .line 34
+    invoke-virtual {p1, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    const/4 v1, 0x1
+    .line 35
+    invoke-virtual {p0, v0}, Lyd;->setTo(Landroid/util/DisplayMetrics;)V
 
-    aput-object v2, v0, v1
+    .line 37
+    invoke-static {v0, v2}, Lawf;->a(Landroid/util/DisplayMetrics;Z)I
 
-    .line 94
-    iget-object v0, p0, Lyd;->b:Landroid/os/Handler;
+    move-result v1
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+    iput v1, p0, Lyd;->widthPixels:I
 
-    .line 95
+    .line 38
+    invoke-static {v0, v2}, Lawf;->b(Landroid/util/DisplayMetrics;Z)I
+
+    move-result v1
+
+    iput v1, p0, Lyd;->heightPixels:I
+
+    .line 40
+    iget v1, p0, Lyd;->widthPixels:I
+
+    iget v2, v0, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    if-eq v1, v2, :cond_0
+
+    .line 41
+    iget v1, v0, Landroid/util/DisplayMetrics;->ydpi:F
+
+    iput v1, p0, Lyd;->xdpi:F
+
+    .line 42
+    iget v0, v0, Landroid/util/DisplayMetrics;->xdpi:F
+
+    iput v0, p0, Lyd;->ydpi:F
+
+    .line 44
+    :cond_0
     return-void
 .end method

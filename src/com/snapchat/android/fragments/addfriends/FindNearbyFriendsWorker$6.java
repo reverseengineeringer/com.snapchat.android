@@ -1,11 +1,10 @@
 package com.snapchat.android.fragments.addfriends;
 
-import ahr;
-import amx;
+import ain;
 import android.location.Location;
 import android.os.SystemClock;
-import aol;
-import com.snapchat.android.Timber;
+import anu;
+import aph;
 
 final class FindNearbyFriendsWorker$6
   implements Runnable
@@ -15,9 +14,7 @@ final class FindNearbyFriendsWorker$6
   public final void run()
   {
     Location localLocation = FindNearbyFriendsWorker.c(a).d();
-    if (localLocation == null)
-    {
-      Timber.c("FindNearbyFriendsWorker", "Could not get location, can't cancel polling.", new Object[0]);
+    if (localLocation == null) {
       return;
     }
     FindNearbyFriendsWorker.d(a);
@@ -26,7 +23,7 @@ final class FindNearbyFriendsWorker$6
     if (localLocation.hasAccuracy()) {}
     for (Float localFloat = Float.valueOf(localLocation.getAccuracy());; localFloat = null)
     {
-      new amx(FindNearbyFriendsWorker.g(a).a(FindNearbyFriendsWorker.f(a), localLocation.getLatitude(), localLocation.getLongitude(), localFloat, l1 - l2, "delete")).a(FindNearbyFriendsWorker.f(a));
+      new anu(FindNearbyFriendsWorker.g(a).a(FindNearbyFriendsWorker.f(a), localLocation.getLatitude(), localLocation.getLongitude(), localFloat, l1 - l2, "delete")).a(FindNearbyFriendsWorker.f(a));
       return;
     }
   }

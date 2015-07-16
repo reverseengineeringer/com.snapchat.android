@@ -1,11 +1,8 @@
 public final class bcr
 {
-  public int destinationPage;
+  bcr.a mListener;
   
-  public bcr(int paramInt)
-  {
-    destinationPage = paramInt;
-  }
+  public static abstract interface a {}
 }
 
 /* Location:

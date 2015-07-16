@@ -11,7 +11,7 @@ final class SignupFragment$10
   
   public final void onClick(View paramView)
   {
-    SignupFragment.m(a).setText("");
+    SignupFragment.k(a).setText("");
   }
 }
 

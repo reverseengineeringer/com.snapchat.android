@@ -1,62 +1,56 @@
-import android.content.ContentValues;
-import java.util.Map;
+import com.snapchat.android.model.StoryCollection;
 
 public final class aad
 {
-  public final ContentValues a;
-  private final att b;
+  public final apl a;
+  public final StoryCollection b;
+  public final aac c;
+  public akl d = null;
+  public akl e = null;
+  public akj f = null;
+  public int g;
+  public int h;
   
-  public aad()
-  {
-    this(new att(), new ContentValues());
-  }
+  public aad(@chc akl paramakl, @chc StoryCollection paramStoryCollection) {}
   
-  private aad(att paramatt, ContentValues paramContentValues)
+  private aad(akl paramakl, StoryCollection paramStoryCollection, apl paramapl, aac paramaac)
   {
-    a = paramContentValues;
-    b = paramatt;
-  }
-  
-  public final aad a(zw paramzw, double paramDouble)
-  {
-    a.put(paramzw.getColumnName(), Double.valueOf(paramDouble));
-    return this;
-  }
-  
-  public final aad a(zw paramzw, int paramInt)
-  {
-    a.put(paramzw.getColumnName(), Integer.valueOf(paramInt));
-    return this;
-  }
-  
-  public final aad a(zw paramzw, long paramLong)
-  {
-    a.put(paramzw.getColumnName(), Long.valueOf(paramLong));
-    return this;
-  }
-  
-  public final aad a(zw paramzw, String paramString)
-  {
-    a.put(paramzw.getColumnName(), paramString);
-    return this;
-  }
-  
-  public final aad a(zw paramzw, Map paramMap)
-  {
-    a.put(paramzw.getColumnName(), b.a(paramMap));
-    return this;
-  }
-  
-  public final aad a(zw paramzw, boolean paramBoolean)
-  {
-    ContentValues localContentValues = a;
-    paramzw = paramzw.getColumnName();
-    if (paramBoolean) {}
-    for (int i = 1;; i = 0)
+    a = paramapl;
+    c = paramaac;
+    h = a;
+    d = paramakl;
+    e = paramakl;
+    b = paramStoryCollection;
+    g = 1;
+    if ((b instanceof akc))
     {
-      localContentValues.put(paramzw, Integer.valueOf(i));
-      return this;
+      h = (b.b() + 1);
+      b.a(h);
     }
+    for (;;)
+    {
+      paramakl = d;
+      paramakl = b;
+      paramakl = c;
+      int i = g;
+      i = h;
+      return;
+      h = 1;
+    }
+  }
+  
+  public final boolean a()
+  {
+    akl localakl = d;
+    aac localaac = c;
+    int i = g;
+    int j = h;
+    int k = b.b(e);
+    if ((localakl != null) && (!mCanAdFollow)) {}
+    while ((i < c) || (j < a) || (k < b)) {
+      return false;
+    }
+    return true;
   }
 }
 

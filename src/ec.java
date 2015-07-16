@@ -1,16 +1,51 @@
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import javax.annotation.Nullable;
+
 @cd
-final class ec
+public final class ec
 {
-  static abstract interface a
+  public static <E> HashSet<E> a(E... paramVarArgs)
   {
-    public abstract void a();
-    
-    public abstract void a(byte paramByte);
+    HashSet localHashSet = new HashSet(du.a(paramVarArgs.length));
+    Collections.addAll(localHashSet, paramVarArgs);
+    return localHashSet;
   }
   
-  static abstract interface b
+  static boolean a(Set<?> paramSet, @Nullable Object paramObject)
   {
-    public abstract void a(char paramChar);
+    if (paramSet == paramObject) {}
+    for (;;)
+    {
+      return true;
+      if ((paramObject instanceof Set))
+      {
+        paramObject = (Set)paramObject;
+        try
+        {
+          if (paramSet.size() == ((Set)paramObject).size())
+          {
+            boolean bool = paramSet.containsAll((Collection)paramObject);
+            if (bool) {}
+          }
+          else
+          {
+            return false;
+          }
+        }
+        catch (NullPointerException paramSet)
+        {
+          return false;
+        }
+        catch (ClassCastException paramSet)
+        {
+          return false;
+        }
+      }
+    }
+    return false;
   }
 }
 

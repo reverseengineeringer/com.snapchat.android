@@ -41,7 +41,7 @@
 
     .prologue
     .line 144
-    invoke-static {}, Lajx;->W()V
+    invoke-static {}, Lakr;->W()V
 
     .line 145
     iget-object v0, p0, Lcom/snapchat/android/fragments/ScAcceptTermsFragment$8;->a:Lcom/snapchat/android/fragments/ScAcceptTermsFragment;

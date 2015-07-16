@@ -1,53 +1,58 @@
-import android.graphics.SurfaceTexture;
-import android.hardware.Camera;
-import android.hardware.Camera.Parameters;
+import android.support.v7.widget.RecyclerView.a;
+import android.support.v7.widget.RecyclerView.b;
+import android.widget.Filter;
+import android.widget.Filterable;
+import com.snapchat.android.app.feature.messaging.feed.ui.fragment.FeedAdapter;
+import java.util.List;
 
-public abstract interface wc
+public final class wc
+  extends FeedAdapter
+  implements Filterable, bge.a<vp>
 {
-  public abstract void a();
+  private final List<vp> e;
+  private final wc.a f;
+  private final ban g;
+  private vy h;
   
-  public abstract void a(int paramInt, wh paramwh);
+  public wc(List<vp> paramList, wc.a parama, ban paramban)
+  {
+    super(paramList);
+    e = paramList;
+    f = parama;
+    g = paramban;
+  }
+  
+  public final void a(List<vp> paramList)
+  {
+    if (paramList == null) {}
+    for (c = e;; c = paramList)
+    {
+      f.a(paramList);
+      a.b();
+      return;
+    }
+  }
+  
+  public final void a(vt paramvt, int paramInt)
+  {
+    paramvt.b(true);
+    paramvt.a((vp)c.get(paramInt));
+    if (d != null) {
+      d.a(paramvt);
+    }
+  }
+  
+  public final Filter getFilter()
+  {
+    if (h == null) {
+      h = new vy(c, g, this);
+    }
+    return h;
+  }
   
   public static abstract interface a
   {
-    public abstract void a(byte[] paramArrayOfByte, wc.b paramb);
-  }
-  
-  public static abstract interface b
-  {
-    public abstract void a(int paramInt);
-    
-    public abstract void a(SurfaceTexture paramSurfaceTexture);
-    
-    public abstract void a(Camera.Parameters paramParameters);
-    
-    public abstract void a(wf paramwf);
-    
-    public abstract void a(wi paramwi);
-    
-    public abstract void a(boolean paramBoolean);
-    
-    public abstract void a(byte[] paramArrayOfByte);
-    
-    public abstract Camera b();
-    
-    public abstract void b(boolean paramBoolean);
-    
-    @cgc
-    public abstract Camera.Parameters c();
-    
-    public abstract void d();
-    
-    public abstract void e();
-    
-    public abstract boolean f();
-    
-    public abstract void g();
-  }
-  
-  public static abstract interface c
-  {
-    public abstract void a();
+    public abstract void a(List<vp> paramList);
   }
 }
 

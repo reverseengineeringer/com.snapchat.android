@@ -4,8 +4,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import cgb;
-import sq;
+import chc;
+import tg;
 
 final class CashSettingsFragment$10
   implements SecurityCodeFragment.a
@@ -26,9 +26,9 @@ final class CashSettingsFragment$10
     }
   }
   
-  public final void a(@cgb String paramString)
+  public final void a(@chc String paramString)
   {
-    CashSettingsFragment.a(paramString, d.a(a, c)).f();
+    CashSettingsFragment.a(paramString, d.a(a, c)).execute();
   }
   
   public final void b()

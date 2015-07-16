@@ -1,49 +1,35 @@
-public enum bmf
+import android.util.Log;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+final class bmf
 {
-  final String e;
+  private static final Pattern a = Pattern.compile("\\$\\d+$");
   
-  private bmf(String paramString)
+  static void a()
   {
-    e = paramString;
+    c();
   }
   
-  public static bmf a(String paramString)
+  static void a(Throwable paramThrowable)
   {
-    int i = -1;
-    switch (paramString.hashCode())
-    {
+    c();
+    Log.getStackTraceString(paramThrowable);
+  }
+  
+  static void b()
+  {
+    c();
+  }
+  
+  private static String c()
+  {
+    String str = Thread.currentThread().getStackTrace()[4].getClassName();
+    Matcher localMatcher = a.matcher(str);
+    if (localMatcher.find()) {
+      str = localMatcher.replaceAll("");
     }
-    for (;;)
-    {
-      switch (i)
-      {
-      default: 
-        throw new IllegalArgumentException("Unexpected TLS version: " + paramString);
-        if (paramString.equals("TLSv1.2"))
-        {
-          i = 0;
-          continue;
-          if (paramString.equals("TLSv1.1"))
-          {
-            i = 1;
-            continue;
-            if (paramString.equals("TLSv1"))
-            {
-              i = 2;
-              continue;
-              if (paramString.equals("SSLv3")) {
-                i = 3;
-              }
-            }
-          }
-        }
-        break;
-      }
-    }
-    return a;
-    return b;
-    return c;
-    return d;
+    return str.substring(str.lastIndexOf('.') + 1);
   }
 }
 

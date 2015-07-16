@@ -2,66 +2,31 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class hg
-  extends lt
+  extends ml
 {
-  public Long caption;
-  public Boolean drawing;
   public String dsnapId;
-  public Long editionAvailable;
   public String editionId;
-  private final String eventName = "DISCOVER_SNAP_SHARE_VIEW";
-  private String filter;
-  private String filterGeofence;
-  public hm filterInfo;
-  private String filterSponsor;
-  private String filterType;
-  public ho filterVisual;
-  public Boolean fullView;
-  public hy mediaType;
+  private final String eventName = "DISCOVER_SNAP_LONGFORM_SHARE_CREATE";
+  public ih longformType;
+  public ih mediaType;
   public String publisherId;
-  public Long snapAvailable;
-  public Double snapTimeSec;
+  public Long snapIndexCount;
+  public Long snapIndexPos;
+  public lv source;
   public Double timeViewed;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "DISCOVER_SNAP_SHARE_VIEW");
-    if (caption != null) {
-      localHashMap.put("caption", caption);
-    }
-    if (drawing != null) {
-      localHashMap.put("drawing", drawing);
-    }
+    localHashMap.put("event_name", "DISCOVER_SNAP_LONGFORM_SHARE_CREATE");
     if (dsnapId != null) {
       localHashMap.put("dsnap_id", dsnapId);
-    }
-    if (editionAvailable != null) {
-      localHashMap.put("edition_available", editionAvailable);
     }
     if (editionId != null) {
       localHashMap.put("edition_id", editionId);
     }
-    if (filter != null) {
-      localHashMap.put("filter", filter);
-    }
-    if (filterGeofence != null) {
-      localHashMap.put("filter_geofence", filterGeofence);
-    }
-    if (filterInfo != null) {
-      localHashMap.put("filter_info", filterInfo);
-    }
-    if (filterSponsor != null) {
-      localHashMap.put("filter_sponsor", filterSponsor);
-    }
-    if (filterType != null) {
-      localHashMap.put("filter_type", filterType);
-    }
-    if (filterVisual != null) {
-      localHashMap.put("filter_visual", filterVisual);
-    }
-    if (fullView != null) {
-      localHashMap.put("full_view", fullView);
+    if (longformType != null) {
+      localHashMap.put("longform_type", longformType);
     }
     if (mediaType != null) {
       localHashMap.put("media_type", mediaType);
@@ -69,11 +34,14 @@ public final class hg
     if (publisherId != null) {
       localHashMap.put("publisher_id", publisherId);
     }
-    if (snapAvailable != null) {
-      localHashMap.put("snap_available", snapAvailable);
+    if (snapIndexCount != null) {
+      localHashMap.put("snap_index_count", snapIndexCount);
     }
-    if (snapTimeSec != null) {
-      localHashMap.put("snap_time_sec", snapTimeSec);
+    if (snapIndexPos != null) {
+      localHashMap.put("snap_index_pos", snapIndexPos);
+    }
+    if (source != null) {
+      localHashMap.put("source", source);
     }
     if (timeViewed != null) {
       localHashMap.put("time_viewed", timeViewed);
@@ -95,39 +63,12 @@ public final class hg
         return false;
       }
       paramObject = (hg)paramObject;
-      if (caption != null)
-      {
-        if (caption.equals(caption)) {}
-      }
-      else {
-        while (caption != null) {
-          return false;
-        }
-      }
-      if (drawing != null)
-      {
-        if (drawing.equals(drawing)) {}
-      }
-      else {
-        while (drawing != null) {
-          return false;
-        }
-      }
       if (dsnapId != null)
       {
         if (dsnapId.equals(dsnapId)) {}
       }
       else {
         while (dsnapId != null) {
-          return false;
-        }
-      }
-      if (editionAvailable != null)
-      {
-        if (editionAvailable.equals(editionAvailable)) {}
-      }
-      else {
-        while (editionAvailable != null) {
           return false;
         }
       }
@@ -140,66 +81,12 @@ public final class hg
           return false;
         }
       }
-      if (filter != null)
+      if (longformType != null)
       {
-        if (filter.equals(filter)) {}
+        if (longformType.equals(longformType)) {}
       }
       else {
-        while (filter != null) {
-          return false;
-        }
-      }
-      if (filterGeofence != null)
-      {
-        if (filterGeofence.equals(filterGeofence)) {}
-      }
-      else {
-        while (filterGeofence != null) {
-          return false;
-        }
-      }
-      if (filterInfo != null)
-      {
-        if (filterInfo.equals(filterInfo)) {}
-      }
-      else {
-        while (filterInfo != null) {
-          return false;
-        }
-      }
-      if (filterSponsor != null)
-      {
-        if (filterSponsor.equals(filterSponsor)) {}
-      }
-      else {
-        while (filterSponsor != null) {
-          return false;
-        }
-      }
-      if (filterType != null)
-      {
-        if (filterType.equals(filterType)) {}
-      }
-      else {
-        while (filterType != null) {
-          return false;
-        }
-      }
-      if (filterVisual != null)
-      {
-        if (filterVisual.equals(filterVisual)) {}
-      }
-      else {
-        while (filterVisual != null) {
-          return false;
-        }
-      }
-      if (fullView != null)
-      {
-        if (fullView.equals(fullView)) {}
-      }
-      else {
-        while (fullView != null) {
+        while (longformType != null) {
           return false;
         }
       }
@@ -221,21 +108,30 @@ public final class hg
           return false;
         }
       }
-      if (snapAvailable != null)
+      if (snapIndexCount != null)
       {
-        if (snapAvailable.equals(snapAvailable)) {}
+        if (snapIndexCount.equals(snapIndexCount)) {}
       }
       else {
-        while (snapAvailable != null) {
+        while (snapIndexCount != null) {
           return false;
         }
       }
-      if (snapTimeSec != null)
+      if (snapIndexPos != null)
       {
-        if (snapTimeSec.equals(snapTimeSec)) {}
+        if (snapIndexPos.equals(snapIndexPos)) {}
       }
       else {
-        while (snapTimeSec != null) {
+        while (snapIndexPos != null) {
+          return false;
+        }
+      }
+      if (source != null)
+      {
+        if (source.equals(source)) {}
+      }
+      else {
+        while (source != null) {
           return false;
         }
       }
@@ -254,8 +150,8 @@ public final class hg
   
   public final int hashCode()
   {
-    int i12 = 0;
-    int i13 = super.hashCode();
+    int i4 = 0;
+    int i5 = super.hashCode();
     int i;
     int j;
     label39:
@@ -268,107 +164,51 @@ public final class hg
     int i1;
     label102:
     int i2;
-    label118:
-    int i3;
-    label134:
-    int i4;
-    label150:
-    int i5;
-    label166:
-    int i6;
-    label182:
-    int i7;
-    label198:
-    int i8;
-    label214:
-    int i9;
-    label230:
-    int i10;
-    if (caption != null)
+    if (dsnapId != null)
     {
-      i = caption.hashCode();
-      if (drawing == null) {
-        break label385;
-      }
-      j = drawing.hashCode();
-      if (dsnapId == null) {
-        break label390;
-      }
-      k = dsnapId.hashCode();
-      if (editionAvailable == null) {
-        break label395;
-      }
-      m = editionAvailable.hashCode();
+      i = dsnapId.hashCode();
       if (editionId == null) {
-        break label401;
+        break label209;
       }
-      n = editionId.hashCode();
-      if (filter == null) {
-        break label407;
+      j = editionId.hashCode();
+      if (longformType == null) {
+        break label214;
       }
-      i1 = filter.hashCode();
-      if (filterGeofence == null) {
-        break label413;
-      }
-      i2 = filterGeofence.hashCode();
-      if (filterInfo == null) {
-        break label419;
-      }
-      i3 = filterInfo.hashCode();
-      if (filterSponsor == null) {
-        break label425;
-      }
-      i4 = filterSponsor.hashCode();
-      if (filterType == null) {
-        break label431;
-      }
-      i5 = filterType.hashCode();
-      if (filterVisual == null) {
-        break label437;
-      }
-      i6 = filterVisual.hashCode();
-      if (fullView == null) {
-        break label443;
-      }
-      i7 = fullView.hashCode();
+      k = longformType.hashCode();
       if (mediaType == null) {
-        break label449;
+        break label219;
       }
-      i8 = mediaType.hashCode();
+      m = mediaType.hashCode();
       if (publisherId == null) {
-        break label455;
+        break label225;
       }
-      i9 = publisherId.hashCode();
-      if (snapAvailable == null) {
-        break label461;
+      n = publisherId.hashCode();
+      if (snapIndexCount == null) {
+        break label231;
       }
-      i10 = snapAvailable.hashCode();
-      label246:
-      if (snapTimeSec == null) {
-        break label467;
+      i1 = snapIndexCount.hashCode();
+      if (snapIndexPos == null) {
+        break label237;
+      }
+      i2 = snapIndexPos.hashCode();
+      label118:
+      if (source == null) {
+        break label243;
       }
     }
-    label385:
-    label390:
-    label395:
-    label401:
-    label407:
-    label413:
-    label419:
-    label425:
-    label431:
-    label437:
-    label443:
-    label449:
-    label455:
-    label461:
-    label467:
-    for (int i11 = snapTimeSec.hashCode();; i11 = 0)
+    label209:
+    label214:
+    label219:
+    label225:
+    label231:
+    label237:
+    label243:
+    for (int i3 = source.hashCode();; i3 = 0)
     {
       if (timeViewed != null) {
-        i12 = timeViewed.hashCode();
+        i4 = timeViewed.hashCode();
       }
-      return (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i13 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i12;
+      return (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i5 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i4;
       i = 0;
       break;
       j = 0;
@@ -383,22 +223,6 @@ public final class hg
       break label102;
       i2 = 0;
       break label118;
-      i3 = 0;
-      break label134;
-      i4 = 0;
-      break label150;
-      i5 = 0;
-      break label166;
-      i6 = 0;
-      break label182;
-      i7 = 0;
-      break label198;
-      i8 = 0;
-      break label214;
-      i9 = 0;
-      break label230;
-      i10 = 0;
-      break label246;
     }
   }
 }

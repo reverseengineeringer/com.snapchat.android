@@ -1,9 +1,9 @@
 package com.snapchat.videotranscoder.mp4;
 
-import eu;
+import fd;
 
 public class SnapMetadataBox
-  extends eu
+  extends fd
 {
   public static final String TYPE = "smet";
   

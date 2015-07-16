@@ -1,26 +1,30 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import ain;
-import aio;
-import aje;
-import ajr;
-import ajv;
-import ajx;
-import akc;
+import ajj;
+import ajk;
+import aka;
+import akl;
 import akp;
-import ala;
-import alw;
-import alx;
-import alx.a;
+import akr;
+import akx;
+import alk;
+import alv;
+import amt;
+import amu;
+import amu.a;
 import android.animation.AnimatorSet;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.a;
@@ -28,9 +32,11 @@ import android.support.v7.widget.RecyclerView.b;
 import android.support.v7.widget.RecyclerView.h;
 import android.support.v7.widget.RecyclerView.j;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -42,47 +48,55 @@ import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.TextView;
-import aol;
-import aqm;
-import aqo;
-import ari;
-import atv;
-import aup;
-import aup.a;
-import aup.d;
-import avh;
-import axi;
-import aza;
-import azo;
-import baa;
-import bbe;
-import bbk;
-import bbl;
-import bdd;
-import beh;
-import ben;
-import ber;
-import bgk;
-import bgp;
-import bgr;
-import bgr.a;
-import boh;
-import bur;
-import cgb;
+import aph;
+import arj;
+import arl;
+import arn;
+import ash;
+import atq;
+import aut;
+import ava;
+import avn;
+import avn.a;
+import avn.d;
+import awf;
+import ayg;
+import azy;
+import ban;
+import bat;
+import bbb;
+import bce;
+import bck;
+import bed;
+import bfg;
+import bfm;
+import bfq;
+import bhk;
+import bhp;
+import bhr;
+import bhr.a;
+import bpi;
+import bvs;
+import chc;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.CameraEventAnalytics;
 import com.snapchat.android.analytics.CameraEventAnalytics.CameraContext;
 import com.snapchat.android.analytics.NetworkAnalytics;
 import com.snapchat.android.analytics.NetworkAnalytics.PageContext;
 import com.snapchat.android.analytics.NotificationAnalytics;
 import com.snapchat.android.analytics.NotificationAnalytics.NotificationDestinationType;
+import com.snapchat.android.analytics.SnapViewEventAnalytics;
+import com.snapchat.android.analytics.SnapViewEventAnalytics.SnapViewEventSourceType;
 import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
+import com.snapchat.android.app.feature.messaging.feed.model.FeedIconChangeType;
+import com.snapchat.android.controller.countdown.SnapCountdownController;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.model.chat.ChatFeedItem;
 import com.snapchat.android.notification.AndroidNotificationManager.Type;
 import com.snapchat.android.stories.ui.animation.DismissAnimationView;
+import com.snapchat.android.ui.InAppPromptFlipper;
 import com.snapchat.android.ui.SnapView;
 import com.snapchat.android.ui.listeners.SwipeableRecyclerViewItemTouchListener;
 import com.snapchat.android.ui.listeners.SwipeableRecyclerViewItemTouchListener.1;
@@ -93,142 +107,190 @@ import com.snapchat.android.ui.listeners.SwipeableRecyclerViewItemTouchListener.
 import com.snapchat.android.ui.listeners.SwipeableRecyclerViewItemTouchListener.d;
 import com.snapchat.android.ui.ptr.SnapchatPtrFrameLayout;
 import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
+import com.snapchat.android.util.debug.ReleaseManager;
 import com.snapchat.android.util.eventbus.LoadSnapMediaEvent;
 import com.snapchat.android.util.eventbus.LoadSnapMediaEvent.LoadSnapMediaEventType;
 import com.snapchat.android.util.eventbus.SnapMessageFeedRefreshedEvent;
 import com.snapchat.android.util.fragment.SnapchatFragment;
-import di;
+import dr;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import javax.inject.Inject;
 import javax.inject.Provider;
-import nf;
-import ng;
-import ni;
-import uq;
-import us;
-import us.a;
-import ut;
-import uu;
-import uv;
-import uw;
-import ux;
-import uy;
-import va;
-import vb;
-import ve;
-import vg;
-import vg.a;
-import yn;
-import yu;
+import nw;
+import nx;
+import vj;
+import vk;
+import vm;
+import vm.a;
+import vn;
+import vo;
+import vp;
+import vq;
+import vr;
+import vs;
+import vt;
+import vu;
+import vw;
+import vx;
+import wa;
+import wc;
+import wc.a;
+import zi;
+import zq;
+import zt;
+import zu;
 
 public class FeedFragment
   extends SnapchatFragment
-  implements SwipeableRecyclerViewItemTouchListener.a<ux>, SwipeableRecyclerViewItemTouchListener.b<ux>, SwipeableRecyclerViewItemTouchListener.c<ux>, SwipeableRecyclerViewItemTouchListener.d<ux>, us.a, ve, vg.a, yu
+  implements SharedPreferences.OnSharedPreferenceChangeListener, SwipeableRecyclerViewItemTouchListener.a<vt>, SwipeableRecyclerViewItemTouchListener.b<vt>, SwipeableRecyclerViewItemTouchListener.c<vt>, SwipeableRecyclerViewItemTouchListener.d<vt>, vm.a, wa, wc.a, zq, zu
 {
-  private static final Set<AndroidNotificationManager.Type> M = di.a(AndroidNotificationManager.Type.ADDFRIEND, AndroidNotificationManager.Type.TYPING);
-  private final ajx A;
-  private final ni B;
-  private float C;
-  private final List<ut> D;
-  private final uy E;
-  private a F;
-  private ut G;
-  private uv H;
-  private us I;
-  private SwipeableRecyclerViewItemTouchListener.d<uw> J;
-  private boolean K;
-  private boolean L;
-  private final Runnable N = new Runnable()
+  private static final Set<AndroidNotificationManager.Type> U = dr.a(AndroidNotificationManager.Type.ADDFRIEND, AndroidNotificationManager.Type.TYPING);
+  private final SnapCountdownController A;
+  private final DictionaryEasyMetric B;
+  private final nx C;
+  private final CameraEventAnalytics D;
+  private final NetworkAnalytics E;
+  private final bbb F;
+  private final bhk G;
+  private final akr H;
+  private float I;
+  private final List<vp> J;
+  private final vu K;
+  private a L;
+  private vr M;
+  private vm N;
+  private SwipeableRecyclerViewItemTouchListener.d<vs> O;
+  private vp P;
+  private boolean Q;
+  private boolean R;
+  private boolean S;
+  private Map<String, vp> T;
+  private final Runnable V = new Runnable()
   {
     public final void run()
     {
-      if ((ajv)FeedFragment.p(FeedFragment.this).get() != null) {
-        FeedFragment.q(FeedFragment.this).f();
+      if ((akp)FeedFragment.p(FeedFragment.this).get() != null)
+      {
+        FeedFragment.q(FeedFragment.this).a(NetworkAnalytics.PageContext.FEED);
+        FeedFragment.r(FeedFragment.this).a("feed", "pull_to_refresh");
+        FeedFragment.s(FeedFragment.this).f();
       }
     }
   };
   @Inject
-  public azo a;
+  public ban a;
   private SnapView b;
   private SnapchatPtrFrameLayout c;
   private RecyclerView d;
   private LinearLayoutManager e;
   private FeedAdapter f;
-  private vg g;
+  private wc g;
   private View h;
   private View i;
-  private bgr<EditText> j;
-  private bgr<View> k;
+  private bhr<EditText> j;
+  private bhr<View> k;
   private View l;
-  private bgr<TextView> m;
-  private bgr<View> n;
-  private bgr<View> o;
-  private bgr<DismissAnimationView> p;
-  private final aol q;
-  private final uu r;
-  private final aup s;
-  private final Provider<ajv> t;
-  private final DictionaryEasyMetric u;
-  private final ng v;
-  private final CameraEventAnalytics w;
-  private final NetworkAnalytics x;
-  private final baa y;
-  private final bgk z;
+  private bhr<TextView> m;
+  private bhr<View> n;
+  private bhr<View> o;
+  private bhr<DismissAnimationView> p;
+  private bhr<InAppPromptFlipper> q;
+  private bhr<TextView> r;
+  private bhr<TextView> s;
+  private final aph t;
+  private final vq u;
+  private final avn v;
+  private final arn w;
+  private final vo x;
+  private final vn y;
+  private final Provider<akp> z;
   
   public FeedFragment()
   {
-    this(aol.a(), akc.b(), aup.d(), ajv.UNSAFE_USER_PROVIDER, DictionaryEasyMetric.a(), CameraEventAnalytics.a(), ng.a(), NetworkAnalytics.a(), ni.a(), baa.a(), new bgk(), ajx.a());
+    this(aph.a(), akx.c(), avn.d(), akp.UNSAFE_USER_PROVIDER, SnapCountdownController.a(), DictionaryEasyMetric.a(), CameraEventAnalytics.a(), nx.a(), NetworkAnalytics.a(), bbb.b(), new bhk(), akr.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private FeedFragment(aol paramaol, uu paramuu, aup paramaup, Provider<ajv> paramProvider, DictionaryEasyMetric paramDictionaryEasyMetric, CameraEventAnalytics paramCameraEventAnalytics, ng paramng, NetworkAnalytics paramNetworkAnalytics, ni paramni, baa parambaa, bgk parambgk, ajx paramajx)
+  private FeedFragment(aph paramaph, vq paramvq, avn paramavn, Provider<akp> paramProvider, SnapCountdownController paramSnapCountdownController, DictionaryEasyMetric paramDictionaryEasyMetric, CameraEventAnalytics paramCameraEventAnalytics, nx paramnx, NetworkAnalytics paramNetworkAnalytics, bbb parambbb, bhk parambhk, akr paramakr)
   {
     SnapchatApplication.b().c().a(this);
-    q = paramaol;
-    r = paramuu;
-    s = paramaup;
-    t = paramProvider;
-    u = paramDictionaryEasyMetric;
-    w = paramCameraEventAnalytics;
-    v = paramng;
-    x = paramNetworkAnalytics;
-    z = parambgk;
-    A = paramajx;
-    B = paramni;
-    y = parambaa;
-    D = paramuu.a();
-    E = new uy();
+    t = paramaph;
+    u = paramvq;
+    v = paramavn;
+    z = paramProvider;
+    A = paramSnapCountdownController;
+    B = paramDictionaryEasyMetric;
+    D = paramCameraEventAnalytics;
+    C = paramnx;
+    E = paramNetworkAnalytics;
+    G = parambhk;
+    H = paramakr;
+    F = parambbb;
+    J = paramvq.a();
+    x = new vo();
+    y = new vk(this);
+    x.a = y;
+    K = new vu();
+    T = new ArrayMap();
+    w = new arn()
+    {
+      public final void a(aka paramAnonymousaka)
+      {
+        if (isAdded())
+        {
+          paramAnonymousaka = zi.b(paramAnonymousaka.j());
+          if (paramAnonymousaka != null) {}
+        }
+        else
+        {
+          return;
+        }
+        FeedFragment.a(FeedFragment.this, paramAnonymousaka, getResources().getColor(2131230763));
+      }
+    };
+  }
+  
+  private int a(String paramString)
+  {
+    int i1 = 0;
+    while (i1 < J.size())
+    {
+      if (TextUtils.equals(paramString, ((vp)J.get(i1)).A_())) {
+        return i1;
+      }
+      i1 += 1;
+    }
+    return -1;
   }
   
   private void a(final int paramInt)
   {
-    String str = ajx.l();
+    String str = akr.l();
     if (!TextUtils.isEmpty(str))
     {
-      str = axi.a(str, atv.a("teamsnapchat"));
+      str = ayg.a(str, aut.a("teamsnapchat"));
       int i1 = 0;
-      while (i1 < D.size())
+      while (i1 < J.size())
       {
-        if (TextUtils.equals(((ut)D.get(i1)).B_(), str))
+        if (TextUtils.equals(((vp)J.get(i1)).A_(), str))
         {
-          uw localuw = (uw)d.a(i1, false);
-          if (localuw != null) {
-            a(localuw, new Runnable()
+          vs localvs = (vs)d.a(i1, false);
+          if (localvs != null) {
+            a(localvs, new Runnable()
             {
               public final void run()
               {
-                if ((!FeedFragment.s(FeedFragment.this)) && (paramInt > 0))
+                if ((!FeedFragment.v(FeedFragment.this)) && (paramInt > 0))
                 {
                   FeedFragment.a(FeedFragment.this, paramInt - 1);
                   return;
                 }
-                SharedPreferences.Editor localEditor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
-                localEditor.remove(SharedPreferenceKey.BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING.getKey());
-                localEditor.apply();
+                FeedFragment.t(FeedFragment.this);
+                akr.bB();
               }
             });
           }
@@ -238,16 +300,28 @@ public class FeedFragment
     }
   }
   
-  private void a(final uw paramuw, final Runnable paramRunnable)
+  private void a(vp paramvp, int paramInt)
   {
-    paramuw = k;
-    final TranslateAnimation localTranslateAnimation = new TranslateAnimation(0.0F, C, 0.0F, 0.0F);
+    int i1 = a(paramvp.A_());
+    if (i1 != -1)
+    {
+      paramvp = (vt)d.a(i1, false);
+      if (paramvp != null) {
+        paramvp.b(paramInt);
+      }
+    }
+  }
+  
+  private void a(final vs paramvs, final Runnable paramRunnable)
+  {
+    paramvs = k;
+    final TranslateAnimation localTranslateAnimation = new TranslateAnimation(0.0F, I, 0.0F, 0.0F);
     localTranslateAnimation.setDuration(100L);
     localTranslateAnimation.setAnimationListener(new Animation.AnimationListener()
     {
       public final void onAnimationEnd(Animation paramAnonymousAnimation)
       {
-        paramAnonymousAnimation = new TranslateAnimation(FeedFragment.r(FeedFragment.this), 0.0F, 0.0F, 0.0F);
+        paramAnonymousAnimation = new TranslateAnimation(FeedFragment.u(FeedFragment.this), 0.0F, 0.0F, 0.0F);
         paramAnonymousAnimation.setInterpolator(new BounceInterpolator());
         paramAnonymousAnimation.setDuration(400L);
         if (paramRunnable != null) {
@@ -263,44 +337,62 @@ public class FeedFragment
             public final void onAnimationStart(Animation paramAnonymous2Animation) {}
           });
         }
-        paramuw.startAnimation(paramAnonymousAnimation);
+        paramvs.startAnimation(paramAnonymousAnimation);
       }
       
       public final void onAnimationRepeat(Animation paramAnonymousAnimation) {}
       
       public final void onAnimationStart(Animation paramAnonymousAnimation) {}
     });
-    paramuw.post(new Runnable()
+    paramvs.post(new Runnable()
     {
       public final void run()
       {
-        paramuw.startAnimation(localTranslateAnimation);
+        paramvs.startAnimation(localTranslateAnimation);
       }
     });
   }
   
   private void m()
   {
-    if (H == null) {
-      H = new akp(r, t);
+    boolean bool1 = getActivity().getIntent().getBooleanExtra("makeSyncRequest", false);
+    boolean bool2 = akr.ae();
+    new StringBuilder("Make Sync syncreq = ").append(bool1).append(" ").append(bool2);
+    if ((bool1) || (bool2))
+    {
+      akp localakp = (akp)z.get();
+      if ((d != null) && (localakp != null))
+      {
+        t.f();
+        akr.g(false);
+      }
     }
-    if (g == null) {
-      g = new vg(H.a(), this, a);
+  }
+  
+  private void n()
+  {
+    if (M == null) {
+      M = new alk(u, z);
     }
-    H.b();
+    if (g == null)
+    {
+      g = new wc(M.a(), this, a);
+      g.a(x);
+    }
+    M.c();
     i.setVisibility(4);
     l.setVisibility(8);
     h.setVisibility(8);
     m.a(8);
     j.a(0);
     ((EditText)j.a()).requestFocus();
-    avh.g(getActivity());
-    K = true;
+    awf.g(getActivity());
+    Q = true;
     n.a(8);
     d.a(g);
   }
   
-  private void n()
+  private void o()
   {
     i.setVisibility(0);
     l.setVisibility(0);
@@ -312,39 +404,109 @@ public class FeedFragment
       j.a(4);
     }
     o.a(8);
-    avh.a(getActivity(), mFragmentLayout);
-    K = false;
-    o();
+    awf.a(getActivity(), mFragmentLayout);
+    Q = false;
+    p();
     d.a(f);
   }
   
-  private void o()
+  private void p()
   {
-    ajv localajv = (ajv)t.get();
-    if ((localajv != null) && (mInitialized) && (D.isEmpty()))
+    akp localakp = (akp)z.get();
+    if (!Q)
     {
-      n.a(0);
+      if ((localakp != null) && (mInitialized) && (J.isEmpty())) {
+        n.a(0);
+      }
+    }
+    else {
       return;
     }
     n.a(8);
   }
   
-  public final void a(@cgb aio paramaio) {}
-  
-  public final void a(@cgb aje paramaje) {}
-  
-  public final void a(@cgb aje paramaje, @cgb aio paramaio) {}
-  
-  public final void a(@cgb aje paramaje, @cgb SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt)
+  private void q()
   {
-    if ((!(paramaje instanceof ajr)) && (paramSnapViewSessionStopReason == SnapViewSessionStopReason.ABORT_REQUESTED)) {
+    int i2 = 1;
+    if ((ReleaseManager.f()) && (ava.a(SharedPreferenceKey.DEVELOPER_OPTIONS_UPGRADE_PROMPT_ENABLED.getKey(), false)))
+    {
+      ava.a(SharedPreferenceKey.SUGGESTION_PROMPT_TEXT.getKey(), "Upgrade your app");
+      ava.a(SharedPreferenceKey.SUGGESTION_PROMPT_LINK.getKey(), getString(2131493231));
+    }
+    label94:
+    while (i2 == 0)
+    {
+      return;
+      if (System.currentTimeMillis() - akr.ba() >= akr.bb()) {}
+      for (int i1 = 1;; i1 = 0)
+      {
+        if ((akr.aX()) && (akr.aV()) && (i1 != 0)) {
+          break label94;
+        }
+        i2 = 0;
+        break;
+      }
+    }
+    String str = akr.aZ();
+    if (!TextUtils.isEmpty(str)) {
+      ((TextView)s.a()).setText(str);
+    }
+    ((TextView)s.a()).setOnClickListener(new View.OnClickListener()
+    {
+      public final void onClick(View paramAnonymousView)
+      {
+        paramAnonymousView = getActivity();
+        FeedFragment.t(FeedFragment.this);
+        String str = akr.aW();
+        try
+        {
+          paramAnonymousView.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str)));
+          return;
+        }
+        catch (ActivityNotFoundException localActivityNotFoundException)
+        {
+          atq.a(paramAnonymousView);
+        }
+      }
+    });
+    if (akr.aX()) {
+      ((TextView)r.a()).setText(Html.fromHtml(akr.aY()));
+    }
+    ((InAppPromptFlipper)q.a()).a();
+  }
+  
+  private void r()
+  {
+    if (P != null) {
+      a(P, getResources().getColor(2131230813));
+    }
+  }
+  
+  public final void a(@chc ajk paramajk) {}
+  
+  public final void a(aka paramaka)
+  {
+    ((vp)T.remove(paramaka.d())).a(paramaka, FeedIconChangeType.VIEWED);
+  }
+  
+  public final void a(aka paramaka, long paramLong)
+  {
+    ((vp)T.get(paramaka.d())).a(paramaka, FeedIconChangeType.VIEWING);
+  }
+  
+  public final void a(@chc aka paramaka, @chc ajk paramajk) {}
+  
+  public final void a(@chc aka paramaka, @chc SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt)
+  {
+    r();
+    if ((!(paramaka instanceof akl)) && (paramSnapViewSessionStopReason == SnapViewSessionStopReason.ABORT_REQUESTED)) {
       p.a()).a.start();
     }
   }
   
-  public final void a(List<ut> paramList)
+  public final void a(List<vp> paramList)
   {
-    if ((K) && ((paramList == null) || (paramList.isEmpty())))
+    if ((Q) && ((paramList == null) || (paramList.isEmpty())))
     {
       o.a(0);
       return;
@@ -352,46 +514,51 @@ public class FeedFragment
     o.a(8);
   }
   
-  public final void a(uw paramuw)
+  public final void a(vs paramvs)
   {
-    J.d(paramuw);
+    O.d(paramvs);
   }
   
-  public final void a(uw paramuw, boolean paramBoolean)
+  public final void a(vs paramvs, MotionEvent paramMotionEvent)
   {
-    J.a(paramuw, paramBoolean);
-  }
-  
-  public final boolean a(uw paramuw, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
-  {
-    if (TextUtils.equals(l.mTheirUsername, "teamsnapchat"))
+    if (TextUtils.equals(n.mTheirUsername, "teamsnapchat"))
     {
-      L = true;
+      S = true;
       k.clearAnimation();
     }
-    return J.a(paramuw, paramFloat1, paramFloat2, paramFloat3, paramFloat4);
+    O.a(paramvs, paramMotionEvent);
   }
   
-  public final float b(uw paramuw)
+  public final void a(vs paramvs, boolean paramBoolean)
   {
-    return J.c(paramuw);
+    O.a(paramvs, paramBoolean);
+  }
+  
+  public final boolean a(vs paramvs, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
+  {
+    return O.a(paramvs, paramFloat1, paramFloat2, paramFloat3, paramFloat4);
+  }
+  
+  public final void a_()
+  {
+    if (!N.c()) {
+      N.b();
+    }
+  }
+  
+  public final float b(vs paramvs)
+  {
+    return O.c(paramvs);
+  }
+  
+  public final void b(aka paramaka)
+  {
+    ((vp)T.remove(paramaka.d())).a(paramaka, FeedIconChangeType.VIEWED);
   }
   
   public final void b_()
   {
-    if (!I.c()) {
-      I.b();
-    }
-  }
-  
-  public final boolean c(uw paramuw)
-  {
-    return J.b(paramuw);
-  }
-  
-  public final void c_()
-  {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -410,14 +577,37 @@ public class FeedFragment
     });
   }
   
-  public final int d(uw paramuw)
+  public final void c(aka paramaka)
   {
-    return J.a(paramuw);
+    ((vp)T.remove(paramaka.d())).a(paramaka, FeedIconChangeType.VIEWED);
+  }
+  
+  public final boolean c(vs paramvs)
+  {
+    return O.b(paramvs);
+  }
+  
+  public final void c_()
+  {
+    bhp.a(new Runnable()
+    {
+      public final void run()
+      {
+        ma = false;
+        FeedFragment.n(FeedFragment.this).remove(FeedFragment.m(FeedFragment.this));
+        FeedFragment.o(FeedFragment.this).d(FeedFragment.n(FeedFragment.this).size());
+      }
+    });
+  }
+  
+  public final int d(vs paramvs)
+  {
+    return O.a(paramvs);
   }
   
   public final void d()
   {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -426,68 +616,27 @@ public class FeedFragment
         FeedFragment.o(FeedFragment.this).d(FeedFragment.n(FeedFragment.this).size());
       }
     });
+  }
+  
+  public final void d(@chc aka paramaka)
+  {
+    r();
+    T.put(paramaka.d(), P);
+    SnapCountdownController localSnapCountdownController = A;
+    paramaka.d();
+    synchronized (a)
+    {
+      paramaka = localSnapCountdownController.b(paramaka);
+      if (paramaka != null) {
+        paramaka.a(this);
+      }
+      return;
+    }
   }
   
   public final void d_()
   {
-    bgp.a(new Runnable()
-    {
-      public final void run()
-      {
-        ma = false;
-        FeedFragment.n(FeedFragment.this).remove(FeedFragment.m(FeedFragment.this));
-        FeedFragment.o(FeedFragment.this).d(FeedFragment.n(FeedFragment.this).size());
-      }
-    });
-  }
-  
-  public final void e()
-  {
-    nf.d();
-    v.b("move_to_page", "feed");
-    super.e();
-    b.a(this);
-    F.a();
-    getActivity().setVolumeControlStream(3);
-    if ((getActivity() instanceof LandingPageActivity)) {
-      getActivityq.a(NotificationAnalytics.NotificationDestinationType.FEED);
-    }
-    if (f != null) {
-      f.a.b();
-    }
-    if (K) {
-      m();
-    }
-    for (;;)
-    {
-      if (PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(SharedPreferenceKey.BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING.getKey(), false)) {
-        a(2);
-      }
-      nf.e();
-      return;
-      n();
-    }
-  }
-  
-  public final void e(uw paramuw)
-  {
-    ChatConversation localChatConversation = l;
-    if (TextUtils.equals(mTheirUsername, "teamsnapchat"))
-    {
-      L = true;
-      k.clearAnimation();
-    }
-    if (!localChatConversation.A()) {
-      s.a(localChatConversation);
-    }
-    if (!axi.a(localChatConversation)) {
-      a(paramuw, null);
-    }
-  }
-  
-  public final void e_()
-  {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -497,105 +646,194 @@ public class FeedFragment
     });
   }
   
-  public final void f()
+  public final void e()
   {
-    super.f();
-    b.b(this);
-    l.setVisibility(0);
-    m.a(8);
-    if (K) {
+    nw.d();
+    C.b("move_to_page", "feed");
+    super.e();
+    b.a(this);
+    avn localavn = v;
+    arn localarn = w;
+    mListeners.add(localarn);
+    L.a();
+    getActivity().setVolumeControlStream(3);
+    if ((getActivity() instanceof LandingPageActivity)) {
+      getActivityq.a(NotificationAnalytics.NotificationDestinationType.FEED);
+    }
+    if (akr.bA()) {
+      a(2);
+    }
+    u.b();
+    if (f != null) {
+      f.a.b();
+    }
+    if (Q) {
       n();
+    }
+    for (;;)
+    {
+      q();
+      if (bat.b()) {
+        bat.a(getActivity());
+      }
+      nw.e();
+      return;
+      o();
     }
   }
   
-  public final void f(uw paramuw)
+  public final void e(vs paramvs)
   {
-    ChatConversation localChatConversation = l;
-    aup localaup = s;
-    paramuw = getActivity();
-    Object localObject;
+    int i2 = 1;
+    ChatConversation localChatConversation = n;
+    int i1 = i2;
+    boolean bool;
+    if (!localChatConversation.B())
+    {
+      avn localavn = v;
+      aka localaka = localChatConversation.j();
+      if (localaka == null) {
+        break label95;
+      }
+      mSnapViewEventAnalytics.a(SnapViewEventAnalytics.SnapViewEventSourceType.FEED);
+      bool = localavn.a(localaka, localChatConversation, "feed");
+      if (bool) {
+        break label101;
+      }
+    }
+    label95:
+    label101:
+    for (i1 = i2;; i1 = 0)
+    {
+      if ((!ayg.a(localChatConversation)) && (i1 != 0)) {
+        a(paramvs, null);
+      }
+      y.b(paramvs);
+      return;
+      bool = false;
+      break;
+    }
+  }
+  
+  public final void f()
+  {
+    super.f();
+    B.a("FIRST_MEDIA_OPENED");
+    C.c("exit_page", "feed");
+    b.b(this);
+    avn localavn = v;
+    arn localarn = w;
+    mListeners.remove(localarn);
+    l.setVisibility(0);
+    m.a(8);
+    y.a();
+    f.a.b();
+    if (Q) {
+      o();
+    }
+    if (q.b()) {
+      ((InAppPromptFlipper)q.a()).b();
+    }
+    bat.a();
+  }
+  
+  public final void f(vs paramvs)
+  {
+    ChatConversation localChatConversation = n;
+    avn localavn = v;
+    Object localObject1 = getActivity();
+    Object localObject2;
     if ((mSnapView != null) && (localChatConversation.j() == null))
     {
-      localObject = localChatConversation.n();
-      if (localObject == null) {
-        break label57;
+      localObject2 = localChatConversation.n();
+      if (localObject2 == null) {
+        break label68;
       }
-      new aup.d(localaup, (aje)localObject, localChatConversation, paramuw).run();
+      new avn.d(localavn, (aka)localObject2, localChatConversation, (Context)localObject1).run();
     }
-    label57:
-    do
+    for (;;)
     {
-      do
+      y.a(paramvs);
+      return;
+      label68:
+      localObject2 = mItemsForFeedIcon;
+      localObject1 = localObject2;
+      if (((List)localObject2).isEmpty())
       {
-        return;
-        localObject = mItemForFeedIcon;
-        paramuw = (uw)localObject;
-        if (localObject == null)
+        localChatConversation.r();
+        localObject1 = mItemsForFeedIcon;
+      }
+      if (((List)localObject1).size() == 1)
+      {
+        localObject1 = (ChatFeedItem)((List)localObject1).get(0);
+        if ((localObject1 instanceof ajj))
         {
-          mFeedIconManager.a(localChatConversation, true);
-          paramuw = mItemForFeedIcon;
+          localObject1 = mActionUrl;
+          if (!TextUtils.isEmpty((CharSequence)localObject1)) {
+            new avn.a(localavn, (String)localObject1).run();
+          }
         }
-      } while (!(paramuw instanceof ain));
-      paramuw = mActionUrl;
-    } while (TextUtils.isEmpty(paramuw));
-    new aup.a(localaup, paramuw).run();
+      }
+    }
   }
   
   public final boolean g()
   {
-    if (K)
+    if (Q)
     {
-      n();
+      o();
       return true;
     }
     return false;
   }
   
-  protected final ala h()
+  protected final alv h()
   {
-    return new ala(new String[] { "FEED" });
+    return new alv(new String[] { "FEED" });
   }
   
   public final void i()
   {
-    w.a(CameraEventAnalytics.CameraContext.DOUBLE_TAP);
+    if (!b.b()) {
+      D.a(CameraEventAnalytics.CameraContext.DOUBLE_TAP);
+    }
   }
   
-  public final alw k()
+  public final amt k()
   {
-    new alw()
+    new amt()
     {
-      public final boolean a(alx.a paramAnonymousa)
+      public final boolean a(amu.a paramAnonymousa)
       {
         return FeedFragment.l().contains(c);
       }
       
-      public final boolean b(alx.a paramAnonymousa)
+      public final boolean b(amu.a paramAnonymousa)
       {
-        return alx.h.contains(c);
+        return amu.h.contains(c);
       }
     };
   }
   
-  @boh
-  public void onConversationListUpdatedEvent(bbe parambbe)
+  @bpi
+  public void onConversationListUpdatedEvent(bce parambce)
   {
-    Timber.c("FeedFragmentV2", "FEED-LOG: onConversationListUpdatedEvent", new Object[0]);
     f.a.b();
   }
   
   public void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    I = new uq(getActivity(), akc.b(), this);
-    J = new va();
-    C = avh.a(32.0F, getActivity());
+    N = new vj(getActivity(), akx.c(), this);
+    O = new vw();
+    I = awf.a(32.0F, getActivity());
   }
   
   public View onCreateView(final LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968676, paramViewGroup, false);
-    m = new bgr(mFragmentLayout, 2131362332, 2131362354, new bgr.a()
+    nw.d();
+    mFragmentLayout = paramLayoutInflater.inflate(2130968677, paramViewGroup, false);
+    m = new bhr(mFragmentLayout, 2131362330, 2131362352, new bhr.a()
     {
       public final void a(View paramAnonymousView)
       {
@@ -609,7 +847,7 @@ public class FeedFragment
         });
       }
     });
-    l = c(2131362331);
+    l = c(2131362329);
     l.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -623,19 +861,19 @@ public class FeedFragment
       public final boolean onLongClick(View paramAnonymousView)
       {
         paramAnonymousView.setVisibility(8);
-        ((TextView)FeedFragment.b(FeedFragment.this).a()).setText(ajx.d() + " | " + ajx.c());
+        ((TextView)FeedFragment.b(FeedFragment.this).a()).setText(akr.d() + " | " + akr.c());
         FeedFragment.b(FeedFragment.this).a(0);
         return true;
       }
     });
-    c(2131362330).setOnClickListener(new View.OnClickListener()
+    c(2131362328).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         getActivity().onBackPressed();
       }
     });
-    h = c(2131362335);
+    h = c(2131362333);
     h.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -643,8 +881,8 @@ public class FeedFragment
         FeedFragment.d(FeedFragment.this).b();
       }
     });
-    i = c(2131362334);
-    j = new bgr(mFragmentLayout, 2131362333, 2131362355, new bgr.a()
+    i = c(2131362332);
+    j = new bhr(mFragmentLayout, 2131362331, 2131362353, new bhr.a()
     {
       public final void a(View paramAnonymousView)
       {
@@ -667,7 +905,7 @@ public class FeedFragment
         });
       }
     });
-    k = new bgr(mFragmentLayout, 2131362333, 2131361836, new bgr.a()
+    k = new bhr(mFragmentLayout, 2131362331, 2131361837, new bhr.a()
     {
       public final void a(View paramAnonymousView)
       {
@@ -687,11 +925,16 @@ public class FeedFragment
         FeedFragment.h(FeedFragment.this);
       }
     });
-    n = new bgr(mFragmentLayout, 2131362338, 2131362353);
-    o = new bgr(mFragmentLayout, 2131362339, 2131362352);
-    p = new bgr(mFragmentLayout, 2131362078, 2131362280);
-    c = ((SnapchatPtrFrameLayout)c(2131362360));
-    c.setPtrHandler(new bur()
+    n = new bhr(mFragmentLayout, 2131362336, 2131362351);
+    o = new bhr(mFragmentLayout, 2131362337, 2131362350);
+    p = new bhr(mFragmentLayout, 2131362078, 2131362278);
+    q = new bhr(mFragmentLayout, 2131362338, 2131362354);
+    int i1 = (int)getResources().getDimension(2131296417);
+    ((InAppPromptFlipper)q.a()).setTranslationY((float)(-1L * i1));
+    s = new bhr(mFragmentLayout, 2131362338, 2131362357);
+    r = new bhr(mFragmentLayout, 2131362338, 2131362356);
+    c = ((SnapchatPtrFrameLayout)c(2131362358));
+    c.setPtrHandler(new bvs()
     {
       public final void a(PtrFrameLayout paramAnonymousPtrFrameLayout)
       {
@@ -709,11 +952,12 @@ public class FeedFragment
         return false;
       }
     });
-    d = ((RecyclerView)c(2131362361));
+    d = ((RecyclerView)c(2131362359));
     getActivity();
     e = new LinearLayoutManager();
     d.setLayoutManager(e);
-    f = new FeedAdapter(D);
+    f = new FeedAdapter(J);
+    f.a(x);
     d.setAdapter(f);
     paramLayoutInflater = new SwipeableRecyclerViewItemTouchListener(d, SwipeableRecyclerViewItemTouchListener.SwipeDirection.RIGHT, this);
     e = this;
@@ -741,7 +985,7 @@ public class FeedFragment
             paramLayoutInflater.a(false);
             FeedFragment.d(FeedFragment.this).c();
           }
-          avh.a(getActivity(), FeedFragment.k(FeedFragment.this));
+          awf.a(getActivity(), FeedFragment.k(FeedFragment.this));
         }
       }
       
@@ -773,13 +1017,14 @@ public class FeedFragment
         }
       }
     });
-    paramViewGroup.add(new aqm(y, "Feed"));
-    paramLayoutInflater = new aqo(paramViewGroup);
+    paramViewGroup.add(new arj(F, "Feed"));
+    paramLayoutInflater = new arl(paramViewGroup);
     d.setOnScrollListener(paramLayoutInflater);
     try
     {
-      b = ((ari)getActivity()).l();
-      o();
+      b = ((ash)getActivity()).l();
+      p();
+      nw.e();
       return mFragmentLayout;
     }
     catch (ClassCastException paramLayoutInflater)
@@ -788,67 +1033,43 @@ public class FeedFragment
     }
   }
   
-  @boh
-  public void onFeedIconRefreshedEvent(bbk parambbk)
+  @bpi
+  public void onFeedIconChangedEvent(bck parambck)
   {
-    Timber.c("FeedFragmentV2", "FEED-LOG: onFeedIconRefreshedEvent", new Object[0]);
-    f.a.b();
+    new StringBuilder("FEEDICON-LOG: onFeedIconChangedEvent ").append(mFeedItemId);
+    int i1 = a(mFeedItemId);
+    if (i1 != -1) {
+      f.c(i1);
+    }
   }
   
-  @boh
+  @bpi
   public void onFeedRefreshedEvent(SnapMessageFeedRefreshedEvent paramSnapMessageFeedRefreshedEvent)
   {
     f.a.b();
-    o();
-    if ((c != null) && (c.b()))
+    p();
+    if ((c != null) && (c.a()))
     {
       c.e();
-      x.a(mUUID);
+      E.a(mUUID);
     }
   }
   
-  @boh
-  public void onFeedTimerChangeEvent(bbl parambbl)
-  {
-    String str = ajx.l();
-    int i1;
-    if ((!TextUtils.isEmpty(str)) && (!TextUtils.isEmpty(mFriendUsername)))
-    {
-      parambbl = axi.a(str, Arrays.asList(new String[] { mFriendUsername }));
-      i1 = 0;
-      if (i1 >= D.size()) {
-        break label101;
-      }
-      if (!TextUtils.equals(parambbl, ((ut)D.get(i1)).B_())) {
-        break label94;
-      }
-    }
-    for (;;)
-    {
-      if (i1 != -1) {
-        f.c(i1);
-      }
-      return;
-      label94:
-      i1 += 1;
-      break;
-      label101:
-      i1 = -1;
-    }
-  }
-  
-  @boh
+  @bpi
   public void onLoadSnapMediaEvent(LoadSnapMediaEvent paramLoadSnapMediaEvent)
   {
     if (mType == LoadSnapMediaEvent.LoadSnapMediaEventType.ENDED)
     {
-      paramLoadSnapMediaEvent = r.a();
-      Object localObject = (ut)paramLoadSnapMediaEvent.get(0);
-      if ((localObject instanceof ChatConversation))
+      paramLoadSnapMediaEvent = u.a();
+      if (!paramLoadSnapMediaEvent.isEmpty())
       {
-        localObject = (ChatConversation)localObject;
-        if ((paramLoadSnapMediaEvent.size() > 0) && ((((ChatConversation)localObject).m() == 0) || ((((ChatConversation)localObject).j() != null) && (((ChatConversation)localObject).j().L())))) {
-          x.b(NetworkAnalytics.PageContext.FEED, null);
+        Object localObject = (vp)paramLoadSnapMediaEvent.get(0);
+        if ((localObject instanceof ChatConversation))
+        {
+          localObject = (ChatConversation)localObject;
+          if ((paramLoadSnapMediaEvent.size() > 0) && ((((ChatConversation)localObject).m() == 0) || ((((ChatConversation)localObject).j() != null) && (((ChatConversation)localObject).j().M())))) {
+            E.b(NetworkAnalytics.PageContext.FEED, null);
+          }
         }
       }
     }
@@ -857,10 +1078,20 @@ public class FeedFragment
   
   public void onResume()
   {
+    nw.d();
     super.onResume();
     try
     {
-      F = ((vb)getActivity()).k();
+      L = ((vx)getActivity()).k();
+      aph localaph = t;
+      FragmentActivity localFragmentActivity = getActivity();
+      Intent localIntent = localaph.b(localFragmentActivity);
+      localIntent.putExtra("op_code", 1000);
+      localIntent.putExtra("clear", true);
+      localIntent.putExtra("notification_type", null);
+      localaph.a(localFragmentActivity, localIntent);
+      m();
+      nw.e();
       return;
     }
     catch (ClassCastException localClassCastException)
@@ -869,94 +1100,99 @@ public class FeedFragment
     }
   }
   
-  @boh
-  public void onScrollFeedToTopEvent(bdd parambdd)
+  @bpi
+  public void onScrollFeedToTopEvent(bed parambed)
   {
-    parambdd = e;
+    parambed = e;
     l = 0;
     m = 0;
     if (n != null) {
       n.a = -1;
     }
-    parambdd.i();
+    parambed.i();
   }
   
-  @boh
-  public void onSyncAllCompletedEvent(beh parambeh)
+  public void onSharedPreferenceChanged(SharedPreferences paramSharedPreferences, String paramString)
   {
-    Timber.c("FeedFragmentV2", "FEED-LOG: onSyncAllCompletedEvent", new Object[0]);
+    if (TextUtils.equals(SharedPreferenceKey.SHOULD_SHOW_SUGGESTION_PROMPT.getKey(), paramString)) {
+      q();
+    }
+  }
+  
+  public void onStart()
+  {
+    super.onStart();
+    akr.a(this);
+  }
+  
+  public void onStop()
+  {
+    super.onStop();
+    akr.b(this);
+  }
+  
+  @bpi
+  public void onSyncAllCompletedEvent(bfg parambfg)
+  {
     if ((mCalledOnLoginOrOnResume) && (getUserVisibleHint()))
     {
-      x.a(NetworkAnalytics.PageContext.FEED, mUUID);
-      if (!D.isEmpty())
+      E.a(NetworkAnalytics.PageContext.FEED, mUUID);
+      if (!J.isEmpty())
       {
-        if (!(D.get(0) instanceof ChatConversation)) {
-          break label120;
+        if (!(J.get(0) instanceof ChatConversation)) {
+          break label107;
         }
-        ChatConversation localChatConversation = (ChatConversation)D.get(0);
-        if ((localChatConversation.m() != 0) && (!localChatConversation.j().L())) {
-          break label121;
+        ChatConversation localChatConversation = (ChatConversation)J.get(0);
+        if ((localChatConversation.m() != 0) && (!localChatConversation.j().M())) {
+          break label108;
         }
       }
     }
-    label120:
-    label121:
+    label107:
+    label108:
     for (int i1 = 1;; i1 = 0)
     {
       if (i1 != 0) {
-        x.b(NetworkAnalytics.PageContext.FEED, mUUID);
+        E.b(NetworkAnalytics.PageContext.FEED, mUUID);
       }
       return;
     }
   }
   
-  @boh
-  public void onUpdateFeedEvent(ben paramben)
+  @bpi
+  public void onUpdateFeedEvent(bfm parambfm)
   {
     f.a.b();
-    o();
+    p();
   }
   
-  @boh
-  public void onUserLoadedEvent(ber paramber)
+  @bpi
+  public void onUserLoadedEvent(bfq parambfq)
   {
-    if ((paramber != null) && (user != null))
-    {
-      boolean bool1 = getActivity().getIntent().getBooleanExtra("makeSyncRequest", false);
-      boolean bool2 = ajx.af();
-      Timber.c("FeedFragmentV2", "Make Sync syncreq = " + bool1 + " " + bool2, new Object[0]);
-      if ((bool1) || (bool2))
-      {
-        Timber.c("FeedFragmentV2", "Spinning off Sync request!", new Object[0]);
-        paramber = (ajv)t.get();
-        if ((d != null) && (paramber != null))
-        {
-          q.f();
-          ajx.g(false);
-        }
-      }
+    if ((parambfq != null) && (user != null)) {
+      m();
     }
     f.a.b();
-    o();
+    p();
   }
   
   public static abstract interface a
   {
     public abstract void a();
     
-    public abstract void a(ut paramut);
+    public abstract void a(vp paramvp);
     
-    public abstract void a(ut paramut, View paramView, boolean paramBoolean);
+    public abstract void a(vp paramvp, View paramView, boolean paramBoolean);
     
     public abstract void b();
     
-    public abstract void b(ut paramut);
+    public abstract void b(vp paramvp);
     
     public abstract void c();
     
-    public abstract void c(ut paramut);
+    public abstract void c(vp paramvp);
     
-    public abstract void d(ut paramut);
+    public abstract void d(vp paramvp);
   }
 }
 

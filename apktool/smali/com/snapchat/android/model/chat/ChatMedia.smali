@@ -1,5 +1,5 @@
 .class public Lcom/snapchat/android/model/chat/ChatMedia;
-.super Lakb;
+.super Lakw;
 .source "SourceFile"
 
 
@@ -25,7 +25,7 @@
 
 
 # instance fields
-.field private mClock:Lbgk;
+.field private mClock:Lbhk;
 
 .field protected mHeight:I
 
@@ -45,12 +45,12 @@
 
 
 # direct methods
-.method public constructor <init>(Laim;)V
+.method public constructor <init>(Laji;)V
     .locals 4
 
     .prologue
     .line 71
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -70,7 +70,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, v2}, Lakb;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-direct {p0, v0, v1, v2}, Lakw;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
     .line 51
     const/4 v0, 0x0
@@ -88,14 +88,14 @@
     iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mId:Ljava/lang/String;
 
     .line 73
-    invoke-static {}, Layd;->a()Ljava/lang/String;
+    invoke-static {}, Lazb;->a()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mKey:Ljava/lang/String;
 
     .line 74
-    invoke-static {}, Layd;->b()Ljava/lang/String;
+    invoke-static {}, Lazb;->b()Ljava/lang/String;
 
     move-result-object v0
 
@@ -112,7 +112,7 @@
     iput v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mHeight:I
 
     .line 77
-    invoke-virtual {p1}, Laim;->h()I
+    invoke-virtual {p1}, Laji;->h()I
 
     move-result v0
 
@@ -123,22 +123,22 @@
     iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mMediaType:Lcom/snapchat/android/model/chat/ChatMedia$MediaType;
 
     .line 78
-    new-instance v0, Lbgk;
+    new-instance v0, Lbhk;
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    invoke-direct {v0}, Lbhk;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mClock:Lbgk;
+    iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mClock:Lbhk;
 
     .line 79
     return-void
 .end method
 
-.method public constructor <init>(Lbhf;)V
+.method public constructor <init>(Lbif;)V
     .locals 2
 
     .prologue
     .line 57
-    invoke-direct {p0, p1}, Lakb;-><init>(Lbhf;)V
+    invoke-direct {p0, p1}, Lakw;-><init>(Lbif;)V
 
     .line 51
     const/4 v0, 0x0
@@ -151,69 +151,69 @@
     iput-wide v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mPreservationTimestamp:J
 
     .line 58
-    invoke-virtual {p1}, Lbhf;->b()Z
+    invoke-virtual {p1}, Lbif;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Lbhf;->a()Lbij;
+    invoke-virtual {p1}, Lbif;->a()Lbjj;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lbij;->b()Z
+    invoke-virtual {v0}, Lbjj;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 59
-    invoke-virtual {p1}, Lbhf;->a()Lbij;
+    invoke-virtual {p1}, Lbif;->a()Lbjj;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lbij;->a()Lbih;
+    invoke-virtual {v0}, Lbjj;->a()Lbjh;
 
     move-result-object v0
 
     .line 60
-    invoke-virtual {v0}, Lbih;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lbjh;->a()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mMediaId:Ljava/lang/String;
 
     .line 61
-    invoke-virtual {v0}, Lbih;->c()Ljava/lang/String;
+    invoke-virtual {v0}, Lbjh;->c()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mKey:Ljava/lang/String;
 
     .line 62
-    invoke-virtual {v0}, Lbih;->d()Ljava/lang/String;
+    invoke-virtual {v0}, Lbjh;->d()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mIv:Ljava/lang/String;
 
     .line 63
-    invoke-virtual {v0}, Lbih;->e()Ljava/lang/Integer;
+    invoke-virtual {v0}, Lbjh;->e()Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v1
 
     iput v1, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mWidth:I
 
     .line 64
-    invoke-virtual {v0}, Lbih;->f()Ljava/lang/Integer;
+    invoke-virtual {v0}, Lbjh;->f()Ljava/lang/Integer;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v0
 
@@ -226,11 +226,11 @@
     iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mMediaType:Lcom/snapchat/android/model/chat/ChatMedia$MediaType;
 
     .line 67
-    new-instance v0, Lbgk;
+    new-instance v0, Lbhk;
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    invoke-direct {v0}, Lbhk;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mClock:Lbgk;
+    iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mClock:Lbhk;
 
     .line 68
     return-void
@@ -241,7 +241,7 @@
 
     .prologue
     .line 82
-    invoke-direct {p0, p1}, Lakb;-><init>(Lakb$a;)V
+    invoke-direct {p0, p1}, Lakw;-><init>(Lakw$a;)V
 
     .line 51
     const/4 v0, 0x0
@@ -284,11 +284,11 @@
     iput v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mHeight:I
 
     .line 89
-    new-instance v0, Lbgk;
+    new-instance v0, Lbhk;
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    invoke-direct {v0}, Lbhk;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mClock:Lbgk;
+    iput-object v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mClock:Lbhk;
 
     .line 90
     return-void
@@ -296,7 +296,7 @@
 
 
 # virtual methods
-.method public final B()Ljava/lang/String;
+.method public final C()Ljava/lang/String;
     .locals 1
 
     .prologue
@@ -306,7 +306,7 @@
     return-object v0
 .end method
 
-.method public final C()Lcom/snapchat/android/model/chat/ChatMedia$MediaType;
+.method public final D()Lcom/snapchat/android/model/chat/ChatMedia$MediaType;
     .locals 1
 
     .prologue
@@ -316,7 +316,7 @@
     return-object v0
 .end method
 
-.method public final D()Ljava/lang/String;
+.method public final E()Ljava/lang/String;
     .locals 1
 
     .prologue
@@ -326,7 +326,7 @@
     return-object v0
 .end method
 
-.method public final E()Ljava/lang/String;
+.method public final F()Ljava/lang/String;
     .locals 1
 
     .prologue
@@ -336,7 +336,7 @@
     return-object v0
 .end method
 
-.method public final F()I
+.method public final G()I
     .locals 1
 
     .prologue
@@ -346,7 +346,7 @@
     return v0
 .end method
 
-.method public final G()I
+.method public final H()I
     .locals 1
 
     .prologue
@@ -356,7 +356,7 @@
     return v0
 .end method
 
-.method public final H()Z
+.method public final I()Z
     .locals 6
 
     .prologue
@@ -415,8 +415,8 @@
     goto :goto_1
 .end method
 
-.method public final I()V
-    .locals 6
+.method public final J()V
+    .locals 4
 
     .prologue
     .line 148
@@ -436,38 +436,32 @@
     iput-wide v0, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mPreservationTimestamp:J
 
     .line 150
-    const-string v0, "ChatMedia"
+    const/4 v0, 0x2
 
-    const-string v1, "set preservation timestamp of chat media with id[%s] to %d"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    const/4 v1, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    iget-object v2, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mId:Ljava/lang/String;
 
-    const/4 v3, 0x0
+    aput-object v2, v0, v1
 
-    iget-object v4, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mId:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    aput-object v4, v2, v3
+    iget-wide v2, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mPreservationTimestamp:J
 
-    const/4 v3, 0x1
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iget-wide v4, p0, Lcom/snapchat/android/model/chat/ChatMedia;->mPreservationTimestamp:J
+    move-result-object v2
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v1
 
     .line 152
     :cond_0
     return-void
 .end method
 
-.method public J()Landroid/net/Uri;
+.method public K()Landroid/net/Uri;
     .locals 1
 
     .prologue
@@ -477,7 +471,7 @@
     return-object v0
 .end method
 
-.method public K()Ljava/lang/String;
+.method public L()Ljava/lang/String;
     .locals 1
 
     .prologue
@@ -487,7 +481,7 @@
     return-object v0
 .end method
 
-.method public L()Z
+.method public M()Z
     .locals 1
 
     .prologue
@@ -497,7 +491,7 @@
     return v0
 .end method
 
-.method public M()Z
+.method public N()Z
     .locals 1
 
     .prologue
@@ -507,7 +501,7 @@
     return v0
 .end method
 
-.method public R()F
+.method public S()F
     .locals 1
 
     .prologue
@@ -517,7 +511,7 @@
     return v0
 .end method
 
-.method public S()F
+.method public T()F
     .locals 1
 
     .prologue
@@ -527,7 +521,7 @@
     return v0
 .end method
 
-.method public T()F
+.method public V()F
     .locals 1
 
     .prologue
@@ -537,7 +531,7 @@
     return v0
 .end method
 
-.method public U()F
+.method public W()F
     .locals 1
 
     .prologue
@@ -550,7 +544,7 @@
 .method public final a(Lcom/snapchat/android/model/chat/ChatMedia;)V
     .locals 1
     .param p1    # Lcom/snapchat/android/model/chat/ChatMedia;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -581,7 +575,7 @@
     return-void
 .end method
 
-.method public final am()Z
+.method public final ak()Z
     .locals 1
 
     .prologue
@@ -616,7 +610,7 @@
 .method public final f(Ljava/lang/String;)V
     .locals 0
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -631,7 +625,7 @@
 .method public final g(Ljava/lang/String;)V
     .locals 0
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -652,7 +646,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1, p2}, Lakb;->g(J)Z
+    invoke-super {p0, p1, p2}, Lakw;->g(J)Z
 
     move-result v0
 

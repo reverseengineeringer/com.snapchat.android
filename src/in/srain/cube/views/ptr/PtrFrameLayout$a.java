@@ -44,8 +44,8 @@ final class PtrFrameLayout$a
     e = PtrFrameLayout.c(a);
     f = paramInt1;
     int i = paramInt1 - e;
-    if (PtrFrameLayout.b) {
-      CLog.d(a.c, "tryToScrollTo: start: %s, distance:%s, to:%s", new Object[] { Integer.valueOf(e), Integer.valueOf(i), Integer.valueOf(paramInt1) });
+    if (PtrFrameLayout.a) {
+      CLog.d(a.b, "tryToScrollTo: start: %s, distance:%s, to:%s", new Object[] { Integer.valueOf(e), Integer.valueOf(i), Integer.valueOf(paramInt1) });
     }
     a.removeCallbacks(this);
     b = 0;
@@ -62,8 +62,8 @@ final class PtrFrameLayout$a
     {
       int i = c.getCurrY();
       int j = i - b;
-      if ((PtrFrameLayout.b) && (j != 0)) {
-        CLog.v(a.c, "scroll: %s, start: %s, to: %s, mCurrentPos: %s, current :%s, last: %s, delta: %s", new Object[] { Boolean.valueOf(bool), Integer.valueOf(e), Integer.valueOf(f), Integer.valueOf(PtrFrameLayout.c(a)), Integer.valueOf(i), Integer.valueOf(b), Integer.valueOf(j) });
+      if ((PtrFrameLayout.a) && (j != 0)) {
+        CLog.v(a.b, "scroll: %s, start: %s, to: %s, mCurrentPos: %s, current :%s, last: %s, delta: %s", new Object[] { Boolean.valueOf(bool), Integer.valueOf(e), Integer.valueOf(f), Integer.valueOf(PtrFrameLayout.c(a)), Integer.valueOf(i), Integer.valueOf(b), Integer.valueOf(j) });
       }
       if (bool) {
         break;
@@ -73,8 +73,8 @@ final class PtrFrameLayout$a
       a.post(this);
       return;
     }
-    if (PtrFrameLayout.b) {
-      CLog.v(a.c, "finish, mCurrentPos:%s", new Object[] { Integer.valueOf(PtrFrameLayout.c(a)) });
+    if (PtrFrameLayout.a) {
+      CLog.v(a.b, "finish, mCurrentPos:%s", new Object[] { Integer.valueOf(PtrFrameLayout.c(a)) });
     }
     b();
     a.d();

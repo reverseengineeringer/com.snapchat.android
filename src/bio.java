@@ -3,24 +3,17 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bio
+public final class bio
 {
-  @SerializedName("story")
-  protected bjg story;
-  @SerializedName("story_extras")
-  protected bjh storyExtras;
+  @SerializedName("is_delta")
+  protected Boolean isDelta;
   
-  public final bjg a()
+  public final Boolean a()
   {
-    return story;
+    return isDelta;
   }
   
-  public final bjh b()
-  {
-    return storyExtras;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -29,15 +22,15 @@ public class bio
       return false;
     }
     paramObject = (bio)paramObject;
-    return new EqualsBuilder().append(story, story).append(storyExtras, storyExtras).isEquals();
+    return new EqualsBuilder().append(isDelta, isDelta).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(story).append(storyExtras).toHashCode();
+    return new HashCodeBuilder().append(isDelta).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

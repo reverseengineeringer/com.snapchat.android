@@ -3,31 +3,13 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class bjs
+public class bjs
+  extends bji
 {
-  @SerializedName("first_position")
-  protected Integer firstPosition;
-  @SerializedName("minimum_remaining")
-  protected Integer minimumRemaining;
-  @SerializedName("timeout")
-  protected Integer timeout;
+  @SerializedName("message")
+  protected String message;
   
-  public final Integer a()
-  {
-    return firstPosition;
-  }
-  
-  public final Integer b()
-  {
-    return minimumRemaining;
-  }
-  
-  public final Integer c()
-  {
-    return timeout;
-  }
-  
-  public final boolean equals(Object paramObject)
+  public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -36,15 +18,15 @@ public final class bjs
       return false;
     }
     paramObject = (bjs)paramObject;
-    return new EqualsBuilder().append(firstPosition, firstPosition).append(minimumRemaining, minimumRemaining).append(timeout, timeout).isEquals();
+    return new EqualsBuilder().append(message, message).isEquals();
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    return new HashCodeBuilder().append(firstPosition).append(minimumRemaining).append(timeout).toHashCode();
+    return new HashCodeBuilder().append(message).toHashCode();
   }
   
-  public final String toString()
+  public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

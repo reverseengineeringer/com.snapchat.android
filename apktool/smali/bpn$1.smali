@@ -1,6 +1,9 @@
 .class final Lbpn$1;
-.super Ljava/lang/ThreadLocal;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbpn;
 
 
 # annotations
@@ -13,37 +16,62 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/ThreadLocal",
-        "<",
-        "Ljava/lang/StringBuilder;",
-        ">;"
-    }
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 41
-    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic initialValue()Ljava/lang/Object;
+.method public final a()I
     .locals 1
 
     .prologue
-    .line 41
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 57
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    return v0
+.end method
+
+.method public final a(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    .locals 1
+
+    .prologue
+    .line 49
+    const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public final a(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    .locals 0
+
+    .prologue
+    .line 54
+    return-void
+.end method
+
+.method public final b()I
+    .locals 1
+
+    .prologue
+    .line 61
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final c()V
+    .locals 0
+
+    .prologue
+    .line 65
+    return-void
 .end method

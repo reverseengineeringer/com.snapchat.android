@@ -1,32 +1,33 @@
-import javax.inject.Provider;
+import com.google.gson.annotations.SerializedName;
 
 public final class rc
-  implements buj<rb>
+  extends tx
 {
-  private final Provider<qg> mCashErrorReporterProvider;
-  private final buj<qv> supertypeInjector;
+  final String mFriendName;
   
-  static
+  public rc(@chc String paramString)
   {
-    if (!rc.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
+    mFriendName = paramString;
   }
   
-  private rc(buj<qv> parambuj, Provider<qg> paramProvider)
+  protected final String getPath()
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mCashErrorReporterProvider = paramProvider;
+    return "/cash/check_recipient_eligible";
   }
   
-  public static buj<rb> a(buj<qv> parambuj, Provider<qg> paramProvider)
+  public final Object getRequestPayload()
   {
-    return new rc(parambuj, paramProvider);
+    return new rc.a();
+  }
+  
+  @ud
+  final class a
+    extends qc
+  {
+    @SerializedName("recipient")
+    String recipient = mFriendName;
+    
+    a() {}
   }
 }
 

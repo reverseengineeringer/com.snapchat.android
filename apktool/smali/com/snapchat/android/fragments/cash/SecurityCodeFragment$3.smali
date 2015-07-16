@@ -123,7 +123,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     .line 141
     :cond_0
@@ -151,7 +151,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f080048
+    const v2, 0x7f080049
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 

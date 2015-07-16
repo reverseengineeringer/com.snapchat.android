@@ -21,7 +21,7 @@
 
     .prologue
     .line 15
-    const v0, 0x7f040071
+    const v0, 0x7f040072
 
     const/4 v1, 0x0
 
@@ -32,7 +32,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/cash/IneligibleCashFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 17
-    const v0, 0x7f0a0266
+    const v0, 0x7f0a0264
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/cash/IneligibleCashFragment;->c(I)Landroid/view/View;
 

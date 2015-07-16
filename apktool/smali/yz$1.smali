@@ -1,4 +1,4 @@
-.class final Lyz$1;
+.class public final Lyz$1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -7,31 +7,27 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lyz;->a(Lmo;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lyz;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lmo;
-
-.field final synthetic b:Lyz;
+.field final synthetic a:Lyz;
 
 
 # direct methods
-.method constructor <init>(Lyz;Lmo;)V
+.method public constructor <init>(Lyz;)V
     .locals 0
 
     .prologue
-    .line 132
-    iput-object p1, p0, Lyz$1;->b:Lyz;
-
-    iput-object p2, p0, Lyz$1;->a:Lmo;
+    .line 76
+    iput-object p1, p0, Lyz$1;->a:Lyz;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,16 +37,21 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 135
-    iget-object v0, p0, Lyz$1;->b:Lyz;
+    .line 79
+    iget-object v0, p0, Lyz$1;->a:Lyz;
 
-    iget-object v1, p0, Lyz$1;->a:Lmo;
+    iget-object v0, v0, Lyz;->d:Lyz$a;
 
-    invoke-virtual {v0, v1}, Lyz;->b(Lmo;)V
+    invoke-interface {v0}, Lyz$a;->a()V
 
-    .line 136
+    .line 80
+    iget-object v0, p0, Lyz$1;->a:Lyz;
+
+    invoke-virtual {v0}, Lyz;->a()V
+
+    .line 81
     return-void
 .end method

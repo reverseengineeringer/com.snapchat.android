@@ -730,7 +730,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040019
+    const v1, 0x7f04001a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getLayout(I)Landroid/content/res/XmlResourceParser;
 
@@ -750,7 +750,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lavh;->d(Landroid/content/Context;)I
+    invoke-static {v2}, Lawf;->d(Landroid/content/Context;)I
 
     move-result v2
 
@@ -790,9 +790,9 @@
     .end packed-switch
 .end method
 
-.method public onCaptionColorPickedEvent(Lapp;)V
+.method public onCaptionColorPickedEvent(Laqo;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -801,7 +801,7 @@
 
     check-cast v0, Lcom/snapchat/android/ui/caption/FatCaptionEditText;
 
-    iget v1, p1, Lbbc;->mColor:I
+    iget v1, p1, Lbcc;->mColor:I
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->setColor(I)V
 
@@ -809,14 +809,14 @@
     return-void
 .end method
 
-.method public onEditCaptionEvent(Lbbh;)V
+.method public onEditCaptionEvent(Lbch;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 254
-    iget-boolean v0, p1, Lbbh;->mIsEditing:Z
+    iget-boolean v0, p1, Lbch;->mIsEditing:Z
 
     if-eqz v0, :cond_0
 
@@ -846,9 +846,9 @@
     goto :goto_0
 .end method
 
-.method public onGlobalLayoutEvent(Lbbt;)V
+.method public onGlobalLayoutEvent(Lbct;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue

@@ -1,19 +1,19 @@
 package com.snapchat.android.fragments.stories;
 
-import ahd;
+import aia;
 import android.view.View;
 import android.view.View.OnLongClickListener;
-import bem;
+import bfl;
 import com.squareup.otto.Bus;
 
 final class StoriesAdapter$20
   implements View.OnLongClickListener
 {
-  StoriesAdapter$20(StoriesAdapter paramStoriesAdapter, ahd paramahd) {}
+  StoriesAdapter$20(StoriesAdapter paramStoriesAdapter, aia paramaia) {}
   
   public final boolean onLongClick(View paramView)
   {
-    StoriesAdapter.e(b).a(new bem(a.d()));
+    StoriesAdapter.e(b).a(new bfl(a.d()));
     return true;
   }
 }

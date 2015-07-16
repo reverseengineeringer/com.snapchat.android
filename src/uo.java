@@ -1,33 +1,11 @@
-import android.os.SystemClock;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-public final class uo
-  implements bfk.a
-{
-  private final bgk mClock;
-  public long mFirstByteReceivedElapsedRealtimeInMillis;
-  public int mFirstByteSize;
-  public boolean mIsReceived = false;
-  
-  public uo()
-  {
-    this(bglmClock);
-  }
-  
-  private uo(@cgb bgk parambgk)
-  {
-    mClock = parambgk;
-  }
-  
-  public final void a(int paramInt)
-  {
-    if (!mIsReceived)
-    {
-      mFirstByteSize = paramInt;
-      mFirstByteReceivedElapsedRealtimeInMillis = SystemClock.elapsedRealtime();
-      mIsReceived = true;
-    }
-  }
-}
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+public @interface uo {}
 
 /* Location:
  * Qualified Name:     uo

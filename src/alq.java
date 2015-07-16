@@ -1,40 +1,30 @@
-import java.util.concurrent.atomic.AtomicInteger;
+import com.snapchat.android.model.StoryGroup;
+import java.util.List;
+import java.util.Map;
 
 public final class alq
 {
-  private static AtomicInteger e = new AtomicInteger(0);
-  public int a = 0;
-  public long b = 0L;
-  public long c = 0L;
-  public int d = 0;
-  private final bgk f;
+  @chd
+  public List<StoryGroup> group_stories;
+  @chd
+  public ph.b json;
+  @chd
+  public Map<String, alq.a> snaps;
+  public boolean success;
   
-  public alq()
+  public final String toString()
   {
-    this(new bgk());
+    return "SnapOrStoryDoublePostResponse{success=" + success + ", snaps=" + snaps + ", json=" + json + '}';
   }
   
-  private alq(bgk parambgk)
+  public static final class a
   {
-    f = ((bgk)ck.a(parambgk));
-  }
-  
-  public static class a
-  {
-    public final long a;
-    public final long b;
-    public final int c;
+    public String id;
+    public long timestamp;
     
-    public a(long paramLong1, long paramLong2, int paramInt)
+    public final String toString()
     {
-      b = paramLong2;
-      a = paramLong1;
-      c = paramInt;
-    }
-    
-    public String toString()
-    {
-      return ci.a(a.class).a("durationMs", a).a("bytesReceived", b).a("downloadCount", c).toString();
+      return "SnapData{id='" + id + '\'' + ", timestamp=" + timestamp + '}';
     }
   }
 }

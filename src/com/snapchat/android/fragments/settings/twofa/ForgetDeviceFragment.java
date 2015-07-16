@@ -1,10 +1,8 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import abf;
-import agq;
-import agq.a;
-import amk;
-import anc;
+import acf;
+import ahn;
+import ahn.a;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
@@ -21,9 +19,11 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import aok;
-import aol;
-import apz;
+import anh;
+import anz;
+import apg;
+import aph;
+import aqy;
 import cf;
 import com.snapchat.android.content.SnapchatProvider;
 import com.snapchat.android.util.fragment.SnapchatFragment;
@@ -32,7 +32,7 @@ import java.util.Set;
 
 public class ForgetDeviceFragment
   extends SnapchatFragment
-  implements agq.a, LoaderManager.LoaderCallbacks<Cursor>
+  implements ahn.a, LoaderManager.LoaderCallbacks<Cursor>
 {
   protected TextView a;
   protected ProgressBar b;
@@ -40,18 +40,18 @@ public class ForgetDeviceFragment
   private ListView d;
   private View e;
   private View f;
-  private agq g;
+  private ahn g;
   private final Set<Integer> h = new HashSet();
-  private final aol i;
-  private aok j = new aok()
+  private final aph i;
+  private apg j = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (ForgetDeviceFragment.a(ForgetDeviceFragment.this).contains(Integer.valueOf(i)))
       {
         ForgetDeviceFragment.a(ForgetDeviceFragment.this).remove(Integer.valueOf(i));
-        if ((paramAnonymousamk instanceof anc)) {
+        if ((paramAnonymousanh instanceof anz)) {
           ForgetDeviceFragment.a(ForgetDeviceFragment.this, b);
         }
       }
@@ -60,14 +60,14 @@ public class ForgetDeviceFragment
   
   public ForgetDeviceFragment()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
   @cf
-  private ForgetDeviceFragment(aol paramaol)
+  private ForgetDeviceFragment(aph paramaph)
   {
-    i = paramaol;
+    i = paramaph;
   }
   
   private void i()
@@ -75,14 +75,14 @@ public class ForgetDeviceFragment
     switch (g.getCount())
     {
     default: 
-      c.setText(2131493555);
+      c.setText(2131493553);
       return;
     case 0: 
-      c.setText(2131493556);
+      c.setText(2131493554);
       a.setVisibility(8);
       return;
     }
-    c.setText(2131493551);
+    c.setText(2131493549);
   }
   
   public final void a(String paramString)
@@ -97,24 +97,24 @@ public class ForgetDeviceFragment
     default: 
       return null;
     }
-    return new CursorLoader(getActivity(), SnapchatProvider.d, abf.b, null);
+    return new CursorLoader(getActivity(), SnapchatProvider.d, acf.b, null);
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968769, paramViewGroup, false);
-    c(2131362815).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968771, paramViewGroup, false);
+    c(2131362808).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         getActivity().onBackPressed();
       }
     });
-    e = paramLayoutInflater.inflate(2130968771, null);
-    f = paramLayoutInflater.inflate(2130968770, null);
-    a = ((TextView)f.findViewById(2131362819));
-    b = ((ProgressBar)f.findViewById(2131362820));
-    c = ((TextView)e.findViewById(2131362821));
+    e = paramLayoutInflater.inflate(2130968773, null);
+    f = paramLayoutInflater.inflate(2130968772, null);
+    a = ((TextView)f.findViewById(2131362812));
+    b = ((ProgressBar)f.findViewById(2131362813));
+    c = ((TextView)e.findViewById(2131362814));
     a.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -125,8 +125,8 @@ public class ForgetDeviceFragment
         b.setVisibility(0);
       }
     });
-    d = ((ListView)c(2131362818));
-    g = new agq(getActivity(), this);
+    d = ((ListView)c(2131362811));
+    g = new ahn(getActivity(), this);
     d.addHeaderView(e);
     d.addFooterView(f);
     d.setAdapter(g);

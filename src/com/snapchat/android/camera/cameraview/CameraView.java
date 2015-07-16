@@ -13,28 +13,27 @@ import android.view.TextureView.SurfaceTextureListener;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.RelativeLayout;
-import asu;
-import aue;
-import aur;
-import avl;
-import avq;
-import cgb;
-import cgc;
-import com.snapchat.android.Timber;
+import att;
+import avc;
+import avp;
+import awj;
+import awo;
+import chc;
+import chd;
 import com.snapchat.android.analytics.CameraEventAnalytics;
-import no;
-import vl;
-import vm;
-import xh;
+import of;
+import wh;
+import wi;
+import yd;
 
 public class CameraView
   extends RelativeLayout
-  implements vl
+  implements wh
 {
   public FrameLayout a = new FrameLayout(getContext());
   public SurfaceView b;
   public TextureView c;
-  private final no d;
+  private final of d;
   private final CameraEventAnalytics e;
   
   public CameraView(Context paramContext, AttributeSet paramAttributeSet)
@@ -42,37 +41,37 @@ public class CameraView
     super(paramContext, paramAttributeSet);
     a.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
     addView(a);
-    d = no.a();
+    d = of.a();
     e = CameraEventAnalytics.a();
   }
   
-  @avl
-  @cgc
-  private Bitmap a(aue paramaue)
+  @awj
+  @chd
+  private Bitmap a(avc paramavc)
   {
-    if ((paramaue == null) || (c == null)) {
+    if ((paramavc == null) || (c == null)) {
       return null;
     }
     setDrawingCacheEnabled(true);
-    int i = paramaue.b();
-    int j = paramaue.a();
-    paramaue = aur.a(new xh(), i, j);
-    paramaue = avq.a().a(paramaue, true);
-    if (paramaue != null) {}
+    int i = paramavc.b();
+    int j = paramavc.a();
+    paramavc = avp.a(new yd(), i, j);
+    paramavc = awo.a().a(paramavc, true);
+    if (paramavc != null) {}
     try
     {
-      for (paramaue = c.getBitmap(paramaue);; paramaue = c.getBitmap(i, j))
+      for (paramavc = c.getBitmap(paramavc);; paramavc = c.getBitmap(i, j))
       {
         setDrawingCacheEnabled(false);
-        return paramaue;
+        return paramavc;
       }
     }
-    catch (OutOfMemoryError paramaue)
+    catch (OutOfMemoryError paramavc)
     {
       for (;;)
       {
         System.gc();
-        paramaue = c.getBitmap(i, j);
+        paramavc = c.getBitmap(i, j);
       }
     }
   }
@@ -84,7 +83,7 @@ public class CameraView
   
   public final void a()
   {
-    if (asu.HAS_SURFACE_TEXTURE_RECORDING) {}
+    if (att.HAS_SURFACE_TEXTURE_RECORDING) {}
     do
     {
       return;
@@ -102,18 +101,18 @@ public class CameraView
     c.setVisibility(0);
   }
   
-  public final void a(aue paramaue, vm paramvm)
+  public final void a(avc paramavc, wi paramwi)
   {
     e.a(false);
-    paramvm.a(a(paramaue));
+    paramwi.a(a(paramavc));
   }
   
-  public final void a(@cgb aue paramaue, @cgb xh paramxh)
+  public final void a(@chc avc paramavc, @chc yd paramyd)
   {
     float f1 = heightPixels / widthPixels;
-    float f2 = (float)paramaue.c();
+    float f2 = (float)paramavc.c();
     if (a(f1, f2)) {}
-    for (paramaue = new a(1.0F, f2 / f1);; paramaue = new a(f1 / f2, 1.0F))
+    for (paramavc = new a(1.0F, f2 / f1);; paramavc = new a(f1 / f2, 1.0F))
     {
       c.setScaleX(a);
       c.setScaleY(b);
@@ -128,13 +127,11 @@ public class CameraView
     {
       public final void onSurfaceTextureAvailable(SurfaceTexture paramAnonymousSurfaceTexture, int paramAnonymousInt1, int paramAnonymousInt2)
       {
-        Timber.c("CameraView", "Camera View: Surface texture available", new Object[0]);
         paramb.a(paramAnonymousSurfaceTexture);
       }
       
       public final boolean onSurfaceTextureDestroyed(SurfaceTexture paramAnonymousSurfaceTexture)
       {
-        Timber.c("CameraView", "Surface Destroyed", new Object[0]);
         return true;
       }
       

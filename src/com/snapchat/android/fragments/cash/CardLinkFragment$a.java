@@ -1,11 +1,11 @@
 package com.snapchat.android.fragments.cash;
 
-import cgb;
-import qw;
+import chc;
+import rm;
 
 public abstract interface CardLinkFragment$a
 {
-  public abstract void a(@cgb String paramString1, @cgb String paramString2, @cgb String paramString3, @cgb String paramString4, @cgb qw paramqw);
+  public abstract void a(@chc String paramString1, @chc String paramString2, @chc String paramString3, @chc String paramString4, @chc rm paramrm);
   
   public abstract void e();
 }

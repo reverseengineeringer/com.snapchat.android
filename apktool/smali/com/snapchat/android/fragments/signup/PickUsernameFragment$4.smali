@@ -79,13 +79,13 @@
     move-result-object v0
 
     :goto_0
-    new-instance v1, Lkm;
+    new-instance v1, Lle;
 
-    invoke-direct {v1}, Lkm;-><init>()V
+    invoke-direct {v1}, Lle;-><init>()V
 
-    iput-object v0, v1, Lkm;->usernameSuggestion:Ljava/lang/String;
+    iput-object v0, v1, Lle;->usernameSuggestion:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->B()V
 

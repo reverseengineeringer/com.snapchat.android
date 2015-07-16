@@ -1,23 +1,23 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import amk;
-import anc;
-import aok;
-import aol;
+import anh;
+import anz;
+import apg;
+import aph;
 import java.util.Set;
 
 final class TwoFactorSettingsEnabledFragment$1
-  implements aok
+  implements apg
 {
   TwoFactorSettingsEnabledFragment$1(TwoFactorSettingsEnabledFragment paramTwoFactorSettingsEnabledFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
+    int i = aph.a(paramanh);
     if (TwoFactorSettingsEnabledFragment.a(a).contains(Integer.valueOf(i)))
     {
       TwoFactorSettingsEnabledFragment.a(a).remove(Integer.valueOf(i));
-      if ((paramamk instanceof anc)) {
+      if ((paramanh instanceof anz)) {
         TwoFactorSettingsEnabledFragment.a(a, b);
       }
     }

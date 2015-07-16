@@ -1,10 +1,11 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afj;
-import ajx;
+import agj;
+import akr;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
 import android.view.View;
 import com.snapchat.android.util.fragment.SnapchatFragment;
+import kf;
 
 final class FriendsContactsToggleFragment$1
   extends ViewPager.SimpleOnPageChangeListener
@@ -16,7 +17,6 @@ final class FriendsContactsToggleFragment$1
     int j = 8;
     boolean bool3 = true;
     boolean bool1;
-    Object localObject;
     int i;
     if (paramInt == 0)
     {
@@ -38,7 +38,7 @@ final class FriendsContactsToggleFragment$1
       i = 0;
       label59:
       if (i >= FriendsContactsToggleFragment.c(a).getCount()) {
-        break label152;
+        break label185;
       }
       localObject = FriendsContactsToggleFragment.c(a).getItem(i);
       if ((localObject instanceof SnapchatFragment)) {
@@ -53,9 +53,10 @@ final class FriendsContactsToggleFragment$1
     for (boolean bool2 = true;; bool2 = false)
     {
       ((SnapchatFragment)localObject).f(bool2);
-      if (bool2) {
-        FriendsContactsToggleFragment.a(bool1);
+      if (!bool2) {
+        break label152;
       }
+      FriendsContactsToggleFragment.a(bool1);
       i += 1;
       break label59;
       bool1 = false;
@@ -66,6 +67,14 @@ final class FriendsContactsToggleFragment$1
       break label51;
     }
     label152:
+    Object localObject = a;
+    if (!bool1) {}
+    for (bool2 = true;; bool2 = false)
+    {
+      FriendsContactsToggleFragment.a((FriendsContactsToggleFragment)localObject, bool2, kf.TOGGLE);
+      break;
+    }
+    label185:
     if (bool1)
     {
       localObject = a;
@@ -76,12 +85,12 @@ final class FriendsContactsToggleFragment$1
       FriendsContactsToggleFragment.a((FriendsContactsToggleFragment)localObject, bool1);
       return;
       FriendsContactsToggleFragment localFriendsContactsToggleFragment = a;
-      if (ajx.f())
+      if (akr.f())
       {
         FriendsContactsToggleFragment.d(a);
         localObject = localFriendsContactsToggleFragment;
         bool1 = bool3;
-        if (ajx.Z()) {}
+        if (akr.Z()) {}
       }
       else
       {

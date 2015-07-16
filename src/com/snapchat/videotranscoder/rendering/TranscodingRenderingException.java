@@ -1,22 +1,22 @@
 package com.snapchat.videotranscoder.rendering;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.task.TranscodingRuntimeException;
 
 public class TranscodingRenderingException
   extends TranscodingRuntimeException
 {
-  public TranscodingRenderingException(@cgb String paramString)
+  public TranscodingRenderingException(@chc String paramString)
   {
     super(paramString);
   }
   
-  public TranscodingRenderingException(@cgb String paramString, @cgb Throwable paramThrowable)
+  public TranscodingRenderingException(@chc String paramString, @chc Throwable paramThrowable)
   {
     super(paramString, paramThrowable);
   }
   
-  public TranscodingRenderingException(@cgb Throwable paramThrowable)
+  public TranscodingRenderingException(@chc Throwable paramThrowable)
   {
     super(paramThrowable);
   }

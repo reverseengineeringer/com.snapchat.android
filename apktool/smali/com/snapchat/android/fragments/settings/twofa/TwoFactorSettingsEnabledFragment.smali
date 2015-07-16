@@ -17,9 +17,9 @@
     .end annotation
 .end field
 
-.field private final c:Laol;
+.field private final c:Laph;
 
-.field private d:Laok;
+.field private d:Lapg;
 
 
 # direct methods
@@ -28,17 +28,17 @@
 
     .prologue
     .line 55
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;-><init>(Laol;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;-><init>(Laph;)V
 
     .line 56
     return-void
 .end method
 
-.method private constructor <init>(Laol;)V
+.method private constructor <init>(Laph;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -65,10 +65,10 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$1;-><init>(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->d:Laok;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->d:Lapg;
 
     .line 62
-    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c:Laol;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c:Laph;
 
     .line 63
     return-void
@@ -84,26 +84,26 @@
     return-object v0
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;Lanc$c;)V
+.method static synthetic a(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;Lanz$c;)V
     .locals 4
 
     .prologue
     .line 34
-    iget-boolean v0, p1, Lanc$c;->a:Z
+    iget-boolean v0, p1, Lanz$c;->a:Z
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;
 
     invoke-direct {v2}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsDisabledFragment;-><init>()V
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -117,7 +117,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -125,7 +125,7 @@
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
 
-    iget-object v3, p1, Lanc$c;->d:Ljava/lang/String;
+    iget-object v3, p1, Lanz$c;->d:Ljava/lang/String;
 
     invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;Ljava/lang/String;)V
 
@@ -144,12 +144,12 @@
     return-object v0
 .end method
 
-.method static synthetic c(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;)Laol;
+.method static synthetic c(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;)Laph;
     .locals 1
 
     .prologue
     .line 34
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c:Laph;
 
     return-object v0
 .end method
@@ -193,7 +193,7 @@
 
     .prologue
     .line 67
-    const v0, 0x7f0400c0
+    const v0, 0x7f0400c2
 
     const/4 v1, 0x0
 
@@ -204,7 +204,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 68
-    const v0, 0x7f0a03f8
+    const v0, 0x7f0a03f1
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c(I)Landroid/view/View;
 
@@ -216,7 +216,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a03fc
+    const v0, 0x7f0a03f5
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c(I)Landroid/view/View;
 
@@ -232,7 +232,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    const v0, 0x7f0a03fd
+    const v0, 0x7f0a03f6
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c(I)Landroid/view/View;
 
@@ -244,7 +244,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a03fe
+    const v0, 0x7f0a03f7
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c(I)Landroid/view/View;
 
@@ -279,13 +279,13 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onPause()V
 
     .line 135
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c:Laph;
 
     const/16 v1, 0x3f4
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->d:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->d:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 136
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->b:Ljava/util/Set;
@@ -304,13 +304,13 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 129
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c:Laph;
 
     const/16 v1, 0x3f4
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->d:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->d:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 130
     return-void

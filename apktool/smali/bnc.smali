@@ -1,253 +1,137 @@
-.class public final Lbnc;
+.class public abstract Lbnc;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lcai;
-
-
-# instance fields
-.field public final a:Lbzu;
-
-.field private b:Z
-
-.field private final c:I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 42
-    const/4 v0, -0x1
+    .line 26
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lbnc;-><init>(I)V
-
-    .line 43
     return-void
 .end method
 
-.method public constructor <init>(I)V
-    .locals 1
+.method public static a(Lbmx;Ljava/lang/String;)Lbnc;
+    .locals 3
 
     .prologue
-    .line 37
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 46
+    sget-object v0, Lbnq;->c:Ljava/nio/charset/Charset;
 
-    .line 35
-    new-instance v0, Lbzu;
+    .line 47
+    if-eqz p0, :cond_0
 
-    invoke-direct {v0}, Lbzu;-><init>()V
+    .line 48
+    iget-object v0, p0, Lbmx;->b:Ljava/lang/String;
 
-    iput-object v0, p0, Lbnc;->a:Lbzu;
+    if-eqz v0, :cond_1
 
-    .line 38
-    iput p1, p0, Lbnc;->c:I
+    iget-object v0, p0, Lbmx;->b:Ljava/lang/String;
 
-    .line 39
-    return-void
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v0
+
+    .line 49
+    :goto_0
+    if-nez v0, :cond_0
+
+    .line 50
+    sget-object v0, Lbnq;->c:Ljava/nio/charset/Charset;
+
+    .line 51
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "; charset=utf-8"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lbmx;->a(Ljava/lang/String;)Lbmx;
+
+    move-result-object p0
+
+    .line 54
+    :cond_0
+    invoke-virtual {p1, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v0
+
+    .line 55
+    invoke-static {p0, v0}, Lbnc;->a(Lbmx;[B)Lbnc;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 48
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static a(Lbmx;[B)Lbnc;
+    .locals 6
+
+    .prologue
+    .line 60
+    array-length v0, p1
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "content == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    array-length v1, p1
+
+    int-to-long v2, v1
+
+    int-to-long v4, v0
+
+    invoke-static {v2, v3, v4, v5}, Lbnq;->a(JJ)V
+
+    new-instance v1, Lbnc$1;
+
+    invoke-direct {v1, p0, v0, p1}, Lbnc$1;-><init>(Lbmx;I[B)V
+
+    return-object v1
 .end method
 
 
 # virtual methods
-.method public final E_()Lcak;
-    .locals 1
-
-    .prologue
-    .line 67
-    sget-object v0, Lcak;->b:Lcak;
-
-    return-object v0
+.method public abstract a()Lbmx;
 .end method
 
-.method public final a(Lcai;)V
-    .locals 6
-
-    .prologue
-    .line 76
-    new-instance v1, Lbzu;
-
-    invoke-direct {v1}, Lbzu;-><init>()V
-
-    .line 77
-    iget-object v0, p0, Lbnc;->a:Lbzu;
-
-    const-wide/16 v2, 0x0
-
-    iget-object v4, p0, Lbnc;->a:Lbzu;
-
-    iget-wide v4, v4, Lbzu;->b:J
-
-    invoke-virtual/range {v0 .. v5}, Lbzu;->a(Lbzu;JJ)Lbzu;
-
-    .line 78
-    iget-wide v2, v1, Lbzu;->b:J
-
-    invoke-interface {p1, v1, v2, v3}, Lcai;->a_(Lbzu;J)V
-
-    .line 79
-    return-void
+.method public abstract a(Lcaw;)V
 .end method
 
-.method public final a_(Lbzu;J)V
-    .locals 4
+.method public b()J
+    .locals 2
 
     .prologue
-    .line 55
-    iget-boolean v0, p0, Lbnc;->b:Z
+    .line 35
+    const-wide/16 v0, -0x1
 
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "closed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 56
-    :cond_0
-    iget-wide v0, p1, Lbzu;->b:J
-
-    invoke-static {v0, v1, p2, p3}, Lbmp;->a(JJ)V
-
-    .line 57
-    iget v0, p0, Lbnc;->c:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_1
-
-    iget-object v0, p0, Lbnc;->a:Lbzu;
-
-    iget-wide v0, v0, Lbzu;->b:J
-
-    iget v2, p0, Lbnc;->c:I
-
-    int-to-long v2, v2
-
-    sub-long/2addr v2, p2
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_1
-
-    .line 58
-    new-instance v0, Ljava/net/ProtocolException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "exceeded content-length limit of "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v2, p0, Lbnc;->c:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " bytes"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 60
-    :cond_1
-    iget-object v0, p0, Lbnc;->a:Lbzu;
-
-    invoke-virtual {v0, p1, p2, p3}, Lbzu;->a_(Lbzu;J)V
-
-    .line 61
-    return-void
-.end method
-
-.method public final close()V
-    .locals 4
-
-    .prologue
-    .line 46
-    iget-boolean v0, p0, Lbnc;->b:Z
-
-    if-eqz v0, :cond_1
-
-    .line 52
-    :cond_0
-    return-void
-
-    .line 47
-    :cond_1
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lbnc;->b:Z
-
-    .line 48
-    iget-object v0, p0, Lbnc;->a:Lbzu;
-
-    iget-wide v0, v0, Lbzu;->b:J
-
-    iget v2, p0, Lbnc;->c:I
-
-    int-to-long v2, v2
-
-    cmp-long v0, v0, v2
-
-    if-gez v0, :cond_0
-
-    .line 49
-    new-instance v0, Ljava/net/ProtocolException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "content-length promised "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v2, p0, Lbnc;->c:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " bytes, but received "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lbnc;->a:Lbzu;
-
-    .line 50
-    iget-wide v2, v2, Lbzu;->b:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final flush()V
-    .locals 0
-
-    .prologue
-    .line 64
-    return-void
+    return-wide v0
 .end method

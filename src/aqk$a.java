@@ -1,15 +1,31 @@
-import android.view.MotionEvent;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.snapchat.android.ui.listeners.SwipeableListItemTouchListener.a;
+import java.util.Iterator;
 
-public abstract interface aqk$a
-  extends SwipeableListItemTouchListener.a
+final class aqk$a
+  implements bn
 {
-  public abstract ChatConversation a(MotionEvent paramMotionEvent);
+  private aqk$a(aqk paramaqk) {}
   
-  public abstract boolean a();
+  public final void a()
+  {
+    if ((a.d) && (a.a.b()) && (a.b.b()))
+    {
+      Iterator localIterator = a.c.iterator();
+      while (localIterator.hasNext()) {
+        ((aqk.b)localIterator.next()).a();
+      }
+    }
+  }
   
-  public abstract boolean b(MotionEvent paramMotionEvent);
+  public final void a(bj parambj)
+  {
+    if (a.d)
+    {
+      parambj = a.c.iterator();
+      while (parambj.hasNext()) {
+        ((aqk.b)parambj.next()).a(a);
+      }
+    }
+  }
 }
 
 /* Location:

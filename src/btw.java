@@ -1,16 +1,21 @@
-import java.util.Comparator;
-import java.util.Map;
-import java.util.TreeMap;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 
 public final class btw
-  extends btu
 {
-  public btw(Map paramMap)
+  public static boolean a = false;
+  
+  public static Boolean a(Context paramContext)
   {
-    super(paramMap);
-    TreeMap localTreeMap = new TreeMap(new Comparator() {});
-    localTreeMap.putAll(paramMap);
-    a = localTreeMap;
+    return Boolean.valueOf(paramContext.getSharedPreferences("com.crittercism.usersettings", 0).getBoolean("crashedOnLastLoad", false));
+  }
+  
+  public static void a(Context paramContext, boolean paramBoolean)
+  {
+    paramContext = paramContext.getSharedPreferences("com.crittercism.usersettings", 0).edit();
+    paramContext.putBoolean("crashedOnLastLoad", paramBoolean);
+    paramContext.commit();
   }
 }
 

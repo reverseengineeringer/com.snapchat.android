@@ -41,23 +41,23 @@
 
     .prologue
     .line 112
-    new-instance v0, Lrh;
+    new-instance v0, Lrx;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lrh;-><init>(B)V
+    invoke-direct {v0, v1}, Lrx;-><init>(B)V
 
     .line 114
     new-instance v1, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$4$1;
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$4$1;-><init>(Lcom/snapchat/android/fragments/cash/CashSettingsFragment$4;)V
 
-    iput-object v1, v0, Lqv;->mListener:Lqv$a;
+    iput-object v1, v0, Lrl;->mListener:Lrl$a;
 
     .line 137
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lqv;->a(Lcom/snapchat/android/model/CashTransaction;)V
+    invoke-virtual {v0, v1}, Lrl;->a(Lcom/snapchat/android/model/CashTransaction;)V
 
     .line 138
     return-void

@@ -1,9 +1,9 @@
 package in.srain.cube.views.ptr.header;
 
-import buu;
+import bvv;
 
 final class MaterialHeader$2
-  extends buu
+  extends bvv
 {
   MaterialHeader$2(MaterialHeader paramMaterialHeader) {}
   

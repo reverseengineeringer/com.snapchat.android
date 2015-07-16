@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    .line 75
+    .line 76
     new-instance v0, Lcom/snapchat/android/model/Friend$AddSourceType;
 
     const-string v1, "ADDED_BY_PHONE"
@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$AddSourceType;->ADDED_BY_PHONE:Lcom/snapchat/android/model/Friend$AddSourceType;
 
-    .line 76
+    .line 77
     new-instance v0, Lcom/snapchat/android/model/Friend$AddSourceType;
 
     const-string v1, "ADDED_BY_USERNAME"
@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$AddSourceType;->ADDED_BY_USERNAME:Lcom/snapchat/android/model/Friend$AddSourceType;
 
-    .line 77
+    .line 78
     new-instance v0, Lcom/snapchat/android/model/Friend$AddSourceType;
 
     const-string v1, "ADDED_BY_QR_CODE"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$AddSourceType;->ADDED_BY_QR_CODE:Lcom/snapchat/android/model/Friend$AddSourceType;
 
-    .line 78
+    .line 79
     new-instance v0, Lcom/snapchat/android/model/Friend$AddSourceType;
 
     const-string v1, "ADDED_BY_ADDED_ME_BACK"
@@ -90,7 +90,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$AddSourceType;->ADDED_BY_ADDED_ME_BACK:Lcom/snapchat/android/model/Friend$AddSourceType;
 
-    .line 79
+    .line 80
     new-instance v0, Lcom/snapchat/android/model/Friend$AddSourceType;
 
     const-string v1, "ADDED_BY_NEARBY"
@@ -99,7 +99,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$AddSourceType;->ADDED_BY_NEARBY:Lcom/snapchat/android/model/Friend$AddSourceType;
 
-    .line 80
+    .line 81
     new-instance v0, Lcom/snapchat/android/model/Friend$AddSourceType;
 
     const-string v1, "UNKNOWN"
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$AddSourceType;->UNKNOWN:Lcom/snapchat/android/model/Friend$AddSourceType;
 
-    .line 74
+    .line 75
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/snapchat/android/model/Friend$AddSourceType;
@@ -155,28 +155,28 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 75
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
 .method public static fromValue(Ljava/lang/String;)Lcom/snapchat/android/model/Friend$AddSourceType;
-    .locals 4
+    .locals 3
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 88
+    .line 89
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 90
+    .line 91
     :try_start_0
     invoke-static {p0}, Lcom/snapchat/android/model/Friend$AddSourceType;->valueOf(Ljava/lang/String;)Lcom/snapchat/android/model/Friend$AddSourceType;
     :try_end_0
@@ -184,38 +184,24 @@
 
     move-result-object v0
 
-    .line 95
+    .line 96
     :goto_0
     return-object v0
 
-    .line 91
+    .line 92
     :catch_0
     move-exception v0
 
-    .line 92
-    const-string v1, "Friend"
+    .line 93
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Invalid enum for AddSourceType "
 
-    const-string v3, "Invalid enum for AddSourceType "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 95
+    .line 96
     :cond_0
     sget-object v0, Lcom/snapchat/android/model/Friend$AddSourceType;->UNKNOWN:Lcom/snapchat/android/model/Friend$AddSourceType;
 
@@ -226,7 +212,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 75
     const-class v0, Lcom/snapchat/android/model/Friend$AddSourceType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -242,7 +228,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 75
     sget-object v0, Lcom/snapchat/android/model/Friend$AddSourceType;->$VALUES:[Lcom/snapchat/android/model/Friend$AddSourceType;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/model/Friend$AddSourceType;->clone()Ljava/lang/Object;
@@ -260,7 +246,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 85
     invoke-virtual {p0}, Lcom/snapchat/android/model/Friend$AddSourceType;->name()Ljava/lang/String;
 
     move-result-object v0

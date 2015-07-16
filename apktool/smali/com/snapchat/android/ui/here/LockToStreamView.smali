@@ -51,15 +51,15 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/view/View;Lcom/snapchat/android/analytics/HereAnalytics;)V
     .locals 5
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/view/View;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/android/analytics/HereAnalytics;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -114,7 +114,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09004a
+    const v1, 0x7f090049
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -134,7 +134,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f08002f
+    const v2, 0x7f080030
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -251,7 +251,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09004e
+    const v1, 0x7f09004d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -279,7 +279,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f09004c
+    const v2, 0x7f09004b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -312,7 +312,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09004d
+    const v1, 0x7f09004c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -445,7 +445,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090047
+    const v2, 0x7f090046
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -521,7 +521,7 @@
 
     div-float/2addr v0, v1
 
-    invoke-static {v2, v3, v0}, Lats;->a(FFF)F
+    invoke-static {v2, v3, v0}, Lauq;->a(FFF)F
 
     move-result v0
 
@@ -623,7 +623,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f09004a
+    const v2, 0x7f090049
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -640,7 +640,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f090046
+    const v2, 0x7f090045
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

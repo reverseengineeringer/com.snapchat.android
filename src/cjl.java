@@ -1,44 +1,23 @@
-public class cjl
-  extends cjm
+public final class cjl
 {
-  private final int b;
-  private final cgm c;
+  private static cjl b;
+  public cjm a = new cjm(new cjk[] { cjw.a, cka.a, cjj.a, cjn.a, cjr.a, cjs.a });
+  private cjm c = new cjm(new cjk[] { cjy.a, cjw.a, cka.a, cjj.a, cjn.a, cjr.a, cjs.a });
+  private cjm d = new cjm(new cjk[] { cjv.a, cjx.a, cka.a, cjr.a, cjs.a });
+  private cjm e = new cjm(new cjk[] { cjv.a, cjz.a, cjx.a, cka.a, cjs.a });
+  private cjm f = new cjm(new cjk[] { cjx.a, cka.a, cjs.a });
   
-  public cjl(cgi paramcgi, cgm paramcgm1, cgm paramcgm2)
+  public static cjl a()
   {
-    super(paramcgi, paramcgm1);
-    if (!paramcgm2.c()) {
-      throw new IllegalArgumentException("Range duration field must be precise");
+    if (b == null) {
+      b = new cjl();
     }
-    b = ((int)(paramcgm2.d() / a));
-    if (b < 2) {
-      throw new IllegalArgumentException("The effective range must be at least 2");
-    }
-    c = paramcgm2;
+    return b;
   }
   
-  public final int a(long paramLong)
+  public final String toString()
   {
-    if (paramLong >= 0L) {
-      return (int)(paramLong / a % b);
-    }
-    return b - 1 + (int)((1L + paramLong) / a % b);
-  }
-  
-  public final long b(long paramLong, int paramInt)
-  {
-    cjh.a(this, paramInt, g(), b - 1);
-    return (paramInt - a(paramLong)) * a + paramLong;
-  }
-  
-  public final cgm e()
-  {
-    return c;
-  }
-  
-  public final int h()
-  {
-    return b - 1;
+    return "ConverterManager[" + a.a.length + " instant," + c.a.length + " partial," + d.a.length + " duration," + e.a.length + " period," + f.a.length + " interval]";
   }
 }
 

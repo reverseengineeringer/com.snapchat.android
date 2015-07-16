@@ -4,411 +4,423 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lavu$1;
-    }
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x13
 .end annotation
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "BitmapUtils"
+.field private static final INSTANCE:Lavu;
+
+.field private static final TAG:Ljava/lang/String; = "SoftNavigationBarManager"
+
+
+# instance fields
+.field public mDecorView:Landroid/view/View;
+
+.field public mDefaultBottomPadding:I
+
+.field public mDefaultFlags:I
+
+.field public mDefaultRightPadding:I
+
+.field private mIsImmersiveModeEnabled:Z
+
+.field public mIsImmersiveModeOn:Z
+
+.field public final mIsImmersiveModeSupported:Z
+
+.field private final mUtils:Lavt;
+
+.field public mWindow:Landroid/view/Window;
 
 
 # direct methods
-.method public static a(Landroid/graphics/Bitmap$Config;)I
-    .locals 3
-    .param p0    # Landroid/graphics/Bitmap$Config;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    const/4 v0, 0x4
+    .line 30
+    new-instance v0, Lavu;
 
-    .line 33
-    sget-object v1, Lavu$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
+    invoke-direct {v0}, Lavu;-><init>()V
 
-    invoke-virtual {p0}, Landroid/graphics/Bitmap$Config;->ordinal()I
+    sput-object v0, Lavu;->INSTANCE:Lavu;
 
-    move-result v2
-
-    aget v1, v1, v2
-
-    packed-switch v1, :pswitch_data_0
-
-    .line 42
-    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->e()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Unknown Bitmap config."
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 38
-    :pswitch_0
-    const/4 v0, 0x2
-
-    .line 43
-    :cond_0
-    :goto_0
-    :pswitch_1
-    return v0
-
-    .line 40
-    :pswitch_2
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 33
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_2
-    .end packed-switch
+    return-void
 .end method
 
-.method public static a(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
-    .locals 7
-    .param p0    # Landroid/graphics/Bitmap;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgb;
-    .end annotation
+.method private constructor <init>()V
+    .locals 3
+
+    .prologue
+    .line 47
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x13
+
+    if-lt v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    new-instance v1, Lavt;
+
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Lavt;-><init>(Landroid/content/Context;)V
+
+    invoke-direct {p0, v0, v1}, Lavu;-><init>(ZLavt;)V
+
+    .line 49
+    return-void
+
+    .line 47
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(ZLavt;)V
+    .locals 1
+
+    .prologue
+    .line 52
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 43
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lavu;->mIsImmersiveModeOn:Z
+
+    .line 44
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lavu;->mIsImmersiveModeEnabled:Z
+
+    .line 53
+    iput-boolean p1, p0, Lavu;->mIsImmersiveModeSupported:Z
+
+    .line 54
+    iput-object p2, p0, Lavu;->mUtils:Lavt;
+
+    .line 55
+    return-void
+.end method
+
+.method public static a()Lavu;
+    .locals 1
+
+    .prologue
+    .line 58
+    sget-object v0, Lavu;->INSTANCE:Lavu;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final a(ZZ)V
+    .locals 6
 
     .prologue
     const/4 v1, 0x0
 
-    .line 126
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+    .line 228
+    if-eqz p1, :cond_1
 
-    move-result v0
+    .line 229
+    iget v2, p0, Lavu;->mDefaultRightPadding:I
 
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+    .line 230
+    if-eqz p2, :cond_0
 
-    move-result v2
+    move v0, v1
 
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+    :goto_0
+    move v5, v2
 
-    move-result v0
+    move v2, v0
 
-    int-to-float v0, v0
+    move v0, v5
 
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+    .line 239
+    :goto_1
+    const/4 v3, 0x2
 
-    move-result v2
+    new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v3, v1
+
+    const/4 v1, 0x1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v3, v1
+
+    .line 240
+    iget-object v1, p0, Lavu;->mDecorView:Landroid/view/View;
+
+    iget-object v3, p0, Lavu;->mDecorView:Landroid/view/View;
+
+    invoke-virtual {v3}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v3
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
+    iget-object v4, p0, Lavu;->mDecorView:Landroid/view/View;
 
-    move-result v2
-
-    int-to-float v2, v2
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
+    invoke-virtual {v4}, Landroid/view/View;->getPaddingTop()I
 
     move-result v4
 
-    int-to-float v4, v4
+    invoke-virtual {v1, v3, v4, v0, v2}, Landroid/view/View;->setPadding(IIII)V
 
-    div-float v5, v2, v0
+    .line 241
+    return-void
 
-    div-float v6, v4, v3
+    .line 230
+    :cond_0
+    iget v0, p0, Lavu;->mDefaultBottomPadding:I
 
-    cmpl-float v5, v5, v6
+    iget-object v3, p0, Lavu;->mUtils:Lavt;
 
-    if-lez v5, :cond_1
-
-    div-float v0, v3, v0
-
-    :goto_0
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    mul-float/2addr v2, v0
-
-    float-to-int v2, v2
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+    invoke-virtual {v3}, Lavt;->b()I
 
     move-result v3
 
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v0
-
-    float-to-int v3, v3
-
-    if-ge p1, v2, :cond_2
-
-    sub-int/2addr v2, p1
-
-    div-int/lit8 v2, v2, 0x2
-
-    :goto_1
-    if-ge p2, v3, :cond_0
-
-    sub-int v1, v3, p2
-
-    div-int/lit8 v1, v1, 0x2
-
-    :cond_0
-    new-instance v3, Landroid/graphics/Matrix;
-
-    invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
-
-    invoke-virtual {v3, v0, v0}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    neg-int v0, v2
-
-    int-to-float v0, v0
-
-    neg-int v1, v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {v3, v0, v1}, Landroid/graphics/Matrix;->postTranslate(FF)Z
-
-    .line 127
-    invoke-virtual {v3}, Landroid/graphics/Matrix;->isIdentity()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 140
-    :goto_2
-    return-object p0
-
-    .line 126
-    :cond_1
-    div-float v0, v4, v2
+    add-int/2addr v0, v3
 
     goto :goto_0
 
-    :cond_2
-    move v2, v1
+    .line 231
+    :cond_1
+    iget-object v0, p0, Lavu;->mUtils:Lavt;
+
+    iget-boolean v0, v0, Lavt;->mIsDockedBottomInLandscape:Z
+
+    if-eqz v0, :cond_4
+
+    .line 232
+    iget v2, p0, Lavu;->mDefaultRightPadding:I
+
+    .line 233
+    if-eqz p2, :cond_2
+
+    move v0, v1
+
+    :goto_2
+    move v5, v2
+
+    move v2, v0
+
+    move v0, v5
 
     goto :goto_1
 
-    .line 131
-    :cond_3
-    invoke-static {}, Lavq;->a()Lavq;
+    :cond_2
+    iget v3, p0, Lavu;->mDefaultBottomPadding:I
 
-    move-result-object v0
+    iget-object v0, p0, Lavu;->mUtils:Lavt;
 
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    invoke-virtual {v0}, Lavt;->a()Z
 
-    invoke-virtual {v0, p1, p2, v1}, Lavq;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    move-result v4
 
-    move-result-object v0
+    if-nez v4, :cond_3
 
-    .line 132
-    if-nez v0, :cond_4
+    move v0, v1
 
-    .line 133
-    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    :goto_3
+    add-int/2addr v0, v3
 
-    invoke-static {p1, p2, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 136
-    :cond_4
-    new-instance v1, Landroid/graphics/Canvas;
-
-    invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 137
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, p0, v3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
-
-    .line 139
-    invoke-static {}, Lavq;->a()Lavq;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Lavq;->a(Landroid/graphics/Bitmap;)V
-
-    move-object p0, v0
-
-    .line 140
     goto :goto_2
+
+    :cond_3
+    iget v0, v0, Lavt;->mLandscapeNavHeight:I
+
+    goto :goto_3
+
+    .line 235
+    :cond_4
+    if-eqz p2, :cond_5
+
+    move v0, v1
+
+    .line 236
+    :goto_4
+    iget v2, p0, Lavu;->mDefaultBottomPadding:I
+
+    goto :goto_1
+
+    .line 235
+    :cond_5
+    iget v2, p0, Lavu;->mDefaultRightPadding:I
+
+    iget-object v0, p0, Lavu;->mUtils:Lavt;
+
+    invoke-virtual {v0}, Lavt;->a()Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    move v0, v1
+
+    :goto_5
+    add-int/2addr v0, v2
+
+    goto :goto_4
+
+    :cond_6
+    iget v0, v0, Lavt;->mNavWidth:I
+
+    goto :goto_5
 .end method
 
-.method public static a(Landroid/view/View;Ljava/util/List;)Landroid/graphics/Bitmap;
-    .locals 4
-    .param p0    # Landroid/view/View;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgb;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Ljava/util/List",
-            "<",
-            "Landroid/view/View;",
-            ">;)",
-            "Landroid/graphics/Bitmap;"
-        }
+.method public final b()V
+    .locals 5
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    .line 91
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lavh;->a(Landroid/content/Context;)I
-
-    move-result v1
-
-    .line 93
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lavh;->c(Landroid/content/Context;)I
-
-    move-result v2
-
-    .line 96
-    invoke-static {}, Lavq;->a()Lavq;
-
-    move-result-object v0
-
-    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-virtual {v0, v1, v2, v3}, Lavq;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 100
-    if-nez v0, :cond_1
-
-    .line 101
-    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v1, v2, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    .line 103
-    :goto_0
-    new-instance v2, Landroid/graphics/Canvas;
-
-    invoke-direct {v2, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 104
-    invoke-static {v2, p0}, Lavu;->a(Landroid/graphics/Canvas;Landroid/view/View;)V
-
-    .line 106
-    if-eqz p1, :cond_0
-
-    .line 107
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
+    .line 174
+    iget-boolean v0, p0, Lavu;->mIsImmersiveModeSupported:Z
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, p0, Lavu;->mDecorView:Landroid/view/View;
 
-    move-result-object v0
+    if-nez v0, :cond_1
 
-    check-cast v0, Landroid/view/View;
-
-    .line 108
-    invoke-static {v2, v0}, Lavu;->a(Landroid/graphics/Canvas;Landroid/view/View;)V
-
-    goto :goto_1
-
-    .line 112
+    .line 187
     :cond_0
-    return-object v1
+    :goto_0
+    return-void
 
+    .line 178
     :cond_1
-    move-object v1, v0
+    iget-boolean v0, p0, Lavu;->mIsImmersiveModeEnabled:Z
+
+    if-eqz v0, :cond_2
+
+    .line 179
+    iget-object v0, p0, Lavu;->mWindow:Landroid/view/Window;
+
+    const/high16 v1, 0x8000000
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
+
+    .line 180
+    iget-object v0, p0, Lavu;->mDecorView:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getSystemUiVisibility()I
+
+    move-result v0
+
+    and-int/lit16 v0, v0, -0x401
+
+    .line 181
+    iget-object v1, p0, Lavu;->mDecorView:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+    .line 182
+    iget-object v0, p0, Lavu;->mDecorView:Landroid/view/View;
+
+    iget-object v1, p0, Lavu;->mDecorView:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingLeft()I
+
+    move-result v1
+
+    iget-object v2, p0, Lavu;->mDecorView:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v2
+
+    iget v3, p0, Lavu;->mDefaultRightPadding:I
+
+    iget v4, p0, Lavu;->mDefaultBottomPadding:I
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 186
+    :cond_2
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lavu;->mIsImmersiveModeEnabled:Z
 
     goto :goto_0
 .end method
 
-.method private static a(Landroid/graphics/Canvas;Landroid/view/View;)V
-    .locals 4
+.method public final c()V
+    .locals 2
+    .annotation build Lawj;
+    .end annotation
 
     .prologue
-    const/4 v3, 0x1
+    .line 195
+    iget-boolean v0, p0, Lavu;->mIsImmersiveModeSupported:Z
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_0
 
-    .line 185
-    const/4 v0, 0x2
+    iget-object v0, p0, Lavu;->mDecorView:Landroid/view/View;
 
-    new-array v0, v0, [I
+    if-nez v0, :cond_1
 
-    .line 186
-    invoke-virtual {p1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    .line 187
-    aget v1, v0, v2
-
-    if-nez v1, :cond_0
-
-    aget v1, v0, v3
-
-    if-eqz v1, :cond_1
-
-    .line 188
+    .line 206
     :cond_0
-    aget v1, v0, v2
-
-    int-to-float v1, v1
-
-    aget v0, v0, v3
-
-    int-to-float v0, v0
-
-    invoke-virtual {p0, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 190
-    :cond_1
-    invoke-virtual {p1, p0}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
-
-    .line 191
+    :goto_0
     return-void
+
+    .line 199
+    :cond_1
+    iget-boolean v0, p0, Lavu;->mIsImmersiveModeEnabled:Z
+
+    if-nez v0, :cond_2
+
+    .line 200
+    iget-object v0, p0, Lavu;->mWindow:Landroid/view/Window;
+
+    const/high16 v1, 0x8000000
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
+
+    .line 201
+    iget-object v0, p0, Lavu;->mDecorView:Landroid/view/View;
+
+    iget v1, p0, Lavu;->mDefaultFlags:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+    .line 202
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lawf;->e(Landroid/content/Context;)Z
+
+    move-result v0
+
+    iget-boolean v1, p0, Lavu;->mIsImmersiveModeOn:Z
+
+    invoke-virtual {p0, v0, v1}, Lavu;->a(ZZ)V
+
+    .line 205
+    :cond_2
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lavu;->mIsImmersiveModeEnabled:Z
+
+    goto :goto_0
 .end method

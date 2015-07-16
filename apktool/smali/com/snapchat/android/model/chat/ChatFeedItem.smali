@@ -26,9 +26,6 @@
 
 
 # virtual methods
-.method public abstract N()Z
-.end method
-
 .method public abstract O()Z
 .end method
 
@@ -38,48 +35,48 @@
 .method public abstract Q()Z
 .end method
 
-.method public abstract W()J
+.method public abstract R()Z
 .end method
 
-.method public abstract a(Lcom/snapchat/android/model/chat/ChatConversation;)I
-    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public abstract U()J
 .end method
 
 .method public abstract a(Landroid/view/View;Lcom/snapchat/android/model/chat/ChatConversation;)Lcom/snapchat/android/model/chat/ChatFeedItem$a;
     .param p1    # Landroid/view/View;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end method
 
 .method public abstract a()Ljava/lang/String;
 .end method
 
-.method public abstract al()Ljava/lang/String;
-    .annotation build Lcgc;
+.method public abstract aj()Ljava/lang/String;
+    .annotation build Lchd;
     .end annotation
+.end method
+
+.method public abstract ak()Z
 .end method
 
 .method public abstract am()Z
 .end method
 
-.method public abstract ao()Z
-.end method
-
-.method public abstract b(Lcom/snapchat/android/model/chat/ChatConversation;)J
+.method public abstract b(Lcom/snapchat/android/model/chat/ChatConversation;)I
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract b()Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end method
 
@@ -107,8 +104,11 @@
     .end annotation
 .end method
 
-.method public abstract p()V
+.method public abstract p()Z
 .end method
 
 .method public abstract q()Z
+.end method
+
+.method public abstract r()Z
 .end method

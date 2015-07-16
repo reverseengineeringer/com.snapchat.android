@@ -1,17 +1,23 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import android.support.v4.app.FragmentActivity;
-import android.view.View;
-import android.view.View.OnClickListener;
+import amt;
+import amu;
+import amu.a;
+import java.util.Set;
 
 final class FeedFragment$14
-  implements View.OnClickListener
+  implements amt
 {
   FeedFragment$14(FeedFragment paramFeedFragment) {}
   
-  public final void onClick(View paramView)
+  public final boolean a(amu.a parama)
   {
-    a.getActivity().onBackPressed();
+    return FeedFragment.l().contains(c);
+  }
+  
+  public final boolean b(amu.a parama)
+  {
+    return amu.h.contains(c);
   }
 }
 

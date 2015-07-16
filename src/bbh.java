@@ -1,12 +1,4 @@
-public final class bbh
-{
-  public boolean mIsEditing;
-  
-  public bbh(boolean paramBoolean)
-  {
-    mIsEditing = paramBoolean;
-  }
-}
+public abstract class bbh {}
 
 /* Location:
  * Qualified Name:     bbh

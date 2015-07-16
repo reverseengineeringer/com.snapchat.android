@@ -1,19 +1,8 @@
-import com.google.gson.annotations.SerializedName;
-
-@tn
-final class qt$a
-  extends pl
+public abstract interface qt$a
 {
-  @SerializedName("conversation_id")
-  String conversationId = qt.b(this$0);
-  @SerializedName("saved")
-  Boolean saved = qt.c(this$0);
-  @SerializedName("transaction_id")
-  String transactionId = qt.a(this$0);
-  @SerializedName("version")
-  Integer version = qt.d(this$0);
+  public abstract void a();
   
-  qt$a(qt paramqt) {}
+  public abstract void b();
 }
 
 /* Location:

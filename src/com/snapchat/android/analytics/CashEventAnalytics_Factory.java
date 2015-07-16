@@ -1,23 +1,23 @@
 package com.snapchat.android.analytics;
 
-import buo;
-import mz;
+import bvp;
+import nq;
 
 public enum CashEventAnalytics_Factory
-  implements buo<mz>
+  implements bvp<nq>
 {
   INSTANCE;
   
   private CashEventAnalytics_Factory() {}
   
-  public static buo<mz> create()
+  public static bvp<nq> create()
   {
     return INSTANCE;
   }
   
-  public final mz get()
+  public final nq get()
   {
-    return new mz();
+    return new nq();
   }
 }
 

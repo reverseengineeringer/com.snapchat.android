@@ -1,18 +1,29 @@
-.class public interface abstract annotation Lboh;
+.class public interface abstract Lboh;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
 
+# virtual methods
+.method public abstract a(Lbnd;)Lbne;
+.end method
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+.method public abstract a(Lbnb;J)Lcbj;
+.end method
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+.method public abstract a()V
+.end method
+
+.method public abstract a(Lbnb;)V
+.end method
+
+.method public abstract a(Lbod;)V
+.end method
+
+.method public abstract b()Lbnd$a;
+.end method
+
+.method public abstract c()V
+.end method
+
+.method public abstract d()Z
+.end method

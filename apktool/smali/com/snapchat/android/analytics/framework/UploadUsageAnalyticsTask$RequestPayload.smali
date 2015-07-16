@@ -1,5 +1,5 @@
 .class public Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask$RequestPayload;
-.super Lpl;
+.super Lqc;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
     name = "RequestPayload"
 .end annotation
 
-.annotation runtime Ltn;
+.annotation runtime Lud;
 .end annotation
 
 
@@ -35,7 +35,7 @@
     .line 44
     iput-object p1, p0, Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask$RequestPayload;->b:Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask;
 
-    invoke-direct {p0}, Lpl;-><init>()V
+    invoke-direct {p0}, Lqc;-><init>()V
 
     .line 45
     iput-object p2, p0, Lcom/snapchat/android/analytics/framework/UploadUsageAnalyticsTask$RequestPayload;->a:Ljava/lang/String;

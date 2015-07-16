@@ -1,98 +1,42 @@
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.preference.PreferenceManager;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
-import android.widget.TextView;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.database.SharedPreferenceKey;
-import com.squareup.otto.Bus;
+import android.content.res.Resources;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import com.snapchat.android.SnapchatActivity;
+import com.snapchat.android.analytics.RegistrationAnalytics;
+import com.snapchat.android.fragments.signup.LoginAndSignupFragment;
 
 public final class aqx
+  extends ara
 {
-  final SharedPreferences a;
-  public final apd b;
-  public final Bus c;
-  public View d;
-  boolean e;
-  final View.OnTouchListener f = new View.OnTouchListener()
-  {
-    public final boolean onTouch(View paramAnonymousView, MotionEvent paramAnonymousMotionEvent)
-    {
-      paramAnonymousView = aqx.this;
-      if (!e) {}
-      for (boolean bool = true;; bool = false)
-      {
-        e = bool;
-        paramAnonymousView = a.edit();
-        paramAnonymousView.putBoolean(SharedPreferenceKey.IS_TEMPERATURE_SCALE_IMPERIAL.getKey(), e);
-        paramAnonymousView.apply();
-        b();
-        return true;
-      }
-    }
-  };
-  private final aht g;
+  private SnapchatActivity a;
+  private int b;
+  private final RegistrationAnalytics c;
   
-  public aqx(Context paramContext, apd paramapd)
+  public aqx(Context paramContext, int paramInt)
   {
-    this(ban.a(), PreferenceManager.getDefaultSharedPreferences(paramContext), paramapd);
+    this(paramContext, paramInt, RegistrationAnalytics.a());
   }
   
-  private aqx(Bus paramBus, SharedPreferences paramSharedPreferences, apd paramapd)
+  private aqx(Context paramContext, int paramInt, RegistrationAnalytics paramRegistrationAnalytics)
   {
-    this(paramBus, paramSharedPreferences, paramapd, paramSharedPreferences.getBoolean(str, atx.a()), aht.a());
+    super(paramContext, paramContext.getResources().getString(2131493358));
+    a = ((SnapchatActivity)paramContext);
+    b = paramInt;
+    c = paramRegistrationAnalytics;
   }
   
-  private aqx(Bus paramBus, SharedPreferences paramSharedPreferences, apd paramapd, boolean paramBoolean, aht paramaht)
+  protected final void a()
   {
-    c = paramBus;
-    b = paramapd;
-    a = paramSharedPreferences;
-    e = paramBoolean;
-    g = paramaht;
+    akp.g().w();
+    a.mFragments.beginTransaction().replace(b, new LoginAndSignupFragment()).commit();
+    RegistrationAnalytics.c(true);
   }
   
-  public final void a()
+  protected final void b()
   {
-    d = b.a(2130968781);
-    d.setOnTouchListener(f);
-    c.c(this);
-    b();
-  }
-  
-  final void b()
-  {
-    TextView localTextView1 = (TextView)d.findViewById(2131362849);
-    TextView localTextView2 = (TextView)d.findViewById(2131362850);
-    Object localObject = g.b();
-    if (localObject == null)
-    {
-      localTextView1.setVisibility(8);
-      localTextView2.setVisibility(8);
-      new EasyMetric("Weather not loaded").d();
-      return;
-    }
-    if (e) {
-      localObject = mTempF;
-    }
-    for (int i = 2131493102;; i = 2131493101)
-    {
-      localTextView1.setText((CharSequence)localObject);
-      localTextView1.setVisibility(0);
-      localTextView2.setText(i);
-      localTextView2.setVisibility(0);
-      return;
-      localObject = mTempC;
-    }
-  }
-  
-  @boh
-  public final void onWeatherUpdatedEvent(bev parambev)
-  {
-    b();
+    RegistrationAnalytics.c(false);
   }
 }
 

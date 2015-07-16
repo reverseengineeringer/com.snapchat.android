@@ -1,5 +1,5 @@
 .class final Lnet/hockeyapp/android/UpdateActivity$1;
-.super Lbvp;
+.super Lbwq;
 .source "SourceFile"
 
 
@@ -38,26 +38,26 @@
 
     iput-object p4, p0, Lnet/hockeyapp/android/UpdateActivity$1;->c:Ljava/lang/String;
 
-    invoke-direct {p0}, Lbvp;-><init>()V
+    invoke-direct {p0}, Lbwq;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbvy;)V
+.method public final a(Lbwz;)V
     .locals 6
 
     .prologue
     .line 124
-    instance-of v0, p1, Lbvz;
+    instance-of v0, p1, Lbxa;
 
     if-eqz v0, :cond_0
 
     .line 125
-    check-cast p1, Lbvz;
+    check-cast p1, Lbxa;
 
-    iget-wide v0, p1, Lbvz;->g:J
+    iget-wide v0, p1, Lbxa;->g:J
 
     .line 126
     new-instance v2, Ljava/lang/StringBuilder;

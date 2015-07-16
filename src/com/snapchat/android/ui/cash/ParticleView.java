@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Point;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import cgb;
+import chc;
 import com.snapchat.android.ui.CashSwiperView.a;
 import java.util.Random;
 
@@ -13,11 +13,11 @@ public class ParticleView
   extends ImageView
 {
   static Random a = new Random();
-  @cgb
+  @chc
   private Point b;
-  @cgb
+  @chc
   private int c;
-  @cgb
+  @chc
   private a d;
   
   public ParticleView(Context paramContext)

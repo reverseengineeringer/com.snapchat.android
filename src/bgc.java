@@ -1,43 +1,26 @@
-import android.content.Context;
-import android.content.res.Resources;
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.util.AlertDialogUtils;
+import android.opengl.GLES20;
 
 public final class bgc
 {
-  private static final bgc sInstance = new bgc();
-  public final Context mContext;
+  private static final String TAG = "ShaderHelper";
   
-  private bgc()
+  public static int a(int paramInt, String paramString)
   {
-    this(SnapchatApplication.b().getApplicationContext());
-  }
-  
-  private bgc(@cgb Context paramContext)
-  {
-    mContext = paramContext;
-  }
-  
-  public static bgc a()
-  {
-    return sInstance;
-  }
-  
-  public final void b()
-  {
-    AlertDialogUtils.a(mContext.getResources().getString(2131493327), mContext, 1);
-  }
-  
-  public final void c()
-  {
-    AlertDialogUtils.a();
-    AlertDialogUtils.a(mContext.getResources().getString(2131493326), mContext);
-  }
-  
-  public final void d()
-  {
-    AlertDialogUtils.a();
-    AlertDialogUtils.a(mContext.getResources().getString(2131493325), mContext);
+    paramInt = GLES20.glCreateShader(paramInt);
+    if (paramInt != 0)
+    {
+      GLES20.glShaderSource(paramInt, paramString);
+      GLES20.glCompileShader(paramInt);
+      paramString = new int[1];
+      GLES20.glGetShaderiv(paramInt, 35713, paramString, 0);
+      if (paramString[0] == 0) {
+        throw new RuntimeException("Error compiling shader: " + GLES20.glGetShaderInfoLog(paramInt));
+      }
+    }
+    if (paramInt == 0) {
+      throw new RuntimeException("Error creating shader.");
+    }
+    return paramInt;
   }
 }
 

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lalb$c;
+.implements Lalw$c;
 
 
 # annotations
@@ -58,7 +58,7 @@
     .line 219
     iget-object v0, p0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$a;->a:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f04004b
+    const v1, 0x7f04004c
 
     const/4 v2, 0x0
 
@@ -68,7 +68,7 @@
 
     .line 223
     :cond_0
-    const v0, 0x7f0a01c6
+    const v0, 0x7f0a01c4
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 224
-    const v1, 0x7f0a01c7
+    const v1, 0x7f0a01c5
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -90,19 +90,19 @@
 
     move-result-object v2
 
-    check-cast v2, Lalc;
+    check-cast v2, Laly;
 
     .line 226
-    iget-object v3, v2, Lalc;->g:Lala;
+    iget-object v3, v2, Laly;->g:Lalv;
 
-    invoke-virtual {v3}, Lala;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Lalv;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 227
-    iget-object v0, v2, Lalc;->f:Ljava/lang/String;
+    iget-object v0, v2, Laly;->f:Ljava/lang/String;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

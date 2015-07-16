@@ -1,119 +1,72 @@
-.class public final Layx;
+.class public Layx;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuo;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
-        "<",
-        "Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
 
 # instance fields
-.field private final module:Layl;
+.field public final mId:Ljava/lang/String;
+
+.field public final mValue:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    .line 7
-    const-class v0, Layx;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Layx;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Layl;)V
-    .locals 1
-
-    .prologue
-    .line 11
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
-    sget-boolean v0, Layx;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 13
-    :cond_0
-    iput-object p1, p0, Layx;->module:Layl;
-
     .line 14
+    iput-object p1, p0, Layx;->mId:Ljava/lang/String;
+
+    .line 15
+    iput-object p2, p0, Layx;->mValue:Ljava/lang/String;
+
+    .line 16
     return-void
-.end method
-
-.method public static a(Layl;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Layl;",
-            ")",
-            "Lbuo",
-            "<",
-            "Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 26
-    new-instance v0, Layx;
-
-    invoke-direct {v0, p0}, Layx;-><init>(Layl;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public toString()Ljava/lang/String;
+    .locals 2
 
     .prologue
-    .line 7
-    new-instance v0, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;
+    .line 28
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;-><init>()V
+    const-string v1, "DeviceToken{id="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Layx;->mId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " value="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Layx;->mValue:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

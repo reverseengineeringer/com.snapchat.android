@@ -44,15 +44,15 @@
 .method public constructor <init>(Landroid/media/MediaMuxer;Lcom/snapchat/videotranscoder/pipeline/Mixer$ShouldCopyVideo;Lcom/snapchat/videotranscoder/pipeline/Mixer$ShouldCopyAudio;)V
     .locals 6
     .param p1    # Landroid/media/MediaMuxer;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/pipeline/Mixer$ShouldCopyVideo;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/Mixer$ShouldCopyAudio;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -134,15 +134,15 @@
 .method public constructor <init>(Ljava/lang/String;Lcom/snapchat/videotranscoder/pipeline/Mixer$ShouldCopyVideo;Lcom/snapchat/videotranscoder/pipeline/Mixer$ShouldCopyAudio;)V
     .locals 6
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/pipeline/Mixer$ShouldCopyVideo;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/Mixer$ShouldCopyAudio;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

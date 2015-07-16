@@ -58,7 +58,7 @@
     invoke-virtual {v0}, Lnet/hockeyapp/android/LoginActivity;->finish()V
 
     .line 126
-    sget-object v0, Lbvf;->b:Lbvg;
+    sget-object v0, Lbwg;->b:Lbwh;
 
     if-eqz v0, :cond_0
 

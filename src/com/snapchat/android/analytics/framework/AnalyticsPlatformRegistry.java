@@ -1,8 +1,7 @@
 package com.snapchat.android.analytics.framework;
 
-import ajx;
+import akr;
 import android.app.Activity;
-import com.snapchat.android.Timber;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -22,9 +21,7 @@ public class AnalyticsPlatformRegistry
   
   public final void a(Activity paramActivity)
   {
-    if (ajx.H()) {
-      Timber.b("AnalyticsPlatformRegistry", "User is logged into SnapKidz. Aborting.", new Object[0]);
-    }
+    if (akr.H()) {}
     for (;;)
     {
       return;

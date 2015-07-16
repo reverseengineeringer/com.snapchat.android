@@ -1,52 +1,27 @@
-import com.snapchat.android.util.debug.ReleaseManager;
-import javax.inject.Inject;
-
 public final class azo
+  implements bvp<bam>
 {
-  private final azi mCrashSampler;
-  private final ReleaseManager mReleaseManager;
+  private final azj module;
   
-  @Inject
-  public azo()
+  static
   {
-    this(ReleaseManager.a(), azi.a());
-  }
-  
-  private azo(@cgb ReleaseManager paramReleaseManager, @cgb azi paramazi)
-  {
-    mReleaseManager = paramReleaseManager;
-    mCrashSampler = paramazi;
-  }
-  
-  protected static void c(@cgb Throwable paramThrowable)
-  {
-    bvc.a(paramThrowable, new azw());
-    d(paramThrowable);
-  }
-  
-  private static void d(@cgb Throwable paramThrowable)
-  {
-    for (Throwable localThrowable = paramThrowable.getCause(); localThrowable != null; localThrowable = localThrowable.getCause()) {
-      az.a(localThrowable.toString());
-    }
-    az.a(paramThrowable);
-  }
-  
-  public final void a(@cgb Throwable paramThrowable)
-  {
-    if (mCrashSampler.b()) {
-      d(paramThrowable);
+    if (!azo.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
     }
   }
   
-  public final void b(@cgb Throwable paramThrowable)
+  private azo(azj paramazj)
   {
-    if (ReleaseManager.b()) {
-      throw new RuntimeException(paramThrowable);
-    }
-    if (mCrashSampler.b()) {
-      c(paramThrowable);
-    }
+    assert (paramazj != null);
+    module = paramazj;
+  }
+  
+  public static bvp<bam> a(azj paramazj)
+  {
+    return new azo(paramazj);
   }
 }
 

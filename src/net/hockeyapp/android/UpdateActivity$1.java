@@ -1,22 +1,22 @@
 package net.hockeyapp.android;
 
 import android.widget.TextView;
-import bvp;
-import bvy;
-import bvz;
+import bwq;
+import bwz;
+import bxa;
 
 final class UpdateActivity$1
-  extends bvp
+  extends bwq
 {
   UpdateActivity$1(UpdateActivity paramUpdateActivity, TextView paramTextView, String paramString1, String paramString2) {}
   
-  public final void a(bvy parambvy)
+  public final void a(bwz parambwz)
   {
-    if ((parambvy instanceof bvz))
+    if ((parambwz instanceof bxa))
     {
       long l = g;
-      parambvy = String.format("%.2f", new Object[] { Float.valueOf((float)l / 1048576.0F) }) + " MB";
-      a.setText(b + "\n" + c + " - " + parambvy);
+      parambwz = String.format("%.2f", new Object[] { Float.valueOf((float)l / 1048576.0F) }) + " MB";
+      a.setText(b + "\n" + c + " - " + parambwz);
     }
   }
 }

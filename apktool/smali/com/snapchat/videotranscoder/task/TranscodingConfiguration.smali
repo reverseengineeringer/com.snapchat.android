@@ -23,19 +23,19 @@
 .method public constructor <init>([Lcom/snapchat/videotranscoder/task/MediaSource;Ljava/lang/String;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;Z)V
     .locals 2
     .param p1    # [Lcom/snapchat/videotranscoder/task/MediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

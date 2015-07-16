@@ -1,52 +1,12 @@
-import com.google.gson.annotations.SerializedName;
-import java.util.List;
+import javax.inject.Inject;
 
-public final class up
-  extends th
-  implements ts.b<up.c>
+final class up
+  extends tv<Object, uh>
 {
-  private static final String PATH = "/loq/conversations";
-  private final up.a mCallback;
-  final String mIterToken;
-  
-  public up(String paramString, up.a parama)
+  @Inject
+  public up()
   {
-    mIterToken = paramString;
-    mCallback = parama;
-    a(up.c.class, this);
-  }
-  
-  public final Object b()
-  {
-    return new up.b();
-  }
-  
-  protected final String d()
-  {
-    return "/loq/conversations";
-  }
-  
-  public static abstract interface a
-  {
-    public abstract void a();
-    
-    public abstract void a(List<bhd> paramList);
-  }
-  
-  @tn
-  final class b
-    extends pl
-  {
-    @SerializedName("offset")
-    String iterToken = mIterToken;
-    
-    b() {}
-  }
-  
-  public static class c
-  {
-    @SerializedName("conversations_response")
-    List<bhd> conversations;
+    super(Object.class);
   }
 }
 

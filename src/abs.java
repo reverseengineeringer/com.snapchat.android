@@ -1,13 +1,16 @@
 public final class abs
-  extends RuntimeException
+  extends aaw
 {
-  public final IllegalArgumentException a;
-  public final String b;
+  private static final abs a = new abs();
   
-  public abs(String paramString1, String paramString2)
+  private abs()
   {
-    a = new IllegalArgumentException(paramString1);
-    b = paramString2;
+    super("MySnapVideoFileTable", axo.MY_SNAP_VIDEO_CACHE);
+  }
+  
+  public static abs a()
+  {
+    return a;
   }
 }
 

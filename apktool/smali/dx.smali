@@ -1,9 +1,9 @@
 .class public abstract Ldx;
-.super Ldw;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/ListIterator;
+.implements Ljava/util/Comparator;
 
 
 # annotations
@@ -12,13 +12,12 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<E:",
+        "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Ldw",
-        "<TE;>;",
-        "Ljava/util/ListIterator",
-        "<TE;>;"
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<TT;>;"
     }
 .end annotation
 
@@ -28,50 +27,48 @@
     .locals 0
 
     .prologue
-    .line 34
-    invoke-direct {p0}, Ldw;-><init>()V
+    .line 321
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)V
+.method public a()Ldx;
     .locals 1
+    .annotation build Lcd;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TE;)V"
+            "<S:TT;>()",
+            "Ldx",
+            "<TS;>;"
         }
     .end annotation
 
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
     .prologue
-    .line 43
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    .line 355
+    new-instance v0, Ldv;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    invoke-direct {v0, p0}, Ldv;-><init>(Ldx;)V
 
-    throw v0
+    return-object v0
 .end method
 
-.method public final set(Ljava/lang/Object;)V
-    .locals 1
+.method public abstract compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TE;)V"
+            "(TT;TT;)I"
         }
     .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 53
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
 .end method

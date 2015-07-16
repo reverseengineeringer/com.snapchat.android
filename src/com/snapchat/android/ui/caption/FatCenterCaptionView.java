@@ -4,10 +4,10 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnPreDrawListener;
-import app;
-import bbh;
-import bbt;
-import boh;
+import aqo;
+import bch;
+import bct;
+import bpi;
 
 public class FatCenterCaptionView
   extends FatCaptionView
@@ -64,22 +64,22 @@ public class FatCenterCaptionView
     return CaptionTypeEnums.FAT_CENTER_CAPTION_TYPE;
   }
   
-  @boh
-  public void onCaptionColorPickedEvent(app paramapp)
+  @bpi
+  public void onCaptionColorPickedEvent(aqo paramaqo)
   {
-    super.onCaptionColorPickedEvent(paramapp);
+    super.onCaptionColorPickedEvent(paramaqo);
   }
   
-  @boh
-  public void onEditCaptionEvent(bbh parambbh)
+  @bpi
+  public void onEditCaptionEvent(bch parambch)
   {
-    super.onEditCaptionEvent(parambbh);
+    super.onEditCaptionEvent(parambch);
   }
   
-  @boh
-  public void onGlobalLayoutEvent(bbt parambbt)
+  @bpi
+  public void onGlobalLayoutEvent(bct parambct)
   {
-    super.onGlobalLayoutEvent(parambbt);
+    super.onGlobalLayoutEvent(parambct);
   }
 }
 

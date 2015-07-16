@@ -1,69 +1,38 @@
-import android.os.Bundle;
-import com.snapchat.android.Timber;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.Iterator;
-import java.util.Set;
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import com.snapchat.android.LoginAndSignupActivity;
 
 public final class atq
 {
-  public static final int MAX_SUCCESSFUL_STATUS_CODE = 299;
-  public static final int MIN_SUCCESSFUL_STATUS_CODE = 200;
-  public static final int SC_ANDROID_ID_TOKEN_EXPIRED = 499;
-  private static final String TAG = "HttpUtils";
+  private static final String TAG = "ActivityLauncher";
   
-  public static String a(String paramString, Bundle paramBundle)
+  public static void a(@chc Activity paramActivity)
   {
-    if ((paramBundle == null) || (paramString == null) || (paramBundle.isEmpty())) {
-      return paramString;
+    if ((paramActivity == null) || (paramActivity.getClass() == LoginAndSignupActivity.class)) {
+      return;
     }
-    StringBuilder localStringBuilder = new StringBuilder(paramString.length() + paramBundle.size() * 32);
-    Iterator localIterator = paramBundle.keySet().iterator();
-    while (localIterator.hasNext())
-    {
-      String str = (String)localIterator.next();
-      int i;
-      if (localStringBuilder.length() == 0)
-      {
-        localStringBuilder.append(paramString);
-        i = paramString.indexOf('?');
-        if (i == -1) {
-          localStringBuilder.append('?');
-        }
-      }
-      for (;;)
-      {
-        if (str != null) {
-          break label174;
-        }
-        try
-        {
-          throw new NullPointerException(String.format("Found null key in %s", new Object[] { paramBundle }));
-        }
-        catch (UnsupportedEncodingException localUnsupportedEncodingException)
-        {
-          Timber.f("HttpUtils", "UTF-8 is not supported.", new Object[0]);
-        }
-        break;
-        if (i != paramString.length() - 1)
-        {
-          localStringBuilder.append('&');
-          continue;
-          localStringBuilder.append('&');
-        }
-      }
-      label174:
-      if (paramBundle.get(localUnsupportedEncodingException) == null) {
-        throw new NullPointerException(String.format("Found null value for key %s", new Object[] { localUnsupportedEncodingException }));
-      }
-      localStringBuilder.append(localUnsupportedEncodingException).append("=").append(URLEncoder.encode(paramBundle.get(localUnsupportedEncodingException).toString(), "UTF-8"));
-    }
-    return localStringBuilder.toString();
+    Intent localIntent = new Intent(paramActivity, LoginAndSignupActivity.class);
+    localIntent.addFlags(67108864);
+    localIntent.addFlags(268435456);
+    paramActivity.startActivity(localIntent);
+    localIntent.toString();
+    paramActivity.finish();
   }
   
-  public static boolean a(int paramInt)
+  public static void a(@chc Context paramContext)
   {
-    return (paramInt >= 200) && (paramInt <= 299);
+    try
+    {
+      paramContext.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(paramContext.getString(2131493231))));
+      return;
+    }
+    catch (ActivityNotFoundException localActivityNotFoundException)
+    {
+      paramContext.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(paramContext.getString(2131493312))));
+    }
   }
 }
 

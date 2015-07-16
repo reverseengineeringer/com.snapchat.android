@@ -1,19 +1,52 @@
-import java.io.UnsupportedEncodingException;
+import com.google.gson.annotations.SerializedName;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class blr
 {
-  public static String a(String paramString1, String paramString2)
+  @SerializedName("id")
+  protected String id;
+  @SerializedName("last_login")
+  protected Long lastLogin = Long.valueOf(0L);
+  @SerializedName("name")
+  protected String name;
+  
+  public final String a()
   {
-    try
-    {
-      paramString1 = bzt.a(a":"getBytes"ISO-8859-1"c);
-      paramString1 = "Basic " + paramString1;
-      return paramString1;
+    return id;
+  }
+  
+  public final String b()
+  {
+    return name;
+  }
+  
+  public final Long c()
+  {
+    return lastLogin;
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if (paramObject == this) {
+      return true;
     }
-    catch (UnsupportedEncodingException paramString1)
-    {
-      throw new AssertionError();
+    if (!(paramObject instanceof blr)) {
+      return false;
     }
+    paramObject = (blr)paramObject;
+    return new EqualsBuilder().append(id, id).append(name, name).append(lastLogin, lastLogin).isEquals();
+  }
+  
+  public final int hashCode()
+  {
+    return new HashCodeBuilder().append(id).append(name).append(lastLogin).toHashCode();
+  }
+  
+  public final String toString()
+  {
+    return ToStringBuilder.reflectionToString(this);
   }
 }
 

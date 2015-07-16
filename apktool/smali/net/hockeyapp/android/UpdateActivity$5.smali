@@ -43,7 +43,7 @@
     .line 347
     iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity$5;->a:Lnet/hockeyapp/android/UpdateActivity;
 
-    invoke-static {v0}, Lnet/hockeyapp/android/UpdateActivity;->a(Lnet/hockeyapp/android/UpdateActivity;)Lbvq;
+    invoke-static {v0}, Lnet/hockeyapp/android/UpdateActivity;->a(Lnet/hockeyapp/android/UpdateActivity;)Lbwr;
 
     .line 348
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V

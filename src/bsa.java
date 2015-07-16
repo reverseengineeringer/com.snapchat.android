@@ -1,98 +1,58 @@
-import java.util.HashMap;
-
-public enum bsa
+public final class bsa
+  implements brv
 {
-  private static HashMap D;
-  int C;
-  private String E;
+  private brv a;
+  private final String b;
   
-  private bsa(int paramInt1, String paramString1)
+  public bsa(brv parambrv, bsc parambsc)
   {
-    C = paramInt1;
-    E = paramString1;
+    a = parambrv;
+    b = k;
   }
   
-  public static bsa a(Throwable paramThrowable)
+  public final String a()
   {
-    if (D == null) {
-      a();
-    }
-    Object localObject = null;
-    if (paramThrowable != null) {
-      localObject = paramThrowable.getClass().getName();
-    }
-    localObject = (bsa)D.get(localObject);
-    paramThrowable = (Throwable)localObject;
-    if (localObject == null) {
-      paramThrowable = B;
-    }
-    return paramThrowable;
+    return b;
   }
   
-  /* Error */
-  private static void a()
+  public final String b()
   {
-    // Byte code:
-    //   0: ldc 2
-    //   2: monitorenter
-    //   3: getstatic 226	bsa:D	Ljava/util/HashMap;
-    //   6: astore_2
-    //   7: aload_2
-    //   8: ifnull +7 -> 15
-    //   11: ldc 2
-    //   13: monitorexit
-    //   14: return
-    //   15: new 242	java/util/HashMap
-    //   18: dup
-    //   19: invokespecial 248	java/util/HashMap:<init>	()V
-    //   22: astore_2
-    //   23: invokestatic 252	bsa:values	()[Lbsa;
-    //   26: astore_3
-    //   27: aload_3
-    //   28: arraylength
-    //   29: istore_1
-    //   30: iconst_0
-    //   31: istore_0
-    //   32: iload_0
-    //   33: iload_1
-    //   34: if_icmpge +27 -> 61
-    //   37: aload_3
-    //   38: iload_0
-    //   39: aaload
-    //   40: astore 4
-    //   42: aload_2
-    //   43: aload 4
-    //   45: getfield 223	bsa:E	Ljava/lang/String;
-    //   48: aload 4
-    //   50: invokevirtual 256	java/util/HashMap:put	(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    //   53: pop
-    //   54: iload_0
-    //   55: iconst_1
-    //   56: iadd
-    //   57: istore_0
-    //   58: goto -26 -> 32
-    //   61: aload_2
-    //   62: putstatic 226	bsa:D	Ljava/util/HashMap;
-    //   65: goto -54 -> 11
-    //   68: astore_2
-    //   69: ldc 2
-    //   71: monitorexit
-    //   72: aload_2
-    //   73: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   31	27	0	i1	int
-    //   29	6	1	i2	int
-    //   6	56	2	localHashMap	HashMap
-    //   68	5	2	localObject	Object
-    //   26	12	3	arrayOfbsa	bsa[]
-    //   40	9	4	localbsa	bsa
-    // Exception table:
-    //   from	to	target	type
-    //   3	7	68	finally
-    //   15	30	68	finally
-    //   42	54	68	finally
-    //   61	65	68	finally
+    return a.b();
+  }
+  
+  public final String c()
+  {
+    return a.c();
+  }
+  
+  public final int d()
+  {
+    return a.d();
+  }
+  
+  public final String e()
+  {
+    return a.e();
+  }
+  
+  public final String f()
+  {
+    return a.f();
+  }
+  
+  public final String g()
+  {
+    return a.g();
+  }
+  
+  public final String h()
+  {
+    return a.h();
+  }
+  
+  public final bud i()
+  {
+    return a.i();
   }
 }
 

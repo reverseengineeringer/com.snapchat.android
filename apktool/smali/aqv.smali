@@ -1,156 +1,76 @@
 .class public final Laqv;
-.super Ljava/lang/Object;
+.super Lara;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Laqv$a;
-    }
-.end annotation
-
-
 # instance fields
-.field public final a:Lapd;
-
-.field public b:Landroid/view/View;
-
-.field public c:Z
+.field private a:Lcom/snapchat/android/SnapchatActivity;
 
 
 # direct methods
-.method public constructor <init>(Lapd;)V
-    .locals 0
-    .param p1    # Lapd;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
     .prologue
-    .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 21
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    .line 27
-    iput-object p1, p0, Laqv;->a:Lapd;
+    move-result-object v0
 
-    .line 28
+    const v1, 0x7f0c01ed
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lara;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 22
+    check-cast p1, Lcom/snapchat/android/SnapchatActivity;
+
+    iput-object p1, p0, Laqv;->a:Lcom/snapchat/android/SnapchatActivity;
+
+    .line 23
     return-void
 .end method
 
-.method public static a(IZ)I
-    .locals 3
+
+# virtual methods
+.method protected final a()V
+    .locals 4
 
     .prologue
-    .line 135
-    rem-int/lit8 v0, p0, 0xa
+    .line 27
+    const/4 v0, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {v0}, Lakr;->c(Z)V
 
-    .line 161
-    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+    .line 28
+    iget-object v0, p0, Laqv;->a:Lcom/snapchat/android/SnapchatActivity;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v1, Landroid/content/Intent;
 
-    const-string v2, "Invalid input: "
+    iget-object v2, p0, Laqv;->a:Lcom/snapchat/android/SnapchatActivity;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-class v3, Lcom/snapchat/android/LandingPageActivity;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/SnapchatActivity;->startActivity(Landroid/content/Intent;)V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 29
+    iget-object v0, p0, Laqv;->a:Lcom/snapchat/android/SnapchatActivity;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatActivity;->finish()V
 
-    invoke-direct {v0, v1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+    .line 30
+    return-void
+.end method
 
-    throw v0
+.method protected final b()V
+    .locals 0
 
-    .line 137
-    :pswitch_0
-    const v0, 0x7f0200cf
-
-    .line 159
-    :goto_0
-    return v0
-
-    .line 139
-    :pswitch_1
-    if-eqz p1, :cond_0
-
-    .line 140
-    const v0, 0x7f0200d1
-
-    goto :goto_0
-
-    .line 142
-    :cond_0
-    const v0, 0x7f0200d0
-
-    goto :goto_0
-
-    .line 145
-    :pswitch_2
-    const v0, 0x7f0200d2
-
-    goto :goto_0
-
-    .line 147
-    :pswitch_3
-    const v0, 0x7f0200d3
-
-    goto :goto_0
-
-    .line 149
-    :pswitch_4
-    const v0, 0x7f0200d4
-
-    goto :goto_0
-
-    .line 151
-    :pswitch_5
-    const v0, 0x7f0200d5
-
-    goto :goto_0
-
-    .line 153
-    :pswitch_6
-    const v0, 0x7f0200d6
-
-    goto :goto_0
-
-    .line 155
-    :pswitch_7
-    const v0, 0x7f0200d7
-
-    goto :goto_0
-
-    .line 157
-    :pswitch_8
-    const v0, 0x7f0200d8
-
-    goto :goto_0
-
-    .line 159
-    :pswitch_9
-    const v0, 0x7f0200d9
-
-    goto :goto_0
-
-    .line 135
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-        :pswitch_8
-        :pswitch_9
-    .end packed-switch
+    .prologue
+    .line 35
+    return-void
 .end method

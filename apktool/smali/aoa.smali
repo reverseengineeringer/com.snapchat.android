@@ -1,6 +1,9 @@
 .class public final Laoa;
-.super Ljava/lang/Object;
+.super Lana;
 .source "SourceFile"
+
+# interfaces
+.implements Lui$b;
 
 
 # annotations
@@ -10,83 +13,128 @@
     }
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lana;",
+        "Lui$b",
+        "<",
+        "Lbln;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field public a:Z
+
+.field public b:Lbln;
+
+.field private c:Ljava/lang/String;
+
+.field private d:Ljava/lang/String;
+
 
 # direct methods
-.method public static a(Landroid/content/Context;)Lbpd;
-    .locals 3
-    .annotation build Lcgc;
-    .end annotation
+.method public constructor <init>(Landroid/content/Intent;)V
+    .locals 2
 
     .prologue
-    .line 37
-    :try_start_0
-    new-instance v0, Lbpd$a;
+    .line 29
+    invoke-direct {p0, p1}, Lana;-><init>(Landroid/content/Intent;)V
 
-    invoke-direct {v0, p0}, Lbpd$a;-><init>(Landroid/content/Context;)V
+    .line 30
+    const-string v0, "refresh_suggestions"
 
-    new-instance v1, Laoa$a;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    invoke-direct {v1, v2}, Laoa$a;-><init>(B)V
+    move-result v0
 
-    iget-object v2, v0, Lbpd$a;->c:Lbpd$f;
+    iput-boolean v0, p0, Laoa;->a:Z
 
-    if-eqz v2, :cond_0
+    .line 31
+    const-string v0, "email"
 
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Transformer already set."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 41
-    :catch_0
-    move-exception v0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    .line 37
-    :cond_0
-    iput-object v1, v0, Lbpd$a;->c:Lbpd$f;
-
-    invoke-virtual {v0}, Lbpd$a;->a()Lbpd;
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_0
+    iput-object v0, p0, Laoa;->c:Ljava/lang/String;
+
+    .line 32
+    const-string v0, "requested_username"
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Laoa;->d:Ljava/lang/String;
+
+    .line 33
+    const-class v0, Lbln;
+
+    invoke-virtual {p0, v0, p0}, Laoa;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 34
+    return-void
 .end method
 
-.method public static a()Z
+
+# virtual methods
+.method public final d()Z
     .locals 1
 
     .prologue
-    .line 27
+    .line 78
     const/4 v0, 0x0
 
-    :try_start_0
-    invoke-static {v0}, Lbpd;->a(Lbpd;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 28
-    const/4 v0, 0x0
-
-    .line 30
-    :goto_0
     return v0
+.end method
 
-    :catch_0
-    move-exception v0
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 3
 
-    const/4 v0, 0x1
+    .prologue
+    .line 65
+    new-instance v0, Laoa$a;
 
-    goto :goto_0
+    iget-object v1, p0, Laoa;->c:Ljava/lang/String;
+
+    iget-object v2, p0, Laoa;->d:Ljava/lang/String;
+
+    invoke-direct {v0, p0, v1, v2}, Laoa$a;-><init>(Laoa;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final l_()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 38
+    const-string v0, "/bq/suggest_username"
+
+    return-object v0
+.end method
+
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 1
+
+    .prologue
+    .line 16
+    check-cast p1, Lbln;
+
+    invoke-virtual {p2}, Lus;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    if-eqz p1, :cond_0
+
+    iput-object p1, p0, Laoa;->b:Lbln;
+
+    :cond_0
+    return-void
 .end method

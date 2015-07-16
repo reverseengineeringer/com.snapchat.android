@@ -1,31 +1,27 @@
-import javax.inject.Provider;
+import com.snapchat.android.SnapchatApplication;
 
 public final class abn
-  implements buj<abm>
+  extends abm
 {
-  private final Provider<ato> b;
+  private static abn a = new abn();
   
-  static
+  private abn()
   {
-    if (!abn.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    super("HasSeenOurCampusStoryDialog", SnapchatApplication.b().c().b());
+  }
+  
+  public static abn a()
+  {
+    try
     {
-      a = bool;
-      return;
+      abn localabn = a;
+      return localabn;
     }
-  }
-  
-  private abn(Provider<ato> paramProvider)
-  {
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
     }
-    b = paramProvider;
-  }
-  
-  public static buj<abm> a(Provider<ato> paramProvider)
-  {
-    return new abn(paramProvider);
   }
 }
 

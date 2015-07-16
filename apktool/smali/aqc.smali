@@ -1,322 +1,356 @@
 .class public final Laqc;
-.super Landroid/graphics/drawable/Drawable;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Laqc$a;
+    }
+.end annotation
+
+
 # instance fields
-.field public final a:Landroid/graphics/Paint;
+.field public final a:Laqe;
 
-.field public b:F
+.field public final b:Lcom/snapchat/android/ui/SwipeImageView;
 
-.field private final c:Landroid/graphics/RectF;
+.field public final c:Lcom/snapchat/android/ui/SwipeViewState;
 
-.field private final d:Landroid/graphics/BitmapShader;
-
-.field private final e:Landroid/graphics/Paint;
-
-.field private final f:I
-
-.field private final g:I
+.field public final d:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Laqc$a;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;)V
-    .locals 4
-    .param p1    # Landroid/graphics/Bitmap;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>(Laqe;Lcom/snapchat/android/ui/SwipeImageView;Lcom/snapchat/android/ui/SwipeViewState;)V
+    .locals 1
 
     .prologue
-    const/4 v3, 0x1
+    .line 23
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
+    .line 24
+    iput-object p1, p0, Laqc;->a:Laqe;
 
-    .line 34
-    const/4 v0, 0x0
+    .line 25
+    iput-object p2, p0, Laqc;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
-    iput v0, p0, Laqc;->b:F
+    .line 26
+    iput-object p3, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
-    .line 40
-    new-instance v0, Landroid/graphics/BitmapShader;
+    .line 27
+    new-instance v0, Ljava/util/ArrayList;
 
-    sget-object v1, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sget-object v2, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+    iput-object v0, p0, Laqc;->d:Ljava/util/List;
 
-    invoke-direct {v0, p1, v1, v2}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
+    .line 28
+    return-void
+.end method
 
-    iput-object v0, p0, Laqc;->d:Landroid/graphics/BitmapShader;
+.method private a()V
+    .locals 6
 
-    .line 41
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+    .prologue
+    const/4 v2, 0x0
+
+    .line 153
+    iget-object v0, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    sget-object v1, Lcom/snapchat/android/ui/SwipeViewState$MotionState;->NOT_MOVING:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
+
+    iput-object v1, v0, Lcom/snapchat/android/ui/SwipeViewState;->i:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
+
+    .line 154
+    iget-object v0, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    iput v2, v0, Lcom/snapchat/android/ui/SwipeViewState;->e:I
+
+    iput v2, v0, Lcom/snapchat/android/ui/SwipeViewState;->f:I
+
+    const/4 v1, 0x0
+
+    iput v1, v0, Lcom/snapchat/android/ui/SwipeViewState;->g:F
+
+    .line 155
+    iget-object v0, p0, Laqc;->a:Laqe;
+
+    iget-object v1, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/ui/SwipeViewState;->e()Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Laqe;->a(Z)Z
+
+    move-result v3
+
+    .line 156
+    iget-object v0, p0, Laqc;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    iput v0, p0, Laqc;->f:I
+    if-eqz v0, :cond_1
 
-    .line 42
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v0
 
-    iput v0, p0, Laqc;->g:I
+    check-cast v0, Laqc$a;
 
-    .line 43
-    new-instance v0, Landroid/graphics/RectF;
+    .line 158
+    iget-object v5, p0, Laqc;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+    iget-object v1, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
-    iput-object v0, p0, Laqc;->c:Landroid/graphics/RectF;
+    invoke-virtual {v1}, Lcom/snapchat/android/ui/SwipeViewState;->e()Z
 
-    .line 45
-    new-instance v0, Landroid/graphics/Paint;
+    move-result v1
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    if-nez v1, :cond_0
 
-    iput-object v0, p0, Laqc;->e:Landroid/graphics/Paint;
+    if-eqz v3, :cond_0
 
-    .line 46
-    iget-object v0, p0, Laqc;->e:Landroid/graphics/Paint;
+    const/4 v1, 0x1
 
-    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+    :goto_1
+    invoke-interface {v0, v5, v1}, Laqc$a;->a(Lcom/snapchat/android/ui/SwipeImageView;Z)V
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+    goto :goto_0
 
-    .line 47
-    iget-object v0, p0, Laqc;->e:Landroid/graphics/Paint;
+    :cond_0
+    move v1, v2
 
-    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    goto :goto_1
 
-    .line 48
-    iget-object v0, p0, Laqc;->e:Landroid/graphics/Paint;
+    .line 160
+    :cond_1
+    iget-object v0, p0, Laqc;->a:Laqe;
 
-    iget-object v1, p0, Laqc;->d:Landroid/graphics/BitmapShader;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    iget v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
-    .line 50
-    new-instance v0, Landroid/graphics/Paint;
+    .line 161
+    iget-object v1, p0, Laqc;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    iget-object v1, v1, Lcom/snapchat/android/ui/SwipeImageView;->a:Lasu;
 
-    iput-object v0, p0, Laqc;->a:Landroid/graphics/Paint;
+    invoke-interface {v1, v0}, Lasu;->a(I)Lasm;
 
-    .line 51
-    iget-object v0, p0, Laqc;->a:Landroid/graphics/Paint;
+    move-result-object v0
 
-    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+    .line 162
+    if-eqz v0, :cond_2
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+    .line 163
+    invoke-virtual {v0}, Lasm;->g()V
 
-    .line 52
-    iget-object v0, p0, Laqc;->a:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    .line 53
+    .line 165
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
-.method public final draw(Landroid/graphics/Canvas;)V
-    .locals 7
+.method public final a(I)V
+    .locals 6
 
     .prologue
-    const/high16 v5, 0x40000000    # 2.0f
+    const/4 v1, 0x1
 
-    const/4 v6, 0x0
+    const/4 v2, 0x0
 
-    .line 63
-    new-instance v0, Landroid/graphics/Matrix;
+    .line 45
+    iget-object v0, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+    iget v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->e:I
 
-    .line 64
-    new-instance v1, Landroid/graphics/RectF;
+    iget-object v3, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
-    iget v2, p0, Laqc;->f:I
+    iget v3, v3, Lcom/snapchat/android/ui/SwipeViewState;->g:F
 
-    int-to-float v2, v2
+    iget-object v4, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
-    iget v3, p0, Laqc;->g:I
+    iget v4, v4, Lcom/snapchat/android/ui/SwipeViewState;->n:F
 
-    int-to-float v3, v3
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    invoke-direct {v1, v6, v6, v2, v3}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    .line 65
-    new-instance v2, Landroid/graphics/RectF;
-
-    iget v3, p0, Laqc;->f:I
-
-    int-to-float v3, v3
-
-    iget v4, p0, Laqc;->g:I
-
-    int-to-float v4, v4
-
-    invoke-direct {v2, v6, v6, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    .line 66
-    iget-object v3, p0, Laqc;->c:Landroid/graphics/RectF;
-
-    sget-object v4, Landroid/graphics/Matrix$ScaleToFit;->CENTER:Landroid/graphics/Matrix$ScaleToFit;
-
-    invoke-virtual {v0, v2, v3, v4}, Landroid/graphics/Matrix;->setRectToRect(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/Matrix$ScaleToFit;)Z
-
-    .line 67
-    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
-
-    .line 68
-    iget v3, p0, Laqc;->b:F
-
-    div-float/2addr v3, v5
-
-    iget v4, p0, Laqc;->b:F
-
-    div-float/2addr v4, v5
-
-    invoke-virtual {v1, v3, v4}, Landroid/graphics/RectF;->inset(FF)V
-
-    .line 69
-    sget-object v3, Landroid/graphics/Matrix$ScaleToFit;->FILL:Landroid/graphics/Matrix$ScaleToFit;
-
-    invoke-virtual {v0, v2, v1, v3}, Landroid/graphics/Matrix;->setRectToRect(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/Matrix$ScaleToFit;)Z
-
-    .line 70
-    iget-object v1, p0, Laqc;->d:Landroid/graphics/BitmapShader;
-
-    invoke-virtual {v1, v0}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
-
-    .line 73
-    iget-object v0, p0, Laqc;->c:Landroid/graphics/RectF;
-
-    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
-
-    move-result v0
-
-    iget-object v1, p0, Laqc;->c:Landroid/graphics/RectF;
-
-    invoke-virtual {v1}, Landroid/graphics/RectF;->height()F
-
-    move-result v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    .line 77
-    float-to-int v0, v0
-
-    div-int/lit8 v0, v0, 0x2
-
-    .line 80
-    int-to-float v1, v0
-
-    iget v2, p0, Laqc;->b:F
-
-    div-float/2addr v2, v5
-
-    sub-float/2addr v1, v2
-
-    float-to-int v1, v1
-
-    .line 81
-    int-to-float v2, v0
-
-    int-to-float v3, v0
-
-    int-to-float v4, v1
-
-    iget-object v5, p0, Laqc;->e:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-
-    .line 82
-    iget v2, p0, Laqc;->b:F
-
-    cmpl-float v2, v2, v6
-
-    if-lez v2, :cond_0
-
-    .line 83
-    int-to-float v2, v0
+    sub-float/2addr v5, v4
 
     int-to-float v0, v0
 
-    int-to-float v1, v1
+    mul-float/2addr v0, v5
 
-    iget-object v3, p0, Laqc;->a:Landroid/graphics/Paint;
+    mul-float/2addr v3, v4
 
-    invoke-virtual {p1, v2, v0, v1, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    add-float/2addr v0, v3
 
-    .line 85
+    float-to-int v3, v0
+
+    .line 48
+    iget-object v0, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    iget v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->e:I
+
+    if-eq v0, v3, :cond_0
+
+    move v0, v1
+
+    .line 50
+    :goto_0
+    if-eqz v0, :cond_4
+
+    .line 51
+    if-gez v3, :cond_1
+
+    iget-object v0, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    sget-object v4, Lcom/snapchat/android/ui/SwipeViewState$SwipeDirection;->LEFT:Lcom/snapchat/android/ui/SwipeViewState$SwipeDirection;
+
+    iput-object v4, v0, Lcom/snapchat/android/ui/SwipeViewState;->k:Lcom/snapchat/android/ui/SwipeViewState$SwipeDirection;
+
+    invoke-direct {p0}, Laqc;->a()V
+
+    move v0, v1
+
+    :goto_1
+    iget-object v4, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    invoke-virtual {v4}, Lcom/snapchat/android/ui/SwipeViewState;->b()V
+
+    .line 52
+    iget-object v4, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    iput v3, v4, Lcom/snapchat/android/ui/SwipeViewState;->e:I
+
+    .line 54
+    if-nez v0, :cond_4
+
+    .line 55
+    iget-object v0, p0, Laqc;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_2
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laqc$a;
+
+    .line 56
+    iget-object v4, p0, Laqc;->b:Lcom/snapchat/android/ui/SwipeImageView;
+
+    invoke-interface {v0, v4}, Laqc$a;->a(Lcom/snapchat/android/ui/SwipeImageView;)V
+
+    goto :goto_2
+
     :cond_0
+    move v0, v2
+
+    .line 48
+    goto :goto_0
+
+    .line 51
+    :cond_1
+    if-eqz v3, :cond_3
+
+    if-eq v3, p1, :cond_3
+
+    if-ge v3, p1, :cond_2
+
+    iget-object v0, p0, Laqc;->b:Lcom/snapchat/android/ui/SwipeImageView;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeImageView;->invalidate()V
+
+    move v0, v2
+
+    goto :goto_1
+
+    :cond_2
+    if-le v3, p1, :cond_3
+
+    iget-object v0, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    sget-object v4, Lcom/snapchat/android/ui/SwipeViewState$SwipeDirection;->RIGHT:Lcom/snapchat/android/ui/SwipeViewState$SwipeDirection;
+
+    iput-object v4, v0, Lcom/snapchat/android/ui/SwipeViewState;->k:Lcom/snapchat/android/ui/SwipeViewState$SwipeDirection;
+
+    invoke-direct {p0}, Laqc;->a()V
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_1
+
+    .line 61
+    :cond_4
+    iget-object v0, p0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
+
+    iget-object v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->i:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
+
+    sget-object v3, Lcom/snapchat/android/ui/SwipeViewState$MotionState;->AUTO_SCROLLING:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
+
+    if-ne v0, v3, :cond_6
+
+    :goto_3
+    if-eqz v1, :cond_5
+
+    .line 62
+    iget-object v0, p0, Laqc;->b:Lcom/snapchat/android/ui/SwipeImageView;
+
+    new-instance v1, Laqc$1;
+
+    invoke-direct {v1, p0, p1}, Laqc$1;-><init>(Laqc;I)V
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SwipeImageView;->post(Ljava/lang/Runnable;)Z
+
+    .line 64
+    :cond_5
     return-void
+
+    :cond_6
+    move v1, v2
+
+    .line 61
+    goto :goto_3
 .end method
 
-.method public final getOpacity()I
+.method public final a(Laqc$a;)V
     .locals 1
 
     .prologue
-    .line 102
-    const/4 v0, 0x0
+    .line 37
+    iget-object v0, p0, Laqc;->d:Ljava/util/List;
 
-    return v0
-.end method
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-.method protected final onBoundsChange(Landroid/graphics/Rect;)V
-    .locals 1
-
-    .prologue
-    .line 57
-    invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onBoundsChange(Landroid/graphics/Rect;)V
-
-    .line 58
-    iget-object v0, p0, Laqc;->c:Landroid/graphics/RectF;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
-
-    .line 59
-    return-void
-.end method
-
-.method public final setAlpha(I)V
-    .locals 1
-
-    .prologue
-    .line 89
-    iget-object v0, p0, Laqc;->e:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    .line 90
-    iget-object v0, p0, Laqc;->a:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    .line 91
-    invoke-virtual {p0}, Laqc;->invalidateSelf()V
-
-    .line 92
-    return-void
-.end method
-
-.method public final setColorFilter(Landroid/graphics/ColorFilter;)V
-    .locals 1
-
-    .prologue
-    .line 96
-    iget-object v0, p0, Laqc;->e:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
-
-    .line 97
-    invoke-virtual {p0}, Laqc;->invalidateSelf()V
-
-    .line 98
+    .line 38
     return-void
 .end method

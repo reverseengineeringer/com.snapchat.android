@@ -1,33 +1,23 @@
-import com.snapchat.android.database.table.IdToFileTable;
-import java.util.Collection;
-import java.util.Map.Entry;
+import com.snapchat.android.model.StoryCollection;
+import com.snapchat.android.model.StorySnapLogbook;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
-public class zx
-  extends IdToFileTable
+public final class zx
+  extends zy
 {
-  private final String a;
-  private final awp b;
+  public final Map<String, StorySnapLogbook> a = du.a();
   
-  public zx(@cgb String paramString, @cgb awp paramawp)
+  public zx(@chc akl paramakl, StoryCollection paramStoryCollection, List<StorySnapLogbook> paramList)
   {
-    a = paramString;
-    b = paramawp;
-  }
-  
-  protected final Collection<Map.Entry<String, String>> a(ajv paramajv)
-  {
-    return b.d();
-  }
-  
-  public final void b(ajv paramajv)
-  {
-    b.a(f());
-    b.a(true);
-  }
-  
-  public final String c()
-  {
-    return a;
+    super(paramakl, paramStoryCollection);
+    paramakl = paramList.iterator();
+    while (paramakl.hasNext())
+    {
+      paramStoryCollection = (StorySnapLogbook)paramakl.next();
+      a.put(mStorySnap.mClientId, paramStoryCollection);
+    }
   }
 }
 

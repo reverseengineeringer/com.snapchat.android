@@ -1,124 +1,63 @@
 .class public final Lnh;
-.super Ljava/lang/Object;
+.super Lnc;
 .source "SourceFile"
 
 
-# instance fields
-.field private final mDeviceUtils:Late;
+# static fields
+.field private static final IDENTIFIER:Ljava/lang/String; = "EMPTY"
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 17
-    invoke-static {}, Late;->a()Late;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lnh;-><init>(Late;)V
-
-    .line 18
-    return-void
-.end method
-
-.method private constructor <init>(Late;)V
     .locals 0
 
     .prologue
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 8
+    invoke-direct {p0}, Lnc;-><init>()V
 
-    .line 21
-    iput-object p1, p0, Lnh;->mDeviceUtils:Late;
-
-    .line 22
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 3
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+
+# virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 43
-    new-instance v0, Lcom/snapchat/android/analytics/framework/ErrorMetric;
+    .line 18
+    const-string v0, "EMPTY"
 
-    const-string v1, "OUT_OF_MEMORY"
-
-    invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/Throwable;)Lcom/snapchat/android/analytics/framework/ErrorMetric;
-
-    move-result-object v0
-
-    const-string v1, "method"
-
-    invoke-virtual {v0, v1, p0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "memory_class"
-
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v2
-
-    invoke-static {v2}, Late;->b(Landroid/content/Context;)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
-
-    .line 48
-    return-void
+    return-object v0
 .end method
 
-.method public static a(Ljava/lang/Throwable;)V
-    .locals 3
+.method public final b()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 29
-    new-instance v0, Lcom/snapchat/android/analytics/framework/ErrorMetric;
+    .line 23
+    const-string v0, "EMPTY"
 
-    const-string v1, "OUT_OF_MEMORY"
+    return-object v0
+.end method
 
-    invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;-><init>(Ljava/lang/String;)V
+.method public final c()Landroid/os/Bundle;
+    .locals 1
 
-    invoke-virtual {v0, p0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/Throwable;)Lcom/snapchat/android/analytics/framework/ErrorMetric;
+    .prologue
+    .line 13
+    new-instance v0, Landroid/os/Bundle;
 
-    move-result-object v0
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    const-string v1, "memory_class"
+    return-object v0
+.end method
 
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+.method public final d()Ljava/lang/String;
+    .locals 1
 
-    move-result-object v2
+    .prologue
+    .line 28
+    const-string v0, "EMPTY"
 
-    invoke-static {v2}, Late;->b(Landroid/content/Context;)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
-
-    .line 33
-    return-void
+    return-object v0
 .end method

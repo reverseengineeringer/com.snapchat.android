@@ -46,6 +46,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -384,52 +386,39 @@ public class zzho
     try
     {
       zzyW = zzab.zzaO().getDefaultUserAgent(paramContext);
-      if (TextUtils.isEmpty(zzyW)) {
-        if (!zzbe.zzbD().zzeC())
+      if (TextUtils.isEmpty(zzyW))
+      {
+        if (zzbe.zzbD().zzeC()) {
+          break label132;
+        }
+        zzyW = null;
+        zzhw.zzzG.post(new Runnable()
         {
-          zzyW = null;
-          zzhw.zzzG.post(new Runnable()
+          public void run()
           {
-            public void run()
+            synchronized (zzho.zza(zzho.this))
             {
-              synchronized (zzho.zza(zzho.this))
-              {
-                zzho.zza(zzho.this, zzv(paramContext));
-                zzho.zza(zzho.this).notifyAll();
-                return;
-              }
-            }
-          });
-          for (;;)
-          {
-            paramContext = zzyW;
-            if (paramContext != null) {
-              break;
-            }
-            try
-            {
-              zznh.wait();
-            }
-            catch (InterruptedException paramContext)
-            {
-              zzyW = zzet();
-              zzhx.zzac("Interrupted, use default user agent: " + zzyW);
+              zzho.zza(zzho.this, zzv(paramContext));
+              zzho.zza(zzho.this);
+              return;
             }
           }
-          paramContext = finally;
-          throw paramContext;
-        }
+        });
+        while (zzyW == null) {}
       }
-      try
+      for (;;)
       {
-        zzyW = zzv(paramContext);
         zzyW = (zzyW + " (Mobile; " + paramString + ")");
         paramContext = zzyW;
         return paramContext;
-      }
-      catch (Exception paramContext)
-      {
-        for (;;)
+        paramContext = finally;
+        throw paramContext;
+        try
+        {
+          label132:
+          zzyW = zzv(paramContext);
+        }
+        catch (Exception paramContext)
         {
           zzyW = zzet();
         }
@@ -699,6 +688,8 @@ public class zzho
     
     public final void onReceive(Context paramContext, Intent paramIntent)
     {
+      kkxxkk.b041E041EОО041EО(paramContext);
+      xkkkxk.b041E041EООО041E(paramContext);
       if ("android.intent.action.USER_PRESENT".equals(paramIntent.getAction())) {
         zzho.zza(zzho.this, true);
       }

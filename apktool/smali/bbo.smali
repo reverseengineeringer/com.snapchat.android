@@ -3,21 +3,31 @@
 .source "SourceFile"
 
 
-# instance fields
-.field private mSuccessful:Z
+# static fields
+.field private static final BUS:Lcom/squareup/otto/Bus;
 
 
 # direct methods
-.method public constructor <init>(Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 27
+    new-instance v0, Lbek;
 
-    .line 11
-    iput-boolean p1, p0, Lbbo;->mSuccessful:Z
+    invoke-direct {v0}, Lbek;-><init>()V
 
-    .line 12
+    sput-object v0, Lbbo;->BUS:Lcom/squareup/otto/Bus;
+
     return-void
+.end method
+
+.method public static a()Lcom/squareup/otto/Bus;
+    .locals 1
+
+    .prologue
+    .line 30
+    sget-object v0, Lbbo;->BUS:Lcom/squareup/otto/Bus;
+
+    return-object v0
 .end method

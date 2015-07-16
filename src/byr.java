@@ -1,32 +1,22 @@
-import java.util.ArrayList;
-
 public final class byr
-  implements bxg
+  implements byh
 {
-  public final bxk a(bwz parambwz, String paramString)
+  public final byl a(bya parambya, String paramString)
   {
-    paramString = bxj.d(paramString);
-    if (paramString.size() != 3) {
-      throw new bxh("Two string arguments and one integer argument are required.");
-    }
     try
     {
-      parambwz = new Integer(bxj.a((String)paramString.get(0), a).lastIndexOf(bxj.a((String)paramString.get(1), a), ((Integer)paramString.get(2)).intValue()));
-      return new bxk(parambwz.toString(), 0);
+      parambya = new Double(paramString);
+      return new byl(new Double(Math.ceil(parambya.doubleValue())).toString(), 0);
     }
-    catch (bxh parambwz)
+    catch (Exception parambya)
     {
-      throw new bxh(parambwz.getMessage(), parambwz);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Two string arguments and one integer argument are required.", parambwz);
+      throw new byi("Invalid argument.", parambya);
     }
   }
   
   public final String a()
   {
-    return "lastIndexOf";
+    return "ceil";
   }
 }
 

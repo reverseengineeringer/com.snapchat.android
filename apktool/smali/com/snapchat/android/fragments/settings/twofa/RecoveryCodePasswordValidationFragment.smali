@@ -15,9 +15,9 @@
     .end annotation
 .end field
 
-.field private final g:Laol;
+.field private final g:Laph;
 
-.field private h:Laok;
+.field private h:Lapg;
 
 
 # direct methods
@@ -26,17 +26,17 @@
 
     .prologue
     .line 38
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;-><init>(Laol;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;-><init>(Laph;)V
 
     .line 39
     return-void
 .end method
 
-.method private constructor <init>(Laol;)V
+.method private constructor <init>(Laph;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -60,10 +60,10 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment$1;-><init>(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Laok;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Lapg;
 
     .line 43
-    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laol;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laph;
 
     .line 44
     return-void
@@ -79,14 +79,14 @@
     return-object v0
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;Lamy;)V
+.method static synthetic a(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;Lanv;)V
     .locals 5
 
     .prologue
     const/16 v1, 0x8
 
     .line 32
-    iget-boolean v0, p1, Lamy;->b:Z
+    iget-boolean v0, p1, Lanv;->b:Z
 
     if-eqz v0, :cond_0
 
@@ -106,7 +106,7 @@
 
     const v2, 0x7f0c01c2
 
-    invoke-static {v1, v2, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -116,7 +116,7 @@
     return-void
 
     :cond_0
-    iget-object v0, p1, Lamy;->a:Lbkj;
+    iget-object v0, p1, Lanv;->a:Lblk;
 
     invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -128,7 +128,7 @@
 
     const-string v2, "recovery_code_succeed_key"
 
-    invoke-virtual {v0}, Lbkj;->a()Ljava/lang/Boolean;
+    invoke-virtual {v0}, Lblk;->a()Ljava/lang/Boolean;
 
     move-result-object v3
 
@@ -136,17 +136,17 @@
 
     const-string v2, "recovery_code_message_key"
 
-    invoke-virtual {v0}, Lbkj;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lblk;->b()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;
 
@@ -164,33 +164,33 @@
 
     move-result-object v4
 
-    invoke-direct {v1, v2, v3, v4}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3, v4}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;Lana;)V
+.method static synthetic a(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;Lanx;)V
     .locals 3
 
     .prologue
     const/16 v1, 0x8
 
     .line 32
-    iget-boolean v0, p1, Lana;->a:Z
+    iget-boolean v0, p1, Lanx;->a:Z
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->f:Ljava/util/Set;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laol;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laph;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Laol;->a(Landroid/content/Context;)I
+    invoke-virtual {v1, v2}, Laph;->a(Landroid/content/Context;)I
 
     move-result v1
 
@@ -212,7 +212,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object v0, p1, Lana;->b:Ljava/lang/String;
+    iget-object v0, p1, Lanx;->b:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->a(Ljava/lang/String;)V
 
@@ -229,12 +229,12 @@
     return-object v0
 .end method
 
-.method static synthetic c(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;)Laol;
+.method static synthetic c(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;)Laph;
     .locals 1
 
     .prologue
     .line 32
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laph;
 
     return-object v0
 .end method
@@ -279,6 +279,19 @@
     invoke-super {p0, p1, p2, p3}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
     .line 65
+    const v0, 0x7f0a0372
+
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->c(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    const v1, 0x7f0c02c0
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    .line 67
     const v0, 0x7f0a0373
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->c(I)Landroid/view/View;
@@ -287,20 +300,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0c02c2
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
-
-    .line 67
-    const v0, 0x7f0a0374
-
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->c(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    const v1, 0x7f0c02a9
+    const v1, 0x7f0c02a7
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -327,22 +327,22 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->onPause()V
 
     .line 95
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laph;
 
     const/16 v1, 0x3f8
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 96
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laph;
 
     const/16 v1, 0x3ff
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 98
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->f:Ljava/util/Set;
@@ -361,22 +361,22 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/settings/BasePasswordValidationFragment;->onResume()V
 
     .line 87
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laph;
 
     const/16 v1, 0x3f8
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 88
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->g:Laph;
 
     const/16 v1, 0x3ff
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;->h:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 90
     return-void

@@ -1,40 +1,58 @@
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.preference.PreferenceManager;
-import com.snapchat.android.SnapchatApplication;
+import android.content.Context;
+import android.provider.Settings.Secure;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import java.io.IOException;
 
 public final class auc
 {
-  private static final SharedPreferences SHARED_PREFERENCES = PreferenceManager.getDefaultSharedPreferences(SnapchatApplication.b());
+  private static final String OPT_OUT_RESPONSE = "optout";
+  private static final String TAG = "DemographicsTrackingUtils";
+  public final Context mContext;
+  private final aud mDeviceUtils;
   
-  public static String a(String paramString)
+  public auc(@chc Context paramContext)
   {
-    return SHARED_PREFERENCES.getString(paramString, null);
+    this(paramContext, aud.a());
   }
   
-  public static void a(String paramString, int paramInt)
+  private auc(@chc Context paramContext, aud paramaud)
   {
-    SHARED_PREFERENCES.edit().putInt(paramString, paramInt).apply();
+    mContext = paramContext;
+    mDeviceUtils = paramaud;
   }
   
-  public static void a(String paramString1, String paramString2)
+  @chd
+  public final String a()
   {
-    SHARED_PREFERENCES.edit().putString(paramString1, paramString2).apply();
-  }
-  
-  public static boolean a(String paramString, boolean paramBoolean)
-  {
-    return SHARED_PREFERENCES.getBoolean(paramString, paramBoolean);
-  }
-  
-  public static int b(String paramString)
-  {
-    return SHARED_PREFERENCES.getInt(paramString, 0);
-  }
-  
-  public static void b(String paramString, boolean paramBoolean)
-  {
-    SHARED_PREFERENCES.edit().putBoolean(paramString, paramBoolean).apply();
+    if (GooglePlayServicesUtil.isGooglePlayServicesAvailable(mContext) == 0) {}
+    try
+    {
+      AdvertisingIdClient.Info localInfo = AdvertisingIdClient.getAdvertisingIdInfo(mContext);
+      String str = localInfo.getId();
+      boolean bool = localInfo.isLimitAdTrackingEnabled();
+      if (bool) {
+        str = "optout";
+      }
+      return str;
+    }
+    catch (IOException localIOException)
+    {
+      String.format("Google advertising id lookup failed, by error %s", new Object[] { localIOException.toString() });
+      return null;
+      return Settings.Secure.getString(mContext.getContentResolver(), "android_id");
+    }
+    catch (GooglePlayServicesNotAvailableException localGooglePlayServicesNotAvailableException)
+    {
+      for (;;) {}
+    }
+    catch (GooglePlayServicesRepairableException localGooglePlayServicesRepairableException)
+    {
+      for (;;) {}
+    }
   }
 }
 

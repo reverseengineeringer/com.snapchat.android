@@ -33,12 +33,12 @@
 
     .prologue
     .line 19
-    sget-object v0, Lckr$c;->SectionTitleIndicator:[I
+    sget-object v0, Lcls$c;->SectionTitleIndicator:[I
 
     sput-object v0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/title/SectionTitleIndicator;->a:[I
 
     .line 20
-    sget v0, Lckr$b;->section_indicator_with_title:I
+    sget v0, Lcls$b;->section_indicator_with_title:I
 
     sput v0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/title/SectionTitleIndicator;->b:I
 
@@ -81,7 +81,7 @@
     invoke-direct {p0, p1, p2, p3}, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 37
-    sget v0, Lckr$a;->section_title_popup:I
+    sget v0, Lcls$a;->section_title_popup:I
 
     invoke-virtual {p0, v0}, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/title/SectionTitleIndicator;->findViewById(I)Landroid/view/View;
 
@@ -90,7 +90,7 @@
     iput-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/title/SectionTitleIndicator;->c:Landroid/view/View;
 
     .line 38
-    sget v0, Lckr$a;->section_indicator_text:I
+    sget v0, Lcls$a;->section_indicator_text:I
 
     invoke-virtual {p0, v0}, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/title/SectionTitleIndicator;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
 
     .line 42
     :try_start_0
-    sget v0, Lckr$c;->SectionTitleIndicator_rfs_backgroundColor:I
+    sget v0, Lcls$c;->SectionTitleIndicator_rfs_backgroundColor:I
 
     invoke-virtual {p0}, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/title/SectionTitleIndicator;->getDefaultBackgroundColor()I
 
@@ -131,7 +131,7 @@
     invoke-virtual {p0, v0}, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/title/SectionTitleIndicator;->setIndicatorBackgroundColor(I)V
 
     .line 46
-    sget v0, Lckr$c;->SectionTitleIndicator_rfs_textColor:I
+    sget v0, Lcls$c;->SectionTitleIndicator_rfs_textColor:I
 
     invoke-virtual {p0}, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/title/SectionTitleIndicator;->getDefaultBackgroundColor()I
 

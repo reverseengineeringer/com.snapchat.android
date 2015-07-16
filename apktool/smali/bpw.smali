@@ -1,43 +1,199 @@
-.class public final Lbpw;
-.super Ljava/lang/Object;
+.class final Lbpw;
+.super Lbpk;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lbpv;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbpk",
+        "<",
+        "Landroid/widget/ImageView;",
+        ">;"
+    }
+.end annotation
 
-.field public final b:Lbpy;
+
+# instance fields
+.field m:Lbpo;
 
 
 # direct methods
-.method public constructor <init>(Lbpy;)V
-    .locals 1
+.method constructor <init>(Lbqe;Landroid/widget/ImageView;Lbqh;IIILandroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;Lbpo;Z)V
+    .locals 12
 
     .prologue
-    .line 21
-    new-instance v0, Lbpv;
+    .line 30
+    move-object v1, p0
 
-    invoke-direct {v0}, Lbpv;-><init>()V
+    move-object v2, p1
 
-    invoke-direct {p0, p1, v0}, Lbpw;-><init>(Lbpy;Lbpv;)V
+    move-object v3, p2
 
-    .line 22
+    move-object v4, p3
+
+    move/from16 v5, p4
+
+    move/from16 v6, p5
+
+    move/from16 v7, p6
+
+    move-object/from16 v8, p7
+
+    move-object/from16 v9, p8
+
+    move-object/from16 v10, p9
+
+    move/from16 v11, p11
+
+    invoke-direct/range {v1 .. v11}, Lbpk;-><init>(Lbqe;Ljava/lang/Object;Lbqh;IIILandroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;Z)V
+
+    .line 32
+    move-object/from16 v0, p10
+
+    iput-object v0, p0, Lbpw;->m:Lbpo;
+
+    .line 33
     return-void
 .end method
 
-.method private constructor <init>(Lbpy;Lbpv;)V
-    .locals 0
+
+# virtual methods
+.method public final a()V
+    .locals 2
 
     .prologue
-    .line 25
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 56
+    iget-object v0, p0, Lbpw;->c:Ljava/lang/ref/WeakReference;
 
-    .line 26
-    iput-object p1, p0, Lbpw;->b:Lbpy;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    .line 27
-    iput-object p2, p0, Lbpw;->a:Lbpv;
+    move-result-object v0
 
-    .line 28
+    check-cast v0, Landroid/widget/ImageView;
+
+    .line 57
+    if-nez v0, :cond_1
+
+    .line 66
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 60
+    :cond_1
+    iget v1, p0, Lbpw;->g:I
+
+    if-eqz v1, :cond_2
+
+    .line 61
+    iget v1, p0, Lbpw;->g:I
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    goto :goto_0
+
+    .line 62
+    :cond_2
+    iget-object v1, p0, Lbpw;->h:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :cond_0
+
+    .line 63
+    iget-object v1, p0, Lbpw;->h:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_0
+.end method
+
+.method public final a(Landroid/graphics/Bitmap;Lbqe$d;)V
+    .locals 6
+
+    .prologue
+    .line 36
+    if-nez p1, :cond_0
+
+    .line 37
+    new-instance v0, Ljava/lang/AssertionError;
+
+    const-string v1, "Attempted to complete action with no result!\n%s"
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object p0, v2, v3
+
+    .line 38
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+
+    .line 41
+    :cond_0
+    iget-object v0, p0, Lbpw;->c:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    .line 42
+    if-nez v0, :cond_1
+
+    .line 50
+    :goto_0
+    return-void
+
+    .line 46
+    :cond_1
+    iget-object v1, p0, Lbpw;->a:Lbqe;
+
+    iget-object v1, v1, Lbqe;->f:Landroid/content/Context;
+
+    .line 47
+    iget-object v2, p0, Lbpw;->a:Lbqe;
+
+    iget-boolean v5, v2, Lbqe;->n:Z
+
+    .line 48
+    iget-boolean v4, p0, Lbpw;->d:Z
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-static/range {v0 .. v5}, Lbqf;->a(Landroid/widget/ImageView;Landroid/content/Context;Landroid/graphics/Bitmap;Lbqe$d;ZZ)V
+
+    goto :goto_0
+.end method
+
+.method final b()V
+    .locals 1
+
+    .prologue
+    .line 72
+    invoke-super {p0}, Lbpk;->b()V
+
+    .line 73
+    iget-object v0, p0, Lbpw;->m:Lbpo;
+
+    if-eqz v0, :cond_0
+
+    .line 74
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lbpw;->m:Lbpo;
+
+    .line 76
+    :cond_0
     return-void
 .end method

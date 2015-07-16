@@ -2,8 +2,8 @@ package xyz.danoz.recyclerviewfastscroller;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.j;
-import cku;
-import ckv;
+import clv;
+import clw;
 
 final class AbsRecyclerViewFastScroller$1
   extends RecyclerView.j
@@ -13,9 +13,9 @@ final class AbsRecyclerViewFastScroller$1
   public final void a(RecyclerView paramRecyclerView, int paramInt1, int paramInt2)
   {
     float f = 0.0F;
-    ckv localckv = a.getScrollProgressCalculator();
-    if (localckv != null) {
-      f = localckv.a(paramRecyclerView);
+    clw localclw = a.getScrollProgressCalculator();
+    if (localclw != null) {
+      f = localclw.a(paramRecyclerView);
     }
     a.a(f);
   }

@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.util.SparseIntArray;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
-import bai;
+import bbi;
 import com.snapchat.android.util.emoji.Emoji;
 
 public class EmojiTextView
@@ -51,16 +51,16 @@ public class EmojiTextView
   {
     int k = 0;
     int m = paramSpannable.length();
-    bai[] arrayOfbai = (bai[])paramSpannable.getSpans(0, m, bai.class);
+    bbi[] arrayOfbbi = (bbi[])paramSpannable.getSpans(0, m, bbi.class);
     int j = 0;
     int i;
     for (;;)
     {
       i = k;
-      if (j >= arrayOfbai.length) {
+      if (j >= arrayOfbbi.length) {
         break;
       }
-      paramSpannable.removeSpan(arrayOfbai[j]);
+      paramSpannable.removeSpan(arrayOfbbi[j]);
       j += 1;
     }
     while (i < m)
@@ -69,7 +69,7 @@ public class EmojiTextView
       j = Character.charCount(k);
       k = a.get(k);
       if (k > 0) {
-        paramSpannable.setSpan(new bai(paramContext, k, paramInt), i, i + j, 33);
+        paramSpannable.setSpan(new bbi(paramContext, k, paramInt), i, i + j, 33);
       }
       i += j;
     }

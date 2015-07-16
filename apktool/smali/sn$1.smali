@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqv$a;
+.implements Lta;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lsn;->a(Ljava/lang/String;)V
+    value = Lsn;->a(Lcom/snapchat/android/model/CashTransaction;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,18 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lsn;
 
-.field final synthetic val$title:Ljava/lang/String;
+.field final synthetic val$transaction:Lcom/snapchat/android/model/CashTransaction;
 
 
 # direct methods
-.method constructor <init>(Lsn;Ljava/lang/String;)V
+.method constructor <init>(Lsn;Lcom/snapchat/android/model/CashTransaction;)V
     .locals 0
 
     .prologue
-    .line 108
+    .line 25
     iput-object p1, p0, Lsn$1;->this$0:Lsn;
 
-    iput-object p2, p0, Lsn$1;->val$title:Ljava/lang/String;
+    iput-object p2, p0, Lsn$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,145 +40,111 @@
 
 
 # virtual methods
-.method public final a(Lqv;)V
-    .locals 0
-    .param p1    # Lqv;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 121
-    return-void
-.end method
-
-.method public final a(Lqv;Ljava/util/List;Z)V
+.method public final a(I)V
     .locals 4
-    .param p1    # Lqv;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lqv;",
-            "Ljava/util/List",
-            "<",
-            "Lqv;",
-            ">;Z)V"
-        }
-    .end annotation
 
     .prologue
-    .line 112
-    new-instance v0, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;
+    const/4 v3, 0x0
 
-    iget-object v1, p0, Lsn$1;->val$title:Ljava/lang/String;
+    .line 52
+    const/4 v0, 0x2
 
-    invoke-direct {v0, v1}, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;-><init>(Ljava/lang/String;)V
+    new-array v0, v0, [Ljava/lang/Object;
 
-    .line 113
-    const/4 v1, 0x2
+    iget-object v1, p0, Lsn$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
 
-    new-array v1, v1, [Ljava/lang/String;
+    iget-object v1, v1, Lcom/snapchat/android/model/CashTransaction;->mTransactionId:Ljava/lang/String;
 
-    const/4 v2, 0x0
+    aput-object v1, v0, v3
 
-    invoke-static {}, Lbfr;->a()Lbfr;
+    const/4 v1, 0x1
 
-    invoke-static {}, Lbfr;->f()Ljava/lang/String;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v1, v2
+    aput-object v2, v0, v1
 
-    const/4 v2, 0x1
+    .line 55
+    iget-object v0, p0, Lsn$1;->this$0:Lsn;
 
-    const-string v3, "cash/history"
+    const/4 v1, 0x0
 
-    aput-object v3, v1, v2
+    invoke-virtual {v0, v1, v3}, Lsn;->a(Ljava/util/List;Z)V
 
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    .line 115
-    const-string v2, "/"
-
-    invoke-static {v1, v2}, Lavb;->a(Ljava/util/Collection;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;->a(Ljava/lang/String;)V
-
-    .line 116
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v1
-
-    new-instance v2, Lbdw;
-
-    invoke-direct {v2, v0}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
-
-    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 117
+    .line 56
     return-void
 .end method
 
-.method public final b(Lqv;)V
-    .locals 0
-    .param p1    # Lqv;
-        .annotation build Lcgb;
+.method public final a(Lcom/snapchat/android/api2/cash/square/data/CashPayment;)V
+    .locals 5
+    .param p1    # Lcom/snapchat/android/api2/cash/square/data/CashPayment;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 125
-    return-void
-.end method
+    const/4 v4, 0x0
 
-.method public final b(Lqv;Ljava/util/List;Z)V
-    .locals 4
-    .param p1    # Lqv;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lqv;",
-            "Ljava/util/List",
-            "<",
-            "Lqv;",
-            ">;Z)V"
-        }
-    .end annotation
+    .line 28
+    const/4 v0, 0x1
 
-    .prologue
-    .line 131
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    new-array v0, v0, [Ljava/lang/Object;
+
+    aput-object p1, v0, v4
+
+    .line 29
+    const/4 v0, 0x0
+
+    .line 30
+    iget-object v1, p1, Lcom/snapchat/android/api2/cash/square/data/CashPayment;->mBlockers:Ltq;
+
+    .line 31
+    if-eqz v1, :cond_0
+
+    .line 32
+    invoke-virtual {v1}, Ltq;->b()Ljava/util/List;
 
     move-result-object v0
 
-    new-instance v1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
+    .line 44
+    :cond_0
+    iget-object v1, p0, Lsn$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
 
-    sget-object v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
+    iget-object v2, p1, Lcom/snapchat/android/api2/cash/square/data/CashPayment;->mState:Lcom/snapchat/android/api2/cash/square/data/CashPayment$State;
 
-    const v3, 0x7f0c014b
+    iget-object v3, p1, Lcom/snapchat/android/api2/cash/square/data/CashPayment;->mCancellationReason:Lcom/snapchat/android/api2/cash/square/data/CashPayment$CancellationReason;
 
-    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;I)V
+    invoke-static {v2, v3}, Ltd;->a(Lcom/snapchat/android/api2/cash/square/data/CashPayment$State;Lcom/snapchat/android/api2/cash/square/data/CashPayment$CancellationReason;)Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/snapchat/android/model/CashTransaction;->a(Lcom/snapchat/android/model/CashTransaction$TransactionStatus;)V
+
+    .line 46
+    iget-object v1, p0, Lsn$1;->this$0:Lsn;
+
+    invoke-virtual {v1, v0, v4}, Lsn;->a(Ljava/util/List;Z)V
+
+    .line 47
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
+
+    move-result-object v0
+
+    new-instance v1, Lbca;
+
+    iget-object v2, p0, Lsn$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
+
+    iget-object v2, v2, Lcom/snapchat/android/model/CashTransaction;->mConversationId:Ljava/lang/String;
+
+    iget-object v3, p0, Lsn$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
+
+    iget-object v3, v3, Lcom/snapchat/android/model/CashTransaction;->mTransactionId:Ljava/lang/String;
+
+    invoke-direct {v1, v2, v3}, Lbca;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 133
+    .line 49
     return-void
 .end method

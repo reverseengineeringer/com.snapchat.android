@@ -1,78 +1,74 @@
 package com.snapchat.android.fragments.addfriends;
 
-import ajx;
+import akr;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.TextView;
-import aol;
-import bgh;
-import com.snapchat.android.Timber;
+import aph;
+import bhh;
 import com.snapchat.android.ui.ProfilePictureView;
 import com.snapchat.android.ui.SharedProfileSnapcodeView;
-import fl;
+import fu;
 
 final class ProfileFragment$b
-  implements bgh
+  implements bhh
 {
   private ProfileFragment$b(ProfileFragment paramProfileFragment) {}
   
-  public final void a(fl paramfl)
+  public final void a(fu paramfu)
   {
-    if (a.getActivity() == null)
-    {
-      Timber.e("ProfileFragment", "getActivity() returned null in onSvgLoaded() we need to figure this out!", new Object[0]);
+    if (a.getActivity() == null) {
       return;
     }
-    if (paramfl == null)
+    if (paramfu == null)
     {
-      paramfl = ProfileFragment.l(a);
+      paramfu = ProfileFragment.k(a);
       localObject = a.getActivity();
       ProfileFragment.b(a);
-      paramfl.c((Context)localObject, ajx.bf());
+      paramfu.c((Context)localObject, akr.bc());
       return;
     }
-    if (ProfileFragment.f(a) == null) {
-      ProfileFragment.m(a);
+    if (ProfileFragment.e(a) == null) {
+      ProfileFragment.l(a);
     }
-    Object localObject = paramfl.a();
-    ProfileFragment.f(a).setImageDrawable((Drawable)localObject);
+    Object localObject = paramfu.a();
+    ProfileFragment.e(a).setImageDrawable((Drawable)localObject);
     a.a(8);
     ProfileFragment.b(a);
     int i;
-    if (!ajx.E())
+    if (!akr.E())
     {
       ProfileFragment.b(a);
-      if (ajx.aS())
+      if (akr.aP())
       {
         i = 1;
         if (i == 0) {
-          break label264;
+          break label242;
         }
-        a.k.setText(ProfileFragment.n(a));
-        a.j.setVisibility(0);
+        a.h.setText(ProfileFragment.m(a));
+        a.g.setVisibility(0);
       }
     }
     for (;;)
     {
-      if (a.h == null)
+      if (a.e == null)
       {
-        a.h = ((ProfilePictureView)ProfileFragment.o(a).inflate());
-        a.h.setCallback(a);
+        a.e = ((ProfilePictureView)ProfileFragment.n(a).inflate());
+        a.e.setCallback(a);
       }
-      a.h.setSnapcodeSvg(paramfl);
-      if (ProfileFragment.p(a) == null) {
-        ProfileFragment.q(a);
+      a.e.setSnapcodeSvg(paramfu);
+      if (ProfileFragment.o(a) == null) {
+        ProfileFragment.p(a);
       }
-      ProfileFragment.p(a).setSnapcodeSvg(paramfl);
-      Timber.c("ProfileFragment", "profile images - snapcode was loaded from cache", new Object[0]);
+      ProfileFragment.o(a).setSnapcodeSvg(paramfu);
       return;
       i = 0;
       break;
-      label264:
-      a.j.setVisibility(8);
+      label242:
+      a.g.setVisibility(8);
     }
   }
 }

@@ -1,57 +1,15 @@
-import org.apache.http.util.CharArrayBuffer;
+import android.support.v7.widget.RecyclerView.s;
+import android.view.ViewGroup;
 
-public final class bqr
-  extends bqf
+public abstract interface bqr<VH extends RecyclerView.s>
 {
-  private bqf d;
+  public abstract int a();
   
-  public bqr(bqf parambqf)
-  {
-    super(parambqf);
-    d = parambqf;
-  }
+  public abstract VH a(ViewGroup paramViewGroup);
   
-  public final boolean a(int paramInt)
-  {
-    if (paramInt == -1)
-    {
-      a.a(bqs.d);
-      return true;
-    }
-    c += 1;
-    if ((char)paramInt == '\n')
-    {
-      d.b(a());
-      a.a(d);
-      return true;
-    }
-    return false;
-  }
+  public abstract void c(VH paramVH, int paramInt);
   
-  public final boolean a(CharArrayBuffer paramCharArrayBuffer)
-  {
-    return true;
-  }
-  
-  public final bqf b()
-  {
-    return this;
-  }
-  
-  public final bqf c()
-  {
-    return this;
-  }
-  
-  protected final int d()
-  {
-    return 0;
-  }
-  
-  protected final int e()
-  {
-    return 0;
-  }
+  public abstract long e(int paramInt);
 }
 
 /* Location:

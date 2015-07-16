@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 249
+    .line 258
     iput-object p1, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$1;->a:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$j;-><init>()V
@@ -37,10 +37,10 @@
     .locals 2
 
     .prologue
-    .line 252
+    .line 261
     invoke-super {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$j;->a(Landroid/support/v7/widget/RecyclerView;I)V
 
-    .line 254
+    .line 263
     iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$1;->a:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     if-nez p2, :cond_0
@@ -50,10 +50,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;->a(Z)V
 
-    .line 255
+    .line 264
     return-void
 
-    .line 254
+    .line 263
     :cond_0
     const/4 v0, 0x0
 
@@ -64,9 +64,9 @@
     .locals 0
 
     .prologue
-    .line 258
+    .line 267
     invoke-super {p0, p1, p2, p3}, Landroid/support/v7/widget/RecyclerView$j;->a(Landroid/support/v7/widget/RecyclerView;II)V
 
-    .line 259
+    .line 268
     return-void
 .end method

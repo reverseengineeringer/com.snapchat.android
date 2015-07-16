@@ -1,9 +1,20 @@
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import com.snapchat.android.model.Friend;
+
 final class ahk$1
-  extends ahh.c<String>
+  implements CompoundButton.OnCheckedChangeListener
 {
-  ahk$1(ahk paramahk, String paramString)
+  ahk$1(ahk paramahk, Friend paramFriend) {}
+  
+  public final void onCheckedChanged(CompoundButton paramCompoundButton, boolean paramBoolean)
   {
-    super(paramString);
+    if (paramBoolean)
+    {
+      ahk.a(b).b(a);
+      return;
+    }
+    ahk.a(b).c(a);
   }
 }
 

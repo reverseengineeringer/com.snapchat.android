@@ -1,31 +1,9 @@
 package com.snapchat.android.service;
 
-import adk;
-import amc;
-import ame;
-import amf;
-import amh;
-import ami;
-import amj;
-import amk;
-import aml;
-import amm;
-import amn;
-import amo;
-import amp;
-import amq;
-import ams;
-import amt;
-import amu;
-import amv;
-import amw;
-import amx;
-import amy;
+import aek;
 import amz;
-import ana;
 import anb;
 import anc;
-import and;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -37,13 +15,34 @@ import android.util.SparseArray;
 import ane;
 import anf;
 import ang;
-import aoj;
-import aok;
-import aol;
-import azo;
-import cgb;
-import cgc;
-import com.snapchat.android.Timber;
+import anh;
+import ani;
+import anj;
+import ank;
+import anl;
+import anm;
+import ann;
+import anp;
+import anq;
+import anr;
+import ans;
+import ant;
+import anu;
+import anv;
+import anw;
+import anx;
+import any;
+import anz;
+import aoa;
+import aob;
+import aoc;
+import aod;
+import apf;
+import apg;
+import aph;
+import ban;
+import chc;
+import chd;
 import com.snapchat.android.operation.identity.UpdateVerifiedDeviceOperation;
 import com.snapchat.android.util.debug.ReleaseManager;
 import java.util.ArrayList;
@@ -54,7 +53,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
-import ob;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
+import os;
 
 public class SnapchatService
   extends Service
@@ -64,17 +65,18 @@ public class SnapchatService
   private ThreadFactory b = new c((byte)0);
   private ExecutorService c;
   private ArrayList<Future<?>> d;
-  private aol e;
-  private final azo f;
+  private aph e;
+  private final ban f;
   private long h;
   private final Runnable i = new Runnable()
   {
     public final void run()
     {
-      Timber.c("SnapchatService", "mStopRunnable mFutureList.size()=" + SnapchatService.d(SnapchatService.this).size() + " hasPendingIntents=" + SnapchatService.c(SnapchatService.this).g(), new Object[0]);
+      new StringBuilder("mStopRunnable mFutureList.size()=").append(SnapchatService.d(SnapchatService.this).size()).append(" hasPendingIntents=").append(SnapchatService.c(SnapchatService.this).g());
       if ((SnapchatService.d(SnapchatService.this).isEmpty()) && (!SnapchatService.c(SnapchatService.this).g()))
       {
-        Timber.c("SnapchatService", "Stop service which lived for %d ms", new Object[] { Long.valueOf(SystemClock.elapsedRealtime() - SnapchatService.e(SnapchatService.this)) });
+        SystemClock.elapsedRealtime();
+        SnapchatService.e(SnapchatService.this);
         stopSelf();
       }
     }
@@ -82,33 +84,33 @@ public class SnapchatService
   
   public SnapchatService()
   {
-    this(new azo());
+    this(new ban());
   }
   
-  protected SnapchatService(@cgb azo paramazo)
+  protected SnapchatService(@chc ban paramban)
   {
-    f = paramazo;
+    f = paramban;
   }
   
-  private void a(@cgc Intent paramIntent)
+  private void a(@chd Intent paramIntent)
   {
-    Timber.c("SnapchatService", "finalizeRequest " + paramIntent, new Object[0]);
+    new StringBuilder("finalizeRequest ").append(paramIntent);
     Object localObject;
-    if (aol.a(paramIntent))
+    if (aph.a(paramIntent))
     {
-      localObject = Integer.valueOf(aol.b(paramIntent));
-      Timber.c("SnapchatService", "finalizeRequest - requestId " + localObject, new Object[0]);
-      aol localaol = e;
+      localObject = Integer.valueOf(aph.b(paramIntent));
+      new StringBuilder("finalizeRequest - requestId ").append(localObject);
+      aph localaph = e;
       j = ((Integer)localObject).intValue();
       a.remove(Integer.valueOf(j));
       localObject = e;
       if (paramIntent != null) {
         if ((paramIntent == null) || (!paramIntent.getBooleanExtra("from_pool", false))) {
-          break label218;
+          break label185;
         }
       }
     }
-    label218:
+    label185:
     for (int j = 1;; j = 0)
     {
       if (j != 0) {
@@ -120,16 +122,15 @@ public class SnapchatService
         k = j;
         if (((Future)d.get(j)).isDone())
         {
-          Timber.c("SnapchatService", "Removed one future - mFutureList.size()=" + d.size(), new Object[0]);
+          new StringBuilder("Removed one future - mFutureList.size()=").append(d.size());
           d.remove(j);
           k = j - 1;
         }
       }
     }
-    Timber.c("SnapchatService", "finalizeRequest mStopRunnable futureList.size()==" + d.size() + " hasPendingIntents=" + e.g(), new Object[0]);
+    new StringBuilder("finalizeRequest mStopRunnable futureList.size()==").append(d.size()).append(" hasPendingIntents=").append(e.g());
     if ((d.isEmpty()) && (!e.g()))
     {
-      Timber.c("SnapchatService", "Will stop service in 5 seconds", new Object[0]);
       g.removeCallbacks(i);
       g.postDelayed(i, 5000L);
     }
@@ -142,6 +143,8 @@ public class SnapchatService
   
   public void onCreate()
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate();
     a = getApplicationContext();
     h = SystemClock.elapsedRealtime();
@@ -150,21 +153,20 @@ public class SnapchatService
     }
     c = Executors.newCachedThreadPool(b);
     d = new ArrayList();
-    e = aol.a();
+    e = aph.a();
   }
   
   public void onDestroy()
   {
     super.onDestroy();
-    Timber.c("SnapchatService", "onDestroy()", new Object[0]);
     c.shutdown();
   }
   
-  public int onStartCommand(@cgc Intent paramIntent, int paramInt1, int paramInt2)
+  public int onStartCommand(@chd Intent paramIntent, int paramInt1, int paramInt2)
   {
-    Timber.c("SnapchatService", "onStartCommand " + paramIntent, new Object[0]);
+    new StringBuilder("onStartCommand ").append(paramIntent);
     if (paramIntent != null) {
-      Timber.c("SnapchatService", "onStartCommand with op code " + paramIntent.getIntExtra("op_code", -1), new Object[0]);
+      new StringBuilder("onStartCommand with op code ").append(paramIntent.getIntExtra("op_code", -1));
     }
     g.removeCallbacks(i);
     if (paramIntent != null) {}
@@ -181,95 +183,95 @@ public class SnapchatService
     }
     while (localObject == null)
     {
-      Timber.f("SnapchatService", "Failed to create a service operation from " + paramIntent, new Object[0]);
+      new StringBuilder("Failed to create a service operation from ").append(paramIntent);
       a(paramIntent);
       return 2;
-      localObject = new amj(paramIntent);
-      continue;
-      localObject = new ame(paramIntent);
-      continue;
-      localObject = new amf(paramIntent);
-      continue;
-      localObject = new aml(paramIntent);
-      continue;
-      localObject = new amp(paramIntent);
-      continue;
-      localObject = new adk(paramIntent);
-      continue;
-      localObject = new amn(paramIntent);
-      continue;
-      localObject = new amm(paramIntent);
-      continue;
-      localObject = new anc(paramIntent);
-      continue;
-      localObject = new amq(paramIntent);
-      continue;
-      localObject = new amh(paramIntent);
-      continue;
-      localObject = new ams(paramIntent);
-      continue;
-      localObject = new ana(paramIntent);
-      continue;
-      localObject = new amt(paramIntent);
-      continue;
-      localObject = new amz(paramIntent);
-      continue;
-      localObject = new and(paramIntent);
+      localObject = new ang(paramIntent);
       continue;
       localObject = new anb(paramIntent);
       continue;
-      localObject = new ang(paramIntent);
+      localObject = new anc(paramIntent);
       continue;
-      localObject = new amy(paramIntent);
+      localObject = new ani(paramIntent);
       continue;
-      localObject = new anf(paramIntent);
+      localObject = new anm(paramIntent);
       continue;
-      localObject = new amx(paramIntent);
+      localObject = new aek(paramIntent);
       continue;
-      localObject = new amc(paramIntent);
+      localObject = new ank(paramIntent);
       continue;
-      localObject = new ami(paramIntent);
+      localObject = new anj(paramIntent);
       continue;
-      localObject = new amw(paramIntent);
+      localObject = new anz(paramIntent);
       continue;
-      localObject = new amu(paramIntent);
+      localObject = new ann(paramIntent);
       continue;
       localObject = new ane(paramIntent);
       continue;
-      localObject = new amv(paramIntent);
+      localObject = new anp(paramIntent);
+      continue;
+      localObject = new anx(paramIntent);
+      continue;
+      localObject = new anq(paramIntent);
+      continue;
+      localObject = new anw(paramIntent);
+      continue;
+      localObject = new aoa(paramIntent);
+      continue;
+      localObject = new any(paramIntent);
+      continue;
+      localObject = new aod(paramIntent);
+      continue;
+      localObject = new anv(paramIntent);
+      continue;
+      localObject = new aoc(paramIntent);
+      continue;
+      localObject = new anu(paramIntent);
+      continue;
+      localObject = new amz(paramIntent);
+      continue;
+      localObject = new anf(paramIntent);
+      continue;
+      localObject = new ant(paramIntent);
+      continue;
+      localObject = new anr(paramIntent);
+      continue;
+      localObject = new aob(paramIntent);
+      continue;
+      localObject = new ans(paramIntent);
       continue;
       localObject = new UpdateVerifiedDeviceOperation(paramIntent);
       continue;
-      localObject = new amo(paramIntent);
+      localObject = new anl(paramIntent);
     }
-    d.add(c.submit(new b((amk)localObject)));
-    Timber.c("SnapchatService", "The new operation %s has been submitted. mFutureList.size()=%d", new Object[] { localObject, Integer.valueOf(d.size()) });
+    d.add(c.submit(new b((anh)localObject)));
+    d.size();
     return 2;
   }
   
   final class a
     implements Runnable
   {
-    private final amk b;
+    private final anh b;
     
-    public a(amk paramamk)
+    public a(anh paramanh)
     {
-      b = paramamk;
+      b = paramanh;
     }
     
     public final void run()
     {
-      b.f();
+      b.b();
       Object localObject2 = SnapchatService.c(SnapchatService.this);
-      amk localamk = b;
+      anh localanh = b;
       synchronized (d)
       {
-        localObject2 = (HashSet)d.get(aol.b(localamk));
+        localObject2 = (HashSet)d.get(aph.b(localanh));
         if (localObject2 != null)
         {
           localObject2 = ((HashSet)localObject2).iterator();
           if (((Iterator)localObject2).hasNext()) {
-            ((aok)((Iterator)localObject2).next()).a(localamk);
+            ((apg)((Iterator)localObject2).next()).a(localanh);
           }
         }
       }
@@ -280,11 +282,11 @@ public class SnapchatService
   final class b
     implements Runnable
   {
-    private final amk b;
+    private final anh b;
     
-    public b(amk paramamk)
+    public b(anh paramanh)
     {
-      b = paramamk;
+      b = paramanh;
     }
     
     public final void run()
@@ -297,18 +299,18 @@ public class SnapchatService
       }
       catch (Exception localException)
       {
-        final ob localob = new ob(b.toString(), localException);
-        Timber.f("SnapchatService", "ProcessRunnable halted " + localob, new Object[0]);
+        final os localos = new os(b.toString(), localException);
+        new StringBuilder("ProcessRunnable halted ").append(localos);
         if (ReleaseManager.f()) {
           SnapchatService.a().post(new Runnable()
           {
             public final void run()
             {
-              throw localob;
+              throw localos;
             }
           });
         }
-        SnapchatService.b(SnapchatService.this).a(localob);
+        SnapchatService.b(SnapchatService.this).a(localos);
       }
     }
   }

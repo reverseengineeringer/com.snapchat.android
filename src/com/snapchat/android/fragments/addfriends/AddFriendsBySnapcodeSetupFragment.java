@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afi;
+import agi;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
@@ -22,13 +22,12 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
-import ban;
-import bap;
-import bdw;
-import bdx;
-import bel;
+import bbo;
+import bbq;
+import bev;
+import bew;
+import bfk;
 import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.ProfileEventAnalytics;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.database.SharedPreferenceKey;
@@ -47,17 +46,17 @@ public class AddFriendsBySnapcodeSetupFragment
   private TextureVideoView c;
   private CheckBox d;
   private Bus e;
-  private afi f;
+  private agi f;
   
   public AddFriendsBySnapcodeSetupFragment()
   {
-    this(ban.a(), afi.a());
+    this(bbo.a(), agi.a());
   }
   
-  public AddFriendsBySnapcodeSetupFragment(Bus paramBus, afi paramafi)
+  public AddFriendsBySnapcodeSetupFragment(Bus paramBus, agi paramagi)
   {
     e = paramBus;
-    f = paramafi;
+    f = paramagi;
   }
   
   protected final void e() {}
@@ -76,26 +75,26 @@ public class AddFriendsBySnapcodeSetupFragment
     {
       i = (int)(f1 * f3 + 0.5F);
       mFragmentLayout = paramLayoutInflater.inflate(2130968576, paramViewGroup, false);
-      e.a(new bel(TitleBarManager.Visibility.VISIBLE));
-      c = ((TextureVideoView)c(2131361827));
+      e.a(new bfk(TitleBarManager.Visibility.VISIBLE));
+      c = ((TextureVideoView)c(2131361828));
       c.getLayoutParams().height = i;
-      c(2131361822).setOnClickListener(new View.OnClickListener()
+      c(2131361823).setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
         {
           getActivity().onBackPressed();
         }
       });
-      c(2131361831).setOnClickListener(new View.OnClickListener()
+      c(2131361832).setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
         {
-          Timber.c(AddFriendsBySnapcodeSetupFragment.a(), "Show the gallery scanning view here!!!", new Object[0]);
-          AddFriendsBySnapcodeSetupFragment.a(AddFriendsBySnapcodeSetupFragment.this).a(new bdw(LeftSwipeContentFragment.ADD_FRIENDS_FROM_CAMERAROLL_FRAGMENT));
+          AddFriendsBySnapcodeSetupFragment.a();
+          AddFriendsBySnapcodeSetupFragment.a(AddFriendsBySnapcodeSetupFragment.this).a(new bev(LeftSwipeContentFragment.ADD_FRIENDS_FROM_CAMERAROLL_FRAGMENT));
           ProfileEventAnalytics.e();
         }
       });
-      d = ((CheckBox)c(2131361830));
+      d = ((CheckBox)c(2131361831));
       d.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
       {
         public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
@@ -105,32 +104,32 @@ public class AddFriendsBySnapcodeSetupFragment
           paramAnonymousCompoundButton.apply();
           if (paramAnonymousBoolean)
           {
-            ((TextView)c(2131361825)).setText(2131492868);
-            AddFriendsBySnapcodeSetupFragment.a(AddFriendsBySnapcodeSetupFragment.this).a(new bdx());
+            ((TextView)c(2131361826)).setText(2131492868);
+            AddFriendsBySnapcodeSetupFragment.a(AddFriendsBySnapcodeSetupFragment.this).a(new bew());
             new EasyMetric("SNAPCODE_AUTOSCAN_ENABLED").b(false);
             return;
           }
-          ((TextView)c(2131361825)).setText(2131492869);
+          ((TextView)c(2131361826)).setText(2131492869);
           new EasyMetric("SNAPCODE_AUTOSCAN_DISABLED").b(false);
         }
       });
       paramLayoutInflater = PreferenceManager.getDefaultSharedPreferences(getActivity());
       d.setChecked(paramLayoutInflater.getBoolean(SharedPreferenceKey.AUTO_LIBRARY_SCANNING_ENABLED.getKey(), false));
       if (d.isChecked()) {
-        ((TextView)c(2131361825)).setText(2131492868);
+        ((TextView)c(2131361826)).setText(2131492868);
       }
       for (;;)
       {
-        c(2131361832).setOnClickListener(new View.OnClickListener()
+        c(2131361833).setOnClickListener(new View.OnClickListener()
         {
           public final void onClick(View paramAnonymousView)
           {
-            ban.a().a(new bdw(new WebFragment("https://support.snapchat.com/a/add-snapcodes", getString(2131492867), false, null)));
+            bbo.a().a(new bev(new WebFragment("https://support.snapchat.com/a/add-snapcodes", getString(2131492867), false, null)));
           }
         });
         c.setAlpha(0.0F);
         return mFragmentLayout;
-        ((TextView)c(2131361825)).setText(2131492869);
+        ((TextView)c(2131361826)).setText(2131492869);
       }
       f1 = f2;
     }
@@ -146,13 +145,13 @@ public class AddFriendsBySnapcodeSetupFragment
   {
     super.onPause();
     c.a();
-    e.a(new bap(CameraDisplayState.SHOW));
+    e.a(new bbq(CameraDisplayState.SHOW));
   }
   
   public void onResume()
   {
     super.onResume();
-    e.a(new bap(CameraDisplayState.CLOSE));
+    e.a(new bbq(CameraDisplayState.CLOSE));
     c.setVideoPath(b);
     c.seekTo(0);
     c.setOnPreparedListener(new MediaPlayer.OnPreparedListener()

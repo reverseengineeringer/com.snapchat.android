@@ -1,10 +1,10 @@
 package com.snapchat.android.model.chat;
 
-import akb;
+import akw;
 import java.util.Comparator;
 
 public final class ChatConversation$3
-  implements Comparator<akb>
+  implements Comparator<akw>
 {
   public ChatConversation$3(ChatConversation paramChatConversation) {}
 }

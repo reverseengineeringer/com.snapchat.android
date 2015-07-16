@@ -15,19 +15,19 @@ import android.view.ViewGroup.MarginLayoutParams;
 import android.view.WindowManager;
 import android.widget.Scroller;
 import android.widget.TextView;
-import bur;
-import bus;
-import but;
-import buu;
-import buv.d;
-import buy;
+import bvs;
+import bvt;
+import bvu;
+import bvv;
+import bvw.d;
+import bvz;
 import in.srain.cube.util.CLog;
 
 public class PtrFrameLayout
   extends ViewGroup
 {
-  private static int a = 1;
-  public static boolean b = false;
+  public static boolean a = false;
+  private static int g = 1;
   private static byte h = 1;
   private static byte i = 2;
   private boolean A;
@@ -37,14 +37,14 @@ public class PtrFrameLayout
   private boolean E;
   private MotionEvent F;
   private MotionEvent G;
-  private buu H;
+  private bvv H;
   private int I;
   private long J;
-  protected final String c;
-  protected View d;
-  protected int e;
-  boolean f;
-  public boolean g;
+  protected final String b;
+  protected View c;
+  protected int d;
+  boolean e;
+  public boolean f;
   private int j;
   private int k;
   private float l;
@@ -53,8 +53,8 @@ public class PtrFrameLayout
   private float o;
   private boolean p;
   private View q;
-  private but r;
-  private bur s;
+  private bvu r;
+  private bvs s;
   private a t;
   private PointF u;
   private int v;
@@ -77,10 +77,10 @@ public class PtrFrameLayout
   {
     super(paramContext, paramAttributeSet, paramInt);
     Object localObject = new StringBuilder("ptr-frame-");
-    paramInt = a + 1;
-    a = paramInt;
-    c = paramInt;
-    e = 0;
+    paramInt = g + 1;
+    g = paramInt;
+    b = paramInt;
+    d = 0;
     j = 0;
     k = 0;
     l = 1.7F;
@@ -88,14 +88,14 @@ public class PtrFrameLayout
     n = 1000;
     o = 1.2F;
     p = true;
-    f = false;
-    r = new but();
+    e = false;
+    r = new bvu();
     u = new PointF();
     v = 0;
     w = 0;
     z = 1;
     A = false;
-    g = false;
+    f = false;
     B = 0;
     C = 0;
     D = false;
@@ -103,10 +103,10 @@ public class PtrFrameLayout
     I = 500;
     J = 0L;
     localObject = getContext();
-    if ((buy.f) || (localObject == null)) {}
+    if ((bvz.f) || (localObject == null)) {}
     for (;;)
     {
-      paramContext = paramContext.obtainStyledAttributes(paramAttributeSet, buv.d.PtrFrameLayout, 0, 0);
+      paramContext = paramContext.obtainStyledAttributes(paramAttributeSet, bvw.d.PtrFrameLayout, 0, 0);
       if (paramContext != null)
       {
         j = paramContext.getResourceId(0, j);
@@ -116,20 +116,20 @@ public class PtrFrameLayout
         n = paramContext.getInt(5, n);
         o = paramContext.getFloat(3, o);
         p = paramContext.getBoolean(7, p);
-        f = paramContext.getBoolean(6, f);
+        e = paramContext.getBoolean(6, e);
         paramContext.recycle();
       }
       t = new a();
       x = (ViewConfiguration.get(getContext()).getScaledTouchSlop() * 2);
       return;
-      buy.f = true;
+      bvz.f = true;
       DisplayMetrics localDisplayMetrics = new DisplayMetrics();
       ((WindowManager)((Context)localObject).getSystemService("window")).getDefaultDisplay().getMetrics(localDisplayMetrics);
-      buy.a = widthPixels;
-      buy.b = heightPixels;
-      buy.c = density;
-      buy.d = (int)(buy.a / density);
-      buy.e = (int)(buy.b / density);
+      bvz.a = widthPixels;
+      bvz.b = heightPixels;
+      bvz.c = density;
+      bvz.d = (int)(bvz.a / density);
+      bvz.e = (int)(bvz.b / density);
     }
   }
   
@@ -144,8 +144,8 @@ public class PtrFrameLayout
   {
     if ((paramFloat < 0.0F) && (v == 0))
     {
-      if (b) {
-        CLog.e(c, String.format("has reached the top", new Object[0]));
+      if (a) {
+        CLog.e(b, String.format("has reached the top", new Object[0]));
       }
       return;
     }
@@ -153,8 +153,8 @@ public class PtrFrameLayout
     int i1 = i2;
     if (i2 < 0)
     {
-      if (b) {
-        CLog.e(c, String.format("over top", new Object[0]));
+      if (a) {
+        CLog.e(b, String.format("over top", new Object[0]));
       }
       i1 = 0;
     }
@@ -168,14 +168,14 @@ public class PtrFrameLayout
         {
           z = 2;
           r.b(this);
-          if (b) {
-            CLog.i(c, "PtrUIHandler: onUIRefreshPrepare, mAutoScrollRefreshTag %s", new Object[] { Integer.valueOf(B) });
+          if (a) {
+            CLog.i(b, "PtrUIHandler: onUIRefreshPrepare, mAutoScrollRefreshTag %s", new Object[] { Integer.valueOf(B) });
           }
         }
         if ((A) && (E))
         {
-          if (b) {
-            CLog.d(c, "send cancel event");
+          if (a) {
+            CLog.d(b, "send cancel event");
           }
           super.dispatchTouchEvent(MotionEvent.obtain(F.getDownTime(), F.getEventTime() + ViewConfiguration.getLongPressTimeout(), 3, F.getX(), F.getY(), F.getMetaState()));
         }
@@ -185,8 +185,8 @@ public class PtrFrameLayout
         f();
         if ((A) && (E))
         {
-          if (b) {
-            CLog.d(c, "send down event");
+          if (a) {
+            CLog.d(b, "send down event");
           }
           MotionEvent localMotionEvent = G;
           super.dispatchTouchEvent(MotionEvent.obtain(localMotionEvent.getDownTime(), localMotionEvent.getEventTime(), 0, localMotionEvent.getX(), localMotionEvent.getY(), localMotionEvent.getMetaState()));
@@ -194,18 +194,18 @@ public class PtrFrameLayout
       }
       if (z == 2)
       {
-        if ((A) && (B == 0) && (f) && (w < e) && (v >= e)) {
+        if ((A) && (B == 0) && (e) && (w < d) && (v >= d)) {
           b();
         }
         if ((B == i) && (w < y) && (v >= y)) {
           b();
         }
       }
-      if (b) {
-        CLog.v(c, "updatePos: change: %s, current: %s last: %s, top: %s, headerHeight: %s", new Object[] { Integer.valueOf(i1), Integer.valueOf(v), Integer.valueOf(w), Integer.valueOf(d.getTop()), Integer.valueOf(y) });
+      if (a) {
+        CLog.v(b, "updatePos: change: %s, current: %s last: %s, top: %s, headerHeight: %s", new Object[] { Integer.valueOf(i1), Integer.valueOf(v), Integer.valueOf(w), Integer.valueOf(c.getTop()), Integer.valueOf(y) });
       }
       q.offsetTopAndBottom(i1);
-      d.offsetTopAndBottom(i1);
+      c.offsetTopAndBottom(i1);
       invalidate();
       if (y != 0) {
         break label586;
@@ -256,10 +256,10 @@ public class PtrFrameLayout
   {
     if ((v != 0) && (!paramBoolean) && (H != null))
     {
-      if (b) {
-        CLog.d(c, "notifyUIRefreshComplete mRefreshCompleteHook run.");
+      if (a) {
+        CLog.d(b, "notifyUIRefreshComplete mRefreshCompleteHook run.");
       }
-      buu localbuu = H;
+      bvv localbvv = H;
       switch (b)
       {
       case 1: 
@@ -267,16 +267,16 @@ public class PtrFrameLayout
         return;
       case 0: 
         b = 1;
-        localbuu.run();
+        localbvv.run();
         return;
       }
-      localbuu.a();
+      localbvv.a();
       return;
     }
     if (r.a())
     {
-      if (b) {
-        CLog.i(c, "PtrUIHandler: onUIRefreshComplete");
+      if (a) {
+        CLog.i(b, "PtrUIHandler: onUIRefreshComplete");
       }
       r.d(this);
     }
@@ -292,14 +292,14 @@ public class PtrFrameLayout
       do
       {
         return false;
-      } while (((v < y) || (B <= 0)) && (v < e));
+      } while (((v < y) || (B <= 0)) && (v < d));
       z = 3;
       J = System.currentTimeMillis();
       if (r.a())
       {
         r.c(this);
-        if (b) {
-          CLog.i(c, "PtrUIHandler: onUIRefreshBegin");
+        if (a) {
+          CLog.i(b, "PtrUIHandler: onUIRefreshBegin");
         }
       }
     } while (s == null);
@@ -314,8 +314,8 @@ public class PtrFrameLayout
       if (r.a())
       {
         r.a(this);
-        if (b) {
-          CLog.i(c, "PtrUIHandler: onUIReset");
+        if (a) {
+          CLog.i(b, "PtrUIHandler: onUIReset");
         }
       }
       z = 1;
@@ -330,32 +330,32 @@ public class PtrFrameLayout
     z = 4;
     if ((a.a(t)) && (B > 0))
     {
-      if (b) {
-        CLog.d(c, "performRefreshComplete do nothing, scrolling: %s, auto refresh: %s", new Object[] { Boolean.valueOf(a.a(t)), Integer.valueOf(B) });
+      if (a) {
+        CLog.d(b, "performRefreshComplete do nothing, scrolling: %s, auto refresh: %s", new Object[] { Boolean.valueOf(a.a(t)), Integer.valueOf(B) });
       }
       return;
     }
     b(false);
   }
   
-  public final void a(bus parambus)
+  public final void a(bvt parambvt)
   {
-    but localbut2 = r;
-    if (parambus == null) {}
-    but localbut1;
+    bvu localbvu2 = r;
+    if (parambvt == null) {}
+    bvu localbvu1;
     label73:
     for (;;)
     {
       return;
-      if (localbut2 != null)
+      if (localbvu2 != null)
       {
-        localbut1 = localbut2;
+        localbvu1 = localbvu2;
         if (a == null)
         {
-          a = parambus;
+          a = parambvt;
           return;
         }
-        if ((a != null) && (a == parambus)) {}
+        if ((a != null) && (a == parambvt)) {}
         for (int i1 = 1;; i1 = 0)
         {
           if (i1 != 0) {
@@ -364,23 +364,23 @@ public class PtrFrameLayout
           if (b == null) {
             break label75;
           }
-          localbut1 = b;
+          localbvu1 = b;
           break;
         }
       }
     }
     label75:
-    localbut2 = new but();
-    a = parambus;
-    b = localbut2;
+    localbvu2 = new bvu();
+    a = parambvt;
+    b = localbvu2;
   }
   
   protected final void c()
   {
     if ((v > 0) && (B > 0))
     {
-      if (b) {
-        CLog.d(c, "call onRelease after scroll abort");
+      if (a) {
+        CLog.d(b, "call onRelease after scroll abort");
       }
       a(true);
     }
@@ -395,8 +395,8 @@ public class PtrFrameLayout
   {
     if ((v > 0) && (B > 0))
     {
-      if (b) {
-        CLog.d(c, "call onRelease after scroll finish");
+      if (a) {
+        CLog.d(b, "call onRelease after scroll finish");
       }
       a(true);
     }
@@ -405,7 +405,7 @@ public class PtrFrameLayout
   public boolean dispatchTouchEvent(MotionEvent paramMotionEvent)
   {
     boolean bool1 = true;
-    if ((!isEnabled()) || (d == null) || (q == null))
+    if ((!isEnabled()) || (c == null) || (q == null))
     {
       bool1 = super.dispatchTouchEvent(paramMotionEvent);
       return bool1;
@@ -429,8 +429,8 @@ public class PtrFrameLayout
       A = false;
       if (v > 0)
       {
-        if (b) {
-          CLog.d(c, "call onRelease when user release");
+        if (a) {
+          CLog.d(b, "call onRelease when user release");
         }
         a(false);
         if (v != C) {
@@ -453,7 +453,7 @@ public class PtrFrameLayout
       float f1 = paramMotionEvent.getX() - u.x;
       f2 = (int)(paramMotionEvent.getY() - u.y);
       u.set(paramMotionEvent.getX(), paramMotionEvent.getY());
-      if ((g) && (!D) && ((Math.abs(f1) > x) || (Math.abs(f1) > 3.0F * Math.abs(f2)))) {
+      if ((f) && (!D) && ((Math.abs(f1) > x) || (Math.abs(f1) > 3.0F * Math.abs(f2)))) {
         if (v != 0) {
           break label321;
         }
@@ -479,7 +479,7 @@ public class PtrFrameLayout
           break label488;
         }
         bool3 = true;
-        if (b) {
+        if (a) {
           if ((s == null) || (!s.a())) {
             break label494;
           }
@@ -487,7 +487,7 @@ public class PtrFrameLayout
       }
       for (boolean bool4 = true;; bool4 = false)
       {
-        CLog.v(c, "ACTION_MOVE: offsetY:%s, mCurrentPos: %s, moveUp: %s, canMoveUp: %s, moveDown: %s: canMoveDown: %s", new Object[] { Float.valueOf(f2), Integer.valueOf(v), Boolean.valueOf(bool2), Boolean.valueOf(bool3), Boolean.valueOf(bool1), Boolean.valueOf(bool4) });
+        CLog.v(b, "ACTION_MOVE: offsetY:%s, mCurrentPos: %s, moveUp: %s, canMoveUp: %s, moveDown: %s: canMoveDown: %s", new Object[] { Float.valueOf(f2), Integer.valueOf(v), Boolean.valueOf(bool2), Boolean.valueOf(bool3), Boolean.valueOf(bool1), Boolean.valueOf(bool4) });
         if ((!bool1) || (s == null) || (s.a())) {
           break label500;
         }
@@ -506,8 +506,8 @@ public class PtrFrameLayout
   
   public final void e()
   {
-    if (b) {
-      CLog.i(c, "refreshComplete");
+    if (a) {
+      CLog.i(b, "refreshComplete");
     }
     if (H != null) {
       H.b = 0;
@@ -515,8 +515,8 @@ public class PtrFrameLayout
     int i1 = (int)(I - (System.currentTimeMillis() - J));
     if (i1 <= 0)
     {
-      if (b) {
-        CLog.d(c, "performRefreshComplete at once");
+      if (a) {
+        CLog.d(b, "performRefreshComplete at once");
       }
       g();
     }
@@ -530,8 +530,8 @@ public class PtrFrameLayout
           PtrFrameLayout.b(PtrFrameLayout.this);
         }
       }, i1);
-    } while (!b);
-    CLog.d(c, "performRefreshComplete after delay: %s", new Object[] { Integer.valueOf(i1) });
+    } while (!a);
+    CLog.d(b, "performRefreshComplete after delay: %s", new Object[] { Integer.valueOf(i1) });
   }
   
   protected ViewGroup.LayoutParams generateDefaultLayoutParams()
@@ -551,7 +551,7 @@ public class PtrFrameLayout
   
   public View getContentView()
   {
-    return d;
+    return c;
   }
   
   public float getDurationToClose()
@@ -576,7 +576,7 @@ public class PtrFrameLayout
   
   public int getOffsetToRefresh()
   {
-    return e;
+    return d;
   }
   
   public float getRatioOfHeaderToHeightRefresh()
@@ -603,18 +603,18 @@ public class PtrFrameLayout
       if ((j != 0) && (q == null)) {
         q = findViewById(j);
       }
-      if ((k != 0) && (d == null)) {
-        d = findViewById(k);
+      if ((k != 0) && (c == null)) {
+        c = findViewById(k);
       }
-      if ((d == null) || (q == null))
+      if ((c == null) || (q == null))
       {
         localView2 = getChildAt(0);
         localView1 = getChildAt(1);
-        if ((localView2 instanceof bus))
+        if ((localView2 instanceof bvt))
         {
           q = localView2;
           localObject = this;
-          d = localView1;
+          c = localView1;
         }
       }
       else
@@ -623,7 +623,7 @@ public class PtrFrameLayout
         super.onFinishInflate();
         return;
       }
-      if ((localView1 instanceof bus)) {
+      if ((localView1 instanceof bvt)) {
         q = localView1;
       }
     }
@@ -632,7 +632,7 @@ public class PtrFrameLayout
       localObject = this;
       localView1 = localView2;
       break;
-      if ((d == null) && (q == null))
+      if ((c == null) && (q == null))
       {
         q = localView2;
         localObject = this;
@@ -640,7 +640,7 @@ public class PtrFrameLayout
       }
       if (q == null)
       {
-        if (d == localView2) {}
+        if (c == localView2) {}
         for (;;)
         {
           q = localView1;
@@ -654,7 +654,7 @@ public class PtrFrameLayout
         break;
         if (i1 == 1)
         {
-          d = getChildAt(0);
+          c = getChildAt(0);
           break label126;
         }
         localObject = new TextView(getContext());
@@ -663,8 +663,8 @@ public class PtrFrameLayout
         ((TextView)localObject).setGravity(17);
         ((TextView)localObject).setTextSize(20.0F);
         ((TextView)localObject).setText("The content view in PtrFrameLayout is empty. Do you forget to specify its id in xml layout file?");
-        d = ((View)localObject);
-        addView(d);
+        c = ((View)localObject);
+        addView(c);
         break label126;
       }
     }
@@ -685,14 +685,14 @@ public class PtrFrameLayout
       int i3 = q.getMeasuredHeight();
       q.layout(paramInt4, i1, i2 + paramInt4, i3 + i1);
     }
-    if (d != null)
+    if (c != null)
     {
-      localMarginLayoutParams = (ViewGroup.MarginLayoutParams)d.getLayoutParams();
+      localMarginLayoutParams = (ViewGroup.MarginLayoutParams)c.getLayoutParams();
       paramInt3 += leftMargin;
       paramInt1 = topMargin + paramInt2 + paramInt1;
-      paramInt2 = d.getMeasuredWidth();
-      paramInt4 = d.getMeasuredHeight();
-      d.layout(paramInt3, paramInt1, paramInt2 + paramInt3, paramInt4 + paramInt1);
+      paramInt2 = c.getMeasuredWidth();
+      paramInt4 = c.getMeasuredHeight();
+      c.layout(paramInt3, paramInt1, paramInt2 + paramInt3, paramInt4 + paramInt1);
     }
   }
   
@@ -707,11 +707,11 @@ public class PtrFrameLayout
       int i1 = q.getMeasuredHeight();
       int i2 = topMargin;
       y = (bottomMargin + (i1 + i2));
-      e = ((int)(y * o));
+      d = ((int)(y * o));
     }
-    if (d != null)
+    if (c != null)
     {
-      localObject = d;
+      localObject = c;
       ViewGroup.MarginLayoutParams localMarginLayoutParams = (ViewGroup.MarginLayoutParams)((View)localObject).getLayoutParams();
       ((View)localObject).measure(getChildMeasureSpec(paramInt1, getPaddingLeft() + getPaddingRight() + leftMargin + rightMargin, width), getChildMeasureSpec(paramInt2, getPaddingTop() + getPaddingBottom() + topMargin, height));
     }
@@ -756,34 +756,34 @@ public class PtrFrameLayout
   
   public void setOffsetToRefresh(int paramInt)
   {
-    e = paramInt;
+    d = paramInt;
   }
   
-  public void setPtrHandler(bur parambur)
+  public void setPtrHandler(bvs parambvs)
   {
-    s = parambur;
+    s = parambvs;
   }
   
   public void setPullToRefresh(boolean paramBoolean)
   {
-    f = paramBoolean;
+    e = paramBoolean;
   }
   
   public void setRatioOfHeaderHeightToRefresh(float paramFloat)
   {
     o = paramFloat;
-    e = ((int)(y * o));
+    d = ((int)(y * o));
   }
   
-  public void setRefreshCompleteHook(buu parambuu)
+  public void setRefreshCompleteHook(bvv parambvv)
   {
-    H = parambuu;
+    H = parambvv;
     a = new Runnable()
     {
       public final void run()
       {
-        if (PtrFrameLayout.b) {
-          CLog.d(c, "mRefreshCompleteHook resume.");
+        if (PtrFrameLayout.a) {
+          CLog.d(b, "mRefreshCompleteHook resume.");
         }
         PtrFrameLayout.a(PtrFrameLayout.this);
       }
@@ -852,8 +852,8 @@ public class PtrFrameLayout
       e = PtrFrameLayout.c(PtrFrameLayout.this);
       f = paramInt1;
       int i = paramInt1 - e;
-      if (PtrFrameLayout.b) {
-        CLog.d(c, "tryToScrollTo: start: %s, distance:%s, to:%s", new Object[] { Integer.valueOf(e), Integer.valueOf(i), Integer.valueOf(paramInt1) });
+      if (PtrFrameLayout.a) {
+        CLog.d(b, "tryToScrollTo: start: %s, distance:%s, to:%s", new Object[] { Integer.valueOf(e), Integer.valueOf(i), Integer.valueOf(paramInt1) });
       }
       removeCallbacks(this);
       b = 0;
@@ -870,8 +870,8 @@ public class PtrFrameLayout
       {
         int i = c.getCurrY();
         int j = i - b;
-        if ((PtrFrameLayout.b) && (j != 0)) {
-          CLog.v(c, "scroll: %s, start: %s, to: %s, mCurrentPos: %s, current :%s, last: %s, delta: %s", new Object[] { Boolean.valueOf(bool), Integer.valueOf(e), Integer.valueOf(f), Integer.valueOf(PtrFrameLayout.c(PtrFrameLayout.this)), Integer.valueOf(i), Integer.valueOf(b), Integer.valueOf(j) });
+        if ((PtrFrameLayout.a) && (j != 0)) {
+          CLog.v(b, "scroll: %s, start: %s, to: %s, mCurrentPos: %s, current :%s, last: %s, delta: %s", new Object[] { Boolean.valueOf(bool), Integer.valueOf(e), Integer.valueOf(f), Integer.valueOf(PtrFrameLayout.c(PtrFrameLayout.this)), Integer.valueOf(i), Integer.valueOf(b), Integer.valueOf(j) });
         }
         if (bool) {
           break;
@@ -881,8 +881,8 @@ public class PtrFrameLayout
         post(this);
         return;
       }
-      if (PtrFrameLayout.b) {
-        CLog.v(c, "finish, mCurrentPos:%s", new Object[] { Integer.valueOf(PtrFrameLayout.c(PtrFrameLayout.this)) });
+      if (PtrFrameLayout.a) {
+        CLog.v(b, "finish, mCurrentPos:%s", new Object[] { Integer.valueOf(PtrFrameLayout.c(PtrFrameLayout.this)) });
       }
       b();
       d();

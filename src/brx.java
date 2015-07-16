@@ -1,8 +1,14 @@
-import java.io.File;
-
-public abstract class brx
+public abstract interface brx
 {
-  public abstract bri a(File paramFile);
+  public abstract String a(String paramString1, String paramString2);
+  
+  public abstract void a(String paramString1, String paramString2, int paramInt);
+  
+  public abstract void a(String paramString1, String paramString2, String paramString3);
+  
+  public abstract int b(String paramString1, String paramString2);
+  
+  public abstract boolean c(String paramString1, String paramString2);
 }
 
 /* Location:

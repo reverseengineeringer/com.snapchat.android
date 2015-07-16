@@ -1,6 +1,6 @@
 package com.snapchat.android.ui;
 
-import alv;
+import ams;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -10,22 +10,22 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import apb;
-import ape;
+import apx;
+import aqa;
 import com.snapchat.android.model.chat.ChatMedia;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ImageResourceView
   extends ImageView
-  implements ape, SnapchatResource.a
+  implements aqa, SnapchatResource.a
 {
   private static int f = -1;
   private static String g;
   private static String h;
   private static String i;
   private static String j;
-  protected apb a;
+  protected apx a;
   protected int b;
   protected int c;
   private AtomicBoolean d = new AtomicBoolean(false);
@@ -40,7 +40,7 @@ public class ImageResourceView
     if (f == -1)
     {
       paramContext = getResources();
-      f = paramContext.getDimensionPixelSize(2131296417);
+      f = paramContext.getDimensionPixelSize(2131296418);
       Locale localLocale = Locale.getDefault();
       g = paramContext.getString(2131493213).toUpperCase(localLocale);
       h = paramContext.getString(2131493524).toUpperCase(localLocale);
@@ -60,7 +60,7 @@ public class ImageResourceView
     if (f == -1)
     {
       paramContext = getResources();
-      f = paramContext.getDimensionPixelSize(2131296417);
+      f = paramContext.getDimensionPixelSize(2131296418);
       paramAttributeSet = Locale.getDefault();
       g = paramContext.getString(2131493213).toUpperCase(paramAttributeSet);
       h = paramContext.getString(2131493524).toUpperCase(paramAttributeSet);
@@ -80,7 +80,7 @@ public class ImageResourceView
     if (f == -1)
     {
       paramContext = getResources();
-      f = paramContext.getDimensionPixelSize(2131296417);
+      f = paramContext.getDimensionPixelSize(2131296418);
       paramAttributeSet = Locale.getDefault();
       g = paramContext.getString(2131493213).toUpperCase(paramAttributeSet);
       h = paramContext.getString(2131493524).toUpperCase(paramAttributeSet);
@@ -108,8 +108,8 @@ public class ImageResourceView
     else {
       return;
     }
-    alv.a();
-    alv.a(a.a());
+    ams.a();
+    ams.a(a.a());
   }
   
   public final void a()
@@ -202,12 +202,12 @@ public class ImageResourceView
       if ((a == null) || (!TextUtils.equals(a.a(), paramChatMedia.d())))
       {
         d.set(true);
-        a = new apb(paramChatMedia, this);
+        a = new apx(paramChatMedia, this);
         a.a(getContext());
       }
-      b = paramChatMedia.F();
-      c = paramChatMedia.G();
-      if (paramChatMedia.N())
+      b = paramChatMedia.G();
+      c = paramChatMedia.H();
+      if (paramChatMedia.O())
       {
         m = 127;
         k = i;
@@ -217,7 +217,7 @@ public class ImageResourceView
     {
       return;
     }
-    if (paramChatMedia.O())
+    if (paramChatMedia.P())
     {
       m = 127;
       k = j;

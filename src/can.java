@@ -1,11 +1,16 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.METHOD})
-public @interface can {}
+public final class can
+  extends cab
+{
+  public can()
+  {
+    super("%", 6);
+  }
+  
+  public final double a(double paramDouble1, double paramDouble2)
+  {
+    return new Double(paramDouble1 % paramDouble2).doubleValue();
+  }
+}
 
 /* Location:
  * Qualified Name:     can

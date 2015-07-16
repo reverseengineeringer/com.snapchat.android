@@ -1,16 +1,33 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
+import akr;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
+import android.view.View.OnClickListener;
+import atq;
 
 final class FeedFragment$9
-  implements Runnable
+  implements View.OnClickListener
 {
-  FeedFragment$9(FeedFragment paramFeedFragment, View paramView, TranslateAnimation paramTranslateAnimation) {}
+  FeedFragment$9(FeedFragment paramFeedFragment) {}
   
-  public final void run()
+  public final void onClick(View paramView)
   {
-    a.startAnimation(b);
+    paramView = a.getActivity();
+    FeedFragment.t(a);
+    String str = akr.aW();
+    try
+    {
+      paramView.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str)));
+      return;
+    }
+    catch (ActivityNotFoundException localActivityNotFoundException)
+    {
+      atq.a(paramView);
+    }
   }
 }
 

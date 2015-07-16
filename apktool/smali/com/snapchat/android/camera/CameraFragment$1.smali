@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 771
+    .line 769
     iput-object p1, p0, Lcom/snapchat/android/camera/CameraFragment$1;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 774
+    .line 772
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$1;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/CameraFragment;)Lcom/snapchat/android/analytics/CameraEventAnalytics;
@@ -49,7 +49,7 @@
 
     invoke-virtual {v0}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->d()V
 
-    .line 775
+    .line 773
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$1;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->k:Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;
@@ -58,11 +58,11 @@
 
     iput-object v1, v0, Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;->a:Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent$MediaCaptureType;
 
-    .line 776
+    .line 774
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$1;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/CameraFragment;->m()Z
 
-    .line 777
+    .line 775
     return-void
 .end method

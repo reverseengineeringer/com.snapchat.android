@@ -46,537 +46,244 @@ public class GLThread
   
   private void checkRenderThreadState() {}
   
-  /* Error */
   private void guardedRun()
   {
-    // Byte code:
-    //   0: aload_0
-    //   1: new 32	com/addlive/view/GLThread$EglHelper
-    //   4: dup
-    //   5: aload_0
-    //   6: invokespecial 115	com/addlive/view/GLThread$EglHelper:<init>	(Lcom/addlive/view/GLThread;)V
-    //   9: putfield 117	com/addlive/view/GLThread:mEglHelper	Lcom/addlive/view/GLThread$EglHelper;
-    //   12: aload_0
-    //   13: iconst_0
-    //   14: putfield 119	com/addlive/view/GLThread:mHaveEglContext	Z
-    //   17: aload_0
-    //   18: iconst_0
-    //   19: putfield 121	com/addlive/view/GLThread:mHaveEglSurface	Z
-    //   22: aconst_null
-    //   23: astore 17
-    //   25: aconst_null
-    //   26: astore 16
-    //   28: iconst_0
-    //   29: istore 5
-    //   31: iconst_0
-    //   32: istore 8
-    //   34: iconst_0
-    //   35: istore_2
-    //   36: iconst_0
-    //   37: istore 7
-    //   39: iconst_0
-    //   40: istore 6
-    //   42: iconst_0
-    //   43: istore_3
-    //   44: iconst_0
-    //   45: istore 11
-    //   47: iconst_0
-    //   48: istore_1
-    //   49: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   52: astore 18
-    //   54: aload 18
-    //   56: monitorenter
-    //   57: iload_3
-    //   58: istore 4
-    //   60: iload 8
-    //   62: istore_3
-    //   63: aload_0
-    //   64: getfield 123	com/addlive/view/GLThread:mShouldExit	Z
-    //   67: ifeq +34 -> 101
-    //   70: aload 18
-    //   72: monitorexit
-    //   73: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   76: astore 16
-    //   78: aload 16
-    //   80: monitorenter
-    //   81: aload_0
-    //   82: invokespecial 126	com/addlive/view/GLThread:stopEglSurfaceLocked	()V
-    //   85: aload_0
-    //   86: invokespecial 129	com/addlive/view/GLThread:stopEglContextLocked	()V
-    //   89: aload 16
-    //   91: monitorexit
-    //   92: return
-    //   93: astore 17
-    //   95: aload 16
-    //   97: monitorexit
-    //   98: aload 17
-    //   100: athrow
-    //   101: aload_0
-    //   102: getfield 86	com/addlive/view/GLThread:mEventQueue	Ljava/util/ArrayList;
-    //   105: invokevirtual 133	java/util/ArrayList:isEmpty	()Z
-    //   108: ifne +95 -> 203
-    //   111: aload_0
-    //   112: getfield 86	com/addlive/view/GLThread:mEventQueue	Ljava/util/ArrayList;
-    //   115: iconst_0
-    //   116: invokevirtual 137	java/util/ArrayList:remove	(I)Ljava/lang/Object;
-    //   119: checkcast 139	java/lang/Runnable
-    //   122: astore 16
-    //   124: iload 6
-    //   126: istore 8
-    //   128: iload 7
-    //   130: istore 6
-    //   132: iload_2
-    //   133: istore 9
-    //   135: iload_3
-    //   136: istore 7
-    //   138: iload 5
-    //   140: istore_2
-    //   141: iload 4
-    //   143: istore_3
-    //   144: iload 9
-    //   146: istore 5
-    //   148: iload 7
-    //   150: istore 4
-    //   152: iload 8
-    //   154: istore 7
-    //   156: aload 18
-    //   158: monitorexit
-    //   159: aload 16
-    //   161: ifnull +535 -> 696
-    //   164: aload 16
-    //   166: invokeinterface 142 1 0
-    //   171: iload 6
-    //   173: istore 8
-    //   175: iload 7
-    //   177: istore 6
-    //   179: aconst_null
-    //   180: astore 16
-    //   182: iload_2
-    //   183: istore 7
-    //   185: iload 5
-    //   187: istore_2
-    //   188: iload 7
-    //   190: istore 5
-    //   192: iload 8
-    //   194: istore 7
-    //   196: iload 4
-    //   198: istore 8
-    //   200: goto -151 -> 49
-    //   203: aload_0
-    //   204: getfield 100	com/addlive/view/GLThread:mPaused	Z
-    //   207: aload_0
-    //   208: getfield 144	com/addlive/view/GLThread:mRequestPaused	Z
-    //   211: if_icmpeq +17 -> 228
-    //   214: aload_0
-    //   215: aload_0
-    //   216: getfield 144	com/addlive/view/GLThread:mRequestPaused	Z
-    //   219: putfield 100	com/addlive/view/GLThread:mPaused	Z
-    //   222: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   225: invokevirtual 149	java/lang/Object:notifyAll	()V
-    //   228: iload 5
-    //   230: istore 8
-    //   232: aload_0
-    //   233: getfield 151	com/addlive/view/GLThread:mShouldReleaseEglContext	Z
-    //   236: ifeq +19 -> 255
-    //   239: aload_0
-    //   240: invokespecial 126	com/addlive/view/GLThread:stopEglSurfaceLocked	()V
-    //   243: aload_0
-    //   244: invokespecial 129	com/addlive/view/GLThread:stopEglContextLocked	()V
-    //   247: aload_0
-    //   248: iconst_0
-    //   249: putfield 151	com/addlive/view/GLThread:mShouldReleaseEglContext	Z
-    //   252: iconst_1
-    //   253: istore 8
-    //   255: iload_3
-    //   256: istore 9
-    //   258: iload_3
-    //   259: ifeq +14 -> 273
-    //   262: aload_0
-    //   263: invokespecial 126	com/addlive/view/GLThread:stopEglSurfaceLocked	()V
-    //   266: aload_0
-    //   267: invokespecial 129	com/addlive/view/GLThread:stopEglContextLocked	()V
-    //   270: iconst_0
-    //   271: istore 9
-    //   273: aload_0
-    //   274: getfield 121	com/addlive/view/GLThread:mHaveEglSurface	Z
-    //   277: ifeq +50 -> 327
-    //   280: aload_0
-    //   281: getfield 100	com/addlive/view/GLThread:mPaused	Z
-    //   284: ifeq +43 -> 327
-    //   287: aload_0
-    //   288: invokespecial 126	com/addlive/view/GLThread:stopEglSurfaceLocked	()V
-    //   291: aload_0
-    //   292: getfield 88	com/addlive/view/GLThread:mPreserveEGLContextOnPause	Z
-    //   295: ifeq +12 -> 307
-    //   298: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   301: invokevirtual 154	com/addlive/view/GLThread$GLThreadManager:shouldReleaseEGLContextWhenPausing	()Z
-    //   304: ifeq +7 -> 311
-    //   307: aload_0
-    //   308: invokespecial 129	com/addlive/view/GLThread:stopEglContextLocked	()V
-    //   311: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   314: invokevirtual 157	com/addlive/view/GLThread$GLThreadManager:shouldTerminateEGLWhenPausing	()Z
-    //   317: ifeq +10 -> 327
-    //   320: aload_0
-    //   321: getfield 117	com/addlive/view/GLThread:mEglHelper	Lcom/addlive/view/GLThread$EglHelper;
-    //   324: invokevirtual 160	com/addlive/view/GLThread$EglHelper:finish	()V
-    //   327: aload_0
-    //   328: getfield 162	com/addlive/view/GLThread:mHasSurface	Z
-    //   331: ifne +32 -> 363
-    //   334: aload_0
-    //   335: getfield 164	com/addlive/view/GLThread:mWaitingForSurface	Z
-    //   338: ifne +25 -> 363
-    //   341: aload_0
-    //   342: getfield 121	com/addlive/view/GLThread:mHaveEglSurface	Z
-    //   345: ifeq +7 -> 352
-    //   348: aload_0
-    //   349: invokespecial 126	com/addlive/view/GLThread:stopEglSurfaceLocked	()V
-    //   352: aload_0
-    //   353: iconst_1
-    //   354: putfield 164	com/addlive/view/GLThread:mWaitingForSurface	Z
-    //   357: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   360: invokevirtual 149	java/lang/Object:notifyAll	()V
-    //   363: aload_0
-    //   364: getfield 162	com/addlive/view/GLThread:mHasSurface	Z
-    //   367: ifeq +21 -> 388
-    //   370: aload_0
-    //   371: getfield 164	com/addlive/view/GLThread:mWaitingForSurface	Z
-    //   374: ifeq +14 -> 388
-    //   377: aload_0
-    //   378: iconst_0
-    //   379: putfield 164	com/addlive/view/GLThread:mWaitingForSurface	Z
-    //   382: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   385: invokevirtual 149	java/lang/Object:notifyAll	()V
-    //   388: iload 11
-    //   390: ifeq +14 -> 404
-    //   393: aload_0
-    //   394: iconst_1
-    //   395: putfield 166	com/addlive/view/GLThread:mRenderComplete	Z
-    //   398: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   401: invokevirtual 149	java/lang/Object:notifyAll	()V
-    //   404: iload 8
-    //   406: istore 10
-    //   408: iload 7
-    //   410: istore 14
-    //   412: iload 6
-    //   414: istore 12
-    //   416: iload 4
-    //   418: istore 13
-    //   420: aload_0
-    //   421: invokespecial 169	com/addlive/view/GLThread:readyToDraw	()Z
-    //   424: ifeq +244 -> 668
-    //   427: iload 8
-    //   429: istore 5
-    //   431: iload 4
-    //   433: istore_3
-    //   434: aload_0
-    //   435: getfield 119	com/addlive/view/GLThread:mHaveEglContext	Z
-    //   438: ifne +14 -> 452
-    //   441: iload 8
-    //   443: ifeq +133 -> 576
-    //   446: iconst_0
-    //   447: istore 5
-    //   449: iload 4
-    //   451: istore_3
-    //   452: iload 7
-    //   454: istore 8
-    //   456: iload 6
-    //   458: istore 4
-    //   460: aload_0
-    //   461: getfield 119	com/addlive/view/GLThread:mHaveEglContext	Z
-    //   464: ifeq +29 -> 493
-    //   467: iload 7
-    //   469: istore 8
-    //   471: iload 6
-    //   473: istore 4
-    //   475: aload_0
-    //   476: getfield 121	com/addlive/view/GLThread:mHaveEglSurface	Z
-    //   479: ifne +14 -> 493
-    //   482: aload_0
-    //   483: iconst_1
-    //   484: putfield 121	com/addlive/view/GLThread:mHaveEglSurface	Z
-    //   487: iconst_1
-    //   488: istore 4
-    //   490: iconst_1
-    //   491: istore 8
-    //   493: iload 5
-    //   495: istore 10
-    //   497: iload 8
-    //   499: istore 14
-    //   501: iload 4
-    //   503: istore 12
-    //   505: iload_3
-    //   506: istore 13
-    //   508: aload_0
-    //   509: getfield 121	com/addlive/view/GLThread:mHaveEglSurface	Z
-    //   512: ifeq +156 -> 668
-    //   515: aload_0
-    //   516: getfield 90	com/addlive/view/GLThread:mSizeChanged	Z
-    //   519: ifeq +21 -> 540
-    //   522: iconst_1
-    //   523: istore 8
-    //   525: aload_0
-    //   526: getfield 92	com/addlive/view/GLThread:mWidth	I
-    //   529: istore_2
-    //   530: aload_0
-    //   531: getfield 94	com/addlive/view/GLThread:mHeight	I
-    //   534: istore_1
-    //   535: aload_0
-    //   536: iconst_0
-    //   537: putfield 90	com/addlive/view/GLThread:mSizeChanged	Z
-    //   540: aload_0
-    //   541: iconst_0
-    //   542: putfield 96	com/addlive/view/GLThread:mRequestRender	Z
-    //   545: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   548: invokevirtual 149	java/lang/Object:notifyAll	()V
-    //   551: iload 8
-    //   553: istore 6
-    //   555: iload 5
-    //   557: istore 8
-    //   559: iload 4
-    //   561: istore 7
-    //   563: iload 9
-    //   565: istore 4
-    //   567: iload_2
-    //   568: istore 5
-    //   570: iload 8
-    //   572: istore_2
-    //   573: goto -417 -> 156
-    //   576: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   579: aload_0
-    //   580: invokevirtual 173	com/addlive/view/GLThread$GLThreadManager:tryAcquireEglContextLocked	(Lcom/addlive/view/GLThread;)Z
-    //   583: istore 15
-    //   585: iload 8
-    //   587: istore 5
-    //   589: iload 4
-    //   591: istore_3
-    //   592: iload 15
-    //   594: ifeq -142 -> 452
-    //   597: aload_0
-    //   598: getfield 117	com/addlive/view/GLThread:mEglHelper	Lcom/addlive/view/GLThread$EglHelper;
-    //   601: invokevirtual 176	com/addlive/view/GLThread$EglHelper:start	()V
-    //   604: aload_0
-    //   605: iconst_1
-    //   606: putfield 119	com/addlive/view/GLThread:mHaveEglContext	Z
-    //   609: iconst_1
-    //   610: istore_3
-    //   611: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   614: invokevirtual 149	java/lang/Object:notifyAll	()V
-    //   617: iload 8
-    //   619: istore 5
-    //   621: goto -169 -> 452
-    //   624: astore 16
-    //   626: aload 18
-    //   628: monitorexit
-    //   629: aload 16
-    //   631: athrow
-    //   632: astore 17
-    //   634: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   637: astore 16
-    //   639: aload 16
-    //   641: monitorenter
-    //   642: aload_0
-    //   643: invokespecial 126	com/addlive/view/GLThread:stopEglSurfaceLocked	()V
-    //   646: aload_0
-    //   647: invokespecial 129	com/addlive/view/GLThread:stopEglContextLocked	()V
-    //   650: aload 16
-    //   652: monitorexit
-    //   653: aload 17
-    //   655: athrow
-    //   656: astore 16
-    //   658: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   661: aload_0
-    //   662: invokevirtual 179	com/addlive/view/GLThread$GLThreadManager:releaseEglContextLocked	(Lcom/addlive/view/GLThread;)V
-    //   665: aload 16
-    //   667: athrow
-    //   668: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   671: invokevirtual 182	java/lang/Object:wait	()V
-    //   674: iload 10
-    //   676: istore 5
-    //   678: iload 14
-    //   680: istore 7
-    //   682: iload 9
-    //   684: istore_3
-    //   685: iload 12
-    //   687: istore 6
-    //   689: iload 13
-    //   691: istore 4
-    //   693: goto -630 -> 63
-    //   696: iload 7
-    //   698: ifeq +197 -> 895
-    //   701: aload_0
-    //   702: getfield 117	com/addlive/view/GLThread:mEglHelper	Lcom/addlive/view/GLThread$EglHelper;
-    //   705: aload_0
-    //   706: getfield 184	com/addlive/view/GLThread:surface	Landroid/graphics/SurfaceTexture;
-    //   709: invokevirtual 188	com/addlive/view/GLThread$EglHelper:createSurface	(Landroid/graphics/SurfaceTexture;)Ljavax/microedition/khronos/opengles/GL;
-    //   712: checkcast 190	javax/microedition/khronos/opengles/GL10
-    //   715: astore 17
-    //   717: aload 17
-    //   719: ifnonnull +39 -> 758
-    //   722: ldc -64
-    //   724: ldc -62
-    //   726: invokestatic 200	com/addlive/impl/Log:e	(Ljava/lang/String;Ljava/lang/String;)I
-    //   729: pop
-    //   730: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   733: astore 16
-    //   735: aload 16
-    //   737: monitorenter
-    //   738: aload_0
-    //   739: invokespecial 126	com/addlive/view/GLThread:stopEglSurfaceLocked	()V
-    //   742: aload_0
-    //   743: invokespecial 129	com/addlive/view/GLThread:stopEglContextLocked	()V
-    //   746: aload 16
-    //   748: monitorexit
-    //   749: return
-    //   750: astore 17
-    //   752: aload 16
-    //   754: monitorexit
-    //   755: aload 17
-    //   757: athrow
-    //   758: getstatic 77	com/addlive/view/GLThread:sGLThreadManager	Lcom/addlive/view/GLThread$GLThreadManager;
-    //   761: aload 17
-    //   763: invokevirtual 204	com/addlive/view/GLThread$GLThreadManager:checkGLDriver	(Ljavax/microedition/khronos/opengles/GL10;)V
-    //   766: iconst_0
-    //   767: istore 7
-    //   769: iload_3
-    //   770: istore 9
-    //   772: iload_3
-    //   773: ifeq +24 -> 797
-    //   776: aload_0
-    //   777: getfield 98	com/addlive/view/GLThread:mRenderer	Landroid/opengl/GLSurfaceView$Renderer;
-    //   780: aload 17
-    //   782: aload_0
-    //   783: getfield 117	com/addlive/view/GLThread:mEglHelper	Lcom/addlive/view/GLThread$EglHelper;
-    //   786: getfield 208	com/addlive/view/GLThread$EglHelper:mEglConfig	Ljavax/microedition/khronos/egl/EGLConfig;
-    //   789: invokeinterface 214 3 0
-    //   794: iconst_0
-    //   795: istore 9
-    //   797: iload 6
-    //   799: istore 8
-    //   801: iload 6
-    //   803: ifeq +27 -> 830
-    //   806: aload_0
-    //   807: getfield 117	com/addlive/view/GLThread:mEglHelper	Lcom/addlive/view/GLThread$EglHelper;
-    //   810: invokevirtual 217	com/addlive/view/GLThread$EglHelper:purgeBuffers	()V
-    //   813: aload_0
-    //   814: getfield 98	com/addlive/view/GLThread:mRenderer	Landroid/opengl/GLSurfaceView$Renderer;
-    //   817: aload 17
-    //   819: iload 5
-    //   821: iload_1
-    //   822: invokeinterface 221 4 0
-    //   827: iconst_0
-    //   828: istore 8
-    //   830: aload_0
-    //   831: getfield 98	com/addlive/view/GLThread:mRenderer	Landroid/opengl/GLSurfaceView$Renderer;
-    //   834: aload 17
-    //   836: invokeinterface 224 2 0
-    //   841: aload_0
-    //   842: getfield 117	com/addlive/view/GLThread:mEglHelper	Lcom/addlive/view/GLThread$EglHelper;
-    //   845: invokevirtual 227	com/addlive/view/GLThread$EglHelper:swap	()Z
-    //   848: istore 15
-    //   850: iload 15
-    //   852: ifne +46 -> 898
-    //   855: iconst_1
-    //   856: istore_3
-    //   857: iload 7
-    //   859: istore 6
-    //   861: iconst_1
-    //   862: istore 11
-    //   864: iload_2
-    //   865: istore 4
-    //   867: iload 5
-    //   869: istore_2
-    //   870: iload 4
-    //   872: istore 5
-    //   874: iload 8
-    //   876: istore 7
-    //   878: iload_3
-    //   879: istore 8
-    //   881: iload 9
-    //   883: istore_3
-    //   884: goto -835 -> 49
-    //   887: astore 17
-    //   889: aload 16
-    //   891: monitorexit
-    //   892: aload 17
-    //   894: athrow
-    //   895: goto -126 -> 769
-    //   898: iload 4
-    //   900: istore_3
-    //   901: goto -44 -> 857
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	904	0	this	GLThread
-    //   48	774	1	i	int
-    //   35	835	2	j	int
-    //   43	858	3	k	int
-    //   58	841	4	m	int
-    //   29	844	5	n	int
-    //   40	820	6	i1	int
-    //   37	840	7	i2	int
-    //   32	848	8	i3	int
-    //   133	749	9	i4	int
-    //   406	269	10	i5	int
-    //   45	818	11	i6	int
-    //   414	272	12	i7	int
-    //   418	272	13	i8	int
-    //   410	269	14	i9	int
-    //   583	268	15	bool	boolean
-    //   26	155	16	localObject1	Object
-    //   624	6	16	localObject2	Object
-    //   656	10	16	localRuntimeException	RuntimeException
-    //   23	1	17	localObject3	Object
-    //   93	6	17	localObject4	Object
-    //   632	22	17	localObject5	Object
-    //   715	3	17	localGL101	GL10
-    //   750	85	17	localGL102	GL10
-    //   887	6	17	localObject6	Object
-    //   52	575	18	localGLThreadManager3	GLThreadManager
-    // Exception table:
-    //   from	to	target	type
-    //   81	92	93	finally
-    //   95	98	93	finally
-    //   63	73	624	finally
-    //   101	124	624	finally
-    //   156	159	624	finally
-    //   203	228	624	finally
-    //   232	252	624	finally
-    //   262	270	624	finally
-    //   273	307	624	finally
-    //   307	311	624	finally
-    //   311	327	624	finally
-    //   327	352	624	finally
-    //   352	363	624	finally
-    //   363	388	624	finally
-    //   393	404	624	finally
-    //   420	427	624	finally
-    //   434	441	624	finally
-    //   460	467	624	finally
-    //   475	487	624	finally
-    //   508	515	624	finally
-    //   515	522	624	finally
-    //   525	540	624	finally
-    //   540	551	624	finally
-    //   576	585	624	finally
-    //   597	604	624	finally
-    //   604	609	624	finally
-    //   611	617	624	finally
-    //   626	629	624	finally
-    //   658	668	624	finally
-    //   668	674	624	finally
-    //   49	57	632	finally
-    //   164	171	632	finally
-    //   629	632	632	finally
-    //   701	717	632	finally
-    //   722	730	632	finally
-    //   758	766	632	finally
-    //   776	794	632	finally
-    //   806	827	632	finally
-    //   830	850	632	finally
-    //   597	604	656	java/lang/RuntimeException
-    //   738	749	750	finally
-    //   752	755	750	finally
-    //   642	653	887	finally
-    //   889	892	887	finally
+    mEglHelper = new EglHelper();
+    mHaveEglContext = false;
+    mHaveEglSurface = false;
+    m = 0;
+    n = 0;
+    i3 = 0;
+    j = 0;
+    ??? = null;
+    Object localObject3 = null;
+    i6 = 0;
+    i = 0;
+    i2 = 0;
+    k = 0;
+    try
+    {
+      for (;;)
+      {
+        int i1;
+        int i4;
+        int i5;
+        int i7;
+        int i8;
+        int i9;
+        boolean bool;
+        synchronized (sGLThreadManager)
+        {
+          if (mShouldExit) {
+            synchronized (sGLThreadManager)
+            {
+              stopEglSurfaceLocked();
+              stopEglContextLocked();
+              return;
+            }
+          }
+          if (!mEventQueue.isEmpty())
+          {
+            ??? = (Runnable)mEventQueue.remove(0);
+            i1 = i3;
+            i4 = i2;
+            i2 = i;
+            i = k;
+            i3 = m;
+            m = i4;
+            k = j;
+            j = i2;
+            i2 = i3;
+            if (??? != null)
+            {
+              ((Runnable)???).run();
+              ??? = null;
+              i5 = m;
+              i4 = i;
+              i3 = i1;
+              m = i2;
+              i2 = i5;
+              i = j;
+              j = k;
+              k = i4;
+            }
+          }
+          else
+          {
+            if (mPaused != mRequestPaused) {
+              mPaused = mRequestPaused;
+            }
+            if (!mShouldReleaseEglContext) {
+              break label866;
+            }
+            stopEglSurfaceLocked();
+            stopEglContextLocked();
+            mShouldReleaseEglContext = false;
+            i4 = 1;
+            if (n == 0) {
+              break label860;
+            }
+            stopEglSurfaceLocked();
+            stopEglContextLocked();
+            k = 0;
+            if ((mHaveEglSurface) && (mPaused))
+            {
+              stopEglSurfaceLocked();
+              if ((!mPreserveEGLContextOnPause) || (sGLThreadManager.shouldReleaseEGLContextWhenPausing())) {
+                stopEglContextLocked();
+              }
+              if (sGLThreadManager.shouldTerminateEGLWhenPausing()) {
+                mEglHelper.finish();
+              }
+            }
+            if ((!mHasSurface) && (!mWaitingForSurface))
+            {
+              if (mHaveEglSurface) {
+                stopEglSurfaceLocked();
+              }
+              mWaitingForSurface = true;
+            }
+            if ((mHasSurface) && (mWaitingForSurface)) {
+              mWaitingForSurface = false;
+            }
+            if (i6 != 0) {
+              mRenderComplete = true;
+            }
+            i5 = i4;
+            i7 = i3;
+            i8 = m;
+            i9 = i2;
+            if (readyToDraw())
+            {
+              i1 = i4;
+              n = i2;
+              if (!mHaveEglContext)
+              {
+                if (i4 != 0)
+                {
+                  i1 = 0;
+                  n = i2;
+                }
+              }
+              else
+              {
+                i4 = i3;
+                i2 = m;
+                if (mHaveEglContext)
+                {
+                  i4 = i3;
+                  i2 = m;
+                  if (!mHaveEglSurface)
+                  {
+                    mHaveEglSurface = true;
+                    i2 = 1;
+                    i4 = 1;
+                  }
+                }
+                i5 = i1;
+                i7 = i4;
+                i8 = i2;
+                i9 = n;
+                if (!mHaveEglSurface) {
+                  break label626;
+                }
+                if (!mSizeChanged) {
+                  break label853;
+                }
+                m = 1;
+                j = mWidth;
+                i = mHeight;
+                mSizeChanged = false;
+                mRequestRender = false;
+                i3 = j;
+                i4 = n;
+                n = k;
+                j = i;
+                k = i3;
+                i = i1;
+                i1 = m;
+                m = i4;
+                continue;
+              }
+              bool = sGLThreadManager.tryAcquireEglContextLocked(this);
+              i1 = i4;
+              n = i2;
+              if (!bool) {
+                continue;
+              }
+              try
+              {
+                mEglHelper.start();
+                mHaveEglContext = true;
+                n = 1;
+                i1 = i4;
+              }
+              catch (RuntimeException localRuntimeException)
+              {
+                sGLThreadManager.releaseEglContextLocked(this);
+                throw localRuntimeException;
+              }
+            }
+          }
+        }
+        synchronized (sGLThreadManager)
+        {
+          stopEglSurfaceLocked();
+          stopEglContextLocked();
+          throw ((Throwable)localObject5);
+          n = k;
+          k = i5;
+          i3 = i7;
+          m = i8;
+          i2 = i9;
+          continue;
+          if (i2 != 0)
+          {
+            GL10 localGL101 = (GL10)mEglHelper.createSurface(surface);
+            if (localGL101 == null)
+            {
+              Log.e("AddLive_SDK", "Failed to create an OpenGL Surface. Ending the GLThread run loop");
+              synchronized (sGLThreadManager)
+              {
+                stopEglSurfaceLocked();
+                stopEglContextLocked();
+                return;
+              }
+            }
+            sGLThreadManager.checkGLDriver(localGL102);
+            i3 = 0;
+            i2 = m;
+            if (m != 0)
+            {
+              mRenderer.onSurfaceCreated(localGL102, mEglHelper.mEglConfig);
+              i2 = 0;
+            }
+            m = i1;
+            if (i1 != 0)
+            {
+              mEglHelper.purgeBuffers();
+              mRenderer.onSurfaceChanged(localGL102, k, j);
+              m = 0;
+            }
+            mRenderer.onDrawFrame(localGL102);
+            bool = mEglHelper.swap();
+            if (bool) {
+              break label872;
+            }
+            n = 1;
+            i6 = 1;
+            i1 = i3;
+            i4 = i;
+            i3 = m;
+            m = i1;
+            i = j;
+            j = k;
+            k = i4;
+          }
+        }
+      }
+    }
+    finally {}
   }
   
   private boolean readyToDraw()
@@ -605,16 +312,7 @@ public class GLThread
   
   private void waitForRenderComplete()
   {
-    while ((!mExited) && (!mPaused) && (!mRenderComplete) && (ableToDraw())) {
-      try
-      {
-        sGLThreadManager.wait();
-      }
-      catch (InterruptedException localInterruptedException)
-      {
-        Thread.currentThread().interrupt();
-      }
-    }
+    while ((!mExited) && (!mPaused) && (!mRenderComplete) && (ableToDraw())) {}
   }
   
   public boolean ableToDraw()
@@ -627,24 +325,7 @@ public class GLThread
     synchronized (sGLThreadManager)
     {
       mRequestPaused = true;
-      sGLThreadManager.notifyAll();
-      for (;;)
-      {
-        if (!mExited)
-        {
-          boolean bool = mPaused;
-          if (!bool) {
-            try
-            {
-              sGLThreadManager.wait();
-            }
-            catch (InterruptedException localInterruptedException)
-            {
-              Thread.currentThread().interrupt();
-            }
-          }
-        }
-      }
+      return;
     }
   }
   
@@ -655,24 +336,7 @@ public class GLThread
       mRequestPaused = false;
       mRequestRender = true;
       mRenderComplete = false;
-      sGLThreadManager.notifyAll();
-      for (;;)
-      {
-        if ((!mExited) && (mPaused))
-        {
-          boolean bool = mRenderComplete;
-          if (!bool) {
-            try
-            {
-              sGLThreadManager.wait();
-            }
-            catch (InterruptedException localInterruptedException)
-            {
-              Thread.currentThread().interrupt();
-            }
-          }
-        }
-      }
+      return;
     }
   }
   
@@ -685,7 +349,6 @@ public class GLThread
       mSizeChanged = true;
       mRequestRender = true;
       mRenderComplete = false;
-      sGLThreadManager.notifyAll();
       waitForRenderComplete();
       return;
     }
@@ -699,7 +362,6 @@ public class GLThread
     synchronized (sGLThreadManager)
     {
       mEventQueue.add(paramRunnable);
-      sGLThreadManager.notifyAll();
       return;
     }
   }
@@ -709,28 +371,13 @@ public class GLThread
     synchronized (sGLThreadManager)
     {
       mShouldExit = true;
-      sGLThreadManager.notifyAll();
-      for (;;)
-      {
-        boolean bool = mExited;
-        if (!bool) {
-          try
-          {
-            sGLThreadManager.wait();
-          }
-          catch (InterruptedException localInterruptedException)
-          {
-            Thread.currentThread().interrupt();
-          }
-        }
-      }
+      return;
     }
   }
   
   public void requestReleaseEglContextLocked()
   {
     mShouldReleaseEglContext = true;
-    sGLThreadManager.notifyAll();
   }
   
   public void requestRender()
@@ -739,7 +386,6 @@ public class GLThread
     {
       mRequestRender = true;
       mRenderComplete = false;
-      sGLThreadManager.notifyAll();
       return;
     }
   }
@@ -774,26 +420,9 @@ public class GLThread
     synchronized (sGLThreadManager)
     {
       mHasSurface = true;
-      sGLThreadManager.notifyAll();
-      for (;;)
-      {
-        if (mWaitingForSurface)
-        {
-          boolean bool = mExited;
-          if (!bool) {
-            try
-            {
-              sGLThreadManager.wait();
-            }
-            catch (InterruptedException localInterruptedException)
-            {
-              Thread.currentThread().interrupt();
-            }
-          }
-        }
-      }
+      Log.w("AddLive_SDK", "surface created processed");
+      return;
     }
-    Log.w("AddLive_SDK", "surface created processed");
   }
   
   public void surfaceDestroyed()
@@ -801,24 +430,7 @@ public class GLThread
     synchronized (sGLThreadManager)
     {
       mHasSurface = false;
-      sGLThreadManager.notifyAll();
-      for (;;)
-      {
-        if (!mWaitingForSurface)
-        {
-          boolean bool = mExited;
-          if (!bool) {
-            try
-            {
-              sGLThreadManager.wait();
-            }
-            catch (InterruptedException localInterruptedException)
-            {
-              Thread.currentThread().interrupt();
-            }
-          }
-        }
-      }
+      return;
     }
   }
   
@@ -1150,7 +762,7 @@ public class GLThread
     public void checkGLDriver(GL10 paramGL10)
     {
       boolean bool2 = false;
-      label98:
+      label94:
       for (;;)
       {
         try
@@ -1165,17 +777,16 @@ public class GLThread
               {
                 bool1 = true;
                 mMultipleGLESContextsAllowed = bool1;
-                notifyAll();
               }
             }
             else
             {
               if (!mMultipleGLESContextsAllowed) {
-                break label98;
+                break label94;
               }
               bool1 = bool2;
               if (paramGL10.startsWith("Adreno")) {
-                break label98;
+                break label94;
               }
               mLimitedGLESContexts = bool1;
               mGLESDriverCheckComplete = true;
@@ -1198,7 +809,6 @@ public class GLThread
       if (mEglOwner == paramGLThread) {
         mEglOwner = null;
       }
-      notifyAll();
     }
     
     public boolean shouldReleaseEGLContextWhenPausing()
@@ -1260,18 +870,19 @@ public class GLThread
         if (mEglOwner == paramGLThread) {
           mEglOwner = null;
         }
-        notifyAll();
         return;
       }
-      finally {}
+      finally
+      {
+        paramGLThread = finally;
+        throw paramGLThread;
+      }
     }
     
     public boolean tryAcquireEglContextLocked(GLThread paramGLThread)
     {
-      if ((mEglOwner == paramGLThread) || (mEglOwner == null))
-      {
+      if ((mEglOwner == paramGLThread) || (mEglOwner == null)) {
         mEglOwner = paramGLThread;
-        notifyAll();
       }
       do
       {

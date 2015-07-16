@@ -1,11 +1,11 @@
 package com.snapchat.android.fragments.settings;
 
 import android.content.Context;
-import aqb;
+import ara;
 import com.snapchat.android.analytics.AnalyticsEvents;
 
 final class SettingsFragment$a
-  extends aqb
+  extends ara
 {
   public SettingsFragment$a(SettingsFragment paramSettingsFragment, Context paramContext)
   {

@@ -1,45 +1,45 @@
 package com.snapchat.android.fragments.stories;
 
-import ajv;
-import bkh;
-import ccm;
-import cgb;
-import cgc;
+import akp;
+import bli;
+import cdn;
+import chc;
+import chd;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.FriendAction;
 import com.snapchat.android.model.FriendAction.BlockReason;
-import pp;
-import uc;
+import qg;
+import us;
 
 class StoriesAdapter$c
-  extends pp
+  extends qg
 {
-  private StoriesAdapter$c(StoriesAdapter paramStoriesAdapter, FriendAction paramFriendAction, Friend paramFriend, String paramString1, String paramString2, String paramString3, @cgc String paramString4, FriendAction.BlockReason paramBlockReason)
+  private StoriesAdapter$c(StoriesAdapter paramStoriesAdapter, FriendAction paramFriendAction, Friend paramFriend, String paramString1, String paramString2, String paramString3, @chd String paramString4, FriendAction.BlockReason paramBlockReason)
   {
     super(paramFriendAction, paramFriend, paramString1, paramString2, paramString3, false, paramString4, paramBlockReason);
   }
   
-  protected void a(bkh parambkh, @cgc ajv paramajv)
+  protected void a(bli parambli, @chd akp paramakp)
   {
-    super.a(parambkh, paramajv);
+    super.a(parambli, paramakp);
     c.notifyDataSetChanged();
   }
   
-  @ccm
-  public final void a(@cgc bkh parambkh, @cgb uc paramuc)
+  @cdn
+  public final void a(@chd bli parambli, @chc us paramus)
   {
-    super.a(parambkh, paramuc);
+    super.a(parambli, paramus);
     if (mFriend != null) {
       mFriend.mActionState = FriendAction.NONE;
     }
   }
   
-  public final void f()
+  public void execute()
   {
     if (mFriend != null) {
       mFriend.mActionState = mAction;
     }
-    super.f();
+    super.execute();
   }
 }
 

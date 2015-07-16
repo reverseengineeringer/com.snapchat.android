@@ -41,7 +41,7 @@
 .method private static a(Lcom/snapchat/android/model/chat/ChatFeedItem$a;)Z
     .locals 4
     .param p0    # Lcom/snapchat/android/model/chat/ChatFeedItem$a;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -77,11 +77,11 @@
 .method public setDisplayedIcon(Ljava/util/List;Lcom/snapchat/android/model/chat/ChatConversation;)V
     .locals 6
     .param p1    # Ljava/util/List;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;

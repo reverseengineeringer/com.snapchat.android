@@ -1,6 +1,19 @@
-public abstract interface bgh
+import android.media.MediaMetadataRetriever;
+
+public final class bgh
 {
-  public abstract void a(fl paramfl);
+  public static MediaMetadataRetriever a(MediaMetadataRetriever paramMediaMetadataRetriever, String paramString)
+  {
+    try
+    {
+      paramMediaMetadataRetriever.setDataSource(paramString);
+      return paramMediaMetadataRetriever;
+    }
+    catch (RuntimeException paramMediaMetadataRetriever)
+    {
+      throw new bfv();
+    }
+  }
 }
 
 /* Location:

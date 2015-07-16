@@ -1,9 +1,9 @@
 package com.snapchat.android.fragments.chat;
 
-import ya.b;
+import yw.b;
 
 final class ChatFragment$6$1
-  implements ya.b
+  implements yw.b
 {
   ChatFragment$6$1(ChatFragment.6 param6) {}
   

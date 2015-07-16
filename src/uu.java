@@ -1,8 +1,30 @@
-import java.util.List;
+import javax.inject.Provider;
 
-public abstract interface uu
+public final class uu
+  implements bvp<ut>
 {
-  public abstract List<ut> a();
+  private final Provider<ub> entityFactoryProvider;
+  
+  static
+  {
+    if (!uu.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
+  }
+  
+  private uu(Provider<ub> paramProvider)
+  {
+    assert (paramProvider != null);
+    entityFactoryProvider = paramProvider;
+  }
+  
+  public static bvp<ut> a(Provider<ub> paramProvider)
+  {
+    return new uu(paramProvider);
+  }
 }
 
 /* Location:

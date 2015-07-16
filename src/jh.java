@@ -2,17 +2,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class jh
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "PROFILE_MY_FRIENDS_FRIEND_DELETE";
+  private final String eventName = "PROFILE_FRIEND_REQUEST_NAME_EDIT";
+  public Boolean hasDisplayName;
+  public kh source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_MY_FRIENDS_FRIEND_DELETE");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "PROFILE_FRIEND_REQUEST_NAME_EDIT");
+    if (hasDisplayName != null) {
+      localHashMap.put("has_display_name", hasDisplayName);
+    }
+    if (source != null) {
+      localHashMap.put("source", source);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +35,23 @@ public final class jh
         return false;
       }
       paramObject = (jh)paramObject;
-      if (additionalInfo == null) {
+      if (hasDisplayName != null)
+      {
+        if (hasDisplayName.equals(hasDisplayName)) {}
+      }
+      else {
+        while (hasDisplayName != null) {
+          return false;
+        }
+      }
+      if (source == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (source == null) {
         break;
       }
     }
@@ -46,10 +59,15 @@ public final class jh
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
-      return i + j * 31;
+    int j = 0;
+    int k = super.hashCode();
+    if (hasDisplayName != null) {}
+    for (int i = hasDisplayName.hashCode();; i = 0)
+    {
+      if (source != null) {
+        j = source.hashCode();
+      }
+      return (i + k * 31) * 31 + j;
     }
   }
 }

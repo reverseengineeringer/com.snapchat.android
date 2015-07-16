@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private a:Laqq;
+.field private a:Larp;
 
 .field private b:Landroid/support/v7/widget/RecyclerView;
 
@@ -52,32 +52,32 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 39
-    new-instance v0, Laqq;
+    new-instance v0, Larp;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-static {}, Lafi;->a()Lafi;
+    invoke-static {}, Lagi;->a()Lagi;
 
     move-result-object v2
 
-    iget-object v2, v2, Lafi;->a:Laqr;
+    iget-object v2, v2, Lagi;->a:Larq;
 
-    invoke-static {}, Lafi;->a()Lafi;
+    invoke-static {}, Lagi;->a()Lagi;
 
     move-result-object v3
 
-    iget-object v3, v3, Lafi;->b:Lbpd;
+    iget-object v3, v3, Lagi;->b:Lbqe;
 
-    invoke-direct {v0, v1, p1, v2, v3}, Laqq;-><init>(Landroid/content/Context;Landroid/view/LayoutInflater;Laqr;Lbpd;)V
+    invoke-direct {v0, v1, p1, v2, v3}, Larp;-><init>(Landroid/content/Context;Landroid/view/LayoutInflater;Larq;Lbqe;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Laqq;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Larp;
 
     .line 41
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->mFragmentLayout:Landroid/view/View;
 
-    const v1, 0x7f0a0037
+    const v1, 0x7f0a0038
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,12 +109,12 @@
     .line 55
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->b:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Laqq;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Larp;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$a;)V
 
     .line 57
-    const v0, 0x7f0a001e
+    const v0, 0x7f0a001f
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->c(I)Landroid/view/View;
 
@@ -153,22 +153,22 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 70
-    invoke-static {}, Lafi;->a()Lafi;
+    invoke-static {}, Lagi;->a()Lagi;
 
     move-result-object v0
 
-    iget-object v0, v0, Lafi;->a:Laqr;
+    iget-object v0, v0, Lagi;->a:Larq;
 
-    iget-object v0, v0, Laqr;->a:[Laqr$a;
+    iget-object v0, v0, Larq;->a:[Larq$a;
 
     array-length v0, v0
 
     .line 71
-    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Laqq;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Larp;
 
-    iget-object v2, v2, Laqq;->c:Laqr;
+    iget-object v2, v2, Larp;->c:Larq;
 
-    iget-object v2, v2, Laqr;->a:[Laqr$a;
+    iget-object v2, v2, Larq;->a:[Larq$a;
 
     array-length v2, v2
 
@@ -176,7 +176,7 @@
     if-eq v0, v2, :cond_1
 
     .line 74
-    invoke-static {}, Lafi;->a()Lafi;
+    invoke-static {}, Lagi;->a()Lagi;
 
     move-result-object v0
 
@@ -184,46 +184,46 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Lafi;->a(Landroid/support/v4/app/FragmentActivity;)V
+    invoke-virtual {v0, v2}, Lagi;->a(Landroid/support/v4/app/FragmentActivity;)V
 
     .line 75
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Laqq;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Larp;
 
-    invoke-static {}, Lafi;->a()Lafi;
+    invoke-static {}, Lagi;->a()Lagi;
 
     move-result-object v2
 
-    iget-object v2, v2, Lafi;->a:Laqr;
+    iget-object v2, v2, Lagi;->a:Larq;
 
-    iput-object v2, v0, Laqq;->c:Laqr;
+    iput-object v2, v0, Larp;->c:Larq;
 
     .line 76
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Laqq;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Larp;
 
-    invoke-static {}, Lafi;->a()Lafi;
+    invoke-static {}, Lagi;->a()Lagi;
 
     move-result-object v2
 
-    iget-object v2, v2, Lafi;->b:Lbpd;
+    iget-object v2, v2, Lagi;->b:Lbqe;
 
-    iput-object v2, v0, Laqq;->d:Lbpd;
+    iput-object v2, v0, Larp;->d:Lbqe;
 
     .line 77
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Laqq;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Larp;
 
-    iget-object v2, v0, Laqq;->c:Laqr;
+    iget-object v2, v0, Larp;->c:Larq;
 
     move v0, v1
 
     .line 78
     :goto_0
-    iget-object v3, v2, Laqr;->b:[Z
+    iget-object v3, v2, Larq;->b:[Z
 
     array-length v3, v3
 
     if-ge v0, v3, :cond_0
 
-    iget-object v3, v2, Laqr;->b:[Z
+    iget-object v3, v2, Larq;->b:[Z
 
     aput-boolean v1, v3, v0
 
@@ -233,7 +233,7 @@
 
     .line 79
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Laqq;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFromCameraRollFragment;->a:Larp;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView$a;->a:Landroid/support/v7/widget/RecyclerView$b;
 

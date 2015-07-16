@@ -1,26 +1,39 @@
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import com.snapchat.android.ui.SelfScalingImageView;
-import com.snapchat.android.ui.smartfilters.GeofilterView;
-import java.util.Date;
+import com.snapchat.android.model.Friend;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class apc
 {
-  final GeofilterView a;
-  public final View b;
-  public long c;
-  public int d;
-  public Animation e;
-  public Date f;
-  public boolean g = false;
+  protected int a = 0;
+  private final List<Friend> b = new ArrayList();
   
-  public apc(GeofilterView paramGeofilterView, View paramView)
+  public apc(List<Friend> paramList)
   {
-    a = paramGeofilterView;
-    b = paramView;
-    c = 2000L;
-    d = 300;
+    b.addAll(paramList);
+    a = Math.min(7, b.size());
+  }
+  
+  public final List<Friend> a()
+  {
+    int i = a;
+    return b.subList(0, i);
+  }
+  
+  @chd
+  public final List<Friend> b()
+  {
+    if (!c()) {
+      return null;
+    }
+    int i = a;
+    int j = Math.min(b.size(), i + 5);
+    a = j;
+    return b.subList(i, j);
+  }
+  
+  public final boolean c()
+  {
+    return a < b.size();
   }
 }
 

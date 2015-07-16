@@ -169,9 +169,9 @@
 
     const-wide/16 v2, 0x0
 
-    cmp-long v2, v0, v2
+    cmp-long v0, v0, v2
 
-    if-gtz v2, :cond_0
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -179,26 +179,9 @@
     return v0
 
     :cond_0
-    :try_start_0
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzfd;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v2, v0, v1}, Ljava/lang/Object;->wait(J)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_1
     const/4 v0, 0x1
 
     goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    const-string v0, "waitWithTimeout_lock interrupted"
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/zzhx;->zzac(Ljava/lang/String;)V
-
-    goto :goto_1
 .end method
 
 
@@ -220,10 +203,6 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/gms/internal/zzfd;->zzuW:Z
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzfd;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
     monitor-exit v1
 

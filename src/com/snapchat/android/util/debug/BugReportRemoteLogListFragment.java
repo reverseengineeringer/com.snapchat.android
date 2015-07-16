@@ -1,6 +1,6 @@
 package com.snapchat.android.util.debug;
 
-import ajv;
+import akp;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import azh;
-import cgc;
+import bag;
+import chd;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import java.util.ArrayList;
@@ -25,15 +25,15 @@ public class BugReportRemoteLogListFragment
 {
   private static String[] i()
   {
-    Object localObject1 = ajv.g();
+    Object localObject1 = akp.g();
     if (localObject1 == null) {
       return new String[0];
     }
-    localObject1 = ((ajv)localObject1).o();
+    localObject1 = ((akp)localObject1).o();
     Object localObject2 = new ArrayList();
     localObject1 = ((List)localObject1).iterator();
     while (((Iterator)localObject1).hasNext()) {
-      ((List)localObject2).add(((Friend)((Iterator)localObject1).next()).h());
+      ((List)localObject2).add(((Friend)((Iterator)localObject1).next()).l());
     }
     Collections.sort((List)localObject2);
     localObject1 = new ArrayList();
@@ -56,12 +56,12 @@ public class BugReportRemoteLogListFragment
     return (String[])localObject2;
   }
   
-  public View onCreateView(LayoutInflater paramLayoutInflater, @cgc ViewGroup paramViewGroup, @cgc Bundle paramBundle)
+  public View onCreateView(LayoutInflater paramLayoutInflater, @chd ViewGroup paramViewGroup, @chd Bundle paramBundle)
   {
-    paramLayoutInflater = paramLayoutInflater.inflate(2130968593, paramViewGroup, false);
+    paramLayoutInflater = paramLayoutInflater.inflate(2130968594, paramViewGroup, false);
     mFragmentLayout = paramLayoutInflater;
     paramViewGroup = (ListView)c(2131361937);
-    paramViewGroup.setAdapter(new azh(getActivity(), i()));
+    paramViewGroup.setAdapter(new bag(getActivity(), i()));
     paramViewGroup.setOnItemClickListener(new AdapterView.OnItemClickListener()
     {
       public final void onItemClick(AdapterView<?> paramAnonymousAdapterView, View paramAnonymousView, int paramAnonymousInt, long paramAnonymousLong)

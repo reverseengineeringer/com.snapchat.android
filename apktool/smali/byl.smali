@@ -2,133 +2,45 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbxg;
+
+# instance fields
+.field public a:Ljava/lang/String;
+
+.field public b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;I)V
+    .locals 2
 
     .prologue
-    .line 35
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    .line 46
+    if-ltz p2, :cond_0
 
+    const/4 v0, 0x1
 
-# virtual methods
-.method public final a(Lbwz;Ljava/lang/String;)Lbxk;
-    .locals 5
+    if-le p2, v0, :cond_1
 
-    .prologue
-    const/4 v4, 0x1
+    .line 49
+    :cond_0
+    new-instance v0, Lbyi;
 
-    .line 71
-    const-string v1, "Two string arguments are required."
+    const-string v1, "Invalid function result type."
 
-    .line 74
-    invoke-static {p2}, Lbxj;->b(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    .line 77
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    const/4 v3, 0x2
-
-    if-eq v0, v3, :cond_0
-
-    .line 78
-    new-instance v0, Lbxh;
-
-    invoke-direct {v0, v1}, Lbxh;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lbyi;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 82
-    :cond_0
-    const/4 v0, 0x0
+    .line 52
+    :cond_1
+    iput-object p1, p0, Lbyl;->a:Ljava/lang/String;
 
-    :try_start_0
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 53
+    iput p2, p0, Lbyl;->b:I
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    iget-char v3, p1, Lbwz;->a:C
-
-    invoke-static {v0, v3}, Lbxj;->a(Ljava/lang/String;C)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 84
-    const/4 v0, 0x1
-
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    iget-char v2, p1, Lbwz;->a:C
-
-    invoke-static {v0, v2}, Lbxj;->a(Ljava/lang/String;C)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 86
-    invoke-virtual {v3, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Lbxh; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result-object v0
-
-    .line 93
-    new-instance v1, Lbxk;
-
-    invoke-direct {v1, v0, v4}, Lbxk;-><init>(Ljava/lang/String;I)V
-
-    return-object v1
-
-    .line 87
-    :catch_0
-    move-exception v0
-
-    .line 88
-    new-instance v1, Lbxh;
-
-    invoke-virtual {v0}, Lbxh;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2, v0}, Lbxh;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v1
-
-    .line 89
-    :catch_1
-    move-exception v0
-
-    .line 90
-    new-instance v2, Lbxh;
-
-    invoke-direct {v2, v1, v0}, Lbxh;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v2
-.end method
-
-.method public final a()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 42
-    const-string v0, "concat"
-
-    return-object v0
+    .line 54
+    return-void
 .end method

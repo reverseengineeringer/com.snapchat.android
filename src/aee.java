@@ -1,107 +1,24 @@
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.AnimationDrawable;
-import android.view.View;
-import android.view.animation.AccelerateInterpolator;
-import android.widget.ImageView;
-import com.snapchat.android.Timber;
-import com.snapchat.android.discover.ui.DSnapView;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class aee
 {
-  public final View a;
-  final ImageView b;
-  final ImageView c;
-  final AnimationDrawable d;
-  final avp e;
-  public boolean f = false;
-  public Animator g;
-  ObjectAnimator h;
-  final avy i = new avy()
+  private static aee b = new aee();
+  public Map<String, bky> a = new ConcurrentHashMap();
+  
+  public static aee a()
   {
-    public final void a(avo paramAnonymousavo, avx paramAnonymousavx)
+    return b;
+  }
+  
+  public final void a(@chc String paramString, @chd bky parambky)
+  {
+    if (parambky == null)
     {
-      b.post(new Runnable()
-      {
-        public final void run()
-        {
-          h.start();
-        }
-      });
-    }
-  };
-  private final Context j;
-  
-  public aee(@cgb Context paramContext, @cgb DSnapView paramDSnapView)
-  {
-    this(paramContext, paramDSnapView, new avp(paramContext));
-  }
-  
-  private aee(@cgb Context paramContext, @cgb DSnapView paramDSnapView, avp paramavp)
-  {
-    e = paramavp;
-    j = paramContext;
-    a = paramDSnapView.findViewById(2131362300);
-    b = ((ImageView)paramDSnapView.findViewById(2131362302));
-    c = ((ImageView)paramDSnapView.findViewById(2131362301));
-    d = ((AnimationDrawable)paramContext.getResources().getDrawable(2130837766));
-    a();
-  }
-  
-  public final void a()
-  {
-    a.setAlpha(1.0F);
-    a.setVisibility(0);
-    h = ObjectAnimator.ofFloat(b, View.ALPHA, new float[] { 1.0F, 0.0F });
-    h.setDuration(800L);
-    h.setRepeatCount(-1);
-    h.setRepeatMode(2);
-  }
-  
-  public final void a(int paramInt)
-  {
-    if ((a.getVisibility() != 0) || (g != null)) {
+      a.remove(paramString);
       return;
     }
-    Timber.a("DSnapLoadingViewHolder", "LOADING-STATE: Hiding with duration " + paramInt, new Object[0]);
-    a(paramInt, 1.0F, true);
-  }
-  
-  public final void a(long paramLong, float paramFloat, final boolean paramBoolean)
-  {
-    g = ObjectAnimator.ofFloat(a, View.ALPHA, new float[] { paramFloat, 0.0F });
-    g.setDuration(paramLong);
-    g.setInterpolator(new AccelerateInterpolator(1.5F));
-    g.addListener(new avj()
-    {
-      private boolean c = false;
-      
-      public final void onAnimationCancel(Animator paramAnonymousAnimator)
-      {
-        c = true;
-      }
-      
-      public final void onAnimationEnd(Animator paramAnonymousAnimator)
-      {
-        if ((!paramBoolean) || (!c)) {
-          b();
-        }
-      }
-    });
-    g.start();
-  }
-  
-  public final void b()
-  {
-    a.setVisibility(8);
-    d.stop();
-    h.cancel();
-    b.clearAnimation();
-    f = false;
-    g = null;
-    e.a(b);
+    a.put(paramString, parambky);
   }
 }
 

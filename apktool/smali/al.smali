@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract a(Lex;Lau;)Las;
+.method public abstract a(Lfg;Lau;)Las;
 .end method

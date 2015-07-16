@@ -1,7 +1,7 @@
 package com.snapchat.android.fragments.settings;
 
-import agm;
-import akc;
+import ahj;
+import akx;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
@@ -16,24 +16,24 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import atw;
-import ben;
-import bgp;
-import boh;
+import auu;
+import bfm;
+import bhp;
+import bpi;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.model.chat.ChatConversation;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import java.util.Iterator;
 import java.util.List;
-import tc;
-import tc.a;
+import ts;
+import ts.a;
 
 public class ClearConversationsFragment
   extends SnapchatFragment
-  implements tc.a
+  implements ts.a
 {
-  private atw<ChatConversation> a;
+  private auu<ChatConversation> a;
   private BaseAdapter b;
   private TextView c;
   private ProgressBar d;
@@ -52,7 +52,7 @@ public class ClearConversationsFragment
   
   public final void a()
   {
-    akc localakc = akc.b();
+    akx localakx = akx.c();
     synchronized (mConversations)
     {
       Iterator localIterator = mConversations.iterator();
@@ -61,16 +61,16 @@ public class ClearConversationsFragment
         ChatConversation localChatConversation = (ChatConversation)localIterator.next();
         if (mBeingCleared)
         {
-          localChatConversation.s();
+          localChatConversation.t();
           localIterator.remove();
         }
       }
     }
     mIterToken = null;
-    ((akc)localObject).d();
-    ((akc)localObject).f();
+    ((akx)localObject).e();
+    ((akx)localObject).g();
     if (isAdded()) {
-      bgp.a(new Runnable()
+      bhp.a(new Runnable()
       {
         public final void run()
         {
@@ -86,9 +86,9 @@ public class ClearConversationsFragment
   
   public View onCreateView(LayoutInflater arg1, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = ???.inflate(2130968631, paramViewGroup, false);
-    a = bmConversationsForListView;
-    b = agm.a(getActivity(), a);
+    mFragmentLayout = ???.inflate(2130968632, paramViewGroup, false);
+    a = cmConversationsForListView;
+    b = ahj.a(getActivity(), a);
     ((ListView)c(2131362136)).setAdapter(b);
     c(2131362133).setOnClickListener(new View.OnClickListener()
     {
@@ -115,7 +115,7 @@ public class ClearConversationsFragment
             AnalyticsEvents.K();
             AnalyticsEvents.L();
             ClearConversationsFragment.c(ClearConversationsFragment.this);
-            new tc(ClearConversationsFragment.this).f();
+            new ts(ClearConversationsFragment.this).execute();
             ClearConversationsFragment.d(ClearConversationsFragment.this).notifyDataSetChanged();
           }
         }).setNegativeButton(getString(2131492952), null);
@@ -133,8 +133,8 @@ public class ClearConversationsFragment
     }
   }
   
-  @boh
-  public void onUpdateFeedEvent(ben arg1)
+  @bpi
+  public void onUpdateFeedEvent(bfm arg1)
   {
     for (;;)
     {
@@ -143,7 +143,7 @@ public class ClearConversationsFragment
         synchronized (a)
         {
           a.clear();
-          a.addAll(akc.b().e());
+          a.addAll(akx.c().f());
           b.notifyDataSetChanged();
           if (a.isEmpty())
           {
@@ -158,11 +158,11 @@ public class ClearConversationsFragment
     }
   }
   
-  public final void w_()
+  public final void v_()
   {
     a(false);
     if (isAdded()) {
-      bgp.a(new Runnable()
+      bhp.a(new Runnable()
       {
         public final void run()
         {

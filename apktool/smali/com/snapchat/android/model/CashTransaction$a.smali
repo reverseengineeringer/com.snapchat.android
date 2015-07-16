@@ -49,89 +49,89 @@
     .locals 2
 
     .prologue
-    .line 314
+    .line 323
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 315
+    .line 324
     iput-object p1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mSender:Ljava/lang/String;
 
-    .line 316
+    .line 325
     iput-object p2, p0, Lcom/snapchat/android/model/CashTransaction$a;->mRecipient:Ljava/lang/String;
 
-    .line 317
+    .line 326
     iput p3, p0, Lcom/snapchat/android/model/CashTransaction$a;->mAmount:I
 
-    .line 318
+    .line 327
     sget-object v0, Lcom/snapchat/android/util/CashUtils$CurrencyCode;->USD:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
     iput-object v0, p0, Lcom/snapchat/android/model/CashTransaction$a;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
-    .line 319
+    .line 328
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/snapchat/android/model/CashTransaction$a;->mCreatedAt:J
 
-    .line 320
+    .line 329
     iget-wide v0, p0, Lcom/snapchat/android/model/CashTransaction$a;->mCreatedAt:J
 
     iput-wide v0, p0, Lcom/snapchat/android/model/CashTransaction$a;->mUpdatedAt:J
 
-    .line 321
+    .line 330
     sget-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->INITIATED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     iput-object v0, p0, Lcom/snapchat/android/model/CashTransaction$a;->mStatus:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 322
+    .line 331
     return-void
 .end method
 
-.method public static a(Lbhc;)Lcom/snapchat/android/model/CashTransaction;
+.method public static a(Lbic;)Lcom/snapchat/android/model/CashTransaction;
     .locals 4
 
     .prologue
-    .line 406
+    .line 415
     new-instance v0, Lcom/snapchat/android/model/CashTransaction$a;
 
-    invoke-virtual {p0}, Lbhc;->c()Ljava/lang/String;
+    invoke-virtual {p0}, Lbic;->c()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lbhc;->e()Ljava/lang/String;
+    invoke-virtual {p0}, Lbic;->e()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {p0}, Lbhc;->f()Ljava/lang/Integer;
+    invoke-virtual {p0}, Lbic;->f()Ljava/lang/Integer;
 
     move-result-object v3
 
-    invoke-static {v3}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v3}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v3
 
     invoke-direct {v0, v1, v2, v3}, Lcom/snapchat/android/model/CashTransaction$a;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 410
-    invoke-virtual {p0}, Lbhc;->a()Ljava/lang/String;
+    .line 419
+    invoke-virtual {p0}, Lbic;->a()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/snapchat/android/model/CashTransaction$a;->mId:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lbhc;->b()Ljava/lang/String;
+    invoke-virtual {p0}, Lbic;->b()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/snapchat/android/model/CashTransaction$a;->mCashSenderId:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lbhc;->d()Ljava/lang/String;
+    invoke-virtual {p0}, Lbic;->d()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/snapchat/android/model/CashTransaction$a;->mCashRecipientId:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lbhc;->g()Ljava/lang/String;
+    invoke-virtual {p0}, Lbic;->g()Ljava/lang/String;
 
     move-result-object v1
 
@@ -141,33 +141,33 @@
 
     iput-object v1, v0, Lcom/snapchat/android/model/CashTransaction$a;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
-    invoke-virtual {p0}, Lbhc;->h()Ljava/lang/String;
+    invoke-virtual {p0}, Lbic;->h()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/snapchat/android/model/CashTransaction$a;->mMessage:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lbhc;->i()Ljava/lang/Long;
+    invoke-virtual {p0}, Lbic;->i()Ljava/lang/Long;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Long;)J
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Long;)J
 
     move-result-wide v2
 
     iput-wide v2, v0, Lcom/snapchat/android/model/CashTransaction$a;->mCreatedAt:J
 
-    invoke-virtual {p0}, Lbhc;->j()Ljava/lang/Long;
+    invoke-virtual {p0}, Lbic;->j()Ljava/lang/Long;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Long;)J
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Long;)J
 
     move-result-wide v2
 
     iput-wide v2, v0, Lcom/snapchat/android/model/CashTransaction$a;->mUpdatedAt:J
 
-    invoke-virtual {p0}, Lbhc;->s()Ljava/lang/String;
+    invoke-virtual {p0}, Lbic;->s()Ljava/lang/String;
 
     move-result-object v1
 
@@ -177,26 +177,26 @@
 
     iput-boolean v1, v0, Lcom/snapchat/android/model/CashTransaction$a;->mIsFromServer:Z
 
-    invoke-virtual {p0}, Lbhc;->r()Ljava/lang/Boolean;
+    invoke-virtual {p0}, Lbic;->r()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v1
 
     iput-boolean v1, v0, Lcom/snapchat/android/model/CashTransaction$a;->mFromRain:Z
 
-    .line 421
-    invoke-virtual {p0}, Lbhc;->k()Ljava/lang/Integer;
+    .line 430
+    invoke-virtual {p0}, Lbic;->k()Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v1
 
-    .line 422
+    .line 431
     if-ltz v1, :cond_0
 
     invoke-static {}, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->values()[Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
@@ -207,7 +207,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 423
+    .line 432
     invoke-static {}, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->values()[Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     move-result-object v2
@@ -216,79 +216,79 @@
 
     iput-object v1, v0, Lcom/snapchat/android/model/CashTransaction$a;->mStatus:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 425
+    .line 434
     :cond_0
     invoke-virtual {v0}, Lcom/snapchat/android/model/CashTransaction$a;->a()Lcom/snapchat/android/model/CashTransaction;
 
     move-result-object v0
 
-    .line 426
-    invoke-virtual {p0}, Lbhc;->l()Ljava/lang/Boolean;
+    .line 435
+    invoke-virtual {p0}, Lbic;->l()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->c(Lcom/snapchat/android/model/CashTransaction;Z)Z
 
-    .line 427
-    invoke-virtual {p0}, Lbhc;->m()Ljava/lang/Boolean;
+    .line 436
+    invoke-virtual {p0}, Lbic;->m()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->d(Lcom/snapchat/android/model/CashTransaction;Z)Z
 
-    .line 428
-    invoke-virtual {p0}, Lbhc;->n()Ljava/lang/Boolean;
+    .line 437
+    invoke-virtual {p0}, Lbic;->n()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->e(Lcom/snapchat/android/model/CashTransaction;Z)Z
 
-    .line 429
-    invoke-virtual {p0}, Lbhc;->o()Ljava/lang/Integer;
+    .line 438
+    invoke-virtual {p0}, Lbic;->o()Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->a(Lcom/snapchat/android/model/CashTransaction;I)I
 
-    .line 430
-    invoke-virtual {p0}, Lbhc;->p()Ljava/lang/Boolean;
+    .line 439
+    invoke-virtual {p0}, Lbic;->p()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->f(Lcom/snapchat/android/model/CashTransaction;Z)Z
 
-    .line 431
-    invoke-virtual {p0}, Lbhc;->q()Ljava/lang/Integer;
+    .line 440
+    invoke-virtual {p0}, Lbic;->q()Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->b(Lcom/snapchat/android/model/CashTransaction;I)I
 
-    .line 433
+    .line 442
     return-object v0
 .end method
 
@@ -298,7 +298,7 @@
     .locals 5
 
     .prologue
-    .line 380
+    .line 389
     new-instance v0, Lcom/snapchat/android/model/CashTransaction;
 
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mSender:Ljava/lang/String;
@@ -311,12 +311,12 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/model/CashTransaction;-><init>(Ljava/lang/String;Ljava/lang/String;IB)V
 
-    .line 386
+    .line 395
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mId:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 387
+    .line 396
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v1
@@ -327,70 +327,70 @@
 
     iput-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mId:Ljava/lang/String;
 
-    .line 388
+    .line 397
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/snapchat/android/model/CashTransaction;->mIsInFlight:Z
 
-    .line 390
+    .line 399
     :cond_0
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mId:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/snapchat/android/model/CashTransaction;->mTransactionId:Ljava/lang/String;
 
-    .line 391
+    .line 400
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mCashSenderId:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->a(Lcom/snapchat/android/model/CashTransaction;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 392
+    .line 401
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mCashRecipientId:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->b(Lcom/snapchat/android/model/CashTransaction;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 393
+    .line 402
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mMessage:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->c(Lcom/snapchat/android/model/CashTransaction;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 394
+    .line 403
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->a(Lcom/snapchat/android/model/CashTransaction;Lcom/snapchat/android/util/CashUtils$CurrencyCode;)Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
-    .line 395
+    .line 404
     iget-boolean v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mFromRain:Z
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->a(Lcom/snapchat/android/model/CashTransaction;Z)Z
 
-    .line 396
+    .line 405
     iget-wide v2, p0, Lcom/snapchat/android/model/CashTransaction$a;->mCreatedAt:J
 
     invoke-static {v0, v2, v3}, Lcom/snapchat/android/model/CashTransaction;->a(Lcom/snapchat/android/model/CashTransaction;J)J
 
-    .line 397
+    .line 406
     iget-wide v2, p0, Lcom/snapchat/android/model/CashTransaction$a;->mUpdatedAt:J
 
     invoke-static {v0, v2, v3}, Lcom/snapchat/android/model/CashTransaction;->b(Lcom/snapchat/android/model/CashTransaction;J)J
 
-    .line 398
+    .line 407
     invoke-static {v0}, Lcom/snapchat/android/model/CashTransaction;->c(Lcom/snapchat/android/model/CashTransaction;)Z
 
-    .line 399
+    .line 408
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mStatus:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->a(Lcom/snapchat/android/model/CashTransaction;Lcom/snapchat/android/model/CashTransaction$TransactionStatus;)Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 400
+    .line 409
     iget-object v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mProvider:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->d(Lcom/snapchat/android/model/CashTransaction;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 401
+    .line 410
     iget-boolean v1, p0, Lcom/snapchat/android/model/CashTransaction$a;->mIsFromServer:Z
 
     invoke-static {v0, v1}, Lcom/snapchat/android/model/CashTransaction;->b(Lcom/snapchat/android/model/CashTransaction;Z)Z
 
-    .line 402
+    .line 411
     return-object v0
 .end method

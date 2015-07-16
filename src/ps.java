@@ -1,40 +1,80 @@
-import com.google.gson.annotations.SerializedName;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.TextUtils;
+import java.util.ArrayList;
 
 public final class ps
-  extends th
-  implements ts.b<ps.a>
+  extends pk
 {
-  private static final String PATH = "/loq/device_id";
-  private static final String TAG = "GetDeviceTokenTask";
-  private final aya mDeviceTokenManager;
+  private static final String TASK_NAME = "SharedStorySearchTask";
+  private ps.b mCallback;
+  private String mQuery;
   
-  public ps()
+  public ps(@chc String paramString, @chc ps.b paramb)
   {
-    this(aya.a());
+    mQuery = paramString;
+    mCallback = paramb;
   }
   
-  private ps(aya paramaya)
+  protected final String a()
   {
-    mDeviceTokenManager = paramaya;
-    a(ps.a.class, this);
+    return "/loq/friend_search";
   }
   
-  protected final String d()
+  protected final Bundle b()
   {
-    return "/loq/device_id";
+    Bundle localBundle = new Bundle();
+    localBundle.putString("username", akr.l());
+    localBundle.putString("query", mQuery);
+    return localBundle;
   }
   
-  public static class a
+  protected final void b(alp paramalp)
   {
-    @SerializedName("dtoken1i")
-    String mTokenId;
-    @SerializedName("dtoken1v")
-    String mTokenValue;
-    
-    public String toString()
-    {
-      return "GetDeviceTokenTask ResponsePayload {dtoken1i=" + mTokenId + ", dtoken1v=" + mTokenValue + "}";
+    if (result != null) {
+      mCallback.a(result);
     }
+  }
+  
+  protected final String c()
+  {
+    return "SharedStorySearchTask";
+  }
+  
+  public static final class a
+    extends Handler
+  {
+    private static final long DELAY = 400L;
+    private static final int MESSAGE_WHAT_SEARCH = 0;
+    private static final String TAG = "StorySearchScheduler";
+    private final ps.b mSearchTaskCallback;
+    
+    public a(@chc ps.b paramb)
+    {
+      mSearchTaskCallback = paramb;
+    }
+    
+    public final void a(String paramString)
+    {
+      if (TextUtils.isEmpty(paramString)) {
+        return;
+      }
+      removeMessages(0);
+      sendMessageDelayed(obtainMessage(0, paramString), 400L);
+    }
+    
+    public final void handleMessage(Message paramMessage)
+    {
+      if ((what == 0) && ((obj instanceof String))) {
+        new ps((String)obj, mSearchTaskCallback).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
+      }
+    }
+  }
+  
+  public static abstract interface b
+  {
+    public abstract void a(ArrayList<agl> paramArrayList);
   }
 }
 

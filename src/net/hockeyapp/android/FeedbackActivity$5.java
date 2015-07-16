@@ -2,8 +2,8 @@ package net.hockeyapp.android;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import bwi;
-import bwi.a;
+import bxj;
+import bxj.a;
 
 final class FeedbackActivity$5
   implements Runnable
@@ -12,8 +12,8 @@ final class FeedbackActivity$5
   
   public final void run()
   {
-    bwi.a.a.a(a, null);
-    bwi.a(a.getSharedPreferences("net.hockeyapp.android.feedback", 0).edit().remove("idLastMessageSend").remove("idLastMessageProcessed"));
+    bxj.a.a.a(a, null);
+    bxj.a(a.getSharedPreferences("net.hockeyapp.android.feedback", 0).edit().remove("idLastMessageSend").remove("idLastMessageProcessed"));
     a.b(false);
   }
 }

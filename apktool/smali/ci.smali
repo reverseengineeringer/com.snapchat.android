@@ -7,114 +7,94 @@
 .annotation build Lcd;
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lci$a;
-    }
-.end annotation
+
+# static fields
+.field public static final a:Ljava/nio/charset/Charset;
+    .annotation build Lce;
+    .end annotation
+.end field
+
+.field public static final b:Ljava/nio/charset/Charset;
+    .annotation build Lce;
+    .end annotation
+.end field
+
+.field public static final c:Ljava/nio/charset/Charset;
+
+.field public static final d:Ljava/nio/charset/Charset;
+    .annotation build Lce;
+    .end annotation
+.end field
+
+.field public static final e:Ljava/nio/charset/Charset;
+    .annotation build Lce;
+    .end annotation
+.end field
+
+.field public static final f:Ljava/nio/charset/Charset;
+    .annotation build Lce;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public static a(Ljava/lang/Class;)Lci$a;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class",
-            "<*>;)",
-            "Lci$a;"
-        }
-    .end annotation
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 109
-    new-instance v0, Lci$a;
+    .line 49
+    const-string v0, "US-ASCII"
 
-    invoke-static {p0}, Lci;->b(Ljava/lang/Class;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lci$a;-><init>(Ljava/lang/String;B)V
-
-    return-object v0
-.end method
-
-.method public static a(Ljava/lang/Object;)Lci$a;
-    .locals 3
-
-    .prologue
-    .line 95
-    new-instance v0, Lci$a;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lci;->b(Ljava/lang/Class;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lci$a;-><init>(Ljava/lang/String;B)V
-
-    return-object v0
-.end method
-
-.method private static b(Ljava/lang/Class;)Ljava/lang/String;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class",
-            "<*>;)",
-            "Ljava/lang/String;"
-        }
-    .end annotation
-
-    .prologue
-    .line 130
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     move-result-object v0
 
-    .line 134
-    const-string v1, "\\$[0-9]+"
+    sput-object v0, Lci;->a:Ljava/nio/charset/Charset;
 
-    const-string v2, "\\$"
+    .line 59
+    const-string v0, "ISO-8859-1"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 137
-    const/16 v0, 0x24
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result v0
-
-    .line 141
-    const/4 v2, -0x1
-
-    if-ne v0, v2, :cond_0
-
-    .line 142
-    const/16 v0, 0x2e
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result v0
-
-    .line 144
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
     move-result-object v0
 
-    return-object v0
+    sput-object v0, Lci;->b:Ljava/nio/charset/Charset;
+
+    .line 68
+    const-string v0, "UTF-8"
+
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v0
+
+    sput-object v0, Lci;->c:Ljava/nio/charset/Charset;
+
+    .line 78
+    const-string v0, "UTF-16BE"
+
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v0
+
+    sput-object v0, Lci;->d:Ljava/nio/charset/Charset;
+
+    .line 88
+    const-string v0, "UTF-16LE"
+
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v0
+
+    sput-object v0, Lci;->e:Ljava/nio/charset/Charset;
+
+    .line 99
+    const-string v0, "UTF-16"
+
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v0
+
+    sput-object v0, Lci;->f:Ljava/nio/charset/Charset;
+
+    return-void
 .end method

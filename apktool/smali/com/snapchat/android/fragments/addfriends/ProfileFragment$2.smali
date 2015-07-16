@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 750
+    .line 803
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,21 +37,10 @@
 
 # virtual methods
 .method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 3
+    .locals 0
 
     .prologue
-    .line 791
-    const-string v0, "ProfileFragment"
-
-    const-string v1, "profile images - animating to profile picture view has been canceled"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 792
+    .line 844
     return-void
 .end method
 
@@ -61,68 +50,68 @@
     .prologue
     const v4, 0x3f266666    # 0.65f
 
-    const/4 v1, 0x4
+    const/4 v3, 0x4
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    .line 759
+    .line 812
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->d(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->c(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setBackgroundViewVisibility(I)V
+    invoke-virtual {v0, v3}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setBackgroundViewVisibility(I)V
 
-    .line 760
+    .line 813
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/ui/ProfileCameraMaskView;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->d(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/ui/ProfileCameraMaskView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, Lcom/snapchat/android/ui/ProfileCameraMaskView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/ProfileCameraMaskView;->setVisibility(I)V
 
-    .line 762
+    .line 815
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/ProfilePictureView;->getSnapcodeSvgImageView()Landroid/widget/ImageView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 763
+    .line 816
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
-    invoke-virtual {v0, v3}, Lcom/snapchat/android/ui/ProfilePictureView;->setProfilePicturesControlButtonsVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/ProfilePictureView;->setProfilePicturesControlButtonsVisibility(I)V
 
-    .line 764
+    .line 817
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->f(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Landroid/widget/ImageView;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 765
+    .line 818
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
     iput-boolean v2, v0, Lcom/snapchat/android/ui/ProfilePictureView;->g:Z
 
-    .line 769
+    .line 822
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->m:Landroid/widget/ImageView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->j:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -130,25 +119,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 770
+    .line 823
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/ProfilePictureView;->a(Z)V
 
-    .line 771
+    .line 824
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->m:Landroid/widget/ImageView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->j:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 777
+    .line 830
     :goto_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->g(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/fragments/addfriends/ProfileFragment$c;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->f(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/fragments/addfriends/ProfileFragment$c;
 
     move-result-object v0
 
@@ -156,7 +145,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->g(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/fragments/addfriends/ProfileFragment$c;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->f(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/fragments/addfriends/ProfileFragment$c;
 
     move-result-object v1
 
@@ -164,65 +153,56 @@
 
     sub-float/2addr v0, v1
 
-    .line 780
+    .line 833
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lwr;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->g(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lxn;
 
     move-result-object v1
 
-    invoke-interface {v1, v4, v4, v0}, Lwr;->a(FFF)V
+    invoke-interface {v1, v4, v4, v0}, Lxn;->a(FFF)V
 
-    .line 783
+    .line 836
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->d(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->c(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setInProfilePictureView(Z)V
 
-    .line 785
+    .line 838
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->i(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/squareup/otto/Bus;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbel;
+    new-instance v1, Lbfk;
 
     sget-object v2, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    invoke-direct {v1, v2}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
+    invoke-direct {v1, v2}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 786
-    const-string v0, "ProfileFragment"
-
-    const-string v1, "profile images - animated into profile picture view"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 787
+    .line 839
     return-void
 
-    .line 773
+    .line 826
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
-    invoke-virtual {v0, v3}, Lcom/snapchat/android/ui/ProfilePictureView;->a(Z)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/ProfilePictureView;->a(Z)V
 
-    .line 774
+    .line 827
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->m:Landroid/widget/ImageView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->j:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 .end method
@@ -231,7 +211,7 @@
     .locals 0
 
     .prologue
-    .line 795
+    .line 848
     return-void
 .end method
 
@@ -241,22 +221,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 753
+    .line 806
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/ProfilePictureView;->setVisibility(I)V
 
-    .line 754
+    .line 807
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->d(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->c(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setScrollable(Z)V
 
-    .line 755
+    .line 808
     return-void
 .end method

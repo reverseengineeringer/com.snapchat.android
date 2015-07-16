@@ -1,155 +1,64 @@
-import android.os.SystemClock;
-import com.snapchat.android.Timber;
-import com.snapchat.android.controller.stories.StoryLoadingContext;
-import com.snapchat.android.model.StoryCollection;
-import com.snapchat.android.networkmanager.DownloadPriority;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import android.content.Context;
+import android.content.res.Resources;
+import android.text.TextUtils;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.squareup.otto.Bus;
 
-public class zh
+public final class zh
 {
-  public final List<ajr> a;
-  public final StoryCollection b;
-  public final StoryLoadingContext c;
-  public final boolean d;
-  final Set<ajr> e = new HashSet();
-  long f;
-  zh.b g;
-  int h;
-  private final bgk i;
+  private final Context a;
+  private final zm b;
   
-  private zh(zh.a parama)
+  public zh(Context paramContext)
   {
-    this(parama, new bgk());
+    this(paramContext, zm.a());
   }
   
-  private zh(zh.a parama, bgk parambgk)
+  @cf
+  private zh(Context paramContext, zm paramzm)
   {
-    i = parambgk;
-    b = c;
-    c = b;
-    d = d;
-    a = dk.a(a);
+    a = paramContext;
+    b = paramzm;
   }
   
-  public final int a(@cgb zh.b paramb)
+  public final void a(@chc ChatConversation paramChatConversation, @chc alj paramalj, @chd String paramString)
   {
-    g = ((zh.b)ck.a(paramb));
-    f = SystemClock.elapsedRealtime();
-    paramb = a.iterator();
-    while (paramb.hasNext())
+    if (!paramalj.e()) {
+      throw new IllegalStateException("The provided chatFeedItem cannot be saved/unsaved. Please check canSaveOrUnsave before calling this method.");
+    }
+    int i = a.getResources().getColor(2131230727);
+    int j = a.getResources().getColor(2131230813);
+    String str2;
+    int k;
+    String str1;
+    if (paramalj.g())
     {
-      ajr localajr1 = (ajr)paramb.next();
-      zi local1 = new zi(localajr1)
+      str2 = a.getResources().getString(2131493009);
+      k = paramalj.n();
+      str1 = str2;
+      if ((paramalj instanceof akw))
       {
-        protected final void a(ajr paramAnonymousajr)
-        {
-          zh localzh = zh.this;
-          bgp.a();
-          e.remove(paramAnonymousajr);
-          if (e.size() == 0)
-          {
-            long l = SystemClock.elapsedRealtime() - f;
-            Timber.c("StorySnapLoadBatch", "Batch load complete for %s, took %dms", new Object[] { localzh, Long.valueOf(l) });
-            g.a(localzh, h, l);
-            return;
-          }
-          Timber.c("StorySnapLoadBatch", "Batch load not complete for %s, waiting for %d more StorySnaps", new Object[] { localzh, Integer.valueOf(e.size()) });
-        }
-      };
-      if ((b.R()) || (b.L()) || (b.M())) {
-        Timber.e("StorySnapLoadTask", "Skipped attempt to load %s", new Object[] { b.aa() });
-      }
-      for (int j = 0;; j = 1)
-      {
-        if (j == 0) {
-          break label183;
-        }
-        e.add(localajr1);
-        break;
-        if (b.i() != null) {
-          break label185;
-        }
-        Timber.e("StorySnapLoadTask", "Skipped attempt to load %s", new Object[] { b.aa() });
-        j = 0;
-        label168:
-        if (j == 0) {
-          break label261;
-        }
-        b.m();
-      }
-      label183:
-      continue;
-      label185:
-      als localals;
-      ajr localajr2;
-      String str;
-      zi.a locala;
-      als.a locala1;
-      if (b.ai())
-      {
-        localals = c;
-        localajr2 = b;
-        str = b.ar();
-        locala = local1.a();
-        locala1 = d;
-        localals.a(localajr2, str, locala, awq.STORY_RECEIVED_VIDEO_CACHE, "STORIES", DownloadPriority.MEDIUM_HIGH, DownloadPriority.BACKGROUND_HIGH, locala1);
-      }
-      for (;;)
-      {
-        j = 1;
-        break label168;
-        label261:
-        break;
-        localals = c;
-        localajr2 = b;
-        str = b.ar();
-        locala = local1.a();
-        locala1 = d;
-        localals.a(localajr2, str, locala, awq.STORY_RECEIVED_IMAGE_CACHE, "STORIES", DownloadPriority.MEDIUM_HIGH, DownloadPriority.BACKGROUND_HIGH, locala1);
+        b.a(paramChatConversation, (akw)paramalj, k, false);
+        str1 = str2;
       }
     }
-    Timber.c("StorySnapLoadBatch", "Batch %s loading %s", new Object[] { this, e });
-    h = e.size();
-    return h;
-  }
-  
-  public String toString()
-  {
-    return ci.a(zh.class).a("collection", b).a("count", a.size()).a("context", c).a("toast", d).toString();
-  }
-  
-  public static final class a
-  {
-    final List<ajr> a = new ArrayList();
-    final StoryLoadingContext b;
-    public StoryCollection c;
-    public boolean d;
-    
-    public a(@cgb StoryLoadingContext paramStoryLoadingContext)
+    for (;;)
     {
-      b = ((StoryLoadingContext)ck.a(paramStoryLoadingContext));
+      if (!TextUtils.isEmpty(paramString))
+      {
+        paramChatConversation = new bcg(str1, i, j, paramString);
+        bbo.a().a(paramChatConversation);
+      }
+      return;
+      str2 = a.getResources().getString(2131493004);
+      k = paramalj.m();
+      str1 = str2;
+      if ((paramalj instanceof akw))
+      {
+        b.a(paramChatConversation, (akw)paramalj, k, true);
+        str1 = str2;
+      }
     }
-    
-    public final a a(@cgb ajr paramajr)
-    {
-      a.add(ck.a(paramajr));
-      return this;
-    }
-    
-    public final zh a()
-    {
-      return new zh(this, (byte)0);
-    }
-  }
-  
-  public static abstract interface b
-  {
-    @ccm
-    public abstract void a(@cgb zh paramzh, int paramInt, long paramLong);
   }
 }
 

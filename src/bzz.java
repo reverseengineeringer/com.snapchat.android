@@ -1,39 +1,26 @@
-public abstract class bzz
-  implements cai
+public final class bzz
+  implements byh
 {
-  private final cai a;
-  
-  public bzz(cai paramcai)
+  public final byl a(bya parambya, String paramString)
   {
-    if (paramcai == null) {
-      throw new IllegalArgumentException("delegate == null");
+    try
+    {
+      parambya = byk.a(paramString, a).toUpperCase();
+      return new byl(parambya, 1);
     }
-    a = paramcai;
+    catch (byi parambya)
+    {
+      throw new byi(parambya.getMessage(), parambya);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("One string argument is required.", parambya);
+    }
   }
   
-  public final cak E_()
+  public final String a()
   {
-    return a.E_();
-  }
-  
-  public void a_(bzu parambzu, long paramLong)
-  {
-    a.a_(parambzu, paramLong);
-  }
-  
-  public void close()
-  {
-    a.close();
-  }
-  
-  public void flush()
-  {
-    a.flush();
-  }
-  
-  public String toString()
-  {
-    return getClass().getSimpleName() + "(" + a.toString() + ")";
+    return "toUpperCase";
   }
 }
 

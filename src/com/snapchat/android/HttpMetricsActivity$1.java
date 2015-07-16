@@ -1,6 +1,6 @@
 package com.snapchat.android;
 
-import aaq;
+import abp;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -11,7 +11,7 @@ final class HttpMetricsActivity$1
   
   public final void onClick(View paramView)
   {
-    aaq.a(a);
+    abp.a(a);
   }
 }
 

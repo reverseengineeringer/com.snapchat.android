@@ -259,7 +259,6 @@ om naar een vriend te sturen."</string>
     <string name="discover_sharing_success">Snap verstuurd!</string>
     <string name="discover_sharing_unavailable">%1$s staat het versturen van deze Snap niet toe.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Tik hier om Discover te bekijken!</string>
     <string name="discover_unavailable">"Sorry!
 
 Discover is momenteel niet beschikbaar."</string>
@@ -310,6 +309,7 @@ beschikbaar in jouw regio."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Wachtwoord vergeten?</a>" "</string>
     <string name="friend_suggest_hide">Verbergen</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Nieuwe contactpersoon</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Recentelijk aangemeld</string>
     <string name="friends">Vrienden</string>
     <string name="friends_context_block">Blokkeren</string>
@@ -615,7 +615,7 @@ zodat wij weten dat het echt is!"</string>
     <string name="snap_delete_failure">Snap is niet verwijderd.</string>
     <string name="snap_failed_to_post">1 Snap is niet geplaatst.</string>
     <string name="snap_list_empty_list_msg">Je hebt geen Snaps :(</string>
-    <string name="snap_tag_help_description">Snapchatters kunnen jou toevoegen door hun camera op jouw spookje te richten en op hun scherm te tikken!</string>
+    <string name="snap_tag_help_description">Snapchatters kunnen jou toevoegen door hun camera op jouw Snapcode te richten en op hun scherm te tikken!</string>
     <string name="snap_tag_no_connection">Geen verbinding!</string>
     <string name="snap_to_add">Maak een snap of screenshot om toe te voegen</string>
     <string name="snapkidz_welcome">Welkom bij Snapkidz!</string>
@@ -651,8 +651,6 @@ zodat wij weten dat het echt is!"</string>
     <string name="tap_to_view_edition">Tik om te bekijken in Discover</string>
     <string name="tap_to_view_full_story">Tik om het volledige verhaal te bekijken</string>
     <string name="tap_to_view_more">Tik om andere kanalen te ontdekken</string>
-    <string name="tap_to_view_snaps">Tik om Snaps te bekijken!</string>
-    <string name="tap_to_view_stories">Tik om Verhalen te bekijken!</string>
     <string name="tap_to_view_video_in_discover">Tik om deze video in Discover te bekijken</string>
     <string name="too_many_attempts">Te veel pogingen.</string>
     <string name="tos_accept">AKKOORD</string>

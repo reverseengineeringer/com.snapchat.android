@@ -1,19 +1,13 @@
-import android.content.Context;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-public final class bvj
-{
-  public static boolean a(Context paramContext)
-  {
-    if (buz.b == null)
-    {
-      buz.a(paramContext);
-      if (buz.b == null) {
-        return false;
-      }
-    }
-    return true;
-  }
-}
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({java.lang.annotation.ElementType.ANNOTATION_TYPE})
+public @interface bvj {}
 
 /* Location:
  * Qualified Name:     bvj

@@ -1,20 +1,37 @@
+import android.os.Handler;
+
 public final class xd
+  implements xc
 {
-  private final xe a;
+  final xc a;
+  private final Handler b;
   
-  public xd()
+  public xd(Handler paramHandler, xc paramxc)
   {
-    this(new xe());
+    b = paramHandler;
+    a = paramxc;
   }
   
-  private xd(xe paramxe)
+  public final void a(final wy.b paramb, final int paramInt)
   {
-    a = paramxe;
+    b.post(new Runnable()
+    {
+      public final void run()
+      {
+        a.a(paramb, paramInt);
+      }
+    });
   }
   
-  public final float a(int paramInt1, int paramInt2)
+  public final void b(final int paramInt)
   {
-    return a.a(paramInt1, paramInt2) * 1.0F;
+    b.post(new Runnable()
+    {
+      public final void run()
+      {
+        a.b(paramInt);
+      }
+    });
   }
 }
 

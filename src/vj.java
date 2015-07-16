@@ -1,68 +1,97 @@
-import com.snapchat.android.camera.BaseCameraFragment;
-import com.snapchat.android.camera.CameraFragment;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.preference.PreferenceManager;
+import com.snapchat.android.database.SharedPreferenceKey;
+import java.util.List;
 import javax.inject.Provider;
 
 public final class vj
-  implements buj<CameraFragment>
+  extends vm<bid>
+  implements vh.a
 {
-  private final buj<BaseCameraFragment> b;
-  private final Provider<vw> c;
-  private final Provider<vz> d;
-  private final Provider<wl> e;
-  private final Provider<wj> f;
-  private final Provider<wk> g;
-  private final Provider<wn> h;
-  private final Provider<azo> i;
+  private final SharedPreferences c;
+  private final Provider<akp> d = akp.UNSAFE_USER_PROVIDER;
+  private akp e;
+  private boolean f = false;
   
-  static
+  public vj(Context paramContext, vl<bid> paramvl, vm.a parama)
   {
-    if (!vj.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    super(paramvl, parama);
+    c = PreferenceManager.getDefaultSharedPreferences(paramContext);
+  }
+  
+  private void a(String paramString)
+  {
+    SharedPreferences.Editor localEditor = c.edit();
+    if (paramString != null) {
+      localEditor.putString(SharedPreferenceKey.CONVERSATIONS_ITER_TOKEN.getKey(), paramString);
+    }
+    for (;;)
     {
-      a = bool;
+      localEditor.apply();
+      return;
+      localEditor.remove(SharedPreferenceKey.CONVERSATIONS_ITER_TOKEN.getKey());
+    }
+  }
+  
+  public final void a()
+  {
+    akp localakp = (akp)d.get();
+    if (e == localakp)
+    {
+      f = false;
+      b.d_();
+    }
+  }
+  
+  public final void a(List<bid> paramList)
+  {
+    akp localakp = (akp)d.get();
+    if (e == localakp)
+    {
+      f = false;
+      if (paramList != null)
+      {
+        if (!paramList.isEmpty()) {
+          break label62;
+        }
+        a(null);
+        b.d();
+      }
+    }
+    for (;;)
+    {
+      e.a(null);
+      return;
+      label62:
+      a(((bid)paramList.get(paramList.size() - 1)).m());
+      a.a(paramList);
+      b.c_();
+    }
+  }
+  
+  public final void b()
+  {
+    if (f) {
       return;
     }
+    f = true;
+    b.b_();
+    e = ((akp)d.get());
+    String str = c.getString(SharedPreferenceKey.CONVERSATIONS_ITER_TOKEN.getKey(), null);
+    if (str == null)
+    {
+      f = false;
+      b.d();
+      return;
+    }
+    new vh(str, this).execute();
   }
   
-  private vj(buj<BaseCameraFragment> parambuj, Provider<vw> paramProvider, Provider<vz> paramProvider1, Provider<wl> paramProvider2, Provider<wj> paramProvider3, Provider<wk> paramProvider4, Provider<wn> paramProvider5, Provider<azo> paramProvider6)
+  public final boolean c()
   {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-    if ((!a) && (paramProvider1 == null)) {
-      throw new AssertionError();
-    }
-    d = paramProvider1;
-    if ((!a) && (paramProvider2 == null)) {
-      throw new AssertionError();
-    }
-    e = paramProvider2;
-    if ((!a) && (paramProvider3 == null)) {
-      throw new AssertionError();
-    }
-    f = paramProvider3;
-    if ((!a) && (paramProvider4 == null)) {
-      throw new AssertionError();
-    }
-    g = paramProvider4;
-    if ((!a) && (paramProvider5 == null)) {
-      throw new AssertionError();
-    }
-    h = paramProvider5;
-    if ((!a) && (paramProvider6 == null)) {
-      throw new AssertionError();
-    }
-    i = paramProvider6;
-  }
-  
-  public static buj<CameraFragment> a(buj<BaseCameraFragment> parambuj, Provider<vw> paramProvider, Provider<vz> paramProvider1, Provider<wl> paramProvider2, Provider<wj> paramProvider3, Provider<wk> paramProvider4, Provider<wn> paramProvider5, Provider<azo> paramProvider6)
-  {
-    return new vj(parambuj, paramProvider, paramProvider1, paramProvider2, paramProvider3, paramProvider4, paramProvider5, paramProvider6);
+    return f;
   }
 }
 

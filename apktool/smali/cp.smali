@@ -1,56 +1,31 @@
-.class public abstract Lcp;
+.class public interface abstract Lcp;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # annotations
-.annotation build Lcc;
-.end annotation
-
 .annotation build Lcd;
 .end annotation
 
-
-# static fields
-.field private static final a:Lcp;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 57
-    new-instance v0, Lcp$1;
-
-    invoke-direct {v0}, Lcp$1;-><init>()V
-
-    sput-object v0, Lcp;->a:Lcp;
-
-    return-void
-.end method
-
-.method protected constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static b()Lcp;
-    .locals 1
-
-    .prologue
-    .line 54
-    sget-object v0, Lcp;->a:Lcp;
-
-    return-object v0
-.end method
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
 
 # virtual methods
-.method public abstract a()J
+.method public abstract a(Ljava/lang/Object;)Z
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)Z"
+        }
+    .end annotation
 .end method

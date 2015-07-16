@@ -20,17 +20,29 @@
     .locals 3
 
     .prologue
+    invoke-virtual {p0}, Lnet/hockeyapp/android/ExpiryInfoActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lnet/hockeyapp/android/ExpiryInfoActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 52
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 54
-    invoke-static {}, Lbvm;->b()Lbvn;
+    invoke-static {}, Lbwn;->b()Lbwo;
 
     move-result-object v0
 
     const/16 v1, 0x300
 
-    invoke-static {v0, v1}, Lbvi;->a(Lbvh;I)Ljava/lang/String;
+    invoke-static {v0, v1}, Lbwj;->a(Lbwi;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -39,13 +51,13 @@
     .line 55
     new-instance v0, Lnet/hockeyapp/android/views/ExpiryInfoView;
 
-    invoke-static {}, Lbvm;->b()Lbvn;
+    invoke-static {}, Lbwn;->b()Lbwo;
 
     move-result-object v1
 
     const/16 v2, 0x301
 
-    invoke-static {v1, v2}, Lbvi;->a(Lbvh;I)Ljava/lang/String;
+    invoke-static {v1, v2}, Lbwj;->a(Lbwi;I)Ljava/lang/String;
 
     move-result-object v1
 

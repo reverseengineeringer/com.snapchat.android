@@ -1,9 +1,10 @@
-import com.snapchat.android.database.table.SnapbryoTable;
-import java.util.ArrayList;
+import com.snapchat.android.database.table.FriendTable;
+import com.snapchat.android.model.Friend;
 import java.util.Collection;
+import java.util.List;
 
 public final class aba
-  extends SnapbryoTable
+  extends FriendTable
 {
   private static aba a;
   
@@ -20,21 +21,25 @@ public final class aba
     finally {}
   }
   
-  protected final Collection<aim> a(ajv paramajv)
+  protected final Collection<Friend> a(akp paramakp)
   {
-    paramajv = ajn.a();
-    return new ArrayList(paramajv.a(mSendingSnapbryos));
+    return paramakp.m();
   }
   
-  public final void b(ajv paramajv)
+  public final void b(akp paramakp)
   {
-    paramajv = ajn.a();
-    mSendingSnapbryos = paramajv.c(a(null, null));
+    List localList2 = a(null, g());
+    synchronized (mContactsNotOnSnapchat)
+    {
+      mContactsNotOnSnapchat.clear();
+      mContactsNotOnSnapchat.addAll(localList2);
+      return;
+    }
   }
   
   public final String c()
   {
-    return "SendingSnapbryoTable";
+    return "ContactsNotOnSnapchatTable";
   }
 }
 

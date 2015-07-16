@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lazp;",
+        "Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform;",
         ">;"
     }
 .end annotation
@@ -23,27 +23,7 @@
 
 
 # instance fields
-.field private final crashSamplerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazi;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final releaseManagerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final module:Lazj;
 
 
 # direct methods
@@ -73,27 +53,14 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method private constructor <init>(Lazj;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazi;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 12
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
+    .line 12
     sget-boolean v0, Lazq;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -106,56 +73,33 @@
 
     throw v0
 
-    .line 14
+    .line 13
     :cond_0
-    iput-object p1, p0, Lazq;->crashSamplerProvider:Ljavax/inject/Provider;
+    iput-object p1, p0, Lazq;->module:Lazj;
 
-    .line 15
-    sget-boolean v0, Lazq;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 16
-    :cond_1
-    iput-object p2, p0, Lazq;->releaseManagerProvider:Ljavax/inject/Provider;
-
-    .line 17
+    .line 14
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuo;
+.method public static a(Lazj;)Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljavax/inject/Provider",
+            "Lazj;",
+            ")",
+            "Lbvp",
             "<",
-            "Lazi;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/util/debug/ReleaseManager;",
-            ">;)",
-            "Lbuo",
-            "<",
-            "Lazp;",
+            "Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 25
+    .line 26
     new-instance v0, Lazq;
 
-    invoke-direct {v0, p0, p1}, Lazq;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v0, p0}, Lazq;-><init>(Lazj;)V
 
     return-object v0
 .end method
@@ -163,29 +107,13 @@
 
 # virtual methods
 .method public final synthetic get()Ljava/lang/Object;
-    .locals 3
+    .locals 1
 
     .prologue
     .line 7
-    new-instance v2, Lazp;
+    new-instance v0, Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform;
 
-    iget-object v0, p0, Lazq;->crashSamplerProvider:Ljavax/inject/Provider;
+    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform;-><init>()V
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lazi;
-
-    iget-object v1, p0, Lazq;->releaseManagerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/snapchat/android/util/debug/ReleaseManager;
-
-    invoke-direct {v2, v0, v1}, Lazp;-><init>(Lazi;Lcom/snapchat/android/util/debug/ReleaseManager;)V
-
-    return-object v2
+    return-object v0
 .end method

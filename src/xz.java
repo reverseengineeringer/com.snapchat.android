@@ -1,36 +1,20 @@
-import javax.inject.Provider;
-
 public final class xz
-  implements buj<xx>
 {
-  private final Provider<qh> b;
-  private final Provider<qd> c;
+  private final ya a;
   
-  static
+  public xz()
   {
-    if (!xz.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
+    this(new ya());
   }
   
-  private xz(Provider<qh> paramProvider, Provider<qd> paramProvider1)
+  private xz(ya paramya)
   {
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    b = paramProvider;
-    if ((!a) && (paramProvider1 == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider1;
+    a = paramya;
   }
   
-  public static buj<xx> a(Provider<qh> paramProvider, Provider<qd> paramProvider1)
+  public final float a(int paramInt1, int paramInt2)
   {
-    return new xz(paramProvider, paramProvider1);
+    return a.a(paramInt1, paramInt2) * 1.0F;
   }
 }
 

@@ -3,503 +3,242 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lwc$b;
-.implements Lwc;
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lcom/snapchat/android/camera/BaseCameraFragment;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic a:Z
 
 
 # instance fields
-.field final a:Lws;
-
-.field b:Landroid/hardware/Camera;
-    .annotation build Lcgc;
+.field private final b:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;"
+        }
     .end annotation
 .end field
 
-.field c:Landroid/hardware/Camera$Parameters;
+.field private final c:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field d:Z
-
-.field private final e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
+.field private final d:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxm;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 47
+    .line 10
+    const-class v0, Lwe;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lwe;->a:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxm;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
-    new-instance v0, Landroid/os/HandlerThread;
+    .line 17
+    sget-boolean v0, Lwe;->a:Z
 
-    const-string v1, "Camera Handler Thread"
+    if-nez v0, :cond_0
 
-    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+    if-nez p1, :cond_0
 
-    .line 49
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    new-instance v0, Ljava/lang/AssertionError;
 
-    .line 50
-    new-instance v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    throw v0
 
-    move-result-object v0
+    .line 18
+    :cond_0
+    iput-object p1, p0, Lwe;->b:Lbvk;
 
-    invoke-direct {v1, v0}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;-><init>(Landroid/os/Looper;)V
+    .line 19
+    sget-boolean v0, Lwe;->a:Z
 
-    iput-object v1, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
+    if-nez v0, :cond_1
 
-    .line 51
-    invoke-static {}, Lws;->a()Lws;
+    if-nez p2, :cond_1
 
-    move-result-object v0
+    new-instance v0, Ljava/lang/AssertionError;
 
-    iput-object v0, p0, Lwe;->a:Lws;
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    .line 52
+    throw v0
+
+    .line 20
+    :cond_1
+    iput-object p2, p0, Lwe;->c:Ljavax/inject/Provider;
+
+    .line 21
+    sget-boolean v0, Lwe;->a:Z
+
+    if-nez v0, :cond_2
+
+    if-nez p3, :cond_2
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 22
+    :cond_2
+    iput-object p3, p0, Lwe;->d:Ljavax/inject/Provider;
+
+    .line 23
     return-void
+.end method
+
+.method public static a(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxm;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/camera/BaseCameraFragment;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 36
+    new-instance v0, Lwe;
+
+    invoke-direct {v0, p0, p1, p2}, Lwe;-><init>(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
     .prologue
-    .line 82
-    const/4 v0, 0x1
+    .line 10
+    check-cast p1, Lcom/snapchat/android/camera/BaseCameraFragment;
 
-    invoke-virtual {p0, v0}, Lwe;->a(Z)V
+    if-nez p1, :cond_0
 
-    .line 83
-    return-void
-.end method
+    new-instance v0, Ljava/lang/NullPointerException;
 
-.method public final a(I)V
-    .locals 3
+    const-string v1, "Cannot inject members into a null reference"
 
-    .prologue
-    .line 237
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->SET_ORIENTATION:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
+    throw v0
 
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$5;
-
-    invoke-direct {v2, p0, p1}, Lwe$5;-><init>(Lwe;I)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 244
-    return-void
-.end method
-
-.method public final a(ILwh;)V
-    .locals 3
-
-    .prologue
-    .line 56
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->OPEN:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$1;
-
-    invoke-direct {v2, p0, p1, p2}, Lwe$1;-><init>(Lwe;ILwh;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 63
-    return-void
-.end method
-
-.method public final a(Landroid/graphics/SurfaceTexture;)V
-    .locals 3
-
-    .prologue
-    .line 222
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->SET_TEXTURE:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$4;
-
-    invoke-direct {v2, p0, p1}, Lwe$4;-><init>(Lwe;Landroid/graphics/SurfaceTexture;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 233
-    return-void
-.end method
-
-.method public final a(Landroid/hardware/Camera$Parameters;)V
-    .locals 3
-
-    .prologue
-    .line 107
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->SET_PARAMETERS:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$8;
-
-    invoke-direct {v2, p0, p1}, Lwe$8;-><init>(Lwe;Landroid/hardware/Camera$Parameters;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 116
-    return-void
-.end method
-
-.method public final a(Lwf;)V
-    .locals 3
-
-    .prologue
-    .line 177
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->AUTOFOCUS:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$13;
-
-    invoke-direct {v2, p0, p1}, Lwe$13;-><init>(Lwe;Lwf;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 184
-    return-void
-.end method
-
-.method public final a(Lwi;)V
-    .locals 3
-
-    .prologue
-    .line 211
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->SET_CALLBACK_WITH_BUFFER:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$3;
-
-    invoke-direct {v2, p0, p1}, Lwe$3;-><init>(Lwe;Lwi;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 218
-    return-void
-.end method
-
-.method public final a(Z)V
-    .locals 3
-
-    .prologue
-    .line 93
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->RELEASE:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$7;
-
-    invoke-direct {v2, p0}, Lwe$7;-><init>(Lwe;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 102
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->waitDone()Z
-
-    .line 103
     :cond_0
-    return-void
-.end method
+    iget-object v0, p0, Lwe;->b:Lbvk;
 
-.method public final a([B)V
-    .locals 3
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
 
-    .prologue
-    .line 248
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
+    iget-object v0, p0, Lwe;->c:Ljavax/inject/Provider;
 
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ADD_CALLBACK_BUFFER:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$6;
-
-    invoke-direct {v2, p0, p1}, Lwe$6;-><init>(Lwe;[B)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    check-cast v0, Lcom/snapchat/android/camera/model/CameraModel;
 
-    .line 256
-    return-void
-.end method
+    iput-object v0, p1, Lcom/snapchat/android/camera/BaseCameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
-.method public final b()Landroid/hardware/Camera;
-    .locals 1
-    .annotation build Lcgc;
-    .end annotation
+    iget-object v0, p0, Lwe;->d:Ljavax/inject/Provider;
 
-    .prologue
-    .line 88
-    iget-object v0, p0, Lwe;->b:Landroid/hardware/Camera;
-
-    return-object v0
-.end method
-
-.method public final b(Z)V
-    .locals 3
-
-    .prologue
-    .line 199
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->STOP_PREVIEW:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$2;
-
-    invoke-direct {v2, p0}, Lwe$2;-><init>(Lwe;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    check-cast v0, Lxm;
 
-    .line 206
-    if-eqz p1, :cond_0
+    iput-object v0, p1, Lcom/snapchat/android/camera/BaseCameraFragment;->j:Lxm;
 
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->waitDone()Z
-
-    .line 207
-    :cond_0
-    return-void
-.end method
-
-.method public final c()Landroid/hardware/Camera$Parameters;
-    .locals 3
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 121
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->GET_PARAMETERS:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$9;
-
-    invoke-direct {v2, p0}, Lwe$9;-><init>(Lwe;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 130
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->waitDone()Z
-
-    .line 131
-    iget-object v0, p0, Lwe;->c:Landroid/hardware/Camera$Parameters;
-
-    return-object v0
-.end method
-
-.method public final d()V
-    .locals 3
-
-    .prologue
-    .line 136
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->UNLOCK:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$10;
-
-    invoke-direct {v2, p0}, Lwe$10;-><init>(Lwe;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 143
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->waitDone()Z
-
-    .line 144
-    return-void
-.end method
-
-.method public final e()V
-    .locals 3
-
-    .prologue
-    .line 148
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->LOCK:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$11;
-
-    invoke-direct {v2, p0}, Lwe$11;-><init>(Lwe;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 155
-    return-void
-.end method
-
-.method public final f()Z
-    .locals 3
-
-    .prologue
-    .line 159
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->RECONNECT:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$12;
-
-    invoke-direct {v2, p0}, Lwe$12;-><init>(Lwe;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 170
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->waitDone()Z
-
-    .line 172
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final g()V
-    .locals 3
-
-    .prologue
-    .line 188
-    iget-object v0, p0, Lwe;->e:Lcom/snapchat/android/camera/hardware/CameraOperationHandler;
-
-    sget-object v1, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->START_PREVIEW:Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler$CameraOperationType;->ordinal()I
-
-    move-result v1
-
-    new-instance v2, Lwe$14;
-
-    invoke-direct {v2, p0}, Lwe$14;-><init>(Lwe;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/camera/hardware/CameraOperationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 195
     return-void
 .end method

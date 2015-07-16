@@ -12,10 +12,10 @@ final class SignupFragment$2
   
   public final boolean onTouch(View paramView, MotionEvent paramMotionEvent)
   {
-    paramView = SignupFragment.m(a).getOnFocusChangeListener();
+    paramView = SignupFragment.k(a).getOnFocusChangeListener();
     if ((1 == paramMotionEvent.getAction()) && (paramView != null))
     {
-      SignupFragment.l(a);
+      SignupFragment.j(a);
       return true;
     }
     return false;

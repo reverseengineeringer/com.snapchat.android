@@ -68,7 +68,7 @@
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$2;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->d(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;)Laol;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->d(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;)Laph;
 
     move-result-object v2
 
@@ -78,7 +78,7 @@
 
     move-result-object v3
 
-    invoke-static {}, Lajx;->G()Ljava/lang/String;
+    invoke-static {}, Lakr;->G()Ljava/lang/String;
 
     move-result-object v4
 
@@ -101,7 +101,7 @@
     if-ne v6, v0, :cond_2
 
     :goto_0
-    invoke-virtual {v2, v3}, Laol;->b(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-virtual {v2, v3}, Laph;->b(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v6
 
@@ -123,7 +123,7 @@
 
     invoke-virtual {v6, v4, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    invoke-virtual {v2, v3, v6}, Laol;->a(Landroid/content/Context;Landroid/content/Intent;)I
+    invoke-virtual {v2, v3, v6}, Laph;->a(Landroid/content/Context;Landroid/content/Intent;)I
 
     move-result v0
 

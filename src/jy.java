@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class jy
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_CAPTCHA_PAGEVIEW";
+  private final String eventName = "PROFILE_MY_FRIENDS_PAGE_VIEW";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_CAPTCHA_PAGEVIEW");
+    localHashMap.put("event_name", "PROFILE_MY_FRIENDS_PAGE_VIEW");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

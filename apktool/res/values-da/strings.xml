@@ -261,7 +261,6 @@ for at sende til en ven."</string>
     <string name="discover_sharing_success">Snap sendt!</string>
     <string name="discover_sharing_unavailable">%1$sgiver dig ikke lov til at sende denne Snap.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g>Tap her for at se Discover!</string>
     <string name="discover_unavailable">"Beklager! 
 
 Discover er ikke tilgængelig i øjeblikket."</string>
@@ -309,6 +308,7 @@ Discover er ikke tilgængelig til din enhed i øjeblikket."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Har du glemt din adgangskode?</a>" "</string>
     <string name="friend_suggest_hide">Skjul</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Ny kontakt</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Nyt medlem</string>
     <string name="friends">Venner</string>
     <string name="friends_context_block">Blokér</string>
@@ -617,7 +617,7 @@ sende penge?"</string>
     <string name="snap_delete_failure">Snap kunne ikke slettes.</string>
     <string name="snap_failed_to_post">1 Snap blev ikke lagt op.</string>
     <string name="snap_list_empty_list_msg">Du har ikke nogen Snaps :(</string>
-    <string name="snap_tag_help_description">Snapchattere kan tilføje dig ved at pege deres kamera mod dit spøgelse og tappe deres skærm!</string>
+    <string name="snap_tag_help_description">Snapchattere kan tilføje dig ved at pege deres kamera på din Snapkode og tappe deres skærm!</string>
     <string name="snap_tag_no_connection">Ingen forbindelse!</string>
     <string name="snap_to_add">Snap eller screenshot der skal tilføjes</string>
     <string name="snapkidz_welcome">Velkommen til Snapkidz!</string>
@@ -653,8 +653,6 @@ sende penge?"</string>
     <string name="tap_to_view_edition">Tap for at se i Discover</string>
     <string name="tap_to_view_full_story">Tap for at se hele historien</string>
     <string name="tap_to_view_more">Tap for at udforske andre kanaler.</string>
-    <string name="tap_to_view_snaps">Tap for at se Snaps!</string>
-    <string name="tap_to_view_stories">Tap for at se Historier!</string>
     <string name="tap_to_view_video_in_discover">Tap for at se denne video i Discover</string>
     <string name="too_many_attempts">For mange forsøg.</string>
     <string name="tos_accept">ACCEPTER</string>

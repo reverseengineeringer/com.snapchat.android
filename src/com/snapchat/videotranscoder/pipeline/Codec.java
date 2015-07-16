@@ -5,8 +5,8 @@ import android.media.MediaCodec.BufferInfo;
 import android.media.MediaCrypto;
 import android.media.MediaFormat;
 import android.view.Surface;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.task.SetupException;
 import com.snapchat.videotranscoder.task.TranscodingException;
 import com.snapchat.videotranscoder.utils.VerboseLogging;
@@ -21,7 +21,7 @@ public class Codec
   protected MediaCodec.BufferInfo mOutputBufferInfo = null;
   protected ByteBuffer[] mOutputBuffers = null;
   
-  public Codec(@cgb MediaCodec paramMediaCodec, @cgb MediaFormat paramMediaFormat, @cgc Surface paramSurface, @cgc MediaCrypto paramMediaCrypto, int paramInt, boolean paramBoolean)
+  public Codec(@chc MediaCodec paramMediaCodec, @chc MediaFormat paramMediaFormat, @chd Surface paramSurface, @chd MediaCrypto paramMediaCrypto, int paramInt, boolean paramBoolean)
   {
     mCodec = paramMediaCodec;
     if (mCodec == null) {
@@ -37,7 +37,7 @@ public class Codec
     VerboseLogging.verboseLog("Codec", "Codec was initialized: " + mCodec.toString() + " inputBuffers: " + mInputBuffers + " outputBuffers: " + mOutputBuffers + " outputBufferInfo " + mOutputBufferInfo);
   }
   
-  private void configureCodec(@cgb MediaFormat paramMediaFormat, @cgc Surface paramSurface, @cgc MediaCrypto paramMediaCrypto, int paramInt)
+  private void configureCodec(@chc MediaFormat paramMediaFormat, @chd Surface paramSurface, @chd MediaCrypto paramMediaCrypto, int paramInt)
   {
     try
     {

@@ -1,19 +1,14 @@
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
+import com.google.gson.annotations.SerializedName;
 
 public final class alm
 {
-  public final ale a;
-  private final EasyMetric.EasyMetricFactory b;
+  @SerializedName("prompt")
+  @chd
+  public String mPrompt;
   
-  public alm()
+  public final String toString()
   {
-    this(new EasyMetric.EasyMetricFactory(), ale.a());
-  }
-  
-  private alm(EasyMetric.EasyMetricFactory paramEasyMetricFactory, ale paramale)
-  {
-    b = ((EasyMetric.EasyMetricFactory)ck.a(paramEasyMetricFactory));
-    a = ((ale)ck.a(paramale));
+    return "CaptchaResponse [prompt=" + mPrompt + "]";
   }
 }
 

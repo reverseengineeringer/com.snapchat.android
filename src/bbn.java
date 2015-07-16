@@ -1,11 +1,6 @@
 public final class bbn
 {
-  public final String mFriendUsername;
-  
-  public bbn(String paramString)
-  {
-    mFriendUsername = paramString;
-  }
+  public boolean allow = false;
 }
 
 /* Location:

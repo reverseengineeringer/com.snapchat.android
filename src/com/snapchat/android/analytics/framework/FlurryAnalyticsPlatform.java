@@ -1,11 +1,10 @@
 package com.snapchat.android.analytics.framework;
 
 import android.app.Activity;
-import auh;
-import cgb;
-import cgc;
+import avf;
+import chc;
+import chd;
 import com.flurry.android.FlurryAgent;
-import com.snapchat.android.Timber;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -16,9 +15,9 @@ import java.util.concurrent.ExecutorService;
 public class FlurryAnalyticsPlatform
   implements AnalyticsPlatform
 {
-  public final void a(@cgb final Activity paramActivity)
+  public final void a(@chc final Activity paramActivity)
   {
-    auh.SERIAL_BACKGROUND_EXECUTOR.submit(new Runnable()
+    avf.SERIAL_BACKGROUND_EXECUTOR.submit(new Runnable()
     {
       public void run()
       {
@@ -29,7 +28,7 @@ public class FlurryAnalyticsPlatform
     });
   }
   
-  public final void a(@cgb String paramString, @cgc Map<String, Object> paramMap1, @cgc Map<String, Object> paramMap2, @cgc Map<String, Long> paramMap3, @cgc Map<String, Long> paramMap4)
+  public final void a(@chc String paramString, @chd Map<String, Object> paramMap1, @chd Map<String, Object> paramMap2, @chd Map<String, Long> paramMap3, @chd Map<String, Long> paramMap4)
   {
     if (paramMap1 == null)
     {
@@ -38,7 +37,7 @@ public class FlurryAnalyticsPlatform
     }
     if (paramMap1.size() > 10)
     {
-      Timber.e("FlurryAnalyticsPlatform", "Flurry only supports up to 10 parameters. Found: " + paramMap1.size() + ". Truncating!", new Object[0]);
+      new StringBuilder("Flurry only supports up to 10 parameters. Found: ").append(paramMap1.size()).append(". Truncating!");
       paramMap2 = new HashMap(10);
       paramMap1 = paramMap1.entrySet().iterator();
       while (paramMap1.hasNext())
@@ -64,9 +63,9 @@ public class FlurryAnalyticsPlatform
     }
   }
   
-  public final void b(@cgb final Activity paramActivity)
+  public final void b(@chc final Activity paramActivity)
   {
-    auh.SERIAL_BACKGROUND_EXECUTOR.submit(new Runnable()
+    avf.SERIAL_BACKGROUND_EXECUTOR.submit(new Runnable()
     {
       public void run()
       {

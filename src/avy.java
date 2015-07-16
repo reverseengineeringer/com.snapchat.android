@@ -1,7 +1,33 @@
-public abstract interface avy
+import android.text.TextUtils;
+import com.snapchat.android.model.StoryCollection;
+
+public final class avy
 {
-  @ccm
-  public abstract void a(avo paramavo, avx paramavx);
+  public static void a(@chd akp paramakp, @chd akl paramakl, boolean paramBoolean)
+  {
+    if ((paramakp == null) || (paramakl == null)) {}
+    label80:
+    for (;;)
+    {
+      return;
+      if (TextUtils.equals(akr.l(), mUsername)) {}
+      for (paramakp = akk.a().a("my_story_ads79sdf");; paramakp = akk.a().b(mUsername))
+      {
+        if (paramakp == null) {
+          break label80;
+        }
+        paramakl = paramakp.b(paramakl.d());
+        if (paramakl == null) {
+          break;
+        }
+        paramakl.d(0);
+        paramakl.D();
+        paramakp.f(paramakl);
+        paramakl.e(paramBoolean);
+        return;
+      }
+    }
+  }
 }
 
 /* Location:

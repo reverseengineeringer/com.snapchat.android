@@ -1,429 +1,212 @@
 .class public final Lata;
-.super Ljava/lang/Object;
+.super Lasm;
 .source "SourceFile"
 
 
-# static fields
-.field private static sTimeFormat:Ljava/text/DateFormat;
+# instance fields
+.field public final b:Lajr;
+
+.field private final c:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lajr;Lcom/snapchat/android/ui/smartfilters/GeofilterView;)V
+    .locals 0
 
     .prologue
-    .line 27
-    const/4 v0, 0x0
+    .line 23
+    invoke-direct {p0}, Lasm;-><init>()V
 
-    sput-object v0, Lata;->sTimeFormat:Ljava/text/DateFormat;
+    .line 24
+    iput-object p1, p0, Lata;->b:Lajr;
 
+    .line 25
+    iput-object p2, p0, Lata;->c:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
+
+    .line 26
     return-void
 .end method
 
-.method public static a(J)Ljava/lang/String;
-    .locals 8
 
-    .prologue
-    const/4 v6, 0x0
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 63
-    new-instance v0, Lbgl;
-
-    invoke-direct {v0}, Lbgl;-><init>()V
-
-    .line 64
-    new-instance v0, Lcgr;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    invoke-direct {v0, v4, v5}, Lcgr;-><init>(J)V
-
-    invoke-virtual {v0, v6}, Lcgr;->a(Lcgk;)Lcgg;
-
-    move-result-object v3
-
-    .line 65
-    new-instance v0, Lcgr;
-
-    invoke-direct {v0, p0, p1}, Lcgr;-><init>(J)V
-
-    invoke-virtual {v0, v6}, Lcgr;->a(Lcgk;)Lcgg;
-
-    move-result-object v4
-
-    .line 67
-    invoke-static {v4, v3}, Lcgl;->a(Lcgz;Lcgz;)Lcgl;
-
-    move-result-object v0
-
-    .line 69
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 70
-    sget-object v6, Lcgl;->a:Lcgl;
-
-    if-ne v0, v6, :cond_0
-
-    .line 71
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v0
-
-    const v1, 0x7f0c0081
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/SnapchatApplication;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 87
-    :goto_0
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 72
-    :cond_0
-    sget-object v6, Lcgl;->b:Lcgl;
-
-    if-ne v0, v6, :cond_1
-
-    .line 73
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v0
-
-    const v1, 0x7f0c0082
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/SnapchatApplication;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    .line 74
-    :cond_1
-    sget-object v6, Lcgl;->h:Lcgl;
-
-    if-nez v6, :cond_3
-
-    iget v0, v0, Lchi;->k:I
-
-    if-gez v0, :cond_2
-
-    move v0, v1
-
-    :goto_1
-    if-eqz v0, :cond_5
-
-    .line 75
-    new-instance v0, Lcgg$a;
-
-    iget-object v1, v4, Lchg;->b:Lcgf;
-
-    invoke-virtual {v1}, Lcgf;->t()Lcgh;
-
-    move-result-object v1
-
-    invoke-direct {v0, v4, v1}, Lcgg$a;-><init>(Lcgg;Lcgh;)V
-
-    .line 76
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcgg$a;->a(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    .line 74
-    goto :goto_1
-
-    :cond_3
-    iget v0, v0, Lchi;->k:I
-
-    iget v6, v6, Lchi;->k:I
-
-    if-ge v0, v6, :cond_4
-
-    move v0, v1
-
-    goto :goto_1
-
-    :cond_4
-    move v0, v2
-
-    goto :goto_1
-
-    .line 78
-    :cond_5
-    invoke-virtual {v4}, Lcgg;->f()I
-
-    move-result v0
-
-    .line 79
-    invoke-virtual {v3}, Lcgg;->f()I
-
-    move-result v3
-
-    .line 81
-    if-eq v0, v3, :cond_6
-
-    .line 82
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v0
-
-    invoke-static {v4, v0, v1}, Lahf;->a(Lcgg;Ljava/util/Locale;Z)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    .line 84
-    :cond_6
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v0
-
-    invoke-static {v4, v0, v2}, Lahf;->a(Lcgg;Ljava/util/Locale;Z)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-.end method
-
-.method public static a(Landroid/content/Context;J)Ljava/lang/String;
-    .locals 5
-
-    .prologue
-    .line 41
-    sget-object v0, Lata;->sTimeFormat:Ljava/text/DateFormat;
-
-    if-nez v0, :cond_0
-
-    invoke-static {p0}, Landroid/text/format/DateFormat;->getTimeFormat(Landroid/content/Context;)Ljava/text/DateFormat;
-
-    move-result-object v0
-
-    sput-object v0, Lata;->sTimeFormat:Ljava/text/DateFormat;
-
-    :cond_0
-    sget-object v0, Lata;->sTimeFormat:Ljava/text/DateFormat;
-
-    .line 42
-    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
-
-    .line 43
-    const-wide/16 v2, 0x0
-
-    cmp-long v1, p1, v2
-
-    if-nez v1, :cond_1
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide p1
-
-    .line 44
-    :cond_1
-    new-instance v1, Ljava/util/Date;
-
-    invoke-direct {v1, p1, p2}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static a(Ljava/util/Calendar;)V
+# virtual methods
+.method public final a()Ljava/lang/String;
     .locals 2
 
     .prologue
-    const/4 v1, 0x0
+    .line 30
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 91
-    const/16 v0, 0xb
+    const-string v1, "Geofilter~"
 
-    invoke-virtual {p0, v0, v1}, Ljava/util/Calendar;->set(II)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 92
-    const/16 v0, 0xc
+    iget-object v1, p0, Lata;->b:Lajr;
 
-    invoke-virtual {p0, v0, v1}, Ljava/util/Calendar;->set(II)V
+    iget-object v1, v1, Lajr;->mFilterId:Ljava/lang/String;
 
-    .line 93
-    const/16 v0, 0xd
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v0, v1}, Ljava/util/Calendar;->set(II)V
+    move-result-object v0
 
-    .line 94
-    const/16 v0, 0xe
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {p0, v0, v1}, Ljava/util/Calendar;->set(II)V
+    move-result-object v0
 
-    .line 95
+    return-object v0
+.end method
+
+.method public final a(I)V
+    .locals 1
+
+    .prologue
+    .line 67
+    iget-object v0, p0, Lata;->c:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
+
+    invoke-virtual {v0, p1}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->setVisibilityOfPreviewOnlyContent(I)V
+
+    .line 68
     return-void
 .end method
 
-.method public static a(JJ)Z
-    .locals 6
+.method public final b()Lcom/snapchat/android/ui/swipefilters/FilterPageType;
+    .locals 1
 
     .prologue
-    const/4 v4, 0x6
+    .line 35
+    sget-object v0, Lcom/snapchat/android/ui/swipefilters/FilterPageType;->GEOFILTER:Lcom/snapchat/android/ui/swipefilters/FilterPageType;
 
-    const/4 v0, 0x1
+    return-object v0
+.end method
 
-    .line 108
-    new-instance v1, Ljava/util/GregorianCalendar;
+.method public final d()Landroid/view/View;
+    .locals 1
 
-    invoke-direct {v1}, Ljava/util/GregorianCalendar;-><init>()V
+    .prologue
+    .line 40
+    iget-object v0, p0, Lata;->c:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
 
-    .line 109
-    invoke-virtual {v1, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    return-object v0
+.end method
 
-    .line 110
-    invoke-virtual {v1, v4}, Ljava/util/Calendar;->get(I)I
+.method public final g()V
+    .locals 4
+
+    .prologue
+    .line 49
+    iget-object v0, p0, Lata;->b:Lajr;
+
+    iget-boolean v0, v0, Lajr;->mIsSponsored:Z
+
+    if-eqz v0, :cond_0
+
+    .line 50
+    iget-object v0, p0, Lata;->c:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
+
+    iget-object v1, v0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->a:Lcom/snapchat/android/ui/SelfScalingImageView;
+
+    if-eqz v1, :cond_0
+
+    iget-boolean v1, v0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->c:Z
+
+    if-nez v1, :cond_0
+
+    iget-object v0, v0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->b:Lapy;
+
+    new-instance v1, Ljava/util/Date;
+
+    invoke-direct {v1}, Ljava/util/Date;-><init>()V
+
+    iput-object v1, v0, Lapy;->f:Ljava/util/Date;
+
+    new-instance v1, Landroid/view/animation/AlphaAnimation;
+
+    iget-object v2, v0, Lapy;->b:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getAlpha()F
 
     move-result v2
 
-    .line 111
-    invoke-virtual {v1, v0}, Ljava/util/Calendar;->get(I)I
+    const/4 v3, 0x0
 
-    move-result v3
+    invoke-direct {v1, v2, v3}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
-    .line 112
-    invoke-virtual {v1, p2, p3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    iput-object v1, v0, Lapy;->e:Landroid/view/animation/Animation;
 
-    .line 113
-    invoke-virtual {v1, v4}, Ljava/util/Calendar;->get(I)I
+    iget-object v1, v0, Lapy;->e:Landroid/view/animation/Animation;
 
-    move-result v4
+    new-instance v2, Landroid/view/animation/AccelerateInterpolator;
 
-    .line 114
-    invoke-virtual {v1, v0}, Ljava/util/Calendar;->get(I)I
+    invoke-direct {v2}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
-    move-result v1
+    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 116
-    if-ne v2, v4, :cond_0
+    iget-object v1, v0, Lapy;->e:Landroid/view/animation/Animation;
 
-    if-eq v3, v1, :cond_1
+    iget v2, v0, Lapy;->d:I
 
-    :cond_0
-    :goto_0
-    return v0
+    int-to-long v2, v2
 
-    :cond_1
-    const/4 v0, 0x0
+    invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    goto :goto_0
-.end method
+    iget-object v1, v0, Lapy;->e:Landroid/view/animation/Animation;
 
-.method public static b(Landroid/content/Context;J)Ljava/lang/String;
-    .locals 7
+    new-instance v2, Lapy$1;
 
-    .prologue
-    const-wide/32 v4, 0xea60
+    invoke-direct {v2, v0}, Lapy$1;-><init>(Lapy;)V
 
-    .line 48
-    new-instance v0, Ljava/util/Date;
+    invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+    iget-object v1, v0, Lapy;->e:Landroid/view/animation/Animation;
 
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    iget-wide v2, v0, Lapy;->c:J
 
-    move-result-wide v0
+    invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object v1, v0, Lapy;->b:Landroid/view/View;
 
-    move-result-object v6
+    iget-object v2, v0, Lapy;->e:Landroid/view/animation/Animation;
 
-    .line 49
-    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v1, v2}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    move-result-wide v2
+    const/4 v1, 0x0
 
-    move-wide v0, p1
-
-    invoke-static/range {v0 .. v5}, Landroid/text/format/DateUtils;->getRelativeTimeSpanString(JJJ)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    iput-boolean v1, v0, Lapy;->g:Z
 
     .line 52
-    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+    :cond_0
+    return-void
+.end method
 
-    move-result-wide v2
+.method public final h()V
+    .locals 1
 
-    sub-long/2addr v2, p1
+    .prologue
+    .line 56
+    iget-object v0, p0, Lata;->b:Lajr;
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
+    iget-boolean v0, v0, Lajr;->mIsSponsored:Z
 
-    move-result-wide v2
+    if-eqz v0, :cond_0
 
-    .line 54
-    cmp-long v1, v2, v4
+    .line 57
+    iget-object v0, p0, Lata;->c:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
 
-    if-gez v1, :cond_1
-
-    .line 55
-    const v0, 0x7f0c0158
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->a()V
 
     .line 59
     :cond_0
-    :goto_0
-    return-object v0
+    return-void
+.end method
 
-    .line 56
-    :cond_1
-    const-wide/32 v4, 0x5265c00
+.method public final i()V
+    .locals 1
 
-    cmp-long v1, v2, v4
+    .prologue
+    .line 75
+    iget-object v0, p0, Lata;->c:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
 
-    if-lez v1, :cond_0
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->a()V
 
-    .line 57
-    invoke-static {p1, p2}, Lata;->a(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
+    .line 76
+    return-void
 .end method

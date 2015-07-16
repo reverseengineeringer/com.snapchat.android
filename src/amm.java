@@ -1,69 +1,42 @@
-import android.content.Context;
-import android.content.Intent;
-import android.text.TextUtils;
-import com.snapchat.android.Timber;
-import com.snapchat.android.api2.framework.HttpMethod;
-import com.squareup.otto.Bus;
-import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class amm
-  extends amd
 {
-  private final String a;
+  private static AtomicInteger e = new AtomicInteger(0);
+  public int a = 0;
+  public long b = 0L;
+  public long c = 0L;
+  public int d = 0;
+  private final bhk f;
   
-  public amm(Intent paramIntent)
+  public amm()
   {
-    super(paramIntent);
-    a = paramIntent.getStringExtra("ImageId");
+    this(new bhk());
   }
   
-  public final void a(Context paramContext)
+  private amm(bhk parambhk)
   {
-    if (!TextUtils.isEmpty(a)) {
-      super.a(paramContext);
-    }
+    f = ((bhk)co.a(parambhk));
   }
   
-  public final void a(@cgb uc paramuc)
+  public static class a
   {
-    super.a(paramuc);
-    if (!paramuc.d()) {
-      Timber.f("SnapTagDownloadOperation", "profile images - failed to download snaptag. " + paramuc.e(), new Object[0]);
-    }
-    paramuc = mBuffer;
-    if (paramuc != null) {}
-    try
+    public final long a;
+    public final long b;
+    public final int c;
+    
+    public a(long paramLong1, long paramLong2, int paramInt)
     {
-      paramuc = Arrays.copyOf(paramuc.b(), paramuc.a());
-      awq.PROFILE_IMAGE_CACHE.a("snaptag", paramuc, paramuc.length);
-      ban.a().a(new bds("snaptag"));
-      return;
+      b = paramLong2;
+      a = paramLong1;
+      c = paramInt;
     }
-    catch (aws paramuc)
+    
+    public String toString()
     {
-      Timber.f("SnapTagDownloadOperation", "Failed to store the downloaded snaptag " + paramuc, new Object[0]);
+      return cl.a(a.class).a("durationMs", a).a("bytesReceived", b).a("downloadCount", c).toString();
     }
   }
-  
-  public final Object b()
-  {
-    return a(new amm.a().a(a).b("SVG"));
-  }
-  
-  public final HttpMethod c()
-  {
-    return HttpMethod.POST;
-  }
-  
-  protected final String e()
-  {
-    return "/bq/snaptag_download";
-  }
-  
-  @tn
-  public static final class a
-    extends bjc
-  {}
 }
 
 /* Location:

@@ -1,5 +1,5 @@
 .class public final Lbew;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -9,7 +9,7 @@
 
     .prologue
     .line 8
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

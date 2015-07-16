@@ -1,8 +1,22 @@
-import android.widget.ProgressBar;
-
 public final class aei
+  extends aaw
 {
-  ProgressBar a;
+  private static final aei a = new aei();
+  
+  private aei()
+  {
+    super("PublisherIconTable", aec.c);
+  }
+  
+  public static aei a()
+  {
+    return a;
+  }
+  
+  public final boolean l()
+  {
+    return false;
+  }
 }
 
 /* Location:

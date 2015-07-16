@@ -15,9 +15,6 @@
 
 
 # virtual methods
-.method public abstract n()V
-.end method
-
 .method public abstract o()V
 .end method
 
@@ -28,4 +25,7 @@
 .end method
 
 .method public abstract r()V
+.end method
+
+.method public abstract t()V
 .end method

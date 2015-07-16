@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import bgp;
+import bhp;
 
 final class BugReportFragment$6
   implements TextView.OnEditorActionListener
@@ -25,7 +25,7 @@ final class BugReportFragment$6
       {
         public final void run()
         {
-          bgp.a(300L);
+          bhp.a(300L);
           BugReportFragment.c(this$0, false);
         }
       }).start();

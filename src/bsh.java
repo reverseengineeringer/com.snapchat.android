@@ -1,71 +1,20 @@
+import java.util.Iterator;
+import java.util.List;
+import org.json.JSONArray;
+
 public final class bsh
 {
-  private long a = 0L;
-  private long b;
+  public JSONArray a = new JSONArray();
   
-  public bsh(long paramLong)
+  public bsh(bsl parambsl)
   {
-    b = paramLong;
-  }
-  
-  /* Error */
-  public final boolean a()
-  {
-    // Byte code:
-    //   0: aload_0
-    //   1: monitorenter
-    //   2: invokestatic 24	java/lang/System:nanoTime	()J
-    //   5: lstore_1
-    //   6: aload_0
-    //   7: getfield 14	bsh:a	J
-    //   10: lstore_3
-    //   11: aload_0
-    //   12: getfield 16	bsh:b	J
-    //   15: lstore 5
-    //   17: lload_1
-    //   18: lload_3
-    //   19: lsub
-    //   20: lload 5
-    //   22: lcmp
-    //   23: ifle +11 -> 34
-    //   26: iconst_1
-    //   27: istore 7
-    //   29: aload_0
-    //   30: monitorexit
-    //   31: iload 7
-    //   33: ireturn
-    //   34: iconst_0
-    //   35: istore 7
-    //   37: goto -8 -> 29
-    //   40: astore 8
-    //   42: aload_0
-    //   43: monitorexit
-    //   44: aload 8
-    //   46: athrow
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	47	0	this	bsh
-    //   5	13	1	l1	long
-    //   10	9	3	l2	long
-    //   15	6	5	l3	long
-    //   27	9	7	bool	boolean
-    //   40	5	8	localObject	Object
-    // Exception table:
-    //   from	to	target	type
-    //   2	17	40	finally
-  }
-  
-  public final void b()
-  {
-    try
+    parambsl = parambsl.c().iterator();
+    while (parambsl.hasNext())
     {
-      a = System.nanoTime();
-      return;
-    }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
+      Object localObject = ((bsj)parambsl.next()).a();
+      if (localObject != null) {
+        a.put(localObject);
+      }
     }
   }
 }

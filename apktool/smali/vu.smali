@@ -3,196 +3,60 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lvt;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic a:Z
+.implements Lvp;
 
 
 # instance fields
-.field private final b:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lvv;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final c:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public a:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 8
-    const-class v0, Lvu;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lvu;->a:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lvv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
-            ">;)V"
-        }
-    .end annotation
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
     .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
-    sget-boolean v0, Lvu;->a:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 15
-    :cond_0
-    iput-object p1, p0, Lvu;->b:Lbuj;
-
-    .line 16
-    sget-boolean v0, Lvu;->a:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 17
-    :cond_1
-    iput-object p2, p0, Lvu;->c:Ljavax/inject/Provider;
-
-    .line 18
     return-void
-.end method
-
-.method public static a(Lbuj;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lvv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lvt;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 30
-    new-instance v0, Lvu;
-
-    invoke-direct {v0, p0, p1}, Lvu;-><init>(Lbuj;Ljavax/inject/Provider;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final A_()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 8
-    check-cast p1, Lvt;
+    .line 20
+    const-string v0, "LOADING_FEED_ITEM"
 
-    if-nez p1, :cond_0
+    return-object v0
+.end method
 
-    new-instance v0, Ljava/lang/NullPointerException;
+.method public final B_()Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;
+    .locals 1
 
-    const-string v1, "Cannot inject members into a null reference"
+    .prologue
+    .line 25
+    sget-object v0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;->LOADING:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    throw v0
+.method public final a(Ljava/lang/Object;Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;)V
+    .locals 0
 
-    :cond_0
-    iget-object v0, p0, Lvu;->b:Lbuj;
-
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lvu;->c:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/snapchat/android/camera/model/CameraModel;
-
-    iput-object v0, p1, Lvt;->a:Lcom/snapchat/android/camera/model/CameraModel;
-
+    .prologue
+    .line 41
     return-void
+.end method
+
+.method public final a(Ljava/lang/String;)Z
+    .locals 1
+
+    .prologue
+    .line 45
+    const/4 v0, 0x0
+
+    return v0
 .end method

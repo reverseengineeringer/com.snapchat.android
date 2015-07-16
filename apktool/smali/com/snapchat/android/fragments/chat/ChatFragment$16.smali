@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lya$a;
+.implements Lyw$a;
 
 
 # annotations
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 2472
+    .line 2570
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16;->a:Lcom/snapchat/android/ui/CashSwiperView$SwipeActivationMethod;
@@ -44,35 +44,35 @@
     .locals 3
 
     .prologue
-    .line 2475
+    .line 2573
     new-instance v0, Lcom/snapchat/android/fragments/chat/ChatFragment$16$1;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/chat/ChatFragment$16$1;-><init>(Lcom/snapchat/android/fragments/chat/ChatFragment$16;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
-    .line 2483
+    .line 2581
     invoke-static {}, Lcom/snapchat/android/fragments/chat/ChatFragment;->y()Z
 
-    .line 2484
+    .line 2582
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->C(Lcom/snapchat/android/fragments/chat/ChatFragment;)Z
 
-    .line 2487
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 2585
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdg;
+    new-instance v1, Lbeg;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Lbdg;-><init>(Z)V
+    invoke-direct {v1, v2}, Lbeg;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 2488
+    .line 2586
     return-void
 .end method
 
@@ -80,16 +80,16 @@
     .locals 1
 
     .prologue
-    .line 2492
+    .line 2590
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->q(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 2493
+    .line 2591
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$16;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->D(Lcom/snapchat/android/fragments/chat/ChatFragment;)Z
 
-    .line 2494
+    .line 2592
     return-void
 .end method

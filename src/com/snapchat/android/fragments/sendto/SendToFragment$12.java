@@ -1,15 +1,15 @@
 package com.snapchat.android.fragments.sendto;
 
-import ajc;
+import ajy;
 import android.support.v7.widget.RecyclerView.a;
 import android.support.v7.widget.RecyclerView.b;
-import aqa.a;
+import aqz.a;
 import java.util.ArrayList;
 
 final class SendToFragment$12
-  implements aqa.a
+  implements aqz.a
 {
-  SendToFragment$12(SendToFragment paramSendToFragment, ajc paramajc) {}
+  SendToFragment$12(SendToFragment paramSendToFragment, ajy paramajy) {}
   
   public final void a(boolean paramBoolean)
   {

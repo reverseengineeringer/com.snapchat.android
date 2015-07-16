@@ -6,14 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/snapchat/android/util/eventbus/SnapMessageFeedRefreshedEvent$1;,
         Lcom/snapchat/android/util/eventbus/SnapMessageFeedRefreshedEvent$RefreshError;
     }
 .end annotation
 
 
 # instance fields
-.field public mError:Lcom/snapchat/android/util/eventbus/SnapMessageFeedRefreshedEvent$RefreshError;
+.field private mError:Lcom/snapchat/android/util/eventbus/SnapMessageFeedRefreshedEvent$RefreshError;
 
 .field public mUUID:Ljava/util/UUID;
 
@@ -32,11 +31,11 @@
     .line 33
     if-gtz p2, :cond_1
 
-    invoke-static {}, Lale;->a()Lale;
+    invoke-static {}, Lama;->a()Lama;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lale;->d()Z
+    invoke-virtual {v0}, Lama;->d()Z
 
     move-result v0
 

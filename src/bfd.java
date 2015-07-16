@@ -1,35 +1,10 @@
-import android.view.View;
-import android.widget.ListView;
-
 public final class bfd
 {
-  public static boolean a(@cgb ListView paramListView)
-  {
-    if (paramListView.getChildCount() == 0) {}
-    do
-    {
-      return true;
-      if (paramListView.getFirstVisiblePosition() != 0) {
-        return false;
-      }
-      paramListView = paramListView.getChildAt(0);
-    } while ((paramListView != null) && (paramListView.getTop() == 0));
-    return false;
-  }
+  public String mFriendUsername;
   
-  public static boolean b(@cgb ListView paramListView)
+  public bfd(String paramString)
   {
-    if (paramListView.getChildCount() == 0) {}
-    View localView;
-    do
-    {
-      return true;
-      if (paramListView.getLastVisiblePosition() != paramListView.getCount() - 1) {
-        return false;
-      }
-      localView = paramListView.getChildAt(paramListView.getChildCount() - 1);
-    } while ((localView != null) && (localView.getBottom() <= paramListView.getHeight()));
-    return false;
+    mFriendUsername = paramString;
   }
 }
 

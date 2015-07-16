@@ -1,5 +1,5 @@
 .class public final Lcom/snapchat/android/api2/IpRoutingErrorTask$a;
-.super Lpl;
+.super Lqc;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
     name = "a"
 .end annotation
 
-.annotation runtime Ltn;
+.annotation runtime Lud;
 .end annotation
 
 
@@ -35,18 +35,18 @@
     .line 37
     iput-object p1, p0, Lcom/snapchat/android/api2/IpRoutingErrorTask$a;->this$0:Lcom/snapchat/android/api2/IpRoutingErrorTask;
 
-    invoke-direct {p0}, Lpl;-><init>()V
+    invoke-direct {p0}, Lqc;-><init>()V
 
     .line 38
     iget-object v0, p0, Lcom/snapchat/android/api2/IpRoutingErrorTask$a;->this$0:Lcom/snapchat/android/api2/IpRoutingErrorTask;
 
-    iget-object v0, v0, Lcom/snapchat/android/api2/IpRoutingErrorTask;->mGsonWrapper:Lato;
+    iget-object v0, v0, Lcom/snapchat/android/api2/IpRoutingErrorTask;->mGsonWrapper:Laum;
 
     iget-object v1, p0, Lcom/snapchat/android/api2/IpRoutingErrorTask$a;->this$0:Lcom/snapchat/android/api2/IpRoutingErrorTask;
 
     iget-object v1, v1, Lcom/snapchat/android/api2/IpRoutingErrorTask;->mErrorMap:Ljava/util/Map;
 
-    invoke-virtual {v0, v1}, Lato;->a(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Laum;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

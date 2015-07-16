@@ -8,9 +8,9 @@ import android.graphics.BitmapFactory.Options;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import aur;
-import avl;
-import avq;
+import avp;
+import awj;
+import awo;
 import java.util.ArrayList;
 
 final class LegacyCanvasView$b
@@ -29,14 +29,14 @@ final class LegacyCanvasView$b
     b.setFilterBitmap(false);
   }
   
-  @avl
+  @awj
   public final void a()
   {
     b();
-    Object localObject = aur.a(g.getContext().getResources().getDisplayMetrics(), LegacyCanvasView.a(g), LegacyCanvasView.b(g), Bitmap.Config.ARGB_8888);
-    localObject = avq.a().a((BitmapFactory.Options)localObject, true);
+    Object localObject = avp.a(g.getContext().getResources().getDisplayMetrics(), LegacyCanvasView.a(g), LegacyCanvasView.b(g), Bitmap.Config.ARGB_8888);
+    localObject = awo.a().a((BitmapFactory.Options)localObject, true);
     if (localObject != null) {}
-    for (e = ((Bitmap)localObject);; e = aur.a(LegacyCanvasView.a(g), LegacyCanvasView.b(g), Bitmap.Config.ARGB_8888))
+    for (e = ((Bitmap)localObject);; e = avp.a(LegacyCanvasView.a(g), LegacyCanvasView.b(g), Bitmap.Config.ARGB_8888))
     {
       d = new Canvas(e);
       return;
@@ -46,7 +46,7 @@ final class LegacyCanvasView$b
   public final void b()
   {
     d = null;
-    avq.a().a(e);
+    awo.a().a(e);
     e = null;
   }
 }

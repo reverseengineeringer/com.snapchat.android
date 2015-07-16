@@ -165,11 +165,11 @@
 
 
 # virtual methods
-.method public W()J
+.method public U()J
     .locals 2
 
     .prologue
-    .line 242
+    .line 243
     iget-wide v0, p0, Lcom/snapchat/android/model/Snap;->mTimestamp:J
 
     return-wide v0
@@ -179,12 +179,12 @@
     .locals 4
 
     .prologue
-    .line 301
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->W()J
+    .line 302
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->U()J
 
     move-result-wide v0
 
-    invoke-interface {p1}, Lcom/snapchat/android/model/chat/ChatFeedItem;->W()J
+    invoke-interface {p1}, Lcom/snapchat/android/model/chat/ChatFeedItem;->U()J
 
     move-result-wide v2
 
@@ -215,8 +215,8 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 152
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->aj()Z
+    .line 153
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ah()Z
 
     move-result v0
 
@@ -224,17 +224,17 @@
 
     if-eqz p2, :cond_3
 
-    .line 153
+    .line 154
     :cond_0
     const v0, 0x7f02003f
 
-    .line 155
+    .line 156
     :goto_0
     return v0
 
-    .line 125
+    .line 124
     :pswitch_0
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->aj()Z
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ah()Z
 
     move-result v0
 
@@ -244,29 +244,35 @@
 
     goto :goto_0
 
-    .line 126
+    .line 125
     :cond_1
     const v0, 0x7f02003d
 
     goto :goto_0
 
-    .line 128
+    .line 127
     :pswitch_1
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ae()I
+    const v0, 0x7f020035
+
+    goto :goto_0
+
+    .line 129
+    :pswitch_2
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ac()I
 
     move-result v0
 
     goto :goto_0
 
-    .line 133
-    :pswitch_2
+    .line 134
+    :pswitch_3
     const v0, 0x7f020127
 
     goto :goto_0
 
-    .line 136
-    :pswitch_3
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->aj()Z
+    .line 137
+    :pswitch_4
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ah()Z
 
     move-result v0
 
@@ -276,21 +282,13 @@
 
     goto :goto_0
 
-    .line 137
+    .line 138
     :cond_2
     const v0, 0x7f020034
 
     goto :goto_0
 
-    .line 139
-    :pswitch_4
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->af()I
-
-    move-result v0
-
-    goto :goto_0
-
-    .line 143
+    .line 140
     :pswitch_5
     invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ad()I
 
@@ -298,21 +296,29 @@
 
     goto :goto_0
 
-    .line 148
+    .line 144
     :pswitch_6
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ab()I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 149
+    :pswitch_7
     invoke-virtual {p0, p1, p2}, Lcom/snapchat/android/model/Snap;->b(ZZ)I
 
     move-result v0
 
     goto :goto_0
 
-    .line 150
-    :pswitch_7
+    .line 151
+    :pswitch_8
     const v0, 0x7f020128
 
     goto :goto_0
 
-    .line 155
+    .line 156
     :cond_3
     const v0, 0x7f020040
 
@@ -325,23 +331,23 @@
     .packed-switch 0x1
         :pswitch_0
         :pswitch_0
-        :pswitch_0
         :pswitch_1
         :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
+        :pswitch_3
+        :pswitch_3
         :pswitch_3
         :pswitch_3
         :pswitch_4
+        :pswitch_4
         :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_6
         :pswitch_6
         :pswitch_6
         :pswitch_6
         :pswitch_7
+        :pswitch_7
+        :pswitch_7
+        :pswitch_7
+        :pswitch_8
     .end packed-switch
 .end method
 
@@ -349,10 +355,10 @@
     .locals 0
 
     .prologue
-    .line 337
+    .line 338
     iput-object p1, p0, Lcom/snapchat/android/model/Snap;->mClientSnapStatus:Lcom/snapchat/android/model/Snap$ClientSnapStatus;
 
-    .line 338
+    .line 339
     return-void
 .end method
 
@@ -360,19 +366,19 @@
     .locals 0
 
     .prologue
-    .line 238
+    .line 239
     iput-object p1, p0, Lcom/snapchat/android/model/Snap;->mId:Ljava/lang/String;
 
-    .line 239
+    .line 240
     return-void
 .end method
 
-.method public final ad()I
+.method public final ab()I
     .locals 1
 
     .prologue
-    .line 160
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->aj()Z
+    .line 161
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ah()Z
 
     move-result v0
 
@@ -380,7 +386,7 @@
 
     const v0, 0x7f02002e
 
-    .line 161
+    .line 162
     :goto_0
     return v0
 
@@ -390,12 +396,12 @@
     goto :goto_0
 .end method
 
-.method public final ae()I
+.method public final ac()I
     .locals 1
 
     .prologue
-    .line 165
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->aj()Z
+    .line 166
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ah()Z
 
     move-result v0
 
@@ -403,7 +409,7 @@
 
     const v0, 0x7f020038
 
-    .line 166
+    .line 167
     :goto_0
     return v0
 
@@ -413,12 +419,12 @@
     goto :goto_0
 .end method
 
-.method public final af()I
+.method public final ad()I
     .locals 1
 
     .prologue
-    .line 170
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->aj()Z
+    .line 171
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ah()Z
 
     move-result v0
 
@@ -426,7 +432,7 @@
 
     const v0, 0x7f020030
 
-    .line 171
+    .line 172
     :goto_0
     return v0
 
@@ -436,33 +442,33 @@
     goto :goto_0
 .end method
 
-.method public final ag()Ljava/lang/String;
+.method public final ae()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 230
+    .line 231
     iget-object v0, p0, Lcom/snapchat/android/model/Snap;->mId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final ah()Lcom/snapchat/android/model/Snap$ClientSnapStatus;
+.method public final af()Lcom/snapchat/android/model/Snap$ClientSnapStatus;
     .locals 1
 
     .prologue
-    .line 248
+    .line 249
     iget-object v0, p0, Lcom/snapchat/android/model/Snap;->mClientSnapStatus:Lcom/snapchat/android/model/Snap$ClientSnapStatus;
 
     return-object v0
 .end method
 
-.method public final ai()Z
+.method public final ag()Z
     .locals 3
 
     .prologue
     const/4 v0, 0x1
 
-    .line 252
+    .line 253
     iget v1, p0, Lcom/snapchat/android/model/Snap;->mMediaType:I
 
     if-eq v1, v0, :cond_0
@@ -483,13 +489,13 @@
     goto :goto_0
 .end method
 
-.method public final aj()Z
+.method public final ah()Z
     .locals 2
 
     .prologue
     const/4 v0, 0x1
 
-    .line 256
+    .line 257
     iget v1, p0, Lcom/snapchat/android/model/Snap;->mMediaType:I
 
     if-ne v1, v0, :cond_0
@@ -503,64 +509,64 @@
     goto :goto_0
 .end method
 
-.method public final ak()I
+.method public final ai()I
     .locals 1
 
     .prologue
-    .line 260
+    .line 261
     iget v0, p0, Lcom/snapchat/android/model/Snap;->mMediaType:I
 
     return v0
 .end method
 
-.method public final al()Ljava/lang/String;
+.method public final aj()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 306
+    .line 307
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public final ak()Z
+    .locals 1
+
+    .prologue
+    .line 322
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final al()V
+    .locals 1
+
+    .prologue
+    .line 326
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/snapchat/android/model/Snap;->mClearedBySender:Z
+
+    .line 327
+    return-void
 .end method
 
 .method public final am()Z
     .locals 1
 
     .prologue
-    .line 321
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final an()V
-    .locals 1
-
-    .prologue
-    .line 325
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/snapchat/android/model/Snap;->mClearedBySender:Z
-
-    .line 326
-    return-void
-.end method
-
-.method public final ao()Z
-    .locals 1
-
-    .prologue
-    .line 329
+    .line 330
     iget-boolean v0, p0, Lcom/snapchat/android/model/Snap;->mClearedBySender:Z
 
     return v0
 .end method
 
-.method public final ap()Z
+.method public final an()Z
     .locals 2
 
     .prologue
-    .line 333
+    .line 334
     iget-object v0, p0, Lcom/snapchat/android/model/Snap;->mClientSnapStatus:Lcom/snapchat/android/model/Snap$ClientSnapStatus;
 
     sget-object v1, Lcom/snapchat/android/model/Snap$ClientSnapStatus;->VIEWED_AND_REPLAY_AVAILABLE:Lcom/snapchat/android/model/Snap$ClientSnapStatus;
@@ -578,11 +584,11 @@
     goto :goto_0
 .end method
 
-.method public final aq()Z
+.method public final ao()Z
     .locals 1
 
     .prologue
-    .line 341
+    .line 342
     iget-boolean v0, p0, Lcom/snapchat/android/model/Snap;->mIsScreenshotted:Z
 
     return v0
@@ -592,8 +598,8 @@
     .locals 1
 
     .prologue
-    .line 175
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->aj()Z
+    .line 176
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Snap;->ah()Z
 
     move-result v0
 
@@ -601,23 +607,23 @@
 
     if-eqz p2, :cond_2
 
-    .line 176
+    .line 177
     :cond_0
     if-eqz p1, :cond_1
 
     const v0, 0x7f020026
 
-    .line 180
+    .line 181
     :goto_0
     return v0
 
-    .line 177
+    .line 178
     :cond_1
     const v0, 0x7f02003f
 
     goto :goto_0
 
-    .line 179
+    .line 180
     :cond_2
     if-eqz p1, :cond_3
 
@@ -625,7 +631,7 @@
 
     goto :goto_0
 
-    .line 180
+    .line 181
     :cond_3
     const v0, 0x7f020040
 
@@ -638,7 +644,7 @@
     .prologue
     const v0, 0x7f0c0198
 
-    .line 311
+    .line 312
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v1
@@ -681,7 +687,7 @@
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f0c0129
+    const v0, 0x7f0c0128
 
     goto :goto_0
 
@@ -711,7 +717,7 @@
     goto :goto_0
 
     :pswitch_8
-    const v0, 0x7f0c0131
+    const v0, 0x7f0c0130
 
     goto :goto_0
 
@@ -774,7 +780,7 @@
     .locals 1
 
     .prologue
-    .line 234
+    .line 235
     iget-object v0, p0, Lcom/snapchat/android/model/Snap;->mId:Ljava/lang/String;
 
     return-object v0
@@ -784,10 +790,10 @@
     .locals 0
 
     .prologue
-    .line 345
+    .line 346
     iput-boolean p1, p0, Lcom/snapchat/android/model/Snap;->mIsScreenshotted:Z
 
-    .line 346
+    .line 347
     return-void
 .end method
 
@@ -795,10 +801,10 @@
     .locals 0
 
     .prologue
-    .line 354
+    .line 355
     iput p1, p0, Lcom/snapchat/android/model/Snap;->mMediaType:I
 
-    .line 355
+    .line 356
     return-void
 .end method
 
@@ -806,16 +812,16 @@
     .locals 2
 
     .prologue
-    .line 281
+    .line 282
     if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    .line 293
+    .line 294
     :goto_0
     return v0
 
-    .line 284
+    .line 285
     :cond_0
     instance-of v0, p1, Lcom/snapchat/android/model/Snap;
 
@@ -835,31 +841,31 @@
 
     if-nez v0, :cond_2
 
-    .line 285
+    .line 286
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 289
+    .line 290
     :cond_2
     check-cast p1, Lcom/snapchat/android/model/Snap;
 
-    .line 291
+    .line 292
     iget-object v0, p0, Lcom/snapchat/android/model/Snap;->mId:Ljava/lang/String;
 
-    invoke-static {v0}, Laut;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lavr;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 292
+    .line 293
     iget-object v1, p1, Lcom/snapchat/android/model/Snap;->mId:Ljava/lang/String;
 
-    invoke-static {v1}, Laut;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lavr;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 293
+    .line 294
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -874,7 +880,7 @@
     .locals 1
 
     .prologue
-    .line 272
+    .line 273
     iget-object v0, p0, Lcom/snapchat/android/model/Snap;->mId:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -884,14 +890,14 @@
     :goto_0
     add-int/lit8 v0, v0, 0x1f
 
-    .line 275
+    .line 276
     return v0
 
-    .line 272
+    .line 273
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/model/Snap;->mId:Ljava/lang/String;
 
-    invoke-static {v0}, Laut;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lavr;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

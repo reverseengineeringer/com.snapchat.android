@@ -1,170 +1,200 @@
-.class public Lbha;
-.super Lbhl;
+.class public final Lbha;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field protected count:Ljava/lang/Long;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "count"
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
 
-.field protected createdAt:Ljava/lang/Long;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "created_at"
-    .end annotation
-.end field
+
+# instance fields
+.field private final mRandomIntegerSetGenerator:Lbgz;
 
 
 # direct methods
 .method public constructor <init>()V
+    .locals 1
+
+    .prologue
+    .line 18
+    new-instance v0, Lbgz;
+
+    invoke-direct {v0}, Lbgz;-><init>()V
+
+    invoke-direct {p0, v0}, Lbha;-><init>(Lbgz;)V
+
+    .line 19
+    return-void
+.end method
+
+.method private constructor <init>(Lbgz;)V
     .locals 0
 
     .prologue
-    .line 17
-    invoke-direct {p0}, Lbhl;-><init>()V
+    .line 22
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 23
+    iput-object p1, p0, Lbha;->mRandomIntegerSetGenerator:Lbgz;
+
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Long;
-    .locals 1
+.method public final a(Ljava/util/List;)Ljava/util/List;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<TT;>;)",
+            "Ljava/util/List",
+            "<TT;>;"
+        }
+    .end annotation
 
     .prologue
-    .line 36
-    iget-object v0, p0, Lbha;->createdAt:Ljava/lang/Long;
+    const/4 v6, 0x3
 
-    return-object v0
-.end method
+    .line 34
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-.method public final a(Ljava/lang/Long;)V
-    .locals 0
+    move-result v0
 
-    .prologue
-    .line 27
-    iput-object p1, p0, Lbha;->createdAt:Ljava/lang/Long;
+    if-lt v6, v0, :cond_0
 
-    .line 28
-    return-void
-.end method
-
-.method public final b()Ljava/lang/Long;
-    .locals 1
-
-    .prologue
-    .line 54
-    iget-object v0, p0, Lbha;->count:Ljava/lang/Long;
-
-    return-object v0
-.end method
-
-.method public final b(Ljava/lang/Long;)V
-    .locals 0
-
-    .prologue
-    .line 45
-    iput-object p1, p0, Lbha;->count:Ljava/lang/Long;
-
-    .line 46
-    return-void
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .prologue
-    .line 76
-    if-ne p1, p0, :cond_0
-
-    .line 77
-    const/4 v0, 0x1
-
-    .line 83
+    .line 47
     :goto_0
-    return v0
+    return-object p1
 
-    .line 79
+    .line 38
     :cond_0
-    instance-of v0, p1, Lbha;
+    iget-object v2, p0, Lbha;->mRandomIntegerSetGenerator:Lbgz;
 
-    if-nez v0, :cond_1
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    .line 80
+    move-result v3
+
+    if-le v6, v3, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Must generate <= upperBound numbers!"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v4, Ljava/util/HashSet;
+
+    invoke-direct {v4, v6}, Ljava/util/HashSet;-><init>(I)V
+
+    add-int/lit8 v0, v3, -0x3
+
+    move v1, v0
+
+    :goto_1
+    if-ge v1, v3, :cond_4
+
+    if-nez v1, :cond_2
+
     const/4 v0, 0x0
 
-    goto :goto_0
+    :goto_2
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 82
-    :cond_1
-    check-cast p1, Lbha;
+    move-result-object v5
 
-    .line 83
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
+    invoke-interface {v4, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
+    move-result v5
 
-    iget-object v1, p0, Lbha;->createdAt:Ljava/lang/Long;
+    if-eqz v5, :cond_3
 
-    iget-object v2, p1, Lbha;->createdAt:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbha;->count:Ljava/lang/Long;
+    invoke-interface {v4, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    iget-object v2, p1, Lbha;->count:Ljava/lang/Long;
+    :goto_3
+    add-int/lit8 v0, v1, 0x1
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+    move v1, v0
 
-    move-result-object v0
+    goto :goto_1
 
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
+    :cond_2
+    iget-object v0, v2, Lbgz;->mRgen:Ljava/security/SecureRandom;
+
+    add-int/lit8 v5, v1, 0x1
+
+    invoke-virtual {v0, v5}, Ljava/security/SecureRandom;->nextInt(I)I
 
     move-result v0
 
-    goto :goto_0
-.end method
+    goto :goto_2
 
-.method public hashCode()I
-    .locals 2
-
-    .prologue
-    .line 68
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
-
-    iget-object v1, p0, Lbha;->createdAt:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    :cond_3
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbha;->count:Ljava/lang/Long;
+    invoke-interface {v4, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    goto :goto_3
 
-    move-result-object v0
+    .line 40
+    :cond_4
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
+    invoke-direct {v1, v6}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 41
+    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_4
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    return v0
-.end method
+    if-eqz v0, :cond_5
 
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 63
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 42
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 43
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_4
+
+    :cond_5
+    move-object p1, v1
+
+    .line 47
+    goto :goto_0
 .end method

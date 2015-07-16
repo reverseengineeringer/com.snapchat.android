@@ -1,53 +1,59 @@
-import com.google.gson.annotations.SerializedName;
-import java.util.Map;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import android.os.Build;
+import java.io.File;
 
 public final class bhn
 {
-  @SerializedName("user_chat_releases")
-  protected Map<String, Map<String, Long>> userChatReleases;
-  @SerializedName("user_sequences")
-  protected Map<String, Long> userSequences;
-  @SerializedName("user_snap_releases")
-  protected Map<String, Map<String, Long>> userSnapReleases;
+  private static bhn sInstance = new bhn();
   
-  public final Map<String, Long> a()
+  public static bhn a()
   {
-    return userSequences;
+    return sInstance;
   }
   
-  public final Map<String, Map<String, Long>> b()
+  public static boolean b()
   {
-    return userChatReleases;
+    String str = Build.TAGS;
+    return (str != null) && (str.contains("test-keys"));
   }
   
-  public final Map<String, Map<String, Long>> c()
+  public static boolean c()
   {
-    return userSnapReleases;
+    return new File("/system/app/Superuser.apk").exists();
   }
   
-  public final boolean equals(Object paramObject)
+  public static boolean d()
   {
-    if (paramObject == this) {
+    int i = 0;
+    while (i < 8)
+    {
+      if (new File(new String[] { "/sbin/su", "/system/bin/su", "/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su" }[i]).exists()) {
+        return true;
+      }
+      i += 1;
+    }
+    return false;
+  }
+  
+  public static boolean e()
+  {
+    try
+    {
+      Process localProcess = Runtime.getRuntime().exec(new String[] { "/system/xbin/which", "su" });
+      if (localProcess != null) {
+        localProcess.destroy();
+      }
       return true;
     }
-    if (!(paramObject instanceof bhn)) {
+    catch (Throwable localThrowable)
+    {
+      localThrowable = localThrowable;
       return false;
     }
-    paramObject = (bhn)paramObject;
-    return new EqualsBuilder().append(userSequences, userSequences).append(userChatReleases, userChatReleases).append(userSnapReleases, userSnapReleases).isEquals();
-  }
-  
-  public final int hashCode()
-  {
-    return new HashCodeBuilder().append(userSequences).append(userChatReleases).append(userSnapReleases).toHashCode();
-  }
-  
-  public final String toString()
-  {
-    return ToStringBuilder.reflectionToString(this);
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
+    }
   }
 }
 

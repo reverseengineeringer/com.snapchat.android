@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laok;
+.implements Lapg;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 139
+    .line 141
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,16 +36,16 @@
 
 
 # virtual methods
-.method public final a(Lamk;)V
+.method public final a(Lanh;)V
     .locals 3
 
     .prologue
-    .line 142
-    invoke-static {p1}, Laol;->a(Lamk;)I
+    .line 144
+    invoke-static {p1}, Laph;->a(Lanh;)I
 
     move-result v0
 
-    .line 143
+    .line 145
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->a(Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;)Ljava/util/HashSet;
@@ -62,7 +62,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 144
+    .line 146
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->a(Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;)Ljava/util/HashSet;
@@ -75,15 +75,15 @@
 
     invoke-virtual {v1, v0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 145
+    .line 147
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->q()V
 
-    .line 146
+    .line 148
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->B:Ljava/util/HashSet;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->C:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
 
@@ -91,17 +91,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 147
+    .line 149
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->i()V
 
-    .line 148
+    .line 150
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->C()V
 
-    .line 151
+    .line 153
     :cond_0
     return-void
 .end method

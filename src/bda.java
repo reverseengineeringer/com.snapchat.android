@@ -1,4 +1,14 @@
-public final class bda {}
+import android.graphics.Bitmap;
+
+public final class bda
+{
+  public Bitmap mBitmap;
+  
+  public bda(Bitmap paramBitmap)
+  {
+    mBitmap = paramBitmap;
+  }
+}
 
 /* Location:
  * Qualified Name:     bda

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laqa$a;
+.implements Laqz$a;
 
 
 # annotations
@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Lajc;
+.field final synthetic a:Lajy;
 
 .field final synthetic b:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/sendto/SendToFragment;Lajc;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/sendto/SendToFragment;Lajy;)V
     .locals 0
 
     .prologue
-    .line 483
+    .line 485
     iput-object p1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$12;->b:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
-    iput-object p2, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$12;->a:Lajc;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$12;->a:Lajy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,24 +44,24 @@
     .locals 2
 
     .prologue
-    .line 486
+    .line 488
     if-nez p1, :cond_0
 
-    .line 487
+    .line 489
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$12;->b:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->c(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$12;->a:Lajc;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$12;->a:Lajy;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 488
+    .line 490
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$12;->b:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->k(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lagg;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->k(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lahd;
 
     move-result-object v0
 
@@ -69,12 +69,12 @@
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$b;->b()V
 
-    .line 489
+    .line 491
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$12;->b:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->i()V
 
-    .line 491
+    .line 493
     :cond_0
     return-void
 .end method

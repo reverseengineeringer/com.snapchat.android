@@ -17,14 +17,14 @@
 # virtual methods
 .method public abstract a(Landroid/net/Uri;)V
     .param p1    # Landroid/net/Uri;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 .end method
 
 .method public abstract a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
     .param p1    # Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method

@@ -1,48 +1,14 @@
-import java.util.Map.Entry;
-import javax.annotation.Nullable;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({java.lang.annotation.ElementType.FIELD})
 @cd
-final class dg<K, V>
-  extends di<K>
-{
-  private final df<K, V> a;
-  
-  dg(df<K, V> paramdf)
-  {
-    a = paramdf;
-  }
-  
-  public final dw<K> a()
-  {
-    return b().a();
-  }
-  
-  public final boolean contains(@Nullable Object paramObject)
-  {
-    return a.containsKey(paramObject);
-  }
-  
-  final de<K> d()
-  {
-    new da()
-    {
-      final dc<K> c()
-      {
-        return dg.this;
-      }
-      
-      public final K get(int paramAnonymousInt)
-      {
-        return (K)((Map.Entry)b.get(paramAnonymousInt)).getKey();
-      }
-    };
-  }
-  
-  public final int size()
-  {
-    return a.size();
-  }
-}
+@interface dg {}
 
 /* Location:
  * Qualified Name:     dg

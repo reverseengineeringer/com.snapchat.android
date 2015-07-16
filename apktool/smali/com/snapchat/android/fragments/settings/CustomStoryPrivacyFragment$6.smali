@@ -67,11 +67,11 @@
     .line 118
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/CustomStoryPrivacyFragment$6;->b:Lcom/snapchat/android/fragments/settings/CustomStoryPrivacyFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/CustomStoryPrivacyFragment;->e(Lcom/snapchat/android/fragments/settings/CustomStoryPrivacyFragment;)Lagn;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/CustomStoryPrivacyFragment;->e(Lcom/snapchat/android/fragments/settings/CustomStoryPrivacyFragment;)Lahk;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lagn;->getFilter()Landroid/widget/Filter;
+    invoke-virtual {v0}, Lahk;->getFilter()Landroid/widget/Filter;
 
     move-result-object v0
 

@@ -1,24 +1,48 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bke
 {
-  @SerializedName("last_address_book_updated_date")
-  protected Long lastAddressBookUpdatedDate = Long.valueOf(0L);
-  @SerializedName("results")
-  protected List<bhu> results;
+  @SerializedName("action")
+  protected String action;
+  @SerializedName("fallback_message")
+  protected String fallbackMessage;
+  @SerializedName("friend_action_status")
+  protected String friendActionStatus;
+  @SerializedName("logged")
+  protected Boolean logged;
+  @SerializedName("message")
+  protected String message;
+  @SerializedName("object")
+  protected biu object;
+  @SerializedName("username")
+  protected String username;
   
-  public final List<bhu> a()
+  public final String a()
   {
-    return results;
+    return action;
   }
   
-  public final Long b()
+  public final String b()
   {
-    return lastAddressBookUpdatedDate;
+    return message;
+  }
+  
+  public final String c()
+  {
+    return fallbackMessage;
+  }
+  
+  public final biu d()
+  {
+    return object;
+  }
+  
+  public final String e()
+  {
+    return friendActionStatus;
   }
   
   public boolean equals(Object paramObject)
@@ -30,12 +54,12 @@ public class bke
       return false;
     }
     paramObject = (bke)paramObject;
-    return new EqualsBuilder().append(results, results).append(lastAddressBookUpdatedDate, lastAddressBookUpdatedDate).isEquals();
+    return new EqualsBuilder().append(action, action).append(message, message).append(fallbackMessage, fallbackMessage).append(username, username).append(object, object).append(friendActionStatus, friendActionStatus).append(logged, logged).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(results).append(lastAddressBookUpdatedDate).toHashCode();
+    return new HashCodeBuilder().append(action).append(message).append(fallbackMessage).append(username).append(object).append(friendActionStatus).append(logged).toHashCode();
   }
   
   public String toString()

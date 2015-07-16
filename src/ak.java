@@ -9,14 +9,14 @@ public abstract class ak
   private static Logger b = Logger.getLogger(ak.class.getName());
   ThreadLocal<ByteBuffer> a = new ThreadLocal() {};
   
-  public final as a(ex paramex, au paramau)
+  public final as a(fg paramfg, au paramau)
   {
-    long l = paramex.b();
+    long l = paramfg.b();
     ((ByteBuffer)a.get()).rewind().limit(8);
     int i;
     do
     {
-      i = paramex.a((ByteBuffer)a.get());
+      i = paramfg.a((ByteBuffer)a.get());
       if (i == 8)
       {
         ((ByteBuffer)a.get()).rewind();
@@ -28,21 +28,21 @@ public abstract class ak
         return null;
       }
     } while (i >= 0);
-    paramex.a(l);
+    paramfg.a(l);
     throw new EOFException();
     String str2 = ao.e((ByteBuffer)a.get());
     Object localObject;
     if (l == 1L)
     {
       ((ByteBuffer)a.get()).limit(16);
-      paramex.a((ByteBuffer)a.get());
+      paramfg.a((ByteBuffer)a.get());
       ((ByteBuffer)a.get()).position(8);
       l = ao.d((ByteBuffer)a.get()) - 16L;
       if (!"uuid".equals(str2)) {
         break label501;
       }
       ((ByteBuffer)a.get()).limit(((ByteBuffer)a.get()).limit() + 16);
-      paramex.a((ByteBuffer)a.get());
+      paramfg.a((ByteBuffer)a.get());
       localObject = new byte[16];
       i = ((ByteBuffer)a.get()).position() - 16;
       label315:
@@ -59,11 +59,11 @@ public abstract class ak
         localObject = a(str2, (byte[])localObject, str1);
         ((as)localObject).setParent(paramau);
         ((ByteBuffer)a.get()).rewind();
-        ((as)localObject).parse(paramex, (ByteBuffer)a.get(), l, this);
+        ((as)localObject).parse(paramfg, (ByteBuffer)a.get(), l, this);
         return (as)localObject;
         if (l == 0L)
         {
-          l = paramex.a() - paramex.b();
+          l = paramfg.a() - paramfg.b();
           break;
         }
         l -= 8L;

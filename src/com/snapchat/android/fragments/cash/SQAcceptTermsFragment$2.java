@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.cash;
 
-import ajx;
+import akr;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
@@ -14,7 +14,7 @@ final class SQAcceptTermsFragment$2
   
   public final void onClick(View paramView)
   {
-    ajx.U();
+    akr.U();
     AnalyticsEvents.M();
     a.getActivity().mFragments.popBackStack();
     if (SQAcceptTermsFragment.a(a) != null)

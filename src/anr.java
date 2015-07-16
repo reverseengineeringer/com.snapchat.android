@@ -1,65 +1,75 @@
-import android.os.AsyncTask;
-import com.snapchat.android.Timber;
-import com.snapchat.android.scan.SnapScan;
-import com.snapchat.android.scan.SnapScan.ImageFormat;
-import com.snapchat.android.scan.SnapScanResult;
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicLong;
+import android.content.Intent;
+import com.snapchat.android.api2.framework.HttpMethod;
+import com.snapchat.android.util.eventbus.ShowDialogEvent;
+import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
+import com.snapchat.android.util.profileimages.ProfileImageUtils;
+import com.squareup.otto.Bus;
 
-public class anr
+public final class anr
+  extends ana
 {
-  public static final String a = anr.class.getSimpleName();
-  public final Executor b;
-  public int c;
-  public double d;
-  public final AtomicBoolean e;
-  public final AtomicBoolean f;
-  public final AtomicBoolean g;
-  public final AtomicLong h;
-  public long i;
-  public int j;
-  double k;
-  private final SnapScan l;
-  private int m;
-  private int n;
-  private final ans o;
-  private final anr.a p;
+  public final long a;
+  public boolean b;
+  private final axn c;
+  private final akr d;
+  private final Bus e;
+  private final ProfileImageUtils f;
   
-  public anr(int paramInt1, int paramInt2, int paramInt3, ans paramans)
+  public anr(Intent paramIntent)
   {
-    this(new SnapScan(), auh.SERIAL_BACKGROUND_EXECUTOR, paramInt1, paramInt2, paramInt3, paramans);
+    this(paramIntent, axo.PROFILE_IMAGE_CACHE, akr.a(), bbo.a(), ProfileImageUtils.a());
   }
   
-  private anr(SnapScan paramSnapScan, Executor paramExecutor, int paramInt1, int paramInt2, int paramInt3, ans paramans)
+  private anr(Intent paramIntent, axn paramaxn, akr paramakr, Bus paramBus, ProfileImageUtils paramProfileImageUtils)
   {
-    l = paramSnapScan;
-    b = paramExecutor;
-    c = paramInt1;
-    m = paramInt2;
-    n = paramInt3;
-    o = paramans;
-    p = null;
-    d = 5.0D;
-    e = new AtomicBoolean(false);
-    f = new AtomicBoolean(false);
-    g = new AtomicBoolean(false);
-    h = new AtomicLong(0L);
+    super(paramIntent);
+    a = paramIntent.getLongExtra("last_deleted", System.currentTimeMillis());
+    c = paramaxn;
+    d = paramakr;
+    e = paramBus;
+    f = paramProfileImageUtils;
+    b = false;
   }
   
-  public static double a(long paramLong)
+  public final HttpMethod getMethod()
   {
-    return (System.nanoTime() - paramLong) / 1.0E9D;
+    return HttpMethod.POST;
   }
   
-  public final void a()
+  public final Object getRequestPayload()
   {
-    e.set(false);
-    f.set(false);
-    Timber.c(a, "Disable Scanner...", new Object[0]);
+    return buildAuthPayload(new anr.a().a(Long.valueOf(a)));
   }
   
-  public static abstract interface a {}
+  protected final String l_()
+  {
+    return "/bq/delete_profile_data";
+  }
+  
+  public final void onResult(@chc us paramus)
+  {
+    super.onResult(paramus);
+    if ((mResponseCode == 404) || (mResponseCode == 200))
+    {
+      new StringBuilder("profile images - delete succeeded with timestamp: ").append(a);
+      b = true;
+      ProfileImageUtils.a(a, c);
+      akr.c(a);
+      if (a > akr.z()) {
+        akr.d(true);
+      }
+      return;
+    }
+    long l = a;
+    paramus.e();
+    b = false;
+    e.a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131493080));
+  }
+  
+  @ud
+  public static final class a
+    extends blb
+  {}
 }
 
 /* Location:

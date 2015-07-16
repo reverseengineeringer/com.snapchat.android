@@ -1,81 +1,51 @@
-.class public final Lajk;
-.super Lcom/snapchat/android/model/MediaMailingMetadata;
+.class public interface abstract Lajk;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public mPostToStories:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lajc;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private mPostToStoriesString:Ljava/lang/String;
-
-.field public mShouldExecutePostStoryTaskAfterUpload:Z
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 15
-    invoke-direct {p0}, Lcom/snapchat/android/model/MediaMailingMetadata;-><init>()V
-
-    .line 17
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lajk;->mShouldExecutePostStoryTaskAfterUpload:Z
-
-    .line 18
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lajk;->mPostToStories:Ljava/util/ArrayList;
-
-    return-void
+# virtual methods
+.method public abstract a(ILaka;)I
 .end method
 
+.method public abstract a()V
+.end method
 
-# virtual methods
-.method public final a()Lcom/snapchat/android/model/MediaMailingMetadata;
-    .locals 3
+.method public abstract a(Laka;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;I)V
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
 
-    .prologue
-    .line 70
-    new-instance v0, Lajk;
+.method public abstract b()V
+.end method
 
-    invoke-direct {v0}, Lajk;-><init>()V
+.method public abstract c()Laka;
+    .annotation build Lchd;
+    .end annotation
+.end method
 
-    .line 71
-    invoke-super {p0, v0}, Lcom/snapchat/android/model/MediaMailingMetadata;->a(Lcom/snapchat/android/model/MediaMailingMetadata;)V
+.method public abstract d()Laka;
+    .annotation build Lchd;
+    .end annotation
+.end method
 
-    .line 72
-    iget-boolean v1, p0, Lajk;->mShouldExecutePostStoryTaskAfterUpload:Z
+.method public abstract e()Z
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
 
-    iput-boolean v1, v0, Lajk;->mShouldExecutePostStoryTaskAfterUpload:Z
+.method public abstract f()Z
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
 
-    .line 73
-    iget-object v1, p0, Lajk;->mPostToStoriesString:Ljava/lang/String;
+.method public abstract g()Z
+.end method
 
-    iput-object v1, v0, Lajk;->mPostToStoriesString:Ljava/lang/String;
-
-    .line 74
-    new-instance v1, Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lajk;->mPostToStories:Ljava/util/ArrayList;
-
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    iput-object v1, v0, Lajk;->mPostToStories:Ljava/util/ArrayList;
-
-    .line 75
-    return-object v0
+.method public abstract h()I
 .end method

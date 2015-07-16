@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lahq$a;
+.implements Laim$a;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 290
+    .line 294
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,21 +40,21 @@
     .locals 1
 
     .prologue
-    .line 293
+    .line 297
     if-eqz p1, :cond_0
 
-    .line 294
+    .line 298
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)Lajx;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->b(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)Lakr;
 
-    invoke-static {}, Lajx;->aV()V
+    invoke-static {}, Lakr;->aS()V
 
-    .line 298
+    .line 302
     :goto_0
     return-void
 
-    .line 296
+    .line 300
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$2;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 

@@ -1,6 +1,6 @@
 package com.snapchat.android.notification;
 
-import cgb;
+import chc;
 
 public final class AndroidNotificationManager$a
 {
@@ -8,7 +8,7 @@ public final class AndroidNotificationManager$a
   public int b;
   public long c;
   
-  public AndroidNotificationManager$a(@cgb String paramString)
+  public AndroidNotificationManager$a(@chc String paramString)
   {
     a = paramString;
   }

@@ -1,35 +1,48 @@
-import javax.inject.Provider;
+import com.snapchat.android.model.chat.CashFeedItem;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import javax.inject.Inject;
 
 public final class ri
-  implements buj<rh>
+  implements re
 {
-  private final Provider<xr> mCashCardManagerProvider;
-  private final Provider<sn> mSquareProvider;
-  private final buj<qv> supertypeInjector;
+  public static final String NAME = "snapcash";
   
-  static
+  public final void a() {}
+  
+  public final void a(@chc CashFeedItem paramCashFeedItem) {}
+  
+  public final void a(String paramString) {}
+  
+  public final Collection<rl> b()
   {
-    if (!ri.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
+    return Arrays.asList(new rl[] { new ro() });
   }
   
-  private ri(buj<qv> parambuj, Provider<xr> paramProvider, Provider<sn> paramProvider1)
+  public final Collection<rl> c()
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mCashCardManagerProvider = paramProvider;
-    assert (paramProvider1 != null);
-    mSquareProvider = paramProvider1;
+    return Arrays.asList(new rl[] { new rq() });
   }
   
-  public static buj<rh> a(buj<qv> parambuj, Provider<xr> paramProvider, Provider<sn> paramProvider1)
+  public final Collection<rl> d()
   {
-    return new ri(parambuj, paramProvider, paramProvider1);
+    return Arrays.asList(new rl[] { new rr() });
+  }
+  
+  public final Collection<rl> e()
+  {
+    return new ArrayList();
+  }
+  
+  public final Collection<rl> f()
+  {
+    return Arrays.asList(new rl[] { new ro() });
+  }
+  
+  public final Collection<rl> g()
+  {
+    return new ArrayList();
   }
 }
 

@@ -15,7 +15,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -34,11 +34,11 @@
 .method protected constructor <init>(Ljava/lang/String;Lcom/snapchat/videotranscoder/utils/FileUtils;)V
     .locals 3
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/utils/FileUtils;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

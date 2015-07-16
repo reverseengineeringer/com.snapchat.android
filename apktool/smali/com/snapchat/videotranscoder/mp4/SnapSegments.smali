@@ -13,7 +13,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -45,7 +45,7 @@
 .method public constructor <init>([J)V
     .locals 1
     .param p1    # [J
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -147,7 +147,7 @@
 .method private parseSegmentTimes(Ljava/lang/String;)[J
     .locals 6
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -225,7 +225,7 @@
 .method private validateSegmentTimes([J)V
     .locals 6
     .param p1    # [J
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

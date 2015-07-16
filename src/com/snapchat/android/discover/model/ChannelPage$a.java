@@ -1,11 +1,12 @@
 package com.snapchat.android.discover.model;
 
-import abs;
+import acs;
 import android.graphics.Color;
-import cgb;
+import chc;
 
 public final class ChannelPage$a
 {
+  public MediaState A = MediaState.NOT_STARTED;
   public String a;
   public String b;
   public String c;
@@ -20,20 +21,20 @@ public final class ChannelPage$a
   public boolean l;
   public int m;
   public int n;
-  public String o = null;
-  public int p;
-  public String q;
+  public int o;
+  public String p = null;
+  public int q;
   public String r;
   public String s;
   public String t;
   public String u;
   public String v;
-  public MediaState w = MediaState.NOT_STARTED;
+  public String w;
   public MediaState x = MediaState.NOT_STARTED;
   public MediaState y = MediaState.NOT_STARTED;
   public MediaState z = MediaState.NOT_STARTED;
   
-  private static int a(@cgb String paramString)
+  private static int a(@chc String paramString)
   {
     String str = paramString;
     if (paramString.charAt(0) != '#') {
@@ -45,24 +46,24 @@ public final class ChannelPage$a
   public final ChannelPage a()
   {
     if (a == null) {
-      throw new abs("Cannot build ChannelPage with null publisher name.", "publisher_name");
+      throw new acs("Cannot build ChannelPage with null publisher name.", "publisher_name");
     }
     if ((d == null) || (d.length() == 0)) {
-      throw new abs("Cannot build ChannelPage with primary color: " + d, "primary_color");
+      throw new acs("Cannot build ChannelPage with primary color: " + d, "primary_color");
     }
     f = a(d);
     if ((e == null) || (e.length() == 0)) {
-      throw new abs("Cannot build ChannelPage with secondary color: " + e, "secondary_color");
+      throw new acs("Cannot build ChannelPage with secondary color: " + e, "secondary_color");
     }
     g = a(e);
     if (h == null) {
-      throw new abs("Cannot build ChannelPage with null filled icon URL.", "filled_icon");
+      throw new acs("Cannot build ChannelPage with null filled icon URL.", "filled_icon");
     }
     if (i == null) {
-      throw new abs("Cannot build ChannelPage with null inverted icon URL.", "inverted_icon");
+      throw new acs("Cannot build ChannelPage with null inverted icon URL.", "inverted_icon");
     }
     if (k == null) {
-      throw new abs("Cannot build ChannelPage with null intro video URL.", "intro_video");
+      throw new acs("Cannot build ChannelPage with null intro video URL.", "intro_video");
     }
     return new ChannelPage(this, (byte)0);
   }

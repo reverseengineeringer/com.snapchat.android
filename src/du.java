@@ -1,96 +1,77 @@
-import java.util.List;
-import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
 
 @cd
-final class du<E>
-  extends de<E>
+public final class du
 {
-  final transient E b;
+  static final ck.a a = new ck.a(cy.a, "=", (byte)0);
   
-  du(E paramE)
+  static int a(int paramInt)
   {
-    b = ck.a(paramE);
-  }
-  
-  final int a(Object[] paramArrayOfObject, int paramInt)
-  {
-    paramArrayOfObject[paramInt] = b;
-    return paramInt + 1;
-  }
-  
-  public final de<E> a(int paramInt1, int paramInt2)
-  {
-    ck.a(paramInt1, paramInt2, 1);
-    Object localObject = this;
-    if (paramInt1 == paramInt2) {
-      localObject = de.a;
-    }
-    return (de<E>)localObject;
-  }
-  
-  public final dw<E> a()
-  {
-    return dj.a(b);
-  }
-  
-  public final boolean contains(@Nullable Object paramObject)
-  {
-    return b.equals(paramObject);
-  }
-  
-  public final boolean equals(@Nullable Object paramObject)
-  {
-    if (paramObject == this) {}
-    do
+    if (paramInt < 3)
     {
-      return true;
-      if (!(paramObject instanceof List)) {
-        break;
-      }
-      paramObject = (List)paramObject;
-    } while ((((List)paramObject).size() == 1) && (b.equals(((List)paramObject).get(0))));
-    return false;
-    return false;
-  }
-  
-  public final E get(int paramInt)
-  {
-    ck.a(paramInt, 1);
-    return (E)b;
-  }
-  
-  public final int hashCode()
-  {
-    return b.hashCode() + 31;
-  }
-  
-  public final int indexOf(@Nullable Object paramObject)
-  {
-    if (b.equals(paramObject)) {
-      return 0;
+      cx.a(paramInt, "expectedSize");
+      return paramInt + 1;
     }
-    return -1;
+    if (paramInt < 1073741824) {
+      return paramInt / 3 + paramInt;
+    }
+    return Integer.MAX_VALUE;
   }
   
-  public final boolean isEmpty()
+  static <K, V> ef<V> a(ef<Map.Entry<K, V>> paramef)
   {
+    new ef()
+    {
+      public final boolean hasNext()
+      {
+        return a.hasNext();
+      }
+      
+      public final V next()
+      {
+        return (V)((Map.Entry)a.next()).getValue();
+      }
+    };
+  }
+  
+  static String a(Map<?, ?> paramMap)
+  {
+    StringBuilder localStringBuilder = cy.a(paramMap.size()).append('{');
+    a.a(localStringBuilder, paramMap.entrySet().iterator());
+    return '}';
+  }
+  
+  public static <K, V> HashMap<K, V> a()
+  {
+    return new HashMap();
+  }
+  
+  static boolean a(Map<?, ?> paramMap, Object paramObject)
+  {
+    if (paramMap == paramObject) {
+      return true;
+    }
+    if ((paramObject instanceof Map))
+    {
+      paramObject = (Map)paramObject;
+      return paramMap.entrySet().equals(((Map)paramObject).entrySet());
+    }
     return false;
   }
   
-  public final int lastIndexOf(@Nullable Object paramObject)
+  public static <K, V> LinkedHashMap<K, V> b()
   {
-    return indexOf(paramObject);
+    return new LinkedHashMap();
   }
   
-  public final int size()
+  public static <K extends Comparable, V> TreeMap<K, V> c()
   {
-    return 1;
-  }
-  
-  public final String toString()
-  {
-    String str = b.toString();
-    return str.length() + 2 + '[' + str + ']';
+    return new TreeMap();
   }
 }
 

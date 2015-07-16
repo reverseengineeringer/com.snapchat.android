@@ -3,135 +3,252 @@
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Ljava/util/Collection;Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+# static fields
+.field private static final PRIMITIVE_TYPE_MAP:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/util/Collection",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/Class",
             "<*>;",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/lang/String;"
+            "Ljava/lang/Class",
+            "<*>;>;"
+        }
+    .end annotation
+.end field
+
+.field private static final WRAPPER_TYPES:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/Class",
+            "<*>;>;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    .prologue
+    .line 17
+    new-instance v0, Ljava/util/HashMap;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
+
+    .line 18
+    sput-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Integer;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 19
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Long;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 20
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Boolean;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 21
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Byte;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 22
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Character;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 23
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Double;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 24
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Float;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 25
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Short;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 26
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    sget-object v1, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/Void;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 27
+    new-instance v0, Ljava/util/HashSet;
+
+    sget-object v1, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lavb;->WRAPPER_TYPES:Ljava/util/Set;
+
+    .line 28
+    return-void
+.end method
+
+.method public static a(Ljava/lang/Integer;)I
+    .locals 1
+
+    .prologue
+    .line 46
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/lang/Long;)J
+    .locals 2
+
+    .prologue
+    .line 50
+    if-nez p0, :cond_0
+
+    const-wide/16 v0, 0x0
+
+    :goto_0
+    return-wide v0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/lang/Boolean;)Z
+    .locals 1
+
+    .prologue
+    .line 38
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/lang/Class;)Z
+    .locals 1
+
+    .prologue
+    .line 34
+    sget-object v0, Lavb;->WRAPPER_TYPES:Ljava/util/Set;
+
+    invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static b(Ljava/lang/Class;)Ljava/lang/Class;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Class",
+            "<TT;>;)",
+            "Ljava/lang/Class",
+            "<TT;>;"
         }
     .end annotation
 
     .prologue
-    .line 20
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 57
+    sget-object v0, Lavb;->PRIMITIVE_TYPE_MAP:Ljava/util/Map;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 21
-    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .line 22
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 23
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 24
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 25
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    .line 29
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Ljava/lang/Class;
 
-.method public static a([B)Ljava/lang/String;
-    .locals 4
-    .param p0    # [B
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 40
-    if-nez p0, :cond_1
-
-    const/4 v1, 0x0
-
-    .line 46
-    :cond_0
-    return-object v1
-
-    .line 42
-    :cond_1
-    const-string v1, ""
-
-    .line 43
-    const/4 v0, 0x0
+    .line 58
+    if-nez v0, :cond_0
 
     :goto_0
-    array-length v2, p0
+    return-object p0
 
-    if-ge v0, v2, :cond_0
-
-    .line 44
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    aget-byte v2, p0, v0
-
-    and-int/lit16 v2, v2, 0xff
-
-    add-int/lit16 v2, v2, 0x100
-
-    const/16 v3, 0x10
-
-    invoke-static {v2, v3}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 43
-    add-int/lit8 v0, v0, 0x1
+    :cond_0
+    move-object p0, v0
 
     goto :goto_0
 .end method

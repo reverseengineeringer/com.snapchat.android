@@ -2,8 +2,6 @@ package com.snapchat.android.ui;
 
 public abstract interface ProfilePictureView$a
 {
-  public abstract void n();
-  
   public abstract void o();
   
   public abstract void p();
@@ -11,6 +9,8 @@ public abstract interface ProfilePictureView$a
   public abstract void q();
   
   public abstract void r();
+  
+  public abstract void t();
 }
 
 /* Location:

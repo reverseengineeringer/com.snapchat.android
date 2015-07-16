@@ -17,7 +17,7 @@
 # virtual methods
 .method public abstract a(Landroid/view/MotionEvent;)V
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method

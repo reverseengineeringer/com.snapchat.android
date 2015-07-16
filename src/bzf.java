@@ -1,9 +1,22 @@
 public final class bzf
-  extends bza
+  implements byh
 {
-  public bzf()
+  public final byl a(bya parambya, String paramString)
   {
-    super(")", 0);
+    try
+    {
+      parambya = new Double(paramString);
+      return new byl(new Double(Math.sqrt(parambya.doubleValue())).toString(), 0);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("Invalid argument.", parambya);
+    }
+  }
+  
+  public final String a()
+  {
+    return "sqrt";
   }
 }
 

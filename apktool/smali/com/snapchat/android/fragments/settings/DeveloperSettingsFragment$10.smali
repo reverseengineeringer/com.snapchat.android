@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 362
+    .line 359
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$10;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 4
 
     .prologue
-    .line 366
+    .line 363
     invoke-static {}, Lcom/addlive/platform/ADL;->getService()Lcom/addlive/service/AddLiveService;
 
     move-result-object v0
@@ -55,6 +55,6 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/addlive/service/AddLiveService;->setProperty(Lcom/addlive/service/Responder;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 367
+    .line 364
     return-void
 .end method

@@ -256,7 +256,6 @@ ums einem Freund zu zeigen."</string>
     <string name="discover_sharing_success">Snap gesendet!</string>
     <string name="discover_sharing_unavailable">%1$s verbietet das Senden dieses Snaps.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Klicke hier, um Discover anzusehen!</string>
     <string name="discover_unavailable">"Sorry!
 
 Discover ist momentan nicht verfügbar."</string>
@@ -306,6 +305,7 @@ Discover ist für dein Gerät momentan nicht verfügbar."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Passwort vergessen?</a>" "</string>
     <string name="friend_suggest_hide">Weg damit</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Neuer Kontakt</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined">" "<g id="username">%1$s</g> - Seit kurzem dabei</string>
     <string name="friends">Freunde</string>
     <string name="friends_context_block">Blockieren</string>
@@ -613,7 +613,7 @@ Discover ist für dein Gerät momentan nicht verfügbar."</string>
     <string name="snap_delete_failure">Snap konnte nicht gelöscht werden.</string>
     <string name="snap_failed_to_post">1 Snap konnte nicht gepostet werden.</string>
     <string name="snap_list_empty_list_msg">Du hast noch keine Snaps :(</string>
-    <string name="snap_tag_help_description">Snapchatter können dich adden, indem sie ihre Kamera auf deinen Geist halten und auf den Bildschirm tippen.</string>
+    <string name="snap_tag_help_description">Snapchatter können dich adden, indem sie ihre Kamera auf deinen Snapcode richten und auf ihren Bildschirm tippen!</string>
     <string name="snap_tag_no_connection">Keine Verbindung!</string>
     <string name="snap_to_add">Snappe oder Screenshotte zum Adden</string>
     <string name="snapkidz_welcome">Willkommen bei Snapkidz!</string>
@@ -649,8 +649,6 @@ Discover ist für dein Gerät momentan nicht verfügbar."</string>
     <string name="tap_to_view_edition">Tippe, um Discover zu öffnen</string>
     <string name="tap_to_view_full_story">Tippe, um mehr zu sehen</string>
     <string name="tap_to_view_more">Tippe, um andere Kanäle zu entdecken</string>
-    <string name="tap_to_view_snaps">Tippe, um Snaps zu sehen!</string>
-    <string name="tap_to_view_stories">Tippe, um Geschichten zu sehen!</string>
     <string name="tap_to_view_video_in_discover">Tippe, um dieses Video auf Discover anzuschauen</string>
     <string name="too_many_attempts">Zu viele Versuche.</string>
     <string name="tos_accept">AKZEPTIEREN</string>

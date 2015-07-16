@@ -1,9 +1,6 @@
-.class abstract Lcr;
-.super Ljava/lang/Object;
+.class final Lcr;
+.super Lcn;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Map$Entry;
 
 
 # annotations
@@ -12,170 +9,126 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<K:",
-        "Ljava/lang/Object;",
-        "V:",
+        "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "Ljava/util/Map$Entry",
-        "<TK;TV;>;"
+        "Lcn",
+        "<TT;>;"
     }
 .end annotation
 
 
+# instance fields
+.field private final a:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 35
+    invoke-direct {p0}, Lcn;-><init>()V
 
+    .line 36
+    iput-object p1, p0, Lcr;->a:Ljava/lang/Object;
+
+    .line 37
     return-void
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)TT;"
+        }
+    .end annotation
+
+    .prologue
+    .line 48
+    const-string v0, "use Optional.orNull() instead of Optional.or(null)"
+
+    invoke-static {p1, v0}, Lco;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 49
+    iget-object v0, p0, Lcr;->a:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
     .prologue
+    .line 76
+    instance-of v0, p1, Lcr;
+
+    if-eqz v0, :cond_0
+
+    .line 77
+    check-cast p1, Lcr;
+
+    .line 78
+    iget-object v0, p0, Lcr;->a:Ljava/lang/Object;
+
+    iget-object v1, p1, Lcr;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    .line 80
+    :goto_0
+    return v0
+
+    :cond_0
     const/4 v0, 0x0
 
-    .line 47
-    instance-of v1, p1, Ljava/util/Map$Entry;
-
-    if-eqz v1, :cond_0
-
-    .line 48
-    check-cast p1, Ljava/util/Map$Entry;
-
-    .line 49
-    invoke-virtual {p0}, Lcr;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcj;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Lcr;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcj;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x1
-
-    .line 52
-    :cond_0
-    return v0
+    goto :goto_0
 .end method
 
-.method public abstract getKey()Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TK;"
-        }
-    .end annotation
-.end method
-
-.method public abstract getValue()Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TV;"
-        }
-    .end annotation
-.end method
-
-.method public hashCode()I
-    .locals 3
+.method public final hashCode()I
+    .locals 2
 
     .prologue
-    const/4 v0, 0x0
+    .line 84
+    const v0, 0x598df91c
 
-    .line 56
-    invoke-virtual {p0}, Lcr;->getKey()Ljava/lang/Object;
+    iget-object v1, p0, Lcr;->a:Ljava/lang/Object;
 
-    move-result-object v1
-
-    .line 57
-    invoke-virtual {p0}, Lcr;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 58
-    if-nez v1, :cond_0
-
-    move v1, v0
-
-    :goto_0
-    if-nez v2, :cond_1
-
-    :goto_1
-    xor-int/2addr v0, v1
-
-    return v0
-
-    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    goto :goto_0
+    add-int/2addr v0, v1
 
-    :cond_1
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    goto :goto_1
+    return v0
 .end method
 
-.method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TV;)TV;"
-        }
-    .end annotation
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
     .prologue
-    .line 43
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 5
-
-    .prologue
-    .line 65
-    invoke-virtual {p0}, Lcr;->getKey()Ljava/lang/Object;
-
-    move-result-object v0
+    .line 88
+    iget-object v0, p0, Lcr;->a:Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -185,43 +138,27 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcr;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0xd
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-result v4
+    const-string v2, "Optional.of("
 
-    add-int/2addr v3, v4
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "="
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
+
+    const-string v1, ")"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

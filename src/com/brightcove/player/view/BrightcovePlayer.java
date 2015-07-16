@@ -20,6 +20,8 @@ import com.brightcove.player.event.EventLogger;
 import com.brightcove.player.event.ListensFor;
 import java.util.HashMap;
 import java.util.Map;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 @Emits(events={"activityCreated", "activityDestroyed", "activityPaused", "activityRestarted", "activityResumed", "activitySaveInstanceState", "activityStarted", "activityStopped"})
 @ListensFor(events={"activityDestroyed", "activitySaveInstanceState"})
@@ -122,6 +124,8 @@ public class BrightcovePlayer
   
   protected void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
     if (brightcoveVideoView != null)
     {

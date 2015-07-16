@@ -1,10 +1,67 @@
-import in.srain.cube.views.ptr.PtrFrameLayout;
+import java.lang.reflect.AccessibleObject;
+import java.lang.reflect.Field;
 
-public abstract interface bur
+public final class bur
 {
-  public abstract void a(PtrFrameLayout paramPtrFrameLayout);
+  public static Object a(Field paramField, Object paramObject)
+  {
+    if (paramField == null) {}
+    while (paramField == null) {
+      return null;
+    }
+    paramField.setAccessible(true);
+    try
+    {
+      paramField = paramField.get(paramObject);
+      return paramField;
+    }
+    catch (ThreadDeath paramField)
+    {
+      throw paramField;
+    }
+    catch (Throwable paramField)
+    {
+      throw new bta("Unable to get value of field", paramField);
+    }
+  }
   
-  public abstract boolean a();
+  public static Field a(Class paramClass1, Class paramClass2)
+  {
+    Field[] arrayOfField = paramClass1.getDeclaredFields();
+    paramClass1 = null;
+    int i = 0;
+    while (i < arrayOfField.length)
+    {
+      Object localObject = paramClass1;
+      if (paramClass2.isAssignableFrom(arrayOfField[i].getType()))
+      {
+        if (paramClass1 != null) {
+          throw new bta("Field is ambiguous: " + paramClass1.getName() + ", " + arrayOfField[i].getName());
+        }
+        localObject = arrayOfField[i];
+      }
+      i += 1;
+      paramClass1 = (Class)localObject;
+    }
+    if (paramClass1 == null) {
+      throw new bta("Could not find field matching type: " + paramClass2.getName());
+    }
+    paramClass1.setAccessible(true);
+    return paramClass1;
+  }
+  
+  public static void a(AccessibleObject[] paramArrayOfAccessibleObject)
+  {
+    int i = 0;
+    while (i < paramArrayOfAccessibleObject.length)
+    {
+      AccessibleObject localAccessibleObject = paramArrayOfAccessibleObject[i];
+      if (localAccessibleObject != null) {
+        localAccessibleObject.setAccessible(true);
+      }
+      i += 1;
+    }
+  }
 }
 
 /* Location:

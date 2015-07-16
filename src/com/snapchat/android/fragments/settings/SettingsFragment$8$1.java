@@ -1,26 +1,26 @@
 package com.snapchat.android.fragments.settings;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import java.util.List;
-import qv;
-import qv.a;
+import rl;
+import rl.a;
 
 final class SettingsFragment$8$1
-  implements qv.a
+  implements rl.a
 {
-  SettingsFragment$8$1(SettingsFragment.8 param8, qv paramqv) {}
+  SettingsFragment$8$1(SettingsFragment.8 param8, rl paramrl) {}
   
-  public final void a(@cgb qv paramqv) {}
+  public final void a(@chc rl paramrl) {}
   
-  public final void a(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean)
+  public final void a(@chc rl paramrl, @chd List<rl> paramList, boolean paramBoolean)
   {
     a.a(null);
   }
   
-  public final void b(@cgb qv paramqv) {}
+  public final void b(@chc rl paramrl) {}
   
-  public final void b(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean) {}
+  public final void b(@chc rl paramrl, @chd List<rl> paramList, boolean paramBoolean) {}
 }
 
 /* Location:

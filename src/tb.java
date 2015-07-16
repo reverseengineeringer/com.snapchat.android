@@ -1,52 +1,16 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.snapchat.android.util.eventbus.ShowDialogEvent;
-import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
-import com.squareup.otto.Bus;
+import com.snapchat.android.api2.cash.square.data.CashPayment;
 
-public final class tb
-  extends th
+public abstract class tb
+  extends tg
+  implements ui.b<CashPayment>
 {
-  private ChatConversation mConversation;
-  private String mConversationId;
+  private static final String TAG = "SquareCashPaymentTask";
+  private final ta mCallback;
   
-  public tb(@cgb ChatConversation paramChatConversation)
+  protected tb(@chc ta paramta)
   {
-    mConversation = paramChatConversation;
-    mConversationId = mId;
-  }
-  
-  public final void a(@cgb uc paramuc)
-  {
-    super.a(paramuc);
-    if (paramuc.d()) {
-      akc.b().b(mConversationId, true);
-    }
-    for (;;)
-    {
-      ban.a().a(new ben());
-      return;
-      ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131493419));
-      mConversation.mBeingCleared = false;
-    }
-  }
-  
-  protected final String d()
-  {
-    return "/loq/clear_conversation";
-  }
-  
-  @tn
-  public final class a
-    extends pl
-  {
-    @SerializedName("conversation_id")
-    private String conversationId;
-    
-    public a(@cgb String paramString)
-    {
-      conversationId = paramString;
-    }
+    mCallback = paramta;
+    registerCallback(CashPayment.class, this);
   }
 }
 

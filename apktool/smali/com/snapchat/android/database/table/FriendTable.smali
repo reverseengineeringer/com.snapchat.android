@@ -176,23 +176,23 @@
     return-object v0
 
     :cond_0
-    new-instance v3, Laad;
+    new-instance v3, Labc;
 
-    invoke-direct {v3}, Laad;-><init>()V
+    invoke-direct {v3}, Labc;-><init>()V
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->USERNAME:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->USER_ID:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget-object v4, p1, Lcom/snapchat/android/model/Friend;->mUserId:Ljava/lang/String;
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->DISPLAY_NAME:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -200,19 +200,19 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->PHONE_NUMBER:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget-object v4, p1, Lcom/snapchat/android/model/Friend;->mPhoneNumber:Ljava/lang/String;
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->BEST_FRIEND_INDEX:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget v4, p1, Lcom/snapchat/android/model/Friend;->mBestFriendIndex:I
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;I)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->IS_BLOCKED:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -223,7 +223,7 @@
     move v0, v1
 
     :goto_1
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->IS_PENDING:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -234,7 +234,7 @@
     move v0, v1
 
     :goto_2
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->IS_FOLLOWING:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -245,7 +245,7 @@
     move v0, v1
 
     :goto_3
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->IS_ADDED_AS_FRIEND:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -258,19 +258,19 @@
     move v0, v1
 
     :goto_4
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->ADDED_ME_TIMESTAMP:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget-wide v4, p1, Lcom/snapchat/android/model/Friend;->mTheyAddedMeTimestamp:J
 
-    invoke-virtual {v3, v0, v4, v5}, Laad;->a(Lzw;J)Laad;
+    invoke-virtual {v3, v0, v4, v5}, Labc;->a(Laav;J)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->ADDED_THEM_TIMESTAMP:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget-wide v4, p1, Lcom/snapchat/android/model/Friend;->mIAddedThemTimestamp:J
 
-    invoke-virtual {v3, v0, v4, v5}, Laad;->a(Lzw;J)Laad;
+    invoke-virtual {v3, v0, v4, v5}, Labc;->a(Laav;J)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->IS_SHARED_STORY:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -281,13 +281,13 @@
     move v0, v1
 
     :goto_5
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->SHARED_STORY_ID:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget-object v4, p1, Lcom/snapchat/android/model/Friend;->mSharedStoryId:Ljava/lang/String;
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->SHOULD_FETCH_CUSTOM_DESCRIPTION:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -298,19 +298,19 @@
     move v0, v1
 
     :goto_6
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->CUSTOM_TITLE:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget-object v4, p1, Lcom/snapchat/android/model/Friend;->mCustomTitle:Ljava/lang/String;
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->CUSTOM_DESCRIPTION:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget-object v4, p1, Lcom/snapchat/android/model/Friend;->mCustomDescription:Ljava/lang/String;
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->IS_LOCAL_STORY:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -321,11 +321,11 @@
     move v0, v1
 
     :goto_7
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->CASH_ELIGIBILITY:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->s()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->r()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
     move-result-object v4
 
@@ -333,7 +333,7 @@
 
     move-result v4
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;I)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->IS_IGNORED:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -344,7 +344,7 @@
     move v0, v1
 
     :goto_8
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->IS_HIDDEN:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -355,7 +355,7 @@
     move v0, v1
 
     :goto_9
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->DIRECTION:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -365,13 +365,13 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->ADD_SOURCE:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
     iget-object v4, p1, Lcom/snapchat/android/model/Friend;->mAddSource:Ljava/lang/String;
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->ADD_SOURCE_TYPE:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -381,7 +381,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v4, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->NEEDS_LOVE:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -392,15 +392,15 @@
     move v0, v1
 
     :goto_a
-    invoke-virtual {v3, v4, v0}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v4, v0}, Labc;->a(Laav;I)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->FRIENDMOJI_STRING:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->u()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->t()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v3, v0, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3, v0, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v0, Lcom/snapchat/android/database/table/FriendTable$FriendSchema;->PROFILE_IMAGES_FETCHED:Lcom/snapchat/android/database/table/FriendTable$FriendSchema;
 
@@ -409,9 +409,9 @@
     if-eqz v4, :cond_b
 
     :goto_b
-    invoke-virtual {v3, v0, v1}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v3, v0, v1}, Labc;->a(Laav;I)Labc;
 
-    iget-object v0, v3, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v3, Labc;->a:Landroid/content/ContentValues;
 
     goto/16 :goto_0
 
@@ -930,12 +930,12 @@
     goto :goto_a
 .end method
 
-.method public a(Lajv;)Ljava/util/Collection;
+.method public a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
@@ -946,14 +946,14 @@
 
     .prologue
     .line 87
-    invoke-virtual {p1}, Lajv;->o()Ljava/util/List;
+    invoke-virtual {p1}, Lakp;->o()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public b(Lajv;)V
+.method public b(Lakp;)V
     .locals 5
 
     .prologue
@@ -968,24 +968,24 @@
 
     move-result-object v0
 
-    iget-object v1, p1, Lajv;->mFriends:Ljava/util/List;
+    iget-object v1, p1, Lakp;->mFriends:Ljava/util/List;
 
     monitor-enter v1
 
     :try_start_0
-    iget-object v2, p1, Lajv;->mFriends:Ljava/util/List;
+    iget-object v2, p1, Lakp;->mFriends:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    iget-object v2, p1, Lajv;->mFriendMap:Ljava/util/Map;
+    iget-object v2, p1, Lakp;->mFriendMap:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->clear()V
 
-    iget-object v2, p1, Lajv;->mFriends:Ljava/util/List;
+    iget-object v2, p1, Lakp;->mFriends:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    iget-object v0, p1, Lajv;->mFriends:Ljava/util/List;
+    iget-object v0, p1, Lakp;->mFriends:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1004,9 +1004,9 @@
 
     check-cast v0, Lcom/snapchat/android/model/Friend;
 
-    iget-object v3, p1, Lajv;->mFriendMap:Ljava/util/Map;
+    iget-object v3, p1, Lakp;->mFriendMap:Ljava/util/Map;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v4
 
@@ -1029,13 +1029,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {p1}, Lajv;->f()V
+    invoke-virtual {p1}, Lakp;->f()V
 
     .line 93
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue

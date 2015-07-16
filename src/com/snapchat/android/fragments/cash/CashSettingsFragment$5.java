@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import java.util.List;
-import qv;
-import qv.a;
-import rv;
+import rl;
+import rl.a;
+import sl;
 
 final class CashSettingsFragment$5
   implements View.OnClickListener
@@ -23,31 +23,31 @@ final class CashSettingsFragment$5
   public final void onClick(View paramView)
   {
     paramView = new AlertDialog.Builder(a.getActivity());
-    paramView.setTitle(2131493581);
-    paramView.setMessage(2131493580);
+    paramView.setTitle(2131493579);
+    paramView.setMessage(2131493578);
     paramView.setCancelable(true);
-    paramView.setPositiveButton(2131493603, new DialogInterface.OnClickListener()
+    paramView.setPositiveButton(2131493601, new DialogInterface.OnClickListener()
     {
       public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
       {
         CashSettingsFragment.a(a).setVisibility(0);
         CashSettingsFragment.b(a).setVisibility(8);
         paramAnonymousDialogInterface = CashSettingsFragment.l();
-        mListener = new qv.a()
+        mListener = new rl.a()
         {
-          public final void a(@cgb qv paramAnonymous2qv) {}
+          public final void a(@chc rl paramAnonymous2rl) {}
           
-          public final void a(@cgb qv paramAnonymous2qv, @cgc List<qv> paramAnonymous2List, boolean paramAnonymous2Boolean)
+          public final void a(@chc rl paramAnonymous2rl, @chd List<rl> paramAnonymous2List, boolean paramAnonymous2Boolean)
           {
             CashSettingsFragment.a(a, null);
           }
           
-          public final void b(@cgb qv paramAnonymous2qv)
+          public final void b(@chc rl paramAnonymous2rl)
           {
             CashSettingsFragment.a(a, Integer.valueOf(2131492954));
           }
           
-          public final void b(@cgb qv paramAnonymous2qv, @cgc List<qv> paramAnonymous2List, boolean paramAnonymous2Boolean)
+          public final void b(@chc rl paramAnonymous2rl, @chd List<rl> paramAnonymous2List, boolean paramAnonymous2Boolean)
           {
             CashSettingsFragment.a(a, Integer.valueOf(2131492954));
           }

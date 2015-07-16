@@ -4,35 +4,24 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class biz
-  extends bjp
+public final class biz
 {
-  @SerializedName("default_username")
-  protected String defaultUsername;
-  @SerializedName("default_username_status")
-  protected Boolean defaultUsernameStatus;
-  @SerializedName("dtoken1i")
-  protected String dtoken1i;
-  @SerializedName("dtoken1v")
-  protected String dtoken1v;
-  @SerializedName("message")
-  protected String message;
-  @SerializedName("status")
-  protected Integer status;
-  @SerializedName("username_suggestions")
-  protected List<String> usernameSuggestions;
+  @SerializedName("coordinates")
+  protected List<bip> coordinates;
+  @SerializedName("id")
+  protected String id;
   
-  public final String d()
+  public final String a()
   {
-    return message;
+    return id;
   }
   
-  public final Integer e()
+  public final List<bip> b()
   {
-    return status;
+    return coordinates;
   }
   
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -41,50 +30,15 @@ public class biz
       return false;
     }
     paramObject = (biz)paramObject;
-    return new EqualsBuilder().append(message, message).append(status, status).append(dtoken1i, dtoken1i).append(dtoken1v, dtoken1v).append(defaultUsername, defaultUsername).append(defaultUsernameStatus, defaultUsernameStatus).append(usernameSuggestions, usernameSuggestions).isEquals();
+    return new EqualsBuilder().append(id, id).append(coordinates, coordinates).isEquals();
   }
   
-  public final String f()
+  public final int hashCode()
   {
-    return dtoken1i;
+    return new HashCodeBuilder().append(id).append(coordinates).toHashCode();
   }
   
-  public final boolean g()
-  {
-    return dtoken1i != null;
-  }
-  
-  public final String h()
-  {
-    return dtoken1v;
-  }
-  
-  public int hashCode()
-  {
-    return new HashCodeBuilder().append(message).append(status).append(dtoken1i).append(dtoken1v).append(defaultUsername).append(defaultUsernameStatus).append(usernameSuggestions).toHashCode();
-  }
-  
-  public final boolean i()
-  {
-    return dtoken1v != null;
-  }
-  
-  public final String j()
-  {
-    return defaultUsername;
-  }
-  
-  public final Boolean k()
-  {
-    return defaultUsernameStatus;
-  }
-  
-  public final List<String> l()
-  {
-    return usernameSuggestions;
-  }
-  
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

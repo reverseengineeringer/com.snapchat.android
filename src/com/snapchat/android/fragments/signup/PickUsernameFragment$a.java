@@ -1,26 +1,26 @@
 package com.snapchat.android.fragments.signup;
 
-import ajv;
-import ajx;
-import aku;
+import akp;
+import akr;
+import alp;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import bjp;
-import cgc;
+import bkq;
+import chd;
 import com.snapchat.android.LoginAndSignupActivity;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.util.AlertDialogUtils;
-import lb;
-import lu;
-import ot;
+import lt;
+import mm;
+import pk;
 
 final class PickUsernameFragment$a
-  extends ot
+  extends pk
 {
-  private ajv b = ajv.g();
+  private akp b = akp.g();
   private String c;
   
   public PickUsernameFragment$a(PickUsernameFragment paramPickUsernameFragment, String paramString)
@@ -47,32 +47,32 @@ final class PickUsernameFragment$a
   {
     Bundle localBundle = new Bundle();
     localBundle.putString("selected_username", c);
-    localBundle.putString("username", ajx.G());
+    localBundle.putString("username", akr.G());
     return localBundle;
   }
   
-  protected final void b(aku paramaku)
+  protected final void b(alp paramalp)
   {
-    super.b(paramaku);
+    super.b(paramalp);
     String str1;
     boolean bool1;
     boolean bool2;
     String str2;
     int i;
-    lb locallb;
+    lt locallt;
     if (a.isAdded())
     {
-      ajx.a(updates_response);
-      ajx.b(updates_response.n());
+      akr.a(updates_response);
+      akr.b(updates_response.n());
       a.getActivity();
       LoginAndSignupActivity.a(verification_needed);
       PickUsernameFragment.r(a);
-      if (!ajx.r())
+      if (!akr.r())
       {
         PickUsernameFragment.r(a);
-        if (!ajx.q())
+        if (!akr.q())
         {
-          ajx.c(false);
+          akr.c(false);
           RegistrationAnalytics.a(false);
           b.a(null);
           PickUsernameFragment.s(a);
@@ -87,19 +87,19 @@ final class PickUsernameFragment$a
       bool2 = PickUsernameFragment.t(a);
       str2 = PickUsernameFragment.u(a);
       i = PickUsernameFragment.v(a);
-      locallb = new lb();
+      locallt = new lt();
       if (bool1) {
         break label220;
       }
-      paramaku = lu.DEFAULT_SUGGESTION;
+      paramalp = mm.DEFAULT_SUGGESTION;
     }
     for (;;)
     {
       username = str1;
-      usernameType = paramaku;
+      usernameType = paramalp;
       usernameSuggestion = str2;
       usernameIndexPos = Long.valueOf(i);
-      ScAnalyticsEventEngine.a(locallb);
+      ScAnalyticsEventEngine.a(locallt);
       AnalyticsEvents.F();
       AnalyticsEvents.a(str1, bool1, bool2, str2, i);
       return;
@@ -107,9 +107,9 @@ final class PickUsernameFragment$a
       break;
       label220:
       if (!bool2) {
-        paramaku = lu.OTHER_SUGGESTION;
+        paramalp = mm.OTHER_SUGGESTION;
       } else {
-        paramaku = lu.CUSTOM;
+        paramalp = mm.CUSTOM;
       }
     }
   }
@@ -119,13 +119,13 @@ final class PickUsernameFragment$a
     return "RegisterUsernameTask";
   }
   
-  protected final void d(@cgc aku paramaku)
+  protected final void d(@chd alp paramalp)
   {
-    super.d(paramaku);
+    super.d(paramalp);
     if (!a.isAdded()) {
       return;
     }
-    if (paramaku == null) {}
+    if (paramalp == null) {}
     for (int i = 2147483642;; i = status) {
       switch (i)
       {

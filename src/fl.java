@@ -1,28 +1,13 @@
-import android.graphics.Picture;
-import android.graphics.RectF;
-import android.graphics.drawable.PictureDrawable;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-public final class fl
-{
-  RectF a = null;
-  private final Picture b;
-  private final RectF c;
-  private PictureDrawable d = null;
-  
-  fl(Picture paramPicture, RectF paramRectF)
-  {
-    b = paramPicture;
-    c = paramRectF;
-  }
-  
-  public final PictureDrawable a()
-  {
-    if (d == null) {
-      d = new PictureDrawable(b);
-    }
-    return d;
-  }
-}
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({java.lang.annotation.ElementType.TYPE})
+public @interface fl {}
 
 /* Location:
  * Qualified Name:     fl

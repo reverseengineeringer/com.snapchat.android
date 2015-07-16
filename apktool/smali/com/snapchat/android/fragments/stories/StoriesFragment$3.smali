@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbur;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/snapchat/android/fragments/stories/StoriesFragment;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/snapchat/android/fragments/stories/StoriesFragment;->u()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,16 +18,24 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+.field final synthetic a:Landroid/content/Context;
+
+.field final synthetic b:Lavx;
+
+.field final synthetic c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesFragment;Landroid/content/Context;Lavx;)V
     .locals 0
 
     .prologue
-    .line 636
-    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+    .line 670
+    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+
+    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->a:Landroid/content/Context;
+
+    iput-object p3, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->b:Lavx;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,44 +44,21 @@
 
 
 # virtual methods
-.method public final a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
     .prologue
-    .line 644
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+    .line 673
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->k(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/analytics/NetworkAnalytics;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->m:Lavw;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->a:Landroid/content/Context;
 
-    sget-object v1, Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;->STORY:Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->b:Lavx;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Lcom/snapchat/android/analytics/NetworkAnalytics$PageContext;)V
+    invoke-virtual {v0, v1, v2}, Lavw;->a(Landroid/content/Context;Lavx;)V
 
-    .line 645
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->l(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
-
-    .line 646
+    .line 674
     return-void
-.end method
-
-.method public final a()Z
-    .locals 1
-
-    .prologue
-    .line 639
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$3;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lbfd;->a(Landroid/widget/ListView;)Z
-
-    move-result v0
-
-    return v0
 .end method

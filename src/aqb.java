@@ -1,72 +1,65 @@
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.os.Bundle;
-import android.text.TextUtils;
+import android.widget.ArrayAdapter;
+import com.snapchat.android.util.debug.ReleaseManager;
+import java.util.List;
 
-public abstract class aqb
-  extends AlertDialog
+public class aqb<T>
+  extends ArrayAdapter<T>
 {
-  private String a;
-  private String b;
-  private String c;
-  private String d;
+  private final ban mExceptionReporter;
   
-  public aqb(Context paramContext, String paramString)
+  public aqb(Context paramContext)
   {
-    this(paramContext, null, paramString);
+    this(paramContext, new ban());
   }
   
-  public aqb(Context paramContext, String paramString1, String paramString2)
+  public aqb(Context paramContext, int paramInt, List<T> paramList)
   {
-    this(paramContext, paramString1, paramString2, paramContext.getString(2131493603), paramContext.getString(2131493248));
+    this(paramContext, paramInt, paramList, new ban());
   }
   
-  public aqb(Context paramContext, String paramString1, String paramString2, String paramString3)
+  private aqb(Context paramContext, int paramInt, List<T> paramList, ban paramban)
   {
-    this(paramContext, null, paramString1, paramString2, paramString3);
+    super(paramContext, paramInt, paramList);
+    mExceptionReporter = paramban;
   }
   
-  private aqb(Context paramContext, String paramString1, String paramString2, String paramString3, String paramString4)
+  private aqb(Context paramContext, ban paramban)
   {
-    super(paramContext);
-    a = paramString1;
-    b = paramString2;
-    c = paramString3;
-    d = paramString4;
+    super(paramContext, 2130968766);
+    mExceptionReporter = paramban;
   }
   
-  public abstract void a();
-  
-  public abstract void b();
-  
-  protected void onCreate(Bundle paramBundle)
+  public aqb(Context paramContext, T[] paramArrayOfT)
   {
-    if (!TextUtils.isEmpty(a)) {
-      setTitle(a);
-    }
-    if (!TextUtils.isEmpty(b)) {
-      setMessage(b);
-    }
-    setCancelable(true);
-    setButton(-1, c, new DialogInterface.OnClickListener()
+    this(paramContext, paramArrayOfT, new ban());
+  }
+  
+  private aqb(Context paramContext, T[] paramArrayOfT, ban paramban)
+  {
+    super(paramContext, 2130968595, paramArrayOfT);
+    mExceptionReporter = paramban;
+  }
+  
+  public void notifyDataSetChanged()
+  {
+    if (bhp.c())
     {
-      public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+      super.notifyDataSetChanged();
+      return;
+    }
+    oq localoq = new oq(getClass().getSimpleName());
+    if (ReleaseManager.f()) {
+      throw localoq;
+    }
+    mExceptionReporter.a(localoq);
+    bhp.a(new Runnable()
+    {
+      public final void run()
       {
-        paramAnonymousDialogInterface.cancel();
-        a();
+        aqb.a(aqb.this);
       }
     });
-    setButton(-2, d, new DialogInterface.OnClickListener()
-    {
-      public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
-      {
-        paramAnonymousDialogInterface.cancel();
-        b();
-      }
-    });
-    super.onCreate(paramBundle);
   }
 }
 

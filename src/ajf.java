@@ -1,33 +1,15 @@
-import com.snapchat.android.model.Snap;
-import javax.inject.Provider;
-
-public final class ajf
-  implements buj<aje>
+public abstract interface ajf<T>
 {
-  private final Provider<bgk> mClockProvider;
-  private final buj<Snap> supertypeInjector;
+  @chd
+  public abstract T a(String paramString);
   
-  static
-  {
-    if (!ajf.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
-  }
+  public abstract void b(String paramString, ajf.a parama);
   
-  private ajf(buj<Snap> parambuj, Provider<bgk> paramProvider)
+  public static abstract interface a
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mClockProvider = paramProvider;
-  }
-  
-  public static buj<aje> a(buj<Snap> parambuj, Provider<bgk> paramProvider)
-  {
-    return new ajf(parambuj, paramProvider);
+    public abstract void a();
+    
+    public abstract void b();
   }
 }
 

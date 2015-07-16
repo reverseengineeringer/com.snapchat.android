@@ -1,156 +1,93 @@
 .class public final Lcac;
-.super Ljava/lang/Object;
+.super Lcab;
 .source "SourceFile"
-
-# interfaces
-.implements Lcaj;
-
-
-# instance fields
-.field private final a:Lbzw;
-
-.field private final b:Ljava/util/zip/Inflater;
-
-.field private c:I
-
-.field private d:Z
 
 
 # direct methods
-.method constructor <init>(Lbzw;Ljava/util/zip/Inflater;)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 3
 
     .prologue
-    .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 28
+    const-string v0, "+"
 
-    .line 49
-    if-nez p1, :cond_0
+    const/4 v1, 0x5
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    const/4 v2, 0x0
 
-    const-string v1, "source == null"
+    invoke-direct {p0, v0, v1, v2}, Lcab;-><init>(Ljava/lang/String;IB)V
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 50
-    :cond_0
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "inflater == null"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 51
-    :cond_1
-    iput-object p1, p0, Lcac;->a:Lbzw;
-
-    .line 52
-    iput-object p2, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    .line 53
+    .line 29
     return-void
-.end method
-
-.method public constructor <init>(Lcaj;Ljava/util/zip/Inflater;)V
-    .locals 1
-
-    .prologue
-    .line 40
-    invoke-static {p1}, Lcad;->a(Lcaj;)Lbzw;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0, p2}, Lcac;-><init>(Lbzw;Ljava/util/zip/Inflater;)V
-
-    .line 41
-    return-void
-.end method
-
-.method private c()V
-    .locals 4
-
-    .prologue
-    .line 112
-    iget v0, p0, Lcac;->c:I
-
-    if-nez v0, :cond_0
-
-    .line 116
-    :goto_0
-    return-void
-
-    .line 113
-    :cond_0
-    iget v0, p0, Lcac;->c:I
-
-    iget-object v1, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    invoke-virtual {v1}, Ljava/util/zip/Inflater;->getRemaining()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    .line 114
-    iget v1, p0, Lcac;->c:I
-
-    sub-int/2addr v1, v0
-
-    iput v1, p0, Lcac;->c:I
-
-    .line 115
-    iget-object v1, p0, Lcac;->a:Lbzw;
-
-    int-to-long v2, v0
-
-    invoke-interface {v1, v2, v3}, Lbzw;->f(J)V
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final E_()Lcak;
+.method public final a(D)D
     .locals 1
 
     .prologue
-    .line 119
-    iget-object v0, p0, Lcac;->a:Lbzw;
-
-    invoke-interface {v0}, Lbzw;->E_()Lcak;
-
-    move-result-object v0
-
-    return-object v0
+    .line 68
+    return-wide p1
 .end method
 
-.method public final a(Lbzu;J)J
-    .locals 6
+.method public final a(DD)D
+    .locals 5
 
     .prologue
-    const-wide/16 v0, 0x0
+    .line 40
+    new-instance v0, Ljava/lang/Double;
 
-    .line 57
-    cmp-long v2, p2, v0
+    add-double v2, p1, p3
 
-    if-gez v2, :cond_0
+    invoke-direct {v0, v2, v3}, Ljava/lang/Double;-><init>(D)V
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 42
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+
+    .prologue
+    .line 54
+    new-instance v0, Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "byteCount < 0: "
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
 
-    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, -0x1
+
+    invoke-virtual {p1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-virtual {p2, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -158,273 +95,8 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     .line 58
-    :cond_0
-    iget-boolean v2, p0, Lcac;->d:Z
-
-    if-eqz v2, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "closed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 59
-    :cond_1
-    cmp-long v2, p2, v0
-
-    if-nez v2, :cond_2
-
-    .line 80
-    :goto_0
-    return-wide v0
-
-    .line 62
-    :cond_2
-    invoke-virtual {p0}, Lcac;->b()Z
-
-    move-result v0
-
-    .line 66
-    const/4 v1, 0x1
-
-    :try_start_0
-    invoke-virtual {p1, v1}, Lbzu;->d(I)Lcag;
-
-    move-result-object v1
-
-    .line 67
-    iget-object v2, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    iget-object v3, v1, Lcag;->a:[B
-
-    iget v4, v1, Lcag;->c:I
-
-    iget v5, v1, Lcag;->c:I
-
-    rsub-int v5, v5, 0x800
-
-    invoke-virtual {v2, v3, v4, v5}, Ljava/util/zip/Inflater;->inflate([BII)I
-
-    move-result v2
-
-    .line 68
-    if-lez v2, :cond_3
-
-    .line 69
-    iget v0, v1, Lcag;->c:I
-
-    add-int/2addr v0, v2
-
-    iput v0, v1, Lcag;->c:I
-
-    .line 70
-    iget-wide v0, p1, Lbzu;->b:J
-
-    int-to-long v4, v2
-
-    add-long/2addr v0, v4
-
-    iput-wide v0, p1, Lbzu;->b:J
-
-    .line 71
-    int-to-long v0, v2
-
-    goto :goto_0
-
-    .line 73
-    :cond_3
-    iget-object v2, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    invoke-virtual {v2}, Ljava/util/zip/Inflater;->finished()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    iget-object v2, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    invoke-virtual {v2}, Ljava/util/zip/Inflater;->needsDictionary()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    .line 74
-    :cond_4
-    invoke-direct {p0}, Lcac;->c()V
-
-    .line 75
-    iget v0, v1, Lcag;->b:I
-
-    iget v2, v1, Lcag;->c:I
-
-    if-ne v0, v2, :cond_5
-
-    .line 77
-    invoke-virtual {v1}, Lcag;->a()Lcag;
-
-    move-result-object v0
-
-    iput-object v0, p1, Lbzu;->a:Lcag;
-
-    .line 78
-    invoke-static {v1}, Lcah;->a(Lcag;)V
-
-    .line 80
-    :cond_5
-    const-wide/16 v0, -0x1
-
-    goto :goto_0
-
-    .line 82
-    :cond_6
-    if-eqz v0, :cond_2
-
-    new-instance v0, Ljava/io/EOFException;
-
-    const-string v1, "source exhausted prematurely"
-
-    invoke-direct {v0, v1}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_0
-    .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 83
-    :catch_0
-    move-exception v0
-
-    .line 84
-    new-instance v1, Ljava/io/IOException;
-
-    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method public final b()Z
-    .locals 5
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 95
-    iget-object v1, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    invoke-virtual {v1}, Ljava/util/zip/Inflater;->needsInput()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 107
-    :goto_0
-    return v0
-
-    .line 97
-    :cond_0
-    invoke-direct {p0}, Lcac;->c()V
-
-    .line 98
-    iget-object v1, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    invoke-virtual {v1}, Ljava/util/zip/Inflater;->getRemaining()I
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "?"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 101
-    :cond_1
-    iget-object v1, p0, Lcac;->a:Lbzw;
-
-    invoke-interface {v1}, Lbzw;->d()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 104
-    :cond_2
-    iget-object v1, p0, Lcac;->a:Lbzw;
-
-    invoke-interface {v1}, Lbzw;->b()Lbzu;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lbzu;->a:Lcag;
-
-    .line 105
-    iget v2, v1, Lcag;->c:I
-
-    iget v3, v1, Lcag;->b:I
-
-    sub-int/2addr v2, v3
-
-    iput v2, p0, Lcac;->c:I
-
-    .line 106
-    iget-object v2, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    iget-object v3, v1, Lcag;->a:[B
-
-    iget v1, v1, Lcag;->b:I
-
-    iget v4, p0, Lcac;->c:I
-
-    invoke-virtual {v2, v3, v1, v4}, Ljava/util/zip/Inflater;->setInput([BII)V
-
-    goto :goto_0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    .prologue
-    .line 123
-    iget-boolean v0, p0, Lcac;->d:Z
-
-    if-eqz v0, :cond_0
-
-    .line 127
-    :goto_0
-    return-void
-
-    .line 124
-    :cond_0
-    iget-object v0, p0, Lcac;->b:Ljava/util/zip/Inflater;
-
-    invoke-virtual {v0}, Ljava/util/zip/Inflater;->end()V
-
-    .line 125
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcac;->d:Z
-
-    .line 126
-    iget-object v0, p0, Lcac;->a:Lbzw;
-
-    invoke-interface {v0}, Lbzw;->close()V
-
-    goto :goto_0
+    return-object v0
 .end method

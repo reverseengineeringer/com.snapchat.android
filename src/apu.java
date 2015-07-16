@@ -1,44 +1,40 @@
-import android.view.View;
-import android.view.ViewGroup.MarginLayoutParams;
-import com.snapchat.android.ui.ImageResourceView;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import javax.validation.constraints.NotNull;
 
 public final class apu
-  implements apv
 {
-  private View a;
-  private ImageResourceView b;
-  private int c;
-  private int d;
+  public final bki a;
+  public boolean b = false;
+  private final List<bkk> c;
+  private final List<bkk> d = new ArrayList();
   
-  public apu(@cgb View paramView, @cgb ImageResourceView paramImageResourceView)
+  public apu(@NotNull bki parambki, @NotNull List<bkk> paramList)
   {
-    a = paramView;
-    b = paramImageResourceView;
-    paramView = (ViewGroup.MarginLayoutParams)b.getLayoutParams();
-    c = topMargin;
-    d = bottomMargin;
+    a = parambki;
+    c = paramList;
+    b();
   }
   
-  public final int[] a()
+  private void b()
   {
-    int[] arrayOfInt = new int[2];
-    b.getLocationOnScreen(arrayOfInt);
-    return arrayOfInt;
+    Iterator localIterator = c.iterator();
+    while (localIterator.hasNext())
+    {
+      bkk localbkk = (bkk)localIterator.next();
+      if (avb.a(localbkk.b())) {
+        d.add(localbkk);
+      }
+    }
   }
   
-  public final int b()
+  public final List<bkk> a()
   {
-    return b.getHeight();
-  }
-  
-  public final int c()
-  {
+    if (b) {
+      return d;
+    }
     return c;
-  }
-  
-  public final float d()
-  {
-    return a.getTranslationY();
   }
 }
 

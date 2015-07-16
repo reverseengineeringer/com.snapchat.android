@@ -4,8 +4,8 @@ import android.content.Context;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
-import aol;
-import aqb;
+import aph;
+import ara;
 import java.util.Set;
 
 final class TwoFactorSettingsEnabledFragment$5
@@ -15,7 +15,7 @@ final class TwoFactorSettingsEnabledFragment$5
   
   public final void onClick(View paramView)
   {
-    new aqb(a.getActivity(), a.getString(2131493572), a.getString(2131493603), a.getString(2131492952))
+    new ara(a.getActivity(), a.getString(2131493570), a.getString(2131493601), a.getString(2131492952))
     {
       protected final void a()
       {

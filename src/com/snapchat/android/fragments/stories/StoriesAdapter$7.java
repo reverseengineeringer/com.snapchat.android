@@ -1,21 +1,27 @@
 package com.snapchat.android.fragments.stories;
 
+import ahz;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-import bdi;
+import bhr.a;
 import com.snapchat.android.model.Friend;
-import com.squareup.otto.Bus;
 
 final class StoriesAdapter$7
-  implements View.OnClickListener
+  implements bhr.a
 {
-  StoriesAdapter$7(StoriesAdapter paramStoriesAdapter, Friend paramFriend) {}
+  StoriesAdapter$7(StoriesAdapter paramStoriesAdapter, Friend paramFriend, ahz paramahz) {}
   
-  public final void onClick(View paramView)
+  public final void a(View paramView)
   {
-    StoriesAdapter.c(b).hideSoftInputFromWindow(paramView.getWindowToken(), 0);
-    StoriesAdapter.e(b).a(new bdi(a, false));
+    paramView.setOnClickListener(new View.OnClickListener()
+    {
+      public final void onClick(View paramAnonymousView)
+      {
+        StoriesAdapter.c(c).hideSoftInputFromWindow(paramAnonymousView.getWindowToken(), 0);
+        StoriesAdapter.a(c, a, b);
+      }
+    });
   }
 }
 

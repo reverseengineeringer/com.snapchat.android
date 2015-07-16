@@ -1,5 +1,5 @@
 .class final Lin/srain/cube/views/ptr/header/MaterialHeader$2;
-.super Lbuu;
+.super Lbvv;
 .source "SourceFile"
 
 
@@ -26,7 +26,7 @@
     .line 48
     iput-object p1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader$2;->c:Lin/srain/cube/views/ptr/header/MaterialHeader;
 
-    invoke-direct {p0}, Lbuu;-><init>()V
+    invoke-direct {p0}, Lbvv;-><init>()V
 
     return-void
 .end method

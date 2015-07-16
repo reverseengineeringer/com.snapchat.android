@@ -2,12 +2,12 @@ package com.snapchat.android.camera;
 
 import com.snapchat.android.camera.cameraview.CameraView;
 import com.snapchat.android.camera.model.CameraModel;
-import vm;
-import vw;
-import wr;
+import wi;
+import ws;
+import xn;
 
 final class CameraFragment$a
-  implements wr
+  implements xn
 {
   private CameraFragment$a(CameraFragment paramCameraFragment) {}
   
@@ -18,12 +18,12 @@ final class CameraFragment$a
     a.b.setTranslationY(paramFloat3);
   }
   
-  public final void a(vm paramvm)
+  public final void a(wi paramwi)
   {
     if (a.b == null) {
       return;
     }
-    a.m.b(a.b, paramvm, CameraFragment.b(a));
+    a.m.b(a.b, paramwi, CameraFragment.b(a));
   }
   
   public final boolean a()

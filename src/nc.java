@@ -1,12 +1,36 @@
-import java.util.HashMap;
-import java.util.Map;
+import android.os.Bundle;
 
-public class nc
+public abstract class nc
 {
-  public static final String TAG = nc.class.getName();
-  public final Map<String, nd> mData = new HashMap();
-  public long mGeofilterIndexCount;
-  public long mGeofilterIndexPos;
+  public abstract String a();
+  
+  public abstract String b();
+  
+  public abstract Bundle c();
+  
+  public abstract String d();
+  
+  public boolean equals(Object paramObject)
+  {
+    if (this == paramObject) {
+      return true;
+    }
+    if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+      return false;
+    }
+    paramObject = (nc)paramObject;
+    return b().equals(((nc)paramObject).b());
+  }
+  
+  public int hashCode()
+  {
+    return b().hashCode();
+  }
+  
+  public String toString()
+  {
+    return "AdPlacement:{" + b() + "}";
+  }
 }
 
 /* Location:

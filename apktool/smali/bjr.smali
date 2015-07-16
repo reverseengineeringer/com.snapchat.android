@@ -1,30 +1,18 @@
 .class public Lbjr;
-.super Ljava/lang/Object;
+.super Lbil;
 .source "SourceFile"
 
 
 # instance fields
-.field protected adInsertionConfig:Lbjq;
+.field protected hereAuth:Lbjc;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ad_insertion_config"
+        value = "here_auth"
     .end annotation
 .end field
 
-.field protected adRequestConfig:Lbjs;
+.field protected presences:Ljava/util/Map;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ad_request_config"
-    .end annotation
-.end field
-
-.field protected adUnitId:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ad_unit_id"
-    .end annotation
-.end field
-
-.field protected targetingParameters:Ljava/util/Map;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "targeting_parameters"
+        value = "presences"
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -32,9 +20,21 @@
             "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
-            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
             ">;"
         }
+    .end annotation
+.end field
+
+.field protected receivingVideo:Ljava/lang/Boolean;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "receiving_video"
+    .end annotation
+.end field
+
+.field protected supportsHere:Ljava/lang/Boolean;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "supports_here"
     .end annotation
 .end field
 
@@ -45,44 +45,14 @@
 
     .prologue
     .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lbil;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lbjq;
-    .locals 1
-
-    .prologue
-    .line 43
-    iget-object v0, p0, Lbjr;->adInsertionConfig:Lbjq;
-
-    return-object v0
-.end method
-
-.method public final b()Lbjs;
-    .locals 1
-
-    .prologue
-    .line 61
-    iget-object v0, p0, Lbjr;->adRequestConfig:Lbjs;
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 79
-    iget-object v0, p0, Lbjr;->adUnitId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/util/Map;
+.method public final a()Ljava/util/Map;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -90,14 +60,87 @@
             "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
-            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
             ">;"
         }
     .end annotation
 
     .prologue
+    .line 43
+    iget-object v0, p0, Lbjr;->presences:Ljava/util/Map;
+
+    return-object v0
+.end method
+
+.method public final a(Ljava/util/Map;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 34
+    iput-object p1, p0, Lbjr;->presences:Ljava/util/Map;
+
+    .line 35
+    return-void
+.end method
+
+.method public final b()Ljava/lang/Boolean;
+    .locals 1
+
+    .prologue
+    .line 61
+    iget-object v0, p0, Lbjr;->supportsHere:Ljava/lang/Boolean;
+
+    return-object v0
+.end method
+
+.method public final b(Ljava/lang/Boolean;)V
+    .locals 0
+
+    .prologue
+    .line 52
+    iput-object p1, p0, Lbjr;->supportsHere:Ljava/lang/Boolean;
+
+    .line 53
+    return-void
+.end method
+
+.method public final c()Ljava/lang/Boolean;
+    .locals 1
+
+    .prologue
+    .line 79
+    iget-object v0, p0, Lbjr;->receivingVideo:Ljava/lang/Boolean;
+
+    return-object v0
+.end method
+
+.method public final c(Ljava/lang/Boolean;)V
+    .locals 0
+
+    .prologue
+    .line 70
+    iput-object p1, p0, Lbjr;->receivingVideo:Ljava/lang/Boolean;
+
+    .line 71
+    return-void
+.end method
+
+.method public final d()Lbjc;
+    .locals 1
+
+    .prologue
     .line 97
-    iget-object v0, p0, Lbjr;->targetingParameters:Ljava/util/Map;
+    iget-object v0, p0, Lbjr;->hereAuth:Lbjc;
 
     return-object v0
 .end method
@@ -136,33 +179,33 @@
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjr;->adInsertionConfig:Lbjq;
+    iget-object v1, p0, Lbjr;->presences:Ljava/util/Map;
 
-    iget-object v2, p1, Lbjr;->adInsertionConfig:Lbjq;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbjr;->adRequestConfig:Lbjs;
-
-    iget-object v2, p1, Lbjr;->adRequestConfig:Lbjs;
+    iget-object v2, p1, Lbjr;->presences:Ljava/util/Map;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjr;->adUnitId:Ljava/lang/String;
+    iget-object v1, p0, Lbjr;->supportsHere:Ljava/lang/Boolean;
 
-    iget-object v2, p1, Lbjr;->adUnitId:Ljava/lang/String;
+    iget-object v2, p1, Lbjr;->supportsHere:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjr;->targetingParameters:Ljava/util/Map;
+    iget-object v1, p0, Lbjr;->receivingVideo:Ljava/lang/Boolean;
 
-    iget-object v2, p1, Lbjr;->targetingParameters:Ljava/util/Map;
+    iget-object v2, p1, Lbjr;->receivingVideo:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjr;->hereAuth:Lbjc;
+
+    iget-object v2, p1, Lbjr;->hereAuth:Lbjc;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -184,25 +227,25 @@
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjr;->adInsertionConfig:Lbjq;
+    iget-object v1, p0, Lbjr;->presences:Ljava/util/Map;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjr;->adRequestConfig:Lbjs;
+    iget-object v1, p0, Lbjr;->supportsHere:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjr;->adUnitId:Ljava/lang/String;
+    iget-object v1, p0, Lbjr;->receivingVideo:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjr;->targetingParameters:Ljava/util/Map;
+    iget-object v1, p0, Lbjr;->hereAuth:Lbjc;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 

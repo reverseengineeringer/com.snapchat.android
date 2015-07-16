@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 545
+    .line 544
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$18;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 548
+    .line 547
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$18;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
 
-    .line 549
+    .line 548
     return-void
 .end method

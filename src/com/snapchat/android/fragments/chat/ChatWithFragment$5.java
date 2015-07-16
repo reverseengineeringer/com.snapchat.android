@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.chat;
 
-import afy;
+import agy;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;

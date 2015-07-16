@@ -13,9 +13,9 @@ import android.graphics.Shader.TileMode;
 import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.View;
-import aur;
-import avh;
-import cgb;
+import avp;
+import awf;
+import chc;
 
 public class TakeSnapButton
   extends View
@@ -52,11 +52,11 @@ public class TakeSnapButton
     g.setStyle(Paint.Style.STROKE);
     h = new Paint();
     i = new RectF();
-    j = avh.a(5.0F, paramContext);
-    k = avh.a(1.0F, paramContext);
+    j = awf.a(5.0F, paramContext);
+    k = awf.a(1.0F, paramContext);
   }
   
-  private void a(@cgb Canvas paramCanvas, float paramFloat)
+  private void a(@chc Canvas paramCanvas, float paramFloat)
   {
     f.setColor(-1);
     f.setAlpha(127);
@@ -102,7 +102,7 @@ public class TakeSnapButton
   protected void onSizeChanged(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
   {
     super.onSizeChanged(paramInt1, paramInt2, paramInt3, paramInt4);
-    o = aur.a(paramInt1, paramInt2, Bitmap.Config.ARGB_8888);
+    o = avp.a(paramInt1, paramInt2, Bitmap.Config.ARGB_8888);
     if (o == null) {
       return;
     }

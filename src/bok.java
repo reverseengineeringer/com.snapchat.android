@@ -1,41 +1,30 @@
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.net.Uri;
+import java.io.Closeable;
 import java.util.List;
 
-final class bok
-  extends bpi
+public abstract interface bok
+  extends Closeable
 {
-  private static final int a = 22;
-  private final AssetManager b;
+  public abstract void a();
   
-  public bok(Context paramContext)
-  {
-    b = paramContext.getAssets();
-  }
+  public abstract boolean a(bok.a parama);
   
-  public final boolean a(bpg parambpg)
+  public static abstract interface a
   {
-    boolean bool2 = false;
-    parambpg = d;
-    boolean bool1 = bool2;
-    if ("file".equals(parambpg.getScheme()))
-    {
-      bool1 = bool2;
-      if (!parambpg.getPathSegments().isEmpty())
-      {
-        bool1 = bool2;
-        if ("android_asset".equals(parambpg.getPathSegments().get(0))) {
-          bool1 = true;
-        }
-      }
-    }
-    return bool1;
-  }
-  
-  public final bpi.a b(bpg parambpg)
-  {
-    return new bpi.a(b.open(d.toString().substring(a)), bpd.d.b);
+    public abstract void a(int paramInt, long paramLong);
+    
+    public abstract void a(int paramInt, boj paramboj);
+    
+    public abstract void a(int paramInt, cay paramcay);
+    
+    public abstract void a(int paramInt, List<bom> paramList);
+    
+    public abstract void a(boolean paramBoolean, int paramInt1, int paramInt2);
+    
+    public abstract void a(boolean paramBoolean, int paramInt1, cax paramcax, int paramInt2);
+    
+    public abstract void a(boolean paramBoolean, bov parambov);
+    
+    public abstract void a(boolean paramBoolean1, boolean paramBoolean2, int paramInt, List<bom> paramList, bon parambon);
   }
 }
 

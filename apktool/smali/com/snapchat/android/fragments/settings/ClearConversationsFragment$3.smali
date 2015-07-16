@@ -43,7 +43,7 @@
     .line 135
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment$3;->a:Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->e(Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;)Latw;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->e(Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;)Lauu;
 
     move-result-object v1
 

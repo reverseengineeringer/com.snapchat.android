@@ -1,22 +1,27 @@
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+
 public final class bxm
-  implements bxg
 {
-  public final bxk a(bwz parambwz, String paramString)
+  private static String a = "versionInfo";
+  
+  public static String a(Context paramContext)
   {
-    try
-    {
-      parambwz = new Double(paramString);
-      return new bxk(new Double(Math.acos(parambwz.doubleValue())).toString(), 0);
+    if (paramContext != null) {
+      return paramContext.getSharedPreferences("HockeyApp", 0).getString(a, "[]");
     }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Invalid argument.", parambwz);
-    }
+    return "[]";
   }
   
-  public final String a()
+  public static void a(Context paramContext, String paramString)
   {
-    return "acos";
+    if (paramContext != null)
+    {
+      paramContext = paramContext.getSharedPreferences("HockeyApp", 0).edit();
+      paramContext.putString(a, paramString);
+      bxj.a(paramContext);
+    }
   }
 }
 

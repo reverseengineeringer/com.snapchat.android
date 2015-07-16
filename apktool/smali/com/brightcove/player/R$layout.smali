@@ -15,23 +15,23 @@
 
 
 # static fields
-.field public static final caption_block:I = 0x7f040017
+.field public static final caption_block:I = 0x7f040018
 
-.field public static final caption_dialog:I = 0x7f040018
+.field public static final caption_dialog:I = 0x7f040019
 
-.field public static final caption_text:I = 0x7f04001b
+.field public static final caption_text:I = 0x7f04001c
 
-.field public static final closed_captioning_options_color_selection:I = 0x7f04003a
+.field public static final closed_captioning_options_color_selection:I = 0x7f04003b
 
-.field public static final closed_captioning_options_dialog:I = 0x7f04003b
+.field public static final closed_captioning_options_dialog:I = 0x7f04003c
 
-.field public static final closed_captioning_options_edge_type_selection:I = 0x7f04003c
+.field public static final closed_captioning_options_edge_type_selection:I = 0x7f04003d
 
-.field public static final closed_captioning_options_font_selection:I = 0x7f04003d
+.field public static final closed_captioning_options_font_selection:I = 0x7f04003e
 
-.field public static final closed_captioning_options_group_item:I = 0x7f04003e
+.field public static final closed_captioning_options_group_item:I = 0x7f04003f
 
-.field public static final closed_captioning_options_text_size_selection:I = 0x7f04003f
+.field public static final closed_captioning_options_text_size_selection:I = 0x7f040040
 
 
 # direct methods

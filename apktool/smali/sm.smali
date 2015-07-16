@@ -3,164 +3,196 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqn;
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lsl;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic $assertionsDisabled:Z
 
 
 # instance fields
-.field private final mCardSummary:Lsv;
-    .annotation build Lcgc;
+.field private final mCashAuthManagerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyj;",
+            ">;"
+        }
     .end annotation
 .end field
 
-.field private final mCashCustomer:Lcom/snapchat/android/api2/cash/square/data/CashCustomer;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field private final mCashCustomerStatus:Lsw;
-    .annotation build Lcgb;
+.field private final supertypeInjector:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;"
+        }
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Lsw;)V
+.method static constructor <clinit>()V
     .locals 1
-    .param p1    # Lsw;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 21
+    .line 9
+    const-class v0, Lsm;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lsm;->$assertionsDisabled:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyj;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 22
-    iput-object p1, p0, Lsm;->mCashCustomerStatus:Lsw;
+    .line 15
+    sget-boolean v0, Lsm;->$assertionsDisabled:Z
 
-    .line 23
-    iget-object v0, p1, Lsw;->mCustomer:Lcom/snapchat/android/api2/cash/square/data/CashCustomer;
+    if-nez v0, :cond_0
 
-    iput-object v0, p0, Lsm;->mCashCustomer:Lcom/snapchat/android/api2/cash/square/data/CashCustomer;
+    if-nez p1, :cond_0
 
-    .line 24
-    iget-object v0, p1, Lsw;->mCardSummary:Lsv;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    iput-object v0, p0, Lsm;->mCardSummary:Lsv;
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    .line 25
+    throw v0
+
+    .line 16
+    :cond_0
+    iput-object p1, p0, Lsm;->supertypeInjector:Lbvk;
+
+    .line 17
+    sget-boolean v0, Lsm;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 18
+    :cond_1
+    iput-object p2, p0, Lsm;->mCashAuthManagerProvider:Ljavax/inject/Provider;
+
+    .line 19
     return-void
+.end method
+
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyj;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lsl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 31
+    new-instance v0, Lsm;
+
+    invoke-direct {v0, p0, p1}, Lsm;-><init>(Lbvk;Ljavax/inject/Provider;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
-
-    .prologue
-    .line 38
-    iget-object v0, p0, Lsm;->mCardSummary:Lsv;
-
-    if-eqz v0, :cond_0
-
-    .line 39
-    const/4 v0, 0x1
-
-    .line 41
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    .prologue
-    .line 64
-    iget-object v0, p0, Lsm;->mCashCustomerStatus:Lsw;
-
-    iget-boolean v0, v0, Lsw;->mPasswordConfirmationEnabled:Z
-
-    return v0
-.end method
-
-.method public final c()Z
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
     .prologue
-    const/4 v0, 0x0
+    .line 9
+    check-cast p1, Lsl;
 
-    .line 78
-    iget-object v1, p0, Lsm;->mCashCustomerStatus:Lsw;
+    if-nez p1, :cond_0
 
-    if-eqz v1, :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    .line 79
-    iget-object v1, p0, Lsm;->mCashCustomerStatus:Lsw;
+    const-string v1, "Cannot inject members into a null reference"
 
-    iget v1, v1, Lsw;->mNumberOfPayments:I
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    if-lez v1, :cond_0
-
-    const/4 v0, 0x1
-
-    .line 81
-    :cond_0
-    return v0
-.end method
-
-.method public final d()Lcom/snapchat/android/api2/cash/square/data/CardBrand;
-    .locals 1
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 47
-    iget-object v0, p0, Lsm;->mCardSummary:Lsv;
-
-    if-eqz v0, :cond_0
-
-    .line 48
-    iget-object v0, p0, Lsm;->mCardSummary:Lsv;
-
-    iget-object v0, v0, Lsv;->mBrand:Lcom/snapchat/android/api2/cash/square/data/CardBrand;
-
-    .line 50
-    :goto_0
-    return-object v0
+    throw v0
 
     :cond_0
-    const/4 v0, 0x0
+    iget-object v0, p0, Lsm;->supertypeInjector:Lbvk;
 
-    goto :goto_0
-.end method
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
 
-.method public final e()Ljava/lang/String;
-    .locals 1
-    .annotation build Lcgc;
-    .end annotation
+    iget-object v0, p0, Lsm;->mCashAuthManagerProvider:Ljavax/inject/Provider;
 
-    .prologue
-    .line 56
-    iget-object v0, p0, Lsm;->mCardSummary:Lsv;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    .line 57
-    iget-object v0, p0, Lsm;->mCardSummary:Lsv;
+    check-cast v0, Lyj;
 
-    iget-object v0, v0, Lsv;->mPanSuffix:Ljava/lang/String;
+    iput-object v0, p1, Lsl;->mCashAuthManager:Lyj;
 
-    .line 59
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

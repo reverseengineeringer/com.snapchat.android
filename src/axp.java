@@ -1,113 +1,46 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.util.chat.SecureChatService.SecureChatWriteCompletedCallback;
-import com.snapchat.android.util.chat.SecureChatService.SecureChatWriteCompletedCallback.Status;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
+import com.google.gson.Gson;
+import com.snapchat.android.model.Mediabryo;
+import com.snapchat.android.util.cache.DiscoverShareCache;
+import com.snapchat.android.util.cache.DiscoverShareCache.DiscoverShareFileType;
 
 public final class axp
-  extends Thread
 {
-  private static final String TAG = "SecureChatSessionOutputThread";
-  public final axm mAckTracker;
-  public final ArrayBlockingQueue<bii> mMessageQueue = new ArrayBlockingQueue(100);
-  public final SynchronousQueue<axl> mOutputStreamQueue = new SynchronousQueue();
-  public final AtomicBoolean mStopped = new AtomicBoolean(false);
-  public final List<axh> mStreamProcessingStateListeners = new CopyOnWriteArrayList();
-  public final AtomicReference<axp.a> mThreadState = new AtomicReference(axp.a.AWAITING_CONNECTION);
+  public final DiscoverShareCache mCache;
+  final ack mCompressor;
   
-  public axp(axm paramaxm)
+  private axp()
   {
-    setName("SecureChatSessionOutputThread");
-    mAckTracker = paramaxm;
+    this(localDiscoverShareCache, ack.a);
   }
   
-  private void a(Exception paramException)
+  private axp(DiscoverShareCache paramDiscoverShareCache, ack paramack)
   {
-    Iterator localIterator = mStreamProcessingStateListeners.iterator();
-    while (localIterator.hasNext()) {
-      ((axh)localIterator.next()).a(paramException);
-    }
+    mCache = paramDiscoverShareCache;
+    mCompressor = paramack;
   }
   
-  public final void run()
+  public final aco a(String paramString)
   {
-    if (!mStopped.get()) {
-      for (;;)
-      {
-        Object localObject2;
-        try
-        {
-          axl localaxl = (axl)mOutputStreamQueue.take();
-          Timber.g("SecureChatSessionOutputThread", "CHAT-LOG: SecureChatSessionOutputThread got output stream", new Object[0]);
-          mThreadState.set(axp.a.CONNECTED);
-          localObject2 = mStreamProcessingStateListeners.iterator();
-          if (!((Iterator)localObject2).hasNext()) {
-            break label170;
-          }
-          ((axh)((Iterator)localObject2).next()).a();
-          continue;
-          if (!((Iterator)localObject2).hasNext()) {
-            break;
-          }
-        }
-        catch (Exception localException)
-        {
-          mThreadState.set(axp.a.AWAITING_CONNECTION);
-          a(localException);
-          localObject2 = new ArrayList();
-          mMessageQueue.drainTo((Collection)localObject2);
-          localObject2 = ((List)localObject2).iterator();
-        }
-        Object localObject3;
-        for (;;)
-        {
-          localObject3 = (bii)((Iterator)localObject2).next();
-          mAckTracker.a(((bii)localObject3).k(), SecureChatService.SecureChatWriteCompletedCallback.Status.SCCP_ERROR, "Exception in SecureChatSessionOutputThread: " + localException);
-        }
-        for (;;)
-        {
-          label170:
-          if (mStopped.get()) {
-            break label285;
-          }
-          localObject2 = (bii)mMessageQueue.take();
-          try
-          {
-            Timber.g("SecureChatSessionOutputThread", "CHAT-LOG: SecureChatSessionOutputThread writing message " + localObject2, new Object[0]);
-            localException.a((bii)localObject2);
-            localObject3 = mAckTracker;
-            String str = ((bii)localObject2).k();
-            localObject3 = (SecureChatService.SecureChatWriteCompletedCallback)mMessageCallbacksPendingWrite.remove(str);
-            if (localObject3 != null) {
-              ((SecureChatService.SecureChatWriteCompletedCallback)localObject3).a(true, SecureChatService.SecureChatWriteCompletedCallback.Status.SUCCESS, null);
-            }
-          }
-          catch (IOException localIOException)
-          {
-            mAckTracker.a(((bii)localObject2).k(), SecureChatService.SecureChatWriteCompletedCallback.Status.SCCP_ERROR, localIOException.getMessage());
-          }
-        }
-        continue;
-        label285:
-        Object localObject1 = null;
-      }
+    Object localObject = null;
+    byte[] arrayOfByte = mCache.a(paramString, DiscoverShareCache.DiscoverShareFileType.METADATA);
+    paramString = (String)localObject;
+    if (arrayOfByte != null)
+    {
+      paramString = new String(arrayOfByte);
+      paramString = (aco)aul.a().fromJson(paramString, aco.class);
     }
+    return paramString;
+  }
+  
+  public final byte[] a(aji paramaji)
+  {
+    paramaji = mClientId;
+    return mCache.a(paramaji, DiscoverShareCache.DiscoverShareFileType.BLOB);
   }
   
   public static enum a
   {
-    AWAITING_CONNECTION,  CONNECTED;
-    
-    private a() {}
+    private static axp sInstance = new axp((byte)0);
   }
 }
 

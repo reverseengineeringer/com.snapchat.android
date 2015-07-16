@@ -26,11 +26,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import apo;
-import aps;
-import ban;
-import bbh;
-import com.snapchat.android.Timber;
+import aqn;
+import aqr;
+import bbo;
+import bch;
 import com.squareup.otto.Bus;
 import java.util.ArrayList;
 
@@ -41,7 +40,7 @@ public abstract class CaptionEditText
   private ArrayList<CaptionColorRange> A = new ArrayList();
   boolean a = false;
   protected IMMResult b = new IMMResult();
-  protected aps c;
+  protected aqr c;
   protected int d = -1;
   protected boolean e = false;
   protected boolean f = false;
@@ -130,7 +129,7 @@ public abstract class CaptionEditText
       r.showSoftInput(this, 2, b);
       setSelection(getText().length());
       setCursorVisible(true);
-      ban.a().a(new bbh(true));
+      bbo.a().a(new bch(true));
       return;
     }
   }
@@ -163,7 +162,7 @@ public abstract class CaptionEditText
     k = true;
     s = false;
     requestFocus();
-    ban.a().a(new bbh(true));
+    bbo.a().a(new bch(true));
     r.showSoftInput(this, 2, b);
   }
   
@@ -179,7 +178,7 @@ public abstract class CaptionEditText
     o = Math.max((int)(heightPixels / 2.0F - widthPixels * 1.5F / 2.0F), 0);
   }
   
-  protected abstract apo getAnalyticsDetails();
+  protected abstract aqn getAnalyticsDetails();
   
   protected abstract int getCaptionEditPosition();
   
@@ -339,9 +338,9 @@ public abstract class CaptionEditText
     A = paramArrayList;
   }
   
-  public void setInterface(aps paramaps)
+  public void setInterface(aqr paramaqr)
   {
-    c = paramaps;
+    c = paramaqr;
   }
   
   protected void setIsVideoSnap(boolean paramBoolean)
@@ -366,7 +365,6 @@ public abstract class CaptionEditText
   
   protected void setMaxTextLengthInputFilter(int paramInt)
   {
-    Timber.c("CaptionEditText", "Set Input filter with max text length: " + paramInt, new Object[0]);
     setFilters(new InputFilter[] { new InputFilter.LengthFilter(paramInt) });
     j = paramInt;
   }
@@ -381,7 +379,6 @@ public abstract class CaptionEditText
     
     public void onReceiveResult(int paramInt, Bundle paramBundle)
     {
-      Timber.c("CaptionEditText", "CaptionDebug: result from IME is %d", new Object[] { Integer.valueOf(paramInt) });
       if ((paramInt == 2) || (paramInt == 0)) {
         CaptionEditText.a(CaptionEditText.this, true);
       }

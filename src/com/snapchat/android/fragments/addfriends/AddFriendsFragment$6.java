@@ -4,12 +4,11 @@ import android.text.Editable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import io;
-import jd;
-import jm;
-import ju;
+import ja;
+import jq;
+import ka;
+import km;
 
 final class AddFriendsFragment$6
   implements View.OnClickListener
@@ -19,33 +18,33 @@ final class AddFriendsFragment$6
   public final void onClick(View paramView)
   {
     AddFriendsFragment.c(a);
-    paramView = a.C;
+    paramView = a.D;
     int i = a.q.getText().length();
     switch (com.snapchat.android.analytics.ProfileEventAnalytics.1.$SwitchMap$com$snapchat$android$analytics$AnalyticsEvents$AnalyticsContext[paramView.ordinal()])
     {
     case 7: 
     default: 
-      Timber.f("ProfileEventAnalytics", "onProfileSearchClear  - Unknown context " + paramView, new Object[0]);
+      new StringBuilder("onProfileSearchClear  - Unknown context ").append(paramView);
     }
     for (;;)
     {
       a.q.setText("");
       AddFriendsFragment.b(a);
-      a.d.j = false;
+      a.d.k = false;
       return;
-      paramView = new ju();
+      paramView = new km();
       charCount = Long.valueOf(i);
       ScAnalyticsEventEngine.a(paramView);
       continue;
-      paramView = new io();
+      paramView = new ja();
       charCount = Long.valueOf(i);
       ScAnalyticsEventEngine.a(paramView);
       continue;
-      paramView = new jd();
+      paramView = new jq();
       charCount = Long.valueOf(i);
       ScAnalyticsEventEngine.a(paramView);
       continue;
-      paramView = new jm();
+      paramView = new ka();
       charCount = Long.valueOf(i);
       ScAnalyticsEventEngine.a(paramView);
     }

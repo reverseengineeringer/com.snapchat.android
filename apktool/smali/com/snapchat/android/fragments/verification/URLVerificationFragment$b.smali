@@ -62,35 +62,29 @@
 .end method
 
 .method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .locals 5
+    .locals 3
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     .line 104
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/URLVerificationFragment$b;->a:Lcom/snapchat/android/fragments/verification/URLVerificationFragment;
 
-    invoke-static {v0, v3}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->a(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)V
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->a(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)V
 
     .line 106
     invoke-static {}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->m()Ljava/lang/String;
 
-    move-result-object v0
+    new-array v0, v1, [Ljava/lang/Object;
 
-    const-string v1, "CASH-LOG: Loading the URL: %s"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    aput-object p2, v2, v4
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object p2, v0, v2
 
     .line 107
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/URLVerificationFragment$b;->a:Lcom/snapchat/android/fragments/verification/URLVerificationFragment;
 
-    invoke-static {v0, v4}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->b(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
+    invoke-static {v0, v2}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->b(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
 
     .line 108
     const-string v0, "https://support.snapchat.com/success"
@@ -104,12 +98,12 @@
     .line 109
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/URLVerificationFragment$b;->a:Lcom/snapchat/android/fragments/verification/URLVerificationFragment;
 
-    invoke-static {v0, v3}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->b(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->b(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
 
     .line 110
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/URLVerificationFragment$b;->a:Lcom/snapchat/android/fragments/verification/URLVerificationFragment;
 
-    invoke-static {v0, v3}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->c(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->c(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
 
     .line 116
     :cond_0
@@ -150,12 +144,12 @@
     .line 112
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/URLVerificationFragment$b;->a:Lcom/snapchat/android/fragments/verification/URLVerificationFragment;
 
-    invoke-static {v0, v3}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->b(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->b(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
 
     .line 113
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/URLVerificationFragment$b;->a:Lcom/snapchat/android/fragments/verification/URLVerificationFragment;
 
-    invoke-static {v0, v4}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->c(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
+    invoke-static {v0, v2}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->c(Lcom/snapchat/android/fragments/verification/URLVerificationFragment;Z)Z
 
     goto :goto_0
 .end method

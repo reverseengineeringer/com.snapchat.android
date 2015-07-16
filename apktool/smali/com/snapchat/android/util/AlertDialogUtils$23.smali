@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/util/AlertDialogUtils;->a(Landroid/content/Context;Laje;Laio;)V
+    value = Lcom/snapchat/android/util/AlertDialogUtils;->a(Landroid/content/Context;Laka;Lajk;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,24 +18,24 @@
 
 
 # instance fields
-.field final synthetic val$provider:Laio;
+.field final synthetic val$provider:Lajk;
 
-.field final synthetic val$snap:Laje;
+.field final synthetic val$snap:Laka;
 
-.field final synthetic val$user:Lajv;
+.field final synthetic val$user:Lakp;
 
 
 # direct methods
-.method constructor <init>(Laje;Lajv;Laio;)V
+.method constructor <init>(Laka;Lakp;Lajk;)V
     .locals 0
 
     .prologue
     .line 253
-    iput-object p1, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$snap:Laje;
+    iput-object p1, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$snap:Laka;
 
-    iput-object p2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$user:Lajv;
+    iput-object p2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$user:Lakp;
 
-    iput-object p3, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Laio;
+    iput-object p3, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Lajk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -49,30 +49,30 @@
 
     .prologue
     .line 256
-    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$snap:Laje;
+    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$snap:Laka;
 
-    invoke-virtual {v2}, Laje;->s()V
+    invoke-virtual {v2}, Laka;->t()V
 
     .line 257
-    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$user:Lajv;
+    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$user:Lakp;
 
     const-wide/16 v4, -0x1
 
-    iput-wide v4, v2, Lajv;->mNextReplayAvailableRealtime:J
+    iput-wide v4, v2, Lakp;->mNextReplayAvailableRealtime:J
 
     .line 258
-    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Laio;
+    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Lajk;
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Laio;
+    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Lajk;
 
     instance-of v2, v2, Lcom/snapchat/android/model/chat/ChatConversation;
 
     if-eqz v2, :cond_2
 
     .line 259
-    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Laio;
+    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Lajk;
 
     check-cast v2, Lcom/snapchat/android/model/chat/ChatConversation;
 
@@ -101,25 +101,25 @@
 
     check-cast v2, Lcom/snapchat/android/model/chat/ChatFeedItem;
 
-    instance-of v3, v2, Laje;
+    instance-of v3, v2, Laka;
 
     if-eqz v3, :cond_0
 
     move-object v0, v2
 
-    check-cast v0, Laje;
+    check-cast v0, Laka;
 
     move-object v3, v0
 
-    invoke-virtual {v3}, Laje;->ap()Z
+    invoke-virtual {v3}, Laka;->an()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    check-cast v2, Laje;
+    check-cast v2, Laka;
 
-    invoke-virtual {v2}, Laje;->s()V
+    invoke-virtual {v2}, Laka;->t()V
 
     goto :goto_0
 
@@ -139,27 +139,34 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 261
-    :cond_2
-    invoke-static {}, Laut;->b()V
+    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$provider:Lajk;
 
-    .line 262
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    check-cast v2, Lcom/snapchat/android/model/chat/ChatConversation;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/ChatConversation;->r()V
+
+    .line 263
+    :cond_2
+    invoke-static {}, Lavr;->b()V
+
+    .line 264
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v2
 
-    new-instance v3, Lbdp;
+    new-instance v3, Lbep;
 
-    invoke-direct {v3}, Lbdp;-><init>()V
+    invoke-direct {v3}, Lbep;-><init>()V
 
     invoke-virtual {v2, v3}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 264
+    .line 266
     const/4 v2, 0x1
 
-    iget-object v3, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$snap:Laje;
+    iget-object v3, p0, Lcom/snapchat/android/util/AlertDialogUtils$23;->val$snap:Laka;
 
-    invoke-static {v2, v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(ZLaje;)V
+    invoke-static {v2, v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(ZLaka;)V
 
-    .line 265
+    .line 267
     return-void
 .end method

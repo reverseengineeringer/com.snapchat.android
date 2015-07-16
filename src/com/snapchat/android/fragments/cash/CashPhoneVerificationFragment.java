@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.cash;
 
-import ajx;
+import akr;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -10,12 +10,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import avh;
-import bet;
-import bkr;
-import boh;
-import cgc;
-import com.snapchat.android.Timber;
+import awf;
+import bfs;
+import bls;
+import bpi;
+import chd;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.fragments.verification.PhoneVerificationFragment;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
@@ -23,15 +22,15 @@ import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 public class CashPhoneVerificationFragment
   extends PhoneVerificationFragment
 {
-  @cgc
+  @chd
   public a a;
   public boolean b;
   
-  protected final void a(bkr parambkr) {}
+  protected final void a(bls parambls) {}
   
   protected final void a(String paramString)
   {
-    AnalyticsEvents.l(paramString);
+    AnalyticsEvents.k(paramString);
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
@@ -43,14 +42,19 @@ public class CashPhoneVerificationFragment
   {
     super.e();
     if ((TextUtils.isEmpty(g.getText())) && (g.requestFocus())) {
-      avh.g(getActivity());
+      awf.g(getActivity());
     }
   }
   
   protected final void f()
   {
     super.f();
-    avh.a(getActivity(), mFragmentLayout);
+    awf.a(getActivity(), mFragmentLayout);
+  }
+  
+  public final boolean f_()
+  {
+    return true;
   }
   
   public final boolean g()
@@ -59,18 +63,11 @@ public class CashPhoneVerificationFragment
       a.b();
     }
     a = null;
-    Timber.b("CashPhoneVerificationFragment", "CASH-LOG: Phone is not verified. Closing", new Object[0]);
     return super.g();
-  }
-  
-  public final boolean g_()
-  {
-    return true;
   }
   
   protected final void i()
   {
-    Timber.b("CashPhoneVerificationFragment", "CASH-LOG: Phone is verified successfully. Closing", new Object[0]);
     b = true;
     getActivitymFragments.popBackStackImmediate();
     if (a != null) {
@@ -81,7 +78,7 @@ public class CashPhoneVerificationFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968608, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968609, paramViewGroup, false);
     q();
     p();
     u();
@@ -91,18 +88,18 @@ public class CashPhoneVerificationFragment
     {
       public final void onClick(View paramAnonymousView)
       {
-        avh.a(getActivity(), CashPhoneVerificationFragment.a(CashPhoneVerificationFragment.this));
+        awf.a(getActivity(), CashPhoneVerificationFragment.a(CashPhoneVerificationFragment.this));
         getActivity().onBackPressed();
       }
     });
-    if (ajx.f()) {
-      g.setText(ajx.e());
+    if (akr.f()) {
+      g.setText(akr.e());
     }
     for (;;)
     {
       return mFragmentLayout;
-      if ((g.requestFocus()) && (!ajx.aF())) {
-        avh.g(e);
+      if ((g.requestFocus()) && (!akr.aE())) {
+        awf.g(e);
       }
     }
   }
@@ -113,10 +110,10 @@ public class CashPhoneVerificationFragment
     g.clearFocus();
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
-    super.onVerificationCodeReceivedEvent(parambet);
+    super.onVerificationCodeReceivedEvent(parambfs);
   }
   
   public static abstract interface a

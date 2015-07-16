@@ -43,7 +43,7 @@
     .line 186
     iget-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller$1;->a:Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;
 
-    invoke-virtual {v1}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getScrollProgressCalculator()Lckv;
+    invoke-virtual {v1}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getScrollProgressCalculator()Lclw;
 
     move-result-object v1
 
@@ -51,7 +51,7 @@
     if-eqz v1, :cond_0
 
     .line 188
-    invoke-interface {v1, p1}, Lcku;->a(Landroid/support/v7/widget/RecyclerView;)F
+    invoke-interface {v1, p1}, Lclv;->a(Landroid/support/v7/widget/RecyclerView;)F
 
     move-result v0
 

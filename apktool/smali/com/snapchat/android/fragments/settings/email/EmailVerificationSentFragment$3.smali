@@ -49,7 +49,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment$3;->a:Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;->e(Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;)Laol;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;->e(Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;)Laph;
 
     move-result-object v1
 
@@ -63,15 +63,15 @@
 
     iget-object v4, p0, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment$3;->a:Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;
 
-    invoke-static {v4}, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;->d(Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;)Lajx;
+    invoke-static {v4}, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;->d(Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;)Lakr;
 
-    invoke-static {}, Lajx;->bn()Ljava/lang/String;
+    invoke-static {}, Lakr;->bk()Ljava/lang/String;
 
     move-result-object v4
 
     const/4 v5, 0x0
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Laol;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3, v4, v5}, Laph;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 

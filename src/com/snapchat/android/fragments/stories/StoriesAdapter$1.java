@@ -1,23 +1,23 @@
 package com.snapchat.android.fragments.stories;
 
-import ahc;
+import ahz;
 import android.content.Context;
-import aom;
-import aom.a;
-import aqb;
+import api;
+import api.a;
+import ara;
 import com.snapchat.android.model.StorySnapLogbook;
 
 final class StoriesAdapter$1
-  extends aqb
+  extends ara
 {
-  StoriesAdapter$1(StoriesAdapter paramStoriesAdapter, Context paramContext, String paramString1, String paramString2, String paramString3, StorySnapLogbook paramStorySnapLogbook, ahc paramahc)
+  StoriesAdapter$1(StoriesAdapter paramStoriesAdapter, Context paramContext, String paramString1, String paramString2, String paramString3, StorySnapLogbook paramStorySnapLogbook, ahz paramahz)
   {
     super(paramContext, paramString1, paramString2, paramString3);
   }
   
   protected final void a()
   {
-    StoriesAdapter.b(c).a(a, new aom.a()
+    StoriesAdapter.b(c).a(a, new api.a()
     {
       public final void a()
       {

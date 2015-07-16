@@ -1,11 +1,11 @@
 package com.snapchat.android;
 
-import ajv;
+import akp;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import com.snapchat.android.util.chat.SecureChatService.a;
-import yq;
+import zm;
 
 final class LandingPageActivity$7
   implements ServiceConnection
@@ -35,7 +35,7 @@ final class LandingPageActivity$7
     LandingPageActivity.i = null;
     LandingPageActivity.a(a, false);
     LandingPageActivity.b(a, false);
-    yq.a().c();
+    zm.a().c();
   }
 }
 

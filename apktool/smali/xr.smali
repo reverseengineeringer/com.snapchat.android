@@ -2,96 +2,120 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation runtime Ljavax/inject/Singleton;
-.end annotation
+# interfaces
+.implements Lcom/snapchat/videotranscoder/task/Task$DoneCallback;
 
 
 # instance fields
-.field protected a:Layg;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
+.field private final a:Laku;
+
+.field private final b:Loy;
+
+.field private final c:Lxu;
+
+.field private final d:Lban;
+
+.field private final e:Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 1
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
+.method public constructor <init>(Lxu;Laku;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Loy;)V
+    .locals 6
 
     .prologue
-    .line 24
+    .line 28
+    new-instance v5, Lban;
+
+    invoke-direct {v5}, Lban;-><init>()V
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lxr;-><init>(Lxu;Laku;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Loy;Lban;)V
+
+    .line 29
+    return-void
+.end method
+
+.method private constructor <init>(Lxu;Laku;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Loy;Lban;)V
+    .locals 0
+
+    .prologue
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    .line 36
+    iput-object p2, p0, Lxr;->a:Laku;
 
-    move-result-object v0
+    .line 37
+    iput-object p4, p0, Lxr;->b:Loy;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    .line 38
+    iput-object p3, p0, Lxr;->e:Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
 
-    move-result-object v0
+    .line 39
+    iput-object p1, p0, Lxr;->c:Lxu;
 
-    invoke-interface {v0, p0}, Laza;->a(Lxr;)V
+    .line 40
+    iput-object p5, p0, Lxr;->d:Lban;
 
-    .line 26
+    .line 41
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 2
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 40
-    iget-object v0, p0, Lxr;->a:Layg;
-
-    sget-object v1, Layj;->CREDIT_CARD_TOKEN:Layh;
-
-    invoke-virtual {v0, v1}, Layg;->a(Layh;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(Ljava/lang/String;)V
-    .locals 2
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 29
-    iget-object v0, p0, Lxr;->a:Layg;
-
-    sget-object v1, Layj;->CREDIT_CARD_TOKEN:Layh;
-
-    invoke-virtual {v0, v1, p1}, Layg;->a(Layh;Ljava/lang/String;)V
-
-    .line 30
-    return-void
-.end method
-
-.method public final b()V
+.method public final done(Lcom/snapchat/videotranscoder/task/Task$Status;)V
     .locals 3
 
     .prologue
+    .line 45
+    iget-object v0, p0, Lxr;->b:Loy;
+
+    iget-object v1, p0, Lxr;->a:Laku;
+
+    iget-object v2, p0, Lxr;->e:Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
+
+    invoke-virtual {v0, v1, v2, p1}, Loy;->a(Laku;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Lcom/snapchat/videotranscoder/task/Task$Status;)V
+
+    .line 46
+    iget-object v0, p0, Lxr;->c:Lxu;
+
+    iget-object v1, p0, Lxr;->a:Laku;
+
+    invoke-virtual {v0, v1, p1}, Lxu;->a(Laku;Lcom/snapchat/videotranscoder/task/Task$Status;)V
+
+    .line 48
+    sget-object v0, Lcom/snapchat/videotranscoder/task/Task$Status;->FINISHED:Lcom/snapchat/videotranscoder/task/Task$Status;
+
+    if-eq p1, v0, :cond_0
+
     .line 49
-    iget-object v0, p0, Lxr;->a:Layg;
+    iget-object v0, p0, Lxr;->d:Lban;
 
-    sget-object v1, Layj;->CREDIT_CARD_TOKEN:Layh;
+    new-instance v1, Lot;
 
-    const/4 v2, 0x0
+    invoke-direct {v1, p1}, Lot;-><init>(Lcom/snapchat/videotranscoder/task/Task$Status;)V
 
-    invoke-virtual {v0, v1, v2}, Layg;->a(Layh;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lban;->a(Ljava/lang/Throwable;)V
 
     .line 50
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Transcoding failed. Status : "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 52
+    :cond_0
     return-void
 .end method

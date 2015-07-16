@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment$1;
-.super Laqb;
+.super Lara;
 .source "SourceFile"
 
 
@@ -26,7 +26,7 @@
     .line 253
     iput-object p1, p0, Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment$1;->a:Lcom/snapchat/android/snapkidz/SnapKidzPreviewFragment;
 
-    invoke-direct {p0, p2, p3}, Laqb;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {p0, p2, p3}, Lara;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     return-void
 .end method

@@ -1,7 +1,7 @@
 package com.snapchat.android.util;
 
-import aje;
-import ajv;
+import aka;
+import akp;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import com.snapchat.android.analytics.AnalyticsEvents;
@@ -9,7 +9,7 @@ import com.snapchat.android.analytics.AnalyticsEvents;
 final class AlertDialogUtils$2
   implements DialogInterface.OnClickListener
 {
-  AlertDialogUtils$2(aje paramaje, ajv paramajv) {}
+  AlertDialogUtils$2(aka paramaka, akp paramakp) {}
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {

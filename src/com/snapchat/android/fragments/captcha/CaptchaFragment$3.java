@@ -1,22 +1,22 @@
 package com.snapchat.android.fragments.captcha;
 
-import afo;
-import afo.b;
+import ago;
+import ago.b;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ProgressBar;
-import auh;
+import avf;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import pd;
+import pu;
 
 final class CaptchaFragment$3
   implements View.OnClickListener
 {
-  CaptchaFragment$3(CaptchaFragment paramCaptchaFragment, afo paramafo, String paramString) {}
+  CaptchaFragment$3(CaptchaFragment paramCaptchaFragment, ago paramago, String paramString) {}
   
   public final void onClick(View paramView)
   {
@@ -29,7 +29,7 @@ final class CaptchaFragment$3
     while (((Iterator)localObject).hasNext()) {
       paramView.add(Boolean.valueOf(nexta));
     }
-    new pd(b, paramView, c).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    new pu(b, paramView, c).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     CaptchaFragment.a(c).setClickable(false);
     CaptchaFragment.b(c).setText("");
     CaptchaFragment.b(c).setClickable(false);

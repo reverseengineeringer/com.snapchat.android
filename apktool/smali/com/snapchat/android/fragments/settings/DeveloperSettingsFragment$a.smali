@@ -23,12 +23,12 @@
     .locals 0
 
     .prologue
-    .line 587
+    .line 564
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$a;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    .line 588
+    .line 565
     invoke-direct {p0, p2}, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
 
-    .line 589
+    .line 566
     return-void
 .end method

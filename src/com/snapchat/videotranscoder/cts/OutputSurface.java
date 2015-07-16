@@ -9,8 +9,8 @@ import android.opengl.EGLContext;
 import android.opengl.EGLDisplay;
 import android.opengl.EGLSurface;
 import android.view.Surface;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.utils.TranscodingResources;
 import com.snapchat.videotranscoder.utils.Utils;
 import com.snapchat.videotranscoder.utils.VerboseLogging;
@@ -25,14 +25,14 @@ public class OutputSurface
   protected EGLSurface mEGLSurface = EGL14.EGL_NO_SURFACE;
   protected boolean mFrameAvailable;
   protected Object mFrameSyncObject = new Object();
-  @cgc
+  @chd
   private final Bitmap mOverlayBitmap;
   protected Surface mSurface;
   protected SurfaceTexture mSurfaceTexture;
   protected TextureRenderer mTextureRenderer;
   protected final TranscodingResources mTranscodingResources;
   
-  public OutputSurface(@cgb TranscodingResources paramTranscodingResources, int paramInt1, int paramInt2, @cgb float[] paramArrayOfFloat, @cgc Bitmap paramBitmap)
+  public OutputSurface(@chc TranscodingResources paramTranscodingResources, int paramInt1, int paramInt2, @chc float[] paramArrayOfFloat, @chd Bitmap paramBitmap)
   {
     if (paramTranscodingResources == null) {
       throw new NullPointerException("transcodingResources is null");
@@ -50,7 +50,7 @@ public class OutputSurface
     setup(paramArrayOfFloat);
   }
   
-  public OutputSurface(@cgb TranscodingResources paramTranscodingResources, @cgb float[] paramArrayOfFloat, @cgc Bitmap paramBitmap)
+  public OutputSurface(@chc TranscodingResources paramTranscodingResources, @chc float[] paramArrayOfFloat, @chd Bitmap paramBitmap)
   {
     if (paramTranscodingResources == null) {
       throw new NullPointerException("transcodingResources is null");
@@ -107,11 +107,10 @@ public class OutputSurface
     {
       boolean bool = mFrameAvailable;
       if (bool) {
-        break label88;
+        break label78;
       }
       try
       {
-        mFrameSyncObject.wait(500L);
         if (!mFrameAvailable)
         {
           Utils.getInstance().haveLooper("OutputSurface");
@@ -126,14 +125,14 @@ public class OutputSurface
     if (!mFrameAvailable) {
       VerboseLogging.verboseLog("OutputSurface", "Trying to get frame again");
     }
-    label88:
+    label78:
     mFrameAvailable = false;
     mTextureRenderer.checkGlError("before updateTexImage");
     mSurfaceTexture.updateTexImage();
     VerboseLogging.verboseLog("OutputSurface", "Done with updateTexImage");
   }
   
-  public void changeFragmentShader(@cgb FragmentShader paramFragmentShader)
+  public void changeFragmentShader(@chc FragmentShader paramFragmentShader)
   {
     mTextureRenderer.changeFragmentShader(paramFragmentShader);
   }
@@ -149,7 +148,6 @@ public class OutputSurface
         if (!bool) {
           try
           {
-            mFrameSyncObject.wait(paramInt);
             if (!mFrameAvailable)
             {
               VerboseLogging.verboseLog("OutputSurface", "No new image");
@@ -197,7 +195,6 @@ public class OutputSurface
       }
     }
     mFrameAvailable = true;
-    mFrameSyncObject.notifyAll();
   }
   
   public void release()

@@ -28,7 +28,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 5
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080040
+    const v1, 0x7f080041
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -209,11 +209,11 @@
 .method private static a(Landroid/graphics/Canvas;FFLandroid/graphics/Paint;F)V
     .locals 6
     .param p0    # Landroid/graphics/Canvas;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/graphics/Paint;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -263,11 +263,11 @@
 .method private static b(Landroid/graphics/Canvas;FFLandroid/graphics/Paint;F)V
     .locals 6
     .param p0    # Landroid/graphics/Canvas;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/graphics/Paint;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -311,11 +311,11 @@
 .method private static c(Landroid/graphics/Canvas;FFLandroid/graphics/Paint;F)V
     .locals 7
     .param p0    # Landroid/graphics/Canvas;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/graphics/Paint;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -419,7 +419,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 14
     .param p1    # Landroid/graphics/Canvas;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -731,7 +731,7 @@
 .method public setAnimationState(Lcom/snapchat/android/ui/ProgressiveSaveButton$AnimationState;)V
     .locals 3
     .param p1    # Lcom/snapchat/android/ui/ProgressiveSaveButton$AnimationState;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

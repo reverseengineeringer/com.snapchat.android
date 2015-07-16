@@ -41,35 +41,29 @@
 
 # virtual methods
 .method public final surfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .locals 5
+    .locals 3
 
     .prologue
     .line 190
-    const-string v0, "CameraView"
+    const/4 v0, 0x2
 
-    const-string v1, "Surface Changed to [%d x %d]"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    aput-object v2, v0, v1
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v1
 
     .line 191
     return-void
@@ -93,20 +87,9 @@
 .end method
 
 .method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .locals 3
+    .locals 0
 
     .prologue
     .line 194
-    const-string v0, "CameraView"
-
-    const-string v1, "Surface Destroyed"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 196
     return-void
 .end method

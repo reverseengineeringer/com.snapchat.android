@@ -1,86 +1,68 @@
-.class final Lact;
-.super Ljava/lang/Object;
+.class public final Lact;
+.super Ljava/lang/IllegalArgumentException;
 .source "SourceFile"
 
 
-# instance fields
-.field private final a:Lbgk;
-
-
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 2
 
     .prologue
-    .line 15
-    new-instance v0, Lbgk;
+    .line 10
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {p0, v0}, Lact;-><init>(Lbgk;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 16
+    move-result-object v0
+
+    const-string v1, "\n Publisher: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " Edition: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " DSnap: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " AdType: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 12
     return-void
-.end method
-
-.method private constructor <init>(Lbgk;)V
-    .locals 0
-
-    .prologue
-    .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 19
-    iput-object p1, p0, Lact;->a:Lbgk;
-
-    .line 20
-    return-void
-.end method
-
-.method public static a(Lcom/snapchat/android/discover/model/DSnapPage;JJI)Z
-    .locals 7
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 34
-    const-wide/16 v2, 0x0
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    sub-long/2addr v4, p1
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v2
-
-    .line 35
-    const-wide/32 v4, 0x36ee80
-
-    mul-long/2addr v4, p3
-
-    .line 36
-    cmp-long v1, v2, v4
-
-    if-lez v1, :cond_1
-
-    .line 40
-    :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    iget-object v1, p0, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-ge v1, p5, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
 .end method

@@ -1,99 +1,18 @@
-import java.util.Date;
+import java.io.UnsupportedEncodingException;
 
 public final class bms
 {
-  public final bma a;
-  public final bmc b;
-  
-  private bms(bma parambma, bmc parambmc)
+  public static String a(String paramString1, String paramString2)
   {
-    a = parambma;
-    b = parambmc;
-  }
-  
-  public static boolean a(bmc parambmc, bma parambma)
-  {
-    switch (c)
+    try
     {
+      paramString1 = cau.a(a":"getBytes"ISO-8859-1"c);
+      paramString1 = "Basic " + paramString1;
+      return paramString1;
     }
-    do
+    catch (UnsupportedEncodingException paramString1)
     {
-      return false;
-    } while (((parambmc.a("Expires") == null) && (ge == -1) && (!gg) && (!gf)) || (gd) || (dd));
-    return true;
-  }
-  
-  public static final class a
-  {
-    public final long a;
-    public final bma b;
-    public final bmc c;
-    public Date d;
-    public String e;
-    public Date f;
-    public String g;
-    public Date h;
-    public long i;
-    public long j;
-    public String k;
-    public int l = -1;
-    
-    public a(long paramLong, bma parambma, bmc parambmc)
-    {
-      a = paramLong;
-      b = parambma;
-      c = parambmc;
-      if (parambmc != null)
-      {
-        parambma = f;
-        int m = 0;
-        int n = a.length / 2;
-        if (m < n)
-        {
-          parambmc = parambma.a(m);
-          String str = parambma.b(m);
-          if ("Date".equalsIgnoreCase(parambmc))
-          {
-            d = bmv.a(str);
-            e = str;
-          }
-          for (;;)
-          {
-            m += 1;
-            break;
-            if ("Expires".equalsIgnoreCase(parambmc))
-            {
-              h = bmv.a(str);
-            }
-            else if ("Last-Modified".equalsIgnoreCase(parambmc))
-            {
-              f = bmv.a(str);
-              g = str;
-            }
-            else if ("ETag".equalsIgnoreCase(parambmc))
-            {
-              k = str;
-            }
-            else if ("Age".equalsIgnoreCase(parambmc))
-            {
-              l = bmt.b(str, -1);
-            }
-            else if (bmz.b.equalsIgnoreCase(parambmc))
-            {
-              i = Long.parseLong(str);
-            }
-            else if (bmz.c.equalsIgnoreCase(parambmc))
-            {
-              j = Long.parseLong(str);
-            }
-          }
-        }
-      }
-    }
-    
-    public static boolean a(bma parambma)
-    {
-      return (parambma.a("If-Modified-Since") != null) || (parambma.a("If-None-Match") != null);
+      throw new AssertionError();
     }
   }
 }

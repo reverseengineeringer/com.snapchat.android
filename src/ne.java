@@ -1,4 +1,11 @@
-public final class ne {}
+import android.os.Bundle;
+
+public abstract interface ne
+{
+  public abstract Bundle a(String paramString);
+  
+  public abstract void a(@chc nf paramnf);
+}
 
 /* Location:
  * Qualified Name:     ne

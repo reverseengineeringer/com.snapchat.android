@@ -1,359 +1,301 @@
 .class public final Larp;
-.super Larn;
+.super Landroid/support/v7/widget/RecyclerView$a;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/support/v7/widget/RecyclerView$a",
+        "<",
+        "Larr;",
+        ">;"
+    }
+.end annotation
+
+
 # instance fields
-.field protected b:Landroid/graphics/Bitmap;
+.field public c:Larq;
 
-.field private final c:Ljava/lang/String;
+.field public d:Lbqe;
 
-.field private final d:I
+.field private final e:Landroid/content/Context;
 
-.field private e:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field private f:Z
+.field private final f:Landroid/view/LayoutInflater;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Landroid/view/LayoutInflater;Larq;Lbqe;)V
+    .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Landroid/view/LayoutInflater;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Larq;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Lbqe;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
+    .line 40
+    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$a;-><init>()V
+
     .line 41
-    invoke-direct {p0}, Larn;-><init>()V
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 38
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    move-result-object v0
 
-    const/4 v1, 0x1
+    check-cast v0, Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Larp;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 39
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Larp;->f:Z
+    iput-object v0, p0, Larp;->e:Landroid/content/Context;
 
     .line 42
-    iput-object p1, p0, Larp;->c:Ljava/lang/String;
+    invoke-static {p2}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/LayoutInflater;
+
+    iput-object v0, p0, Larp;->f:Landroid/view/LayoutInflater;
 
     .line 43
-    iput p2, p0, Larp;->d:I
+    invoke-static {p3}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Larq;
+
+    iput-object v0, p0, Larp;->c:Larq;
 
     .line 44
+    invoke-static {p4}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbqe;
+
+    iput-object v0, p0, Larp;->d:Lbqe;
+
+    .line 45
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public final a()I
     .locals 1
 
     .prologue
-    .line 48
-    iget-object v0, p0, Larp;->c:Ljava/lang/String;
+    .line 98
+    iget-object v0, p0, Larp;->c:Larq;
 
-    return-object v0
-.end method
+    if-nez v0, :cond_0
 
-.method public final a(ZLandroid/graphics/Bitmap;)V
-    .locals 7
-
-    .prologue
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
-
-    .line 58
-    if-nez p1, :cond_1
-
-    .line 97
-    :cond_0
     :goto_0
-    return-void
+    add-int/lit8 v0, v0, 0x1
 
-    .line 61
-    :cond_1
-    iget-object v2, p0, Larp;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return v0
 
-    invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    :cond_0
+    iget-object v0, p0, Larp;->c:Larq;
 
-    .line 62
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    iget-object v0, v0, Larq;->a:[Larq$a;
 
-    move-result-object v2
+    array-length v0, v0
 
-    .line 63
-    if-eqz v2, :cond_0
-
-    .line 64
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v3
-
-    .line 66
-    iget-object v4, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    if-eqz v4, :cond_3
-
-    iget-object v4, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v4
-
-    invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v5
-
-    if-ne v4, v5, :cond_2
-
-    iget-object v4, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    invoke-virtual {p2}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v5
-
-    if-eq v4, v5, :cond_3
-
-    :cond_2
-    move v0, v1
-
-    .line 68
-    :cond_3
-    if-eqz v0, :cond_4
-
-    .line 70
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    .line 73
-    :cond_4
-    iget-object v0, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    if-nez v0, :cond_5
-
-    .line 74
-    invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v0
-
-    invoke-virtual {p2}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v3, v0, v4, v5}, Laur;->a(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/BitmapFactory$Options;
-
-    move-result-object v0
-
-    .line 77
-    invoke-static {}, Lavq;->a()Lavq;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0, v1}, Lavq;->a(Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    .line 80
-    :cond_5
-    iget-object v0, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    if-nez v0, :cond_6
-
-    .line 81
-    invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v0
-
-    invoke-virtual {p2}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v3
-
-    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v0, v3, v4}, Laur;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    .line 85
-    :cond_6
-    :try_start_0
-    iget v0, p0, Larp;->d:I
-
-    iget-object v3, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    invoke-static {v0, p2, v3, v2}, Lcom/snapchat/android/util/PhotoEffectTask;->a(ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/content/Context;)V
-
-    .line 86
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, Larp;->a:Landroid/graphics/Paint;
-
-    .line 87
-    iget-object v0, p0, Larp;->a:Landroid/graphics/Paint;
-
-    new-instance v3, Landroid/graphics/BitmapShader;
-
-    iget-object v4, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    sget-object v5, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    sget-object v6, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    invoke-direct {v3, v4, v5, v6}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
-
-    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
-
-    .line 88
-    invoke-static {p2, v2}, Laur;->b(Landroid/graphics/Bitmap;Landroid/content/Context;)Landroid/graphics/Matrix;
-
-    move-result-object v0
-
-    .line 89
-    iget-object v2, p0, Larp;->a:Landroid/graphics/Paint;
-
-    invoke-virtual {v2}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 95
-    iget-object v0, p0, Larp;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    .line 96
-    iput-boolean v1, p0, Larp;->f:Z
-
-    goto/16 :goto_0
-
-    .line 90
-    :catch_0
-    move-exception v0
-
-    .line 93
-    :try_start_1
-    const-string v2, "VisualFilterPage"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Failed to set the bitmap shader"
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v2, v0, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 95
-    iget-object v0, p0, Larp;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    .line 96
-    iput-boolean v1, p0, Larp;->f:Z
-
-    goto/16 :goto_0
-
-    .line 95
-    :catchall_0
-    move-exception v0
-
-    iget-object v2, p0, Larp;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    .line 96
-    iput-boolean v1, p0, Larp;->f:Z
-
-    throw v0
+    goto :goto_0
 .end method
 
-.method public final b()Lcom/snapchat/android/ui/swipefilters/FilterPageType;
-    .locals 1
-
-    .prologue
-    .line 53
-    sget-object v0, Lcom/snapchat/android/ui/swipefilters/FilterPageType;->BACKGROUNDFILTER:Lcom/snapchat/android/ui/swipefilters/FilterPageType;
-
-    return-object v0
-.end method
-
-.method public final e()V
+.method public final a(I)I
     .locals 2
 
     .prologue
-    .line 107
-    iget-object v0, p0, Larp;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    .line 103
+    if-nez p1, :cond_1
 
-    move-result v0
+    move v1, v0
 
-    if-eqz v0, :cond_0
+    :goto_0
+    if-eqz v1, :cond_0
 
-    .line 108
-    invoke-static {}, Lavq;->a()Lavq;
+    .line 104
+    const/4 v0, 0x2
+
+    .line 106
+    :cond_0
+    return v0
+
+    .line 103
+    :cond_1
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final synthetic a(Landroid/view/ViewGroup;I)Landroid/support/v7/widget/RecyclerView$s;
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 19
+    const/4 v0, 0x2
+
+    if-ne p2, v0, :cond_0
+
+    iget-object v0, p0, Larp;->f:Landroid/view/LayoutInflater;
+
+    const v1, 0x7f040091
+
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v1
+
+    new-instance v0, Larr;
+
+    invoke-direct {v0, v1}, Larr;-><init>(Landroid/view/View;)V
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Larp;->f:Landroid/view/LayoutInflater;
+
+    const v1, 0x7f040092
+
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v1
+
+    new-instance v0, Larr;
+
+    iget-object v2, p0, Larp;->e:Landroid/content/Context;
+
+    invoke-direct {v0, p0, v2, v1}, Larr;-><init>(Larp;Landroid/content/Context;Landroid/view/View;)V
+
+    goto :goto_0
+.end method
+
+.method public final synthetic a(Landroid/support/v7/widget/RecyclerView$s;I)V
+    .locals 5
+
+    .prologue
+    const/4 v4, 0x0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 19
+    check-cast p1, Larr;
+
+    if-nez p2, :cond_1
+
+    move v0, v1
+
+    :goto_0
+    if-nez v0, :cond_0
+
+    add-int/lit8 v0, p2, -0x1
+
+    iput v0, p1, Larr;->m:I
+
+    iget-object v3, p0, Larp;->c:Larq;
+
+    iget-object v3, v3, Larq;->b:[Z
+
+    aget-boolean v3, v3, v0
+
+    if-eqz v3, :cond_2
+
+    iget-object v0, p1, Larr;->a:Landroid/view/View;
+
+    const v1, 0x7f0a0324
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    iget-object v1, p0, Larp;->b:Landroid/graphics/Bitmap;
+    check-cast v0, Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v1}, Lavq;->a(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    .line 110
+    move-result-object v1
+
+    check-cast v1, Landroid/graphics/drawable/ClipDrawable;
+
+    const/16 v3, 0x2710
+
+    invoke-virtual {v1, v3}, Landroid/graphics/drawable/ClipDrawable;->setLevel(I)Z
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->bringToFront()V
+
+    invoke-virtual {p1, v2}, Larr;->a(Z)V
+
     :cond_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Larp;->b:Landroid/graphics/Bitmap;
-
-    .line 111
+    :goto_1
     return-void
-.end method
 
-.method public final f()Z
-    .locals 1
+    :cond_1
+    move v0, v2
 
-    .prologue
-    .line 116
-    iget-boolean v0, p0, Larp;->f:Z
+    goto :goto_0
 
-    return v0
+    :cond_2
+    iget-object v2, p0, Larp;->c:Larq;
+
+    invoke-virtual {v2, v0}, Larq;->a(I)Larq$a;
+
+    move-result-object v0
+
+    iget-object v2, v0, Larq$a;->c:Ljava/io/File;
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Larp;->d:Lbqe;
+
+    iget-object v0, v0, Larq$a;->c:Ljava/io/File;
+
+    invoke-virtual {v2, v0}, Lbqe;->a(Ljava/io/File;)Lbqi;
+
+    move-result-object v0
+
+    iput-boolean v1, v0, Lbqi;->b:Z
+
+    iget-object v1, p1, Larr;->l:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v1, v4}, Lbqi;->a(Landroid/widget/ImageView;Lbpo;)V
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v2, p0, Larp;->d:Lbqe;
+
+    iget-object v0, v0, Larq$a;->b:Landroid/net/Uri;
+
+    invoke-virtual {v2, v0}, Lbqe;->a(Landroid/net/Uri;)Lbqi;
+
+    move-result-object v0
+
+    iput-boolean v1, v0, Lbqi;->b:Z
+
+    iget-object v1, p1, Larr;->l:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v1, v4}, Lbqi;->a(Landroid/widget/ImageView;Lbpo;)V
+
+    goto :goto_1
 .end method

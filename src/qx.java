@@ -1,38 +1,44 @@
-import com.snapchat.android.api2.cash.blockers.BlockerOrder;
-import com.snapchat.android.fragments.cash.SQAcceptTermsFragment;
-import com.snapchat.android.fragments.cash.SQAcceptTermsFragment.a;
-import com.snapchat.android.model.CashTransaction;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.util.eventbus.ShowDialogEvent;
+import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
 import com.squareup.otto.Bus;
+import java.util.HashMap;
+import java.util.Map;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public final class qx
-  extends qv
 {
-  public final void a(@cgb CashTransaction paramCashTransaction)
+  private Map<String, re> mProviderMap;
+  @Inject
+  protected ri mScProvider;
+  @Inject
+  protected td mSquareProvider;
+  
+  @Inject
+  public qx()
   {
-    if (ajx.T())
-    {
-      a(null, true);
-      return;
-    }
-    paramCashTransaction = new SQAcceptTermsFragment();
-    a = new SQAcceptTermsFragment.a()
-    {
-      public final void a()
-      {
-        qx.a(qx.this);
-      }
-      
-      public final void b()
-      {
-        qx.b(qx.this);
-      }
-    };
-    ban.a().a(new bdw(paramCashTransaction));
+    SnapchatApplication.b().c().a(this);
+    mProviderMap = new HashMap();
+    mProviderMap.put("snapcash", mScProvider);
+    mProviderMap.put("SQUARE", mSquareProvider);
   }
   
-  public final BlockerOrder c()
+  public static void a()
   {
-    return BlockerOrder.LOCAL_SQ_ACCEPT_TERMS_BLOCKER;
+    bbo.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131493341));
+  }
+  
+  @chd
+  public final re a(@chc String paramString)
+  {
+    return (re)mProviderMap.get(paramString);
+  }
+  
+  public final boolean b(@chc String paramString)
+  {
+    return mProviderMap.containsKey(paramString);
   }
 }
 

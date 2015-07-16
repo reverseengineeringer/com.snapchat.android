@@ -1,35 +1,76 @@
-import java.io.Serializable;
-import javax.annotation.Nullable;
+import java.util.Collection;
+import java.util.Iterator;
 
 @cd
-final class dd<K, V>
-  extends cr<K, V>
-  implements Serializable
+public abstract class dd<E>
+  extends de
+  implements Collection<E>
 {
-  final K a;
-  final V b;
-  
-  dd(@Nullable K paramK, @Nullable V paramV)
+  public boolean add(E paramE)
   {
-    a = paramK;
-    b = paramV;
+    return c().add(paramE);
   }
   
-  @Nullable
-  public final K getKey()
+  public boolean addAll(Collection<? extends E> paramCollection)
   {
-    return (K)a;
+    return c().addAll(paramCollection);
   }
   
-  @Nullable
-  public final V getValue()
+  protected abstract Collection<E> c();
+  
+  public void clear()
   {
-    return (V)b;
+    c().clear();
   }
   
-  public final V setValue(V paramV)
+  public boolean contains(Object paramObject)
   {
-    throw new UnsupportedOperationException();
+    return c().contains(paramObject);
+  }
+  
+  public boolean containsAll(Collection<?> paramCollection)
+  {
+    return c().containsAll(paramCollection);
+  }
+  
+  public boolean isEmpty()
+  {
+    return c().isEmpty();
+  }
+  
+  public Iterator<E> iterator()
+  {
+    return c().iterator();
+  }
+  
+  public boolean remove(Object paramObject)
+  {
+    return c().remove(paramObject);
+  }
+  
+  public boolean removeAll(Collection<?> paramCollection)
+  {
+    return c().removeAll(paramCollection);
+  }
+  
+  public boolean retainAll(Collection<?> paramCollection)
+  {
+    return c().retainAll(paramCollection);
+  }
+  
+  public int size()
+  {
+    return c().size();
+  }
+  
+  public Object[] toArray()
+  {
+    return c().toArray();
+  }
+  
+  public <T> T[] toArray(T[] paramArrayOfT)
+  {
+    return c().toArray(paramArrayOfT);
   }
 }
 

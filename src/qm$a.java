@@ -1,13 +1,15 @@
 import com.google.gson.annotations.SerializedName;
 
-@tn
-final class qm$a
-  extends pl
+@ud
+public final class qm$a
+  extends qc
 {
-  @SerializedName("recipient")
-  String recipient = this$0.mFriendName;
+  @SerializedName("currentUrlEntities")
+  String serializedUrlRoutingMap = this$0.mUrlRoutingManager.c();
+  @SerializedName("userId")
+  String username = akr.l();
   
-  qm$a(qm paramqm) {}
+  public qm$a(qm paramqm) {}
 }
 
 /* Location:

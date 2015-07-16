@@ -1,13 +1,13 @@
 package com.snapchat.android.fragments.chat;
 
-import afr.c;
+import agr.c;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ListView;
 import com.snapchat.android.model.chat.ChatFeedItem;
 import com.snapchat.android.ui.LockingAboveTheFoldListView;
-import yi;
+import ze;
 
 final class ChatFragment$a
   extends GestureDetector.SimpleOnGestureListener
@@ -48,8 +48,8 @@ final class ChatFragment$a
     int i = j;
     if (i <= k)
     {
-      paramMotionEvent1 = (afr.c)a.getChildAt(i - j).getTag();
-      if ((paramMotionEvent1 == null) || (a == null) || (!a.am())) {}
+      paramMotionEvent1 = (agr.c)a.getChildAt(i - j).getTag();
+      if ((paramMotionEvent1 == null) || (a == null) || (!a.ak())) {}
     }
     for (;;)
     {

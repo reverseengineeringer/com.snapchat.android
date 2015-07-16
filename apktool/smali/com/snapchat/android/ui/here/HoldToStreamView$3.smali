@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1060
+    .line 1092
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$3;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -37,7 +37,7 @@
     .locals 4
 
     .prologue
-    .line 1063
+    .line 1095
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$3;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     new-instance v1, Lcom/snapchat/android/ui/here/HoldToStreamView$3$1;
@@ -48,6 +48,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/ui/here/HoldToStreamView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1071
+    .line 1103
     return-void
 .end method

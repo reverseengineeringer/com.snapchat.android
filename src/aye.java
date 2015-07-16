@@ -1,22 +1,6 @@
-import java.io.File;
-import java.io.FilenameFilter;
-
-public final class aye
-  implements FilenameFilter
+public abstract interface aye
 {
-  private final String EXCLUDE_FILENAME;
-  private final String FILENAME_PREFIX;
-  
-  public aye(@cgb String paramString1, @cgc String paramString2)
-  {
-    FILENAME_PREFIX = paramString1;
-    EXCLUDE_FILENAME = paramString2;
-  }
-  
-  public final boolean accept(File paramFile, String paramString)
-  {
-    return (paramString.startsWith(FILENAME_PREFIX)) && ((EXCLUDE_FILENAME == null) || (!paramString.equals(EXCLUDE_FILENAME)));
-  }
+  public abstract void a(bji parambji);
 }
 
 /* Location:

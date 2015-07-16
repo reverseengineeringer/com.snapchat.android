@@ -1,23 +1,23 @@
 package com.snapchat.android.api2.cash;
 
-import buo;
-import qg;
+import bvp;
+import qw;
 
 public enum CashErrorReporter_Factory
-  implements buo<qg>
+  implements bvp<qw>
 {
   INSTANCE;
   
   private CashErrorReporter_Factory() {}
   
-  public static buo<qg> create()
+  public static bvp<qw> create()
   {
     return INSTANCE;
   }
   
-  public final qg get()
+  public final qw get()
   {
-    return new qg();
+    return new qw();
   }
 }
 

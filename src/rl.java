@@ -1,39 +1,74 @@
-import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.api2.cash.blockers.BlockerOrder;
 import com.snapchat.android.model.CashTransaction;
 import java.util.List;
-import javax.inject.Inject;
 
-public final class rl
-  extends qv
+public abstract class rl
+  implements Comparable<rl>
 {
-  @Inject
-  protected xr mCashCardManager;
+  private static final String TAG = "Blocker";
+  @chd
+  public rl.a mListener;
   
-  public rl()
+  public void a()
   {
-    SnapchatApplication.b().c().a(this);
+    getClass().getSimpleName();
+    if (mListener != null) {
+      mListener.a(this);
+    }
   }
   
-  public final void a(@cgc CashTransaction paramCashTransaction)
+  public abstract void a(CashTransaction paramCashTransaction);
+  
+  public void a(@chd List<rl> paramList, boolean paramBoolean)
   {
-    mCashCardManager.b();
-    super.a(null, false);
+    getClass().getSimpleName();
+    if (mListener != null) {
+      mListener.a(this, paramList, paramBoolean);
+    }
   }
   
-  protected final void a(@cgc List<qv> paramList, boolean paramBoolean)
+  public final void b()
   {
-    super.a(paramList, paramBoolean);
+    getClass().getSimpleName();
+    if (mListener != null) {
+      mListener.b(this);
+    }
   }
   
-  public final BlockerOrder c()
+  public void b(@chd List<rl> paramList, boolean paramBoolean)
   {
-    return BlockerOrder.SQ_CONFLICT_BLOCKER;
+    getClass().getSimpleName();
+    if (mListener != null) {
+      mListener.b(this, paramList, paramBoolean);
+    }
   }
   
-  public final boolean d()
+  public abstract BlockerOrder c();
+  
+  public boolean d()
   {
-    return true;
+    return false;
+  }
+  
+  public boolean equals(Object paramObject)
+  {
+    return (this == paramObject) || ((paramObject != null) && (getClass() == paramObject.getClass()));
+  }
+  
+  public int hashCode()
+  {
+    return getClass().getCanonicalName().hashCode();
+  }
+  
+  public static abstract interface a
+  {
+    public abstract void a(@chc rl paramrl);
+    
+    public abstract void a(@chc rl paramrl, @chd List<rl> paramList, boolean paramBoolean);
+    
+    public abstract void b(@chc rl paramrl);
+    
+    public abstract void b(@chc rl paramrl, @chd List<rl> paramList, boolean paramBoolean);
   }
 }
 

@@ -1,14 +1,14 @@
 package com.snapchat.android.discover.api2;
 
-import aim;
+import aji;
 
 public abstract interface SendDSnapTask$c
 {
-  public abstract void c(aim paramaim);
+  public abstract void c(aji paramaji);
   
-  public abstract void d(aim paramaim);
+  public abstract void d(aji paramaji);
   
-  public abstract void e(aim paramaim);
+  public abstract void e(aji paramaji);
 }
 
 /* Location:

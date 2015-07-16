@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 243
+    .line 251
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$5;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-direct {p0}, Lbi;-><init>()V
@@ -37,19 +37,19 @@
     .locals 4
 
     .prologue
-    .line 246
+    .line 254
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$5;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     iget-boolean v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView;->e:Z
 
     if-nez v0, :cond_1
 
-    .line 250
+    .line 258
     :cond_0
     :goto_0
     return-void
 
-    .line 247
+    .line 255
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$5;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
@@ -59,7 +59,7 @@
 
     if-nez v0, :cond_0
 
-    .line 248
+    .line 256
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$5;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView;->f:Landroid/view/View;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setY(F)V
 
-    .line 249
+    .line 257
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$5;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->a(Lcom/snapchat/android/ui/here/HoldToStreamView;)V

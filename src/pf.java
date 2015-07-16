@@ -1,47 +1,65 @@
-import android.os.Bundle;
-import com.google.gson.Gson;
-import com.snapchat.android.Timber;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.api2.framework.HttpMethod;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.StoryGroup;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public final class pf
-  extends ot
+  extends ul
+  implements ui.b<pf.a>
 {
-  private static final String TAG = "UpdateFeatureSettingsTask";
-  private static final String TASK_NAME = "UpdateFeatureSettingsTask";
-  private aol mSnapchatServiceManager;
+  public static final String PATH = "/shared/description";
+  private static final String TASK_NAME = "GetSharedStoryDescriptionTask";
+  String mSharedStoryId;
+  private final Handler mUiHandler;
   
-  public pf()
+  public pf(String paramString)
   {
-    this(aol.a());
+    this(paramString, new Handler(Looper.getMainLooper()));
   }
   
-  private pf(aol paramaol)
+  private pf(String paramString, Handler paramHandler)
   {
-    mSnapchatServiceManager = paramaol;
+    mSharedStoryId = paramString;
+    mUiHandler = paramHandler;
+    registerCallback(pf.a.class, this);
   }
   
-  protected final String a()
+  public final HttpMethod getMethod()
   {
-    return "/bq/update_feature_settings";
+    return HttpMethod.GET;
   }
   
-  protected final Bundle b()
+  public final Object getRequestPayload()
   {
-    Bundle localBundle = new Bundle();
-    localBundle.putString("username", ajx.l());
-    bht localbht = new bht().a(Boolean.valueOf(ajx.ab())).c(Boolean.valueOf(ajx.aa())).b(Boolean.valueOf(ajx.ac()));
-    localBundle.putString("settings", atn.a().toJson(localbht));
-    return localBundle;
+    return null;
   }
   
-  protected final void b(aku paramaku)
+  public final String getUrl()
   {
-    Timber.c("UpdateFeatureSettingsTask", "UpdateFeatureSettingsTask: SUCCESS", new Object[0]);
-    mSnapchatServiceManager.a(false, false);
+    return bal.b("/shared/description") + "/shared/description?shared_id=" + mSharedStoryId + "&ln=" + Locale.getDefault().getLanguage();
   }
   
-  protected final String c()
+  public static class a
   {
-    return "UpdateFeatureSettingsTask";
+    @SerializedName("FRIEND")
+    public String mFriend;
+    @SerializedName("LOCAL_POST_BODY")
+    public String mLocalPostBody;
+    @SerializedName("LOCAL_POST_TITLE")
+    public String mLocalPostTitle;
+    @SerializedName("LOCAL_VIEW_BODY")
+    public String mLocalViewBody;
+    @SerializedName("LOCAL_VIEW_TITLE")
+    public String mLocalViewTitle;
+    @SerializedName("OUR_SHARED_STORY")
+    public String mOurSharedStory;
   }
 }
 

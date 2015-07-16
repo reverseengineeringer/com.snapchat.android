@@ -1,5 +1,5 @@
 .class public final Lcom/snapchat/android/api/chat/LoadFeedPageTask;
-.super Lot;
+.super Lpk;
 .source "SourceFile"
 
 
@@ -27,82 +27,9 @@
 
 .field private final mIterToken:Ljava/lang/String;
 
-.field private mServerInfo:Lbiw;
+.field private mServerInfo:Lbjx;
 
-.field private final mUser:Lajv;
-
-
-# direct methods
-.method private constructor <init>(Ljava/lang/String;Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;Lajv;)V
-    .locals 0
-
-    .prologue
-    .line 45
-    invoke-direct {p0}, Lot;-><init>()V
-
-    .line 46
-    iput-object p1, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mIterToken:Ljava/lang/String;
-
-    .line 47
-    iput-object p2, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mInterface:Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;
-
-    .line 48
-    iput-object p3, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mUser:Lajv;
-
-    .line 49
-    return-void
-.end method
-
-.method public static a(Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;Lajv;)V
-    .locals 3
-
-    .prologue
-    .line 52
-    sget-object v0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->sLoadFeedPageTaskInstance:Lcom/snapchat/android/api/chat/LoadFeedPageTask;
-
-    if-eqz v0, :cond_0
-
-    .line 62
-    :goto_0
-    return-void
-
-    .line 54
-    :cond_0
-    invoke-static {}, Lakc;->b()Lakc;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lakc;->mIterToken:Ljava/lang/String;
-
-    .line 55
-    if-nez v0, :cond_1
-
-    .line 56
-    sget-object v0, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->EMPTY_RESPONSE_REACHED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
-
-    invoke-interface {p0, v0}, Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;->a(Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;)V
-
-    goto :goto_0
-
-    .line 60
-    :cond_1
-    new-instance v1, Lcom/snapchat/android/api/chat/LoadFeedPageTask;
-
-    invoke-direct {v1, v0, p0, p1}, Lcom/snapchat/android/api/chat/LoadFeedPageTask;-><init>(Ljava/lang/String;Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;Lajv;)V
-
-    .line 61
-    sput-object v1, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->sLoadFeedPageTaskInstance:Lcom/snapchat/android/api/chat/LoadFeedPageTask;
-
-    sget-object v0, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2}, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    goto :goto_0
-.end method
+.field private final mUser:Lakp;
 
 
 # virtual methods
@@ -116,7 +43,7 @@
     return-object v0
 .end method
 
-.method protected final a(Laku;)V
+.method protected final a(Lalp;)V
     .locals 1
 
     .prologue
@@ -126,7 +53,7 @@
     sput-object v0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->sLoadFeedPageTaskInstance:Lcom/snapchat/android/api/chat/LoadFeedPageTask;
 
     .line 92
-    invoke-super {p0, p1}, Lot;->a(Laku;)V
+    invoke-super {p0, p1}, Lpk;->a(Lalp;)V
 
     .line 93
     return-void
@@ -137,47 +64,29 @@
 
     .prologue
     .line 133
-    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mInterface:Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;
-
-    sget-object v1, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->FAILED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
-
-    invoke-interface {v0, v1}, Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;->a(Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;)V
+    sget-object v0, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->FAILED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
 
     .line 135
-    const-string v0, "LoadFeedPageTask"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "onFail - "
 
-    const-string v2, "onFail - "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, ": "
 
-    const-string v2, ": "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 136
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -205,7 +114,7 @@
     .line 79
     const-string v1, "username"
 
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v2
 
@@ -227,13 +136,11 @@
     return-object v0
 .end method
 
-.method protected final b(Laku;)V
-    .locals 6
+.method protected final b(Lalp;)V
+    .locals 4
 
     .prologue
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
+    const/4 v3, 0x1
 
     .line 98
     if-nez p1, :cond_0
@@ -251,71 +158,46 @@
 
     .line 104
     :cond_0
-    iget-object v0, p1, Laku;->server_info:Lbiw;
+    iget-object v0, p1, Lalp;->server_info:Lbjx;
 
-    iput-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mServerInfo:Lbiw;
+    iput-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mServerInfo:Lbjx;
 
     .line 105
-    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mServerInfo:Lbiw;
+    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mServerInfo:Lbjx;
 
     if-eqz v0, :cond_1
 
-    sget-object v0, Lbiw$a;->EQUAL:Lbiw$a;
+    sget-object v0, Lbjx$a;->EQUAL:Lbjx$a;
 
-    iget-object v1, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mServerInfo:Lbiw;
+    iget-object v1, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mServerInfo:Lbjx;
 
-    invoke-virtual {v1}, Lbiw;->e()Lbiw$a;
+    invoke-virtual {v1}, Lbjx;->e()Lbjx$a;
 
     move-result-object v1
 
     if-ne v0, v1, :cond_1
 
     .line 107
-    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mInterface:Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;
-
-    sget-object v1, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->EMPTY_RESPONSE_REACHED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
-
-    invoke-interface {v0, v1}, Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;->a(Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;)V
-
-    .line 108
-    const-string v0, "LoadFeedPageTask"
-
-    const-string v1, "onSuccess - response is pruned"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v0, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->EMPTY_RESPONSE_REACHED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
 
     goto :goto_0
 
     .line 112
     :cond_1
-    iget-object v0, p1, Laku;->conversations_response:Ljava/util/List;
+    iget-object v0, p1, Lalp;->conversations_response:Ljava/util/List;
 
     .line 113
-    const-string v1, "LoadFeedPageTask"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "onSuccess - response not pruned, # of conversations="
 
-    const-string v3, "onSuccess - response not pruned, # of conversations="
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 114
     if-eqz v0, :cond_3
@@ -338,50 +220,40 @@
 
     move-result-object v0
 
-    check-cast v0, Lbhd;
+    check-cast v0, Lbid;
 
     .line 117
-    invoke-virtual {v0}, Lbhd;->n()Z
+    invoke-virtual {v0}, Lbid;->n()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
     .line 118
-    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mInterface:Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;
-
-    sget-object v1, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->EMPTY_RESPONSE_REACHED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
-
-    invoke-interface {v0, v1}, Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;->a(Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;)V
+    sget-object v0, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->EMPTY_RESPONSE_REACHED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
 
     .line 120
     :cond_2
-    invoke-static {}, Lakc;->b()Lakc;
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v0
 
-    iget-object v1, p1, Laku;->conversations_response:Ljava/util/List;
+    iget-object v1, p1, Lalp;->conversations_response:Ljava/util/List;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    invoke-virtual {v0, v1, v5, v5}, Lakc;->a(Ljava/util/List;ZZ)V
+    invoke-virtual {v0, v1, v3, v3}, Lakx;->a(Ljava/util/List;ZZ)V
 
     .line 128
     :cond_3
     :goto_1
-    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mUser:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mUser:Lakp;
 
-    invoke-virtual {v0}, Lajv;->x()V
+    invoke-virtual {v0}, Lakp;->x()V
 
     goto :goto_0
 
     .line 124
     :cond_4
-    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mInterface:Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;
-
-    sget-object v1, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->EMPTY_RESPONSE_REACHED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
-
-    invoke-interface {v0, v1}, Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;->a(Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;)V
+    sget-object v0, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->EMPTY_RESPONSE_REACHED:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
 
     goto :goto_1
 .end method
@@ -401,9 +273,9 @@
 
     .prologue
     .line 22
-    check-cast p1, Laku;
+    check-cast p1, Lalp;
 
-    invoke-virtual {p0, p1}, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->a(Laku;)V
+    invoke-virtual {p0, p1}, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->a(Lalp;)V
 
     return-void
 .end method
@@ -413,14 +285,10 @@
 
     .prologue
     .line 66
-    invoke-super {p0}, Lot;->onPreExecute()V
+    invoke-super {p0}, Lpk;->onPreExecute()V
 
     .line 67
-    iget-object v0, p0, Lcom/snapchat/android/api/chat/LoadFeedPageTask;->mInterface:Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;
-
-    sget-object v1, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->RUNNING:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
-
-    invoke-interface {v0, v1}, Lcom/snapchat/android/api/chat/LoadFeedPageTask$a;->a(Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;)V
+    sget-object v0, Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;->RUNNING:Lcom/snapchat/android/api/chat/LoadFeedPageTask$TaskStatus;
 
     .line 68
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J

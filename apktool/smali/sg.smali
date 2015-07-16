@@ -1,77 +1,149 @@
 .class public final Lsg;
-.super Lsl;
+.super Lrl;
 .source "SourceFile"
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String; = "SQPhoneNumberBlocker"
+
+
 # instance fields
-.field private mPaymentId:Ljava/lang/String;
+.field protected mCashErrorReporter:Lqw;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lsk;)V
-    .locals 0
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lsk;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 14
-    invoke-direct {p0, p2}, Lsl;-><init>(Lsk;)V
+    .line 33
+    invoke-direct {p0}, Lrl;-><init>()V
 
-    .line 16
-    iput-object p1, p0, Lsg;->mPaymentId:Ljava/lang/String;
+    .line 34
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    .line 17
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Lazy;->a(Lsg;)V
+
+    .line 35
+    return-void
+.end method
+
+.method static synthetic a(Lsg;)V
+    .locals 2
+
+    .prologue
+    .line 27
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lsg;->b(Ljava/util/List;Z)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lsg;Ljava/util/List;)V
+    .locals 1
+
+    .prologue
+    .line 27
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lsg;->a(Ljava/util/List;Z)V
+
+    return-void
+.end method
+
+.method static synthetic b(Lsg;)V
+    .locals 2
+
+    .prologue
+    .line 27
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lsg;->b(Ljava/util/List;Z)V
+
+    return-void
+.end method
+
+.method static synthetic b(Lsg;Ljava/util/List;)V
+    .locals 1
+
+    .prologue
+    .line 27
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lsg;->b(Ljava/util/List;Z)V
+
+    return-void
+.end method
+
+.method static synthetic c(Lsg;)V
+    .locals 2
+
+    .prologue
+    .line 27
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lsg;->b(Ljava/util/List;Z)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 31
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final c()Lcom/snapchat/android/api2/framework/HttpMethod;
-    .locals 1
-
-    .prologue
-    .line 26
-    sget-object v0, Lcom/snapchat/android/api2/framework/HttpMethod;->GET:Lcom/snapchat/android/api2/framework/HttpMethod;
-
-    return-object v0
-.end method
-
-.method protected final e()Ljava/lang/String;
+.method public final a(Lcom/snapchat/android/model/CashTransaction;)V
     .locals 2
+    .param p1    # Lcom/snapchat/android/model/CashTransaction;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
     .prologue
-    .line 21
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 39
+    new-instance v0, Lra;
 
-    const-string v1, "cash/payments/"
+    new-instance v1, Lsg$1;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1}, Lsg$1;-><init>(Lsg;Lcom/snapchat/android/model/CashTransaction;)V
 
-    iget-object v1, p0, Lsg;->mPaymentId:Ljava/lang/String;
+    invoke-direct {v0, v1}, Lra;-><init>(Lqs$a;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lra;->execute()V
 
-    move-result-object v0
+    .line 107
+    return-void
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public final c()Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+    .locals 1
 
-    move-result-object v0
+    .prologue
+    .line 111
+    sget-object v0, Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;->SQ_PHONE_NUMBER_BLOCKER:Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
 
     return-object v0
+.end method
+
+.method public final d()Z
+    .locals 1
+
+    .prologue
+    .line 116
+    const/4 v0, 0x1
+
+    return v0
 .end method

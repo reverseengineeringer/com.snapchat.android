@@ -1,147 +1,151 @@
-.class public final Lue;
-.super Ljava/lang/Object;
+.class final Lue;
+.super Ltv;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuo;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
+        "Ltv",
         "<",
-        "Lud;",
+        "Ljava/lang/Object;",
+        "Ljava/lang/String;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
 # instance fields
-.field private final entityFactoryProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Ltl;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final mGson:Laum;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method protected constructor <init>(Laum;)V
     .locals 1
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
 
     .prologue
-    .line 7
-    const-class v0, Lue;
+    .line 20
+    const-class v0, Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    invoke-direct {p0, v0}, Ltv;-><init>(Ljava/lang/Class;)V
+
+    .line 21
+    iput-object p1, p0, Lue;->mGson:Laum;
+
+    .line 22
+    return-void
+.end method
+
+.method private c(Ljava/lang/Object;)Ljava/lang/String;
+    .locals 4
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 30
+    instance-of v0, p1, Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Ljava/lang/String;
+
+    .line 33
+    :goto_0
+    return-object p1
+
+    .line 31
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Class;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    :goto_0
-    sput-boolean v0, Lue;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
+    move-result-object p1
 
     goto :goto_0
-.end method
 
-.method private constructor <init>(Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Ltl;",
-            ">;)V"
-        }
-    .end annotation
+    .line 33
+    :cond_1
+    :try_start_0
+    iget-object v0, p0, Lue;->mGson:Laum;
 
-    .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v0, p1}, Laum;->a(Ljava/lang/Object;)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 12
-    sget-boolean v0, Lue;->$assertionsDisabled:Z
+    move-result-object p1
 
-    if-nez v0, :cond_0
+    goto :goto_0
 
-    if-nez p1, :cond_0
+    .line 34
+    :catch_0
+    move-exception v0
 
-    new-instance v0, Ljava/lang/AssertionError;
+    .line 35
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    throw v0
+    const-string v3, "Trouble serializing: Class="
 
-    .line 13
-    :cond_0
-    iput-object p1, p0, Lue;->entityFactoryProvider:Ljavax/inject/Provider;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 14
-    return-void
-.end method
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public static a(Ljavax/inject/Provider;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Ltl;",
-            ">;)",
-            "Lbuo",
-            "<",
-            "Lud;",
-            ">;"
-        }
-    .end annotation
+    move-result-object v3
 
-    .prologue
-    .line 22
-    new-instance v0, Lue;
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    invoke-direct {v0, p0}, Lue;-><init>(Ljavax/inject/Provider;)V
+    move-result-object v3
 
-    return-object v0
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", with toString()="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 2
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .prologue
-    .line 7
-    new-instance v1, Lud;
-
-    iget-object v0, p0, Lue;->entityFactoryProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .line 14
+    invoke-direct {p0, p1}, Lue;->c(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Ltl;
-
-    invoke-direct {v1, v0}, Lud;-><init>(Ltl;)V
-
-    return-object v1
+    return-object v0
 .end method

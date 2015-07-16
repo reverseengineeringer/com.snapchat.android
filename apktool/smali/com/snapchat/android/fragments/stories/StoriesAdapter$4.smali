@@ -66,13 +66,13 @@
 
     move-result-object v0
 
-    new-instance v1, Lbdi;
+    new-instance v1, Lbei;
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$4;->a:Lcom/snapchat/android/model/Friend;
 
     const/4 v3, 0x1
 
-    invoke-direct {v1, v2, v3}, Lbdi;-><init>(Lcom/snapchat/android/model/Friend;Z)V
+    invoke-direct {v1, v2, v3}, Lbei;-><init>(Lcom/snapchat/android/model/Friend;Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

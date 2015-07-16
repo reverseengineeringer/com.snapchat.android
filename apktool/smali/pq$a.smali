@@ -1,5 +1,5 @@
 .class public final Lpq$a;
-.super Lpl;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -9,44 +9,36 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x9
     name = "a"
-.end annotation
-
-.annotation runtime Ltn;
 .end annotation
 
 
 # instance fields
-.field request_username:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "request_username"
-    .end annotation
-.end field
+.field public onValue:Ljava/lang/String;
 
-.field final synthetic this$0:Lpq;
+.field public studyId:Ljava/lang/String;
+
+.field public variable:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lpq;)V
-    .locals 1
+.method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    .line 55
-    iput-object p1, p0, Lpq$a;->this$0:Lpq;
+    .line 58
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lpl;-><init>()V
+    .line 59
+    iput-object p1, p0, Lpq$a;->studyId:Ljava/lang/String;
 
-    .line 56
-    iget-object v0, p0, Lpq$a;->this$0:Lpq;
+    .line 60
+    iput-object p2, p0, Lpq$a;->variable:Ljava/lang/String;
 
-    iget-object v0, v0, Lpq;->mFriend:Lcom/snapchat/android/model/Friend;
+    .line 61
+    iput-object p3, p0, Lpq$a;->onValue:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lpq$a;->request_username:Ljava/lang/String;
-
+    .line 62
     return-void
 .end method

@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
-import aqb;
+import ara;
 import com.snapchat.android.fragments.settings.WebFragment;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class SnapkidzSettingsActivity
   extends SnapchatActivity
@@ -44,7 +46,7 @@ public class SnapkidzSettingsActivity
   {
     public final void onClick(View paramAnonymousView)
     {
-      SnapkidzSettingsActivity.a(SnapkidzSettingsActivity.this, new WebFragment("https://www.snapchat.com/snapkidz.jsp", getString(2131493602)), "WebFragment");
+      SnapkidzSettingsActivity.a(SnapkidzSettingsActivity.this, new WebFragment("https://www.snapchat.com/snapkidz.jsp", getString(2131493600)), "WebFragment");
     }
   };
   private final View.OnClickListener f = new View.OnClickListener()
@@ -60,21 +62,23 @@ public class SnapkidzSettingsActivity
   
   public void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
-    setContentView(2130968747);
+    setContentView(2130968749);
     h = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
     i = h.edit();
-    findViewById(2131361893).setOnClickListener(a);
-    findViewById(2131362737).setOnClickListener(e);
-    findViewById(2131362662).setOnClickListener(c);
-    findViewById(2131362738).setOnClickListener(b);
-    findViewById(2131362657).setOnClickListener(d);
-    findViewById(2131362658).setOnClickListener(f);
+    findViewById(2131361895).setOnClickListener(a);
+    findViewById(2131362734).setOnClickListener(e);
+    findViewById(2131362661).setOnClickListener(c);
+    findViewById(2131362735).setOnClickListener(b);
+    findViewById(2131362656).setOnClickListener(d);
+    findViewById(2131362657).setOnClickListener(f);
     g = this;
   }
   
   final class a
-    extends aqb
+    extends ara
   {
     public a()
     {

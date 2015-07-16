@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->d()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 944
+    .line 834
     iput-object p1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$7;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,35 +37,54 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 947
+    .line 837
     iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$7;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->p(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Ljavax/inject/Provider;
+    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->m(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Lvu;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    iput-boolean v1, v0, Lvu;->a:Z
 
-    check-cast v0, Lajv;
-
-    .line 948
-    if-eqz v0, :cond_0
-
-    .line 949
+    .line 838
     iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$7;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->q(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Laol;
+    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->n(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Ljava/util/List;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laol;->f()I
+    iget-object v1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$7;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
-    .line 951
-    :cond_0
+    invoke-static {v1}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->m(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Lvu;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    .line 839
+    iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$7;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
+
+    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->o(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$7;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
+
+    invoke-static {v1}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->n(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->d(I)V
+
+    .line 840
     return-void
 .end method

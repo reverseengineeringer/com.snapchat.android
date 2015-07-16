@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/stories/StoriesFragment;->t()V
+    value = Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lakc;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,24 +18,16 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/content/Context;
-
-.field final synthetic b:Lauz;
-
-.field final synthetic c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+.field final synthetic a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesFragment;Landroid/content/Context;Lauz;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
     .locals 0
 
     .prologue
-    .line 672
-    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$4;->c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$4;->a:Landroid/content/Context;
-
-    iput-object p3, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$4;->b:Lauz;
+    .line 713
+    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$4;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,20 +37,14 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 675
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$4;->c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+    .line 716
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$4;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->p:Lauy;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->l(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lakc;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$4;->a:Landroid/content/Context;
-
-    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$4;->b:Lauz;
-
-    invoke-virtual {v0, v1, v2}, Lauy;->a(Landroid/content/Context;Lauz;)V
-
-    .line 676
+    .line 717
     return-void
 .end method

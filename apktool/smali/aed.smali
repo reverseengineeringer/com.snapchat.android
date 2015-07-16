@@ -3,482 +3,1154 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Laed$a;
-    }
-.end annotation
+# static fields
+.field private static final d:Laed;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/MediaState;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public b:Lcom/snapchat/android/discover/ui/DSnapView;
+.field public final b:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/MediaState;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public c:Laee;
+.field public final c:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/MediaState;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public d:Laec;
+.field private final e:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/MediaState;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public e:Z
+.field private final f:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/MediaState;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public f:Z
+.field private final g:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/MediaState;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public g:Lcom/snapchat/android/discover/model/MediaState;
-
-.field public h:Lcom/snapchat/android/discover/model/MediaState;
-
-.field public i:Ljava/lang/String;
-
-.field public j:I
-
-.field public k:Laed$a;
+.field private final h:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/MediaState;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    const/4 v0, 0x0
+    .line 17
+    new-instance v0, Laed;
 
-    .line 47
+    invoke-direct {v0}, Laed;-><init>()V
+
+    sput-object v0, Laed;->d:Laed;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    .prologue
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 26
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Laed;->e:Ljava/util/Map;
+
+    .line 27
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Laed;->f:Ljava/util/Map;
+
+    .line 28
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Laed;->g:Ljava/util/Map;
+
     .line 29
-    iput-boolean v0, p0, Laed;->e:Z
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Laed;->h:Ljava/util/Map;
 
     .line 30
-    iput-boolean v0, p0, Laed;->f:Z
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Laed;->a:Ljava/util/Map;
 
     .line 31
-    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    iput-object v0, p0, Laed;->g:Lcom/snapchat/android/discover/model/MediaState;
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Laed;->b:Ljava/util/Map;
 
     .line 32
-    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    iput-object v0, p0, Laed;->h:Lcom/snapchat/android/discover/model/MediaState;
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    .line 45
-    const/4 v0, 0x0
+    iput-object v0, p0, Laed;->c:Ljava/util/Map;
 
-    iput-object v0, p0, Laed;->k:Laed$a;
-
-    .line 48
-    iput-object p1, p0, Laed;->a:Landroid/content/Context;
-
-    .line 49
     return-void
+.end method
+
+.method public static a()Laed;
+    .locals 1
+
+    .prologue
+    .line 23
+    sget-object v0, Laed;->d:Laed;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
+.method public final a(Lcom/snapchat/android/discover/model/DSnapPanel;)Lcom/snapchat/android/discover/model/MediaState;
+    .locals 2
+    .param p1    # Lcom/snapchat/android/discover/model/DSnapPanel;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 214
-    iget-object v0, p0, Laed;->b:Lcom/snapchat/android/discover/ui/DSnapView;
+    .line 256
+    iget-object v0, p0, Laed;->b:Ljava/util/Map;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/DSnapView;->getDSnapPage()Lcom/snapchat/android/discover/model/DSnapPage;
+    iget-object v1, p1, Lcom/snapchat/android/discover/model/DSnapPanel;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
 
-    const-string v0, "?"
+    .line 257
+    if-eqz v0, :cond_0
 
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Laed;->b:Lcom/snapchat/android/discover/ui/DSnapView;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/DSnapView;->getDSnapPage()Lcom/snapchat/android/discover/model/DSnapPage;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
+    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
 
     goto :goto_0
 .end method
 
-.method public final a(Lcom/snapchat/android/discover/model/MediaState;)V
-    .locals 9
+.method public final a(Ljava/util/Set;)V
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    const/16 v4, 0x320
+    .line 241
+    iget-object v1, p0, Laed;->a:Ljava/util/Map;
 
-    const/16 v8, 0x8
+    monitor-enter v1
 
-    const/4 v5, 0x2
+    .line 242
+    :try_start_0
+    iget-object v0, p0, Laed;->a:Ljava/util/Map;
 
-    const/4 v7, 0x1
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    const/4 v6, 0x0
+    move-result-object v0
 
-    .line 119
-    iget-object v0, p0, Laed;->b:Lcom/snapchat/android/discover/ui/DSnapView;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    if-nez v0, :cond_0
+    move-result-object v2
 
-    .line 120
-    const-string v0, "DSnapLoadingStatePresenter"
-
-    const-string v1, "LOADING-STATE: Can\'t set loading state on uninitialized presenter."
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 150
-    :goto_0
-    return-void
-
-    .line 124
     :cond_0
-    iget-boolean v0, p0, Laed;->e:Z
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    if-nez v0, :cond_3
+    move-result v0
 
-    .line 125
-    iget-object v0, p0, Laed;->g:Lcom/snapchat/android/discover/model/MediaState;
+    if-eqz v0, :cond_1
 
-    if-ne v0, p1, :cond_1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 126
-    const-string v0, "DSnapLoadingStatePresenter"
+    move-result-object v0
 
-    const-string v1, "LOADING-STATE %s: Same loading state. "
+    check-cast v0, Ljava/util/Map$Entry;
 
-    new-array v2, v5, [Ljava/lang/Object;
-
-    invoke-virtual {p0}, Laed;->a()Ljava/lang/String;
+    .line 243
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
 
-    aput-object v3, v2, v6
+    invoke-interface {p1, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    aput-object p1, v2, v7
+    move-result v3
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-eqz v3, :cond_0
+
+    .line 244
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    .line 245
+    iget-object v3, p0, Laed;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v3, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 130
+    .line 248
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
     :cond_1
-    iget-object v0, p0, Laed;->g:Lcom/snapchat/android/discover/model/MediaState;
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-void
+.end method
+
+.method public final a(Lcom/snapchat/android/discover/model/ChannelPage;)Z
+    .locals 1
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 35
+    invoke-virtual {p0, p1}, Laed;->c(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->isLoading()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_0
 
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/MediaState;->isLoading()Z
+    invoke-virtual {p0, p1}, Laed;->d(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->isLoading()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_0
 
-    .line 132
-    const-string v0, "DSnapLoadingStatePresenter"
+    invoke-virtual {p0, p1}, Laed;->e(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
 
-    const-string v1, "LOADING-STATE %s: Still loading %s, %s"
+    move-result-object v0
 
-    const/4 v2, 0x3
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->isLoading()Z
 
-    new-array v2, v2, [Ljava/lang/Object;
+    move-result v0
 
-    invoke-virtual {p0}, Laed;->a()Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    move-result-object v3
+    invoke-virtual {p0, p1}, Laed;->f(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
 
-    aput-object v3, v2, v6
+    move-result-object v0
 
-    iget-object v3, p0, Laed;->g:Lcom/snapchat/android/discover/model/MediaState;
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->isLoading()Z
 
-    aput-object v3, v2, v7
+    move-result v0
 
-    aput-object p1, v2, v5
+    if-nez v0, :cond_0
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
 
-    .line 137
-    :cond_2
-    iget-boolean v0, p0, Laed;->f:Z
+.method public final a(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/MediaState;)Z
+    .locals 5
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/MediaState;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    if-eqz v0, :cond_3
+    .prologue
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Laed;->g:Lcom/snapchat/android/discover/model/MediaState;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->isError()Z
+    .line 64
+    iget-object v0, p0, Laed;->e:Ljava/util/Map;
 
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/MediaState;->isLoading()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 140
-    const-string v0, "DSnapLoadingStatePresenter"
-
-    const-string v1, "LOADING-STATE %s: We are retrying an error."
-
-    new-array v2, v7, [Ljava/lang/Object;
-
-    invoke-virtual {p0}, Laed;->a()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->d()Ljava/lang/String;
 
     move-result-object v3
 
-    aput-object v3, v2, v6
+    invoke-interface {v0, v3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
 
-    .line 145
-    :cond_3
-    const-string v0, "DSnapLoadingStatePresenter"
+    .line 65
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/model/MediaState;->equals(Ljava/lang/Object;)Z
 
-    const-string v1, "LOADING-STATE %s: New loading state %s"
+    move-result v3
 
-    new-array v2, v5, [Ljava/lang/Object;
+    if-nez v3, :cond_1
 
-    invoke-virtual {p0}, Laed;->a()Ljava/lang/String;
+    .line 66
+    const/4 v3, 0x3
 
-    move-result-object v3
+    new-array v3, v3, [Ljava/lang/Object;
 
-    aput-object v3, v2, v6
+    iget-object v4, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
 
-    aput-object p1, v2, v7
+    aput-object v4, v3, v2
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/MediaState;->isLoading()Z
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
 
-    move-result v0
+    move-result-object v0
 
-    if-eqz v0, :cond_7
+    :goto_0
+    aput-object v0, v3, v1
 
-    iget-object v0, p0, Laed;->d:Laec;
+    const/4 v0, 0x2
 
-    invoke-virtual {v0, v4}, Laec;->a(I)V
+    invoke-virtual {p2}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
 
-    iget-object v0, p0, Laed;->c:Laee;
+    move-result-object v2
 
-    iget-object v1, p0, Laed;->i:Ljava/lang/String;
+    aput-object v2, v3, v0
 
-    iget-object v2, p0, Laed;->h:Lcom/snapchat/android/discover/model/MediaState;
+    move v0, v1
 
-    iget v3, p0, Laed;->j:I
-
-    iget-object v4, v0, Laee;->a:Landroid/view/View;
-
-    invoke-virtual {v4, v3}, Landroid/view/View;->setBackgroundColor(I)V
-
-    const-string v3, "DSnapLoadingViewHolder"
-
-    const-string v4, "LOADING-STATE %s: state: %s"
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    aput-object v1, v5, v6
-
-    aput-object v2, v5, v7
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    if-nez v1, :cond_6
-
-    sget-object v3, Lcom/snapchat/android/discover/model/MediaState;->SUCCESS:Lcom/snapchat/android/discover/model/MediaState;
-
-    if-ne v2, v3, :cond_6
-
-    iget-object v1, v0, Laee;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    iget-object v1, v0, Laee;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v8}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    iget-object v1, v0, Laee;->h:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {v1}, Landroid/animation/ObjectAnimator;->cancel()V
-
-    iget-object v1, v0, Laee;->d:Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/AnimationDrawable;->isRunning()Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    iget-object v1, v0, Laee;->c:Landroid/widget/ImageView;
-
-    iget-object v2, v0, Laee;->d:Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-static {v1, v2}, Lavh;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
-
-    iget-object v1, v0, Laee;->d:Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/AnimationDrawable;->start()V
-
-    :cond_4
+    .line 70
     :goto_1
-    iget-object v0, v0, Laee;->a:Landroid/view/View;
+    return v0
 
-    invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
+    .line 66
+    :cond_0
+    const-string v0, "NONE"
 
-    .line 147
-    :cond_5
-    :goto_2
-    iput-object p1, p0, Laed;->g:Lcom/snapchat/android/discover/model/MediaState;
+    goto :goto_0
 
-    .line 148
-    iput-boolean v6, p0, Laed;->e:Z
+    :cond_1
+    move v0, v2
 
-    .line 149
-    iput-boolean v6, p0, Laed;->f:Z
+    .line 70
+    goto :goto_1
+.end method
 
-    goto/16 :goto_0
+.method public final a(Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/MediaState;)Z
+    .locals 5
+    .param p1    # Lcom/snapchat/android/discover/model/DSnapPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/MediaState;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    .line 145
-    :cond_6
-    iget-object v2, v0, Laee;->c:Landroid/widget/ImageView;
+    .prologue
+    const/4 v1, 0x1
 
-    invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setVisibility(I)V
+    const/4 v2, 0x0
 
-    iget-object v2, v0, Laee;->b:Landroid/widget/ImageView;
+    .line 176
+    iget-object v0, p0, Laed;->a:Ljava/util/Map;
 
-    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/DSnapPage;->b()Ljava/lang/String;
 
-    iget-object v2, v0, Laee;->d:Landroid/graphics/drawable/AnimationDrawable;
+    move-result-object v3
 
-    invoke-virtual {v2}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    invoke-interface {v0, v3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, v0, Laee;->h:Landroid/animation/ObjectAnimator;
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->isRunning()Z
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
 
-    move-result v2
+    .line 177
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/model/MediaState;->equals(Ljava/lang/Object;)Z
 
-    if-nez v2, :cond_5
+    move-result v3
 
-    if-eqz v1, :cond_4
+    if-nez v3, :cond_1
 
-    new-instance v2, Lavx$a;
+    .line 178
+    const/4 v3, 0x3
 
-    invoke-direct {v2}, Lavx$a;-><init>()V
+    new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v1}, Lavx$a;->a(Ljava/lang/String;)Lavx$a;
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/DSnapPage;->b()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    iget-object v2, v0, Laee;->b:Landroid/widget/ImageView;
+    aput-object v4, v3, v2
 
-    iput-object v2, v1, Lavx$a;->mImageView:Landroid/widget/ImageView;
+    if-eqz v0, :cond_0
 
-    iput-boolean v7, v1, Lavx$a;->mRequireExactDimensions:Z
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
 
-    invoke-virtual {v1}, Lavx$a;->a()Lavx;
+    move-result-object v0
 
-    move-result-object v1
+    :goto_0
+    aput-object v0, v3, v1
 
-    iget-object v2, v0, Laee;->e:Lavp;
+    const/4 v0, 0x2
 
-    new-array v3, v7, [Lavy;
+    invoke-virtual {p2}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
 
-    iget-object v4, v0, Laee;->i:Lavy;
+    move-result-object v2
 
-    aput-object v4, v3, v6
+    aput-object v2, v3, v0
 
-    invoke-virtual {v2, v1, v3}, Lavp;->a(Lavx;[Lavy;)V
+    move v0, v1
+
+    .line 182
+    :goto_1
+    return v0
+
+    .line 178
+    :cond_0
+    const-string v0, "NONE"
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    .line 182
+    goto :goto_1
+.end method
+
+.method public final a(Lcom/snapchat/android/discover/model/DSnapPanel;Lcom/snapchat/android/discover/model/MediaState;)Z
+    .locals 4
+    .param p1    # Lcom/snapchat/android/discover/model/DSnapPanel;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/MediaState;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 267
+    iget-object v0, p0, Laed;->b:Ljava/util/Map;
+
+    iget-object v3, p1, Lcom/snapchat/android/discover/model/DSnapPanel;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 268
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/model/MediaState;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    .line 269
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    aput-object p1, v3, v2
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    aput-object v0, v3, v1
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p2}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v3, v0
+
+    move v0, v1
+
+    .line 273
+    :goto_1
+    return v0
+
+    .line 269
+    :cond_0
+    const-string v0, "NONE"
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    .line 273
+    goto :goto_1
+.end method
+
+.method public final b(Lcom/snapchat/android/discover/model/ChannelPage;)Z
+    .locals 2
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 42
+    invoke-virtual {p0, p1}, Laed;->c(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/snapchat/android/discover/model/MediaState;->SUCCESS:Lcom/snapchat/android/discover/model/MediaState;
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p0, p1}, Laed;->d(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/snapchat/android/discover/model/MediaState;->SUCCESS:Lcom/snapchat/android/discover/model/MediaState;
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p0, p1}, Laed;->e(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/snapchat/android/discover/model/MediaState;->SUCCESS:Lcom/snapchat/android/discover/model/MediaState;
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p0, p1}, Laed;->f(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/snapchat/android/discover/model/MediaState;->SUCCESS:Lcom/snapchat/android/discover/model/MediaState;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final b(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/MediaState;)Z
+    .locals 5
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/MediaState;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 90
+    iget-object v0, p0, Laed;->f:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0, v3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 91
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/model/MediaState;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    .line 92
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    iget-object v4, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    aput-object v4, v3, v2
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    aput-object v0, v3, v1
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p2}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v3, v0
+
+    move v0, v1
+
+    .line 96
+    :goto_1
+    return v0
+
+    .line 92
+    :cond_0
+    const-string v0, "NONE"
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    .line 96
+    goto :goto_1
+.end method
+
+.method public final b(Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/MediaState;)Z
+    .locals 5
+    .param p1    # Lcom/snapchat/android/discover/model/DSnapPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/MediaState;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v2, 0x0
+
+    const/4 v1, 0x1
+
+    .line 208
+    iget-object v0, p1, Lcom/snapchat/android/discover/model/DSnapPage;->k:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    move v0, v1
+
+    .line 217
+    :goto_0
+    return v0
+
+    .line 211
+    :cond_0
+    iget-object v0, p0, Laed;->c:Ljava/util/Map;
+
+    iget-object v3, p1, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
+
+    invoke-interface {v0, v3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 212
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/model/MediaState;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    .line 213
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    iget-object v4, p1, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
+
+    aput-object v4, v3, v2
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_1
+    aput-object v0, v3, v1
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p2}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v3, v0
+
+    move v0, v1
+
+    .line 215
+    goto :goto_0
+
+    .line 213
+    :cond_1
+    const-string v0, "NONE"
 
     goto :goto_1
 
-    :cond_7
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/MediaState;->isError()Z
+    :cond_2
+    move v0, v2
 
-    move-result v0
+    .line 217
+    goto :goto_0
+.end method
 
-    if-eqz v0, :cond_5
+.method public final c(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+    .locals 2
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    iget-object v0, p0, Laed;->c:Laee;
+    .prologue
+    .line 53
+    iget-object v0, p0, Laed;->e:Ljava/util/Map;
 
-    invoke-virtual {v0, v4}, Laee;->a(I)V
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->d()Ljava/lang/String;
 
-    iget-object v3, p0, Laed;->d:Laec;
+    move-result-object v1
 
-    sget-object v0, Laec$3;->a:[I
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/MediaState;->ordinal()I
+    move-result-object v0
 
-    move-result v1
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
 
-    aget v0, v0, v1
+    .line 54
+    if-eqz v0, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    :goto_0
+    return-object v0
 
-    const v1, 0x7f0c0105
+    :cond_0
+    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
 
-    const v0, 0x7f0c0102
+    goto :goto_0
+.end method
 
-    const v2, 0x7f020109
+.method public final c(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/MediaState;)Z
+    .locals 5
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/MediaState;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    :goto_3
-    iget-object v4, v3, Laec;->b:Landroid/widget/TextView;
+    .prologue
+    const/4 v1, 0x1
 
-    invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(I)V
+    const/4 v2, 0x0
 
-    iget-object v1, v3, Laec;->c:Landroid/widget/TextView;
+    .line 116
+    iget-object v0, p0, Laed;->g:Ljava/util/Map;
 
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->b()Ljava/lang/String;
 
-    iget-object v0, v3, Laec;->d:Landroid/widget/ImageView;
+    move-result-object v3
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-interface {v0, v3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v3, Laec;->a:Landroid/view/ViewGroup;
+    move-result-object v0
 
-    invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->setVisibility(I)V
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
 
-    invoke-virtual {v3, v6}, Laec;->a(Z)V
+    .line 117
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/model/MediaState;->equals(Ljava/lang/Object;)Z
 
-    goto :goto_2
+    move-result v3
 
-    :pswitch_0
-    const v1, 0x7f0c0101
+    if-nez v3, :cond_1
 
-    const v0, 0x7f0c0100
+    .line 118
+    const/4 v3, 0x3
 
-    const v2, 0x7f020108
+    new-array v3, v3, [Ljava/lang/Object;
 
-    goto :goto_3
+    iget-object v4, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
 
-    :pswitch_1
-    const v1, 0x7f0c0105
+    aput-object v4, v3, v2
 
-    const v0, 0x7f0c0104
+    if-eqz v0, :cond_0
 
-    const v2, 0x7f02010c
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
 
-    goto :goto_3
+    move-result-object v0
 
-    nop
+    :goto_0
+    aput-object v0, v3, v1
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    const/4 v0, 0x2
+
+    invoke-virtual {p2}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v3, v0
+
+    move v0, v1
+
+    .line 122
+    :goto_1
+    return v0
+
+    .line 118
+    :cond_0
+    const-string v0, "NONE"
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    .line 122
+    goto :goto_1
+.end method
+
+.method public final d(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+    .locals 2
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 79
+    iget-object v0, p0, Laed;->f:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 80
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
+
+    goto :goto_0
+.end method
+
+.method public final d(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/MediaState;)Z
+    .locals 5
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/MediaState;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v2, 0x1
+
+    const/4 v1, 0x0
+
+    .line 146
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->c()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    move v0, v1
+
+    .line 156
+    :goto_0
+    return v0
+
+    .line 150
+    :cond_0
+    iget-object v0, p0, Laed;->h:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->c()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0, v3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 151
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/model/MediaState;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    .line 152
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    iget-object v4, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    aput-object v4, v3, v1
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_1
+    aput-object v0, v3, v2
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p2}, Lcom/snapchat/android/discover/model/MediaState;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v3, v0
+
+    move v0, v2
+
+    .line 154
+    goto :goto_0
+
+    .line 152
+    :cond_1
+    const-string v0, "NONE"
+
+    goto :goto_1
+
+    :cond_2
+    move v0, v1
+
+    .line 156
+    goto :goto_0
+.end method
+
+.method public final e(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+    .locals 2
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 105
+    iget-object v0, p0, Laed;->g:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->b()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 106
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
+
+    goto :goto_0
+.end method
+
+.method public final f(Lcom/snapchat/android/discover/model/ChannelPage;)Lcom/snapchat/android/discover/model/MediaState;
+    .locals 2
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 131
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->c()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    .line 132
+    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->SUCCESS:Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 135
+    :cond_0
+    :goto_0
+    return-object v0
+
+    .line 134
+    :cond_1
+    iget-object v0, p0, Laed;->h:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->c()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 135
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
+
+    goto :goto_0
 .end method

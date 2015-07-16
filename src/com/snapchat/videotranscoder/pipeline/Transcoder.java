@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.pipeline;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.audio.AudioEncoder;
 import com.snapchat.videotranscoder.task.SetupException;
 import com.snapchat.videotranscoder.task.Task.ProgressUpdateCallback;
@@ -24,7 +24,7 @@ public abstract class Transcoder
   private MediaProvider mVideoProvider;
   private boolean mVideoProviderDone = false;
   
-  public Transcoder(@cgb Mixer paramMixer, @cgc EncoderConfiguration paramEncoderConfiguration1, @cgc EncoderConfiguration paramEncoderConfiguration2)
+  public Transcoder(@chc Mixer paramMixer, @chd EncoderConfiguration paramEncoderConfiguration1, @chd EncoderConfiguration paramEncoderConfiguration2)
   {
     mMixer = paramMixer;
     if (!Utils.getInstance().haveLooper("Transcoder")) {
@@ -68,9 +68,9 @@ public abstract class Transcoder
     mAborted = true;
   }
   
-  public abstract MediaProvider createAudioProvider(@cgb Encoder paramEncoder, @cgb EncoderConfiguration paramEncoderConfiguration, @cgb StageDoneCallback paramStageDoneCallback);
+  public abstract MediaProvider createAudioProvider(@chc Encoder paramEncoder, @chc EncoderConfiguration paramEncoderConfiguration, @chc StageDoneCallback paramStageDoneCallback);
   
-  public abstract MediaProvider createVideoProvider(@cgb Encoder paramEncoder, @cgb EncoderConfiguration paramEncoderConfiguration, @cgb StageDoneCallback paramStageDoneCallback);
+  public abstract MediaProvider createVideoProvider(@chc Encoder paramEncoder, @chc EncoderConfiguration paramEncoderConfiguration, @chc StageDoneCallback paramStageDoneCallback);
   
   public void release()
   {
@@ -101,7 +101,7 @@ public abstract class Transcoder
     mMixer = null;
   }
   
-  public void transcode(@cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  public void transcode(@chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     while (((!mAudioEncoderDone) || (!mVideoEncoderDone)) && (!mAborted))
     {

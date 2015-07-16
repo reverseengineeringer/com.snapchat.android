@@ -32,22 +32,22 @@
 
 # instance fields
 .field public final b:Ljava/lang/String;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 .field public final c:Ljava/lang/String;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 .field public final d:Ljava/lang/String;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 .field public final e:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -89,7 +89,9 @@
     .end annotation
 .end field
 
-.field private o:Ljava/util/Map;
+.field private final o:I
+
+.field private p:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -101,9 +103,9 @@
     .end annotation
 .end field
 
-.field private final p:Ljava/lang/String;
+.field private final q:Ljava/lang/String;
 
-.field private final q:Ljava/util/Map;
+.field private final r:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -126,7 +128,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/model/ChannelPage;->a:Ljava/lang/String;
 
-    .line 515
+    .line 533
     new-instance v0, Lcom/snapchat/android/discover/model/ChannelPage$2;
 
     invoke-direct {v0}, Lcom/snapchat/android/discover/model/ChannelPage$2;-><init>()V
@@ -146,99 +148,99 @@
 
     const/4 v3, 0x4
 
-    .line 109
+    .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 43
     const/4 v2, 0x0
 
-    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->o:Ljava/util/Map;
-
-    .line 45
-    new-instance v2, Ljava/util/HashMap;
-
-    invoke-direct {v2, v3}, Ljava/util/HashMap;-><init>(I)V
-
-    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
+    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/util/Map;
 
     .line 46
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2, v3}, Ljava/util/HashMap;-><init>(I)V
 
-    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     .line 47
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2, v3}, Ljava/util/HashMap;-><init>(I)V
 
+    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
+
+    .line 48
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2, v3}, Ljava/util/HashMap;-><init>(I)V
+
     iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
-
-    .line 110
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
-
-    .line 111
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->c:Ljava/lang/String;
 
     .line 112
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->d:Ljava/lang/String;
+    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
 
     .line 113
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
+    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->c:Ljava/lang/String;
 
     .line 114
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result v2
+    move-result-object v2
 
-    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->f:I
+    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->d:Ljava/lang/String;
 
     .line 115
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result v2
+    move-result-object v2
 
-    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->g:I
+    iput-object v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
 
     .line 116
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->h:I
+    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->o:I
 
     .line 117
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->i:I
+    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->f:I
 
     .line 118
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->j:I
+    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->h:I
 
     .line 119
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->i:I
+
+    .line 120
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    iput v2, p0, Lcom/snapchat/android/discover/model/ChannelPage;->j:I
+
+    .line 121
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -248,21 +250,28 @@
     :goto_0
     iput-boolean v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->k:Z
 
-    .line 120
+    .line 122
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->l:Ljava/lang/String;
 
-    .line 121
+    .line 123
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/lang/String;
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/lang/String;
 
-    .line 123
+    .line 124
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->g:I
+
+    .line 126
     invoke-static {}, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->values()[Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     move-result-object v0
@@ -274,7 +283,7 @@
 
     aget-object v3, v0, v1
 
-    .line 124
+    .line 127
     iget-object v4, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -283,8 +292,8 @@
 
     invoke-interface {v4, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 125
-    iget-object v4, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    .line 128
+    iget-object v4, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -292,7 +301,7 @@
 
     invoke-interface {v4, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 126
+    .line 129
     iget-object v4, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -305,7 +314,7 @@
 
     invoke-interface {v4, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 123
+    .line 126
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
@@ -313,10 +322,10 @@
     :cond_0
     move v0, v1
 
-    .line 119
+    .line 121
     goto :goto_0
 
-    .line 128
+    .line 131
     :cond_1
     return-void
 .end method
@@ -337,98 +346,98 @@
     .prologue
     const/4 v1, 0x4
 
-    .line 60
+    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 43
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->o:Ljava/util/Map;
-
-    .line 45
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
-
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/util/Map;
 
     .line 46
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     .line 47
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
+
+    .line 48
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
+
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
-    .line 61
+    .line 62
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->a:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
 
-    .line 62
+    .line 63
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->b:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 64
+    .line 65
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->a:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->c:Ljava/lang/String;
 
-    .line 69
+    .line 70
     :goto_0
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->c:Ljava/lang/String;
 
     if-nez v0, :cond_1
 
-    .line 71
+    .line 72
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->a:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->d:Ljava/lang/String;
 
-    .line 76
+    .line 77
     :goto_1
     iget v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->f:I
 
     iput v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->h:I
 
-    .line 77
+    .line 78
     iget v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->g:I
 
     iput v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->i:I
 
-    .line 78
+    .line 79
     iget v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->m:I
+
+    iput v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->o:I
+
+    .line 80
+    iget v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->n:I
 
     iput v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->f:I
 
-    .line 79
-    iget v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->n:I
-
-    iput v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->g:I
-
-    .line 80
-    iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->o:Ljava/lang/String;
+    .line 81
+    iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->p:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
 
-    .line 81
-    iget v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->p:I
+    .line 82
+    iget v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->q:I
 
     iput v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->j:I
 
-    .line 82
+    .line 83
     iget-boolean v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->l:Z
 
     iput-boolean v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->k:Z
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INTRO_VIDEO:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -437,7 +446,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 85
+    .line 86
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -446,7 +455,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 86
+    .line 87
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -455,7 +464,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -464,55 +473,46 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 89
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    .line 90
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INTRO_VIDEO:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
-
-    iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->q:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 90
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
-
-    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->r:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 91
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
+    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->s:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 92
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
+    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->t:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 94
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
+    .line 93
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INTRO_VIDEO:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
+    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
-    iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->w:Lcom/snapchat/android/discover/model/MediaState;
+    iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->u:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 95
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
+    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INTRO_VIDEO:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->x:Lcom/snapchat/android/discover/model/MediaState;
 
@@ -521,28 +521,37 @@
     .line 96
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
+    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->y:Lcom/snapchat/android/discover/model/MediaState;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 98
-    iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->u:Ljava/lang/String;
+    .line 97
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->l:Ljava/lang/String;
+    sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
+
+    iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->z:Lcom/snapchat/android/discover/model/MediaState;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 99
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->v:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/lang/String;
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->l:Ljava/lang/String;
 
-    .line 102
+    .line 100
+    iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->w:Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/lang/String;
+
+    .line 103
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->j:Ljava/lang/String;
 
     if-nez v0, :cond_2
 
-    .line 103
+    .line 104
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -551,11 +560,16 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 107
+    .line 108
     :goto_2
+    iget v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->o:I
+
+    iput v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->g:I
+
+    .line 109
     return-void
 
-    .line 66
+    .line 67
     :cond_0
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->b:Ljava/lang/String;
 
@@ -563,7 +577,7 @@
 
     goto/16 :goto_0
 
-    .line 73
+    .line 74
     :cond_1
     iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->c:Ljava/lang/String;
 
@@ -571,13 +585,13 @@
 
     goto/16 :goto_1
 
-    .line 105
+    .line 106
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
-    iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->z:Lcom/snapchat/android/discover/model/MediaState;
+    iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage$a;->A:Lcom/snapchat/android/discover/model/MediaState;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -598,11 +612,11 @@
 # virtual methods
 .method public final a()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 167
+    .line 170
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -618,11 +632,11 @@
 
 .method public final a(Lcom/snapchat/android/discover/model/ChannelPage$MediaType;)Ljava/lang/String;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 163
+    .line 166
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -636,11 +650,11 @@
 
 .method public final b()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 171
+    .line 174
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -656,11 +670,11 @@
 
 .method public final c()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 175
+    .line 178
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -676,11 +690,11 @@
 
 .method public final d()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 179
+    .line 182
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INTRO_VIDEO:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -698,7 +712,7 @@
     .locals 1
 
     .prologue
-    .line 491
+    .line 508
     const/4 v0, 0x0
 
     return v0
@@ -712,7 +726,7 @@
 
     const/4 v1, 0x0
 
-    .line 213
+    .line 216
     invoke-virtual {p0}, Lcom/snapchat/android/discover/model/ChannelPage;->n()Lcom/snapchat/android/discover/model/MediaState;
 
     move-result-object v2
@@ -808,7 +822,7 @@
 
 .method public final declared-synchronized f()Ljava/util/Map;
     .locals 3
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -823,20 +837,20 @@
     .end annotation
 
     .prologue
-    .line 222
+    .line 225
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/util/Map;
 
     if-nez v0, :cond_0
 
-    .line 223
-    new-instance v0, Latt;
+    .line 226
+    new-instance v0, Laur;
 
-    invoke-direct {v0}, Latt;-><init>()V
+    invoke-direct {v0}, Laur;-><init>()V
 
-    iget-object v1, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/lang/String;
+    iget-object v1, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/lang/String;
 
     new-instance v2, Lcom/snapchat/android/discover/model/ChannelPage$1;
 
@@ -846,17 +860,17 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Latt;->a(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Laur;->a(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map;
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->o:Ljava/util/Map;
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/util/Map;
 
-    .line 226
+    .line 229
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->o:Ljava/util/Map;
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/util/Map;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -864,7 +878,7 @@
 
     return-object v0
 
-    .line 222
+    .line 225
     :catchall_0
     move-exception v0
 
@@ -875,12 +889,12 @@
 
 .method public final g()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 244
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    .line 247
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INTRO_VIDEO:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
@@ -895,12 +909,12 @@
 
 .method public final h()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 248
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    .line 251
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
@@ -915,12 +929,12 @@
 
 .method public final i()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 252
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    .line 255
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
@@ -935,12 +949,12 @@
 
 .method public final j()Ljava/lang/String;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 256
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    .line 259
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
@@ -955,11 +969,11 @@
 
 .method public final k()Lcom/snapchat/android/discover/model/MediaState;
     .locals 2
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 266
+    .line 269
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->FILLED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -975,11 +989,11 @@
 
 .method public final l()Lcom/snapchat/android/discover/model/MediaState;
     .locals 2
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 271
+    .line 274
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INVERTED_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -995,11 +1009,11 @@
 
 .method public final m()Lcom/snapchat/android/discover/model/MediaState;
     .locals 2
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 276
+    .line 279
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->LOADING_ICON:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -1015,11 +1029,11 @@
 
 .method public final n()Lcom/snapchat/android/discover/model/MediaState;
     .locals 2
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 281
+    .line 284
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     sget-object v1, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->INTRO_VIDEO:Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
@@ -1037,7 +1051,7 @@
     .locals 1
 
     .prologue
-    .line 298
+    .line 301
     invoke-virtual {p0}, Lcom/snapchat/android/discover/model/ChannelPage;->d()Ljava/lang/String;
 
     move-result-object v0
@@ -1057,7 +1071,7 @@
     .locals 2
 
     .prologue
-    .line 320
+    .line 332
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Channel-"
@@ -1083,52 +1097,52 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 495
+    .line 512
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 496
+    .line 513
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->c:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 497
+    .line 514
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->d:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 498
+    .line 515
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 499
+    .line 516
+    iget v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->o:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 517
     iget v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->f:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 500
-    iget v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->g:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 501
+    .line 518
     iget v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->h:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 502
+    .line 519
     iget v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->i:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 503
+    .line 520
     iget v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->j:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 504
+    .line 521
     iget-boolean v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->k:Z
 
     if-eqz v0, :cond_0
@@ -1138,17 +1152,22 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 505
+    .line 522
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->l:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 506
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->p:Ljava/lang/String;
+    .line 523
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 508
+    .line 524
+    iget v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->g:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 526
     invoke-static {}, Lcom/snapchat/android/discover/model/ChannelPage$MediaType;->values()[Lcom/snapchat/android/discover/model/ChannelPage$MediaType;
 
     move-result-object v2
@@ -1160,7 +1179,7 @@
 
     aget-object v4, v2, v1
 
-    .line 509
+    .line 527
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->n:Ljava/util/Map;
 
     invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1171,8 +1190,8 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 510
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->q:Ljava/util/Map;
+    .line 528
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->r:Ljava/util/Map;
 
     invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1182,7 +1201,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 511
+    .line 529
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage;->m:Ljava/util/Map;
 
     invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1197,7 +1216,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 508
+    .line 526
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
@@ -1205,10 +1224,10 @@
     :cond_0
     move v0, v1
 
-    .line 504
+    .line 521
     goto :goto_0
 
-    .line 513
+    .line 531
     :cond_1
     return-void
 .end method

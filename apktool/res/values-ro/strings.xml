@@ -262,7 +262,6 @@ pentru a trimite acest articol unui prieten."</string>
     <string name="discover_sharing_success">Snap trimis!</string>
     <string name="discover_sharing_unavailable">%1$s nu permite trimiterea acestui Snap.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Atinge aici pentru a descoperi opțiunea Discover!</string>
     <string name="discover_unavailable">"Ne pare rău,
 
 Discover nu este disponibilă momentan."</string>
@@ -313,6 +312,7 @@ Discover nu este disponibil momentan
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Ai uitat parola?</a>" "</string>
     <string name="friend_suggest_hide">Ascundere</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Contact nou</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Alăturat de curând</string>
     <string name="friends">Prieteni</string>
     <string name="friends_context_block">Blochează</string>
@@ -461,7 +461,7 @@ Pentru mai multe informații, citește "<a href="http://www.snapchat.com/privacy
     <string name="problem_opening_image_file">A intervenit o problemă la deschiderea imaginii selectate. Încearcă din nou.</string>
     <string name="problem_searching_nearby">A intervenit o problemă.</string>
     <string name="profile_images_go">START!</string>
-    <string name="profile_images_notice">Your selfie will be shown to other Snapchatters.</string>
+    <string name="profile_images_notice">Selfiul tau va fi arătat și altor Snapchatteri.</string>
     <string name="profile_images_ready">Pe locuri</string>
     <string name="profile_images_remove">Elimină</string>
     <string name="profile_images_remove_message">Ești sigur(ă) că dorești să elimini poza de profil existentă?</string>
@@ -623,7 +623,7 @@ trimiți bani?"</string>
     <string name="snap_delete_failure">Ștergere nereușită a Snapului.</string>
     <string name="snap_failed_to_post">1 Snap nu s-a putut posta.</string>
     <string name="snap_list_empty_list_msg">Nu ai niciun Snap :(</string>
-    <string name="snap_tag_help_description">Snapchatterii te pot adăuga prin scanarea pictogramei tale cu o stafie și prin atingerea ecranului dispozitivului!</string>
+    <string name="snap_tag_help_description">Snapchatterii te pot adăuga prin scanarea codului tău și atingerea ecranului!</string>
     <string name="snap_tag_no_connection">Nu există conexiune!</string>
     <string name="snap_to_add">Snap sau captură de ecran de adăugat</string>
     <string name="snapkidz_welcome">Bine ai venit la Snapkidz!</string>
@@ -659,8 +659,6 @@ trimiți bani?"</string>
     <string name="tap_to_view_edition">Atinge pentru a viziona în Discover</string>
     <string name="tap_to_view_full_story">Atinge pentru a viziona povestea completă</string>
     <string name="tap_to_view_more">Atinge pentru a explora alte canale</string>
-    <string name="tap_to_view_snaps">Atinge pentru a vizualiza Snapurile!</string>
-    <string name="tap_to_view_stories">Atinge pentru a vizualiza Poveștile!</string>
     <string name="tap_to_view_video_in_discover">Atinge pentru a viziona acest clip video în Discover</string>
     <string name="too_many_attempts">"Prea multe încercări.
 "</string>

@@ -5,19 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import apf;
+import aqb;
 import com.snapchat.android.database.table.DbTable.DatabaseTable;
 import com.snapchat.android.database.vtable.DbVirtualTable.DatabaseVirtualTable;
 import java.util.List;
 
 final class DbBrowserActivity$a
-  extends apf
+  extends aqb
 {
-  private int b = 2130968648;
+  private int b = 2130968649;
   
   public DbBrowserActivity$a(Context paramContext, int paramInt)
   {
-    super(paramInt, 2130968648, localList);
+    super(paramInt, 2130968649, localList);
   }
   
   public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)

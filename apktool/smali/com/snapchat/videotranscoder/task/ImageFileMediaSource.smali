@@ -15,7 +15,7 @@
 .method public constructor <init>(Ljava/lang/String;J)V
     .locals 2
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -34,11 +34,11 @@
 .method protected constructor <init>(Ljava/lang/String;JLcom/snapchat/videotranscoder/utils/FileUtils;)V
     .locals 2
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Lcom/snapchat/videotranscoder/utils/FileUtils;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -73,7 +73,7 @@
 # virtual methods
 .method public getBitmap()Landroid/graphics/Bitmap;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue

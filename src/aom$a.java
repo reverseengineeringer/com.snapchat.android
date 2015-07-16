@@ -1,12 +1,6 @@
 public abstract interface aom$a
 {
-  public abstract void a();
-  
-  public abstract void b();
-  
-  public abstract void c();
-  
-  public abstract void d();
+  public abstract void a(aon paramaon);
 }
 
 /* Location:

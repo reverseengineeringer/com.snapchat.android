@@ -1,18 +1,16 @@
 .class public final Lkb;
-.super Llt;
+.super Lml;
 .source "SourceFile"
 
 
 # instance fields
-.field private additionalInfo:Ljava/lang/String;
-
-.field public contactFoundCount:Ljava/lang/Long;
-
-.field public contactInviteCount:Ljava/lang/Long;
+.field public charCount:Ljava/lang/Long;
 
 .field private final eventName:Ljava/lang/String;
 
-.field public friendAddCount:Ljava/lang/Long;
+.field public friendSearchCount:Ljava/lang/Long;
+
+.field public keystrokeCount:Ljava/lang/Long;
 
 
 # direct methods
@@ -21,10 +19,10 @@
 
     .prologue
     .line 10
-    invoke-direct {p0}, Llt;-><init>()V
+    invoke-direct {p0}, Lml;-><init>()V
 
-    .line 44
-    const-string v0, "REGISTRATION_USER_CONTACT_FIND_SUCCESS"
+    .line 36
+    const-string v0, "PROFILE_MY_FRIENDS_SEARCH_PERFORM"
 
     iput-object v0, p0, Lkb;->eventName:Ljava/lang/String;
 
@@ -47,74 +45,62 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 43
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 53
+    .line 45
     const-string v1, "event_name"
 
-    const-string v2, "REGISTRATION_USER_CONTACT_FIND_SUCCESS"
+    const-string v2, "PROFILE_MY_FRIENDS_SEARCH_PERFORM"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 54
-    iget-object v1, p0, Lkb;->additionalInfo:Ljava/lang/String;
+    .line 46
+    iget-object v1, p0, Lkb;->charCount:Ljava/lang/Long;
 
     if-eqz v1, :cond_0
 
-    const-string v1, "additional_info"
+    const-string v1, "char_count"
 
-    iget-object v2, p0, Lkb;->additionalInfo:Ljava/lang/String;
+    iget-object v2, p0, Lkb;->charCount:Ljava/lang/Long;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 55
+    .line 47
     :cond_0
-    iget-object v1, p0, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iget-object v1, p0, Lkb;->friendSearchCount:Ljava/lang/Long;
 
     if-eqz v1, :cond_1
 
-    const-string v1, "contact_found_count"
+    const-string v1, "friend_search_count"
 
-    iget-object v2, p0, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iget-object v2, p0, Lkb;->friendSearchCount:Ljava/lang/Long;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
+    .line 48
     :cond_1
-    iget-object v1, p0, Lkb;->contactInviteCount:Ljava/lang/Long;
+    iget-object v1, p0, Lkb;->keystrokeCount:Ljava/lang/Long;
 
     if-eqz v1, :cond_2
 
-    const-string v1, "contact_invite_count"
+    const-string v1, "keystroke_count"
 
-    iget-object v2, p0, Lkb;->contactInviteCount:Ljava/lang/Long;
+    iget-object v2, p0, Lkb;->keystrokeCount:Ljava/lang/Long;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 57
+    .line 49
     :cond_2
-    iget-object v1, p0, Lkb;->friendAddCount:Ljava/lang/Long;
-
-    if-eqz v1, :cond_3
-
-    const-string v1, "friend_add_count"
-
-    iget-object v2, p0, Lkb;->friendAddCount:Ljava/lang/Long;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 58
-    :cond_3
-    invoke-super {p0}, Llt;->a()Ljava/util/Map;
+    invoke-super {p0}, Lml;->a()Ljava/util/Map;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 60
+    .line 51
     return-object v0
 .end method
 
@@ -126,15 +112,15 @@
 
     const/4 v1, 0x0
 
-    .line 65
+    .line 56
     if-ne p0, p1, :cond_1
 
-    .line 75
+    .line 65
     :cond_0
     :goto_0
     return v0
 
-    .line 66
+    .line 57
     :cond_1
     if-eqz p1, :cond_2
 
@@ -153,9 +139,9 @@
 
     goto :goto_0
 
-    .line 67
+    .line 58
     :cond_3
-    invoke-super {p0, p1}, Llt;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Lml;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -165,20 +151,20 @@
 
     goto :goto_0
 
-    .line 69
+    .line 60
     :cond_4
     check-cast p1, Lkb;
 
-    .line 71
-    iget-object v2, p0, Lkb;->additionalInfo:Ljava/lang/String;
+    .line 62
+    iget-object v2, p0, Lkb;->charCount:Ljava/lang/Long;
 
     if-eqz v2, :cond_6
 
-    iget-object v2, p0, Lkb;->additionalInfo:Ljava/lang/String;
+    iget-object v2, p0, Lkb;->charCount:Ljava/lang/Long;
 
-    iget-object v3, p1, Lkb;->additionalInfo:Ljava/lang/String;
+    iget-object v3, p1, Lkb;->charCount:Ljava/lang/Long;
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -190,19 +176,19 @@
     goto :goto_0
 
     :cond_6
-    iget-object v2, p1, Lkb;->additionalInfo:Ljava/lang/String;
+    iget-object v2, p1, Lkb;->charCount:Ljava/lang/Long;
 
     if-nez v2, :cond_5
 
-    .line 72
+    .line 63
     :cond_7
-    iget-object v2, p0, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iget-object v2, p0, Lkb;->friendSearchCount:Ljava/lang/Long;
 
     if-eqz v2, :cond_9
 
-    iget-object v2, p0, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iget-object v2, p0, Lkb;->friendSearchCount:Ljava/lang/Long;
 
-    iget-object v3, p1, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iget-object v3, p1, Lkb;->friendSearchCount:Ljava/lang/Long;
 
     invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
 
@@ -216,45 +202,19 @@
     goto :goto_0
 
     :cond_9
-    iget-object v2, p1, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iget-object v2, p1, Lkb;->friendSearchCount:Ljava/lang/Long;
 
     if-nez v2, :cond_8
 
-    .line 73
+    .line 64
     :cond_a
-    iget-object v2, p0, Lkb;->contactInviteCount:Ljava/lang/Long;
+    iget-object v2, p0, Lkb;->keystrokeCount:Ljava/lang/Long;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_b
 
-    iget-object v2, p0, Lkb;->contactInviteCount:Ljava/lang/Long;
+    iget-object v2, p0, Lkb;->keystrokeCount:Ljava/lang/Long;
 
-    iget-object v3, p1, Lkb;->contactInviteCount:Ljava/lang/Long;
-
-    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_d
-
-    :cond_b
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_c
-    iget-object v2, p1, Lkb;->contactInviteCount:Ljava/lang/Long;
-
-    if-nez v2, :cond_b
-
-    .line 74
-    :cond_d
-    iget-object v2, p0, Lkb;->friendAddCount:Ljava/lang/Long;
-
-    if-eqz v2, :cond_e
-
-    iget-object v2, p0, Lkb;->friendAddCount:Ljava/lang/Long;
-
-    iget-object v3, p1, Lkb;->friendAddCount:Ljava/lang/Long;
+    iget-object v3, p1, Lkb;->keystrokeCount:Ljava/lang/Long;
 
     invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
 
@@ -267,8 +227,8 @@
 
     goto :goto_0
 
-    :cond_e
-    iget-object v2, p1, Lkb;->friendAddCount:Ljava/lang/Long;
+    :cond_b
+    iget-object v2, p1, Lkb;->keystrokeCount:Ljava/lang/Long;
 
     if-eqz v2, :cond_0
 
@@ -281,35 +241,35 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 80
-    invoke-super {p0}, Llt;->hashCode()I
+    .line 70
+    invoke-super {p0}, Lml;->hashCode()I
 
     move-result v0
 
-    .line 81
+    .line 71
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v0, p0, Lkb;->additionalInfo:Ljava/lang/String;
+    iget-object v0, p0, Lkb;->charCount:Ljava/lang/Long;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lkb;->additionalInfo:Ljava/lang/String;
+    iget-object v0, p0, Lkb;->charCount:Ljava/lang/Long;
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
 
     move-result v0
 
     :goto_0
     add-int/2addr v0, v2
 
-    .line 82
+    .line 72
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v0, p0, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iget-object v0, p0, Lkb;->friendSearchCount:Ljava/lang/Long;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lkb;->contactFoundCount:Ljava/lang/Long;
+    iget-object v0, p0, Lkb;->friendSearchCount:Ljava/lang/Long;
 
     invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
 
@@ -318,30 +278,14 @@
     :goto_1
     add-int/2addr v0, v2
 
-    .line 83
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v0, p0, Lkb;->contactInviteCount:Ljava/lang/Long;
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lkb;->contactInviteCount:Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
-
-    move-result v0
-
-    :goto_2
-    add-int/2addr v0, v2
-
-    .line 84
+    .line 73
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lkb;->friendAddCount:Ljava/lang/Long;
+    iget-object v2, p0, Lkb;->keystrokeCount:Ljava/lang/Long;
 
     if-eqz v2, :cond_0
 
-    iget-object v1, p0, Lkb;->friendAddCount:Ljava/lang/Long;
+    iget-object v1, p0, Lkb;->keystrokeCount:Ljava/lang/Long;
 
     invoke-virtual {v1}, Ljava/lang/Long;->hashCode()I
 
@@ -350,24 +294,18 @@
     :cond_0
     add-int/2addr v0, v1
 
-    .line 85
+    .line 74
     return v0
 
     :cond_1
     move v0, v1
 
-    .line 81
+    .line 71
     goto :goto_0
 
     :cond_2
     move v0, v1
 
-    .line 82
+    .line 72
     goto :goto_1
-
-    :cond_3
-    move v0, v1
-
-    .line 83
-    goto :goto_2
 .end method

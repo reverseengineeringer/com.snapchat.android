@@ -1,79 +1,87 @@
-import java.net.SocketImpl;
-import java.net.SocketImplFactory;
+import android.content.Context;
+import android.net.Uri;
+import java.io.File;
+import java.io.IOException;
 
 public final class bqd
-  implements SocketImplFactory
+  implements bpt
 {
-  private Class a;
-  private SocketImplFactory b;
-  private btl c;
-  private bsw d;
+  private final bmz a;
   
-  public bqd(Class paramClass, btl parambtl, bsw parambsw)
+  public bqd(Context paramContext)
   {
-    c = parambtl;
-    d = parambsw;
-    a = paramClass;
-    paramClass = a;
-    if (paramClass == null) {
-      throw new brz("Class was null");
-    }
+    this(bqp.b(paramContext));
+  }
+  
+  private bqd(bmz parambmz)
+  {
+    a = parambmz;
+  }
+  
+  private bqd(File paramFile)
+  {
+    this(paramFile, bqp.a(paramFile));
+  }
+  
+  private bqd(File paramFile, long paramLong)
+  {
+    this(localbmz);
     try
     {
-      paramClass.newInstance();
+      a.a(new bmj(paramFile, paramLong));
       return;
     }
-    catch (Throwable paramClass)
-    {
-      throw new brz("Unable to create new instance", paramClass);
-    }
+    catch (IOException paramFile) {}
   }
   
-  public bqd(SocketImplFactory paramSocketImplFactory, btl parambtl, bsw parambsw)
-  {
-    c = parambtl;
-    d = parambsw;
-    b = paramSocketImplFactory;
-    paramSocketImplFactory = b;
-    if (paramSocketImplFactory == null) {
-      throw new brz("Factory was null");
-    }
-    try
-    {
-      if (paramSocketImplFactory.createSocketImpl() == null) {
-        throw new brz("Factory does not work");
-      }
-    }
-    catch (Throwable paramSocketImplFactory)
-    {
-      throw new brz("Factory does not work", paramSocketImplFactory);
-    }
-  }
-  
-  public final SocketImpl createSocketImpl()
+  public final bpt.a a(Uri paramUri, int paramInt)
   {
     Object localObject = null;
-    if (b != null) {
-      localObject = b.createSocketImpl();
+    if (paramInt != 0) {
+      if (!bqb.c(paramInt)) {
+        break label116;
+      }
     }
-    while (localObject != null)
+    for (localObject = bmk.b;; localObject = ((bmk.a)localObject).c())
     {
-      return new bqc(c, d, (SocketImpl)localObject);
-      try
-      {
-        SocketImpl localSocketImpl = (SocketImpl)a.newInstance();
-        localObject = localSocketImpl;
+      paramUri = new bnb.a().a(paramUri.toString());
+      if (localObject != null) {
+        paramUri.a((bmk)localObject);
       }
-      catch (IllegalAccessException localIllegalAccessException)
-      {
-        localIllegalAccessException.printStackTrace();
+      paramUri = a.a(paramUri.a()).a();
+      int i = paramUri.a();
+      if (i < 300) {
+        break;
       }
-      catch (InstantiationException localInstantiationException)
-      {
-        localInstantiationException.printStackTrace();
+      paramUri.c().close();
+      throw new bpt.b(i + " " + paramUri.b(), paramInt, i);
+      label116:
+      localObject = new bmk.a();
+      if (!bqb.a(paramInt)) {
+        ((bmk.a)localObject).a();
+      }
+      if (!bqb.b(paramInt)) {
+        ((bmk.a)localObject).b();
       }
     }
-    return (SocketImpl)localObject;
+    if (paramUri.e() != null) {}
+    for (boolean bool = true;; bool = false)
+    {
+      paramUri = paramUri.c();
+      return new bpt.a(paramUri.c(), bool, paramUri.a());
+    }
+  }
+  
+  public final void a()
+  {
+    bmj localbmj = a.a();
+    if (localbmj != null) {}
+    try
+    {
+      localbmj.a();
+      return;
+    }
+    catch (IOException localIOException) {}
   }
 }
 

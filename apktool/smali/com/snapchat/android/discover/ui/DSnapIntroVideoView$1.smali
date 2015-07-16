@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laeq;
+.implements Lafq;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 192
+    .line 204
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,30 +42,24 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 208
-    const-string v0, "DSnapIntroVideoView"
+    .line 220
+    const/4 v0, 0x2
 
-    const-string v1, "Skipping intro video for %s because the media failed to load (%s)."
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    iget-object v1, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-static {v1}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->e(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;)Lcom/snapchat/android/discover/model/ChannelPage;
 
-    iget-object v3, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
+    move-result-object v1
 
-    invoke-static {v3}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->e(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;)Lcom/snapchat/android/discover/model/ChannelPage;
+    aput-object v1, v0, v4
 
-    move-result-object v3
+    const/4 v1, 0x1
 
-    aput-object v3, v2, v4
+    aput-object p1, v0, v1
 
-    const/4 v3, 0x1
-
-    aput-object p1, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 210
+    .line 222
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->e(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;)Lcom/snapchat/android/discover/model/ChannelPage;
@@ -110,17 +104,17 @@
 
     invoke-virtual {v0, v4}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
-    .line 214
-    invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->r_()V
+    .line 226
+    invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->p_()V
 
-    .line 215
+    .line 227
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
     sget-object v1, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->ERROR:Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->a(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;)Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
-    .line 216
+    .line 228
     return-void
 .end method
 
@@ -128,12 +122,12 @@
     .locals 2
 
     .prologue
-    .line 203
+    .line 215
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->c(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;)V
 
-    .line 204
+    .line 216
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->d(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;)Landroid/view/View;
@@ -144,32 +138,32 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 205
+    .line 217
     return-void
 .end method
 
-.method public final r_()V
+.method public final p_()V
     .locals 2
 
     .prologue
-    .line 195
+    .line 207
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->a(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;)Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView$a;
 
     move-result-object v0
 
-    .line 196
+    .line 208
     if-eqz v0, :cond_0
 
-    .line 197
+    .line 209
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
     sget-object v1, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->COMPLETED:Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->a(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;)Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
-    .line 198
+    .line 210
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView$1;->a:Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;->b(Lcom/snapchat/android/discover/ui/DSnapIntroVideoView;)Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView$a;
@@ -178,7 +172,7 @@
 
     invoke-interface {v0}, Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView$a;->a()V
 
-    .line 200
+    .line 212
     :cond_0
     return-void
 .end method

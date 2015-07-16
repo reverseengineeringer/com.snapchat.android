@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments;
 
-import ajx;
+import akr;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,7 +12,7 @@ final class ScAcceptTermsFragment$8
   
   public final void onClick(View paramView)
   {
-    ajx.W();
+    akr.W();
     a.getActivity().finish();
   }
 }

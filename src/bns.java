@@ -1,10 +1,8 @@
-import java.util.concurrent.CountDownLatch;
-
-public final class bns
+public abstract interface bns
 {
-  final CountDownLatch a = new CountDownLatch(1);
-  long b = -1L;
-  long c = -1L;
+  public abstract void a();
+  
+  public abstract cbj b();
 }
 
 /* Location:

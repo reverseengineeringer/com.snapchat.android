@@ -1,8 +1,38 @@
-import android.graphics.Bitmap;
+import com.snapchat.android.fragments.stories.StoriesAdapter;
+import javax.inject.Provider;
 
-public abstract interface ahv<T, F>
+public final class ahv
+  implements bvk<StoriesAdapter>
 {
-  public abstract void a(Bitmap paramBitmap);
+  private final bvk<aqb<ahy>> b;
+  private final Provider<ban> c;
+  
+  static
+  {
+    if (!ahv.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
+  }
+  
+  private ahv(bvk<aqb<ahy>> parambvk, Provider<ban> paramProvider)
+  {
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider;
+  }
+  
+  public static bvk<StoriesAdapter> a(bvk<aqb<ahy>> parambvk, Provider<ban> paramProvider)
+  {
+    return new ahv(parambvk, paramProvider);
+  }
 }
 
 /* Location:

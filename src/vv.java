@@ -1,12 +1,57 @@
-import android.hardware.Camera.Parameters;
+import android.view.MotionEvent;
+import android.view.View;
 
-public abstract class vv
+public final class vv
+  extends vt<vu>
 {
-  public abstract void a(@cgc Camera.Parameters paramParameters, boolean paramBoolean);
+  private final View k;
+  private final View l;
   
-  public abstract void a(boolean paramBoolean);
+  public vv(View paramView)
+  {
+    super(paramView);
+    k = paramView.findViewById(2131362083);
+    l = paramView.findViewById(2131362341);
+  }
   
-  public abstract void b(boolean paramBoolean);
+  public final void a(vo paramvo) {}
+  
+  public final void a(wa paramwa) {}
+  
+  public final void a(wa paramwa, MotionEvent paramMotionEvent) {}
+  
+  public final void a(wa paramwa, boolean paramBoolean) {}
+  
+  public final boolean a(wa paramwa, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
+  {
+    return false;
+  }
+  
+  public final float b(wa paramwa)
+  {
+    return 0.0F;
+  }
+  
+  public final void b(int paramInt) {}
+  
+  public final boolean c(wa paramwa)
+  {
+    return false;
+  }
+  
+  public final int d(wa paramwa)
+  {
+    return 0;
+  }
+  
+  public final void e(wa paramwa)
+  {
+    paramwa.a_();
+  }
+  
+  public final void f(wa paramwa) {}
+  
+  public final void g(wa paramwa) {}
 }
 
 /* Location:

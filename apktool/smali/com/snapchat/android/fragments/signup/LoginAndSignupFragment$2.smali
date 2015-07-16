@@ -101,18 +101,18 @@
     .line 107
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lajx;->c(Z)V
+    invoke-static {v0}, Lakr;->c(Z)V
 
     .line 109
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment$2;->b:Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->d(Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;)Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
-    new-instance v0, Lky;
+    new-instance v0, Llq;
 
-    invoke-direct {v0}, Lky;-><init>()V
+    invoke-direct {v0}, Llq;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->l()V
 

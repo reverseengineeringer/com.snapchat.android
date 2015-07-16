@@ -3,10 +3,10 @@ package net.hockeyapp.android;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import bvq;
-import bvu;
-import bwi;
-import bwi.a;
+import bwr;
+import bwv;
+import bxj;
+import bxj.a;
 
 final class FeedbackActivity$3
   extends Handler
@@ -15,18 +15,18 @@ final class FeedbackActivity$3
   
   public final void handleMessage(Message paramMessage)
   {
-    FeedbackActivity.a(a, new bvq());
+    FeedbackActivity.a(a, new bwr());
     int i;
     if ((paramMessage != null) && (paramMessage.getData() != null))
     {
-      paramMessage = (bvu)paramMessage.getData().getSerializable("parse_feedback_response");
+      paramMessage = (bwv)paramMessage.getData().getSerializable("parse_feedback_response");
       if (paramMessage != null) {
         if (a.equalsIgnoreCase("success"))
         {
           if (c == null) {
             break label130;
           }
-          bwi.a.a.a(FeedbackActivity.c(a), c);
+          bxj.a.a.a(FeedbackActivity.c(a), c);
           FeedbackActivity.a(a, paramMessage);
           FeedbackActivity.d(a);
           i = 1;

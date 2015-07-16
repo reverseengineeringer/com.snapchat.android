@@ -1,114 +1,125 @@
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
+import android.annotation.TargetApi;
 import android.view.View;
-import com.snapchat.android.util.debug.ReleaseManager;
-import java.util.Iterator;
-import java.util.List;
+import android.view.Window;
+import com.snapchat.android.SnapchatApplication;
 
+@TargetApi(19)
 public final class avu
 {
-  private static final String TAG = "BitmapUtils";
+  private static final avu INSTANCE = new avu();
+  private static final String TAG = "SoftNavigationBarManager";
+  public View mDecorView;
+  public int mDefaultBottomPadding;
+  public int mDefaultFlags;
+  public int mDefaultRightPadding;
+  private boolean mIsImmersiveModeEnabled = true;
+  public boolean mIsImmersiveModeOn = false;
+  public final boolean mIsImmersiveModeSupported;
+  private final avt mUtils;
+  public Window mWindow;
   
-  public static int a(@cgb Bitmap.Config paramConfig)
+  private avu() {}
+  
+  private avu(boolean paramBoolean, avt paramavt)
   {
-    int j = 4;
-    int i = j;
-    switch (paramConfig)
-    {
-    default: 
-      i = j;
-      if (ReleaseManager.e()) {
-        throw new RuntimeException("Unknown Bitmap config.");
-      }
-    case ???: 
-    case ???: 
-      i = 2;
-    case ???: 
-      return i;
-    }
-    return 1;
+    mIsImmersiveModeSupported = paramBoolean;
+    mUtils = paramavt;
   }
   
-  @cgb
-  public static Bitmap a(@cgb Bitmap paramBitmap, int paramInt1, int paramInt2)
+  public static avu a()
   {
-    int j = 0;
-    float f1 = Math.min(paramBitmap.getWidth(), paramBitmap.getHeight());
-    float f2 = Math.max(paramBitmap.getWidth(), paramBitmap.getHeight());
-    float f3 = Math.min(paramInt1, paramInt2);
-    float f4 = Math.max(paramInt1, paramInt2);
+    return INSTANCE;
+  }
+  
+  public final void a(boolean paramBoolean1, boolean paramBoolean2)
+  {
     int k;
-    if (f2 / f1 > f4 / f3)
+    if (paramBoolean1)
     {
-      f1 = f3 / f1;
-      i = (int)(paramBitmap.getWidth() * f1);
-      k = (int)(paramBitmap.getHeight() * f1);
-      if (paramInt1 >= i) {
-        break label162;
+      k = mDefaultRightPadding;
+      if (paramBoolean2)
+      {
+        i = 0;
+        j = i;
+        i = k;
       }
-    }
-    Matrix localMatrix;
-    label162:
-    for (int i = (i - paramInt1) / 2;; i = 0)
-    {
-      if (paramInt2 < k) {
-        j = (k - paramInt2) / 2;
-      }
-      localMatrix = new Matrix();
-      localMatrix.postScale(f1, f1);
-      localMatrix.postTranslate(-i, -j);
-      if (!localMatrix.isIdentity()) {
-        break label168;
-      }
-      return paramBitmap;
-      f1 = f4 / f2;
-      break;
-    }
-    label168:
-    Bitmap localBitmap2 = avq.a().a(paramInt1, paramInt2, Bitmap.Config.ARGB_8888);
-    Bitmap localBitmap1 = localBitmap2;
-    if (localBitmap2 == null) {
-      localBitmap1 = Bitmap.createBitmap(paramInt1, paramInt2, Bitmap.Config.ARGB_8888);
-    }
-    new Canvas(localBitmap1).drawBitmap(paramBitmap, localMatrix, null);
-    avq.a().a(paramBitmap);
-    return localBitmap1;
-  }
-  
-  @cgb
-  public static Bitmap a(@cgb View paramView, List<View> paramList)
-  {
-    int i = avh.a(paramView.getContext());
-    int j = avh.c(paramView.getContext());
-    Bitmap localBitmap = avq.a().a(i, j, Bitmap.Config.ARGB_8888);
-    if (localBitmap == null) {
-      localBitmap = Bitmap.createBitmap(i, j, Bitmap.Config.ARGB_8888);
     }
     for (;;)
     {
-      Canvas localCanvas = new Canvas(localBitmap);
-      a(localCanvas, paramView);
-      if (paramList != null)
+      mDecorView.setPadding(mDecorView.getPaddingLeft(), mDecorView.getPaddingTop(), i, j);
+      return;
+      i = mDefaultBottomPadding + mUtils.b();
+      break;
+      if (mUtils.mIsDockedBottomInLandscape)
       {
-        paramView = paramList.iterator();
-        while (paramView.hasNext()) {
-          a(localCanvas, (View)paramView.next());
+        k = mDefaultRightPadding;
+        if (paramBoolean2)
+        {
+          i = 0;
+          j = i;
+          i = k;
+        }
+        else
+        {
+          j = mDefaultBottomPadding;
+          localavt = mUtils;
+          if (!localavt.a()) {}
+          for (i = 0;; i = mLandscapeNavHeight)
+          {
+            i += j;
+            break;
+          }
         }
       }
-      return localBitmap;
+      else
+      {
+        if (!paramBoolean2) {
+          break label148;
+        }
+        i = 0;
+        j = mDefaultBottomPadding;
+      }
+    }
+    label148:
+    int j = mDefaultRightPadding;
+    avt localavt = mUtils;
+    if (!localavt.a()) {}
+    for (int i = 0;; i = mNavWidth)
+    {
+      i += j;
+      break;
     }
   }
   
-  private static void a(Canvas paramCanvas, View paramView)
+  @awj
+  public final void b()
   {
-    int[] arrayOfInt = new int[2];
-    paramView.getLocationOnScreen(arrayOfInt);
-    if ((arrayOfInt[0] != 0) || (arrayOfInt[1] != 0)) {
-      paramCanvas.translate(arrayOfInt[0], arrayOfInt[1]);
+    if ((!mIsImmersiveModeSupported) || (mDecorView == null)) {
+      return;
     }
-    paramView.draw(paramCanvas);
+    if (mIsImmersiveModeEnabled)
+    {
+      mWindow.clearFlags(134217728);
+      int i = mDecorView.getSystemUiVisibility();
+      mDecorView.setSystemUiVisibility(i & 0xFBFF);
+      mDecorView.setPadding(mDecorView.getPaddingLeft(), mDecorView.getPaddingTop(), mDefaultRightPadding, mDefaultBottomPadding);
+    }
+    mIsImmersiveModeEnabled = false;
+  }
+  
+  @awj
+  public final void c()
+  {
+    if ((!mIsImmersiveModeSupported) || (mDecorView == null)) {
+      return;
+    }
+    if (!mIsImmersiveModeEnabled)
+    {
+      mWindow.addFlags(134217728);
+      mDecorView.setSystemUiVisibility(mDefaultFlags);
+      a(awf.e(SnapchatApplication.b()), mIsImmersiveModeOn);
+    }
+    mIsImmersiveModeEnabled = true;
   }
 }
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final a:Lapn;
+.field public final a:Laqm;
 
 .field public final b:I
 
@@ -33,14 +33,14 @@
     iput v0, p0, Lcom/snapchat/android/camera/AutofocusCrosshair;->b:I
 
     .line 25
-    new-instance v0, Lapn;
+    new-instance v0, Laqm;
 
-    invoke-direct {v0, p0}, Lapn;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, p0}, Laqm;-><init>(Landroid/view/View;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/camera/AutofocusCrosshair;->a:Lapn;
+    iput-object v0, p0, Lcom/snapchat/android/camera/AutofocusCrosshair;->a:Laqm;
 
     .line 26
-    iget-object v0, p0, Lcom/snapchat/android/camera/AutofocusCrosshair;->a:Lapn;
+    iget-object v0, p0, Lcom/snapchat/android/camera/AutofocusCrosshair;->a:Laqm;
 
     iget v1, p0, Lcom/snapchat/android/camera/AutofocusCrosshair;->b:I
 
@@ -56,25 +56,25 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
-    invoke-static {v1}, Lapn;->a(I)Landroid/view/animation/TranslateAnimation;
+    invoke-static {v1}, Laqm;->a(I)Landroid/view/animation/TranslateAnimation;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lapn;->addAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v1}, Laqm;->addAnimation(Landroid/view/animation/Animation;)V
 
-    invoke-static {}, Lapn;->a()Landroid/view/animation/ScaleAnimation;
+    invoke-static {}, Laqm;->a()Landroid/view/animation/ScaleAnimation;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lapn;->addAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v1}, Laqm;->addAnimation(Landroid/view/animation/Animation;)V
 
-    invoke-virtual {v0, v2}, Lapn;->addAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v2}, Laqm;->addAnimation(Landroid/view/animation/Animation;)V
 
-    new-instance v1, Lapn$1;
+    new-instance v1, Laqm$1;
 
-    invoke-direct {v1, v0}, Lapn$1;-><init>(Lapn;)V
+    invoke-direct {v1, v0}, Laqm$1;-><init>(Laqm;)V
 
-    invoke-virtual {v0, v1}, Lapn;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v0, v1}, Laqm;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 27
     return-void

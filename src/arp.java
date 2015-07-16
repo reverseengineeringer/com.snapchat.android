@@ -1,111 +1,42 @@
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.BitmapFactory.Options;
-import android.graphics.BitmapShader;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.graphics.Shader.TileMode;
-import android.util.DisplayMetrics;
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
-import com.snapchat.android.ui.swipefilters.FilterPageType;
-import com.snapchat.android.util.PhotoEffectTask;
-import java.util.concurrent.atomic.AtomicBoolean;
+import android.support.v7.widget.RecyclerView.a;
+import android.view.LayoutInflater;
 
 public final class arp
-  extends arn
+  extends RecyclerView.a<arr>
 {
-  protected Bitmap b;
-  private final String c;
-  private final int d;
-  private AtomicBoolean e = new AtomicBoolean(true);
-  private boolean f = false;
+  public arq c;
+  public bqe d;
+  private final Context e;
+  private final LayoutInflater f;
   
-  public arp(String paramString, int paramInt)
+  public arp(@chc Context paramContext, @chc LayoutInflater paramLayoutInflater, @chc arq paramarq, @chc bqe parambqe)
   {
-    c = paramString;
-    d = paramInt;
+    e = ((Context)co.a(paramContext));
+    f = ((LayoutInflater)co.a(paramLayoutInflater));
+    c = ((arq)co.a(paramarq));
+    d = ((bqe)co.a(parambqe));
   }
   
-  public final String a()
+  public final int a()
   {
-    return c;
+    if (c == null) {}
+    for (int i = 0;; i = c.a.length) {
+      return i + 1;
+    }
   }
   
-  public final void a(boolean paramBoolean, Bitmap paramBitmap)
+  public final int a(int paramInt)
   {
-    int j = 0;
-    if (!paramBoolean) {}
-    SnapchatApplication localSnapchatApplication;
-    do
+    int i = 1;
+    if (paramInt == 0) {}
+    for (paramInt = 1;; paramInt = 0)
     {
-      return;
-      e.set(false);
-      localSnapchatApplication = SnapchatApplication.b();
-    } while (localSnapchatApplication == null);
-    Object localObject = localSnapchatApplication.getResources().getDisplayMetrics();
-    int i = j;
-    if (b != null) {
-      if (b.getWidth() == paramBitmap.getWidth())
-      {
-        i = j;
-        if (b.getHeight() == paramBitmap.getHeight()) {}
+      if (paramInt != 0) {
+        i = 2;
       }
-      else
-      {
-        i = 1;
-      }
+      return i;
     }
-    if (i != 0) {
-      b = null;
-    }
-    if (b == null)
-    {
-      localObject = aur.a((DisplayMetrics)localObject, paramBitmap.getWidth(), paramBitmap.getHeight(), Bitmap.Config.ARGB_8888);
-      b = avq.a().a((BitmapFactory.Options)localObject, true);
-    }
-    if (b == null) {
-      b = aur.a(paramBitmap.getWidth(), paramBitmap.getHeight(), Bitmap.Config.ARGB_8888);
-    }
-    try
-    {
-      PhotoEffectTask.a(d, paramBitmap, b, localSnapchatApplication);
-      a = new Paint();
-      a.setShader(new BitmapShader(b, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-      paramBitmap = aur.b(paramBitmap, localSnapchatApplication);
-      a.getShader().setLocalMatrix(paramBitmap);
-      return;
-    }
-    catch (Exception paramBitmap)
-    {
-      Timber.f("VisualFilterPage", "Failed to set the bitmap shader" + paramBitmap, new Object[0]);
-      return;
-    }
-    finally
-    {
-      e.set(true);
-      f = true;
-    }
-  }
-  
-  public final FilterPageType b()
-  {
-    return FilterPageType.BACKGROUNDFILTER;
-  }
-  
-  public final void e()
-  {
-    if (e.get()) {
-      avq.a().a(b);
-    }
-    b = null;
-  }
-  
-  public final boolean f()
-  {
-    return f;
   }
 }
 

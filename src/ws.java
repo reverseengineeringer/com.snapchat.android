@@ -1,88 +1,64 @@
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import com.snapchat.android.database.SharedPreferenceKey;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.StringTokenizer;
+import android.os.Handler;
+import android.os.Looper;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.camera.model.CameraModel;
+import javax.inject.Inject;
 
 public final class ws
 {
-  private static final ws d = new ws();
-  public final Set<aue> a = new HashSet();
-  @cgc
-  public SharedPreferences b;
-  public final azo c;
+  @Inject
+  protected xf a;
+  @Inject
+  protected CameraModel b;
   
-  private ws()
+  @Inject
+  public ws()
   {
-    this(new azo());
+    SnapchatApplication.b().c().a(this);
   }
   
-  private ws(azo paramazo)
+  public final void a(@chc final wh paramwh, final wi paramwi, final wr paramwr)
   {
-    c = paramazo;
-  }
-  
-  @cgc
-  private static aue a(@cgb String paramString)
-  {
-    paramString = paramString.split("x");
-    if (paramString.length != 2) {
-      return null;
-    }
-    try
+    if (a.a)
     {
-      paramString = new aue(Integer.parseInt(paramString[0]), Integer.parseInt(paramString[1]));
-      return paramString;
-    }
-    catch (NumberFormatException paramString) {}
-    return null;
-  }
-  
-  public static String a(Set<aue> paramSet)
-  {
-    StringBuilder localStringBuilder = new StringBuilder();
-    paramSet = paramSet.iterator();
-    while (paramSet.hasNext())
-    {
-      aue localaue = (aue)paramSet.next();
-      if (localaue != null) {
-        localStringBuilder.append(localaue.a()).append("x").append(localaue.b()).append(",");
-      }
-    }
-    return localStringBuilder.toString();
-  }
-  
-  public static ws a()
-  {
-    return d;
-  }
-  
-  public final void a(Context paramContext)
-  {
-    paramContext = PreferenceManager.getDefaultSharedPreferences(paramContext);
-    b = paramContext;
-    if (paramContext != null)
-    {
-      Object localObject1 = paramContext.getString(SharedPreferenceKey.VIDEO_ENCODING_RESOLUTIONS.getKey(), "");
-      paramContext = new ArrayList();
-      localObject1 = new StringTokenizer((String)localObject1, ",");
-      while (((StringTokenizer)localObject1).hasMoreTokens())
+      if (b.b())
       {
-        Object localObject2 = ((StringTokenizer)localObject1).nextToken();
-        if (!((String)localObject2).isEmpty())
+        paramwr.a(true);
+        new Handler().postDelayed(new Runnable()
         {
-          localObject2 = a((String)localObject2);
-          if (localObject2 != null) {
-            paramContext.add(localObject2);
+          public final void run()
+          {
+            paramwh.a(b.f, paramwi);
+            paramwr.a(false);
           }
-        }
+        }, 700L);
       }
-      a.addAll(paramContext);
+      wy.b localb;
+      do
+      {
+        return;
+        localb = b.h;
+      } while (localb == null);
+      paramwr.b(true);
+      localb.a(new xb(new Handler(Looper.getMainLooper()), localb, new wy.c()
+      {
+        public final void a()
+        {
+          paramwh.a(b.f, paramwi);
+          paramwr.b(false);
+        }
+      }));
+      return;
     }
+    paramwh.a(b.f, paramwi);
+  }
+  
+  public final void b(@chc wh paramwh, wi paramwi, wr paramwr)
+  {
+    if (a.a) {
+      paramwr.a(false);
+    }
+    paramwh.a(b.f, paramwi);
   }
 }
 

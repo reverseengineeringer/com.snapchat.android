@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lya$a;
+.implements Lyw$a;
 
 
 # annotations
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1210
+    .line 1236
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$2$1;->d:Lcom/snapchat/android/fragments/chat/ChatFragment$2;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$2$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
@@ -52,7 +52,7 @@
     .locals 2
 
     .prologue
-    .line 1213
+    .line 1239
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$2$1;->d:Lcom/snapchat/android/fragments/chat/ChatFragment$2;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$2;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
@@ -61,14 +61,14 @@
 
     invoke-static {v0, v1}, Lcom/snapchat/android/fragments/chat/ChatFragment;->a(Lcom/snapchat/android/fragments/chat/ChatFragment;Lcom/snapchat/android/model/chat/CashFeedItem;)Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    .line 1214
+    .line 1240
     new-instance v0, Lcom/snapchat/android/fragments/chat/ChatFragment$2$1$1;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/chat/ChatFragment$2$1$1;-><init>(Lcom/snapchat/android/fragments/chat/ChatFragment$2$1;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
-    .line 1222
+    .line 1248
     return-void
 .end method
 
@@ -76,13 +76,13 @@
     .locals 1
 
     .prologue
-    .line 1226
+    .line 1252
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$2$1;->d:Lcom/snapchat/android/fragments/chat/ChatFragment$2;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$2;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->q(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 1227
+    .line 1253
     return-void
 .end method

@@ -1,91 +1,71 @@
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
+import com.snapchat.android.ui.swipefilters.FilterPageType;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class asv
-  implements View.OnTouchListener
+public final class asv<T extends asm>
+  implements asu
 {
-  public static final float BOUNCE_VELOCITY = 50.0F;
-  public static final float DEFAULT_DAMPENING_CONSTANT = 15.0F;
-  public static final float DEFAULT_END_SIZE = 1.2F;
-  public static final boolean DEFAULT_KEEP_EXPANDED_ON_HOVER_LEAVE = false;
-  public static final float DEFAULT_SPRING_CONSTANT = 1000.0F;
-  public boolean mBounceEnabled = true;
-  private final boolean mKeepExpandedOnHoverLeave;
-  public final bj mSpring;
-  private final View mViewToAnimate;
+  protected List<T> a = new ArrayList();
   
-  public asv(View paramView)
+  @chd
+  public final asm a(int paramInt)
   {
-    this(paramView, false);
-  }
-  
-  public asv(View paramView, byte paramByte)
-  {
-    this(paramView, true);
-  }
-  
-  private asv(View paramView, boolean paramBoolean)
-  {
-    this(paramView, paramBoolean, avk.a());
-  }
-  
-  private asv(View paramView, boolean paramBoolean, bp parambp)
-  {
-    mViewToAnimate = paramView;
-    mKeepExpandedOnHoverLeave = paramBoolean;
-    mSpring = parambp.a();
-    mSpring.a(new bl(1000.0D, 15.0D));
-    mSpring.a(new bi()
-    {
-      public final void a(bj paramAnonymousbj)
-      {
-        if (asv.a(asv.this))
-        {
-          float f1 = val$endSize;
-          float f2 = (float)d.a;
-          asv.a(asv.this, (f1 - 1.0F) * f2 + 1.0F);
-        }
-      }
-    });
-  }
-  
-  public final void a(float paramFloat)
-  {
-    mViewToAnimate.setScaleX(paramFloat);
-    mViewToAnimate.setScaleY(paramFloat);
-  }
-  
-  public boolean onTouch(View paramView, MotionEvent paramMotionEvent)
-  {
-    int i = 1;
-    double d = 1.0D;
-    if ((paramMotionEvent.getActionMasked() == 1) || (paramMotionEvent.getActionMasked() == 3))
-    {
-      mSpring.b(0.0D);
-      return false;
+    if (a.size() == 0) {
+      return null;
     }
-    if ((!mKeepExpandedOnHoverLeave) && (paramMotionEvent.getActionMasked() == 2))
+    List localList = a;
+    int j = a.size();
+    if (j == 0) {
+      paramInt = 0;
+    }
+    for (;;)
     {
-      if ((paramMotionEvent.getX() >= 0.0F) && (paramMotionEvent.getX() < paramView.getWidth()) && (paramMotionEvent.getY() >= 0.0F) && (paramMotionEvent.getY() < paramView.getHeight()))
-      {
-        paramView = mSpring;
-        if (i == 0) {
-          break label115;
-        }
-      }
-      for (;;)
-      {
-        paramView.b(d);
-        return false;
-        i = 0;
-        break;
-        label115:
-        d = 0.0D;
+      return (asm)localList.get(paramInt);
+      int i = paramInt % j;
+      paramInt = i;
+      if (i < 0) {
+        paramInt = i + j;
       }
     }
-    mSpring.b(1.0D);
-    return false;
+  }
+  
+  public final List<T> a()
+  {
+    return a;
+  }
+  
+  public final void a(T paramT)
+  {
+    a.add(paramT);
+  }
+  
+  public final int b()
+  {
+    return a.size();
+  }
+  
+  public final FilterPageType b(int paramInt)
+  {
+    asm localasm = a(paramInt);
+    if (localasm == null) {
+      return FilterPageType.UNFILTERED;
+    }
+    return localasm.b();
+  }
+  
+  public final void c()
+  {
+    a.clear();
+  }
+  
+  public final void d()
+  {
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      ((asm)localIterator.next()).e();
+    }
+    c();
   }
 }
 

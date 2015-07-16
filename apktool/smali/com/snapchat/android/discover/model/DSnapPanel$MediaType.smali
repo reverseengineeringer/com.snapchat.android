@@ -180,7 +180,7 @@
 
 .method public static valueOfIgnoreCase(Ljava/lang/String;)Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
     .locals 1
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue

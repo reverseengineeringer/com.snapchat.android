@@ -1,8 +1,15 @@
-.class public interface abstract Lbfa;
+.class public final Lbfa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(IZ)V
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

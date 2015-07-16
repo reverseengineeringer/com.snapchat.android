@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.stories;
 
-import ajx;
+import akr;
 import android.content.Context;
 import android.content.res.Resources;
 import android.view.View;
 import android.view.View.OnClickListener;
-import apx;
-import apx.1;
+import aqw;
+import aqw.1;
 import com.snapchat.android.model.StoryGroup;
 import com.snapchat.android.model.StoryGroup.ActionState;
 import com.snapchat.android.util.AlertDialogUtils;
@@ -18,12 +18,12 @@ final class StoriesAdapter$2
   
   public final void onClick(View paramView)
   {
-    paramView = new apx(StoriesAdapter.d(b), a);
+    paramView = new aqw(StoriesAdapter.d(b), a);
     b.a(StoryGroup.ActionState.CONFIRMING_SAVE);
     Resources localResources = a.getResources();
-    if (ajx.aH())
+    if (akr.aG())
     {
-      AlertDialogUtils.a(a, localResources.getString(2131493373), localResources.getString(2131493371), false, new apx.1(paramView));
+      AlertDialogUtils.a(a, localResources.getString(2131493373), localResources.getString(2131493371), false, new aqw.1(paramView));
       return;
     }
     paramView.a();

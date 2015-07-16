@@ -5,23 +5,42 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bkw
 {
-  @SerializedName("id")
-  protected String id;
-  @SerializedName("name")
-  protected String name;
-  @SerializedName("properties")
-  protected bkv properties;
-  @SerializedName("type")
-  protected String type;
+  @SerializedName("ad_placement_metadata")
+  protected bhv adPlacementMetadata;
+  @SerializedName("ad_type")
+  protected Integer adType;
+  @SerializedName("color")
+  protected String color;
+  @SerializedName("dsnap_id")
+  protected String dsnapId;
+  @SerializedName("hash")
+  protected String hash;
+  @SerializedName("url")
+  protected String url;
   
   public final String a()
   {
-    return type;
+    return url;
   }
   
-  public final bkv b()
+  public final String b()
   {
-    return properties;
+    return dsnapId;
+  }
+  
+  public final String c()
+  {
+    return hash;
+  }
+  
+  public final String d()
+  {
+    return color;
+  }
+  
+  public final Integer e()
+  {
+    return adType;
   }
   
   public final boolean equals(Object paramObject)
@@ -33,12 +52,17 @@ public final class bkw
       return false;
     }
     paramObject = (bkw)paramObject;
-    return new EqualsBuilder().append(id, id).append(name, name).append(type, type).append(properties, properties).isEquals();
+    return new EqualsBuilder().append(url, url).append(dsnapId, dsnapId).append(hash, hash).append(color, color).append(adType, adType).append(adPlacementMetadata, adPlacementMetadata).isEquals();
+  }
+  
+  public final bhv f()
+  {
+    return adPlacementMetadata;
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(id).append(name).append(type).append(properties).toHashCode();
+    return new HashCodeBuilder().append(url).append(dsnapId).append(hash).append(color).append(adType).append(adPlacementMetadata).toHashCode();
   }
   
   public final String toString()

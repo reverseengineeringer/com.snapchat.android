@@ -4,8 +4,10 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bis
-  extends bii
+  extends bji
 {
+  @SerializedName("error_id")
+  protected String errorId;
   @SerializedName("message")
   protected String message;
   
@@ -18,12 +20,12 @@ public class bis
       return false;
     }
     paramObject = (bis)paramObject;
-    return new EqualsBuilder().append(message, message).isEquals();
+    return new EqualsBuilder().append(message, message).append(errorId, errorId).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(message).toHashCode();
+    return new HashCodeBuilder().append(message).append(errorId).toHashCode();
   }
   
   public String toString()

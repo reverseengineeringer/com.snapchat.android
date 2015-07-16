@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/discover/api2/SendDSnapTask$a;
-.super Lpl;
+.super Lqc;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
     name = "a"
 .end annotation
 
-.annotation runtime Ltn;
+.annotation runtime Lud;
 .end annotation
 
 
@@ -89,12 +89,12 @@
     .line 125
     iput-object p1, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->this$0:Lcom/snapchat/android/discover/api2/SendDSnapTask;
 
-    invoke-direct {p0}, Lpl;-><init>()V
+    invoke-direct {p0}, Lqc;-><init>()V
 
     .line 108
     iget-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->this$0:Lcom/snapchat/android/discover/api2/SendDSnapTask;
 
-    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->a(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laim;
+    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->a(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laji;
 
     move-result-object v0
 
@@ -105,11 +105,11 @@
     .line 110
     iget-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->this$0:Lcom/snapchat/android/discover/api2/SendDSnapTask;
 
-    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->a(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laim;
+    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->a(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laji;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laim;->h()I
+    invoke-virtual {v0}, Laji;->h()I
 
     move-result v0
 
@@ -124,36 +124,36 @@
     iput-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->mMediaType:Ljava/lang/String;
 
     .line 112
-    sget-object v0, Laks;->DISCOVER_SHARE:Ljava/lang/String;
+    sget-object v0, Laln;->DISCOVER_SHARE:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->mBodyType:Ljava/lang/String;
 
     .line 114
     iget-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->this$0:Lcom/snapchat/android/discover/api2/SendDSnapTask;
 
-    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->b(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Ladb;
+    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->b(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laeb;
 
     move-result-object v0
 
-    iget-object v0, v0, Ladb;->l:Ljava/lang/String;
+    iget-object v0, v0, Laeb;->l:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->mMediaKey:Ljava/lang/String;
 
     .line 116
     iget-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->this$0:Lcom/snapchat/android/discover/api2/SendDSnapTask;
 
-    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->b(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Ladb;
+    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->b(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laeb;
 
     move-result-object v0
 
-    iget-object v0, v0, Ladb;->m:Ljava/lang/String;
+    iget-object v0, v0, Laeb;->m:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->mMediaIv:Ljava/lang/String;
 
     .line 118
     iget-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->this$0:Lcom/snapchat/android/discover/api2/SendDSnapTask;
 
-    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->a(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laim;
+    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->a(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laji;
 
     move-result-object v0
 
@@ -164,7 +164,7 @@
     .line 120
     iget-object v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->this$0:Lcom/snapchat/android/discover/api2/SendDSnapTask;
 
-    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->a(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laim;
+    invoke-static {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->a(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laji;
 
     move-result-object v0
 
@@ -173,20 +173,20 @@
     iput v0, p0, Lcom/snapchat/android/discover/api2/SendDSnapTask$a;->mHeight:I
 
     .line 126
-    invoke-static {p1}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->c(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Lajk;
+    invoke-static {p1}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->c(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Lakg;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lajk;->f()[Ljava/lang/String;
+    invoke-virtual {v0}, Lakg;->f()[Ljava/lang/String;
 
     move-result-object v0
 
     .line 127
-    invoke-static {p1}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->c(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Lajk;
+    invoke-static {p1}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->c(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Lakg;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lajk;->g()Ljava/util/List;
+    invoke-virtual {v1}, Lakg;->g()Ljava/util/List;
 
     move-result-object v1
 
@@ -208,7 +208,7 @@
 
     const-string v2, ","
 
-    invoke-static {v0, v2}, Lavb;->a(Ljava/util/Collection;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2}, Lavz;->a(Ljava/util/Collection;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -224,7 +224,7 @@
     .line 131
     const-string v0, ","
 
-    invoke-static {v1, v0}, Lavb;->a(Ljava/util/Collection;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lavz;->a(Ljava/util/Collection;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -232,7 +232,7 @@
 
     .line 135
     :goto_0
-    invoke-static {p1}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->e(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Lato;
+    invoke-static {p1}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->e(Lcom/snapchat/android/discover/api2/SendDSnapTask;)Laum;
 
     move-result-object v0
 
@@ -240,7 +240,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lato;->a(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Laum;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -2,6 +2,9 @@
 .super Landroid/support/v4/app/Fragment;
 .source "SourceFile"
 
+# interfaces
+.implements Lbga;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -22,7 +25,7 @@
 # instance fields
 .field public mAreLargeUiUpdatesEnabled:Z
 
-.field private final mDownloadManager:Lalb;
+.field private final mDownloadManager:Lalw;
 
 .field public mFragmentInterface:Lcom/snapchat/android/util/fragment/SnapchatFragment$a;
 
@@ -30,7 +33,7 @@
 
 .field public mIsVisible:Z
 
-.field private final mLifecycleAnalytics:Lnf;
+.field private final mLifecycleAnalytics:Lnw;
 
 .field protected mPageIndex:I
 
@@ -53,11 +56,11 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-static {}, Lalb;->a()Lalb;
+    invoke-static {}, Lalw;->a()Lalw;
 
     move-result-object v1
 
-    invoke-static {}, Lnf;->a()Lnf;
+    invoke-static {}, Lnw;->a()Lnw;
 
     move-result-object v2
 
@@ -65,13 +68,13 @@
 
     invoke-direct {v3}, Lcom/snapchat/android/ui/window/WindowConfiguration;-><init>()V
 
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>(Landroid/os/Handler;Lalb;Lnf;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
+    invoke-direct {p0, v0, v1, v2, v3}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>(Landroid/os/Handler;Lalw;Lnw;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
 
     .line 69
     return-void
 .end method
 
-.method constructor <init>(Landroid/os/Handler;Lalb;Lnf;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
+.method constructor <init>(Landroid/os/Handler;Lalw;Lnw;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
     .locals 1
 
     .prologue
@@ -92,10 +95,10 @@
     iput-object p1, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mSetFragmentVisibleHandler:Landroid/os/Handler;
 
     .line 91
-    iput-object p2, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mDownloadManager:Lalb;
+    iput-object p2, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mDownloadManager:Lalw;
 
     .line 92
-    iput-object p3, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mLifecycleAnalytics:Lnf;
+    iput-object p3, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mLifecycleAnalytics:Lnw;
 
     .line 93
     iput-object p4, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mWindowConfiguration:Lcom/snapchat/android/ui/window/WindowConfiguration;
@@ -117,33 +120,43 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-static {}, Lalb;->a()Lalb;
+    invoke-static {}, Lalw;->a()Lalw;
 
     move-result-object v1
 
-    invoke-static {}, Lnf;->a()Lnf;
+    invoke-static {}, Lnw;->a()Lnw;
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, v2, p1}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>(Landroid/os/Handler;Lalb;Lnf;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
+    invoke-direct {p0, v0, v1, v2, p1}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>(Landroid/os/Handler;Lalw;Lnw;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
 
     .line 80
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/util/fragment/SnapchatFragment;)Lnf;
+.method static synthetic a(Lcom/snapchat/android/util/fragment/SnapchatFragment;)Lnw;
     .locals 1
 
     .prologue
     .line 43
-    iget-object v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mLifecycleAnalytics:Lnf;
+    iget-object v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mLifecycleAnalytics:Lnw;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final H()Landroid/view/Window;
+.method public final I()Z
+    .locals 1
+
+    .prologue
+    .line 458
+    iget-boolean v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mIsVisible:Z
+
+    return v0
+.end method
+
+.method public final J()Landroid/view/Window;
     .locals 1
 
     .prologue
@@ -169,12 +182,12 @@
     goto :goto_0
 .end method
 
-.method public final I()V
+.method public final K()V
     .locals 2
 
     .prologue
     .line 133
-    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->J()Landroid/view/Window;
 
     move-result-object v0
 
@@ -320,7 +333,7 @@
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/window/WindowConfiguration;->a(Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;)V
 
     .line 387
-    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->k()Lalw;
+    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->k()Lamt;
 
     move-result-object v0
 
@@ -328,13 +341,13 @@
     if-eqz v0, :cond_0
 
     .line 389
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbcb;
+    new-instance v1, Lbdb;
 
-    invoke-direct {v1}, Lbcb;-><init>()V
+    invoke-direct {v1}, Lbdb;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -351,6 +364,19 @@
     return-void
 .end method
 
+.method public e_()V
+    .locals 1
+
+    .prologue
+    .line 182
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
+
+    .line 183
+    return-void
+.end method
+
 .method public f()V
     .locals 0
 
@@ -360,36 +386,11 @@
 .end method
 
 .method public final f(Z)V
-    .locals 4
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
-
     .line 192
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "markVisibilityChanged - isVisible "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 194
-    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->j_()Z
+    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->h_()Z
 
     move-result v0
 
@@ -423,15 +424,6 @@
 
     if-eqz p1, :cond_3
 
-    .line 205
-    const-string v0, "SnapchatFragment"
-
-    const-string v1, "Fragment is not yet resumed. Scheduling onVisible for later"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 225
     :cond_2
     :goto_0
@@ -445,26 +437,15 @@
     if-eqz p1, :cond_4
 
     .line 212
-    iget-object v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mDownloadManager:Lalb;
+    iget-object v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mDownloadManager:Lalw;
 
-    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->h()Lala;
+    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->h()Lalv;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lalb;->a(Lala;)V
+    invoke-virtual {v0, v1}, Lalw;->a(Lalv;)V
 
     .line 217
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-string v1, "markVisibility -> onVisible()"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 218
     invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->c()V
 
     .line 219
@@ -474,33 +455,19 @@
 
     .line 221
     :cond_4
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-string v1, "markVisibility -> onHidden()"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 222
     invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f()V
 
     goto :goto_0
 .end method
 
-.method public f_()V
+.method public f_()Z
     .locals 1
 
     .prologue
-    .line 182
+    .line 405
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
-
-    .line 183
-    return-void
+    return v0
 .end method
 
 .method public g()Z
@@ -513,22 +480,12 @@
     return v0
 .end method
 
-.method public g_()Z
-    .locals 1
-
-    .prologue
-    .line 405
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public h()Lala;
+.method public h()Lalv;
     .locals 4
 
     .prologue
     .line 275
-    new-instance v0, Lala;
+    new-instance v0, Lalv;
 
     const/4 v1, 0x1
 
@@ -540,22 +497,12 @@
 
     aput-object v3, v1, v2
 
-    invoke-direct {v0, v1}, Lala;-><init>([Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lalv;-><init>([Ljava/lang/String;)V
 
     return-object v0
 .end method
 
 .method public h_()Z
-    .locals 1
-
-    .prologue
-    .line 457
-    iget-boolean v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mIsVisible:Z
-
-    return v0
-.end method
-
-.method public j_()Z
     .locals 1
 
     .prologue
@@ -567,17 +514,7 @@
     return v0
 .end method
 
-.method public k()Lalw;
-    .locals 1
-
-    .prologue
-    .line 447
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public l_()Z
+.method public j_()Z
     .locals 1
 
     .prologue
@@ -585,6 +522,16 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public k()Lamt;
+    .locals 1
+
+    .prologue
+    .line 447
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public onAttach(Landroid/app/Activity;)V
@@ -664,7 +611,7 @@
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onPause()V
 
     .line 401
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -675,16 +622,14 @@
 .end method
 
 .method public onResume()V
-    .locals 5
+    .locals 4
 
     .prologue
-    const/4 v1, 0x0
-
     .line 280
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onResume()V
 
     .line 281
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -693,21 +638,21 @@
     .line 282
     iget-object v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mWindowConfiguration:Lcom/snapchat/android/ui/window/WindowConfiguration;
 
-    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->J()Landroid/view/Window;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mFragmentLayout:Landroid/view/View;
+    iget-object v2, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mFragmentLayout:Landroid/view/View;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/window/WindowConfiguration;->a()Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_0
+    if-nez v3, :cond_0
 
-    iput-object v2, v0, Lcom/snapchat/android/ui/window/WindowConfiguration;->a:Landroid/view/Window;
+    iput-object v1, v0, Lcom/snapchat/android/ui/window/WindowConfiguration;->a:Landroid/view/Window;
 
-    iput-object v3, v0, Lcom/snapchat/android/ui/window/WindowConfiguration;->b:Landroid/view/View;
+    iput-object v2, v0, Lcom/snapchat/android/ui/window/WindowConfiguration;->b:Landroid/view/View;
 
     .line 283
     :cond_0
@@ -715,50 +660,28 @@
 
     invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->b()Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/window/WindowConfiguration;->a(Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/window/WindowConfiguration;->a(Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;)V
 
     .line 285
     invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    instance-of v2, v0, Lcom/snapchat/android/LandingPageActivity;
+    instance-of v1, v0, Lcom/snapchat/android/LandingPageActivity;
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
     check-cast v0, Lcom/snapchat/android/LandingPageActivity;
 
-    iget v2, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mPageIndex:I
+    iget v1, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mPageIndex:I
 
-    invoke-virtual {v0, v2, p0}, Lcom/snapchat/android/LandingPageActivity;->a(ILcom/snapchat/android/util/fragment/SnapchatFragment;)Z
+    invoke-virtual {v0, v1, p0}, Lcom/snapchat/android/LandingPageActivity;->a(ILcom/snapchat/android/util/fragment/SnapchatFragment;)Z
 
     move-result v0
 
     :goto_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "scheduleTaskForOnVisible() - shouldFragmentBecomeVisible "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Object;)V
-
     if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mSetFragmentVisibleHandler:Landroid/os/Handler;
@@ -784,12 +707,12 @@
     goto :goto_0
 
     :cond_3
-    move v0, v1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public z_()J
+.method public y_()J
     .locals 2
 
     .prologue

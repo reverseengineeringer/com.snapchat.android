@@ -56,7 +56,7 @@
 
     const/4 v3, 0x0
 
-    .line 111
+    .line 112
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
     const-string v1, "CONTACTS"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->CONTACTS:Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
-    .line 112
+    .line 113
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
     const-string v1, "USERNAME"
@@ -78,7 +78,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->USERNAME:Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
-    .line 113
+    .line 114
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
     const-string v1, "QR_CODE"
@@ -89,7 +89,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->QR_CODE:Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
-    .line 114
+    .line 115
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
     const-string v1, "ADDED_ME_BACK"
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->ADDED_ME_BACK:Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
-    .line 115
+    .line 116
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
     const-string v1, "ADDED_BY_NEARBY"
@@ -111,7 +111,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->ADDED_BY_NEARBY:Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
-    .line 110
+    .line 111
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
@@ -152,13 +152,13 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 121
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 121
+    .line 122
     iput-object p3, p0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->mAddSourceType:Lcom/snapchat/android/model/Friend$AddSourceType;
 
-    .line 122
+    .line 123
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 111
     const-class v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -182,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 111
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->$VALUES:[Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->clone()Ljava/lang/Object;
@@ -200,7 +200,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 126
     iget-object v0, p0, Lcom/snapchat/android/analytics/AnalyticsEvents$AddFriendSourceType;->mAddSourceType:Lcom/snapchat/android/model/Friend$AddSourceType;
 
     return-object v0

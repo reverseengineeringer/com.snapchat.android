@@ -1,23 +1,29 @@
-import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
-
 public final class wt
+  implements bvp<ws>
 {
-  private static final wt b = new wt();
-  public final TranscodingPreferencesWrapper a;
+  private final bvk<ws> b;
   
-  private wt()
+  static
   {
-    this(TranscodingPreferencesWrapper.a());
+    if (!wt.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
   }
   
-  private wt(TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper)
+  private wt(bvk<ws> parambvk)
   {
-    a = paramTranscodingPreferencesWrapper;
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
   }
   
-  public static wt a()
+  public static bvp<ws> a(bvk<ws> parambvk)
   {
-    return b;
+    return new wt(parambvk);
   }
 }
 

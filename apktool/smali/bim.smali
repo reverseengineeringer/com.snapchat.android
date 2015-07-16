@@ -1,39 +1,44 @@
-.class public final Lbim;
-.super Ljava/lang/Object;
+.class public Lbim;
+.super Lbji;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbim$a;
+    }
+.end annotation
+
+
 # instance fields
-.field protected displayName:Ljava/lang/String;
+.field protected ackId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "display_name"
+        value = "ack_id"
     .end annotation
 .end field
 
-.field protected groupId:Ljava/lang/String;
+.field protected convId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "group_id"
+        value = "conv_id"
     .end annotation
 .end field
 
-.field protected hasCustomDescription:Ljava/lang/Boolean;
+.field protected failureReason:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "has_custom_description"
+        value = "failure_reason"
     .end annotation
 .end field
 
-.field protected stories:Ljava/util/List;
+.field protected success:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "stories"
+        value = "success"
     .end annotation
+.end field
 
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbio;",
-            ">;"
-        }
+.field protected timestamp:Ljava/lang/Long;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "timestamp"
     .end annotation
 .end field
 
@@ -44,19 +49,20 @@
 
     .prologue
     .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lbji;-><init>()V
 
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public final a()Ljava/lang/Boolean;
     .locals 1
 
     .prologue
-    .line 43
-    iget-object v0, p0, Lbim;->groupId:Ljava/lang/String;
+    .line 83
+    iget-object v0, p0, Lbim;->success:Ljava/lang/Boolean;
 
     return-object v0
 .end method
@@ -65,102 +71,115 @@
     .locals 1
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lbim;->displayName:Ljava/lang/String;
+    .line 101
+    iget-object v0, p0, Lbim;->ackId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final c()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lbio;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 79
-    iget-object v0, p0, Lbim;->stories:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/Boolean;
+.method public final c()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 97
-    iget-object v0, p0, Lbim;->hasCustomDescription:Ljava/lang/Boolean;
+    .line 119
+    iget-object v0, p0, Lbim;->convId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 137
+    iget-object v0, p0, Lbim;->failureReason:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final e()Lbim$a;
+    .locals 1
+
+    .prologue
+    .line 141
+    iget-object v0, p0, Lbim;->failureReason:Ljava/lang/String;
+
+    invoke-static {v0}, Lbim$a;->a(Ljava/lang/String;)Lbim$a;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 121
+    .line 184
     if-ne p1, p0, :cond_0
 
-    .line 122
+    .line 185
     const/4 v0, 0x1
 
-    .line 128
+    .line 191
     :goto_0
     return v0
 
-    .line 124
+    .line 187
     :cond_0
     instance-of v0, p1, Lbim;
 
     if-nez v0, :cond_1
 
-    .line 125
+    .line 188
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 127
+    .line 190
     :cond_1
     check-cast p1, Lbim;
 
-    .line 128
+    .line 191
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbim;->groupId:Ljava/lang/String;
+    iget-object v1, p0, Lbim;->success:Ljava/lang/Boolean;
 
-    iget-object v2, p1, Lbim;->groupId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbim;->displayName:Ljava/lang/String;
-
-    iget-object v2, p1, Lbim;->displayName:Ljava/lang/String;
+    iget-object v2, p1, Lbim;->success:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbim;->stories:Ljava/util/List;
+    iget-object v1, p0, Lbim;->ackId:Ljava/lang/String;
 
-    iget-object v2, p1, Lbim;->stories:Ljava/util/List;
+    iget-object v2, p1, Lbim;->ackId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbim;->hasCustomDescription:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbim;->convId:Ljava/lang/String;
 
-    iget-object v2, p1, Lbim;->hasCustomDescription:Ljava/lang/Boolean;
+    iget-object v2, p1, Lbim;->convId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbim;->failureReason:Ljava/lang/String;
+
+    iget-object v2, p1, Lbim;->failureReason:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbim;->timestamp:Ljava/lang/Long;
+
+    iget-object v2, p1, Lbim;->timestamp:Ljava/lang/Long;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -173,34 +192,50 @@
     goto :goto_0
 .end method
 
-.method public final hashCode()I
+.method public final f()Ljava/lang/Long;
+    .locals 1
+
+    .prologue
+    .line 159
+    iget-object v0, p0, Lbim;->timestamp:Ljava/lang/Long;
+
+    return-object v0
+.end method
+
+.method public hashCode()I
     .locals 2
 
     .prologue
-    .line 111
+    .line 173
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbim;->groupId:Ljava/lang/String;
+    iget-object v1, p0, Lbim;->success:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbim;->displayName:Ljava/lang/String;
+    iget-object v1, p0, Lbim;->ackId:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbim;->stories:Ljava/util/List;
+    iget-object v1, p0, Lbim;->convId:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbim;->hasCustomDescription:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbim;->failureReason:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbim;->timestamp:Ljava/lang/Long;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -213,11 +248,11 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 106
+    .line 168
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

@@ -1,87 +1,51 @@
-import android.text.TextUtils;
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.AnalyticsEvents;
-import com.snapchat.android.api2.cash.ScCashResponsePayload;
-import com.snapchat.android.api2.cash.ScCashResponsePayload.Status;
-import com.snapchat.android.api2.cash.blockers.BlockerOrder;
-import com.snapchat.android.model.CashTransaction;
+import com.google.gson.annotations.SerializedName;
+import java.util.Collection;
 import java.util.List;
-import javax.inject.Inject;
 
 public final class rf
-  extends qv
+  extends tw
+  implements ui.b<List<String>>
 {
-  private static final String TAG = "SQAccessTokenBlocker";
-  @Inject
-  protected xn mCashAuthManager;
-  @Inject
-  protected qg mCashErrorReporter;
-  private boolean mForced = false;
+  private final rf.a mCallback;
+  private final String mConversationId;
+  private final String mTransactionIds;
   
-  public rf()
+  public rf(@chc Collection<String> paramCollection, @chc String paramString, @chc rf.a parama)
   {
-    SnapchatApplication.b().c().a(this);
+    super(tw.EXPONENTIAL_STRATEGY);
+    mTransactionIds = avz.a(paramCollection, ",");
+    mConversationId = paramString;
+    mCallback = parama;
+    registerCallback(List.class, this);
   }
   
-  public rf(boolean paramBoolean)
+  protected final String getPath()
   {
-    this();
+    return "/cash/mark_as_viewed";
   }
   
-  public final void a(@cgc final CashTransaction paramCashTransaction)
+  public final Object getRequestPayload()
   {
-    Timber.b("SQAccessTokenBlocker", "CASH-LOG: ATTEMPT resolve SQAccessTokenBlocker", new Object[0]);
-    if (!mForced)
-    {
-      xq localxq = mCashAuthManager.a();
-      if ((localxq != null) && (!localxq.a(System.currentTimeMillis())))
-      {
-        super.a(null, true);
-        return;
-      }
-    }
-    new ql(new qc.a()
-    {
-      public final void a(@cgb ScCashResponsePayload.Status paramAnonymousStatus, int paramAnonymousInt)
-      {
-        Timber.b("SQAccessTokenBlocker", "CASH-LOG: FAILED resolve SQAccessTokenBlocker status[%s] statusCode[%d]", new Object[] { paramAnonymousStatus.name(), Integer.valueOf(paramAnonymousInt) });
-        if (paramCashTransaction != null)
-        {
-          String str = paramCashTransactionmSenderUsername;
-          if (!TextUtils.equals(ajx.l(), str)) {
-            break label72;
-          }
-          AnalyticsEvents.a("GENERATE_SQUARE_ACCESS_TOKEN_FAILED", paramAnonymousInt);
-        }
-        for (;;)
-        {
-          qg.a(paramCashTransaction, paramAnonymousStatus);
-          rf.a(rf.this);
-          return;
-          label72:
-          AnalyticsEvents.b("GENERATE_SQUARE_ACCESS_TOKEN_FAILED", paramAnonymousInt);
-        }
-      }
-      
-      public final void a(@cgb ScCashResponsePayload paramAnonymousScCashResponsePayload)
-      {
-        Timber.b("SQAccessTokenBlocker", "CASH-LOG: SUCCESS resolve SQAccessTokenBlocker", new Object[0]);
-        paramAnonymousScCashResponsePayload = (ql.a)paramAnonymousScCashResponsePayload;
-        mCashAuthManager.a(accessToken);
-        a(null, true);
-      }
-    }).f();
+    return new rf.b();
   }
   
-  protected final void a(@cgc List<qv> paramList, boolean paramBoolean)
+  public static abstract interface a
   {
-    super.a(paramList, paramBoolean);
+    public abstract void a();
+    
+    public abstract void a(List<String> paramList);
   }
   
-  public final BlockerOrder c()
+  @ud
+  final class b
+    extends qc
   {
-    return BlockerOrder.SQ_ACCESS_TOKEN_BLOCKER;
+    @SerializedName("conversation_id")
+    String conversationId = rf.b(rf.this);
+    @SerializedName("transaction_ids")
+    String transactionIds = rf.a(rf.this);
+    
+    b() {}
   }
 }
 

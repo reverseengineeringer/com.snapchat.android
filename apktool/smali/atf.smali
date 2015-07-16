@@ -1,143 +1,116 @@
 .class public final Latf;
-.super Ljava/lang/Object;
+.super Latb;
 .source "SourceFile"
 
 
+# instance fields
+.field private final b:Larw;
+
+
 # direct methods
-.method public static varargs a(II[Landroid/view/View;)Landroid/graphics/Bitmap;
-    .locals 5
-    .param p2    # [Landroid/view/View;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
+.method public constructor <init>(Larw;)V
+    .locals 0
 
     .prologue
-    .line 30
-    array-length v0, p2
+    .line 17
+    invoke-direct {p0}, Latb;-><init>()V
 
-    if-nez v0, :cond_0
+    .line 18
+    iput-object p1, p0, Latf;->b:Larw;
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 19
+    return-void
+.end method
 
-    const-string v1, "Specify at least one View to draw."
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+# virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    throw v0
+    .prologue
+    .line 23
+    const-string v0, "Weather"
 
-    .line 32
-    :cond_0
-    invoke-static {}, Lavq;->a()Lavq;
-
-    move-result-object v0
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-virtual {v0, p0, p1, v1}, Lavq;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 33
-    if-nez v0, :cond_1
-
-    .line 34
-    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {p0, p1, v0}, Laur;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 36
-    :cond_1
-    if-nez v0, :cond_3
-
-    .line 37
-    const/4 v0, 0x0
-
-    .line 46
-    :cond_2
     return-object v0
+.end method
 
-    .line 39
-    :cond_3
-    new-instance v2, Landroid/graphics/Canvas;
+.method public final a(Landroid/view/MotionEvent;)Z
+    .locals 3
 
-    invoke-direct {v2, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    .prologue
+    .line 33
+    iget-object v0, p0, Latf;->b:Larw;
 
-    .line 40
-    array-length v3, p2
+    iget-object v0, v0, Larw;->d:Landroid/view/View;
+
+    const v1, 0x7f0a0419
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    new-instance v1, Landroid/graphics/Rect;
+
+    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getHitRect(Landroid/graphics/Rect;)V
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v2
+
+    float-to-int v2, v2
+
+    invoke-virtual {v1, v0, v2}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final d()Landroid/view/View;
+    .locals 1
+
+    .prologue
+    .line 28
+    iget-object v0, p0, Latf;->b:Larw;
+
+    iget-object v0, v0, Larw;->d:Landroid/view/View;
+
+    return-object v0
+.end method
+
+.method public final e()V
+    .locals 4
+
+    .prologue
+    .line 38
+    iget-object v0, p0, Latf;->b:Larw;
+
+    iget-object v1, v0, Larw;->c:Lcom/squareup/otto/Bus;
+
+    invoke-virtual {v1, v0}, Lcom/squareup/otto/Bus;->b(Ljava/lang/Object;)V
+
+    iget-object v1, v0, Larw;->b:Lapz;
+
+    const v2, 0x7f0400cf
+
+    iget-object v3, v0, Larw;->d:Landroid/view/View;
+
+    invoke-virtual {v1, v2, v3}, Lapz;->a(ILandroid/view/View;)V
 
     const/4 v1, 0x0
 
-    :goto_0
-    if-ge v1, v3, :cond_2
+    iput-object v1, v0, Larw;->d:Landroid/view/View;
 
-    aget-object v4, p2, v1
-
-    .line 41
-    if-eqz v4, :cond_4
-
-    .line 42
-    invoke-virtual {v4, v2}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
-
-    .line 40
-    :cond_4
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-.end method
-
-.method public static a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
-    .locals 6
-
-    .prologue
-    const/4 v5, 0x0
-
-    .line 19
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 20
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 22
-    :cond_0
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {p2, p3, v1}, Laur;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    .line 23
-    new-instance v2, Landroid/graphics/Canvas;
-
-    invoke-direct {v2, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 24
-    invoke-virtual {v2}, Landroid/graphics/Canvas;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {v2}, Landroid/graphics/Canvas;->getHeight()I
-
-    move-result v4
-
-    invoke-virtual {v0, v5, v5, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 25
-    invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 26
-    return-object v1
+    .line 39
+    return-void
 .end method

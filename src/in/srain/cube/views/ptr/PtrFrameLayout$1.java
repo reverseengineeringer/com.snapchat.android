@@ -9,8 +9,8 @@ final class PtrFrameLayout$1
   
   public final void run()
   {
-    if (PtrFrameLayout.b) {
-      CLog.d(a.c, "mRefreshCompleteHook resume.");
+    if (PtrFrameLayout.a) {
+      CLog.d(a.b, "mRefreshCompleteHook resume.");
     }
     PtrFrameLayout.a(a);
   }

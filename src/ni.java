@@ -1,140 +1,185 @@
-import android.text.TextUtils;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
-import com.snapchat.android.analytics.framework.ErrorMetric;
-import com.snapchat.android.model.Mediabryo;
-import com.snapchat.android.model.Mediabryo.SnapType;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.snapchat.android.model.chat.ChatFeedItem;
-import com.snapchat.android.notification.AndroidNotificationManager.Type;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public final class ni
 {
-  private static final ni INSTANCE = new ni();
-  private final bgk mClock;
-  private final EasyMetric.EasyMetricFactory mEasyMetricFactory;
+  private final int MAX_SLEEP_TIME_BETWEEN_RETRIES_MILLISECONDS = 60000;
+  private final int MIN_SLEEP_TIME_BETWEEN_RETRIES_MILLISECONDS = 100;
+  private final String TAG = "StoryAdStream";
+  private final na mAdManager;
+  public boolean mInLiveSection = false;
+  public boolean mInPlayback = false;
+  public final Object mMutex = new Object();
+  public int mNextPosition;
+  public int mNextUnviewedPosition;
+  final Map<Integer, nf> mPositionAdResponseCache = du.a();
+  final Set<Integer> mPositionsWithInFlightRequests = new HashSet();
+  nl mStoryAdStreamListener;
+  public nn mStoryAdStreamRequestInfo;
+  int mTimeBetweenRetriesMilliSeconds = 0;
+  final Timer mTimer;
   
-  private ni()
+  public ni(nn paramnn, nl paramnl)
   {
-    this(new EasyMetric.EasyMetricFactory(), new bgk());
+    this(paramnn, paramnl, na.a(), new Timer());
   }
   
-  private ni(EasyMetric.EasyMetricFactory paramEasyMetricFactory, bgk parambgk)
+  private ni(nn paramnn, nl paramnl, na paramna, Timer paramTimer)
   {
-    mEasyMetricFactory = paramEasyMetricFactory;
-    mClock = parambgk;
-  }
-  
-  public static ni a()
-  {
-    return INSTANCE;
-  }
-  
-  public static void a(@cgb aim paramaim, long paramLong, int paramInt, boolean paramBoolean, @cgb String paramString)
-  {
-    Object localObject = mSnapType.toString().toLowerCase();
-    switch (paramaim.h())
+    mStoryAdStreamRequestInfo = paramnn;
+    if (paramnn != null)
     {
-    case 3: 
-    default: 
-      paramaim = "null";
-      localObject = EasyMetric.EasyMetricFactory.a("SNAP_MEDIA_UPLOAD").a(paramLong).a("type", paramaim).a("context", localObject).a("request_size_bytes", Integer.valueOf(paramInt));
-      if (!paramBoolean) {
-        break;
-      }
+      mNextPosition = mFirstPosition;
+      mNextUnviewedPosition = mFirstPosition;
     }
-    for (paramaim = "true";; paramaim = "false")
+    mStoryAdStreamListener = paramnl;
+    mAdManager = paramna;
+    mTimer = paramTimer;
+  }
+  
+  public static ni a(int paramInt)
+  {
+    ni localni = new ni(null, null);
+    synchronized (mMutex)
     {
-      ((EasyMetric)localObject).a("success", paramaim).a("reachability", paramString).a(false);
+      mNextUnviewedPosition = paramInt;
+      return localni;
+    }
+  }
+  
+  private nf e()
+  {
+    if (!mPositionAdResponseCache.containsKey(Integer.valueOf(mNextPosition))) {
+      return null;
+    }
+    return (nf)mPositionAdResponseCache.get(Integer.valueOf(mNextPosition));
+  }
+  
+  private void e(int paramInt)
+  {
+    if ((!mInLiveSection) && (paramInt < mStoryAdStreamRequestInfo.mMinimumRemaining)) {
+      paramInt = mStoryAdStreamRequestInfo.mMinimumRemaining;
+    }
+    while (!c()) {
       return;
-      paramaim = "image";
-      break;
-      paramaim = "video_audio";
-      break;
-      paramaim = "video_no_audio";
-      break;
-      paramaim = "discover";
-      break;
+    }
+    d(mNextPosition);
+  }
+  
+  private nj f(int paramInt)
+  {
+    return new nj(this, paramInt);
+  }
+  
+  public final int a()
+  {
+    synchronized (mMutex)
+    {
+      int i = mNextUnviewedPosition;
+      return i;
     }
   }
   
-  public static void a(@cgb ChatConversation paramChatConversation, @cgb String paramString)
+  final void a(nf paramnf)
   {
-    Iterator localIterator = mItemsForFeedIcon.iterator();
-    ChatFeedItem localChatFeedItem;
-    do
+    if (mInPlayback) {
+      mStoryAdStreamListener.a(paramnf);
+    }
+  }
+  
+  public final void a(@chc nf paramnf, long paramLong, int paramInt)
+  {
+    synchronized (mMutex)
     {
-      if (!localIterator.hasNext()) {
-        break;
-      }
-      localChatFeedItem = (ChatFeedItem)localIterator.next();
-    } while (!(localChatFeedItem instanceof aje));
-    for (boolean bool = ((aje)localChatFeedItem).L();; bool = false)
+      b(paramnf);
+      c(paramInt);
+      mAdManager.a(paramnf, paramLong);
+      mAdManager.d(f(mAdStreamPosition));
+      return;
+    }
+  }
+  
+  public final String b()
+  {
+    return mStoryAdStreamRequestInfo.a();
+  }
+  
+  public final void b(int paramInt)
+  {
+    synchronized (mMutex)
     {
-      paramChatConversation = paramChatConversation.d(paramString);
-      int i;
-      if ((paramChatConversation != null) && ((paramChatConversation instanceof aje)))
-      {
-        paramChatConversation = (aje)paramChatConversation;
-        if ((paramChatConversation.z()) || (paramChatConversation.A())) {
-          i = 1;
-        }
+      if (!mInPlayback) {
+        return;
       }
-      for (;;)
+      e(paramInt);
+      return;
+    }
+  }
+  
+  public final void b(nf paramnf)
+  {
+    mPositionAdResponseCache.remove(Integer.valueOf(mAdStreamPosition));
+    if (d())
+    {
+      int i = mAdStreamPosition;
+      mNextPosition = (i + 1);
+      if (i >= mNextUnviewedPosition) {
+        mNextUnviewedPosition = (i + 1);
+      }
+    }
+  }
+  
+  public final void c(int paramInt)
+  {
+    nf localnf = e();
+    if (localnf != null)
+    {
+      a(localnf);
+      return;
+    }
+    e(paramInt);
+  }
+  
+  final boolean c()
+  {
+    if (!mInPlayback) {}
+    while ((mPositionsWithInFlightRequests.contains(Integer.valueOf(mNextPosition))) || (e() != null)) {
+      return false;
+    }
+    return true;
+  }
+  
+  protected final void d(int paramInt)
+  {
+    mPositionsWithInFlightRequests.add(Integer.valueOf(paramInt));
+    nj localnj = f(paramInt);
+    nk localnk = new nk(this, paramInt);
+    mAdManager.a(localnj, new no(localnk));
+  }
+  
+  public final boolean d()
+  {
+    return mStoryAdStreamRequestInfo.mFirstPosition >= 0;
+  }
+  
+  final class a
+    extends TimerTask
+  {
+    private a() {}
+    
+    public final void run()
+    {
+      synchronized (mMutex)
       {
-        EasyMetric.EasyMetricFactory.a("NOTIF_OPEN_SNAP_META_LOADED").a("success", Boolean.valueOf(bool)).a(false);
-        if (i != 0) {
-          EasyMetric.EasyMetricFactory.a("NOTIF_OPEN_SNAP_VIEWED").a(false);
+        if (c()) {
+          d(mNextPosition);
         }
         return;
-        i = 0;
-        continue;
-        i = 0;
       }
     }
-  }
-  
-  public static void a(@cgc AndroidNotificationManager.Type paramType)
-  {
-    if (paramType == null)
-    {
-      new EasyMetric("BACKGROUND_NOTIFICATION_UNSPECIFIED").b(false);
-      return;
-    }
-    new EasyMetric("BACKGROUND_NOTIFICATION_" + paramType.name().toUpperCase(Locale.US)).b(false);
-  }
-  
-  public static void a(@cgb String paramString)
-  {
-    EasyMetric.EasyMetricFactory.a("SNAP_TAP_TO_RETRY").a("context", paramString).a(false);
-  }
-  
-  public static void b(AndroidNotificationManager.Type paramType)
-  {
-    new ErrorMetric("EMPTY_PUSH_NOTIFICATION_TEXT").a("PUSH_NOTIFICATION_TYPE", paramType.name()).b(false);
-  }
-  
-  public static void b(@cgc String paramString)
-  {
-    if (TextUtils.isEmpty(paramString))
-    {
-      new EasyMetric("NOTIFICATION_RECEIVED_UNSPECIFIED").b(false);
-      return;
-    }
-    new EasyMetric("NOTIFICATION_RECEIVED_" + paramString.toUpperCase(Locale.US)).b(false);
-  }
-  
-  public static void c(@cgc String paramString)
-  {
-    if (TextUtils.isEmpty(paramString))
-    {
-      new EasyMetric("NOTIFICATION_OPENED_UNSPECIFIED").b(false);
-      return;
-    }
-    new EasyMetric("NOTIFICATION_OPENED_" + paramString.toUpperCase(Locale.US)).b(false);
   }
 }
 

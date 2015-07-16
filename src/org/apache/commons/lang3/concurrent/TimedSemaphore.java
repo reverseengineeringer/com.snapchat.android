@@ -61,28 +61,22 @@ public class TimedSemaphore
     }
     if (getLimit() > 0) {
       if (acquireCount < getLimit()) {
-        break label93;
+        break label86;
       }
     }
     for (;;)
     {
-      if (i == 0) {
-        wait();
-      }
-      for (;;)
-      {
-        if (i == 0) {
-          break label91;
-        }
-        return;
-        i = 0;
-        break;
+      if (i != 0) {
         acquireCount += 1;
       }
-      label91:
-      break;
-      label93:
-      int i = 1;
+      if (i == 0) {
+        break;
+      }
+      return;
+      int i = 0;
+      continue;
+      label86:
+      i = 1;
     }
   }
   
@@ -94,7 +88,6 @@ public class TimedSemaphore
       totalAcquireCount += acquireCount;
       periodCount += 1L;
       acquireCount = 0;
-      notifyAll();
       return;
     }
     finally
@@ -140,7 +133,7 @@ public class TimedSemaphore
     //   0: aload_0
     //   1: monitorenter
     //   2: aload_0
-    //   3: getfield 99	org/apache/commons/lang3/concurrent/TimedSemaphore:periodCount	J
+    //   3: getfield 96	org/apache/commons/lang3/concurrent/TimedSemaphore:periodCount	J
     //   6: lstore_3
     //   7: lload_3
     //   8: lconst_0
@@ -153,11 +146,11 @@ public class TimedSemaphore
     //   17: dload_1
     //   18: dreturn
     //   19: aload_0
-    //   20: getfield 97	org/apache/commons/lang3/concurrent/TimedSemaphore:totalAcquireCount	J
+    //   20: getfield 94	org/apache/commons/lang3/concurrent/TimedSemaphore:totalAcquireCount	J
     //   23: l2d
     //   24: dstore_1
     //   25: aload_0
-    //   26: getfield 99	org/apache/commons/lang3/concurrent/TimedSemaphore:periodCount	J
+    //   26: getfield 96	org/apache/commons/lang3/concurrent/TimedSemaphore:periodCount	J
     //   29: lstore_3
     //   30: dload_1
     //   31: lload_3

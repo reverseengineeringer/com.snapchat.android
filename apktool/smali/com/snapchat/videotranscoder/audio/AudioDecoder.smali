@@ -480,7 +480,7 @@
 .method public setEncoder(Lcom/snapchat/videotranscoder/pipeline/Encoder;)V
     .locals 1
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/Encoder;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

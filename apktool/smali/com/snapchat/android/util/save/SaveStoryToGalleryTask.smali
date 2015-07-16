@@ -45,9 +45,9 @@
 
 
 # instance fields
-.field private final mAnalytics:Lnl;
+.field private final mAnalytics:Loc;
 
-.field private final mClock:Lbgk;
+.field private final mClock:Lbhk;
 
 .field private final mContext:Landroid/content/Context;
 
@@ -55,13 +55,13 @@
 
 .field private mEndTimeMs:J
 
-.field private final mExceptionReporter:Lazo;
+.field private final mExceptionReporter:Lban;
 
 .field private final mInitializationProgressPercent:I
 
-.field private final mMediaSourceFactory:Lbgd;
+.field private final mMediaSourceFactory:Lbhd;
 
-.field private final mNotifications:Lbgc;
+.field private final mNotifications:Lbhc;
 
 .field private final mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
 
@@ -82,7 +82,7 @@
     .end annotation
 .end field
 
-.field private mStorySnaps:[Lajr;
+.field private mStorySnaps:[Lakl;
 
 .field private mTranscodingConfiguration:Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
 
@@ -90,26 +90,26 @@
 
 .field private mTranscodingTask:Lcom/snapchat/videotranscoder/task/TranscodingTask;
 
-.field private final mVideoTranscoder:Lwz;
+.field private final mVideoTranscoder:Lxu;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;Ljava/util/List;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
     .locals 11
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/model/StoryGroup;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Ljava/util/List;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -128,27 +128,27 @@
 
     .prologue
     .line 131
-    invoke-static {}, Lwz;->a()Lwz;
+    invoke-static {}, Lxu;->a()Lxu;
 
     move-result-object v1
 
-    new-instance v2, Lbgk;
+    new-instance v2, Lbhk;
 
-    invoke-direct {v2}, Lbgk;-><init>()V
+    invoke-direct {v2}, Lbhk;-><init>()V
 
-    invoke-static {}, Lnl;->a()Lnl;
+    invoke-static {}, Loc;->a()Loc;
 
     move-result-object v3
 
-    new-instance v4, Lazo;
+    new-instance v4, Lban;
 
-    invoke-direct {v4}, Lazo;-><init>()V
+    invoke-direct {v4}, Lban;-><init>()V
 
-    new-instance v5, Lbgd;
+    new-instance v5, Lbhd;
 
-    invoke-direct {v5, p1}, Lbgd;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, p1}, Lbhd;-><init>(Landroid/content/Context;)V
 
-    invoke-static {}, Lbgc;->a()Lbgc;
+    invoke-static {}, Lbhc;->a()Lbhc;
 
     move-result-object v10
 
@@ -162,62 +162,62 @@
 
     move-object v9, p4
 
-    invoke-direct/range {v0 .. v10}, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;-><init>(Lwz;Lbgk;Lnl;Lazo;Lbgd;Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;Ljava/util/List;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lbgc;)V
+    invoke-direct/range {v0 .. v10}, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;-><init>(Lxu;Lbhk;Loc;Lban;Lbhd;Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;Ljava/util/List;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lbhc;)V
 
     .line 134
     return-void
 .end method
 
-.method private constructor <init>(Lwz;Lbgk;Lnl;Lazo;Lbgd;Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;Ljava/util/List;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lbgc;)V
+.method private constructor <init>(Lxu;Lbhk;Loc;Lban;Lbhd;Landroid/content/Context;Lcom/snapchat/android/model/StoryGroup;Ljava/util/List;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lbhc;)V
     .locals 2
-    .param p1    # Lwz;
-        .annotation build Lcgb;
+    .param p1    # Lxu;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Lbgk;
-        .annotation build Lcgb;
+    .param p2    # Lbhk;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p3    # Lnl;
-        .annotation build Lcgb;
+    .param p3    # Loc;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p4    # Lazo;
-        .annotation build Lcgb;
+    .param p4    # Lban;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p5    # Lbgd;
-        .annotation build Lcgb;
+    .param p5    # Lbhd;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p6    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p7    # Lcom/snapchat/android/model/StoryGroup;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p8    # Ljava/util/List;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p9    # Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p10    # Lbgc;
-        .annotation build Lcgb;
+    .param p10    # Lbhc;
+        .annotation build Lchc;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lwz;",
-            "Lbgk;",
-            "Lnl;",
-            "Lazo;",
-            "Lbgd;",
+            "Lxu;",
+            "Lbhk;",
+            "Loc;",
+            "Lban;",
+            "Lbhd;",
             "Landroid/content/Context;",
             "Lcom/snapchat/android/model/StoryGroup;",
             "Ljava/util/List",
@@ -225,7 +225,7 @@
             "Lcom/snapchat/android/model/StorySnapLogbook;",
             ">;",
             "Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;",
-            "Lbgc;",
+            "Lbhc;",
             ")V"
         }
     .end annotation
@@ -245,52 +245,52 @@
     iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mResult:Lcom/snapchat/android/util/save/SaveStoryToGalleryTask$Result;
 
     .line 152
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lwz;
+    check-cast v0, Lxu;
 
-    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mVideoTranscoder:Lwz;
+    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mVideoTranscoder:Lxu;
 
     .line 153
-    invoke-static {p2}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbgk;
+    check-cast v0, Lbhk;
 
-    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mClock:Lbgk;
+    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mClock:Lbhk;
 
     .line 154
-    invoke-static {p3}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lnl;
+    check-cast v0, Loc;
 
-    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mAnalytics:Lnl;
+    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mAnalytics:Loc;
 
     .line 155
-    invoke-static {p4}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p4}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lazo;
+    check-cast v0, Lban;
 
-    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mExceptionReporter:Lazo;
+    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mExceptionReporter:Lban;
 
     .line 156
-    invoke-static {p5}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p5}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbgd;
+    check-cast v0, Lbhd;
 
-    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbgd;
+    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbhd;
 
     .line 157
-    invoke-static {p6}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p6}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -299,7 +299,7 @@
     iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mContext:Landroid/content/Context;
 
     .line 158
-    invoke-static {p7}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p7}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -308,7 +308,7 @@
     iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStoryGroup:Lcom/snapchat/android/model/StoryGroup;
 
     .line 159
-    invoke-static {p8}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p8}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -317,7 +317,7 @@
     iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnapLogbooks:Ljava/util/List;
 
     .line 160
-    invoke-static {p9}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p9}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -326,13 +326,13 @@
     iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
 
     .line 161
-    invoke-static {p10}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p10}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbgc;
+    check-cast v0, Lbhc;
 
-    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotifications:Lbgc;
+    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotifications:Lbhc;
 
     .line 163
     iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnapLogbooks:Ljava/util/List;
@@ -370,10 +370,10 @@
     return v0
 .end method
 
-.method private static a(Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;)Laue;
+.method private static a(Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;)Lavc;
     .locals 5
     .param p0    # Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -394,7 +394,7 @@
 
     .line 521
     :try_start_0
-    new-instance v0, Laue;
+    new-instance v0, Lavc;
 
     invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->getHeight()I
 
@@ -404,7 +404,7 @@
 
     move-result v3
 
-    invoke-direct {v0, v2, v3}, Laue;-><init>(II)V
+    invoke-direct {v0, v2, v3}, Lavc;-><init>(II)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -458,11 +458,11 @@
 .method private static a([Lcom/snapchat/videotranscoder/task/MediaSource;Lcom/snapchat/videotranscoder/utils/MimeTools;)Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
     .locals 5
     .param p0    # [Lcom/snapchat/videotranscoder/task/MediaSource;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p1    # Lcom/snapchat/videotranscoder/utils/MimeTools;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .annotation build Landroid/annotation/TargetApi;
@@ -576,11 +576,11 @@
 
     .line 181
     :cond_0
-    invoke-static {}, Laxc;->a()Laxc;
+    invoke-static {}, Laya;->a()Laya;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laxc;->b()Ljava/io/File;
+    invoke-virtual {v0}, Laya;->b()Ljava/io/File;
 
     move-result-object v0
 
@@ -590,7 +590,7 @@
 
     .line 185
     :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lajr;
+    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lakl;
 
     array-length v0, v0
 
@@ -599,19 +599,19 @@
     move v8, v7
 
     :goto_1
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lajr;
+    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lakl;
 
     array-length v0, v0
 
     if-ge v8, v0, :cond_8
 
-    iget-object v2, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbgd;
+    iget-object v2, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbhd;
 
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lajr;
+    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lakl;
 
     aget-object v6, v0, v8
 
-    invoke-virtual {v2}, Lbgd;->f()V
+    invoke-virtual {v2}, Lbhd;->f()V
 
     if-nez v6, :cond_1
 
@@ -651,24 +651,24 @@
     move-result-object v0
 
     .line 235
-    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbgd;
+    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbhd;
 
-    invoke-virtual {v1}, Lbgd;->e()V
+    invoke-virtual {v1}, Lbhd;->e()V
 
     goto :goto_0
 
     .line 185
     :cond_1
     :try_start_2
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
-    invoke-virtual {v6}, Lajr;->ak()I
+    invoke-virtual {v6}, Lakl;->ai()I
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    invoke-virtual {v2, v6}, Lbgd;->a(Lajr;)Lcom/snapchat/videotranscoder/task/MediaSource;
+    invoke-virtual {v2, v6}, Lbhd;->a(Lakl;)Lcom/snapchat/videotranscoder/task/MediaSource;
 
     move-result-object v0
 
@@ -687,7 +687,7 @@
 
     mul-int/2addr v2, v3
 
-    iget-object v3, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lajr;
+    iget-object v3, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lakl;
 
     array-length v3, v3
 
@@ -715,19 +715,19 @@
     if-ne v0, v1, :cond_7
 
     :cond_3
-    iget-object v0, v2, Lbgd;->mSnapVideoDecryptor:Lawz;
+    iget-object v0, v2, Lbhd;->mSnapVideoDecryptor:Laxx;
 
-    invoke-virtual {v6}, Lajr;->J()Lawy;
+    invoke-virtual {v6}, Lakl;->K()Laxw;
 
     move-result-object v1
 
-    invoke-virtual {v6}, Lajr;->h()Z
+    invoke-virtual {v6}, Lakl;->h()Z
 
     move-result v3
 
     const/4 v4, 0x0
 
-    invoke-virtual {v0, v1, v3, v4}, Lawz;->a(Lawy;ZZ)Laip;
+    invoke-virtual {v0, v1, v3, v4}, Laxx;->a(Laxw;ZZ)Lajl;
 
     move-result-object v3
 
@@ -748,20 +748,20 @@
     :catchall_0
     move-exception v0
 
-    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbgd;
+    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbhd;
 
-    invoke-virtual {v1}, Lbgd;->e()V
+    invoke-virtual {v1}, Lbhd;->e()V
 
     throw v0
 
     .line 185
     :cond_4
     :try_start_3
-    iget-object v0, v2, Lbgd;->mDecryptedSnapVideosToRelease:Ljava/util/List;
+    iget-object v0, v2, Lbhd;->mDecryptedSnapVideosToRelease:Ljava/util/List;
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v3}, Laip;->a()Ljava/lang/String;
+    invoke-virtual {v3}, Lajl;->a()Ljava/lang/String;
 
     move-result-object v1
 
@@ -778,13 +778,13 @@
     :cond_5
     new-instance v0, Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;
 
-    iget-object v2, v2, Lbgd;->mImageTransformationMatrix:Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;
+    iget-object v2, v2, Lbhd;->mImageTransformationMatrix:Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;
 
     invoke-virtual {v2}, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;->adjustForTranscoderTransformation()[F
 
     move-result-object v2
 
-    invoke-virtual {v3}, Laip;->b()Landroid/graphics/Bitmap;
+    invoke-virtual {v3}, Lajl;->b()Landroid/graphics/Bitmap;
 
     move-result-object v3
 
@@ -792,7 +792,7 @@
 
     sget-object v5, Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$VideoChannelSource;->ORIGINAL:Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$VideoChannelSource;
 
-    invoke-virtual {v6}, Lajr;->ak()I
+    invoke-virtual {v6}, Lakl;->ai()I
 
     move-result v6
 
@@ -871,13 +871,13 @@
 
     invoke-static {v0, v5}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    new-instance v0, Laue;
+    new-instance v0, Lavc;
 
     iget v6, v5, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     iget v5, v5, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    invoke-direct {v0, v6, v5}, Laue;-><init>(II)V
+    invoke-direct {v0, v6, v5}, Lavc;-><init>(II)V
 
     invoke-interface {v3, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -895,7 +895,7 @@
 
     check-cast v0, Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;
 
-    invoke-static {v0}, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->a(Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;)Laue;
+    invoke-static {v0}, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->a(Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;)Lavc;
 
     move-result-object v0
 
@@ -913,11 +913,11 @@
     throw v0
 
     :cond_b
-    new-instance v0, Lbge;
+    new-instance v0, Lbhe;
 
-    invoke-direct {v0}, Lbge;-><init>()V
+    invoke-direct {v0}, Lbhe;-><init>()V
 
-    invoke-virtual {v0, v3}, Lbge;->a(Ljava/util/Collection;)Laue;
+    invoke-virtual {v0, v3}, Lbhe;->a(Ljava/util/Collection;)Lavc;
 
     move-result-object v0
 
@@ -934,11 +934,11 @@
     :cond_c
     const-string v1, "video/avc"
 
-    invoke-virtual {v0}, Laue;->b()I
+    invoke-virtual {v0}, Lavc;->b()I
 
     move-result v3
 
-    invoke-virtual {v0}, Laue;->a()I
+    invoke-virtual {v0}, Lavc;->a()I
 
     move-result v0
 
@@ -1011,9 +1011,9 @@
     .line 186
     new-instance v0, Lcom/snapchat/videotranscoder/task/TranscodingTask;
 
-    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mVideoTranscoder:Lwz;
+    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mVideoTranscoder:Lxu;
 
-    iget-object v1, v1, Lwz;->a:Lcom/snapchat/videotranscoder/utils/TranscodingResources;
+    iget-object v1, v1, Lxu;->a:Lcom/snapchat/videotranscoder/utils/TranscodingResources;
 
     iget-object v2, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mTranscodingConfiguration:Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
 
@@ -1027,7 +1027,7 @@
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     .line 208
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mVideoTranscoder:Lwz;
+    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mVideoTranscoder:Lxu;
 
     iget-object v2, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mTranscodingTask:Lcom/snapchat/videotranscoder/task/TranscodingTask;
 
@@ -1039,10 +1039,10 @@
 
     invoke-direct {v4, p0}, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask$b;-><init>(Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;)V
 
-    invoke-virtual {v0, v2, v3, v4}, Lwz;->a(Lcom/snapchat/videotranscoder/task/TranscodingTask;Lcom/snapchat/videotranscoder/task/Task$DoneCallback;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
+    invoke-virtual {v0, v2, v3, v4}, Lxu;->a(Lcom/snapchat/videotranscoder/task/TranscodingTask;Lcom/snapchat/videotranscoder/task/Task$DoneCallback;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
 
     .line 212
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
     :try_end_3
     .catch Lcom/snapchat/videotranscoder/task/SetupException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -1057,9 +1057,6 @@
 
     .line 215
     :try_start_5
-    invoke-virtual {v1}, Ljava/lang/Object;->wait()V
-
-    .line 216
     monitor-exit v1
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
@@ -1099,13 +1096,13 @@
     move-result-object v0
 
     .line 235
-    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbgd;
+    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbhd;
 
-    invoke-virtual {v1}, Lbgd;->e()V
+    invoke-virtual {v1}, Lbhd;->e()V
 
     goto/16 :goto_0
 
-    .line 216
+    .line 215
     :catchall_1
     move-exception v0
 
@@ -1147,9 +1144,9 @@
     move-result-object v0
 
     .line 235
-    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbgd;
+    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbhd;
 
-    invoke-virtual {v1}, Lbgd;->e()V
+    invoke-virtual {v1}, Lbhd;->e()V
 
     goto/16 :goto_0
 
@@ -1162,15 +1159,15 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lawt;->a(Landroid/content/Context;Landroid/net/Uri;)Z
+    invoke-static {v0, v1}, Laxr;->a(Landroid/content/Context;Landroid/net/Uri;)Z
     :try_end_a
     .catch Lcom/snapchat/videotranscoder/task/SetupException; {:try_start_a .. :try_end_a} :catch_0
     .catchall {:try_start_a .. :try_end_a} :catchall_0
 
     .line 235
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbgd;
+    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mMediaSourceFactory:Lbhd;
 
-    invoke-virtual {v0}, Lbgd;->e()V
+    invoke-virtual {v0}, Lbhd;->e()V
 
     .line 238
     invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1191,59 +1188,48 @@
 .end method
 
 .method private a(Ljava/lang/String;Ljava/lang/Exception;)V
-    .locals 3
+    .locals 2
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/Exception;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    const/4 v2, 0x0
-
     .line 496
     if-eqz p2, :cond_0
 
     .line 497
-    const-string v0, "SaveStoryToGalleryTask"
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    aput-object p2, v1, v2
-
-    invoke-static {v0, p1, v1}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object p2, v0, v1
 
     .line 498
-    new-instance v0, Lnv;
+    new-instance v0, Lom;
 
-    invoke-direct {v0, p1, p2}, Lnv;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
+    invoke-direct {v0, p1, p2}, Lom;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
 
     .line 504
     :goto_0
-    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mExceptionReporter:Lazo;
+    iget-object v1, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mExceptionReporter:Lban;
 
-    invoke-virtual {v1, v0}, Lazo;->a(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v0}, Lban;->a(Ljava/lang/Throwable;)V
 
     .line 505
     return-void
 
     .line 500
     :cond_0
-    const-string v0, "SaveStoryToGalleryTask"
+    new-instance v0, Lom;
 
-    new-array v1, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, p1, v1}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 501
-    new-instance v0, Lnv;
-
-    invoke-direct {v0, p1}, Lnv;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lom;-><init>(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -1304,7 +1290,7 @@
 
     check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    invoke-virtual {v0, v8}, Lcom/snapchat/android/model/StorySnapLogbook;->a(Z)V
+    invoke-virtual {v0, v8}, Lcom/snapchat/android/model/StorySnapLogbook;->b(Z)V
 
     goto :goto_0
 
@@ -1347,15 +1333,15 @@
 
     check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    iget-object v0, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v0, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    invoke-virtual {v0}, Lajr;->ai()Z
+    invoke-virtual {v0}, Lakl;->ag()Z
 
     move-result v4
 
     if-nez v4, :cond_2
 
-    invoke-virtual {v0}, Lajr;->aj()Z
+    invoke-virtual {v0}, Lakl;->ah()Z
 
     move-result v0
 
@@ -1401,15 +1387,15 @@
 
     check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    iget-object v0, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v0, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    invoke-virtual {v0}, Lajr;->ai()Z
+    invoke-virtual {v0}, Lakl;->ag()Z
 
     move-result v5
 
     if-nez v5, :cond_5
 
-    invoke-virtual {v0}, Lajr;->aj()Z
+    invoke-virtual {v0}, Lakl;->ah()Z
 
     move-result v0
 
@@ -1679,9 +1665,9 @@
 
     if-ne v0, v1, :cond_d
 
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotifications:Lbgc;
+    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotifications:Lbhc;
 
-    invoke-virtual {v0}, Lbgc;->c()V
+    invoke-virtual {v0}, Lbhc;->c()V
 
     :cond_d
     iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStoryGroup:Lcom/snapchat/android/model/StoryGroup;
@@ -1700,9 +1686,9 @@
 
     if-eq v0, v1, :cond_f
 
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotifications:Lbgc;
+    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotifications:Lbhc;
 
-    invoke-virtual {v0}, Lbgc;->d()V
+    invoke-virtual {v0}, Lbhc;->d()V
 
     :cond_f
     iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStoryGroup:Lcom/snapchat/android/model/StoryGroup;
@@ -1741,9 +1727,9 @@
     if-ne v0, v1, :cond_0
 
     .line 264
-    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotifications:Lbgc;
+    iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mNotifications:Lbhc;
 
-    invoke-virtual {v0}, Lbgc;->b()V
+    invoke-virtual {v0}, Lbhc;->b()V
 
     .line 267
     :cond_0
@@ -1791,7 +1777,7 @@
     check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
     .line 274
-    invoke-virtual {v0, v2}, Lcom/snapchat/android/model/StorySnapLogbook;->a(Z)V
+    invoke-virtual {v0, v2}, Lcom/snapchat/android/model/StorySnapLogbook;->b(Z)V
 
     goto :goto_0
 
@@ -1812,9 +1798,9 @@
 
     move-result v0
 
-    new-array v0, v0, [Lajr;
+    new-array v0, v0, [Lakl;
 
-    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lajr;
+    iput-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lakl;
 
     .line 281
     iget-object v0, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnapLogbooks:Ljava/util/List;
@@ -1839,10 +1825,10 @@
     check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
     .line 282
-    iget-object v4, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v4, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
     .line 284
-    invoke-virtual {v4}, Lajr;->L()Z
+    invoke-virtual {v4}, Lakl;->M()Z
 
     move-result v0
 
@@ -1855,7 +1841,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4}, Lajr;->ar()Ljava/lang/String;
+    invoke-virtual {v4}, Lakl;->ap()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1885,7 +1871,7 @@
 
     .line 291
     :cond_3
-    iget-object v5, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lajr;
+    iget-object v5, p0, Lcom/snapchat/android/util/save/SaveStoryToGalleryTask;->mStorySnaps:[Lakl;
 
     add-int/lit8 v0, v1, 0x1
 

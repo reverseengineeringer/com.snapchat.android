@@ -1,11 +1,45 @@
+import java.io.Serializable;
+import java.util.Comparator;
+import javax.annotation.Nullable;
+
 @cd
-final class cz
+public final class cz<T>
+  extends dx<T>
+  implements Serializable
 {
-  private static int a = 1073741824;
+  final Comparator<T> a;
   
-  static int a(int paramInt)
+  public cz(Comparator<T> paramComparator)
   {
-    return 461845907 * Integer.rotateLeft(-862048943 * paramInt, 15);
+    a = ((Comparator)co.a(paramComparator));
+  }
+  
+  public final int compare(T paramT1, T paramT2)
+  {
+    return a.compare(paramT1, paramT2);
+  }
+  
+  public final boolean equals(@Nullable Object paramObject)
+  {
+    if (paramObject == this) {
+      return true;
+    }
+    if ((paramObject instanceof cz))
+    {
+      paramObject = (cz)paramObject;
+      return a.equals(a);
+    }
+    return false;
+  }
+  
+  public final int hashCode()
+  {
+    return a.hashCode();
+  }
+  
+  public final String toString()
+  {
+    return a.toString();
   }
 }
 

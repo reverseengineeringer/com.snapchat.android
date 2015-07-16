@@ -1,254 +1,96 @@
-import android.content.Context;
-import android.location.Location;
-import android.location.LocationManager;
-import android.os.HandlerThread;
-import android.os.Looper;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.FusedLocationProviderApi;
-import com.google.android.gms.location.LocationServices;
-import com.snapchat.android.Timber;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.util.FriendSectionizer;
+import com.snapchat.android.util.FriendSectionizer.FriendSection;
+import com.snapchat.android.util.FriendSectionizer.d;
+import com.snapchat.android.util.FriendSectionizer.e;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
-@avl
 public final class ahr
+  extends aho
 {
-  private static ahr c;
-  private static boolean d = false;
-  private static Context e;
-  private static HandlerThread f;
-  private static Looper g;
-  final List<ahp> a;
-  final aho b;
-  private LocationManager h;
-  private final ahn i;
+  private final String a = "AddressBookFriendsListProvider";
   
-  private ahr(LocationManager paramLocationManager, ahn paramahn, aho paramaho)
+  public final FriendSectionizer a()
   {
-    this(paramLocationManager, paramahn, a(paramLocationManager), paramaho);
+    return new FriendSectionizer.e();
   }
   
-  private ahr(LocationManager paramLocationManager, ahn paramahn, List<ahp> paramList, aho paramaho)
+  public final void a(@chc akp paramakp, @chc ArrayList<Friend> paramArrayList)
   {
-    h = paramLocationManager;
-    a = paramList;
-    i = paramahn;
-    b = paramaho;
-  }
-  
-  public static ahr a()
-  {
-    try
+    paramArrayList.clear();
+    Object localObject1 = new HashSet(paramakp.o());
+    Object localObject2 = new ArrayList();
+    Iterator localIterator = paramakp.n().iterator();
+    while (localIterator.hasNext())
     {
-      if (!d) {
-        throw new IllegalStateException("Location manager has not been initialized");
-      }
-    }
-    finally {}
-    if (c == null) {
-      c = new ahr((LocationManager)e.getSystemService("location"), new ahn(e), aho.a());
-    }
-    ahr localahr = c;
-    return localahr;
-  }
-  
-  @caq
-  private static ArrayList a(LocationManager paramLocationManager)
-  {
-    ArrayList localArrayList = new ArrayList(3);
-    int j = 0;
-    for (;;)
-    {
-      if (j < 2)
+      Friend localFriend = (Friend)localIterator.next();
+      if ((!((Set)localObject1).contains(localFriend)) && (!mIsBlocked))
       {
-        String str = new String[] { "network", "gps" }[j];
-        try
-        {
-          if (paramLocationManager.getProvider(str) != null) {
-            localArrayList.add(new ahp(str, paramLocationManager, g));
-          }
-          j += 1;
-        }
-        catch (IllegalArgumentException localIllegalArgumentException)
-        {
-          for (;;)
-          {
-            Timber.h("LocationProvider", localIllegalArgumentException.getMessage(), new Object[0]);
-          }
-        }
-        catch (Exception paramLocationManager)
-        {
-          Timber.h("LocationProvider", paramLocationManager.getMessage(), new Object[0]);
-          return localArrayList;
-        }
-        catch (SecurityException localSecurityException)
-        {
-          for (;;)
-          {
-            Timber.h("LocationProvider", localSecurityException.getMessage(), new Object[0]);
-          }
-        }
+        mFriendSection = FriendSectionizer.FriendSection.ON_SNAPCHAT;
+        ((List)localObject2).add(localFriend);
       }
     }
-    paramLocationManager = new ahp("passive", paramLocationManager, g);
-    bgp.b(new ahp.1(paramLocationManager));
-    localArrayList.add(paramLocationManager);
-    return localArrayList;
-  }
-  
-  public static void a(Context paramContext)
-  {
-    try
+    Collections.sort((List)localObject2);
+    paramArrayList.addAll((Collection)localObject2);
+    localObject1 = new ArrayList();
+    paramakp = paramakp.m().iterator();
+    while (paramakp.hasNext())
     {
-      if (!d)
+      localObject2 = (Friend)paramakp.next();
+      if (!mIsBlocked)
       {
-        d = true;
-        e = paramContext;
-        paramContext = new HandlerThread("Location", 10);
-        f = paramContext;
-        paramContext.start();
-        g = f.getLooper();
+        mFriendSection = FriendSectionizer.FriendSection.INVITE;
+        ((List)localObject1).add(localObject2);
       }
-      return;
     }
-    finally
-    {
-      paramContext = finally;
-      throw paramContext;
+    Collections.sort((List)localObject1);
+    paramArrayList.addAll((Collection)localObject1);
+    if (paramArrayList.size() == 0) {
+      new StringBuilder("user ").append(akr.l()).append("has no contacts.");
     }
   }
   
-  public final void b()
+  public final FriendSectionizer b()
   {
-    bgp.b(new Runnable()
-    {
-      public final void run()
-      {
-        Object localObject = ahr.this;
-        bgp.b();
-        Timber.h("LocationProvider", "Start tracking!", new Object[0]);
-        Iterator localIterator = a.iterator();
-        while (localIterator.hasNext()) {
-          ((ahp)localIterator.next()).b();
-        }
-        localObject = b;
-        bgp.b();
-        if (d == aho.a) {
-          d = System.currentTimeMillis();
-        }
-      }
-    });
+    return new FriendSectionizer.d();
   }
   
-  public final void c()
+  public final void b(@chc akp paramakp, @chc ArrayList<Friend> paramArrayList)
   {
-    bgp.b(new Runnable()
+    paramArrayList.clear();
+    Object localObject1 = new HashSet(paramakp.o());
+    Object localObject2 = new ArrayList();
+    Iterator localIterator = paramakp.n().iterator();
+    while (localIterator.hasNext())
     {
-      public final void run()
+      Friend localFriend = (Friend)localIterator.next();
+      if ((!((Set)localObject1).contains(localFriend)) && (!mIsBlocked))
       {
-        ??? = ahr.this;
-        bgp.b();
-        Timber.h("LocationProvider", "Stop tracking!", new Object[0]);
-        Iterator localIterator = a.iterator();
-        while (localIterator.hasNext())
-        {
-          ahp localahp = (ahp)localIterator.next();
-          bgp.b();
-          e = false;
-          synchronized (c)
-          {
-            if (d)
-            {
-              boolean bool = a.equals("passive");
-              if (bool) {}
-            }
-            try
-            {
-              b.removeUpdates(localahp);
-              d = false;
-            }
-            catch (IllegalArgumentException localIllegalArgumentException)
-            {
-              for (;;)
-              {
-                Timber.h("LocationListener", localIllegalArgumentException.getMessage(), new Object[0]);
-                d = false;
-              }
-            }
-            catch (Exception localException)
-            {
-              for (;;)
-              {
-                Timber.h("LocationListener", localException.getMessage(), new Object[0]);
-                d = false;
-              }
-            }
-            finally
-            {
-              d = false;
-            }
-          }
-        }
-      }
-    });
-  }
-  
-  @caq
-  @cgc
-  public final Location d()
-  {
-    bgp.b();
-    Object localObject1 = i;
-    bgp.b();
-    Object localObject2;
-    if (a.isConnected())
-    {
-      localObject1 = a;
-      localObject1 = LocationServices.FusedLocationApi.getLastLocation((GoogleApiClient)localObject1);
-      if ((localObject1 != null) && (System.currentTimeMillis() - ((Location)localObject1).getTime() < 60000L))
-      {
-        Object localObject3 = new StringBuilder("Location from device is ");
-        if (localObject1 != null) {
-          break label189;
-        }
-        localObject2 = "Null";
-        label74:
-        Timber.h("LocationProvider", (String)localObject2, new Object[0]);
-        localObject3 = a.iterator();
-        label101:
-        if (!((Iterator)localObject3).hasNext()) {
-          break label205;
-        }
-        localObject2 = ((ahp)((Iterator)localObject3).next()).a();
-        if ((localObject1 != null) && ((localObject2 == null) || (((Location)localObject2).getAccuracy() >= ((Location)localObject1).getAccuracy()))) {
-          break label207;
-        }
-        StringBuilder localStringBuilder = new StringBuilder("Location has been updated to ");
-        if (localObject2 != null) {
-          break label197;
-        }
-        localObject1 = "Null";
-        label161:
-        Timber.h("LocationProvider", (String)localObject1, new Object[0]);
-        localObject1 = localObject2;
+        mFriendSection = FriendSectionizer.FriendSection.ON_SNAPCHAT;
+        ((List)localObject2).add(localFriend);
       }
     }
-    label189:
-    label197:
-    label205:
-    label207:
-    for (;;)
+    Collections.sort((List)localObject2);
+    paramArrayList.addAll((Collection)localObject2);
+    localObject1 = new ArrayList();
+    paramakp = paramakp.m().iterator();
+    while (paramakp.hasNext())
     {
-      break label101;
-      localObject1 = null;
-      break;
-      localObject2 = ((Location)localObject1).toString();
-      break label74;
-      localObject1 = ((Location)localObject2).toString();
-      break label161;
-      return (Location)localObject1;
+      localObject2 = (Friend)paramakp.next();
+      if (!mIsBlocked)
+      {
+        mFriendSection = FriendSectionizer.FriendSection.INVITE;
+        ((List)localObject1).add(localObject2);
+      }
     }
+    Collections.sort((List)localObject1);
+    paramArrayList.addAll((Collection)localObject1);
   }
 }
 

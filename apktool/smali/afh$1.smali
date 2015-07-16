@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$a;
 
 
 # annotations
@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Ljava/util/List;
+.field final synthetic a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
 .field final synthetic b:Lafh;
 
 
 # direct methods
-.method constructor <init>(Lafh;Ljava/util/List;)V
+.method constructor <init>(Lafh;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)V
     .locals 0
 
     .prologue
-    .line 58
+    .line 110
     iput-object p1, p0, Lafh$1;->b:Lafh;
 
-    iput-object p2, p0, Lafh$1;->a:Ljava/util/List;
+    iput-object p2, p0, Lafh$1;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,23 +40,35 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+.method public final a(Lcom/snapchat/android/discover/ui/ChannelView;)V
+    .locals 4
 
     .prologue
-    .line 61
-    iget-object v1, p0, Lafh$1;->b:Lafh;
+    .line 116
+    iget-object v0, p0, Lafh$1;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
-    iget-object v0, p0, Lafh$1;->a:Ljava/util/List;
+    new-instance v1, Lafh$1$1;
 
-    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-direct {v1, p0}, Lafh$1$1;-><init>(Lafh$1;)V
 
-    move-result-object v0
+    const-wide/16 v2, 0x12c
 
-    check-cast v0, Lcom/snapchat/android/model/FriendAction$BlockReason;
+    invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    invoke-virtual {v1, v0}, Lafh;->a(Lcom/snapchat/android/model/FriendAction$BlockReason;)V
+    .line 124
+    iget-object v0, p0, Lafh$1;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
-    .line 62
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->setVisibility(I)V
+
+    .line 125
+    iget-object v0, p0, Lafh$1;->b:Lafh;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lafh;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
+
+    .line 126
     return-void
 .end method

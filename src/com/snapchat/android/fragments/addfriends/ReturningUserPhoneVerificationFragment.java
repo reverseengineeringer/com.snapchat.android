@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.addfriends;
 
-import ajx;
+import akr;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import avh;
-import bet;
-import bkr;
-import boh;
+import awf;
+import bfs;
+import bls;
+import bpi;
 import com.snapchat.android.fragments.verification.PhoneVerificationFragment;
 import com.snapchat.android.ui.window.WindowConfiguration;
 
@@ -29,7 +29,7 @@ public class ReturningUserPhoneVerificationFragment
     super(paramWindowConfiguration);
   }
   
-  protected final void a(bkr parambkr) {}
+  protected final void a(bls parambls) {}
   
   protected final void e()
   {
@@ -42,7 +42,7 @@ public class ReturningUserPhoneVerificationFragment
   protected final void f()
   {
     super.f();
-    avh.a(getActivity(), mFragmentLayout);
+    awf.a(getActivity(), mFragmentLayout);
   }
   
   public final boolean g()
@@ -68,15 +68,15 @@ public class ReturningUserPhoneVerificationFragment
   {
     super.onResume();
     g.clearFocus();
-    if (ajx.f()) {
+    if (akr.f()) {
       i();
     }
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
-    super.onVerificationCodeReceivedEvent(parambet);
+    super.onVerificationCodeReceivedEvent(parambfs);
   }
   
   public static abstract interface a

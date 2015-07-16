@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.cash;
 import android.content.res.Resources;
 import android.view.View;
 import android.widget.TextView;
-import avh;
+import awf;
 import com.snapchat.android.api2.cash.square.data.ErrorType;
 import com.snapchat.android.ui.cash.CardCvvEditText;
 
@@ -21,13 +21,13 @@ final class SecurityCodeFragment$3
       SecurityCodeFragment.b(c).setText("");
       SecurityCodeFragment.b(c).setEnabled(true);
       if (SecurityCodeFragment.b(c).requestFocus()) {
-        avh.g(c.getActivity());
+        awf.g(c.getActivity());
       }
     }
     for (;;)
     {
       SecurityCodeFragment.d(c).setVisibility(8);
-      SecurityCodeFragment.e(c).setBackgroundColor(c.getResources().getColor(2131230792));
+      SecurityCodeFragment.e(c).setBackgroundColor(c.getResources().getColor(2131230793));
       SecurityCodeFragment.b(c, true);
       return;
       SecurityCodeFragment.c(c);

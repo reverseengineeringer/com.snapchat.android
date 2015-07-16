@@ -4,22 +4,22 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bkd
-  extends bgy
+  extends bhy
 {
-  @SerializedName("countryCode")
-  protected String countrycode;
-  @SerializedName("numbers")
-  protected String numbers;
+  @SerializedName("image")
+  protected String image;
+  @SerializedName("type")
+  protected String type;
   
   public final bkd a(String paramString)
   {
-    numbers = paramString;
+    image = paramString;
     return this;
   }
   
   public final bkd b(String paramString)
   {
-    countrycode = paramString;
+    type = paramString;
     return this;
   }
   
@@ -32,12 +32,12 @@ public class bkd
       return false;
     }
     paramObject = (bkd)paramObject;
-    return new EqualsBuilder().append(numbers, numbers).append(countrycode, countrycode).isEquals();
+    return new EqualsBuilder().append(image, image).append(type, type).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(numbers).append(countrycode).toHashCode();
+    return new HashCodeBuilder().append(image).append(type).toHashCode();
   }
   
   public String toString()

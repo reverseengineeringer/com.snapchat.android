@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 2610
+    .line 2708
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$18$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$18;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,13 +40,13 @@
     .locals 1
 
     .prologue
-    .line 2613
+    .line 2711
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$18$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$18;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$18;->c:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->I(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 2614
+    .line 2712
     return-void
 .end method

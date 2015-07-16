@@ -1,9 +1,7 @@
-import javax.inject.Provider;
-
 public final class yk
-  implements buj<yj>
+  implements bvp<yj>
 {
-  private final Provider<ya> b;
+  private final bvk<yj> b;
   
   static
   {
@@ -15,17 +13,17 @@ public final class yk
     }
   }
   
-  private yk(Provider<ya> paramProvider)
+  private yk(bvk<yj> parambvk)
   {
-    if ((!a) && (paramProvider == null)) {
+    if ((!a) && (parambvk == null)) {
       throw new AssertionError();
     }
-    b = paramProvider;
+    b = parambvk;
   }
   
-  public static buj<yj> a(Provider<ya> paramProvider)
+  public static bvp<yj> a(bvk<yj> parambvk)
   {
-    return new yk(paramProvider);
+    return new yk(parambvk);
   }
 }
 

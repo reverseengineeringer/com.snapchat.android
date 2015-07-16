@@ -1,32 +1,26 @@
-import android.graphics.Bitmap;
-import com.snapchat.android.SnapchatApplication;
+import com.addlive.service.AddLiveService;
+import com.snapchat.android.livechat.AdlHelper;
+import com.snapchat.android.livechat.AdlHelper.c;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 
-public final class aig
-  extends aif<Bitmap>
+final class aig
 {
-  private final avp b;
+  private static final List<String> b = Arrays.asList(new String[] { "https://cnc.addlive.io/events.store" });
+  final AddLiveService a;
   
-  public aig()
+  aig(AddLiveService paramAddLiveService)
   {
-    this(awq.GEOFILTER_CACHE, new avp(SnapchatApplication.b()), alb.a());
+    a = paramAddLiveService;
   }
   
-  private aig(@cgb awp paramawp, @cgb avp paramavp, @cgb alb paramalb)
+  final void a()
   {
-    super(paramalb, paramawp);
-    b = ((avp)ck.a(paramavp));
-  }
-  
-  @caq
-  public final void b(@cgb String paramString, @cgb aij.a parama)
-  {
-    
-    if ((a.d(paramString)) && (a.a(paramString) != null))
-    {
-      parama.a();
-      return;
-    }
-    a(paramString, parama);
+    String str = (String)b.get((int)(System.currentTimeMillis() % b.size()));
+    a.setProperty(AdlHelper.a("setProperty(global.service.eventsTrackingEndpoint"), "global.service.eventsTrackingEndpoint", str);
+    a.setProperty(AdlHelper.a("setProperty(global.service.eventsTrackingSession"), "global.service.eventsTrackingSession", UUID.randomUUID().toString());
+    a.startEventsTracking(AdlHelper.a("startEventsTracking"), "ADL_Performance.log");
   }
 }
 

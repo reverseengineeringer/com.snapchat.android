@@ -17,9 +17,9 @@
     .end annotation
 .end field
 
-.field private final c:Lajx;
+.field private final c:Lakr;
 
-.field private final d:Laol;
+.field private final d:Laph;
 
 .field private final e:Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
@@ -30,11 +30,11 @@
 
     .prologue
     .line 47
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v0
 
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v1
 
@@ -42,13 +42,13 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;-><init>(Lajx;Laol;Lcom/snapchat/android/analytics/RegistrationAnalytics;)V
+    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;-><init>(Lakr;Laph;Lcom/snapchat/android/analytics/RegistrationAnalytics;)V
 
     .line 49
     return-void
 .end method
 
-.method private constructor <init>(Lajx;Laol;Lcom/snapchat/android/analytics/RegistrationAnalytics;)V
+.method private constructor <init>(Lakr;Laph;Lcom/snapchat/android/analytics/RegistrationAnalytics;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -68,10 +68,10 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->b:Ljava/util/Set;
 
     .line 40
-    iput-object p1, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->c:Lajx;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->c:Lakr;
 
     .line 41
-    iput-object p2, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->d:Laol;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->d:Laph;
 
     .line 42
     iput-object p3, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->e:Lcom/snapchat/android/analytics/RegistrationAnalytics;
@@ -167,7 +167,7 @@
 
     .prologue
     .line 77
-    const v0, 0x7f040078
+    const v0, 0x7f040079
 
     const/4 v1, 0x0
 
@@ -178,14 +178,14 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 79
-    const v0, 0x7f0a0272
+    const v0, 0x7f0a0270
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->c(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 80
-    const v1, 0x7f0a0273
+    const v1, 0x7f0a0271
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->c(I)Landroid/view/View;
 
@@ -196,14 +196,14 @@
 
     invoke-virtual {v2}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     .line 83
     iget-object v2, p0, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v2}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v1}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v1}, Lauh;->a(Landroid/view/View;)V
 
     .line 85
     new-instance v2, Lcom/snapchat/android/fragments/signup/LoginAndSignupFragment$1;

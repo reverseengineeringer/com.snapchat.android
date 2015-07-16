@@ -1,10 +1,10 @@
 public final class bet
 {
-  public String code;
+  public final boolean shouldShow;
   
-  public bet(@cgb String paramString)
+  public bet(boolean paramBoolean)
   {
-    code = paramString;
+    shouldShow = paramBoolean;
   }
 }
 

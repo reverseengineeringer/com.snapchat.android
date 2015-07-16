@@ -1,22 +1,7 @@
-import android.content.Context;
-import android.content.res.Resources;
-import android.widget.RelativeLayout;
-import com.snapchat.android.camera.cameradecor.CameraDecor;
-
 public final class vo
-  extends CameraDecor
+  implements arm<vt>
 {
-  public RelativeLayout b;
-  
-  public vo(Context paramContext, RelativeLayout paramRelativeLayout)
-  {
-    super(null);
-    if (paramRelativeLayout == null) {
-      throw new NullPointerException("decor container can not be null");
-    }
-    b = paramRelativeLayout;
-    b.setBackgroundColor(paramContext.getResources().getColor(2131230760));
-  }
+  public arm<vs> a;
 }
 
 /* Location:

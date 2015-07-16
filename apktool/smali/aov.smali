@@ -1,164 +1,99 @@
 .class public final Laov;
-.super Ljava/lang/Object;
+.super Laou;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lbjh;
-
-.field public b:Z
-
-.field private final c:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbjj;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final d:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbjj;",
-            ">;"
-        }
-    .end annotation
-.end field
+# static fields
+.field public static a:Laov;
 
 
 # direct methods
-.method public constructor <init>(Lbjh;Ljava/util/List;)V
-    .locals 1
-    .param p1    # Lbjh;
-        .annotation runtime Ljavax/validation/constraints/NotNull;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation runtime Ljavax/validation/constraints/NotNull;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbjh;",
-            "Ljava/util/List",
-            "<",
-            "Lbjj;",
-            ">;)V"
-        }
-    .end annotation
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 12
+    invoke-direct {p0}, Laou;-><init>()V
 
-    .line 18
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Laov;->d:Ljava/util/List;
-
-    .line 20
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laov;->b:Z
-
-    .line 23
-    iput-object p1, p0, Laov;->a:Lbjh;
-
-    .line 24
-    iput-object p2, p0, Laov;->c:Ljava/util/List;
-
-    .line 25
-    invoke-direct {p0}, Laov;->b()V
-
-    .line 26
-    return-void
-.end method
-
-.method private b()V
-    .locals 3
-
-    .prologue
-    .line 59
-    iget-object v0, p0, Laov;->c:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbjj;
-
-    .line 60
-    invoke-virtual {v0}, Lbjj;->b()Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-static {v2}, Laud;->a(Ljava/lang/Boolean;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 61
-    iget-object v2, p0, Laov;->d:Ljava/util/List;
-
-    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    .line 64
-    :cond_1
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lbjj;",
-            ">;"
-        }
-    .end annotation
+.method public final a(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
 
     .prologue
-    .line 37
-    iget-boolean v0, p0, Laov;->b:Z
+    .line 29
+    new-instance v0, Laow;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0, p1, p2}, Laow;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 38
-    iget-object v0, p0, Laov;->d:Ljava/util/List;
+    iput-object v0, p0, Laov;->b:Laos;
 
-    .line 40
-    :goto_0
-    return-object v0
+    .line 30
+    invoke-static {}, Laot;->a()Laot;
 
-    :cond_0
-    iget-object v0, p0, Laov;->c:Ljava/util/List;
+    move-result-object v0
 
-    goto :goto_0
+    iget-object v1, p0, Laov;->b:Laos;
+
+    invoke-virtual {v0, v1}, Laot;->a(Laos;)V
+
+    .line 31
+    return-void
+.end method
+
+.method public final a(Ljava/lang/String;ZDLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lmj;ZLjava/lang/String;I)V
+    .locals 19
+
+    .prologue
+    .line 43
+    new-instance v3, Laow;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v8
+
+    const-wide/16 v10, -0x1
+
+    move-object/from16 v4, p1
+
+    move/from16 v5, p2
+
+    move-wide/from16 v6, p3
+
+    move-object/from16 v12, p5
+
+    move-object/from16 v13, p6
+
+    move-object/from16 v14, p7
+
+    move-object/from16 v15, p8
+
+    move/from16 v16, p9
+
+    move-object/from16 v17, p10
+
+    move/from16 v18, p11
+
+    invoke-direct/range {v3 .. v18}, Laow;-><init>(Ljava/lang/String;ZDJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lmj;ZLjava/lang/String;I)V
+
+    move-object/from16 v0, p0
+
+    iput-object v3, v0, Laov;->b:Laos;
+
+    .line 46
+    invoke-static {}, Laot;->a()Laot;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Laov;->b:Laos;
+
+    invoke-virtual {v2, v3}, Laot;->a(Laos;)V
+
+    .line 47
+    return-void
 .end method

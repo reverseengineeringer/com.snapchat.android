@@ -2,23 +2,55 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lcom/snapchat/android/model/chat/ChatConversation;",
+        ">;"
+    }
+.end annotation
+
 
 # static fields
-.field private static final b:Laky;
+.field static final synthetic $assertionsDisabled:Z
 
 
 # instance fields
-.field public final a:Lale;
-
-.field private final c:Ljava/lang/Object;
-
-.field private final d:Ljava/util/Map;
+.field private final mGsonWrapperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Map",
+            "Ljavax/inject/Provider",
             "<",
-            "Ljava/lang/String;",
-            "Lalj;",
+            "Laum;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mSendingCashManagerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyw;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mSlightlySecurePreferencesProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Laze;",
             ">;"
         }
     .end annotation
@@ -30,220 +62,189 @@
     .locals 1
 
     .prologue
-    .line 26
-    new-instance v0, Laky;
+    .line 10
+    const-class v0, Laky;
 
-    invoke-direct {v0}, Laky;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    sput-object v0, Laky;->b:Laky;
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Laky;->$assertionsDisabled:Z
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method private constructor <init>()V
+.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laze;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyw;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laum;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 40
-    invoke-static {}, Lale;->a()Lale;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Laky;-><init>(Lale;)V
-
-    .line 41
-    return-void
-.end method
-
-.method private constructor <init>(Lale;)V
-    .locals 1
-
-    .prologue
-    .line 44
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    new-instance v0, Ljava/lang/Object;
+    .line 17
+    sget-boolean v0, Laky;->$assertionsDisabled:Z
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    if-nez v0, :cond_0
 
-    iput-object v0, p0, Laky;->c:Ljava/lang/Object;
+    if-nez p1, :cond_0
 
-    .line 30
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    iput-object v0, p0, Laky;->d:Ljava/util/Map;
+    throw v0
 
-    .line 45
-    iput-object p1, p0, Laky;->a:Lale;
+    .line 18
+    :cond_0
+    iput-object p1, p0, Laky;->mSlightlySecurePreferencesProvider:Ljavax/inject/Provider;
 
-    .line 46
+    .line 19
+    sget-boolean v0, Laky;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 20
+    :cond_1
+    iput-object p2, p0, Laky;->mSendingCashManagerProvider:Ljavax/inject/Provider;
+
+    .line 21
+    sget-boolean v0, Laky;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_2
+
+    if-nez p3, :cond_2
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 22
+    :cond_2
+    iput-object p3, p0, Laky;->mGsonWrapperProvider:Ljavax/inject/Provider;
+
+    .line 23
     return-void
 .end method
 
-.method public static a()Laky;
+.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laze;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyw;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Laum;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/model/chat/ChatConversation;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
     .line 36
-    sget-object v0, Laky;->b:Laky;
+    new-instance v0, Laky;
+
+    invoke-direct {v0, p0, p1, p2}, Laky;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Lalj;
-    .locals 3
-    .annotation build Lcgb;
-    .end annotation
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
     .prologue
-    .line 139
-    iget-object v1, p0, Laky;->c:Ljava/lang/Object;
+    .line 10
+    check-cast p1, Lcom/snapchat/android/model/chat/ChatConversation;
 
-    monitor-enter v1
+    if-nez p1, :cond_0
 
-    .line 140
-    :try_start_0
-    iget-object v0, p0, Laky;->d:Ljava/util/Map;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, "Cannot inject members into a null reference"
 
-    move-result-object v0
-
-    check-cast v0, Lalj;
-
-    .line 141
-    if-nez v0, :cond_0
-
-    .line 142
-    new-instance v0, Lalj;
-
-    invoke-direct {v0}, Lalj;-><init>()V
-
-    .line 143
-    iget-object v2, p0, Laky;->d:Ljava/util/Map;
-
-    invoke-interface {v2, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 145
-    :cond_0
-    monitor-exit v1
-
-    return-object v0
-
-    .line 146
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
 
-.method public final b()Ljava/lang/String;
-    .locals 6
-    .annotation build Lcgb;
-    .end annotation
+    :cond_0
+    iget-object v0, p0, Laky;->mSlightlySecurePreferencesProvider:Ljavax/inject/Provider;
 
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 119
-    iget-object v2, p0, Laky;->a:Lale;
-
-    invoke-virtual {v2}, Lale;->c()Landroid/net/wifi/WifiInfo;
-
-    move-result-object v2
-
-    .line 120
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v2}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v2}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_0
-
-    .line 124
-    const-string v3, "WIFI-%s-%s"
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-virtual {v2}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v4, v1
-
-    invoke-virtual {v2}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
-
-    move-result-object v1
-
-    aput-object v1, v4, v0
-
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 131
-    :goto_0
-    return-object v0
+    check-cast v0, Laze;
 
-    .line 128
-    :cond_0
-    iget-object v2, p0, Laky;->a:Lale;
+    iput-object v0, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mSlightlySecurePreferences:Laze;
 
-    invoke-virtual {v2}, Lale;->b()Landroid/net/NetworkInfo;
+    iget-object v0, p0, Laky;->mSendingCashManagerProvider:Ljavax/inject/Provider;
 
-    move-result-object v2
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    if-eqz v2, :cond_1
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
+    check-cast v0, Lyw;
 
-    move-result v3
+    iput-object v0, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mSendingCashManager:Lyw;
 
-    if-eqz v3, :cond_1
+    iget-object v0, p0, Laky;->mGsonWrapperProvider:Ljavax/inject/Provider;
 
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getType()I
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v0
 
-    if-nez v2, :cond_1
+    check-cast v0, Laum;
 
-    :goto_1
-    if-eqz v0, :cond_2
+    iput-object v0, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mGsonWrapper:Laum;
 
-    .line 129
-    const-string v0, "WAN"
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
-
-    .line 128
-    goto :goto_1
-
-    .line 131
-    :cond_2
-    const-string v0, "NO_NETWORK"
-
-    goto :goto_0
+    return-void
 .end method

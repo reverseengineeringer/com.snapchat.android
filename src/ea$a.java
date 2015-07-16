@@ -1,77 +1,23 @@
-import java.math.RoundingMode;
-import java.util.Arrays;
+import java.util.Map.Entry;
 
 final class ea$a
-  extends cg
+  extends do<K, V>
 {
-  final char[] q;
-  final int r;
-  final int s;
-  final int t;
-  final int u;
-  private final String v;
-  private final byte[] w;
-  private final boolean[] x;
+  private ea$a(ea paramea) {}
   
-  ea$a(String paramString, char[] paramArrayOfChar)
+  public final ef<Map.Entry<K, V>> a()
   {
-    v = ((String)ck.a(paramString));
-    q = ((char[])ck.a(paramArrayOfChar));
-    for (;;)
-    {
-      try
-      {
-        s = ed.a(paramArrayOfChar.length, RoundingMode.UNNECESSARY);
-        i = Math.min(8, Integer.lowestOneBit(s));
-        t = (8 / i);
-        u = (s / i);
-        r = (paramArrayOfChar.length - 1);
-        paramString = new byte[''];
-        Arrays.fill(paramString, (byte)-1);
-        i = 0;
-        if (i >= paramArrayOfChar.length) {
-          break;
-        }
-        char c = paramArrayOfChar[i];
-        ck.a(cg.b.a(c), "Non-ASCII character: %s", new Object[] { Character.valueOf(c) });
-        boolean bool;
-        if (paramString[c] == -1)
-        {
-          bool = true;
-          ck.a(bool, "Duplicate character: %s", new Object[] { Character.valueOf(c) });
-          paramString[c] = ((byte)i);
-          i += 1;
-        }
-        else
-        {
-          bool = false;
-        }
-      }
-      catch (ArithmeticException paramString)
-      {
-        i = paramArrayOfChar.length;
-        throw new IllegalArgumentException(35 + "Illegal alphabet length " + i, paramString);
-      }
-    }
-    w = paramString;
-    paramString = new boolean[t];
-    int i = j;
-    while (i < u)
-    {
-      paramString[ed.a(i * 8, s, RoundingMode.CEILING)] = 1;
-      i += 1;
-    }
-    x = paramString;
+    return b().a();
   }
   
-  public final boolean a(char paramChar)
+  final dl<Map.Entry<K, V>> d()
   {
-    return (cg.b.a(paramChar)) && (w[paramChar] != -1);
+    return new dy(this, ea.a(a));
   }
   
-  public final String toString()
+  final dm<K, V> e()
   {
-    return v;
+    return a;
   }
 }
 

@@ -1,250 +1,352 @@
-.class public final Lajy;
+.class public Lajy;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lajv;",
-        ">;"
-    }
-.end annotation
+.implements Lahh;
 
 
 # static fields
-.field static final synthetic $assertionsDisabled:Z
+.field protected static final LOCATION_CACHE_LIFETIME_MILLIS:J = 0xa4cb80L
 
 
 # instance fields
-.field private final mCashProviderManagerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqh;",
-            ">;"
-        }
+.field private final mClock:Lbhk;
+
+.field public mCustomDescription:Ljava/lang/String;
+    .annotation build Lchd;
     .end annotation
 .end field
 
-.field private final mSlightlySecurePreferencesProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Layg;",
-            ">;"
-        }
+.field public mCustomTitle:Ljava/lang/String;
+    .annotation build Lchd;
     .end annotation
 .end field
 
-.field private final mUserDatabaseLoaderProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lajw;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public mDisplayName:Ljava/lang/String;
+
+.field public mFriendName:Ljava/lang/String;
+
+.field public mGeofence:Lajq;
+
+.field public mIsLocalStory:Z
+
+.field private mIsWhitelisted:Z
+
+.field mStoryGroupDisplayName:Ljava/lang/String;
+
+.field public mStoryId:Ljava/lang/String;
+
+.field private mTimeLeft:J
+
+.field mTimestamp:J
+
+.field public mVenue:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 9
-    const-class v0, Lajy;
+    .line 47
+    new-instance v0, Lbhk;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    invoke-direct {v0}, Lbhk;-><init>()V
+
+    invoke-direct {p0, v0}, Lajy;-><init>(Lbhk;)V
+
+    .line 48
+    return-void
+.end method
+
+.method private constructor <init>(Lbhk;)V
+    .locals 0
+
+    .prologue
+    .line 51
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 52
+    iput-object p1, p0, Lajy;->mClock:Lbhk;
+
+    .line 53
+    return-void
+.end method
+
+.method public constructor <init>(Lbjn;)V
+    .locals 2
+
+    .prologue
+    .line 63
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 64
+    if-eqz p1, :cond_1
+
+    .line 65
+    invoke-virtual {p1}, Lbjn;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lajy;->mStoryId:Ljava/lang/String;
+
+    .line 66
+    invoke-virtual {p1}, Lbjn;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lajy;->mDisplayName:Ljava/lang/String;
+
+    .line 67
+    invoke-virtual {p1}, Lbjn;->c()Lbiz;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 68
+    new-instance v0, Lajq;
+
+    invoke-virtual {p1}, Lbjn;->c()Lbiz;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lajq;-><init>(Lbiz;)V
+
+    iput-object v0, p0, Lajy;->mGeofence:Lajq;
+
+    .line 69
+    :cond_0
+    invoke-virtual {p1}, Lbjn;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lajy;->mStoryGroupDisplayName:Ljava/lang/String;
+
+    .line 70
+    invoke-virtual {p1}, Lbjn;->e()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lajy;->mVenue:Ljava/lang/String;
+
+    .line 71
+    invoke-virtual {p1}, Lbjn;->f()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lajy;->mFriendName:Ljava/lang/String;
+
+    .line 72
+    invoke-virtual {p1}, Lbjn;->g()Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    iput-boolean v0, p0, Lajy;->mIsLocalStory:Z
 
-    const/4 v0, 0x1
+    .line 73
+    invoke-virtual {p1}, Lbjn;->h()Ljava/lang/Boolean;
 
-    :goto_0
-    sput-boolean v0, Lajy;->$assertionsDisabled:Z
+    move-result-object v0
 
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lajy;->mIsWhitelisted:Z
+
+    .line 74
+    invoke-virtual {p1}, Lbjn;->i()Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Long;)J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lajy;->mTimeLeft:J
+
+    .line 76
+    :cond_1
+    new-instance v0, Lbhk;
+
+    invoke-direct {v0}, Lbhk;-><init>()V
+
+    iput-object v0, p0, Lajy;->mClock:Lbhk;
+
+    .line 77
     return-void
+.end method
 
-    :cond_0
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Layg;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqh;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lajw;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 15
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
-    sget-boolean v0, Lajy;->$assertionsDisabled:Z
+    .line 56
+    iput-object p1, p0, Lajy;->mStoryId:Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    .line 57
+    iput-object p2, p0, Lajy;->mDisplayName:Ljava/lang/String;
 
-    if-nez p1, :cond_0
+    .line 58
+    iput-object v0, p0, Lajy;->mGeofence:Lajq;
 
-    new-instance v0, Ljava/lang/AssertionError;
+    .line 59
+    iput-object v0, p0, Lajy;->mVenue:Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    .line 60
+    new-instance v0, Lbhk;
 
-    throw v0
+    invoke-direct {v0}, Lbhk;-><init>()V
 
-    .line 17
-    :cond_0
-    iput-object p1, p0, Lajy;->mSlightlySecurePreferencesProvider:Ljavax/inject/Provider;
+    iput-object v0, p0, Lajy;->mClock:Lbhk;
 
-    .line 18
-    sget-boolean v0, Lajy;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 19
-    :cond_1
-    iput-object p2, p0, Lajy;->mCashProviderManagerProvider:Ljavax/inject/Provider;
-
-    .line 20
-    sget-boolean v0, Lajy;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_2
-
-    if-nez p3, :cond_2
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 21
-    :cond_2
-    iput-object p3, p0, Lajy;->mUserDatabaseLoaderProvider:Ljavax/inject/Provider;
-
-    .line 22
+    .line 61
     return-void
-.end method
-
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Layg;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqh;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lajw;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lajv;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 35
-    new-instance v0, Lajy;
-
-    invoke-direct {v0, p0, p1, p2}, Lajy;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public b()Z
+    .locals 6
+
+    .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 154
+    iget-boolean v2, p0, Lajy;->mIsWhitelisted:Z
+
+    if-eqz v2, :cond_2
+
+    iget-wide v2, p0, Lajy;->mTimeLeft:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v2, v2, v4
+
+    if-lez v2, :cond_2
+
+    .line 155
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Lajy;->mTimestamp:J
+
+    sub-long/2addr v2, v4
+
+    iget-wide v4, p0, Lajy;->mTimeLeft:J
+
+    cmp-long v2, v2, v4
+
+    if-lez v2, :cond_1
+
+    .line 157
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    .line 155
+    goto :goto_0
+
+    .line 157
+    :cond_2
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Lajy;->mTimestamp:J
+
+    sub-long/2addr v2, v4
+
+    const-wide/32 v4, 0xa4cb80
+
+    cmp-long v2, v2, v4
+
+    if-gtz v2, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 102
+    iget-object v0, p0, Lajy;->mDisplayName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
     .locals 2
 
     .prologue
-    .line 9
-    check-cast p1, Lajv;
+    .line 162
+    if-ne p0, p1, :cond_0
 
-    if-nez p1, :cond_0
+    const/4 v0, 0x1
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    .line 169
+    :goto_0
+    return v0
 
-    const-string v1, "Cannot inject members into a null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
+    .line 164
     :cond_0
-    iget-object v0, p0, Lajy;->mSlightlySecurePreferencesProvider:Ljavax/inject/Provider;
+    instance-of v0, p1, Lajy;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    if-nez v0, :cond_1
 
-    move-result-object v0
+    .line 165
+    const/4 v0, 0x0
 
-    check-cast v0, Layg;
+    goto :goto_0
 
-    iput-object v0, p1, Lajv;->mSlightlySecurePreferences:Layg;
+    .line 168
+    :cond_1
+    check-cast p1, Lajy;
 
-    iget-object v0, p0, Lajy;->mCashProviderManagerProvider:Ljavax/inject/Provider;
+    .line 169
+    iget-object v0, p0, Lajy;->mStoryId:Ljava/lang/String;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, p1, Lajy;->mStoryId:Ljava/lang/String;
 
-    move-result-object v0
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    check-cast v0, Lqh;
+    move-result v0
 
-    iput-object v0, p1, Lajv;->mCashProviderManager:Lqh;
+    goto :goto_0
+.end method
 
-    iget-object v0, p0, Lajy;->mUserDatabaseLoaderProvider:Ljavax/inject/Provider;
+.method public hashCode()I
+    .locals 1
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .prologue
+    .line 174
+    iget-object v0, p0, Lajy;->mStoryId:Ljava/lang/String;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    check-cast v0, Lajw;
+    move-result v0
 
-    iput-object v0, p1, Lajv;->mUserDatabaseLoader:Lajw;
+    add-int/lit16 v0, v0, 0x275
 
-    return-void
+    return v0
 .end method

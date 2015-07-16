@@ -45,11 +45,9 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
-
     .line 164
     iget v0, p0, Lcom/snapchat/android/util/AlertDialogUtils$20;->val$length:I
 
@@ -85,57 +83,29 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 177
+    .line 176
     :goto_0
     return-void
 
     .line 171
     :cond_0
-    const-string v0, "AlertDialogUtils"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Toasting wayyy too many times "
 
-    const-string v2, "Toasting wayyy too many times "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/snapchat/android/util/AlertDialogUtils$20;->val$string:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/snapchat/android/util/AlertDialogUtils$20;->val$string:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 173
+    .line 174
     :catch_0
     move-exception v0
-
-    .line 174
-    const-string v1, "AlertDialogUtils"
-
-    const-string v2, "Well, this is awkward."
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 175
-    const-string v1, "AlertDialogUtils"
-
-    invoke-static {v1, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method

@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.settings;
 
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import asr;
+import atq;
 import com.snapchat.android.analytics.AnalyticsEvents;
 
 final class SettingsFragment$23$2
@@ -13,7 +13,7 @@ final class SettingsFragment$23$2
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
     AnalyticsEvents.h(true);
-    asr.a(a.a.getActivity());
+    atq.a(a.a.getActivity());
   }
 }
 

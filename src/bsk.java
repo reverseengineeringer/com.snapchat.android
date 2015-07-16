@@ -1,31 +1,23 @@
-import org.json.JSONObject;
-
-public class bsk
-  implements bsi
+public enum bsk
 {
-  private brk a;
-  private brk b;
+  String i;
+  int j;
+  int k;
+  bsl.a l;
+  bsy m;
+  String n;
+  String o;
   
-  public bsk(brk parambrk1, brk parambrk2)
+  private bsk(String paramString2, int paramInt2, int paramInt3, bsl.a parama, bsy parambsy, String paramString3, String paramString4)
   {
-    a = parambrk1;
-    b = parambrk2;
+    i = paramString2;
+    j = paramInt2;
+    k = paramInt3;
+    l = parama;
+    m = parambsy;
+    n = paramString3;
+    o = paramString4;
   }
-  
-  public void a(boolean paramBoolean, int paramInt, JSONObject paramJSONObject)
-  {
-    if ((paramBoolean) || ((paramInt >= 200) && (paramInt < 300))) {}
-    for (paramInt = 1; paramInt != 0; paramInt = 0)
-    {
-      a.a();
-      return;
-    }
-    a.a(b);
-  }
-  
-  public static final class a
-    implements bsj
-  {}
 }
 
 /* Location:

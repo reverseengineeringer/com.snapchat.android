@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 352
+    .line 349
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$9$1;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$9;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 0
 
     .prologue
-    .line 356
+    .line 353
     :goto_0
     goto/32 :goto_0
 .end method

@@ -1,59 +1,36 @@
-import android.content.Context;
-import android.provider.Settings.Secure;
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
-import com.google.android.gms.ads.identifier.AdvertisingIdClient.Info;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.snapchat.android.Timber;
-import java.io.IOException;
+import android.view.MotionEvent;
+import android.view.View;
+import com.snapchat.android.ui.smartfilters.TurnOnFiltersView;
+import com.snapchat.android.ui.swipefilters.FilterPageType;
 
 public final class atd
+  extends asm
 {
-  private static final String OPT_OUT_RESPONSE = "optout";
-  private static final String TAG = "DemographicsTrackingUtils";
-  public final Context mContext;
-  private final ate mDeviceUtils;
+  private final TurnOnFiltersView b;
   
-  public atd(@cgb Context paramContext)
+  public atd(TurnOnFiltersView paramTurnOnFiltersView)
   {
-    this(paramContext, ate.a());
+    b = paramTurnOnFiltersView;
   }
   
-  private atd(@cgb Context paramContext, ate paramate)
-  {
-    mContext = paramContext;
-    mDeviceUtils = paramate;
-  }
-  
-  @cgc
   public final String a()
   {
-    if (GooglePlayServicesUtil.isGooglePlayServicesAvailable(mContext) == 0) {}
-    try
-    {
-      AdvertisingIdClient.Info localInfo = AdvertisingIdClient.getAdvertisingIdInfo(mContext);
-      String str = localInfo.getId();
-      boolean bool = localInfo.isLimitAdTrackingEnabled();
-      if (bool) {
-        str = "optout";
-      }
-      return str;
-    }
-    catch (IOException localIOException)
-    {
-      Timber.f("DemographicsTrackingUtils", String.format("Google advertising id lookup failed, by error %s", new Object[] { localIOException.toString() }), new Object[0]);
-      return null;
-      return Settings.Secure.getString(mContext.getContentResolver(), "android_id");
-    }
-    catch (GooglePlayServicesNotAvailableException localGooglePlayServicesNotAvailableException)
-    {
-      for (;;) {}
-    }
-    catch (GooglePlayServicesRepairableException localGooglePlayServicesRepairableException)
-    {
-      for (;;) {}
-    }
+    return "TurnOnSmartFilters";
+  }
+  
+  public final boolean a(MotionEvent paramMotionEvent)
+  {
+    return true;
+  }
+  
+  public final FilterPageType b()
+  {
+    return FilterPageType.TURN_ON_FILTERS_PAGE;
+  }
+  
+  public final View d()
+  {
+    return b;
   }
 }
 

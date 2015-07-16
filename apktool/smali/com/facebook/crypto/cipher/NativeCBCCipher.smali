@@ -14,16 +14,6 @@
 .end annotation
 
 
-# static fields
-.field private static final CIPHER_ALREADY_INIT:Ljava/lang/String; = "Cipher has already been initialized"
-
-.field private static final CIPHER_NOT_FINALIZED:Ljava/lang/String; = "Cipher has not been finalized"
-
-.field private static final CIPHER_NOT_INIT:Ljava/lang/String; = "Cipher has not been initialized"
-
-.field public static final FAILURE:Ljava/lang/String; = "Failure"
-
-
 # instance fields
 .field private mCtxPtr:I
     .annotation build Lbb;

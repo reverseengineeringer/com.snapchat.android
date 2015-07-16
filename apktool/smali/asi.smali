@@ -1,43 +1,41 @@
-.class public final Lasi;
-.super Lasj;
+.class public interface abstract Lasi;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, Lasj;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a()Laka;
+    .annotation build Lchc;
+    .end annotation
 .end method
 
+.method public abstract a(Lasj;)V
+.end method
 
-# virtual methods
-.method public final a(Lcom/snapchat/android/ui/SwipeImageView;Larw;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/snapchat/android/ui/SwipeImageView;",
-            "Larw",
-            "<",
-            "Larn;",
-            ">;)V"
-        }
+.method public abstract a(Z)V
+.end method
+
+.method public abstract b()Lajk;
+    .annotation build Lchd;
     .end annotation
+.end method
 
-    .prologue
-    .line 15
-    iget-object v0, p1, Lcom/snapchat/android/ui/SwipeImageView;->e:Landroid/widget/FrameLayout;
+.method public abstract c()Lcom/snapchat/android/rendering/SnapMediaRenderer;
+    .annotation build Lchc;
+    .end annotation
+.end method
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
+.method public abstract e()Z
+.end method
 
-    .line 16
-    invoke-virtual {p2}, Larw;->c()V
+.method public abstract f()Z
+.end method
 
-    .line 17
-    return-void
+.method public abstract g()V
+.end method
+
+.method public abstract h()V
+.end method
+
+.method public abstract i()V
 .end method

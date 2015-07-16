@@ -2,372 +2,278 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Laqf$a;
-    }
-.end annotation
+# interfaces
+.implements Laqc$a;
 
 
 # instance fields
-.field protected a:Z
+.field public a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
-.field protected b:F
+.field public b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
-.field private final c:Laqf$a;
+.field public c:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
-.field private final d:Landroid/content/Context;
+.field public d:F
 
-.field private e:F
+.field private e:Lasu;
 
-.field private f:F
-
-.field private g:I
-
-.field private h:Landroid/view/VelocityTracker;
+.field private f:Lcom/snapchat/android/ui/SwipeViewState;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Laqf$a;)V
-    .locals 3
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Laqf$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    const/high16 v1, -0x40800000    # -1.0f
-
-    .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 29
-    iput v1, p0, Laqf;->e:F
-
-    .line 30
-    iput v1, p0, Laqf;->f:F
-
-    .line 31
-    const/4 v0, -0x1
-
-    iput v0, p0, Laqf;->g:I
-
-    .line 33
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laqf;->a:Z
-
-    .line 34
-    iput v1, p0, Laqf;->b:F
-
-    .line 47
-    iput-object p1, p0, Laqf;->d:Landroid/content/Context;
-
-    .line 48
-    iput-object p2, p0, Laqf;->c:Laqf$a;
-
-    .line 49
-    iget-object v0, p0, Laqf;->d:Landroid/content/Context;
-
-    invoke-static {v0}, Lavh;->b(Landroid/content/Context;)I
-
-    move-result v0
-
-    int-to-float v1, v0
-
-    const/high16 v2, 0x3e000000    # 0.125f
-
-    mul-float/2addr v1, v2
-
-    iput v1, p0, Laqf;->e:F
-
-    int-to-float v0, v0
-
-    const/high16 v1, 0x3e800000    # 0.25f
-
-    mul-float/2addr v0, v1
-
-    iput v0, p0, Laqf;->f:F
-
-    const/high16 v0, 0x43480000    # 200.0f
-
-    iget-object v1, p0, Laqf;->d:Landroid/content/Context;
-
-    invoke-static {v0, v1}, Lavh;->a(FLandroid/content/Context;)F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    iput v0, p0, Laqf;->g:I
-
-    .line 50
-    return-void
-.end method
-
-.method private a()V
+.method public constructor <init>(Lasu;Lcom/snapchat/android/ui/SwipeViewState;)V
     .locals 1
 
     .prologue
-    .line 126
+    .line 17
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 18
+    iput-object p1, p0, Laqf;->e:Lasu;
+
+    .line 19
+    iput-object p2, p0, Laqf;->f:Lcom/snapchat/android/ui/SwipeViewState;
+
+    .line 20
+    sget-object v0, Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;->NORMAL:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    iput-object v0, p0, Laqf;->b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    .line 21
+    sget-object v0, Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;->NORMAL:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    iput-object v0, p0, Laqf;->c:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    .line 22
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Laqf;->a:Z
+    iput v0, p0, Laqf;->d:F
 
-    .line 127
-    const/high16 v0, -0x40800000    # -1.0f
-
-    iput v0, p0, Laqf;->b:F
-
-    .line 128
-    iget-object v0, p0, Laqf;->h:Landroid/view/VelocityTracker;
-
-    if-eqz v0, :cond_0
-
-    .line 129
-    iget-object v0, p0, Laqf;->h:Landroid/view/VelocityTracker;
-
-    invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
-
-    .line 130
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Laqf;->h:Landroid/view/VelocityTracker;
-
-    .line 132
-    :cond_0
+    .line 23
     return-void
+.end method
+
+.method private b()V
+    .locals 6
+
+    .prologue
+    const/4 v3, 0x0
+
+    const/4 v2, 0x1
+
+    .line 65
+    iget-object v0, p0, Laqf;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Laqf;->e:Lasu;
+
+    invoke-interface {v0}, Lasu;->b()I
+
+    move-result v0
+
+    if-lez v0, :cond_2
+
+    .line 71
+    iget-object v0, p0, Laqf;->f:Lcom/snapchat/android/ui/SwipeViewState;
+
+    iget-boolean v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->l:Z
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Laqf;->e:Lasu;
+
+    iget-object v1, p0, Laqf;->f:Lcom/snapchat/android/ui/SwipeViewState;
+
+    iget v1, v1, Lcom/snapchat/android/ui/SwipeViewState;->a:I
+
+    invoke-interface {v0, v1}, Lasu;->a(I)Lasm;
+
+    move-result-object v0
+
+    instance-of v0, v0, Lasn;
+
+    if-nez v0, :cond_3
+
+    move v1, v2
+
+    .line 74
+    :goto_0
+    iget-object v0, p0, Laqf;->e:Lasu;
+
+    iget-object v4, p0, Laqf;->f:Lcom/snapchat/android/ui/SwipeViewState;
+
+    invoke-virtual {v4, v1}, Lcom/snapchat/android/ui/SwipeViewState;->a(Z)I
+
+    move-result v4
+
+    invoke-interface {v0, v4}, Lasu;->a(I)Lasm;
+
+    move-result-object v0
+
+    .line 75
+    iget-object v4, p0, Laqf;->e:Lasu;
+
+    iget-object v5, p0, Laqf;->f:Lcom/snapchat/android/ui/SwipeViewState;
+
+    invoke-virtual {v5, v1}, Lcom/snapchat/android/ui/SwipeViewState;->b(Z)I
+
+    move-result v1
+
+    invoke-interface {v4, v1}, Lasu;->a(I)Lasm;
+
+    move-result-object v1
+
+    .line 77
+    sget-object v4, Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;->NORMAL:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    .line 78
+    instance-of v5, v0, Lasn;
+
+    if-eqz v5, :cond_5
+
+    .line 79
+    check-cast v0, Lasn;
+
+    iget-object v0, v0, Lasn;->b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    .line 81
+    :goto_1
+    iget-object v4, p0, Laqf;->b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    if-eq v4, v0, :cond_0
+
+    .line 82
+    iput-object v0, p0, Laqf;->b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    move v3, v2
+
+    .line 85
+    :cond_0
+    sget-object v0, Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;->NORMAL:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    .line 86
+    instance-of v4, v1, Lasn;
+
+    if-eqz v4, :cond_1
+
+    move-object v0, v1
+
+    .line 87
+    check-cast v0, Lasn;
+
+    iget-object v0, v0, Lasn;->b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    .line 89
+    :cond_1
+    iget-object v1, p0, Laqf;->c:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    if-eq v1, v0, :cond_4
+
+    .line 90
+    iput-object v0, p0, Laqf;->c:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    .line 93
+    :goto_2
+    if-eqz v2, :cond_2
+
+    .line 94
+    invoke-virtual {p0}, Laqf;->a()V
+
+    .line 97
+    :cond_2
+    return-void
+
+    :cond_3
+    move v1, v3
+
+    .line 71
+    goto :goto_0
+
+    :cond_4
+    move v2, v3
+
+    goto :goto_2
+
+    :cond_5
+    move-object v0, v4
+
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/MotionEvent;)Z
-    .locals 6
-    .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a()V
+    .locals 3
 
     .prologue
-    const/4 v1, 0x0
+    .line 103
+    iget-object v0, p0, Laqf;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    iget-object v1, p0, Laqf;->b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
-    const/4 v0, 0x1
+    iget-object v2, p0, Laqf;->c:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
-    .line 60
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    invoke-virtual {v0, v1, v2}, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->changeFilter(Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;)V
 
-    move-result v2
+    .line 104
+    return-void
+.end method
 
-    if-ne v2, v0, :cond_4
+.method public final a(Lcom/snapchat/android/ui/SwipeImageView;)V
+    .locals 2
 
-    .line 61
-    iget-boolean v2, p0, Laqf;->a:Z
+    .prologue
+    .line 39
+    invoke-virtual {p1}, Lcom/snapchat/android/ui/SwipeImageView;->getScrollOffset()F
 
-    if-eqz v2, :cond_3
+    move-result v0
 
-    .line 62
-    iget-object v2, p0, Laqf;->d:Landroid/content/Context;
+    iput v0, p0, Laqf;->d:F
 
-    invoke-static {v2}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+    .line 40
+    iget-object v0, p0, Laqf;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
-    move-result-object v2
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v2}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
+    .line 41
+    invoke-direct {p0}, Laqf;->b()V
 
-    move-result v2
+    .line 42
+    iget-object v0, p0, Laqf;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
-    iget-object v3, p0, Laqf;->h:Landroid/view/VelocityTracker;
+    iget v1, p0, Laqf;->d:F
 
-    const/16 v4, 0x3e8
+    invoke-virtual {v0, v1}, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->changeSplit(F)V
 
-    int-to-float v2, v2
-
-    invoke-virtual {v3, v4, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
-
-    invoke-virtual {v3}, Landroid/view/VelocityTracker;->getYVelocity()F
-
-    move-result v2
-
-    float-to-int v2, v2
-
-    iget v3, p0, Laqf;->g:I
-
-    if-le v2, v3, :cond_0
-
-    move v1, v0
-
+    .line 44
     :cond_0
-    if-eqz v1, :cond_2
+    return-void
+.end method
 
-    .line 63
-    iget-object v1, p0, Laqf;->c:Laqf$a;
+.method public final a(Lcom/snapchat/android/ui/SwipeImageView;Z)V
+    .locals 1
 
-    invoke-interface {v1}, Laqf$a;->b()V
+    .prologue
+    .line 52
+    if-eqz p2, :cond_0
 
-    .line 70
-    :goto_0
-    invoke-direct {p0}, Laqf;->a()V
+    iget-object v0, p0, Laqf;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
-    .line 103
-    :cond_1
-    :goto_1
-    return v0
+    if-eqz v0, :cond_0
 
-    .line 65
-    :cond_2
-    iget-object v1, p0, Laqf;->c:Laqf$a;
+    .line 53
+    invoke-direct {p0}, Laqf;->b()V
 
-    invoke-interface {v1}, Laqf$a;->c()V
+    .line 55
+    :cond_0
+    return-void
+.end method
 
-    goto :goto_0
+.method public final q()V
+    .locals 0
 
-    .line 68
-    :cond_3
-    iget-object v1, p0, Laqf;->c:Laqf$a;
-
-    invoke-interface {v1}, Laqf$a;->a()V
-
-    goto :goto_0
-
-    .line 75
-    :cond_4
-    iget-object v2, p0, Laqf;->h:Landroid/view/VelocityTracker;
-
-    if-nez v2, :cond_5
-
-    .line 76
-    invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
-
-    move-result-object v2
-
-    iput-object v2, p0, Laqf;->h:Landroid/view/VelocityTracker;
-
-    .line 78
-    :cond_5
-    iget-object v2, p0, Laqf;->h:Landroid/view/VelocityTracker;
-
-    invoke-virtual {v2, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
-
-    .line 80
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v2
-
-    const/4 v3, 0x2
-
-    if-ne v2, v3, :cond_8
-
-    .line 83
-    iget-boolean v2, p0, Laqf;->a:Z
-
-    if-nez v2, :cond_6
-
-    .line 84
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v2
-
-    iget v3, p0, Laqf;->b:F
-
-    const/high16 v4, -0x40800000    # -1.0f
-
-    cmpl-float v3, v3, v4
-
-    if-eqz v3, :cond_6
-
-    iget v3, p0, Laqf;->b:F
-
-    sub-float/2addr v2, v3
-
-    iget v3, p0, Laqf;->e:F
-
-    cmpl-float v2, v2, v3
-
-    if-lez v2, :cond_6
-
-    iput-boolean v0, p0, Laqf;->a:Z
-
-    .line 87
-    :cond_6
-    iget-boolean v2, p0, Laqf;->a:Z
-
-    if-eqz v2, :cond_7
-
-    .line 88
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    iget v4, p0, Laqf;->b:F
-
-    sub-float/2addr v2, v4
-
-    iget v4, p0, Laqf;->f:F
-
-    div-float/2addr v2, v4
-
-    invoke-static {v3, v2}, Ljava/lang/Math;->max(FF)F
-
-    move-result v2
-
-    invoke-static {v5, v2}, Ljava/lang/Math;->min(FF)F
-
-    move-result v2
-
-    .line 89
-    iget-object v3, p0, Laqf;->c:Laqf$a;
-
-    invoke-interface {v3, v2}, Laqf$a;->a(F)V
-
-    .line 90
-    cmpl-float v2, v2, v5
-
-    if-nez v2, :cond_7
-
-    .line 91
-    invoke-direct {p0}, Laqf;->a()V
-
-    .line 92
-    iget-object v2, p0, Laqf;->c:Laqf$a;
-
-    invoke-interface {v2}, Laqf$a;->b()V
-
-    .line 99
-    :cond_7
-    :goto_2
-    iget-boolean v2, p0, Laqf;->a:Z
-
-    if-nez v2, :cond_1
-
-    move v0, v1
-
-    .line 103
-    goto :goto_1
-
-    .line 95
-    :cond_8
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v2
-
-    if-nez v2, :cond_7
-
-    .line 96
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v2
-
-    iput v2, p0, Laqf;->b:F
-
-    goto :goto_2
+    .prologue
+    .line 48
+    return-void
 .end method

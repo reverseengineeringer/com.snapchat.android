@@ -1,56 +1,20 @@
-import android.graphics.Bitmap;
-
 public final class aip
-  extends bfm
 {
-  private static final String TAG = "DecryptedSnapVideo";
-  private final awp mCache;
-  private final String mKey;
-  @cgc
-  private final Bitmap mOverlay;
+  private static final aip c = new aip();
+  final Object a = new Object();
+  akv b;
   
-  private aip(@cgb awp paramawp, @cgb String paramString, @cgc Bitmap paramBitmap)
+  public static aip a()
   {
-    mCache = paramawp;
-    mKey = paramString;
-    mOverlay = paramBitmap;
+    return c;
   }
   
-  @cgc
-  public final String a()
+  public final akv b()
   {
-    f();
-    return mCache.b(mKey);
-  }
-  
-  @cgc
-  public final Bitmap b()
-  {
-    f();
-    return mOverlay;
-  }
-  
-  protected final void c()
-  {
-    mCache.c(mKey);
-  }
-  
-  public static final class a
-  {
-    public Bitmap mBitmap = null;
-    public final awp mCache;
-    public final String mKey;
-    
-    public a(@cgb awp paramawp, @cgb String paramString)
+    synchronized (a)
     {
-      mCache = ((awp)ck.a(paramawp));
-      mKey = ((String)ck.a(paramString));
-    }
-    
-    public final a a(@cgb Bitmap paramBitmap)
-    {
-      mBitmap = ((Bitmap)ck.a(paramBitmap));
-      return this;
+      akv localakv = b;
+      return localakv;
     }
   }
 }

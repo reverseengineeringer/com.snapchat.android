@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lapl$b;
+.implements Laqk$b;
 
 
 # annotations
@@ -84,35 +84,21 @@
 
     throw v0
 
-    .line 960
-    :pswitch_0
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Received spring rest event while in DRAG state. Weird. Ignoring."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 973
-    :goto_0
-    :pswitch_1
-    return-void
-
     .line 963
-    :pswitch_2
+    :pswitch_0
     iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger$b;->a:Lcom/snapchat/android/ui/VerticalFlinger;
 
     sget-object v1, Lcom/snapchat/android/ui/VerticalFlinger$MovementState;->GONE:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/ui/VerticalFlinger;->a(Lcom/snapchat/android/ui/VerticalFlinger;Lcom/snapchat/android/ui/VerticalFlinger$MovementState;)V
 
-    goto :goto_0
+    .line 973
+    :goto_0
+    :pswitch_1
+    return-void
 
     .line 969
-    :pswitch_3
+    :pswitch_2
     iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger$b;->a:Lcom/snapchat/android/ui/VerticalFlinger;
 
     sget-object v1, Lcom/snapchat/android/ui/VerticalFlinger$MovementState;->CENTER:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
@@ -122,7 +108,7 @@
     goto :goto_0
 
     .line 972
-    :pswitch_4
+    :pswitch_3
     iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger$b;->a:Lcom/snapchat/android/ui/VerticalFlinger;
 
     sget-object v1, Lcom/snapchat/android/ui/VerticalFlinger$MovementState;->CENTER:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
@@ -132,23 +118,21 @@
     goto :goto_0
 
     .line 955
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
-        :pswitch_0
-        :pswitch_2
         :pswitch_1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
         :pswitch_3
-        :pswitch_4
     .end packed-switch
 .end method
 
-.method public final a(Lapl;)V
+.method public final a(Laqk;)V
     .locals 6
-    .param p1    # Lapl;
-        .annotation build Lcgb;
+    .param p1    # Laqk;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -156,41 +140,41 @@
     .line 950
     iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger$b;->a:Lcom/snapchat/android/ui/VerticalFlinger;
 
-    invoke-virtual {p1}, Lapl;->f()V
+    invoke-virtual {p1}, Laqk;->f()V
 
-    iget-boolean v0, p1, Lapl;->d:Z
+    iget-boolean v0, p1, Laqk;->d:Z
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lbff;
+    new-instance v0, Lbgf;
 
-    iget-object v2, p1, Lapl;->a:Lbj;
+    iget-object v2, p1, Laqk;->a:Lbj;
 
     iget-object v2, v2, Lbj;->d:Lbj$a;
 
     iget-wide v2, v2, Lbj$a;->a:D
 
-    iget-object v4, p1, Lapl;->b:Lbj;
+    iget-object v4, p1, Laqk;->b:Lbj;
 
     iget-object v4, v4, Lbj;->d:Lbj$a;
 
     iget-wide v4, v4, Lbj$a;->a:D
 
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lbgf;-><init>(DD)V
 
     :goto_0
-    invoke-static {v1, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->a(Lcom/snapchat/android/ui/VerticalFlinger;Lbff;)V
+    invoke-static {v1, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->a(Lcom/snapchat/android/ui/VerticalFlinger;Lbgf;)V
 
     .line 951
     return-void
 
     .line 950
     :cond_0
-    iget-object v0, p1, Lapl;->e:Lbff;
+    iget-object v0, p1, Laqk;->e:Lbgf;
 
-    invoke-static {v0}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p1, Lapl;->e:Lbff;
+    iget-object v0, p1, Laqk;->e:Lbgf;
 
     goto :goto_0
 .end method

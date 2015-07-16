@@ -1,35 +1,21 @@
-.class public final Lbvj;
+.class public interface abstract annotation Lbvj;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
 
-# direct methods
-.method public static a(Landroid/content/Context;)Z
-    .locals 1
 
-    .prologue
-    .line 124
-    sget-object v0, Lbuz;->b:Ljava/lang/String;
+# annotations
+.annotation runtime Ljava/lang/annotation/Documented;
+.end annotation
 
-    if-nez v0, :cond_0
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
-    .line 125
-    invoke-static {p0}, Lbuz;->a(Landroid/content/Context;)V
-
-    .line 127
-    sget-object v0, Lbuz;->b:Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
-    .line 128
-    const/4 v0, 0x0
-
-    .line 132
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
+.annotation runtime Ljava/lang/annotation/Target;
+    value = {
+        .enum Ljava/lang/annotation/ElementType;->ANNOTATION_TYPE:Ljava/lang/annotation/ElementType;
+    }
+.end annotation

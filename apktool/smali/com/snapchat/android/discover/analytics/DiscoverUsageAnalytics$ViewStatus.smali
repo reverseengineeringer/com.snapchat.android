@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 61
+    .line 62
     new-instance v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
     const-string v1, "INCOMPLETE"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->INCOMPLETE:Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
-    .line 62
+    .line 63
     new-instance v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
     const-string v1, "COMPLETED"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->COMPLETED:Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
-    .line 63
+    .line 64
     new-instance v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
     const-string v1, "ERROR"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->ERROR:Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
-    .line 60
+    .line 61
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 61
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 61
     const-class v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 61
     sget-object v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->$VALUES:[Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->clone()Ljava/lang/Object;
@@ -146,7 +146,7 @@
     .locals 1
 
     .prologue
-    .line 67
+    .line 68
     sget-object v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->COMPLETED:Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$ViewStatus;->equals(Ljava/lang/Object;)Z

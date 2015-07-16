@@ -1,32 +1,17 @@
-import javax.inject.Provider;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.util.CashUtils.CurrencyCode;
 
 public final class tp
-  implements buo<to>
 {
-  private final Provider<ato> gsonProvider;
-  private final buj<to> membersInjector;
+  @SerializedName("amount")
+  private final int mAmount;
+  @SerializedName("currency_code")
+  @chc
+  private final String mCurrencyCode = CashUtils.CurrencyCode.USD.name();
   
-  static
+  public tp(int paramInt)
   {
-    if (!tp.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
-  }
-  
-  private tp(buj<to> parambuj, Provider<ato> paramProvider)
-  {
-    assert (parambuj != null);
-    membersInjector = parambuj;
-    assert (paramProvider != null);
-    gsonProvider = paramProvider;
-  }
-  
-  public static buo<to> a(buj<to> parambuj, Provider<ato> paramProvider)
-  {
-    return new tp(parambuj, paramProvider);
+    mAmount = paramInt;
   }
 }
 

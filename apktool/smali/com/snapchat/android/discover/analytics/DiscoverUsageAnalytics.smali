@@ -13,11 +13,11 @@
 
 
 # instance fields
-.field public final a:Lmj;
+.field public final a:Lna;
 
 .field private final b:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
 
-.field private final c:Laev;
+.field private final c:Lafv;
 
 
 # direct methods
@@ -25,50 +25,50 @@
     .locals 3
 
     .prologue
-    .line 72
+    .line 73
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a()Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
 
     move-result-object v0
 
-    invoke-static {}, Lmj;->a()Lmj;
+    invoke-static {}, Lna;->a()Lna;
 
     move-result-object v1
 
-    new-instance v2, Laev;
+    new-instance v2, Lafv;
 
-    invoke-direct {v2}, Laev;-><init>()V
+    invoke-direct {v2}, Lafv;-><init>()V
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;-><init>(Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;Lmj;Laev;)V
+    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;-><init>(Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;Lna;Lafv;)V
 
-    .line 73
+    .line 74
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;Lmj;Laev;)V
+.method private constructor <init>(Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;Lna;Lafv;)V
     .locals 0
 
     .prologue
-    .line 78
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
+    .line 80
     iput-object p1, p0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->b:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
 
-    .line 80
-    iput-object p2, p0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->a:Lmj;
-
     .line 81
-    iput-object p3, p0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->c:Laev;
+    iput-object p2, p0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->a:Lna;
 
     .line 82
+    iput-object p3, p0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->c:Lafv;
+
+    .line 83
     return-void
 .end method
 
-.method public static a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lhy;
-    .locals 3
+.method public static a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
+    .locals 2
 
     .prologue
-    .line 1009
+    .line 1088
     sget-object v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$1;->c:[I
 
     invoke-virtual {p0}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
@@ -79,36 +79,25 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1015
-    const-string v0, "DiscoverAnalytics"
-
-    const-string v1, "Unsupported top snap media type, returning null."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1016
+    .line 1094
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 1011
+    .line 1090
     :pswitch_0
-    sget-object v0, Lhy;->IMAGE:Lhy;
+    sget-object v0, Lih;->IMAGE:Lih;
 
     goto :goto_0
 
-    .line 1013
+    .line 1092
     :pswitch_1
-    sget-object v0, Lhy;->VIDEO:Lhy;
+    sget-object v0, Lih;->VIDEO:Lih;
 
     goto :goto_0
 
-    .line 1009
+    .line 1088
     nop
 
     :pswitch_data_0
@@ -118,11 +107,11 @@
     .end packed-switch
 .end method
 
-.method public static a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;Z)Lhy;
-    .locals 3
+.method public static a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;Z)Lih;
+    .locals 2
 
     .prologue
-    .line 1039
+    .line 1118
     sget-object v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$1;->c:[I
 
     invoke-virtual {p0}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
@@ -133,45 +122,34 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1053
-    const-string v0, "DiscoverAnalytics"
-
-    const-string v1, "Unsupported longform media type, returning null."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1054
+    .line 1132
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 1042
+    .line 1121
     :pswitch_0
-    sget-object v0, Lhy;->IMAGE:Lhy;
+    sget-object v0, Lih;->IMAGE:Lih;
 
     goto :goto_0
 
-    .line 1045
+    .line 1124
     :pswitch_1
     if-eqz p1, :cond_0
 
-    .line 1046
-    sget-object v0, Lhy;->VIDEO_NO_SOUND:Lhy;
+    .line 1125
+    sget-object v0, Lih;->VIDEO_NO_SOUND:Lih;
 
     goto :goto_0
 
-    .line 1048
+    .line 1127
     :cond_0
-    sget-object v0, Lhy;->VIDEO:Lhy;
+    sget-object v0, Lih;->VIDEO:Lih;
 
     goto :goto_0
 
-    .line 1039
+    .line 1118
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -181,11 +159,11 @@
     .end packed-switch
 .end method
 
-.method public static b(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lhy;
-    .locals 3
+.method public static b(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
+    .locals 2
 
     .prologue
-    .line 1024
+    .line 1103
     sget-object v0, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics$1;->c:[I
 
     invoke-virtual {p0}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
@@ -196,36 +174,25 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1030
-    const-string v0, "DiscoverAnalytics"
-
-    const-string v1, "Unsupported longform media type, returning null."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1031
+    .line 1109
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 1026
+    .line 1105
     :pswitch_0
-    sget-object v0, Lhy;->TEXT:Lhy;
+    sget-object v0, Lih;->TEXT:Lih;
 
     goto :goto_0
 
-    .line 1028
+    .line 1107
     :pswitch_1
-    sget-object v0, Lhy;->VIDEO:Lhy;
+    sget-object v0, Lih;->VIDEO:Lih;
 
     goto :goto_0
 
-    .line 1024
+    .line 1103
     nop
 
     :pswitch_data_0

@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.verification;
 
-import ajx;
+import akr;
 import android.app.AlertDialog;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import ki;
+import la;
 
 final class PhoneVerificationFragment$5
   implements View.OnClickListener
@@ -20,13 +20,13 @@ final class PhoneVerificationFragment$5
     if (!PhoneVerificationFragment.o(a)) {}
     for (paramView = PhoneVerificationFragment.p(a);; paramView = null)
     {
-      if (ajx.v())
+      if (akr.v())
       {
-        ki localki = new ki();
+        la localla = new la();
         country = paramView;
-        ScAnalyticsEventEngine.a(localki);
-        if (ajx.v()) {
-          new EasyMetric("R01_FOCUS_ON_COUNTRY").d();
+        ScAnalyticsEventEngine.a(localla);
+        if (akr.v()) {
+          new EasyMetric("R01_FOCUS_ON_COUNTRY").e();
         }
       }
       return;

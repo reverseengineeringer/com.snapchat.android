@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import aqd;
-import avh;
+import arc;
+import awf;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,11 +41,11 @@ public class DismissAnimationView
   
   private void a(Context paramContext)
   {
-    aqd localaqd = new aqd(getResources().getColor(2131230806));
+    arc localarc = new arc(getResources().getColor(2131230807));
     ImageView localImageView = new ImageView(paramContext);
-    avh.a(localImageView, localaqd);
-    int i = avh.a(paramContext);
-    int j = avh.b(paramContext);
+    awf.a(localImageView, localarc);
+    int i = awf.a(paramContext);
+    int j = awf.b(paramContext);
     float f1 = (float)Math.sqrt(i * i + j * j) * 0.5F;
     float f2 = i;
     float f3 = j;

@@ -3,9 +3,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Deprecated
 @Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.TYPE})
+@Target({java.lang.annotation.ElementType.METHOD})
 public @interface cbu {}
 
 /* Location:

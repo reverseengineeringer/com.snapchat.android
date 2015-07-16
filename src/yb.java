@@ -1,31 +1,4 @@
-public final class yb
-  implements buo<ya>
-{
-  private final buj<ya> b;
-  
-  static
-  {
-    if (!yb.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
-  }
-  
-  private yb(buj<ya> parambuj)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-  }
-  
-  public static buo<ya> a(buj<ya> parambuj)
-  {
-    return new yb(parambuj);
-  }
-}
+public final class yb {}
 
 /* Location:
  * Qualified Name:     yb

@@ -1,18 +1,56 @@
-.class public interface abstract annotation Lcax;
+.class public interface abstract Lcax;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/annotation/Annotation;
+.implements Lcbk;
 
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->CLASS:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+# virtual methods
+.method public abstract a(B)J
+.end method
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->TYPE:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+.method public abstract a(J)V
+.end method
+
+.method public abstract b()Lcav;
+.end method
+
+.method public abstract c(J)Lcay;
+.end method
+
+.method public abstract d()Z
+.end method
+
+.method public abstract e()Ljava/io/InputStream;
+.end method
+
+.method public abstract e(J)[B
+.end method
+
+.method public abstract f()B
+.end method
+
+.method public abstract f(J)V
+.end method
+
+.method public abstract g()S
+.end method
+
+.method public abstract h()I
+.end method
+
+.method public abstract i()S
+.end method
+
+.method public abstract j()I
+.end method
+
+.method public abstract k()J
+.end method
+
+.method public abstract l()J
+.end method
+
+.method public abstract n()Ljava/lang/String;
+.end method

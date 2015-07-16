@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 196
+    .line 203
     iput-object p1, p0, Lcom/snapchat/android/model/chat/ChatConversation$1;->this$0:Lcom/snapchat/android/model/chat/ChatConversation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,13 +40,13 @@
     .locals 2
 
     .prologue
-    .line 199
+    .line 206
     iget-object v0, p0, Lcom/snapchat/android/model/chat/ChatConversation$1;->this$0:Lcom/snapchat/android/model/chat/ChatConversation;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/model/chat/ChatConversation;->b(Z)V
 
-    .line 200
+    .line 207
     return-void
 .end method

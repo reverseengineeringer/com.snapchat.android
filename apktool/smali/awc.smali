@@ -2,75 +2,72 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lavy;
-
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lavo;Lavx;)V
+.method public static a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
     .prologue
+    .line 13
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.VIEW"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 14
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "smsto:"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    .line 15
+    const-string v1, "address"
+
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
     .line 16
-    invoke-static {}, Lbgp;->a()V
+    const-string v1, "sms_body"
 
-    .line 18
-    iget-object v0, p1, Lavo;->mBitmap:Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    if-eqz v0, :cond_0
+    .line 17
+    const-string v1, "android.intent.extra.TEXT"
+
+    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 19
-    iget-object v1, p2, Lavx;->mImageView:Landroid/widget/ImageView;
-
-    .line 20
-    if-eqz v1, :cond_0
-
-    .line 21
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 22
-    instance-of v2, v0, Lawe;
-
-    if-eqz v2, :cond_0
+    :try_start_0
+    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 23
-    check-cast v0, Lawe;
-
-    .line 24
-    iget-object v2, p2, Lavx;->mRequestId:Ljava/lang/String;
-
-    iget-object v0, v0, Lawe;->mLoaderTask:Lawd;
-
-    iget-object v0, v0, Lawd;->mRequest:Lavx;
-
-    iget-object v0, v0, Lavx;->mRequestId:Ljava/lang/String;
-
-    invoke-static {v2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 25
-    iget-object v0, p1, Lavo;->mBitmap:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 30
-    :cond_0
+    :goto_0
     return-void
+
+    .line 21
+    :catch_0
+    move-exception v0
+
+    const v0, 0x7f0c0187
+
+    invoke-static {v0, p0}, Lcom/snapchat/android/util/AlertDialogUtils;->a(ILandroid/content/Context;)V
+
+    goto :goto_0
 .end method

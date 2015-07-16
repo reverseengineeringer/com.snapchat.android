@@ -59,7 +59,7 @@ public class RegisteringEventEmitter
     return new RegisteringEventEmitter(localEventEmitter, paramClass);
   }
   
-  private List<Annotation> getAnnotations(Class<? extends Object> paramClass, Class<? extends Annotation> paramClass1)
+  private List<Annotation> getAnnotations(Class<?> paramClass, Class<? extends Annotation> paramClass1)
   {
     ArrayList localArrayList = new ArrayList();
     Class localClass = paramClass.getSuperclass();

@@ -1,38 +1,17 @@
-import android.media.MediaMetadataRetriever;
+import android.os.SystemClock;
 
 public final class bfi
 {
-  private final azo mExceptionReporter;
-  private final bfh mInitializer;
-  private final bfg mRetrieverFactory;
+  public final long eventTimeMilliseconds;
   
   public bfi()
   {
-    this(new bfh(), new bfg(), new azo());
+    this(SystemClock.elapsedRealtime());
   }
   
-  private bfi(bfh parambfh, bfg parambfg, azo paramazo)
+  private bfi(long paramLong)
   {
-    mInitializer = parambfh;
-    mRetrieverFactory = parambfg;
-    mExceptionReporter = paramazo;
-  }
-  
-  @cgc
-  public final MediaMetadataRetriever a(String paramString)
-  {
-    MediaMetadataRetriever localMediaMetadataRetriever = new MediaMetadataRetriever();
-    try
-    {
-      bfh.a(localMediaMetadataRetriever, paramString);
-      return localMediaMetadataRetriever;
-    }
-    catch (bew paramString)
-    {
-      localMediaMetadataRetriever.release();
-      mExceptionReporter.b(paramString);
-    }
-    return null;
+    eventTimeMilliseconds = paramLong;
   }
 }
 

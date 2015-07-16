@@ -1,21 +1,20 @@
 package com.snapchat.android.fragments.stories;
 
-import ajr;
+import akl;
 import android.content.Context;
-import aop;
-import aqb;
-import bdi;
+import apl;
+import ara;
+import bei;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.StoryCollection;
-import java.util.List;
-import lo;
-import pu;
+import mg;
+import ql;
 
 final class StoriesFragment$10
-  extends aqb
+  extends ara
 {
-  StoriesFragment$10(StoriesFragment paramStoriesFragment, Context paramContext, String paramString1, String paramString2, String paramString3, Friend paramFriend, StoryCollection paramStoryCollection, bdi parambdi)
+  StoriesFragment$10(StoriesFragment paramStoriesFragment, Context paramContext, String paramString1, String paramString2, String paramString3, Friend paramFriend, StoryCollection paramStoryCollection, bei parambei)
   {
     super(paramContext, paramString1, paramString2, paramString3);
   }
@@ -24,28 +23,26 @@ final class StoriesFragment$10
   
   protected final void b()
   {
-    new pu(a.h()).f();
+    new ql(a.l()).execute();
     StoriesFragment.o(d);
     StoryCollection localStoryCollection = b;
     boolean bool = c.isInRecentUpdates;
-    if ((localStoryCollection == null) || (localStoryCollection.e().size() == 0)) {}
-    for (;;)
+    if (localStoryCollection != null)
     {
-      StoriesFragment.a(d, a);
-      return;
-      ajr localajr = (ajr)localStoryCollection.e().get(0);
-      lo locallo = new lo();
-      viewLocation = Long.valueOf(aop.a(bool));
-      storyType = aop.c(localajr);
-      posterId = localStoryCollection.h();
-      if (localajr.aw()) {
-        sponsor = localajr.ax();
+      akl localakl = localStoryCollection.d();
+      if (localakl != null)
+      {
+        mg localmg = new mg();
+        viewLocation = Long.valueOf(apl.b(bool));
+        storyType = apl.c(localakl);
+        posterId = localStoryCollection.l();
+        if (apl.a(localStoryCollection.l())) {
+          geoFence = "LOCAL";
+        }
+        ScAnalyticsEventEngine.a(localmg);
       }
-      if (aop.a(localStoryCollection.h())) {
-        geoFence = "LOCAL";
-      }
-      ScAnalyticsEventEngine.a(locallo);
     }
+    StoriesFragment.a(d, a);
   }
 }
 

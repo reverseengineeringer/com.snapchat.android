@@ -6,21 +6,21 @@ import android.os.Message;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.FriendAction;
-import pp;
-import pp.a;
+import qg;
+import qg.a;
 
 final class AlertDialogUtils$13
   implements DialogInterface.OnClickListener
 {
-  AlertDialogUtils$13(Friend paramFriend, Message paramMessage, AnalyticsEvents.AnalyticsContext paramAnalyticsContext, pp.a parama) {}
+  AlertDialogUtils$13(Friend paramFriend, Message paramMessage, AnalyticsEvents.AnalyticsContext paramAnalyticsContext, qg.a parama) {}
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    paramDialogInterface = new pp(val$friend, FriendAction.UNBLOCK);
+    paramDialogInterface = new qg(val$friend, FriendAction.UNBLOCK);
     mOnFriendActionMessage = val$onFriendActionMessage;
     mAnalyticsContext = val$analyticsContext;
     mFriendActionCompleteCallback = val$friendActionCompleteCallback;
-    paramDialogInterface.e().f();
+    paramDialogInterface.a().execute();
   }
 }
 

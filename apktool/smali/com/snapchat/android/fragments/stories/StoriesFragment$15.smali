@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 506
+    .line 505
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$15;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 509
+    .line 508
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$15;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     iget-boolean v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->h:Z
@@ -49,13 +49,13 @@
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$15;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->e(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->d(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
 
-    .line 510
+    .line 509
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$15;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->f(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lbfa;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->e(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lbfz;
 
     move-result-object v0
 
@@ -63,8 +63,8 @@
 
     const/4 v2, 0x1
 
-    invoke-interface {v0, v1, v2}, Lbfa;->a(IZ)V
+    invoke-interface {v0, v1, v2}, Lbfz;->a(IZ)V
 
-    .line 511
+    .line 510
     return-void
 .end method

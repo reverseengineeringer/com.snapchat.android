@@ -1,30 +1,10 @@
-import android.graphics.Bitmap;
+import java.util.concurrent.CountDownLatch;
 
-final class bot
-  extends boj<Object>
+public final class bot
 {
-  private final Object m = new Object();
-  private bon n = null;
-  
-  bot(bpd parambpd, bpg parambpg, int paramInt1, int paramInt2, Object paramObject, String paramString)
-  {
-    super(parambpd, null, parambpg, paramInt1, paramInt2, 0, null, paramString, paramObject, false);
-  }
-  
-  final void a() {}
-  
-  final void a(Bitmap paramBitmap, bpd.d paramd) {}
-  
-  final void b()
-  {
-    super.b();
-    n = null;
-  }
-  
-  final Object c()
-  {
-    return m;
-  }
+  final CountDownLatch a = new CountDownLatch(1);
+  long b = -1L;
+  long c = -1L;
 }
 
 /* Location:

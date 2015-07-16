@@ -9,7 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
-import avh;
+import awf;
 
 final class ColorPickerView$2
   implements View.OnTouchListener
@@ -40,11 +40,11 @@ final class ColorPickerView$2
           paramAnonymousAnimation = new ScaleAnimation(26.0F, 1.0F, 1.0F, 1.0F, 1, 1.0F, 1, 0.5F);
           paramAnonymousAnimation.setDuration(140L);
           ColorPickerView.f(a).startAnimation(paramAnonymousAnimation);
-          paramAnonymousAnimation = new TranslateAnimation((int)avh.a(-23.5F, a.getContext()), 0.0F, 0.0F, 0.0F);
+          paramAnonymousAnimation = new TranslateAnimation((int)awf.a(-23.5F, a.getContext()), 0.0F, 0.0F, 0.0F);
           paramAnonymousAnimation.setDuration(140L);
           paramAnonymousAnimation.setFillAfter(true);
           ColorPickerView.d(a).startAnimation(paramAnonymousAnimation);
-          paramAnonymousAnimation = new ColorPickerView.a(a, ColorPickerView.h(a).getWidth(), (int)avh.a(12.0F, a.getContext()), ColorPickerView.h(a));
+          paramAnonymousAnimation = new ColorPickerView.a(a, ColorPickerView.h(a).getWidth(), (int)awf.a(12.0F, a.getContext()), ColorPickerView.h(a));
           paramAnonymousAnimation.setDuration(140L);
           ColorPickerView.h(a).startAnimation(paramAnonymousAnimation);
         }
@@ -55,8 +55,8 @@ final class ColorPickerView$2
       });
       if (ColorPickerView.a(a))
       {
-        a.findViewById(2131362839).startAnimation(paramView);
-        a.findViewById(2131362838).startAnimation(paramView);
+        a.findViewById(2131362832).startAnimation(paramView);
+        a.findViewById(2131362831).startAnimation(paramView);
       }
       ColorPickerView.a(a, false);
       return true;

@@ -1,22 +1,4 @@
-public final class bdn
-{
-  public final aim mMediabryo;
-  public final boolean mShouldGoToSendTo;
-  
-  public bdn(@cgb aim paramaim)
-  {
-    this(paramaim, false);
-  }
-  
-  public bdn(@cgb aim paramaim, boolean paramBoolean)
-  {
-    if (paramaim == null) {
-      throw new NullPointerException();
-    }
-    mMediabryo = paramaim;
-    mShouldGoToSendTo = paramBoolean;
-  }
-}
+public final class bdn {}
 
 /* Location:
  * Qualified Name:     bdn

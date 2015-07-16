@@ -14,7 +14,7 @@
     value = {
         "Lcom/snapchat/android/database/table/DbTable",
         "<",
-        "Lbjv;",
+        "Lbkw;",
         ">;"
     }
 .end annotation
@@ -121,9 +121,9 @@
 
     .prologue
     .line 202
-    new-instance v0, Laad;
+    new-instance v0, Labc;
 
-    invoke-direct {v0}, Laad;-><init>()V
+    invoke-direct {v0}, Labc;-><init>()V
 
     sget-object v1, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->STATUS:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
@@ -133,11 +133,11 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
-    iget-object v2, v0, Laad;->a:Landroid/content/ContentValues;
+    iget-object v2, v0, Labc;->a:Landroid/content/ContentValues;
 
     .line 206
     new-instance v0, Ljava/lang/StringBuilder;
@@ -193,10 +193,10 @@
     return v0
 .end method
 
-.method private static a(Lbjv;)Landroid/content/ContentValues;
+.method private static a(Lbkw;)Landroid/content/ContentValues;
     .locals 4
-    .param p0    # Lbjv;
-        .annotation build Lcgc;
+    .param p0    # Lbkw;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -212,32 +212,32 @@
 
     .line 163
     :cond_0
-    new-instance v1, Laad;
+    new-instance v1, Labc;
 
-    invoke-direct {v1}, Laad;-><init>()V
+    invoke-direct {v1}, Labc;-><init>()V
 
     .line 164
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {p0}, Lbjv;->b()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkw;->b()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     .line 165
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->COLOR:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {p0}, Lbjv;->d()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkw;->d()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     .line 166
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->AD_TYPE:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {p0}, Lbjv;->e()Ljava/lang/Integer;
+    invoke-virtual {p0}, Lbkw;->e()Ljava/lang/Integer;
 
     move-result-object v3
 
@@ -245,28 +245,28 @@
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v1, v2, v3}, Labc;->a(Laav;I)Labc;
 
     .line 167
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->URL:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {p0}, Lbjv;->a()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkw;->a()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     .line 168
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->HASH:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {p0}, Lbjv;->c()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkw;->c()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     .line 170
-    invoke-virtual {p0}, Lbjv;->f()Lbgv;
+    invoke-virtual {p0}, Lbkw;->f()Lbhv;
 
     move-result-object v2
 
@@ -274,27 +274,27 @@
     if-eqz v2, :cond_1
 
     .line 173
-    invoke-virtual {v2}, Lbgv;->b()Ljava/util/Map;
+    invoke-virtual {v2}, Lbhv;->b()Ljava/util/Map;
 
     move-result-object v0
 
     .line 174
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {v2}, Lbgv;->a()Ljava/lang/String;
+    invoke-virtual {v2}, Lbhv;->a()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v3, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v3, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     .line 175
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->AD_TARGETING:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {v1, v2, v0}, Laad;->a(Lzw;Ljava/util/Map;)Laad;
+    invoke-virtual {v1, v2, v0}, Labc;->a(Laav;Ljava/util/Map;)Labc;
 
     .line 182
     :goto_1
-    iget-object v0, v1, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v1, Labc;->a:Landroid/content/ContentValues;
 
     goto :goto_0
 
@@ -302,12 +302,12 @@
     :cond_1
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {v1, v2, v0}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v0}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     .line 179
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->AD_TARGETING:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {v1, v2, v0}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v0}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     goto :goto_1
 .end method
@@ -353,17 +353,17 @@
 .end method
 
 .method public static a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 8
+    .locals 7
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -380,42 +380,33 @@
     move-result-object v0
 
     .line 274
-    const-string v1, "EditionChunkTable"
-
-    const-string v2, "safeUpdate - beginTransaction"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 275
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
     .line 279
     :try_start_0
-    new-instance v1, Laad;
+    new-instance v1, Labc;
 
-    invoke-direct {v1}, Laad;-><init>()V
+    invoke-direct {v1}, Labc;-><init>()V
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->URL:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {v1, v2, p2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, p2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v1
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->HASH:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {v1, v2, p3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, p3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v1
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->AD_KEY:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-virtual {v1, v2, p4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, p4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v1
 
-    iget-object v2, v1, Laad;->a:Landroid/content/ContentValues;
+    iget-object v2, v1, Labc;->a:Landroid/content/ContentValues;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -466,29 +457,6 @@
 
     .line 280
     :try_start_1
-    const-string v1, "EditionChunkTable"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "updateUrlSaveToDatabase numRowsAffected: "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 281
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_1
@@ -496,15 +464,6 @@
 
     .line 285
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-
-    .line 286
-    const-string v0, "EditionChunkTable"
-
-    const-string v1, "safeUpdate - endTransaction"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 289
     :goto_0
@@ -533,56 +492,32 @@
 
     .line 283
     :goto_1
+    const/4 v3, 0x1
+
     :try_start_2
-    const-string v3, "EditionChunk"
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const-string v4, "Error while writing to database: %s"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
-    aput-object v1, v5, v7
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v3, v4
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 285
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 286
-    const-string v0, "EditionChunkTable"
-
-    const-string v1, "safeUpdate - endTransaction"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     goto :goto_0
 
-    .line 285
     :catchall_0
     move-exception v1
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     .line 286
-    const-string v0, "EditionChunkTable"
-
-    const-string v2, "safeUpdate - endTransaction"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     throw v1
 
     .line 282
@@ -628,24 +563,24 @@
     return-void
 .end method
 
-.method protected static a(Landroid/database/sqlite/SQLiteDatabase;Lbjv;IILjava/lang/String;Lcom/snapchat/android/discover/model/database/table/EditionStatus;)V
+.method protected static a(Landroid/database/sqlite/SQLiteDatabase;Lbkw;IILjava/lang/String;Lcom/snapchat/android/discover/model/database/table/EditionStatus;)V
     .locals 6
-    .param p1    # Lbjv;
-        .annotation build Lcgc;
+    .param p1    # Lbkw;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p5    # Lcom/snapchat/android/discover/model/database/table/EditionStatus;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 217
-    invoke-static {p1}, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;->a(Lbjv;)Landroid/content/ContentValues;
+    invoke-static {p1}, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;->a(Lbkw;)Landroid/content/ContentValues;
 
     move-result-object v0
 
@@ -707,7 +642,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 229
-    invoke-virtual {p1}, Lbjv;->e()Ljava/lang/Integer;
+    invoke-virtual {p1}, Lbkw;->e()Ljava/lang/Integer;
 
     move-result-object v1
 
@@ -718,13 +653,13 @@
     if-eqz v1, :cond_2
 
     .line 230
-    invoke-virtual {p1}, Lbjv;->b()Ljava/lang/String;
+    invoke-virtual {p1}, Lbkw;->b()Ljava/lang/String;
 
     move-result-object v1
 
-    new-instance v2, Laad;
+    new-instance v2, Labc;
 
-    invoke-direct {v2}, Laad;-><init>()V
+    invoke-direct {v2}, Labc;-><init>()V
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->STATUS:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
@@ -734,11 +669,11 @@
 
     move-result-object v4
 
-    invoke-virtual {v2, v3, v4}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v2, v3, v4}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v2
 
-    iget-object v2, v2, Laad;->a:Landroid/content/ContentValues;
+    iget-object v2, v2, Labc;->a:Landroid/content/ContentValues;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -798,25 +733,25 @@
 
     .prologue
     .line 37
-    check-cast p1, Lbjv;
+    check-cast p1, Lbkw;
 
-    invoke-static {p1}, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;->a(Lbjv;)Landroid/content/ContentValues;
+    invoke-static {p1}, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;->a(Lbkw;)Landroid/content/ContentValues;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
-            "Lbjv;",
+            "Lbkw;",
             ">;"
         }
     .end annotation
@@ -828,7 +763,7 @@
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
+.method public final b(Lakp;)V
     .locals 0
 
     .prologue
@@ -836,7 +771,7 @@
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue
@@ -858,7 +793,7 @@
     return-object v0
 .end method
 
-.method public final c(Lajv;)V
+.method public final c(Lakp;)V
     .locals 0
 
     .prologue

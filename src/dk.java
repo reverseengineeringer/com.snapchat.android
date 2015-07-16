@@ -1,33 +1,35 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
+import java.io.Serializable;
+import javax.annotation.Nullable;
 
 @cd
-public final class dk
+class dk<K, V>
+  extends cw<K, V>
+  implements Serializable
 {
-  @cd
-  public static <E> ArrayList<E> a(Iterable<? extends E> paramIterable)
+  final K a;
+  final V b;
+  
+  dk(@Nullable K paramK, @Nullable V paramV)
   {
-    ck.a(paramIterable);
-    if ((paramIterable instanceof Collection)) {
-      return new ArrayList(cu.a(paramIterable));
-    }
-    paramIterable = paramIterable.iterator();
-    ArrayList localArrayList = new ArrayList();
-    dj.a(localArrayList, paramIterable);
-    return localArrayList;
+    a = paramK;
+    b = paramV;
   }
   
-  @cd
-  public static <E> ArrayList<E> a(E... paramVarArgs)
+  @Nullable
+  public final K getKey()
   {
-    ck.a(paramVarArgs);
-    int i = paramVarArgs.length;
-    ct.a(i, "arraySize");
-    long l = i;
-    ArrayList localArrayList = new ArrayList(eg.a(i / 10 + (5L + l)));
-    Collections.addAll(localArrayList, paramVarArgs);
-    return localArrayList;
+    return (K)a;
+  }
+  
+  @Nullable
+  public final V getValue()
+  {
+    return (V)b;
+  }
+  
+  public final V setValue(V paramV)
+  {
+    throw new UnsupportedOperationException();
   }
 }
 

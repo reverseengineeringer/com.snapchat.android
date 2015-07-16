@@ -14,7 +14,7 @@ public final class R
     public static final int closed_captioning_white = 2131230745;
     public static final int closed_captioning_yellow = 2131230746;
     public static final int color_selected = 2131230747;
-    public static final int white = 2131230811;
+    public static final int white = 2131230813;
   }
   
   public static final class drawable
@@ -112,15 +112,15 @@ public final class R
   
   public static final class layout
   {
-    public static final int caption_block = 2130968599;
-    public static final int caption_dialog = 2130968600;
-    public static final int caption_text = 2130968603;
-    public static final int closed_captioning_options_color_selection = 2130968634;
-    public static final int closed_captioning_options_dialog = 2130968635;
-    public static final int closed_captioning_options_edge_type_selection = 2130968636;
-    public static final int closed_captioning_options_font_selection = 2130968637;
-    public static final int closed_captioning_options_group_item = 2130968638;
-    public static final int closed_captioning_options_text_size_selection = 2130968639;
+    public static final int caption_block = 2130968600;
+    public static final int caption_dialog = 2130968601;
+    public static final int caption_text = 2130968604;
+    public static final int closed_captioning_options_color_selection = 2130968635;
+    public static final int closed_captioning_options_dialog = 2130968636;
+    public static final int closed_captioning_options_edge_type_selection = 2130968637;
+    public static final int closed_captioning_options_font_selection = 2130968638;
+    public static final int closed_captioning_options_group_item = 2130968639;
+    public static final int closed_captioning_options_text_size_selection = 2130968640;
   }
   
   public static final class string
@@ -142,13 +142,13 @@ public final class R
     public static final int depressed = 2131493113;
     public static final int dialog_closed_captioning_options_default = 2131493115;
     public static final int dialog_closed_captioning_options_title = 2131493116;
-    public static final int done = 2131493144;
-    public static final int drop_shadow = 2131493148;
+    public static final int done = 2131493143;
+    public static final int drop_shadow = 2131493147;
     public static final int no_edge = 2131493251;
     public static final int off = 2131493268;
     public static final int on = 2131493271;
     public static final int raised = 2131493343;
-    public static final int uniform = 2131493578;
+    public static final int uniform = 2131493576;
   }
   
   public static final class style

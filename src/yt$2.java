@@ -1,50 +1,19 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.model.MediaMailingMetadata.PostStatus;
-import com.snapchat.android.model.MediaMailingMetadata.SendStatus;
-import com.snapchat.android.model.Mediabryo;
+import com.snapchat.android.model.chat.CashFeedItem;
+import com.squareup.otto.Bus;
 
 final class yt$2
-  extends aww
+  implements qt.a
 {
-  yt$2(yt paramyt, boolean paramBoolean1, aim paramaim, boolean paramBoolean2) {}
+  yt$2(yt paramyt, CashFeedItem paramCashFeedItem) {}
   
-  protected final void a(@cgb Boolean paramBoolean)
+  public final void a()
   {
-    super.a(paramBoolean);
-    if (a)
-    {
-      if (!paramBoolean.booleanValue()) {
-        break label56;
-      }
-      d.g(b);
-    }
-    for (;;)
-    {
-      if (c)
-      {
-        if (!paramBoolean.booleanValue()) {
-          break;
-        }
-        d.i(b);
-      }
-      return;
-      label56:
-      Timber.c("SaveSentSnapToCacheTask", "Can not send snap because it was not saved to the cache. | Client ID: %s", new Object[] { b.mClientId });
-      d.a.a(b, MediaMailingMetadata.SendStatus.FAILED);
-    }
-    Timber.c("SaveSentSnapToCacheTask", "Can not post story because is was not saved to the cache. | Client ID: %s", new Object[] { b.mClientId });
-    d.a.a(b, MediaMailingMetadata.PostStatus.FAILED);
+    bbo.a().a(new bca(a.Y()));
   }
   
-  protected final void onPreExecute()
+  public final void b()
   {
-    super.onPreExecute();
-    if (a) {
-      d.f(b);
-    }
-    if (c) {
-      d.h(b);
-    }
+    bbo.a().a(new bca(a.Y()));
   }
 }
 

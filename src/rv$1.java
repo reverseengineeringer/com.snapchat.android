@@ -1,51 +1,40 @@
-import java.util.List;
+import android.text.TextUtils;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.api2.cash.ScCashResponsePayload;
+import com.snapchat.android.api2.cash.ScCashResponsePayload.Status;
+import com.snapchat.android.model.CashTransaction;
 
 final class rv$1
-  implements qv.a
+  implements qs.a
 {
-  rv$1(rv paramrv) {}
+  rv$1(rv paramrv, CashTransaction paramCashTransaction) {}
   
-  public final void a(@cgb qv paramqv)
+  public final void a(@chc ScCashResponsePayload.Status paramStatus, int paramInt)
   {
-    rv.c(this$0);
-  }
-  
-  public final void a(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean)
-  {
-    if ((paramList == null) || (paramList.isEmpty()))
+    paramStatus.name();
+    if (val$transaction != null)
     {
-      rv.a(new ss.a()
-      {
-        public final void a()
-        {
-          this$0.a(null, true);
-        }
-        
-        public final void a(int paramAnonymousInt)
-        {
-          if ((paramAnonymousInt == 401) && (!rv.a(this$0)))
-          {
-            rv.b(this$0);
-            this$0.mCashAuthManager.a(null);
-            this$0.a(null);
-            return;
-          }
-          this$0.b(null, false);
-        }
-      }).f();
-      return;
+      String str = val$transaction.mSenderUsername;
+      if (!TextUtils.equals(akr.l(), str)) {
+        break label52;
+      }
+      AnalyticsEvents.a("GENERATE_SQUARE_ACCESS_TOKEN_FAILED", paramInt);
     }
-    this$0.b(null, false);
+    for (;;)
+    {
+      qw.a(val$transaction, paramStatus);
+      rv.a(this$0);
+      return;
+      label52:
+      AnalyticsEvents.b("GENERATE_SQUARE_ACCESS_TOKEN_FAILED", paramInt);
+    }
   }
   
-  public final void b(@cgb qv paramqv)
+  public final void a(@chc ScCashResponsePayload paramScCashResponsePayload)
   {
-    rv.d(this$0);
-  }
-  
-  public final void b(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean)
-  {
-    this$0.b(null, false);
+    paramScCashResponsePayload = (rb.a)paramScCashResponsePayload;
+    this$0.mCashAuthManager.a(accessToken);
+    this$0.a(null, true);
   }
 }
 

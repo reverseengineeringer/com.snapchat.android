@@ -11,9 +11,9 @@ final class SnapPreviewFragment$5
   
   public final void onClick(View paramView)
   {
-    if (SnapPreviewFragment.t(a).isEmpty())
+    if (SnapPreviewFragment.u(a).isEmpty())
     {
-      SnapPreviewFragment.r(a);
+      SnapPreviewFragment.s(a);
       return;
     }
     SnapPreviewFragment.p(a);

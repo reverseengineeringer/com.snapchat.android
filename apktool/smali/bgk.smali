@@ -1,17 +1,18 @@
-.class public final Lbgk;
+.class public interface abstract Lbgk;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
+# virtual methods
+.method public abstract a()I
+.end method
 
-    .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract a(Ljava/io/InputStream;)I
+    .param p1    # Ljava/io/InputStream;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
 
-    return-void
+.method public abstract b()[B
 .end method

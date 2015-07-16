@@ -1,106 +1,169 @@
-import android.annotation.TargetApi;
-import android.media.MediaFormat;
-import com.snapchat.android.Timber;
-import com.snapchat.videotranscoder.pipeline.EncoderConfiguration;
-import com.snapchat.videotranscoder.task.MediaSource;
-import com.snapchat.videotranscoder.task.SetupException;
-import com.snapchat.videotranscoder.task.TranscodingConfiguration;
-import com.snapchat.videotranscoder.task.VideoFileMediaSource;
-import com.snapchat.videotranscoder.task.VideoFileMediaSource.AudioChannelSource;
-import com.snapchat.videotranscoder.task.VideoFileMediaSource.VideoChannelSource;
-import com.snapchat.videotranscoder.utils.MimeTools;
-import com.snapchat.videotranscoder.utils.VideoMetadataReader;
-import com.snapchat.videotranscoder.video.FragmentShader.Filter;
+import android.hardware.Camera.Parameters;
+import android.os.HandlerThread;
+import android.os.Message;
+import android.view.Surface;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.camera.model.CameraModel;
+import com.snapchat.android.camera.videocamera.VideoCameraHandler;
+import com.snapchat.android.camera.videocamera.VideoCameraHandler.VideoFailureType;
+import com.snapchat.android.camera.videocamera.VideoCameraHandler.c;
+import com.snapchat.android.util.debug.ReleaseManager;
+import com.snapchat.android.util.eventbus.ShowDialogEvent;
+import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
+import com.squareup.otto.Bus;
 import java.io.File;
-import java.io.IOException;
+import java.util.List;
+import javax.inject.Inject;
 
-@TargetApi(18)
+@awj
 public final class wv
 {
-  private final ajm a;
-  private final MimeTools b;
-  private final azo c;
+  @Inject
+  protected xg a;
+  @Inject
+  protected CameraModel b;
+  @Inject
+  protected xf c;
+  @Inject
+  protected xj d;
+  private final aya e;
+  private final ob f;
   
-  public wv(ajm paramajm)
+  @Inject
+  protected wv()
   {
-    this(paramajm, MimeTools.getInstance(), new azo());
+    this(aya.a(), new ob());
   }
   
-  private wv(ajm paramajm, MimeTools paramMimeTools, azo paramazo)
+  private wv(aya paramaya, ob paramob)
   {
-    a = paramajm;
-    b = paramMimeTools;
-    c = paramazo;
+    SnapchatApplication.b().c().a(this);
+    e = paramaya;
+    f = paramob;
   }
   
-  private EncoderConfiguration b(String paramString)
+  public final void a()
   {
-    try
+    if (b.h == null)
     {
-      paramString = b.getMediaFormatFromFile(paramString, false);
-      paramString = MediaFormat.createAudioFormat("audio/mp4a-latm", b.getAudioSampleRate(paramString), b.getAudioChannelCount(paramString));
-      paramString.setInteger("bitrate", 57344);
-      paramString = new EncoderConfiguration("audio/mp4a-latm", paramString);
-      return paramString;
-    }
-    catch (Exception paramString)
-    {
-      if (paramString.getMessage() == null) {
-        throw new SetupException();
+      if (ReleaseManager.e()) {
+        bbo.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, "Null camera when initializing VideoCameraHandler"));
       }
-      throw new SetupException(paramString.getMessage());
+      return;
+    }
+    b();
+    HandlerThread localHandlerThread = new HandlerThread("Video Recording Handler Thread");
+    localHandlerThread.start();
+    a.b = new VideoCameraHandler(localHandlerThread.getLooper());
+  }
+  
+  public final void a(@chd VideoCameraHandler.c paramc, @chc wr paramwr, boolean paramBoolean)
+  {
+    VideoCameraHandler localVideoCameraHandler = a.b;
+    if (localVideoCameraHandler != null)
+    {
+      localVideoCameraHandler.obtainMessage(100, paramc).sendToTarget();
+      if (paramBoolean) {
+        localVideoCameraHandler.waitDone();
+      }
+    }
+    if (b.b()) {
+      paramwr.a(false);
     }
   }
   
-  public final TranscodingConfiguration a(String paramString)
+  public final boolean a(VideoCameraHandler.c paramc, wr paramwr, @chc avc paramavc, @chd Surface paramSurface)
   {
-    for (Object localObject1 = new VideoMetadataReader(new File(paramString));; localObject1 = VideoFileMediaSource.AudioChannelSource.ORIGINAL) {
-      try
+    File localFile = e.b();
+    wy.b localb = b.h;
+    VideoCameraHandler localVideoCameraHandler = a.b;
+    if ((localb == null) || (localVideoCameraHandler == null) || (localFile == null))
+    {
+      if (localFile == null) {
+        paramc.a(VideoCameraHandler.VideoFailureType.VIDEO_STORAGE_EXCEPTION);
+      }
+      for (;;)
       {
-        Object localObject2 = new aue(((VideoMetadataReader)localObject1).getWidth(), ((VideoMetadataReader)localObject1).getHeight());
-        long l = ((VideoMetadataReader)localObject1).getDurationMs();
-        ((VideoMetadataReader)localObject1).release();
-        Object localObject3 = new xa((aue)localObject2);
-        int i = Math.min(1730151 / (int)l * 1000 * 8, 4000000);
-        Object localObject4 = a.q();
-        Object localObject5 = a.mShaderFilter;
-        VideoFileMediaSource.VideoChannelSource localVideoChannelSource = VideoFileMediaSource.VideoChannelSource.ORIGINAL;
-        if (a.m())
-        {
-          localObject1 = VideoFileMediaSource.AudioChannelSource.SILENCE;
-          localObject4 = new VideoFileMediaSource(paramString, (float[])localObject4, null, (FragmentShader.Filter)localObject5, localVideoChannelSource, (VideoFileMediaSource.AudioChannelSource)localObject1);
-          localObject5 = a.mTranscodingState.b();
-          localObject3 = ((xa)localObject3).a(i);
-          localObject1 = localObject3;
-          if (localObject3 == null)
-          {
-            localObject1 = new nt((aue)localObject2);
-            c.a((Throwable)localObject1);
-            localObject1 = localObject2;
-          }
-          localObject2 = MediaFormat.createVideoFormat("video/avc", ((aue)localObject1).b(), ((aue)localObject1).a());
-          Timber.c("TranscoderConfigurationProvider", "TranscoderConfiguration seting KEY_HEIGHT %d, KEY_WIDTH %d", new Object[] { Integer.valueOf(((aue)localObject1).a()), Integer.valueOf(((aue)localObject1).b()) });
-          ((MediaFormat)localObject2).setInteger("height", ((aue)localObject1).a());
-          ((MediaFormat)localObject2).setInteger("width", ((aue)localObject1).b());
-          ((MediaFormat)localObject2).setInteger("color-format", 2130708361);
-          ((MediaFormat)localObject2).setInteger("bitrate", i);
-          ((MediaFormat)localObject2).setLong("durationUs", l * 1000L);
-          ((MediaFormat)localObject2).setInteger("frame-rate", 30);
-          ((MediaFormat)localObject2).setInteger("i-frame-interval", 10);
-          localObject1 = new EncoderConfiguration("video/avc", (MediaFormat)localObject2);
-          paramString = b(paramString);
-          return new TranscodingConfiguration(new MediaSource[] { localObject4 }, (String)localObject5, (EncoderConfiguration)localObject1, paramString, false);
+        return false;
+        paramc.a(VideoCameraHandler.VideoFailureType.INITIALIZATION_ERROR);
+      }
+    }
+    a.a = true;
+    Camera.Parameters localParameters = localb.c();
+    if (localParameters != null)
+    {
+      if (!b.b())
+      {
+        List localList = localParameters.getSupportedFocusModes();
+        if ((localList != null) && (localList.contains("continuous-video"))) {
+          localParameters.setFocusMode("continuous-video");
         }
       }
-      catch (IOException paramString)
-      {
-        throw new SetupException("Failed to read video metadata: " + paramString.toString(), paramString);
+      if ((akn.a().a("USE_VIDEO_STABILIZATION", "option", "on").equals("on")) && (att.SUPPORTS_VIDEO_STABILIZATION) && (localParameters.isVideoStabilizationSupported())) {
+        localParameters.setVideoStabilization(true);
       }
-      finally
-      {
-        ((VideoMetadataReader)localObject1).release();
+      localb.a(localParameters);
+    }
+    if (c.a)
+    {
+      if (b.b()) {
+        paramwr.a(true);
       }
     }
+    else {
+      localb.a(null);
+    }
+    for (;;)
+    {
+      double d1;
+      double d2;
+      try
+      {
+        localb.d();
+        if (paramSurface != null) {
+          c = paramSurface;
+        }
+        localVideoCameraHandler.a(paramc, paramavc, localFile);
+        paramwr = f;
+        if (att.HAS_SURFACE_TEXTURE_RECORDING)
+        {
+          d1 = paramavc.c() - mScreenParameterProvider.mResolution.c();
+          paramc = mScreenParameterProvider.mResolution;
+          paramc = paramc.a(paramavc.a() / paramc.a());
+          d2 = 100.0D * (Math.abs(paramc.d() - paramavc.d()) / Math.max(paramc.d(), paramavc.d()));
+          if (d1 <= 0.0D) {
+            break label377;
+          }
+          paramc = new op(d2);
+          if (paramc != null) {
+            mExceptionReporter.a(paramc);
+          }
+        }
+        return true;
+      }
+      catch (RuntimeException paramwr)
+      {
+        paramc.a(VideoCameraHandler.VideoFailureType.CAMERA_UNLOCK_EXCEPTION);
+        return false;
+      }
+      paramwr.b(true);
+      break;
+      label377:
+      if (d1 < 0.0D) {
+        paramc = new oo(d2);
+      } else {
+        paramc = null;
+      }
+    }
+  }
+  
+  public final void b()
+  {
+    VideoCameraHandler localVideoCameraHandler = a.b;
+    if (localVideoCameraHandler != null) {
+      localVideoCameraHandler.a();
+    }
+    a.b = null;
   }
 }
 

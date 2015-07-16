@@ -1,17 +1,17 @@
-import android.view.View;
+import com.snapchat.android.discover.model.ChannelPage;
 
-public final class aem$a
+public abstract interface aem$a
 {
-  public final View a;
-  public final String b;
-  public boolean c;
+  @cbr
+  public abstract void a();
   
-  public aem$a(View paramView, String paramString, boolean paramBoolean)
-  {
-    a = paramView;
-    b = paramString;
-    c = paramBoolean;
-  }
+  @cbr
+  public abstract void a(@chc ChannelPage paramChannelPage);
+  
+  public abstract void a(@chd String paramString);
+  
+  @chc
+  public abstract String b();
 }
 
 /* Location:

@@ -1,18 +1,18 @@
 package com.snapchat.android.fragments.settings;
 
-import ajd;
+import ajz;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.widget.TextView;
-import apa;
-import azm;
-import bfr;
+import apw;
+import bal;
+import bgr;
 import com.snapchat.android.SnapchatApplication;
 
 final class DeveloperSettingsFragment$12$1
-  extends apa
+  extends apw
 {
   DeveloperSettingsFragment$12$1(DeveloperSettingsFragment.12 param12, Context paramContext, String paramString1, String paramString2)
   {
@@ -23,13 +23,13 @@ final class DeveloperSettingsFragment$12$1
   {
     SharedPreferences localSharedPreferences = PreferenceManager.getDefaultSharedPreferences(SnapchatApplication.b());
     if (TextUtils.equals(paramString, amProxyEndpoint.mBaseUrl)) {
-      azm.a(localSharedPreferences, null);
+      bal.a(localSharedPreferences, null);
     }
     for (;;)
     {
       a.b.setText(paramString);
       return;
-      azm.a(localSharedPreferences, paramString);
+      bal.a(localSharedPreferences, paramString);
     }
   }
 }

@@ -1,18 +1,43 @@
-import android.graphics.Rect;
-import android.view.View;
-import android.view.ViewGroup.MarginLayoutParams;
+import android.content.Context;
+import android.media.ExifInterface;
+import android.net.Uri;
+import java.io.InputStream;
 
-public final class bpv
+final class bpv
+  extends bpq
 {
-  public static Rect a(View paramView)
+  bpv(Context paramContext)
   {
-    paramView = paramView.getLayoutParams();
-    if ((paramView instanceof ViewGroup.MarginLayoutParams))
+    super(paramContext);
+  }
+  
+  public final boolean a(bqh parambqh)
+  {
+    return "file".equals(d.getScheme());
+  }
+  
+  public final bqj.a b(bqh parambqh)
+  {
+    InputStream localInputStream = c(parambqh);
+    bqe.d locald = bqe.d.b;
+    int i;
+    switch (new ExifInterface(d.getPath()).getAttributeInt("Orientation", 1))
     {
-      paramView = (ViewGroup.MarginLayoutParams)paramView;
-      return new Rect(leftMargin, topMargin, rightMargin, bottomMargin);
+    case 4: 
+    case 5: 
+    case 7: 
+    default: 
+      i = 0;
     }
-    return new Rect();
+    for (;;)
+    {
+      return new bqj.a(null, localInputStream, locald, i);
+      i = 90;
+      continue;
+      i = 180;
+      continue;
+      i = 270;
+    }
   }
 }
 

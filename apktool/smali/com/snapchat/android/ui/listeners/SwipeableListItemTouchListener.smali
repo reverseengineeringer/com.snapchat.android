@@ -19,33 +19,33 @@
 # instance fields
 .field private a:I
 
-.field public b:I
+.field protected b:I
 
 .field protected c:Landroid/widget/ListView;
 
 .field public d:Z
 
-.field public e:Z
+.field protected e:Z
 
-.field public f:Z
+.field protected f:Landroid/view/View;
 
-.field public g:Landroid/view/View;
+.field protected g:Landroid/view/View;
 
-.field public h:Landroid/view/View;
+.field protected h:Z
 
-.field public i:Z
+.field private i:I
 
 .field private j:I
 
 .field private k:I
 
-.field private l:I
+.field private l:F
 
-.field private m:F
+.field private m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-.field private n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+.field private n:I
 
-.field private o:I
+.field private o:Z
 
 .field private p:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$SwipeDirection;
 
@@ -75,7 +75,7 @@
     .line 78
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->o:I
+    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:I
 
     .line 149
     invoke-virtual {p1}, Landroid/widget/ListView;->getContext()Landroid/content/Context;
@@ -125,7 +125,7 @@
 
     float-to-int v1, v1
 
-    iput v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->j:I
+    iput v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->i:I
 
     .line 156
     const/high16 v1, 0x10e0000
@@ -134,13 +134,13 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
+    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->j:I
 
     .line 157
     iput-object p1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->c:Landroid/widget/ListView;
 
     .line 158
-    iput-object p3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iput-object p3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
     .line 159
     iput-object p2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->p:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$SwipeDirection;
@@ -154,7 +154,7 @@
 
     .prologue
     .line 61
-    iput p1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iput p1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     return p1
 .end method
@@ -164,7 +164,7 @@
 
     .prologue
     .line 61
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
     return-object v0
 .end method
@@ -173,14 +173,14 @@
     .locals 1
 
     .prologue
-    .line 452
+    .line 451
     new-instance v0, Landroid/view/animation/LinearInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Landroid/view/View;IILandroid/view/animation/Interpolator;)V
 
-    .line 453
+    .line 452
     return-void
 .end method
 
@@ -192,18 +192,18 @@
 
     const/4 v2, 0x0
 
-    .line 456
+    .line 455
     if-nez p2, :cond_0
 
     move v0, v1
 
-    .line 457
+    .line 456
     :goto_0
     const/4 v3, 0x2
 
     new-array v3, v3, [I
 
-    iget v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iget v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     float-to-int v4, v4
 
@@ -221,33 +221,33 @@
 
     move-result-object v1
 
-    .line 458
+    .line 457
     new-instance v2, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;
 
     invoke-direct {v2, p0, p1}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$2;-><init>(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;Landroid/view/View;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 469
+    .line 468
     new-instance v2, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$3;
 
     invoke-direct {v2, p0, p1, v0}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$3;-><init>(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;Landroid/view/View;Z)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 490
+    .line 489
     invoke-virtual {v1, p4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 491
+    .line 490
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 492
+    .line 491
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 456
+    .line 455
     goto :goto_0
 .end method
 
@@ -256,7 +256,7 @@
 
     .prologue
     .line 61
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     return v0
 .end method
@@ -271,63 +271,43 @@
 
     const/4 v1, 0x0
 
-    .line 503
+    .line 502
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->w:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 504
+    .line 503
     iput-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->w:Landroid/view/VelocityTracker;
 
-    .line 505
+    .line 504
     iput v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->q:F
 
-    .line 506
+    .line 505
     iput v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->s:F
 
+    .line 506
+    iput-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
+
     .line 507
-    iput-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iput-boolean v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->e:Z
 
     .line 508
-    iput-boolean v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Z
-
-    .line 509
     iput-boolean v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->u:Z
 
+    .line 509
+    iput v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
+
     .line 510
-    iput v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iput v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     .line 511
-    iput v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
-
-    .line 512
     return-void
-.end method
-
-.method static synthetic c(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;)F
-    .locals 1
-
-    .prologue
-    .line 61
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->r:F
-
-    return v0
-.end method
-
-.method static synthetic d(Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;)F
-    .locals 1
-
-    .prologue
-    .line 61
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->t:F
-
-    return v0
 .end method
 
 
 # virtual methods
 .method protected final a(Landroid/view/View;)I
-    .locals 2
+    .locals 3
 
     .prologue
     const/4 v0, -0x1
@@ -356,10 +336,18 @@
     iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->c:Landroid/widget/ListView;
 
     invoke-virtual {v1, p1}, Landroid/widget/ListView;->getPositionForView(Landroid/view/View;)I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->c:Landroid/widget/ListView;
+
+    invoke-virtual {v2}, Landroid/widget/ListView;->getHeaderViewsCount()I
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v0
+
+    sub-int v0, v1, v0
 
     goto :goto_0
 
@@ -392,7 +380,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->i:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->h:Z
 
     .line 177
     return-void
@@ -419,7 +407,7 @@
     const/4 v2, 0x0
 
     .line 202
-    iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->o:I
+    iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:I
 
     const/4 v4, 0x2
 
@@ -432,7 +420,7 @@
 
     move-result v3
 
-    iput v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->o:I
+    iput v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:I
 
     .line 208
     :cond_0
@@ -449,10 +437,10 @@
 
     .line 210
     :pswitch_0
-    iput-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->h:Landroid/view/View;
+    iput-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
 
     .line 211
-    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->i:Z
+    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->h:Z
 
     if-nez v3, :cond_1
 
@@ -540,11 +528,11 @@
 
     :cond_2
     :goto_2
-    iput-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iput-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     .line 235
     :cond_3
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
@@ -582,9 +570,9 @@
     if-eqz v0, :cond_7
 
     .line 241
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->a(Landroid/view/View;)F
 
@@ -592,15 +580,15 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     .line 245
     :goto_3
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     int-to-float v0, v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     .line 246
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
@@ -630,15 +618,7 @@
 
     move-result v1
 
-    sub-int/2addr v0, v1
-
-    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->c:Landroid/widget/ListView;
-
-    invoke-virtual {v1}, Landroid/widget/ListView;->getHeaderViewsCount()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
+    sub-int v1, v0, v1
 
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->c:Landroid/widget/ListView;
 
@@ -665,7 +645,7 @@
 
     .line 243
     :cond_7
-    iput v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iput v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     goto :goto_3
 
@@ -678,7 +658,7 @@
 
     if-eqz v3, :cond_1
 
-    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->i:Z
+    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->h:Z
 
     if-nez v3, :cond_1
 
@@ -731,9 +711,9 @@
 
     move-result v7
 
-    iget-object v8, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v8, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v9, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v9, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v8, v9}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
@@ -771,17 +751,17 @@
     if-eqz v3, :cond_10
 
     .line 287
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
-    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
+    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->j:I
 
     invoke-direct {p0, v0, v2, v1}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Landroid/view/View;II)V
 
     .line 324
     :goto_6
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->h:Landroid/view/View;
+    iput-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
 
     .line 325
     invoke-direct {p0}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->b()V
@@ -826,15 +806,15 @@
 
     cmpg-float v7, v7, v4
 
-    if-gtz v7, :cond_2b
+    if-gtz v7, :cond_2a
 
     cmpg-float v4, v6, v4
 
-    if-gez v4, :cond_2b
+    if-gez v4, :cond_2a
 
-    iget-boolean v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Z
+    iget-boolean v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->e:Z
 
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_2a
 
     .line 280
     cmpg-float v3, v3, v10
@@ -894,11 +874,11 @@
 
     .line 289
     :cond_10
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v1, v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
@@ -906,7 +886,7 @@
 
     neg-int v1, v1
 
-    iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
+    iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->j:I
 
     invoke-direct {p0, v0, v1, v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Landroid/view/View;II)V
 
@@ -921,20 +901,20 @@
     if-lez v0, :cond_12
 
     .line 293
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
-    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
+    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->j:I
 
     invoke-direct {p0, v0, v2, v1}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Landroid/view/View;II)V
 
     .line 294
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbeq;
+    new-instance v1, Lbfp;
 
-    invoke-direct {v1}, Lbeq;-><init>()V
+    invoke-direct {v1}, Lbfp;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -947,11 +927,11 @@
     if-eqz v0, :cond_13
 
     .line 298
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v1, v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
@@ -969,20 +949,20 @@
 
     .line 310
     :cond_13
-    iput v10, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iput v10, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     goto/16 :goto_6
 
     .line 315
     :cond_14
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
     instance-of v0, v0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$b;
 
     if-eqz v0, :cond_15
 
     .line 316
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Landroid/view/View;)I
 
@@ -994,7 +974,7 @@
     if-eq v1, v0, :cond_15
 
     .line 318
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
     check-cast v0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$b;
 
@@ -1002,13 +982,13 @@
 
     .line 322
     :cond_15
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     if-eqz v0, :cond_16
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
@@ -1018,7 +998,7 @@
 
     div-float/2addr v0, v11
 
-    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     int-to-float v1, v1
 
@@ -1026,15 +1006,15 @@
 
     if-lez v0, :cond_17
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->p:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$SwipeDirection;
 
@@ -1046,26 +1026,26 @@
 
     if-eqz v0, :cond_16
 
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     mul-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     :cond_16
     :goto_b
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
-    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
-    iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
+    iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->j:I
 
     invoke-direct {p0, v0, v1, v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Landroid/view/View;II)V
 
     goto/16 :goto_6
 
     :cond_17
-    iput v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iput v2, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     goto :goto_b
 
@@ -1075,7 +1055,7 @@
 
     if-eqz v3, :cond_1
 
-    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->i:Z
+    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->h:Z
 
     if-nez v3, :cond_1
 
@@ -1142,7 +1122,7 @@
 
     .line 340
     :goto_c
-    iget v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->j:I
+    iget v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->i:I
 
     int-to-float v4, v4
 
@@ -1170,9 +1150,9 @@
     move v3, v1
 
     :goto_e
-    iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v7, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v7, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v4, v7}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->a(Landroid/view/View;)F
 
@@ -1242,21 +1222,21 @@
 
     if-eqz v3, :cond_21
 
-    iget v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iget v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     if-ltz v4, :cond_21
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     if-eqz v0, :cond_20
 
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->e:Z
 
     if-eqz v0, :cond_20
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
-    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
+    iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->j:I
 
     invoke-direct {p0, v0, v2, v1}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->a(Landroid/view/View;II)V
 
@@ -1296,9 +1276,9 @@
 
     if-gez v4, :cond_22
 
-    iput-boolean v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Z
+    iput-boolean v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->e:Z
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_28
 
     iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->b:I
 
@@ -1330,7 +1310,7 @@
     invoke-virtual {v3}, Landroid/view/MotionEvent;->recycle()V
 
     :cond_22
-    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Z
+    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->e:Z
 
     if-nez v3, :cond_23
 
@@ -1339,7 +1319,7 @@
     if-eqz v3, :cond_1b
 
     :cond_23
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:I
+    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->k:I
 
     int-to-float v0, v0
 
@@ -1351,7 +1331,7 @@
 
     sub-float/2addr v0, v3
 
-    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iput v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->p:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$SwipeDirection;
 
@@ -1359,13 +1339,13 @@
 
     if-ne v0, v3, :cond_24
 
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     cmpl-float v0, v0, v10
 
     if-lez v0, :cond_24
 
-    iput v10, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iput v10, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     :cond_24
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->p:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$SwipeDirection;
@@ -1374,18 +1354,18 @@
 
     if-ne v0, v3, :cond_25
 
-    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iget v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     cmpg-float v0, v0, v10
 
     if-gez v0, :cond_25
 
-    iput v10, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
+    iput v10, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
     :cond_25
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v0, v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
@@ -1393,9 +1373,9 @@
 
     move-result v0
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v3, v4}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
@@ -1405,19 +1385,19 @@
 
     cmpl-float v0, v0, v3
 
-    if-ltz v0, :cond_2a
+    if-ltz v0, :cond_29
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v0, v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->a(Landroid/view/View;)F
 
     move-result v0
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
     invoke-interface {v3, v4}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->b(Landroid/view/View;)I
 
@@ -1427,17 +1407,17 @@
 
     cmpl-float v0, v0, v3
 
-    if-ltz v0, :cond_2a
+    if-ltz v0, :cond_29
 
     :goto_11
     iget-boolean v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->u:Z
 
     if-nez v0, :cond_26
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_27
 
     :cond_26
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->e:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->o:Z
 
     if-eqz v0, :cond_27
 
@@ -1446,26 +1426,13 @@
     invoke-virtual {v0, v2}, Landroid/widget/ListView;->requestDisallowInterceptTouchEvent(Z)V
 
     :cond_27
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
+    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->f:Landroid/view/View;
 
-    iget-boolean v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->u:Z
+    iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->l:F
 
-    invoke-interface {v0, v1, v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->a(Landroid/view/View;Z)V
-
-    :cond_28
-    iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->n:Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;
-
-    iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->g:Landroid/view/View;
-
-    iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->m:F
-
-    iget v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->r:F
-
-    iget v5, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->t:F
-
-    invoke-interface {v0, v1, v3, v4, v5}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->a(Landroid/view/View;FFF)Z
+    invoke-interface {v0, v1, v3}, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener$a;->a(Landroid/view/View;F)Z
 
     move-result v0
 
@@ -1475,19 +1442,19 @@
 
     goto/16 :goto_f
 
-    :cond_29
+    :cond_28
     iget v3, p0, Lcom/snapchat/android/ui/listeners/SwipeableListItemTouchListener;->b:I
 
     neg-int v3, v3
 
     goto/16 :goto_10
 
-    :cond_2a
+    :cond_29
     move v1, v2
 
     goto :goto_11
 
-    :cond_2b
+    :cond_2a
     move v3, v2
 
     move v1, v2
@@ -1500,8 +1467,6 @@
     goto/16 :goto_4
 
     .line 208
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

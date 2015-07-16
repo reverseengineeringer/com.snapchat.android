@@ -1,18 +1,13 @@
-public abstract interface chb
-  extends Comparable<chb>
-{
-  public abstract int a();
-  
-  public abstract int a(int paramInt);
-  
-  public abstract int a(cgi paramcgi);
-  
-  public abstract cgf b();
-  
-  public abstract boolean b(cgi paramcgi);
-  
-  public abstract cgi c(int paramInt);
-}
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Documented
+@Retention(RetentionPolicy.CLASS)
+@Target({java.lang.annotation.ElementType.METHOD, java.lang.annotation.ElementType.FIELD, java.lang.annotation.ElementType.PARAMETER, java.lang.annotation.ElementType.LOCAL_VARIABLE, java.lang.annotation.ElementType.TYPE, java.lang.annotation.ElementType.PACKAGE})
+public @interface chb {}
 
 /* Location:
  * Qualified Name:     chb

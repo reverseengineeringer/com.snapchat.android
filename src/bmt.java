@@ -1,41 +1,37 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public final class bmt
 {
-  public static int a(String paramString, int paramInt)
-  {
-    while (paramInt < paramString.length())
-    {
-      int i = paramString.charAt(paramInt);
-      if ((i != 32) && (i != 9)) {
-        break;
-      }
-      paramInt += 1;
-    }
-    return paramInt;
-  }
+  private int a = 64;
+  private int b = 5;
+  private final Deque<Object> c = new ArrayDeque();
+  private final Deque<Object> d = new ArrayDeque();
+  private final Deque<bml> e = new ArrayDeque();
   
-  public static int a(String paramString1, int paramInt, String paramString2)
-  {
-    while ((paramInt < paramString1.length()) && (paramString2.indexOf(paramString1.charAt(paramInt)) == -1)) {
-      paramInt += 1;
-    }
-    return paramInt;
-  }
-  
-  public static int b(String paramString, int paramInt)
+  final void a(bml parambml)
   {
     try
     {
-      long l = Long.parseLong(paramString);
-      if (l > 2147483647L) {
-        return Integer.MAX_VALUE;
-      }
-      if (l < 0L) {
-        return 0;
-      }
-      return (int)l;
+      e.add(parambml);
+      return;
     }
-    catch (NumberFormatException paramString) {}
-    return paramInt;
+    finally
+    {
+      parambml = finally;
+      throw parambml;
+    }
+  }
+  
+  final void b(bml parambml)
+  {
+    try
+    {
+      if (!e.remove(parambml)) {
+        throw new AssertionError("Call wasn't in-flight!");
+      }
+    }
+    finally {}
   }
 }
 

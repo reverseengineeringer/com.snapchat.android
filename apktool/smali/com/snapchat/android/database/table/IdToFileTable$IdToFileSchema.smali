@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzw;
+.implements Laav;
 
 
 # annotations
@@ -22,7 +22,7 @@
         "<",
         "Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;",
         ">;",
-        "Lzw;"
+        "Laav;"
     }
 .end annotation
 
@@ -31,6 +31,8 @@
 .field private static final synthetic $VALUES:[Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
 .field public static final enum FILE_PATH:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
+
+.field public static final enum LAST_ACCESS_MILLISECONDS:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
 .field public static final enum SNAP_ID:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
@@ -45,21 +47,23 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 10
+    .locals 12
 
     .prologue
-    const/4 v7, 0x2
+    const/4 v11, 0x3
 
     const/4 v2, 0x0
 
+    const/4 v7, 0x2
+
     const/4 v3, 0x1
 
-    .line 95
+    .line 99
     new-instance v0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     const-string v1, "SNAP_ID"
 
-    const-string v4, "SnapId"
+    const-string v4, "id"
 
     sget-object v5, Lcom/snapchat/android/database/DataType;->TEXT:Lcom/snapchat/android/database/DataType;
 
@@ -67,12 +71,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->SNAP_ID:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
-    .line 97
+    .line 101
     new-instance v4, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     const-string v5, "FILE_PATH"
 
-    const-string v8, "FilePath"
+    const-string v8, "path"
 
     sget-object v9, Lcom/snapchat/android/database/DataType;->TEXT:Lcom/snapchat/android/database/DataType;
 
@@ -82,8 +86,23 @@
 
     sput-object v4, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->FILE_PATH:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
-    .line 93
-    new-array v0, v7, [Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
+    .line 103
+    new-instance v5, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
+
+    const-string v6, "LAST_ACCESS_MILLISECONDS"
+
+    const-string v9, "last_access"
+
+    sget-object v10, Lcom/snapchat/android/database/DataType;->LONG:Lcom/snapchat/android/database/DataType;
+
+    move v8, v11
+
+    invoke-direct/range {v5 .. v10}, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
+
+    sput-object v5, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->LAST_ACCESS_MILLISECONDS:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
+
+    .line 97
+    new-array v0, v11, [Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     sget-object v1, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->SNAP_ID:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
@@ -92,6 +111,10 @@
     sget-object v1, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->FILE_PATH:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     aput-object v1, v0, v3
+
+    sget-object v1, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->LAST_ACCESS_MILLISECONDS:Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
+
+    aput-object v1, v0, v7
 
     sput-object v0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->$VALUES:[Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
@@ -110,19 +133,19 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 109
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 104
+    .line 110
     iput p3, p0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->a:I
 
-    .line 105
+    .line 111
     iput-object p4, p0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->b:Ljava/lang/String;
 
-    .line 106
+    .line 112
     iput-object p5, p0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->c:Lcom/snapchat/android/database/DataType;
 
-    .line 107
+    .line 113
     return-void
 .end method
 
@@ -130,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 97
     iget-object v0, p0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->b:Ljava/lang/String;
 
     return-object v0
@@ -140,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 97
     iget-object v0, p0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->c:Lcom/snapchat/android/database/DataType;
 
     return-object v0
@@ -150,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 97
     const-class v0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -166,7 +189,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 97
     sget-object v0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->$VALUES:[Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->clone()Ljava/lang/Object;
@@ -184,7 +207,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 124
     iget-object v0, p0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->b:Ljava/lang/String;
 
     return-object v0
@@ -194,7 +217,7 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 120
     iget v0, p0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->a:I
 
     return v0
@@ -204,7 +227,7 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 128
     const/4 v0, 0x0
 
     return-object v0
@@ -214,7 +237,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 116
     iget-object v0, p0, Lcom/snapchat/android/database/table/IdToFileTable$IdToFileSchema;->c:Lcom/snapchat/android/database/DataType;
 
     return-object v0

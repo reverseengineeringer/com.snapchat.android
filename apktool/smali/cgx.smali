@@ -1,11 +1,11 @@
-.class public interface abstract Lcgx;
+.class public interface abstract annotation Lcgx;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcgz;
+.implements Ljava/lang/annotation/Annotation;
 
 
-# virtual methods
-.method public abstract a()Lcgg;
-.end method
+# annotations
+.annotation build Lcgw;
+.end annotation

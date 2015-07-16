@@ -65,10 +65,6 @@
 
     invoke-static {v0}, Lcom/google/android/gms/internal/zzho;->zza(Lcom/google/android/gms/internal/zzho;)Ljava/lang/Object;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
     monitor-exit v1
 
     return-void

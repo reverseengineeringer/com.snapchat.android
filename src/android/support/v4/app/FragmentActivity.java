@@ -24,6 +24,8 @@ import android.view.Window;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 import q;
 
 public class FragmentActivity
@@ -504,6 +506,8 @@ public class FragmentActivity
   
   public void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     mFragments.attachActivity(this, mContainer, null);
     if (getLayoutInflater().getFactory() == null) {
       getLayoutInflater().setFactory(this);
@@ -520,10 +524,10 @@ public class FragmentActivity
       localParcelable = paramBundle.getParcelable("android:support:fragments");
       localFragmentManagerImpl = mFragments;
       if (localNonConfigurationInstances == null) {
-        break label100;
+        break label114;
       }
     }
-    label100:
+    label114:
     for (paramBundle = fragments;; paramBundle = null)
     {
       localFragmentManagerImpl.restoreAllState(localParcelable, paramBundle);

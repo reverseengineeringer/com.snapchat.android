@@ -1,144 +1,102 @@
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import com.snapchat.android.Timber;
-import com.snapchat.android.rendering.SnapMediaRenderer;
-import com.snapchat.android.rendering.SnapMediaRenderer.ErrorCode;
-import com.snapchat.android.rendering.SnapMediaRenderer.a;
-import com.snapchat.android.util.debug.ReleaseManager;
+import android.content.Intent;
+import com.snapchat.android.analytics.ProfileEventAnalytics;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.SuggestedFriendAction;
+import com.snapchat.android.util.FriendSectionizer.FriendSection;
+import com.squareup.otto.Bus;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public final class anl
-  implements SnapMediaRenderer
+  extends ana
+  implements ui.b<blq>
 {
-  private static String a = "ImageSnapRenderer";
-  private final LayoutInflater b;
-  private final avs c;
-  private final bgt d;
-  private final avp e;
-  private View f;
-  private ImageView g;
-  private aje h;
-  private avv i;
-  private SnapMediaRenderer.a j;
+  @chd
+  public SuggestedFriendAction a;
+  public String b;
+  public boolean c;
+  protected akp d;
+  protected final Bus e;
+  protected final akr f;
+  protected final awa g;
+  private int k;
+  private ProfileEventAnalytics l;
   
-  public anl(@cgb Context paramContext)
+  public anl(Intent paramIntent)
   {
-    this((LayoutInflater)paramContext.getSystemService("layout_inflater"), new avs(), new bgt(), new avp(paramContext));
+    this(paramIntent, akr.a(), bbo.a(), awa.a(), ProfileEventAnalytics.a());
   }
   
-  private anl(LayoutInflater paramLayoutInflater, avs paramavs, bgt parambgt, avp paramavp)
+  private anl(Intent paramIntent, akr paramakr, Bus paramBus, awa paramawa, ProfileEventAnalytics paramProfileEventAnalytics)
   {
-    b = paramLayoutInflater;
-    c = paramavs;
-    d = parambgt;
-    e = paramavp;
+    super(paramIntent);
+    e = paramBus;
+    a = SuggestedFriendAction.valueOf(paramIntent.getStringExtra("action"));
+    b = paramIntent.getStringExtra("friend_name");
+    k = paramIntent.getIntExtra("friend_index", -1);
+    f = paramakr;
+    g = paramawa;
+    c = false;
+    l = paramProfileEventAnalytics;
+    registerCallback(blq.class, this);
   }
   
-  public final void a()
+  public final void a(Context paramContext)
   {
-    Timber.c(a, "SNAP-VIEW: Start %s", new Object[] { h });
-    if (h == null)
-    {
-      if (ReleaseManager.f()) {
-        throw new RuntimeException("Start called for null snap");
-      }
-    }
-    else
-    {
-      f.bringToFront();
-      d.c();
-      g.setVisibility(0);
-      g.post(new Runnable()
-      {
-        public final void run()
-        {
-          SnapMediaRenderer.a locala = anl.b(anl.this);
-          if (locala != null) {
-            locala.a();
-          }
-        }
-      });
-    }
-  }
-  
-  public final void a(@cgb final aje paramaje, boolean paramBoolean, @cgb final SnapMediaRenderer.a parama)
-  {
-    Timber.c(a, "SNAP-VIEW: Prepare %s", new Object[] { paramaje });
-    h = paramaje;
-    j = parama;
-    Object localObject = h.I();
-    if (localObject == null)
-    {
-      Timber.e(a, "Snap media not available for %s", new Object[] { h });
-      parama.a(SnapMediaRenderer.ErrorCode.MEDIA_UNAVAILABLE_LOCALLY);
+    d = akp.a(paramContext);
+    if ((a == SuggestedFriendAction.LIST) && (!awa.a(d, akr.a()))) {
       return;
     }
-    localObject = new avx.a().a(mKey, mCache, mKey, mAlgorithm);
-    mImageView = g;
-    mRequireExactDimensions = false;
-    localObject = ((avx.a)localObject).a();
-    i = new avv(new avy()
-    {
-      public final void a(avo paramAnonymousavo, avx paramAnonymousavx)
-      {
-        Timber.c(anl.e(), "SNAP-VIEW: onBitmap loaded for %s", new Object[] { anl.a(anl.this) });
-        paramAnonymousavo = mBitmap;
-        if (paramAnonymousavo == null)
-        {
-          parama.a(SnapMediaRenderer.ErrorCode.MEDIA_UNAVAILABLE_LOCALLY);
-          return;
-        }
-        paramAnonymousavx = mImageView;
-        if (paramAnonymousavx != null) {
-          paramAnonymousavx.setImageBitmap(paramAnonymousavo);
-        }
-        int i = (int)paramaje.F();
-        parama.a(i * 1000, paramAnonymousavo.getWidth(), paramAnonymousavo.getHeight());
-      }
-    });
-    e.b((avx)localObject, new avy[] { i });
+    super.a(paramContext);
   }
   
-  public final void a(@cgb ViewGroup paramViewGroup)
+  public final Object getRequestPayload()
   {
-    f = b.inflate(2130968733, paramViewGroup, false);
-    g = ((ImageView)f.findViewById(2131362700));
-    d.mView = g;
-    paramViewGroup.addView(f);
-  }
-  
-  public final void a(boolean paramBoolean) {}
-  
-  public final void b()
-  {
-    Timber.c(a, "SNAP-VIEW: Stop %s", new Object[] { h });
-    h = null;
-    j = null;
-    if (i != null)
+    anl.a locala = new anl.a();
+    locala.a(a.getServerActionName());
+    switch (anl.1.a[a.ordinal()])
     {
-      avv localavv = i;
-      synchronized (mMutex)
+    default: 
+      new StringBuilder("Unexpected action : ").append(a);
+    }
+    for (;;)
+    {
+      new StringBuilder("Send out the request for suggested friend with action : ").append(a);
+      return buildAuthPayload(locala);
+      locala.a(a.getServerActionName());
+      continue;
+      locala.a(SuggestedFriendAction.UPDATE.getServerActionName());
+      locala.a(Boolean.valueOf(true));
+      Object localObject = awa.a(d, FriendSectionizer.FriendSection.SUGGESTED_FRIEND);
+      ArrayList localArrayList = new ArrayList();
+      localObject = ((ArrayList)localObject).iterator();
+      while (((Iterator)localObject).hasNext())
       {
-        mIsCanceled = true;
-        return;
+        Friend localFriend = (Friend)((Iterator)localObject).next();
+        if ((localFriend != null) && (localFriend.h())) {
+          localArrayList.add(localFriend.l());
+        }
       }
+      locala.a(localArrayList);
+      continue;
+      locala.a(SuggestedFriendAction.UPDATE.getServerActionName());
+      locala.b(Boolean.valueOf(true));
+      locala.b(b);
+      locala.a(Integer.valueOf(k));
     }
   }
   
-  public final void c()
+  protected final String l_()
   {
-    Timber.c(a, "SNAP-VIEW: Show %s", new Object[] { h });
-    g.setVisibility(0);
+    return "/bq/suggest_friend";
   }
   
-  public final void d()
+  @ud
+  public final class a
+    extends blp
   {
-    Timber.c(a, "SNAP-VIEW: Hide %s", new Object[] { h });
-    g.setVisibility(8);
-    c.a(g, false);
+    public a() {}
   }
 }
 

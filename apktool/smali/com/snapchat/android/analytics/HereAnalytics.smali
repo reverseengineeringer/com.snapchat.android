@@ -113,7 +113,7 @@
 
 .method private static a(J)Ljava/lang/String;
     .locals 8
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
@@ -135,7 +135,7 @@
     if-gez v0, :cond_0
 
     .line 370
-    invoke-static {p0, p1}, Laua;->b(J)Ljava/lang/String;
+    invoke-static {p0, p1}, Lauy;->b(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -256,11 +256,11 @@
     iput-wide v2, p0, Lcom/snapchat/android/analytics/HereAnalytics;->mHereAvailableTimestamp:J
 
     .line 260
-    new-instance v1, Lhv;
+    new-instance v1, Lie;
 
-    invoke-direct {v1}, Lhv;-><init>()V
+    invoke-direct {v1}, Lie;-><init>()V
 
-    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 268
     :goto_0
@@ -292,7 +292,7 @@
 
     .line 274
     :cond_0
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     .line 275
     iput-wide v2, p0, Lcom/snapchat/android/analytics/HereAnalytics;->mPreviousSetupEventTimestamp:J
@@ -327,7 +327,7 @@
 .method public final a(Lcom/snapchat/android/ui/here/DisconnectReason;)V
     .locals 6
     .param p1    # Lcom/snapchat/android/ui/here/DisconnectReason;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -394,7 +394,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     .line 181
     sget-object v1, Lcom/snapchat/android/analytics/HereAnalytics$OutgoingVideoState;->CONNECTING:Lcom/snapchat/android/analytics/HereAnalytics$OutgoingVideoState;
@@ -422,7 +422,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     .line 187
     :goto_2
@@ -456,7 +456,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     goto :goto_2
 .end method
@@ -464,7 +464,7 @@
 .method public final a(Ljava/lang/String;)V
     .locals 8
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -528,13 +528,13 @@
 
     invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
-    new-instance v0, Lhx;
+    new-instance v0, Lig;
 
-    invoke-direct {v0}, Lhx;-><init>()V
+    invoke-direct {v0}, Lig;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 233
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -556,9 +556,9 @@
     sub-long/2addr v0, v2
 
     .line 237
-    new-instance v2, Lhw;
+    new-instance v2, Lif;
 
-    invoke-direct {v2}, Lhw;-><init>()V
+    invoke-direct {v2}, Lif;-><init>()V
 
     long-to-double v4, v0
 
@@ -570,9 +570,9 @@
 
     move-result-object v3
 
-    iput-object v3, v2, Lhw;->view_time_sec:Ljava/lang/Double;
+    iput-object v3, v2, Lif;->view_time_sec:Ljava/lang/Double;
 
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     new-instance v2, Lcom/snapchat/android/analytics/framework/EasyMetric;
 
@@ -590,7 +590,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     goto :goto_2
 .end method

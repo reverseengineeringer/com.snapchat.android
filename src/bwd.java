@@ -1,16 +1,104 @@
-import android.os.AsyncTask;
-import android.os.Build.VERSION;
+import android.os.Process;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.Date;
+import java.util.UUID;
 
 public final class bwd
+  implements Thread.UncaughtExceptionHandler
 {
-  public static void a(AsyncTask<Void, ?, ?> paramAsyncTask)
+  bwc a;
+  private boolean b = false;
+  private Thread.UncaughtExceptionHandler c;
+  
+  public bwd(Thread.UncaughtExceptionHandler paramUncaughtExceptionHandler, bwc parambwc, boolean paramBoolean)
   {
-    if (Build.VERSION.SDK_INT <= 12)
+    c = paramUncaughtExceptionHandler;
+    b = paramBoolean;
+    a = parambwc;
+  }
+  
+  private static String a(String paramString)
+  {
+    String str = paramString;
+    if (paramString != null)
     {
-      paramAsyncTask.execute(new Void[0]);
+      str = paramString;
+      if (paramString.length() > 255) {
+        str = paramString.substring(0, 255);
+      }
+    }
+    return str;
+  }
+  
+  private static void a(String paramString1, String paramString2)
+  {
+    try
+    {
+      paramString2 = bwa.a + "/" + paramString2;
+      if (paramString1.trim().length() > 0)
+      {
+        paramString2 = new BufferedWriter(new FileWriter(paramString2));
+        paramString2.write(paramString1);
+        paramString2.flush();
+        paramString2.close();
+      }
       return;
     }
-    paramAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
+    catch (Exception paramString1) {}
+  }
+  
+  public static void a(Throwable paramThrowable, bwc parambwc)
+  {
+    Date localDate = new Date();
+    StringWriter localStringWriter = new StringWriter();
+    paramThrowable.printStackTrace(new PrintWriter(localStringWriter));
+    try
+    {
+      paramThrowable = UUID.randomUUID().toString();
+      BufferedWriter localBufferedWriter = new BufferedWriter(new FileWriter(bwa.a + "/" + paramThrowable + ".stacktrace"));
+      localBufferedWriter.write("Package: " + bwa.d + "\n");
+      localBufferedWriter.write("Version Code: " + bwa.b + "\n");
+      localBufferedWriter.write("Version Name: " + bwa.c + "\n");
+      localBufferedWriter.write("Android: " + bwa.e + "\n");
+      localBufferedWriter.write("Manufacturer: " + bwa.g + "\n");
+      localBufferedWriter.write("Model: " + bwa.f + "\n");
+      if (bwa.h != null) {
+        localBufferedWriter.write("CrashReporter Key: " + bwa.h + "\n");
+      }
+      localBufferedWriter.write("Date: " + localDate + "\n");
+      localBufferedWriter.write("\n");
+      localBufferedWriter.write(localStringWriter.toString());
+      localBufferedWriter.flush();
+      localBufferedWriter.close();
+      if (parambwc != null)
+      {
+        a(a(parambwc.c()), paramThrowable + ".user");
+        a(a(parambwc.d()), paramThrowable + ".contact");
+        a(parambwc.b(), paramThrowable + ".description");
+      }
+      return;
+    }
+    catch (Exception paramThrowable) {}
+  }
+  
+  public final void uncaughtException(Thread paramThread, Throwable paramThrowable)
+  {
+    if (bwa.a == null)
+    {
+      c.uncaughtException(paramThread, paramThrowable);
+      return;
+    }
+    a(paramThrowable, a);
+    if (!b)
+    {
+      c.uncaughtException(paramThread, paramThrowable);
+      return;
+    }
+    Process.killProcess(Process.myPid());
+    System.exit(10);
   }
 }
 

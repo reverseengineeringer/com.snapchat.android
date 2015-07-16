@@ -1,37 +1,28 @@
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.Context;
-import com.snapchat.android.model.Friend;
-import com.snapchat.android.model.FriendAction.BlockReason;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import android.os.Bundle;
+import android.text.TextUtils;
+import com.snapchat.android.discover.model.ChannelPage;
+import com.snapchat.android.discover.ui.ChannelView;
+import com.snapchat.android.discover.ui.OpenChannelAnimationView.a;
 
-final class afh$a
-  extends aqb
+public final class afh$a
+  implements OpenChannelAnimationView.a
 {
-  public afh$a(afh paramafh, Context paramContext, Friend paramFriend) {}
+  private final Bundle b;
   
-  protected final void a()
+  afh$a(afh paramafh, Bundle paramBundle)
   {
-    afh localafh = a;
-    AlertDialog.Builder localBuilder = new AlertDialog.Builder(b);
-    ArrayList localArrayList = dk.a(FriendAction.BlockReason.values());
-    localArrayList.remove(localArrayList.size() - 1);
-    Collections.shuffle(localArrayList);
-    localArrayList.add(FriendAction.BlockReason.OTHER);
-    CharSequence[] arrayOfCharSequence = new CharSequence[localArrayList.size()];
-    int i = 0;
-    while (i < localArrayList.size())
-    {
-      arrayOfCharSequence[i] = b.getString(((FriendAction.BlockReason)localArrayList.get(i)).getTextId());
-      i += 1;
-    }
-    localBuilder.setItems(arrayOfCharSequence, new afh.1(localafh, localArrayList));
-    localBuilder.setCancelable(false).setTitle(2131492931).create().show();
+    b = paramBundle;
   }
   
-  protected final void b() {}
+  public final void a(ChannelView paramChannelView)
+  {
+    paramChannelView = paramChannelView.getChannelPage();
+    b.putParcelable(ChannelPage.a, paramChannelView);
+    if (TextUtils.isEmpty(b.getString("edition_id"))) {
+      b.putString("edition_id", e);
+    }
+    afh.a(a, b);
+  }
 }
 
 /* Location:

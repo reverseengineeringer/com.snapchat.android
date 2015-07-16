@@ -1,8 +1,25 @@
-import android.content.Context;
+import java.io.File;
+import java.io.IOException;
 
-public abstract interface bsj
+public class bsj
 {
-  public abstract bsi a(brk parambrk1, brk parambrk2, String paramString, Context paramContext, bqu parambqu, btc parambtc);
+  protected File a;
+  
+  public bsj(File paramFile)
+  {
+    a = paramFile;
+  }
+  
+  public Object a()
+  {
+    try
+    {
+      String str = bui.b(a);
+      return str;
+    }
+    catch (IOException localIOException) {}
+    return "";
+  }
 }
 
 /* Location:

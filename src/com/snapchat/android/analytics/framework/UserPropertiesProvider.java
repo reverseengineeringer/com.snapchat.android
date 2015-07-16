@@ -1,15 +1,15 @@
 package com.snapchat.android.analytics.framework;
 
-import ajv;
-import ajx;
-import bfs;
+import akp;
+import akr;
+import bgs;
 import javax.inject.Provider;
 
 public class UserPropertiesProvider
   implements ScAnalyticsEventEngine.UserPropertiesInterface
 {
   private static final UserPropertiesProvider a = new UserPropertiesProvider();
-  private final Provider<ajv> b = ajv.UNSAFE_USER_PROVIDER;
+  private final Provider<akp> b = akp.UNSAFE_USER_PROVIDER;
   
   public static UserPropertiesProvider d()
   {
@@ -18,24 +18,24 @@ public class UserPropertiesProvider
   
   public final String a()
   {
-    if (ajx.m()) {
-      return ajx.l();
+    if (akr.m()) {
+      return akr.l();
     }
     return null;
   }
   
   public final String b()
   {
-    return bfs.a();
+    return bgs.a();
   }
   
   public final Long c()
   {
-    ajv localajv = (ajv)b.get();
-    if ((localajv == null) || (!ajx.m())) {
+    akp localakp = (akp)b.get();
+    if ((localakp == null) || (!akr.m())) {
       return null;
     }
-    return Long.valueOf(localajv.p());
+    return Long.valueOf(localakp.p());
   }
 }
 

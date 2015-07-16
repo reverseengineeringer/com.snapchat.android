@@ -21,13 +21,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.WindowManager;
-import aur;
-import avh;
-import avl;
-import avq;
-import ban;
-import cgb;
-import com.snapchat.android.Timber;
+import avp;
+import awf;
+import awj;
+import awo;
+import bbo;
+import chc;
 import com.snapchat.android.util.eventbus.DrawingEvent;
 import com.snapchat.android.util.eventbus.DrawingEvent.DrawingEventType;
 import com.squareup.otto.Bus;
@@ -55,17 +54,16 @@ public class LegacyCanvasView
   {
     super(paramContext);
     DisplayMetrics localDisplayMetrics = paramContext.getResources().getDisplayMetrics();
-    if (avh.e(paramContext)) {
+    if (awf.e(paramContext)) {
       a = Math.min(widthPixels, heightPixels);
     }
-    for (b = avh.h(paramContext);; b = Math.min(widthPixels, heightPixels))
+    for (b = awf.h(paramContext);; b = Math.min(widthPixels, heightPixels))
     {
       h.setDither(true);
       setOnTouchListener(this);
       j = new b();
       setLayerType(2, null);
       d = getResourcesgetDisplayMetricsdensity;
-      Timber.c("LegacyCanvasView", "Canvas view instantiated", new Object[0]);
       return;
       a = Math.max(widthPixels, heightPixels);
     }
@@ -139,12 +137,12 @@ public class LegacyCanvasView
     {
       i1 = 1;
       if (i1 == 0) {
-        break label256;
+        break label208;
       }
       i2 = n;
       a = i2;
       if (i1 == 0) {
-        break label263;
+        break label215;
       }
       i1 = m;
       b = i1;
@@ -153,17 +151,14 @@ public class LegacyCanvasView
       f2 = m;
       if (i3 != paramInt)
       {
-        Timber.c("LegacyCanvasView", "Rotate drawing from %d to %d", new Object[] { Integer.valueOf(paramInt), Integer.valueOf(i3) });
         if (i3 != 1) {
-          break label270;
+          break label222;
         }
         localObject = b(270.0F, f1, f2);
-        Timber.c("LegacyCanvasView", "went to rotation 90", new Object[0]);
-        label177:
+        label140:
         if ((j != null) && (j.a != null)) {
-          break label350;
+          break label269;
         }
-        Timber.c("LegacyCanvasView", "Drawing is null", new Object[0]);
       }
     }
     for (;;)
@@ -174,29 +169,26 @@ public class LegacyCanvasView
       }
       i1 = 0;
       break;
-      label256:
+      label208:
       i2 = m;
       break label83;
-      label263:
+      label215:
       i1 = n;
       break label98;
-      label270:
+      label222:
       if (i3 == 3)
       {
         localObject = b(90.0F, f1, f2);
-        Timber.c("LegacyCanvasView", "went to rotation 270", new Object[0]);
-        break label177;
+        break label140;
       }
       if (paramInt == 1)
       {
         localObject = a(90.0F, f1, f2);
-        Timber.c("LegacyCanvasView", "went from rotation 90 (probz back to portrait)", new Object[0]);
-        break label177;
+        break label140;
       }
       localObject = a(270.0F, f1, f2);
-      Timber.c("LegacyCanvasView", "else... back to portrait from 270?", new Object[0]);
-      break label177;
-      label350:
+      break label140;
+      label269:
       Iterator localIterator = j.a.iterator();
       while (localIterator.hasNext()) {
         nextb.transform((Matrix)localObject);
@@ -314,7 +306,7 @@ public class LegacyCanvasView
         i.a(g.x + 0.1F, g.y + 0.1F);
         k = g.x;
         l = g.y;
-        ban.a().a(new DrawingEvent(DrawingEvent.DrawingEventType.STARTED_STROKE));
+        bbo.a().a(new DrawingEvent(DrawingEvent.DrawingEventType.STARTED_STROKE));
       }
       for (;;)
       {
@@ -347,13 +339,13 @@ public class LegacyCanvasView
         a.add(paramMotionEvent);
         i = null;
         g = null;
-        ban.a().a(new DrawingEvent(DrawingEvent.DrawingEventType.COMPLETED_STROKE));
+        bbo.a().a(new DrawingEvent(DrawingEvent.DrawingEventType.COMPLETED_STROKE));
       }
     }
     return false;
   }
   
-  public boolean onTouchEvent(@cgb MotionEvent paramMotionEvent)
+  public boolean onTouchEvent(@chc MotionEvent paramMotionEvent)
   {
     return super.onTouchEvent(paramMotionEvent);
   }
@@ -415,14 +407,14 @@ public class LegacyCanvasView
       b.setFilterBitmap(false);
     }
     
-    @avl
+    @awj
     public final void a()
     {
       b();
-      Object localObject = aur.a(getContext().getResources().getDisplayMetrics(), LegacyCanvasView.a(LegacyCanvasView.this), LegacyCanvasView.b(LegacyCanvasView.this), Bitmap.Config.ARGB_8888);
-      localObject = avq.a().a((BitmapFactory.Options)localObject, true);
+      Object localObject = avp.a(getContext().getResources().getDisplayMetrics(), LegacyCanvasView.a(LegacyCanvasView.this), LegacyCanvasView.b(LegacyCanvasView.this), Bitmap.Config.ARGB_8888);
+      localObject = awo.a().a((BitmapFactory.Options)localObject, true);
       if (localObject != null) {}
-      for (e = ((Bitmap)localObject);; e = aur.a(LegacyCanvasView.a(LegacyCanvasView.this), LegacyCanvasView.b(LegacyCanvasView.this), Bitmap.Config.ARGB_8888))
+      for (e = ((Bitmap)localObject);; e = avp.a(LegacyCanvasView.a(LegacyCanvasView.this), LegacyCanvasView.b(LegacyCanvasView.this), Bitmap.Config.ARGB_8888))
       {
         d = new Canvas(e);
         return;
@@ -432,7 +424,7 @@ public class LegacyCanvasView
     public final void b()
     {
       d = null;
-      avq.a().a(e);
+      awo.a().a(e);
       e = null;
     }
   }

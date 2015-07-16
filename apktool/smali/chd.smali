@@ -1,69 +1,24 @@
-.class public abstract Lchd;
-.super Lche;
+.class public interface abstract annotation Lchd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lcgx;
+.implements Ljava/lang/annotation/Annotation;
 
 
-# direct methods
-.method protected constructor <init>()V
-    .locals 0
+# annotations
+.annotation runtime Ljava/lang/annotation/Documented;
+.end annotation
 
-    .prologue
-    .line 51
-    invoke-direct {p0}, Lche;-><init>()V
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->CLASS:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
-    .line 52
-    return-void
-.end method
-
-
-# virtual methods
-.method public final f()I
-    .locals 4
-
-    .prologue
-    .line 115
-    invoke-virtual {p0}, Lchd;->d()Lcgf;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcgf;->E()Lcgh;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchd;->c()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Lcgh;->a(J)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final g()I
-    .locals 4
-
-    .prologue
-    .line 173
-    invoke-virtual {p0}, Lchd;->d()Lcgf;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcgf;->u()Lcgh;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchd;->c()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Lcgh;->a(J)I
-
-    move-result v0
-
-    return v0
-.end method
+.annotation runtime Ljava/lang/annotation/Target;
+    value = {
+        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->PARAMETER:Ljava/lang/annotation/ElementType;,
+        .enum Ljava/lang/annotation/ElementType;->LOCAL_VARIABLE:Ljava/lang/annotation/ElementType;
+    }
+.end annotation

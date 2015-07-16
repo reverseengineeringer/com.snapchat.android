@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/util/DebitCardNumberValidator_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Latb;",
+        "Laua;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Latb;",
+            "Laua;",
             ">;"
         }
     .end annotation
@@ -127,14 +127,14 @@
 
 
 # virtual methods
-.method public final get()Latb;
+.method public final get()Laua;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Latb;
+    new-instance v0, Laua;
 
-    invoke-direct {v0}, Latb;-><init>()V
+    invoke-direct {v0}, Laua;-><init>()V
 
     return-object v0
 .end method
@@ -144,7 +144,7 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/util/DebitCardNumberValidator_Factory;->get()Latb;
+    invoke-virtual {p0}, Lcom/snapchat/android/util/DebitCardNumberValidator_Factory;->get()Laua;
 
     move-result-object v0
 

@@ -1,104 +1,80 @@
-import android.os.Process;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.Date;
-import java.util.UUID;
+import java.io.OutputStream;
 
 public final class bvc
-  implements Thread.UncaughtExceptionHandler
+  extends OutputStream
 {
-  bvb a;
-  private boolean b = false;
-  private Thread.UncaughtExceptionHandler c;
+  private final OutputStream a;
+  private final btc b;
   
-  public bvc(Thread.UncaughtExceptionHandler paramUncaughtExceptionHandler, bvb parambvb, boolean paramBoolean)
+  public bvc(OutputStream paramOutputStream, btc parambtc)
   {
-    c = paramUncaughtExceptionHandler;
-    b = paramBoolean;
-    a = parambvb;
-  }
-  
-  private static String a(String paramString)
-  {
-    String str = paramString;
-    if (paramString != null)
-    {
-      str = paramString;
-      if (paramString.length() > 255) {
-        str = paramString.substring(0, 255);
-      }
+    if (paramOutputStream == null) {
+      throw new NullPointerException("delegate was null");
     }
-    return str;
+    if (parambtc == null) {
+      throw new NullPointerException("stats were null");
+    }
+    a = paramOutputStream;
+    b = parambtc;
   }
   
-  private static void a(String paramString1, String paramString2)
+  public final void close()
+  {
+    a.close();
+  }
+  
+  public final void flush()
+  {
+    a.flush();
+  }
+  
+  public final void write(int paramInt)
   {
     try
     {
-      paramString2 = buz.a + "/" + paramString2;
-      if (paramString1.trim().length() > 0)
+      if (b != null)
       {
-        paramString2 = new BufferedWriter(new FileWriter(paramString2));
-        paramString2.write(paramString1);
-        paramString2.flush();
-        paramString2.close();
+        b.c();
+        b.c(1L);
       }
+      a.write(paramInt);
       return;
     }
-    catch (Exception paramString1) {}
+    catch (ThreadDeath localThreadDeath)
+    {
+      throw localThreadDeath;
+    }
+    catch (Throwable localThrowable)
+    {
+      for (;;)
+      {
+        bue.a(localThrowable);
+      }
+    }
   }
   
-  public static void a(Throwable paramThrowable, bvb parambvb)
+  public final void write(byte[] paramArrayOfByte)
   {
-    Date localDate = new Date();
-    StringWriter localStringWriter = new StringWriter();
-    paramThrowable.printStackTrace(new PrintWriter(localStringWriter));
-    try
+    if (b != null)
     {
-      paramThrowable = UUID.randomUUID().toString();
-      BufferedWriter localBufferedWriter = new BufferedWriter(new FileWriter(buz.a + "/" + paramThrowable + ".stacktrace"));
-      localBufferedWriter.write("Package: " + buz.d + "\n");
-      localBufferedWriter.write("Version Code: " + buz.b + "\n");
-      localBufferedWriter.write("Version Name: " + buz.c + "\n");
-      localBufferedWriter.write("Android: " + buz.e + "\n");
-      localBufferedWriter.write("Manufacturer: " + buz.g + "\n");
-      localBufferedWriter.write("Model: " + buz.f + "\n");
-      if (buz.h != null) {
-        localBufferedWriter.write("CrashReporter Key: " + buz.h + "\n");
+      b.c();
+      if (paramArrayOfByte != null) {
+        b.c(paramArrayOfByte.length);
       }
-      localBufferedWriter.write("Date: " + localDate + "\n");
-      localBufferedWriter.write("\n");
-      localBufferedWriter.write(localStringWriter.toString());
-      localBufferedWriter.flush();
-      localBufferedWriter.close();
-      if (parambvb != null)
-      {
-        a(a(parambvb.c()), paramThrowable + ".user");
-        a(a(parambvb.d()), paramThrowable + ".contact");
-        a(parambvb.b(), paramThrowable + ".description");
-      }
-      return;
     }
-    catch (Exception paramThrowable) {}
+    a.write(paramArrayOfByte);
   }
   
-  public final void uncaughtException(Thread paramThread, Throwable paramThrowable)
+  public final void write(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
   {
-    if (buz.a == null)
+    if (b != null)
     {
-      c.uncaughtException(paramThread, paramThrowable);
-      return;
+      b.c();
+      if (paramArrayOfByte != null) {
+        b.c(paramInt2);
+      }
     }
-    a(paramThrowable, a);
-    if (!b)
-    {
-      c.uncaughtException(paramThread, paramThrowable);
-      return;
-    }
-    Process.killProcess(Process.myPid());
-    System.exit(10);
+    a.write(paramArrayOfByte, paramInt1, paramInt2);
   }
 }
 

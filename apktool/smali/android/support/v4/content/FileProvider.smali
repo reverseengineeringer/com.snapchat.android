@@ -1036,6 +1036,18 @@
     .locals 1
 
     .prologue
+    invoke-virtual {p0}, Landroid/support/v4/content/FileProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Landroid/support/v4/content/FileProvider;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 330
     const/4 v0, 0x1
 

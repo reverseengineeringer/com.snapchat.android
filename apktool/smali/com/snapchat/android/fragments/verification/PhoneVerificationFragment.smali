@@ -17,7 +17,7 @@
 
 .field private B:Z
 
-.field private C:Laok;
+.field private C:Lapg;
 
 .field private a:Ljava/lang/String;
 
@@ -25,7 +25,7 @@
 
 .field protected final c:Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
-.field protected final d:Lajx;
+.field protected final d:Lakr;
 
 .field public e:Landroid/support/v4/app/FragmentActivity;
 
@@ -61,7 +61,7 @@
 
 .field private u:Lcom/snapchat/android/receiver/SmsReceiver;
 
-.field private final v:Laol;
+.field private final v:Laph;
 
 .field private final w:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -97,22 +97,22 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lajx;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
+.method public constructor <init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lakr;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
     .locals 1
 
     .prologue
     .line 140
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;-><init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lajx;Lcom/snapchat/android/ui/window/WindowConfiguration;Laol;)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;-><init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lakr;Lcom/snapchat/android/ui/window/WindowConfiguration;Laph;)V
 
     .line 141
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lajx;Lcom/snapchat/android/ui/window/WindowConfiguration;Laol;)V
+.method private constructor <init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lakr;Lcom/snapchat/android/ui/window/WindowConfiguration;Laph;)V
     .locals 2
 
     .prologue
@@ -161,16 +161,16 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment$1;-><init>(Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->C:Laok;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->C:Lapg;
 
     .line 148
     iput-object p1, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->c:Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
     .line 149
-    iput-object p2, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->d:Lajx;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->d:Lakr;
 
     .line 150
-    iput-object p4, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v:Laol;
+    iput-object p4, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v:Laph;
 
     .line 151
     return-void
@@ -185,15 +185,15 @@
 
     move-result-object v0
 
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v1
 
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, p1, v2}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;-><init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lajx;Lcom/snapchat/android/ui/window/WindowConfiguration;Laol;)V
+    invoke-direct {p0, v0, v1, p1, v2}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;-><init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lakr;Lcom/snapchat/android/ui/window/WindowConfiguration;Laph;)V
 
     .line 136
     return-void
@@ -584,12 +584,12 @@
     return v0
 .end method
 
-.method static synthetic h(Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;)Laol;
+.method static synthetic h(Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;)Laph;
     .locals 1
 
     .prologue
     .line 65
-    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v:Laph;
 
     return-object v0
 .end method
@@ -697,16 +697,6 @@
 
     .prologue
     .line 65
-    const-string v0, "PhoneVerificationFragment"
-
-    const-string v1, "registerSmsReceiver()"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->u:Lcom/snapchat/android/receiver/SmsReceiver;
 
     if-nez v0, :cond_0
@@ -803,10 +793,10 @@
 
 
 # virtual methods
-.method public abstract a(Lbkr;)V
+.method public abstract a(Lbls;)V
 .end method
 
-.method protected final a(Lbkt;)V
+.method protected final a(Lblu;)V
     .locals 3
 
     .prologue
@@ -830,7 +820,7 @@
 
     const-string v2, "result"
 
-    invoke-static {v0}, Lath;->a(Ljava/lang/Enum;)Ljava/lang/String;
+    invoke-static {v0}, Laug;->a(Ljava/lang/Enum;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -838,22 +828,22 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     .line 725
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lkw;
+    new-instance v0, Llo;
 
-    invoke-direct {v0}, Lkw;-><init>()V
+    invoke-direct {v0}, Llo;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v0
 
@@ -865,7 +855,7 @@
 
     invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     .line 727
     :cond_0
@@ -878,14 +868,14 @@
     .line 728
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->m:Ljava/lang/String;
 
-    invoke-static {v0}, Lajx;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Lakr;->a(Ljava/lang/String;)V
 
     .line 729
-    invoke-virtual {p1}, Lbkt;->e()Lbkr;
+    invoke-virtual {p1}, Lblu;->e()Lbls;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->a(Lbkr;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->a(Lbls;)V
 
     .line 730
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v()V
@@ -896,7 +886,7 @@
 
     .line 719
     :cond_2
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -966,17 +956,17 @@
     invoke-static {}, Lcom/snapchat/android/analytics/RegistrationAnalytics;->k()V
 
     .line 747
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    new-instance v0, Lkt;
+    new-instance v0, Lll;
 
-    invoke-direct {v0}, Lkt;-><init>()V
+    invoke-direct {v0}, Lll;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 748
     :cond_1
@@ -986,7 +976,7 @@
 .method public abstract i()V
 .end method
 
-.method public final l_()Z
+.method public final j_()Z
     .locals 1
 
     .prologue
@@ -996,12 +986,12 @@
     return v0
 .end method
 
-.method public m()Lbks$a;
+.method public m()Lblt$a;
     .locals 1
 
     .prologue
     .line 785
-    sget-object v0, Lbks$a;->DEFAULT_TYPE:Lbks$a;
+    sget-object v0, Lblt$a;->DEFAULT_TYPE:Lblt$a;
 
     return-object v0
 .end method
@@ -1134,7 +1124,7 @@
 
     .prologue
     .line 155
-    const v0, 0x7f040083
+    const v0, 0x7f040085
 
     const/4 v1, 0x0
 
@@ -1186,7 +1176,7 @@
 
     .prologue
     .line 189
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->J()Landroid/view/Window;
 
     move-result-object v0
 
@@ -1208,13 +1198,13 @@
 
     .line 193
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v:Laph;
 
     const/16 v1, 0x400
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->C:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->C:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 194
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->w:Ljava/util/Set;
@@ -1222,16 +1212,6 @@
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
     .line 195
-    const-string v0, "PhoneVerificationFragment"
-
-    const-string v1, "unregisterSmsReceiver()"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->u:Lcom/snapchat/android/receiver/SmsReceiver;
 
     if-eqz v0, :cond_1
@@ -1261,21 +1241,21 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 184
-    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->v:Laph;
 
     const/16 v1, 0x400
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->C:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->C:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 185
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -1296,7 +1276,7 @@
     .line 793
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->j:Landroid/widget/EditText;
 
-    iget-object v1, p1, Lbet;->code:Ljava/lang/String;
+    iget-object v1, p1, Lbfs;->code:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
@@ -1328,7 +1308,7 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     .line 340
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->k:Landroid/widget/Button;
@@ -1429,7 +1409,7 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     .line 376
     const v0, 0x7f0a00e3
@@ -1443,7 +1423,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->l:Landroid/widget/ProgressBar;
 
     .line 378
-    const v0, 0x7f0a02e1
+    const v0, 0x7f0a02e0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->c(I)Landroid/view/View;
 
@@ -1501,7 +1481,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lajx;->e()Ljava/lang/String;
+    invoke-static {}, Lakr;->e()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1559,7 +1539,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lajx;->e()Ljava/lang/String;
+    invoke-static {}, Lakr;->e()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1599,7 +1579,7 @@
     if-nez v0, :cond_4
 
     .line 424
-    invoke-static {}, Lep;->a()Lep;
+    invoke-static {}, Ley;->a()Ley;
 
     move-result-object v0
 
@@ -1624,7 +1604,7 @@
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Lep;->a(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {v0, v1, v2}, Ley;->a(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 

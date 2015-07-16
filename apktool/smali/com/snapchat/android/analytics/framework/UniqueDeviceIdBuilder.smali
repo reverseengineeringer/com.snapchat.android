@@ -4,16 +4,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(Landroid/content/Context;)Ljava/util/UUID;
     .locals 1
 
@@ -43,7 +33,7 @@
 
 .method private static b(Landroid/content/Context;)Ljava/util/UUID;
     .locals 3
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -71,7 +61,7 @@
 
     if-nez v1, :cond_1
 
-    .line 73
+    .line 72
     :cond_0
     :goto_0
     return-object v0
@@ -93,21 +83,16 @@
 
     goto :goto_0
 
-    .line 71
+    .line 72
     :catch_0
     move-exception v1
-
-    .line 72
-    const-string v2, "UniqueDeviceIdentifier"
-
-    invoke-static {v2, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
 
 .method private static c(Landroid/content/Context;)Ljava/util/UUID;
     .locals 3
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -132,7 +117,7 @@
 
     move-object v0, v1
 
-    .line 86
+    .line 85
     :goto_0
     return-object v0
 
@@ -153,17 +138,11 @@
 
     goto :goto_0
 
-    .line 84
+    .line 85
     :catch_0
     move-exception v0
 
-    .line 85
-    const-string v2, "UniqueDeviceIdentifier"
-
-    invoke-static {v2, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
     move-object v0, v1
 
-    .line 86
     goto :goto_0
 .end method

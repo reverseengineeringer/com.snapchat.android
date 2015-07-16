@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 184
+    .line 193
     new-instance v0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$SwipeDirection;
 
     const-string v1, "LEFT"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$SwipeDirection;->RIGHT:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$SwipeDirection;
 
-    .line 183
+    .line 192
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$SwipeDirection;
@@ -84,7 +84,7 @@
     .end annotation
 
     .prologue
-    .line 183
+    .line 192
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -94,7 +94,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 192
     const-class v0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$SwipeDirection;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -110,7 +110,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 192
     sget-object v0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$SwipeDirection;->$VALUES:[Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$SwipeDirection;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$SwipeDirection;->clone()Ljava/lang/Object;

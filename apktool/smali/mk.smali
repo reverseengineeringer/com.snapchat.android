@@ -1,54 +1,108 @@
-.class public final Lmk;
-.super Ljava/lang/Object;
+.class public Lmk;
+.super Lht;
 .source "SourceFile"
-
-
-# static fields
-.field static final AD_SPLASH_IMPRESSION_DURATION_KEY:Ljava/lang/String; = "ad_splash_impression_duration"
-
-.field static final DEFAULT_AD_PAGE_IMPRESSION_DURATION_MILLISECONDS:J = 0x0L
-
-.field static final DEFAULT_AD_SPLASH_IMPRESSION_DURATION_MILLISECONDS:J = 0x0L
-
-.field static final DEFAULT_NETWORK_CODE:Ljava/lang/String; = "80247475"
-
-.field static final IS_ACTIVE_KEY:Ljava/lang/String; = "is_active"
-
-.field static final NETWORK_CODE_KEY:Ljava/lang/String; = "network_code"
-
-.field static final STUDY_ID:Ljava/lang/String; = "AdManager"
-
-
-# instance fields
-.field public mStudySettings:Lajt;
 
 
 # direct methods
 .method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 7
+    invoke-direct {p0}, Lht;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()Ljava/util/Map;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 11
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    .line 13
+    invoke-super {p0}, Lht;->a()Ljava/util/Map;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+    .line 15
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 20
+    if-ne p0, p1, :cond_1
+
+    .line 24
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 21
+    :cond_1
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_3
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    .line 22
+    :cond_3
+    invoke-super {p0, p1}, Lht;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public hashCode()I
     .locals 1
 
     .prologue
     .line 31
-    invoke-static {}, Lajt;->a()Lajt;
+    invoke-super {p0}, Lht;->hashCode()I
 
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lmk;-><init>(Lajt;)V
+    move-result v0
 
     .line 32
-    return-void
-.end method
-
-.method private constructor <init>(Lajt;)V
-    .locals 0
-
-    .prologue
-    .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 28
-    iput-object p1, p0, Lmk;->mStudySettings:Lajt;
-
-    .line 29
-    return-void
+    return v0
 .end method

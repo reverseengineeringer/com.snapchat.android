@@ -57,26 +57,26 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     .line 253
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment$6;->a:Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->c:Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lkl;
+    new-instance v0, Lld;
 
-    invoke-direct {v0}, Lkl;-><init>()V
+    invoke-direct {v0}, Lld;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v0
 
@@ -88,7 +88,7 @@
 
     invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     .line 257
     :cond_0

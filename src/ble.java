@@ -1,35 +1,48 @@
-import android.util.Log;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import com.google.gson.annotations.SerializedName;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
-final class ble
+public class ble
+  extends bhy
 {
-  private static final Pattern a = Pattern.compile("\\$\\d+$");
+  @SerializedName("countryCode")
+  protected String countrycode;
+  @SerializedName("numbers")
+  protected String numbers;
   
-  static void a()
+  public final ble a(String paramString)
   {
-    c();
+    numbers = paramString;
+    return this;
   }
   
-  static void a(Throwable paramThrowable)
+  public final ble b(String paramString)
   {
-    c();
-    Log.getStackTraceString(paramThrowable);
+    countrycode = paramString;
+    return this;
   }
   
-  static void b()
+  public boolean equals(Object paramObject)
   {
-    c();
-  }
-  
-  private static String c()
-  {
-    String str = Thread.currentThread().getStackTrace()[4].getClassName();
-    Matcher localMatcher = a.matcher(str);
-    if (localMatcher.find()) {
-      str = localMatcher.replaceAll("");
+    if (paramObject == this) {
+      return true;
     }
-    return str.substring(str.lastIndexOf('.') + 1);
+    if (!(paramObject instanceof ble)) {
+      return false;
+    }
+    paramObject = (ble)paramObject;
+    return new EqualsBuilder().append(numbers, numbers).append(countrycode, countrycode).isEquals();
+  }
+  
+  public int hashCode()
+  {
+    return new HashCodeBuilder().append(numbers).append(countrycode).toHashCode();
+  }
+  
+  public String toString()
+  {
+    return ToStringBuilder.reflectionToString(this);
   }
 }
 

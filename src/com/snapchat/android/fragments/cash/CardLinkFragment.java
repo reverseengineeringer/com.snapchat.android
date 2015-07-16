@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.cash;
 
-import ajx;
+import akr;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Build.VERSION;
@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -20,12 +21,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import aqj;
-import atj;
-import atx;
-import avh;
-import bgp;
-import cgb;
+import arh;
+import auh;
+import auv;
+import awf;
+import bhp;
+import chc;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.api2.cash.blockers.CardInputError;
 import com.snapchat.android.ui.cash.CardCvvEditText;
@@ -35,12 +36,12 @@ import com.snapchat.android.ui.cash.ZipEditText;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.fragment.SnapchatFragment;
-import qw;
-import ye;
+import rm;
+import za;
 
 public class CardLinkFragment
   extends SnapchatFragment
-  implements qw
+  implements rm
 {
   public a a;
   private ScrollView b;
@@ -64,34 +65,50 @@ public class CardLinkFragment
   private Animation t;
   private boolean u;
   
-  private static String b(@cgb CardInputError paramCardInputError)
+  private static String b(@chc CardInputError paramCardInputError)
   {
     switch (6.a[paramCardInputError.ordinal()])
     {
     default: 
-      return atx.a(null, 2131492918, new Object[0]) + " " + atx.a(null, 2131493314, new Object[0]);
+      return auv.a(null, 2131492918, new Object[0]) + " " + auv.a(null, 2131493314, new Object[0]);
     case 6: 
     case 7: 
-      return atx.a(null, 2131492972, new Object[0]);
+      return auv.a(null, 2131492972, new Object[0]);
     case 1: 
-      return atx.a(null, 2131493203, new Object[0]) + " " + atx.a(null, 2131493314, new Object[0]);
+      return auv.a(null, 2131493203, new Object[0]) + " " + auv.a(null, 2131493314, new Object[0]);
     case 3: 
     case 4: 
-      return atx.a(null, 2131493205, new Object[0]) + " " + atx.a(null, 2131493314, new Object[0]);
+      return auv.a(null, 2131493205, new Object[0]) + " " + auv.a(null, 2131493314, new Object[0]);
     case 5: 
-      return atx.a(null, 2131493206, new Object[0]) + " " + atx.a(null, 2131493314, new Object[0]);
+      return auv.a(null, 2131493206, new Object[0]) + " " + auv.a(null, 2131493314, new Object[0]);
     case 8: 
-      return atx.a(null, 2131493536, new Object[0]) + " " + atx.a(null, 2131493315, new Object[0]);
+      return auv.a(null, 2131493534, new Object[0]) + " " + auv.a(null, 2131493315, new Object[0]);
     case 2: 
-      return atx.a(null, 2131492965, new Object[0]) + " " + atx.a(null, 2131493313, new Object[0]);
+      return auv.a(null, 2131492965, new Object[0]) + " " + auv.a(null, 2131493313, new Object[0]);
     }
-    return atx.a(null, 2131493250, new Object[0]) + " " + atx.a(null, 2131493328, new Object[0]);
+    return auv.a(null, 2131493250, new Object[0]) + " " + auv.a(null, 2131493328, new Object[0]);
+  }
+  
+  private void i()
+  {
+    WindowManager localWindowManager = getActivity().getWindowManager();
+    Window localWindow = getActivity().getWindow();
+    try
+    {
+      localWindowManager.removeView(localWindow.getDecorView());
+      localWindowManager.addView(localWindow.getDecorView(), localWindow.getAttributes());
+      return;
+    }
+    catch (IllegalArgumentException localIllegalArgumentException)
+    {
+      getActivity().getWindow().clearFlags(8192);
+    }
   }
   
   public final void a()
   {
     AnalyticsEvents.k(s);
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -106,7 +123,7 @@ public class CardLinkFragment
   
   public final void a(final CardInputError paramCardInputError)
   {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -117,7 +134,7 @@ public class CardLinkFragment
         }
         for (;;)
         {
-          AnalyticsEvents.v(paramCardInputError.name());
+          AnalyticsEvents.u(paramCardInputError.name());
           CardLinkFragment.j(CardLinkFragment.this).setVisibility(8);
           CardLinkFragment.c(CardLinkFragment.this);
           return;
@@ -140,14 +157,19 @@ public class CardLinkFragment
   public final void e()
   {
     super.e();
-    avh.g(getActivity());
+    awf.g(getActivity());
     s = false;
-    if (ajx.ar())
+    if (akr.aq())
     {
       AlertDialogUtils.b(getActivity(), getString(2131493361), getString(2131493362));
       AnalyticsEvents.S();
       s = true;
     }
+  }
+  
+  public final boolean f_()
+  {
+    return true;
   }
   
   public final boolean g()
@@ -156,34 +178,32 @@ public class CardLinkFragment
       a.e();
     }
     a = null;
-    avh.a(getActivity(), mFragmentLayout);
+    awf.a(getActivity(), mFragmentLayout);
     getActivity().getWindow().clearFlags(8192);
+    i();
     return false;
-  }
-  
-  public final boolean g_()
-  {
-    return true;
   }
   
   public void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    if (Build.VERSION.SDK_INT >= 11) {
+    if (Build.VERSION.SDK_INT >= 11)
+    {
       getActivity().getWindow().setFlags(8192, 8192);
+      i();
     }
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968606, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968607, paramViewGroup, false);
     paramLayoutInflater = (TextView)c(2131361985);
-    paramViewGroup = (ImageView)c(2131361823);
+    paramViewGroup = (ImageView)c(2131361824);
     p = ((Button)c(2131361988));
     paramBundle = getArguments();
     if ((paramBundle != null) && (paramBundle.getBoolean("use_default_green")))
     {
-      paramLayoutInflater.setTextColor(getResources().getColor(2131230765));
+      paramLayoutInflater.setTextColor(getResources().getColor(2131230766));
       paramViewGroup.setBackgroundResource(2130837520);
       p.setBackgroundResource(2130838105);
     }
@@ -198,7 +218,7 @@ public class CardLinkFragment
         }
       });
       c = ((CardNumberEditText)c(2131361989));
-      c.setValidatedInputCallback(new ye()
+      c.setValidatedInputCallback(new za()
       {
         public final void a()
         {
@@ -218,7 +238,7 @@ public class CardLinkFragment
         
         public final void c() {}
       });
-      c.setCustomSelectionActionModeCallback(new aqj());
+      c.setCustomSelectionActionModeCallback(new arh());
       d = ((ImageView)c(2131361990));
       d.setOnClickListener(new View.OnClickListener()
       {
@@ -232,7 +252,7 @@ public class CardLinkFragment
       c.addTextChangedListener(new b(e, d));
       c.requestFocus();
       f = ((CardExpiryEditText)c(2131361992));
-      f.setValidatedInputCallback(new ye()
+      f.setValidatedInputCallback(new za()
       {
         public final void a()
         {
@@ -251,7 +271,7 @@ public class CardLinkFragment
           CardLinkFragment.b(CardLinkFragment.this).requestFocus();
         }
       });
-      f.setCustomSelectionActionModeCallback(new aqj());
+      f.setCustomSelectionActionModeCallback(new arh());
       g = ((ImageView)c(2131361993));
       g.setOnClickListener(new View.OnClickListener()
       {
@@ -264,7 +284,7 @@ public class CardLinkFragment
       h = ((TextView)c(2131361994));
       f.addTextChangedListener(new b(h, g));
       i = ((CardCvvEditText)c(2131361977));
-      i.setValidatedInputCallback(new ye()
+      i.setValidatedInputCallback(new za()
       {
         public final void a()
         {
@@ -285,7 +305,7 @@ public class CardLinkFragment
           CardLinkFragment.d(CardLinkFragment.this).requestFocus();
         }
       });
-      i.setCustomSelectionActionModeCallback(new aqj());
+      i.setCustomSelectionActionModeCallback(new arh());
       k = ((ImageView)c(2131361996));
       k.setOnClickListener(new View.OnClickListener()
       {
@@ -299,7 +319,7 @@ public class CardLinkFragment
       j = ((ImageView)c(2131361995));
       i.addTextChangedListener(new b(l, k));
       m = ((ZipEditText)c(2131361978));
-      m.setValidatedInputCallback(new ye()
+      m.setValidatedInputCallback(new za()
       {
         public final void a()
         {
@@ -316,7 +336,7 @@ public class CardLinkFragment
           CardLinkFragment.e(CardLinkFragment.this).requestFocus();
         }
       });
-      m.setCustomSelectionActionModeCallback(new aqj());
+      m.setCustomSelectionActionModeCallback(new arh());
       n = ((ImageView)c(2131361998));
       n.setOnClickListener(new View.OnClickListener()
       {
@@ -330,7 +350,7 @@ public class CardLinkFragment
       m.addTextChangedListener(new b(o, n));
       paramLayoutInflater = p;
       getActivity().getAssets();
-      atj.a(paramLayoutInflater);
+      auh.a(paramLayoutInflater);
       p.setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
@@ -345,7 +365,7 @@ public class CardLinkFragment
       q = ((ProgressBar)c(2131362001));
       t = AnimationUtils.loadAnimation(getActivity(), 2131034114);
       return mFragmentLayout;
-      paramLayoutInflater.setTextColor(getResources().getColor(2131230802));
+      paramLayoutInflater.setTextColor(getResources().getColor(2131230803));
       paramViewGroup.setBackgroundResource(2130837665);
       p.setBackgroundResource(2130837667);
     }
@@ -353,7 +373,7 @@ public class CardLinkFragment
   
   public static abstract interface a
   {
-    public abstract void a(@cgb String paramString1, @cgb String paramString2, @cgb String paramString3, @cgb String paramString4, @cgb qw paramqw);
+    public abstract void a(@chc String paramString1, @chc String paramString2, @chc String paramString3, @chc String paramString4, @chc rm paramrm);
     
     public abstract void e();
   }
@@ -364,7 +384,7 @@ public class CardLinkFragment
     private TextView a;
     private ImageView b;
     
-    b(@cgb TextView paramTextView, @cgb ImageView paramImageView)
+    b(@chc TextView paramTextView, @chc ImageView paramImageView)
     {
       a = paramTextView;
       b = paramImageView;

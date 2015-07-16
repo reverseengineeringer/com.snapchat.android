@@ -8,6 +8,8 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class PreviewActivity
   extends Activity
@@ -26,6 +28,8 @@ public class PreviewActivity
   
   public void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     try
     {
       super.onCreate(paramBundle);

@@ -13,7 +13,7 @@ final class StoriesFragment$20
   public final boolean onTouch(View paramView, MotionEvent paramMotionEvent)
   {
     if (a.h) {
-      StoriesFragment.i(a).hideSoftInputFromWindow(a.getView().getWindowToken(), 0);
+      StoriesFragment.h(a).hideSoftInputFromWindow(a.getView().getWindowToken(), 0);
     }
     return false;
   }

@@ -90,7 +90,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
     .param p1    # Landroid/os/Parcel;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

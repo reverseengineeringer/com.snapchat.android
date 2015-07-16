@@ -1,68 +1,56 @@
-import android.content.Context;
-import android.database.Cursor;
-import android.support.v4.widget.CursorAdapter;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import com.snapchat.android.database.schema.HttpMetricSchema;
-import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class lz
-  extends CursorAdapter
+  extends ml
 {
-  private LayoutInflater a;
+  private String additionalInfo;
+  private final String eventName = "STORY_CELL_EMPTY";
   
-  public lz(Context paramContext)
+  public final Map<String, Object> a()
   {
-    super(paramContext, null);
-    a = ((LayoutInflater)paramContext.getSystemService("layout_inflater"));
+    HashMap localHashMap = new HashMap();
+    localHashMap.put("event_name", "STORY_CELL_EMPTY");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
+    }
+    localHashMap.putAll(super.a());
+    return localHashMap;
   }
   
-  public final void bindView$4693bf34(View paramView, Cursor paramCursor)
+  public final boolean equals(Object paramObject)
   {
-    int i = paramCursor.getInt(HttpMetricSchema.STATUS_CODE.getColumnNumber());
-    long l;
-    String str;
-    TextView localTextView;
-    if ((i >= 200) && (i < 300))
+    if (this == paramObject) {}
+    do
     {
-      i = 1;
-      l = paramCursor.getLong(HttpMetricSchema.TIMESTAMP.getColumnNumber());
-      str = new SimpleDateFormat("[hh:mm:ss]").format(new Date(l));
-      ((TextView)paramView.findViewById(2131362393)).setText(str);
-      ((TextView)paramView.findViewById(2131362392)).setText(paramCursor.getString(HttpMetricSchema.PATH.getColumnNumber()));
-      l = paramCursor.getLong(HttpMetricSchema.DURATION.getColumnNumber());
-      ((TextView)paramView.findViewById(2131362394)).setText(l + " ms");
-      str = paramCursor.getString(HttpMetricSchema.METHOD.getColumnNumber());
-      localTextView = (TextView)paramView.findViewById(2131362391);
-      localTextView.setText(str);
-      if (i == 0) {
-        break label339;
+      return true;
+      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+        return false;
+      }
+      if (!super.equals(paramObject)) {
+        return false;
+      }
+      paramObject = (lz)paramObject;
+      if (additionalInfo == null) {
+        break;
+      }
+    } while (additionalInfo.equals(additionalInfo));
+    for (;;)
+    {
+      return false;
+      if (additionalInfo == null) {
+        break;
       }
     }
-    label339:
-    for (i = -16729344;; i = -65536)
-    {
-      localTextView.setBackgroundColor(i);
-      str = paramCursor.getString(HttpMetricSchema.STATUS_LINE.getColumnNumber());
-      ((TextView)paramView.findViewById(2131362395)).setText(str);
-      l = paramCursor.getLong(HttpMetricSchema.SENT_BYTES.getColumnNumber());
-      ((TextView)paramView.findViewById(2131362389)).setText(NumberFormat.getNumberInstance(Locale.US).format(l) + " ↑");
-      l = paramCursor.getLong(HttpMetricSchema.RECEIVED_BYTES.getColumnNumber());
-      ((TextView)paramView.findViewById(2131362390)).setText(NumberFormat.getNumberInstance(Locale.US).format(l) + " ↓");
-      return;
-      i = 0;
-      break;
-    }
   }
   
-  public final View newView$4b8874c5(ViewGroup paramViewGroup)
+  public final int hashCode()
   {
-    return a.inflate(2130968686, paramViewGroup, false);
+    int j = super.hashCode();
+    if (additionalInfo != null) {}
+    for (int i = additionalInfo.hashCode();; i = 0) {
+      return i + j * 31;
+    }
   }
 }
 

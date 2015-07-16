@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import auo;
+import avm;
 import com.snapchat.android.util.AlertDialogUtils;
 import java.util.Locale;
 
@@ -22,8 +22,8 @@ final class LoginFragment$1
     String str = LoginFragment.b(a).getText().toString().trim();
     if (LoginFragment.i().a(paramView))
     {
-      auo localauo = LoginFragment.i();
-      int i = localauo.b(paramView);
+      avm localavm = LoginFragment.i();
+      int i = localavm.b(paramView);
       if (mSharedPreferences.getInt("SnapKidzLoginManager_passkey_" + i, -1) == str.hashCode()) {}
       for (i = 1; i != 0; i = 0)
       {

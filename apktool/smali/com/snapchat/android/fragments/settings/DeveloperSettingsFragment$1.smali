@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 102
+    .line 100
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$1;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 105
+    .line 103
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$1;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
 
-    .line 106
+    .line 104
     return-void
 .end method

@@ -1,36 +1,22 @@
-import android.view.MotionEvent;
-import android.view.View;
-import com.snapchat.android.ui.smartfilters.TurnOnFiltersView;
-import com.snapchat.android.ui.swipefilters.FilterPageType;
-
 public final class ase
-  extends arn
 {
-  private final TurnOnFiltersView b;
+  final float[] a = new float[2];
+  public final int[] b = { -1, -1 };
+  public float c;
+  public float d;
+  public int e;
+  public int f;
+  boolean g = false;
   
-  public ase(TurnOnFiltersView paramTurnOnFiltersView)
+  public final void a(int paramInt)
   {
-    b = paramTurnOnFiltersView;
+    b[paramInt] = f;
+    a[paramInt] = c;
   }
   
-  public final String a()
+  public final boolean a()
   {
-    return "TurnOnSmartFilters";
-  }
-  
-  public final boolean a(MotionEvent paramMotionEvent)
-  {
-    return true;
-  }
-  
-  public final FilterPageType b()
-  {
-    return FilterPageType.TURN_ON_FILTERS_PAGE;
-  }
-  
-  public final View d()
-  {
-    return b;
+    return (b[0] == -1) && (b[1] == -1);
   }
 }
 

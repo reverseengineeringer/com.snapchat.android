@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 752
+    .line 770
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     iput-boolean p2, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->a:Z
@@ -44,7 +44,7 @@
     .locals 10
 
     .prologue
-    .line 755
+    .line 773
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->d(Lcom/snapchat/android/ui/here/HoldToStreamView;)Lcom/snapchat/android/model/chat/ChatConversation;
@@ -59,7 +59,7 @@
 
     iput-boolean v1, v0, Lcom/snapchat/android/model/chat/ChatConversation;->mIsDisplayingVideo:Z
 
-    invoke-static {}, Lyq;->a()Lyq;
+    invoke-static {}, Lzm;->a()Lzm;
 
     move-result-object v1
 
@@ -69,9 +69,9 @@
 
     iget-boolean v4, v0, Lcom/snapchat/android/model/chat/ChatConversation;->mIsDisplayingVideo:Z
 
-    invoke-virtual {v1, v0, v2, v3, v4}, Lyq;->a(Lcom/snapchat/android/model/chat/ChatConversation;ZZZ)V
+    invoke-virtual {v1, v0, v2, v3, v4}, Lzm;->a(Lcom/snapchat/android/model/chat/ChatConversation;ZZZ)V
 
-    .line 758
+    .line 776
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
@@ -81,7 +81,7 @@
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/ui/here/StreamView$a;->b(Z)V
 
-    .line 759
+    .line 777
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView;->a:Lcom/snapchat/android/ui/here/StreamView$a;
@@ -90,34 +90,34 @@
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/ui/here/StreamView$a;->c(Z)V
 
-    .line 760
+    .line 778
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->e(Lcom/snapchat/android/ui/here/HoldToStreamView;)V
 
-    .line 761
+    .line 779
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->f(Lcom/snapchat/android/ui/here/HoldToStreamView;)V
 
-    .line 762
+    .line 780
     iget-boolean v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->a:Z
 
     if-eqz v0, :cond_2
 
-    .line 763
+    .line 781
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->g(Lcom/snapchat/android/ui/here/HoldToStreamView;)V
 
-    .line 764
+    .line 782
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView;->a:Lcom/snapchat/android/ui/here/StreamView$a;
 
     invoke-interface {v0}, Lcom/snapchat/android/ui/here/StreamView$a;->p()V
 
-    .line 768
+    .line 786
     :goto_0
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
@@ -143,7 +143,7 @@
 
     invoke-direct {v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -178,16 +178,16 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/HereAnalytics;->a(Ljava/lang/String;)V
 
-    .line 769
+    .line 787
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->invalidate()V
 
-    .line 770
+    .line 788
     return-void
 
-    .line 766
+    .line 784
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$10;->b:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
@@ -195,7 +195,7 @@
 
     goto :goto_0
 
-    .line 768
+    .line 786
     :cond_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -205,9 +205,9 @@
 
     sub-long/2addr v2, v4
 
-    new-instance v4, Lhu;
+    new-instance v4, Lid;
 
-    invoke-direct {v4}, Lhu;-><init>()V
+    invoke-direct {v4}, Lid;-><init>()V
 
     long-to-double v6, v2
 
@@ -219,9 +219,9 @@
 
     move-result-object v5
 
-    iput-object v5, v4, Lhu;->view_time_sec:Ljava/lang/Double;
+    iput-object v5, v4, Lid;->view_time_sec:Ljava/lang/Double;
 
-    invoke-static {v4}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v4}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     new-instance v4, Lcom/snapchat/android/analytics/framework/EasyMetric;
 
@@ -241,7 +241,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     goto :goto_1
 .end method

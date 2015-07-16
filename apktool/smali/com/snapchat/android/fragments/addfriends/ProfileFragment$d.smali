@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lvm;
+.implements Lwi;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1153
+    .line 1221
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 1153
+    .line 1221
     invoke-direct {p0, p1}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;-><init>(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)V
 
     return-void
@@ -50,13 +50,13 @@
     .locals 5
 
     .prologue
-    .line 1157
+    .line 1225
     if-nez p1, :cond_0
 
-    .line 1158
+    .line 1226
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->i(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/squareup/otto/Bus;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -70,21 +70,21 @@
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1160
+    .line 1228
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->t()V
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->v()V
 
-    .line 1161
+    .line 1229
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->r(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)V
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->i()V
 
-    .line 1179
+    .line 1248
     :goto_0
     return-void
 
-    .line 1164
+    .line 1232
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
@@ -98,23 +98,29 @@
 
     move-result-object v0
 
-    .line 1165
-    new-instance v1, Lavz;
+    .line 1233
+    new-instance v1, Lawx;
 
-    invoke-direct {v1, p1, v0}, Lavz;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V
+    iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    sget-object v0, Lauh;->HIGH_PRIORITY_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->i(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)I
+
+    move-result v2
+
+    invoke-direct {v1, p1, v0, v2}, Lawx;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;I)V
+
+    sget-object v0, Lavf;->HIGH_PRIORITY_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     const/4 v2, 0x0
 
     new-array v2, v2, [Ljava/lang/Void;
 
-    invoke-virtual {v1, v0, v2}, Lavz;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v0, v2}, Lawx;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 1166
+    .line 1235
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->h:Lcom/snapchat/android/ui/ProfilePictureView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->e:Lcom/snapchat/android/ui/ProfilePictureView;
 
     new-instance v1, Landroid/animation/AnimatorSet;
 
@@ -158,15 +164,15 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1167
+    .line 1236
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->s(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)I
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->q(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)I
 
-    .line 1168
+    .line 1237
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->j(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)I
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->i(Lcom/snapchat/android/fragments/addfriends/ProfileFragment;)I
 
     move-result v0
 
@@ -174,14 +180,14 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 1169
+    .line 1238
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment$d;->a:Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->t()V
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->v()V
 
     goto :goto_0
 
-    .line 1172
+    .line 1241
     :cond_1
     new-instance v0, Landroid/os/Handler;
 
@@ -201,7 +207,7 @@
 
     goto :goto_0
 
-    .line 1166
+    .line 1235
     :array_0
     .array-data 4
         0x0

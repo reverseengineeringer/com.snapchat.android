@@ -2,129 +2,134 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuo;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
-        "<",
-        "Laeg;",
-        ">;"
-    }
-.end annotation
-
 
 # static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
-# instance fields
-.field private final module:Lazc;
+.field private static final TAG:Ljava/lang/String; = "SecureHash"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .param p0    # Ljava/lang/String;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .annotation build Lchd;
+    .end annotation
 
     .prologue
-    .line 7
-    const-class v0, Lazd;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lazd;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
     const/4 v0, 0x0
+
+    .line 24
+    if-nez p0, :cond_0
+
+    .line 28
+    :goto_0
+    return-object v0
+
+    .line 26
+    :cond_0
+    :try_start_0
+    const-string v1, "SHA-256"
+
+    invoke-static {v1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/security/MessageDigest;->reset()V
+
+    const-string v2, "UTF-8"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/security/MessageDigest;->digest([B)[B
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 28
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v1
 
     goto :goto_0
 .end method
 
-.method private constructor <init>(Lazc;)V
-    .locals 1
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    sget-boolean v0, Lazd;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 13
-    :cond_0
-    iput-object p1, p0, Lazd;->module:Lazc;
-
-    .line 14
-    return-void
-.end method
-
-.method public static a(Lazc;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lazc;",
-            ")",
-            "Lbuo",
-            "<",
-            "Laeg;",
-            ">;"
-        }
+.method public static b(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .param p0    # Ljava/lang/String;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 26
-    new-instance v0, Lazd;
+    const/4 v0, 0x0
 
-    invoke-direct {v0, p0}, Lazd;-><init>(Lazc;)V
+    .line 48
+    if-nez p0, :cond_0
 
+    .line 52
+    :goto_0
     return-object v0
-.end method
 
+    .line 50
+    :cond_0
+    :try_start_0
+    const-string v1, "SHA-1"
 
-# virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 2
+    invoke-static {v1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
-    .prologue
-    .line 7
-    invoke-static {}, Laeg;->a()Laeg;
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/security/MessageDigest;->reset()V
+
+    sget-object v2, Lorg/apache/commons/io/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/security/MessageDigest;->digest([B)[B
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    goto :goto_0
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    .line 52
+    :catch_0
+    move-exception v1
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    goto :goto_0
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    :catch_1
+    move-exception v1
 
-    throw v0
-
-    :cond_0
-    return-object v0
+    goto :goto_0
 .end method

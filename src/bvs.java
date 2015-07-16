@@ -1,26 +1,10 @@
-import java.io.File;
-import java.io.FilenameFilter;
-import java.io.Serializable;
+import in.srain.cube.views.ptr.PtrFrameLayout;
 
-public class bvs
-  implements Serializable
+public abstract interface bvs
 {
-  public int a;
-  public int b;
-  public String c;
-  public String d;
-  public String e;
-  public String f;
+  public abstract void a(PtrFrameLayout paramPtrFrameLayout);
   
-  public final String a()
-  {
-    return b + a;
-  }
-  
-  public String toString()
-  {
-    return "\n" + bvs.class.getSimpleName() + "\nid         " + a + "\nmessage id " + b + "\nfilename   " + c + "\nurl        " + d + "\ncreatedAt  " + e + "\nupdatedAt  " + f;
-  }
+  public abstract boolean a();
 }
 
 /* Location:

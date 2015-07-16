@@ -1,134 +1,171 @@
-final class chs
-  extends cji
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+import org.joda.convert.ToString;
+
+public final class chs
+  extends cii
+  implements cic, Serializable
 {
-  private final chl a;
+  private static final Set<cho> c;
+  public final long a;
+  public final chg b;
+  private volatile transient int d;
   
-  chs(chl paramchl)
+  static
   {
-    super(cgi.p(), paramchl.Q());
-    a = paramchl;
+    HashSet localHashSet = new HashSet();
+    c = localHashSet;
+    localHashSet.add(cho.f());
+    c.add(cho.g());
+    c.add(cho.i());
+    c.add(cho.h());
+    c.add(cho.j());
+    c.add(cho.k());
+    c.add(cho.l());
   }
   
-  public final int a(long paramLong)
+  public chs()
   {
-    return a.b(paramLong);
+    this(chk.a(), cjd.M());
   }
   
-  public final long a(long paramLong, int paramInt)
+  public chs(long paramLong)
   {
-    if (paramInt == 0) {
-      return paramLong;
-    }
-    return b(paramLong, a(paramLong) + paramInt);
+    this(paramLong, cjd.M());
   }
   
-  public final long a(long paramLong1, long paramLong2)
+  public chs(long paramLong, chg paramchg)
   {
-    return a(paramLong1, cjh.a(paramLong2));
+    paramchg = chk.a(paramchg);
+    paramLong = paramchg.a().a(chl.a, paramLong);
+    paramchg = paramchg.b();
+    a = paramchg.u().d(paramLong);
+    b = paramchg;
   }
   
-  public final long b(long paramLong, int paramInt)
+  public final int a()
   {
-    cjh.a(this, Math.abs(paramInt), a.N(), a.O());
-    int i = a(paramLong);
-    if (i == paramInt) {
-      return paramLong;
-    }
-    int k = chl.d(paramLong);
-    i = a.a(i);
-    int j = a.a(paramInt);
-    if (j < i)
+    return 3;
+  }
+  
+  public final int a(int paramInt)
+  {
+    switch (paramInt)
     {
-      i = j;
-      j = a.c(paramLong);
-      if (j <= i) {
-        break label181;
-      }
+    default: 
+      throw new IndexOutOfBoundsException("Invalid index: " + paramInt);
+    case 0: 
+      return b.E().a(a);
+    case 1: 
+      return b.C().a(a);
     }
-    for (;;)
+    return b.u().a(a);
+  }
+  
+  public final int a(chj paramchj)
+  {
+    if (paramchj == null) {
+      throw new IllegalArgumentException("The DateTimeFieldType must not be null");
+    }
+    if (!b(paramchj)) {
+      throw new IllegalArgumentException("Field '" + paramchj + "' is not supported");
+    }
+    return paramchj.a(b).a(a);
+  }
+  
+  public final int a(cic paramcic)
+  {
+    if (this == paramcic) {
+      return 0;
+    }
+    if ((paramcic instanceof chs))
     {
-      long l = a.d(paramLong, paramInt);
-      j = a(l);
-      if (j < paramInt) {
-        paramLong = l + 604800000L;
-      }
-      for (;;)
+      chs localchs = (chs)paramcic;
+      if (b.equals(b))
       {
-        l = i - a.c(paramLong);
-        return a.s.b(l * 604800000L + paramLong, k);
-        break;
-        paramLong = l;
-        if (j > paramInt) {
-          paramLong = l - 604800000L;
+        if (a < a) {
+          return -1;
         }
+        if (a == a) {
+          return 0;
+        }
+        return 1;
       }
-      label181:
-      i = j;
     }
+    return super.a(paramcic);
   }
   
-  public final boolean b(long paramLong)
+  public final chh a(chl paramchl)
   {
-    return a.a(a.b(paramLong)) > 52;
+    paramchl = chk.a(paramchl);
+    chg localchg = b.a(paramchl);
+    long l = paramchl.e(a + 21600000L);
+    return new chh(localchg.u().d(l), localchg);
   }
   
-  public final long c(long paramLong1, long paramLong2)
+  protected final chi a(int paramInt, chg paramchg)
   {
-    if (paramLong1 < paramLong2) {
-      return -b(paramLong2, paramLong1);
-    }
-    int i = a(paramLong1);
-    int j = a(paramLong2);
-    long l = d(paramLong1);
-    paramLong2 -= d(paramLong2);
-    if ((paramLong2 >= 31449600000L) && (a.a(i) <= 52)) {
-      paramLong2 -= 604800000L;
-    }
-    for (;;)
+    switch (paramInt)
     {
-      j = i - j;
-      i = j;
-      if (paramLong1 - l < paramLong2) {
-        i = j - 1;
+    default: 
+      throw new IndexOutOfBoundsException("Invalid index: " + paramInt);
+    case 0: 
+      return paramchg.E();
+    case 1: 
+      return paramchg.C();
+    }
+    return paramchg.u();
+  }
+  
+  public final chg b()
+  {
+    return b;
+  }
+  
+  public final boolean b(chj paramchj)
+  {
+    if (paramchj == null) {}
+    cho localcho;
+    do
+    {
+      return false;
+      localcho = paramchj.x();
+    } while ((!c.contains(localcho)) && (localcho.a(b).d() < b.s().d()));
+    return paramchj.a(b).c();
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if (this == paramObject) {
+      return true;
+    }
+    if ((paramObject instanceof chs))
+    {
+      chs localchs = (chs)paramObject;
+      if (b.equals(b)) {
+        return a == a;
       }
-      return i;
     }
+    return super.equals(paramObject);
   }
   
-  public final long d(long paramLong)
+  public final int hashCode()
   {
-    long l = a.v.d(paramLong);
-    int i = a.c(l);
-    paramLong = l;
-    if (i > 1) {
-      paramLong = l - (i - 1) * 604800000L;
+    int j = d;
+    int i = j;
+    if (j == 0)
+    {
+      i = super.hashCode();
+      d = i;
     }
-    return paramLong;
+    return i;
   }
   
-  public final cgm e()
+  @ToString
+  public final String toString()
   {
-    return null;
-  }
-  
-  public final cgm f()
-  {
-    return a.d;
-  }
-  
-  public final int g()
-  {
-    return a.N();
-  }
-  
-  public final int h()
-  {
-    return a.O();
-  }
-  
-  public final long i(long paramLong)
-  {
-    return paramLong - d(paramLong);
+    return cld.a.c().a(this);
   }
 }
 

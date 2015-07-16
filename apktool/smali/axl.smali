@@ -2,92 +2,115 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Closeable;
-
-
-# instance fields
-.field private final mGson:Lato;
-
-.field private final mOutputStream:Ljava/io/DataOutputStream;
-
 
 # direct methods
-.method public constructor <init>(Ljava/io/OutputStream;Lato;)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 22
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
-    new-instance v0, Ljava/io/DataOutputStream;
-
-    new-instance v1, Ljava/io/BufferedOutputStream;
-
-    invoke-direct {v1, p1}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-direct {v0, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    iput-object v0, p0, Laxl;->mOutputStream:Ljava/io/DataOutputStream;
-
-    .line 24
-    iput-object p2, p0, Laxl;->mGson:Lato;
-
-    .line 25
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Lbii;)V
+.method public static a(Landroid/util/DisplayMetrics;II)Landroid/graphics/BitmapFactory$Options;
     .locals 3
 
     .prologue
-    .line 28
-    iget-object v0, p0, Laxl;->mGson:Lato;
+    .line 24
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-virtual {v0, p1}, Lato;->a(Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v1, Landroid/graphics/BitmapFactory$Options;
 
-    move-result-object v0
+    invoke-direct {v1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 29
-    sget-object v1, Lorg/apache/commons/io/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    move-result-object v0
+    invoke-static {p0, p1, p2}, Laxl;->b(Landroid/util/DisplayMetrics;II)I
 
-    .line 30
-    iget-object v1, p0, Laxl;->mOutputStream:Ljava/io/DataOutputStream;
+    move-result v2
 
-    array-length v2, v0
+    iput v2, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    invoke-virtual {v1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
+    const/4 v2, 0x1
 
-    .line 31
-    iget-object v1, p0, Laxl;->mOutputStream:Ljava/io/DataOutputStream;
+    iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
 
-    invoke-virtual {v1, v0}, Ljava/io/DataOutputStream;->write([B)V
+    iput-object v0, v1, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 32
-    iget-object v0, p0, Laxl;->mOutputStream:Ljava/io/DataOutputStream;
+    iput p2, v1, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    invoke-virtual {v0}, Ljava/io/DataOutputStream;->flush()V
+    iput p1, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .line 33
-    return-void
+    return-object v1
 .end method
 
-.method public final close()V
-    .locals 1
+.method private static b(Landroid/util/DisplayMetrics;II)I
+    .locals 6
 
     .prologue
-    .line 37
-    iget-object v0, p0, Laxl;->mOutputStream:Ljava/io/DataOutputStream;
+    const/16 v2, 0xd33
 
-    invoke-virtual {v0}, Ljava/io/DataOutputStream;->close()V
+    .line 81
+    iget v0, p0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 38
-    return-void
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    .line 82
+    iget v0, p0, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v2
+
+    .line 83
+    const/4 v0, 0x1
+
+    .line 88
+    if-le p1, v1, :cond_1
+
+    if-le p2, v2, :cond_1
+
+    .line 89
+    div-int/lit8 v3, p2, 0x2
+
+    .line 90
+    div-int/lit8 v4, p1, 0x2
+
+    .line 94
+    :goto_0
+    div-int v5, v3, v0
+
+    if-le v5, v2, :cond_0
+
+    div-int v5, v4, v0
+
+    if-le v5, v1, :cond_0
+
+    .line 96
+    mul-int/lit8 v0, v0, 0x2
+
+    goto :goto_0
+
+    .line 100
+    :cond_0
+    div-int/2addr v3, v0
+
+    if-ne v3, v2, :cond_1
+
+    div-int v2, v4, v0
+
+    if-ne v2, v1, :cond_1
+
+    .line 102
+    mul-int/lit8 v0, v0, 0x2
+
+    .line 105
+    :cond_1
+    return v0
 .end method

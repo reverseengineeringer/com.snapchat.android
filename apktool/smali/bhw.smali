@@ -1,18 +1,42 @@
-.class public final Lbhw;
-.super Ljava/lang/Object;
+.class public Lbhw;
+.super Lbhy;
 .source "SourceFile"
 
 
 # instance fields
-.field protected story:Lbjg;
+.field protected checksumsDict:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "story"
+        value = "checksums_dict"
     .end annotation
 .end field
 
-.field protected viewed:Ljava/lang/Boolean;
+.field protected featuresMap:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "viewed"
+        value = "features_map"
+    .end annotation
+.end field
+
+.field protected height:Ljava/lang/Integer;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "height"
+    .end annotation
+.end field
+
+.field protected maxVideoHeight:Ljava/lang/Integer;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "max_video_height"
+    .end annotation
+.end field
+
+.field protected maxVideoWidth:Ljava/lang/Integer;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "max_video_width"
+    .end annotation
+.end field
+
+.field protected width:Ljava/lang/Integer;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "width"
     .end annotation
 .end field
 
@@ -23,78 +47,156 @@
 
     .prologue
     .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lbhy;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lbjg;
-    .locals 1
+.method public final a(Ljava/lang/Integer;)Lbhw;
+    .locals 0
 
     .prologue
-    .line 36
-    iget-object v0, p0, Lbhw;->story:Lbjg;
+    .line 61
+    iput-object p1, p0, Lbhw;->height:Ljava/lang/Integer;
 
-    return-object v0
+    .line 62
+    return-object p0
 .end method
 
-.method public final b()Ljava/lang/Boolean;
-    .locals 1
+.method public final a(Ljava/lang/String;)Lbhw;
+    .locals 0
 
     .prologue
-    .line 54
-    iget-object v0, p0, Lbhw;->viewed:Ljava/lang/Boolean;
+    .line 43
+    iput-object p1, p0, Lbhw;->checksumsDict:Ljava/lang/String;
 
-    return-object v0
+    .line 44
+    return-object p0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final b(Ljava/lang/Integer;)Lbhw;
+    .locals 0
+
+    .prologue
+    .line 79
+    iput-object p1, p0, Lbhw;->width:Ljava/lang/Integer;
+
+    .line 80
+    return-object p0
+.end method
+
+.method public final b(Ljava/lang/String;)Lbhw;
+    .locals 0
+
+    .prologue
+    .line 133
+    iput-object p1, p0, Lbhw;->featuresMap:Ljava/lang/String;
+
+    .line 134
+    return-object p0
+.end method
+
+.method public final c(Ljava/lang/Integer;)Lbhw;
+    .locals 0
+
+    .prologue
+    .line 97
+    iput-object p1, p0, Lbhw;->maxVideoHeight:Ljava/lang/Integer;
+
+    .line 98
+    return-object p0
+.end method
+
+.method public final d(Ljava/lang/Integer;)Lbhw;
+    .locals 0
+
+    .prologue
+    .line 115
+    iput-object p1, p0, Lbhw;->maxVideoWidth:Ljava/lang/Integer;
+
+    .line 116
+    return-object p0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 76
+    .line 164
     if-ne p1, p0, :cond_0
 
-    .line 77
+    .line 165
     const/4 v0, 0x1
 
-    .line 83
+    .line 171
     :goto_0
     return v0
 
-    .line 79
+    .line 167
     :cond_0
     instance-of v0, p1, Lbhw;
 
     if-nez v0, :cond_1
 
-    .line 80
+    .line 168
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 82
+    .line 170
     :cond_1
     check-cast p1, Lbhw;
 
-    .line 83
+    .line 171
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbhw;->story:Lbjg;
+    iget-object v1, p0, Lbhw;->checksumsDict:Ljava/lang/String;
 
-    iget-object v2, p1, Lbhw;->story:Lbjg;
+    iget-object v2, p1, Lbhw;->checksumsDict:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbhw;->viewed:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbhw;->height:Ljava/lang/Integer;
 
-    iget-object v2, p1, Lbhw;->viewed:Ljava/lang/Boolean;
+    iget-object v2, p1, Lbhw;->height:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbhw;->width:Ljava/lang/Integer;
+
+    iget-object v2, p1, Lbhw;->width:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbhw;->maxVideoHeight:Ljava/lang/Integer;
+
+    iget-object v2, p1, Lbhw;->maxVideoHeight:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbhw;->maxVideoWidth:Ljava/lang/Integer;
+
+    iget-object v2, p1, Lbhw;->maxVideoWidth:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbhw;->featuresMap:Ljava/lang/String;
+
+    iget-object v2, p1, Lbhw;->featuresMap:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -107,22 +209,46 @@
     goto :goto_0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 2
 
     .prologue
-    .line 68
+    .line 152
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbhw;->story:Lbjg;
+    iget-object v1, p0, Lbhw;->checksumsDict:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbhw;->viewed:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbhw;->height:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbhw;->width:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbhw;->maxVideoHeight:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbhw;->maxVideoWidth:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbhw;->featuresMap:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -135,11 +261,11 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 63
+    .line 147
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

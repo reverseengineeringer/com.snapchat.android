@@ -1,23 +1,23 @@
 package com.snapchat.android.api2.cash;
 
-import buo;
-import qs;
+import bvp;
+import ri;
 
 public enum ScProvider_Factory
-  implements buo<qs>
+  implements bvp<ri>
 {
   INSTANCE;
   
   private ScProvider_Factory() {}
   
-  public static buo<qs> create()
+  public static bvp<ri> create()
   {
     return INSTANCE;
   }
   
-  public final qs get()
+  public final ri get()
   {
-    return new qs();
+    return new ri();
   }
 }
 

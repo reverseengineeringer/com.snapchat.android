@@ -4,370 +4,233 @@
 
 
 # instance fields
-.field public final a:Lblz;
+.field public final a:Lbmh;
 
-.field public final b:I
+.field public final b:Ljava/net/Proxy;
 
-.field public final c:Ljava/lang/String;
+.field final c:Ljava/net/InetSocketAddress;
+
+.field final d:Lbmr;
+
+.field final e:Z
 
 
 # direct methods
-.method public constructor <init>(Lblz;ILjava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lbmh;Ljava/net/Proxy;Ljava/net/InetSocketAddress;Lbmr;Z)V
+    .locals 2
 
     .prologue
-    .line 19
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
-    iput-object p1, p0, Lbnf;->a:Lblz;
-
-    .line 21
-    iput p2, p0, Lbnf;->b:I
-
-    .line 22
-    iput-object p3, p0, Lbnf;->c:Ljava/lang/String;
-
-    .line 23
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;)Lbnf;
-    .locals 7
-
-    .prologue
-    const/16 v6, 0x20
-
-    const/16 v1, 0x9
-
-    .line 36
-    const-string v0, "HTTP/1."
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 37
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-lt v0, v1, :cond_0
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    if-eq v0, v6, :cond_1
-
-    .line 38
-    :cond_0
-    new-instance v0, Ljava/net/ProtocolException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Unexpected status line: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 40
-    :cond_1
-    const/4 v0, 0x7
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x30
-
-    .line 42
-    if-nez v0, :cond_2
-
-    .line 43
-    sget-object v0, Lblz;->a:Lblz;
-
-    .line 58
-    :goto_0
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v3, v1, 0x3
-
-    if-ge v2, v3, :cond_6
-
-    .line 59
-    new-instance v0, Ljava/net/ProtocolException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Unexpected status line: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 44
-    :cond_2
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_3
-
-    .line 45
-    sget-object v0, Lblz;->b:Lblz;
-
-    goto :goto_0
-
-    .line 47
-    :cond_3
-    new-instance v0, Ljava/net/ProtocolException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Unexpected status line: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 49
-    :cond_4
-    const-string v0, "ICY "
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
     .line 51
-    sget-object v0, Lblz;->a:Lblz;
+    if-nez p1, :cond_0
 
     .line 52
-    const/4 v1, 0x4
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    goto :goto_0
+    const-string v1, "address == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     .line 54
-    :cond_5
-    new-instance v0, Ljava/net/ProtocolException;
+    :cond_0
+    if-nez p2, :cond_1
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 55
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v2, "Unexpected status line: "
+    const-string v1, "proxy == null"
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    throw v0
 
-    move-result-object v1
+    .line 57
+    :cond_1
+    if-nez p3, :cond_2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 58
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    move-result-object v1
+    const-string v1, "inetSocketAddress == null"
 
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 60
+    :cond_2
+    if-nez p4, :cond_3
+
+    .line 61
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "connectionConfiguration == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 63
-    :cond_6
-    add-int/lit8 v2, v1, 0x3
+    :cond_3
+    iput-object p1, p0, Lbnf;->a:Lbmh;
 
-    :try_start_0
-    invoke-virtual {p0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v3
-
-    .line 70
-    const-string v2, ""
-
-    .line 71
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/lit8 v5, v1, 0x3
-
-    if-le v4, v5, :cond_8
-
-    .line 72
-    add-int/lit8 v2, v1, 0x3
-
-    invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    if-eq v2, v6, :cond_7
-
-    .line 73
-    new-instance v0, Ljava/net/ProtocolException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Unexpected status line: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    .line 64
+    iput-object p2, p0, Lbnf;->b:Ljava/net/Proxy;
 
     .line 65
-    :catch_0
-    move-exception v0
+    iput-object p3, p0, Lbnf;->c:Ljava/net/InetSocketAddress;
 
-    new-instance v0, Ljava/net/ProtocolException;
+    .line 66
+    iput-object p4, p0, Lbnf;->d:Lbmr;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 67
+    iput-boolean p5, p0, Lbnf;->e:Z
 
-    const-string v2, "Unexpected status line: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 75
-    :cond_7
-    add-int/lit8 v1, v1, 0x4
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 78
-    :goto_1
-    new-instance v2, Lbnf;
-
-    invoke-direct {v2, v0, v3, v1}, Lbnf;-><init>(Lblz;ILjava/lang/String;)V
-
-    return-object v2
-
-    :cond_8
-    move-object v1, v2
-
-    goto :goto_1
+    .line 68
+    return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .prologue
-    const/16 v3, 0x20
+    const/4 v0, 0x0
 
-    .line 82
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 106
+    instance-of v1, p1, Lbnf;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v1, :cond_0
 
-    .line 83
-    iget-object v0, p0, Lbnf;->a:Lblz;
+    .line 107
+    check-cast p1, Lbnf;
 
-    sget-object v2, Lblz;->a:Lblz;
+    .line 108
+    iget-object v1, p0, Lbnf;->a:Lbmh;
 
-    if-ne v0, v2, :cond_1
+    iget-object v2, p1, Lbnf;->a:Lbmh;
 
-    const-string v0, "HTTP/1.0"
+    invoke-virtual {v1, v2}, Lbmh;->equals(Ljava/lang/Object;)Z
 
-    :goto_0
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    .line 84
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_0
 
-    move-result-object v0
+    iget-object v1, p0, Lbnf;->b:Ljava/net/Proxy;
 
-    iget v2, p0, Lbnf;->b:I
+    iget-object v2, p1, Lbnf;->b:Ljava/net/Proxy;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .line 109
+    invoke-virtual {v1, v2}, Ljava/net/Proxy;->equals(Ljava/lang/Object;)Z
 
-    .line 85
-    iget-object v0, p0, Lbnf;->c:Ljava/lang/String;
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbnf;->c:Ljava/net/InetSocketAddress;
+
+    iget-object v2, p1, Lbnf;->c:Ljava/net/InetSocketAddress;
+
+    .line 110
+    invoke-virtual {v1, v2}, Ljava/net/InetSocketAddress;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbnf;->d:Lbmr;
+
+    iget-object v2, p1, Lbnf;->d:Lbmr;
+
+    .line 111
+    invoke-virtual {v1, v2}, Lbmr;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-boolean v1, p0, Lbnf;->e:Z
+
+    iget-boolean v2, p1, Lbnf;->e:Z
+
+    if-ne v1, v2, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 114
+    :cond_0
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .prologue
+    .line 118
+    iget-object v0, p0, Lbnf;->a:Lbmh;
+
+    invoke-virtual {v0}, Lbmh;->hashCode()I
+
+    move-result v0
+
+    add-int/lit16 v0, v0, 0x20f
+
+    .line 120
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lbnf;->b:Ljava/net/Proxy;
+
+    invoke-virtual {v1}, Ljava/net/Proxy;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 121
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lbnf;->c:Ljava/net/InetSocketAddress;
+
+    invoke-virtual {v1}, Ljava/net/InetSocketAddress;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 122
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lbnf;->d:Lbmr;
+
+    invoke-virtual {v1}, Lbmr;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 123
+    mul-int/lit8 v1, v0, 0x1f
+
+    iget-boolean v0, p0, Lbnf;->e:Z
 
     if-eqz v0, :cond_0
 
-    .line 86
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    :goto_0
+    add-int/2addr v0, v1
 
-    iget-object v2, p0, Lbnf;->c:Ljava/lang/String;
+    .line 124
+    return v0
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 88
+    .line 123
     :cond_0
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 83
-    :cond_1
-    const-string v0, "HTTP/1.1"
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

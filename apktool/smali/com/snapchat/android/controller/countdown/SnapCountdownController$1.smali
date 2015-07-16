@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 291
+    .line 307
     iput-object p1, p0, Lcom/snapchat/android/controller/countdown/SnapCountdownController$1;->a:Lcom/snapchat/android/controller/countdown/SnapCountdownController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 14
 
     .prologue
-    .line 294
+    .line 310
     iget-object v4, p0, Lcom/snapchat/android/controller/countdown/SnapCountdownController$1;->a:Lcom/snapchat/android/controller/countdown/SnapCountdownController;
 
     iget-object v5, v4, Lcom/snapchat/android/controller/countdown/SnapCountdownController;->a:Ljava/lang/Object;
@@ -90,19 +90,19 @@
 
     move-result-object v0
 
-    check-cast v0, Lyx;
+    check-cast v0, Lzt;
 
-    invoke-virtual {v0}, Lyx;->c()Z
+    invoke-virtual {v0}, Lzt;->c()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Lyx;->a()J
+    invoke-virtual {v0}, Lzt;->a()J
 
     move-result-wide v8
 
-    invoke-virtual {v0}, Lyx;->a()J
+    invoke-virtual {v0}, Lzt;->a()J
 
     move-result-wide v10
 
@@ -120,15 +120,15 @@
 
     int-to-long v10, v1
 
-    invoke-virtual {v0}, Lyx;->d()Ljava/util/Set;
+    invoke-virtual {v0}, Lzt;->d()Ljava/util/Set;
 
     move-result-object v1
 
-    iget-object v7, v0, Lyx;->c:Laje;
+    iget-object v7, v0, Lzt;->c:Laka;
 
     long-to-int v10, v10
 
-    invoke-virtual {v7, v10}, Laje;->d(I)V
+    invoke-virtual {v7, v10}, Laka;->d(I)V
 
     const-wide/16 v10, 0x0
 
@@ -138,18 +138,18 @@
 
     sget-object v1, Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;->EXPIRE:Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;
 
-    invoke-virtual {v4, v0, v1}, Lcom/snapchat/android/controller/countdown/SnapCountdownController;->a(Lyx;Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;)V
+    invoke-virtual {v4, v0, v1}, Lcom/snapchat/android/controller/countdown/SnapCountdownController;->a(Lzt;Lcom/snapchat/android/controller/countdown/SnapCountdownController$Action;)V
 
     :goto_1
     iget-object v1, v4, Lcom/snapchat/android/controller/countdown/SnapCountdownController;->d:Lcom/squareup/otto/Bus;
 
-    new-instance v7, Lbbl;
+    new-instance v7, Lbcl;
 
-    iget-object v0, v0, Lyx;->c:Laje;
+    iget-object v0, v0, Lzt;->c:Laka;
 
-    iget-object v0, v0, Laje;->mSender:Ljava/lang/String;
+    iget-object v0, v0, Laka;->mSender:Ljava/lang/String;
 
-    invoke-direct {v7, v0}, Lbbl;-><init>(Ljava/lang/String;)V
+    invoke-direct {v7, v0}, Lbcl;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v7}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -181,9 +181,11 @@
 
     move-result-object v1
 
-    check-cast v1, Lyy;
+    check-cast v1, Lzu;
 
-    invoke-interface {v1, v8, v9}, Lyy;->a(J)V
+    iget-object v10, v0, Lzt;->c:Laka;
+
+    invoke-interface {v1, v10, v8, v9}, Lzu;->a(Laka;J)V
 
     goto :goto_2
 

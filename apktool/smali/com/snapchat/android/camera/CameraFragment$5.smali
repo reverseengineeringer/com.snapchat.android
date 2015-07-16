@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/camera/CameraFragment;->a([BLwc$b;)V
+    value = Lcom/snapchat/android/camera/CameraFragment;->a([BLwy$b;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1251
+    .line 1249
     iput-object p1, p0, Lcom/snapchat/android/camera/CameraFragment$5;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 4
 
     .prologue
-    .line 1254
+    .line 1252
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$5;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
@@ -71,7 +71,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1255
+    .line 1253
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment$5;->a:Lcom/snapchat/android/camera/CameraFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1257
+    .line 1255
     :cond_0
     return-void
 .end method

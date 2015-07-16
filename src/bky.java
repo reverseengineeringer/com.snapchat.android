@@ -1,36 +1,38 @@
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
-import java.util.Map;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bky
 {
-  @SerializedName("channels")
-  protected List<bku> channels;
-  @SerializedName("id")
-  protected String id;
+  @SerializedName("account_id")
+  protected String accountId;
   @SerializedName("name")
   protected String name;
-  @SerializedName("properties")
-  protected Map<String, String> properties;
-  @SerializedName("type")
-  protected String type;
+  @SerializedName("video_id")
+  protected String videoId;
+  @SerializedName("video_sequence")
+  protected List<bla> videoSequence;
   
   public final String a()
   {
-    return type;
+    return videoId;
   }
   
-  public final Map<String, String> b()
+  public final String b()
   {
-    return properties;
+    return accountId;
   }
   
-  public final List<bku> c()
+  public final String c()
   {
-    return channels;
+    return name;
+  }
+  
+  public final List<bla> d()
+  {
+    return videoSequence;
   }
   
   public final boolean equals(Object paramObject)
@@ -42,12 +44,12 @@ public final class bky
       return false;
     }
     paramObject = (bky)paramObject;
-    return new EqualsBuilder().append(id, id).append(name, name).append(type, type).append(properties, properties).append(channels, channels).isEquals();
+    return new EqualsBuilder().append(videoId, videoId).append(accountId, accountId).append(name, name).append(videoSequence, videoSequence).isEquals();
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(id).append(name).append(type).append(properties).append(channels).toHashCode();
+    return new HashCodeBuilder().append(videoId).append(accountId).append(name).append(videoSequence).toHashCode();
   }
   
   public final String toString()

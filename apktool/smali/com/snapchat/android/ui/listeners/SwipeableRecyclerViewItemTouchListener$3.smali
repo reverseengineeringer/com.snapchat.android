@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 392
+    .line 404
     iput-object p1, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$3;->a:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 395
+    .line 407
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$3;->a:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;->c(Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;)Ljava/lang/Integer;
 
-    .line 396
+    .line 408
     return-void
 .end method

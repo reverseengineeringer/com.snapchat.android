@@ -1,6 +1,6 @@
 package com.snapchat.android.util.chat;
 
-import ajv;
+import akp;
 
 final class SecureChatSession$4
   implements Runnable
@@ -9,7 +9,7 @@ final class SecureChatSession$4
   
   public final void run()
   {
-    ajv.a(SecureChatSession.e(this$0)).d(val$serverString);
+    akp.a(SecureChatSession.e(this$0)).d(val$serverString);
   }
 }
 

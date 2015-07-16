@@ -1,656 +1,334 @@
-.class abstract Lcho;
-.super Lchl;
+.class public abstract Lcho;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcho$a;
+    }
+.end annotation
 
 
 # static fields
-.field private static final F:[I
+.field static final a:Lcho;
 
-.field private static final G:[I
+.field static final b:Lcho;
 
-.field private static final H:[J
+.field static final c:Lcho;
 
-.field private static final I:[J
+.field static final d:Lcho;
+
+.field static final e:Lcho;
+
+.field static final f:Lcho;
+
+.field static final g:Lcho;
+
+.field static final h:Lcho;
+
+.field static final i:Lcho;
+
+.field static final j:Lcho;
+
+.field static final k:Lcho;
+
+.field static final l:Lcho;
+
+
+# instance fields
+.field public final m:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 10
+    .locals 3
 
     .prologue
-    const-wide/32 v8, 0x5265c00
+    .line 60
+    new-instance v0, Lcho$a;
 
-    const-wide/16 v2, 0x0
+    const-string v1, "eras"
 
-    const/16 v1, 0xc
+    const/4 v2, 0x1
 
-    .line 42
-    new-array v0, v1, [I
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
 
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lcho;->F:[I
-
-    .line 45
-    new-array v0, v1, [I
-
-    fill-array-data v0, :array_1
-
-    sput-object v0, Lcho;->G:[I
-
-    .line 53
-    new-array v0, v1, [J
-
-    sput-object v0, Lcho;->H:[J
-
-    .line 54
-    new-array v0, v1, [J
-
-    sput-object v0, Lcho;->I:[J
-
-    .line 58
-    const/4 v0, 0x0
-
-    move-wide v4, v2
-
-    :goto_0
-    const/16 v1, 0xb
-
-    if-ge v0, v1, :cond_0
-
-    .line 59
-    sget-object v1, Lcho;->F:[I
-
-    aget v1, v1, v0
-
-    int-to-long v6, v1
-
-    mul-long/2addr v6, v8
-
-    .line 61
-    add-long/2addr v4, v6
+    sput-object v0, Lcho;->a:Lcho;
 
     .line 62
-    sget-object v1, Lcho;->H:[J
+    new-instance v0, Lcho$a;
 
-    add-int/lit8 v6, v0, 0x1
+    const-string v1, "centuries"
 
-    aput-wide v4, v1, v6
+    const/4 v2, 0x2
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->b:Lcho;
 
     .line 64
-    sget-object v1, Lcho;->G:[I
+    new-instance v0, Lcho$a;
 
-    aget v1, v1, v0
+    const-string v1, "weekyears"
 
-    int-to-long v6, v1
+    const/4 v2, 0x3
 
-    mul-long/2addr v6, v8
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->c:Lcho;
 
     .line 66
-    add-long/2addr v2, v6
+    new-instance v0, Lcho$a;
 
-    .line 67
-    sget-object v1, Lcho;->I:[J
+    const-string v1, "years"
 
-    add-int/lit8 v6, v0, 0x1
+    const/4 v2, 0x4
 
-    aput-wide v2, v1, v6
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
 
-    .line 58
-    add-int/lit8 v0, v0, 0x1
+    sput-object v0, Lcho;->d:Lcho;
 
-    goto :goto_0
+    .line 68
+    new-instance v0, Lcho$a;
 
-    .line 69
-    :cond_0
+    const-string v1, "months"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->e:Lcho;
+
+    .line 70
+    new-instance v0, Lcho$a;
+
+    const-string v1, "weeks"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->f:Lcho;
+
+    .line 72
+    new-instance v0, Lcho$a;
+
+    const-string v1, "days"
+
+    const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->g:Lcho;
+
+    .line 74
+    new-instance v0, Lcho$a;
+
+    const-string v1, "halfdays"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->h:Lcho;
+
+    .line 76
+    new-instance v0, Lcho$a;
+
+    const-string v1, "hours"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->i:Lcho;
+
+    .line 78
+    new-instance v0, Lcho$a;
+
+    const-string v1, "minutes"
+
+    const/16 v2, 0xa
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->j:Lcho;
+
+    .line 80
+    new-instance v0, Lcho$a;
+
+    const-string v1, "seconds"
+
+    const/16 v2, 0xb
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->k:Lcho;
+
+    .line 82
+    new-instance v0, Lcho$a;
+
+    const-string v1, "millis"
+
+    const/16 v2, 0xc
+
+    invoke-direct {v0, v1, v2}, Lcho$a;-><init>(Ljava/lang/String;B)V
+
+    sput-object v0, Lcho;->l:Lcho;
+
     return-void
-
-    .line 42
-    nop
-
-    :array_0
-    .array-data 4
-        0x1f
-        0x1c
-        0x1f
-        0x1e
-        0x1f
-        0x1e
-        0x1f
-        0x1f
-        0x1e
-        0x1f
-        0x1e
-        0x1f
-    .end array-data
-
-    .line 45
-    :array_1
-    .array-data 4
-        0x1f
-        0x1d
-        0x1f
-        0x1e
-        0x1f
-        0x1e
-        0x1f
-        0x1f
-        0x1e
-        0x1f
-        0x1e
-        0x1f
-    .end array-data
 .end method
 
-.method constructor <init>(Lcgf;I)V
+.method protected constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 75
-    invoke-direct {p0, p1, p2}, Lchl;-><init>(Lcgf;I)V
+    .line 94
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 76
+    .line 95
+    iput-object p1, p0, Lcho;->m:Ljava/lang/String;
+
+    .line 96
     return-void
+.end method
+
+.method public static a()Lcho;
+    .locals 1
+
+    .prologue
+    .line 105
+    sget-object v0, Lcho;->l:Lcho;
+
+    return-object v0
+.end method
+
+.method public static b()Lcho;
+    .locals 1
+
+    .prologue
+    .line 114
+    sget-object v0, Lcho;->k:Lcho;
+
+    return-object v0
+.end method
+
+.method public static c()Lcho;
+    .locals 1
+
+    .prologue
+    .line 123
+    sget-object v0, Lcho;->j:Lcho;
+
+    return-object v0
+.end method
+
+.method public static d()Lcho;
+    .locals 1
+
+    .prologue
+    .line 132
+    sget-object v0, Lcho;->i:Lcho;
+
+    return-object v0
+.end method
+
+.method public static e()Lcho;
+    .locals 1
+
+    .prologue
+    .line 141
+    sget-object v0, Lcho;->h:Lcho;
+
+    return-object v0
+.end method
+
+.method public static f()Lcho;
+    .locals 1
+
+    .prologue
+    .line 151
+    sget-object v0, Lcho;->g:Lcho;
+
+    return-object v0
+.end method
+
+.method public static g()Lcho;
+    .locals 1
+
+    .prologue
+    .line 160
+    sget-object v0, Lcho;->f:Lcho;
+
+    return-object v0
+.end method
+
+.method public static h()Lcho;
+    .locals 1
+
+    .prologue
+    .line 169
+    sget-object v0, Lcho;->c:Lcho;
+
+    return-object v0
+.end method
+
+.method public static i()Lcho;
+    .locals 1
+
+    .prologue
+    .line 178
+    sget-object v0, Lcho;->e:Lcho;
+
+    return-object v0
+.end method
+
+.method public static j()Lcho;
+    .locals 1
+
+    .prologue
+    .line 187
+    sget-object v0, Lcho;->d:Lcho;
+
+    return-object v0
+.end method
+
+.method public static k()Lcho;
+    .locals 1
+
+    .prologue
+    .line 196
+    sget-object v0, Lcho;->b:Lcho;
+
+    return-object v0
+.end method
+
+.method public static l()Lcho;
+    .locals 1
+
+    .prologue
+    .line 205
+    sget-object v0, Lcho;->a:Lcho;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method final a(JI)I
-    .locals 9
-
-    .prologue
-    const/4 v3, 0x4
-
-    const/4 v2, 0x3
-
-    const/4 v1, 0x2
-
-    const/4 v0, 0x1
-
-    const/16 v4, 0xa
-
-    .line 88
-    invoke-virtual {p0, p3}, Lcho;->b(I)J
-
-    move-result-wide v6
-
-    sub-long v6, p1, v6
-
-    shr-long/2addr v6, v4
-
-    long-to-int v5, v6
-
-    .line 93
-    invoke-virtual {p0, p3}, Lcho;->c(I)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_c
-
-    const v6, 0xea515a
-
-    if-ge v5, v6, :cond_6
-
-    const v4, 0x7528ad
-
-    if-ge v5, v4, :cond_3
-
-    const v3, 0x27e949
-
-    if-ge v5, v3, :cond_1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    const v0, 0x4d3f64
-
-    if-ge v5, v0, :cond_2
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_3
-    const v0, 0x9bc85f
-
-    if-ge v5, v0, :cond_4
-
-    move v0, v3
-
-    goto :goto_0
-
-    :cond_4
-    const v0, 0xc3b1a8
-
-    if-ge v5, v0, :cond_5
-
-    const/4 v0, 0x5
-
-    goto :goto_0
-
-    :cond_5
-    const/4 v0, 0x6
-
-    goto :goto_0
-
-    :cond_6
-    const v0, 0x160c39e
-
-    if-ge v5, v0, :cond_9
-
-    const v0, 0x1123aa3
-
-    if-ge v5, v0, :cond_7
-
-    const/4 v0, 0x7
-
-    goto :goto_0
-
-    :cond_7
-    const v0, 0x13a23ec
-
-    if-ge v5, v0, :cond_8
-
-    const/16 v0, 0x8
-
-    goto :goto_0
-
-    :cond_8
-    const/16 v0, 0x9
-
-    goto :goto_0
-
-    :cond_9
-    const v0, 0x188ace7
-
-    if-ge v5, v0, :cond_a
-
-    move v0, v4
-
-    goto :goto_0
-
-    :cond_a
-    const v0, 0x1af4c99
-
-    if-ge v5, v0, :cond_b
-
-    const/16 v0, 0xb
-
-    goto :goto_0
-
-    :cond_b
-    const/16 v0, 0xc
-
-    goto :goto_0
-
-    :cond_c
-    const v6, 0xe907c3
-
-    if-ge v5, v6, :cond_11
-
-    const v4, 0x73df16
-
-    if-ge v5, v4, :cond_e
-
-    const v3, 0x27e949
-
-    if-lt v5, v3, :cond_0
-
-    const v0, 0x4bf5cd
-
-    if-ge v5, v0, :cond_d
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_d
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_e
-    const v0, 0x9a7ec8
-
-    if-ge v5, v0, :cond_f
-
-    move v0, v3
-
-    goto :goto_0
-
-    :cond_f
-    const v0, 0xc26811
-
-    if-ge v5, v0, :cond_10
-
-    const/4 v0, 0x5
-
-    goto :goto_0
-
-    :cond_10
-    const/4 v0, 0x6
-
-    goto :goto_0
-
-    :cond_11
-    const v0, 0x15f7a07
-
-    if-ge v5, v0, :cond_14
-
-    const v0, 0x110f10c
-
-    if-ge v5, v0, :cond_12
-
-    const/4 v0, 0x7
-
-    goto :goto_0
-
-    :cond_12
-    const v0, 0x138da55
-
-    if-ge v5, v0, :cond_13
-
-    const/16 v0, 0x8
-
-    goto :goto_0
-
-    :cond_13
-    const/16 v0, 0x9
-
-    goto/16 :goto_0
-
-    :cond_14
-    const v0, 0x1876350
-
-    if-ge v5, v0, :cond_15
-
-    move v0, v4
-
-    goto/16 :goto_0
-
-    :cond_15
-    const v0, 0x1ae0302
-
-    if-ge v5, v0, :cond_16
-
-    const/16 v0, 0xb
-
-    goto/16 :goto_0
-
-    :cond_16
-    const/16 v0, 0xc
-
-    goto/16 :goto_0
+.method public abstract a(Lchg;)Lchn;
 .end method
 
-.method final a(JJ)J
-    .locals 9
-
-    .prologue
-    .line 148
-    invoke-virtual {p0, p1, p2}, Lcho;->a(J)I
-
-    move-result v6
-
-    .line 149
-    invoke-virtual {p0, p3, p4}, Lcho;->a(J)I
-
-    move-result v7
-
-    .line 152
-    invoke-virtual {p0, v6}, Lcho;->b(I)J
-
-    move-result-wide v0
-
-    sub-long v2, p1, v0
-
-    .line 153
-    invoke-virtual {p0, v7}, Lcho;->b(I)J
-
-    move-result-wide v0
-
-    sub-long v0, p3, v0
-
-    .line 156
-    const-wide v4, 0x12fd73400L
-
-    cmp-long v4, v0, v4
-
-    if-ltz v4, :cond_2
-
-    .line 157
-    invoke-virtual {p0, v7}, Lcho;->c(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    .line 158
-    invoke-virtual {p0, v6}, Lcho;->c(I)Z
-
-    move-result v4
-
-    if-nez v4, :cond_2
-
-    .line 159
-    const-wide/32 v4, 0x5265c00
-
-    sub-long/2addr v0, v4
-
-    move-wide v4, v2
-
-    move-wide v2, v0
-
-    .line 166
-    :goto_0
-    sub-int v0, v6, v7
-
-    .line 167
-    cmp-long v1, v4, v2
-
-    if-gez v1, :cond_0
-
-    .line 168
-    add-int/lit8 v0, v0, -0x1
-
-    .line 170
-    :cond_0
-    int-to-long v0, v0
-
-    return-wide v0
-
-    .line 161
-    :cond_1
-    const-wide v4, 0x12fd73400L
-
-    cmp-long v4, v2, v4
-
-    if-ltz v4, :cond_2
-
-    invoke-virtual {p0, v6}, Lcho;->c(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    .line 162
-    const-wide/32 v4, 0x5265c00
-
-    sub-long/2addr v2, v4
-
-    move-wide v4, v2
-
-    move-wide v2, v0
-
-    goto :goto_0
-
-    :cond_2
-    move-wide v4, v2
-
-    move-wide v2, v0
-
-    goto :goto_0
-.end method
-
-.method final b(II)I
-    .locals 2
-
-    .prologue
-    .line 120
-    invoke-virtual {p0, p1}, Lcho;->c(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 121
-    sget-object v0, Lcho;->G:[I
-
-    add-int/lit8 v1, p2, -0x1
-
-    aget v0, v0, v1
-
-    .line 123
-    :goto_0
-    return v0
-
-    :cond_0
-    sget-object v0, Lcho;->F:[I
-
-    add-int/lit8 v1, p2, -0x1
-
-    aget v0, v0, v1
-
-    goto :goto_0
-.end method
-
-.method final c(JI)I
+.method public toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    const/16 v0, 0x1c
+    .line 243
+    iget-object v0, p0, Lcho;->m:Ljava/lang/String;
 
-    .line 134
-    if-gt p3, v0, :cond_0
-
-    if-gtz p3, :cond_1
-
-    :cond_0
-    invoke-virtual {p0, p1, p2}, Lcho;->f(J)I
-
-    move-result v0
-
-    :cond_1
-    return v0
-.end method
-
-.method final c(II)J
-    .locals 2
-
-    .prologue
-    .line 139
-    invoke-virtual {p0, p1}, Lcho;->c(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 140
-    sget-object v0, Lcho;->I:[J
-
-    add-int/lit8 v1, p2, -0x1
-
-    aget-wide v0, v0, v1
-
-    .line 142
-    :goto_0
-    return-wide v0
-
-    :cond_0
-    sget-object v0, Lcho;->H:[J
-
-    add-int/lit8 v1, p2, -0x1
-
-    aget-wide v0, v0, v1
-
-    goto :goto_0
-.end method
-
-.method final d(JI)J
-    .locals 5
-
-    .prologue
-    .line 175
-    invoke-virtual {p0, p1, p2}, Lcho;->a(J)I
-
-    move-result v1
-
-    .line 176
-    invoke-virtual {p0, p1, p2, v1}, Lcho;->b(JI)I
-
-    move-result v0
-
-    .line 177
-    invoke-static {p1, p2}, Lcho;->e(J)I
-
-    move-result v2
-
-    .line 179
-    const/16 v3, 0x3b
-
-    if-le v0, v3, :cond_0
-
-    .line 180
-    invoke-virtual {p0, v1}, Lcho;->c(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 182
-    invoke-virtual {p0, p3}, Lcho;->c(I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 184
-    add-int/lit8 v0, v0, -0x1
-
-    .line 195
-    :cond_0
-    :goto_0
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, p3, v1, v0}, Lcho;->a(III)J
-
-    move-result-wide v0
-
-    .line 196
-    int-to-long v2, v2
-
-    add-long/2addr v0, v2
-
-    .line 198
-    return-wide v0
-
-    .line 188
-    :cond_1
-    invoke-virtual {p0, p3}, Lcho;->c(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 190
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
+    return-object v0
 .end method

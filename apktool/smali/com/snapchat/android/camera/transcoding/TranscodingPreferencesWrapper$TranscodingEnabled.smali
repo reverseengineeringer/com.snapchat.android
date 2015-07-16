@@ -58,7 +58,7 @@
 
     const/4 v4, 0x0
 
-    .line 45
+    .line 47
     new-instance v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     const-string v1, "UNKNOWN"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->UNKNOWN:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
-    .line 46
+    .line 48
     new-instance v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     const-string v1, "BLOCKED"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->BLOCKED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
-    .line 47
+    .line 49
     new-instance v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     const-string v1, "TRANSCODING_NOT_SUPPORTED"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->TRANSCODING_NOT_SUPPORTED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
-    .line 48
+    .line 50
     new-instance v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     const-string v1, "ENABLED_FOR_LOW_QUALITY"
@@ -94,7 +94,7 @@
 
     sput-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->ENABLED_FOR_LOW_QUALITY:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
-    .line 49
+    .line 53
     new-instance v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     const-string v1, "ENABLED"
@@ -103,7 +103,7 @@
 
     sput-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->ENABLED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
-    .line 50
+    .line 54
     new-instance v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     const-string v1, "DISABLED"
@@ -116,7 +116,7 @@
 
     sput-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->DISABLED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
-    .line 44
+    .line 46
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
@@ -161,13 +161,13 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 57
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 54
+    .line 58
     iput p3, p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->a:I
 
-    .line 55
+    .line 59
     return-void
 .end method
 
@@ -175,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 46
     const-class v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -191,7 +191,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 46
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->$VALUES:[Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->clone()Ljava/lang/Object;
@@ -209,7 +209,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 62
     iget v0, p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->a:I
 
     return v0

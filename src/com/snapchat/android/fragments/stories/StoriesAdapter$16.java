@@ -11,7 +11,9 @@ final class StoriesAdapter$16
   
   public final boolean onLongClick(View paramView)
   {
-    StoriesAdapter.a(b, a, paramView.getContext());
+    if (!StoriesAdapter.a(b).m()) {
+      StoriesAdapter.a(b, a, paramView.getContext());
+    }
     return true;
   }
 }

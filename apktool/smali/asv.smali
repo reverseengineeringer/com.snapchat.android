@@ -1,292 +1,231 @@
-.class public Lasv;
+.class public final Lasv;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Lasu;
 
 
-# static fields
-.field public static final BOUNCE_VELOCITY:F = 50.0f
-
-.field public static final DEFAULT_DAMPENING_CONSTANT:F = 15.0f
-
-.field public static final DEFAULT_END_SIZE:F = 1.2f
-
-.field public static final DEFAULT_KEEP_EXPANDED_ON_HOVER_LEAVE:Z = false
-
-.field public static final DEFAULT_SPRING_CONSTANT:F = 1000.0f
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Lasm;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lasu;"
+    }
+.end annotation
 
 
 # instance fields
-.field public mBounceEnabled:Z
-
-.field private final mKeepExpandedOnHoverLeave:Z
-
-.field public final mSpring:Lbj;
-
-.field private final mViewToAnimate:Landroid/view/View;
+.field protected a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
+.method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 27
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lasv;-><init>(Landroid/view/View;Z)V
-
-    .line 29
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/View;B)V
-    .locals 1
-
-    .prologue
-    .line 32
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Lasv;-><init>(Landroid/view/View;Z)V
-
-    .line 34
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/view/View;Z)V
-    .locals 1
-
-    .prologue
-    .line 38
-    invoke-static {}, Lavk;->a()Lbp;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lasv;-><init>(Landroid/view/View;ZLbp;)V
-
-    .line 40
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/view/View;ZLbp;)V
-    .locals 6
-
-    .prologue
-    .line 43
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
-    const/4 v0, 0x1
+    .line 18
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-boolean v0, p0, Lasv;->mBounceEnabled:Z
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 44
-    iput-object p1, p0, Lasv;->mViewToAnimate:Landroid/view/View;
-
-    .line 45
-    iput-boolean p2, p0, Lasv;->mKeepExpandedOnHoverLeave:Z
-
-    .line 47
-    invoke-virtual {p3}, Lbp;->a()Lbj;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lasv;->mSpring:Lbj;
-
-    .line 48
-    iget-object v0, p0, Lasv;->mSpring:Lbj;
-
-    new-instance v1, Lbl;
-
-    const-wide v2, 0x408f400000000000L    # 1000.0
-
-    const-wide/high16 v4, 0x402e000000000000L    # 15.0
-
-    invoke-direct {v1, v2, v3, v4, v5}, Lbl;-><init>(DD)V
-
-    invoke-virtual {v0, v1}, Lbj;->a(Lbl;)Lbj;
-
-    .line 50
-    iget-object v0, p0, Lasv;->mSpring:Lbj;
-
-    new-instance v1, Lasv$1;
-
-    invoke-direct {v1, p0}, Lasv$1;-><init>(Lasv;)V
-
-    invoke-virtual {v0, v1}, Lbj;->a(Lbn;)Lbj;
-
-    .line 59
-    return-void
-.end method
-
-.method static synthetic a(Lasv;F)V
-    .locals 0
-
-    .prologue
-    .line 13
-    invoke-virtual {p0, p1}, Lasv;->a(F)V
+    iput-object v0, p0, Lasv;->a:Ljava/util/List;
 
     return-void
-.end method
-
-.method static synthetic a(Lasv;)Z
-    .locals 1
-
-    .prologue
-    .line 13
-    iget-boolean v0, p0, Lasv;->mBounceEnabled:Z
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public final a(F)V
-    .locals 1
+.method public final a(I)Lasm;
+    .locals 3
+    .annotation build Lchd;
+    .end annotation
 
     .prologue
-    .line 100
-    iget-object v0, p0, Lasv;->mViewToAnimate:Landroid/view/View;
+    .line 32
+    iget-object v0, p0, Lasv;->a:Ljava/util/List;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setScaleX(F)V
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    .line 101
-    iget-object v0, p0, Lasv;->mViewToAnimate:Landroid/view/View;
+    move-result v0
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setScaleY(F)V
+    if-nez v0, :cond_0
 
-    .line 102
-    return-void
-.end method
+    .line 33
+    const/4 v0, 0x0
 
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 9
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    const/4 v8, 0x0
-
-    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
-
-    const-wide/16 v4, 0x0
-
-    .line 63
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v6
-
-    if-eq v6, v0, :cond_0
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v6
-
-    const/4 v7, 0x3
-
-    if-ne v6, v7, :cond_1
-
-    .line 64
-    :cond_0
-    iget-object v0, p0, Lasv;->mSpring:Lbj;
-
-    invoke-virtual {v0, v4, v5}, Lbj;->b(D)Lbj;
-
-    .line 74
+    .line 35
     :goto_0
-    return v1
+    return-object v0
 
-    .line 65
+    :cond_0
+    iget-object v1, p0, Lasv;->a:Ljava/util/List;
+
+    iget-object v0, p0, Lasv;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    const/4 v0, 0x0
+
     :cond_1
-    iget-boolean v6, p0, Lasv;->mKeepExpandedOnHoverLeave:Z
-
-    if-nez v6, :cond_4
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v6
-
-    const/4 v7, 0x2
-
-    if-ne v6, v7, :cond_4
-
-    .line 68
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v6
-
-    cmpl-float v6, v6, v8
-
-    if-ltz v6, :cond_2
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v6
-
-    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    cmpg-float v6, v6, v7
-
-    if-gez v6, :cond_2
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v6
-
-    cmpl-float v6, v6, v8
-
-    if-ltz v6, :cond_2
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v6
-
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    cmpg-float v6, v6, v7
-
-    if-gez v6, :cond_2
-
-    .line 70
     :goto_1
-    iget-object v6, p0, Lasv;->mSpring:Lbj;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    if-eqz v0, :cond_3
+    move-result-object v0
 
-    :goto_2
-    invoke-virtual {v6, v2, v3}, Lbj;->b(D)Lbj;
+    check-cast v0, Lasm;
 
     goto :goto_0
 
     :cond_2
-    move v0, v1
+    rem-int v0, p1, v2
 
-    .line 68
+    if-gez v0, :cond_1
+
+    add-int/2addr v0, v2
+
     goto :goto_1
+.end method
 
-    :cond_3
-    move-wide v2, v4
+.method public final a()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<TT;>;"
+        }
+    .end annotation
 
-    .line 70
-    goto :goto_2
+    .prologue
+    .line 40
+    iget-object v0, p0, Lasv;->a:Ljava/util/List;
 
-    .line 72
-    :cond_4
-    iget-object v0, p0, Lasv;->mSpring:Lbj;
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v2, v3}, Lbj;->b(D)Lbj;
+.method public final a(Lasm;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 49
+    iget-object v0, p0, Lasv;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 50
+    return-void
+.end method
+
+.method public final b()I
+    .locals 1
+
+    .prologue
+    .line 45
+    iget-object v0, p0, Lasv;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b(I)Lcom/snapchat/android/ui/swipefilters/FilterPageType;
+    .locals 1
+
+    .prologue
+    .line 22
+    invoke-virtual {p0, p1}, Lasv;->a(I)Lasm;
+
+    move-result-object v0
+
+    .line 23
+    if-nez v0, :cond_0
+
+    .line 24
+    sget-object v0, Lcom/snapchat/android/ui/swipefilters/FilterPageType;->UNFILTERED:Lcom/snapchat/android/ui/swipefilters/FilterPageType;
+
+    .line 26
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {v0}, Lasm;->b()Lcom/snapchat/android/ui/swipefilters/FilterPageType;
+
+    move-result-object v0
 
     goto :goto_0
+.end method
+
+.method public final c()V
+    .locals 1
+
+    .prologue
+    .line 61
+    iget-object v0, p0, Lasv;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 62
+    return-void
+.end method
+
+.method public final d()V
+    .locals 2
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lasv;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lasm;
+
+    .line 66
+    invoke-virtual {v0}, Lasm;->e()V
+
+    goto :goto_0
+
+    .line 68
+    :cond_0
+    invoke-virtual {p0}, Lasv;->c()V
+
+    .line 69
+    return-void
 .end method

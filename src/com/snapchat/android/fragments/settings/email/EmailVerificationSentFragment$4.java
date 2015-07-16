@@ -3,8 +3,8 @@ package com.snapchat.android.fragments.settings.email;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.squareup.otto.Bus;
 
@@ -17,7 +17,7 @@ final class EmailVerificationSentFragment$4
   {
     if (paramMotionEvent.getAction() == 0)
     {
-      ban.a().a(new bdw(new EmailSettingsFragment(), EmailSettingsFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
+      bbo.a().a(new bev(new EmailSettingsFragment(), EmailSettingsFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
       return true;
     }
     return false;

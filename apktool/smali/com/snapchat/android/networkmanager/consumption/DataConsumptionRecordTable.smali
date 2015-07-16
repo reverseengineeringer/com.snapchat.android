@@ -14,7 +14,7 @@
     value = {
         "Lcom/snapchat/android/database/table/DbTable",
         "<",
-        "Lalg;",
+        "Lamc;",
         ">;"
     }
 .end annotation
@@ -25,7 +25,7 @@
 
 
 # instance fields
-.field private final b:Lalh;
+.field private final b:Lamd;
 
 
 # direct methods
@@ -48,19 +48,19 @@
 
     .prologue
     .line 35
-    invoke-static {}, Lalb;->a()Lalb;
+    invoke-static {}, Lalw;->a()Lalw;
 
     move-result-object v0
 
-    iget-object v0, v0, Lalb;->a:Lalh;
+    iget-object v0, v0, Lalw;->a:Lamd;
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;-><init>(Lalh;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;-><init>(Lamd;)V
 
     .line 36
     return-void
 .end method
 
-.method private constructor <init>(Lalh;)V
+.method private constructor <init>(Lamd;)V
     .locals 0
 
     .prologue
@@ -68,7 +68,7 @@
     invoke-direct {p0}, Lcom/snapchat/android/database/table/DbTable;-><init>()V
 
     .line 40
-    iput-object p1, p0, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;->b:Lalh;
+    iput-object p1, p0, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;->b:Lamd;
 
     .line 41
     return-void
@@ -91,7 +91,7 @@
 
     .prologue
     .line 20
-    check-cast p1, Lalg;
+    check-cast p1, Lamc;
 
     if-nez p1, :cond_0
 
@@ -101,41 +101,41 @@
     return-object v0
 
     :cond_0
-    new-instance v0, Laad;
+    new-instance v0, Labc;
 
-    invoke-direct {v0}, Laad;-><init>()V
+    invoke-direct {v0}, Labc;-><init>()V
 
     sget-object v1, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;->ID:Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;
 
-    iget-object v2, p1, Lalg;->a:Ljava/lang/String;
+    iget-object v2, p1, Lamc;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v1, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;->REQUEST_ID:Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;
 
-    iget-object v2, p1, Lalg;->b:Ljava/lang/String;
+    iget-object v2, p1, Lamc;->b:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v1, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;->TYPE:Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;
 
-    iget-object v2, p1, Lalg;->e:Ljava/lang/String;
+    iget-object v2, p1, Lamc;->e:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v1, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;->SIZE_IN_BYTES:Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;
 
-    iget v2, p1, Lalg;->d:I
+    iget v2, p1, Lamc;->d:I
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;I)Labc;
 
     sget-object v1, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;->EXPIRATION:Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable$DataConsumptionRecordSchema;
 
-    iget-wide v2, p1, Lalg;->c:J
+    iget-wide v2, p1, Lamc;->c:J
 
-    invoke-virtual {v0, v1, v2, v3}, Laad;->a(Lzw;J)Laad;
+    invoke-virtual {v0, v1, v2, v3}, Labc;->a(Laav;J)Labc;
 
-    iget-object v0, v0, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v0, Labc;->a:Landroid/content/ContentValues;
 
     goto :goto_0
 .end method
@@ -195,52 +195,52 @@
 
     move-result-wide v6
 
-    new-instance v1, Lalg;
+    new-instance v1, Lamc;
 
-    invoke-direct/range {v1 .. v7}, Lalg;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IJ)V
+    invoke-direct/range {v1 .. v7}, Lamc;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IJ)V
 
     return-object v1
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
-            "Lalg;",
+            "Lamc;",
             ">;"
         }
     .end annotation
 
     .prologue
     .line 105
-    iget-object v0, p0, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;->b:Lalh;
+    iget-object v0, p0, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;->b:Lamd;
 
-    invoke-virtual {v0}, Lalh;->a()Ljava/util/Collection;
+    invoke-virtual {v0}, Lamd;->a()Ljava/util/Collection;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
+.method public final b(Lakp;)V
     .locals 8
 
     .prologue
     const/4 v0, 0x0
 
     .line 110
-    iget-object v1, p0, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;->b:Lalh;
+    iget-object v1, p0, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;->b:Lamd;
 
     invoke-virtual {p0, v0, v0}, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    iget-object v2, v1, Lalh;->b:Ljava/lang/Object;
+    iget-object v2, v1, Lamd;->b:Ljava/lang/Object;
 
     monitor-enter v2
 
@@ -260,9 +260,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lalg;
+    check-cast v0, Lamc;
 
-    iget-wide v4, v0, Lalg;->c:J
+    iget-wide v4, v0, Lamc;->c:J
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -272,9 +272,9 @@
 
     if-lez v4, :cond_0
 
-    iget-object v4, v1, Lalh;->a:Ljava/util/Map;
+    iget-object v4, v1, Lamd;->a:Ljava/util/Map;
 
-    invoke-static {v0}, Lalh;->a(Lalg;)Ljava/lang/String;
+    invoke-static {v0}, Lamd;->a(Lamc;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -292,20 +292,14 @@
     throw v0
 
     :cond_0
+    const/4 v4, 0x1
+
     :try_start_1
-    const-string v4, "DataConsumptionRecorder"
+    new-array v4, v4, [Ljava/lang/Object;
 
-    const-string v5, "Ignoring expired record %s"
+    const/4 v5, 0x0
 
-    const/4 v6, 0x1
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    aput-object v0, v6, v7
-
-    invoke-static {v4, v5, v6}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v4, v5
 
     goto :goto_0
 
@@ -317,7 +311,7 @@
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue

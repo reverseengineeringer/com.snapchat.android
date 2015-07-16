@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 356
+    .line 376
     iput-object p1, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$6;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 359
+    .line 379
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$6;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/signup/LoginFragment;->h(Lcom/snapchat/android/fragments/signup/LoginFragment;)Landroid/widget/Button;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 360
+    .line 380
     const/4 v0, 0x0
 
     return v0

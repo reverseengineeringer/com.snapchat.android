@@ -3,10 +3,10 @@ package com.snapchat.android.fragments.cash;
 import com.snapchat.android.api2.cash.blockers.CardInputError;
 import com.snapchat.android.ui.cash.CardExpiryEditText;
 import com.snapchat.android.ui.cash.CardNumberEditText;
-import ye;
+import za;
 
 final class CardLinkFragment$7
-  implements ye
+  implements za
 {
   CardLinkFragment$7(CardLinkFragment paramCardLinkFragment) {}
   

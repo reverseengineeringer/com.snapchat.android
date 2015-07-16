@@ -4,11 +4,5 @@
 
 
 # virtual methods
-.method public abstract a([B)[B
-.end method
-
-.method public abstract b([B)[B
-.end method
-
-.method public abstract b([BLjava/lang/String;)[B
+.method public abstract a(Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;)V
 .end method

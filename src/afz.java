@@ -1,37 +1,16 @@
-import com.snapchat.android.model.Friend;
-import javax.inject.Provider;
-
 public final class afz
-  implements buj<afy>
 {
-  private final buj<apf<Friend>> b;
-  private final Provider<azo> c;
+  public final String a;
+  public final String b;
+  public final String c;
+  public final boolean d;
   
-  static
+  public afz(String paramString1, String paramString2, String paramString3, boolean paramBoolean)
   {
-    if (!afz.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
-  }
-  
-  private afz(buj<apf<Friend>> parambuj, Provider<azo> paramProvider)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-  }
-  
-  public static buj<afy> a(buj<apf<Friend>> parambuj, Provider<azo> paramProvider)
-  {
-    return new afz(parambuj, paramProvider);
+    a = paramString1;
+    b = paramString2;
+    c = paramString3;
+    d = paramBoolean;
   }
 }
 

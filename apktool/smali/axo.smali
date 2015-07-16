@@ -2,153 +2,264 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Laxe;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Laxo$a;
-    }
-.end annotation
-
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "SecureChatSessionMessageRateLimiter"
+.field public static final CHAT_MEDIA_IMAGE_CACHE:Laxn;
 
+.field public static final DAY_IN_MINUTES:I = 0x5a0
 
-# instance fields
-.field final mMaxMessagesPerSecond:I
+.field public static final DISCOVER_SHARE:Laxn;
 
-.field final mMessagesCounter:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public static final DSNAP_MEDIA_CACHE:Laxn;
 
-.field final mRateLimiterInterface:Laxo$a;
+.field public static final FONT_CACHE:Laxn;
 
-.field volatile mRunning:Z
+.field public static final GEOFILTER_CACHE:Laxn;
 
-.field private final mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
+.field public static final GEOFILTER_METADATA_CACHE:Laxn;
+
+.field private static final MAX_CACHED_FONTS:I = 0xa
+
+.field private static final MAX_CACHED_GEOFITLER_METADATA:I = 0x14
+
+.field public static final MONTH_IN_MINUTES:I = 0x9c40
+
+.field public static final MY_SNAP_IMAGE_CACHE:Laxn;
+
+.field public static final MY_SNAP_VIDEO_CACHE:Laxn;
+
+.field public static final MY_STORY_SNAP_THUMBNAIL_CACHE:Laxn;
+
+.field public static final PROFILE_IMAGE_CACHE:Laxn;
+
+.field public static final SAVE_STORY_TO_GALLERY_IMAGE_CACHE:Laxn;
+
+.field public static final SNAP_RECEIVED_IMAGE_CACHE:Laxn;
+
+.field public static final SNAP_RECEIVED_VIDEO_CACHE:Laxn;
+
+.field public static final STORY_RECEIVED_IMAGE_CACHE:Laxn;
+
+.field public static final STORY_RECEIVED_VIDEO_CACHE:Laxn;
+
+.field public static final STORY_SNAP_RECEIVED_THUMBNAIL_CACHE:Laxn;
+
+.field public static final THREE_DAYS_IN_MINUTES:I = 0x10e0
+
+.field public static final UNENCRYPTED_VIDEO_CACHE:Laxn;
+
+.field public static final UNZIPPED_BITMAP_SUFFIX:Ljava/lang/String; = "-unzippedbitmap"
 
 
 # direct methods
-.method public constructor <init>(Laxo$a;Ljava/util/concurrent/ScheduledExecutorService;)V
+.method static constructor <clinit>()V
+    .locals 6
+
+    .prologue
+    const-wide/32 v4, 0x9c40
+
+    const-wide/16 v2, 0x5a0
+
+    .line 15
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->MY_MEDIA:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->DSNAP_MEDIA_CACHE:Laxn;
+
+    .line 22
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->MY_STORY_THUMBNAIL:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->MY_STORY_SNAP_THUMBNAIL_CACHE:Laxn;
+
+    .line 29
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->STORIES_RECEIVED_THUMBNAIL:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->STORY_SNAP_RECEIVED_THUMBNAIL_CACHE:Laxn;
+
+    .line 35
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->STORIES_RECEIVED_IMAGE:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->STORY_RECEIVED_IMAGE_CACHE:Laxn;
+
+    .line 36
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->STORIES_RECEIVED_VIDEO:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->STORY_RECEIVED_VIDEO_CACHE:Laxn;
+
+    .line 41
+    new-instance v0, Lcom/snapchat/android/util/cache/DiscoverShareCache;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->DISCOVER_SHARE:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1}, Lcom/snapchat/android/util/cache/DiscoverShareCache;-><init>(Lcom/snapchat/android/util/cache/CacheType;)V
+
+    sput-object v0, Laxo;->DISCOVER_SHARE:Laxn;
+
+    .line 46
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->SNAPS_RECEIVED_IMAGE:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v4, v5}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->SNAP_RECEIVED_IMAGE_CACHE:Laxn;
+
+    .line 47
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->SNAPS_RECEIVED_VIDEO:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v4, v5}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->SNAP_RECEIVED_VIDEO_CACHE:Laxn;
+
+    .line 64
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->SNAPS_TO_SEND_IMAGE:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->MY_SNAP_IMAGE_CACHE:Laxn;
+
+    .line 65
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->SNAPS_TO_SEND_VIDEO:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->MY_SNAP_VIDEO_CACHE:Laxn;
+
+    .line 67
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->CHAT_MEDIA_RECEIVED_IMAGE:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->CHAT_MEDIA_IMAGE_CACHE:Laxn;
+
+    .line 69
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->PROFILE_IMAGE:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v4, v5}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->PROFILE_IMAGE_CACHE:Laxn;
+
+    .line 75
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->UNENCRYPTED_VIDEOS:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->UNENCRYPTED_VIDEO_CACHE:Laxn;
+
+    .line 80
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->SAVE_STORY_TO_GALLERY_IMAGES:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->SAVE_STORY_TO_GALLERY_IMAGE_CACHE:Laxn;
+
+    .line 85
+    new-instance v0, Laxn;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->GEOFILTERS_MEDIA:Lcom/snapchat/android/util/cache/CacheType;
+
+    const-wide/16 v2, 0x10e0
+
+    invoke-direct {v0, v1, v2, v3}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    sput-object v0, Laxo;->GEOFILTER_CACHE:Laxn;
+
+    .line 90
+    new-instance v0, Laxs;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->GEOFILTERS_METADATA:Lcom/snapchat/android/util/cache/CacheType;
+
+    const/16 v2, 0x14
+
+    invoke-direct {v0, v1, v2}, Laxs;-><init>(Lcom/snapchat/android/util/cache/CacheType;I)V
+
+    sput-object v0, Laxo;->GEOFILTER_METADATA_CACHE:Laxn;
+
+    .line 96
+    new-instance v0, Laxs;
+
+    sget-object v1, Lcom/snapchat/android/util/cache/CacheType;->FONTS:Lcom/snapchat/android/util/cache/CacheType;
+
+    const/16 v2, 0xa
+
+    invoke-direct {v0, v1, v2}, Laxs;-><init>(Lcom/snapchat/android/util/cache/CacheType;I)V
+
+    sput-object v0, Laxo;->FONT_CACHE:Laxn;
+
+    return-void
+.end method
+
+.method public static a()V
     .locals 2
 
     .prologue
-    const/4 v1, 0x0
+    .line 103
+    new-instance v0, Laxo$1;
 
-    .line 31
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Laxo$1;-><init>()V
 
-    .line 26
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 124
+    const-string v1, "Cache sanitizeAll() thread"
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    iput-object v0, p0, Laxo;->mMessagesCounter:Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 125
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 27
-    iput-boolean v1, p0, Laxo;->mRunning:Z
-
-    .line 32
-    iput-object p1, p0, Laxo;->mRateLimiterInterface:Laxo$a;
-
-    .line 33
-    iput-object p2, p0, Laxo;->mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
-
-    .line 34
-    const/16 v0, 0x20
-
-    iput v0, p0, Laxo;->mMaxMessagesPerSecond:I
-
-    .line 35
+    .line 126
     return-void
 .end method
 
-
-# virtual methods
-.method final a()V
-    .locals 5
+.method public static b()V
+    .locals 2
 
     .prologue
-    .line 57
-    iget-boolean v0, p0, Laxo;->mRunning:Z
+    .line 133
+    new-instance v0, Laxo$2;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0}, Laxo$2;-><init>()V
 
-    .line 58
-    iget-object v0, p0, Laxo;->mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
+    .line 154
+    const-string v1, "Cache clearAll() thread"
 
-    new-instance v1, Laxo$1;
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    invoke-direct {v1, p0}, Laxo$1;-><init>(Laxo;)V
+    .line 155
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    const-wide/16 v2, 0x1
-
-    sget-object v4, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface {v0, v1, v2, v3, v4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    .line 66
-    :cond_0
+    .line 156
     return-void
-.end method
-
-.method public final a(Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;)V
-    .locals 4
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 45
-    sget-object v0, Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;->CONNECTED:Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;
-
-    if-ne p1, v0, :cond_1
-
-    .line 46
-    const-string v0, "SecureChatSessionMessageRateLimiter"
-
-    const-string v1, "CHAT-LOG: SecureChatSessionMessageRateLimiter STARTED"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 47
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Laxo;->mRunning:Z
-
-    .line 48
-    iget-object v0, p0, Laxo;->mMessagesCounter:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
-
-    .line 49
-    invoke-virtual {p0}, Laxo;->a()V
-
-    .line 54
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 50
-    :cond_1
-    sget-object v0, Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;->DISCONNECTED:Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;
-
-    if-ne p1, v0, :cond_0
-
-    .line 51
-    const-string v0, "SecureChatSessionMessageRateLimiter"
-
-    const-string v1, "CHAT-LOG: SecureChatSessionMessageRateLimiter STOPPED"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 52
-    iput-boolean v3, p0, Laxo;->mRunning:Z
-
-    goto :goto_0
 .end method

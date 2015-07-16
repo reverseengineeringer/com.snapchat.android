@@ -5,7 +5,7 @@ import android.view.View.OnFocusChangeListener;
 import android.widget.EditText;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import km;
+import le;
 
 final class PickUsernameFragment$4
   implements View.OnFocusChangeListener
@@ -20,9 +20,9 @@ final class PickUsernameFragment$4
       if ((PickUsernameFragment.i(a)) && (!PickUsernameFragment.j(a))) {}
       for (paramView = PickUsernameFragment.c(a).getText().toString();; paramView = null)
       {
-        km localkm = new km();
+        le localle = new le();
         usernameSuggestion = paramView;
-        ScAnalyticsEventEngine.a(localkm);
+        ScAnalyticsEventEngine.a(localle);
         AnalyticsEvents.B();
         return;
       }

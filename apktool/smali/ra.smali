@@ -1,188 +1,54 @@
 .class public final Lra;
-.super Lqv;
+.super Lqs;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lra$2;
+        Lra$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lqs",
+        "<",
+        "Lra$a;",
+        ">;"
     }
 .end annotation
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lqs$a;)V
+    .locals 1
+    .param p1    # Lqs$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 22
-    invoke-direct {p0}, Lqv;-><init>()V
+    .line 17
+    invoke-direct {p0, p1}, Lqs;-><init>(Lqs$a;)V
 
-    .line 52
-    return-void
-.end method
+    .line 19
+    const-class v0, Lra$a;
 
-.method static synthetic a(Lra;)V
-    .locals 0
+    invoke-virtual {p0, v0, p0}, Lra;->registerCallback(Ljava/lang/Class;Lui$b;)V
 
-    .prologue
-    .line 22
-    invoke-virtual {p0}, Lra;->a()V
-
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/snapchat/android/model/CashTransaction;)V
-    .locals 13
-    .param p1    # Lcom/snapchat/android/model/CashTransaction;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    const/4 v12, 0x0
-
-    const/4 v5, 0x1
-
-    const/4 v1, 0x0
-
-    .line 25
-    iget-boolean v2, p1, Lcom/snapchat/android/model/CashTransaction;->mFromRain:Z
-
-    .line 27
-    if-nez v2, :cond_0
-
-    invoke-static {}, Lajx;->ax()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    if-eqz v2, :cond_2
-
-    invoke-static {}, Lajx;->ay()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    .line 29
-    :cond_1
-    invoke-super {p0, v12, v5}, Lqv;->a(Ljava/util/List;Z)V
-
-    .line 57
-    :goto_0
-    return-void
-
-    .line 33
-    :cond_2
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v3
-
-    new-instance v4, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$a;
-
-    sget-object v0, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->YES_NO_DONTASK_DIALOG:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
-
-    invoke-direct {v4, v0}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$a;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;)V
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    iget v6, p1, Lcom/snapchat/android/model/CashTransaction;->mAmount:I
-
-    iget-object v0, p1, Lcom/snapchat/android/model/CashTransaction;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
-
-    sget-object v7, Lcom/snapchat/android/util/CashUtils$1;->$SwitchMap$com$snapchat$android$util$CashUtils$CurrencyCode:[I
-
-    invoke-virtual {v0}, Lcom/snapchat/android/util/CashUtils$CurrencyCode;->ordinal()I
-
-    sget-object v7, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    rem-int/lit8 v0, v6, 0x64
-
-    if-eqz v0, :cond_3
-
-    const/4 v0, 0x2
-
-    :goto_1
-    int-to-double v8, v6
-
-    const-wide/high16 v10, 0x4059000000000000L    # 100.0
-
-    div-double/2addr v8, v10
-
-    invoke-static {v8, v9, v7, v0}, Laua;->a(DLjava/util/Locale;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v5, v1
-
-    const v0, 0x7f0c0214
-
-    invoke-static {v12, v0, v5}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, v4, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$a;->mMessage:Ljava/lang/String;
-
-    const v0, 0x7f0c0215
-
-    iput v0, v4, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$a;->mTitleResId:I
-
-    new-instance v0, Lra$1;
-
-    invoke-direct {v0, p0, v2}, Lra$1;-><init>(Lra;Z)V
-
-    iput-object v0, v4, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$a;->mYesNoAlertListener:Lcom/snapchat/android/util/AlertDialogUtils$a;
-
-    invoke-virtual {v4}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$a;->a()Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v1
-
-    goto :goto_1
-.end method
-
-.method protected final a(Ljava/util/List;Z)V
-    .locals 0
-    .param p1    # Ljava/util/List;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lqv;",
-            ">;Z)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 62
-    invoke-super {p0, p1, p2}, Lqv;->a(Ljava/util/List;Z)V
-
-    .line 63
-    return-void
-.end method
-
-.method public final c()Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+.method protected final getPath()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 67
-    sget-object v0, Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;->SEND_CONFIRMATION_BLOCKER:Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+    .line 24
+    const-string v0, "/cash/generate_signature_for_phone"
 
     return-object v0
 .end method

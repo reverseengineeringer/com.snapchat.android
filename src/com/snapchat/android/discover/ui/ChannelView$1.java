@@ -1,12 +1,12 @@
 package com.snapchat.android.discover.ui;
 
-import aeg.a;
+import afg.a;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 
 final class ChannelView$1
-  implements aeg.a
+  implements afg.a
 {
   ChannelView$1(ChannelView paramChannelView) {}
   

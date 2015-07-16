@@ -1,22 +1,21 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import ajx;
-import android.view.View;
-import android.view.View.OnLongClickListener;
-import android.widget.TextView;
-import bgr;
+import akr;
 
 final class FeedFragment$13
-  implements View.OnLongClickListener
+  implements Runnable
 {
-  FeedFragment$13(FeedFragment paramFeedFragment) {}
+  FeedFragment$13(FeedFragment paramFeedFragment, int paramInt) {}
   
-  public final boolean onLongClick(View paramView)
+  public final void run()
   {
-    paramView.setVisibility(8);
-    ((TextView)FeedFragment.b(a).a()).setText(ajx.d() + " | " + ajx.c());
-    FeedFragment.b(a).a(0);
-    return true;
+    if ((!FeedFragment.v(b)) && (a > 0))
+    {
+      FeedFragment.a(b, a - 1);
+      return;
+    }
+    FeedFragment.t(b);
+    akr.bB();
   }
 }
 

@@ -1,466 +1,515 @@
 .class public final Lapl;
-.super Lbfm;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lapl$a;,
-        Lapl$b;
+        Lapl$1;,
+        Lapl$a;
     }
 .end annotation
 
 
+# static fields
+.field private static final c:Lapl;
+
+
 # instance fields
-.field public final a:Lbj;
+.field public final a:Lama;
 
-.field public final b:Lbj;
+.field public b:Lapl$a;
 
-.field public c:Lbh;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbh",
-            "<",
-            "Lapl$b;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final d:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
 
-.field public d:Z
+.field private final e:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
-.field public e:Lbff;
+.field private final f:Lauk;
 
-.field public f:Lbff;
-
-.field private g:Lbff;
+.field private final g:Lbhk;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 61
-    invoke-static {}, Lavk;->a()Lbp;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lapl;-><init>(Lbp;)V
-
-    .line 62
-    return-void
-.end method
-
-.method private constructor <init>(Lbj;Lbj;)V
-    .locals 3
-    .param p1    # Lbj;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lbj;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 69
-    invoke-direct {p0}, Lbfm;-><init>()V
-
-    .line 50
-    new-instance v0, Lbh;
-
-    invoke-direct {v0}, Lbh;-><init>()V
-
-    iput-object v0, p0, Lapl;->c:Lbh;
-
-    .line 52
-    iput-boolean v2, p0, Lapl;->d:Z
-
-    .line 56
-    invoke-static {}, Lbff;->a()Lbff;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lapl;->g:Lbff;
-
     .line 57
-    invoke-static {}, Lbff;->a()Lbff;
+    new-instance v0, Lapl;
 
-    move-result-object v0
+    invoke-direct {v0}, Lapl;-><init>()V
 
-    iput-object v0, p0, Lapl;->e:Lbff;
+    sput-object v0, Lapl;->c:Lapl;
 
-    .line 58
-    invoke-static {}, Lbff;->a()Lbff;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lapl;->f:Lbff;
-
-    .line 70
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbj;
-
-    iput-object v0, p0, Lapl;->a:Lbj;
-
-    .line 71
-    invoke-static {p2}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbj;
-
-    iput-object v0, p0, Lapl;->b:Lbj;
-
-    .line 73
-    new-instance v0, Lapl$a;
-
-    invoke-direct {v0, p0, v2}, Lapl$a;-><init>(Lapl;B)V
-
-    .line 74
-    iget-object v1, p0, Lapl;->a:Lbj;
-
-    invoke-virtual {v1, v0}, Lbj;->a(Lbn;)Lbj;
-
-    .line 75
-    iget-object v1, p0, Lapl;->b:Lbj;
-
-    invoke-virtual {v1, v0}, Lbj;->a(Lbn;)Lbj;
-
-    .line 77
-    iget-object v0, p0, Lapl;->a:Lbj;
-
-    iput-boolean v2, v0, Lbj;->b:Z
-
-    .line 78
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    iput-boolean v2, v0, Lbj;->b:Z
-
-    .line 79
     return-void
 .end method
 
-.method private constructor <init>(Lbp;)V
-    .locals 2
-    .param p1    # Lbp;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method private constructor <init>()V
+    .locals 6
 
     .prologue
-    .line 65
-    invoke-virtual {p1}, Lbp;->a()Lbj;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lbp;->a()Lbj;
+    .line 87
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a()Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lapl;-><init>(Lbj;Lbj;)V
+    new-instance v2, Lauk;
 
-    .line 66
+    invoke-direct {v2}, Lauk;-><init>()V
+
+    new-instance v3, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+
+    invoke-direct {v3}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
+
+    new-instance v4, Lbhk;
+
+    invoke-direct {v4}, Lbhk;-><init>()V
+
+    invoke-static {}, Lama;->a()Lama;
+
+    move-result-object v5
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, Lapl;-><init>(Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;Lauk;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lbhk;Lama;)V
+
+    .line 89
     return-void
+.end method
+
+.method private constructor <init>(Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;Lauk;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lbhk;Lama;)V
+    .locals 1
+
+    .prologue
+    .line 95
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 96
+    iput-object p1, p0, Lapl;->d:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;
+
+    .line 97
+    iput-object p2, p0, Lapl;->f:Lauk;
+
+    .line 98
+    iput-object p3, p0, Lapl;->e:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+
+    .line 99
+    iput-object p4, p0, Lapl;->g:Lbhk;
+
+    .line 100
+    iput-object p5, p0, Lapl;->a:Lama;
+
+    .line 101
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lapl;->b:Lapl$a;
+
+    .line 102
+    return-void
+.end method
+
+.method public static a(D)D
+    .locals 4
+
+    .prologue
+    const-wide/high16 v2, 0x4024000000000000L    # 10.0
+
+    .line 504
+    mul-double v0, p0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v0
+
+    long-to-double v0, v0
+
+    div-double/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public static a()Lapl;
+    .locals 1
+
+    .prologue
+    .line 63
+    sget-object v0, Lapl;->c:Lapl;
+
+    return-object v0
+.end method
+
+.method public static a(I)Lih;
+    .locals 1
+
+    .prologue
+    .line 493
+    packed-switch p0, :pswitch_data_0
+
+    .line 499
+    sget-object v0, Lih;->IMAGE:Lih;
+
+    :goto_0
+    return-object v0
+
+    .line 495
+    :pswitch_0
+    sget-object v0, Lih;->VIDEO:Lih;
+
+    goto :goto_0
+
+    .line 497
+    :pswitch_1
+    sget-object v0, Lih;->VIDEO_NO_SOUND:Lih;
+
+    goto :goto_0
+
+    .line 493
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public static a(Lakl;)Z
+    .locals 2
+    .param p0    # Lakl;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 353
+    iget-object v0, p0, Lakl;->mUsername:Ljava/lang/String;
+
+    invoke-static {}, Lakp;->g()Lakp;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lauk;->a(Ljava/lang/String;Lakp;)Lcom/snapchat/android/model/Friend;
+
+    move-result-object v0
+
+    .line 354
+    invoke-static {v0}, Lapl;->a(Lcom/snapchat/android/model/Friend;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private static a(Lcom/snapchat/android/model/Friend;)Z
+    .locals 1
+    .param p0    # Lcom/snapchat/android/model/Friend;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 363
+    if-eqz p0, :cond_0
+
+    iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsLocalStory:Z
+
+    if-eqz v0, :cond_0
+
+    .line 364
+    const/4 v0, 0x1
+
+    .line 366
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/lang/String;)Z
+    .locals 1
+    .param p0    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 358
+    invoke-static {}, Lakp;->g()Lakp;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lauk;->a(Ljava/lang/String;Lakp;)Lcom/snapchat/android/model/Friend;
+
+    move-result-object v0
+
+    .line 359
+    invoke-static {v0}, Lapl;->a(Lcom/snapchat/android/model/Friend;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static b(Z)J
+    .locals 2
+
+    .prologue
+    .line 606
+    if-eqz p0, :cond_0
+
+    const-wide/16 v0, 0x0
+
+    :goto_0
+    return-wide v0
+
+    :cond_0
+    const-wide/16 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method public static b(Lakl;)V
+    .locals 4
+    .param p0    # Lakl;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 377
+    new-instance v0, Lmd;
+
+    invoke-direct {v0}, Lmd;-><init>()V
+
+    invoke-static {p0}, Lapl;->c(Lakl;)Lmj;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lmd;->storyType:Lmj;
+
+    iget-object v1, p0, Lakl;->mUsername:Ljava/lang/String;
+
+    iput-object v1, v0, Lmd;->posterId:Ljava/lang/String;
+
+    invoke-virtual {p0}, Lakl;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lmd;->storySnapId:Ljava/lang/String;
+
+    invoke-static {p0}, Lapl;->a(Lakl;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "LOCAL"
+
+    iput-object v1, v0, Lmd;->geoFence:Ljava/lang/String;
+
+    :cond_0
+    invoke-virtual {p0}, Lakl;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lmd;->storySnapId:Ljava/lang/String;
+
+    invoke-virtual {p0}, Lakl;->G()D
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lmd;->snapTime:Ljava/lang/Double;
+
+    .line 379
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    .line 380
+    return-void
+.end method
+
+.method public static c(Lakl;)Lmj;
+    .locals 2
+    .param p0    # Lakl;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 460
+    iget-boolean v0, p0, Lakl;->mIsShared:Z
+
+    if-eqz v0, :cond_0
+
+    .line 461
+    sget-object v0, Lmj;->OUR:Lmj;
+
+    .line 472
+    :goto_0
+    return-object v0
+
+    .line 464
+    :cond_0
+    iget-object v0, p0, Lakl;->mStoryId:Ljava/lang/String;
+
+    const-string v1, "my_story_ads79sdf"
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 465
+    sget-object v0, Lmj;->MY:Lmj;
+
+    goto :goto_0
+
+    .line 468
+    :cond_1
+    invoke-virtual {p0}, Lakl;->aC()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 469
+    sget-object v0, Lmj;->BRAND:Lmj;
+
+    goto :goto_0
+
+    .line 472
+    :cond_2
+    sget-object v0, Lmj;->USER:Lmj;
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Lbff;)Lapl;
-    .locals 4
-    .param p1    # Lbff;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a(J)V
+    .locals 1
 
     .prologue
-    .line 167
-    invoke-virtual {p0}, Lapl;->f()V
+    .line 125
+    iget-object v0, p0, Lapl;->b:Lapl$a;
 
-    .line 168
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    .line 170
-    iget-boolean v0, p0, Lapl;->d:Z
+    .line 126
+    new-instance v0, Lapl$a;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0}, Lapl$a;-><init>()V
 
-    .line 171
-    iget-object v0, p0, Lapl;->a:Lbj;
+    iput-object v0, p0, Lapl;->b:Lapl$a;
 
-    iget-wide v2, p1, Lbff;->x:D
-
-    invoke-virtual {v0, v2, v3}, Lbj;->b(D)Lbj;
-
-    .line 172
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    iget-wide v2, p1, Lbff;->y:D
-
-    invoke-virtual {v0, v2, v3}, Lbj;->b(D)Lbj;
-
-    .line 177
-    :goto_0
-    return-object p0
-
-    .line 174
+    .line 128
     :cond_0
-    iput-object p1, p0, Lapl;->g:Lbff;
+    iget-object v0, p0, Lapl;->b:Lapl$a;
 
-    goto :goto_0
-.end method
+    iput-wide p1, v0, Lapl$a;->i:J
 
-.method public final a(Lbl;)Lapl;
-    .locals 1
-    .param p1    # Lbl;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 95
-    invoke-virtual {p0}, Lapl;->f()V
-
-    .line 96
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 98
-    iget-object v0, p0, Lapl;->a:Lbj;
-
-    invoke-virtual {v0, p1}, Lbj;->a(Lbl;)Lbj;
-
-    .line 99
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    invoke-virtual {v0, p1}, Lbj;->a(Lbl;)Lbj;
-
-    .line 101
-    return-object p0
-.end method
-
-.method public final a(Z)Lapl;
-    .locals 8
-
-    .prologue
-    const-wide/high16 v6, 0x3ff0000000000000L    # 1.0
-
-    .line 234
-    invoke-virtual {p0}, Lapl;->f()V
-
-    .line 236
-    iget-boolean v0, p0, Lapl;->d:Z
-
-    if-ne v0, p1, :cond_0
-
-    .line 249
-    :goto_0
-    return-object p0
-
-    .line 240
-    :cond_0
-    if-eqz p1, :cond_4
-
-    .line 241
-    iget-object v0, p0, Lapl;->f:Lbff;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lapl;->a:Lbj;
-
-    iget-object v1, p0, Lapl;->f:Lbff;
-
-    iget-wide v2, v1, Lbff;->x:D
-
-    invoke-virtual {v0, v2, v3}, Lbj;->c(D)Lbj;
-
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    iget-object v1, p0, Lapl;->f:Lbff;
-
-    iget-wide v2, v1, Lbff;->y:D
-
-    invoke-virtual {v0, v2, v3}, Lbj;->c(D)Lbj;
-
-    :cond_1
-    iget-object v0, p0, Lapl;->e:Lbff;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lapl;->a:Lbj;
-
-    iget-object v1, p0, Lapl;->e:Lbff;
-
-    iget-wide v2, v1, Lbff;->x:D
-
-    invoke-virtual {v0, v2, v3}, Lbj;->a(D)Lbj;
-
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    iget-object v1, p0, Lapl;->e:Lbff;
-
-    iget-wide v2, v1, Lbff;->y:D
-
-    invoke-virtual {v0, v2, v3}, Lbj;->a(D)Lbj;
-
-    :cond_2
-    iget-object v0, p0, Lapl;->g:Lbff;
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lapl;->a:Lbj;
-
-    iget-object v1, p0, Lapl;->g:Lbff;
-
-    iget-wide v2, v1, Lbff;->x:D
-
-    invoke-virtual {v0, v2, v3}, Lbj;->b(D)Lbj;
-
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    iget-object v1, p0, Lapl;->g:Lbff;
-
-    iget-wide v2, v1, Lbff;->y:D
-
-    invoke-virtual {v0, v2, v3}, Lbj;->b(D)Lbj;
-
-    .line 242
-    :cond_3
-    iget-object v0, p0, Lapl;->a:Lbj;
-
-    iget-wide v0, v0, Lbj;->h:D
-
-    iget-object v2, p0, Lapl;->a:Lbj;
-
-    add-double v4, v0, v6
-
-    invoke-virtual {v2, v4, v5}, Lbj;->b(D)Lbj;
-
-    iget-object v2, p0, Lapl;->a:Lbj;
-
-    invoke-virtual {v2, v0, v1}, Lbj;->b(D)Lbj;
-
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    iget-wide v0, v0, Lbj;->h:D
-
-    iget-object v2, p0, Lapl;->b:Lbj;
-
-    add-double v4, v0, v6
-
-    invoke-virtual {v2, v4, v5}, Lbj;->b(D)Lbj;
-
-    iget-object v2, p0, Lapl;->b:Lbj;
-
-    invoke-virtual {v2, v0, v1}, Lbj;->b(D)Lbj;
-
-    .line 247
-    :goto_1
-    iput-boolean p1, p0, Lapl;->d:Z
-
-    goto :goto_0
-
-    .line 244
-    :cond_4
-    new-instance v0, Lbff;
-
-    iget-object v1, p0, Lapl;->a:Lbj;
-
-    iget-wide v2, v1, Lbj;->h:D
-
-    iget-object v1, p0, Lapl;->b:Lbj;
-
-    iget-wide v4, v1, Lbj;->h:D
-
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
-
-    iput-object v0, p0, Lapl;->g:Lbff;
-
-    new-instance v0, Lbff;
-
-    iget-object v1, p0, Lapl;->a:Lbj;
-
-    iget-object v1, v1, Lbj;->d:Lbj$a;
-
-    iget-wide v2, v1, Lbj$a;->a:D
-
-    iget-object v1, p0, Lapl;->b:Lbj;
-
-    iget-object v1, v1, Lbj;->d:Lbj$a;
-
-    iget-wide v4, v1, Lbj$a;->a:D
-
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
-
-    iput-object v0, p0, Lapl;->e:Lbff;
-
-    new-instance v0, Lbff;
-
-    iget-object v1, p0, Lapl;->a:Lbj;
-
-    iget-object v1, v1, Lbj;->d:Lbj$a;
-
-    iget-wide v2, v1, Lbj$a;->b:D
-
-    iget-object v1, p0, Lapl;->b:Lbj;
-
-    iget-object v1, v1, Lbj;->d:Lbj$a;
-
-    iget-wide v4, v1, Lbj$a;->b:D
-
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
-
-    iput-object v0, p0, Lapl;->f:Lbff;
-
-    goto :goto_1
-.end method
-
-.method public final b(Z)Lapl;
-    .locals 1
-
-    .prologue
-    .line 267
-    invoke-virtual {p0}, Lapl;->f()V
-
-    .line 268
-    iget-object v0, p0, Lapl;->a:Lbj;
-
-    iput-boolean p1, v0, Lbj;->b:Z
-
-    .line 269
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    iput-boolean p1, v0, Lbj;->b:Z
-
-    .line 270
-    return-object p0
-.end method
-
-.method public final c()V
-    .locals 1
-
-    .prologue
-    .line 83
-    iget-object v0, p0, Lapl;->a:Lbj;
-
-    invoke-virtual {v0}, Lbj;->a()V
-
-    .line 84
-    iget-object v0, p0, Lapl;->b:Lbj;
-
-    invoke-virtual {v0}, Lbj;->a()V
-
-    .line 86
-    iget-object v0, p0, Lapl;->c:Lbh;
-
-    invoke-virtual {v0}, Lbh;->a()V
-
-    .line 87
+    .line 129
     return-void
+.end method
+
+.method public final a(Ljava/lang/String;Lfz;)V
+    .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lfz;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 108
+    new-instance v0, Llx;
+
+    invoke-direct {v0}, Llx;-><init>()V
+
+    .line 109
+    iput-object p1, v0, Llx;->posterId:Ljava/lang/String;
+
+    .line 110
+    iput-object p2, v0, Llx;->additionalInfo:Lfz;
+
+    .line 111
+    iget-object v1, p0, Lapl;->b:Lapl$a;
+
+    iget-object v1, v1, Lapl$a;->c:Ljava/lang/Long;
+
+    iput-object v1, v0, Llx;->viewLocation:Ljava/lang/Long;
+
+    .line 112
+    sget-object v1, Lmj;->OUR:Lmj;
+
+    iput-object v1, v0, Llx;->storyType:Lmj;
+
+    .line 113
+    invoke-static {p1}, Lapl;->a(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 114
+    const-string v1, "LOCAL"
+
+    iput-object v1, v0, Llx;->geoFence:Ljava/lang/String;
+
+    .line 116
+    :cond_0
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    .line 117
+    return-void
+.end method
+
+.method public final a(Z)V
+    .locals 3
+
+    .prologue
+    .line 157
+    iget-object v0, p0, Lapl;->b:Lapl$a;
+
+    if-nez v0, :cond_0
+
+    .line 160
+    new-instance v0, Lapl$a;
+
+    invoke-direct {v0}, Lapl$a;-><init>()V
+
+    iput-object v0, p0, Lapl;->b:Lapl$a;
+
+    .line 162
+    :cond_0
+    iget-object v2, p0, Lapl;->b:Lapl$a;
+
+    if-eqz p1, :cond_1
+
+    const-wide/16 v0, 0x0
+
+    :goto_0
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iput-object v0, v2, Lapl$a;->c:Ljava/lang/Long;
+
+    .line 163
+    return-void
+
+    .line 162
+    :cond_1
+    const-wide/16 v0, 0x1
+
+    goto :goto_0
 .end method

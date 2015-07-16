@@ -15,7 +15,7 @@
     value = {
         "Landroid/support/v7/widget/RecyclerView$a",
         "<",
-        "Lux;",
+        "Lvt;",
         ">;"
     }
 .end annotation
@@ -27,11 +27,13 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lut;",
+            "Lvp;",
             ">;"
         }
     .end annotation
 .end field
+
+.field public d:Larm;
 
 
 # direct methods
@@ -42,19 +44,19 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lut;",
+            "Lvp;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 33
+    .line 36
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$a;-><init>()V
 
-    .line 34
+    .line 37
     iput-object p1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->c:Ljava/util/List;
 
-    .line 35
+    .line 38
     return-void
 .end method
 
@@ -64,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 86
     iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->c:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -78,21 +80,21 @@
     .locals 4
 
     .prologue
-    .line 63
+    .line 73
     iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->c:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lut;
+    check-cast v0, Lvp;
 
-    .line 64
-    invoke-interface {v0}, Lut;->C_()Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;
+    .line 74
+    invoke-interface {v0}, Lvp;->B_()Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;
 
     move-result-object v0
 
-    .line 65
+    .line 75
     sget-object v1, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$1;->a:[I
 
     invoke-virtual {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;->ordinal()I
@@ -103,7 +105,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 71
+    .line 81
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -124,7 +126,7 @@
 
     throw v1
 
-    .line 67
+    .line 77
     :pswitch_0
     sget-object v0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;->CONVERSATION:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;
 
@@ -132,7 +134,7 @@
 
     move-result v0
 
-    .line 69
+    .line 79
     :goto_0
     return v0
 
@@ -145,7 +147,7 @@
 
     goto :goto_0
 
-    .line 65
+    .line 75
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -159,7 +161,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 24
+    .line 25
     invoke-static {}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;->values()[Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;
 
     move-result-object v0
@@ -190,15 +192,15 @@
 
     move-result-object v0
 
-    const v1, 0x7f04005d
+    const v1, 0x7f04005e
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
-    new-instance v0, Luw;
+    new-instance v0, Lvs;
 
-    invoke-direct {v0, v1}, Luw;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, v1}, Lvs;-><init>(Landroid/view/View;)V
 
     goto :goto_0
 
@@ -211,15 +213,15 @@
 
     move-result-object v0
 
-    const v1, 0x7f04005c
+    const v1, 0x7f04005d
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
-    new-instance v0, Luz;
+    new-instance v0, Lvv;
 
-    invoke-direct {v0, v1}, Luz;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, v1}, Lvv;-><init>(Landroid/view/View;)V
 
     goto :goto_0
 
@@ -234,35 +236,57 @@
     .locals 0
 
     .prologue
-    .line 24
-    check-cast p1, Lux;
+    .line 25
+    check-cast p1, Lvt;
 
-    invoke-virtual {p0, p1, p2}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->a(Lux;I)V
+    invoke-virtual {p0, p1, p2}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->a(Lvt;I)V
 
     return-void
 .end method
 
-.method public a(Lux;I)V
+.method public final a(Larm;)V
+    .locals 0
+
+    .prologue
+    .line 41
+    iput-object p1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->d:Larm;
+
+    .line 42
+    return-void
+.end method
+
+.method public a(Lvt;I)V
     .locals 1
 
     .prologue
-    .line 56
+    .line 63
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Lux;->b(Z)V
+    invoke-virtual {p1, v0}, Lvt;->b(Z)V
 
-    .line 57
+    .line 64
     iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->c:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lut;
+    check-cast v0, Lvp;
 
-    .line 58
-    invoke-virtual {p1, v0}, Lux;->a(Lut;)V
+    .line 65
+    invoke-virtual {p1, v0}, Lvt;->a(Lvp;)V
 
-    .line 59
+    .line 66
+    iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->d:Larm;
+
+    if-eqz v0, :cond_0
+
+    .line 67
+    iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter;->d:Larm;
+
+    invoke-interface {v0, p1}, Larm;->a(Landroid/support/v7/widget/RecyclerView$s;)V
+
+    .line 69
+    :cond_0
     return-void
 .end method

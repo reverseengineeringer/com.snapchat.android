@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments;
 
-import ajx;
+import akr;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.AnimatorSet;
@@ -30,10 +30,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
-import aol;
-import atj;
-import ban;
-import bdw;
+import aph;
+import auh;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.settings.WebFragment;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
@@ -43,22 +43,22 @@ public class ScAcceptTermsFragment
   extends SnapchatFragment
 {
   private static Random a = new Random();
-  private final aol b;
+  private final aph b;
   
   public ScAcceptTermsFragment()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private ScAcceptTermsFragment(aol paramaol)
+  private ScAcceptTermsFragment(aph paramaph)
   {
-    b = paramaol;
+    b = paramaph;
   }
   
   private Animator i()
   {
-    final ImageView localImageView = (ImageView)c(2131362588);
+    final ImageView localImageView = (ImageView)c(2131362587);
     ObjectAnimator localObjectAnimator = ObjectAnimator.ofFloat(localImageView, "alpha", new float[] { 0.0F, 0.8F });
     final Object localObject1 = ObjectAnimator.ofFloat(localImageView, "alpha", new float[] { 0.8F, 0.0F });
     localObjectAnimator.setDuration(182L);
@@ -78,7 +78,7 @@ public class ScAcceptTermsFragment
         localImageView.setVisibility(0);
       }
     });
-    localImageView = (ImageView)c(2131362589);
+    localImageView = (ImageView)c(2131362588);
     localImageView.setPivotY(localImageView.getMeasuredHeight());
     localImageView.setPivotX(localImageView.getMeasuredWidth() / 2);
     localObjectAnimator = ObjectAnimator.ofFloat(localImageView, "rotation", new float[] { 0.0F, -110.0F });
@@ -92,11 +92,11 @@ public class ScAcceptTermsFragment
     int i = 0;
     while (i < j + 4)
     {
-      localObject3 = (RelativeLayout)c(2131362581);
+      localObject3 = (RelativeLayout)c(2131362580);
       localObject2 = new ImageView(getActivity());
       Object localObject4 = new RelativeLayout.LayoutParams(-2, -2);
-      ((RelativeLayout.LayoutParams)localObject4).addRule(2, 2131362590);
-      ((RelativeLayout.LayoutParams)localObject4).addRule(0, 2131362589);
+      ((RelativeLayout.LayoutParams)localObject4).addRule(2, 2131362589);
+      ((RelativeLayout.LayoutParams)localObject4).addRule(0, 2131362588);
       ((ImageView)localObject2).setVisibility(4);
       ((ImageView)localObject2).setLayoutParams((ViewGroup.LayoutParams)localObject4);
       ((ImageView)localObject2).setImageDrawable(getResources().getDrawable(2130838163));
@@ -154,12 +154,12 @@ public class ScAcceptTermsFragment
     AlertDialog.Builder localBuilder = new AlertDialog.Builder(getActivity());
     localBuilder.setMessage(2131493423);
     localBuilder.setCancelable(true);
-    localBuilder.setPositiveButton(2131493603, new DialogInterface.OnClickListener()
+    localBuilder.setPositiveButton(2131493601, new DialogInterface.OnClickListener()
     {
       public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
       {
         ScAcceptTermsFragment.f(ScAcceptTermsFragment.this).e();
-        ajx.n();
+        akr.n();
         paramAnonymousDialogInterface = getActivity();
         paramAnonymousDialogInterface.setResult(1);
         paramAnonymousDialogInterface.finish();
@@ -177,10 +177,10 @@ public class ScAcceptTermsFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, final ViewGroup paramViewGroup, final Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968717, paramViewGroup, false);
-    paramViewGroup = getString(2131493539);
-    paramBundle = getString(2131493541);
-    String str = getString(2131493540, new Object[] { paramBundle, paramViewGroup, paramViewGroup, paramBundle });
+    mFragmentLayout = paramLayoutInflater.inflate(2130968719, paramViewGroup, false);
+    paramViewGroup = getString(2131493537);
+    paramBundle = getString(2131493539);
+    String str = getString(2131493538, new Object[] { paramBundle, paramViewGroup, paramViewGroup, paramBundle });
     int i = str.lastIndexOf(paramViewGroup);
     paramLayoutInflater = new SpannableString(str);
     paramLayoutInflater.setSpan(new ClickableSpan()
@@ -188,7 +188,7 @@ public class ScAcceptTermsFragment
       public final void onClick(View paramAnonymousView)
       {
         paramAnonymousView.invalidate();
-        ban.a().a(new bdw(new WebFragment("https://www.snapchat.com/privacy", paramViewGroup)));
+        bbo.a().a(new bev(new WebFragment("https://www.snapchat.com/privacy", paramViewGroup)));
       }
       
       public final void updateDrawState(TextPaint paramAnonymousTextPaint)
@@ -203,7 +203,7 @@ public class ScAcceptTermsFragment
       public final void onClick(View paramAnonymousView)
       {
         paramAnonymousView.invalidate();
-        ban.a().a(new bdw(new WebFragment("https://www.snapchat.com/terms", paramBundle)));
+        bbo.a().a(new bev(new WebFragment("https://www.snapchat.com/terms", paramBundle)));
       }
       
       public final void updateDrawState(TextPaint paramAnonymousTextPaint)
@@ -212,21 +212,21 @@ public class ScAcceptTermsFragment
         paramAnonymousTextPaint.setUnderlineText(false);
       }
     }, i, paramBundle.length() + i, 33);
-    paramViewGroup = (TextView)c(2131362585);
+    paramViewGroup = (TextView)c(2131362584);
     paramViewGroup.setText(paramLayoutInflater);
     paramViewGroup.setMovementMethod(LinkMovementMethod.getInstance());
-    paramLayoutInflater = (Button)c(2131362590);
+    paramLayoutInflater = (Button)c(2131362589);
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
+    auh.a(paramLayoutInflater);
     paramLayoutInflater.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ajx.W();
+        akr.W();
         getActivity().finish();
       }
     });
-    paramViewGroup = getString(2131493538);
+    paramViewGroup = getString(2131493536);
     paramLayoutInflater = new SpannableString(paramViewGroup);
     paramLayoutInflater.setSpan(new ClickableSpan()
     {
@@ -242,7 +242,7 @@ public class ScAcceptTermsFragment
         paramAnonymousTextPaint.setUnderlineText(false);
       }
     }, 0, paramViewGroup.length(), 33);
-    paramViewGroup = (TextView)c(2131362586);
+    paramViewGroup = (TextView)c(2131362585);
     paramViewGroup.setText(paramLayoutInflater);
     paramViewGroup.setMovementMethod(LinkMovementMethod.getInstance());
     mFragmentLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()

@@ -1,88 +1,49 @@
-import android.net.NetworkInfo;
-import android.os.Handler;
-import android.os.SystemClock;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.model.chat.ChatConversation;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import com.snapchat.android.camera.model.CameraModel;
+import com.snapchat.android.camera.videocamera.VideoCameraHandler;
+import com.snapchat.android.util.WaitDoneHandler;
+import javax.inject.Provider;
 
 public final class yf
-  implements ald
+  implements bvk<VideoCameraHandler>
 {
-  private static yf f;
-  public akc a;
-  public final yq b;
-  public Map<String, Handler> c;
-  public boolean d;
-  public int e = 0;
-  private boolean g;
+  private final bvk<WaitDoneHandler> b;
+  private final Provider<ye> c;
+  private final Provider<CameraModel> d;
+  private final Provider<ban> e;
   
-  private yf()
+  static
   {
-    this(ale.a(), yq.a());
-  }
-  
-  private yf(@cgb ale paramale, @cgb yq paramyq)
-  {
-    b = paramyq;
-    c = new HashMap();
-    paramale.a(this);
-  }
-  
-  public static yf a()
-  {
-    try
+    if (!yf.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      if (f == null) {
-        f = new yf();
-      }
-      yf localyf = f;
-      return localyf;
-    }
-    finally {}
-  }
-  
-  public static void b()
-  {
-    try
-    {
-      if (f != null)
-      {
-        Iterator localIterator = fc.values().iterator();
-        while (localIterator.hasNext()) {
-          ((Handler)localIterator.next()).removeCallbacksAndMessages(null);
-        }
-        f = null;
-      }
-    }
-    finally {}
-  }
-  
-  public final void a(@cgc NetworkInfo paramNetworkInfo)
-  {
-    Timber.g("ChatConnectionMonitor", "CHAT-LOG: ChatConnectionMonitor onConnectivityChanged %s", new Object[] { paramNetworkInfo });
-    if ((paramNetworkInfo != null) && (paramNetworkInfo.isConnected()) && (g) && (a != null))
-    {
-      paramNetworkInfo = a.e().iterator();
-      while (paramNetworkInfo.hasNext()) {
-        ((ChatConversation)paramNetworkInfo.next()).a(3, null);
-      }
-    }
-  }
-  
-  public final void a(boolean paramBoolean)
-  {
-    g = paramBoolean;
-    if (paramBoolean)
-    {
-      e = 0;
+      a = bool;
       return;
     }
-    new EasyMetric("CHAT_SESSIONS_ESTABLISHED").a("count", Integer.valueOf(e));
+  }
+  
+  private yf(bvk<WaitDoneHandler> parambvk, Provider<ye> paramProvider, Provider<CameraModel> paramProvider1, Provider<ban> paramProvider2)
+  {
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider;
+    if ((!a) && (paramProvider1 == null)) {
+      throw new AssertionError();
+    }
+    d = paramProvider1;
+    if ((!a) && (paramProvider2 == null)) {
+      throw new AssertionError();
+    }
+    e = paramProvider2;
+  }
+  
+  public static bvk<VideoCameraHandler> a(bvk<WaitDoneHandler> parambvk, Provider<ye> paramProvider, Provider<CameraModel> paramProvider1, Provider<ban> paramProvider2)
+  {
+    return new yf(parambvk, paramProvider, paramProvider1, paramProvider2);
   }
 }
 

@@ -1,10 +1,10 @@
 package com.snapchat.android.model;
 
-import cgb;
+import chc;
 
 public abstract interface StorySnapLogbook$a
 {
-  public abstract void b(@cgb StorySnapLogbook paramStorySnapLogbook);
+  public abstract void b(@chc StorySnapLogbook paramStorySnapLogbook);
 }
 
 /* Location:

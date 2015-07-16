@@ -1,148 +1,222 @@
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.drawable.AnimationDrawable;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import com.snapchat.android.Timber;
+import com.snapchat.android.discover.model.ChannelPage;
 import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.DSnapPanel;
 import com.snapchat.android.discover.model.MediaState;
-import com.snapchat.android.discover.ui.DSnapView;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class aed
 {
-  public final Context a;
-  public DSnapView b;
-  public aee c;
-  public aec d;
-  public boolean e = false;
-  public boolean f = false;
-  public MediaState g = MediaState.NOT_STARTED;
-  public MediaState h = MediaState.NOT_STARTED;
-  public String i;
-  public int j;
-  public aed.a k = null;
+  private static final aed d = new aed();
+  public final Map<String, MediaState> a = new ConcurrentHashMap();
+  public final Map<String, MediaState> b = new ConcurrentHashMap();
+  public final Map<String, MediaState> c = new ConcurrentHashMap();
+  private final Map<String, MediaState> e = new ConcurrentHashMap();
+  private final Map<String, MediaState> f = new ConcurrentHashMap();
+  private final Map<String, MediaState> g = new ConcurrentHashMap();
+  private final Map<String, MediaState> h = new ConcurrentHashMap();
   
-  public aed(Context paramContext)
+  public static aed a()
   {
-    a = paramContext;
+    return d;
   }
   
-  public final String a()
+  public final MediaState a(@chc DSnapPanel paramDSnapPanel)
   {
-    if (b.getDSnapPage() == null) {
-      return "?";
+    paramDSnapPanel = (MediaState)b.get(b);
+    if (paramDSnapPanel != null) {
+      return paramDSnapPanel;
     }
-    return b.getDSnapPage().a;
+    return MediaState.NOT_STARTED;
   }
   
-  public final void a(MediaState paramMediaState)
+  public final void a(Set<String> paramSet)
   {
-    if (b == null)
+    synchronized (a)
     {
-      Timber.f("DSnapLoadingStatePresenter", "LOADING-STATE: Can't set loading state on uninitialized presenter.", new Object[0]);
-      return;
-    }
-    if (!e)
-    {
-      if (g == paramMediaState)
+      Iterator localIterator = a.entrySet().iterator();
+      while (localIterator.hasNext())
       {
-        Timber.a("DSnapLoadingStatePresenter", "LOADING-STATE %s: Same loading state. ", new Object[] { a(), paramMediaState });
-        return;
-      }
-      if ((g.isLoading()) && (paramMediaState.isLoading()))
-      {
-        Timber.a("DSnapLoadingStatePresenter", "LOADING-STATE %s: Still loading %s, %s", new Object[] { a(), g, paramMediaState });
-        return;
-      }
-      if ((f) && (g.isError()) && (paramMediaState.isLoading()))
-      {
-        Timber.a("DSnapLoadingStatePresenter", "LOADING-STATE %s: We are retrying an error.", new Object[] { a() });
-        return;
-      }
-    }
-    Timber.a("DSnapLoadingStatePresenter", "LOADING-STATE %s: New loading state %s", new Object[] { a(), paramMediaState });
-    int m;
-    if (paramMediaState.isLoading())
-    {
-      d.a(800);
-      localObject1 = c;
-      localObject2 = i;
-      localMediaState = h;
-      m = j;
-      a.setBackgroundColor(m);
-      Timber.a("DSnapLoadingViewHolder", "LOADING-STATE %s: state: %s", new Object[] { localObject2, localMediaState });
-      if ((localObject2 == null) && (localMediaState == MediaState.SUCCESS))
-      {
-        c.setVisibility(0);
-        b.setVisibility(8);
-        h.cancel();
-        if (!d.isRunning())
+        Map.Entry localEntry = (Map.Entry)localIterator.next();
+        if (paramSet.contains(localEntry.getKey()))
         {
-          avh.a(c, d);
-          d.start();
-          a.setVisibility(0);
+          localEntry.getKey();
+          a.remove(localEntry.getKey());
         }
       }
-    }
-    while (!paramMediaState.isError()) {
-      for (;;)
-      {
-        Object localObject2;
-        MediaState localMediaState;
-        g = paramMediaState;
-        e = false;
-        f = false;
-        return;
-        c.setVisibility(8);
-        b.setVisibility(0);
-        d.stop();
-        if (!h.isRunning()) {
-          if (localObject2 != null)
-          {
-            localObject2 = new avx.a().a((String)localObject2);
-            mImageView = b;
-            mRequireExactDimensions = true;
-            localObject2 = ((avx.a)localObject2).a();
-            e.a((avx)localObject2, new avy[] { i });
-          }
-        }
-      }
-    }
-    c.a(800);
-    Object localObject1 = d;
-    int n;
-    int i1;
-    switch (aec.3.a[paramMediaState.ordinal()])
-    {
-    default: 
-      n = 2131493125;
-      m = 2131493122;
-      i1 = 2130837769;
-    }
-    for (;;)
-    {
-      b.setText(n);
-      c.setText(m);
-      d.setImageResource(i1);
-      a.setVisibility(0);
-      ((aec)localObject1).a(false);
-      break;
-      n = 2131493121;
-      m = 2131493120;
-      i1 = 2130837768;
-      continue;
-      n = 2131493125;
-      m = 2131493124;
-      i1 = 2130837772;
     }
   }
   
-  public static abstract interface a
+  public final boolean a(@chc ChannelPage paramChannelPage)
   {
-    public abstract void a();
+    return (!c(paramChannelPage).isLoading()) && (!d(paramChannelPage).isLoading()) && (!e(paramChannelPage).isLoading()) && (!f(paramChannelPage).isLoading());
+  }
+  
+  public final boolean a(@chc ChannelPage paramChannelPage, @chc MediaState paramMediaState)
+  {
+    MediaState localMediaState = (MediaState)e.put(paramChannelPage.d(), paramMediaState);
+    if (!paramMediaState.equals(localMediaState))
+    {
+      paramChannelPage = b;
+      if (localMediaState != null) {}
+      for (paramChannelPage = localMediaState.name();; paramChannelPage = "NONE")
+      {
+        paramMediaState.name();
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public final boolean a(@chc DSnapPage paramDSnapPage, @chc MediaState paramMediaState)
+  {
+    MediaState localMediaState = (MediaState)a.put(paramDSnapPage.b(), paramMediaState);
+    if (!paramMediaState.equals(localMediaState))
+    {
+      paramDSnapPage.b();
+      if (localMediaState != null) {}
+      for (paramDSnapPage = localMediaState.name();; paramDSnapPage = "NONE")
+      {
+        paramMediaState.name();
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public final boolean a(@chc DSnapPanel paramDSnapPanel, @chc MediaState paramMediaState)
+  {
+    paramDSnapPanel = (MediaState)b.put(b, paramMediaState);
+    if (!paramMediaState.equals(paramDSnapPanel))
+    {
+      if (paramDSnapPanel != null) {}
+      for (paramDSnapPanel = paramDSnapPanel.name();; paramDSnapPanel = "NONE")
+      {
+        paramMediaState.name();
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public final boolean b(@chc ChannelPage paramChannelPage)
+  {
+    return (c(paramChannelPage) == MediaState.SUCCESS) && (d(paramChannelPage) == MediaState.SUCCESS) && (e(paramChannelPage) == MediaState.SUCCESS) && (f(paramChannelPage) == MediaState.SUCCESS);
+  }
+  
+  public final boolean b(@chc ChannelPage paramChannelPage, @chc MediaState paramMediaState)
+  {
+    MediaState localMediaState = (MediaState)f.put(paramChannelPage.a(), paramMediaState);
+    if (!paramMediaState.equals(localMediaState))
+    {
+      paramChannelPage = b;
+      if (localMediaState != null) {}
+      for (paramChannelPage = localMediaState.name();; paramChannelPage = "NONE")
+      {
+        paramMediaState.name();
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public final boolean b(@chc DSnapPage paramDSnapPage, @chc MediaState paramMediaState)
+  {
+    if (k.intValue() == 0) {
+      return true;
+    }
+    MediaState localMediaState = (MediaState)c.put(a, paramMediaState);
+    if (!paramMediaState.equals(localMediaState))
+    {
+      paramDSnapPage = a;
+      if (localMediaState != null) {}
+      for (paramDSnapPage = localMediaState.name();; paramDSnapPage = "NONE")
+      {
+        paramMediaState.name();
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public final MediaState c(@chc ChannelPage paramChannelPage)
+  {
+    paramChannelPage = (MediaState)e.get(paramChannelPage.d());
+    if (paramChannelPage != null) {
+      return paramChannelPage;
+    }
+    return MediaState.NOT_STARTED;
+  }
+  
+  public final boolean c(@chc ChannelPage paramChannelPage, @chc MediaState paramMediaState)
+  {
+    MediaState localMediaState = (MediaState)g.put(paramChannelPage.b(), paramMediaState);
+    if (!paramMediaState.equals(localMediaState))
+    {
+      paramChannelPage = b;
+      if (localMediaState != null) {}
+      for (paramChannelPage = localMediaState.name();; paramChannelPage = "NONE")
+      {
+        paramMediaState.name();
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public final MediaState d(@chc ChannelPage paramChannelPage)
+  {
+    paramChannelPage = (MediaState)f.get(paramChannelPage.a());
+    if (paramChannelPage != null) {
+      return paramChannelPage;
+    }
+    return MediaState.NOT_STARTED;
+  }
+  
+  public final boolean d(@chc ChannelPage paramChannelPage, @chc MediaState paramMediaState)
+  {
+    if (paramChannelPage.c() == null) {
+      return false;
+    }
+    MediaState localMediaState = (MediaState)h.put(paramChannelPage.c(), paramMediaState);
+    if (!paramMediaState.equals(localMediaState))
+    {
+      paramChannelPage = b;
+      if (localMediaState != null) {}
+      for (paramChannelPage = localMediaState.name();; paramChannelPage = "NONE")
+      {
+        paramMediaState.name();
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public final MediaState e(@chc ChannelPage paramChannelPage)
+  {
+    paramChannelPage = (MediaState)g.get(paramChannelPage.b());
+    if (paramChannelPage != null) {
+      return paramChannelPage;
+    }
+    return MediaState.NOT_STARTED;
+  }
+  
+  public final MediaState f(@chc ChannelPage paramChannelPage)
+  {
+    if (paramChannelPage.c() == null) {
+      paramChannelPage = MediaState.SUCCESS;
+    }
+    MediaState localMediaState;
+    do
+    {
+      return paramChannelPage;
+      localMediaState = (MediaState)h.get(paramChannelPage.c());
+      paramChannelPage = localMediaState;
+    } while (localMediaState != null);
+    return MediaState.NOT_STARTED;
   }
 }
 

@@ -1,35 +1,97 @@
-import javax.inject.Provider;
+import android.os.SystemClock;
+import android.text.TextUtils;
 
-public final class ajy
-  implements buj<ajv>
+public class ajy
+  implements ahh
 {
-  private final Provider<qh> mCashProviderManagerProvider;
-  private final Provider<ayg> mSlightlySecurePreferencesProvider;
-  private final Provider<ajw> mUserDatabaseLoaderProvider;
+  protected static final long LOCATION_CACHE_LIFETIME_MILLIS = 10800000L;
+  private final bhk mClock;
+  @chd
+  public String mCustomDescription;
+  @chd
+  public String mCustomTitle;
+  public String mDisplayName;
+  public String mFriendName;
+  public ajq mGeofence;
+  public boolean mIsLocalStory;
+  private boolean mIsWhitelisted;
+  String mStoryGroupDisplayName;
+  public String mStoryId;
+  private long mTimeLeft;
+  long mTimestamp;
+  public String mVenue;
   
-  static
+  public ajy()
   {
-    if (!ajy.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    this(new bhk());
+  }
+  
+  private ajy(bhk parambhk)
+  {
+    mClock = parambhk;
+  }
+  
+  public ajy(bjn parambjn)
+  {
+    if (parambjn != null)
     {
-      $assertionsDisabled = bool;
-      return;
+      mStoryId = parambjn.a();
+      mDisplayName = parambjn.b();
+      if (parambjn.c() != null) {
+        mGeofence = new ajq(parambjn.c());
+      }
+      mStoryGroupDisplayName = parambjn.d();
+      mVenue = parambjn.e();
+      mFriendName = parambjn.f();
+      mIsLocalStory = avb.a(parambjn.g());
+      mIsWhitelisted = avb.a(parambjn.h());
+      mTimeLeft = avb.a(parambjn.i());
     }
+    mClock = new bhk();
   }
   
-  private ajy(Provider<ayg> paramProvider, Provider<qh> paramProvider1, Provider<ajw> paramProvider2)
+  public ajy(String paramString1, String paramString2)
   {
-    assert (paramProvider != null);
-    mSlightlySecurePreferencesProvider = paramProvider;
-    assert (paramProvider1 != null);
-    mCashProviderManagerProvider = paramProvider1;
-    assert (paramProvider2 != null);
-    mUserDatabaseLoaderProvider = paramProvider2;
+    mStoryId = paramString1;
+    mDisplayName = paramString2;
+    mGeofence = null;
+    mVenue = null;
+    mClock = new bhk();
   }
   
-  public static buj<ajv> a(Provider<ayg> paramProvider, Provider<qh> paramProvider1, Provider<ajw> paramProvider2)
+  public boolean b()
   {
-    return new ajy(paramProvider, paramProvider1, paramProvider2);
+    if ((mIsWhitelisted) && (mTimeLeft > 0L)) {
+      if (SystemClock.elapsedRealtime() - mTimestamp <= mTimeLeft) {}
+    }
+    while (SystemClock.elapsedRealtime() - mTimestamp > 10800000L)
+    {
+      return true;
+      return false;
+    }
+    return false;
+  }
+  
+  public final String d()
+  {
+    return mDisplayName;
+  }
+  
+  public boolean equals(Object paramObject)
+  {
+    if (this == paramObject) {
+      return true;
+    }
+    if (!(paramObject instanceof ajy)) {
+      return false;
+    }
+    paramObject = (ajy)paramObject;
+    return TextUtils.equals(mStoryId, mStoryId);
+  }
+  
+  public int hashCode()
+  {
+    return mStoryId.hashCode() + 629;
   }
 }
 

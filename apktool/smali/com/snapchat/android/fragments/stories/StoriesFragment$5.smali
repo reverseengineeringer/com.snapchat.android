@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lajg;)V
+    value = Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lcom/snapchat/android/model/Friend;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 734
+    .line 731
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$5;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 737
+    .line 734
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$5;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->m(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lajg;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->m(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/model/Friend;
 
-    .line 738
+    .line 735
     return-void
 .end method

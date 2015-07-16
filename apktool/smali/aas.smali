@@ -1,48 +1,22 @@
 .class public final Laas;
-.super Lzx;
+.super Laap;
 .source "SourceFile"
 
 
-# static fields
-.field private static final a:Laas;
+# annotations
+.annotation runtime Ljavax/inject/Singleton;
+.end annotation
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
 
     .prologue
-    .line 8
-    new-instance v0, Laas;
-
-    invoke-direct {v0}, Laas;-><init>()V
-
-    sput-object v0, Laas;->a:Laas;
+    .line 10
+    invoke-direct {p0}, Laap;-><init>()V
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 2
-
-    .prologue
-    .line 11
-    const-string v0, "MySnapImageFileTable"
-
-    sget-object v1, Lawq;->MY_SNAP_IMAGE_CACHE:Lawp;
-
-    invoke-direct {p0, v0, v1}, Lzx;-><init>(Ljava/lang/String;Lawp;)V
-
-    .line 12
-    return-void
-.end method
-
-.method public static a()Laas;
-    .locals 1
-
-    .prologue
-    .line 18
-    sget-object v0, Laas;->a:Laas;
-
-    return-object v0
 .end method

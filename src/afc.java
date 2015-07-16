@@ -1,157 +1,109 @@
-import android.text.TextUtils;
-import com.snapchat.android.model.Friend;
-import com.snapchat.android.model.Friend.SuggestState;
-import com.snapchat.android.util.FriendSectionizer.FriendSection;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.snapchat.android.discover.ui.DSnapView;
 
 public final class afc
-  extends bfe<Friend>
 {
-  String a;
-  boolean b;
-  boolean c;
-  boolean d;
-  boolean e;
-  private final List<Friend> f;
+  public final ViewGroup a;
+  final TextView b;
+  final TextView c;
+  final ImageView d;
+  public boolean e = false;
+  public Animator f = null;
+  private final ViewGroup g;
+  private final TextView h;
+  private final View i;
+  private final View j;
   
-  public afc(@cgb List<Friend> paramList, @cgb azo paramazo, @cgb bfe.a<Friend> parama)
+  public afc(@chc DSnapView paramDSnapView, final View.OnClickListener paramOnClickListener)
   {
-    super(paramazo, parama);
-    f = paramList;
-  }
-  
-  private boolean a(Friend paramFriend, String paramString)
-  {
-    if (b) {
-      return aui.b(paramFriend.h(), paramString);
-    }
-    Object localObject = new ArrayList();
-    ((ArrayList)localObject).add(paramFriend.a());
-    ((ArrayList)localObject).addAll(Arrays.asList(paramFriend.a().split(" ")));
-    localObject = ((ArrayList)localObject).iterator();
-    while (((Iterator)localObject).hasNext()) {
-      if (aui.a((String)((Iterator)localObject).next(), paramString)) {
-        return true;
-      }
-    }
-    return aui.b(paramFriend.h(), paramString);
-  }
-  
-  public final List<Friend> a(String paramString)
-  {
-    Object localObject1 = null;
-    a = paramString;
-    ArrayList localArrayList1 = new ArrayList();
-    ArrayList localArrayList2 = new ArrayList(f);
-    if (paramString == null) {
-      return null;
-    }
-    if ((!e) && (TextUtils.isEmpty(paramString))) {
-      return Collections.EMPTY_LIST;
-    }
-    int j = 0;
-    int i = 0;
-    Object localObject2;
-    afl localafl;
-    if (j < localArrayList2.size())
+    a = ((ViewGroup)paramDSnapView.findViewById(2131362302));
+    j = a.findViewById(2131362308);
+    i = a.findViewById(2131362307);
+    g = ((ViewGroup)a.findViewById(2131362306));
+    h = ((TextView)a.findViewById(2131362309));
+    g.setOnClickListener(new View.OnClickListener()
     {
-      localObject2 = (Friend)localArrayList2.get(j);
-      if ((((Friend)localObject2).p()) && (!aui.c(paramString, ((Friend)localObject2).h()))) {
-        break label418;
-      }
-      if ((localObject2 instanceof afl))
+      public final void onClick(View paramAnonymousView)
       {
-        localafl = (afl)localObject2;
-        if (a((Friend)localObject2, paramString)) {
-          localArrayList1.add(localafl);
+        a(true);
+        if (paramOnClickListener != null) {
+          paramOnClickListener.onClick(paramAnonymousView);
         }
       }
-    }
-    for (;;)
-    {
-      j += 1;
-      break;
-      localObject2 = c.iterator();
-      for (;;)
-      {
-        if (((Iterator)localObject2).hasNext())
-        {
-          String str = (String)((Iterator)localObject2).next();
-          if ((aui.b(str, paramString)) || (aui.b(paramString, str)))
-          {
-            localArrayList1.add(localafl);
-            break;
-          }
-        }
-      }
-      continue;
-      if ((!c) && (aui.c(paramString, ((Friend)localObject2).h())))
-      {
-        if (d) {
-          localObject1 = localObject2;
-        }
-      }
-      else
-      {
-        for (;;)
-        {
-          if (a((Friend)localObject2, paramString))
-          {
-            localArrayList1.add(localObject2);
-            if ((mFriendSection == FriendSectionizer.FriendSection.MY_ADDRESS_BOOK) || (mFriendSection == FriendSectionizer.FriendSection.ON_SNAPCHAT) || (mFriendSection == FriendSectionizer.FriendSection.INVITE))
-            {
-              i += 1;
-              break;
-              if (!c)
-              {
-                if (localObject1 != null) {
-                  break label395;
-                }
-                paramString = new Friend(paramString);
-                mSuggestionState = Friend.SuggestState.PENDING;
-                mFriendSection = FriendSectionizer.FriendSection.USERNAME;
-                if (d) {
-                  break label356;
-                }
-                localArrayList1.add(0, paramString);
-              }
-              for (;;)
-              {
-                return localArrayList1;
-                label356:
-                if ((i == 0) || (i >= localArrayList1.size()))
-                {
-                  localArrayList1.add(paramString);
-                }
-                else
-                {
-                  localArrayList1.add(i, paramString);
-                  continue;
-                  label395:
-                  if (!d) {
-                    localArrayList1.add(0, localObject1);
-                  }
-                }
-              }
-              continue;
-              label418:
-              break;
-            }
-          }
-        }
-        continue;
-      }
-      localObject1 = localObject2;
-    }
+    });
+    d = ((ImageView)a.findViewById(2131362305));
+    b = ((TextView)a.findViewById(2131362303));
+    c = ((TextView)a.findViewById(2131362304));
+    b();
   }
   
-  protected final void a(Exception paramException)
+  public final void a()
   {
-    mExceptionReporter.b(paramException);
+    a.setVisibility(8);
+    e = false;
+    f = null;
+  }
+  
+  public final void a(int paramInt)
+  {
+    if ((a.getVisibility() != 0) || (f != null)) {
+      return;
+    }
+    a(paramInt, 1.0F, true);
+  }
+  
+  public final void a(long paramLong, float paramFloat, final boolean paramBoolean)
+  {
+    f = ObjectAnimator.ofFloat(a, View.ALPHA, new float[] { paramFloat, 0.0F });
+    f.setDuration(paramLong);
+    f.setInterpolator(new AccelerateInterpolator(1.5F));
+    f.addListener(new awh()
+    {
+      private boolean c = false;
+      
+      public final void onAnimationCancel(Animator paramAnonymousAnimator)
+      {
+        c = true;
+      }
+      
+      public final void onAnimationEnd(Animator paramAnonymousAnimator)
+      {
+        if ((!paramBoolean) || (!c)) {
+          a();
+        }
+      }
+    });
+    f.start();
+  }
+  
+  final void a(boolean paramBoolean)
+  {
+    if (paramBoolean)
+    {
+      j.setVisibility(8);
+      i.setVisibility(0);
+      h.setText(2131493213);
+      g.setClickable(false);
+      return;
+    }
+    j.setVisibility(0);
+    i.setVisibility(8);
+    h.setText(2131493127);
+    g.setClickable(true);
+  }
+  
+  public final void b()
+  {
+    a.setVisibility(8);
+    i.setVisibility(8);
+    a(false);
   }
 }
 

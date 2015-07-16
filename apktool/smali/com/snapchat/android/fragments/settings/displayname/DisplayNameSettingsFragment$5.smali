@@ -76,17 +76,17 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment$5;->a:Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->g(Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;)Lajx;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->g(Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;)Lakr;
 
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment$5;->a:Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->g(Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;)Lajx;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->g(Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;)Lakr;
 
-    invoke-static {}, Lajx;->y()Ljava/lang/String;
+    invoke-static {}, Lakr;->y()Ljava/lang/String;
 
     move-result-object v2
 
@@ -119,23 +119,23 @@
     iput-object v2, v0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
 
     .line 129
-    new-instance v2, Lpp;
+    new-instance v2, Lqg;
 
     sget-object v3, Lcom/snapchat/android/model/FriendAction;->SET_DISPLAY_NAME:Lcom/snapchat/android/model/FriendAction;
 
-    invoke-direct {v2, v0, v3, v1}, Lpp;-><init>(Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/model/FriendAction;Ljava/lang/String;)V
+    invoke-direct {v2, v0, v3, v1}, Lqg;-><init>(Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/model/FriendAction;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment$5;->a:Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;
 
-    iput-object v0, v2, Lpp;->mFriendActionCompleteCallback:Lpp$a;
+    iput-object v0, v2, Lqg;->mFriendActionCompleteCallback:Lqg$a;
 
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->SETTINGS_DISPLAYNAME_CHANGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    iput-object v0, v2, Lpp;->mAnalyticsContext:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+    iput-object v0, v2, Lqg;->mAnalyticsContext:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    iput-boolean v4, v2, Lpp;->mShowFailureDialog:Z
+    iput-boolean v4, v2, Lqg;->mShowFailureDialog:Z
 
-    invoke-virtual {v2}, Lpp;->f()V
+    invoke-virtual {v2}, Lqg;->execute()V
 
     .line 134
     return-void

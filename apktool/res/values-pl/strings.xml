@@ -260,7 +260,6 @@ aby wysłać do znajomego."</string>
     <string name="discover_sharing_success">Wysłano Snapa!</string>
     <string name="discover_sharing_unavailable">%1$s nie zezwala na wysyłanie tego Snapa.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Stuknij tutaj, aby wypróbować Discover!</string>
     <string name="discover_unavailable">"Przepraszamy!
 
 Discover jest obecnie niedostępny."</string>
@@ -311,6 +310,7 @@ niedostępny w Twoim regionie."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Nie pamiętasz hasła?</a>" "</string>
     <string name="friend_suggest_hide">Ukryj</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - nowy kontakt</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - niedawno dołączył(a)</string>
     <string name="friends">Znajomi</string>
     <string name="friends_context_block">Zablokuj</string>
@@ -460,7 +460,7 @@ abyśmy wiedzieli, że jest prawdziwy!"</string>
     <string name="problem_opening_image_file">Podczas otwierania wybranego obrazu wystąpił błąd. Spróbuj ponownie.</string>
     <string name="problem_searching_nearby">Niestety! Coś poszło nie tak.</string>
     <string name="profile_images_go">START!</string>
-    <string name="profile_images_notice">Your selfie will be shown to other Snapchatters.</string>
+    <string name="profile_images_notice">Twoje selfie będzie wyświetlane innym użytkownikom Snapchata.</string>
     <string name="profile_images_ready">Na miejsca</string>
     <string name="profile_images_remove">Usuń</string>
     <string name="profile_images_remove_message">Czy na pewno chcesz usunąć istniejące zdjęcie profilowe?</string>
@@ -622,7 +622,7 @@ wysłać pieniądze?"</string>
     <string name="snap_delete_failure">Usuwanie Snapa nie powiodło się.</string>
     <string name="snap_failed_to_post">Nie powiodło się publikowanie 1 Snapa.</string>
     <string name="snap_list_empty_list_msg">Nie masz żadnych Snapów :(</string>
-    <string name="snap_tag_help_description">Użytkownicy Snapchata mogą Cię dodać, kierując kamerę na Twojego ducha i stukając ekran!</string>
+    <string name="snap_tag_help_description">Użytkownicy Snapchata mogą Cię dodać, kierując kamerę na Twój kod Snapchata i stukając ekran!</string>
     <string name="snap_tag_no_connection">Brak połączenia!</string>
     <string name="snap_to_add">Snap lub zrzut ekranu aby dodać</string>
     <string name="snapkidz_welcome">Witamy w Snapkidz!</string>
@@ -658,8 +658,6 @@ wysłać pieniądze?"</string>
     <string name="tap_to_view_edition">Stuknij, aby wyświetlić w Discover</string>
     <string name="tap_to_view_full_story">Stuknij, aby wyświetlić całą Story</string>
     <string name="tap_to_view_more">Stuknij, aby eksplorować inne kanały</string>
-    <string name="tap_to_view_snaps">Stuknij aby zobaczyć Snapy!</string>
-    <string name="tap_to_view_stories">Stuknij aby zobaczyć Stories!</string>
     <string name="tap_to_view_video_in_discover">Stuknij, aby wyświetlić ten film w Discover</string>
     <string name="too_many_attempts">"Zbyt wiele prób.
 "</string>

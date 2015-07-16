@@ -2,21 +2,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class je
-  extends lt
+  extends ml
 {
-  public Long charCount;
-  private final String eventName = "PROFILE_MY_CONTACTS_SEARCH_PERFORM";
-  public Long keystrokeCount;
+  private final String eventName = "PROFILE_FRIEND_REQUEST_BLOCK";
+  public Boolean hasDisplayName;
+  public il method;
+  public kh source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_MY_CONTACTS_SEARCH_PERFORM");
-    if (charCount != null) {
-      localHashMap.put("char_count", charCount);
+    localHashMap.put("event_name", "PROFILE_FRIEND_REQUEST_BLOCK");
+    if (hasDisplayName != null) {
+      localHashMap.put("has_display_name", hasDisplayName);
     }
-    if (keystrokeCount != null) {
-      localHashMap.put("keystroke_count", keystrokeCount);
+    if (method != null) {
+      localHashMap.put("method", method);
+    }
+    if (source != null) {
+      localHashMap.put("source", source);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -35,23 +39,32 @@ public final class je
         return false;
       }
       paramObject = (je)paramObject;
-      if (charCount != null)
+      if (hasDisplayName != null)
       {
-        if (charCount.equals(charCount)) {}
+        if (hasDisplayName.equals(hasDisplayName)) {}
       }
       else {
-        while (charCount != null) {
+        while (hasDisplayName != null) {
           return false;
         }
       }
-      if (keystrokeCount == null) {
+      if (method != null)
+      {
+        if (method.equals(method)) {}
+      }
+      else {
+        while (method != null) {
+          return false;
+        }
+      }
+      if (source == null) {
         break;
       }
-    } while (keystrokeCount.equals(keystrokeCount));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (keystrokeCount == null) {
+      if (source == null) {
         break;
       }
     }
@@ -59,15 +72,25 @@ public final class je
   
   public final int hashCode()
   {
-    int j = 0;
-    int k = super.hashCode();
-    if (charCount != null) {}
-    for (int i = charCount.hashCode();; i = 0)
+    int k = 0;
+    int m = super.hashCode();
+    int i;
+    if (hasDisplayName != null)
     {
-      if (keystrokeCount != null) {
-        j = keystrokeCount.hashCode();
+      i = hasDisplayName.hashCode();
+      if (method == null) {
+        break label76;
       }
-      return (i + k * 31) * 31 + j;
+    }
+    label76:
+    for (int j = method.hashCode();; j = 0)
+    {
+      if (source != null) {
+        k = source.hashCode();
+      }
+      return (j + (i + m * 31) * 31) * 31 + k;
+      i = 0;
+      break;
     }
   }
 }

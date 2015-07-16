@@ -24,9 +24,9 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import buz;
-import bvs;
-import bwh;
+import bwa;
+import bwt;
+import bxi;
 import java.io.File;
 
 public class AttachmentView
@@ -35,7 +35,7 @@ public class AttachmentView
   final ViewGroup a;
   public TextView b;
   private final Context c;
-  private final bvs d;
+  private final bwt d;
   private final Uri e;
   private final String f;
   private ImageView g;
@@ -60,13 +60,13 @@ public class AttachmentView
     new AsyncTask() {}.execute(new Void[0]);
   }
   
-  public AttachmentView(Context paramContext, ViewGroup paramViewGroup, bvs parambvs)
+  public AttachmentView(Context paramContext, ViewGroup paramViewGroup, bwt parambwt)
   {
     super(paramContext);
     c = paramContext;
     a = paramViewGroup;
-    d = parambvs;
-    e = Uri.fromFile(new File(buz.a(), parambvs.a()));
+    d = parambwt;
+    e = Uri.fromFile(new File(bwa.a(), parambwt.a()));
     f = c;
     a(30);
     a(paramContext, false);
@@ -79,7 +79,7 @@ public class AttachmentView
   {
     try
     {
-      m = bwh.a(c, e);
+      m = bxi.a(c, e);
       int n;
       if (m == 1)
       {
@@ -96,7 +96,7 @@ public class AttachmentView
         BitmapFactory.Options localOptions = new BitmapFactory.Options();
         inJustDecodeBounds = true;
         BitmapFactory.decodeStream(localContext.getContentResolver().openInputStream(localUri), null, localOptions);
-        inSampleSize = bwh.a(localOptions, n, i1);
+        inSampleSize = bxi.a(localOptions, n, i1);
         inJustDecodeBounds = false;
         return BitmapFactory.decodeStream(localContext.getContentResolver().openInputStream(localUri), null, localOptions);
         n = h;
@@ -231,7 +231,7 @@ public class AttachmentView
     });
   }
   
-  public bvs getAttachment()
+  public bwt getAttachment()
   {
     return d;
   }

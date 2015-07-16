@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field private final b:Laol;
+.field private final b:Laph;
 
 
 # direct methods
@@ -31,17 +31,17 @@
 
     .prologue
     .line 64
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;-><init>(Laol;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;-><init>(Laph;)V
 
     .line 65
     return-void
 .end method
 
-.method private constructor <init>(Laol;)V
+.method private constructor <init>(Laph;)V
     .locals 0
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -54,7 +54,7 @@
     invoke-direct {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>()V
 
     .line 69
-    iput-object p1, p0, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->b:Laol;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->b:Laph;
 
     .line 70
     return-void
@@ -65,7 +65,7 @@
 
     .prologue
     .line 39
-    const v0, 0x7f0a0317
+    const v0, 0x7f0a0316
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -73,7 +73,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v1, 0x7f0a0316
+    const v1, 0x7f0a0315
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -81,7 +81,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    const v2, 0x7f0a0318
+    const v2, 0x7f0a0317
 
     invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -123,7 +123,7 @@
 
     sub-float v4, v3, v4
 
-    const v3, 0x7f0a0319
+    const v3, 0x7f0a0318
 
     invoke-virtual {p0, v3}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -354,7 +354,7 @@
 
     invoke-virtual {v2, v0, v1}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    const v0, 0x7f0a0319
+    const v0, 0x7f0a0318
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -362,7 +362,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0a031a
+    const v1, 0x7f0a0319
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -414,7 +414,7 @@
 
     invoke-virtual {v5, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    const v0, 0x7f0a0316
+    const v0, 0x7f0a0315
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -472,7 +472,7 @@
 
     invoke-virtual {v4, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    const v0, 0x7f0a031b
+    const v0, 0x7f0a031a
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -643,12 +643,12 @@
     return-void
 .end method
 
-.method static synthetic f(Lcom/snapchat/android/fragments/ScAcceptTermsFragment;)Laol;
+.method static synthetic f(Lcom/snapchat/android/fragments/ScAcceptTermsFragment;)Laph;
     .locals 1
 
     .prologue
     .line 39
-    iget-object v0, p0, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->b:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->b:Laph;
 
     return-object v0
 .end method
@@ -658,7 +658,7 @@
 
     .prologue
     .line 309
-    const v0, 0x7f0a031c
+    const v0, 0x7f0a031b
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -722,7 +722,7 @@
     invoke-virtual {v3, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     .line 327
-    const v0, 0x7f0a031d
+    const v0, 0x7f0a031c
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -825,7 +825,7 @@
     if-ge v2, v3, :cond_0
 
     .line 342
-    const v1, 0x7f0a0315
+    const v1, 0x7f0a0314
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -851,13 +851,13 @@
 
     const/4 v8, 0x2
 
-    const v9, 0x7f0a031e
+    const v9, 0x7f0a031d
 
     invoke-virtual {v7, v8, v9}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
     const/4 v8, 0x0
 
-    const v9, 0x7f0a031d
+    const v9, 0x7f0a031c
 
     invoke-virtual {v7, v8, v9}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
@@ -1066,7 +1066,7 @@
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
     .line 415
-    const v1, 0x7f0c02e3
+    const v1, 0x7f0c02e1
 
     new-instance v2, Lcom/snapchat/android/fragments/ScAcceptTermsFragment$5;
 
@@ -1112,7 +1112,7 @@
     const/4 v6, 0x0
 
     .line 74
-    const v0, 0x7f04008d
+    const v0, 0x7f04008f
 
     invoke-virtual {p1, v0, p2, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1121,19 +1121,19 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 75
-    const v0, 0x7f0c02a3
+    const v0, 0x7f0c02a1
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    const v1, 0x7f0c02a5
+    const v1, 0x7f0c02a3
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v2, 0x7f0c02a4
+    const v2, 0x7f0c02a2
 
     const/4 v3, 0x4
 
@@ -1193,7 +1193,7 @@
 
     invoke-virtual {v4, v2, v0, v1, v7}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    const v0, 0x7f0a0319
+    const v0, 0x7f0a0318
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -1209,7 +1209,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    const v0, 0x7f0a031e
+    const v0, 0x7f0a031d
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -1223,7 +1223,7 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     new-instance v1, Lcom/snapchat/android/fragments/ScAcceptTermsFragment$8;
 
@@ -1231,7 +1231,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0c02a2
+    const v0, 0x7f0c02a0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->getString(I)Ljava/lang/String;
 
@@ -1251,7 +1251,7 @@
 
     invoke-virtual {v1, v2, v6, v0, v7}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    const v0, 0x7f0a031a
+    const v0, 0x7f0a0319
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/ScAcceptTermsFragment;->c(I)Landroid/view/View;
 

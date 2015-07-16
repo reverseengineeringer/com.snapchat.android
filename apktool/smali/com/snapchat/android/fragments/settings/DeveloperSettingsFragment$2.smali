@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 256
+    .line 253
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$2;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,14 +49,14 @@
     .end annotation
 
     .prologue
-    .line 264
+    .line 261
     new-instance v0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$2$1;
 
     invoke-direct {v0, p0, p3}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$2$1;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$2;I)V
 
-    invoke-static {v0}, Lbgp;->b(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->b(Ljava/lang/Runnable;)V
 
-    .line 270
+    .line 267
     return-void
 .end method
 
@@ -71,6 +71,6 @@
     .end annotation
 
     .prologue
-    .line 258
+    .line 255
     return-void
 .end method

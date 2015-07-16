@@ -1,10 +1,10 @@
-import android.content.Context;
 import javax.inject.Provider;
 
 public final class uk
-  implements buo<uj>
+  implements bvk<uj>
 {
-  private final Provider<Context> contextProvider;
+  private final Provider<aum> mGsonWrapperProvider;
+  private final Provider<ut> mNetworkInterfaceProvider;
   
   static
   {
@@ -16,15 +16,17 @@ public final class uk
     }
   }
   
-  private uk(Provider<Context> paramProvider)
+  private uk(Provider<ut> paramProvider, Provider<aum> paramProvider1)
   {
     assert (paramProvider != null);
-    contextProvider = paramProvider;
+    mNetworkInterfaceProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mGsonWrapperProvider = paramProvider1;
   }
   
-  public static buo<uj> a(Provider<Context> paramProvider)
+  public static bvk<uj> a(Provider<ut> paramProvider, Provider<aum> paramProvider1)
   {
-    return new uk(paramProvider);
+    return new uk(paramProvider, paramProvider1);
   }
 }
 

@@ -1,21 +1,19 @@
+import com.google.gson.annotations.SerializedName;
+
 public final class aju
 {
-  public int mNumWithOnlyUnreadChats;
-  public int mNumWithOnlyUnviewedCash;
-  public int mNumWithUnviewedContent;
+  @SerializedName("end")
+  public cht end;
+  @SerializedName("start")
+  public cht start;
   
-  private aju(aju.a parama)
+  public final boolean a(cht paramcht)
   {
-    mNumWithUnviewedContent = numWithUnviewedContent;
-    mNumWithOnlyUnreadChats = numWithOnlyUnviewedChats;
-    mNumWithOnlyUnviewedCash = numWithOnlyUnviewedCash;
-  }
-  
-  public static final class a
-  {
-    public int numWithOnlyUnviewedCash;
-    public int numWithOnlyUnviewedChats;
-    public int numWithUnviewedContent;
+    if ((start == null) || (end == null)) {}
+    while ((!start.c(paramcht)) || (!end.b(paramcht))) {
+      return false;
+    }
+    return true;
   }
 }
 

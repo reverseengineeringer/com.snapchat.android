@@ -115,7 +115,7 @@
     .line 60
     const/high16 v0, 0x40a00000    # 5.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -124,7 +124,7 @@
     .line 61
     const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -137,7 +137,7 @@
 .method private a(Landroid/graphics/Canvas;F)V
     .locals 7
     .param p1    # Landroid/graphics/Canvas;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -432,7 +432,7 @@
     .line 68
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {p1, p2, v0}, Laur;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {p1, p2, v0}, Lavp;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 

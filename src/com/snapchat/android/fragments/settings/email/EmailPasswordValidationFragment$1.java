@@ -1,33 +1,33 @@
 package com.snapchat.android.fragments.settings.email;
 
-import amk;
-import ams;
-import ana;
-import aok;
-import aol;
+import anh;
+import anp;
+import anx;
+import apg;
+import aph;
 import java.util.Set;
 
 final class EmailPasswordValidationFragment$1
-  implements aok
+  implements apg
 {
   EmailPasswordValidationFragment$1(EmailPasswordValidationFragment paramEmailPasswordValidationFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
+    int i = aph.a(paramanh);
     if (EmailPasswordValidationFragment.a(a).contains(Integer.valueOf(i)))
     {
       EmailPasswordValidationFragment.a(a).remove(Integer.valueOf(i));
-      if (!(paramamk instanceof ana)) {
+      if (!(paramanh instanceof anx)) {
         break label60;
       }
-      EmailPasswordValidationFragment.a(a, (ana)paramamk);
+      EmailPasswordValidationFragment.a(a, (anx)paramanh);
     }
     label60:
-    while (!(paramamk instanceof ams)) {
+    while (!(paramanh instanceof anp)) {
       return;
     }
-    EmailPasswordValidationFragment.a(a, (ams)paramamk);
+    EmailPasswordValidationFragment.a(a, (anp)paramanh);
   }
 }
 

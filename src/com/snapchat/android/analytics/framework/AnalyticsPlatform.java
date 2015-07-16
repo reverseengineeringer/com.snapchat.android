@@ -1,17 +1,17 @@
 package com.snapchat.android.analytics.framework;
 
 import android.app.Activity;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import java.util.Map;
 
 public abstract interface AnalyticsPlatform
 {
-  public abstract void a(@cgb Activity paramActivity);
+  public abstract void a(@chc Activity paramActivity);
   
-  public abstract void a(@cgb String paramString, @cgc Map<String, Object> paramMap1, @cgc Map<String, Object> paramMap2, @cgc Map<String, Long> paramMap3, @cgc Map<String, Long> paramMap4);
+  public abstract void a(@chc String paramString, @chd Map<String, Object> paramMap1, @chd Map<String, Object> paramMap2, @chd Map<String, Long> paramMap3, @chd Map<String, Long> paramMap4);
   
-  public abstract void b(@cgb Activity paramActivity);
+  public abstract void b(@chc Activity paramActivity);
 }
 
 /* Location:

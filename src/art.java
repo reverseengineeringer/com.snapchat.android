@@ -1,7 +1,14 @@
+import android.view.View;
+
 public final class art
-  implements aru
 {
-  public final void a(arn paramarn) {}
+  public View a;
+  public final apz b;
+  
+  public art(@chc apz paramapz)
+  {
+    b = paramapz;
+  }
 }
 
 /* Location:

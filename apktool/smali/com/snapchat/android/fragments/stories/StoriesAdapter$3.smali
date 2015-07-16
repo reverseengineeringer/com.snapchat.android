@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Lafl;
+.field final synthetic a:Lagl;
 
 .field final synthetic b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lafl;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lagl;)V
     .locals 0
 
     .prologue
     .line 567
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
-    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;->a:Lafl;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;->a:Lagl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -49,9 +49,9 @@
     const/4 v5, 0x0
 
     .line 570
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;->a:Lafl;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;->a:Lagl;
 
-    iget-object v3, v0, Lafl;->d:Ljava/lang/String;
+    iget-object v3, v0, Lagl;->d:Ljava/lang/String;
 
     .line 571
     if-nez v3, :cond_0
@@ -61,9 +61,9 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;->a:Lafl;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;->a:Lagl;
 
-    invoke-virtual {v1}, Lafl;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lagl;->a()Ljava/lang/String;
 
     move-result-object v1
 
@@ -71,7 +71,7 @@
 
     const v1, 0x7f0c001e
 
-    invoke-static {v6, v1, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v1, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -89,15 +89,15 @@
 
     const v4, 0x7f0c0195
 
-    invoke-static {v6, v4, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v4, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
     new-array v1, v5, [Ljava/lang/Object;
 
-    const v5, 0x7f0c02c9
+    const v5, 0x7f0c02c7
 
-    invoke-static {v6, v5, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v5, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
 

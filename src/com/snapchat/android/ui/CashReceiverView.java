@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.RelativeLayout;
-import atz;
-import avh;
+import aux;
+import awf;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -52,7 +52,7 @@ public class CashReceiverView
   
   private void b()
   {
-    ((LayoutInflater)getContext().getSystemService("layout_inflater")).inflate(2130968609, this);
+    ((LayoutInflater)getContext().getSystemService("layout_inflater")).inflate(2130968610, this);
     c = ((ViewGroup)findViewById(2131362020));
     b = new ArrayList();
     a();
@@ -80,7 +80,7 @@ public class CashReceiverView
   
   public final void a()
   {
-    d = atz.a().nextBoolean();
+    d = aux.a().nextBoolean();
     a = 0;
     b.clear();
     if (e != null) {
@@ -88,7 +88,7 @@ public class CashReceiverView
     }
     c.setTranslationX(0.0F);
     c.setTranslationY(0.0F);
-    Iterator localIterator = avh.a(c).iterator();
+    Iterator localIterator = awf.a(c).iterator();
     View localView;
     while (localIterator.hasNext())
     {
@@ -97,7 +97,7 @@ public class CashReceiverView
         c.removeView(localView);
       }
     }
-    localIterator = avh.a(this).iterator();
+    localIterator = awf.a(this).iterator();
     while (localIterator.hasNext())
     {
       localView = (View)localIterator.next();
@@ -113,14 +113,14 @@ public class CashReceiverView
     e = ValueAnimator.ofFloat(new float[] { 0.0F, 1.0F });
     e.setInterpolator(new LinearInterpolator());
     e.setDuration((950.0F - 650.0F * getHotness()));
-    final float f2 = atz.a().nextFloat() * 50.0F + 50.0F + getHotness() * (atz.a().nextFloat() * 25.0F + 25.0F);
+    final float f2 = aux.a().nextFloat() * 50.0F + 50.0F + getHotness() * (aux.a().nextFloat() * 25.0F + 25.0F);
     final float f1 = f2;
     if (paramInt == a.b) {
       f1 = -f2;
     }
-    f1 = avh.a(f1, getContext());
+    f1 = awf.a(f1, getContext());
     f2 = c.getTranslationX();
-    final float f3 = avh.a(atz.a().nextFloat() * 25.0F + 50.0F + getHotness() * (atz.a().nextFloat() * 75.0F + 75.0F), getContext());
+    final float f3 = awf.a(aux.a().nextFloat() * 25.0F + 50.0F + getHotness() * (aux.a().nextFloat() * 75.0F + 75.0F), getContext());
     e.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
     {
       public final void onAnimationUpdate(ValueAnimator paramAnonymousValueAnimator)

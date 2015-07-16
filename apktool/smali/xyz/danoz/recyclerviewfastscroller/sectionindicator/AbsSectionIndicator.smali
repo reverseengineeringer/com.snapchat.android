@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcky;
+.implements Lclz;
 
 
 # annotations
@@ -13,7 +13,7 @@
         "Ljava/lang/Object;",
         ">",
         "Landroid/widget/FrameLayout;",
-        "Lcky",
+        "Lclz",
         "<TT;>;"
     }
 .end annotation
@@ -24,9 +24,9 @@
 
 
 # instance fields
-.field private b:Lckt;
+.field private b:Lclu;
 
-.field private c:Lckz;
+.field private c:Lcma;
 
 
 # direct methods
@@ -35,7 +35,7 @@
 
     .prologue
     .line 21
-    sget-object v0, Lckr$c;->AbsSectionIndicator:[I
+    sget-object v0, Lcls$c;->AbsSectionIndicator:[I
 
     sput-object v0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->a:[I
 
@@ -94,7 +94,7 @@
 
     .line 38
     :try_start_0
-    sget v0, Lckr$c;->AbsSectionIndicator_rfs_section_indicator_layout:I
+    sget v0, Lcls$c;->AbsSectionIndicator_rfs_section_indicator_layout:I
 
     invoke-virtual {p0}, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->getDefaultLayoutId()I
 
@@ -124,11 +124,11 @@
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 45
-    new-instance v0, Lckz;
+    new-instance v0, Lcma;
 
-    invoke-direct {v0, p0}, Lckz;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, p0}, Lcma;-><init>(Landroid/view/View;)V
 
-    iput-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->c:Lckz;
+    iput-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->c:Lcma;
 
     .line 46
     return-void
@@ -158,12 +158,12 @@
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
     .line 69
-    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->b:Lckt;
+    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->b:Lclu;
 
     if-nez v0, :cond_0
 
     .line 70
-    new-instance v0, Lcks;
+    new-instance v0, Lclt;
 
     new-instance v1, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator$1;
 
@@ -173,14 +173,14 @@
 
     invoke-direct {v2, p0}, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator$2;-><init>(Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;)V
 
-    invoke-direct {v0, v1, v2}, Lcks;-><init>(Lcks$a;Lcks$a;)V
+    invoke-direct {v0, v1, v2}, Lclt;-><init>(Lclt$a;Lclt$a;)V
 
     .line 84
-    new-instance v1, Lckt;
+    new-instance v1, Lclu;
 
-    invoke-direct {v1, v0}, Lckt;-><init>(Lcks;)V
+    invoke-direct {v1, v0}, Lclu;-><init>(Lclt;)V
 
-    iput-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->b:Lckt;
+    iput-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->b:Lclu;
 
     .line 86
     :cond_0
@@ -192,9 +192,9 @@
 
     .prologue
     .line 90
-    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->b:Lckt;
+    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/sectionindicator/AbsSectionIndicator;->b:Lclu;
 
-    invoke-virtual {v0, p1}, Lckt;->a(F)F
+    invoke-virtual {v0, p1}, Lclu;->a(F)F
 
     move-result v0
 

@@ -2,19 +2,19 @@ package com.snapchat.android.fragments.addfriends;
 
 import android.os.Handler;
 import android.widget.Button;
-import bgo;
+import bho;
 
 final class AddFriendsFragment$a
-  extends bgo
+  extends bho
 {
   private int b;
   
   public AddFriendsFragment$a(AddFriendsFragment paramAddFriendsFragment)
   {
     super(3, 1000L, new Handler());
-    A.setEnabled(false);
+    B.setEnabled(false);
     b = 3;
-    A.setText(paramAddFriendsFragment.getString(2131493356) + " " + b);
+    B.setText(paramAddFriendsFragment.getString(2131493356) + " " + b);
   }
   
   public final void a()
@@ -23,7 +23,7 @@ final class AddFriendsFragment$a
       return;
     }
     b -= 1;
-    a.A.setText(a.getString(2131493356) + " " + b);
+    a.B.setText(a.getString(2131493356) + " " + b);
   }
   
   public final void b()
@@ -31,8 +31,8 @@ final class AddFriendsFragment$a
     if (!a.isAdded()) {
       return;
     }
-    a.A.setText(2131493356);
-    a.A.setEnabled(true);
+    a.B.setText(2131493356);
+    a.B.setEnabled(true);
   }
 }
 

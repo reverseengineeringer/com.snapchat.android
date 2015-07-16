@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 372
+    .line 374
     iput-object p1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$10;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,16 +40,16 @@
     .locals 1
 
     .prologue
-    .line 375
+    .line 377
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$10;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lno;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lof;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lno;->d()V
+    invoke-virtual {v0}, Lof;->d()V
 
-    .line 376
+    .line 378
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$10;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onBackPressed()V
 
-    .line 377
+    .line 379
     return-void
 .end method

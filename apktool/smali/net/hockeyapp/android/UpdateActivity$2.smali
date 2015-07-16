@@ -1,5 +1,5 @@
 .class final Lnet/hockeyapp/android/UpdateActivity$2;
-.super Lbvp;
+.super Lbwq;
 .source "SourceFile"
 
 
@@ -26,7 +26,7 @@
     .line 185
     iput-object p1, p0, Lnet/hockeyapp/android/UpdateActivity$2;->a:Lnet/hockeyapp/android/UpdateActivity;
 
-    invoke-direct {p0}, Lbvp;-><init>()V
+    invoke-direct {p0}, Lbwq;-><init>()V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
 
     .prologue
     .line 200
-    invoke-static {}, Lbvm;->b()Lbvn;
+    invoke-static {}, Lbwn;->b()Lbwo;
 
     move-result-object v0
 
@@ -46,7 +46,7 @@
     if-eqz v0, :cond_0
 
     .line 202
-    invoke-virtual {v0, p1}, Lbvn;->a(I)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lbwo;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -60,7 +60,7 @@
     goto :goto_0
 .end method
 
-.method public final a(Lbvy;)V
+.method public final a(Lbwz;)V
     .locals 1
 
     .prologue

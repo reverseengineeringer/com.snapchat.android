@@ -1,40 +1,195 @@
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+import android.content.res.Resources;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.snapchat.android.SnapkidzSettingsActivity;
-import com.snapchat.android.camera.cameradecor.CameraDecor.CameraDecorInterface;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.model.chat.ChatFeedItem;
+import com.snapchat.android.ui.EmojiTextView;
+import com.snapchat.android.ui.FeedReplayAnimationView;
+import java.util.Iterator;
+import java.util.List;
+import javax.inject.Provider;
 
 public final class vs
-  extends vn
+  extends vt<ChatConversation>
 {
-  public vs(Context paramContext, RelativeLayout paramRelativeLayout, CameraDecor.CameraDecorInterface paramCameraDecorInterface)
+  public final View k;
+  public final TextView l;
+  public final TextView m;
+  public ChatConversation n;
+  public aqg o;
+  private final EmojiTextView q;
+  private final ImageView r;
+  private final FeedReplayAnimationView s;
+  private final ProgressBar t;
+  private final TextView u;
+  private final Provider<akp> v;
+  
+  public vs(View paramView)
   {
-    super(paramContext, paramRelativeLayout, paramCameraDecorInterface);
-    g.setVisibility(8);
-    f.setBackgroundResource(2130837541);
-    f.setOnClickListener(new View.OnClickListener()
-    {
-      public final void onClick(View paramAnonymousView)
-      {
-        paramAnonymousView = a.i();
-        paramAnonymousView.startActivityForResult(new Intent(paramAnonymousView, SnapkidzSettingsActivity.class), 1000);
-      }
-    });
+    super(paramView);
+    k = paramView.findViewById(2131362344);
+    l = ((TextView)paramView.findViewById(2131362199));
+    m = ((TextView)paramView.findViewById(2131362348));
+    q = ((EmojiTextView)paramView.findViewById(2131361861));
+    r = ((ImageView)paramView.findViewById(2131362343));
+    s = ((FeedReplayAnimationView)paramView.findViewById(2131362345));
+    t = ((ProgressBar)paramView.findViewById(2131362346));
+    u = ((TextView)paramView.findViewById(2131362349));
+    v = akp.UNSAFE_USER_PROVIDER;
   }
   
-  public final void b() {}
-  
-  public final void c() {}
-  
-  protected final void c(boolean paramBoolean) {}
-  
-  protected final boolean h()
+  private void a(List<ChatFeedItem> paramList)
   {
-    return false;
+    Context localContext = m.getContext();
+    boolean bool;
+    long l1;
+    if (!paramList.isEmpty())
+    {
+      bool = ((ChatFeedItem)paramList.get(0)).P();
+      if (paramList.size() == 1)
+      {
+        l1 = ((ChatFeedItem)paramList.get(0)).c(n);
+        paramList = ((ChatFeedItem)paramList.get(0)).a();
+      }
+    }
+    for (;;)
+    {
+      String str;
+      if (l1 > 0L)
+      {
+        str = atz.b(localContext, l1);
+        label94:
+        if (TextUtils.isEmpty(str)) {
+          if (paramList != null)
+          {
+            label106:
+            m.setText(paramList);
+            if (!bool) {
+              break label257;
+            }
+            m.setTextColor(localContext.getResources().getColor(2131230794));
+            label135:
+            m.setVisibility(8);
+            return;
+            paramList = paramList.iterator();
+            l1 = 0L;
+            label154:
+            if (paramList.hasNext())
+            {
+              long l2 = ((ChatFeedItem)paramList.next()).c(n);
+              if (l2 <= l1) {
+                break label284;
+              }
+              l1 = l2;
+            }
+          }
+        }
+      }
+      label257:
+      label284:
+      for (;;)
+      {
+        break label154;
+        paramList = m.getContext().getResources().getString(2131493519);
+        break;
+        paramList = "";
+        break label106;
+        if (TextUtils.isEmpty(paramList))
+        {
+          paramList = str;
+          break label106;
+        }
+        paramList = auv.a(null, 2131493169, new Object[] { str, paramList });
+        break label106;
+        m.setTextColor(localContext.getResources().getColor(2131230721));
+        break label135;
+        str = "";
+        break label94;
+      }
+      bool = false;
+      l1 = 0L;
+      paramList = null;
+    }
+  }
+  
+  public final void a(vo paramvo)
+  {
+    if (a != null) {
+      a.a(this);
+    }
+  }
+  
+  public final void a(wa paramwa)
+  {
+    paramwa.a(this);
+  }
+  
+  public final void a(wa paramwa, MotionEvent paramMotionEvent)
+  {
+    paramwa.a(this, paramMotionEvent);
+  }
+  
+  public final void a(wa paramwa, boolean paramBoolean)
+  {
+    paramwa.a(this, paramBoolean);
+  }
+  
+  public final boolean a(wa paramwa, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4)
+  {
+    return paramwa.a(this, paramFloat1, paramFloat2, paramFloat3, paramFloat4);
+  }
+  
+  public final float b(wa paramwa)
+  {
+    return paramwa.b(this);
+  }
+  
+  public final void b(int paramInt)
+  {
+    k.setBackgroundColor(paramInt);
+  }
+  
+  public final boolean c(wa paramwa)
+  {
+    return paramwa.c(this);
+  }
+  
+  public final int d(wa paramwa)
+  {
+    return paramwa.d(this);
+  }
+  
+  public final void e(wa paramwa)
+  {
+    paramwa.e(this);
+  }
+  
+  public final void f(wa paramwa)
+  {
+    paramwa.i();
+  }
+  
+  public final void g(wa paramwa)
+  {
+    paramwa.f(this);
+  }
+  
+  public final void q()
+  {
+    l.setTranslationY(0.0F);
+    m.setAlpha(1.0F);
+    m.setVisibility(0);
+  }
+  
+  public final void r()
+  {
+    l.setTranslationY(0.0F);
+    m.setVisibility(8);
   }
 }
 

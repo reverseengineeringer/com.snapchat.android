@@ -47,6 +47,10 @@
     .locals 2
 
     .prologue
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 569
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/snapchat/android/ui/VerticalSwipeLayout$a;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 160
+    .line 159
     iput-object p1, p0, Lcom/snapchat/android/ui/SnapView$1;->a:Lcom/snapchat/android/ui/SnapView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,21 +36,78 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 4
+.method public final a(III)V
+    .locals 2
 
     .prologue
+    .line 162
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapView$1;->a:Lcom/snapchat/android/ui/SnapView;
+
+    invoke-static {v0}, Lcom/snapchat/android/ui/SnapView;->a(Lcom/snapchat/android/ui/SnapView;)Lasi;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
     .line 163
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapView$1;->a:Lcom/snapchat/android/ui/SnapView;
 
-    iget-object v0, v0, Lcom/snapchat/android/ui/SnapView;->d:Lcom/snapchat/android/ui/VerticalSwipeLayout;
+    invoke-static {v0}, Lcom/snapchat/android/ui/SnapView;->a(Lcom/snapchat/android/ui/SnapView;)Lasi;
 
-    const/4 v1, 0x1
+    move-result-object v1
 
-    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+    if-eqz p3, :cond_1
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->a(ID)V
+    const/4 v0, 0x1
 
-    .line 164
+    :goto_0
+    invoke-interface {v1, v0}, Lasi;->a(Z)V
+
+    .line 165
+    :cond_0
     return-void
+
+    .line 163
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final c(I)V
+    .locals 2
+
+    .prologue
+    .line 168
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapView$1;->a:Lcom/snapchat/android/ui/SnapView;
+
+    invoke-static {v0}, Lcom/snapchat/android/ui/SnapView;->a(Lcom/snapchat/android/ui/SnapView;)Lasi;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 169
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapView$1;->a:Lcom/snapchat/android/ui/SnapView;
+
+    invoke-static {v0}, Lcom/snapchat/android/ui/SnapView;->a(Lcom/snapchat/android/ui/SnapView;)Lasi;
+
+    move-result-object v1
+
+    if-eqz p1, :cond_1
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-interface {v1, v0}, Lasi;->a(Z)V
+
+    .line 171
+    :cond_0
+    return-void
+
+    .line 169
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

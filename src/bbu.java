@@ -1,7 +1,4 @@
-public final class bbu
-{
-  public final boolean mHasGivenAccessToContacts = true;
-}
+public final class bbu {}
 
 /* Location:
  * Qualified Name:     bbu

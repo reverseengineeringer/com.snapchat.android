@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/util/crypto/SlightlySecurePreferences_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Layg;",
+        "Laze;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Layg;",
+            "Laze;",
             ">;"
         }
     .end annotation
@@ -127,14 +127,14 @@
 
 
 # virtual methods
-.method public final get()Layg;
+.method public final get()Laze;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Layg;
+    new-instance v0, Laze;
 
-    invoke-direct {v0}, Layg;-><init>()V
+    invoke-direct {v0}, Laze;-><init>()V
 
     return-object v0
 .end method
@@ -144,7 +144,7 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/util/crypto/SlightlySecurePreferences_Factory;->get()Layg;
+    invoke-virtual {p0}, Lcom/snapchat/android/util/crypto/SlightlySecurePreferences_Factory;->get()Laze;
 
     move-result-object v0
 

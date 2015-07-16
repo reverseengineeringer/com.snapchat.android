@@ -18,18 +18,18 @@
 
 
 # instance fields
-.field final synthetic a:Lakb;
+.field final synthetic a:Lakw;
 
 .field final synthetic b:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lakb;Ljava/lang/String;)V
+.method constructor <init>(Lakw;Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 302
-    iput-object p1, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakb;
+    .line 301
+    iput-object p1, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakw;
 
     iput-object p2, p0, Lcom/snapchat/android/database/table/ChatTable$1;->b:Ljava/lang/String;
 
@@ -44,8 +44,8 @@
     .locals 4
 
     .prologue
-    .line 305
-    iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakb;
+    .line 304
+    iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakw;
 
     iget-object v0, v0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
 
@@ -57,68 +57,55 @@
 
     if-eqz v0, :cond_1
 
-    .line 306
-    iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakb;
+    .line 305
+    iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakw;
 
     sget-object v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->FAILED:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
 
     iput-object v1, v0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
 
-    .line 307
+    .line 306
     iget-object v0, p0, Lcom/snapchat/android/database/table/ChatTable$1;->b:Ljava/lang/String;
 
-    invoke-static {v0}, Lym;->a(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
+    invoke-static {v0}, Lzi;->a(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
 
     move-result-object v0
 
-    .line 308
+    .line 307
     if-eqz v0, :cond_0
 
-    .line 309
-    invoke-static {}, Lyn;->a()Lyn;
+    .line 308
+    iget-object v1, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakw;
 
-    move-result-object v1
+    sget-object v2, Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;->FAILED_TO_SEND:Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;Lcom/snapchat/android/app/feature/messaging/feed/model/FeedIconChangeType;)V
 
-    invoke-virtual {v1, v0, v2}, Lyn;->a(Lcom/snapchat/android/model/chat/ChatConversation;Z)V
-
-    .line 312
+    .line 310
     :cond_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lben;
+    new-instance v1, Lbca;
 
-    invoke-direct {v1}, Lben;-><init>()V
+    iget-object v2, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakw;
 
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 313
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v0
-
-    new-instance v1, Lbaz;
-
-    iget-object v2, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakb;
-
-    invoke-virtual {v2}, Lakb;->X()Ljava/lang/String;
+    invoke-virtual {v2}, Lakw;->Y()Ljava/lang/String;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakb;
+    iget-object v3, p0, Lcom/snapchat/android/database/table/ChatTable$1;->a:Lakw;
 
-    invoke-virtual {v3}, Lakb;->d()Ljava/lang/String;
+    invoke-virtual {v3}, Lakw;->d()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v1, v2, v3}, Lbaz;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3}, Lbca;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 315
+    .line 312
     :cond_1
     return-void
 .end method

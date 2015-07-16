@@ -1,45 +1,61 @@
-import com.google.gson.reflect.TypeToken;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public final class avb
 {
-  public static String a(Collection<?> paramCollection, String paramString)
+  private static final Map<Class<?>, Class<?>> PRIMITIVE_TYPE_MAP;
+  private static final Set<Class<?>> WRAPPER_TYPES = new HashSet(PRIMITIVE_TYPE_MAP.values());
+  
+  static
   {
-    StringBuilder localStringBuilder = new StringBuilder();
-    paramCollection = paramCollection.iterator();
-    while (paramCollection.hasNext())
-    {
-      localStringBuilder.append(paramCollection.next());
-      if (!paramCollection.hasNext()) {
-        break;
-      }
-      localStringBuilder.append(paramString);
-    }
-    return localStringBuilder.toString();
+    HashMap localHashMap = new HashMap(9);
+    PRIMITIVE_TYPE_MAP = localHashMap;
+    localHashMap.put(Integer.TYPE, Integer.class);
+    PRIMITIVE_TYPE_MAP.put(Long.TYPE, Long.class);
+    PRIMITIVE_TYPE_MAP.put(Boolean.TYPE, Boolean.class);
+    PRIMITIVE_TYPE_MAP.put(Byte.TYPE, Byte.class);
+    PRIMITIVE_TYPE_MAP.put(Character.TYPE, Character.class);
+    PRIMITIVE_TYPE_MAP.put(Double.TYPE, Double.class);
+    PRIMITIVE_TYPE_MAP.put(Float.TYPE, Float.class);
+    PRIMITIVE_TYPE_MAP.put(Short.TYPE, Short.class);
+    PRIMITIVE_TYPE_MAP.put(Void.TYPE, Void.class);
   }
   
-  @cgc
-  public static String a(@cgc byte[] paramArrayOfByte)
+  public static int a(Integer paramInteger)
   {
-    Object localObject;
-    if (paramArrayOfByte == null)
-    {
-      localObject = null;
-      return (String)localObject;
+    if (paramInteger == null) {
+      return 0;
     }
-    String str = "";
-    int i = 0;
-    for (;;)
-    {
-      localObject = str;
-      if (i >= paramArrayOfByte.length) {
-        break;
-      }
-      str = str + Integer.toString((paramArrayOfByte[i] & 0xFF) + 256, 16).substring(1);
-      i += 1;
+    return paramInteger.intValue();
+  }
+  
+  public static long a(Long paramLong)
+  {
+    if (paramLong == null) {
+      return 0L;
     }
+    return paramLong.longValue();
+  }
+  
+  public static boolean a(Boolean paramBoolean)
+  {
+    return (paramBoolean != null) && (paramBoolean.booleanValue());
+  }
+  
+  public static boolean a(Class paramClass)
+  {
+    return WRAPPER_TYPES.contains(paramClass);
+  }
+  
+  public static <T> Class<T> b(Class<T> paramClass)
+  {
+    Class localClass = (Class)PRIMITIVE_TYPE_MAP.get(paramClass);
+    if (localClass == null) {
+      return paramClass;
+    }
+    return localClass;
   }
 }
 

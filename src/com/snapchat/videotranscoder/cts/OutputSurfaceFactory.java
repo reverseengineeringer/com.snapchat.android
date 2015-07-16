@@ -1,18 +1,18 @@
 package com.snapchat.videotranscoder.cts;
 
 import android.graphics.Bitmap;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.utils.TranscodingResources;
 
 public class OutputSurfaceFactory
 {
-  public OutputSurface createOutputSurface(@cgb TranscodingResources paramTranscodingResources, int paramInt1, int paramInt2, @cgb float[] paramArrayOfFloat, @cgc Bitmap paramBitmap)
+  public OutputSurface createOutputSurface(@chc TranscodingResources paramTranscodingResources, int paramInt1, int paramInt2, @chc float[] paramArrayOfFloat, @chd Bitmap paramBitmap)
   {
     return new OutputSurface(paramTranscodingResources, paramInt1, paramInt2, paramArrayOfFloat, paramBitmap);
   }
   
-  public OutputSurface createOutputSurface(@cgb TranscodingResources paramTranscodingResources, @cgb float[] paramArrayOfFloat, @cgc Bitmap paramBitmap)
+  public OutputSurface createOutputSurface(@chc TranscodingResources paramTranscodingResources, @chc float[] paramArrayOfFloat, @chd Bitmap paramBitmap)
   {
     return new OutputSurface(paramTranscodingResources, paramArrayOfFloat, paramBitmap);
   }

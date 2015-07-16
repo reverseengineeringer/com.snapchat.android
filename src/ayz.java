@@ -1,7 +1,12 @@
+import javax.inject.Provider;
+
 public final class ayz
-  implements buo<ajw>
+  implements bvp<ayy>
 {
-  private final ayl module;
+  private final Provider<qb> apiTaskFactoryProvider;
+  private final Provider<bam> developerSettingsProvider;
+  private final Provider<aum> gsonWrapperProvider;
+  private final Provider<aze> slightlySecurePreferencesProvider;
   
   static
   {
@@ -13,15 +18,21 @@ public final class ayz
     }
   }
   
-  private ayz(ayl paramayl)
+  private ayz(Provider<aze> paramProvider, Provider<aum> paramProvider1, Provider<qb> paramProvider2, Provider<bam> paramProvider3)
   {
-    assert (paramayl != null);
-    module = paramayl;
+    assert (paramProvider != null);
+    slightlySecurePreferencesProvider = paramProvider;
+    assert (paramProvider1 != null);
+    gsonWrapperProvider = paramProvider1;
+    assert (paramProvider2 != null);
+    apiTaskFactoryProvider = paramProvider2;
+    assert (paramProvider3 != null);
+    developerSettingsProvider = paramProvider3;
   }
   
-  public static buo<ajw> a(ayl paramayl)
+  public static bvp<ayy> a(Provider<aze> paramProvider, Provider<aum> paramProvider1, Provider<qb> paramProvider2, Provider<bam> paramProvider3)
   {
-    return new ayz(paramayl);
+    return new ayz(paramProvider, paramProvider1, paramProvider2, paramProvider3);
   }
 }
 

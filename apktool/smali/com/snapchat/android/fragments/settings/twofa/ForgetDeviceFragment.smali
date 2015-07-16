@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lagq$a;
+.implements Lahn$a;
 .implements Landroid/support/v4/app/LoaderManager$LoaderCallbacks;
 
 
@@ -11,7 +11,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
-        "Lagq$a;",
+        "Lahn$a;",
         "Landroid/support/v4/app/LoaderManager$LoaderCallbacks",
         "<",
         "Landroid/database/Cursor;",
@@ -33,7 +33,7 @@
 
 .field private f:Landroid/view/View;
 
-.field private g:Lagq;
+.field private g:Lahn;
 
 .field private final h:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -46,9 +46,9 @@
     .end annotation
 .end field
 
-.field private final i:Laol;
+.field private final i:Laph;
 
-.field private j:Laok;
+.field private j:Lapg;
 
 
 # direct methods
@@ -57,17 +57,17 @@
 
     .prologue
     .line 66
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;-><init>(Laol;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;-><init>(Laph;)V
 
     .line 67
     return-void
 .end method
 
-.method private constructor <init>(Laol;)V
+.method private constructor <init>(Laph;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -94,10 +94,10 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment$1;-><init>(Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->j:Laok;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->j:Lapg;
 
     .line 73
-    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laol;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laph;
 
     .line 74
     return-void
@@ -113,7 +113,7 @@
     return-object v0
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;Lanc$c;)V
+.method static synthetic a(Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;Lanz$c;)V
     .locals 4
 
     .prologue
@@ -124,13 +124,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    iget-boolean v0, p1, Lanc$c;->a:Z
+    iget-boolean v0, p1, Lanz$c;->a:Z
 
     if-eqz v0, :cond_1
 
     const-string v0, "twoFAForgetDevice"
 
-    iget-object v1, p1, Lanc$c;->b:Ljava/lang/String;
+    iget-object v1, p1, Lanz$c;->b:Ljava/lang/String;
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -144,7 +144,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0c02b5
+    const v2, 0x7f0c02b3
 
     invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->getString(I)Ljava/lang/String;
 
@@ -152,7 +152,7 @@
 
     invoke-direct {v0, p0, v1, v2}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment$4;-><init>(Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;Landroid/content/Context;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lapz;->show()V
+    invoke-virtual {v0}, Laqy;->show()V
 
     :cond_0
     :goto_0
@@ -161,7 +161,7 @@
     return-void
 
     :cond_1
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -169,7 +169,7 @@
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
 
-    iget-object v3, p1, Lanc$c;->d:Ljava/lang/String;
+    iget-object v3, p1, Lanz$c;->d:Ljava/lang/String;
 
     invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;Ljava/lang/String;)V
 
@@ -178,12 +178,12 @@
     goto :goto_0
 .end method
 
-.method static synthetic b(Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;)Laol;
+.method static synthetic b(Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;)Laph;
     .locals 1
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laph;
 
     return-object v0
 .end method
@@ -193,9 +193,9 @@
 
     .prologue
     .line 134
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->g:Lagq;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->g:Lahn;
 
-    invoke-virtual {v0}, Lagq;->getCount()I
+    invoke-virtual {v0}, Lahn;->getCount()I
 
     move-result v0
 
@@ -205,7 +205,7 @@
     .line 148
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->c:Landroid/widget/TextView;
 
-    const v1, 0x7f0c02b3
+    const v1, 0x7f0c02b1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -217,7 +217,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->c:Landroid/widget/TextView;
 
-    const v1, 0x7f0c02b4
+    const v1, 0x7f0c02b2
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -234,7 +234,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->c:Landroid/widget/TextView;
 
-    const v1, 0x7f0c02af
+    const v1, 0x7f0c02ad
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -259,7 +259,7 @@
     .line 182
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->h:Ljava/util/Set;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laol;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laph;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -269,7 +269,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v3, p1, v4}, Laol;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3, p1, v4}, Laph;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 
@@ -319,7 +319,7 @@
 
     sget-object v3, Lcom/snapchat/android/content/SnapchatProvider;->d:Landroid/net/Uri;
 
-    sget-object v4, Labf;->b:[Ljava/lang/String;
+    sget-object v4, Lacf;->b:[Ljava/lang/String;
 
     invoke-direct {v0, v2, v3, v4, v1}, Landroid/support/v4/content/CursorLoader;-><init>(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;)V
 
@@ -339,7 +339,7 @@
     const/4 v2, 0x0
 
     .line 78
-    const v0, 0x7f0400c1
+    const v0, 0x7f0400c3
 
     const/4 v1, 0x0
 
@@ -350,7 +350,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 80
-    const v0, 0x7f0a03ff
+    const v0, 0x7f0a03f8
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->c(I)Landroid/view/View;
 
@@ -363,7 +363,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 87
-    const v0, 0x7f0400c3
+    const v0, 0x7f0400c5
 
     invoke-virtual {p1, v0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -372,7 +372,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->e:Landroid/view/View;
 
     .line 88
-    const v0, 0x7f0400c2
+    const v0, 0x7f0400c4
 
     invoke-virtual {p1, v0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -383,7 +383,7 @@
     .line 90
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->f:Landroid/view/View;
 
-    const v1, 0x7f0a0403
+    const v1, 0x7f0a03fc
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -396,7 +396,7 @@
     .line 91
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->f:Landroid/view/View;
 
-    const v1, 0x7f0a0404
+    const v1, 0x7f0a03fd
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -409,7 +409,7 @@
     .line 92
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->e:Landroid/view/View;
 
-    const v1, 0x7f0a0405
+    const v1, 0x7f0a03fe
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -429,7 +429,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 110
-    const v0, 0x7f0a0402
+    const v0, 0x7f0a03fb
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->c(I)Landroid/view/View;
 
@@ -440,15 +440,15 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->d:Landroid/widget/ListView;
 
     .line 111
-    new-instance v0, Lagq;
+    new-instance v0, Lahn;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p0}, Lagq;-><init>(Landroid/content/Context;Lagq$a;)V
+    invoke-direct {v0, v1, p0}, Lahn;-><init>(Landroid/content/Context;Lahn$a;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->g:Lagq;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->g:Lahn;
 
     .line 112
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->d:Landroid/widget/ListView;
@@ -467,7 +467,7 @@
     .line 114
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->d:Landroid/widget/ListView;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->g:Lagq;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->g:Lahn;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -509,9 +509,9 @@
     :pswitch_0
     if-eqz p2, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->g:Lagq;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->g:Lahn;
 
-    invoke-virtual {v0, p2}, Lagq;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
+    invoke-virtual {v0, p2}, Lahn;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
 
     :cond_0
     invoke-direct {p0}, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i()V
@@ -551,13 +551,13 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onPause()V
 
     .line 129
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laph;
 
     const/16 v1, 0x3f4
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->j:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->j:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 130
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->h:Ljava/util/Set;
@@ -576,13 +576,13 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 123
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->i:Laph;
 
     const/16 v1, 0x3f4
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->j:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;->j:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 124
     return-void

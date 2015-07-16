@@ -1,8 +1,8 @@
 package com.snapchat.android.util.fragment;
 
-import ala;
-import alb;
+import alv;
 import alw;
+import amt;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,56 +13,62 @@ import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
-import aux;
-import ban;
-import bcb;
+import avv;
+import bbo;
+import bdb;
+import bga;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.SnapkidzHomeActivity;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.CameraEventAnalytics;
-import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetricManager;
 import com.snapchat.android.ui.window.WindowConfiguration;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.StartupPath;
 import com.squareup.otto.Bus;
-import nf;
+import nw;
 
 public abstract class SnapchatFragment
   extends Fragment
+  implements bga
 {
   public static final String ARG_KEY_HIDE_ACTION_BAR = "hide_action_bar";
   public static final String ARG_KEY_PAGE_INDEX = "page_index";
   private static final String TAG = "SnapchatFragment";
   public boolean mAreLargeUiUpdatesEnabled = false;
-  private final alb mDownloadManager;
+  private final alw mDownloadManager;
   public a mFragmentInterface;
   public View mFragmentLayout;
   public boolean mIsVisible;
-  private final nf mLifecycleAnalytics;
+  private final nw mLifecycleAnalytics;
   protected int mPageIndex = -1;
   private final Handler mSetFragmentVisibleHandler;
   public final WindowConfiguration mWindowConfiguration;
   
   public SnapchatFragment()
   {
-    this(new Handler(Looper.getMainLooper()), alb.a(), nf.a(), new WindowConfiguration());
+    this(new Handler(Looper.getMainLooper()), alw.a(), nw.a(), new WindowConfiguration());
   }
   
-  SnapchatFragment(Handler paramHandler, alb paramalb, nf paramnf, WindowConfiguration paramWindowConfiguration)
+  SnapchatFragment(Handler paramHandler, alw paramalw, nw paramnw, WindowConfiguration paramWindowConfiguration)
   {
     mSetFragmentVisibleHandler = paramHandler;
-    mDownloadManager = paramalb;
-    mLifecycleAnalytics = paramnf;
+    mDownloadManager = paramalw;
+    mLifecycleAnalytics = paramnw;
     mWindowConfiguration = paramWindowConfiguration;
   }
   
   public SnapchatFragment(WindowConfiguration paramWindowConfiguration)
   {
-    this(new Handler(Looper.getMainLooper()), alb.a(), nf.a(), paramWindowConfiguration);
+    this(new Handler(Looper.getMainLooper()), alw.a(), nw.a(), paramWindowConfiguration);
   }
   
-  public final Window H()
+  public final boolean I()
+  {
+    return mIsVisible;
+  }
+  
+  public final Window J()
   {
     FragmentActivity localFragmentActivity = getActivity();
     if (localFragmentActivity == null) {
@@ -71,9 +77,9 @@ public abstract class SnapchatFragment
     return localFragmentActivity.getWindow();
   }
   
-  public final void I()
+  public final void K()
   {
-    H().clearFlags(512);
+    J().clearFlags(512);
   }
   
   public final void a(WindowConfiguration.StatusBarDrawMode paramStatusBarDrawMode)
@@ -122,48 +128,44 @@ public abstract class SnapchatFragment
   {
     mWindowConfiguration.a(b());
     if (k() != null) {
-      ban.a().a(new bcb());
+      bbo.a().a(new bdb());
     }
   }
   
   public void e(boolean paramBoolean) {}
   
+  public void e_()
+  {
+    f(false);
+  }
+  
   public void f() {}
   
   public final void f(boolean paramBoolean)
   {
-    Timber.a(getClass(), "markVisibilityChanged - isVisible " + paramBoolean, new Object[0]);
-    if (j_()) {
+    if (h_()) {
       setUserVisibleHint(paramBoolean);
     }
     if (!paramBoolean) {
       mSetFragmentVisibleHandler.removeCallbacksAndMessages(null);
     }
-    if (mIsVisible != paramBoolean)
-    {
-      if ((!super.isResumed()) && (paramBoolean)) {
-        Timber.g("SnapchatFragment", "Fragment is not yet resumed. Scheduling onVisible for later", new Object[0]);
-      }
-    }
-    else {
+    if ((mIsVisible == paramBoolean) || ((!super.isResumed()) && (paramBoolean))) {
       return;
     }
     mIsVisible = paramBoolean;
     if (paramBoolean)
     {
       mDownloadManager.a(h());
-      Timber.a(getClass(), "markVisibility -> onVisible()", new Object[0]);
       c();
       e();
       return;
     }
-    Timber.a(getClass(), "markVisibility -> onHidden()", new Object[0]);
     f();
   }
   
-  public void f_()
+  public boolean f_()
   {
-    f(false);
+    return false;
   }
   
   public boolean g()
@@ -171,34 +173,24 @@ public abstract class SnapchatFragment
     return false;
   }
   
-  public boolean g_()
+  public alv h()
   {
-    return false;
-  }
-  
-  public ala h()
-  {
-    return new ala(new String[] { "DEFAULT" });
+    return new alv(new String[] { "DEFAULT" });
   }
   
   public boolean h_()
   {
-    return mIsVisible;
+    return super.isAdded();
   }
   
   public boolean j_()
   {
-    return super.isAdded();
+    return false;
   }
   
-  public alw k()
+  public amt k()
   {
     return null;
-  }
-  
-  public boolean l_()
-  {
-    return false;
   }
   
   public void onAttach(Activity paramActivity)
@@ -227,15 +219,15 @@ public abstract class SnapchatFragment
   public void onPause()
   {
     super.onPause();
-    ban.a().b(this);
+    bbo.a().b(this);
   }
   
   public void onResume()
   {
     super.onResume();
-    ban.a().c(this);
+    bbo.a().c(this);
     Object localObject = mWindowConfiguration;
-    Window localWindow = H();
+    Window localWindow = J();
     View localView = mFragmentLayout;
     if (!((WindowConfiguration)localObject).a())
     {
@@ -250,17 +242,16 @@ public abstract class SnapchatFragment
     }
     for (;;)
     {
-      Timber.a(getClass(), "scheduleTaskForOnVisible() - shouldFragmentBecomeVisible " + bool, new Object[0]);
       if (bool) {
         mSetFragmentVisibleHandler.post(new Runnable()
         {
           public final void run()
           {
             f(true);
-            nf localnf = SnapchatFragment.a(SnapchatFragment.this);
+            nw localnw = SnapchatFragment.a(SnapchatFragment.this);
             if (mStartupMetric != null)
             {
-              StartupPath localStartupPath2 = aux.b();
+              StartupPath localStartupPath2 = avv.b();
               StartupPath localStartupPath1 = localStartupPath2;
               if (localStartupPath2 == StartupPath.FROM_DESTROYED_STATE) {
                 localStartupPath1 = StartupPath.FROM_KILLED_STATE;
@@ -270,7 +261,7 @@ public abstract class SnapchatFragment
               mStartupMetric = null;
             }
             if (mPageIndex != 2) {
-              amDictionaryEasyMetric.a("CAMERA_READY");
+              amEasyMetricManager.b("CAMERA_READY", "");
             }
           }
         });
@@ -284,7 +275,7 @@ public abstract class SnapchatFragment
     }
   }
   
-  public long z_()
+  public long y_()
   {
     return -1L;
   }

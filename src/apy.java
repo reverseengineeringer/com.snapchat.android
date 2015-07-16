@@ -1,42 +1,26 @@
-import android.content.Context;
-import android.content.res.Resources;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import com.snapchat.android.SnapchatActivity;
-import com.snapchat.android.analytics.RegistrationAnalytics;
-import com.snapchat.android.fragments.signup.LoginAndSignupFragment;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import com.snapchat.android.ui.SelfScalingImageView;
+import com.snapchat.android.ui.smartfilters.GeofilterView;
+import java.util.Date;
 
 public final class apy
-  extends aqb
 {
-  private SnapchatActivity a;
-  private int b;
-  private final RegistrationAnalytics c;
+  final GeofilterView a;
+  public final View b;
+  public long c;
+  public int d;
+  public Animation e;
+  public Date f;
+  public boolean g = false;
   
-  public apy(Context paramContext, int paramInt)
+  public apy(GeofilterView paramGeofilterView, View paramView)
   {
-    this(paramContext, paramInt, RegistrationAnalytics.a());
-  }
-  
-  private apy(Context paramContext, int paramInt, RegistrationAnalytics paramRegistrationAnalytics)
-  {
-    super(paramContext, paramContext.getResources().getString(2131493358));
-    a = ((SnapchatActivity)paramContext);
-    b = paramInt;
-    c = paramRegistrationAnalytics;
-  }
-  
-  protected final void a()
-  {
-    ajv.g().w();
-    a.mFragments.beginTransaction().replace(b, new LoginAndSignupFragment()).commit();
-    RegistrationAnalytics.c(true);
-  }
-  
-  protected final void b()
-  {
-    RegistrationAnalytics.c(false);
+    a = paramGeofilterView;
+    b = paramView;
+    c = 2000L;
+    d = 500;
   }
 }
 

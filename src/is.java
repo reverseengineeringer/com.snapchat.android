@@ -2,25 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class is
-  extends lt
+  extends ml
 {
-  private final String eventName = "PROFILE_FRIEND_REQUEST_BLOCK";
-  public Boolean hasDisplayName;
-  public ic method;
-  public jq source;
+  private String additionalInfo;
+  private final String eventName = "PROFILE_ADDRESS_BOOK_CONTACT_PERMISSION_CONTINUE";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_FRIEND_REQUEST_BLOCK");
-    if (hasDisplayName != null) {
-      localHashMap.put("has_display_name", hasDisplayName);
-    }
-    if (method != null) {
-      localHashMap.put("method", method);
-    }
-    if (source != null) {
-      localHashMap.put("source", source);
+    localHashMap.put("event_name", "PROFILE_ADDRESS_BOOK_CONTACT_PERMISSION_CONTINUE");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -39,32 +31,14 @@ public final class is
         return false;
       }
       paramObject = (is)paramObject;
-      if (hasDisplayName != null)
-      {
-        if (hasDisplayName.equals(hasDisplayName)) {}
-      }
-      else {
-        while (hasDisplayName != null) {
-          return false;
-        }
-      }
-      if (method != null)
-      {
-        if (method.equals(method)) {}
-      }
-      else {
-        while (method != null) {
-          return false;
-        }
-      }
-      if (source == null) {
+      if (additionalInfo == null) {
         break;
       }
-    } while (source.equals(source));
+    } while (additionalInfo.equals(additionalInfo));
     for (;;)
     {
       return false;
-      if (source == null) {
+      if (additionalInfo == null) {
         break;
       }
     }
@@ -72,25 +46,10 @@ public final class is
   
   public final int hashCode()
   {
-    int k = 0;
-    int m = super.hashCode();
-    int i;
-    if (hasDisplayName != null)
-    {
-      i = hasDisplayName.hashCode();
-      if (method == null) {
-        break label76;
-      }
-    }
-    label76:
-    for (int j = method.hashCode();; j = 0)
-    {
-      if (source != null) {
-        k = source.hashCode();
-      }
-      return (j + (i + m * 31) * 31) * 31 + k;
-      i = 0;
-      break;
+    int j = super.hashCode();
+    if (additionalInfo != null) {}
+    for (int i = additionalInfo.hashCode();; i = 0) {
+      return i + j * 31;
     }
   }
 }

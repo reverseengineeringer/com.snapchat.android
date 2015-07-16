@@ -2,7 +2,6 @@ package com.snapchat.android.fragments.verification;
 
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import com.snapchat.android.Timber;
 
 final class URLVerificationFragment$b
   extends WebViewClient
@@ -18,7 +17,7 @@ final class URLVerificationFragment$b
   public final boolean shouldOverrideUrlLoading(WebView paramWebView, String paramString)
   {
     URLVerificationFragment.a(a, true);
-    Timber.b(URLVerificationFragment.m(), "CASH-LOG: Loading the URL: %s", new Object[] { paramString });
+    URLVerificationFragment.m();
     URLVerificationFragment.b(a, false);
     if (paramString.equals("https://support.snapchat.com/success"))
     {

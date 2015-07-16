@@ -3,9 +3,9 @@ package com.snapchat.android.fragments.stories;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import bgr;
+import bhr;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
-import pb.a;
+import ps.a;
 
 final class StoriesFragment$1$1
   implements TextWatcher
@@ -26,8 +26,8 @@ final class StoriesFragment$1$1
     }
     for (;;)
     {
-      a.a.p();
-      a.a.r();
+      a.a.q();
+      a.a.t();
       return;
       StoriesFragment.c(a.a).a(paramCharSequence.toString());
       StoriesFragment.a(a.a).setFastScrollAlwaysVisible(false);

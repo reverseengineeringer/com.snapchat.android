@@ -21,6 +21,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -279,6 +281,8 @@ public class zzaf
       {
         public void onReceive(Context paramAnonymousContext, Intent paramAnonymousIntent)
         {
+          kkxxkk.b041E041EОО041EО(paramAnonymousContext);
+          xkkkxk.b041E041EООО041E(paramAnonymousContext);
           zzh(false);
         }
       };

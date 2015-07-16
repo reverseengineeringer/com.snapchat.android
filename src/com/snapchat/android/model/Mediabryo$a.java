@@ -1,7 +1,7 @@
 package com.snapchat.android.model;
 
-import aiz;
-import ajl;
+import ajv;
+import akh;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.text.TextUtils;
@@ -19,12 +19,12 @@ public abstract class Mediabryo$a<T extends a<T>>
   public boolean mIsFrontFacingSnap = false;
   public boolean mIsReply = false;
   public boolean mIsZipUpload = false;
-  public aiz mMediaExtras;
+  public ajv mMediaExtras;
   public MediaMailingMetadata mMediaMailingMetadata;
   public boolean mMuted = false;
   public Bitmap mOverlayBitmap;
   public String mOverlayPath;
-  public ajl mPreviewConfiguration;
+  public akh mPreviewConfiguration;
   public Bitmap mRawImageBitmap;
   public boolean mShouldEnableSmartFilters = true;
   public boolean mShouldEnableVisualFilters = true;

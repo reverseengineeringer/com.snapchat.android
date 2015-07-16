@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,7 +13,7 @@
         "<",
         "Lcom/snapchat/android/camera/model/CameraModel_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
         "Lcom/snapchat/android/camera/model/CameraModel;",
         ">;"
@@ -74,12 +74,12 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
             "Lcom/snapchat/android/camera/model/CameraModel;",
             ">;"

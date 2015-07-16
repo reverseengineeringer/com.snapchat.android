@@ -13,7 +13,7 @@
 
 # instance fields
 .field public a:Landroid/media/MediaPlayer;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -40,7 +40,7 @@
 .field private final l:Landroid/graphics/drawable/Drawable;
 
 .field private m:Landroid/graphics/Paint;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
@@ -109,7 +109,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ChatCameraButton;->e:Landroid/graphics/Paint;
 
     .line 91
-    const v0, 0x7f080032
+    const v0, 0x7f080033
 
     invoke-static {p1, v0}, Lcom/snapchat/android/ui/ChatCameraButton;->a(Landroid/content/Context;I)Landroid/graphics/Paint;
 
@@ -118,7 +118,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ChatCameraButton;->f:Landroid/graphics/Paint;
 
     .line 92
-    const v0, 0x7f080053
+    const v0, 0x7f080054
 
     invoke-static {p1, v0}, Lcom/snapchat/android/ui/ChatCameraButton;->a(Landroid/content/Context;I)Landroid/graphics/Paint;
 
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0900a1
+    const v2, 0x7f0900a2
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -220,7 +220,7 @@
     .line 106
     const/high16 v0, 0x40800000    # 4.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -256,7 +256,7 @@
     .line 113
     const/high16 v0, 0x40e00000    # 7.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -268,7 +268,7 @@
     .line 116
     const/high16 v0, 0x41200000    # 10.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -318,7 +318,7 @@
 
     const-string v1, "GT-S7500"
 
-    invoke-static {v0, v1}, Laui;->c(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, v1}, Lavg;->c(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -850,7 +850,7 @@
 
     div-float/2addr v8, v11
 
-    invoke-static {v6, v7, v8}, Lats;->a(FFF)F
+    invoke-static {v6, v7, v8}, Lauq;->a(FFF)F
 
     move-result v6
 
@@ -878,7 +878,7 @@
 
     div-float/2addr v9, v11
 
-    invoke-static {v7, v8, v9}, Lats;->a(FFF)F
+    invoke-static {v7, v8, v9}, Lauq;->a(FFF)F
 
     move-result v7
 
@@ -1032,7 +1032,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -1141,7 +1141,7 @@
 .end method
 
 .method public setPresent(Z)V
-    .locals 4
+    .locals 3
 
     .prologue
     .line 200
@@ -1199,31 +1199,17 @@
     move-exception v0
 
     .line 211
-    const-string v1, "ChatCameraButton"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Failed to play sound effect: "
 
-    const-string v3, "Failed to play sound effect: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/IllegalStateException;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 .end method

@@ -3,128 +3,190 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laio;
+.implements Lair;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lair",
+        "<",
+        "Landroid/graphics/Bitmap;",
+        "Lcom/snapchat/android/model/GeofilterMarkup;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field private final mIsStory:Z
+.field private a:Landroid/graphics/Bitmap;
+
+.field private b:Lcom/snapchat/android/model/GeofilterMarkup;
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>(Landroid/graphics/Bitmap;Lcom/snapchat/android/model/GeofilterMarkup;)V
     .locals 0
 
     .prologue
-    .line 13
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
-    iput-boolean p1, p0, Laiq;->mIsStory:Z
+    .line 16
+    iput-object p1, p0, Laiq;->a:Landroid/graphics/Bitmap;
 
-    .line 15
+    .line 17
+    iput-object p2, p0, Laiq;->b:Lcom/snapchat/android/model/GeofilterMarkup;
+
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ILaje;)I
-    .locals 1
+.method public final a(Landroid/graphics/Bitmap;)V
+    .locals 10
 
     .prologue
-    .line 54
-    const/4 v0, 0x0
+    const/4 v2, 0x1
 
-    return v0
-.end method
+    const/4 v9, 0x0
 
-.method public final a()V
-    .locals 0
+    .line 22
+    iget-object v0, p0, Laiq;->a:Landroid/graphics/Bitmap;
 
-    .prologue
-    .line 18
+    if-eqz v0, :cond_0
+
+    if-nez p1, :cond_1
+
+    .line 31
+    :cond_0
+    :goto_0
     return-void
-.end method
 
-.method public final a(Laje;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;I)V
-    .locals 0
-    .param p1    # Laje;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+    .line 26
+    :cond_1
+    new-instance v0, Landroid/graphics/Canvas;
 
-    .prologue
-    .line 25
-    return-void
-.end method
+    invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-.method public final b()V
-    .locals 0
+    .line 27
+    new-instance v1, Landroid/graphics/Paint;
 
-    .prologue
-    .line 21
-    return-void
-.end method
+    invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
-.method public final c()Laje;
-    .locals 1
+    .line 28
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .prologue
-    .line 44
-    const/4 v0, 0x0
+    .line 30
+    iget-object v2, p0, Laiq;->b:Lcom/snapchat/android/model/GeofilterMarkup;
 
-    return-object v0
-.end method
+    iget-object v2, v2, Lcom/snapchat/android/model/GeofilterMarkup;->layoutParameters:Lajt;
 
-.method public final d()Laje;
-    .locals 1
+    iget v3, v2, Lajt;->xOffset:F
 
-    .prologue
-    .line 49
-    const/4 v0, 0x0
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    return-object v0
-.end method
+    move-result v4
 
-.method public final e()Z
-    .locals 1
+    int-to-float v4, v4
 
-    .prologue
-    .line 29
-    iget-boolean v0, p0, Laiq;->mIsStory:Z
+    mul-float/2addr v3, v4
 
-    return v0
-.end method
+    float-to-int v3, v3
 
-.method public final f()Z
-    .locals 1
+    iget v4, v2, Lajt;->yOffset:F
 
-    .prologue
-    .line 34
-    const/4 v0, 0x0
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
-    return v0
-.end method
+    move-result v5
 
-.method public final g()Z
-    .locals 1
+    int-to-float v5, v5
 
-    .prologue
-    .line 39
-    const/4 v0, 0x0
+    mul-float/2addr v4, v5
 
-    return v0
-.end method
+    float-to-int v4, v4
 
-.method public final h()I
-    .locals 1
+    iget v5, v2, Lajt;->xOffset:F
 
-    .prologue
-    .line 59
-    const/4 v0, 0x0
+    iget v6, v2, Lajt;->xSize:F
 
-    return v0
+    add-float/2addr v5, v6
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    mul-float/2addr v5, v6
+
+    float-to-int v5, v5
+
+    iget v6, v2, Lajt;->yOffset:F
+
+    iget v7, v2, Lajt;->ySize:F
+
+    add-float/2addr v6, v7
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    mul-float/2addr v6, v7
+
+    float-to-int v6, v6
+
+    invoke-virtual {v0}, Landroid/graphics/Canvas;->save()I
+
+    iget v2, v2, Lajt;->rotation:F
+
+    sub-int v7, v5, v3
+
+    div-int/lit8 v7, v7, 0x2
+
+    add-int/2addr v7, v3
+
+    int-to-float v7, v7
+
+    sub-int v8, v6, v4
+
+    div-int/lit8 v8, v8, 0x2
+
+    add-int/2addr v8, v4
+
+    int-to-float v8, v8
+
+    invoke-virtual {v0, v2, v7, v8}, Landroid/graphics/Canvas;->rotate(FFF)V
+
+    new-instance v2, Landroid/graphics/Rect;
+
+    invoke-direct {v2, v3, v4, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    iget-object v3, p0, Laiq;->a:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v3
+
+    iget-object v4, p0, Laiq;->a:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v4
+
+    new-instance v5, Landroid/graphics/Rect;
+
+    invoke-direct {v5, v9, v9, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    iget-object v3, p0, Laiq;->a:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0, v3, v5, v2, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    invoke-virtual {v0}, Landroid/graphics/Canvas;->restore()V
+
+    goto :goto_0
 .end method

@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lari;
-.implements Lbfa;
+.implements Lash;
+.implements Lbfz;
 .implements Lcom/snapchat/android/util/fragment/SnapchatFragment$a;
-.implements Lvb;
+.implements Lvx;
 
 
 # annotations
-.annotation build Lavl;
+.annotation build Lawj;
 .end annotation
 
 
@@ -25,9 +25,9 @@
 
 .field private B:Z
 
-.field private C:Lauu;
+.field private C:Lavs;
 
-.field private D:Laez;
+.field private D:Lafz;
 
 .field private E:Z
 
@@ -35,109 +35,111 @@
 
 .field private G:Z
 
-.field private H:Lys;
+.field private H:Lzo;
 
 .field private final I:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-.field private final J:Lnf;
+.field private final J:Lnw;
 
 .field private final K:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
 .field private final L:Lcom/snapchat/android/analytics/NetworkAnalytics;
 
-.field private final M:Lnj;
+.field private final M:Loa;
 
-.field private final N:Lauw;
+.field private final N:Lavu;
 
 .field private final O:Lcom/snapchat/android/notification/AndroidNotificationManager;
 
-.field private final P:Ladj;
+.field private final P:Laej;
 
-.field private final Q:Lyf;
+.field private final Q:Lzb;
 
 .field private final R:Lcom/snapchat/android/receiver/ConnectivityReceiver;
 
-.field private final S:Lahr;
+.field private final S:Lain;
 
-.field private final T:Lahq;
+.field private final T:Laim;
 
-.field private final U:Lanw;
+.field private final U:Laot;
 
 .field private final V:Lcom/snapchat/android/util/TitleBarManager;
 
-.field private final W:Lnn;
+.field private final W:Loe;
 
-.field private final X:Lni;
+.field private final X:Lnz;
 
-.field private final Y:Lbaa;
+.field private final Y:Lbbb;
 
-.field private final Z:Laol;
+.field private final Z:Lbbb;
 
 .field protected a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-.field private final aa:Latm;
+.field private final aa:Laph;
 
-.field private ab:Lalx;
+.field private final ab:Lauk;
 
-.field private ac:Landroid/view/ViewStub;
+.field private ac:Lamu;
 
-.field private ad:Lvf;
+.field private ad:Landroid/view/ViewStub;
 
-.field private ae:Lcom/snapchat/android/ui/CustomVolumeView;
+.field private ae:Lwb;
 
-.field private af:Lcom/snapchat/android/ui/SnapView;
+.field private af:Lcom/snapchat/android/ui/CustomVolumeView;
 
-.field private ag:Z
+.field private ag:Lcom/snapchat/android/ui/SnapView;
 
 .field private ah:Z
 
-.field private final ai:Ljava/lang/Runnable;
+.field private ai:Z
 
-.field private aj:Landroid/os/Handler;
+.field private final aj:Ljava/lang/Runnable;
 
-.field private ak:Landroid/content/ServiceConnection;
+.field private ak:Landroid/os/Handler;
+
+.field private al:Landroid/content/ServiceConnection;
 
 .field protected b:I
 
-.field protected c:Lbdj;
+.field protected c:Lbej;
 
-.field protected d:Lbcz;
+.field protected d:Lbdz;
 
 .field protected e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
 .field protected f:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
 
-.field protected g:Laex;
+.field protected g:Lafx;
 
 .field h:Landroid/app/ProgressDialog;
 
-.field public j:Labh;
+.field public j:Lach;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field public k:Lapd;
+.field public k:Lapz;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field protected l:Lbez;
+.field protected l:Lbfy;
 
-.field protected m:Lyt;
+.field protected m:Lzp;
 
-.field protected n:Lyv;
+.field protected n:Lzr;
 
-.field protected o:Laux;
+.field protected o:Lavv;
 
-.field protected p:Laup;
+.field protected p:Lavn;
 
 .field public final q:Lcom/snapchat/android/analytics/NotificationAnalytics;
 
 .field protected r:Lcom/squareup/otto/Bus;
 
-.field public s:Lma;
+.field public s:Lms;
 
-.field private final u:Lme;
+.field private final u:Lmw;
 
 .field private v:Z
 
@@ -152,27 +154,27 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 27
+    .locals 28
 
     .prologue
-    .line 303
+    .line 307
     invoke-static {}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a()Lcom/snapchat/android/notification/AndroidNotificationManager;
 
     move-result-object v1
 
-    new-instance v2, Lyt;
+    new-instance v2, Lzp;
 
-    invoke-direct {v2}, Lyt;-><init>()V
+    invoke-direct {v2}, Lzp;-><init>()V
 
-    new-instance v3, Lys;
+    new-instance v3, Lzo;
 
-    invoke-direct {v3}, Lys;-><init>()V
+    invoke-direct {v3}, Lzo;-><init>()V
 
-    new-instance v4, Lyv;
+    new-instance v4, Lzr;
 
-    invoke-direct {v4}, Lyv;-><init>()V
+    invoke-direct {v4}, Lzr;-><init>()V
 
-    invoke-static {}, Laux;->a()Laux;
+    invoke-static {}, Lavv;->a()Lavv;
 
     move-result-object v5
 
@@ -180,7 +182,7 @@
 
     move-result-object v6
 
-    invoke-static {}, Lnf;->a()Lnf;
+    invoke-static {}, Lnw;->a()Lnw;
 
     move-result-object v7
 
@@ -192,27 +194,27 @@
 
     move-result-object v9
 
-    invoke-static {}, Lnj;->a()Lnj;
+    invoke-static {}, Loa;->a()Loa;
 
     move-result-object v10
 
-    invoke-static {}, Lauw;->a()Lauw;
+    invoke-static {}, Lavu;->a()Lavu;
 
     move-result-object v11
 
-    new-instance v12, Lme;
+    new-instance v12, Lmw;
 
-    invoke-direct {v12}, Lme;-><init>()V
+    invoke-direct {v12}, Lmw;-><init>()V
 
-    invoke-static {}, Ladj;->a()Ladj;
+    invoke-static {}, Laej;->a()Laej;
 
     move-result-object v13
 
-    invoke-static {}, Lyf;->a()Lyf;
+    invoke-static {}, Lzb;->a()Lzb;
 
     move-result-object v14
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v15
 
@@ -220,15 +222,15 @@
 
     invoke-direct/range {v16 .. v16}, Lcom/snapchat/android/receiver/ConnectivityReceiver;-><init>()V
 
-    invoke-static {}, Lahr;->a()Lahr;
+    invoke-static {}, Lain;->a()Lain;
 
     move-result-object v17
 
-    new-instance v18, Lahq;
+    new-instance v18, Laim;
 
-    invoke-direct/range {v18 .. v18}, Lahq;-><init>()V
+    invoke-direct/range {v18 .. v18}, Laim;-><init>()V
 
-    invoke-static {}, Lanw;->a()Lanw;
+    invoke-static {}, Laot;->a()Laot;
 
     move-result-object v19
 
@@ -236,251 +238,260 @@
 
     invoke-direct/range {v20 .. v20}, Lcom/snapchat/android/util/TitleBarManager;-><init>()V
 
-    invoke-static {}, Lnn;->a()Lnn;
+    invoke-static {}, Loe;->a()Loe;
 
     move-result-object v21
 
-    invoke-static {}, Lni;->a()Lni;
+    invoke-static {}, Lnz;->a()Lnz;
 
     move-result-object v22
 
-    invoke-static {}, Lbaa;->a()Lbaa;
+    invoke-static {}, Lbbb;->b()Lbbb;
 
     move-result-object v23
 
-    invoke-static {}, Lalx;->a()Lalx;
+    invoke-static {}, Lbbb;->a()Lbbb;
 
     move-result-object v24
 
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Lamu;->a()Lamu;
 
     move-result-object v25
 
-    invoke-static {}, Latm;->a()Latm;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v26
 
+    invoke-static {}, Lauk;->a()Lauk;
+
+    move-result-object v27
+
     move-object/from16 v0, p0
 
-    invoke-direct/range {v0 .. v26}, Lcom/snapchat/android/LandingPageActivity;-><init>(Lcom/snapchat/android/notification/AndroidNotificationManager;Lyt;Lys;Lyv;Laux;Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Lnf;Lcom/snapchat/android/analytics/CameraEventAnalytics;Lcom/snapchat/android/analytics/NetworkAnalytics;Lnj;Lauw;Lme;Ladj;Lyf;Lcom/squareup/otto/Bus;Lcom/snapchat/android/receiver/ConnectivityReceiver;Lahr;Lahq;Lanw;Lcom/snapchat/android/util/TitleBarManager;Lnn;Lni;Lbaa;Lalx;Laol;Latm;)V
+    invoke-direct/range {v0 .. v27}, Lcom/snapchat/android/LandingPageActivity;-><init>(Lcom/snapchat/android/notification/AndroidNotificationManager;Lzp;Lzo;Lzr;Lavv;Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Lnw;Lcom/snapchat/android/analytics/CameraEventAnalytics;Lcom/snapchat/android/analytics/NetworkAnalytics;Loa;Lavu;Lmw;Laej;Lzb;Lcom/squareup/otto/Bus;Lcom/snapchat/android/receiver/ConnectivityReceiver;Lain;Laim;Laot;Lcom/snapchat/android/util/TitleBarManager;Loe;Lnz;Lbbb;Lbbb;Lamu;Laph;Lauk;)V
 
-    .line 330
+    .line 335
     return-void
 .end method
 
-.method constructor <init>(Lcom/snapchat/android/notification/AndroidNotificationManager;Lyt;Lys;Lyv;Laux;Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Lnf;Lcom/snapchat/android/analytics/CameraEventAnalytics;Lcom/snapchat/android/analytics/NetworkAnalytics;Lnj;Lauw;Lme;Ladj;Lyf;Lcom/squareup/otto/Bus;Lcom/snapchat/android/receiver/ConnectivityReceiver;Lahr;Lahq;Lanw;Lcom/snapchat/android/util/TitleBarManager;Lnn;Lni;Lbaa;Lalx;Laol;Latm;)V
+.method constructor <init>(Lcom/snapchat/android/notification/AndroidNotificationManager;Lzp;Lzo;Lzr;Lavv;Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Lnw;Lcom/snapchat/android/analytics/CameraEventAnalytics;Lcom/snapchat/android/analytics/NetworkAnalytics;Loa;Lavu;Lmw;Laej;Lzb;Lcom/squareup/otto/Bus;Lcom/snapchat/android/receiver/ConnectivityReceiver;Lain;Laim;Laot;Lcom/snapchat/android/util/TitleBarManager;Loe;Lnz;Lbbb;Lbbb;Lamu;Laph;Lauk;)V
     .locals 2
 
     .prologue
-    .line 357
+    .line 363
     invoke-direct {p0}, Lcom/snapchat/android/SnapchatActivity;-><init>()V
 
-    .line 219
+    .line 222
     const/4 v1, 0x2
 
     iput v1, p0, Lcom/snapchat/android/LandingPageActivity;->b:I
 
-    .line 220
+    .line 223
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->v:Z
 
-    .line 222
+    .line 225
     const/high16 v1, -0x40800000    # -1.0f
 
     iput v1, p0, Lcom/snapchat/android/LandingPageActivity;->w:F
 
-    .line 223
+    .line 226
     const/high16 v1, -0x40800000    # -1.0f
 
     iput v1, p0, Lcom/snapchat/android/LandingPageActivity;->x:F
 
-    .line 225
+    .line 228
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->z:Z
 
-    .line 227
+    .line 230
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->B:Z
 
-    .line 240
+    .line 243
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->E:Z
 
-    .line 241
+    .line 244
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->F:Z
 
-    .line 242
+    .line 245
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->G:Z
 
-    .line 247
-    new-instance v1, Lbez;
+    .line 250
+    new-instance v1, Lbfy;
 
-    invoke-direct {v1}, Lbez;-><init>()V
+    invoke-direct {v1}, Lbfy;-><init>()V
 
-    iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->l:Lbez;
+    iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->l:Lbfy;
 
-    .line 257
+    .line 260
     new-instance v1, Lcom/snapchat/android/analytics/NotificationAnalytics;
 
     invoke-direct {v1}, Lcom/snapchat/android/analytics/NotificationAnalytics;-><init>()V
 
     iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->q:Lcom/snapchat/android/analytics/NotificationAnalytics;
 
-    .line 285
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->ag:Z
-
-    .line 290
+    .line 289
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->ah:Z
 
-    .line 291
+    .line 294
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->ai:Z
+
+    .line 295
     new-instance v1, Lcom/snapchat/android/LandingPageActivity$1;
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/LandingPageActivity$1;-><init>(Lcom/snapchat/android/LandingPageActivity;)V
 
-    iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ai:Ljava/lang/Runnable;
+    iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->aj:Ljava/lang/Runnable;
 
-    .line 387
+    .line 394
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->aj:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ak:Landroid/os/Handler;
 
-    .line 2139
+    .line 2154
     new-instance v1, Lcom/snapchat/android/LandingPageActivity$7;
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/LandingPageActivity$7;-><init>(Lcom/snapchat/android/LandingPageActivity;)V
 
-    iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ak:Landroid/content/ServiceConnection;
+    iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->al:Landroid/content/ServiceConnection;
 
-    .line 358
+    .line 364
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v1}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v1
 
-    invoke-interface {v1, p0}, Laza;->a(Lcom/snapchat/android/LandingPageActivity;)V
-
-    .line 359
-    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->O:Lcom/snapchat/android/notification/AndroidNotificationManager;
-
-    .line 360
-    iput-object p2, p0, Lcom/snapchat/android/LandingPageActivity;->m:Lyt;
-
-    .line 361
-    iput-object p3, p0, Lcom/snapchat/android/LandingPageActivity;->H:Lys;
-
-    .line 362
-    iput-object p4, p0, Lcom/snapchat/android/LandingPageActivity;->n:Lyv;
-
-    .line 363
-    iput-object p5, p0, Lcom/snapchat/android/LandingPageActivity;->o:Laux;
-
-    .line 364
-    iput-object p6, p0, Lcom/snapchat/android/LandingPageActivity;->I:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    invoke-interface {v1, p0}, Lazy;->a(Lcom/snapchat/android/LandingPageActivity;)V
 
     .line 365
-    iput-object p7, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnf;
+    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->O:Lcom/snapchat/android/notification/AndroidNotificationManager;
 
     .line 366
-    iput-object p8, p0, Lcom/snapchat/android/LandingPageActivity;->K:Lcom/snapchat/android/analytics/CameraEventAnalytics;
+    iput-object p2, p0, Lcom/snapchat/android/LandingPageActivity;->m:Lzp;
 
     .line 367
-    iput-object p9, p0, Lcom/snapchat/android/LandingPageActivity;->L:Lcom/snapchat/android/analytics/NetworkAnalytics;
+    iput-object p3, p0, Lcom/snapchat/android/LandingPageActivity;->H:Lzo;
 
     .line 368
-    iput-object p10, p0, Lcom/snapchat/android/LandingPageActivity;->M:Lnj;
+    iput-object p4, p0, Lcom/snapchat/android/LandingPageActivity;->n:Lzr;
 
     .line 369
-    iput-object p11, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lauw;
+    iput-object p5, p0, Lcom/snapchat/android/LandingPageActivity;->o:Lavv;
 
     .line 370
-    iput-object p12, p0, Lcom/snapchat/android/LandingPageActivity;->u:Lme;
+    iput-object p6, p0, Lcom/snapchat/android/LandingPageActivity;->I:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     .line 371
+    iput-object p7, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnw;
+
+    .line 372
+    iput-object p8, p0, Lcom/snapchat/android/LandingPageActivity;->K:Lcom/snapchat/android/analytics/CameraEventAnalytics;
+
+    .line 373
+    iput-object p9, p0, Lcom/snapchat/android/LandingPageActivity;->L:Lcom/snapchat/android/analytics/NetworkAnalytics;
+
+    .line 374
+    iput-object p10, p0, Lcom/snapchat/android/LandingPageActivity;->M:Loa;
+
+    .line 375
+    iput-object p11, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lavu;
+
+    .line 376
+    iput-object p12, p0, Lcom/snapchat/android/LandingPageActivity;->u:Lmw;
+
+    .line 377
     move-object/from16 v0, p15
 
     iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    .line 372
-    iput-object p13, p0, Lcom/snapchat/android/LandingPageActivity;->P:Ladj;
+    .line 378
+    iput-object p13, p0, Lcom/snapchat/android/LandingPageActivity;->P:Laej;
 
-    .line 373
+    .line 379
     move-object/from16 v0, p14
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Q:Lyf;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Q:Lzb;
 
-    .line 374
+    .line 380
     move-object/from16 v0, p16
 
     iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->R:Lcom/snapchat/android/receiver/ConnectivityReceiver;
 
-    .line 375
+    .line 381
     move-object/from16 v0, p17
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->S:Lahr;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->S:Lain;
 
-    .line 376
+    .line 382
     move-object/from16 v0, p18
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->T:Lahq;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->T:Laim;
 
-    .line 377
+    .line 383
     move-object/from16 v0, p19
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->U:Lanw;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->U:Laot;
 
-    .line 378
+    .line 384
     move-object/from16 v0, p20
 
     iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->V:Lcom/snapchat/android/util/TitleBarManager;
 
-    .line 379
+    .line 385
     move-object/from16 v0, p21
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->W:Lnn;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->W:Loe;
 
-    .line 380
+    .line 386
     move-object/from16 v0, p22
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->X:Lni;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->X:Lnz;
 
-    .line 381
+    .line 387
     move-object/from16 v0, p23
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbaa;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbbb;
 
-    .line 382
+    .line 388
     move-object/from16 v0, p24
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ab:Lalx;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Z:Lbbb;
 
-    .line 383
+    .line 389
     move-object/from16 v0, p25
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Z:Laol;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ac:Lamu;
 
-    .line 384
+    .line 390
     move-object/from16 v0, p26
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->aa:Latm;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->aa:Laph;
 
-    .line 385
+    .line 391
+    move-object/from16 v0, p27
+
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ab:Lauk;
+
+    .line 392
     return-void
 .end method
 
@@ -488,7 +499,7 @@
     .locals 1
 
     .prologue
-    .line 1016
+    .line 1027
     invoke-virtual {p0, p1}, Landroid/support/v4/app/FragmentManager;->getBackStackEntryAt(I)Landroid/support/v4/app/FragmentManager$BackStackEntry;
 
     move-result-object v0
@@ -497,7 +508,7 @@
 
     move-result-object v0
 
-    .line 1017
+    .line 1028
     invoke-virtual {p0, v0}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
 
     move-result-object v0
@@ -515,7 +526,7 @@
 
     const/4 v3, 0x1
 
-    .line 1681
+    .line 1696
     :try_start_0
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
@@ -527,21 +538,21 @@
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1687
+    .line 1699
     :goto_0
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v0, v3}, Lcom/snapchat/android/util/SnapchatViewPager;->setPagingEnabled(Z)V
 
-    .line 1690
+    .line 1705
     if-nez p1, :cond_0
 
-    .line 1691
+    .line 1706
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v0, v3}, Lcom/snapchat/android/util/SnapchatViewPager;->setChatFragmentAccessible(Z)V
 
-    .line 1693
+    .line 1708
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
@@ -549,37 +560,31 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(IZ)V
 
-    .line 1697
+    .line 1712
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 1698
+    .line 1713
     if-eqz v0, :cond_1
 
-    .line 1699
+    .line 1714
     invoke-virtual {v0, v3}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
 
-    .line 1702
+    .line 1717
     :cond_1
-    iput-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    iput-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
-    .line 1703
+    .line 1718
     return-void
 
-    .line 1683
     :catch_0
     move-exception v0
-
-    .line 1684
-    const-string v1, "LandingPageActivity"
-
-    invoke-static {v1, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
 
-.method private a(Laim;)V
+.method private a(Laji;)V
     .locals 6
 
     .prologue
@@ -587,22 +592,22 @@
 
     const/4 v4, 0x1
 
-    .line 1546
+    .line 1561
     iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
-    .line 1547
+    .line 1562
     iget-object v1, p1, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
     sget-object v2, Lcom/snapchat/android/model/Mediabryo$SnapType;->SNAP:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
     if-ne v1, v2, :cond_2
 
-    .line 1548
+    .line 1563
     iget-boolean v1, p1, Lcom/snapchat/android/model/Mediabryo;->mIsChatMedia:Z
 
     if-eqz v1, :cond_1
 
-    .line 1549
+    .line 1564
     iget-object v1, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
     const-string v2, "~"
@@ -611,103 +616,103 @@
 
     move-result-object v1
 
-    .line 1550
+    .line 1565
     array-length v2, v1
 
     const/4 v3, 0x2
 
     if-ge v2, v3, :cond_0
 
-    .line 1562
+    .line 1577
     :goto_0
     return-void
 
-    .line 1555
+    .line 1570
     :cond_0
     aget-object v1, v1, v4
 
     iput-object v1, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    .line 1556
+    .line 1571
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
     iget-object v1, v1, Lcom/snapchat/android/util/eventbus/InChatSnapEvent;->mRecipients:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/model/MediaMailingMetadata;->a(Ljava/lang/String;)V
 
-    .line 1558
+    .line 1573
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->n:Lyv;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->n:Lzr;
 
     iget-object v1, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    invoke-static {v1}, Lyv;->a(Ljava/lang/String;)V
+    invoke-static {v1}, Lzr;->a(Ljava/lang/String;)V
 
-    iget-object v1, v0, Lyv;->d:Lnq;
+    iget-object v1, v0, Lzr;->d:Loh;
 
-    invoke-virtual {v1}, Lnq;->a()V
+    invoke-virtual {v1}, Loh;->a()V
 
-    iget-object v1, v0, Lyv;->c:Lajn;
+    iget-object v1, v0, Lzr;->c:Laki;
 
     sget-object v2, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->WILL_UPLOAD_AFTER_SAVE:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
 
-    invoke-virtual {v1, p1, v2}, Lajn;->a(Laim;Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;)V
+    invoke-virtual {v1, p1, v2}, Laki;->a(Laji;Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;)V
 
-    new-instance v1, Lyv$1;
+    new-instance v1, Lzr$1;
 
-    invoke-direct {v1, v0, p1}, Lyv$1;-><init>(Lyv;Laim;)V
+    invoke-direct {v1, v0, p1}, Lzr$1;-><init>(Lzr;Laji;)V
 
-    sget-object v0, Lyv;->a:Ljava/util/HashMap;
+    sget-object v0, Lzr;->a:Ljava/util/HashMap;
 
     iget-object v2, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lauh;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v0, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    new-array v2, v4, [Laim;
+    new-array v2, v4, [Laji;
 
     aput-object p1, v2, v5
 
-    invoke-virtual {v1, v0, v2}, Laww;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v0, v2}, Laxu;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto :goto_0
 
-    .line 1560
+    .line 1575
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->n:Lyv;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->n:Lzr;
 
     iget-object v1, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    invoke-static {v1}, Lyv;->b(Ljava/lang/String;)V
+    invoke-static {v1}, Lzr;->b(Ljava/lang/String;)V
 
-    iget-object v1, v0, Lyv;->c:Lajn;
+    iget-object v1, v0, Lzr;->c:Laki;
 
     sget-object v2, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->WILL_UPLOAD_AFTER_SAVE:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
 
-    invoke-virtual {v1, p1, v2}, Lajn;->a(Laim;Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;)V
+    invoke-virtual {v1, p1, v2}, Laki;->a(Laji;Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;)V
 
-    iget-object v1, v0, Lyv;->d:Lnq;
+    iget-object v1, v0, Lzr;->d:Loh;
 
-    invoke-virtual {v1}, Lnq;->a()V
+    invoke-virtual {v1}, Loh;->a()V
 
-    new-instance v1, Lyv$2;
+    new-instance v1, Lzr$2;
 
-    invoke-direct {v1, v0, p1}, Lyv$2;-><init>(Lyv;Laim;)V
+    invoke-direct {v1, v0, p1}, Lzr$2;-><init>(Lzr;Laji;)V
 
-    sget-object v0, Lyv;->b:Ljava/util/HashMap;
+    sget-object v0, Lzr;->b:Ljava/util/HashMap;
 
     iget-object v2, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lauh;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v0, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    new-array v2, v4, [Laim;
+    new-array v2, v4, [Laji;
 
     aput-object p1, v2, v5
 
-    invoke-virtual {v1, v0, v2}, Lawv;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v0, v2}, Laxt;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto :goto_0
 .end method
@@ -716,20 +721,20 @@
     .locals 3
 
     .prologue
-    .line 189
+    .line 192
     instance-of v0, p1, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
     if-eqz v0, :cond_0
 
     if-eqz p2, :cond_0
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v0, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v1, v0}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v1, v0}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->onCameraStateEvent(Lbap;)V
+    invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->onCameraStateEvent(Lbbq;)V
 
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
@@ -743,7 +748,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/CameraFragment;->onCameraStateEvent(Lbap;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/CameraFragment;->onCameraStateEvent(Lbbq;)V
 
     :cond_0
     return-void
@@ -755,15 +760,15 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1715
+    .line 1730
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v1
 
-    .line 1717
+    .line 1732
     iget-object v2, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
-    .line 1718
+    .line 1733
     instance-of v0, v1, Lcom/snapchat/android/preview/SnapPreviewFragment;
 
     if-eqz v0, :cond_0
@@ -772,16 +777,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 1720
+    .line 1735
     invoke-virtual {v2}, Landroid/support/v4/app/FragmentManager;->popBackStack()V
 
-    .line 1723
+    .line 1738
     :cond_0
     if-eqz v1, :cond_1
 
     invoke-virtual {v1, v4}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
 
-    .line 1727
+    .line 1742
     :cond_1
     invoke-virtual {v2}, Landroid/support/v4/app/FragmentManager;->getBackStackEntryCount()I
 
@@ -789,55 +794,55 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 1728
+    .line 1743
     if-ltz v0, :cond_2
 
-    .line 1729
+    .line 1744
     invoke-static {v2, v0}, Lcom/snapchat/android/LandingPageActivity;->a(Landroid/support/v4/app/FragmentManager;I)Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 1730
+    .line 1745
     instance-of v3, v0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
     if-eqz v3, :cond_2
 
-    .line 1731
+    .line 1746
     check-cast v0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->a:Lcom/snapchat/android/LeftSwipeViewPager;
 
     invoke-virtual {v0, v4}, Lcom/snapchat/android/LeftSwipeViewPager;->setLeftSwipeEnable(Z)V
 
-    .line 1735
+    .line 1750
     :cond_2
     invoke-virtual {v2}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v0
 
-    .line 1736
+    .line 1751
     if-eqz p3, :cond_3
 
     if-eqz v1, :cond_3
 
-    .line 1737
+    .line 1752
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentTransaction;->hide(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 1739
+    .line 1754
     :cond_3
-    const v1, 0x7f0a0248
+    const v1, 0x7f0a0246
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 1740
+    .line 1755
     invoke-virtual {v0, p2}, Landroid/support/v4/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 1744
+    .line 1759
     :try_start_0
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
 
-    .line 1747
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->aj:Landroid/os/Handler;
+    .line 1762
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ak:Landroid/os/Handler;
 
     new-instance v1, Lcom/snapchat/android/LandingPageActivity$5;
 
@@ -847,18 +852,13 @@
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1757
+    .line 1771
     :goto_0
     return-void
 
-    .line 1753
+    .line 1770
     :catch_0
     move-exception v0
-
-    .line 1755
-    const-string v1, "LandingPageActivity"
-
-    invoke-static {v1, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
@@ -875,26 +875,26 @@
 
     const/4 v0, 0x1
 
-    .line 2047
+    .line 2062
     sparse-switch p1, :sswitch_data_0
 
-    .line 2054
+    .line 2069
     iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v3, Lbbv;
+    new-instance v3, Lbcv;
 
-    invoke-direct {v3, p1, p2}, Lbbv;-><init>(ILandroid/view/KeyEvent;)V
+    invoke-direct {v3, p1, p2}, Lbcv;-><init>(ILandroid/view/KeyEvent;)V
 
     invoke-virtual {v2, v3}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 2057
+    .line 2072
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->d()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 2060
+    .line 2075
     const/16 v2, 0x1b
 
     if-eq p1, v2, :cond_0
@@ -907,13 +907,13 @@
 
     if-ne p1, v2, :cond_5
 
-    .line 2078
+    .line 2093
     :cond_0
     :goto_0
     :sswitch_0
     return v0
 
-    .line 2065
+    .line 2080
     :cond_1
     sget-object v2, Lcom/snapchat/android/LandingPageActivity;->t:Lcom/snapchat/android/LandingPageActivity;
 
@@ -934,21 +934,21 @@
 
     if-ne p1, v4, :cond_5
 
-    .line 2069
+    .line 2084
     :cond_2
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->p()V
 
-    .line 2070
+    .line 2085
     if-ne p1, v4, :cond_4
 
-    .line 2071
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ae:Lcom/snapchat/android/ui/CustomVolumeView;
+    .line 2086
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->af:Lcom/snapchat/android/ui/CustomVolumeView;
 
     invoke-virtual {v1, v0}, Lcom/snapchat/android/ui/CustomVolumeView;->a(I)V
 
     goto :goto_0
 
-    .line 2065
+    .line 2080
     :cond_3
     sget-object v2, Lcom/snapchat/android/LandingPageActivity;->t:Lcom/snapchat/android/LandingPageActivity;
 
@@ -956,18 +956,18 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lavh;->a(Landroid/view/Window;)Z
+    invoke-static {v2}, Lawf;->a(Landroid/view/Window;)Z
 
     move-result v2
 
     goto :goto_1
 
-    .line 2072
+    .line 2087
     :cond_4
     if-ne p1, v5, :cond_0
 
-    .line 2073
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ae:Lcom/snapchat/android/ui/CustomVolumeView;
+    .line 2088
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->af:Lcom/snapchat/android/ui/CustomVolumeView;
 
     const/4 v2, -0x1
 
@@ -978,10 +978,10 @@
     :cond_5
     move v0, v1
 
-    .line 2078
+    .line 2093
     goto :goto_0
 
-    .line 2047
+    .line 2062
     :sswitch_data_0
     .sparse-switch
         0x13 -> :sswitch_0
@@ -996,10 +996,10 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 192
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->ah:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->ai:Z
 
     return v0
 .end method
@@ -1008,7 +1008,7 @@
     .locals 0
 
     .prologue
-    .line 189
+    .line 192
     iput-boolean p1, p0, Lcom/snapchat/android/LandingPageActivity;->E:Z
 
     return p1
@@ -1018,7 +1018,7 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 192
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->K:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
     return-object v0
@@ -1028,7 +1028,7 @@
     .locals 2
 
     .prologue
-    .line 836
+    .line 847
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1037,20 +1037,20 @@
 
     move-result-object v0
 
-    .line 837
+    .line 848
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 838
+    .line 849
     const-string v1, "snapchatUserIsLoggedIn"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 839
+    .line 850
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 840
+    .line 851
     return-void
 .end method
 
@@ -1058,18 +1058,18 @@
     .locals 0
 
     .prologue
-    .line 189
+    .line 192
     iput-boolean p1, p0, Lcom/snapchat/android/LandingPageActivity;->G:Z
 
     return p1
 .end method
 
-.method static synthetic c(Lcom/snapchat/android/LandingPageActivity;)Lbaa;
+.method static synthetic c(Lcom/snapchat/android/LandingPageActivity;)Lbbb;
     .locals 1
 
     .prologue
-    .line 189
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbaa;
+    .line 192
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbbb;
 
     return-object v0
 .end method
@@ -1078,38 +1078,38 @@
     .locals 6
 
     .prologue
-    .line 189
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->D:Laez;
+    .line 192
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->D:Lafz;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Laey;
+    new-instance v1, Lafy;
 
-    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->D:Laez;
+    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->D:Lafz;
 
-    iget-object v2, v2, Laez;->a:Ljava/lang/String;
+    iget-object v2, v2, Lafz;->a:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/snapchat/android/LandingPageActivity;->D:Laez;
+    iget-object v3, p0, Lcom/snapchat/android/LandingPageActivity;->D:Lafz;
 
-    iget-object v3, v3, Laez;->b:Ljava/lang/String;
+    iget-object v3, v3, Lafz;->b:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->D:Laez;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->D:Lafz;
 
-    iget-object v4, v4, Laez;->c:Ljava/lang/String;
+    iget-object v4, v4, Lafz;->c:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/snapchat/android/LandingPageActivity;->D:Laez;
+    iget-object v5, p0, Lcom/snapchat/android/LandingPageActivity;->D:Lafz;
 
-    iget-boolean v5, v5, Laez;->d:Z
+    iget-boolean v5, v5, Lafz;->d:Z
 
-    invoke-direct {v1, v2, v3, v4, v5}, Laey;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {v1, v2, v3, v4, v5}, Lafy;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->D:Laez;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->D:Lafz;
 
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
@@ -1125,55 +1125,43 @@
     .locals 1
 
     .prologue
-    .line 2136
+    .line 2151
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     return-object v0
 .end method
 
 .method static j()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 2292
+    .line 2307
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     if-eqz v0, :cond_0
 
-    .line 2293
+    .line 2308
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/util/chat/SecureChatService;->a()V
+    iget-object v0, v0, Lcom/snapchat/android/util/chat/SecureChatService;->mSecureChatSession:Lcom/snapchat/android/util/chat/SecureChatSession;
 
-    .line 2297
-    :goto_0
-    return-void
+    invoke-virtual {v0}, Lcom/snapchat/android/util/chat/SecureChatSession;->b()V
 
-    .line 2295
+    .line 2310
     :cond_0
-    const-string v0, "LandingPageActivity"
-
-    const-string v1, "Cannot start a session because sSecureChatService is null."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
+    return-void
 .end method
 
 .method private n()V
     .locals 2
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    .line 501
+    .line 509
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
-    .line 502
+    .line 510
     :goto_0
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->getBackStackEntryCount()I
 
@@ -1181,25 +1169,34 @@
 
     if-lez v1, :cond_0
 
-    .line 503
+    .line 511
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->popBackStackImmediate()Z
 
     goto :goto_0
 
-    .line 508
+    .line 514
     :cond_0
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
+
+    new-instance v1, Lbbm;
+
+    invoke-direct {v1}, Lbbm;-><init>()V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 518
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     if-eqz v0, :cond_1
 
-    .line 509
+    .line 519
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setPagingEnabled(Z)V
 
-    .line 511
+    .line 521
     :cond_1
     return-void
 .end method
@@ -1208,35 +1205,35 @@
     .locals 2
 
     .prologue
-    .line 619
+    .line 630
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->B:Z
 
-    .line 620
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->k:Lapd;
+    .line 631
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->k:Lapz;
 
-    invoke-virtual {v0}, Lapd;->b()V
+    invoke-virtual {v0}, Lapz;->b()V
 
-    .line 621
+    .line 632
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/snapchat/android/SnapkidzHomeActivity;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 622
+    .line 633
     const/high16 v1, 0x4000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 623
+    .line 634
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 624
+    .line 635
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->finish()V
 
-    .line 625
+    .line 636
     return-void
 .end method
 
@@ -1244,18 +1241,18 @@
     .locals 2
 
     .prologue
-    .line 719
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ae:Lcom/snapchat/android/ui/CustomVolumeView;
+    .line 730
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->af:Lcom/snapchat/android/ui/CustomVolumeView;
 
     if-eqz v0, :cond_0
 
-    .line 726
+    .line 737
     :goto_0
     return-void
 
-    .line 723
+    .line 734
     :cond_0
-    const v0, 0x7f0a024d
+    const v0, 0x7f0a024b
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->findViewById(I)Landroid/view/View;
 
@@ -1263,12 +1260,12 @@
 
     check-cast v0, Landroid/view/ViewStub;
 
-    .line 724
+    .line 735
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     move-result-object v0
 
-    .line 725
+    .line 736
     const v1, 0x7f0a0195
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1277,48 +1274,48 @@
 
     check-cast v0, Lcom/snapchat/android/ui/CustomVolumeView;
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ae:Lcom/snapchat/android/ui/CustomVolumeView;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->af:Lcom/snapchat/android/ui/CustomVolumeView;
 
     goto :goto_0
 .end method
 
 .method private q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 1026
+    .line 1037
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
-    .line 1027
+    .line 1038
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->getBackStackEntryCount()I
 
     move-result v1
 
-    .line 1028
+    .line 1039
     if-lez v1, :cond_1
 
-    .line 1029
+    .line 1040
     add-int/lit8 v1, v1, -0x1
 
     invoke-static {v0, v1}, Lcom/snapchat/android/LandingPageActivity;->a(Landroid/support/v4/app/FragmentManager;I)Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 1030
+    .line 1041
     instance-of v1, v0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
     if-eqz v1, :cond_0
 
-    .line 1031
+    .line 1042
     check-cast v0, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/LeftSwipeContainerFragment;->a()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 1036
+    .line 1047
     :cond_0
     :goto_0
     return-object v0
@@ -1354,12 +1351,12 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 1468
+    .line 1483
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 1469
+    .line 1484
     if-eqz v0, :cond_0
 
     const-string v1, "fromServerNotification"
@@ -1372,7 +1369,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1470
+    .line 1485
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->q:Lcom/snapchat/android/analytics/NotificationAnalytics;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1381,7 +1378,7 @@
 
     iput-wide v2, v0, Lcom/snapchat/android/analytics/NotificationAnalytics;->mTimeOnPressed:J
 
-    .line 1473
+    .line 1488
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->L:Lcom/snapchat/android/analytics/NetworkAnalytics;
 
     iget-object v1, v0, Lcom/snapchat/android/analytics/NetworkAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
@@ -1408,7 +1405,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-    .line 1475
+    .line 1490
     :cond_0
     return-void
 .end method
@@ -1417,18 +1414,18 @@
     .locals 3
 
     .prologue
-    .line 2163
+    .line 2178
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/snapchat/android/util/chat/SecureChatService;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2164
+    .line 2179
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 2165
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ak:Landroid/content/ServiceConnection;
+    .line 2180
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->al:Landroid/content/ServiceConnection;
 
     const/4 v2, 0x1
 
@@ -1438,10 +1435,10 @@
 
     if-nez v1, :cond_0
 
-    .line 2166
+    .line 2181
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->stopService(Landroid/content/Intent;)Z
 
-    .line 2168
+    .line 2183
     :cond_0
     return-void
 .end method
@@ -1450,19 +1447,19 @@
     .locals 3
 
     .prologue
-    .line 2246
+    .line 2261
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getSupportLoaderManager()Landroid/support/v4/app/LoaderManager;
 
     move-result-object v0
 
-    .line 2247
+    .line 2262
     const/16 v1, 0x64
 
-    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->U:Lanw;
+    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->U:Laot;
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/LoaderManager;->initLoader$71be8de6(ILandroid/support/v4/app/LoaderManager$LoaderCallbacks;)Landroid/support/v4/content/Loader;
 
-    .line 2248
+    .line 2263
     return-void
 .end method
 
@@ -1472,18 +1469,18 @@
     .locals 2
 
     .prologue
-    .line 709
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lma;
+    .line 720
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lms;
 
     if-eqz v0, :cond_0
 
-    .line 716
+    .line 727
     :goto_0
     return-void
 
-    .line 713
+    .line 724
     :cond_0
-    const v0, 0x7f0a024c
+    const v0, 0x7f0a024a
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->findViewById(I)Landroid/view/View;
 
@@ -1491,21 +1488,21 @@
 
     check-cast v0, Landroid/view/ViewStub;
 
-    .line 714
+    .line 725
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 715
-    new-instance v0, Lma;
+    .line 726
+    new-instance v0, Lms;
 
-    const v1, 0x7f0a025c
+    const v1, 0x7f0a025a
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Lma;-><init>(Landroid/content/Context;Landroid/view/View;)V
+    invoke-direct {v0, p0, v1}, Lms;-><init>(Landroid/content/Context;Landroid/view/View;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lma;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lms;
 
     goto :goto_0
 .end method
@@ -1514,82 +1511,70 @@
     .locals 2
 
     .prologue
-    .line 860
+    .line 871
     if-nez p1, :cond_0
 
-    .line 861
+    .line 872
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setChatFragmentAccessible(Z)V
 
-    .line 863
+    .line 874
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v0, p1, p2}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(IZ)V
 
-    .line 864
+    .line 875
     return-void
 .end method
 
-.method protected final a(Lajv;)V
-    .locals 5
-    .annotation build Lavl;
+.method protected final a(Lakp;)V
+    .locals 4
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 2253
-    invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->a(Lajv;)V
+    .line 2268
+    invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->a(Lakp;)V
 
-    .line 2254
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnf;
+    .line 2269
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnw;
 
-    iget-object v1, v0, Lnf;->mUserLoadMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    if-eqz v1, :cond_0
-
-    iget-boolean v1, v0, Lnf;->mDidLoadFromDatabase:Z
+    iget-object v1, v0, Lnw;->mUserLoadMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, v0, Lnf;->mUserLoadMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-boolean v1, v0, Lnw;->mDidLoadFromDatabase:Z
 
-    invoke-virtual {v1, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
+    if-eqz v1, :cond_0
+
+    iget-object v1, v0, Lnw;->mUserLoadMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    invoke-virtual {v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
     :cond_0
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lnf;->mUserLoadMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iput-object v1, v0, Lnw;->mUserLoadMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 2255
-    const-string v0, "LandingPageActivity"
+    .line 2270
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "onUserLoaded "
 
-    const-string v2, "onUserLoaded "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 2258
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    .line 2273
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
     if-eqz v0, :cond_4
 
@@ -1599,33 +1584,33 @@
 
     if-eqz v0, :cond_4
 
-    .line 2259
-    invoke-direct {p0, v4}, Lcom/snapchat/android/LandingPageActivity;->b(Z)V
+    .line 2274
+    invoke-direct {p0, v3}, Lcom/snapchat/android/LandingPageActivity;->b(Z)V
 
-    .line 2260
+    .line 2275
     invoke-static {p0}, Lcom/snapchat/android/util/AlertDialogUtils;->b(Landroid/content/Context;)V
 
-    .line 2261
+    .line 2276
     invoke-static {p0}, Lcom/snapchat/android/util/AlertDialogUtils;->a(Landroid/content/Context;)V
 
-    .line 2264
+    .line 2279
     iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->G:Z
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
-    iget-object v0, v0, Lajv;->mMessagingGatewayInfo:Lbil;
+    iget-object v0, v0, Lakp;->mMessagingGatewayInfo:Lbjl;
 
     if-eqz v0, :cond_1
 
-    .line 2265
+    .line 2280
     invoke-static {}, Lcom/snapchat/android/LandingPageActivity;->j()V
 
-    .line 2276
+    .line 2291
     :cond_1
     :goto_0
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v0
 
@@ -1635,68 +1620,68 @@
 
     if-eqz v0, :cond_3
 
-    .line 2277
-    invoke-static {v4}, Lajx;->g(Z)V
+    .line 2292
+    invoke-static {v3}, Lakr;->g(Z)V
 
-    .line 2278
+    .line 2293
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a()V
 
-    .line 2279
+    .line 2294
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    invoke-static {v0}, Lnf;->a(Landroid/content/Intent;)V
+    invoke-static {v0}, Lnw;->a(Landroid/content/Intent;)V
 
-    .line 2280
-    new-instance v0, Lalz;
+    .line 2295
+    new-instance v0, Lamw;
 
-    invoke-direct {v0, p0}, Lalz;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Lamw;-><init>(Landroid/content/Context;)V
 
-    .line 2281
-    invoke-virtual {v0, p0}, Lalz;->a(Landroid/app/Activity;)V
+    .line 2296
+    invoke-virtual {v0, p0}, Lamw;->a(Landroid/app/Activity;)V
 
-    .line 2282
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    .line 2297
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
     if-eqz v0, :cond_2
 
-    .line 2283
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Z:Laol;
+    .line 2298
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->aa:Laph;
 
-    invoke-virtual {v0, v3, v4}, Laol;->a(ZZ)I
+    invoke-virtual {v0, v2, v3}, Laph;->a(ZZ)I
 
-    .line 2285
+    .line 2300
     :cond_2
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->t()V
 
-    .line 2286
-    iput-boolean v3, p0, Lcom/snapchat/android/LandingPageActivity;->F:Z
+    .line 2301
+    iput-boolean v2, p0, Lcom/snapchat/android/LandingPageActivity;->F:Z
 
-    .line 2288
+    .line 2303
     :cond_3
     :goto_1
     return-void
 
-    .line 2267
+    .line 2282
     :cond_4
-    invoke-static {}, Lajx;->H()Z
+    invoke-static {}, Lakr;->H()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 2268
+    .line 2283
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->o()V
 
     goto :goto_1
 
-    .line 2271
+    .line 2286
     :cond_5
-    invoke-static {p0}, Lasr;->a(Landroid/app/Activity;)V
+    invoke-static {p0}, Latq;->a(Landroid/app/Activity;)V
 
-    .line 2272
-    invoke-direct {p0, v3}, Lcom/snapchat/android/LandingPageActivity;->b(Z)V
+    .line 2287
+    invoke-direct {p0, v2}, Lcom/snapchat/android/LandingPageActivity;->b(Z)V
 
     goto :goto_0
 .end method
@@ -1705,15 +1690,15 @@
     .locals 1
 
     .prologue
-    .line 2350
+    .line 2365
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->a()V
 
-    .line 2351
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lma;
+    .line 2366
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lms;
 
-    invoke-virtual {v0, p1}, Lma;->a(Z)V
+    invoke-virtual {v0, p1}, Lms;->a(Z)V
 
-    .line 2352
+    .line 2367
     return-void
 .end method
 
@@ -1725,14 +1710,14 @@
 
     const/4 v1, 0x0
 
-    .line 1192
+    .line 1204
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->f()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 1196
+    .line 1208
     iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     if-eqz v2, :cond_1
@@ -1745,7 +1730,7 @@
 
     if-ne v2, p1, :cond_1
 
-    .line 1199
+    .line 1211
     :cond_0
     :goto_0
     return v0
@@ -1753,10 +1738,10 @@
     :cond_1
     move v0, v1
 
-    .line 1196
+    .line 1208
     goto :goto_0
 
-    .line 1199
+    .line 1211
     :cond_2
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
@@ -1775,47 +1760,47 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 813
-    invoke-static {}, Lajx;->v()Z
+    .line 824
+    invoke-static {}, Lakr;->v()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 826
+    .line 837
     :cond_0
     :goto_0
     return v0
 
-    .line 815
+    .line 826
     :cond_1
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 818
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    .line 829
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
     if-eqz v1, :cond_0
 
-    .line 819
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    .line 830
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
-    invoke-virtual {v1}, Lajv;->w()V
+    invoke-virtual {v1}, Lakp;->w()V
 
     goto :goto_0
 
-    .line 822
+    .line 833
     :cond_2
-    invoke-static {}, Lajx;->H()Z
+    invoke-static {}, Lakr;->H()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 826
+    .line 837
     const/4 v0, 0x1
 
     goto :goto_0
@@ -1825,7 +1810,7 @@
     .locals 2
 
     .prologue
-    .line 921
+    .line 932
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v0}, Lcom/snapchat/android/util/SnapchatViewPager;->getCurrentItem()I
@@ -1857,7 +1842,7 @@
     .locals 2
 
     .prologue
-    .line 929
+    .line 940
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v0}, Lcom/snapchat/android/util/SnapchatViewPager;->getCurrentItem()I
@@ -1893,7 +1878,7 @@
 
     const/4 v1, 0x1
 
-    .line 869
+    .line 880
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     iget-boolean v0, v0, Lcom/snapchat/android/util/SnapchatViewPager;->mIsPagingEnabled:Z
@@ -1912,22 +1897,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 871
-    const-string v0, "LandingPageActivity"
-
-    const-string v3, "Animating pager while paging is disabled. Ignoring touch event."
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v3, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     move v0, v1
 
-    .line 903
+    .line 914
     :goto_0
     return v0
 
-    .line 875
+    .line 886
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1935,54 +1911,58 @@
 
     if-nez v0, :cond_3
 
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbaa;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbbb;
 
-    iget-object v3, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
+    new-array v3, v1, [Ljava/lang/String;
 
-    invoke-virtual {v3}, Lcom/snapchat/android/util/SnapchatViewPager;->getLastScrolledPage()Ljava/lang/String;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-    move-result-object v3
+    invoke-virtual {v4}, Lcom/snapchat/android/util/SnapchatViewPager;->getLastScrolledPage()Ljava/lang/String;
 
-    invoke-virtual {v0, v3}, Lbaa;->a(Ljava/lang/String;)V
+    move-result-object v4
 
-    .line 877
+    aput-object v4, v3, v2
+
+    invoke-virtual {v0, v3}, Lbbb;->a([Ljava/lang/String;)V
+
+    .line 888
     :cond_1
     :goto_1
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 879
+    .line 890
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
     if-nez v3, :cond_2
 
-    .line 880
+    .line 891
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v3
 
     iput v3, p0, Lcom/snapchat/android/LandingPageActivity;->w:F
 
-    .line 881
+    .line 892
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v3
 
     iput v3, p0, Lcom/snapchat/android/LandingPageActivity;->x:F
 
-    .line 884
+    .line 895
     :cond_2
     instance-of v3, v0, Lcom/snapchat/android/camera/CameraFragment;
 
     if-eqz v3, :cond_6
 
-    .line 885
+    .line 896
     check-cast v0, Lcom/snapchat/android/camera/CameraFragment;
 
-    .line 886
+    .line 897
     invoke-virtual {v0, p1}, Lcom/snapchat/android/camera/CameraFragment;->a(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -1993,7 +1973,7 @@
 
     goto :goto_0
 
-    .line 875
+    .line 886
     :cond_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -2009,13 +1989,13 @@
 
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-    iget-object v3, v0, Lcom/snapchat/android/util/SnapchatViewPager;->mUserSwipedIntoChatEvent:Lbes;
+    iget-object v3, v0, Lcom/snapchat/android/util/SnapchatViewPager;->mUserSwipedIntoChatEvent:Lbfr;
 
     if-eqz v3, :cond_5
 
-    iget-object v0, v0, Lcom/snapchat/android/util/SnapchatViewPager;->mUserSwipedIntoChatEvent:Lbes;
+    iget-object v0, v0, Lcom/snapchat/android/util/SnapchatViewPager;->mUserSwipedIntoChatEvent:Lbfr;
 
-    iget-boolean v0, v0, Lbes;->mIsFlinging:Z
+    iget-boolean v0, v0, Lbfr;->mIsFlinging:Z
 
     if-eqz v0, :cond_5
 
@@ -2025,9 +2005,9 @@
     if-eqz v0, :cond_1
 
     :cond_4
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbaa;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbbb;
 
-    iput-boolean v1, v0, Lbaa;->mDeferPause:Z
+    iput-boolean v1, v0, Lbbb;->mDeferPause:Z
 
     goto :goto_1
 
@@ -2036,7 +2016,7 @@
 
     goto :goto_2
 
-    .line 895
+    .line 906
     :cond_6
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
@@ -2076,9 +2056,9 @@
     :goto_4
     if-eqz v0, :cond_d
 
-    .line 896
+    .line 907
     :cond_7
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Laup;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Lavn;
 
     iget v1, p0, Lcom/snapchat/android/LandingPageActivity;->w:F
 
@@ -2086,19 +2066,19 @@
 
     iget v3, p0, Lcom/snapchat/android/LandingPageActivity;->y:I
 
-    iget-object v4, v0, Laup;->mSnapView:Lcom/snapchat/android/ui/SnapView;
+    iget-object v4, v0, Lavn;->mSnapView:Lcom/snapchat/android/ui/SnapView;
 
-    invoke-virtual {v4}, Lcom/snapchat/android/ui/SnapView;->c()Z
+    invoke-virtual {v4}, Lcom/snapchat/android/ui/SnapView;->b()Z
 
     move-result v4
 
     if-eqz v4, :cond_b
 
-    iget-object v0, v0, Laup;->mTapToViewTouchListener:Laqf;
+    iget-object v0, v0, Lavn;->mTapToViewTouchListener:Lcom/snapchat/android/ui/gesturedetectors/TapToViewTouchListener;
 
-    invoke-virtual {v0, p1}, Laqf;->a(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p1}, Lcom/snapchat/android/ui/gesturedetectors/TapToViewTouchListener;->a(Landroid/view/MotionEvent;)Z
 
-    .line 903
+    .line 914
     :cond_8
     :goto_5
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
@@ -2110,7 +2090,7 @@
     :cond_9
     move v0, v2
 
-    .line 895
+    .line 906
     goto :goto_3
 
     :cond_a
@@ -2118,7 +2098,7 @@
 
     goto :goto_4
 
-    .line 896
+    .line 907
     :cond_b
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -2129,18 +2109,18 @@
     goto :goto_5
 
     :pswitch_0
-    iget-boolean v1, v0, Laup;->mLongPressStarted:Z
+    iget-boolean v1, v0, Lavn;->mLongPressStarted:Z
 
     if-eqz v1, :cond_8
 
     :cond_c
     :goto_6
-    invoke-virtual {v0}, Laup;->f()V
+    invoke-virtual {v0}, Lavn;->f()V
 
     goto :goto_5
 
     :pswitch_1
-    iget-boolean v4, v0, Laup;->mLongPressStarted:Z
+    iget-boolean v4, v0, Lavn;->mLongPressStarted:Z
 
     if-eqz v4, :cond_8
 
@@ -2178,7 +2158,7 @@
 
     goto :goto_6
 
-    .line 897
+    .line 908
     :cond_d
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->c()Z
 
@@ -2186,8 +2166,8 @@
 
     if-eqz v0, :cond_8
 
-    .line 898
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Laup;
+    .line 909
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Lavn;
 
     iget v3, p0, Lcom/snapchat/android/LandingPageActivity;->w:F
 
@@ -2195,17 +2175,17 @@
 
     iget v5, p0, Lcom/snapchat/android/LandingPageActivity;->y:I
 
-    iget-object v6, v0, Laup;->mEditionViewerLauncher:Laeh;
+    iget-object v6, v0, Lavn;->mEditionViewerLauncher:Lafh;
 
-    invoke-virtual {v6}, Laeh;->d()Z
+    invoke-virtual {v6}, Lafh;->d()Z
 
     move-result v6
 
     if-nez v6, :cond_e
 
-    iget-object v6, v0, Laup;->mEditionViewerLauncher:Laeh;
+    iget-object v6, v0, Lavn;->mEditionViewerLauncher:Lafh;
 
-    invoke-virtual {v6}, Laeh;->e()Z
+    invoke-virtual {v6}, Lafh;->e()Z
 
     move-result v6
 
@@ -2219,24 +2199,24 @@
 
     move v0, v1
 
-    .line 899
+    .line 910
     goto/16 :goto_0
 
-    .line 898
+    .line 909
     :cond_f
-    iget-object v6, v0, Laup;->mSnapView:Lcom/snapchat/android/ui/SnapView;
+    iget-object v6, v0, Lavn;->mSnapView:Lcom/snapchat/android/ui/SnapView;
 
-    invoke-virtual {v6}, Lcom/snapchat/android/ui/SnapView;->c()Z
+    invoke-virtual {v6}, Lcom/snapchat/android/ui/SnapView;->b()Z
 
     move-result v6
 
     if-eqz v6, :cond_13
 
-    iget-object v3, v0, Laup;->mVerticalSwipeMyStory:Lcom/snapchat/android/ui/VerticalSwipeLayout;
+    iget-object v3, v0, Lavn;->mVerticalSwipeMyStory:Lcom/snapchat/android/ui/VerticalSwipeLayout;
 
     if-eqz v3, :cond_10
 
-    iget-object v3, v0, Laup;->mVerticalSwipeMyStory:Lcom/snapchat/android/ui/VerticalSwipeLayout;
+    iget-object v3, v0, Lavn;->mVerticalSwipeMyStory:Lcom/snapchat/android/ui/VerticalSwipeLayout;
 
     invoke-virtual {v3}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->getVisibility()I
 
@@ -2249,7 +2229,7 @@
     :cond_10
     if-eqz v2, :cond_12
 
-    iget-object v2, v0, Laup;->mVerticalSwipeMyStory:Lcom/snapchat/android/ui/VerticalSwipeLayout;
+    iget-object v2, v0, Lavn;->mVerticalSwipeMyStory:Lcom/snapchat/android/ui/VerticalSwipeLayout;
 
     invoke-virtual {v2, p1}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -2263,9 +2243,9 @@
 
     if-nez v2, :cond_11
 
-    iget-object v0, v0, Laup;->mTapToViewTouchListener:Laqf;
+    iget-object v0, v0, Lavn;->mTapToViewTouchListener:Lcom/snapchat/android/ui/gesturedetectors/TapToViewTouchListener;
 
-    invoke-virtual {v0, p1}, Laqf;->a(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p1}, Lcom/snapchat/android/ui/gesturedetectors/TapToViewTouchListener;->a(Landroid/view/MotionEvent;)Z
 
     :cond_11
     move v0, v1
@@ -2273,9 +2253,9 @@
     goto :goto_7
 
     :cond_12
-    iget-object v0, v0, Laup;->mTapToViewTouchListener:Laqf;
+    iget-object v0, v0, Lavn;->mTapToViewTouchListener:Lcom/snapchat/android/ui/gesturedetectors/TapToViewTouchListener;
 
-    invoke-virtual {v0, p1}, Laqf;->a(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p1}, Lcom/snapchat/android/ui/gesturedetectors/TapToViewTouchListener;->a(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
@@ -2323,16 +2303,14 @@
     if-lez v3, :cond_15
 
     :cond_14
-    invoke-virtual {v0}, Laup;->f()V
+    invoke-virtual {v0}, Lavn;->f()V
 
     :cond_15
     move v0, v2
 
     goto :goto_7
 
-    .line 896
-    nop
-
+    .line 907
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -2344,16 +2322,16 @@
     .locals 2
 
     .prologue
-    .line 1427
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->C:Lauu;
+    .line 1440
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->C:Lavs;
 
-    invoke-virtual {v0}, Lauu;->getCount()I
+    invoke-virtual {v0}, Lavs;->getCount()I
 
     move-result v0
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 1428
+    .line 1441
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v1}, Lcom/snapchat/android/util/SnapchatViewPager;->getOffscreenPageLimit()I
@@ -2362,12 +2340,12 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 1429
+    .line 1442
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v1, v0}, Lcom/snapchat/android/util/SnapchatViewPager;->setOffscreenPageLimit(I)V
 
-    .line 1431
+    .line 1444
     :cond_0
     return-void
 .end method
@@ -2376,7 +2354,7 @@
     .locals 1
 
     .prologue
-    .line 1457
+    .line 1472
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->getBackStackEntryCount()I
@@ -2396,22 +2374,22 @@
     goto :goto_0
 .end method
 
-.method public final g()Lbcz;
+.method public final g()Lbdz;
     .locals 1
 
     .prologue
-    .line 1893
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    .line 1908
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
     return-object v0
 .end method
 
-.method public final h()Lbdj;
+.method public final h()Lbej;
     .locals 1
 
     .prologue
-    .line 2025
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->c:Lbdj;
+    .line 2040
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->c:Lbej;
 
     return-object v0
 .end method
@@ -2420,8 +2398,8 @@
     .locals 1
 
     .prologue
-    .line 2368
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ad:Lvf;
+    .line 2383
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ae:Lwb;
 
     return-object v0
 .end method
@@ -2430,82 +2408,76 @@
     .locals 1
 
     .prologue
-    .line 2375
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->af:Lcom/snapchat/android/ui/SnapView;
+    .line 2390
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ag:Lcom/snapchat/android/ui/SnapView;
 
     return-object v0
 .end method
 
 .method protected onActivityResult(IILandroid/content/Intent;)V
-    .locals 6
+    .locals 4
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    .line 2090
+    .line 2105
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->e()V
 
-    .line 2092
-    const-string v0, "LandingPageActivity"
+    .line 2107
+    const/4 v0, 0x2
 
-    const-string v1, "Activity Request with code %d, and Result with code %d"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    aput-object v2, v0, v1
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v2, v5
+    aput-object v1, v0, v3
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 2108
+    if-ne p2, v3, :cond_1
 
-    .line 2093
-    if-ne p2, v5, :cond_1
-
-    .line 2094
+    .line 2109
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->onLogoutEvent(Lbch;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->onLogoutEvent(Lbdh;)V
 
-    .line 2113
+    .line 2128
     :cond_0
     :goto_0
     return-void
 
-    .line 2096
+    .line 2111
     :cond_1
     invoke-super {p0, p1, p2, p3}, Lcom/snapchat/android/SnapchatActivity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 2098
+    .line 2113
     packed-switch p1, :pswitch_data_0
 
     :pswitch_0
     goto :goto_0
 
-    .line 2100
+    .line 2115
     :pswitch_1
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_3
 
-    .line 2101
+    .line 2116
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 2102
-    invoke-static {v0, p0}, Laur;->a(Landroid/net/Uri;Landroid/content/Context;)Landroid/graphics/Bitmap;
+    .line 2117
+    invoke-static {v0, p0}, Lavp;->a(Landroid/net/Uri;Landroid/content/Context;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
@@ -2518,19 +2490,19 @@
     goto :goto_0
 
     :cond_2
-    invoke-static {p0}, Lajv;->a(Landroid/content/Context;)Lajv;
+    invoke-static {p0}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
-    new-instance v0, Lajj$a;
+    new-instance v0, Lakf$a;
 
-    invoke-direct {v0}, Lajj$a;-><init>()V
+    invoke-direct {v0}, Lakf$a;-><init>()V
 
     iput-object v1, v0, Lcom/snapchat/android/model/Mediabryo$a;->mRawImageBitmap:Landroid/graphics/Bitmap;
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -2538,7 +2510,7 @@
 
     iput v2, v0, Lcom/snapchat/android/model/Mediabryo$a;->mWidth:I
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -2546,45 +2518,47 @@
 
     iput v1, v0, Lcom/snapchat/android/model/Mediabryo$a;->mHeight:I
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
     sget-object v1, Lcom/snapchat/android/model/Mediabryo$SnapType;->SNAP:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
     iput-object v1, v0, Lcom/snapchat/android/model/Mediabryo$a;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
-    iput-boolean v5, v0, Lcom/snapchat/android/model/Mediabryo$a;->mIsChatMedia:Z
+    iput-boolean v3, v0, Lcom/snapchat/android/model/Mediabryo$a;->mIsChatMedia:Z
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
-    invoke-virtual {v0}, Lajj$a;->c()Lajj;
+    invoke-virtual {v0}, Lakf$a;->c()Lakf;
 
     move-result-object v0
 
-    new-instance v1, Lbdj;
+    new-instance v1, Lbej;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/SnapCaptureContext;->PHONE_GALLERY:Lcom/snapchat/android/util/eventbus/SnapCaptureContext;
 
-    invoke-direct {v1, v0, v2}, Lbdj;-><init>(Laim;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
+    invoke-direct {v1, v0, v2}, Lbej;-><init>(Laji;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
 
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->onSnapCapturedEvent(Lbdj;)V
+    invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->onSnapCapturedEvent(Lbej;)V
 
     goto :goto_0
 
-    .line 2103
+    .line 2118
     :cond_3
     if-nez p2, :cond_0
 
     goto :goto_0
 
-    .line 2109
+    .line 2124
     :pswitch_2
     invoke-virtual {p0, p3}, Lcom/snapchat/android/LandingPageActivity;->setIntent(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 2098
+    .line 2113
+    nop
+
     :pswitch_data_0
     .packed-switch 0x3e9
         :pswitch_1
@@ -2603,29 +2577,29 @@
 
     const/4 v3, 0x1
 
-    .line 947
+    .line 958
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
-    .line 951
+    .line 962
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->executePendingTransactions()Z
 
-    .line 953
+    .line 964
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v1
 
-    .line 955
+    .line 966
     if-nez v1, :cond_1
 
-    .line 957
+    .line 968
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onBackPressed()V
 
-    .line 970
+    .line 981
     :cond_0
     :goto_0
     return-void
 
-    .line 962
+    .line 973
     :cond_1
     invoke-virtual {v1}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->g()Z
 
@@ -2633,17 +2607,17 @@
 
     if-nez v2, :cond_0
 
-    .line 966
+    .line 977
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
 
-    .line 968
+    .line 979
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->getBackStackEntryCount()I
 
     move-result v1
 
-    .line 969
+    .line 980
     if-nez v1, :cond_3
 
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
@@ -2664,9 +2638,9 @@
     goto :goto_0
 
     :pswitch_1
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->M:Lnj;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->M:Loa;
 
-    invoke-virtual {v0}, Lnj;->b()Z
+    invoke-virtual {v0}, Loa;->b()Z
 
     move-result v0
 
@@ -2693,9 +2667,9 @@
     goto :goto_0
 
     :pswitch_3
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Laup;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Lavn;
 
-    invoke-virtual {v0}, Laup;->g()Z
+    invoke-virtual {v0}, Lavn;->g()Z
 
     move-result v0
 
@@ -2756,147 +2730,147 @@
     .end packed-switch
 .end method
 
-.method public onCameraStateEvent(Lbap;)V
+.method public onCameraStateEvent(Lbbq;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 2181
-    invoke-virtual {p1}, Lbap;->a()Z
+    .line 2196
+    invoke-virtual {p1}, Lbbq;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2185
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Laup;
+    .line 2200
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Lavn;
 
     sget-object v1, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->SWIPED_DOWN:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
-    invoke-virtual {v0, v1}, Laup;->a(Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;)V
+    invoke-virtual {v0, v1}, Lavn;->a(Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;)V
 
-    .line 2187
+    .line 2202
     :cond_0
     return-void
 .end method
 
-.method public onCancelInChatSnapEvent(Lbar;)V
+.method public onCancelInChatSnapEvent(Lbbs;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v2, 0x0
 
-    .line 1924
+    .line 1939
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
     if-eqz v0, :cond_0
 
-    .line 1925
+    .line 1940
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
     iget v0, v0, Lcom/snapchat/android/util/eventbus/InChatSnapEvent;->mOriginatingFragment:I
 
-    .line 1926
+    .line 1941
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
-    .line 1928
-    iget-boolean v1, p1, Lbar;->mShouldReturnToChatFragment:Z
+    .line 1943
+    iget-boolean v1, p1, Lbbs;->mShouldReturnToChatFragment:Z
 
     if-nez v1, :cond_1
 
-    .line 1933
+    .line 1948
     :cond_0
     :goto_0
     return-void
 
-    .line 1929
+    .line 1944
     :cond_1
     invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(I)V
 
-    .line 1931
+    .line 1946
     invoke-virtual {p0, v2, v2}, Lcom/snapchat/android/LandingPageActivity;->a(IZ)V
 
     goto :goto_0
 .end method
 
-.method public onCancelQuickSnapEvent(Lbas;)V
+.method public onCancelQuickSnapEvent(Lbbt;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v2, 0x0
 
-    .line 1952
+    .line 1967
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->f:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
 
     if-eqz v0, :cond_0
 
-    .line 1953
+    .line 1968
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->f:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
 
     iget v0, v0, Lcom/snapchat/android/util/eventbus/QuickSnapEvent;->mOriginatingFragment:I
 
-    .line 1954
+    .line 1969
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->f:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
 
-    .line 1956
-    iget-boolean v1, p1, Lbas;->mShouldReturnToChatFragment:Z
+    .line 1971
+    iget-boolean v1, p1, Lbbt;->mShouldReturnToChatFragment:Z
 
     if-nez v1, :cond_1
 
-    .line 1961
+    .line 1976
     :cond_0
     :goto_0
     return-void
 
-    .line 1957
+    .line 1972
     :cond_1
     invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(I)V
 
-    .line 1959
+    .line 1974
     invoke-virtual {p0, v2, v2}, Lcom/snapchat/android/LandingPageActivity;->a(IZ)V
 
     goto :goto_0
 .end method
 
-.method public onCancelReplyEvent(Lbat;)V
+.method public onCancelReplyEvent(Lbbu;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v0, 0x0
 
-    .line 1871
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    .line 1886
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
-    .line 1872
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    .line 1887
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
-    .line 1873
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->M:Lnj;
+    .line 1888
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->M:Loa;
 
-    invoke-virtual {v0}, Lnj;->d()V
+    invoke-virtual {v0}, Loa;->d()V
 
-    .line 1874
+    .line 1889
     return-void
 .end method
 
-.method public onChangeBrightnessEvent(Lbav;)V
+.method public onChangeBrightnessEvent(Lbbw;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1984
+    .line 1999
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -2905,44 +2879,44 @@
 
     move-result-object v0
 
-    .line 1985
-    iget v1, p1, Lbav;->mBrightness:F
+    .line 2000
+    iget v1, p1, Lbbw;->mBrightness:F
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
 
-    .line 1986
+    .line 2001
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 1987
+    .line 2002
     return-void
 .end method
 
-.method public onChangeOrientationEvent(Lbaw;)V
+.method public onChangeOrientationEvent(Lbbx;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1965
+    .line 1980
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getRequestedOrientation()I
 
     move-result v0
 
-    iget v1, p1, Lbaw;->mRequestedOrientation:I
+    iget v1, p1, Lbbx;->mRequestedOrientation:I
 
     if-ne v0, v1, :cond_0
 
-    .line 1971
+    .line 1986
     :goto_0
     return-void
 
-    .line 1970
+    .line 1985
     :cond_0
-    iget v0, p1, Lbaw;->mRequestedOrientation:I
+    iget v0, p1, Lbbx;->mRequestedOrientation:I
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->setRequestedOrientation(I)V
 
@@ -2950,133 +2924,133 @@
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 5
+    .locals 4
 
     .prologue
-    .line 2335
+    .line 2350
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 2337
-    invoke-static {p0}, Lavh;->d(Landroid/content/Context;)I
+    .line 2352
+    invoke-static {p0}, Lawf;->d(Landroid/content/Context;)I
 
     move-result v0
 
-    .line 2338
+    .line 2353
     iget v1, p0, Lcom/snapchat/android/LandingPageActivity;->A:I
 
     if-eq v1, v0, :cond_0
 
-    .line 2339
+    .line 2354
     iput v0, p0, Lcom/snapchat/android/LandingPageActivity;->A:I
 
-    .line 2340
-    invoke-static {p0}, Lavh;->e(Landroid/content/Context;)Z
+    .line 2355
+    invoke-static {p0}, Lawf;->e(Landroid/content/Context;)Z
 
     move-result v1
 
-    .line 2342
-    const-string v2, "LandingPageActivity"
+    .line 2357
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v3, "Rotated to "
 
-    const-string v4, "Rotated to "
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v3, " isPortrait? "
+    const-string v2, " isPortrait? "
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    .line 2359
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lavu;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v2, v0, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 2344
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lauw;
-
-    iget-boolean v2, v0, Lauw;->mIsImmersiveModeSupported:Z
+    iget-boolean v2, v0, Lavu;->mIsImmersiveModeSupported:Z
 
     if-eqz v2, :cond_0
 
-    iget-object v2, v0, Lauw;->mDecorView:Landroid/view/View;
+    iget-object v2, v0, Lavu;->mDecorView:Landroid/view/View;
 
     if-nez v2, :cond_1
 
-    .line 2346
+    .line 2361
     :cond_0
     :goto_0
     return-void
 
-    .line 2344
+    .line 2359
     :cond_1
-    iget-boolean v2, v0, Lauw;->mIsImmersiveModeOn:Z
+    iget-boolean v2, v0, Lavu;->mIsImmersiveModeOn:Z
 
-    invoke-virtual {v0, v1, v2}, Lauw;->a(ZZ)V
+    invoke-virtual {v0, v1, v2}, Lavu;->a(ZZ)V
 
     goto :goto_0
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 9
+    .locals 6
 
     .prologue
-    const/4 v8, 0x0
-
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
     const/4 v2, 0x2
 
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    .line 395
-    invoke-static {}, Lnf;->d()V
+    invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getApplicationContext()Landroid/content/Context;
 
-    .line 396
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->o:Laux;
+    move-result-object v0
 
-    sget v1, Laux$a;->ACTIVITY_CREATE_CHECKPOINT$6dad94c5:I
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
 
-    invoke-virtual {v0, v1}, Laux;->a(I)V
+    invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getApplicationContext()Landroid/content/Context;
 
-    .line 397
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnf;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lnf;->c()V
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
 
-    .line 398
+    .line 402
+    invoke-static {}, Lnw;->d()V
+
+    .line 403
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->o:Lavv;
+
+    sget v1, Lavv$a;->ACTIVITY_CREATE_CHECKPOINT$6dad94c5:I
+
+    invoke-virtual {v0, v1}, Lavv;->a(I)V
+
+    .line 404
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnw;
+
+    invoke-virtual {v0}, Lnw;->c()V
+
+    .line 405
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->q:Lcom/snapchat/android/analytics/NotificationAnalytics;
 
     invoke-virtual {v0}, Lcom/snapchat/android/analytics/NotificationAnalytics;->a()V
 
-    .line 399
+    .line 406
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->K:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
-    iget-object v0, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    iget-object v0, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mEasyMetricManager:Lcom/snapchat/android/analytics/framework/EasyMetricManager;
 
     const-string v1, "CAMERA_READY"
 
-    invoke-virtual {v0, v1, v6}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Z)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetricManager;->b(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 400
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 407
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 401
+    .line 408
     if-eqz p1, :cond_0
 
     const-string v0, "in_chat_snap_event"
@@ -3113,30 +3087,26 @@
 
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->n()V
 
-    iput-object v8, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
+    iput-object v5, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
-    .line 403
+    .line 410
     :cond_0
     :goto_0
-    const-string v0, "LandingPageActivity"
+    new-array v0, v4, [Ljava/lang/Object;
 
-    const-string v1, "Native free space = %d"
-
-    new-array v2, v6, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
     invoke-static {}, Landroid/os/Debug;->getNativeHeapFreeSize()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v2, v7
+    aput-object v2, v0, v1
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 405
+    .line 412
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v0
@@ -3147,7 +3117,7 @@
 
     move-result-object v1
 
-    sput-object v1, Latj;->mRobotoBoldCondensed:Landroid/graphics/Typeface;
+    sput-object v1, Lauh;->mRobotoBoldCondensed:Landroid/graphics/Typeface;
 
     const-string v1, "Roboto-Light.ttf"
 
@@ -3155,52 +3125,43 @@
 
     move-result-object v0
 
-    sput-object v0, Lbwu;->a:Landroid/graphics/Typeface;
+    sput-object v0, Lbxv;->a:Landroid/graphics/Typeface;
 
-    .line 411
+    .line 418
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
     invoke-virtual {v0, p0}, Lcom/squareup/otto/Bus;->c(Ljava/lang/Object;)V
 
-    .line 412
-    iput-boolean v6, p0, Lcom/snapchat/android/LandingPageActivity;->z:Z
+    .line 419
+    iput-boolean v4, p0, Lcom/snapchat/android/LandingPageActivity;->z:Z
 
-    .line 415
+    .line 422
     const-string v0, "org.joda.time.DateTimeZone.Provider"
 
     const-string v1, "com.snapchat.android.util.DateTimeZoneProvider"
 
     invoke-static {v0, v1}, Ljava/lang/System;->setProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 417
-    const-string v0, "LandingPageActivity"
-
-    const-string v1, "Landing Page Activity content view set"
-
-    new-array v2, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 418
-    const v0, 0x7f04006b
+    .line 424
+    const v0, 0x7f04006c
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->setContentView(I)V
 
-    .line 421
+    .line 428
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    invoke-virtual {v0, v8}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v5}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 422
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lauw;
+    .line 429
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lavu;
 
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
-    iget-boolean v2, v0, Lauw;->mIsImmersiveModeSupported:Z
+    iget-boolean v2, v0, Lavu;->mIsImmersiveModeSupported:Z
 
     if-eqz v2, :cond_1
 
@@ -3208,34 +3169,34 @@
 
     move-result-object v2
 
-    iput-object v2, v0, Lauw;->mDecorView:Landroid/view/View;
+    iput-object v2, v0, Lavu;->mDecorView:Landroid/view/View;
 
-    iput-object v1, v0, Lauw;->mWindow:Landroid/view/Window;
+    iput-object v1, v0, Lavu;->mWindow:Landroid/view/Window;
 
-    iget-object v1, v0, Lauw;->mDecorView:Landroid/view/View;
+    iget-object v1, v0, Lavu;->mDecorView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getPaddingRight()I
 
     move-result v1
 
-    iput v1, v0, Lauw;->mDefaultRightPadding:I
+    iput v1, v0, Lavu;->mDefaultRightPadding:I
 
-    iget-object v1, v0, Lauw;->mDecorView:Landroid/view/View;
+    iget-object v1, v0, Lavu;->mDecorView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v1
 
-    iput v1, v0, Lauw;->mDefaultBottomPadding:I
+    iput v1, v0, Lavu;->mDefaultBottomPadding:I
 
-    .line 423
+    .line 430
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->k:Lapd;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->k:Lapz;
 
-    invoke-virtual {v0, p0}, Lapd;->a(Landroid/content/Context;)V
+    invoke-virtual {v0, p0}, Lapz;->a(Landroid/content/Context;)V
 
-    .line 425
-    const v0, 0x7f0a0249
+    .line 432
+    const v0, 0x7f0a0247
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->findViewById(I)Landroid/view/View;
 
@@ -3245,8 +3206,8 @@
 
     iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-    .line 426
-    const v0, 0x7f0a024a
+    .line 433
+    const v0, 0x7f0a0248
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->findViewById(I)Landroid/view/View;
 
@@ -3254,18 +3215,9 @@
 
     check-cast v0, Landroid/view/ViewStub;
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ac:Landroid/view/ViewStub;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ad:Landroid/view/ViewStub;
 
-    .line 427
-    new-instance v0, Lvf;
-
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
-
-    invoke-direct {v0, p0, v1}, Lvf;-><init>(Lcom/snapchat/android/LandingPageActivity;Lcom/snapchat/android/util/SnapchatViewPager;)V
-
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ad:Lvf;
-
-    .line 429
+    .line 435
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
@@ -3283,18 +3235,18 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
     :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 431
+    .line 437
     :goto_1
-    invoke-static {}, Laup;->d()Laup;
+    invoke-static {}, Lavn;->d()Lavn;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Laup;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Lavn;
 
-    .line 432
-    const v0, 0x7f0a024b
+    .line 438
+    const v0, 0x7f0a0249
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->findViewById(I)Landroid/view/View;
 
@@ -3302,18 +3254,18 @@
 
     check-cast v0, Lcom/snapchat/android/ui/SnapView;
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->af:Lcom/snapchat/android/ui/SnapView;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ag:Lcom/snapchat/android/ui/SnapView;
 
-    .line 433
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->p:Laup;
+    .line 439
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->p:Lavn;
 
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->af:Lcom/snapchat/android/ui/SnapView;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ag:Lcom/snapchat/android/ui/SnapView;
 
-    iput-object v0, v1, Laup;->mSnapView:Lcom/snapchat/android/ui/SnapView;
+    iput-object v0, v1, Lavn;->mSnapView:Lcom/snapchat/android/ui/SnapView;
 
-    iget-object v0, v1, Laup;->mSnapView:Lcom/snapchat/android/ui/SnapView;
+    iget-object v0, v1, Lavn;->mSnapView:Lcom/snapchat/android/ui/SnapView;
 
-    const v2, 0x7f0a041e
+    const v2, 0x7f0a0417
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/SnapView;->findViewById(I)Landroid/view/View;
 
@@ -3321,9 +3273,9 @@
 
     check-cast v0, Lcom/snapchat/android/ui/VerticalSwipeLayout;
 
-    iput-object v0, v1, Laup;->mVerticalSwipeMyStory:Lcom/snapchat/android/ui/VerticalSwipeLayout;
+    iput-object v0, v1, Lavn;->mVerticalSwipeMyStory:Lcom/snapchat/android/ui/VerticalSwipeLayout;
 
-    .line 434
+    .line 440
     invoke-static {p0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -3334,17 +3286,28 @@
 
     iput v0, p0, Lcom/snapchat/android/LandingPageActivity;->y:I
 
-    .line 436
-    invoke-static {}, Lawq;->a()V
+    .line 442
+    new-instance v0, Lwb;
 
-    .line 439
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
+
+    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->ag:Lcom/snapchat/android/ui/SnapView;
+
+    invoke-direct {v0, p0, v1, v2}, Lwb;-><init>(Lcom/snapchat/android/LandingPageActivity;Lcom/snapchat/android/util/SnapchatViewPager;Lcom/snapchat/android/ui/SnapView;)V
+
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ae:Lwb;
+
+    .line 444
+    invoke-static {}, Laxo;->a()V
+
+    .line 447
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x12
 
     if-lt v0, v1, :cond_2
 
-    .line 441
+    .line 449
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -3353,33 +3316,33 @@
 
     move-result-object v0
 
-    .line 442
-    iput v6, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
+    .line 450
+    iput v4, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
 
-    .line 443
+    .line 451
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 446
+    .line 454
     :cond_2
-    new-instance v0, Lly;
+    new-instance v0, Lmq;
 
     iget-object v1, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
-    invoke-direct {v0, v1}, Lly;-><init>(Landroid/support/v4/app/FragmentManager;)V
+    invoke-direct {v0, v1}, Lmq;-><init>(Landroid/support/v4/app/FragmentManager;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->C:Lauu;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->C:Lavs;
 
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->C:Lauu;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->C:Lavs;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setAdapter(Lauu;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setAdapter(Lavs;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->C:Lauu;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->C:Lavs;
 
     iget-object v0, v0, Landroid/support/v4/view/PagerAdapter;->mObservable:Landroid/database/DataSetObservable;
 
@@ -3402,7 +3365,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
     :try_end_1
-    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_0
 
     :goto_2
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
@@ -3413,20 +3376,20 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    .line 449
+    .line 457
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->R:Lcom/snapchat/android/receiver/ConnectivityReceiver;
 
     sget-object v1, Lcom/snapchat/android/receiver/ConnectivityReceiver;->a:Landroid/content/IntentFilter;
 
     invoke-virtual {p0, v0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 451
-    invoke-static {p0}, Lazu;->a(Landroid/app/Activity;)V
+    .line 459
+    invoke-static {p0}, Lbat;->a(Landroid/app/Activity;)V
 
-    .line 453
+    .line 461
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->V:Lcom/snapchat/android/util/TitleBarManager;
 
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->aj:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ak:Landroid/os/Handler;
 
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getWindow()Landroid/view/Window;
 
@@ -3442,25 +3405,25 @@
 
     iput-object v3, v0, Lcom/snapchat/android/util/TitleBarManager;->mResources:Landroid/content/res/Resources;
 
-    .line 456
-    new-instance v0, Lbel;
+    .line 464
+    new-instance v0, Lbfk;
 
     sget-object v1, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    invoke-direct {v0, v1}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
+    invoke-direct {v0, v1}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->onTitleBarEvent(Lbel;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->onTitleBarEvent(Lbfk;)V
 
-    .line 457
+    .line 465
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->r()V
 
-    .line 458
-    invoke-static {}, Lnf;->e()V
+    .line 466
+    invoke-static {}, Lnw;->e()V
 
-    .line 459
+    .line 467
     return-void
 
-    .line 401
+    .line 408
     :cond_3
     iget v1, p0, Lcom/snapchat/android/LandingPageActivity;->b:I
 
@@ -3483,25 +3446,15 @@
 
     goto/16 :goto_0
 
-    .line 429
     :catch_0
     move-exception v0
 
-    const-string v1, "LandingPageActivity"
+    goto :goto_2
 
-    invoke-static {v1, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto/16 :goto_1
-
-    .line 446
     :catch_1
     move-exception v0
 
-    const-string v1, "LandingPageActivity"
-
-    invoke-static {v1, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_2
+    goto/16 :goto_1
 .end method
 
 .method public onDestroy()V
@@ -3510,117 +3463,117 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1205
+    .line 1217
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onDestroy()V
 
-    .line 1208
+    .line 1220
     iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->z:Z
 
     if-eqz v0, :cond_0
 
-    .line 1209
+    .line 1221
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
     invoke-virtual {v0, p0}, Lcom/squareup/otto/Bus;->b(Ljava/lang/Object;)V
 
-    .line 1212
+    .line 1224
     :cond_0
     iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->B:Z
 
     if-nez v0, :cond_1
 
-    .line 1213
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->k:Lapd;
+    .line 1225
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->k:Lapz;
 
-    invoke-virtual {v0}, Lapd;->b()V
+    invoke-virtual {v0}, Lapz;->b()V
 
-    .line 1217
+    .line 1229
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->R:Lcom/snapchat/android/receiver/ConnectivityReceiver;
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 1219
+    .line 1231
     iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->z:Z
 
-    .line 1222
-    invoke-static {v1}, Lajx;->r(Z)V
+    .line 1234
+    invoke-static {v1}, Lakr;->q(Z)V
 
-    .line 1224
-    invoke-static {}, Lazu;->a()V
+    .line 1236
+    invoke-static {}, Lbat;->a()V
 
-    .line 1225
+    .line 1237
     return-void
 .end method
 
-.method public onDisplayInAppNotificationEvent(Lbbg;)V
+.method public onDisplayInAppNotificationEvent(Lbcg;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 740
+    .line 751
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->a()V
 
-    .line 741
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lma;
+    .line 752
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lms;
 
-    invoke-virtual {v0, p1}, Lma;->a(Lbbg;)V
+    invoke-virtual {v0, p1}, Lms;->a(Lbcg;)V
 
-    .line 742
+    .line 753
     return-void
 .end method
 
-.method public onEditionClose(Laew;)V
+.method public onEditionClose(Lafw;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 790
+    .line 801
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
-    .line 791
+    .line 802
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->getBackStackEntryCount()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 792
+    .line 803
     if-ltz v1, :cond_0
 
-    .line 795
+    .line 806
     invoke-static {v0, v1}, Lcom/snapchat/android/LandingPageActivity;->a(Landroid/support/v4/app/FragmentManager;I)Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 796
+    .line 807
     if-eqz v0, :cond_0
 
-    .line 797
+    .line 808
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
 
-    .line 801
+    .line 812
     :cond_0
-    iget-object v0, p1, Laew;->b:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+    iget-object v0, p1, Lafw;->b:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
 
     sget-object v1, Lcom/snapchat/android/discover/model/EditionOpenOrigin;->STORIES:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
 
     if-ne v0, v1, :cond_1
 
-    .line 802
+    .line 813
     const/4 v0, 0x3
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(I)V
 
-    .line 806
+    .line 817
     :goto_0
     return-void
 
-    .line 804
+    .line 815
     :cond_1
     const/4 v0, 0x4
 
@@ -3629,57 +3582,57 @@
     goto :goto_0
 .end method
 
-.method public onEnableLargeUiUpdatesOnFragment(Lbbj;)V
+.method public onEnableLargeUiUpdatesOnFragment(Lbcj;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 2001
+    .line 2016
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     if-nez v0, :cond_1
 
-    .line 2009
+    .line 2024
     :cond_0
     :goto_0
     return-void
 
-    .line 2005
+    .line 2020
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-    iget v1, p1, Lbbj;->pageNumber:I
+    iget v1, p1, Lbcj;->pageNumber:I
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->a(I)Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 2006
+    .line 2021
     if-eqz v0, :cond_0
 
     iget-boolean v1, v0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mAreLargeUiUpdatesEnabled:Z
 
     if-nez v1, :cond_0
 
-    .line 2007
+    .line 2022
     invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->c()V
 
     goto :goto_0
 .end method
 
-.method public onForceVerificationEvent(Lbbm;)V
+.method public onForceVerificationEvent(Lbcm;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 2223
+    .line 2238
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lajx;->p(Z)V
+    invoke-static {v0}, Lakr;->o(Z)V
 
-    .line 2224
+    .line 2239
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -3690,7 +3643,7 @@
 
     move-result-object v0
 
-    iget-object v1, p1, Lbbm;->mErrorMessage:Ljava/lang/String;
+    iget-object v1, p1, Lbcm;->mErrorMessage:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
@@ -3706,7 +3659,7 @@
 
     new-instance v2, Lcom/snapchat/android/LandingPageActivity$9;
 
-    invoke-direct {v2, p0, p1}, Lcom/snapchat/android/LandingPageActivity$9;-><init>(Lcom/snapchat/android/LandingPageActivity;Lbbm;)V
+    invoke-direct {v2, p0, p1}, Lcom/snapchat/android/LandingPageActivity$9;-><init>(Lcom/snapchat/android/LandingPageActivity;Lbcm;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -3722,36 +3675,36 @@
 
     move-result-object v0
 
-    .line 2242
+    .line 2257
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 2243
+    .line 2258
     return-void
 .end method
 
-.method public onGetCurrentActivityEvent(Lbbr;)V
+.method public onGetCurrentActivityEvent(Lbcr;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 2191
+    .line 2206
     return-void
 .end method
 
-.method public onImageSnapBitmapReadyForSnapPreview(Lbca;)V
+.method public onImageSnapBitmapReadyForSnapPreview(Lbda;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1819
-    iget-object v1, p1, Lbca;->mBitmap:Landroid/graphics/Bitmap;
+    .line 1834
+    iget-object v1, p1, Lbda;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 1820
+    .line 1835
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentManagerImpl;
 
-    .line 1821
+    .line 1836
     const-string v2, "PreviewFragment"
 
     invoke-virtual {v0, v2}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
@@ -3760,84 +3713,84 @@
 
     check-cast v0, Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    .line 1822
+    .line 1837
     if-eqz v0, :cond_0
 
-    .line 1823
-    iget-object v2, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    .line 1838
+    iget-object v2, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iput-object v1, v2, Lcom/snapchat/android/model/Mediabryo;->mRawImageBitmap:Landroid/graphics/Bitmap;
 
     iget-object v1, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    iget-object v2, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v2, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     invoke-virtual {v1, v2}, Lcom/snapchat/android/ui/SnapEditorView;->setMediabryo(Lcom/snapchat/android/model/Mediabryo;)V
 
-    iget-object v0, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->f:Lbgt;
+    iget-object v0, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->f:Lbht;
 
-    invoke-virtual {v0}, Lbgt;->b()V
+    invoke-virtual {v0}, Lbht;->b()V
 
-    .line 1827
+    .line 1842
     :goto_0
     return-void
 
-    .line 1825
+    .line 1840
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->c:Lbdj;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->c:Lbej;
 
-    iget-object v0, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v0, v0, Lbej;->mMediabryo:Laji;
 
     iput-object v1, v0, Lcom/snapchat/android/model/Mediabryo;->mRawImageBitmap:Landroid/graphics/Bitmap;
 
     goto :goto_0
 .end method
 
-.method public onInAppNotificationEvent(Lbcb;)V
+.method public onInAppNotificationEvent(Lbdb;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 766
+    .line 777
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 767
+    .line 778
     if-nez v0, :cond_0
 
-    .line 770
+    .line 781
     :goto_0
     return-void
 
-    .line 768
+    .line 779
     :cond_0
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ab:Lalx;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ac:Lamu;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->k()Lalw;
+    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->k()Lamt;
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->ac:Landroid/view/ViewStub;
+    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->ad:Landroid/view/ViewStub;
 
-    invoke-virtual {v1, v0, v2}, Lalx;->a(Lalw;Landroid/view/ViewStub;)V
+    invoke-virtual {v1, v0, v2}, Lamu;->a(Lamt;Landroid/view/ViewStub;)V
 
     goto :goto_0
 .end method
 
 .method public onInChatSnapEvent(Lcom/snapchat/android/util/eventbus/InChatSnapEvent;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1911
+    .line 1926
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     if-eqz v0, :cond_0
 
-    .line 1912
+    .line 1927
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     const/4 v1, 0x2
@@ -3846,11 +3799,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(IZ)V
 
-    .line 1914
+    .line 1929
     :cond_0
     iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
-    .line 1915
+    .line 1930
     return-void
 .end method
 
@@ -3858,17 +3811,17 @@
     .locals 1
 
     .prologue
-    .line 2030
+    .line 2045
     invoke-direct {p0, p1, p2}, Lcom/snapchat/android/LandingPageActivity;->a(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2031
+    .line 2046
     const/4 v0, 0x1
 
-    .line 2033
+    .line 2048
     :goto_0
     return v0
 
@@ -3884,17 +3837,17 @@
     .locals 1
 
     .prologue
-    .line 2038
+    .line 2053
     invoke-direct {p0, p1, p2}, Lcom/snapchat/android/LandingPageActivity;->a(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2039
+    .line 2054
     const/4 v0, 0x1
 
-    .line 2041
+    .line 2056
     :goto_0
     return v0
 
@@ -3906,86 +3859,76 @@
     goto :goto_0
 .end method
 
-.method public onLeaveInAppNotificationPosterEvent(Lbcd;)V
+.method public onLeaveInAppNotificationPosterEvent(Lbdd;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 746
+    .line 757
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->a()V
 
-    .line 747
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lma;
+    .line 758
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lms;
 
-    iget-object v1, p1, Lbcd;->sourceId:Ljava/lang/String;
+    iget-object v1, p1, Lbdd;->sourceId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lma;->a(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lms;->a(Ljava/lang/String;)Z
 
-    .line 748
+    .line 759
     return-void
 .end method
 
-.method public onLogoutEvent(Lbch;)V
-    .locals 4
-    .annotation runtime Lboh;
+.method public onLogoutEvent(Lbdh;)V
+    .locals 1
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1991
+    .line 2006
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     if-eqz v0, :cond_0
 
-    .line 1992
+    .line 2007
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
-
-    const-string v1, "SecureChatService"
-
-    const-string v2, "CHAT-LOG: SecureChatService STOP SESSION"
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v0, v0, Lcom/snapchat/android/util/chat/SecureChatService;->mSecureChatSession:Lcom/snapchat/android/util/chat/SecureChatSession;
 
     invoke-virtual {v0}, Lcom/snapchat/android/util/chat/SecureChatSession;->c()V
 
-    .line 1994
+    .line 2009
     :cond_0
-    const v0, 0x7f0c02e6
+    const v0, 0x7f0c02e4
 
     invoke-static {v0, p0}, Lcom/snapchat/android/util/AlertDialogUtils;->a(ILandroid/content/Context;)V
 
-    .line 1996
-    invoke-static {p0}, Lasr;->a(Landroid/app/Activity;)V
+    .line 2011
+    invoke-static {p0}, Latq;->a(Landroid/app/Activity;)V
 
-    .line 1997
+    .line 2012
     return-void
 .end method
 
-.method public onMessagingGatewayInfoUpdatedEvent(Lbci;)V
+.method public onMessagingGatewayInfoUpdatedEvent(Lbdi;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 2172
+    .line 2187
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     if-nez v0, :cond_0
 
-    .line 2173
+    .line 2188
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->s()V
 
-    .line 2177
+    .line 2192
     :goto_0
     return-void
 
-    .line 2175
+    .line 2190
     :cond_0
     invoke-static {}, Lcom/snapchat/android/LandingPageActivity;->j()V
 
@@ -3996,238 +3939,245 @@
     .locals 0
 
     .prologue
-    .line 1462
+    .line 1477
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 1463
+    .line 1478
     invoke-virtual {p0, p1}, Lcom/snapchat/android/LandingPageActivity;->setIntent(Landroid/content/Intent;)V
 
-    .line 1464
+    .line 1479
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->r()V
 
-    .line 1465
+    .line 1480
     return-void
 .end method
 
 .method protected onPause()V
-    .locals 6
+    .locals 5
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    .line 1229
+    .line 1241
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onPause()V
 
-    .line 1230
+    .line 1242
     const/4 v0, 0x0
 
     sput-object v0, Lcom/snapchat/android/LandingPageActivity;->t:Lcom/snapchat/android/LandingPageActivity;
 
-    .line 1232
+    .line 1244
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbel;
+    new-instance v1, Lbfk;
 
     sget-object v2, Lcom/snapchat/android/util/TitleBarManager$LockedState;->NOT_LOCKED:Lcom/snapchat/android/util/TitleBarManager$LockedState;
 
-    invoke-direct {v1, v2}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$LockedState;)V
+    invoke-direct {v1, v2}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$LockedState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1234
+    .line 1246
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     if-eqz v0, :cond_0
 
-    .line 1235
+    .line 1247
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
-    iput-boolean v5, v0, Lcom/snapchat/android/util/chat/SecureChatService;->mIsAppInForeground:Z
+    iput-boolean v4, v0, Lcom/snapchat/android/util/chat/SecureChatService;->mIsAppInForeground:Z
 
-    .line 1237
+    .line 1249
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->O:Lcom/snapchat/android/notification/AndroidNotificationManager;
 
-    iput-boolean v5, v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->d:Z
+    iput-boolean v4, v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->d:Z
 
-    .line 1238
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Q:Lyf;
+    .line 1250
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Q:Lzb;
 
-    invoke-virtual {v0, v5}, Lyf;->a(Z)V
+    invoke-virtual {v0, v4}, Lzb;->a(Z)V
 
-    .line 1240
+    .line 1252
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 1241
+    .line 1253
     if-eqz v0, :cond_1
 
-    .line 1242
-    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f_()V
+    .line 1254
+    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->e_()V
 
-    .line 1244
-    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->l_()Z
+    .line 1256
+    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->j_()Z
 
     move-result v1
 
-    iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->ag:Z
+    iput-boolean v1, p0, Lcom/snapchat/android/LandingPageActivity;->ah:Z
 
-    .line 1248
-    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->z_()J
+    .line 1260
+    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->y_()J
 
     move-result-wide v0
 
-    .line 1249
+    .line 1261
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
     if-ltz v2, :cond_1
 
-    .line 1250
-    const-string v2, "LandingPageActivity"
+    .line 1262
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v3, "Schedule to set flag to pop stacked fragments after "
 
-    const-string v4, "Schedule to set flag to pop stacked fragments after "
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    const-string v3, " ms."
 
-    const-string v4, " ms."
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1263
+    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->ak:Landroid/os/Handler;
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v5, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1251
-    iget-object v2, p0, Lcom/snapchat/android/LandingPageActivity;->aj:Landroid/os/Handler;
-
-    iget-object v3, p0, Lcom/snapchat/android/LandingPageActivity;->ai:Ljava/lang/Runnable;
+    iget-object v3, p0, Lcom/snapchat/android/LandingPageActivity;->aj:Ljava/lang/Runnable;
 
     invoke-virtual {v2, v3, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1255
+    .line 1267
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->S:Lahr;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->S:Lain;
 
-    invoke-virtual {v0}, Lahr;->c()V
+    invoke-virtual {v0}, Lain;->c()V
 
-    .line 1256
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Laup;
+    .line 1268
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->p:Lavn;
 
     sget-object v1, Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;->ENTER_BACKGROUND:Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;
 
-    invoke-virtual {v0, v1}, Laup;->a(Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;)V
+    invoke-virtual {v0, v1}, Lavn;->a(Lcom/snapchat/android/analytics/SnapViewEventAnalytics$EndReason;)V
 
-    .line 1257
-    invoke-static {}, Laut;->a()V
+    .line 1269
+    invoke-static {}, Lavr;->a()V
 
-    .line 1258
+    .line 1270
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->b(Ljava/lang/Object;)V
 
-    .line 1259
+    .line 1271
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
     invoke-virtual {v0, p0}, Lcom/squareup/otto/Bus;->b(Ljava/lang/Object;)V
 
-    .line 1260
-    iput-boolean v5, p0, Lcom/snapchat/android/LandingPageActivity;->z:Z
+    .line 1272
+    iput-boolean v4, p0, Lcom/snapchat/android/LandingPageActivity;->z:Z
 
-    .line 1262
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    .line 1274
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
     if-eqz v0, :cond_2
 
-    .line 1263
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    .line 1275
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
-    invoke-virtual {v0}, Lajv;->x()V
+    invoke-virtual {v0}, Lakp;->x()V
 
-    .line 1264
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->P:Ladj;
+    .line 1276
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->P:Laej;
 
-    new-instance v1, Ladj$9;
+    new-instance v1, Laej$10;
 
-    invoke-direct {v1, v0}, Ladj$9;-><init>(Ladj;)V
+    invoke-direct {v1, v0}, Laej$10;-><init>(Laej;)V
 
-    invoke-static {v1}, Lbgp;->b(Ljava/lang/Runnable;)V
+    invoke-static {v1}, Lbhp;->b(Ljava/lang/Runnable;)V
 
-    .line 1267
+    .line 1279
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbaa;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Y:Lbbb;
 
-    const-string v1, "Unknown"
+    const/4 v1, 0x2
 
-    invoke-virtual {v0, v1, v5}, Lbaa;->a(Ljava/lang/String;Z)V
+    new-array v1, v1, [Ljava/lang/String;
 
-    .line 1268
+    const-string v2, "Unknown"
+
+    aput-object v2, v1, v4
+
+    const/4 v2, 0x1
+
+    const-string v3, "HORIZONTAL"
+
+    aput-object v3, v1, v2
+
+    invoke-virtual {v0, v1}, Lbbb;->b([Ljava/lang/String;)V
+
+    .line 1280
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Z:Lbbb;
+
+    new-array v1, v4, [Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lbbb;->b([Ljava/lang/String;)V
+
+    .line 1281
     return-void
 .end method
 
-.method public onPushDelayedInAppNotificationEvent(Lbcs;)V
+.method public onPushDelayedInAppNotificationEvent(Lbds;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 752
+    .line 763
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->a()V
 
-    .line 753
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lma;
+    .line 764
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lms;
 
-    iget-object v2, p1, Lbcs;->sourceId:Ljava/lang/String;
+    iget-object v2, p1, Lbds;->sourceId:Ljava/lang/String;
 
-    iget-object v0, v1, Lma;->g:Ljava/util/Map;
+    iget-object v0, v1, Lms;->g:Ljava/util/Map;
 
     invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lma$a;
+    check-cast v0, Lms$a;
 
-    iget-object v3, v1, Lma;->g:Ljava/util/Map;
+    iget-object v3, v1, Lms;->g:Ljava/util/Map;
 
     invoke-interface {v3, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v1, v0}, Lma;->a(Lma$a;)V
+    invoke-virtual {v1, v0}, Lms;->a(Lms$a;)V
 
-    .line 754
+    .line 765
     :cond_0
     return-void
 .end method
 
 .method public onQuickSnapEvent(Lcom/snapchat/android/util/eventbus/QuickSnapEvent;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1939
+    .line 1954
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     if-eqz v0, :cond_0
 
-    .line 1940
+    .line 1955
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     const/4 v1, 0x2
@@ -4236,103 +4186,91 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(IZ)V
 
-    .line 1942
+    .line 1957
     :cond_0
     iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->f:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
 
-    .line 1943
+    .line 1958
     return-void
 .end method
 
-.method public onRecentStoryReplyEvent(Lbcu;)V
-    .locals 5
-    .annotation runtime Lboh;
+.method public onRecentStoryReplyEvent(Lbdu;)V
+    .locals 4
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    .line 1903
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->M:Lnj;
+    .line 1918
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->M:Loa;
 
-    const-string v1, "RecentStoryReplyAnalyticsManager"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "startReplying to "
 
-    const-string v3, "startReplying to "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v2, p1, Lbdu;->friendUsername:Ljava/lang/String;
 
-    iget-object v3, p1, Lbcu;->friendUsername:Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object p1, v0, Loa;->mRecentStoryReplyEvent:Lbdu;
 
-    move-result-object v2
+    iput-boolean v3, v0, Loa;->mHasReplied:Z
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1919
+    invoke-virtual {p0, v3, v3}, Lcom/snapchat/android/LandingPageActivity;->a(IZ)V
 
-    move-result-object v2
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iput-object p1, v0, Lnj;->mRecentStoryReplyEvent:Lbcu;
-
-    iput-boolean v4, v0, Lnj;->mHasReplied:Z
-
-    .line 1904
-    invoke-virtual {p0, v4, v4}, Lcom/snapchat/android/LandingPageActivity;->a(IZ)V
-
-    .line 1905
+    .line 1920
     return-void
 .end method
 
-.method public onReplaceInAppNotificationEvent(Lbcy;)V
+.method public onReplaceInAppNotificationEvent(Lbdy;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 758
+    .line 769
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->a()V
 
-    .line 759
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lma;
+    .line 770
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lms;
 
-    iget-object v1, p1, Lbcy;->sourceId:Ljava/lang/String;
+    iget-object v1, p1, Lbdy;->sourceId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lma;->a(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lms;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 760
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lma;
+    .line 771
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->s:Lms;
 
-    iget-object v1, p1, Lbcy;->newEvent:Lbbg;
+    iget-object v1, p1, Lbdy;->newEvent:Lbcg;
 
-    invoke-virtual {v0, v1}, Lma;->a(Lbbg;)V
+    invoke-virtual {v0, v1}, Lms;->a(Lbcg;)V
 
-    .line 762
+    .line 773
     :cond_0
     return-void
 .end method
 
-.method public onReplySnapEvent(Lbcz;)V
+.method public onReplySnapEvent(Lbdz;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1861
-    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    .line 1876
+    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
-    .line 1864
+    .line 1879
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->n()V
 
-    .line 1866
+    .line 1881
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     const/4 v1, 0x2
@@ -4341,56 +4279,60 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(IZ)V
 
-    .line 1867
+    .line 1882
     return-void
 .end method
 
 .method protected onRestart()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 642
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->o:Laux;
+    .line 653
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->o:Lavv;
 
-    sget v1, Laux$a;->ACTIVITY_RESTART_CHECKPOINT$6dad94c5:I
+    sget v1, Lavv$a;->ACTIVITY_RESTART_CHECKPOINT$6dad94c5:I
 
-    invoke-virtual {v0, v1}, Laux;->a(I)V
+    invoke-virtual {v0, v1}, Lavv;->a(I)V
 
-    .line 643
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnf;
+    .line 654
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnw;
 
-    invoke-virtual {v0}, Lnf;->c()V
+    invoke-virtual {v0}, Lnw;->c()V
 
-    .line 644
+    .line 655
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->q:Lcom/snapchat/android/analytics/NotificationAnalytics;
 
     invoke-virtual {v0}, Lcom/snapchat/android/analytics/NotificationAnalytics;->a()V
 
-    .line 645
+    .line 656
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->K:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
-    iget-object v0, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    iget-object v0, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mEasyMetricManager:Lcom/snapchat/android/analytics/framework/EasyMetricManager;
 
     const-string v1, "CAMERA_READY"
 
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetricManager;->b(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Z)V
+    move-result-object v0
 
-    .line 646
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 657
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onRestart()V
 
-    .line 647
+    .line 658
     return-void
 .end method
 
 .method protected onResume()V
-    .locals 14
-    .annotation build Lavl;
+    .locals 12
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    const-wide/16 v12, 0x0
+    const-wide/16 v10, 0x0
+
+    const/4 v1, 0x3
 
     const/4 v6, 0x2
 
@@ -4398,109 +4340,109 @@
 
     const/4 v2, 0x0
 
-    .line 516
-    invoke-static {}, Lnf;->d()V
+    .line 526
+    invoke-static {}, Lnw;->d()V
 
-    .line 517
+    .line 527
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onResume()V
 
-    .line 519
+    .line 529
     sput-object p0, Lcom/snapchat/android/LandingPageActivity;->t:Lcom/snapchat/android/LandingPageActivity;
 
-    .line 521
+    .line 531
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     if-eqz v0, :cond_0
 
-    .line 522
+    .line 532
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     iput-boolean v3, v0, Lcom/snapchat/android/util/chat/SecureChatService;->mIsAppInForeground:Z
 
-    .line 524
+    .line 534
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->O:Lcom/snapchat/android/notification/AndroidNotificationManager;
 
     iput-boolean v3, v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->d:Z
 
-    .line 525
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Q:Lyf;
+    .line 535
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Q:Lzb;
 
-    invoke-virtual {v0, v3}, Lyf;->a(Z)V
+    invoke-virtual {v0, v3}, Lzb;->a(Z)V
 
-    .line 528
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->aj:Landroid/os/Handler;
+    .line 538
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ak:Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->ai:Ljava/lang/Runnable;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->aj:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v4}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 530
+    .line 540
     iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->z:Z
 
     if-nez v0, :cond_1
 
-    .line 531
+    .line 541
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
     invoke-virtual {v0, p0}, Lcom/squareup/otto/Bus;->c(Ljava/lang/Object;)V
 
-    .line 533
+    .line 543
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->c(Ljava/lang/Object;)V
+    invoke-virtual {v0, v4}, Lcom/squareup/otto/Bus;->c(Ljava/lang/Object;)V
 
-    .line 535
-    invoke-static {}, Lajx;->H()Z
+    .line 545
+    invoke-static {}, Lakr;->H()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 536
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnf;
+    .line 546
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnw;
 
-    invoke-virtual {v0}, Lnf;->b()V
+    invoke-virtual {v0}, Lnw;->b()V
 
-    .line 537
+    .line 547
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->o()V
 
-    .line 616
+    .line 627
     :goto_0
     return-void
 
-    .line 539
+    .line 549
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
     if-nez v0, :cond_3
 
-    .line 541
+    .line 551
     iput-boolean v3, p0, Lcom/snapchat/android/LandingPageActivity;->F:Z
 
-    .line 559
+    .line 569
     :goto_1
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    invoke-static {}, Lajx;->V()Z
+    invoke-static {}, Lakr;->V()Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 560
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnf;
+    .line 570
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnw;
 
-    invoke-virtual {v0}, Lnf;->b()V
+    invoke-virtual {v0}, Lnw;->b()V
 
-    .line 561
+    .line 571
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/snapchat/android/ScAcceptTermsActivity;
@@ -4513,7 +4455,7 @@
 
     goto :goto_0
 
-    .line 543
+    .line 553
     :cond_3
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->b()Z
 
@@ -4521,56 +4463,56 @@
 
     if-nez v0, :cond_4
 
-    .line 544
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnf;
+    .line 554
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnw;
 
-    invoke-virtual {v0}, Lnf;->b()V
+    invoke-virtual {v0}, Lnw;->b()V
 
-    .line 545
-    invoke-static {p0}, Lasr;->a(Landroid/app/Activity;)V
+    .line 555
+    invoke-static {p0}, Latq;->a(Landroid/app/Activity;)V
 
-    .line 546
+    .line 556
     invoke-direct {p0, v2}, Lcom/snapchat/android/LandingPageActivity;->b(Z)V
 
     goto :goto_0
 
-    .line 549
+    .line 559
     :cond_4
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a()V
 
-    .line 550
+    .line 560
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    invoke-static {v0}, Lnf;->a(Landroid/content/Intent;)V
+    invoke-static {v0}, Lnw;->a(Landroid/content/Intent;)V
 
-    .line 551
-    new-instance v0, Lalz;
+    .line 561
+    new-instance v0, Lamw;
 
-    invoke-direct {v0, p0}, Lalz;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Lamw;-><init>(Landroid/content/Context;)V
 
-    .line 552
-    invoke-virtual {v0, p0}, Lalz;->a(Landroid/app/Activity;)V
+    .line 562
+    invoke-virtual {v0, p0}, Lamw;->a(Landroid/app/Activity;)V
 
-    .line 553
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Z:Laol;
+    .line 563
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->aa:Laph;
 
-    invoke-virtual {v0, v2, v3}, Laol;->a(ZZ)I
+    invoke-virtual {v0, v2, v3}, Laph;->a(ZZ)I
 
-    .line 554
-    invoke-static {}, Lajq;->a()Lajq;
+    .line 564
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lajq;->e()V
+    invoke-virtual {v0}, Lakk;->e()V
 
-    .line 555
+    .line 565
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->t()V
 
     goto :goto_1
 
-    .line 566
+    .line 576
     :cond_5
     const-string v0, "keyguard"
 
@@ -4593,13 +4535,13 @@
 
     move-result-object v7
 
-    iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->ah:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->ai:Z
 
     if-eqz v0, :cond_11
 
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->n()V
 
-    iput-boolean v2, p0, Lcom/snapchat/android/LandingPageActivity;->ah:Z
+    iput-boolean v2, p0, Lcom/snapchat/android/LandingPageActivity;->ai:Z
 
     :cond_7
     :goto_2
@@ -4611,19 +4553,17 @@
 
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->f()Z
 
-    move-result v1
-
-    if-eqz v1, :cond_12
-
-    invoke-static {v7}, Labh;->a(Landroid/content/Intent;)Ljava/lang/String;
-
-    move-result-object v4
+    move-result v4
 
     if-eqz v4, :cond_12
 
-    const/4 v0, 0x3
+    invoke-static {v7}, Lach;->a(Landroid/content/Intent;)Ljava/lang/String;
 
-    move v5, v0
+    move-result-object v5
+
+    if-eqz v5, :cond_12
+
+    move v5, v1
 
     :goto_3
     if-eq v5, v6, :cond_8
@@ -4653,16 +4593,16 @@
 
     invoke-virtual {v0, v3}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
 
-    .line 569
+    .line 579
     :cond_a
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 570
-    if-eqz v0, :cond_1d
+    .line 580
+    if-eqz v0, :cond_1e
 
-    .line 571
+    .line 581
     const-string v1, "fromServerNotification"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -4671,22 +4611,22 @@
 
     if-eqz v1, :cond_b
 
-    .line 572
+    .line 582
     const-string v1, "type"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 573
-    invoke-static {v1}, Lni;->c(Ljava/lang/String;)V
+    .line 583
+    invoke-static {v1}, Lnz;->c(Ljava/lang/String;)V
 
-    .line 577
+    .line 587
     const-string v1, "fromServerNotification"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
-    .line 580
+    .line 590
     :cond_b
     const-string v1, "recovery_code_used"
 
@@ -4696,14 +4636,14 @@
 
     if-eqz v1, :cond_c
 
-    .line 581
-    const v1, 0x7f0c02c0
+    .line 591
+    const v1, 0x7f0c02be
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const v3, 0x7f0c02bf
+    const v3, 0x7f0c02bd
 
     invoke-virtual {p0, v3}, Lcom/snapchat/android/LandingPageActivity;->getString(I)Ljava/lang/String;
 
@@ -4711,12 +4651,12 @@
 
     invoke-static {p0, v1, v3}, Lcom/snapchat/android/util/AlertDialogUtils;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 584
+    .line 594
     const-string v1, "recovery_code_used"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
-    .line 587
+    .line 597
     :cond_c
     const-string v1, "fromNotification"
 
@@ -4726,18 +4666,18 @@
 
     invoke-static {v1}, Lcom/snapchat/android/analytics/AnalyticsEvents;->i(Z)V
 
-    .line 589
+    .line 599
     const-string v1, "fromNotification"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
-    .line 594
+    .line 604
     :goto_5
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 596
+    .line 606
     const-string v1, "RESUMING_FROM_SWIPE_MESSAGE"
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
@@ -4746,7 +4686,7 @@
 
     if-eqz v1, :cond_d
 
-    .line 597
+    .line 607
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -4767,76 +4707,83 @@
 
     invoke-static {p0, v1, v3}, Lcom/snapchat/android/util/AlertDialogUtils;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 600
+    .line 610
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 601
+    .line 611
     const-string v1, "RESUMING_FROM_SWIPE_MESSAGE"
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 602
+    .line 612
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 605
+    .line 615
     :cond_d
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 606
-    invoke-static {}, Laya;->a()Laya;
+    .line 616
+    invoke-static {}, Layy;->a()Layy;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Laya;->b()V
+    invoke-virtual {v0}, Layy;->b()V
 
-    .line 607
-    invoke-static {}, Lbft;->a()Lbft;
+    .line 617
+    invoke-static {}, Lbgt;->a()Lbgt;
 
-    invoke-static {}, Lbft;->b()V
+    invoke-static {}, Lbgt;->b()V
 
-    .line 610
+    .line 620
     :cond_e
-    invoke-static {}, Lajx;->ab()Z
+    invoke-static {}, Lakr;->aa()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 611
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->S:Lahr;
+    .line 621
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->S:Lain;
 
-    invoke-virtual {v0}, Lahr;->b()V
+    invoke-virtual {v0}, Lain;->b()V
 
-    .line 614
+    .line 624
     :cond_f
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lauw;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lavu;
 
-    invoke-static {p0}, Lavh;->e(Landroid/content/Context;)Z
+    invoke-static {p0}, Lawf;->e(Landroid/content/Context;)Z
 
     move-result v1
 
-    iget-boolean v3, v0, Lauw;->mIsImmersiveModeSupported:Z
+    iget-boolean v3, v0, Lavu;->mIsImmersiveModeSupported:Z
 
     if-eqz v3, :cond_10
 
-    iget-object v3, v0, Lauw;->mDecorView:Landroid/view/View;
+    iget-object v3, v0, Lavu;->mDecorView:Landroid/view/View;
 
-    if-nez v3, :cond_1e
+    if-nez v3, :cond_1f
 
-    .line 615
+    .line 625
     :cond_10
     :goto_6
-    invoke-static {}, Lnf;->e()V
+    invoke-static {}, Lnw;->e()V
+
+    .line 626
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->Z:Lbbb;
+
+    new-array v1, v2, [Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lbbb;->a([Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 566
+    .line 576
     :cond_11
     const-string v0, "fromServerNotification"
 
@@ -4846,7 +4793,7 @@
 
     if-eqz v0, :cond_7
 
-    iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->ag:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->ah:Z
 
     if-nez v0, :cond_7
 
@@ -4855,7 +4802,7 @@
     goto/16 :goto_2
 
     :cond_12
-    if-eqz v1, :cond_13
+    if-eqz v4, :cond_13
 
     if-eq v0, v6, :cond_13
 
@@ -4882,19 +4829,24 @@
     goto/16 :goto_3
 
     :cond_15
-    if-eqz v1, :cond_16
+    if-eqz v4, :cond_17
 
     iget v0, p0, Lcom/snapchat/android/LandingPageActivity;->b:I
 
-    const/4 v1, 0x4
+    const/4 v4, 0x4
 
-    if-ne v0, v1, :cond_16
+    if-eq v0, v4, :cond_16
 
+    iget v0, p0, Lcom/snapchat/android/LandingPageActivity;->b:I
+
+    if-ne v0, v1, :cond_17
+
+    :cond_16
     move v5, v6
 
     goto/16 :goto_3
 
-    :cond_16
+    :cond_17
     iget v0, p0, Lcom/snapchat/android/LandingPageActivity;->b:I
 
     move v5, v0
@@ -4912,17 +4864,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_20
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_18
 
     sget-object v1, Lcom/snapchat/android/fragments/chat/ChatFragment;->b:Ljava/lang/String;
 
-    invoke-static {v1}, Laxi;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Layg;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -4930,9 +4882,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_20
 
-    :cond_17
+    :cond_18
     const-string v0, "alarm"
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -4947,7 +4899,7 @@
 
     sget-object v0, Lcom/snapchat/android/fragments/chat/ChatFragment;->b:Ljava/lang/String;
 
-    invoke-static {v0}, Laxi;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Layg;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -4962,27 +4914,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
-
-    const-string v0, "LandingPageActivity"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    const-string v9, "CHAT-LOG: LandingPageActivity setInitialFragment setFriendUsername: "
-
-    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    new-array v9, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v8, v9}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-nez v0, :cond_1a
 
     invoke-static {v4}, Lcom/snapchat/android/fragments/chat/ChatFragment;->a(Ljava/lang/String;)Z
 
@@ -4994,24 +4926,16 @@
 
     check-cast v0, Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_19
 
-    const-string v8, "LandingPageActivity"
-
-    const-string v9, "CHAT-LOG: LandingPageActivity setInitialFragment updateFriendIfNecessary"
-
-    new-array v10, v2, [Ljava/lang/Object;
-
-    invoke-static {v8, v9, v10}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1b
 
     move v1, v3
 
     :goto_8
     invoke-virtual {v0, v1}, Lcom/snapchat/android/fragments/chat/ChatFragment;->a(Z)V
 
-    :cond_18
+    :cond_19
     const-string v0, "fromServerNotification"
 
     invoke-virtual {v7, v0, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -5020,35 +4944,35 @@
 
     const-string v1, "seq_num"
 
-    invoke-virtual {v7, v1, v12, v13}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    invoke-virtual {v7, v1, v10, v11}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v8
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1a
 
-    cmp-long v0, v8, v12
+    cmp-long v0, v8, v10
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1a
 
-    invoke-static {}, Lakc;->b()Lakc;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Lakc;->a(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1c
+    invoke-virtual {v0, v4}, Lakx;->a(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1d
 
     iget-wide v10, v0, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIReleased:J
 
     cmp-long v1, v10, v8
 
-    if-ltz v1, :cond_1b
+    if-ltz v1, :cond_1c
 
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->Z()V
 
-    :cond_19
+    :cond_1a
     :goto_9
     const-string v0, "friendUsername"
 
@@ -5060,19 +4984,19 @@
 
     goto/16 :goto_4
 
-    :cond_1a
+    :cond_1b
     move v1, v2
 
     goto :goto_8
 
-    :cond_1b
+    :cond_1c
     iget-wide v0, v0, Lcom/snapchat/android/model/chat/ChatConversation;->mTheirLastSeqNum:J
 
     cmp-long v0, v0, v8
 
-    if-gez v0, :cond_19
+    if-gez v0, :cond_1a
 
-    :cond_1c
+    :cond_1d
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->Y()V
 
     goto :goto_9
@@ -5110,7 +5034,7 @@
 
     if-nez v0, :cond_9
 
-    invoke-static {v4}, Lym;->b(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
+    invoke-static {v4}, Lzi;->b(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
 
     move-result-object v0
 
@@ -5136,72 +5060,62 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lni;->a(Lcom/snapchat/android/model/chat/ChatConversation;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lnz;->a(Lcom/snapchat/android/model/chat/ChatConversation;Ljava/lang/String;)V
 
     goto/16 :goto_4
 
-    .line 591
-    :cond_1d
+    .line 601
+    :cond_1e
     invoke-static {v2}, Lcom/snapchat/android/analytics/AnalyticsEvents;->i(Z)V
 
     goto/16 :goto_5
 
-    .line 614
-    :cond_1e
-    const-string v3, "SoftNavigationBarManager"
+    .line 624
+    :cond_1f
+    iget-object v3, v0, Lavu;->mWindow:Landroid/view/Window;
 
-    const-string v4, "adding flags and padding onresume"
+    const/high16 v4, 0x8000000
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Landroid/view/Window;->addFlags(I)V
 
-    invoke-static {v3, v4, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    iget-object v3, v0, Lavu;->mDecorView:Landroid/view/View;
 
-    iget-object v2, v0, Lauw;->mWindow:Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/view/View;->getSystemUiVisibility()I
 
-    const/high16 v3, 0x8000000
+    move-result v3
 
-    invoke-virtual {v2, v3}, Landroid/view/Window;->addFlags(I)V
+    or-int/lit16 v3, v3, 0x100
 
-    iget-object v2, v0, Lauw;->mDecorView:Landroid/view/View;
+    or-int/lit16 v3, v3, 0x400
 
-    invoke-virtual {v2}, Landroid/view/View;->getSystemUiVisibility()I
+    iput v3, v0, Lavu;->mDefaultFlags:I
 
-    move-result v2
+    iget-object v3, v0, Lavu;->mDecorView:Landroid/view/View;
 
-    or-int/lit16 v2, v2, 0x100
+    iget v4, v0, Lavu;->mDefaultFlags:I
 
-    or-int/lit16 v2, v2, 0x400
+    invoke-virtual {v3, v4}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    iput v2, v0, Lauw;->mDefaultFlags:I
+    iget-object v3, v0, Lavu;->mDecorView:Landroid/view/View;
 
-    iget-object v2, v0, Lauw;->mDecorView:Landroid/view/View;
+    const/high16 v4, -0x1000000
 
-    iget v3, v0, Lauw;->mDefaultFlags:I
+    invoke-virtual {v3, v4}, Landroid/view/View;->setBackgroundColor(I)V
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setSystemUiVisibility(I)V
+    iget-boolean v3, v0, Lavu;->mIsImmersiveModeOn:Z
 
-    iget-object v2, v0, Lauw;->mDecorView:Landroid/view/View;
-
-    const/high16 v3, -0x1000000
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->setBackgroundColor(I)V
-
-    iget-boolean v2, v0, Lauw;->mIsImmersiveModeOn:Z
-
-    invoke-virtual {v0, v1, v2}, Lauw;->a(ZZ)V
+    invoke-virtual {v0, v1, v3}, Lavu;->a(ZZ)V
 
     goto/16 :goto_6
 
-    :cond_1f
+    :cond_20
     move v1, v2
 
     move-object v4, v0
 
     goto/16 :goto_7
 
-    .line 566
-    nop
-
+    .line 576
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -5213,44 +5127,44 @@
     .locals 2
 
     .prologue
-    .line 677
+    .line 688
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 679
+    .line 690
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
     if-eqz v0, :cond_0
 
-    .line 680
+    .line 691
     const-string v0, "in_chat_snap_event"
 
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 691
+    .line 702
     :cond_0
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     move-result-object v0
 
-    .line 692
+    .line 703
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->g_()Z
+    invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f_()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 693
+    .line 704
     const-string v0, "should_pop_fragments"
 
     const/4 v1, 0x1
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 698
+    .line 709
     :cond_1
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->f()Z
 
@@ -5258,7 +5172,7 @@
 
     if-nez v0, :cond_2
 
-    .line 700
+    .line 711
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v0}, Lcom/snapchat/android/util/SnapchatViewPager;->getCurrentItem()I
@@ -5267,18 +5181,18 @@
 
     iput v0, p0, Lcom/snapchat/android/LandingPageActivity;->b:I
 
-    .line 701
+    .line 712
     const-string v0, "view_pager_index"
 
     iget v1, p0, Lcom/snapchat/android/LandingPageActivity;->b:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 706
+    .line 717
     :goto_0
     return-void
 
-    .line 704
+    .line 715
     :cond_2
     const/4 v0, 0x2
 
@@ -5287,697 +5201,702 @@
     goto :goto_0
 .end method
 
-.method public onSetPagingEnabledEvent(Lbdg;)V
+.method public onSetPagingEnabledEvent(Lbeg;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1831
+    .line 1846
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-    iget-boolean v1, p1, Lbdg;->enablePaging:Z
+    iget-boolean v1, p1, Lbeg;->enablePaging:Z
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setPagingEnabled(Z)V
 
-    .line 1832
+    .line 1847
     return-void
 .end method
 
-.method public onShareDSnapEvent(Laex;)V
-    .locals 14
-    .annotation runtime Lboh;
+.method public onShareDSnapEvent(Lafx;)V
+    .locals 17
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1878
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
+    .line 1893
+    move-object/from16 v0, p0
 
-    const/4 v1, 0x4
+    iget-object v2, v0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x4
 
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(IZ)V
+    const/4 v4, 0x0
 
-    .line 1879
-    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    invoke-virtual {v2, v3, v4}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(IZ)V
 
-    .line 1881
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    .line 1894
+    move-object/from16 v0, p1
 
-    iget-object v11, v0, Laex;->a:Lcom/snapchat/android/discover/ui/DSnapView;
+    move-object/from16 v1, p0
 
-    iget v3, p1, Laex;->b:F
+    iput-object v0, v1, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
-    iget v4, p1, Laex;->c:F
+    .line 1896
+    move-object/from16 v0, p0
 
-    invoke-virtual {v11}, Lcom/snapchat/android/discover/ui/DSnapView;->getCurrentPanel()I
+    iget-object v2, v0, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
-    move-result v0
+    iget-object v4, v2, Lafx;->a:Lcom/snapchat/android/discover/ui/DSnapView;
 
-    invoke-virtual {v11, v0}, Lcom/snapchat/android/discover/ui/DSnapView;->b(I)Lady;
+    move-object/from16 v0, p1
 
-    move-result-object v5
+    iget v5, v0, Lafx;->b:F
 
-    iget-object v0, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    move-object/from16 v0, p1
 
-    if-eqz v0, :cond_0
+    iget v6, v0, Lafx;->c:F
 
-    if-nez v5, :cond_2
+    invoke-virtual {v4}, Lcom/snapchat/android/discover/ui/DSnapView;->getCurrentPanel()I
+
+    move-result v2
+
+    invoke-virtual {v4, v2}, Lcom/snapchat/android/discover/ui/DSnapView;->b(I)Laey;
+
+    move-result-object v7
+
+    iget-object v2, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+
+    if-eqz v2, :cond_0
+
+    if-nez v7, :cond_2
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    .line 1884
+    .line 1899
     :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
-    .line 1885
-    invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
+    .line 1900
+    invoke-direct/range {p0 .. p0}, Lcom/snapchat/android/LandingPageActivity;->q()Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
-    move-result-object v0
+    move-result-object v2
 
-    .line 1886
-    if-eqz v0, :cond_1
+    .line 1901
+    if-eqz v2, :cond_1
 
-    .line 1887
-    const/4 v1, 0x0
+    .line 1902
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
+    invoke-virtual {v2, v3}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
 
-    .line 1890
+    .line 1905
     :cond_1
     return-void
 
-    .line 1881
+    .line 1896
     :cond_2
-    invoke-virtual {v11}, Lcom/snapchat/android/discover/ui/DSnapView;->getCurrentPanel()I
+    invoke-virtual {v4}, Lcom/snapchat/android/discover/ui/DSnapView;->getCurrentPanel()I
 
-    move-result v0
+    move-result v2
 
-    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPage$Form;->TOP_SNAP:Lcom/snapchat/android/discover/model/DSnapPage$Form;
+    sget-object v3, Lcom/snapchat/android/discover/model/DSnapPage$Form;->TOP_SNAP:Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPage$Form;->getIndex()I
+    invoke-virtual {v3}, Lcom/snapchat/android/discover/model/DSnapPage$Form;->getIndex()I
 
-    move-result v1
+    move-result v3
 
-    if-ne v0, v1, :cond_4
+    if-ne v2, v3, :cond_4
 
-    const/4 v0, 0x1
-
-    move v10, v0
+    const/4 v8, 0x1
 
     :goto_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    iget-wide v6, v11, Lcom/snapchat/android/discover/ui/DSnapView;->k:J
+    iget-wide v10, v4, Lcom/snapchat/android/discover/ui/DSnapView;->k:J
 
-    sub-long v8, v0, v6
+    sub-long v10, v2, v10
 
-    invoke-virtual {v5}, Lady;->e()Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+    invoke-virtual {v7}, Laey;->e()Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
 
-    move-result-object v7
+    move-result-object v9
 
-    iget-object v0, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    iget-object v2, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    iget-boolean v0, v0, Lcom/snapchat/android/discover/model/DSnapPage;->o:Z
+    iget-boolean v2, v2, Lcom/snapchat/android/discover/model/DSnapPage;->o:Z
 
-    if-nez v0, :cond_f
+    if-nez v2, :cond_f
 
-    const v0, 0x7f0c0110
+    const v2, 0x7f0c0110
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    iget-object v3, v11, Lcom/snapchat/android/discover/ui/DSnapView;->h:Lcom/snapchat/android/discover/model/ChannelPage;
+    iget-object v6, v4, Lcom/snapchat/android/discover/ui/DSnapView;->h:Lcom/snapchat/android/discover/model/ChannelPage;
 
-    iget-object v3, v3, Lcom/snapchat/android/discover/model/ChannelPage;->c:Ljava/lang/String;
+    iget-object v6, v6, Lcom/snapchat/android/discover/model/ChannelPage;->c:Ljava/lang/String;
 
-    aput-object v3, v1, v2
+    aput-object v6, v3, v5
 
-    invoke-static {v0, v1}, Latx;->a(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v3}, Lauv;->a(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    iget-object v12, v11, Lcom/snapchat/android/discover/ui/DSnapView;->r:Lcom/squareup/otto/Bus;
+    iget-object v3, v4, Lcom/snapchat/android/discover/ui/DSnapView;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v0, Lbbg;
+    new-instance v5, Lbcg;
 
-    const/4 v1, 0x0
+    iget-object v6, v4, Lcom/snapchat/android/discover/ui/DSnapView;->h:Lcom/snapchat/android/discover/model/ChannelPage;
 
-    iget-object v3, v11, Lcom/snapchat/android/discover/ui/DSnapView;->h:Lcom/snapchat/android/discover/model/ChannelPage;
+    iget v6, v6, Lcom/snapchat/android/discover/model/ChannelPage;->h:I
 
-    iget v3, v3, Lcom/snapchat/android/discover/model/ChannelPage;->h:I
+    iget-object v7, v4, Lcom/snapchat/android/discover/ui/DSnapView;->h:Lcom/snapchat/android/discover/model/ChannelPage;
 
-    iget-object v4, v11, Lcom/snapchat/android/discover/ui/DSnapView;->h:Lcom/snapchat/android/discover/model/ChannelPage;
+    iget v7, v7, Lcom/snapchat/android/discover/model/ChannelPage;->i:I
 
-    iget v4, v4, Lcom/snapchat/android/discover/model/ChannelPage;->i:I
+    invoke-virtual {v4}, Lcom/snapchat/android/discover/ui/DSnapView;->getInAppNotificationSourceId()Ljava/lang/String;
 
-    const/4 v5, 0x1
+    move-result-object v12
 
-    invoke-virtual {v11}, Lcom/snapchat/android/discover/ui/DSnapView;->getInAppNotificationSourceId()Ljava/lang/String;
+    invoke-direct {v5, v2, v6, v7, v12}, Lbcg;-><init>(Ljava/lang/CharSequence;IILjava/lang/String;)V
 
-    move-result-object v6
+    invoke-virtual {v3, v5}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    invoke-direct/range {v0 .. v6}, Lbbg;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;IIZLjava/lang/String;)V
+    iget-object v2, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    invoke-virtual {v12, v0}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+    invoke-virtual {v2}, Lcom/snapchat/android/discover/model/DSnapPage;->a()Ljava/lang/String;
 
-    iget-object v0, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    move-result-object v2
 
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/DSnapPage;->a()Ljava/lang/String;
+    iget-object v3, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    move-result-object v0
+    iget-object v3, v3, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
 
-    iget-object v1, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    iget-object v5, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    iget-object v1, v1, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+    iget-object v5, v5, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
 
-    iget-object v2, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    iget-object v6, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    iget-object v2, v2, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
+    iget-object v6, v6, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
 
-    iget-object v3, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v3, v3, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
+    move-result v6
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    iget-object v7, v4, Lcom/snapchat/android/discover/ui/DSnapView;->l:Laef;
 
-    move-result v3
+    iget-object v12, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    iget-object v4, v11, Lcom/snapchat/android/discover/ui/DSnapView;->l:Ladf;
+    iget-object v12, v12, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
 
-    iget-object v5, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    invoke-virtual {v7, v12}, Laef;->d(Ljava/lang/String;)I
 
-    iget-object v5, v5, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+    move-result v7
 
-    invoke-virtual {v4, v5}, Ladf;->d(Ljava/lang/String;)I
+    iget-object v12, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    move-result v4
+    iget-object v12, v12, Lcom/snapchat/android/discover/model/DSnapPage;->k:Ljava/lang/Integer;
 
-    iget-object v5, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v5, v5, Lcom/snapchat/android/discover/model/DSnapPage;->k:Ljava/lang/Integer;
+    move-result v12
 
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    iget-object v13, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    move-result v5
+    iget-object v13, v13, Lcom/snapchat/android/discover/model/DSnapPage;->d:Ljava/lang/String;
 
-    iget-object v6, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    iget-object v14, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    iget-object v6, v6, Lcom/snapchat/android/discover/model/DSnapPage;->d:Ljava/lang/String;
+    iget v14, v14, Lcom/snapchat/android/discover/model/DSnapPage;->e:I
 
-    iget-object v12, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    iget-object v15, v4, Lcom/snapchat/android/discover/ui/DSnapView;->l:Laef;
 
-    iget v12, v12, Lcom/snapchat/android/discover/model/DSnapPage;->e:I
+    iget-object v0, v4, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
 
-    iget-object v13, v11, Lcom/snapchat/android/discover/ui/DSnapView;->l:Ladf;
+    move-object/from16 v16, v0
 
-    iget-object v11, v11, Lcom/snapchat/android/discover/ui/DSnapView;->g:Lcom/snapchat/android/discover/model/DSnapPage;
+    move-object/from16 v0, v16
 
-    iget-object v11, v11, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+    iget-object v0, v0, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
 
-    invoke-virtual {v13, v11}, Ladf;->e(Ljava/lang/String;)I
+    move-object/from16 v16, v0
 
-    move-result v11
+    invoke-virtual/range {v15 .. v16}, Laef;->e(Ljava/lang/String;)I
 
-    if-nez v5, :cond_9
+    move-result v15
 
-    if-eqz v10, :cond_6
+    iget-object v4, v4, Lcom/snapchat/android/discover/ui/DSnapView;->f:Lacr;
 
-    new-instance v5, Lhd;
+    iget-object v4, v4, Lacr;->c:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
 
-    invoke-direct {v5}, Lhd;-><init>()V
+    invoke-virtual {v4}, Lcom/snapchat/android/discover/model/EditionOpenOrigin;->getSourceType()Llv;
 
-    iput-object v0, v5, Lhd;->publisherId:Ljava/lang/String;
+    move-result-object v4
 
-    iput-object v2, v5, Lhd;->dsnapId:Ljava/lang/String;
+    if-nez v12, :cond_9
 
-    iput-object v1, v5, Lhd;->editionId:Ljava/lang/String;
+    if-eqz v8, :cond_6
 
-    invoke-static {v8, v9}, Lavf;->a(J)D
+    new-instance v8, Lhm;
 
-    move-result-wide v0
+    invoke-direct {v8}, Lhm;-><init>()V
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iput-object v2, v8, Lhm;->publisherId:Ljava/lang/String;
 
-    move-result-object v0
+    iput-object v5, v8, Lhm;->dsnapId:Ljava/lang/String;
 
-    iput-object v0, v5, Lhd;->timeViewed:Ljava/lang/Double;
+    iput-object v3, v8, Lhm;->editionId:Ljava/lang/String;
 
-    invoke-static {v7}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lhy;
+    invoke-static {v10, v11}, Lawd;->a(J)D
 
-    move-result-object v0
+    move-result-wide v2
 
-    iput-object v0, v5, Lhd;->mediaType:Lhy;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    if-gez v4, :cond_5
+    move-result-object v2
 
-    const/4 v0, 0x1
+    iput-object v2, v8, Lhm;->timeViewed:Ljava/lang/Double;
+
+    invoke-static {v9}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
+
+    move-result-object v2
+
+    iput-object v2, v8, Lhm;->mediaType:Lih;
+
+    iput-object v4, v8, Lhm;->source:Llv;
+
+    if-gez v7, :cond_5
+
+    const/4 v2, 0x1
 
     :goto_2
-    if-nez v0, :cond_3
+    if-nez v2, :cond_3
 
-    add-int/lit8 v0, v3, 0x1
+    add-int/lit8 v2, v6, 0x1
 
-    int-to-long v2, v4
+    int-to-long v4, v7
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    iput-object v3, v8, Lhm;->snapIndexCount:Ljava/lang/Long;
+
+    int-to-long v2, v2
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v2
 
-    iput-object v1, v5, Lhd;->snapIndexCount:Ljava/lang/Long;
-
-    int-to-long v0, v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iput-object v0, v5, Lhd;->snapIndexPos:Ljava/lang/Long;
+    iput-object v2, v8, Lhm;->snapIndexPos:Ljava/lang/Long;
 
     :cond_3
-    invoke-static {v5}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v8}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     :goto_3
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     goto/16 :goto_0
 
     :cond_4
-    const/4 v0, 0x0
-
-    move v10, v0
+    const/4 v8, 0x0
 
     goto/16 :goto_1
 
     :cond_5
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     goto :goto_2
 
     :cond_6
-    new-instance v5, Lgy;
+    new-instance v8, Lhh;
 
-    invoke-direct {v5}, Lgy;-><init>()V
+    invoke-direct {v8}, Lhh;-><init>()V
 
-    iput-object v0, v5, Lgy;->publisherId:Ljava/lang/String;
+    iput-object v2, v8, Lhh;->publisherId:Ljava/lang/String;
 
-    iput-object v2, v5, Lgy;->dsnapId:Ljava/lang/String;
+    iput-object v5, v8, Lhh;->dsnapId:Ljava/lang/String;
 
-    iput-object v1, v5, Lgy;->editionId:Ljava/lang/String;
+    iput-object v3, v8, Lhh;->editionId:Ljava/lang/String;
 
-    invoke-static {v7}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->b(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lhy;
+    invoke-static {v9}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->b(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v5, Lgy;->longformType:Lhy;
+    iput-object v2, v8, Lhh;->longformType:Lih;
 
-    invoke-static {v8, v9}, Lavf;->a(J)D
+    invoke-static {v10, v11}, Lawd;->a(J)D
 
-    move-result-wide v0
+    move-result-wide v2
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v5, Lgy;->timeViewed:Ljava/lang/Double;
+    iput-object v2, v8, Lhh;->timeViewed:Ljava/lang/Double;
 
-    if-gez v4, :cond_8
+    iput-object v4, v8, Lhh;->source:Llv;
 
-    const/4 v0, 0x1
+    if-gez v7, :cond_8
+
+    const/4 v2, 0x1
 
     :goto_4
-    if-nez v0, :cond_7
+    if-nez v2, :cond_7
 
-    add-int/lit8 v0, v3, 0x1
+    add-int/lit8 v2, v6, 0x1
 
-    int-to-long v2, v4
+    int-to-long v4, v7
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    iput-object v3, v8, Lhh;->snapIndexCount:Ljava/lang/Long;
+
+    int-to-long v2, v2
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v2
 
-    iput-object v1, v5, Lgy;->snapIndexCount:Ljava/lang/Long;
-
-    int-to-long v0, v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iput-object v0, v5, Lgy;->snapIndexPos:Ljava/lang/Long;
+    iput-object v2, v8, Lhh;->snapIndexPos:Ljava/lang/Long;
 
     :cond_7
-    invoke-static {v5}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v8}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     goto :goto_3
 
     :cond_8
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     goto :goto_4
 
     :cond_9
-    if-eqz v10, :cond_c
+    if-eqz v8, :cond_c
 
-    new-instance v2, Lgq;
+    new-instance v5, Lgz;
 
-    invoke-direct {v2}, Lgq;-><init>()V
+    invoke-direct {v5}, Lgz;-><init>()V
 
-    iput-object v0, v2, Lgq;->publisherId:Ljava/lang/String;
+    iput-object v2, v5, Lgz;->publisherId:Ljava/lang/String;
 
-    iput-object v6, v2, Lgq;->adsnapId:Ljava/lang/String;
+    iput-object v13, v5, Lgz;->adsnapId:Ljava/lang/String;
 
-    iput-object v1, v2, Lgq;->editionId:Ljava/lang/String;
+    iput-object v3, v5, Lgz;->editionId:Ljava/lang/String;
 
-    invoke-static {v8, v9}, Lavf;->a(J)D
+    invoke-static {v10, v11}, Lawd;->a(J)D
 
-    move-result-wide v0
+    move-result-wide v2
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgq;->timeViewed:Ljava/lang/Double;
+    iput-object v2, v5, Lgz;->timeViewed:Ljava/lang/Double;
 
-    invoke-static {v7}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lhy;
+    invoke-static {v9}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->a(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgq;->mediaType:Lhy;
+    iput-object v2, v5, Lgz;->mediaType:Lih;
 
-    if-gez v4, :cond_b
+    iput-object v4, v5, Lgz;->source:Llv;
 
-    const/4 v0, 0x1
+    if-gez v7, :cond_b
+
+    const/4 v2, 0x1
 
     :goto_5
-    if-nez v0, :cond_a
+    if-nez v2, :cond_a
 
-    add-int/lit8 v0, v3, 0x1
+    add-int/lit8 v2, v6, 0x1
 
-    int-to-long v4, v4
+    int-to-long v6, v7
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v3
 
-    iput-object v1, v2, Lgq;->snapIndexCount:Ljava/lang/Long;
+    iput-object v3, v5, Lgz;->snapIndexCount:Ljava/lang/Long;
 
-    int-to-long v0, v0
+    int-to-long v2, v2
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgq;->snapIndexPos:Ljava/lang/Long;
+    iput-object v2, v5, Lgz;->snapIndexPos:Ljava/lang/Long;
 
-    int-to-long v0, v12
+    int-to-long v2, v14
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgq;->adIndexPos:Ljava/lang/Long;
+    iput-object v2, v5, Lgz;->adIndexPos:Ljava/lang/Long;
 
-    int-to-long v0, v11
+    int-to-long v2, v15
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgq;->adIndexCount:Ljava/lang/Long;
+    iput-object v2, v5, Lgz;->adIndexCount:Ljava/lang/Long;
 
     :cond_a
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v5}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     goto/16 :goto_3
 
     :cond_b
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     goto :goto_5
 
     :cond_c
-    new-instance v2, Lgm;
+    new-instance v5, Lgv;
 
-    invoke-direct {v2}, Lgm;-><init>()V
+    invoke-direct {v5}, Lgv;-><init>()V
 
-    iput-object v0, v2, Lgm;->publisherId:Ljava/lang/String;
+    iput-object v2, v5, Lgv;->publisherId:Ljava/lang/String;
 
-    iput-object v6, v2, Lgm;->adsnapId:Ljava/lang/String;
+    iput-object v13, v5, Lgv;->adsnapId:Ljava/lang/String;
 
-    iput-object v1, v2, Lgm;->editionId:Ljava/lang/String;
+    iput-object v3, v5, Lgv;->editionId:Ljava/lang/String;
 
-    invoke-static {v8, v9}, Lavf;->a(J)D
+    invoke-static {v10, v11}, Lawd;->a(J)D
 
-    move-result-wide v0
+    move-result-wide v2
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgm;->timeViewed:Ljava/lang/Double;
+    iput-object v2, v5, Lgv;->timeViewed:Ljava/lang/Double;
 
-    invoke-static {v7}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->b(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lhy;
+    invoke-static {v9}, Lcom/snapchat/android/discover/analytics/DiscoverUsageAnalytics;->b(Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;)Lih;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgm;->longformType:Lhy;
+    iput-object v2, v5, Lgv;->longformType:Lih;
 
-    if-gez v4, :cond_e
+    iput-object v4, v5, Lgv;->source:Llv;
 
-    const/4 v0, 0x1
+    if-gez v7, :cond_e
+
+    const/4 v2, 0x1
 
     :goto_6
-    if-nez v0, :cond_d
+    if-nez v2, :cond_d
 
-    add-int/lit8 v0, v3, 0x1
+    add-int/lit8 v2, v6, 0x1
 
-    int-to-long v4, v4
+    int-to-long v6, v7
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v3
 
-    iput-object v1, v2, Lgm;->snapIndexCount:Ljava/lang/Long;
+    iput-object v3, v5, Lgv;->snapIndexCount:Ljava/lang/Long;
 
-    int-to-long v0, v0
+    int-to-long v2, v2
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgm;->snapIndexPos:Ljava/lang/Long;
+    iput-object v2, v5, Lgv;->snapIndexPos:Ljava/lang/Long;
 
-    int-to-long v0, v12
+    int-to-long v2, v14
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgm;->adIndexPos:Ljava/lang/Long;
+    iput-object v2, v5, Lgv;->adIndexPos:Ljava/lang/Long;
 
-    int-to-long v0, v11
+    int-to-long v2, v15
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    iput-object v0, v2, Lgm;->adIndexCount:Ljava/lang/Long;
+    iput-object v2, v5, Lgv;->adIndexCount:Ljava/lang/Long;
 
     :cond_d
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v5}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     goto/16 :goto_3
 
     :cond_e
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     goto :goto_6
 
     :cond_f
-    if-eqz v5, :cond_10
+    if-eqz v7, :cond_10
 
-    invoke-virtual {v5}, Lady;->e()Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+    invoke-virtual {v7}, Laey;->e()Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
 
-    move-result-object v0
+    move-result-object v2
 
-    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->REMOTE_VIDEO:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+    sget-object v3, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->REMOTE_VIDEO:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
 
-    if-ne v0, v1, :cond_13
+    if-ne v2, v3, :cond_12
 
-    sget-object v0, Lcom/snapchat/android/discover/model/DSnapPage$Form;->TOP_SNAP:Lcom/snapchat/android/discover/model/DSnapPage$Form;
+    sget-object v2, Lcom/snapchat/android/discover/model/DSnapPage$Form;->TOP_SNAP:Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/model/DSnapPage$Form;->getIndex()I
-
-    move-result v0
-
-    invoke-virtual {v11, v0}, Lcom/snapchat/android/discover/ui/DSnapView;->b(I)Lady;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_10
-
-    iget-object v12, v11, Lcom/snapchat/android/discover/ui/DSnapView;->d:Laej;
-
-    iget-object v0, v11, Lcom/snapchat/android/discover/ui/DSnapView;->b:Lcom/snapchat/android/ui/VerticalSwipeLayout;
-
-    new-instance v1, Lcom/snapchat/android/discover/ui/DSnapView$2;
-
-    move-object v2, v11
-
-    move v6, v10
-
-    invoke-direct/range {v1 .. v9}, Lcom/snapchat/android/discover/ui/DSnapView$2;-><init>(Lcom/snapchat/android/discover/ui/DSnapView;FFLady;ZLcom/snapchat/android/discover/model/DSnapPanel$MediaType;J)V
-
-    invoke-virtual {v0}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->getCurrentPanel()I
+    invoke-virtual {v2}, Lcom/snapchat/android/discover/model/DSnapPage$Form;->getIndex()I
 
     move-result v2
 
-    if-gtz v2, :cond_11
+    invoke-virtual {v4, v2}, Lcom/snapchat/android/discover/ui/DSnapView;->b(I)Laey;
 
-    const/4 v0, 0x0
+    move-result-object v7
 
-    :goto_7
-    if-nez v0, :cond_12
+    if-eqz v7, :cond_10
 
-    const-string v0, "TopSnapSlideAnimator"
+    iget-object v12, v4, Lcom/snapchat/android/discover/ui/DSnapView;->d:Lafj;
 
-    const-string v1, "Could not prepare animation. Skipping animation."
+    iget-object v2, v4, Lcom/snapchat/android/discover/ui/DSnapView;->b:Lcom/snapchat/android/ui/VerticalSwipeLayout;
+
+    new-instance v3, Lcom/snapchat/android/discover/ui/DSnapView$2;
+
+    invoke-direct/range {v3 .. v11}, Lcom/snapchat/android/discover/ui/DSnapView$2;-><init>(Lcom/snapchat/android/discover/ui/DSnapView;FFLaey;ZLcom/snapchat/android/discover/model/DSnapPanel$MediaType;J)V
+
+    invoke-virtual {v2}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->getCurrentPanel()I
+
+    move-result v5
+
+    if-gtz v5, :cond_11
 
     const/4 v2, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    :goto_7
+    if-eqz v2, :cond_10
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    iget-object v2, v12, Lafj;->a:Landroid/view/View;
+
+    const-string v4, "top"
+
+    const/4 v5, 0x2
+
+    new-array v5, v5, [I
+
+    const/4 v6, 0x0
+
+    iget-object v7, v12, Lafj;->a:Landroid/view/View;
+
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v7
+
+    neg-int v7, v7
+
+    aput v7, v5, v6
+
+    const/4 v6, 0x1
+
+    const/4 v7, 0x0
+
+    aput v7, v5, v6
+
+    invoke-static {v2, v4, v5}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    const-wide/16 v4, 0xc8
+
+    invoke-virtual {v2, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    new-instance v4, Lafj$1;
+
+    invoke-direct {v4, v12}, Lafj$1;-><init>(Lafj;)V
+
+    invoke-virtual {v2, v4}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    invoke-virtual {v2, v3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->start()V
 
     :cond_10
     :goto_8
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     goto/16 :goto_0
 
     :cond_11
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v5}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v5
 
-    iput-object v2, v12, Laej;->a:Landroid/view/View;
+    iput-object v5, v12, Lafj;->a:Landroid/view/View;
 
-    iget-object v2, v12, Laej;->a:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v2
-
-    iget-object v3, v12, Laej;->a:Landroid/view/View;
-
-    const/4 v4, 0x4
-
-    invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v3, v12, Laej;->a:Landroid/view/View;
-
-    invoke-virtual {v0, v3}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->removeView(Landroid/view/View;)V
-
-    iget-object v0, v12, Laej;->a:Landroid/view/View;
-
-    invoke-virtual {v11, v0}, Lcom/snapchat/android/discover/ui/DSnapView;->addView(Landroid/view/View;)V
-
-    iget-object v0, v12, Laej;->a:Landroid/view/View;
-
-    neg-int v2, v2
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setTop(I)V
-
-    const/4 v0, 0x1
-
-    goto :goto_7
-
-    :cond_12
-    iget-object v0, v12, Laej;->a:Landroid/view/View;
-
-    const-string v2, "top"
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [I
-
-    const/4 v4, 0x0
-
-    iget-object v5, v12, Laej;->a:Landroid/view/View;
+    iget-object v5, v12, Lafj;->a:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
 
-    neg-int v5, v5
+    iget-object v6, v12, Lafj;->a:Landroid/view/View;
 
-    aput v5, v3, v4
+    const/4 v7, 0x4
 
-    const/4 v4, 0x1
+    invoke-virtual {v6, v7}, Landroid/view/View;->setVisibility(I)V
 
-    const/4 v5, 0x0
+    iget-object v6, v12, Lafj;->a:Landroid/view/View;
 
-    aput v5, v3, v4
+    invoke-virtual {v2, v6}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->removeView(Landroid/view/View;)V
 
-    invoke-static {v0, v2, v3}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;
+    iget-object v2, v12, Lafj;->a:Landroid/view/View;
 
-    move-result-object v0
+    invoke-virtual {v4, v2}, Lcom/snapchat/android/discover/ui/DSnapView;->addView(Landroid/view/View;)V
 
-    const-wide/16 v2, 0xc8
+    iget-object v2, v12, Lafj;->a:Landroid/view/View;
 
-    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+    neg-int v4, v5
 
-    new-instance v2, Laej$1;
+    invoke-virtual {v2, v4}, Landroid/view/View;->setTop(I)V
 
-    invoke-direct {v2, v12}, Laej$1;-><init>(Laej;)V
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    goto :goto_7
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
-
-    goto :goto_8
-
-    :cond_13
-    move-object v2, v11
-
-    move v6, v10
-
-    invoke-virtual/range {v2 .. v9}, Lcom/snapchat/android/discover/ui/DSnapView;->a(FFLady;ZLcom/snapchat/android/discover/model/DSnapPanel$MediaType;J)V
+    :cond_12
+    invoke-virtual/range {v4 .. v11}, Lcom/snapchat/android/discover/ui/DSnapView;->a(FFLaey;ZLcom/snapchat/android/discover/model/DSnapPanel$MediaType;J)V
 
     goto :goto_8
 .end method
 
 .method public onShowDialogEvent(Lcom/snapchat/android/util/eventbus/ShowDialogEvent;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 2197
+    .line 2212
     iget-object v0, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->message:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 2198
+    .line 2213
     iget v0, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->stringResId:I
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2203
+    .line 2218
     :goto_0
     iget-object v1, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->dialogType:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
 
@@ -5985,12 +5904,12 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 2204
+    .line 2219
     iget v1, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->titleResId:I
 
     if-eqz v1, :cond_1
 
-    .line 2205
+    .line 2220
     iget v1, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->titleResId:I
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->getString(I)Ljava/lang/String;
@@ -5999,23 +5918,23 @@
 
     invoke-static {p0, v1, v0}, Lcom/snapchat/android/util/AlertDialogUtils;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2218
+    .line 2233
     :goto_1
     return-void
 
-    .line 2200
+    .line 2215
     :cond_0
     iget-object v0, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->message:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 2207
+    .line 2222
     :cond_1
     invoke-static {p0, v0}, Lcom/snapchat/android/util/AlertDialogUtils;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 2209
+    .line 2224
     :cond_2
     iget-object v1, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->dialogType:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
 
@@ -6023,7 +5942,7 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 2210
+    .line 2225
     iget v1, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->titleResId:I
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->getString(I)Ljava/lang/String;
@@ -6036,7 +5955,7 @@
 
     goto :goto_1
 
-    .line 2212
+    .line 2227
     :cond_3
     iget-object v1, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->dialogType:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
 
@@ -6044,7 +5963,7 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 2213
+    .line 2228
     iget v1, p1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;->titleResId:I
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/LandingPageActivity;->getString(I)Ljava/lang/String;
@@ -6059,62 +5978,62 @@
 
     goto :goto_1
 
-    .line 2216
+    .line 2231
     :cond_4
     invoke-static {v0, p0}, Lcom/snapchat/android/util/AlertDialogUtils;->a(Ljava/lang/String;Landroid/content/Context;)V
 
     goto :goto_1
 .end method
 
-.method public onSnapCapturedEvent(Lbdj;)V
+.method public onSnapCapturedEvent(Lbej;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v2, 0x1
 
-    .line 1761
+    .line 1776
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     if-nez v0, :cond_1
 
-    .line 1809
+    .line 1824
     :cond_0
     :goto_0
     return-void
 
-    .line 1763
+    .line 1778
     :cond_1
-    invoke-static {}, Lajv;->g()Lajv;
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
-    .line 1765
-    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->c:Lbdj;
+    .line 1780
+    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->c:Lbej;
 
-    .line 1767
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->c:Lbdj;
+    .line 1782
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->c:Lbej;
 
-    iget-object v0, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v0, v0, Lbej;->mMediabryo:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
-    .line 1768
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    .line 1783
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
     if-eqz v1, :cond_6
 
-    .line 1769
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    .line 1784
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
-    iget-object v1, v1, Lbcz;->mRecipients:Ljava/lang/String;
+    iget-object v1, v1, Lbdz;->mRecipients:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/model/MediaMailingMetadata;->a(Ljava/lang/String;)V
 
-    .line 1776
+    .line 1791
     :cond_2
     :goto_1
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->f()Z
@@ -6123,8 +6042,8 @@
 
     if-nez v0, :cond_3
 
-    .line 1778
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    .line 1793
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
     if-eqz v0, :cond_0
 
@@ -6136,30 +6055,30 @@
 
     if-gt v0, v2, :cond_0
 
-    .line 1782
+    .line 1797
     :cond_3
     new-instance v0, Lcom/snapchat/android/preview/SnapPreviewFragment;
 
     invoke-direct {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;-><init>()V
 
-    .line 1783
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    .line 1798
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
     if-eqz v1, :cond_8
 
-    .line 1784
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    .line 1799
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
-    iput-object v1, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->d:Lbcz;
+    iput-object v1, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->d:Lbdz;
 
-    .line 1788
+    .line 1803
     :cond_4
     :goto_2
     const-string v1, "PreviewFragment"
 
     invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/LandingPageActivity;->a(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;Z)V
 
-    .line 1790
+    .line 1805
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
@@ -6168,17 +6087,17 @@
 
     move-result-object v0
 
-    .line 1792
-    invoke-static {}, Lajx;->R()Z
+    .line 1807
+    invoke-static {}, Lakr;->R()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1793
-    invoke-static {}, Lajx;->S()V
+    .line 1808
+    invoke-static {}, Lakr;->S()V
 
-    .line 1794
+    .line 1809
     sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->ALLOWED_GPS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
@@ -6193,29 +6112,29 @@
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->T:Lahq;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->T:Laim;
 
-    invoke-virtual {v0}, Lahq;->a()Z
+    invoke-virtual {v0}, Laim;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
     :cond_5
-    invoke-static {}, Lajx;->ab()Z
+    invoke-static {}, Lakr;->aa()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1797
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->T:Lahq;
+    .line 1812
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->T:Laim;
 
     new-instance v1, Lcom/snapchat/android/LandingPageActivity$6;
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/LandingPageActivity$6;-><init>(Lcom/snapchat/android/LandingPageActivity;)V
 
-    invoke-virtual {v0, p0, v1}, Lahq;->a(Landroid/content/Context;Lahq$a;)Landroid/app/AlertDialog;
+    invoke-virtual {v0, p0, v1}, Laim;->a(Landroid/content/Context;Laim$a;)Landroid/app/AlertDialog;
 
     move-result-object v0
 
@@ -6223,13 +6142,13 @@
 
     goto :goto_0
 
-    .line 1770
+    .line 1785
     :cond_6
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
     if-eqz v1, :cond_7
 
-    .line 1771
+    .line 1786
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
     iget-object v1, v1, Lcom/snapchat/android/util/eventbus/InChatSnapEvent;->mRecipients:Ljava/lang/String;
@@ -6238,13 +6157,13 @@
 
     goto :goto_1
 
-    .line 1772
+    .line 1787
     :cond_7
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->f:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
 
     if-eqz v1, :cond_2
 
-    .line 1773
+    .line 1788
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->f:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
 
     iget-object v1, v1, Lcom/snapchat/android/util/eventbus/QuickSnapEvent;->mRecipients:Ljava/lang/String;
@@ -6253,62 +6172,62 @@
 
     goto :goto_1
 
-    .line 1785
+    .line 1800
     :cond_8
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
     if-eqz v1, :cond_4
 
-    .line 1786
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    .line 1801
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
-    iput-object v1, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->e:Laex;
+    iput-object v1, v0, Lcom/snapchat/android/preview/SnapPreviewFragment;->e:Lafx;
 
     goto :goto_2
 .end method
 
-.method public onSnapReadyForRecipientsEvent(Lbdn;)V
+.method public onSnapReadyForRecipientsEvent(Lben;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v3, 0x1
 
-    .line 1520
-    iget-object v0, p1, Lbdn;->mMediabryo:Laim;
+    .line 1535
+    iget-object v0, p1, Lben;->mMediabryo:Laji;
 
-    .line 1523
+    .line 1538
     iget-boolean v1, v0, Lcom/snapchat/android/model/Mediabryo;->mIsChatMedia:Z
 
     if-eqz v1, :cond_0
 
-    .line 1524
-    invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(Laim;)V
+    .line 1539
+    invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(Laji;)V
 
-    .line 1542
+    .line 1557
     :goto_0
     return-void
 
-    .line 1528
+    .line 1543
     :cond_0
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->u:Lme;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->u:Lmw;
 
-    invoke-virtual {v1}, Lme;->a()Z
+    invoke-virtual {v1}, Lmw;->a()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 1529
-    invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(Laim;)V
+    .line 1544
+    invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(Laji;)V
 
-    .line 1532
+    .line 1547
     :cond_1
     iget-object v1, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
-    .line 1533
-    iget-boolean v2, p1, Lbdn;->mShouldGoToSendTo:Z
+    .line 1548
+    iget-boolean v2, p1, Lben;->mShouldGoToSendTo:Z
 
     if-nez v2, :cond_2
 
@@ -6322,9 +6241,9 @@
 
     if-nez v1, :cond_3
 
-    .line 1534
+    .line 1549
     :cond_2
-    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Laim;)Lcom/snapchat/android/fragments/sendto/SendToFragment;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Laji;)Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     move-result-object v0
 
@@ -6334,7 +6253,7 @@
 
     goto :goto_0
 
-    .line 1536
+    .line 1551
     :cond_3
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
@@ -6344,25 +6263,25 @@
 
     if-nez v1, :cond_4
 
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
     if-eqz v1, :cond_5
 
-    .line 1537
+    .line 1552
     :cond_4
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbdo;
+    new-instance v2, Lbeo;
 
-    invoke-direct {v2, v0, v3}, Lbdo;-><init>(Laim;Z)V
+    invoke-direct {v2, v0, v3}, Lbeo;-><init>(Laji;Z)V
 
     invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 1539
+    .line 1554
     :cond_5
-    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Laim;)Lcom/snapchat/android/fragments/sendto/SendToFragment;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Laji;)Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     move-result-object v0
 
@@ -6373,9 +6292,9 @@
     goto :goto_0
 .end method
 
-.method public onSnapReadyForSendingEvent(Lbdo;)V
+.method public onSnapReadyForSendingEvent(Lbeo;)V
     .locals 10
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -6385,25 +6304,25 @@
 
     const/4 v7, 0x1
 
-    .line 1576
-    iget-object v0, p1, Lbdo;->mMediabryo:Laim;
+    .line 1591
+    iget-object v0, p1, Lbeo;->mMediabryo:Laji;
 
-    .line 1577
-    iget-boolean v3, p1, Lbdo;->mFromPreview:Z
+    .line 1592
+    iget-boolean v3, p1, Lbeo;->mFromPreview:Z
 
-    .line 1578
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->u:Lme;
+    .line 1593
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->u:Lmw;
 
-    invoke-virtual {v1}, Lme;->a()Z
+    invoke-virtual {v1}, Lmw;->a()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1579
-    invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(Laim;)V
+    .line 1594
+    invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(Laji;)V
 
-    .line 1581
+    .line 1596
     :cond_0
     :try_start_0
     iget-object v1, v0, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
@@ -6412,11 +6331,11 @@
 
     if-ne v1, v2, :cond_4
 
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->m:Lyt;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->m:Lzp;
 
-    invoke-virtual {v1, v0}, Lyt;->e(Laim;)V
+    invoke-virtual {v1, v0}, Lzp;->e(Laji;)V
     :try_end_0
-    .catch Labw$b; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lacw$b; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
     iget-object v1, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
@@ -6433,9 +6352,9 @@
 
     iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbdr;
+    new-instance v2, Lber;
 
-    invoke-direct {v2}, Lbdr;-><init>()V
+    invoke-direct {v2}, Lber;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -6460,13 +6379,13 @@
 
     :cond_2
     :goto_1
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->M:Lnj;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->M:Loa;
 
-    invoke-virtual {v1}, Lnj;->c()V
+    invoke-virtual {v1}, Loa;->c()V
 
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->M:Lnj;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->M:Loa;
 
-    invoke-virtual {v1}, Lnj;->d()V
+    invoke-virtual {v1}, Loa;->d()V
 
     iget-object v1, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
@@ -6482,19 +6401,19 @@
 
     invoke-direct {p0, v9}, Lcom/snapchat/android/LandingPageActivity;->a(I)V
 
-    .line 1582
+    .line 1597
     :cond_3
     :goto_2
     return-void
 
-    .line 1581
+    .line 1596
     :cond_4
     :try_start_1
-    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->H:Lys;
+    iget-object v1, p0, Lcom/snapchat/android/LandingPageActivity;->H:Lzo;
 
-    invoke-virtual {v1, v0}, Lys;->a(Laim;)V
+    invoke-virtual {v1, v0}, Lzo;->a(Laji;)V
     :try_end_1
-    .catch Labw$b; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Lacw$b; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
@@ -6503,7 +6422,7 @@
 
     new-instance v2, Lcom/snapchat/android/analytics/framework/ErrorMetric;
 
-    invoke-virtual {v1}, Labw$b;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1}, Lacw$b;->getMessage()Ljava/lang/String;
 
     move-result-object v4
 
@@ -6513,24 +6432,24 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->d()V
+    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->e()V
 
     goto :goto_0
 
     :cond_5
     move-object v2, v5
 
-    check-cast v2, Lajk;
+    check-cast v2, Lakg;
 
     sget-object v1, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;->CAMERA:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;
 
-    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
     if-eqz v4, :cond_9
 
-    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
-    iget v4, v4, Lbcz;->mOriginatingFragment:I
+    iget v4, v4, Lbdz;->mOriginatingFragment:I
 
     if-ne v4, v7, :cond_8
 
@@ -6542,7 +6461,7 @@
 
     :cond_7
     :goto_4
-    iget-object v2, v2, Lajk;->mPostToStories:Ljava/util/ArrayList;
+    iget-object v2, v2, Lakg;->mPostToStories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -6553,9 +6472,9 @@
     move v2, v7
 
     :goto_5
-    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->M:Lnj;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->M:Loa;
 
-    invoke-virtual {v4}, Lnj;->b()Z
+    invoke-virtual {v4}, Loa;->b()Z
 
     move-result v4
 
@@ -6567,16 +6486,16 @@
 
     move-result v5
 
-    iget-object v6, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    iget-object v6, p0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
-    invoke-static/range {v0 .. v6}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Laim;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;ZZZILajv;)V
+    invoke-static/range {v0 .. v6}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Laji;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsSendSnapSource;ZZZILakp;)V
 
     goto :goto_1
 
     :cond_8
-    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbcz;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->d:Lbdz;
 
-    iget v4, v4, Lbcz;->mOriginatingFragment:I
+    iget v4, v4, Lbdz;->mOriginatingFragment:I
 
     if-ne v4, v9, :cond_6
 
@@ -6603,7 +6522,7 @@
     goto :goto_4
 
     :cond_b
-    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    iget-object v4, p0, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
     if-eqz v4, :cond_7
 
@@ -6625,7 +6544,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->g:Laex;
+    iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->g:Lafx;
 
     const-string v0, "EditionViewerFragment"
 
@@ -6668,9 +6587,9 @@
 
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbar;
+    new-instance v1, Lbbs;
 
-    invoke-direct {v1}, Lbar;-><init>()V
+    invoke-direct {v1}, Lbbs;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -6683,9 +6602,9 @@
 
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbas;
+    new-instance v1, Lbbt;
 
-    invoke-direct {v1}, Lbas;-><init>()V
+    invoke-direct {v1}, Lbbt;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -6697,106 +6616,90 @@
     goto/16 :goto_2
 .end method
 
-.method public onSoftNavigationBarEvent(Lbdt;)V
-    .locals 7
-    .annotation runtime Lboh;
+.method public onSoftNavigationBarEvent(Lbet;)V
+    .locals 6
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    const/4 v6, 0x1
-
     const/4 v5, 0x0
 
-    .line 1975
-    iget-boolean v0, p1, Lbdt;->shouldShow:Z
+    const/4 v4, 0x1
+
+    .line 1990
+    iget-boolean v0, p1, Lbet;->shouldShow:Z
 
     if-eqz v0, :cond_2
 
-    .line 1976
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lauw;
+    .line 1991
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lavu;
 
-    invoke-static {p0}, Lavh;->e(Landroid/content/Context;)Z
+    invoke-static {p0}, Lawf;->e(Landroid/content/Context;)Z
 
     move-result v1
 
-    iget-boolean v2, v0, Lauw;->mIsImmersiveModeSupported:Z
+    iget-boolean v2, v0, Lavu;->mIsImmersiveModeSupported:Z
 
     if-eqz v2, :cond_0
 
-    iget-object v2, v0, Lauw;->mDecorView:Landroid/view/View;
+    iget-object v2, v0, Lavu;->mDecorView:Landroid/view/View;
 
     if-nez v2, :cond_1
 
-    .line 1980
+    .line 1995
     :cond_0
     :goto_0
     return-void
 
-    .line 1976
+    .line 1991
     :cond_1
-    const-string v2, "SoftNavigationBarManager"
+    iget-object v2, v0, Lavu;->mDecorView:Landroid/view/View;
 
-    const-string v3, "Turning immersive mode OFF"
-
-    new-array v4, v5, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v2, v0, Lauw;->mDecorView:Landroid/view/View;
-
-    iget v3, v0, Lauw;->mDefaultFlags:I
+    iget v3, v0, Lavu;->mDefaultFlags:I
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    invoke-virtual {v0, v1, v5}, Lauw;->a(ZZ)V
+    invoke-virtual {v0, v1, v5}, Lavu;->a(ZZ)V
 
-    iput-boolean v5, v0, Lauw;->mIsImmersiveModeOn:Z
+    iput-boolean v5, v0, Lavu;->mIsImmersiveModeOn:Z
 
     goto :goto_0
 
-    .line 1978
+    .line 1993
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lauw;
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->N:Lavu;
 
-    invoke-static {p0}, Lavh;->e(Landroid/content/Context;)Z
+    invoke-static {p0}, Lawf;->e(Landroid/content/Context;)Z
 
     move-result v1
 
-    iget-boolean v2, v0, Lauw;->mIsImmersiveModeSupported:Z
+    iget-boolean v2, v0, Lavu;->mIsImmersiveModeSupported:Z
 
     if-eqz v2, :cond_0
 
-    iget-object v2, v0, Lauw;->mDecorView:Landroid/view/View;
+    iget-object v2, v0, Lavu;->mDecorView:Landroid/view/View;
 
     if-eqz v2, :cond_0
 
-    const-string v2, "SoftNavigationBarManager"
-
-    const-string v3, "Turning immersive mode ON"
-
-    new-array v4, v5, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v2, v0, Lauw;->mWindow:Landroid/view/Window;
+    iget-object v2, v0, Lavu;->mWindow:Landroid/view/Window;
 
     const/high16 v3, 0x8000000
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->addFlags(I)V
 
-    invoke-virtual {v0, v1, v6}, Lauw;->a(ZZ)V
+    invoke-virtual {v0, v1, v4}, Lavu;->a(ZZ)V
 
-    iget-object v1, v0, Lauw;->mDecorView:Landroid/view/View;
+    iget-object v1, v0, Lavu;->mDecorView:Landroid/view/View;
 
-    invoke-virtual {v1, v6}, Landroid/view/View;->setKeepScreenOn(Z)V
+    invoke-virtual {v1, v4}, Landroid/view/View;->setKeepScreenOn(Z)V
 
-    iget-object v1, v0, Lauw;->mDecorView:Landroid/view/View;
+    iget-object v1, v0, Lavu;->mDecorView:Landroid/view/View;
 
     const/16 v2, 0x1702
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    iput-boolean v6, v0, Lauw;->mIsImmersiveModeOn:Z
+    iput-boolean v4, v0, Lavu;->mIsImmersiveModeOn:Z
 
     goto :goto_0
 .end method
@@ -6805,44 +6708,44 @@
     .locals 1
 
     .prologue
-    .line 629
-    invoke-static {}, Lnf;->d()V
+    .line 640
+    invoke-static {}, Lnw;->d()V
 
-    .line 630
+    .line 641
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onStart()V
 
-    .line 632
+    .line 643
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     if-nez v0, :cond_0
 
-    .line 633
+    .line 644
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->s()V
 
-    .line 636
+    .line 647
     :cond_0
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/snapchat/android/analytics/RegistrationAnalytics;->a(Z)V
 
-    .line 637
-    invoke-static {}, Lnf;->e()V
+    .line 648
+    invoke-static {}, Lnw;->e()V
 
-    .line 638
+    .line 649
     return-void
 .end method
 
-.method public onStartFragmentEvent(Lbdw;)V
+.method public onStartFragmentEvent(Lbev;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1505
-    iget-object v1, p1, Lbdw;->mFragmentToStart:Lcom/snapchat/android/util/fragment/SnapchatFragment;
+    .line 1520
+    iget-object v1, p1, Lbev;->mFragmentToStart:Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
-    .line 1507
-    iget-object v0, p1, Lbdw;->mBaseFragmentTag:Ljava/lang/String;
+    .line 1522
+    iget-object v0, p1, Lbev;->mBaseFragmentTag:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -6850,20 +6753,20 @@
 
     if-nez v0, :cond_0
 
-    .line 1508
+    .line 1523
     invoke-virtual {p0}, Lcom/snapchat/android/LandingPageActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v0
 
-    iget-object v2, p1, Lbdw;->mBaseFragmentTag:Ljava/lang/String;
+    iget-object v2, p1, Lbev;->mBaseFragmentTag:Ljava/lang/String;
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v2, v3}, Landroid/app/FragmentManager;->popBackStackImmediate(Ljava/lang/String;I)Z
 
-    .line 1511
+    .line 1526
     :cond_0
-    iget-object v0, p1, Lbdw;->mTag:Ljava/lang/String;
+    iget-object v0, p1, Lbev;->mTag:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -6875,18 +6778,18 @@
 
     move-result-object v0
 
-    .line 1512
+    .line 1527
     :goto_0
-    iget-boolean v2, p1, Lbdw;->mHideOldFragmentFlag:Z
+    iget-boolean v2, p1, Lbev;->mHideOldFragmentFlag:Z
 
     invoke-direct {p0, v1, v0, v2}, Lcom/snapchat/android/LandingPageActivity;->a(Lcom/snapchat/android/util/fragment/SnapchatFragment;Ljava/lang/String;Z)V
 
-    .line 1513
+    .line 1528
     return-void
 
-    .line 1511
+    .line 1526
     :cond_1
-    iget-object v0, p1, Lbdw;->mTag:Ljava/lang/String;
+    iget-object v0, p1, Lbev;->mTag:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -6899,44 +6802,63 @@
 
     const/4 v6, 0x0
 
-    .line 651
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnf;
+    .line 662
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->J:Lnw;
 
-    invoke-virtual {v0}, Lnf;->b()V
+    invoke-virtual {v0}, Lnw;->b()V
 
-    .line 652
+    .line 663
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->q:Lcom/snapchat/android/analytics/NotificationAnalytics;
 
     iput-object v7, v0, Lcom/snapchat/android/analytics/NotificationAnalytics;->mEasyMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 653
+    .line 664
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->K:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
-    iget-object v1, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    iget-object v1, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mEasyMetricManager:Lcom/snapchat/android/analytics/framework/EasyMetricManager;
 
     const-string v2, "EXIT_CAMERA_VIEW"
 
-    const-string v3, "context"
+    const-string v3, ""
 
-    const-string v4, "exit"
+    invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetricManager;->c(Ljava/lang/String;Ljava/lang/String;)Z
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    move-result v1
 
-    iget-object v0, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    if-eqz v1, :cond_0
+
+    iget-object v1, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mEasyMetricManager:Lcom/snapchat/android/analytics/framework/EasyMetricManager;
+
+    const-string v2, "EXIT_CAMERA_VIEW"
+
+    const-string v3, ""
+
+    invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetricManager;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    move-result-object v1
+
+    const-string v2, "context"
+
+    const-string v3, "exit"
+
+    invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    iget-object v0, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mEasyMetricManager:Lcom/snapchat/android/analytics/framework/EasyMetricManager;
 
     const-string v1, "EXIT_CAMERA_VIEW"
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->b(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetricManager;->c(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetricManager;
 
-    .line 654
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->W:Lnn;
+    .line 665
+    :cond_0
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->W:Loe;
 
-    invoke-virtual {v0}, Lnn;->b()V
+    invoke-virtual {v0}, Loe;->b()V
 
-    .line 655
+    .line 666
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onStop()V
 
-    .line 657
+    .line 668
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->I:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     iget-object v1, v0, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->e:Ljava/lang/Object;
@@ -6964,15 +6886,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 658
-    invoke-static {}, Lazz;->a()V
+    .line 669
+    invoke-static {}, Lbaz;->a()V
 
-    .line 660
+    .line 671
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 661
+    .line 672
     sget-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
     iget-object v1, v0, Lcom/snapchat/android/util/chat/SecureChatService;->mMainHandler:Landroid/os/Handler;
@@ -6985,49 +6907,49 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 662
+    .line 673
     iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->E:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 663
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ak:Landroid/content/ServiceConnection;
+    .line 674
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->al:Landroid/content/ServiceConnection;
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 664
+    .line 675
     iput-boolean v6, p0, Lcom/snapchat/android/LandingPageActivity;->E:Z
 
-    .line 666
-    :cond_0
+    .line 677
+    :cond_1
     sput-object v7, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
-    .line 667
+    .line 678
     iput-boolean v6, p0, Lcom/snapchat/android/LandingPageActivity;->G:Z
 
-    .line 669
-    :cond_1
-    new-instance v0, Lahq;
+    .line 680
+    :cond_2
+    new-instance v0, Laim;
 
-    invoke-direct {v0}, Lahq;-><init>()V
+    invoke-direct {v0}, Laim;-><init>()V
 
-    .line 670
-    invoke-static {}, Lajx;->ab()Z
+    .line 681
+    invoke-static {}, Lakr;->aa()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    .line 671
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->S:Lahr;
+    .line 682
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->S:Lain;
 
-    invoke-virtual {v0}, Lahr;->c()V
+    invoke-virtual {v0}, Lain;->c()V
 
-    .line 673
-    :cond_2
+    .line 684
+    :cond_3
     return-void
 
-    .line 657
+    .line 668
     :catchall_0
     move-exception v0
 
@@ -7039,81 +6961,81 @@
     throw v0
 .end method
 
-.method public onStorySnapPostedFromSnapPreviewEvent(Lbec;)V
+.method public onStorySnapPostedFromSnapPreviewEvent(Lbfb;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 1707
+    .line 1722
     const/4 v0, 0x3
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/LandingPageActivity;->a(I)V
 
-    .line 1708
+    .line 1723
     return-void
 .end method
 
-.method public onSwitchToChatEvent(Lbee;)V
+.method public onSwitchToChatEvent(Lbfd;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v1, 0x0
 
-    .line 1568
+    .line 1583
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->n()V
 
-    .line 1570
-    iget-object v0, p1, Lbee;->mFriendUsername:Ljava/lang/String;
+    .line 1585
+    iget-object v0, p1, Lbfd;->mFriendUsername:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->a(Ljava/lang/String;)Z
 
-    .line 1571
+    .line 1586
     invoke-virtual {p0, v1, v1}, Lcom/snapchat/android/LandingPageActivity;->a(IZ)V
 
-    .line 1572
+    .line 1587
     return-void
 .end method
 
-.method public onTapToViewDiscoverEvent(Laez;)V
+.method public onTapToViewDiscoverEvent(Lafz;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v2, 0x1
 
-    .line 1841
-    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->D:Laez;
+    .line 1856
+    iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity;->D:Lafz;
 
-    .line 1842
+    .line 1857
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setPagingEnabled(Z)V
 
-    .line 1843
+    .line 1858
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/util/SnapchatViewPager;->setAnimating(Z)V
 
-    .line 1844
+    .line 1859
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(IZ)V
 
-    .line 1845
+    .line 1860
     return-void
 .end method
 
-.method public onTitleBarEvent(Lbel;)V
-    .locals 9
-    .annotation runtime Lboh;
+.method public onTitleBarEvent(Lbfk;)V
+    .locals 8
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -7121,7 +7043,7 @@
 
     const/4 v1, 0x0
 
-    .line 1836
+    .line 1851
     iget-object v3, p0, Lcom/snapchat/android/LandingPageActivity;->V:Lcom/snapchat/android/util/TitleBarManager;
 
     iget-object v2, v3, Lcom/snapchat/android/util/TitleBarManager;->mWindow:Landroid/view/Window;
@@ -7134,59 +7056,47 @@
 
     iget-object v2, v3, Lcom/snapchat/android/util/TitleBarManager;->mHandler:Landroid/os/Handler;
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_8
 
     :cond_0
     move v2, v0
 
     :goto_0
-    if-nez v2, :cond_2
+    if-nez v2, :cond_7
 
-    iget-object v2, p1, Lbel;->mVisibility:Lcom/snapchat/android/util/TitleBarManager$Visibility;
+    iget-object v2, p1, Lbfk;->mVisibility:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    iget-object v4, p1, Lbel;->mUnlockedVisibility:Lcom/snapchat/android/util/TitleBarManager$Visibility;
+    iget-object v4, p1, Lbfk;->mUnlockedVisibility:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    iget-object v5, p1, Lbel;->mLockedState:Lcom/snapchat/android/util/TitleBarManager$LockedState;
+    iget-object v5, p1, Lbfk;->mLockedState:Lcom/snapchat/android/util/TitleBarManager$LockedState;
 
-    const-string v6, "TitleBarManager"
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    const-string v7, "Target visibility: "
 
-    const-string v8, "Target visibility: "
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    const-string v7, " locked: "
 
-    const-string v8, " locked: "
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    const-string v7, " unlocked visibility: "
 
-    const-string v8, " unlocked visibility: "
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
-
-    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    new-array v8, v1, [Ljava/lang/Object;
-
-    invoke-static {v6, v7, v8}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     if-eqz v4, :cond_1
 
@@ -7197,83 +7107,64 @@
 
     sget-object v6, Lcom/snapchat/android/util/TitleBarManager$LockedState;->LOCKED:Lcom/snapchat/android/util/TitleBarManager$LockedState;
 
-    if-ne v4, v6, :cond_4
+    if-ne v4, v6, :cond_2
 
-    sget-object v4, Lcom/snapchat/android/util/TitleBarManager$LockedState;->NOT_LOCKED:Lcom/snapchat/android/util/TitleBarManager$LockedState;
-
-    if-eq v5, v4, :cond_4
-
-    const-string v0, "TitleBarManager"
-
-    const-string v2, "Title bar was locked. Do nothing."
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1837
-    :cond_2
-    :goto_1
-    return-void
-
-    :cond_3
-    move v2, v1
-
-    .line 1836
-    goto :goto_0
-
-    :cond_4
-    if-eqz v5, :cond_5
-
-    iput-object v5, v3, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarLockedState:Lcom/snapchat/android/util/TitleBarManager$LockedState;
-
-    :cond_5
     sget-object v4, Lcom/snapchat/android/util/TitleBarManager$LockedState;->NOT_LOCKED:Lcom/snapchat/android/util/TitleBarManager$LockedState;
 
     if-ne v5, v4, :cond_7
 
-    if-eqz v2, :cond_6
+    :cond_2
+    if-eqz v5, :cond_3
+
+    iput-object v5, v3, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarLockedState:Lcom/snapchat/android/util/TitleBarManager$LockedState;
+
+    :cond_3
+    sget-object v4, Lcom/snapchat/android/util/TitleBarManager$LockedState;->NOT_LOCKED:Lcom/snapchat/android/util/TitleBarManager$LockedState;
+
+    if-ne v5, v4, :cond_5
+
+    if-eqz v2, :cond_4
 
     iput-object v2, v3, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarTargetUnlockedVisibility:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    :cond_6
+    :cond_4
     iget-object v2, v3, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarTargetUnlockedVisibility:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    :cond_7
-    if-eqz v2, :cond_2
+    :cond_5
+    if-eqz v2, :cond_7
 
     sget-object v4, Lcom/snapchat/android/util/TitleBarManager$Visibility;->VISIBLE:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    if-ne v2, v4, :cond_8
+    if-ne v2, v4, :cond_6
+
+    iget-boolean v4, v3, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarShown:Z
+
+    if-nez v4, :cond_7
+
+    :cond_6
+    sget-object v4, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
+
+    if-ne v2, v4, :cond_9
 
     iget-boolean v4, v3, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarShown:Z
 
     if-nez v4, :cond_9
 
+    .line 1852
+    :cond_7
+    :goto_1
+    return-void
+
     :cond_8
-    sget-object v4, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
+    move v2, v1
 
-    if-ne v2, v4, :cond_a
-
-    iget-boolean v4, v3, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarShown:Z
-
-    if-nez v4, :cond_a
+    .line 1851
+    goto :goto_0
 
     :cond_9
-    const-string v0, "TitleBarManager"
-
-    const-string v2, "Already in target state. Do nothing."
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_a
     sget-object v4, Lcom/snapchat/android/util/TitleBarManager$Visibility;->VISIBLE:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    if-ne v2, v4, :cond_b
+    if-ne v2, v4, :cond_a
 
     :goto_2
     iput-boolean v0, v3, Lcom/snapchat/android/util/TitleBarManager;->mTitleBarShown:Z
@@ -7282,50 +7173,50 @@
 
     goto :goto_1
 
-    :cond_b
+    :cond_a
     move v0, v1
 
     goto :goto_2
 .end method
 
-.method public onUpdatingUserToDatabasesCompleteEvent(Lbeo;)V
+.method public onUpdatingUserToDatabasesCompleteEvent(Lbfn;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 780
+    .line 791
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->h:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_0
 
-    .line 781
+    .line 792
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->h:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
-    .line 782
-    iget-boolean v0, p1, Lbeo;->mSuccess:Z
+    .line 793
+    iget-boolean v0, p1, Lbfn;->mSuccess:Z
 
     if-nez v0, :cond_0
 
-    .line 783
+    .line 794
     const-string v0, "Failed to upgrade. Try again later"
 
     invoke-static {p0, v0}, Lcom/snapchat/android/util/AlertDialogUtils;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 786
+    .line 797
     :cond_0
     return-void
 .end method
 
-.method public onUpdatingUserToDatabasesEvent(Lbep;)V
+.method public onUpdatingUserToDatabasesEvent(Lbfo;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 774
+    .line 785
     const-string v0, "Upgrading Snapchat"
 
     const-string v1, "Loading..."
@@ -7336,89 +7227,59 @@
 
     iput-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->h:Landroid/app/ProgressDialog;
 
-    .line 775
+    .line 786
     return-void
 .end method
 
-.method public onVolumeViewChangedEvent(Lbeu;)V
+.method public onVolumeViewChangedEvent(Lbft;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 2083
+    .line 2098
     invoke-direct {p0}, Lcom/snapchat/android/LandingPageActivity;->p()V
 
-    .line 2084
-    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->ae:Lcom/snapchat/android/ui/CustomVolumeView;
+    .line 2099
+    iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->af:Lcom/snapchat/android/ui/CustomVolumeView;
 
-    iget-object v1, p1, Lbeu;->mVolumeViewType:Lcom/snapchat/android/ui/CustomVolumeView$VolumeViewType;
+    iget-object v1, p1, Lbft;->mVolumeViewType:Lcom/snapchat/android/ui/CustomVolumeView$VolumeViewType;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/CustomVolumeView;->a(Lcom/snapchat/android/ui/CustomVolumeView$VolumeViewType;)V
 
-    .line 2085
+    .line 2100
     return-void
 .end method
 
 .method public onWindowFocusChanged(Z)V
-    .locals 4
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 1484
+    .line 1499
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onWindowFocusChanged(Z)V
 
-    .line 1485
-    const-string v0, "LandingPageActivity"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "On ac Should we onWindowFocusChanged has focus? "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1486
+    .line 1500
     if-eqz p1, :cond_0
 
     iget-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->v:Z
 
     if-eqz v0, :cond_0
 
-    .line 1487
-    const-string v0, "LandingPageActivity"
+    .line 1502
+    const/4 v0, 0x0
 
-    const-string v1, "On ac Calling onResume from window focus fn"
+    iput-boolean v0, p0, Lcom/snapchat/android/LandingPageActivity;->v:Z
 
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1488
-    iput-boolean v3, p0, Lcom/snapchat/android/LandingPageActivity;->v:Z
-
-    .line 1489
+    .line 1504
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->r:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbcg;
+    new-instance v1, Lbdg;
 
-    invoke-direct {v1}, Lbcg;-><init>()V
+    invoke-direct {v1}, Lbdg;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1497
+    .line 1512
     :cond_0
     const-string v0, "keyguard"
 
@@ -7428,7 +7289,7 @@
 
     check-cast v0, Landroid/app/KeyguardManager;
 
-    .line 1498
+    .line 1513
     if-nez p1, :cond_1
 
     invoke-virtual {v0}, Landroid/app/KeyguardManager;->inKeyguardRestrictedInputMode()Z
@@ -7437,25 +7298,25 @@
 
     if-eqz v0, :cond_1
 
-    .line 1499
+    .line 1514
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->a:Lcom/snapchat/android/util/SnapchatViewPager;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/SnapchatViewPager;->setCurrentItem(I)V
 
-    .line 1501
+    .line 1516
     :cond_1
     return-void
 .end method
 
 .method public produceInChatSnapEvent()Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
     .locals 1
-    .annotation runtime Lbog;
+    .annotation runtime Lbph;
     .end annotation
 
     .prologue
-    .line 1919
+    .line 1934
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->e:Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
 
     return-object v0
@@ -7463,11 +7324,11 @@
 
 .method public produceQuickSnapEvent()Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
     .locals 1
-    .annotation runtime Lbog;
+    .annotation runtime Lbph;
     .end annotation
 
     .prologue
-    .line 1947
+    .line 1962
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity;->f:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
 
     return-object v0

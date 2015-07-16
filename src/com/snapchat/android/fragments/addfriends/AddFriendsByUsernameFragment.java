@@ -1,7 +1,7 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afa;
-import ajx;
+import aga;
+import akr;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -10,20 +10,35 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import bbd;
-import bbo;
-import bcw;
-import bcx;
-import boh;
+import bcd;
+import bco;
+import bdw;
+import bdx;
+import bpi;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
+import com.snapchat.android.analytics.ProfileEventAnalytics;
+import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.model.FriendAction;
+import kf;
+import kk;
 
 public class AddFriendsByUsernameFragment
   extends AddFriendsFragment
 {
+  protected final void a(kf paramkf)
+  {
+    ProfileEventAnalytics.a();
+    int i = d.a(FriendAction.ADD, true);
+    kk localkk = new kk();
+    exitEvent = paramkf;
+    friendAddCount = Long.valueOf(i);
+    ScAnalyticsEventEngine.a(localkk);
+  }
+  
   public final boolean g()
   {
     G();
+    a(kf.BACK_BUTTON);
     return false;
   }
   
@@ -40,39 +55,39 @@ public class AddFriendsByUsernameFragment
   
   protected final void m() {}
   
-  @boh
-  public void onContactsOnSnapchatUpdatedEvent(bbd parambbd)
+  @bpi
+  public void onContactsOnSnapchatUpdatedEvent(bcd parambcd)
   {
-    super.onContactsOnSnapchatUpdatedEvent(parambbd);
+    super.onContactsOnSnapchatUpdatedEvent(parambcd);
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    C = AnalyticsEvents.AnalyticsContext.PROFILE_ADD_FRIENDS_BY_USERNAME_PAGE;
+    D = AnalyticsEvents.AnalyticsContext.PROFILE_ADD_FRIENDS_BY_USERNAME_PAGE;
     paramLayoutInflater = super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
     m.setText(2131492895);
     q.setHint(2131492872);
-    paramViewGroup = getActivity().getResources().getString(2131492871, new Object[] { ajx.l() });
-    u.setText(paramViewGroup);
-    d.f = true;
+    paramViewGroup = getActivity().getResources().getString(2131492871, new Object[] { akr.l() });
+    v.setText(paramViewGroup);
+    d.g = true;
     F();
     return paramLayoutInflater;
   }
   
-  @boh
-  public void onFriendProfileUpdateCompleteEvent(bbo parambbo)
+  @bpi
+  public void onFriendProfileUpdateCompleteEvent(bco parambco)
   {
     d.notifyDataSetChanged();
   }
   
-  @boh
-  public void onRefreshFriendExistsTask(bcx parambcx)
+  @bpi
+  public void onRefreshFriendExistsTask(bdx parambdx)
   {
-    super.onRefreshFriendExistsTask(parambcx);
+    super.onRefreshFriendExistsTask(parambdx);
   }
   
-  @boh
-  public void onRefreshOnFriendActionEvent(bcw parambcw)
+  @bpi
+  public void onRefreshOnFriendActionEvent(bdw parambdw)
   {
     if ((mFriend != null) && (mAction == FriendAction.DELETE)) {
       return;

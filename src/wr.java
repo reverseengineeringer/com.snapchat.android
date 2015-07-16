@@ -1,16 +1,12 @@
-public abstract interface wr
+import android.hardware.Camera.Parameters;
+
+public abstract class wr
 {
-  public abstract void a(float paramFloat1, float paramFloat2, float paramFloat3);
+  public abstract void a(@chd Camera.Parameters paramParameters, boolean paramBoolean);
   
-  public abstract void a(vm paramvm);
+  public abstract void a(boolean paramBoolean);
   
-  public abstract boolean a();
-  
-  public abstract boolean b();
-  
-  public abstract void c();
-  
-  public abstract boolean d();
+  public abstract void b(boolean paramBoolean);
 }
 
 /* Location:

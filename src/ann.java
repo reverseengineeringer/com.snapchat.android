@@ -1,50 +1,97 @@
-import java.util.HashMap;
+import android.content.Context;
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.analytics.framework.UpdateSnapsAnalyticsPlatform;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.model.chat.ChatFeedItem;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import javax.inject.Inject;
 
-public final class ann
+public class ann
+  extends ana
 {
-  private static final Map<Integer, String> a = new HashMap();
-  private static final Map<Integer, String> b = new HashMap();
+  protected Map<String, aka> a;
+  protected List<all> b;
+  @Inject
+  protected UpdateSnapsAnalyticsPlatform c;
   
-  static
+  public ann(Intent paramIntent)
   {
-    a.put(Integer.valueOf(1), "MEDIA_INFO_UNKNOWN");
-    a.put(Integer.valueOf(700), "MEDIA_INFO_VIDEO_TRACK_LAGGING");
-    a.put(Integer.valueOf(3), "MEDIA_INFO_VIDEO_RENDERING_START");
-    a.put(Integer.valueOf(701), "MEDIA_INFO_BUFFERING_START");
-    a.put(Integer.valueOf(702), "MEDIA_INFO_BUFFERING_END");
-    a.put(Integer.valueOf(800), "MEDIA_INFO_BAD_INTERLEAVING");
-    a.put(Integer.valueOf(801), "MEDIA_INFO_NOT_SEEKABLE");
-    a.put(Integer.valueOf(802), "MEDIA_INFO_METADATA_UPDATE");
-    a.put(Integer.valueOf(901), "MEDIA_INFO_UNSUPPORTED_SUBTITLE");
-    a.put(Integer.valueOf(902), "MEDIA_INFO_SUBTITLE_TIMED_OUT");
-    b.put(Integer.valueOf(1), "MEDIA_ERROR_UNKNOWN");
-    b.put(Integer.valueOf(100), "MEDIA_ERROR_SERVER_DIED");
-    b.put(Integer.valueOf(200), "MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK");
-    b.put(Integer.valueOf(64532), "MEDIA_ERROR_IO");
-    b.put(Integer.valueOf(64529), "MEDIA_ERROR_MALFORMED");
-    b.put(Integer.valueOf(64526), "MEDIA_ERROR_UNSUPPORTED");
-    b.put(Integer.valueOf(-110), "MEDIA_ERROR_TIMED_OUT");
+    super(paramIntent);
+    SnapchatApplication.b().c().a(this);
   }
   
-  public static String a(int paramInt)
+  public void a(Context paramContext)
   {
-    return a(b, paramInt);
-  }
-  
-  private static String a(Map<Integer, String> paramMap, int paramInt)
-  {
-    String str = (String)paramMap.get(Integer.valueOf(paramInt));
-    paramMap = str;
-    if (str == null) {
-      paramMap = "UNKNOWN";
+    if (h == null) {
+      h = akp.a(paramContext);
     }
-    return paramMap;
+    super.a(paramContext);
   }
   
-  public static String b(int paramInt)
+  protected String l_()
   {
-    return a(a, paramInt);
+    return "/bq/update_snaps";
+  }
+  
+  public void onResult(@chc us paramus)
+  {
+    super.onResult(paramus);
+    if (paramus.d())
+    {
+      paramus = h.mSnapsToBeUpdatedOnServer;
+      Iterator localIterator = a.entrySet().iterator();
+      while (localIterator.hasNext())
+      {
+        Object localObject = (Map.Entry)localIterator.next();
+        paramus.remove(((Map.Entry)localObject).getKey());
+        localObject = (ChatFeedItem)((Map.Entry)localObject).getValue();
+        ChatConversation localChatConversation = zi.b(((ChatFeedItem)localObject).j());
+        if (localChatConversation != null)
+        {
+          localObject = localChatConversation.d(((ChatFeedItem)localObject).d());
+          if ((localObject != null) && ((localObject instanceof aka))) {
+            ((aka)localObject).a(true);
+          }
+        }
+      }
+      h.mServerHasMostRecentReplayTime = true;
+      return;
+    }
+    c.a(b);
+  }
+  
+  @ud
+  public final class a
+    extends qc
+  {
+    @SerializedName("json")
+    final Map<String, alr> a;
+    @SerializedName("added_friends_timestamp")
+    final Long b;
+    @SerializedName("events")
+    final List<all> c;
+    
+    a()
+    {
+      Map localMap;
+      a = localMap;
+      akr.a();
+      b = Long.valueOf(akr.j());
+      c = b;
+      int j = localMap.size();
+      if (c == null) {}
+      for (int i = 0;; i = c.size())
+      {
+        new StringBuilder("RequestPayload - snapUpdatesCount ").append(j).append(" addedFriendsTimeStamp ").append(b).append(" analyticsEventsCount ").append(i);
+        return;
+      }
+    }
   }
 }
 

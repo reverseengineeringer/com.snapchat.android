@@ -1,6 +1,21 @@
-public abstract interface buj<T>
+import java.util.concurrent.ExecutorService;
+
+public final class buj
 {
-  public abstract void a(T paramT);
+  brw a;
+  ExecutorService b;
+  btr c;
+  bud d;
+  
+  public buj() {}
+  
+  public buj(brw parambrw, ExecutorService paramExecutorService, btr parambtr, bud parambud)
+  {
+    a = parambrw;
+    b = paramExecutorService;
+    c = parambtr;
+    d = parambud;
+  }
 }
 
 /* Location:

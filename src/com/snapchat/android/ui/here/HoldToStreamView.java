@@ -1,7 +1,7 @@
 package com.snapchat.android.ui.here;
 
-import ahj;
-import ahl;
+import aif;
+import aih;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -31,27 +31,29 @@ import android.view.View.OnTouchListener;
 import android.view.ViewConfiguration;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout.LayoutParams;
-import aqg;
-import ats;
-import avh;
-import avk;
-import ban;
-import bao;
-import bap;
-import bdg;
-import beu;
+import are;
+import auq;
+import awf;
+import awi;
+import bbo;
+import bbp;
+import bbq;
+import bdp;
+import beg;
+import bft;
 import bi;
-import bic;
 import bj;
 import bj.a;
+import bjc;
+import bjy;
 import bl;
-import boh;
 import bp;
-import cgb;
-import cgc;
+import bpi;
+import chc;
+import chd;
+import ci;
 import com.addlive.service.AddLiveService.VideoFrameMetadata;
 import com.addlive.view.ALVideoTextureView;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.HereAnalytics;
 import com.snapchat.android.analytics.HereAnalytics.OutgoingVideoState;
 import com.snapchat.android.analytics.HereAnalytics.SetupPhase;
@@ -59,6 +61,7 @@ import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.camera.model.CameraModel.CameraType;
 import com.snapchat.android.database.SharedPreferenceKey;
+import com.snapchat.android.livechat.AdlHelper.PresenceSource;
 import com.snapchat.android.model.chat.ChatConversation;
 import com.snapchat.android.ui.ConnectingRippleView;
 import com.snapchat.android.ui.CustomVolumeView.VolumeViewType;
@@ -69,9 +72,13 @@ import com.snapchat.android.util.eventbus.CameraDisplayState;
 import com.snapchat.android.util.eventbus.ChangePreviewQualityEvent;
 import com.snapchat.android.util.eventbus.ChangePreviewQualityEvent.PreviewQuality;
 import com.squareup.otto.Bus;
-import hu;
-import vq;
-import yq;
+import ej;
+import id;
+import java.security.GeneralSecurityException;
+import java.security.MessageDigest;
+import java.text.MessageFormat;
+import wm;
+import zm;
 
 @TargetApi(14)
 public class HoldToStreamView
@@ -92,7 +99,7 @@ public class HoldToStreamView
   private bj K;
   private bj L;
   private final Bus M;
-  private final avh N;
+  private final awf N;
   private boolean O = false;
   private byte[] P;
   private final HereAnalytics Q = new HereAnalytics();
@@ -111,7 +118,7 @@ public class HoldToStreamView
   };
   protected StreamView.a a;
   protected boolean b = false;
-  protected ahl c = new ahj();
+  protected aih c = new aif();
   protected MotionEvent d;
   protected boolean e = false;
   protected View f;
@@ -136,24 +143,24 @@ public class HoldToStreamView
   {
     super(paramContext);
     a(paramContext);
-    M = ban.a();
-    N = new avh(paramContext);
+    M = bbo.a();
+    N = new awf(paramContext);
   }
   
   public HoldToStreamView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
     a(paramContext);
-    M = ban.a();
-    N = new avh(paramContext);
+    M = bbo.a();
+    N = new awf(paramContext);
   }
   
   public HoldToStreamView(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
   {
     super(paramContext, paramAttributeSet, paramInt);
     a(paramContext);
-    M = ban.a();
-    N = new avh(paramContext);
+    M = bbo.a();
+    N = new awf(paramContext);
   }
   
   private void a(Context paramContext)
@@ -161,7 +168,6 @@ public class HoldToStreamView
     if (isInEditMode()) {
       return;
     }
-    Timber.c(l, "Setting up the HoldToStream view.", new Object[0]);
     z = this;
     x = ViewConfiguration.get(paramContext).getScaledTouchSlop();
     i = new ConnectingRippleView(paramContext);
@@ -173,7 +179,7 @@ public class HoldToStreamView
     addView(u);
     u.setVisibility(8);
     bl localbl = new bl(320.0D, 24.0D);
-    bp localbp = avk.a();
+    bp localbp = awi.a();
     K = localbp.a();
     K.a(localbl);
     K.a(new bi()
@@ -204,7 +210,7 @@ public class HoldToStreamView
       }
     });
     g = new LockToStreamView(paramContext, f, Q);
-    g.setY(getResources().getDimension(2131296332));
+    g.setY(getResources().getDimension(2131296331));
     addView(g, 0, 0);
     r = new GestureDetector(getContext(), new GestureDetector.SimpleOnGestureListener());
     r.setOnDoubleTapListener(new GestureDetector.SimpleOnGestureListener()
@@ -255,14 +261,14 @@ public class HoldToStreamView
   {
     J = false;
     b = false;
-    c.d();
+    c.e();
     l();
     k();
     a.d(false);
     j();
     i.setRipplesEnabled(false);
     u.setVisibility(8);
-    M.a(new bdg(true));
+    M.a(new beg(true));
   }
   
   public static HoldToStreamView getLastInstance()
@@ -328,12 +334,12 @@ public class HoldToStreamView
       break label41;
     }
     label75:
-    avh localavh;
+    awf localawf;
     if (bool1)
     {
-      M.a(new beu(CustomVolumeView.VolumeViewType.HERE));
+      M.a(new bft(CustomVolumeView.VolumeViewType.HERE));
       y = bool1;
-      localavh = N;
+      localawf = N;
       if (bool1) {
         break label166;
       }
@@ -341,7 +347,7 @@ public class HoldToStreamView
     label166:
     for (bool1 = bool2;; bool1 = false)
     {
-      localavh.a(this, bool1);
+      localawf.a(this, bool1);
       postDelayed(new Runnable()
       {
         public final void run()
@@ -350,7 +356,7 @@ public class HoldToStreamView
         }
       }, getResources().getInteger(2131427331));
       return;
-      M.a(new beu(CustomVolumeView.VolumeViewType.MEDIA));
+      M.a(new bft(CustomVolumeView.VolumeViewType.MEDIA));
       break;
     }
   }
@@ -397,7 +403,7 @@ public class HoldToStreamView
     Q.mAdlConnectedToScope = true;
   }
   
-  public final void a(@cgb Activity paramActivity, @cgb StreamView.a parama)
+  public final void a(@chc Activity paramActivity, @chc StreamView.a parama)
   {
     S = paramActivity;
     if (h == null)
@@ -429,7 +435,7 @@ public class HoldToStreamView
     R = true;
   }
   
-  public final void a(@cgb MotionEvent paramMotionEvent)
+  public final void a(@chc MotionEvent paramMotionEvent)
   {
     d = MotionEvent.obtainNoHistory(paramMotionEvent);
     if ((h == null) || (f == null)) {}
@@ -451,7 +457,7 @@ public class HoldToStreamView
       if (!g.d) {
         break;
       }
-      M.a(new bdg(true));
+      M.a(new beg(true));
       return;
     }
     return;
@@ -491,7 +497,7 @@ public class HoldToStreamView
       j = 1;
       if ((j != 0) && ((l1 > m) || (g.d)))
       {
-        M.a(new bap(CameraDisplayState.SHOW, t));
+        M.a(new bbq(CameraDisplayState.SHOW, t));
         s = t;
         I = System.currentTimeMillis();
       }
@@ -518,8 +524,8 @@ public class HoldToStreamView
           f1 = localLockToStreamView.getParentHeight();
           f2 = paramMotionEvent.getRawY();
           f3 = localLockToStreamView.getParentHeight() / 2;
-          f4 = localLockToStreamView.getResources().getDimension(2131296331);
-          f5 = localLockToStreamView.getResources().getDimension(2131296328);
+          f4 = localLockToStreamView.getResources().getDimension(2131296330);
+          f5 = localLockToStreamView.getResources().getDimension(2131296327);
           if (Math.abs(f2 - f3) >= f4) {
             break label1130;
           }
@@ -535,7 +541,7 @@ public class HoldToStreamView
           f = bool3;
           if ((f) && (bool1 != bool2))
           {
-            f4 = localLockToStreamView.getResources().getDimension(2131296333);
+            f4 = localLockToStreamView.getResources().getDimension(2131296332);
             if (!bool1) {
               break label1156;
             }
@@ -560,8 +566,8 @@ public class HoldToStreamView
           }
           f1 = g.getWidth();
           f2 = g.getScaleX();
-          f3 = localLockToStreamView.getResources().getDimensionPixelSize(2131296330) * 2 + f1 * f2;
-          j = localLockToStreamView.getResources().getDimensionPixelOffset(2131296326);
+          f3 = localLockToStreamView.getResources().getDimensionPixelSize(2131296329) * 2 + f1 * f2;
+          j = localLockToStreamView.getResources().getDimensionPixelOffset(2131296325);
           f4 = localLockToStreamView.getParentHeight();
           f5 = f4 / 2.0F;
           f2 = j + f3 / 2.0F;
@@ -594,7 +600,7 @@ public class HoldToStreamView
           }
           paramMotionEvent = "bottom";
           label876:
-          ((EasyMetric)localObject).a("position", paramMotionEvent).d();
+          ((EasyMetric)localObject).a("position", paramMotionEvent).e();
         }
       }
     }
@@ -625,7 +631,7 @@ public class HoldToStreamView
       j = localLockToStreamView.getWidth() - (int)(2.0F * b.getStrokeWidth());
       localObject = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(localLockToStreamView.getResources(), 2130837841), j, j, true);
       c.setShader(new BitmapShader((Bitmap)localObject, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-      i = (localLockToStreamView.getResources().getDimensionPixelSize(2131296329) / localLockToStreamView.getWidth());
+      i = (localLockToStreamView.getResources().getDimensionPixelSize(2131296328) / localLockToStreamView.getWidth());
       h = (i * 0.5F);
       localLockToStreamView.invalidate();
       break label337;
@@ -671,23 +677,47 @@ public class HoldToStreamView
   public final void a(ChatConversation paramChatConversation)
   {
     if (!R) {}
-    bic localbic;
-    do
+    for (;;)
     {
       return;
       if (!c.b()) {
         c.a(S, this, Q);
       }
-      localbic = mHereAuth;
-    } while (localbic == null);
-    B = paramChatConversation;
-    c.a(localbic);
-    D = true;
+      Object localObject2 = mHereAuth;
+      Object localObject1 = localObject2;
+      if (localObject2 == null) {
+        localObject1 = new bjc();
+      }
+      try
+      {
+        localObject2 = MessageFormat.format("Zk7iW21C8v4zt5xJlpZX~{0}~WFrs1P2KHtzADoxWMaa7", new Object[] { mId });
+        MessageDigest localMessageDigest = MessageDigest.getInstance("SHA-256");
+        localMessageDigest.update(((String)localObject2).getBytes(ci.c));
+        ((bjc)localObject1).a(ej.a().a(localMessageDigest.digest()));
+        if (mMessagingAuthToken == null) {
+          continue;
+        }
+        ((bjc)localObject1).b(mMessagingAuthToken.a());
+        ((bjc)localObject1).c(mMessagingAuthToken.b());
+        B = paramChatConversation;
+        c.a((bjc)localObject1);
+        D = true;
+        return;
+      }
+      catch (GeneralSecurityException localGeneralSecurityException)
+      {
+        for (;;)
+        {
+          new StringBuilder("Error generating scope for conversation: ").append(mId).append(" ").append(localGeneralSecurityException.getMessage());
+        }
+      }
+    }
   }
   
-  public final void a(@cgc DisconnectReason paramDisconnectReason)
+  public final void a(@chd DisconnectReason paramDisconnectReason)
   {
     D = false;
+    B.mHereAuth = null;
     HereAnalytics localHereAnalytics = Q;
     mAdlConnectedToScope = false;
     localHereAnalytics.a(paramDisconnectReason);
@@ -708,7 +738,7 @@ public class HoldToStreamView
         if (mIsDisplayingVideo != bool)
         {
           mIsDisplayingVideo = bool;
-          yq.a().a((ChatConversation)localObject, mAmIPresent, mIsRecipientPresent, mIsDisplayingVideo);
+          zm.a().a((ChatConversation)localObject, mAmIPresent, mIsRecipientPresent, mIsDisplayingVideo);
         }
         a.b(paramBoolean);
         a.c(paramBoolean);
@@ -726,7 +756,7 @@ public class HoldToStreamView
             if (!mIsVideoIncoming) {
               break label228;
             }
-            new EasyMetric("HERE_INCOMING_SESSION_START").d();
+            new EasyMetric("HERE_INCOMING_SESSION_START").e();
             mVideoIncomingStart = SystemClock.elapsedRealtime();
           }
         }
@@ -739,10 +769,10 @@ public class HoldToStreamView
           break;
           label228:
           long l = SystemClock.elapsedRealtime() - mVideoIncomingStart;
-          hu localhu = new hu();
+          id localid = new id();
           view_time_sec = Double.valueOf(l / 1000.0D);
-          ScAnalyticsEventEngine.a(localhu);
-          new EasyMetric("HERE_INCOMING_SESSION_END").a(l).a("reason", null).d();
+          ScAnalyticsEventEngine.a(localid);
+          new EasyMetric("HERE_INCOMING_SESSION_END").a(l).a("reason", null).e();
         }
       }
     });
@@ -804,7 +834,7 @@ public class HoldToStreamView
     R = false;
   }
   
-  public final void b(@cgb DisconnectReason paramDisconnectReason)
+  public final void b(@chc DisconnectReason paramDisconnectReason)
   {
     M.a(new ChangePreviewQualityEvent(ChangePreviewQualityEvent.PreviewQuality.HIGH));
     if (!R) {
@@ -818,26 +848,10 @@ public class HoldToStreamView
   
   public final void b(boolean paramBoolean)
   {
-    C = paramBoolean;
-    Object localObject = i;
-    if ((b) && (!C)) {}
-    for (boolean bool = true;; bool = false)
-    {
-      ((ConnectingRippleView)localObject).setRipplesEnabled(bool);
-      if (paramBoolean)
-      {
-        localObject = Q;
-        if (mOutgoingVideoState == HereAnalytics.OutgoingVideoState.CONNECTING)
-        {
-          mOutgoingVideoState = HereAnalytics.OutgoingVideoState.CONNECTED;
-          long l1 = SystemClock.elapsedRealtime();
-          long l2 = mVideoOutgoingStart;
-          ((HereAnalytics)localObject).a(HereAnalytics.SetupPhase.HERE_CONFIRMED);
-          new EasyMetric("HERE_OUTGOING_ACKED").a(l1 - l2).d();
-        }
-      }
-      return;
+    if (!paramBoolean) {
+      setCanStreamVideo(false, DisconnectReason.REMOTE_PEER_LEFT);
     }
+    M.a(new bdp(AdlHelper.PresenceSource.ADDLIVE, B.mTheirUsername, false, "onUserEvent"));
   }
   
   public final void c()
@@ -846,7 +860,7 @@ public class HoldToStreamView
     O = true;
     t = CameraModel.CameraType.FRONT_FACING;
     s = CameraModel.CameraType.FRONT_FACING;
-    M.a(new bap(CameraDisplayState.SHOW, t));
+    M.a(new bbq(CameraDisplayState.SHOW, t));
     I = System.currentTimeMillis();
     if (!c.b())
     {
@@ -862,13 +876,13 @@ public class HoldToStreamView
     k.a();
     f.setScaleX(0.0F);
     f.setScaleY(0.0F);
-    int j = getResources().getDimensionPixelSize(2131296330);
+    int j = getResources().getDimensionPixelSize(2131296329);
     float f1 = f.getWidth();
     f1 = j * 2 + f1 * 0.4F;
     updateViewLayout(g, new FrameLayout.LayoutParams((int)f1, (int)f1));
     K.a(getMeasuredWidth());
     L.a(getMeasuredHeight());
-    c.c();
+    c.d();
     if (q != null) {
       q.cancel();
     }
@@ -896,7 +910,7 @@ public class HoldToStreamView
       ((ConnectingRippleView)localObject1).setRipplesEnabled(bool);
       F = 1.0F;
       E = true;
-      o = vq.a(getContext());
+      o = wm.a(getContext());
       if (Camera.getNumberOfCameras() > 1)
       {
         u.setHeightThreshold((int)o);
@@ -918,7 +932,7 @@ public class HoldToStreamView
         label481:
         ((QuickSnapOnboardingOverlay)localObject2).setOverlayMode((QuickSnapOnboardingOverlay.OverlayMode)localObject1);
       }
-      M.a(new bdg(false));
+      M.a(new beg(false));
       invalidate();
       localObject1 = Q;
       if (mOutgoingVideoState == HereAnalytics.OutgoingVideoState.DISCONNECTED) {
@@ -946,7 +960,7 @@ public class HoldToStreamView
       if (l1 != -1L) {
         ((EasyMetric)localObject2).a(l1);
       }
-      ((EasyMetric)localObject2).a("is_connected_to_scope", Boolean.valueOf(bool)).d();
+      ((EasyMetric)localObject2).a("is_connected_to_scope", Boolean.valueOf(bool)).e();
       mVideoOutgoingStart = SystemClock.elapsedRealtime();
       mTimeStartCanStreamVideo = -1L;
       ((HereAnalytics)localObject1).a("startHoldingToStream()");
@@ -963,12 +977,36 @@ public class HoldToStreamView
     }
   }
   
+  public final void c(boolean paramBoolean)
+  {
+    C = paramBoolean;
+    Object localObject = i;
+    if ((b) && (!C)) {}
+    for (boolean bool = true;; bool = false)
+    {
+      ((ConnectingRippleView)localObject).setRipplesEnabled(bool);
+      if (paramBoolean)
+      {
+        localObject = Q;
+        if (mOutgoingVideoState == HereAnalytics.OutgoingVideoState.CONNECTING)
+        {
+          mOutgoingVideoState = HereAnalytics.OutgoingVideoState.CONNECTED;
+          long l1 = SystemClock.elapsedRealtime();
+          long l2 = mVideoOutgoingStart;
+          ((HereAnalytics)localObject).a(HereAnalytics.SetupPhase.HERE_CONFIRMED);
+          new EasyMetric("HERE_OUTGOING_ACKED").a(l1 - l2).e();
+        }
+      }
+      return;
+    }
+  }
+  
   public final boolean d()
   {
     return y;
   }
   
-  protected void dispatchDraw(@cgb Canvas paramCanvas)
+  protected void dispatchDraw(@chc Canvas paramCanvas)
   {
     float f2 = 1.0F;
     if ((d == null) || (f == null) || (!e))
@@ -992,14 +1030,14 @@ public class HoldToStreamView
       if (!E) {
         break label306;
       }
-      F = ats.a(f3, f2, 0.04F);
+      F = auq.a(f3, f2, 0.04F);
       if (F < 0.01F) {
         c(DisconnectReason.CONNECTION_LOST);
       }
       if ((h == null) || (h.getVisibility() != 0)) {
         break label311;
       }
-      f2 = F * ats.a(f.getScaleX(), 0.3F, 0.08F);
+      f2 = F * auq.a(f.getScaleX(), 0.3F, 0.08F);
       if (f.getScaleX() == f2) {
         break label336;
       }
@@ -1029,7 +1067,7 @@ public class HoldToStreamView
       f2 = 0.0F;
       break label116;
       label311:
-      f2 = F * ats.a(f.getScaleX(), 0.4F, 0.08F);
+      f2 = F * auq.a(f.getScaleX(), 0.4F, 0.08F);
       break label186;
       label336:
       j = 0;
@@ -1045,14 +1083,19 @@ public class HoldToStreamView
     return e;
   }
   
+  public boolean getPresence()
+  {
+    return c.c();
+  }
+  
   public void onAttachedToWindow()
   {
     super.onAttachedToWindow();
     M.c(this);
   }
   
-  @boh
-  public void onCameraReadyEvent(bao parambao)
+  @bpi
+  public void onCameraReadyEvent(bbp parambbp)
   {
     if ((ready) && (!isChangingQuality))
     {
@@ -1110,7 +1153,7 @@ public class HoldToStreamView
         }
         J = false;
         return true;
-        M.a(new bdg(false));
+        M.a(new beg(false));
       }
     }
     r.onTouchEvent(paramMotionEvent);
@@ -1120,7 +1163,7 @@ public class HoldToStreamView
     return g.d;
   }
   
-  public void setCanStreamVideo(boolean paramBoolean, @cgc DisconnectReason paramDisconnectReason)
+  public void setCanStreamVideo(boolean paramBoolean, @chd DisconnectReason paramDisconnectReason)
   {
     boolean bool2 = true;
     boolean bool1;
@@ -1160,9 +1203,9 @@ public class HoldToStreamView
     }
   }
   
-  public void setLiveChatProvider(ahl paramahl)
+  public void setLiveChatProvider(aih paramaih)
   {
-    c = paramahl;
+    c = paramaih;
   }
 }
 

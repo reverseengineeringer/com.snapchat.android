@@ -1,73 +1,52 @@
-import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
-public final class cjj
-  extends cgm
-  implements Serializable
+final class cjj
+  extends cji
+  implements cjp, cjt
 {
-  public static final cgm a = new cjj();
+  static final cjj a = new cjj();
   
-  public final long a(long paramLong, int paramInt)
+  public final long a(Object paramObject)
   {
-    return cjh.a(paramLong, paramInt);
+    return ((Calendar)paramObject).getTime().getTime();
   }
   
-  public final long a(long paramLong1, long paramLong2)
+  public final Class<?> a()
   {
-    return cjh.a(paramLong1, paramLong2);
+    return Calendar.class;
   }
   
-  public final cgn a()
+  public final chg b(Object paramObject)
   {
-    return cgn.a();
-  }
-  
-  public final int b(long paramLong1, long paramLong2)
-  {
-    return cjh.a(cjh.b(paramLong1, paramLong2));
-  }
-  
-  public final boolean b()
-  {
-    return true;
-  }
-  
-  public final long c(long paramLong1, long paramLong2)
-  {
-    return cjh.b(paramLong1, paramLong2);
-  }
-  
-  public final boolean c()
-  {
-    return true;
-  }
-  
-  public final long d()
-  {
-    return 1L;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    boolean bool2 = false;
-    boolean bool1 = bool2;
-    if ((paramObject instanceof cjj))
+    Calendar localCalendar = (Calendar)paramObject;
+    try
     {
-      bool1 = bool2;
-      if (1L == 1L) {
-        bool1 = true;
+      paramObject = chl.a(localCalendar.getTimeZone());
+      if (localCalendar.getClass().getName().endsWith(".BuddhistCalendar")) {
+        return civ.b((chl)paramObject);
       }
     }
-    return bool1;
-  }
-  
-  public final int hashCode()
-  {
-    return 1;
-  }
-  
-  public final String toString()
-  {
-    return "DurationField[millis]";
+    catch (IllegalArgumentException paramObject)
+    {
+      for (;;)
+      {
+        paramObject = chl.a();
+      }
+      if ((localCalendar instanceof GregorianCalendar))
+      {
+        long l = ((GregorianCalendar)localCalendar).getGregorianChange().getTime();
+        if (l == Long.MIN_VALUE) {
+          return cjc.b((chl)paramObject);
+        }
+        if (l == Long.MAX_VALUE) {
+          return cjf.b((chl)paramObject);
+        }
+        return ciw.a((chl)paramObject, l);
+      }
+    }
+    return cjd.b((chl)paramObject);
   }
 }
 

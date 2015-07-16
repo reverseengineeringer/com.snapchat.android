@@ -1,633 +1,207 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.security.Permission;
-import java.util.Map;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 
 public final class bty
-  extends HttpURLConnection
 {
-  private btl a;
-  private HttpURLConnection b;
-  private bsb c;
-  private bsw d;
-  private boolean e = false;
-  private boolean f = false;
+  private SharedPreferences a;
+  private SharedPreferences b;
+  private Context c;
   
-  public bty(HttpURLConnection paramHttpURLConnection, btl parambtl, bsw parambsw)
+  public bty(Context paramContext)
   {
-    super(paramHttpURLConnection.getURL());
-    b = paramHttpURLConnection;
-    a = parambtl;
-    d = parambsw;
-    c = new bsb(paramHttpURLConnection.getURL());
+    if (paramContext == null) {
+      throw new NullPointerException("context was null");
+    }
+    c = paramContext;
+    a = paramContext.getSharedPreferences("com.crittercism.usersettings", 0);
+    b = paramContext.getSharedPreferences("com.crittercism.prefs", 0);
+    if (a == null) {
+      throw new NullPointerException("prefs were null");
+    }
+    if (b == null) {
+      throw new NullPointerException("legacy prefs were null");
+    }
   }
   
-  private void a()
+  private static String a(String paramString)
   {
+    String str = paramString;
+    if (paramString != null)
+    {
+      str = paramString;
+      if (paramString.length() <= 0) {}
+    }
     try
     {
-      if (!f)
-      {
-        f = true;
-        c.f = b.getRequestMethod();
-        c.c();
-        c.j = d.a();
-        if (brc.b()) {
-          c.a(brc.a());
-        }
-      }
-      return;
-    }
-    catch (ThreadDeath localThreadDeath)
-    {
-      throw localThreadDeath;
-    }
-    catch (Throwable localThrowable)
-    {
-      btd.a(localThrowable);
-    }
-  }
-  
-  private void a(Throwable paramThrowable)
-  {
-    try
-    {
-      if (e) {
-        return;
-      }
-      e = true;
-      c.d();
-      c.g = bsa.a(paramThrowable);
-      a.a(c);
-      return;
-    }
-    catch (ThreadDeath paramThrowable)
-    {
-      throw paramThrowable;
-    }
-    catch (Throwable localThrowable)
-    {
-      btd.a(paramThrowable);
-    }
-  }
-  
-  /* Error */
-  private void b()
-  {
-    // Byte code:
-    //   0: iconst_0
-    //   1: istore_2
-    //   2: iconst_0
-    //   3: istore_1
-    //   4: aload_0
-    //   5: getfield 26	bty:e	Z
-    //   8: ifne +151 -> 159
-    //   11: aload_0
-    //   12: iconst_1
-    //   13: putfield 26	bty:e	Z
-    //   16: aload_0
-    //   17: getfield 39	bty:c	Lbsb;
-    //   20: invokevirtual 81	bsb:d	()V
-    //   23: aload_0
-    //   24: getfield 30	bty:b	Ljava/net/HttpURLConnection;
-    //   27: invokevirtual 101	java/net/HttpURLConnection:getHeaderFields	()Ljava/util/Map;
-    //   30: ifnull +100 -> 130
-    //   33: new 103	btw
-    //   36: dup
-    //   37: aload_0
-    //   38: getfield 30	bty:b	Ljava/net/HttpURLConnection;
-    //   41: invokevirtual 101	java/net/HttpURLConnection:getHeaderFields	()Ljava/util/Map;
-    //   44: invokespecial 106	btw:<init>	(Ljava/util/Map;)V
-    //   47: astore 7
-    //   49: aload 7
-    //   51: ldc 108
-    //   53: invokevirtual 111	btw:b	(Ljava/lang/String;)I
-    //   56: istore_2
-    //   57: iload_2
-    //   58: iconst_m1
-    //   59: if_icmpeq +14 -> 73
-    //   62: aload_0
-    //   63: getfield 39	bty:c	Lbsb;
-    //   66: iload_2
-    //   67: i2l
-    //   68: invokevirtual 114	bsb:b	(J)V
-    //   71: iconst_1
-    //   72: istore_1
-    //   73: aload 7
-    //   75: ldc 116
-    //   77: invokevirtual 119	btw:a	(Ljava/lang/String;)J
-    //   80: lstore_3
-    //   81: aload 7
-    //   83: ldc 121
-    //   85: invokevirtual 119	btw:a	(Ljava/lang/String;)J
-    //   88: lstore 5
-    //   90: iload_1
-    //   91: istore_2
-    //   92: lload_3
-    //   93: ldc2_w 122
-    //   96: lcmp
-    //   97: ifeq +33 -> 130
-    //   100: iload_1
-    //   101: istore_2
-    //   102: lload 5
-    //   104: ldc2_w 122
-    //   107: lcmp
-    //   108: ifeq +22 -> 130
-    //   111: aload_0
-    //   112: getfield 39	bty:c	Lbsb;
-    //   115: lload_3
-    //   116: invokevirtual 125	bsb:e	(J)V
-    //   119: aload_0
-    //   120: getfield 39	bty:c	Lbsb;
-    //   123: lload 5
-    //   125: invokevirtual 127	bsb:f	(J)V
-    //   128: iload_1
-    //   129: istore_2
-    //   130: aload_0
-    //   131: getfield 39	bty:c	Lbsb;
-    //   134: aload_0
-    //   135: getfield 30	bty:b	Ljava/net/HttpURLConnection;
-    //   138: invokevirtual 131	java/net/HttpURLConnection:getResponseCode	()I
-    //   141: putfield 134	bsb:e	I
-    //   144: iload_2
-    //   145: ifeq +14 -> 159
-    //   148: aload_0
-    //   149: getfield 32	bty:a	Lbtl;
-    //   152: aload_0
-    //   153: getfield 39	bty:c	Lbsb;
-    //   156: invokevirtual 95	btl:a	(Lbsb;)V
-    //   159: return
-    //   160: astore 7
-    //   162: aload 7
-    //   164: athrow
-    //   165: astore 7
-    //   167: aload 7
-    //   169: invokestatic 79	btd:a	(Ljava/lang/Throwable;)V
-    //   172: return
-    //   173: astore 7
-    //   175: goto -31 -> 144
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	178	0	this	bty
-    //   3	126	1	i	int
-    //   1	144	2	j	int
-    //   80	36	3	l1	long
-    //   88	36	5	l2	long
-    //   47	35	7	localbtw	btw
-    //   160	3	7	localThreadDeath	ThreadDeath
-    //   165	3	7	localThrowable	Throwable
-    //   173	1	7	localIOException	IOException
-    // Exception table:
-    //   from	to	target	type
-    //   4	23	160	java/lang/ThreadDeath
-    //   23	57	160	java/lang/ThreadDeath
-    //   62	71	160	java/lang/ThreadDeath
-    //   73	90	160	java/lang/ThreadDeath
-    //   111	128	160	java/lang/ThreadDeath
-    //   130	144	160	java/lang/ThreadDeath
-    //   148	159	160	java/lang/ThreadDeath
-    //   4	23	165	java/lang/Throwable
-    //   23	57	165	java/lang/Throwable
-    //   62	71	165	java/lang/Throwable
-    //   73	90	165	java/lang/Throwable
-    //   111	128	165	java/lang/Throwable
-    //   130	144	165	java/lang/Throwable
-    //   148	159	165	java/lang/Throwable
-    //   130	144	173	java/io/IOException
-  }
-  
-  public final void addRequestProperty(String paramString1, String paramString2)
-  {
-    b.addRequestProperty(paramString1, paramString2);
-  }
-  
-  public final void connect()
-  {
-    b.connect();
-  }
-  
-  public final void disconnect()
-  {
-    b.disconnect();
-    try
-    {
-      if ((e) && (!c.b)) {
-        a.a(c);
-      }
-      return;
-    }
-    catch (ThreadDeath localThreadDeath)
-    {
-      throw localThreadDeath;
-    }
-    catch (Throwable localThrowable)
-    {
-      btd.a(localThrowable);
-    }
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    return b.equals(paramObject);
-  }
-  
-  public final boolean getAllowUserInteraction()
-  {
-    return b.getAllowUserInteraction();
-  }
-  
-  public final int getConnectTimeout()
-  {
-    return b.getConnectTimeout();
-  }
-  
-  public final Object getContent()
-  {
-    a();
-    try
-    {
-      Object localObject = b.getContent();
-      b();
-      return localObject;
-    }
-    catch (IOException localIOException)
-    {
-      a(localIOException);
-      throw localIOException;
-    }
-  }
-  
-  public final Object getContent(Class[] paramArrayOfClass)
-  {
-    a();
-    try
-    {
-      paramArrayOfClass = b.getContent(paramArrayOfClass);
-      b();
-      return paramArrayOfClass;
-    }
-    catch (IOException paramArrayOfClass)
-    {
-      a(paramArrayOfClass);
-      throw paramArrayOfClass;
-    }
-  }
-  
-  public final String getContentEncoding()
-  {
-    a();
-    String str = b.getContentEncoding();
-    b();
-    return str;
-  }
-  
-  public final int getContentLength()
-  {
-    return b.getContentLength();
-  }
-  
-  public final String getContentType()
-  {
-    a();
-    String str = b.getContentType();
-    b();
-    return str;
-  }
-  
-  public final long getDate()
-  {
-    return b.getDate();
-  }
-  
-  public final boolean getDefaultUseCaches()
-  {
-    return b.getDefaultUseCaches();
-  }
-  
-  public final boolean getDoInput()
-  {
-    return b.getDoInput();
-  }
-  
-  public final boolean getDoOutput()
-  {
-    return b.getDoOutput();
-  }
-  
-  public final InputStream getErrorStream()
-  {
-    a();
-    InputStream localInputStream = b.getErrorStream();
-    b();
-    if (localInputStream != null) {
-      try
-      {
-        bua localbua = new bua(localInputStream, a, c);
-        return localbua;
-      }
-      catch (ThreadDeath localThreadDeath)
-      {
-        throw localThreadDeath;
-      }
-      catch (Throwable localThrowable)
-      {
-        btd.a(localThrowable);
-      }
-    }
-    return localThreadDeath;
-  }
-  
-  public final long getExpiration()
-  {
-    return b.getExpiration();
-  }
-  
-  public final String getHeaderField(int paramInt)
-  {
-    a();
-    String str = b.getHeaderField(paramInt);
-    b();
-    return str;
-  }
-  
-  public final String getHeaderField(String paramString)
-  {
-    a();
-    paramString = b.getHeaderField(paramString);
-    b();
-    return paramString;
-  }
-  
-  public final long getHeaderFieldDate(String paramString, long paramLong)
-  {
-    a();
-    paramLong = b.getHeaderFieldDate(paramString, paramLong);
-    b();
-    return paramLong;
-  }
-  
-  public final int getHeaderFieldInt(String paramString, int paramInt)
-  {
-    a();
-    paramInt = b.getHeaderFieldInt(paramString, paramInt);
-    b();
-    return paramInt;
-  }
-  
-  public final String getHeaderFieldKey(int paramInt)
-  {
-    a();
-    String str = b.getHeaderFieldKey(paramInt);
-    b();
-    return str;
-  }
-  
-  public final Map getHeaderFields()
-  {
-    a();
-    Map localMap = b.getHeaderFields();
-    b();
-    return localMap;
-  }
-  
-  public final long getIfModifiedSince()
-  {
-    return b.getIfModifiedSince();
-  }
-  
-  /* Error */
-  public final InputStream getInputStream()
-  {
-    // Byte code:
-    //   0: aload_0
-    //   1: invokespecial 162	bty:a	()V
-    //   4: aload_0
-    //   5: getfield 30	bty:b	Ljava/net/HttpURLConnection;
-    //   8: invokevirtual 228	java/net/HttpURLConnection:getInputStream	()Ljava/io/InputStream;
-    //   11: astore_1
-    //   12: aload_0
-    //   13: invokespecial 166	bty:b	()V
-    //   16: aload_1
-    //   17: ifnull +38 -> 55
-    //   20: new 198	bua
-    //   23: dup
-    //   24: aload_1
-    //   25: aload_0
-    //   26: getfield 32	bty:a	Lbtl;
-    //   29: aload_0
-    //   30: getfield 39	bty:c	Lbsb;
-    //   33: invokespecial 201	bua:<init>	(Ljava/io/InputStream;Lbtl;Lbsb;)V
-    //   36: astore_2
-    //   37: aload_2
-    //   38: areturn
-    //   39: astore_1
-    //   40: aload_0
-    //   41: aload_1
-    //   42: invokespecial 167	bty:a	(Ljava/lang/Throwable;)V
-    //   45: aload_1
-    //   46: athrow
-    //   47: astore_1
-    //   48: aload_1
-    //   49: athrow
-    //   50: astore_2
-    //   51: aload_2
-    //   52: invokestatic 79	btd:a	(Ljava/lang/Throwable;)V
-    //   55: aload_1
-    //   56: areturn
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	57	0	this	bty
-    //   11	14	1	localInputStream	InputStream
-    //   39	7	1	localIOException	IOException
-    //   47	9	1	localThreadDeath	ThreadDeath
-    //   36	2	2	localbua	bua
-    //   50	2	2	localThrowable	Throwable
-    // Exception table:
-    //   from	to	target	type
-    //   4	16	39	java/io/IOException
-    //   20	37	47	java/lang/ThreadDeath
-    //   20	37	50	java/lang/Throwable
-  }
-  
-  public final boolean getInstanceFollowRedirects()
-  {
-    return b.getInstanceFollowRedirects();
-  }
-  
-  public final long getLastModified()
-  {
-    return b.getLastModified();
-  }
-  
-  public final OutputStream getOutputStream()
-  {
-    OutputStream localOutputStream = b.getOutputStream();
-    if (localOutputStream != null) {
-      try
-      {
-        bub localbub = new bub(localOutputStream, c);
-        return localbub;
-      }
-      catch (ThreadDeath localThreadDeath)
-      {
-        throw localThreadDeath;
-      }
-      catch (Throwable localThrowable)
-      {
-        btd.a(localThrowable);
-      }
-    }
-    return localThreadDeath;
-  }
-  
-  public final Permission getPermission()
-  {
-    return b.getPermission();
-  }
-  
-  public final int getReadTimeout()
-  {
-    return b.getReadTimeout();
-  }
-  
-  public final String getRequestMethod()
-  {
-    return b.getRequestMethod();
-  }
-  
-  public final Map getRequestProperties()
-  {
-    return b.getRequestProperties();
-  }
-  
-  public final String getRequestProperty(String paramString)
-  {
-    return b.getRequestProperty(paramString);
-  }
-  
-  public final int getResponseCode()
-  {
-    a();
-    try
-    {
-      int i = b.getResponseCode();
-      b();
-      return i;
-    }
-    catch (IOException localIOException)
-    {
-      a(localIOException);
-      throw localIOException;
-    }
-  }
-  
-  public final String getResponseMessage()
-  {
-    a();
-    try
-    {
-      String str = b.getResponseMessage();
-      b();
+      str = new String(new BigInteger(1, MessageDigest.getInstance("SHA-256").digest(paramString.getBytes())).toString(16));
       return str;
     }
-    catch (IOException localIOException)
+    catch (ThreadDeath paramString)
     {
-      a(localIOException);
-      throw localIOException;
+      throw paramString;
     }
+    catch (Throwable paramString) {}
+    return null;
   }
   
-  public final URL getURL()
+  /* Error */
+  private String b()
   {
-    return b.getURL();
+    // Byte code:
+    //   0: aconst_null
+    //   1: astore_2
+    //   2: aload_0
+    //   3: getfield 23	bty:c	Landroid/content/Context;
+    //   6: invokevirtual 84	android/content/Context:getContentResolver	()Landroid/content/ContentResolver;
+    //   9: ldc 86
+    //   11: invokestatic 92	android/provider/Settings$Secure:getString	(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    //   14: astore_1
+    //   15: aload_1
+    //   16: ifnull +148 -> 164
+    //   19: aload_1
+    //   20: invokevirtual 53	java/lang/String:length	()I
+    //   23: ifle +141 -> 164
+    //   26: aload_1
+    //   27: ldc 94
+    //   29: invokevirtual 98	java/lang/String:equals	(Ljava/lang/Object;)Z
+    //   32: ifne +132 -> 164
+    //   35: aload_1
+    //   36: ldc 100
+    //   38: invokevirtual 103	java/lang/String:getBytes	(Ljava/lang/String;)[B
+    //   41: invokestatic 109	java/util/UUID:nameUUIDFromBytes	([B)Ljava/util/UUID;
+    //   44: astore_1
+    //   45: aload_1
+    //   46: ifnull +118 -> 164
+    //   49: aload_1
+    //   50: invokevirtual 111	java/util/UUID:toString	()Ljava/lang/String;
+    //   53: astore_1
+    //   54: aload_1
+    //   55: ifnull +10 -> 65
+    //   58: aload_1
+    //   59: invokevirtual 53	java/lang/String:length	()I
+    //   62: ifne +89 -> 151
+    //   65: aload_0
+    //   66: getfield 23	bty:c	Landroid/content/Context;
+    //   69: invokevirtual 115	android/content/Context:getPackageManager	()Landroid/content/pm/PackageManager;
+    //   72: ldc 117
+    //   74: aload_0
+    //   75: getfield 23	bty:c	Landroid/content/Context;
+    //   78: invokevirtual 120	android/content/Context:getPackageName	()Ljava/lang/String;
+    //   81: invokevirtual 126	android/content/pm/PackageManager:checkPermission	(Ljava/lang/String;Ljava/lang/String;)I
+    //   84: ifne +22 -> 106
+    //   87: aload_0
+    //   88: getfield 23	bty:c	Landroid/content/Context;
+    //   91: ldc -128
+    //   93: invokevirtual 132	android/content/Context:getSystemService	(Ljava/lang/String;)Ljava/lang/Object;
+    //   96: checkcast 134	android/telephony/TelephonyManager
+    //   99: invokevirtual 137	android/telephony/TelephonyManager:getDeviceId	()Ljava/lang/String;
+    //   102: invokestatic 139	bty:a	(Ljava/lang/String;)Ljava/lang/String;
+    //   105: astore_2
+    //   106: aload_2
+    //   107: astore_1
+    //   108: aload_1
+    //   109: ifnull +12 -> 121
+    //   112: aload_1
+    //   113: astore_2
+    //   114: aload_1
+    //   115: invokevirtual 53	java/lang/String:length	()I
+    //   118: ifne +10 -> 128
+    //   121: invokestatic 143	java/util/UUID:randomUUID	()Ljava/util/UUID;
+    //   124: invokevirtual 111	java/util/UUID:toString	()Ljava/lang/String;
+    //   127: astore_2
+    //   128: aload_2
+    //   129: areturn
+    //   130: astore_1
+    //   131: aload_1
+    //   132: athrow
+    //   133: astore_1
+    //   134: aload_1
+    //   135: invokestatic 148	bue:a	(Ljava/lang/Throwable;)V
+    //   138: aconst_null
+    //   139: astore_1
+    //   140: goto -86 -> 54
+    //   143: astore_1
+    //   144: aload_1
+    //   145: athrow
+    //   146: astore_2
+    //   147: aload_2
+    //   148: invokestatic 148	bue:a	(Ljava/lang/Throwable;)V
+    //   151: goto -43 -> 108
+    //   154: astore_1
+    //   155: aload_1
+    //   156: athrow
+    //   157: astore_2
+    //   158: aload_2
+    //   159: invokestatic 148	bue:a	(Ljava/lang/Throwable;)V
+    //   162: aload_1
+    //   163: areturn
+    //   164: aconst_null
+    //   165: astore_1
+    //   166: goto -112 -> 54
+    // Local variable table:
+    //   start	length	slot	name	signature
+    //   0	169	0	this	bty
+    //   14	101	1	localObject1	Object
+    //   130	2	1	localThreadDeath1	ThreadDeath
+    //   133	2	1	localThrowable1	Throwable
+    //   139	1	1	localObject2	Object
+    //   143	2	1	localThreadDeath2	ThreadDeath
+    //   154	9	1	localThreadDeath3	ThreadDeath
+    //   165	1	1	localObject3	Object
+    //   1	128	2	localObject4	Object
+    //   146	2	2	localThrowable2	Throwable
+    //   157	2	2	localThrowable3	Throwable
+    // Exception table:
+    //   from	to	target	type
+    //   2	15	130	java/lang/ThreadDeath
+    //   19	45	130	java/lang/ThreadDeath
+    //   49	54	130	java/lang/ThreadDeath
+    //   2	15	133	java/lang/Throwable
+    //   19	45	133	java/lang/Throwable
+    //   49	54	133	java/lang/Throwable
+    //   65	106	143	java/lang/ThreadDeath
+    //   65	106	146	java/lang/Throwable
+    //   121	128	154	java/lang/ThreadDeath
+    //   121	128	157	java/lang/Throwable
   }
   
-  public final boolean getUseCaches()
+  private boolean b(String paramString)
   {
-    return b.getUseCaches();
+    SharedPreferences.Editor localEditor = a.edit();
+    localEditor.putString("hashedDeviceID", paramString);
+    return localEditor.commit();
   }
   
-  public final int hashCode()
+  public final String a()
   {
-    return b.hashCode();
-  }
-  
-  public final void setAllowUserInteraction(boolean paramBoolean)
-  {
-    b.setAllowUserInteraction(paramBoolean);
-  }
-  
-  public final void setChunkedStreamingMode(int paramInt)
-  {
-    b.setChunkedStreamingMode(paramInt);
-  }
-  
-  public final void setConnectTimeout(int paramInt)
-  {
-    b.setConnectTimeout(paramInt);
-  }
-  
-  public final void setDefaultUseCaches(boolean paramBoolean)
-  {
-    b.setDefaultUseCaches(paramBoolean);
-  }
-  
-  public final void setDoInput(boolean paramBoolean)
-  {
-    b.setDoInput(paramBoolean);
-  }
-  
-  public final void setDoOutput(boolean paramBoolean)
-  {
-    b.setDoOutput(paramBoolean);
-  }
-  
-  public final void setFixedLengthStreamingMode(int paramInt)
-  {
-    b.setFixedLengthStreamingMode(paramInt);
-  }
-  
-  public final void setIfModifiedSince(long paramLong)
-  {
-    b.setIfModifiedSince(paramLong);
-  }
-  
-  public final void setInstanceFollowRedirects(boolean paramBoolean)
-  {
-    b.setInstanceFollowRedirects(paramBoolean);
-  }
-  
-  public final void setReadTimeout(int paramInt)
-  {
-    b.setReadTimeout(paramInt);
-  }
-  
-  public final void setRequestMethod(String paramString)
-  {
-    b.setRequestMethod(paramString);
-  }
-  
-  public final void setRequestProperty(String paramString1, String paramString2)
-  {
-    b.setRequestProperty(paramString1, paramString2);
-  }
-  
-  public final void setUseCaches(boolean paramBoolean)
-  {
-    b.setUseCaches(paramBoolean);
-  }
-  
-  public final String toString()
-  {
-    return b.toString();
-  }
-  
-  public final boolean usingProxy()
-  {
-    return b.usingProxy();
+    Object localObject2 = a.getString("hashedDeviceID", null);
+    Object localObject1 = localObject2;
+    if (localObject2 == null)
+    {
+      localObject2 = b.getString("com.crittercism.prefs.did", null);
+      localObject1 = localObject2;
+      if (localObject2 != null)
+      {
+        localObject1 = localObject2;
+        if (b((String)localObject2))
+        {
+          localObject1 = b.edit();
+          ((SharedPreferences.Editor)localObject1).remove("com.crittercism.prefs.did");
+          ((SharedPreferences.Editor)localObject1).commit();
+          localObject1 = localObject2;
+        }
+      }
+    }
+    localObject2 = localObject1;
+    if (localObject1 == null)
+    {
+      localObject2 = b();
+      b((String)localObject2);
+    }
+    return (String)localObject2;
   }
 }
 

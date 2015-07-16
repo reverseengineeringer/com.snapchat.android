@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->onPagedToDiscoverEvent(Laey;)V
+    value = Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->onPagedToDiscoverEvent(Lafy;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Laey;
+.field final synthetic a:Lafy;
 
 .field final synthetic b:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;Laey;)V
+.method constructor <init>(Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;Lafy;)V
     .locals 0
 
     .prologue
-    .line 293
+    .line 295
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->b:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
 
-    iput-object p2, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Laey;
+    iput-object p2, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Lafy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,16 +44,16 @@
     .locals 8
 
     .prologue
-    .line 296
+    .line 298
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->b:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->f(Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;)Lcom/snapchat/android/discover/ui/ChannelGroupView;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Laey;
+    iget-object v1, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Lafy;
 
-    iget-object v1, v1, Laey;->a:Ljava/lang/String;
+    iget-object v1, v1, Lafy;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/ChannelGroupView;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
@@ -61,10 +61,10 @@
 
     check-cast v1, Lcom/snapchat/android/discover/ui/ChannelView;
 
-    .line 299
+    .line 301
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->b:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->b(Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;)Laeh;
+    invoke-static {v0}, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->b(Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;)Lafh;
 
     move-result-object v0
 
@@ -76,24 +76,24 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/EditionOpenOrigin;->CHAT:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
 
-    iget-object v4, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Laey;
+    iget-object v4, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Lafy;
 
-    iget-object v4, v4, Laey;->a:Ljava/lang/String;
+    iget-object v4, v4, Lafy;->a:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Laey;
+    iget-object v5, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Lafy;
 
-    iget-object v5, v5, Laey;->b:Ljava/lang/String;
+    iget-object v5, v5, Lafy;->b:Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Laey;
+    iget-object v6, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Lafy;
 
-    iget-object v6, v6, Laey;->c:Ljava/lang/String;
+    iget-object v6, v6, Lafy;->c:Ljava/lang/String;
 
-    iget-object v7, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Laey;
+    iget-object v7, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$4;->a:Lafy;
 
-    iget-boolean v7, v7, Laey;->d:Z
+    iget-boolean v7, v7, Lafy;->d:Z
 
-    invoke-virtual/range {v0 .. v7}, Laeh;->a(Lcom/snapchat/android/discover/ui/ChannelView;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;Lcom/snapchat/android/discover/model/EditionOpenOrigin;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-virtual/range {v0 .. v7}, Lafh;->a(Lcom/snapchat/android/discover/ui/ChannelView;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;Lcom/snapchat/android/discover/model/EditionOpenOrigin;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Z
 
-    .line 307
+    .line 309
     return-void
 .end method

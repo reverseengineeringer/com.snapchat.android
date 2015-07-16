@@ -1,16 +1,20 @@
 package com.snapchat.android.fragments.settings;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import akr;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import com.snapchat.android.analytics.AnalyticsEvents;
 
 final class AdditionalServicesFragment$6
-  implements View.OnClickListener
+  implements CompoundButton.OnCheckedChangeListener
 {
   AdditionalServicesFragment$6(AdditionalServicesFragment paramAdditionalServicesFragment) {}
   
-  public final void onClick(View paramView)
+  public final void onCheckedChanged(CompoundButton paramCompoundButton, boolean paramBoolean)
   {
-    a.i();
+    AdditionalServicesFragment.b(a);
+    akr.k(paramBoolean);
+    AnalyticsEvents.a("TOGGLE_SETTING_FLASH", paramBoolean);
   }
 }
 

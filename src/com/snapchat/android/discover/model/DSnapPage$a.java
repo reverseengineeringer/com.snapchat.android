@@ -1,6 +1,6 @@
 package com.snapchat.android.discover.model;
 
-import abs;
+import acs;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,16 +34,16 @@ public final class DSnapPage$a
   public final DSnapPage a()
   {
     if (a == null) {
-      throw new abs("Cannot build dsnap page with null id.", "dsnap_id");
+      throw new acs("Cannot build dsnap page with null id.", "dsnap_id");
     }
     if (e == null) {
-      throw new abs("Cannot build dsnap page with null edition id.", "edition_id");
+      throw new acs("Cannot build dsnap page with null edition id.", "edition_id");
     }
     if (f == null) {
-      throw new abs("Cannot build dsnap page with null publisher name.", "publisher_name");
+      throw new acs("Cannot build dsnap page with null publisher name.", "publisher_name");
     }
     if ((j == null) || (j.length() == 0)) {
-      throw new abs("Cannot build dsnap page with null color.", "color");
+      throw new acs("Cannot build dsnap page with null color.", "color");
     }
     String str2 = j;
     String str1 = str2;
@@ -52,10 +52,10 @@ public final class DSnapPage$a
     }
     j = str1;
     if (l == null) {
-      throw new abs("Cannot build dsnap page with null ad type.", "ad_type");
+      throw new acs("Cannot build dsnap page with null ad type.", "ad_type");
     }
     if (r == null) {
-      throw new abs("Cannot build dsnap page with invalid dsnap items.", "dsnap_item");
+      throw new acs("Cannot build dsnap page with invalid dsnap items.", "dsnap_item");
     }
     return new DSnapPage(this, (byte)0);
   }

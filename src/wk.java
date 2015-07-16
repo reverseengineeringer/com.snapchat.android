@@ -1,13 +1,22 @@
-import com.snapchat.android.camera.videocamera.VideoCameraHandler;
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import android.content.Context;
+import android.content.res.Resources;
+import android.widget.RelativeLayout;
+import com.snapchat.android.camera.cameradecor.CameraDecor;
 
-@Singleton
 public final class wk
+  extends CameraDecor
 {
-  public boolean a;
-  public VideoCameraHandler b;
-  public boolean c;
+  public RelativeLayout b;
+  
+  public wk(Context paramContext, RelativeLayout paramRelativeLayout)
+  {
+    super(null);
+    if (paramRelativeLayout == null) {
+      throw new NullPointerException("decor container can not be null");
+    }
+    b = paramRelativeLayout;
+    b.setBackgroundColor(paramContext.getResources().getColor(2131230760));
+  }
 }
 
 /* Location:

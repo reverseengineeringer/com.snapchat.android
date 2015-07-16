@@ -18,9 +18,9 @@
 
 .field private c:Landroid/widget/TextView;
 
-.field private d:Laly;
+.field private d:Lamv;
 
-.field private e:Lalx;
+.field private e:Lamu;
 
 
 # direct methods
@@ -29,21 +29,21 @@
 
     .prologue
     .line 29
-    new-instance v0, Laly;
+    new-instance v0, Lamv;
 
-    invoke-direct {v0}, Laly;-><init>()V
+    invoke-direct {v0}, Lamv;-><init>()V
 
-    invoke-static {}, Lalx;->a()Lalx;
+    invoke-static {}, Lamu;->a()Lamu;
 
     move-result-object v1
 
-    invoke-direct {p0, p1, p2, v0, v1}, Lcom/snapchat/android/ui/InAppPromptView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Laly;Lalx;)V
+    invoke-direct {p0, p1, p2, v0, v1}, Lcom/snapchat/android/ui/InAppPromptView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lamv;Lamu;)V
 
     .line 30
     return-void
 .end method
 
-.method constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Laly;Lalx;)V
+.method constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lamv;Lamu;)V
     .locals 0
 
     .prologue
@@ -54,21 +54,21 @@
     iput-object p1, p0, Lcom/snapchat/android/ui/InAppPromptView;->a:Landroid/content/Context;
 
     .line 39
-    iput-object p3, p0, Lcom/snapchat/android/ui/InAppPromptView;->d:Laly;
+    iput-object p3, p0, Lcom/snapchat/android/ui/InAppPromptView;->d:Lamv;
 
     .line 40
-    iput-object p4, p0, Lcom/snapchat/android/ui/InAppPromptView;->e:Lalx;
+    iput-object p4, p0, Lcom/snapchat/android/ui/InAppPromptView;->e:Lamu;
 
     .line 41
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/ui/InAppPromptView;)Lalx;
+.method static synthetic a(Lcom/snapchat/android/ui/InAppPromptView;)Lamu;
     .locals 1
 
     .prologue
     .line 21
-    iget-object v0, p0, Lcom/snapchat/android/ui/InAppPromptView;->e:Lalx;
+    iget-object v0, p0, Lcom/snapchat/android/ui/InAppPromptView;->e:Lamu;
 
     return-object v0
 .end method
@@ -90,7 +90,7 @@
 
     .prologue
     .line 45
-    const v0, 0x7f0a025e
+    const v0, 0x7f0a025c
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/InAppPromptView;->findViewById(I)Landroid/view/View;
 
@@ -101,7 +101,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/InAppPromptView;->b:Landroid/widget/ImageView;
 
     .line 46
-    const v0, 0x7f0a0263
+    const v0, 0x7f0a0261
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/InAppPromptView;->findViewById(I)Landroid/view/View;
 
@@ -115,7 +115,7 @@
     return-void
 .end method
 
-.method public set(Lalx$a;)V
+.method public set(Lamu$a;)V
     .locals 5
 
     .prologue
@@ -126,7 +126,7 @@
 
     move-result-object v1
 
-    iget-object v0, p1, Lalx$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+    iget-object v0, p1, Lamu$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     sget-object v2, Lcom/snapchat/android/ui/InAppPromptView$2;->a:[I
 
@@ -138,7 +138,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    const v0, 0x7f080047
+    const v0, 0x7f080048
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getColor(I)I
@@ -150,7 +150,7 @@
     .line 54
     iget-object v1, p0, Lcom/snapchat/android/ui/InAppPromptView;->b:Landroid/widget/ImageView;
 
-    iget-object v0, p1, Lalx$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+    iget-object v0, p1, Lamu$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     sget-object v2, Lcom/snapchat/android/ui/InAppPromptView$2;->a:[I
 
@@ -169,7 +169,7 @@
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 55
-    iget-object v0, p1, Lalx$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+    iget-object v0, p1, Lamu$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     sget-object v1, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->TYPING:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
@@ -195,7 +195,7 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    iget-object v3, p1, Lalx$a;->b:Ljava/lang/String;
+    iget-object v3, p1, Lamu$a;->b:Ljava/lang/String;
 
     aput-object v3, v2, v4
 
@@ -209,7 +209,7 @@
     :goto_2
     new-instance v0, Lcom/snapchat/android/ui/InAppPromptView$1;
 
-    invoke-direct {v0, p0, p1}, Lcom/snapchat/android/ui/InAppPromptView$1;-><init>(Lcom/snapchat/android/ui/InAppPromptView;Lalx$a;)V
+    invoke-direct {v0, p0, p1}, Lcom/snapchat/android/ui/InAppPromptView$1;-><init>(Lcom/snapchat/android/ui/InAppPromptView;Lamu$a;)V
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/InAppPromptView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -218,7 +218,7 @@
 
     .line 53
     :pswitch_1
-    const v0, 0x7f080040
+    const v0, 0x7f080041
 
     goto :goto_0
 
@@ -228,7 +228,7 @@
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f080052
+    const v0, 0x7f080053
 
     goto :goto_0
 
@@ -262,7 +262,7 @@
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/ui/InAppPromptView;->c:Landroid/widget/TextView;
 
-    iget-object v1, p1, Lalx$a;->b:Ljava/lang/String;
+    iget-object v1, p1, Lamu$a;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

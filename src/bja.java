@@ -5,18 +5,30 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bja
 {
-  @SerializedName("id")
-  protected String id;
-  @SerializedName("m")
-  protected Integer m;
-  @SerializedName("st")
-  protected Integer st;
-  @SerializedName("sts")
-  protected Long sts = Long.valueOf(0L);
-  @SerializedName("ts")
-  protected Long ts = Long.valueOf(0L);
-  @SerializedName("zipped")
-  protected Boolean zipped;
+  @SerializedName("mField")
+  protected String mfield;
+  @SerializedName("mKey")
+  protected String mkey;
+  
+  public final String a()
+  {
+    return mkey;
+  }
+  
+  public final void a(String paramString)
+  {
+    mkey = paramString;
+  }
+  
+  public final String b()
+  {
+    return mfield;
+  }
+  
+  public final void b(String paramString)
+  {
+    mfield = paramString;
+  }
   
   public boolean equals(Object paramObject)
   {
@@ -27,47 +39,17 @@ public class bja
       return false;
     }
     paramObject = (bja)paramObject;
-    return new EqualsBuilder().append(id, id).append(st, st).append(m, m).append(ts, ts).append(sts, sts).append(zipped, zipped).isEquals();
+    return new EqualsBuilder().append(mkey, mkey).append(mfield, mfield).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(id).append(st).append(m).append(ts).append(sts).append(zipped).toHashCode();
-  }
-  
-  public final String q()
-  {
-    return id;
-  }
-  
-  public final Integer r()
-  {
-    return st;
-  }
-  
-  public final Integer s()
-  {
-    return m;
-  }
-  
-  public final Long t()
-  {
-    return ts;
+    return new HashCodeBuilder().append(mkey).append(mfield).toHashCode();
   }
   
   public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
-  }
-  
-  public final Long u()
-  {
-    return sts;
-  }
-  
-  public final Boolean v()
-  {
-    return zipped;
   }
 }
 

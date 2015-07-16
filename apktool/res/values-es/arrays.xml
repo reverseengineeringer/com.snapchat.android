@@ -37,9 +37,9 @@
         <item>&lt;g id="username1">%1$s&lt;/g> y otras personas te enviaron dinero en efectivo</item>
     </string-array>
     <string-array name="notification_friend_request">
-        <item>¡&lt;g id="friend1">%1$s&lt;/g> te ha agregado!</item>
-        <item>¡&lt;g id="friend1">%1$s&lt;/g> y &lt;g id="friend2">%2$s&lt;/g> te han agregado!</item>
-        <item>¡&lt;g id="friend1">%1$s&lt;/g> y otros te han agregado!</item>
+        <item>¡&lt;g id="friend1">%1$s&lt;/g> te ha añadido!</item>
+        <item>¡&lt;g id="friend1">%1$s&lt;/g> y &lt;g id="friend2">%2$s&lt;/g> te han añadido!</item>
+        <item>¡&lt;g id="friend1">%1$s&lt;/g> y otros te han añadido!</item>
     </string-array>
     <string-array name="notification_replay">
         <item>¡&lt;g id="username1">%1$s&lt;/g> ha repetido tu Snap!</item>

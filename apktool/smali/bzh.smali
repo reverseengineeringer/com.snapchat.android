@@ -1,68 +1,82 @@
 .class public final Lbzh;
-.super Lbza;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbyh;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 30
-    const-string v0, "=="
-
-    const/4 v1, 0x3
-
-    invoke-direct {p0, v0, v1}, Lbza;-><init>(Ljava/lang/String;I)V
-
     .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(DD)D
-    .locals 3
-
-    .prologue
-    .line 42
-    cmpl-double v0, p1, p3
-
-    if-nez v0, :cond_0
-
-    .line 43
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
-
-    .line 46
-    :goto_0
-    return-wide v0
-
-    :cond_0
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
+.method public final a(Lbya;Ljava/lang/String;)Lbyl;
+    .locals 4
 
     .prologue
     .line 58
-    invoke-virtual {p1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    :try_start_0
+    new-instance v0, Ljava/lang/Double;
 
-    move-result v0
+    invoke-direct {v0, p2}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-nez v0, :cond_0
+    .line 67
+    new-instance v1, Ljava/lang/Double;
 
-    .line 59
-    const-string v0, "1.0"
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
-    .line 62
-    :goto_0
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->toDegrees(D)D
+
+    move-result-wide v2
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Double;-><init>(D)V
+
+    .line 69
+    new-instance v0, Lbyl;
+
+    invoke-virtual {v1}, Ljava/lang/Double;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lbyl;-><init>(Ljava/lang/String;I)V
+
     return-object v0
 
-    :cond_0
-    const-string v0, "0.0"
+    .line 63
+    :catch_0
+    move-exception v0
 
-    goto :goto_0
+    .line 64
+    new-instance v1, Lbyi;
+
+    const-string v2, "Invalid argument."
+
+    invoke-direct {v1, v2, v0}, Lbyi;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
+
+    throw v1
+.end method
+
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 38
+    const-string v0, "toDegrees"
+
+    return-object v0
 .end method

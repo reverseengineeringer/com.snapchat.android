@@ -1,7 +1,7 @@
 package com.snapchat.android.discover.api2;
 
-import bhd;
-import cgc;
+import bid;
+import chd;
 import com.google.gson.annotations.SerializedName;
 import java.util.HashMap;
 import java.util.List;
@@ -9,10 +9,10 @@ import java.util.List;
 public class SendDSnapTask$b
 {
   @SerializedName("conversations")
-  @cgc
-  List<bhd> mConversations;
+  @chd
+  List<bid> mConversations;
   @SerializedName("results")
-  @cgc
+  @chd
   HashMap<String, String> mDSnapPostResult;
 }
 

@@ -1,452 +1,196 @@
-.class public Lbgf;
-.super Landroid/os/AsyncTask;
+.class public final Lbgf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/os/AsyncTask",
-        "<",
-        "Ljava/lang/Void;",
-        "Ljava/lang/Void;",
-        "Ljava/lang/Boolean;",
-        ">;"
-    }
-.end annotation
-
-
 # static fields
-.field private static final TAG:Ljava/lang/String; = "SaveVideoToGalleryTask"
+.field private static final sZero:Lbgf;
 
 
 # instance fields
-.field private final mCameraEventAnalytics:Lcom/snapchat/android/analytics/CameraEventAnalytics;
+.field public final x:D
 
-.field private final mContext:Landroid/content/Context;
-
-.field private mDecryptedSnapVideo:Laip;
-
-.field private final mNotifications:Lbgc;
-
-.field private final mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-
-.field private final mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
-
-.field private final mSnapVideoDecryptor:Lawz;
-
-.field private final mStorySnap:Lajr;
-
-.field private final mUri:Landroid/net/Uri;
+.field public final y:D
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;Lajr;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lawz;Lbgc;)V
-    .locals 2
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lajr;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Landroid/net/Uri;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p4    # Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p5    # Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p6    # Lawz;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p7    # Lbgc;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method static constructor <clinit>()V
+    .locals 4
 
     .prologue
-    .line 73
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    const-wide/16 v2, 0x0
 
-    .line 35
-    const/4 v0, 0x0
+    .line 10
+    new-instance v0, Lbgf;
 
-    iput-object v0, p0, Lbgf;->mDecryptedSnapVideo:Laip;
+    invoke-direct {v0, v2, v3, v2, v3}, Lbgf;-><init>(DD)V
 
-    .line 74
-    if-nez p2, :cond_0
+    sput-object v0, Lbgf;->sZero:Lbgf;
 
-    if-nez p3, :cond_0
-
-    .line 75
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "storySnap and videoUri are both null"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 78
-    :cond_0
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/Context;
-
-    iput-object v0, p0, Lbgf;->mContext:Landroid/content/Context;
-
-    .line 79
-    iput-object p2, p0, Lbgf;->mStorySnap:Lajr;
-
-    .line 80
-    iput-object p3, p0, Lbgf;->mUri:Landroid/net/Uri;
-
-    .line 81
-    iput-object p4, p0, Lbgf;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
-
-    .line 82
-    iput-object p5, p0, Lbgf;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-
-    .line 83
-    iput-object p6, p0, Lbgf;->mSnapVideoDecryptor:Lawz;
-
-    .line 84
-    invoke-static {}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->a()Lcom/snapchat/android/analytics/CameraEventAnalytics;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbgf;->mCameraEventAnalytics:Lcom/snapchat/android/analytics/CameraEventAnalytics;
-
-    .line 85
-    iput-object p7, p0, Lbgf;->mNotifications:Lbgc;
-
-    .line 86
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lajr;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
-    .locals 8
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lajr;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p4    # Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>(DD)V
+    .locals 1
 
     .prologue
-    .line 48
-    const/4 v3, 0x0
+    .line 20
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v6, Lawz;
+    .line 21
+    iput-wide p1, p0, Lbgf;->x:D
 
-    invoke-direct {v6}, Lawz;-><init>()V
+    .line 22
+    iput-wide p3, p0, Lbgf;->y:D
 
-    invoke-static {}, Lbgc;->a()Lbgc;
-
-    move-result-object v7
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v7}, Lbgf;-><init>(Landroid/content/Context;Lajr;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lawz;Lbgc;)V
-
-    .line 50
+    .line 23
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
-    .locals 8
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Landroid/net/Uri;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p4    # Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public static a()Lbgf;
+    .locals 1
 
     .prologue
-    .line 63
-    const/4 v2, 0x0
+    .line 106
+    sget-object v0, Lbgf;->sZero:Lbgf;
 
-    new-instance v6, Lawz;
-
-    invoke-direct {v6}, Lawz;-><init>()V
-
-    invoke-static {}, Lbgc;->a()Lbgc;
-
-    move-result-object v7
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v7}, Lbgf;-><init>(Landroid/content/Context;Lajr;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lawz;Lbgc;)V
-
-    .line 65
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
     .prologue
-    .line 143
-    iget-object v0, p0, Lbgf;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
-
-    if-eqz v0, :cond_0
-
-    .line 144
     const/4 v0, 0x1
 
-    iget-object v1, p0, Lbgf;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->a(ZLcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;)V
+    .line 111
+    if-ne p0, p1, :cond_1
 
-    .line 146
+    .line 120
     :cond_0
-    return-void
-.end method
-
-.method public a(Ljava/lang/Boolean;)V
-    .locals 2
-
-    .prologue
-    .line 125
-    iget-object v0, p0, Lbgf;->mDecryptedSnapVideo:Laip;
-
-    if-eqz v0, :cond_0
-
-    .line 126
-    iget-object v0, p0, Lbgf;->mDecryptedSnapVideo:Laip;
-
-    invoke-virtual {v0}, Laip;->e()V
-
-    .line 129
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 130
-    invoke-virtual {p0}, Lbgf;->a()V
-
-    .line 131
-    iget-object v0, p0, Lbgf;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-
-    sget-object v1, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->ALL:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-
-    if-ne v0, v1, :cond_1
-
-    .line 132
-    iget-object v0, p0, Lbgf;->mNotifications:Lbgc;
-
-    invoke-virtual {v0}, Lbgc;->c()V
-
-    .line 140
-    :cond_1
     :goto_0
-    return-void
+    return v0
 
-    .line 135
+    .line 115
+    :cond_1
+    instance-of v2, p1, Lbgf;
+
+    if-nez v2, :cond_2
+
+    move v0, v1
+
+    .line 116
+    goto :goto_0
+
+    .line 119
     :cond_2
-    invoke-virtual {p0}, Lbgf;->b()V
+    check-cast p1, Lbgf;
 
-    .line 136
-    iget-object v0, p0, Lbgf;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+    .line 120
+    iget-wide v2, p0, Lbgf;->x:D
 
-    sget-object v1, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->NONE:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+    iget-wide v4, p1, Lbgf;->x:D
 
-    if-eq v0, v1, :cond_1
+    cmpl-double v2, v2, v4
 
-    .line 137
-    iget-object v0, p0, Lbgf;->mNotifications:Lbgc;
+    if-nez v2, :cond_3
 
-    invoke-virtual {v0}, Lbgc;->d()V
+    iget-wide v2, p0, Lbgf;->y:D
+
+    iget-wide v4, p1, Lbgf;->y:D
+
+    cmpl-double v2, v2, v4
+
+    if-eqz v2, :cond_0
+
+    :cond_3
+    move v0, v1
 
     goto :goto_0
 .end method
 
-.method public b()V
-    .locals 2
-
-    .prologue
-    .line 149
-    iget-object v0, p0, Lbgf;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
-
-    if-eqz v0, :cond_0
-
-    .line 150
-    const/4 v0, 0x1
-
-    iget-object v1, p0, Lbgf;->mSaveSnapContext:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
-
-    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->b(ZLcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;)V
-
-    .line 152
-    :cond_0
-    return-void
-.end method
-
-.method protected synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+.method public final hashCode()I
     .locals 4
 
     .prologue
-    const/4 v0, 0x0
+    .line 125
+    iget-wide v0, p0, Lbgf;->x:D
 
-    .line 23
-    iget-object v1, p0, Lbgf;->mStorySnap:Lajr;
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    if-eqz v1, :cond_2
+    move-result-object v0
 
-    iget-object v1, p0, Lbgf;->mStorySnap:Lajr;
+    invoke-virtual {v0}, Ljava/lang/Double;->hashCode()I
 
-    invoke-virtual {v1}, Lajr;->J()Lawy;
+    move-result v0
 
-    move-result-object v1
+    add-int/lit16 v0, v0, 0x187
 
-    if-eqz v1, :cond_0
+    .line 127
+    mul-int/lit8 v0, v0, 0x17
 
-    iget-object v2, p0, Lbgf;->mSnapVideoDecryptor:Lawz;
+    iget-wide v2, p0, Lbgf;->y:D
 
-    iget-object v3, p0, Lbgf;->mStorySnap:Lajr;
-
-    invoke-virtual {v3}, Lajr;->h()Z
-
-    move-result v3
-
-    invoke-virtual {v2, v1, v3, v0}, Lawz;->a(Lawy;ZZ)Laip;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v1
 
-    iput-object v1, p0, Lbgf;->mDecryptedSnapVideo:Laip;
-
-    iget-object v1, p0, Lbgf;->mDecryptedSnapVideo:Laip;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lbgf;->mDecryptedSnapVideo:Laip;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lbgf;->mDecryptedSnapVideo:Laip;
-
-    invoke-virtual {v1}, Laip;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    :goto_0
-    if-eqz v1, :cond_0
-
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    :goto_1
-    if-eqz v1, :cond_0
-
-    iget-object v2, p0, Lbgf;->mContext:Landroid/content/Context;
-
-    invoke-static {v2, v1}, Lawt;->a(Landroid/content/Context;Landroid/net/Uri;)Z
+    invoke-virtual {v1}, Ljava/lang/Double;->hashCode()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    add-int/2addr v0, v1
 
-    const/4 v0, 0x1
+    .line 128
+    return v0
+.end method
 
-    :cond_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    .prologue
+    .line 98
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "("
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v2, p0, Lbgf;->x:D
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-wide v2, p0, Lbgf;->y:D
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, p0, Lbgf;->mUri:Landroid/net/Uri;
-
-    goto :goto_1
-.end method
-
-.method public synthetic onPostExecute(Ljava/lang/Object;)V
-    .locals 0
-
-    .prologue
-    .line 23
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p0, p1}, Lbgf;->a(Ljava/lang/Boolean;)V
-
-    return-void
-.end method
-
-.method public onPreExecute()V
-    .locals 2
-
-    .prologue
-    .line 118
-    iget-object v0, p0, Lbgf;->mNotificationsToShow:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-
-    sget-object v1, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->ALL:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
-
-    if-ne v0, v1, :cond_0
-
-    .line 119
-    iget-object v0, p0, Lbgf;->mNotifications:Lbgc;
-
-    invoke-virtual {v0}, Lbgc;->b()V
-
-    .line 121
-    :cond_0
-    return-void
 .end method

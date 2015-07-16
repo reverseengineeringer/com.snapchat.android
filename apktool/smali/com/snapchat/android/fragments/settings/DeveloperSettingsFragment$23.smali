@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 140
+    .line 138
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$23;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,27 +42,27 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 141
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$23;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
+
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lakr;
+
+    invoke-static {v1}, Lakr;->y(Z)V
+
+    .line 142
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$23;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
+
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lakr;
+
+    invoke-static {v1}, Lakr;->x(Z)V
+
     .line 143
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$23;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lajx;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lakr;
 
-    invoke-static {v1}, Lajx;->z(Z)V
+    invoke-static {}, Lakr;->by()V
 
     .line 144
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$23;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lajx;
-
-    invoke-static {v1}, Lajx;->y(Z)V
-
-    .line 145
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$23;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lajx;
-
-    invoke-static {}, Lajx;->bD()V
-
-    .line 146
     return-void
 .end method

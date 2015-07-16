@@ -1,16 +1,8 @@
-import com.google.gson.annotations.SerializedName;
-
-@tn
+@ud
 public final class amz$a
-  extends pl
+  extends bhw
 {
-  @SerializedName("new_password")
-  String a;
-  
-  public amz$a(amz paramamz, @cgb String paramString)
-  {
-    a = paramString;
-  }
+  public amz$a(amz paramamz) {}
 }
 
 /* Location:

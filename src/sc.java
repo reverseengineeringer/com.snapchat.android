@@ -1,54 +1,32 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.api2.cash.square.data.CashCustomer;
-import com.snapchat.android.api2.cash.square.data.CashPayment.Action;
-import com.snapchat.android.model.CashTransaction;
+import javax.inject.Provider;
 
 public final class sc
-  extends sl
+  implements bvk<sb>
 {
-  final String mCardToken;
-  final CashTransaction mCashTransaction;
+  private final Provider<yn> mCashCardManagerProvider;
+  private final bvk<rl> supertypeInjector;
   
-  public sc(@cgb CashTransaction paramCashTransaction, @cgb String paramString, @cgb sk paramsk)
+  static
   {
-    super(paramsk);
-    mCashTransaction = paramCashTransaction;
-    mCardToken = paramString;
+    if (!sc.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  public final Object b()
+  private sc(bvk<rl> parambvk, Provider<yn> paramProvider)
   {
-    return new sc.a();
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mCashCardManagerProvider = paramProvider;
   }
   
-  public final String e()
+  public static bvk<sb> a(bvk<rl> parambvk, Provider<yn> paramProvider)
   {
-    return "cash/payments";
-  }
-  
-  @tx
-  final class a
-  {
-    @SerializedName("action")
-    private String action = CashPayment.Action.SEND.name();
-    @SerializedName("card_token")
-    private String cardToken = mCardToken;
-    @SerializedName("extras")
-    private sy extras = new sy(mCashTransaction.mFromRain);
-    @SerializedName("id")
-    private String id = mCashTransaction.mTransactionId;
-    @SerializedName("amount_money")
-    private sz money = new sz(mCashTransaction.mAmount);
-    @SerializedName("recipient")
-    private CashCustomer recipient = new CashCustomer(mCashTransaction.mRecipientUsername);
-    @SerializedName("recipient_customization")
-    private sx recipientCustomization = new sx(mCashTransaction.mRecipientBankStatementMessage);
-    @SerializedName("sender_customization")
-    private sx senderCustomization = new sx(mCashTransaction.mSenderBankStatementMessage);
-    @SerializedName("signature")
-    private String signature = mCashTransaction.mSignature;
-    
-    a() {}
+    return new sc(parambvk, paramProvider);
   }
 }
 

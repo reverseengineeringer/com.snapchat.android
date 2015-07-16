@@ -27,7 +27,7 @@
 .end field
 
 .field public mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
@@ -69,7 +69,20 @@
 
 
 # virtual methods
-.method public final N()Z
+.method public C_()V
+    .locals 1
+
+    .prologue
+    .line 89
+    sget-object v0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->FAILED_AND_NON_RECOVERABLE:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+
+    iput-object v0, p0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+
+    .line 90
+    return-void
+.end method
+
+.method public final O()Z
     .locals 2
 
     .prologue
@@ -91,7 +104,7 @@
     goto :goto_0
 .end method
 
-.method public final O()Z
+.method public final P()Z
     .locals 2
 
     .prologue
@@ -126,7 +139,7 @@
     goto :goto_0
 .end method
 
-.method public P()Z
+.method public Q()Z
     .locals 2
 
     .prologue
@@ -148,7 +161,7 @@
     goto :goto_0
 .end method
 
-.method public final Q()Z
+.method public final R()Z
     .locals 2
 
     .prologue
@@ -177,7 +190,7 @@
     goto :goto_0
 .end method
 
-.method public V()Z
+.method public X()Z
     .locals 1
 
     .prologue
@@ -187,7 +200,7 @@
     return v0
 .end method
 
-.method public final X()Ljava/lang/String;
+.method public final Y()Ljava/lang/String;
     .locals 2
 
     .prologue
@@ -196,14 +209,14 @@
 
     iget-object v1, p0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mRecipients:Ljava/util/List;
 
-    invoke-static {v0, v1}, Laxi;->a(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;
+    invoke-static {v0, v1}, Layg;->a(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final Y()Ljava/lang/String;
+.method public final Z()Ljava/lang/String;
     .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -223,146 +236,25 @@
     return-object v0
 .end method
 
-.method public final Z()Z
-    .locals 2
-
-    .prologue
-    .line 99
-    iget-object v0, p0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-
-    sget-object v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->SENT:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public a(Lcom/snapchat/android/model/chat/ChatConversation;)I
-    .locals 6
-    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 139
-    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->MOST_RECENT:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
-
-    .line 140
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->O()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->Q()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 141
-    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->FAILED:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
-
-    .line 150
-    :cond_0
-    :goto_0
-    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->ordinal()I
-
-    move-result v0
-
-    return v0
-
-    .line 142
-    :cond_1
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->N()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 143
-    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->SENDING:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
-
-    goto :goto_0
-
-    .line 144
-    :cond_2
-    invoke-static {p0}, Laxi;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    .line 145
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 146
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->ao()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->NEW:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
-
-    goto :goto_0
-
-    .line 147
-    :cond_3
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->W()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    const-wide/16 v4, 0x3e8
-
-    cmp-long v1, v2, v4
-
-    if-gez v1, :cond_0
-
-    .line 148
-    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->RECENTLY_SENT:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
-
-    goto :goto_0
-.end method
-
 .method public a()Ljava/lang/String;
     .locals 2
 
     .prologue
     .line 125
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->O()Z
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->P()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->Q()Z
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->R()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 126
-    const v0, 0x7f0c012b
+    const v0, 0x7f0c012a
 
     .line 134
     :goto_0
@@ -382,20 +274,20 @@
 
     .line 127
     :cond_0
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->q()Z
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->p()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
     .line 128
-    const v0, 0x7f0c0129
+    const v0, 0x7f0c0128
 
     goto :goto_0
 
     .line 129
     :cond_1
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->N()Z
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->O()Z
 
     move-result v0
 
@@ -413,49 +305,101 @@
     goto :goto_0
 .end method
 
-.method public final aa()Z
-    .locals 2
+.method public b(Lcom/snapchat/android/model/chat/ChatConversation;)I
+    .locals 6
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 104
-    iget-object v0, p0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+    .line 139
+    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->MOST_RECENT:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
 
-    sget-object v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->RECEIVED:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+    .line 140
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->P()Z
 
-    if-ne v0, v1, :cond_0
+    move-result v1
 
-    const/4 v0, 0x1
+    if-eqz v1, :cond_1
 
-    :goto_0
-    return v0
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->R()Z
 
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 141
+    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->FAILED:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
+
+    .line 150
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public b(Lcom/snapchat/android/model/chat/ChatConversation;)J
-    .locals 2
-
-    .prologue
-    .line 155
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->q()Z
+    :goto_0
+    invoke-virtual {v0}, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->ordinal()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    return v0
 
-    const-wide/16 v0, 0x0
+    .line 142
+    :cond_1
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->O()Z
 
-    .line 156
-    :goto_0
-    return-wide v0
+    move-result v1
 
-    :cond_0
-    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->W()J
+    if-eqz v1, :cond_2
 
-    move-result-wide v0
+    .line 143
+    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->SENDING:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
+
+    goto :goto_0
+
+    .line 144
+    :cond_2
+    invoke-static {p0}, Layg;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    .line 145
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 146
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->am()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->NEW:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
+
+    goto :goto_0
+
+    .line 147
+    :cond_3
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {p0}, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->U()J
+
+    move-result-wide v4
+
+    sub-long/2addr v2, v4
+
+    const-wide/16 v4, 0x3e8
+
+    cmp-long v1, v2, v4
+
+    if-gez v1, :cond_0
+
+    .line 148
+    sget-object v0, Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;->RECENTLY_SENT:Lcom/snapchat/android/model/chat/ChatFeedItem$FeedIconPriority;
 
     goto :goto_0
 .end method
@@ -489,20 +433,7 @@
     return-object v0
 .end method
 
-.method public p()V
-    .locals 1
-
-    .prologue
-    .line 89
-    sget-object v0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->FAILED_AND_NON_RECOVERABLE:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-
-    iput-object v0, p0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-
-    .line 90
-    return-void
-.end method
-
-.method public final q()Z
+.method public final p()Z
     .locals 2
 
     .prologue
@@ -510,6 +441,50 @@
     iget-object v0, p0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
 
     sget-object v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->FAILED_AND_NON_RECOVERABLE:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final q()Z
+    .locals 2
+
+    .prologue
+    .line 99
+    iget-object v0, p0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+
+    sget-object v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->SENT:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final r()Z
+    .locals 2
+
+    .prologue
+    .line 104
+    iget-object v0, p0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
+
+    sget-object v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->RECEIVED:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
 
     if-ne v0, v1, :cond_0
 

@@ -1,62 +1,68 @@
-public enum bni
+import java.io.IOException;
+
+class bni
+  extends cba
 {
-  public final int s;
-  public final int t;
-  public final int u;
+  private boolean a;
   
-  private bni(int paramInt1, int paramInt2, int paramInt3)
+  public bni(cbj paramcbj)
   {
-    s = paramInt1;
-    t = paramInt2;
-    u = paramInt3;
+    super(paramcbj);
   }
   
-  public static bni a(int paramInt)
+  protected void a() {}
+  
+  public final void a_(cav paramcav, long paramLong)
   {
-    bni[] arrayOfbni = values();
-    int i2 = arrayOfbni.length;
-    int i1 = 0;
-    while (i1 < i2)
+    if (a)
     {
-      bni localbni = arrayOfbni[i1];
-      if (t == paramInt) {
-        return localbni;
-      }
-      i1 += 1;
+      paramcav.f(paramLong);
+      return;
     }
-    return null;
+    try
+    {
+      super.a_(paramcav, paramLong);
+      return;
+    }
+    catch (IOException paramcav)
+    {
+      a = true;
+      a();
+    }
   }
   
-  public static bni b(int paramInt)
+  public void close()
   {
-    bni[] arrayOfbni = values();
-    int i2 = arrayOfbni.length;
-    int i1 = 0;
-    while (i1 < i2)
-    {
-      bni localbni = arrayOfbni[i1];
-      if (s == paramInt) {
-        return localbni;
-      }
-      i1 += 1;
+    if (a) {
+      return;
     }
-    return null;
+    try
+    {
+      super.close();
+      return;
+    }
+    catch (IOException localIOException)
+    {
+      a = true;
+      a();
+    }
   }
   
-  public static bni c(int paramInt)
+  public void flush()
   {
-    bni[] arrayOfbni = values();
-    int i2 = arrayOfbni.length;
-    int i1 = 0;
-    while (i1 < i2)
-    {
-      bni localbni = arrayOfbni[i1];
-      if (u == paramInt) {
-        return localbni;
-      }
-      i1 += 1;
+    if (a) {
+      return;
     }
-    return null;
+    try
+    {
+      super.flush();
+      return;
+    }
+    catch (IOException localIOException)
+    {
+      a = true;
+      a();
+    }
   }
 }
 

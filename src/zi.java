@@ -1,85 +1,118 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.Timber;
-import com.snapchat.android.database.table.DbTable.DatabaseTable;
+import android.text.TextUtils;
+import android.util.Pair;
+import com.snapchat.android.model.Snap;
+import com.snapchat.android.model.chat.CashFeedItem;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.model.chat.ChatFeedItem;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public abstract class zi
+public final class zi
 {
-  private final ajv a;
-  final ajr b;
-  final als c;
-  final als.a d = new als.a()
+  @chd
+  public static Snap a(@chc String arg0, String paramString2)
   {
-    public final void a(als.b paramAnonymousb)
-    {
-      zi.this.a(paramAnonymousb);
+    ??? = b(???);
+    if (??? == null) {
+      return null;
     }
-  };
-  
-  public zi(ajr paramajr)
-  {
-    this(paramajr, ajv.g(), new als());
-  }
-  
-  private zi(ajr paramajr, ajv paramajv, als paramals)
-  {
-    b = paramajr;
-    a = paramajv;
-    c = paramals;
-  }
-  
-  final zi.a a()
-  {
-    if (b.mNeedsAuth) {
-      return new zi.a(b.mMediaId);
+    synchronized (???.o())
+    {
+      Iterator localIterator = ???.iterator();
+      while (localIterator.hasNext())
+      {
+        ChatFeedItem localChatFeedItem = (ChatFeedItem)localIterator.next();
+        if (((localChatFeedItem instanceof Snap)) && (localChatFeedItem.d().equals(paramString2)))
+        {
+          paramString2 = (Snap)localChatFeedItem;
+          return paramString2;
+        }
+      }
     }
     return null;
   }
   
-  protected abstract void a(ajr paramajr);
-  
-  protected final void a(als.b paramb)
+  @chd
+  public static ChatConversation a(String paramString)
   {
-    Timber.c("StorySnapLoadTask", "Download for %s complete. Result:%s cachingException:%s", new Object[] { b, a, b });
-    uc localuc = a;
-    if ((localuc != null) && (mResponseCode == 404))
+    Iterator localIterator = akx.c().f().iterator();
+    while (localIterator.hasNext())
     {
-      b.aG();
-      b.l();
-    }
-    for (;;)
-    {
-      a(b);
-      return;
-      if (paramb.a())
-      {
-        b.n();
-        if (b.ak() == 0) {
-          a.a(new DbTable.DatabaseTable[] { DbTable.DatabaseTable.STORY_SNAP_IMAGE_FILES, DbTable.DatabaseTable.MY_SNAP_IMAGE_FILES });
-        } else {
-          a.a(new DbTable.DatabaseTable[] { DbTable.DatabaseTable.STORY_SNAP_VIDEO_FILES, DbTable.DatabaseTable.MY_SNAP_VIDEO_FILES });
-        }
-      }
-      else
-      {
-        b.l();
-        if (b.Y()) {
-          b.aG();
-        }
+      ChatConversation localChatConversation = (ChatConversation)localIterator.next();
+      if (TextUtils.equals(paramString, mId)) {
+        return localChatConversation;
       }
     }
+    return null;
   }
   
-  @tn
-  final class a
-    extends pl
+  public static String a(@chc ChatConversation paramChatConversation)
   {
-    @SerializedName("story_id")
-    final String a;
-    
-    a(String paramString)
+    int i = 0;
+    StringBuilder localStringBuilder = new StringBuilder();
+    paramChatConversation = mTheirUsername.split(",");
+    int k = paramChatConversation.length;
+    int j = 0;
+    while (i < k)
     {
-      a = paramString;
+      localStringBuilder.append(auk.e(paramChatConversation[i].trim(), akp.g()));
+      j += 1;
+      if (j != paramChatConversation.length) {
+        localStringBuilder.append(", ");
+      }
+      i += 1;
     }
+    return localStringBuilder.toString();
+  }
+  
+  @chc
+  public static List<CashFeedItem> a()
+  {
+    ArrayList localArrayList = new ArrayList();
+    Iterator localIterator = akx.c().f().iterator();
+    while (localIterator.hasNext()) {
+      localArrayList.addAll(((ChatConversation)localIterator.next()).D());
+    }
+    return localArrayList;
+  }
+  
+  @chd
+  public static ChatConversation b(@chd String paramString)
+  {
+    if ((akp.g() == null) || (paramString == null)) {
+      return null;
+    }
+    return a(ayg.a(paramString));
+  }
+  
+  public static Pair<Integer, Integer> c(String paramString)
+  {
+    Iterator localIterator1 = akx.c().f().iterator();
+    int j = 0;
+    int i = 0;
+    while (localIterator1.hasNext()) {
+      synchronized (((ChatConversation)localIterator1.next()).o())
+      {
+        Iterator localIterator2 = ???.iterator();
+        while (localIterator2.hasNext())
+        {
+          Object localObject = (ChatFeedItem)localIterator2.next();
+          if ((localObject instanceof akw))
+          {
+            localObject = (akw)localObject;
+            if ((TextUtils.equals(paramString, ((akw)localObject).Z())) && (!((akw)localObject).am())) {
+              i += 1;
+            }
+          }
+          else if (((localObject instanceof aka)) && (!((aka)localObject).A()))
+          {
+            j += 1;
+          }
+        }
+      }
+    }
+    return Pair.create(Integer.valueOf(i), Integer.valueOf(j));
   }
 }
 

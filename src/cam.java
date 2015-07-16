@@ -1,11 +1,27 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.METHOD})
-public @interface cam {}
+public final class cam
+  extends cab
+{
+  public cam()
+  {
+    super("<=", 4);
+  }
+  
+  public final double a(double paramDouble1, double paramDouble2)
+  {
+    if (paramDouble1 <= paramDouble2) {
+      return 1.0D;
+    }
+    return 0.0D;
+  }
+  
+  public final String a(String paramString1, String paramString2)
+  {
+    if (paramString1.compareTo(paramString2) <= 0) {
+      return "1.0";
+    }
+    return "0.0";
+  }
+}
 
 /* Location:
  * Qualified Name:     cam

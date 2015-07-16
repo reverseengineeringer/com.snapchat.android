@@ -101,15 +101,15 @@
     invoke-static {v0}, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->c(Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;)V
 
     .line 79
-    new-instance v0, Ltc;
+    new-instance v0, Lts;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment$2$1;->a:Lcom/snapchat/android/fragments/settings/ClearConversationsFragment$2;
 
     iget-object v1, v1, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment$2;->a:Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;
 
-    invoke-direct {v0, v1}, Ltc;-><init>(Ltc$a;)V
+    invoke-direct {v0, v1}, Lts;-><init>(Lts$a;)V
 
-    invoke-virtual {v0}, Ltc;->f()V
+    invoke-virtual {v0}, Lts;->execute()V
 
     .line 80
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/ClearConversationsFragment$2$1;->a:Lcom/snapchat/android/fragments/settings/ClearConversationsFragment$2;

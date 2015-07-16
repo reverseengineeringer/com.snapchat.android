@@ -63,11 +63,11 @@
     .line 160
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment$5;->a:Lcom/snapchat/android/fragments/chat/ChatWithFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->c(Lcom/snapchat/android/fragments/chat/ChatWithFragment;)Lafy;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->c(Lcom/snapchat/android/fragments/chat/ChatWithFragment;)Lagy;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lafy;->getFilter()Landroid/widget/Filter;
+    invoke-virtual {v0}, Lagy;->getFilter()Landroid/widget/Filter;
 
     move-result-object v0
 

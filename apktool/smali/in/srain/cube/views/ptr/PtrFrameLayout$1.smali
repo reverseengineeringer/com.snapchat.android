@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lin/srain/cube/views/ptr/PtrFrameLayout;->setRefreshCompleteHook(Lbuu;)V
+    value = Lin/srain/cube/views/ptr/PtrFrameLayout;->setRefreshCompleteHook(Lbvv;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -41,14 +41,14 @@
 
     .prologue
     .line 464
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_0
 
     .line 465
     iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout$1;->a:Lin/srain/cube/views/ptr/PtrFrameLayout;
 
-    iget-object v0, v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v1, "mRefreshCompleteHook resume."
 

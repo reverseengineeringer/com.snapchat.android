@@ -2,12 +2,12 @@ package com.snapchat.android.preview;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import bgb;
+import bhb;
 import com.snapchat.android.analytics.CameraEventAnalytics.SaveSnapContext;
 import com.snapchat.android.util.save.SaveMediaNotificationsToShow;
 
 final class SnapPreviewFragment$10
-  extends bgb
+  extends bhb
 {
   SnapPreviewFragment$10(SnapPreviewFragment paramSnapPreviewFragment, Context paramContext, Bitmap paramBitmap, CameraEventAnalytics.SaveSnapContext paramSaveSnapContext, SaveMediaNotificationsToShow paramSaveMediaNotificationsToShow)
   {
@@ -17,7 +17,7 @@ final class SnapPreviewFragment$10
   public final void b(String paramString)
   {
     super.b(paramString);
-    SnapPreviewFragment.z(a);
+    SnapPreviewFragment.A(a);
   }
 }
 

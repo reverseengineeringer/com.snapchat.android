@@ -1,254 +1,162 @@
-.class public final Lckj;
-.super Ljava/lang/Object;
+.class public abstract Lckj;
+.super Lckc;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lckj$c;,
-        Lckj$a;,
-        Lckj$d;,
-        Lckj$b;
+        Lckj$a;
     }
 .end annotation
 
 
+# instance fields
+.field private final a:Lchn;
+
+.field final b:J
+
+
 # direct methods
-.method static a(Ljava/io/DataInput;)J
-    .locals 4
+.method public constructor <init>(Lchj;J)V
+    .locals 2
 
     .prologue
-    .line 183
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
+    .line 56
+    invoke-direct {p0, p1}, Lckc;-><init>(Lchj;)V
 
-    move-result v0
+    .line 57
+    iput-wide p2, p0, Lckj;->b:J
 
-    .line 184
-    shr-int/lit8 v1, v0, 0x6
+    .line 58
+    new-instance v0, Lckj$a;
 
-    packed-switch v1, :pswitch_data_0
-
-    .line 187
-    shl-int/lit8 v0, v0, 0x1a
-
-    shr-int/lit8 v0, v0, 0x1a
-
-    .line 188
-    int-to-long v0, v0
-
-    const-wide/32 v2, 0x1b7740
-
-    mul-long/2addr v0, v2
-
-    .line 209
-    :goto_0
-    return-wide v0
-
-    .line 192
-    :pswitch_0
-    shl-int/lit8 v0, v0, 0x1a
-
-    shr-int/lit8 v0, v0, 0x2
-
-    .line 193
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
-
-    move-result v1
-
-    shl-int/lit8 v1, v1, 0x10
-
-    or-int/2addr v0, v1
-
-    .line 194
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
-
-    move-result v1
-
-    shl-int/lit8 v1, v1, 0x8
-
-    or-int/2addr v0, v1
-
-    .line 195
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
-
-    move-result v1
-
-    or-int/2addr v0, v1
-
-    .line 196
-    int-to-long v0, v0
-
-    const-wide/32 v2, 0xea60
-
-    mul-long/2addr v0, v2
-
-    goto :goto_0
-
-    .line 200
-    :pswitch_1
-    int-to-long v0, v0
-
-    const/16 v2, 0x3a
-
-    shl-long/2addr v0, v2
-
-    const/16 v2, 0x1a
-
-    shr-long/2addr v0, v2
-
-    .line 201
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
-
-    move-result v2
-
-    shl-int/lit8 v2, v2, 0x18
-
-    int-to-long v2, v2
-
-    or-long/2addr v0, v2
-
-    .line 202
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
-
-    move-result v2
-
-    shl-int/lit8 v2, v2, 0x10
-
-    int-to-long v2, v2
-
-    or-long/2addr v0, v2
-
-    .line 203
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
-
-    move-result v2
-
-    shl-int/lit8 v2, v2, 0x8
-
-    int-to-long v2, v2
-
-    or-long/2addr v0, v2
-
-    .line 204
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
-
-    move-result v2
-
-    int-to-long v2, v2
-
-    or-long/2addr v0, v2
-
-    .line 205
-    const-wide/16 v2, 0x3e8
-
-    mul-long/2addr v0, v2
-
-    goto :goto_0
-
-    .line 209
-    :pswitch_2
-    invoke-interface {p0}, Ljava/io/DataInput;->readLong()J
-
-    move-result-wide v0
-
-    goto :goto_0
-
-    .line 184
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
-.end method
-
-.method public static a(Ljava/io/DataInput;Ljava/lang/String;)Lcgk;
-    .locals 6
-
-    .prologue
-    .line 110
-    invoke-interface {p0}, Ljava/io/DataInput;->readUnsignedByte()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    .line 123
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "Invalid encoding"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 112
-    :sswitch_0
-    new-instance v0, Lckl;
-
-    invoke-interface {p0}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
+    invoke-virtual {p1}, Lchj;->x()Lcho;
 
     move-result-object v1
 
-    invoke-static {p0}, Lckj;->a(Ljava/io/DataInput;)J
+    invoke-direct {v0, p0, v1}, Lckj$a;-><init>(Lckj;Lcho;)V
+
+    iput-object v0, p0, Lckj;->a:Lchn;
+
+    .line 59
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract a(JI)J
+.end method
+
+.method public abstract a(JJ)J
+.end method
+
+.method public final b(JJ)I
+    .locals 3
+
+    .prologue
+    .line 92
+    invoke-virtual {p0, p1, p2, p3, p4}, Lckj;->c(JJ)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Lcki;->a(J)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public c(JJ)J
+    .locals 7
+
+    .prologue
+    const-wide/16 v4, 0x1
+
+    .line 119
+    cmp-long v0, p1, p3
+
+    if-gez v0, :cond_1
+
+    .line 120
+    invoke-virtual {p0, p3, p4, p1, p2}, Lckj;->c(JJ)J
+
+    move-result-wide v0
+
+    neg-long v0, v0
+
+    .line 134
+    :cond_0
+    :goto_0
+    return-wide v0
+
+    .line 123
+    :cond_1
+    sub-long v0, p1, p3
+
+    iget-wide v2, p0, Lckj;->b:J
+
+    div-long/2addr v0, v2
+
+    .line 124
+    invoke-virtual {p0, p3, p4, v0, v1}, Lckj;->a(JJ)J
 
     move-result-wide v2
 
-    long-to-int v2, v2
+    cmp-long v2, v2, p1
 
-    invoke-static {p0}, Lckj;->a(Ljava/io/DataInput;)J
+    if-gez v2, :cond_3
 
-    move-result-wide v4
+    .line 126
+    :cond_2
+    add-long/2addr v0, v4
 
-    long-to-int v3, v4
+    .line 127
+    invoke-virtual {p0, p3, p4, v0, v1}, Lckj;->a(JJ)J
 
-    invoke-direct {v0, p1, v1, v2, v3}, Lckl;-><init>(Ljava/lang/String;Ljava/lang/String;II)V
+    move-result-wide v2
 
-    .line 114
-    sget-object v1, Lcgk;->a:Lcgk;
+    cmp-long v2, v2, p1
 
-    invoke-virtual {v0, v1}, Lcgk;->equals(Ljava/lang/Object;)Z
+    if-lez v2, :cond_2
 
-    move-result v1
+    .line 128
+    sub-long/2addr v0, v4
 
-    if-eqz v1, :cond_0
+    goto :goto_0
 
-    .line 115
-    sget-object v0, Lcgk;->a:Lcgk;
+    .line 129
+    :cond_3
+    invoke-virtual {p0, p3, p4, v0, v1}, Lckj;->a(JJ)J
 
-    .line 121
-    :cond_0
-    :goto_0
+    move-result-wide v2
+
+    cmp-long v2, v2, p1
+
+    if-lez v2, :cond_0
+
+    .line 131
+    :cond_4
+    sub-long/2addr v0, v4
+
+    .line 132
+    invoke-virtual {p0, p3, p4, v0, v1}, Lckj;->a(JJ)J
+
+    move-result-wide v2
+
+    cmp-long v2, v2, p1
+
+    if-gtz v2, :cond_4
+
+    goto :goto_0
+.end method
+
+.method public final d()Lchn;
+    .locals 1
+
+    .prologue
+    .line 138
+    iget-object v0, p0, Lckj;->a:Lchn;
+
     return-object v0
-
-    .line 119
-    :sswitch_1
-    invoke-static {p0, p1}, Lckj$c;->a(Ljava/io/DataInput;Ljava/lang/String;)Lckj$c;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcki;->a(Lcgk;)Lcki;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 121
-    :sswitch_2
-    invoke-static {p0, p1}, Lckj$c;->a(Ljava/io/DataInput;Ljava/lang/String;)Lckj$c;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 110
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x43 -> :sswitch_1
-        0x46 -> :sswitch_0
-        0x50 -> :sswitch_2
-    .end sparse-switch
 .end method

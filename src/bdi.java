@@ -1,16 +1,4 @@
-import com.snapchat.android.model.Friend;
-
-public final class bdi
-{
-  public final Friend friend;
-  public final boolean isInRecentUpdates;
-  
-  public bdi(Friend paramFriend, boolean paramBoolean)
-  {
-    friend = paramFriend;
-    isInRecentUpdates = paramBoolean;
-  }
-}
+public final class bdi {}
 
 /* Location:
  * Qualified Name:     bdi

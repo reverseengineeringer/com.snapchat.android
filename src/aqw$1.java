@@ -1,40 +1,28 @@
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnTouchListener;
-import com.snapchat.android.Timber;
-import com.snapchat.android.database.SharedPreferenceKey;
+import com.snapchat.android.model.StoryGroup;
+import com.snapchat.android.model.StoryGroup.ActionState;
+import com.snapchat.android.util.AlertDialogUtils.YesNoOption;
+import com.snapchat.android.util.AlertDialogUtils.a;
 
-final class aqw$1
-  implements View.OnTouchListener
+public final class aqw$1
+  implements AlertDialogUtils.a
 {
-  aqw$1(aqw paramaqw) {}
+  public aqw$1(aqw paramaqw) {}
   
-  public final boolean onTouch(View paramView, MotionEvent paramMotionEvent)
+  public final void a(AlertDialogUtils.YesNoOption paramYesNoOption)
   {
-    paramView = a;
-    boolean bool;
-    if (!aqw.a(a))
+    switch (aqw.4.a[paramYesNoOption.ordinal()])
     {
-      bool = true;
-      aqw.a(paramView, bool);
-      paramView = aqw.b(a).edit();
-      paramView.putBoolean(SharedPreferenceKey.SPEED_USE_MPH.getKey(), aqw.a(a));
-      paramView.apply();
-      aqw.a(a, aqw.c(a));
-      if (!aqw.a(a)) {
-        break label121;
-      }
+    default: 
+      throw new IllegalStateException("Illegal dialog option");
+    case 1: 
+      akr.aH();
+      a.a();
+      return;
+    case 2: 
+      a.a();
+      return;
     }
-    label121:
-    for (paramView = "MPH";; paramView = "KPH")
-    {
-      Timber.c("SpeedometerView", "User switched unit preference to " + paramView, new Object[0]);
-      return true;
-      bool = false;
-      break;
-    }
+    a.b.a(StoryGroup.ActionState.READY);
   }
 }
 

@@ -1,4 +1,7 @@
-public abstract interface bon {}
+public enum bon
+{
+  private bon() {}
+}
 
 /* Location:
  * Qualified Name:     bon

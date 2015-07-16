@@ -1,5 +1,5 @@
 .class public Lcom/snapchat/android/model/chat/ChatMedia$a;
-.super Lakb$a;
+.super Lakw$a;
 .source "SourceFile"
 
 
@@ -34,7 +34,7 @@
 
     .prologue
     .line 227
-    invoke-direct {p0, p1, p2}, Lakb$a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Lakw$a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 228
     return-void

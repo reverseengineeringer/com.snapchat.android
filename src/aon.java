@@ -1,58 +1,67 @@
-import android.view.View;
-import android.view.View.OnClickListener;
-import com.snapchat.android.analytics.SnapViewEventAnalytics;
-import com.snapchat.android.analytics.SnapViewEventAnalytics.SnapViewEventSourceType;
-import com.snapchat.android.controller.stories.StoryLoadingContext;
-import com.snapchat.android.model.StoryCollection;
-import com.snapchat.android.model.StorySnapLogbook;
-import java.util.List;
-import javax.validation.constraints.NotNull;
+import android.graphics.Bitmap;
 
-public final class aon
-  implements View.OnClickListener
+final class aon
+  extends bgm
 {
-  private final zd a;
-  private final ng b;
-  private final SnapViewEventAnalytics c;
-  private final aup d;
-  private final StoryCollection e;
-  private final List<StorySnapLogbook> f;
+  private final aka a;
+  @chd
+  private final ajl b;
   
-  public aon(@NotNull StoryCollection paramStoryCollection)
+  private aon(aka paramaka, ajl paramajl)
   {
-    this(paramStoryCollection, null);
+    a = paramaka;
+    b = paramajl;
   }
   
-  public aon(@NotNull StoryCollection paramStoryCollection, @r List<StorySnapLogbook> paramList)
+  @chc
+  public final aka a()
   {
-    this(zd.a(), ng.a(), SnapViewEventAnalytics.a(), aup.d(), paramStoryCollection, paramList);
+    f();
+    return a;
   }
   
-  private aon(zd paramzd, ng paramng, SnapViewEventAnalytics paramSnapViewEventAnalytics, aup paramaup, StoryCollection paramStoryCollection, @r List<StorySnapLogbook> paramList)
+  @chd
+  public final String b()
   {
-    a = paramzd;
-    b = paramng;
-    c = paramSnapViewEventAnalytics;
-    d = paramaup;
-    e = paramStoryCollection;
-    f = paramList;
-  }
-  
-  public final void onClick(View paramView)
-  {
-    if (a.a(e, 3, null, true, StoryLoadingContext.TAP_TO_LOAD) == 0)
-    {
-      c.a(SnapViewEventAnalytics.SnapViewEventSourceType.STORY);
-      aup localaup = d;
-      StoryCollection localStoryCollection = e;
-      List localList = f;
-      paramView = paramView.getContext();
-      if (mSnapView != null) {
-        new aup.c(localaup, localStoryCollection, localList, paramView).run();
-      }
-      return;
+    f();
+    if (b != null) {
+      return b.a();
     }
-    b.a("story", "tap_to_load");
+    return null;
+  }
+  
+  protected final void c()
+  {
+    if (b != null) {
+      b.e();
+    }
+  }
+  
+  @chd
+  public final Bitmap d()
+  {
+    f();
+    if (b != null) {
+      return b.b();
+    }
+    return null;
+  }
+  
+  public static final class a
+  {
+    final aka a;
+    final axx b;
+    
+    public a(@chc aka paramaka)
+    {
+      this(paramaka, new axx());
+    }
+    
+    private a(@chc aka paramaka, @chc axx paramaxx)
+    {
+      a = ((aka)co.a(paramaka));
+      b = ((axx)co.a(paramaxx));
+    }
   }
 }
 

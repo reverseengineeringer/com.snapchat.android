@@ -1,54 +1,79 @@
 .class public Lbkg;
-.super Lbgy;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field protected action:Ljava/lang/String;
+.field protected friendStories:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "action"
+        value = "friend_stories"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbiv;",
+            ">;"
+        }
     .end annotation
 .end field
 
-.field protected addedBy:Ljava/lang/String;
+.field protected friendStoriesDelta:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "added_by"
+        value = "friend_stories_delta"
     .end annotation
 .end field
 
-.field protected blockReasonId:Ljava/lang/Integer;
+.field protected matureContentText:Ljava/util/Map;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "block_reason_id"
+        value = "mature_content_text"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
     .end annotation
 .end field
 
-.field protected display:Ljava/lang/String;
+.field protected myGroupStories:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "display"
+        value = "my_group_stories"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbjm;",
+            ">;"
+        }
     .end annotation
 .end field
 
-.field protected friend:Ljava/lang/String;
+.field protected myStories:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "friend"
+        value = "my_stories"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbkj;",
+            ">;"
+        }
     .end annotation
 .end field
 
-.field protected friendId:Ljava/lang/String;
+.field protected serverInfo:Lbjx;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "friend_id"
-    .end annotation
-.end field
-
-.field protected identityCellIndex:Ljava/lang/Integer;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "identity_cell_index"
-    .end annotation
-.end field
-
-.field protected identityProfilePage:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "identity_profile_page"
+        value = "server_info"
     .end annotation
 .end field
 
@@ -58,151 +83,188 @@
     .locals 0
 
     .prologue
-    .line 17
-    invoke-direct {p0}, Lbgy;-><init>()V
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Integer;)V
-    .locals 0
+.method public final a()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lbkj;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 135
-    iput-object p1, p0, Lbkg;->identityCellIndex:Ljava/lang/Integer;
+    .line 52
+    iget-object v0, p0, Lbkg;->myStories:Ljava/util/List;
 
-    .line 136
-    return-void
+    return-object v0
 .end method
 
-.method public final a(Ljava/lang/String;)V
-    .locals 0
+.method public final b()Z
+    .locals 1
 
     .prologue
-    .line 45
-    iput-object p1, p0, Lbkg;->action:Ljava/lang/String;
+    .line 56
+    iget-object v0, p0, Lbkg;->myStories:Ljava/util/List;
 
-    .line 46
-    return-void
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final b(Ljava/lang/Integer;)V
-    .locals 0
+.method public final c()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lbiv;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 171
-    iput-object p1, p0, Lbkg;->blockReasonId:Ljava/lang/Integer;
+    .line 70
+    iget-object v0, p0, Lbkg;->friendStories:Ljava/util/List;
 
-    .line 172
-    return-void
+    return-object v0
 .end method
 
-.method public final b(Ljava/lang/String;)V
-    .locals 0
+.method public final d()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lbjm;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 63
-    iput-object p1, p0, Lbkg;->friend:Ljava/lang/String;
+    .line 88
+    iget-object v0, p0, Lbkg;->myGroupStories:Ljava/util/List;
 
-    .line 64
-    return-void
+    return-object v0
+.end method
+
+.method public final e()Z
+    .locals 1
+
+    .prologue
+    .line 92
+    iget-object v0, p0, Lbkg;->myGroupStories:Ljava/util/List;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 208
+    .line 168
     if-ne p1, p0, :cond_0
 
-    .line 209
+    .line 169
     const/4 v0, 0x1
 
-    .line 215
+    .line 175
     :goto_0
     return v0
 
-    .line 211
+    .line 171
     :cond_0
     instance-of v0, p1, Lbkg;
 
     if-nez v0, :cond_1
 
-    .line 212
+    .line 172
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 214
+    .line 174
     :cond_1
     check-cast p1, Lbkg;
 
-    .line 215
+    .line 175
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkg;->action:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->myStories:Ljava/util/List;
 
-    iget-object v2, p1, Lbkg;->action:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkg;->friend:Ljava/lang/String;
-
-    iget-object v2, p1, Lbkg;->friend:Ljava/lang/String;
+    iget-object v2, p1, Lbkg;->myStories:Ljava/util/List;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->friendId:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->friendStories:Ljava/util/List;
 
-    iget-object v2, p1, Lbkg;->friendId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkg;->addedBy:Ljava/lang/String;
-
-    iget-object v2, p1, Lbkg;->addedBy:Ljava/lang/String;
+    iget-object v2, p1, Lbkg;->friendStories:Ljava/util/List;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->identityProfilePage:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->myGroupStories:Ljava/util/List;
 
-    iget-object v2, p1, Lbkg;->identityProfilePage:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkg;->identityCellIndex:Ljava/lang/Integer;
-
-    iget-object v2, p1, Lbkg;->identityCellIndex:Ljava/lang/Integer;
+    iget-object v2, p1, Lbkg;->myGroupStories:Ljava/util/List;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->display:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->matureContentText:Ljava/util/Map;
 
-    iget-object v2, p1, Lbkg;->display:Ljava/lang/String;
+    iget-object v2, p1, Lbkg;->matureContentText:Ljava/util/Map;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->blockReasonId:Ljava/lang/Integer;
+    iget-object v1, p0, Lbkg;->friendStoriesDelta:Ljava/lang/Boolean;
 
-    iget-object v2, p1, Lbkg;->blockReasonId:Ljava/lang/Integer;
+    iget-object v2, p1, Lbkg;->friendStoriesDelta:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkg;->serverInfo:Lbjx;
+
+    iget-object v2, p1, Lbkg;->serverInfo:Lbjx;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -215,58 +277,86 @@
     goto :goto_0
 .end method
 
+.method public final f()Ljava/lang/Boolean;
+    .locals 1
+
+    .prologue
+    .line 124
+    iget-object v0, p0, Lbkg;->friendStoriesDelta:Ljava/lang/Boolean;
+
+    return-object v0
+.end method
+
+.method public final g()Lbjx;
+    .locals 1
+
+    .prologue
+    .line 142
+    iget-object v0, p0, Lbkg;->serverInfo:Lbjx;
+
+    return-object v0
+.end method
+
+.method public final h()Z
+    .locals 1
+
+    .prologue
+    .line 146
+    iget-object v0, p0, Lbkg;->serverInfo:Lbjx;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public hashCode()I
     .locals 2
 
     .prologue
-    .line 194
+    .line 156
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkg;->action:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->myStories:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->friend:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->friendStories:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->friendId:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->myGroupStories:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->addedBy:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->matureContentText:Ljava/util/Map;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->identityProfilePage:Ljava/lang/String;
+    iget-object v1, p0, Lbkg;->friendStoriesDelta:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkg;->identityCellIndex:Ljava/lang/Integer;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkg;->display:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkg;->blockReasonId:Ljava/lang/Integer;
+    iget-object v1, p0, Lbkg;->serverInfo:Lbjx;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -279,55 +369,11 @@
     return v0
 .end method
 
-.method public final i(Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 81
-    iput-object p1, p0, Lbkg;->friendId:Ljava/lang/String;
-
-    .line 82
-    return-void
-.end method
-
-.method public final j(Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 99
-    iput-object p1, p0, Lbkg;->addedBy:Ljava/lang/String;
-
-    .line 100
-    return-void
-.end method
-
-.method public final k(Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 117
-    iput-object p1, p0, Lbkg;->identityProfilePage:Ljava/lang/String;
-
-    .line 118
-    return-void
-.end method
-
-.method public final l(Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 153
-    iput-object p1, p0, Lbkg;->display:Ljava/lang/String;
-
-    .line 154
-    return-void
-.end method
-
 .method public toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 189
+    .line 151
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

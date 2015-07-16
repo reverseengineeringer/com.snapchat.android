@@ -1,50 +1,42 @@
-import android.content.Context;
-import android.content.Intent;
-import com.snapchat.android.api2.framework.HttpMethod;
-import com.snapchat.android.discover.util.network.DiscoverEndpointManager;
+import android.os.Bundle;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
+import com.snapchat.android.discover.model.DSnapPage;
+import java.util.Timer;
+import org.json.JSONObject;
 
 public final class adk
-  extends amd
-  implements ts.b<bjt>
+  extends nd<DSnapPage>
 {
-  public int a = 0;
-  private ajv b;
-  private final DiscoverEndpointManager c;
+  public static String a = "discover";
   
-  public adk(Intent paramIntent)
+  public adk(@chc DSnapPage paramDSnapPage, @chc nd.a<DSnapPage> parama)
   {
-    this(paramIntent, DiscoverEndpointManager.a());
+    this(na.a(), new EasyMetric.EasyMetricFactory(), ama.a(), new Timer(), paramDSnapPage, parama);
   }
   
-  private adk(Intent paramIntent, DiscoverEndpointManager paramDiscoverEndpointManager)
+  private adk(na paramna, EasyMetric.EasyMetricFactory paramEasyMetricFactory, ama paramama, Timer paramTimer, DSnapPage paramDSnapPage, nd.a<DSnapPage> parama)
   {
-    super(paramIntent);
-    a(bjt.class, this);
-    c = paramDiscoverEndpointManager;
+    super(paramDSnapPage, paramna, paramEasyMetricFactory, paramama, paramTimer, parama);
   }
   
-  public final void a(Context paramContext)
+  public final Bundle a(String paramString)
   {
-    b = ajv.a(paramContext);
-    super.a(paramContext);
+    Bundle localBundle = new Bundle();
+    paramString = new JSONObject(paramString);
+    boolean bool = true;
+    if (paramString.has("media_zipped_with_overlay")) {
+      bool = paramString.getBoolean("media_zipped_with_overlay");
+    }
+    localBundle.putBoolean("media_zipped_with_overlay", bool);
+    localBundle.putString("content", paramString.getString("content"));
+    localBundle.putString("imp-url", paramString.getString("imp-url"));
+    return localBundle;
   }
   
-  public final Object b()
+  protected final String a()
   {
-    return null;
+    return a;
   }
-  
-  public final HttpMethod c()
-  {
-    return HttpMethod.GET;
-  }
-  
-  protected final String e()
-  {
-    return c.b();
-  }
-  
-  public final void f() {}
 }
 
 /* Location:

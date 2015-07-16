@@ -3,19 +3,19 @@ package com.snapchat.android.fragments.chat;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.model.CashTransaction;
 import com.snapchat.android.model.chat.CashFeedItem;
-import ya;
-import ya.a;
-import ya.b;
+import yw;
+import yw.a;
+import yw.b;
 
 final class ChatFragment$17$1
-  implements ya.a
+  implements yw.a
 {
   ChatFragment$17$1(ChatFragment.17 param17, CashFeedItem paramCashFeedItem) {}
   
   public final void a()
   {
     ChatFragment.b(b.c, a);
-    b.c.i.a(b.a, a, "", new ya.b()
+    b.c.i.a(b.a, a, "", new yw.b()
     {
       public final void a()
       {

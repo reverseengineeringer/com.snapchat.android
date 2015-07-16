@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lye;
+.implements Lza;
 
 
 # annotations

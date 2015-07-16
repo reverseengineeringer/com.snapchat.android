@@ -1,42 +1,163 @@
-import android.os.SystemClock;
-import com.snapchat.android.Timber.LogType;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class mh
+  extends ml
 {
-  public String a;
-  public String b;
-  public ArrayList<Long> c;
-  public ArrayList<String> d;
+  private String additionalInfo;
+  private final String eventName = "STORY_STORY_UNHIDE";
+  public String geoFence;
+  public String posterId;
+  private String sponsor;
+  public mj storyType;
+  private Long viewLocation;
   
-  public mh(String paramString1, String paramString2)
+  public final Map<String, Object> a()
   {
-    a = paramString1;
-    b = paramString2;
-    if (c == null)
-    {
-      c = new ArrayList();
-      d = new ArrayList();
+    HashMap localHashMap = new HashMap();
+    localHashMap.put("event_name", "STORY_STORY_UNHIDE");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
     }
+    if (geoFence != null) {
+      localHashMap.put("geo_fence", geoFence);
+    }
+    if (posterId != null) {
+      localHashMap.put("poster_id", posterId);
+    }
+    if (sponsor != null) {
+      localHashMap.put("sponsor", sponsor);
+    }
+    if (storyType != null) {
+      localHashMap.put("story_type", storyType);
+    }
+    if (viewLocation != null) {
+      localHashMap.put("view_location", viewLocation);
+    }
+    localHashMap.putAll(super.a());
+    return localHashMap;
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if (this == paramObject) {}
+    do
+    {
+      return true;
+      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+        return false;
+      }
+      if (!super.equals(paramObject)) {
+        return false;
+      }
+      paramObject = (mh)paramObject;
+      if (additionalInfo != null)
+      {
+        if (additionalInfo.equals(additionalInfo)) {}
+      }
+      else {
+        while (additionalInfo != null) {
+          return false;
+        }
+      }
+      if (geoFence != null)
+      {
+        if (geoFence.equals(geoFence)) {}
+      }
+      else {
+        while (geoFence != null) {
+          return false;
+        }
+      }
+      if (posterId != null)
+      {
+        if (posterId.equals(posterId)) {}
+      }
+      else {
+        while (posterId != null) {
+          return false;
+        }
+      }
+      if (sponsor != null)
+      {
+        if (sponsor.equals(sponsor)) {}
+      }
+      else {
+        while (sponsor != null) {
+          return false;
+        }
+      }
+      if (storyType != null)
+      {
+        if (storyType.equals(storyType)) {}
+      }
+      else {
+        while (storyType != null) {
+          return false;
+        }
+      }
+      if (viewLocation == null) {
+        break;
+      }
+    } while (viewLocation.equals(viewLocation));
     for (;;)
     {
-      a(null);
-      return;
-      c.clear();
-      d.clear();
+      return false;
+      if (viewLocation == null) {
+        break;
+      }
     }
   }
   
-  public static void a(String paramString1, String paramString2)
+  public final int hashCode()
   {
-    azk.a(Timber.LogType.DEBUG.name(), paramString1, paramString2);
-  }
-  
-  public final void a(String paramString)
-  {
-    long l = SystemClock.elapsedRealtime();
-    c.add(Long.valueOf(l));
-    d.add(paramString);
+    int i1 = 0;
+    int i2 = super.hashCode();
+    int i;
+    int j;
+    label39:
+    int k;
+    label54:
+    int m;
+    if (additionalInfo != null)
+    {
+      i = additionalInfo.hashCode();
+      if (geoFence == null) {
+        break label143;
+      }
+      j = geoFence.hashCode();
+      if (posterId == null) {
+        break label148;
+      }
+      k = posterId.hashCode();
+      if (sponsor == null) {
+        break label153;
+      }
+      m = sponsor.hashCode();
+      label70:
+      if (storyType == null) {
+        break label159;
+      }
+    }
+    label143:
+    label148:
+    label153:
+    label159:
+    for (int n = storyType.hashCode();; n = 0)
+    {
+      if (viewLocation != null) {
+        i1 = viewLocation.hashCode();
+      }
+      return (n + (m + (k + (j + (i + i2 * 31) * 31) * 31) * 31) * 31) * 31 + i1;
+      i = 0;
+      break;
+      j = 0;
+      break label39;
+      k = 0;
+      break label54;
+      m = 0;
+      break label70;
+    }
   }
 }
 

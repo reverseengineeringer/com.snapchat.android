@@ -1,85 +1,41 @@
-import org.apache.http.util.CharArrayBuffer;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public final class bqg
-  extends bqf
+  extends ThreadPoolExecutor
 {
-  private int d;
-  private int e = 0;
-  
-  public bqg(bqf parambqf, int paramInt)
+  bqg()
   {
-    super(parambqf);
-    d = paramInt;
+    super(3, 3, 0L, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), new bqp.b());
   }
   
-  public final boolean a(int paramInt)
+  final void a(int paramInt)
   {
-    if (paramInt == -1)
+    setCorePoolSize(paramInt);
+    setMaximumPoolSize(paramInt);
+  }
+  
+  public final Future<?> submit(Runnable paramRunnable)
+  {
+    paramRunnable = new bqg.a((bpm)paramRunnable);
+    execute(paramRunnable);
+    return paramRunnable;
+  }
+  
+  static final class a
+    extends FutureTask<bpm>
+    implements Comparable<a>
+  {
+    private final bpm a;
+    
+    public a(bpm parambpm)
     {
-      a.a(bqs.d);
-      return true;
+      super(null);
+      a = parambpm;
     }
-    e += 1;
-    c += 1;
-    if (e == d)
-    {
-      a.b(a());
-      bqf localbqf = a.b();
-      a.a(localbqf);
-      return true;
-    }
-    return false;
-  }
-  
-  public final boolean a(CharArrayBuffer paramCharArrayBuffer)
-  {
-    return true;
-  }
-  
-  public final int b(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
-  {
-    if (paramInt2 == -1)
-    {
-      a.a(bqs.d);
-      return -1;
-    }
-    if (e + paramInt2 < d)
-    {
-      e += paramInt2;
-      c += paramInt2;
-      return paramInt2;
-    }
-    paramInt1 = d - e;
-    c += paramInt1;
-    a.b(a());
-    a.a(a.b());
-    return paramInt1;
-  }
-  
-  public final bqf b()
-  {
-    return bqs.d;
-  }
-  
-  public final bqf c()
-  {
-    return bqs.d;
-  }
-  
-  protected final int d()
-  {
-    return 0;
-  }
-  
-  protected final int e()
-  {
-    return 0;
-  }
-  
-  public final void f()
-  {
-    a.b(a());
-    a.a(bqs.d);
   }
 }
 

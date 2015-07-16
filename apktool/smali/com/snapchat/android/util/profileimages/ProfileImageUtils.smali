@@ -130,12 +130,12 @@
     return-object v0
 .end method
 
-.method public static a(Lawp;Ljava/lang/String;)Ljava/util/List;
+.method public static a(Laxn;Ljava/lang/String;)Ljava/util/List;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lawp;",
+            "Laxn;",
             "Ljava/lang/String;",
             ")",
             "Ljava/util/List",
@@ -149,13 +149,13 @@
     const/4 v4, 0x0
 
     .line 234
-    invoke-virtual {p0, p1}, Lawp;->d(Ljava/lang/String;)Z
+    invoke-virtual {p0, p1}, Laxn;->d(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0, p1}, Lawp;->a(Ljava/lang/String;)[B
+    invoke-virtual {p0, p1}, Laxn;->a(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -171,7 +171,7 @@
 
     .line 237
     :cond_1
-    invoke-virtual {p0, p1}, Lawp;->a(Ljava/lang/String;)[B
+    invoke-virtual {p0, p1}, Laxn;->a(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -321,17 +321,6 @@
     if-nez p0, :cond_0
 
     .line 144
-    const-string v0, "ProfileImageUtils"
-
-    const-string v1, "profile images - exception deserializing profile media byte array: data is null"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 145
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Exception deserializing profile media byte array: data is null"
@@ -357,29 +346,6 @@
     if-eq v2, v0, :cond_1
 
     .line 151
-    const-string v0, "ProfileImageUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v3, "profile images - exception deserializing profile media byte array: invalid pics number "
-
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 153
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "profile images - exception deserializing profile media byte array: invalid pics number"
@@ -456,17 +422,6 @@
     if-eq v8, v6, :cond_2
 
     .line 169
-    const-string v0, "ProfileImageUtils"
-
-    const-string v1, "profile images - exception deserializing profile media byte array: data corruption"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 170
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "profile images - exception deserializing profile media byte array: data corruption"
@@ -514,41 +469,27 @@
     if-eqz v6, :cond_3
 
     .line 180
-    const-string v1, "ProfileImageUtils"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "profile images - exception deserializing profile media byte array: data corruption, checksum : "
 
-    const-string v3, "profile images - exception deserializing profile media byte array: data corruption, checksum : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v8}, Ljava/util/zip/CRC32;->getValue()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, " image index: "
+    const-string v2, " image index: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 182
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -607,21 +548,21 @@
     return-object v0
 .end method
 
-.method public static a(JLawp;)V
-    .locals 6
+.method public static a(JLaxn;)V
+    .locals 4
 
     .prologue
     const/4 v0, 0x0
 
     .line 355
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
     .line 357
     monitor-enter p2
 
     .line 358
     :try_start_0
-    invoke-static {}, Lajx;->A()J
+    invoke-static {}, Lakr;->A()J
 
     move-result-wide v2
 
@@ -638,30 +579,7 @@
 
     .line 361
     :cond_0
-    const-string v1, "ProfileImageUtils"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "profile images - removing images from cache with delete timestamp: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 362
-    invoke-static {p0, p1}, Lajx;->d(J)V
+    invoke-static {p0, p1}, Lakr;->d(J)V
 
     .line 363
     :goto_1
@@ -681,34 +599,28 @@
 
     move-result-object v2
 
-    invoke-virtual {p2, v2}, Lawp;->c(Ljava/lang/String;)V
+    invoke-virtual {p2, v2}, Laxn;->c(Ljava/lang/String;)V
 
     .line 366
-    const-string v2, "ProfileImageUtils"
+    const/4 v2, 0x2
 
-    const-string v3, "profile images - %s removed with delete timestamp: %d "
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {v1}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils$ProfileImageType;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    aput-object v1, v4, v5
+    aput-object v1, v2, v3
 
     const/4 v1, 0x1
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v4, v1
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v2, v1
 
     .line 363
     add-int/lit8 v0, v0, 0x1
@@ -731,14 +643,14 @@
     throw v0
 .end method
 
-.method public static a(Ljava/util/List;JLawp;)V
-    .locals 7
+.method public static a(Ljava/util/List;JLaxn;)V
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List",
             "<[B>;J",
-            "Lawp;",
+            "Laxn;",
             ")V"
         }
     .end annotation
@@ -747,14 +659,14 @@
     const/4 v0, 0x0
 
     .line 330
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
     .line 332
     monitor-enter p3
 
     .line 335
     :try_start_0
-    invoke-static {}, Lajx;->A()J
+    invoke-static {}, Lakr;->A()J
 
     move-result-wide v2
 
@@ -771,7 +683,7 @@
 
     .line 338
     :cond_0
-    invoke-static {p1, p2}, Lajx;->d(J)V
+    invoke-static {p1, p2}, Lakr;->d(J)V
 
     move v1, v0
 
@@ -804,36 +716,30 @@
 
     check-cast v0, [B
 
-    invoke-virtual {p3, v3, v0}, Lawp;->a(Ljava/lang/String;[B)V
+    invoke-virtual {p3, v3, v0}, Laxn;->a(Ljava/lang/String;[B)V
 
     .line 343
-    const-string v0, "ProfileImageUtils"
+    const/4 v0, 0x2
 
-    const-string v3, "profile images - %s caching succeeded with picture taken timestamp: %d"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {v2}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils$ProfileImageType;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v4, v5
+    aput-object v4, v0, v3
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v4, v5
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v4, v0, v3
     :try_end_1
-    .catch Laws; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Laxq; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 339
@@ -849,36 +755,30 @@
     move-exception v0
 
     .line 346
+    const/4 v3, 0x3
+
     :try_start_2
-    const-string v3, "ProfileImageUtils"
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const-string v4, "profile images - %s caching failed with timestamp %d and error: %s"
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
     invoke-virtual {v2}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils$ProfileImageType;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    aput-object v2, v5, v6
+    aput-object v2, v3, v4
 
     const/4 v2, 0x1
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v5, v2
+    aput-object v4, v3, v2
 
     const/4 v2, 0x2
 
-    aput-object v0, v5, v2
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v3, v2
 
     goto :goto_2
 
@@ -901,28 +801,17 @@
     goto :goto_0
 .end method
 
-.method public static a([BLawp;)V
+.method public static a([BLaxn;)V
     .locals 12
 
     .prologue
     .line 244
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
     .line 246
     if-nez p0, :cond_0
 
     .line 247
-    const-string v0, "ProfileImageUtils"
-
-    const-string v1, "friends profile images - exception deserializing profile media byte array: data is null"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 248
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Exception deserializing profile media byte array: data is null"
@@ -984,29 +873,6 @@
     if-eq v4, v0, :cond_1
 
     .line 262
-    const-string v0, "ProfileImageUtils"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "friends profile images - exception deserializing profile media byte array: invalid pics number "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 264
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "friends profile images - exception deserializing profile media byte array: invalid pics number"
@@ -1086,17 +952,6 @@
     if-eq v7, v5, :cond_2
 
     .line 286
-    const-string v0, "ProfileImageUtils"
-
-    const-string v1, "friends profile images - exception deserializing profile media byte array: data corruption"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 287
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "friends profile images - exception deserializing profile media byte array: data corruption"
@@ -1149,41 +1004,27 @@
     if-eqz v6, :cond_3
 
     .line 298
-    const-string v1, "ProfileImageUtils"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "friends profile images - exception deserializing image byte array: data corruption, checksum : "
 
-    const-string v3, "friends profile images - exception deserializing image byte array: data corruption, checksum : "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v7}, Ljava/util/zip/CRC32;->getValue()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, " image index: "
+    const-string v2, " image index: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 300
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -1244,35 +1085,12 @@
     move-result-object v0
 
     .line 310
-    invoke-virtual {p1, v2, v0}, Lawp;->a(Ljava/lang/String;[B)V
-
-    .line 311
-    const-string v0, "ProfileImageUtils"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "friends profile images -  caching succeeded for "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v0, v4, v5}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v2, v0}, Laxn;->a(Ljava/lang/String;[B)V
     :try_end_0
-    .catch Laws; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Laxq; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 315
+    .line 311
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->close()V
 
     goto/16 :goto_0
@@ -1283,37 +1101,23 @@
 
     .line 313
     :try_start_1
-    const-string v4, "ProfileImageUtils"
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    const-string v5, "friends profile images -  caching failed for "
 
-    const-string v6, "friends profile images -  caching failed for "
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v5, " with error:"
+    const-string v4, " with error:"
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v4, v0, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -1334,7 +1138,7 @@
     return-void
 .end method
 
-.method public static a(Lawp;)Z
+.method public static a(Laxn;)Z
     .locals 3
 
     .prologue
@@ -1360,7 +1164,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Lawp;->d(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Laxn;->d(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -1536,12 +1340,12 @@
     return-object v0
 .end method
 
-.method public static b(Lawp;)Ljava/util/List;
-    .locals 9
+.method public static b(Laxn;)Ljava/util/List;
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lawp;",
+            "Laxn;",
             ")",
             "Ljava/util/List",
             "<",
@@ -1551,12 +1355,12 @@
     .end annotation
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v6, 0x1
 
     const/4 v1, 0x0
 
     .line 204
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
     .line 206
     new-instance v2, Ljava/util/ArrayList;
@@ -1583,7 +1387,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v4}, Lawp;->a(Ljava/lang/String;)[B
+    invoke-virtual {p0, v4}, Laxn;->a(Ljava/lang/String;)[B
 
     move-result-object v4
 
@@ -1598,19 +1402,15 @@
     invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 212
-    const-string v5, "ProfileImageUtils"
+    const/4 v5, 0x2
 
-    const-string v6, "profile images - loading %s with size %s "
-
-    const/4 v7, 0x2
-
-    new-array v7, v7, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
     invoke-virtual {v3}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils$ProfileImageType;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    aput-object v3, v7, v1
+    aput-object v3, v5, v1
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getByteCount()I
 
@@ -1620,9 +1420,7 @@
 
     move-result-object v3
 
-    aput-object v3, v7, v8
-
-    invoke-static {v5, v6, v7}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v5, v6
 
     .line 207
     add-int/lit8 v0, v0, 0x1
@@ -1631,29 +1429,23 @@
 
     .line 214
     :cond_0
-    const-string v0, "ProfileImageUtils"
-
-    const-string v3, "profile images - loading success, number of bitmaps : %s"
-
-    new-array v4, v8, [Ljava/lang/Object;
+    new-array v0, v6, [Ljava/lang/Object;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-result v5
+    move-result v3
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v4, v1
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v0, v1
 
     .line 215
     return-object v2
 .end method
 
-.method public static b([BLawp;)V
+.method public static b([BLaxn;)V
     .locals 4
 
     .prologue
@@ -1679,18 +1471,18 @@
 
     move-result-wide v2
 
-    invoke-static {v0, v2, v3, p1}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils;->a(Ljava/util/List;JLawp;)V
+    invoke-static {v0, v2, v3, p1}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils;->a(Ljava/util/List;JLaxn;)V
 
     .line 323
     return-void
 .end method
 
-.method public static c(Lawp;)Ljava/util/List;
-    .locals 9
+.method public static c(Laxn;)Ljava/util/List;
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lawp;",
+            "Laxn;",
             ")",
             "Ljava/util/List",
             "<[B>;"
@@ -1698,12 +1490,12 @@
     .end annotation
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v6, 0x1
 
     const/4 v1, 0x0
 
     .line 220
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
     .line 222
     new-instance v2, Ljava/util/ArrayList;
@@ -1730,24 +1522,20 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v4}, Lawp;->a(Ljava/lang/String;)[B
+    invoke-virtual {p0, v4}, Laxn;->a(Ljava/lang/String;)[B
 
     move-result-object v4
 
     .line 226
-    const-string v5, "ProfileImageUtils"
+    const/4 v5, 0x2
 
-    const-string v6, "profile images - loading %s with size %s "
-
-    const/4 v7, 0x2
-
-    new-array v7, v7, [Ljava/lang/Object;
+    new-array v5, v5, [Ljava/lang/Object;
 
     invoke-virtual {v3}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils$ProfileImageType;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    aput-object v3, v7, v1
+    aput-object v3, v5, v1
 
     array-length v3, v4
 
@@ -1755,9 +1543,7 @@
 
     move-result-object v3
 
-    aput-object v3, v7, v8
-
-    invoke-static {v5, v6, v7}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v5, v6
 
     .line 227
     invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1769,23 +1555,17 @@
 
     .line 229
     :cond_0
-    const-string v0, "ProfileImageUtils"
-
-    const-string v3, "profile images - loading success, number of images : %s"
-
-    new-array v4, v8, [Ljava/lang/Object;
+    new-array v0, v6, [Ljava/lang/Object;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-result v5
+    move-result v3
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v4, v1
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v0, v1
 
     .line 230
     return-object v2

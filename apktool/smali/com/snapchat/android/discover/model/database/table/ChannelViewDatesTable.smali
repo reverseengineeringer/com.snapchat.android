@@ -26,9 +26,9 @@
 
 
 # instance fields
-.field private final b:Lbgk;
+.field private final b:Lbhk;
 
-.field private final c:Lacw;
+.field private final c:Ladw;
 
 
 # direct methods
@@ -51,21 +51,21 @@
 
     .prologue
     .line 103
-    new-instance v0, Lbgk;
+    new-instance v0, Lbhk;
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    invoke-direct {v0}, Lbhk;-><init>()V
 
-    invoke-static {}, Lacw;->a()Lacw;
+    invoke-static {}, Ladw;->a()Ladw;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;-><init>(Lbgk;Lacw;)V
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;-><init>(Lbhk;Ladw;)V
 
     .line 104
     return-void
 .end method
 
-.method private constructor <init>(Lbgk;Lacw;)V
+.method private constructor <init>(Lbhk;Ladw;)V
     .locals 0
 
     .prologue
@@ -73,10 +73,10 @@
     invoke-direct {p0}, Lcom/snapchat/android/database/table/DbTable;-><init>()V
 
     .line 108
-    iput-object p1, p0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->b:Lbgk;
+    iput-object p1, p0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->b:Lbhk;
 
     .line 109
-    iput-object p2, p0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->c:Lacw;
+    iput-object p2, p0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->c:Ladw;
 
     .line 110
     return-void
@@ -101,15 +101,15 @@
     .line 28
     check-cast p1, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;
 
-    new-instance v0, Laad;
+    new-instance v0, Labc;
 
-    invoke-direct {v0}, Laad;-><init>()V
+    invoke-direct {v0}, Labc;-><init>()V
 
     sget-object v1, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$ChannelViewDatesSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$ChannelViewDatesSchema;
 
     iget-object v2, p1, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
@@ -117,7 +117,7 @@
 
     iget-object v2, p1, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->b:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
@@ -125,11 +125,11 @@
 
     iget-wide v2, p1, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->c:J
 
-    invoke-virtual {v0, v1, v2, v3}, Laad;->a(Lzw;J)Laad;
+    invoke-virtual {v0, v1, v2, v3}, Labc;->a(Laav;J)Labc;
 
     move-result-object v0
 
-    iget-object v0, v0, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v0, Labc;->a:Landroid/content/ContentValues;
 
     return-object v0
 .end method
@@ -176,12 +176,12 @@
     return-object v4
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
@@ -192,11 +192,11 @@
 
     .prologue
     .line 142
-    iget-object v0, p0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->c:Lacw;
+    iget-object v0, p0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->c:Ladw;
 
     new-instance v2, Ljava/util/ArrayList;
 
-    iget-object v0, v0, Lacw;->a:Ljava/util/Map;
+    iget-object v0, v0, Ladw;->a:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -240,10 +240,10 @@
 
     move-result-object v0
 
-    check-cast v0, Lacx;
+    check-cast v0, Ladx;
 
     .line 149
-    invoke-virtual {v0}, Lacx;->a()Ljava/util/Collection;
+    invoke-virtual {v0}, Ladx;->a()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -258,42 +258,30 @@
     goto :goto_0
 .end method
 
-.method public final b(Lajv;)V
-    .locals 5
+.method public final b(Lakp;)V
+    .locals 4
 
     .prologue
     .line 129
-    new-instance v0, Lcgg;
+    new-instance v0, Lchh;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    invoke-direct {v0, v2, v3}, Lcgg;-><init>(J)V
+    invoke-direct {v0, v2, v3}, Lchh;-><init>(J)V
 
-    invoke-virtual {v0}, Lcgg;->F_()Lcgg;
-
-    move-result-object v0
-
-    iget-object v1, v0, Lchg;->b:Lcgf;
-
-    invoke-virtual {v1}, Lcgf;->B()Lcgm;
-
-    move-result-object v1
-
-    iget-wide v2, v0, Lchg;->a:J
-
-    const/4 v4, -0x2
-
-    invoke-virtual {v1, v2, v3, v4}, Lcgm;->a(JI)J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Lcgg;->a_(J)Lcgg;
+    invoke-virtual {v0}, Lchh;->F_()Lchh;
 
     move-result-object v0
 
-    iget-wide v0, v0, Lchg;->a:J
+    const/4 v1, 0x7
+
+    invoke-virtual {v0, v1}, Lchh;->a(I)Lchh;
+
+    move-result-object v0
+
+    iget-wide v0, v0, Lcih;->a:J
 
     .line 133
     new-instance v2, Ljava/lang/StringBuilder;
@@ -310,7 +298,7 @@
 
     move-result-object v2
 
-    const-string v3, ">"
+    const-string v3, ">="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -366,19 +354,19 @@
     move-result-object v1
 
     .line 137
-    iget-object v2, p0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->c:Lacw;
+    iget-object v2, p0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->c:Ladw;
 
     invoke-virtual {p0, v0, v1}, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Lacw;->a(Ljava/util/List;)I
+    invoke-virtual {v2, v0}, Ladw;->a(Ljava/util/List;)I
 
     .line 138
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue

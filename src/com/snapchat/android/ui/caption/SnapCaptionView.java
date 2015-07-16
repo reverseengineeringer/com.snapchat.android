@@ -1,6 +1,6 @@
 package com.snapchat.android.ui.caption;
 
-import ajx;
+import akr;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -16,16 +16,15 @@ import android.view.MotionEvent;
 import android.view.View.OnTouchListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
-import apo;
-import aps;
-import auv;
-import avh;
-import ban;
-import bbh;
-import bbv;
-import boh;
-import cgc;
-import com.snapchat.android.Timber;
+import aqn;
+import aqr;
+import avt;
+import awf;
+import bbo;
+import bch;
+import bcv;
+import bpi;
+import chd;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.squareup.otto.Bus;
 import java.io.IOException;
@@ -40,7 +39,7 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
   protected int c;
   protected int d;
   protected boolean e = false;
-  private final auv f;
+  private final avt f;
   
   public SnapCaptionView(Context paramContext)
   {
@@ -48,7 +47,7 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
     InputMethodManager localInputMethodManager = (InputMethodManager)paramContext.getSystemService("input_method");
     setFocusable(true);
     setFocusableInTouchMode(true);
-    f = new auv(paramContext);
+    f = new avt(paramContext);
     a = getLayout();
     b = b(paramContext);
     b.f = true;
@@ -68,16 +67,9 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
     b.a(false);
   }
   
-  public static int c(Context paramContext)
-  {
-    paramContext = paramContext.getResources().getDisplayMetrics();
-    double d1 = Math.min(widthPixels, heightPixels) * (0.053125F / density);
-    return (int)Math.ceil(density * (d1 * 1.666D));
-  }
-  
   public Bundle a()
   {
-    ajx.a(e, b.getKeyboardHeight());
+    akr.a(e, b.getKeyboardHeight());
     Bundle localBundle = new Bundle();
     localBundle.putFloat("captionPreviousYPercentageOnScreen", getCaptionPositionY() / c);
     localBundle.putString("captionViewText", getText());
@@ -130,7 +122,7 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
         if (i == 0) {
           break label215;
         }
-        ban.a().a(new bbh(b.k));
+        bbo.a().a(new bch(b.k));
         return;
         b.setVisibility(0);
         break;
@@ -193,7 +185,7 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
   {
     boolean bool2 = true;
     boolean bool3 = e;
-    if (!avh.e(getContext()))
+    if (!awf.e(getContext()))
     {
       bool1 = true;
       e = bool1;
@@ -205,10 +197,10 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
     for (boolean bool1 = bool2;; bool1 = false)
     {
       DisplayMetrics localDisplayMetrics = getContext().getResources().getDisplayMetrics();
-      d = avh.a(localDisplayMetrics, e);
-      c = avh.b(localDisplayMetrics, e);
+      d = awf.a(localDisplayMetrics, e);
+      c = awf.b(localDisplayMetrics, e);
       b.setLandscapeMode(e);
-      b.setKeyboardHeight(ajx.o(e));
+      b.setKeyboardHeight(akr.n(e));
       if (bool1) {
         b();
       }
@@ -227,10 +219,10 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
   {
     if (!e)
     {
-      c = avh.h(getContext());
+      c = awf.h(getContext());
       return;
     }
-    c = avh.b(getResources().getDisplayMetrics(), e);
+    c = awf.b(getResources().getDisplayMetrics(), e);
   }
   
   public final void f()
@@ -246,35 +238,36 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
   protected AttributeSet getAttributes()
   {
     int i = 0;
-    label67:
-    for (;;)
+    try
     {
-      try
+      do
       {
-        int j = a.next();
-        i = j;
-      }
-      catch (IOException localIOException)
-      {
-        Timber.a("SnapCaptionView", localIOException);
-        continue;
-        if (i != 1) {
-          break label67;
+        j = a.next();
+        if ((j == 2) && (TextUtils.equals(a.getName(), "EditText"))) {
+          return Xml.asAttributeSet(a);
         }
-        return null;
-      }
-      catch (XmlPullParserException localXmlPullParserException)
+        i = j;
+      } while (j != 1);
+      return null;
+    }
+    catch (IOException localIOException)
+    {
+      for (;;)
       {
-        continue;
+        j = i;
       }
-      if ((i == 2) && (TextUtils.equals(a.getName(), "EditText"))) {
-        return Xml.asAttributeSet(a);
+    }
+    catch (XmlPullParserException localXmlPullParserException)
+    {
+      for (;;)
+      {
+        int j = i;
       }
     }
   }
   
-  @cgc
-  public apo getCaptionAnalyticsDetails()
+  @chd
+  public aqn getCaptionAnalyticsDetails()
   {
     if (TextUtils.isEmpty(b.getText())) {
       return null;
@@ -324,8 +317,8 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
     b.g = true;
   }
   
-  @boh
-  public void onKeyDownEvent(bbv parambbv)
+  @bpi
+  public void onKeyDownEvent(bcv parambcv)
   {
     if (b.k) {}
     while (event.getUnicodeChar() == 0) {
@@ -336,7 +329,7 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
     b.append(String.valueOf((char)event.getUnicodeChar()));
   }
   
-  public void setCaptionEditTextOnTouchListener(@cgc View.OnTouchListener paramOnTouchListener)
+  public void setCaptionEditTextOnTouchListener(@chd View.OnTouchListener paramOnTouchListener)
   {
     b.setOnTouchListener(paramOnTouchListener);
   }
@@ -351,9 +344,9 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
     b.setCaptionPositionY(paramInt);
   }
   
-  public void setInterface(aps paramaps)
+  public void setInterface(aqr paramaqr)
   {
-    b.setInterface(paramaps);
+    b.setInterface(paramaqr);
   }
   
   public void setIsVideoSnap(boolean paramBoolean)
@@ -365,7 +358,7 @@ public abstract class SnapCaptionView<T extends CaptionEditText>
   {
     b.setText(paramString);
     b.setVisibility(0);
-    int i = avh.a(b);
+    int i = awf.a(b);
     int j = PreferenceManager.getDefaultSharedPreferences(getContext()).getInt(SharedPreferenceKey.KEYBOARD_HEIGHT_PORTRAIT.getKey(), -1);
     if (j == -1) {
       setCaptionPositionY((int)(c * 0.6F));

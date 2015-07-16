@@ -1,25 +1,14 @@
 public final class bta
-  implements brm
+  extends Exception
 {
-  public int a;
-  
-  public bta(int paramInt)
+  public bta(String paramString)
   {
-    a = paramInt;
+    this(paramString, null);
   }
   
-  public final void a(bqw parambqw, String paramString1, String paramString2)
+  public bta(String paramString, Throwable paramThrowable)
   {
-    try
-    {
-      parambqw.a(paramString1, paramString2, Integer.valueOf(a).intValue());
-      return;
-    }
-    finally
-    {
-      parambqw = finally;
-      throw parambqw;
-    }
+    super(paramString, paramThrowable);
   }
 }
 

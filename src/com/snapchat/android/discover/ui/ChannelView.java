@@ -1,8 +1,8 @@
 package com.snapchat.android.discover.ui;
 
-import adf;
-import adq;
-import aeg.a;
+import aef;
+import aeq;
+import afg.a;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -13,34 +13,34 @@ import android.view.View.MeasureSpec;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import avh;
-import cgb;
+import awf;
+import chc;
 import com.snapchat.android.discover.model.ChannelPage;
-import cw;
+import da;
 
 public class ChannelView
   extends FrameLayout
 {
   public ImageView a;
-  private final adf b;
-  private final adq c;
+  private final aef b;
+  private final aeq c;
   private ImageView d;
   private ProgressBar e;
   private ChannelPage f;
   
-  protected ChannelView(Context paramContext, adq paramadq, adf paramadf)
+  protected ChannelView(Context paramContext, aeq paramaeq, aef paramaef)
   {
     super(paramContext);
-    c = paramadq;
-    b = paramadf;
+    c = paramaeq;
+    b = paramaef;
   }
   
   public ChannelView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    b = adf.a();
-    c = new adq();
-    c.d = new aeg.a()
+    b = aef.a();
+    c = new aeq();
+    c.d = new afg.a()
     {
       public final void a(ImageView paramAnonymousImageView, Drawable paramAnonymousDrawable, Bundle paramAnonymousBundle, boolean paramAnonymousBoolean)
       {
@@ -77,9 +77,9 @@ public class ChannelView
   {
     if (d != null)
     {
-      avh.a(d, null);
+      awf.a(d, null);
       d.setImageDrawable(null);
-      adq localadq = c;
+      aeq localaeq = c;
       a = null;
       b = null;
       c = false;
@@ -125,7 +125,7 @@ public class ChannelView
     setMeasuredDimension(paramInt1, paramInt1);
   }
   
-  public void setChannelPage(@cgb ChannelPage paramChannelPage)
+  public void setChannelPage(@chc ChannelPage paramChannelPage)
   {
     int k = 1;
     ChannelPage localChannelPage = f;
@@ -140,7 +140,7 @@ public class ChannelView
       }
       return;
     }
-    cw localcw = cw.a().a(b, b).a(Boolean.valueOf(k), Boolean.valueOf(k)).a(Boolean.valueOf(localChannelPage.e()), Boolean.valueOf(paramChannelPage.e())).a(Boolean.valueOf(a(localChannelPage)), Boolean.valueOf(a(paramChannelPage))).a(h, h).a(i, i);
+    da localda = da.a().a(b, b).a(Boolean.valueOf(k), Boolean.valueOf(k)).a(Boolean.valueOf(localChannelPage.e()), Boolean.valueOf(paramChannelPage.e())).a(Boolean.valueOf(a(localChannelPage)), Boolean.valueOf(a(paramChannelPage))).a(h, h).a(i, i);
     boolean bool1;
     label151:
     boolean bool2;
@@ -152,7 +152,7 @@ public class ChannelView
       }
       bool2 = true;
       label161:
-      if (localcw.a(Boolean.valueOf(bool1), Boolean.valueOf(bool2)).b() == 0) {
+      if (localda.a(Boolean.valueOf(bool1), Boolean.valueOf(bool2)).b() == 0) {
         break label280;
       }
     }
@@ -193,10 +193,10 @@ public class ChannelView
   {
     if (paramBoolean)
     {
-      avh.a(e, 0);
+      awf.a(e, 0);
       return;
     }
-    avh.a(e, 4);
+    awf.a(e, 4);
   }
 }
 

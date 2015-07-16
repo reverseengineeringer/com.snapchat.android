@@ -1,9 +1,9 @@
 import javax.inject.Provider;
 
 public final class yp
-  implements buj<yo>
+  implements bvk<yn>
 {
-  private final Provider<ya> b;
+  private final Provider<aze> b;
   
   static
   {
@@ -15,7 +15,7 @@ public final class yp
     }
   }
   
-  private yp(Provider<ya> paramProvider)
+  private yp(Provider<aze> paramProvider)
   {
     if ((!a) && (paramProvider == null)) {
       throw new AssertionError();
@@ -23,7 +23,7 @@ public final class yp
     b = paramProvider;
   }
   
-  public static buj<yo> a(Provider<ya> paramProvider)
+  public static bvk<yn> a(Provider<aze> paramProvider)
   {
     return new yp(paramProvider);
   }

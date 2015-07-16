@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.verification;
 
-import ajx;
+import akr;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import kv;
+import ln;
 
 final class NewUserPhoneVerificationFragment$1
   implements View.OnClickListener
@@ -14,8 +14,8 @@ final class NewUserPhoneVerificationFragment$1
   public final void onClick(View paramView)
   {
     paramView = a.c;
-    if (ajx.v()) {
-      ScAnalyticsEventEngine.a(new kv());
+    if (akr.v()) {
+      ScAnalyticsEventEngine.a(new ln());
     }
     a.i();
   }

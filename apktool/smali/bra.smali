@@ -1,186 +1,203 @@
-.class public final enum Lbra;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Lbra;
-
-.field public static final enum b:Lbra;
-
-.field public static final enum c:Lbra;
-
-.field public static final enum d:Lbra;
-
-.field private static f:Landroid/util/SparseArray;
-
-.field private static final synthetic g:[Lbra;
+.class public final Lbra;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field e:I
+.field a:Lorg/json/JSONObject;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method private constructor <init>(Lbrv;Ljava/util/List;)V
+    .locals 4
 
     .prologue
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 9
-    new-instance v0, Lbra;
-
-    const-string v1, "MOBILE"
-
-    invoke-direct {v0, v1, v2, v2}, Lbra;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lbra;->a:Lbra;
-
-    .line 10
-    new-instance v0, Lbra;
-
-    const-string v1, "WIFI"
-
-    invoke-direct {v0, v1, v3, v3}, Lbra;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lbra;->b:Lbra;
-
-    .line 11
-    new-instance v0, Lbra;
-
-    const-string v1, "UNKNOWN"
-
-    invoke-direct {v0, v1, v4, v4}, Lbra;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lbra;->c:Lbra;
-
-    .line 12
-    new-instance v0, Lbra;
-
-    const-string v1, "NOT_CONNECTED"
-
-    invoke-direct {v0, v1, v5, v5}, Lbra;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lbra;->d:Lbra;
-
-    .line 8
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lbra;
-
-    sget-object v1, Lbra;->a:Lbra;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lbra;->b:Lbra;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lbra;->c:Lbra;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lbra;->d:Lbra;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lbra;->g:[Lbra;
+    .line 42
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 17
-    new-instance v0, Landroid/util/SparseArray;
+    new-instance v0, Lorg/json/JSONObject;
 
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 18
-    sput-object v0, Lbra;->f:Landroid/util/SparseArray;
+    iput-object v0, p0, Lbra;->a:Lorg/json/JSONObject;
 
-    sget-object v1, Lbra;->a:Lbra;
+    .line 43
+    invoke-interface {p2}, Ljava/util/List;->size()I
 
-    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    .line 47
+    new-instance v1, Lorg/json/JSONArray;
 
-    .line 19
-    sget-object v0, Lbra;->f:Landroid/util/SparseArray;
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
-    sget-object v1, Lbra;->b:Lbra;
+    .line 50
+    new-instance v0, Lorg/json/JSONArray;
 
-    invoke-virtual {v0, v3, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-direct {v0}, Lorg/json/JSONArray;-><init>()V
 
-    .line 20
-    return-void
-.end method
+    .line 51
+    invoke-interface {p1}, Lbrv;->a()Ljava/lang/String;
 
-.method private constructor <init>(Ljava/lang/String;II)V
-    .locals 0
+    move-result-object v2
 
-    .prologue
-    .line 24
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
-    .line 25
-    iput p3, p0, Lbra;->e:I
+    .line 52
+    invoke-interface {p1}, Lbrv;->b()Ljava/lang/String;
 
-    .line 26
-    return-void
-.end method
+    move-result-object v2
 
-.method public static a(I)Lbra;
-    .locals 1
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
-    .prologue
-    .line 33
-    sget-object v0, Lbra;->f:Landroid/util/SparseArray;
+    .line 53
+    invoke-interface {p1}, Lbrv;->c()Ljava/lang/String;
 
-    invoke-virtual {v0, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 54
+    const-string v2, "4.5.4"
+
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 55
+    invoke-interface {p1}, Lbrv;->d()I
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(I)Lorg/json/JSONArray;
+
+    .line 56
+    invoke-virtual {v1, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 59
+    new-instance v0, Lorg/json/JSONArray;
+
+    invoke-direct {v0}, Lorg/json/JSONArray;-><init>()V
+
+    .line 60
+    sget-object v2, Lbuk;->a:Lbuk;
+
+    invoke-virtual {v2}, Lbuk;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 61
+    invoke-interface {p1}, Lbrv;->e()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 62
+    invoke-interface {p1}, Lbrv;->g()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 63
+    invoke-interface {p1}, Lbrv;->f()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 64
+    invoke-interface {p1}, Lbrv;->h()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 65
+    invoke-virtual {v1, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 68
+    new-instance v2, Lorg/json/JSONArray;
+
+    invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
+
+    .line 69
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbra;
+    check-cast v0, Lbtc;
 
-    .line 35
-    if-nez v0, :cond_0
+    .line 70
+    invoke-virtual {v0}, Lbtc;->e()Lorg/json/JSONArray;
 
-    .line 36
-    sget-object v0, Lbra;->c:Lbra;
+    move-result-object v0
 
-    .line 39
+    .line 71
+    invoke-virtual {v2, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    goto :goto_0
+
+    .line 73
     :cond_0
-    return-object v0
+    invoke-virtual {v1, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 76
+    iget-object v0, p0, Lbra;->a:Lorg/json/JSONObject;
+
+    const-string v2, "d"
+
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 77
+    return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lbra;
-    .locals 1
+.method public static a(Lbrv;Ljava/util/List;)Lbra;
+    .locals 4
 
     .prologue
-    .line 8
-    const-class v0, Lbra;
+    .line 28
+    const/4 v1, 0x0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 31
+    :try_start_0
+    new-instance v0, Lbra;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Lbra;-><init>(Lbrv;Ljava/util/List;)V
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    check-cast v0, Lbra;
-
+    .line 34
+    :goto_0
     return-object v0
-.end method
 
-.method public static values()[Lbra;
-    .locals 1
+    .line 32
+    :catch_0
+    move-exception v0
 
-    .prologue
-    .line 8
-    sget-object v0, Lbra;->g:[Lbra;
+    .line 33
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, [Lbra;->clone()Ljava/lang/Object;
+    const-string v3, "Unable to generate APM request\'s JSON: "
 
-    move-result-object v0
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    check-cast v0, [Lbra;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    return-object v0
+    move-object v0, v1
+
+    invoke-static {}, Lbue;->e()V
+
+    goto :goto_0
 .end method

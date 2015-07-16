@@ -1,10 +1,10 @@
 package xyz.danoz.recyclerviewfastscroller.vertical;
 
 import android.view.View;
-import cks.a;
+import clt.a;
 
 final class VerticalRecyclerViewFastScroller$2
-  implements cks.a
+  implements clt.a
 {
   VerticalRecyclerViewFastScroller$2(VerticalRecyclerViewFastScroller paramVerticalRecyclerViewFastScroller) {}
   

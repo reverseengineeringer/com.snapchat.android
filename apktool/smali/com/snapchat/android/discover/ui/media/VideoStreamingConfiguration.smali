@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public final b:Lajt;
+.field public final b:Lakn;
 
 
 # direct methods
@@ -41,17 +41,17 @@
 
     .prologue
     .line 33
-    invoke-static {}, Lajt;->a()Lajt;
+    invoke-static {}, Lakn;->a()Lakn;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;-><init>(Lajt;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;-><init>(Lakn;)V
 
     .line 34
     return-void
 .end method
 
-.method private constructor <init>(Lajt;)V
+.method private constructor <init>(Lakn;)V
     .locals 0
 
     .prologue
@@ -59,7 +59,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
-    iput-object p1, p0, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;->b:Lajt;
+    iput-object p1, p0, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;->b:Lakn;
 
     .line 39
     return-void
@@ -68,11 +68,11 @@
 
 # virtual methods
 .method public final a()Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration$StreamingMode;
-    .locals 6
+    .locals 4
 
     .prologue
     .line 48
-    iget-object v0, p0, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;->b:Lajt;
+    iget-object v0, p0, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;->b:Lakn;
 
     const-string v1, "STREAMING"
 
@@ -80,7 +80,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2, v3}, Lajt;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2, v3}, Lakn;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -107,23 +107,17 @@
     move-exception v0
 
     .line 53
-    const-string v2, "VideoStreamingConfiguration"
+    const/4 v2, 0x2
 
-    const-string v3, "Invalid streaming mode %s (%s)"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x2
+    const/4 v3, 0x0
 
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    aput-object v1, v4, v5
+    aput-object v1, v2, v3
 
     const/4 v1, 0x1
 
-    aput-object v0, v4, v1
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v2, v1
 
     .line 54
     sget-object v0, Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration$StreamingMode;->HLS:Lcom/snapchat/android/discover/ui/media/VideoStreamingConfiguration$StreamingMode;

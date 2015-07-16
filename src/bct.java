@@ -1,12 +1,4 @@
-public final class bct
-{
-  public final ajr mStorySnap;
-  
-  public bct(ajr paramajr)
-  {
-    mStorySnap = paramajr;
-  }
-}
+public final class bct {}
 
 /* Location:
  * Qualified Name:     bct

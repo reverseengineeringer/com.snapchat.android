@@ -1,35 +1,11 @@
-abstract class cfj
-  extends cfm
-  implements cfe
-{
-  Class[] a;
-  String[] b;
-  Class[] c;
-  
-  cfj(int paramInt, String paramString, Class paramClass, Class[] paramArrayOfClass1, String[] paramArrayOfString, Class[] paramArrayOfClass2)
-  {
-    super(paramInt, paramString, paramClass);
-    a = paramArrayOfClass1;
-    b = paramArrayOfString;
-    c = paramArrayOfClass2;
-  }
-  
-  public final Class[] a()
-  {
-    if (a == null) {
-      a = c(3);
-    }
-    return a;
-  }
-  
-  public final Class[] b()
-  {
-    if (c == null) {
-      c = c(5);
-    }
-    return c;
-  }
-}
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target({java.lang.annotation.ElementType.METHOD})
+public @interface cfj {}
 
 /* Location:
  * Qualified Name:     cfj

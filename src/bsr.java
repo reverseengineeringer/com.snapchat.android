@@ -1,35 +1,33 @@
-import java.net.URL;
-import java.util.Map;
+import java.io.File;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-final class bsr
-  extends bss
+public final class bsr
+  extends bsj
 {
-  private brk a;
-  private brk b;
-  private bqu c;
-  private URL d;
-  private String e;
-  private bsi f;
-  
-  bsr(brk parambrk1, brk parambrk2, bqu parambqu, URL paramURL, bsi parambsi)
+  private bsr(File paramFile)
   {
-    String str = a;
-    b = parambrk1;
-    a = parambrk2;
-    c = parambqu;
-    d = paramURL;
-    e = a;
-    f = parambsi;
+    super(paramFile);
   }
   
-  public final void a()
+  public final Object a()
   {
-    a.a(b);
-    bsg localbsg = new bsg(c);
-    String str = e;
-    brk localbrk = b;
-    a.put(str, brga);
-    new bsu(localbsg, new bsm(d), true, f).run();
+    try
+    {
+      JSONObject localJSONObject = new JSONObject((String)super.a());
+      return localJSONObject;
+    }
+    catch (JSONException localJSONException) {}
+    return null;
+  }
+  
+  public static final class a
+    extends bsy
+  {
+    public final bsj a(File paramFile)
+    {
+      return new bsr(paramFile, (byte)0);
+    }
   }
 }
 

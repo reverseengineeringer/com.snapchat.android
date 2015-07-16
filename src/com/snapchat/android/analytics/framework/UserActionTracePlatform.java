@@ -1,22 +1,22 @@
 package com.snapchat.android.analytics.framework;
 
 import android.app.Activity;
-import azk;
-import cgb;
-import cgc;
+import baj;
+import chc;
+import chd;
 import java.util.Map;
 
 public class UserActionTracePlatform
   implements AnalyticsPlatform
 {
-  public final void a(@cgb Activity paramActivity) {}
+  public final void a(@chc Activity paramActivity) {}
   
-  public final void a(@cgb String paramString, @cgc Map<String, Object> paramMap1, @cgc Map<String, Object> paramMap2, @cgc Map<String, Long> paramMap3, @cgc Map<String, Long> paramMap4)
+  public final void a(@chc String paramString, @chd Map<String, Object> paramMap1, @chd Map<String, Object> paramMap2, @chd Map<String, Long> paramMap3, @chd Map<String, Long> paramMap4)
   {
-    azk.a(paramString);
+    baj.a(paramString);
   }
   
-  public final void b(@cgb Activity paramActivity) {}
+  public final void b(@chc Activity paramActivity) {}
 }
 
 /* Location:

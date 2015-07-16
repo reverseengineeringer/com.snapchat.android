@@ -1,75 +1,171 @@
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.Proxy.Type;
+import java.net.ProxySelector;
+import java.net.SocketException;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLProtocolException;
 
 public final class boe
 {
-  public final Object a;
-  public boolean b = true;
-  private final Method c;
-  private final int d;
+  final bmh a;
+  final URI b;
+  final bnp c;
+  Proxy d;
+  InetSocketAddress e;
+  bmr f;
+  List<Proxy> g = Collections.emptyList();
+  int h;
+  List<InetSocketAddress> i = Collections.emptyList();
+  int j;
+  List<bmr> k = Collections.emptyList();
+  int l;
+  final List<bnf> m = new ArrayList();
+  private final bnm n;
+  private final bmz o;
+  private final bnb p;
   
-  boe(Object paramObject, Method paramMethod)
+  public boe(bmh parambmh, URI paramURI, bmz parambmz, bnb parambnb)
   {
-    if (paramObject == null) {
-      throw new NullPointerException("EventProducer target cannot be null.");
+    a = parambmh;
+    b = paramURI;
+    o = parambmz;
+    c = bnj.b.b(parambmz);
+    n = bnj.b.c(parambmz);
+    p = parambnb;
+    parambmh = a;
+    if (parambmh != null) {
+      g = Collections.singletonList(parambmh);
     }
-    if (paramMethod == null) {
-      throw new NullPointerException("EventProducer method cannot be null.");
-    }
-    a = paramObject;
-    c = paramMethod;
-    paramMethod.setAccessible(true);
-    d = ((paramMethod.hashCode() + 31) * 31 + paramObject.hashCode());
-  }
-  
-  public final Object a()
-  {
-    if (!b) {
-      throw new IllegalStateException(toString() + " has been invalidated and can no longer produce events.");
-    }
-    try
+    for (;;)
     {
-      Object localObject = c.invoke(a, new Object[0]);
-      return localObject;
-    }
-    catch (IllegalAccessException localIllegalAccessException)
-    {
-      throw new AssertionError(localIllegalAccessException);
-    }
-    catch (InvocationTargetException localInvocationTargetException)
-    {
-      if ((localInvocationTargetException.getCause() instanceof Error)) {
-        throw ((Error)localInvocationTargetException.getCause());
+      h = 0;
+      return;
+      g = new ArrayList();
+      parambmh = o.j.select(paramURI);
+      if (parambmh != null) {
+        g.addAll(parambmh);
       }
-      throw localInvocationTargetException;
+      g.removeAll(Collections.singleton(Proxy.NO_PROXY));
+      g.add(Proxy.NO_PROXY);
     }
   }
   
-  public final boolean equals(Object paramObject)
+  public final void a(bnf parambnf, IOException paramIOException)
   {
-    if (this == paramObject) {}
-    do
+    if ((b.type() != Proxy.Type.DIRECT) && (a.k != null)) {
+      a.k.connectFailed(b, b.address(), paramIOException);
+    }
+    c.a(parambnf);
+    if ((!(paramIOException instanceof SSLHandshakeException)) && (!(paramIOException instanceof SSLProtocolException))) {
+      while (l < k.size())
+      {
+        parambnf = k;
+        int i1 = l;
+        l = (i1 + 1);
+        parambnf = (bmr)parambnf.get(i1);
+        boolean bool = a(parambnf);
+        parambnf = new bnf(a, d, e, parambnf, bool);
+        c.a(parambnf);
+      }
+    }
+  }
+  
+  final void a(Proxy paramProxy)
+  {
+    i = new ArrayList();
+    int i1;
+    InetSocketAddress localInetSocketAddress;
+    if ((paramProxy.type() == Proxy.Type.DIRECT) || (paramProxy.type() == Proxy.Type.SOCKS))
     {
-      return true;
-      if (paramObject == null) {
-        return false;
+      paramProxy = a.b;
+      i1 = bnq.a(b);
+      if ((i1 <= 0) || (i1 > 65535)) {
+        throw new SocketException("No route to " + paramProxy + ":" + i1 + "; port is out of range");
       }
-      if (getClass() != paramObject.getClass()) {
-        return false;
+    }
+    else
+    {
+      paramProxy = paramProxy.address();
+      if (!(paramProxy instanceof InetSocketAddress)) {
+        throw new IllegalArgumentException("Proxy.address() is not an InetSocketAddress: " + paramProxy.getClass());
       }
-      paramObject = (boe)paramObject;
-    } while ((c.equals(c)) && (a == a));
-    return false;
+      localInetSocketAddress = (InetSocketAddress)paramProxy;
+      paramProxy = localInetSocketAddress.getAddress();
+      if (paramProxy == null) {}
+      for (paramProxy = localInetSocketAddress.getHostName();; paramProxy = paramProxy.getHostAddress())
+      {
+        i1 = localInetSocketAddress.getPort();
+        break;
+      }
+    }
+    paramProxy = n.a(paramProxy);
+    int i3 = paramProxy.length;
+    int i2 = 0;
+    while (i2 < i3)
+    {
+      localInetSocketAddress = paramProxy[i2];
+      i.add(new InetSocketAddress(localInetSocketAddress, i1));
+      i2 += 1;
+    }
+    j = 0;
   }
   
-  public final int hashCode()
+  public final boolean a()
   {
-    return d;
+    return h < g.size();
   }
   
-  public final String toString()
+  final boolean a(bmr parambmr)
   {
-    return "[EventProducer " + c + "]";
+    boolean bool2 = false;
+    boolean bool1 = bool2;
+    if (parambmr != k.get(0))
+    {
+      bool1 = bool2;
+      if (d) {
+        bool1 = true;
+      }
+    }
+    return bool1;
+  }
+  
+  public final boolean b()
+  {
+    return j < i.size();
+  }
+  
+  final void c()
+  {
+    k = new ArrayList();
+    List localList = a.j;
+    int i2 = localList.size();
+    int i1 = 0;
+    while (i1 < i2)
+    {
+      bmr localbmr = (bmr)localList.get(i1);
+      if (p.e() == d) {
+        k.add(localbmr);
+      }
+      i1 += 1;
+    }
+    l = 0;
+  }
+  
+  public final boolean d()
+  {
+    return l < k.size();
+  }
+  
+  public final boolean e()
+  {
+    return !m.isEmpty();
   }
 }
 

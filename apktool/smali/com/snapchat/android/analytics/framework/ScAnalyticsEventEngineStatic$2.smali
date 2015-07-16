@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Llt;)V
+    value = Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lml;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,18 +18,18 @@
 
 
 # instance fields
-.field final synthetic a:Llt;
+.field final synthetic a:Lml;
 
 .field final synthetic b:J
 
 
 # direct methods
-.method constructor <init>(Llt;J)V
+.method constructor <init>(Lml;J)V
     .locals 0
 
     .prologue
     .line 109
-    iput-object p1, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;->a:Llt;
+    iput-object p1, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;->a:Lml;
 
     iput-wide p2, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;->b:J
 
@@ -45,7 +45,7 @@
 
     .prologue
     .line 113
-    iget-object v0, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;->a:Llt;
+    iget-object v0, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;->a:Lml;
 
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->d()Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine$UserPropertiesInterface;
 
@@ -55,14 +55,14 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Llt;->userId:Ljava/lang/String;
+    iput-object v1, v0, Lml;->userId:Ljava/lang/String;
 
     .line 114
-    iget-object v0, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;->a:Llt;
+    iget-object v0, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;->a:Lml;
 
     iget-wide v2, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$2;->b:J
 
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lhk;J)J
+    invoke-static {v0, v2, v3}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->a(Lht;J)J
 
     .line 115
     return-void

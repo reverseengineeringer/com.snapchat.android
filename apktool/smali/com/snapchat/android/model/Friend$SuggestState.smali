@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    .line 110
+    .line 111
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestState;
 
     const-string v1, "NOT_SUGGESTION"
@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->NOT_SUGGESTION:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    .line 111
+    .line 112
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestState;
 
     const-string v1, "PENDING"
@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->PENDING:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    .line 112
+    .line 113
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestState;
 
     const-string v1, "FAILED"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->FAILED:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    .line 113
+    .line 114
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestState;
 
     const-string v1, "EXISTS"
@@ -90,7 +90,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->EXISTS:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    .line 114
+    .line 115
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestState;
 
     const-string v1, "DOES_NOT_EXIST"
@@ -99,7 +99,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->DOES_NOT_EXIST:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    .line 115
+    .line 116
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestState;
 
     const-string v1, "ADDRESS_BOOK"
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->ADDRESS_BOOK:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    .line 109
+    .line 110
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/snapchat/android/model/Friend$SuggestState;
@@ -155,7 +155,7 @@
     .end annotation
 
     .prologue
-    .line 109
+    .line 110
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 110
     const-class v0, Lcom/snapchat/android/model/Friend$SuggestState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -181,7 +181,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 110
     sget-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->$VALUES:[Lcom/snapchat/android/model/Friend$SuggestState;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/model/Friend$SuggestState;->clone()Ljava/lang/Object;

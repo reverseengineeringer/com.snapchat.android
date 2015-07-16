@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 296
+    .line 306
     iput-object p1, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     iput p2, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$2;->a:I
@@ -44,7 +44,9 @@
     .locals 3
 
     .prologue
-    .line 299
+    const/4 v2, 0x0
+
+    .line 309
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;->a(Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;)Landroid/support/v7/widget/RecyclerView;
@@ -53,13 +55,16 @@
 
     iget v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$2;->a:I
 
-    const/4 v2, 0x0
-
     invoke-virtual {v0, v1, v2}, Landroid/support/v7/widget/RecyclerView;->a(IZ)Landroid/support/v7/widget/RecyclerView$s;
 
     move-result-object v0
 
-    .line 300
+    .line 310
+    iget-object v1, v0, Landroid/support/v7/widget/RecyclerView$s;->a:Landroid/view/View;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->performHapticFeedback(I)Z
+
+    .line 311
     iget-object v1, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$2;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-static {v1}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;->b(Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;)Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$c;
@@ -68,6 +73,6 @@
 
     invoke-interface {v1, v0}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$c;->g(Landroid/support/v7/widget/RecyclerView$s;)V
 
-    .line 301
+    .line 312
     return-void
 .end method

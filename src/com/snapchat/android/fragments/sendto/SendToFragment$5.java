@@ -2,11 +2,11 @@ package com.snapchat.android.fragments.sendto;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.addfriends.AddFriendsMenuFragment;
 import com.squareup.otto.Bus;
-import no;
+import of;
 
 final class SendToFragment$5
   implements View.OnClickListener
@@ -21,7 +21,7 @@ final class SendToFragment$5
     paramView = SendToFragment.a(a);
     paramView.a("add_friend");
     paramView.c();
-    ban.a().a(new bdw(new AddFriendsMenuFragment()));
+    bbo.a().a(new bev(new AddFriendsMenuFragment()));
   }
 }
 

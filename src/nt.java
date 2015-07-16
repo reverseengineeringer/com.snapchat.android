@@ -1,15 +1,12 @@
-import android.os.Build;
-import android.os.Build.VERSION;
-import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
-import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper.TranscodingEnabled;
+import java.util.HashMap;
+import java.util.Map;
 
-public final class nt
-  extends Exception
+public class nt
 {
-  public nt(aue paramaue)
-  {
-    super(TranscodingPreferencesWrapper.b().name() + "," + paramaue.b() + "x" + paramaue.a() + "," + Build.MODEL + "," + Build.VERSION.SDK_INT);
-  }
+  public static final String TAG = nt.class.getName();
+  public final Map<String, nu> mData = new HashMap();
+  public long mGeofilterIndexCount;
+  public long mGeofilterIndexPos;
 }
 
 /* Location:

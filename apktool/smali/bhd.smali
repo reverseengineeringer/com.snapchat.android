@@ -1,62 +1,16 @@
 .class public final Lbhd;
-.super Ljava/lang/Object;
+.super Lbgm;
 .source "SourceFile"
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String; = "MediaSourceFactory"
+
+
 # instance fields
-.field protected conversationMessages:Lbhe;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "conversation_messages"
-    .end annotation
-.end field
+.field private final mContext:Landroid/content/Context;
 
-.field protected conversationState:Lbhn;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "conversation_state"
-    .end annotation
-.end field
-
-.field protected id:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "id"
-    .end annotation
-.end field
-
-.field protected iterToken:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "iter_token"
-    .end annotation
-.end field
-
-.field protected lastCashTransaction:Lbhc;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "last_cash_transaction"
-    .end annotation
-.end field
-
-.field protected lastChatActions:Lbid;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "last_chat_actions"
-    .end annotation
-.end field
-
-.field protected lastInteractionTs:Ljava/lang/Long;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "last_interaction_ts"
-    .end annotation
-.end field
-
-.field protected lastSnap:Lbhy;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "last_snap"
-    .end annotation
-.end field
-
-.field protected participants:Ljava/util/List;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "participants"
-    .end annotation
-
+.field private mDecryptedSnapImageKeysToRemove:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -67,519 +21,361 @@
     .end annotation
 .end field
 
-.field protected pendingChatsFor:Ljava/util/List;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "pending_chats_for"
-    .end annotation
-
+.field public mDecryptedSnapVideosToRelease:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
             "<",
-            "Ljava/lang/String;",
+            "Lajl;",
             ">;"
         }
     .end annotation
 .end field
 
-.field protected pendingReceivedSnaps:Ljava/util/List;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "pending_received_snaps"
-    .end annotation
+.field public final mImageTransformationMatrix:Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;
 
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhy;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final mRandom:Ljava/util/Random;
+
+.field public final mSnapVideoDecryptor:Laxx;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 3
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 47
+    new-instance v0, Ljava/util/Random;
 
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
+
+    new-instance v1, Laxx;
+
+    invoke-direct {v1}, Laxx;-><init>()V
+
+    new-instance v2, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;
+
+    invoke-direct {v2}, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;-><init>()V
+
+    invoke-direct {p0, p1, v0, v1, v2}, Lbhd;-><init>(Landroid/content/Context;Ljava/util/Random;Laxx;Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;)V
+
+    .line 48
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;Ljava/util/Random;Laxx;Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;)V
+    .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/util/Random;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Laxx;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 53
+    invoke-direct {p0}, Lbgm;-><init>()V
+
+    .line 43
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lbhd;->mDecryptedSnapVideosToRelease:Ljava/util/List;
+
+    .line 44
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lbhd;->mDecryptedSnapImageKeysToRemove:Ljava/util/List;
+
+    .line 54
+    if-nez p1, :cond_0
+
+    .line 55
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "context is null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 58
+    :cond_0
+    iput-object p1, p0, Lbhd;->mContext:Landroid/content/Context;
+
+    .line 59
+    iput-object p2, p0, Lbhd;->mRandom:Ljava/util/Random;
+
+    .line 60
+    iput-object p3, p0, Lbhd;->mSnapVideoDecryptor:Laxx;
+
+    .line 61
+    iput-object p4, p0, Lbhd;->mImageTransformationMatrix:Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;
+
+    .line 62
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbhe;)Lbhd;
-    .locals 0
+.method public final a(Lakl;)Lcom/snapchat/videotranscoder/task/MediaSource;
+    .locals 4
+    .param p1    # Lakl;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 219
-    iput-object p1, p0, Lbhd;->conversationMessages:Lbhe;
+    .line 115
+    iget-object v0, p0, Lbhd;->mContext:Landroid/content/Context;
 
-    .line 220
-    return-object p0
-.end method
+    invoke-virtual {p1, v0}, Lakl;->a(Landroid/content/Context;)Landroid/graphics/Bitmap;
 
-.method public final a()Ljava/lang/String;
-    .locals 1
+    move-result-object v0
 
-    .prologue
-    .line 71
-    iget-object v0, p0, Lbhd;->id:Ljava/lang/String;
+    .line 116
+    if-nez v0, :cond_0
 
-    return-object v0
-.end method
+    .line 117
+    new-instance v0, Lcom/snapchat/videotranscoder/task/SetupException;
 
-.method public final b()Lbhy;
-    .locals 1
+    const-string v1, "Bitmap was null"
 
-    .prologue
-    .line 107
-    iget-object v0, p0, Lbhd;->lastSnap:Lbhy;
+    invoke-direct {v0, v1}, Lcom/snapchat/videotranscoder/task/SetupException;-><init>(Ljava/lang/String;)V
 
-    return-object v0
-.end method
+    throw v0
 
-.method public final c()Z
-    .locals 1
-
-    .prologue
-    .line 111
-    iget-object v0, p0, Lbhd;->lastSnap:Lbhy;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
+    .line 121
     :cond_0
-    const/4 v0, 0x0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    goto :goto_0
-.end method
+    const-string v2, "SaveStoryToGalleryImage"
 
-.method public final d()Lbid;
-    .locals 1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .prologue
+    iget-object v2, p0, Lbhd;->mRandom:Ljava/util/Random;
+
+    invoke-virtual {v2}, Ljava/util/Random;->nextLong()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 124
+    :try_start_0
+    sget-object v2, Laxo;->SAVE_STORY_TO_GALLERY_IMAGE_CACHE:Laxn;
+
+    sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
+
+    invoke-virtual {v2, v1, v0, v3}, Laxn;->a(Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap$CompressFormat;)V
+
     .line 125
-    iget-object v0, p0, Lbhd;->lastChatActions:Lbid;
+    iget-object v0, p0, Lbhd;->mDecryptedSnapImageKeysToRemove:Ljava/util/List;
 
-    return-object v0
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Laxq; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 130
+    sget-object v0, Laxo;->SAVE_STORY_TO_GALLERY_IMAGE_CACHE:Laxn;
+
+    invoke-virtual {v0, v1}, Laxn;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 131
+    if-nez v0, :cond_1
+
+    .line 132
+    new-instance v0, Lcom/snapchat/videotranscoder/task/SetupException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Key not found in cache: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/snapchat/videotranscoder/task/SetupException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 126
+    :catch_0
+    move-exception v0
+
+    .line 127
+    new-instance v1, Lcom/snapchat/videotranscoder/task/SetupException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "External storage not available to write bitmap: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Laxq;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Lcom/snapchat/videotranscoder/task/SetupException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+
+    .line 135
+    :cond_1
+    new-instance v1, Lcom/snapchat/videotranscoder/task/ImageFileMediaSource;
+
+    invoke-virtual {p1}, Lakl;->G()D
+
+    move-result-wide v2
+
+    double-to-int v2, v2
+
+    mul-int/lit16 v2, v2, 0x3e8
+
+    int-to-long v2, v2
+
+    invoke-direct {v1, v0, v2, v3}, Lcom/snapchat/videotranscoder/task/ImageFileMediaSource;-><init>(Ljava/lang/String;J)V
+
+    return-object v1
 .end method
 
-.method public final e()Z
-    .locals 1
-
-    .prologue
-    .line 129
-    iget-object v0, p0, Lbhd;->lastChatActions:Lbid;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public final c()V
     .locals 3
 
     .prologue
-    .line 291
-    if-ne p1, p0, :cond_0
+    .line 102
+    iget-object v0, p0, Lbhd;->mDecryptedSnapImageKeysToRemove:Ljava/util/List;
 
-    .line 292
-    const/4 v0, 0x1
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    .line 298
+    move-result-object v1
+
     :goto_0
-    return v0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 294
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 103
+    sget-object v2, Laxo;->SAVE_STORY_TO_GALLERY_IMAGE_CACHE:Laxn;
+
+    invoke-virtual {v2, v0}, Laxn;->c(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 106
     :cond_0
-    instance-of v0, p1, Lbhd;
+    iget-object v0, p0, Lbhd;->mDecryptedSnapVideosToRelease:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lajl;
+
+    .line 107
+    invoke-virtual {v0}, Lajl;->e()V
+
+    goto :goto_1
+
+    .line 110
+    :cond_1
+    iget-object v0, p0, Lbhd;->mDecryptedSnapImageKeysToRemove:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 111
+    iget-object v0, p0, Lbhd;->mDecryptedSnapVideosToRelease:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 112
+    return-void
+.end method
+
+.method public final finalize()V
+    .locals 1
+
+    .prologue
+    .line 66
+    iget-object v0, p0, Lbhd;->mDecryptedSnapImageKeysToRemove:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbhd;->mDecryptedSnapVideosToRelease:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
 
     if-nez v0, :cond_1
 
-    .line 295
-    const/4 v0, 0x0
+    .line 67
+    :cond_0
+    invoke-virtual {p0}, Lbhd;->e()V
 
-    goto :goto_0
-
-    .line 297
+    .line 70
     :cond_1
-    check-cast p1, Lbhd;
-
-    .line 298
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
-
-    iget-object v1, p0, Lbhd;->id:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhd;->id:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->participants:Ljava/util/List;
-
-    iget-object v2, p1, Lbhd;->participants:Ljava/util/List;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->lastSnap:Lbhy;
-
-    iget-object v2, p1, Lbhd;->lastSnap:Lbhy;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->lastChatActions:Lbid;
-
-    iget-object v2, p1, Lbhd;->lastChatActions:Lbid;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->lastCashTransaction:Lbhc;
-
-    iget-object v2, p1, Lbhd;->lastCashTransaction:Lbhc;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->lastInteractionTs:Ljava/lang/Long;
-
-    iget-object v2, p1, Lbhd;->lastInteractionTs:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->pendingChatsFor:Ljava/util/List;
-
-    iget-object v2, p1, Lbhd;->pendingChatsFor:Ljava/util/List;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->pendingReceivedSnaps:Ljava/util/List;
-
-    iget-object v2, p1, Lbhd;->pendingReceivedSnaps:Ljava/util/List;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->conversationMessages:Lbhe;
-
-    iget-object v2, p1, Lbhd;->conversationMessages:Lbhe;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->iterToken:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhd;->iterToken:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->conversationState:Lbhn;
-
-    iget-object v2, p1, Lbhd;->conversationState:Lbhn;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final f()Lbhc;
-    .locals 1
-
-    .prologue
-    .line 143
-    iget-object v0, p0, Lbhd;->lastCashTransaction:Lbhc;
-
-    return-object v0
-.end method
-
-.method public final g()Z
-    .locals 1
-
-    .prologue
-    .line 147
-    iget-object v0, p0, Lbhd;->lastCashTransaction:Lbhc;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final h()Ljava/lang/Long;
-    .locals 1
-
-    .prologue
-    .line 161
-    iget-object v0, p0, Lbhd;->lastInteractionTs:Ljava/lang/Long;
-
-    return-object v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .prologue
-    .line 274
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
-
-    iget-object v1, p0, Lbhd;->id:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->participants:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->lastSnap:Lbhy;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->lastChatActions:Lbid;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->lastCashTransaction:Lbhc;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->lastInteractionTs:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->pendingChatsFor:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->pendingReceivedSnaps:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->conversationMessages:Lbhe;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->iterToken:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhd;->conversationState:Lbhn;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final i()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lbhy;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 206
-    iget-object v0, p0, Lbhd;->pendingReceivedSnaps:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public final j()Z
-    .locals 1
-
-    .prologue
-    .line 210
-    iget-object v0, p0, Lbhd;->pendingReceivedSnaps:Ljava/util/List;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final k()Lbhe;
-    .locals 1
-
-    .prologue
-    .line 224
-    iget-object v0, p0, Lbhd;->conversationMessages:Lbhe;
-
-    return-object v0
-.end method
-
-.method public final l()Z
-    .locals 1
-
-    .prologue
-    .line 228
-    iget-object v0, p0, Lbhd;->conversationMessages:Lbhe;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final m()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 242
-    iget-object v0, p0, Lbhd;->iterToken:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final n()Z
-    .locals 1
-
-    .prologue
-    .line 246
-    iget-object v0, p0, Lbhd;->iterToken:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final o()Lbhn;
-    .locals 1
-
-    .prologue
-    .line 260
-    iget-object v0, p0, Lbhd;->conversationState:Lbhn;
-
-    return-object v0
-.end method
-
-.method public final p()Z
-    .locals 1
-
-    .prologue
-    .line 264
-    iget-object v0, p0, Lbhd;->conversationState:Lbhn;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 269
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

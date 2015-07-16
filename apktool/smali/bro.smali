@@ -1,151 +1,113 @@
 .class public final Lbro;
-.super Ljava/lang/Object;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lbro$w;,
-        Lbro$o;,
-        Lbro$g;,
-        Lbro$t;,
-        Lbro$s;,
-        Lbro$r;,
-        Lbro$m;,
-        Lbro$n;,
-        Lbro$l;,
-        Lbro$j;,
-        Lbro$i;,
-        Lbro$e;,
-        Lbro$a;,
-        Lbro$v;,
-        Lbro$u;,
-        Lbro$q;,
-        Lbro$p;,
-        Lbro$k;,
-        Lbro$y;,
-        Lbro$x;,
-        Lbro$h;,
-        Lbro$f;,
-        Lbro$d;,
-        Lbro$b;,
-        Lbro$c;
-    }
-.end annotation
-
-
-# static fields
-.field private static a:Lbqt;
-
-.field private static b:Landroid/content/Context;
-
-.field private static c:Lbrd;
-
-.field private static d:Lbrr;
+.super Lbrg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 32
-    sput-object v0, Lbro;->a:Lbqt;
-
-    .line 33
-    sput-object v0, Lbro;->b:Landroid/content/Context;
-
-    .line 34
-    sput-object v0, Lbro;->c:Lbrd;
-
-    .line 35
-    sput-object v0, Lbro;->d:Lbrr;
-
-    return-void
-.end method
-
-.method static synthetic a()Lbqt;
-    .locals 1
-
-    .prologue
-    .line 31
-    sget-object v0, Lbro;->a:Lbqt;
-
-    return-object v0
-.end method
-
-.method public static a(Landroid/content/Context;)V
+.method public constructor <init>(Lbrm;)V
     .locals 0
 
     .prologue
-    .line 68
-    sput-object p0, Lbro;->b:Landroid/content/Context;
+    .line 41
+    invoke-direct {p0, p1}, Lbrg;-><init>(Lbrm;)V
 
-    .line 69
+    .line 42
     return-void
 .end method
 
-.method public static a(Lbqt;)V
-    .locals 0
+
+# virtual methods
+.method public final a(Lorg/apache/http/util/CharArrayBuffer;)Z
+    .locals 5
 
     .prologue
-    .line 64
-    sput-object p0, Lbro;->a:Lbqt;
+    const/4 v1, 0x0
 
-    .line 65
-    return-void
-.end method
+    .line 71
+    new-instance v2, Lorg/apache/http/message/ParserCursor;
 
-.method public static a(Lbrd;)V
-    .locals 0
+    invoke-virtual {p1}, Lorg/apache/http/util/CharArrayBuffer;->length()I
 
-    .prologue
+    move-result v0
+
+    invoke-direct {v2, v1, v0}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+
+    .line 72
+    const/4 v0, 0x1
+
     .line 76
-    sput-object p0, Lbro;->c:Lbrd;
+    :try_start_0
+    sget-object v3, Lorg/apache/http/message/BasicLineParser;->DEFAULT:Lorg/apache/http/message/BasicLineParser;
+
+    invoke-virtual {v3, p1, v2}, Lorg/apache/http/message/BasicLineParser;->parseRequestLine(Lorg/apache/http/util/CharArrayBuffer;Lorg/apache/http/message/ParserCursor;)Lorg/apache/http/RequestLine;
+
+    move-result-object v2
 
     .line 77
-    return-void
+    iget-object v3, p0, Lbrg;->a:Lbrm;
+
+    invoke-interface {v2}, Lorg/apache/http/RequestLine;->getMethod()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v2}, Lorg/apache/http/RequestLine;->getUri()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v3, v4, v2}, Lbrm;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Lorg/apache/http/ParseException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 82
+    :goto_0
+    return v0
+
+    .line 79
+    :catch_0
+    move-exception v0
+
+    move v0, v1
+
+    goto :goto_0
 .end method
 
-.method public static a(Lbrr;)V
-    .locals 0
-
-    .prologue
-    .line 72
-    sput-object p0, Lbro;->d:Lbrr;
-
-    .line 73
-    return-void
-.end method
-
-.method static synthetic b()Landroid/content/Context;
+.method public final b()Lbrg;
     .locals 1
 
     .prologue
-    .line 31
-    sget-object v0, Lbro;->b:Landroid/content/Context;
+    .line 51
+    new-instance v0, Lbrn;
+
+    invoke-direct {v0, p0}, Lbrn;-><init>(Lbrg;)V
 
     return-object v0
 .end method
 
-.method static synthetic c()Lbrd;
+.method public final c()Lbrg;
     .locals 1
 
     .prologue
-    .line 31
-    sget-object v0, Lbro;->c:Lbrd;
+    .line 63
+    sget-object v0, Lbrt;->d:Lbrt;
 
     return-object v0
 .end method
 
-.method static synthetic d()Lbrr;
+.method protected final d()I
     .locals 1
 
     .prologue
-    .line 31
-    sget-object v0, Lbro;->d:Lbrr;
+    .line 95
+    const/16 v0, 0x40
 
-    return-object v0
+    return v0
+.end method
+
+.method protected final e()I
+    .locals 1
+
+    .prologue
+    .line 107
+    const/16 v0, 0x800
+
+    return v0
 .end method

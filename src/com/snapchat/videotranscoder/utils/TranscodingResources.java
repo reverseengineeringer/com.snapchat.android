@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Resources.NotFoundException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.R.raw;
 import com.snapchat.videotranscoder.task.SetupException;
 import java.io.IOException;
@@ -19,12 +19,12 @@ public class TranscodingResources
   private final Utils mUtils;
   private String mVertexShader;
   
-  public TranscodingResources(@cgb Context paramContext)
+  public TranscodingResources(@chc Context paramContext)
   {
     this(new RawResourceStringProvider(paramContext), Utils.getInstance());
   }
   
-  protected TranscodingResources(@cgb RawResourceStringProvider paramRawResourceStringProvider, @cgb Utils paramUtils)
+  protected TranscodingResources(@chc RawResourceStringProvider paramRawResourceStringProvider, @chc Utils paramUtils)
   {
     mRawResourceStringProvider = paramRawResourceStringProvider;
     mUtils = paramUtils;

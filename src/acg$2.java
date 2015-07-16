@@ -1,37 +1,14 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.discover.model.DSnapPage;
-import com.snapchat.android.discover.model.MediaState;
-import java.util.Iterator;
-import java.util.List;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 
 final class acg$2
-  implements adj.b
+  implements DialogInterface.OnClickListener
 {
   acg$2(acg paramacg) {}
   
-  @avl
-  public final void a(@cgb List<DSnapPage> paramList)
+  public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    paramList = paramList.iterator();
-    boolean bool = false;
-    if (paramList.hasNext())
-    {
-      DSnapPage localDSnapPage = (DSnapPage)paramList.next();
-      if ((l != MediaState.SUCCESS) || (localDSnapPage.b() == null) || (a.c.e(localDSnapPage.b()))) {
-        break label112;
-      }
-      Timber.e("EditionMediaLoader", "Resetting media state for %s because it is not in the cache %s", new Object[] { localDSnapPage });
-      bool |= a.b.a(localDSnapPage, MediaState.NOT_STARTED);
-    }
-    label112:
-    for (;;)
-    {
-      break;
-      if (bool) {
-        a.a.b();
-      }
-      return;
-    }
+    paramDialogInterface.cancel();
   }
 }
 

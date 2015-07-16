@@ -2,14 +2,14 @@ package com.snapchat.android.stories.ui;
 
 import android.content.Context;
 import android.content.res.Resources;
-import aom;
-import aom.a;
-import aqb;
+import api;
+import api.a;
+import ara;
 import com.snapchat.android.notification.AndroidNotificationManager;
 import com.squareup.otto.Bus;
 
 final class MyStoryView$1$1
-  extends aqb
+  extends ara
 {
   MyStoryView$1$1(MyStoryView.1 param1, Context paramContext, String paramString1, String paramString2, String paramString3)
   {
@@ -18,7 +18,7 @@ final class MyStoryView$1$1
   
   protected final void a()
   {
-    MyStoryView.e(a.a).a(MyStoryView.b(a.a), new aom.a()
+    MyStoryView.e(a.a).a(MyStoryView.b(a.a), new api.a()
     {
       public final void a()
       {
@@ -32,7 +32,7 @@ final class MyStoryView$1$1
       {
         String str = MyStoryView.a(a.a).getResources().getString(2131493109);
         MyStoryView.c(a.a).a(MyStoryView.a(str, -16777216));
-        MyStoryView.d(a.a).a();
+        MyStoryView.d(a.a).c();
       }
       
       public final void d()

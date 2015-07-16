@@ -1,44 +1,28 @@
-import android.content.Context;
-import android.view.View;
-import android.widget.ImageView;
+import android.view.MotionEvent;
+import com.snapchat.android.ui.snapeditormotion.SwipeHandlerType;
 
 public final class arz
-  extends asc
+  implements arx
 {
-  private final aqu b;
-  
-  public arz(aqu paramaqu)
+  public final SwipeHandlerType a(aqd paramaqd, ase paramase, int paramInt)
   {
-    b = paramaqu;
-  }
-  
-  public final String a()
-  {
-    return "Battery";
-  }
-  
-  public final void a(int paramInt, Context paramContext)
-  {
-    ImageView localImageView = (ImageView)b.a.findViewById(2131361910);
-    float f = avh.a(57.0F, paramContext);
-    if (paramInt == 2)
+    if (paramInt == 0)
     {
-      localImageView.setTranslationY(f);
-      return;
+      paramase.a(0);
+      paramaqd.a(c);
+      return SwipeHandlerType.SWIPE_STARTED;
     }
-    localImageView.setTranslationY(0.0F);
+    return null;
   }
   
-  public final View d()
+  public final SwipeHandlerType a(aqd paramaqd, ase paramase, int paramInt1, int paramInt2)
   {
-    return b.a;
+    return null;
   }
   
-  public final void e()
+  public final SwipeHandlerType a(aqd paramaqd, ase paramase, MotionEvent paramMotionEvent)
   {
-    aqu localaqu = b;
-    b.a(2130968585, a);
-    a = null;
+    return null;
   }
 }
 

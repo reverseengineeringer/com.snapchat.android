@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
+.implements Lbvk;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuj",
+        "Lbvk",
         "<",
-        "Lqy;",
+        "Lqx;",
         ">;"
     }
 .end annotation
@@ -23,23 +23,23 @@
 
 
 # instance fields
-.field private final mReceivingCashManagerProvider:Ljavax/inject/Provider;
+.field private final mScProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lxx;",
+            "Lri;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private final supertypeInjector:Lbuj;
+.field private final mSquareProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbuj",
+            "Ljavax/inject/Provider",
             "<",
-            "Lqv;",
+            "Ltd;",
             ">;"
         }
     .end annotation
@@ -51,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 9
+    .line 8
     const-class v0, Lqz;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -73,27 +73,27 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;)V
+.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lbuj",
+            "Ljavax/inject/Provider",
             "<",
-            "Lqv;",
+            "Lri;",
             ">;",
             "Ljavax/inject/Provider",
             "<",
-            "Lxx;",
+            "Ltd;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 14
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
+    .line 14
     sget-boolean v0, Lqz;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -106,11 +106,11 @@
 
     throw v0
 
-    .line 16
+    .line 15
     :cond_0
-    iput-object p1, p0, Lqz;->supertypeInjector:Lbuj;
+    iput-object p1, p0, Lqz;->mScProvider:Ljavax/inject/Provider;
 
-    .line 17
+    .line 16
     sget-boolean v0, Lqz;->$assertionsDisabled:Z
 
     if-nez v0, :cond_1
@@ -123,39 +123,39 @@
 
     throw v0
 
-    .line 18
+    .line 17
     :cond_1
-    iput-object p2, p0, Lqz;->mReceivingCashManagerProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lqz;->mSquareProvider:Ljavax/inject/Provider;
 
-    .line 19
+    .line 18
     return-void
 .end method
 
-.method public static a(Lbuj;Ljavax/inject/Provider;)Lbuj;
+.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lbuj",
+            "Ljavax/inject/Provider",
             "<",
-            "Lqv;",
+            "Lri;",
             ">;",
             "Ljavax/inject/Provider",
             "<",
-            "Lxx;",
+            "Ltd;",
             ">;)",
-            "Lbuj",
+            "Lbvk",
             "<",
-            "Lqy;",
+            "Lqx;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 31
+    .line 30
     new-instance v0, Lqz;
 
-    invoke-direct {v0, p0, p1}, Lqz;-><init>(Lbuj;Ljavax/inject/Provider;)V
+    invoke-direct {v0, p0, p1}, Lqz;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     return-object v0
 .end method
@@ -166,8 +166,8 @@
     .locals 2
 
     .prologue
-    .line 9
-    check-cast p1, Lqy;
+    .line 8
+    check-cast p1, Lqx;
 
     if-nez p1, :cond_0
 
@@ -180,19 +180,25 @@
     throw v0
 
     :cond_0
-    iget-object v0, p0, Lqz;->supertypeInjector:Lbuj;
-
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lqz;->mReceivingCashManagerProvider:Ljavax/inject/Provider;
+    iget-object v0, p0, Lqz;->mScProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lxx;
+    check-cast v0, Lri;
 
-    iput-object v0, p1, Lqy;->mReceivingCashManager:Lxx;
+    iput-object v0, p1, Lqx;->mScProvider:Lri;
+
+    iget-object v0, p0, Lqz;->mSquareProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ltd;
+
+    iput-object v0, p1, Lqx;->mSquareProvider:Ltd;
 
     return-void
 .end method

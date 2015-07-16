@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/stories/ui/MyStoryView$1$1;
-.super Laqb;
+.super Lara;
 .source "SourceFile"
 
 
@@ -23,10 +23,10 @@
     .locals 0
 
     .prologue
-    .line 109
+    .line 113
     iput-object p1, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
 
-    invoke-direct {p0, p2, p3, p4, p5}, Laqb;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p2, p3, p4, p5}, Lara;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -37,12 +37,12 @@
     .locals 3
 
     .prologue
-    .line 112
+    .line 116
     iget-object v0, p0, Lcom/snapchat/android/stories/ui/MyStoryView$1$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView$1;
 
     iget-object v0, v0, Lcom/snapchat/android/stories/ui/MyStoryView$1;->a:Lcom/snapchat/android/stories/ui/MyStoryView;
 
-    invoke-static {v0}, Lcom/snapchat/android/stories/ui/MyStoryView;->e(Lcom/snapchat/android/stories/ui/MyStoryView;)Laom;
+    invoke-static {v0}, Lcom/snapchat/android/stories/ui/MyStoryView;->e(Lcom/snapchat/android/stories/ui/MyStoryView;)Lapi;
 
     move-result-object v0
 
@@ -58,9 +58,9 @@
 
     invoke-direct {v2, p0}, Lcom/snapchat/android/stories/ui/MyStoryView$1$1$1;-><init>(Lcom/snapchat/android/stories/ui/MyStoryView$1$1;)V
 
-    invoke-virtual {v0, v1, v2}, Laom;->a(Lcom/snapchat/android/model/StorySnapLogbook;Laom$a;)V
+    invoke-virtual {v0, v1, v2}, Lapi;->a(Lcom/snapchat/android/model/StorySnapLogbook;Lapi$a;)V
 
-    .line 136
+    .line 140
     return-void
 .end method
 
@@ -68,6 +68,6 @@
     .locals 0
 
     .prologue
-    .line 141
+    .line 145
     return-void
 .end method

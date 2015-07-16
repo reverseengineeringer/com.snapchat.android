@@ -1,10 +1,8 @@
+import com.snapchat.android.util.chat.SecureChatSession.ConnectionState;
+
 public abstract interface ayc
 {
-  public abstract byte[] a(byte[] paramArrayOfByte);
-  
-  public abstract byte[] b(byte[] paramArrayOfByte);
-  
-  public abstract byte[] b(byte[] paramArrayOfByte, String paramString);
+  public abstract void a(SecureChatSession.ConnectionState paramConnectionState);
 }
 
 /* Location:

@@ -1,53 +1,32 @@
-import android.text.TextUtils;
-import com.snapchat.android.Timber;
-import com.snapchat.android.api2.cash.blockers.BlockerOrder;
-import com.snapchat.android.fragments.cash.SecurityCodeFragment;
-import com.snapchat.android.fragments.cash.SecurityCodeFragment.a;
-import com.snapchat.android.model.CashTransaction;
-import com.squareup.otto.Bus;
+import javax.inject.Provider;
 
 public final class rp
-  extends qv
+  implements bvk<ro>
 {
-  private static final String TAG = "SQInitiationConfirmBlocker";
+  private final Provider<yt> mReceivingCashManagerProvider;
+  private final bvk<rl> supertypeInjector;
   
-  public final void a(@cgb final CashTransaction paramCashTransaction)
+  static
   {
-    Timber.b("SQInitiationConfirmBlocker", "CASH-LOG: ATTEMPT resolve SQInitiationConfirmBlocker transaction_id[%s] recipient[%s] amount [%s]", new Object[] { mTransactionId, mRecipientUsername, paramCashTransaction.a() });
-    if (TextUtils.isEmpty(mSecurityCode))
+    if (!rp.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      final SecurityCodeFragment localSecurityCodeFragment = new SecurityCodeFragment();
-      b = new SecurityCodeFragment.a()
-      {
-        public final void a()
-        {
-          Timber.b("SQInitiationConfirmBlocker", "CASH-LOG: SQInitiationConfirmBlocker SecurityCodeFragment CANCELED", new Object[0]);
-          rp.b(rp.this);
-        }
-        
-        public final void a(@cgb String paramAnonymousString)
-        {
-          Timber.b("SQInitiationConfirmBlocker", "CASH-LOG: SQInitiationConfirmBlocker ENTERED security code", new Object[0]);
-          paramCashTransactionmSecurityCode = paramAnonymousString;
-          localSecurityCodeFragment.l();
-          rp.a(rp.this);
-        }
-        
-        public final void b()
-        {
-          Timber.b("SQInitiationConfirmBlocker", "CASH-LOG: SQInitiationConfirmBlocker SecurityCodeFragment FAILED", new Object[0]);
-          rp.c(rp.this);
-        }
-      };
-      ban.a().a(new bdw(localSecurityCodeFragment));
+      $assertionsDisabled = bool;
       return;
     }
-    a(null, true);
   }
   
-  public final BlockerOrder c()
+  private rp(bvk<rl> parambvk, Provider<yt> paramProvider)
   {
-    return BlockerOrder.SQ_INITIATION_CONFIRM_BLOCKER;
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mReceivingCashManagerProvider = paramProvider;
+  }
+  
+  public static bvk<ro> a(bvk<rl> parambvk, Provider<yt> paramProvider)
+  {
+    return new rp(parambvk, paramProvider);
   }
 }
 

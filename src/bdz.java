@@ -1,4 +1,16 @@
-public final class bdz {}
+public final class bdz
+{
+  public final boolean mIsDoubleTap;
+  public final int mOriginatingFragment;
+  public final String mRecipients;
+  
+  public bdz(String paramString, int paramInt, boolean paramBoolean)
+  {
+    mRecipients = paramString;
+    mOriginatingFragment = paramInt;
+    mIsDoubleTap = paramBoolean;
+  }
+}
 
 /* Location:
  * Qualified Name:     bdz

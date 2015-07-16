@@ -1,66 +1,121 @@
 .class public final Ladk;
-.super Lamd;
+.super Lnd;
 .source "SourceFile"
-
-# interfaces
-.implements Lts$b;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lamd;",
-        "Lts$b",
+        "Lnd",
         "<",
-        "Lbjt;",
+        "Lcom/snapchat/android/discover/model/DSnapPage;",
         ">;"
     }
 .end annotation
 
 
-# instance fields
-.field public a:I
-
-.field private b:Lajv;
-
-.field private final c:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
+# static fields
+.field public static a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 32
-    invoke-static {}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->a()Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
+    .line 27
+    const-string v0, "discover"
 
-    move-result-object v0
+    sput-object v0, Ladk;->a:Ljava/lang/String;
 
-    invoke-direct {p0, p1, v0}, Ladk;-><init>(Landroid/content/Intent;Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;)V
-
-    .line 33
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Intent;Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;)V
-    .locals 1
+.method public constructor <init>(Lcom/snapchat/android/discover/model/DSnapPage;Lnd$a;)V
+    .locals 7
+    .param p1    # Lcom/snapchat/android/discover/model/DSnapPage;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lnd$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/snapchat/android/discover/model/DSnapPage;",
+            "Lnd$a",
+            "<",
+            "Lcom/snapchat/android/discover/model/DSnapPage;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 36
-    invoke-direct {p0, p1}, Lamd;-><init>(Landroid/content/Intent;)V
+    .line 30
+    invoke-static {}, Lna;->a()Lna;
 
-    .line 29
-    const/4 v0, 0x0
+    move-result-object v1
 
-    iput v0, p0, Ladk;->a:I
+    new-instance v2, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
-    .line 37
-    const-class v0, Lbjt;
+    invoke-direct {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
 
-    invoke-virtual {p0, v0, p0}, Ladk;->a(Ljava/lang/Class;Lts$b;)V
+    invoke-static {}, Lama;->a()Lama;
 
+    move-result-object v3
+
+    new-instance v4, Ljava/util/Timer;
+
+    invoke-direct {v4}, Ljava/util/Timer;-><init>()V
+
+    move-object v0, p0
+
+    move-object v5, p1
+
+    move-object v6, p2
+
+    invoke-direct/range {v0 .. v6}, Ladk;-><init>(Lna;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lama;Ljava/util/Timer;Lcom/snapchat/android/discover/model/DSnapPage;Lnd$a;)V
+
+    .line 32
+    return-void
+.end method
+
+.method private constructor <init>(Lna;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lama;Ljava/util/Timer;Lcom/snapchat/android/discover/model/DSnapPage;Lnd$a;)V
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lna;",
+            "Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;",
+            "Lama;",
+            "Ljava/util/Timer;",
+            "Lcom/snapchat/android/discover/model/DSnapPage;",
+            "Lnd$a",
+            "<",
+            "Lcom/snapchat/android/discover/model/DSnapPage;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
     .line 38
-    iput-object p2, p0, Ladk;->c:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
+    move-object v0, p0
+
+    move-object v1, p5
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p6
+
+    invoke-direct/range {v0 .. v6}, Lnd;-><init>(Ljava/lang/Object;Lna;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lama;Ljava/util/Timer;Lnd$a;)V
 
     .line 39
     return-void
@@ -68,115 +123,77 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)V
-    .locals 1
+.method public final a(Ljava/lang/String;)Landroid/os/Bundle;
+    .locals 4
 
     .prologue
-    .line 48
-    invoke-static {p1}, Lajv;->a(Landroid/content/Context;)Lajv;
+    .line 63
+    new-instance v1, Landroid/os/Bundle;
 
-    move-result-object v0
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v0, p0, Ladk;->b:Lajv;
+    .line 64
+    new-instance v2, Lorg/json/JSONObject;
 
-    .line 49
-    invoke-super {p0, p1}, Lamd;->a(Landroid/content/Context;)V
+    invoke-direct {v2, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 50
-    return-void
-.end method
+    .line 66
+    const/4 v0, 0x1
 
-.method public final synthetic a(Ljava/lang/Object;Luc;)V
-    .locals 1
+    .line 67
+    const-string v3, "media_zipped_with_overlay"
 
-    .prologue
-    .line 25
-    check-cast p1, Lbjt;
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    invoke-virtual {p2}, Luc;->d()Z
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 68
+    const-string v0, "media_zipped_with_overlay"
+
+    invoke-virtual {v2, v0}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    if-eqz p1, :cond_0
-
-    if-nez p1, :cond_1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x0
-
-    :goto_1
-    iput v0, p0, Ladk;->a:I
-
-    invoke-static {}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a()Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;
-
-    invoke-static {}, Lajv;->y()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a(Landroid/content/Context;Lbjt;)V
-
+    .line 70
     :cond_0
-    return-void
+    const-string v3, "media_zipped_with_overlay"
 
-    :cond_1
-    invoke-virtual {p1}, Lbjt;->a()Ljava/util/List;
+    invoke-virtual {v1, v3, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    move-result-object v0
+    .line 71
+    const-string v0, "content"
 
-    goto :goto_0
+    const-string v3, "content"
 
-    :cond_2
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v3
 
-    goto :goto_1
+    invoke-virtual {v1, v0, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 72
+    const-string v0, "imp-url"
+
+    const-string v3, "imp-url"
+
+    invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 73
+    return-object v1
 .end method
 
-.method public final b()Ljava/lang/Object;
+.method protected final a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 59
-    const/4 v0, 0x0
+    .line 58
+    sget-object v0, Ladk;->a:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public final c()Lcom/snapchat/android/api2/framework/HttpMethod;
-    .locals 1
-
-    .prologue
-    .line 43
-    sget-object v0, Lcom/snapchat/android/api2/framework/HttpMethod;->GET:Lcom/snapchat/android/api2/framework/HttpMethod;
-
-    return-object v0
-.end method
-
-.method protected final e()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 54
-    iget-object v0, p0, Ladk;->c:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final f()V
-    .locals 0
-
-    .prologue
-    .line 85
-    return-void
 .end method

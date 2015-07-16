@@ -1,12 +1,12 @@
 package com.snapchat.android.util.chat;
 
-import bii;
-import yo;
+import bji;
+import zk;
 
 final class SecureChatService$2
   implements Runnable
 {
-  SecureChatService$2(SecureChatService paramSecureChatService, bii parambii) {}
+  SecureChatService$2(SecureChatService paramSecureChatService, bji parambji) {}
   
   public final void run()
   {

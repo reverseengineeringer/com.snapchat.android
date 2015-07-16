@@ -4,27 +4,39 @@
 
 
 # instance fields
-.field protected id:Ljava/lang/String;
+.field protected adPlacementMetadata:Lbhv;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "id"
+        value = "ad_placement_metadata"
     .end annotation
 .end field
 
-.field protected name:Ljava/lang/String;
+.field protected adType:Ljava/lang/Integer;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "name"
+        value = "ad_type"
     .end annotation
 .end field
 
-.field protected properties:Lbkv;
+.field protected color:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "properties"
+        value = "color"
     .end annotation
 .end field
 
-.field protected type:Ljava/lang/String;
+.field protected dsnapId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "type"
+        value = "dsnap_id"
+    .end annotation
+.end field
+
+.field protected hash:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "hash"
+    .end annotation
+.end field
+
+.field protected url:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "url"
     .end annotation
 .end field
 
@@ -46,18 +58,48 @@
     .locals 1
 
     .prologue
-    .line 78
-    iget-object v0, p0, Lbkw;->type:Ljava/lang/String;
+    .line 48
+    iget-object v0, p0, Lbkw;->url:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final b()Lbkv;
+.method public final b()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 96
-    iget-object v0, p0, Lbkw;->properties:Lbkv;
+    .line 66
+    iget-object v0, p0, Lbkw;->dsnapId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 84
+    iget-object v0, p0, Lbkw;->hash:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 102
+    iget-object v0, p0, Lbkw;->color:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final e()Ljava/lang/Integer;
+    .locals 1
+
+    .prologue
+    .line 120
+    iget-object v0, p0, Lbkw;->adType:Ljava/lang/Integer;
 
     return-object v0
 .end method
@@ -66,63 +108,79 @@
     .locals 3
 
     .prologue
-    .line 120
+    .line 164
     if-ne p1, p0, :cond_0
 
-    .line 121
+    .line 165
     const/4 v0, 0x1
 
-    .line 127
+    .line 171
     :goto_0
     return v0
 
-    .line 123
+    .line 167
     :cond_0
     instance-of v0, p1, Lbkw;
 
     if-nez v0, :cond_1
 
-    .line 124
+    .line 168
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 126
+    .line 170
     :cond_1
     check-cast p1, Lbkw;
 
-    .line 127
+    .line 171
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkw;->id:Ljava/lang/String;
+    iget-object v1, p0, Lbkw;->url:Ljava/lang/String;
 
-    iget-object v2, p1, Lbkw;->id:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbkw;->name:Ljava/lang/String;
-
-    iget-object v2, p1, Lbkw;->name:Ljava/lang/String;
+    iget-object v2, p1, Lbkw;->url:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkw;->type:Ljava/lang/String;
+    iget-object v1, p0, Lbkw;->dsnapId:Ljava/lang/String;
 
-    iget-object v2, p1, Lbkw;->type:Ljava/lang/String;
+    iget-object v2, p1, Lbkw;->dsnapId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkw;->properties:Lbkv;
+    iget-object v1, p0, Lbkw;->hash:Ljava/lang/String;
 
-    iget-object v2, p1, Lbkw;->properties:Lbkv;
+    iget-object v2, p1, Lbkw;->hash:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkw;->color:Ljava/lang/String;
+
+    iget-object v2, p1, Lbkw;->color:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkw;->adType:Ljava/lang/Integer;
+
+    iget-object v2, p1, Lbkw;->adType:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkw;->adPlacementMetadata:Lbhv;
+
+    iget-object v2, p1, Lbkw;->adPlacementMetadata:Lbhv;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -135,34 +193,56 @@
     goto :goto_0
 .end method
 
+.method public final f()Lbhv;
+    .locals 1
+
+    .prologue
+    .line 138
+    iget-object v0, p0, Lbkw;->adPlacementMetadata:Lbhv;
+
+    return-object v0
+.end method
+
 .method public final hashCode()I
     .locals 2
 
     .prologue
-    .line 110
+    .line 152
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkw;->id:Ljava/lang/String;
+    iget-object v1, p0, Lbkw;->url:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkw;->name:Ljava/lang/String;
+    iget-object v1, p0, Lbkw;->dsnapId:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkw;->type:Ljava/lang/String;
+    iget-object v1, p0, Lbkw;->hash:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkw;->properties:Lbkv;
+    iget-object v1, p0, Lbkw;->color:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkw;->adType:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbkw;->adPlacementMetadata:Lbhv;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -179,7 +259,7 @@
     .locals 1
 
     .prologue
-    .line 105
+    .line 147
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 490
+    .line 484
     iput-object p1, p0, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$9$1;->a:Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic$9;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,9 +40,9 @@
     .locals 0
 
     .prologue
-    .line 493
-    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->t()V
+    .line 487
+    invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->p()V
 
-    .line 494
+    .line 488
     return-void
 .end method

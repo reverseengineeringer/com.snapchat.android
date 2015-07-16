@@ -31,7 +31,7 @@
 
 .field protected e:Z
 
-.field private final f:Lauv;
+.field private final f:Lavt;
 
 
 # direct methods
@@ -65,11 +65,11 @@
     invoke-virtual {p0, v2}, Lcom/snapchat/android/ui/caption/SnapCaptionView;->setFocusableInTouchMode(Z)V
 
     .line 71
-    new-instance v1, Lauv;
+    new-instance v1, Lavt;
 
-    invoke-direct {v1, p1}, Lauv;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p1}, Lavt;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->f:Lauv;
+    iput-object v1, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->f:Lavt;
 
     .line 72
     invoke-virtual {p0}, Lcom/snapchat/android/ui/caption/SnapCaptionView;->getLayout()Landroid/content/res/XmlResourceParser;
@@ -148,60 +148,6 @@
     goto :goto_0
 .end method
 
-.method public static c(Landroid/content/Context;)I
-    .locals 6
-
-    .prologue
-    .line 130
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    .line 131
-    iget v1, v0, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iget v2, v0, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    const v2, 0x3d59999a
-
-    iget v3, v0, Landroid/util/DisplayMetrics;->density:F
-
-    div-float/2addr v2, v3
-
-    mul-float/2addr v1, v2
-
-    .line 133
-    float-to-double v2, v1
-
-    const-wide v4, 0x3ffaa7ef9db22d0eL    # 1.666
-
-    mul-double/2addr v2, v4
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
-
-    float-to-double v0, v0
-
-    mul-double/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v0
-
-    double-to-int v0, v0
-
-    return v0
-.end method
-
 
 # virtual methods
 .method public a()Landroid/os/Bundle;
@@ -217,7 +163,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lajx;->a(ZI)V
+    invoke-static {v0, v1}, Lakr;->a(ZI)V
 
     .line 143
     new-instance v0, Landroid/os/Bundle;
@@ -439,17 +385,17 @@
     if-eqz v0, :cond_0
 
     .line 222
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbbh;
+    new-instance v1, Lbch;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->b:Lcom/snapchat/android/ui/caption/CaptionEditText;
 
     iget-boolean v2, v2, Lcom/snapchat/android/ui/caption/CaptionEditText;->k:Z
 
-    invoke-direct {v1, v2}, Lbbh;-><init>(Z)V
+    invoke-direct {v1, v2}, Lbch;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -716,7 +662,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->e(Landroid/content/Context;)Z
+    invoke-static {v0}, Lawf;->e(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -749,7 +695,7 @@
     .line 102
     iget-boolean v2, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->e:Z
 
-    invoke-static {v0, v2}, Lavh;->a(Landroid/util/DisplayMetrics;Z)I
+    invoke-static {v0, v2}, Lawf;->a(Landroid/util/DisplayMetrics;Z)I
 
     move-result v2
 
@@ -758,7 +704,7 @@
     .line 103
     iget-boolean v2, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->e:Z
 
-    invoke-static {v0, v2}, Lavh;->b(Landroid/util/DisplayMetrics;Z)I
+    invoke-static {v0, v2}, Lawf;->b(Landroid/util/DisplayMetrics;Z)I
 
     move-result v0
 
@@ -776,7 +722,7 @@
 
     iget-boolean v2, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->e:Z
 
-    invoke-static {v2}, Lajx;->o(Z)I
+    invoke-static {v2}, Lakr;->n(Z)I
 
     move-result v2
 
@@ -833,7 +779,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->h(Landroid/content/Context;)I
+    invoke-static {v0}, Lawf;->h(Landroid/content/Context;)I
 
     move-result v0
 
@@ -855,7 +801,7 @@
 
     iget-boolean v1, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->e:Z
 
-    invoke-static {v0, v1}, Lavh;->b(Landroid/util/DisplayMetrics;Z)I
+    invoke-static {v0, v1}, Lawf;->b(Landroid/util/DisplayMetrics;Z)I
 
     move-result v0
 
@@ -896,28 +842,28 @@
 
     .prologue
     .line 345
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 347
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 350
-    :goto_0
+    :cond_0
     :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->a:Landroid/content/res/XmlResourceParser;
+    iget-object v2, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->a:Landroid/content/res/XmlResourceParser;
 
-    invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->next()I
+    invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->next()I
     :try_end_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v0
+    move-result v1
 
-    .line 354
-    :goto_1
+    .line 352
+    :goto_0
     const/4 v2, 0x2
 
-    if-ne v0, v2, :cond_0
+    if-ne v1, v2, :cond_1
 
     .line 355
     iget-object v2, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->a:Landroid/content/res/XmlResourceParser;
@@ -932,7 +878,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     .line 356
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->a:Landroid/content/res/XmlResourceParser;
@@ -942,48 +888,31 @@
     move-result-object v0
 
     .line 362
-    :goto_2
+    :goto_1
     return-object v0
 
-    .line 351
-    :catch_0
-    move-exception v0
+    .line 360
+    :cond_1
+    const/4 v2, 0x1
 
-    .line 352
-    :goto_3
-    const-string v3, "SnapCaptionView"
-
-    invoke-static {v3, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    move v0, v2
+    if-ne v1, v2, :cond_0
 
     goto :goto_1
 
-    .line 360
-    :cond_0
-    const/4 v2, 0x1
+    :catch_0
+    move-exception v2
 
-    if-ne v0, v2, :cond_1
+    goto :goto_0
 
-    move-object v0, v1
-
-    goto :goto_2
-
-    .line 351
     :catch_1
-    move-exception v0
-
-    goto :goto_3
-
-    :cond_1
-    move v2, v0
+    move-exception v2
 
     goto :goto_0
 .end method
 
-.method public getCaptionAnalyticsDetails()Lapo;
+.method public getCaptionAnalyticsDetails()Laqn;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -1010,7 +939,7 @@
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->b:Lcom/snapchat/android/ui/caption/CaptionEditText;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/ui/caption/CaptionEditText;->getAnalyticsDetails()Lapo;
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/caption/CaptionEditText;->getAnalyticsDetails()Laqn;
 
     move-result-object v0
 
@@ -1154,9 +1083,9 @@
     return-void
 .end method
 
-.method public onKeyDownEvent(Lbbv;)V
+.method public onKeyDownEvent(Lbcv;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -1174,7 +1103,7 @@
 
     .line 320
     :cond_1
-    iget-object v0, p1, Lbbv;->event:Landroid/view/KeyEvent;
+    iget-object v0, p1, Lbcv;->event:Landroid/view/KeyEvent;
 
     invoke-virtual {v0}, Landroid/view/KeyEvent;->getUnicodeChar()I
 
@@ -1205,7 +1134,7 @@
     .line 326
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->b:Lcom/snapchat/android/ui/caption/CaptionEditText;
 
-    iget-object v1, p1, Lbbv;->event:Landroid/view/KeyEvent;
+    iget-object v1, p1, Lbcv;->event:Landroid/view/KeyEvent;
 
     invoke-virtual {v1}, Landroid/view/KeyEvent;->getUnicodeChar()I
 
@@ -1225,7 +1154,7 @@
 .method public setCaptionEditTextOnTouchListener(Landroid/view/View$OnTouchListener;)V
     .locals 1
     .param p1    # Landroid/view/View$OnTouchListener;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -1269,14 +1198,14 @@
     return-void
 .end method
 
-.method public setInterface(Laps;)V
+.method public setInterface(Laqr;)V
     .locals 1
 
     .prologue
     .line 121
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->b:Lcom/snapchat/android/ui/caption/CaptionEditText;
 
-    invoke-virtual {v0, p1}, Lcom/snapchat/android/ui/caption/CaptionEditText;->setInterface(Laps;)V
+    invoke-virtual {v0, p1}, Lcom/snapchat/android/ui/caption/CaptionEditText;->setInterface(Laqr;)V
 
     .line 122
     return-void
@@ -1316,7 +1245,7 @@
     .line 376
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/SnapCaptionView;->b:Lcom/snapchat/android/ui/caption/CaptionEditText;
 
-    invoke-static {v0}, Lavh;->a(Landroid/view/View;)I
+    invoke-static {v0}, Lawf;->a(Landroid/view/View;)I
 
     move-result v0
 

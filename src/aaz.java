@@ -1,40 +1,16 @@
-import com.snapchat.android.database.table.SnapbryoTable;
-import java.util.ArrayList;
-import java.util.Collection;
-
 public final class aaz
-  extends SnapbryoTable
+  extends aaw
 {
-  private static aaz a;
+  private static final aaz a = new aaz();
+  
+  private aaz()
+  {
+    super("ChatMediaFiles", axo.CHAT_MEDIA_IMAGE_CACHE);
+  }
   
   public static aaz a()
   {
-    try
-    {
-      if (a == null) {
-        a = new aaz();
-      }
-      aaz localaaz = a;
-      return localaaz;
-    }
-    finally {}
-  }
-  
-  protected final Collection<aim> a(ajv paramajv)
-  {
-    paramajv = ajn.a();
-    return new ArrayList(paramajv.a(mSendingDSnapbryos));
-  }
-  
-  public final void b(ajv paramajv)
-  {
-    paramajv = ajn.a();
-    mSendingDSnapbryos = paramajv.c(a(null, null));
-  }
-  
-  public final String c()
-  {
-    return "SendingDSnapbryoTable";
+    return a;
   }
 }
 

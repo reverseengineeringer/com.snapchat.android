@@ -1,9 +1,9 @@
-.class public final Ler$a;
+.class final Ler$a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Lcom/google/gson/TypeAdapterFactory;
 
 
 # annotations
@@ -12,806 +12,244 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x8
     name = "a"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Ler$a$a;
-    }
 .end annotation
 
 
 # instance fields
-.field a:I
+.field private final a:Lcom/google/gson/reflect/TypeToken;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/gson/reflect/TypeToken",
+            "<*>;"
+        }
+    .end annotation
+.end field
 
-.field b:J
+.field private final b:Z
 
-.field c:Z
+.field private final c:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class",
+            "<*>;"
+        }
+    .end annotation
+.end field
 
-.field d:Ljava/lang/String;
+.field private final d:Lcom/google/gson/JsonSerializer;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/gson/JsonSerializer",
+            "<*>;"
+        }
+    .end annotation
+.end field
 
-.field e:Z
-
-.field f:I
-
-.field g:Z
-
-.field h:Ljava/lang/String;
-
-.field i:Ler$a$a;
-
-.field private j:Z
-
-.field private k:Z
-
-.field private l:Z
-
-.field private m:Z
-
-.field private n:Z
-
-.field private o:Z
-
-.field private p:Ljava/lang/String;
+.field private final e:Lcom/google/gson/JsonDeserializer;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/gson/JsonDeserializer",
+            "<*>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method private constructor <init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            "Lcom/google/gson/reflect/TypeToken",
+            "<*>;Z",
+            "Ljava/lang/Class",
+            "<*>;)V"
+        }
+    .end annotation
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    .line 38
+    .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
-    iput v2, p0, Ler$a;->a:I
+    .line 117
+    instance-of v0, p1, Lcom/google/gson/JsonSerializer;
 
-    .line 60
-    const-wide/16 v0, 0x0
+    if-eqz v0, :cond_1
 
-    iput-wide v0, p0, Ler$a;->b:J
+    move-object v0, p1
 
-    .line 76
-    const-string v0, ""
+    check-cast v0, Lcom/google/gson/JsonSerializer;
 
-    iput-object v0, p0, Ler$a;->d:Ljava/lang/String;
+    :goto_0
+    iput-object v0, p0, Ler$a;->d:Lcom/google/gson/JsonSerializer;
 
-    .line 95
-    iput-boolean v2, p0, Ler$a;->e:Z
+    .line 120
+    instance-of v0, p1, Lcom/google/gson/JsonDeserializer;
 
-    .line 111
+    if-eqz v0, :cond_2
+
+    check-cast p1, Lcom/google/gson/JsonDeserializer;
+
+    :goto_1
+    iput-object p1, p0, Ler$a;->e:Lcom/google/gson/JsonDeserializer;
+
+    .line 123
+    iget-object v0, p0, Ler$a;->d:Lcom/google/gson/JsonSerializer;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ler$a;->e:Lcom/google/gson/JsonDeserializer;
+
+    if-eqz v0, :cond_3
+
+    :cond_0
     const/4 v0, 0x1
 
-    iput v0, p0, Ler$a;->f:I
+    :goto_2
+    invoke-static {v0}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
+
+    .line 124
+    iput-object p2, p0, Ler$a;->a:Lcom/google/gson/reflect/TypeToken;
+
+    .line 125
+    iput-boolean p3, p0, Ler$a;->b:Z
+
+    .line 126
+    iput-object p4, p0, Ler$a;->c:Ljava/lang/Class;
 
     .line 127
-    const-string v0, ""
+    return-void
 
-    iput-object v0, p0, Ler$a;->h:Ljava/lang/String;
+    :cond_1
+    move-object v0, v1
 
-    .line 165
-    const-string v0, ""
+    .line 117
+    goto :goto_0
 
-    iput-object v0, p0, Ler$a;->p:Ljava/lang/String;
+    :cond_2
+    move-object p1, v1
 
-    .line 39
-    sget-object v0, Ler$a$a;->a:Ler$a$a;
+    .line 120
+    goto :goto_1
 
-    iput-object v0, p0, Ler$a;->i:Ler$a$a;
+    .line 123
+    :cond_3
+    const/4 v0, 0x0
 
-    .line 40
+    goto :goto_2
+.end method
+
+.method synthetic constructor <init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;B)V
+    .locals 0
+
+    .prologue
+    .line 108
+    invoke-direct {p0, p1, p2, p3, p4}, Ler$a;-><init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ler$a;
-    .locals 1
+.method public final create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/gson/Gson;",
+            "Lcom/google/gson/reflect/TypeToken",
+            "<TT;>;)",
+            "Lcom/google/gson/TypeAdapter",
+            "<TT;>;"
+        }
+    .end annotation
 
     .prologue
-    .line 88
-    const/4 v0, 0x0
+    const/4 v6, 0x0
 
-    iput-boolean v0, p0, Ler$a;->c:Z
-
-    .line 89
-    const-string v0, ""
-
-    iput-object v0, p0, Ler$a;->d:Ljava/lang/String;
-
-    .line 90
-    return-object p0
-.end method
-
-.method public final a(I)Ler$a;
-    .locals 1
-
-    .prologue
-    .line 48
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ler$a;->j:Z
-
-    .line 49
-    iput p1, p0, Ler$a;->a:I
-
-    .line 50
-    return-object p0
-.end method
-
-.method public final a(J)Ler$a;
-    .locals 1
-
-    .prologue
-    .line 64
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ler$a;->k:Z
-
-    .line 65
-    iput-wide p1, p0, Ler$a;->b:J
-
-    .line 66
-    return-object p0
-.end method
-
-.method public final a(Ler$a$a;)Ler$a;
-    .locals 1
-
-    .prologue
-    .line 150
-    if-nez p1, :cond_0
-
-    .line 151
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 153
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ler$a;->n:Z
-
-    .line 154
-    iput-object p1, p0, Ler$a;->i:Ler$a$a;
-
-    .line 155
-    return-object p0
-.end method
-
-.method public final a(Ler$a;)Ler$a;
-    .locals 2
-
-    .prologue
-    .line 195
-    iget-boolean v0, p1, Ler$a;->j:Z
-
-    if-eqz v0, :cond_0
-
-    .line 196
-    iget v0, p1, Ler$a;->a:I
-
-    invoke-virtual {p0, v0}, Ler$a;->a(I)Ler$a;
-
-    .line 198
-    :cond_0
-    iget-boolean v0, p1, Ler$a;->k:Z
-
-    if-eqz v0, :cond_1
-
-    .line 199
-    iget-wide v0, p1, Ler$a;->b:J
-
-    invoke-virtual {p0, v0, v1}, Ler$a;->a(J)Ler$a;
-
-    .line 201
-    :cond_1
-    iget-boolean v0, p1, Ler$a;->c:Z
+    .line 131
+    iget-object v0, p0, Ler$a;->a:Lcom/google/gson/reflect/TypeToken;
 
     if-eqz v0, :cond_2
 
-    .line 202
-    iget-object v0, p1, Ler$a;->d:Ljava/lang/String;
+    iget-object v0, p0, Ler$a;->a:Lcom/google/gson/reflect/TypeToken;
 
-    invoke-virtual {p0, v0}, Ler$a;->a(Ljava/lang/String;)Ler$a;
-
-    .line 204
-    :cond_2
-    iget-boolean v0, p1, Ler$a;->l:Z
-
-    if-eqz v0, :cond_3
-
-    .line 205
-    iget-boolean v0, p1, Ler$a;->e:Z
-
-    invoke-virtual {p0, v0}, Ler$a;->a(Z)Ler$a;
-
-    .line 207
-    :cond_3
-    iget-boolean v0, p1, Ler$a;->m:Z
-
-    if-eqz v0, :cond_4
-
-    .line 208
-    iget v0, p1, Ler$a;->f:I
-
-    invoke-virtual {p0, v0}, Ler$a;->b(I)Ler$a;
-
-    .line 210
-    :cond_4
-    iget-boolean v0, p1, Ler$a;->g:Z
-
-    if-eqz v0, :cond_5
-
-    .line 211
-    iget-object v0, p1, Ler$a;->h:Ljava/lang/String;
-
-    invoke-virtual {p0, v0}, Ler$a;->b(Ljava/lang/String;)Ler$a;
-
-    .line 213
-    :cond_5
-    iget-boolean v0, p1, Ler$a;->n:Z
-
-    if-eqz v0, :cond_6
-
-    .line 214
-    iget-object v0, p1, Ler$a;->i:Ler$a$a;
-
-    invoke-virtual {p0, v0}, Ler$a;->a(Ler$a$a;)Ler$a;
-
-    .line 216
-    :cond_6
-    iget-boolean v0, p1, Ler$a;->o:Z
-
-    if-eqz v0, :cond_7
-
-    .line 217
-    iget-object v0, p1, Ler$a;->p:Ljava/lang/String;
-
-    invoke-virtual {p0, v0}, Ler$a;->c(Ljava/lang/String;)Ler$a;
-
-    .line 219
-    :cond_7
-    return-object p0
-.end method
-
-.method public final a(Ljava/lang/String;)Ler$a;
-    .locals 1
-
-    .prologue
-    .line 80
-    if-nez p1, :cond_0
-
-    .line 81
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 83
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ler$a;->c:Z
-
-    .line 84
-    iput-object p1, p0, Ler$a;->d:Ljava/lang/String;
-
-    .line 85
-    return-object p0
-.end method
-
-.method public final a(Z)Ler$a;
-    .locals 1
-
-    .prologue
-    .line 99
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ler$a;->l:Z
-
-    .line 100
-    iput-boolean p1, p0, Ler$a;->e:Z
-
-    .line 101
-    return-object p0
-.end method
-
-.method public final b()Ler$a;
-    .locals 1
-
-    .prologue
-    .line 139
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ler$a;->g:Z
-
-    .line 140
-    const-string v0, ""
-
-    iput-object v0, p0, Ler$a;->h:Ljava/lang/String;
-
-    .line 141
-    return-object p0
-.end method
-
-.method public final b(I)Ler$a;
-    .locals 1
-
-    .prologue
-    .line 115
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ler$a;->m:Z
-
-    .line 116
-    iput p1, p0, Ler$a;->f:I
-
-    .line 117
-    return-object p0
-.end method
-
-.method public final b(Ljava/lang/String;)Ler$a;
-    .locals 1
-
-    .prologue
-    .line 131
-    if-nez p1, :cond_0
-
-    .line 132
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 134
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ler$a;->g:Z
-
-    .line 135
-    iput-object p1, p0, Ler$a;->h:Ljava/lang/String;
-
-    .line 136
-    return-object p0
-.end method
-
-.method public final b(Ler$a;)Z
-    .locals 6
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v0, 0x0
-
-    .line 223
-    if-nez p1, :cond_1
-
-    .line 229
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 226
-    :cond_1
-    if-ne p0, p1, :cond_2
-
-    move v0, v1
-
-    .line 227
-    goto :goto_0
-
-    .line 229
-    :cond_2
-    iget v2, p0, Ler$a;->a:I
-
-    iget v3, p1, Ler$a;->a:I
-
-    if-ne v2, v3, :cond_0
-
-    iget-wide v2, p0, Ler$a;->b:J
-
-    iget-wide v4, p1, Ler$a;->b:J
-
-    cmp-long v2, v2, v4
-
-    if-nez v2, :cond_0
-
-    iget-object v2, p0, Ler$a;->d:Ljava/lang/String;
-
-    iget-object v3, p1, Ler$a;->d:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    iget-boolean v2, p0, Ler$a;->e:Z
-
-    iget-boolean v3, p1, Ler$a;->e:Z
-
-    if-ne v2, v3, :cond_0
-
-    iget v2, p0, Ler$a;->f:I
-
-    iget v3, p1, Ler$a;->f:I
-
-    if-ne v2, v3, :cond_0
-
-    iget-object v2, p0, Ler$a;->h:Ljava/lang/String;
-
-    iget-object v3, p1, Ler$a;->h:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Ler$a;->i:Ler$a$a;
-
-    iget-object v3, p1, Ler$a;->i:Ler$a$a;
-
-    if-ne v2, v3, :cond_0
-
-    iget-object v2, p0, Ler$a;->p:Ljava/lang/String;
-
-    iget-object v3, p1, Ler$a;->p:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    iget-boolean v2, p0, Ler$a;->o:Z
-
-    iget-boolean v3, p1, Ler$a;->o:Z
-
-    if-ne v2, v3, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-.end method
-
-.method public final c()Ler$a;
-    .locals 1
-
-    .prologue
-    .line 158
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ler$a;->n:Z
-
-    .line 159
-    sget-object v0, Ler$a$a;->a:Ler$a$a;
-
-    iput-object v0, p0, Ler$a;->i:Ler$a$a;
-
-    .line 160
-    return-object p0
-.end method
-
-.method public final c(Ljava/lang/String;)Ler$a;
-    .locals 1
-
-    .prologue
-    .line 169
-    if-nez p1, :cond_0
-
-    .line 170
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 172
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ler$a;->o:Z
-
-    .line 173
-    iput-object p1, p0, Ler$a;->p:Ljava/lang/String;
-
-    .line 174
-    return-object p0
-.end method
-
-.method public final d()Ler$a;
-    .locals 1
-
-    .prologue
-    .line 177
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ler$a;->o:Z
-
-    .line 178
-    const-string v0, ""
-
-    iput-object v0, p0, Ler$a;->p:Ljava/lang/String;
-
-    .line 179
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .prologue
-    .line 239
-    instance-of v0, p1, Ler$a;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Ler$a;
-
-    invoke-virtual {p0, p1}, Ler$a;->b(Ler$a;)Z
+    invoke-virtual {v0, p2}, Lcom/google/gson/reflect/TypeToken;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v0, 0x1
+    iget-boolean v0, p0, Ler$a;->b:Z
 
-    :goto_0
-    return v0
+    if-eqz v0, :cond_1
 
-    :cond_0
-    const/4 v0, 0x0
+    iget-object v0, p0, Ler$a;->a:Lcom/google/gson/reflect/TypeToken;
 
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
-    .locals 6
-
-    .prologue
-    const/16 v2, 0x4d5
-
-    const/16 v1, 0x4cf
-
-    .line 248
-    iget v0, p0, Ler$a;->a:I
-
-    add-int/lit16 v0, v0, 0x87d
-
-    .line 250
-    mul-int/lit8 v0, v0, 0x35
-
-    iget-wide v4, p0, Ler$a;->b:J
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Long;->hashCode()I
-
-    move-result v3
-
-    add-int/2addr v0, v3
-
-    .line 251
-    mul-int/lit8 v0, v0, 0x35
-
-    iget-object v3, p0, Ler$a;->d:Ljava/lang/String;
-
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
-
-    move-result v3
-
-    add-int/2addr v0, v3
-
-    .line 252
-    mul-int/lit8 v3, v0, 0x35
-
-    iget-boolean v0, p0, Ler$a;->e:Z
-
-    if-eqz v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    add-int/2addr v0, v3
-
-    .line 253
-    mul-int/lit8 v0, v0, 0x35
-
-    iget v3, p0, Ler$a;->f:I
-
-    add-int/2addr v0, v3
-
-    .line 254
-    mul-int/lit8 v0, v0, 0x35
-
-    iget-object v3, p0, Ler$a;->h:Ljava/lang/String;
-
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
-
-    move-result v3
-
-    add-int/2addr v0, v3
-
-    .line 255
-    mul-int/lit8 v0, v0, 0x35
-
-    iget-object v3, p0, Ler$a;->i:Ler$a$a;
-
-    invoke-virtual {v3}, Ler$a$a;->hashCode()I
-
-    move-result v3
-
-    add-int/2addr v0, v3
-
-    .line 256
-    mul-int/lit8 v0, v0, 0x35
-
-    iget-object v3, p0, Ler$a;->p:Ljava/lang/String;
-
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
-
-    move-result v3
-
-    add-int/2addr v0, v3
-
-    .line 257
-    mul-int/lit8 v0, v0, 0x35
-
-    iget-boolean v3, p0, Ler$a;->o:Z
-
-    if-eqz v3, :cond_1
-
-    :goto_1
-    add-int/2addr v0, v1
-
-    .line 258
-    return v0
-
-    :cond_0
-    move v0, v2
-
-    .line 252
-    goto :goto_0
-
-    :cond_1
-    move v1, v2
-
-    .line 257
-    goto :goto_1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    .prologue
-    .line 263
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 264
-    const-string v1, "Country Code: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Ler$a;->a:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 265
-    const-string v1, " National Number: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-wide v2, p0, Ler$a;->b:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    .line 266
-    iget-boolean v1, p0, Ler$a;->l:Z
-
-    if-eqz v1, :cond_0
-
-    iget-boolean v1, p0, Ler$a;->e:Z
-
-    if-eqz v1, :cond_0
-
-    .line 267
-    const-string v1, " Leading Zero(s): true"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 269
-    :cond_0
-    iget-boolean v1, p0, Ler$a;->m:Z
-
-    if-eqz v1, :cond_1
-
-    .line 270
-    const-string v1, " Number of leading zeros: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Ler$a;->f:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 272
-    :cond_1
-    iget-boolean v1, p0, Ler$a;->c:Z
-
-    if-eqz v1, :cond_2
-
-    .line 273
-    const-string v1, " Extension: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ler$a;->d:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 275
-    :cond_2
-    iget-boolean v1, p0, Ler$a;->n:Z
-
-    if-eqz v1, :cond_3
-
-    .line 276
-    const-string v1, " Country Code Source: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ler$a;->i:Ler$a$a;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 278
-    :cond_3
-    iget-boolean v1, p0, Ler$a;->o:Z
-
-    if-eqz v1, :cond_4
-
-    .line 279
-    const-string v1, " Preferred Domestic Carrier Code: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ler$a;->p:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 282
-    :cond_4
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
+    invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    .line 134
+    :goto_0
+    if-eqz v0, :cond_3
+
+    new-instance v0, Ler;
+
+    iget-object v1, p0, Ler$a;->d:Lcom/google/gson/JsonSerializer;
+
+    iget-object v2, p0, Ler$a;->e:Lcom/google/gson/JsonDeserializer;
+
+    move-object v3, p1
+
+    move-object v4, p2
+
+    move-object v5, p0
+
+    invoke-direct/range {v0 .. v6}, Ler;-><init>(Lcom/google/gson/JsonSerializer;Lcom/google/gson/JsonDeserializer;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapterFactory;B)V
+
+    :goto_1
     return-object v0
+
+    :cond_1
+    move v0, v6
+
+    .line 131
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Ler$a;->c:Ljava/lang/Class;
+
+    invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 134
+    :cond_3
+    const/4 v0, 0x0
+
+    goto :goto_1
 .end method

@@ -1,30 +1,30 @@
 package com.snapchat.android.fragments.signup;
 
-import amk;
 import android.support.v4.app.FragmentActivity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import ang;
-import aok;
-import aol;
-import aud;
-import bkj;
+import anh;
+import aod;
+import apg;
+import aph;
+import avb;
+import blk;
 import com.snapchat.android.util.AlertDialogUtils;
 import java.util.Set;
 
 final class TwoFactorCodeVerificationFragment$2
-  implements aok
+  implements apg
 {
   TwoFactorCodeVerificationFragment$2(TwoFactorCodeVerificationFragment paramTwoFactorCodeVerificationFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
-    if ((TwoFactorCodeVerificationFragment.a(a).contains(Integer.valueOf(i))) && ((paramamk instanceof ang)))
+    int i = aph.a(paramanh);
+    if ((TwoFactorCodeVerificationFragment.a(a).contains(Integer.valueOf(i))) && ((paramanh instanceof aod)))
     {
       TwoFactorCodeVerificationFragment.a(a).remove(Integer.valueOf(i));
-      paramamk = (ang)paramamk;
+      paramanh = (aod)paramanh;
       if (b) {
         a.getActivity().onBackPressed();
       }
@@ -33,11 +33,11 @@ final class TwoFactorCodeVerificationFragment$2
     {
       return;
     }
-    paramamk = a;
+    paramanh = a;
     a.e.setVisibility(8);
     a.d.setClickable(true);
     a.a.setEnabled(true);
-    if (aud.a(paramamk.a()))
+    if (avb.a(paramanh.a()))
     {
       a.a.setText("");
       a.a.requestFocus();
@@ -47,7 +47,7 @@ final class TwoFactorCodeVerificationFragment$2
     {
       a.t();
       return;
-      AlertDialogUtils.a(a.getActivity(), paramamk.b());
+      AlertDialogUtils.a(a.getActivity(), paramanh.b());
     }
   }
 }

@@ -1,17 +1,16 @@
-public class axz
+import java.io.File;
+
+public final class axz
 {
-  public final String mId;
-  public final String mValue;
+  final axn mCache;
+  final File mFile;
+  final String mKey;
   
-  public axz(String paramString1, String paramString2)
+  public axz(@chc axn paramaxn, @chc String paramString, File paramFile)
   {
-    mId = paramString1;
-    mValue = paramString2;
-  }
-  
-  public String toString()
-  {
-    return "DeviceToken{id=" + mId + " value=" + mValue + "}";
+    mKey = paramString;
+    mFile = paramFile;
+    mCache = paramaxn;
   }
 }
 

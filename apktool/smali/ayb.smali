@@ -1,279 +1,481 @@
 .class public final Layb;
-.super Ljava/lang/Object;
+.super Laxn;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuo;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
-        "<",
-        "Laya;",
-        ">;"
-    }
-.end annotation
 
 
 # static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
-# instance fields
-.field private final apiTaskFactoryProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lpk;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final developerSettingsProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazn;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final gsonWrapperProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lato;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final slightlySecurePreferencesProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Layg;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private static final TAG:Ljava/lang/String; = "ZipFileCache"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/snapchat/android/util/cache/CacheType;)V
+    .locals 2
 
     .prologue
-    .line 10
-    const-class v0, Layb;
+    .line 38
+    const-wide/16 v0, 0x2760
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    invoke-direct {p0, p1, v0, v1}, Laxn;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
+
+    .line 39
+    return-void
+.end method
+
+.method private static a(Ljava/lang/String;Ljava/util/zip/ZipInputStream;)Z
+    .locals 5
+    .param p1    # Ljava/util/zip/ZipInputStream;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 108
+    :goto_0
+    invoke-virtual {p1}, Ljava/util/zip/ZipInputStream;->getNextEntry()Ljava/util/zip/ZipEntry;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_4
+
+    .line 109
+    const/4 v1, 0x0
+
+    :try_start_0
+    new-instance v3, Ljava/io/File;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, "/"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v3, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ljava/io/File;->getParentFile()Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    new-instance v2, Ljava/io/IOException;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "Could not create directory "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    :goto_1
+    invoke-static {v1}, Lbgo;->a(Ljava/io/Closeable;)V
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    :goto_0
-    sput-boolean v0, Layb;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Layg;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lato;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lpk;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazn;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 18
-    sget-boolean v0, Layb;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 19
-    :cond_0
-    iput-object p1, p0, Layb;->slightlySecurePreferencesProvider:Ljavax/inject/Provider;
-
-    .line 20
-    sget-boolean v0, Layb;->$assertionsDisabled:Z
+    move-result v0
 
     if-nez v0, :cond_1
 
-    if-nez p2, :cond_1
+    new-instance v0, Ljava/io/IOException;
 
-    new-instance v0, Ljava/lang/AssertionError;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    const-string v4, "Could not delete file "
+
+    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 21
     :cond_1
-    iput-object p2, p0, Layb;->gsonWrapperProvider:Ljavax/inject/Provider;
+    invoke-virtual {v3}, Ljava/io/File;->createNewFile()Z
 
-    .line 22
-    sget-boolean v0, Layb;->$assertionsDisabled:Z
+    move-result v0
 
     if-nez v0, :cond_2
 
-    if-nez p3, :cond_2
+    new-instance v0, Ljava/io/IOException;
 
-    new-instance v0, Ljava/lang/AssertionError;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    const-string v4, "Could not create new file "
+
+    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 23
     :cond_2
-    iput-object p3, p0, Layb;->apiTaskFactoryProvider:Ljavax/inject/Provider;
+    const/16 v0, 0x400
 
-    .line 24
-    sget-boolean v0, Layb;->$assertionsDisabled:Z
+    new-array v0, v0, [B
 
-    if-nez v0, :cond_3
+    new-instance v2, Ljava/io/BufferedOutputStream;
 
-    if-nez p4, :cond_3
+    new-instance v4, Ljava/io/FileOutputStream;
 
-    new-instance v0, Ljava/lang/AssertionError;
+    invoke-direct {v4, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    const/16 v3, 0x400
 
-    throw v0
+    invoke-direct {v2, v4, v3}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 25
+    :goto_2
+    :try_start_2
+    invoke-virtual {p1, v0}, Ljava/util/zip/ZipInputStream;->read([B)I
+
+    move-result v1
+
+    const/4 v3, -0x1
+
+    if-eq v1, v3, :cond_3
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v0, v3, v1}, Ljava/io/BufferedOutputStream;->write([BII)V
+
+    goto :goto_2
+
+    :catchall_1
+    move-exception v0
+
+    move-object v1, v2
+
+    goto :goto_1
+
     :cond_3
-    iput-object p4, p0, Layb;->developerSettingsProvider:Ljavax/inject/Provider;
+    invoke-virtual {v2}, Ljava/io/BufferedOutputStream;->flush()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 26
-    return-void
-.end method
+    invoke-static {v2}, Lbgo;->a(Ljava/io/Closeable;)V
 
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Layg;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lato;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lpk;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lazn;",
-            ">;)",
-            "Lbuo",
-            "<",
-            "Laya;",
-            ">;"
-        }
-    .end annotation
+    goto/16 :goto_0
 
-    .prologue
-    .line 34
-    new-instance v0, Layb;
+    .line 111
+    :cond_4
+    const/4 v0, 0x1
 
-    invoke-direct {v0, p0, p1, p2, p3}, Layb;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    return-object v0
+    return v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 5
+.method public final a(Landroid/content/Context;Ljava/lang/String;Laza;)Landroid/graphics/Bitmap;
+    .locals 2
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 10
-    new-instance v4, Laya;
+    .line 49
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    iget-object v0, p0, Layb;->slightlySecurePreferencesProvider:Ljavax/inject/Provider;
+    const-string v1, "Not supported by ZipFileCache"
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    throw v0
+.end method
 
-    check-cast v0, Layg;
+.method public final a(Landroid/content/Context;Ljava/lang/String;Laza;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    .locals 2
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    iget-object v1, p0, Layb;->gsonWrapperProvider:Ljavax/inject/Provider;
+    .prologue
+    .line 55
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    const-string v1, "Not supported by ZipFileCache"
 
-    move-result-object v1
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    check-cast v1, Lato;
+    throw v0
+.end method
 
-    iget-object v2, p0, Layb;->apiTaskFactoryProvider:Ljavax/inject/Provider;
+.method protected final a([BI)Ljava/lang/String;
+    .locals 4
+    .annotation build Lcbr;
+    .end annotation
 
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .annotation build Lchd;
+    .end annotation
 
-    move-result-object v2
+    .prologue
+    const/4 v0, 0x0
 
-    check-cast v2, Lpk;
+    .line 67
+    new-instance v1, Ljava/io/File;
 
-    iget-object v3, p0, Layb;->developerSettingsProvider:Ljavax/inject/Provider;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v3, p0, Layb;->mCacheType:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-virtual {v3}, Lcom/snapchat/android/util/cache/CacheType;->getDirectory()Ljava/io/File;
 
     move-result-object v3
 
-    check-cast v3, Lazn;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v4, v0, v1, v2, v3}, Laya;-><init>(Layg;Lato;Lpk;Lazn;)V
+    move-result-object v2
 
-    return-object v4
+    const-string v3, "/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Layb;->mCacheType:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-virtual {v3}, Lcom/snapchat/android/util/cache/CacheType;->generateFilename()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 69
+    :try_start_0
+    iget-object v2, p0, Layb;->mCacheType:Lcom/snapchat/android/util/cache/CacheType;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/util/cache/CacheType;->getDirectory()Ljava/io/File;
+
+    move-result-object v2
+
+    .line 70
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 71
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v3, "Failed to create directory "
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 90
+    :goto_0
+    return-object v0
+
+    .line 75
+    :cond_0
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 76
+    invoke-static {v1}, Lorg/apache/commons/io/FileUtils;->deleteDirectory(Ljava/io/File;)V
+
+    .line 79
+    :cond_1
+    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
+
+    .line 80
+    new-instance v2, Ljava/io/ByteArrayInputStream;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p1, v3, p2}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
+
+    new-instance v3, Ljava/util/zip/ZipInputStream;
+
+    invoke-direct {v3, v2}, Ljava/util/zip/ZipInputStream;-><init>(Ljava/io/InputStream;)V
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+
+    :try_start_1
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2, v3}, Layb;->a(Ljava/lang/String;Ljava/util/zip/ZipInputStream;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-static {v3}, Lbgo;->a(Ljava/io/Closeable;)V
+    :try_end_2
+    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+
+    .line 90
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 80
+    :catchall_0
+    move-exception v1
+
+    :try_start_3
+    invoke-static {v3}, Lbgo;->a(Ljava/io/Closeable;)V
+
+    throw v1
+    :try_end_3
+    .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+
+    .line 82
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+
+    .line 85
+    :catch_1
+    move-exception v1
+
+    goto :goto_0
+.end method
+
+.method public final a(Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap$CompressFormat;)V
+    .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Landroid/graphics/Bitmap;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Landroid/graphics/Bitmap$CompressFormat;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 44
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Not supported by ZipFileCache"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final a(Ljava/lang/String;)[B
+    .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 60
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Not supported by ZipFileCache"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

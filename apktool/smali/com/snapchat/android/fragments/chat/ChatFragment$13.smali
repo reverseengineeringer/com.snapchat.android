@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/chat/ChatFragment;->g(Z)V
+    value = Lcom/snapchat/android/fragments/chat/ChatFragment;->a(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 1977
+    .line 2062
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$13;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     iput-boolean p2, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$13;->a:Z
@@ -44,17 +44,17 @@
     .locals 1
 
     .prologue
-    .line 1980
+    .line 2065
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$13;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->z(Lcom/snapchat/android/fragments/chat/ChatFragment;)Z
 
-    .line 1981
+    .line 2066
     iget-boolean v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$13;->a:Z
 
     if-eqz v0, :cond_0
 
-    .line 1982
+    .line 2067
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$13;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->e(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lcom/snapchat/android/ui/LockingAboveTheFoldListView;
@@ -63,21 +63,21 @@
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c()V
 
-    .line 1983
+    .line 2068
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$13;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->A(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 1984
+    .line 2069
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$13;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->n(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lyi;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->n(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lze;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lyi;->a()V
+    invoke-virtual {v0}, Lze;->a()V
 
-    .line 1986
+    .line 2071
     :cond_0
     return-void
 .end method

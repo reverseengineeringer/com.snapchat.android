@@ -1,19 +1,27 @@
+import android.animation.ValueAnimator;
+import android.animation.ValueAnimator.AnimatorUpdateListener;
+import android.view.View;
+
 public final class avk
 {
-  private static bp sInstance = null;
+  private static final int ANIMATION_DURATION_DEFAULT = 150;
+  public int mDuration;
+  public int mEndOffset;
+  private avk.a mInterface;
+  public int mPreviousXPositionForShutAnimator = 0;
+  public int mStartOffset;
+  View mViewToAnimate;
   
-  public static bp a()
+  public avk(View paramView, int paramInt)
   {
-    try
-    {
-      if (sInstance == null) {
-        sInstance = bp.c();
-      }
-      bp localbp = sInstance;
-      return localbp;
-    }
-    finally {}
+    mViewToAnimate = paramView;
+    mStartOffset = paramInt;
+    mEndOffset = 0;
+    mInterface = null;
+    mDuration = 150;
   }
+  
+  public static abstract interface a {}
 }
 
 /* Location:

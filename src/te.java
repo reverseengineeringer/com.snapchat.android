@@ -1,43 +1,27 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.model.chat.ChatConversation;
-import java.util.List;
-
 public final class te
-  extends th
+  implements bvp<td>
 {
-  public static final String CHAT_TYPING_PATH = "/bq/chat_typing";
-  private static final String TAG = "TellThemIAmTypingTask";
-  private ChatConversation mConversation;
+  private final bvk<td> membersInjector;
   
-  public te(@cgb ChatConversation paramChatConversation)
+  static
   {
-    mConversation = paramChatConversation;
-    mConversation.mIsNotifyingRecipientAboutTyping = true;
-  }
-  
-  public final void a(@cgb uc paramuc)
-  {
-    super.a(paramuc);
-    mConversation.mIsNotifyingRecipientAboutTyping = false;
-  }
-  
-  protected final String d()
-  {
-    return "/bq/chat_typing";
-  }
-  
-  @tn
-  public final class a
-    extends pl
-  {
-    @SerializedName("recipient_usernames")
-    private String recipientUsernames;
-    
-    public a()
+    if (!te.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      Object localObject;
-      recipientUsernames = mGsonWrapper.a(localObject);
+      $assertionsDisabled = bool;
+      return;
     }
+  }
+  
+  private te(bvk<td> parambvk)
+  {
+    assert (parambvk != null);
+    membersInjector = parambvk;
+  }
+  
+  public static bvp<td> a(bvk<td> parambvk)
+  {
+    return new te(parambvk);
   }
 }
 

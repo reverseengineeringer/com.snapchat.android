@@ -1,17 +1,13 @@
 package com.snapchat.android.fragments.stories;
 
-import android.content.Context;
-import auy;
-import auz;
-
 final class StoriesFragment$4
   implements Runnable
 {
-  StoriesFragment$4(StoriesFragment paramStoriesFragment, Context paramContext, auz paramauz) {}
+  StoriesFragment$4(StoriesFragment paramStoriesFragment) {}
   
   public final void run()
   {
-    c.p.a(a, b);
+    StoriesFragment.l(a);
   }
 }
 

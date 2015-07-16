@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.settings.AdditionalServicesFragment;
 import com.squareup.otto.Bus;
 
@@ -17,15 +17,15 @@ public class TurnOnFiltersView
   public TurnOnFiltersView(Context paramContext)
   {
     super(paramContext);
-    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968765, this, true);
+    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968767, this, true);
   }
   
   public boolean onTouchEvent(MotionEvent paramMotionEvent)
   {
     Rect localRect = new Rect();
-    findViewById(2131362795).getHitRect(localRect);
+    findViewById(2131362788).getHitRect(localRect);
     if (localRect.contains((int)paramMotionEvent.getX(), (int)paramMotionEvent.getY())) {
-      ban.a().a(new bdw(new AdditionalServicesFragment()));
+      bbo.a().a(new bev(new AdditionalServicesFragment()));
     }
     return true;
   }

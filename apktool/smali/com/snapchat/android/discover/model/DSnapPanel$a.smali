@@ -31,7 +31,7 @@
 
 .field public h:Lcom/snapchat/android/discover/model/MediaState;
 
-.field public i:Lbjx;
+.field public i:Lbky;
 
 .field public j:Ljava/lang/String;
 
@@ -79,13 +79,13 @@
 
     if-eq v0, v1, :cond_0
 
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     const-string v1, "Cannot build dsnap panel with null uri."
 
     const-string v2, "uri"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 
@@ -94,13 +94,13 @@
 
     if-nez v0, :cond_1
 
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     const-string v1, "Cannot build dsnap panel with null media type."
 
     const-string v2, "media_type"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 
@@ -115,13 +115,13 @@
 
     if-nez v0, :cond_2
 
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     const-string v1, "Cannot build video dsnap panel with null first frame URI."
 
     const-string v2, "video_first_frame"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 

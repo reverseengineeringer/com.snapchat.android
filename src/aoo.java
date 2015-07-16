@@ -1,66 +1,63 @@
-import java.util.ArrayList;
-import java.util.List;
+import android.os.AsyncTask;
+import com.snapchat.android.scan.SnapScan;
+import com.snapchat.android.scan.SnapScan.ImageFormat;
+import com.snapchat.android.scan.SnapScanResult;
+import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 
-public final class aoo
+public class aoo
 {
-  private final azn a;
+  private static final String k = aoo.class.getSimpleName();
+  public final Executor a;
+  public int b;
+  public double c;
+  public final AtomicBoolean d;
+  public final AtomicBoolean e;
+  public final AtomicBoolean f;
+  public final AtomicLong g;
+  public long h;
+  public int i;
+  double j;
+  private final SnapScan l;
+  private int m;
+  private int n;
+  private final aop o;
+  private final aoo.a p;
   
-  public aoo()
+  public aoo(int paramInt1, int paramInt2, int paramInt3, aop paramaop)
   {
-    this(azn.a());
+    this(new SnapScan(), avf.SERIAL_BACKGROUND_EXECUTOR, paramInt1, paramInt2, paramInt3, paramaop);
   }
   
-  private aoo(azn paramazn)
+  private aoo(SnapScan paramSnapScan, Executor paramExecutor, int paramInt1, int paramInt2, int paramInt3, aop paramaop)
   {
-    a = paramazn;
+    l = paramSnapScan;
+    a = paramExecutor;
+    b = paramInt1;
+    m = paramInt2;
+    n = paramInt3;
+    o = paramaop;
+    p = null;
+    c = 5.0D;
+    d = new AtomicBoolean(false);
+    e = new AtomicBoolean(false);
+    f = new AtomicBoolean(false);
+    g = new AtomicLong(0L);
   }
   
-  public final List<ajr> a(List<ajr> paramList)
+  public static double a(long paramLong)
   {
-    int i = a.d();
-    if (i == -1) {
-      i = 3;
-    }
-    for (;;)
-    {
-      ArrayList localArrayList = new ArrayList(i);
-      if ((i == 0) || (paramList.size() == 0)) {
-        return localArrayList;
-      }
-      ajr localajr = (ajr)paramList.get(0);
-      localArrayList.add(localajr);
-      if (paramList.size() == 1) {
-        return localArrayList;
-      }
-      if ((i > 2) && (paramList.size() > 2))
-      {
-        long l1 = localajr.W();
-        long l3 = Math.ceil(Math.abs(((ajr)paramList.get(paramList.size() - 1)).W() - l1) / (i - 1));
-        l1 -= l3;
-        int j = 1;
-        while (j < paramList.size() - 1)
-        {
-          localajr = (ajr)paramList.get(j);
-          localajr.W();
-          localajr.W();
-          long l2 = l1;
-          if (localajr.W() <= l1)
-          {
-            l2 = l1 - l3;
-            localArrayList.add(localajr);
-          }
-          j += 1;
-          l1 = l2;
-        }
-      }
-      if ((i > 1) && (paramList.size() > 1)) {
-        localArrayList.add(paramList.get(paramList.size() - 1));
-      }
-      localArrayList.size();
-      String.format("Selected too many stories for thumbnail! (%d/%s)", new Object[] { Integer.valueOf(localArrayList.size()), Integer.valueOf(i) });
-      return localArrayList;
-    }
+    return (System.nanoTime() - paramLong) / 1.0E9D;
   }
+  
+  public final void a()
+  {
+    d.set(false);
+    e.set(false);
+  }
+  
+  public static abstract interface a {}
 }
 
 /* Location:

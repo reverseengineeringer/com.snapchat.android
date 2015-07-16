@@ -2,53 +2,65 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class gm
-  extends lt
+  extends ml
 {
-  public Long adIndexCount;
-  public Long adIndexPos;
-  public String adsnapId;
-  public String editionId;
-  private final String eventName = "DISCOVER_AD_LONGFORM_SHARE_DENY";
-  public hy longformType;
-  public String publisherId;
-  public Long snapIndexCount;
-  public Long snapIndexPos;
-  private ld source;
-  public Double timeViewed;
+  public Long camera;
+  private Long caption;
+  private Boolean drawing;
+  private final String eventName = "DIRECT_SNAP_CREATE";
+  private String filter;
+  private String filterGeofence;
+  private hv filterInfo;
+  private String filterSponsor;
+  private hw filterType;
+  private hx filterVisual;
+  public Boolean flash;
+  public ih mediaType;
+  public Double snapTimeSec;
+  public lu source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "DISCOVER_AD_LONGFORM_SHARE_DENY");
-    if (adIndexCount != null) {
-      localHashMap.put("ad_index_count", adIndexCount);
+    localHashMap.put("event_name", "DIRECT_SNAP_CREATE");
+    if (camera != null) {
+      localHashMap.put("camera", camera);
     }
-    if (adIndexPos != null) {
-      localHashMap.put("ad_index_pos", adIndexPos);
+    if (caption != null) {
+      localHashMap.put("caption", caption);
     }
-    if (adsnapId != null) {
-      localHashMap.put("adsnap_id", adsnapId);
+    if (drawing != null) {
+      localHashMap.put("drawing", drawing);
     }
-    if (editionId != null) {
-      localHashMap.put("edition_id", editionId);
+    if (filter != null) {
+      localHashMap.put("filter", filter);
     }
-    if (longformType != null) {
-      localHashMap.put("longform_type", longformType);
+    if (filterGeofence != null) {
+      localHashMap.put("filter_geofence", filterGeofence);
     }
-    if (publisherId != null) {
-      localHashMap.put("publisher_id", publisherId);
+    if (filterInfo != null) {
+      localHashMap.put("filter_info", filterInfo);
     }
-    if (snapIndexCount != null) {
-      localHashMap.put("snap_index_count", snapIndexCount);
+    if (filterSponsor != null) {
+      localHashMap.put("filter_sponsor", filterSponsor);
     }
-    if (snapIndexPos != null) {
-      localHashMap.put("snap_index_pos", snapIndexPos);
+    if (filterType != null) {
+      localHashMap.put("filter_type", filterType);
+    }
+    if (filterVisual != null) {
+      localHashMap.put("filter_visual", filterVisual);
+    }
+    if (flash != null) {
+      localHashMap.put("flash", flash);
+    }
+    if (mediaType != null) {
+      localHashMap.put("media_type", mediaType);
+    }
+    if (snapTimeSec != null) {
+      localHashMap.put("snap_time_sec", snapTimeSec);
     }
     if (source != null) {
       localHashMap.put("source", source);
-    }
-    if (timeViewed != null) {
-      localHashMap.put("time_viewed", timeViewed);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -67,95 +79,122 @@ public final class gm
         return false;
       }
       paramObject = (gm)paramObject;
-      if (adIndexCount != null)
+      if (camera != null)
       {
-        if (adIndexCount.equals(adIndexCount)) {}
+        if (camera.equals(camera)) {}
       }
       else {
-        while (adIndexCount != null) {
+        while (camera != null) {
           return false;
         }
       }
-      if (adIndexPos != null)
+      if (caption != null)
       {
-        if (adIndexPos.equals(adIndexPos)) {}
+        if (caption.equals(caption)) {}
       }
       else {
-        while (adIndexPos != null) {
+        while (caption != null) {
           return false;
         }
       }
-      if (adsnapId != null)
+      if (drawing != null)
       {
-        if (adsnapId.equals(adsnapId)) {}
+        if (drawing.equals(drawing)) {}
       }
       else {
-        while (adsnapId != null) {
+        while (drawing != null) {
           return false;
         }
       }
-      if (editionId != null)
+      if (filter != null)
       {
-        if (editionId.equals(editionId)) {}
+        if (filter.equals(filter)) {}
       }
       else {
-        while (editionId != null) {
+        while (filter != null) {
           return false;
         }
       }
-      if (longformType != null)
+      if (filterGeofence != null)
       {
-        if (longformType.equals(longformType)) {}
+        if (filterGeofence.equals(filterGeofence)) {}
       }
       else {
-        while (longformType != null) {
+        while (filterGeofence != null) {
           return false;
         }
       }
-      if (publisherId != null)
+      if (filterInfo != null)
       {
-        if (publisherId.equals(publisherId)) {}
+        if (filterInfo.equals(filterInfo)) {}
       }
       else {
-        while (publisherId != null) {
+        while (filterInfo != null) {
           return false;
         }
       }
-      if (snapIndexCount != null)
+      if (filterSponsor != null)
       {
-        if (snapIndexCount.equals(snapIndexCount)) {}
+        if (filterSponsor.equals(filterSponsor)) {}
       }
       else {
-        while (snapIndexCount != null) {
+        while (filterSponsor != null) {
           return false;
         }
       }
-      if (snapIndexPos != null)
+      if (filterType != null)
       {
-        if (snapIndexPos.equals(snapIndexPos)) {}
+        if (filterType.equals(filterType)) {}
       }
       else {
-        while (snapIndexPos != null) {
+        while (filterType != null) {
           return false;
         }
       }
-      if (source != null)
+      if (filterVisual != null)
       {
-        if (source.equals(source)) {}
+        if (filterVisual.equals(filterVisual)) {}
       }
       else {
-        while (source != null) {
+        while (filterVisual != null) {
           return false;
         }
       }
-      if (timeViewed == null) {
+      if (flash != null)
+      {
+        if (flash.equals(flash)) {}
+      }
+      else {
+        while (flash != null) {
+          return false;
+        }
+      }
+      if (mediaType != null)
+      {
+        if (mediaType.equals(mediaType)) {}
+      }
+      else {
+        while (mediaType != null) {
+          return false;
+        }
+      }
+      if (snapTimeSec != null)
+      {
+        if (snapTimeSec.equals(snapTimeSec)) {}
+      }
+      else {
+        while (snapTimeSec != null) {
+          return false;
+        }
+      }
+      if (source == null) {
         break;
       }
-    } while (timeViewed.equals(timeViewed));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (timeViewed == null) {
+      if (source == null) {
         break;
       }
     }
@@ -163,8 +202,8 @@ public final class gm
   
   public final int hashCode()
   {
-    int i5 = 0;
-    int i6 = super.hashCode();
+    int i8 = 0;
+    int i9 = super.hashCode();
     int i;
     int j;
     label39:
@@ -179,56 +218,77 @@ public final class gm
     int i2;
     label118:
     int i3;
-    if (adIndexCount != null)
+    label134:
+    int i4;
+    label150:
+    int i5;
+    label166:
+    int i6;
+    if (camera != null)
     {
-      i = adIndexCount.hashCode();
-      if (adIndexPos == null) {
-        break label231;
+      i = camera.hashCode();
+      if (caption == null) {
+        break label297;
       }
-      j = adIndexPos.hashCode();
-      if (adsnapId == null) {
-        break label236;
+      j = caption.hashCode();
+      if (drawing == null) {
+        break label302;
       }
-      k = adsnapId.hashCode();
-      if (editionId == null) {
-        break label241;
+      k = drawing.hashCode();
+      if (filter == null) {
+        break label307;
       }
-      m = editionId.hashCode();
-      if (longformType == null) {
-        break label247;
+      m = filter.hashCode();
+      if (filterGeofence == null) {
+        break label313;
       }
-      n = longformType.hashCode();
-      if (publisherId == null) {
-        break label253;
+      n = filterGeofence.hashCode();
+      if (filterInfo == null) {
+        break label319;
       }
-      i1 = publisherId.hashCode();
-      if (snapIndexCount == null) {
-        break label259;
+      i1 = filterInfo.hashCode();
+      if (filterSponsor == null) {
+        break label325;
       }
-      i2 = snapIndexCount.hashCode();
-      if (snapIndexPos == null) {
-        break label265;
+      i2 = filterSponsor.hashCode();
+      if (filterType == null) {
+        break label331;
       }
-      i3 = snapIndexPos.hashCode();
-      label134:
-      if (source == null) {
-        break label271;
+      i3 = filterType.hashCode();
+      if (filterVisual == null) {
+        break label337;
+      }
+      i4 = filterVisual.hashCode();
+      if (flash == null) {
+        break label343;
+      }
+      i5 = flash.hashCode();
+      if (mediaType == null) {
+        break label349;
+      }
+      i6 = mediaType.hashCode();
+      label182:
+      if (snapTimeSec == null) {
+        break label355;
       }
     }
-    label231:
-    label236:
-    label241:
-    label247:
-    label253:
-    label259:
-    label265:
-    label271:
-    for (int i4 = source.hashCode();; i4 = 0)
+    label297:
+    label302:
+    label307:
+    label313:
+    label319:
+    label325:
+    label331:
+    label337:
+    label343:
+    label349:
+    label355:
+    for (int i7 = snapTimeSec.hashCode();; i7 = 0)
     {
-      if (timeViewed != null) {
-        i5 = timeViewed.hashCode();
+      if (source != null) {
+        i8 = source.hashCode();
       }
-      return (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i6 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i5;
+      return (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i9 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i8;
       i = 0;
       break;
       j = 0;
@@ -245,6 +305,12 @@ public final class gm
       break label118;
       i3 = 0;
       break label134;
+      i4 = 0;
+      break label150;
+      i5 = 0;
+      break label166;
+      i6 = 0;
+      break label182;
     }
   }
 }

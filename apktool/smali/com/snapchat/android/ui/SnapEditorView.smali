@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lapg$a;
-.implements Laph;
-.implements Laps;
+.implements Laqc$a;
+.implements Laqd;
+.implements Laqr;
 .implements Lcom/snapchat/android/ui/VideoFilterView$d;
 
 
 # annotations
-.annotation build Lavl;
+.annotation build Lawj;
 .end annotation
 
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -30,7 +30,7 @@
 .field private C:I
 
 .field private D:Landroid/view/View$OnTouchListener;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -55,17 +55,17 @@
 
 .field public b:Lcom/snapchat/android/ui/SwipeImageView;
 
-.field public c:Lapi;
+.field public c:Laqe;
 
 .field private final d:Lcom/squareup/otto/Bus;
 
-.field private final e:Lwy;
+.field private final e:Lxt;
 
-.field private final f:Lazo;
+.field private final f:Lban;
 
 .field private final g:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
-.field private final h:Lapd;
+.field private final h:Lapz;
 
 .field private i:Lcom/snapchat/android/ui/FitWidthViewGroup;
 
@@ -77,11 +77,11 @@
 
 .field private m:Lcom/snapchat/android/ui/SwipeViewState;
 
-.field private n:Lars;
+.field private n:Lasr;
 
-.field private o:Lapg;
+.field private o:Laqc;
 
-.field private p:Larc;
+.field private p:Lasb;
 
 .field private q:Landroid/widget/FrameLayout;
 
@@ -89,22 +89,22 @@
 
 .field private s:Lcom/snapchat/android/ui/VideoFilterView;
 
-.field private t:Lapj;
+.field private t:Laqf;
 
 .field private u:Landroid/util/DisplayMetrics;
 
-.field private v:Larw;
+.field private v:Lasv;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Larw",
+            "Lasv",
             "<",
-            "Larn;",
+            "Lasm;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private w:Loj;
+.field private w:Lpa;
 
 .field private x:Landroid/view/View;
 
@@ -119,23 +119,23 @@
 
     .prologue
     .line 141
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v3
 
-    invoke-static {}, Lwy;->a()Lwy;
+    invoke-static {}, Lxt;->a()Lxt;
 
     move-result-object v4
 
-    new-instance v5, Lazo;
+    new-instance v5, Lban;
 
-    invoke-direct {v5}, Lazo;-><init>()V
+    invoke-direct {v5}, Lban;-><init>()V
 
     invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
     move-result-object v6
 
-    invoke-static {}, Lapd;->a()Lapd;
+    invoke-static {}, Lapz;->a()Lapz;
 
     move-result-object v7
 
@@ -145,40 +145,40 @@
 
     move-object v2, p2
 
-    invoke-direct/range {v0 .. v7}, Lcom/snapchat/android/ui/SnapEditorView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lcom/squareup/otto/Bus;Lwy;Lazo;Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;Lapd;)V
+    invoke-direct/range {v0 .. v7}, Lcom/snapchat/android/ui/SnapEditorView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lcom/squareup/otto/Bus;Lxt;Lban;Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;Lapz;)V
 
     .line 144
     return-void
 .end method
 
-.method protected constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lcom/squareup/otto/Bus;Lwy;Lazo;Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;Lapd;)V
+.method protected constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lcom/squareup/otto/Bus;Lxt;Lban;Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;Lapz;)V
     .locals 1
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/util/AttributeSet;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/squareup/otto/Bus;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p4    # Lwy;
-        .annotation build Lcgb;
+    .param p4    # Lxt;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p5    # Lazo;
-        .annotation build Lcgb;
+    .param p5    # Lban;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p6    # Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p7    # Lapd;
-        .annotation build Lcgb;
+    .param p7    # Lapz;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -212,16 +212,16 @@
     iput-object p3, p0, Lcom/snapchat/android/ui/SnapEditorView;->d:Lcom/squareup/otto/Bus;
 
     .line 156
-    iput-object p4, p0, Lcom/snapchat/android/ui/SnapEditorView;->e:Lwy;
+    iput-object p4, p0, Lcom/snapchat/android/ui/SnapEditorView;->e:Lxt;
 
     .line 157
-    iput-object p5, p0, Lcom/snapchat/android/ui/SnapEditorView;->f:Lazo;
+    iput-object p5, p0, Lcom/snapchat/android/ui/SnapEditorView;->f:Lban;
 
     .line 158
     iput-object p6, p0, Lcom/snapchat/android/ui/SnapEditorView;->g:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
     .line 159
-    iput-object p7, p0, Lcom/snapchat/android/ui/SnapEditorView;->h:Lapd;
+    iput-object p7, p0, Lcom/snapchat/android/ui/SnapEditorView;->h:Lapz;
 
     .line 160
     return-void
@@ -308,7 +308,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Laur;->c(Landroid/graphics/Bitmap;Landroid/content/Context;)Landroid/graphics/Bitmap;
+    invoke-static {v3, v4}, Lavp;->c(Landroid/graphics/Bitmap;Landroid/content/Context;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
@@ -333,12 +333,12 @@
     if-eqz v0, :cond_7
 
     .line 321
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
-    invoke-virtual {v0}, Lars;->a()V
+    invoke-virtual {v0}, Lasr;->a()V
 
     .line 322
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
     iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->G:Lcom/snapchat/android/model/Mediabryo;
 
@@ -352,7 +352,7 @@
 
     iget-object v5, v5, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
-    invoke-virtual {v0, v2, v3, v4, v5}, Lars;->a(IZZLcom/snapchat/android/model/Mediabryo$SnapType;)V
+    invoke-virtual {v0, v2, v3, v4, v5}, Lasr;->a(IZZLcom/snapchat/android/model/Mediabryo$SnapType;)V
 
     .line 335
     :cond_5
@@ -366,7 +366,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Laur;->a(Landroid/graphics/Bitmap;Landroid/content/Context;)Landroid/graphics/Bitmap;
+    invoke-static {v0, v3}, Lavp;->a(Landroid/graphics/Bitmap;Landroid/content/Context;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -411,7 +411,7 @@
     .line 350
     const/16 v0, 0x320
 
-    invoke-virtual {v1, v0}, Laus;->startTransition(I)V
+    invoke-virtual {v1, v0}, Lavq;->startTransition(I)V
 
     .line 353
     :cond_6
@@ -422,9 +422,9 @@
     .line 354
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->G:Lcom/snapchat/android/model/Mediabryo;
 
-    iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lajl;
+    iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lakh;
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setPreviewConfiguration(Lajl;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setPreviewConfiguration(Lakh;)V
 
     goto :goto_1
 
@@ -444,9 +444,9 @@
     iget v3, v0, Landroid/content/res/Configuration;->orientation:I
 
     .line 327
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    invoke-virtual {v0}, Larw;->a()Ljava/util/List;
+    invoke-virtual {v0}, Lasv;->a()Ljava/util/List;
 
     move-result-object v0
 
@@ -465,14 +465,14 @@
 
     move-result-object v0
 
-    check-cast v0, Larn;
+    check-cast v0, Lasm;
 
     .line 328
     invoke-virtual {p0}, Lcom/snapchat/android/ui/SnapEditorView;->getContext()Landroid/content/Context;
 
     move-result-object v5
 
-    invoke-virtual {v0, v3, v5}, Larn;->a(ILandroid/content/Context;)V
+    invoke-virtual {v0, v3, v5}, Lasm;->a(ILandroid/content/Context;)V
 
     goto :goto_3
 
@@ -493,7 +493,7 @@
     if-eqz p2, :cond_0
 
     .line 434
-    const v0, 0x7f0400c9
+    const v0, 0x7f0400cb
 
     invoke-virtual {p0, v0, p1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -503,7 +503,7 @@
 
     .line 436
     :cond_0
-    const v0, 0x7f0400ca
+    const v0, 0x7f0400cc
 
     invoke-virtual {p0, v0, p1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -584,11 +584,11 @@
 .method private a(Lcom/snapchat/android/model/Mediabryo;Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
     .locals 3
     .param p1    # Lcom/snapchat/android/model/Mediabryo;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -686,7 +686,7 @@
 .end method
 
 .method static synthetic b(Lcom/snapchat/android/ui/SnapEditorView;Landroid/media/MediaPlayer;)V
-    .locals 5
+    .locals 4
 
     .prologue
     .line 74
@@ -720,37 +720,23 @@
 
     float-to-int v0, v0
 
-    const-string v2, "SnapEditorView"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v3, "Setting Aspect Ratio = "
 
-    const-string v4, "Setting Aspect Ratio = "
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    const-string v3, " x "
 
-    const-string v4, " x "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->r:Lcom/snapchat/android/ui/SnapVideoView;
 
@@ -814,24 +800,24 @@
 
     .prologue
     .line 897
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    invoke-virtual {v0}, Larw;->b()I
+    invoke-virtual {v0}, Lasv;->b()I
 
     move-result v0
 
     .line 899
     if-lez v0, :cond_0
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Larw;->a(I)Larn;
+    invoke-virtual {v1, v2}, Lasv;->a(I)Lasm;
 
     move-result-object v1
 
-    instance-of v1, v1, Lasf;
+    instance-of v1, v1, Late;
 
     if-eqz v1, :cond_0
 
@@ -853,10 +839,10 @@
     return-object v0
 .end method
 
-.method private setPreviewConfiguration(Lajl;)V
+.method private setPreviewConfiguration(Lakh;)V
     .locals 3
-    .param p1    # Lajl;
-        .annotation build Lcgc;
+    .param p1    # Lakh;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -873,15 +859,15 @@
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->i:Lcom/snapchat/android/ui/FitWidthViewGroup;
 
-    iget v1, p1, Lajl;->mGravity:I
+    iget v1, p1, Lakh;->mGravity:I
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/FitWidthViewGroup;->setGravity(I)V
 
     .line 414
-    iget v0, p1, Lajl;->mWidth:I
+    iget v0, p1, Lakh;->mWidth:I
 
     .line 415
-    iget v1, p1, Lajl;->mHeight:I
+    iget v1, p1, Lakh;->mHeight:I
 
     .line 416
     if-ltz v0, :cond_3
@@ -911,7 +897,7 @@
 
     .line 426
     :cond_3
-    iget-boolean v0, p1, Lajl;->mShouldHideSystemUi:Z
+    iget-boolean v0, p1, Lakh;->mShouldHideSystemUi:Z
 
     if-eqz v0, :cond_0
 
@@ -1032,18 +1018,18 @@
     invoke-direct {v0, p0}, Lcom/snapchat/android/ui/SnapEditorView$a;-><init>(Lcom/snapchat/android/ui/SnapEditorView;)V
 
     .line 227
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v1, v1, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v1, v1, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v1, v1, Lcom/snapchat/android/ui/SwipeViewState;->c:I
 
     iput v1, v0, Lcom/snapchat/android/ui/SnapEditorView$a;->a:I
 
     .line 228
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v1, v1, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v1, v1, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v1, v1, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
@@ -1072,13 +1058,13 @@
 
     .prologue
     .line 747
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Lapg;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Laqc;
 
-    iget-object v1, v0, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v1, v0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput p1, v1, Lcom/snapchat/android/ui/SwipeViewState;->h:F
 
-    iget-object v1, v0, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v1, v0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     invoke-virtual {v1}, Lcom/snapchat/android/ui/SwipeViewState;->c()Z
 
@@ -1086,14 +1072,14 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, v0, Lapg;->a:Lapi;
+    iget-object v1, v0, Laqc;->a:Laqe;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Lapi;->a(Z)Z
+    invoke-virtual {v1, v2}, Laqe;->a(Z)Z
 
     :cond_0
-    iget-object v0, v0, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     sget-object v1, Lcom/snapchat/android/ui/SwipeViewState$MotionState;->NOT_MOVING:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
 
@@ -1108,9 +1094,9 @@
 
     .prologue
     .line 916
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    invoke-virtual {v0, p1}, Larw;->a(I)Larn;
+    invoke-virtual {v0, p1}, Lasv;->a(I)Lasm;
 
     move-result-object v0
 
@@ -1118,26 +1104,26 @@
     if-eqz v0, :cond_3
 
     .line 918
-    invoke-virtual {v0}, Larn;->g()V
+    invoke-virtual {v0}, Lasm;->g()V
 
     .line 919
-    instance-of v1, v0, Lasb;
+    instance-of v1, v0, Lata;
 
     if-eqz v1, :cond_3
 
     iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->G:Lcom/snapchat/android/model/Mediabryo;
 
-    instance-of v1, v1, Laim;
+    instance-of v1, v1, Laji;
 
     if-eqz v1, :cond_3
 
     .line 920
-    check-cast v0, Lasb;
+    check-cast v0, Lata;
 
     .line 921
     iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->G:Lcom/snapchat/android/model/Mediabryo;
 
-    check-cast v1, Laim;
+    check-cast v1, Laji;
 
     .line 922
     invoke-direct {p0}, Lcom/snapchat/android/ui/SnapEditorView;->getFilteredPageCount()I
@@ -1145,81 +1131,81 @@
     move-result v2
 
     .line 923
-    iget-object v0, v0, Lasb;->b:Laiv;
+    iget-object v0, v0, Lata;->b:Lajr;
 
-    iget-object v3, v0, Laiv;->mFilterId:Ljava/lang/String;
+    iget-object v3, v0, Lajr;->mFilterId:Ljava/lang/String;
 
-    iget-object v4, v1, Laim;->mGeofilterSwipeMetaData:Lnc;
+    iget-object v4, v1, Laji;->mGeofilterSwipeMetaData:Lnt;
 
-    iget-object v0, v4, Lnc;->mData:Ljava/util/Map;
+    iget-object v0, v4, Lnt;->mData:Ljava/util/Map;
 
     invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lnd;
+    check-cast v0, Lnu;
 
     if-nez v0, :cond_0
 
-    iget-object v4, v4, Lnc;->mData:Ljava/util/Map;
+    iget-object v4, v4, Lnt;->mData:Ljava/util/Map;
 
-    new-instance v0, Lnd;
+    new-instance v0, Lnu;
 
-    invoke-direct {v0, v3}, Lnd;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Lnu;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v4, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     int-to-long v4, v2
 
-    iput-wide v4, v0, Lnd;->filterIndexCount:J
+    iput-wide v4, v0, Lnu;->filterIndexCount:J
 
     int-to-long v4, p1
 
-    iput-wide v4, v0, Lnd;->filterIndexPos:J
+    iput-wide v4, v0, Lnu;->filterIndexPos:J
 
     if-eqz p2, :cond_1
 
-    iget-wide v4, v0, Lnd;->filterCount:J
+    iget-wide v4, v0, Lnu;->filterCount:J
 
     const-wide/16 v6, 0x1
 
     add-long/2addr v4, v6
 
-    iput-wide v4, v0, Lnd;->filterCount:J
+    iput-wide v4, v0, Lnu;->filterCount:J
 
     :cond_1
-    iget-object v3, v0, Lnd;->viewTimeStopwatch:Lcn;
+    iget-object v3, v0, Lnu;->viewTimeStopwatch:Lcs;
 
-    iget-boolean v3, v3, Lcn;->a:Z
+    iget-boolean v3, v3, Lcs;->a:Z
 
     if-nez v3, :cond_2
 
-    iget-object v0, v0, Lnd;->viewTimeStopwatch:Lcn;
+    iget-object v0, v0, Lnu;->viewTimeStopwatch:Lcs;
 
-    invoke-virtual {v0}, Lcn;->a()Lcn;
+    invoke-virtual {v0}, Lcs;->a()Lcs;
 
     .line 925
     :cond_2
-    iget-object v0, v1, Laim;->mGeofilterSwipeMetaData:Lnc;
+    iget-object v0, v1, Laji;->mGeofilterSwipeMetaData:Lnt;
 
     int-to-long v4, p1
 
-    iput-wide v4, v0, Lnc;->mGeofilterIndexPos:J
+    iput-wide v4, v0, Lnt;->mGeofilterIndexPos:J
 
     int-to-long v2, v2
 
-    iput-wide v2, v0, Lnc;->mGeofilterIndexCount:J
+    iput-wide v2, v0, Lnt;->mGeofilterIndexCount:J
 
     .line 928
     :cond_3
     return-void
 .end method
 
-.method public final a(Lajm;)V
+.method public final a(Laku;)V
     .locals 6
-    .param p1    # Lajm;
-        .annotation build Lcgb;
+    .param p1    # Laku;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -1239,7 +1225,7 @@
     invoke-virtual {v1}, Lcom/snapchat/android/ui/FitWidthViewGroup;->removeAllViews()V
 
     .line 374
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
     iget-boolean v3, p1, Lcom/snapchat/android/model/Mediabryo;->mShouldEnableVisualFilters:Z
 
@@ -1247,10 +1233,10 @@
 
     iget-object v5, p1, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
-    invoke-virtual {v1, v0, v3, v4, v5}, Lars;->a(IZZLcom/snapchat/android/model/Mediabryo$SnapType;)V
+    invoke-virtual {v1, v0, v3, v4, v5}, Lasr;->a(IZZLcom/snapchat/android/model/Mediabryo$SnapType;)V
 
     .line 380
-    invoke-static {}, Lwy;->b()Z
+    invoke-static {}, Lxt;->b()Z
 
     move-result v1
 
@@ -1320,7 +1306,7 @@
 
     iget-object v1, p1, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
 
-    invoke-virtual {p1}, Lajm;->q()[F
+    invoke-virtual {p1}, Laku;->q()[F
 
     move-result-object v3
 
@@ -1330,15 +1316,15 @@
 
     if-nez v0, :cond_3
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->f:Lazo;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->f:Lban;
 
-    new-instance v1, Lof;
+    new-instance v1, Low;
 
     const-string v2, "Failed to open video!"
 
-    invoke-direct {v1, v2}, Lof;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Low;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lazo;->a(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1}, Lban;->a(Ljava/lang/Throwable;)V
 
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->g:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
@@ -1377,9 +1363,9 @@
 
     .line 400
     :cond_2
-    iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lajl;
+    iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lakh;
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setPreviewConfiguration(Lajl;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setPreviewConfiguration(Lakh;)V
 
     .line 401
     return-void
@@ -1390,19 +1376,11 @@
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/VideoFilterView;->setVisibility(I)V
 
-    const-string v0, "SnapEditorView"
-
-    const-string v1, "SnapPreviewFragment Editor playing video 1"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->s:Lcom/snapchat/android/ui/VideoFilterView;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->t:Lapj;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->t:Laqf;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/VideoFilterView;->setSwipeVideoViewController(Lapj;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/VideoFilterView;->setSwipeVideoViewController(Laqf;)V
 
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->s:Lcom/snapchat/android/ui/VideoFilterView;
 
@@ -1438,11 +1416,11 @@
     invoke-virtual {v0, p0}, Lcom/squareup/otto/Bus;->c(Ljava/lang/Object;)V
 
     .line 175
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->h:Lapd;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->h:Lapz;
 
-    const v1, 0x7f04009c
+    const v1, 0x7f04009e
 
-    invoke-virtual {v0, v1}, Lapd;->a(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lapz;->a(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1463,7 +1441,7 @@
     .line 179
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->a:Lcom/snapchat/android/ui/caption/SnapCaptionView;
 
-    invoke-virtual {v0, p0}, Lcom/snapchat/android/ui/caption/SnapCaptionView;->setInterface(Laps;)V
+    invoke-virtual {v0, p0}, Lcom/snapchat/android/ui/caption/SnapCaptionView;->setInterface(Laqr;)V
 
     .line 180
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->a:Lcom/snapchat/android/ui/caption/SnapCaptionView;
@@ -1475,7 +1453,7 @@
     .line 181
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->x:Landroid/view/View;
 
-    const v1, 0x7f0a038b
+    const v1, 0x7f0a038a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1516,27 +1494,27 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->m:Lcom/snapchat/android/ui/SwipeViewState;
 
     .line 189
-    new-instance v0, Larw;
+    new-instance v0, Lasv;
 
-    invoke-direct {v0}, Larw;-><init>()V
+    invoke-direct {v0}, Lasv;-><init>()V
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setFilterPageStore(Larw;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setFilterPageStore(Lasv;)V
 
     .line 190
-    new-instance v0, Lapi;
+    new-instance v0, Laqe;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->m:Lcom/snapchat/android/ui/SwipeViewState;
 
-    invoke-direct {v0, v1, v2}, Lapi;-><init>(Larv;Lcom/snapchat/android/ui/SwipeViewState;)V
+    invoke-direct {v0, v1, v2}, Laqe;-><init>(Lasu;Lcom/snapchat/android/ui/SwipeViewState;)V
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setSwipePageController(Lapi;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setSwipePageController(Laqe;)V
 
     .line 192
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->x:Landroid/view/View;
 
-    const v1, 0x7f0a038a
+    const v1, 0x7f0a0389
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1570,29 +1548,29 @@
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SwipeImageView;->addView(Landroid/view/View;)V
 
     .line 194
-    new-instance v0, Lapg;
+    new-instance v0, Laqc;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
     iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->m:Lcom/snapchat/android/ui/SwipeViewState;
 
-    invoke-direct {v0, v1, v2, v3}, Lapg;-><init>(Lapi;Lcom/snapchat/android/ui/SwipeImageView;Lcom/snapchat/android/ui/SwipeViewState;)V
+    invoke-direct {v0, v1, v2, v3}, Laqc;-><init>(Laqe;Lcom/snapchat/android/ui/SwipeImageView;Lcom/snapchat/android/ui/SwipeViewState;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Lapg;
+    iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Laqc;
 
     .line 195
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Lapg;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Laqc;
 
-    invoke-virtual {v0, p0}, Lapg;->a(Lapg$a;)V
+    invoke-virtual {v0, p0}, Laqc;->a(Laqc$a;)V
 
     .line 197
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SwipeImageView;->setFilterPageProvider(Larv;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SwipeImageView;->setFilterPageProvider(Lasu;)V
 
     .line 198
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->b:Lcom/snapchat/android/ui/SwipeImageView;
@@ -1602,52 +1580,52 @@
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SwipeImageView;->setSwipeState(Lcom/snapchat/android/ui/SwipeViewState;)V
 
     .line 199
-    new-instance v0, Lars;
+    new-instance v0, Lasr;
 
     iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
-    iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    invoke-direct {v0, p1, v1, v2}, Lars;-><init>(Landroid/content/Context;Lcom/snapchat/android/ui/SwipeImageView;Larw;)V
+    invoke-direct {v0, p1, v1, v2}, Lasr;-><init>(Landroid/content/Context;Lcom/snapchat/android/ui/SwipeImageView;Lasv;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
     .line 200
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Lapg;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Laqc;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
-    invoke-virtual {v0, v1}, Lapg;->a(Lapg$a;)V
+    invoke-virtual {v0, v1}, Laqc;->a(Laqc$a;)V
 
     .line 201
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->d:Lcom/squareup/otto/Bus;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->c(Ljava/lang/Object;)V
 
     .line 203
-    new-instance v0, Lapj;
+    new-instance v0, Laqf;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->m:Lcom/snapchat/android/ui/SwipeViewState;
 
-    invoke-direct {v0, v1, v2}, Lapj;-><init>(Larv;Lcom/snapchat/android/ui/SwipeViewState;)V
+    invoke-direct {v0, v1, v2}, Laqf;-><init>(Lasu;Lcom/snapchat/android/ui/SwipeViewState;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->t:Lapj;
+    iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->t:Laqf;
 
     .line 204
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Lapg;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Laqc;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->t:Lapj;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->t:Laqf;
 
-    invoke-virtual {v0, v1}, Lapg;->a(Lapg$a;)V
+    invoke-virtual {v0, v1}, Laqc;->a(Laqc$a;)V
 
     .line 206
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->x:Landroid/view/View;
 
-    const v1, 0x7f0a0389
+    const v1, 0x7f0a0388
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1709,17 +1687,17 @@
     iput v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->C:I
 
     .line 218
-    new-instance v0, Larc;
+    new-instance v0, Lasb;
 
     iget v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->C:I
 
-    new-instance v2, Larf;
+    new-instance v2, Lase;
 
-    invoke-direct {v2}, Larf;-><init>()V
+    invoke-direct {v2}, Lase;-><init>()V
 
-    invoke-direct {v0, v1, p0, v2}, Larc;-><init>(ILaph;Larf;)V
+    invoke-direct {v0, v1, p0, v2}, Lasb;-><init>(ILaqd;Lase;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->p:Larc;
+    iput-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->p:Lasb;
 
     .line 219
     return-void
@@ -1732,7 +1710,7 @@
     .line 764
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeImageView;->getCurrentPage()Larn;
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeImageView;->getCurrentPage()Lasm;
 
     move-result-object v0
 
@@ -1754,7 +1732,7 @@
 
     .line 764
     :cond_0
-    invoke-virtual {v0, p1}, Larn;->a(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p1}, Lasm;->a(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
@@ -1807,28 +1785,28 @@
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->setMediabryo(Lcom/snapchat/android/model/Mediabryo;)V
 
     .line 239
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
     iget v1, p1, Lcom/snapchat/android/ui/SnapEditorView$a;->a:I
 
-    iget-object v2, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v2, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput v1, v2, Lcom/snapchat/android/ui/SwipeViewState;->c:I
 
-    iget-object v0, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput v1, v0, Lcom/snapchat/android/ui/SwipeViewState;->d:I
 
     .line 240
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
     iget v1, p1, Lcom/snapchat/android/ui/SnapEditorView$a;->b:I
 
-    iget-object v2, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v2, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput v1, v2, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
-    iget-object v0, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput v1, v0, Lcom/snapchat/android/ui/SwipeViewState;->b:I
 
@@ -1874,7 +1852,7 @@
     if-eqz p2, :cond_2
 
     .line 940
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->w:Loj;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->w:Lpa;
 
     if-eqz v0, :cond_1
 
@@ -1882,53 +1860,53 @@
 
     iget-boolean v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->l:Z
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v2, v2, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v2, v2, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v2, v2, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
-    invoke-virtual {v1, v2}, Larw;->a(I)Larn;
+    invoke-virtual {v1, v2}, Lasv;->a(I)Lasm;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v3, v3, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v3, v3, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v3, v3, Lcom/snapchat/android/ui/SwipeViewState;->c:I
 
-    invoke-virtual {v2, v3}, Larw;->a(I)Larn;
+    invoke-virtual {v2, v3}, Lasv;->a(I)Lasm;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->w:Loj;
+    iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->w:Lpa;
 
     if-eqz v0, :cond_3
 
-    iget v0, v3, Loj;->c:I
+    iget v0, v3, Lpa;->c:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, v3, Loj;->c:I
+    iput v0, v3, Lpa;->c:I
 
     :goto_0
     if-eqz v1, :cond_0
 
-    iget-object v0, v3, Loj;->e:Loi;
+    iget-object v0, v3, Lpa;->e:Loz;
 
-    invoke-virtual {v3, v1, v0}, Loj;->a(Larn;Loi;)V
+    invoke-virtual {v3, v1, v0}, Lpa;->a(Lasm;Loz;)V
 
     :cond_0
     if-eqz v2, :cond_1
 
-    iget-object v0, v3, Loj;->f:Loi;
+    iget-object v0, v3, Lpa;->f:Loz;
 
-    invoke-virtual {v3, v2, v0}, Loj;->a(Larn;Loi;)V
+    invoke-virtual {v3, v2, v0}, Lpa;->a(Lasm;Loz;)V
 
     .line 941
     :cond_1
@@ -1942,11 +1920,11 @@
 
     .line 940
     :cond_3
-    iget v0, v3, Loj;->b:I
+    iget v0, v3, Lpa;->b:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, v3, Loj;->b:I
+    iput v0, v3, Lpa;->b:I
 
     goto :goto_0
 .end method
@@ -2038,7 +2016,7 @@
 
     move-result-object v1
 
-    sget-object v3, Lapr$1;->a:[I
+    sget-object v3, Laqq$1;->a:[I
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/caption/CaptionTypeEnums;->ordinal()I
 
@@ -2094,12 +2072,12 @@
     .line 659
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->G:Lcom/snapchat/android/model/Mediabryo;
 
-    iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lajl;
+    iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lakh;
 
     .line 660
     if-eqz v0, :cond_1
 
-    iget-boolean v0, v0, Lajl;->mShouldHideSystemUi:Z
+    iget-boolean v0, v0, Lakh;->mShouldHideSystemUi:Z
 
     if-eqz v0, :cond_1
 
@@ -2119,7 +2097,7 @@
     .line 666
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->a:Lcom/snapchat/android/ui/caption/SnapCaptionView;
 
-    invoke-virtual {v0, p0}, Lcom/snapchat/android/ui/caption/SnapCaptionView;->setInterface(Laps;)V
+    invoke-virtual {v0, p0}, Lcom/snapchat/android/ui/caption/SnapCaptionView;->setInterface(Laqr;)V
 
     .line 667
     invoke-virtual {p0}, Lcom/snapchat/android/ui/SnapEditorView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -2176,17 +2154,17 @@
     const/4 v2, 0x0
 
     .line 751
-    iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Lapg;
+    iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Laqc;
 
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->u:Landroid/util/DisplayMetrics;
 
     iget v1, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    iget-object v0, v3, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v3, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput p2, v0, Lcom/snapchat/android/ui/SwipeViewState;->g:F
 
-    iget-object v0, v3, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v3, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeViewState;->c()Z
 
@@ -2194,7 +2172,7 @@
 
     if-nez v0, :cond_1
 
-    iget-object v0, v3, Lapg;->d:Ljava/util/List;
+    iget-object v0, v3, Laqc;->d:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2211,24 +2189,24 @@
 
     move-result-object v0
 
-    check-cast v0, Lapg$a;
+    check-cast v0, Laqc$a;
 
-    invoke-interface {v0}, Lapg$a;->q()V
+    invoke-interface {v0}, Laqc$a;->q()V
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, v3, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v3, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeViewState;->d()V
 
-    iget-object v0, v3, Lapg;->a:Lapi;
+    iget-object v0, v3, Laqc;->a:Laqe;
 
-    iget-object v4, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v4, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput-boolean p1, v4, Lcom/snapchat/android/ui/SwipeViewState;->m:Z
 
-    iget-object v4, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v4, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget-boolean v4, v4, Lcom/snapchat/android/ui/SwipeViewState;->l:Z
 
@@ -2236,18 +2214,18 @@
 
     if-nez p1, :cond_2
 
-    iget-object v4, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v4, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput v2, v4, Lcom/snapchat/android/ui/SwipeViewState;->d:I
 
-    iget-object v0, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput v2, v0, Lcom/snapchat/android/ui/SwipeViewState;->b:I
 
     :goto_1
-    iget-object v4, v3, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v4, v3, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
-    iget-object v0, v3, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v3, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeViewState;->a()Z
 
@@ -2261,27 +2239,27 @@
     iput v0, v4, Lcom/snapchat/android/ui/SwipeViewState;->e:I
 
     :cond_1
-    iget-object v0, v3, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v3, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     sget-object v2, Lcom/snapchat/android/ui/SwipeViewState$MotionState;->SWIPING:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
 
     iput-object v2, v0, Lcom/snapchat/android/ui/SwipeViewState;->i:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
 
-    iget-object v0, v3, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v3, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeViewState;->b()V
 
-    iget-object v0, v3, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v3, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     const/high16 v2, 0x3f000000    # 0.5f
 
     iput v2, v0, Lcom/snapchat/android/ui/SwipeViewState;->n:F
 
-    iget-object v0, v3, Lapg;->b:Lcom/snapchat/android/ui/SwipeImageView;
+    iget-object v0, v3, Laqc;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeImageView;->invalidate()V
 
-    invoke-virtual {v3, v1}, Lapg;->a(I)V
+    invoke-virtual {v3, v1}, Laqc;->a(I)V
 
     .line 752
     return-void
@@ -2290,42 +2268,42 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    iget-object v4, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v4, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v4, v4, Lcom/snapchat/android/ui/SwipeViewState;->c:I
 
-    iget-object v5, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v5, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     invoke-virtual {v5}, Lcom/snapchat/android/ui/SwipeViewState;->a()Z
 
     move-result v5
 
-    invoke-virtual {v0, v4, v5}, Lapi;->a(IZ)I
+    invoke-virtual {v0, v4, v5}, Laqe;->a(IZ)I
 
     move-result v4
 
-    iget-object v0, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput v4, v0, Lcom/snapchat/android/ui/SwipeViewState;->d:I
 
     goto :goto_1
 
     :cond_3
-    iget-object v4, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v4, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v4, v4, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
-    iget-object v5, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v5, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     invoke-virtual {v5}, Lcom/snapchat/android/ui/SwipeViewState;->a()Z
 
     move-result v5
 
-    invoke-virtual {v0, v4, v5}, Lapi;->a(IZ)I
+    invoke-virtual {v0, v4, v5}, Laqe;->a(IZ)I
 
     move-result v4
 
-    iget-object v0, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iput v4, v0, Lcom/snapchat/android/ui/SwipeViewState;->b:I
 
@@ -2340,10 +2318,10 @@
 .method public final b(Landroid/content/Context;)Landroid/graphics/Bitmap;
     .locals 7
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -2359,7 +2337,7 @@
     invoke-virtual {v1}, Lcom/snapchat/android/ui/CanvasViewBase;->destroyDrawingCache()V
 
     .line 606
-    invoke-static {}, Lbgp;->a()V
+    invoke-static {}, Lbhp;->a()V
 
     .line 608
     iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->z:Landroid/graphics/Bitmap;
@@ -2413,7 +2391,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
-    const v4, 0x7f0a0001
+    const v4, 0x7f0a0002
 
     invoke-virtual {v1, v4}, Lcom/snapchat/android/ui/SwipeImageView;->findViewById(I)Landroid/view/View;
 
@@ -2472,7 +2450,7 @@
 
     aput-object v6, v5, v3
 
-    invoke-static {v1, v4, v5}, Latf;->a(II[Landroid/view/View;)Landroid/graphics/Bitmap;
+    invoke-static {v1, v4, v5}, Laue;->a(II[Landroid/view/View;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
@@ -2491,7 +2469,7 @@
 
     move-result v0
 
-    invoke-static {v1, v0}, Laur;->a(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+    invoke-static {v1, v0}, Lavp;->a(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -2512,19 +2490,19 @@
     .line 272
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->d:Lcom/squareup/otto/Bus;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->b(Ljava/lang/Object;)V
 
     .line 273
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
-    invoke-virtual {v0}, Lars;->b()V
+    invoke-virtual {v0}, Lasr;->b()V
 
     .line 274
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    invoke-virtual {v0}, Larw;->d()V
+    invoke-virtual {v0}, Lasv;->d()V
 
     .line 275
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->k:Lcom/snapchat/android/ui/CanvasViewBase;
@@ -2546,13 +2524,13 @@
     iput-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->z:Landroid/graphics/Bitmap;
 
     .line 281
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->h:Lapd;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->h:Lapz;
 
-    const v1, 0x7f04009c
+    const v1, 0x7f04009e
 
     iget-object v2, p0, Lcom/snapchat/android/ui/SnapEditorView;->x:Landroid/view/View;
 
-    invoke-virtual {v0, v1, v2}, Lapd;->a(ILandroid/view/View;)V
+    invoke-virtual {v0, v1, v2}, Lapz;->a(ILandroid/view/View;)V
 
     .line 282
     iput-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->x:Landroid/view/View;
@@ -2566,18 +2544,18 @@
 
     .prologue
     .line 911
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v0, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
     invoke-virtual {p0, v0, p1}, Lcom/snapchat/android/ui/SnapEditorView;->a(IZ)V
 
     .line 912
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v0, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->c:I
 
@@ -2588,7 +2566,7 @@
 .end method
 
 .method public final c()V
-    .locals 3
+    .locals 1
 
     .prologue
     .line 575
@@ -2605,17 +2583,6 @@
     if-eqz v0, :cond_0
 
     .line 576
-    const-string v0, "SnapEditorView"
-
-    const-string v1, "Stopping playback!"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 577
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->s:Lcom/snapchat/android/ui/VideoFilterView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/VideoFilterView;->a()V
@@ -2641,15 +2608,15 @@
 
     .prologue
     .line 743
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v1, v0, Lapi;->a:Larv;
+    iget-object v1, v0, Laqe;->a:Lasu;
 
-    iget-object v0, v0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v0, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
-    invoke-interface {v1, v0}, Larv;->b(I)Lcom/snapchat/android/ui/swipefilters/FilterPageType;
+    invoke-interface {v1, v0}, Lasu;->b(I)Lcom/snapchat/android/ui/swipefilters/FilterPageType;
 
     move-result-object v0
 
@@ -2673,19 +2640,19 @@
 
     .prologue
     .line 755
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Lapg;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Laqc;
 
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->u:Landroid/util/DisplayMetrics;
 
     iget v2, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    iget-object v0, v1, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v1, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     sget-object v3, Lcom/snapchat/android/ui/SwipeViewState$MotionState;->AUTO_SCROLLING:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
 
     iput-object v3, v0, Lcom/snapchat/android/ui/SwipeViewState;->i:Lcom/snapchat/android/ui/SwipeViewState$MotionState;
 
-    iget-object v0, v1, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v1, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v3, v0, Lcom/snapchat/android/ui/SwipeViewState;->g:F
 
@@ -2702,7 +2669,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    iget-object v0, v1, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v1, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     int-to-float v3, v2
 
@@ -2713,17 +2680,17 @@
     iput v3, v0, Lcom/snapchat/android/ui/SwipeViewState;->g:F
 
     :goto_1
-    iget-object v0, v1, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v1, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     const v3, 0x3e4ccccd    # 0.2f
 
     iput v3, v0, Lcom/snapchat/android/ui/SwipeViewState;->n:F
 
-    iget-object v0, v1, Lapg;->b:Lcom/snapchat/android/ui/SwipeImageView;
+    iget-object v0, v1, Laqc;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SwipeImageView;->invalidate()V
 
-    invoke-virtual {v1, v2}, Lapg;->a(I)V
+    invoke-virtual {v1, v2}, Laqc;->a(I)V
 
     .line 756
     return-void
@@ -2735,7 +2702,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, v1, Lapg;->c:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v0, v1, Laqc;->c:Lcom/snapchat/android/ui/SwipeViewState;
 
     int-to-float v3, v2
 
@@ -2767,15 +2734,15 @@
 
     .prologue
     .line 882
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v1, v1, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v1, v1, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v1, v1, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
-    invoke-virtual {v0, v1}, Larw;->a(I)Larn;
+    invoke-virtual {v0, v1}, Lasv;->a(I)Lasm;
 
     move-result-object v1
 
@@ -2783,16 +2750,16 @@
     if-eqz v1, :cond_0
 
     .line 884
-    invoke-virtual {v1}, Larn;->h()V
+    invoke-virtual {v1}, Lasm;->h()V
 
     .line 885
-    instance-of v0, v1, Lasb;
+    instance-of v0, v1, Lata;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->G:Lcom/snapchat/android/model/Mediabryo;
 
-    instance-of v0, v0, Laim;
+    instance-of v0, v0, Laji;
 
     if-eqz v0, :cond_0
 
@@ -2804,59 +2771,45 @@
     .line 887
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->G:Lcom/snapchat/android/model/Mediabryo;
 
-    check-cast v0, Laim;
+    check-cast v0, Laji;
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v3, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v3, v3, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v3, v3, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v3, v3, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
-    check-cast v1, Lasb;
+    check-cast v1, Lata;
 
-    iget-object v1, v1, Lasb;->b:Laiv;
+    iget-object v1, v1, Lata;->b:Lajr;
 
-    iget-object v1, v1, Laiv;->mFilterId:Ljava/lang/String;
+    iget-object v1, v1, Lajr;->mFilterId:Ljava/lang/String;
 
-    iget-object v0, v0, Laim;->mGeofilterSwipeMetaData:Lnc;
+    iget-object v0, v0, Laji;->mGeofilterSwipeMetaData:Lnt;
 
-    iget-object v0, v0, Lnc;->mData:Ljava/util/Map;
+    iget-object v0, v0, Lnt;->mData:Ljava/util/Map;
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lnd;
+    check-cast v0, Lnu;
 
     if-nez v0, :cond_1
 
-    sget-object v0, Lnc;->TAG:Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Item for "
 
-    const-string v3, "Item for "
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, " is null."
 
-    const-string v2, " is null."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 891
     :cond_0
@@ -2867,13 +2820,13 @@
     :cond_1
     int-to-long v4, v2
 
-    iput-wide v4, v0, Lnd;->filterIndexCount:J
+    iput-wide v4, v0, Lnu;->filterIndexCount:J
 
     int-to-long v2, v3
 
-    iput-wide v2, v0, Lnd;->filterIndexPos:J
+    iput-wide v2, v0, Lnu;->filterIndexPos:J
 
-    invoke-virtual {v0}, Lnd;->a()V
+    invoke-virtual {v0}, Lnu;->a()V
 
     goto :goto_0
 .end method
@@ -2888,14 +2841,14 @@
     return-object v0
 .end method
 
-.method public getCaptionAnalyticsDetails()Lapo;
+.method public getCaptionAnalyticsDetails()Laqn;
     .locals 1
 
     .prologue
     .line 721
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->a:Lcom/snapchat/android/ui/caption/SnapCaptionView;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/ui/caption/SnapCaptionView;->getCaptionAnalyticsDetails()Lapo;
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/caption/SnapCaptionView;->getCaptionAnalyticsDetails()Laqn;
 
     move-result-object v0
 
@@ -2996,9 +2949,9 @@
 
     .prologue
     .line 636
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->t:Lapj;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->t:Laqf;
 
-    iget v1, v0, Lapj;->d:F
+    iget v1, v0, Laqf;->d:F
 
     float-to-double v2, v1
 
@@ -3008,25 +2961,25 @@
 
     if-lez v1, :cond_0
 
-    iget-object v0, v0, Lapj;->b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+    iget-object v0, v0, Laqf;->b:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, v0, Lapj;->c:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+    iget-object v0, v0, Laqf;->c:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
     goto :goto_0
 .end method
 
 .method protected getSnapVideoView()Lcom/snapchat/android/ui/SnapVideoView;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
     .line 367
-    const v0, 0x7f0a0414
+    const v0, 0x7f0a040d
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->findViewById(I)Landroid/view/View;
 
@@ -3059,12 +3012,12 @@
 
 .method protected getVideoFilterView()Lcom/snapchat/android/ui/VideoFilterView;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
     .line 361
-    const v0, 0x7f0a0413
+    const v0, 0x7f0a040c
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/SnapEditorView;->findViewById(I)Landroid/view/View;
 
@@ -3084,15 +3037,15 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/ui/SnapEditorView$6;-><init>(Lcom/snapchat/android/ui/SnapEditorView;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 966
     return-void
 .end method
 
-.method public onEnableFiltersEvent(Lbbi;)V
+.method public onEnableFiltersEvent(Lbci;)V
     .locals 5
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -3119,12 +3072,12 @@
     iput v1, v0, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
     .line 842
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
-    invoke-virtual {v0}, Lars;->a()V
+    invoke-virtual {v0}, Lasr;->a()V
 
     .line 843
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lars;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->n:Lasr;
 
     iget-object v1, p0, Lcom/snapchat/android/ui/SnapEditorView;->G:Lcom/snapchat/android/model/Mediabryo;
 
@@ -3144,19 +3097,19 @@
 
     iget-object v4, v4, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lars;->a(IZZLcom/snapchat/android/model/Mediabryo$SnapType;)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Lasr;->a(IZZLcom/snapchat/android/model/Mediabryo$SnapType;)V
 
     .line 848
     return-void
 .end method
 
-.method public onHelloWorldEvent(Lbbw;)V
+.method public onHelloWorldEvent(Lbcw;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    const v2, 0x7f0a0001
+    const v2, 0x7f0a0002
 
     .line 856
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->b:Lcom/snapchat/android/ui/SwipeImageView;
@@ -3311,23 +3264,17 @@
     if-ne v0, v10, :cond_5
 
     :cond_4
-    const-string v0, "SnapEditorView"
-
-    const-string v3, "Remove pointerId %d"
-
-    new-array v4, v1, [Ljava/lang/Object;
+    new-array v0, v1, [Ljava/lang/Object;
 
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    move-result v5
+    move-result v3
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v4, v2
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v0, v2
 
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->H:Ljava/util/Set;
 
@@ -3374,23 +3321,17 @@
 
     if-eqz v0, :cond_7
 
-    const-string v0, "SnapEditorView"
-
-    const-string v3, "Add pointerId %d"
-
-    new-array v4, v1, [Ljava/lang/Object;
+    new-array v0, v1, [Ljava/lang/Object;
 
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    move-result v5
+    move-result v3
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v4, v2
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v0, v2
 
     iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->H:Ljava/util/Set;
 
@@ -3424,7 +3365,7 @@
     if-nez v0, :cond_0
 
     .line 801
-    iget-object v4, p0, Lcom/snapchat/android/ui/SnapEditorView;->p:Larc;
+    iget-object v4, p0, Lcom/snapchat/android/ui/SnapEditorView;->p:Lasb;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -3454,37 +3395,37 @@
     move v0, v1
 
     :goto_2
-    iget-object v3, v4, Larc;->c:Larf;
+    iget-object v3, v4, Lasb;->c:Lase;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v7
 
-    iput v7, v3, Larf;->e:I
+    iput v7, v3, Lase;->e:I
 
-    iget v7, v3, Larf;->e:I
+    iget v7, v3, Lase;->e:I
 
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v7
 
-    iput v7, v3, Larf;->c:F
+    iput v7, v3, Lase;->c:F
 
-    iget v7, v3, Larf;->e:I
+    iget v7, v3, Lase;->e:I
 
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v7
 
-    iput v7, v3, Larf;->f:I
+    iput v7, v3, Lase;->f:I
 
-    iget-object v7, v3, Larf;->b:[I
+    iget-object v7, v3, Lase;->b:[I
 
     aget v7, v7, v1
 
     if-eq v7, v8, :cond_a
 
-    iget-object v7, v3, Larf;->b:[I
+    iget-object v7, v3, Lase;->b:[I
 
     aget v7, v7, v1
 
@@ -3498,7 +3439,7 @@
 
     move-result v7
 
-    iput v7, v3, Larf;->d:F
+    iput v7, v3, Lase;->d:F
 
     :cond_a
     const/4 v3, 0x0
@@ -3513,22 +3454,22 @@
     if-eqz v0, :cond_d
 
     :goto_3
-    iget-object v0, v4, Larc;->a:Laqy;
+    iget-object v0, v4, Lasb;->a:Larx;
 
-    iget-object v3, v4, Larc;->d:Laph;
+    iget-object v3, v4, Lasb;->d:Laqd;
 
-    iget-object v5, v4, Larc;->c:Larf;
+    iget-object v5, v4, Lasb;->c:Lase;
 
-    invoke-interface {v0, v3, v5, v2}, Laqy;->a(Laph;Larf;I)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
+    invoke-interface {v0, v3, v5, v2}, Larx;->a(Laqd;Lase;I)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
 
     move-result-object v0
 
     :goto_4
     if-eqz v0, :cond_0
 
-    iget-object v2, v4, Larc;->e:Lard;
+    iget-object v2, v4, Lasb;->e:Lasc;
 
-    sget-object v3, Lard$1;->a:[I
+    sget-object v3, Lasc$1;->a:[I
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;->ordinal()I
 
@@ -3541,7 +3482,7 @@
     const/4 v0, 0x0
 
     :goto_5
-    iput-object v0, v4, Larc;->a:Laqy;
+    iput-object v0, v4, Lasb;->a:Larx;
 
     goto/16 :goto_0
 
@@ -3562,15 +3503,15 @@
 
     move-result v0
 
-    iget-object v2, v4, Larc;->a:Laqy;
+    iget-object v2, v4, Lasb;->a:Larx;
 
-    iget-object v3, v4, Larc;->d:Laph;
+    iget-object v3, v4, Lasb;->d:Laqd;
 
-    iget-object v5, v4, Larc;->c:Larf;
+    iget-object v5, v4, Lasb;->c:Lase;
 
-    iget v6, v4, Larc;->b:I
+    iget v6, v4, Lasb;->b:I
 
-    invoke-interface {v2, v3, v5, v0, v6}, Laqy;->a(Laph;Larf;II)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
+    invoke-interface {v2, v3, v5, v0, v6}, Larx;->a(Laqd;Lase;II)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
 
     move-result-object v0
 
@@ -3586,7 +3527,7 @@
     if-ne v5, v10, :cond_13
 
     :cond_10
-    iget-object v0, v4, Larc;->c:Larf;
+    iget-object v0, v4, Lasb;->c:Lase;
 
     if-ltz v6, :cond_11
 
@@ -3594,42 +3535,42 @@
 
     :cond_11
     :goto_6
-    iget-object v0, v4, Larc;->a:Laqy;
+    iget-object v0, v4, Lasb;->a:Larx;
 
-    iget-object v2, v4, Larc;->d:Laph;
+    iget-object v2, v4, Lasb;->d:Laqd;
 
-    iget-object v3, v4, Larc;->c:Larf;
+    iget-object v3, v4, Lasb;->c:Lase;
 
-    invoke-interface {v0, v2, v3, p1}, Laqy;->a(Laph;Larf;Landroid/view/MotionEvent;)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
+    invoke-interface {v0, v2, v3, p1}, Larx;->a(Laqd;Lase;Landroid/view/MotionEvent;)Lcom/snapchat/android/ui/snapeditormotion/SwipeHandlerType;
 
     move-result-object v0
 
     goto :goto_4
 
     :cond_12
-    iget-object v0, v0, Larf;->b:[I
+    iget-object v0, v0, Lase;->b:[I
 
     aput v8, v0, v6
 
     goto :goto_6
 
     :pswitch_0
-    iget-object v0, v2, Lard;->c:Laqy;
+    iget-object v0, v2, Lasc;->c:Larx;
 
     goto :goto_5
 
     :pswitch_1
-    iget-object v0, v2, Lard;->b:Laqy;
+    iget-object v0, v2, Lasc;->b:Larx;
 
     goto :goto_5
 
     :pswitch_2
-    iget-object v0, v2, Lard;->d:Laqy;
+    iget-object v0, v2, Lasc;->d:Larx;
 
     goto :goto_5
 
     :pswitch_3
-    iget-object v0, v2, Lard;->e:Laqy;
+    iget-object v0, v2, Lasc;->e:Larx;
 
     goto :goto_5
 
@@ -3666,7 +3607,7 @@
     iput-boolean p1, p0, Lcom/snapchat/android/ui/SnapEditorView;->A:Z
 
     .line 530
-    invoke-static {}, Lwy;->b()Z
+    invoke-static {}, Lxt;->b()Z
 
     move-result v0
 
@@ -3689,7 +3630,7 @@
 .method public setCaptionEditTextOnTouchListener(Landroid/view/View$OnTouchListener;)V
     .locals 1
     .param p1    # Landroid/view/View$OnTouchListener;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -3719,25 +3660,25 @@
     return-void
 .end method
 
-.method protected setFilterPageStore(Larw;)V
+.method protected setFilterPageStore(Lasv;)V
     .locals 0
-    .param p1    # Larw;
-        .annotation build Lcgb;
+    .param p1    # Lasv;
+        .annotation build Lchc;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Larw",
+            "Lasv",
             "<",
-            "Larn;",
+            "Lasm;",
             ">;)V"
         }
     .end annotation
 
     .prologue
     .line 164
-    iput-object p1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Larw;
+    iput-object p1, p0, Lcom/snapchat/android/ui/SnapEditorView;->v:Lasv;
 
     .line 165
     return-void
@@ -3819,40 +3760,40 @@
     return-void
 .end method
 
-.method public setSwipeImageViewAnalytics(Loj;)V
+.method public setSwipeImageViewAnalytics(Lpa;)V
     .locals 0
 
     .prologue
     .line 267
-    iput-object p1, p0, Lcom/snapchat/android/ui/SnapEditorView;->w:Loj;
+    iput-object p1, p0, Lcom/snapchat/android/ui/SnapEditorView;->w:Lpa;
 
     .line 268
     return-void
 .end method
 
-.method public setSwipeImageViewOnScrollListener(Lapg$a;)V
+.method public setSwipeImageViewOnScrollListener(Laqc$a;)V
     .locals 1
 
     .prologue
     .line 263
-    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Lapg;
+    iget-object v0, p0, Lcom/snapchat/android/ui/SnapEditorView;->o:Laqc;
 
-    invoke-virtual {v0, p1}, Lapg;->a(Lapg$a;)V
+    invoke-virtual {v0, p1}, Laqc;->a(Laqc$a;)V
 
     .line 264
     return-void
 .end method
 
-.method protected setSwipePageController(Lapi;)V
+.method protected setSwipePageController(Laqe;)V
     .locals 0
-    .param p1    # Lapi;
-        .annotation build Lcgb;
+    .param p1    # Laqe;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 169
-    iput-object p1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iput-object p1, p0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
     .line 170
     return-void

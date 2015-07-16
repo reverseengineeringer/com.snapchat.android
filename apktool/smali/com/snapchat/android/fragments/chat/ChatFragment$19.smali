@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 2624
+    .line 2722
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$19;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +40,12 @@
     .locals 1
 
     .prologue
-    .line 2637
+    .line 2735
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$19;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->K(Lcom/snapchat/android/fragments/chat/ChatFragment;)Z
 
-    .line 2638
+    .line 2736
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .locals 1
 
     .prologue
-    .line 2627
+    .line 2725
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$19;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->J(Lcom/snapchat/android/fragments/chat/ChatFragment;)Z
@@ -62,14 +62,14 @@
 
     if-nez v0, :cond_0
 
-    .line 2628
+    .line 2726
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$19;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->G(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbgr;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->G(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lbhr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/CashReceiverView;->a()V
 
-    .line 2630
+    .line 2728
     :cond_0
     return-void
 .end method
@@ -86,7 +86,7 @@
     .locals 0
 
     .prologue
-    .line 2641
+    .line 2739
     return-void
 .end method
 
@@ -94,6 +94,6 @@
     .locals 0
 
     .prologue
-    .line 2633
+    .line 2731
     return-void
 .end method

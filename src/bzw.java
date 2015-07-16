@@ -1,39 +1,40 @@
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public abstract interface bzw
-  extends caj
+public final class bzw
+  implements byj
 {
-  public abstract long a(byte paramByte);
+  private List a = new ArrayList();
   
-  public abstract void a(long paramLong);
+  public bzw()
+  {
+    a.add(new bzj());
+    a.add(new bzk());
+    a.add(new bzl());
+    a.add(new bzm());
+    a.add(new bzn());
+    a.add(new bzo());
+    a.add(new bzp());
+    a.add(new bzq());
+    a.add(new bzr());
+    a.add(new bzs());
+    a.add(new bzt());
+    a.add(new bzu());
+    a.add(new bzv());
+    a.add(new bzx());
+    a.add(new bzy());
+    a.add(new bzz());
+    a.add(new caa());
+  }
   
-  public abstract bzu b();
-  
-  public abstract bzx c(long paramLong);
-  
-  public abstract boolean d();
-  
-  public abstract InputStream e();
-  
-  public abstract byte[] e(long paramLong);
-  
-  public abstract byte f();
-  
-  public abstract void f(long paramLong);
-  
-  public abstract short g();
-  
-  public abstract int h();
-  
-  public abstract short i();
-  
-  public abstract int j();
-  
-  public abstract long k();
-  
-  public abstract long l();
-  
-  public abstract String n();
+  public final void a(bya parambya)
+  {
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      parambya.a((byh)localIterator.next());
+    }
+  }
 }
 
 /* Location:

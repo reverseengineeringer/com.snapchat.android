@@ -1,7 +1,10 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import com.snapchat.android.analytics.CameraEventAnalytics;
+import com.snapchat.android.analytics.CameraEventAnalytics.CameraContext;
 
 final class FeedFragment$15
   implements View.OnClickListener
@@ -10,7 +13,8 @@ final class FeedFragment$15
   
   public final void onClick(View paramView)
   {
-    FeedFragment.d(a).b();
+    FeedFragment.c(a).a(CameraEventAnalytics.CameraContext.CAMERA_BUTTON);
+    a.getActivity().onBackPressed();
   }
 }
 

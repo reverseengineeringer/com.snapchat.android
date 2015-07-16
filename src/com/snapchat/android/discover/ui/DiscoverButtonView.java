@@ -8,30 +8,22 @@ import android.graphics.Paint.Style;
 import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.View;
-import avh;
-import bgk;
+import awf;
+import bhk;
 
 public class DiscoverButtonView
   extends View
 {
-  public boolean a = false;
-  public final Runnable b = new Runnable()
-  {
-    public final void run()
-    {
-      invalidate();
-    }
-  };
-  private final Paint c;
-  private final Paint d;
-  private final float e;
-  private final float f;
-  private final bgk g = new bgk();
-  private float h;
-  private float i;
-  private long j;
-  private float k = -1.0F;
-  private final Runnable l = new Runnable()
+  private final Paint a;
+  private final Paint b;
+  private final float c;
+  private final bhk d = new bhk();
+  private float e;
+  private float f;
+  private long g;
+  private float h = -1.0F;
+  private boolean i = false;
+  private final Runnable j = new Runnable()
   {
     public final void run()
     {
@@ -43,84 +35,67 @@ public class DiscoverButtonView
   public DiscoverButtonView(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    e = avh.a(2.0F, paramContext);
-    f = avh.a(1.0F, paramContext);
-    c = new Paint();
-    c.setColor(getResources().getColor(2131230784));
-    c.setStyle(Paint.Style.FILL_AND_STROKE);
-    c.setAntiAlias(true);
-    c.setStrokeWidth(e);
-    d = new Paint();
-    d.setColor(getResources().getColor(2131230784));
-    d.setStyle(Paint.Style.STROKE);
-    d.setAntiAlias(true);
+    c = awf.a(2.0F, paramContext);
+    a = new Paint();
+    a.setColor(getResources().getColor(2131230785));
+    a.setStyle(Paint.Style.FILL_AND_STROKE);
+    a.setAntiAlias(true);
+    a.setStrokeWidth(c);
+    b = new Paint();
+    b.setColor(getResources().getColor(2131230785));
+    b.setStyle(Paint.Style.STROKE);
+    b.setAntiAlias(true);
+    b.setStrokeWidth(c);
   }
   
   private void a(float paramFloat)
   {
-    if (k == -1.0F) {
-      k = (Math.round(0.67F * paramFloat) - e / 2.0F);
+    if (h == -1.0F) {
+      h = (Math.round(0.67F * paramFloat) - c / 2.0F);
     }
-  }
-  
-  public final void a()
-  {
-    if (a) {
-      return;
-    }
-    a = true;
-    postDelayed(l, 150L);
   }
   
   public void onDraw(Canvas paramCanvas)
   {
-    a(h);
-    if (a)
+    a(e);
+    if (i)
     {
-      long l1 = SystemClock.elapsedRealtime() - j;
-      double d1;
-      double d2;
-      if (l1 < 650L)
+      long l = SystemClock.elapsedRealtime() - g;
+      if (l < 650L)
       {
         invalidate();
-        d.setAlpha(255);
-        d.setStrokeWidth(e);
-        paramCanvas.drawCircle(h, i, k, d);
-        d1 = l1 / 650.0D;
-        d2 = k;
-        paramCanvas.drawCircle(h, i, (float)(d1 * d2), c);
+        paramCanvas.drawCircle(e, f, h, b);
+        double d1 = l / 650.0D;
+        double d2 = h;
+        paramCanvas.drawCircle(e, f, (float)(d1 * d2), a);
         return;
       }
-      paramCanvas.drawCircle(h, i, k, c);
-      l1 = (l1 - 650L) % 1450L;
-      if (l1 < 1300L)
-      {
-        invalidate();
-        d1 = l1 / 1300.0D;
-        int m = (int)Math.round(255.0D * Math.sin(3.141592653589793D * d1));
-        d.setAlpha(m);
-        d2 = e;
-        double d3 = f;
-        d.setStrokeWidth((float)((1.0D - d1) * d2 + d3 * d1));
-        d2 = k;
-        d3 = h - f / 2.0F;
-        paramCanvas.drawCircle(h, i, (float)(d1 * d3 + (1.0D - d1) * d2), d);
-        return;
-      }
-      postDelayed(b, 150L);
+      paramCanvas.drawCircle(e, f, h, a);
       return;
     }
-    d.setAlpha(255);
-    d.setStrokeWidth(e);
-    paramCanvas.drawCircle(h, i, k, d);
+    paramCanvas.drawCircle(e, f, h, b);
   }
   
   protected void onSizeChanged(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
   {
     super.onSizeChanged(paramInt1, paramInt2, paramInt3, paramInt4);
-    h = (paramInt1 / 2);
-    i = (paramInt2 / 2);
-    a(h);
+    e = (paramInt1 / 2);
+    f = (paramInt2 / 2);
+    a(e);
+  }
+  
+  public void setFilled(boolean paramBoolean)
+  {
+    if (i == paramBoolean) {
+      return;
+    }
+    i = paramBoolean;
+    if (paramBoolean)
+    {
+      postDelayed(j, 150L);
+      return;
+    }
+    invalidate();
   }
 }
 

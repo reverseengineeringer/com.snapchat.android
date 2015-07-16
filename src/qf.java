@@ -1,29 +1,25 @@
-import javax.inject.Provider;
+import java.io.File;
 
 public final class qf
-  implements buj<qd>
+  extends ul
 {
-  private final Provider<qh> mCashProviderManagerProvider;
+  private final File mFile;
+  private final String mUrl;
   
-  static
+  public qf(String paramString, File paramFile)
   {
-    if (!qf.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
+    mUrl = paramString;
+    mFile = paramFile;
   }
   
-  private qf(Provider<qh> paramProvider)
+  public final Object getRequestPayload()
   {
-    assert (paramProvider != null);
-    mCashProviderManagerProvider = paramProvider;
+    return mFile;
   }
   
-  public static buj<qd> a(Provider<qh> paramProvider)
+  public final String getUrl()
   {
-    return new qf(paramProvider);
+    return mUrl;
   }
 }
 

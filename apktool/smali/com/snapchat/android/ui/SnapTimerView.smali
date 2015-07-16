@@ -242,7 +242,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -325,7 +325,7 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 13
     .param p1    # Landroid/graphics/Canvas;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -408,7 +408,7 @@
 
     move-result-object v6
 
-    invoke-static {v6, v0, v1, v5}, Latf;->a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
+    invoke-static {v6, v0, v1, v5}, Laue;->a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -470,7 +470,7 @@
 
     move-result-object v6
 
-    invoke-static {v6, v0, v1, v5}, Latf;->a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
+    invoke-static {v6, v0, v1, v5}, Laue;->a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
 
     move-result-object v0
 

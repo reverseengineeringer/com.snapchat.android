@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
+.implements Lbvk;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuj",
+        "Lbvk",
         "<",
         "Lrt;",
         ">;"
@@ -28,29 +28,18 @@
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lqg;",
+            "Lqw;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private final mSquareProvider:Ljavax/inject/Provider;
+.field private final supertypeInjector:Lbvk;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljavax/inject/Provider",
+            "Lbvk",
             "<",
-            "Lsn;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final supertypeInjector:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lqv;",
+            "Lrl;",
             ">;"
         }
     .end annotation
@@ -62,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 10
+    .line 9
     const-class v0, Lru;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -84,31 +73,27 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lbuj",
+            "Lbvk",
             "<",
-            "Lqv;",
+            "Lrl;",
             ">;",
             "Ljavax/inject/Provider",
             "<",
-            "Lsn;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
+            "Lqw;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 16
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
+    .line 15
     sget-boolean v0, Lru;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -121,11 +106,11 @@
 
     throw v0
 
-    .line 18
+    .line 16
     :cond_0
-    iput-object p1, p0, Lru;->supertypeInjector:Lbuj;
+    iput-object p1, p0, Lru;->supertypeInjector:Lbvk;
 
-    .line 19
+    .line 17
     sget-boolean v0, Lru;->$assertionsDisabled:Z
 
     if-nez v0, :cond_1
@@ -138,49 +123,28 @@
 
     throw v0
 
-    .line 20
+    .line 18
     :cond_1
-    iput-object p2, p0, Lru;->mSquareProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lru;->mCashErrorReporterProvider:Ljavax/inject/Provider;
 
-    .line 21
-    sget-boolean v0, Lru;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_2
-
-    if-nez p3, :cond_2
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 22
-    :cond_2
-    iput-object p3, p0, Lru;->mCashErrorReporterProvider:Ljavax/inject/Provider;
-
-    .line 23
+    .line 19
     return-void
 .end method
 
-.method public static a(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lbuj",
+            "Lbvk",
             "<",
-            "Lqv;",
+            "Lrl;",
             ">;",
             "Ljavax/inject/Provider",
             "<",
-            "Lsn;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
+            "Lqw;",
             ">;)",
-            "Lbuj",
+            "Lbvk",
             "<",
             "Lrt;",
             ">;"
@@ -188,10 +152,10 @@
     .end annotation
 
     .prologue
-    .line 36
+    .line 31
     new-instance v0, Lru;
 
-    invoke-direct {v0, p0, p1, p2}, Lru;-><init>(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    invoke-direct {v0, p0, p1}, Lru;-><init>(Lbvk;Ljavax/inject/Provider;)V
 
     return-object v0
 .end method
@@ -202,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 10
+    .line 9
     check-cast p1, Lrt;
 
     if-nez p1, :cond_0
@@ -216,19 +180,9 @@
     throw v0
 
     :cond_0
-    iget-object v0, p0, Lru;->supertypeInjector:Lbuj;
+    iget-object v0, p0, Lru;->supertypeInjector:Lbvk;
 
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lru;->mSquareProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lsn;
-
-    iput-object v0, p1, Lrt;->mSquareProvider:Lsn;
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lru;->mCashErrorReporterProvider:Ljavax/inject/Provider;
 
@@ -236,9 +190,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lqg;
+    check-cast v0, Lqw;
 
-    iput-object v0, p1, Lrt;->mCashErrorReporter:Lqg;
+    iput-object v0, p1, Lrt;->mCashErrorReporter:Lqw;
 
     return-void
 .end method

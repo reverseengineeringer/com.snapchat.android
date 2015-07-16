@@ -1,36 +1,36 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import amk;
-import anc;
-import anc.c;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import aok;
-import aol;
-import ban;
-import bdw;
+import anh;
+import anz;
+import anz.c;
+import apg;
+import aph;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.squareup.otto.Bus;
 import java.util.Set;
 
 final class TwoFAEnableCodeConfirmationFragment$1
-  implements aok
+  implements apg
 {
   TwoFAEnableCodeConfirmationFragment$1(TwoFAEnableCodeConfirmationFragment paramTwoFAEnableCodeConfirmationFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
-    anc.c localc;
+    int i = aph.a(paramanh);
+    anz.c localc;
     if (TwoFAEnableCodeConfirmationFragment.a(a).contains(Integer.valueOf(i)))
     {
       TwoFAEnableCodeConfirmationFragment.a(a).remove(Integer.valueOf(i));
-      if ((paramamk instanceof anc))
+      if ((paramanh instanceof anz))
       {
-        paramamk = (anc)paramamk;
+        paramanh = (anz)paramanh;
         localc = b;
         TwoFAEnableCodeConfirmationFragment.b(a).setVisibility(8);
         TwoFAEnableCodeConfirmationFragment.c(a).setClickable(true);
@@ -41,7 +41,7 @@ final class TwoFAEnableCodeConfirmationFragment$1
         if (!a) {
           break label150;
         }
-        ban.a().a(new bdw(new TwoFactorSettingsEnabledFragment(), TwoFactorSettingsEnabledFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
+        bbo.a().a(new bev(new TwoFactorSettingsEnabledFragment(), TwoFactorSettingsEnabledFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
       }
     }
     for (;;)

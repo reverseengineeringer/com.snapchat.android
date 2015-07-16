@@ -1,6 +1,9 @@
-.class public final synthetic Laea$1;
+.class final Laea$1;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Comparator;
 
 
 # annotations
@@ -9,114 +12,155 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1009
+    accessFlags = 0x0
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/snapchat/android/discover/model/ChannelPage;",
+        ">;"
+    }
+.end annotation
 
-# static fields
-.field public static final synthetic a:[I
+
+# instance fields
+.field final synthetic a:Laea;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Laea;)V
+    .locals 0
 
     .prologue
-    .line 78
-    invoke-static {}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->values()[Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+    .line 128
+    iput-object p1, p0, Laea$1;->a:Laea;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 7
+
+    .prologue
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    const/4 v2, -0x1
+
+    .line 128
+    check-cast p1, Lcom/snapchat/android/discover/model/ChannelPage;
+
+    check-cast p2, Lcom/snapchat/android/discover/model/ChannelPage;
+
+    iget-object v0, p0, Laea$1;->a:Laea;
+
+    iget-object v0, v0, Laea;->c:Ljava/util/Map;
+
+    iget-object v1, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Laea$1;->a:Laea;
+
+    iget-object v0, v0, Laea;->c:Ljava/util/Map;
+
+    iget-object v1, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    array-length v0, v0
+    check-cast v0, Ljava/lang/Integer;
 
-    new-array v0, v0, [I
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    sput-object v0, Laea$1;->a:[I
+    move-result v0
 
-    :try_start_0
-    sget-object v0, Laea$1;->a:[I
-
-    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->IMAGE:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_3
+    move v1, v0
 
     :goto_0
-    :try_start_1
-    sget-object v0, Laea$1;->a:[I
+    iget-object v0, p0, Laea$1;->a:Laea;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->LOCAL_WEBPAGE:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+    iget-object v0, v0, Laea;->c:Ljava/util/Map;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
+    iget-object v5, p2, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
 
-    move-result v1
+    invoke-interface {v0, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    const/4 v2, 0x2
+    move-result v0
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_2
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Laea$1;->a:Laea;
+
+    iget-object v0, v0, Laea;->c:Ljava/util/Map;
+
+    iget-object v2, p2, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    :cond_0
+    invoke-static {}, Lda;->a()Lda;
+
+    move-result-object v6
+
+    if-ltz v1, :cond_1
+
+    move v5, v3
 
     :goto_1
-    :try_start_2
-    sget-object v0, Laea$1;->a:[I
+    if-ltz v2, :cond_2
 
-    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->VIDEO:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_1
+    move v0, v3
 
     :goto_2
-    :try_start_3
-    sget-object v0, Laea$1;->a:[I
+    invoke-virtual {v6, v5, v0}, Lda;->a(ZZ)Lda;
 
-    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->REMOTE_VIDEO:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;->ordinal()I
+    invoke-virtual {v0, v1, v2}, Lda;->a(II)Lda;
 
-    move-result v1
+    move-result-object v0
 
-    const/4 v2, 0x4
+    invoke-virtual {v0}, Lda;->b()I
 
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
+    move-result v0
 
-    :goto_3
-    return-void
+    return v0
 
-    :catch_0
-    move-exception v0
-
-    goto :goto_3
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_2
-
-    :catch_2
-    move-exception v0
+    :cond_1
+    move v5, v4
 
     goto :goto_1
 
-    :catch_3
-    move-exception v0
+    :cond_2
+    move v0, v4
+
+    goto :goto_2
+
+    :cond_3
+    move v1, v2
 
     goto :goto_0
 .end method

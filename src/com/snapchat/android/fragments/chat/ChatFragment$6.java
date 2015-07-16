@@ -1,9 +1,9 @@
 package com.snapchat.android.fragments.chat;
 
-import akb;
-import akg;
-import akh;
-import ako;
+import akw;
+import alb;
+import alc;
+import alj;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -16,11 +16,11 @@ import com.snapchat.android.model.chat.ChatMedia;
 import com.snapchat.android.ui.ImageResourceView;
 import com.snapchat.android.ui.LockingAboveTheFoldListView;
 import java.util.List;
-import ya;
-import ya.b;
-import yl;
-import yq;
-import ys;
+import yw;
+import yw.b;
+import zh;
+import zm;
+import zo;
 
 final class ChatFragment$6
   implements AdapterView.OnItemClickListener
@@ -43,25 +43,25 @@ final class ChatFragment$6
             paramInt -= ChatFragment.e(a).getHeaderViewsCount();
           } while (paramInt >= ChatFragment.u(a).size());
           localChatFeedItem = (ChatFeedItem)ChatFragment.u(a).get(paramInt);
-        } while ((localChatFeedItem.d() == null) || ((localChatFeedItem instanceof Snap)) || ((localChatFeedItem instanceof akg)));
-        if ((!localChatFeedItem.O()) || (!localChatFeedItem.Q())) {
+        } while ((localChatFeedItem.d() == null) || ((localChatFeedItem instanceof Snap)) || ((localChatFeedItem instanceof alb)));
+        if ((!localChatFeedItem.P()) || (!localChatFeedItem.R())) {
           break;
         }
-        if ((localChatFeedItem instanceof akh))
+        if ((localChatFeedItem instanceof alc))
         {
-          new ys().a((akh)localChatFeedItem);
+          new zo().a((alc)localChatFeedItem, ChatFragment.f(a));
           return;
         }
-        if ((localChatFeedItem instanceof akb))
+        if ((localChatFeedItem instanceof akw))
         {
-          ChatFragment.w(a).a(ChatFragment.f(a), (akb)localChatFeedItem, true, true);
+          ChatFragment.w(a).a(ChatFragment.f(a), (akw)localChatFeedItem, true, true);
           return;
         }
       } while (!(localChatFeedItem instanceof CashFeedItem));
       paramAdapterView = (CashFeedItem)localChatFeedItem;
-      AnalyticsEvents.o(mCashTransaction.a());
+      AnalyticsEvents.n(mCashTransaction.a());
       ChatFragment.o(a);
-      a.i.a(ChatFragment.f(a), paramAdapterView, new ya.b()
+      a.i.a(ChatFragment.f(a), paramAdapterView, new yw.b()
       {
         public final void a()
         {
@@ -87,11 +87,11 @@ final class ChatFragment$6
           }
         }
       }
-    } while ((!(localChatFeedItem instanceof ako)) || (!((ako)localChatFeedItem).e()));
+    } while ((!(localChatFeedItem instanceof alj)) || (!((alj)localChatFeedItem).e()));
     if ((localChatFeedItem instanceof ChatMedia)) {}
     for (paramAdapterView = ChatFragment.x();; paramAdapterView = null)
     {
-      ChatFragment.x(a).a(ChatFragment.f(a), (ako)localChatFeedItem, paramAdapterView);
+      ChatFragment.x(a).a(ChatFragment.f(a), (alj)localChatFeedItem, paramAdapterView);
       ChatFragment.a(a, localChatFeedItem.d());
       return;
     }

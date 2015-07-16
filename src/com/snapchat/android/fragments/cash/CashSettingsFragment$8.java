@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.cash;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import qh;
-import qo;
+import qx;
+import re;
 
 final class CashSettingsFragment$8
   implements View.OnClickListener
@@ -19,7 +19,7 @@ final class CashSettingsFragment$8
       paramView.a(a.getString(2131493437));
       return;
     }
-    qh.a();
+    qx.a();
   }
 }
 

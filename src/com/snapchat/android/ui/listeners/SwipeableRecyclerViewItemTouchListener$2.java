@@ -2,6 +2,7 @@ package com.snapchat.android.ui.listeners;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.s;
+import android.view.View;
 
 final class SwipeableRecyclerViewItemTouchListener$2
   implements Runnable
@@ -11,6 +12,7 @@ final class SwipeableRecyclerViewItemTouchListener$2
   public final void run()
   {
     RecyclerView.s locals = SwipeableRecyclerViewItemTouchListener.a(b).a(a, false);
+    a.performHapticFeedback(0);
     SwipeableRecyclerViewItemTouchListener.b(b).g(locals);
   }
 }

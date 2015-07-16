@@ -1,138 +1,191 @@
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
-import com.snapchat.android.discover.model.ChannelPage;
-import java.util.HashMap;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
+import com.snapchat.android.database.table.StorySnapTable;
+import com.snapchat.android.model.StoryGroup;
+import com.snapchat.android.model.StorySnapLogbook;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.Lock;
 
 public final class abq
+  extends StorySnapTable
 {
-  private static final abq c = new abq();
-  public final ale a;
-  public final ConcurrentHashMap<String, Map<String, EasyMetric>> b;
-  private final EasyMetric.EasyMetricFactory d;
-  private final add e;
+  private static abq a;
+  private final acb b;
   
   private abq()
   {
-    this(new EasyMetric.EasyMetricFactory(), ale.a(), add.a());
+    this(new ayv(), akr.a(), acb.a());
   }
   
-  private abq(EasyMetric.EasyMetricFactory paramEasyMetricFactory, ale paramale, add paramadd)
+  private abq(ayv paramayv, akr paramakr, acb paramacb)
   {
-    d = paramEasyMetricFactory;
-    a = paramale;
-    e = paramadd;
-    b = new ConcurrentHashMap();
+    super(paramakr, paramayv, azh.MY_STORY_KEYS_AND_IVS);
+    b = paramacb;
   }
   
   public static abq a()
   {
-    return c;
-  }
-  
-  private boolean b(String paramString1, String paramString2)
-  {
-    paramString1 = (Map)b.get(paramString1);
-    if (paramString1 == null) {
-      return false;
-    }
-    return paramString1.containsKey(paramString2);
-  }
-  
-  @cgc
-  public final EasyMetric a(String paramString1, String paramString2)
-  {
-    synchronized (b)
+    try
     {
-      paramString1 = (Map)b.get(paramString1);
-      if (paramString1 != null)
+      if (a == null) {
+        a = new abq();
+      }
+      abq localabq = a;
+      return localabq;
+    }
+    finally {}
+  }
+  
+  protected final Collection<akl> a(akp paramakp)
+  {
+    return null;
+  }
+  
+  protected final void a(List<akl> arg1)
+  {
+    Map localMap = acb.a(mDatabase);
+    akk localakk = akk.a();
+    akl localakl;
+    String str;
+    StoryGroup localStoryGroup;
+    label146:
+    Object localObject1;
+    for (;;)
+    {
+      synchronized (mMyPostedStorySnapLogbooksForDatabase)
       {
-        paramString1 = (EasyMetric)paramString1.remove(paramString2);
-        return paramString1;
+        mMyPostedStorySnapLogbooksForDatabase.clear();
+        Iterator localIterator1 = ???.iterator();
+        if (!localIterator1.hasNext()) {
+          break;
+        }
+        localakl = (akl)localIterator1.next();
+        if (localakl.ay()) {
+          localakl.toString();
+        }
       }
-      return null;
-    }
-  }
-  
-  public final void a(ChannelPage arg1)
-  {
-    String str = b;
-    EasyMetric localEasyMetric = EasyMetric.EasyMetricFactory.a("DISCOVER_INTRO_MEDIA_UNLOADED_WAIT_TIME");
-    if (e.a(???))
-    {
-      localEasyMetric.a("publisher_name", b).a("intro_video_url", ???.d()).a(0L).a("reachability", a.f()).a("success", Boolean.valueOf(e.b(???))).a(false);
-      return;
-    }
-    synchronized (b)
-    {
-      if (!b("DISCOVER_INTRO_MEDIA_UNLOADED_WAIT_TIME", str))
+      str = mStoryId;
+      if (str != null)
       {
-        localEasyMetric.b();
-        a("DISCOVER_INTRO_MEDIA_UNLOADED_WAIT_TIME", str, localEasyMetric);
+        localStoryGroup = (StoryGroup)mStories.get(str);
+        if (localStoryGroup != null) {
+          break label410;
+        }
+        localStoryGroup = new StoryGroup(str);
+        mStories.put(str, localStoryGroup);
+        ??? = (Map)localMap.get(str);
+        if (??? == null) {
+          break label403;
+        }
+        localObject1 = (List)???.get(localakl.d());
+        if (localObject1 == null) {
+          break label398;
+        }
+        ??? = new bki();
+        if (((List)localObject1).isEmpty()) {
+          break label413;
+        }
+        ???.a(Integer.valueOf(((List)localObject1).size()));
+        Iterator localIterator2 = ((List)localObject1).iterator();
+        while (localIterator2.hasNext()) {
+          if (((bkk)localIterator2.next()).b().booleanValue()) {
+            ???.b(Integer.valueOf(avb.a(???.b()) + 1));
+          }
+        }
       }
-      return;
     }
-  }
-  
-  public final void a(String paramString1, String paramString2, EasyMetric paramEasyMetric)
-  {
-    synchronized (b)
+    label398:
+    label403:
+    label410:
+    label413:
+    for (;;)
     {
-      Map localMap = (Map)b.get(paramString1);
-      Object localObject = localMap;
-      if (localMap == null) {
-        localObject = new HashMap();
+      ??? = new StorySnapLogbook(localakl, (List)localObject1, ???);
+      mStoryId = str;
+      localStoryGroup.h().add(???);
+      localakk.a(???);
+      break;
+      for (;;)
+      {
+        synchronized (mStories)
+        {
+          localObject1 = mStories.values().iterator();
+          if (!((Iterator)localObject1).hasNext()) {
+            break;
+          }
+          localStoryGroup = (StoryGroup)((Iterator)localObject1).next();
+          if ((!(localStoryGroup instanceof ajx)) && (localStoryGroup.k() == 0)) {
+            ((Iterator)localObject1).remove();
+          }
+        }
+        Collections.sort(localStoryGroup.h());
       }
-      ((Map)localObject).put(paramString2, paramEasyMetric);
-      b.put(paramString1, localObject);
+      localakk.j();
+      return;
+      ??? = null;
+      continue;
+      ??? = null;
+      Object localObject3 = null;
+      continue;
+      break label146;
+    }
+  }
+  
+  public final String c()
+  {
+    return "MyPostedStorySnapTable";
+  }
+  
+  public final void c(akp paramakp)
+  {
+    if (m() == null) {
       return;
     }
-  }
-  
-  public final void a(String paramString, boolean paramBoolean1, boolean paramBoolean2)
-  {
-    paramString = a("DISCOVER_REMOTE_VIDEO_UNLOADED_WAIT_TIME", paramString);
-    if (paramString != null) {
-      paramString.a("success", Boolean.valueOf(paramBoolean2)).a("abandoned", Boolean.valueOf(paramBoolean1)).a("reachability", a.f()).a(false);
-    }
-  }
-  
-  public final void b(ChannelPage arg1)
-  {
-    String str = b;
-    synchronized (b)
+    i().lock();
+    Object localObject1;
+    Object localObject2;
+    try
     {
-      if (!b("DISCOVER_INTRO_MEDIA_DOWNLOAD_TIME", str)) {
-        a("DISCOVER_INTRO_MEDIA_DOWNLOAD_TIME", str, EasyMetric.EasyMetricFactory.a("DISCOVER_INTRO_MEDIA_DOWNLOAD_TIME").b());
+      mDatabase.beginTransaction();
+      paramakp = akk.a().g();
+      localObject1 = new ArrayList();
+      localObject2 = paramakp.iterator();
+      while (((Iterator)localObject2).hasNext())
+      {
+        akl localakl = nextmStorySnap;
+        if (localakl != null) {
+          ((List)localObject1).add(localakl);
+        }
       }
-      return;
+      new ayv().a((List)localObject1, azh.MY_STORY_KEYS_AND_IVS);
     }
-  }
-  
-  public final void b(String paramString, boolean paramBoolean1, boolean paramBoolean2)
-  {
-    paramString = a("DISCOVER_REMOTE_VIDEO_BUFFER_TIME", paramString);
-    if (paramString != null) {
-      paramString.a("success", Boolean.valueOf(paramBoolean2)).a("abandoned", Boolean.valueOf(paramBoolean1)).a("reachability", a.f()).a(false);
-    }
-  }
-  
-  public final void c(ChannelPage paramChannelPage)
-  {
-    if (!e.a(paramChannelPage)) {}
-    Object localObject;
-    do
+    finally
     {
-      return;
-      localObject = b;
-      EasyMetric localEasyMetric = a("DISCOVER_INTRO_MEDIA_DOWNLOAD_TIME", (String)localObject);
-      if (localEasyMetric != null) {
-        localEasyMetric.a("publisher_name", localObject).a("reachability", a.f()).a("success", Boolean.valueOf(e.b(paramChannelPage))).a(false);
+      mDatabase.endTransaction();
+      i().unlock();
+    }
+    j();
+    if (!((List)localObject1).isEmpty())
+    {
+      new StringBuilder("saveToDatabase MyPostedStorySnapTable ").append(((List)localObject1).size()).append(" item(s)");
+      localObject1 = ((List)localObject1).iterator();
+      while (((Iterator)localObject1).hasNext())
+      {
+        localObject2 = a((akl)((Iterator)localObject1).next());
+        if ((localObject2 != null) && (((ContentValues)localObject2).size() > 0)) {
+          mDatabase.insert("MyPostedStorySnapTable", null, (ContentValues)localObject2);
+        }
       }
-      localObject = a("DISCOVER_INTRO_MEDIA_UNLOADED_WAIT_TIME", (String)localObject);
-    } while (localObject == null);
-    ((EasyMetric)localObject).a("publisher_name", b).a("intro_video_url", paramChannelPage.d()).a("reachability", a.f()).a("success", Boolean.valueOf(e.b(paramChannelPage))).a(false);
+    }
+    acb.a().a(mDatabase, paramakp);
+    mDatabase.setTransactionSuccessful();
+    mDatabase.endTransaction();
+    i().unlock();
   }
 }
 

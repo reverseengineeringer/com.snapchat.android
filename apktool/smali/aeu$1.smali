@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/media/MediaPlayer$OnCompletionListener;
+.implements Laww;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 180
+    .line 156
     iput-object p1, p0, Laeu$1;->a:Laeu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,37 +36,32 @@
 
 
 # virtual methods
-.method public final onCompletion(Landroid/media/MediaPlayer;)V
-    .locals 1
+.method public final a(Lawm;Lawv;)V
+    .locals 2
 
     .prologue
-    .line 183
+    .line 159
     iget-object v0, p0, Laeu$1;->a:Laeu;
 
-    iget-object v0, v0, Laeu;->e:Laeq;
+    iget-object v0, v0, Laeu;->j:Lafq;
 
-    .line 184
     if-eqz v0, :cond_0
 
-    .line 185
-    invoke-interface {v0}, Laeq;->r_()V
+    .line 160
+    iget-object v0, p0, Laeu$1;->a:Laeu;
 
-    .line 190
+    iget-object v0, v0, Laeu;->j:Lafq;
+
+    invoke-interface {v0}, Lafq;->b()V
+
+    .line 162
     :cond_0
     iget-object v0, p0, Laeu$1;->a:Laeu;
 
-    iget-boolean v0, v0, Laeu;->d:Z
+    const/4 v1, 0x1
 
-    if-eqz v0, :cond_1
+    iput-boolean v1, v0, Laeu;->a:Z
 
-    .line 191
-    iget-object v0, p0, Laeu$1;->a:Laeu;
-
-    iget-object v0, v0, Laeu;->b:Lcom/snapchat/android/ui/TextureVideoView;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/ui/TextureVideoView;->start()V
-
-    .line 193
-    :cond_1
+    .line 163
     return-void
 .end method

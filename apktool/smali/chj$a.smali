@@ -1,5 +1,5 @@
-.class public final Lchj$a;
-.super Ljava/lang/Object;
+.class final Lchj$a;
+.super Lchj;
 .source "SourceFile"
 
 
@@ -9,666 +9,350 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x8
     name = "a"
 .end annotation
 
 
 # instance fields
-.field public A:Lcgh;
+.field private final b:B
 
-.field public B:Lcgh;
+.field private final transient c:Lcho;
 
-.field public C:Lcgh;
-
-.field public D:Lcgh;
-
-.field public E:Lcgh;
-
-.field public F:Lcgh;
-
-.field public G:Lcgh;
-
-.field public H:Lcgh;
-
-.field public I:Lcgh;
-
-.field public a:Lcgm;
-
-.field public b:Lcgm;
-
-.field public c:Lcgm;
-
-.field public d:Lcgm;
-
-.field public e:Lcgm;
-
-.field public f:Lcgm;
-
-.field public g:Lcgm;
-
-.field public h:Lcgm;
-
-.field public i:Lcgm;
-
-.field public j:Lcgm;
-
-.field public k:Lcgm;
-
-.field public l:Lcgm;
-
-.field public m:Lcgh;
-
-.field public n:Lcgh;
-
-.field public o:Lcgh;
-
-.field public p:Lcgh;
-
-.field public q:Lcgh;
-
-.field public r:Lcgh;
-
-.field public s:Lcgh;
-
-.field public t:Lcgh;
-
-.field public u:Lcgh;
-
-.field public v:Lcgh;
-
-.field public w:Lcgh;
-
-.field public x:Lcgh;
-
-.field public y:Lcgh;
-
-.field public z:Lcgh;
+.field private final transient d:Lcho;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/lang/String;BLcho;Lcho;)V
     .locals 0
 
     .prologue
-    .line 436
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 444
+    invoke-direct {p0, p1}, Lchj;-><init>(Ljava/lang/String;)V
 
-    .line 437
+    .line 445
+    iput-byte p2, p0, Lchj$a;->b:B
+
+    .line 446
+    iput-object p3, p0, Lchj$a;->c:Lcho;
+
+    .line 447
+    iput-object p4, p0, Lchj$a;->d:Lcho;
+
+    .line 448
     return-void
-.end method
-
-.method private static a(Lcgh;)Z
-    .locals 1
-
-    .prologue
-    .line 562
-    if-nez p0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-virtual {p0}, Lcgh;->c()Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method private static a(Lcgm;)Z
-    .locals 1
-
-    .prologue
-    .line 558
-    if-nez p0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-virtual {p0}, Lcgm;->b()Z
-
-    move-result v0
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Lcgf;)V
+.method public final a(Lchg;)Lchi;
     .locals 2
 
     .prologue
-    .line 445
-    invoke-virtual {p1}, Lcgf;->c()Lcgm;
+    .line 480
+    invoke-static {p1}, Lchk;->a(Lchg;)Lchg;
 
     move-result-object v0
 
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
+    .line 482
+    iget-byte v1, p0, Lchj$a;->b:B
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 446
-    iput-object v0, p0, Lchj$a;->a:Lcgm;
-
-    .line 448
-    :cond_0
-    invoke-virtual {p1}, Lcgf;->f()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 449
-    iput-object v0, p0, Lchj$a;->b:Lcgm;
-
-    .line 451
-    :cond_1
-    invoke-virtual {p1}, Lcgf;->i()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 452
-    iput-object v0, p0, Lchj$a;->c:Lcgm;
-
-    .line 454
-    :cond_2
-    invoke-virtual {p1}, Lcgf;->l()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    .line 455
-    iput-object v0, p0, Lchj$a;->d:Lcgm;
-
-    .line 457
-    :cond_3
-    invoke-virtual {p1}, Lcgf;->o()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    .line 458
-    iput-object v0, p0, Lchj$a;->e:Lcgm;
-
-    .line 460
-    :cond_4
-    invoke-virtual {p1}, Lcgf;->s()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    .line 461
-    iput-object v0, p0, Lchj$a;->f:Lcgm;
-
-    .line 463
-    :cond_5
-    invoke-virtual {p1}, Lcgf;->w()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    .line 464
-    iput-object v0, p0, Lchj$a;->g:Lcgm;
-
-    .line 466
-    :cond_6
-    invoke-virtual {p1}, Lcgf;->y()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    .line 467
-    iput-object v0, p0, Lchj$a;->h:Lcgm;
-
-    .line 469
-    :cond_7
-    invoke-virtual {p1}, Lcgf;->B()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_8
-
-    .line 470
-    iput-object v0, p0, Lchj$a;->i:Lcgm;
-
-    .line 472
-    :cond_8
-    invoke-virtual {p1}, Lcgf;->D()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_9
-
-    .line 473
-    iput-object v0, p0, Lchj$a;->j:Lcgm;
-
-    .line 475
-    :cond_9
-    invoke-virtual {p1}, Lcgf;->H()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_a
-
-    .line 476
-    iput-object v0, p0, Lchj$a;->k:Lcgm;
-
-    .line 478
-    :cond_a
-    invoke-virtual {p1}, Lcgf;->J()Lcgm;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgm;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_b
-
-    .line 479
-    iput-object v0, p0, Lchj$a;->l:Lcgm;
-
-    .line 485
-    :cond_b
-    invoke-virtual {p1}, Lcgf;->d()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    .line 486
-    iput-object v0, p0, Lchj$a;->m:Lcgh;
-
-    .line 488
-    :cond_c
-    invoke-virtual {p1}, Lcgf;->e()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_d
-
-    .line 489
-    iput-object v0, p0, Lchj$a;->n:Lcgh;
-
-    .line 491
-    :cond_d
-    invoke-virtual {p1}, Lcgf;->g()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_e
-
-    .line 492
-    iput-object v0, p0, Lchj$a;->o:Lcgh;
-
-    .line 494
-    :cond_e
-    invoke-virtual {p1}, Lcgf;->h()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_f
-
-    .line 495
-    iput-object v0, p0, Lchj$a;->p:Lcgh;
-
-    .line 497
-    :cond_f
-    invoke-virtual {p1}, Lcgf;->j()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_10
-
-    .line 498
-    iput-object v0, p0, Lchj$a;->q:Lcgh;
-
-    .line 500
-    :cond_10
-    invoke-virtual {p1}, Lcgf;->k()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_11
-
-    .line 501
-    iput-object v0, p0, Lchj$a;->r:Lcgh;
-
-    .line 503
-    :cond_11
-    invoke-virtual {p1}, Lcgf;->m()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_12
-
-    .line 504
-    iput-object v0, p0, Lchj$a;->s:Lcgh;
-
-    .line 506
-    :cond_12
-    invoke-virtual {p1}, Lcgf;->n()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_13
-
-    .line 507
-    iput-object v0, p0, Lchj$a;->t:Lcgh;
-
-    .line 509
-    :cond_13
-    invoke-virtual {p1}, Lcgf;->p()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_14
-
-    .line 510
-    iput-object v0, p0, Lchj$a;->u:Lcgh;
-
-    .line 512
-    :cond_14
-    invoke-virtual {p1}, Lcgf;->q()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_15
-
-    .line 513
-    iput-object v0, p0, Lchj$a;->v:Lcgh;
-
-    .line 515
-    :cond_15
-    invoke-virtual {p1}, Lcgf;->r()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_16
-
-    .line 516
-    iput-object v0, p0, Lchj$a;->w:Lcgh;
-
-    .line 518
-    :cond_16
-    invoke-virtual {p1}, Lcgf;->t()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_17
-
-    .line 519
-    iput-object v0, p0, Lchj$a;->x:Lcgh;
-
-    .line 521
-    :cond_17
-    invoke-virtual {p1}, Lcgf;->u()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_18
-
-    .line 522
-    iput-object v0, p0, Lchj$a;->y:Lcgh;
-
-    .line 524
-    :cond_18
-    invoke-virtual {p1}, Lcgf;->v()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_19
-
-    .line 525
-    iput-object v0, p0, Lchj$a;->z:Lcgh;
-
-    .line 527
-    :cond_19
-    invoke-virtual {p1}, Lcgf;->x()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1a
-
-    .line 528
-    iput-object v0, p0, Lchj$a;->A:Lcgh;
-
-    .line 530
-    :cond_1a
-    invoke-virtual {p1}, Lcgf;->z()Lcgh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1b
+    packed-switch v1, :pswitch_data_0
 
     .line 531
-    iput-object v0, p0, Lchj$a;->B:Lcgh;
+    new-instance v0, Ljava/lang/InternalError;
 
-    .line 533
-    :cond_1b
-    invoke-virtual {p1}, Lcgf;->A()Lcgh;
+    invoke-direct {v0}, Ljava/lang/InternalError;-><init>()V
 
-    move-result-object v0
+    throw v0
 
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1c
-
-    .line 534
-    iput-object v0, p0, Lchj$a;->C:Lcgh;
-
-    .line 536
-    :cond_1c
-    invoke-virtual {p1}, Lcgf;->C()Lcgh;
+    .line 484
+    :pswitch_0
+    invoke-virtual {v0}, Lchg;->K()Lchi;
 
     move-result-object v0
 
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
+    .line 528
+    :goto_0
+    return-object v0
 
-    move-result v1
-
-    if-eqz v1, :cond_1d
-
-    .line 537
-    iput-object v0, p0, Lchj$a;->D:Lcgh;
-
-    .line 539
-    :cond_1d
-    invoke-virtual {p1}, Lcgf;->E()Lcgh;
+    .line 486
+    :pswitch_1
+    invoke-virtual {v0}, Lchg;->F()Lchi;
 
     move-result-object v0
 
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
+    goto :goto_0
 
-    move-result v1
-
-    if-eqz v1, :cond_1e
-
-    .line 540
-    iput-object v0, p0, Lchj$a;->E:Lcgh;
-
-    .line 542
-    :cond_1e
-    invoke-virtual {p1}, Lcgf;->F()Lcgh;
+    .line 488
+    :pswitch_2
+    invoke-virtual {v0}, Lchg;->I()Lchi;
 
     move-result-object v0
 
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
+    goto :goto_0
 
-    move-result v1
-
-    if-eqz v1, :cond_1f
-
-    .line 543
-    iput-object v0, p0, Lchj$a;->F:Lcgh;
-
-    .line 545
-    :cond_1f
-    invoke-virtual {p1}, Lcgf;->G()Lcgh;
+    .line 490
+    :pswitch_3
+    invoke-virtual {v0}, Lchg;->G()Lchi;
 
     move-result-object v0
 
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
+    goto :goto_0
 
-    move-result v1
-
-    if-eqz v1, :cond_20
-
-    .line 546
-    iput-object v0, p0, Lchj$a;->G:Lcgh;
-
-    .line 548
-    :cond_20
-    invoke-virtual {p1}, Lcgf;->I()Lcgh;
+    .line 492
+    :pswitch_4
+    invoke-virtual {v0}, Lchg;->E()Lchi;
 
     move-result-object v0
 
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
+    goto :goto_0
 
-    move-result v1
-
-    if-eqz v1, :cond_21
-
-    .line 549
-    iput-object v0, p0, Lchj$a;->H:Lcgh;
-
-    .line 551
-    :cond_21
-    invoke-virtual {p1}, Lcgf;->K()Lcgh;
+    .line 494
+    :pswitch_5
+    invoke-virtual {v0}, Lchg;->v()Lchi;
 
     move-result-object v0
 
-    invoke-static {v0}, Lchj$a;->a(Lcgh;)Z
+    goto :goto_0
 
-    move-result v1
+    .line 496
+    :pswitch_6
+    invoke-virtual {v0}, Lchg;->C()Lchi;
 
-    if-eqz v1, :cond_22
+    move-result-object v0
 
-    .line 552
-    iput-object v0, p0, Lchj$a;->I:Lcgh;
+    goto :goto_0
 
-    .line 555
-    :cond_22
-    return-void
+    .line 498
+    :pswitch_7
+    invoke-virtual {v0}, Lchg;->u()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 500
+    :pswitch_8
+    invoke-virtual {v0}, Lchg;->A()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 502
+    :pswitch_9
+    invoke-virtual {v0}, Lchg;->z()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 504
+    :pswitch_a
+    invoke-virtual {v0}, Lchg;->x()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 506
+    :pswitch_b
+    invoke-virtual {v0}, Lchg;->t()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 508
+    :pswitch_c
+    invoke-virtual {v0}, Lchg;->r()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 510
+    :pswitch_d
+    invoke-virtual {v0}, Lchg;->p()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 512
+    :pswitch_e
+    invoke-virtual {v0}, Lchg;->q()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 514
+    :pswitch_f
+    invoke-virtual {v0}, Lchg;->n()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 516
+    :pswitch_10
+    invoke-virtual {v0}, Lchg;->m()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 518
+    :pswitch_11
+    invoke-virtual {v0}, Lchg;->k()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 520
+    :pswitch_12
+    invoke-virtual {v0}, Lchg;->j()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 522
+    :pswitch_13
+    invoke-virtual {v0}, Lchg;->h()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 524
+    :pswitch_14
+    invoke-virtual {v0}, Lchg;->g()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 526
+    :pswitch_15
+    invoke-virtual {v0}, Lchg;->e()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 528
+    :pswitch_16
+    invoke-virtual {v0}, Lchg;->d()Lchi;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 482
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_9
+        :pswitch_a
+        :pswitch_b
+        :pswitch_c
+        :pswitch_d
+        :pswitch_e
+        :pswitch_f
+        :pswitch_10
+        :pswitch_11
+        :pswitch_12
+        :pswitch_13
+        :pswitch_14
+        :pswitch_15
+        :pswitch_16
+    .end packed-switch
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 463
+    if-ne p0, p1, :cond_1
+
+    .line 469
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 466
+    :cond_1
+    instance-of v2, p1, Lchj$a;
+
+    if-eqz v2, :cond_2
+
+    .line 467
+    iget-byte v2, p0, Lchj$a;->b:B
+
+    check-cast p1, Lchj$a;
+
+    iget-byte v3, p1, Lchj$a;->b:B
+
+    if-eq v2, v3, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    .line 469
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .prologue
+    .line 475
+    const/4 v0, 0x1
+
+    iget-byte v1, p0, Lchj$a;->b:B
+
+    shl-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final x()Lcho;
+    .locals 1
+
+    .prologue
+    .line 452
+    iget-object v0, p0, Lchj$a;->c:Lcho;
+
+    return-object v0
+.end method
+
+.method public final y()Lcho;
+    .locals 1
+
+    .prologue
+    .line 457
+    iget-object v0, p0, Lchj$a;->d:Lcho;
+
+    return-object v0
 .end method

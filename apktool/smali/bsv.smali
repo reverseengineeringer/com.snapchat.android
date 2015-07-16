@@ -1,75 +1,140 @@
 .class public final Lbsv;
-.super Ljava/lang/Object;
+.super Lbsi;
 
 
 # static fields
-.field public static a:Z
+.field public static final a:Lbsv;
+
+
+# instance fields
+.field private b:Ljava/lang/String;
+
+.field private c:Ljava/lang/String;
+
+.field private d:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 11
-    const/4 v0, 0x0
-
-    sput-boolean v0, Lbsv;->a:Z
-
-    return-void
-.end method
-
-.method public static a(Landroid/content/Context;)Ljava/lang/Boolean;
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 22
-    const-string v0, "com.crittercism.usersettings"
-
-    invoke-virtual {p0, v0, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "crashedOnLastLoad"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static a(Landroid/content/Context;Z)V
     .locals 2
 
     .prologue
-    .line 26
-    const-string v0, "com.crittercism.usersettings"
+    .line 15
+    new-instance v0, Lbsv;
 
-    const/4 v1, 0x0
+    const-string v1, "session_start"
 
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-direct {v0, v1}, Lbsv;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    sput-object v0, Lbsv;->a:Lbsv;
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    .line 27
-    const-string v1, "crashedOnLastLoad"
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    .line 28
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 29
     return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 35
+    sget-object v0, Lbuk;->a:Lbuk;
+
+    invoke-virtual {v0}, Lbuk;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lbsv;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 36
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+
+    .prologue
+    const/16 v1, 0x8c
+
+    .line 44
+    invoke-direct {p0}, Lbsi;-><init>()V
+
+    .line 45
+    sget-object v0, Lbsw;->a:Lbsw;
+
+    invoke-virtual {v0}, Lbsw;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbsv;->d:Ljava/lang/String;
+
+    .line 46
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-le v0, v1, :cond_0
+
+    .line 47
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 50
+    :cond_0
+    iput-object p1, p0, Lbsv;->b:Ljava/lang/String;
+
+    .line 51
+    iput-object p2, p0, Lbsv;->c:Ljava/lang/String;
+
+    .line 52
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/io/OutputStream;)V
+    .locals 2
+
+    .prologue
+    .line 59
+    new-instance v0, Lorg/json/JSONArray;
+
+    invoke-direct {v0}, Lorg/json/JSONArray;-><init>()V
+
+    iget-object v1, p0, Lbsv;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    iget-object v1, p0, Lbsv;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    .line 60
+    invoke-virtual {v0}, Lorg/json/JSONArray;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 61
+    invoke-static {}, Lbue;->b()V
+
+    .line 62
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
+
+    .line 63
+    return-void
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 67
+    iget-object v0, p0, Lbsv;->d:Ljava/lang/String;
+
+    return-object v0
 .end method

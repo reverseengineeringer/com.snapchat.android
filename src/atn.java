@@ -1,15 +1,31 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import android.support.v7.widget.RecyclerView.s;
+import android.view.View;
+import android.widget.TextView;
 
-@Deprecated
-public final class atn
+public class atn
+  extends RecyclerView.s
 {
-  private static final Gson sGson = new GsonBuilder().registerTypeAdapter(axu.class, new axv().nullSafe()).registerTypeAdapter(ayh.class, new ayi()).enableComplexMapKeySerialization().create();
+  public final TextView V;
   
-  @Deprecated
-  public static Gson a()
+  public atn(View paramView, int paramInt)
   {
-    return sGson;
+    this(paramView, (TextView)paramView.findViewById(paramInt));
+  }
+  
+  private atn(View paramView, TextView paramTextView)
+  {
+    super(paramView);
+    V = paramTextView;
+  }
+  
+  public final void a(String paramString)
+  {
+    V.setText(paramString);
+  }
+  
+  public final void b(int paramInt)
+  {
+    V.setTextColor(paramInt);
   }
 }
 

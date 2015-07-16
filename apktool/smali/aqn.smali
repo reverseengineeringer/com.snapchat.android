@@ -2,153 +2,170 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/widget/AbsListView$OnScrollListener;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Laqn$1;
+    }
+.end annotation
 
 
 # instance fields
-.field private final a:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Landroid/widget/AbsListView$OnScrollListener;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final a:Lcom/snapchat/android/ui/caption/CaptionTypeEnums;
+
+.field private final b:Z
+
+.field private final c:Z
+
+.field private final d:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
+.method public constructor <init>(Lcom/snapchat/android/ui/caption/CaptionTypeEnums;ZZZ)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Landroid/widget/AbsListView$OnScrollListener;",
-            ">;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 15
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
-    iput-object p1, p0, Laqn;->a:Ljava/util/List;
+    .line 21
+    iput-object p1, p0, Laqn;->a:Lcom/snapchat/android/ui/caption/CaptionTypeEnums;
 
-    .line 17
+    .line 22
+    iput-boolean p2, p0, Laqn;->b:Z
+
+    .line 23
+    iput-boolean p3, p0, Laqn;->c:Z
+
+    .line 24
+    iput-boolean p4, p0, Laqn;->d:Z
+
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScroll(Landroid/widget/AbsListView;III)V
-    .locals 3
+.method public final a()Ljava/util/Map;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 30
-    iget-object v1, p0, Laqn;->a:Ljava/util/List;
+    .line 45
+    new-instance v1, Ljava/util/HashMap;
 
-    monitor-enter v1
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 31
-    :try_start_0
-    iget-object v0, p0, Laqn;->a:Ljava/util/List;
+    .line 46
+    const-string v2, "caption"
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Laqn;->a:Lcom/snapchat/android/ui/caption/CaptionTypeEnums;
 
-    move-result-object v2
+    sget-object v3, Laqn$1;->a:[I
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/caption/CaptionTypeEnums;->ordinal()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    aget v0, v3, v0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/AbsListView$OnScrollListener;
-
-    .line 32
-    invoke-interface {v0, p1, p2, p3, p4}, Landroid/widget/AbsListView$OnScrollListener;->onScroll(Landroid/widget/AbsListView;III)V
-
-    goto :goto_0
-
-    .line 34
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_0
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    return-void
-.end method
-
-.method public final onScrollStateChanged(Landroid/widget/AbsListView;I)V
-    .locals 3
-
-    .prologue
-    .line 21
-    iget-object v1, p0, Laqn;->a:Ljava/util/List;
-
-    monitor-enter v1
-
-    .line 22
-    :try_start_0
-    iget-object v0, p0, Laqn;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
+    const-string v0, ""
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
+    .line 47
+    const-string v2, "free_move_mode"
+
+    iget-boolean v0, p0, Laqn;->b:Z
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const-string v0, "true"
 
-    move-result-object v0
+    :goto_1
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v0, Landroid/widget/AbsListView$OnScrollListener;
+    .line 48
+    const-string v2, "color_mode"
 
-    .line 23
-    invoke-interface {v0, p1, p2}, Landroid/widget/AbsListView$OnScrollListener;->onScrollStateChanged(Landroid/widget/AbsListView;I)V
+    iget-boolean v0, p0, Laqn;->c:Z
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "true"
+
+    :goto_2
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 49
+    const-string v2, "scale_edited"
+
+    iget-boolean v0, p0, Laqn;->d:Z
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "true"
+
+    :goto_3
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 50
+    return-object v1
+
+    .line 46
+    :pswitch_0
+    const-string v0, "DEFAULT"
 
     goto :goto_0
 
-    .line 25
-    :catchall_0
-    move-exception v0
+    :pswitch_1
+    const-string v0, "BIG_TEXT"
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    goto :goto_0
 
-    throw v0
+    :pswitch_2
+    const-string v0, "BIG_TEXT_CENTER"
 
+    goto :goto_0
+
+    .line 47
     :cond_0
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    const-string v0, "false"
 
-    return-void
+    goto :goto_1
+
+    .line 48
+    :cond_1
+    const-string v0, "false"
+
+    goto :goto_2
+
+    .line 49
+    :cond_2
+    const-string v0, "false"
+
+    goto :goto_3
+
+    .line 46
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method

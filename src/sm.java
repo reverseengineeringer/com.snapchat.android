@@ -1,63 +1,32 @@
-import com.snapchat.android.api2.cash.square.data.CardBrand;
-import com.snapchat.android.api2.cash.square.data.CashCustomer;
+import javax.inject.Provider;
 
 public final class sm
-  implements qn
+  implements bvk<sl>
 {
-  @cgc
-  private final sv mCardSummary;
-  @cgc
-  private final CashCustomer mCashCustomer;
-  @cgb
-  private final sw mCashCustomerStatus;
+  private final Provider<yj> mCashAuthManagerProvider;
+  private final bvk<rl> supertypeInjector;
   
-  public sm(@cgb sw paramsw)
+  static
   {
-    mCashCustomerStatus = paramsw;
-    mCashCustomer = mCustomer;
-    mCardSummary = mCardSummary;
-  }
-  
-  public final boolean a()
-  {
-    return mCardSummary != null;
-  }
-  
-  public final boolean b()
-  {
-    return mCashCustomerStatus.mPasswordConfirmationEnabled;
-  }
-  
-  public final boolean c()
-  {
-    boolean bool2 = false;
-    boolean bool1 = bool2;
-    if (mCashCustomerStatus != null)
+    if (!sm.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      bool1 = bool2;
-      if (mCashCustomerStatus.mNumberOfPayments > 0) {
-        bool1 = true;
-      }
+      $assertionsDisabled = bool;
+      return;
     }
-    return bool1;
   }
   
-  @cgc
-  public final CardBrand d()
+  private sm(bvk<rl> parambvk, Provider<yj> paramProvider)
   {
-    if (mCardSummary != null) {
-      return mCardSummary.mBrand;
-    }
-    return null;
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mCashAuthManagerProvider = paramProvider;
   }
   
-  @cgc
-  public final String e()
+  public static bvk<sl> a(bvk<rl> parambvk, Provider<yj> paramProvider)
   {
-    if (mCardSummary != null) {
-      return mCardSummary.mPanSuffix;
-    }
-    return null;
+    return new sm(parambvk, paramProvider);
   }
 }
 

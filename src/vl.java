@@ -1,6 +1,8 @@
-public abstract interface vl
+import java.util.List;
+
+public abstract interface vl<T>
 {
-  public abstract void a(aue paramaue, vm paramvm);
+  public abstract void a(List<T> paramList);
 }
 
 /* Location:

@@ -1,27 +1,6 @@
-import com.snapchat.android.discover.util.network.DiscoverEndpointManager;
-import javax.inject.Provider;
-
-public final class ajp$a
+public abstract interface ajp$a
 {
-  public static final String AD_RESPONSE_CONTENT_TYPE_PARAM = "type";
-  public static final String AD_RESPONSE_DURATION_PARAM = "duration";
-  public static final String AD_RESPONSE_IMAGE_MEDIA_TYPE = "image";
-  public static final String AD_RESPONSE_MEDIA_ZIPPED_WITH_OVERLAY_PARAM = "media_zipped_with_overlay";
-  private static final String ONLY_MEDIA_PARAM = "only_download_raw_media";
-  private static final String ONLY_MEDIA_VALUE = "true";
-  public final DiscoverEndpointManager mDiscoverConfiguration;
-  public final Provider<String> mEndpointProvider;
-  
-  public ajp$a()
-  {
-    this(new bfq(), DiscoverEndpointManager.a());
-  }
-  
-  private ajp$a(Provider<String> paramProvider, DiscoverEndpointManager paramDiscoverEndpointManager)
-  {
-    mDiscoverConfiguration = paramDiscoverEndpointManager;
-    mEndpointProvider = paramProvider;
-  }
+  public abstract void a(@chd ajp paramajp);
 }
 
 /* Location:

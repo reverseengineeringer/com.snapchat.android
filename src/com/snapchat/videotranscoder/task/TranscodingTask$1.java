@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.task;
 
 import android.graphics.Bitmap;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.audio.SilenceProvider;
 import com.snapchat.videotranscoder.pipeline.Encoder;
 import com.snapchat.videotranscoder.pipeline.EncoderConfiguration;
@@ -19,12 +19,12 @@ class TranscodingTask$1
     super(paramMixer, paramEncoderConfiguration1, paramEncoderConfiguration2);
   }
   
-  protected MediaProvider createAudioProvider(@cgb Encoder paramEncoder, @cgb EncoderConfiguration paramEncoderConfiguration, @cgb StageDoneCallback paramStageDoneCallback)
+  protected MediaProvider createAudioProvider(@chc Encoder paramEncoder, @chc EncoderConfiguration paramEncoderConfiguration, @chc StageDoneCallback paramStageDoneCallback)
   {
     return new SilenceProvider(paramEncoder, val$durationUs, paramStageDoneCallback);
   }
   
-  protected MediaProvider createVideoProvider(@cgb Encoder paramEncoder, @cgb EncoderConfiguration paramEncoderConfiguration, @cgb StageDoneCallback paramStageDoneCallback)
+  protected MediaProvider createVideoProvider(@chc Encoder paramEncoder, @chc EncoderConfiguration paramEncoderConfiguration, @chc StageDoneCallback paramStageDoneCallback)
   {
     return new ImageProvider(TranscodingTask.access$300(this$0), paramEncoder, val$bitmap, 30, val$durationUs, paramStageDoneCallback);
   }

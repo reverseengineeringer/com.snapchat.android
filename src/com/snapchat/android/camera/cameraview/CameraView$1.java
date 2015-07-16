@@ -2,7 +2,6 @@ package com.snapchat.android.camera.cameraview;
 
 import android.graphics.SurfaceTexture;
 import android.view.TextureView.SurfaceTextureListener;
-import com.snapchat.android.Timber;
 
 final class CameraView$1
   implements TextureView.SurfaceTextureListener
@@ -11,13 +10,11 @@ final class CameraView$1
   
   public final void onSurfaceTextureAvailable(SurfaceTexture paramSurfaceTexture, int paramInt1, int paramInt2)
   {
-    Timber.c("CameraView", "Camera View: Surface texture available", new Object[0]);
     a.a(paramSurfaceTexture);
   }
   
   public final boolean onSurfaceTextureDestroyed(SurfaceTexture paramSurfaceTexture)
   {
-    Timber.c("CameraView", "Surface Destroyed", new Object[0]);
     return true;
   }
   

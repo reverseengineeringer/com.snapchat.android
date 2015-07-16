@@ -1,8 +1,7 @@
 package com.snapchat.android.service;
 
 import android.os.SystemClock;
-import aol;
-import com.snapchat.android.Timber;
+import aph;
 import java.util.ArrayList;
 
 final class SnapchatService$1
@@ -12,10 +11,11 @@ final class SnapchatService$1
   
   public final void run()
   {
-    Timber.c("SnapchatService", "mStopRunnable mFutureList.size()=" + SnapchatService.d(a).size() + " hasPendingIntents=" + SnapchatService.c(a).g(), new Object[0]);
+    new StringBuilder("mStopRunnable mFutureList.size()=").append(SnapchatService.d(a).size()).append(" hasPendingIntents=").append(SnapchatService.c(a).g());
     if ((SnapchatService.d(a).isEmpty()) && (!SnapchatService.c(a).g()))
     {
-      Timber.c("SnapchatService", "Stop service which lived for %d ms", new Object[] { Long.valueOf(SystemClock.elapsedRealtime() - SnapchatService.e(a)) });
+      SystemClock.elapsedRealtime();
+      SnapchatService.e(a);
       a.stopSelf();
     }
   }

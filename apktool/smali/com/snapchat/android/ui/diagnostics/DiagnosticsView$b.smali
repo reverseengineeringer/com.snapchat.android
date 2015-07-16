@@ -20,7 +20,7 @@
         value = {
             "Ljava/util/LinkedList",
             "<",
-            "Lalc;",
+            "Laly;",
             ">;"
         }
     .end annotation
@@ -53,10 +53,10 @@
 
 
 # virtual methods
-.method public final a(Lala;)V
+.method public final a(Lalv;)V
     .locals 0
-    .param p1    # Lala;
-        .annotation build Lcgb;
+    .param p1    # Lalv;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -65,7 +65,7 @@
     return-void
 .end method
 
-.method public final a(Lalc;)V
+.method public final a(Laly;)V
     .locals 0
 
     .prologue
@@ -73,7 +73,7 @@
     return-void
 .end method
 
-.method public final a(Lalc;Luc;)V
+.method public final a(Laly;Lus;)V
     .locals 2
 
     .prologue

@@ -1,70 +1,169 @@
-.class final Lblc;
-.super Ljava/lang/Object;
+.class public Lblc;
+.super Lbhy;
 .source "SourceFile"
 
 
+# instance fields
+.field protected addedFriends:Ljava/util/List;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "added_friends"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field protected size:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "size"
+    .end annotation
+.end field
+
+
 # direct methods
-.method static a(Ljava/io/Closeable;)V
-    .locals 4
-    .param p0    # Ljava/io/Closeable;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 41
-    if-eqz p0, :cond_0
+    .line 18
+    invoke-direct {p0}, Lbhy;-><init>()V
 
-    .line 43
-    :try_start_0
-    invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IncompatibleClassChangeError; {:try_start_0 .. :try_end_0} :catch_1
-
-    .line 50
-    :cond_0
-    :goto_0
     return-void
+.end method
 
-    .line 44
-    :catch_0
-    move-exception v0
 
-    invoke-static {v0}, Lble;->a(Ljava/lang/Throwable;)V
+# virtual methods
+.method public final a(Ljava/lang/String;)Lblc;
+    .locals 0
+
+    .prologue
+    .line 35
+    iput-object p1, p0, Lblc;->size:Ljava/lang/String;
+
+    .line 36
+    return-object p0
+.end method
+
+.method public final a(Ljava/util/List;)Lblc;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lblc;"
+        }
+    .end annotation
+
+    .prologue
+    .line 59
+    iput-object p1, p0, Lblc;->addedFriends:Ljava/util/List;
+
+    .line 60
+    return-object p0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .prologue
+    .line 89
+    if-ne p1, p0, :cond_0
+
+    .line 90
+    const/4 v0, 0x1
+
+    .line 96
+    :goto_0
+    return v0
+
+    .line 92
+    :cond_0
+    instance-of v0, p1, Lblc;
+
+    if-nez v0, :cond_1
+
+    .line 93
+    const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 46
-    :catch_1
-    move-exception v0
+    .line 95
+    :cond_1
+    check-cast p1, Lblc;
 
-    .line 47
-    new-instance v1, Ljava/lang/RuntimeException;
+    .line 96
+    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    const-string v3, "Caused by attempting to close "
+    iget-object v1, p0, Lblc;->size:Ljava/lang/String;
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v2, p1, Lblc;->size:Ljava/lang/String;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    iget-object v1, p0, Lblc;->addedFriends:Ljava/util/List;
 
-    move-result-object v3
+    iget-object v2, p1, Lblc;->addedFriends:Ljava/util/List;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
 
-    move-result-object v2
+    move-result v0
 
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    goto :goto_0
+.end method
 
-    throw v1
+.method public hashCode()I
+    .locals 2
+
+    .prologue
+    .line 81
+    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+
+    iget-object v1, p0, Lblc;->size:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblc;->addedFriends:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 76
+    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

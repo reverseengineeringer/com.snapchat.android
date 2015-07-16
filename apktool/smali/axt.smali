@@ -1,314 +1,521 @@
-.class public final Laxt;
-.super Ljava/lang/Object;
+.class public Laxt;
+.super Landroid/os/AsyncTask;
 .source "SourceFile"
 
-# interfaces
-.implements Ljavax/net/ssl/X509TrustManager;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/os/AsyncTask",
+        "<",
+        "Laji;",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        ">;"
+    }
+.end annotation
 
 
 # static fields
-.field private static final TRUSTED_SUBJECT_ALTERNATIVE_DNS_NAMES:[Ljava/lang/String;
-
-.field private static final sTrustedSubjectAlternativeDNSNames:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field protected static final TAG:Ljava/lang/String; = "SaveSentSnapToCacheTask"
 
 
 # instance fields
-.field private mDefaultTrustManager:Ljavax/net/ssl/X509TrustManager;
+.field private mDiscoverShareCacheWrapper:Laxp;
+
+.field private final mExceptionReporter:Lban;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .prologue
-    .line 20
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-string v2, "feelinsonice.com"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    const-string v2, "www.feelinsonice.com"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Laxt;->TRUSTED_SUBJECT_ALTERNATIVE_DNS_NAMES:[Ljava/lang/String;
-
-    .line 21
-    new-instance v0, Ljava/util/HashSet;
-
-    sget-object v1, Laxt;->TRUSTED_SUBJECT_ALTERNATIVE_DNS_NAMES:[Ljava/lang/String;
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    sput-object v0, Laxt;->sTrustedSubjectAlternativeDNSNames:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 2
 
     .prologue
-    .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 23
+    invoke-static {}, Laxp$a;->a()Laxp;
+
+    move-result-object v0
+
+    new-instance v1, Lban;
+
+    invoke-direct {v1}, Lban;-><init>()V
+
+    invoke-direct {p0, v0, v1}, Laxt;-><init>(Laxp;Lban;)V
+
+    .line 24
+    return-void
+.end method
+
+.method private constructor <init>(Laxp;Lban;)V
+    .locals 0
+    .param p1    # Laxp;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lban;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 28
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     .line 29
-    :try_start_0
-    invoke-static {}, Ljavax/net/ssl/TrustManagerFactory;->getDefaultAlgorithm()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
-
-    move-result-object v0
+    iput-object p1, p0, Laxt;->mDiscoverShareCacheWrapper:Laxp;
 
     .line 30
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
+    iput-object p2, p0, Laxt;->mExceptionReporter:Lban;
 
     .line 31
-    invoke-static {v0}, Laxt;->a(Ljavax/net/ssl/TrustManagerFactory;)Ljavax/net/ssl/X509TrustManager;
+    return-void
+.end method
 
-    move-result-object v0
+.method private a(Laji;)Z
+    .locals 13
 
-    iput-object v0, p0, Laxt;->mDefaultTrustManager:Ljavax/net/ssl/X509TrustManager;
+    .prologue
+    const/4 v8, 0x1
 
-    .line 32
-    iget-object v0, p0, Laxt;->mDefaultTrustManager:Ljavax/net/ssl/X509TrustManager;
+    const/4 v7, 0x0
 
-    if-nez v0, :cond_0
+    .line 54
+    invoke-virtual {p0}, Laxt;->isCancelled()Z
 
-    .line 33
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result v1
 
-    const-string v1, "Couldn\'t find X509TrustManager"
+    if-eqz v1, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move v1, v7
 
-    throw v0
-    :try_end_0
-    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    .line 71
+    :goto_0
+    return v1
 
-    .line 35
-    :catch_0
-    move-exception v0
+    .line 58
+    :cond_0
+    :try_start_0
+    iget-object v4, p0, Laxt;->mDiscoverShareCacheWrapper:Laxp;
 
-    .line 36
-    new-instance v1, Ljava/lang/RuntimeException;
+    iget-object v5, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    iget-object v1, p1, Lcom/snapchat/android/model/Mediabryo;->mMediaExtras:Lajv;
+
+    check-cast v1, Laeb;
+
+    if-eqz v1, :cond_7
+
+    iget-object v9, v4, Laxp;->mCompressor:Lack;
+
+    iget-object v2, p1, Lcom/snapchat/android/model/Mediabryo;->mMediaExtras:Lajv;
+
+    move-object v0, v2
+
+    check-cast v0, Laeb;
+
+    move-object v6, v0
+
+    iget-object v2, p1, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
+
+    sget-object v3, Lcom/snapchat/android/model/Mediabryo$SnapType;->DISCOVER:Lcom/snapchat/android/model/Mediabryo$SnapType;
+
+    if-ne v2, v3, :cond_1
+
+    if-nez v6, :cond_2
+
+    :cond_1
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, "Incorrect snap type or need extra information about the DSnap."
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 37
-    :cond_0
-    return-void
-.end method
+    .line 60
+    :catch_0
+    move-exception v1
 
-.method public constructor <init>(B)V
-    .locals 0
-
-    .prologue
-    .line 41
-    invoke-direct {p0}, Laxt;-><init>()V
-
-    .line 42
-    return-void
-.end method
-
-.method private static a(Ljavax/net/ssl/TrustManagerFactory;)Ljavax/net/ssl/X509TrustManager;
-    .locals 5
-
-    .prologue
-    .line 92
-    invoke-virtual {p0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
-
-    move-result-object v2
-
-    .line 93
-    array-length v3, v2
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    if-ge v1, v3, :cond_1
-
-    aget-object v0, v2, v1
-
-    .line 94
-    instance-of v4, v0, Ljavax/net/ssl/X509TrustManager;
-
-    if-eqz v4, :cond_0
-
-    .line 95
-    check-cast v0, Ljavax/net/ssl/X509TrustManager;
-
-    .line 98
-    :goto_1
-    return-object v0
-
-    .line 93
-    :cond_0
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
+    move v1, v7
 
     goto :goto_0
 
-    .line 98
-    :cond_1
-    const/4 v0, 0x0
+    .line 58
+    :cond_2
+    iget-object v3, p1, Lcom/snapchat/android/model/Mediabryo;->mRawImageBitmap:Landroid/graphics/Bitmap;
 
+    if-nez v3, :cond_4
+
+    iget-object v1, p1, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
+
+    if-nez v1, :cond_3
+
+    new-instance v1, Lact;
+
+    const-string v2, "Media provided has both snap and video url being null."
+
+    iget-object v3, v6, Laeb;->a:Ljava/lang/String;
+
+    iget-object v4, v6, Laeb;->d:Ljava/lang/String;
+
+    iget-object v5, v6, Laeb;->e:Ljava/lang/String;
+
+    iget v6, v6, Laeb;->w:I
+
+    invoke-direct/range {v1 .. v6}, Lact;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+
+    throw v1
+
+    .line 63
+    :catch_1
+    move-exception v1
+
+    move v1, v7
+
+    goto :goto_0
+
+    .line 58
+    :cond_3
+    new-instance v1, Lact;
+
+    const-string v2, "Discover videos must have a thumbnail. "
+
+    iget-object v3, v6, Laeb;->a:Ljava/lang/String;
+
+    iget-object v4, v6, Laeb;->d:Ljava/lang/String;
+
+    iget-object v5, v6, Laeb;->e:Ljava/lang/String;
+
+    iget v6, v6, Laeb;->w:I
+
+    invoke-direct/range {v1 .. v6}, Lact;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+
+    throw v1
+    :try_end_0
+    .catch Laxq; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lack$a; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Lact; {:try_start_0 .. :try_end_0} :catch_2
+
+    .line 65
+    :catch_2
+    move-exception v1
+
+    .line 66
+    new-array v2, v8, [Ljava/lang/Object;
+
+    aput-object v1, v2, v7
+
+    .line 67
+    iget-object v2, p0, Laxt;->mExceptionReporter:Lban;
+
+    invoke-virtual {v2, v1}, Lban;->a(Ljava/lang/Throwable;)V
+
+    move v1, v7
+
+    .line 68
+    goto :goto_0
+
+    .line 58
+    :cond_4
+    const/4 v2, 0x1
+
+    :try_start_1
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v10, 0x0
+
+    iget-object v11, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
+
+    aput-object v11, v2, v10
+
+    invoke-static {p1}, Lns;->a(Laji;)Lhv;
+
+    move-result-object v10
+
+    invoke-static {p1}, Lns;->b(Laji;)Lhx;
+
+    move-result-object v11
+
+    new-instance v12, Laco;
+
+    invoke-direct {v12}, Laco;-><init>()V
+
+    iget-object v2, v6, Laeb;->a:Ljava/lang/String;
+
+    iput-object v2, v12, Laco;->b:Ljava/lang/String;
+
+    iget-object v2, v6, Laeb;->b:Ljava/lang/String;
+
+    iput-object v2, v12, Laco;->c:Ljava/lang/String;
+
+    iget-object v2, v6, Laeb;->c:Ljava/lang/String;
+
+    iput-object v2, v12, Laco;->d:Ljava/lang/String;
+
+    iget-object v2, v6, Laeb;->d:Ljava/lang/String;
+
+    iput-object v2, v12, Laco;->e:Ljava/lang/String;
+
+    iget-object v2, v6, Laeb;->e:Ljava/lang/String;
+
+    iput-object v2, v12, Laco;->f:Ljava/lang/String;
+
+    iget-object v2, v6, Laeb;->x:Ljava/lang/String;
+
+    iput-object v2, v12, Laco;->g:Ljava/lang/String;
+
+    iget v2, v6, Laeb;->h:F
+
+    iput v2, v12, Laco;->m:F
+
+    iget v2, v6, Laeb;->i:F
+
+    iput v2, v12, Laco;->n:F
+
+    iget v2, v6, Laeb;->f:F
+
+    iput v2, v12, Laco;->k:F
+
+    iget v2, v6, Laeb;->g:F
+
+    iput v2, v12, Laco;->l:F
+
+    iget v2, v6, Laeb;->j:F
+
+    iput v2, v12, Laco;->o:F
+
+    iget v2, v6, Laeb;->k:F
+
+    iput v2, v12, Laco;->p:F
+
+    iget-boolean v2, v6, Laeb;->n:Z
+
+    iput-boolean v2, v12, Laco;->q:Z
+
+    const/4 v2, 0x1
+
+    iput v2, v12, Laco;->v:I
+
+    invoke-virtual {p1}, Laji;->h()I
+
+    move-result v2
+
+    iput v2, v12, Laco;->a:I
+
+    iget-object v2, p1, Laji;->mCaptionStyleDescription:Ljava/lang/String;
+
+    invoke-static {v2}, Lafv;->a(Ljava/lang/String;)I
+
+    move-result v2
+
+    iput v2, v12, Laco;->r:I
+
+    iget-boolean v2, p1, Laji;->mHasDrawing:Z
+
+    if-nez v2, :cond_8
+
+    move v2, v7
+
+    :goto_1
+    iput v2, v12, Laco;->s:I
+
+    if-eqz v10, :cond_5
+
+    invoke-virtual {v10}, Lhv;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v12, Laco;->t:Ljava/lang/String;
+
+    :cond_5
+    if-eqz v11, :cond_6
+
+    invoke-virtual {v11}, Lhx;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v12, Laco;->u:Ljava/lang/String;
+
+    :cond_6
+    iget-object v6, p1, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
+
+    iget-object v2, p1, Laji;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p1}, Laji;->h()I
+
+    move-result v10
+
+    if-nez v10, :cond_9
+
+    if-eqz v2, :cond_c
+
+    :goto_2
+    invoke-static {v2}, Lavp;->e(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    invoke-virtual {v9, v12, v2}, Lack;->a(Laco;Landroid/graphics/Bitmap;)[B
+
+    move-result-object v2
+
+    :goto_3
+    new-instance v3, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;
+
+    iget-object v6, v1, Laeb;->l:Ljava/lang/String;
+
+    iget-object v1, v1, Laeb;->m:Ljava/lang/String;
+
+    invoke-direct {v3, v6, v1}, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "no dataId provided"
+
+    invoke-virtual {v3, v2, v1}, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->a([BLjava/lang/String;)[B
+
+    move-result-object v1
+
+    iget-object v2, v4, Laxp;->mCache:Lcom/snapchat/android/util/cache/DiscoverShareCache;
+
+    invoke-virtual {v2, v5}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->c(Ljava/lang/String;)V
+
+    iget-object v2, v4, Laxp;->mCache:Lcom/snapchat/android/util/cache/DiscoverShareCache;
+
+    sget-object v3, Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;->BLOB:Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;
+
+    invoke-virtual {v2, v5, v1, v3}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Ljava/lang/String;[BLcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)Ljava/lang/String;
+
+    :cond_7
+    move v1, v8
+
+    .line 71
+    goto/16 :goto_0
+
+    :cond_8
+    move v2, v8
+
+    .line 58
     goto :goto_1
+
+    :cond_9
+    invoke-static {p1}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_b
+
+    if-eqz v2, :cond_a
+
+    invoke-static {v2}, Lavp;->e(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    :cond_a
+    invoke-static {v3}, Lavp;->e(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+
+    move-result-object v3
+
+    invoke-virtual {v9, v12, v6, v3, v2}, Lack;->a(Laco;Landroid/net/Uri;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)[B
+
+    move-result-object v2
+
+    goto :goto_3
+
+    :cond_b
+    new-instance v1, Lack$a;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Unsupported media type! "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Laji;->h()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Lack$a;-><init>(Ljava/lang/String;)V
+
+    throw v1
+    :try_end_1
+    .catch Laxq; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Lack$a; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Lact; {:try_start_1 .. :try_end_1} :catch_2
+
+    :cond_c
+    move-object v2, v3
+
+    goto :goto_2
 .end method
 
 
 # virtual methods
-.method public final checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .locals 2
+.method protected synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     .prologue
-    .line 46
-    new-instance v0, Ljava/security/cert/CertificateException;
+    .line 16
+    check-cast p1, [Laji;
 
-    const-string v1, "Client certificate checking is unsupported."
+    const/4 v0, 0x0
 
-    invoke-direct {v0, v1}, Ljava/security/cert/CertificateException;-><init>(Ljava/lang/String;)V
+    aget-object v0, p1, v0
 
-    throw v0
-.end method
-
-.method public final checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-    .locals 6
-
-    .prologue
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    .line 52
-    iget-object v0, p0, Laxt;->mDefaultTrustManager:Ljavax/net/ssl/X509TrustManager;
-
-    invoke-interface {v0, p1, p2}, Ljavax/net/ssl/X509TrustManager;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
-
-    .line 64
-    aget-object v0, p1, v3
-
-    invoke-virtual {v0}, Ljava/security/cert/X509Certificate;->getSubjectAlternativeNames()Ljava/util/Collection;
-
-    move-result-object v0
-
-    .line 65
-    if-eqz v0, :cond_2
-
-    .line 66
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :cond_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/List;
-
-    .line 67
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    .line 68
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Laji;->h()I
 
     move-result v1
 
-    const/4 v5, 0x2
+    if-nez v1, :cond_0
 
-    if-ne v1, v5, :cond_0
+    iget-object v1, v0, Laji;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
 
-    .line 70
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    if-nez v1, :cond_0
 
-    move-result-object v0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    check-cast v0, Ljava/lang/String;
-
-    .line 71
-    sget-object v1, Laxt;->sTrustedSubjectAlternativeDNSNames:Ljava/util/Set;
-
-    invoke-interface {v1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    move v0, v2
-
-    .line 78
-    :goto_0
-    if-nez v0, :cond_1
-
-    .line 79
-    new-instance v0, Ljava/security/cert/CertificateException;
-
-    const-string v1, "Certificate did not match an expected DNS name."
-
-    invoke-direct {v0, v1}, Ljava/security/cert/CertificateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 81
+    :cond_0
+    invoke-static {v0}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, v0, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
+
+    if-nez v1, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
     :cond_1
-    return-void
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    :cond_2
-    move v0, v3
+    const-string v2, "Save the media to the cache! of type:"
 
-    goto :goto_0
-.end method
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-.method public final getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
-    .locals 1
+    invoke-virtual {v0}, Laji;->h()I
 
-    .prologue
-    .line 85
-    iget-object v0, p0, Laxt;->mDefaultTrustManager:Ljavax/net/ssl/X509TrustManager;
+    move-result v2
 
-    invoke-interface {v0}, Ljavax/net/ssl/X509TrustManager;->getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {p0, v0}, Laxt;->a(Laji;)Z
+
+    const/4 v0, 0x0
 
     return-object v0
 .end method

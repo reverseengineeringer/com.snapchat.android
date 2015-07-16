@@ -1,10 +1,10 @@
 package com.snapchat.android.analytics.framework;
 
-import buo;
+import bvp;
 import javax.inject.Provider;
 
 public final class AnalyticsPlatformRegistry_Factory
-  implements buo<AnalyticsPlatformRegistry>
+  implements bvp<AnalyticsPlatformRegistry>
 {
   private final Provider<UpdateSnapsAnalyticsPlatform> b;
   private final Provider<FlurryAnalyticsPlatform> c;
@@ -36,7 +36,7 @@ public final class AnalyticsPlatformRegistry_Factory
     d = paramProvider2;
   }
   
-  public static buo<AnalyticsPlatformRegistry> a(Provider<UpdateSnapsAnalyticsPlatform> paramProvider, Provider<FlurryAnalyticsPlatform> paramProvider1, Provider<UserActionTracePlatform> paramProvider2)
+  public static bvp<AnalyticsPlatformRegistry> a(Provider<UpdateSnapsAnalyticsPlatform> paramProvider, Provider<FlurryAnalyticsPlatform> paramProvider1, Provider<UserActionTracePlatform> paramProvider2)
   {
     return new AnalyticsPlatformRegistry_Factory(paramProvider, paramProvider1, paramProvider2);
   }

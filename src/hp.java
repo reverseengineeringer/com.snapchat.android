@@ -2,48 +2,51 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class hp
-  extends ls
+  extends ml
 {
-  public Long camera;
   public Long caption;
   public Boolean drawing;
-  private final String eventName = "GEOFILTER_DIRECT_SNAP_SEND";
-  public String filterGeofilterId;
-  public Long filterIndexCount;
-  public Long filterIndexPos;
-  public hm filterInfo;
+  public String dsnapId;
+  public Long editionAvailable;
+  public String editionId;
+  private final String eventName = "DISCOVER_SNAP_SHARE_VIEW";
+  private String filter;
+  private String filterGeofence;
+  public hv filterInfo;
   private String filterSponsor;
-  public ho filterVisual;
-  public Boolean flash;
-  public hy mediaType;
-  public Long recipientCount;
+  private String filterType;
+  public hx filterVisual;
+  public Boolean fullView;
+  public ih mediaType;
+  public String publisherId;
+  public Long snapAvailable;
   public Double snapTimeSec;
-  public lc source;
-  public Long storyPostCount;
-  public Double viewTimeSec;
-  public Boolean withGallery;
+  public Double timeViewed;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "GEOFILTER_DIRECT_SNAP_SEND");
-    if (camera != null) {
-      localHashMap.put("camera", camera);
-    }
+    localHashMap.put("event_name", "DISCOVER_SNAP_SHARE_VIEW");
     if (caption != null) {
       localHashMap.put("caption", caption);
     }
     if (drawing != null) {
       localHashMap.put("drawing", drawing);
     }
-    if (filterGeofilterId != null) {
-      localHashMap.put("filter_geofilter_id", filterGeofilterId);
+    if (dsnapId != null) {
+      localHashMap.put("dsnap_id", dsnapId);
     }
-    if (filterIndexCount != null) {
-      localHashMap.put("filter_index_count", filterIndexCount);
+    if (editionAvailable != null) {
+      localHashMap.put("edition_available", editionAvailable);
     }
-    if (filterIndexPos != null) {
-      localHashMap.put("filter_index_pos", filterIndexPos);
+    if (editionId != null) {
+      localHashMap.put("edition_id", editionId);
+    }
+    if (filter != null) {
+      localHashMap.put("filter", filter);
+    }
+    if (filterGeofence != null) {
+      localHashMap.put("filter_geofence", filterGeofence);
     }
     if (filterInfo != null) {
       localHashMap.put("filter_info", filterInfo);
@@ -51,32 +54,29 @@ public final class hp
     if (filterSponsor != null) {
       localHashMap.put("filter_sponsor", filterSponsor);
     }
+    if (filterType != null) {
+      localHashMap.put("filter_type", filterType);
+    }
     if (filterVisual != null) {
       localHashMap.put("filter_visual", filterVisual);
     }
-    if (flash != null) {
-      localHashMap.put("flash", flash);
+    if (fullView != null) {
+      localHashMap.put("full_view", fullView);
     }
     if (mediaType != null) {
       localHashMap.put("media_type", mediaType);
     }
-    if (recipientCount != null) {
-      localHashMap.put("recipient_count", recipientCount);
+    if (publisherId != null) {
+      localHashMap.put("publisher_id", publisherId);
+    }
+    if (snapAvailable != null) {
+      localHashMap.put("snap_available", snapAvailable);
     }
     if (snapTimeSec != null) {
       localHashMap.put("snap_time_sec", snapTimeSec);
     }
-    if (source != null) {
-      localHashMap.put("source", source);
-    }
-    if (storyPostCount != null) {
-      localHashMap.put("story_post_count", storyPostCount);
-    }
-    if (viewTimeSec != null) {
-      localHashMap.put("view_time_sec", viewTimeSec);
-    }
-    if (withGallery != null) {
-      localHashMap.put("with_gallery", withGallery);
+    if (timeViewed != null) {
+      localHashMap.put("time_viewed", timeViewed);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -95,15 +95,6 @@ public final class hp
         return false;
       }
       paramObject = (hp)paramObject;
-      if (camera != null)
-      {
-        if (camera.equals(camera)) {}
-      }
-      else {
-        while (camera != null) {
-          return false;
-        }
-      }
       if (caption != null)
       {
         if (caption.equals(caption)) {}
@@ -122,30 +113,48 @@ public final class hp
           return false;
         }
       }
-      if (filterGeofilterId != null)
+      if (dsnapId != null)
       {
-        if (filterGeofilterId.equals(filterGeofilterId)) {}
+        if (dsnapId.equals(dsnapId)) {}
       }
       else {
-        while (filterGeofilterId != null) {
+        while (dsnapId != null) {
           return false;
         }
       }
-      if (filterIndexCount != null)
+      if (editionAvailable != null)
       {
-        if (filterIndexCount.equals(filterIndexCount)) {}
+        if (editionAvailable.equals(editionAvailable)) {}
       }
       else {
-        while (filterIndexCount != null) {
+        while (editionAvailable != null) {
           return false;
         }
       }
-      if (filterIndexPos != null)
+      if (editionId != null)
       {
-        if (filterIndexPos.equals(filterIndexPos)) {}
+        if (editionId.equals(editionId)) {}
       }
       else {
-        while (filterIndexPos != null) {
+        while (editionId != null) {
+          return false;
+        }
+      }
+      if (filter != null)
+      {
+        if (filter.equals(filter)) {}
+      }
+      else {
+        while (filter != null) {
+          return false;
+        }
+      }
+      if (filterGeofence != null)
+      {
+        if (filterGeofence.equals(filterGeofence)) {}
+      }
+      else {
+        while (filterGeofence != null) {
           return false;
         }
       }
@@ -167,6 +176,15 @@ public final class hp
           return false;
         }
       }
+      if (filterType != null)
+      {
+        if (filterType.equals(filterType)) {}
+      }
+      else {
+        while (filterType != null) {
+          return false;
+        }
+      }
       if (filterVisual != null)
       {
         if (filterVisual.equals(filterVisual)) {}
@@ -176,12 +194,12 @@ public final class hp
           return false;
         }
       }
-      if (flash != null)
+      if (fullView != null)
       {
-        if (flash.equals(flash)) {}
+        if (fullView.equals(fullView)) {}
       }
       else {
-        while (flash != null) {
+        while (fullView != null) {
           return false;
         }
       }
@@ -194,12 +212,21 @@ public final class hp
           return false;
         }
       }
-      if (recipientCount != null)
+      if (publisherId != null)
       {
-        if (recipientCount.equals(recipientCount)) {}
+        if (publisherId.equals(publisherId)) {}
       }
       else {
-        while (recipientCount != null) {
+        while (publisherId != null) {
+          return false;
+        }
+      }
+      if (snapAvailable != null)
+      {
+        if (snapAvailable.equals(snapAvailable)) {}
+      }
+      else {
+        while (snapAvailable != null) {
           return false;
         }
       }
@@ -212,41 +239,14 @@ public final class hp
           return false;
         }
       }
-      if (source != null)
-      {
-        if (source.equals(source)) {}
-      }
-      else {
-        while (source != null) {
-          return false;
-        }
-      }
-      if (storyPostCount != null)
-      {
-        if (storyPostCount.equals(storyPostCount)) {}
-      }
-      else {
-        while (storyPostCount != null) {
-          return false;
-        }
-      }
-      if (viewTimeSec != null)
-      {
-        if (viewTimeSec.equals(viewTimeSec)) {}
-      }
-      else {
-        while (viewTimeSec != null) {
-          return false;
-        }
-      }
-      if (withGallery == null) {
+      if (timeViewed == null) {
         break;
       }
-    } while (withGallery.equals(withGallery));
+    } while (timeViewed.equals(timeViewed));
     for (;;)
     {
       return false;
-      if (withGallery == null) {
+      if (timeViewed == null) {
         break;
       }
     }
@@ -284,67 +284,67 @@ public final class hp
     int i9;
     label230:
     int i10;
-    if (camera != null)
+    if (caption != null)
     {
-      i = camera.hashCode();
-      if (caption == null) {
+      i = caption.hashCode();
+      if (drawing == null) {
         break label385;
       }
-      j = caption.hashCode();
-      if (drawing == null) {
+      j = drawing.hashCode();
+      if (dsnapId == null) {
         break label390;
       }
-      k = drawing.hashCode();
-      if (filterGeofilterId == null) {
+      k = dsnapId.hashCode();
+      if (editionAvailable == null) {
         break label395;
       }
-      m = filterGeofilterId.hashCode();
-      if (filterIndexCount == null) {
+      m = editionAvailable.hashCode();
+      if (editionId == null) {
         break label401;
       }
-      n = filterIndexCount.hashCode();
-      if (filterIndexPos == null) {
+      n = editionId.hashCode();
+      if (filter == null) {
         break label407;
       }
-      i1 = filterIndexPos.hashCode();
-      if (filterInfo == null) {
+      i1 = filter.hashCode();
+      if (filterGeofence == null) {
         break label413;
       }
-      i2 = filterInfo.hashCode();
-      if (filterSponsor == null) {
+      i2 = filterGeofence.hashCode();
+      if (filterInfo == null) {
         break label419;
       }
-      i3 = filterSponsor.hashCode();
-      if (filterVisual == null) {
+      i3 = filterInfo.hashCode();
+      if (filterSponsor == null) {
         break label425;
       }
-      i4 = filterVisual.hashCode();
-      if (flash == null) {
+      i4 = filterSponsor.hashCode();
+      if (filterType == null) {
         break label431;
       }
-      i5 = flash.hashCode();
-      if (mediaType == null) {
+      i5 = filterType.hashCode();
+      if (filterVisual == null) {
         break label437;
       }
-      i6 = mediaType.hashCode();
-      if (recipientCount == null) {
+      i6 = filterVisual.hashCode();
+      if (fullView == null) {
         break label443;
       }
-      i7 = recipientCount.hashCode();
-      if (snapTimeSec == null) {
+      i7 = fullView.hashCode();
+      if (mediaType == null) {
         break label449;
       }
-      i8 = snapTimeSec.hashCode();
-      if (source == null) {
+      i8 = mediaType.hashCode();
+      if (publisherId == null) {
         break label455;
       }
-      i9 = source.hashCode();
-      if (storyPostCount == null) {
+      i9 = publisherId.hashCode();
+      if (snapAvailable == null) {
         break label461;
       }
-      i10 = storyPostCount.hashCode();
+      i10 = snapAvailable.hashCode();
       label246:
-      if (viewTimeSec == null) {
+      if (snapTimeSec == null) {
         break label467;
       }
     }
@@ -363,10 +363,10 @@ public final class hp
     label455:
     label461:
     label467:
-    for (int i11 = viewTimeSec.hashCode();; i11 = 0)
+    for (int i11 = snapTimeSec.hashCode();; i11 = 0)
     {
-      if (withGallery != null) {
-        i12 = withGallery.hashCode();
+      if (timeViewed != null) {
+        i12 = timeViewed.hashCode();
       }
       return (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i13 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i12;
       i = 0;

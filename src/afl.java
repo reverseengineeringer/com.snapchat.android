@@ -1,60 +1,55 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.model.Friend;
-import com.snapchat.android.stories.StoriesSection;
+import android.content.Context;
+import android.support.v7.widget.RecyclerView.a;
+import android.support.v7.widget.RecyclerView.b;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.snapchat.android.discover.model.ChannelPage;
+import com.snapchat.android.discover.model.EditionOpenOrigin;
+import com.snapchat.android.discover.ui.ChannelView;
+import com.snapchat.android.discover.ui.OpenChannelAnimationView;
 import java.util.ArrayList;
+import java.util.List;
 
 public final class afl
-  extends Friend
+  extends RecyclerView.a<aer>
 {
-  @SerializedName("username")
-  public String a;
-  @SerializedName("display_name")
-  public String b;
-  @SerializedName("keywords")
-  public ArrayList<String> c = new ArrayList();
-  @SerializedName("description")
-  public String d;
-  
-  public afl()
+  final afh c;
+  final OpenChannelAnimationView d;
+  public final List<ChannelPage> e = new ArrayList();
+  protected final View.OnClickListener f = new View.OnClickListener()
   {
-    super(null);
-  }
-  
-  public final String a()
-  {
-    return b;
-  }
-  
-  public final boolean b()
-  {
-    return (super.b()) || (atm.f(a, ajv.g()));
-  }
-  
-  public final boolean equals(@cgc Object paramObject)
-  {
-    if (this == paramObject) {
-      return true;
+    public final void onClick(View paramAnonymousView)
+    {
+      ChannelView localChannelView = (ChannelView)paramAnonymousView;
+      int i = -1;
+      if (paramAnonymousView.getTag(2131361793) != null) {
+        i = ((Integer)paramAnonymousView.getTag(2131361793)).intValue();
+      }
+      c.a(localChannelView, d, EditionOpenOrigin.DISCOVER, i);
     }
-    if (!(paramObject instanceof afl)) {
-      return false;
+  };
+  private final LayoutInflater g;
+  
+  public afl(Context paramContext, afh paramafh, OpenChannelAnimationView paramOpenChannelAnimationView)
+  {
+    c = paramafh;
+    g = ((LayoutInflater)paramContext.getSystemService("layout_inflater"));
+    d = paramOpenChannelAnimationView;
+    if (a.a()) {
+      throw new IllegalStateException("Cannot change whether this adapter has stable IDs while the adapter has registered observers.");
     }
-    paramObject = (afl)paramObject;
-    return a.equals(a);
+    b = true;
   }
   
-  public final String h()
+  public final int a()
   {
-    return a;
+    return e.size();
   }
   
-  public final int hashCode()
+  public final long b(int paramInt)
   {
-    return a.hashCode();
-  }
-  
-  public final StoriesSection i()
-  {
-    return StoriesSection.LIVE;
+    return paramInt;
   }
 }
 

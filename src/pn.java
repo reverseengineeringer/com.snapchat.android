@@ -1,50 +1,150 @@
-import com.google.gson.annotations.SerializedName;
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.text.TextUtils;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.snapchat.android.Timber;
-import com.snapchat.android.util.debug.ScApplicationInfo;
+import com.snapchat.android.analytics.NetworkAnalytics;
+import com.snapchat.android.database.table.DbTable.DatabaseTable;
+import com.snapchat.android.model.Mediabryo;
+import com.squareup.otto.Bus;
+import java.util.Iterator;
+import java.util.List;
 
 public final class pn
-  extends th
+  extends po
 {
-  private static final String TAG = "DeviceSyncTask";
-  private final String mGcmRegistrationId;
+  private static final String PATH = "/loq/double_post";
+  private static final String TAG = "SendSnapAndPostStorySnapTask";
+  private static final String TASK_NAME = "SendSnapAndPostStorySnapTask";
+  private ph.a mPostStoryCallback;
+  private byte[] mRawThumbnailData;
+  private boolean mSnapRequestSuccessful = false;
+  private boolean mStoryRequestSuccessful = false;
+  private final bgj mVideoMetadataFetcher;
   
-  public pn(String paramString)
+  public pn(aji paramaji, po.a parama, ph.a parama1)
   {
-    mGcmRegistrationId = paramString;
+    this(paramaji, parama, parama1, new bgj());
   }
   
-  public final void a(@cgb uc paramuc)
+  private pn(aji paramaji, po.a parama, ph.a parama1, bgj parambgj)
   {
-    super.a(paramuc);
-    if (paramuc.d())
+    super(paramaji, parama);
+    mPostStoryCallback = parama1;
+    mVideoMetadataFetcher = parambgj;
+    if (akr.t()) {
+      mRawThumbnailData = ph.a(paramaji);
+    }
+  }
+  
+  protected final alp a(String... paramVarArgs)
+  {
+    paramVarArgs = pt.a("/loq/double_post", b(), null);
+    super.a(paramVarArgs);
+    paramVarArgs = Timber.a(String.format("result json = %s and result = %s", new Object[] { mResultJson, paramVarArgs.toString() })).iterator();
+    while (paramVarArgs.hasNext()) {
+      String str = (String)paramVarArgs.next();
+    }
+    if (mStatusCode == 202)
     {
-      Timber.c("DeviceSyncTask", "DeviceSyncTask succeeded.", new Object[0]);
-      ajx.f(mGcmRegistrationId);
+      if (!TextUtils.isEmpty(mResultJson)) {
+        try
+        {
+          paramVarArgs = (alp)aul.a().fromJson(mResultJson, alp.class);
+          if (snap_response.success) {
+            mSnapRequestSuccessful = true;
+          }
+          if (story_response.success) {
+            mStoryRequestSuccessful = true;
+          }
+          return paramVarArgs;
+        }
+        catch (JsonSyntaxException paramVarArgs)
+        {
+          mFailureMessage = (paramVarArgs.getMessage() + " in SendSnapAndPostStorySnapTask: " + mResultJson);
+          throw new JsonSyntaxException(mFailureMessage);
+        }
+      }
+    }
+    else
+    {
+      if (mStatusCode == 401)
+      {
+        m401Error = true;
+        return null;
+      }
+      mFailureMessage = mContext.getResources().getString(2131493328);
+    }
+    return null;
+  }
+  
+  protected final String a()
+  {
+    return "/loq/double_post";
+  }
+  
+  protected final void a(alp paramalp)
+  {
+    super.c(paramalp);
+    NetworkAnalytics localNetworkAnalytics = mNetworkAnalytics;
+    String str1 = mSnapbryo.mClientId;
+    int i = mStatusCode;
+    long l1 = mReceivedBytes;
+    String str2 = mReachability;
+    long l2 = mElapsedTime;
+    Object localObject;
+    if (paramalp == null)
+    {
+      localObject = null;
+      localNetworkAnalytics.a("SNAP_SENT_DELAY", str1, i, l1, str2, (bjx)localObject, true);
+      localNetworkAnalytics.a("STORY_POST_DELAY", str1, i, l1, str2, (bjx)localObject, true);
+      localNetworkAnalytics.a("SNAP_SENT_SNAP_DUMMY", str1, "/loq/double_post", i, str2, l2);
+      if (!mStoryRequestSuccessful) {
+        break label271;
+      }
+      mPostStoryCallback.a(mSnapbryo);
+      if (story_response != null)
+      {
+        localObject = story_response;
+        if ((json != null) && (json.story != null)) {
+          akk.a().a(new akl(json.story));
+        }
+        if (group_stories != null) {
+          akk.a().c(group_stories);
+        }
+      }
+    }
+    for (;;)
+    {
+      bbo.a().a(new bdn());
+      akp.g().a(new DbTable.DatabaseTable[] { DbTable.DatabaseTable.MY_POSTED_STORYSNAPS, DbTable.DatabaseTable.MY_SNAP_IMAGE_FILES, DbTable.DatabaseTable.MY_SNAP_VIDEO_FILES, DbTable.DatabaseTable.FAILED_POST_SNAPBRYOS, DbTable.DatabaseTable.SENT_SNAPS, DbTable.DatabaseTable.FAILED_SEND_SNAPBRYOS });
+      if (!mSnapRequestSuccessful) {
+        break label287;
+      }
+      super.b(paramalp);
       return;
+      localObject = server_info;
+      break;
+      label271:
+      mPostStoryCallback.b(mSnapbryo);
     }
-    Timber.c("DeviceSyncTask", "DeviceSyncTask failed: " + mResponseMessage, new Object[0]);
+    label287:
+    super.a("Failed send snap task", mStatusCode);
   }
   
-  protected final String d()
+  protected final Bundle b()
   {
-    return "/ph/device";
+    Bundle localBundle = super.b();
+    byte[] arrayOfByte = ph.a(mSnapbryo, mVideoMetadataFetcher);
+    ph.a(localBundle, mSnapbryo, arrayOfByte, mRawThumbnailData, ain.a());
+    return localBundle;
   }
   
-  @tn
-  public static final class a
-    extends pl
+  protected final String c()
   {
-    @SerializedName("application_id")
-    static final String APPLICATION_ID = ;
-    @SerializedName("type")
-    static final String DEVICE_TYPE = "android";
-    @SerializedName("device_token")
-    final String mGcmRegistrationId;
-    
-    a(String paramString)
-    {
-      mGcmRegistrationId = paramString;
-    }
+    return "SendSnapAndPostStorySnapTask";
   }
 }
 

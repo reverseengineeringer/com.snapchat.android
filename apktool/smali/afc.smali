@@ -1,524 +1,385 @@
 .class public final Lafc;
-.super Lbfe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "Lbfe",
-        "<",
-        "Lcom/snapchat/android/model/Friend;",
-        ">;"
+        Lafc$3;
     }
 .end annotation
 
 
 # instance fields
-.field a:Ljava/lang/String;
+.field public final a:Landroid/view/ViewGroup;
 
-.field b:Z
+.field final b:Landroid/widget/TextView;
 
-.field c:Z
+.field final c:Landroid/widget/TextView;
 
-.field d:Z
+.field final d:Landroid/widget/ImageView;
 
-.field e:Z
+.field public e:Z
 
-.field private final f:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/Friend;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public f:Landroid/animation/Animator;
+
+.field private final g:Landroid/view/ViewGroup;
+
+.field private final h:Landroid/widget/TextView;
+
+.field private final i:Landroid/view/View;
+
+.field private final j:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lazo;Lbfe$a;)V
-    .locals 0
-    .param p1    # Ljava/util/List;
-        .annotation build Lcgb;
+.method public constructor <init>(Lcom/snapchat/android/discover/ui/DSnapView;Landroid/view/View$OnClickListener;)V
+    .locals 2
+    .param p1    # Lcom/snapchat/android/discover/ui/DSnapView;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Lazo;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lbfe$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/Friend;",
-            ">;",
-            "Lazo;",
-            "Lbfe$a",
-            "<",
-            "Lcom/snapchat/android/model/Friend;",
-            ">;)V"
-        }
-    .end annotation
 
     .prologue
+    .line 46
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 38
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lafc;->e:Z
+
+    .line 39
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lafc;->f:Landroid/animation/Animator;
+
+    .line 47
+    const v0, 0x7f0a01fe
+
+    invoke-virtual {p1, v0}, Lcom/snapchat/android/discover/ui/DSnapView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iput-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
+
+    .line 48
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
+
+    const v1, 0x7f0a0204
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lafc;->j:Landroid/view/View;
+
+    .line 49
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
+
+    const v1, 0x7f0a0203
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lafc;->i:Landroid/view/View;
+
     .line 50
-    invoke-direct {p0, p2, p3}, Lbfe;-><init>(Lazo;Lbfe$a;)V
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
+
+    const v1, 0x7f0a0202
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iput-object v0, p0, Lafc;->g:Landroid/view/ViewGroup;
 
     .line 51
-    iput-object p1, p0, Lafc;->f:Ljava/util/List;
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
 
-    .line 52
+    const v1, 0x7f0a0205
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lafc;->h:Landroid/widget/TextView;
+
+    .line 54
+    iget-object v0, p0, Lafc;->g:Landroid/view/ViewGroup;
+
+    new-instance v1, Lafc$1;
+
+    invoke-direct {v1, p0, p2}, Lafc$1;-><init>(Lafc;Landroid/view/View$OnClickListener;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 63
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
+
+    const v1, 0x7f0a0201
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lafc;->d:Landroid/widget/ImageView;
+
+    .line 64
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
+
+    const v1, 0x7f0a01ff
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lafc;->b:Landroid/widget/TextView;
+
+    .line 65
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
+
+    const v1, 0x7f0a0200
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lafc;->c:Landroid/widget/TextView;
+
+    .line 67
+    invoke-virtual {p0}, Lafc;->b()V
+
+    .line 68
     return-void
-.end method
-
-.method private a(Lcom/snapchat/android/model/Friend;Ljava/lang/String;)Z
-    .locals 3
-
-    .prologue
-    .line 172
-    iget-boolean v0, p0, Lafc;->b:Z
-
-    if-eqz v0, :cond_0
-
-    .line 173
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0, p2}, Laui;->b(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    .line 183
-    :goto_0
-    return v0
-
-    .line 175
-    :cond_0
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 176
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 177
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, " "
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    .line 178
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 179
-    invoke-static {v0, p2}, Laui;->a(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 180
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 183
-    :cond_2
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0, p2}, Laui;->b(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Ljava/util/List;
-    .locals 10
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/Friend;",
-            ">;"
-        }
-    .end annotation
+.method public final a()V
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
+    .line 154
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
 
-    const/4 v5, 0x0
+    const/16 v1, 0x8
 
-    .line 86
-    iput-object p1, p0, Lafc;->a:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 87
-    new-instance v6, Ljava/util/ArrayList;
+    .line 155
+    const/4 v0, 0x0
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    iput-boolean v0, p0, Lafc;->e:Z
 
-    .line 88
-    new-instance v7, Ljava/util/ArrayList;
+    .line 156
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lafc;->f:Ljava/util/List;
+    iput-object v0, p0, Lafc;->f:Landroid/animation/Animator;
 
-    invoke-direct {v7, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    .line 157
+    return-void
+.end method
 
-    .line 90
-    if-nez p1, :cond_0
+.method public final a(I)V
+    .locals 4
 
-    .line 167
-    :goto_0
-    return-object v2
+    .prologue
+    .line 142
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
 
-    .line 93
-    :cond_0
-    iget-boolean v0, p0, Lafc;->e:Z
-
-    if-nez v0, :cond_1
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
 
     move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lafc;->f:Landroid/animation/Animator;
 
     if-eqz v0, :cond_1
 
-    .line 94
-    sget-object v2, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    goto :goto_0
-
-    :cond_1
-    move v4, v5
-
-    move v3, v5
-
-    .line 100
-    :goto_1
-    invoke-interface {v7}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-ge v4, v0, :cond_9
-
-    .line 101
-    invoke-interface {v7, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/snapchat/android/model/Friend;
-
-    .line 105
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->p()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p1, v1}, Laui;->c(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_10
-
-    .line 106
-    :cond_2
-    instance-of v1, v0, Lafl;
-
-    if-eqz v1, :cond_7
-
-    move-object v1, v0
-
-    .line 110
-    check-cast v1, Lafl;
-
-    .line 111
-    invoke-direct {p0, v0, p1}, Lafc;->a(Lcom/snapchat/android/model/Friend;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 112
-    invoke-interface {v6, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    move v0, v3
-
-    .line 100
-    :goto_2
-    add-int/lit8 v1, v4, 0x1
-
-    move v4, v1
-
-    move v3, v0
-
-    goto :goto_1
-
-    .line 115
-    :cond_3
-    iget-object v0, v1, Lafl;->c:Ljava/util/ArrayList;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    :cond_4
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 116
-    invoke-static {v0, p1}, Laui;->b(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-nez v9, :cond_5
-
-    invoke-static {p1, v0}, Laui;->b(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 118
-    :cond_5
-    invoke-interface {v6, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    move v0, v3
-
-    .line 119
-    goto :goto_2
-
-    :cond_6
-    move v0, v3
-
-    .line 122
-    goto :goto_2
-
-    .line 124
-    :cond_7
-    iget-boolean v1, p0, Lafc;->c:Z
-
-    if-nez v1, :cond_f
-
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p1, v1}, Laui;->c(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_f
-
-    .line 128
-    iget-boolean v1, p0, Lafc;->d:Z
-
-    if-eqz v1, :cond_12
-
-    move-object v1, v0
-
-    .line 129
-    :goto_3
-    invoke-direct {p0, v0, p1}, Lafc;->a(Lcom/snapchat/android/model/Friend;Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_11
-
-    .line 133
-    invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 134
-    iget-object v2, v0, Lcom/snapchat/android/model/Friend;->mFriendSection:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
-
-    sget-object v8, Lcom/snapchat/android/util/FriendSectionizer$FriendSection;->MY_ADDRESS_BOOK:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
-
-    if-eq v2, v8, :cond_8
-
-    iget-object v2, v0, Lcom/snapchat/android/model/Friend;->mFriendSection:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
-
-    sget-object v8, Lcom/snapchat/android/util/FriendSectionizer$FriendSection;->ON_SNAPCHAT:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
-
-    if-eq v2, v8, :cond_8
-
-    iget-object v0, v0, Lcom/snapchat/android/model/Friend;->mFriendSection:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
-
-    sget-object v2, Lcom/snapchat/android/util/FriendSectionizer$FriendSection;->INVITE:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
-
-    if-ne v0, v2, :cond_11
-
-    .line 137
-    :cond_8
-    add-int/lit8 v0, v3, 0x1
-
-    move-object v2, v1
-
-    goto :goto_2
-
-    .line 143
-    :cond_9
-    iget-boolean v0, p0, Lafc;->c:Z
-
-    if-nez v0, :cond_a
-
-    .line 145
-    if-nez v2, :cond_e
+    .line 148
+    :cond_0
+    :goto_0
+    return-void
 
     .line 146
-    new-instance v0, Lcom/snapchat/android/model/Friend;
+    :cond_1
+    int-to-long v0, p1
 
-    invoke-direct {v0, p1}, Lcom/snapchat/android/model/Friend;-><init>(Ljava/lang/String;)V
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 147
-    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestState;->PENDING:Lcom/snapchat/android/model/Friend$SuggestState;
+    const/4 v3, 0x1
 
-    iput-object v1, v0, Lcom/snapchat/android/model/Friend;->mSuggestionState:Lcom/snapchat/android/model/Friend$SuggestState;
+    invoke-virtual {p0, v0, v1, v2, v3}, Lafc;->a(JFZ)V
 
-    .line 148
-    sget-object v1, Lcom/snapchat/android/util/FriendSectionizer$FriendSection;->USERNAME:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
-
-    iput-object v1, v0, Lcom/snapchat/android/model/Friend;->mFriendSection:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
-
-    .line 150
-    iget-boolean v1, p0, Lafc;->d:Z
-
-    if-nez v1, :cond_b
-
-    .line 152
-    invoke-interface {v6, v5, v0}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    :cond_a
-    :goto_4
-    move-object v2, v6
-
-    .line 167
-    goto/16 :goto_0
-
-    .line 153
-    :cond_b
-    if-eqz v3, :cond_c
-
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-lt v3, v1, :cond_d
-
-    .line 156
-    :cond_c
-    invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    .line 159
-    :cond_d
-    invoke-interface {v6, v3, v0}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    goto :goto_4
-
-    .line 161
-    :cond_e
-    iget-boolean v0, p0, Lafc;->d:Z
-
-    if-nez v0, :cond_a
-
-    .line 163
-    invoke-interface {v6, v5, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    goto :goto_4
-
-    :cond_f
-    move-object v1, v2
-
-    goto :goto_3
-
-    :cond_10
-    move v0, v3
-
-    goto/16 :goto_2
-
-    :cond_11
-    move v0, v3
-
-    move-object v2, v1
-
-    goto/16 :goto_2
-
-    :cond_12
-    move-object v2, v0
-
-    move v0, v3
-
-    goto/16 :goto_2
+    goto :goto_0
 .end method
 
-.method protected final a(Ljava/lang/Exception;)V
-    .locals 1
+.method public final a(JFZ)V
+    .locals 5
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lafc;->mExceptionReporter:Lazo;
+    .line 180
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
 
-    invoke-virtual {v0, p1}, Lazo;->b(Ljava/lang/Throwable;)V
+    sget-object v1, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    .line 62
+    const/4 v2, 0x2
+
+    new-array v2, v2, [F
+
+    const/4 v3, 0x0
+
+    aput p3, v2, v3
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    aput v4, v2, v3
+
+    invoke-static {v0, v1, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lafc;->f:Landroid/animation/Animator;
+
+    .line 181
+    iget-object v0, p0, Lafc;->f:Landroid/animation/Animator;
+
+    invoke-virtual {v0, p1, p2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+
+    .line 182
+    iget-object v0, p0, Lafc;->f:Landroid/animation/Animator;
+
+    new-instance v1, Landroid/view/animation/AccelerateInterpolator;
+
+    const/high16 v2, 0x3fc00000    # 1.5f
+
+    invoke-direct {v1, v2}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 183
+    iget-object v0, p0, Lafc;->f:Landroid/animation/Animator;
+
+    new-instance v1, Lafc$2;
+
+    invoke-direct {v1, p0, p4}, Lafc$2;-><init>(Lafc;Z)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 198
+    iget-object v0, p0, Lafc;->f:Landroid/animation/Animator;
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
+
+    .line 199
+    return-void
+.end method
+
+.method final a(Z)V
+    .locals 3
+
+    .prologue
+    const/16 v1, 0x8
+
+    const/4 v2, 0x0
+
+    .line 206
+    if-eqz p1, :cond_0
+
+    .line 207
+    iget-object v0, p0, Lafc;->j:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 208
+    iget-object v0, p0, Lafc;->i:Landroid/view/View;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 209
+    iget-object v0, p0, Lafc;->h:Landroid/widget/TextView;
+
+    const v1, 0x7f0c015d
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    .line 210
+    iget-object v0, p0, Lafc;->g:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setClickable(Z)V
+
+    .line 217
+    :goto_0
+    return-void
+
+    .line 212
+    :cond_0
+    iget-object v0, p0, Lafc;->j:Landroid/view/View;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 213
+    iget-object v0, p0, Lafc;->i:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 214
+    iget-object v0, p0, Lafc;->h:Landroid/widget/TextView;
+
+    const v1, 0x7f0c0107
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    .line 215
+    iget-object v0, p0, Lafc;->g:Landroid/view/ViewGroup;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setClickable(Z)V
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    .prologue
+    const/16 v1, 0x8
+
+    .line 168
+    iget-object v0, p0, Lafc;->a:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 169
+    iget-object v0, p0, Lafc;->i:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 170
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lafc;->a(Z)V
+
+    .line 171
     return-void
 .end method

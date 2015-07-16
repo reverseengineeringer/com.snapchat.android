@@ -3,96 +3,39 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/Object;
+# static fields
+.field public static final DISCOVER_BLOB:I = 0x4
 
-.field public final b:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/util/Set",
-            "<",
-            "Lalb$a;",
-            ">;>;"
-        }
-    .end annotation
-.end field
+.field public static final DISCOVER_SHARE:Ljava/lang/String;
+
+.field public static final FRIEND_REQUEST:I = 0x3
+
+.field public static final FRIEND_REQUEST_IMAGE:I = 0x4
+
+.field public static final FRIEND_REQUEST_VIDEO:I = 0x5
+
+.field public static final FRIEND_REQUEST_VIDEO_NO_AUDIO:I = 0x6
+
+.field public static final IMAGE:I = 0x0
+
+.field public static final VIDEO_AUDIO:I = 0x1
+
+.field public static final VIDEO_NO_AUDIO:I = 0x2
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 17
-    new-instance v0, Ljava/lang/Object;
+    sget-object v0, Lbjj$a;->DISCOVER_SHARE_V2:Lbjj$a;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Laln;->a:Ljava/lang/Object;
-
-    .line 18
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Laln;->b:Ljava/util/Map;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lalc;)Ljava/util/Set;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lalc;",
-            ")",
-            "Ljava/util/Set",
-            "<",
-            "Lalb$a;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 43
-    iget-object v1, p0, Laln;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 44
-    :try_start_0
-    iget-object v0, p0, Laln;->b:Ljava/util/Map;
-
-    invoke-virtual {p1}, Lalc;->a()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lbjj$a;->name()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Set;
+    sput-object v0, Laln;->DISCOVER_SHARE:Ljava/lang/String;
 
-    monitor-exit v1
-
-    return-object v0
-
-    .line 45
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-void
 .end method

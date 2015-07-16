@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.verification;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import avh;
+import awf;
 
 final class SettingsPhoneVerificationFragment$1
   implements View.OnClickListener
@@ -12,7 +12,7 @@ final class SettingsPhoneVerificationFragment$1
   
   public final void onClick(View paramView)
   {
-    avh.a(a.getActivity(), SettingsPhoneVerificationFragment.a(a));
+    awf.a(a.getActivity(), SettingsPhoneVerificationFragment.a(a));
     a.getActivity().onBackPressed();
   }
 }

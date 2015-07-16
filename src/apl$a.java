@@ -1,31 +1,14 @@
-import java.util.Iterator;
-
-final class apl$a
-  implements bn
+public final class apl$a
 {
-  private apl$a(apl paramapl) {}
-  
-  public final void a()
-  {
-    if ((a.d) && (a.a.b()) && (a.b.b()))
-    {
-      Iterator localIterator = a.c.iterator();
-      while (localIterator.hasNext()) {
-        ((apl.b)localIterator.next()).a();
-      }
-    }
-  }
-  
-  public final void a(bj parambj)
-  {
-    if (a.d)
-    {
-      parambj = a.c.iterator();
-      while (parambj.hasNext()) {
-        ((apl.b)parambj.next()).a(a);
-      }
-    }
-  }
+  public boolean a = false;
+  public Long b = Long.valueOf(0L);
+  public Long c = Long.valueOf(0L);
+  public double d = 0.0D;
+  public hu e;
+  public mj f = null;
+  public String g = null;
+  public boolean h = false;
+  public long i = -1L;
 }
 
 /* Location:

@@ -1,11 +1,11 @@
 public final class aax
-  extends zx
+  extends aaw
 {
   private static final aax a = new aax();
   
-  private aax()
+  protected aax()
   {
-    super("SnapVideoFiles", awq.SNAP_RECEIVED_VIDEO_CACHE);
+    super("CachedFontFileTable", axo.FONT_CACHE);
   }
   
   public static aax a()

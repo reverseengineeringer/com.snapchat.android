@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.stories;
 
-import ahc;
-import aom.a;
+import ahz;
+import api.a;
 
 final class StoriesAdapter$1$1
-  implements aom.a
+  implements api.a
 {
   StoriesAdapter$1$1(StoriesAdapter.1 param1) {}
   

@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnWindowAttachListener;
 import android.view.ViewTreeObserver.OnWindowFocusChangeListener;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 final class TransportMediatorJellybeanMR2
   implements RemoteControlClient.OnGetPlaybackPositionListener, RemoteControlClient.OnPlaybackPositionUpdateListener
@@ -35,6 +37,8 @@ final class TransportMediatorJellybeanMR2
   {
     public final void onReceive(Context paramAnonymousContext, Intent paramAnonymousIntent)
     {
+      kkxxkk.b041E041EОО041EО(paramAnonymousContext);
+      xkkkxk.b041E041EООО041E(paramAnonymousContext);
       try
       {
         paramAnonymousContext = (KeyEvent)paramAnonymousIntent.getParcelableExtra("android.intent.extra.KEY_EVENT");

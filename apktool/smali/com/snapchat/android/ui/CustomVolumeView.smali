@@ -215,7 +215,7 @@
     :goto_0
     iget-object v0, p0, Lcom/snapchat/android/ui/CustomVolumeView;->g:Landroid/content/Context;
 
-    invoke-static {v0}, Lavh;->e(Landroid/content/Context;)Z
+    invoke-static {v0}, Lawf;->e(Landroid/content/Context;)Z
 
     move-result v3
 
@@ -224,7 +224,7 @@
 
     iget-object v0, p0, Lcom/snapchat/android/ui/CustomVolumeView;->g:Landroid/content/Context;
 
-    invoke-static {v0}, Lavh;->a(Landroid/content/Context;)I
+    invoke-static {v0}, Lawf;->a(Landroid/content/Context;)I
 
     move-result v0
 
@@ -236,7 +236,7 @@
 
     iget-object v0, p0, Lcom/snapchat/android/ui/CustomVolumeView;->g:Landroid/content/Context;
 
-    invoke-static {v0}, Lavh;->b(Landroid/content/Context;)I
+    invoke-static {v0}, Lawf;->b(Landroid/content/Context;)I
 
     move-result v0
 
@@ -348,7 +348,7 @@
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/ui/CustomVolumeView;->g:Landroid/content/Context;
 
-    invoke-static {v0}, Lavh;->b(Landroid/content/Context;)I
+    invoke-static {v0}, Lawf;->b(Landroid/content/Context;)I
 
     move-result v0
 
@@ -360,7 +360,7 @@
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/ui/CustomVolumeView;->g:Landroid/content/Context;
 
-    invoke-static {v0}, Lavh;->a(Landroid/content/Context;)I
+    invoke-static {v0}, Lawf;->a(Landroid/content/Context;)I
 
     move-result v0
 

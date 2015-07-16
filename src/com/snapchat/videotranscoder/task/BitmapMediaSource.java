@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.task;
 
 import android.graphics.Bitmap;
-import cgb;
+import chc;
 
 public class BitmapMediaSource
   extends MediaSource
@@ -10,7 +10,7 @@ public class BitmapMediaSource
   private final Bitmap mBitmap;
   private final long mDisplayTimeMs;
   
-  public BitmapMediaSource(@cgb Bitmap paramBitmap, long paramLong)
+  public BitmapMediaSource(@chc Bitmap paramBitmap, long paramLong)
   {
     if (paramBitmap == null) {
       throw new NullPointerException("bitmap is null");

@@ -1,7 +1,8 @@
 package com.snapchat.android.dev;
 
-import abi;
-import abj;
+import aav;
+import aci;
+import acj;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -20,12 +21,13 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import apf;
+import aqb;
 import com.snapchat.android.database.table.DbTable.DatabaseTable;
 import com.snapchat.android.database.vtable.DbVirtualTable.DatabaseVirtualTable;
 import java.util.Arrays;
 import java.util.List;
-import zw;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class DbBrowserActivity
   extends FragmentActivity
@@ -35,7 +37,7 @@ public class DbBrowserActivity
   private ListView b;
   private ListView c;
   private ListView d;
-  private abi e;
+  private aci e;
   private TextView f;
   private TextView g;
   private DbTable.DatabaseTable h = DbTable.DatabaseTable.CONVERSATION;
@@ -81,20 +83,20 @@ public class DbBrowserActivity
     }
   }
   
-  private void a(zw[] paramArrayOfzw)
+  private void a(aav[] paramArrayOfaav)
   {
     StringBuilder localStringBuilder = new StringBuilder();
     localStringBuilder.append("Schema\n\n");
-    int k = paramArrayOfzw.length;
+    int k = paramArrayOfaav.length;
     int j = 0;
     while (j < k)
     {
-      zw localzw = paramArrayOfzw[j];
-      localStringBuilder.append(localzw.getColumnNumber());
+      aav localaav = paramArrayOfaav[j];
+      localStringBuilder.append(localaav.getColumnNumber());
       localStringBuilder.append(" ");
-      localStringBuilder.append(localzw.getColumnName());
+      localStringBuilder.append(localaav.getColumnName());
       localStringBuilder.append(" : ");
-      localStringBuilder.append(localzw.getDataType());
+      localStringBuilder.append(localaav.getDataType());
       localStringBuilder.append("\n");
       j += 1;
     }
@@ -108,12 +110,14 @@ public class DbBrowserActivity
   
   protected void onCreate(final Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
-    setContentView(2130968646);
+    setContentView(2130968647);
     a = ((DrawerLayout)findViewById(2131362198));
     b = ((ListView)findViewById(2131362201));
     g = ((TextView)findViewById(2131362200));
-    e = new abi(this);
+    e = new aci(this);
     b.setAdapter(e);
     c = ((ListView)findViewById(2131362204));
     f = ((TextView)findViewById(2131362199));
@@ -169,9 +173,9 @@ public class DbBrowserActivity
       return null;
     }
     if (h != null) {
-      return new abj(this, h.getTable());
+      return new acj(this, h.getTable());
     }
-    return new abj(this, i.getVirtualTable());
+    return new acj(this, i.getVirtualTable());
   }
   
   public void onLoaderReset(Loader<Cursor> paramLoader)
@@ -180,13 +184,13 @@ public class DbBrowserActivity
   }
   
   final class a
-    extends apf
+    extends aqb
   {
-    private int b = 2130968648;
+    private int b = 2130968649;
     
     public a(int paramInt)
     {
-      super(2130968648, localList);
+      super(2130968649, localList);
     }
     
     public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)

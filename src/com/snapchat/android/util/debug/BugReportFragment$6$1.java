@@ -1,6 +1,6 @@
 package com.snapchat.android.util.debug;
 
-import bgp;
+import bhp;
 
 final class BugReportFragment$6$1
   implements Runnable
@@ -9,7 +9,7 @@ final class BugReportFragment$6$1
   
   public final void run()
   {
-    bgp.a(300L);
+    bhp.a(300L);
     BugReportFragment.c(this$1.this$0, false);
   }
 }

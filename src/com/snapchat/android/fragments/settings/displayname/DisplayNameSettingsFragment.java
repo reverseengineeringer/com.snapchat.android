@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings.displayname;
 
-import ajx;
+import akr;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -16,40 +16,40 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import atj;
-import avh;
-import cgc;
+import auh;
+import awf;
+import chd;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.FriendAction;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.fragment.SnapchatFragment;
-import pp;
-import pp.a;
+import qg;
+import qg.a;
 
 public class DisplayNameSettingsFragment
   extends SnapchatFragment
-  implements pp.a
+  implements qg.a
 {
   private EditText a;
   private Button b;
   private View c;
   private View d;
   private TextView e;
-  private ajx f;
+  private akr f;
   
   public DisplayNameSettingsFragment()
   {
-    this(ajx.a());
+    this(akr.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private DisplayNameSettingsFragment(ajx paramajx)
+  private DisplayNameSettingsFragment(akr paramakr)
   {
-    f = paramajx;
+    f = paramakr;
   }
   
-  private void a(@cgc String paramString)
+  private void a(@chd String paramString)
   {
     if (!TextUtils.isEmpty(paramString))
     {
@@ -91,13 +91,18 @@ public class DisplayNameSettingsFragment
   public final void f()
   {
     super.f();
-    avh.a(getActivity(), H().getDecorView().getRootView());
+    awf.a(getActivity(), J().getDecorView().getRootView());
+  }
+  
+  protected final boolean h_()
+  {
+    return super.isAdded();
   }
   
   protected final void i()
   {
     c.setVisibility(8);
-    if ((!TextUtils.isEmpty(a.getText())) && (!TextUtils.equals(ajx.x(), a.getText())))
+    if ((!TextUtils.isEmpty(a.getText())) && (!TextUtils.equals(akr.x(), a.getText())))
     {
       b.setVisibility(0);
       b.setText(2131493472);
@@ -108,29 +113,24 @@ public class DisplayNameSettingsFragment
     b.setVisibility(8);
   }
   
-  protected final boolean j_()
-  {
-    return super.isAdded();
-  }
-  
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968658, paramViewGroup, false);
-    c(2131362281).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968659, paramViewGroup, false);
+    c(2131362279).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        avh.a(getActivity(), getView());
+        awf.a(getActivity(), getView());
         getActivity().onBackPressed();
       }
     });
-    b = ((Button)c(2131362288));
+    b = ((Button)c(2131362286));
     paramLayoutInflater = b;
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
-    c = c(2131362289);
-    d = c(2131362286);
-    e = ((TextView)c(2131362287));
+    auh.a(paramLayoutInflater);
+    c = c(2131362287);
+    d = c(2131362284);
+    e = ((TextView)c(2131362285));
     d.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -140,9 +140,9 @@ public class DisplayNameSettingsFragment
         DisplayNameSettingsFragment.c(DisplayNameSettingsFragment.this).setVisibility(8);
       }
     });
-    a = ((EditText)c(2131362285));
-    if (!TextUtils.isEmpty(ajx.y())) {
-      a.setText(ajx.y());
+    a = ((EditText)c(2131362283));
+    if (!TextUtils.isEmpty(akr.y())) {
+      a.setText(akr.y());
     }
     a.addTextChangedListener(new TextWatcher()
     {
@@ -161,7 +161,7 @@ public class DisplayNameSettingsFragment
       public final void onFocusChange(View paramAnonymousView, boolean paramAnonymousBoolean)
       {
         if (paramAnonymousBoolean) {
-          avh.g(getActivity());
+          awf.g(getActivity());
         }
       }
     });
@@ -173,16 +173,16 @@ public class DisplayNameSettingsFragment
         DisplayNameSettingsFragment.e(DisplayNameSettingsFragment.this).setClickable(false);
         DisplayNameSettingsFragment.f(DisplayNameSettingsFragment.this).setVisibility(0);
         DisplayNameSettingsFragment.g(DisplayNameSettingsFragment.this);
-        paramAnonymousView = ajx.l();
+        paramAnonymousView = akr.l();
         DisplayNameSettingsFragment.g(DisplayNameSettingsFragment.this);
-        paramAnonymousView = new Friend(paramAnonymousView, ajx.y());
+        paramAnonymousView = new Friend(paramAnonymousView, akr.y());
         String str = paramAnonymousView.a();
         mDisplayName = DisplayNameSettingsFragment.a(DisplayNameSettingsFragment.this).getText().toString().trim();
-        paramAnonymousView = new pp(paramAnonymousView, FriendAction.SET_DISPLAY_NAME, str);
+        paramAnonymousView = new qg(paramAnonymousView, FriendAction.SET_DISPLAY_NAME, str);
         mFriendActionCompleteCallback = DisplayNameSettingsFragment.this;
         mAnalyticsContext = AnalyticsEvents.AnalyticsContext.SETTINGS_DISPLAYNAME_CHANGE;
         mShowFailureDialog = false;
-        paramAnonymousView.f();
+        paramAnonymousView.execute();
       }
     });
     i();

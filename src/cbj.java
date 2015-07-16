@@ -1,11 +1,17 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.io.Closeable;
+import java.io.Flushable;
 
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.FIELD})
-public @interface cbj {}
+public abstract interface cbj
+  extends Closeable, Flushable
+{
+  public abstract cbl E_();
+  
+  public abstract void a_(cav paramcav, long paramLong);
+  
+  public abstract void close();
+  
+  public abstract void flush();
+}
 
 /* Location:
  * Qualified Name:     cbj

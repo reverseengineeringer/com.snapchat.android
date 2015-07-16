@@ -1,9 +1,6 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import ajx;
-import amk;
-import anc;
-import anc.c;
+import akr;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -16,14 +13,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import aok;
-import aol;
-import atx;
-import avh;
-import ban;
-import bdw;
-import bet;
-import boh;
+import anh;
+import anz;
+import anz.c;
+import apg;
+import aph;
+import auv;
+import awf;
+import bbo;
+import bev;
+import bfs;
+import bpi;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.fragments.signup.GenericCodeVerificationFragment;
 import com.snapchat.android.util.AlertDialogUtils;
@@ -34,21 +34,21 @@ import java.util.Set;
 public class TwoFAEnableCodeConfirmationFragment
   extends GenericCodeVerificationFragment
 {
-  private final ajx f;
-  private final aol g;
+  private final akr f;
+  private final aph g;
   private final Set<Integer> h = new HashSet();
-  private aok i = new aok()
+  private apg i = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
-      anc.c localc;
+      int i = aph.a(paramAnonymousanh);
+      anz.c localc;
       if (TwoFAEnableCodeConfirmationFragment.a(TwoFAEnableCodeConfirmationFragment.this).contains(Integer.valueOf(i)))
       {
         TwoFAEnableCodeConfirmationFragment.a(TwoFAEnableCodeConfirmationFragment.this).remove(Integer.valueOf(i));
-        if ((paramAnonymousamk instanceof anc))
+        if ((paramAnonymousanh instanceof anz))
         {
-          paramAnonymousamk = (anc)paramAnonymousamk;
+          paramAnonymousanh = (anz)paramAnonymousanh;
           localc = b;
           TwoFAEnableCodeConfirmationFragment.b(TwoFAEnableCodeConfirmationFragment.this).setVisibility(8);
           TwoFAEnableCodeConfirmationFragment.c(TwoFAEnableCodeConfirmationFragment.this).setClickable(true);
@@ -59,7 +59,7 @@ public class TwoFAEnableCodeConfirmationFragment
           if (!a) {
             break label150;
           }
-          ban.a().a(new bdw(new TwoFactorSettingsEnabledFragment(), TwoFactorSettingsEnabledFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
+          bbo.a().a(new bev(new TwoFactorSettingsEnabledFragment(), TwoFactorSettingsEnabledFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
         }
       }
       for (;;)
@@ -86,14 +86,14 @@ public class TwoFAEnableCodeConfirmationFragment
   
   public TwoFAEnableCodeConfirmationFragment()
   {
-    this(ajx.a(), aol.a());
+    this(akr.a(), aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private TwoFAEnableCodeConfirmationFragment(ajx paramajx, aol paramaol)
+  private TwoFAEnableCodeConfirmationFragment(akr paramakr, aph paramaph)
   {
-    f = paramajx;
-    g = paramaol;
+    f = paramakr;
+    g = paramaph;
   }
   
   public final void i()
@@ -108,17 +108,17 @@ public class TwoFAEnableCodeConfirmationFragment
   
   public final String n()
   {
-    return atx.a(null, 2131493547, new Object[] { PhoneNumberUtils.formatNumber(ajx.e()) });
+    return auv.a(null, 2131493545, new Object[] { PhoneNumberUtils.formatNumber(akr.e()) });
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968767, null);
-    c(2131362803).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968769, null);
+    c(2131362796).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        avh.a(getActivity(), getView());
+        awf.a(getActivity(), getView());
         getActivity().onBackPressed();
       }
     });
@@ -143,10 +143,10 @@ public class TwoFAEnableCodeConfirmationFragment
     g.a(1012, i);
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
-    super.onVerificationCodeReceivedEvent(parambet);
+    super.onVerificationCodeReceivedEvent(parambfs);
   }
 }
 

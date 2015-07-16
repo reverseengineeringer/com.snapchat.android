@@ -9,7 +9,7 @@ final class MyFriendsFragment$1
   
   public final void run()
   {
-    b.t.setSelection(a);
+    b.u.setSelection(a);
   }
 }
 

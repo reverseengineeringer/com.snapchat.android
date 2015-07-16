@@ -35,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 230
+    .line 232
     iput-object p1, p0, Lcom/snapchat/android/discover/model/DSnapPage$1;->a:Lcom/snapchat/android/discover/model/DSnapPage;
 
     invoke-direct {p0}, Lcom/google/gson/reflect/TypeToken;-><init>()V

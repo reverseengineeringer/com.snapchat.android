@@ -3,8 +3,7 @@ package com.snapchat.android.ui.here;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
-import cgb;
-import com.snapchat.android.Timber;
+import chc;
 import com.snapchat.android.util.gl.GlTextureView;
 
 public class LocalPreview
@@ -26,11 +25,11 @@ public class LocalPreview
     }
     catch (UnsatisfiedLinkError localUnsatisfiedLinkError)
     {
-      Timber.c("GlCameraPreview", "System.loadLibrary(\"LocalPreview\") failed: %s.", new Object[] { localUnsatisfiedLinkError.getMessage() });
+      localUnsatisfiedLinkError.getMessage();
     }
   }
   
-  public LocalPreview(@cgb Context paramContext)
+  public LocalPreview(@chc Context paramContext)
   {
     if (!e) {
       throw new b("Native library failed to load.", (byte)0);
@@ -95,7 +94,6 @@ public class LocalPreview
       synchronized (mRenderThread)
       {
         mRenderRequested = true;
-        ???.notify();
         return;
       }
     }

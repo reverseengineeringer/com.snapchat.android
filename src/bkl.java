@@ -3,40 +3,13 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bkl
+public final class bkl
+  extends bja
 {
-  @SerializedName("logged")
-  protected Boolean logged;
-  @SerializedName("message")
-  protected String message;
-  @SerializedName("param")
-  protected String param;
-  @SerializedName("status")
-  protected Integer status;
+  @SerializedName("mId")
+  protected String mid;
   
-  public final bkl a(Boolean paramBoolean)
-  {
-    logged = paramBoolean;
-    return this;
-  }
-  
-  public final bkl a(String paramString)
-  {
-    message = paramString;
-    return this;
-  }
-  
-  public final Boolean a()
-  {
-    return logged;
-  }
-  
-  public final String b()
-  {
-    return message;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -45,15 +18,15 @@ public class bkl
       return false;
     }
     paramObject = (bkl)paramObject;
-    return new EqualsBuilder().append(logged, logged).append(status, status).append(message, message).append(param, param).isEquals();
+    return new EqualsBuilder().append(mid, mid).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(logged).append(status).append(message).append(param).toHashCode();
+    return new HashCodeBuilder().append(mid).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

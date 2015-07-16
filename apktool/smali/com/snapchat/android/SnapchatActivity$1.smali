@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Landroid/support/v4/app/LoaderManager$LoaderCallbacks",
         "<",
-        "Lajv;",
+        "Lakp;",
         ">;"
     }
 .end annotation
@@ -55,22 +55,22 @@
             ")",
             "Landroid/support/v4/content/Loader",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;"
         }
     .end annotation
 
     .prologue
     .line 205
-    new-instance v0, Lmi;
+    new-instance v0, Lmz;
 
     iget-object v1, p0, Lcom/snapchat/android/SnapchatActivity$1;->a:Lcom/snapchat/android/SnapchatActivity;
 
-    invoke-static {}, Lnf;->a()Lnf;
+    invoke-static {}, Lnw;->a()Lnw;
 
     move-result-object v2
 
-    invoke-direct {v0, v1, v2}, Lmi;-><init>(Landroid/app/Activity;Lnf;)V
+    invoke-direct {v0, v1, v2}, Lmz;-><init>(Landroid/app/Activity;Lnw;)V
 
     return-object v0
 .end method
@@ -80,15 +80,15 @@
 
     .prologue
     .line 202
-    check-cast p2, Lajv;
+    check-cast p2, Lakp;
 
     iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity$1;->a:Lcom/snapchat/android/SnapchatActivity;
 
-    iput-object p2, v0, Lcom/snapchat/android/SnapchatActivity;->mUser:Lajv;
+    iput-object p2, v0, Lcom/snapchat/android/SnapchatActivity;->mUser:Lakp;
 
     iget-object v0, p0, Lcom/snapchat/android/SnapchatActivity$1;->a:Lcom/snapchat/android/SnapchatActivity;
 
-    invoke-virtual {v0, p2}, Lcom/snapchat/android/SnapchatActivity;->a(Lajv;)V
+    invoke-virtual {v0, p2}, Lcom/snapchat/android/SnapchatActivity;->a(Lakp;)V
 
     return-void
 .end method
@@ -100,7 +100,7 @@
             "(",
             "Landroid/support/v4/content/Loader",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;)V"
         }
     .end annotation

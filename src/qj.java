@@ -1,32 +1,40 @@
-import javax.inject.Provider;
+import com.google.gson.annotations.SerializedName;
 
 public final class qj
-  implements buj<qh>
+  extends tx
+  implements ui.b<qj.a>
 {
-  private final Provider<qs> mScProvider;
-  private final Provider<sn> mSquareProvider;
+  private static final String PATH = "/loq/device_id";
+  private static final String TAG = "GetDeviceTokenTask";
+  private final ayy mDeviceTokenManager;
   
-  static
+  public qj()
   {
-    if (!qj.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    this(ayy.a());
+  }
+  
+  private qj(ayy paramayy)
+  {
+    mDeviceTokenManager = paramayy;
+    registerCallback(qj.a.class, this);
+  }
+  
+  protected final String getPath()
+  {
+    return "/loq/device_id";
+  }
+  
+  public static class a
+  {
+    @SerializedName("dtoken1i")
+    String mTokenId;
+    @SerializedName("dtoken1v")
+    String mTokenValue;
+    
+    public String toString()
     {
-      $assertionsDisabled = bool;
-      return;
+      return "GetDeviceTokenTask ResponsePayload {dtoken1i=" + mTokenId + ", dtoken1v=" + mTokenValue + "}";
     }
-  }
-  
-  private qj(Provider<qs> paramProvider, Provider<sn> paramProvider1)
-  {
-    assert (paramProvider != null);
-    mScProvider = paramProvider;
-    assert (paramProvider1 != null);
-    mSquareProvider = paramProvider1;
-  }
-  
-  public static buj<qh> a(Provider<qs> paramProvider, Provider<sn> paramProvider1)
-  {
-    return new qj(paramProvider, paramProvider1);
   }
 }
 

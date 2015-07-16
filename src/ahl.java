@@ -1,36 +1,43 @@
-import android.app.Activity;
-import com.addlive.service.AddLiveService.VideoFrameMetadata;
-import com.addlive.view.ALVideoTextureView;
-import com.snapchat.android.analytics.HereAnalytics;
-import com.snapchat.android.ui.here.DisconnectReason;
+import com.snapchat.android.fragments.settings.DeveloperSettingsFragment;
+import com.snapchat.android.util.fragment.SnapchatFragment;
+import javax.inject.Provider;
 
-public abstract interface ahl
+public final class ahl
+  implements bvk<DeveloperSettingsFragment>
 {
-  public abstract void a();
+  private final bvk<SnapchatFragment> b;
+  private final Provider<yj> c;
+  private final Provider<yn> d;
   
-  public abstract void a(@cgb Activity paramActivity, @cgb ahl.a parama, @cgb HereAnalytics paramHereAnalytics);
-  
-  public abstract void a(@cgb bic parambic);
-  
-  public abstract void a(ALVideoTextureView paramALVideoTextureView);
-  
-  public abstract void a(@cgb DisconnectReason paramDisconnectReason);
-  
-  public abstract void a(@cgb byte[] paramArrayOfByte, @cgb AddLiveService.VideoFrameMetadata paramVideoFrameMetadata);
-  
-  public abstract boolean b();
-  
-  public abstract void c();
-  
-  public abstract void d();
-  
-  public static abstract interface a
+  static
   {
-    public abstract void a();
-    
-    public abstract void a(@cgb DisconnectReason paramDisconnectReason);
-    
-    public abstract void a(boolean paramBoolean);
+    if (!ahl.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
+  }
+  
+  private ahl(bvk<SnapchatFragment> parambvk, Provider<yj> paramProvider, Provider<yn> paramProvider1)
+  {
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider;
+    if ((!a) && (paramProvider1 == null)) {
+      throw new AssertionError();
+    }
+    d = paramProvider1;
+  }
+  
+  public static bvk<DeveloperSettingsFragment> a(bvk<SnapchatFragment> parambvk, Provider<yj> paramProvider, Provider<yn> paramProvider1)
+  {
+    return new ahl(parambvk, paramProvider, paramProvider1);
   }
 }
 

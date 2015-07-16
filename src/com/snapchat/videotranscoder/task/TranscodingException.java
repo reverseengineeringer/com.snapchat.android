@@ -1,21 +1,21 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
+import chc;
 
 public class TranscodingException
   extends Exception
 {
-  public TranscodingException(@cgb String paramString)
+  public TranscodingException(@chc String paramString)
   {
     super(paramString);
   }
   
-  public TranscodingException(@cgb String paramString, @cgb Throwable paramThrowable)
+  public TranscodingException(@chc String paramString, @chc Throwable paramThrowable)
   {
     super(paramString, paramThrowable);
   }
   
-  public TranscodingException(@cgb Throwable paramThrowable)
+  public TranscodingException(@chc Throwable paramThrowable)
   {
     super(paramThrowable);
   }

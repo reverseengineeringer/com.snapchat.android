@@ -1,122 +1,311 @@
 .class public final Laxv;
-.super Lcom/google/gson/TypeAdapter;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/gson/TypeAdapter",
-        "<",
-        "Laxu;",
-        ">;"
-    }
+.annotation runtime Lbxr;
 .end annotation
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String; = "SendSnapCacheWrapper"
+
+.field private static sInstance:Laxv;
+
+
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 14
-    invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 34
     return-void
 .end method
 
-.method private static a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/String;
-    .locals 3
+.method public static a()Laxv;
+    .locals 1
 
     .prologue
-    .line 28
-    const/4 v0, 0x0
+    .line 37
+    sget-object v0, Laxv;->sInstance:Laxv;
 
-    .line 29
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+    if-nez v0, :cond_0
 
-    move-result-object v1
+    .line 38
+    new-instance v0, Laxv;
 
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+    invoke-direct {v0}, Laxv;-><init>()V
 
-    if-ne v1, v2, :cond_0
+    sput-object v0, Laxv;->sInstance:Laxv;
 
-    .line 30
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->nextNull()V
+    .line 40
+    :cond_0
+    sget-object v0, Laxv;->sInstance:Laxv;
 
-    .line 34
+    return-object v0
+.end method
+
+.method public static a(Laji;)[B
+    .locals 2
+    .param p0    # Laji;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation build Lcbr;
+    .end annotation
+
+    .prologue
+    .line 48
+    invoke-static {}, Lbhp;->b()V
+
+    .line 50
+    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
+
+    .line 51
+    invoke-static {p0}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Laxo;->MY_SNAP_VIDEO_CACHE:Laxn;
+
+    invoke-virtual {v1, v0}, Laxn;->a(Ljava/lang/String;)[B
+
+    move-result-object v0
+
     :goto_0
     return-object v0
 
-    .line 32
     :cond_0
-    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
+    sget-object v1, Laxo;->MY_SNAP_IMAGE_CACHE:Laxn;
+
+    invoke-virtual {v1, v0}, Laxn;->a(Ljava/lang/String;)[B
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-
-# virtual methods
-.method public final synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 6
+.method public static c(Laji;)Z
+    .locals 5
+    .param p0    # Laji;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 14
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginArray()V
+    const/4 v1, 0x1
 
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object v1
+    .line 91
+    iget-object v2, p0, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    invoke-static {p1}, Laxv;->a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p1}, Laxv;->a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/String;
+    .line 92
+    invoke-virtual {p0}, Laji;->g()[B
 
     move-result-object v3
 
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextLong()J
+    .line 93
+    if-nez v3, :cond_0
 
-    move-result-wide v4
+    .line 94
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endArray()V
+    iget-object v2, p0, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    new-instance v0, Laxu;
+    aput-object v2, v1, v0
 
-    invoke-direct/range {v0 .. v5}, Laxu;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    .line 106
+    :goto_0
+    return v0
 
-    return-object v0
+    .line 99
+    :cond_0
+    :try_start_0
+    sget-object v4, Laxo;->MY_SNAP_IMAGE_CACHE:Laxn;
+
+    invoke-virtual {v4, v2, v3}, Laxn;->a(Ljava/lang/String;[B)V
+
+    .line 100
+    iget-object v2, p0, Laji;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
+
+    invoke-static {v2}, Lavp;->c(Landroid/graphics/Bitmap;)[B
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    sget-object v3, Laxo;->MY_STORY_SNAP_THUMBNAIL_CACHE:Laxn;
+
+    iget-object v4, p0, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
+
+    invoke-virtual {v3, v4, v2}, Laxn;->a(Ljava/lang/String;[B)V
+
+    :goto_1
+    move v0, v1
+
+    .line 106
+    goto :goto_0
+
+    .line 100
+    :cond_1
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
+
+    aput-object v4, v2, v3
+    :try_end_0
+    .catch Laxq; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    .line 101
+    :catch_0
+    move-exception v1
+
+    .line 102
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "saveImageToCache exception: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
 .end method
 
-.method public final synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-    .locals 2
+
+# virtual methods
+.method public final a(Laku;Lbgj;)Z
+    .locals 6
 
     .prologue
-    .line 14
-    check-cast p2, Laxu;
+    const/4 v1, 0x1
 
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginArray()Lcom/google/gson/stream/JsonWriter;
+    const/4 v0, 0x0
 
-    iget-object v0, p2, Laxu;->mKey:Ljava/lang/String;
+    .line 110
+    iget-object v2, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    invoke-virtual {p1, v0}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+    .line 111
+    invoke-virtual {p1}, Laku;->g()[B
 
-    iget-object v0, p2, Laxu;->mIv:Ljava/lang/String;
+    move-result-object v3
 
-    invoke-virtual {p1, v0}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+    .line 112
+    if-nez v3, :cond_0
 
-    iget-object v0, p2, Laxu;->mThumbnailIv:Ljava/lang/String;
+    .line 113
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+    iget-object v2, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    iget-wide v0, p2, Laxu;->mTimestamp:J
+    aput-object v2, v1, v0
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/gson/stream/JsonWriter;->value(J)Lcom/google/gson/stream/JsonWriter;
+    .line 138
+    :goto_0
+    return v0
 
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endArray()Lcom/google/gson/stream/JsonWriter;
+    .line 118
+    :cond_0
+    :try_start_0
+    new-instance v4, Lave;
 
+    invoke-direct {v4}, Lave;-><init>()V
+
+    new-instance v5, Laxv$2;
+
+    invoke-direct {v5, p0, v2, v3}, Laxv$2;-><init>(Laxv;Ljava/lang/String;[B)V
+
+    invoke-virtual {v4, v5}, Lave;->a(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
+
+    .line 128
+    invoke-virtual {p1}, Laku;->n()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p2, v2}, Lbgj;->b(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    .line 129
+    if-eqz v2, :cond_2
+
+    .line 130
+    iget-object v3, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
+
+    iget-object v4, p1, Laji;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
+
+    invoke-static {v2, v4}, Lavp;->a(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)[B
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1
+
+    sget-object v5, Laxo;->MY_STORY_SNAP_THUMBNAIL_CACHE:Laxn;
+
+    invoke-virtual {v5, v3, v4}, Laxn;->a(Ljava/lang/String;[B)V
+
+    .line 131
+    :cond_1
+    invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_2
+    move v0, v1
+
+    .line 138
+    goto :goto_0
+
+    .line 133
+    :catch_0
+    move-exception v1
+
+    .line 134
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "saveVideoToCache exception: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+.end method
+
+.method public final b(Laji;)V
+    .locals 3
+
+    .prologue
+    .line 81
+    new-instance v0, Laxv$1;
+
+    invoke-direct {v0, p0, p1}, Laxv$1;-><init>(Laxv;Laji;)V
+
+    sget-object v1, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/Void;
+
+    invoke-virtual {v0, v1, v2}, Laxv$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 88
     return-void
 .end method

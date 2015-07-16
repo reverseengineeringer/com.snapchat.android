@@ -1,26 +1,49 @@
-import android.content.Context;
-import java.util.concurrent.ExecutorService;
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
 
 public final class anp
+  extends ana
+  implements ui.b<blm>
 {
-  final ExecutorService a;
-  anm b;
-  private final avp c;
+  public blm a;
+  public boolean b = false;
+  private final String c;
+  private final akr d;
   
-  public anp(Context paramContext)
+  public anp(Intent paramIntent)
   {
-    this(auh.HIGH_PRIORITY_EXECUTOR, new avp(paramContext));
+    this(paramIntent, akr.a());
   }
   
-  private anp(ExecutorService paramExecutorService, avp paramavp)
+  private anp(Intent paramIntent, akr paramakr)
   {
-    a = paramExecutorService;
-    c = paramavp;
+    super(paramIntent);
+    d = paramakr;
+    c = paramIntent.getStringExtra("email");
+    registerCallback(blm.class, this);
   }
   
-  public static abstract interface a
+  public final Object getRequestPayload()
   {
-    public abstract void a(anq paramanq);
+    return new anp.a(c);
+  }
+  
+  protected final String l_()
+  {
+    return "/loq/and/change_email";
+  }
+  
+  @ud
+  public final class a
+    extends qc
+  {
+    @SerializedName("email")
+    String a;
+    
+    public a(@chc String paramString)
+    {
+      a = paramString;
+    }
   }
 }
 

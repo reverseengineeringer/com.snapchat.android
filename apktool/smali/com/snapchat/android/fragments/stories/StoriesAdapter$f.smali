@@ -20,32 +20,32 @@
 # instance fields
 .field final synthetic a:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
-.field private b:Lahc;
+.field private b:Lahz;
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahc;)V
+.method public constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahz;)V
     .locals 0
 
     .prologue
-    .line 1036
+    .line 1071
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1037
-    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;->b:Lahc;
+    .line 1072
+    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;->b:Lahz;
 
-    .line 1038
+    .line 1073
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;)Lahc;
+.method static synthetic a(Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;)Lahz;
     .locals 1
 
     .prologue
-    .line 1032
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;->b:Lahc;
+    .line 1067
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;->b:Lahz;
 
     return-object v0
 .end method
@@ -60,20 +60,20 @@
 
     const/4 v4, 0x0
 
-    .line 1042
+    .line 1077
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-ne v0, v3, :cond_0
 
-    .line 1043
+    .line 1078
     invoke-virtual {p1}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 1044
-    const v1, 0x7f0a03ca
+    .line 1079
+    const v1, 0x7f0a03c6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -81,12 +81,12 @@
 
     check-cast v0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;
 
-    .line 1046
+    .line 1081
     invoke-virtual {p1}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
-    const v2, 0x7f0a03cb
+    const v2, 0x7f0a03c7
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -94,13 +94,13 @@
 
     check-cast v1, Landroid/view/ViewParent;
 
-    .line 1047
+    .line 1082
     invoke-interface {v1, v4}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1048
+    .line 1083
     invoke-virtual {v0, v3}, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->setEnabled(Z)V
 
-    .line 1049
+    .line 1084
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -113,7 +113,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1057
+    .line 1093
     :cond_0
     return v4
 .end method

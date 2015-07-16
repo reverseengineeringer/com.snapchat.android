@@ -208,18 +208,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lbux;
+    check-cast v0, Lbvy;
 
     .line 307
-    invoke-virtual {v0, v2}, Lbux;->setFillAfter(Z)V
+    invoke-virtual {v0, v2}, Lbvy;->setFillAfter(Z)V
 
     .line 308
     const/4 v4, 0x1
 
-    invoke-virtual {v0, v4}, Lbux;->setFillEnabled(Z)V
+    invoke-virtual {v0, v4}, Lbvy;->setFillEnabled(Z)V
 
     .line 309
-    invoke-virtual {v0, v2}, Lbux;->setFillBefore(Z)V
+    invoke-virtual {v0, v2}, Lbvy;->setFillBefore(Z)V
 
     .line 310
     iget-object v4, p0, Lin/srain/cube/views/ptr/header/StoreHouseHeader$a;->a:Lin/srain/cube/views/ptr/header/StoreHouseHeader;
@@ -230,7 +230,7 @@
 
     int-to-long v4, v4
 
-    invoke-virtual {v0, v4, v5}, Lbux;->setDuration(J)V
+    invoke-virtual {v0, v4, v5}, Lbvy;->setDuration(J)V
 
     .line 311
     iget-object v4, p0, Lin/srain/cube/views/ptr/header/StoreHouseHeader$a;->a:Lin/srain/cube/views/ptr/header/StoreHouseHeader;
@@ -245,7 +245,7 @@
 
     move-result v5
 
-    invoke-virtual {v0, v4, v5}, Lbux;->a(FF)V
+    invoke-virtual {v0, v4, v5}, Lbvy;->a(FF)V
 
     .line 297
     :cond_0

@@ -1,55 +1,78 @@
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import java.lang.ref.WeakReference;
-
-final class bov
-  extends boj<ImageView>
+public final class bov
 {
-  bon m;
+  int a;
+  int b;
+  int c;
+  final int[] d = new int[10];
   
-  bov(bpd parambpd, ImageView paramImageView, bpg parambpg, int paramInt1, int paramInt2, int paramInt3, Drawable paramDrawable, String paramString, Object paramObject, bon parambon, boolean paramBoolean)
+  final int a()
   {
-    super(parambpd, paramImageView, parambpg, paramInt1, paramInt2, paramInt3, paramDrawable, paramString, paramObject, paramBoolean);
-    m = parambon;
+    if ((a & 0x2) != 0) {
+      return d[1];
+    }
+    return -1;
   }
   
-  public final void a()
+  final bov a(int paramInt1, int paramInt2, int paramInt3)
   {
-    ImageView localImageView = (ImageView)c.get();
-    if (localImageView == null) {}
-    do
+    if (paramInt1 >= d.length) {
+      return this;
+    }
+    int i = 1 << paramInt1;
+    a |= i;
+    if ((paramInt2 & 0x1) != 0)
     {
-      return;
-      if (g != 0)
-      {
-        localImageView.setImageResource(g);
-        return;
+      b |= i;
+      if ((paramInt2 & 0x2) == 0) {
+        break label86;
       }
-    } while (h == null);
-    localImageView.setImageDrawable(h);
+    }
+    label86:
+    for (c = (i | c);; c = ((i ^ 0xFFFFFFFF) & c))
+    {
+      d[paramInt1] = paramInt3;
+      return this;
+      b &= (i ^ 0xFFFFFFFF);
+      break;
+    }
   }
   
-  public final void a(Bitmap paramBitmap, bpd.d paramd)
+  final boolean a(int paramInt)
   {
-    if (paramBitmap == null) {
-      throw new AssertionError(String.format("Attempted to complete action with no result!\n%s", new Object[] { this }));
-    }
-    ImageView localImageView = (ImageView)c.get();
-    if (localImageView == null) {
-      return;
-    }
-    Context localContext = a.f;
-    boolean bool = a.n;
-    bpe.a(localImageView, localContext, paramBitmap, paramd, d, bool);
+    return (1 << paramInt & a) != 0;
   }
   
-  final void b()
+  public final int b()
   {
-    super.b();
-    if (m != null) {
-      m = null;
+    if ((a & 0x80) != 0) {
+      return d[7];
+    }
+    return 65536;
+  }
+  
+  final int b(int paramInt)
+  {
+    int j = 0;
+    if ((1 << paramInt & c) != 0)
+    {
+      i = 1;
+      if (i == 0) {
+        break label51;
+      }
+    }
+    label51:
+    for (int i = 2;; i = 0)
+    {
+      if ((1 << paramInt & b) != 0) {
+        j = 1;
+      }
+      paramInt = i;
+      if (j != 0) {
+        paramInt = i | 0x1;
+      }
+      return paramInt;
+      i = 0;
+      break;
     }
   }
 }

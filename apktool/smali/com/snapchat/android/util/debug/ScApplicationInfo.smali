@@ -14,12 +14,12 @@
     .locals 1
 
     .prologue
-    .line 21
+    .line 22
     const v0, 0x7fffffff
 
     sput v0, Lcom/snapchat/android/util/debug/ScApplicationInfo;->DEFAULT_VERSION_CODE:I
 
-    .line 22
+    .line 23
     const-string v0, ""
 
     sput-object v0, Lcom/snapchat/android/util/debug/ScApplicationInfo;->DEFAULT_VERSION_NAME:Ljava/lang/String;
@@ -31,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 19
+    .line 20
     invoke-direct {p0}, Landroid/content/pm/ApplicationInfo;-><init>()V
 
     return-void
@@ -39,11 +39,11 @@
 
 .method public static a()Ljava/lang/String;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 78
+    .line 79
     const-string v0, "com.snapchat.android"
 
     return-object v0
@@ -53,17 +53,17 @@
     .locals 5
 
     .prologue
-    .line 25
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    .line 26
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 27
+    .line 28
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 28
+    .line 29
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "Snapchat Build : "
@@ -206,7 +206,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Lbfp;->b()Ljava/lang/String;
+    invoke-static {}, Lbgp;->b()Ljava/lang/String;
 
     move-result-object v3
 
@@ -234,7 +234,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Lazm;->c()Z
+    invoke-static {}, Lbal;->c()Z
 
     move-result v3
 
@@ -262,7 +262,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Lajx;->bv()I
+    invoke-static {}, Lakr;->bs()I
 
     move-result v3
 
@@ -282,15 +282,15 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 38
-    invoke-static {}, Lbfp;->a()Landroid/net/NetworkInfo;
+    .line 39
+    invoke-static {}, Lbgp;->a()Landroid/net/NetworkInfo;
 
     move-result-object v2
 
-    .line 39
+    .line 40
     if-eqz v2, :cond_0
 
-    invoke-static {}, Lbfp;->a()Landroid/net/NetworkInfo;
+    invoke-static {}, Lbgp;->a()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
@@ -313,7 +313,7 @@
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 40
+    .line 41
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v3, "Mobile network subtype: "
@@ -340,7 +340,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 43
+    .line 44
     :cond_0
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->e()Z
 
@@ -356,12 +356,12 @@
 
     if-nez v0, :cond_1
 
-    .line 44
+    .line 45
     const-string v0, "Git Branch: "
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 47
+    .line 48
     :cond_1
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
 
@@ -377,12 +377,12 @@
 
     if-nez v0, :cond_2
 
-    .line 48
+    .line 49
     const-string v0, "Dogfood build - git hash: "
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 51
+    .line 52
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -390,7 +390,7 @@
 
     return-object v0
 
-    .line 39
+    .line 40
     :cond_3
     const/4 v0, 0x0
 
@@ -401,14 +401,14 @@
     .locals 2
 
     .prologue
-    .line 86
+    .line 87
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "username: "
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v1
 
@@ -422,7 +422,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lajx;->G()Ljava/lang/String;
+    invoke-static {}, Lakr;->G()Ljava/lang/String;
 
     move-result-object v1
 
@@ -440,12 +440,12 @@
 .method public static b(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
     .param p0    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 57
+    .line 58
     :try_start_0
     invoke-static {p0}, Lcom/snapchat/android/util/debug/ScApplicationInfo;->d(Landroid/content/Context;)Landroid/content/pm/PackageInfo;
     :try_end_0
@@ -453,13 +453,13 @@
 
     move-result-object v0
 
-    .line 62
+    .line 63
     iget-object v0, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
 
     :goto_0
     return-object v0
 
-    .line 59
+    .line 60
     :catch_0
     move-exception v0
 
@@ -471,12 +471,12 @@
 .method public static c(Landroid/content/Context;)I
     .locals 1
     .param p0    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 68
+    .line 69
     :try_start_0
     invoke-static {p0}, Lcom/snapchat/android/util/debug/ScApplicationInfo;->d(Landroid/content/Context;)Landroid/content/pm/PackageInfo;
     :try_end_0
@@ -484,13 +484,13 @@
 
     move-result-object v0
 
-    .line 73
+    .line 74
     iget v0, v0, Landroid/content/pm/PackageInfo;->versionCode:I
 
     :goto_0
     return v0
 
-    .line 70
+    .line 71
     :catch_0
     move-exception v0
 
@@ -502,12 +502,12 @@
 .method public static d(Landroid/content/Context;)Landroid/content/pm/PackageInfo;
     .locals 3
     .param p0    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 82
+    .line 83
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0

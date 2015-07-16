@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public a:Lqh;
+.field public a:Lqx;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
@@ -47,11 +47,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/fragments/cash/CashSettingsFragment;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/fragments/cash/CashSettingsFragment;)V
 
     .line 75
     return-void
@@ -67,38 +67,38 @@
     return-object v0
 .end method
 
-.method protected static a(Ljava/lang/String;Lsu$b;)Lsq;
+.method protected static a(Ljava/lang/String;Ltk$b;)Ltg;
     .locals 1
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p1    # Lsu$b;
-        .annotation build Lcgb;
+    .param p1    # Ltk$b;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 351
-    new-instance v0, Lsu;
+    new-instance v0, Ltk;
 
-    invoke-direct {v0, p0, p1}, Lsu;-><init>(Ljava/lang/String;Lsu$b;)V
+    invoke-direct {v0, p0, p1}, Ltk;-><init>(Ljava/lang/String;Ltk$b;)V
 
     return-object v0
 .end method
 
-.method protected static a(Lsu$b;)Lsq;
+.method protected static a(Ltk$b;)Ltg;
     .locals 1
-    .param p0    # Lsu$b;
-        .annotation build Lcgb;
+    .param p0    # Ltk$b;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 344
-    new-instance v0, Lsu;
+    new-instance v0, Ltk;
 
-    invoke-direct {v0, p0}, Lsu;-><init>(Lsu$b;)V
+    invoke-direct {v0, p0}, Ltk;-><init>(Ltk$b;)V
 
     return-object v0
 .end method
@@ -124,7 +124,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$2;-><init>(Lcom/snapchat/android/fragments/cash/CashSettingsFragment;ZLandroid/widget/CompoundButton;Landroid/widget/ProgressBar;Landroid/view/View;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -142,7 +142,7 @@
 .method private a(Ljava/lang/Integer;)V
     .locals 1
     .param p1    # Ljava/lang/Integer;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -152,7 +152,7 @@
 
     invoke-direct {v0, p0, p1}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$3;-><init>(Lcom/snapchat/android/fragments/cash/CashSettingsFragment;Ljava/lang/Integer;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 477
     return-void
@@ -228,26 +228,26 @@
     return-void
 .end method
 
-.method protected static i()Lqv;
+.method protected static i()Lrl;
     .locals 1
 
     .prologue
     .line 333
-    new-instance v0, Lrf;
+    new-instance v0, Lrv;
 
-    invoke-direct {v0}, Lrf;-><init>()V
+    invoke-direct {v0}, Lrv;-><init>()V
 
     return-object v0
 .end method
 
-.method protected static l()Lrv;
+.method protected static l()Lsl;
     .locals 1
 
     .prologue
     .line 338
-    new-instance v0, Lrv;
+    new-instance v0, Lsl;
 
-    invoke-direct {v0}, Lrv;-><init>()V
+    invoke-direct {v0}, Lsl;-><init>()V
 
     return-object v0
 .end method
@@ -275,7 +275,7 @@
     const/4 v2, 0x0
 
     .line 280
-    invoke-static {}, Lajx;->at()Ljava/lang/String;
+    invoke-static {}, Lakr;->as()Ljava/lang/String;
 
     move-result-object v0
 
@@ -289,7 +289,7 @@
 
     .line 284
     :cond_0
-    invoke-static {}, Lajx;->as()Ljava/lang/String;
+    invoke-static {}, Lakr;->ar()Ljava/lang/String;
 
     move-result-object v0
 
@@ -426,7 +426,7 @@
 
     .prologue
     .line 322
-    invoke-static {}, Lajx;->av()Z
+    invoke-static {}, Lakr;->au()Z
 
     move-result v0
 
@@ -470,10 +470,10 @@
 
 
 # virtual methods
-.method protected final a(Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;Z)Lsu$b;
+.method protected final a(Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;Z)Ltk$b;
     .locals 1
     .param p1    # Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -491,7 +491,7 @@
 
     .prologue
     .line 79
-    const v0, 0x7f040022
+    const v0, 0x7f040023
 
     const/4 v1, 0x0
 
@@ -610,7 +610,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->m:Landroid/view/View;
 
-    const v0, 0x7f0a0065
+    const v0, 0x7f0a0067
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->c(I)Landroid/view/View;
 
@@ -624,7 +624,7 @@
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->i:Landroid/widget/CheckBox;
 
-    invoke-static {}, Lajx;->aw()Z
+    invoke-static {}, Lakr;->av()Z
 
     move-result v1
 
@@ -682,19 +682,19 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-static {}, Lajx;->ar()Z
+    invoke-static {}, Lakr;->aq()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a:Lqh;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a:Lqx;
 
-    invoke-static {}, Lajx;->ap()Ljava/lang/String;
+    invoke-static {}, Lakr;->ao()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lqh;->b(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lqx;->b(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -717,9 +717,9 @@
     goto :goto_0
 .end method
 
-.method public updateCardDetailsViewOnDetailsProvided(Lbbf;)V
+.method public updateCardDetailsViewOnDetailsProvided(Lbcf;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue

@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.stories;
 
-import ahc;
+import ahz;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,19 +11,19 @@ import com.snapchat.android.ui.ptr.SnapchatPtrFrameLayout;
 final class StoriesAdapter$f
   implements View.OnTouchListener
 {
-  private ahc b;
+  private ahz b;
   
-  public StoriesAdapter$f(StoriesAdapter paramStoriesAdapter, ahc paramahc)
+  public StoriesAdapter$f(StoriesAdapter paramStoriesAdapter, ahz paramahz)
   {
-    b = paramahc;
+    b = paramahz;
   }
   
   public final boolean onTouch(View paramView, MotionEvent paramMotionEvent)
   {
     if (paramMotionEvent.getAction() == 1)
     {
-      paramMotionEvent = (SnapchatPtrFrameLayout)paramView.getRootView().findViewById(2131362762);
-      ((ViewParent)paramView.getRootView().findViewById(2131362763)).requestDisallowInterceptTouchEvent(false);
+      paramMotionEvent = (SnapchatPtrFrameLayout)paramView.getRootView().findViewById(2131362758);
+      ((ViewParent)paramView.getRootView().findViewById(2131362759)).requestDisallowInterceptTouchEvent(false);
       paramMotionEvent.setEnabled(true);
       new Handler().postDelayed(new Runnable()
       {

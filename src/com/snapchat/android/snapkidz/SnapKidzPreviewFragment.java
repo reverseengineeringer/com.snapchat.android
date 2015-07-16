@@ -1,7 +1,7 @@
 package com.snapchat.android.snapkidz;
 
-import aim;
-import ajm;
+import aji;
+import aku;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -17,17 +17,16 @@ import android.view.WindowManager.LayoutParams;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
-import aqb;
-import aut;
-import avh;
-import ban;
-import baw;
-import bbc;
-import bdj;
-import bel;
-import boh;
+import ara;
+import avr;
+import awf;
+import bbo;
+import bbx;
+import bcc;
+import bej;
+import bfk;
+import bpi;
 import com.snapchat.android.SnapkidzHomeActivity;
-import com.snapchat.android.Timber;
 import com.snapchat.android.model.Mediabryo;
 import com.snapchat.android.ui.CanvasViewBase;
 import com.snapchat.android.ui.SnapEditorView;
@@ -60,7 +59,7 @@ public class SnapKidzPreviewFragment
   private ImageButton k;
   private ImageButton l;
   private int m;
-  private bdj n;
+  private bej n;
   private View o;
   private SnapEditorView.a p;
   private Handler q = new Handler();
@@ -69,12 +68,12 @@ public class SnapKidzPreviewFragment
   
   private void n()
   {
-    ban.a().a(new bel(TitleBarManager.Visibility.HIDDEN));
+    bbo.a().a(new bfk(TitleBarManager.Visibility.HIDDEN));
     if (n.mMediabryo.h() == 0)
     {
       j = false;
       if (getUserVisibleHint()) {
-        ban.a().a(new baw(-1));
+        bbo.a().a(new bbx(-1));
       }
       k.setOnClickListener(new View.OnClickListener()
       {
@@ -127,13 +126,13 @@ public class SnapKidzPreviewFragment
     for (;;)
     {
       b.a(m);
-      m = avh.d(getActivity());
+      m = awf.d(getActivity());
       return;
       j = true;
       if (!getUserVisibleHint()) {
         break;
       }
-      ban.a().a(new baw(1));
+      bbo.a().a(new bbx(1));
       break;
       label217:
       a.a(p);
@@ -144,7 +143,7 @@ public class SnapKidzPreviewFragment
   {
     if (getActivity() != null)
     {
-      Window localWindow = H();
+      Window localWindow = J();
       if (localWindow != null)
       {
         WindowManager.LayoutParams localLayoutParams = localWindow.getAttributes();
@@ -187,14 +186,14 @@ public class SnapKidzPreviewFragment
   protected final void e()
   {
     q();
-    ban.a().a(new bel(TitleBarManager.Visibility.HIDDEN));
-    aim localaim = n.mMediabryo;
-    if ((localaim != null) && (aut.a(localaim)))
+    bbo.a().a(new bfk(TitleBarManager.Visibility.HIDDEN));
+    aji localaji = n.mMediabryo;
+    if ((localaji != null) && (avr.a(localaji)))
     {
-      a.a((ajm)localaim);
+      a.a((aku)localaji);
       return;
     }
-    ban.a().a(new baw(-1));
+    bbo.a().a(new bbx(-1));
   }
   
   public final boolean g()
@@ -205,7 +204,7 @@ public class SnapKidzPreviewFragment
       return false;
       if (b.c())
       {
-        new aqb(getActivity(), getString(2131492920))
+        new ara(getActivity(), getString(2131492920))
         {
           protected final void a()
           {
@@ -239,8 +238,8 @@ public class SnapKidzPreviewFragment
     return k.getBottom();
   }
   
-  @boh
-  public void onColorPickedEvent(bbc parambbc)
+  @bpi
+  public void onColorPickedEvent(bcc parambcc)
   {
     b.setColor(mColor);
     d.setBackgroundColor(b.getColor());
@@ -263,26 +262,25 @@ public class SnapKidzPreviewFragment
     q();
     if (n == null)
     {
-      Timber.c("SnapKidzPreviewFragment", "mSnapCapturedEvent is null. Getting a new one from LandingPageActivity", new Object[0]);
       n = getActivitya;
       if (n == null)
       {
-        n = new bdj(null, SnapCaptureContext.CAMERA);
+        n = new bej(null, SnapCaptureContext.CAMERA);
         f = true;
         getActivity().onBackPressed();
         return mFragmentLayout;
       }
     }
-    mFragmentLayout = paramLayoutInflater.inflate(2130968734, paramViewGroup, false);
-    o = c(2131362706);
-    d = c(2131362704);
-    k = ((ImageButton)c(2131362273));
-    c = ((ImageButton)c(2131362274));
-    g = ((ImageButton)c(2131362705));
-    i = ((ImageButton)c(2131362707));
-    l = ((ImageButton)c(2131362709));
-    h = c(2131362703);
-    a = ((SnapEditorView)c(2131362702));
+    mFragmentLayout = paramLayoutInflater.inflate(2130968736, paramViewGroup, false);
+    o = c(2131362705);
+    d = c(2131362703);
+    k = ((ImageButton)c(2131362271));
+    c = ((ImageButton)c(2131362272));
+    g = ((ImageButton)c(2131362704));
+    i = ((ImageButton)c(2131362706));
+    l = ((ImageButton)c(2131362708));
+    h = c(2131362702);
+    a = ((SnapEditorView)c(2131362701));
     a.a(paramBundle);
     a.setSnapPreviewRotationListener(this);
     a.setInterface(this);
@@ -301,21 +299,21 @@ public class SnapKidzPreviewFragment
       n.mMediabryo.l();
     }
     n = null;
-    WindowManager.LayoutParams localLayoutParams = H().getAttributes();
+    WindowManager.LayoutParams localLayoutParams = J().getAttributes();
     flags |= 0x200;
-    H().setAttributes(localLayoutParams);
+    J().setAttributes(localLayoutParams);
   }
   
   public void onDestroyView()
   {
     super.onDestroyView();
     a.b();
-    WindowManager.LayoutParams localLayoutParams = H().getAttributes();
+    WindowManager.LayoutParams localLayoutParams = J().getAttributes();
     flags |= 0x200;
-    H().setAttributes(localLayoutParams);
+    J().setAttributes(localLayoutParams);
   }
   
-  @boh
+  @bpi
   public void onDrawingEvent(DrawingEvent paramDrawingEvent)
   {
     if (r != null)
@@ -341,9 +339,9 @@ public class SnapKidzPreviewFragment
       }
       paramDrawingEvent = new AlphaAnimation(f1 * 0.0F, 1.0F);
       paramDrawingEvent.setDuration(400L);
-      c(2131362703).startAnimation(paramDrawingEvent);
-      c(2131362276).startAnimation(paramDrawingEvent);
-      c(2131362273).startAnimation(paramDrawingEvent);
+      c(2131362702).startAnimation(paramDrawingEvent);
+      c(2131362274).startAnimation(paramDrawingEvent);
+      c(2131362271).startAnimation(paramDrawingEvent);
     }
     i.setVisibility(0);
     o.setVisibility(0);
@@ -353,7 +351,7 @@ public class SnapKidzPreviewFragment
   public void onPause()
   {
     super.onPause();
-    ban.a().b(a.getCaptionView());
+    bbo.a().b(a.getCaptionView());
     if (a.getCaptionView() != null) {
       a.getCaptionView().a(true);
     }
@@ -364,7 +362,7 @@ public class SnapKidzPreviewFragment
   public void onResume()
   {
     super.onResume();
-    ban.a().c(a.getCaptionView());
+    bbo.a().c(a.getCaptionView());
     b.setDrawingEnabled(e);
     if (e) {
       r();

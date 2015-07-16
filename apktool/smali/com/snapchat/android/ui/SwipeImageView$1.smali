@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    check-cast v0, Larn;
+    check-cast v0, Lasm;
 
     iget-object v1, p0, Lcom/snapchat/android/ui/SwipeImageView$1;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
@@ -89,7 +89,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v1, v3}, Larn;->a(ZLandroid/graphics/Bitmap;)V
+    invoke-virtual {v0, v1, v3}, Lasm;->a(ZLandroid/graphics/Bitmap;)V
 
     iget-object v0, p0, Lcom/snapchat/android/ui/SwipeImageView$1;->b:Lcom/snapchat/android/ui/SwipeImageView;
 

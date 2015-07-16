@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 185
+    .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .locals 2
 
     .prologue
-    .line 188
+    .line 186
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->f()Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object v0
@@ -43,9 +43,9 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 189
+    .line 187
     invoke-static {}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngineStatic;->e()V
 
-    .line 190
+    .line 188
     return-void
 .end method

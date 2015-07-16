@@ -1,160 +1,89 @@
-import java.io.OutputStream;
-
 public final class bud
-  extends OutputStream
-  implements bql
 {
-  private bqe a;
-  private OutputStream b;
-  private bsb c;
-  private bqf d;
+  private btz a;
+  private bua b;
+  private bub c;
   
-  public bud(bqe parambqe, OutputStream paramOutputStream)
-  {
-    if (parambqe == null) {
-      throw new NullPointerException("socket was null");
-    }
-    if (paramOutputStream == null) {
-      throw new NullPointerException("output stream was null");
-    }
-    a = parambqe;
-    b = paramOutputStream;
-    d = b();
-    if (d == null) {
-      throw new NullPointerException("parser was null");
-    }
-  }
-  
-  private void a(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
+  public final bua a()
   {
     try
     {
-      d.a(paramArrayOfByte, paramInt1, paramInt2);
-      return;
+      bua localbua = b;
+      return localbua;
     }
-    catch (ThreadDeath paramArrayOfByte)
+    finally
     {
-      throw paramArrayOfByte;
-    }
-    catch (Throwable paramArrayOfByte)
-    {
-      btd.a(paramArrayOfByte);
-      d = bqs.d;
+      localObject = finally;
+      throw ((Throwable)localObject);
     }
   }
   
-  private bsb d()
+  public final void a(brx parambrx)
   {
-    if (c == null) {
-      c = a.a();
-    }
-    return c;
-  }
-  
-  public final bqf a()
-  {
-    return d;
-  }
-  
-  public final void a(int paramInt) {}
-  
-  public final void a(bqf parambqf)
-  {
-    d = parambqf;
-  }
-  
-  public final void a(String paramString)
-  {
-    bsb localbsb = d();
-    if (localbsb != null) {
-      localbsb.a(paramString);
-    }
-  }
-  
-  public final void a(String paramString1, String paramString2)
-  {
-    bsb localbsb = d();
-    localbsb.c();
-    f = paramString1;
-    i = null;
-    paramString1 = h;
-    if (paramString2 != null) {
-      c = paramString2;
-    }
-    a.a(localbsb);
-  }
-  
-  public final boolean a(OutputStream paramOutputStream)
-  {
-    return b == paramOutputStream;
-  }
-  
-  public final bqf b()
-  {
-    return new bqn(this);
-  }
-  
-  public final void b(int paramInt)
-  {
-    bsb localbsb = c;
-    c = null;
-    if (localbsb != null) {
-      localbsb.d(paramInt);
-    }
-  }
-  
-  public final String c()
-  {
-    bsb localbsb = d();
-    String str = null;
-    if (localbsb != null) {
-      str = f;
-    }
-    return str;
-  }
-  
-  public final void close()
-  {
-    b.close();
-  }
-  
-  public final void flush()
-  {
-    b.flush();
-  }
-  
-  public final void write(int paramInt)
-  {
-    b.write(paramInt);
     try
     {
-      d.a(paramInt);
+      a = btz.a.a(parambrx);
+      if (!a.a())
+      {
+        int j = parambrx.b(kn, ko);
+        int i = j;
+        if (j == 0) {
+          i = parambrx.b(ln, lo);
+        }
+        bub localbub = new bub(i);
+        a += 1;
+        c = localbub;
+        parambrx = bua.a.a(parambrx, hn, ho);
+        c += 1;
+        b = parambrx;
+      }
       return;
     }
-    catch (ThreadDeath localThreadDeath)
+    finally {}
+  }
+  
+  public final void a(bua parambua)
+  {
+    try
     {
-      throw localThreadDeath;
+      b = parambua;
+      return;
     }
-    catch (Throwable localThrowable)
+    finally
     {
-      btd.a(localThrowable);
-      d = bqs.d;
+      parambua = finally;
+      throw parambua;
     }
   }
   
-  public final void write(byte[] paramArrayOfByte)
+  public final bub b()
   {
-    b.write(paramArrayOfByte);
-    if (paramArrayOfByte != null) {
-      a(paramArrayOfByte, 0, paramArrayOfByte.length);
+    try
+    {
+      bub localbub = c;
+      return localbub;
+    }
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
     }
   }
   
-  public final void write(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
+  public final boolean c()
   {
-    b.write(paramArrayOfByte, paramInt1, paramInt2);
-    if (paramArrayOfByte != null) {
-      a(paramArrayOfByte, paramInt1, paramInt2);
+    boolean bool = true;
+    try
+    {
+      if (a != null) {
+        bool = a.a();
+      }
+      return bool;
+    }
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
     }
   }
 }

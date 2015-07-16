@@ -1,16 +1,94 @@
-public final class aez
+import android.view.View;
+import android.widget.FrameLayout;
+import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics.ViewStatus;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.DSnapPanel;
+import com.snapchat.android.discover.model.DSnapPanel.MediaType;
+import com.snapchat.android.discover.ui.DSnapView;
+import java.util.List;
+
+public abstract class aez
+  extends aey
 {
-  public final String a;
-  public final String b;
-  public final String c;
-  public final boolean d;
+  protected View a;
+  protected FrameLayout b;
+  protected aey c;
+  private boolean d = false;
   
-  public aez(String paramString1, String paramString2, String paramString3, boolean paramBoolean)
+  aez(aey paramaey)
   {
-    a = paramString1;
-    b = paramString2;
-    c = paramString3;
-    d = paramBoolean;
+    c = paramaey;
+  }
+  
+  public aji a(View paramView, aeb paramaeb, @chc List<View> paramList)
+  {
+    return c.a(paramView, paramaeb, paramList);
+  }
+  
+  public final DiscoverUsageAnalytics.ViewStatus a(long paramLong)
+  {
+    return c.a(paramLong);
+  }
+  
+  public final void a(@chc afq paramafq)
+  {
+    c.a(paramafq);
+  }
+  
+  public final void a(DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
+  {
+    c.a(paramDSnapPage, paramDSnapPanel);
+  }
+  
+  public boolean a(DSnapView paramDSnapView, DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
+  {
+    return c.a(paramDSnapView, paramDSnapPage, paramDSnapPanel);
+  }
+  
+  public void c()
+  {
+    c.c();
+  }
+  
+  public final View d()
+  {
+    if (!d)
+    {
+      View localView = c.d();
+      b.addView(localView);
+      d = true;
+    }
+    return a;
+  }
+  
+  public final DSnapPanel.MediaType e()
+  {
+    return c.e();
+  }
+  
+  public final boolean i()
+  {
+    return c.i();
+  }
+  
+  public final long j()
+  {
+    return c.j();
+  }
+  
+  public final long k()
+  {
+    return c.k();
+  }
+  
+  public void m_()
+  {
+    c.m_();
+  }
+  
+  public void n_()
+  {
+    c.n_();
   }
 }
 

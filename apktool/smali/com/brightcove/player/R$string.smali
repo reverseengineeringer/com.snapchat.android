@@ -49,9 +49,9 @@
 
 .field public static final dialog_closed_captioning_options_title:I = 0x7f0c00fc
 
-.field public static final done:I = 0x7f0c0118
+.field public static final done:I = 0x7f0c0117
 
-.field public static final drop_shadow:I = 0x7f0c011c
+.field public static final drop_shadow:I = 0x7f0c011b
 
 .field public static final no_edge:I = 0x7f0c0183
 
@@ -61,7 +61,7 @@
 
 .field public static final raised:I = 0x7f0c01df
 
-.field public static final uniform:I = 0x7f0c02ca
+.field public static final uniform:I = 0x7f0c02c8
 
 
 # direct methods

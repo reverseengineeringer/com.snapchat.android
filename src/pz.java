@@ -1,12 +1,9 @@
-@tn
-public class pz
-  extends bgy
+public final class pz
+  implements pv
 {
-  public pz()
+  public final int a()
   {
-    c(String.valueOf(System.currentTimeMillis()));
-    e(os.b(a()));
-    g(ajx.l());
+    return 20000;
   }
 }
 

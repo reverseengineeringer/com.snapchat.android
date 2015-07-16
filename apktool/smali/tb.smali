@@ -1,138 +1,111 @@
-.class public final Ltb;
-.super Lth;
+.class public abstract Ltb;
+.super Ltg;
 .source "SourceFile"
+
+# interfaces
+.implements Lui$b;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Ltb$a;
+        "Ltg;",
+        "Lui$b",
+        "<",
+        "Lcom/snapchat/android/api2/cash/square/data/CashPayment;",
+        ">;"
     }
 .end annotation
 
 
-# instance fields
-.field private mConversation:Lcom/snapchat/android/model/chat/ChatConversation;
+# static fields
+.field private static final TAG:Ljava/lang/String; = "SquareCashPaymentTask"
 
-.field private mConversationId:Ljava/lang/String;
+
+# instance fields
+.field private final mCallback:Lta;
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/model/chat/ChatConversation;)V
+.method protected constructor <init>(Lta;)V
     .locals 1
-    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgb;
+    .param p1    # Lta;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 21
-    invoke-direct {p0}, Lth;-><init>()V
+    .line 20
+    invoke-direct {p0}, Ltg;-><init>()V
 
     .line 22
-    iput-object p1, p0, Ltb;->mConversation:Lcom/snapchat/android/model/chat/ChatConversation;
-
-    .line 23
-    iget-object v0, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
-
-    iput-object v0, p0, Ltb;->mConversationId:Ljava/lang/String;
+    iput-object p1, p0, Ltb;->mCallback:Lta;
 
     .line 24
+    const-class v0, Lcom/snapchat/android/api2/cash/square/data/CashPayment;
+
+    invoke-virtual {p0, v0, p0}, Ltb;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Luc;)V
-    .locals 4
-    .param p1    # Luc;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 3
 
     .prologue
-    .line 48
-    invoke-super {p0, p1}, Lth;->a(Luc;)V
+    .line 13
+    check-cast p1, Lcom/snapchat/android/api2/cash/square/data/CashPayment;
 
-    .line 50
-    invoke-virtual {p1}, Luc;->d()Z
+    const/4 v0, 0x2
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 51
-    invoke-static {}, Lakc;->b()Lakc;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ltb;->mConversationId:Ljava/lang/String;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lakc;->b(Ljava/lang/String;Z)V
-
-    .line 57
-    :goto_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v0
-
-    new-instance v1, Lben;
-
-    invoke-direct {v1}, Lben;-><init>()V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 58
-    return-void
-
-    .line 53
-    :cond_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
-
-    sget-object v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
-
-    const v3, 0x7f0c022b
-
-    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;I)V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 55
-    iget-object v0, p0, Ltb;->mConversation:Lcom/snapchat/android/model/chat/ChatConversation;
+    new-array v0, v0, [Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lcom/snapchat/android/model/chat/ChatConversation;->mBeingCleared:Z
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    iget v2, p2, Lus;->mResponseCode:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    iget v0, p2, Lus;->mResponseCode:I
+
+    const/16 v1, 0xc8
+
+    if-ne v0, v1, :cond_0
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Ltb;->mCallback:Lta;
+
+    invoke-interface {v0, p1}, Lta;->a(Lcom/snapchat/android/api2/cash/square/data/CashPayment;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ltb;->mCallback:Lta;
+
+    iget v1, p2, Lus;->mResponseCode:I
+
+    invoke-interface {v0, v1}, Lta;->a(I)V
 
     goto :goto_0
-.end method
-
-.method public final synthetic b()Ljava/lang/Object;
-    .locals 2
-
-    .prologue
-    .line 16
-    new-instance v0, Ltb$a;
-
-    iget-object v1, p0, Ltb;->mConversationId:Ljava/lang/String;
-
-    invoke-direct {v0, p0, v1}, Ltb$a;-><init>(Ltb;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method protected final d()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 28
-    const-string v0, "/loq/clear_conversation"
-
-    return-object v0
 .end method

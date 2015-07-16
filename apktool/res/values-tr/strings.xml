@@ -261,7 +261,6 @@ bas ve basılı tut."</string>
     <string name="discover_sharing_success">Snap gönderildi!</string>
     <string name="discover_sharing_unavailable">"%1$s bu Snap'in gönderilmesine izin vermiyor."</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g>" Discover'a göz atmak için buraya dokun!"</string>
     <string name="discover_unavailable">"Üzgünüz!
 
 Discover şu an kullanılamıyor."</string>
@@ -312,6 +311,7 @@ bölgenizde kullanılamamaktadır."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Şifrenizi mi unuttunuz?</a>" "</string>
     <string name="friend_suggest_hide">Gizle</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Yeni kişi</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Yeni katıldı</string>
     <string name="friends">Arkadaşlar</string>
     <string name="friends_context_block">Engelle</string>
@@ -621,7 +621,7 @@ emin misin?"</string>
     <string name="snap_delete_failure">Snap silinemedi.</string>
     <string name="snap_failed_to_post">1 Snap gönderilemedi.</string>
     <string name="snap_list_empty_list_msg">"Hiçbir Snap'iniz yok :("</string>
-    <string name="snap_tag_help_description">"Snapchatter'lar, kameralarını hayaletinize odaklayarak ve ekranlarına dokunarak seni ekleyebilirler!"</string>
+    <string name="snap_tag_help_description">"Snapchatter'lar kameralarını Snapkodunuza doğrultarak ve ekranlarına dokunarak sizi ekleyebilirler!"</string>
     <string name="snap_tag_no_connection">Bağlantı yok!</string>
     <string name="snap_to_add">Eklemek için Snap çek ya da ekran görüntüsü al</string>
     <string name="snapkidz_welcome">"Snapkidz'e hoş geldin!"</string>
@@ -657,8 +657,6 @@ emin misin?"</string>
     <string name="tap_to_view_edition">"Discover'da görmek için dokun"</string>
     <string name="tap_to_view_full_story">Hikayenin tümünü görmek için dokun</string>
     <string name="tap_to_view_more">Diğer kanalları keşfetmek için dokun</string>
-    <string name="tap_to_view_snaps">"Snap'leri görmek için dokun!"</string>
-    <string name="tap_to_view_stories">Hikayeleri görmek için dokun!</string>
     <string name="tap_to_view_video_in_discover">"Bu videoyu Discover'da görmek için dokun"</string>
     <string name="too_many_attempts">"Çok fazla deneme.
 "</string>
@@ -667,7 +665,7 @@ emin misin?"</string>
     <string name="tos_privacy_policy">Gizlilik Politikası</string>
     <string name="tos_terms">"%1$s ve %2$s değişti. Kabul Et'e dokunarak, değiştirilen Snapchat %3$s ve %4$s'nı kabul etmiş olursun."</string>
     <string name="tos_terms_of_use">Kullanım Koşulları</string>
-    <string name="turn_on_high_accuracy">Please enable Location Services with High Accuracy location mode (GPS) on your device.</string>
+    <string name="turn_on_high_accuracy">"Lütfen, cihazınızda Yüksek Doğruluk oranlı konumlandırma özelliğine sahip Konum Hizmetleri'ni (GPS) etkinleştirin."</string>
     <string name="two_fa_disabled_phone_verification_info">Oturum açma doğrulamasını kullanmadan önce, lütfen telefon numarasını doğrulayın.</string>
     <string name="two_fa_disabled_settings_help_verified">Eğer bu numara doğru değilse, <a href="">bunu değiştirebilirsiniz</a></string>
     <string name="two_fa_password_validation_explanation">Güvenliğiniz için, lütfen şifrenizi girin.</string>

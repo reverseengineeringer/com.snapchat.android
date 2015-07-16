@@ -1,35 +1,54 @@
-import android.os.Bundle;
+import java.util.HashMap;
+import java.util.Map;
 
-public abstract class ml
+public class ml
+  extends ht
 {
-  public abstract String a();
+  public String userId;
   
-  public abstract String b();
-  
-  public abstract Bundle c();
-  
-  public abstract String d();
+  public Map<String, Object> a()
+  {
+    HashMap localHashMap = new HashMap();
+    if (userId != null) {
+      localHashMap.put("user_id", userId);
+    }
+    localHashMap.putAll(super.a());
+    return localHashMap;
+  }
   
   public boolean equals(Object paramObject)
   {
-    if (this == paramObject) {
+    if (this == paramObject) {}
+    do
+    {
       return true;
-    }
-    if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+        return false;
+      }
+      if (!super.equals(paramObject)) {
+        return false;
+      }
+      paramObject = (ml)paramObject;
+      if (userId == null) {
+        break;
+      }
+    } while (userId.equals(userId));
+    for (;;)
+    {
       return false;
+      if (userId == null) {
+        break;
+      }
     }
-    paramObject = (ml)paramObject;
-    return b().equals(((ml)paramObject).b());
   }
   
   public int hashCode()
   {
-    return b().hashCode();
-  }
-  
-  public String toString()
-  {
-    return "AdPlacement:{" + b() + "}";
+    int j = super.hashCode();
+    if (userId != null) {}
+    for (int i = userId.hashCode();; i = 0) {
+      return i + j * 31;
+    }
   }
 }
 

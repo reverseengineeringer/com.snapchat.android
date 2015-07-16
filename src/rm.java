@@ -1,33 +1,10 @@
-import javax.inject.Provider;
+import com.snapchat.android.api2.cash.blockers.CardInputError;
 
-public final class rm
-  implements buj<rl>
+public abstract interface rm
 {
-  private final Provider<xr> mCashCardManagerProvider;
-  private final buj<qv> supertypeInjector;
+  public abstract void a();
   
-  static
-  {
-    if (!rm.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
-  }
-  
-  private rm(buj<qv> parambuj, Provider<xr> paramProvider)
-  {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mCashCardManagerProvider = paramProvider;
-  }
-  
-  public static buj<rl> a(buj<qv> parambuj, Provider<xr> paramProvider)
-  {
-    return new rm(parambuj, paramProvider);
-  }
+  public abstract void a(CardInputError paramCardInputError);
 }
 
 /* Location:

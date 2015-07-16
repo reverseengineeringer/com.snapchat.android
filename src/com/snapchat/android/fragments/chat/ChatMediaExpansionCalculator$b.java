@@ -1,16 +1,16 @@
 package com.snapchat.android.fragments.chat;
 
-import afr.c;
-import cgc;
+import agr.c;
+import chd;
 
 final class ChatMediaExpansionCalculator$b
 {
-  afr.c a;
-  afr.c b;
+  agr.c a;
+  agr.c b;
   float c;
   float d;
   
-  ChatMediaExpansionCalculator$b(@cgc afr.c paramc1, @cgc afr.c paramc2, float paramFloat1, float paramFloat2)
+  ChatMediaExpansionCalculator$b(@chd agr.c paramc1, @chd agr.c paramc2, float paramFloat1, float paramFloat2)
   {
     a = paramc1;
     b = paramc2;

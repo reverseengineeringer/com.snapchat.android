@@ -1,10 +1,14 @@
-import com.google.gson.reflect.TypeToken;
-import java.util.Map;
+import com.snapchat.android.model.chat.ChatConversation;
 
-public final class ayg$1
-  extends TypeToken<Map<ayh, String>>
+final class ayg$1
+  implements Runnable
 {
-  public ayg$1(ayg paramayg) {}
+  ayg$1(ChatConversation paramChatConversation) {}
+  
+  public final void run()
+  {
+    tt.a().a(val$conversation.mId, false);
+  }
 }
 
 /* Location:

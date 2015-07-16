@@ -18,8 +18,8 @@
 
 
 # instance fields
-.field public mClientCacheExpiration:Lcgs;
-    .annotation build Lcgc;
+.field public mClientCacheExpiration:Lcht;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -28,7 +28,7 @@
 .end field
 
 .field public mClientCacheTtlMinutes:Ljava/lang/Long;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -37,7 +37,7 @@
 .end field
 
 .field public mDynamicContent:Ljava/util/List;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -66,7 +66,7 @@
     .end annotation
 .end field
 
-.field public mGeofence:Lbhz;
+.field public mGeofence:Lbiz;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "geofence"
     .end annotation
@@ -112,7 +112,7 @@
 .end field
 
 .field public mSponsoredSlugImageUrl:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -121,7 +121,7 @@
 .end field
 
 .field public mSponsoredSlugPosition:Lcom/snapchat/android/model/server/GeofilterResponse$SponsoredSlugPosition;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -145,7 +145,7 @@
 # virtual methods
 .method public final a()Landroid/widget/ImageView$ScaleType;
     .locals 2
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
@@ -441,7 +441,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/model/server/GeofilterResponse;->mGeofence:Lbhz;
+    iget-object v1, p0, Lcom/snapchat/android/model/server/GeofilterResponse;->mGeofence:Lbiz;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -489,7 +489,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/model/server/GeofilterResponse;->mClientCacheExpiration:Lcgs;
+    iget-object v1, p0, Lcom/snapchat/android/model/server/GeofilterResponse;->mClientCacheExpiration:Lcht;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

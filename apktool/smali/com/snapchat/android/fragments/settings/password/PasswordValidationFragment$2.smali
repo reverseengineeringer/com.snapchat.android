@@ -51,7 +51,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/password/PasswordValidationFragment$2;->a:Lcom/snapchat/android/fragments/settings/password/PasswordValidationFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/password/PasswordValidationFragment;->c(Lcom/snapchat/android/fragments/settings/password/PasswordValidationFragment;)Laol;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/password/PasswordValidationFragment;->c(Lcom/snapchat/android/fragments/settings/password/PasswordValidationFragment;)Laph;
 
     move-result-object v1
 
@@ -75,7 +75,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Laol;->b(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3}, Laph;->b(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v1
 

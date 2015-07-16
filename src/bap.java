@@ -1,26 +1,33 @@
-import com.snapchat.android.camera.model.CameraModel.CameraType;
-import com.snapchat.android.util.eventbus.CameraDisplayState;
+import com.snapchat.android.util.debug.ReleaseManager;
+import javax.inject.Provider;
 
 public final class bap
+  implements bvp<bao>
 {
-  @cgc
-  public final CameraModel.CameraType cameraToResume;
-  public final CameraDisplayState displayState;
+  private final Provider<bah> crashSamplerProvider;
+  private final Provider<ReleaseManager> releaseManagerProvider;
   
-  public bap(@cgb CameraDisplayState paramCameraDisplayState)
+  static
   {
-    this(paramCameraDisplayState, null);
+    if (!bap.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  public bap(@cgb CameraDisplayState paramCameraDisplayState, @cgc CameraModel.CameraType paramCameraType)
+  private bap(Provider<bah> paramProvider, Provider<ReleaseManager> paramProvider1)
   {
-    displayState = ((CameraDisplayState)ck.a(paramCameraDisplayState));
-    cameraToResume = paramCameraType;
+    assert (paramProvider != null);
+    crashSamplerProvider = paramProvider;
+    assert (paramProvider1 != null);
+    releaseManagerProvider = paramProvider1;
   }
   
-  public final boolean a()
+  public static bvp<bao> a(Provider<bah> paramProvider, Provider<ReleaseManager> paramProvider1)
   {
-    return displayState != CameraDisplayState.CLOSE;
+    return new bap(paramProvider, paramProvider1);
   }
 }
 

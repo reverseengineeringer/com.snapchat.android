@@ -1,18 +1,10 @@
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+@Singleton
 public final class aas
-  extends zx
-{
-  private static final aas a = new aas();
-  
-  private aas()
-  {
-    super("MySnapImageFileTable", awq.MY_SNAP_IMAGE_CACHE);
-  }
-  
-  public static aas a()
-  {
-    return a;
-  }
-}
+  extends aap
+{}
 
 /* Location:
  * Qualified Name:     aas

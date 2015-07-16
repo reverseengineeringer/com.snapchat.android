@@ -12,7 +12,7 @@ class zzho$1
     synchronized (zzho.zza(zzzs))
     {
       zzho.zza(zzzs, zzzs.zzv(zznK));
-      zzho.zza(zzzs).notifyAll();
+      zzho.zza(zzzs);
       return;
     }
   }

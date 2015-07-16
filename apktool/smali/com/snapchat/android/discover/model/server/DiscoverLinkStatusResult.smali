@@ -14,11 +14,11 @@
 # instance fields
 .field public final mAdType:I
 
-.field public final mChannelListResponse:Lbjt;
+.field public final mChannelListResponse:Lbku;
 
 .field public final mDSnapId:Ljava/lang/String;
 
-.field public final mEditionChunkResponse:Lbjv;
+.field public final mEditionChunkResponse:Lbkw;
 
 .field public final mEditionId:Ljava/lang/String;
 
@@ -30,14 +30,14 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;JILbjt;Lbjv;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult$LinkStatus;JILbku;Lbkw;)V
     .locals 1
-    .param p8    # Lbjt;
-        .annotation build Lcgc;
+    .param p8    # Lbku;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .param p9    # Lbjv;
-        .annotation build Lcgc;
+    .param p9    # Lbkw;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -64,10 +64,10 @@
     iput p7, p0, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;->mAdType:I
 
     .line 50
-    iput-object p8, p0, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;->mChannelListResponse:Lbjt;
+    iput-object p8, p0, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;->mChannelListResponse:Lbku;
 
     .line 51
-    iput-object p9, p0, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;->mEditionChunkResponse:Lbjv;
+    iput-object p9, p0, Lcom/snapchat/android/discover/model/server/DiscoverLinkStatusResult;->mEditionChunkResponse:Lbkw;
 
     .line 52
     return-void

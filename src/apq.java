@@ -1,49 +1,29 @@
-import android.text.Editable;
 import android.view.View;
-import android.view.View.OnLongClickListener;
-import com.snapchat.android.ui.caption.FatCaptionEditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
-public final class apq
-  implements View.OnLongClickListener
+public class apq
 {
-  public final boolean onLongClick(View paramView)
+  final ImageView a;
+  final TextView b;
+  final ProgressBar c;
+  final String d;
+  
+  public apq(String paramString, View paramView)
   {
-    if ((paramView instanceof FatCaptionEditText))
-    {
-      paramView = (FatCaptionEditText)paramView;
-      if (y) {
-        break label21;
-      }
-    }
-    label21:
-    int i;
-    int k;
-    Editable localEditable;
-    do
-    {
-      return true;
-      i = paramView.getSelectionStart();
-      k = paramView.getSelectionEnd();
-      localEditable = paramView.getText();
-    } while ((i != k) || (i <= 0) || (Character.isWhitespace(localEditable.charAt(i - 1))));
-    int j;
-    for (;;)
-    {
-      j = k;
-      if (i <= 0) {
-        break;
-      }
-      j = k;
-      if (Character.isWhitespace(localEditable.charAt(i - 1))) {
-        break;
-      }
-      i -= 1;
-    }
-    while ((j < localEditable.length()) && (!Character.isWhitespace(localEditable.charAt(j)))) {
-      j += 1;
-    }
-    paramView.setSelection(i, j);
-    return true;
+    d = paramString;
+    a = ((ImageView)paramView.findViewById(2131362408));
+    b = ((TextView)paramView.findViewById(2131362410));
+    c = ((ProgressBar)paramView.findViewById(2131362409));
+  }
+  
+  protected apq(String paramString, ImageView paramImageView, TextView paramTextView, ProgressBar paramProgressBar)
+  {
+    d = paramString;
+    a = paramImageView;
+    b = paramTextView;
+    c = paramProgressBar;
   }
 }
 

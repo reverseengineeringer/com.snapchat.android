@@ -15,11 +15,11 @@
 
 
 # virtual methods
-.method public abstract c(Laim;)V
+.method public abstract c(Laji;)V
 .end method
 
-.method public abstract d(Laim;)V
+.method public abstract d(Laji;)V
 .end method
 
-.method public abstract e(Laim;)V
+.method public abstract e(Laji;)V
 .end method

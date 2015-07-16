@@ -1,5 +1,5 @@
-.class abstract Lcq;
-.super Ldx;
+.class public final Lcq;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -7,190 +7,66 @@
 .annotation build Lcd;
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "<E:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ldx",
-        "<TE;>;"
+        Lcq$a;,
+        Lcq$b;
     }
 .end annotation
 
 
-# instance fields
-.field private final a:I
-
-.field private b:I
+# static fields
+.field private static final a:Lck;
 
 
 # direct methods
-.method protected constructor <init>(II)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .prologue
-    .line 68
-    invoke-direct {p0}, Ldx;-><init>()V
+    .line 346
+    new-instance v0, Lck;
 
-    .line 69
-    invoke-static {p2, p1}, Lck;->b(II)I
+    const-string v1, ","
 
-    .line 70
-    iput p1, p0, Lcq;->a:I
+    invoke-direct {v0, v1}, Lck;-><init>(Ljava/lang/String;)V
 
-    .line 71
-    iput p2, p0, Lcq;->b:I
+    sput-object v0, Lcq;->a:Lck;
 
-    .line 72
     return-void
 .end method
 
-
-# virtual methods
-.method protected abstract a(I)Ljava/lang/Object;
+.method public static a(Ljava/lang/Object;)Lcp;
+    .locals 2
+    .param p0    # Ljava/lang/Object;
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)TE;"
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)",
+            "Lcp",
+            "<TT;>;"
         }
     .end annotation
-.end method
-
-.method public final hasNext()Z
-    .locals 2
 
     .prologue
-    .line 76
-    iget v0, p0, Lcq;->b:I
+    .line 179
+    if-nez p0, :cond_0
 
-    iget v1, p0, Lcq;->a:I
-
-    if-ge v0, v1, :cond_0
-
-    const/4 v0, 0x1
+    sget-object v0, Lcq$b;->c:Lcq$b;
 
     :goto_0
-    return v0
+    return-object v0
 
     :cond_0
-    const/4 v0, 0x0
+    new-instance v0, Lcq$a;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcq$a;-><init>(Ljava/lang/Object;B)V
 
     goto :goto_0
-.end method
-
-.method public final hasPrevious()Z
-    .locals 1
-
-    .prologue
-    .line 94
-    iget v0, p0, Lcq;->b:I
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TE;"
-        }
-    .end annotation
-
-    .prologue
-    .line 81
-    invoke-virtual {p0}, Lcq;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 82
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    .line 84
-    :cond_0
-    iget v0, p0, Lcq;->b:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lcq;->b:I
-
-    invoke-virtual {p0, v0}, Lcq;->a(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final nextIndex()I
-    .locals 1
-
-    .prologue
-    .line 89
-    iget v0, p0, Lcq;->b:I
-
-    return v0
-.end method
-
-.method public final previous()Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TE;"
-        }
-    .end annotation
-
-    .prologue
-    .line 99
-    invoke-virtual {p0}, Lcq;->hasPrevious()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 100
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    .line 102
-    :cond_0
-    iget v0, p0, Lcq;->b:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lcq;->b:I
-
-    invoke-virtual {p0, v0}, Lcq;->a(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final previousIndex()I
-    .locals 1
-
-    .prologue
-    .line 107
-    iget v0, p0, Lcq;->b:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    return v0
 .end method

@@ -1,30 +1,29 @@
-import android.view.View;
+import android.view.MotionEvent;
+import com.snapchat.android.ui.snapeditormotion.SwipeHandlerType;
 
 public final class asa
-  extends asc
+  implements arx
 {
-  private final aqv b;
-  
-  public asa(aqv paramaqv)
+  public final SwipeHandlerType a(aqd paramaqd, ase paramase, int paramInt)
   {
-    b = paramaqv;
+    paramase.a(paramInt);
+    return null;
   }
   
-  public final String a()
+  public final SwipeHandlerType a(aqd paramaqd, ase paramase, int paramInt1, int paramInt2)
   {
-    return "Time";
+    paramaqd.a(false, c);
+    return null;
   }
   
-  public final View d()
+  public final SwipeHandlerType a(aqd paramaqd, ase paramase, MotionEvent paramMotionEvent)
   {
-    return b.b;
-  }
-  
-  public final void e()
-  {
-    aqv localaqv = b;
-    a.a(2130968633, b);
-    b = null;
+    if ((f == 0) || (paramase.a()))
+    {
+      paramaqd.e();
+      return SwipeHandlerType.NO_SWIPE_STARTED;
+    }
+    return null;
   }
 }
 

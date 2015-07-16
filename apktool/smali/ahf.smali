@@ -1,206 +1,309 @@
 .class public final Lahf;
-.super Ljava/lang/Object;
+.super Lbge;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbge",
+        "<",
+        "Lahh;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lahh;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final b:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/model/Friend;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
-.method public static a(Lcgg;Ljava/util/Locale;Z)Ljava/lang/String;
-    .locals 1
-    .param p0    # Lcgg;
-        .annotation build Lcgb;
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;Lban;Lbge$a;)V
+    .locals 0
+    .param p1    # Ljava/util/List;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p1    # Ljava/util/Locale;
-        .annotation build Lcgc;
+    .param p2    # Ljava/util/List;
+        .annotation build Lchc;
         .end annotation
     .end param
+    .param p3    # Lban;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Lbge$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lahh;",
+            ">;",
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/model/Friend;",
+            ">;",
+            "Lban;",
+            "Lbge$a",
+            "<",
+            "Lahh;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 33
-    if-nez p1, :cond_0
+    .line 29
+    invoke-direct {p0, p3, p4}, Lbge;-><init>(Lban;Lbge$a;)V
 
-    sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
+    .line 30
+    iput-object p1, p0, Lahf;->a:Ljava/util/List;
 
-    .line 35
-    :cond_0
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    .line 31
+    iput-object p2, p0, Lahf;->b:Ljava/util/List;
 
-    invoke-virtual {p1, v0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 36
-    invoke-static {p0, p2}, Lahf;->a(Lcgg;Z)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 46
-    :goto_0
-    return-object v0
-
-    .line 39
-    :cond_1
-    :try_start_0
-    invoke-virtual {p1}, Ljava/util/Locale;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/snapchat/android/i18n/LocalePatterns;->valueOf(Ljava/lang/String;)Lcom/snapchat/android/i18n/LocalePatterns;
-
-    move-result-object v0
-
-    .line 40
-    if-eqz p2, :cond_2
-
-    invoke-virtual {v0}, Lcom/snapchat/android/i18n/LocalePatterns;->getMonthDayYearPattern()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 41
-    :goto_1
-    invoke-static {v0}, Lcjv;->a(Ljava/lang/String;)Lcjw;
-
-    move-result-object v0
-
-    .line 42
-    invoke-virtual {v0, p0}, Lcjw;->a(Lcgz;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 40
-    :cond_2
-    invoke-virtual {v0}, Lcom/snapchat/android/i18n/LocalePatterns;->getMonthDayPattern()Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    goto :goto_1
-
-    .line 46
-    :catch_0
-    move-exception v0
-
-    invoke-static {p0, p2}, Lahf;->a(Lcgg;Z)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
+    .line 32
+    return-void
 .end method
 
-.method private static a(Lcgg;Z)Ljava/lang/String;
-    .locals 3
-    .param p0    # Lcgg;
-        .annotation build Lcgb;
+.method private static a(Lcom/snapchat/android/model/Friend;Ljava/lang/String;)Z
+    .locals 4
+    .param p0    # Lcom/snapchat/android/model/Friend;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 71
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 65
+    iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsBlocked:Z
 
-    .line 72
-    new-instance v0, Lcgg$a;
+    if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lchg;->b:Lcgf;
+    move v0, v1
 
-    invoke-virtual {v2}, Lcgf;->C()Lcgh;
+    .line 81
+    :goto_0
+    return v0
+
+    .line 67
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 68
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v0, p0, v2}, Lcgg$a;-><init>(Lcgg;Lcgh;)V
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    .line 70
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->a()Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcgg$a;->a(Ljava/util/Locale;)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v0
+    .line 71
+    if-eqz v2, :cond_1
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 72
+    const-string v3, " "
 
-    .line 73
-    const-string v0, " "
+    invoke-virtual {v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    .line 74
-    invoke-virtual {p0}, Lcgg;->g()I
+    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result v0
+    move-result-object v2
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 75
-    invoke-virtual {p0}, Lcgg;->g()I
-
-    move-result v0
-
-    const/16 v2, 0x14
-
-    if-ge v0, v2, :cond_1
-
-    :goto_0
-    packed-switch v0, :pswitch_data_0
-
-    const-string v0, "th"
-
-    :goto_1
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 77
-    if-eqz p1, :cond_0
-
-    .line 78
-    const-string v0, ", "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 79
-    invoke-virtual {p0}, Lcgg;->f()I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 81
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    invoke-interface {v0, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 75
     :cond_1
-    rem-int/lit8 v0, v0, 0xa
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_2
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 76
+    invoke-static {v0, p1}, Lavg;->a(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 77
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    :pswitch_0
-    const-string v0, "st"
+    :cond_3
+    move v0, v1
+
+    .line 81
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method protected final a(Ljava/lang/String;)Ljava/util/List;
+    .locals 5
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .annotation build Lchd;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List",
+            "<",
+            "Lahh;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 37
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 39
+    iget-object v0, p0, Lahf;->a:Ljava/util/List;
+
+    .line 61
+    :goto_0
+    return-object v0
+
+    .line 42
+    :cond_0
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 43
+    const/4 v0, 0x0
+
+    .line 45
+    iget-object v1, p0, Lahf;->b:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v1, v0
+
+    :cond_1
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/model/Friend;
+
+    .line 46
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4, p1}, Lavg;->c(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    .line 47
+    const/4 v1, 0x1
+
+    .line 50
+    :cond_2
+    invoke-static {v0, p1}, Lahf;->a(Lcom/snapchat/android/model/Friend;Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    .line 51
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    :pswitch_1
-    const-string v0, "nd"
+    .line 55
+    :cond_3
+    if-nez v1, :cond_4
 
-    goto :goto_1
+    .line 56
+    new-instance v0, Lcom/snapchat/android/model/Friend;
 
-    :pswitch_2
-    const-string v0, "rd"
+    invoke-direct {v0, p1}, Lcom/snapchat/android/model/Friend;-><init>(Ljava/lang/String;)V
 
-    goto :goto_1
+    .line 57
+    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestState;->PENDING:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    iput-object v1, v0, Lcom/snapchat/android/model/Friend;->mSuggestionState:Lcom/snapchat/android/model/Friend$SuggestState;
+
+    .line 58
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_4
+    move-object v0, v2
+
+    .line 61
+    goto :goto_0
 .end method

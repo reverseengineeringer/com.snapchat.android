@@ -2,12 +2,12 @@ package com.snapchat.android.fragments.settings.twofa;
 
 import android.content.Context;
 import android.widget.CheckBox;
-import aol;
-import aqb;
+import aph;
+import ara;
 import java.util.Set;
 
 final class TwoFactorSettingsEnabledFragment$5$1
-  extends aqb
+  extends ara
 {
   TwoFactorSettingsEnabledFragment$5$1(TwoFactorSettingsEnabledFragment.5 param5, Context paramContext, String paramString1, String paramString2, String paramString3)
   {

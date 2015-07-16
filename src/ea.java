@@ -1,222 +1,123 @@
-import java.io.IOException;
-import java.math.RoundingMode;
-import java.util.Arrays;
+import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
-@cc
 @cd
-public abstract class ea
+final class ea<K, V>
+  extends dm<K, V>
 {
-  private static final ea a = new ea.b("base64()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", Character.valueOf('='));
-  private static final ea b = new ea.b("base64Url()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_", Character.valueOf('='));
-  private static final ea c = new ea.b("base32()", "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567", Character.valueOf('='));
-  private static final ea d = new ea.b("base32Hex()", "0123456789ABCDEFGHIJKLMNOPQRSTUV", Character.valueOf('='));
-  private static final ea e = new ea.b("base16()", "0123456789ABCDEF", null);
+  private final transient dn<K, V>[] a = new dn[2];
+  private final transient dn<K, V>[] b;
+  private final transient int c;
   
-  public static ea a()
+  ea(dn.a<?, ?>... paramVarArgs)
   {
-    return e;
+    this(paramVarArgs, (byte)0);
   }
   
-  private String a(byte[] paramArrayOfByte, int paramInt)
+  private ea(dn.a<?, ?>[] paramArrayOfa, byte paramByte)
   {
-    int i = 0;
-    ck.a(paramArrayOfByte);
-    ck.a(0, paramInt + 0, paramArrayOfByte.length);
-    ec.1 local1 = new ec.1(new StringBuilder(a(paramInt)));
-    ec.a locala = a(local1);
+    paramByte = dh.a();
+    b = new dn[paramByte];
+    c = (paramByte - 1);
+    paramByte = 0;
+    while (paramByte < 2)
+    {
+      Object localObject1 = paramArrayOfa[paramByte];
+      Object localObject3 = ((dn.a)localObject1).getKey();
+      int i = dh.a(localObject3.hashCode()) & c;
+      Object localObject2 = b[i];
+      if (localObject2 == null)
+      {
+        b[i] = localObject1;
+        a[paramByte] = localObject1;
+      }
+      for (;;)
+      {
+        if (localObject2 == null) {
+          break label243;
+        }
+        if (!localObject3.equals(((dn)localObject2).getKey())) {}
+        for (i = 1;; i = 0)
+        {
+          if (i != 0) {
+            break label233;
+          }
+          paramArrayOfa = String.valueOf(String.valueOf("key"));
+          localObject1 = String.valueOf(String.valueOf(localObject1));
+          localObject2 = String.valueOf(String.valueOf(localObject2));
+          throw new IllegalArgumentException(paramArrayOfa.length() + 34 + ((String)localObject1).length() + ((String)localObject2).length() + "Multiple entries with same " + paramArrayOfa + ": " + (String)localObject1 + " and " + (String)localObject2);
+          localObject1 = new ea.b((dn)localObject1, (dn)localObject2);
+          break;
+        }
+        label233:
+        localObject2 = ((dn)localObject2).a();
+      }
+      label243:
+      paramByte += 1;
+    }
+  }
+  
+  final dr<Map.Entry<K, V>> b()
+  {
+    return new ea.a((byte)0);
+  }
+  
+  public final V get(@Nullable Object paramObject)
+  {
+    if (paramObject == null) {}
     for (;;)
     {
-      if (i < paramInt) {}
-      try
-      {
-        locala.a(paramArrayOfByte[(i + 0)]);
-        i += 1;
-      }
-      catch (IOException paramArrayOfByte)
-      {
-        throw new AssertionError("impossible");
-      }
-    }
-    locala.a();
-    return local1.toString();
-  }
-  
-  abstract int a(int paramInt);
-  
-  abstract ec.a a(ec.b paramb);
-  
-  public final String a(byte[] paramArrayOfByte)
-  {
-    return a((byte[])ck.a(paramArrayOfByte), paramArrayOfByte.length);
-  }
-  
-  static final class a
-    extends cg
-  {
-    final char[] q;
-    final int r;
-    final int s;
-    final int t;
-    final int u;
-    private final String v;
-    private final byte[] w;
-    private final boolean[] x;
-    
-    a(String paramString, char[] paramArrayOfChar)
-    {
-      v = ((String)ck.a(paramString));
-      q = ((char[])ck.a(paramArrayOfChar));
-      for (;;)
-      {
-        try
-        {
-          s = ed.a(paramArrayOfChar.length, RoundingMode.UNNECESSARY);
-          i = Math.min(8, Integer.lowestOneBit(s));
-          t = (8 / i);
-          u = (s / i);
-          r = (paramArrayOfChar.length - 1);
-          paramString = new byte[''];
-          Arrays.fill(paramString, (byte)-1);
-          i = 0;
-          if (i >= paramArrayOfChar.length) {
-            break;
-          }
-          char c = paramArrayOfChar[i];
-          ck.a(cg.b.a(c), "Non-ASCII character: %s", new Object[] { Character.valueOf(c) });
-          boolean bool;
-          if (paramString[c] == -1)
-          {
-            bool = true;
-            ck.a(bool, "Duplicate character: %s", new Object[] { Character.valueOf(c) });
-            paramString[c] = ((byte)i);
-            i += 1;
-          }
-          else
-          {
-            bool = false;
-          }
-        }
-        catch (ArithmeticException paramString)
-        {
-          i = paramArrayOfChar.length;
-          throw new IllegalArgumentException(35 + "Illegal alphabet length " + i, paramString);
+      return null;
+      int i = dh.a(paramObject.hashCode());
+      int j = c;
+      for (dn localdn = b[(i & j)]; localdn != null; localdn = localdn.a()) {
+        if (paramObject.equals(localdn.getKey())) {
+          return (V)localdn.getValue();
         }
       }
-      w = paramString;
-      paramString = new boolean[t];
-      int i = j;
-      while (i < u)
-      {
-        paramString[ed.a(i * 8, s, RoundingMode.CEILING)] = 1;
-        i += 1;
-      }
-      x = paramString;
-    }
-    
-    public final boolean a(char paramChar)
-    {
-      return (cg.b.a(paramChar)) && (w[paramChar] != -1);
-    }
-    
-    public final String toString()
-    {
-      return v;
     }
   }
   
-  static final class b
-    extends ea
+  public final int size()
   {
-    private final ea.a a;
-    @Nullable
-    private final Character b;
+    return a.length;
+  }
+  
+  final class a
+    extends do<K, V>
+  {
+    private a() {}
     
-    private b(ea.a parama, @Nullable Character paramCharacter)
+    public final ef<Map.Entry<K, V>> a()
     {
-      a = ((ea.a)ck.a(parama));
-      if ((paramCharacter == null) || (!parama.a(paramCharacter.charValue()))) {}
-      for (boolean bool = true;; bool = false)
-      {
-        ck.a(bool, "Padding character %s was already in alphabet", new Object[] { paramCharacter });
-        b = paramCharacter;
-        return;
-      }
+      return b().a();
     }
     
-    b(String paramString1, String paramString2, @Nullable Character paramCharacter)
+    final dl<Map.Entry<K, V>> d()
     {
-      this(new ea.a(paramString1, paramString2.toCharArray()), paramCharacter);
+      return new dy(this, ea.a(ea.this));
     }
     
-    final int a(int paramInt)
+    final dm<K, V> e()
     {
-      return a.t * ed.a(paramInt, a.u, RoundingMode.CEILING);
+      return ea.this;
+    }
+  }
+  
+  static final class b<K, V>
+    extends dn<K, V>
+  {
+    private final dn<K, V> c;
+    
+    b(dn<K, V> paramdn1, dn<K, V> paramdn2)
+    {
+      super();
+      c = paramdn2;
     }
     
-    final ec.a a(final ec.b paramb)
+    final dn<K, V> a()
     {
-      ck.a(paramb);
-      new ec.a()
-      {
-        int a = 0;
-        int b = 0;
-        int c = 0;
-        
-        public final void a()
-        {
-          if (b > 0)
-          {
-            int i = a;
-            int j = as;
-            int k = b;
-            int m = ar;
-            paramb.a(aq[(i << j - k & m)]);
-            c += 1;
-            if (ea.b.b(ea.b.this) != null) {
-              while (c % at != 0)
-              {
-                paramb.a(ea.b.b(ea.b.this).charValue());
-                c += 1;
-              }
-            }
-          }
-        }
-        
-        public final void a(byte paramAnonymousByte)
-        {
-          a <<= 8;
-          a |= paramAnonymousByte & 0xFF;
-          for (b += 8; b >= as; b -= as)
-          {
-            paramAnonymousByte = a;
-            int i = b;
-            int j = as;
-            int k = ar;
-            paramb.a(aq[(paramAnonymousByte >> i - j & k)]);
-            c += 1;
-          }
-        }
-      };
-    }
-    
-    public final String toString()
-    {
-      StringBuilder localStringBuilder = new StringBuilder("BaseEncoding.");
-      localStringBuilder.append(a.toString());
-      if (8 % a.s != 0)
-      {
-        if (b != null) {
-          break label54;
-        }
-        localStringBuilder.append(".omitPadding()");
-      }
-      for (;;)
-      {
-        return localStringBuilder.toString();
-        label54:
-        localStringBuilder.append(".withPadChar(").append(b).append(')');
-      }
+      return c;
     }
   }
 }

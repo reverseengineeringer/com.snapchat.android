@@ -3,14 +3,18 @@
 .source "SourceFile"
 
 
+# static fields
+.field private static final INSTANCE:Lnm;
+
+
 # instance fields
-.field public final mSendingChatTimers:Ljava/util/HashMap;
+.field public mStreams:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/HashMap",
+            "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
-            "Lcom/snapchat/android/analytics/framework/EasyMetric;",
+            "Lni;",
             ">;"
         }
     .end annotation
@@ -18,301 +22,135 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 13
+    new-instance v0, Lnm;
+
+    invoke-direct {v0}, Lnm;-><init>()V
+
+    sput-object v0, Lnm;->INSTANCE:Lnm;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 1
 
     .prologue
     .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
-    new-instance v0, Ljava/util/HashMap;
+    .line 11
+    invoke-static {}, Ldu;->a()Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    move-result-object v0
 
-    iput-object v0, p0, Lnm;->mSendingChatTimers:Ljava/util/HashMap;
+    iput-object v0, p0, Lnm;->mStreams:Ljava/util/Map;
 
+    .line 16
     return-void
+.end method
+
+.method public static a()Lnm;
+    .locals 1
+
+    .prologue
+    .line 22
+    sget-object v0, Lnm;->INSTANCE:Lnm;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lbhf;)V
-    .locals 6
-    .param p1    # Lbhf;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a(Lnn;Lnl;)Lni;
+    .locals 5
 
     .prologue
-    .line 56
-    iget-object v0, p0, Lnm;->mSendingChatTimers:Ljava/util/HashMap;
-
-    invoke-virtual {p1}, Lbhf;->c()Ljava/lang/String;
+    .line 26
+    invoke-virtual {p1}, Lnn;->a()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 28
+    iget-object v0, p0, Lnm;->mStreams:Ljava/util/Map;
 
-    move-result-object v0
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    check-cast v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
+    move-result v0
 
-    .line 58
     if-nez v0, :cond_0
 
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
+    .line 29
+    new-instance v0, Lni;
 
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>()V
+    invoke-direct {v0, p1, p2}, Lni;-><init>(Lnn;Lnl;)V
 
-    .line 59
+    .line 34
+    :goto_0
+    iget-object v2, p0, Lnm;->mStreams:Ljava/util/Map;
+
+    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 35
+    return-object v0
+
+    .line 31
     :cond_0
-    const-string v1, "CHAT_SENT"
+    iget-object v0, p0, Lnm;->mStreams:Ljava/util/Map;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    const-string v2, "success"
-
-    const/4 v3, 0x1
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
-
-    .line 60
-    const-string v1, "CHAT_SENT_SUCCESS"
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
-
-    .line 61
-    invoke-virtual {p1}, Lbhf;->b()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 62
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "CHAT_"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Lbhf;->a()Lbij;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lbij;->c()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "_SENT_SUCCESS"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    check-cast v0, Lni;
 
-    .line 64
+    .line 32
+    iget-object v2, v0, Lni;->mMutex:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    const/4 v3, 0x0
+
+    :try_start_0
+    iput-boolean v3, v0, Lni;->mInPlayback:Z
+
+    const/4 v3, 0x0
+
+    iput-boolean v3, v0, Lni;->mInLiveSection:Z
+
+    iput-object p1, v0, Lni;->mStoryAdStreamRequestInfo:Lnn;
+
+    iget v3, p1, Lnn;->mFirstPosition:I
+
+    iget v4, v0, Lni;->mNextUnviewedPosition:I
+
+    if-le v3, v4, :cond_1
+
+    iput v3, v0, Lni;->mNextUnviewedPosition:I
+
     :cond_1
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iput v3, v0, Lni;->mNextPosition:I
 
-    const-string v1, "CHAT_SEND_SUCCESS_AFTER_DURATION"
+    iput-object p2, v0, Lni;->mStoryAdStreamListener:Lnl;
 
-    invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
+    const/4 v3, 0x0
 
-    const-string v1, "time"
+    iput v3, v0, Lni;->mTimeBetweenRetriesMilliSeconds:I
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    monitor-exit v2
 
-    move-result-wide v2
+    goto :goto_0
 
-    invoke-virtual {p1}, Lbhf;->f()Ljava/lang/Long;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v4
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
-
-    .line 67
-    return-void
-.end method
-
-.method public final b(Lbhf;)V
-    .locals 7
-    .param p1    # Lbhf;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 70
-    iget-object v0, p0, Lnm;->mSendingChatTimers:Ljava/util/HashMap;
-
-    invoke-virtual {p1}, Lbhf;->c()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    .line 72
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>()V
-
-    .line 73
-    :cond_0
-    const-string v1, "CHAT_SENT"
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    const-string v2, "success"
-
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
-
-    .line 74
-    const-string v1, "CHAT_SENT_FAILED"
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
-
-    .line 75
-    invoke-virtual {p1}, Lbhf;->b()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 76
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "CHAT_"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Lbhf;->a()Lbij;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lbij;->c()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "_SENT_FAILED"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
-
-    .line 78
-    :cond_1
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    const-string v1, "CHAT_SEND_FAILED_AFTER_DURATION"
-
-    invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
-
-    const-string v1, "time"
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Lbhf;->f()Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v6}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
-
-    .line 81
-    return-void
+    throw v0
 .end method

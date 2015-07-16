@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 805
+    .line 803
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$6;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$6;->a:Lcom/snapchat/android/model/StoryGroup;
@@ -44,7 +44,7 @@
     .locals 2
 
     .prologue
-    .line 813
+    .line 811
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$6;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->n(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Landroid/widget/ImageView;
@@ -55,14 +55,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 814
+    .line 812
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$6;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lcom/snapchat/android/fragments/stories/StoriesFragment;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 815
+    .line 813
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .locals 0
 
     .prologue
-    .line 819
+    .line 817
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .locals 2
 
     .prologue
-    .line 808
+    .line 806
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$6;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$6;->a:Lcom/snapchat/android/model/StoryGroup;
@@ -89,6 +89,6 @@
 
     invoke-static {v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->a(Lcom/snapchat/android/fragments/stories/StoriesFragment;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 809
+    .line 807
     return-void
 .end method

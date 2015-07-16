@@ -2,85 +2,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class hr
-  extends ls
+  extends ml
 {
-  public Long camera;
-  public Long caption;
-  public Boolean drawing;
-  private final String eventName = "GEOFILTER_STORY_SNAP_POST";
-  public String filterGeofilterId;
-  public Long filterIndexCount;
-  public Long filterIndexPos;
-  public hm filterInfo;
-  private String filterSponsor;
-  public ho filterVisual;
-  public Boolean flash;
-  public String geoFence;
-  public hy mediaType;
-  public Long recipientCount;
-  public Double snapTimeSec;
-  public lc source;
-  public lr storyType;
-  public Double viewTimeSec;
-  public Boolean withGallery;
+  public String editionId;
+  private final String eventName = "DISCOVER_SPLASH_SCREENSHOT";
+  private ih mediaType;
+  public String publisherId;
+  public Long snapIndexCount;
+  public Long snapIndexPos;
+  public lv source;
+  public String splashId;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "GEOFILTER_STORY_SNAP_POST");
-    if (camera != null) {
-      localHashMap.put("camera", camera);
-    }
-    if (caption != null) {
-      localHashMap.put("caption", caption);
-    }
-    if (drawing != null) {
-      localHashMap.put("drawing", drawing);
-    }
-    if (filterGeofilterId != null) {
-      localHashMap.put("filter_geofilter_id", filterGeofilterId);
-    }
-    if (filterIndexCount != null) {
-      localHashMap.put("filter_index_count", filterIndexCount);
-    }
-    if (filterIndexPos != null) {
-      localHashMap.put("filter_index_pos", filterIndexPos);
-    }
-    if (filterInfo != null) {
-      localHashMap.put("filter_info", filterInfo);
-    }
-    if (filterSponsor != null) {
-      localHashMap.put("filter_sponsor", filterSponsor);
-    }
-    if (filterVisual != null) {
-      localHashMap.put("filter_visual", filterVisual);
-    }
-    if (flash != null) {
-      localHashMap.put("flash", flash);
-    }
-    if (geoFence != null) {
-      localHashMap.put("geo_fence", geoFence);
+    localHashMap.put("event_name", "DISCOVER_SPLASH_SCREENSHOT");
+    if (editionId != null) {
+      localHashMap.put("edition_id", editionId);
     }
     if (mediaType != null) {
       localHashMap.put("media_type", mediaType);
     }
-    if (recipientCount != null) {
-      localHashMap.put("recipient_count", recipientCount);
+    if (publisherId != null) {
+      localHashMap.put("publisher_id", publisherId);
     }
-    if (snapTimeSec != null) {
-      localHashMap.put("snap_time_sec", snapTimeSec);
+    if (snapIndexCount != null) {
+      localHashMap.put("snap_index_count", snapIndexCount);
+    }
+    if (snapIndexPos != null) {
+      localHashMap.put("snap_index_pos", snapIndexPos);
     }
     if (source != null) {
       localHashMap.put("source", source);
     }
-    if (storyType != null) {
-      localHashMap.put("story_type", storyType);
-    }
-    if (viewTimeSec != null) {
-      localHashMap.put("view_time_sec", viewTimeSec);
-    }
-    if (withGallery != null) {
-      localHashMap.put("with_gallery", withGallery);
+    if (splashId != null) {
+      localHashMap.put("splash_id", splashId);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -99,102 +55,12 @@ public final class hr
         return false;
       }
       paramObject = (hr)paramObject;
-      if (camera != null)
+      if (editionId != null)
       {
-        if (camera.equals(camera)) {}
+        if (editionId.equals(editionId)) {}
       }
       else {
-        while (camera != null) {
-          return false;
-        }
-      }
-      if (caption != null)
-      {
-        if (caption.equals(caption)) {}
-      }
-      else {
-        while (caption != null) {
-          return false;
-        }
-      }
-      if (drawing != null)
-      {
-        if (drawing.equals(drawing)) {}
-      }
-      else {
-        while (drawing != null) {
-          return false;
-        }
-      }
-      if (filterGeofilterId != null)
-      {
-        if (filterGeofilterId.equals(filterGeofilterId)) {}
-      }
-      else {
-        while (filterGeofilterId != null) {
-          return false;
-        }
-      }
-      if (filterIndexCount != null)
-      {
-        if (filterIndexCount.equals(filterIndexCount)) {}
-      }
-      else {
-        while (filterIndexCount != null) {
-          return false;
-        }
-      }
-      if (filterIndexPos != null)
-      {
-        if (filterIndexPos.equals(filterIndexPos)) {}
-      }
-      else {
-        while (filterIndexPos != null) {
-          return false;
-        }
-      }
-      if (filterInfo != null)
-      {
-        if (filterInfo.equals(filterInfo)) {}
-      }
-      else {
-        while (filterInfo != null) {
-          return false;
-        }
-      }
-      if (filterSponsor != null)
-      {
-        if (filterSponsor.equals(filterSponsor)) {}
-      }
-      else {
-        while (filterSponsor != null) {
-          return false;
-        }
-      }
-      if (filterVisual != null)
-      {
-        if (filterVisual.equals(filterVisual)) {}
-      }
-      else {
-        while (filterVisual != null) {
-          return false;
-        }
-      }
-      if (flash != null)
-      {
-        if (flash.equals(flash)) {}
-      }
-      else {
-        while (flash != null) {
-          return false;
-        }
-      }
-      if (geoFence != null)
-      {
-        if (geoFence.equals(geoFence)) {}
-      }
-      else {
-        while (geoFence != null) {
+        while (editionId != null) {
           return false;
         }
       }
@@ -207,21 +73,30 @@ public final class hr
           return false;
         }
       }
-      if (recipientCount != null)
+      if (publisherId != null)
       {
-        if (recipientCount.equals(recipientCount)) {}
+        if (publisherId.equals(publisherId)) {}
       }
       else {
-        while (recipientCount != null) {
+        while (publisherId != null) {
           return false;
         }
       }
-      if (snapTimeSec != null)
+      if (snapIndexCount != null)
       {
-        if (snapTimeSec.equals(snapTimeSec)) {}
+        if (snapIndexCount.equals(snapIndexCount)) {}
       }
       else {
-        while (snapTimeSec != null) {
+        while (snapIndexCount != null) {
+          return false;
+        }
+      }
+      if (snapIndexPos != null)
+      {
+        if (snapIndexPos.equals(snapIndexPos)) {}
+      }
+      else {
+        while (snapIndexPos != null) {
           return false;
         }
       }
@@ -234,32 +109,14 @@ public final class hr
           return false;
         }
       }
-      if (storyType != null)
-      {
-        if (storyType.equals(storyType)) {}
-      }
-      else {
-        while (storyType != null) {
-          return false;
-        }
-      }
-      if (viewTimeSec != null)
-      {
-        if (viewTimeSec.equals(viewTimeSec)) {}
-      }
-      else {
-        while (viewTimeSec != null) {
-          return false;
-        }
-      }
-      if (withGallery == null) {
+      if (splashId == null) {
         break;
       }
-    } while (withGallery.equals(withGallery));
+    } while (splashId.equals(splashId));
     for (;;)
     {
       return false;
-      if (withGallery == null) {
+      if (splashId == null) {
         break;
       }
     }
@@ -267,8 +124,8 @@ public final class hr
   
   public final int hashCode()
   {
-    int i13 = 0;
-    int i14 = super.hashCode();
+    int i2 = 0;
+    int i3 = super.hashCode();
     int i;
     int j;
     label39:
@@ -277,118 +134,41 @@ public final class hr
     int m;
     label70:
     int n;
-    label86:
-    int i1;
-    label102:
-    int i2;
-    label118:
-    int i3;
-    label134:
-    int i4;
-    label150:
-    int i5;
-    label166:
-    int i6;
-    label182:
-    int i7;
-    label198:
-    int i8;
-    label214:
-    int i9;
-    label230:
-    int i10;
-    label246:
-    int i11;
-    if (camera != null)
+    if (editionId != null)
     {
-      i = camera.hashCode();
-      if (caption == null) {
-        break label407;
-      }
-      j = caption.hashCode();
-      if (drawing == null) {
-        break label412;
-      }
-      k = drawing.hashCode();
-      if (filterGeofilterId == null) {
-        break label417;
-      }
-      m = filterGeofilterId.hashCode();
-      if (filterIndexCount == null) {
-        break label423;
-      }
-      n = filterIndexCount.hashCode();
-      if (filterIndexPos == null) {
-        break label429;
-      }
-      i1 = filterIndexPos.hashCode();
-      if (filterInfo == null) {
-        break label435;
-      }
-      i2 = filterInfo.hashCode();
-      if (filterSponsor == null) {
-        break label441;
-      }
-      i3 = filterSponsor.hashCode();
-      if (filterVisual == null) {
-        break label447;
-      }
-      i4 = filterVisual.hashCode();
-      if (flash == null) {
-        break label453;
-      }
-      i5 = flash.hashCode();
-      if (geoFence == null) {
-        break label459;
-      }
-      i6 = geoFence.hashCode();
+      i = editionId.hashCode();
       if (mediaType == null) {
-        break label465;
+        break label165;
       }
-      i7 = mediaType.hashCode();
-      if (recipientCount == null) {
-        break label471;
+      j = mediaType.hashCode();
+      if (publisherId == null) {
+        break label170;
       }
-      i8 = recipientCount.hashCode();
-      if (snapTimeSec == null) {
-        break label477;
+      k = publisherId.hashCode();
+      if (snapIndexCount == null) {
+        break label175;
       }
-      i9 = snapTimeSec.hashCode();
+      m = snapIndexCount.hashCode();
+      if (snapIndexPos == null) {
+        break label181;
+      }
+      n = snapIndexPos.hashCode();
+      label86:
       if (source == null) {
-        break label483;
-      }
-      i10 = source.hashCode();
-      if (storyType == null) {
-        break label489;
-      }
-      i11 = storyType.hashCode();
-      label262:
-      if (viewTimeSec == null) {
-        break label495;
+        break label187;
       }
     }
-    label407:
-    label412:
-    label417:
-    label423:
-    label429:
-    label435:
-    label441:
-    label447:
-    label453:
-    label459:
-    label465:
-    label471:
-    label477:
-    label483:
-    label489:
-    label495:
-    for (int i12 = viewTimeSec.hashCode();; i12 = 0)
+    label165:
+    label170:
+    label175:
+    label181:
+    label187:
+    for (int i1 = source.hashCode();; i1 = 0)
     {
-      if (withGallery != null) {
-        i13 = withGallery.hashCode();
+      if (splashId != null) {
+        i2 = splashId.hashCode();
       }
-      return (i12 + (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i14 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i13;
+      return (i1 + (n + (m + (k + (j + (i + i3 * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i2;
       i = 0;
       break;
       j = 0;
@@ -399,28 +179,6 @@ public final class hr
       break label70;
       n = 0;
       break label86;
-      i1 = 0;
-      break label102;
-      i2 = 0;
-      break label118;
-      i3 = 0;
-      break label134;
-      i4 = 0;
-      break label150;
-      i5 = 0;
-      break label166;
-      i6 = 0;
-      break label182;
-      i7 = 0;
-      break label198;
-      i8 = 0;
-      break label214;
-      i9 = 0;
-      break label230;
-      i10 = 0;
-      break label246;
-      i11 = 0;
-      break label262;
     }
   }
 }

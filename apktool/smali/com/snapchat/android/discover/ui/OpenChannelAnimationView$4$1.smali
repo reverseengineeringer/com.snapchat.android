@@ -23,7 +23,7 @@
     .locals 2
 
     .prologue
-    .line 164
+    .line 211
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4$1;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;
 
     iget-object v0, p1, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 167
+    .line 214
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4$1;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;
 
     iget-object v0, v0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$4;->b:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
@@ -54,6 +54,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 168
+    .line 215
     return-void
 .end method

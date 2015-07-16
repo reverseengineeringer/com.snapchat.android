@@ -1,9 +1,6 @@
 package com.snapchat.android.fragments.settings.email;
 
-import ajx;
-import amk;
-import ams;
-import anc;
+import akr;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -20,13 +17,16 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import aok;
-import aol;
-import atj;
-import atx;
-import avh;
-import baj;
-import cgc;
+import anh;
+import anp;
+import anz;
+import apg;
+import aph;
+import auh;
+import auv;
+import awf;
+import bbj;
+import chd;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.emoji.Emoji;
@@ -48,42 +48,42 @@ public class EmailSettingsFragment
   private String i;
   private String j;
   private final Set<Integer> k = new HashSet();
-  private ajx l;
-  private final aol m;
-  private aok n = new aok()
+  private akr l;
+  private final aph m;
+  private apg n = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (EmailSettingsFragment.a(EmailSettingsFragment.this).contains(Integer.valueOf(i)))
       {
         EmailSettingsFragment.a(EmailSettingsFragment.this).remove(Integer.valueOf(i));
-        if (!(paramAnonymousamk instanceof anc)) {
+        if (!(paramAnonymousanh instanceof anz)) {
           break label63;
         }
         EmailSettingsFragment.a(EmailSettingsFragment.this, b);
       }
       label63:
-      while (!(paramAnonymousamk instanceof ams)) {
+      while (!(paramAnonymousanh instanceof anp)) {
         return;
       }
-      EmailSettingsFragment.a(EmailSettingsFragment.this, (ams)paramAnonymousamk);
+      EmailSettingsFragment.a(EmailSettingsFragment.this, (anp)paramAnonymousanh);
     }
   };
   
   public EmailSettingsFragment()
   {
-    this(ajx.a(), aol.a());
+    this(akr.a(), aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private EmailSettingsFragment(ajx paramajx, aol paramaol)
+  private EmailSettingsFragment(akr paramakr, aph paramaph)
   {
-    l = paramajx;
-    m = paramaol;
+    l = paramakr;
+    m = paramaph;
   }
   
-  private void a(@cgc String paramString)
+  private void a(@chd String paramString)
   {
     if (!TextUtils.isEmpty(paramString))
     {
@@ -100,7 +100,7 @@ public class EmailSettingsFragment
   {
     if (!TextUtils.isEmpty(a.getText()))
     {
-      if ((TextUtils.equals(a.getText(), ajx.G())) && (ajx.bm())) {
+      if ((TextUtils.equals(a.getText(), akr.G())) && (akr.bj())) {
         h.setVisibility(0);
       }
       while (n())
@@ -118,7 +118,7 @@ public class EmailSettingsFragment
   
   private boolean n()
   {
-    return (TextUtils.equals(a.getText(), ajx.bn())) || ((TextUtils.isEmpty(ajx.bn())) && (TextUtils.equals(a.getText(), ajx.G())) && (!ajx.bm()));
+    return (TextUtils.equals(a.getText(), akr.bk())) || ((TextUtils.isEmpty(akr.bk())) && (TextUtils.equals(a.getText(), akr.G())) && (!akr.bj()));
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
@@ -143,7 +143,7 @@ public class EmailSettingsFragment
   public final void f()
   {
     super.f();
-    avh.a(getActivity(), H().getDecorView().getRootView());
+    awf.a(getActivity(), J().getDecorView().getRootView());
   }
   
   public final boolean g()
@@ -157,19 +157,19 @@ public class EmailSettingsFragment
   protected final void i()
   {
     e.setVisibility(8);
-    if ((!TextUtils.isEmpty(a.getText())) && ((!TextUtils.isEmpty(ajx.bn())) || (!TextUtils.equals(ajx.G(), a.getText())) || (!ajx.bm())))
+    if ((!TextUtils.isEmpty(a.getText())) && ((!TextUtils.isEmpty(akr.bk())) || (!TextUtils.equals(akr.G(), a.getText())) || (!akr.bj())))
     {
       if (n())
       {
         c.setVisibility(0);
-        c.setText(2131493588);
+        c.setText(2131493586);
         c.setClickable(true);
         d.setVisibility(8);
       }
       for (;;)
       {
         if (a.requestFocus()) {
-          avh.f(getActivity());
+          awf.f(getActivity());
         }
         return;
         c.setVisibility(8);
@@ -184,31 +184,31 @@ public class EmailSettingsFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968666, paramViewGroup, false);
-    i = atx.a(null, 2131493156, new Object[0]);
-    j = atx.a(null, 2131493159, new Object[0]);
-    h = ((TextView)c(2131362324));
-    h.setText(getResources().getString(2131493158, new Object[] { baj.a(Emoji.OK_HAND_SIGN) }));
-    c(2131362317).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968667, paramViewGroup, false);
+    i = auv.a(null, 2131493155, new Object[0]);
+    j = auv.a(null, 2131493158, new Object[0]);
+    h = ((TextView)c(2131362322));
+    h.setText(getResources().getString(2131493157, new Object[] { bbj.a(Emoji.OK_HAND_SIGN) }));
+    c(2131362315).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        avh.a(getActivity(), getView());
+        awf.a(getActivity(), getView());
         getActivity().onBackPressed();
       }
     });
-    b = ((TextView)c(2131362320));
-    d = ((Button)c(2131362327));
+    b = ((TextView)c(2131362318));
+    d = ((Button)c(2131362325));
     paramLayoutInflater = d;
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
-    e = c(2131362328);
-    c = ((Button)c(2131362326));
+    auh.a(paramLayoutInflater);
+    e = c(2131362326);
+    c = ((Button)c(2131362324));
     paramLayoutInflater = c;
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
-    f = c(2131362322);
-    g = ((TextView)c(2131362323));
+    auh.a(paramLayoutInflater);
+    f = c(2131362320);
+    g = ((TextView)c(2131362321));
     f.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -218,9 +218,9 @@ public class EmailSettingsFragment
         EmailSettingsFragment.d(EmailSettingsFragment.this).setVisibility(8);
       }
     });
-    a = ((EditText)c(2131362321));
-    if (!TextUtils.isEmpty(ajx.bn())) {
-      a.setText(ajx.bn());
+    a = ((EditText)c(2131362319));
+    if (!TextUtils.isEmpty(akr.bk())) {
+      a.setText(akr.bk());
     }
     for (;;)
     {
@@ -260,8 +260,8 @@ public class EmailSettingsFragment
       m();
       i();
       return mFragmentLayout;
-      if (!TextUtils.isEmpty(ajx.G())) {
-        a.setText(ajx.G());
+      if (!TextUtils.isEmpty(akr.G())) {
+        a.setText(akr.G());
       }
     }
   }

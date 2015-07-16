@@ -51,7 +51,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment$8;->a:Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->d(Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;)Laol;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;->d(Lcom/snapchat/android/fragments/settings/password/ChangePasswordFragment;)Laph;
 
     move-result-object v1
 
@@ -73,7 +73,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v2}, Laol;->b(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-virtual {v1, v2}, Laph;->b(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v4
 
@@ -87,7 +87,7 @@
 
     invoke-virtual {v4, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {v1, v2, v4}, Laol;->a(Landroid/content/Context;Landroid/content/Intent;)I
+    invoke-virtual {v1, v2, v4}, Laph;->a(Landroid/content/Context;Landroid/content/Intent;)I
 
     move-result v1
 

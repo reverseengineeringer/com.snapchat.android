@@ -1,32 +1,28 @@
 import java.util.ArrayList;
 
 public final class byq
-  implements bxg
+  implements byh
 {
-  public final bxk a(bwz parambwz, String paramString)
+  public final byl a(bya parambya, String paramString)
   {
-    paramString = bxj.d(paramString);
-    if (paramString.size() != 3) {
-      throw new bxh("Two string arguments and one integer argument are required.");
+    parambya = byk.a(paramString);
+    if (parambya.size() != 2) {
+      throw new byi("Two numeric arguments are required.");
     }
     try
     {
-      parambwz = new Integer(bxj.a((String)paramString.get(0), a).indexOf(bxj.a((String)paramString.get(1), a), ((Integer)paramString.get(2)).intValue()));
-      return new bxk(parambwz.toString(), 0);
+      parambya = new Double(Math.atan2(((Double)parambya.get(0)).doubleValue(), ((Double)parambya.get(1)).doubleValue()));
+      return new byl(parambya.toString(), 0);
     }
-    catch (bxh parambwz)
+    catch (Exception parambya)
     {
-      throw new bxh(parambwz.getMessage(), parambwz);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Two string arguments and one integer argument are required.", parambwz);
+      throw new byi("Two numeric arguments are required.", parambya);
     }
   }
   
   public final String a()
   {
-    return "indexOf";
+    return "atan2";
   }
 }
 

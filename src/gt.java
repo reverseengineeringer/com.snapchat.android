@@ -2,32 +2,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class gt
-  extends lt
+  extends ml
 {
   public Long adIndexCount;
   public Long adIndexPos;
-  public fq additionalInfo;
   public String adsnapId;
   public String editionId;
-  private String errorInfo;
-  private final String eventName = "DISCOVER_AD_SKIP";
+  private final String eventName = "DISCOVER_AD_LONGFORM_SCREENSHOT";
+  public ih longformType;
   public String publisherId;
   public Long snapIndexCount;
   public Long snapIndexPos;
-  private ld source;
+  public lv source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "DISCOVER_AD_SKIP");
+    localHashMap.put("event_name", "DISCOVER_AD_LONGFORM_SCREENSHOT");
     if (adIndexCount != null) {
       localHashMap.put("ad_index_count", adIndexCount);
     }
     if (adIndexPos != null) {
       localHashMap.put("ad_index_pos", adIndexPos);
-    }
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
     }
     if (adsnapId != null) {
       localHashMap.put("adsnap_id", adsnapId);
@@ -35,8 +31,8 @@ public final class gt
     if (editionId != null) {
       localHashMap.put("edition_id", editionId);
     }
-    if (errorInfo != null) {
-      localHashMap.put("error_info", errorInfo);
+    if (longformType != null) {
+      localHashMap.put("longform_type", longformType);
     }
     if (publisherId != null) {
       localHashMap.put("publisher_id", publisherId);
@@ -85,15 +81,6 @@ public final class gt
           return false;
         }
       }
-      if (additionalInfo != null)
-      {
-        if (additionalInfo.equals(additionalInfo)) {}
-      }
-      else {
-        while (additionalInfo != null) {
-          return false;
-        }
-      }
       if (adsnapId != null)
       {
         if (adsnapId.equals(adsnapId)) {}
@@ -112,12 +99,12 @@ public final class gt
           return false;
         }
       }
-      if (errorInfo != null)
+      if (longformType != null)
       {
-        if (errorInfo.equals(errorInfo)) {}
+        if (longformType.equals(longformType)) {}
       }
       else {
-        while (errorInfo != null) {
+        while (longformType != null) {
           return false;
         }
       }
@@ -163,8 +150,8 @@ public final class gt
   
   public final int hashCode()
   {
-    int i5 = 0;
-    int i6 = super.hashCode();
+    int i4 = 0;
+    int i5 = super.hashCode();
     int i;
     int j;
     label39:
@@ -177,58 +164,51 @@ public final class gt
     int i1;
     label102:
     int i2;
-    label118:
-    int i3;
     if (adIndexCount != null)
     {
       i = adIndexCount.hashCode();
       if (adIndexPos == null) {
-        break label231;
+        break label209;
       }
       j = adIndexPos.hashCode();
-      if (additionalInfo == null) {
-        break label236;
-      }
-      k = additionalInfo.hashCode();
       if (adsnapId == null) {
-        break label241;
+        break label214;
       }
-      m = adsnapId.hashCode();
+      k = adsnapId.hashCode();
       if (editionId == null) {
-        break label247;
+        break label219;
       }
-      n = editionId.hashCode();
-      if (errorInfo == null) {
-        break label253;
+      m = editionId.hashCode();
+      if (longformType == null) {
+        break label225;
       }
-      i1 = errorInfo.hashCode();
+      n = longformType.hashCode();
       if (publisherId == null) {
-        break label259;
+        break label231;
       }
-      i2 = publisherId.hashCode();
+      i1 = publisherId.hashCode();
       if (snapIndexCount == null) {
-        break label265;
+        break label237;
       }
-      i3 = snapIndexCount.hashCode();
-      label134:
+      i2 = snapIndexCount.hashCode();
+      label118:
       if (snapIndexPos == null) {
-        break label271;
+        break label243;
       }
     }
+    label209:
+    label214:
+    label219:
+    label225:
     label231:
-    label236:
-    label241:
-    label247:
-    label253:
-    label259:
-    label265:
-    label271:
-    for (int i4 = snapIndexPos.hashCode();; i4 = 0)
+    label237:
+    label243:
+    for (int i3 = snapIndexPos.hashCode();; i3 = 0)
     {
       if (source != null) {
-        i5 = source.hashCode();
+        i4 = source.hashCode();
       }
-      return (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i6 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i5;
+      return (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i5 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i4;
       i = 0;
       break;
       j = 0;
@@ -243,8 +223,6 @@ public final class gt
       break label102;
       i2 = 0;
       break label118;
-      i3 = 0;
-      break label134;
     }
   }
 }

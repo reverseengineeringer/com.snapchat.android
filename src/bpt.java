@@ -1,9 +1,46 @@
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import java.io.IOException;
+import java.io.InputStream;
 
 public abstract interface bpt
 {
-  public abstract View a(RecyclerView paramRecyclerView, int paramInt);
+  public abstract bpt.a a(Uri paramUri, int paramInt);
+  
+  public abstract void a();
+  
+  public static final class a
+  {
+    final InputStream a;
+    final Bitmap b;
+    final boolean c;
+    final long d;
+    
+    public a(InputStream paramInputStream, boolean paramBoolean, long paramLong)
+    {
+      if (paramInputStream == null) {
+        throw new IllegalArgumentException("Stream may not be null.");
+      }
+      a = paramInputStream;
+      b = null;
+      c = paramBoolean;
+      d = paramLong;
+    }
+  }
+  
+  public static final class b
+    extends IOException
+  {
+    final boolean a;
+    final int b;
+    
+    public b(String paramString, int paramInt1, int paramInt2)
+    {
+      super();
+      a = bqb.c(paramInt1);
+      b = paramInt2;
+    }
+  }
 }
 
 /* Location:

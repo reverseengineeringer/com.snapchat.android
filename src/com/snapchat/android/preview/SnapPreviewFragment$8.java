@@ -1,7 +1,7 @@
 package com.snapchat.android.preview;
 
-import ajq;
-import ajx;
+import akk;
+import akr;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.view.View;
@@ -15,11 +15,11 @@ final class SnapPreviewFragment$8
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    if (!((CheckBox)a.findViewById(2131362544)).isChecked()) {}
+    if (!((CheckBox)a.findViewById(2131362543)).isChecked()) {}
     for (boolean bool = true;; bool = false)
     {
-      ajx.h(bool);
-      if (ajq.a().d().size() <= 1) {
+      akr.h(bool);
+      if (akk.a().d().size() <= 1) {
         break;
       }
       SnapPreviewFragment.o(b);

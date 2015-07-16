@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laje$a;
+.implements Laka$a;
 
 
 # annotations
@@ -61,7 +61,7 @@
     return-void
 .end method
 
-.method public final a(Laje;)V
+.method public final a(Laka;)V
     .locals 2
 
     .prologue
@@ -74,7 +74,7 @@
 
     .line 239
     :try_start_0
-    invoke-virtual {p1, p0}, Laje;->a(Laje$a;)V
+    invoke-virtual {p1, p0}, Laka;->a(Laka$a;)V
 
     .line 240
     iget-object v0, p0, Lcom/snapchat/android/api/LoadAllStorySnapsTask$a;->this$0:Lcom/snapchat/android/api/LoadAllStorySnapsTask;

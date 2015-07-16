@@ -196,22 +196,26 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_3
+    if-ge v0, v1, :cond_4
 
     :cond_2
     const/4 v0, 0x1
 
     .line 306
     :goto_0
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_3
 
     .line 307
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
+    iget v1, p0, Lorg/apache/commons/lang3/concurrent/TimedSemaphore;->acquireCount:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Lorg/apache/commons/lang3/concurrent/TimedSemaphore;->acquireCount:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 311
-    :goto_1
+    :cond_3
     if-eqz v0, :cond_1
 
     .line 312
@@ -220,23 +224,10 @@
     return-void
 
     .line 303
-    :cond_3
+    :cond_4
     const/4 v0, 0x0
 
     goto :goto_0
-
-    .line 309
-    :cond_4
-    :try_start_2
-    iget v1, p0, Lorg/apache/commons/lang3/concurrent/TimedSemaphore;->acquireCount:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, p0, Lorg/apache/commons/lang3/concurrent/TimedSemaphore;->acquireCount:I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_1
 .end method
 
 .method declared-synchronized endOfPeriod()V
@@ -275,13 +266,10 @@
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/apache/commons/lang3/concurrent/TimedSemaphore;->acquireCount:I
-
-    .line 422
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 423
+    .line 422
     monitor-exit p0
 
     return-void

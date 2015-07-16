@@ -2,219 +2,106 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lchc;
-.implements Ljava/io/Serializable;
-.implements Ljava/lang/Comparable;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lchc;",
-        "Ljava/io/Serializable;",
-        "Ljava/lang/Comparable",
-        "<",
-        "Lchi;",
-        ">;"
-    }
-.end annotation
-
-
-# instance fields
-.field public volatile k:I
-
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 157
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 158
-    iput p1, p0, Lchi;->k:I
-
-    .line 159
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Lcgn;
+.method public abstract a(J)I
 .end method
 
-.method public abstract b()Lcgu;
+.method public abstract a(Ljava/util/Locale;)I
 .end method
 
-.method public final c()I
-    .locals 1
-
-    .prologue
-    .line 233
-    iget v0, p0, Lchi;->k:I
-
-    return v0
+.method public abstract a(JI)J
 .end method
 
-.method public synthetic compareTo(Ljava/lang/Object;)I
-    .locals 3
-
-    .prologue
-    .line 46
-    check-cast p1, Lchi;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_0
-
-    new-instance v0, Ljava/lang/ClassCastException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " cannot be compared to "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/ClassCastException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iget v0, p1, Lchi;->k:I
-
-    iget v1, p0, Lchi;->k:I
-
-    if-le v1, v0, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    if-ge v1, v0, :cond_2
-
-    const/4 v0, -0x1
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
+.method public abstract a(JJ)J
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 301
-    if-ne p0, p1, :cond_1
-
-    .line 308
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 304
-    :cond_1
-    instance-of v2, p1, Lchc;
-
-    if-nez v2, :cond_2
-
-    move v0, v1
-
-    .line 305
-    goto :goto_0
-
-    .line 307
-    :cond_2
-    check-cast p1, Lchc;
-
-    .line 308
-    invoke-interface {p1}, Lchc;->b()Lcgu;
-
-    move-result-object v2
-
-    invoke-virtual {p0}, Lchi;->b()Lcgu;
-
-    move-result-object v3
-
-    if-ne v2, v3, :cond_3
-
-    invoke-interface {p1}, Lchc;->c()I
-
-    move-result v2
-
-    iget v3, p0, Lchi;->k:I
-
-    if-eq v2, v3, :cond_0
-
-    :cond_3
-    move v0, v1
-
-    goto :goto_0
+.method public abstract a(JLjava/lang/String;Ljava/util/Locale;)J
 .end method
 
-.method public hashCode()I
-    .locals 2
+.method public abstract a()Lchj;
+.end method
 
-    .prologue
-    .line 317
-    iget v0, p0, Lchi;->k:I
+.method public abstract a(ILjava/util/Locale;)Ljava/lang/String;
+.end method
 
-    add-int/lit16 v0, v0, 0x1cb
+.method public abstract a(JLjava/util/Locale;)Ljava/lang/String;
+.end method
 
-    .line 319
-    mul-int/lit8 v0, v0, 0x1b
+.method public abstract a(Lcic;Ljava/util/Locale;)Ljava/lang/String;
+.end method
 
-    invoke-virtual {p0}, Lchi;->a()Lcgn;
+.method public abstract b(JJ)I
+.end method
 
-    move-result-object v1
+.method public abstract b(JI)J
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+.method public abstract b()Ljava/lang/String;
+.end method
 
-    move-result v1
+.method public abstract b(ILjava/util/Locale;)Ljava/lang/String;
+.end method
 
-    add-int/2addr v0, v1
+.method public abstract b(JLjava/util/Locale;)Ljava/lang/String;
+.end method
 
-    .line 320
-    return v0
+.method public abstract b(Lcic;Ljava/util/Locale;)Ljava/lang/String;
+.end method
+
+.method public abstract b(J)Z
+.end method
+
+.method public abstract c(J)I
+.end method
+
+.method public abstract c(JJ)J
+.end method
+
+.method public abstract c()Z
+.end method
+
+.method public abstract d(J)J
+.end method
+
+.method public abstract d()Lchn;
+.end method
+
+.method public abstract e(J)J
+.end method
+
+.method public abstract e()Lchn;
+.end method
+
+.method public abstract f(J)J
+.end method
+
+.method public abstract f()Lchn;
+.end method
+
+.method public abstract g()I
+.end method
+
+.method public abstract g(J)J
+.end method
+
+.method public abstract h()I
+.end method
+
+.method public abstract h(J)J
+.end method
+
+.method public abstract i(J)J
 .end method

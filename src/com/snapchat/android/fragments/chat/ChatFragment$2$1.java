@@ -1,28 +1,28 @@
 package com.snapchat.android.fragments.chat;
 
-import bgp;
+import bhp;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.model.chat.CashFeedItem;
 import com.snapchat.android.util.CashUtils;
-import xu;
-import ya.a;
+import yq;
+import yw.a;
 
 final class ChatFragment$2$1
-  implements ya.a
+  implements yw.a
 {
   ChatFragment$2$1(ChatFragment.2 param2, CashFeedItem paramCashFeedItem, int paramInt1, int paramInt2) {}
   
   public final void a()
   {
     ChatFragment.a(d.a, a);
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
-        xu localxu = d.a.h;
-        xu.a(ChatFragment.i(d.a), b);
+        yq localyq = d.a.h;
+        yq.a(ChatFragment.i(d.a), b);
         ChatFragment.q(d.a);
-        AnalyticsEvents.u(CashUtils.a(c));
+        AnalyticsEvents.t(CashUtils.a(c));
       }
     });
   }

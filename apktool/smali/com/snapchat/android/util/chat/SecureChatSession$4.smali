@@ -51,13 +51,13 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lajv;->a(Landroid/content/Context;)Lajv;
+    invoke-static {v0}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/snapchat/android/util/chat/SecureChatSession$4;->val$serverString:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lajv;->d(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lakp;->d(Ljava/lang/String;)V
 
     .line 299
     return-void

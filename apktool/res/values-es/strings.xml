@@ -2,34 +2,34 @@
 <resources>
     <string name="ad_sent_from_discover">Anuncio enviado a través de Discover</string>
     <string name="add">Añadir</string>
-    <string name="add_by_snapcode">Agregar por Snapcode</string>
-    <string name="add_by_snapcode_auto_tip">"Los Snapcodes te permiten agregar amigos fácilmente.
+    <string name="add_by_snapcode">Añadir por Snapcode</string>
+    <string name="add_by_snapcode_auto_tip">"Los Snapcodes te permiten añadir amigos fácilmente.
  Solo toma un screenshot de un Snapcode
  y luego abre Snapchat."</string>
-    <string name="add_by_snapcode_manual_tip">"Los Snapcodes te permiten agregar amigos fácilmente.
- Activa la función de agregar Snapcodes automáticamente,
+    <string name="add_by_snapcode_manual_tip">"Los Snapcodes te permiten añadir amigos fácilmente.
+ Activa la función de añadir Snapcodes automáticamente,
 toma un screenshot de un Snapcode
 y luego abre Snapchat."</string>
-    <string name="add_by_username">Agregar por Nombre de Usuario</string>
+    <string name="add_by_username">Añadir por nombre de usuario</string>
     <string name="add_by_username_description">"Mi nombre de usuario es
 "<g example="team_snapchat" id="username">%1$s</g></string>
-    <string name="add_by_username_search_hint">Nombre de Usuario</string>
-    <string name="add_friend_group_title">AGREGAR AMIGO</string>
-    <string name="add_friend_question">Agregar %1$s?</string>
+    <string name="add_by_username_search_hint">Nombre de usuario</string>
+    <string name="add_friend_group_title">AÑADIR AMIGO</string>
+    <string name="add_friend_question">¿Quieres añadir a %1$s?</string>
     <string name="add_friend_request_pending">Pendiente</string>
     <string name="add_friend_request_pending_with_username">Pendiente - <g id="username">%1$s</g></string>
-    <string name="add_friends_contacts_permission_explanation_text">Tus amigos que tengan tu número de teléfono en sus contactos te podrán encontrar en Snapchat. No enviaremos spam ni agregaremos automáticamente a tus amigos. Lee nuestra <a href="http://www.snapchat.com/privacy">Política de Privacidad</a>" para conocer más.
+    <string name="add_friends_contacts_permission_explanation_text">Tus amigos que tengan tu número de teléfono en sus contactos te podrán encontrar en Snapchat. No enviaremos spam ni añadiremos automáticamente a tus amigos. Lee nuestra <a href="http://www.snapchat.com/privacy">Política de privacidad</a>" para conocer más.
 "</string>
     <string name="add_friends_contacts_permission_text">Snapchat utiliza los números de teléfono en tus contactos para ayudarte a encontrar a tus amigos.</string>
-    <string name="add_friends_could_not_add">No se pudo agregar como amigo. Por favor vuelve a intentarlo.</string>
+    <string name="add_friends_could_not_add">No se pudo añadir como amigo, vuelve a intentarlo.</string>
     <string name="add_friends_could_not_find_contacts">Snapchat no pudo encontrar ningún contacto.</string>
-    <string name="add_friends_could_not_find_friends">No se encontraron nuevos amigos.</string>
+    <string name="add_friends_could_not_find_friends">No se encontraron nuevos amigos</string>
     <string name="add_friends_could_not_remove">No se pudo eliminar como amigo. Por favor vuelve a intentarlo.</string>
-    <string name="add_friends_displayname_desc">Mi nombre es</string>
-    <string name="add_friends_displayname_following_desc">así aparaces para Snapchatters que agregas.</string>
-    <string name="add_friends_empty_address_book">Tu lista de contactos está vacía!</string>
+    <string name="add_friends_displayname_desc">Me llamo</string>
+    <string name="add_friends_displayname_following_desc">así apareces para Snapchatters que añades.</string>
+    <string name="add_friends_empty_address_book">¡Tu lista de contactos está vacía!</string>
     <string name="add_friends_finding_friends_text">Buscando amigos…</string>
-    <string name="add_friends_from_screenshot_tips">"Toca una fotografía con un Snapcode para agregar
+    <string name="add_friends_from_screenshot_tips">"Toca una fotografía con un Snapcode para añadir
 a ese Snapchatter."</string>
     <string name="add_friends_from_screenshot_title">Fotos</string>
     <string name="add_friends_invite_contacts">Invitar a Snapchat</string>
@@ -38,38 +38,38 @@ a ese Snapchatter."</string>
     <string name="add_friends_pending_snap">1 Snap pendiente</string>
     <string name="add_friends_pending_snaps">%1$d Snaps pendientes</string>
     <string name="add_friends_shared_story">%1$s es una colección de Snaps de los usuarios en el evento. Aparece en tus Historias hasta el final del evento. ¡Feliz Snapping!</string>
-    <string name="add_friends_title">Agregar Amigos</string>
+    <string name="add_friends_title">Añadir amigos</string>
     <string name="add_friends_username_desc">Mi nombre de usuario es</string>
     <string name="add_friends_username_following_desc">es tu nombre de usuario.</string>
-    <string name="add_friends_who_added_me">ME AGREGÓ</string>
-    <string name="add_from_address_book">Agregar desde la Libreta de Contactos</string>
-    <string name="add_from_camera_roll">Agregar de las fotos</string>
-    <string name="add_nearby">Agregar a alguien cercano</string>
-    <string name="add_nearby_friends_title">Agregar a alguien cercano</string>
-    <string name="add_nearby_prompt">La función \"Agregar a alguien cercano\" utiliza tu localización para buscar y agregar Snapchatters cercanos. Tu nombre va a estar visible para otros Snapchatters.</string>
+    <string name="add_friends_who_added_me">ME AÑADIÓ</string>
+    <string name="add_from_address_book">Añadir desde Contactos</string>
+    <string name="add_from_camera_roll">Añadir de las fotos</string>
+    <string name="add_nearby">Añadir a alguien cercano</string>
+    <string name="add_nearby_friends_title">Añadir a alguien cercano</string>
+    <string name="add_nearby_prompt">La función \"Añadir a alguien cercano\" utiliza tu ubicación para buscar y añadir Snapchatters cercanos. Otros Snapchatters van a poder ver tu nombre.</string>
     <string name="add_to_your_story">¿Añadir a tu Historia?</string>
     <string name="add_to_your_story_explanation">Al añadir un Snap a tu Historia otros podrán ver tu Snap un número ilimitado de veces durante 24 horas. ¿Quieres añadir este Snap a tu Historia?</string>
-    <string name="added">Agregado.</string>
+    <string name="added">¡Añadido!</string>
     <string name="added_expiration_message">%1$s es una colección de Snaps de los usuarios en el evento. Aparece en tus Historias hasta el final del evento. ¡Feliz Snapping!</string>
-    <string name="added_friend">Te ha agregado.</string>
-    <string name="added_me_button">Me agregó</string>
-    <string name="added_me_title">Me agregó</string>
-    <string name="added_you">¡Te ha agregado!</string>
-    <string name="added_you_by_phone_number">Te agregó por # de teléfono</string>
-    <string name="added_you_by_qr_code">Te agregó por Snap</string>
-    <string name="added_you_by_username">Te agregó por nombre de usuario</string>
-    <string name="address_book_title">Libreta de Contactos</string>
+    <string name="added_friend">Te ha añadido</string>
+    <string name="added_me_button">Me añadió</string>
+    <string name="added_me_title">Me añadió</string>
+    <string name="added_you">¡Te ha añadido!</string>
+    <string name="added_you_by_phone_number">Te añadió por # de teléfono</string>
+    <string name="added_you_by_qr_code">Te añadió por Snap</string>
+    <string name="added_you_by_username">Te añadió por nombre de usuario</string>
+    <string name="address_book_title">Libreta de contactos</string>
     <string name="already_friends">¡Ya son amigos! <g id="emoji">%1$s</g></string>
     <string name="an_error_occurred">Ocurrió un error.</string>
     <string name="app_name">Snapchat</string>
     <string name="are_you_sure_you_want_to_abandon">¿Seguro que quieres descartar tu obra snápstica?</string>
-    <string name="ask_a_nearby_friend">Para agregar a un amigo, solicítale que abra \"Agregar a alguien cercano\".</string>
+    <string name="ask_a_nearby_friend">Para añadir a un amigo, pídele que abra \"Añadir a alguien cercano\".</string>
     <string name="audio_header">Grabar sonido</string>
     <string name="audio_setting_header">Cambiar ajustes de audio</string>
     <string name="audio_setting_text">En algunos dispositivos, Snapchat ajusta los ajustes de audio para que puedas realizar videochats.</string>
     <string name="audio_text">Utiliza tu micrófono para grabar audios y videochat.</string>
-    <string name="auto_add_snapcodes">Agregar Snapcodes automáticamente</string>
-    <string name="auto_add_snapcodes_detail">"Snapchat agregará automáticamente Snapcodes
+    <string name="auto_add_snapcodes">Añadir Snapcodes automáticamente</string>
+    <string name="auto_add_snapcodes_detail">"Snapchat añadirá automáticamente Snapcodes
 de las fotos de tu dispositivo."</string>
     <string name="best_friends_score">Puntuación: %1$s</string>
     <string name="bestfriend_group_title">MEJORES AMIGOS</string>
@@ -77,7 +77,7 @@ de las fotos de tu dispositivo."</string>
 
 ¡Gracias por ayudarnos a que Snapchat sea impresionante!"</string>
     <string name="block_and_report_title">Cuéntanos el motivo para bloquearlos.</string>
-    <string name="block_confirm_message">Tu número de contacto esta eliminado de la lista de tu amigo y no podrá agregarte nuevamente con esta cuenta a menos que lo desbloquees.</string>
+    <string name="block_confirm_message">Tu número de contacto está eliminado de la lista de tu amigo y no podrá añadirte nuevamente con esta cuenta a menos que lo desbloquees.</string>
     <string name="block_friend_button">Bloquear</string>
     <string name="block_friend_title">¿Seguro que quieres bloquear a %1$s?</string>
     <string name="block_friend_title_with_display_name">¿Seguro que quieres bloquear %1$s - %2$s?</string>
@@ -98,7 +98,7 @@ de las fotos de tu dispositivo."</string>
     <string name="camera_sd_card_issue">Hay un problema con su tarjeta de SD.</string>
     <string name="camera_sd_card_mounted_to_computer">No se puede grabar con la tarjeta de SD conectada a la computadora. Desconecte su cable de USB.</string>
     <string name="cancel">Cancelar</string>
-    <string name="cannot_add_recipients">¡No se pueden agregar más Snapchatters!</string>
+    <string name="cannot_add_recipients">¡No se pueden añadir más Snapchatters!</string>
     <string name="cannot_unlink_card">No se pudo desvincular la tarjeta. Por favor vuelve a intentarlo.</string>
     <string name="captcha_failed_to_load">Ha ocurrido un error al cargar las imágenes. Por favor asegúrate de tener una buena conexión a Internet y vuelve a intentarlo.</string>
     <string name="captcha_loading_images">Cargando imágenes...</string>
@@ -121,9 +121,9 @@ tu tarjeta de débito."</string>
     <string name="card_zip">Código ZIP de 5 dígitos</string>
     <string name="cash_ineligible_details">No eres elegible para usar Snapchat en este momento.</string>
     <string name="cash_phone_verification_desc">Por favor, verifica un número de teléfono de EE.UU. antes de usar Snapcash.</string>
-    <string name="cash_phone_verification_title">Verifica tu Número de Móvil</string>
+    <string name="cash_phone_verification_title">Verifica tu número de móvil</string>
     <string name="cash_square_tos_agree">ACEPTO</string>
-    <string name="cash_square_tos_bottom_msg">" Tengo por lo menos 18 años de edad y acepto el "<a href="https://squareup.com/legal/cash-user-agreement">Acuerdo de Square</a> y la <a href="https://squareup.com/legal/privacy-policy">Política de Privacidad de Square</a>". "</string>
+    <string name="cash_square_tos_bottom_msg">" Tengo por lo menos 18 años de edad y acepto el "<a href="https://squareup.com/legal/cash-user-agreement">Acuerdo de Square</a> y la <a href="https://squareup.com/legal/privacy-policy">Política de privacidad de Square</a>". "</string>
     <string name="cash_square_tos_title">Términos de Servicio</string>
     <string name="cash_square_tos_top_msg">Snapcash es una iniciativa conjunta entre Snapchat y Square. Cuando te registras en Snapchash, creamos una cuenta de Square que procesará tus pagos de manera segura.</string>
     <string name="cash_tooltip">¡Pulsa para enviar dinero en efectivo!</string>
@@ -153,7 +153,7 @@ tu tarjeta de débito."</string>
     <string name="chat_took_chat_screenshot">" ¡"<g example="NAGAS" id="username">%1$s</g>" TOMÓ UN SCREENSHOT DEL CHAT! "</string>
     <string name="chat_took_snap_screenshot">" ¡"<g example="NAGAS" id="username">%1$s</g>" TOMÓ UN SCREENSHOT! "</string>
     <string name="chat_transaction_verify_phone_number_message">Por favor, verifica tu número de teléfono antes de usar Snapcash.</string>
-    <string name="chat_transaction_verify_phone_number_title">Verifica tu Número de Móvil</string>
+    <string name="chat_transaction_verify_phone_number_title">Verifica tu número de móvil</string>
     <string name="chat_unsave">Eliminado del Chat!</string>
     <string name="chat_with_no_results">No hay resultados</string>
     <string name="chat_with_title">Chatear con...</string>
@@ -196,7 +196,7 @@ tu tarjeta de débito."</string>
     <string name="confirm_phone_number_call">Llámame</string>
     <string name="confirm_phone_number_calling">Llamando...</string>
     <string name="confirm_phone_number_country_code">Código de País</string>
-    <string name="confirm_phone_number_phone_number_field_hint"><i>Número de Móvil</i></string>
+    <string name="confirm_phone_number_phone_number_field_hint"><i>Número de móvil</i></string>
     <string name="confirm_phone_number_select_country_code_dialog_title">Seleccionar el Código de País.</string>
     <string name="confirm_phone_number_text">Enviar por SMS</string>
     <string name="confirm_phone_number_verification_code_hint"><i>Código de Verificación</i></string>
@@ -226,7 +226,7 @@ tu tarjeta de débito."</string>
     <string name="degrees_celsius">°C</string>
     <string name="degrees_fahrenheit">°F</string>
     <string name="delete_failed_my_story_notification">El Snap no se pudo eliminar. Por favor inténtalo de nuevo.</string>
-    <string name="delete_friend">Quitar Amigo</string>
+    <string name="delete_friend">Eliminar amigo</string>
     <string name="delete_my_story_notification">Eliminando Snap...</string>
     <string name="delete_snap_question">¿Eliminar Snap?</string>
     <string name="delete_snapkidz">Eliminar cuenta de Snapkidz</string>
@@ -248,7 +248,7 @@ borra música, fotos o aplicaciones que no utilices."</string>
     <string name="discover_loading_oops_title">¡Uy!</string>
     <string name="discover_loading_sd_card_error_msg">¡Conecta una tarjeta SD para ver Discover!</string>
     <string name="discover_loading_tap_to_retry">Toca para reintentar</string>
-    <string name="discover_no_current_edition_toast">Regresa mas tarde por mas!</string>
+    <string name="discover_no_current_edition_toast">¡Regresa más tarde por más!</string>
     <string name="discover_onboarding_press_and_hold_to_send">"Toca y mantén pulsado
  para enviar a un amigo."</string>
     <string name="discover_onboarding_pull_to_close">Hala hacia abajo para cerrar la edición.</string>
@@ -259,28 +259,26 @@ borra música, fotos o aplicaciones que no utilices."</string>
     <string name="discover_sharing_success">¡Snap enviado!</string>
     <string name="discover_sharing_unavailable">%1$s no permite que se envíe este Snap.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> ¡Toca aquí para ver Discover!</string>
     <string name="discover_unavailable">"¡Lo sentimos!
 
 Discover no está disponible por el momento."</string>
     <string name="discover_unavailable_for_device">"¡Lo sentimos!
 
-Discover no esta disponible para tu dispositivo por el momento"</string>
-    <string name="discover_unavailable_for_location">"Lo siento!
+Discover aún no está disponible para tu dispositivo."</string>
+    <string name="discover_unavailable_for_location">"¡Lo sentimos!
 
-en este momento
-Discover no esta disponible en tu región."</string>
+Discover aún no está disponible en tu región."</string>
     <string name="displayName_field_hint"><i>Nombre</i></string>
-    <string name="display_name_info">Así te ven los Snapchatters que agregas.</string>
+    <string name="display_name_info">Así te ven los Snapchatters que añades.</string>
     <string name="dont_allow">No Permitir</string>
     <string name="dont_snap_and_drive">Por favor, NO uses Snapchat mientras conduces.</string>
     <string name="double_tap_to_reply">Toca dos veces para responder</string>
-    <string name="email_field_hint"><i>Dirección de Correo Electrónico</i></string>
+    <string name="email_field_hint"><i>Dirección de correo electrónico</i></string>
     <string name="email_password_validation_explanation">Por seguridad, ingresa tu contraseña.</string>
     <string name="email_resend_succeed_message">Enviamos un correo de verificación a %1$s.</string>
     <string name="email_resend_succeed_title">¡Revisa tu correo electrónico!</string>
     <string name="email_resend_verification">Reenvía correo electrónico de verificación</string>
-    <string name="email_resend_warning_message">Al usar una nueva dirección de correo electrónico, %1$s esta ya no estará asociada a tu cuenta.</string>
+    <string name="email_resend_warning_message">Al usar una nueva dirección de correo electrónico, %1$s ésta ya no estará asociada a tu cuenta.</string>
     <string name="email_sent_explanation">¡Te enviamos un correo electrónico de verificación! Abre el link de la confirmación para terminar la verificación de tu dirección de correo electrónico.</string>
     <string name="email_settings_explanation">Tu dirección de correo electrónico se usa para ingresar y para asegurar tu cuenta de Snapchat</string>
     <string name="email_settings_privacy">No te enviaremos SPAM ni expondremos tu cuenta de correo electrónico a otros Snapchatters.</string>
@@ -297,27 +295,28 @@ Discover no esta disponible en tu región."</string>
     <string name="feed_footer_loading">Cargando...</string>
     <string name="feed_loading">Cargando...</string>
     <string name="feed_secondary_text_format"><g example="3 hours ago" id="relative_time">%1$s</g> - <g example="Swipe right to view chat" id="description">%2$s</g></string>
-    <string name="filters_turn_on_title">Activar Filtros</string>
-    <string name="filters_yes">Quiero Filtros</string>
-    <string name="find_friends">Buscar Amigos</string>
+    <string name="filters_turn_on_title">Activar filtros</string>
+    <string name="filters_yes">Quiero filtros</string>
+    <string name="find_friends">Buscar amigos</string>
     <string name="find_friends_cover_description">Busca amigos en tus contactos.</string>
-    <string name="find_friends_title">Buscar Amigos</string>
+    <string name="find_friends_title">Buscar amigos</string>
     <string name="first_auto_add_message">Toca para obtener más información.</string>
-    <string name="first_auto_add_title">¿Agregar Snapcodes de tus fotos?</string>
+    <string name="first_auto_add_title">¿Quieres añadir Snapcodes de tus fotos?</string>
     <string name="first_auto_yes_button_title">¡Sí!</string>
     <string name="flashlight_header">Controlar linterna</string>
     <string name="flashlight_text">Usa tu flash para tomar mejores fotos en la oscuridad.</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">¿Has olvidado tu contraseña?</a>" "</string>
     <string name="friend_suggest_hide">Ocultar</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Nuevo contacto</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Recién incorporado</string>
     <string name="friends">Amigos</string>
     <string name="friends_context_block">Bloquear</string>
     <string name="friends_context_edit_name">Edita tu nombre</string>
     <string name="friends_context_unblock">Desbloquear</string>
-    <string name="friends_search_section_my_address_book">AGREGAR DE CONTACTOS</string>
+    <string name="friends_search_section_my_address_book">AÑADIR DE CONTACTOS</string>
     <string name="friends_search_section_my_friends">MIS AMIGOS</string>
-    <string name="friends_search_section_username">AGREGAR POR NOMBRE DE USUARIO</string>
+    <string name="friends_search_section_username">AÑADIR POR NOMBRE DE USUARIO</string>
     <string name="friends_stories_title">ACTUALIZACIONES RECIENTES</string>
     <string name="full_network_header">Acceso completo a red</string>
     <string name="full_network_text">Envía y recibe Snaps, chats y otros datos.</string>
@@ -333,7 +332,7 @@ Discover no esta disponible en tu región."</string>
     <string name="invalid_cvv">CVV incorrecto.</string>
     <string name="invalid_expiry_cvv">Vencimiento o CVV no válido.</string>
     <string name="invalid_zip">Código ZIP incorrecto.</string>
-    <string name="invite_friend_message_body">¡Agrégame en Snapchat! Nombre de usuario: %1$s https://snapchat.com/download?ref=a</string>
+    <string name="invite_friend_message_body">¡Añádeme en Snapchat! Nombre de usuario: %1$s https://snapchat.com/download?ref=a</string>
     <string name="just_now">hace un momento</string>
     <string name="landing_page_login">INICIAR SESIÓN</string>
     <string name="landing_page_signup">REGISTRARSE</string>
@@ -341,22 +340,22 @@ Discover no esta disponible en tu región."</string>
     <string name="live">EN VIVO</string>
     <string name="loading">Cargando...</string>
     <string name="location_header">ubicación precisa (basada en red y GPS)</string>
-    <string name="location_permissions_dialog_message">Utilizamos temporalmente tu ubicación para determinar tu elegibilidad para los Filtros Inteligentes y Nuestra Historia. Snapchat no almacenará tu ubicación.</string>
-    <string name="location_permissions_dialog_message_nearby_friends">Utilizamos temporalmente tu localización para buscar a tus amigos que también están buscando por las cercanías. Snapchat no almacenará tu localización.</string>
+    <string name="location_permissions_dialog_message">Utilizamos temporalmente tu ubicación para determinar tu elegibilidad para los Filtros inteligentes y Nuestra historia. Snapchat no almacenará tu ubicación.</string>
+    <string name="location_permissions_dialog_message_nearby_friends">Utilizamos temporalmente tu ubicación para buscar a tus amigos que también están buscando por las cercanías. Snapchat no almacenará tu ubicación.</string>
     <string name="location_permissions_dialog_title">Snapchat quiere usar tu ubicación.</string>
     <string name="location_problem_searching_nearby">Unable to retrieve your location</string>
-    <string name="location_req_search_nearby">Los Servicios de Localización están desactivados en tu dispositivo. Actívalos en los Ajustes de Android para agregar a amigos cercanos.</string>
-    <string name="location_text">Nosotros utilizamos la localización de tu dispositivo para activar las características basadas en tu localización, tales como Geofiltros, Live Story y Agregar a alguien cercano.</string>
+    <string name="location_req_search_nearby">Los Servicios de localización están desactivados en tu dispositivo. Actívalos en los Ajustes de Android para añadir a amigos cercanos.</string>
+    <string name="location_text">Nosotros utilizamos la ubicación de tu dispositivo para activar las características basadas en tu ubicación, tales como Geofiltros, Historias en vivo y Añadir a alguien cercano.</string>
     <string name="locked_help_unlock"><a href="https://www.snapchat.com/unlock">Ayúdame a desbloquear mi cuenta</a></string>
     <string name="locked_later">Más tarde</string>
     <string name="locked_title">Lo sentimos, algo está mal...</string>
     <string name="locked_verify">Verificar</string>
-    <string name="login_new_username_hint"><i>Dirección de Correo Electrónico</i></string>
+    <string name="login_new_username_hint"><i>Dirección de correo electrónico</i></string>
     <string name="login_password_hint"><i>Contraseña</i></string>
     <string name="login_snapkidz_taken_username">¡%1$s ya está en uso! Inicia sesión con ese correo electrónico o intenta con otro.</string>
     <string name="login_title">Iniciar Sesión</string>
     <string name="login_try_again">Volver a Intentar</string>
-    <string name="login_username_hint"><i>Nombre de Usuario o Correo Electrónico</i></string>
+    <string name="login_username_hint"><i>Nombre de usuario o correo electrónico</i></string>
     <string name="me">Yo</string>
     <string name="me_group_title">YO</string>
     <string name="me_hint"><i> (yo)</i></string>
@@ -364,14 +363,14 @@ Discover no esta disponible en tu región."</string>
     <string name="mobile_password_validation_explanation">Por seguridad, ingresa tu contraseña.</string>
     <string name="modify_storage_header">consultar el contenido del almacenamiento USB</string>
     <string name="modify_storage_text">Guarda Snaps e Historias en la galería de fotos de tu dispositivo. Snapchat también guarda los ajustes y almacena temporalmente el contenido que envías y recibes.</string>
-    <string name="my_friends_title">Mis Amigos</string>
+    <string name="my_friends_title">Mis amigos</string>
     <string name="my_story">Mi Historia</string>
-    <string name="my_story_empty_add_friends_button">AGREGAR AMIGOS</string>
+    <string name="my_story_empty_add_friends_button">AÑADIR AMIGOS</string>
     <string name="my_story_more_viewers">+ %1$d más</string>
     <string name="my_story_no_stories_add_friends">¿No tienes Historias? ¡Haz amigos!</string>
     <string name="needs_love_group_title">NECESITA ATENCIÓN</string>
     <string name="never_show_again">Nunca mostrar de nuevo</string>
-    <string name="new_friend_request_onboarding_message">¡Te agregó un amigo!</string>
+    <string name="new_friend_request_onboarding_message">¡Te añadió un amigo!</string>
     <string name="new_password_field_hint"><i>Nueva Contraseña</i></string>
     <string name="no">No</string>
     <string name="no_blocked_snapchatters">No hay Snapchatters bloqueados</string>
@@ -395,7 +394,7 @@ Discover no esta disponible en tu región."</string>
     <string name="okay">Ok</string>
     <string name="okay_caps">OK</string>
     <string name="opened">Visto</string>
-    <string name="our_campus_description">Nuestra Historia está visible para Snapchatters en esta ubicación (O quienes estuvieron allí en las ultimas 24 horas).</string>
+    <string name="our_campus_description">Nuestra historia está visible para Snapchatters en esta ubicación (o quienes estuvieron allí en las ultimas 24 horas).</string>
     <string name="our_campus_title">Nuestra historia</string>
     <string name="our_story_message">Estos son los Snaps que has enviado a %1$s.</string>
     <string name="password_change_validation_explanation">Para configurar una nueva contraseña, ingresa primero a tu contraseña actual.</string>
@@ -423,7 +422,7 @@ Discover no esta disponible en tu región."</string>
     <string name="permissions_network_group">PERMISOS DE RED</string>
     <string name="permissions_storage_group">PERMISOS DE ALMACENAMIENTO</string>
     <string name="phone_verification_alert_dialog_verification_body">Enviaremos un código de verificación al %1$s. Para completar la verificación de tu número de teléfono, ingresa el código de verificación de 6 dígitos.</string>
-    <string name="phone_verification_details">No mostraremos tu número de teléfono a otros Snapchatters. Lee nuestra <a href="http://www.snapchat.com/privacy">Política de Privacidad</a>" para conocer más.
+    <string name="phone_verification_details">No mostraremos tu número de teléfono a otros Snapchatters. Lee nuestra <a href="http://www.snapchat.com/privacy">Política de privacidad</a>" para conocer más.
 "</string>
     <string name="phone_verification_friend_explanation">Tus amigos que tengan tu número de teléfono en sus contactos te podrán encontrar en Snapchat.</string>
     <string name="phone_verification_need_phone_number_explanation">"¡Verifica tu número de teléfono...
@@ -432,15 +431,15 @@ Discover no esta disponible en tu región."</string>
     <string name="phone_verification_title">Verifica tu Número</string>
     <string name="phone_verification_verify_code_button_retry">VOLVER A ENVIAR EL CÓDIGO</string>
     <string name="pick_username_fragment_description">¡Tu nombre de usuario es tu identificador exclusivo en Snapchat!</string>
-    <string name="pick_username_fragment_hint"><i>Nombre de Usuario</i></string>
-    <string name="pick_username_fragment_title">Elije un Nombre de Usuario.</string>
+    <string name="pick_username_fragment_hint"><i>Nombre de usuario</i></string>
+    <string name="pick_username_fragment_title">Elige un nombre de usuario.</string>
     <string name="picture_and_video_header">Realizar fotografías y vídeos</string>
-    <string name="picture_and_video_text">Usa tu cámara para tomar Snaps, chat de vídeo y agregar amigos apuntando tu cámara a su Snapcode.</string>
+    <string name="picture_and_video_text">Usa tu cámara para tomar Snaps, chat de vídeo y añadir amigos apuntando tu cámara a su Snapcode.</string>
     <string name="please_contact_bank">Por favor, ponte en contacto con tu banco.</string>
     <string name="please_try_again">Por favor vuelve a intentarlo.</string>
     <string name="please_try_again_tomorrow">Por favor vuelve a intentarlo mañana.</string>
     <string name="please_try_different_card">Por favor, intenta con una tarjeta diferente.</string>
-    <string name="post_to_shared_story_dialog_description">Mientras estés en %1$s, puedes enviar Snaps a %2$s. Los Snaps seleccionados se publicarán en la %3$s oficial y podrán ser vistos por cualquier persona que haya agregado a %4$s. Cada vez que envíes un Snap a %5$s, %6$s se agregará a tus amigos por 24 horas. Para elegir desactivar esta característica basada en ubicación, desactiva los Filtros en Ajustes.</string>
+    <string name="post_to_shared_story_dialog_description">Mientras estés en %1$s, puedes enviar Snaps a %2$s. Los Snaps seleccionados se publicarán en la %3$s oficial y cualquier persona que haya añadido a %4$s los podrá ver. Cada vez que envíes un Snap a %5$s, %6$s se añadirá a tus amigos durante 24 horas. Para elegir desactivar esta característica basada en ubicación, desactiva los Filtros en Ajustes.</string>
     <string name="post_to_shared_story_dialog_title">¿Publicar Snap a %1$s?</string>
     <string name="posting">Publicando...</string>
     <string name="posting_1_snap">Añadiendo 1 Snap a tu Historia…</string>
@@ -463,11 +462,11 @@ Discover no esta disponible en tu región."</string>
     <string name="profile_images_share">Compartir a través de...</string>
     <string name="profile_page_onboarding_message"><g id="happy_person_raising_one_hand_emoji">%1$s</g> Tus contactos y ajustes están aquí.</string>
     <string name="profile_page_username_and_score"><g id="username">%1$s</g> | <g id="score">%2$s</g></string>
-    <string name="profile_pictures_tooltip_message"><g id="ghost_emoji">%1$s</g> ¡Toca para agregar una selfie!</string>
+    <string name="profile_pictures_tooltip_message"><g id="ghost_emoji">%1$s</g> ¡Toca para añadir un selfie!</string>
     <string name="provider_not_supported">Esta función no está disponible en esta versión. Por favor, actualiza tu aplicación.</string>
-    <string name="quick_add">AGREGAR RÁPIDAMENTE</string>
+    <string name="quick_add">AÑADIR RÁPIDAMENTE</string>
     <string name="read_accounts_header">buscar cuentas en el dispositivo</string>
-    <string name="read_accounts_text">Recibe notificaciones cuando tus amigos se contactan contigo en Snapchat, cuando otros Snapchatters te agregan y para otros eventos importantes.</string>
+    <string name="read_accounts_text">Recibe notificaciones cuando tus amigos contactan contigo en Snapchat, cuando otros Snapchatters te añaden y para otros eventos importantes.</string>
     <string name="read_phone_header">Consultar la identidad y el estado del teléfono</string>
     <string name="read_phone_text">Completa automáticamente tu número de teléfono cuando te registras en Snapchat para tu conveniencia.</string>
     <string name="read_storage_header">editar o borrar contenido de USB</string>
@@ -503,7 +502,7 @@ Discover no esta disponible en tu región."</string>
     <string name="saved_secondary_text">%1$s - ¡Guardado!</string>
     <string name="saving_secondary_text">%1$s - Guardando…</string>
     <string name="screenshot">¡Screenshot!</string>
-    <string name="search_friends_description">Busca en tus contactos o agrega amigos por nombre de usuario.</string>
+    <string name="search_friends_description">Busca en tus contactos o añade amigos por nombre de usuario.</string>
     <string name="search_hint"><i>Buscar</i></string>
     <string name="searching">Buscando...</string>
     <string name="sec1">1</string>
@@ -520,8 +519,8 @@ Discover no esta disponible en tu región."</string>
     <string name="security_ghost_phone_password_succeed">Tu número de teléfono está ahora confirmado para restablecer la contraseña</string>
     <string name="send_cash_confirmation_desc">Esta operación enviará %1$s de la cuenta bancaria asociada a tu tarjeta de débito.</string>
     <string name="send_cash_confirmation_title">¿Estás seguro de que deseas enviar dinero?</string>
-    <string name="send_to_add_friend">AGREGAR AMIGO</string>
-    <string name="send_to_just_added">RECIÉN AGREGADOS</string>
+    <string name="send_to_add_friend">AÑADIR AMIGO</string>
+    <string name="send_to_just_added">RECIÉN AÑADIDOS</string>
     <string name="send_to_new_friend">ENVIAR A UN AMIGO NUEVO</string>
     <string name="send_to_title">Enviar a...</string>
     <string name="sending">Enviando…</string>
@@ -534,17 +533,17 @@ Discover no esta disponible en tu región."</string>
     <string name="sent_via_discover">Enviado a través de Discover</string>
     <string name="settings_account_actions_blocked">Bloqueado</string>
     <string name="settings_account_actions_clear">Eliminar</string>
-    <string name="settings_account_actions_clear_all">Eliminar Todo</string>
+    <string name="settings_account_actions_clear_all">Eliminar todo</string>
     <string name="settings_account_actions_clear_all_confirm">¿Seguro que quieres eliminar tus conversaciones?</string>
     <string name="settings_account_actions_clear_all_confirm_subtext">Esto eliminará todas tus conversaciones. No se eliminará ningún mensaje guardado o enviado en tus conversaciones.</string>
     <string name="settings_account_actions_clear_confirm">¿Estás seguro que quieres eliminar esta conversación?</string>
     <string name="settings_account_actions_clear_confirm_subtext">Esto borrará esta conversación. No se eliminará ningún mensaje guardado o enviado en tu conversación.</string>
-    <string name="settings_account_actions_clear_conversations">Eliminar Conversaciones</string>
+    <string name="settings_account_actions_clear_conversations">Eliminar conversaciones</string>
     <string name="settings_account_actions_clear_failed_plural">No se pudieron eliminar las conversaciones. Por favor, inténtalo de nuevo.</string>
     <string name="settings_account_actions_clear_failed_singular">Conversación no se pudo eliminar. Por favor intente de nuevo.</string>
     <string name="settings_account_actions_clearing">Eliminando...</string>
     <string name="settings_account_actions_header">ACCIONES DE CUENTA</string>
-    <string name="settings_account_actions_logout">Cerrar Sesión</string>
+    <string name="settings_account_actions_logout">Cerrar sesión</string>
     <string name="settings_account_actions_logout_confirm">¿Seguro que quieres cerrar sesión?</string>
     <string name="settings_advanced">AVANZADO</string>
     <string name="settings_beta_description">Snapchat Beta te permite probar nuestras últimas funciones. Como evaluador de la versión Beta, recibirás las últimas actualizaciones del código y nos ayudarás a que Snapchat sea más estable.</string>
@@ -552,44 +551,44 @@ Discover no esta disponible en tu región."</string>
     <string name="settings_beta_opt_out_description">Salir de la versión Beta</string>
     <string name="settings_boring_header">MÁS INFORMACIÓN</string>
     <string name="settings_cash">Snapcash</string>
-    <string name="settings_cash_add_card">Agregar tarjeta</string>
+    <string name="settings_cash_add_card">Añadir tarjeta</string>
     <string name="settings_cash_debit_card_header">TARJETA DE DÉBITO</string>
     <string name="settings_cash_history_header">HISTORIAL</string>
     <string name="settings_cash_options_header">OPCIONES</string>
     <string name="settings_cash_security_code">Código de Seguridad</string>
     <string name="settings_cash_security_code_subtext">Se requiere CVV para poder enviar dinero</string>
-    <string name="settings_cash_support">Soporte de Snapcash</string>
+    <string name="settings_cash_support">Ayuda de Snapcash</string>
     <string name="settings_cash_transactions">Transacciones y Recibos</string>
     <string name="settings_cash_view_transactions">Transacciones y Recibos</string>
     <string name="settings_custom_stories_privacy">Privacidad de Mis Historias</string>
     <string name="settings_custom_stories_privacy_explanation">Impide que ciertos amigos vean tu Historia.</string>
     <string name="settings_displayName">Nombre</string>
-    <string name="settings_email">Correo Electrónico</string>
+    <string name="settings_email">Correo electrónico</string>
     <string name="settings_email_change">Ingresa tu correo electrónico.</string>
     <string name="settings_filters">Filtros</string>
     <string name="settings_filters_location_off">Los servicios de ubicación de tu dispositivo están desactivados. Actíva ajustes de Android para habilitar todos los filtros.</string>
-    <string name="settings_filters_location_required">Ciertas características, como Filtros y Nuestra Historia, solicitan tu ubicación.</string>
+    <string name="settings_filters_location_required">Ciertas características, como filtros y Nuestra historia, solicitan tu ubicación.</string>
     <string name="settings_front_facing_flash">Flash Frontal</string>
     <string name="settings_google_plus">Comunidad Google+</string>
     <string name="settings_google_plus_description">Únete a la discusión en Google+.</string>
     <string name="settings_join_snapchat_beta">Registrarse para Snapchat Beta</string>
     <string name="settings_licenses">Licencias</string>
-    <string name="settings_mobile_number">Número de Móvil</string>
+    <string name="settings_mobile_number">Número de móvil</string>
     <string name="settings_mobile_number_allow_friends">Mis amigos pueden encontrarme</string>
     <string name="settings_my_account_header">MI CUENTA</string>
     <string name="settings_notification_led">Parpadear LED</string>
     <string name="settings_notification_settings">Notificaciones de Ajustes</string>
     <string name="settings_notification_sound">Sonido</string>
     <string name="settings_notification_vibration">Vibrar</string>
-    <string name="settings_num_best_friends">Nº de Mejores Amigos</string>
-    <string name="settings_num_best_friends_failed">Error al cambiar el número de Mejores Amigos</string>
+    <string name="settings_num_best_friends">Nº de Mejores amigos</string>
+    <string name="settings_num_best_friends_failed">Error al cambiar el número de Mejores amigos</string>
     <string name="settings_password">Contraseña</string>
     <string name="settings_permissions">Permisos</string>
     <string name="settings_privacy_custom">Personalizado</string>
     <string name="settings_privacy_everyone">Todos</string>
     <string name="settings_privacy_header">PRIVACIDAD</string>
-    <string name="settings_privacy_my_friends">Mis Amigos</string>
-    <string name="settings_privacy_policy">Política de Privacidad</string>
+    <string name="settings_privacy_my_friends">Mis amigos</string>
+    <string name="settings_privacy_policy">Política de privacidad</string>
     <string name="settings_rate_snapchat">Deja tu Opinión</string>
     <string name="settings_rate_snapchat_description">¿Qué tal nos va? ¡Califica a Snapchat en Google Play!</string>
     <string name="settings_receive_notifications">Recibir Notificaciones</string>
@@ -601,14 +600,14 @@ Discover no esta disponible en tu región."</string>
     <string name="settings_services_title">Servicios Adicionales</string>
     <string name="settings_share_stories">Compartir Historias con...</string>
     <string name="settings_snapchat_beta">Snapchat Beta</string>
-    <string name="settings_support">Soporte</string>
-    <string name="settings_support_header">SOPORTE</string>
-    <string name="settings_terms">Condiciones de Uso</string>
+    <string name="settings_support">Ayuda</string>
+    <string name="settings_support_header">AYUDA</string>
+    <string name="settings_terms">Condiciones de uso</string>
     <string name="settings_title">Ajustes</string>
-    <string name="settings_username">Nombre de Usuario</string>
+    <string name="settings_username">Nombre de usuario</string>
     <string name="settings_weather_channel_attribution">El clima es presentado por %1$s.</string>
     <string name="signup_birthday_hint"><i>Cumpleaños</i></string>
-    <string name="signup_page_email_hint">Correo Electrónico</string>
+    <string name="signup_page_email_hint">Correo electrónico</string>
     <string name="signup_page_password_hint">Nueva Contraseña</string>
     <string name="signup_page_title">Registro</string>
     <string name="skip_add_friends">¡Snapchat es más divertido con amigos! ¿Seguro que quieres saltar este paso?</string>
@@ -616,9 +615,9 @@ Discover no esta disponible en tu región."</string>
     <string name="snap_delete_failure">No se pudo eliminar el Snap.</string>
     <string name="snap_failed_to_post">1 Snap no se pudo publicar.</string>
     <string name="snap_list_empty_list_msg">No tienes ningún Snap :(</string>
-    <string name="snap_tag_help_description">Snapchatters te pueden agregar apuntando sus cámaras al fantasma y tocando su pantalla!</string>
+    <string name="snap_tag_help_description">¡Los Snapchatters te pueden añadir apuntando sus cámaras a tu Snapcode y tocando la pantalla!</string>
     <string name="snap_tag_no_connection">No hay conexión.</string>
-    <string name="snap_to_add">Toma un Snap o un screenshot para agregarlo</string>
+    <string name="snap_to_add">Toma un Snap o un screenshot para añadirlo</string>
     <string name="snapkidz_welcome">¡Bienvenido a Snapkidz!</string>
     <string name="snaps_failed_to_post">%1$d Snaps no se pudieron publicar.</string>
     <string name="sorry">¡Perdón!</string>
@@ -641,7 +640,7 @@ Discover no esta disponible en tu región."</string>
     <string name="swipe_for_chat">Desliza para chatear</string>
     <string name="swipe_right_to_view">Desliza a la derecha para ver</string>
     <string name="swipe_to_exit_tutorial_text">Desliza hacia abajo para salir.</string>
-    <string name="tap_to_add_more">¡Toca para agregar más amigos!</string>
+    <string name="tap_to_add_more">¡Toca para añadir a más amigos!</string>
     <string name="tap_to_capture">Toca para Capturar</string>
     <string name="tap_to_load">Pulsa para cargar</string>
     <string name="tap_to_replay">Pulsa para repetir</string>
@@ -652,15 +651,13 @@ Discover no esta disponible en tu región."</string>
     <string name="tap_to_view_edition">Toca para ver en Discover</string>
     <string name="tap_to_view_full_story">¡Toca para ver la historia completa!</string>
     <string name="tap_to_view_more">Toca para explorar otros canales.</string>
-    <string name="tap_to_view_snaps">¡Toca para ver Snaps!</string>
-    <string name="tap_to_view_stories">¡Toca para ver Historias!</string>
     <string name="tap_to_view_video_in_discover">Toca para ver este video en Discover</string>
     <string name="too_many_attempts">Muchos intentos.</string>
     <string name="tos_accept">ACEPTAR</string>
     <string name="tos_logout">Cerrar sesión</string>
-    <string name="tos_privacy_policy">Política de Privacidad</string>
+    <string name="tos_privacy_policy">Política de privacidad</string>
     <string name="tos_terms">Nuestros %1$s y %2$s han cambiado. Al tocar Aceptar, usted acepta los %3$s y %4$s revisados de Snapchat.</string>
-    <string name="tos_terms_of_use">Condiciones de Uso</string>
+    <string name="tos_terms_of_use">Condiciones de uso</string>
     <string name="turn_on_high_accuracy">Activa el modo de \"alta precisión\" (GPS) de los Servicios de ubicación de tu dispositivo.</string>
     <string name="two_fa_disabled_phone_verification_info">Por favor, verifica el número de teléfono antes de usar la verificación de inicio de sesión.</string>
     <string name="two_fa_disabled_settings_help_verified">Si este número es incorrecto, <a href="">lo puedes cambiar</a></string>
@@ -703,7 +700,7 @@ Discover no esta disponible en tu región."</string>
     <string name="unlocked_msg">¡Gracias por verificar tu cuenta!</string>
     <string name="unsupported_phone_message">Sólo son compatibles números de teléfono de los EE.UU. en este momento.</string>
     <string name="unsupported_phone_title">No. de teléfono incompatible</string>
-    <string name="user_agreement">Al crear una cuenta, aceptas las <a href="http://www.snapchat.com/terms">Condiciones de Uso</a> y reconoces haber leído la <a href="http://www.snapchat.com/privacy">Política de Privacidad</a>". "</string>
+    <string name="user_agreement">Al crear una cuenta, aceptas las <a href="http://www.snapchat.com/terms">Condiciones de uso</a> y reconoces haber leído la <a href="http://www.snapchat.com/privacy">Política de privacidad</a>". "</string>
     <string name="username_and_score"><g id="username">%1$s</g> | <g id="score">%2$s</g></string>
     <string name="verify_account">Verificar Cuenta</string>
     <string name="verify_email">Verifica tu correo electrónico</string>

@@ -1,50 +1,30 @@
-.class public Lpz;
-.super Lbgy;
+.class public final Lpz;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation runtime Ltn;
-.end annotation
+# interfaces
+.implements Lpv;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 0
+
+    .prologue
+    .line 6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 1
 
     .prologue
     .line 13
-    invoke-direct {p0}, Lbgy;-><init>()V
+    const/16 v0, 0x4e20
 
-    .line 14
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lpz;->c(Ljava/lang/String;)V
-
-    .line 15
-    invoke-virtual {p0}, Lpz;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Los;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lpz;->e(Ljava/lang/String;)V
-
-    .line 16
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lpz;->g(Ljava/lang/String;)V
-
-    .line 17
-    return-void
+    return v0
 .end method

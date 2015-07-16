@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import xn;
-import xq;
+import yj;
+import ym;
 
 final class TransactionHistoryFragment$a
   extends WebViewClient

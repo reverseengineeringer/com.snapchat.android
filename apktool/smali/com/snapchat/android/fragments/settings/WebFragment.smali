@@ -8,7 +8,7 @@
 
 .field public b:Landroid/webkit/WebView;
 
-.field public c:Lato;
+.field public c:Laum;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
@@ -85,11 +85,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/fragments/settings/WebFragment;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/fragments/settings/WebFragment;)V
 
     .line 86
     return-void
@@ -276,11 +276,11 @@
     .prologue
     .line 234
     :try_start_0
-    invoke-static {}, Lajx;->F()Ljava/lang/String;
+    invoke-static {}, Lakr;->F()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, p0}, Los;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0}, Lpj;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
@@ -365,7 +365,7 @@
     const/4 v6, 0x0
 
     .line 135
-    const v0, 0x7f0a0065
+    const v0, 0x7f0a0067
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/WebFragment;->c(I)Landroid/view/View;
 
@@ -378,7 +378,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 142
-    const v0, 0x7f0a03c2
+    const v0, 0x7f0a03bf
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/WebFragment;->c(I)Landroid/view/View;
 
@@ -409,7 +409,7 @@
     if-eqz v0, :cond_0
 
     .line 146
-    const v0, 0x7f0a0066
+    const v0, 0x7f0a0068
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/WebFragment;->c(I)Landroid/view/View;
 
@@ -509,7 +509,7 @@
 
     const-string v3, "username"
 
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v4
 
@@ -595,9 +595,9 @@
 
     const-string v3, "device"
 
-    iget-object v4, p0, Lcom/snapchat/android/fragments/settings/WebFragment;->c:Lato;
+    iget-object v4, p0, Lcom/snapchat/android/fragments/settings/WebFragment;->c:Laum;
 
-    invoke-virtual {v4, v0}, Lato;->a(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v4, v0}, Laum;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -667,19 +667,13 @@
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_3
-    const-string v0, "WebFragment"
-
-    const-string v2, "AppAuth POST: %s"
-
-    new-array v3, v7, [Ljava/lang/Object;
+    new-array v0, v7, [Ljava/lang/Object;
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/settings/WebFragment;->a(Ljava/util/List;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v3, v6
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v6
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/settings/WebFragment;->a(Ljava/util/List;)Ljava/lang/String;
 
@@ -828,7 +822,7 @@
 
     .prologue
     .line 95
-    const v0, 0x7f0400ce
+    const v0, 0x7f0400d0
 
     const/4 v1, 0x0
 

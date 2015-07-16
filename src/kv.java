@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kv
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_PHONE_SKIP";
+  private final String eventName = "REGISTRATION_USER_CONTACT_PERMISSION_DENY";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_PHONE_SKIP");
+    localHashMap.put("event_name", "REGISTRATION_USER_CONTACT_PERMISSION_DENY");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

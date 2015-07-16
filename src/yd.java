@@ -1,34 +1,29 @@
 import android.content.Context;
-import android.graphics.PointF;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.ViewConfiguration;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.WindowManager;
+import com.snapchat.android.SnapchatApplication;
 
 public final class yd
+  extends DisplayMetrics
 {
-  public final PointF[] a = new PointF[2];
-  public final Handler b = new Handler(Looper.getMainLooper());
-  public final float c;
-  public final yd.a d;
-  
-  public yd(@cgb Context paramContext, @cgb yd.a parama)
+  public yd()
   {
-    c = ViewConfiguration.get(paramContext).getScaledTouchSlop();
-    d = parama;
+    this(((WindowManager)SnapchatApplication.b().getApplicationContext().getSystemService("window")).getDefaultDisplay());
   }
   
-  public final void a()
+  private yd(@chc Display paramDisplay)
   {
-    a[0] = null;
-    a[1] = null;
-    b.removeCallbacksAndMessages(null);
-  }
-  
-  public static abstract interface a
-  {
-    public abstract void a();
-    
-    public abstract boolean v_();
+    DisplayMetrics localDisplayMetrics = new DisplayMetrics();
+    paramDisplay.getMetrics(localDisplayMetrics);
+    setTo(localDisplayMetrics);
+    widthPixels = awf.a(localDisplayMetrics, false);
+    heightPixels = awf.b(localDisplayMetrics, false);
+    if (widthPixels != widthPixels)
+    {
+      xdpi = ydpi;
+      ydpi = xdpi;
+    }
   }
 }
 

@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kq
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_PHONE_ATTEMPT";
+  private final String eventName = "REGISTRATION_USER_CAPTCHA_PAGEVIEW";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_PHONE_ATTEMPT");
+    localHashMap.put("event_name", "REGISTRATION_USER_CAPTCHA_PAGEVIEW");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

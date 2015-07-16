@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class if
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "PROFILE_ADDED_ME_PAGE_VIEW";
+  private final String eventName = "HERE_SESSION_END";
+  public Double view_time_sec;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_ADDED_ME_PAGE_VIEW");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "HERE_SESSION_END");
+    if (view_time_sec != null) {
+      localHashMap.put("view_time_sec", view_time_sec);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class if
         return false;
       }
       paramObject = (if)paramObject;
-      if (additionalInfo == null) {
+      if (view_time_sec == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (view_time_sec.equals(view_time_sec));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (view_time_sec == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class if
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
+    if (view_time_sec != null) {}
+    for (int i = view_time_sec.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

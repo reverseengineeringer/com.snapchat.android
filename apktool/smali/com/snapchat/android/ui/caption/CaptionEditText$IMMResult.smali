@@ -38,27 +38,21 @@
 
 # virtual methods
 .method public onReceiveResult(ILandroid/os/Bundle;)V
-    .locals 6
+    .locals 4
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
     .line 558
-    const-string v0, "CaptionEditText"
-
-    const-string v1, "CaptionDebug: result from IME is %d"
-
-    new-array v2, v4, [Ljava/lang/Object;
+    new-array v0, v2, [Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v2, v5
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v3
 
     .line 559
     const/4 v0, 0x2
@@ -71,7 +65,7 @@
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/CaptionEditText$IMMResult;->a:Lcom/snapchat/android/ui/caption/CaptionEditText;
 
-    invoke-static {v0, v4}, Lcom/snapchat/android/ui/caption/CaptionEditText;->a(Lcom/snapchat/android/ui/caption/CaptionEditText;Z)Z
+    invoke-static {v0, v2}, Lcom/snapchat/android/ui/caption/CaptionEditText;->a(Lcom/snapchat/android/ui/caption/CaptionEditText;Z)Z
 
     .line 564
     :cond_1
@@ -84,13 +78,13 @@
 
     if-eq p1, v0, :cond_3
 
-    if-ne p1, v4, :cond_1
+    if-ne p1, v2, :cond_1
 
     .line 562
     :cond_3
     iget-object v0, p0, Lcom/snapchat/android/ui/caption/CaptionEditText$IMMResult;->a:Lcom/snapchat/android/ui/caption/CaptionEditText;
 
-    invoke-static {v0, v5}, Lcom/snapchat/android/ui/caption/CaptionEditText;->a(Lcom/snapchat/android/ui/caption/CaptionEditText;Z)Z
+    invoke-static {v0, v3}, Lcom/snapchat/android/ui/caption/CaptionEditText;->a(Lcom/snapchat/android/ui/caption/CaptionEditText;Z)Z
 
     goto :goto_0
 .end method

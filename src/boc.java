@@ -1,12 +1,27 @@
+import java.net.URL;
+
 public final class boc
 {
-  public final Object a;
-  public final Object b;
-  
-  public boc(Object paramObject1, Object paramObject2)
+  public static String a(bna parambna)
   {
-    a = paramObject1;
-    b = paramObject2;
+    if (parambna == bna.a) {
+      return "HTTP/1.0";
+    }
+    return "HTTP/1.1";
+  }
+  
+  public static String a(URL paramURL)
+  {
+    String str = paramURL.getFile();
+    if (str == null) {
+      paramURL = "/";
+    }
+    do
+    {
+      return paramURL;
+      paramURL = str;
+    } while (str.startsWith("/"));
+    return "/" + str;
   }
 }
 

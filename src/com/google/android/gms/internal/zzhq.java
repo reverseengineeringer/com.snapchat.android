@@ -27,11 +27,22 @@ public class zzhq<T>
     }
     zzsg = true;
     zzzu = true;
-    zznh.notifyAll();
     return true;
   }
   
   public T get()
+  {
+    synchronized (zznh)
+    {
+      if (zzsg) {
+        throw new CancellationException("CallbackFuture was cancelled.");
+      }
+    }
+    Object localObject3 = zzzt;
+    return (T)localObject3;
+  }
+  
+  public T get(long paramLong, TimeUnit paramTimeUnit)
   {
     synchronized (zznh)
     {
@@ -40,48 +51,23 @@ public class zzhq<T>
     }
     try
     {
-      zznh.wait();
-      if (zzsg)
+      paramTimeUnit.toMillis(paramLong);
+      if (!zzzu)
       {
-        throw new CancellationException("CallbackFuture was cancelled.");
-        localObject2 = finally;
-        throw ((Throwable)localObject2);
+        throw new TimeoutException("CallbackFuture timed out.");
+        paramTimeUnit = finally;
+        throw paramTimeUnit;
       }
-      Object localObject3 = zzzt;
-      return (T)localObject3;
+      if (zzsg) {
+        throw new CancellationException("CallbackFuture was cancelled.");
+      }
+      paramTimeUnit = zzzt;
+      return paramTimeUnit;
     }
-    catch (InterruptedException localInterruptedException)
+    catch (InterruptedException paramTimeUnit)
     {
       for (;;) {}
     }
-  }
-  
-  public T get(long paramLong, TimeUnit paramTimeUnit)
-  {
-    synchronized (zznh)
-    {
-      boolean bool = zzzu;
-      if (!bool) {}
-      try
-      {
-        paramLong = paramTimeUnit.toMillis(paramLong);
-        if (paramLong != 0L) {
-          zznh.wait(paramLong);
-        }
-      }
-      catch (InterruptedException paramTimeUnit)
-      {
-        for (;;) {}
-      }
-      if (!zzzu) {
-        throw new TimeoutException("CallbackFuture timed out.");
-      }
-    }
-    if (zzsg) {
-      throw new CancellationException("CallbackFuture was cancelled.");
-    }
-    paramTimeUnit = zzzt;
-    return paramTimeUnit;
   }
   
   public boolean isCancelled()
@@ -112,7 +98,6 @@ public class zzhq<T>
     }
     zzzu = true;
     zzzt = paramT;
-    zznh.notifyAll();
   }
 }
 

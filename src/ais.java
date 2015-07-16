@@ -1,9 +1,17 @@
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonSerializer;
-
 public final class ais
-  implements JsonDeserializer<cgs>, JsonSerializer<cgs>
-{}
+{
+  public final aje a;
+  
+  public ais()
+  {
+    this(aje.a());
+  }
+  
+  private ais(@chc aje paramaje)
+  {
+    a = paramaje;
+  }
+}
 
 /* Location:
  * Qualified Name:     ais

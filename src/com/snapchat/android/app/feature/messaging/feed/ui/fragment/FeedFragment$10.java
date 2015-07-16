@@ -1,26 +1,40 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.preference.PreferenceManager;
-import com.snapchat.android.database.SharedPreferenceKey;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.TranslateAnimation;
 
 final class FeedFragment$10
-  implements Runnable
+  implements Animation.AnimationListener
 {
-  FeedFragment$10(FeedFragment paramFeedFragment, int paramInt) {}
+  FeedFragment$10(FeedFragment paramFeedFragment, Runnable paramRunnable, View paramView) {}
   
-  public final void run()
+  public final void onAnimationEnd(Animation paramAnimation)
   {
-    if ((!FeedFragment.s(b)) && (a > 0))
-    {
-      FeedFragment.a(b, a - 1);
-      return;
+    paramAnimation = new TranslateAnimation(FeedFragment.u(c), 0.0F, 0.0F, 0.0F);
+    paramAnimation.setInterpolator(new BounceInterpolator());
+    paramAnimation.setDuration(400L);
+    if (a != null) {
+      paramAnimation.setAnimationListener(new Animation.AnimationListener()
+      {
+        public final void onAnimationEnd(Animation paramAnonymousAnimation)
+        {
+          a.run();
+        }
+        
+        public final void onAnimationRepeat(Animation paramAnonymousAnimation) {}
+        
+        public final void onAnimationStart(Animation paramAnonymousAnimation) {}
+      });
     }
-    SharedPreferences.Editor localEditor = PreferenceManager.getDefaultSharedPreferences(b.getActivity()).edit();
-    localEditor.remove(SharedPreferenceKey.BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING.getKey());
-    localEditor.apply();
+    b.startAnimation(paramAnimation);
   }
+  
+  public final void onAnimationRepeat(Animation paramAnimation) {}
+  
+  public final void onAnimationStart(Animation paramAnimation) {}
 }
 
 /* Location:

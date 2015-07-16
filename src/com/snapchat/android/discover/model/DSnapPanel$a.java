@@ -1,7 +1,7 @@
 package com.snapchat.android.discover.model;
 
-import abs;
-import bjx;
+import acs;
+import bky;
 
 public final class DSnapPanel$a
 {
@@ -13,7 +13,7 @@ public final class DSnapPanel$a
   public DSnapPanel.Mode f;
   public DSnapPanel.Docking g;
   public MediaState h;
-  public bjx i;
+  public bky i;
   public String j;
   
   public final a a(String paramString)
@@ -25,13 +25,13 @@ public final class DSnapPanel$a
   public final DSnapPanel a()
   {
     if ((a == null) && (e != DSnapPanel.MediaType.REMOTE_VIDEO)) {
-      throw new abs("Cannot build dsnap panel with null uri.", "uri");
+      throw new acs("Cannot build dsnap panel with null uri.", "uri");
     }
     if (e == null) {
-      throw new abs("Cannot build dsnap panel with null media type.", "media_type");
+      throw new acs("Cannot build dsnap panel with null media type.", "media_type");
     }
     if ((e == DSnapPanel.MediaType.VIDEO) && (j == null)) {
-      throw new abs("Cannot build video dsnap panel with null first frame URI.", "video_first_frame");
+      throw new acs("Cannot build video dsnap panel with null first frame URI.", "video_first_frame");
     }
     if (f == null) {
       f = DSnapPanel.Mode.LOOPING;

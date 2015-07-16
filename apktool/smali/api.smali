@@ -3,241 +3,218 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Larv;
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lapi$a;
+    }
+.end annotation
 
-.field public final b:Lcom/snapchat/android/ui/SwipeViewState;
+
+# instance fields
+.field final a:Lapl;
+
+.field private final b:Laki;
+
+.field private final c:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Larv;Lcom/snapchat/android/ui/SwipeViewState;)V
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 2
+
+    .prologue
+    .line 42
+    invoke-static {}, Laki;->a()Laki;
+
+    move-result-object v0
+
+    invoke-static {}, Lapl;->a()Lapl;
+
+    move-result-object v1
+
+    invoke-direct {p0, p1, v0, v1}, Lapi;-><init>(Landroid/content/Context;Laki;Lapl;)V
+
+    .line 43
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;Laki;Lapl;)V
     .locals 0
 
     .prologue
-    .line 14
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
-    iput-object p1, p0, Lapi;->a:Larv;
+    .line 47
+    iput-object p1, p0, Lapi;->c:Landroid/content/Context;
 
-    .line 16
-    iput-object p2, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    .line 48
+    iput-object p2, p0, Lapi;->b:Laki;
 
-    .line 17
+    .line 49
+    iput-object p3, p0, Lapi;->a:Lapl;
+
+    .line 50
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(IZ)I
-    .locals 5
+.method public final a(Lcom/snapchat/android/model/StorySnapLogbook;Lapi$a;)V
+    .locals 6
+    .param p1    # Lcom/snapchat/android/model/StorySnapLogbook;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lapi$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
+    .line 59
+    iget-object v0, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
+
+    iget-boolean v0, v0, Lakl;->mFailed:Z
+
+    if-eqz v0, :cond_0
+
+    .line 60
+    iget-object v0, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
+
+    iget-object v0, v0, Lakl;->mClientId:Ljava/lang/String;
+
+    .line 61
+    iget-object v1, p0, Lapi;->b:Laki;
+
+    iget-object v2, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStoryId:Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v0}, Laki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
     .line 62
-    iget-object v0, p0, Lapi;->a:Larv;
+    invoke-interface {p2}, Lapi$a;->c()V
 
-    invoke-interface {v0}, Larv;->b()I
+    .line 90
+    :goto_0
+    iget-object v0, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    move-result v3
+    iget-object v0, v0, Lakl;->mClientId:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/snapchat/android/analytics/AnalyticsEvents;->c(Ljava/lang/String;)V
+
+    .line 91
+    return-void
 
     .line 64
-    if-lez v3, :cond_5
-
-    .line 65
-    if-eqz p2, :cond_3
-
-    const/4 v0, 0x1
-
-    .line 66
-    :goto_0
-    const/4 v1, 0x0
-
-    .line 67
-    iget-object v2, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget-boolean v2, v2, Lcom/snapchat/android/ui/SwipeViewState;->m:Z
-
-    if-eqz v2, :cond_4
-
-    .line 68
-    iget-object v1, p0, Lapi;->a:Larv;
-
-    iget-object v2, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v2, v2, Lcom/snapchat/android/ui/SwipeViewState;->a:I
-
-    invoke-interface {v1, v2}, Larv;->b(I)Lcom/snapchat/android/ui/swipefilters/FilterPageType;
-
-    move-result-object v1
-
-    move v2, p1
-
-    .line 71
     :cond_0
-    :goto_1
-    add-int/2addr v2, v3
+    new-instance v0, Lapi$1;
 
-    add-int/2addr v2, v0
+    iget-object v3, p0, Lapi;->c:Landroid/content/Context;
 
-    rem-int/2addr v2, v3
+    move-object v1, p0
 
-    .line 72
-    iget-object v4, p0, Lapi;->a:Larv;
+    move-object v2, p1
 
-    invoke-interface {v4, v2}, Larv;->b(I)Lcom/snapchat/android/ui/swipefilters/FilterPageType;
+    move-object v4, p1
 
-    move-result-object v4
+    move-object v5, p2
 
-    if-eq v4, v1, :cond_1
+    invoke-direct/range {v0 .. v5}, Lapi$1;-><init>(Lapi;Lcom/snapchat/android/model/StorySnapLogbook;Landroid/content/Context;Lcom/snapchat/android/model/StorySnapLogbook;Lapi$a;)V
 
-    iget-object v4, p0, Lapi;->a:Larv;
-
-    invoke-interface {v4, v2}, Larv;->a(I)Larn;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Larn;->f()Z
-
-    move-result v4
-
-    if-nez v4, :cond_2
-
-    :cond_1
-    if-ne v2, p1, :cond_0
-
-    .line 74
-    :cond_2
-    :goto_2
-    return v2
-
-    .line 65
-    :cond_3
-    const/4 v0, -0x1
-
-    goto :goto_0
-
-    :cond_4
-    move v2, p1
-
-    goto :goto_1
-
-    :cond_5
-    move v2, p1
-
-    goto :goto_2
-.end method
-
-.method public final a(Z)Z
-    .locals 6
-
-    .prologue
-    const/4 v1, 0x1
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     const/4 v2, 0x0
 
-    .line 82
-    if-eqz p1, :cond_1
+    new-array v2, v2, [Ljava/lang/String;
 
-    .line 83
-    iget-object v0, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget-object v1, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v1, v1, Lcom/snapchat/android/ui/SwipeViewState;->a:I
-
-    iput v1, v0, Lcom/snapchat/android/ui/SwipeViewState;->b:I
-
-    .line 84
-    iget-object v0, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget-object v1, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v1, v1, Lcom/snapchat/android/ui/SwipeViewState;->c:I
-
-    iput v1, v0, Lcom/snapchat/android/ui/SwipeViewState;->d:I
-
-    .line 94
-    :cond_0
-    :goto_0
-    return v2
-
-    .line 87
-    :cond_1
-    iget-object v0, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v0, v0, Lcom/snapchat/android/ui/SwipeViewState;->a:I
-
-    .line 88
-    iget-object v3, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v3, v3, Lcom/snapchat/android/ui/SwipeViewState;->c:I
-
-    .line 89
-    iget-object v4, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget-object v5, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v5, v5, Lcom/snapchat/android/ui/SwipeViewState;->b:I
-
-    iput v5, v4, Lcom/snapchat/android/ui/SwipeViewState;->a:I
-
-    .line 90
-    iget-object v4, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget-object v5, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v5, v5, Lcom/snapchat/android/ui/SwipeViewState;->d:I
-
-    iput v5, v4, Lcom/snapchat/android/ui/SwipeViewState;->c:I
-
-    .line 91
-    iget-object v4, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget-object v5, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget-boolean v5, v5, Lcom/snapchat/android/ui/SwipeViewState;->m:Z
-
-    iput-boolean v5, v4, Lcom/snapchat/android/ui/SwipeViewState;->l:Z
-
-    .line 92
-    iget-object v4, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v4, v4, Lcom/snapchat/android/ui/SwipeViewState;->a:I
-
-    if-eq v0, v4, :cond_3
-
-    move v0, v1
-
-    .line 93
-    :goto_1
-    iget-object v4, p0, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
-
-    iget v4, v4, Lcom/snapchat/android/ui/SwipeViewState;->c:I
-
-    if-eq v3, v4, :cond_4
-
-    move v3, v1
-
-    .line 94
-    :goto_2
-    if-nez v0, :cond_2
-
-    if-eqz v3, :cond_0
-
-    :cond_2
-    move v2, v1
+    invoke-virtual {v0, v1, v2}, Lapi$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto :goto_0
+.end method
 
-    :cond_3
-    move v0, v2
+.method public final b(Lcom/snapchat/android/model/StorySnapLogbook;Lapi$a;)V
+    .locals 9
+    .param p1    # Lcom/snapchat/android/model/StorySnapLogbook;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lapi$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation build Lawj;
+    .end annotation
 
-    .line 92
-    goto :goto_1
+    .annotation build Lcdn;
+    .end annotation
 
-    :cond_4
-    move v3, v2
+    .prologue
+    const/4 v8, 0x0
 
-    .line 93
-    goto :goto_2
+    .line 101
+    iget-object v3, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
+
+    .line 102
+    invoke-virtual {v3}, Lakl;->ai()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 103
+    new-instance v0, Lapi$2;
+
+    iget-object v2, p0, Lapi;->c:Landroid/content/Context;
+
+    sget-object v4, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;->STORY:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+
+    sget-object v5, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->FAIL_ONLY:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    move-object v1, p0
+
+    move-object v6, p1
+
+    move-object v7, p2
+
+    invoke-direct/range {v0 .. v7}, Lapi$2;-><init>(Lapi;Landroid/content/Context;Lakl;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lcom/snapchat/android/model/StorySnapLogbook;Lapi$a;)V
+
+    sget-object v1, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+
+    new-array v2, v8, [Ljava/lang/Void;
+
+    invoke-virtual {v0, v1, v2}, Lapi$2;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 150
+    :goto_0
+    invoke-static {v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Lakl;)V
+
+    .line 151
+    return-void
+
+    .line 126
+    :cond_0
+    new-instance v0, Lapi$3;
+
+    iget-object v2, p0, Lapi;->c:Landroid/content/Context;
+
+    sget-object v4, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;->STORY:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
+
+    sget-object v5, Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;->FAIL_ONLY:Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;
+
+    move-object v1, p0
+
+    move-object v6, p1
+
+    move-object v7, p2
+
+    invoke-direct/range {v0 .. v7}, Lapi$3;-><init>(Lapi;Landroid/content/Context;Lakl;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;Lcom/snapchat/android/model/StorySnapLogbook;Lapi$a;)V
+
+    sget-object v1, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+
+    new-array v2, v8, [Ljava/lang/Void;
+
+    invoke-virtual {v0, v1, v2}, Lapi$3;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    goto :goto_0
 .end method

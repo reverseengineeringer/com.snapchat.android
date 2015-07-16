@@ -2,157 +2,77 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Laxu;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
 
 # instance fields
-.field private final mClockProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lbgk;",
-            ">;"
-        }
+.field public final mAlgorithm:Laza;
+    .annotation build Lchd;
+    .end annotation
+.end field
+
+.field public final mCache:Laxn;
+    .annotation build Lchc;
+    .end annotation
+.end field
+
+.field public final mKey:Ljava/lang/String;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Laxn;Ljava/lang/String;Laza;)V
+    .locals 2
+    .param p1    # Laxn;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Laza;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
     .prologue
-    .line 8
-    const-class v0, Laxw;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Laxw;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lbgk;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 12
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
-    sget-boolean v0, Laxw;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 14
-    :cond_0
-    iput-object p1, p0, Laxw;->mClockProvider:Ljavax/inject/Provider;
-
-    .line 15
-    return-void
-.end method
-
-.method public static a(Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lbgk;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Laxu;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 26
-    new-instance v0, Laxw;
-
-    invoke-direct {v0, p0}, Laxw;-><init>(Ljavax/inject/Provider;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
-
-    .prologue
-    .line 8
-    check-cast p1, Laxu;
-
+    .line 21
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "Cannot inject members into a null reference"
+    const-string v1, "cache is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
+    .line 22
     :cond_0
-    iget-object v0, p0, Laxw;->mClockProvider:Ljavax/inject/Provider;
+    if-nez p2, :cond_1
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    move-result-object v0
+    const-string v1, "key is null"
 
-    check-cast v0, Lbgk;
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p1, Laxu;->mClock:Lbgk;
+    throw v0
 
+    .line 24
+    :cond_1
+    iput-object p1, p0, Laxw;->mCache:Laxn;
+
+    .line 25
+    iput-object p2, p0, Laxw;->mKey:Ljava/lang/String;
+
+    .line 26
+    iput-object p3, p0, Laxw;->mAlgorithm:Laza;
+
+    .line 27
     return-void
 .end method

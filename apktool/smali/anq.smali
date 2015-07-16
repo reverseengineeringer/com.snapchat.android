@@ -1,6 +1,9 @@
-.class final Lanq;
-.super Lbfm;
+.class public final Lanq;
+.super Lana;
 .source "SourceFile"
+
+# interfaces
+.implements Lui$b;
 
 
 # annotations
@@ -10,134 +13,145 @@
     }
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lana;",
+        "Lui$b",
+        "<",
+        "Lblk;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
-.field private final a:Laje;
+.field public a:Lblk;
 
-.field private final b:Laip;
-    .annotation build Lcgc;
-    .end annotation
-.end field
+.field public b:Z
+
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
-.method private constructor <init>(Laje;Laip;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Intent;)V
+    .locals 1
 
     .prologue
+    .line 32
+    invoke-direct {p0, p1}, Lana;-><init>(Landroid/content/Intent;)V
+
     .line 27
-    invoke-direct {p0}, Lbfm;-><init>()V
+    const/4 v0, 0x0
 
-    .line 28
-    iput-object p1, p0, Lanq;->a:Laje;
+    iput-boolean v0, p0, Lanq;->b:Z
 
-    .line 29
-    iput-object p2, p0, Lanq;->b:Laip;
+    .line 33
+    const-string v0, "new_password"
 
-    .line 30
-    return-void
-.end method
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-.method synthetic constructor <init>(Laje;Laip;B)V
-    .locals 0
+    move-result-object v0
 
-    .prologue
-    .line 20
-    invoke-direct {p0, p1, p2}, Lanq;-><init>(Laje;Laip;)V
+    iput-object v0, p0, Lanq;->c:Ljava/lang/String;
 
+    .line 34
+    const-class v0, Lblk;
+
+    invoke-virtual {p0, v0, p0}, Lanq;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 35
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Laje;
-    .locals 1
-    .annotation build Lcgb;
-    .end annotation
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 2
 
     .prologue
-    .line 34
-    invoke-virtual {p0}, Lanq;->f()V
+    .line 63
+    new-instance v0, Lanq$a;
 
-    .line 35
-    iget-object v0, p0, Lanq;->a:Laje;
+    iget-object v1, p0, Lanq;->c:Ljava/lang/String;
+
+    invoke-direct {v0, p0, v1}, Lanq$a;-><init>(Lanq;Ljava/lang/String;)V
 
     return-object v0
 .end method
 
-.method public final b()Ljava/lang/String;
+.method protected final l_()Ljava/lang/String;
     .locals 1
-    .annotation build Lcgc;
-    .end annotation
 
     .prologue
-    .line 40
-    invoke-virtual {p0}, Lanq;->f()V
+    .line 58
+    const-string v0, "/loq/and/change_password"
 
-    .line 41
-    iget-object v0, p0, Lanq;->b:Laip;
+    return-object v0
+.end method
+
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 4
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 23
+    check-cast p1, Lblk;
+
+    invoke-virtual {p2}, Lus;->d()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lanq;->b:Laip;
+    if-eqz p1, :cond_0
 
-    invoke-virtual {v0}, Laip;->a()Ljava/lang/String;
-
-    move-result-object v0
+    iput-object p1, p0, Lanq;->a:Lblk;
 
     :goto_0
-    return-object v0
+    return-void
 
     :cond_0
-    const/4 v0, 0x0
+    iget v0, p2, Lus;->mResponseCode:I
+
+    const/16 v1, 0x193
+
+    if-ne v0, v1, :cond_1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lanq;->b:Z
 
     goto :goto_0
-.end method
 
-.method protected final c()V
-    .locals 1
+    :cond_1
+    new-instance v0, Lblk;
 
-    .prologue
-    .line 55
-    iget-object v0, p0, Lanq;->b:Laip;
+    invoke-direct {v0}, Lblk;-><init>()V
 
-    if-eqz v0, :cond_0
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    .line 56
-    iget-object v0, p0, Lanq;->b:Laip;
+    move-result-object v1
 
-    invoke-virtual {v0}, Laip;->e()V
-
-    .line 58
-    :cond_0
-    return-void
-.end method
-
-.method public final d()Landroid/graphics/Bitmap;
-    .locals 1
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    .line 46
-    invoke-virtual {p0}, Lanq;->f()V
-
-    .line 47
-    iget-object v0, p0, Lanq;->b:Laip;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lanq;->b:Laip;
-
-    invoke-virtual {v0}, Laip;->b()Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1}, Lblk;->a(Ljava/lang/Boolean;)Lblk;
 
     move-result-object v0
 
-    :goto_0
-    return-object v0
+    new-array v1, v2, [Ljava/lang/Object;
 
-    :cond_0
-    const/4 v0, 0x0
+    const/4 v2, 0x0
+
+    const v3, 0x7f0c01c2
+
+    invoke-static {v2, v3, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lblk;->a(Ljava/lang/String;)Lblk;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lanq;->a:Lblk;
 
     goto :goto_0
 .end method

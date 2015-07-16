@@ -21,7 +21,7 @@
 
     .prologue
     .line 20
-    const v0, 0x7f04000a
+    const v0, 0x7f04000b
 
     const/4 v1, 0x0
 
@@ -32,7 +32,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/BetaSettingsFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 21
-    const v0, 0x7f0a0065
+    const v0, 0x7f0a0067
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/BetaSettingsFragment;->c(I)Landroid/view/View;
 

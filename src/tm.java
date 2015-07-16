@@ -1,36 +1,26 @@
-import javax.inject.Provider;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.api2.cash.square.data.CashCustomer;
+import com.snapchat.android.api2.cash.square.data.CashPayment;
+import java.util.List;
 
-public final class tm
-  implements buo<tl>
+public class tm
 {
-  private final Provider<to> formEncodedJsonFieldMapperProvider;
-  private final Provider<ato> gsonProvider;
-  private final Provider<tz> multipartEncodedFieldMapperProvider;
-  
-  static
-  {
-    if (!tm.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
-  }
-  
-  private tm(Provider<to> paramProvider, Provider<tz> paramProvider1, Provider<ato> paramProvider2)
-  {
-    assert (paramProvider != null);
-    formEncodedJsonFieldMapperProvider = paramProvider;
-    assert (paramProvider1 != null);
-    multipartEncodedFieldMapperProvider = paramProvider1;
-    assert (paramProvider2 != null);
-    gsonProvider = paramProvider2;
-  }
-  
-  public static buo<tl> a(Provider<to> paramProvider, Provider<tz> paramProvider1, Provider<ato> paramProvider2)
-  {
-    return new tm(paramProvider, paramProvider1, paramProvider2);
-  }
+  @SerializedName("blockers")
+  @chd
+  private tq mBlockers;
+  @SerializedName("card_summary")
+  @chd
+  public tl mCardSummary;
+  @SerializedName("customer")
+  @chd
+  public CashCustomer mCustomer;
+  @SerializedName("number_of_payments")
+  public int mNumberOfPayments = 0;
+  @SerializedName("passcode_confirmation_enabled")
+  public boolean mPasswordConfirmationEnabled;
+  @SerializedName("payments")
+  @chd
+  private List<CashPayment> mPayments;
 }
 
 /* Location:

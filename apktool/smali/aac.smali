@@ -1,153 +1,186 @@
 .class public final Laac;
-.super Lcom/snapchat/android/database/table/FriendTable;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field private static a:Laac;
+# instance fields
+.field final a:I
+
+.field final b:I
+
+.field final c:I
+
+.field private final d:Z
+
+.field private final e:I
+
+.field private final f:I
 
 
 # direct methods
-.method private constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lbkr;Z)V
+    .locals 1
 
     .prologue
-    .line 13
-    invoke-direct {p0}, Lcom/snapchat/android/database/table/FriendTable;-><init>()V
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 22
+    iput-boolean p2, p0, Laac;->d:Z
+
+    .line 23
+    invoke-virtual {p1}, Lbkr;->c()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iput v0, p0, Laac;->a:I
+
+    .line 24
+    invoke-virtual {p1}, Lbkr;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Lbkr;->f()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iput v0, p0, Laac;->e:I
+
+    .line 26
+    invoke-virtual {p1}, Lbkr;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1}, Lbkr;->a()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    :goto_1
+    iput v0, p0, Laac;->f:I
+
+    .line 28
+    invoke-virtual {p1}, Lbkr;->e()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1}, Lbkr;->d()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    :goto_2
+    iput v0, p0, Laac;->b:I
+
+    .line 30
+    if-eqz p2, :cond_3
+
+    iget v0, p0, Laac;->f:I
+
+    :goto_3
+    iput v0, p0, Laac;->c:I
+
+    .line 31
     return-void
-.end method
 
-.method public static declared-synchronized a()Laac;
-    .locals 2
-
-    .prologue
-    .line 16
-    const-class v1, Laac;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Laac;->a:Laac;
-
-    if-nez v0, :cond_0
-
-    .line 17
-    new-instance v0, Laac;
-
-    invoke-direct {v0}, Laac;-><init>()V
-
-    sput-object v0, Laac;->a:Laac;
-
-    .line 19
+    .line 24
     :cond_0
-    sget-object v0, Laac;->a:Laac;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p1}, Lbkr;->c()Ljava/lang/Integer;
 
-    monitor-exit v1
+    move-result-object v0
 
-    return-object v0
+    goto :goto_0
 
-    .line 16
-    :catchall_0
-    move-exception v0
+    .line 26
+    :cond_1
+    const/4 v0, 0x1
 
-    monitor-exit v1
+    goto :goto_1
 
-    throw v0
+    .line 28
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_2
+
+    .line 30
+    :cond_3
+    iget v0, p0, Laac;->e:I
+
+    goto :goto_3
 .end method
 
 
 # virtual methods
-.method protected final a(Lajv;)Ljava/util/Collection;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lajv;",
-            ")",
-            "Ljava/util/Collection",
-            "<",
-            "Lcom/snapchat/android/model/Friend;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 29
-    invoke-virtual {p1}, Lajv;->n()Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b(Lajv;)V
+.method public final toString()Ljava/lang/String;
     .locals 3
 
     .prologue
-    .line 35
-    const/4 v0, 0x0
-
-    invoke-static {}, Laac;->g()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Laac;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+    .line 80
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    iget-object v1, p1, Lajv;->mContactsOnSnapchat:Ljava/util/List;
+    invoke-static {v0}, Lcl;->a(Ljava/lang/Class;)Lcl$a;
 
-    monitor-enter v1
+    move-result-object v0
 
-    :try_start_0
-    iget-object v2, p1, Lajv;->mContactsOnSnapchat:Ljava/util/List;
+    const-string v1, "isResume"
 
-    invoke-interface {v2}, Ljava/util/List;->clear()V
+    iget-boolean v2, p0, Laac;->d:Z
 
-    iget-object v2, p1, Lajv;->mContactsOnSnapchat:Ljava/util/List;
+    invoke-virtual {v0, v1, v2}, Lcl$a;->a(Ljava/lang/String;Z)Lcl$a;
 
-    invoke-interface {v2, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    move-result-object v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v1, "interval"
 
-    .line 36
-    iget-object v0, p1, Lajv;->mContactsOnSnapchatSet:Ljava/util/Set;
+    iget v2, p0, Laac;->a:I
 
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
+    invoke-virtual {v0, v1, v2}, Lcl$a;->a(Ljava/lang/String;I)Lcl$a;
 
-    .line 37
-    iget-object v0, p1, Lajv;->mContactsOnSnapchatSet:Ljava/util/Set;
+    move-result-object v0
 
-    iget-object v1, p1, Lajv;->mContactsOnSnapchat:Ljava/util/List;
+    const-string v1, "minSnapsAfterAd"
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+    iget v2, p0, Laac;->b:I
 
-    .line 38
-    return-void
+    invoke-virtual {v0, v1, v2}, Lcl$a;->a(Ljava/lang/String;I)Lcl$a;
 
-    .line 35
-    :catchall_0
-    move-exception v0
+    move-result-object v0
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    const-string v1, "firstAllowedIndex"
 
-    throw v0
-.end method
+    iget v2, p0, Laac;->c:I
 
-.method public final c()Ljava/lang/String;
-    .locals 1
+    invoke-virtual {v0, v1, v2}, Lcl$a;->a(Ljava/lang/String;I)Lcl$a;
 
-    .prologue
-    .line 24
-    const-string v0, "ContactsOnSnapchatTable"
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcl$a;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

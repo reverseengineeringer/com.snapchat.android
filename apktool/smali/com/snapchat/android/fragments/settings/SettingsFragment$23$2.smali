@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lasr;->a(Landroid/content/Context;)V
+    invoke-static {v0}, Latq;->a(Landroid/content/Context;)V
 
     .line 305
     return-void

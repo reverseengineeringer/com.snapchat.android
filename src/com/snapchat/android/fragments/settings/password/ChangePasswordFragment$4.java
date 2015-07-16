@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.widget.EditText;
 import android.widget.TextView;
-import aol;
+import aph;
 import java.util.Set;
 
 final class ChangePasswordFragment$4
@@ -20,13 +20,13 @@ final class ChangePasswordFragment$4
     if ((!paramBoolean) && (!TextUtils.isEmpty(a.a.getText())))
     {
       paramView = ChangePasswordFragment.a(a);
-      aol localaol = ChangePasswordFragment.d(a);
+      aph localaph = ChangePasswordFragment.d(a);
       FragmentActivity localFragmentActivity = a.getActivity();
       String str = a.a.getText().toString();
-      Intent localIntent = localaol.b(localFragmentActivity);
+      Intent localIntent = localaph.b(localFragmentActivity);
       localIntent.putExtra("op_code", 1018);
       localIntent.putExtra("new_password", str);
-      paramView.add(Integer.valueOf(localaol.a(localFragmentActivity, localIntent)));
+      paramView.add(Integer.valueOf(localaph.a(localFragmentActivity, localIntent)));
       a.e.setVisibility(0);
       a.b.setVisibility(8);
     }

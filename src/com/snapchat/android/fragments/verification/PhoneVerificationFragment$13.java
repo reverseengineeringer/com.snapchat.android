@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.verification;
 
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import auh;
+import avf;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.RegistrationAnalytics.PhoneVerificationMethod;
 
@@ -14,7 +14,7 @@ final class PhoneVerificationFragment$13
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
     a.t();
-    new PhoneVerificationFragment.b(a, false, a.r()).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    new PhoneVerificationFragment.b(a, false, a.r()).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     paramDialogInterface = a.c;
     RegistrationAnalytics.a(RegistrationAnalytics.PhoneVerificationMethod.CALL);
   }

@@ -1,59 +1,37 @@
-import android.os.Build;
-import java.io.File;
+import java.util.concurrent.LinkedBlockingQueue;
+import javax.inject.Provider;
 
-public final class bgn
+public final class bgn<T>
 {
-  private static bgn sInstance = new bgn();
+  public final int mCapacity;
+  public final LinkedBlockingQueue<T> mResources;
   
-  public static bgn a()
+  private bgn(LinkedBlockingQueue<T> paramLinkedBlockingQueue)
   {
-    return sInstance;
+    mResources = paramLinkedBlockingQueue;
+    mCapacity = paramLinkedBlockingQueue.size();
   }
   
-  public static boolean b()
+  public bgn(Provider<T> paramProvider, int paramInt)
   {
-    String str = Build.TAGS;
-    return (str != null) && (str.contains("test-keys"));
+    this(a(paramProvider, paramInt));
   }
   
-  public static boolean c()
+  private static <T> LinkedBlockingQueue<T> a(Provider<T> paramProvider, int paramInt)
   {
-    return new File("/system/app/Superuser.apk").exists();
-  }
-  
-  public static boolean d()
-  {
+    LinkedBlockingQueue localLinkedBlockingQueue = new LinkedBlockingQueue(paramInt);
     int i = 0;
-    while (i < 8)
+    while (i < paramInt)
     {
-      if (new File(new String[] { "/sbin/su", "/system/bin/su", "/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su" }[i]).exists()) {
-        return true;
-      }
+      localLinkedBlockingQueue.offer(paramProvider.get());
       i += 1;
     }
-    return false;
+    return localLinkedBlockingQueue;
   }
   
-  public static boolean e()
+  public final void a(T paramT)
   {
-    try
-    {
-      Process localProcess = Runtime.getRuntime().exec(new String[] { "/system/xbin/which", "su" });
-      if (localProcess != null) {
-        localProcess.destroy();
-      }
-      return true;
-    }
-    catch (Throwable localThrowable)
-    {
-      localThrowable = localThrowable;
-      return false;
-    }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
-    }
+    mResources.offer(paramT);
   }
 }
 

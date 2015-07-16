@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.ImageView;
 import android.widget.TextView;
-import cgb;
+import chc;
 
 final class CardLinkFragment$b
   implements TextWatcher
@@ -12,7 +12,7 @@ final class CardLinkFragment$b
   private TextView a;
   private ImageView b;
   
-  CardLinkFragment$b(@cgb TextView paramTextView, @cgb ImageView paramImageView)
+  CardLinkFragment$b(@chc TextView paramTextView, @chc ImageView paramImageView)
   {
     a = paramTextView;
     b = paramImageView;

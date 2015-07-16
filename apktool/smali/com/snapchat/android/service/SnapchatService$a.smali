@@ -20,11 +20,11 @@
 # instance fields
 .field final synthetic a:Lcom/snapchat/android/service/SnapchatService;
 
-.field private final b:Lamk;
+.field private final b:Lanh;
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/service/SnapchatService;Lamk;)V
+.method public constructor <init>(Lcom/snapchat/android/service/SnapchatService;Lanh;)V
     .locals 0
 
     .prologue
@@ -34,7 +34,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 381
-    iput-object p2, p0, Lcom/snapchat/android/service/SnapchatService$a;->b:Lamk;
+    iput-object p2, p0, Lcom/snapchat/android/service/SnapchatService$a;->b:Lanh;
 
     .line 382
     return-void
@@ -47,27 +47,27 @@
 
     .prologue
     .line 386
-    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$a;->b:Lamk;
+    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$a;->b:Lanh;
 
-    invoke-interface {v0}, Lamk;->f()V
+    invoke-interface {v0}, Lanh;->b()V
 
     .line 388
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$a;->a:Lcom/snapchat/android/service/SnapchatService;
 
-    invoke-static {v0}, Lcom/snapchat/android/service/SnapchatService;->c(Lcom/snapchat/android/service/SnapchatService;)Laol;
+    invoke-static {v0}, Lcom/snapchat/android/service/SnapchatService;->c(Lcom/snapchat/android/service/SnapchatService;)Laph;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService$a;->b:Lamk;
+    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService$a;->b:Lanh;
 
-    iget-object v2, v0, Laol;->d:Landroid/util/SparseArray;
+    iget-object v2, v0, Laph;->d:Landroid/util/SparseArray;
 
     monitor-enter v2
 
     :try_start_0
-    iget-object v0, v0, Laol;->d:Landroid/util/SparseArray;
+    iget-object v0, v0, Laph;->d:Landroid/util/SparseArray;
 
-    invoke-static {v1}, Laol;->b(Lamk;)I
+    invoke-static {v1}, Laph;->b(Lanh;)I
 
     move-result v3
 
@@ -94,9 +94,9 @@
 
     move-result-object v0
 
-    check-cast v0, Laok;
+    check-cast v0, Lapg;
 
-    invoke-interface {v0, v1}, Laok;->a(Lamk;)V
+    invoke-interface {v0, v1}, Lapg;->a(Lanh;)V
 
     goto :goto_0
 
@@ -118,9 +118,9 @@
     .line 389
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService$a;->a:Lcom/snapchat/android/service/SnapchatService;
 
-    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService$a;->b:Lamk;
+    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService$a;->b:Lanh;
 
-    invoke-static {v0, v1}, Lcom/snapchat/android/service/SnapchatService;->a(Lcom/snapchat/android/service/SnapchatService;Lamk;)V
+    invoke-static {v0, v1}, Lcom/snapchat/android/service/SnapchatService;->a(Lcom/snapchat/android/service/SnapchatService;Lanh;)V
 
     .line 390
     return-void

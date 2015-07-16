@@ -1,200 +1,291 @@
 .class public final Lanu;
-.super Lanv;
+.super Lana;
 .source "SourceFile"
+
+# interfaces
+.implements Lui$b;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lanu$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lana;",
+        "Lui$b",
+        "<",
+        "Lblg;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field public a:Lblg;
+
+.field private final b:D
+
+.field private final c:D
+
+.field private final d:Ljava/lang/Float;
+
+.field private final e:J
+
+.field private final f:Ljava/lang/String;
+
+.field private final g:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 6
+.method public constructor <init>(Landroid/content/Intent;)V
+    .locals 5
 
     .prologue
-    .line 19
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    const/4 v4, 0x1
 
-    move-result-wide v2
+    const-wide/16 v2, 0x1
 
-    const-wide/16 v4, -0x1
+    .line 46
+    invoke-direct {p0, p1}, Lana;-><init>(Landroid/content/Intent;)V
 
-    move-object v0, p0
+    .line 41
+    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
-    move-object v1, p1
+    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
 
-    invoke-direct/range {v0 .. v5}, Lanu;-><init>(Ljava/lang/String;JJ)V
+    iput-object v0, p0, Lanu;->g:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
-    .line 20
+    .line 47
+    const-string v0, "lat"
+
+    invoke-virtual {p1, v0, v2, v3}, Landroid/content/Intent;->getDoubleExtra(Ljava/lang/String;D)D
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lanu;->b:D
+
+    .line 48
+    const-string v0, "long"
+
+    invoke-virtual {p1, v0, v2, v3}, Landroid/content/Intent;->getDoubleExtra(Ljava/lang/String;D)D
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lanu;->c:D
+
+    .line 49
+    const-string v0, "accuracyMeters"
+
+    invoke-virtual {p1, v0, v4}, Landroid/content/Intent;->getFloatExtra(Ljava/lang/String;F)F
+
+    move-result v0
+
+    .line 50
+    cmpl-float v1, v0, v4
+
+    if-eqz v1, :cond_0
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    :goto_0
+    iput-object v0, p0, Lanu;->d:Ljava/lang/Float;
+
+    .line 51
+    const-string v0, "totalPollingDurationMillis"
+
+    const-wide/high16 v2, -0x8000000000000000L
+
+    invoke-virtual {p1, v0, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lanu;->e:J
+
+    .line 52
+    const-string v0, "action"
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lanu;->f:Ljava/lang/String;
+
+    .line 54
+    const-class v0, Lblg;
+
+    invoke-virtual {p0, v0, p0}, Lanu;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 55
     return-void
-.end method
 
-.method public constructor <init>(Ljava/lang/String;JJ)V
-    .locals 0
+    .line 50
+    :cond_0
+    const/4 v0, 0x0
 
-    .prologue
-    .line 23
-    invoke-direct/range {p0 .. p5}, Lanv;-><init>(Ljava/lang/String;JJ)V
-
-    .line 24
-    return-void
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
+.method public final a(Landroid/content/Context;)V
+    .locals 6
 
     .prologue
-    .line 30
-    const-string v0, ""
+    const/4 v0, 0x0
+
+    .line 89
+    iget-wide v2, p0, Lanu;->b:D
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
+
+    move-result-wide v2
+
+    const-wide v4, 0x4056800000000000L    # 90.0
+
+    cmpl-double v1, v2, v4
+
+    if-lez v1, :cond_2
+
+    :cond_0
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 90
+    invoke-super {p0, p1}, Lana;->a(Landroid/content/Context;)V
+
+    .line 92
+    :cond_1
+    return-void
+
+    .line 89
+    :cond_2
+    iget-wide v2, p0, Lanu;->c:D
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
+
+    move-result-wide v2
+
+    const-wide v4, 0x4066800000000000L    # 180.0
+
+    cmpl-double v1, v2, v4
+
+    if-gtz v1, :cond_0
+
+    iget-wide v2, p0, Lanu;->e:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v1, v2, v4
+
+    if-ltz v1, :cond_0
+
+    iget-object v1, p0, Lanu;->f:Ljava/lang/String;
+
+    const-string v2, "update"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    iget-object v1, p0, Lanu;->f:Ljava/lang/String;
+
+    const-string v2, "delete"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    :cond_3
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 10
+
+    .prologue
+    .line 119
+    new-instance v0, Lanu$a;
+
+    iget-wide v2, p0, Lanu;->b:D
+
+    iget-wide v4, p0, Lanu;->c:D
+
+    iget-object v6, p0, Lanu;->d:Ljava/lang/Float;
+
+    iget-wide v7, p0, Lanu;->e:J
+
+    iget-object v9, p0, Lanu;->f:Ljava/lang/String;
+
+    move-object v1, p0
+
+    invoke-direct/range {v0 .. v9}, Lanu$a;-><init>(Lanu;DDLjava/lang/Float;JLjava/lang/String;)V
 
     return-object v0
 .end method
 
-.method public final a(J)V
-    .locals 9
+.method protected final l_()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 35
-    const-string v0, "ChatViewingSession"
+    .line 114
+    const-string v0, "/bq/and/find_nearby_friends"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    return-object v0
+.end method
 
-    const-string v2, "onScreenshotDetected "
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 2
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .prologue
+    .line 24
+    check-cast p1, Lblg;
 
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget v0, p2, Lus;->mResponseCode:I
 
-    move-result-object v1
+    const/16 v1, 0x190
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-ne v0, v1, :cond_0
 
-    move-result-object v1
+    const-string v0, "ANF_RATE_LIMIT"
 
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 36
-    iget-object v0, p0, Lanv;->a:Ljava/lang/String;
-
-    .line 38
-    invoke-static {}, Lakc;->b()Lakc;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lakc;->a(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
-
-    move-result-object v1
-
-    .line 40
-    if-nez v1, :cond_0
-
-    .line 47
-    :goto_0
-    return-void
-
-    .line 42
-    :cond_0
-    new-instance v2, Lakg$a;
-
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3, v0}, Lakg$a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Lakg$a;->a()Lakg;
-
-    move-result-object v2
-
-    .line 43
-    invoke-virtual {v2, p1, p2}, Lakg;->c(J)V
-
-    .line 44
-    invoke-static {}, Lyq;->a()Lyq;
-
-    move-result-object v3
-
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b(Z)V
+
+    :cond_0
+    invoke-virtual {p2}, Lus;->d()Z
+
+    move-result v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v2}, Lakg;->W()J
+    if-eqz p1, :cond_1
 
-    move-result-wide v4
+    iput-object p1, p0, Lanu;->a:Lblg;
 
-    invoke-virtual {v1, v4, v5}, Lcom/snapchat/android/model/chat/ChatConversation;->b(J)J
+    :goto_0
+    return-void
 
-    move-result-wide v4
-
-    invoke-virtual {v2, v4, v5}, Lakg;->c(J)V
-
-    invoke-virtual {v1, v2}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;)V
-
-    new-instance v4, Lbij;
-
-    invoke-direct {v4}, Lbij;-><init>()V
-
-    sget-object v5, Lbij$a;->SCREENSHOT:Lbij$a;
-
-    invoke-virtual {v5}, Lbij$a;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lbij;->a(Ljava/lang/String;)Lbij;
-
-    move-result-object v4
-
-    sget-object v5, Lbii$a;->CHAT_MESSAGE:Lbii$a;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/model/chat/ChatConversation;->y()Ljava/util/List;
-
-    move-result-object v6
-
-    iget-object v7, v1, Lcom/snapchat/android/model/chat/ChatConversation;->mMessagingAuthToken:Lbix;
-
-    invoke-static {v5, v0, v6, v7}, Lasz;->a(Lbii$a;Ljava/lang/String;Ljava/util/List;Lbix;)Lbhl;
-
-    move-result-object v0
-
-    check-cast v0, Lbhf;
-
-    invoke-virtual {v2}, Lakg;->d()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v5}, Lbhf;->a(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v4}, Lbhf;->a(Lbij;)V
-
-    invoke-virtual {v2}, Lakg;->W()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lbhf;->b(Ljava/lang/Long;)V
-
-    invoke-virtual {v0}, Lbhf;->k()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lakg;->a(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Lakg;->a(Lbhf;)V
-
-    invoke-virtual {v3, v1, v2}, Lyq;->a(Lcom/snapchat/android/model/chat/ChatConversation;Lakb;)V
-
-    .line 46
     :cond_1
-    iget-object v0, p0, Lanu;->d:Laol;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Laol;->d()I
+    iput-object v0, p0, Lanu;->a:Lblg;
 
     goto :goto_0
 .end method

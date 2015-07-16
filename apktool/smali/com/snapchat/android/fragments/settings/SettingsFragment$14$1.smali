@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lajx;->g()I
+    invoke-static {}, Lakr;->g()I
 
     move-result v1
 
@@ -70,7 +70,7 @@
     invoke-static {v0, v1}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 487
-    invoke-static {p2}, Lajx;->c(I)V
+    invoke-static {p2}, Lakr;->c(I)V
 
     .line 488
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/SettingsFragment$14$1;->a:Lcom/snapchat/android/fragments/settings/SettingsFragment$14;
@@ -100,7 +100,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 490
-    new-instance v0, Lpa;
+    new-instance v0, Lpr;
 
     const-string v1, "updatePrivacy"
 
@@ -114,13 +114,13 @@
 
     aput-object v3, v2, v4
 
-    invoke-direct {v0, v1, v2}, Lpa;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lpr;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v4, [Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Lpa;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1, v2}, Lpr;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 492
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V

@@ -1,122 +1,316 @@
-import android.os.Build;
-import com.snapchat.android.Timber;
-import java.util.Arrays;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.graphics.SurfaceTexture;
+import android.hardware.Camera;
+import android.hardware.Camera.Parameters;
+import android.hardware.Camera.Size;
+import android.os.HandlerThread;
+import android.os.Message;
+import com.snapchat.android.camera.hardware.CameraOperationHandler;
+import com.snapchat.android.camera.hardware.CameraOperationHandler.CameraOperationType;
+import com.snapchat.android.camera.hardware.CameraOperationHandler.a;
+import com.snapchat.android.database.SharedPreferenceKey;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 public final class xa
+  implements wy, wy.b
 {
-  private static final Map<String, List<aue>> c;
-  protected final aue a;
-  protected final ws b;
+  final xv a;
+  @chd
+  Camera b;
+  Camera.Parameters c;
+  boolean d;
+  private final CameraOperationHandler e;
   
-  static
+  public xa()
   {
-    HashMap localHashMap = new HashMap();
-    int i = 0;
-    while (i < 8)
+    HandlerThread localHandlerThread = new HandlerThread("Camera Handler Thread");
+    localHandlerThread.start();
+    e = new CameraOperationHandler(localHandlerThread.getLooper());
+    a = xv.a();
+  }
+  
+  public final void a()
+  {
+    a(true);
+  }
+  
+  public final void a(final int paramInt)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.SET_ORIENTATION.ordinal(), new CameraOperationHandler.a()
     {
-      localHashMap.put(new String[] { "XT1080", "XT1056", "XT1058", "XT1052", "XT1053", "XT1055", "XT1050", "XT1060" }[i], Arrays.asList(new aue[] { new aue(852, 480) }));
-      i += 1;
-    }
-    c = Collections.unmodifiableMap(localHashMap);
-  }
-  
-  public xa(aue paramaue)
-  {
-    this(paramaue, ws.a());
-  }
-  
-  private xa(aue paramaue, ws paramws)
-  {
-    a = paramaue;
-    b = paramws;
-  }
-  
-  private static float a(aue paramaue, int paramInt)
-  {
-    return paramInt / paramaue.d();
-  }
-  
-  @r
-  private static aue a(int paramInt, SortedSet<aue> paramSortedSet)
-  {
-    if (paramSortedSet.isEmpty()) {
-      return null;
-    }
-    Iterator localIterator = paramSortedSet.iterator();
-    while (localIterator.hasNext())
-    {
-      aue localaue = (aue)localIterator.next();
-      if (a(localaue, paramInt) >= 6.0F) {
-        return localaue;
-      }
-    }
-    return (aue)paramSortedSet.last();
-  }
-  
-  private void a(SortedSet<aue> paramSortedSet)
-  {
-    Object localObject = new TreeSet(new auf());
-    aue localaue1 = a.a(0.4000000059604645D);
-    Iterator localIterator = paramSortedSet.iterator();
-    while (localIterator.hasNext())
-    {
-      aue localaue2 = (aue)localIterator.next();
-      if ((!a.b(localaue2)) || (!localaue2.b(localaue1))) {
-        ((SortedSet)localObject).add(localaue2);
-      }
-    }
-    paramSortedSet.removeAll((Collection)localObject);
-    localObject = (List)c.get(Build.MODEL);
-    if (localObject != null) {
-      paramSortedSet.removeAll((Collection)localObject);
-    }
-  }
-  
-  @r
-  public final aue a(int paramInt)
-  {
-    Object localObject2 = b.a;
-    Object localObject1 = new TreeSet(new auf());
-    double d = a.a() / a.b();
-    localObject2 = ((Set)localObject2).iterator();
-    label161:
-    while (((Iterator)localObject2).hasNext())
-    {
-      aue localaue = (aue)((Iterator)localObject2).next();
-      int j;
-      int i;
-      if (d > 1.0D)
+      public final void a()
       {
-        j = localaue.b();
-        i = (int)(localaue.b() * d / 2.0D) * 2;
-      }
-      for (;;)
-      {
-        if ((i <= 0) || (j <= 0)) {
-          break label161;
+        if (b == null) {
+          return;
         }
-        ((SortedSet)localObject1).add(new aue(i, j));
-        break;
-        i = localaue.a();
-        j = (int)(localaue.a() / d / 2.0D) * 2;
+        b.setDisplayOrientation(paramInt);
       }
+    }).sendToTarget();
+  }
+  
+  public final void a(final int paramInt, final xd paramxd)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.OPEN.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b != null) {
+          return;
+        }
+        xa localxa = xa.this;
+        int i = paramInt;
+        xd localxd = paramxd;
+        b = wg.a(i);
+        if (b != null)
+        {
+          c = b.getParameters();
+          xv localxv = a;
+          Object localObject3 = c;
+          if (localObject3 != null)
+          {
+            Set localSet = a;
+            Object localObject2 = ((Camera.Parameters)localObject3).getSupportedVideoSizes();
+            Object localObject1 = localObject2;
+            if (localObject2 == null) {
+              localObject1 = ((Camera.Parameters)localObject3).getSupportedPreviewSizes();
+            }
+            localObject2 = new ArrayList(((List)localObject1).size());
+            localObject1 = ((List)localObject1).iterator();
+            while (((Iterator)localObject1).hasNext())
+            {
+              localObject3 = (Camera.Size)((Iterator)localObject1).next();
+              ((List)localObject2).add(new avc(width, height));
+            }
+            boolean bool = localSet.addAll((Collection)localObject2);
+            xv.a(a);
+            if (bool)
+            {
+              if (b == null) {
+                break label256;
+              }
+              localObject1 = b.edit();
+              localObject2 = xv.b(a);
+              ((SharedPreferences.Editor)localObject1).putString(SharedPreferenceKey.VIDEO_ENCODING_RESOLUTIONS.getKey(), (String)localObject2);
+              ((SharedPreferences.Editor)localObject1).apply();
+            }
+          }
+          for (;;)
+          {
+            localxd.a(localxa, i);
+            return;
+            label256:
+            c.a(new ol());
+          }
+        }
+        localxd.b(i);
+      }
+    }).sendToTarget();
+  }
+  
+  public final void a(final SurfaceTexture paramSurfaceTexture)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.SET_TEXTURE.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        try
+        {
+          b.setPreviewTexture(paramSurfaceTexture);
+          return;
+        }
+        catch (IOException localIOException) {}
+      }
+    }).sendToTarget();
+  }
+  
+  public final void a(final Camera.Parameters paramParameters)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.SET_PARAMETERS.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        d = true;
+        b.setParameters(paramParameters);
+      }
+    }).sendToTarget();
+  }
+  
+  public final void a(final xb paramxb)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.AUTOFOCUS.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        b.autoFocus(paramxb);
+      }
+    }).sendToTarget();
+  }
+  
+  public final void a(final xe paramxe)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.SET_CALLBACK_WITH_BUFFER.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        b.setPreviewCallbackWithBuffer(paramxe);
+      }
+    }).sendToTarget();
+  }
+  
+  public final void a(boolean paramBoolean)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.RELEASE.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        b.release();
+        b = null;
+        c = null;
+      }
+    }).sendToTarget();
+    if (paramBoolean) {
+      e.waitDone();
     }
-    a((SortedSet)localObject1);
-    localObject1 = a(paramInt, (SortedSet)localObject1);
-    if (localObject1 == null) {
-      return null;
+  }
+  
+  public final void a(final byte[] paramArrayOfByte)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.ADD_CALLBACK_BUFFER.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        b.addCallbackBuffer(paramArrayOfByte);
+      }
+    }).sendToTarget();
+  }
+  
+  @chd
+  public final Camera b()
+  {
+    return b;
+  }
+  
+  public final void b(boolean paramBoolean)
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.STOP_PREVIEW.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        b.stopPreview();
+      }
+    }).sendToTarget();
+    if (paramBoolean) {
+      e.waitDone();
     }
-    Timber.a("TranscodingResolutionProvider", "Setting bitrate to " + paramInt + " resolution " + ((aue)localObject1).a() + "x" + ((aue)localObject1).b() + " bitrateperPixel: " + a((aue)localObject1, paramInt), new Object[0]);
-    return (aue)localObject1;
+  }
+  
+  @chd
+  public final Camera.Parameters c()
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.GET_PARAMETERS.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if ((b != null) && ((d) || (c == null)))
+        {
+          c = b.getParameters();
+          d = false;
+        }
+      }
+    }).sendToTarget();
+    e.waitDone();
+    return c;
+  }
+  
+  public final void d()
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.UNLOCK.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        b.unlock();
+      }
+    }).sendToTarget();
+    e.waitDone();
+  }
+  
+  public final void e()
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.LOCK.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        b.lock();
+      }
+    }).sendToTarget();
+  }
+  
+  public final boolean f()
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.RECONNECT.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        try
+        {
+          b.reconnect();
+          return;
+        }
+        catch (IOException localIOException) {}
+      }
+    }).sendToTarget();
+    e.waitDone();
+    return true;
+  }
+  
+  public final void g()
+  {
+    e.obtainMessage(CameraOperationHandler.CameraOperationType.START_PREVIEW.ordinal(), new CameraOperationHandler.a()
+    {
+      public final void a()
+      {
+        if (b == null) {
+          return;
+        }
+        b.startPreview();
+      }
+    }).sendToTarget();
   }
 }
 

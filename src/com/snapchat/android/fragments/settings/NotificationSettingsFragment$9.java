@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -15,7 +15,7 @@ final class NotificationSettingsFragment$9
   public final void onCheckedChanged(CompoundButton paramCompoundButton, boolean paramBoolean)
   {
     NotificationSettingsFragment.a(m);
-    ajx.E(paramBoolean);
+    akr.D(paramBoolean);
     a.setEnabled(paramBoolean);
     b.setEnabled(paramBoolean);
     c.setEnabled(paramBoolean);
@@ -32,7 +32,7 @@ final class NotificationSettingsFragment$9
     if (paramBoolean) {}
     for (paramCompoundButton = "ENABLED";; paramCompoundButton = "DISABLED")
     {
-      new EasyMetric(paramCompoundButton).d();
+      new EasyMetric(paramCompoundButton).e();
       return;
     }
   }

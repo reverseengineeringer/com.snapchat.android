@@ -1,26 +1,49 @@
-import android.content.ContentResolver;
-import android.net.Uri;
-import android.provider.MediaStore.Images.Thumbnails;
+import android.text.Editable;
+import android.view.View;
+import android.view.View.OnLongClickListener;
+import com.snapchat.android.ui.caption.FatCaptionEditText;
 
 public final class aqp
-  extends bpi
+  implements View.OnLongClickListener
 {
-  private final ContentResolver a;
-  
-  public aqp(@cgb ContentResolver paramContentResolver)
+  public final boolean onLongClick(View paramView)
   {
-    a = ((ContentResolver)ck.a(paramContentResolver));
-  }
-  
-  public final boolean a(bpg parambpg)
-  {
-    return ("content".equals(d.getScheme())) && ("media".equals(d.getAuthority()));
-  }
-  
-  public final bpi.a b(bpg parambpg)
-  {
-    long l = Long.parseLong(d.getLastPathSegment());
-    return new bpi.a(MediaStore.Images.Thumbnails.getThumbnail(a, l, 1, null), bpd.d.b);
+    if ((paramView instanceof FatCaptionEditText))
+    {
+      paramView = (FatCaptionEditText)paramView;
+      if (y) {
+        break label21;
+      }
+    }
+    label21:
+    int i;
+    int k;
+    Editable localEditable;
+    do
+    {
+      return true;
+      i = paramView.getSelectionStart();
+      k = paramView.getSelectionEnd();
+      localEditable = paramView.getText();
+    } while ((i != k) || (i <= 0) || (Character.isWhitespace(localEditable.charAt(i - 1))));
+    int j;
+    for (;;)
+    {
+      j = k;
+      if (i <= 0) {
+        break;
+      }
+      j = k;
+      if (Character.isWhitespace(localEditable.charAt(i - 1))) {
+        break;
+      }
+      i -= 1;
+    }
+    while ((j < localEditable.length()) && (!Character.isWhitespace(localEditable.charAt(j)))) {
+      j += 1;
+    }
+    paramView.setSelection(i, j);
+    return true;
   }
 }
 

@@ -1,11 +1,12 @@
-final class yz$1
+public final class yz$1
   implements Runnable
 {
-  yz$1(yz paramyz, mo parammo) {}
+  public yz$1(yz paramyz) {}
   
   public final void run()
   {
-    b.b(a);
+    a.d.a();
+    a.a();
   }
 }
 

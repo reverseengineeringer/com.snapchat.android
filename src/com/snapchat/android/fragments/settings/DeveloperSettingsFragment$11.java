@@ -2,7 +2,6 @@ package com.snapchat.android.fragments.settings;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.snapchat.android.Timber;
 
 final class DeveloperSettingsFragment$11
   implements View.OnClickListener
@@ -11,10 +10,8 @@ final class DeveloperSettingsFragment$11
   
   public final void onClick(View paramView)
   {
-    for (;;)
-    {
-      Timber.e("DeveloperSettingsFragment", "I eat CPU cycles for breakfast.", new Object[0]);
-    }
+    label0:
+    break label0;
   }
 }
 

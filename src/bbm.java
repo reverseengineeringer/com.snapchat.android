@@ -1,14 +1,4 @@
-public final class bbm
-{
-  public String mErrorMessage;
-  public ot mOnSuccessTask;
-  
-  public bbm(String paramString)
-  {
-    mErrorMessage = paramString;
-    mOnSuccessTask = null;
-  }
-}
+public final class bbm {}
 
 /* Location:
  * Qualified Name:     bbm

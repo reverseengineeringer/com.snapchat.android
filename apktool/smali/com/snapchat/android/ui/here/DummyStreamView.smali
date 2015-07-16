@@ -51,15 +51,15 @@
     .locals 0
 
     .prologue
-    .line 105
+    .line 110
     return-void
 .end method
 
-.method public static setCameraPreviewSize(Laue;)V
+.method public static setCameraPreviewSize(Lavc;)V
     .locals 0
 
     .prologue
-    .line 107
+    .line 112
     return-void
 .end method
 
@@ -69,18 +69,18 @@
     .locals 0
 
     .prologue
-    .line 100
+    .line 102
     return-void
 .end method
 
 .method public final a(Landroid/app/Activity;Lcom/snapchat/android/ui/here/StreamView$a;)V
     .locals 0
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/ui/here/StreamView$a;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -92,12 +92,12 @@
 .method public final a(Landroid/view/MotionEvent;)V
     .locals 0
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 70
+    .line 72
     return-void
 .end method
 
@@ -112,12 +112,12 @@
 .method public final a(Lcom/snapchat/android/ui/here/DisconnectReason;)V
     .locals 0
     .param p1    # Lcom/snapchat/android/ui/here/DisconnectReason;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 103
+    .line 105
     return-void
 .end method
 
@@ -125,7 +125,7 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 90
     return-void
 .end method
 
@@ -149,7 +149,7 @@
     .locals 0
 
     .prologue
-    .line 97
+    .line 51
     return-void
 .end method
 
@@ -157,7 +157,15 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 56
+    return-void
+.end method
+
+.method public final c(Z)V
+    .locals 0
+
+    .prologue
+    .line 99
     return-void
 .end method
 
@@ -165,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 59
     const/4 v0, 0x0
 
     return v0
@@ -174,12 +182,12 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 0
     .param p1    # Landroid/graphics/Canvas;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 112
+    .line 117
     return-void
 .end method
 
@@ -187,19 +195,29 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 64
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public onCameraReadyEvent(Lbao;)V
+.method public getPresence()Z
+    .locals 1
+
+    .prologue
+    .line 108
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public onCameraReadyEvent(Lbbp;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 85
+    .line 87
     return-void
 .end method
 
@@ -215,7 +233,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 83
     const/4 v0, 0x0
 
     return v0
@@ -224,11 +242,11 @@
 .method public setCanStreamVideo(ZLcom/snapchat/android/ui/here/DisconnectReason;)V
     .locals 0
     .param p2    # Lcom/snapchat/android/ui/here/DisconnectReason;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 91
+    .line 93
     return-void
 .end method

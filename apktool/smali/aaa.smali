@@ -1,48 +1,38 @@
 .class public final Laaa;
-.super Lzx;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field private static final a:Laaa;
+# instance fields
+.field public final a:Lakn;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 8
-    new-instance v0, Laaa;
+    .line 30
+    invoke-static {}, Lakn;->a()Lakn;
 
-    invoke-direct {v0}, Laaa;-><init>()V
+    move-result-object v0
 
-    sput-object v0, Laaa;->a:Laaa;
+    invoke-direct {p0, v0}, Laaa;-><init>(Lakn;)V
 
+    .line 31
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 2
+.method private constructor <init>(Lakn;)V
+    .locals 0
 
     .prologue
-    .line 11
-    const-string v0, "ChatMediaFiles"
+    .line 34
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lawq;->CHAT_MEDIA_IMAGE_CACHE:Lawp;
+    .line 35
+    iput-object p1, p0, Laaa;->a:Lakn;
 
-    invoke-direct {p0, v0, v1}, Lzx;-><init>(Ljava/lang/String;Lawp;)V
-
-    .line 12
+    .line 36
     return-void
-.end method
-
-.method public static a()Laaa;
-    .locals 1
-
-    .prologue
-    .line 18
-    sget-object v0, Laaa;->a:Laaa;
-
-    return-object v0
 .end method

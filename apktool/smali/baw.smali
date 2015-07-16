@@ -4,20 +4,22 @@
 
 
 # instance fields
-.field public mRequestedOrientation:I
+.field private final mReleaseManager:Lcom/snapchat/android/util/debug/ReleaseManager;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method constructor <init>(Lcom/snapchat/android/util/debug/ReleaseManager;)V
     .locals 0
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
 
     .prologue
-    .line 9
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10
-    iput p1, p0, Lbaw;->mRequestedOrientation:I
+    .line 16
+    iput-object p1, p0, Lbaw;->mReleaseManager:Lcom/snapchat/android/util/debug/ReleaseManager;
 
-    .line 11
+    .line 17
     return-void
 .end method

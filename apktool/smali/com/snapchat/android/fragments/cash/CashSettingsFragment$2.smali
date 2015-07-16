@@ -115,7 +115,7 @@
     if-eqz v0, :cond_1
 
     .line 455
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 

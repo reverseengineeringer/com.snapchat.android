@@ -1,33 +1,39 @@
-import com.snapchat.android.SnapchatApplication;
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import com.snapchat.videotranscoder.task.Task.DoneCallback;
+import com.snapchat.videotranscoder.task.Task.Status;
+import com.snapchat.videotranscoder.task.TranscodingConfiguration;
 
-@Singleton
 public final class xr
+  implements Task.DoneCallback
 {
-  @Inject
-  protected ayg a;
+  private final aku a;
+  private final oy b;
+  private final xu c;
+  private final ban d;
+  private final TranscodingConfiguration e;
   
-  @Inject
-  protected xr()
+  public xr(xu paramxu, aku paramaku, TranscodingConfiguration paramTranscodingConfiguration, oy paramoy)
   {
-    SnapchatApplication.b().c().a(this);
+    this(paramxu, paramaku, paramTranscodingConfiguration, paramoy, new ban());
   }
   
-  @cgc
-  public final String a()
+  private xr(xu paramxu, aku paramaku, TranscodingConfiguration paramTranscodingConfiguration, oy paramoy, ban paramban)
   {
-    return a.a(ayj.CREDIT_CARD_TOKEN);
+    a = paramaku;
+    b = paramoy;
+    e = paramTranscodingConfiguration;
+    c = paramxu;
+    d = paramban;
   }
   
-  public final void a(@cgc String paramString)
+  public final void done(Task.Status paramStatus)
   {
-    a.a(ayj.CREDIT_CARD_TOKEN, paramString);
-  }
-  
-  public final void b()
-  {
-    a.a(ayj.CREDIT_CARD_TOKEN, null);
+    b.a(a, e, paramStatus);
+    c.a(a, paramStatus);
+    if (paramStatus != Task.Status.FINISHED)
+    {
+      d.a(new ot(paramStatus));
+      new StringBuilder("Transcoding failed. Status : ").append(paramStatus);
+    }
   }
 }
 

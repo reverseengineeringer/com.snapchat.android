@@ -1,13 +1,13 @@
 package com.snapchat.android.util;
 
-import afh;
+import agh;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Message;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.model.Friend;
-import ic;
+import il;
 
 final class AlertDialogUtils$14
   implements DialogInterface.OnClickListener
@@ -24,7 +24,7 @@ final class AlertDialogUtils$14
       AlertDialogUtils.a(val$context, val$friend, val$onFriendActionMessage, val$analyticsContext);
       return;
     }
-    new afh(val$context, val$friend, ic.SETTING_GEAR).a();
+    new agh(val$context, val$friend, il.SETTING_GEAR).a();
   }
 }
 

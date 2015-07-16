@@ -1,241 +1,198 @@
 .class public final Lagq;
-.super Landroid/widget/CursorAdapter;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbvk;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lagq$b;,
-        Lagq$a;
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;",
+        ">;"
     }
 .end annotation
 
 
+# static fields
+.field static final synthetic a:Z
+
+
 # instance fields
-.field private final a:Landroid/content/Context;
+.field private final b:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/fragments/settings/WebFragment;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private final b:Ljava/lang/String;
-
-.field private final c:Ljava/lang/String;
-
-.field private final d:Lagq$a;
+.field private final c:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyj;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lagq$a;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 29
+    .line 9
+    const-class v0, Lagq;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lagq;->a:Z
+
+    return-void
+
+    :cond_0
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    goto :goto_0
+.end method
 
-    invoke-direct {p0, p1, v0, v1}, Landroid/widget/CursorAdapter;-><init>(Landroid/content/Context;Landroid/database/Cursor;I)V
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/fragments/settings/WebFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyj;",
+            ">;)V"
+        }
+    .end annotation
 
-    .line 30
-    iput-object p1, p0, Lagq;->a:Landroid/content/Context;
+    .prologue
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
-    iput-object p2, p0, Lagq;->d:Lagq$a;
+    .line 15
+    sget-boolean v0, Lagq;->a:Z
 
-    .line 32
-    iget-object v0, p0, Lagq;->a:Landroid/content/Context;
+    if-nez v0, :cond_0
 
-    const v1, 0x7f0c02b7
+    if-nez p1, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    iput-object v0, p0, Lagq;->c:Ljava/lang/String;
+    throw v0
 
-    .line 33
-    iget-object v0, p0, Lagq;->a:Landroid/content/Context;
+    .line 16
+    :cond_0
+    iput-object p1, p0, Lagq;->b:Lbvk;
 
-    const v1, 0x7f0c02b6
+    .line 17
+    sget-boolean v0, Lagq;->a:Z
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    if-nez v0, :cond_1
 
-    move-result-object v0
+    if-nez p2, :cond_1
 
-    iput-object v0, p0, Lagq;->b:Ljava/lang/String;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    .line 34
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 18
+    :cond_1
+    iput-object p2, p0, Lagq;->c:Ljavax/inject/Provider;
+
+    .line 19
     return-void
 .end method
 
-.method static synthetic a(Lagq;)Landroid/content/Context;
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/fragments/settings/WebFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyj;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 18
-    iget-object v0, p0, Lagq;->a:Landroid/content/Context;
+    .line 31
+    new-instance v0, Lagq;
 
-    return-object v0
-.end method
-
-.method static synthetic b(Lagq;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 18
-    iget-object v0, p0, Lagq;->c:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic c(Lagq;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 18
-    iget-object v0, p0, Lagq;->b:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lagq;)Lagq$a;
-    .locals 1
-
-    .prologue
-    .line 18
-    iget-object v0, p0, Lagq;->d:Lagq$a;
+    invoke-direct {v0, p0, p1}, Lagq;-><init>(Lbvk;Ljavax/inject/Provider;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
-    .locals 9
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
     .prologue
-    const/4 v8, 0x0
+    .line 9
+    check-cast p1, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;
 
-    .line 47
-    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Cannot inject members into a null reference"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lagq;->b:Lbvk;
+
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lagq;->c:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lagq$b;
+    check-cast v0, Lyj;
 
-    .line 49
-    sget-object v1, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->DEVICE_ID:Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;
+    iput-object v0, p1, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;->a:Lyj;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getColumnNumber()I
-
-    move-result v1
-
-    invoke-interface {p3, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 50
-    iget-object v2, v0, Lagq$b;->a:Landroid/widget/TextView;
-
-    sget-object v3, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->DEVICE_NAME:Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;
-
-    invoke-virtual {v3}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getColumnNumber()I
-
-    move-result v3
-
-    invoke-interface {p3, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 51
-    iget-object v2, v0, Lagq$b;->b:Landroid/widget/TextView;
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    iget-object v4, p0, Lagq;->a:Landroid/content/Context;
-
-    sget-object v5, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->LAST_LOGIN:Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;
-
-    invoke-virtual {v5}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getColumnNumber()I
-
-    move-result v5
-
-    invoke-interface {p3, v5}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v6
-
-    invoke-static {v4, v6, v7}, Lata;->b(Landroid/content/Context;J)Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v3, v8
-
-    const/4 v4, 0x0
-
-    const v5, 0x7f0c02b1
-
-    invoke-static {v4, v5, v3}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 55
-    iget-object v2, v0, Lagq$b;->c:Landroid/view/View;
-
-    invoke-virtual {v2, v8}, Landroid/view/View;->setVisibility(I)V
-
-    .line 56
-    iget-object v2, v0, Lagq$b;->d:Landroid/view/View;
-
-    const/16 v3, 0x8
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
-
-    .line 57
-    iget-object v2, v0, Lagq$b;->c:Landroid/view/View;
-
-    new-instance v3, Lagq$1;
-
-    invoke-direct {v3, p0, v0, v1}, Lagq$1;-><init>(Lagq;Lagq$b;Ljava/lang/String;)V
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 77
     return-void
-.end method
-
-.method public final newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 3
-
-    .prologue
-    .line 38
-    invoke-virtual {p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    const v1, 0x7f0400c6
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 40
-    new-instance v1, Lagq$b;
-
-    invoke-direct {v1, v0}, Lagq$b;-><init>(Landroid/view/View;)V
-
-    .line 41
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    .line 42
-    return-object v0
 .end method

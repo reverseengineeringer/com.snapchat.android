@@ -35,7 +35,7 @@
 
 .field public static final color_selected:I = 0x7f08001b
 
-.field public static final white:I = 0x7f08005b
+.field public static final white:I = 0x7f08005d
 
 
 # direct methods

@@ -1,11 +1,11 @@
 package com.snapchat.android.analytics;
 
-import ath;
-import atq;
-import biw;
-import biw.a;
-import cgb;
-import cgc;
+import aug;
+import auo;
+import bjx;
+import bjx.a;
+import chc;
+import chd;
 import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
@@ -59,7 +59,7 @@ public final class NetworkAnalytics
     this(DictionaryEasyMetric.a(), new EasyMetric.EasyMetricFactory());
   }
   
-  private NetworkAnalytics(@cgb DictionaryEasyMetric paramDictionaryEasyMetric, @cgb EasyMetric.EasyMetricFactory paramEasyMetricFactory)
+  private NetworkAnalytics(@chc DictionaryEasyMetric paramDictionaryEasyMetric, @chc EasyMetric.EasyMetricFactory paramEasyMetricFactory)
   {
     mDictionaryEasyMetric = paramDictionaryEasyMetric;
     mMetricFactory = paramEasyMetricFactory;
@@ -72,8 +72,8 @@ public final class NetworkAnalytics
     return sInstance;
   }
   
-  @cgc
-  private EasyMetric a(@cgb String paramString1, @cgb String paramString2)
+  @chd
+  private EasyMetric a(@chc String paramString1, @chc String paramString2)
   {
     synchronized (mTimedMetricsMap)
     {
@@ -87,15 +87,15 @@ public final class NetworkAnalytics
     }
   }
   
-  private void a(@cgb String paramString, @cgb PageContext paramPageContext, @cgc UUID paramUUID)
+  private void a(@chc String paramString, @chc PageContext paramPageContext, @chd UUID paramUUID)
   {
     a(paramString, paramUUID);
     mDictionaryEasyMetric.a(paramString, "from_notification", Boolean.valueOf(false), false);
-    mDictionaryEasyMetric.a(paramString, "context", ath.a(paramPageContext));
+    mDictionaryEasyMetric.a(paramString, "context", aug.a(paramPageContext));
     mDictionaryEasyMetric.b(paramString);
   }
   
-  private void a(@cgb String paramString1, @cgb String paramString2, @cgb EasyMetric paramEasyMetric)
+  private void a(@chc String paramString1, @chc String paramString2, @chc EasyMetric paramEasyMetric)
   {
     synchronized (mTimedMetricsMap)
     {
@@ -110,7 +110,7 @@ public final class NetworkAnalytics
     }
   }
   
-  private void a(@cgb String paramString, @cgc UUID paramUUID)
+  private void a(@chc String paramString, @chd UUID paramUUID)
   {
     if (paramUUID == null) {}
     Object localObject;
@@ -121,12 +121,12 @@ public final class NetworkAnalytics
     } while (localObject == null);
     mDictionaryEasyMetric.a(paramString, "reachability", ((Map)localObject).get("reachability"));
     int i = ((Integer)((Map)localObject).get("status_code")).intValue();
-    mDictionaryEasyMetric.a(paramString, "success", Boolean.valueOf(atq.a(i)));
+    mDictionaryEasyMetric.a(paramString, "success", Boolean.valueOf(auo.a(i)));
     mDictionaryEasyMetric.a(paramString, "return_size_bytes", ((Map)localObject).get("return_size_bytes"));
     if (((Map)localObject).containsKey("server_info"))
     {
-      localObject = (biw)((Map)localObject).get("server_info");
-      if (biw.a.EQUAL == ((biw)localObject).e()) {
+      localObject = (bjx)((Map)localObject).get("server_info");
+      if (bjx.a.EQUAL == ((bjx)localObject).e()) {
         break label231;
       }
     }
@@ -134,10 +134,10 @@ public final class NetworkAnalytics
     for (boolean bool = true;; bool = false)
     {
       mDictionaryEasyMetric.a(paramString, "is_full_response", Boolean.valueOf(bool));
-      mDictionaryEasyMetric.a(paramString, "server_latency", ((biw)localObject).a());
-      mDictionaryEasyMetric.a(paramString, "response_checksum", ((biw)localObject).b());
-      mDictionaryEasyMetric.a(paramString, "response_compare_result", ((biw)localObject).d());
-      mDictionaryEasyMetric.a(paramString, "response_compare_results_dict", ((biw)localObject).f());
+      mDictionaryEasyMetric.a(paramString, "server_latency", ((bjx)localObject).a());
+      mDictionaryEasyMetric.a(paramString, "response_checksum", ((bjx)localObject).b());
+      mDictionaryEasyMetric.a(paramString, "response_compare_result", ((bjx)localObject).d());
+      mDictionaryEasyMetric.a(paramString, "response_compare_results_dict", ((bjx)localObject).f());
       mRequestTaskResponseMap.remove(paramUUID);
       return;
     }
@@ -145,23 +145,22 @@ public final class NetworkAnalytics
   
   public final void a(PageContext paramPageContext)
   {
-    mDictionaryEasyMetric.a("PULL_TO_REFRESH", true);
-    mDictionaryEasyMetric.a("PULL_TO_REFRESH", "context", ath.a(paramPageContext));
+    a("PULL_TO_REFRESH", "PULL_TO_REFRESH", EasyMetric.EasyMetricFactory.b("PULL_TO_REFRESH").a("context", aug.a(paramPageContext)).b());
   }
   
-  public final void a(@cgb PageContext paramPageContext, @cgc UUID paramUUID)
+  public final void a(@chc PageContext paramPageContext, @chd UUID paramUUID)
   {
     a("CONTENT_READY", paramPageContext, paramUUID);
   }
   
-  public final void a(@cgb String paramString1, @cgb String paramString2, int paramInt, long paramLong, @cgb String paramString3, @cgc biw parambiw, boolean paramBoolean)
+  public final void a(@chc String paramString1, @chc String paramString2, int paramInt, long paramLong, @chc String paramString3, @chd bjx parambjx, boolean paramBoolean)
   {
     EasyMetric localEasyMetric = a(paramString1, paramString2);
     if (localEasyMetric != null)
     {
       localEasyMetric.a("status_code", Integer.valueOf(paramInt)).a("return_size_bytes", Long.valueOf(paramLong)).a("reachability", paramString3);
-      if (parambiw != null) {
-        if (biw.a.EQUAL == parambiw.e()) {
+      if (parambjx != null) {
+        if (bjx.a.EQUAL == parambjx.e()) {
           break label103;
         }
       }
@@ -169,30 +168,30 @@ public final class NetworkAnalytics
     label103:
     for (boolean bool = true;; bool = false)
     {
-      localEasyMetric.a("server_info", parambiw).a("is_full_response", Boolean.valueOf(bool));
+      localEasyMetric.a("server_info", parambjx).a("is_full_response", Boolean.valueOf(bool));
       localEasyMetric.a("is_double_post", Boolean.valueOf(paramBoolean));
       a(paramString1, paramString2, localEasyMetric);
       return;
     }
   }
   
-  public final void a(@cgb String paramString1, @cgb String paramString2, @cgb String paramString3)
+  public final void a(@chc String paramString1, @chc String paramString2, @chc String paramString3)
   {
     a(paramString1, paramString2, EasyMetric.EasyMetricFactory.a(paramString1).a("context", paramString3).a("with_media", Boolean.valueOf(false)).a("media_size", Double.valueOf(0.0D)).b());
   }
   
-  public final void a(@cgb String paramString1, @cgb String paramString2, @cgb String paramString3, int paramInt, @cgb String paramString4)
+  public final void a(@chc String paramString1, @chc String paramString2, @chc String paramString3, int paramInt, @chc String paramString4, long paramLong)
   {
     EasyMetric localEasyMetric2 = a(paramString1, paramString2);
     EasyMetric localEasyMetric1 = localEasyMetric2;
     if (localEasyMetric2 == null) {
       localEasyMetric1 = new EasyMetric(paramString1).a("path", paramString3);
     }
-    localEasyMetric1.a("reachability", paramString4).a("status_code", Integer.valueOf(paramInt)).a("client_id", paramString2);
+    localEasyMetric1.a("reachability", paramString4).a("status_code", Integer.valueOf(paramInt)).a("client_id", paramString2).a(paramLong);
     a(paramString1, paramString2, localEasyMetric1);
   }
   
-  public final void a(@cgb String paramString1, @cgb String paramString2, @cgb String paramString3, @cgb String paramString4, long paramLong)
+  public final void a(@chc String paramString1, @chc String paramString2, @chc String paramString3, @chc String paramString4, long paramLong)
   {
     EasyMetric localEasyMetric = a(paramString1, paramString3);
     if (localEasyMetric != null)
@@ -209,7 +208,7 @@ public final class NetworkAnalytics
     a(paramString2, paramString3, paramString1);
   }
   
-  public final void a(@cgb String paramString1, @cgb String paramString2, @cgb String paramString3, boolean paramBoolean1, double paramDouble, boolean paramBoolean2)
+  public final void a(@chc String paramString1, @chc String paramString2, @chc String paramString3, boolean paramBoolean1, double paramDouble, boolean paramBoolean2)
   {
     paramString1 = a(paramString1, paramString3);
     if (paramString1 != null)
@@ -250,10 +249,13 @@ public final class NetworkAnalytics
     }
   }
   
-  public final void a(@cgb UUID paramUUID)
+  public final void a(@chc UUID paramUUID)
   {
     a("PULL_TO_REFRESH", paramUUID);
-    mDictionaryEasyMetric.b("PULL_TO_REFRESH");
+    paramUUID = a("PULL_TO_REFRESH", "PULL_TO_REFRESH");
+    if (paramUUID != null) {
+      paramUUID.b(false);
+    }
   }
   
   public final void b()
@@ -262,7 +264,7 @@ public final class NetworkAnalytics
     mDictionaryEasyMetric.a("CONTENT_READY", true);
   }
   
-  public final void b(@cgb PageContext paramPageContext, @cgc UUID paramUUID)
+  public final void b(@chc PageContext paramPageContext, @chd UUID paramUUID)
   {
     a("FIRST_ITEM_READY", paramPageContext, paramUUID);
   }

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpw$a;
+.implements Lcom/snapchat/android/api2/LoginTask$a;
 
 
 # annotations
@@ -113,7 +113,7 @@
     return-void
 .end method
 
-.method public final a(Lbig;)V
+.method public final a(Lbjg;)V
     .locals 1
 
     .prologue
@@ -130,7 +130,7 @@
     return-void
 .end method
 
-.method public final b(Lbig;)V
+.method public final b(Lbjg;)V
     .locals 5
 
     .prologue
@@ -152,7 +152,7 @@
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment$1;->a:Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;
 
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v1
 
@@ -174,11 +174,11 @@
 
     const-string v3, "recovery_code_used"
 
-    invoke-virtual {p1}, Lbig;->u()Ljava/lang/Boolean;
+    invoke-virtual {p1}, Lbjg;->u()Ljava/lang/Boolean;
 
     move-result-object v4
 
-    invoke-static {v4}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v4}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v4
 
@@ -191,7 +191,7 @@
     goto :goto_0
 .end method
 
-.method public final x_()V
+.method public final w_()V
     .locals 2
 
     .prologue

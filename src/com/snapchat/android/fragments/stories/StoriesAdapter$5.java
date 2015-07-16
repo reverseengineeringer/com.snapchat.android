@@ -1,13 +1,13 @@
 package com.snapchat.android.fragments.stories;
 
-import ajg;
+import akc;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 final class StoriesAdapter$5
   implements View.OnClickListener
 {
-  StoriesAdapter$5(StoriesAdapter paramStoriesAdapter, ajg paramajg) {}
+  StoriesAdapter$5(StoriesAdapter paramStoriesAdapter, akc paramakc) {}
   
   public final void onClick(View paramView)
   {

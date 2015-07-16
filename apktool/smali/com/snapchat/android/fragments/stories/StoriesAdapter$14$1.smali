@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 454
+    .line 452
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 457
+    .line 455
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
@@ -57,7 +57,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 458
+    .line 456
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
@@ -68,10 +68,10 @@
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14$1;->a:Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;
 
-    iget-object v2, v2, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;->b:Lagx;
+    iget-object v2, v2, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;->b:Lahu;
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;Lahc;)V
+    invoke-static {v0, v1, v2}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;Lahz;)V
 
-    .line 459
+    .line 457
     return-void
 .end method

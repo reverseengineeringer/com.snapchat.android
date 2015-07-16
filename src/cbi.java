@@ -1,11 +1,47 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.FIELD})
-public @interface cbi {}
+final class cbi
+{
+  static cbh a;
+  static long b;
+  
+  static cbh a()
+  {
+    try
+    {
+      if (a != null)
+      {
+        cbh localcbh = a;
+        a = f;
+        f = null;
+        b -= 2048L;
+        return localcbh;
+      }
+      return new cbh();
+    }
+    finally {}
+  }
+  
+  static void a(cbh paramcbh)
+  {
+    if ((f != null) || (g != null)) {
+      throw new IllegalArgumentException();
+    }
+    if (d) {
+      return;
+    }
+    try
+    {
+      if (b + 2048L > 65536L) {
+        return;
+      }
+    }
+    finally {}
+    b += 2048L;
+    f = a;
+    c = 0;
+    b = 0;
+    a = paramcbh;
+  }
+}
 
 /* Location:
  * Qualified Name:     cbi

@@ -7,7 +7,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.util.AlertDialogUtils;
-import tc;
+import ts;
 
 final class ClearConversationsFragment$2$1
   implements DialogInterface.OnClickListener
@@ -22,7 +22,7 @@ final class ClearConversationsFragment$2$1
     AnalyticsEvents.K();
     AnalyticsEvents.L();
     ClearConversationsFragment.c(a.a);
-    new tc(a.a).f();
+    new ts(a.a).execute();
     ClearConversationsFragment.d(a.a).notifyDataSetChanged();
   }
 }

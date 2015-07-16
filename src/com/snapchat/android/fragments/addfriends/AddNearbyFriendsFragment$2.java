@@ -1,11 +1,11 @@
 package com.snapchat.android.fragments.addfriends;
 
-import ahq.a;
-import ajx;
+import aim.a;
+import akr;
 import android.support.v4.app.FragmentActivity;
 
 final class AddNearbyFriendsFragment$2
-  implements ahq.a
+  implements aim.a
 {
   AddNearbyFriendsFragment$2(AddNearbyFriendsFragment paramAddNearbyFriendsFragment) {}
   
@@ -14,7 +14,7 @@ final class AddNearbyFriendsFragment$2
     if (paramBoolean)
     {
       AddNearbyFriendsFragment.b(a);
-      ajx.aV();
+      akr.aS();
       return;
     }
     a.getActivity().onBackPressed();

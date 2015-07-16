@@ -1,37 +1,26 @@
-import com.snapchat.android.camera.model.CameraModel;
-import javax.inject.Provider;
+import com.snapchat.android.app.feature.messaging.feed.model.FeedIconChangeType;
+import com.snapchat.android.app.feature.messaging.feed.ui.fragment.FeedAdapter.FeedViewType;
 
 public final class vu
-  implements buj<vt>
+  implements vp
 {
-  private final buj<vv> b;
-  private final Provider<CameraModel> c;
+  public boolean a;
   
-  static
+  public final String A_()
   {
-    if (!vu.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
+    return "LOADING_FEED_ITEM";
   }
   
-  private vu(buj<vv> parambuj, Provider<CameraModel> paramProvider)
+  public final FeedAdapter.FeedViewType B_()
   {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
+    return FeedAdapter.FeedViewType.LOADING;
   }
   
-  public static buj<vt> a(buj<vv> parambuj, Provider<CameraModel> paramProvider)
+  public final void a(Object paramObject, FeedIconChangeType paramFeedIconChangeType) {}
+  
+  public final boolean a(String paramString)
   {
-    return new vu(parambuj, paramProvider);
+    return false;
   }
 }
 

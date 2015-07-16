@@ -1,191 +1,132 @@
-.class public final Lhv;
-.super Llt;
+.class public final enum Lhv;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field private additionalInfo:Ljava/lang/String;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Enum",
+        "<",
+        "Lhv;",
+        ">;"
+    }
+.end annotation
 
-.field private final eventName:Ljava/lang/String;
+
+# static fields
+.field private static final synthetic $VALUES:[Lhv;
+
+.field public static final enum SPEED:Lhv;
+
+.field public static final enum TIMESTAMP:Lhv;
+
+.field public static final enum WEATHER:Lhv;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 5
 
     .prologue
-    .line 10
-    invoke-direct {p0}, Llt;-><init>()V
+    const/4 v4, 0x2
 
-    .line 20
-    const-string v0, "HERE_SESSION_AVAILABLE"
+    const/4 v3, 0x1
 
-    iput-object v0, p0, Lhv;->eventName:Ljava/lang/String;
+    const/4 v2, 0x0
+
+    .line 5
+    new-instance v0, Lhv;
+
+    const-string v1, "TIMESTAMP"
+
+    invoke-direct {v0, v1, v2}, Lhv;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lhv;->TIMESTAMP:Lhv;
+
+    .line 6
+    new-instance v0, Lhv;
+
+    const-string v1, "WEATHER"
+
+    invoke-direct {v0, v1, v3}, Lhv;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lhv;->WEATHER:Lhv;
+
+    .line 7
+    new-instance v0, Lhv;
+
+    const-string v1, "SPEED"
+
+    invoke-direct {v0, v1, v4}, Lhv;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lhv;->SPEED:Lhv;
+
+    .line 4
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lhv;
+
+    sget-object v1, Lhv;->TIMESTAMP:Lhv;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lhv;->WEATHER:Lhv;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lhv;->SPEED:Lhv;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lhv;->$VALUES:[Lhv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Ljava/util/Map;
-    .locals 3
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Object;",
-            ">;"
+            "()V"
         }
     .end annotation
 
     .prologue
-    .line 27
-    new-instance v0, Ljava/util/HashMap;
+    .line 4
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    return-void
+.end method
 
-    .line 29
-    const-string v1, "event_name"
+.method public static valueOf(Ljava/lang/String;)Lhv;
+    .locals 1
 
-    const-string v2, "HERE_SESSION_AVAILABLE"
+    .prologue
+    .line 4
+    const-class v0, Lhv;
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 30
-    iget-object v1, p0, Lhv;->additionalInfo:Ljava/lang/String;
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    check-cast v0, Lhv;
 
-    const-string v1, "additional_info"
-
-    iget-object v2, p0, Lhv;->additionalInfo:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 31
-    :cond_0
-    invoke-super {p0}, Llt;->a()Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    .line 33
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public static values()[Lhv;
+    .locals 1
 
     .prologue
-    const/4 v0, 0x1
+    .line 4
+    sget-object v0, Lhv;->$VALUES:[Lhv;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, [Lhv;->clone()Ljava/lang/Object;
 
-    .line 38
-    if-ne p0, p1, :cond_1
+    move-result-object v0
 
-    .line 45
-    :cond_0
-    :goto_0
-    return v0
+    check-cast v0, [Lhv;
 
-    .line 39
-    :cond_1
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_3
-
-    :cond_2
-    move v0, v1
-
-    goto :goto_0
-
-    .line 40
-    :cond_3
-    invoke-super {p0, p1}, Llt;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    move v0, v1
-
-    goto :goto_0
-
-    .line 42
-    :cond_4
-    check-cast p1, Lhv;
-
-    .line 44
-    iget-object v2, p0, Lhv;->additionalInfo:Ljava/lang/String;
-
-    if-eqz v2, :cond_5
-
-    iget-object v2, p0, Lhv;->additionalInfo:Ljava/lang/String;
-
-    iget-object v3, p1, Lhv;->additionalInfo:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :goto_1
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_5
-    iget-object v2, p1, Lhv;->additionalInfo:Ljava/lang/String;
-
-    if-eqz v2, :cond_0
-
-    goto :goto_1
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .prologue
-    .line 50
-    invoke-super {p0}, Llt;->hashCode()I
-
-    move-result v0
-
-    .line 51
-    mul-int/lit8 v1, v0, 0x1f
-
-    iget-object v0, p0, Lhv;->additionalInfo:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lhv;->additionalInfo:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    :goto_0
-    add-int/2addr v0, v1
-
-    .line 52
-    return v0
-
-    .line 51
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v0
 .end method

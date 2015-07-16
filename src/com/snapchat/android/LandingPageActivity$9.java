@@ -1,10 +1,10 @@
 package com.snapchat.android;
 
-import ajx;
+import akr;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import bbm;
-import bdw;
+import bcm;
+import bev;
 import com.snapchat.android.analytics.PhoneVerificationAnalytics;
 import com.snapchat.android.fragments.verification.SettingsPhoneVerificationFragment;
 import com.squareup.otto.Bus;
@@ -12,12 +12,12 @@ import com.squareup.otto.Bus;
 final class LandingPageActivity$9
   implements DialogInterface.OnClickListener
 {
-  LandingPageActivity$9(LandingPageActivity paramLandingPageActivity, bbm parambbm) {}
+  LandingPageActivity$9(LandingPageActivity paramLandingPageActivity, bcm parambcm) {}
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    PhoneVerificationAnalytics.a(false, ajx.f());
-    b.r.a(new bdw(new SettingsPhoneVerificationFragment(a)));
+    PhoneVerificationAnalytics.a(false, akr.f());
+    b.r.a(new bev(new SettingsPhoneVerificationFragment(a)));
   }
 }
 

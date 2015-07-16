@@ -1,15 +1,23 @@
-public abstract interface aij<T>
+import android.content.Context;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.Builder;
+import com.google.android.gms.location.LocationServices;
+
+public final class aij
 {
-  @cgc
-  public abstract T a(String paramString);
+  final GoogleApiClient a;
+  private final aii b;
   
-  public abstract void b(String paramString, aij.a parama);
-  
-  public static abstract interface a
+  public aij(Context paramContext)
   {
-    public abstract void a();
-    
-    public abstract void b();
+    this(new GoogleApiClient.Builder(paramContext).addApi(LocationServices.API).build(), new aii());
+  }
+  
+  private aij(GoogleApiClient paramGoogleApiClient, aii paramaii)
+  {
+    a = paramGoogleApiClient;
+    a.connect();
+    b = paramaii;
   }
 }
 

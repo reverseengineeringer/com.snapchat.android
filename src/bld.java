@@ -1,12 +1,48 @@
-public final class bld
+import com.google.gson.annotations.SerializedName;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+public class bld
+  extends bhy
 {
-  public final long a;
-  public final String b;
+  @SerializedName("size")
+  protected String size;
+  @SerializedName("username_image")
+  protected String usernameImage;
   
-  bld(long paramLong, @cgb String paramString)
+  public final bld a(String paramString)
   {
-    a = paramLong;
-    b = paramString;
+    size = paramString;
+    return this;
+  }
+  
+  public final bld b(String paramString)
+  {
+    usernameImage = paramString;
+    return this;
+  }
+  
+  public boolean equals(Object paramObject)
+  {
+    if (paramObject == this) {
+      return true;
+    }
+    if (!(paramObject instanceof bld)) {
+      return false;
+    }
+    paramObject = (bld)paramObject;
+    return new EqualsBuilder().append(size, size).append(usernameImage, usernameImage).isEquals();
+  }
+  
+  public int hashCode()
+  {
+    return new HashCodeBuilder().append(size).append(usernameImage).toHashCode();
+  }
+  
+  public String toString()
+  {
+    return ToStringBuilder.reflectionToString(this);
   }
 }
 

@@ -1,119 +1,137 @@
-.class public final Lays;
+.class public Lays;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuo;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
-        "<",
-        "Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
 
 # instance fields
-.field private final module:Layl;
+.field protected mClock:Lbhk;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
+
+.field public mIv:Ljava/lang/String;
+
+.field public mKey:Ljava/lang/String;
+
+.field public mThumbnailIv:Ljava/lang/String;
+
+.field public mTimestamp:J
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 7
-    const-class v0, Lays;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lays;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
+    .line 24
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
+    invoke-direct {p0, p1, p2, v0}, Lays;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-.method private constructor <init>(Layl;)V
-    .locals 1
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    sget-boolean v0, Lays;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 13
-    :cond_0
-    iput-object p1, p0, Lays;->module:Layl;
-
-    .line 14
+    .line 25
     return-void
 .end method
 
-.method public static a(Layl;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Layl;",
-            ")",
-            "Lbuo",
-            "<",
-            "Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform;",
-            ">;"
-        }
-    .end annotation
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
     .prologue
-    .line 26
-    new-instance v0, Lays;
+    .line 27
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p0}, Lays;-><init>(Layl;)V
+    .line 28
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    return-object v0
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Lazy;->a(Lays;)V
+
+    .line 30
+    iput-object p1, p0, Lays;->mKey:Ljava/lang/String;
+
+    .line 31
+    iput-object p2, p0, Lays;->mIv:Ljava/lang/String;
+
+    .line 32
+    iput-object p3, p0, Lays;->mThumbnailIv:Ljava/lang/String;
+
+    .line 33
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lays;->mTimestamp:J
+
+    .line 34
+    return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
     .prologue
-    .line 7
-    new-instance v0, Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform;
+    .line 39
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform;-><init>()V
+    .line 40
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    return-object v0
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Lazy;->a(Lays;)V
+
+    .line 42
+    iput-object p1, p0, Lays;->mKey:Ljava/lang/String;
+
+    .line 43
+    iput-object p2, p0, Lays;->mIv:Ljava/lang/String;
+
+    .line 44
+    iput-object p3, p0, Lays;->mThumbnailIv:Ljava/lang/String;
+
+    .line 45
+    iput-wide p4, p0, Lays;->mTimestamp:J
+
+    .line 46
+    return-void
 .end method

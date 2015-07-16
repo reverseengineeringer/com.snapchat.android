@@ -1,139 +1,357 @@
 .class public final Lwn;
-.super Ljava/lang/Object;
+.super Lwj;
 .source "SourceFile"
 
 
 # instance fields
-.field protected a:Lcom/snapchat/android/camera/model/CameraModel;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
+.field private final n:Lbdz;
 
-.field protected b:Lwq;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
-
-.field private final c:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
+.field private final o:Lcom/squareup/otto/Bus;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
+.method public constructor <init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;Lbdz;)V
+    .locals 6
 
     .prologue
-    .line 30
-    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
+    .line 28
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
-    move-result-object v0
+    move-result-object v5
 
-    invoke-direct {p0, v0}, Lwn;-><init>(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
+    move-object v0, p0
 
-    .line 31
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lwn;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;Lbdz;Lcom/squareup/otto/Bus;)V
+
+    .line 29
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
-    .locals 1
+.method private constructor <init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;Lbdz;Lcom/squareup/otto/Bus;)V
+    .locals 4
 
     .prologue
+    const v3, 0x7f020017
+
+    const/4 v1, 0x4
+
+    const/4 v2, 0x0
+
     .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 34
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
-
-    move-result-object v0
-
-    invoke-interface {v0, p0}, Laza;->a(Lwn;)V
+    invoke-direct {p0, p1, p2, p3}, Lwj;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
 
     .line 35
-    iput-object p1, p0, Lwn;->c:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
+    iput-object p4, p0, Lwn;->n:Lbdz;
 
     .line 36
+    iput-object p5, p0, Lwn;->o:Lcom/squareup/otto/Bus;
+
+    .line 38
+    iget-object v0, p0, Lwn;->f:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 39
+    iget-object v0, p0, Lwn;->g:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 41
+    iget-object v0, p0, Lwn;->n:Lbdz;
+
+    iget v0, v0, Lbdz;->mOriginatingFragment:I
+
+    sparse-switch v0, :sswitch_data_0
+
+    .line 79
+    :goto_0
+    invoke-virtual {p0}, Lwn;->a()V
+
+    .line 80
+    return-void
+
+    .line 43
+    :sswitch_0
+    iget-object v0, p0, Lwn;->f:Landroid/widget/TextView;
+
+    const v1, 0x7f020021
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    .line 44
+    iget-object v0, p0, Lwn;->f:Landroid/widget/TextView;
+
+    new-instance v1, Lwn$1;
+
+    invoke-direct {v1, p0}, Lwn$1;-><init>(Lwn;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 50
+    iget-object v0, p0, Lwn;->f:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto :goto_0
+
+    .line 55
+    :sswitch_1
+    iget-object v0, p0, Lwn;->g:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    .line 56
+    iget-object v0, p0, Lwn;->g:Landroid/widget/TextView;
+
+    new-instance v1, Lwn$2;
+
+    invoke-direct {v1, p0}, Lwn$2;-><init>(Lwn;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 62
+    iget-object v0, p0, Lwn;->g:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto :goto_0
+
+    .line 67
+    :sswitch_2
+    iget-object v0, p0, Lwn;->g:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    .line 68
+    iget-object v0, p0, Lwn;->g:Landroid/widget/TextView;
+
+    new-instance v1, Lwn$3;
+
+    invoke-direct {v1, p0}, Lwn$3;-><init>(Lwn;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 74
+    iget-object v0, p0, Lwn;->g:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto :goto_0
+
+    .line 41
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_0
+        0x3 -> :sswitch_1
+        0xb -> :sswitch_2
+    .end sparse-switch
+.end method
+
+.method static synthetic a(Lwn;)V
+    .locals 0
+
+    .prologue
+    .line 21
+    invoke-direct {p0}, Lwn;->i()V
+
+    return-void
+.end method
+
+.method private i()V
+    .locals 4
+
+    .prologue
+    .line 83
+    new-instance v0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;
+
+    invoke-direct {v0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;-><init>()V
+
+    .line 84
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    .line 85
+    const-string v2, "selected_friend_username"
+
+    iget-object v3, p0, Lwn;->n:Lbdz;
+
+    iget-object v3, v3, Lbdz;->mRecipients:Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 86
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->setArguments(Landroid/os/Bundle;)V
+
+    .line 87
+    iget-object v1, p0, Lwn;->o:Lcom/squareup/otto/Bus;
+
+    new-instance v2, Lbev;
+
+    invoke-direct {v2, v0}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+
+    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 88
+    iget-object v0, p0, Lwn;->o:Lcom/squareup/otto/Bus;
+
+    new-instance v1, Lbbu;
+
+    invoke-direct {v1}, Lbbu;-><init>()V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 89
+    iget-object v0, p0, Lwn;->o:Lcom/squareup/otto/Bus;
+
+    new-instance v1, Lbdr;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lbdr;-><init>(I)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 90
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Laue;
-    .locals 10
-    .annotation build Lcgc;
-    .end annotation
+.method public final b()V
+    .locals 0
 
     .prologue
-    const/4 v0, 0x0
+    .line 112
+    return-void
+.end method
 
-    .line 41
-    iget-object v1, p0, Lwn;->a:Lcom/snapchat/android/camera/model/CameraModel;
+.method public final c()V
+    .locals 0
 
-    iget-object v1, v1, Lcom/snapchat/android/camera/model/CameraModel;->h:Lwc$b;
+    .prologue
+    .line 115
+    return-void
+.end method
 
-    .line 42
-    if-nez v1, :cond_1
+.method protected final c(Z)V
+    .locals 2
 
-    .line 52
+    .prologue
+    const/4 v1, 0x4
+
+    .line 94
+    invoke-super {p0, p1}, Lwj;->c(Z)V
+
+    .line 95
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lwn;->n:Lbdz;
+
+    if-eqz v0, :cond_0
+
+    .line 96
+    iget-object v0, p0, Lwn;->n:Lbdz;
+
+    iget v0, v0, Lbdz;->mOriginatingFragment:I
+
+    sparse-switch v0, :sswitch_data_0
+
+    .line 109
     :cond_0
     :goto_0
-    return-object v0
+    return-void
 
-    .line 46
-    :cond_1
-    invoke-interface {v1}, Lwc$b;->c()Landroid/hardware/Camera$Parameters;
+    .line 98
+    :sswitch_0
+    iget-object v0, p0, Lwn;->g:Landroid/widget/TextView;
 
-    move-result-object v2
-
-    .line 47
-    if-eqz v2, :cond_0
-
-    .line 51
-    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->ENABLED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
-
-    if-ne v0, v1, :cond_2
-
-    const/4 v6, 0x1
-
-    .line 52
-    :goto_1
-    iget-object v1, p0, Lwn;->b:Lwq;
-
-    iget-object v0, p0, Lwn;->a:Lcom/snapchat/android/camera/model/CameraModel;
-
-    iget v3, v0, Lcom/snapchat/android/camera/model/CameraModel;->c:I
-
-    invoke-virtual {v2}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
-
-    move-result-object v0
-
-    iget v4, v0, Landroid/hardware/Camera$Size;->width:I
-
-    int-to-double v4, v4
-
-    iget v0, v0, Landroid/hardware/Camera$Size;->height:I
-
-    int-to-double v8, v0
-
-    div-double/2addr v4, v8
-
-    invoke-virtual/range {v1 .. v6}, Lwq;->a(Landroid/hardware/Camera$Parameters;IDZ)Laue;
-
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 51
-    :cond_2
-    const/4 v6, 0x0
+    .line 104
+    :sswitch_1
+    iget-object v0, p0, Lwn;->f:Landroid/widget/TextView;
 
-    goto :goto_1
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto :goto_0
+
+    .line 96
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_0
+        0x3 -> :sswitch_1
+        0xb -> :sswitch_1
+    .end sparse-switch
+.end method
+
+.method public final f()Z
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 119
+    iget-object v0, p0, Lwn;->n:Lbdz;
+
+    iget v0, v0, Lbdz;->mOriginatingFragment:I
+
+    .line 120
+    packed-switch v0, :pswitch_data_0
+
+    .line 127
+    iget-object v1, p0, Lwn;->a:Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;
+
+    invoke-interface {v1, v0, v2}, Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;->a(IZ)V
+
+    .line 132
+    :goto_0
+    iget-object v0, p0, Lwn;->n:Lbdz;
+
+    iget-boolean v0, v0, Lbdz;->mIsDoubleTap:Z
+
+    if-eqz v0, :cond_0
+
+    .line 133
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lcom/snapchat/android/analytics/AnalyticsEvents;->j(Z)V
+
+    .line 135
+    :cond_0
+    return v2
+
+    .line 122
+    :pswitch_0
+    invoke-direct {p0}, Lwn;->i()V
+
+    goto :goto_0
+
+    .line 120
+    :pswitch_data_0
+    .packed-switch 0xb
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method protected final h()Z
+    .locals 1
+
+    .prologue
+    .line 140
+    const/4 v0, 0x0
+
+    return v0
 .end method

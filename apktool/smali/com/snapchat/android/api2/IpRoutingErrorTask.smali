@@ -1,5 +1,5 @@
 .class public final Lcom/snapchat/android/api2/IpRoutingErrorTask;
-.super Lth;
+.super Ltx;
 .source "SourceFile"
 
 
@@ -36,7 +36,7 @@
 
     .prologue
     .line 22
-    invoke-direct {p0}, Lth;-><init>()V
+    invoke-direct {p0}, Ltx;-><init>()V
 
     .line 20
     new-instance v0, Ljava/util/HashMap;
@@ -64,7 +64,17 @@
 
 
 # virtual methods
-.method public final synthetic b()Ljava/lang/Object;
+.method public final getPath()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 28
+    const-string v0, "/bq/ip_routing_error"
+
+    return-object v0
+.end method
+
+.method public final synthetic getRequestPayload()Ljava/lang/Object;
     .locals 1
 
     .prologue
@@ -72,16 +82,6 @@
     new-instance v0, Lcom/snapchat/android/api2/IpRoutingErrorTask$a;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/api2/IpRoutingErrorTask$a;-><init>(Lcom/snapchat/android/api2/IpRoutingErrorTask;)V
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 28
-    const-string v0, "/bq/ip_routing_error"
 
     return-object v0
 .end method

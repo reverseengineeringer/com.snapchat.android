@@ -1,105 +1,56 @@
-import android.os.Build.VERSION;
-import android.os.ConditionVariable;
-import java.io.IOException;
-import org.json.JSONArray;
+import org.apache.http.util.CharArrayBuffer;
 
 public final class brs
-  implements brr
+  extends brg
 {
-  private String[] a;
+  private brg d;
   
-  public brs()
+  public brs(brg parambrg)
   {
-    if (Build.VERSION.SDK_INT >= 8) {}
-    for (String str = "logcat -t 100 -v time";; str = "logcat -d -v time")
-    {
-      a = str.split("\\s+");
-      return;
-    }
+    super(parambrg);
+    d = parambrg;
   }
   
-  private static JSONArray a(String[] paramArrayOfString)
+  public final boolean a(int paramInt)
   {
-    Object localObject2 = null;
-    Object localObject1 = localObject2;
-    if (paramArrayOfString != null)
+    if (paramInt == -1)
     {
-      localObject1 = localObject2;
-      if (paramArrayOfString.length > 0)
-      {
-        int i = 0;
-        if (paramArrayOfString.length > 200) {
-          i = paramArrayOfString.length - 200;
-        }
-        localObject1 = new JSONArray();
-        while (i < paramArrayOfString.length)
-        {
-          ((JSONArray)localObject1).put(paramArrayOfString[i]);
-          i += 1;
-        }
-      }
+      a.a(brt.d);
+      return true;
     }
-    return (JSONArray)localObject1;
+    c += 1;
+    if ((char)paramInt == '\n')
+    {
+      d.b(a());
+      a.a(d);
+      return true;
+    }
+    return false;
   }
   
-  private Process b()
+  public final boolean a(CharArrayBuffer paramCharArrayBuffer)
   {
-    try
-    {
-      Process localProcess = new ProcessBuilder(new String[0]).command(a).start();
-      return localProcess;
-    }
-    catch (IOException localIOException)
-    {
-      new StringBuilder("IOException in createProcess(): ").append(localIOException.getMessage());
-      btd.b();
-      btd.c();
-    }
-    return null;
+    return true;
   }
   
-  public final JSONArray a()
+  public final brg b()
   {
-    for (;;)
-    {
-      try
-      {
-        Object localObject1 = b();
-        if (localObject1 == null) {
-          break label148;
-        }
-        ConditionVariable localConditionVariable = new ConditionVariable();
-        bst localbst1 = new bst((Process)localObject1, localConditionVariable, bst.a.a);
-        bst localbst2 = new bst((Process)localObject1, null, bst.a.b);
-        new bte(localbst1).start();
-        new bte(localbst2).start();
-        localConditionVariable.block(250L);
-        ((Process)localObject1).destroy();
-        localObject1 = localbst1.b();
-        if (localObject1 != null)
-        {
-          localObject1 = ((StringBuilder)localObject1).toString();
-          if (((String)localObject1).length() > 0)
-          {
-            localObject1 = ((String)localObject1).split("\n");
-            localObject1 = a((String[])localObject1);
-            btd.b();
-            return (JSONArray)localObject1;
-          }
-        }
-      }
-      catch (Throwable localThrowable)
-      {
-        new StringBuilder("Unanticipated throwable in getLogcat: ").append(localThrowable.getMessage());
-        btd.b();
-        btd.c();
-        return null;
-      }
-      Object localObject2 = null;
-      continue;
-      label148:
-      localObject2 = null;
-    }
+    return this;
+  }
+  
+  public final brg c()
+  {
+    return this;
+  }
+  
+  protected final int d()
+  {
+    return 0;
+  }
+  
+  protected final int e()
+  {
+    return 0;
   }
 }
 

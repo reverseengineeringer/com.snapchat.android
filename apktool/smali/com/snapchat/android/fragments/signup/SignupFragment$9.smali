@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 388
+    .line 386
     iput-object p1, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$9;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,27 +40,27 @@
     .locals 2
 
     .prologue
-    .line 391
+    .line 389
     if-eqz p2, :cond_0
 
-    .line 392
+    .line 390
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$9;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/SignupFragment;->e(Lcom/snapchat/android/fragments/signup/SignupFragment;)Lcom/snapchat/android/analytics/RegistrationAnalytics;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/signup/SignupFragment;->c(Lcom/snapchat/android/fragments/signup/SignupFragment;)Lcom/snapchat/android/analytics/RegistrationAnalytics;
 
-    new-instance v0, Lkk;
+    new-instance v0, Llc;
 
-    invoke-direct {v0}, Lkk;-><init>()V
+    invoke-direct {v0}, Llc;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->s()V
 
-    .line 396
+    .line 394
     :goto_0
     return-void
 
-    .line 394
+    .line 392
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/SignupFragment$9;->a:Lcom/snapchat/android/fragments/signup/SignupFragment;
 

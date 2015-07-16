@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 396
+    .line 427
     iput-object p1, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$18;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,15 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 430
     iget-object v0, p0, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$18;->a:Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->h(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)V
+    invoke-static {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;->d(Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment;)Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$a;
 
-    .line 400
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedFragment$a;->b()V
+
+    .line 431
     return-void
 .end method

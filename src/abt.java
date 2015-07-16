@@ -1,9 +1,16 @@
 public final class abt
-  extends IllegalArgumentException
+  extends aaw
 {
-  public abt(String paramString1, String paramString2, String paramString3, String paramString4, int paramInt)
+  private static final abt a = new abt();
+  
+  private abt()
   {
-    super(paramString1 + "\n Publisher: " + paramString2 + " Edition: " + paramString3 + " DSnap: " + paramString4 + " AdType: " + paramInt);
+    super("MyStorySnapThumbnailFileTable", axo.MY_STORY_SNAP_THUMBNAIL_CACHE);
+  }
+  
+  public static abt a()
+  {
+    return a;
   }
 }
 

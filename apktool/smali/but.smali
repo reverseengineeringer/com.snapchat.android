@@ -1,186 +1,104 @@
 .class public final Lbut;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lbus;
-
-
-# instance fields
-.field public a:Lbus;
-
-.field public b:Lbut;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static a(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/reflect/Constructor;
+    .locals 7
 
     .prologue
-    .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
+
+    .line 20
+    invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
 
     .line 21
-    return-void
-.end method
+    invoke-virtual {v0}, Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;
 
+    move-result-object v3
 
-# virtual methods
-.method public final a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-    .locals 1
+    move v0, v1
 
-    .prologue
-    .line 106
-    .line 108
-    :cond_0
-    iget-object v0, p0, Lbut;->a:Lbus;
-
-    .line 109
-    if-eqz v0, :cond_1
-
-    .line 110
-    invoke-interface {v0, p1}, Lbus;->a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-
-    .line 112
-    :cond_1
-    iget-object p0, p0, Lbut;->b:Lbut;
-
-    if-nez p0, :cond_0
-
-    .line 113
-    return-void
-.end method
-
-.method public final a(Lin/srain/cube/views/ptr/PtrFrameLayout;ZBIIFF)V
-    .locals 8
-
-    .prologue
-    .line 150
-    .line 152
-    :cond_0
-    iget-object v0, p0, Lbut;->a:Lbus;
-
-    .line 153
-    if-eqz v0, :cond_1
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    move v5, p5
-
-    move v6, p6
-
-    move v7, p7
-
-    .line 154
-    invoke-interface/range {v0 .. v7}, Lbus;->a(Lin/srain/cube/views/ptr/PtrFrameLayout;ZBIIFF)V
-
-    .line 156
-    :cond_1
-    iget-object p0, p0, Lbut;->b:Lbut;
-
-    if-nez p0, :cond_0
-
-    .line 157
-    return-void
-.end method
-
-.method public final a()Z
-    .locals 1
-
-    .prologue
-    .line 24
-    iget-object v0, p0, Lbut;->a:Lbus;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
+    .line 23
     :goto_0
-    return v0
+    array-length v2, v3
+
+    if-ge v0, v2, :cond_4
+
+    .line 24
+    aget-object v2, v3, v0
+
+    invoke-virtual {v2}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
+
+    move-result-object v4
+
+    .line 26
+    array-length v2, v4
+
+    array-length v5, p1
+
+    if-eq v2, v5, :cond_0
+
+    move v2, v1
+
+    :goto_1
+    if-eqz v2, :cond_3
+
+    .line 27
+    aget-object v0, v3, v0
+
+    .line 31
+    :goto_2
+    return-object v0
 
     :cond_0
-    const/4 v0, 0x0
+    move v2, v1
+
+    .line 26
+    :goto_3
+    array-length v5, v4
+
+    if-ge v2, v5, :cond_2
+
+    aget-object v5, v4, v2
+
+    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v5
+
+    aget-object v6, p1, v2
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    move v2, v1
+
+    goto :goto_1
+
+    :cond_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_3
+
+    :cond_2
+    const/4 v2, 0x1
+
+    goto :goto_1
+
+    .line 23
+    :cond_3
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
-.end method
 
-.method public final b(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-    .locals 1
+    .line 31
+    :cond_4
+    const/4 v0, 0x0
 
-    .prologue
-    .line 117
-    .line 119
-    :cond_0
-    iget-object v0, p0, Lbut;->a:Lbus;
-
-    .line 120
-    if-eqz v0, :cond_1
-
-    .line 121
-    invoke-interface {v0, p1}, Lbus;->b(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-
-    .line 123
-    :cond_1
-    iget-object p0, p0, Lbut;->b:Lbut;
-
-    if-nez p0, :cond_0
-
-    .line 124
-    return-void
-.end method
-
-.method public final c(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-    .locals 1
-
-    .prologue
-    .line 128
-    .line 130
-    :cond_0
-    iget-object v0, p0, Lbut;->a:Lbus;
-
-    .line 131
-    if-eqz v0, :cond_1
-
-    .line 132
-    invoke-interface {v0, p1}, Lbus;->c(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-
-    .line 134
-    :cond_1
-    iget-object p0, p0, Lbut;->b:Lbut;
-
-    if-nez p0, :cond_0
-
-    .line 135
-    return-void
-.end method
-
-.method public final d(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-    .locals 1
-
-    .prologue
-    .line 139
-    .line 141
-    :cond_0
-    iget-object v0, p0, Lbut;->a:Lbus;
-
-    .line 142
-    if-eqz v0, :cond_1
-
-    .line 143
-    invoke-interface {v0, p1}, Lbus;->d(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
-
-    .line 145
-    :cond_1
-    iget-object p0, p0, Lbut;->b:Lbut;
-
-    if-nez p0, :cond_0
-
-    .line 146
-    return-void
+    goto :goto_2
 .end method

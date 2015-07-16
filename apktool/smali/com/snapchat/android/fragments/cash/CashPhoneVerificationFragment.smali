@@ -13,7 +13,7 @@
 
 # instance fields
 .field public a:Lcom/snapchat/android/fragments/cash/CashPhoneVerificationFragment$a;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -43,7 +43,7 @@
 
 
 # virtual methods
-.method protected final a(Lbkr;)V
+.method protected final a(Lbls;)V
     .locals 0
 
     .prologue
@@ -56,7 +56,7 @@
 
     .prologue
     .line 126
-    invoke-static {p1}, Lcom/snapchat/android/analytics/AnalyticsEvents;->l(Ljava/lang/String;)V
+    invoke-static {p1}, Lcom/snapchat/android/analytics/AnalyticsEvents;->k(Ljava/lang/String;)V
 
     .line 127
     return-void
@@ -106,7 +106,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     .line 106
     :cond_0
@@ -127,14 +127,24 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/cash/CashPhoneVerificationFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 117
     return-void
 .end method
 
+.method public final f_()Z
+    .locals 1
+
+    .prologue
+    .line 121
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method public final g()Z
-    .locals 3
+    .locals 1
 
     .prologue
     .line 80
@@ -158,17 +168,6 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/cash/CashPhoneVerificationFragment;->a:Lcom/snapchat/android/fragments/cash/CashPhoneVerificationFragment$a;
 
     .line 84
-    const-string v0, "CashPhoneVerificationFragment"
-
-    const-string v1, "CASH-LOG: Phone is not verified. Closing"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 85
     invoke-super {p0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->g()Z
 
     move-result v0
@@ -176,32 +175,11 @@
     return v0
 .end method
 
-.method public final g_()Z
+.method protected final i()V
     .locals 1
 
     .prologue
-    .line 121
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method protected final i()V
-    .locals 3
-
-    .prologue
     .line 70
-    const-string v0, "CashPhoneVerificationFragment"
-
-    const-string v1, "CASH-LOG: Phone is verified successfully. Closing"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 71
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CashPhoneVerificationFragment;->b:Z
@@ -239,7 +217,7 @@
 
     .prologue
     .line 39
-    const v0, 0x7f040020
+    const v0, 0x7f040021
 
     const/4 v1, 0x0
 
@@ -278,7 +256,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 55
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -287,7 +265,7 @@
     .line 56
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CashPhoneVerificationFragment;->g:Landroid/widget/EditText;
 
-    invoke-static {}, Lajx;->e()Ljava/lang/String;
+    invoke-static {}, Lakr;->e()Ljava/lang/String;
 
     move-result-object v1
 
@@ -310,7 +288,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lajx;->aF()Z
+    invoke-static {}, Lakr;->aE()Z
 
     move-result v0
 
@@ -319,7 +297,7 @@
     .line 59
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CashPhoneVerificationFragment;->e:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     goto :goto_0
 .end method
@@ -340,14 +318,14 @@
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 138
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbet;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbfs;)V
 
     .line 139
     return-void

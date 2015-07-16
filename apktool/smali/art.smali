@@ -2,27 +2,36 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Laru;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lart$1;
+    }
+.end annotation
+
+
+# instance fields
+.field public a:Landroid/view/View;
+
+.field public final b:Lapz;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lapz;)V
     .locals 0
+    .param p1    # Lapz;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 8
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    .line 24
+    iput-object p1, p0, Lart;->b:Lapz;
 
-
-# virtual methods
-.method public final a(Larn;)V
-    .locals 0
-
-    .prologue
-    .line 13
+    .line 25
     return-void
 .end method

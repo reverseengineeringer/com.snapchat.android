@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/chat/ChatFragment;->J()V
+    value = Lcom/snapchat/android/fragments/chat/ChatFragment;->L()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1658
+    .line 1702
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$11;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,22 +40,22 @@
     .locals 2
 
     .prologue
-    .line 1661
+    .line 1705
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$11;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/snapchat/android/fragments/chat/ChatFragment;->c(Lcom/snapchat/android/fragments/chat/ChatFragment;F)V
 
-    .line 1662
+    .line 1706
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$11;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->n(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lyi;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->n(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lze;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lyi;->a()V
+    invoke-virtual {v0}, Lze;->a()V
 
-    .line 1663
+    .line 1707
     return-void
 .end method

@@ -1,40 +1,27 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.util.debug.ReleaseManager;
-import com.snapchat.android.util.eventbus.ShowDialogEvent;
-import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
-import com.squareup.otto.Bus;
-import javax.inject.Inject;
-
 public final class azp
+  implements bvp<xv>
 {
-  private static final String GRACEFUL_EXCEPTION_WARNING = "See logs for error output: ";
-  private static final String TAG = "GracefulExceptionHandler";
-  private final Bus mBus;
-  private final azi mCrashSampler;
-  private final ReleaseManager mReleaseManager;
+  private final azj module;
   
-  @Inject
-  azp(azi paramazi, ReleaseManager paramReleaseManager)
+  static
   {
-    this(paramazi, paramReleaseManager, ban.a());
+    if (!azp.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  private azp(azi paramazi, ReleaseManager paramReleaseManager, Bus paramBus)
+  private azp(azj paramazj)
   {
-    mCrashSampler = paramazi;
-    mReleaseManager = paramReleaseManager;
-    mBus = paramBus;
+    assert (paramazj != null);
+    module = paramazj;
   }
   
-  public final void a(@cgb Throwable paramThrowable)
+  public static bvp<xv> a(azj paramazj)
   {
-    Timber.a("GracefulExceptionHandler", paramThrowable);
-    if (ReleaseManager.b()) {
-      mBus.a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, "See logs for error output: " + paramThrowable.getMessage()));
-    }
-    if (mCrashSampler.b()) {
-      az.a(paramThrowable);
-    }
+    return new azp(paramazj);
   }
 }
 

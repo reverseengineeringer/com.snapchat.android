@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.addfriends;
 
-import ajx;
+import akr;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences.Editor;
 import android.text.TextUtils;
-import ban;
-import bbu;
+import bbo;
+import bcu;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.squareup.otto.Bus;
 
@@ -17,15 +17,15 @@ final class AddFriendsFragment$10
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    AddFriendsFragment.e(a);
+    a.A();
     paramDialogInterface = a.j;
-    paramDialogInterface = ajx.l();
+    paramDialogInterface = akr.l();
     if (!TextUtils.isEmpty(paramDialogInterface)) {
-      ajx.b().putBoolean(paramDialogInterface.hashCode() + SharedPreferenceKey.HAS_GIVEN_ACCESS_TO_CONTACTS.getKey(), true).apply();
+      akr.b().putBoolean(paramDialogInterface.hashCode() + SharedPreferenceKey.HAS_GIVEN_ACCESS_TO_CONTACTS.getKey(), true).apply();
     }
-    ban.a().a(new bbu());
-    a.z();
-    AddFriendsFragment.f(a);
+    bbo.a().a(new bcu());
+    a.y();
+    AddFriendsFragment.e(a);
   }
 }
 

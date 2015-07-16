@@ -1,77 +1,201 @@
-.class final Ltz;
-.super Ltf;
+.class public final Ltz;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ltf",
-        "<",
-        "Ljava/lang/Object;",
-        "Ltr;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field private mConnectionReleased:Z
+
+.field private mDuration:J
+
+.field private mMethod:Ljava/lang/String;
+
+.field private mNeedToSaveMetrics:Z
+
+.field private mPath:Ljava/lang/String;
+
+.field private mReceivedBytes:J
+
+.field private mRequestTime:J
+
+.field private mResponseStatusReady:Z
+
+.field private mSentBytes:J
+
+.field private mStatusCode:I
+
+.field private mStatusLine:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
 
     .prologue
-    .line 11
-    const-class v0, Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Ltf;-><init>(Ljava/lang/Class;)V
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 10
+    iput-boolean v0, p0, Ltz;->mConnectionReleased:Z
+
+    .line 11
+    iput-boolean v0, p0, Ltz;->mResponseStatusReady:Z
 
     .line 12
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ltz;->mNeedToSaveMetrics:Z
+
+    return-void
+.end method
+
+.method private a()V
+    .locals 14
+
+    .prologue
+    .line 52
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+
+    move-result-object v1
+
+    iget-wide v2, p0, Ltz;->mRequestTime:J
+
+    iget-object v4, p0, Ltz;->mMethod:Ljava/lang/String;
+
+    iget-object v5, p0, Ltz;->mPath:Ljava/lang/String;
+
+    iget-wide v6, p0, Ltz;->mSentBytes:J
+
+    iget-wide v8, p0, Ltz;->mReceivedBytes:J
+
+    iget-wide v10, p0, Ltz;->mDuration:J
+
+    iget-object v12, p0, Ltz;->mStatusLine:Ljava/lang/String;
+
+    iget v13, p0, Ltz;->mStatusCode:I
+
+    invoke-static/range {v1 .. v13}, Labp;->a(Landroid/content/Context;JLjava/lang/String;Ljava/lang/String;JJJLjava/lang/String;I)V
+
+    .line 54
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final declared-synchronized a(JJ)V
+    .locals 1
 
     .prologue
-    .line 7
-    instance-of v0, p1, Ltr;
+    .line 25
+    monitor-enter p0
+
+    :try_start_0
+    iput-wide p1, p0, Ltz;->mReceivedBytes:J
+
+    .line 26
+    iput-wide p3, p0, Ltz;->mSentBytes:J
+
+    .line 28
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ltz;->mConnectionReleased:Z
+
+    .line 29
+    iget-boolean v0, p0, Ltz;->mResponseStatusReady:Z
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Ltr;
+    iget-boolean v0, p0, Ltz;->mNeedToSaveMetrics:Z
 
-    return-object p1
+    if-eqz v0, :cond_0
 
+    .line 30
+    invoke-direct {p0}, Ltz;->a()V
+
+    .line 31
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ltz;->mNeedToSaveMetrics:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 33
     :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    monitor-exit p0
 
-    const-string v1, "Object is the wrong type. Expected HttpContent but got %s"
+    return-void
 
-    const/4 v2, 0x1
+    .line 25
+    :catchall_0
+    move-exception v0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    monitor-exit p0
 
-    const/4 v3, 0x0
+    throw v0
+.end method
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public final declared-synchronized a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IJJ)V
+    .locals 1
 
-    move-result-object v4
+    .prologue
+    .line 37
+    monitor-enter p0
 
-    invoke-virtual {v4}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    :try_start_0
+    iput-object p1, p0, Ltz;->mMethod:Ljava/lang/String;
 
-    move-result-object v4
+    .line 38
+    iput-object p2, p0, Ltz;->mPath:Ljava/lang/String;
 
-    aput-object v4, v2, v3
+    .line 39
+    iput-object p3, p0, Ltz;->mStatusLine:Ljava/lang/String;
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    .line 40
+    iput p4, p0, Ltz;->mStatusCode:I
 
-    move-result-object v1
+    .line 41
+    iput-wide p5, p0, Ltz;->mRequestTime:J
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    .line 42
+    iput-wide p7, p0, Ltz;->mDuration:J
+
+    .line 44
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ltz;->mResponseStatusReady:Z
+
+    .line 45
+    iget-boolean v0, p0, Ltz;->mConnectionReleased:Z
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Ltz;->mNeedToSaveMetrics:Z
+
+    if-eqz v0, :cond_0
+
+    .line 46
+    invoke-direct {p0}, Ltz;->a()V
+
+    .line 47
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ltz;->mNeedToSaveMetrics:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 49
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    .line 37
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
 
     throw v0
 .end method

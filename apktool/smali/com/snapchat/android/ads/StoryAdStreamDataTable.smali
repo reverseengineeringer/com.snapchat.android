@@ -30,7 +30,7 @@
 
 .field private final TAG:Ljava/lang/String;
 
-.field private final mAdStreamManager:Lmv;
+.field private final mAdStreamManager:Lnm;
 
 
 # direct methods
@@ -53,17 +53,17 @@
 
     .prologue
     .line 49
-    invoke-static {}, Lmv;->a()Lmv;
+    invoke-static {}, Lnm;->a()Lnm;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/ads/StoryAdStreamDataTable;-><init>(Lmv;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/ads/StoryAdStreamDataTable;-><init>(Lnm;)V
 
     .line 50
     return-void
 .end method
 
-.method private constructor <init>(Lmv;)V
+.method private constructor <init>(Lnm;)V
     .locals 1
 
     .prologue
@@ -81,7 +81,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ads/StoryAdStreamDataTable;->NAME:Ljava/lang/String;
 
     .line 54
-    iput-object p1, p0, Lcom/snapchat/android/ads/StoryAdStreamDataTable;->mAdStreamManager:Lmv;
+    iput-object p1, p0, Lcom/snapchat/android/ads/StoryAdStreamDataTable;->mAdStreamManager:Lnm;
 
     .line 55
     return-void
@@ -114,23 +114,23 @@
     return-object v0
 
     :cond_0
-    new-instance v0, Laad;
+    new-instance v0, Labc;
 
-    invoke-direct {v0}, Laad;-><init>()V
+    invoke-direct {v0}, Labc;-><init>()V
 
     sget-object v1, Lcom/snapchat/android/ads/StoryAdStreamDataTable$StoryAdStreamDataTableSchema;->STREAM_KEY:Lcom/snapchat/android/ads/StoryAdStreamDataTable$StoryAdStreamDataTableSchema;
 
     iget-object v2, p1, Lcom/snapchat/android/ads/StoryAdStreamDataTable$a;->streamKey:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v1, Lcom/snapchat/android/ads/StoryAdStreamDataTable$StoryAdStreamDataTableSchema;->NEXT_UNVIEWED_POSITION:Lcom/snapchat/android/ads/StoryAdStreamDataTable$StoryAdStreamDataTableSchema;
 
     iget v2, p1, Lcom/snapchat/android/ads/StoryAdStreamDataTable$a;->nextUnviewedPosition:I
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;I)Labc;
 
-    iget-object v0, v0, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v0, Labc;->a:Landroid/content/ContentValues;
 
     goto :goto_0
 .end method
@@ -167,12 +167,12 @@
     return-object v2
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
@@ -188,9 +188,9 @@
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
     .line 122
-    iget-object v0, p0, Lcom/snapchat/android/ads/StoryAdStreamDataTable;->mAdStreamManager:Lmv;
+    iget-object v0, p0, Lcom/snapchat/android/ads/StoryAdStreamDataTable;->mAdStreamManager:Lnm;
 
-    iget-object v3, v0, Lmv;->mStreams:Ljava/util/Map;
+    iget-object v3, v0, Lnm;->mStreams:Ljava/util/Map;
 
     .line 123
     if-eqz v3, :cond_1
@@ -223,7 +223,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lmr;
+    check-cast v1, Lni;
 
     .line 126
     if-eqz v1, :cond_0
@@ -231,7 +231,7 @@
     .line 127
     new-instance v5, Lcom/snapchat/android/ads/StoryAdStreamDataTable$a;
 
-    invoke-virtual {v1}, Lmr;->a()I
+    invoke-virtual {v1}, Lni;->a()I
 
     move-result v1
 
@@ -246,7 +246,7 @@
     return-object v2
 .end method
 
-.method public final b(Lajv;)V
+.method public final b(Lakp;)V
     .locals 4
 
     .prologue
@@ -258,7 +258,7 @@
     move-result-object v0
 
     .line 146
-    invoke-static {}, Ldl;->a()Ljava/util/HashMap;
+    invoke-static {}, Ldu;->a()Ljava/util/HashMap;
 
     move-result-object v1
 
@@ -286,7 +286,7 @@
     .line 149
     iget v3, v0, Lcom/snapchat/android/ads/StoryAdStreamDataTable$a;->nextUnviewedPosition:I
 
-    invoke-static {v3}, Lmr;->a(I)Lmr;
+    invoke-static {v3}, Lni;->a(I)Lni;
 
     move-result-object v3
 
@@ -299,15 +299,15 @@
 
     .line 153
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/ads/StoryAdStreamDataTable;->mAdStreamManager:Lmv;
+    iget-object v0, p0, Lcom/snapchat/android/ads/StoryAdStreamDataTable;->mAdStreamManager:Lnm;
 
-    iput-object v1, v0, Lmv;->mStreams:Ljava/util/Map;
+    iput-object v1, v0, Lnm;->mStreams:Ljava/util/Map;
 
     .line 154
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue

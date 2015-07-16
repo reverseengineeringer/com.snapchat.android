@@ -80,19 +80,19 @@
     const/high16 v6, 0x3f000000    # 0.5f
 
     .line 58
-    new-instance v0, Laqd;
+    new-instance v0, Larc;
 
     invoke-virtual {p0}, Lcom/snapchat/android/stories/ui/animation/DismissAnimationView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f080056
+    const v2, 0x7f080057
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v1
 
-    invoke-direct {v0, v1}, Laqd;-><init>(I)V
+    invoke-direct {v0, v1}, Larc;-><init>(I)V
 
     .line 60
     new-instance v1, Landroid/widget/ImageView;
@@ -100,15 +100,15 @@
     invoke-direct {v1, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     .line 61
-    invoke-static {v1, v0}, Lavh;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v1, v0}, Lawf;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     .line 63
-    invoke-static {p1}, Lavh;->a(Landroid/content/Context;)I
+    invoke-static {p1}, Lawf;->a(Landroid/content/Context;)I
 
     move-result v0
 
     .line 64
-    invoke-static {p1}, Lavh;->b(Landroid/content/Context;)I
+    invoke-static {p1}, Lawf;->b(Landroid/content/Context;)I
 
     move-result v2
 

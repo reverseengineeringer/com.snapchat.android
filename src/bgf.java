@@ -1,88 +1,42 @@
-import android.content.Context;
-import android.net.Uri;
-import android.os.AsyncTask;
-import com.snapchat.android.analytics.CameraEventAnalytics;
-import com.snapchat.android.analytics.CameraEventAnalytics.SaveSnapContext;
-import com.snapchat.android.util.save.SaveMediaNotificationsToShow;
-
-public class bgf
-  extends AsyncTask<Void, Void, Boolean>
+public final class bgf
 {
-  private static final String TAG = "SaveVideoToGalleryTask";
-  private final CameraEventAnalytics mCameraEventAnalytics;
-  private final Context mContext;
-  private aip mDecryptedSnapVideo = null;
-  private final bgc mNotifications;
-  private final SaveMediaNotificationsToShow mNotificationsToShow;
-  private final CameraEventAnalytics.SaveSnapContext mSaveSnapContext;
-  private final awz mSnapVideoDecryptor;
-  private final ajr mStorySnap;
-  private final Uri mUri;
+  private static final bgf sZero = new bgf(0.0D, 0.0D);
+  public final double x;
+  public final double y;
   
-  private bgf(@cgb Context paramContext, @cgb ajr paramajr, @cgb Uri paramUri, @cgc CameraEventAnalytics.SaveSnapContext paramSaveSnapContext, @cgb SaveMediaNotificationsToShow paramSaveMediaNotificationsToShow, @cgb awz paramawz, @cgb bgc parambgc)
+  public bgf(double paramDouble1, double paramDouble2)
   {
-    if ((paramajr == null) && (paramUri == null)) {
-      throw new NullPointerException("storySnap and videoUri are both null");
-    }
-    mContext = ((Context)ck.a(paramContext));
-    mStorySnap = paramajr;
-    mUri = paramUri;
-    mSaveSnapContext = paramSaveSnapContext;
-    mNotificationsToShow = paramSaveMediaNotificationsToShow;
-    mSnapVideoDecryptor = paramawz;
-    mCameraEventAnalytics = CameraEventAnalytics.a();
-    mNotifications = parambgc;
+    x = paramDouble1;
+    y = paramDouble2;
   }
   
-  public bgf(@cgb Context paramContext, @cgb ajr paramajr, @cgc CameraEventAnalytics.SaveSnapContext paramSaveSnapContext, @cgb SaveMediaNotificationsToShow paramSaveMediaNotificationsToShow)
+  public static bgf a()
   {
-    this(paramContext, paramajr, null, paramSaveSnapContext, paramSaveMediaNotificationsToShow, new awz(), bgc.a());
+    return sZero;
   }
   
-  public bgf(@cgb Context paramContext, @cgb Uri paramUri, @cgc CameraEventAnalytics.SaveSnapContext paramSaveSnapContext, @cgb SaveMediaNotificationsToShow paramSaveMediaNotificationsToShow)
+  public final boolean equals(@chd Object paramObject)
   {
-    this(paramContext, null, paramUri, paramSaveSnapContext, paramSaveMediaNotificationsToShow, new awz(), bgc.a());
-  }
-  
-  public void a()
-  {
-    if (mSaveSnapContext != null) {
-      CameraEventAnalytics.a(true, mSaveSnapContext);
-    }
-  }
-  
-  public void a(Boolean paramBoolean)
-  {
-    if (mDecryptedSnapVideo != null) {
-      mDecryptedSnapVideo.e();
-    }
-    if (paramBoolean.booleanValue())
-    {
-      a();
-      if (mNotificationsToShow == SaveMediaNotificationsToShow.ALL) {
-        mNotifications.c();
-      }
-    }
+    if (this == paramObject) {}
     do
     {
-      return;
-      b();
-    } while (mNotificationsToShow == SaveMediaNotificationsToShow.NONE);
-    mNotifications.d();
+      return true;
+      if (!(paramObject instanceof bgf)) {
+        return false;
+      }
+      paramObject = (bgf)paramObject;
+    } while ((x == x) && (y == y));
+    return false;
   }
   
-  public void b()
+  public final int hashCode()
   {
-    if (mSaveSnapContext != null) {
-      CameraEventAnalytics.b(true, mSaveSnapContext);
-    }
+    return (Double.valueOf(x).hashCode() + 391) * 23 + Double.valueOf(y).hashCode();
   }
   
-  public void onPreExecute()
+  public final String toString()
   {
-    if (mNotificationsToShow == SaveMediaNotificationsToShow.ALL) {
-      mNotifications.b();
-    }
+    return "(" + x + ", " + y + ")";
   }
 }
 

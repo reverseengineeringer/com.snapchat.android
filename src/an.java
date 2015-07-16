@@ -1,15 +1,15 @@
 import java.io.Closeable;
 
-@fa
+@fj
 public class an
-  extends ew
+  extends ff
   implements Closeable
 {
-  private static fi a = fi.a(an.class);
+  private static fr a = fr.a(an.class);
   
-  public an(ex paramex, al paramal)
+  public an(fg paramfg, al paramal)
   {
-    initContainer(paramex, paramex.a(), paramal);
+    initContainer(paramfg, paramfg.a(), paramal);
   }
   
   public static byte[] a(String paramString)

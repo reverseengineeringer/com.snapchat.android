@@ -1,23 +1,23 @@
 package com.snapchat.android.camera.model;
 
-import buo;
-import wl;
+import bvp;
+import xh;
 
 public enum ZoomModel_Factory
-  implements buo<wl>
+  implements bvp<xh>
 {
   INSTANCE;
   
   private ZoomModel_Factory() {}
   
-  public static buo<wl> create()
+  public static bvp<xh> create()
   {
     return INSTANCE;
   }
   
-  public final wl get()
+  public final xh get()
   {
-    return new wl();
+    return new xh();
   }
 }
 

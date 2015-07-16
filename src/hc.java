@@ -2,30 +2,41 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class hc
-  extends lt
+  extends ml
 {
-  public String dsnapId;
+  public Long adIndexCount;
+  public Long adIndexPos;
+  public fz additionalInfo;
+  public String adsnapId;
   public String editionId;
-  private final String eventName = "DISCOVER_SNAP_SHARE_CREATE";
-  public hy mediaType;
+  private String errorInfo;
+  private final String eventName = "DISCOVER_AD_SKIP";
   public String publisherId;
   public Long snapIndexCount;
   public Long snapIndexPos;
-  private ld source;
-  public Double timeViewed;
+  public lv source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "DISCOVER_SNAP_SHARE_CREATE");
-    if (dsnapId != null) {
-      localHashMap.put("dsnap_id", dsnapId);
+    localHashMap.put("event_name", "DISCOVER_AD_SKIP");
+    if (adIndexCount != null) {
+      localHashMap.put("ad_index_count", adIndexCount);
+    }
+    if (adIndexPos != null) {
+      localHashMap.put("ad_index_pos", adIndexPos);
+    }
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
+    }
+    if (adsnapId != null) {
+      localHashMap.put("adsnap_id", adsnapId);
     }
     if (editionId != null) {
       localHashMap.put("edition_id", editionId);
     }
-    if (mediaType != null) {
-      localHashMap.put("media_type", mediaType);
+    if (errorInfo != null) {
+      localHashMap.put("error_info", errorInfo);
     }
     if (publisherId != null) {
       localHashMap.put("publisher_id", publisherId);
@@ -38,9 +49,6 @@ public final class hc
     }
     if (source != null) {
       localHashMap.put("source", source);
-    }
-    if (timeViewed != null) {
-      localHashMap.put("time_viewed", timeViewed);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -59,12 +67,39 @@ public final class hc
         return false;
       }
       paramObject = (hc)paramObject;
-      if (dsnapId != null)
+      if (adIndexCount != null)
       {
-        if (dsnapId.equals(dsnapId)) {}
+        if (adIndexCount.equals(adIndexCount)) {}
       }
       else {
-        while (dsnapId != null) {
+        while (adIndexCount != null) {
+          return false;
+        }
+      }
+      if (adIndexPos != null)
+      {
+        if (adIndexPos.equals(adIndexPos)) {}
+      }
+      else {
+        while (adIndexPos != null) {
+          return false;
+        }
+      }
+      if (additionalInfo != null)
+      {
+        if (additionalInfo.equals(additionalInfo)) {}
+      }
+      else {
+        while (additionalInfo != null) {
+          return false;
+        }
+      }
+      if (adsnapId != null)
+      {
+        if (adsnapId.equals(adsnapId)) {}
+      }
+      else {
+        while (adsnapId != null) {
           return false;
         }
       }
@@ -77,12 +112,12 @@ public final class hc
           return false;
         }
       }
-      if (mediaType != null)
+      if (errorInfo != null)
       {
-        if (mediaType.equals(mediaType)) {}
+        if (errorInfo.equals(errorInfo)) {}
       }
       else {
-        while (mediaType != null) {
+        while (errorInfo != null) {
           return false;
         }
       }
@@ -113,23 +148,14 @@ public final class hc
           return false;
         }
       }
-      if (source != null)
-      {
-        if (source.equals(source)) {}
-      }
-      else {
-        while (source != null) {
-          return false;
-        }
-      }
-      if (timeViewed == null) {
+      if (source == null) {
         break;
       }
-    } while (timeViewed.equals(timeViewed));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (timeViewed == null) {
+      if (source == null) {
         break;
       }
     }
@@ -137,8 +163,8 @@ public final class hc
   
   public final int hashCode()
   {
-    int i3 = 0;
-    int i4 = super.hashCode();
+    int i5 = 0;
+    int i6 = super.hashCode();
     int i;
     int j;
     label39:
@@ -149,46 +175,60 @@ public final class hc
     int n;
     label86:
     int i1;
-    if (dsnapId != null)
+    label102:
+    int i2;
+    label118:
+    int i3;
+    if (adIndexCount != null)
     {
-      i = dsnapId.hashCode();
+      i = adIndexCount.hashCode();
+      if (adIndexPos == null) {
+        break label231;
+      }
+      j = adIndexPos.hashCode();
+      if (additionalInfo == null) {
+        break label236;
+      }
+      k = additionalInfo.hashCode();
+      if (adsnapId == null) {
+        break label241;
+      }
+      m = adsnapId.hashCode();
       if (editionId == null) {
-        break label187;
+        break label247;
       }
-      j = editionId.hashCode();
-      if (mediaType == null) {
-        break label192;
+      n = editionId.hashCode();
+      if (errorInfo == null) {
+        break label253;
       }
-      k = mediaType.hashCode();
+      i1 = errorInfo.hashCode();
       if (publisherId == null) {
-        break label197;
+        break label259;
       }
-      m = publisherId.hashCode();
+      i2 = publisherId.hashCode();
       if (snapIndexCount == null) {
-        break label203;
+        break label265;
       }
-      n = snapIndexCount.hashCode();
+      i3 = snapIndexCount.hashCode();
+      label134:
       if (snapIndexPos == null) {
-        break label209;
-      }
-      i1 = snapIndexPos.hashCode();
-      label102:
-      if (source == null) {
-        break label215;
+        break label271;
       }
     }
-    label187:
-    label192:
-    label197:
-    label203:
-    label209:
-    label215:
-    for (int i2 = source.hashCode();; i2 = 0)
+    label231:
+    label236:
+    label241:
+    label247:
+    label253:
+    label259:
+    label265:
+    label271:
+    for (int i4 = snapIndexPos.hashCode();; i4 = 0)
     {
-      if (timeViewed != null) {
-        i3 = timeViewed.hashCode();
+      if (source != null) {
+        i5 = source.hashCode();
       }
-      return (i2 + (i1 + (n + (m + (k + (j + (i + i4 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i3;
+      return (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i6 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i5;
       i = 0;
       break;
       j = 0;
@@ -201,6 +241,10 @@ public final class hc
       break label86;
       i1 = 0;
       break label102;
+      i2 = 0;
+      break label118;
+      i3 = 0;
+      break label134;
     }
   }
 }

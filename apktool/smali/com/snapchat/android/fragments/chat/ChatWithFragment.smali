@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lafy$a;
+.implements Lagy$a;
 
 
 # instance fields
@@ -15,7 +15,7 @@
 
 .field private d:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
 
-.field private e:Lafy;
+.field private e:Lagy;
 
 .field private f:Landroid/widget/EditText;
 
@@ -28,7 +28,7 @@
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;"
         }
     .end annotation
@@ -41,7 +41,7 @@
 
     .prologue
     .line 46
-    sget-object v0, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    sget-object v0, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/chat/ChatWithFragment;-><init>(Ljavax/inject/Provider;)V
 
@@ -62,7 +62,7 @@
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;)V"
         }
     .end annotation
@@ -119,12 +119,12 @@
     return-object v0
 .end method
 
-.method static synthetic c(Lcom/snapchat/android/fragments/chat/ChatWithFragment;)Lafy;
+.method static synthetic c(Lcom/snapchat/android/fragments/chat/ChatWithFragment;)Lagy;
     .locals 1
 
     .prologue
     .line 35
-    iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->e:Lafy;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->e:Lagy;
 
     return-object v0
 .end method
@@ -154,7 +154,7 @@
 .method public final a(Ljava/util/List;)V
     .locals 2
     .param p1    # Ljava/util/List;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -217,7 +217,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     .line 69
     return-void
@@ -234,7 +234,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 74
     const/4 v0, 0x0
@@ -249,7 +249,7 @@
     const/4 v4, 0x1
 
     .line 57
-    const v0, 0x7f040034
+    const v0, 0x7f040035
 
     const/4 v1, 0x0
 
@@ -266,16 +266,16 @@
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Lakp;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lajv;->k()Ljava/util/List;
+    invoke-virtual {v0}, Lakp;->k()Ljava/util/List;
 
     move-result-object v0
 
     :goto_0
-    new-instance v1, Lafy;
+    new-instance v1, Lagy;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -285,9 +285,9 @@
 
     invoke-direct {v3}, Lcom/snapchat/android/model/Friend$a;-><init>()V
 
-    invoke-direct {v1, v2, v0, v3, p0}, Lafy;-><init>(Landroid/content/Context;Ljava/util/List;Lcom/snapchat/android/model/Friend$a;Lafy$a;)V
+    invoke-direct {v1, v2, v0, v3, p0}, Lagy;-><init>(Landroid/content/Context;Ljava/util/List;Lcom/snapchat/android/model/Friend$a;Lagy$a;)V
 
-    iput-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->e:Lafy;
+    iput-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->e:Lagy;
 
     const v0, 0x7f0a014f
 
@@ -301,7 +301,7 @@
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->d:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->e:Lafy;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->e:Lagy;
 
     invoke-virtual {v0, v1}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -341,7 +341,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    const v0, 0x7f0a002c
+    const v0, 0x7f0a002d
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/chat/ChatWithFragment;->c(I)Landroid/view/View;
 

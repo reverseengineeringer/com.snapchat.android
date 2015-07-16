@@ -35,9 +35,9 @@
     .end annotation
 .end field
 
-.field private e:Laol;
+.field private e:Laph;
 
-.field private final f:Lazo;
+.field private final f:Lban;
 
 .field private h:J
 
@@ -50,20 +50,20 @@
 
     .prologue
     .line 120
-    new-instance v0, Lazo;
+    new-instance v0, Lban;
 
-    invoke-direct {v0}, Lazo;-><init>()V
+    invoke-direct {v0}, Lban;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/service/SnapchatService;-><init>(Lazo;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/service/SnapchatService;-><init>(Lban;)V
 
     .line 121
     return-void
 .end method
 
-.method protected constructor <init>(Lazo;)V
+.method protected constructor <init>(Lban;)V
     .locals 2
-    .param p1    # Lazo;
-        .annotation build Lcgb;
+    .param p1    # Lban;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -88,7 +88,7 @@
     iput-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->i:Ljava/lang/Runnable;
 
     .line 125
-    iput-object p1, p0, Lcom/snapchat/android/service/SnapchatService;->f:Lazo;
+    iput-object p1, p0, Lcom/snapchat/android/service/SnapchatService;->f:Lban;
 
     .line 126
     return-void
@@ -115,114 +115,90 @@
 .end method
 
 .method private a(Landroid/content/Intent;)V
-    .locals 5
+    .locals 4
     .param p1    # Landroid/content/Intent;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 308
-    const-string v0, "SnapchatService"
-
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v3, "finalizeRequest "
+    const-string v2, "finalizeRequest "
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v3, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 311
-    invoke-static {p1}, Laol;->a(Landroid/content/Intent;)Z
+    invoke-static {p1}, Laph;->a(Landroid/content/Intent;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 312
-    invoke-static {p1}, Laol;->b(Landroid/content/Intent;)I
+    invoke-static {p1}, Laph;->b(Landroid/content/Intent;)I
 
-    move-result v0
+    move-result v1
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 313
-    const-string v1, "SnapchatService"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v3, "finalizeRequest - requestId "
 
-    const-string v4, "finalizeRequest - requestId "
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v2, [Ljava/lang/Object;
-
-    invoke-static {v1, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 314
-    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laol;
+    iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laph;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v0
+    move-result v1
 
-    iget-object v1, v1, Laol;->a:Ljava/util/Map;
+    iget-object v2, v2, Laph;->a:Ljava/util/Map;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {v1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 319
-    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laol;
+    iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laph;
 
     if-eqz p1, :cond_0
 
     if-eqz p1, :cond_2
 
-    const-string v0, "from_pool"
+    const-string v1, "from_pool"
 
-    invoke-virtual {p1, v0, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_2
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :goto_0
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    iget-object v0, v1, Laol;->b:Laoj;
+    iget-object v1, v2, Laph;->b:Lapf;
 
-    invoke-virtual {v0, p1}, Laoj;->a(Landroid/content/Intent;)V
+    invoke-virtual {v1, p1}, Lapf;->a(Landroid/content/Intent;)V
 
     :cond_0
-    move v1, v2
+    move v1, v0
 
     .line 323
     :goto_1
@@ -250,31 +226,19 @@
     if-eqz v0, :cond_1
 
     .line 325
-    const-string v0, "SnapchatService"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v2, "Removed one future - mFutureList.size()="
 
-    const-string v4, "Removed one future - mFutureList.size()="
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
 
-    iget-object v4, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    move-result v2
 
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 326
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
@@ -293,54 +257,42 @@
     goto :goto_1
 
     :cond_2
-    move v0, v2
+    move v1, v0
 
     .line 319
     goto :goto_0
 
     .line 331
     :cond_3
-    const-string v0, "SnapchatService"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "finalizeRequest mStopRunnable futureList.size()=="
 
-    const-string v3, "finalizeRequest mStopRunnable futureList.size()=="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    move-result v1
 
-    move-result v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, " hasPendingIntents="
 
-    const-string v3, " hasPendingIntents="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laph;
 
-    iget-object v3, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laol;
+    invoke-virtual {v1}, Laph;->g()Z
 
-    invoke-virtual {v3}, Laol;->g()Z
+    move-result v1
 
-    move-result v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v3, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 334
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
@@ -351,24 +303,15 @@
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laph;
 
-    invoke-virtual {v0}, Laol;->g()Z
+    invoke-virtual {v0}, Laph;->g()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
     .line 335
-    const-string v0, "SnapchatService"
-
-    const-string v1, "Will stop service in 5 seconds"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 336
     sget-object v0, Lcom/snapchat/android/service/SnapchatService;->g:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/snapchat/android/service/SnapchatService;->i:Ljava/lang/Runnable;
@@ -389,34 +332,20 @@
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/service/SnapchatService;Lamk;)V
-    .locals 3
+.method static synthetic a(Lcom/snapchat/android/service/SnapchatService;Lanh;)V
+    .locals 2
 
     .prologue
     .line 58
-    const-string v0, "SnapchatService"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "finalizeRequest "
 
-    const-string v2, "finalizeRequest "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-interface {p1}, Lamk;->a()Landroid/content/Intent;
+    invoke-interface {p1}, Lanh;->a()Landroid/content/Intent;
 
     move-result-object v0
 
@@ -425,22 +354,22 @@
     return-void
 .end method
 
-.method static synthetic b(Lcom/snapchat/android/service/SnapchatService;)Lazo;
+.method static synthetic b(Lcom/snapchat/android/service/SnapchatService;)Lban;
     .locals 1
 
     .prologue
     .line 58
-    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->f:Lazo;
+    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->f:Lban;
 
     return-object v0
 .end method
 
-.method static synthetic c(Lcom/snapchat/android/service/SnapchatService;)Laol;
+.method static synthetic c(Lcom/snapchat/android/service/SnapchatService;)Laph;
     .locals 1
 
     .prologue
     .line 58
-    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laph;
 
     return-object v0
 .end method
@@ -481,6 +410,18 @@
     .locals 2
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/service/SnapchatService;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/service/SnapchatService;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 130
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
@@ -532,35 +473,24 @@
     iput-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
 
     .line 141
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laol;
+    iput-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->e:Laph;
 
     .line 142
     return-void
 .end method
 
 .method public onDestroy()V
-    .locals 3
+    .locals 1
 
     .prologue
     .line 288
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
     .line 289
-    const-string v0, "SnapchatService"
-
-    const-string v1, "onDestroy()"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 290
     iget-object v0, p0, Lcom/snapchat/android/service/SnapchatService;->c:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
@@ -570,69 +500,43 @@
 .end method
 
 .method public onStartCommand(Landroid/content/Intent;II)I
-    .locals 6
+    .locals 5
     .param p1    # Landroid/content/Intent;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    const/4 v5, 0x2
+    const/4 v4, 0x2
 
-    const/4 v3, -0x1
-
-    const/4 v4, 0x0
+    const/4 v2, -0x1
 
     .line 149
-    const-string v0, "SnapchatService"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "onStartCommand "
 
-    const-string v2, "onStartCommand "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 150
     if-eqz p1, :cond_0
 
     .line 151
-    const-string v0, "SnapchatService"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "onStartCommand with op code "
 
-    const-string v2, "onStartCommand with op code "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v1, "op_code"
 
-    const-string v2, "op_code"
+    invoke-virtual {p1, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    invoke-virtual {p1, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    move-result v1
 
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 155
     :cond_0
@@ -647,7 +551,7 @@
 
     const-string v0, "op_code"
 
-    invoke-virtual {p1, v0, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p1, v0, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -662,220 +566,208 @@
     if-nez v0, :cond_2
 
     .line 158
-    const-string v0, "SnapchatService"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Failed to create a service operation from "
 
-    const-string v2, "Failed to create a service operation from "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 159
     invoke-direct {p0, p1}, Lcom/snapchat/android/service/SnapchatService;->a(Landroid/content/Intent;)V
 
     .line 166
     :goto_1
-    return v5
+    return v4
 
     .line 156
     :pswitch_1
-    new-instance v0, Lamj;
+    new-instance v0, Lang;
 
-    invoke-direct {v0, p1}, Lamj;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lang;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_2
-    new-instance v0, Lame;
+    new-instance v0, Lanb;
 
-    invoke-direct {v0, p1}, Lame;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lanb;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_3
-    new-instance v0, Lamf;
-
-    invoke-direct {v0, p1}, Lamf;-><init>(Landroid/content/Intent;)V
-
-    goto :goto_0
-
-    :pswitch_4
-    new-instance v0, Laml;
-
-    invoke-direct {v0, p1}, Laml;-><init>(Landroid/content/Intent;)V
-
-    goto :goto_0
-
-    :pswitch_5
-    new-instance v0, Lamp;
-
-    invoke-direct {v0, p1}, Lamp;-><init>(Landroid/content/Intent;)V
-
-    goto :goto_0
-
-    :pswitch_6
-    new-instance v0, Ladk;
-
-    invoke-direct {v0, p1}, Ladk;-><init>(Landroid/content/Intent;)V
-
-    goto :goto_0
-
-    :pswitch_7
-    new-instance v0, Lamn;
-
-    invoke-direct {v0, p1}, Lamn;-><init>(Landroid/content/Intent;)V
-
-    goto :goto_0
-
-    :pswitch_8
-    new-instance v0, Lamm;
-
-    invoke-direct {v0, p1}, Lamm;-><init>(Landroid/content/Intent;)V
-
-    goto :goto_0
-
-    :pswitch_9
     new-instance v0, Lanc;
 
     invoke-direct {v0, p1}, Lanc;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    :pswitch_a
-    new-instance v0, Lamq;
+    :pswitch_4
+    new-instance v0, Lani;
 
-    invoke-direct {v0, p1}, Lamq;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lani;-><init>(Landroid/content/Intent;)V
+
+    goto :goto_0
+
+    :pswitch_5
+    new-instance v0, Lanm;
+
+    invoke-direct {v0, p1}, Lanm;-><init>(Landroid/content/Intent;)V
+
+    goto :goto_0
+
+    :pswitch_6
+    new-instance v0, Laek;
+
+    invoke-direct {v0, p1}, Laek;-><init>(Landroid/content/Intent;)V
+
+    goto :goto_0
+
+    :pswitch_7
+    new-instance v0, Lank;
+
+    invoke-direct {v0, p1}, Lank;-><init>(Landroid/content/Intent;)V
+
+    goto :goto_0
+
+    :pswitch_8
+    new-instance v0, Lanj;
+
+    invoke-direct {v0, p1}, Lanj;-><init>(Landroid/content/Intent;)V
+
+    goto :goto_0
+
+    :pswitch_9
+    new-instance v0, Lanz;
+
+    invoke-direct {v0, p1}, Lanz;-><init>(Landroid/content/Intent;)V
+
+    goto :goto_0
+
+    :pswitch_a
+    new-instance v0, Lann;
+
+    invoke-direct {v0, p1}, Lann;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_b
-    new-instance v0, Lamh;
+    new-instance v0, Lane;
 
-    invoke-direct {v0, p1}, Lamh;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lane;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_c
-    new-instance v0, Lams;
+    new-instance v0, Lanp;
 
-    invoke-direct {v0, p1}, Lams;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lanp;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_d
-    new-instance v0, Lana;
+    new-instance v0, Lanx;
 
-    invoke-direct {v0, p1}, Lana;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lanx;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_e
-    new-instance v0, Lamt;
+    new-instance v0, Lanq;
 
-    invoke-direct {v0, p1}, Lamt;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lanq;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_f
-    new-instance v0, Lamz;
+    new-instance v0, Lanw;
 
-    invoke-direct {v0, p1}, Lamz;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lanw;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_10
-    new-instance v0, Land;
+    new-instance v0, Laoa;
 
-    invoke-direct {v0, p1}, Land;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Laoa;-><init>(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :pswitch_11
-    new-instance v0, Lanb;
+    new-instance v0, Lany;
 
-    invoke-direct {v0, p1}, Lanb;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lany;-><init>(Landroid/content/Intent;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :pswitch_12
-    new-instance v0, Lang;
+    new-instance v0, Laod;
 
-    invoke-direct {v0, p1}, Lang;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Laod;-><init>(Landroid/content/Intent;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :pswitch_13
-    new-instance v0, Lamy;
+    new-instance v0, Lanv;
 
-    invoke-direct {v0, p1}, Lamy;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lanv;-><init>(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
     :pswitch_14
+    new-instance v0, Laoc;
+
+    invoke-direct {v0, p1}, Laoc;-><init>(Landroid/content/Intent;)V
+
+    goto/16 :goto_0
+
+    :pswitch_15
+    new-instance v0, Lanu;
+
+    invoke-direct {v0, p1}, Lanu;-><init>(Landroid/content/Intent;)V
+
+    goto/16 :goto_0
+
+    :pswitch_16
+    new-instance v0, Lamz;
+
+    invoke-direct {v0, p1}, Lamz;-><init>(Landroid/content/Intent;)V
+
+    goto/16 :goto_0
+
+    :pswitch_17
     new-instance v0, Lanf;
 
     invoke-direct {v0, p1}, Lanf;-><init>(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    :pswitch_15
-    new-instance v0, Lamx;
-
-    invoke-direct {v0, p1}, Lamx;-><init>(Landroid/content/Intent;)V
-
-    goto/16 :goto_0
-
-    :pswitch_16
-    new-instance v0, Lamc;
-
-    invoke-direct {v0, p1}, Lamc;-><init>(Landroid/content/Intent;)V
-
-    goto/16 :goto_0
-
-    :pswitch_17
-    new-instance v0, Lami;
-
-    invoke-direct {v0, p1}, Lami;-><init>(Landroid/content/Intent;)V
-
-    goto/16 :goto_0
-
     :pswitch_18
-    new-instance v0, Lamw;
+    new-instance v0, Lant;
 
-    invoke-direct {v0, p1}, Lamw;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lant;-><init>(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
     :pswitch_19
-    new-instance v0, Lamu;
+    new-instance v0, Lanr;
 
-    invoke-direct {v0, p1}, Lamu;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lanr;-><init>(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
     :pswitch_1a
-    new-instance v0, Lane;
+    new-instance v0, Laob;
 
-    invoke-direct {v0, p1}, Lane;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Laob;-><init>(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
     :pswitch_1b
-    new-instance v0, Lamv;
+    new-instance v0, Lans;
 
-    invoke-direct {v0, p1}, Lamv;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lans;-><init>(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
@@ -887,9 +779,9 @@
     goto/16 :goto_0
 
     :pswitch_1d
-    new-instance v0, Lamo;
+    new-instance v0, Lanl;
 
-    invoke-direct {v0, p1}, Lamo;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v0, p1}, Lanl;-><init>(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
@@ -901,7 +793,7 @@
 
     new-instance v3, Lcom/snapchat/android/service/SnapchatService$b;
 
-    invoke-direct {v3, p0, v0}, Lcom/snapchat/android/service/SnapchatService$b;-><init>(Lcom/snapchat/android/service/SnapchatService;Lamk;)V
+    invoke-direct {v3, p0, v0}, Lcom/snapchat/android/service/SnapchatService$b;-><init>(Lcom/snapchat/android/service/SnapchatService;Lanh;)V
 
     invoke-interface {v2, v3}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
@@ -910,35 +802,29 @@
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 162
-    const-string v1, "SnapchatService"
+    new-array v1, v4, [Ljava/lang/Object;
 
-    const-string v2, "The new operation %s has been submitted. mFutureList.size()=%d"
+    const/4 v2, 0x0
 
-    new-array v3, v5, [Ljava/lang/Object;
-
-    aput-object v0, v3, v4
+    aput-object v0, v1, v2
 
     const/4 v0, 0x1
 
-    iget-object v4, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/snapchat/android/service/SnapchatService;->d:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v2
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v3, v0
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v1, v0
 
     goto/16 :goto_1
 
     .line 156
-    nop
-
     :pswitch_data_0
     .packed-switch 0x3e8
         :pswitch_1

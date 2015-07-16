@@ -1,30 +1,16 @@
-import java.io.Closeable;
-import java.util.List;
-
 public abstract interface bnk
-  extends Closeable
 {
+  public abstract bnd a(bnb parambnb);
+  
+  public abstract bns a(bnd parambnd);
+  
   public abstract void a();
   
-  public abstract void a(int paramInt, long paramLong);
+  public abstract void a(bnd parambnd1, bnd parambnd2);
   
-  public abstract void a(int paramInt, bni parambni);
+  public abstract void a(bnt parambnt);
   
-  public abstract void a(int paramInt, bni parambni, byte[] paramArrayOfByte);
-  
-  public abstract void a(bnu parambnu);
-  
-  public abstract void a(boolean paramBoolean, int paramInt1, int paramInt2);
-  
-  public abstract void a(boolean paramBoolean, int paramInt1, bzu parambzu, int paramInt2);
-  
-  public abstract void a(boolean paramBoolean, int paramInt, List<bnl> paramList);
-  
-  public abstract void b();
-  
-  public abstract void b(bnu parambnu);
-  
-  public abstract int c();
+  public abstract void b(bnb parambnb);
 }
 
 /* Location:

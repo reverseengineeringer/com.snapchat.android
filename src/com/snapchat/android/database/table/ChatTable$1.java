@@ -1,32 +1,30 @@
 package com.snapchat.android.database.table;
 
-import akb;
-import ban;
-import baz;
-import ben;
+import akw;
+import bbo;
+import bca;
+import com.snapchat.android.app.feature.messaging.feed.model.FeedIconChangeType;
 import com.snapchat.android.model.chat.ChatConversation;
 import com.snapchat.android.model.chat.StatefulChatFeedItem;
 import com.snapchat.android.model.chat.StatefulChatFeedItem.SendReceiveStatus;
 import com.squareup.otto.Bus;
-import ym;
-import yn;
+import zi;
 
 final class ChatTable$1
   implements Runnable
 {
-  ChatTable$1(akb paramakb, String paramString) {}
+  ChatTable$1(akw paramakw, String paramString) {}
   
   public final void run()
   {
     if (a.mSendReceiveStatus.equals(StatefulChatFeedItem.SendReceiveStatus.SENDING))
     {
       a.mSendReceiveStatus = StatefulChatFeedItem.SendReceiveStatus.FAILED;
-      ChatConversation localChatConversation = ym.a(b);
+      ChatConversation localChatConversation = zi.a(b);
       if (localChatConversation != null) {
-        yn.a().a(localChatConversation, false);
+        localChatConversation.a(a, FeedIconChangeType.FAILED_TO_SEND);
       }
-      ban.a().a(new ben());
-      ban.a().a(new baz(a.X(), a.d()));
+      bbo.a().a(new bca(a.Y(), a.d()));
     }
   }
 }

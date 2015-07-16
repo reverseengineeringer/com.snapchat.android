@@ -35,9 +35,9 @@
 
 .field public static final common_signin_btn_light_text_pressed:I = 0x7f080025
 
-.field public static final common_signin_btn_text_dark:I = 0x7f080060
+.field public static final common_signin_btn_text_dark:I = 0x7f080062
 
-.field public static final common_signin_btn_text_light:I = 0x7f080061
+.field public static final common_signin_btn_text_light:I = 0x7f080063
 
 
 # direct methods

@@ -4,228 +4,165 @@
 
 
 # instance fields
-.field protected frontFacingFlash:Ljava/lang/Boolean;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "front_facing_flash"
-    .end annotation
-.end field
+.field protected mCount:I
 
-.field protected replaySnaps:Ljava/lang/Boolean;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "replay_snaps"
-    .end annotation
-.end field
+.field protected final mOnPreDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
-.field protected smartFilters:Ljava/lang/Boolean;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "smart_filters"
-    .end annotation
-.end field
+.field protected final mOnPreDrawSkipListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
-.field protected visualFilters:Ljava/lang/Boolean;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "visual_filters"
-    .end annotation
-.end field
+.field public mView:Landroid/view/View;
+
+.field mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 16
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 15
+    new-instance v0, Lbht$1;
+
+    invoke-direct {v0, p0}, Lbht$1;-><init>(Lbht;)V
+
+    iput-object v0, p0, Lbht;->mOnPreDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+    .line 23
+    new-instance v0, Lbht$2;
+
+    invoke-direct {v0, p0}, Lbht$2;-><init>(Lbht;)V
+
+    iput-object v0, p0, Lbht;->mOnPreDrawSkipListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+    .line 33
+    const/4 v0, 0x0
+
+    iput v0, p0, Lbht;->mCount:I
+
+    .line 36
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Boolean;)Lbht;
-    .locals 0
-
-    .prologue
-    .line 36
-    iput-object p1, p0, Lbht;->smartFilters:Ljava/lang/Boolean;
-
-    .line 37
-    return-object p0
-.end method
-
-.method public final a()Ljava/lang/Boolean;
-    .locals 1
-
-    .prologue
-    .line 41
-    iget-object v0, p0, Lbht;->smartFilters:Ljava/lang/Boolean;
-
-    return-object v0
-.end method
-
-.method public final b(Ljava/lang/Boolean;)Lbht;
-    .locals 0
-
-    .prologue
-    .line 72
-    iput-object p1, p0, Lbht;->frontFacingFlash:Ljava/lang/Boolean;
-
-    .line 73
-    return-object p0
-.end method
-
-.method public final b()Ljava/lang/Boolean;
-    .locals 1
-
-    .prologue
-    .line 77
-    iget-object v0, p0, Lbht;->frontFacingFlash:Ljava/lang/Boolean;
-
-    return-object v0
-.end method
-
-.method public final c(Ljava/lang/Boolean;)Lbht;
-    .locals 0
-
-    .prologue
-    .line 90
-    iput-object p1, p0, Lbht;->replaySnaps:Ljava/lang/Boolean;
-
-    .line 91
-    return-object p0
-.end method
-
-.method public final c()Ljava/lang/Boolean;
-    .locals 1
-
-    .prologue
-    .line 95
-    iget-object v0, p0, Lbht;->replaySnaps:Ljava/lang/Boolean;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .prologue
-    .line 119
-    if-ne p1, p0, :cond_0
-
-    .line 120
-    const/4 v0, 0x1
-
-    .line 126
-    :goto_0
-    return v0
-
-    .line 122
-    :cond_0
-    instance-of v0, p1, Lbht;
-
-    if-nez v0, :cond_1
-
-    .line 123
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 125
-    :cond_1
-    check-cast p1, Lbht;
-
-    .line 126
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
-
-    iget-object v1, p0, Lbht;->smartFilters:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbht;->smartFilters:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbht;->visualFilters:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbht;->visualFilters:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbht;->frontFacingFlash:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbht;->frontFacingFlash:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbht;->replaySnaps:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbht;->replaySnaps:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
+.method public final a()V
     .locals 2
 
     .prologue
-    .line 109
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 54
+    iget v0, p0, Lbht;->mCount:I
 
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lbht;->smartFilters:Ljava/lang/Boolean;
+    invoke-virtual {p0}, Lbht;->d()Z
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 55
+    iget-object v0, p0, Lbht;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
+
+    iget-object v1, p0, Lbht;->mOnPreDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    .line 57
+    :cond_0
+    iget v0, p0, Lbht;->mCount:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lbht;->mCount:I
+
+    .line 58
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    .prologue
+    .line 64
+    iget v0, p0, Lbht;->mCount:I
+
+    if-lez v0, :cond_0
+
+    .line 65
+    iget v0, p0, Lbht;->mCount:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lbht;->mCount:I
+
+    .line 66
+    iget v0, p0, Lbht;->mCount:I
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lbht;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 67
+    iget-object v0, p0, Lbht;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
+
+    iget-object v1, p0, Lbht;->mOnPreDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    .line 70
+    :cond_0
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    .prologue
+    .line 87
+    invoke-virtual {p0}, Lbht;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 88
+    iget-object v0, p0, Lbht;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
+
+    iget-object v1, p0, Lbht;->mOnPreDrawSkipListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    .line 90
+    :cond_0
+    return-void
+.end method
+
+.method final d()Z
+    .locals 1
+
+    .prologue
+    .line 97
+    iget-object v0, p0, Lbht;->mView:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbht;->visualFilters:Ljava/lang/Boolean;
+    iput-object v0, p0, Lbht;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 98
+    iget-object v0, p0, Lbht;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lbht;->frontFacingFlash:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbht;->replaySnaps:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     move-result v0
 
     return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 104
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

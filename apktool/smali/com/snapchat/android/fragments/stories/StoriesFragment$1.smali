@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbgr$a;
+.implements Lbhr$a;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 452
+    .line 460
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +40,12 @@
     .locals 2
 
     .prologue
-    .line 455
+    .line 463
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$1;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->j:Lbgr;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->i:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 480
+    .line 488
     return-void
 .end method

@@ -1,40 +1,16 @@
-import android.os.Bundle;
-import com.snapchat.android.api2.framework.HttpMethod;
-import com.snapchat.android.discover.util.network.DiscoverEndpointManager;
-
 public final class abv
-  extends tg
+  extends aaw
 {
-  private final String mEditionId;
-  private final DiscoverEndpointManager mEndpointManager;
+  private static final abv a = new abv();
   
-  private abv(DiscoverEndpointManager paramDiscoverEndpointManager, String paramString)
+  private abv()
   {
-    mEndpointManager = paramDiscoverEndpointManager;
-    mEditionId = paramString;
+    super("ReceivedSnapImageFileTable", axo.SNAP_RECEIVED_IMAGE_CACHE);
   }
   
-  public abv(String paramString)
+  public static abv a()
   {
-    this(DiscoverEndpointManager.a(), paramString);
-  }
-  
-  public final Object b()
-  {
-    return null;
-  }
-  
-  public final HttpMethod c()
-  {
-    return HttpMethod.GET;
-  }
-  
-  public final String d()
-  {
-    Bundle localBundle = new Bundle();
-    localBundle.putString("edition", mEditionId);
-    localBundle.putString("platform", "android");
-    return atq.a(mEndpointManager.c, localBundle);
+    return a;
   }
 }
 

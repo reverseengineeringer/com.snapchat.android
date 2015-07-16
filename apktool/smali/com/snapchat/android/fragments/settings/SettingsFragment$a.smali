@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/fragments/settings/SettingsFragment$a;
-.super Laqb;
+.super Lara;
 .source "SourceFile"
 
 
@@ -33,7 +33,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0, p2, v0}, Laqb;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {p0, p2, v0}, Lara;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 536
     return-void

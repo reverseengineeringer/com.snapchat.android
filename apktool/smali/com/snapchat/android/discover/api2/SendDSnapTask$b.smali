@@ -16,7 +16,7 @@
 
 # instance fields
 .field mConversations:Ljava/util/List;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -27,14 +27,14 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lbhd;",
+            "Lbid;",
             ">;"
         }
     .end annotation
 .end field
 
 .field mDSnapPostResult:Ljava/util/HashMap;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;

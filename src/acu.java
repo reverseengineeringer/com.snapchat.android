@@ -1,68 +1,127 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.discover.model.ChannelPage;
 import com.snapchat.android.discover.model.DSnapPage;
-import com.snapchat.android.networkmanager.DownloadPriority;
+import com.snapchat.android.discover.model.DSnapPanel;
+import com.snapchat.android.discover.model.DSnapPanel.MediaType;
+import com.snapchat.android.discover.model.MediaState;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
-final class acu
-  extends acn
+public final class acu
+  implements ui.b<bkx>
 {
-  public acu()
+  private final String TAG = "FetchVideoCatalogOperation";
+  final aej mDiscoverRepository;
+  final String mEditionId;
+  final aed mMediaStateTracker;
+  protected final aej.b mSetRemoteVideoToStartedListener = new aej.b()
   {
-    this(new ajx(), adf.a(), new acd(), new act());
-  }
-  
-  private acu(ajx paramajx, adf paramadf, acd paramacd, act paramact)
-  {
-    super(paramajx, paramadf, paramacd, paramact);
-  }
-  
-  public final boolean a(acf paramacf, DSnapPage paramDSnapPage, alc.a parama)
-  {
-    boolean bool = false;
-    int i;
-    if ((a == null) || (a.e == null) || (!a.e.equals(g)))
+    public final void a(@chc List<DSnapPage> paramAnonymousList)
     {
-      i = 0;
-      if (i == 0) {
-        break label179;
-      }
-      Timber.a("WanDSnapLoadingStrategy", "DISCOVER-MEDIA: Elected to download %s, it is in range in the selected edition", new Object[] { paramDSnapPage });
-      bool = true;
-    }
-    for (;;)
-    {
-      return bool;
-      if (b != null) {}
-      int k;
-      for (i = b.f.intValue();; i = 0)
+      paramAnonymousList = paramAnonymousList.iterator();
+      boolean bool = false;
+      while (paramAnonymousList.hasNext())
       {
-        int j = b.a.a("DISCOVER_V2", "WAN_NUM_DSNAPS_TO_LOAD_BEFORE_CURRENT", 1);
-        k = b.a.a("DISCOVER_V2", "WAN_NUM_DSNAPS_TO_LOAD_AFTER_CURRENT", 100);
-        if (f.intValue() >= i - j) {
-          break label147;
+        localObject = (DSnapPage)paramAnonymousList.next();
+        DSnapPanel localDSnapPanel = ((DSnapPage)localObject).e();
+        if ((localDSnapPanel != null) && (g == DSnapPanel.MediaType.REMOTE_VIDEO)) {
+          if (g.equals(mEditionId))
+          {
+            bool = mMediaStateTracker.a(localDSnapPanel, MediaState.FETCHING_MEDIA) | bool;
+          }
+          else
+          {
+            mVideoCatalog.a(b, null);
+            bool = mMediaStateTracker.a(localDSnapPanel, MediaState.NOT_STARTED) | bool;
+          }
         }
-        i = 0;
-        break;
       }
-      label147:
-      if (f.intValue() > i + k)
+      if (bool) {
+        mDiscoverRepository.c();
+      }
+      paramAnonymousList = acu.this;
+      Object localObject = new acv(mEditionId);
+      ((acv)localObject).registerCallback(bkx.class, paramAnonymousList);
+      ((acv)localObject).execute();
+    }
+  };
+  final Map<String, bky> mTempVideoCatalog;
+  protected final aej.b mUpdatePanelStateWithNetworkError = new aej.b()
+  {
+    public final void a(@chc List<DSnapPage> paramAnonymousList)
+    {
+      paramAnonymousList = paramAnonymousList.iterator();
+      boolean bool = false;
+      while (paramAnonymousList.hasNext())
       {
-        i = 0;
-        break;
+        Object localObject = (DSnapPage)paramAnonymousList.next();
+        if (g.equals(mEditionId))
+        {
+          localObject = ((DSnapPage)localObject).e();
+          if ((localObject != null) && (g == DSnapPanel.MediaType.REMOTE_VIDEO) && (mMediaStateTracker.a((DSnapPanel)localObject) == MediaState.FETCHING_MEDIA)) {
+            bool = mMediaStateTracker.a((DSnapPanel)localObject, MediaState.NETWORK_ERROR) | bool;
+          }
+        }
       }
-      c = false;
-      i = 1;
-      break;
-      label179:
-      if (act.a(paramDSnapPage, c.c(h), b.a.a("DISCOVER_V2", "WAN_RECENT_CHANNEL_THRESHOLD_HOURS", 48), b.a.a("DISCOVER_V2", "WAN_RECENT_CHANNEL_NUM_DSNAPS_TO_LOAD", 1))) {
-        c = false;
-      }
-      for (i = 1; i != 0; i = 0)
-      {
-        Timber.a("WanDSnapLoadingStrategy", "DISCOVER-MEDIA: Elected to download %s, user has seen this channel recently", new Object[] { paramDSnapPage, DownloadPriority.LOW.name() });
-        return true;
+      if (bool) {
+        mDiscoverRepository.c();
       }
     }
+  };
+  protected final aej.b mUpdateRemoteUrlInPanelListener = new aej.b()
+  {
+    public final void a(@chc List<DSnapPage> paramAnonymousList)
+    {
+      paramAnonymousList = paramAnonymousList.iterator();
+      boolean bool = false;
+      while (paramAnonymousList.hasNext())
+      {
+        Object localObject = (DSnapPage)paramAnonymousList.next();
+        if (g.equals(mEditionId))
+        {
+          localObject = ((DSnapPage)localObject).e();
+          if ((localObject != null) && (g == DSnapPanel.MediaType.REMOTE_VIDEO) && (mMediaStateTracker.a((DSnapPanel)localObject) == MediaState.FETCHING_MEDIA))
+          {
+            String str = b;
+            if (mTempVideoCatalog.containsKey(str))
+            {
+              bky localbky = (bky)mTempVideoCatalog.get(str);
+              mVideoCatalog.a(str, localbky);
+              bool = mMediaStateTracker.a((DSnapPanel)localObject, MediaState.SUCCESS) | bool;
+            }
+            else
+            {
+              bool = mMediaStateTracker.a((DSnapPanel)localObject, MediaState.GENERIC_ERROR) | bool;
+            }
+          }
+        }
+      }
+      if (bool) {
+        mDiscoverRepository.c();
+      }
+    }
+  };
+  final aee mVideoCatalog;
+  
+  public acu(@chc String paramString)
+  {
+    this(paramString, aej.a(), aed.a(), aee.a(), new HashMap());
+  }
+  
+  private acu(@chc String paramString, aej paramaej, aed paramaed, aee paramaee, Map<String, bky> paramMap)
+  {
+    mDiscoverRepository = paramaej;
+    mMediaStateTracker = paramaed;
+    mVideoCatalog = paramaee;
+    mEditionId = paramString;
+    mTempVideoCatalog = paramMap;
+  }
+  
+  public final void a()
+  {
+    mMediaStateTracker.b.clear();
+    mVideoCatalog.a.clear();
+    mDiscoverRepository.a(new aej.b[] { mSetRemoteVideoToStartedListener });
   }
 }
 

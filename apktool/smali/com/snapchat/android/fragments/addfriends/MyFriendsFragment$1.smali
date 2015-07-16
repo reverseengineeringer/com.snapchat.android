@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 113
+    .line 114
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$1;->b:Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;
 
     iput p2, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$1;->a:I
@@ -44,15 +44,15 @@
     .locals 2
 
     .prologue
-    .line 117
+    .line 118
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$1;->b:Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->t:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment;->u:Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;
 
     iget v1, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$1;->a:I
 
     invoke-virtual {v0, v1}, Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersListView;->setSelection(I)V
 
-    .line 118
+    .line 119
     return-void
 .end method

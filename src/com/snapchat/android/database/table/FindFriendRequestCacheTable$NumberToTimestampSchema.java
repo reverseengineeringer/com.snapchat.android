@@ -1,10 +1,10 @@
 package com.snapchat.android.database.table;
 
+import aav;
 import com.snapchat.android.database.DataType;
-import zw;
 
 public enum FindFriendRequestCacheTable$NumberToTimestampSchema
-  implements zw
+  implements aav
 {
   HASHED_NUMBER(DataType.TEXT, "PRIMARY KEY"),  REQUEST_TIMESTAMP(DataType.LONG);
   

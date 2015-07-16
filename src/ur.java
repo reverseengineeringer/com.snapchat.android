@@ -1,8 +1,12 @@
-import java.util.List;
+import com.snapchat.android.api2.framework.HttpMethod;
+import java.util.Map;
 
-public abstract interface ur<T>
+public abstract interface ur
 {
-  public abstract void a(List<T> paramList);
+  public static final String REQUEST_ID_HEADER_NAME = "X-Snapchat-Request-Id";
+  
+  @chc
+  public abstract us a(@chc String paramString, @chc HttpMethod paramHttpMethod, @chd Map<String, String> paramMap, @chc bgk parambgk, @chd Object paramObject);
 }
 
 /* Location:

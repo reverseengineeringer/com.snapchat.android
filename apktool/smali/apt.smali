@@ -1,198 +1,208 @@
 .class public final Lapt;
-.super Ljava/lang/Object;
+.super Laqb;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuj;
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lapt$a;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
+        "Laqb",
         "<",
-        "Lcom/snapchat/android/ui/cash/CardNumberEditText;",
+        "Lbkk;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field static final synthetic a:Z
-
-
 # instance fields
-.field private final b:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Landroid/widget/EditText;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final a:Landroid/content/Context;
 
-.field private final c:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Latb;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
     .prologue
-    .line 9
-    const-class v0, Lapt;
+    .line 29
+    invoke-direct {p0, p1}, Laqb;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    .line 30
+    iput-object p1, p0, Lapt;->a:Landroid/content/Context;
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lapt;->a:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Landroid/widget/EditText;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Latb;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 15
-    sget-boolean v0, Lapt;->a:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 16
-    :cond_0
-    iput-object p1, p0, Lapt;->b:Lbuj;
-
-    .line 17
-    sget-boolean v0, Lapt;->a:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 18
-    :cond_1
-    iput-object p2, p0, Lapt;->c:Ljavax/inject/Provider;
-
-    .line 19
-    return-void
-.end method
-
-.method public static a(Lbuj;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Landroid/widget/EditText;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Latb;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lcom/snapchat/android/ui/cash/CardNumberEditText;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
     .line 31
-    new-instance v0, Lapt;
+    const v0, 0x7f0400be
 
-    invoke-direct {v0, p0, p1}, Lapt;-><init>(Lbuj;Ljavax/inject/Provider;)V
+    iput v0, p0, Lapt;->b:I
+
+    .line 32
+    return-void
+.end method
+
+.method static synthetic a(Lapt;)Landroid/content/Context;
+    .locals 1
+
+    .prologue
+    .line 24
+    iget-object v0, p0, Lapt;->a:Landroid/content/Context;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 6
 
     .prologue
-    .line 9
-    check-cast p1, Lcom/snapchat/android/ui/cash/CardNumberEditText;
+    const/4 v5, 0x0
 
-    if-nez p1, :cond_0
+    .line 55
+    if-nez p2, :cond_1
 
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "Cannot inject members into a null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iget-object v0, p0, Lapt;->b:Lbuj;
-
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lapt;->c:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .line 56
+    invoke-virtual {p0}, Lapt;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    check-cast v0, Latb;
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    iput-object v0, p1, Lcom/snapchat/android/ui/cash/CardNumberEditText;->a:Latb;
+    move-result-object v0
 
-    return-void
+    .line 57
+    iget v1, p0, Lapt;->b:I
+
+    invoke-virtual {v0, v1, p3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object p2
+
+    .line 58
+    new-instance v0, Lapt$a;
+
+    invoke-direct {v0, p0, p2}, Lapt$a;-><init>(Lapt;Landroid/view/View;)V
+
+    .line 59
+    invoke-virtual {p2, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    move-object v1, v0
+
+    .line 65
+    :goto_0
+    invoke-virtual {p0, p1}, Lapt;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbkk;
+
+    .line 66
+    invoke-virtual {v0}, Lbkk;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {}, Lakp;->g()Lakp;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lauk;->e(Ljava/lang/String;Lakp;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 68
+    iget-object v3, v1, Lapt$a;->b:Landroid/widget/TextView;
+
+    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 70
+    invoke-virtual {v0}, Lbkk;->b()Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lavb;->a(Ljava/lang/Boolean;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 71
+    iget-object v2, v1, Lapt$a;->b:Landroid/widget/TextView;
+
+    iget-object v3, p0, Lapt;->a:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v4, 0x7f08002e
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 72
+    iget-object v1, v1, Lapt$a;->c:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 76
+    :cond_0
+    new-instance v1, Lapt$1;
+
+    invoke-direct {v1, p0, v0}, Lapt$1;-><init>(Lapt;Lbkk;)V
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 85
+    return-object p2
+
+    .line 61
+    :cond_1
+    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lapt$a;
+
+    .line 62
+    iget-object v1, v0, Lapt$a;->a:Landroid/view/View;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v1, v0, Lapt$a;->b:Landroid/widget/TextView;
+
+    iget-object v2, v0, Lapt$a;->d:Lapt;
+
+    iget-object v2, v2, Lapt;->a:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f08005c
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v1, v0, Lapt$a;->c:Landroid/widget/ImageView;
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    move-object v1, v0
+
+    goto :goto_0
 .end method

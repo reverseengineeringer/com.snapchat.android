@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -23,10 +23,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
-import ato;
-import aza;
+import aum;
+import azy;
 import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -39,7 +38,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EncodingUtils;
-import os;
+import pj;
 
 public class WebFragment
   extends SnapchatFragment
@@ -47,7 +46,7 @@ public class WebFragment
   private String a;
   public WebView b;
   @Inject
-  public ato c;
+  public aum c;
   private String d;
   private String e;
   private boolean f;
@@ -98,7 +97,7 @@ public class WebFragment
   {
     try
     {
-      paramString = os.a(ajx.F(), paramString);
+      paramString = pj.a(akr.F(), paramString);
       return paramString;
     }
     catch (UnsupportedEncodingException paramString)
@@ -128,21 +127,21 @@ public class WebFragment
   
   public final void a(Bundle paramBundle)
   {
-    c(2131361893).setOnClickListener(new View.OnClickListener()
+    c(2131361895).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         i();
       }
     });
-    b = ((WebView)c(2131362754));
+    b = ((WebView)c(2131362751));
     Object localObject = b.getSettings();
     ((WebSettings)localObject).setJavaScriptEnabled(false);
     ((WebSettings)localObject).setAllowFileAccess(false);
     ((WebSettings)localObject).setSaveFormData(false);
     ((WebSettings)localObject).setSavePassword(false);
     if (d != null) {
-      ((TextView)c(2131361894)).setText(d);
+      ((TextView)c(2131361896)).setText(d);
     }
     b.setWebViewClient(new WebViewClient()
     {
@@ -188,7 +187,7 @@ public class WebFragment
     {
       localObject = Long.toString(new Date().getTime());
       paramBundle = new ArrayList();
-      paramBundle.add(new BasicNameValuePair("username", ajx.l()));
+      paramBundle.add(new BasicNameValuePair("username", akr.l()));
       paramBundle.add(new BasicNameValuePair("req_token", b((String)localObject)));
       paramBundle.add(new BasicNameValuePair("timestamp", (String)localObject));
       localObject = new HashMap();
@@ -205,7 +204,7 @@ public class WebFragment
       if (e != null) {
         paramBundle.add(new BasicNameValuePair("next", e));
       }
-      Timber.c("WebFragment", "AppAuth POST: %s", new Object[] { a(paramBundle) });
+      a(paramBundle);
       paramBundle = a(paramBundle);
       b.postUrl(a + "/accounts/client_native_auth", EncodingUtils.getBytes(paramBundle, "UTF-8"));
       return;
@@ -245,7 +244,7 @@ public class WebFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968782, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968784, paramViewGroup, false);
     a(paramBundle);
     return mFragmentLayout;
   }

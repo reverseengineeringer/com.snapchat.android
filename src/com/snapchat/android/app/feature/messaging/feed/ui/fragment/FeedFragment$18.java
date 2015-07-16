@@ -10,7 +10,7 @@ final class FeedFragment$18
   
   public final void onClick(View paramView)
   {
-    FeedFragment.h(a);
+    FeedFragment.d(a).b();
   }
 }
 

@@ -1,118 +1,186 @@
-.class public final Lbho;
+.class public abstract Lbho;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field protected isDelta:Ljava/lang/Boolean;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "is_delta"
-    .end annotation
-.end field
+.field final mCountdownInterval:J
+
+.field final mDuration:J
+
+.field private final mFinishMessage:Ljava/lang/Runnable;
+
+.field final mHandler:Landroid/os/Handler;
+
+.field final mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private final mIsFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field final mTickMessage:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(IJLandroid/os/Handler;)V
+    .locals 2
 
     .prologue
-    .line 16
+    const/4 v1, 0x0
+
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 23
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lbho;->mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    .line 24
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lbho;->mIsFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    .line 26
+    new-instance v0, Lbho$1;
+
+    invoke-direct {v0, p0}, Lbho$1;-><init>(Lbho;)V
+
+    iput-object v0, p0, Lbho;->mTickMessage:Ljava/lang/Runnable;
+
+    .line 33
+    new-instance v0, Lbho$2;
+
+    invoke-direct {v0, p0}, Lbho$2;-><init>(Lbho;)V
+
+    iput-object v0, p0, Lbho;->mFinishMessage:Ljava/lang/Runnable;
+
+    .line 47
+    int-to-long v0, p1
+
+    mul-long/2addr v0, p2
+
+    iput-wide v0, p0, Lbho;->mDuration:J
+
+    .line 48
+    iput-wide p2, p0, Lbho;->mCountdownInterval:J
+
+    .line 49
+    iput-object p4, p0, Lbho;->mHandler:Landroid/os/Handler;
+
+    .line 50
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Boolean;
-    .locals 1
-
-    .prologue
-    .line 32
-    iget-object v0, p0, Lbho;->isDelta:Ljava/lang/Boolean;
-
-    return-object v0
+.method public abstract a()V
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public abstract b()V
+.end method
+
+.method public final c()V
     .locals 3
 
     .prologue
     .line 53
-    if-ne p1, p0, :cond_0
+    iget-object v1, p0, Lbho;->mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    monitor-enter v1
 
     .line 54
-    const/4 v0, 0x1
+    :try_start_0
+    iget-object v0, p0, Lbho;->mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 60
-    :goto_0
-    return v0
+    const/4 v2, 0x1
 
-    .line 56
-    :cond_0
-    instance-of v0, p1, Lbho;
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    if-nez v0, :cond_1
+    .line 55
+    monitor-exit v1
 
-    .line 57
-    const/4 v0, 0x0
+    return-void
 
-    goto :goto_0
+    :catchall_0
+    move-exception v0
 
-    .line 59
-    :cond_1
-    check-cast p1, Lbho;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 60
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
-
-    iget-object v1, p0, Lbho;->isDelta:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbho;->isDelta:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
-
-    move-result v0
-
-    goto :goto_0
+    throw v0
 .end method
 
-.method public final hashCode()I
+.method final d()V
+    .locals 3
+
+    .prologue
+    .line 88
+    iget-object v1, p0, Lbho;->mIsCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    monitor-enter v1
+
+    .line 89
+    :try_start_0
+    iget-object v0, p0, Lbho;->mHandler:Landroid/os/Handler;
+
+    if-eqz v0, :cond_0
+
+    .line 90
+    iget-object v0, p0, Lbho;->mHandler:Landroid/os/Handler;
+
+    iget-object v2, p0, Lbho;->mFinishMessage:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 94
+    :goto_0
+    iget-object v0, p0, Lbho;->mIsFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    .line 95
+    monitor-exit v1
+
+    return-void
+
+    .line 92
+    :cond_0
+    invoke-virtual {p0}, Lbho;->b()V
+
+    goto :goto_0
+
+    .line 95
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final e()V
     .locals 2
 
     .prologue
-    .line 46
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 99
+    new-instance v0, Ljava/lang/Thread;
 
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+    new-instance v1, Lbho$3;
 
-    iget-object v1, p0, Lbho;->isDelta:Ljava/lang/Boolean;
+    invoke-direct {v1, p0}, Lbho$3;-><init>(Lbho;)V
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 41
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 105
+    return-void
 .end method

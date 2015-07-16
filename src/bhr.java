@@ -1,66 +1,72 @@
-import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import android.view.View;
+import android.view.ViewStub;
 
-public final class bhr
+public final class bhr<T extends View>
 {
-  @SerializedName("compatibility")
-  protected String compatibility;
-  @SerializedName("get_channels")
-  protected String getChannels;
-  @SerializedName("resource_parameter_name")
-  protected String resourceParameterName;
-  @SerializedName("resource_parameter_value")
-  protected String resourceParameterValue;
-  @SerializedName("video_catalog")
-  protected String videoCatalog;
+  private bhr.a mCallback;
+  private View mLayout;
+  private int mResourceId;
+  private int mStubId;
+  private T mView;
   
-  public final String a()
+  public bhr(View paramView, int paramInt1, int paramInt2)
   {
-    return getChannels;
+    this(paramView, paramInt1, paramInt2, null);
   }
   
-  public final String b()
+  public bhr(View paramView, int paramInt1, int paramInt2, bhr.a parama)
   {
-    return videoCatalog;
+    mLayout = paramView;
+    mStubId = paramInt1;
+    mResourceId = paramInt2;
+    mCallback = parama;
   }
   
-  public final String c()
+  public final T a()
   {
-    return resourceParameterName;
-  }
-  
-  public final String d()
-  {
-    return resourceParameterValue;
-  }
-  
-  public final String e()
-  {
-    return compatibility;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
+    if (mView == null)
+    {
+      ViewStub localViewStub = (ViewStub)mLayout.findViewById(mStubId);
+      if (localViewStub != null) {
+        localViewStub.inflate();
+      }
+      mView = mLayout.findViewById(mResourceId);
+      if (mCallback != null) {
+        mCallback.a(mView);
+      }
     }
-    if (!(paramObject instanceof bhr)) {
-      return false;
+    return mView;
+  }
+  
+  public final void a(int paramInt)
+  {
+    if ((mView == null) && (paramInt != 0)) {
+      return;
     }
-    paramObject = (bhr)paramObject;
-    return new EqualsBuilder().append(getChannels, getChannels).append(videoCatalog, videoCatalog).append(resourceParameterName, resourceParameterName).append(resourceParameterValue, resourceParameterValue).append(compatibility, compatibility).isEquals();
+    a().setVisibility(paramInt);
   }
   
-  public final int hashCode()
+  public final void a(bhr.a parama)
   {
-    return new HashCodeBuilder().append(getChannels).append(videoCatalog).append(resourceParameterName).append(resourceParameterValue).append(compatibility).toHashCode();
+    mCallback = parama;
+    if (b()) {
+      mCallback.a(mView);
+    }
   }
   
-  public final String toString()
+  public final boolean b()
   {
-    return ToStringBuilder.reflectionToString(this);
+    return mView != null;
+  }
+  
+  public final boolean c()
+  {
+    return (mView != null) && (mView.getVisibility() == 0);
+  }
+  
+  public static abstract interface a
+  {
+    public abstract void a(View paramView);
   }
 }
 

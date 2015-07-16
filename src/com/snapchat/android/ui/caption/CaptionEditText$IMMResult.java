@@ -2,7 +2,6 @@ package com.snapchat.android.ui.caption;
 
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import com.snapchat.android.Timber;
 
 class CaptionEditText$IMMResult
   extends ResultReceiver
@@ -14,7 +13,6 @@ class CaptionEditText$IMMResult
   
   public void onReceiveResult(int paramInt, Bundle paramBundle)
   {
-    Timber.c("CaptionEditText", "CaptionDebug: result from IME is %d", new Object[] { Integer.valueOf(paramInt) });
     if ((paramInt == 2) || (paramInt == 0)) {
       CaptionEditText.a(a, true);
     }

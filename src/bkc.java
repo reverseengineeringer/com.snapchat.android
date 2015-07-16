@@ -4,23 +4,67 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bkc
-  extends bgy
+  extends bil
 {
-  @SerializedName("size")
-  protected String size;
-  @SerializedName("username_image")
-  protected String usernameImage;
+  @SerializedName("replayed")
+  protected Boolean replayed;
+  @SerializedName("screenshot_count")
+  protected Long screenshotCount;
+  @SerializedName("snap_id")
+  protected String snapId;
+  @SerializedName("timestamp")
+  protected Long timestamp;
+  @SerializedName("viewed")
+  protected Boolean viewed;
   
-  public final bkc a(String paramString)
+  public final Long a()
   {
-    size = paramString;
-    return this;
+    return timestamp;
   }
   
-  public final bkc b(String paramString)
+  public final void a(Long paramLong)
   {
-    usernameImage = paramString;
-    return this;
+    timestamp = paramLong;
+  }
+  
+  public final void a(String paramString)
+  {
+    snapId = paramString;
+  }
+  
+  public final String b()
+  {
+    return snapId;
+  }
+  
+  public final void b(Boolean paramBoolean)
+  {
+    viewed = paramBoolean;
+  }
+  
+  public final void b(Long paramLong)
+  {
+    screenshotCount = paramLong;
+  }
+  
+  public final Boolean c()
+  {
+    return viewed;
+  }
+  
+  public final void c(Boolean paramBoolean)
+  {
+    replayed = paramBoolean;
+  }
+  
+  public final Boolean d()
+  {
+    return replayed;
+  }
+  
+  public final Long e()
+  {
+    return screenshotCount;
   }
   
   public boolean equals(Object paramObject)
@@ -32,12 +76,12 @@ public class bkc
       return false;
     }
     paramObject = (bkc)paramObject;
-    return new EqualsBuilder().append(size, size).append(usernameImage, usernameImage).isEquals();
+    return new EqualsBuilder().append(timestamp, timestamp).append(snapId, snapId).append(viewed, viewed).append(replayed, replayed).append(screenshotCount, screenshotCount).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(size).append(usernameImage).toHashCode();
+    return new HashCodeBuilder().append(timestamp).append(snapId).append(viewed).append(replayed).append(screenshotCount).toHashCode();
   }
   
   public String toString()

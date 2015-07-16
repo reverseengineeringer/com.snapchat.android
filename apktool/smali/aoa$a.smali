@@ -1,9 +1,6 @@
-.class final Laoa$a;
-.super Ljava/lang/Object;
+.class public final Laoa$a;
+.super Lqc;
 .source "SourceFile"
-
-# interfaces
-.implements Lbpd$f;
 
 
 # annotations
@@ -12,44 +9,54 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x1
     name = "a"
 .end annotation
 
+.annotation runtime Lud;
+.end annotation
+
+
+# instance fields
+.field a:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "username"
+    .end annotation
+.end field
+
+.field b:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "requested_username"
+    .end annotation
+.end field
+
+.field final synthetic c:Laoa;
+
 
 # direct methods
-.method private constructor <init>()V
+.method public constructor <init>(Laoa;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 57
+    iput-object p1, p0, Laoa$a;->c:Laoa;
 
+    invoke-direct {p0}, Lqc;-><init>()V
+
+    .line 58
+    iput-object p2, p0, Laoa$a;->a:Ljava/lang/String;
+
+    .line 59
+    iput-object p3, p0, Laoa$a;->b:Ljava/lang/String;
+
+    .line 60
     return-void
-.end method
-
-.method synthetic constructor <init>(B)V
-    .locals 0
-
-    .prologue
-    .line 48
-    invoke-direct {p0}, Laoa$a;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lbpg;)Lbpg;
-    .locals 2
-
-    .prologue
-    .line 51
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Attempt to make request on disabled Picasso instance"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

@@ -1,29 +1,27 @@
-import com.snapchat.android.Timber;
-
 public final class azt
+  implements bvp<pm>
 {
-  private static final String TAG = "NativeTaskFlagWatcher";
-  private final azo mExceptionReporter;
+  private final azj module;
   
-  public azt()
+  static
   {
-    this(new azo());
-  }
-  
-  private azt(azo paramazo)
-  {
-    mExceptionReporter = paramazo;
-  }
-  
-  public static void a()
-  {
-    boolean bool = ajx.bh();
-    Timber.c("NativeTaskFlagWatcher", "getTranscodingInProgressFlag is " + bool, new Object[0]);
-    if (bool)
+    if (!azt.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      azo.c(new bex("Transcoding flag was still set"));
-      ajx.r(false);
+      $assertionsDisabled = bool;
+      return;
     }
+  }
+  
+  private azt(azj paramazj)
+  {
+    assert (paramazj != null);
+    module = paramazj;
+  }
+  
+  public static bvp<pm> a(azj paramazj)
+  {
+    return new azt(paramazj);
   }
 }
 

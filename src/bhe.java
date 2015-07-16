@@ -1,52 +1,118 @@
-import com.google.gson.annotations.SerializedName;
-import java.util.List;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public final class bhe
 {
-  @SerializedName("messages")
-  protected List<bhh> messages;
-  @SerializedName("messaging_auth")
-  protected bix messagingAuth;
+  private static final double MAX_ASPECT_RATIO_ERROR = 0.1D;
+  private static final String TAG = "SaveStoryToGalleryResolutionProvider";
+  private final xv mDeviceVideoEncodingResolutionSet;
+  private final xx mTranscodingResolutionProviderFactory;
   
-  public final bhe a(List<bhh> paramList)
+  public bhe()
   {
-    messages = paramList;
-    return this;
+    this(xx.a(), xv.a());
   }
   
-  public final bix a()
+  private bhe(@chc xx paramxx, @chc xv paramxv)
   {
-    return messagingAuth;
+    mTranscodingResolutionProviderFactory = paramxx;
+    mDeviceVideoEncodingResolutionSet = paramxv;
   }
   
-  public final List<bhh> b()
+  @chd
+  private avc a(@chc avc paramavc)
   {
-    return messages;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
+    Object localObject = mDeviceVideoEncodingResolutionSet.a;
+    double d3 = paramavc.c();
+    paramavc = null;
+    double d1 = 0.0D;
+    int i = 0;
+    Iterator localIterator = ((Set)localObject).iterator();
+    while (localIterator.hasNext())
+    {
+      localObject = (avc)localIterator.next();
+      double d2 = Math.abs(((avc)localObject).c() - d3) / d3;
+      if (d2 <= 0.1D)
+      {
+        int j = ((avc)localObject).d();
+        if ((paramavc != null) && (d2 >= d1) && ((d2 != d1) || (j <= i))) {
+          break label125;
+        }
+        i = j;
+        paramavc = (avc)localObject;
+        d1 = d2;
+      }
     }
-    if (!(paramObject instanceof bhe)) {
-      return false;
+    label125:
+    for (;;)
+    {
+      break;
+      return paramavc;
     }
-    paramObject = (bhe)paramObject;
-    return new EqualsBuilder().append(messagingAuth, messagingAuth).append(messages, messages).isEquals();
   }
   
-  public final int hashCode()
+  @chd
+  private static avc a(@chc Map<avc, avc> paramMap)
   {
-    return new HashCodeBuilder().append(messagingAuth).append(messages).toHashCode();
+    avc localavc = null;
+    int i = 0;
+    double d1 = 0.0D;
+    Iterator localIterator = paramMap.entrySet().iterator();
+    paramMap = localavc;
+    while (localIterator.hasNext())
+    {
+      localavc = (avc)((Map.Entry)localIterator.next()).getValue();
+      if (localavc != null)
+      {
+        int j = localavc.d();
+        double d2 = localavc.c();
+        if (d1 != 0.0D) {
+          Math.abs(d2 - d1);
+        }
+        if (j <= i) {
+          break label106;
+        }
+        i = j;
+        paramMap = localavc;
+        d1 = d2;
+      }
+    }
+    label106:
+    for (;;)
+    {
+      break;
+      return paramMap;
+    }
   }
   
-  public final String toString()
+  @chd
+  public final avc a(@chc Collection<avc> paramCollection)
   {
-    return ToStringBuilder.reflectionToString(this);
+    if (paramCollection.size() == 0) {
+      throw new IllegalArgumentException("No media source resolutions to compare");
+    }
+    HashMap localHashMap = new HashMap();
+    Iterator localIterator = paramCollection.iterator();
+    while (localIterator.hasNext())
+    {
+      avc localavc = (avc)localIterator.next();
+      if (!localHashMap.containsKey(localavc))
+      {
+        paramCollection = xx.a(localavc).a(4000000);
+        if (paramCollection != null) {}
+        for (;;)
+        {
+          localHashMap.put(localavc, paramCollection);
+          break;
+          paramCollection = a(localavc);
+        }
+      }
+    }
+    return a(localHashMap);
   }
 }
 

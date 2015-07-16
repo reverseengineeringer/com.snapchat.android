@@ -1,13 +1,13 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afa;
-import afe;
-import afk;
-import ajv;
-import ajx;
-import alw;
-import alx;
-import alx.a;
+import aga;
+import age;
+import agk;
+import akp;
+import akr;
+import amt;
+import amu;
+import amu.a;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.drawable.AnimationDrawable;
@@ -20,51 +20,56 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import aol;
-import baj;
-import ban;
-import bbn;
-import bcw;
-import bel;
-import ber;
-import bfy;
-import boh;
+import aph;
+import bbj;
+import bbo;
+import bcn;
+import bdw;
+import bfk;
+import bfq;
+import bgy;
+import bpi;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.analytics.ProfileEventAnalytics;
+import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.Friend.AddSourceType;
+import com.snapchat.android.model.FriendAction;
 import com.snapchat.android.util.TitleBarManager.Visibility;
 import com.snapchat.android.util.emoji.Emoji;
 import com.squareup.otto.Bus;
+import ip;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import javax.inject.Provider;
-import nf;
+import kf;
+import ml;
+import nw;
 import q;
 
 public class AddedMeFragment
   extends SwipeableFriendsFragment
 {
   protected TextView a;
-  protected ajv b;
-  private final ajx c;
-  private final aol m;
-  private final ProfileEventAnalytics n;
+  protected akp b;
+  private final akr c;
+  private final aph n;
+  private final ProfileEventAnalytics o;
   
   public AddedMeFragment()
   {
-    this(ajx.a(), aol.a(), ajv.UNSAFE_USER_PROVIDER, bfy.a());
+    this(akr.a(), aph.a(), akp.UNSAFE_USER_PROVIDER, bgy.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private AddedMeFragment(ajx paramajx, aol paramaol, Provider<ajv> paramProvider, bfy parambfy)
+  private AddedMeFragment(akr paramakr, aph paramaph, Provider<akp> paramProvider, bgy parambgy)
   {
-    super(paramaol, paramProvider, parambfy);
-    c = paramajx;
-    m = paramaol;
-    n = ProfileEventAnalytics.a();
+    super(paramaph, paramProvider, parambgy);
+    c = paramakr;
+    n = paramaph;
+    o = ProfileEventAnalytics.a();
   }
   
   public final AnalyticsEvents.AnalyticsContext a()
@@ -72,32 +77,63 @@ public class AddedMeFragment
     return AnalyticsEvents.AnalyticsContext.PROFILE_ADDED_ME_PAGE;
   }
   
+  protected final void a(kf paramkf)
+  {
+    for (;;)
+    {
+      synchronized (this.m)
+      {
+        Iterator localIterator = this.m.iterator();
+        int i = 0;
+        if (localIterator.hasNext())
+        {
+          if (nextmAddSourceType != Friend.AddSourceType.ADDED_BY_ADDED_ME_BACK) {
+            i += 1;
+          }
+        }
+        else
+        {
+          int j = this.m.size();
+          int k = g.a(FriendAction.ADD, false);
+          int m = g.a(FriendAction.BLOCK, false);
+          int i1 = g.a(FriendAction.IGNORE, false);
+          int i2 = g.a(FriendAction.SET_DISPLAY_NAME, false);
+          ??? = new ip();
+          exitEvent = paramkf;
+          totalRequestCount = Long.valueOf(j);
+          newRequestCount = Long.valueOf(i);
+          requestAcceptCount = Long.valueOf(k);
+          requestBlockCount = Long.valueOf(m);
+          requestIgnoreCount = Long.valueOf(i1);
+          requestNameEditCount = Long.valueOf(i2);
+          ScAnalyticsEventEngine.a((ml)???);
+          return;
+        }
+      }
+    }
+  }
+  
   public final boolean a(@q Friend paramFriend)
   {
-    return ajv.a(paramFriend);
+    return akp.a(paramFriend);
   }
   
   protected final void e()
   {
-    nf.d();
+    nw.d();
     super.e();
-    ban.a().a(new bel(TitleBarManager.Visibility.VISIBLE));
-    b = ajv.g();
+    bbo.a().a(new bfk(TitleBarManager.Visibility.VISIBLE));
+    b = akp.g();
     if (b != null) {
-      m.d();
+      n.d();
     }
-    for (;;)
-    {
-      ProfileEventAnalytics.a(AnalyticsEvents.AnalyticsContext.PROFILE_ADDED_ME_PAGE, false);
-      nf.e();
-      return;
-      Timber.c("AddedMeFragment", "User is not loaded yet. Need to update snaps when the user is loaded.", new Object[0]);
-    }
+    ProfileEventAnalytics.a(AnalyticsEvents.AnalyticsContext.PROFILE_ADDED_ME_PAGE, false);
+    nw.e();
   }
   
   protected final void f()
   {
-    b = ajv.g();
+    b = akp.g();
     Object localObject = b;
     int i;
     if (!g.isEmpty()) {
@@ -105,7 +141,7 @@ public class AddedMeFragment
     }
     while ((localObject != null) && (i != 0))
     {
-      localObject = ((ajv)localObject).q().iterator();
+      localObject = ((akp)localObject).q().iterator();
       long l = 0L;
       for (;;)
       {
@@ -117,50 +153,50 @@ public class AddedMeFragment
           break;
         }
       }
-      if (ajx.a(l)) {
-        m.d();
+      if (akr.a(l)) {
+        n.d();
       }
     }
   }
   
   protected final int i()
   {
-    return 2130968702;
+    return 2130968703;
   }
   
-  public final alw k()
+  public final amt k()
   {
-    new alw()
+    new amt()
     {
-      public final boolean a(alx.a paramAnonymousa)
+      public final boolean a(amu.a paramAnonymousa)
       {
-        return alx.g.contains(c);
+        return amu.g.contains(c);
       }
       
-      public final boolean b(alx.a paramAnonymousa)
+      public final boolean b(amu.a paramAnonymousa)
       {
         return false;
       }
     };
   }
   
-  protected final afe l()
+  protected final age m()
   {
-    return new afk(true);
+    return new agk(true);
   }
   
-  protected final void m()
+  protected final void n()
   {
-    b = ajv.g();
+    b = akp.g();
     int i;
     if (b != null) {
       i = b.h();
     }
-    synchronized (l)
+    synchronized (m)
     {
-      l.clear();
-      l.addAll(b.a(null, 200));
-      Timber.c("AddedMeFragment", "refreshFriendList - LastSeenAddedMeTimestamp: " + ajx.j() + " Total # of FriendsWhoAddedMe: " + b.q().size() + " # of FriendsWhoAddedMe for display: " + l.size() + " # of NewFriendRequests (should be same with the one in Profile Page): " + i, new Object[0]);
+      m.clear();
+      m.addAll(b.a(null, 200));
+      new StringBuilder("refreshFriendList - LastSeenAddedMeTimestamp: ").append(akr.j()).append(" Total # of FriendsWhoAddedMe: ").append(b.q().size()).append(" # of FriendsWhoAddedMe for display: ").append(m.size()).append(" # of NewFriendRequests (should be same with the one in Profile Page): ").append(i);
       if (g != null) {
         g.notifyDataSetChanged();
       }
@@ -172,7 +208,7 @@ public class AddedMeFragment
         return;
       }
     }
-    if (l.isEmpty())
+    if (m.isEmpty())
     {
       h.setVisibility(8);
       a.setVisibility(0);
@@ -184,7 +220,7 @@ public class AddedMeFragment
     c(2131361918).setVisibility(8);
   }
   
-  protected final FriendListProperty n()
+  protected final FriendListProperty o()
   {
     FriendListProperty localFriendListProperty = new FriendListProperty(FriendListProperty.TouchMode.SWIPEABLE, FriendListProperty.Style.OPAQUE_CHECKBOX).a(true);
     l = true;
@@ -193,26 +229,24 @@ public class AddedMeFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    nf.d();
+    nw.d();
     paramLayoutInflater = super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    a = ((TextView)c(2131362469));
+    a = ((TextView)c(2131362468));
     paramViewGroup = getActivity().getString(2131492890);
-    a.setText(paramViewGroup + " " + baj.a(Emoji.DISAPPOINTED_FACE));
-    m();
-    nf.e();
+    a.setText(paramViewGroup + " " + bbj.a(Emoji.DISAPPOINTED_FACE));
+    n();
+    nw.e();
     return paramLayoutInflater;
   }
   
-  @boh
-  public void onFriendsProfileImageLoadedEvent(bbn parambbn)
+  @bpi
+  public void onFriendsProfileImageLoadedEvent(bcn parambcn)
   {
-    if ((parambbn == null) || (TextUtils.isEmpty(mFriendUsername))) {
-      Timber.f("AddedMeFragment", "friends profile images - invalid FriendProfileImagesLoadedEvent posted!", new Object[0]);
-    }
+    if ((parambcn == null) || (TextUtils.isEmpty(mFriendUsername))) {}
     for (;;)
     {
       return;
-      Timber.c("AddedMeFragment", "friends profile images - start processing FriendProfileImagesLoadedEvent for friend: " + mFriendUsername, new Object[0]);
+      new StringBuilder("friends profile images - start processing FriendProfileImagesLoadedEvent for friend: ").append(mFriendUsername);
       int i = 0;
       while (i <= h.getChildCount())
       {
@@ -222,9 +256,9 @@ public class AddedMeFragment
           Object localObject2 = (ViewGroup)((View)localObject1).findViewWithTag(mFriendUsername);
           if (localObject2 != null)
           {
-            localObject1 = (ImageView)((ViewGroup)localObject2).findViewById(2131361873);
-            ImageView localImageView = (ImageView)((ViewGroup)localObject2).findViewById(2131361874);
-            localObject2 = (ImageView)((ViewGroup)localObject2).findViewById(2131361872);
+            localObject1 = (ImageView)((ViewGroup)localObject2).findViewById(2131361874);
+            ImageView localImageView = (ImageView)((ViewGroup)localObject2).findViewById(2131361875);
+            localObject2 = (ImageView)((ViewGroup)localObject2).findViewById(2131361873);
             Object localObject3 = f.a(mFriendUsername);
             AnimationDrawable localAnimationDrawable = new AnimationDrawable();
             localObject3 = ((List)localObject3).iterator();
@@ -239,7 +273,7 @@ public class AddedMeFragment
             ((ImageView)localObject1).setVisibility(0);
             localImageView.setVisibility(0);
             ((ImageView)localObject2).setVisibility(4);
-            Timber.c("AddedMeFragment", "friends profile images - FriendProfileImagesLoadedEvent's been processed for friend:" + mFriendUsername, new Object[0]);
+            new StringBuilder("friends profile images - FriendProfileImagesLoadedEvent's been processed for friend:").append(mFriendUsername);
             return;
           }
         }
@@ -248,22 +282,21 @@ public class AddedMeFragment
     }
   }
   
-  @boh
-  public void onRefreshOnFriendActionEvent(bcw parambcw)
+  @bpi
+  public void onRefreshOnFriendActionEvent(bdw parambdw)
   {
-    super.a(parambcw);
+    super.a(parambdw);
   }
   
-  @boh
-  public void onUserLoadedEvent(ber paramber)
+  @bpi
+  public void onUserLoadedEvent(bfq parambfq)
   {
-    if ((paramber != null) && (user != null) && (b == null))
+    if ((parambfq != null) && (user != null) && (b == null))
     {
       b = user;
-      Timber.c("AddedMeFragment", "Update snaps because this fragment has not updated snaps since it became visible.", new Object[0]);
-      m.d();
+      n.d();
     }
-    m();
+    n();
   }
 }
 

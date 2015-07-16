@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 40
+    .line 47
     invoke-static {}, Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;->values()[Lcom/snapchat/android/app/feature/messaging/feed/ui/fragment/FeedAdapter$FeedViewType;
 
     move-result-object v0

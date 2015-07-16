@@ -7,20 +7,20 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import ckr.c;
-import cks;
-import cks.a;
-import ckt;
-import cky;
-import ckz;
+import cls.c;
+import clt;
+import clt.a;
+import clu;
+import clz;
+import cma;
 
 public abstract class AbsSectionIndicator<T>
   extends FrameLayout
-  implements cky<T>
+  implements clz<T>
 {
-  private static final int[] a = ckr.c.AbsSectionIndicator;
-  private ckt b;
-  private ckz c;
+  private static final int[] a = cls.c.AbsSectionIndicator;
+  private clu b;
+  private cma c;
   
   public AbsSectionIndicator(Context paramContext)
   {
@@ -38,10 +38,10 @@ public abstract class AbsSectionIndicator<T>
     paramAttributeSet = getContext().getTheme().obtainStyledAttributes(paramAttributeSet, a, 0, 0);
     try
     {
-      paramInt = paramAttributeSet.getResourceId(ckr.c.AbsSectionIndicator_rfs_section_indicator_layout, getDefaultLayoutId());
+      paramInt = paramAttributeSet.getResourceId(cls.c.AbsSectionIndicator_rfs_section_indicator_layout, getDefaultLayoutId());
       ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(paramInt, this, true);
       paramAttributeSet.recycle();
-      c = new ckz(this);
+      c = new cma(this);
       return;
     }
     finally
@@ -58,13 +58,13 @@ public abstract class AbsSectionIndicator<T>
   {
     super.onLayout(paramBoolean, paramInt1, paramInt2, paramInt3, paramInt4);
     if (b == null) {
-      b = new ckt(new cks(new cks.a()new cks.a
+      b = new clu(new clt(new clt.a()new clt.a
       {
         public final float a()
         {
           return 0.0F;
         }
-      }, new cks.a()
+      }, new clt.a()
       {
         public final float a()
         {

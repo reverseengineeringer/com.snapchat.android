@@ -1,28 +1,62 @@
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
+import android.view.ViewGroup;
+import com.snapchat.android.app.feature.messaging.feed.ui.fragment.FeedFragment;
+import com.snapchat.android.camera.CameraFragment;
+import com.snapchat.android.discover.ui.fragment.DiscoverFragment;
+import com.snapchat.android.fragments.chat.ChatFragment;
+import com.snapchat.android.fragments.stories.StoriesFragment;
+import com.snapchat.android.util.fragment.SnapchatFragment;
 
 public final class mq
-  extends ml
+  extends avs
 {
-  private static final String IDENTIFIER = "EMPTY";
-  
-  public final String a()
+  public mq(FragmentManager paramFragmentManager)
   {
-    return "EMPTY";
+    super(paramFragmentManager);
   }
   
-  public final String b()
+  public final SnapchatFragment a(ViewGroup paramViewGroup, int paramInt)
   {
-    return "EMPTY";
+    Object localObject;
+    switch (paramInt)
+    {
+    default: 
+      return null;
+    case 0: 
+      localObject = new ChatFragment();
+      boolean bool2 = false;
+      boolean bool1 = bool2;
+      if ((paramViewGroup instanceof ViewPager))
+      {
+        bool1 = bool2;
+        if (paramInt == ((ViewPager)paramViewGroup).getCurrentItem()) {
+          bool1 = true;
+        }
+      }
+      k = bool1;
+      paramViewGroup = (ViewGroup)localObject;
+    }
+    for (;;)
+    {
+      localObject = new Bundle();
+      ((Bundle)localObject).putInt("page_index", paramInt);
+      paramViewGroup.setArguments((Bundle)localObject);
+      return paramViewGroup;
+      paramViewGroup = new FeedFragment();
+      continue;
+      paramViewGroup = new CameraFragment();
+      continue;
+      paramViewGroup = new StoriesFragment();
+      continue;
+      paramViewGroup = new DiscoverFragment();
+    }
   }
   
-  public final Bundle c()
+  public final int getCount()
   {
-    return new Bundle();
-  }
-  
-  public final String d()
-  {
-    return "EMPTY";
+    return 5;
   }
 }
 

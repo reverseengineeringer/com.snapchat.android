@@ -1,151 +1,139 @@
-import org.apache.http.util.CharArrayBuffer;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build.VERSION;
+import android.os.SystemClock;
+import android.util.DisplayMetrics;
+import android.widget.ImageView;
 
-public abstract class bqf
+final class bqf
+  extends BitmapDrawable
 {
-  bql a;
-  CharArrayBuffer b;
-  protected int c;
-  private int d;
+  private static final Paint e = new Paint();
+  Drawable a;
+  long b;
+  boolean c;
+  int d = 255;
+  private final boolean f;
+  private final float g;
+  private final bqe.d h;
   
-  public bqf(bqf parambqf)
+  private bqf(Context paramContext, Bitmap paramBitmap, Drawable paramDrawable, bqe.d paramd, boolean paramBoolean1, boolean paramBoolean2)
   {
-    a(a, c);
-  }
-  
-  public bqf(bql parambql)
-  {
-    a(parambql, 0);
-  }
-  
-  private void a(bql parambql, int paramInt)
-  {
-    a = parambql;
-    d = e();
-    b = new CharArrayBuffer(d());
-    c = paramInt;
-  }
-  
-  private void g()
-  {
-    a.a(bqs.d);
-  }
-  
-  public final int a()
-  {
-    return c;
-  }
-  
-  public final void a(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
-  {
-    int i = b(paramArrayOfByte, paramInt1, paramInt2);
-    while ((i > 0) && (i < paramInt2))
+    super(paramContext.getResources(), paramBitmap);
+    f = paramBoolean2;
+    g = getResourcesgetDisplayMetricsdensity;
+    h = paramd;
+    if ((paramd != bqe.d.a) && (!paramBoolean1)) {}
+    for (int i = 1;; i = 0)
     {
-      int j = a.a().b(paramArrayOfByte, paramInt1 + i, paramInt2 - i);
-      if (j <= 0) {
-        break;
+      if (i != 0)
+      {
+        a = paramDrawable;
+        c = true;
+        b = SystemClock.uptimeMillis();
       }
-      i += j;
+      return;
     }
   }
   
-  public boolean a(int paramInt)
+  private static Path a(Point paramPoint, int paramInt)
   {
-    if (paramInt == -1)
-    {
-      g();
-      return true;
+    Point localPoint1 = new Point(x + paramInt, y);
+    Point localPoint2 = new Point(x, y + paramInt);
+    Path localPath = new Path();
+    localPath.moveTo(x, y);
+    localPath.lineTo(x, y);
+    localPath.lineTo(x, y);
+    return localPath;
+  }
+  
+  static void a(ImageView paramImageView, Context paramContext, Bitmap paramBitmap, bqe.d paramd, boolean paramBoolean1, boolean paramBoolean2)
+  {
+    Drawable localDrawable = paramImageView.getDrawable();
+    if ((localDrawable instanceof AnimationDrawable)) {
+      ((AnimationDrawable)localDrawable).stop();
     }
-    c += 1;
-    char c1 = (char)paramInt;
-    Object localObject;
-    if (c1 == '\n') {
-      if (a(b)) {
-        localObject = b();
-      }
+    paramImageView.setImageDrawable(new bqf(paramContext, paramBitmap, localDrawable, paramd, paramBoolean1, paramBoolean2));
+  }
+  
+  static void a(ImageView paramImageView, Drawable paramDrawable)
+  {
+    paramImageView.setImageDrawable(paramDrawable);
+    if ((paramImageView.getDrawable() instanceof AnimationDrawable)) {
+      ((AnimationDrawable)paramImageView.getDrawable()).start();
+    }
+  }
+  
+  public final void draw(Canvas paramCanvas)
+  {
+    if (!c) {
+      super.draw(paramCanvas);
     }
     for (;;)
     {
-      if (localObject != this) {
-        a.a((bqf)localObject);
-      }
-      if (localObject != this) {
-        break;
-      }
-      return false;
-      localObject = bqs.d;
-      continue;
-      if (b.length() < d)
+      if (f)
       {
-        b.append(c1);
-        localObject = this;
+        e.setColor(-1);
+        paramCanvas.drawPath(a(new Point(0, 0), (int)(16.0F * g)), e);
+        e.setColor(h.d);
+        paramCanvas.drawPath(a(new Point(0, 0), (int)(15.0F * g)), e);
+      }
+      return;
+      float f1 = (float)(SystemClock.uptimeMillis() - b) / 200.0F;
+      if (f1 >= 1.0F)
+      {
+        c = false;
+        a = null;
+        super.draw(paramCanvas);
       }
       else
       {
-        localObject = c();
+        if (a != null) {
+          a.draw(paramCanvas);
+        }
+        super.setAlpha((int)(f1 * d));
+        super.draw(paramCanvas);
+        super.setAlpha(d);
+        if (Build.VERSION.SDK_INT <= 10) {
+          invalidateSelf();
+        }
       }
     }
   }
   
-  public abstract boolean a(CharArrayBuffer paramCharArrayBuffer);
-  
-  protected int b(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
-  {
-    boolean bool = false;
-    int i = -1;
-    int j;
-    if (paramInt2 == -1)
-    {
-      g();
-      j = i;
-    }
-    do
-    {
-      do
-      {
-        return j;
-        j = i;
-      } while (paramArrayOfByte == null);
-      j = i;
-    } while (paramInt2 == 0);
-    i = 0;
-    for (;;)
-    {
-      j = i;
-      if (bool) {
-        break;
-      }
-      j = i;
-      if (i >= paramInt2) {
-        break;
-      }
-      bool = a((char)paramArrayOfByte[(paramInt1 + i)]);
-      i += 1;
-    }
-  }
-  
-  public abstract bqf b();
-  
-  public final void b(int paramInt)
-  {
-    c = paramInt;
-  }
-  
-  public abstract bqf c();
-  
-  protected abstract int d();
-  
-  protected abstract int e();
-  
-  public void f()
+  protected final void onBoundsChange(Rect paramRect)
   {
     if (a != null) {
-      a.a(bqs.d);
+      a.setBounds(paramRect);
     }
+    super.onBoundsChange(paramRect);
   }
   
-  public final String toString()
+  public final void setAlpha(int paramInt)
   {
-    return b.toString();
+    d = paramInt;
+    if (a != null) {
+      a.setAlpha(paramInt);
+    }
+    super.setAlpha(paramInt);
+  }
+  
+  public final void setColorFilter(ColorFilter paramColorFilter)
+  {
+    if (a != null) {
+      a.setColorFilter(paramColorFilter);
+    }
+    super.setColorFilter(paramColorFilter);
   }
 }
 

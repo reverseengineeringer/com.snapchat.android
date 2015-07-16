@@ -1,37 +1,38 @@
-import com.snapchat.android.model.chat.ChatConversation;
-import javax.inject.Provider;
+import android.content.Context;
+import android.telephony.PhoneNumberUtils;
+import android.telephony.TelephonyManager;
+import android.text.Editable.Factory;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.model.Friend;
 
-public final class age
-  implements buj<agd>
+public class age
 {
-  private final buj<apf<ChatConversation>> b;
-  private final Provider<azo> c;
+  private final boolean a = avg.c(((TelephonyManager)SnapchatApplication.b().getSystemService("phone")).getNetworkCountryIso(), "US");
   
-  static
+  public String a(@chc Friend paramFriend)
   {
-    if (!age.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    return paramFriend.e();
+  }
+  
+  public String a(@chc Friend paramFriend, boolean paramBoolean)
+  {
+    if (paramFriend.n()) {
+      return paramFriend.l();
+    }
+    return "";
+  }
+  
+  protected final String b(@chc Friend paramFriend)
+  {
+    String str = mPhoneNumber;
+    paramFriend = str;
+    if (a)
     {
-      a = bool;
-      return;
+      paramFriend = Editable.Factory.getInstance().newEditable(str);
+      PhoneNumberUtils.formatNanpNumber(paramFriend);
+      paramFriend = paramFriend.toString();
     }
-  }
-  
-  private age(buj<apf<ChatConversation>> parambuj, Provider<azo> paramProvider)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-  }
-  
-  public static buj<agd> a(buj<apf<ChatConversation>> parambuj, Provider<azo> paramProvider)
-  {
-    return new age(parambuj, paramProvider);
+    return auv.a(null, 2131493072, new Object[] { paramFriend });
   }
 }
 

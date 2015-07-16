@@ -1,10 +1,10 @@
 package com.snapchat.android.analytics.framework;
 
-import buj;
+import bvk;
 import javax.inject.Provider;
 
 public final class EasyMetric_MembersInjector
-  implements buj<EasyMetric>
+  implements bvk<EasyMetric>
 {
   private final Provider<UpdateSnapsAnalyticsPlatform> b;
   private final Provider<FlurryAnalyticsPlatform> c;
@@ -36,7 +36,7 @@ public final class EasyMetric_MembersInjector
     d = paramProvider2;
   }
   
-  public static buj<EasyMetric> a(Provider<UpdateSnapsAnalyticsPlatform> paramProvider, Provider<FlurryAnalyticsPlatform> paramProvider1, Provider<UserActionTracePlatform> paramProvider2)
+  public static bvk<EasyMetric> a(Provider<UpdateSnapsAnalyticsPlatform> paramProvider, Provider<FlurryAnalyticsPlatform> paramProvider1, Provider<UserActionTracePlatform> paramProvider2)
   {
     return new EasyMetric_MembersInjector(paramProvider, paramProvider1, paramProvider2);
   }

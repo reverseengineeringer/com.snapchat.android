@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final f:Lajx;
+.field private final f:Lakr;
 
-.field private final g:Laol;
+.field private final g:Laph;
 
 .field private final h:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -19,7 +19,7 @@
     .end annotation
 .end field
 
-.field private i:Laok;
+.field private i:Lapg;
 
 
 # direct methods
@@ -28,21 +28,21 @@
 
     .prologue
     .line 42
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v0
 
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;-><init>(Lajx;Laol;)V
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;-><init>(Lakr;Laph;)V
 
     .line 43
     return-void
 .end method
 
-.method private constructor <init>(Lajx;Laol;)V
+.method private constructor <init>(Lakr;Laph;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -66,13 +66,13 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment$1;-><init>(Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->i:Laok;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->i:Lapg;
 
     .line 47
-    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->f:Lajx;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->f:Lakr;
 
     .line 48
-    iput-object p2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laol;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laph;
 
     .line 49
     return-void
@@ -177,7 +177,7 @@
     .line 123
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->h:Ljava/util/Set;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laol;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laph;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -197,7 +197,7 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Laol;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3, v4, v5}, Laph;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 
@@ -218,7 +218,7 @@
     .line 133
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->h:Ljava/util/Set;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laol;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laph;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -238,7 +238,7 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Laol;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3, v4, v5}, Laph;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 
@@ -263,7 +263,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {}, Lajx;->e()Ljava/lang/String;
+    invoke-static {}, Lakr;->e()Ljava/lang/String;
 
     move-result-object v2
 
@@ -275,9 +275,9 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0c02ab
+    const v2, 0x7f0c02a9
 
-    invoke-static {v1, v2, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -289,7 +289,7 @@
 
     .prologue
     .line 92
-    const v0, 0x7f0400bf
+    const v0, 0x7f0400c1
 
     const/4 v1, 0x0
 
@@ -300,7 +300,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 93
-    const v0, 0x7f0a03f3
+    const v0, 0x7f0a03ec
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->c(I)Landroid/view/View;
 
@@ -341,13 +341,13 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->onPause()V
 
     .line 117
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laph;
 
     const/16 v1, 0x3f4
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->i:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->i:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 118
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->h:Ljava/util/Set;
@@ -366,26 +366,26 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->onResume()V
 
     .line 111
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laol;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->g:Laph;
 
     const/16 v1, 0x3f4
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->i:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFAEnableCodeConfirmationFragment;->i:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 112
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 151
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->onVerificationCodeReceivedEvent(Lbet;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->onVerificationCodeReceivedEvent(Lbfs;)V
 
     .line 152
     return-void

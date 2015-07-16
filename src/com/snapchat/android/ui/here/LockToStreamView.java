@@ -14,8 +14,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewPropertyAnimator;
-import ats;
-import cgb;
+import auq;
+import chc;
 import com.snapchat.android.analytics.HereAnalytics;
 
 public class LockToStreamView
@@ -34,16 +34,16 @@ public class LockToStreamView
   private int[] k = new int[2];
   private HereAnalytics l;
   
-  public LockToStreamView(@cgb Context paramContext, @cgb View paramView, @cgb HereAnalytics paramHereAnalytics)
+  public LockToStreamView(@chc Context paramContext, @chc View paramView, @chc HereAnalytics paramHereAnalytics)
   {
     super(paramContext);
     g = paramView;
     l = paramHereAnalytics;
     b = new Paint(1);
     b.setStyle(Paint.Style.STROKE);
-    int m = getResources().getDimensionPixelSize(2131296330);
+    int m = getResources().getDimensionPixelSize(2131296329);
     b.setStrokeWidth(m);
-    b.setColor(paramContext.getResources().getColor(2131230767));
+    b.setColor(paramContext.getResources().getColor(2131230768));
     j = new RectF(0.0F, 0.0F, 0.0F, 0.0F);
     setBackgroundColor(0);
     a();
@@ -58,15 +58,15 @@ public class LockToStreamView
   final float a(float paramFloat1, float paramFloat2)
   {
     if (paramFloat1 < paramFloat2) {
-      return getResources().getDimension(2131296334) - getRadius();
+      return getResources().getDimension(2131296333) - getRadius();
     }
-    return getParentHeight() - getResources().getDimension(2131296332) - getRadius();
+    return getParentHeight() - getResources().getDimension(2131296331) - getRadius();
   }
   
   public final void a()
   {
     setVisibility(4);
-    setY(-getResources().getDimension(2131296333));
+    setY(-getResources().getDimension(2131296332));
     d = false;
     e = false;
     f = false;
@@ -110,9 +110,9 @@ public class LockToStreamView
       return;
     }
     float f1 = b(paramMotionEvent);
-    int m = getResources().getDimensionPixelOffset(2131296327);
+    int m = getResources().getDimensionPixelOffset(2131296326);
     if (f1 > m) {}
-    for (f1 = h; paramBoolean; f1 = Math.min(Math.max(ats.a(h, i, (m - f1) / m), h), i))
+    for (f1 = h; paramBoolean; f1 = Math.min(Math.max(auq.a(h, i, (m - f1) / m), h), i))
     {
       float f2 = a(paramMotionEvent.getRawY(), getParentHeight() / 2);
       animate().scaleX(f1).scaleY(f1).translationY(f2).setDuration(300L);
@@ -134,8 +134,8 @@ public class LockToStreamView
     }
     float f1 = g.getMeasuredWidth();
     float f2 = g.getScaleX();
-    float f3 = getResources().getDimensionPixelSize(2131296330) * 2 + f1 * f2;
-    int m = getResources().getDimensionPixelOffset(2131296326);
+    float f3 = getResources().getDimensionPixelSize(2131296329) * 2 + f1 * f2;
+    int m = getResources().getDimensionPixelOffset(2131296325);
     float f4 = getParentHeight();
     float f5 = f4 / 2.0F;
     f2 = m + f3 / 2.0F;

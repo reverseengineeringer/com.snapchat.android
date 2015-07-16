@@ -1,18 +1,18 @@
 .class public Lbkd;
-.super Lbgy;
+.super Lbhy;
 .source "SourceFile"
 
 
 # instance fields
-.field protected countrycode:Ljava/lang/String;
+.field protected image:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "countryCode"
+        value = "image"
     .end annotation
 .end field
 
-.field protected numbers:Ljava/lang/String;
+.field protected type:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "numbers"
+        value = "type"
     .end annotation
 .end field
 
@@ -23,7 +23,7 @@
 
     .prologue
     .line 17
-    invoke-direct {p0}, Lbgy;-><init>()V
+    invoke-direct {p0}, Lbhy;-><init>()V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 
     .prologue
     .line 31
-    iput-object p1, p0, Lbkd;->numbers:Ljava/lang/String;
+    iput-object p1, p0, Lbkd;->image:Ljava/lang/String;
 
     .line 32
     return-object p0
@@ -46,7 +46,7 @@
 
     .prologue
     .line 49
-    iput-object p1, p0, Lbkd;->countrycode:Ljava/lang/String;
+    iput-object p1, p0, Lbkd;->type:Ljava/lang/String;
 
     .line 50
     return-object p0
@@ -86,17 +86,17 @@
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkd;->numbers:Ljava/lang/String;
+    iget-object v1, p0, Lbkd;->image:Ljava/lang/String;
 
-    iget-object v2, p1, Lbkd;->numbers:Ljava/lang/String;
+    iget-object v2, p1, Lbkd;->image:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkd;->countrycode:Ljava/lang/String;
+    iget-object v1, p0, Lbkd;->type:Ljava/lang/String;
 
-    iget-object v2, p1, Lbkd;->countrycode:Ljava/lang/String;
+    iget-object v2, p1, Lbkd;->type:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -118,13 +118,13 @@
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbkd;->numbers:Ljava/lang/String;
+    iget-object v1, p0, Lbkd;->image:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbkd;->countrycode:Ljava/lang/String;
+    iget-object v1, p0, Lbkd;->type:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 

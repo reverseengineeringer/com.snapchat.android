@@ -2,10 +2,10 @@ package com.snapchat.android.discover.ui;
 
 import android.animation.Animator;
 import android.widget.LinearLayout;
-import avj;
+import awh;
 
 final class DSnapView$3
-  extends avj
+  extends awh
 {
   DSnapView$3(DSnapView paramDSnapView) {}
   

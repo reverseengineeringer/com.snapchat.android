@@ -1,109 +1,471 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public final class md
+  extends ml
 {
-  public static final class a
+  private Long camera;
+  private Long caption;
+  private Boolean drawing;
+  private final String eventName = "STORY_SNAP_SAVE";
+  private String filter;
+  private String filterGeofence;
+  private hv filterInfo;
+  private String filterSponsor;
+  private hw filterType;
+  private hx filterVisual;
+  private Boolean flash;
+  public String geoFence;
+  private ih mediaType;
+  public String posterId;
+  private Long snapIndexCount;
+  private Long snapIndexPos;
+  public Double snapTime;
+  private lu source;
+  private String sponsor;
+  public String storySnapId;
+  public mj storyType;
+  
+  public final Map<String, Object> a()
   {
-    public static final int[] AbsRecyclerViewFastScroller = { 2130771970, 2130771971, 2130771972, 2130771973, 2130771974 };
-    public static final int AbsRecyclerViewFastScroller_rfs_barBackground = 2;
-    public static final int AbsRecyclerViewFastScroller_rfs_barColor = 1;
-    public static final int AbsRecyclerViewFastScroller_rfs_fast_scroller_layout = 0;
-    public static final int AbsRecyclerViewFastScroller_rfs_handleBackground = 4;
-    public static final int AbsRecyclerViewFastScroller_rfs_handleColor = 3;
-    public static final int[] AbsSectionIndicator = { 2130771975 };
-    public static final int AbsSectionIndicator_rfs_section_indicator_layout = 0;
-    public static final int[] AdsAttrs = { 2130771976, 2130771977, 2130771978 };
-    public static final int AdsAttrs_adSize = 0;
-    public static final int AdsAttrs_adSizes = 1;
-    public static final int AdsAttrs_adUnitId = 2;
-    public static final int[] ArcLayout = { 2130771979, 2130771980, 2130771981 };
-    public static final int ArcLayout_childSize = 2;
-    public static final int ArcLayout_fromDegrees = 0;
-    public static final int ArcLayout_toDegrees = 1;
-    public static final int[] DiscoverButtonView = { 2130771982 };
-    public static final int DiscoverButtonView_circleColor = 0;
-    public static final int[] FitWidthViewGroup = { 2130771983 };
-    public static final int FitWidthViewGroup_gravity = 0;
-    public static final int[] HeaderButton = { 2130771984, 2130771985, 2130771986, 2130771987, 2130771988 };
-    public static final int HeaderButton_header_button_color = 0;
-    public static final int HeaderButton_header_button_icon = 1;
-    public static final int HeaderButton_header_button_side = 2;
-    public static final int HeaderButton_sibling = 3;
-    public static final int HeaderButton_text = 4;
-    public static final int[] LoadingImageView = { 2130771989, 2130771990, 2130771991 };
-    public static final int LoadingImageView_circleCrop = 2;
-    public static final int LoadingImageView_imageAspectRatio = 1;
-    public static final int LoadingImageView_imageAspectRatioAdjust = 0;
-    public static final int[] MapAttrs = { 2130771992, 2130771993, 2130771994, 2130771995, 2130771996, 2130771997, 2130771998, 2130771999, 2130772000, 2130772001, 2130772002, 2130772003, 2130772004, 2130772005, 2130772006, 2130772007 };
-    public static final int MapAttrs_cameraBearing = 1;
-    public static final int MapAttrs_cameraTargetLat = 2;
-    public static final int MapAttrs_cameraTargetLng = 3;
-    public static final int MapAttrs_cameraTilt = 4;
-    public static final int MapAttrs_cameraZoom = 5;
-    public static final int MapAttrs_liteMode = 6;
-    public static final int MapAttrs_mapType = 0;
-    public static final int MapAttrs_uiCompass = 7;
-    public static final int MapAttrs_uiMapToolbar = 15;
-    public static final int MapAttrs_uiRotateGestures = 8;
-    public static final int MapAttrs_uiScrollGestures = 9;
-    public static final int MapAttrs_uiTiltGestures = 10;
-    public static final int MapAttrs_uiZoomControls = 11;
-    public static final int MapAttrs_uiZoomGestures = 12;
-    public static final int MapAttrs_useViewLifecycle = 13;
-    public static final int MapAttrs_zOrderOnTop = 14;
-    public static final int[] NumberPicker = { 2130772008, 2130772009, 2130772010, 2130772011, 2130772012, 2130772013, 2130772014, 2130772015, 2130772016, 2130772017 };
-    public static final int NumberPicker_internalLayout = 8;
-    public static final int NumberPicker_internalMaxHeight = 5;
-    public static final int NumberPicker_internalMaxWidth = 7;
-    public static final int NumberPicker_internalMinHeight = 4;
-    public static final int NumberPicker_internalMinWidth = 6;
-    public static final int NumberPicker_selectionDivider = 1;
-    public static final int NumberPicker_selectionDividerHeight = 2;
-    public static final int NumberPicker_selectionDividersDistance = 3;
-    public static final int NumberPicker_solidColor = 0;
-    public static final int NumberPicker_virtualButtonPressedDrawable = 9;
-    public static final int[] ParticleSparkleView = { 2130772018, 2130772019 };
-    public static final int ParticleSparkleView_maxActive = 1;
-    public static final int ParticleSparkleView_particle = 0;
-    public static final int[] PenToolButton = { 2130772020, 2130772021, 2130772022 };
-    public static final int PenToolButton_interpolator = 2;
-    public static final int PenToolButton_strokeWidthMax = 0;
-    public static final int PenToolButton_strokeWidthMin = 1;
-    public static final int[] PenTypeButton = { 2130772023 };
-    public static final int PenTypeButton_penType = 0;
-    public static final int[] PtrClassicHeader = { 2130772024 };
-    public static final int PtrClassicHeader_ptr_rotate_ani_time = 0;
-    public static final int[] PtrFrameLayout = { 2130772025, 2130772026, 2130772027, 2130772028, 2130772029, 2130772030, 2130772031, 2130772032 };
-    public static final int PtrFrameLayout_ptr_content = 1;
-    public static final int PtrFrameLayout_ptr_duration_to_close = 4;
-    public static final int PtrFrameLayout_ptr_duration_to_close_header = 5;
-    public static final int PtrFrameLayout_ptr_header = 0;
-    public static final int PtrFrameLayout_ptr_keep_header_when_refresh = 7;
-    public static final int PtrFrameLayout_ptr_pull_to_fresh = 6;
-    public static final int PtrFrameLayout_ptr_ratio_of_header_height_to_refresh = 3;
-    public static final int PtrFrameLayout_ptr_resistance = 2;
-    public static final int[] RayLayout = { 2130772033 };
-    public static final int RayLayout_leftHolderWidth = 0;
-    public static final int[] SectionTitleIndicator = { 2130772034, 2130772035 };
-    public static final int SectionTitleIndicator_rfs_backgroundColor = 1;
-    public static final int SectionTitleIndicator_rfs_textColor = 0;
-    public static final int[] SnapchatTimePicker = { 2130772036, 2130772037, 2130772038, 2130772039, 2130772040, 2130772041, 2130772042, 2130772043, 2130772044 };
-    public static final int SnapchatTimePicker_SCinternalLayout = 8;
-    public static final int SnapchatTimePicker_SCinternalMaxHeight = 5;
-    public static final int SnapchatTimePicker_SCinternalMaxWidth = 7;
-    public static final int SnapchatTimePicker_SCinternalMinHeight = 4;
-    public static final int SnapchatTimePicker_SCinternalMinWidth = 6;
-    public static final int SnapchatTimePicker_SCselectionDivider = 1;
-    public static final int SnapchatTimePicker_SCselectionDividerHeight = 2;
-    public static final int SnapchatTimePicker_SCselectionDividersDistance = 3;
-    public static final int SnapchatTimePicker_SCsolidColor = 0;
-    public static final int[] SwatchButton = { 2130772045 };
-    public static final int SwatchButton_color = 0;
-    public static final int[] TwoWayView = { 16842948, 16843003, 16843004, 16843051 };
-    public static final int TwoWayView_android_choiceMode = 3;
-    public static final int TwoWayView_android_drawSelectorOnTop = 2;
-    public static final int TwoWayView_android_listSelector = 1;
-    public static final int TwoWayView_android_orientation = 0;
-    public static final int[] VerticalSwipeLayout = { 2130772046 };
-    public static final int VerticalSwipeLayout_defaultPage = 0;
+    HashMap localHashMap = new HashMap();
+    localHashMap.put("event_name", "STORY_SNAP_SAVE");
+    if (camera != null) {
+      localHashMap.put("camera", camera);
+    }
+    if (caption != null) {
+      localHashMap.put("caption", caption);
+    }
+    if (drawing != null) {
+      localHashMap.put("drawing", drawing);
+    }
+    if (filter != null) {
+      localHashMap.put("filter", filter);
+    }
+    if (filterGeofence != null) {
+      localHashMap.put("filter_geofence", filterGeofence);
+    }
+    if (filterInfo != null) {
+      localHashMap.put("filter_info", filterInfo);
+    }
+    if (filterSponsor != null) {
+      localHashMap.put("filter_sponsor", filterSponsor);
+    }
+    if (filterType != null) {
+      localHashMap.put("filter_type", filterType);
+    }
+    if (filterVisual != null) {
+      localHashMap.put("filter_visual", filterVisual);
+    }
+    if (flash != null) {
+      localHashMap.put("flash", flash);
+    }
+    if (geoFence != null) {
+      localHashMap.put("geo_fence", geoFence);
+    }
+    if (mediaType != null) {
+      localHashMap.put("media_type", mediaType);
+    }
+    if (posterId != null) {
+      localHashMap.put("poster_id", posterId);
+    }
+    if (snapIndexCount != null) {
+      localHashMap.put("snap_index_count", snapIndexCount);
+    }
+    if (snapIndexPos != null) {
+      localHashMap.put("snap_index_pos", snapIndexPos);
+    }
+    if (snapTime != null) {
+      localHashMap.put("snap_time", snapTime);
+    }
+    if (source != null) {
+      localHashMap.put("source", source);
+    }
+    if (sponsor != null) {
+      localHashMap.put("sponsor", sponsor);
+    }
+    if (storySnapId != null) {
+      localHashMap.put("story_snap_id", storySnapId);
+    }
+    if (storyType != null) {
+      localHashMap.put("story_type", storyType);
+    }
+    localHashMap.putAll(super.a());
+    return localHashMap;
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if (this == paramObject) {}
+    do
+    {
+      return true;
+      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+        return false;
+      }
+      if (!super.equals(paramObject)) {
+        return false;
+      }
+      paramObject = (md)paramObject;
+      if (camera != null)
+      {
+        if (camera.equals(camera)) {}
+      }
+      else {
+        while (camera != null) {
+          return false;
+        }
+      }
+      if (caption != null)
+      {
+        if (caption.equals(caption)) {}
+      }
+      else {
+        while (caption != null) {
+          return false;
+        }
+      }
+      if (drawing != null)
+      {
+        if (drawing.equals(drawing)) {}
+      }
+      else {
+        while (drawing != null) {
+          return false;
+        }
+      }
+      if (filter != null)
+      {
+        if (filter.equals(filter)) {}
+      }
+      else {
+        while (filter != null) {
+          return false;
+        }
+      }
+      if (filterGeofence != null)
+      {
+        if (filterGeofence.equals(filterGeofence)) {}
+      }
+      else {
+        while (filterGeofence != null) {
+          return false;
+        }
+      }
+      if (filterInfo != null)
+      {
+        if (filterInfo.equals(filterInfo)) {}
+      }
+      else {
+        while (filterInfo != null) {
+          return false;
+        }
+      }
+      if (filterSponsor != null)
+      {
+        if (filterSponsor.equals(filterSponsor)) {}
+      }
+      else {
+        while (filterSponsor != null) {
+          return false;
+        }
+      }
+      if (filterType != null)
+      {
+        if (filterType.equals(filterType)) {}
+      }
+      else {
+        while (filterType != null) {
+          return false;
+        }
+      }
+      if (filterVisual != null)
+      {
+        if (filterVisual.equals(filterVisual)) {}
+      }
+      else {
+        while (filterVisual != null) {
+          return false;
+        }
+      }
+      if (flash != null)
+      {
+        if (flash.equals(flash)) {}
+      }
+      else {
+        while (flash != null) {
+          return false;
+        }
+      }
+      if (geoFence != null)
+      {
+        if (geoFence.equals(geoFence)) {}
+      }
+      else {
+        while (geoFence != null) {
+          return false;
+        }
+      }
+      if (mediaType != null)
+      {
+        if (mediaType.equals(mediaType)) {}
+      }
+      else {
+        while (mediaType != null) {
+          return false;
+        }
+      }
+      if (posterId != null)
+      {
+        if (posterId.equals(posterId)) {}
+      }
+      else {
+        while (posterId != null) {
+          return false;
+        }
+      }
+      if (snapIndexCount != null)
+      {
+        if (snapIndexCount.equals(snapIndexCount)) {}
+      }
+      else {
+        while (snapIndexCount != null) {
+          return false;
+        }
+      }
+      if (snapIndexPos != null)
+      {
+        if (snapIndexPos.equals(snapIndexPos)) {}
+      }
+      else {
+        while (snapIndexPos != null) {
+          return false;
+        }
+      }
+      if (snapTime != null)
+      {
+        if (snapTime.equals(snapTime)) {}
+      }
+      else {
+        while (snapTime != null) {
+          return false;
+        }
+      }
+      if (source != null)
+      {
+        if (source.equals(source)) {}
+      }
+      else {
+        while (source != null) {
+          return false;
+        }
+      }
+      if (sponsor != null)
+      {
+        if (sponsor.equals(sponsor)) {}
+      }
+      else {
+        while (sponsor != null) {
+          return false;
+        }
+      }
+      if (storySnapId != null)
+      {
+        if (storySnapId.equals(storySnapId)) {}
+      }
+      else {
+        while (storySnapId != null) {
+          return false;
+        }
+      }
+      if (storyType == null) {
+        break;
+      }
+    } while (storyType.equals(storyType));
+    for (;;)
+    {
+      return false;
+      if (storyType == null) {
+        break;
+      }
+    }
+  }
+  
+  public final int hashCode()
+  {
+    int i15 = 0;
+    int i16 = super.hashCode();
+    int i;
+    int j;
+    label39:
+    int k;
+    label54:
+    int m;
+    label70:
+    int n;
+    label86:
+    int i1;
+    label102:
+    int i2;
+    label118:
+    int i3;
+    label134:
+    int i4;
+    label150:
+    int i5;
+    label166:
+    int i6;
+    label182:
+    int i7;
+    label198:
+    int i8;
+    label214:
+    int i9;
+    label230:
+    int i10;
+    label246:
+    int i11;
+    label262:
+    int i12;
+    label278:
+    int i13;
+    if (camera != null)
+    {
+      i = camera.hashCode();
+      if (caption == null) {
+        break label451;
+      }
+      j = caption.hashCode();
+      if (drawing == null) {
+        break label456;
+      }
+      k = drawing.hashCode();
+      if (filter == null) {
+        break label461;
+      }
+      m = filter.hashCode();
+      if (filterGeofence == null) {
+        break label467;
+      }
+      n = filterGeofence.hashCode();
+      if (filterInfo == null) {
+        break label473;
+      }
+      i1 = filterInfo.hashCode();
+      if (filterSponsor == null) {
+        break label479;
+      }
+      i2 = filterSponsor.hashCode();
+      if (filterType == null) {
+        break label485;
+      }
+      i3 = filterType.hashCode();
+      if (filterVisual == null) {
+        break label491;
+      }
+      i4 = filterVisual.hashCode();
+      if (flash == null) {
+        break label497;
+      }
+      i5 = flash.hashCode();
+      if (geoFence == null) {
+        break label503;
+      }
+      i6 = geoFence.hashCode();
+      if (mediaType == null) {
+        break label509;
+      }
+      i7 = mediaType.hashCode();
+      if (posterId == null) {
+        break label515;
+      }
+      i8 = posterId.hashCode();
+      if (snapIndexCount == null) {
+        break label521;
+      }
+      i9 = snapIndexCount.hashCode();
+      if (snapIndexPos == null) {
+        break label527;
+      }
+      i10 = snapIndexPos.hashCode();
+      if (snapTime == null) {
+        break label533;
+      }
+      i11 = snapTime.hashCode();
+      if (source == null) {
+        break label539;
+      }
+      i12 = source.hashCode();
+      if (sponsor == null) {
+        break label545;
+      }
+      i13 = sponsor.hashCode();
+      label294:
+      if (storySnapId == null) {
+        break label551;
+      }
+    }
+    label451:
+    label456:
+    label461:
+    label467:
+    label473:
+    label479:
+    label485:
+    label491:
+    label497:
+    label503:
+    label509:
+    label515:
+    label521:
+    label527:
+    label533:
+    label539:
+    label545:
+    label551:
+    for (int i14 = storySnapId.hashCode();; i14 = 0)
+    {
+      if (storyType != null) {
+        i15 = storyType.hashCode();
+      }
+      return (i14 + (i13 + (i12 + (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i16 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i15;
+      i = 0;
+      break;
+      j = 0;
+      break label39;
+      k = 0;
+      break label54;
+      m = 0;
+      break label70;
+      n = 0;
+      break label86;
+      i1 = 0;
+      break label102;
+      i2 = 0;
+      break label118;
+      i3 = 0;
+      break label134;
+      i4 = 0;
+      break label150;
+      i5 = 0;
+      break label166;
+      i6 = 0;
+      break label182;
+      i7 = 0;
+      break label198;
+      i8 = 0;
+      break label214;
+      i9 = 0;
+      break label230;
+      i10 = 0;
+      break label246;
+      i11 = 0;
+      break label262;
+      i12 = 0;
+      break label278;
+      i13 = 0;
+      break label294;
+    }
   }
 }
 

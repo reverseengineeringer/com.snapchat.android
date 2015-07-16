@@ -1,26 +1,19 @@
-import android.content.ContentResolver;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
-
 public final class awi
-  implements awh
 {
-  @cgb
-  private final byte[] mData;
+  private static bp sInstance = null;
   
-  public awi(@cgb byte[] paramArrayOfByte)
+  public static bp a()
   {
-    mData = paramArrayOfByte;
+    try
+    {
+      if (sInstance == null) {
+        sInstance = bp.c();
+      }
+      bp localbp = sInstance;
+      return localbp;
+    }
+    finally {}
   }
-  
-  public final Bitmap a(BitmapFactory.Options paramOptions)
-  {
-    return BitmapFactory.decodeByteArray(mData, 0, mData.length, paramOptions);
-  }
-  
-  public final void a(ContentResolver paramContentResolver, Resources paramResources) {}
 }
 
 /* Location:

@@ -1,25 +1,23 @@
 package com.snapchat.android.util.chat;
 
-import axk;
-import axl;
-import bfo;
-import com.snapchat.android.Timber;
+import ayi;
+import ayj;
+import bgo;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.net.ssl.SSLSocket;
 
 final class SecureChatSession$a$1
   implements Runnable
 {
-  SecureChatSession$a$1(SecureChatSession.a parama, AtomicBoolean paramAtomicBoolean, SSLSocket paramSSLSocket, axl paramaxl, axk paramaxk) {}
+  SecureChatSession$a$1(SecureChatSession.a parama, AtomicBoolean paramAtomicBoolean, SSLSocket paramSSLSocket, ayj paramayj, ayi paramayi) {}
   
   public final void run()
   {
     if (val$timeoutCanceled.compareAndSet(false, true))
     {
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession DISCONNECT due to ConnectMessage timeout", new Object[0]);
-      bfo.a(val$localSslSocket);
-      bfo.a(val$localOutputStream);
-      bfo.a(val$localInputStream);
+      bgo.a(val$localSslSocket);
+      bgo.a(val$localOutputStream);
+      bgo.a(val$localInputStream);
     }
   }
 }

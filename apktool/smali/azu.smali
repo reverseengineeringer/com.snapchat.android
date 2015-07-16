@@ -2,18 +2,28 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvp;
+
 
 # annotations
-.annotation build Lavl;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvp",
+        "<",
+        "Laph;",
+        ">;"
+    }
 .end annotation
 
 
 # static fields
-.field private static final MAX_NUMBER_OF_TIMES_USER_CAN_DISMISS_UPDATE_PROMPT:I = 0x4
+.field static final synthetic $assertionsDisabled:Z
 
-.field private static final UIAUTOMATION_HOCKEYAPP_ID:Ljava/lang/String; = "fe3d5bcdca3a16ab1d5d52f9aa97477a"
 
-.field private static sShownUserUpdateDialogCounter:I
+# instance fields
+.field private final module:Lazj;
 
 
 # direct methods
@@ -21,124 +31,100 @@
     .locals 1
 
     .prologue
-    .line 18
-    const/4 v0, 0x0
+    .line 7
+    const-class v0, Lazu;
 
-    sput v0, Lazu;->sShownUserUpdateDialogCounter:I
-
-    return-void
-.end method
-
-.method public static a()V
-    .locals 2
-
-    .prologue
-    .line 35
-    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->l()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 44
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 39
-    :cond_1
-    const-string v0, "c06b8797877eb662616000c11de0d338"
-
-    const-string v1, "fe3d5bcdca3a16ab1d5d52f9aa97477a"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 43
-    invoke-static {}, Lbvm;->a()V
-
-    goto :goto_0
-.end method
-
-.method public static a(Landroid/app/Activity;)V
-    .locals 2
-
-    .prologue
-    .line 23
-    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->l()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 32
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 27
-    :cond_1
-    const-string v0, "c06b8797877eb662616000c11de0d338"
-
-    const-string v1, "fe3d5bcdca3a16ab1d5d52f9aa97477a"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 31
-    const-string v0, "c06b8797877eb662616000c11de0d338"
-
-    invoke-static {p0, v0}, Lbvm;->a(Landroid/app/Activity;Ljava/lang/String;)V
-
-    goto :goto_0
-.end method
-
-.method public static b()Z
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 47
-    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->l()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 58
-    :goto_0
-    return v0
-
-    .line 51
-    :cond_0
-    sget v1, Lazu;->sShownUserUpdateDialogCounter:I
-
-    const/4 v2, 0x4
-
-    if-le v1, v2, :cond_1
-
-    .line 52
-    sput v0, Lazu;->sShownUserUpdateDialogCounter:I
-
-    .line 53
     const/4 v0, 0x1
 
-    goto :goto_0
+    :goto_0
+    sput-boolean v0, Lazu;->$assertionsDisabled:Z
 
-    .line 55
-    :cond_1
-    sget v1, Lazu;->sShownUserUpdateDialogCounter:I
+    return-void
 
-    add-int/lit8 v1, v1, 0x1
-
-    sput v1, Lazu;->sShownUserUpdateDialogCounter:I
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method private constructor <init>(Lazj;)V
+    .locals 1
+
+    .prologue
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    sget-boolean v0, Lazu;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 13
+    :cond_0
+    iput-object p1, p0, Lazu;->module:Lazj;
+
+    .line 14
+    return-void
+.end method
+
+.method public static a(Lazj;)Lbvp;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lazj;",
+            ")",
+            "Lbvp",
+            "<",
+            "Laph;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 26
+    new-instance v0, Lazu;
+
+    invoke-direct {v0, p0}, Lazu;-><init>(Lazj;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 2
+
+    .prologue
+    .line 7
+    invoke-static {}, Laph;->a()Laph;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    return-object v0
 .end method

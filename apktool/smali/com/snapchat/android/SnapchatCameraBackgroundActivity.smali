@@ -25,12 +25,12 @@
 
     .prologue
     .line 13
-    const v0, 0x7f040077
+    const v0, 0x7f040078
 
     invoke-super {p0, v0}, Lcom/snapchat/android/SnapchatActivity;->setContentView(I)V
 
     .line 16
-    const v0, 0x7f0a026e
+    const v0, 0x7f0a026c
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapchatCameraBackgroundActivity;->findViewById(I)Landroid/view/View;
 
@@ -88,5 +88,25 @@
     invoke-virtual {v0, p1}, Lcom/snapchat/android/camera/BackgroundCameraFragment;->a(I)V
 
     .line 27
+    return-void
+.end method
+
+.method protected onCreate(Landroid/os/Bundle;)V
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/snapchat/android/SnapchatCameraBackgroundActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/SnapchatCameraBackgroundActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
+    invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onCreate(Landroid/os/Bundle;)V
+
     return-void
 .end method

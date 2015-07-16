@@ -1,92 +1,123 @@
 .class public final Labh;
-.super Ljava/lang/Object;
+.super Lcom/snapchat/android/database/table/SnapbryoTable;
 .source "SourceFile"
 
 
+# static fields
+.field private static a:Labh;
+
+
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
 
     .prologue
-    .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 15
+    invoke-direct {p0}, Lcom/snapchat/android/database/table/SnapbryoTable;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Intent;)Ljava/lang/String;
-    .locals 4
-    .param p0    # Landroid/content/Intent;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation build Lcgc;
+.method public static declared-synchronized a()Labh;
+    .locals 2
+
+    .prologue
+    .line 18
+    const-class v1, Labh;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Labh;->a:Labh;
+
+    if-nez v0, :cond_0
+
+    .line 19
+    new-instance v0, Labh;
+
+    invoke-direct {v0}, Labh;-><init>()V
+
+    sput-object v0, Labh;->a:Labh;
+
+    .line 21
+    :cond_0
+    sget-object v0, Labh;->a:Labh;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 18
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method protected final a(Lakp;)Ljava/util/Collection;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lakp;",
+            ")",
+            "Ljava/util/Collection",
+            "<",
+            "Laji;",
+            ">;"
+        }
     .end annotation
 
     .prologue
-    const/4 v0, 0x0
+    .line 36
+    new-instance v0, Ljava/util/ArrayList;
 
-    .line 23
-    if-nez p0, :cond_1
+    invoke-static {}, Laki;->a()Laki;
 
-    .line 32
-    :cond_0
-    :goto_0
+    move-result-object v1
+
+    invoke-virtual {v1}, Laki;->g()Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
     return-object v0
+.end method
 
-    .line 24
-    :cond_1
-    invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+.method public final b(Lakp;)V
+    .locals 2
 
-    move-result-object v1
-
-    .line 25
-    if-eqz v1, :cond_0
-
-    .line 26
-    invoke-virtual {v1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 27
-    if-eqz v1, :cond_0
-
-    .line 28
-    const-string v2, "/add/.+"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 29
-    const/4 v2, 0x5
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 30
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
+    .prologue
+    const/4 v1, 0x0
 
     .line 31
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-static {}, Laki;->a()Laki;
 
-    move-result v2
+    move-result-object v0
 
-    const/16 v3, 0x20
+    invoke-virtual {p0, v1, v1}, Labh;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
-    if-gt v2, v3, :cond_0
+    move-result-object v1
 
-    move-object v0, v1
+    invoke-virtual {v0, v1}, Laki;->b(Ljava/util/List;)V
 
     .line 32
-    goto :goto_0
+    return-void
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 26
+    const-string v0, "FailedSendDSnapbryoTable"
+
+    return-object v0
 .end method

@@ -3,13 +3,12 @@ package com.snapchat.android.ui.ptr;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 
 public class SnapchatPtrFrameLayout
   extends PtrFrameLayout
 {
-  public final DancingGhostPtrHeader a;
+  private final DancingGhostPtrHeader g;
   
   public SnapchatPtrFrameLayout(Context paramContext)
   {
@@ -29,26 +28,26 @@ public class SnapchatPtrFrameLayout
     setDurationToClose(300);
     setDurationToCloseHeader(600);
     setKeepHeaderWhenRefresh(true);
-    g = true;
-    a = new DancingGhostPtrHeader(paramContext);
-    setHeaderView(a);
-    a(a);
+    f = true;
+    g = new DancingGhostPtrHeader(paramContext);
+    setHeaderView(g);
+    a(g);
   }
   
-  public final void a()
+  public final boolean a()
   {
-    super.dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0F, 0.0F, 0));
+    DancingGhostPtrHeader localDancingGhostPtrHeader = g;
+    return (a != null) && (a.isRunning());
   }
   
   public final boolean b()
   {
-    DancingGhostPtrHeader localDancingGhostPtrHeader = a;
-    return (b != null) && (b.isRunning());
+    return g.getHeight() + g.getTop() > 0;
   }
   
   public DancingGhostPtrHeader getPtrHeader()
   {
-    return a;
+    return g;
   }
 }
 

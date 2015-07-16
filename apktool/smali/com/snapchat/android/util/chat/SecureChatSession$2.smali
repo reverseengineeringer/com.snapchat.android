@@ -37,24 +37,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
-
     .line 240
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->W()V
 
     .line 241
-    const-string v0, "SecureChatSession"
-
-    const-string v1, "CHAT-LOG: SecureChatSession executing DISCONNECT runnable"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 243
     iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$2;->this$0:Lcom/snapchat/android/util/chat/SecureChatSession;
 
     invoke-static {v0}, Lcom/snapchat/android/util/chat/SecureChatSession;->a(Lcom/snapchat/android/util/chat/SecureChatSession;)I
@@ -63,23 +52,15 @@
 
     sget v1, Lcom/snapchat/android/util/chat/SecureChatSession$b;->DISCONNECTED$7133d94d:I
 
-    if-eq v0, v1, :cond_0
-
-    .line 244
-    const-string v0, "SecureChatSession"
-
-    const-string v1, "CHAT-LOG: SecureChatSession DISCONNECT returning because intended connection state != DISCONNECTED"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-eq v0, v1, :cond_1
 
     .line 255
+    :cond_0
     :goto_0
     return-void
 
     .line 248
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$2;->this$0:Lcom/snapchat/android/util/chat/SecureChatSession;
 
     invoke-static {v0}, Lcom/snapchat/android/util/chat/SecureChatSession;->b(Lcom/snapchat/android/util/chat/SecureChatSession;)Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;
@@ -88,21 +69,9 @@
 
     sget-object v1, Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;->DISCONNECTED:Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;
 
-    if-ne v0, v1, :cond_1
-
-    .line 249
-    const-string v0, "SecureChatSession"
-
-    const-string v1, "CHAT-LOG: SecureChatSession DISCONNECT returning because connection state == DISCONNECTED"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
+    if-eq v0, v1, :cond_0
 
     .line 254
-    :cond_1
     iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$2;->this$0:Lcom/snapchat/android/util/chat/SecureChatSession;
 
     invoke-static {v0}, Lcom/snapchat/android/util/chat/SecureChatSession;->c(Lcom/snapchat/android/util/chat/SecureChatSession;)V

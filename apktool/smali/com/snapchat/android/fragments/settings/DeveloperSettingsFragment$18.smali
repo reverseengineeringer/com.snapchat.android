@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 440
+    .line 437
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$18;->b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$18;->a:Landroid/widget/CheckBox;
@@ -44,7 +44,7 @@
     .locals 2
 
     .prologue
-    .line 443
+    .line 440
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$18;->a:Landroid/widget/CheckBox;
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$18;->a:Landroid/widget/CheckBox;
@@ -60,10 +60,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 444
+    .line 441
     return-void
 
-    .line 443
+    .line 440
     :cond_0
     const/4 v0, 0x0
 

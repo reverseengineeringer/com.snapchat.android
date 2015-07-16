@@ -1,50 +1,52 @@
-import com.snapchat.android.database.table.StorySnapTable;
-import java.util.Collection;
+import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
+import java.util.Iterator;
 import java.util.List;
 
 public final class aak
-  extends StorySnapTable
+  implements zq
 {
-  private static aak a;
+  private final List<aaj> a;
   
-  private aak()
+  public aak()
   {
-    this(new axx(), ajx.a());
+    this(dt.a(new aaj[] { new aam(), new aal() }));
   }
   
-  private aak(axx paramaxx, ajx paramajx)
+  private aak(List<aaj> paramList)
   {
-    super(paramajx, paramaxx, ayj.FRIEND_STORY_KEYS_AND_IVS);
+    a = paramList;
   }
   
-  public static aak a()
+  public final void a(@chc ajk paramajk)
   {
-    try
-    {
-      if (a == null) {
-        a = new aak();
-      }
-      aak localaak = a;
-      return localaak;
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      ((aaj)localIterator.next()).a(paramajk);
     }
-    finally {}
   }
   
-  protected final Collection<ajr> a(ajv paramajv)
+  public final void a(@chc aka paramaka, @chc ajk paramajk)
   {
-    paramajv = ajq.a().n();
-    new axx().a(paramajv, ayj.FRIEND_STORY_KEYS_AND_IVS);
-    return paramajv;
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      ((aaj)localIterator.next()).a(paramaka, paramajk);
+    }
   }
   
-  protected final void a(List<ajr> paramList)
+  public final void a(@chc aka paramaka, @chc SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt)
   {
-    ajq.a().d(paramList);
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      ((aaj)localIterator.next()).a(paramaka, paramSnapViewSessionStopReason, paramInt);
+    }
   }
   
-  public final String c()
+  public final void d(@chc aka paramaka)
   {
-    return "FriendStorySnapTable";
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext()) {
+      ((aaj)localIterator.next()).d(paramaka);
+    }
   }
 }
 

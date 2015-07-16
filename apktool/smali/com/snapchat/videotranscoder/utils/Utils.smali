@@ -63,11 +63,11 @@
 .method public copyFile(Ljava/io/File;Ljava/io/File;)V
     .locals 7
     .param p1    # Ljava/io/File;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/io/File;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -179,7 +179,7 @@
 .method public createFileSizeLogMessage(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -310,11 +310,11 @@
 .method public moveFile(Ljava/io/File;Ljava/io/File;)V
     .locals 0
     .param p1    # Ljava/io/File;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/io/File;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

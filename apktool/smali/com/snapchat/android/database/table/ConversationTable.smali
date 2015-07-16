@@ -49,26 +49,26 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 52
+    .line 54
     invoke-static {}, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->values()[Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;
 
     move-result-object v2
 
-    .line 53
+    .line 55
     array-length v3, v2
 
-    .line 54
+    .line 56
     new-array v1, v3, [Ljava/lang/String;
 
     sput-object v1, Lcom/snapchat/android/database/table/ConversationTable;->a:[Ljava/lang/String;
 
     move v1, v0
 
-    .line 55
+    .line 57
     :goto_0
     if-ge v1, v3, :cond_0
 
-    .line 56
+    .line 58
     sget-object v4, Lcom/snapchat/android/database/table/ConversationTable;->a:[Ljava/lang/String;
 
     aget-object v5, v2, v1
@@ -79,12 +79,12 @@
 
     aput-object v5, v4, v1
 
-    .line 55
+    .line 57
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 60
+    .line 62
     :cond_0
     new-instance v1, Ljava/util/HashMap;
 
@@ -92,7 +92,7 @@
 
     sput-object v1, Lcom/snapchat/android/database/table/ConversationTable;->b:Ljava/util/HashMap;
 
-    .line 61
+    .line 63
     invoke-static {}, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->values()[Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;
 
     move-result-object v1
@@ -104,7 +104,7 @@
 
     aget-object v3, v1, v0
 
-    .line 62
+    .line 64
     sget-object v4, Lcom/snapchat/android/database/table/ConversationTable;->b:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->getColumnName()Ljava/lang/String;
@@ -117,12 +117,12 @@
 
     invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 61
+    .line 63
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 64
+    .line 66
     :cond_1
     return-void
 .end method
@@ -131,13 +131,13 @@
     .locals 0
 
     .prologue
-    .line 123
+    .line 125
     invoke-direct {p0}, Lcom/snapchat/android/database/table/DbTable;-><init>()V
 
-    .line 124
+    .line 126
     iput-object p1, p0, Lcom/snapchat/android/database/table/ConversationTable;->d:Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;
 
-    .line 125
+    .line 127
     return-void
 .end method
 
@@ -145,7 +145,7 @@
     .locals 3
 
     .prologue
-    .line 128
+    .line 130
     const-class v1, Lcom/snapchat/android/database/table/ConversationTable;
 
     monitor-enter v1
@@ -155,7 +155,7 @@
 
     if-nez v0, :cond_0
 
-    .line 129
+    .line 131
     new-instance v0, Lcom/snapchat/android/database/table/ConversationTable;
 
     invoke-static {}, Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;->a()Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;
@@ -166,7 +166,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/ConversationTable;->c:Lcom/snapchat/android/database/table/ConversationTable;
 
-    .line 131
+    .line 133
     :cond_0
     sget-object v0, Lcom/snapchat/android/database/table/ConversationTable;->c:Lcom/snapchat/android/database/table/ConversationTable;
     :try_end_0
@@ -176,7 +176,7 @@
 
     return-object v0
 
-    .line 128
+    .line 130
     :catchall_0
     move-exception v0
 
@@ -188,7 +188,7 @@
 .method private static a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
     .locals 37
     .param p0    # Landroid/database/sqlite/SQLiteDatabase;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -217,12 +217,12 @@
     .end annotation
 
     .prologue
-    .line 445
+    .line 473
     new-instance v11, Ljava/util/ArrayList;
 
     invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
-    .line 447
+    .line 475
     const-string v3, "Conversation"
 
     sget-object v4, Lcom/snapchat/android/database/table/ConversationTable;->a:[Ljava/lang/String;
@@ -243,17 +243,17 @@
 
     move-result-object v12
 
-    .line 451
-    if-eqz v12, :cond_c
+    .line 479
+    if-eqz v12, :cond_a
 
     :try_start_0
     invoke-interface {v12}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_a
 
-    .line 453
+    .line 481
     :cond_0
     sget-object v2, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->ID:Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;
 
@@ -337,7 +337,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_e
+    if-ne v2, v3, :cond_c
 
     const/4 v2, 0x1
 
@@ -356,7 +356,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_f
+    if-ne v2, v3, :cond_d
 
     const/4 v2, 0x1
 
@@ -375,7 +375,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_10
+    if-ne v2, v3, :cond_e
 
     const/4 v2, 0x1
 
@@ -394,7 +394,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_11
+    if-ne v2, v3, :cond_f
 
     const/4 v2, 0x1
 
@@ -419,7 +419,7 @@
 
     invoke-interface {v12, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     sget-object v2, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->LAST_SEQ_NUM_OF_MY_CHAT_THEY_RELEASED:Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;
 
@@ -489,7 +489,7 @@
 
     check-cast v2, Ljava/util/List;
 
-    if-nez v2, :cond_19
+    if-nez v2, :cond_15
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -510,33 +510,33 @@
 
     move-result-object v36
 
-    invoke-static {}, Lakc;->b()Lakc;
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v2
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v2, v15, v4}, Lakc;->a(Ljava/lang/String;Z)Lcom/snapchat/android/model/chat/ChatConversation;
+    invoke-virtual {v2, v15, v3}, Lakx;->a(Ljava/lang/String;Z)Lcom/snapchat/android/model/chat/ChatConversation;
 
     move-result-object v2
 
     if-eqz v2, :cond_1
 
-    iget-boolean v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mIsStub:Z
+    iget-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mIsStub:Z
 
-    if-eqz v4, :cond_18
+    if-eqz v3, :cond_13
 
     :cond_1
-    if-nez v2, :cond_12
+    if-nez v2, :cond_10
 
-    new-instance v4, Lcom/snapchat/android/model/chat/ChatConversation;
+    new-instance v3, Lcom/snapchat/android/model/chat/ChatConversation;
 
     const/4 v2, 0x0
 
-    invoke-direct {v4, v14, v15, v2}, Lcom/snapchat/android/model/chat/ChatConversation;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {v3, v14, v15, v2}, Lcom/snapchat/android/model/chat/ChatConversation;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
 
     :goto_5
-    iget-wide v14, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mMyLastSeqNum:J
+    iget-wide v14, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mMyLastSeqNum:J
 
     cmp-long v2, v16, v14
 
@@ -544,70 +544,70 @@
 
     move-wide/from16 v0, v16
 
-    iput-wide v0, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mMyLastSeqNum:J
+    iput-wide v0, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mMyLastSeqNum:J
 
     :cond_2
     const/4 v2, 0x0
 
     move-wide/from16 v0, v18
 
-    invoke-virtual {v4, v0, v1, v2}, Lcom/snapchat/android/model/chat/ChatConversation;->a(JZ)V
+    invoke-virtual {v3, v0, v1, v2}, Lcom/snapchat/android/model/chat/ChatConversation;->a(JZ)V
 
     move-wide/from16 v0, v20
 
-    invoke-virtual {v4, v0, v1}, Lcom/snapchat/android/model/chat/ChatConversation;->c(J)V
+    invoke-virtual {v3, v0, v1}, Lcom/snapchat/android/model/chat/ChatConversation;->c(J)V
 
-    invoke-virtual {v4, v6}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Ljava/util/List;)V
+    invoke-virtual {v3, v6}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Ljava/util/List;)V
 
     move-wide/from16 v0, v22
 
-    iput-wide v0, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mTimestamp:J
+    iput-wide v0, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mTimestamp:J
 
-    invoke-virtual {v4, v10}, Lcom/snapchat/android/model/chat/ChatConversation;->d(Z)V
+    invoke-virtual {v3, v10}, Lcom/snapchat/android/model/chat/ChatConversation;->d(Z)V
 
-    iput-boolean v9, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedReceivedSnaps:Z
+    iput-boolean v9, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedReceivedSnaps:Z
 
-    iput-boolean v8, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedSnapsWithAudio:Z
+    iput-boolean v8, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedSnapsWithAudio:Z
 
-    iput-boolean v7, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedCash:Z
+    iput-boolean v7, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedCash:Z
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_11
 
     const/4 v2, 0x0
 
     :goto_6
-    iput-object v2, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mIterToken:Ljava/lang/String;
+    iput-object v2, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mIterToken:Ljava/lang/String;
 
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_12
 
     const/4 v2, 0x0
 
     :goto_7
-    iput-object v2, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mChatsIterToken:Ljava/lang/String;
+    iput-object v2, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mChatsIterToken:Ljava/lang/String;
 
     move-wide/from16 v0, v24
 
-    iput-wide v0, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfMyChatTheyReleased:J
+    iput-wide v0, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfMyChatTheyReleased:J
 
     move-wide/from16 v0, v26
 
-    iput-wide v0, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIReleased:J
+    iput-wide v0, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIReleased:J
 
     move-wide/from16 v0, v26
 
-    iput-wide v0, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIDisplayed:J
+    iput-wide v0, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIDisplayed:J
 
     move-object/from16 v0, v36
 
-    iput-object v0, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mClearedChatIds:Ljava/util/Set;
+    iput-object v0, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mClearedChatIds:Ljava/util/Set;
 
     move-object/from16 v0, p2
 
@@ -617,114 +617,67 @@
 
     check-cast v2, Ljava/util/List;
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_3
 
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_5
+    if-nez v4, :cond_3
 
-    invoke-static {}, Lyn;->a()Lyn;
+    iput-object v2, v3, Lcom/snapchat/android/model/chat/ChatConversation;->mItemsForFeedIcon:Ljava/util/List;
 
-    invoke-static {v4, v2}, Lyn;->a(Lcom/snapchat/android/model/chat/ChatConversation;Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v3
-
-    iput-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mItemsForFeedIcon:Ljava/util/List;
-
-    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
-
-    move-result v5
-
-    if-nez v5, :cond_3
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    iput-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    :cond_3
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastChatFromServer:Lakb;
-
-    if-nez v3, :cond_15
-
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    instance-of v3, v3, Lakb;
-
-    if-eqz v3, :cond_15
-
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    check-cast v3, Lakb;
-
-    iput-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastChatFromServer:Lakb;
-
-    :cond_4
-    :goto_8
     invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-result v2
+    :cond_3
+    move-object v2, v3
 
-    const/4 v3, 0x1
-
-    if-eq v2, v3, :cond_5
-
-    const-string v3, "ConversationTable"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "ChatConversation should contain at most 1 chatsForFeedIcon. chatsForFeedIconCount="
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v3, v2, v5}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_5
-    move-object v2, v4
-
-    :goto_9
+    :goto_8
     iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfMyChatIDeleted:J
 
     cmp-long v3, v28, v4
 
-    if-lez v3, :cond_6
+    if-lez v3, :cond_4
 
     move-wide/from16 v0, v28
 
     iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfMyChatIDeleted:J
 
-    :cond_6
+    :cond_4
     iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIDeleted:J
 
     cmp-long v3, v30, v4
 
-    if-lez v3, :cond_7
+    if-lez v3, :cond_5
 
     move-wide/from16 v0, v30
 
     iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIDeleted:J
 
-    :cond_7
+    :cond_5
     iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIDeleted:J
+
+    cmp-long v3, v32, v4
+
+    if-lez v3, :cond_6
+
+    move-wide/from16 v0, v32
+
+    iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIDeleted:J
+
+    :cond_6
+    iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIDeleted:J
+
+    cmp-long v3, v34, v4
+
+    if-lez v3, :cond_7
+
+    move-wide/from16 v0, v34
+
+    iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIDeleted:J
+
+    :cond_7
+    iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIReleased:J
 
     cmp-long v3, v32, v4
 
@@ -732,10 +685,10 @@
 
     move-wide/from16 v0, v32
 
-    iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIDeleted:J
+    iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIReleased:J
 
     :cond_8
-    iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIDeleted:J
+    iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIReleased:J
 
     cmp-long v3, v34, v4
 
@@ -743,35 +696,13 @@
 
     move-wide/from16 v0, v34
 
-    iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIDeleted:J
-
-    :cond_9
-    iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIReleased:J
-
-    cmp-long v3, v32, v4
-
-    if-lez v3, :cond_a
-
-    move-wide/from16 v0, v32
-
-    iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIReleased:J
-
-    :cond_a
-    iget-wide v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIReleased:J
-
-    cmp-long v3, v34, v4
-
-    if-lez v3, :cond_b
-
-    move-wide/from16 v0, v34
-
     iput-wide v0, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIReleased:J
 
-    .line 455
-    :cond_b
+    .line 483
+    :cond_9
     invoke-interface {v11, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 456
+    .line 484
     invoke-interface {v12}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -780,138 +711,100 @@
 
     if-nez v2, :cond_0
 
-    .line 459
-    :cond_c
-    if-eqz v12, :cond_d
+    .line 487
+    :cond_a
+    if-eqz v12, :cond_b
 
     invoke-interface {v12}, Landroid/database/Cursor;->close()V
 
-    .line 462
-    :cond_d
+    .line 490
+    :cond_b
     return-object v11
 
-    .line 453
-    :cond_e
+    .line 481
+    :cond_c
     const/4 v2, 0x0
 
     move v10, v2
 
     goto/16 :goto_0
 
-    :cond_f
+    :cond_d
     const/4 v2, 0x0
 
     move v9, v2
 
     goto/16 :goto_1
 
-    :cond_10
+    :cond_e
     const/4 v2, 0x0
 
     move v8, v2
 
     goto/16 :goto_2
 
-    :cond_11
+    :cond_f
     const/4 v2, 0x0
 
     move v7, v2
 
     goto/16 :goto_3
 
-    :cond_12
-    const/4 v4, 0x0
+    :cond_10
+    const/4 v3, 0x0
 
     :try_start_1
-    iput-boolean v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mIsStub:Z
+    iput-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mIsStub:Z
 
-    move-object v4, v2
+    move-object v3, v2
 
     goto/16 :goto_5
 
-    :cond_13
+    :cond_11
     move-object v2, v5
 
     goto/16 :goto_6
 
-    :cond_14
-    move-object v2, v3
+    :cond_12
+    move-object v2, v4
 
     goto/16 :goto_7
 
-    :cond_15
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSnapFromServer:Lcom/snapchat/android/model/Snap;
-
-    if-nez v3, :cond_17
-
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    instance-of v3, v3, Lcom/snapchat/android/model/Snap;
-
-    if-eqz v3, :cond_17
-
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    check-cast v3, Lcom/snapchat/android/model/Snap;
-
-    iput-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSnapFromServer:Lcom/snapchat/android/model/Snap;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto/16 :goto_8
-
-    .line 459
-    :catchall_0
-    move-exception v2
-
-    if-eqz v12, :cond_16
-
-    invoke-interface {v12}, Landroid/database/Cursor;->close()V
-
-    :cond_16
-    throw v2
-
-    .line 453
-    :cond_17
-    :try_start_2
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastCashFromServer:Lcom/snapchat/android/model/chat/CashFeedItem;
-
-    if-nez v3, :cond_4
-
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    instance-of v3, v3, Lcom/snapchat/android/model/chat/CashFeedItem;
-
-    if-eqz v3, :cond_4
-
-    iget-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    check-cast v3, Lcom/snapchat/android/model/chat/CashFeedItem;
-
-    iput-object v3, v4, Lcom/snapchat/android/model/chat/ChatConversation;->mLastCashFromServer:Lcom/snapchat/android/model/chat/CashFeedItem;
-
-    goto/16 :goto_8
-
-    :cond_18
+    :cond_13
     invoke-virtual {v2, v6}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Ljava/util/List;)V
 
     move-object/from16 v0, v36
 
     invoke-virtual {v2, v0}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Ljava/util/Set;)V
 
-    invoke-static {}, Lyn;->a()Lyn;
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/ChatConversation;->r()V
+
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v3
 
-    const/4 v4, 0x1
+    new-instance v4, Lbdv;
 
-    invoke-virtual {v3, v2, v4}, Lyn;->a(Lcom/snapchat/android/model/chat/ChatConversation;Z)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    invoke-direct {v4}, Lbdv;-><init>()V
 
-    goto/16 :goto_9
+    invoke-virtual {v3, v4}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_19
+    goto :goto_8
+
+    .line 487
+    :catchall_0
+    move-exception v2
+
+    if-eqz v12, :cond_14
+
+    invoke-interface {v12}, Landroid/database/Cursor;->close()V
+
+    :cond_14
+    throw v2
+
+    :cond_15
     move-object v6, v2
 
     goto/16 :goto_4
@@ -940,12 +833,12 @@
     .end annotation
 
     .prologue
-    .line 176
+    .line 178
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    .line 178
+    .line 180
     const/4 v0, 0x0
 
     move v3, v0
@@ -957,7 +850,7 @@
 
     aget-object v5, p0, v3
 
-    .line 179
+    .line 181
     invoke-interface {v5}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -979,24 +872,24 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 180
+    .line 182
     invoke-interface {v4, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/util/List;
 
-    .line 181
+    .line 183
     if-nez v1, :cond_3
 
-    .line 182
+    .line 184
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     move-object v2, v1
 
-    .line 185
+    .line 187
     :goto_2
     invoke-interface {v5, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1004,19 +897,19 @@
 
     check-cast v1, Ljava/util/List;
 
-    .line 186
+    .line 188
     if-eqz v1, :cond_0
 
-    .line 187
+    .line 189
     invoke-interface {v2, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 189
+    .line 191
     :cond_0
     invoke-interface {v4, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 178
+    .line 180
     :cond_1
     add-int/lit8 v0, v3, 0x1
 
@@ -1024,7 +917,7 @@
 
     goto :goto_0
 
-    .line 192
+    .line 194
     :cond_2
     return-object v4
 
@@ -1038,42 +931,42 @@
     .locals 1
 
     .prologue
-    .line 425
-    instance-of v0, p2, Laji;
+    .line 453
+    instance-of v0, p2, Lake;
 
     if-eqz v0, :cond_1
 
     move-object v0, p2
 
-    .line 427
-    check-cast v0, Laji;
+    .line 455
+    check-cast v0, Lake;
 
-    iget-boolean v0, v0, Laji;->mIsSavableSnap:Z
+    iget-boolean v0, v0, Lake;->mIsSavableSnap:Z
 
     if-eqz v0, :cond_0
 
-    .line 428
-    check-cast p2, Laji;
+    .line 456
+    check-cast p2, Lake;
 
-    invoke-static {p0, p1, p2, p3}, Lcom/snapchat/android/database/table/SentSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Laji;Lcom/snapchat/android/model/Snap$TargetView;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/snapchat/android/database/table/SentSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Lake;Lcom/snapchat/android/model/Snap$TargetView;)V
 
-    .line 434
+    .line 462
     :cond_0
     :goto_0
     return-void
 
-    .line 430
+    .line 458
     :cond_1
-    instance-of v0, p2, Laje;
+    instance-of v0, p2, Laka;
 
     if-eqz v0, :cond_0
 
-    .line 432
+    .line 460
     invoke-static {}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a()Lcom/snapchat/android/database/table/ReceivedSnapTable;
 
-    check-cast p2, Laje;
+    check-cast p2, Laka;
 
-    invoke-static {p0, p1, p2, p3}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Laje;Lcom/snapchat/android/model/Snap$TargetView;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Laka;Lcom/snapchat/android/model/Snap$TargetView;)V
 
     goto :goto_0
 .end method
@@ -1084,7 +977,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 43
     const/4 v0, 0x0
 
     return-object v0
@@ -1094,18 +987,18 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 43
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
@@ -1115,328 +1008,395 @@
     .end annotation
 
     .prologue
-    .line 171
-    invoke-static {}, Lakc;->b()Lakc;
+    .line 173
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lakc;->e()Ljava/util/List;
+    invoke-virtual {v0}, Lakx;->f()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
+.method public final b(Lakp;)V
     .locals 10
 
     .prologue
-    const/4 v9, 0x0
-
-    .line 198
-    invoke-static {}, Lajv;->y()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/database/DatabaseHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    .line 200
+    invoke-static {}, Lakp;->y()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 200
-    const-string v0, "ConversationTable"
+    invoke-static {v1}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
 
-    const-string v2, "populateUserObjectFromTable - beginTransaction"
+    move-result-object v1
 
-    new-array v3, v9, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 201
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-
-    .line 204
-    :try_start_0
-    sget-object v0, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_CHAT:Ljava/util/Set;
-
-    invoke-static {v1, v0}, Lcom/snapchat/android/database/table/ChatTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
-
-    move-result-object v0
-
-    .line 205
-    sget-object v2, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_CHAT:Ljava/util/Set;
-
-    invoke-static {v1, v2}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
-
-    move-result-object v2
-
-    .line 209
-    invoke-static {}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a()Lcom/snapchat/android/database/table/ReceivedSnapTable;
-
-    sget-object v3, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_CHAT:Ljava/util/Set;
-
-    invoke-static {v1, v3}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
+    invoke-virtual {v1}, Lcom/snapchat/android/database/DatabaseHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v3
 
-    .line 214
-    sget-object v4, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_CHAT:Ljava/util/Set;
+    .line 202
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    invoke-static {v1, v4}, Lcom/snapchat/android/database/table/SentSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
+    .line 206
+    :try_start_0
+    sget-object v1, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_CHAT:Ljava/util/Set;
 
-    move-result-object v4
+    invoke-static {v3, v1}, Lcom/snapchat/android/database/table/ChatTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
 
-    .line 218
-    const/4 v5, 0x4
+    move-result-object v1
 
-    new-array v5, v5, [Ljava/util/Map;
+    .line 207
+    sget-object v2, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_CHAT:Ljava/util/Set;
 
-    const/4 v6, 0x0
-
-    aput-object v0, v5, v6
-
-    const/4 v0, 0x1
-
-    aput-object v3, v5, v0
-
-    const/4 v0, 0x2
-
-    aput-object v4, v5, v0
-
-    const/4 v0, 0x3
-
-    aput-object v2, v5, v0
-
-    invoke-static {v5}, Lcom/snapchat/android/database/table/ConversationTable;->a([Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    .line 222
-    sget-object v2, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_FEED:Ljava/util/Set;
-
-    invoke-static {v1, v2}, Lcom/snapchat/android/database/table/ChatTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
+    invoke-static {v3, v2}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
 
     move-result-object v2
 
-    .line 226
-    sget-object v4, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_FEED:Ljava/util/Set;
+    .line 211
+    invoke-static {}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a()Lcom/snapchat/android/database/table/ReceivedSnapTable;
 
-    invoke-static {v1, v4}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
+    sget-object v4, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_CHAT:Ljava/util/Set;
+
+    invoke-static {v3, v4}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
 
     move-result-object v4
 
-    .line 231
-    invoke-static {}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a()Lcom/snapchat/android/database/table/ReceivedSnapTable;
+    .line 216
+    sget-object v5, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_CHAT:Ljava/util/Set;
 
-    sget-object v5, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_FEED:Ljava/util/Set;
-
-    invoke-static {v1, v5}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
+    invoke-static {v3, v5}, Lcom/snapchat/android/database/table/SentSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
 
     move-result-object v5
 
-    .line 236
+    .line 220
+    const/4 v6, 0x4
+
+    new-array v6, v6, [Ljava/util/Map;
+
+    const/4 v7, 0x0
+
+    aput-object v1, v6, v7
+
+    const/4 v1, 0x1
+
+    aput-object v4, v6, v1
+
+    const/4 v1, 0x2
+
+    aput-object v5, v6, v1
+
+    const/4 v1, 0x3
+
+    aput-object v2, v6, v1
+
+    invoke-static {v6}, Lcom/snapchat/android/database/table/ConversationTable;->a([Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v5
+
+    .line 224
+    sget-object v1, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_FEED:Ljava/util/Set;
+
+    invoke-static {v3, v1}, Lcom/snapchat/android/database/table/ChatTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
+
+    move-result-object v1
+
+    .line 228
+    sget-object v2, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_FEED:Ljava/util/Set;
+
+    invoke-static {v3, v2}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
+
+    move-result-object v2
+
+    .line 232
+    invoke-static {}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a()Lcom/snapchat/android/database/table/ReceivedSnapTable;
+
     sget-object v6, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_FEED:Ljava/util/Set;
 
-    invoke-static {v1, v6}, Lcom/snapchat/android/database/table/SentSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
+    invoke-static {v3, v6}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
 
     move-result-object v6
 
-    .line 240
-    const/4 v7, 0x4
+    .line 237
+    sget-object v7, Lcom/snapchat/android/model/Snap;->TARGET_VIEWS_FEED:Ljava/util/Set;
 
-    new-array v7, v7, [Ljava/util/Map;
+    invoke-static {v3, v7}, Lcom/snapchat/android/database/table/SentSnapTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;)Ljava/util/Map;
 
-    const/4 v8, 0x0
+    move-result-object v7
 
-    aput-object v2, v7, v8
+    .line 241
+    const/4 v8, 0x4
 
-    const/4 v2, 0x1
+    new-array v8, v8, [Ljava/util/Map;
 
-    aput-object v5, v7, v2
+    const/4 v9, 0x0
 
-    const/4 v2, 0x2
+    aput-object v1, v8, v9
 
-    aput-object v6, v7, v2
+    const/4 v1, 0x1
 
-    const/4 v2, 0x3
+    aput-object v6, v8, v1
 
-    aput-object v4, v7, v2
+    const/4 v1, 0x2
 
-    invoke-static {v7}, Lcom/snapchat/android/database/table/ConversationTable;->a([Ljava/util/Map;)Ljava/util/Map;
+    aput-object v7, v8, v1
 
-    move-result-object v2
+    const/4 v1, 0x3
 
-    .line 244
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/database/table/ConversationTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
+    aput-object v2, v8, v1
 
-    move-result-object v2
+    invoke-static {v8}, Lcom/snapchat/android/database/table/ConversationTable;->a([Ljava/util/Map;)Ljava/util/Map;
 
-    .line 248
-    invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;
+    move-result-object v6
 
-    move-result-object v0
+    .line 247
+    invoke-interface {v6}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    move-result-object v1
 
-    move-result-object v3
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
 
     :cond_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_2
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/util/List;
+    move-object v0, v1
 
-    .line 249
-    if-eqz v0, :cond_0
+    check-cast v0, Ljava/util/Map$Entry;
 
-    .line 250
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-object v2, v0
 
-    move-result-object v4
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    invoke-interface {v5, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/List;
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    invoke-interface {v2}, Ljava/util/List;->listIterator()Ljava/util/ListIterator;
+
+    move-result-object v8
 
     :cond_1
     :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v8}, Ljava/util/ListIterator;->hasNext()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_0
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v8}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Lcom/snapchat/android/model/chat/ChatFeedItem;
+    check-cast v2, Lcom/snapchat/android/model/chat/ChatFeedItem;
 
-    .line 253
-    instance-of v5, v0, Laje;
+    invoke-interface {v1, v2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
-    if-eqz v5, :cond_1
+    move-result v2
 
-    .line 254
-    check-cast v0, Laje;
+    const/4 v9, -0x1
 
-    .line 258
-    invoke-virtual {v0}, Laje;->g()Z
+    if-eq v2, v9, :cond_1
 
-    move-result v5
+    invoke-interface {v8}, Ljava/util/ListIterator;->remove()V
 
-    if-nez v5, :cond_1
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Laje;->z()Z
+    move-result-object v2
 
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    .line 259
-    invoke-virtual {p1, v0}, Lajv;->a(Laje;)V
+    invoke-interface {v8, v2}, Ljava/util/ListIterator;->add(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 265
+    .line 271
     :catchall_0
-    move-exception v0
+    move-exception v1
 
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 266
-    const-string v1, "ConversationTable"
+    .line 272
+    throw v1
 
-    const-string v2, "populateUserObjectFromTable - endTransaction"
-
-    new-array v3, v9, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    throw v0
-
-    .line 263
+    .line 250
     :cond_2
     :try_start_1
-    invoke-static {}, Lakc;->b()Lakc;
+    invoke-static {v3, v5, v6}, Lcom/snapchat/android/database/table/ConversationTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v2
 
-    iget-object v3, v0, Lakc;->mConversations:Ljava/util/List;
+    .line 254
+    invoke-interface {v4}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    monitor-enter v3
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_3
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/List;
+
+    .line 255
+    if-eqz v1, :cond_3
+
+    .line 256
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :cond_4
+    :goto_1
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/snapchat/android/model/chat/ChatFeedItem;
+
+    .line 259
+    instance-of v6, v1, Laka;
+
+    if-eqz v6, :cond_4
+
+    .line 260
+    check-cast v1, Laka;
+
+    .line 264
+    invoke-virtual {v1}, Laka;->g()Z
+
+    move-result v6
+
+    if-nez v6, :cond_4
+
+    invoke-virtual {v1}, Laka;->A()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    .line 265
+    invoke-virtual {p1, v1}, Lakp;->a(Laka;)V
+
+    goto :goto_1
+
+    .line 269
+    :cond_5
+    invoke-static {}, Lakx;->c()Lakx;
+
+    move-result-object v1
+
+    iget-object v4, v1, Lakx;->mConversations:Ljava/util/List;
+
+    monitor-enter v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    iget-object v4, v0, Lakc;->mConversations:Ljava/util/List;
+    iget-object v5, v1, Lakx;->mConversations:Ljava/util/List;
 
-    invoke-interface {v4}, Ljava/util/List;->clear()V
+    invoke-interface {v5}, Ljava/util/List;->clear()V
 
-    iget-object v4, v0, Lakc;->mConversations:Ljava/util/List;
+    iget-object v5, v1, Lakx;->mConversations:Ljava/util/List;
 
-    invoke-interface {v4, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v5, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    monitor-exit v3
+    monitor-exit v4
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     :try_start_3
-    invoke-virtual {v0}, Lakc;->f()V
+    invoke-virtual {v1}, Lakx;->g()V
 
     new-instance v2, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-direct {v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    invoke-direct {v2, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    invoke-virtual {v0, v2}, Lakc;->a(Ljava/util/concurrent/atomic/AtomicBoolean;)V
+    invoke-virtual {v1, v2}, Lakx;->a(Ljava/util/concurrent/atomic/AtomicBoolean;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 265
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    .line 271
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 266
-    const-string v0, "ConversationTable"
-
-    const-string v1, "populateUserObjectFromTable - endTransaction"
-
-    new-array v2, v9, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 267
+    .line 272
     return-void
 
-    .line 263
+    .line 269
     :catchall_1
-    move-exception v0
+    move-exception v1
 
     :try_start_4
-    monitor-exit v3
+    monitor-exit v4
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     :try_start_5
-    throw v0
+    throw v1
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue
-    .line 161
+    .line 163
     invoke-static {}, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->values()[Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;
 
     move-result-object v0
@@ -1448,141 +1408,119 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 138
     const-string v0, "Conversation"
 
     return-object v0
 .end method
 
-.method public final c(Lajv;)V
-    .locals 20
+.method public final c(Lakp;)V
+    .locals 22
 
     .prologue
-    .line 282
-    invoke-static {}, Lajx;->m()Z
+    .line 311
+    invoke-static {}, Lakr;->m()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 316
+    .line 344
     :goto_0
     return-void
 
-    .line 287
+    .line 316
     :cond_0
-    invoke-static {}, Lajv;->y()Landroid/content/Context;
+    invoke-static {}, Lakp;->y()Landroid/content/Context;
 
-    move-result-object v8
+    move-result-object v7
 
-    .line 288
-    invoke-static {v8}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
+    .line 317
+    invoke-static {v7}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lcom/snapchat/android/database/DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
-    move-result-object v9
+    move-result-object v8
 
-    .line 289
-    const-string v2, "ConversationTable"
+    .line 318
+    invoke-virtual {v8}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    const-string v3, "safeUpdate - beginTransaction"
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 290
-    invoke-virtual {v9}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-
-    .line 293
+    .line 322
     :try_start_0
-    const-string v2, "ConversationTable"
-
-    const-string v3, "Delete the tables for conversations, chats and snaps for safeUpdate"
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 294
     const-string v2, "Conversation"
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-virtual {v9, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v8, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 295
+    .line 324
     const-string v2, "Chat"
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-virtual {v9, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v8, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 296
+    .line 325
     const-string v2, "ReceivedSnaps"
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-virtual {v9, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v8, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 297
+    .line 326
     const-string v2, "SentSnaps"
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-virtual {v9, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v8, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 298
-    invoke-static {v8}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/content/Context;)V
+    .line 327
+    invoke-static {v7}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/content/Context;)V
 
-    .line 300
-    invoke-static {}, Lakc;->b()Lakc;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lakc;->e()Ljava/util/List;
+    .line 329
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v2
 
-    .line 301
-    new-instance v10, Laxx;
+    invoke-virtual {v2}, Lakx;->f()Ljava/util/List;
 
-    invoke-direct {v10}, Laxx;-><init>()V
+    move-result-object v2
 
-    .line 303
+    .line 330
+    new-instance v9, Layv;
+
+    invoke-direct {v9}, Layv;-><init>()V
+
+    .line 332
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v11
+    move-result-object v10
 
     :cond_1
     :goto_1
-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_e
 
-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/snapchat/android/model/chat/ChatConversation;
 
-    .line 304
+    .line 333
     iget-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mIsStub:Z
 
     if-nez v3, :cond_1
@@ -1591,10 +1529,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 305
+    .line 334
     if-eqz v2, :cond_1
 
-    iget-object v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
+    iget-object v11, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
 
     new-instance v4, Landroid/content/ContentValues;
 
@@ -1606,7 +1544,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v4, v3, v12}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v4, v3, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v3, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->SENDER:Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;
 
@@ -1634,9 +1572,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mTimestamp:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mTimestamp:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1650,7 +1588,7 @@
 
     iget-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnreleasedReceivedChats:Z
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_2
 
     const/4 v3, 0x1
 
@@ -1669,7 +1607,7 @@
 
     iget-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedReceivedSnaps:Z
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_3
 
     const/4 v3, 0x1
 
@@ -1688,7 +1626,7 @@
 
     iget-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedSnapsWithAudio:Z
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_4
 
     const/4 v3, 0x1
 
@@ -1707,7 +1645,7 @@
 
     iget-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mHasUnviewedCash:Z
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_5
 
     const/4 v3, 0x1
 
@@ -1744,9 +1682,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfMyChatTheyReleased:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfMyChatTheyReleased:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1758,9 +1696,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIReleased:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIReleased:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1772,9 +1710,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfMyChatIDeleted:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfMyChatIDeleted:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1786,9 +1724,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIDeleted:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastSeqNumOfTheirChatIDeleted:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1800,9 +1738,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIDeleted:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfSentSnapReadReceiptIDeleted:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1814,9 +1752,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIDeleted:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mLastTimestampOfReceivedSnapReadReceiptIDeleted:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1828,9 +1766,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mMyLastSeqNum:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mMyLastSeqNum:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1842,9 +1780,9 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mTheirLastSeqNum:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mTheirLastSeqNum:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -1856,49 +1794,35 @@
 
     move-result-object v3
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mMyLastAckedSeqNum:J
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mMyLastAckedSeqNum:J
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
     invoke-virtual {v4, v3, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    const-string v3, "ConversationTable"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    const-string v5, "Save conversation recipient="
 
-    const-string v6, "Save conversation recipient="
+    invoke-direct {v3, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v5, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mTheirUsername:Ljava/lang/String;
 
-    iget-object v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mTheirUsername:Ljava/lang/String;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    move-result-object v5
+    const-string v5, " timestamp="
 
-    const-string v6, " timestamp="
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    move-result-object v5
+    iget-wide v12, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mTimestamp:J
 
-    iget-wide v6, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mTimestamp:J
-
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    invoke-static {v3, v5, v6}, Lcom/snapchat/android/Timber;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v3, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v3, "Conversation"
 
@@ -1906,37 +1830,104 @@
 
     const/4 v6, 0x5
 
-    invoke-virtual {v9, v3, v5, v4, v6}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
+    invoke-virtual {v8, v3, v5, v4, v6}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
 
-    iget-object v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
+    iget-object v5, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mItemsForFeedIcon:Ljava/util/List;
 
-    if-nez v4, :cond_2
+    invoke-interface {v5}, Ljava/util/List;->size()I
 
-    invoke-static {}, Lyn;->a()Lyn;
-
-    move-result-object v3
+    move-result v3
 
     const/4 v4, 0x1
 
-    invoke-virtual {v3, v2, v4}, Lyn;->a(Lcom/snapchat/android/model/chat/ChatConversation;Z)V
-
-    iget-object v4, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mItemForFeedIcon:Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    :cond_2
-    if-nez v4, :cond_9
+    if-ne v3, v4, :cond_6
 
     const/4 v3, 0x0
 
-    move-object v7, v3
+    invoke-interface {v5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/snapchat/android/model/chat/ChatFeedItem;
+
+    move-object v4, v3
 
     :goto_6
+    new-instance v12, Ljava/util/HashSet;
+
+    invoke-direct {v12}, Ljava/util/HashSet;-><init>()V
+
+    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :goto_7
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/snapchat/android/model/chat/ChatFeedItem;
+
+    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v12, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_7
+
+    .line 343
+    :catchall_0
+    move-exception v2
+
+    invoke-virtual {v8}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    .line 344
+    throw v2
+
+    .line 334
+    :cond_2
+    const/4 v3, 0x0
+
+    goto/16 :goto_2
+
+    :cond_3
+    const/4 v3, 0x0
+
+    goto/16 :goto_3
+
+    :cond_4
+    const/4 v3, 0x0
+
+    goto/16 :goto_4
+
+    :cond_5
+    const/4 v3, 0x0
+
+    goto/16 :goto_5
+
+    :cond_6
+    const/4 v4, 0x0
+
+    goto :goto_6
+
+    :cond_7
     const/4 v5, 0x0
 
-    invoke-static {v8}, Lcom/snapchat/android/database/table/CashFeedItemTable;->b(Landroid/content/Context;)V
+    :try_start_1
+    invoke-static {v7}, Lcom/snapchat/android/database/table/CashFeedItemTable;->b(Landroid/content/Context;)V
 
     instance-of v3, v4, Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_8
 
     move-object v0, v4
 
@@ -1944,32 +1935,29 @@
 
     move-object v3, v0
 
-    invoke-static {v8, v3}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/content/Context;Lcom/snapchat/android/model/chat/CashFeedItem;)V
+    invoke-static {v7, v3}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/content/Context;Lcom/snapchat/android/model/chat/CashFeedItem;)V
 
     const/4 v5, 0x1
 
-    :cond_3
+    :cond_8
     invoke-virtual {v2}, Lcom/snapchat/android/model/chat/ChatConversation;->o()Ljava/util/List;
 
     move-result-object v3
 
     monitor-enter v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    if-eqz v3, :cond_a
-
-    :try_start_1
-    new-instance v2, Ljava/util/HashSet;
-
-    invoke-direct {v2, v3}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    :goto_7
-    monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
+    new-instance v2, Ljava/util/HashSet;
+
+    invoke-direct {v2, v3}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    monitor-exit v3
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    :try_start_3
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v13
@@ -1979,7 +1967,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
     invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1991,30 +1979,30 @@
 
     move-result-object v2
 
-    invoke-static {v2, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-interface {v12, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v14
 
-    if-eqz v2, :cond_b
+    if-eqz v14, :cond_a
 
     sget-object v2, Lcom/snapchat/android/model/Snap$TargetView;->CHAT_AND_FEED:Lcom/snapchat/android/model/Snap$TargetView;
 
     move-object v6, v2
 
     :goto_9
-    instance-of v2, v3, Lakb;
+    instance-of v2, v3, Lakw;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_b
 
     move-object v0, v3
 
-    check-cast v0, Lakb;
+    check-cast v0, Lakw;
 
     move-object v2, v0
 
-    invoke-static {v9, v2, v6, v10}, Lcom/snapchat/android/database/table/ChatTable;->a(Landroid/database/sqlite/SQLiteDatabase;Lakb;Lcom/snapchat/android/model/Snap$TargetView;Laxx;)V
+    invoke-static {v8, v2, v6, v9}, Lcom/snapchat/android/database/table/ChatTable;->a(Landroid/database/sqlite/SQLiteDatabase;Lakw;Lcom/snapchat/android/model/Snap$TargetView;Layv;)V
 
-    invoke-static {v8}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v7}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v2
 
@@ -2024,9 +2012,9 @@
 
     move-result-object v6
 
-    const-string v14, ""
+    const-string v15, ""
 
-    invoke-interface {v2, v6, v14}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v2, v6, v15}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -2038,45 +2026,41 @@
 
     move-result v2
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_9
 
-    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->W()J
-
-    move-result-wide v14
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->U()J
 
     move-result-wide v16
 
-    const-wide/32 v18, 0x36ee80
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    sub-long v16, v16, v18
+    move-result-wide v18
 
-    cmp-long v2, v14, v16
+    const-wide/32 v20, 0x36ee80
 
-    if-lez v2, :cond_4
+    sub-long v18, v18, v20
+
+    cmp-long v2, v16, v18
+
+    if-lez v2, :cond_9
 
     invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->d()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->W()J
+    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->U()J
 
-    move-result-wide v14
+    move-result-wide v16
 
-    invoke-static {v8, v2, v14, v15, v6}, Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;->a(Landroid/content/Context;Ljava/lang/String;JLjava/lang/String;)V
+    move-wide/from16 v0, v16
 
-    :cond_4
+    invoke-static {v7, v2, v0, v1, v6}, Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;->a(Landroid/content/Context;Ljava/lang/String;JLjava/lang/String;)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :cond_9
     :goto_a
-    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->d()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_11
+    if-eqz v14, :cond_10
 
     const/4 v2, 0x1
 
@@ -2085,143 +2069,78 @@
 
     goto :goto_8
 
-    :cond_5
-    const/4 v3, 0x0
-
-    goto/16 :goto_2
-
-    :cond_6
-    const/4 v3, 0x0
-
-    goto/16 :goto_3
-
-    :cond_7
-    const/4 v3, 0x0
-
-    goto/16 :goto_4
-
-    :cond_8
-    const/4 v3, 0x0
-
-    goto/16 :goto_5
-
-    :cond_9
-    invoke-interface {v4}, Lcom/snapchat/android/model/chat/ChatFeedItem;->d()Ljava/lang/String;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    move-result-object v3
-
-    move-object v7, v3
-
-    goto/16 :goto_6
-
-    :cond_a
-    :try_start_3
-    new-instance v2, Ljava/util/HashSet;
-
-    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
-
-    goto/16 :goto_7
-
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v3
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw v2
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    .line 314
     :catchall_1
     move-exception v2
 
-    invoke-virtual {v9}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    :try_start_4
+    monitor-exit v3
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 315
-    const-string v3, "ConversationTable"
-
-    const-string v4, "safeUpdate - endTransaction"
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
+    :try_start_5
     throw v2
 
-    .line 305
-    :cond_b
-    :try_start_5
+    :cond_a
     sget-object v2, Lcom/snapchat/android/model/Snap$TargetView;->CHAT:Lcom/snapchat/android/model/Snap$TargetView;
 
     move-object v6, v2
 
     goto :goto_9
 
-    :cond_c
+    :cond_b
     instance-of v2, v3, Lcom/snapchat/android/model/Snap;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_9
 
-    move-object v0, v3
+    check-cast v3, Lcom/snapchat/android/model/Snap;
 
-    check-cast v0, Lcom/snapchat/android/model/Snap;
-
-    move-object v2, v0
-
-    invoke-static {v9, v12, v2, v6}, Lcom/snapchat/android/database/table/ConversationTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Lcom/snapchat/android/model/Snap;Lcom/snapchat/android/model/Snap$TargetView;)V
+    invoke-static {v8, v11, v3, v6}, Lcom/snapchat/android/database/table/ConversationTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Lcom/snapchat/android/model/Snap;Lcom/snapchat/android/model/Snap$TargetView;)V
 
     goto :goto_a
 
-    :cond_d
+    :cond_c
     if-eqz v4, :cond_1
 
     if-nez v5, :cond_1
 
     instance-of v2, v4, Lcom/snapchat/android/model/Snap;
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_d
 
     check-cast v4, Lcom/snapchat/android/model/Snap;
 
     sget-object v2, Lcom/snapchat/android/model/Snap$TargetView;->FEED:Lcom/snapchat/android/model/Snap$TargetView;
 
-    invoke-static {v9, v12, v4, v2}, Lcom/snapchat/android/database/table/ConversationTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Lcom/snapchat/android/model/Snap;Lcom/snapchat/android/model/Snap$TargetView;)V
+    invoke-static {v8, v11, v4, v2}, Lcom/snapchat/android/database/table/ConversationTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Lcom/snapchat/android/model/Snap;Lcom/snapchat/android/model/Snap$TargetView;)V
 
     goto/16 :goto_1
 
-    :cond_e
-    instance-of v2, v4, Lakb;
+    :cond_d
+    instance-of v2, v4, Lakw;
 
     if-eqz v2, :cond_1
 
-    check-cast v4, Lakb;
+    check-cast v4, Lakw;
 
     sget-object v2, Lcom/snapchat/android/model/Snap$TargetView;->FEED:Lcom/snapchat/android/model/Snap$TargetView;
 
-    invoke-static {v9, v4, v2, v10}, Lcom/snapchat/android/database/table/ChatTable;->a(Landroid/database/sqlite/SQLiteDatabase;Lakb;Lcom/snapchat/android/model/Snap$TargetView;Laxx;)V
+    invoke-static {v8, v4, v2, v9}, Lcom/snapchat/android/database/table/ChatTable;->a(Landroid/database/sqlite/SQLiteDatabase;Lakw;Lcom/snapchat/android/model/Snap$TargetView;Layv;)V
 
     goto/16 :goto_1
 
-    .line 310
-    :cond_f
-    sget-object v3, Layj;->CHAT_MEDIA_KEYS_AND_IVS:Layh;
+    .line 339
+    :cond_e
+    sget-object v3, Lazh;->CHAT_MEDIA_KEYS_AND_IVS:Lazf;
 
-    iget-object v2, v10, Laxx;->mPrefKeyToMapMap:Ljava/util/Map;
+    iget-object v2, v9, Layv;->mPrefKeyToMapMap:Ljava/util/Map;
 
     invoke-interface {v2, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_f
 
-    iget-object v2, v10, Laxx;->mPrefKeyToMapMap:Ljava/util/Map;
+    iget-object v2, v9, Layv;->mPrefKeyToMapMap:Ljava/util/Map;
 
     invoke-interface {v2, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2229,71 +2148,60 @@
 
     check-cast v2, Ljava/util/Map;
 
-    invoke-virtual {v10, v3, v2}, Laxx;->a(Layh;Ljava/util/Map;)V
+    invoke-virtual {v9, v3, v2}, Layv;->a(Lazf;Ljava/util/Map;)V
 
-    .line 312
-    :cond_10
-    invoke-virtual {v9}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    .line 341
+    :cond_f
+    invoke-virtual {v8}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 314
-    invoke-virtual {v9}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-
-    .line 315
-    const-string v2, "ConversationTable"
-
-    const-string v3, "safeUpdate - endTransaction"
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 343
+    invoke-virtual {v8}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     goto/16 :goto_0
 
-    :cond_11
+    :cond_10
     move v2, v5
 
-    goto/16 :goto_b
+    goto :goto_b
 .end method
 
 .method public final d()Ljava/lang/String;
     .locals 7
 
     .prologue
-    .line 141
+    .line 143
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 142
+    .line 144
     invoke-static {}, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->values()[Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;
 
     move-result-object v2
 
-    .line 143
+    .line 145
     array-length v3, v2
 
-    .line 144
+    .line 146
     const/4 v0, 0x0
 
     :goto_0
     if-ge v0, v3, :cond_2
 
-    .line 145
+    .line 147
     aget-object v4, v2, v0
 
-    .line 146
+    .line 148
     if-lez v0, :cond_0
 
-    .line 147
+    .line 149
     const-string v5, ", "
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 149
+    .line 151
     :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -2331,33 +2239,33 @@
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 150
+    .line 152
     invoke-virtual {v4}, Lcom/snapchat/android/database/table/ConversationTable$ConversationSchema;->getConstraints()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 151
+    .line 153
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-nez v5, :cond_1
 
-    .line 152
+    .line 154
     const-string v5, " "
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 153
+    .line 155
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 144
+    .line 146
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 156
+    .line 158
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

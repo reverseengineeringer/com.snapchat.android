@@ -109,10 +109,6 @@
 
     iput-boolean v0, p0, Lcom/google/android/gms/internal/zzhq;->zzzu:Z
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzhq;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -135,26 +131,9 @@
     monitor-enter v1
 
     :try_start_0
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzhq;->zzzu:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez v0, :cond_0
-
-    :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzhq;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->wait()V
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :cond_0
-    :goto_0
-    :try_start_2
     iget-boolean v0, p0, Lcom/google/android/gms/internal/zzhq;->zzsg:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     new-instance v0, Ljava/util/concurrent/CancellationException;
 
@@ -168,29 +147,24 @@
     move-exception v0
 
     monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 
-    :cond_1
-    :try_start_3
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Lcom/google/android/gms/internal/zzhq;->zzzt:Ljava/lang/Object;
 
     monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     return-object v0
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
 .end method
 
 .method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .locals 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -212,18 +186,6 @@
 
     :try_start_1
     invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v2
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzhq;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/Object;->wait(J)V
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -370,10 +332,6 @@
     iput-boolean v0, p0, Lcom/google/android/gms/internal/zzhq;->zzzu:Z
 
     iput-object p1, p0, Lcom/google/android/gms/internal/zzhq;->zzzt:Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzhq;->zznh:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
     monitor-exit v1
     :try_end_1

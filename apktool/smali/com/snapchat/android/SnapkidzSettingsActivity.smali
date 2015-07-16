@@ -92,17 +92,17 @@
     .line 16
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lajx;->f(Z)V
+    invoke-static {v0}, Lakr;->f(Z)V
 
     invoke-virtual {p0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lajv;->a(Landroid/content/Context;)Lajv;
+    invoke-static {v0}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lajv;->v()V
+    invoke-virtual {v0}, Lakp;->v()V
 
     const/16 v0, 0x2c3
 
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a0340
+    const v1, 0x7f0a033f
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
@@ -173,11 +173,23 @@
     .locals 2
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 68
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 69
-    const v0, 0x7f0400ab
+    const v0, 0x7f0400ad
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->setContentView(I)V
 
@@ -202,7 +214,7 @@
     iput-object v0, p0, Lcom/snapchat/android/SnapkidzSettingsActivity;->i:Landroid/content/SharedPreferences$Editor;
 
     .line 72
-    const v0, 0x7f0a0065
+    const v0, 0x7f0a0067
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -212,7 +224,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a03b1
+    const v0, 0x7f0a03ae
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -222,7 +234,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0366
+    const v0, 0x7f0a0365
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -232,7 +244,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a03b2
+    const v0, 0x7f0a03af
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -242,7 +254,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0361
+    const v0, 0x7f0a0360
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -252,7 +264,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a0362
+    const v0, 0x7f0a0361
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/SnapkidzSettingsActivity;->findViewById(I)Landroid/view/View;
 

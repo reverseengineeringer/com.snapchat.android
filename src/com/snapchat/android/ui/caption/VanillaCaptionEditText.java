@@ -14,21 +14,21 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
-import apo;
-import aps;
-import aqe;
-import aqe.a;
-import ban;
-import baw;
-import bbh;
+import aqn;
+import aqr;
+import ard;
+import ard.a;
+import bbo;
+import bbx;
+import bch;
 import com.squareup.otto.Bus;
 
 public class VanillaCaptionEditText
   extends CaptionEditText
-  implements aqe.a<VanillaCaptionEditText>
+  implements ard.a<VanillaCaptionEditText>
 {
   int q;
-  private aqe<VanillaCaptionEditText> r = new aqe(this);
+  private ard<VanillaCaptionEditText> r = new ard(this);
   private int s;
   
   public VanillaCaptionEditText(Context paramContext, AttributeSet paramAttributeSet)
@@ -73,7 +73,7 @@ public class VanillaCaptionEditText
               if (!e()) {
                 continue;
               }
-              ban.a().a(new baw(6));
+              bbo.a().a(new bbx(6));
             }
           }
           else
@@ -96,7 +96,7 @@ public class VanillaCaptionEditText
             break;
           }
         } while (VanillaCaptionEditText.this.i);
-        ban.a().a(new baw(-1));
+        bbo.a().a(new bbx(-1));
       }
       
       public final void beforeTextChanged(CharSequence paramAnonymousCharSequence, int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3) {}
@@ -170,7 +170,7 @@ public class VanillaCaptionEditText
     }
     for (;;)
     {
-      ban.a().a(new bbh(false));
+      bbo.a().a(new bch(false));
       return;
       if (!TextUtils.isEmpty(getText()))
       {
@@ -206,9 +206,9 @@ public class VanillaCaptionEditText
     return getPaint().measureText(getText().toString()) > 0.975F * Math.min(q, s);
   }
   
-  protected apo getAnalyticsDetails()
+  protected aqn getAnalyticsDetails()
   {
-    return new apo(CaptionTypeEnums.NON_FAT_VANILLA_CAPTION_TYPE, false, false, false);
+    return new aqn(CaptionTypeEnums.NON_FAT_VANILLA_CAPTION_TYPE, false, false, false);
   }
   
   protected int getCaptionEditPosition()

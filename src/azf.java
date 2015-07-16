@@ -1,27 +1,36 @@
-public final class azf
-  implements buo<adj>
+import com.snapchat.android.util.crypto.SlightlySecurePreferencesKeyType;
+
+public class azf
 {
-  private final azc module;
+  public final String mKey;
+  public final SlightlySecurePreferencesKeyType mType;
   
-  static
+  public azf(String paramString, SlightlySecurePreferencesKeyType paramSlightlySecurePreferencesKeyType)
   {
-    if (!azf.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
+    mKey = paramString;
+    mType = paramSlightlySecurePreferencesKeyType;
+  }
+  
+  public boolean equals(Object paramObject)
+  {
+    if (this == paramObject) {
+      return true;
     }
+    if (!(paramObject instanceof azf)) {
+      return false;
+    }
+    paramObject = (azf)paramObject;
+    return mKey.equals(mKey);
   }
   
-  private azf(azc paramazc)
+  public int hashCode()
   {
-    assert (paramazc != null);
-    module = paramazc;
+    return mKey.hashCode();
   }
   
-  public static buo<adj> a(azc paramazc)
+  public String toString()
   {
-    return new azf(paramazc);
+    return mKey;
   }
 }
 

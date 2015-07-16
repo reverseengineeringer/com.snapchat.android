@@ -14,62 +14,54 @@
 
 
 # instance fields
-.field public a:Lxn;
+.field public a:Lyj;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field public b:Lxr;
+.field public b:Lyn;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field private final c:Lazn;
+.field private final c:Lbam;
 
 .field private final d:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
 
-.field private final e:Lyf;
+.field private final e:Lbal;
 
-.field private final f:Lazm;
-
-.field private final g:Lajx;
+.field private final f:Lakr;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 6
+    .locals 4
 
     .prologue
     .line 74
-    invoke-static {}, Lazn;->a()Lazn;
+    invoke-static {}, Lbam;->a()Lbam;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-static {}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->a()Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
 
+    move-result-object v1
+
+    invoke-static {}, Lbal;->a()Lbal;
+
     move-result-object v2
 
-    invoke-static {}, Lyf;->a()Lyf;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v3
 
-    invoke-static {}, Lazm;->a()Lazm;
-
-    move-result-object v4
-
-    invoke-static {}, Lajx;->a()Lajx;
-
-    move-result-object v5
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;-><init>(Lazn;Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;Lyf;Lazm;Lajx;)V
+    invoke-direct {p0, v0, v1, v2, v3}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;-><init>(Lbam;Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;Lbal;Lakr;)V
 
     .line 76
     return-void
 .end method
 
-.method private constructor <init>(Lazn;Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;Lyf;Lazm;Lajx;)V
+.method private constructor <init>(Lbam;Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;Lbal;Lakr;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -78,65 +70,62 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 82
     invoke-direct {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>()V
 
-    .line 84
+    .line 83
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)V
+
+    .line 84
+    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lbam;
 
     .line 85
-    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lazn;
-
-    .line 86
     iput-object p2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->d:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
 
+    .line 86
+    iput-object p3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->e:Lbal;
+
     .line 87
-    iput-object p3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->e:Lyf;
+    iput-object p4, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->f:Lakr;
 
     .line 88
-    iput-object p4, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->f:Lazm;
-
-    .line 89
-    iput-object p5, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->g:Lajx;
-
-    .line 90
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lajx;
+.method static synthetic a(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lakr;
     .locals 1
 
     .prologue
-    .line 59
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->g:Lajx;
+    .line 60
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->f:Lakr;
 
     return-object v0
 .end method
 
-.method static synthetic b(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lazn;
+.method static synthetic b(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lbam;
     .locals 1
 
     .prologue
-    .line 59
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lazn;
+    .line 60
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lbam;
 
     return-object v0
 .end method
 
-.method static synthetic c(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lazm;
+.method static synthetic c(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lbal;
     .locals 1
 
     .prologue
-    .line 59
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->f:Lazm;
+    .line 60
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->e:Lbal;
 
     return-object v0
 .end method
@@ -151,12 +140,12 @@
 
     const/4 v8, 0x1
 
-    const v7, 0x7f0400ad
+    const v7, 0x7f0400af
 
     const/4 v6, 0x0
 
-    .line 94
-    const v0, 0x7f04004a
+    .line 92
+    const v0, 0x7f04004b
 
     invoke-virtual {p1, v0, p2, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -164,16 +153,16 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->mFragmentLayout:Landroid/view/View;
 
-    .line 95
+    .line 93
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-    move-result-object v4
+    move-result-object v5
 
-    const v0, 0x7f0a0065
+    const v0, 0x7f0a0067
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -193,19 +182,19 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    invoke-static {v4}, Lazm;->a(Landroid/content/SharedPreferences;)Ljava/lang/String;
+    invoke-static {v5}, Lbal;->a(Landroid/content/SharedPreferences;)Ljava/lang/String;
 
     move-result-object v1
 
     if-nez v1, :cond_0
 
-    invoke-static {}, Lbfr;->a()Lbfr;
+    invoke-static {}, Lbgr;->a()Lbgr;
 
     move-result-object v1
 
-    iget-object v1, v1, Lbfr;->mProxyEndpoint:Lajd;
+    iget-object v1, v1, Lbgr;->mProxyEndpoint:Lajz;
 
-    iget-object v1, v1, Lajd;->mBaseUrl:Ljava/lang/String;
+    iget-object v1, v1, Lajz;->mBaseUrl:Ljava/lang/String;
 
     :cond_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -215,6 +204,47 @@
     invoke-direct {v2, p0, v1, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$12;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Ljava/lang/String;Landroid/widget/TextView;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    const v1, 0x7f0a01a9
+
+    invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    const v2, 0x7f0a01a8
+
+    invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/view/ViewGroup;
+
+    iget-object v3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->d:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
+
+    invoke-virtual {v3}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->b()Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lbam;
+
+    invoke-virtual {v4}, Lbam;->b()Ljava/lang/String;
+
+    move-result-object v4
+
+    if-nez v4, :cond_3
+
+    if-eqz v3, :cond_1
+
+    :goto_0
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    new-instance v4, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$19;
+
+    invoke-direct {v4, p0, v3, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$19;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Ljava/lang/String;Landroid/widget/TextView;)V
+
+    invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const v1, 0x7f0a01ab
 
@@ -232,33 +262,34 @@
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    iget-object v3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lazn;
+    iget-object v3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lbam;
 
-    invoke-virtual {v3}, Lazn;->b()Ljava/lang/String;
+    invoke-virtual {v3}, Lbam;->d()I
+
+    move-result v3
+
+    const/4 v4, -0x1
+
+    if-eq v3, v4, :cond_2
+
+    iget-object v3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lbam;
+
+    invoke-virtual {v3}, Lbam;->d()I
+
+    move-result v3
+
+    :goto_1
+    invoke-static {v3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    if-nez v3, :cond_1
-
-    iget-object v3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->d:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
-
-    invoke-virtual {v3}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->b()Ljava/lang/String;
-
-    move-result-object v3
-
-    :cond_1
-    if-nez v3, :cond_2
-
-    const-string v3, ""
-
-    :cond_2
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    new-instance v5, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$21;
+    new-instance v3, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$20;
 
-    invoke-direct {v5, p0, v3, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$21;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Ljava/lang/String;Landroid/widget/TextView;)V
+    invoke-direct {v3, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$20;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/TextView;)V
 
-    invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const v1, 0x7f0a01ad
 
@@ -266,54 +297,9 @@
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/TextView;
-
-    const v2, 0x7f0a01ac
-
-    invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/ViewGroup;
-
-    iget-object v3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lazn;
-
-    invoke-virtual {v3}, Lazn;->d()I
-
-    move-result v3
-
-    const/4 v5, -0x1
-
-    if-eq v3, v5, :cond_3
-
-    iget-object v3, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lazn;
-
-    invoke-virtual {v3}, Lazn;->d()I
-
-    move-result v3
-
-    :goto_0
-    invoke-static {v3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    new-instance v3, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;
-
-    invoke-direct {v3, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/TextView;)V
-
-    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    const v1, 0x7f0a01af
-
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
-
-    move-result-object v1
-
     check-cast v1, Landroid/widget/CheckBox;
 
-    const v2, 0x7f0a01ae
+    const v2, 0x7f0a01ac
 
     invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -323,7 +309,7 @@
 
     invoke-virtual {v1, v8}, Landroid/widget/CheckBox;->setEnabled(Z)V
 
-    invoke-static {}, Lazm;->d()Z
+    invoke-static {}, Lbal;->d()Z
 
     move-result v3
 
@@ -333,11 +319,11 @@
 
     move-result-object v3
 
-    new-instance v5, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;
+    new-instance v4, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;
 
-    invoke-direct {v5, p0, v3}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/content/Context;)V
+    invoke-direct {v4, p0, v3}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/content/Context;)V
 
-    invoke-virtual {v1, v5}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    invoke-virtual {v1, v4}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     new-instance v3, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$18;
 
@@ -345,7 +331,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f0a01b0
+    const v1, 0x7f0a01ae
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -357,7 +343,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v1, 0x7f0a01c5
+    const v1, 0x7f0a01c3
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -365,17 +351,17 @@
 
     check-cast v1, Landroid/widget/CheckBox;
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lazn;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lbam;
 
-    invoke-virtual {v2}, Lazn;->e()Z
+    invoke-virtual {v2}, Lbam;->e()Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$24;
+    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$21;
 
-    invoke-direct {v2, p0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$24;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)V
+    invoke-direct {v2, p0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$21;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -383,45 +369,11 @@
 
     move-result-object v2
 
-    new-instance v3, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$25;
+    new-instance v3, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;
 
-    invoke-direct {v3, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$25;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
+    invoke-direct {v3, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    const v1, 0x7f0a01a9
-
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/CheckBox;
-
-    invoke-static {}, Lazm;->e()Z
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
-
-    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$19;
-
-    invoke-direct {v2, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$19;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
-
-    invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    const v2, 0x7f0a01a8
-
-    invoke-virtual {p0, v2}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/ViewGroup;
-
-    new-instance v3, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$20;
-
-    invoke-direct {v3, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$20;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
-
-    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const v1, 0x7f0a01a4
 
@@ -431,15 +383,15 @@
 
     check-cast v1, Landroid/widget/CheckBox;
 
-    invoke-static {}, Lazm;->c()Z
+    invoke-static {}, Lbal;->c()Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$27;
+    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$25;
 
-    invoke-direct {v2, p0, v4, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$27;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/content/SharedPreferences;Landroid/widget/TextView;)V
+    invoke-direct {v2, p0, v5, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$25;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/content/SharedPreferences;Landroid/widget/TextView;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -447,9 +399,9 @@
 
     move-result-object v0
 
-    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$28;
+    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;
 
-    invoke-direct {v2, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$28;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
+    invoke-direct {v2, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -513,13 +465,13 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/Spinner;->setSelection(I)V
 
-    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;
+    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$24;
 
-    invoke-direct {v2, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/content/SharedPreferences;)V
+    invoke-direct {v2, p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$24;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/content/SharedPreferences;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    const v0, 0x7f0a01b2
+    const v0, 0x7f0a01b0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -533,7 +485,45 @@
 
     move-result-object v1
 
-    invoke-static {v1, v6}, Lauc;->a(Ljava/lang/String;Z)Z
+    invoke-static {v1, v6}, Lava;->a(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
+
+    new-instance v1, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$27;
+
+    invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$27;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+
+    const v1, 0x7f0a01af
+
+    invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$28;
+
+    invoke-direct {v2, p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$28;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    const v0, 0x7f0a01b2
+
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/CheckBox;
+
+    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_FAKE_FRIENDMOJI_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v6}, Lava;->a(Ljava/lang/String;Z)Z
 
     move-result v1
 
@@ -558,44 +548,6 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const v0, 0x7f0a01b4
-
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/CheckBox;
-
-    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_FAKE_FRIENDMOJI_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1, v6}, Lauc;->a(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
-
-    new-instance v1, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$31;
-
-    invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$31;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    const v1, 0x7f0a01b3
-
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
-
-    move-result-object v1
-
-    new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$32;
-
-    invoke-direct {v2, p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$32;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    const v0, 0x7f0a01b6
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -641,7 +593,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lauc;->b(Ljava/lang/String;)I
+    invoke-static {v1}, Lava;->b(Ljava/lang/String;)I
 
     move-result v1
 
@@ -653,7 +605,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    const v0, 0x7f0a01b8
+    const v0, 0x7f0a01b6
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -667,7 +619,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v6}, Lauc;->a(Ljava/lang/String;Z)Z
+    invoke-static {v1, v6}, Lava;->a(Ljava/lang/String;Z)Z
 
     move-result v1
 
@@ -679,7 +631,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    const v1, 0x7f0a01b7
+    const v1, 0x7f0a01b5
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -691,7 +643,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01ba
+    const v0, 0x7f0a01b8
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -699,7 +651,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0a01bb
+    const v1, 0x7f0a01b9
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -709,7 +661,7 @@
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$5;
 
-    invoke-direct {v2, p0, v0, v4}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$5;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/TextView;Landroid/content/SharedPreferences;)V
+    invoke-direct {v2, p0, v0, v5}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$5;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/TextView;Landroid/content/SharedPreferences;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
@@ -721,7 +673,7 @@
 
     const/16 v2, 0x258
 
-    invoke-interface {v4, v0, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    invoke-interface {v5, v0, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -729,7 +681,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    const v0, 0x7f0a01bd
+    const v0, 0x7f0a01bb
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -741,7 +693,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01bc
+    const v0, 0x7f0a01ba
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -753,7 +705,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01be
+    const v0, 0x7f0a01bc
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -765,7 +717,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01bf
+    const v0, 0x7f0a01bd
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -777,7 +729,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01c0
+    const v0, 0x7f0a01be
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -789,7 +741,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01c1
+    const v0, 0x7f0a01bf
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -801,7 +753,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01c2
+    const v0, 0x7f0a01c0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -813,7 +765,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01c3
+    const v0, 0x7f0a01c1
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(I)Landroid/view/View;
 
@@ -833,9 +785,9 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lazn;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c:Lbam;
 
-    invoke-virtual {v1}, Lazn;->c()Z
+    invoke-virtual {v1}, Lbam;->c()Z
 
     move-result v1
 
@@ -859,14 +811,24 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 96
+    .line 94
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->mFragmentLayout:Landroid/view/View;
 
     return-object v0
 
-    .line 95
-    :cond_3
+    .line 93
+    :cond_1
+    const-string v3, ""
+
+    goto/16 :goto_0
+
+    :cond_2
     const/4 v3, 0x3
+
+    goto/16 :goto_1
+
+    :cond_3
+    move-object v3, v4
 
     goto/16 :goto_0
 .end method

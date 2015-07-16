@@ -1,4 +1,4 @@
-public final class bdc {}
+public abstract interface bdc {}
 
 /* Location:
  * Qualified Name:     bdc

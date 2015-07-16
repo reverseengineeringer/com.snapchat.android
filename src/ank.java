@@ -1,32 +1,49 @@
-import android.content.Context;
-import android.view.ViewGroup;
-import com.snapchat.android.rendering.SnapMediaRenderer;
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.analytics.ProfileEventAnalytics;
+import com.snapchat.android.api2.framework.HttpMethod;
 
 public final class ank
+  extends ana
+  implements ui.b<bke>
 {
-  public final SnapMediaRenderer[] a = new SnapMediaRenderer[2];
-  public final SnapMediaRenderer[] b = new SnapMediaRenderer[2];
-  public int c = 0;
-  public int d = 0;
+  private final String a;
+  private final ProfileEventAnalytics b;
   
-  public ank(Context paramContext)
+  public ank(Intent paramIntent)
   {
-    while (i < 2)
-    {
-      a[i] = new ano(paramContext);
-      b[i] = new anl(paramContext);
-      i += 1;
-    }
+    super(paramIntent);
+    a = avz.a(paramIntent.getByteArrayExtra("snapTag"));
+    new StringBuilder("SnapTag - ").append(a);
+    b = ProfileEventAnalytics.a();
+    registerCallback(bke.class, this);
   }
   
-  public final void a(ViewGroup paramViewGroup)
+  public final HttpMethod getMethod()
   {
-    int i = 0;
-    while (i < 2)
+    return HttpMethod.POST;
+  }
+  
+  public final Object getRequestPayload()
+  {
+    return new ank.a(a);
+  }
+  
+  protected final String l_()
+  {
+    return "/bq/snaptag";
+  }
+  
+  @ud
+  public static final class a
+    extends qc
+  {
+    @SerializedName("snaptag")
+    final String a;
+    
+    a(String paramString)
     {
-      a[i].a(paramViewGroup);
-      b[i].a(paramViewGroup);
-      i += 1;
+      a = paramString;
     }
   }
 }

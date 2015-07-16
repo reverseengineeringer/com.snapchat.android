@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afi;
+import agi;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,14 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import aqq;
-import aqr;
+import arp;
+import arq;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 
 public class AddFriendsFromCameraRollFragment
   extends SnapchatFragment
 {
-  private aqq a;
+  private arp a;
   private RecyclerView b;
   
   public void onCreate(Bundle paramBundle)
@@ -31,8 +31,8 @@ public class AddFriendsFromCameraRollFragment
   {
     super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
     mFragmentLayout = paramLayoutInflater.inflate(2130968578, paramViewGroup, false);
-    a = new aqq(getActivity(), paramLayoutInflater, aa, ab);
-    b = ((RecyclerView)mFragmentLayout.findViewById(2131361847));
+    a = new arp(getActivity(), paramLayoutInflater, aa, ab);
+    b = ((RecyclerView)mFragmentLayout.findViewById(2131361848));
     getActivity();
     paramLayoutInflater = new GridLayoutManager();
     g = new GridLayoutManager.b()
@@ -47,7 +47,7 @@ public class AddFriendsFromCameraRollFragment
     };
     b.setLayoutManager(paramLayoutInflater);
     b.setAdapter(a);
-    c(2131361822).setOnClickListener(new View.OnClickListener()
+    c(2131361823).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
@@ -67,10 +67,10 @@ public class AddFriendsFromCameraRollFragment
     super.onResume();
     if (aa.a.length != a.c.a.length)
     {
-      afi.a().a(getActivity());
+      agi.a().a(getActivity());
       a.c = aa;
       a.d = ab;
-      aqr localaqr = a.c;
+      arq localarq = a.c;
       int i = 0;
       while (i < b.length)
       {

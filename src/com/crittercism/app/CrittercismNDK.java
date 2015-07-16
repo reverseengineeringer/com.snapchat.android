@@ -1,12 +1,12 @@
 package com.crittercism.app;
 
 import android.content.Context;
-import android.content.res.AssetManager;
-import btd;
+import bue;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import kkkkkk.xkkkxk;
 
 public class CrittercismNDK
 {
@@ -39,7 +39,7 @@ public class CrittercismNDK
         a = true;
         return;
       }
-      btd.g();
+      bue.g();
       return;
     }
     catch (Throwable paramContext) {}
@@ -66,7 +66,7 @@ public class CrittercismNDK
     }
     catch (Throwable paramContext)
     {
-      btd.f();
+      bue.f();
       localFile1.delete();
     }
     return false;
@@ -94,7 +94,7 @@ public class CrittercismNDK
     catch (Exception paramContext)
     {
       new StringBuilder("Could not install breakpad library: ").append(paramContext.toString());
-      btd.e();
+      bue.e();
       return false;
     }
     paramFile.close();
@@ -118,7 +118,7 @@ public class CrittercismNDK
     if (System.getProperty("os.arch").contains("v7")) {
       str = "armeabi" + "-v7a";
     }
-    return paramContext.getAssets().open(str + "/libcrittercism-v3.so");
+    return xkkkxk.bООООО041E(paramContext.getAssets(), str + "/libcrittercism-v3.so");
   }
   
   public static native boolean installNdk(String paramString);

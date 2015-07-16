@@ -173,14 +173,14 @@
     sub-int v4, p1, v0
 
     .line 902
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_1
 
     .line 903
     iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout$a;->a:Lin/srain/cube/views/ptr/PtrFrameLayout;
 
-    iget-object v0, v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v2, "tryToScrollTo: start: %s, distance:%s, to:%s"
 
@@ -298,7 +298,7 @@
     sub-int v4, v3, v4
 
     .line 855
-    sget-boolean v5, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v5, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v5, :cond_1
 
@@ -308,7 +308,7 @@
     .line 857
     iget-object v5, p0, Lin/srain/cube/views/ptr/PtrFrameLayout$a;->a:Lin/srain/cube/views/ptr/PtrFrameLayout;
 
-    iget-object v5, v5, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v5, v5, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v6, "scroll: %s, start: %s, to: %s, mCurrentPos: %s, current :%s, last: %s, delta: %s"
 
@@ -413,13 +413,13 @@
 
     .line 867
     :cond_3
-    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Z
+    sget-boolean v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->a:Z
 
     if-eqz v0, :cond_4
 
     iget-object v0, p0, Lin/srain/cube/views/ptr/PtrFrameLayout$a;->a:Lin/srain/cube/views/ptr/PtrFrameLayout;
 
-    iget-object v0, v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->c:Ljava/lang/String;
+    iget-object v0, v0, Lin/srain/cube/views/ptr/PtrFrameLayout;->b:Ljava/lang/String;
 
     const-string v3, "finish, mCurrentPos:%s"
 

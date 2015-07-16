@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemSelectedListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/content/SharedPreferences;
+.field final synthetic a:Landroid/widget/CheckBox;
 
 .field final synthetic b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/content/SharedPreferences;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
     .locals 0
 
     .prologue
-    .line 573
+    .line 193
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;->b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    iput-object p2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;->a:Landroid/content/SharedPreferences;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;->a:Landroid/widget/CheckBox;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,53 +40,32 @@
 
 
 # virtual methods
-.method public final onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method public final onClick(Landroid/view/View;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
 
     .prologue
-    .line 579
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;->a:Landroid/content/SharedPreferences;
+    .line 196
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;->a:Landroid/widget/CheckBox;
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$26;->a:Landroid/widget/CheckBox;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
 
-    .line 580
-    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->REGISTRATION_TESTING_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    move-result v0
 
-    invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    move-result-object v1
+    const/4 v0, 0x1
 
-    invoke-interface {v0, v1, p3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    :goto_0
+    invoke-virtual {v1, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 581
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    .line 582
+    .line 197
     return-void
-.end method
 
-.method public final onNothingSelected(Landroid/widget/AdapterView;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;)V"
-        }
-    .end annotation
+    .line 196
+    :cond_0
+    const/4 v0, 0x0
 
-    .prologue
-    .line 575
-    return-void
+    goto :goto_0
 .end method

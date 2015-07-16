@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 
 class TaskExecutor$TaskWrapper
 {
@@ -9,7 +9,7 @@ class TaskExecutor$TaskWrapper
   Task.ProgressUpdateCallback mProgressUpdateCallback;
   Task mTask;
   
-  public TaskExecutor$TaskWrapper(TaskExecutor paramTaskExecutor, @cgb Task paramTask, @cgc Task.DoneCallback paramDoneCallback, @cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  public TaskExecutor$TaskWrapper(TaskExecutor paramTaskExecutor, @chc Task paramTask, @chd Task.DoneCallback paramDoneCallback, @chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     mTask = paramTask;
     mDoneCallback = paramDoneCallback;

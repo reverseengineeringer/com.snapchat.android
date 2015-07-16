@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lts$b;
+.implements Lui$b;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lts$b",
+        "Lui$b",
         "<",
         "Lcom/snapchat/android/api2/cash/ScCashResponsePayload;",
         ">;"
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 605
+    .line 621
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->b:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->a:Lcom/snapchat/android/model/Friend;
@@ -50,17 +50,17 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Luc;)V
-    .locals 7
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 5
 
     .prologue
-    const/4 v3, 0x2
+    const/4 v1, 0x2
 
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    .line 605
+    .line 621
     check-cast p1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload;
 
     if-eqz p1, :cond_1
@@ -71,27 +71,21 @@
 
     if-eqz v0, :cond_0
 
-    const-string v1, "ChatFragment"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const-string v2, "CASH-LOG: Got CASH ELIGIBILITY for %s: %s"
+    iget-object v2, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->a:Lcom/snapchat/android/model/Friend;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    invoke-virtual {v2}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->a:Lcom/snapchat/android/model/Friend;
+    move-result-object v2
 
-    invoke-virtual {v4}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v3, v5
+    aput-object v2, v1, v3
 
     invoke-virtual {v0}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->name()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v3, v6
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v1, v4
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->a:Lcom/snapchat/android/model/Friend;
 
@@ -101,62 +95,50 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/chat/ChatFragment$1$1;-><init>(Lcom/snapchat/android/fragments/chat/ChatFragment$1;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     :goto_0
     return-void
 
     :cond_0
-    const-string v0, "ChatFragment"
+    new-array v0, v1, [Ljava/lang/Object;
 
-    const-string v1, "CASH-LOG: FAILED to get CASH ELIGIBILITY for %s with status code %d and null json response status"
+    iget-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->a:Lcom/snapchat/android/model/Friend;
 
-    new-array v2, v3, [Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->a:Lcom/snapchat/android/model/Friend;
+    move-result-object v1
 
-    invoke-virtual {v3}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    aput-object v1, v0, v3
 
-    move-result-object v3
+    iget v1, p2, Lus;->mResponseCode:I
 
-    aput-object v3, v2, v5
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget v3, p2, Luc;->mResponseCode:I
+    move-result-object v1
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v2, v6
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v4
 
     goto :goto_0
 
     :cond_1
-    const-string v0, "ChatFragment"
+    new-array v0, v1, [Ljava/lang/Object;
 
-    const-string v1, "CASH-LOG: FAILED to get CASH ELIGIBILITY for %s status code %d"
+    iget-object v1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->a:Lcom/snapchat/android/model/Friend;
 
-    new-array v2, v3, [Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$1;->a:Lcom/snapchat/android/model/Friend;
+    move-result-object v1
 
-    invoke-virtual {v3}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    aput-object v1, v0, v3
 
-    move-result-object v3
+    iget v1, p2, Lus;->mResponseCode:I
 
-    aput-object v3, v2, v5
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget v3, p2, Luc;->mResponseCode:I
+    move-result-object v1
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v2, v6
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v4
 
     goto :goto_0
 .end method

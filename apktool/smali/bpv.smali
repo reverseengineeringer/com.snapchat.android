@@ -1,59 +1,107 @@
-.class public final Lbpv;
-.super Ljava/lang/Object;
+.class final Lbpv;
+.super Lbpq;
 .source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     .prologue
-    .line 12
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 34
+    invoke-direct {p0, p1}, Lbpq;-><init>(Landroid/content/Context;)V
 
+    .line 35
     return-void
 .end method
 
-.method public static a(Landroid/view/View;)Landroid/graphics/Rect;
-    .locals 5
+
+# virtual methods
+.method public final a(Lbqh;)Z
+    .locals 2
 
     .prologue
-    .line 20
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    .line 38
+    const-string v0, "file"
+
+    iget-object v1, p1, Lbqh;->d:Landroid/net/Uri;
+
+    invoke-virtual {v1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b(Lbqh;)Lbqj$a;
+    .locals 7
+
+    .prologue
+    .line 42
+    new-instance v1, Lbqj$a;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, p1}, Lbpv;->c(Lbqh;)Ljava/io/InputStream;
+
+    move-result-object v3
+
+    sget-object v4, Lbqe$d;->b:Lbqe$d;
+
+    iget-object v0, p1, Lbqh;->d:Landroid/net/Uri;
+
+    new-instance v5, Landroid/media/ExifInterface;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 22
-    instance-of v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;
+    invoke-direct {v5, v0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    if-eqz v1, :cond_0
+    const-string v0, "Orientation"
 
-    .line 23
-    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
+    const/4 v6, 0x1
 
-    .line 24
-    new-instance v1, Landroid/graphics/Rect;
+    invoke-virtual {v5, v0, v6}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
 
-    iget v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    move-result v0
 
-    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    packed-switch v0, :pswitch_data_0
 
-    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    :pswitch_0
+    const/4 v0, 0x0
 
-    iget v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    invoke-direct {v1, v2, v3, v4, v0}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    move-object v0, v1
-
-    .line 26
     :goto_0
-    return-object v0
+    invoke-direct {v1, v2, v3, v4, v0}, Lbqj$a;-><init>(Landroid/graphics/Bitmap;Ljava/io/InputStream;Lbqe$d;I)V
 
-    :cond_0
-    new-instance v0, Landroid/graphics/Rect;
+    return-object v1
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    :pswitch_1
+    const/16 v0, 0x5a
 
     goto :goto_0
+
+    :pswitch_2
+    const/16 v0, 0xb4
+
+    goto :goto_0
+
+    :pswitch_3
+    const/16 v0, 0x10e
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x3
+        :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_0
+        :pswitch_3
+    .end packed-switch
 .end method

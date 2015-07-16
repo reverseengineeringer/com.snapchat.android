@@ -1,15 +1,8 @@
-import android.view.View;
-
-public final class ckz
+public abstract interface ckz
 {
-  private final View a;
-  private float b = 0.0F;
+  public abstract int a(cla paramcla, String paramString, int paramInt);
   
-  public ckz(View paramView)
-  {
-    a = paramView;
-    a.setAlpha(0.0F);
-  }
+  public abstract int b();
 }
 
 /* Location:

@@ -1,31 +1,157 @@
-import javax.inject.Provider;
+import android.text.TextUtils;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.Friend.SuggestState;
+import com.snapchat.android.util.FriendSectionizer.FriendSection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 public final class agc
-  implements buj<agb>
+  extends bge<Friend>
 {
-  private final Provider<bgk> b;
+  String a;
+  boolean b;
+  boolean c;
+  boolean d;
+  boolean e;
+  private final List<Friend> f;
   
-  static
+  public agc(@chc List<Friend> paramList, @chc ban paramban, @chc bge.a<Friend> parama)
   {
-    if (!agc.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    super(paramban, parama);
+    f = paramList;
+  }
+  
+  private boolean a(Friend paramFriend, String paramString)
+  {
+    if (b) {
+      return avg.b(paramFriend.l(), paramString);
+    }
+    Object localObject = new ArrayList();
+    ((ArrayList)localObject).add(paramFriend.a());
+    ((ArrayList)localObject).addAll(Arrays.asList(paramFriend.a().split(" ")));
+    localObject = ((ArrayList)localObject).iterator();
+    while (((Iterator)localObject).hasNext()) {
+      if (avg.a((String)((Iterator)localObject).next(), paramString)) {
+        return true;
+      }
+    }
+    return avg.b(paramFriend.l(), paramString);
+  }
+  
+  public final List<Friend> a(String paramString)
+  {
+    Object localObject1 = null;
+    a = paramString;
+    ArrayList localArrayList1 = new ArrayList();
+    ArrayList localArrayList2 = new ArrayList(f);
+    if (paramString == null) {
+      return null;
+    }
+    if ((!e) && (TextUtils.isEmpty(paramString))) {
+      return Collections.EMPTY_LIST;
+    }
+    int j = 0;
+    int i = 0;
+    Object localObject2;
+    agl localagl;
+    if (j < localArrayList2.size())
     {
-      a = bool;
-      return;
+      localObject2 = (Friend)localArrayList2.get(j);
+      if ((((Friend)localObject2).k()) && (!avg.c(paramString, ((Friend)localObject2).l()))) {
+        break label418;
+      }
+      if ((localObject2 instanceof agl))
+      {
+        localagl = (agl)localObject2;
+        if (a((Friend)localObject2, paramString)) {
+          localArrayList1.add(localagl);
+        }
+      }
+    }
+    for (;;)
+    {
+      j += 1;
+      break;
+      localObject2 = c.iterator();
+      for (;;)
+      {
+        if (((Iterator)localObject2).hasNext())
+        {
+          String str = (String)((Iterator)localObject2).next();
+          if ((avg.b(str, paramString)) || (avg.b(paramString, str)))
+          {
+            localArrayList1.add(localagl);
+            break;
+          }
+        }
+      }
+      continue;
+      if ((!c) && (avg.c(paramString, ((Friend)localObject2).l())))
+      {
+        if (d) {
+          localObject1 = localObject2;
+        }
+      }
+      else
+      {
+        for (;;)
+        {
+          if (a((Friend)localObject2, paramString))
+          {
+            localArrayList1.add(localObject2);
+            if ((mFriendSection == FriendSectionizer.FriendSection.MY_ADDRESS_BOOK) || (mFriendSection == FriendSectionizer.FriendSection.ON_SNAPCHAT) || (mFriendSection == FriendSectionizer.FriendSection.INVITE))
+            {
+              i += 1;
+              break;
+              if (!c)
+              {
+                if (localObject1 != null) {
+                  break label395;
+                }
+                paramString = new Friend(paramString);
+                mSuggestionState = Friend.SuggestState.PENDING;
+                mFriendSection = FriendSectionizer.FriendSection.USERNAME;
+                if (d) {
+                  break label356;
+                }
+                localArrayList1.add(0, paramString);
+              }
+              for (;;)
+              {
+                return localArrayList1;
+                label356:
+                if ((i == 0) || (i >= localArrayList1.size()))
+                {
+                  localArrayList1.add(paramString);
+                }
+                else
+                {
+                  localArrayList1.add(i, paramString);
+                  continue;
+                  label395:
+                  if (!d) {
+                    localArrayList1.add(0, localObject1);
+                  }
+                }
+              }
+              continue;
+              label418:
+              break;
+            }
+          }
+        }
+        continue;
+      }
+      localObject1 = localObject2;
     }
   }
   
-  private agc(Provider<bgk> paramProvider)
+  protected final void a(Exception paramException)
   {
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    b = paramProvider;
-  }
-  
-  public static buj<agb> a(Provider<bgk> paramProvider)
-  {
-    return new agc(paramProvider);
+    mExceptionReporter.b(paramException);
   }
 }
 

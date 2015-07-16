@@ -45,7 +45,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;Lbvq;)Lbvq;
+    invoke-static {v0, v1}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;Lbwr;)Lbwr;
 
     .line 424
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V

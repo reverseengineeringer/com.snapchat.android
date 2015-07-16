@@ -1,19 +1,11 @@
-public class alq$a
+public final class alq$a
 {
-  public final long a;
-  public final long b;
-  public final int c;
+  public String id;
+  public long timestamp;
   
-  public alq$a(long paramLong1, long paramLong2, int paramInt)
+  public final String toString()
   {
-    b = paramLong2;
-    a = paramLong1;
-    c = paramInt;
-  }
-  
-  public String toString()
-  {
-    return ci.a(a.class).a("durationMs", a).a("bytesReceived", b).a("downloadCount", c).toString();
+    return "SnapData{id='" + id + '\'' + ", timestamp=" + timestamp + '}';
   }
 }
 

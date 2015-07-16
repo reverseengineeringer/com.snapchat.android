@@ -1,10 +1,9 @@
 package com.snapchat.android.discover.ui;
 
-import ael;
+import afl;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.snapchat.android.Timber;
 import com.snapchat.android.discover.util.network.DiscoverEndpointManager.Compatibility;
 
 final class DiscoverLoadingStatePresenter$2
@@ -16,18 +15,18 @@ final class DiscoverLoadingStatePresenter$2
   {
     DiscoverLoadingStatePresenter localDiscoverLoadingStatePresenter = b;
     DiscoverLoadingStatePresenter.LoadingState localLoadingState = a;
-    Timber.c("DiscoverLoadingStatePresenter", "Setting loading state %s (compatibility is %s)", new Object[] { localLoadingState, i });
+    DiscoverEndpointManager.Compatibility localCompatibility = i;
     if ((i != DiscoverEndpointManager.Compatibility.UNKNOWN) && (i != DiscoverEndpointManager.Compatibility.SUPPORTED)) {
       switch (DiscoverLoadingStatePresenter.3.b[i.ordinal()])
       {
       default: 
-        localDiscoverLoadingStatePresenter.a(2131493139);
+        localDiscoverLoadingStatePresenter.a(2131493138);
       }
     }
     while (h == null)
     {
       return;
-      localDiscoverLoadingStatePresenter.a(2131493141);
+      localDiscoverLoadingStatePresenter.a(2131493140);
       return;
     }
     if (h.a() == 0) {}
@@ -59,7 +58,7 @@ final class DiscoverLoadingStatePresenter$2
       localDiscoverLoadingStatePresenter.a();
       return;
     }
-    localDiscoverLoadingStatePresenter.a(2131493139);
+    localDiscoverLoadingStatePresenter.a(2131493138);
   }
 }
 

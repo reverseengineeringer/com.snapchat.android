@@ -1,16 +1,39 @@
-public abstract class fi
+@cfu
+public final class fi
 {
-  public static fi a(Class paramClass)
+  static
   {
-    if (System.getProperty("java.vm.name").equalsIgnoreCase("Dalvik")) {
-      return new fd(paramClass.getSimpleName());
+    try
+    {
+      a = new fi();
+      return;
     }
-    return new fg(paramClass.getSimpleName());
+    catch (Throwable localThrowable)
+    {
+      b = localThrowable;
+    }
   }
   
-  public abstract void a(String paramString);
+  public static fi a()
+  {
+    if (a == null) {
+      throw new cfm("com.googlecode.mp4parser.RequiresParseDetailAspect", b);
+    }
+    return a;
+  }
   
-  public abstract void b(String paramString);
+  @cfv
+  public static void a(cfl paramcfl)
+  {
+    if ((paramcfl.a() instanceof fc))
+    {
+      if (!((fc)paramcfl.a()).isParsed()) {
+        ((fc)paramcfl.a()).parseDetails();
+      }
+      return;
+    }
+    throw new RuntimeException("Only methods in subclasses of " + fc.class.getName() + " can  be annotated with ParseDetail");
+  }
 }
 
 /* Location:

@@ -1,9 +1,6 @@
-.class final Lagn$1;
+.class final synthetic Lagn$1;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 
 # annotations
@@ -12,67 +9,93 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1008
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic a:Lcom/snapchat/android/model/Friend;
-
-.field final synthetic b:Lagn;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Lagn;Lcom/snapchat/android/model/Friend;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 142
-    iput-object p1, p0, Lagn$1;->b:Lagn;
-
-    iput-object p2, p0, Lagn$1;->a:Lcom/snapchat/android/model/Friend;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 2
-
-    .prologue
-    .line 144
-    if-eqz p2, :cond_0
-
-    .line 145
-    iget-object v0, p0, Lagn$1;->b:Lagn;
-
-    invoke-static {v0}, Lagn;->a(Lagn;)Lagn$a;
+    .line 27
+    invoke-static {}, Lcom/snapchat/android/model/Friend$Direction;->values()[Lcom/snapchat/android/model/Friend$Direction;
 
     move-result-object v0
 
-    iget-object v1, p0, Lagn$1;->a:Lcom/snapchat/android/model/Friend;
+    array-length v0, v0
 
-    invoke-interface {v0, v1}, Lagn$a;->b(Lcom/snapchat/android/model/Friend;)V
+    new-array v0, v0, [I
 
-    .line 150
+    sput-object v0, Lagn$1;->a:[I
+
+    :try_start_0
+    sget-object v0, Lagn$1;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/model/Friend$Direction;->INCOMING:Lcom/snapchat/android/model/Friend$Direction;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend$Direction;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_2
+
     :goto_0
+    :try_start_1
+    sget-object v0, Lagn$1;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/model/Friend$Direction;->OUTGOING:Lcom/snapchat/android/model/Friend$Direction;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend$Direction;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :goto_1
+    :try_start_2
+    sget-object v0, Lagn$1;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/model/Friend$Direction;->BOTH:Lcom/snapchat/android/model/Friend$Direction;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend$Direction;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
+
+    :goto_2
     return-void
 
-    .line 147
-    :cond_0
-    iget-object v0, p0, Lagn$1;->b:Lagn;
+    :catch_0
+    move-exception v0
 
-    invoke-static {v0}, Lagn;->a(Lagn;)Lagn$a;
+    goto :goto_2
 
-    move-result-object v0
+    :catch_1
+    move-exception v0
 
-    iget-object v1, p0, Lagn$1;->a:Lcom/snapchat/android/model/Friend;
+    goto :goto_1
 
-    invoke-interface {v0, v1}, Lagn$a;->c(Lcom/snapchat/android/model/Friend;)V
+    :catch_2
+    move-exception v0
 
     goto :goto_0
 .end method

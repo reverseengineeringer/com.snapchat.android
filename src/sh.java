@@ -1,20 +1,32 @@
-public abstract class sh<T extends si>
-  extends sq
-  implements ts.b<T>
+import javax.inject.Provider;
+
+public final class sh
+  implements bvk<sg>
 {
-  private static final String TAG = "SquareBlockerRequestTask";
-  private final sh.a mCallback;
+  private final Provider<qw> mCashErrorReporterProvider;
+  private final bvk<rl> supertypeInjector;
   
-  protected sh(@cgb sh.a parama)
+  static
   {
-    mCallback = parama;
+    if (!sh.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  public static abstract interface a
+  private sh(bvk<rl> parambvk, Provider<qw> paramProvider)
   {
-    public abstract void a(@cgc si paramsi);
-    
-    public abstract void a(@cgc si paramsi, int paramInt);
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mCashErrorReporterProvider = paramProvider;
+  }
+  
+  public static bvk<sg> a(bvk<rl> parambvk, Provider<qw> paramProvider)
+  {
+    return new sh(parambvk, paramProvider);
   }
 }
 

@@ -1,24 +1,24 @@
 package com.snapchat.android.fragments.signup;
 
-import amk;
-import and;
-import aok;
-import aol;
+import anh;
+import aoa;
+import apg;
+import aph;
 import java.util.Set;
 
 final class PickUsernameFragment$1
-  implements aok
+  implements apg
 {
   PickUsernameFragment$1(PickUsernameFragment paramPickUsernameFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
+    int i = aph.a(paramanh);
     if (PickUsernameFragment.a(a).contains(Integer.valueOf(i)))
     {
       PickUsernameFragment.a(a).remove(Integer.valueOf(i));
-      if ((paramamk instanceof and)) {
-        PickUsernameFragment.a(a, (and)paramamk);
+      if ((paramanh instanceof aoa)) {
+        PickUsernameFragment.a(a, (aoa)paramanh);
       }
     }
   }

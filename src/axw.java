@@ -1,29 +1,23 @@
-import javax.inject.Provider;
-
 public final class axw
-  implements buj<axu>
 {
-  private final Provider<bgk> mClockProvider;
+  @chd
+  public final aza mAlgorithm;
+  @chc
+  public final axn mCache;
+  @chc
+  public final String mKey;
   
-  static
+  public axw(@chc axn paramaxn, @chc String paramString, @chd aza paramaza)
   {
-    if (!axw.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
+    if (paramaxn == null) {
+      throw new NullPointerException("cache is null");
     }
-  }
-  
-  private axw(Provider<bgk> paramProvider)
-  {
-    assert (paramProvider != null);
-    mClockProvider = paramProvider;
-  }
-  
-  public static buj<axu> a(Provider<bgk> paramProvider)
-  {
-    return new axw(paramProvider);
+    if (paramString == null) {
+      throw new NullPointerException("key is null");
+    }
+    mCache = paramaxn;
+    mKey = paramString;
+    mAlgorithm = paramaza;
   }
 }
 

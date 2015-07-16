@@ -2,50 +2,33 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final a:Ljava/lang/Runnable;
-
-.field final b:I
-
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;I)V
-    .locals 0
+.method public static a(JJ)I
+    .locals 2
 
     .prologue
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 14
+    cmp-long v0, p0, p2
 
-    .line 11
-    iput-object p1, p0, Lbgu;->a:Ljava/lang/Runnable;
+    if-gez v0, :cond_0
 
-    .line 12
-    iput p2, p0, Lbgu;->b:I
+    const/4 v0, -0x1
 
-    .line 13
-    return-void
-.end method
+    :goto_0
+    return v0
 
+    :cond_0
+    cmp-long v0, p0, p2
 
-# virtual methods
-.method public final run()V
-    .locals 1
+    if-nez v0, :cond_1
 
-    .prologue
-    .line 17
-    iget v0, p0, Lbgu;->b:I
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+    goto :goto_0
 
-    .line 18
-    iget-object v0, p0, Lbgu;->a:Ljava/lang/Runnable;
+    :cond_1
+    const/4 v0, 0x1
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    .line 19
-    return-void
+    goto :goto_0
 .end method

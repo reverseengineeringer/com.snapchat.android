@@ -1,21 +1,56 @@
-public abstract class cgm
-  implements Comparable<cgm>
+final class cgm
+  implements cfn
 {
-  public abstract long a(long paramLong, int paramInt);
+  Object a;
+  Object b;
+  Object[] c;
+  cfl.a d;
   
-  public abstract long a(long paramLong1, long paramLong2);
+  public cgm(cfl.a parama, Object paramObject1, Object paramObject2, Object[] paramArrayOfObject)
+  {
+    d = parama;
+    a = paramObject1;
+    b = paramObject2;
+    c = paramArrayOfObject;
+  }
   
-  public abstract cgn a();
+  public final Object a()
+  {
+    return b;
+  }
   
-  public abstract int b(long paramLong1, long paramLong2);
+  public final String toString()
+  {
+    return d.toString();
+  }
   
-  public abstract boolean b();
-  
-  public abstract long c(long paramLong1, long paramLong2);
-  
-  public abstract boolean c();
-  
-  public abstract long d();
+  static final class a
+    implements cfl.a
+  {
+    String a;
+    cfo b;
+    cgi c;
+    private int d;
+    
+    public a(int paramInt, String paramString, cfo paramcfo, cgi paramcgi)
+    {
+      a = paramString;
+      b = paramcfo;
+      c = paramcgi;
+      d = paramInt;
+    }
+    
+    public final String toString()
+    {
+      cgr localcgr = cgr.k;
+      StringBuffer localStringBuffer = new StringBuffer();
+      localStringBuffer.append(cgr.a(a));
+      localStringBuffer.append("(");
+      localStringBuffer.append(((cgp)b).b(localcgr));
+      localStringBuffer.append(")");
+      return localStringBuffer.toString();
+    }
+  }
 }
 
 /* Location:

@@ -4,424 +4,559 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x12
+.annotation build Lawj;
 .end annotation
 
 
 # instance fields
-.field private final a:Lajm;
+.field protected a:Lxg;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
 
-.field private final b:Lcom/snapchat/videotranscoder/utils/MimeTools;
+.field protected b:Lcom/snapchat/android/camera/model/CameraModel;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
 
-.field private final c:Lazo;
+.field protected c:Lxf;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
+
+.field protected d:Lxj;
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
+.end field
+
+.field private final e:Laya;
+
+.field private final f:Lob;
 
 
 # direct methods
-.method public constructor <init>(Lajm;)V
+.method protected constructor <init>()V
     .locals 2
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
 
     .prologue
-    .line 52
-    invoke-static {}, Lcom/snapchat/videotranscoder/utils/MimeTools;->getInstance()Lcom/snapchat/videotranscoder/utils/MimeTools;
+    .line 64
+    invoke-static {}, Laya;->a()Laya;
 
     move-result-object v0
 
-    new-instance v1, Lazo;
+    new-instance v1, Lob;
 
-    invoke-direct {v1}, Lazo;-><init>()V
+    invoke-direct {v1}, Lob;-><init>()V
 
-    invoke-direct {p0, p1, v0, v1}, Lwv;-><init>(Lajm;Lcom/snapchat/videotranscoder/utils/MimeTools;Lazo;)V
+    invoke-direct {p0, v0, v1}, Lwv;-><init>(Laya;Lob;)V
 
-    .line 53
+    .line 65
     return-void
 .end method
 
-.method private constructor <init>(Lajm;Lcom/snapchat/videotranscoder/utils/MimeTools;Lazo;)V
-    .locals 0
+.method private constructor <init>(Laya;Lob;)V
+    .locals 1
 
     .prologue
-    .line 56
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
-    iput-object p1, p0, Lwv;->a:Lajm;
+    .line 69
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    .line 58
-    iput-object p2, p0, Lwv;->b:Lcom/snapchat/videotranscoder/utils/MimeTools;
+    move-result-object v0
 
-    .line 59
-    iput-object p3, p0, Lwv;->c:Lazo;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
-    .line 60
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Lazy;->a(Lwv;)V
+
+    .line 70
+    iput-object p1, p0, Lwv;->e:Laya;
+
+    .line 71
+    iput-object p2, p0, Lwv;->f:Lob;
+
+    .line 72
     return-void
-.end method
-
-.method private b(Ljava/lang/String;)Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-    .locals 3
-
-    .prologue
-    .line 95
-    :try_start_0
-    iget-object v0, p0, Lwv;->b:Lcom/snapchat/videotranscoder/utils/MimeTools;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Lcom/snapchat/videotranscoder/utils/MimeTools;->getMediaFormatFromFile(Ljava/lang/String;Z)Landroid/media/MediaFormat;
-
-    move-result-object v0
-
-    .line 96
-    iget-object v1, p0, Lwv;->b:Lcom/snapchat/videotranscoder/utils/MimeTools;
-
-    invoke-virtual {v1, v0}, Lcom/snapchat/videotranscoder/utils/MimeTools;->getAudioSampleRate(Landroid/media/MediaFormat;)I
-
-    move-result v1
-
-    .line 97
-    iget-object v2, p0, Lwv;->b:Lcom/snapchat/videotranscoder/utils/MimeTools;
-
-    invoke-virtual {v2, v0}, Lcom/snapchat/videotranscoder/utils/MimeTools;->getAudioChannelCount(Landroid/media/MediaFormat;)I
-
-    move-result v0
-
-    .line 98
-    const-string v2, "audio/mp4a-latm"
-
-    invoke-static {v2, v1, v0}, Landroid/media/MediaFormat;->createAudioFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
-
-    move-result-object v0
-
-    .line 100
-    const-string v1, "bitrate"
-
-    const v2, 0xe000
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    .line 101
-    new-instance v1, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
-
-    const-string v2, "audio/mp4a-latm"
-
-    invoke-direct {v1, v2, v0}, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;-><init>(Ljava/lang/String;Landroid/media/MediaFormat;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v1
-
-    .line 102
-    :catch_0
-    move-exception v0
-
-    .line 103
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    .line 104
-    new-instance v0, Lcom/snapchat/videotranscoder/task/SetupException;
-
-    invoke-direct {v0}, Lcom/snapchat/videotranscoder/task/SetupException;-><init>()V
-
-    throw v0
-
-    .line 106
-    :cond_0
-    new-instance v1, Lcom/snapchat/videotranscoder/task/SetupException;
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Lcom/snapchat/videotranscoder/task/SetupException;-><init>(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
-    .locals 14
+.method public final a()V
+    .locals 4
 
     .prologue
-    const/4 v13, 0x1
+    .line 191
+    iget-object v0, p0, Lwv;->b:Lcom/snapchat/android/camera/model/CameraModel;
 
-    const/4 v12, 0x0
+    iget-object v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->h:Lwy$b;
 
-    .line 115
-    new-instance v1, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;
+    .line 192
+    if-nez v0, :cond_1
 
-    new-instance v0, Ljava/io/File;
+    .line 193
+    const-string v0, "Null camera when initializing VideoCameraHandler"
 
-    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v1, v0}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;-><init>(Ljava/io/File;)V
-
-    .line 117
-    :try_start_0
-    new-instance v7, Laue;
-
-    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->getWidth()I
-
-    move-result v0
-
-    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->getHeight()I
-
-    move-result v2
-
-    invoke-direct {v7, v0, v2}, Laue;-><init>(II)V
-
-    .line 118
-    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->getDurationMs()J
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-wide v8
-
-    .line 122
-    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->release()V
-
-    .line 125
-    new-instance v10, Lxa;
-
-    invoke-direct {v10, v7}, Lxa;-><init>(Laue;)V
-
-    .line 126
-    long-to-int v0, v8
-
-    const v1, 0x1a6667
-
-    div-int v0, v1, v0
-
-    mul-int/lit16 v0, v0, 0x3e8
-
-    mul-int/lit8 v0, v0, 0x8
-
-    const v1, 0x3d0900
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v11
-
-    .line 128
-    new-instance v0, Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;
-
-    iget-object v1, p0, Lwv;->a:Lajm;
-
-    invoke-virtual {v1}, Lajm;->q()[F
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    iget-object v1, p0, Lwv;->a:Lajm;
-
-    iget-object v4, v1, Lajm;->mShaderFilter:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-
-    sget-object v5, Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$VideoChannelSource;->ORIGINAL:Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$VideoChannelSource;
-
-    iget-object v1, p0, Lwv;->a:Lajm;
-
-    invoke-virtual {v1}, Lajm;->m()Z
+    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->e()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
-    sget-object v6, Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$AudioChannelSource;->SILENCE:Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$AudioChannelSource;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
+    move-result-object v1
+
+    new-instance v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
+
+    sget-object v3, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
+
+    invoke-direct {v2, v3, v0}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 200
+    :cond_0
     :goto_0
-    move-object v1, p1
+    return-void
 
-    invoke-direct/range {v0 .. v6}, Lcom/snapchat/videotranscoder/task/VideoFileMediaSource;-><init>(Ljava/lang/String;[FLandroid/graphics/Bitmap;Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$VideoChannelSource;Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$AudioChannelSource;)V
+    .line 196
+    :cond_1
+    invoke-virtual {p0}, Lwv;->b()V
 
-    .line 138
-    new-instance v6, Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
+    .line 197
+    new-instance v0, Landroid/os/HandlerThread;
 
-    new-array v1, v13, [Lcom/snapchat/videotranscoder/task/MediaSource;
+    const-string v1, "Video Recording Handler Thread"
 
-    aput-object v0, v1, v12
+    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lwv;->a:Lajm;
+    .line 198
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    iget-object v0, v0, Lajm;->mTranscodingState:Lwu;
+    .line 199
+    iget-object v1, p0, Lwv;->a:Lxg;
 
-    invoke-virtual {v0}, Lwu;->b()Ljava/lang/String;
+    new-instance v2, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;
 
-    move-result-object v2
-
-    invoke-virtual {v10, v11}, Lxa;->a(I)Laue;
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    invoke-direct {v2, v0}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;-><init>(Landroid/os/Looper;)V
 
-    new-instance v0, Lnt;
+    iput-object v2, v1, Lxg;->b:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;
 
-    invoke-direct {v0, v7}, Lnt;-><init>(Laue;)V
+    goto :goto_0
+.end method
 
-    iget-object v3, p0, Lwv;->c:Lazo;
+.method public final a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lwr;Z)V
+    .locals 2
+    .param p1    # Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .param p2    # Lwr;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    invoke-virtual {v3, v0}, Lazo;->a(Ljava/lang/Throwable;)V
+    .prologue
+    .line 178
+    iget-object v0, p0, Lwv;->a:Lxg;
 
-    move-object v0, v7
+    iget-object v0, v0, Lxg;->b:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;
 
+    .line 179
+    if-eqz v0, :cond_0
+
+    .line 180
+    const/16 v1, 0x64
+
+    invoke-virtual {v0, v1, p1}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
+
+    .line 181
+    if-eqz p3, :cond_0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->waitDone()Z
+
+    .line 183
     :cond_0
-    const-string v3, "video/avc"
+    iget-object v0, p0, Lwv;->b:Lcom/snapchat/android/camera/model/CameraModel;
 
-    invoke-virtual {v0}, Laue;->b()I
-
-    move-result v4
-
-    invoke-virtual {v0}, Laue;->a()I
-
-    move-result v5
-
-    invoke-static {v3, v4, v5}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
-
-    move-result-object v4
-
-    const-string v3, "TranscoderConfigurationProvider"
-
-    const-string v5, "TranscoderConfiguration seting KEY_HEIGHT %d, KEY_WIDTH %d"
-
-    const/4 v7, 0x2
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    invoke-virtual {v0}, Laue;->a()I
-
-    move-result v10
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    aput-object v10, v7, v12
-
-    invoke-virtual {v0}, Laue;->b()I
-
-    move-result v10
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    aput-object v10, v7, v13
-
-    invoke-static {v3, v5, v7}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    const-string v3, "height"
-
-    invoke-virtual {v0}, Laue;->a()I
-
-    move-result v5
-
-    invoke-virtual {v4, v3, v5}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const-string v3, "width"
-
-    invoke-virtual {v0}, Laue;->b()I
+    invoke-virtual {v0}, Lcom/snapchat/android/camera/model/CameraModel;->b()Z
 
     move-result v0
 
-    invoke-virtual {v4, v3, v0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    if-eqz v0, :cond_1
 
-    const-string v0, "color-format"
+    .line 186
+    const/4 v0, 0x0
 
-    const v3, 0x7f000789
+    invoke-virtual {p2, v0}, Lwr;->a(Z)V
 
-    invoke-virtual {v4, v0, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    .line 188
+    :cond_1
+    return-void
+.end method
 
-    const-string v0, "bitrate"
+.method public final a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lwr;Lavc;Landroid/view/Surface;)Z
+    .locals 8
+    .param p3    # Lavc;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Landroid/view/Surface;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
-    invoke-virtual {v4, v0, v11}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    .prologue
+    .line 80
+    iget-object v0, p0, Lwv;->e:Laya;
 
-    const-string v0, "durationUs"
+    invoke-virtual {v0}, Laya;->b()Ljava/io/File;
 
-    const-wide/16 v10, 0x3e8
+    move-result-object v0
 
-    mul-long/2addr v8, v10
+    .line 81
+    iget-object v1, p0, Lwv;->b:Lcom/snapchat/android/camera/model/CameraModel;
 
-    invoke-virtual {v4, v0, v8, v9}, Landroid/media/MediaFormat;->setLong(Ljava/lang/String;J)V
+    iget-object v1, v1, Lcom/snapchat/android/camera/model/CameraModel;->h:Lwy$b;
 
-    const-string v0, "frame-rate"
+    .line 82
+    iget-object v2, p0, Lwv;->a:Lxg;
 
-    const/16 v3, 0x1e
+    iget-object v2, v2, Lxg;->b:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;
 
-    invoke-virtual {v4, v0, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    .line 83
+    if-eqz v1, :cond_0
 
-    const-string v0, "i-frame-interval"
+    if-eqz v2, :cond_0
 
-    const/16 v3, 0xa
+    if-nez v0, :cond_2
 
-    invoke-virtual {v4, v0, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    .line 84
+    :cond_0
+    if-nez v0, :cond_1
 
-    new-instance v3, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
+    .line 85
+    sget-object v0, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->VIDEO_STORAGE_EXCEPTION:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
 
-    const-string v0, "video/avc"
+    invoke-interface {p1, v0}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
 
-    invoke-direct {v3, v0, v4}, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;-><init>(Ljava/lang/String;Landroid/media/MediaFormat;)V
+    .line 89
+    :goto_0
+    const/4 v0, 0x0
 
-    invoke-direct {p0, p1}, Lwv;->b(Ljava/lang/String;)Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
+    .line 116
+    :goto_1
+    return v0
+
+    .line 87
+    :cond_1
+    sget-object v0, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->INITIALIZATION_ERROR:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
+
+    invoke-interface {p1, v0}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
+
+    goto :goto_0
+
+    .line 92
+    :cond_2
+    iget-object v3, p0, Lwv;->a:Lxg;
+
+    const/4 v4, 0x1
+
+    iput-boolean v4, v3, Lxg;->a:Z
+
+    .line 93
+    invoke-interface {v1}, Lwy$b;->c()Landroid/hardware/Camera$Parameters;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_5
+
+    iget-object v4, p0, Lwv;->b:Lcom/snapchat/android/camera/model/CameraModel;
+
+    invoke-virtual {v4}, Lcom/snapchat/android/camera/model/CameraModel;->b()Z
+
+    move-result v4
+
+    if-nez v4, :cond_3
+
+    invoke-virtual {v3}, Landroid/hardware/Camera$Parameters;->getSupportedFocusModes()Ljava/util/List;
 
     move-result-object v4
 
-    move-object v0, v6
+    if-eqz v4, :cond_3
 
-    move v5, v12
+    const-string v5, "continuous-video"
 
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;-><init>([Lcom/snapchat/videotranscoder/task/MediaSource;Ljava/lang/String;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;Z)V
+    invoke-interface {v4, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    return-object v6
+    move-result v4
 
-    .line 119
+    if-eqz v4, :cond_3
+
+    const-string v4, "continuous-video"
+
+    invoke-virtual {v3, v4}, Landroid/hardware/Camera$Parameters;->setFocusMode(Ljava/lang/String;)V
+
+    :cond_3
+    invoke-static {}, Lakn;->a()Lakn;
+
+    move-result-object v4
+
+    const-string v5, "USE_VIDEO_STABILIZATION"
+
+    const-string v6, "option"
+
+    const-string v7, "on"
+
+    invoke-virtual {v4, v5, v6, v7}, Lakn;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "on"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    sget-boolean v4, Latt;->SUPPORTS_VIDEO_STABILIZATION:Z
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {v3}, Landroid/hardware/Camera$Parameters;->isVideoStabilizationSupported()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4}, Landroid/hardware/Camera$Parameters;->setVideoStabilization(Z)V
+
+    :cond_4
+    invoke-interface {v1, v3}, Lwy$b;->a(Landroid/hardware/Camera$Parameters;)V
+
+    .line 94
+    :cond_5
+    iget-object v3, p0, Lwv;->c:Lxf;
+
+    iget-boolean v3, v3, Lxf;->a:Z
+
+    if-eqz v3, :cond_6
+
+    iget-object v3, p0, Lwv;->b:Lcom/snapchat/android/camera/model/CameraModel;
+
+    invoke-virtual {v3}, Lcom/snapchat/android/camera/model/CameraModel;->b()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_9
+
+    const/4 v3, 0x1
+
+    invoke-virtual {p2, v3}, Lwr;->a(Z)V
+
+    .line 103
+    :cond_6
+    :goto_2
+    const/4 v3, 0x0
+
+    invoke-interface {v1, v3}, Lwy$b;->a(Lxe;)V
+
+    .line 105
+    :try_start_0
+    invoke-interface {v1}, Lwy$b;->d()V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 111
+    if-eqz p4, :cond_7
+
+    .line 112
+    iput-object p4, v2, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->c:Landroid/view/Surface;
+
+    .line 114
+    :cond_7
+    invoke-virtual {v2, p1, p3, v0}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lavc;Ljava/io/File;)V
+
+    .line 115
+    iget-object v1, p0, Lwv;->f:Lob;
+
+    sget-boolean v0, Latt;->HAS_SURFACE_TEXTURE_RECORDING:Z
+
+    if-eqz v0, :cond_8
+
+    invoke-virtual {p3}, Lavc;->c()D
+
+    move-result-wide v2
+
+    iget-object v0, v1, Lob;->mScreenParameterProvider:Lpm;
+
+    iget-object v0, v0, Lpm;->mResolution:Lavc;
+
+    invoke-virtual {v0}, Lavc;->c()D
+
+    move-result-wide v4
+
+    sub-double/2addr v2, v4
+
+    iget-object v0, v1, Lob;->mScreenParameterProvider:Lpm;
+
+    iget-object v0, v0, Lpm;->mResolution:Lavc;
+
+    invoke-virtual {p3}, Lavc;->a()I
+
+    move-result v4
+
+    int-to-double v4, v4
+
+    invoke-virtual {v0}, Lavc;->a()I
+
+    move-result v6
+
+    int-to-double v6, v6
+
+    div-double/2addr v4, v6
+
+    invoke-virtual {v0, v4, v5}, Lavc;->a(D)Lavc;
+
+    move-result-object v0
+
+    const-wide/high16 v4, 0x4059000000000000L    # 100.0
+
+    invoke-virtual {v0}, Lavc;->d()I
+
+    move-result v6
+
+    invoke-virtual {p3}, Lavc;->d()I
+
+    move-result v7
+
+    sub-int/2addr v6, v7
+
+    invoke-static {v6}, Ljava/lang/Math;->abs(I)I
+
+    move-result v6
+
+    invoke-virtual {v0}, Lavc;->d()I
+
+    move-result v0
+
+    invoke-virtual {p3}, Lavc;->d()I
+
+    move-result v7
+
+    invoke-static {v0, v7}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    div-int v0, v6, v0
+
+    int-to-double v6, v0
+
+    mul-double/2addr v4, v6
+
+    const-wide/16 v6, 0x0
+
+    cmpl-double v0, v2, v6
+
+    if-lez v0, :cond_a
+
+    new-instance v0, Lop;
+
+    invoke-direct {v0, v4, v5}, Lop;-><init>(D)V
+
+    :goto_3
+    if-eqz v0, :cond_8
+
+    iget-object v1, v1, Lob;->mExceptionReporter:Lban;
+
+    invoke-virtual {v1, v0}, Lban;->a(Ljava/lang/Throwable;)V
+
+    .line 116
+    :cond_8
+    const/4 v0, 0x1
+
+    goto/16 :goto_1
+
+    .line 94
+    :cond_9
+    const/4 v3, 0x1
+
+    invoke-virtual {p2, v3}, Lwr;->b(Z)V
+
+    goto :goto_2
+
+    .line 107
     :catch_0
     move-exception v0
 
-    .line 120
-    :try_start_1
-    new-instance v2, Lcom/snapchat/videotranscoder/task/SetupException;
+    sget-object v0, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->CAMERA_UNLOCK_EXCEPTION:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-interface {p1, v0}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
 
-    const-string v4, "Failed to read video metadata: "
+    .line 108
+    const/4 v0, 0x0
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    goto/16 :goto_1
 
-    invoke-virtual {v0}, Ljava/io/IOException;->toString()Ljava/lang/String;
+    .line 115
+    :cond_a
+    const-wide/16 v6, 0x0
 
-    move-result-object v4
+    cmpg-double v0, v2, v6
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-gez v0, :cond_b
 
-    move-result-object v3
+    new-instance v0, Loo;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v0, v4, v5}, Loo;-><init>(D)V
 
-    move-result-object v3
+    goto :goto_3
 
-    invoke-direct {v2, v3, v0}, Lcom/snapchat/videotranscoder/task/SetupException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :cond_b
+    const/4 v0, 0x0
 
-    throw v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    goto :goto_3
+.end method
 
-    .line 122
-    :catchall_0
-    move-exception v0
+.method public final b()V
+    .locals 2
 
-    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->release()V
+    .prologue
+    .line 203
+    iget-object v0, p0, Lwv;->a:Lxg;
 
-    throw v0
+    iget-object v0, v0, Lxg;->b:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;
 
-    .line 128
-    :cond_1
-    sget-object v6, Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$AudioChannelSource;->ORIGINAL:Lcom/snapchat/videotranscoder/task/VideoFileMediaSource$AudioChannelSource;
+    .line 204
+    if-eqz v0, :cond_0
 
-    goto/16 :goto_0
+    .line 205
+    invoke-virtual {v0}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;->a()V
+
+    .line 207
+    :cond_0
+    iget-object v0, p0, Lwv;->a:Lxg;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lxg;->b:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler;
+
+    .line 208
+    return-void
 .end method

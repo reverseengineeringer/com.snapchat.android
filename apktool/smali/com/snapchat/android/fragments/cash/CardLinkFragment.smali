@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqw;
+.implements Lrm;
 
 
 # annotations
@@ -65,20 +65,20 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     invoke-direct {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>()V
 
-    .line 61
+    .line 64
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->r:Z
 
-    .line 62
+    .line 65
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->s:Z
 
-    .line 551
+    .line 570
     return-void
 .end method
 
@@ -88,7 +88,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->p:Landroid/widget/Button;
 
     invoke-virtual {v0}, Landroid/widget/Button;->getVisibility()I
@@ -119,7 +119,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
     move-result v0
@@ -130,7 +130,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
     :cond_0
     return-void
@@ -142,7 +142,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->b:Landroid/widget/ScrollView;
 
     const/16 v1, 0x21
@@ -182,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->c:Lcom/snapchat/android/ui/cash/CardNumberEditText;
 
     return-object v0
@@ -191,7 +191,7 @@
 .method private static b(Lcom/snapchat/android/api2/cash/blockers/CardInputError;)Ljava/lang/String;
     .locals 6
     .param p0    # Lcom/snapchat/android/api2/cash/blockers/CardInputError;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -202,7 +202,7 @@
 
     const/4 v3, 0x0
 
-    .line 484
+    .line 503
     sget-object v0, Lcom/snapchat/android/fragments/cash/CardLinkFragment$6;->a:[I
 
     invoke-virtual {p0}, Lcom/snapchat/android/api2/cash/blockers/CardInputError;->ordinal()I
@@ -213,7 +213,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 509
+    .line 528
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -222,7 +222,7 @@
 
     const v2, 0x7f0c0036
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -238,7 +238,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v5, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v5, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -253,19 +253,19 @@
     :goto_0
     return-object v0
 
-    .line 487
+    .line 506
     :pswitch_0
     new-array v0, v3, [Ljava/lang/Object;
 
     const v1, 0x7f0c006c
 
-    invoke-static {v4, v1, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v1, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 489
+    .line 508
     :pswitch_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -275,7 +275,7 @@
 
     const v2, 0x7f0c0153
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -291,7 +291,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v5, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v5, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -305,7 +305,7 @@
 
     goto :goto_0
 
-    .line 493
+    .line 512
     :pswitch_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -315,7 +315,7 @@
 
     const v2, 0x7f0c0155
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -331,7 +331,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v5, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v5, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -345,7 +345,7 @@
 
     goto :goto_0
 
-    .line 496
+    .line 515
     :pswitch_3
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -355,7 +355,7 @@
 
     const v2, 0x7f0c0156
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -371,7 +371,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v5, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v5, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -385,7 +385,7 @@
 
     goto :goto_0
 
-    .line 499
+    .line 518
     :pswitch_4
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -393,9 +393,9 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    const v2, 0x7f0c02a0
+    const v2, 0x7f0c029e
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -413,7 +413,7 @@
 
     const v2, 0x7f0c01c3
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -427,7 +427,7 @@
 
     goto/16 :goto_0
 
-    .line 502
+    .line 521
     :pswitch_5
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -437,7 +437,7 @@
 
     const v2, 0x7f0c0065
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -455,7 +455,7 @@
 
     const v2, 0x7f0c01c1
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -469,7 +469,7 @@
 
     goto/16 :goto_0
 
-    .line 505
+    .line 524
     :pswitch_6
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -479,7 +479,7 @@
 
     const v2, 0x7f0c0182
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -497,7 +497,7 @@
 
     const v2, 0x7f0c01d0
 
-    invoke-static {v4, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -511,7 +511,7 @@
 
     goto/16 :goto_0
 
-    .line 484
+    .line 503
     nop
 
     :pswitch_data_0
@@ -534,7 +534,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->h:Landroid/widget/TextView;
 
     invoke-static {p1}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->b(Lcom/snapchat/android/api2/cash/blockers/CardInputError;)Ljava/lang/String;
@@ -570,7 +570,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->l:Landroid/widget/TextView;
 
     invoke-static {p1}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->b(Lcom/snapchat/android/api2/cash/blockers/CardInputError;)Ljava/lang/String;
@@ -614,14 +614,14 @@
 
     const/4 v0, 0x1
 
-    .line 41
+    .line 44
     iget-object v2, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->c:Lcom/snapchat/android/ui/cash/CardNumberEditText;
 
     invoke-virtual {v2}, Lcom/snapchat/android/ui/cash/CardNumberEditText;->getUnformattedText()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v2}, Latb;->a(Ljava/lang/String;)Z
+    invoke-static {v2}, Laua;->a(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -749,7 +749,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->f:Lcom/snapchat/android/ui/cash/CardExpiryEditText;
 
     return-object v0
@@ -761,7 +761,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->o:Landroid/widget/TextView;
 
     invoke-static {p1}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->b(Lcom/snapchat/android/api2/cash/blockers/CardInputError;)Ljava/lang/String;
@@ -801,7 +801,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->i:Lcom/snapchat/android/ui/cash/CardCvvEditText;
 
     return-object v0
@@ -815,7 +815,7 @@
 
     const/4 v3, 0x0
 
-    .line 41
+    .line 44
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
@@ -834,7 +834,7 @@
 
     const v2, 0x7f0c0036
 
-    invoke-static {v4, v2, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -852,7 +852,7 @@
 
     const v2, 0x7f0c006b
 
-    invoke-static {v4, v2, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -869,7 +869,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->j:Landroid/widget/ImageView;
 
     return-object v0
@@ -879,7 +879,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->m:Lcom/snapchat/android/ui/cash/ZipEditText;
 
     return-object v0
@@ -895,7 +895,7 @@
 
     const/4 v1, 0x4
 
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->e:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -951,17 +951,83 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->p:Landroid/widget/Button;
 
     return-object v0
+.end method
+
+.method private i()V
+    .locals 3
+
+    .prologue
+    .line 292
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getWindowManager()Landroid/view/WindowManager;
+
+    move-result-object v0
+
+    .line 293
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    .line 295
+    :try_start_0
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+
+    .line 296
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v1
+
+    invoke-interface {v0, v2, v1}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 302
+    :goto_0
+    return-void
+
+    .line 298
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    const/16 v1, 0x2000
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
+
+    goto :goto_0
 .end method
 
 .method static synthetic j(Lcom/snapchat/android/fragments/cash/CardLinkFragment;)Landroid/widget/ProgressBar;
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->q:Landroid/widget/ProgressBar;
 
     return-object v0
@@ -971,7 +1037,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->a:Lcom/snapchat/android/fragments/cash/CardLinkFragment$a;
 
     return-object v0
@@ -981,7 +1047,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->u:Z
@@ -993,7 +1059,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->mIsVisible:Z
 
     return v0
@@ -1003,7 +1069,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->r:Z
@@ -1015,7 +1081,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 44
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->b:Landroid/widget/ScrollView;
 
     return-object v0
@@ -1027,19 +1093,19 @@
     .locals 1
 
     .prologue
-    .line 297
+    .line 316
     iget-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->s:Z
 
     invoke-static {v0}, Lcom/snapchat/android/analytics/AnalyticsEvents;->k(Z)V
 
-    .line 298
+    .line 317
     new-instance v0, Lcom/snapchat/android/fragments/cash/CardLinkFragment$3;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment$3;-><init>(Lcom/snapchat/android/fragments/cash/CardLinkFragment;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
-    .line 308
+    .line 327
     return-void
 .end method
 
@@ -1047,14 +1113,14 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 331
     new-instance v0, Lcom/snapchat/android/fragments/cash/CardLinkFragment$4;
 
     invoke-direct {v0, p0, p1}, Lcom/snapchat/android/fragments/cash/CardLinkFragment$4;-><init>(Lcom/snapchat/android/fragments/cash/CardLinkFragment;Lcom/snapchat/android/api2/cash/blockers/CardInputError;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
-    .line 341
+    .line 360
     return-void
 .end method
 
@@ -1062,7 +1128,7 @@
     .locals 1
 
     .prologue
-    .line 292
+    .line 311
     sget-object v0, Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;->DRAW_BELOW_FOR_ADJUSTABLE_UI:Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;
 
     return-object v0
@@ -1072,29 +1138,29 @@
     .locals 3
 
     .prologue
-    .line 86
+    .line 90
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->e()V
 
-    .line 88
+    .line 92
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->g(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->g(Landroid/content/Context;)V
 
-    .line 89
+    .line 93
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->s:Z
 
-    .line 90
-    invoke-static {}, Lajx;->ar()Z
+    .line 94
+    invoke-static {}, Lakr;->aq()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 91
+    .line 95
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1113,49 +1179,59 @@
 
     invoke-static {v0, v1, v2}, Lcom/snapchat/android/util/AlertDialogUtils;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 93
+    .line 97
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->S()V
 
-    .line 94
+    .line 98
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->s:Z
 
-    .line 96
+    .line 100
     :cond_0
     return-void
+.end method
+
+.method public final f_()Z
+    .locals 1
+
+    .prologue
+    .line 306
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method public final g()Z
     .locals 2
 
     .prologue
-    .line 274
+    .line 278
     iget-boolean v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->u:Z
 
     if-nez v0, :cond_0
 
-    .line 275
+    .line 279
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->a:Lcom/snapchat/android/fragments/cash/CardLinkFragment$a;
 
     invoke-interface {v0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment$a;->e()V
 
-    .line 278
+    .line 282
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->a:Lcom/snapchat/android/fragments/cash/CardLinkFragment$a;
 
-    .line 280
+    .line 284
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
-    .line 281
+    .line 285
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1168,18 +1244,11 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 282
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final g_()Z
-    .locals 1
-
-    .prologue
     .line 287
-    const/4 v0, 0x1
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->i()V
+
+    .line 288
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -1190,17 +1259,17 @@
     .prologue
     const/16 v2, 0x2000
 
-    .line 70
+    .line 73
     invoke-super {p0, p1}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 71
+    .line 74
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xb
 
     if-lt v0, v1, :cond_0
 
-    .line 72
+    .line 75
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1211,7 +1280,10 @@
 
     invoke-virtual {v0, v2, v2}, Landroid/view/Window;->setFlags(II)V
 
-    .line 74
+    .line 76
+    invoke-direct {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->i()V
+
+    .line 78
     :cond_0
     return-void
 .end method
@@ -1220,8 +1292,8 @@
     .locals 4
 
     .prologue
-    .line 77
-    const v0, 0x7f04001e
+    .line 81
+    const v0, 0x7f04001f
 
     const/4 v1, 0x0
 
@@ -1231,7 +1303,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->mFragmentLayout:Landroid/view/View;
 
-    .line 79
+    .line 83
     const v0, 0x7f0a00c1
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->c(I)Landroid/view/View;
@@ -1240,7 +1312,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0a001f
+    const v1, 0x7f0a0020
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->c(I)Landroid/view/View;
 
@@ -1276,7 +1348,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f08002d
+    const v3, 0x7f08002e
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1333,13 +1405,13 @@
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment$7;-><init>(Lcom/snapchat/android/fragments/cash/CardLinkFragment;)V
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardNumberEditText;->setValidatedInputCallback(Lye;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardNumberEditText;->setValidatedInputCallback(Lza;)V
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->c:Lcom/snapchat/android/ui/cash/CardNumberEditText;
 
-    new-instance v1, Laqj;
+    new-instance v1, Larh;
 
-    invoke-direct {v1}, Laqj;-><init>()V
+    invoke-direct {v1}, Larh;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardNumberEditText;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
 
@@ -1403,13 +1475,13 @@
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment$9;-><init>(Lcom/snapchat/android/fragments/cash/CardLinkFragment;)V
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardExpiryEditText;->setValidatedInputCallback(Lye;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardExpiryEditText;->setValidatedInputCallback(Lza;)V
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->f:Lcom/snapchat/android/ui/cash/CardExpiryEditText;
 
-    new-instance v1, Laqj;
+    new-instance v1, Larh;
 
-    invoke-direct {v1}, Laqj;-><init>()V
+    invoke-direct {v1}, Larh;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardExpiryEditText;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
 
@@ -1469,13 +1541,13 @@
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment$11;-><init>(Lcom/snapchat/android/fragments/cash/CardLinkFragment;)V
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardCvvEditText;->setValidatedInputCallback(Lye;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardCvvEditText;->setValidatedInputCallback(Lza;)V
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->i:Lcom/snapchat/android/ui/cash/CardCvvEditText;
 
-    new-instance v1, Laqj;
+    new-instance v1, Larh;
 
-    invoke-direct {v1}, Laqj;-><init>()V
+    invoke-direct {v1}, Larh;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/CardCvvEditText;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
 
@@ -1545,13 +1617,13 @@
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment$13;-><init>(Lcom/snapchat/android/fragments/cash/CardLinkFragment;)V
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/ZipEditText;->setValidatedInputCallback(Lye;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/ZipEditText;->setValidatedInputCallback(Lza;)V
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->m:Lcom/snapchat/android/ui/cash/ZipEditText;
 
-    new-instance v1, Laqj;
+    new-instance v1, Larh;
 
-    invoke-direct {v1}, Laqj;-><init>()V
+    invoke-direct {v1}, Larh;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/cash/ZipEditText;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
 
@@ -1603,7 +1675,7 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->p:Landroid/widget/Button;
 
@@ -1623,7 +1695,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->q:Landroid/widget/ProgressBar;
 
-    .line 80
+    .line 84
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1636,18 +1708,18 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->t:Landroid/view/animation/Animation;
 
-    .line 81
+    .line 85
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->mFragmentLayout:Landroid/view/View;
 
     return-object v0
 
-    .line 79
+    .line 83
     :cond_0
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/cash/CardLinkFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v3, 0x7f080052
+    const v3, 0x7f080053
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 

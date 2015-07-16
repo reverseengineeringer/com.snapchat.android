@@ -1,149 +1,74 @@
-.class public Labo;
-.super Ljava/lang/Object;
+.class public final Labo;
+.super Labm;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:I
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "type"
-    .end annotation
-.end field
-
-.field public b:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "publisher_name"
-    .end annotation
-.end field
-
-.field public c:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "publisher_formal_name"
-    .end annotation
-.end field
-
-.field public d:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "publisher_international_name"
-    .end annotation
-.end field
-
-.field public e:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "edition_id"
-    .end annotation
-.end field
-
-.field public f:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ds_id"
-    .end annotation
-.end field
-
-.field public g:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ad_id"
-    .end annotation
-.end field
-
-.field public h:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "media_path"
-    .end annotation
-.end field
-
-.field public i:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "overlay_path"
-    .end annotation
-.end field
-
-.field public j:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "thumbnail_path"
-    .end annotation
-.end field
-
-.field public k:F
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "x"
-    .end annotation
-.end field
-
-.field public l:F
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "y"
-    .end annotation
-.end field
-
-.field public m:F
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "width"
-    .end annotation
-.end field
-
-.field public n:F
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "height"
-    .end annotation
-.end field
-
-.field public o:F
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "video_width"
-    .end annotation
-.end field
-
-.field public p:F
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "video_height"
-    .end annotation
-.end field
-
-.field public q:Z
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "link_to_longform"
-    .end annotation
-.end field
-
-.field public r:I
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "caption"
-    .end annotation
-.end field
-
-.field public s:I
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "drawing"
-    .end annotation
-.end field
-
-.field public t:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "filter_info"
-    .end annotation
-.end field
-
-.field public u:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "filter_visual"
-    .end annotation
-.end field
-
-.field public v:I
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "version"
-    .end annotation
-.end field
+# static fields
+.field private static a:Labo;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 8
+    new-instance v0, Labo;
+
+    invoke-direct {v0}, Labo;-><init>()V
+
+    sput-object v0, Labo;->a:Labo;
 
     return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 2
+
+    .prologue
+    .line 11
+    const-string v0, "HasSeenPostToOurStoryDialog"
+
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lazy;->c()Laas;
+
+    move-result-object v1
+
+    invoke-direct {p0, v0, v1}, Labm;-><init>(Ljava/lang/String;Laap;)V
+
+    .line 13
+    return-void
+.end method
+
+.method public static declared-synchronized a()Labo;
+    .locals 2
+
+    .prologue
+    .line 16
+    const-class v0, Labo;
+
+    monitor-enter v0
+
+    :try_start_0
+    sget-object v1, Labo;->a:Labo;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+
+    throw v1
 .end method

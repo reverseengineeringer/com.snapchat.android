@@ -1,14 +1,21 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.util.Collection;
 
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-@Target({java.lang.annotation.ElementType.FIELD})
 @cd
-@interface cy {}
+public final class cy
+{
+  static final ck a = ck.a(", ").b("null");
+  
+  static StringBuilder a(int paramInt)
+  {
+    cx.a(paramInt, "size");
+    return new StringBuilder((int)Math.min(paramInt * 8L, 1073741824L));
+  }
+  
+  static <T> Collection<T> a(Iterable<T> paramIterable)
+  {
+    return (Collection)paramIterable;
+  }
+}
 
 /* Location:
  * Qualified Name:     cy

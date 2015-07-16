@@ -1,293 +1,46 @@
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.AsyncTask;
-import android.os.Build.VERSION;
-import android.provider.Settings.Secure;
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.lang.ref.WeakReference;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.util.Locale;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-public class bvw
-  extends AsyncTask<Void, String, JSONArray>
+public final class bvw
 {
-  protected String a = null;
-  protected String b = null;
-  public Context c = null;
-  protected Boolean d = Boolean.valueOf(false);
-  protected bvn e;
-  private long f = 0L;
-  
-  public bvw(WeakReference<? extends Context> paramWeakReference, String paramString1, String paramString2)
+  public static final class a
   {
-    b = paramString2;
-    a = paramString1;
-    e = null;
-    if (paramWeakReference != null) {}
-    for (paramWeakReference = (Context)paramWeakReference.get();; paramWeakReference = null)
-    {
-      if (paramWeakReference != null)
-      {
-        c = paramWeakReference.getApplicationContext();
-        if (bvj.a(paramWeakReference)) {
-          break label92;
-        }
-      }
-      label92:
-      for (long l = 0L;; l = paramWeakReference.getSharedPreferences("HockeyApp", 0).getLong("usageTime" + buz.b, 0L) / 1000L)
-      {
-        f = l;
-        buz.a(paramWeakReference);
-        return;
-      }
-    }
+    public static final int ptr_classic_header_rotate_view = 2131362188;
+    public static final int ptr_classic_header_rotate_view_header_last_update = 2131362187;
+    public static final int ptr_classic_header_rotate_view_header_text = 2131362185;
+    public static final int ptr_classic_header_rotate_view_header_title = 2131362186;
+    public static final int ptr_classic_header_rotate_view_progressbar = 2131362189;
   }
   
-  private static String a(InputStream paramInputStream)
+  public static final class b
   {
-    BufferedReader localBufferedReader = new BufferedReader(new InputStreamReader(paramInputStream), 1024);
-    StringBuilder localStringBuilder = new StringBuilder();
-    try
-    {
-      for (;;)
-      {
-        String str = localBufferedReader.readLine();
-        if (str == null) {
-          break;
-        }
-        localStringBuilder.append(str + "\n");
-      }
-      try
-      {
-        paramInputStream.close();
-        throw ((Throwable)localObject);
-      }
-      catch (IOException paramInputStream)
-      {
-        for (;;)
-        {
-          paramInputStream.printStackTrace();
-        }
-      }
-    }
-    catch (IOException localIOException)
-    {
-      localIOException = localIOException;
-      localIOException.printStackTrace();
-      try
-      {
-        paramInputStream.close();
-        for (;;)
-        {
-          return localStringBuilder.toString();
-          try
-          {
-            paramInputStream.close();
-          }
-          catch (IOException paramInputStream)
-          {
-            paramInputStream.printStackTrace();
-          }
-        }
-      }
-      catch (IOException paramInputStream)
-      {
-        for (;;)
-        {
-          paramInputStream.printStackTrace();
-        }
-      }
-    }
-    finally {}
+    public static final int cube_ptr_classic_default_header = 2130968642;
+    public static final int cube_ptr_simple_loading = 2130968643;
   }
   
-  private boolean a(JSONArray paramJSONArray, int paramInt)
+  public static final class c
   {
-    int i = 0;
-    for (;;)
-    {
-      int j;
-      int k;
-      try
-      {
-        if (i < paramJSONArray.length())
-        {
-          JSONObject localJSONObject = paramJSONArray.getJSONObject(i);
-          if (localJSONObject.getInt("version") > paramInt)
-          {
-            j = 1;
-            if ((localJSONObject.getInt("version") == paramInt) && (bwm.a(c, localJSONObject.getLong("timestamp"))))
-            {
-              k = 1;
-              String str3 = localJSONObject.getString("minimum_os_version");
-              String str2 = Build.VERSION.RELEASE;
-              if (str2 == null) {
-                break label175;
-              }
-              str1 = str2;
-              if (str2.equalsIgnoreCase("L")) {
-                break label175;
-              }
-              if (bwm.a(str3, str1) > 0) {
-                continue;
-              }
-              m = 1;
-              break label182;
-              if (m == 0) {
-                continue;
-              }
-              if (localJSONObject.has("mandatory")) {
-                d = Boolean.valueOf(localJSONObject.getBoolean("mandatory"));
-              }
-              return true;
-            }
-          }
-          else
-          {
-            j = 0;
-            continue;
-          }
-          k = 0;
-          continue;
-          int m = 0;
-          break label182;
-          i += 1;
-        }
-        else
-        {
-          return false;
-        }
-      }
-      catch (JSONException paramJSONArray)
-      {
-        return false;
-      }
-      label175:
-      String str1 = "5.0";
-      continue;
-      label182:
-      if (j == 0) {
-        if (k == 0) {}
-      }
-    }
+    public static final int cube_ptr_hours_ago = 2131493091;
+    public static final int cube_ptr_last_update = 2131493092;
+    public static final int cube_ptr_minutes_ago = 2131493093;
+    public static final int cube_ptr_pull_down = 2131493094;
+    public static final int cube_ptr_pull_down_to_refresh = 2131493095;
+    public static final int cube_ptr_refresh_complete = 2131493096;
+    public static final int cube_ptr_refreshing = 2131493097;
+    public static final int cube_ptr_release_to_refresh = 2131493098;
+    public static final int cube_ptr_seconds_ago = 2131493099;
   }
   
-  private static String b(String paramString)
+  public static final class d
   {
-    try
-    {
-      paramString = URLEncoder.encode(paramString, "UTF-8");
-      return paramString;
-    }
-    catch (UnsupportedEncodingException paramString) {}
-    return "";
-  }
-  
-  private static JSONArray b(JSONArray paramJSONArray)
-  {
-    JSONArray localJSONArray = new JSONArray();
-    int i = 0;
-    for (;;)
-    {
-      if (i < Math.min(paramJSONArray.length(), 25)) {}
-      try
-      {
-        localJSONArray.put(paramJSONArray.get(i));
-        i += 1;
-        continue;
-        return localJSONArray;
-      }
-      catch (JSONException localJSONException)
-      {
-        for (;;) {}
-      }
-    }
-  }
-  
-  private JSONArray c()
-  {
-    try
-    {
-      int i = Integer.parseInt(buz.b);
-      Object localObject = new JSONArray(bwl.a(c));
-      if (a((JSONArray)localObject, i)) {
-        return (JSONArray)localObject;
-      }
-      localObject = new URL(a("json")).openConnection();
-      ((URLConnection)localObject).addRequestProperty("User-Agent", "HockeySDK/Android");
-      if (Build.VERSION.SDK_INT <= 9) {
-        ((URLConnection)localObject).setRequestProperty("connection", "close");
-      }
-      ((URLConnection)localObject).connect();
-      localObject = new BufferedInputStream(((URLConnection)localObject).getInputStream());
-      String str = a((InputStream)localObject);
-      ((InputStream)localObject).close();
-      localObject = new JSONArray(str);
-      if (a((JSONArray)localObject, i))
-      {
-        localObject = b((JSONArray)localObject);
-        return (JSONArray)localObject;
-      }
-    }
-    catch (Exception localException)
-    {
-      localException.printStackTrace();
-    }
-    return null;
-  }
-  
-  protected final String a(String paramString)
-  {
-    StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(a);
-    localStringBuilder.append("api/2/apps/");
-    if (b != null) {}
-    for (String str = b;; str = c.getPackageName())
-    {
-      localStringBuilder.append(str);
-      localStringBuilder.append("?format=" + paramString);
-      if (Settings.Secure.getString(c.getContentResolver(), "android_id") != null) {
-        localStringBuilder.append("&udid=" + b(Settings.Secure.getString(c.getContentResolver(), "android_id")));
-      }
-      localStringBuilder.append("&os=Android");
-      localStringBuilder.append("&os_version=" + b(buz.e));
-      localStringBuilder.append("&device=" + b(buz.f));
-      localStringBuilder.append("&oem=" + b(buz.g));
-      localStringBuilder.append("&app_version=" + b(buz.b));
-      localStringBuilder.append("&sdk=" + b("HockeySDK"));
-      localStringBuilder.append("&sdk_version=" + b("3.5.0"));
-      localStringBuilder.append("&lang=" + b(Locale.getDefault().getLanguage()));
-      localStringBuilder.append("&usage_time=" + f);
-      return localStringBuilder.toString();
-    }
-  }
-  
-  public void a()
-  {
-    c = null;
-  }
-  
-  protected void a(JSONArray paramJSONArray)
-  {
-    if ((paramJSONArray != null) && (e != null)) {
-      a("apk");
-    }
-  }
-  
-  protected void b()
-  {
-    a = null;
-    b = null;
+    public static final int[] PtrClassicHeader = { 2130772024 };
+    public static final int PtrClassicHeader_ptr_rotate_ani_time = 0;
+    public static final int[] PtrFrameLayout = { 2130772025, 2130772026, 2130772027, 2130772028, 2130772029, 2130772030, 2130772031, 2130772032 };
+    public static final int PtrFrameLayout_ptr_content = 1;
+    public static final int PtrFrameLayout_ptr_duration_to_close = 4;
+    public static final int PtrFrameLayout_ptr_duration_to_close_header = 5;
+    public static final int PtrFrameLayout_ptr_header = 0;
+    public static final int PtrFrameLayout_ptr_keep_header_when_refresh = 7;
+    public static final int PtrFrameLayout_ptr_pull_to_fresh = 6;
+    public static final int PtrFrameLayout_ptr_ratio_of_header_height_to_refresh = 3;
+    public static final int PtrFrameLayout_ptr_resistance = 2;
   }
 }
 

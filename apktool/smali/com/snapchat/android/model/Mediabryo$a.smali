@@ -38,7 +38,7 @@
 
 .field public mIsZipUpload:Z
 
-.field public mMediaExtras:Laiz;
+.field public mMediaExtras:Lajv;
 
 .field public mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
@@ -48,7 +48,7 @@
 
 .field public mOverlayPath:Ljava/lang/String;
 
-.field public mPreviewConfiguration:Lajl;
+.field public mPreviewConfiguration:Lakh;
 
 .field public mRawImageBitmap:Landroid/graphics/Bitmap;
 

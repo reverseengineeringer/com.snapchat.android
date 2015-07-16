@@ -1,36 +1,35 @@
-import com.google.gson.annotations.SerializedName;
+import javax.inject.Provider;
 
 public final class sa
-  extends sh<si>
+  implements bvk<rz>
 {
-  final String mPasscode;
-  private final String mPaymentId;
+  private final Provider<qw> mCashErrorReporterProvider;
+  private final Provider<td> mSquareProvider;
+  private final bvk<rl> supertypeInjector;
   
-  public sa(@cgb String paramString1, @cgc String paramString2, @cgb sh.a parama)
+  static
   {
-    super(parama);
-    mPaymentId = paramString1;
-    mPasscode = paramString2;
-    a(si.class, this);
+    if (!sa.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  public final Object b()
+  private sa(bvk<rl> parambvk, Provider<qw> paramProvider, Provider<td> paramProvider1)
   {
-    return new sa.a();
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mCashErrorReporterProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mSquareProvider = paramProvider1;
   }
   
-  public final String e()
+  public static bvk<rz> a(bvk<rl> parambvk, Provider<qw> paramProvider, Provider<td> paramProvider1)
   {
-    return "cash/payments/" + mPaymentId + "/confirm";
-  }
-  
-  @tx
-  final class a
-  {
-    @SerializedName("passcode")
-    final String passcode = mPasscode;
-    
-    a() {}
+    return new sa(parambvk, paramProvider, paramProvider1);
   }
 }
 

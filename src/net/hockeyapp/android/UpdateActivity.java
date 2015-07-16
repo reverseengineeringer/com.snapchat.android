@@ -21,25 +21,27 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
-import bvl;
-import bvm;
-import bvn;
-import bvp;
-import bvq;
-import bvy;
-import bvz;
-import bwd;
 import bwm;
+import bwn;
+import bwo;
+import bwq;
+import bwr;
+import bwz;
+import bxa;
+import bxe;
+import bxn;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 import net.hockeyapp.android.views.UpdateView;
 
 public class UpdateActivity
   extends Activity
-  implements View.OnClickListener, bvl
+  implements View.OnClickListener, bwm
 {
-  protected bvy a;
-  protected bwm b;
+  protected bwz a;
+  protected bxn b;
   private final int c = 0;
-  private bvq d;
+  private bwr d;
   private Context e;
   
   private String d()
@@ -78,18 +80,18 @@ public class UpdateActivity
   
   protected final void a()
   {
-    a = new bvy(this, getIntent().getStringExtra("url"), new bvp()
+    a = new bwz(this, getIntent().getStringExtra("url"), new bwq()
     {
       public final String a(int paramAnonymousInt)
       {
-        bvn localbvn = bvm.b();
-        if (localbvn != null) {
-          return localbvn.a(paramAnonymousInt);
+        bwo localbwo = bwn.b();
+        if (localbwo != null) {
+          return localbwo.a(paramAnonymousInt);
         }
         return null;
       }
       
-      public final void a(bvy paramAnonymousbvy)
+      public final void a(bwz paramAnonymousbwz)
       {
         b();
       }
@@ -104,7 +106,7 @@ public class UpdateActivity
         b();
       }
     });
-    bwd.a(a);
+    bxe.a(a);
   }
   
   public final void b()
@@ -128,7 +130,7 @@ public class UpdateActivity
     if (e.checkCallingOrSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") == 0) {}
     for (int i = 1; i == 0; i = 0)
     {
-      d = new bvq();
+      d = new bwr();
       d.a = "The permission to access the external storage permission is not set. Please contact the developer.";
       runOnUiThread(new Runnable()
       {
@@ -141,7 +143,7 @@ public class UpdateActivity
     }
     if (!e())
     {
-      d = new bvq();
+      d = new bwr();
       d.a = "The installation from unknown sources is not enabled. Please check the device settings.";
       runOnUiThread(new Runnable()
       {
@@ -158,11 +160,13 @@ public class UpdateActivity
   
   public void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
     setTitle("App Update");
     setContentView(new UpdateView(this));
     e = this;
-    b = new bwm(this, getIntent().getStringExtra("json"), this);
+    b = new bxn(this, getIntent().getStringExtra("json"), this);
     ((TextView)findViewById(4098)).setText(d());
     final TextView localTextView = (TextView)findViewById(4099);
     final String str1 = "Version " + b.a();
@@ -180,20 +184,20 @@ public class UpdateActivity
       paramBundle.clearCache(true);
       paramBundle.destroyDrawingCache();
       paramBundle.loadDataWithBaseURL("https://sdk.hockeyapp.net/", b.d(), "text/html", "utf-8", null);
-      a = ((bvy)getLastNonConfigurationInstance());
+      a = ((bwz)getLastNonConfigurationInstance());
       if (a != null) {
         a.a(this);
       }
       return;
-      bwd.a(new bvz(this, getIntent().getStringExtra("url"), new bvp()
+      bxe.a(new bxa(this, getIntent().getStringExtra("url"), new bwq()
       {
-        public final void a(bvy paramAnonymousbvy)
+        public final void a(bwz paramAnonymousbwz)
         {
-          if ((paramAnonymousbvy instanceof bvz))
+          if ((paramAnonymousbwz instanceof bxa))
           {
             long l = g;
-            paramAnonymousbvy = String.format("%.2f", new Object[] { Float.valueOf((float)l / 1048576.0F) }) + " MB";
-            localTextView.setText(str1 + "\n" + str2 + " - " + paramAnonymousbvy);
+            paramAnonymousbwz = String.format("%.2f", new Object[] { Float.valueOf((float)l / 1048576.0F) }) + " MB";
+            localTextView.setText(str1 + "\n" + str2 + " - " + paramAnonymousbwz);
           }
         }
       }));

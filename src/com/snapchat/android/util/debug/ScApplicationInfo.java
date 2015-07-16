@@ -1,6 +1,6 @@
 package com.snapchat.android.util.debug;
 
-import ajx;
+import akr;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -10,10 +10,10 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.text.TextUtils;
-import azm;
-import bfp;
-import cgb;
-import cgc;
+import bal;
+import bgp;
+import chc;
+import chd;
 
 public class ScApplicationInfo
   extends ApplicationInfo
@@ -21,7 +21,7 @@ public class ScApplicationInfo
   public static int DEFAULT_VERSION_CODE = Integer.MAX_VALUE;
   public static String DEFAULT_VERSION_NAME = "";
   
-  @cgc
+  @chd
   public static String a()
   {
     return "com.snapchat.android";
@@ -29,13 +29,13 @@ public class ScApplicationInfo
   
   public static String a(Context paramContext)
   {
-    Object localObject = ajx.l();
+    Object localObject = akr.l();
     StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append("Snapchat Build : " + b(paramContext)).append("(").append(Build.DEVICE + ";").append(Build.MODEL + ";").append(Build.MANUFACTURER + ";").append("Version- " + Build.VERSION.SDK_INT + ") - " + (String)localObject + "\n").append("Connection type: " + bfp.b() + "\n").append("Using Square sandbox: " + azm.c() + "\n").append("Release delay time: " + ajx.bv() + "\n");
-    paramContext = bfp.a();
+    localStringBuilder.append("Snapchat Build : " + b(paramContext)).append("(").append(Build.DEVICE + ";").append(Build.MODEL + ";").append(Build.MANUFACTURER + ";").append("Version- " + Build.VERSION.SDK_INT + ") - " + (String)localObject + "\n").append("Connection type: " + bgp.b() + "\n").append("Using Square sandbox: " + bal.c() + "\n").append("Release delay time: " + akr.bs() + "\n");
+    paramContext = bgp.a();
     if (paramContext != null)
     {
-      localObject = bfp.a();
+      localObject = bgp.a();
       if ((localObject == null) || (!((NetworkInfo)localObject).isConnected()) || (((NetworkInfo)localObject).getType() != 0)) {
         break label338;
       }
@@ -58,10 +58,10 @@ public class ScApplicationInfo
   
   public static String b()
   {
-    return "username: " + ajx.l() + "\nemail: " + ajx.G();
+    return "username: " + akr.l() + "\nemail: " + akr.G();
   }
   
-  public static String b(@cgb Context paramContext)
+  public static String b(@chc Context paramContext)
   {
     try
     {
@@ -72,7 +72,7 @@ public class ScApplicationInfo
     return DEFAULT_VERSION_NAME;
   }
   
-  public static int c(@cgb Context paramContext)
+  public static int c(@chc Context paramContext)
   {
     try
     {
@@ -83,7 +83,7 @@ public class ScApplicationInfo
     return DEFAULT_VERSION_CODE;
   }
   
-  public static PackageInfo d(@cgb Context paramContext)
+  public static PackageInfo d(@chc Context paramContext)
   {
     return paramContext.getPackageManager().getPackageInfo(paramContext.getPackageName(), 0);
   }

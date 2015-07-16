@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import kk;
+import lc;
 
 final class SignupFragment$9
   implements View.OnFocusChangeListener
@@ -15,8 +15,8 @@ final class SignupFragment$9
   {
     if (paramBoolean)
     {
-      SignupFragment.e(a);
-      ScAnalyticsEventEngine.a(new kk());
+      SignupFragment.c(a);
+      ScAnalyticsEventEngine.a(new lc());
       AnalyticsEvents.s();
       return;
     }

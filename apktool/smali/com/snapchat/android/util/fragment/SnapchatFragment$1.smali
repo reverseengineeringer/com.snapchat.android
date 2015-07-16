@@ -50,15 +50,15 @@
     .line 355
     iget-object v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment$1;->this$0:Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->a(Lcom/snapchat/android/util/fragment/SnapchatFragment;)Lnf;
+    invoke-static {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->a(Lcom/snapchat/android/util/fragment/SnapchatFragment;)Lnw;
 
     move-result-object v1
 
-    iget-object v0, v1, Lnf;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-object v0, v1, Lnw;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     if-eqz v0, :cond_1
 
-    invoke-static {}, Laux;->b()Lcom/snapchat/android/util/StartupPath;
+    invoke-static {}, Lavv;->b()Lcom/snapchat/android/util/StartupPath;
 
     move-result-object v0
 
@@ -69,13 +69,13 @@
     sget-object v0, Lcom/snapchat/android/util/StartupPath;->FROM_KILLED_STATE:Lcom/snapchat/android/util/StartupPath;
 
     :cond_0
-    iget-object v2, v1, Lnf;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-object v2, v1, Lnw;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     const-string v3, "type"
 
     invoke-virtual {v2, v3, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    iget-object v0, v1, Lnf;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-object v0, v1, Lnw;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     const/4 v2, 0x0
 
@@ -83,7 +83,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, v1, Lnf;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iput-object v0, v1, Lnw;->mStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     .line 357
     :cond_1
@@ -100,11 +100,13 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    iget-object v0, v0, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mEasyMetricManager:Lcom/snapchat/android/analytics/framework/EasyMetricManager;
 
     const-string v1, "CAMERA_READY"
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;)V
+    const-string v2, ""
+
+    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetricManager;->b(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetricManager;
 
     .line 360
     :cond_2

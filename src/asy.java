@@ -1,72 +1,44 @@
-import java.util.Iterator;
-import java.util.SortedSet;
+import android.content.Context;
+import android.view.View;
+import android.widget.ImageView;
 
 public final class asy
+  extends atb
 {
-  public static <T extends Comparable<T>> int a(SortedSet<T> paramSortedSet1, SortedSet<T> paramSortedSet2, boolean paramBoolean)
+  private final art b;
+  
+  public asy(art paramart)
   {
-    int j = 0;
-    int i = j;
-    if (paramSortedSet1 != null)
+    b = paramart;
+  }
+  
+  public final String a()
+  {
+    return "Battery";
+  }
+  
+  public final void a(int paramInt, Context paramContext)
+  {
+    ImageView localImageView = (ImageView)b.a.findViewById(2131361910);
+    float f = awf.a(57.0F, paramContext);
+    if (paramInt == 2)
     {
-      i = j;
-      if (paramSortedSet2 != null)
-      {
-        i = j;
-        if (!paramSortedSet1.isEmpty())
-        {
-          if (!paramSortedSet2.isEmpty()) {
-            break label43;
-          }
-          i = j;
-        }
-      }
+      localImageView.setTranslationY(f);
+      return;
     }
-    return i;
-    label43:
-    Iterator localIterator1 = paramSortedSet1.iterator();
-    Iterator localIterator2 = paramSortedSet2.iterator();
-    paramSortedSet2 = (Comparable)localIterator1.next();
-    paramSortedSet1 = (Comparable)localIterator2.next();
-    i = 0;
-    for (;;)
-    {
-      j = paramSortedSet2.compareTo(paramSortedSet1);
-      if (j == 0)
-      {
-        if (paramBoolean) {
-          return 1;
-        }
-        j = i + 1;
-        i = j;
-        if (!localIterator1.hasNext()) {
-          break;
-        }
-        i = j;
-        if (!localIterator2.hasNext()) {
-          break;
-        }
-        paramSortedSet2 = (Comparable)localIterator1.next();
-        paramSortedSet1 = (Comparable)localIterator2.next();
-        i = j;
-        continue;
-      }
-      if (j < 0)
-      {
-        if (!localIterator1.hasNext()) {
-          return i;
-        }
-        paramSortedSet2 = (Comparable)localIterator1.next();
-      }
-      else
-      {
-        if (!localIterator2.hasNext()) {
-          return i;
-        }
-        paramSortedSet1 = (Comparable)localIterator2.next();
-      }
-    }
-    return i;
+    localImageView.setTranslationY(0.0F);
+  }
+  
+  public final View d()
+  {
+    return b.a;
+  }
+  
+  public final void e()
+  {
+    art localart = b;
+    b.a(2130968586, a);
+    a = null;
   }
 }
 

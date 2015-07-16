@@ -1,8 +1,5 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import amk;
-import amy;
-import ana;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,8 +9,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import aok;
-import aol;
+import anh;
+import anv;
+import anx;
+import apg;
+import aph;
 import com.snapchat.android.fragments.settings.BasePasswordValidationFragment;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,44 +22,44 @@ public class RecoveryCodePasswordValidationFragment
   extends BasePasswordValidationFragment
 {
   private final Set<Integer> f = new HashSet();
-  private final aol g;
-  private aok h = new aok()
+  private final aph g;
+  private apg h = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (RecoveryCodePasswordValidationFragment.a(RecoveryCodePasswordValidationFragment.this).contains(Integer.valueOf(i)))
       {
         RecoveryCodePasswordValidationFragment.a(RecoveryCodePasswordValidationFragment.this).remove(Integer.valueOf(i));
-        if (!(paramAnonymousamk instanceof ana)) {
+        if (!(paramAnonymousanh instanceof anx)) {
           break label60;
         }
-        RecoveryCodePasswordValidationFragment.a(RecoveryCodePasswordValidationFragment.this, (ana)paramAnonymousamk);
+        RecoveryCodePasswordValidationFragment.a(RecoveryCodePasswordValidationFragment.this, (anx)paramAnonymousanh);
       }
       label60:
-      while (!(paramAnonymousamk instanceof amy)) {
+      while (!(paramAnonymousanh instanceof anv)) {
         return;
       }
-      RecoveryCodePasswordValidationFragment.a(RecoveryCodePasswordValidationFragment.this, (amy)paramAnonymousamk);
+      RecoveryCodePasswordValidationFragment.a(RecoveryCodePasswordValidationFragment.this, (anv)paramAnonymousanh);
     }
   };
   
   public RecoveryCodePasswordValidationFragment()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private RecoveryCodePasswordValidationFragment(aol paramaol)
+  private RecoveryCodePasswordValidationFragment(aph paramaph)
   {
-    g = paramaol;
+    g = paramaph;
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    ((TextView)c(2131362675)).setText(2131493570);
-    ((TextView)c(2131362676)).setText(2131493545);
+    ((TextView)c(2131362674)).setText(2131493568);
+    ((TextView)c(2131362675)).setText(2131493543);
     b.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)

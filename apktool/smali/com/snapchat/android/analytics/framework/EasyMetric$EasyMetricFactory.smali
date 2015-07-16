@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 359
+    .line 382
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
     .locals 1
 
     .prologue
-    .line 361
+    .line 384
     new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 364
+    .line 387
     new-instance v0, Lcom/snapchat/android/analytics/framework/PerformanceMetric;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/analytics/framework/PerformanceMetric;-><init>(Ljava/lang/String;)V
@@ -53,7 +53,7 @@
     .locals 1
 
     .prologue
-    .line 370
+    .line 393
     new-instance v0, Lcom/snapchat/android/analytics/framework/ErrorMetric;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;-><init>(Ljava/lang/String;)V

@@ -47,13 +47,13 @@
     invoke-super {p0, p1, p2}, Lcom/snapchat/android/ui/ImageResourceView;->onMeasure(II)V
 
     .line 28
-    iget-object v0, p0, Lcom/snapchat/android/ui/FitWidthImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/FitWidthImageResourceView;->a:Lapx;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/FitWidthImageResourceView;->a:Lapb;
+    iget-object v0, p0, Lcom/snapchat/android/ui/FitWidthImageResourceView;->a:Lapx;
 
-    invoke-virtual {v0}, Lapb;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
+    invoke-virtual {v0}, Lapx;->c()Lcom/snapchat/android/ui/SnapchatResource$ResourceStatus;
 
     move-result-object v0
 

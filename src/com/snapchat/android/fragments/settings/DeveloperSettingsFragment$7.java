@@ -1,11 +1,11 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.view.View;
 import android.view.View.OnClickListener;
-import qq;
-import xn;
-import xr;
+import rg;
+import yj;
+import yn;
 
 final class DeveloperSettingsFragment$7
   implements View.OnClickListener
@@ -14,10 +14,10 @@ final class DeveloperSettingsFragment$7
   
   public final void onClick(View paramView)
   {
-    ajx.ai();
+    akr.ah();
     a.a.a(null);
     a.b.b();
-    new qq().f();
+    new rg().execute();
   }
 }
 

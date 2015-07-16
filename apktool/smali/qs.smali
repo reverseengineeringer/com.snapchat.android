@@ -1,228 +1,147 @@
-.class public final Lqs;
-.super Ljava/lang/Object;
+.class public abstract Lqs;
+.super Ltw;
 .source "SourceFile"
 
 # interfaces
-.implements Lqo;
+.implements Lui$b;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lqs$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Lcom/snapchat/android/api2/cash/ScCashResponsePayload;",
+        ">",
+        "Ltw;",
+        "Lui$b",
+        "<TT;>;"
+    }
+.end annotation
 
 
 # static fields
-.field public static final NAME:Ljava/lang/String; = "snapcash"
+.field private static final TAG:Ljava/lang/String; = "BasicScCashRequestTask"
+
+
+# instance fields
+.field private final mCallback:Lqs$a;
 
 
 # direct methods
-.method public constructor <init>()V
+.method protected constructor <init>(Lqs$a;)V
     .locals 0
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
+    .param p1    # Lqs$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 18
+    invoke-direct {p0}, Ltw;-><init>()V
 
+    .line 19
+    iput-object p1, p0, Lqs;->mCallback:Lqs$a;
+
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
+.method public synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 4
 
     .prologue
-    .line 62
+    const/4 v3, 0x0
+
+    .line 12
+    check-cast p1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload;
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v0, v3
+
+    const/4 v1, 0x1
+
+    iget v2, p2, Lus;->mResponseCode:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    iget-object v0, p2, Lus;->mCaughtException:Ljava/lang/Exception;
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p2}, Lus;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload;->a()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->OK:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lqs;->mCallback:Lqs$a;
+
+    invoke-interface {v0, p1}, Lqs$a;->a(Lcom/snapchat/android/api2/cash/ScCashResponsePayload;)V
+
+    :goto_0
     return-void
-.end method
 
-.method public final a(Lcom/snapchat/android/model/chat/CashFeedItem;)V
-    .locals 0
-    .param p1    # Lcom/snapchat/android/model/chat/CashFeedItem;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+    :cond_0
+    iget-object v0, p0, Lqs;->mCallback:Lqs$a;
 
-    .prologue
-    .line 70
-    return-void
-.end method
+    iget-object v1, p1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload;->status:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
-.method public final a(Ljava/lang/String;)V
-    .locals 0
+    iget v2, p2, Lus;->mResponseCode:I
 
-    .prologue
-    .line 66
-    return-void
-.end method
+    invoke-interface {v0, v1, v2}, Lqs$a;->a(Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;I)V
 
-.method public final b()Ljava/util/Collection;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Collection",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
+    goto :goto_0
 
-    .prologue
-    .line 32
-    const/4 v0, 0x1
+    :cond_1
+    iget-object v0, p0, Lqs;->mCallback:Lqs$a;
 
-    new-array v0, v0, [Lqv;
+    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->UNKNOWN:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
-    const/4 v1, 0x0
+    iget v2, p2, Lus;->mResponseCode:I
 
-    new-instance v2, Lqy;
+    invoke-interface {v0, v1, v2}, Lqs$a;->a(Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;I)V
 
-    invoke-direct {v2}, Lqy;-><init>()V
+    goto :goto_0
 
-    aput-object v2, v0, v1
+    :cond_2
+    iget-object v0, p0, Lqs;->mCallback:Lqs$a;
 
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    sget-object v1, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->NO_NETWORK:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
-    move-result-object v0
+    invoke-interface {v0, v1, v3}, Lqs$a;->a(Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;I)V
 
-    return-object v0
-.end method
-
-.method public final c()Ljava/util/Collection;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Collection",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 37
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Lqv;
-
-    const/4 v1, 0x0
-
-    new-instance v2, Lra;
-
-    invoke-direct {v2}, Lra;-><init>()V
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/util/Collection;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Collection",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 42
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Lqv;
-
-    const/4 v1, 0x0
-
-    new-instance v2, Lrb;
-
-    invoke-direct {v2}, Lrb;-><init>()V
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/util/Collection;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Collection",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 47
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    return-object v0
-.end method
-
-.method public final f()Ljava/util/Collection;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Collection",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 52
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Lqv;
-
-    const/4 v1, 0x0
-
-    new-instance v2, Lqy;
-
-    invoke-direct {v2}, Lqy;-><init>()V
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final g()Ljava/util/Collection;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Collection",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 57
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    return-object v0
+    goto :goto_0
 .end method

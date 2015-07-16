@@ -1,48 +1,37 @@
 import android.content.Intent;
-import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.analytics.AnalyticsEvents;
+import com.snapchat.android.analytics.AnalyticsEvents.LogoutReason;
 
-public final class ana
-  extends amd
-  implements ts.b<ana.b>
+public abstract class ana
+  extends and
 {
-  public boolean a = false;
-  public String b;
-  private final String c;
+  protected akp h = akp.g();
   
   public ana(Intent paramIntent)
   {
     super(paramIntent);
-    c = paramIntent.getStringExtra("password");
-    a(ana.b.class, this);
   }
   
-  public final Object b()
+  public boolean d()
   {
-    return new ana.a(c);
+    return true;
   }
   
-  protected final String e()
+  public String getUrl()
   {
-    return "/bq/reauth";
+    return bal.b("dummy") + l_();
   }
   
-  @tn
-  public final class a
-    extends pl
+  public abstract String l_();
+  
+  public void onResult(@chc us paramus)
   {
-    @SerializedName("password")
-    String a;
-    
-    public a(@cgb String paramString)
+    super.onResult(paramus);
+    if ((d()) && (mResponseCode == 401))
     {
-      a = paramString;
+      AnalyticsEvents.a(AnalyticsEvents.LogoutReason.AUTHENTICATION_ERROR);
+      aph.a().e();
     }
-  }
-  
-  public class b
-  {
-    @SerializedName("message")
-    String a;
   }
 }
 

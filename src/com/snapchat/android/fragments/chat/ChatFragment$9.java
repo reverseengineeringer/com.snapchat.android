@@ -1,19 +1,32 @@
 package com.snapchat.android.fragments.chat;
 
-import android.view.View;
-import bgr;
-import bgr.a;
-import com.snapchat.android.ui.ChatCameraButton;
-import com.snapchat.android.ui.ChatCameraButton.a;
+import android.text.Editable;
+import com.snapchat.android.model.chat.CashFeedItem;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.ui.CursorCallbackEditText;
+import com.snapchat.android.util.CashUtils;
+import yw.a;
 
 final class ChatFragment$9
-  implements bgr.a
+  implements yw.a
 {
-  ChatFragment$9(ChatFragment paramChatFragment) {}
+  ChatFragment$9(ChatFragment paramChatFragment, ChatConversation paramChatConversation, int paramInt, CashFeedItem paramCashFeedItem, String paramString, Editable paramEditable) {}
   
-  public final void a(View paramView)
+  public final void a()
   {
-    ChatFragment.g(a).setTouchSubscriber((ChatCameraButton.a)a.g.a());
+    String str = a.mTheirUsername;
+    CashUtils.a(b);
+    ChatFragment.a(f, c);
+    ChatFragment.a(f, a, c, d);
+  }
+  
+  public final void b()
+  {
+    String str = a.mTheirUsername;
+    CashUtils.a(b);
+    e.clearSpans();
+    ChatFragment.i(f).setText(e);
+    ChatFragment.q(f);
   }
 }
 

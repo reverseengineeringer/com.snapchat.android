@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static a:Laol;
+.field private static a:Laph;
 
 
 # direct methods
@@ -13,11 +13,11 @@
 
     .prologue
     .line 26
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
-    sput-object v0, Lcom/snapchat/android/notification/GcmIntentService;->a:Laol;
+    sput-object v0, Lcom/snapchat/android/notification/GcmIntentService;->a:Laph;
 
     return-void
 .end method
@@ -37,12 +37,30 @@
 
 
 # virtual methods
+.method public onCreate()V
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/snapchat/android/notification/GcmIntentService;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/notification/GcmIntentService;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
+    invoke-super {p0}, Landroid/app/IntentService;->onCreate()V
+
+    return-void
+.end method
+
 .method protected onHandleIntent(Landroid/content/Intent;)V
-    .locals 5
+    .locals 4
 
     .prologue
-    const/4 v4, 0x0
-
     .line 34
     invoke-static {p0}, Lcom/google/android/gms/gcm/GoogleCloudMessaging;->getInstance(Landroid/content/Context;)Lcom/google/android/gms/gcm/GoogleCloudMessaging;
 
@@ -54,21 +72,19 @@
     move-result-object v1
 
     .line 37
-    const-string v2, "GcmIntentService"
-
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v3, "onHandleIntent messageType="
+    const-string v2, "onHandleIntent messageType="
 
-    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v3, ", intent="
+    const-string v2, ", intent="
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -76,28 +92,18 @@
 
     move-result-object v0
 
-    const-string v3, ", extras="
+    const-string v2, ", extras="
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
     if-nez p1, :cond_1
 
     const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v0, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 40
     const-string v0, "gcm"
@@ -106,17 +112,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_0
 
     .line 41
-    const-string v0, "GcmIntentService"
-
-    const-string v1, "handleIntent"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
     move-result-object v0
@@ -125,7 +123,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Laxa;->a(Ljava/io/File;Ljava/io/File;)V
+    invoke-static {v0, v1}, Laxy;->a(Ljava/io/File;Ljava/io/File;)V
 
     const-string v0, "registration_id"
 
@@ -139,9 +137,9 @@
 
     if-nez v1, :cond_2
 
-    invoke-static {p0, v0}, Lalz;->a(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lamw;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    invoke-static {}, Lajx;->w()Ljava/lang/String;
+    invoke-static {}, Lakr;->w()Ljava/lang/String;
 
     move-result-object v1
 
@@ -151,21 +149,13 @@
 
     if-nez v1, :cond_0
 
-    const-string v1, "GcmIntentService"
+    new-instance v1, Lqe;
 
-    const-string v2, "Running DeviceSyncTask because the user\'s notification ID is different from the GCM reg ID."
+    invoke-direct {v1, v0}, Lqe;-><init>(Ljava/lang/String;)V
 
-    new-array v3, v4, [Ljava/lang/Object;
+    invoke-virtual {v1}, Lqe;->executeSynchronously()Lus;
 
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    new-instance v1, Lpn;
-
-    invoke-direct {v1, v0}, Lpn;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Lpn;->i()Luc;
-
-    .line 47
+    .line 43
     :cond_0
     :goto_1
     invoke-static {p1}, Lcom/snapchat/android/notification/GcmMessageReceiver;->completeWakefulIntent(Landroid/content/Intent;)Z
@@ -183,9 +173,9 @@
 
     .line 41
     :cond_2
-    sget-object v0, Lcom/snapchat/android/notification/GcmIntentService;->a:Laol;
+    sget-object v0, Lcom/snapchat/android/notification/GcmIntentService;->a:Laph;
 
-    invoke-virtual {v0, p0}, Laol;->b(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-virtual {v0, p0}, Laph;->b(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v1
 
@@ -199,19 +189,7 @@
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    invoke-virtual {v0, p0, v1}, Laol;->a(Landroid/content/Context;Landroid/content/Intent;)I
-
-    goto :goto_1
-
-    .line 43
-    :cond_3
-    const-string v0, "GcmIntentService"
-
-    const-string v1, "GCM received a tickle for an error or deleted messages on server."
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p0, v1}, Laph;->a(Landroid/content/Context;Landroid/content/Intent;)I
 
     goto :goto_1
 .end method

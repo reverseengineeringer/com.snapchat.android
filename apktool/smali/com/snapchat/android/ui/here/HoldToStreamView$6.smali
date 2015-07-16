@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 645
+    .line 663
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$6;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 649
+    .line 667
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$6;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView;->h:Lcom/addlive/view/ALVideoTextureView;
@@ -51,12 +51,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 653
+    .line 671
     :cond_0
     :goto_0
     return-void
 
-    .line 651
+    .line 669
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$6;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
@@ -72,7 +72,7 @@
 
     if-gtz v0, :cond_0
 
-    .line 652
+    .line 670
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$6;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->b(Lcom/snapchat/android/ui/here/HoldToStreamView;)V

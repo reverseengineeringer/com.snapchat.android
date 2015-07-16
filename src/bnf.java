@@ -1,84 +1,75 @@
-import java.net.ProtocolException;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 
 public final class bnf
 {
-  public final blz a;
-  public final int b;
-  public final String c;
+  public final bmh a;
+  public final Proxy b;
+  final InetSocketAddress c;
+  final bmr d;
+  final boolean e;
   
-  public bnf(blz paramblz, int paramInt, String paramString)
+  public bnf(bmh parambmh, Proxy paramProxy, InetSocketAddress paramInetSocketAddress, bmr parambmr, boolean paramBoolean)
   {
-    a = paramblz;
-    b = paramInt;
-    c = paramString;
+    if (parambmh == null) {
+      throw new NullPointerException("address == null");
+    }
+    if (paramProxy == null) {
+      throw new NullPointerException("proxy == null");
+    }
+    if (paramInetSocketAddress == null) {
+      throw new NullPointerException("inetSocketAddress == null");
+    }
+    if (parambmr == null) {
+      throw new NullPointerException("connectionConfiguration == null");
+    }
+    a = parambmh;
+    b = paramProxy;
+    c = paramInetSocketAddress;
+    d = parambmr;
+    e = paramBoolean;
   }
   
-  public static bnf a(String paramString)
+  public final boolean equals(Object paramObject)
   {
-    int i = 9;
-    int j;
-    blz localblz;
-    if (paramString.startsWith("HTTP/1."))
+    boolean bool2 = false;
+    boolean bool1 = bool2;
+    if ((paramObject instanceof bnf))
     {
-      if ((paramString.length() < 9) || (paramString.charAt(8) != ' ')) {
-        throw new ProtocolException("Unexpected status line: " + paramString);
-      }
-      j = paramString.charAt(7) - '0';
-      if (j == 0) {
-        localblz = blz.a;
-      }
-    }
-    while (paramString.length() < i + 3)
-    {
-      throw new ProtocolException("Unexpected status line: " + paramString);
-      if (j == 1)
+      paramObject = (bnf)paramObject;
+      bool1 = bool2;
+      if (a.equals(a))
       {
-        localblz = blz.b;
-      }
-      else
-      {
-        throw new ProtocolException("Unexpected status line: " + paramString);
-        if (paramString.startsWith("ICY "))
+        bool1 = bool2;
+        if (b.equals(b))
         {
-          localblz = blz.a;
-          i = 4;
-        }
-        else
-        {
-          throw new ProtocolException("Unexpected status line: " + paramString);
-        }
-      }
-    }
-    try
-    {
-      j = Integer.parseInt(paramString.substring(i, i + 3));
-      if (paramString.length() > i + 3) {
-        if (paramString.charAt(i + 3) != ' ') {
-          throw new ProtocolException("Unexpected status line: " + paramString);
+          bool1 = bool2;
+          if (c.equals(c))
+          {
+            bool1 = bool2;
+            if (d.equals(d))
+            {
+              bool1 = bool2;
+              if (e == e) {
+                bool1 = true;
+              }
+            }
+          }
         }
       }
     }
-    catch (NumberFormatException localNumberFormatException)
-    {
-      throw new ProtocolException("Unexpected status line: " + paramString);
-    }
-    for (paramString = paramString.substring(i + 4);; paramString = "") {
-      return new bnf(localNumberFormatException, j, paramString);
-    }
+    return bool1;
   }
   
-  public final String toString()
+  public final int hashCode()
   {
-    StringBuilder localStringBuilder = new StringBuilder();
-    if (a == blz.a) {}
-    for (String str = "HTTP/1.0";; str = "HTTP/1.1")
-    {
-      localStringBuilder.append(str);
-      localStringBuilder.append(' ').append(b);
-      if (c != null) {
-        localStringBuilder.append(' ').append(c);
-      }
-      return localStringBuilder.toString();
+    int j = a.hashCode();
+    int k = b.hashCode();
+    int m = c.hashCode();
+    int n = d.hashCode();
+    if (e) {}
+    for (int i = 1;; i = 0) {
+      return i + ((((j + 527) * 31 + k) * 31 + m) * 31 + n) * 31;
     }
   }
 }

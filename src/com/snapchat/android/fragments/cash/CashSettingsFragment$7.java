@@ -5,16 +5,16 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import atx;
-import ban;
-import bdw;
-import cgb;
-import cgc;
+import auv;
+import bbo;
+import bev;
+import chc;
+import chd;
 import com.squareup.otto.Bus;
 import java.util.List;
-import qv;
-import qv.a;
-import sq;
+import rl;
+import rl.a;
+import tg;
 
 final class CashSettingsFragment$7
   implements CompoundButton.OnCheckedChangeListener
@@ -32,28 +32,28 @@ final class CashSettingsFragment$7
     CashSettingsFragment.c(a).setVisibility(8);
     CashSettingsFragment.e(a).setVisibility(0);
     paramCompoundButton = CashSettingsFragment.i();
-    mListener = new qv.a()
+    mListener = new rl.a()
     {
-      public final void a(@cgb qv paramAnonymousqv) {}
+      public final void a(@chc rl paramAnonymousrl) {}
       
-      public final void a(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+      public final void a(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean)
       {
         paramAnonymousBoolean = true;
         if ((paramAnonymousList == null) || (paramAnonymousList.isEmpty()))
         {
           if (!paramBoolean)
           {
-            paramAnonymousqv = CashSettingsFragment.m();
-            b = new CashSettingsFragment.10(a, paramAnonymousqv, CashSettingsFragment.c(a));
-            ban.a().a(new bdw(paramAnonymousqv));
+            paramAnonymousrl = CashSettingsFragment.m();
+            b = new CashSettingsFragment.10(a, paramAnonymousrl, CashSettingsFragment.c(a));
+            bbo.a().a(new bev(paramAnonymousrl));
             return;
           }
-          paramAnonymousqv = a;
+          paramAnonymousrl = a;
           CashSettingsFragment.c(a);
-          CashSettingsFragment.a(paramAnonymousqv.a(null, true)).f();
+          CashSettingsFragment.a(paramAnonymousrl.a(null, true)).execute();
           return;
         }
-        paramAnonymousqv = atx.a(null, 2131492918, new Object[0]) + '\n' + atx.a(null, 2131493314, new Object[0]);
+        paramAnonymousrl = auv.a(null, 2131492918, new Object[0]) + '\n' + auv.a(null, 2131493314, new Object[0]);
         paramAnonymousList = a;
         CheckBox localCheckBox = CashSettingsFragment.c(a);
         RelativeLayout localRelativeLayout = CashSettingsFragment.d(a);
@@ -61,18 +61,18 @@ final class CashSettingsFragment$7
         if (!paramBoolean) {}
         for (;;)
         {
-          CashSettingsFragment.a(paramAnonymousList, localCheckBox, localRelativeLayout, localProgressBar, paramAnonymousBoolean, paramAnonymousqv);
+          CashSettingsFragment.a(paramAnonymousList, localCheckBox, localRelativeLayout, localProgressBar, paramAnonymousBoolean, paramAnonymousrl);
           return;
           paramAnonymousBoolean = false;
         }
       }
       
-      public final void b(@cgb qv paramAnonymousqv) {}
+      public final void b(@chc rl paramAnonymousrl) {}
       
-      public final void b(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+      public final void b(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean)
       {
         paramAnonymousBoolean = false;
-        paramAnonymousqv = atx.a(null, 2131492918, new Object[0]) + '\n' + atx.a(null, 2131493314, new Object[0]);
+        paramAnonymousrl = auv.a(null, 2131492918, new Object[0]) + '\n' + auv.a(null, 2131493314, new Object[0]);
         paramAnonymousList = a;
         CheckBox localCheckBox = CashSettingsFragment.c(a);
         RelativeLayout localRelativeLayout = CashSettingsFragment.d(a);
@@ -80,7 +80,7 @@ final class CashSettingsFragment$7
         if (!paramBoolean) {
           paramAnonymousBoolean = true;
         }
-        CashSettingsFragment.a(paramAnonymousList, localCheckBox, localRelativeLayout, localProgressBar, paramAnonymousBoolean, paramAnonymousqv);
+        CashSettingsFragment.a(paramAnonymousList, localCheckBox, localRelativeLayout, localProgressBar, paramAnonymousBoolean, paramAnonymousrl);
       }
     };
     paramCompoundButton.a(null);

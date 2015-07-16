@@ -4,30 +4,25 @@
 
 
 # instance fields
-.field public final mIsDoubleTap:Z
+.field public mBitmap:Landroid/graphics/Bitmap;
 
-.field public final mOriginatingFragment:I
-
-.field public final mRecipients:Ljava/lang/String;
+.field public mProfileImageIndex:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;IZ)V
+.method public constructor <init>(Landroid/graphics/Bitmap;I)V
     .locals 0
 
     .prologue
-    .line 8
+    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9
-    iput-object p1, p0, Lbcz;->mRecipients:Ljava/lang/String;
+    .line 13
+    iput-object p1, p0, Lbcz;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 10
-    iput p2, p0, Lbcz;->mOriginatingFragment:I
+    .line 14
+    iput p2, p0, Lbcz;->mProfileImageIndex:I
 
-    .line 11
-    iput-boolean p3, p0, Lbcz;->mIsDoubleTap:Z
-
-    .line 12
+    .line 15
     return-void
 .end method

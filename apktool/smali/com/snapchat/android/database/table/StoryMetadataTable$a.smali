@@ -17,29 +17,35 @@
 # instance fields
 .field public final a:Ljava/lang/String;
 
-.field public final b:Lbjr;
+.field public final b:Lbks;
 
-.field public final c:I
+.field public final c:Lbkn;
+
+.field public final d:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lbjr;I)V
+.method public constructor <init>(Ljava/lang/String;Lbks;Lbkn;I)V
     .locals 1
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Lbjr;
-        .annotation build Lcgc;
+    .param p2    # Lbks;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .param p3    # Lbkn;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 42
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 46
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -47,13 +53,16 @@
 
     iput-object v0, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->a:Ljava/lang/String;
 
-    .line 44
-    iput-object p2, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->b:Lbjr;
+    .line 47
+    iput-object p2, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->b:Lbks;
 
-    .line 45
-    iput p3, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->c:I
+    .line 48
+    iput-object p3, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->c:Lbkn;
 
-    .line 46
+    .line 49
+    iput p4, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->d:I
+
+    .line 50
     return-void
 .end method
 
@@ -67,15 +76,15 @@
 
     const/4 v1, 0x0
 
-    .line 49
+    .line 53
     if-ne p0, p1, :cond_1
 
-    .line 56
+    .line 60
     :cond_0
     :goto_0
     return v0
 
-    .line 50
+    .line 54
     :cond_1
     if-eqz p1, :cond_2
 
@@ -94,11 +103,11 @@
 
     goto :goto_0
 
-    .line 52
+    .line 56
     :cond_3
     check-cast p1, Lcom/snapchat/android/database/table/StoryMetadataTable$a;
 
-    .line 54
+    .line 58
     iget-object v2, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->a:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->a:Ljava/lang/String;
@@ -118,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 64
     iget-object v0, p0, Lcom/snapchat/android/database/table/StoryMetadataTable$a;->a:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I

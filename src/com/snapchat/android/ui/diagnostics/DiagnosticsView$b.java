@@ -1,29 +1,29 @@
 package com.snapchat.android.ui.diagnostics;
 
-import ala;
-import alc;
+import alv;
+import aly;
 import android.view.LayoutInflater;
-import cgb;
+import chc;
 import java.util.LinkedList;
-import uc;
+import us;
 
 final class DiagnosticsView$b
   extends DiagnosticsView.a
 {
-  final LinkedList<alc> a = new LinkedList();
+  final LinkedList<aly> a = new LinkedList();
   
   public DiagnosticsView$b(DiagnosticsView paramDiagnosticsView, LayoutInflater paramLayoutInflater)
   {
     super(paramLayoutInflater);
   }
   
-  public final void a(@cgb ala paramala) {}
+  public final void a(@chc alv paramalv) {}
   
-  public final void a(alc paramalc) {}
+  public final void a(aly paramaly) {}
   
-  public final void a(alc paramalc, uc paramuc)
+  public final void a(aly paramaly, us paramus)
   {
-    a.addFirst(paramalc);
+    a.addFirst(paramaly);
     if (a.size() > 100) {
       a.removeLast();
     }

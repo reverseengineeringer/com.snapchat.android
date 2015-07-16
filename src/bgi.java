@@ -1,28 +1,38 @@
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
+import android.media.MediaMetadataRetriever;
 
 public final class bgi
-  extends bgj
 {
-  private final awp mCache;
-  private final String mKey;
+  private final ban mExceptionReporter;
+  private final bgh mInitializer;
+  private final bgg mRetrieverFactory;
   
-  public bgi(awp paramawp, String paramString)
+  public bgi()
   {
-    mCache = paramawp;
-    mKey = paramString;
+    this(new bgh(), new bgg(), new ban());
   }
   
-  public final fl a()
+  private bgi(bgh parambgh, bgg parambgg, ban paramban)
   {
-    Object localObject = mCache.a(mKey);
-    if (localObject == null) {
-      return null;
+    mInitializer = parambgh;
+    mRetrieverFactory = parambgg;
+    mExceptionReporter = paramban;
+  }
+  
+  @chd
+  public final MediaMetadataRetriever a(String paramString)
+  {
+    MediaMetadataRetriever localMediaMetadataRetriever = new MediaMetadataRetriever();
+    try
+    {
+      bgh.a(localMediaMetadataRetriever, paramString);
+      return localMediaMetadataRetriever;
     }
-    localObject = new ByteArrayInputStream((byte[])localObject);
-    fm localfm = new fm();
-    a = ((InputStream)localObject);
-    return localfm.a();
+    catch (bfv paramString)
+    {
+      localMediaMetadataRetriever.release();
+      mExceptionReporter.b(paramString);
+    }
+    return null;
   }
 }
 

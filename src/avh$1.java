@@ -1,21 +1,39 @@
-import android.graphics.Rect;
-import android.view.TouchDelegate;
-import android.view.View;
+import android.content.Context;
+import android.view.OrientationEventListener;
 
 final class avh$1
-  implements Runnable
+  extends OrientationEventListener
 {
-  avh$1(View paramView1, int paramInt, View paramView2) {}
-  
-  public final void run()
+  avh$1(avh paramavh, Context paramContext)
   {
-    Rect localRect = new Rect();
-    val$childSmallView.getHitRect(localRect);
-    top -= val$extraPaddingPixels;
-    left -= val$extraPaddingPixels;
-    right += val$extraPaddingPixels;
-    bottom += val$extraPaddingPixels;
-    val$parentBigView.setTouchDelegate(new TouchDelegate(localRect, val$childSmallView));
+    super(paramContext, 3);
+  }
+  
+  public final void onOrientationChanged(int paramInt)
+  {
+    int i = 0;
+    avh localavh = this$0;
+    if ((avh.a(paramInt, 338, 360)) || (avh.a(paramInt, 0, 22))) {
+      i = 1;
+    }
+    for (;;)
+    {
+      if ((i != mRotation) && ((mReportRotation & i) != 0))
+      {
+        mRotation = i;
+        if (mScreenRotationListener != null) {
+          mScreenRotationListener.a(i);
+        }
+      }
+      return;
+      if (avh.a(paramInt, 248, 292)) {
+        i = 16;
+      } else if (avh.a(paramInt, 158, 202)) {
+        i = 256;
+      } else if (avh.a(paramInt, 68, 112)) {
+        i = 4096;
+      }
+    }
   }
 }
 

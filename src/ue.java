@@ -1,29 +1,34 @@
-import javax.inject.Provider;
+import javax.inject.Inject;
 
-public final class ue
-  implements buo<ud>
+final class ue
+  extends tv<Object, String>
 {
-  private final Provider<tl> entityFactoryProvider;
+  private final aum mGson;
   
-  static
+  @Inject
+  protected ue(aum paramaum)
   {
-    if (!ue.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
+    super(Object.class);
+    mGson = paramaum;
+  }
+  
+  private String c(@chc Object paramObject)
+  {
+    if ((paramObject instanceof String)) {
+      return (String)paramObject;
     }
-  }
-  
-  private ue(Provider<tl> paramProvider)
-  {
-    assert (paramProvider != null);
-    entityFactoryProvider = paramProvider;
-  }
-  
-  public static buo<ud> a(Provider<tl> paramProvider)
-  {
-    return new ue(paramProvider);
+    if (avb.a(paramObject.getClass())) {
+      return paramObject.toString();
+    }
+    try
+    {
+      String str = mGson.a(paramObject);
+      return str;
+    }
+    catch (Exception localException)
+    {
+      throw new RuntimeException("Trouble serializing: Class=" + paramObject.getClass().getName() + ", with toString()=" + paramObject.toString(), localException);
+    }
   }
 }
 

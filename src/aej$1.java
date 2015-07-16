@@ -1,17 +1,16 @@
-import android.animation.ValueAnimator;
-import android.animation.ValueAnimator.AnimatorUpdateListener;
-import android.view.View;
+import android.os.Handler;
 
 public final class aej$1
-  implements ValueAnimator.AnimatorUpdateListener
+  extends aej.c
 {
-  public aej$1(aej paramaej) {}
-  
-  public final void onAnimationUpdate(ValueAnimator paramValueAnimator)
+  public aej$1(aej paramaej, Handler paramHandler)
   {
-    if ((a.a != null) && (a.a.getVisibility() != 0) && (paramValueAnimator.getCurrentPlayTime() > 25L)) {
-      a.a.setVisibility(0);
-    }
+    super(paramHandler);
+  }
+  
+  protected final void a()
+  {
+    aej.a(a);
   }
 }
 

@@ -1,20 +1,26 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bjw
+public final class bjw
 {
-  @SerializedName("results")
-  protected List<bjx> results;
+  @SerializedName("hostname")
+  protected String hostname;
+  @SerializedName("port")
+  protected Integer port;
   
-  public final List<bjx> a()
+  public final String a()
   {
-    return results;
+    return hostname;
   }
   
-  public boolean equals(Object paramObject)
+  public final Integer b()
+  {
+    return port;
+  }
+  
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -23,15 +29,15 @@ public class bjw
       return false;
     }
     paramObject = (bjw)paramObject;
-    return new EqualsBuilder().append(results, results).isEquals();
+    return new EqualsBuilder().append(hostname, hostname).append(port, port).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(results).toHashCode();
+    return new HashCodeBuilder().append(hostname).append(port).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

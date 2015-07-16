@@ -3,9 +3,9 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laxh;
-.implements Laxo$a;
-.implements Laxq$a;
+.implements Layf;
+.implements Laym$a;
+.implements Layo$a;
 
 
 # annotations
@@ -72,7 +72,7 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Laxe;",
+            "Layc;",
             ">;"
         }
     .end annotation
@@ -80,14 +80,14 @@
 
 .field private final mContext:Landroid/content/Context;
 
-.field public mGson:Lato;
+.field public mGson:Laum;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field private mInputStream:Laxk;
+.field private mInputStream:Layi;
 
-.field final mInputThread:Laxn;
+.field final mInputThread:Layl;
 
 .field private volatile mIntendedConnectionState$7133d94d:I
 
@@ -95,9 +95,9 @@
 
 .field private mNumWrongServers:I
 
-.field private mOutputStream:Laxl;
+.field private mOutputStream:Layj;
 
-.field final mOutputThread:Laxp;
+.field final mOutputThread:Layn;
 
 .field private mReconnectOutstanding:Z
 
@@ -196,11 +196,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/util/chat/SecureChatSession;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/util/chat/SecureChatSession;)V
 
     .line 146
     iput-object p1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mContext:Landroid/content/Context;
@@ -232,79 +232,79 @@
     iput-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
     .line 152
-    new-instance v0, Laxm;
+    new-instance v0, Layk;
 
     iget-object v1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
-    invoke-direct {v0, v1}, Laxm;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
+    invoke-direct {v0, v1}, Layk;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
 
     .line 154
-    new-instance v1, Laxo;
+    new-instance v1, Laym;
 
     iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
-    invoke-direct {v1, p0, v2}, Laxo;-><init>(Laxo$a;Ljava/util/concurrent/ScheduledExecutorService;)V
+    invoke-direct {v1, p0, v2}, Laym;-><init>(Laym$a;Ljava/util/concurrent/ScheduledExecutorService;)V
 
     .line 156
-    new-instance v2, Laxn;
+    new-instance v2, Layl;
 
-    invoke-direct {v2, v1}, Laxn;-><init>(Laxo;)V
+    invoke-direct {v2, v1}, Layl;-><init>(Laym;)V
 
-    iput-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Laxn;
+    iput-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Layl;
 
     .line 157
-    iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Laxn;
+    iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Layl;
 
-    iget-object v2, v2, Laxn;->mStreamProcessingStateListeners:Ljava/util/List;
+    iget-object v2, v2, Layl;->mStreamProcessingStateListeners:Ljava/util/List;
 
     invoke-interface {v2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 158
-    iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Laxn;
+    iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Layl;
 
-    invoke-virtual {v2, v0}, Laxn;->a(Laxg;)V
+    invoke-virtual {v2, v0}, Layl;->a(Laye;)V
 
     .line 159
-    iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Laxn;
+    iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Layl;
 
-    invoke-virtual {v2}, Laxn;->start()V
+    invoke-virtual {v2}, Layl;->start()V
 
     .line 160
-    new-instance v2, Laxp;
+    new-instance v2, Layn;
 
-    invoke-direct {v2, v0}, Laxp;-><init>(Laxm;)V
+    invoke-direct {v2, v0}, Layn;-><init>(Layk;)V
 
-    iput-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Laxp;
+    iput-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Layn;
 
     .line 161
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Laxp;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Layn;
 
-    iget-object v0, v0, Laxp;->mStreamProcessingStateListeners:Ljava/util/List;
+    iget-object v0, v0, Layn;->mStreamProcessingStateListeners:Ljava/util/List;
 
     invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 162
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Laxp;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Layn;
 
-    invoke-virtual {v0}, Laxp;->start()V
+    invoke-virtual {v0}, Layn;->start()V
 
     .line 164
-    new-instance v0, Laxq;
+    new-instance v0, Layo;
 
     iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
-    invoke-direct {v0, p0, v2}, Laxq;-><init>(Laxq$a;Ljava/util/concurrent/ScheduledExecutorService;)V
+    invoke-direct {v0, p0, v2}, Layo;-><init>(Layo$a;Ljava/util/concurrent/ScheduledExecutorService;)V
 
     .line 166
-    iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Laxn;
+    iget-object v2, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Layl;
 
-    invoke-virtual {v2, v0}, Laxn;->a(Laxg;)V
+    invoke-virtual {v2, v0}, Layl;->a(Laye;)V
 
     .line 168
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/util/chat/SecureChatSession;->a(Laxe;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/util/chat/SecureChatSession;->a(Layc;)V
 
     .line 169
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/util/chat/SecureChatSession;->a(Laxe;)V
+    invoke-virtual {p0, v1}, Lcom/snapchat/android/util/chat/SecureChatSession;->a(Layc;)V
 
     .line 170
     return-void
@@ -330,22 +330,22 @@
     return-wide p1
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/util/chat/SecureChatSession;Laxk;)Laxk;
+.method static synthetic a(Lcom/snapchat/android/util/chat/SecureChatSession;Layi;)Layi;
     .locals 0
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputStream:Laxk;
+    iput-object p1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputStream:Layi;
 
     return-object p1
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/util/chat/SecureChatSession;Laxl;)Laxl;
+.method static synthetic a(Lcom/snapchat/android/util/chat/SecureChatSession;Layj;)Layj;
     .locals 0
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputStream:Laxl;
+    iput-object p1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputStream:Layj;
 
     return-object p1
 .end method
@@ -371,7 +371,7 @@
 .end method
 
 .method private a(Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;)V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 352
@@ -380,31 +380,17 @@
     if-eq v0, p1, :cond_0
 
     .line 353
-    const-string v0, "SecureChatSession"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "CHAT-LOG: SecureChatSession SET CONNECTION STATE: "
 
-    const-string v2, "CHAT-LOG: SecureChatSession SET CONNECTION STATE: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;->name()Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 354
     iput-object p1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mConnectionState:Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;
@@ -427,10 +413,10 @@
 
     move-result-object v0
 
-    check-cast v0, Laxe;
+    check-cast v0, Layc;
 
     .line 356
-    invoke-interface {v0, p1}, Laxe;->a(Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;)V
+    invoke-interface {v0, p1}, Layc;->a(Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;)V
 
     goto :goto_0
 
@@ -439,7 +425,7 @@
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/util/chat/SecureChatSession;Lbiv;)V
+.method static synthetic a(Lcom/snapchat/android/util/chat/SecureChatSession;Lbjw;)V
     .locals 6
 
     .prologue
@@ -448,7 +434,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p1}, Lbiv;->a()Ljava/lang/String;
+    invoke-virtual {p1}, Lbjw;->a()Ljava/lang/String;
 
     move-result-object v1
 
@@ -462,7 +448,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lbiv;->b()Ljava/lang/Integer;
+    invoke-virtual {p1}, Lbjw;->b()Ljava/lang/Integer;
 
     move-result-object v1
 
@@ -473,28 +459,6 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
-
-    const-string v1, "SecureChatSession"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "CHAT-LOG: SecureChatSession setAlternativeServer: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget v1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mNumWrongServers:I
 
@@ -520,11 +484,11 @@
     :cond_0
     iget-object v1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mContext:Landroid/content/Context;
 
-    invoke-static {v1}, Lajv;->a(Landroid/content/Context;)Lajv;
+    invoke-static {v1}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lajv;->d(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lakp;->d(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -632,47 +596,37 @@
 .end method
 
 .method static synthetic c(Lcom/snapchat/android/util/chat/SecureChatSession;)V
-    .locals 4
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 62
-    const-string v0, "SecureChatSession"
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputStream:Layj;
 
-    const-string v1, "CHAT-LOG: SecureChatSession resetSessionState"
+    invoke-static {v0}, Lbgo;->a(Ljava/io/Closeable;)V
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputStream:Layi;
 
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputStream:Laxl;
-
-    invoke-static {v0}, Lbfo;->a(Ljava/io/Closeable;)V
-
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputStream:Laxk;
-
-    invoke-static {v0}, Lbfo;->a(Ljava/io/Closeable;)V
+    invoke-static {v0}, Lbgo;->a(Ljava/io/Closeable;)V
 
     iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mSSLSocket:Ljavax/net/ssl/SSLSocket;
 
-    invoke-static {v0}, Lbfo;->a(Ljava/net/Socket;)V
+    invoke-static {v0}, Lbgo;->a(Ljava/net/Socket;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Laxp;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Layn;
 
-    invoke-virtual {v0}, Laxp;->interrupt()V
+    invoke-virtual {v0}, Layn;->interrupt()V
 
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Laxn;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Layl;
 
-    invoke-virtual {v0}, Laxn;->interrupt()V
+    invoke-virtual {v0}, Layl;->interrupt()V
 
-    iput-object v3, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputStream:Laxk;
+    iput-object v1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputStream:Layi;
 
-    iput-object v3, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputStream:Laxl;
+    iput-object v1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputStream:Layj;
 
-    iput-object v3, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mSSLSocket:Ljavax/net/ssl/SSLSocket;
+    iput-object v1, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mSSLSocket:Ljavax/net/ssl/SSLSocket;
 
     sget-object v0, Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;->DISCONNECTED:Lcom/snapchat/android/util/chat/SecureChatSession$ConnectionState;
 
@@ -793,12 +747,12 @@
     return-object v0
 .end method
 
-.method static synthetic h(Lcom/snapchat/android/util/chat/SecureChatSession;)Laxl;
+.method static synthetic h(Lcom/snapchat/android/util/chat/SecureChatSession;)Layj;
     .locals 1
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputStream:Laxl;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputStream:Layj;
 
     return-object v0
 .end method
@@ -844,12 +798,12 @@
     return v0
 .end method
 
-.method static synthetic k(Lcom/snapchat/android/util/chat/SecureChatSession;)Laxk;
+.method static synthetic k(Lcom/snapchat/android/util/chat/SecureChatSession;)Layi;
     .locals 1
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputStream:Laxk;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputStream:Layi;
 
     return-object v0
 .end method
@@ -874,22 +828,22 @@
     return-object v0
 .end method
 
-.method static synthetic n(Lcom/snapchat/android/util/chat/SecureChatSession;)Laxn;
+.method static synthetic n(Lcom/snapchat/android/util/chat/SecureChatSession;)Layl;
     .locals 1
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Laxn;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mInputThread:Layl;
 
     return-object v0
 .end method
 
-.method static synthetic o(Lcom/snapchat/android/util/chat/SecureChatSession;)Laxp;
+.method static synthetic o(Lcom/snapchat/android/util/chat/SecureChatSession;)Layn;
     .locals 1
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Laxp;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Layn;
 
     return-object v0
 .end method
@@ -967,7 +921,7 @@
     return-void
 .end method
 
-.method public final a(Laxe;)V
+.method public final a(Layc;)V
     .locals 1
 
     .prologue
@@ -980,14 +934,12 @@
     return-void
 .end method
 
-.method public final a(Lbii;Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback;)V
+.method public final a(Lbji;Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback;)V
     .locals 7
 
     .prologue
-    const/4 v4, 0x0
-
     .line 200
-    invoke-virtual {p1}, Lbii;->k()Ljava/lang/String;
+    invoke-virtual {p1}, Lbji;->k()Ljava/lang/String;
 
     move-result-object v0
 
@@ -997,11 +949,11 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p1}, Lbii;->j()Lbii$a;
+    invoke-virtual {p1}, Lbji;->j()Lbji$a;
 
     move-result-object v0
 
-    sget-object v1, Lbii$a;->UNRECOGNIZED_VALUE:Lbii$a;
+    sget-object v1, Lbji$a;->UNRECOGNIZED_VALUE:Lbji$a;
 
     if-ne v0, v1, :cond_1
 
@@ -1020,12 +972,6 @@
 
     move-result-object v0
 
-    const-string v1, "SecureChatSession"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
 
     move-result v1
@@ -1040,81 +986,69 @@
 
     .line 201
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Laxp;
+    iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mOutputThread:Layn;
 
-    const-string v1, "SecureChatSessionOutputThread"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "CHAT-LOG: SecureChatSessionOutputThread writeMessage "
 
-    const-string v3, "CHAT-LOG: SecureChatSessionOutputThread writeMessage "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v1, v0, Laxp;->mThreadState:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v1, v0, Layn;->mThreadState:Ljava/util/concurrent/atomic/AtomicReference;
 
     monitor-enter v1
 
     :try_start_0
-    iget-object v2, v0, Laxp;->mThreadState:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v2, v0, Layn;->mThreadState:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    sget-object v3, Laxp$a;->CONNECTED:Laxp$a;
+    sget-object v3, Layn$a;->CONNECTED:Layn$a;
 
     if-ne v2, v3, :cond_4
 
-    iget-object v2, v0, Laxp;->mAckTracker:Laxm;
+    iget-object v2, v0, Layn;->mAckTracker:Layk;
 
-    instance-of v3, p1, Lbhl;
+    instance-of v3, p1, Lbil;
 
     if-eqz v3, :cond_3
 
-    invoke-static {p1}, Lasz;->b(Lbii;)Z
+    invoke-static {p1}, Laty;->b(Lbji;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    iget-object v3, v2, Laxm;->mMessageCallbacksPendingAcks:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v3, v2, Layk;->mMessageCallbacksPendingAcks:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {p1}, Lbii;->k()Ljava/lang/String;
+    invoke-virtual {p1}, Lbji;->k()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v3, v4, p2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lbii;->k()Ljava/lang/String;
+    invoke-virtual {p1}, Lbji;->k()Ljava/lang/String;
 
     move-result-object v3
 
-    iget-object v4, v2, Laxm;->mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
+    iget-object v4, v2, Layk;->mScheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
-    new-instance v5, Laxm$1;
+    new-instance v5, Layk$1;
 
-    invoke-direct {v5, v2, v3}, Laxm$1;-><init>(Laxm;Ljava/lang/String;)V
+    invoke-direct {v5, v2, v3}, Layk$1;-><init>(Layk;Ljava/lang/String;)V
 
-    iget-wide v2, v2, Laxm;->mTimeoutInMillis:J
+    iget-wide v2, v2, Layk;->mTimeoutInMillis:J
 
     sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-interface {v4, v5, v2, v3, v6}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
 
     :goto_0
-    iget-object v2, v0, Laxp;->mMessageQueue:Ljava/util/concurrent/ArrayBlockingQueue;
+    iget-object v2, v0, Layn;->mMessageQueue:Ljava/util/concurrent/ArrayBlockingQueue;
 
     invoke-virtual {v2, p1}, Ljava/util/concurrent/ArrayBlockingQueue;->offer(Ljava/lang/Object;)Z
 
@@ -1122,9 +1056,9 @@
 
     if-nez v2, :cond_2
 
-    iget-object v0, v0, Laxp;->mAckTracker:Laxm;
+    iget-object v0, v0, Layn;->mAckTracker:Layk;
 
-    invoke-virtual {p1}, Lbii;->k()Ljava/lang/String;
+    invoke-virtual {p1}, Lbji;->k()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1132,7 +1066,7 @@
 
     const-string v4, "Couldn\'t add message to output message queue"
 
-    invoke-virtual {v0, v2, v3, v4}, Laxm;->a(Ljava/lang/String;Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3, v4}, Layk;->a(Ljava/lang/String;Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;Ljava/lang/String;)V
 
     :cond_2
     :goto_1
@@ -1141,9 +1075,9 @@
     return-void
 
     :cond_3
-    iget-object v2, v2, Laxm;->mMessageCallbacksPendingWrite:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v2, v2, Layk;->mMessageCallbacksPendingWrite:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {p1}, Lbii;->k()Ljava/lang/String;
+    invoke-virtual {p1}, Lbji;->k()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1176,38 +1110,26 @@
 .end method
 
 .method public final a(Ljava/lang/Exception;)V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
-
     .line 313
-    const-string v0, "SecureChatSession"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "CHAT-LOG: SecureChatSession onStreamProcessingStopped with exception: "
 
-    const-string v2, "CHAT-LOG: SecureChatSession onStreamProcessingStopped with exception: "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 314
     iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mStreamProcessingStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v3, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     move-result v0
 
@@ -1228,35 +1150,21 @@
 .end method
 
 .method public final b()V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 173
-    const-string v0, "SecureChatSession"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "CHAT-LOG: SecureChatSession CONNECT on "
 
-    const-string v2, "CHAT-LOG: SecureChatSession CONNECT on "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {}, Lbfp;->b()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {}, Lbgp;->b()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 174
     sget v0, Lcom/snapchat/android/util/chat/SecureChatSession$b;->CONNECTED$7133d94d:I
@@ -1271,21 +1179,10 @@
 .end method
 
 .method public final c()V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 179
-    const-string v0, "SecureChatSession"
-
-    const-string v1, "CHAT-LOG: SecureChatSession DISCONNECT"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 180
     sget v0, Lcom/snapchat/android/util/chat/SecureChatSession$b;->DISCONNECTED$7133d94d:I
 
     iput v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession;->mIntendedConnectionState$7133d94d:I
@@ -1330,17 +1227,6 @@
 
     .prologue
     .line 327
-    const-string v0, "SecureChatSession"
-
-    const-string v1, "CHAT-LOG: SecureChatSession DISCONNECTING because receiving rate limit hit"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 328
     invoke-virtual {p0}, Lcom/snapchat/android/util/chat/SecureChatSession;->c()V
 
     .line 329
@@ -1361,21 +1247,10 @@
 .end method
 
 .method public final f()V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 340
-    const-string v0, "SecureChatSession"
-
-    const-string v1, "CHAT-LOG: SecureChatSession DISCONNECTING because of ping timeout"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 341
     invoke-virtual {p0}, Lcom/snapchat/android/util/chat/SecureChatSession;->c()V
 
     .line 342

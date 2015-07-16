@@ -1,8 +1,7 @@
 package com.snapchat.android.fragments.verification;
 
-import ajx;
-import aku;
-import amk;
+import akr;
+import alp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -28,21 +27,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import anf;
-import aok;
-import aol;
-import ath;
-import atj;
-import aud;
+import anh;
+import aoc;
+import apg;
+import aph;
+import aug;
 import auh;
-import avh;
-import bet;
-import bgo;
-import bkr;
-import bks.a;
-import bkt;
-import boh;
-import com.snapchat.android.Timber;
+import avb;
+import avf;
+import awf;
+import bfs;
+import bho;
+import bls;
+import blt.a;
+import blu;
+import bpi;
 import com.snapchat.android.analytics.PhoneVerificationAnalytics.VerificationType;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.RegistrationAnalytics.PhoneVerificationMethod;
@@ -53,56 +52,56 @@ import com.snapchat.android.ui.window.WindowConfiguration;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.fragment.SnapchatFragment;
-import ep;
+import ey;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import ki;
-import kl;
-import kq;
-import ks;
-import kt;
-import kw;
-import kx;
-import ot;
+import la;
+import ld;
+import li;
+import lk;
+import ll;
+import lo;
+import lp;
+import pk;
 
 public abstract class PhoneVerificationFragment
   extends SnapchatFragment
 {
   private boolean A = false;
   private boolean B = false;
-  private aok C = new aok()
+  private apg C = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
-      bkt localbkt;
+      int i = aph.a(paramAnonymousanh);
+      blu localblu;
       if (PhoneVerificationFragment.a(PhoneVerificationFragment.this).contains(Integer.valueOf(i)))
       {
         PhoneVerificationFragment.a(PhoneVerificationFragment.this).remove(Integer.valueOf(i));
-        if ((paramAnonymousamk instanceof anf))
+        if ((paramAnonymousanh instanceof aoc))
         {
-          paramAnonymousamk = (anf)paramAnonymousamk;
-          localbkt = b;
+          paramAnonymousanh = (aoc)paramAnonymousanh;
+          localblu = b;
           if (a) {
-            AlertDialogUtils.b(getActivity(), getString(2131493561), getString(2131493560));
+            AlertDialogUtils.b(getActivity(), getString(2131493559), getString(2131493558));
           }
-          if (!aud.a(localbkt.a())) {
+          if (!avb.a(localblu.a())) {
             break label112;
           }
-          a(localbkt);
+          a(localblu);
         }
       }
       return;
       label112:
-      b(localbkt.b());
+      b(localblu.b());
     }
   };
   private String a;
   private View b;
   protected final RegistrationAnalytics c;
-  protected final ajx d;
+  protected final akr d;
   public FragmentActivity e;
   public View f;
   public EditText g;
@@ -120,7 +119,7 @@ public abstract class PhoneVerificationFragment
   private AlertDialog s;
   private int t;
   private SmsReceiver u;
-  private final aol v;
+  private final aph v;
   private final Set<Integer> w = new HashSet();
   private boolean x = false;
   private boolean y = false;
@@ -131,22 +130,22 @@ public abstract class PhoneVerificationFragment
     this(new WindowConfiguration());
   }
   
-  public PhoneVerificationFragment(RegistrationAnalytics paramRegistrationAnalytics, ajx paramajx, WindowConfiguration paramWindowConfiguration)
+  public PhoneVerificationFragment(RegistrationAnalytics paramRegistrationAnalytics, akr paramakr, WindowConfiguration paramWindowConfiguration)
   {
-    this(paramRegistrationAnalytics, paramajx, paramWindowConfiguration, aol.a());
+    this(paramRegistrationAnalytics, paramakr, paramWindowConfiguration, aph.a());
   }
   
-  private PhoneVerificationFragment(RegistrationAnalytics paramRegistrationAnalytics, ajx paramajx, WindowConfiguration paramWindowConfiguration, aol paramaol)
+  private PhoneVerificationFragment(RegistrationAnalytics paramRegistrationAnalytics, akr paramakr, WindowConfiguration paramWindowConfiguration, aph paramaph)
   {
     super(paramWindowConfiguration);
     c = paramRegistrationAnalytics;
-    d = paramajx;
-    v = paramaol;
+    d = paramakr;
+    v = paramaph;
   }
   
   public PhoneVerificationFragment(WindowConfiguration paramWindowConfiguration)
   {
-    this(RegistrationAnalytics.a(), ajx.a(), paramWindowConfiguration, aol.a());
+    this(RegistrationAnalytics.a(), akr.a(), paramWindowConfiguration, aph.a());
   }
   
   private static CharSequence[] a(String[] paramArrayOfString)
@@ -183,9 +182,9 @@ public abstract class PhoneVerificationFragment
     i.setVisibility(0);
   }
   
-  public abstract void a(bkr parambkr);
+  public abstract void a(bls parambls);
   
-  protected final void a(bkt parambkt)
+  protected final void a(blu paramblu)
   {
     PhoneVerificationAnalytics.VerificationType localVerificationType;
     if (r()) {
@@ -193,22 +192,22 @@ public abstract class PhoneVerificationFragment
     }
     for (;;)
     {
-      new EasyMetric("FORCE_PHONE_VERIFICATION_SUCCESS").a("result", ath.a(localVerificationType)).d();
-      if (ajx.v())
+      new EasyMetric("FORCE_PHONE_VERIFICATION_SUCCESS").a("result", aug.a(localVerificationType)).e();
+      if (akr.v())
       {
-        ScAnalyticsEventEngine.a(new kw());
-        if (ajx.v()) {
-          new EasyMetric("R01_REGISTER_PHONE_NUMBER_VERIFICATION_SUCCESS").d();
+        ScAnalyticsEventEngine.a(new lo());
+        if (akr.v()) {
+          new EasyMetric("R01_REGISTER_PHONE_NUMBER_VERIFICATION_SUCCESS").e();
         }
       }
       if (isAdded())
       {
-        ajx.a(m);
-        a(parambkt.e());
+        akr.a(m);
+        a(paramblu.e());
         v();
       }
       return;
-      if (ajx.f()) {
+      if (akr.f()) {
         localVerificationType = PhoneVerificationAnalytics.VerificationType.VERIFIED_NEW_NUMBER;
       } else {
         localVerificationType = PhoneVerificationAnalytics.VerificationType.REGISTERED_NUMBER;
@@ -230,21 +229,21 @@ public abstract class PhoneVerificationFragment
     }
     a(paramString);
     RegistrationAnalytics.k();
-    if (ajx.v()) {
-      ScAnalyticsEventEngine.a(new kt());
+    if (akr.v()) {
+      ScAnalyticsEventEngine.a(new ll());
     }
   }
   
   public abstract void i();
   
-  public final boolean l_()
+  public final boolean j_()
   {
     return true;
   }
   
-  public bks.a m()
+  public blt.a m()
   {
-    return bks.a.DEFAULT_TYPE;
+    return blt.a.DEFAULT_TYPE;
   }
   
   public final void n()
@@ -256,13 +255,13 @@ public abstract class PhoneVerificationFragment
         if (paramAnonymousBoolean)
         {
           PhoneVerificationFragment.a(PhoneVerificationFragment.this, WindowConfiguration.StatusBarDrawMode.DRAW_BELOW_FOR_ADJUSTABLE_UI);
-          avh.g(getActivity());
+          awf.g(getActivity());
           paramAnonymousView = c;
-          if (ajx.v())
+          if (akr.v())
           {
-            ScAnalyticsEventEngine.a(new kl());
-            if (ajx.v()) {
-              new EasyMetric("R01_FOCUS_ON_PHONE_NUMBER").d();
+            ScAnalyticsEventEngine.a(new ld());
+            if (akr.v()) {
+              new EasyMetric("R01_FOCUS_ON_PHONE_NUMBER").e();
             }
           }
           return;
@@ -370,7 +369,7 @@ public abstract class PhoneVerificationFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968707, null);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968709, null);
     q();
     p();
     u();
@@ -387,14 +386,13 @@ public abstract class PhoneVerificationFragment
   
   public void onPause()
   {
-    H().setSoftInputMode(3);
+    J().setSoftInputMode(3);
     super.onPause();
     if (s != null) {
       s.dismiss();
     }
     v.b(1024, C);
     w.clear();
-    Timber.c("PhoneVerificationFragment", "unregisterSmsReceiver()", new Object[0]);
     if (u != null)
     {
       getActivity().unregisterReceiver(u);
@@ -408,8 +406,8 @@ public abstract class PhoneVerificationFragment
     v.a(1024, C);
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
     if (TextUtils.isEmpty(j.getText()))
     {
@@ -423,7 +421,7 @@ public abstract class PhoneVerificationFragment
   {
     Button localButton = k;
     getActivity().getAssets();
-    atj.a(localButton);
+    auh.a(localButton);
     k.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -432,25 +430,25 @@ public abstract class PhoneVerificationFragment
         {
           w();
           paramAnonymousView = PhoneVerificationFragment.a(PhoneVerificationFragment.this);
-          aol localaol = PhoneVerificationFragment.h(PhoneVerificationFragment.this);
+          aph localaph = PhoneVerificationFragment.h(PhoneVerificationFragment.this);
           FragmentActivity localFragmentActivity = getActivity();
           String str1 = j.getText().toString();
           String str2 = m().name();
-          Intent localIntent = localaol.b(localFragmentActivity);
+          Intent localIntent = localaph.b(localFragmentActivity);
           localIntent.putExtra("op_code", 1024);
           localIntent.putExtra("action", "verifyPhoneNumber");
           localIntent.putExtra("code", str1);
           localIntent.putExtra("type", str2);
-          paramAnonymousView.add(Integer.valueOf(localaol.a(localFragmentActivity, localIntent)));
+          paramAnonymousView.add(Integer.valueOf(localaph.a(localFragmentActivity, localIntent)));
           paramAnonymousView = c;
           boolean bool = PhoneVerificationFragment.i(PhoneVerificationFragment.this);
-          if (ajx.v())
+          if (akr.v())
           {
-            paramAnonymousView = new ks();
+            paramAnonymousView = new lk();
             autofill = Boolean.valueOf(bool);
             ScAnalyticsEventEngine.a(paramAnonymousView);
-            if (ajx.v()) {
-              new EasyMetric("R01_ATTEMPT_VERIFY_WITH_CODE").d();
+            if (akr.v()) {
+              new EasyMetric("R01_ATTEMPT_VERIFY_WITH_CODE").e();
             }
           }
         }
@@ -467,14 +465,14 @@ public abstract class PhoneVerificationFragment
                 break;
               }
               paramAnonymousView = c;
-            } while (!ajx.v());
-            ScAnalyticsEventEngine.a(new kq());
+            } while (!akr.v());
+            ScAnalyticsEventEngine.a(new li());
             return;
             paramAnonymousView = c;
-          } while (!ajx.v());
-          ScAnalyticsEventEngine.a(new kx());
-        } while (!ajx.v());
-        new EasyMetric("R01_RESEND_VERIFICATION_CODE").d();
+          } while (!akr.v());
+          ScAnalyticsEventEngine.a(new lp());
+        } while (!akr.v());
+        new EasyMetric("R01_RESEND_VERIFICATION_CODE").e();
       }
     });
   }
@@ -490,9 +488,9 @@ public abstract class PhoneVerificationFragment
     k = ((Button)c(2131362018));
     Object localObject = k;
     getActivity().getAssets();
-    atj.a((View)localObject);
+    auh.a((View)localObject);
     l = ((ProgressBar)c(2131362019));
-    f = c(2131362529);
+    f = c(2131362528);
     if (f != null)
     {
       localObject = f;
@@ -511,12 +509,12 @@ public abstract class PhoneVerificationFragment
   
   protected final boolean r()
   {
-    return (n) && (TextUtils.equals(g.getText(), ajx.e()));
+    return (n) && (TextUtils.equals(g.getText(), akr.e()));
   }
   
   protected void t()
   {
-    if ((TextUtils.isEmpty(g.getText())) || ((!n) && (TextUtils.equals(g.getText(), ajx.e()))))
+    if ((TextUtils.isEmpty(g.getText())) || ((!n) && (TextUtils.equals(g.getText(), akr.e()))))
     {
       k.setVisibility(8);
       z = false;
@@ -524,8 +522,8 @@ public abstract class PhoneVerificationFragment
     }
     if (!TextUtils.equals(g.getText(), m))
     {
-      ep localep = ep.a();
-      if ((TextUtils.isEmpty(a)) || (localep.a(g.getText().toString(), a)))
+      ey localey = ey.a();
+      if ((TextUtils.isEmpty(a)) || (localey.a(g.getText().toString(), a)))
       {
         k.setVisibility(0);
         k.setText(2131493067);
@@ -600,13 +598,13 @@ public abstract class PhoneVerificationFragment
           if (!PhoneVerificationFragment.o(PhoneVerificationFragment.this)) {}
           for (paramAnonymousView = PhoneVerificationFragment.p(PhoneVerificationFragment.this);; paramAnonymousView = null)
           {
-            if (ajx.v())
+            if (akr.v())
             {
-              ki localki = new ki();
+              la localla = new la();
               country = paramAnonymousView;
-              ScAnalyticsEventEngine.a(localki);
-              if (ajx.v()) {
-                new EasyMetric("R01_FOCUS_ON_COUNTRY").d();
+              ScAnalyticsEventEngine.a(localla);
+              if (akr.v()) {
+                new EasyMetric("R01_FOCUS_ON_COUNTRY").e();
               }
             }
             return;
@@ -659,7 +657,7 @@ public abstract class PhoneVerificationFragment
   }
   
   final class a
-    extends bgo
+    extends bho
   {
     public a(int paramInt, long paramLong, Handler paramHandler)
     {
@@ -688,7 +686,7 @@ public abstract class PhoneVerificationFragment
   }
   
   final class b
-    extends ot
+    extends pk
   {
     private final String b;
     private String c = null;
@@ -720,14 +718,14 @@ public abstract class PhoneVerificationFragment
       return "/bq/phone_verify";
     }
     
-    protected final void a(aku paramaku)
+    protected final void a(alp paramalp)
     {
       if (isAdded())
       {
         l.setVisibility(8);
         g.setEnabled(true);
       }
-      super.a(paramaku);
+      super.a(paramalp);
     }
     
     protected final void a(String paramString, int paramInt)
@@ -738,7 +736,7 @@ public abstract class PhoneVerificationFragment
         m = "";
         t();
         PhoneVerificationFragment.a(PhoneVerificationFragment.this, paramString);
-        avh.a(e, g);
+        awf.a(e, g);
       }
       a(paramString);
       RegistrationAnalytics.e();
@@ -748,7 +746,7 @@ public abstract class PhoneVerificationFragment
     {
       Bundle localBundle = new Bundle();
       localBundle.putString("action", b);
-      localBundle.putString("username", ajx.l());
+      localBundle.putString("username", akr.l());
       localBundle.putString("phoneNumber", m);
       localBundle.putString("countryCode", PhoneVerificationFragment.p(PhoneVerificationFragment.this));
       localBundle.putBoolean("skipConfirmation", x());
@@ -758,11 +756,11 @@ public abstract class PhoneVerificationFragment
       return localBundle;
     }
     
-    protected final void b(aku paramaku)
+    protected final void b(alp paramalp)
     {
-      super.b(paramaku);
+      super.b(paramalp);
       if (!TextUtils.isEmpty(message_format)) {
-        ajx.v(message_format);
+        akr.v(message_format);
       }
       if (isAdded())
       {

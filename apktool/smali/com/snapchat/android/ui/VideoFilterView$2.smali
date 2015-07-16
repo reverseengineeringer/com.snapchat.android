@@ -45,6 +45,15 @@
     .line 313
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$2;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
+    invoke-static {v0}, Lcom/snapchat/android/ui/VideoFilterView;->a(Lcom/snapchat/android/ui/VideoFilterView;)Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 314
+    iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$2;->a:Lcom/snapchat/android/ui/VideoFilterView;
+
     invoke-static {v0}, Lcom/snapchat/android/ui/VideoFilterView;->b(Lcom/snapchat/android/ui/VideoFilterView;)Lcom/snapchat/videotranscoder/task/TaskExecutor;
 
     move-result-object v0
@@ -69,6 +78,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/videotranscoder/task/TaskExecutor;->execute(Lcom/snapchat/videotranscoder/task/Task;Lcom/snapchat/videotranscoder/task/Task$DoneCallback;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
 
-    .line 314
+    .line 316
+    :cond_0
     return-void
 .end method

@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Lahd;
+.field final synthetic a:Laia;
 
 .field final synthetic b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahd;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Laia;)V
     .locals 0
 
     .prologue
     .line 541
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$19;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
-    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$19;->a:Lahd;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$19;->a:Laia;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -51,15 +51,15 @@
 
     move-result-object v0
 
-    new-instance v1, Lbem;
+    new-instance v1, Lbfl;
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$19;->a:Lahd;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$19;->a:Laia;
 
-    invoke-virtual {v2}, Lahd;->d()Lcom/snapchat/android/model/StoryGroup;
+    invoke-virtual {v2}, Laia;->d()Lcom/snapchat/android/model/StoryGroup;
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Lbem;-><init>(Lcom/snapchat/android/model/StoryGroup;)V
+    invoke-direct {v1, v2}, Lbfl;-><init>(Lcom/snapchat/android/model/StoryGroup;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

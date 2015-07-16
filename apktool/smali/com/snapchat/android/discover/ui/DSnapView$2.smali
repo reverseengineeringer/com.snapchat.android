@@ -1,5 +1,5 @@
 .class public final Lcom/snapchat/android/discover/ui/DSnapView$2;
-.super Lavj;
+.super Lawh;
 .source "SourceFile"
 
 
@@ -19,7 +19,7 @@
 
 .field final synthetic b:F
 
-.field final synthetic c:Lady;
+.field final synthetic c:Laey;
 
 .field final synthetic d:Z
 
@@ -31,18 +31,18 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/discover/ui/DSnapView;FFLady;ZLcom/snapchat/android/discover/model/DSnapPanel$MediaType;J)V
+.method public constructor <init>(Lcom/snapchat/android/discover/ui/DSnapView;FFLaey;ZLcom/snapchat/android/discover/model/DSnapPanel$MediaType;J)V
     .locals 1
 
     .prologue
-    .line 388
+    .line 389
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->g:Lcom/snapchat/android/discover/ui/DSnapView;
 
     iput p2, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->a:F
 
     iput p3, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->b:F
 
-    iput-object p4, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->c:Lady;
+    iput-object p4, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->c:Laey;
 
     iput-boolean p5, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->d:Z
 
@@ -50,7 +50,7 @@
 
     iput-wide p7, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->f:J
 
-    invoke-direct {p0}, Lavj;-><init>()V
+    invoke-direct {p0}, Lawh;-><init>()V
 
     return-void
 .end method
@@ -61,14 +61,14 @@
     .locals 8
 
     .prologue
-    .line 391
+    .line 392
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->g:Lcom/snapchat/android/discover/ui/DSnapView;
 
     iget v1, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->a:F
 
     iget v2, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->b:F
 
-    iget-object v3, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->c:Lady;
+    iget-object v3, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->c:Laey;
 
     iget-boolean v4, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->d:Z
 
@@ -76,8 +76,8 @@
 
     iget-wide v6, p0, Lcom/snapchat/android/discover/ui/DSnapView$2;->f:J
 
-    invoke-static/range {v0 .. v7}, Lcom/snapchat/android/discover/ui/DSnapView;->a(Lcom/snapchat/android/discover/ui/DSnapView;FFLady;ZLcom/snapchat/android/discover/model/DSnapPanel$MediaType;J)V
+    invoke-static/range {v0 .. v7}, Lcom/snapchat/android/discover/ui/DSnapView;->a(Lcom/snapchat/android/discover/ui/DSnapView;FFLaey;ZLcom/snapchat/android/discover/model/DSnapPanel$MediaType;J)V
 
-    .line 392
+    .line 393
     return-void
 .end method

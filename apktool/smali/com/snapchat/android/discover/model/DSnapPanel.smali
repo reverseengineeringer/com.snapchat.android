@@ -16,52 +16,52 @@
 
 # instance fields
 .field public final a:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 .field public final b:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 .field public final c:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 .field public final d:Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
-.field public final e:Lbjx;
-    .annotation build Lcgc;
+.field public final e:Lbky;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 .field public final f:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 .field public final g:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 .field public final h:Lcom/snapchat/android/discover/model/DSnapPanel$Mode;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 .field public final i:Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
 .field public final j:Lcom/snapchat/android/discover/model/MediaState;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 .end field
 
@@ -95,9 +95,9 @@
     iput-object v0, p0, Lcom/snapchat/android/discover/model/DSnapPanel;->d:Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
 
     .line 118
-    iget-object v0, p1, Lcom/snapchat/android/discover/model/DSnapPanel$a;->i:Lbjx;
+    iget-object v0, p1, Lcom/snapchat/android/discover/model/DSnapPanel$a;->i:Lbky;
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/DSnapPanel;->e:Lbjx;
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/DSnapPanel;->e:Lbky;
 
     .line 119
     iget-object v0, p1, Lcom/snapchat/android/discover/model/DSnapPanel$a;->e:Lcom/snapchat/android/discover/model/DSnapPanel$MediaType;

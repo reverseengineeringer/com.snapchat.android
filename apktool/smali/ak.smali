@@ -64,7 +64,7 @@
 
 
 # virtual methods
-.method public final a(Lex;Lau;)Las;
+.method public final a(Lfg;Lau;)Las;
     .locals 12
 
     .prologue
@@ -79,7 +79,7 @@
     const/16 v1, 0x8
 
     .line 52
-    invoke-interface {p1}, Lex;->b()J
+    invoke-interface {p1}, Lfg;->b()J
 
     move-result-wide v2
 
@@ -108,7 +108,7 @@
 
     check-cast v0, Ljava/nio/ByteBuffer;
 
-    invoke-interface {p1, v0}, Lex;->a(Ljava/nio/ByteBuffer;)I
+    invoke-interface {p1, v0}, Lfg;->a(Ljava/nio/ByteBuffer;)I
 
     move-result v0
 
@@ -181,7 +181,7 @@
     if-gez v0, :cond_0
 
     .line 59
-    invoke-interface {p1, v2, v3}, Lex;->a(J)V
+    invoke-interface {p1, v2, v3}, Lfg;->a(J)V
 
     .line 60
     new-instance v0, Ljava/io/EOFException;
@@ -229,7 +229,7 @@
 
     check-cast v0, Ljava/nio/ByteBuffer;
 
-    invoke-interface {p1, v0}, Lex;->a(Ljava/nio/ByteBuffer;)I
+    invoke-interface {p1, v0}, Lfg;->a(Ljava/nio/ByteBuffer;)I
 
     .line 83
     iget-object v0, p0, Lak;->a:Ljava/lang/ThreadLocal;
@@ -306,7 +306,7 @@
 
     check-cast v0, Ljava/nio/ByteBuffer;
 
-    invoke-interface {p1, v0}, Lex;->a(Ljava/nio/ByteBuffer;)I
+    invoke-interface {p1, v0}, Lfg;->a(Ljava/nio/ByteBuffer;)I
 
     .line 95
     new-array v6, v5, [B
@@ -396,7 +396,7 @@
 
     move-object v6, p0
 
-    invoke-interface/range {v1 .. v6}, Las;->parse(Lex;Ljava/nio/ByteBuffer;JLal;)V
+    invoke-interface/range {v1 .. v6}, Las;->parse(Lfg;Ljava/nio/ByteBuffer;JLal;)V
 
     move-object v4, v1
 
@@ -412,11 +412,11 @@
     if-nez v0, :cond_4
 
     .line 87
-    invoke-interface {p1}, Lex;->a()J
+    invoke-interface {p1}, Lfg;->a()J
 
     move-result-wide v0
 
-    invoke-interface {p1}, Lex;->b()J
+    invoke-interface {p1}, Lfg;->b()J
 
     move-result-wide v2
 

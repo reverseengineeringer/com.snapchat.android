@@ -2,7 +2,6 @@ package com.snapchat.android.analytics.framework;
 
 import android.os.Build;
 import android.os.Build.VERSION;
-import com.snapchat.android.Timber;
 
 public class ErrorMetric
   extends EasyMetric
@@ -25,7 +24,7 @@ public class ErrorMetric
   public final void a(boolean paramBoolean)
   {
     super.a(paramBoolean);
-    Timber.f("ErrorMetric", "Reporting Error: " + a, new Object[0]);
+    new StringBuilder("Reporting Error: ").append(a);
   }
 }
 

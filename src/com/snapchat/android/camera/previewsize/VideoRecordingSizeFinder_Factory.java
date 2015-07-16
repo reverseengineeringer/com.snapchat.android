@@ -1,23 +1,23 @@
 package com.snapchat.android.camera.previewsize;
 
-import buo;
-import wq;
+import bvp;
+import xm;
 
 public enum VideoRecordingSizeFinder_Factory
-  implements buo<wq>
+  implements bvp<xm>
 {
   INSTANCE;
   
   private VideoRecordingSizeFinder_Factory() {}
   
-  public static buo<wq> create()
+  public static bvp<xm> create()
   {
     return INSTANCE;
   }
   
-  public final wq get()
+  public final xm get()
   {
-    return new wq();
+    return new xm();
   }
 }
 

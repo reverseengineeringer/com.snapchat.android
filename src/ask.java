@@ -1,39 +1,53 @@
-import android.view.View;
-import com.snapchat.android.ui.SwipeImageView;
-import com.snapchat.android.ui.swipefilters.FilterPageType;
-import java.util.ArrayList;
+import android.os.Handler;
+import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
 
 public final class ask
+  implements asj
 {
-  public final ArrayList<asj> a = new ArrayList(11);
-  public final SwipeImageView b;
-  public final arw<arn> c;
+  final asj a;
+  private final Handler b;
   
-  public ask(SwipeImageView paramSwipeImageView, arw<arn> paramarw)
+  public ask(@chc Handler paramHandler, @chc asj paramasj)
   {
-    b = paramSwipeImageView;
-    c = paramarw;
+    b = paramHandler;
+    a = paramasj;
   }
   
-  public final void a()
+  private static boolean a()
   {
-    while (!a.isEmpty()) {
-      ((asj)a.remove(0)).a(b, c);
-    }
-    int i = 0;
-    while (i < c.b())
+    return !bhp.c();
+  }
+  
+  public final void a(final asi paramasi)
+  {
+    if (a())
     {
-      arn localarn = c.a(i);
-      if ((localarn.b() == FilterPageType.INFOFILTER) && (localarn.d() != null)) {
-        localarn.d().bringToFront();
-      }
-      i += 1;
+      b.post(new Runnable()
+      {
+        public final void run()
+        {
+          a.a(paramasi);
+        }
+      });
+      return;
     }
+    a.a(paramasi);
   }
   
-  public final void a(asj paramasj)
+  public final void a(final asi paramasi, final SnapViewSessionStopReason paramSnapViewSessionStopReason)
   {
-    a.add(paramasj);
+    if (a())
+    {
+      b.post(new Runnable()
+      {
+        public final void run()
+        {
+          a.a(paramasi, paramSnapViewSessionStopReason);
+        }
+      });
+      return;
+    }
+    a.a(paramasi, paramSnapViewSessionStopReason);
   }
 }
 

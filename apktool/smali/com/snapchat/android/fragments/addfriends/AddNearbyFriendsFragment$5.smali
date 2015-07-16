@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lalw;
+.implements Lamt;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k()Lalw;
+    value = Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->k()Lamt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 391
+    .line 395
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$5;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,14 +36,14 @@
 
 
 # virtual methods
-.method public final a(Lalx$a;)Z
+.method public final a(Lamu$a;)Z
     .locals 2
 
     .prologue
-    .line 403
-    sget-object v0, Lalx;->g:Ljava/util/Set;
+    .line 407
+    sget-object v0, Lamu;->g:Ljava/util/Set;
 
-    iget-object v1, p1, Lalx$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+    iget-object v1, p1, Lamu$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -52,46 +52,37 @@
     return v0
 .end method
 
-.method public final b(Lalx$a;)Z
-    .locals 4
+.method public final b(Lamu$a;)Z
+    .locals 2
 
     .prologue
-    const/4 v0, 0x0
+    .line 398
+    iget-object v0, p1, Lamu$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 394
-    iget-object v1, p1, Lalx$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+    sget-object v1, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->ADDFRIEND:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    sget-object v2, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->ADDFRIEND:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+    if-ne v0, v1, :cond_0
 
-    if-ne v1, v2, :cond_0
+    .line 399
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 395
-    const-string v1, "AddNearbyFriendsFrag"
+    const-string v1, "Dropping non-silent add friend notification for user: "
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "Dropping non-silent add friend notification for user: "
+    iget-object v1, p1, Lamu$a;->a:Ljava/lang/String;
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p1, Lalx$a;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v0}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 396
+    .line 400
     const/4 v0, 0x1
 
-    .line 398
-    :cond_0
+    .line 402
+    :goto_0
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

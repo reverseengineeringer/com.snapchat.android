@@ -56,13 +56,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lafy$b;
+    check-cast v0, Lagy$b;
 
     .line 130
-    iget-object v0, v0, Lafy$b;->b:Lcom/snapchat/android/model/Friend;
+    iget-object v0, v0, Lagy$b;->b:Lcom/snapchat/android/model/Friend;
 
     .line 131
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 

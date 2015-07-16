@@ -13,8 +13,8 @@ public class PermissionsExplanationFragment
 {
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968706, paramViewGroup, false);
-    c(2131362488).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968708, paramViewGroup, false);
+    c(2131362487).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {

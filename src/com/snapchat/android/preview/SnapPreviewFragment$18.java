@@ -1,10 +1,10 @@
 package com.snapchat.android.preview;
 
 import android.view.View;
-import bgr.a;
+import bhr.a;
 
 final class SnapPreviewFragment$18
-  implements bgr.a
+  implements bhr.a
 {
   SnapPreviewFragment$18(SnapPreviewFragment paramSnapPreviewFragment) {}
   

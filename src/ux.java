@@ -1,42 +1,34 @@
-import android.support.v7.widget.RecyclerView.s;
-import android.view.View;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-public abstract class ux<T extends ut>
-  extends RecyclerView.s
+public final class ux
 {
-  protected boolean m;
+  private final Map<String, List<String>> mHeadersMap = du.a();
   
-  public ux(View paramView)
+  public ux() {}
+  
+  public ux(@chc bmv parambmv)
   {
-    super(paramView);
+    Iterator localIterator = parambmv.a().iterator();
+    while (localIterator.hasNext())
+    {
+      String str = (String)localIterator.next();
+      mHeadersMap.put(str.toLowerCase(), parambmv.c(str));
+    }
   }
   
-  public abstract void a(T paramT);
-  
-  public abstract void a(ve paramve);
-  
-  public abstract void a(ve paramve, boolean paramBoolean);
-  
-  public abstract boolean a(ve paramve, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4);
-  
-  public abstract float b(ve paramve);
-  
-  public final void b(boolean paramBoolean)
+  @chc
+  public final List<String> a(@chc String paramString)
   {
-    m = paramBoolean;
+    paramString = paramString.toLowerCase();
+    if (mHeadersMap.containsKey(paramString)) {
+      return (List)mHeadersMap.get(paramString);
+    }
+    return new ArrayList();
   }
-  
-  public abstract boolean c(ve paramve);
-  
-  public abstract int d(ve paramve);
-  
-  public abstract void e(ve paramve);
-  
-  public abstract void f(ve paramve);
-  
-  public abstract void g(ve paramve);
-  
-  public abstract T q();
 }
 
 /* Location:

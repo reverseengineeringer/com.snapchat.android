@@ -1,26 +1,53 @@
-import java.util.Locale;
-
-public final class cke
+public abstract class cke
+  extends ckc
 {
-  public final ckh a;
-  public final ckg b;
-  public final Locale c;
-  public final cgu d;
+  public final chi b;
   
-  public cke(ckh paramckh, ckg paramckg)
+  public cke(chi paramchi, chj paramchj)
   {
-    a = paramckh;
-    b = paramckg;
-    c = null;
-    d = null;
+    super(paramchj);
+    if (paramchi == null) {
+      throw new IllegalArgumentException("The field must not be null");
+    }
+    if (!paramchi.c()) {
+      throw new IllegalArgumentException("The field must be supported");
+    }
+    b = paramchi;
   }
   
-  public cke(ckh paramckh, ckg paramckg, Locale paramLocale, cgu paramcgu)
+  public int a(long paramLong)
   {
-    a = paramckh;
-    b = paramckg;
-    c = paramLocale;
-    d = paramcgu;
+    return b.a(paramLong);
+  }
+  
+  public long b(long paramLong, int paramInt)
+  {
+    return b.b(paramLong, paramInt);
+  }
+  
+  public long d(long paramLong)
+  {
+    return b.d(paramLong);
+  }
+  
+  public chn d()
+  {
+    return b.d();
+  }
+  
+  public chn e()
+  {
+    return b.e();
+  }
+  
+  public int g()
+  {
+    return b.g();
+  }
+  
+  public int h()
+  {
+    return b.h();
   }
 }
 

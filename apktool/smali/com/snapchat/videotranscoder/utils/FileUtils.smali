@@ -48,7 +48,7 @@
 .method public checkExists(Ljava/lang/String;)Z
     .locals 1
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -80,7 +80,7 @@
 .method public isNotZeroBytes(Ljava/lang/String;)Z
     .locals 6
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

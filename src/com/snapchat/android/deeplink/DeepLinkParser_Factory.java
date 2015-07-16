@@ -1,23 +1,23 @@
 package com.snapchat.android.deeplink;
 
-import abh;
-import buo;
+import ach;
+import bvp;
 
 public enum DeepLinkParser_Factory
-  implements buo<abh>
+  implements bvp<ach>
 {
   INSTANCE;
   
   private DeepLinkParser_Factory() {}
   
-  public static buo<abh> create()
+  public static bvp<ach> create()
   {
     return INSTANCE;
   }
   
-  public final abh get()
+  public final ach get()
   {
-    return new abh();
+    return new ach();
   }
 }
 

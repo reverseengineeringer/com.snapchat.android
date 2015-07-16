@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 529
+    .line 541
     iput-object p1, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$4;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     iput-object p2, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$4;->a:Ljava/lang/Integer;
@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 532
+    .line 544
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$4;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;->a(Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;)Landroid/support/v7/widget/RecyclerView;
@@ -67,10 +67,10 @@
 
     move-result-object v1
 
-    .line 533
+    .line 545
     if-eqz v1, :cond_1
 
-    .line 534
+    .line 546
     iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$4;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -87,7 +87,7 @@
 
     invoke-static {v4, v0}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;->a(Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;F)F
 
-    .line 535
+    .line 547
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$4;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;->d(Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;)Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$d;
@@ -98,7 +98,7 @@
 
     move-result v0
 
-    .line 536
+    .line 548
     iget-object v4, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$4;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
     invoke-static {v4}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;->e(Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;)F
@@ -111,20 +111,20 @@
 
     div-float v0, v4, v0
 
-    .line 537
+    .line 549
     cmpg-float v4, v0, v2
 
     if-gez v4, :cond_0
 
     move v0, v2
 
-    .line 538
+    .line 550
     :cond_0
     cmpl-float v2, v0, v3
 
     if-lez v2, :cond_2
 
-    .line 539
+    .line 551
     :goto_0
     iget-object v0, p0, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$4;->b:Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener;
 
@@ -152,7 +152,7 @@
 
     invoke-interface/range {v0 .. v5}, Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$d;->a(Landroid/support/v7/widget/RecyclerView$s;FFFF)Z
 
-    .line 541
+    .line 553
     :cond_1
     return-void
 

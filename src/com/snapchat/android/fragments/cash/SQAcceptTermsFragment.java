@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.cash;
 
-import ajx;
+import akr;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import atj;
-import avh;
+import auh;
+import awf;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 
@@ -22,7 +22,7 @@ public class SQAcceptTermsFragment
   public final void e()
   {
     super.e();
-    avh.a(getActivity(), mFragmentLayout);
+    awf.a(getActivity(), mFragmentLayout);
   }
   
   public final boolean g()
@@ -38,8 +38,8 @@ public class SQAcceptTermsFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968750, paramViewGroup, false);
-    c(2131362748).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968752, paramViewGroup, false);
+    c(2131362745).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
@@ -51,14 +51,14 @@ public class SQAcceptTermsFragment
         getActivity().onBackPressed();
       }
     });
-    paramLayoutInflater = (Button)c(2131362752);
+    paramLayoutInflater = (Button)c(2131362749);
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
+    auh.a(paramLayoutInflater);
     paramLayoutInflater.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ajx.U();
+        akr.U();
         AnalyticsEvents.M();
         getActivity().mFragments.popBackStack();
         if (SQAcceptTermsFragment.a(SQAcceptTermsFragment.this) != null)

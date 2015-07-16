@@ -1,27 +1,64 @@
+import com.snapchat.android.api2.cash.blockers.BlockerOrder;
+import com.snapchat.android.fragments.verification.URLVerificationFragment;
+import com.snapchat.android.fragments.verification.URLVerificationFragment.a;
+import com.snapchat.android.model.CashTransaction;
+import com.squareup.otto.Bus;
+
 public final class so
-  implements buo<sn>
+  extends rl
 {
-  private final buj<sn> membersInjector;
+  private static final String TAG = "SQUrlBlocker";
+  @chc
+  private final String mUrl;
   
-  static
+  public so(@chc String paramString)
   {
-    if (!so.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    mUrl = paramString;
+  }
+  
+  public final void a(@chc CashTransaction paramCashTransaction)
+  {
+    paramCashTransaction = new URLVerificationFragment();
+    paramCashTransaction.a(mUrl);
+    URLVerificationFragment.a local1 = new URLVerificationFragment.a()
     {
-      $assertionsDisabled = bool;
-      return;
-    }
+      public final void a()
+      {
+        so.a(so.this);
+      }
+      
+      public final void b()
+      {
+        so.b(so.this);
+      }
+    };
+    e = false;
+    d = false;
+    a = local1;
+    bbo.a().a(new bev(paramCashTransaction));
   }
   
-  private so(buj<sn> parambuj)
+  public final BlockerOrder c()
   {
-    assert (parambuj != null);
-    membersInjector = parambuj;
+    return BlockerOrder.SQ_URL_BLOCKER;
   }
   
-  public static buo<sn> a(buj<sn> parambuj)
+  public final boolean equals(Object paramObject)
   {
-    return new so(parambuj);
+    if (this == paramObject) {}
+    do
+    {
+      return true;
+      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+        return false;
+      }
+    } while (super.equals(paramObject));
+    return false;
+  }
+  
+  public final int hashCode()
+  {
+    return super.hashCode();
   }
 }
 

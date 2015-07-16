@@ -1,165 +1,121 @@
 .class public final Lbtx;
-.super Lbtt;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field private static final f:[Ljava/lang/String;
+# instance fields
+.field private a:Landroid/net/ConnectivityManager;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
     .prologue
-    .line 16
-    const/4 v0, 0x3
+    .line 34
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [Ljava/lang/String;
+    .line 35
+    if-nez p1, :cond_0
 
-    const/4 v1, 0x0
+    .line 36
+    invoke-static {}, Lbue;->e()V
 
-    const-string v2, "libcore.net.http.HttpsURLConnectionImpl"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    const-string v2, "org.apache.harmony.luni.internal.net.www.protocol.https.HttpsURLConnectionImpl"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    const-string v2, "org.apache.harmony.luni.internal.net.www.protocol.https.HttpsURLConnection"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lbtx;->f:[Ljava/lang/String;
-
+    .line 51
+    :goto_0
     return-void
-.end method
 
-.method public constructor <init>(Lbtl;Lbsw;)V
-    .locals 1
-
-    .prologue
-    .line 23
-    sget-object v0, Lbtx;->f:[Ljava/lang/String;
-
-    invoke-direct {p0, p1, p2, v0}, Lbtt;-><init>(Lbtl;Lbsw;[Ljava/lang/String;)V
-
-    .line 24
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 57
-    const-string v0, "https"
-
-    return-object v0
-.end method
-
-.method protected final getDefaultPort()I
-    .locals 1
-
-    .prologue
-    .line 52
-    const/16 v0, 0x1bb
-
-    return v0
-.end method
-
-.method protected final openConnection(Ljava/net/URL;)Ljava/net/URLConnection;
-    .locals 4
-
-    .prologue
-    .line 27
-    invoke-super {p0, p1}, Lbtt;->openConnection(Ljava/net/URL;)Ljava/net/URLConnection;
+    .line 41
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    check-cast v0, Ljavax/net/ssl/HttpsURLConnection;
+    .line 42
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    .line 29
-    :try_start_0
-    new-instance v1, Lbtz;
+    move-result-object v1
 
-    iget-object v2, p0, Lbtt;->c:Lbtl;
+    .line 43
+    const-string v2, "android.permission.ACCESS_NETWORK_STATE"
 
-    iget-object v3, p0, Lbtt;->d:Lbsw;
+    invoke-virtual {v0, v2, v1}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-direct {v1, v0, v2, v3}, Lbtz;-><init>(Ljavax/net/ssl/HttpsURLConnection;Lbtl;Lbsw;)V
-    :try_end_0
-    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
+    move-result v0
 
-    move-object v0, v1
+    .line 45
+    if-nez v0, :cond_1
 
-    .line 34
-    :goto_0
-    return-object v0
+    .line 46
+    const-string v0, "connectivity"
 
-    .line 30
-    :catch_0
-    move-exception v0
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    throw v0
+    move-result-object v0
 
-    .line 32
-    :catch_1
-    move-exception v1
+    check-cast v0, Landroid/net/ConnectivityManager;
 
-    invoke-static {v1}, Lbtd;->a(Ljava/lang/Throwable;)V
+    iput-object v0, p0, Lbtx;->a:Landroid/net/ConnectivityManager;
+
+    goto :goto_0
+
+    .line 49
+    :cond_1
+    invoke-static {}, Lbue;->e()V
 
     goto :goto_0
 .end method
 
-.method protected final openConnection(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/URLConnection;
-    .locals 4
+
+# virtual methods
+.method public final a()Lbsb;
+    .locals 2
 
     .prologue
-    .line 39
-    invoke-super {p0, p1, p2}, Lbtt;->openConnection(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/URLConnection;
+    .line 57
+    iget-object v0, p0, Lbtx;->a:Landroid/net/ConnectivityManager;
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    check-cast v0, Ljavax/net/ssl/HttpsURLConnection;
+    .line 58
+    sget-object v0, Lbsb;->c:Lbsb;
 
-    .line 41
-    :try_start_0
-    new-instance v1, Lbtz;
-
-    iget-object v2, p0, Lbtt;->c:Lbtl;
-
-    iget-object v3, p0, Lbtt;->d:Lbsw;
-
-    invoke-direct {v1, v0, v2, v3}, Lbtz;-><init>(Ljavax/net/ssl/HttpsURLConnection;Lbtl;Lbsw;)V
-    :try_end_0
-    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-object v0, v1
-
-    .line 46
+    .line 68
     :goto_0
     return-object v0
 
-    .line 42
-    :catch_0
-    move-exception v0
+    .line 61
+    :cond_0
+    iget-object v0, p0, Lbtx;->a:Landroid/net/ConnectivityManager;
 
-    throw v0
+    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
-    .line 44
-    :catch_1
-    move-exception v1
+    move-result-object v0
 
-    invoke-static {v1}, Lbtd;->a(Ljava/lang/Throwable;)V
+    .line 63
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 64
+    :cond_1
+    sget-object v0, Lbsb;->d:Lbsb;
+
+    goto :goto_0
+
+    .line 67
+    :cond_2
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
+
+    move-result v0
+
+    .line 68
+    invoke-static {v0}, Lbsb;->a(I)Lbsb;
+
+    move-result-object v0
 
     goto :goto_0
 .end method

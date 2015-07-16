@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 67
+    .line 66
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
     const-string v1, "FROM_NOTIFICATION"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;->FROM_NOTIFICATION:Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
-    .line 68
+    .line 67
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
     const-string v1, "NEWLY_RECEIVED_CHATS_COUNT"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;->NEWLY_RECEIVED_CHATS_COUNT:Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
-    .line 69
+    .line 68
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
     const-string v1, "NEWLY_RECEIVED_SNAPS_COUNT"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;->NEWLY_RECEIVED_SNAPS_COUNT:Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
-    .line 70
+    .line 69
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
     const-string v1, "UNVIEWED_CHATS_COUNT"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;->UNVIEWED_CHATS_COUNT:Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
-    .line 71
+    .line 70
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
     const-string v1, "UNVIEWED_SNAPS_COUNT"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;->UNVIEWED_SNAPS_COUNT:Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
-    .line 66
+    .line 65
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/AnalyticsEvents$c;
@@ -136,7 +136,7 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 65
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -146,7 +146,7 @@
     .locals 1
 
     .prologue
-    .line 66
+    .line 65
     const-class v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -162,7 +162,7 @@
     .locals 1
 
     .prologue
-    .line 66
+    .line 65
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$c;->$VALUES:[Lcom/snapchat/android/analytics/AnalyticsEvents$c;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/AnalyticsEvents$c;->clone()Ljava/lang/Object;

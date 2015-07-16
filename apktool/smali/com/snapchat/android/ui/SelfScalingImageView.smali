@@ -319,43 +319,23 @@
     move-result-object v0
 
     .line 93
-    if-nez v0, :cond_0
-
-    .line 94
-    const-string v0, "SelfScalingImageView"
-
-    const-string v1, "View has no parent. Aborting."
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-nez v0, :cond_1
 
     .line 111
+    :cond_0
     :goto_0
     return-void
 
     .line 98
-    :cond_0
+    :cond_1
     invoke-virtual {p0}, Lcom/snapchat/android/ui/SelfScalingImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     .line 99
-    if-nez v1, :cond_1
-
-    .line 100
-    const-string v0, "SelfScalingImageView"
-
-    const-string v1, "View has no background drawable. Aborting."
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
+    if-eqz v1, :cond_0
 
     .line 104
-    :cond_1
     invoke-virtual {p0}, Lcom/snapchat/android/ui/SelfScalingImageView;->getScaleType()Landroid/widget/ImageView$ScaleType;
 
     move-result-object v2
@@ -422,7 +402,7 @@
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    invoke-static {v5}, Lavh;->e(I)Z
+    invoke-static {v5}, Lawf;->e(I)Z
 
     move-result v2
 
@@ -436,7 +416,7 @@
 
     :cond_2
     :goto_2
-    invoke-static {v5}, Lavh;->c(I)Z
+    invoke-static {v5}, Lawf;->c(I)Z
 
     move-result v2
 
@@ -482,7 +462,7 @@
     goto :goto_1
 
     :cond_5
-    invoke-static {v5}, Lavh;->f(I)Z
+    invoke-static {v5}, Lawf;->f(I)Z
 
     move-result v2
 
@@ -497,7 +477,7 @@
     goto :goto_2
 
     :cond_6
-    invoke-static {v5}, Lavh;->d(I)Z
+    invoke-static {v5}, Lawf;->d(I)Z
 
     move-result v2
 
@@ -520,7 +500,7 @@
 
 .method private getParentViewGroup()Landroid/view/ViewGroup;
     .locals 2
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue

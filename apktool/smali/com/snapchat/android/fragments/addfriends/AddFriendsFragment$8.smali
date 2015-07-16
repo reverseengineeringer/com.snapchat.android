@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 538
+    .line 546
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$8;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,13 +42,13 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 541
+    .line 549
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$8;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->d(Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;)V
 
-    .line 544
-    new-instance v0, Lpa;
+    .line 552
+    new-instance v0, Lpr;
 
     const-string v1, "updateSearchableByPhoneNumber"
 
@@ -60,23 +60,23 @@
 
     aput-object v3, v2, v4
 
-    invoke-direct {v0, v1, v2}, Lpa;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lpr;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 545
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    .line 553
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v4, [Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Lpa;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1, v2}, Lpr;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 546
+    .line 554
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$8;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->c(Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;)Lcom/snapchat/android/analytics/ProfileEventAnalytics;
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$8;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->C:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->D:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     sget-object v1, Lcom/snapchat/android/analytics/ProfileEventAnalytics$1;->$SwitchMap$com$snapchat$android$analytics$AnalyticsEvents$AnalyticsContext:[I
 
@@ -89,46 +89,34 @@
     packed-switch v1, :pswitch_data_0
 
     :pswitch_0
-    const-string v1, "ProfileEventAnalytics"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "onProfileContactPermissionContinue  - Unknown context "
 
-    const-string v3, "onProfileContactPermissionContinue  - Unknown context "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 547
+    .line 555
     :goto_0
     return-void
 
-    .line 546
+    .line 554
     :pswitch_1
-    new-instance v0, Lih;
+    new-instance v0, Lis;
 
-    invoke-direct {v0}, Lih;-><init>()V
+    invoke-direct {v0}, Lis;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     goto :goto_0
 
     :pswitch_2
-    new-instance v0, Lix;
+    new-instance v0, Ljj;
 
-    invoke-direct {v0}, Lix;-><init>()V
+    invoke-direct {v0}, Ljj;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     goto :goto_0
 

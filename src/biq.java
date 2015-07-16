@@ -1,19 +1,10 @@
-import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class biq
-  extends bii
+  extends bji
 {
-  @SerializedName("ping_id")
-  protected String pingId;
-  
-  public final String a()
-  {
-    return pingId;
-  }
-  
   public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
@@ -22,13 +13,12 @@ public class biq
     if (!(paramObject instanceof biq)) {
       return false;
     }
-    paramObject = (biq)paramObject;
-    return new EqualsBuilder().append(pingId, pingId).isEquals();
+    return new EqualsBuilder().isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(pingId).toHashCode();
+    return new HashCodeBuilder().toHashCode();
   }
   
   public String toString()

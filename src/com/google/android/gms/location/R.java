@@ -40,8 +40,8 @@ public final class R
     public static final int common_signin_btn_light_text_disabled = 2131230755;
     public static final int common_signin_btn_light_text_focused = 2131230756;
     public static final int common_signin_btn_light_text_pressed = 2131230757;
-    public static final int common_signin_btn_text_dark = 2131230816;
-    public static final int common_signin_btn_text_light = 2131230817;
+    public static final int common_signin_btn_text_dark = 2131230818;
+    public static final int common_signin_btn_text_light = 2131230819;
   }
   
   public static final class drawable
@@ -82,13 +82,13 @@ public final class R
   
   public static final class id
   {
-    public static final int adjust_height = 2131361810;
-    public static final int adjust_width = 2131361811;
-    public static final int hybrid = 2131361813;
-    public static final int none = 2131361812;
-    public static final int normal = 2131361814;
-    public static final int satellite = 2131361815;
-    public static final int terrain = 2131361816;
+    public static final int adjust_height = 2131361811;
+    public static final int adjust_width = 2131361812;
+    public static final int hybrid = 2131361814;
+    public static final int none = 2131361813;
+    public static final int normal = 2131361815;
+    public static final int satellite = 2131361816;
+    public static final int terrain = 2131361817;
   }
   
   public static final class integer

@@ -1,5 +1,5 @@
 .class public final Laxp;
-.super Ljava/lang/Thread;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -11,417 +11,127 @@
 .end annotation
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "SecureChatSessionOutputThread"
-
-
 # instance fields
-.field public final mAckTracker:Laxm;
+.field public final mCache:Lcom/snapchat/android/util/cache/DiscoverShareCache;
 
-.field public final mMessageQueue:Ljava/util/concurrent/ArrayBlockingQueue;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/ArrayBlockingQueue",
-            "<",
-            "Lbii;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final mOutputStreamQueue:Ljava/util/concurrent/SynchronousQueue;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/SynchronousQueue",
-            "<",
-            "Laxl;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final mStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final mStreamProcessingStateListeners:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Laxh;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final mThreadState:Ljava/util/concurrent/atomic/AtomicReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/atomic/AtomicReference",
-            "<",
-            "Laxp$a;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final mCompressor:Lack;
 
 
 # direct methods
-.method public constructor <init>(Laxm;)V
+.method private constructor <init>()V
     .locals 2
 
     .prologue
-    .line 43
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    .line 35
+    sget-object v0, Laxo;->DISCOVER_SHARE:Laxn;
+
+    check-cast v0, Lcom/snapchat/android/util/cache/DiscoverShareCache;
+
+    sget-object v1, Lack;->a:Lack;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lack;
+
+    invoke-direct {v1}, Lack;-><init>()V
+
+    sput-object v1, Lack;->a:Lack;
+
+    :cond_0
+    sget-object v1, Lack;->a:Lack;
+
+    invoke-direct {p0, v0, v1}, Laxp;-><init>(Lcom/snapchat/android/util/cache/DiscoverShareCache;Lack;)V
 
     .line 36
-    new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;
-
-    const/16 v1, 0x64
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
-
-    iput-object v0, p0, Laxp;->mMessageQueue:Ljava/util/concurrent/ArrayBlockingQueue;
-
-    .line 37
-    new-instance v0, Ljava/util/concurrent/SynchronousQueue;
-
-    invoke-direct {v0}, Ljava/util/concurrent/SynchronousQueue;-><init>()V
-
-    iput-object v0, p0, Laxp;->mOutputStreamQueue:Ljava/util/concurrent/SynchronousQueue;
-
-    .line 38
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Laxp;->mStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 39
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v1, Laxp$a;->AWAITING_CONNECTION:Laxp$a;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Laxp;->mThreadState:Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 40
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
-
-    iput-object v0, p0, Laxp;->mStreamProcessingStateListeners:Ljava/util/List;
-
-    .line 44
-    const-string v0, "SecureChatSessionOutputThread"
-
-    invoke-virtual {p0, v0}, Laxp;->setName(Ljava/lang/String;)V
-
-    .line 45
-    iput-object p1, p0, Laxp;->mAckTracker:Laxm;
-
-    .line 46
     return-void
 .end method
 
-.method private a(Ljava/lang/Exception;)V
-    .locals 2
+.method synthetic constructor <init>(B)V
+    .locals 0
 
     .prologue
-    .line 126
-    iget-object v0, p0, Laxp;->mStreamProcessingStateListeners:Ljava/util/List;
+    .line 16
+    invoke-direct {p0}, Laxp;-><init>()V
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    return-void
+.end method
 
-    move-result-object v1
+.method private constructor <init>(Lcom/snapchat/android/util/cache/DiscoverShareCache;Lack;)V
+    .locals 0
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    .prologue
+    .line 40
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v0
+    .line 41
+    iput-object p1, p0, Laxp;->mCache:Lcom/snapchat/android/util/cache/DiscoverShareCache;
 
-    if-eqz v0, :cond_0
+    .line 42
+    iput-object p2, p0, Laxp;->mCompressor:Lack;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laxh;
-
-    .line 127
-    invoke-interface {v0, p1}, Laxh;->a(Ljava/lang/Exception;)V
-
-    goto :goto_0
-
-    .line 129
-    :cond_0
+    .line 43
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 9
+.method public final a(Ljava/lang/String;)Laco;
+    .locals 3
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 74
-    :cond_0
-    iget-object v1, p0, Laxp;->mStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    .line 77
-    :try_start_0
-    iget-object v1, p0, Laxp;->mOutputStreamQueue:Ljava/util/concurrent/SynchronousQueue;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/SynchronousQueue;->take()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Laxl;
-
-    .line 78
-    const-string v2, "SecureChatSessionOutputThread"
-
-    const-string v3, "CHAT-LOG: SecureChatSessionOutputThread got output stream"
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v5}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     .line 79
-    iget-object v2, p0, Laxp;->mThreadState:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v3, Laxp$a;->CONNECTED:Laxp$a;
-
-    invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    const/4 v0, 0x0
 
     .line 80
-    iget-object v2, p0, Laxp;->mStreamProcessingStateListeners:Ljava/util/List;
+    iget-object v1, p0, Laxp;->mCache:Lcom/snapchat/android/util/cache/DiscoverShareCache;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    sget-object v2, Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;->METADATA:Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;
 
-    move-result-object v3
-
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Laxh;
-
-    invoke-interface {v2}, Laxh;->a()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 93
-    :catch_0
-    move-exception v1
-
-    move-object v2, v1
-
-    .line 97
-    :goto_1
-    iget-object v1, p0, Laxp;->mThreadState:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v3, Laxp$a;->AWAITING_CONNECTION:Laxp$a;
-
-    invoke-virtual {v1, v3}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    .line 98
-    invoke-direct {p0, v2}, Laxp;->a(Ljava/lang/Exception;)V
-
-    .line 99
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    .line 100
-    iget-object v3, p0, Laxp;->mMessageQueue:Ljava/util/concurrent/ArrayBlockingQueue;
-
-    invoke-virtual {v3, v1}, Ljava/util/concurrent/ArrayBlockingQueue;->drainTo(Ljava/util/Collection;)I
-
-    .line 101
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_2
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v1, p1, v2}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Ljava/lang/String;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)[B
 
     move-result-object v1
-
-    check-cast v1, Lbii;
-
-    .line 102
-    iget-object v5, p0, Laxp;->mAckTracker:Laxm;
-
-    invoke-virtual {v1}, Lbii;->k()Ljava/lang/String;
-
-    move-result-object v1
-
-    sget-object v6, Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;->SCCP_ERROR:Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    const-string v8, "Exception in SecureChatSessionOutputThread: "
-
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v5, v1, v6, v7}, Laxm;->a(Ljava/lang/String;Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;Ljava/lang/String;)V
-
-    goto :goto_2
-
-    .line 81
-    :cond_1
-    :goto_3
-    :try_start_1
-    iget-object v2, p0, Laxp;->mStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
 
     .line 82
-    iget-object v2, p0, Laxp;->mMessageQueue:Ljava/util/concurrent/ArrayBlockingQueue;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v2}, Ljava/util/concurrent/ArrayBlockingQueue;->take()Ljava/lang/Object;
+    .line 83
+    new-instance v0, Ljava/lang/String;
 
-    move-result-object v2
-
-    move-object v0, v2
-
-    check-cast v0, Lbii;
-
-    move-object v3, v0
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
 
     .line 84
-    :try_start_2
-    const-string v2, "SecureChatSessionOutputThread"
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    const-string v6, "CHAT-LOG: SecureChatSessionOutputThread writing message "
+    const-class v2, Laco;
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v0, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    invoke-static {v2, v5, v6}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 85
-    invoke-virtual {v1, v3}, Laxl;->a(Lbii;)V
-
-    .line 86
-    iget-object v2, p0, Laxp;->mAckTracker:Laxm;
-
-    invoke-virtual {v3}, Lbii;->k()Ljava/lang/String;
-
-    move-result-object v5
-
-    iget-object v2, v2, Laxm;->mMessageCallbacksPendingWrite:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v2, v5}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback;
-
-    if-eqz v2, :cond_1
-
-    const/4 v5, 0x1
-
-    sget-object v6, Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;->SUCCESS:Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;
-
-    const/4 v7, 0x0
-
-    invoke-interface {v2, v5, v6, v7}, Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback;->a(ZLcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;Ljava/lang/String;)V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-
-    goto :goto_3
+    check-cast v0, Laco;
 
     .line 87
-    :catch_1
-    move-exception v1
+    :cond_0
+    return-object v0
+.end method
 
-    .line 88
-    :try_start_3
-    iget-object v2, p0, Laxp;->mAckTracker:Laxm;
+.method public final a(Laji;)[B
+    .locals 3
 
-    invoke-virtual {v3}, Lbii;->k()Ljava/lang/String;
+    .prologue
+    .line 49
+    iget-object v0, p1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    move-result-object v3
+    .line 50
+    iget-object v1, p0, Laxp;->mCache:Lcom/snapchat/android/util/cache/DiscoverShareCache;
 
-    sget-object v5, Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;->SCCP_ERROR:Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;
+    sget-object v2, Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;->BLOB:Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1, v0, v2}, Lcom/snapchat/android/util/cache/DiscoverShareCache;->a(Ljava/lang/String;Lcom/snapchat/android/util/cache/DiscoverShareCache$DiscoverShareFileType;)[B
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v2, v3, v5, v6}, Laxm;->a(Ljava/lang/String;Lcom/snapchat/android/util/chat/SecureChatService$SecureChatWriteCompletedCallback$Status;Ljava/lang/String;)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
-
-    move-object v2, v1
-
-    .line 90
-    goto/16 :goto_1
-
-    :cond_2
-    move-object v2, v4
-
-    .line 92
-    goto/16 :goto_1
-
-    .line 106
-    :cond_3
-    return-void
+    return-object v0
 .end method

@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lanh$a;
-.implements Lapg$a;
+.implements Laoe$a;
+.implements Laqc$a;
 .implements Lcom/snapchat/android/ui/SnapEditorView$b;
 .implements Lcom/snapchat/android/ui/SwipeImageView$a;
 
 
 # annotations
-.annotation build Lavl;
+.annotation build Lawj;
 .end annotation
 
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -25,10 +25,10 @@
 
 .field private B:I
 
-.field private C:Lbgr;
+.field private C:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/view/View;",
             ">;"
@@ -38,10 +38,10 @@
 
 .field private D:Landroid/widget/CheckBox;
 
-.field private E:Lbgr;
+.field private E:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/view/View;",
             ">;"
@@ -49,10 +49,10 @@
     .end annotation
 .end field
 
-.field private F:Lbgr;
+.field private F:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/view/View;",
             ">;"
@@ -73,16 +73,16 @@
         value = {
             "Ljava/util/LinkedHashSet",
             "<",
-            "Lajc;",
+            "Lajy;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private L:Lbgr;
+.field private L:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/view/View;",
             ">;"
@@ -90,10 +90,10 @@
     .end annotation
 .end field
 
-.field private M:Lbgr;
+.field private M:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Lcom/snapchat/android/ui/SendToBottomPanelView;",
             ">;"
@@ -103,33 +103,33 @@
 
 .field private N:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
-.field private final O:Loj;
+.field private final O:Lpa;
 
-.field private final P:Laho;
+.field private final P:Laik;
 
-.field private Q:Lajv;
+.field private Q:Lakp;
 
 .field private R:Lcom/snapchat/android/ui/SnapEditorView$a;
 
-.field private final S:Lyt;
+.field private final S:Lzp;
 
-.field private final T:Lys;
+.field private final T:Lzo;
 
-.field private final U:Lno;
+.field private final U:Lof;
 
 .field private final V:Lcom/snapchat/android/analytics/NetworkAnalytics;
 
-.field private final W:Lwz;
+.field private final W:Lxu;
 
-.field private final X:Lbfj;
+.field private final X:Lbgj;
 
-.field private final Y:Lahs;
+.field private final Y:Laio;
 
 .field private final Z:Lcom/squareup/otto/Bus;
 
-.field public a:Laim;
+.field public a:Laji;
 
-.field private final aa:Lavq;
+.field private final aa:Lawo;
 
 .field private ab:Z
 
@@ -141,13 +141,13 @@
 
 .field public b:Lcom/snapchat/android/ui/SnapEditorView;
 
-.field protected c:Lanh;
+.field protected c:Laoe;
 
-.field public d:Lbcz;
+.field public d:Lbdz;
 
-.field public e:Laex;
+.field public e:Lafx;
 
-.field public final f:Lbgt;
+.field public final f:Lbht;
 
 .field private g:Lcom/snapchat/android/ui/CanvasViewBase;
 
@@ -155,10 +155,10 @@
 
 .field private i:Landroid/widget/ImageButton;
 
-.field private j:Lbgr;
+.field private j:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/view/View;",
             ">;"
@@ -172,10 +172,10 @@
 
 .field private m:Landroid/widget/Button;
 
-.field private n:Lbgr;
+.field private n:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/widget/ImageButton;",
             ">;"
@@ -183,10 +183,10 @@
     .end annotation
 .end field
 
-.field private o:Lbgr;
+.field private o:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/view/View;",
             ">;"
@@ -194,10 +194,10 @@
     .end annotation
 .end field
 
-.field private p:Lbgr;
+.field private p:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/view/View;",
             ">;"
@@ -205,10 +205,10 @@
     .end annotation
 .end field
 
-.field private q:Lbgr;
+.field private q:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/widget/ImageButton;",
             ">;"
@@ -222,16 +222,16 @@
 
 .field private t:Landroid/widget/ImageButton;
 
-.field private u:Lasv;
+.field private u:Latu;
 
 .field private v:I
 
 .field private w:Landroid/content/SharedPreferences;
 
-.field private x:Lbgr;
+.field private x:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Lnet/simonvt/numberpicker/SnapchatTimePicker;",
             ">;"
@@ -241,10 +241,10 @@
 
 .field private y:Landroid/view/View;
 
-.field private z:Lbgr;
+.field private z:Lbhr;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbgr",
+            "Lbhr",
             "<",
             "Landroid/widget/RelativeLayout;",
             ">;"
@@ -259,15 +259,15 @@
 
     .prologue
     .line 199
-    new-instance v1, Lyt;
+    new-instance v1, Lzp;
 
-    invoke-direct {v1}, Lyt;-><init>()V
+    invoke-direct {v1}, Lzp;-><init>()V
 
-    new-instance v2, Lys;
+    new-instance v2, Lzo;
 
-    invoke-direct {v2}, Lys;-><init>()V
+    invoke-direct {v2}, Lzo;-><init>()V
 
-    invoke-static {}, Lno;->a()Lno;
+    invoke-static {}, Lof;->a()Lof;
 
     move-result-object v3
 
@@ -275,47 +275,47 @@
 
     move-result-object v4
 
-    new-instance v5, Loj;
+    new-instance v5, Lpa;
 
-    invoke-direct {v5}, Loj;-><init>()V
+    invoke-direct {v5}, Lpa;-><init>()V
 
-    invoke-static {}, Lwz;->a()Lwz;
+    invoke-static {}, Lxu;->a()Lxu;
 
     move-result-object v6
 
-    new-instance v7, Lbfj;
+    new-instance v7, Lbgj;
 
-    invoke-direct {v7}, Lbfj;-><init>()V
+    invoke-direct {v7}, Lbgj;-><init>()V
 
-    invoke-static {}, Laho;->a()Laho;
+    invoke-static {}, Laik;->a()Laik;
 
     move-result-object v8
 
-    new-instance v9, Lbgt;
+    new-instance v9, Lbht;
 
-    invoke-direct {v9}, Lbgt;-><init>()V
+    invoke-direct {v9}, Lbht;-><init>()V
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v10
 
-    invoke-static {}, Lahs;->c()Lahs;
+    invoke-static {}, Laio;->c()Laio;
 
     move-result-object v11
 
-    invoke-static {}, Lavq;->a()Lavq;
+    invoke-static {}, Lawo;->a()Lawo;
 
     move-result-object v12
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v12}, Lcom/snapchat/android/preview/SnapPreviewFragment;-><init>(Lyt;Lys;Lno;Lcom/snapchat/android/analytics/NetworkAnalytics;Loj;Lwz;Lbfj;Laho;Lbgt;Lcom/squareup/otto/Bus;Lahs;Lavq;)V
+    invoke-direct/range {v0 .. v12}, Lcom/snapchat/android/preview/SnapPreviewFragment;-><init>(Lzp;Lzo;Lof;Lcom/snapchat/android/analytics/NetworkAnalytics;Lpa;Lxu;Lbgj;Laik;Lbht;Lcom/squareup/otto/Bus;Laio;Lawo;)V
 
     .line 211
     return-void
 .end method
 
-.method private constructor <init>(Lyt;Lys;Lno;Lcom/snapchat/android/analytics/NetworkAnalytics;Loj;Lwz;Lbfj;Laho;Lbgt;Lcom/squareup/otto/Bus;Lahs;Lavq;)V
+.method private constructor <init>(Lzp;Lzo;Lof;Lcom/snapchat/android/analytics/NetworkAnalytics;Lpa;Lxu;Lbgj;Laik;Lbht;Lcom/squareup/otto/Bus;Laio;Lawo;)V
     .locals 2
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -361,40 +361,40 @@
     iput-wide v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->ae:J
 
     .line 227
-    iput-object p1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->S:Lyt;
+    iput-object p1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->S:Lzp;
 
     .line 228
-    iput-object p2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->T:Lys;
+    iput-object p2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->T:Lzo;
 
     .line 229
-    iput-object p3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->U:Lno;
+    iput-object p3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->U:Lof;
 
     .line 230
     iput-object p4, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->V:Lcom/snapchat/android/analytics/NetworkAnalytics;
 
     .line 231
-    iput-object p5, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iput-object p5, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
     .line 232
-    iput-object p6, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->W:Lwz;
+    iput-object p6, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->W:Lxu;
 
     .line 233
-    iput-object p7, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->X:Lbfj;
+    iput-object p7, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->X:Lbgj;
 
     .line 234
-    iput-object p8, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->P:Laho;
+    iput-object p8, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->P:Laik;
 
     .line 235
-    iput-object p9, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->f:Lbgt;
+    iput-object p9, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->f:Lbht;
 
     .line 236
     iput-object p10, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
     .line 237
-    iput-object p11, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Y:Lahs;
+    iput-object p11, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Y:Laio;
 
     .line 238
-    iput-object p12, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->aa:Lavq;
+    iput-object p12, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->aa:Lawo;
 
     .line 239
     return-void
@@ -404,18 +404,18 @@
     .locals 5
 
     .prologue
-    .line 980
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Lanh;
-
-    invoke-virtual {v0}, Lanh;->notifyDataSetChanged()V
-
     .line 981
-    const-string v1, ""
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Laoe;
+
+    invoke-virtual {v0}, Laoe;->notifyDataSetChanged()V
 
     .line 982
-    const-string v0, ""
+    const-string v1, ""
 
     .line 983
+    const-string v0, ""
+
+    .line 984
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->K:Ljava/util/LinkedHashSet;
 
     invoke-virtual {v2}, Ljava/util/LinkedHashSet;->iterator()Ljava/util/Iterator;
@@ -437,9 +437,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lajc;
+    check-cast v0, Lajy;
 
-    .line 984
+    .line 985
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -452,7 +452,7 @@
 
     move-result-object v1
 
-    iget-object v0, v0, Lajc;->mDisplayName:Ljava/lang/String;
+    iget-object v0, v0, Lajy;->mDisplayName:Ljava/lang/String;
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -462,21 +462,21 @@
 
     move-result-object v1
 
-    .line 985
+    .line 986
     const-string v0, ", "
 
     move-object v2, v1
 
     move-object v1, v0
 
-    .line 986
+    .line 987
     goto :goto_0
 
-    .line 987
+    .line 988
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -484,11 +484,84 @@
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setText(Ljava/lang/String;)V
 
-    .line 988
+    .line 989
     return-void
 .end method
 
 .method static synthetic A(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
+    .locals 1
+
+    .prologue
+    .line 130
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->b(Z)V
+
+    return-void
+.end method
+
+.method private B()V
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 1049
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
+
+    .line 1051
+    const/16 v1, 0xc
+
+    invoke-virtual {v0, v1, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+
+    .line 1052
+    const/4 v1, 0x2
+
+    const v2, 0x7f0a0336
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+
+    .line 1053
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1054
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
+
+    invoke-virtual {v0, v3}, Lbhr;->a(I)V
+
+    .line 1055
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
+
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/ui/SendToBottomPanelView;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setAlpha(F)V
+
+    .line 1056
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->I:Landroid/widget/ImageButton;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setVisibility(I)V
+
+    .line 1057
+    return-void
+.end method
+
+.method static synthetic B(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
     .locals 4
 
     .prologue
@@ -515,17 +588,17 @@
 
     iput-wide v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->ae:J
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->b()Z
+    invoke-virtual {v0}, Lbhr;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -540,17 +613,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->startAnimation(Landroid/view/animation/Animation;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->c()Z
+    invoke-virtual {v0}, Lbhr;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -562,74 +635,13 @@
     return-void
 .end method
 
-.method private B()V
-    .locals 4
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 1048
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
-
-    .line 1050
-    const/16 v1, 0xc
-
-    invoke-virtual {v0, v1, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
-
-    .line 1051
-    const/4 v1, 0x2
-
-    const v2, 0x7f0a0337
-
-    invoke-virtual {v0, v1, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
-
-    .line 1052
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 1053
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
-
-    invoke-virtual {v0, v3}, Lbgr;->a(I)V
-
-    .line 1054
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
-
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/snapchat/android/ui/SendToBottomPanelView;
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setAlpha(F)V
-
-    .line 1055
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->I:Landroid/widget/ImageButton;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setVisibility(I)V
-
-    .line 1056
-    return-void
-.end method
-
 .method private C()V
     .locals 4
 
     .prologue
     const/4 v3, 0x0
 
-    .line 1059
+    .line 1060
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -638,36 +650,36 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 1061
+    .line 1062
     const/16 v1, 0xc
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 1062
+    .line 1063
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 1063
+    .line 1064
     iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1064
+    .line 1065
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->I:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageButton;->setVisibility(I)V
 
-    .line 1065
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    .line 1066
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
-    .line 1066
+    .line 1067
     return-void
 .end method
 
@@ -701,12 +713,12 @@
     return v0
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/preview/SnapPreviewFragment;Lajv;)Lajv;
+.method static synthetic a(Lcom/snapchat/android/preview/SnapPreviewFragment;Lakp;)Lakp;
     .locals 0
 
     .prologue
     .line 130
-    iput-object p1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Q:Lajv;
+    iput-object p1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Q:Lakp;
 
     return-object p1
 .end method
@@ -761,18 +773,18 @@
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setAlpha(F)V
 
     .line 1643
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->b()Z
+    invoke-virtual {v0}, Lbhr;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 1644
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -835,14 +847,14 @@
     const/4 v1, 0x0
 
     .line 660
-    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbgr;
+    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbhr;
 
     if-eqz p1, :cond_1
 
     move v0, v1
 
     :goto_0
-    invoke-virtual {v3, v0}, Lbgr;->a(I)V
+    invoke-virtual {v3, v0}, Lbhr;->a(I)V
 
     .line 661
     iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->i:Landroid/widget/ImageButton;
@@ -868,9 +880,9 @@
     if-eqz p1, :cond_0
 
     .line 665
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->j:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->j:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -883,9 +895,9 @@
     invoke-virtual {v0, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 666
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -898,16 +910,16 @@
     invoke-virtual {v0, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 667
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 668
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->p:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->p:Lbhr;
 
     const/4 v3, 0x4
 
-    invoke-virtual {v0, v3}, Lbgr;->a(I)V
+    invoke-virtual {v0, v3}, Lbhr;->a(I)V
 
     .line 669
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->g:Lcom/snapchat/android/ui/CanvasViewBase;
@@ -919,14 +931,14 @@
     if-lez v0, :cond_4
 
     .line 670
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 671
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 677
     :cond_0
@@ -953,14 +965,14 @@
 
     .line 673
     :cond_4
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    invoke-virtual {v0, v2}, Lbgr;->a(I)V
+    invoke-virtual {v0, v2}, Lbhr;->a(I)V
 
     .line 674
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbhr;
 
-    invoke-virtual {v0, v2}, Lbgr;->a(I)V
+    invoke-virtual {v0, v2}, Lbhr;->a(I)V
 
     goto :goto_3
 .end method
@@ -994,7 +1006,7 @@
     const/4 v2, 0x0
 
     .line 1649
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
@@ -1023,25 +1035,25 @@
     if-nez v0, :cond_2
 
     .line 1652
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->b()Z
+    invoke-virtual {v0}, Lbhr;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 1653
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
     const/4 v1, 0x4
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 1654
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1052,9 +1064,9 @@
     .line 1661
     :cond_0
     :goto_0
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1068,14 +1080,14 @@
 
     .line 1657
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0, v2}, Lbgr;->a(I)V
+    invoke-virtual {v0, v2}, Lbhr;->a(I)V
 
     .line 1658
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1110,14 +1122,14 @@
     invoke-virtual {v2, v0}, Landroid/widget/ImageButton;->setAlpha(F)V
 
     .line 1431
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->u:Lasv;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->u:Latu;
 
     if-nez p1, :cond_0
 
-    invoke-virtual {v0, v1}, Lasv;->a(F)V
+    invoke-virtual {v0, v1}, Latu;->a(F)V
 
     :cond_0
-    iput-boolean p1, v0, Lasv;->mBounceEnabled:Z
+    iput-boolean p1, v0, Latu;->mBounceEnabled:Z
 
     .line 1432
     return-void
@@ -1179,12 +1191,12 @@
     goto :goto_0
 .end method
 
-.method static synthetic e(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbgr;
+.method static synthetic e(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbhr;
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->n:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->n:Lbhr;
 
     return-object v0
 .end method
@@ -1208,9 +1220,9 @@
 
     if-lez v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->j:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->j:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1222,9 +1234,9 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1240,23 +1252,23 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     goto :goto_0
 .end method
 
-.method static synthetic g(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbgr;
+.method static synthetic g(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbhr;
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbhr;
 
     return-object v0
 .end method
@@ -1276,13 +1288,13 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-static {v0}, Laut;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+    invoke-static {v0}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     invoke-direct {p0, v6}, Lcom/snapchat/android/preview/SnapPreviewFragment;->b(Z)V
 
@@ -1290,24 +1302,11 @@
 
     move-result-object v2
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    const-string v0, "SnapPreviewFragment"
-
-    const-string v1, "mSnapbryo is empty"
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v3, v0, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
 
@@ -1321,32 +1320,23 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/preview/SnapPreviewFragment$11;-><init>(Lcom/snapchat/android/preview/SnapPreviewFragment;Landroid/content/Context;Landroid/net/Uri;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
 
-    sget-object v1, Lauh;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v6, [Ljava/lang/Void;
 
     invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/preview/SnapPreviewFragment$11;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    goto :goto_0
+    :cond_0
+    :goto_0
+    return-void
 
-    :cond_2
+    :cond_1
     invoke-direct {p0, v6}, Lcom/snapchat/android/preview/SnapPreviewFragment;->b(Z)V
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_0
 
-    const-string v0, "SnapPreviewFragment"
-
-    const-string v1, "mSnapEditorView is empty"
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_3
     invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1357,19 +1347,8 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_4
+    if-eqz v3, :cond_0
 
-    const-string v0, "SnapPreviewFragment"
-
-    const-string v1, "SnapBitmap is empty"
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_4
     new-instance v0, Lcom/snapchat/android/preview/SnapPreviewFragment$10;
 
     sget-object v4, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;->PREVIEW:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
@@ -1380,7 +1359,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/preview/SnapPreviewFragment$10;-><init>(Lcom/snapchat/android/preview/SnapPreviewFragment;Landroid/content/Context;Landroid/graphics/Bitmap;Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;Lcom/snapchat/android/util/save/SaveMediaNotificationsToShow;)V
 
-    sget-object v1, Lauh;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->MISCELLANEOUS_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v6, [Ljava/lang/Void;
 
@@ -1389,12 +1368,12 @@
     goto :goto_0
 .end method
 
-.method static synthetic i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laim;
+.method static synthetic i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laji;
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     return-object v0
 .end method
@@ -1462,9 +1441,9 @@
     goto :goto_1
 
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1472,9 +1451,9 @@
 
     invoke-virtual {v0, v5}, Lnet/simonvt/numberpicker/SnapchatTimePicker;->setMinValue(I)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1482,9 +1461,9 @@
 
     invoke-virtual {v0, v6}, Lnet/simonvt/numberpicker/SnapchatTimePicker;->setMaxValue(I)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1492,9 +1471,9 @@
 
     invoke-virtual {v0, v3}, Lnet/simonvt/numberpicker/SnapchatTimePicker;->setDisplayedValues([Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1502,9 +1481,9 @@
 
     invoke-virtual {v0, v5}, Lnet/simonvt/numberpicker/SnapchatTimePicker;->setFocusable(Z)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1512,9 +1491,9 @@
 
     invoke-virtual {v0, v5}, Lnet/simonvt/numberpicker/SnapchatTimePicker;->setFocusableInTouchMode(Z)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1522,9 +1501,9 @@
 
     invoke-virtual {v0, v2}, Lnet/simonvt/numberpicker/SnapchatTimePicker;->setWrapSelectorWheel(Z)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1536,9 +1515,9 @@
 
     invoke-virtual {v0, v1}, Lnet/simonvt/numberpicker/SnapchatTimePicker;->setValue(I)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1553,12 +1532,12 @@
     return-void
 .end method
 
-.method static synthetic k(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbgr;
+.method static synthetic k(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbhr;
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbhr;
 
     return-object v0
 .end method
@@ -1594,11 +1573,11 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbhr;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Lbgr;->a(I)V
+    invoke-virtual {v0, v2}, Lbhr;->a(I)V
 
     new-instance v0, Lcom/snapchat/android/preview/SnapPreviewFragment$9;
 
@@ -1606,9 +1585,9 @@
 
     invoke-virtual {v1, v0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1624,8 +1603,6 @@
     .locals 5
 
     .prologue
-    const/4 v4, 0x0
-
     .line 130
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
@@ -1643,13 +1620,15 @@
 
     move-result-object v0
 
-    const v2, 0x7f040085
+    const v2, 0x7f040087
 
-    invoke-virtual {v0, v2, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v2
 
-    const v0, 0x7f0a02f0
+    const v0, 0x7f0a02ef
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1679,17 +1658,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f0c0058
-
-    invoke-virtual {p0, v3}, Lcom/snapchat/android/preview/SnapPreviewFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3, v4}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    const v3, 0x7f0c0002
+    const v3, 0x7f0c0195
 
     invoke-virtual {p0, v3}, Lcom/snapchat/android/preview/SnapPreviewFragment;->getString(I)Ljava/lang/String;
 
@@ -1713,9 +1682,9 @@
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1733,9 +1702,9 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setBackgroundColor(I)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -1765,7 +1734,7 @@
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->K:Ljava/util/LinkedHashSet;
 
-    invoke-static {}, Laja;->a()Laja;
+    invoke-static {}, Lajw;->a()Lajw;
 
     move-result-object v1
 
@@ -1774,11 +1743,11 @@
     :cond_0
     invoke-direct {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->A()V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbhr;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     invoke-direct {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->B()V
 
@@ -1800,7 +1769,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
@@ -1809,27 +1778,19 @@
     if-eq v0, v3, :cond_1
 
     :cond_0
-    const-string v0, "SnapPreviewFragment"
-
-    const-string v1, "Failed to prepare snap for sending!"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     :goto_0
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
-    check-cast v0, Lajk;
+    check-cast v0, Lakg;
 
-    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbgr;
+    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbhr;
 
-    invoke-virtual {v3}, Lbgr;->c()Z
+    invoke-virtual {v3}, Lbhr;->c()Z
 
     move-result v3
 
@@ -1841,31 +1802,31 @@
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iput-object v3, v0, Lajk;->mPostToStories:Ljava/util/ArrayList;
+    iput-object v3, v0, Lakg;->mPostToStories:Ljava/util/ArrayList;
 
     :goto_1
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->d:Lbcz;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->d:Lbdz;
 
     if-eqz v0, :cond_3
 
     move v0, v1
 
     :goto_2
-    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     const-string v4, "PREVIEW_SCREEN"
 
-    invoke-static {v3, v0, v0, v4}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Laim;ZZLjava/lang/String;)V
+    invoke-static {v3, v0, v0, v4}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Laji;ZZLjava/lang/String;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->S:Lyt;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->S:Lzp;
 
-    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0, v3, v2, v1}, Lyt;->b(Laim;ZZ)V
+    invoke-virtual {v0, v3, v2, v1}, Lzp;->b(Laji;ZZ)V
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->V:Lcom/snapchat/android/analytics/NetworkAnalytics;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
@@ -1877,19 +1838,19 @@
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbec;
+    new-instance v1, Lbfb;
 
-    invoke-direct {v1}, Lbec;-><init>()V
+    invoke-direct {v1}, Lbfb;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -1900,13 +1861,13 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {}, Laja;->a()Laja;
+    invoke-static {}, Lajw;->a()Lajw;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iput-object v3, v0, Lajk;->mPostToStories:Ljava/util/ArrayList;
+    iput-object v3, v0, Lakg;->mPostToStories:Ljava/util/ArrayList;
 
     goto :goto_1
 
@@ -1926,52 +1887,14 @@
     return v0
 .end method
 
-.method static synthetic r(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
-    .locals 3
+.method static synthetic r(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lof;
+    .locals 1
 
     .prologue
     .line 130
-    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->n()Z
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->U:Lof;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->H:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
-
-    new-instance v1, Lbap;
-
-    sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
-
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
-
-    new-instance v1, Lbdn;
-
-    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
-
-    invoke-direct {v1, v2}, Lbdn;-><init>(Laim;)V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    goto :goto_0
+    return-object v0
 .end method
 
 .method private r()Z
@@ -1979,7 +1902,7 @@
 
     .prologue
     .line 324
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->d:Lbcz;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->d:Lbdz;
 
     if-nez v0, :cond_0
 
@@ -2003,26 +1926,52 @@
     goto :goto_0
 .end method
 
-.method static synthetic s(Lcom/snapchat/android/preview/SnapPreviewFragment;)Z
-    .locals 1
+.method static synthetic s(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
+    .locals 3
 
     .prologue
     .line 130
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->n()Z
 
-    iput-boolean v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->J:Z
+    move-result v0
 
-    return v0
-.end method
+    if-eqz v0, :cond_0
 
-.method static synthetic t(Lcom/snapchat/android/preview/SnapPreviewFragment;)Ljava/util/LinkedHashSet;
-    .locals 1
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    .prologue
-    .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->K:Ljava/util/LinkedHashSet;
+    if-nez v0, :cond_1
 
-    return-object v0
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->H:Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
+
+    new-instance v1, Lbbq;
+
+    sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
+
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    :cond_2
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
+
+    new-instance v1, Lben;
+
+    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
+
+    invoke-direct {v1, v2}, Lben;-><init>(Laji;)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    goto :goto_0
 .end method
 
 .method private t()V
@@ -2032,7 +1981,7 @@
     const/16 v1, 0x8
 
     .line 328
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-boolean v0, v0, Lcom/snapchat/android/model/Mediabryo;->mIsChatMedia:Z
 
@@ -2058,12 +2007,24 @@
     return-void
 .end method
 
-.method static synthetic u(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/snapchat/android/analytics/NetworkAnalytics;
+.method static synthetic t(Lcom/snapchat/android/preview/SnapPreviewFragment;)Z
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->V:Lcom/snapchat/android/analytics/NetworkAnalytics;
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->J:Z
+
+    return v0
+.end method
+
+.method static synthetic u(Lcom/snapchat/android/preview/SnapPreviewFragment;)Ljava/util/LinkedHashSet;
+    .locals 1
+
+    .prologue
+    .line 130
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->K:Ljava/util/LinkedHashSet;
 
     return-object v0
 .end method
@@ -2073,25 +2034,25 @@
 
     .prologue
     .line 336
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lajl;
+    iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mPreviewConfiguration:Lakh;
 
     .line 337
     if-eqz v0, :cond_0
 
-    iget-boolean v0, v0, Lajl;->mShouldHideSystemUi:Z
+    iget-boolean v0, v0, Lakh;->mShouldHideSystemUi:Z
 
     if-eqz v0, :cond_0
 
     .line 339
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbdt;
+    new-instance v1, Lbet;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Lbdt;-><init>(Z)V
+    invoke-direct {v1, v2}, Lbet;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -2100,12 +2061,12 @@
     return-void
 .end method
 
-.method static synthetic v(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lajv;
+.method static synthetic v(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/snapchat/android/analytics/NetworkAnalytics;
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Q:Lajv;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->V:Lcom/snapchat/android/analytics/NetworkAnalytics;
 
     return-object v0
 .end method
@@ -2123,7 +2084,7 @@
     const/16 v6, 0x8
 
     .line 357
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
@@ -2145,9 +2106,9 @@
     if-nez v0, :cond_5
 
     .line 359
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -2165,9 +2126,9 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setBackgroundColor(I)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -2179,15 +2140,15 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setSendButtonOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-boolean v0, v0, Lcom/snapchat/android/model/Mediabryo;->mIsChatMedia:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -2195,9 +2156,9 @@
 
     invoke-virtual {v0, v7}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setClickable(Z)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -2213,11 +2174,11 @@
 
     const-string v2, ""
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
@@ -2227,9 +2188,9 @@
 
     move-object v0, v1
 
-    check-cast v0, Lajk;
+    check-cast v0, Lakg;
 
-    iget-object v0, v0, Lajk;->mPostToStories:Ljava/util/ArrayList;
+    iget-object v0, v0, Lakg;->mPostToStories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -2246,7 +2207,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lajc;
+    check-cast v0, Lajy;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -2260,7 +2221,7 @@
 
     move-result-object v2
 
-    iget-object v0, v0, Lajc;->mDisplayName:Ljava/lang/String;
+    iget-object v0, v0, Lajy;->mDisplayName:Ljava/lang/String;
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2280,9 +2241,9 @@
 
     .line 359
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -2290,9 +2251,9 @@
 
     invoke-virtual {v0, v8}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setClickable(Z)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -2341,7 +2302,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->k()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->e()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2358,9 +2319,9 @@
     goto :goto_2
 
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -2377,16 +2338,16 @@
     invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
 
     .line 365
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-boolean v0, v0, Lcom/snapchat/android/model/Mediabryo;->mIsChatMedia:Z
 
     if-nez v0, :cond_4
 
     .line 366
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -2407,7 +2368,7 @@
     :cond_3
     iget-object v1, v0, Lcom/snapchat/android/ui/SendToBottomPanelView;->b:Landroid/widget/TextView;
 
-    invoke-static {v1}, Lavh;->a(Landroid/view/View;)I
+    invoke-static {v1}, Lawf;->a(Landroid/view/View;)I
 
     move-result v1
 
@@ -2504,7 +2465,7 @@
 
     .line 368
     :cond_5
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
@@ -2519,9 +2480,9 @@
     invoke-direct {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->C()V
 
     .line 376
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-static {v0}, Laut;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+    invoke-static {v0}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
 
     move-result v0
 
@@ -2561,12 +2522,12 @@
     goto :goto_4
 .end method
 
-.method static synthetic w(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/squareup/otto/Bus;
+.method static synthetic w(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lakp;
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Q:Lakp;
 
     return-object v0
 .end method
@@ -2583,7 +2544,7 @@
     if-eqz v0, :cond_0
 
     .line 394
-    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v0
 
@@ -2610,12 +2571,12 @@
     return-void
 .end method
 
-.method static synthetic x(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbgr;
+.method static synthetic x(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/squareup/otto/Bus;
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
     return-object v0
 .end method
@@ -2635,18 +2596,18 @@
     .line 416
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v4, Lbel;
+    new-instance v4, Lbfk;
 
     sget-object v5, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    invoke-direct {v4, v5}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
+    invoke-direct {v4, v5}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
 
     invoke-virtual {v0, v4}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 418
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-static {v0}, Laut;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+    invoke-static {v0}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
 
     move-result v0
 
@@ -2677,9 +2638,9 @@
     .line 421
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v4, Lbaw;
+    new-instance v4, Lbbx;
 
-    invoke-direct {v4, v1}, Lbaw;-><init>(I)V
+    invoke-direct {v4, v1}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v4}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -2702,13 +2663,13 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbhr;
 
     new-instance v4, Lcom/snapchat/android/preview/SnapPreviewFragment$15;
 
     invoke-direct {v4, p0}, Lcom/snapchat/android/preview/SnapPreviewFragment$15;-><init>(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
 
-    invoke-virtual {v0, v4}, Lbgr;->a(Lbgr$a;)V
+    invoke-virtual {v0, v4}, Lbhr;->a(Lbhr$a;)V
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->i:Landroid/widget/ImageButton;
 
@@ -2726,13 +2687,13 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbhr;
 
     new-instance v4, Lcom/snapchat/android/preview/SnapPreviewFragment$18;
 
     invoke-direct {v4, p0}, Lcom/snapchat/android/preview/SnapPreviewFragment$18;-><init>(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
 
-    invoke-virtual {v0, v4}, Lbgr;->a(Lbgr$a;)V
+    invoke-virtual {v0, v4}, Lbhr;->a(Lbhr$a;)V
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->y:Landroid/view/View;
 
@@ -2742,13 +2703,13 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbhr;
 
     new-instance v4, Lcom/snapchat/android/preview/SnapPreviewFragment$20;
 
     invoke-direct {v4, p0}, Lcom/snapchat/android/preview/SnapPreviewFragment$20;-><init>(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
 
-    invoke-virtual {v0, v4}, Lbgr;->a(Lbgr$a;)V
+    invoke-virtual {v0, v4}, Lbhr;->a(Lbhr$a;)V
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->A:Landroid/view/View;
 
@@ -2797,9 +2758,9 @@
 
     move-result-object v0
 
-    iget-object v4, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v4, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-static {v4}, Laut;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+    invoke-static {v4}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
 
     move-result v4
 
@@ -2813,7 +2774,7 @@
     .line 436
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    iget-object v4, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v4, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     invoke-virtual {v0, v4}, Lcom/snapchat/android/ui/SnapEditorView;->setMediabryo(Lcom/snapchat/android/model/Mediabryo;)V
 
@@ -2890,26 +2851,26 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->d(Landroid/content/Context;)I
+    invoke-static {v0}, Lawf;->d(Landroid/content/Context;)I
 
     move-result v0
 
     iput v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->v:I
 
     .line 445
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->U:Lno;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->U:Lof;
 
     iget v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->v:I
 
-    invoke-static {v0}, Lavh;->b(I)Z
+    invoke-static {v0}, Lawf;->b(I)Z
 
     move-result v0
 
-    iget-object v3, v1, Lno;->mSnapCaptureMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-object v3, v1, Lof;->mSnapCaptureMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     if-eqz v3, :cond_3
 
-    iget-object v3, v1, Lno;->mSnapCaptureMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-object v3, v1, Lof;->mSnapCaptureMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     const-string v4, "orientation"
 
@@ -2924,21 +2885,21 @@
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b(Z)V
 
-    iput-object v6, v1, Lno;->mSnapCaptureMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iput-object v6, v1, Lof;->mSnapCaptureMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     :cond_3
-    invoke-virtual {v1}, Lno;->b()V
+    invoke-virtual {v1}, Lof;->b()V
 
     .line 446
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v1}, Laim;->h()I
+    invoke-virtual {v1}, Laji;->h()I
 
     move-result v1
 
-    iput v1, v0, Loj;->a:I
+    iput v1, v0, Lpa;->a:I
 
     .line 447
     return-void
@@ -2951,7 +2912,7 @@
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
@@ -2962,11 +2923,11 @@
     .line 425
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v4, Lbaw;
+    new-instance v4, Lbbx;
 
     const/4 v5, -0x1
 
-    invoke-direct {v4, v5}, Lbaw;-><init>(I)V
+    invoke-direct {v4, v5}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v4}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -3008,12 +2969,12 @@
     goto :goto_4
 .end method
 
-.method static synthetic y(Lcom/snapchat/android/preview/SnapPreviewFragment;)Landroid/view/View;
+.method static synthetic y(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbhr;
     .locals 1
 
     .prologue
     .line 130
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
     return-object v0
 .end method
@@ -3023,33 +2984,43 @@
 
     .prologue
     .line 529
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbhr;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 530
     return-void
+.end method
+
+.method static synthetic z(Lcom/snapchat/android/preview/SnapPreviewFragment;)Landroid/view/View;
+    .locals 1
+
+    .prologue
+    .line 130
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
+
+    return-object v0
 .end method
 
 .method private z()V
     .locals 2
 
     .prologue
-    .line 926
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    .line 927
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->b()Z
+    invoke-virtual {v0}, Lbhr;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 927
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    .line 928
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -3059,10 +3030,10 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setClickable(Z)V
 
-    .line 928
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    .line 929
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -3072,45 +3043,33 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SendToBottomPanelView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 930
+    .line 931
     :cond_0
-    return-void
-.end method
-
-.method static synthetic z(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
-    .locals 1
-
-    .prologue
-    .line 130
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->b(Z)V
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lajc;Z)V
+.method public final a(Lajy;Z)V
     .locals 1
 
     .prologue
-    .line 971
+    .line 972
     if-eqz p2, :cond_0
 
-    .line 972
+    .line 973
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->K:Ljava/util/LinkedHashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
-    .line 976
+    .line 977
     :goto_0
     invoke-direct {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->A()V
 
-    .line 977
+    .line 978
     return-void
 
-    .line 974
+    .line 975
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->K:Ljava/util/LinkedHashSet;
 
@@ -3126,7 +3085,7 @@
     const/high16 v3, 0x3f800000    # 1.0f
 
     .line 1675
-    invoke-static {}, Lajx;->ab()Z
+    invoke-static {}, Lakr;->aa()Z
 
     move-result v0
 
@@ -3207,38 +3166,38 @@
     const/4 v2, 0x0
 
     .line 1700
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->P:Laho;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->P:Laik;
 
-    new-instance v1, Laho$1;
+    new-instance v1, Laik$1;
 
-    invoke-direct {v1, v0}, Laho$1;-><init>(Laho;)V
+    invoke-direct {v1, v0}, Laik$1;-><init>(Laik;)V
 
-    invoke-static {v1}, Lbgp;->b(Ljava/lang/Runnable;)V
+    invoke-static {v1}, Lbhp;->b(Ljava/lang/Runnable;)V
 
     .line 1701
     if-eqz p2, :cond_0
 
     .line 1702
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->c()Z
+    invoke-virtual {v0}, Lbhr;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
     .line 1703
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbhr;
 
-    invoke-virtual {v0, v4}, Lbgr;->a(I)V
+    invoke-virtual {v0, v4}, Lbhr;->a(I)V
 
     .line 1704
-    invoke-static {v3}, Lajx;->i(Z)V
+    invoke-static {v3}, Lakr;->i(Z)V
 
     .line 1712
     :cond_0
     :goto_0
-    invoke-static {}, Lajx;->ab()Z
+    invoke-static {}, Lakr;->aa()Z
 
     move-result v0
 
@@ -3317,11 +3276,11 @@
     goto :goto_1
 .end method
 
-.method public final a(Lajc;)Z
+.method public final a(Lajy;)Z
     .locals 1
 
     .prologue
-    .line 967
+    .line 968
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->K:Ljava/util/LinkedHashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedHashSet;->contains(Ljava/lang/Object;)Z
@@ -3358,9 +3317,9 @@
     invoke-virtual {v0, v2}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;)V
 
     .line 287
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Y:Lahs;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Y:Laio;
 
-    invoke-virtual {v0}, Lahs;->b()V
+    invoke-virtual {v0}, Laio;->b()V
 
     .line 288
     invoke-direct {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->w()V
@@ -3375,7 +3334,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lavh;->d(Landroid/content/Context;)I
+    invoke-static {v2}, Lawf;->d(Landroid/content/Context;)I
 
     move-result v2
 
@@ -3391,7 +3350,7 @@
 
     .line 298
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-eqz v0, :cond_2
 
@@ -3402,30 +3361,30 @@
     invoke-direct {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->t()V
 
     .line 304
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0}, Laim;->f()V
+    invoke-virtual {v0}, Laji;->f()V
 
     .line 307
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbel;
+    new-instance v2, Lbfk;
 
     sget-object v3, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    invoke-direct {v2, v3}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
+    invoke-direct {v2, v3}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
 
     invoke-virtual {v0, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 309
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-static {v0}, Laut;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+    invoke-static {v0}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
 
     move-result v0
 
@@ -3434,11 +3393,11 @@
     .line 310
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    check-cast v0, Lajm;
+    check-cast v0, Laku;
 
-    invoke-virtual {v2, v0}, Lcom/snapchat/android/ui/SnapEditorView;->a(Lajm;)V
+    invoke-virtual {v2, v0}, Lcom/snapchat/android/ui/SnapEditorView;->a(Laku;)V
 
     .line 311
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
@@ -3461,9 +3420,9 @@
     :goto_1
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    iget-object v2, v0, Lcom/snapchat/android/ui/SnapEditorView;->c:Lapi;
+    iget-object v2, v0, Lcom/snapchat/android/ui/SnapEditorView;->c:Laqe;
 
-    iget-object v2, v2, Lapi;->b:Lcom/snapchat/android/ui/SwipeViewState;
+    iget-object v2, v2, Laqe;->b:Lcom/snapchat/android/ui/SwipeViewState;
 
     iget v2, v2, Lcom/snapchat/android/ui/SwipeViewState;->a:I
 
@@ -3480,7 +3439,7 @@
 
     .line 312
     :cond_5
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
@@ -3491,15 +3450,25 @@
     .line 313
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbaw;
+    new-instance v2, Lbbx;
 
     const/4 v3, -0x1
 
-    invoke-direct {v2, v3}, Lbaw;-><init>(I)V
+    invoke-direct {v2, v3}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     goto :goto_1
+.end method
+
+.method public final f_()Z
+    .locals 1
+
+    .prologue
+    .line 797
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method public final g()Z
@@ -3511,9 +3480,9 @@
     const/4 v1, 0x1
 
     .line 587
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->c()Z
+    invoke-virtual {v0}, Lbhr;->c()Z
 
     move-result v0
 
@@ -3634,7 +3603,7 @@
     invoke-direct {v0, p0, v2, v3}, Lcom/snapchat/android/preview/SnapPreviewFragment$1;-><init>(Lcom/snapchat/android/preview/SnapPreviewFragment;Landroid/content/Context;Ljava/lang/String;)V
 
     .line 620
-    invoke-virtual {v0}, Laqb;->show()V
+    invoke-virtual {v0}, Lara;->show()V
 
     move v0, v1
 
@@ -3643,19 +3612,19 @@
 
     .line 624
     :cond_6
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-eqz v0, :cond_7
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-static {v0}, Laut;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+    invoke-static {v0}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->e:Laex;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->e:Lafx;
 
     if-nez v0, :cond_7
 
@@ -3670,11 +3639,11 @@
 
     .line 627
     :cond_7
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-eqz v0, :cond_8
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->e:Laex;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->e:Lafx;
 
     if-eqz v0, :cond_9
 
@@ -3683,11 +3652,11 @@
     :goto_2
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v3, Lbap;
+    new-instance v3, Lbbq;
 
     sget-object v4, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v3, v4}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v3, v4}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v3}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -3699,9 +3668,9 @@
     .line 632
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbas;
+    new-instance v2, Lbbt;
 
-    invoke-direct {v2}, Lbas;-><init>()V
+    invoke-direct {v2}, Lbbt;-><init>()V
 
     invoke-virtual {v0, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -3712,7 +3681,7 @@
 
     .line 627
     :cond_9
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
@@ -3720,36 +3689,36 @@
 
     if-ne v0, v3, :cond_a
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->T:Lys;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->T:Lzo;
 
-    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0, v3}, Lys;->b(Laim;)V
+    invoke-virtual {v0, v3}, Lzo;->b(Laji;)V
 
     goto :goto_2
 
     :cond_a
-    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->S:Lyt;
+    iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->S:Lzp;
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    iget-object v3, v3, Lyt;->b:Lawx;
+    iget-object v3, v3, Lzp;->b:Laxv;
 
-    invoke-virtual {v3, v0}, Lawx;->b(Laim;)V
+    invoke-virtual {v3, v0}, Laxv;->b(Laji;)V
 
-    instance-of v3, v0, Lajm;
+    instance-of v3, v0, Laku;
 
     if-eqz v3, :cond_8
 
-    check-cast v0, Lajm;
+    check-cast v0, Laku;
 
-    invoke-virtual {v0}, Lajm;->n()Ljava/lang/String;
+    invoke-virtual {v0}, Laku;->n()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_8
 
-    invoke-static {v0}, Laxc;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Laya;->a(Ljava/lang/String;)V
 
     goto :goto_2
 
@@ -3758,16 +3727,6 @@
 
     .line 636
     goto/16 :goto_0
-.end method
-
-.method public final g_()Z
-    .locals 1
-
-    .prologue
-    .line 797
-    const/4 v0, 0x1
-
-    return v0
 .end method
 
 .method public final i()V
@@ -3790,7 +3749,7 @@
     return-void
 .end method
 
-.method public final l_()Z
+.method public final j_()Z
     .locals 1
 
     .prologue
@@ -3806,36 +3765,36 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 948
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbgr;
+    .line 949
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbhr;
 
-    invoke-virtual {v1}, Lbgr;->c()Z
+    invoke-virtual {v1}, Lbhr;->c()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 953
+    .line 954
     :goto_0
     return v0
 
-    .line 950
+    .line 951
     :cond_0
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbgr;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbhr;
 
     const/16 v2, 0x8
 
-    invoke-virtual {v1, v2}, Lbgr;->a(I)V
+    invoke-virtual {v1, v2}, Lbhr;->a(I)V
 
-    .line 951
+    .line 952
     iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 952
+    .line 953
     invoke-direct {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->C()V
 
-    .line 953
+    .line 954
     const/4 v0, 0x1
 
     goto :goto_0
@@ -3854,19 +3813,19 @@
     const/4 v4, 0x0
 
     .line 1170
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0}, Laim;->h()I
+    invoke-virtual {v0}, Laji;->h()I
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mRawImageBitmap:Landroid/graphics/Bitmap;
 
@@ -3882,9 +3841,9 @@
 
     .line 1175
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0}, Laim;->c()V
+    invoke-virtual {v0}, Laji;->c()V
 
     .line 1177
     invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -3896,13 +3855,13 @@
 
     iget-object v1, v1, Lcom/snapchat/android/ui/SnapEditorView;->b:Lcom/snapchat/android/ui/SwipeImageView;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/ui/SwipeImageView;->getCurrentPage()Larn;
+    invoke-virtual {v1}, Lcom/snapchat/android/ui/SwipeImageView;->getCurrentPage()Lasm;
 
     move-result-object v1
 
     if-eqz v1, :cond_3
 
-    invoke-virtual {v1}, Larn;->i()V
+    invoke-virtual {v1}, Lasm;->i()V
 
     .line 1182
     :cond_3
@@ -3913,9 +3872,9 @@
     move-result-object v0
 
     .line 1183
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-static {v1}, Laut;->a(Lcom/snapchat/android/model/Mediabryo;)Z
+    invoke-static {v1}, Lavr;->a(Lcom/snapchat/android/model/Mediabryo;)Z
 
     move-result v1
 
@@ -3927,13 +3886,13 @@
     invoke-virtual {v1}, Lcom/snapchat/android/ui/SnapEditorView;->c()V
 
     .line 1185
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
 
@@ -3951,9 +3910,9 @@
     move-result-object v6
 
     .line 1190
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v1, v0}, Laim;->a(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v0}, Laji;->a(Landroid/graphics/Bitmap;)V
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->D:Landroid/widget/CheckBox;
 
@@ -3963,12 +3922,12 @@
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0}, Laim;->i()V
+    invoke-virtual {v0}, Laji;->i()V
 
     :cond_4
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
@@ -3976,15 +3935,15 @@
 
     if-ne v0, v1, :cond_5
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->X:Lbfj;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->X:Lbgj;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
 
@@ -3992,7 +3951,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lbfj;->a(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Lbgj;->a(Ljava/lang/String;)I
 
     move-result v0
 
@@ -4004,24 +3963,24 @@
 
     double-to-int v0, v0
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     int-to-double v8, v0
 
     iput-wide v8, v1, Lcom/snapchat/android/model/Mediabryo;->mTimerValueOrDuration:D
 
     :cond_5
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    instance-of v0, v0, Lajm;
+    instance-of v0, v0, Laku;
 
     if-eqz v0, :cond_10
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    check-cast v0, Lajm;
+    check-cast v0, Laku;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
@@ -4029,17 +3988,9 @@
 
     if-ne v1, v2, :cond_f
 
-    iget-object v7, v0, Lajm;->mFirstFrameBitmap:Landroid/graphics/Bitmap;
+    iget-object v7, v0, Laku;->mFirstFrameBitmap:Landroid/graphics/Bitmap;
 
     if-nez v7, :cond_8
-
-    const-string v1, "SnapPreviewFragment"
-
-    const-string v2, "Videobryo has no first frame bitmap."
-
-    new-array v5, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v5}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
 
@@ -4081,7 +4032,7 @@
     if-nez v0, :cond_7
 
     .line 1202
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
@@ -4093,11 +4044,11 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Laim;->mCaptionText:Ljava/lang/String;
+    iput-object v1, v0, Laji;->mCaptionText:Ljava/lang/String;
 
     .line 1205
     :cond_7
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->g:Lcom/snapchat/android/ui/CanvasViewBase;
 
@@ -4110,37 +4061,37 @@
     move v0, v3
 
     :goto_4
-    iput-boolean v0, v1, Laim;->mHasDrawing:Z
+    iput-boolean v0, v1, Laji;->mHasDrawing:Z
 
     .line 1206
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    iget v1, v1, Loj;->b:I
+    iget v1, v1, Lpa;->b:I
 
-    iput v1, v0, Laim;->mSwipeFilterNumSingleSwipes:I
+    iput v1, v0, Laji;->mSwipeFilterNumSingleSwipes:I
 
     .line 1207
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    iget v1, v1, Loj;->c:I
+    iget v1, v1, Lpa;->c:I
 
-    iput v1, v0, Laim;->mSwipeFilterNumDoubleSwipes:I
+    iput v1, v0, Laji;->mSwipeFilterNumDoubleSwipes:I
 
     .line 1208
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    iget v1, v1, Loj;->d:I
+    iget v1, v1, Lpa;->d:I
 
-    iput v1, v0, Laim;->mGeofilterImpressions:I
+    iput v1, v0, Laji;->mGeofilterImpressions:I
 
     .line 1209
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
@@ -4148,36 +4099,36 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Laim;->mCaptionStyleDescription:Ljava/lang/String;
+    iput-object v1, v0, Laji;->mCaptionStyleDescription:Ljava/lang/String;
 
     .line 1210
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/ui/SnapEditorView;->getCaptionAnalyticsDetails()Lapo;
+    invoke-virtual {v1}, Lcom/snapchat/android/ui/SnapEditorView;->getCaptionAnalyticsDetails()Laqn;
 
     move-result-object v1
 
-    iput-object v1, v0, Laim;->mCaptionAnalyticData:Lapo;
+    iput-object v1, v0, Laji;->mCaptionAnalyticData:Laqn;
 
     .line 1211
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    iget-object v1, v1, Loj;->e:Loi;
+    iget-object v1, v1, Lpa;->e:Loz;
 
-    iput-object v1, v0, Laim;->mBaseFilter:Loi;
+    iput-object v1, v0, Laji;->mBaseFilter:Loz;
 
     .line 1212
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    iget-object v1, v1, Loj;->f:Loi;
+    iget-object v1, v1, Lpa;->f:Loz;
 
-    iput-object v1, v0, Laim;->mStackedFilter:Loi;
+    iput-object v1, v0, Laji;->mStackedFilter:Loz;
 
     move v4, v3
 
@@ -4186,7 +4137,7 @@
 
     .line 1190
     :cond_8
-    iget-object v8, v0, Laim;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
+    iget-object v8, v0, Laji;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
 
     if-nez v8, :cond_a
 
@@ -4199,11 +4150,11 @@
     move-result v1
 
     :goto_5
-    iget-object v5, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->aa:Lavq;
+    iget-object v5, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->aa:Lawo;
 
     sget-object v9, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-virtual {v5, v2, v1, v9}, Lavq;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-virtual {v5, v2, v1, v9}, Lawo;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
@@ -4211,7 +4162,7 @@
 
     sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v2, v1, v5}, Laur;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v2, v1, v5}, Lavp;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
@@ -4239,12 +4190,6 @@
     invoke-static {v5, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
-
-    const-string v2, "SnapPreviewFragment"
-
-    new-array v5, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v1, v5}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
 
@@ -4296,11 +4241,11 @@
     goto/16 :goto_1
 
     :cond_f
-    iput-object v6, v0, Lajm;->mShaderFilter:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+    iput-object v6, v0, Laku;->mShaderFilter:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->W:Lwz;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->W:Lxu;
 
-    invoke-virtual {v1, v0}, Lwz;->a(Lajm;)V
+    invoke-virtual {v1, v0}, Lxu;->a(Laku;)V
 
     :cond_10
     move v0, v3
@@ -4323,11 +4268,11 @@
     throw v0
 
     :cond_12
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v1, v0}, Laim;->a(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v0}, Laji;->a(Landroid/graphics/Bitmap;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->B:I
 
@@ -4362,9 +4307,9 @@
     .locals 7
 
     .prologue
-    const v6, 0x7f0a03a1
+    const v6, 0x7f0a03a0
 
-    const v5, 0x7f0a0398
+    const v5, 0x7f0a0397
 
     .line 451
     invoke-super {p0, p1}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onActivityCreated(Landroid/os/Bundle;)V
@@ -4396,7 +4341,7 @@
 
     .line 465
     :cond_1
-    const v0, 0x7f0a01e1
+    const v0, 0x7f0a01df
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4407,7 +4352,7 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->s:Landroid/widget/ImageButton;
 
     .line 466
-    const v0, 0x7f0a01e3
+    const v0, 0x7f0a01e1
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4418,7 +4363,7 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->m:Landroid/widget/Button;
 
     .line 467
-    const v0, 0x7f0a01e2
+    const v0, 0x7f0a01e0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4429,7 +4374,7 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->i:Landroid/widget/ImageButton;
 
     .line 468
-    const v0, 0x7f0a0395
+    const v0, 0x7f0a0394
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4440,20 +4385,20 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->t:Landroid/widget/ImageButton;
 
     .line 469
-    new-instance v0, Lbgr;
+    new-instance v0, Lbhr;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
-    const v3, 0x7f0a0399
+    const v3, 0x7f0a0398
 
-    const v4, 0x7f0a03a2
+    const v4, 0x7f0a03a1
 
-    invoke-direct {v0, v2, v3, v4}, Lbgr;-><init>(Landroid/view/View;II)V
+    invoke-direct {v0, v2, v3, v4}, Lbhr;-><init>(Landroid/view/View;II)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->p:Lbgr;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->p:Lbhr;
 
     .line 470
-    const v0, 0x7f0a039b
+    const v0, 0x7f0a039a
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4464,7 +4409,7 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->h:Landroid/widget/TextView;
 
     .line 471
-    const v0, 0x7f0a039a
+    const v0, 0x7f0a0399
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4473,7 +4418,7 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->y:Landroid/view/View;
 
     .line 472
-    const v0, 0x7f0a039c
+    const v0, 0x7f0a039b
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4482,33 +4427,33 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->A:Landroid/view/View;
 
     .line 473
-    new-instance v0, Lbgr;
+    new-instance v0, Lbhr;
+
+    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
+
+    const v3, 0x7f0a039c
+
+    const v4, 0x7f0a03a4
+
+    invoke-direct {v0, v2, v3, v4}, Lbhr;-><init>(Landroid/view/View;II)V
+
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->E:Lbhr;
+
+    .line 474
+    new-instance v0, Lbhr;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
     const v3, 0x7f0a039d
 
-    const v4, 0x7f0a03a5
+    const v4, 0x7f0a03a7
 
-    invoke-direct {v0, v2, v3, v4}, Lbgr;-><init>(Landroid/view/View;II)V
+    invoke-direct {v0, v2, v3, v4}, Lbhr;-><init>(Landroid/view/View;II)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->E:Lbgr;
-
-    .line 474
-    new-instance v0, Lbgr;
-
-    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
-
-    const v3, 0x7f0a039e
-
-    const v4, 0x7f0a03a8
-
-    invoke-direct {v0, v2, v3, v4}, Lbgr;-><init>(Landroid/view/View;II)V
-
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbgr;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbhr;
 
     .line 475
-    const v0, 0x7f0a01e5
+    const v0, 0x7f0a01e3
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4519,7 +4464,7 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->D:Landroid/widget/CheckBox;
 
     .line 476
-    const v0, 0x7f0a01e6
+    const v0, 0x7f0a01e4
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4530,214 +4475,214 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->I:Landroid/widget/ImageButton;
 
     .line 477
-    new-instance v0, Lbgr;
+    new-instance v0, Lbhr;
+
+    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
+
+    const v3, 0x7f0a039e
+
+    const v4, 0x7f0a03a5
+
+    invoke-direct {v0, v2, v3, v4}, Lbhr;-><init>(Landroid/view/View;II)V
+
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbhr;
+
+    .line 478
+    new-instance v0, Lbhr;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
     const v3, 0x7f0a039f
 
-    const v4, 0x7f0a03a6
+    const v4, 0x7f0a0336
 
-    invoke-direct {v0, v2, v3, v4}, Lbgr;-><init>(Landroid/view/View;II)V
+    invoke-direct {v0, v2, v3, v4}, Lbhr;-><init>(Landroid/view/View;II)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->L:Lbgr;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    .line 478
-    new-instance v0, Lbgr;
+    .line 479
+    new-instance v0, Lbhr;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
-    const v3, 0x7f0a03a0
+    const v3, 0x7f0a038e
 
-    const v4, 0x7f0a0337
+    invoke-direct {v0, v2, v5, v3}, Lbhr;-><init>(Landroid/view/View;II)V
 
-    invoke-direct {v0, v2, v3, v4}, Lbgr;-><init>(Landroid/view/View;II)V
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbhr;
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
-
-    .line 479
-    new-instance v0, Lbgr;
+    .line 480
+    new-instance v0, Lbhr;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
     const v3, 0x7f0a038f
 
-    invoke-direct {v0, v2, v5, v3}, Lbgr;-><init>(Landroid/view/View;II)V
+    invoke-direct {v0, v2, v5, v3}, Lbhr;-><init>(Landroid/view/View;II)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbgr;
-
-    .line 480
-    new-instance v0, Lbgr;
-
-    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
-
-    const v3, 0x7f0a0390
-
-    invoke-direct {v0, v2, v5, v3}, Lbgr;-><init>(Landroid/view/View;II)V
-
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->j:Lbgr;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->j:Lbhr;
 
     .line 481
-    new-instance v0, Lbgr;
-
-    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
-
-    const v3, 0x7f0a0392
-
-    invoke-direct {v0, v2, v5, v3}, Lbgr;-><init>(Landroid/view/View;II)V
-
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
-
-    .line 482
-    new-instance v0, Lbgr;
+    new-instance v0, Lbhr;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
     const v3, 0x7f0a0391
 
-    invoke-direct {v0, v2, v5, v3}, Lbgr;-><init>(Landroid/view/View;II)V
+    invoke-direct {v0, v2, v5, v3}, Lbhr;-><init>(Landroid/view/View;II)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->n:Lbgr;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    .line 483
-    new-instance v0, Lbgr;
+    .line 482
+    new-instance v0, Lbhr;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
-    const v3, 0x7f0a0393
+    const v3, 0x7f0a0390
 
-    invoke-direct {v0, v2, v5, v3}, Lbgr;-><init>(Landroid/view/View;II)V
+    invoke-direct {v0, v2, v5, v3}, Lbhr;-><init>(Landroid/view/View;II)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbgr;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->n:Lbhr;
+
+    .line 483
+    new-instance v0, Lbhr;
+
+    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
+
+    const v3, 0x7f0a0392
+
+    invoke-direct {v0, v2, v5, v3}, Lbhr;-><init>(Landroid/view/View;II)V
+
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbhr;
 
     .line 486
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->s:Landroid/widget/ImageButton;
 
-    new-instance v2, Lasv;
+    new-instance v2, Latu;
 
     iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->s:Landroid/widget/ImageButton;
 
-    invoke-direct {v2, v3}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v2, v3}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 487
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->i:Landroid/widget/ImageButton;
 
-    new-instance v2, Lasv;
+    new-instance v2, Latu;
 
     iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->i:Landroid/widget/ImageButton;
 
-    invoke-direct {v2, v3}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v2, v3}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 488
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->y:Landroid/view/View;
 
-    new-instance v2, Lasv;
+    new-instance v2, Latu;
 
     iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->y:Landroid/view/View;
 
-    invoke-direct {v2, v3}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v2, v3}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 489
-    new-instance v0, Lasv;
+    new-instance v0, Latu;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->t:Landroid/widget/ImageButton;
 
-    invoke-direct {v0, v2}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, v2}, Latu;-><init>(Landroid/view/View;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->u:Lasv;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->u:Latu;
 
     .line 490
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->t:Landroid/widget/ImageButton;
 
-    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->u:Lasv;
+    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->u:Latu;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 491
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->A:Landroid/view/View;
 
-    new-instance v2, Lasv;
+    new-instance v2, Latu;
 
     iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->A:Landroid/view/View;
 
-    invoke-direct {v2, v3}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v2, v3}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 492
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->D:Landroid/widget/CheckBox;
 
-    new-instance v2, Lasv;
+    new-instance v2, Latu;
 
     iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->D:Landroid/widget/CheckBox;
 
-    invoke-direct {v2, v3}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v2, v3}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 493
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->I:Landroid/widget/ImageButton;
 
-    new-instance v2, Lasv;
+    new-instance v2, Latu;
 
     iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->I:Landroid/widget/ImageButton;
 
-    invoke-direct {v2, v3}, Lasv;-><init>(Landroid/view/View;)V
+    invoke-direct {v2, v3}, Latu;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 496
-    invoke-static {}, Lajx;->d()I
+    invoke-static {}, Lakr;->d()I
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    invoke-static {}, Lajx;->M()Z
+    invoke-static {}, Lakr;->M()Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
     .line 497
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->E:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->E:Lbhr;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Lbgr;->a(I)V
+    invoke-virtual {v0, v2}, Lbhr;->a(I)V
 
     .line 502
     :cond_2
     :goto_1
-    new-instance v0, Lbgr;
+    new-instance v0, Lbhr;
+
+    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
+
+    const v3, 0x7f0a03a9
+
+    invoke-direct {v0, v2, v6, v3}, Lbhr;-><init>(Landroid/view/View;II)V
+
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbhr;
+
+    .line 503
+    new-instance v0, Lbhr;
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
     const v3, 0x7f0a03aa
 
-    invoke-direct {v0, v2, v6, v3}, Lbgr;-><init>(Landroid/view/View;II)V
+    invoke-direct {v0, v2, v6, v3}, Lbhr;-><init>(Landroid/view/View;II)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbgr;
-
-    .line 503
-    new-instance v0, Lbgr;
-
-    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
-
-    const v3, 0x7f0a03ab
-
-    invoke-direct {v0, v2, v6, v3}, Lbgr;-><init>(Landroid/view/View;II)V
-
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
     .line 505
-    const v0, 0x7f0a01e4
+    const v0, 0x7f0a01e2
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4746,7 +4691,7 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->r:Landroid/view/View;
 
     .line 507
-    const v0, 0x7f0a038e
+    const v0, 0x7f0a038d
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->c(I)Landroid/view/View;
 
@@ -4774,14 +4719,14 @@
     .line 511
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SnapEditorView;->setSwipeImageViewAnalytics(Loj;)V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SnapEditorView;->setSwipeImageViewAnalytics(Lpa;)V
 
     .line 512
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    invoke-virtual {v0, p0}, Lcom/snapchat/android/ui/SnapEditorView;->setSwipeImageViewOnScrollListener(Lapg$a;)V
+    invoke-virtual {v0, p0}, Lcom/snapchat/android/ui/SnapEditorView;->setSwipeImageViewOnScrollListener(Laqc$a;)V
 
     .line 513
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
@@ -4807,29 +4752,29 @@
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/CanvasViewBase;->setColor(I)V
 
     .line 520
-    new-instance v0, Lanh;
+    new-instance v0, Laoe;
 
     invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-static {}, Lajq;->a()Lajq;
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lajq;->d()Ljava/util/List;
+    invoke-virtual {v2}, Lakk;->d()Ljava/util/List;
 
     move-result-object v2
 
-    invoke-direct {v0, v1, v2, p0}, Lanh;-><init>(Landroid/content/Context;Ljava/util/List;Lanh$a;)V
+    invoke-direct {v0, v1, v2, p0}, Laoe;-><init>(Landroid/content/Context;Ljava/util/List;Laoe$a;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Lanh;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Laoe;
 
     goto/16 :goto_0
 
     .line 498
     :cond_3
-    invoke-static {}, Lajx;->O()Z
+    invoke-static {}, Lakr;->O()Z
 
     move-result v0
 
@@ -4841,9 +4786,9 @@
     goto :goto_1
 .end method
 
-.method public onColorPickedEvent(Lbbc;)V
+.method public onColorPickedEvent(Lbcc;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -4869,14 +4814,14 @@
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->g:Lcom/snapchat/android/ui/CanvasViewBase;
 
-    iget v1, p1, Lbbc;->mColor:I
+    iget v1, p1, Lbcc;->mColor:I
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/CanvasViewBase;->setColor(I)V
 
     .line 1615
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->j:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->j:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -4938,7 +4883,7 @@
     iput-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->N:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     .line 251
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-nez v1, :cond_2
 
@@ -4949,36 +4894,36 @@
     .line 252
     check-cast v0, Lcom/snapchat/android/LandingPageActivity;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/LandingPageActivity;->h()Lbdj;
+    invoke-virtual {v0}, Lcom/snapchat/android/LandingPageActivity;->h()Lbej;
 
     move-result-object v0
 
     .line 256
     if-eqz v0, :cond_0
 
-    iget-object v1, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v1, v0, Lbej;->mMediabryo:Laji;
 
-    instance-of v1, v1, Laim;
+    instance-of v1, v1, Laji;
 
     if-nez v1, :cond_1
 
     .line 257
     :cond_0
-    new-instance v0, Lajj$a;
+    new-instance v0, Lakf$a;
 
-    invoke-direct {v0}, Lajj$a;-><init>()V
+    invoke-direct {v0}, Lakf$a;-><init>()V
 
     sget-object v1, Lcom/snapchat/android/model/Mediabryo$SnapType;->SNAP:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
     iput-object v1, v0, Lcom/snapchat/android/model/Mediabryo$a;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
-    invoke-virtual {v0}, Lajj$a;->c()Lajj;
+    invoke-virtual {v0}, Lakf$a;->c()Lakf;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     .line 260
     const/4 v0, 0x1
@@ -5001,13 +4946,13 @@
 
     .line 264
     :cond_1
-    iget-object v0, v0, Lbdj;->mMediabryo:Laim;
+    iget-object v0, v0, Lbej;->mMediabryo:Laji;
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     .line 267
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-nez v0, :cond_3
 
@@ -5019,7 +4964,7 @@
 
     .line 270
     :cond_3
-    const v0, 0x7f04009f
+    const v0, 0x7f0400a1
 
     const/4 v1, 0x0
 
@@ -5030,31 +4975,31 @@
     iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 271
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->f:Lbgt;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->f:Lbht;
 
     iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->mFragmentLayout:Landroid/view/View;
 
-    iput-object v1, v0, Lbgt;->mView:Landroid/view/View;
+    iput-object v1, v0, Lbht;->mView:Landroid/view/View;
 
     .line 273
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0}, Laim;->h()I
+    invoke-virtual {v0}, Laji;->h()I
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mRawImageBitmap:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_4
 
     .line 274
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->f:Lbgt;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->f:Lbht;
 
-    invoke-virtual {v0}, Lbgt;->a()V
+    invoke-virtual {v0}, Lbht;->a()V
 
     .line 277
     :cond_4
@@ -5071,23 +5016,23 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onDestroy()V
 
     .line 777
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-eqz v0, :cond_0
 
     .line 780
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0}, Laim;->j()V
+    invoke-virtual {v0}, Laji;->j()V
 
     .line 781
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     .line 784
     :cond_0
-    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v0
 
@@ -5103,7 +5048,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 786
-    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v1
 
@@ -5159,30 +5104,30 @@
 
     .line 741
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    iget v0, v0, Loj;->b:I
+    iget v0, v0, Lpa;->b:I
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Loj;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->O:Lpa;
 
-    iget v1, v1, Loj;->c:I
+    iget v1, v1, Lpa;->c:I
 
     add-int/2addr v0, v1
 
     if-lez v0, :cond_2
 
     .line 742
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     invoke-static {v0}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Lcom/snapchat/android/model/Mediabryo;)V
 
     .line 746
     :cond_2
-    invoke-static {}, Lnp;->a()Lnp;
+    invoke-static {}, Log;->a()Log;
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-static {v0}, Lnp;->d(Laim;)V
+    invoke-static {v0}, Log;->d(Laji;)V
 
     .line 748
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
@@ -5196,7 +5141,7 @@
     iput-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->R:Lcom/snapchat/android/ui/SnapEditorView$a;
 
     .line 752
-    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v0
 
@@ -5212,7 +5157,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 754
-    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->J()Landroid/view/Window;
 
     move-result-object v1
 
@@ -5221,11 +5166,11 @@
     .line 756
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbaw;
+    new-instance v1, Lbbx;
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, v2}, Lbaw;-><init>(I)V
+    invoke-direct {v1, v2}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -5235,7 +5180,7 @@
 
 .method public onDrawingEvent(Lcom/snapchat/android/util/eventbus/DrawingEvent;)V
     .locals 10
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -5345,9 +5290,9 @@
 
     invoke-virtual {v2, v0, v1}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -5361,17 +5306,17 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->startAnimation(Landroid/view/animation/Animation;)V
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->c()Z
+    invoke-virtual {v0}, Lbhr;->c()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->M:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -5381,19 +5326,19 @@
 
     .line 1568
     :cond_4
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbhr;
 
-    invoke-virtual {v0, v6}, Lbgr;->a(I)V
+    invoke-virtual {v0, v6}, Lbhr;->a(I)V
 
     .line 1569
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    invoke-virtual {v0, v6}, Lbgr;->a(I)V
+    invoke-virtual {v0, v6}, Lbhr;->a(I)V
 
     .line 1570
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -5408,9 +5353,9 @@
     goto :goto_0
 .end method
 
-.method public onEditCaptionEvent(Lbbh;)V
+.method public onEditCaptionEvent(Lbch;)V
     .locals 6
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -5421,12 +5366,12 @@
     const/16 v1, 0x8
 
     .line 539
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->E:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->E:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 540
-    invoke-static {}, Lajx;->N()V
+    invoke-static {}, Lakr;->N()V
 
     .line 541
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->i:Landroid/widget/ImageButton;
@@ -5434,14 +5379,14 @@
     invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setVisibility(I)V
 
     .line 542
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->p:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->p:Lbhr;
 
-    invoke-virtual {v0, v5}, Lbgr;->a(I)V
+    invoke-virtual {v0, v5}, Lbhr;->a(I)V
 
     .line 543
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->F:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 545
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
@@ -5477,7 +5422,7 @@
     invoke-virtual {v0, v4}, Landroid/widget/ImageButton;->setBackgroundResource(I)V
 
     .line 549
-    iget-boolean v0, p1, Lbbh;->mIsEditing:Z
+    iget-boolean v0, p1, Lbch;->mIsEditing:Z
 
     if-eqz v0, :cond_2
 
@@ -5499,9 +5444,9 @@
     invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/CanvasViewBase;->setDrawingEnabled(Z)V
 
     .line 553
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->o:Lbhr;
 
-    invoke-virtual {v0, v5}, Lbgr;->a(I)V
+    invoke-virtual {v0, v5}, Lbhr;->a(I)V
 
     .line 554
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->i:Landroid/widget/ImageButton;
@@ -5509,19 +5454,19 @@
     invoke-virtual {v0, v5}, Landroid/widget/ImageButton;->setVisibility(I)V
 
     .line 555
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->q:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 556
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->C:Lbhr;
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 557
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->p:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->p:Lbhr;
 
-    invoke-virtual {v0, v2}, Lbgr;->a(I)V
+    invoke-virtual {v0, v2}, Lbhr;->a(I)V
 
     .line 558
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->m:Landroid/widget/Button;
@@ -5548,9 +5493,9 @@
     goto :goto_1
 .end method
 
-.method public onEnableFiltersEvent(Lbbi;)V
+.method public onEnableFiltersEvent(Lbci;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -5578,9 +5523,9 @@
     invoke-direct {p0, v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->a(F)V
 
     .line 1626
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->E:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->E:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->c()Z
+    invoke-virtual {v0}, Lbhr;->c()Z
 
     move-result v0
 
@@ -5593,7 +5538,7 @@
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SnapEditorView;->setMediabryo(Lcom/snapchat/android/model/Mediabryo;)V
 
@@ -5604,10 +5549,10 @@
 .method public onInChatSnapEvent(Lcom/snapchat/android/util/eventbus/InChatSnapEvent;)V
     .locals 2
     .param p1    # Lcom/snapchat/android/util/eventbus/InChatSnapEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -5638,16 +5583,16 @@
     return-void
 .end method
 
-.method public onNoFilterEvent(Lbcl;)V
+.method public onNoFilterEvent(Lbdl;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 534
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->b:Lcom/snapchat/android/ui/SnapEditorView;
 
-    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/SnapEditorView;->setMediabryo(Lcom/snapchat/android/model/Mediabryo;)V
 
@@ -5663,14 +5608,14 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onPause()V
 
     .line 710
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-eqz v0, :cond_0
 
     .line 711
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0}, Laim;->c()V
+    invoke-virtual {v0}, Laji;->c()V
 
     .line 714
     :cond_0
@@ -5738,36 +5683,36 @@
     return-void
 .end method
 
-.method public onPostToStoriesUpdatedEvent(Lbco;)V
+.method public onPostToStoriesUpdatedEvent(Lbdo;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 1739
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Lanh;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Laoe;
 
     if-eqz v0, :cond_0
 
     .line 1740
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Lanh;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Laoe;
 
-    invoke-static {}, Lajq;->a()Lajq;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lajq;->d()Ljava/util/List;
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v1
 
-    invoke-virtual {v0}, Lanh;->clear()V
+    invoke-virtual {v1}, Lakk;->d()Ljava/util/List;
 
-    invoke-virtual {v0, v1}, Lanh;->addAll(Ljava/util/Collection;)V
+    move-result-object v1
+
+    invoke-virtual {v0}, Laoe;->clear()V
+
+    invoke-virtual {v0, v1}, Laoe;->addAll(Ljava/util/Collection;)V
 
     .line 1741
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Lanh;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->c:Laoe;
 
-    invoke-virtual {v0}, Lanh;->notifyDataSetChanged()V
+    invoke-virtual {v0}, Laoe;->notifyDataSetChanged()V
 
     .line 1743
     :cond_0
@@ -5777,10 +5722,10 @@
 .method public onQuickSnapEvent(Lcom/snapchat/android/util/eventbus/QuickSnapEvent;)V
     .locals 2
     .param p1    # Lcom/snapchat/android/util/eventbus/QuickSnapEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -5819,14 +5764,14 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 694
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
     if-eqz v0, :cond_0
 
     .line 696
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laim;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->a:Laji;
 
-    invoke-virtual {v0}, Laim;->b()V
+    invoke-virtual {v0}, Laji;->b()V
 
     .line 699
     :cond_0
@@ -5863,16 +5808,16 @@
     return-void
 .end method
 
-.method public onUserLoadedEvent(Lber;)V
+.method public onUserLoadedEvent(Lbfq;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 1747
-    iget-object v0, p1, Lber;->user:Lajv;
+    iget-object v0, p1, Lbfq;->user:Lakp;
 
-    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Q:Lajv;
+    iput-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->Q:Lakp;
 
     .line 1748
     return-void
@@ -5885,9 +5830,9 @@
     const/4 v1, 0x0
 
     .line 1492
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->b()Z
+    invoke-virtual {v0}, Lbhr;->b()Z
 
     move-result v0
 
@@ -5928,9 +5873,9 @@
     if-eqz v2, :cond_2
 
     .line 1498
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -5964,16 +5909,16 @@
     invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 1506
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->z:Lbhr;
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Lbgr;->a(I)V
+    invoke-virtual {v0, v1}, Lbhr;->a(I)V
 
     .line 1508
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbgr;
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment;->x:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -6024,7 +5969,7 @@
 
     .prologue
     .line 1690
-    invoke-static {}, Lajx;->ab()Z
+    invoke-static {}, Lakr;->aa()Z
 
     move-result v0
 

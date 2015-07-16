@@ -1,11 +1,11 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.METHOD})
-public @interface caq {}
+public final class caq
+  extends cab
+{
+  public caq()
+  {
+    super("(", 0);
+  }
+}
 
 /* Location:
  * Qualified Name:     caq

@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.verification;
 
-import ajx;
+import akr;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,16 +16,15 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import apw;
-import apy;
-import atj;
-import avh;
-import bet;
-import bkr;
-import boh;
+import aqv;
+import aqx;
+import auh;
+import awf;
+import bfs;
+import bls;
+import bpi;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.LoginAndSignupActivity;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.database.SharedPreferenceKey;
@@ -34,8 +33,8 @@ import com.snapchat.android.fragments.signup.NewUserContactBookFragment;
 import com.snapchat.android.ui.window.WindowConfiguration;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.fragment.SnapchatFragment;
-import ku;
-import kv;
+import lm;
+import ln;
 
 public class NewUserPhoneVerificationFragment
   extends PhoneVerificationFragment
@@ -48,21 +47,21 @@ public class NewUserPhoneVerificationFragment
   }
   
   @SuppressLint({"ValidFragment"})
-  private NewUserPhoneVerificationFragment(RegistrationAnalytics paramRegistrationAnalytics, ajx paramajx, WindowConfiguration paramWindowConfiguration)
+  private NewUserPhoneVerificationFragment(RegistrationAnalytics paramRegistrationAnalytics, akr paramakr, WindowConfiguration paramWindowConfiguration)
   {
-    super(paramRegistrationAnalytics, paramajx, paramWindowConfiguration);
+    super(paramRegistrationAnalytics, paramakr, paramWindowConfiguration);
   }
   
   @SuppressLint({"ValidFragment"})
   public NewUserPhoneVerificationFragment(WindowConfiguration paramWindowConfiguration)
   {
-    this(RegistrationAnalytics.a(), ajx.a(), paramWindowConfiguration);
+    this(RegistrationAnalytics.a(), akr.a(), paramWindowConfiguration);
   }
   
-  protected final void a(bkr parambkr)
+  protected final void a(bls parambls)
   {
     getActivity();
-    LoginAndSignupActivity.a(parambkr);
+    LoginAndSignupActivity.a(parambls);
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
@@ -72,63 +71,58 @@ public class NewUserPhoneVerificationFragment
   
   public final boolean g()
   {
-    if ((ajx.r()) || (ajx.q())) {
-      new apy(e, a).show();
+    if ((akr.r()) || (akr.q())) {
+      new aqx(e, a).show();
     }
     for (;;)
     {
       return true;
-      new apw(e).show();
+      new aqv(e).show();
     }
   }
   
   protected final void i()
   {
-    if (ajx.r()) {
-      try
-      {
-        FragmentTransaction localFragmentTransaction = e.mFragments.beginTransaction();
-        CaptchaFragment localCaptchaFragment = new CaptchaFragment(ajx.s(), mWindowConfiguration);
-        localFragmentTransaction.replace(a, localCaptchaFragment).commit();
-        return;
-      }
-      catch (IllegalStateException localIllegalStateException1)
-      {
-        Timber.f("NewUserPhoneVerificationFragment", "Attempted to go to CaptchaFragment", new Object[0]);
-        return;
-      }
-    }
-    if (ajx.f())
+    if (akr.r()) {}
+    try
     {
-      ajx.c(false);
+      FragmentTransaction localFragmentTransaction = e.mFragments.beginTransaction();
+      CaptchaFragment localCaptchaFragment = new CaptchaFragment(akr.s(), mWindowConfiguration);
+      localFragmentTransaction.replace(a, localCaptchaFragment).commit();
+      return;
+    }
+    catch (IllegalStateException localIllegalStateException2) {}
+    if (akr.f())
+    {
+      akr.c(false);
       try
       {
         e.mFragments.beginTransaction().replace(a, new NewUserContactBookFragment(mWindowConfiguration)).commit();
         return;
       }
-      catch (IllegalStateException localIllegalStateException2)
+      catch (IllegalStateException localIllegalStateException1)
       {
-        Timber.f("NewUserPhoneVerificationFragment", "Attempted to go to NewUserAddFriendsFragment", new Object[0]);
         return;
       }
     }
     RegistrationAnalytics.n();
     SharedPreferences.Editor localEditor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
-    localEditor.putBoolean(SharedPreferenceKey.BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING.getKey(), true);
+    localEditor.putBoolean(SharedPreferenceKey.SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED.getKey(), true);
     localEditor.apply();
-    ajx.c(false);
+    akr.c(false);
     startActivity(new Intent(e, LandingPageActivity.class));
     e.finish();
+    return;
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
     a = paramViewGroup.getId();
-    paramLayoutInflater = (Button)c(2131361807);
+    paramLayoutInflater = (Button)c(2131361808);
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
-    if (!ajx.q())
+    auh.a(paramLayoutInflater);
+    if (!akr.q())
     {
       paramLayoutInflater.setVisibility(0);
       paramLayoutInflater.setOnClickListener(new View.OnClickListener()
@@ -136,19 +130,19 @@ public class NewUserPhoneVerificationFragment
         public final void onClick(View paramAnonymousView)
         {
           paramAnonymousView = c;
-          if (ajx.v()) {
-            ScAnalyticsEventEngine.a(new kv());
+          if (akr.v()) {
+            ScAnalyticsEventEngine.a(new ln());
           }
           i();
         }
       });
     }
     if (g.requestFocus()) {
-      avh.f(e);
+      awf.f(e);
     }
     mFragmentLayout.setBackgroundColor(0);
-    if (ajx.v()) {
-      ScAnalyticsEventEngine.a(new ku());
+    if (akr.v()) {
+      ScAnalyticsEventEngine.a(new lm());
     }
     return mFragmentLayout;
   }
@@ -156,15 +150,15 @@ public class NewUserPhoneVerificationFragment
   public void onResume()
   {
     super.onResume();
-    if (ajx.f()) {
+    if (akr.f()) {
       i();
     }
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
-    super.onVerificationCodeReceivedEvent(parambet);
+    super.onVerificationCodeReceivedEvent(parambfs);
   }
 }
 

@@ -1,6 +1,5 @@
 package com.snapchat.android.util;
 
-import ajx;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.os.Parcelable;
@@ -11,20 +10,17 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import aum;
-import aum.1;
-import auu;
-import bam;
-import ban;
-import bel;
-import beq;
-import bes;
-import boh;
-import cgc;
-import com.snapchat.android.Timber;
-import com.snapchat.android.Timber.LogType;
+import avk;
+import avk.1;
+import avs;
+import bbn;
+import bbo;
+import bfk;
+import bfp;
+import bfr;
+import bpi;
+import chd;
 import com.snapchat.android.analytics.NetworkAnalytics;
-import com.snapchat.android.util.debug.ReleaseManager;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
 
@@ -34,7 +30,7 @@ public class SnapchatViewPager
   private static final int OFFSCREEN_PAGE_LIMIT = 2;
   public static final int PAGER_WINDOW_OFFSET = 1;
   private static final String TAG = "SnapchatViewPager";
-  private auu mAdapter;
+  private avs mAdapter;
   public boolean mIsAnimating = false;
   private boolean mIsChatFragmentAccessible = false;
   public boolean mIsPagingEnabled = true;
@@ -43,7 +39,7 @@ public class SnapchatViewPager
   private int mLastOnScrollPagePixelOffset = -1;
   private float mLastRawX = -1.0F;
   private NetworkAnalytics mNetworkAnalytics = NetworkAnalytics.a();
-  public bes mUserSwipedIntoChatEvent;
+  public bfr mUserSwipedIntoChatEvent;
   
   public SnapchatViewPager(Context paramContext)
   {
@@ -94,14 +90,14 @@ public class SnapchatViewPager
     return true;
   }
   
-  @cgc
+  @chd
   public final SnapchatFragment a(int paramInt)
   {
     if (mAdapter == null) {
       return null;
     }
-    auu localauu = mAdapter;
-    String str = auu.a(getId(), paramInt);
+    avs localavs = mAdapter;
+    String str = avs.a(getId(), paramInt);
     return (SnapchatFragment)mFragmentManager.findFragmentByTag(str);
   }
   
@@ -142,8 +138,8 @@ public class SnapchatViewPager
     return a(Integer.valueOf(mLastOnScrollPage));
   }
   
-  @boh
-  public void onAllowAccessToChatFragmentEvent(bam parambam)
+  @bpi
+  public void onAllowAccessToChatFragmentEvent(bbn parambbn)
   {
     mIsChatFragmentAccessible = allow;
   }
@@ -212,10 +208,10 @@ public class SnapchatViewPager
         mLastOnScrollPagePixelOffset = paramInt2;
       }
       if (((mLastOnScrollPage == 3) && (paramInt1 == 2)) || ((mLastOnScrollPage == 1) && (mLastOnScrollPagePixelOffset == 0) && (paramInt2 != 0) && (paramInt1 == 1)) || ((mLastOnScrollPage == 0) && (paramInt1 == 2))) {
-        ban.a().a(new bel(TitleBarManager.Visibility.HIDDEN));
+        bbo.a().a(new bfk(TitleBarManager.Visibility.HIDDEN));
       }
       if (((paramInt1 == 1) && (paramFloat == 0.0F)) || ((mLastOnScrollPage == 2) && (paramInt1 > 2)) || ((mLastOnScrollPage == 1) && (paramInt1 <= 0))) {
-        ban.a().a(new bel(TitleBarManager.Visibility.VISIBLE));
+        bbo.a().a(new bfk(TitleBarManager.Visibility.VISIBLE));
       }
       if ((paramInt1 == 0) && (!mIsChatFragmentAccessible)) {}
       try
@@ -225,37 +221,31 @@ public class SnapchatViewPager
         if (paramInt2 == 0)
         {
           a(paramInt1, getChildCount());
-          if (paramInt1 == 1) {
-            mNetworkAnalytics.b();
+          if (paramInt1 != 1) {
+            break label240;
           }
+          mNetworkAnalytics.b();
         }
-        else
+        for (;;)
         {
           mLastOnScrollPage = paramInt1;
           mLastOnScrollPagePixelOffset = paramInt2;
           paramInt1 = mLastOnScrollPage;
-          paramInt2 = mLastOnScrollPagePixelOffset;
-          if (ReleaseManager.f()) {
-            Timber.a(Timber.LogType.INFO, "SnapchatViewPager", true, false, null, "onPageScrolled position [%d] offset [%d]", new Object[] { Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) });
-          }
+          paramInt1 = mLastOnScrollPagePixelOffset;
           return;
           bool = false;
-        }
-      }
-      catch (IllegalStateException localIllegalStateException)
-      {
-        for (;;)
-        {
-          Timber.a("SnapchatViewPager", localIllegalStateException);
-          continue;
+          break;
+          label240:
           if (paramInt1 == 3) {
             mNetworkAnalytics.b();
-          } else if (paramInt1 == 4) {
-            ajx.aR();
           } else if (paramInt1 == 0) {
             mUserSwipedIntoChatEvent = null;
           }
         }
+      }
+      catch (IllegalStateException localIllegalStateException)
+      {
+        for (;;) {}
       }
     }
   }
@@ -281,13 +271,13 @@ public class SnapchatViewPager
     {
       if (mUserSwipedIntoChatEvent.mFeedListItem != null)
       {
-        Object localObject = mUserSwipedIntoChatEvent.mFeedListItem.findViewById(2131362346);
+        Object localObject = mUserSwipedIntoChatEvent.mFeedListItem.findViewById(2131362344);
         if (localObject != null)
         {
-          localObject = new aum((View)localObject, (int)((View)localObject).getTranslationX());
+          localObject = new avk((View)localObject, (int)((View)localObject).getTranslationX());
           mPreviousXPositionForShutAnimator = mStartOffset;
           ValueAnimator localValueAnimator = ValueAnimator.ofInt(new int[] { mStartOffset, mEndOffset }).setDuration(mDuration);
-          localValueAnimator.addUpdateListener(new aum.1((aum)localObject));
+          localValueAnimator.addUpdateListener(new avk.1((avk)localObject));
           localValueAnimator.start();
         }
       }
@@ -300,23 +290,23 @@ public class SnapchatViewPager
     return a(paramMotionEvent);
   }
   
-  @boh
-  public void onUserFlingedIntoChatEvent(beq parambeq)
+  @bpi
+  public void onUserFlingedIntoChatEvent(bfp parambfp)
   {
     mIsChatFragmentAccessible = true;
     setCurrentItem(0, true);
   }
   
-  @boh
-  public void onUserSwipedIntoChatEvent(bes parambes)
+  @bpi
+  public void onUserSwipedIntoChatEvent(bfr parambfr)
   {
-    mUserSwipedIntoChatEvent = parambes;
+    mUserSwipedIntoChatEvent = parambfr;
   }
   
-  public void setAdapter(auu paramauu)
+  public void setAdapter(avs paramavs)
   {
-    super.setAdapter(paramauu);
-    mAdapter = paramauu;
+    super.setAdapter(paramavs);
+    mAdapter = paramavs;
   }
   
   public void setAnimating(boolean paramBoolean)

@@ -1,4 +1,16 @@
-public final class bbs {}
+public final class bbs
+{
+  public boolean mShouldDisplayHereTooltip = false;
+  public boolean mShouldReturnToChatFragment = true;
+  
+  public bbs() {}
+  
+  public bbs(boolean paramBoolean1, boolean paramBoolean2)
+  {
+    mShouldReturnToChatFragment = paramBoolean1;
+    mShouldDisplayHereTooltip = paramBoolean2;
+  }
+}
 
 /* Location:
  * Qualified Name:     bbs

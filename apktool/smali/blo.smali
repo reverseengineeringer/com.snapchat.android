@@ -3,603 +3,289 @@
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lblo$a;
+    }
+.end annotation
+
+
 # instance fields
-.field final a:Lblp;
+.field protected display:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "display"
+    .end annotation
+.end field
 
-.field public final b:Lbme;
+.field protected id:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "id"
+    .end annotation
+.end field
 
-.field public c:Ljava/net/Socket;
+.field protected isHidden:Ljava/lang/Boolean;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "is_hidden"
+    .end annotation
+.end field
 
-.field d:Z
+.field protected isNewSnapchatter:Ljava/lang/Boolean;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "is_new_snapchatter"
+    .end annotation
+.end field
 
-.field e:Lbmu;
+.field protected name:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "name"
+    .end annotation
+.end field
 
-.field f:Lbnw;
+.field protected suggestReason:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "suggest_reason"
+    .end annotation
+.end field
 
-.field public g:Lblz;
-
-.field h:J
-
-.field public i:Lblt;
-
-.field j:I
-
-.field private k:Ljava/lang/Object;
+.field protected suggestReasonDisplay:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "suggest_reason_display"
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lblp;Lbme;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 90
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lblo;->d:Z
-
-    .line 78
-    sget-object v0, Lblz;->b:Lblz;
-
-    iput-object v0, p0, Lblo;->g:Lblz;
-
-    .line 91
-    iput-object p1, p0, Lblo;->a:Lblp;
-
-    .line 92
-    iput-object p2, p0, Lblo;->b:Lbme;
-
-    .line 93
+    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Lbma;II)V
-    .locals 10
-
-    .prologue
-    const-wide/16 v2, 0x0
-
-    .line 393
-    new-instance v4, Lbmu;
-
-    iget-object v0, p0, Lblo;->a:Lblp;
-
-    iget-object v1, p0, Lblo;->c:Ljava/net/Socket;
-
-    invoke-direct {v4, v0, p0, v1}, Lbmu;-><init>(Lblp;Lblo;Ljava/net/Socket;)V
-
-    .line 394
-    invoke-virtual {v4, p2, p3}, Lbmu;->a(II)V
-
-    .line 395
-    invoke-virtual {p1}, Lbma;->a()Ljava/net/URL;
-
-    move-result-object v0
-
-    .line 396
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v5, "CONNECT "
-
-    invoke-direct {v1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/net/URL;->getHost()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v5, ":"
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Ljava/net/URL;->getPort()I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " HTTP/1.1"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 398
-    :cond_0
-    iget-object v0, p1, Lbma;->c:Lblu;
-
-    invoke-virtual {v4, v0, v5}, Lbmu;->a(Lblu;Ljava/lang/String;)V
-
-    .line 399
-    invoke-virtual {v4}, Lbmu;->a()V
-
-    .line 400
-    invoke-virtual {v4}, Lbmu;->c()Lbmc$a;
-
-    move-result-object v0
-
-    iput-object p1, v0, Lbmc$a;->a:Lbma;
-
-    invoke-virtual {v0}, Lbmc$a;->a()Lbmc;
-
-    move-result-object v6
-
-    .line 403
-    invoke-static {v6}, Lbmz;->a(Lbmc;)J
-
-    move-result-wide v0
-
-    .line 404
-    const-wide/16 v8, -0x1
-
-    cmp-long v7, v0, v8
-
-    if-nez v7, :cond_1
-
-    move-wide v0, v2
-
-    .line 407
-    :cond_1
-    invoke-virtual {v4, v0, v1}, Lbmu;->a(J)Lcaj;
-
-    move-result-object v0
-
-    .line 408
-    const v1, 0x7fffffff
-
-    sget-object v7, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-static {v0, v1, v7}, Lbmp;->a(Lcaj;ILjava/util/concurrent/TimeUnit;)Z
-
-    .line 409
-    invoke-interface {v0}, Lcaj;->close()V
-
-    .line 411
-    iget v0, v6, Lbmc;->c:I
-
-    sparse-switch v0, :sswitch_data_0
-
-    .line 429
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Unexpected response code for CONNECT: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 430
-    iget v2, v6, Lbmc;->c:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 417
-    :sswitch_0
-    iget-object v0, v4, Lbmu;->c:Lbzw;
-
-    invoke-interface {v0}, Lbzw;->b()Lbzu;
-
-    move-result-object v0
-
-    iget-wide v0, v0, Lbzu;->b:J
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_2
-
-    .line 418
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "TLS tunnel buffered too many bytes!"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 423
-    :sswitch_1
-    iget-object v0, p0, Lblo;->b:Lbme;
-
-    iget-object v0, v0, Lbme;->a:Lblg;
-
-    iget-object v0, v0, Lblg;->h:Lblh;
-
-    iget-object v1, p0, Lblo;->b:Lbme;
-
-    iget-object v1, v1, Lbme;->b:Ljava/net/Proxy;
-
-    invoke-static {v0, v6, v1}, Lbmz;->a(Lblh;Lbmc;Ljava/net/Proxy;)Lbma;
-
-    move-result-object p1
-
-    .line 425
-    if-nez p1, :cond_0
-
-    .line 426
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "Failed to authenticate with proxy"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 420
-    :cond_2
-    return-void
-
-    .line 411
-    :sswitch_data_0
-    .sparse-switch
-        0xc8 -> :sswitch_0
-        0x197 -> :sswitch_1
-    .end sparse-switch
-.end method
-
-.method final a(Ljava/lang/Object;)V
-    .locals 3
-
-    .prologue
-    .line 102
-    invoke-virtual {p0}, Lblo;->e()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 106
-    :goto_0
-    return-void
-
-    .line 103
-    :cond_0
-    iget-object v1, p0, Lblo;->a:Lblp;
-
-    monitor-enter v1
-
-    .line 104
-    :try_start_0
-    iget-object v0, p0, Lblo;->k:Ljava/lang/Object;
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v2, "Connection already has an owner!"
-
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 106
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    .line 105
-    :cond_1
-    :try_start_1
-    iput-object p1, p0, Lblo;->k:Ljava/lang/Object;
-
-    .line 106
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-.end method
-
-.method final a()Z
-    .locals 2
-
-    .prologue
-    .line 116
-    iget-object v1, p0, Lblo;->a:Lblp;
-
-    monitor-enter v1
-
-    .line 117
-    :try_start_0
-    iget-object v0, p0, Lblo;->k:Ljava/lang/Object;
-
-    if-nez v0, :cond_0
-
-    .line 119
-    const/4 v0, 0x0
-
-    monitor-exit v1
-
-    .line 123
-    :goto_0
-    return v0
-
-    .line 122
-    :cond_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lblo;->k:Ljava/lang/Object;
-
-    .line 123
-    const/4 v0, 0x1
-
-    monitor-exit v1
-
-    goto :goto_0
-
-    .line 124
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method final b()Z
+.method public final a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 297
-    iget-object v0, p0, Lblo;->c:Ljava/net/Socket;
+    .line 118
+    iget-object v0, p0, Lblo;->id:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/net/Socket;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lblo;->c:Ljava/net/Socket;
-
-    invoke-virtual {v0}, Ljava/net/Socket;->isInputShutdown()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lblo;->c:Ljava/net/Socket;
-
-    invoke-virtual {v0}, Ljava/net/Socket;->isOutputShutdown()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method final c()Z
+.method public final b()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 317
-    iget-object v0, p0, Lblo;->f:Lbnw;
+    .line 145
+    iget-object v0, p0, Lblo;->name:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lblo;->f:Lbnw;
-
-    invoke-virtual {v0}, Lbnw;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method final d()J
-    .locals 2
-
-    .prologue
-    .line 325
-    iget-object v0, p0, Lblo;->f:Lbnw;
-
-    if-nez v0, :cond_0
-
-    iget-wide v0, p0, Lblo;->h:J
-
-    :goto_0
-    return-wide v0
-
-    :cond_0
-    iget-object v0, p0, Lblo;->f:Lbnw;
-
-    invoke-virtual {v0}, Lbnw;->b()J
-
-    move-result-wide v0
-
-    goto :goto_0
-.end method
-
-.method final e()Z
+.method public final c()Lblo$a;
     .locals 1
 
     .prologue
-    .line 344
-    iget-object v0, p0, Lblo;->f:Lbnw;
+    .line 176
+    iget-object v0, p0, Lblo;->suggestReason:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 436
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Connection{"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lblo;->b:Lbme;
-
-    iget-object v1, v1, Lbme;->a:Lblg;
-
-    iget-object v1, v1, Lblg;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ":"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lblo;->b:Lbme;
-
-    iget-object v1, v1, Lbme;->a:Lblg;
-
-    iget v1, v1, Lblg;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", proxy="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lblo;->b:Lbme;
-
-    iget-object v1, v1, Lbme;->b:Ljava/net/Proxy;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " hostAddress="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lblo;->b:Lbme;
-
-    iget-object v1, v1, Lbme;->c:Ljava/net/InetSocketAddress;
-
-    .line 441
-    invoke-virtual {v1}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " cipherSuite="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v0, p0, Lblo;->i:Lblt;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lblo;->i:Lblt;
-
-    .line 443
-    iget-object v0, v0, Lblt;->a:Ljava/lang/String;
-
-    :goto_0
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " protocol="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lblo;->g:Lblz;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/16 v1, 0x7d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lblo$a;->a(Ljava/lang/String;)Lblo$a;
 
     move-result-object v0
 
     return-object v0
+.end method
 
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 203
+    iget-object v0, p0, Lblo;->suggestReasonDisplay:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final e()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 230
+    iget-object v0, p0, Lblo;->display:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .prologue
+    .line 311
+    if-ne p1, p0, :cond_0
+
+    .line 312
+    const/4 v0, 0x1
+
+    .line 318
+    :goto_0
+    return v0
+
+    .line 314
     :cond_0
-    const-string v0, "none"
+    instance-of v0, p1, Lblo;
+
+    if-nez v0, :cond_1
+
+    .line 315
+    const/4 v0, 0x0
 
     goto :goto_0
+
+    .line 317
+    :cond_1
+    check-cast p1, Lblo;
+
+    .line 318
+    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
+
+    iget-object v1, p0, Lblo;->id:Ljava/lang/String;
+
+    iget-object v2, p1, Lblo;->id:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->name:Ljava/lang/String;
+
+    iget-object v2, p1, Lblo;->name:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->suggestReason:Ljava/lang/String;
+
+    iget-object v2, p1, Lblo;->suggestReason:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->suggestReasonDisplay:Ljava/lang/String;
+
+    iget-object v2, p1, Lblo;->suggestReasonDisplay:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->display:Ljava/lang/String;
+
+    iget-object v2, p1, Lblo;->display:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->isHidden:Ljava/lang/Boolean;
+
+    iget-object v2, p1, Lblo;->isHidden:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->isNewSnapchatter:Ljava/lang/Boolean;
+
+    iget-object v2, p1, Lblo;->isNewSnapchatter:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .prologue
+    .line 298
+    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+
+    iget-object v1, p0, Lblo;->id:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->name:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->suggestReason:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->suggestReasonDisplay:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->display:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->isHidden:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lblo;->isNewSnapchatter:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 293
+    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

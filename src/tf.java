@@ -1,83 +1,30 @@
-import com.google.gson.annotations.SerializedName;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.util.Map;
-import java.util.TreeMap;
+import javax.inject.Provider;
 
-public abstract class tf<T, E>
+public final class tf
+  implements bvk<td>
 {
-  private final Class<T> mClazz;
+  private final Provider<qw> mCashErrorReporterProvider;
   
-  public tf(Class<T> paramClass)
+  static
   {
-    mClazz = paramClass;
-  }
-  
-  @cgc
-  private static Object a(@cgb Object paramObject, @cgb Field paramField)
-  {
-    try
+    if (!tf.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      paramObject = paramField.get(paramObject);
-      return paramObject;
-    }
-    catch (IllegalAccessException paramObject)
-    {
-      throw new RuntimeException((Throwable)paramObject);
+      $assertionsDisabled = bool;
+      return;
     }
   }
   
-  @cgb
-  private Map<String, E> a(@cgb Object paramObject, @cgb Class paramClass)
+  private tf(Provider<qw> paramProvider)
   {
-    Object localObject1 = paramClass.getSuperclass();
-    int i;
-    label33:
-    Object localObject2;
-    SerializedName localSerializedName;
-    if (localObject1 == null)
-    {
-      localObject1 = new TreeMap();
-      Field[] arrayOfField = paramClass.getDeclaredFields();
-      int j = arrayOfField.length;
-      i = 0;
-      if (i >= j) {
-        break label166;
-      }
-      paramClass = arrayOfField[i];
-      if ((mClazz.isAssignableFrom(aud.b(paramClass.getType()))) && (!Modifier.isTransient(paramClass.getModifiers())) && (!paramClass.isSynthetic()))
-      {
-        paramClass.setAccessible(true);
-        localObject2 = a(paramObject, paramClass);
-        if (localObject2 != null)
-        {
-          localSerializedName = (SerializedName)paramClass.getAnnotation(SerializedName.class);
-          if (localSerializedName == null) {
-            break label158;
-          }
-        }
-      }
-    }
-    label158:
-    for (paramClass = localSerializedName.value();; paramClass = paramClass.getName())
-    {
-      ((Map)localObject1).put(paramClass, b(localObject2));
-      i += 1;
-      break label33;
-      localObject1 = a(((Class)localObject1).cast(paramObject), (Class)localObject1);
-      break;
-    }
-    label166:
-    return (Map<String, E>)localObject1;
+    assert (paramProvider != null);
+    mCashErrorReporterProvider = paramProvider;
   }
   
-  @cgb
-  protected final Map<String, E> a(@cgb Object paramObject)
+  public static bvk<td> a(Provider<qw> paramProvider)
   {
-    return a(paramObject, paramObject.getClass());
+    return new tf(paramProvider);
   }
-  
-  protected abstract E b(@cgb Object paramObject);
 }
 
 /* Location:

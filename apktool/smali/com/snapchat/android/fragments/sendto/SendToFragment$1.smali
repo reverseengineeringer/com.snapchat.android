@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 239
+    .line 241
     iput-object p1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,20 +44,20 @@
 
     const/4 v4, 0x0
 
-    .line 242
+    .line 244
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lno;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lof;
 
     move-result-object v0
 
     const-string v1, "send"
 
-    invoke-virtual {v0, v1}, Lno;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lof;->a(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lno;->b()V
+    invoke-virtual {v0}, Lof;->b()V
 
-    .line 243
+    .line 245
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -66,7 +66,7 @@
 
     check-cast v0, Lcom/snapchat/android/LandingPageActivity;
 
-    .line 244
+    .line 246
     if-eqz v0, :cond_0
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
@@ -93,12 +93,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 282
+    .line 284
     :cond_0
     :goto_0
     return-void
 
-    .line 247
+    .line 249
     :cond_1
     iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
@@ -106,7 +106,7 @@
 
     invoke-static {v1, v2}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;)V
 
-    .line 248
+    .line 250
     iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->b(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Ljava/util/LinkedHashSet;
@@ -119,24 +119,24 @@
 
     if-nez v1, :cond_2
 
-    .line 249
+    .line 251
     iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->d(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lajv;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->d(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lakp;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lajv;->e()V
+    invoke-virtual {v1}, Lakp;->e()V
 
-    .line 251
+    .line 253
     :cond_2
-    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laim;
+    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laji;
 
     move-result-object v1
 
     iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
-    .line 252
+    .line 254
     iget-object v2, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v2}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->b(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Ljava/util/LinkedHashSet;
@@ -145,8 +145,8 @@
 
     invoke-virtual {v1, v2}, Lcom/snapchat/android/model/MediaMailingMetadata;->a(Ljava/util/LinkedHashSet;)V
 
-    .line 254
-    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laim;
+    .line 256
+    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laji;
 
     move-result-object v2
 
@@ -156,7 +156,7 @@
 
     if-ne v2, v5, :cond_9
 
-    .line 255
+    .line 257
     iget-object v2, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v2}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->c(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Ljava/util/ArrayList;
@@ -169,11 +169,11 @@
 
     if-nez v2, :cond_3
 
-    .line 257
-    invoke-static {}, Lajx;->Q()V
+    .line 259
+    invoke-static {}, Lakr;->Q()V
 
-    .line 258
-    invoke-virtual {v0}, Lcom/snapchat/android/LandingPageActivity;->g()Lbcz;
+    .line 260
+    invoke-virtual {v0}, Lcom/snapchat/android/LandingPageActivity;->g()Lbdz;
 
     move-result-object v2
 
@@ -181,9 +181,9 @@
 
     move v2, v3
 
-    .line 259
+    .line 261
     :goto_1
-    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laim;
+    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laji;
 
     move-result-object v6
 
@@ -204,22 +204,22 @@
     :goto_2
     const-string v7, "SEND_TO_SCREEN"
 
-    invoke-static {v6, v2, v5, v7}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Laim;ZZLjava/lang/String;)V
+    invoke-static {v6, v2, v5, v7}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Laji;ZZLjava/lang/String;)V
 
-    .line 262
+    .line 264
     :cond_3
-    check-cast v1, Lajk;
+    check-cast v1, Lakg;
 
-    .line 263
+    .line 265
     iget-object v2, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v2}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->c(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Ljava/util/ArrayList;
 
     move-result-object v2
 
-    iput-object v2, v1, Lajk;->mPostToStories:Ljava/util/ArrayList;
+    iput-object v2, v1, Lakg;->mPostToStories:Ljava/util/ArrayList;
 
-    .line 269
+    .line 271
     :cond_4
     :goto_3
     iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
@@ -228,7 +228,7 @@
 
     move-result-object v2
 
-    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laim;
+    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laji;
 
     move-result-object v1
 
@@ -279,94 +279,94 @@
 
     invoke-virtual {v2, v1, v5, v3}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 271
+    .line 273
     :cond_6
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
-    new-instance v2, Lbdo;
+    new-instance v2, Lbeo;
 
-    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laim;
+    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laji;
 
     move-result-object v3
 
-    invoke-direct {v2, v3, v4}, Lbdo;-><init>(Laim;Z)V
+    invoke-direct {v2, v3, v4}, Lbeo;-><init>(Laji;Z)V
 
     invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 272
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 274
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
-    new-instance v2, Lbat;
+    new-instance v2, Lbbu;
 
-    invoke-direct {v2}, Lbat;-><init>()V
-
-    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 273
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v1
-
-    new-instance v2, Lbar;
-
-    invoke-direct {v2, v4, v4}, Lbar;-><init>(ZZ)V
+    invoke-direct {v2}, Lbbu;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 275
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
-    new-instance v2, Lbas;
+    new-instance v2, Lbbs;
 
-    invoke-direct {v2, v4}, Lbas;-><init>(B)V
+    invoke-direct {v2, v4, v4}, Lbbs;-><init>(ZZ)V
 
     invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 278
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 277
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
-    new-instance v2, Lbap;
+    new-instance v2, Lbbt;
+
+    invoke-direct {v2, v4}, Lbbt;-><init>(B)V
+
+    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 280
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
+
+    move-result-object v1
+
+    new-instance v2, Lbbq;
 
     sget-object v3, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v2, v3}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v2, v3}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 281
+    .line 283
     iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->g(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Landroid/view/View;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_7
     move v2, v4
 
-    .line 258
+    .line 260
     goto/16 :goto_1
 
     :cond_8
     move v5, v4
 
-    .line 259
+    .line 261
     goto/16 :goto_2
 
-    .line 264
+    .line 266
     :cond_9
-    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laim;
+    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laji;
 
     move-result-object v1
 
@@ -376,30 +376,30 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 265
+    .line 267
     iget-object v1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->e(Lcom/snapchat/android/fragments/sendto/SendToFragment;)V
 
-    .line 266
+    .line 268
     iget-object v2, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$1;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
-    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laim;
+    invoke-static {}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->m()Laji;
 
     move-result-object v1
 
-    iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mMediaExtras:Laiz;
+    iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mMediaExtras:Lajv;
 
-    check-cast v1, Ladb;
+    check-cast v1, Laeb;
 
-    invoke-static {v2, v1}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;Ladb;)V
+    invoke-static {v2, v1}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;Laeb;)V
 
     goto/16 :goto_3
 
     :cond_a
     move v1, v4
 
-    .line 269
+    .line 271
     goto/16 :goto_4
 
     :cond_b

@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 508
+    .line 510
     invoke-direct {p0}, Lcom/snapchat/android/util/FriendSectionizer;-><init>()V
 
     return-void
@@ -38,8 +38,8 @@
     .locals 2
 
     .prologue
-    .line 511
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->o()Z
+    .line 513
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->j()Z
 
     move-result v0
 
@@ -51,11 +51,11 @@
 
     sget-object v0, Lcom/snapchat/android/util/FriendSectionizer$FriendSection;->BEST_FRIEND:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
 
-    .line 519
+    .line 521
     :goto_0
     return-object v0
 
-    .line 512
+    .line 514
     :cond_0
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsRecent:Z
 
@@ -69,7 +69,7 @@
 
     goto :goto_0
 
-    .line 513
+    .line 515
     :cond_1
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mSelectedForNeedsLove:Z
 
@@ -83,13 +83,13 @@
 
     goto :goto_0
 
-    .line 514
+    .line 516
     :cond_2
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v1
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 515
+    .line 517
     :cond_3
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mStubFriend:Z
 
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 516
+    .line 518
     :cond_4
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mJustAdded:Z
 
@@ -127,9 +127,9 @@
 
     goto :goto_0
 
-    .line 517
+    .line 519
     :cond_5
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->q()Z
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->m()Z
 
     move-result v0
 
@@ -139,7 +139,7 @@
 
     goto :goto_0
 
-    .line 518
+    .line 520
     :cond_6
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsBlocked:Z
 
@@ -149,7 +149,7 @@
 
     goto :goto_0
 
-    .line 519
+    .line 521
     :cond_7
     sget-object v0, Lcom/snapchat/android/util/FriendSectionizer$FriendSection;->ALPHABETICAL:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
 
@@ -162,7 +162,7 @@
     .locals 1
 
     .prologue
-    .line 508
+    .line 510
     check-cast p1, Lcom/snapchat/android/model/Friend;
 
     invoke-static {p1}, Lcom/snapchat/android/model/Friend$a;->a(Lcom/snapchat/android/model/Friend;)Lcom/snapchat/android/util/FriendSectionizer$FriendSection;

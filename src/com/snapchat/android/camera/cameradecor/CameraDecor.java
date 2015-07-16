@@ -55,7 +55,7 @@ public class CameraDecor
     
     public abstract FragmentActivity i();
     
-    public abstract boolean k_();
+    public abstract boolean i_();
     
     public abstract boolean l();
     

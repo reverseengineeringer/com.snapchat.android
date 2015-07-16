@@ -1,6 +1,16 @@
-public abstract interface anp$a
+import com.google.gson.annotations.SerializedName;
+
+@ud
+public final class anp$a
+  extends qc
 {
-  public abstract void a(anq paramanq);
+  @SerializedName("email")
+  String a;
+  
+  public anp$a(anp paramanp, @chc String paramString)
+  {
+    a = paramString;
+  }
 }
 
 /* Location:

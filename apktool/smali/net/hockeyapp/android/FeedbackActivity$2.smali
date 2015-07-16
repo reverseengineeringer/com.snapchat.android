@@ -47,11 +47,11 @@
     .line 541
     iget-object v2, p0, Lnet/hockeyapp/android/FeedbackActivity$2;->a:Lnet/hockeyapp/android/FeedbackActivity;
 
-    new-instance v3, Lbvq;
+    new-instance v3, Lbwr;
 
-    invoke-direct {v3}, Lbvq;-><init>()V
+    invoke-direct {v3}, Lbwr;-><init>()V
 
-    invoke-static {v2, v3}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;Lbvq;)Lbvq;
+    invoke-static {v2, v3}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;Lbwr;)Lbwr;
 
     .line 543
     if-eqz p1, :cond_6
@@ -111,15 +111,15 @@
     :cond_0
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity$2;->a:Lnet/hockeyapp/android/FeedbackActivity;
 
-    invoke-static {v1}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;)Lbvq;
+    invoke-static {v1}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;)Lbwr;
 
     move-result-object v1
 
-    invoke-static {v7}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v7}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, v1, Lbvq;->a:Ljava/lang/String;
+    iput-object v2, v1, Lbwr;->a:Ljava/lang/String;
 
     .line 569
     :goto_0
@@ -195,17 +195,17 @@
     :cond_5
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity$2;->a:Lnet/hockeyapp/android/FeedbackActivity;
 
-    invoke-static {v1}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;)Lbvq;
+    invoke-static {v1}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;)Lbwr;
 
     move-result-object v1
 
     const/16 v2, 0x40d
 
-    invoke-static {v2}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v2}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, v1, Lbvq;->a:Ljava/lang/String;
+    iput-object v2, v1, Lbwr;->a:Ljava/lang/String;
 
     goto :goto_0
 
@@ -213,15 +213,15 @@
     :cond_6
     iget-object v1, p0, Lnet/hockeyapp/android/FeedbackActivity$2;->a:Lnet/hockeyapp/android/FeedbackActivity;
 
-    invoke-static {v1}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;)Lbvq;
+    invoke-static {v1}, Lnet/hockeyapp/android/FeedbackActivity;->a(Lnet/hockeyapp/android/FeedbackActivity;)Lbwr;
 
     move-result-object v1
 
-    invoke-static {v7}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v7}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, v1, Lbvq;->a:Ljava/lang/String;
+    iput-object v2, v1, Lbwr;->a:Ljava/lang/String;
 
     goto :goto_0
 .end method

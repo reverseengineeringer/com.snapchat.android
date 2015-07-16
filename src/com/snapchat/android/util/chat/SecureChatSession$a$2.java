@@ -1,6 +1,5 @@
 package com.snapchat.android.util.chat;
 
-import com.snapchat.android.Timber;
 import java.util.Iterator;
 import java.util.List;
 
@@ -13,7 +12,6 @@ final class SecureChatSession$a$2
   {
     if (!this$1.this$0.d())
     {
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession ran into soft-timeout", new Object[0]);
       Iterator localIterator = SecureChatSession.m(this$1.this$0).iterator();
       while (localIterator.hasNext()) {
         localIterator.next();

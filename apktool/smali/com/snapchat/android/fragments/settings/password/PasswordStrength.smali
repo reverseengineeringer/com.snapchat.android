@@ -134,9 +134,9 @@
 .end method
 
 .method public static fromValue(Ljava/lang/String;)Lcom/snapchat/android/fragments/settings/password/PasswordStrength;
-    .locals 4
+    .locals 3
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -158,27 +158,13 @@
     move-exception v0
 
     .line 22
-    const-string v1, "PasswordStrength"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Invalid enum for the PasswordStrength "
 
-    const-string v3, "Invalid enum for the PasswordStrength "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 23
     sget-object v0, Lcom/snapchat/android/fragments/settings/password/PasswordStrength;->UNKNOWN:Lcom/snapchat/android/fragments/settings/password/PasswordStrength;

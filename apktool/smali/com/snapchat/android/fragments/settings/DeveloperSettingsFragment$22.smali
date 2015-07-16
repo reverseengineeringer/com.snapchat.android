@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/TextView;
+.field final synthetic a:Landroid/widget/CheckBox;
 
 .field final synthetic b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/TextView;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;Landroid/widget/CheckBox;)V
     .locals 0
 
     .prologue
-    .line 514
+    .line 525
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;->b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    iput-object p2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;->a:Landroid/widget/TextView;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;->a:Landroid/widget/CheckBox;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,40 +41,31 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 6
+    .locals 2
 
     .prologue
-    .line 517
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;->a:Landroid/widget/TextView;
+    .line 528
+    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;->a:Landroid/widget/CheckBox;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;->a:Landroid/widget/CheckBox;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
 
-    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    move-result v0
 
-    move-result-object v4
+    if-nez v0, :cond_0
 
-    .line 518
-    new-instance v0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22$1;
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;->b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
+    :goto_0
+    invoke-virtual {v1, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    invoke-virtual {v1}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v2
-
-    const-string v3, "Thumbnail Story Count"
-
-    move-object v1, p0
-
-    move-object v5, v4
-
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22$1;-><init>(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$22;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 534
-    invoke-virtual {v0}, Lapa;->show()V
-
-    .line 535
+    .line 529
     return-void
+
+    .line 528
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

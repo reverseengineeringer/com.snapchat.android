@@ -1,100 +1,39 @@
-import android.text.TextUtils;
-import com.snapchat.android.api2.framework.HttpMethod;
-import com.snapchat.android.util.debug.ReleaseManager;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.TreeMap;
+import com.squareup.otto.Bus;
 
-public abstract class ts
+public final class ts
+  extends tx
 {
-  private static final int DEFAULT_RESPONSE_SIZE = 1024;
-  public final ato mGsonWrapper = mProvider.b();
-  protected List<ts.a<?>> mJsonCallbacks = new ArrayList();
-  public final tt mProvider = new tt();
+  private ts.a mCallback;
   
-  public static bgy a(@cgb bgy parambgy)
+  public ts(@chc ts.a parama)
   {
-    String str = String.valueOf(System.currentTimeMillis());
-    return parambgy.d(str).f(os.a(str)).h(ajx.l());
+    mCallback = parama;
   }
   
-  public static bgy b(@cgb bgy parambgy)
+  protected final String getPath()
   {
-    String str = String.valueOf(System.currentTimeMillis());
-    parambgy.c(str);
-    parambgy.e(os.b(str));
-    if ((TextUtils.isEmpty(parambgy.c())) && (!TextUtils.isEmpty(ajx.l()))) {
-      parambgy.h(ajx.l());
+    return "/loq/clear_feed";
+  }
+  
+  public final void onResult(@chc us paramus)
+  {
+    super.onResult(paramus);
+    if (paramus.d()) {
+      mCallback.a();
     }
-    return parambgy;
-  }
-  
-  public final <T> void a(Class<T> paramClass, ts.b<T> paramb)
-  {
-    mJsonCallbacks.add(new ts.a(paramClass, paramb));
-  }
-  
-  public void a(@cgb uc paramuc)
-  {
-    Iterator localIterator = mJsonCallbacks.iterator();
-    while (localIterator.hasNext())
+    for (;;)
     {
-      ts.a locala = (ts.a)localIterator.next();
-      Object localObject = null;
-      if (mCaughtException == null)
-      {
-        localObject = paramuc.e();
-        Class localClass = mClass;
-        localObject = mGsonWrapper.a((String)localObject, localClass);
-      }
-      mJsonCallback.a(localObject, paramuc);
+      bbo.a().a(new bfm());
+      return;
+      mCallback.v_();
     }
   }
   
-  public bfk a_()
+  public static abstract interface a
   {
-    return new bfl(1024, new bfl.b());
-  }
-  
-  public abstract Object b();
-  
-  public HttpMethod c()
-  {
-    return HttpMethod.POST;
-  }
-  
-  public Map<String, String> g()
-  {
-    TreeMap localTreeMap = new TreeMap();
-    if (ReleaseManager.h()) {
-      localTreeMap.put("X-Snapchat-UUID", bfs.c());
-    }
-    localTreeMap.put("User-Agent", bfs.a());
-    localTreeMap.put("Accept-Language", bfs.b());
-    localTreeMap.put("Accept-Locale", Locale.getDefault().toString());
-    return localTreeMap;
-  }
-  
-  public abstract String n_();
-  
-  public static final class a<T>
-  {
-    final Class<T> mClass;
-    final ts.b<T> mJsonCallback;
+    public abstract void a();
     
-    a(Class<T> paramClass, ts.b<T> paramb)
-    {
-      mClass = paramClass;
-      mJsonCallback = paramb;
-    }
-  }
-  
-  public static abstract interface b<T>
-  {
-    public abstract void a(@cgc T paramT, @cgb uc paramuc);
+    public abstract void v_();
   }
 }
 

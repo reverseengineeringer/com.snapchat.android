@@ -1,95 +1,84 @@
-import android.hardware.Camera.Parameters;
-import com.snapchat.android.Timber;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.content.res.Resources;
+import android.hardware.Camera;
+import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
+import android.view.MotionEvent;
+import android.widget.RelativeLayout;
+import com.snapchat.android.camera.cameradecor.CameraDecor;
+import com.snapchat.android.camera.cameradecor.CameraDecor.CameraDecorInterface;
+import com.snapchat.android.camera.cameradecor.CameraDecor.CameraDecorInterface.TakeSnapButtonAction;
+import com.snapchat.android.camera.model.CameraModel.CameraType;
+import com.snapchat.android.database.SharedPreferenceKey;
+import com.snapchat.android.ui.QuickSnapOnboardingOverlay;
+import com.snapchat.android.ui.QuickSnapOnboardingOverlay.OverlayMode;
 
 public final class wm
-  extends wq
+  extends CameraDecor
 {
-  private final xg a;
+  private final float b;
+  private final QuickSnapOnboardingOverlay c;
   
-  public wm(@cgb xg paramxg)
+  public wm(Context paramContext, RelativeLayout paramRelativeLayout, CameraDecor.CameraDecorInterface paramCameraDecorInterface)
   {
-    a = paramxg;
-  }
-  
-  private static List<aue> a(List<aue> paramList1, List<aue> paramList2)
-  {
-    paramList1 = new ArrayList(paramList1);
-    paramList2 = c(paramList2);
-    Iterator localIterator = paramList1.iterator();
-    while (localIterator.hasNext()) {
-      if (!paramList2.contains(Double.valueOf(((aue)localIterator.next()).c()))) {
-        localIterator.remove();
-      }
-    }
-    return paramList1;
-  }
-  
-  private static List<aue> b(@cgb Camera.Parameters paramParameters, boolean paramBoolean)
-  {
-    Object localObject = b(paramParameters.getSupportedPreviewSizes());
-    paramParameters = (Camera.Parameters)localObject;
-    if (paramBoolean)
+    super(paramCameraDecorInterface);
+    paramRelativeLayout.removeAllViews();
+    b = a(paramContext);
+    c = new QuickSnapOnboardingOverlay(paramContext);
+    paramRelativeLayout.addView(c);
+    c.setHeightThreshold((int)b);
+    paramContext = PreferenceManager.getDefaultSharedPreferences(paramContext);
+    int i = paramContext.getInt(SharedPreferenceKey.QUICKSNAP_ONBOARDING_REPEATS.getKey(), 0);
+    if (Camera.getNumberOfCameras() <= 1)
     {
-      paramParameters = new ArrayList((Collection)localObject);
-      localObject = paramParameters.iterator();
-      while (((Iterator)localObject).hasNext()) {
-        if (!((aue)((Iterator)localObject).next()).e()) {
-          ((Iterator)localObject).remove();
-        }
-      }
+      c.setVisibility(8);
+      return;
     }
-    paramParameters = new ArrayList(paramParameters);
-    paramParameters.removeAll(xg.b());
-    return paramParameters;
-  }
-  
-  private static Set<Double> c(List<aue> paramList)
-  {
-    HashSet localHashSet = new HashSet();
-    paramList = paramList.iterator();
-    while (paramList.hasNext()) {
-      localHashSet.add(Double.valueOf(((aue)paramList.next()).c()));
-    }
-    return localHashSet;
-  }
-  
-  private static List<aue> d(List<aue> paramList)
-  {
-    paramList = new ArrayList(paramList);
-    a(paramList);
-    return paramList;
-  }
-  
-  @cgc
-  public final aue a(@cgb Camera.Parameters paramParameters, double paramDouble)
-  {
-    Timber.c("CameraPreviewSizeFinder", "Preview Size Finding: finding best HQ preview", new Object[0]);
-    List localList = a(paramParameters, true);
-    return a(d(a(b(paramParameters, true), localList)), paramDouble, true);
-  }
-  
-  @cgb
-  public final aue a(@cgb Camera.Parameters paramParameters, int paramInt, double paramDouble, boolean paramBoolean)
-  {
-    Timber.c("CameraPreviewSizeFinder", "Preview Size Finding: finding best fit preview size for AspectRatio[%f]", new Object[] { Double.valueOf(paramDouble) });
-    paramDouble = super.a(paramParameters, paramInt, paramDouble, paramBoolean).c();
-    List localList = a(paramParameters, false);
-    paramParameters = d(b(paramParameters, false));
-    localList = a(paramParameters, localList);
-    if (!localList.isEmpty()) {
-      paramParameters = localList;
-    }
-    for (;;)
+    if (i < 5)
     {
-      Timber.c("CameraPreviewSizeFinder", "Preview Size Finding: finding best preview size from list of supported preview sizes", new Object[0]);
-      return a(paramParameters, paramDouble, paramBoolean);
+      paramContext = paramContext.edit();
+      paramContext.putInt(SharedPreferenceKey.QUICKSNAP_ONBOARDING_REPEATS.getKey(), i + 1);
+      paramContext.apply();
+      c.setOverlayMode(QuickSnapOnboardingOverlay.OverlayMode.MODE_SOLID);
+      return;
     }
+    c.setOverlayMode(QuickSnapOnboardingOverlay.OverlayMode.MODE_BLINK);
+  }
+  
+  public static float a(Context paramContext)
+  {
+    if (paramContext == null) {
+      throw new NullPointerException();
+    }
+    int i = PreferenceManager.getDefaultSharedPreferences(paramContext).getInt(SharedPreferenceKey.KEYBOARD_HEIGHT_PORTRAIT.getKey(), -1);
+    if (i == -1) {
+      return getResourcesgetDisplayMetricsheightPixels * 0.5F;
+    }
+    return i - paramContext.getResources().getDimensionPixelSize(2131296281);
+  }
+  
+  public final boolean a(MotionEvent paramMotionEvent)
+  {
+    switch (paramMotionEvent.getActionMasked())
+    {
+    default: 
+      return true;
+    case 1: 
+    case 3: 
+      a.a(CameraDecor.CameraDecorInterface.TakeSnapButtonAction.FINGER_UP);
+      return true;
+    }
+    if (paramMotionEvent.getY() > b)
+    {
+      c.setUpperRegionHighlight(false);
+      a.a(CameraModel.CameraType.FRONT_FACING);
+      return true;
+    }
+    c.setUpperRegionHighlight(true);
+    a.a(CameraModel.CameraType.BACK_FACING);
+    return true;
   }
 }
 

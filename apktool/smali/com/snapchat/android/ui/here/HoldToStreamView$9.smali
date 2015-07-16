@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 733
+    .line 751
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$9;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 736
+    .line 754
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$9;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-virtual {v0, p2}, Lcom/snapchat/android/ui/here/HoldToStreamView;->onTouchEvent(Landroid/view/MotionEvent;)Z

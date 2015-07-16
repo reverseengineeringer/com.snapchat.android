@@ -1,62 +1,26 @@
-import android.content.Context;
-import android.view.View;
-import android.view.View.OnClickListener;
 import com.snapchat.android.discover.model.DSnapPage;
-import com.snapchat.android.discover.model.DSnapPage.Form;
-import com.snapchat.android.discover.model.DSnapPanel;
-import com.snapchat.android.discover.ui.DSnapView;
 
-public final class adt
-  extends adz
+final class adt
 {
-  private final Context d;
-  private adn e;
+  private final bhk a;
   
-  public adt(Context paramContext, ady paramady)
+  public adt()
   {
-    super(paramady);
-    d = paramContext;
+    this(new bhk());
   }
   
-  public final boolean a(final DSnapView paramDSnapView, DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
+  private adt(bhk parambhk)
   {
-    super.a(paramDSnapView, paramDSnapPage, paramDSnapPanel);
-    e = new adn(d);
-    a = e.c;
-    b = e.d;
-    e.a(paramDSnapView.getPublisherPrimaryColor(), paramDSnapView.getPublisherSecondaryColor());
-    e.a(new View.OnClickListener()
-    {
-      public final void onClick(View paramAnonymousView)
-      {
-        paramDSnapView.a(DSnapPage.Form.LONGFORM.getIndex(), true);
-      }
-    });
+    a = parambhk;
+  }
+  
+  public static boolean a(DSnapPage paramDSnapPage, long paramLong1, long paramLong2, int paramInt)
+  {
+    if (Math.max(0L, System.currentTimeMillis() - paramLong1) > 3600000L * paramLong2) {}
+    while (f.intValue() >= paramInt) {
+      return false;
+    }
     return true;
-  }
-  
-  public final void c()
-  {
-    super.c();
-    adn localadn = e;
-    if (g != null) {
-      b.a(g, true);
-    }
-    if (c != null) {
-      a.a(2130968661, c);
-    }
-  }
-  
-  public final void o_()
-  {
-    super.o_();
-    e.a();
-  }
-  
-  public final void p_()
-  {
-    super.p_();
-    e.b();
   }
 }
 

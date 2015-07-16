@@ -1,8 +1,6 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
-import ajv;
-import aol;
-import javax.inject.Provider;
+import java.util.List;
 
 final class FeedFragment$7
   implements Runnable
@@ -11,9 +9,9 @@ final class FeedFragment$7
   
   public final void run()
   {
-    if ((ajv)FeedFragment.p(a).get() != null) {
-      FeedFragment.q(a).f();
-    }
+    ma).a = false;
+    FeedFragment.n(a).remove(FeedFragment.m(a));
+    FeedFragment.o(a).d(FeedFragment.n(a).size());
   }
 }
 

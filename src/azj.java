@@ -1,13 +1,14 @@
+import com.snapchat.android.SnapchatApplication;
+
+@bvl
 public final class azj
 {
-  private static final azj sInstance = new azj();
+  final SnapchatApplication mApplication;
   
-  public static azj a()
+  public azj(SnapchatApplication paramSnapchatApplication)
   {
-    return sInstance;
+    mApplication = paramSnapchatApplication;
   }
-  
-  public static void b() {}
 }
 
 /* Location:

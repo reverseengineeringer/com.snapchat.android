@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/api2/ApiTaskFactory_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lpk;",
+        "Lqb;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Lpk;",
+            "Lqb;",
             ">;"
         }
     .end annotation
@@ -132,21 +132,21 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/api2/ApiTaskFactory_Factory;->get()Lpk;
+    invoke-virtual {p0}, Lcom/snapchat/android/api2/ApiTaskFactory_Factory;->get()Lqb;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final get()Lpk;
+.method public final get()Lqb;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Lpk;
+    new-instance v0, Lqb;
 
-    invoke-direct {v0}, Lpk;-><init>()V
+    invoke-direct {v0}, Lqb;-><init>()V
 
     return-object v0
 .end method

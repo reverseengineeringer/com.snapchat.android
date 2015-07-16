@@ -509,13 +509,13 @@
     .prologue
     const/4 v2, 0x3
 
-    const/4 v4, 0x2
+    const/4 v7, 0x2
 
-    const/4 v7, -0x1
+    const/4 v6, -0x1
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
     .line 292
     iget-object v0, p0, Lcom/snapchat/android/ui/TextureVideoView;->j:Landroid/net/Uri;
@@ -550,10 +550,10 @@
     .line 297
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1, v2, v5}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
+    invoke-virtual {v0, v1, v2, v4}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
     .line 301
-    invoke-direct {p0, v6}, Lcom/snapchat/android/ui/TextureVideoView;->a(Z)V
+    invoke-direct {p0, v5}, Lcom/snapchat/android/ui/TextureVideoView;->a(Z)V
 
     .line 303
     :try_start_0
@@ -562,9 +562,9 @@
     if-eqz v0, :cond_2
 
     .line 304
-    new-instance v0, Laoz;
+    new-instance v0, Lapv;
 
-    invoke-direct {v0}, Laoz;-><init>()V
+    invoke-direct {v0}, Lapv;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/ui/TextureVideoView;->n:Landroid/media/MediaPlayer;
 
@@ -704,32 +704,26 @@
     move-exception v0
 
     .line 333
-    iget-object v1, p0, Lcom/snapchat/android/ui/TextureVideoView;->i:Ljava/lang/String;
+    new-array v1, v7, [Ljava/lang/Object;
 
-    const-string v2, "Unable to open content %s: %s"
+    iget-object v2, p0, Lcom/snapchat/android/ui/TextureVideoView;->j:Landroid/net/Uri;
 
-    new-array v3, v4, [Ljava/lang/Object;
+    aput-object v2, v1, v5
 
-    iget-object v4, p0, Lcom/snapchat/android/ui/TextureVideoView;->j:Landroid/net/Uri;
-
-    aput-object v4, v3, v6
-
-    aput-object v0, v3, v5
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v4
 
     .line 334
-    iput v7, p0, Lcom/snapchat/android/ui/TextureVideoView;->l:I
+    iput v6, p0, Lcom/snapchat/android/ui/TextureVideoView;->l:I
 
     .line 335
-    iput v7, p0, Lcom/snapchat/android/ui/TextureVideoView;->m:I
+    iput v6, p0, Lcom/snapchat/android/ui/TextureVideoView;->m:I
 
     .line 336
     iget-object v0, p0, Lcom/snapchat/android/ui/TextureVideoView;->H:Landroid/media/MediaPlayer$OnErrorListener;
 
     iget-object v1, p0, Lcom/snapchat/android/ui/TextureVideoView;->n:Landroid/media/MediaPlayer;
 
-    invoke-interface {v0, v1, v5, v6}, Landroid/media/MediaPlayer$OnErrorListener;->onError(Landroid/media/MediaPlayer;II)Z
+    invoke-interface {v0, v1, v4, v5}, Landroid/media/MediaPlayer$OnErrorListener;->onError(Landroid/media/MediaPlayer;II)Z
 
     goto/16 :goto_0
 
@@ -752,32 +746,26 @@
     move-exception v0
 
     .line 339
-    iget-object v1, p0, Lcom/snapchat/android/ui/TextureVideoView;->i:Ljava/lang/String;
+    new-array v1, v7, [Ljava/lang/Object;
 
-    const-string v2, "Unable to open content %s: %s"
+    iget-object v2, p0, Lcom/snapchat/android/ui/TextureVideoView;->j:Landroid/net/Uri;
 
-    new-array v3, v4, [Ljava/lang/Object;
+    aput-object v2, v1, v5
 
-    iget-object v4, p0, Lcom/snapchat/android/ui/TextureVideoView;->j:Landroid/net/Uri;
-
-    aput-object v4, v3, v6
-
-    aput-object v0, v3, v5
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v4
 
     .line 340
-    iput v7, p0, Lcom/snapchat/android/ui/TextureVideoView;->l:I
+    iput v6, p0, Lcom/snapchat/android/ui/TextureVideoView;->l:I
 
     .line 341
-    iput v7, p0, Lcom/snapchat/android/ui/TextureVideoView;->m:I
+    iput v6, p0, Lcom/snapchat/android/ui/TextureVideoView;->m:I
 
     .line 342
     iget-object v0, p0, Lcom/snapchat/android/ui/TextureVideoView;->H:Landroid/media/MediaPlayer$OnErrorListener;
 
     iget-object v1, p0, Lcom/snapchat/android/ui/TextureVideoView;->n:Landroid/media/MediaPlayer;
 
-    invoke-interface {v0, v1, v5, v6}, Landroid/media/MediaPlayer$OnErrorListener;->onError(Landroid/media/MediaPlayer;II)Z
+    invoke-interface {v0, v1, v4, v5}, Landroid/media/MediaPlayer$OnErrorListener;->onError(Landroid/media/MediaPlayer;II)Z
 
     goto/16 :goto_0
 
@@ -1077,7 +1065,7 @@
 
 .method public final a()V
     .locals 3
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
@@ -1130,7 +1118,7 @@
 
 .method public final b()V
     .locals 1
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
@@ -2021,7 +2009,7 @@
 
 .method public setVideoURI(Landroid/net/Uri;Ljava/util/Map;)V
     .locals 1
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;

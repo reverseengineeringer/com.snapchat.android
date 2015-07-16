@@ -2,17 +2,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kk
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_FOCUS_ON_PASSWORD";
+  private final String eventName = "PROFILE_USERNAME_PAGE_EXIT";
+  public kf exitEvent;
+  public Long friendAddCount;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_FOCUS_ON_PASSWORD");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "PROFILE_USERNAME_PAGE_EXIT");
+    if (exitEvent != null) {
+      localHashMap.put("exit_event", exitEvent);
+    }
+    if (friendAddCount != null) {
+      localHashMap.put("friend_add_count", friendAddCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +35,23 @@ public final class kk
         return false;
       }
       paramObject = (kk)paramObject;
-      if (additionalInfo == null) {
+      if (exitEvent != null)
+      {
+        if (exitEvent.equals(exitEvent)) {}
+      }
+      else {
+        while (exitEvent != null) {
+          return false;
+        }
+      }
+      if (friendAddCount == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (friendAddCount.equals(friendAddCount));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (friendAddCount == null) {
         break;
       }
     }
@@ -46,10 +59,15 @@ public final class kk
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
-      return i + j * 31;
+    int j = 0;
+    int k = super.hashCode();
+    if (exitEvent != null) {}
+    for (int i = exitEvent.hashCode();; i = 0)
+    {
+      if (friendAddCount != null) {
+        j = friendAddCount.hashCode();
+      }
+      return (i + k * 31) * 31 + j;
     }
   }
 }

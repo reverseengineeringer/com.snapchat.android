@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.video;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.pipeline.Extractor;
 import com.snapchat.videotranscoder.pipeline.StageDoneCallback;
 import com.snapchat.videotranscoder.utils.MimeTools;
@@ -12,12 +12,12 @@ public class VideoExtractor
   protected static final String TAG = "VideoExtractor";
   private final MimeTools mMimeTools;
   
-  public VideoExtractor(@cgb String paramString, @cgb StageDoneCallback paramStageDoneCallback)
+  public VideoExtractor(@chc String paramString, @chc StageDoneCallback paramStageDoneCallback)
   {
     this(paramString, paramStageDoneCallback, MimeTools.getInstance());
   }
   
-  private VideoExtractor(@cgb String paramString, @cgb StageDoneCallback paramStageDoneCallback, @cgb MimeTools paramMimeTools)
+  private VideoExtractor(@chc String paramString, @chc StageDoneCallback paramStageDoneCallback, @chc MimeTools paramMimeTools)
   {
     super(paramString, paramStageDoneCallback);
     mMimeTools = paramMimeTools;

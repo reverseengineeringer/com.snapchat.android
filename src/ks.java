@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class ks
-  extends lt
+  extends ml
 {
-  public Boolean autofill;
-  private final String eventName = "REGISTRATION_USER_PHONE_ATTEMPT_WITH_CODE";
+  public Boolean dialogAction;
+  private final String eventName = "REGISTRATION_USER_CONFIRM_TERMINATE_SIGNUP_DIALOG";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_PHONE_ATTEMPT_WITH_CODE");
-    if (autofill != null) {
-      localHashMap.put("autofill", autofill);
+    localHashMap.put("event_name", "REGISTRATION_USER_CONFIRM_TERMINATE_SIGNUP_DIALOG");
+    if (dialogAction != null) {
+      localHashMap.put("dialog_action", dialogAction);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class ks
         return false;
       }
       paramObject = (ks)paramObject;
-      if (autofill == null) {
+      if (dialogAction == null) {
         break;
       }
-    } while (autofill.equals(autofill));
+    } while (dialogAction.equals(dialogAction));
     for (;;)
     {
       return false;
-      if (autofill == null) {
+      if (dialogAction == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class ks
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (autofill != null) {}
-    for (int i = autofill.hashCode();; i = 0) {
+    if (dialogAction != null) {}
+    for (int i = dialogAction.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

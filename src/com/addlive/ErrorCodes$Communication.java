@@ -11,6 +11,7 @@ public final class ErrorCodes$Communication
   public static final int MEDIA_LINK_FAILURE = 2005;
   public static final int NEW_USER_CONNECTED_SAME_ID = 2015;
   public static final int REMOTE_END_DIED = 2006;
+  public static final int SMERR_COMM_AUTH_ERROR = 2004;
 }
 
 /* Location:

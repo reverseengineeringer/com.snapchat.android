@@ -7,6 +7,8 @@ import android.os.Bundle;
 import com.flurry.sdk.cy;
 import com.flurry.sdk.el;
 import com.flurry.sdk.fb;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public final class InstallReceiver
   extends BroadcastReceiver
@@ -15,6 +17,8 @@ public final class InstallReceiver
   
   public final void onReceive(Context paramContext, Intent paramIntent)
   {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     el.a(4, a, "Received an Install nofication of " + paramIntent.getAction());
     String str = paramIntent.getExtras().getString("referrer");
     el.a(4, a, "Received an Install referrer of " + str);

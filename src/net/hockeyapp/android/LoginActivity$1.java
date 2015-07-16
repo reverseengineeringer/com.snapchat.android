@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
-import bvf;
+import bwg;
 
 final class LoginActivity$1
   extends Handler
@@ -16,7 +16,7 @@ final class LoginActivity$1
     if (paramMessage.getData().getBoolean("success"))
     {
       a.finish();
-      if (bvf.b != null) {}
+      if (bwg.b != null) {}
       return;
     }
     Toast.makeText(a, "Login failed. Check your credentials.", 2000).show();

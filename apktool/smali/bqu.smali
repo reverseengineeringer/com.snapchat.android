@@ -1,31 +1,8 @@
 .class public interface abstract Lbqu;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/String;
-.end method
-
-.method public abstract b()Ljava/lang/String;
-.end method
-
-.method public abstract c()Ljava/lang/String;
-.end method
-
-.method public abstract d()I
-.end method
-
-.method public abstract e()Ljava/lang/String;
-.end method
-
-.method public abstract f()Ljava/lang/String;
-.end method
-
-.method public abstract g()Ljava/lang/String;
-.end method
-
-.method public abstract h()Ljava/lang/String;
-.end method
-
-.method public abstract i()Lbtc;
+.method public abstract a(Landroid/support/v7/widget/RecyclerView;I)Landroid/view/View;
 .end method

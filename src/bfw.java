@@ -1,27 +1,9 @@
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-import com.snapchat.android.Timber;
-import com.snapchat.android.util.profileimages.ProfileImageUtils;
-import java.util.List;
-import java.util.concurrent.Executor;
-
-public class bfw
+public final class bfw
+  extends Exception
 {
-  private static final String TAG = bfw.class.getSimpleName();
-  private final awp mCache;
-  public final Executor mExecutor;
-  private final ProfileImageUtils mProfileImageUtils;
-  
-  public bfw()
+  public bfw(String paramString)
   {
-    this(auh.HIGH_PRIORITY_EXECUTOR, awq.PROFILE_IMAGE_CACHE, ProfileImageUtils.a());
-  }
-  
-  private bfw(Executor paramExecutor, awp paramawp, ProfileImageUtils paramProfileImageUtils)
-  {
-    mExecutor = paramExecutor;
-    mCache = paramawp;
-    mProfileImageUtils = paramProfileImageUtils;
+    super(paramString);
   }
 }
 

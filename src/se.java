@@ -1,49 +1,38 @@
-import android.text.TextUtils;
-import com.google.gson.annotations.SerializedName;
+import javax.inject.Provider;
 
 public final class se
-  extends sh<si>
+  implements bvk<sd>
 {
-  private final String mPaymentId;
-  final String mPhoneNumber;
-  final String mSignature;
+  private final Provider<yn> mCashCardManagerProvider;
+  private final Provider<qw> mCashErrorReporterProvider;
+  private final Provider<td> mSquareProvider;
+  private final bvk<rl> supertypeInjector;
   
-  public se(@cgc String paramString1, @cgb String paramString2, @cgb String paramString3, @cgb sh.a parama)
+  static
   {
-    super(parama);
-    mPhoneNumber = paramString2;
-    mSignature = paramString3;
-    mPaymentId = paramString1;
-    a(si.class, this);
-  }
-  
-  public se(@cgb String paramString1, @cgb String paramString2, @cgb sh.a parama)
-  {
-    this(null, paramString1, paramString2, parama);
-  }
-  
-  public final Object b()
-  {
-    return new se.a();
-  }
-  
-  public final String e()
-  {
-    if (!TextUtils.isEmpty(mPaymentId)) {
-      return "cash/payments/" + mPaymentId + "/phone-number";
+    if (!se.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
     }
-    return "cash/phone-number";
   }
   
-  @tx
-  final class a
+  private se(bvk<rl> parambvk, Provider<td> paramProvider, Provider<yn> paramProvider1, Provider<qw> paramProvider2)
   {
-    @SerializedName("phone_number")
-    final String phoneNumber = mPhoneNumber;
-    @SerializedName("signature")
-    final String signature = mSignature;
-    
-    a() {}
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mSquareProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mCashCardManagerProvider = paramProvider1;
+    assert (paramProvider2 != null);
+    mCashErrorReporterProvider = paramProvider2;
+  }
+  
+  public static bvk<sd> a(bvk<rl> parambvk, Provider<td> paramProvider, Provider<yn> paramProvider1, Provider<qw> paramProvider2)
+  {
+    return new se(parambvk, paramProvider, paramProvider1, paramProvider2);
   }
 }
 

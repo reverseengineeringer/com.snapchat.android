@@ -69,21 +69,21 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    new-instance v1, Lki;
+    new-instance v1, Lla;
 
-    invoke-direct {v1}, Lki;-><init>()V
+    invoke-direct {v1}, Lla;-><init>()V
 
-    iput-object v0, v1, Lhk;->country:Ljava/lang/String;
+    iput-object v0, v1, Lht;->country:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v0
 
@@ -95,7 +95,7 @@
 
     invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
     .line 545
     :cond_0

@@ -1,290 +1,135 @@
-.class public final Lbpl;
-.super Ljava/lang/Object;
+.class final Lbpl;
+.super Lbqj;
 .source "SourceFile"
 
 
+# static fields
+.field private static final a:I
+
+
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:J
-
-.field public final d:J
-
-.field public final e:J
-
-.field public final f:J
-
-.field public final g:J
-
-.field public final h:J
-
-.field public final i:J
-
-.field public final j:J
-
-.field public final k:I
-
-.field public final l:I
-
-.field public final m:I
-
-.field public final n:J
+.field private final b:Landroid/content/res/AssetManager;
 
 
 # direct methods
-.method public constructor <init>(IIJJJJJJJJIIIJ)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 45
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 29
+    const/16 v0, 0x16
 
-    .line 46
-    iput p1, p0, Lbpl;->a:I
+    .line 30
+    sput v0, Lbpl;->a:I
 
-    .line 47
-    iput p2, p0, Lbpl;->b:I
+    .line 29
+    return-void
+.end method
 
-    .line 48
-    iput-wide p3, p0, Lbpl;->c:J
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    .line 49
-    iput-wide p5, p0, Lbpl;->d:J
+    .prologue
+    .line 34
+    invoke-direct {p0}, Lbqj;-><init>()V
 
-    .line 50
-    iput-wide p7, p0, Lbpl;->e:J
+    .line 35
+    invoke-virtual {p1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
-    .line 51
-    iput-wide p9, p0, Lbpl;->f:J
+    move-result-object v0
 
-    .line 52
-    iput-wide p11, p0, Lbpl;->g:J
+    iput-object v0, p0, Lbpl;->b:Landroid/content/res/AssetManager;
 
-    .line 53
-    move-wide/from16 v0, p13
-
-    iput-wide v0, p0, Lbpl;->h:J
-
-    .line 54
-    move-wide/from16 v0, p15
-
-    iput-wide v0, p0, Lbpl;->i:J
-
-    .line 55
-    move-wide/from16 v0, p17
-
-    iput-wide v0, p0, Lbpl;->j:J
-
-    .line 56
-    move/from16 v0, p19
-
-    iput v0, p0, Lbpl;->k:I
-
-    .line 57
-    move/from16 v0, p20
-
-    iput v0, p0, Lbpl;->l:I
-
-    .line 58
-    move/from16 v0, p21
-
-    iput v0, p0, Lbpl;->m:I
-
-    .line 59
-    move-wide/from16 v0, p22
-
-    iput-wide v0, p0, Lbpl;->n:J
-
-    .line 60
+    .line 36
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final a(Lbqh;)Z
     .locals 4
 
     .prologue
-    .line 108
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    const-string v1, "StatsSnapshot{maxSize="
+    .line 39
+    iget-object v1, p1, Lbqh;->d:Landroid/net/Uri;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 40
+    const-string v2, "file"
 
-    iget v1, p0, Lbpl;->a:I
+    invoke-virtual {v1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    move-result-object v0
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v1, ", size="
+    move-result v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v2, :cond_0
 
-    move-result-object v0
+    .line 41
+    invoke-virtual {v1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
-    iget v1, p0, Lbpl;->b:I
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
-    move-result-object v0
+    move-result v2
 
-    const-string v1, ", cacheHits="
+    if-nez v2, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "android_asset"
 
-    move-result-object v0
+    invoke-virtual {v1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
-    iget-wide v2, p0, Lbpl;->c:J
+    move-result-object v1
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, ", cacheMisses="
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    iget-wide v2, p0, Lbpl;->d:J
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :cond_0
+    return v0
+.end method
 
-    move-result-object v0
+.method public final b(Lbqh;)Lbqj$a;
+    .locals 3
 
-    const-string v1, ", downloadCount="
+    .prologue
+    .line 45
+    iget-object v0, p0, Lbpl;->b:Landroid/content/res/AssetManager;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p1, Lbqh;->d:Landroid/net/Uri;
 
-    move-result-object v0
+    invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    iget v1, p0, Lbpl;->k:I
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    sget v2, Lbpl;->a:I
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    const-string v1, ", totalDownloadSize="
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lbpl;->e:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", averageDownloadSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1}, Lkkkkkk/xkkkxk;->bООООО041E(Landroid/content/res/AssetManager;Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v0
 
-    iget-wide v2, p0, Lbpl;->h:J
+    .line 46
+    new-instance v1, Lbqj$a;
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    sget-object v2, Lbqe$d;->b:Lbqe$d;
 
-    move-result-object v0
+    invoke-direct {v1, v0, v2}, Lbqj$a;-><init>(Ljava/io/InputStream;Lbqe$d;)V
 
-    const-string v1, ", totalOriginalBitmapSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lbpl;->f:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", totalTransformedBitmapSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lbpl;->g:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", averageOriginalBitmapSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lbpl;->i:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", averageTransformedBitmapSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lbpl;->j:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", originalBitmapCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lbpl;->l:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", transformedBitmapCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lbpl;->m:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", timeStamp="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lbpl;->n:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/16 v1, 0x7d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v1
 .end method

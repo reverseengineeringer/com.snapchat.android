@@ -1,28 +1,29 @@
-import java.util.ArrayList;
-
 public final class bxz
-  implements bxg
 {
-  public final bxk a(bwz parambwz, String paramString)
+  public static String a(String paramString1, String paramString2, String paramString3)
   {
-    parambwz = bxj.a(paramString);
-    if (parambwz.size() != 2) {
-      throw new bxh("Two numeric arguments are required.");
-    }
-    try
+    String str = paramString1;
+    if (paramString1 != null)
     {
-      parambwz = new Double(Math.pow(((Double)parambwz.get(0)).doubleValue(), ((Double)parambwz.get(1)).doubleValue()));
-      return new bxk(parambwz.toString(), 0);
+      int i = paramString1.indexOf(paramString2, 0);
+      for (;;)
+      {
+        str = paramString1;
+        if (i < 0) {
+          break;
+        }
+        paramString1 = new StringBuffer(paramString1.substring(0, i) + paramString1.substring(paramString2.length() + i));
+        paramString1.insert(i, paramString3);
+        paramString1 = paramString1.toString();
+        i += paramString3.length();
+        if (i < paramString1.length()) {
+          i = paramString1.indexOf(paramString2, i);
+        } else {
+          i = -1;
+        }
+      }
     }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Two numeric arguments are required.", parambwz);
-    }
-  }
-  
-  public final String a()
-  {
-    return "pow";
+    return str;
   }
 }
 

@@ -1,6 +1,6 @@
 package com.snapchat.android;
 
-import ajx;
+import akr;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import com.snapchat.android.analytics.PhoneVerificationAnalytics;
@@ -12,7 +12,7 @@ final class LandingPageActivity$8
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    PhoneVerificationAnalytics.a(true, ajx.f());
+    PhoneVerificationAnalytics.a(true, akr.f());
     paramDialogInterface.cancel();
   }
 }

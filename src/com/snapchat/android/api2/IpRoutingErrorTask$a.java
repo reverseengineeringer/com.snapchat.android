@@ -1,13 +1,13 @@
 package com.snapchat.android.api2;
 
-import ato;
+import aum;
 import com.google.gson.annotations.SerializedName;
-import pl;
-import tn;
+import qc;
+import ud;
 
-@tn
+@ud
 public final class IpRoutingErrorTask$a
-  extends pl
+  extends qc
 {
   @SerializedName("error_message")
   String errorMessage = this$0.mGsonWrapper.a(this$0.mErrorMap);

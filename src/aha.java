@@ -1,38 +1,53 @@
-import com.snapchat.android.fragments.stories.StoriesFragment;
-import com.snapchat.android.util.fragment.SnapchatFragment;
-import javax.inject.Provider;
+import android.text.TextUtils;
+import com.snapchat.android.model.Friend;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public final class aha
-  implements buj<StoriesFragment>
+  extends bge<Friend>
 {
-  private final buj<SnapchatFragment> b;
-  private final Provider<abh> c;
+  private final List<Friend> a;
   
-  static
+  public aha(@chc List<Friend> paramList, @chc ban paramban, @chc bge.a<Friend> parama)
   {
-    if (!aha.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    super(paramban, parama);
+    a = paramList;
+  }
+  
+  private static boolean a(@chc Friend paramFriend, @chc String paramString)
+  {
+    String str = paramFriend.e();
+    ArrayList localArrayList = new ArrayList();
+    localArrayList.add(paramFriend.l());
+    localArrayList.add(str);
+    localArrayList.addAll(Arrays.asList(str.split(" ")));
+    paramFriend = localArrayList.iterator();
+    while (paramFriend.hasNext()) {
+      if (avg.a((String)paramFriend.next(), paramString)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  @chc
+  public final List<Friend> a(@chd String paramString)
+  {
+    if (TextUtils.isEmpty(paramString)) {
+      return a;
+    }
+    ArrayList localArrayList = new ArrayList();
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext())
     {
-      a = bool;
-      return;
+      Friend localFriend = (Friend)localIterator.next();
+      if (a(localFriend, paramString)) {
+        localArrayList.add(localFriend);
+      }
     }
-  }
-  
-  private aha(buj<SnapchatFragment> parambuj, Provider<abh> paramProvider)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-  }
-  
-  public static buj<StoriesFragment> a(buj<SnapchatFragment> parambuj, Provider<abh> paramProvider)
-  {
-    return new aha(parambuj, paramProvider);
+    return localArrayList;
   }
 }
 

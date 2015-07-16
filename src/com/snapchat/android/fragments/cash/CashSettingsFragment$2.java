@@ -3,7 +3,7 @@ package com.snapchat.android.fragments.cash;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ProgressBar;
-import ban;
+import bbo;
 import com.snapchat.android.util.eventbus.ShowDialogEvent;
 import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
 import com.squareup.otto.Bus;
@@ -23,7 +23,7 @@ final class CashSettingsFragment$2
     c.setVisibility(8);
     d.setEnabled(true);
     if (e != null) {
-      ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, e));
+      bbo.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, e));
     }
   }
 }

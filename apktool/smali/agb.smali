@@ -2,33 +2,46 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvk;
+
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lagb$a;
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Laga;",
+        ">;"
     }
 .end annotation
 
 
+# static fields
+.field static final synthetic a:Z
+
+
 # instance fields
-.field public a:Z
-
-.field b:J
-
-.field public c:Lagb$a;
-
-.field protected d:Lbgk;
-    .annotation runtime Ljavax/inject/Inject;
+.field private final b:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Laqb",
+            "<",
+            "Lcom/snapchat/android/model/Friend;",
+            ">;>;"
+        }
     .end annotation
 .end field
 
-.field e:Ljava/util/PriorityQueue;
+.field private final c:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/PriorityQueue",
+            "Ljavax/inject/Provider",
             "<",
-            "Lagb$a;",
+            "Lban;",
             ">;"
         }
     .end annotation
@@ -36,114 +49,156 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    const-wide/16 v2, 0x0
+    .line 10
+    const-class v0, Lagb;
 
-    .line 60
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lagb;->a:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Laqb",
+            "<",
+            "Lcom/snapchat/android/model/Friend;",
+            ">;>;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lban;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
-    new-instance v0, Lagb$a;
+    .line 16
+    sget-boolean v0, Lagb;->a:Z
 
-    move-object v1, p0
+    if-nez v0, :cond_0
 
-    move-wide v4, v2
+    if-nez p1, :cond_0
 
-    invoke-direct/range {v0 .. v5}, Lagb$a;-><init>(Lagb;JJ)V
+    new-instance v0, Ljava/lang/AssertionError;
 
-    iput-object v0, p0, Lagb;->c:Lagb$a;
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    .line 51
-    new-instance v0, Ljava/util/PriorityQueue;
+    throw v0
 
-    const/4 v1, 0x5
+    .line 17
+    :cond_0
+    iput-object p1, p0, Lagb;->b:Lbvk;
 
-    new-instance v2, Lagb$1;
+    .line 18
+    sget-boolean v0, Lagb;->a:Z
 
-    invoke-direct {v2, p0}, Lagb$1;-><init>(Lagb;)V
+    if-nez v0, :cond_1
 
-    invoke-direct {v0, v1, v2}, Ljava/util/PriorityQueue;-><init>(ILjava/util/Comparator;)V
+    if-nez p2, :cond_1
 
-    iput-object v0, p0, Lagb;->e:Ljava/util/PriorityQueue;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    .line 61
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    move-result-object v0
+    throw v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    .line 19
+    :cond_1
+    iput-object p2, p0, Lagb;->c:Ljavax/inject/Provider;
 
-    move-result-object v0
-
-    invoke-interface {v0, p0}, Laza;->a(Lagb;)V
-
-    .line 62
+    .line 20
     return-void
+.end method
+
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Laqb",
+            "<",
+            "Lcom/snapchat/android/model/Friend;",
+            ">;>;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lban;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Laga;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 32
+    new-instance v0, Lagb;
+
+    invoke-direct {v0, p0, p1}, Lagb;-><init>(Lbvk;Ljavax/inject/Provider;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(J)V
-    .locals 7
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
     .prologue
-    .line 105
-    iget-object v0, p0, Lagb;->e:Ljava/util/PriorityQueue;
+    .line 10
+    check-cast p1, Laga;
 
-    invoke-virtual {v0}, Ljava/util/PriorityQueue;->iterator()Ljava/util/Iterator;
+    if-nez p1, :cond_0
 
-    move-result-object v1
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    .line 106
+    const-string v1, "Cannot inject members into a null reference"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
     :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lagb;->b:Lbvk;
 
-    move-result v0
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
 
-    if-eqz v0, :cond_2
+    iget-object v0, p0, Lagb;->c:Ljavax/inject/Provider;
 
-    .line 107
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lagb$a;
+    check-cast v0, Lban;
 
-    .line 108
-    iget-wide v2, v0, Lagb$a;->b:J
+    iput-object v0, p1, Laga;->n:Lban;
 
-    sub-long v2, p1, v2
-
-    const-wide/16 v4, 0x5dc
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_0
-
-    .line 109
-    iget-wide v2, v0, Lagb$a;->b:J
-
-    iget-object v4, p0, Lagb;->c:Lagb$a;
-
-    iget-wide v4, v4, Lagb$a;->b:J
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_1
-
-    iput-object v0, p0, Lagb;->c:Lagb$a;
-
-    .line 110
-    :cond_1
-    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_0
-
-    .line 113
-    :cond_2
     return-void
 .end method

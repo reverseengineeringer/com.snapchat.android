@@ -1,296 +1,98 @@
 .class public final Lacg;
-.super Ljava/lang/Object;
+.super Landroid/app/AlertDialog;
 .source "SourceFile"
-
-# interfaces
-.implements Lace;
-.implements Lald;
-
-
-# instance fields
-.field final a:Ladj;
-
-.field final b:Ladd;
-
-.field final c:Lawp;
-
-.field final d:Laco;
-
-.field final e:Lacp;
-
-.field final f:Lacq;
-
-.field g:Lacf;
-
-.field protected h:Ladj$b;
-
-.field protected i:Ladj$b;
-
-.field protected j:Ladj$b;
-
-.field private final k:Lale;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 8
-
-    .prologue
-    .line 55
-    invoke-static {}, Lale;->a()Lale;
-
-    move-result-object v1
-
-    invoke-static {}, Ladj;->a()Ladj;
-
-    move-result-object v2
-
-    invoke-static {}, Ladd;->a()Ladd;
-
-    move-result-object v3
-
-    sget-object v4, Ladc;->b:Lawp;
-
-    new-instance v5, Laco;
-
-    invoke-direct {v5}, Laco;-><init>()V
-
-    new-instance v6, Lacp;
-
-    invoke-direct {v6}, Lacp;-><init>()V
-
-    new-instance v7, Lacs;
-
-    invoke-direct {v7}, Lacs;-><init>()V
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v7}, Lacg;-><init>(Lale;Ladj;Ladd;Lawp;Laco;Lacp;Lacq;)V
-
-    .line 62
-    return-void
-.end method
-
-.method private constructor <init>(Lale;Ladj;Ladd;Lawp;Laco;Lacp;Lacq;)V
-    .locals 1
-
-    .prologue
-    .line 67
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 52
-    new-instance v0, Lacf;
-
-    invoke-direct {v0}, Lacf;-><init>()V
-
-    iput-object v0, p0, Lacg;->g:Lacf;
-
-    .line 139
-    new-instance v0, Lacg$1;
-
-    invoke-direct {v0, p0}, Lacg$1;-><init>(Lacg;)V
-
-    iput-object v0, p0, Lacg;->h:Ladj$b;
-
-    .line 169
-    new-instance v0, Lacg$2;
-
-    invoke-direct {v0, p0}, Lacg$2;-><init>(Lacg;)V
-
-    iput-object v0, p0, Lacg;->i:Ladj$b;
-
-    .line 197
-    new-instance v0, Lacg$3;
-
-    invoke-direct {v0, p0}, Lacg$3;-><init>(Lacg;)V
-
-    iput-object v0, p0, Lacg;->j:Ladj$b;
-
-    .line 68
-    iput-object p1, p0, Lacg;->k:Lale;
-
-    .line 69
-    iput-object p2, p0, Lacg;->a:Ladj;
-
-    .line 70
-    iput-object p3, p0, Lacg;->b:Ladd;
-
-    .line 71
-    iput-object p4, p0, Lacg;->c:Lawp;
-
-    .line 72
-    iput-object p5, p0, Lacg;->d:Laco;
-
-    .line 73
-    iput-object p6, p0, Lacg;->e:Lacp;
-
-    .line 74
-    iput-object p7, p0, Lacg;->f:Lacq;
-
-    .line 75
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 3
 
     .prologue
-    .line 79
-    iget-object v0, p0, Lacg;->k:Lale;
+    .line 20
+    invoke-direct {p0, p1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0, p0}, Lale;->a(Lald;)V
-
-    .line 80
-    iget-object v0, p0, Lacg;->a:Ladj;
-
-    iget-object v1, p0, Lacg;->j:Ladj$b;
-
-    iget-object v2, v0, Ladj;->e:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    :try_start_0
-    iget-object v0, v0, Ladj;->f:Ljava/util/Set;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    monitor-exit v2
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final a(Lacf;)V
-    .locals 0
-    .param p1    # Lacf;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 86
-    iput-object p1, p0, Lacg;->g:Lacf;
-
-    .line 87
-    return-void
-.end method
-
-.method public final a(Landroid/net/NetworkInfo;)V
-    .locals 4
-    .param p1    # Landroid/net/NetworkInfo;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 119
-    iget-object v0, p0, Lacg;->a:Ladj;
-
-    const-string v1, "DiscoverRepository"
-
-    const-string v2, "Manually triggering update of channel and dsnap lists."
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v1, v0, Ladj;->g:Landroid/os/Handler;
-
-    iget-object v0, v0, Ladj;->k:Ljava/lang/Runnable;
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 120
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;)V
-    .locals 2
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 102
-    new-instance v0, Lacm;
-
-    new-instance v1, Lacl;
-
-    invoke-direct {v1, p1}, Lacl;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v0, v1}, Lacm;-><init>(Laub;)V
-
-    invoke-virtual {v0}, Lacm;->a()V
-
-    .line 103
-    return-void
-.end method
-
-.method public final b()V
-    .locals 4
-
-    .prologue
-    .line 91
-    iget-object v0, p0, Lacg;->a:Ladj;
+    .line 22
+    const v0, 0x7f0c000a
 
     const/4 v1, 0x1
 
-    new-array v1, v1, [Ladj$b;
+    new-array v1, v1, [Ljava/lang/Object;
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lacg;->i:Ladj$b;
+    aput-object p2, v1, v2
 
-    aput-object v3, v1, v2
+    invoke-static {p1, v0, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ladj;->a([Ladj$b;)V
+    move-result-object v0
 
-    .line 92
+    .line 23
+    invoke-virtual {p0, v0}, Lacg;->setTitle(Ljava/lang/CharSequence;)V
+
+    .line 25
+    const v0, 0x7f0c0002
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 26
+    const/4 v1, -0x1
+
+    new-instance v2, Lacg$1;
+
+    invoke-direct {v2, p0, p2}, Lacg$1;-><init>(Lacg;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v1, v0, v2}, Lacg;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+    .line 33
+    const v0, 0x7f0c0058
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 34
+    const/4 v1, -0x2
+
+    new-instance v2, Lacg$2;
+
+    invoke-direct {v2, p0}, Lacg$2;-><init>(Lacg;)V
+
+    invoke-virtual {p0, v1, v0, v2}, Lacg;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+    .line 39
     return-void
 .end method
 
-.method public final c()V
-    .locals 4
+.method protected static a(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 9
 
     .prologue
-    .line 96
-    iget-object v0, p0, Lacg;->a:Ladj;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ladj$b;
-
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lacg;->h:Ladj$b;
+    .line 42
+    new-instance v0, Lqg;
 
-    aput-object v3, v1, v2
+    sget-object v1, Lcom/snapchat/android/model/FriendAction;->ADD:Lcom/snapchat/android/model/FriendAction;
 
-    invoke-virtual {v0, v1}, Ladj;->a([Ladj$b;)V
+    const/4 v6, 0x0
 
-    .line 97
+    move-object v3, p0
+
+    move-object v4, p1
+
+    move-object v5, v2
+
+    move-object v7, v2
+
+    move-object v8, v2
+
+    invoke-direct/range {v0 .. v8}, Lqg;-><init>(Lcom/snapchat/android/model/FriendAction;Lcom/snapchat/android/model/Friend;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Lcom/snapchat/android/model/FriendAction$BlockReason;)V
+
+    .line 44
+    invoke-virtual {v0}, Lqg;->execute()V
+
+    .line 45
     return-void
-.end method
-
-.method public final d()Lcom/snapchat/android/discover/controller/DiscoverMediaCategory;
-    .locals 1
-
-    .prologue
-    .line 279
-    sget-object v0, Lcom/snapchat/android/discover/controller/DiscoverMediaCategory;->EDITION:Lcom/snapchat/android/discover/controller/DiscoverMediaCategory;
-
-    return-object v0
 .end method

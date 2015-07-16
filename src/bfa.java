@@ -1,7 +1,4 @@
-public abstract interface bfa
-{
-  public abstract void a(int paramInt, boolean paramBoolean);
-}
+public final class bfa {}
 
 /* Location:
  * Qualified Name:     bfa

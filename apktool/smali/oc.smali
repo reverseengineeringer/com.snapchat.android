@@ -1,20 +1,104 @@
 .class public final Loc;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x12
+.end annotation
+
+
+# static fields
+.field public static final COUNT_METRIC_PARAM_NAME:Ljava/lang/String; = "count"
+
+.field public static final IMAGE_COUNT_METRIC_PARAM_NAME:Ljava/lang/String; = "image_count"
+
+.field public static final MEDIA_DURATION_METRIC_PARAM_NAME:Ljava/lang/String; = "media_duration"
+
+.field public static final METRIC_NAME:Ljava/lang/String; = "SAVE_ENTIRE_STORY"
+
+.field public static final REASON_METRIC_PARAM_NAME:Ljava/lang/String; = "reason"
+
+.field public static final SAVE_STORY_TIME_METRIC_PARAM_NAME:Ljava/lang/String; = "save_story_time"
+
+.field public static final SHOULD_LOG_TO_FLURRY:Z = false
+
+.field public static final SUCCESS_METRIC_PARAM_NAME:Ljava/lang/String; = "success"
+
+.field public static final TRANSCODING_STATUS_METRIC_PARAM_NAME:Ljava/lang/String; = "transcoding_status"
+
+.field public static final VIDEO_BITRATE_METRIC_PARAM_NAME:Ljava/lang/String; = "video_bitrate"
+
+.field public static final VIDEO_COUNT_METRIC_PARAM_NAME:Ljava/lang/String; = "video_count"
+
+.field public static final VIDEO_FRAMERATE_METRIC_PARAM_NAME:Ljava/lang/String; = "video_framerate"
+
+.field public static final VIDEO_HEIGHT_METRIC_PARAM_NAME:Ljava/lang/String; = "video_height"
+
+.field public static final VIDEO_WIDTH_METRIC_PARAM_NAME:Ljava/lang/String; = "video_width"
+
+.field private static final sInstance:Loc;
+
+
+# instance fields
+.field private final mEasyMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+
+
 # direct methods
-.method public constructor <init>(Lcom/snapchat/videotranscoder/task/Task$Status;)V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 11
-    invoke-virtual {p1}, Lcom/snapchat/videotranscoder/task/Task$Status;->name()Ljava/lang/String;
+    .line 43
+    new-instance v0, Loc;
 
-    move-result-object v0
+    invoke-direct {v0}, Loc;-><init>()V
 
-    invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    sput-object v0, Loc;->sInstance:Loc;
 
-    .line 12
     return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    .prologue
+    .line 59
+    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+
+    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
+
+    invoke-direct {p0, v0}, Loc;-><init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
+
+    .line 60
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;)V
+    .locals 0
+    .param p1    # Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 66
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 67
+    iput-object p1, p0, Loc;->mEasyMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+
+    .line 68
+    return-void
+.end method
+
+.method public static a()Loc;
+    .locals 1
+
+    .prologue
+    .line 52
+    sget-object v0, Loc;->sInstance:Loc;
+
+    return-object v0
 .end method

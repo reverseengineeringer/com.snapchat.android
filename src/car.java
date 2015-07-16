@@ -1,11 +1,19 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.FIELD})
-public @interface car {}
+public abstract interface car
+{
+  public abstract double a(double paramDouble);
+  
+  public abstract double a(double paramDouble1, double paramDouble2);
+  
+  public abstract String a();
+  
+  public abstract String a(String paramString1, String paramString2);
+  
+  public abstract int b();
+  
+  public abstract int c();
+  
+  public abstract boolean d();
+}
 
 /* Location:
  * Qualified Name:     car

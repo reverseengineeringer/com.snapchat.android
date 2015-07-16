@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laok;
+.implements Lapg;
 
 
 # annotations
@@ -36,12 +36,12 @@
 
 
 # virtual methods
-.method public final a(Lamk;)V
+.method public final a(Lanh;)V
     .locals 3
 
     .prologue
     .line 135
-    invoke-static {p1}, Laol;->a(Lamk;)I
+    invoke-static {p1}, Laph;->a(Lanh;)I
 
     move-result v0
 
@@ -76,16 +76,16 @@
     invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     .line 138
-    instance-of v0, p1, Land;
+    instance-of v0, p1, Laoa;
 
     if-eqz v0, :cond_0
 
     .line 139
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/PickUsernameFragment$1;->a:Lcom/snapchat/android/fragments/signup/PickUsernameFragment;
 
-    check-cast p1, Land;
+    check-cast p1, Laoa;
 
-    invoke-static {v0, p1}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->a(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;Land;)V
+    invoke-static {v0, p1}, Lcom/snapchat/android/fragments/signup/PickUsernameFragment;->a(Lcom/snapchat/android/fragments/signup/PickUsernameFragment;Laoa;)V
 
     .line 142
     :cond_0

@@ -1,55 +1,53 @@
 package com.snapchat.android.discover.ui.fragment;
 
-import abq;
-import abr;
-import aby;
-import ace;
-import adf;
-import aek;
-import aem;
-import aen;
-import aew;
-import ala;
-import alb;
-import ale;
+import acq;
+import acr;
+import acy;
+import ade;
+import aef;
+import aej;
+import aej.13;
+import aej.b;
+import afk;
+import afm;
+import afn;
+import afw;
+import alv;
+import alw;
+import ama;
 import android.annotation.SuppressLint;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
+import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.OrientationEventListener;
 import android.view.View;
 import android.view.ViewGroup;
-import auj;
-import auj.a;
-import avf;
 import avh;
-import avs;
-import ban;
-import bap;
-import baw;
-import bdg;
-import bdt;
-import bel;
-import bgk;
-import cgb;
-import cgc;
-import com.snapchat.android.Timber;
+import avh.a;
+import awd;
+import awf;
+import awq;
+import bbo;
+import bbq;
+import bbx;
+import beg;
+import bet;
+import bfk;
+import bhk;
+import chc;
+import chd;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import com.snapchat.android.content.SnapchatProvider;
 import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics;
 import com.snapchat.android.discover.analytics.EditionPerformanceAnalytics;
 import com.snapchat.android.discover.analytics.EditionPerformanceAnalytics.WaitTimeMetricState;
 import com.snapchat.android.discover.model.ChannelPage;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.DSnapPage.Form;
 import com.snapchat.android.discover.model.EditionOpenOrigin;
-import com.snapchat.android.discover.model.database.vtable.DSnapPageVirtualTable;
 import com.snapchat.android.discover.ui.FadeFullScreenAnimationView;
 import com.snapchat.android.discover.ui.FadeFullScreenAnimationView.b;
 import com.snapchat.android.discover.ui.media.DiscoverEditionPageView;
@@ -58,73 +56,77 @@ import com.snapchat.android.util.TitleBarManager.Visibility;
 import com.snapchat.android.util.eventbus.CameraDisplayState;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
-import gv;
-import hl;
+import he;
+import hu;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import ld;
-import lt;
+import lv;
+import ml;
 
 public class EditionViewerFragment
   extends SnapchatFragment
-  implements LoaderManager.LoaderCallbacks<Cursor>, auj.a, FadeFullScreenAnimationView.b, EditionViewerPager.b
+  implements aej.b, avh.a, FadeFullScreenAnimationView.b, EditionViewerPager.b
 {
-  @cgb
+  @chc
   public ChannelPage a;
-  private aem b;
-  @cgc
+  private afm b;
+  @chd
   private EditionViewerPager c;
   private FadeFullScreenAnimationView d;
-  private final avs e;
+  private final awq e;
   private final Bus f;
-  private final aby g;
+  private final acy g;
   private final DiscoverUsageAnalytics h;
-  private final adf i;
-  private final alb j;
-  private auj k;
-  private String l;
-  private boolean m;
-  private String n;
-  private int o;
-  private boolean p;
-  private EditionOpenOrigin q;
-  private boolean r;
-  private final bgk s;
-  private long t = 0L;
-  private abr u;
+  private final aef i;
+  private final alw j;
+  private final aej k;
+  private avh l;
+  private String m;
+  private boolean n;
+  private String o;
+  private int p;
+  private boolean q;
+  private EditionOpenOrigin r;
+  private int s = -1;
+  private boolean t;
+  private final bhk u;
+  private long v = 0L;
+  private acr w;
   
   public EditionViewerFragment()
   {
-    this(new avs(), ban.a(), aby.a(), new bgk(), new DiscoverUsageAnalytics(), adf.a(), alb.a());
+    this(new awq(), bbo.a(), acy.a(), new bhk(), new DiscoverUsageAnalytics(), aef.a(), alw.a(), aej.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private EditionViewerFragment(avs paramavs, Bus paramBus, aby paramaby, bgk parambgk, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, adf paramadf, alb paramalb)
+  private EditionViewerFragment(awq paramawq, Bus paramBus, acy paramacy, bhk parambhk, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, aef paramaef, alw paramalw, aej paramaej)
   {
     f = paramBus;
-    e = paramavs;
-    g = paramaby;
-    i = paramadf;
-    s = parambgk;
+    e = paramawq;
+    g = paramacy;
+    i = paramaef;
+    u = parambhk;
     h = paramDiscoverUsageAnalytics;
-    j = paramalb;
+    j = paramalw;
+    k = paramaej;
   }
   
   public final void a()
   {
     Object localObject = i;
-    String str = l;
+    String str = m;
     localObject = (List)e.get(str);
     i.e.clear();
     if (localObject != null)
     {
-      f.a(new aew(a.d, q, (List)localObject));
+      f.a(new afw(a.d, r, (List)localObject));
       return;
     }
-    f.a(new aew(a.d, q));
+    f.a(new afw(a.d, r));
   }
   
   public final void a(float paramFloat)
@@ -134,9 +136,9 @@ public class EditionViewerFragment
   
   public final void a(int paramInt)
   {
-    boolean bool3 = false;
+    boolean bool2 = false;
     boolean bool1;
-    boolean bool2;
+    int i1;
     if (c != null)
     {
       Object localObject = c;
@@ -147,15 +149,14 @@ public class EditionViewerFragment
         {
           bool1 = ((DiscoverEditionPageView)localObject).f();
           if (!bool1) {
-            break label132;
+            break label108;
           }
-          bool2 = true;
-          label48:
-          Timber.a("EditionViewerFragment", "onRotate %d with isLandscapeSupported %s", new Object[] { Integer.valueOf(paramInt), Boolean.valueOf(bool2) });
+          i1 = 1;
           switch (paramInt)
           {
           default: 
-            bool1 = bool3;
+            label48:
+            bool1 = bool2;
           }
         }
       }
@@ -168,22 +169,22 @@ public class EditionViewerFragment
       return;
       bool1 = false;
       break;
-      label132:
-      bool2 = false;
+      label108:
+      i1 = 0;
       break label48;
-      f.a(new baw(1));
-      bool1 = bool3;
+      f.a(new bbx(1));
+      bool1 = bool2;
       continue;
-      bool1 = bool3;
-      if (bool2)
+      bool1 = bool2;
+      if (i1 != 0)
       {
-        f.a(new baw(0));
+        f.a(new bbx(0));
         bool1 = true;
         continue;
-        bool1 = bool3;
-        if (bool2)
+        bool1 = bool2;
+        if (i1 != 0)
         {
-          f.a(new baw(8));
+          f.a(new bbx(8));
           bool1 = true;
         }
       }
@@ -196,6 +197,41 @@ public class EditionViewerFragment
     d.a();
   }
   
+  public final void a(@chc final List<DSnapPage> paramList)
+  {
+    paramList = new ArrayList(paramList);
+    mFragmentLayout.post(new Runnable()
+    {
+      public final void run()
+      {
+        if ((EditionViewerFragment.b(EditionViewerFragment.this) != null) && (EditionViewerFragment.c(EditionViewerFragment.this) != null))
+        {
+          EditionViewerFragment.b(EditionViewerFragment.this).a(paramList);
+          if (EditionViewerFragment.d(EditionViewerFragment.this) != null)
+          {
+            EditionViewerFragment.a(EditionViewerFragment.this, Math.max(0, EditionViewerFragment.b(EditionViewerFragment.this).a(EditionViewerFragment.d(EditionViewerFragment.this))));
+            EditionViewerFragment.e(EditionViewerFragment.this);
+          }
+          if ((!EditionViewerFragment.f(EditionViewerFragment.this)) && (EditionViewerFragment.c(EditionViewerFragment.this) != null) && (EditionViewerFragment.g(EditionViewerFragment.this) < EditionViewerFragment.c(EditionViewerFragment.this).getAdapter().getCount())) {
+            if (!EditionViewerFragment.h(EditionViewerFragment.this)) {
+              break label240;
+            }
+          }
+        }
+        label240:
+        for (int i = DSnapPage.Form.LONGFORM.getIndex();; i = DSnapPage.Form.TOP_SNAP.getIndex())
+        {
+          EditionViewerFragment.c(EditionViewerFragment.this).setCurrentItem(EditionViewerFragment.g(EditionViewerFragment.this), false);
+          EditionViewerFragment.c(EditionViewerFragment.this).setPanel(i);
+          EditionViewerFragment.i(EditionViewerFragment.this);
+          new StringBuilder("Opening page to ").append(EditionViewerFragment.g(EditionViewerFragment.this)).append(" longform? ").append(EditionViewerFragment.h(EditionViewerFragment.this)).append(" - count: ").append(EditionViewerFragment.b(EditionViewerFragment.this).getCount());
+          EditionViewerFragment.j(EditionViewerFragment.this);
+          return;
+        }
+      }
+    });
+  }
+  
   protected final WindowConfiguration.StatusBarDrawMode b()
   {
     return WindowConfiguration.StatusBarDrawMode.DRAW_BEHIND;
@@ -203,36 +239,41 @@ public class EditionViewerFragment
   
   public final void b(EditionViewerPager.SwipeToExitMethod paramSwipeToExitMethod)
   {
-    if ((l != null) && (u != null))
+    if ((m != null) && (w != null))
     {
       long l1 = SystemClock.elapsedRealtime();
-      long l2 = t;
-      Object localObject1 = l;
+      long l2 = v;
+      Object localObject1 = m;
       Object localObject2 = a.b;
-      long l3 = u.a.size();
-      long l4 = u.b.size();
-      long l5 = i.d(l);
-      Object localObject3 = new gv();
-      timeViewed = Double.valueOf(avf.a(l1 - l2));
+      long l3 = w.a.size();
+      long l4 = w.b.size();
+      long l5 = i.d(m);
+      Object localObject3 = w.c.getSourceType();
+      int i1 = s;
+      Object localObject4 = new he();
+      timeViewed = Double.valueOf(awd.a(l1 - l2));
       editionId = ((String)localObject1);
       publisherId = ((String)localObject2);
       numSnapsViewed = Long.valueOf(l3);
       numLongformViewed = Long.valueOf(l4);
+      source = ((lv)localObject3);
+      if (localObject3 == lv.STORY) {
+        viewLocationPos = Long.valueOf(i1);
+      }
       switch (com.snapchat.android.discover.analytics.DiscoverUsageAnalytics.1.a[paramSwipeToExitMethod.ordinal()])
       {
       default: 
-        Timber.f("DiscoverAnalytics", "Unsupported Discover exit method, will leave as null in logged event.", new Object[0]);
         if ((int)l5 >= 0) {
           break;
         }
       }
-      for (int i1 = 1;; i1 = 0)
+      for (i1 = 1;; i1 = 0)
       {
         if (i1 == 0) {
           snapIndexCount = Long.valueOf(l5);
         }
-        ScAnalyticsEventEngine.a((lt)localObject3);
-        paramSwipeToExitMethod = u.d;
+        ScAnalyticsEventEngine.a((ml)localObject4);
+        paramSwipeToExitMethod = w.d;
         localObject1 = a;
         localObject2 = c.entrySet().iterator();
         while (((Iterator)localObject2).hasNext())
@@ -241,56 +282,55 @@ public class EditionViewerFragment
           if (((Map.Entry)localObject4).getValue() == EditionPerformanceAnalytics.WaitTimeMetricState.TIMING)
           {
             localObject3 = a;
-            localObject4 = ((abq)localObject3).a("DISCOVER_DSNAP_WAIT_TIME", (String)((Map.Entry)localObject4).getKey());
+            localObject4 = ((acq)localObject3).a("DISCOVER_DSNAP_WAIT_TIME", (String)((Map.Entry)localObject4).getKey());
             if (localObject4 != null) {
               ((EasyMetric)localObject4).a("type", "abandoned").a("reachability", a.f()).a(false);
             }
           }
         }
-        exitEvent = hl.SWIPE_BEGINNING;
+        exitEvent = hu.SWIPE_BEGINNING;
         break;
-        exitEvent = hl.SWIPE_END;
+        exitEvent = hu.SWIPE_END;
         break;
-        exitEvent = hl.ENTER_BACKGROUND;
+        exitEvent = hu.ENTER_BACKGROUND;
         break;
-        exitEvent = hl.SWIPE_DOWN;
+        exitEvent = hu.SWIPE_DOWN;
         break;
-        exitEvent = hl.AUTO_ADVANCE;
+        exitEvent = hu.AUTO_ADVANCE;
         break;
-        exitEvent = hl.BACK_PRESSED;
+        exitEvent = hu.BACK_PRESSED;
         break;
       }
       localObject2 = a;
       localObject3 = d;
-      Object localObject4 = b;
+      localObject4 = b;
       localObject1 = e;
       i1 = b.size();
-      EasyMetric.EasyMetricFactory.a("DISCOVER_EDITION_VIEW_SUMMARY").a("session_id", localObject3).a("publisher_name", localObject4).a("edition_id", localObject1).a("reachability", a.f()).a("count", Integer.valueOf(i1)).a(false);
-      return;
+      paramSwipeToExitMethod = e;
+      EasyMetric.EasyMetricFactory.a("DISCOVER_EDITION_VIEW_SUMMARY").a("session_id", localObject3).a("publisher_name", localObject4).a("edition_id", localObject1).a("reachability", a.f()).a("count", Integer.valueOf(i1)).a("source", paramSwipeToExitMethod.toString()).a(false);
     }
-    Timber.f("EditionViewerFragment", "edition ID or view record is null when trying to report edition exit metrics.", new Object[0]);
   }
   
   protected final void e()
   {
     boolean bool = true;
-    f.a(new baw(1));
-    f.a(new bel(TitleBarManager.Visibility.HIDDEN));
-    f.a(new bdg(false));
-    f.a(new bap(CameraDisplayState.CLOSE));
+    f.a(new bbx(1));
+    f.a(new bfk(TitleBarManager.Visibility.HIDDEN));
+    f.a(new beg(false));
+    f.a(new bbq(CameraDisplayState.CLOSE));
     Object localObject = f;
     DiscoverEditionPageView localDiscoverEditionPageView = c.getCurrentView();
     if ((localDiscoverEditionPageView != null) && (localDiscoverEditionPageView.g())) {}
     for (;;)
     {
-      ((Bus)localObject).a(new bdt(bool));
-      avh.a(getActivity(), c);
-      localObject = k;
+      ((Bus)localObject).a(new bet(bool));
+      awf.a(getActivity(), c);
+      localObject = l;
       mRotation = 0;
       if (mOrientationListener.canDetectOrientation()) {
         mOrientationListener.enable();
       }
-      t = SystemClock.elapsedRealtime();
+      v = SystemClock.elapsedRealtime();
       if (c != null) {
         c.a(c.getCurrentItem(), -1);
       }
@@ -301,16 +341,21 @@ public class EditionViewerFragment
   
   protected final void f()
   {
-    k.mOrientationListener.disable();
-    f.a(new baw(1));
+    l.mOrientationListener.disable();
+    f.a(new bbx(1));
     if (c != null) {
       c.a(c.getCurrentItem());
     }
   }
   
+  public final boolean f_()
+  {
+    return true;
+  }
+  
   public final boolean g()
   {
-    f.a(new baw(1));
+    f.a(new bbx(1));
     if (c != null)
     {
       DiscoverEditionPageView localDiscoverEditionPageView = c.getCurrentView();
@@ -336,14 +381,9 @@ public class EditionViewerFragment
     }
   }
   
-  public final boolean g_()
+  protected final alv h()
   {
-    return true;
-  }
-  
-  protected final ala h()
-  {
-    return j.b().a(l);
+    return j.b().a(m);
   }
   
   public final void i()
@@ -359,101 +399,93 @@ public class EditionViewerFragment
     if (paramBundle != null)
     {
       a = ((ChannelPage)paramBundle.getParcelable(ChannelPage.a));
-      n = paramBundle.getString("open_to_dsnap_id");
-      m = paramBundle.getBoolean("archived_edition", false);
-      l = paramBundle.getString("edition_id");
-      p = paramBundle.getBoolean("open_to_longform", false);
+      o = paramBundle.getString("open_to_dsnap_id");
+      n = paramBundle.getBoolean("archived_edition", false);
+      m = paramBundle.getString("edition_id");
+      q = paramBundle.getBoolean("open_to_longform", false);
+      s = paramBundle.getInt("adapter_index", -1);
       i1 = paramBundle.getInt("edition_open_origin", EditionOpenOrigin.DISCOVER.ordinal());
-      q = EditionOpenOrigin.values()[i1];
+      r = EditionOpenOrigin.values()[i1];
       if (!paramBundle.getBoolean("open_to_start", false)) {
-        break label178;
+        break label190;
       }
       i1 = 0;
     }
     for (;;)
     {
-      o = i1;
+      p = i1;
       g.a(a, null);
       Object localObject = g;
-      paramBundle = l;
-      aby.a(paramBundle);
+      paramBundle = m;
+      acy.a(paramBundle);
       localObject = b.iterator();
       while (((Iterator)localObject).hasNext()) {
-        ((ace)((Iterator)localObject).next()).a(paramBundle);
+        ((ade)((Iterator)localObject).next()).a(paramBundle);
       }
-      label178:
-      paramBundle = l;
+      label190:
+      paramBundle = m;
       i1 = i.a(paramBundle);
       if ((i.b(paramBundle)) || (i1 == -1)) {
         i1 = 0;
       }
     }
-    r = false;
-    u = new abr();
-    if (n != null) {
-      u.a(n, ld.CHAT);
-    }
-    if (m) {}
-    for (b = new aek(a, l, u);; b = new aen(a, l, u))
+    t = false;
+    w = new acr(r);
+    if (n) {}
+    for (b = new afk(a, m, w);; b = new afn(a, m, w))
     {
-      k = new auj(getActivity());
-      k.mScreenRotationListener = this;
-      getLoaderManager().restartLoader$71be8de6(1100, this);
+      l = new avh(getActivity());
+      l.mScreenRotationListener = this;
       return;
     }
   }
   
-  public Loader<Cursor> onCreateLoader(int paramInt, Bundle paramBundle)
+  public View onCreateView(LayoutInflater arg1, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    switch (paramInt)
-    {
-    default: 
-      return null;
-    }
-    Timber.c("EditionViewerFragment", "creating DSnapPageVirtualTable cursor loader", new Object[0]);
-    paramBundle = Uri.withAppendedPath(SnapchatProvider.c, l);
-    return new CursorLoader(getActivity(), paramBundle, DSnapPageVirtualTable.a, null);
-  }
-  
-  public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
-  {
-    super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    mFragmentLayout = paramLayoutInflater.inflate(2130968654, paramViewGroup, false);
-    c = ((EditionViewerPager)c(2131362268));
+    super.onCreateView(???, paramViewGroup, paramBundle);
+    mFragmentLayout = ???.inflate(2130968655, paramViewGroup, false);
+    c = ((EditionViewerPager)c(2131362266));
     c.setOnSwipeOutListener(this);
     c.setBackgroundColor(a.h);
     c.setAdapter(b);
-    d = ((FadeFullScreenAnimationView)c(2131362269));
+    d = ((FadeFullScreenAnimationView)c(2131362267));
     d.setColorFilter(a.h);
     d.setFadeFullScreenListener(this);
-    return mFragmentLayout;
+    paramViewGroup = k;
+    paramBundle = m;
+    synchronized (e)
+    {
+      g.put(paramBundle, this);
+      ??? = k;
+      paramViewGroup = m;
+      h.postAtFrontOfQueue(new aej.13(???, paramViewGroup, new aej.b[] { this }));
+      return mFragmentLayout;
+    }
   }
   
   public void onDestroy()
   {
-    if (d != null) {
-      e.a(d, true);
-    }
-    try
+    aej localaej = k;
+    String str = m;
+    synchronized (e)
     {
-      getLoaderManager().destroyLoader(1100);
+      g.remove(str);
+      if (d != null) {
+        e.a(d, true);
+      }
       if (c != null)
       {
-        EditionViewerPager localEditionViewerPager = c;
-        ((aem)localEditionViewerPager.getAdapter()).a(localEditionViewerPager);
+        ??? = c;
+        ((afm)((EditionViewerPager)???).getAdapter()).a((ViewGroup)???);
+        c = null;
+        b = null;
       }
       super.onDestroy();
       return;
     }
-    catch (IllegalStateException localIllegalStateException)
-    {
-      for (;;) {}
-    }
   }
   
-  public void onLoaderReset(Loader<Cursor> paramLoader) {}
-  
-  public final long z_()
+  public final long y_()
   {
     return 60000L;
   }

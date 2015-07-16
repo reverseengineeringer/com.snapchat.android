@@ -1,7 +1,7 @@
 package com.snapchat.android.model;
 
-import aud;
-import bhc;
+import avb;
+import bic;
 import com.snapchat.android.util.CashUtils.CurrencyCode;
 import java.util.UUID;
 
@@ -33,30 +33,30 @@ public final class CashTransaction$a
     mStatus = CashTransaction.TransactionStatus.INITIATED;
   }
   
-  public static CashTransaction a(bhc parambhc)
+  public static CashTransaction a(bic parambic)
   {
-    Object localObject = new a(parambhc.c(), parambhc.e(), aud.a(parambhc.f()));
-    mId = parambhc.a();
-    mCashSenderId = parambhc.b();
-    mCashRecipientId = parambhc.d();
-    mCurrencyCode = CashUtils.CurrencyCode.valueOf(parambhc.g());
-    mMessage = parambhc.h();
-    mCreatedAt = aud.a(parambhc.i());
-    mUpdatedAt = aud.a(parambhc.j());
-    mProvider = parambhc.s();
+    Object localObject = new a(parambic.c(), parambic.e(), avb.a(parambic.f()));
+    mId = parambic.a();
+    mCashSenderId = parambic.b();
+    mCashRecipientId = parambic.d();
+    mCurrencyCode = CashUtils.CurrencyCode.valueOf(parambic.g());
+    mMessage = parambic.h();
+    mCreatedAt = avb.a(parambic.i());
+    mUpdatedAt = avb.a(parambic.j());
+    mProvider = parambic.s();
     mIsFromServer = true;
-    mFromRain = aud.a(parambhc.r());
-    int i = aud.a(parambhc.k());
+    mFromRain = avb.a(parambic.r());
+    int i = avb.a(parambic.k());
     if ((i >= 0) && (i < CashTransaction.TransactionStatus.values().length)) {
       mStatus = CashTransaction.TransactionStatus.values()[i];
     }
     localObject = ((a)localObject).a();
-    CashTransaction.c((CashTransaction)localObject, aud.a(parambhc.l()));
-    CashTransaction.d((CashTransaction)localObject, aud.a(parambhc.m()));
-    CashTransaction.e((CashTransaction)localObject, aud.a(parambhc.n()));
-    CashTransaction.a((CashTransaction)localObject, aud.a(parambhc.o()));
-    CashTransaction.f((CashTransaction)localObject, aud.a(parambhc.p()));
-    CashTransaction.b((CashTransaction)localObject, aud.a(parambhc.q()));
+    CashTransaction.c((CashTransaction)localObject, avb.a(parambic.l()));
+    CashTransaction.d((CashTransaction)localObject, avb.a(parambic.m()));
+    CashTransaction.e((CashTransaction)localObject, avb.a(parambic.n()));
+    CashTransaction.a((CashTransaction)localObject, avb.a(parambic.o()));
+    CashTransaction.f((CashTransaction)localObject, avb.a(parambic.p()));
+    CashTransaction.b((CashTransaction)localObject, avb.a(parambic.q()));
     return (CashTransaction)localObject;
   }
   

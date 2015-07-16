@@ -1,37 +1,74 @@
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.os.Bundle;
+import android.content.res.Resources;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
 
-public class apz
-  extends AlertDialog
+public final class apz
 {
-  private Context mContext;
-  private String mMessage;
+  private static final apz a = new apz();
+  private final Map<Integer, Queue<View>> b = new HashMap();
+  private LayoutInflater c;
+  private Resources d;
   
-  public apz(Context paramContext, String paramString)
+  public static apz a()
   {
-    super(paramContext);
-    mMessage = paramString;
-    mContext = paramContext;
+    return a;
   }
   
-  public void a() {}
-  
-  protected void onCreate(Bundle paramBundle)
+  @cdn
+  public final View a(int paramInt)
   {
-    setMessage(mMessage);
-    setCancelable(true);
-    setButton(-1, mContext.getString(2131493269), new DialogInterface.OnClickListener()
+    bhp.a();
+    d.getResourceEntryName(paramInt);
+    Queue localQueue = (Queue)b.get(Integer.valueOf(paramInt));
+    if ((localQueue != null) && (!localQueue.isEmpty()))
     {
-      public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
-      {
-        paramAnonymousDialogInterface.cancel();
-        a();
-      }
-    });
-    super.onCreate(paramBundle);
+      localQueue.size();
+      return (View)localQueue.poll();
+    }
+    return c.inflate(paramInt, null, false);
+  }
+  
+  @cdn
+  public final void a(int paramInt, View paramView)
+  {
+    bhp.a();
+    Object localObject = (ViewGroup)paramView.getParent();
+    if (localObject != null) {
+      ((ViewGroup)localObject).removeView(paramView);
+    }
+    d.getResourceEntryName(paramInt);
+    Queue localQueue = (Queue)b.get(Integer.valueOf(paramInt));
+    localObject = localQueue;
+    if (localQueue == null)
+    {
+      localObject = new LinkedList();
+      b.put(Integer.valueOf(paramInt), localObject);
+    }
+    ((Queue)localObject).add(paramView);
+    ((Queue)localObject).size();
+  }
+  
+  @cdn
+  public final void a(Context paramContext)
+  {
+    bhp.a();
+    c = ((LayoutInflater)paramContext.getSystemService("layout_inflater"));
+    d = paramContext.getResources();
+  }
+  
+  @cdn
+  public final void b()
+  {
+    bhp.a();
+    b.clear();
+    c = null;
+    d = null;
   }
 }
 

@@ -1,10 +1,12 @@
 public final class beo
 {
-  public boolean mSuccess = false;
+  public boolean mFromPreview;
+  public aji mMediabryo;
   
-  public beo(boolean paramBoolean)
+  public beo(aji paramaji, boolean paramBoolean)
   {
-    mSuccess = paramBoolean;
+    mMediabryo = paramaji;
+    mFromPreview = paramBoolean;
   }
 }
 

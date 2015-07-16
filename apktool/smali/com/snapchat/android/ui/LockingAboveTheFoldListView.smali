@@ -54,22 +54,9 @@
 
 .field public b:Z
 
-.field public c:Z
+.field private final c:Landroid/view/View;
 
-.field public d:Landroid/widget/BaseAdapter;
-
-.field public e:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c",
-            "<TT;>;"
-        }
-    .end annotation
-.end field
-
-.field private final f:Landroid/view/View;
-
-.field private g:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
+.field private d:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/snapchat/android/ui/LockingAboveTheFoldListView",
@@ -78,43 +65,56 @@
     .end annotation
 .end field
 
-.field private h:I
+.field private e:I
+
+.field private f:F
+
+.field private g:I
+
+.field private h:Z
 
 .field private i:F
 
-.field private j:I
+.field private j:F
 
-.field private k:F
+.field private k:I
 
-.field private l:F
+.field private l:Z
 
-.field private m:I
+.field private m:Z
 
-.field private n:Z
+.field private n:Landroid/view/View;
 
-.field private o:Z
+.field private o:Laqu;
 
-.field private p:Landroid/view/View;
+.field private p:I
 
-.field private q:Lapv;
+.field private q:F
 
 .field private r:I
 
-.field private s:F
+.field private s:Z
 
-.field private t:I
+.field private t:Z
 
 .field private u:Z
 
 .field private v:Z
 
-.field private w:Z
+.field private w:I
 
 .field private x:Z
 
-.field private y:I
+.field private y:Landroid/widget/BaseAdapter;
 
-.field private z:Z
+.field private z:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c",
+            "<TT;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -130,17 +130,17 @@
     .line 116
     const/high16 v0, 0x7fc00000    # NaNf
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->i:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:F
 
     .line 129
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->p:I
 
     .line 130
     const/high16 v0, -0x40800000    # -1.0f
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
     .line 144
     iput v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->C:I
@@ -164,14 +164,14 @@
 
     invoke-direct {v0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:Landroid/view/View;
+    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Landroid/view/View;
 
     .line 159
     new-instance v0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
 
     invoke-direct {v0, p0, v2}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;-><init>(Lcom/snapchat/android/ui/LockingAboveTheFoldListView;B)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->g:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
+    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->d:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
 
     .line 161
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
@@ -186,7 +186,7 @@
     iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->D:I
 
     .line 164
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Landroid/view/View;
 
     const/4 v1, 0x0
 
@@ -207,7 +207,7 @@
 
     .prologue
     .line 58
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
 
     return-object v0
 .end method
@@ -286,7 +286,7 @@
 
     .prologue
     .line 763
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:Landroid/view/View;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getBottom()I
 
@@ -320,66 +320,52 @@
 .end method
 
 .method private setLocked(Z)V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 212
-    const-string v0, "ObservableAboveTheFoldListView"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "LockingAboveTheFoldListView setLocked to "
 
-    const-string v2, "LockingAboveTheFoldListView setLocked to "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, " currently "
 
-    const-string v2, " currently "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    iget-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
-    iget-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 213
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     if-eq v0, p1, :cond_0
 
     .line 214
-    iput-boolean p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iput-boolean p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     .line 215
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
 
     if-eqz v0, :cond_0
 
     .line 216
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     if-eqz v0, :cond_1
 
     .line 217
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->p:Landroid/view/View;
+    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->n:Landroid/view/View;
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;->c(Landroid/view/View;)V
 
@@ -390,7 +376,7 @@
 
     .line 219
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
 
     invoke-interface {v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;->r()V
 
@@ -408,34 +394,34 @@
     const/4 v1, 0x0
 
     .line 274
-    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->p:Landroid/view/View;
+    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->n:Landroid/view/View;
 
     .line 275
-    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
     .line 276
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->p:I
 
     .line 277
     const/high16 v0, -0x40800000    # -1.0f
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
     .line 278
-    iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:Z
-
-    .line 279
-    iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
-
     iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
 
+    .line 279
+    iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:Z
+
+    iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:Z
+
     .line 280
-    iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
+    iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
 
     .line 281
-    iput v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->y:I
+    iput v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:I
 
     .line 282
     invoke-direct {p0, v1}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->setLocked(Z)V
@@ -479,20 +465,9 @@
 
     .line 643
     :cond_0
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->m:Z
 
     if-nez v0, :cond_2
-
-    .line 644
-    const-string v0, "ObservableAboveTheFoldListView"
-
-    const-string v1, "CHAT-LOG: LockingAboveTheFoldListView onScrollChanged but locking is disabled"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 684
     :cond_1
@@ -501,7 +476,7 @@
 
     .line 649
     :cond_2
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     if-nez v0, :cond_1
 
@@ -600,17 +575,17 @@
     if-gt v9, v1, :cond_5
 
     .line 664
-    iput-object v7, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->p:Landroid/view/View;
+    iput-object v7, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->n:Landroid/view/View;
 
     .line 665
-    invoke-interface {v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$b;->c()Lapv;
+    invoke-interface {v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$b;->c()Laqu;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iput-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
     .line 666
-    iput v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
+    iput v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->p:I
 
     .line 667
     const/4 v0, 0x1
@@ -625,9 +600,9 @@
 
     sub-int v0, v5, v0
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v1}, Lapv;->c()I
+    invoke-interface {v1}, Laqu;->c()I
 
     move-result v1
 
@@ -635,9 +610,9 @@
 
     int-to-float v0, v0
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v1}, Lapv;->d()F
+    invoke-interface {v1}, Laqu;->d()F
 
     move-result v1
 
@@ -651,7 +626,7 @@
     .line 675
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
 
     .line 676
     invoke-direct {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->d()V
@@ -659,7 +634,7 @@
     .line 677
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
 
     goto :goto_0
 
@@ -690,76 +665,67 @@
     .locals 6
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     .line 525
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->i:F
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:F
 
-    invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
+    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_1
-
-    .line 526
-    const-string v1, "ObservableAboveTheFoldListView"
-
-    const-string v2, "mMeasuredHeight has not been initialized yet. Aborting updateFooter()."
-
-    new-array v3, v0, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-eqz v0, :cond_1
 
     .line 579
     :cond_0
     :goto_0
-    return v0
+    return v2
 
     .line 531
     :cond_1
-    iget-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->h:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getChildCount()I
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     .line 534
-    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
 
-    invoke-interface {v1}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;->q()I
+    invoke-interface {v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;->q()I
 
-    move-result v1
+    move-result v0
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getHeaderViewsCount()I
 
-    move-result v2
+    move-result v1
 
-    add-int/2addr v1, v2
+    add-int/2addr v0, v1
 
     .line 535
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getFirstVisiblePosition()I
 
-    move-result v2
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
-
     move-result v1
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
 
     .line 536
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getLastVisiblePosition()I
 
-    move-result v2
+    move-result v1
 
     .line 537
-    if-ltz v2, :cond_0
+    if-ltz v1, :cond_0
 
     .line 540
     :goto_1
-    if-gt v1, v2, :cond_5
+    if-gt v0, v1, :cond_5
 
     .line 542
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getCount()I
@@ -772,10 +738,10 @@
 
     sub-int/2addr v3, v4
 
-    if-ge v1, v3, :cond_5
+    if-ge v0, v3, :cond_5
 
     .line 545
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getItemAtPosition(I)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getItemAtPosition(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -790,7 +756,7 @@
 
     .line 547
     :cond_2
-    iget-object v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
+    iget-object v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
 
     invoke-interface {v4, v3}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;->a(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -801,7 +767,7 @@
 
     move-result v4
 
-    sub-int v4, v1, v4
+    sub-int v4, v0, v4
 
     invoke-virtual {p0, v4}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getChildAt(I)Landroid/view/View;
 
@@ -818,7 +784,7 @@
 
     .line 552
     :cond_3
-    iget-object v5, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:Landroid/view/View;
+    iget-object v5, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Landroid/view/View;
 
     if-eq v4, v5, :cond_4
 
@@ -838,7 +804,7 @@
 
     .line 540
     :cond_4
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
@@ -846,41 +812,41 @@
     :cond_5
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getMeasuredHeight()I
 
-    move-result v1
+    move-result v0
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getPaddingBottom()I
 
-    move-result v2
+    move-result v1
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v0, v1
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->getPaddingTop()I
 
-    move-result v2
+    move-result v1
 
-    sub-int v2, v1, v2
+    sub-int v3, v0, v1
 
     .line 560
-    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->a:Ljava/util/Map;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->a:Ljava/util/Map;
 
-    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
-    move v1, v0
+    move v1, v2
 
     :goto_2
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -889,9 +855,9 @@
     .line 561
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -914,18 +880,18 @@
     add-int/2addr v0, v1
 
     .line 565
-    if-lt v0, v2, :cond_9
+    if-lt v0, v3, :cond_a
 
     .line 566
     :goto_3
-    sub-int v0, v2, v0
+    sub-int v0, v3, v0
 
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->m:I
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:I
 
     sub-int/2addr v0, v1
 
     .line 569
-    iget-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->n:Z
+    iget-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->l:Z
 
     if-eqz v1, :cond_7
 
@@ -934,9 +900,9 @@
 
     move-result-object v1
 
-    const v2, 0x7f0900a0
+    const v3, 0x7f0900a1
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v1
 
@@ -947,91 +913,61 @@
 
     .line 576
     :cond_7
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->m:I
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:I
 
     if-ge v0, v1, :cond_8
 
     .line 577
-    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->m:I
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:I
 
     .line 579
     :cond_8
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b(I)Z
+    if-gez v0, :cond_9
 
-    move-result v0
+    move v0, v2
+
+    :cond_9
+    add-int/lit8 v0, v0, 0x1
+
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:I
+
+    if-eq v0, v1, :cond_0
+
+    iget-object v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:I
+
+    iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->y:Landroid/widget/BaseAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
+
+    invoke-direct {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e()V
+
+    const/4 v2, 0x1
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_a
     move v1, v0
 
     goto :goto_2
 
-    :cond_a
+    :cond_b
     move v0, v1
 
     goto :goto_3
-.end method
-
-.method public final b(I)Z
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 597
-    if-gez p1, :cond_0
-
-    move p1, v0
-
-    .line 598
-    :cond_0
-    add-int/lit8 v1, p1, 0x1
-
-    .line 600
-    iget v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->h:I
-
-    if-ne v1, v2, :cond_2
-
-    .line 610
-    :cond_1
-    :goto_0
-    return v0
-
-    .line 602
-    :cond_2
-    iget-object v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v2
-
-    .line 603
-    if-eqz v2, :cond_1
-
-    .line 604
-    iput v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->h:I
-
-    .line 605
-    iput v1, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    .line 606
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:Landroid/view/View;
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 608
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->d:Landroid/widget/BaseAdapter;
-
-    invoke-virtual {v0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
-
-    .line 609
-    invoke-direct {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e()V
-
-    .line 610
-    const/4 v0, 0x1
-
-    goto :goto_0
 .end method
 
 .method public final c()V
@@ -1052,13 +988,13 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 12
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 289
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->m:Z
 
     if-nez v0, :cond_0
 
@@ -1085,11 +1021,11 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->l:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->j:F
 
     .line 299
     :cond_1
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     if-eqz v0, :cond_1d
 
@@ -1097,13 +1033,13 @@
     const/4 v2, 0x1
 
     .line 301
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v0}, Lapv;->a()[I
+    invoke-interface {v0}, Laqu;->a()[I
 
     move-result-object v0
 
@@ -1117,9 +1053,9 @@
 
     aget v0, v0, v3
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v3}, Lapv;->b()I
+    invoke-interface {v3}, Laqu;->b()I
 
     move-result v3
 
@@ -1136,23 +1072,23 @@
 
     .line 302
     :goto_1
-    iget-object v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v3}, Lapv;->a()[I
+    invoke-interface {v3}, Laqu;->a()[I
 
     move-result-object v3
 
     .line 303
-    iget-object v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v4}, Lapv;->c()I
+    invoke-interface {v4}, Laqu;->c()I
 
     move-result v6
 
     .line 304
-    iget-object v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v4}, Lapv;->d()F
+    invoke-interface {v4}, Laqu;->d()F
 
     move-result v4
 
@@ -1164,9 +1100,9 @@
     aget v8, v3, v4
 
     .line 308
-    iget-object v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v3}, Lapv;->b()I
+    invoke-interface {v3}, Laqu;->b()I
 
     move-result v9
 
@@ -1211,7 +1147,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->i:F
 
     .line 442
     if-eqz v2, :cond_1c
@@ -1236,14 +1172,14 @@
     .line 319
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
 
     .line 320
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
     goto :goto_2
 
@@ -1262,12 +1198,12 @@
     if-lt v11, v0, :cond_5
 
     .line 340
-    iput v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->y:I
+    iput v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:I
 
     .line 341
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
 
     goto :goto_2
 
@@ -1280,12 +1216,12 @@
     if-gt v8, v0, :cond_6
 
     .line 343
-    iput v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->y:I
+    iput v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:I
 
     .line 344
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
 
     goto :goto_2
 
@@ -1298,12 +1234,12 @@
     if-lt v11, v0, :cond_7
 
     .line 346
-    iput v5, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->y:I
+    iput v5, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:I
 
     .line 347
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
 
     goto :goto_2
 
@@ -1311,18 +1247,18 @@
     :cond_7
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->y:I
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:I
 
     .line 350
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
 
     goto :goto_2
 
     .line 355
     :pswitch_2
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
     const/high16 v6, -0x40800000    # -1.0f
 
@@ -1335,12 +1271,12 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iput v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
     .line 357
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
-    iget v6, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:F
+    iget v6, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->i:F
 
     sub-float/2addr v1, v6
 
@@ -1353,7 +1289,7 @@
     sget v1, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->b:I
 
     :goto_3
-    iput v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iput v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     .line 361
     :cond_8
@@ -1361,7 +1297,7 @@
 
     move-result v1
 
-    iget v6, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->l:F
+    iget v6, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->j:F
 
     sub-float/2addr v1, v6
 
@@ -1385,19 +1321,19 @@
 
     move-result v0
 
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
     sub-float v1, v0, v1
 
     .line 370
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
 
     if-eqz v0, :cond_b
 
     if-le v9, v10, :cond_b
 
     .line 371
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:Z
 
     if-eqz v0, :cond_9
 
@@ -1408,7 +1344,7 @@
     if-ltz v0, :cond_a
 
     :cond_9
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:Z
 
     if-eqz v0, :cond_b
 
@@ -1422,15 +1358,15 @@
     :cond_a
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
 
     .line 383
     :cond_b
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
 
     if-nez v0, :cond_f
 
-    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     sget v6, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->b:I
 
@@ -1442,12 +1378,12 @@
 
     if-gez v0, :cond_c
 
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:Z
 
     if-nez v0, :cond_f
 
     :cond_c
-    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     sget v6, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->b:I
 
@@ -1460,7 +1396,7 @@
     if-gez v0, :cond_f
 
     :cond_d
-    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     sget v6, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->a:I
 
@@ -1472,12 +1408,12 @@
 
     if-lez v0, :cond_e
 
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:Z
 
     if-nez v0, :cond_f
 
     :cond_e
-    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     sget v6, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->a:I
 
@@ -1516,9 +1452,9 @@
     .line 398
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:Z
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:Z
 
     move v0, v3
 
@@ -1530,7 +1466,7 @@
 
     if-lez v3, :cond_13
 
-    iget v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iget v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     sget v4, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->b:I
 
@@ -1543,7 +1479,7 @@
 
     if-gez v1, :cond_1e
 
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     sget v3, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->a:I
 
@@ -1551,7 +1487,7 @@
 
     .line 427
     :cond_14
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->p:I
 
     invoke-virtual {p0, v1, v0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->setSelectionFromTop(II)V
 
@@ -1569,26 +1505,26 @@
     if-ltz v8, :cond_17
 
     .line 403
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:Z
 
     if-nez v0, :cond_1f
 
     .line 404
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:Z
 
     .line 409
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
     .line 410
-    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
-    iget v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:F
+    iget v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->i:F
 
     sub-float/2addr v0, v3
 
@@ -1601,7 +1537,7 @@
     sget v0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->b:I
 
     :goto_6
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     move v0, v4
 
@@ -1614,26 +1550,26 @@
 
     .line 415
     :cond_17
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:Z
 
     if-nez v0, :cond_18
 
     .line 416
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:Z
 
     .line 417
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
     .line 418
-    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:F
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:F
 
-    iget v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:F
+    iget v3, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->i:F
 
     sub-float/2addr v0, v3
 
@@ -1646,7 +1582,7 @@
     sget v0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$d;->b:I
 
     :goto_7
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:I
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
 
     :cond_18
     move v0, v5
@@ -1662,9 +1598,9 @@
     :cond_1a
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:Z
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:Z
 
     goto/16 :goto_2
 
@@ -1672,9 +1608,9 @@
     :cond_1b
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->t:Z
 
-    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->u:Z
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->s:Z
 
     goto/16 :goto_2
 
@@ -1690,7 +1626,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->i:F
 
     .line 451
     invoke-super {p0, p1}, Lcom/github/ksoichiro/android/observablescrollview/ObservableListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
@@ -1723,7 +1659,7 @@
 
     .prologue
     .line 620
-    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->j:I
+    iget v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->g:I
 
     return v0
 .end method
@@ -1776,7 +1712,7 @@
 
     int-to-float v0, v0
 
-    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->i:F
+    iput v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->f:F
 
     .line 489
     return-void
@@ -1810,7 +1746,7 @@
     const/4 v1, 0x1
 
     .line 706
-    iput p2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->j:I
+    iput p2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->g:I
 
     .line 708
     iget-object v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->A:Landroid/widget/AbsListView$OnScrollListener;
@@ -1830,21 +1766,21 @@
     invoke-direct {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e()V
 
     .line 721
-    iget-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iget-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     if-eqz v2, :cond_3
 
-    iget-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Z
+    iget-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
 
     if-nez v2, :cond_3
 
-    iget-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iget-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v2}, Lapv;->a()[I
+    invoke-interface {v2}, Laqu;->a()[I
 
     move-result-object v2
 
@@ -1852,9 +1788,9 @@
 
     move-result v3
 
-    iget-object v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->q:Lapv;
+    iget-object v4, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Laqu;
 
-    invoke-interface {v4}, Lapv;->b()I
+    invoke-interface {v4}, Laqu;->b()I
 
     move-result v4
 
@@ -1913,7 +1849,7 @@
 
     .prologue
     .line 471
-    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
+    iget-boolean v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->h:Z
 
     if-eqz v0, :cond_1
 
@@ -1969,7 +1905,7 @@
     move-result v0
 
     .line 458
-    iget-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->c:Z
+    iget-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
 
     if-eqz v1, :cond_0
 
@@ -1979,12 +1915,12 @@
 
     if-ne v1, v2, :cond_0
 
-    iget-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
+    iget-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->v:Z
 
     if-eqz v1, :cond_0
 
     .line 460
-    iput-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Z
+    iput-boolean v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
 
     .line 461
     invoke-direct {p0}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->d()V
@@ -1992,12 +1928,12 @@
     .line 462
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Z
+    iput-boolean v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->x:Z
 
     .line 463
-    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->r:I
+    iget v1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->p:I
 
-    iget v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->y:I
+    iget v2, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->w:I
 
     invoke-virtual {p0, v1, v2}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->setSelectionFromTop(II)V
 
@@ -2014,15 +1950,15 @@
     invoke-super {p0, p1}, Lcom/github/ksoichiro/android/observablescrollview/ObservableListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     .line 172
-    iput-object p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->d:Landroid/widget/BaseAdapter;
+    iput-object p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->y:Landroid/widget/BaseAdapter;
 
     .line 173
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->g:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->d:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
 
     if-eqz v0, :cond_1
 
     .line 174
-    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->g:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
+    iget-object v0, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->d:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;
 
     iget-object v1, v0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView$a;->a:Landroid/widget/BaseAdapter;
 
@@ -2056,7 +1992,7 @@
 
     .prologue
     .line 179
-    iput-object p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->e:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
+    iput-object p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->z:Lcom/snapchat/android/ui/LockingAboveTheFoldListView$c;
 
     .line 180
     return-void
@@ -2067,7 +2003,7 @@
 
     .prologue
     .line 197
-    iput-boolean p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->b:Z
+    iput-boolean p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->h:Z
 
     .line 198
     return-void
@@ -2078,7 +2014,7 @@
 
     .prologue
     .line 204
-    iput-boolean p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->o:Z
+    iput-boolean p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->m:Z
 
     .line 205
     return-void
@@ -2089,7 +2025,7 @@
 
     .prologue
     .line 183
-    iput p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->m:I
+    iput p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->k:I
 
     .line 184
     return-void
@@ -2122,7 +2058,7 @@
 
     .prologue
     .line 589
-    iput-boolean p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->n:Z
+    iput-boolean p1, p0, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->l:Z
 
     .line 590
     return-void

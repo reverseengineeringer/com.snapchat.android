@@ -1,87 +1,59 @@
-import java.util.Iterator;
-import java.util.Set;
+import java.io.Serializable;
 import javax.annotation.Nullable;
 
 @cd
-final class dv<E>
-  extends di<E>
+final class dv<T>
+  extends dx<T>
+  implements Serializable
 {
-  final transient E a;
-  private transient int b;
+  final dx<? super T> a;
   
-  dv(E paramE)
+  dv(dx<? super T> paramdx)
   {
-    a = ck.a(paramE);
+    a = paramdx;
   }
   
-  dv(E paramE, int paramInt)
+  public final <S extends T> dx<S> a()
   {
-    a = paramE;
-    b = paramInt;
+    return this;
   }
   
-  final int a(Object[] paramArrayOfObject, int paramInt)
+  public final int compare(@Nullable T paramT1, @Nullable T paramT2)
   {
-    paramArrayOfObject[paramInt] = a;
-    return paramInt + 1;
-  }
-  
-  public final dw<E> a()
-  {
-    return dj.a(a);
-  }
-  
-  final boolean c()
-  {
-    return b != 0;
-  }
-  
-  public final boolean contains(Object paramObject)
-  {
-    return a.equals(paramObject);
+    if (paramT1 == paramT2) {
+      return 0;
+    }
+    if (paramT1 == null) {
+      return 1;
+    }
+    if (paramT2 == null) {
+      return -1;
+    }
+    return a.compare(paramT1, paramT2);
   }
   
   public final boolean equals(@Nullable Object paramObject)
   {
-    if (paramObject == this) {}
-    do
-    {
+    if (paramObject == this) {
       return true;
-      if (!(paramObject instanceof Set)) {
-        break;
-      }
-      paramObject = (Set)paramObject;
-    } while ((((Set)paramObject).size() == 1) && (a.equals(((Set)paramObject).iterator().next())));
-    return false;
+    }
+    if ((paramObject instanceof dv))
+    {
+      paramObject = (dv)paramObject;
+      return a.equals(a);
+    }
     return false;
   }
   
   public final int hashCode()
   {
-    int j = b;
-    int i = j;
-    if (j == 0)
-    {
-      i = a.hashCode();
-      b = i;
-    }
-    return i;
-  }
-  
-  public final boolean isEmpty()
-  {
-    return false;
-  }
-  
-  public final int size()
-  {
-    return 1;
+    return a.hashCode() ^ 0xC9177248;
   }
   
   public final String toString()
   {
-    String str = a.toString();
-    return str.length() + 2 + '[' + str + ']';
+    String str = String.valueOf(String.valueOf(a));
+    return str.length() + 12 + str + ".nullsLast()";
   }
 }
 

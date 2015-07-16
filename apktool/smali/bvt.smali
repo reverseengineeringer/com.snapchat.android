@@ -1,57 +1,20 @@
-.class public final Lbvt;
+.class public interface abstract Lbvt;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Serializable;
 
+# virtual methods
+.method public abstract a(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
+.end method
 
-# instance fields
-.field public a:Ljava/lang/String;
+.method public abstract a(Lin/srain/cube/views/ptr/PtrFrameLayout;ZBIIFF)V
+.end method
 
-.field public b:Ljava/lang/String;
+.method public abstract b(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
+.end method
 
-.field public c:Ljava/lang/String;
+.method public abstract c(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
+.end method
 
-.field public d:Ljava/lang/String;
-
-.field public e:Ljava/lang/String;
-
-.field public f:Ljava/lang/String;
-
-.field public g:I
-
-.field public h:Ljava/lang/String;
-
-.field public i:I
-
-.field public j:Ljava/lang/String;
-
-.field public k:Ljava/lang/String;
-
-.field public l:Ljava/lang/String;
-
-.field public m:Ljava/lang/String;
-
-.field public n:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbvs;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+.method public abstract d(Lin/srain/cube/views/ptr/PtrFrameLayout;)V
 .end method

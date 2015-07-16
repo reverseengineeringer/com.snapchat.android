@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 100
+    .line 102
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
 
     const-string v1, "PREVIEW"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;->PREVIEW:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
 
-    .line 101
+    .line 103
     new-instance v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
 
     const-string v1, "STORY"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;->STORY:Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
 
-    .line 99
+    .line 101
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 101
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 99
+    .line 101
     const-class v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -111,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 99
+    .line 101
     sget-object v0, Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;->$VALUES:[Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/CameraEventAnalytics$SaveSnapContext;->clone()Ljava/lang/Object;

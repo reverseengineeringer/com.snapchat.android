@@ -1,29 +1,29 @@
 package com.snapchat.android.fragments.cash;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import java.util.List;
-import qv;
-import qv.a;
+import rl;
+import rl.a;
 
 final class CashSettingsFragment$5$1$1
-  implements qv.a
+  implements rl.a
 {
   CashSettingsFragment$5$1$1(CashSettingsFragment.5.1 param1) {}
   
-  public final void a(@cgb qv paramqv) {}
+  public final void a(@chc rl paramrl) {}
   
-  public final void a(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean)
+  public final void a(@chc rl paramrl, @chd List<rl> paramList, boolean paramBoolean)
   {
     CashSettingsFragment.a(a.a.a, null);
   }
   
-  public final void b(@cgb qv paramqv)
+  public final void b(@chc rl paramrl)
   {
     CashSettingsFragment.a(a.a.a, Integer.valueOf(2131492954));
   }
   
-  public final void b(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean)
+  public final void b(@chc rl paramrl, @chd List<rl> paramList, boolean paramBoolean)
   {
     CashSettingsFragment.a(a.a.a, Integer.valueOf(2131492954));
   }

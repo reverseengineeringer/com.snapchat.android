@@ -1,42 +1,42 @@
 package com.snapchat.android.fragments.verification;
 
-import amk;
-import anf;
-import aok;
-import aol;
-import aud;
-import bkt;
+import anh;
+import aoc;
+import apg;
+import aph;
+import avb;
+import blu;
 import com.snapchat.android.util.AlertDialogUtils;
 import java.util.Set;
 
 final class PhoneVerificationFragment$1
-  implements aok
+  implements apg
 {
   PhoneVerificationFragment$1(PhoneVerificationFragment paramPhoneVerificationFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
-    bkt localbkt;
+    int i = aph.a(paramanh);
+    blu localblu;
     if (PhoneVerificationFragment.a(a).contains(Integer.valueOf(i)))
     {
       PhoneVerificationFragment.a(a).remove(Integer.valueOf(i));
-      if ((paramamk instanceof anf))
+      if ((paramanh instanceof aoc))
       {
-        paramamk = (anf)paramamk;
-        localbkt = b;
+        paramanh = (aoc)paramanh;
+        localblu = b;
         if (a) {
-          AlertDialogUtils.b(a.getActivity(), a.getString(2131493561), a.getString(2131493560));
+          AlertDialogUtils.b(a.getActivity(), a.getString(2131493559), a.getString(2131493558));
         }
-        if (!aud.a(localbkt.a())) {
+        if (!avb.a(localblu.a())) {
           break label112;
         }
-        a.a(localbkt);
+        a.a(localblu);
       }
     }
     return;
     label112:
-    a.b(localbkt.b());
+    a.b(localblu.b());
   }
 }
 

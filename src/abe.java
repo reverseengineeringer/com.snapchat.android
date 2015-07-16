@@ -1,39 +1,16 @@
-import com.snapchat.android.analytics.framework.UpdateSnapsAnalyticsPlatform;
-import com.snapchat.android.database.table.DbTable;
-import com.snapchat.android.database.table.UpdateSnapsAnalyticsTable;
-import javax.inject.Provider;
-
 public final class abe
-  implements buj<UpdateSnapsAnalyticsTable>
+  extends aaw
 {
-  private final buj<DbTable<akq>> b;
-  private final Provider<UpdateSnapsAnalyticsPlatform> c;
+  private static final abe a = new abe();
   
-  static
+  private abe()
   {
-    if (!abe.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
+    super("DiscoverShareFiles", axo.DISCOVER_SHARE);
   }
   
-  private abe(buj<DbTable<akq>> parambuj, Provider<UpdateSnapsAnalyticsPlatform> paramProvider)
+  public static abe a()
   {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-  }
-  
-  public static buj<UpdateSnapsAnalyticsTable> a(buj<DbTable<akq>> parambuj, Provider<UpdateSnapsAnalyticsPlatform> paramProvider)
-  {
-    return new abe(parambuj, paramProvider);
+    return a;
   }
 }
 

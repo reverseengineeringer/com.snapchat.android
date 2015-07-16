@@ -1,278 +1,907 @@
 .class final Lboo;
-.super Lbpi;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lboo$b;,
+        Lboo$a;
+    }
+.end annotation
+
+
 # static fields
-.field private static final a:Landroid/content/UriMatcher;
+.field private static final a:[Lbom;
 
-
-# instance fields
-.field private final b:Landroid/content/Context;
+.field private static final b:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Lcay;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 6
 
     .prologue
-    const/4 v3, 0x1
-
-    .line 49
-    new-instance v0, Landroid/content/UriMatcher;
-
-    const/4 v1, -0x1
-
-    invoke-direct {v0, v1}, Landroid/content/UriMatcher;-><init>(I)V
-
-    .line 50
-    sput-object v0, Lboo;->a:Landroid/content/UriMatcher;
-
-    const-string v1, "com.android.contacts"
-
-    const-string v2, "contacts/lookup/*/#"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 51
-    sget-object v0, Lboo;->a:Landroid/content/UriMatcher;
-
-    const-string v1, "com.android.contacts"
-
-    const-string v2, "contacts/lookup/*"
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 52
-    sget-object v0, Lboo;->a:Landroid/content/UriMatcher;
-
-    const-string v1, "com.android.contacts"
-
-    const-string v2, "contacts/#/photo"
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 53
-    sget-object v0, Lboo;->a:Landroid/content/UriMatcher;
-
-    const-string v1, "com.android.contacts"
-
-    const-string v2, "contacts/#"
-
-    const/4 v3, 0x3
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 54
-    sget-object v0, Lboo;->a:Landroid/content/UriMatcher;
-
-    const-string v1, "com.android.contacts"
-
-    const-string v2, "display_photo/#"
-
-    const/4 v3, 0x4
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 55
-    return-void
-.end method
-
-.method constructor <init>(Landroid/content/Context;)V
-    .locals 0
-
-    .prologue
-    .line 59
-    invoke-direct {p0}, Lbpi;-><init>()V
-
-    .line 60
-    iput-object p1, p0, Lboo;->b:Landroid/content/Context;
-
-    .line 61
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lbpg;)Z
-    .locals 3
-
-    .prologue
-    .line 64
-    iget-object v0, p1, Lbpg;->d:Landroid/net/Uri;
-
-    .line 65
-    const-string v1, "content"
-
-    invoke-virtual {v0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget-object v1, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
-
-    .line 66
-    invoke-virtual {v1}, Landroid/net/Uri;->getHost()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lboo;->a:Landroid/content/UriMatcher;
-
-    iget-object v1, p1, Lbpg;->d:Landroid/net/Uri;
-
-    .line 67
-    invoke-virtual {v0, v1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
+    .line 46
+    const/16 v1, 0x3d
 
-.method public final b(Lbpg;)Lbpi$a;
-    .locals 5
+    new-array v1, v1, [Lbom;
 
-    .prologue
-    const/4 v1, 0x0
+    new-instance v2, Lbom;
 
-    .line 71
-    iget-object v0, p0, Lboo;->b:Landroid/content/Context;
+    sget-object v3, Lbom;->e:Lcay;
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const-string v4, ""
 
-    move-result-object v2
+    invoke-direct {v2, v3, v4}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
 
-    iget-object v0, p1, Lbpg;->d:Landroid/net/Uri;
+    aput-object v2, v1, v0
 
-    sget-object v3, Lboo;->a:Landroid/content/UriMatcher;
+    const/4 v2, 0x1
 
-    invoke-virtual {v3, v0}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
+    new-instance v3, Lbom;
 
-    move-result v3
+    sget-object v4, Lbom;->b:Lcay;
 
-    packed-switch v3, :pswitch_data_0
+    const-string v5, "GET"
 
-    new-instance v1, Ljava/lang/IllegalStateException;
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    aput-object v3, v1, v2
 
-    const-string v3, "Invalid uri: "
+    const/4 v2, 0x2
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    new-instance v3, Lbom;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    sget-object v4, Lbom;->b:Lcay;
 
-    move-result-object v0
+    const-string v5, "POST"
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
 
-    move-result-object v0
+    aput-object v3, v1, v2
 
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x3
 
-    throw v1
+    new-instance v3, Lbom;
 
-    :pswitch_0
-    invoke-static {v2, v0}, Landroid/provider/ContactsContract$Contacts;->lookupContact(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;
+    sget-object v4, Lbom;->c:Lcay;
 
-    move-result-object v0
+    const-string v5, "/"
 
-    if-nez v0, :cond_0
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
 
-    move-object v2, v1
+    aput-object v3, v1, v2
 
-    .line 72
+    const/4 v2, 0x4
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->c:Lcay;
+
+    const-string v5, "/index.html"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x5
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->d:Lcay;
+
+    const-string v5, "http"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x6
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->d:Lcay;
+
+    const-string v5, "https"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x7
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->a:Lcay;
+
+    const-string v5, "200"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x8
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->a:Lcay;
+
+    const-string v5, "204"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x9
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->a:Lcay;
+
+    const-string v5, "206"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0xa
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->a:Lcay;
+
+    const-string v5, "304"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0xb
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->a:Lcay;
+
+    const-string v5, "400"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0xc
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->a:Lcay;
+
+    const-string v5, "404"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0xd
+
+    new-instance v3, Lbom;
+
+    sget-object v4, Lbom;->a:Lcay;
+
+    const-string v5, "500"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Lcay;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0xe
+
+    new-instance v3, Lbom;
+
+    const-string v4, "accept-charset"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0xf
+
+    new-instance v3, Lbom;
+
+    const-string v4, "accept-encoding"
+
+    const-string v5, "gzip, deflate"
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x10
+
+    new-instance v3, Lbom;
+
+    const-string v4, "accept-language"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x11
+
+    new-instance v3, Lbom;
+
+    const-string v4, "accept-ranges"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x12
+
+    new-instance v3, Lbom;
+
+    const-string v4, "accept"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x13
+
+    new-instance v3, Lbom;
+
+    const-string v4, "access-control-allow-origin"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x14
+
+    new-instance v3, Lbom;
+
+    const-string v4, "age"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x15
+
+    new-instance v3, Lbom;
+
+    const-string v4, "allow"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x16
+
+    new-instance v3, Lbom;
+
+    const-string v4, "authorization"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x17
+
+    new-instance v3, Lbom;
+
+    const-string v4, "cache-control"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x18
+
+    new-instance v3, Lbom;
+
+    const-string v4, "content-disposition"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x19
+
+    new-instance v3, Lbom;
+
+    const-string v4, "content-encoding"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x1a
+
+    new-instance v3, Lbom;
+
+    const-string v4, "content-language"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x1b
+
+    new-instance v3, Lbom;
+
+    const-string v4, "content-length"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x1c
+
+    new-instance v3, Lbom;
+
+    const-string v4, "content-location"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x1d
+
+    new-instance v3, Lbom;
+
+    const-string v4, "content-range"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x1e
+
+    new-instance v3, Lbom;
+
+    const-string v4, "content-type"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x1f
+
+    new-instance v3, Lbom;
+
+    const-string v4, "cookie"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x20
+
+    new-instance v3, Lbom;
+
+    const-string v4, "date"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x21
+
+    new-instance v3, Lbom;
+
+    const-string v4, "etag"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x22
+
+    new-instance v3, Lbom;
+
+    const-string v4, "expect"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x23
+
+    new-instance v3, Lbom;
+
+    const-string v4, "expires"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x24
+
+    new-instance v3, Lbom;
+
+    const-string v4, "from"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x25
+
+    new-instance v3, Lbom;
+
+    const-string v4, "host"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x26
+
+    new-instance v3, Lbom;
+
+    const-string v4, "if-match"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x27
+
+    new-instance v3, Lbom;
+
+    const-string v4, "if-modified-since"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x28
+
+    new-instance v3, Lbom;
+
+    const-string v4, "if-none-match"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x29
+
+    new-instance v3, Lbom;
+
+    const-string v4, "if-range"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2a
+
+    new-instance v3, Lbom;
+
+    const-string v4, "if-unmodified-since"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2b
+
+    new-instance v3, Lbom;
+
+    const-string v4, "last-modified"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2c
+
+    new-instance v3, Lbom;
+
+    const-string v4, "link"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2d
+
+    new-instance v3, Lbom;
+
+    const-string v4, "location"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2e
+
+    new-instance v3, Lbom;
+
+    const-string v4, "max-forwards"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x2f
+
+    new-instance v3, Lbom;
+
+    const-string v4, "proxy-authenticate"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x30
+
+    new-instance v3, Lbom;
+
+    const-string v4, "proxy-authorization"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x31
+
+    new-instance v3, Lbom;
+
+    const-string v4, "range"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x32
+
+    new-instance v3, Lbom;
+
+    const-string v4, "referer"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x33
+
+    new-instance v3, Lbom;
+
+    const-string v4, "refresh"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x34
+
+    new-instance v3, Lbom;
+
+    const-string v4, "retry-after"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x35
+
+    new-instance v3, Lbom;
+
+    const-string v4, "server"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x36
+
+    new-instance v3, Lbom;
+
+    const-string v4, "set-cookie"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x37
+
+    new-instance v3, Lbom;
+
+    const-string v4, "strict-transport-security"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x38
+
+    new-instance v3, Lbom;
+
+    const-string v4, "transfer-encoding"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x39
+
+    new-instance v3, Lbom;
+
+    const-string v4, "user-agent"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x3a
+
+    new-instance v3, Lbom;
+
+    const-string v4, "vary"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x3b
+
+    new-instance v3, Lbom;
+
+    const-string v4, "via"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x3c
+
+    new-instance v3, Lbom;
+
+    const-string v4, "www-authenticate"
+
+    const-string v5, ""
+
+    invoke-direct {v3, v4, v5}, Lbom;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    aput-object v3, v1, v2
+
+    sput-object v1, Lboo;->a:[Lbom;
+
+    .line 357
+    new-instance v1, Ljava/util/LinkedHashMap;
+
+    sget-object v2, Lboo;->a:[Lbom;
+
+    array-length v2, v2
+
+    invoke-direct {v1, v2}, Ljava/util/LinkedHashMap;-><init>(I)V
+
     :goto_0
-    if-eqz v2, :cond_2
+    sget-object v2, Lboo;->a:[Lbom;
 
-    new-instance v0, Lbpi$a;
+    array-length v2, v2
 
-    sget-object v1, Lbpd$d;->b:Lbpd$d;
+    if-ge v0, v2, :cond_1
 
-    invoke-direct {v0, v2, v1}, Lbpi$a;-><init>(Ljava/io/InputStream;Lbpd$d;)V
+    sget-object v2, Lboo;->a:[Lbom;
 
-    :goto_1
-    return-object v0
+    aget-object v2, v2, v0
 
-    .line 71
+    iget-object v2, v2, Lbom;->h:Lcay;
+
+    invoke-interface {v1, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    sget-object v2, Lboo;->a:[Lbom;
+
+    aget-object v2, v2, v0
+
+    iget-object v2, v2, Lbom;->h:Lcay;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     :cond_0
-    :pswitch_1
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v4, 0xe
-
-    if-ge v3, v4, :cond_1
-
-    invoke-static {v2, v0}, Landroid/provider/ContactsContract$Contacts;->openContactPhotoInputStream(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;
-
-    move-result-object v0
-
-    move-object v2, v0
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v3, 0x1
-
-    invoke-static {v2, v0, v3}, Landroid/provider/ContactsContract$Contacts;->openContactPhotoInputStream(Landroid/content/ContentResolver;Landroid/net/Uri;Z)Ljava/io/InputStream;
+    invoke-static {v1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    move-object v2, v0
+    sput-object v0, Lboo;->b:Ljava/util/Map;
+
+    return-void
+.end method
+
+.method static synthetic a(Lcay;)Lcay;
+    .locals 4
+
+    .prologue
+    .line 40
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcay;->c:[B
+
+    array-length v1, v1
+
+    :goto_0
+    if-ge v0, v1, :cond_1
+
+    iget-object v2, p0, Lcay;->c:[B
+
+    aget-byte v2, v2, v0
+
+    const/16 v3, 0x41
+
+    if-lt v2, v3, :cond_0
+
+    const/16 v3, 0x5a
+
+    if-gt v2, v3, :cond_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "PROTOCOL_ERROR response malformed: mixed case name: "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcay;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :pswitch_2
-    invoke-virtual {v2, v0}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+    :cond_1
+    return-object p0
+.end method
 
-    move-result-object v0
+.method static synthetic a()[Lbom;
+    .locals 1
 
-    move-object v2, v0
+    .prologue
+    .line 40
+    sget-object v0, Lboo;->a:[Lbom;
 
-    goto :goto_0
+    return-object v0
+.end method
 
-    :cond_2
-    move-object v0, v1
+.method static synthetic b()Ljava/util/Map;
+    .locals 1
 
-    .line 72
-    goto :goto_1
+    .prologue
+    .line 40
+    sget-object v0, Lboo;->b:Ljava/util/Map;
 
-    .line 71
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    return-object v0
 .end method

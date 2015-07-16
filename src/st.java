@@ -1,32 +1,65 @@
-import javax.inject.Provider;
+import android.text.TextUtils;
+import com.google.gson.annotations.SerializedName;
 
 public final class st
-  implements buj<ss>
+  extends sx<st.b>
 {
-  private final Provider<xr> mCashCardManagerProvider;
-  private final buj<sq> supertypeInjector;
+  final String mExpiration;
+  final String mPan;
+  private final String mPaymentId;
+  final String mPostalCode;
+  final String mSecurityCode;
   
-  static
+  public st(@chd String paramString1, @chc String paramString2, @chc String paramString3, @chc String paramString4, @chc String paramString5, @chc sx.a parama)
   {
-    if (!st.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
+    super(parama);
+    mPan = paramString2;
+    mExpiration = paramString3;
+    mSecurityCode = paramString4;
+    mPostalCode = paramString5;
+    mPaymentId = paramString1;
+    registerCallback(st.b.class, this);
+  }
+  
+  public st(@chc String paramString1, @chc String paramString2, @chc String paramString3, @chc String paramString4, @chc sx.a parama)
+  {
+    this(null, paramString1, paramString2, paramString3, paramString4, parama);
+  }
+  
+  public final String a()
+  {
+    if (!TextUtils.isEmpty(mPaymentId)) {
+      return "cash/payments/" + mPaymentId + "/card";
     }
+    return "cash/card";
   }
   
-  private st(buj<sq> parambuj, Provider<xr> paramProvider)
+  public final Object getRequestPayload()
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mCashCardManagerProvider = paramProvider;
+    return new st.a();
   }
   
-  public static buj<ss> a(buj<sq> parambuj, Provider<xr> paramProvider)
+  @un
+  final class a
   {
-    return new st(parambuj, paramProvider);
+    @SerializedName("expiration")
+    final String expiration = mExpiration;
+    @SerializedName("pan")
+    final String pan = mPan;
+    @SerializedName("postal_code")
+    final String postalCode = mPostalCode;
+    @SerializedName("security_code")
+    final String securityCode = mSecurityCode;
+    
+    a() {}
+  }
+  
+  public static class b
+    extends sy
+  {
+    @SerializedName("card_token")
+    @chd
+    public String cardToken;
   }
 }
 

@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 1475
+    .line 1519
     invoke-static {}, Lcom/snapchat/android/api2/chat/LoadConversationPageTask$TaskStatus;->values()[Lcom/snapchat/android/api2/chat/LoadConversationPageTask$TaskStatus;
 
     move-result-object v0

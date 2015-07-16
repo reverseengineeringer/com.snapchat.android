@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.view.KeyEvent;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 final class TransportMediatorJellybeanMR2$3
   extends BroadcastReceiver
@@ -12,6 +14,8 @@ final class TransportMediatorJellybeanMR2$3
   
   public final void onReceive(Context paramContext, Intent paramIntent)
   {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     try
     {
       paramContext = (KeyEvent)paramIntent.getParcelableExtra("android.intent.extra.KEY_EVENT");

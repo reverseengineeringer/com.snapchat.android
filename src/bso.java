@@ -1,17 +1,7 @@
-public final class bso
-  extends bss
+public abstract interface bso
+  extends bsn
 {
-  private Runnable a;
-  
-  public bso(Runnable paramRunnable)
-  {
-    a = paramRunnable;
-  }
-  
-  public final void a()
-  {
-    a.run();
-  }
+  public abstract String a();
 }
 
 /* Location:

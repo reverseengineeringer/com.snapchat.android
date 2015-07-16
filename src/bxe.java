@@ -1,14 +1,16 @@
+import android.os.AsyncTask;
+import android.os.Build.VERSION;
+
 public final class bxe
 {
-  final bxg a;
-  final String b;
-  final bzq c;
-  
-  public bxe(bxg parambxg, String paramString, bzq parambzq)
+  public static void a(AsyncTask<Void, ?, ?> paramAsyncTask)
   {
-    a = parambxg;
-    b = paramString;
-    c = parambzq;
+    if (Build.VERSION.SDK_INT <= 12)
+    {
+      paramAsyncTask.execute(new Void[0]);
+      return;
+    }
+    paramAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
   }
 }
 

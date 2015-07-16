@@ -1,52 +1,47 @@
-import android.location.Location;
-import com.google.android.gms.maps.model.LatLng;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
+import com.snapchat.android.model.GeofilterMarkup;
 
 public final class aiu
+  implements air<String, GeofilterMarkup>
 {
-  public final String mId;
-  final List<LatLng> mPoints = new ArrayList();
+  private String a;
+  private Typeface b;
+  private GeofilterMarkup c;
   
-  public aiu(@cgb bhz parambhz)
+  public aiu(String paramString, Typeface paramTypeface, GeofilterMarkup paramGeofilterMarkup)
   {
-    mId = parambhz.a();
-    parambhz = parambhz.b().iterator();
-    while (parambhz.hasNext())
-    {
-      bhp localbhp = (bhp)parambhz.next();
-      mPoints.add(new LatLng(localbhp.a().doubleValue(), localbhp.b().doubleValue()));
-    }
+    a = paramString;
+    b = paramTypeface;
+    c = paramGeofilterMarkup;
   }
   
-  public final boolean a(@cgb Location paramLocation)
+  public final void a(Bitmap paramBitmap)
   {
-    double d2 = 0.0D;
-    int i = 0;
-    if (i < mPoints.size())
-    {
-      LatLng localLatLng2 = (LatLng)mPoints.get(i);
-      LatLng localLatLng1 = (LatLng)mPoints.get((i + 1) % mPoints.size());
-      localLatLng2 = new LatLng(latitude - paramLocation.getLatitude(), longitude - paramLocation.getLongitude());
-      localLatLng1 = new LatLng(latitude - paramLocation.getLatitude(), longitude - paramLocation.getLongitude());
-      double d1 = Math.atan2(longitude, latitude);
-      double d3 = (Math.atan2(longitude, latitude) - d1) % 6.283185307179586D;
-      if (d3 >= 3.141592653589793D) {
-        d1 = d3 - 6.283185307179586D;
-      }
-      for (;;)
-      {
-        d2 += d1;
-        i += 1;
-        break;
-        d1 = d3;
-        if (d3 < -3.141592653589793D) {
-          d1 = d3 + 6.283185307179586D;
-        }
-      }
+    if (paramBitmap == null) {
+      return;
     }
-    return Math.abs(d2) >= 3.141592653589793D;
+    Canvas localCanvas = new Canvas(paramBitmap);
+    Paint localPaint = new Paint(1);
+    ajt localajt = c.layoutParameters;
+    Object localObject = c.displayParameters;
+    localPaint.setColor(Color.parseColor(color));
+    localPaint.setTextSize(size);
+    localPaint.setTypeface(b);
+    localObject = new Rect();
+    localPaint.getTextBounds(a, 0, a.length(), (Rect)localObject);
+    int i = (int)(xOffset * paramBitmap.getWidth());
+    int j = (int)(yOffset * paramBitmap.getHeight());
+    int k = ((Rect)localObject).width() / 2;
+    int m = ((Rect)localObject).height() / 2;
+    localCanvas.save();
+    localCanvas.rotate(rotation, k + i, m + j);
+    localCanvas.drawText(a, i, j, localPaint);
+    localCanvas.restore();
   }
 }
 

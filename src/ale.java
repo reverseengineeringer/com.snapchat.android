@@ -1,119 +1,70 @@
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
+import android.content.res.Resources;
 import com.snapchat.android.SnapchatApplication;
-import java.util.HashSet;
-import java.util.Set;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.model.chat.ChatFeedItem.FeedIconPriority;
+import com.snapchat.android.model.chat.StatefulChatFeedItem;
 
 public final class ale
+  extends akw
 {
-  private static ale d = new ale();
-  public final Object a = new Object();
-  public final Set<ald> b = new HashSet();
-  public NetworkInfo c;
-  private final ConnectivityManager e;
-  private final WifiManager f;
+  private static final String TYPE = "unknown";
   
-  private ale()
+  private ale(ale.a parama)
   {
-    this(SnapchatApplication.b());
+    super(parama);
+    D();
   }
   
-  private ale(Context paramContext) {}
-  
-  private ale(ConnectivityManager paramConnectivityManager, WifiManager paramWifiManager)
+  public ale(bif parambif)
   {
-    e = paramConnectivityManager;
-    f = paramWifiManager;
+    super(parambif);
+    D();
   }
   
-  public static ale a()
+  private void D()
   {
-    return d;
+    mStatusText = auv.a(null, 2131493577, new Object[] { mSender });
   }
   
-  public static String a(NetworkInfo paramNetworkInfo)
+  public final void C_() {}
+  
+  public final boolean Q()
   {
-    if (paramNetworkInfo != null) {
-      return paramNetworkInfo.toString();
-    }
-    return "None";
+    return true;
   }
   
-  public final void a(ald paramald)
+  public final String a()
   {
-    synchronized (a)
-    {
-      b.add(paramald);
-      return;
-    }
+    return SnapchatApplication.b().getResources().getString(2131493519);
   }
   
-  @cgc
-  public final NetworkInfo b()
+  public final int b(ChatConversation paramChatConversation)
   {
-    synchronized (a)
-    {
-      c = e.getActiveNetworkInfo();
-      NetworkInfo localNetworkInfo = c;
-      return localNetworkInfo;
-    }
+    return ChatFeedItem.FeedIconPriority.MOST_RECENT.ordinal();
   }
   
-  public final void b(ald paramald)
+  public final boolean c()
   {
-    synchronized (a)
-    {
-      b.remove(paramald);
-      return;
-    }
-  }
-  
-  @cgc
-  public final WifiInfo c()
-  {
-    Object localObject2 = a;
-    WifiInfo localWifiInfo = null;
-    try
-    {
-      if (e()) {
-        localWifiInfo = f.getConnectionInfo();
-      }
-      return localWifiInfo;
-    }
-    finally {}
-  }
-  
-  public final boolean d()
-  {
-    NetworkInfo localNetworkInfo = b();
-    return (localNetworkInfo != null) && (localNetworkInfo.isConnected());
+    return false;
   }
   
   public final boolean e()
   {
-    NetworkInfo localNetworkInfo = b();
-    return (localNetworkInfo != null) && (localNetworkInfo.isConnected()) && (localNetworkInfo.getType() == 1);
+    return true;
   }
   
-  @cgb
-  public final String f()
+  public final String h()
   {
-    NetworkInfo localNetworkInfo = b();
-    String str = "unknown";
-    if ((localNetworkInfo != null) && (localNetworkInfo.isConnectedOrConnecting()))
+    return "unknown";
+  }
+  
+  public static final class a
+    extends akw.a
+  {
+    public a(String paramString1, String paramString2)
     {
-      if (localNetworkInfo.getType() == 1) {
-        str = "wifi";
-      }
-      while (localNetworkInfo.getType() != 0) {
-        return str;
-      }
-      return "wwan";
+      super(paramString2);
     }
-    return "not_reachable";
   }
 }
 

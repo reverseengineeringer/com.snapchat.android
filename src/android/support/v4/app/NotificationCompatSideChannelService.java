@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build.VERSION;
 import android.os.IBinder;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public abstract class NotificationCompatSideChannelService
   extends Service
@@ -37,6 +39,13 @@ public abstract class NotificationCompatSideChannelService
       return null;
     }
     return new NotificationSideChannelStub((byte)0);
+  }
+  
+  public void onCreate()
+  {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
+    super.onCreate();
   }
   
   final class NotificationSideChannelStub

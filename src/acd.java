@@ -1,15 +1,38 @@
+import com.snapchat.android.database.table.FriendTable;
+import com.snapchat.android.model.Friend;
+import java.util.Collection;
+
 public final class acd
+  extends FriendTable
 {
-  public final ajt a;
+  private static acd a;
   
-  public acd()
+  public static acd a()
   {
-    this(ajt.a());
+    try
+    {
+      if (a == null) {
+        a = new acd();
+      }
+      acd localacd = a;
+      return localacd;
+    }
+    finally {}
   }
   
-  private acd(ajt paramajt)
+  protected final Collection<Friend> a(akp paramakp)
   {
-    a = paramajt;
+    return paramakp.s();
+  }
+  
+  public final void b(akp paramakp)
+  {
+    paramakp.b(a(null, g()));
+  }
+  
+  public final String c()
+  {
+    return "SuggestedFriendsTable";
   }
 }
 

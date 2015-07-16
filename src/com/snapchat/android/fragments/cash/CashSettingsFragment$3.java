@@ -1,8 +1,8 @@
 package com.snapchat.android.fragments.cash;
 
-import ajx;
+import akr;
 import android.widget.ProgressBar;
-import ban;
+import bbo;
 import com.snapchat.android.util.eventbus.ShowDialogEvent;
 import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
 import com.squareup.otto.Bus;
@@ -15,14 +15,14 @@ final class CashSettingsFragment$3
   public final void run()
   {
     CashSettingsFragment.a(b).setVisibility(8);
-    if (ajx.ar()) {
+    if (akr.aq()) {
       CashSettingsFragment.f(b);
     }
     for (;;)
     {
       CashSettingsFragment.h(b);
       if (a != null) {
-        ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, a.intValue()));
+        bbo.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, a.intValue()));
       }
       return;
       CashSettingsFragment.g(b);

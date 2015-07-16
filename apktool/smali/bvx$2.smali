@@ -1,9 +1,6 @@
 .class final Lbvx$2;
-.super Ljava/lang/Object;
+.super Landroid/view/animation/Animation;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
@@ -18,99 +15,106 @@
 
 
 # instance fields
-.field final synthetic a:Lorg/json/JSONArray;
+.field final synthetic a:Lbvx$c;
 
 .field final synthetic b:Lbvx;
 
 
 # direct methods
-.method constructor <init>(Lbvx;Lorg/json/JSONArray;)V
+.method constructor <init>(Lbvx;Lbvx$c;)V
     .locals 0
 
     .prologue
-    .line 121
+    .line 328
     iput-object p1, p0, Lbvx$2;->b:Lbvx;
 
-    iput-object p2, p0, Lbvx$2;->a:Lorg/json/JSONArray;
+    iput-object p2, p0, Lbvx$2;->a:Lbvx$c;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
+.method public final applyTransformation(FLandroid/view/animation/Transformation;)V
+    .locals 4
 
     .prologue
-    .line 123
-    iget-object v0, p0, Lbvx$2;->b:Lbvx;
+    .line 332
+    iget-object v0, p0, Lbvx$2;->a:Lbvx$c;
 
-    invoke-static {v0}, Lbvx;->a(Lbvx;)Landroid/app/Activity;
+    iget v0, v0, Lbvx$c;->n:F
 
-    move-result-object v0
+    const v1, 0x3f4ccccd    # 0.8f
 
-    const-string v1, "[]"
+    div-float/2addr v0, v1
 
-    invoke-static {v0, v1}, Lbwl;->a(Landroid/content/Context;Ljava/lang/String;)V
+    float-to-double v0, v0
 
-    .line 127
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
-    iget-object v1, p0, Lbvx$2;->b:Lbvx;
+    move-result-wide v0
 
-    invoke-static {v1}, Lbvx;->a(Lbvx;)Landroid/app/Activity;
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
-    move-result-object v1
+    add-double/2addr v0, v2
 
-    invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    double-to-float v0, v0
 
-    .line 128
-    invoke-static {}, Lbwk;->a()Ljava/lang/Boolean;
+    .line 334
+    iget-object v1, p0, Lbvx$2;->a:Lbvx$c;
 
-    move-result-object v1
+    iget v1, v1, Lbvx$c;->l:F
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v2, p0, Lbvx$2;->a:Lbvx$c;
 
-    move-result v1
+    iget v2, v2, Lbvx$c;->m:F
 
-    if-eqz v1, :cond_0
+    iget-object v3, p0, Lbvx$2;->a:Lbvx$c;
 
-    invoke-static {v0}, Lbwk;->a(Ljava/lang/ref/WeakReference;)Ljava/lang/Boolean;
+    iget v3, v3, Lbvx$c;->l:F
 
-    move-result-object v0
+    sub-float/2addr v2, v3
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    mul-float/2addr v2, p1
 
-    move-result v0
+    add-float/2addr v1, v2
 
-    if-eqz v0, :cond_0
+    .line 337
+    iget-object v2, p0, Lbvx$2;->a:Lbvx$c;
 
-    .line 129
-    iget-object v0, p0, Lbvx$2;->b:Lbvx;
+    invoke-virtual {v2, v1}, Lbvx$c;->a(F)V
 
-    iget-object v1, p0, Lbvx$2;->a:Lorg/json/JSONArray;
+    .line 338
+    iget-object v1, p0, Lbvx$2;->a:Lbvx$c;
 
-    invoke-static {v0, v1}, Lbvx;->a(Lbvx;Lorg/json/JSONArray;)V
+    iget v1, v1, Lbvx$c;->n:F
 
-    .line 134
-    :goto_0
+    iget-object v2, p0, Lbvx$2;->a:Lbvx$c;
+
+    iget v2, v2, Lbvx$c;->n:F
+
+    sub-float/2addr v0, v2
+
+    mul-float/2addr v0, p1
+
+    add-float/2addr v0, v1
+
+    .line 340
+    iget-object v1, p0, Lbvx$2;->a:Lbvx$c;
+
+    invoke-virtual {v1, v0}, Lbvx$c;->c(F)V
+
+    .line 341
+    iget-object v0, p0, Lbvx$2;->a:Lbvx$c;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    sub-float/2addr v1, p1
+
+    invoke-virtual {v0, v1}, Lbvx$c;->d(F)V
+
+    .line 342
     return-void
-
-    .line 132
-    :cond_0
-    iget-object v0, p0, Lbvx$2;->b:Lbvx;
-
-    iget-object v1, p0, Lbvx$2;->a:Lorg/json/JSONArray;
-
-    const/4 v2, 0x0
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lbvx;->a(Lbvx;Lorg/json/JSONArray;Ljava/lang/Boolean;)V
-
-    goto :goto_0
 .end method

@@ -1,65 +1,70 @@
-import android.graphics.Bitmap;
+import android.text.TextUtils;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.model.Snap.ClientSnapStatus;
+import java.util.Locale;
 
 public final class ajj
-  extends aim
+  extends aka
 {
-  private static final int JPEG_ENCODING_QUALITY = 60;
-  private final nq mSnapbryoAnalytics;
+  public String mActionText;
+  public String mActionUrl;
+  private boolean mHideTimer;
+  public String mMediaUrl;
   
-  protected ajj(ajj.a parama)
+  ajj() {}
+  
+  public ajj(String paramString1, long paramLong1, long paramLong2, int paramInt, boolean paramBoolean1, Snap.ClientSnapStatus paramClientSnapStatus, String paramString2, double paramDouble, String paramString3, String paramString4, String paramString5, String paramString6, boolean paramBoolean2, String paramString7)
   {
-    super(parama);
-    mSnapbryoAnalytics = mSnapbryoAnalytics;
+    super(paramString1, paramLong1, paramLong2, paramLong1, paramInt, paramBoolean1, paramClientSnapStatus, paramString2, paramDouble, paramString3, false, paramString7);
+    SnapchatApplication.b().c().a(this);
+    mMediaUrl = paramString4;
+    mActionText = paramString5;
+    mActionUrl = paramString6;
+    mHideTimer = paramBoolean2;
   }
   
-  private ajj n()
+  protected final int a(int paramInt)
   {
-    return ((ajj.a)new ajj.a().a(this)).c();
+    return paramInt;
   }
   
-  @cgc
-  public final byte[] g()
+  public final String a()
   {
-    Bitmap localBitmap = mCompositeImageBitmap;
-    if (localBitmap == null)
-    {
-      nq.a(this, "Null Composite Image Bitmap");
-      return null;
+    if ((A()) && (!TextUtils.isEmpty(mActionText))) {
+      return mActionText;
     }
-    localBitmap = aur.e(localBitmap);
-    if (localBitmap == null)
-    {
-      nq.a(this, "Null Composite Image Bitmap after SnapMediaUtils.downscaleBitmapForUpload");
-      return null;
+    return super.a();
+  }
+  
+  public final String b()
+  {
+    if ((A()) && (!TextUtils.isEmpty(mActionText))) {
+      return mActionText.toUpperCase(Locale.getDefault());
     }
-    return aur.b(localBitmap);
+    return super.b();
   }
   
-  public final int h()
+  public final boolean c()
   {
-    return 0;
-  }
-  
-  public final void i() {}
-  
-  public final boolean m()
-  {
-    return false;
-  }
-  
-  public static final class a
-    extends aim.a<a>
-  {
-    nq mSnapbryoAnalytics;
-    
-    public final ajj c()
-    {
-      super.a();
-      if (mSnapbryoAnalytics == null) {
-        mSnapbryoAnalytics = new nq();
-      }
-      return new ajj(this);
+    if ((A()) && (!TextUtils.isEmpty(mActionText))) {
+      return true;
     }
+    return super.c();
+  }
+  
+  public final boolean e()
+  {
+    return mHideTimer;
+  }
+  
+  public final boolean f()
+  {
+    return (super.f()) || ((A()) && (!TextUtils.isEmpty(mActionText)));
+  }
+  
+  public final void z_()
+  {
+    o();
   }
 }
 

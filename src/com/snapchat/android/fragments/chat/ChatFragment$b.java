@@ -2,10 +2,10 @@ package com.snapchat.android.fragments.chat;
 
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
-import bfd;
+import bgd;
 import com.snapchat.android.model.chat.ChatFeedItem;
 import com.snapchat.android.ui.LockingAboveTheFoldListView;
-import yi;
+import ze;
 
 final class ChatFragment$b
   implements AbsListView.OnScrollListener
@@ -26,7 +26,7 @@ final class ChatFragment$b
       for (paramAbsListView = (ChatFeedItem)ChatFragment.e(a).getItemAtPosition(i);; paramAbsListView = null)
       {
         ChatFragment.n(a);
-        if (((!yi.a(localChatFeedItem, paramAbsListView)) && (!ChatFragment.n(a).b())) || (bfd.a(ChatFragment.e(a))) || (bfd.b(ChatFragment.e(a))))
+        if (((!ze.a(localChatFeedItem, paramAbsListView)) && (!ChatFragment.n(a).b())) || (bgd.a(ChatFragment.e(a))) || (bgd.b(ChatFragment.e(a))))
         {
           ChatFragment.A(a);
           ChatFragment.n(a).a();

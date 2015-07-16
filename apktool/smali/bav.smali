@@ -1,53 +1,182 @@
 .class public final Lbav;
-.super Ljava/lang/Object;
+.super Lbwc;
 .source "SourceFile"
 
 
 # instance fields
-.field public mBrightness:F
+.field public mOnCreateMillis:J
+
+.field public mOnResumeCycles:I
+
+.field public mOnResumeMillis:J
 
 
 # direct methods
-.method public constructor <init>(F)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 12
-    const/4 v0, 0x0
+    invoke-direct {p0}, Lbwc;-><init>()V
 
-    cmpg-float v0, p1, v0
+    return-void
+.end method
 
-    if-ltz v0, :cond_0
 
-    const/high16 v0, 0x3f800000    # 1.0f
+# virtual methods
+.method public final a()Z
+    .locals 1
 
-    cmpl-float v0, p1, v0
+    .prologue
+    .line 29
+    const/4 v0, 0x1
 
-    if-lez v0, :cond_1
+    return v0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 8
+
+    .prologue
+    const-wide/16 v6, 0x0
+
+    .line 34
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    .line 35
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 37
+    iget-wide v4, p0, Lbav;->mOnCreateMillis:J
+
+    cmp-long v3, v4, v6
+
+    if-eqz v3, :cond_0
+
+    .line 38
+    const-string v3, "Millis since onCreate: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 39
+    iget-wide v4, p0, Lbav;->mOnCreateMillis:J
+
+    sub-long v4, v0, v4
+
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 40
+    const-string v3, "\n"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 43
+    :cond_0
+    iget-wide v4, p0, Lbav;->mOnResumeMillis:J
+
+    cmp-long v3, v4, v6
+
+    if-eqz v3, :cond_1
+
+    .line 44
+    const-string v3, "Millis since onResume: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 45
+    iget-wide v4, p0, Lbav;->mOnResumeMillis:J
+
+    sub-long/2addr v0, v4
+
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 46
+    const-string v0, "\n"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 49
+    :cond_1
+    iget v0, p0, Lbav;->mOnResumeCycles:I
+
+    if-eqz v0, :cond_2
+
+    .line 50
+    const-string v0, "Number of onResume cycles: "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 51
+    iget v0, p0, Lbav;->mOnResumeCycles:I
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 52
+    const-string v0, "\n"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 55
+    :cond_2
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 61
+    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 62
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 65
+    :goto_0
+    return-object v0
 
     :cond_0
-    const/high16 v0, -0x40800000    # -1.0f
+    const/4 v0, 0x0
 
-    cmpl-float v0, p1, v0
+    goto :goto_0
+.end method
 
-    if-eqz v0, :cond_1
+.method public final d()Ljava/lang/String;
+    .locals 1
 
-    .line 13
-    new-instance v0, Ljava/lang/RuntimeException;
+    .prologue
+    .line 71
+    invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
 
-    const-string v1, "Brightness must be a float between 0 and 1, or WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE"
+    move-result v0
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    if-eqz v0, :cond_0
 
-    throw v0
+    .line 72
+    invoke-static {}, Lakr;->G()Ljava/lang/String;
 
-    .line 15
-    :cond_1
-    iput p1, p0, Lbav;->mBrightness:F
+    move-result-object v0
 
-    .line 16
-    return-void
+    .line 75
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

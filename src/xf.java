@@ -1,4 +1,11 @@
-public final class xf {}
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+@Singleton
+public final class xf
+{
+  public boolean a = false;
+}
 
 /* Location:
  * Qualified Name:     xf

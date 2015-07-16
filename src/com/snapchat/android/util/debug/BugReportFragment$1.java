@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
-import auc;
+import ava;
 import com.snapchat.android.util.AlertDialogUtils;
 
 final class BugReportFragment$1
@@ -25,7 +25,7 @@ final class BugReportFragment$1
     }
     paramView = new AlertDialog.Builder(BugReportFragment.c(this$0));
     final EditText localEditText = new EditText(BugReportFragment.c(this$0));
-    final String str = auc.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL");
+    final String str = ava.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL");
     if (str != null)
     {
       localEditText.setText(str);
@@ -41,7 +41,7 @@ final class BugReportFragment$1
           if (paramAnonymousDialogInterface.endsWith("@snapchat.com"))
           {
             if (!paramAnonymousDialogInterface.equals(str)) {
-              auc.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL", paramAnonymousDialogInterface);
+              ava.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL", paramAnonymousDialogInterface);
             }
             BugReportFragment.b(this$0).setText(paramAnonymousDialogInterface);
             BugReportFragment.a(this$0, true);

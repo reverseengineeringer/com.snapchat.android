@@ -1,42 +1,33 @@
-import java.io.OutputStream;
-import org.json.JSONArray;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 
 public final class bru
-  extends brh
 {
-  public static final bru a = new bru("session_start");
-  private String b;
-  private String c;
-  private String d = brv.a.a();
+  public String a = "1.0";
+  public int b = 0;
   
-  public bru(String paramString)
+  public bru(Context paramContext, ba paramba)
   {
-    this(paramString, btj.a.a());
-  }
-  
-  private bru(String paramString1, String paramString2)
-  {
-    String str = paramString1;
-    if (paramString1.length() > 140) {
-      str = paramString1.substring(0, 140);
+    try
+    {
+      paramContext = paramContext.getPackageManager().getPackageInfo(paramContext.getPackageName(), 0);
+      a = versionName;
+      b = versionCode;
+      paramContext = a;
+      if ((paramContext != null) && (paramContext.length() > 0)) {
+        a = paramContext;
+      }
+      if (c) {
+        a = (a + "-" + Integer.toString(b));
+      }
+      return;
     }
-    b = str;
-    c = paramString2;
-  }
-  
-  public final void a(OutputStream paramOutputStream)
-  {
-    Object localObject = new JSONArray();
-    ((JSONArray)localObject).put(b);
-    ((JSONArray)localObject).put(c);
-    localObject = ((JSONArray)localObject).toString();
-    btd.b();
-    paramOutputStream.write(((String)localObject).getBytes());
-  }
-  
-  public final String b()
-  {
-    return d;
+    catch (PackageManager.NameNotFoundException paramContext)
+    {
+      for (;;) {}
+    }
   }
 }
 

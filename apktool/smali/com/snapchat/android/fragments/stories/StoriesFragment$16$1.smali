@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 519
+    .line 518
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16$1;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment$16;
 
     iput-boolean p2, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16$1;->a:Z
@@ -44,74 +44,65 @@
     .locals 2
 
     .prologue
-    .line 522
+    .line 521
     iget-boolean v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16$1;->a:Z
 
     if-eqz v0, :cond_0
+
+    .line 522
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16$1;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment$16;
+
+    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->f(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->setFilled(Z)V
 
     .line 523
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16$1;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment$16;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->g(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->f(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->a()V
-
-    .line 524
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16$1;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment$16;
-
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->g(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
-
-    move-result-object v0
-
-    const-string v1, "Pulsing"
+    const-string v1, "Filled"
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 529
+    .line 528
     :goto_0
     return-void
 
-    .line 526
+    .line 525
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16$1;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment$16;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->g(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->f(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
 
     move-result-object v0
 
-    iget-boolean v1, v0, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->a:Z
-
-    if-eqz v1, :cond_1
-
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->a:Z
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->setFilled(Z)V
 
-    iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->b:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->invalidate()V
-
-    .line 527
-    :cond_1
+    .line 526
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16$1;->b:Lcom/snapchat/android/fragments/stories/StoriesFragment$16;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment$16;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->g(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->f(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lcom/snapchat/android/discover/ui/DiscoverButtonView;
 
     move-result-object v0
 
-    const-string v1, "Not Pulsing"
+    const-string v1, "Not Filled"
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->setContentDescription(Ljava/lang/CharSequence;)V
 

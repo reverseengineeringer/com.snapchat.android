@@ -1,52 +1,95 @@
-import com.google.gson.annotations.SerializedName;
+import android.os.Bundle;
+import java.util.Iterator;
+import java.util.List;
 
 public final class pu
-  extends th
+  extends pk
 {
-  final String mFriend;
-  final boolean mHide;
-  private final ajx mUserPrefs;
+  private static final String CAPTCHA_ID_PARAM = "captcha_id";
+  private static final String CAPTCHA_SOLUTION_PARAM = "captcha_solution";
+  private static final String TASK_NAME = "SolveCaptchaTask";
+  private String mCaptchaId;
+  private pu.a mInterface;
+  private List<Boolean> mSelectedCaptchas;
   
-  public pu(String paramString)
+  public pu(String paramString, List<Boolean> paramList, pu.a parama)
   {
-    this(paramString, true);
+    if (paramString == null) {
+      throw new NullPointerException();
+    }
+    if (paramList.size() != 9) {
+      throw new IllegalArgumentException();
+    }
+    mCaptchaId = paramString;
+    mSelectedCaptchas = paramList;
+    mInterface = parama;
   }
   
-  public pu(String paramString, boolean paramBoolean)
+  protected final String a()
   {
-    this(paramString, paramBoolean, ajx.a());
+    return "/bq/solve_captcha";
   }
   
-  private pu(String paramString, boolean paramBoolean, ajx paramajx)
+  public final void a(String paramString, int paramInt)
   {
-    mFriend = paramString;
-    mHide = paramBoolean;
-    mUserPrefs = paramajx;
+    super.a(paramString, paramInt);
+    if (mInterface != null)
+    {
+      if (paramString.equals(Integer.toString(403))) {
+        mInterface.t_();
+      }
+    }
+    else {
+      return;
+    }
+    mInterface.d();
   }
   
-  public final void a(@cgb uc paramuc)
+  protected final Bundle b()
   {
-    super.a(paramuc);
-    if (paramuc.d()) {
-      ajx.aC();
+    Bundle localBundle = new Bundle();
+    Object localObject2 = akr.l();
+    Object localObject1 = localObject2;
+    if (localObject2 == null) {
+      localObject1 = akr.G();
+    }
+    localBundle.putString("username", (String)localObject1);
+    localBundle.putString("captcha_id", mCaptchaId);
+    localObject2 = new StringBuilder();
+    Iterator localIterator = mSelectedCaptchas.iterator();
+    if (localIterator.hasNext())
+    {
+      if (((Boolean)localIterator.next()).booleanValue()) {}
+      for (localObject1 = "1";; localObject1 = "0")
+      {
+        ((StringBuilder)localObject2).append((String)localObject1);
+        break;
+      }
+    }
+    localBundle.putString("captcha_solution", ((StringBuilder)localObject2).toString());
+    return localBundle;
+  }
+  
+  public final void b(alp paramalp)
+  {
+    super.b(paramalp);
+    if (mInterface != null) {
+      mInterface.s_();
     }
   }
   
-  protected final String d()
+  protected final String c()
   {
-    return "/loq/friend_hide";
+    return "SolveCaptchaTask";
   }
   
-  @tn
-  public final class a
-    extends pl
+  public static abstract interface a
   {
-    @SerializedName("friend")
-    final String friend = mFriend;
-    @SerializedName("hide")
-    final boolean hide = mHide;
+    public abstract void d();
     
-    a() {}
+    public abstract void s_();
+    
+    public abstract void t_();
   }
 }
 

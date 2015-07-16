@@ -5,42 +5,19 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bjv
 {
-  @SerializedName("ad_placement_metadata")
-  protected bgv adPlacementMetadata;
-  @SerializedName("ad_type")
-  protected Integer adType;
-  @SerializedName("color")
-  protected String color;
-  @SerializedName("dsnap_id")
-  protected String dsnapId;
-  @SerializedName("hash")
-  protected String hash;
-  @SerializedName("url")
-  protected String url;
+  @SerializedName("saved")
+  protected Boolean saved;
+  @SerializedName("version")
+  protected Integer version;
   
-  public final String a()
+  public final Boolean a()
   {
-    return url;
+    return saved;
   }
   
-  public final String b()
+  public final Integer b()
   {
-    return dsnapId;
-  }
-  
-  public final String c()
-  {
-    return hash;
-  }
-  
-  public final String d()
-  {
-    return color;
-  }
-  
-  public final Integer e()
-  {
-    return adType;
+    return version;
   }
   
   public final boolean equals(Object paramObject)
@@ -52,17 +29,12 @@ public final class bjv
       return false;
     }
     paramObject = (bjv)paramObject;
-    return new EqualsBuilder().append(url, url).append(dsnapId, dsnapId).append(hash, hash).append(color, color).append(adType, adType).append(adPlacementMetadata, adPlacementMetadata).isEquals();
-  }
-  
-  public final bgv f()
-  {
-    return adPlacementMetadata;
+    return new EqualsBuilder().append(saved, saved).append(version, version).isEquals();
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(url).append(dsnapId).append(hash).append(color).append(adType).append(adPlacementMetadata).toHashCode();
+    return new HashCodeBuilder().append(saved).append(version).toHashCode();
   }
   
   public final String toString()

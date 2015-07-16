@@ -1,142 +1,67 @@
-import java.io.IOException;
-import java.io.InputStream;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public final class bua
-  extends InputStream
+  implements bsn
 {
-  private final InputStream a;
-  private final btl b;
-  private final bsb c;
+  public boolean a;
+  public boolean b;
+  public int c;
+  public int d;
+  public int e;
+  public String f;
+  public String g;
   
-  public bua(InputStream paramInputStream, btl parambtl, bsb parambsb)
+  public bua()
   {
-    if (paramInputStream == null) {
-      throw new NullPointerException("delegate was null");
-    }
-    if (parambtl == null) {
-      throw new NullPointerException("dispatch was null");
-    }
-    if (parambsb == null) {
-      throw new NullPointerException("stats were null");
-    }
-    a = paramInputStream;
-    b = parambtl;
-    c = parambsb;
+    a = false;
+    b = false;
+    c = 0;
+    d = 5;
+    e = 5;
+    f = "Would you mind taking a second to rate my app?  I would really appreciate it!";
+    g = "Rate My App";
   }
   
-  private void a(int paramInt1, int paramInt2)
+  public bua(bua parambua)
+  {
+    a = a;
+    b = b;
+    c = c;
+    d = d;
+    e = e;
+    f = f;
+    g = g;
+  }
+  
+  public bua(JSONObject paramJSONObject)
+  {
+    a = paramJSONObject.optBoolean("rateMyAppEnabled", false);
+    b = paramJSONObject.optBoolean("hasRatedApp", false);
+    c = paramJSONObject.optInt("numAppLoads", 0);
+    d = paramJSONObject.optInt("rateAfterNumLoads", 5);
+    e = paramJSONObject.optInt("remindAfterNumLoads", 5);
+    f = paramJSONObject.optString("rateAppMessage", "Would you mind taking a second to rate my app?  I would really appreciate it!");
+    g = paramJSONObject.optString("rateAppTitle", "Rate My App");
+  }
+  
+  private JSONObject d()
+  {
+    JSONObject localJSONObject = new JSONObject();
+    try
+    {
+      localJSONObject.put("rateAfterNumLoads", d).put("remindAfterNumLoads", e).put("rateAppMessage", f).put("rateAppTitle", g).put("hasRatedApp", b).put("numAppLoads", c).put("rateMyAppEnabled", a);
+      return localJSONObject;
+    }
+    catch (JSONException localJSONException) {}
+    return localJSONObject;
+  }
+  
+  public final void a()
   {
     try
     {
-      if (c != null)
-      {
-        if (paramInt1 == -1)
-        {
-          b.a(c);
-          return;
-        }
-        c.a(paramInt2);
-        return;
-      }
-    }
-    catch (ThreadDeath localThreadDeath)
-    {
-      throw localThreadDeath;
-    }
-    catch (Throwable localThrowable)
-    {
-      btd.a(localThrowable);
-    }
-  }
-  
-  private void a(Exception paramException)
-  {
-    try
-    {
-      c.g = bsa.a(paramException);
-      b.a(c);
-      return;
-    }
-    catch (ThreadDeath paramException)
-    {
-      throw paramException;
-    }
-    catch (Throwable paramException)
-    {
-      btd.a(paramException);
-    }
-  }
-  
-  public final int available()
-  {
-    return a.available();
-  }
-  
-  public final void close()
-  {
-    a.close();
-  }
-  
-  public final void mark(int paramInt)
-  {
-    a.mark(paramInt);
-  }
-  
-  public final boolean markSupported()
-  {
-    return a.markSupported();
-  }
-  
-  public final int read()
-  {
-    try
-    {
-      int i = a.read();
-      a(i, 1);
-      return i;
-    }
-    catch (IOException localIOException)
-    {
-      a(localIOException);
-      throw localIOException;
-    }
-  }
-  
-  public final int read(byte[] paramArrayOfByte)
-  {
-    try
-    {
-      int i = a.read(paramArrayOfByte);
-      a(i, i);
-      return i;
-    }
-    catch (IOException paramArrayOfByte)
-    {
-      a(paramArrayOfByte);
-      throw paramArrayOfByte;
-    }
-  }
-  
-  public final int read(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
-  {
-    try
-    {
-      paramInt1 = a.read(paramArrayOfByte, paramInt1, paramInt2);
-      a(paramInt1, paramInt1);
-      return paramInt1;
-    }
-    catch (IOException paramArrayOfByte)
-    {
-      a(paramArrayOfByte);
-      throw paramArrayOfByte;
-    }
-  }
-  
-  public final void reset()
-  {
-    try
-    {
-      a.reset();
+      a = true;
       return;
     }
     finally
@@ -146,25 +71,57 @@ public final class bua
     }
   }
   
-  public final long skip(long paramLong)
+  public final void a(brx parambrx, String paramString1, String paramString2)
   {
-    paramLong = a.skip(paramLong);
     try
     {
-      if (c != null) {
-        c.a(paramLong);
+      parambrx.a(paramString1, paramString2, d().toString());
+      return;
+    }
+    finally
+    {
+      parambrx = finally;
+      throw parambrx;
+    }
+  }
+  
+  public final void c()
+  {
+    try
+    {
+      a = false;
+      return;
+    }
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
+    }
+  }
+  
+  public static final class a
+  {
+    public static bua a(brx parambrx, String paramString1, String paramString2)
+    {
+      Object localObject = null;
+      parambrx = parambrx.a(paramString1, paramString2);
+      if (parambrx != null) {}
+      try
+      {
+        for (parambrx = new JSONObject(parambrx); parambrx != null; parambrx = null) {
+          return new bua(parambrx);
+        }
       }
-      return paramLong;
+      catch (JSONException parambrx)
+      {
+        for (;;)
+        {
+          bue.b();
+          parambrx = (brx)localObject;
+        }
+      }
+      return new bua();
     }
-    catch (ThreadDeath localThreadDeath)
-    {
-      throw localThreadDeath;
-    }
-    catch (Throwable localThrowable)
-    {
-      btd.a(localThrowable);
-    }
-    return paramLong;
   }
 }
 

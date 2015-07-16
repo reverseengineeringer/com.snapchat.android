@@ -1,6 +1,6 @@
 package com.snapchat.android.util.profileimages;
 
-import ajx;
+import akr;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Bitmap.Config;
@@ -9,10 +9,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
-import awp;
-import aws;
-import bgp;
-import com.snapchat.android.Timber;
+import axn;
+import axq;
+import bhp;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
@@ -58,17 +57,17 @@ public final class ProfileImageUtils
     return sInstance;
   }
   
-  public static List<Bitmap> a(awp paramawp, String paramString)
+  public static List<Bitmap> a(axn paramaxn, String paramString)
   {
-    if ((!paramawp.d(paramString)) || (paramawp.a(paramString) == null)) {
+    if ((!paramaxn.d(paramString)) || (paramaxn.a(paramString) == null)) {
       return null;
     }
-    paramawp = (List)a(paramawp.a(paramString)).getRight();
+    paramaxn = (List)a(paramaxn.a(paramString)).getRight();
     paramString = new ArrayList();
     int i = 0;
-    while (i < paramawp.size())
+    while (i < paramaxn.size())
     {
-      paramString.add(BitmapFactory.decodeByteArray((byte[])paramawp.get(i), 0, ((byte[])paramawp.get(i)).length));
+      paramString.add(BitmapFactory.decodeByteArray((byte[])paramaxn.get(i), 0, ((byte[])paramaxn.get(i)).length));
       i += 1;
     }
     return paramString;
@@ -91,16 +90,12 @@ public final class ProfileImageUtils
   
   private static Pair<Long, List<byte[]>> a(byte[] paramArrayOfByte)
   {
-    if (paramArrayOfByte == null)
-    {
-      Timber.f("ProfileImageUtils", "profile images - exception deserializing profile media byte array: data is null", new Object[0]);
+    if (paramArrayOfByte == null) {
       throw new IllegalArgumentException("Exception deserializing profile media byte array: data is null");
     }
     paramArrayOfByte = new ByteArrayInputStream(paramArrayOfByte);
     int j = paramArrayOfByte.read();
-    if (j != 5)
-    {
-      Timber.f("ProfileImageUtils", "profile images - exception deserializing profile media byte array: invalid pics number " + j, new Object[0]);
+    if (j != 5) {
       throw new IllegalArgumentException("profile images - exception deserializing profile media byte array: invalid pics number");
     }
     Object localObject = new byte[8];
@@ -114,9 +109,7 @@ public final class ProfileImageUtils
       paramArrayOfByte.read(arrayOfByte1, 0, 4);
       int k = new BigInteger(arrayOfByte1).intValue();
       arrayOfByte1 = new byte[k];
-      if (paramArrayOfByte.read(arrayOfByte1, 0, k) != k)
-      {
-        Timber.f("ProfileImageUtils", "profile images - exception deserializing profile media byte array: data corruption", new Object[0]);
+      if (paramArrayOfByte.read(arrayOfByte1, 0, k) != k) {
         throw new IllegalArgumentException("profile images - exception deserializing profile media byte array: data corruption");
       }
       byte[] arrayOfByte2 = new byte[8];
@@ -125,7 +118,7 @@ public final class ProfileImageUtils
       localCRC32.update(arrayOfByte1);
       if (localCRC32.getValue() != new BigInteger(arrayOfByte2).longValue())
       {
-        Timber.f("ProfileImageUtils", "profile images - exception deserializing profile media byte array: data corruption, checksum : " + localCRC32.getValue() + " image index: " + i, new Object[0]);
+        new StringBuilder("profile images - exception deserializing profile media byte array: data corruption, checksum : ").append(localCRC32.getValue()).append(" image index: ").append(i);
         throw new IllegalArgumentException("profile images - exception deserializing profile media byte array: data corruption, checksum : " + localCRC32.getValue() + " image index: " + i);
       }
       ((List)localObject).add(arrayOfByte1);
@@ -134,22 +127,21 @@ public final class ProfileImageUtils
     return ImmutablePair.of(Long.valueOf(l), localObject);
   }
   
-  public static void a(long paramLong, awp paramawp)
+  public static void a(long paramLong, axn paramaxn)
   {
     int i = 0;
-    bgp.b();
+    bhp.b();
     try
     {
-      if (paramLong <= ajx.A()) {
+      if (paramLong <= akr.A()) {
         return;
       }
-      Timber.c("ProfileImageUtils", "profile images - removing images from cache with delete timestamp: " + paramLong, new Object[0]);
-      ajx.d(paramLong);
+      akr.d(paramLong);
       while (i < 5)
       {
         ProfileImageType localProfileImageType = ProfileImageType.values()[i];
-        paramawp.c(localProfileImageType.toString());
-        Timber.c("ProfileImageUtils", "profile images - %s removed with delete timestamp: %d ", new Object[] { localProfileImageType.toString(), Long.valueOf(paramLong) });
+        paramaxn.c(localProfileImageType.toString());
+        localProfileImageType.toString();
         i += 1;
       }
       return;
@@ -157,15 +149,15 @@ public final class ProfileImageUtils
     finally {}
   }
   
-  public static void a(List<byte[]> paramList, long paramLong, awp paramawp)
+  public static void a(List<byte[]> paramList, long paramLong, axn paramaxn)
   {
     
     try
     {
-      if (paramLong < ajx.A()) {
+      if (paramLong < akr.A()) {
         return;
       }
-      ajx.d(paramLong);
+      akr.d(paramLong);
       int i = 0;
       for (;;)
       {
@@ -174,15 +166,15 @@ public final class ProfileImageUtils
           ProfileImageType localProfileImageType = ProfileImageType.values()[i];
           try
           {
-            paramawp.a(localProfileImageType.toString(), (byte[])paramList.get(i));
-            Timber.c("ProfileImageUtils", "profile images - %s caching succeeded with picture taken timestamp: %d", new Object[] { localProfileImageType.toString(), Long.valueOf(paramLong) });
+            paramaxn.a(localProfileImageType.toString(), (byte[])paramList.get(i));
+            localProfileImageType.toString();
             i += 1;
           }
-          catch (aws localaws)
+          catch (axq localaxq)
           {
             for (;;)
             {
-              Timber.f("ProfileImageUtils", "profile images - %s caching failed with timestamp %d and error: %s", new Object[] { localProfileImageType.toString(), Long.valueOf(paramLong), localaws });
+              localProfileImageType.toString();
             }
           }
         }
@@ -191,12 +183,10 @@ public final class ProfileImageUtils
     finally {}
   }
   
-  public static void a(byte[] paramArrayOfByte, awp paramawp)
+  public static void a(byte[] paramArrayOfByte, axn paramaxn)
   {
     
-    if (paramArrayOfByte == null)
-    {
-      Timber.f("ProfileImageUtils", "friends profile images - exception deserializing profile media byte array: data is null", new Object[0]);
+    if (paramArrayOfByte == null) {
       throw new IllegalArgumentException("Exception deserializing profile media byte array: data is null");
     }
     paramArrayOfByte = new ByteArrayInputStream(paramArrayOfByte);
@@ -207,9 +197,7 @@ public final class ProfileImageUtils
       String str = new String((byte[])localObject, "UTF-8").trim();
       localObject = new ByteArrayOutputStream();
       int j = paramArrayOfByte.read();
-      if (j != 5)
-      {
-        Timber.f("ProfileImageUtils", "friends profile images - exception deserializing profile media byte array: invalid pics number " + j, new Object[0]);
+      if (j != 5) {
         throw new IllegalArgumentException("friends profile images - exception deserializing profile media byte array: invalid pics number");
       }
       ((ByteArrayOutputStream)localObject).write(j);
@@ -224,9 +212,7 @@ public final class ProfileImageUtils
         ((ByteArrayOutputStream)localObject).write(arrayOfByte1, 0, 4);
         int k = new BigInteger(arrayOfByte1).intValue();
         arrayOfByte1 = new byte[k];
-        if (paramArrayOfByte.read(arrayOfByte1, 0, k) != k)
-        {
-          Timber.f("ProfileImageUtils", "friends profile images - exception deserializing profile media byte array: data corruption", new Object[0]);
+        if (paramArrayOfByte.read(arrayOfByte1, 0, k) != k) {
           throw new IllegalArgumentException("friends profile images - exception deserializing profile media byte array: data corruption");
         }
         ((ByteArrayOutputStream)localObject).write(arrayOfByte1, 0, k);
@@ -236,7 +222,7 @@ public final class ProfileImageUtils
         localCRC32.update(arrayOfByte1);
         if (localCRC32.getValue() != new BigInteger(arrayOfByte2).longValue())
         {
-          Timber.f("ProfileImageUtils", "friends profile images - exception deserializing image byte array: data corruption, checksum : " + localCRC32.getValue() + " image index: " + i, new Object[0]);
+          new StringBuilder("friends profile images - exception deserializing image byte array: data corruption, checksum : ").append(localCRC32.getValue()).append(" image index: ").append(i);
           throw new IllegalArgumentException("friends profile images - exception deserializing image byte array: data corruption checksum : " + localCRC32.getValue() + " image index: " + i);
         }
         ((ByteArrayOutputStream)localObject).write(arrayOfByte2, 0, 8);
@@ -245,13 +231,12 @@ public final class ProfileImageUtils
       ((ByteArrayOutputStream)localObject).flush();
       try
       {
-        paramawp.a(str, ((ByteArrayOutputStream)localObject).toByteArray());
-        Timber.b("ProfileImageUtils", "friends profile images -  caching succeeded for " + str, new Object[0]);
+        paramaxn.a(str, ((ByteArrayOutputStream)localObject).toByteArray());
         ((ByteArrayOutputStream)localObject).close();
       }
-      catch (aws localaws)
+      catch (axq localaxq)
       {
-        Timber.b("ProfileImageUtils", "friends profile images -  caching failed for " + str + " with error:" + localaws, new Object[0]);
+        new StringBuilder("friends profile images -  caching failed for ").append(str).append(" with error:").append(localaxq);
         ((ByteArrayOutputStream)localObject).close();
       }
       finally
@@ -261,12 +246,12 @@ public final class ProfileImageUtils
     }
   }
   
-  public static boolean a(awp paramawp)
+  public static boolean a(axn paramaxn)
   {
     int i = 0;
     while (i < 5)
     {
-      if (!paramawp.d(ProfileImageType.values()[i].toString())) {
+      if (!paramaxn.d(ProfileImageType.values()[i].toString())) {
         return false;
       }
       i += 1;
@@ -300,44 +285,46 @@ public final class ProfileImageUtils
     return paramList;
   }
   
-  public static List<Bitmap> b(awp paramawp)
+  public static List<Bitmap> b(axn paramaxn)
   {
-    bgp.b();
+    bhp.b();
     ArrayList localArrayList = new ArrayList();
     int i = 0;
     while (i < 5)
     {
       ProfileImageType localProfileImageType = ProfileImageType.values()[i];
-      Object localObject = paramawp.a(localProfileImageType.toString());
+      Object localObject = paramaxn.a(localProfileImageType.toString());
       localObject = BitmapFactory.decodeByteArray((byte[])localObject, 0, localObject.length);
       localArrayList.add(localObject);
-      Timber.c("ProfileImageUtils", "profile images - loading %s with size %s ", new Object[] { localProfileImageType.toString(), Integer.valueOf(((Bitmap)localObject).getByteCount()) });
+      localProfileImageType.toString();
+      ((Bitmap)localObject).getByteCount();
       i += 1;
     }
-    Timber.c("ProfileImageUtils", "profile images - loading success, number of bitmaps : %s", new Object[] { Integer.valueOf(localArrayList.size()) });
+    localArrayList.size();
     return localArrayList;
   }
   
-  public static void b(byte[] paramArrayOfByte, awp paramawp)
+  public static void b(byte[] paramArrayOfByte, axn paramaxn)
   {
     paramArrayOfByte = a(paramArrayOfByte);
-    a((List)paramArrayOfByte.getRight(), ((Long)paramArrayOfByte.getLeft()).longValue(), paramawp);
+    a((List)paramArrayOfByte.getRight(), ((Long)paramArrayOfByte.getLeft()).longValue(), paramaxn);
   }
   
-  public static List<byte[]> c(awp paramawp)
+  public static List<byte[]> c(axn paramaxn)
   {
-    bgp.b();
+    bhp.b();
     ArrayList localArrayList = new ArrayList();
     int i = 0;
     while (i < 5)
     {
       ProfileImageType localProfileImageType = ProfileImageType.values()[i];
-      byte[] arrayOfByte = paramawp.a(localProfileImageType.toString());
-      Timber.c("ProfileImageUtils", "profile images - loading %s with size %s ", new Object[] { localProfileImageType.toString(), Integer.valueOf(arrayOfByte.length) });
+      byte[] arrayOfByte = paramaxn.a(localProfileImageType.toString());
+      localProfileImageType.toString();
+      int j = arrayOfByte.length;
       localArrayList.add(arrayOfByte);
       i += 1;
     }
-    Timber.c("ProfileImageUtils", "profile images - loading success, number of images : %s", new Object[] { Integer.valueOf(localArrayList.size()) });
+    localArrayList.size();
     return localArrayList;
   }
   

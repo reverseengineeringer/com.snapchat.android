@@ -1,289 +1,132 @@
 .class public final Lbrs;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lbrr;
+.super Lbrg;
 
 
 # instance fields
-.field private a:[Ljava/lang/String;
+.field private d:Lbrg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lbrg;)V
+    .locals 0
 
     .prologue
-    .line 21
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 22
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x8
-
-    if-lt v0, v1, :cond_0
-
-    const-string v0, "logcat -t 100 -v time"
-
-    :goto_0
-    const-string v1, "\\s+"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbrs;->a:[Ljava/lang/String;
+    invoke-direct {p0, p1}, Lbrg;-><init>(Lbrg;)V
 
     .line 23
+    iput-object p1, p0, Lbrs;->d:Lbrg;
+
+    .line 24
     return-void
-
-    .line 22
-    :cond_0
-    const-string v0, "logcat -d -v time"
-
-    goto :goto_0
-.end method
-
-.method private static a([Ljava/lang/String;)Lorg/json/JSONArray;
-    .locals 3
-
-    .prologue
-    .line 73
-    const/4 v0, 0x0
-
-    .line 75
-    if-eqz p0, :cond_2
-
-    array-length v1, p0
-
-    if-lez v1, :cond_2
-
-    .line 76
-    const/4 v0, 0x0
-
-    .line 78
-    array-length v1, p0
-
-    const/16 v2, 0xc8
-
-    if-le v1, v2, :cond_0
-
-    .line 79
-    array-length v0, p0
-
-    add-int/lit16 v0, v0, -0xc8
-
-    .line 82
-    :cond_0
-    new-instance v1, Lorg/json/JSONArray;
-
-    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
-
-    .line 84
-    :goto_0
-    array-length v2, p0
-
-    if-ge v0, v2, :cond_1
-
-    .line 85
-    aget-object v2, p0, v0
-
-    invoke-virtual {v1, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
-
-    .line 84
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    move-object v0, v1
-
-    .line 89
-    :cond_2
-    return-object v0
-.end method
-
-.method private b()Ljava/lang/Process;
-    .locals 4
-
-    .prologue
-    .line 38
-    const/4 v0, 0x0
-
-    .line 41
-    :try_start_0
-    new-instance v1, Ljava/lang/ProcessBuilder;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    invoke-direct {v1, v2}, Ljava/lang/ProcessBuilder;-><init>([Ljava/lang/String;)V
-
-    iget-object v2, p0, Lbrs;->a:[Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/ProcessBuilder;->command([Ljava/lang/String;)Ljava/lang/ProcessBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/ProcessBuilder;->start()Ljava/lang/Process;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    .line 45
-    :goto_0
-    return-object v0
-
-    .line 42
-    :catch_0
-    move-exception v1
-
-    .line 43
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "IOException in createProcess(): "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Lbtd;->b()V
-
-    .line 44
-    invoke-static {}, Lbtd;->c()V
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a()Lorg/json/JSONArray;
-    .locals 7
+.method public final a(I)Z
+    .locals 3
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x1
 
-    .line 114
-    .line 116
-    :try_start_0
-    invoke-direct {p0}, Lbrs;->b()Ljava/lang/Process;
+    .line 28
+    const/4 v1, -0x1
 
-    move-result-object v0
+    if-ne p1, v1, :cond_0
 
-    if-eqz v0, :cond_1
+    .line 29
+    iget-object v1, p0, Lbrg;->a:Lbrm;
 
-    new-instance v2, Landroid/os/ConditionVariable;
+    sget-object v2, Lbrt;->d:Lbrt;
 
-    invoke-direct {v2}, Landroid/os/ConditionVariable;-><init>()V
+    invoke-interface {v1, v2}, Lbrm;->a(Lbrg;)V
 
-    new-instance v3, Lbst;
+    .line 40
+    :goto_0
+    return v0
 
-    sget v4, Lbst$a;->a:I
+    .line 33
+    :cond_0
+    iget v1, p0, Lbrs;->c:I
 
-    invoke-direct {v3, v0, v2, v4}, Lbst;-><init>(Ljava/lang/Process;Landroid/os/ConditionVariable;I)V
+    add-int/lit8 v1, v1, 0x1
 
-    new-instance v4, Lbst;
+    iput v1, p0, Lbrs;->c:I
 
-    const/4 v5, 0x0
+    .line 34
+    int-to-char v1, p1
 
-    sget v6, Lbst$a;->b:I
+    const/16 v2, 0xa
 
-    invoke-direct {v4, v0, v5, v6}, Lbst;-><init>(Ljava/lang/Process;Landroid/os/ConditionVariable;I)V
+    if-ne v1, v2, :cond_1
 
-    new-instance v5, Lbte;
+    .line 35
+    iget-object v1, p0, Lbrs;->d:Lbrg;
 
-    invoke-direct {v5, v3}, Lbte;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v5}, Lbte;->start()V
-
-    new-instance v5, Lbte;
-
-    invoke-direct {v5, v4}, Lbte;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v5}, Lbte;->start()V
-
-    const-wide/16 v4, 0xfa
-
-    invoke-virtual {v2, v4, v5}, Landroid/os/ConditionVariable;->block(J)Z
-
-    invoke-virtual {v0}, Ljava/lang/Process;->destroy()V
-
-    invoke-virtual {v3}, Lbst;->b()Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {p0}, Lbrs;->a()I
 
     move-result v2
 
-    if-lez v2, :cond_0
+    invoke-virtual {v1, v2}, Lbrg;->b(I)V
 
-    const-string v2, "\n"
+    .line 36
+    iget-object v1, p0, Lbrg;->a:Lbrm;
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    iget-object v2, p0, Lbrs;->d:Lbrg;
 
-    move-result-object v0
-
-    :goto_0
-    invoke-static {v0}, Lbrs;->a([Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-static {}, Lbtd;->b()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 120
-    :goto_2
-    return-object v0
-
-    .line 117
-    :catch_0
-    move-exception v0
-
-    .line 118
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Unanticipated throwable in getLogcat: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Lbtd;->b()V
-
-    move-object v0, v1
-
-    .line 119
-    invoke-static {}, Lbtd;->c()V
-
-    goto :goto_2
-
-    :cond_0
-    move-object v0, v1
+    invoke-interface {v1, v2}, Lbrm;->a(Lbrg;)V
 
     goto :goto_0
 
+    .line 40
     :cond_1
-    move-object v0, v1
+    const/4 v0, 0x0
 
-    goto :goto_1
+    goto :goto_0
+.end method
+
+.method public final a(Lorg/apache/http/util/CharArrayBuffer;)Z
+    .locals 1
+
+    .prologue
+    .line 59
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final b()Lbrg;
+    .locals 0
+
+    .prologue
+    .line 47
+    return-object p0
+.end method
+
+.method public final c()Lbrg;
+    .locals 0
+
+    .prologue
+    .line 53
+    return-object p0
+.end method
+
+.method protected final d()I
+    .locals 1
+
+    .prologue
+    .line 65
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method protected final e()I
+    .locals 1
+
+    .prologue
+    .line 70
+    const/4 v0, 0x0
+
+    return v0
 .end method

@@ -1,86 +1,24 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 final class bnh$1
-  implements bnh
+  implements Runnable
 {
-  public final caj a(File paramFile)
-  {
-    return cad.a(paramFile);
-  }
+  bnh$1(bnh parambnh) {}
   
-  public final void a(File paramFile1, File paramFile2)
+  public final void run()
   {
-    d(paramFile2);
-    if (!paramFile1.renameTo(paramFile2)) {
-      throw new IOException("failed to rename " + paramFile1 + " to " + paramFile2);
-    }
-  }
-  
-  public final cai b(File paramFile)
-  {
-    try
+    synchronized (a)
     {
-      cai localcai = cad.b(paramFile);
-      return localcai;
-    }
-    catch (FileNotFoundException localFileNotFoundException)
-    {
-      paramFile.getParentFile().mkdirs();
-    }
-    return cad.b(paramFile);
-  }
-  
-  public final cai c(File paramFile)
-  {
-    try
-    {
-      cai localcai = cad.c(paramFile);
-      return localcai;
-    }
-    catch (FileNotFoundException localFileNotFoundException)
-    {
-      paramFile.getParentFile().mkdirs();
-    }
-    return cad.c(paramFile);
-  }
-  
-  public final void d(File paramFile)
-  {
-    if ((!paramFile.delete()) && (paramFile.exists())) {
-      throw new IOException("failed to delete " + paramFile);
-    }
-  }
-  
-  public final boolean e(File paramFile)
-  {
-    return paramFile.exists();
-  }
-  
-  public final long f(File paramFile)
-  {
-    return paramFile.length();
-  }
-  
-  public final void g(File paramFile)
-  {
-    File[] arrayOfFile = paramFile.listFiles();
-    if (arrayOfFile == null) {
-      throw new IOException("not a readable directory: " + paramFile);
-    }
-    int j = arrayOfFile.length;
-    int i = 0;
-    while (i < j)
-    {
-      paramFile = arrayOfFile[i];
-      if (paramFile.isDirectory()) {
-        g(paramFile);
+      int i;
+      if (!bnh.a(a))
+      {
+        i = 1;
+        if ((i | bnh.b(a)) == 0) {}
       }
-      if (!paramFile.delete()) {
-        throw new IOException("failed to delete " + paramFile);
+      else
+      {
+        i = 0;
       }
-      i += 1;
     }
   }
 }

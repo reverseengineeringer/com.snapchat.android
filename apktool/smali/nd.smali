@@ -1,165 +1,257 @@
-.class public final Lnd;
+.class public abstract Lnd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lne;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lnd$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lne;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final METRIC_NAME:Ljava/lang/String; = "AD_RESOLVE_TIME"
+
+.field public static final METRIC_PARAM_NETWORK_TYPE:Ljava/lang/String; = "reachability"
+
+.field public static final METRIC_PARAM_RESULT:Ljava/lang/String; = "result"
+
+.field public static final METRIC_PARAM_TYPE:Ljava/lang/String; = "type"
+
+.field public static final METRIC_VALUE_SUCCESS:Ljava/lang/String; = "success"
+
+.field public static final METRIC_VALUE_TIMEOUT:Ljava/lang/String; = "timeout"
+
+.field public static final TAG:Ljava/lang/String; = "AdRequest"
+
+.field public static final TIMEOUT_MILLISECONDS:I = 0x2710
+
 
 # instance fields
-.field public filterCount:J
+.field public final mAdContainer:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
+    .end annotation
+.end field
 
-.field final filterGeofilterId:Ljava/lang/String;
+.field public final mAdManager:Lna;
 
-.field public filterIndexCount:J
+.field protected final mCallback:Lnd$a;
 
-.field public filterIndexPos:J
+.field mIsComplete:Z
 
-.field public final viewTimeStopwatch:Lcn;
+.field public mMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+.field private final mMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+
+.field final mMutex:Ljava/lang/Object;
+
+.field public final mNetworkStatusManager:Lama;
+
+.field public final mTimeoutRunnable:Ljava/util/TimerTask;
+
+.field public final mTimeoutTimer:Ljava/util/Timer;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/Object;Lna;Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lama;Ljava/util/Timer;Lnd$a;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;",
+            "Lna;",
+            "Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;",
+            "Lama;",
+            "Ljava/util/Timer;",
+            "Lnd$a",
+            "<TT;>;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 19
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
-    new-instance v0, Lcn;
+    .line 31
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Lcn;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lnd;->viewTimeStopwatch:Lcn;
+    iput-object v0, p0, Lnd;->mMutex:Ljava/lang/Object;
 
-    .line 20
-    iput-object p1, p0, Lnd;->filterGeofilterId:Ljava/lang/String;
+    .line 86
+    new-instance v0, Lnd$1;
 
-    .line 21
+    invoke-direct {v0, p0}, Lnd$1;-><init>(Lnd;)V
+
+    iput-object v0, p0, Lnd;->mTimeoutRunnable:Ljava/util/TimerTask;
+
+    .line 42
+    iput-object p4, p0, Lnd;->mNetworkStatusManager:Lama;
+
+    .line 43
+    iput-object p3, p0, Lnd;->mMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+
+    .line 44
+    iput-object p1, p0, Lnd;->mAdContainer:Ljava/lang/Object;
+
+    .line 45
+    iput-object p2, p0, Lnd;->mAdManager:Lna;
+
+    .line 46
+    iput-object p5, p0, Lnd;->mTimeoutTimer:Ljava/util/Timer;
+
+    .line 47
+    iput-object p6, p0, Lnd;->mCallback:Lnd$a;
+
+    .line 48
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public abstract a()Ljava/lang/String;
+.end method
+
+.method public final a(Lnf;)V
+    .locals 4
+    .param p1    # Lnf;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 79
-    iget-object v0, p0, Lnd;->viewTimeStopwatch:Lcn;
+    .line 77
+    iget-object v1, p0, Lnd;->mMutex:Ljava/lang/Object;
 
-    iget-boolean v0, v0, Lcn;->a:Z
+    monitor-enter v1
+
+    .line 78
+    :try_start_0
+    iget-boolean v0, p0, Lnd;->mIsComplete:Z
 
     if-eqz v0, :cond_0
 
-    .line 80
-    iget-object v0, p0, Lnd;->viewTimeStopwatch:Lcn;
+    .line 79
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Lcn;->b()Lcn;
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lnd;->mAdContainer:Ljava/lang/Object;
+
+    aput-object v3, v0, v2
+
+    .line 80
+    monitor-exit v1
+
+    .line 83
+    :goto_0
+    return-void
 
     .line 82
     :cond_0
-    return-void
+    invoke-virtual {p0, p1}, Lnd;->b(Lnf;)V
+
+    .line 83
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method protected final b(Lnf;)V
+    .locals 3
 
     .prologue
-    .line 58
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 102
+    iget-object v1, p0, Lnd;->mMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    const-string v1, "GeofilterSwipeMetaDataItem{filterGeofilterId=\'"
+    if-nez p1, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v0, "timeout"
 
-    iget-object v1, p0, Lnd;->filterGeofilterId:Ljava/lang/String;
+    :goto_0
+    const-string v2, "result"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    move-result-object v0
+    .line 103
+    iget-object v0, p0, Lnd;->mMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    const/16 v1, 0x27
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
-    move-result-object v0
+    .line 106
+    iget-object v0, p0, Lnd;->mCallback:Lnd$a;
 
-    const-string v1, ", viewTimeStopwatch isRunning="
+    iget-object v1, p0, Lnd;->mAdContainer:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v0, v1, p1}, Lnd$a;->a(Ljava/lang/Object;Lnf;)V
 
-    move-result-object v0
+    .line 107
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lnd;->viewTimeStopwatch:Lcn;
+    iput-boolean v0, p0, Lnd;->mIsComplete:Z
 
-    iget-boolean v1, v1, Lcn;->a:Z
+    .line 108
+    iget-object v0, p0, Lnd;->mTimeoutRunnable:Ljava/util/TimerTask;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/util/TimerTask;->cancel()Z
 
-    move-result-object v0
+    .line 109
+    iget-object v0, p0, Lnd;->mTimeoutTimer:Ljava/util/Timer;
 
-    const-string v1, ", viewTimeStopwatch="
+    invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 110
+    return-void
 
-    move-result-object v0
+    .line 102
+    :cond_0
+    iget-object v0, p1, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
 
-    iget-object v1, p0, Lnd;->viewTimeStopwatch:Lcn;
+    if-eqz v0, :cond_1
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    iget-object v0, p1, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
 
-    invoke-virtual {v1, v2}, Lcn;->a(Ljava/util/concurrent/TimeUnit;)J
+    iget-object v0, v0, Lcom/snapchat/android/ads/AdRequestError;->mErrorCode:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
 
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", filterIndexPos="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lnd;->filterIndexPos:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lcom/snapchat/android/ads/AdRequestError$ErrorCode;->getMetricValue()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, ", filterIndexCount="
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_1
+    const-string v0, "success"
 
-    move-result-object v0
-
-    iget-wide v2, p0, Lnd;->filterIndexCount:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", filterCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lnd;->filterCount:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/16 v1, 0x7d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 .end method

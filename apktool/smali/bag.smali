@@ -1,96 +1,128 @@
 .class public final Lbag;
-.super Lbah;
+.super Laqb;
 .source "SourceFile"
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lbag$a;
+        "Laqb",
+        "<",
+        "Ljava/lang/String;",
+        ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final IGNORED_METHODS:[Lbag$a;
+# instance fields
+.field private mContext:Landroid/content/Context;
 
-.field private static final IGNORE_PACKAGE_PREFIX:Ljava/lang/String; = "ignore."
+.field private mFriends:[Ljava/lang/String;
 
-.field private static final SNAPCHAT_PACKAGE_AS_REGEX:Ljava/lang/String; = "com\\.snapchat\\.android"
+.field private mLayoutId:I
+
+.field private mSectionLeftPadding:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    .prologue
-    .line 15
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Lbag$a;
-
-    const/4 v1, 0x0
-
-    new-instance v2, Lbag$a;
-
-    const-string v3, "WaitDoneHandler"
-
-    const-string v4, "waitDone"
-
-    invoke-direct {v2, v3, v4}, Lbag$a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lbag;->IGNORED_METHODS:[Lbag$a;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 10
-    invoke-direct {p0}, Lbah;-><init>()V
-
-    .line 53
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method public constructor <init>(Landroid/content/Context;[Ljava/lang/String;)V
     .locals 2
 
     .prologue
-    .line 50
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 21
+    invoke-direct {p0, p1, p2}, Laqb;-><init>(Landroid/content/Context;[Ljava/lang/Object;)V
 
-    const-string v1, "(com\\.snapchat\\.android.*"
+    .line 22
+    iput-object p1, p0, Lbag;->mContext:Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 23
+    const v0, 0x7f040013
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v0, p0, Lbag;->mLayoutId:I
 
-    move-result-object v0
+    .line 24
+    iput-object p2, p0, Lbag;->mFriends:[Ljava/lang/String;
 
-    const-string v1, "\\."
+    .line 26
+    iget-object v0, p0, Lbag;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ")"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const v1, 0x7f09002c
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    iput v0, p0, Lbag;->mSectionLeftPadding:I
+
+    .line 27
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 5
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 33
+    iget-object v0, p0, Lbag;->mContext:Landroid/content/Context;
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    return-object v0
+    .line 34
+    iget v1, p0, Lbag;->mLayoutId:I
+
+    invoke-virtual {v0, v1, p3, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v1
+
+    .line 37
+    const v0, 0x7f0a0092
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 38
+    iget-object v2, p0, Lbag;->mFriends:[Ljava/lang/String;
+
+    aget-object v2, v2, p1
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 39
+    iget-object v2, p0, Lbag;->mFriends:[Ljava/lang/String;
+
+    aget-object v2, v2, p1
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_0
+
+    .line 40
+    iget v2, p0, Lbag;->mSectionLeftPadding:I
+
+    invoke-virtual {v0, v2, v4, v4, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 43
+    :cond_0
+    return-object v1
 .end method

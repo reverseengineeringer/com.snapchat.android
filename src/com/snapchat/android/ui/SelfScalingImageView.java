@@ -10,9 +10,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewParent;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-import avh;
-import cgc;
-import com.snapchat.android.Timber;
+import awf;
+import chd;
 
 public class SelfScalingImageView
   extends ImageView
@@ -110,17 +109,13 @@ public class SelfScalingImageView
   private void b()
   {
     Object localObject1 = getParentViewGroup();
-    if (localObject1 == null)
+    if (localObject1 == null) {}
+    Object localObject2;
+    do
     {
-      Timber.f("SelfScalingImageView", "View has no parent. Aborting.", new Object[0]);
       return;
-    }
-    Object localObject2 = getDrawable();
-    if (localObject2 == null)
-    {
-      Timber.f("SelfScalingImageView", "View has no background drawable. Aborting.", new Object[0]);
-      return;
-    }
+      localObject2 = getDrawable();
+    } while (localObject2 == null);
     if (getScaleType() == ImageView.ScaleType.CENTER_CROP)
     {
       int i = ((Drawable)localObject2).getIntrinsicWidth();
@@ -132,13 +127,13 @@ public class SelfScalingImageView
       {
         localObject1 = new a((int)(i * m / j), m);
         localObject2 = new Rect();
-        if (!avh.e(n)) {
-          break label220;
+        if (!awf.e(n)) {
+          break label197;
         }
         left = (a - k);
-        label153:
-        if (!avh.c(n)) {
-          break label243;
+        label130:
+        if (!awf.c(n)) {
+          break label220;
         }
         top = (b - m);
       }
@@ -148,14 +143,14 @@ public class SelfScalingImageView
         return;
         localObject1 = new a(k, (int)(j * k / i));
         break;
-        label220:
-        if (!avh.f(n)) {
-          break label153;
+        label197:
+        if (!awf.f(n)) {
+          break label130;
         }
         right = (a - k);
-        break label153;
-        label243:
-        if (avh.d(n)) {
+        break label130;
+        label220:
+        if (awf.d(n)) {
           bottom = (b - m);
         }
       }
@@ -163,7 +158,7 @@ public class SelfScalingImageView
     setPadding(0, 0, 0, 0);
   }
   
-  @cgc
+  @chd
   private ViewGroup getParentViewGroup()
   {
     ViewParent localViewParent = getParent();

@@ -3,19 +3,70 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class biy
-  extends bif
+public final class biy
+  extends bkb
 {
-  @SerializedName("age")
-  protected String age;
-  @SerializedName("birthday")
-  protected String birthday;
-  @SerializedName("email")
-  protected String email;
-  @SerializedName("study_settings")
-  protected String studySettings;
+  @SerializedName("broadcast")
+  protected Integer broadcast;
+  @SerializedName("broadcast_action_text")
+  protected String broadcastActionText;
+  @SerializedName("broadcast_hide_timer")
+  protected Boolean broadcastHideTimer;
+  @SerializedName("broadcast_media_url")
+  protected String broadcastMediaUrl;
+  @SerializedName("broadcast_url")
+  protected String broadcastUrl;
+  @SerializedName("c")
+  protected Integer c;
+  @SerializedName("c_id")
+  protected String cId;
+  @SerializedName("cap_ori")
+  protected Long capOri;
+  @SerializedName("cap_pos")
+  protected Double capPos;
+  @SerializedName("cap_text")
+  protected String capText;
+  @SerializedName("filter_id")
+  protected String filterId;
+  @SerializedName("pending")
+  protected Boolean pending;
+  @SerializedName("replayed")
+  protected Boolean replayed;
+  @SerializedName("rp")
+  protected String rp;
+  @SerializedName("sn")
+  protected String sn;
+  @SerializedName("t")
+  protected Integer t;
+  @SerializedName("timer")
+  protected Double timer;
   
-  public boolean equals(Object paramObject)
+  public final String a()
+  {
+    return sn;
+  }
+  
+  public final Integer b()
+  {
+    return t;
+  }
+  
+  public final Double c()
+  {
+    return timer;
+  }
+  
+  public final String d()
+  {
+    return capText;
+  }
+  
+  public final Integer e()
+  {
+    return broadcast;
+  }
+  
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -24,35 +75,60 @@ public class biy
       return false;
     }
     paramObject = (biy)paramObject;
-    return new EqualsBuilder().append(email, email).append(age, age).append(birthday, birthday).append(studySettings, studySettings).isEquals();
+    return new EqualsBuilder().append(sn, sn).append(t, t).append(timer, timer).append(capText, capText).append(capPos, capPos).append(capOri, capOri).append(broadcast, broadcast).append(broadcastMediaUrl, broadcastMediaUrl).append(broadcastUrl, broadcastUrl).append(broadcastActionText, broadcastActionText).append(broadcastHideTimer, broadcastHideTimer).append(filterId, filterId).append(rp, rp).append(cId, cId).append(replayed, replayed).append(pending, pending).append(c, c).isEquals();
   }
   
-  public int hashCode()
+  public final String f()
   {
-    return new HashCodeBuilder().append(email).append(age).append(birthday).append(studySettings).toHashCode();
+    return broadcastMediaUrl;
   }
   
-  public final void p(String paramString)
+  public final String g()
   {
-    email = paramString;
+    return broadcastUrl;
   }
   
-  public final void q(String paramString)
+  public final String h()
   {
-    age = paramString;
+    return broadcastActionText;
   }
   
-  public final void r(String paramString)
+  public final int hashCode()
   {
-    birthday = paramString;
+    return new HashCodeBuilder().append(sn).append(t).append(timer).append(capText).append(capPos).append(capOri).append(broadcast).append(broadcastMediaUrl).append(broadcastUrl).append(broadcastActionText).append(broadcastHideTimer).append(filterId).append(rp).append(cId).append(replayed).append(pending).append(c).toHashCode();
   }
   
-  public final void s(String paramString)
+  public final Boolean i()
   {
-    studySettings = paramString;
+    return broadcastHideTimer;
   }
   
-  public String toString()
+  public final String j()
+  {
+    return filterId;
+  }
+  
+  public final String k()
+  {
+    return rp;
+  }
+  
+  public final String l()
+  {
+    return cId;
+  }
+  
+  public final Boolean m()
+  {
+    return replayed;
+  }
+  
+  public final Boolean n()
+  {
+    return pending;
+  }
+  
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

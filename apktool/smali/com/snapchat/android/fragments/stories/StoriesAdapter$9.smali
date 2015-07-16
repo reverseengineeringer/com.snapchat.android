@@ -1,6 +1,9 @@
 .class final Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;
-.super Latg;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
@@ -17,63 +20,76 @@
 # instance fields
 .field final synthetic a:Lcom/snapchat/android/model/Friend;
 
-.field final synthetic b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
+.field final synthetic b:Lahz;
+
+.field final synthetic c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Landroid/content/Context;Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/model/Friend;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;Lahz;)V
     .locals 0
 
     .prologue
-    .line 735
-    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->b:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
+    .line 720
+    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
 
-    iput-object p4, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
 
-    invoke-direct {p0, p2, p3}, Latg;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;)V
+    iput-object p3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->b:Lahz;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Ljava/lang/String;)V
-    .locals 9
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
 
     .prologue
-    .line 738
-    new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9$1;
+    .line 723
+    packed-switch p2, :pswitch_data_0
 
-    sget-object v2, Lcom/snapchat/android/model/FriendAction;->SET_DISPLAY_NAME:Lcom/snapchat/android/model/FriendAction;
-
-    iget-object v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
-
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
-
-    move-result-object v4
-
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
-
-    iget-object v5, v1, Lcom/snapchat/android/model/Friend;->mUserId:Ljava/lang/String;
-
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend;->a()Ljava/lang/String;
-
-    move-result-object v7
-
-    move-object v1, p0
-
-    move-object v6, p1
-
-    move-object v8, p1
-
-    invoke-direct/range {v0 .. v8}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9$1;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;Lcom/snapchat/android/model/FriendAction;Lcom/snapchat/android/model/Friend;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9$1;->f()V
-
-    .line 747
+    .line 734
+    :goto_0
     return-void
+
+    .line 725
+    :pswitch_0
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
+
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
+
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;)V
+
+    goto :goto_0
+
+    .line 728
+    :pswitch_1
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
+
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
+
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->b(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;)V
+
+    goto :goto_0
+
+    .line 731
+    :pswitch_2
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->c:Lcom/snapchat/android/fragments/stories/StoriesAdapter;
+
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;->a:Lcom/snapchat/android/model/Friend;
+
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;)V
+
+    goto :goto_0
+
+    .line 723
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method

@@ -18,7 +18,7 @@
 .field private static final TOAST_RATE_LIMIT:I = 0x7d0
 
 .field private static sLastToast:Landroid/widget/Toast;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -111,7 +111,7 @@
 
     invoke-direct {v0}, Lcom/snapchat/android/util/AlertDialogUtils$21;-><init>()V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 193
     return-void
@@ -120,7 +120,7 @@
 .method public static a(ILandroid/content/Context;)V
     .locals 2
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -142,8 +142,8 @@
     .locals 3
 
     .prologue
-    .line 277
-    sget-boolean v0, Lasu;->IS_NEXUS_4:Z
+    .line 279
+    sget-boolean v0, Latt;->IS_NEXUS_4:Z
 
     if-eqz v0, :cond_0
 
@@ -153,18 +153,18 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 309
+    .line 311
     :cond_0
     :goto_0
     return-void
 
-    .line 281
+    .line 283
     :cond_1
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 282
+    .line 284
     const-string v1, "hasSeenNexus4RestartMessage"
 
     const/4 v2, 0x0
@@ -175,42 +175,42 @@
 
     if-nez v1, :cond_0
 
-    .line 286
+    .line 288
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 287
+    .line 289
     const-string v1, "hasSeenNexus4RestartMessage"
 
     const/4 v2, 0x1
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 288
+    .line 290
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 290
+    .line 292
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 291
+    .line 293
     const-string v1, "Nexus 4 Restarts"
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 292
+    .line 294
     const v1, 0x7f060006
 
-    invoke-static {p0, v1}, Lbfb;->a(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p0, v1}, Lbgb;->a(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 293
+    .line 295
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 294
+    .line 296
     const-string v1, "Support"
 
     new-instance v2, Lcom/snapchat/android/util/AlertDialogUtils$3;
@@ -219,14 +219,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 307
+    .line 309
     const v1, 0x7f0c0195
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 308
+    .line 310
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
@@ -236,12 +236,12 @@
     goto :goto_0
 .end method
 
-.method public static a(Landroid/content/Context;Laje;Laio;)V
+.method public static a(Landroid/content/Context;Laka;Lajk;)V
     .locals 5
 
     .prologue
     .line 241
-    invoke-static {p0}, Lajv;->a(Landroid/content/Context;)Lajv;
+    invoke-static {p0}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v1
 
@@ -256,23 +256,23 @@
     invoke-virtual {v2, v0}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     .line 246
-    invoke-virtual {p1}, Laje;->j()Ljava/lang/String;
+    invoke-virtual {p1}, Laka;->j()Ljava/lang/String;
 
     move-result-object v0
 
     .line 247
-    invoke-virtual {p1}, Laje;->j()Ljava/lang/String;
+    invoke-virtual {p1}, Laka;->j()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v3, v1}, Latm;->b(Ljava/lang/String;Lajv;)Lcom/snapchat/android/model/Friend;
+    invoke-static {v3, v1}, Lauk;->b(Ljava/lang/String;Lakp;)Lcom/snapchat/android/model/Friend;
 
     move-result-object v3
 
     .line 248
     if-eqz v3, :cond_0
 
-    invoke-virtual {v3}, Lcom/snapchat/android/model/Friend;->j()Z
+    invoke-virtual {v3}, Lcom/snapchat/android/model/Friend;->n()Z
 
     move-result v4
 
@@ -297,7 +297,7 @@
 
     const v4, 0x7f0c01f4
 
-    invoke-static {v0, v4, v3}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v4, v3}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -308,27 +308,27 @@
 
     new-instance v3, Lcom/snapchat/android/util/AlertDialogUtils$23;
 
-    invoke-direct {v3, p1, v1, p2}, Lcom/snapchat/android/util/AlertDialogUtils$23;-><init>(Laje;Lajv;Laio;)V
+    invoke-direct {v3, p1, v1, p2}, Lcom/snapchat/android/util/AlertDialogUtils$23;-><init>(Laka;Lakp;Lajk;)V
 
     invoke-virtual {v2, v0, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 267
+    .line 269
     const v0, 0x7f0c0058
 
     new-instance v3, Lcom/snapchat/android/util/AlertDialogUtils$2;
 
-    invoke-direct {v3, p1, v1}, Lcom/snapchat/android/util/AlertDialogUtils$2;-><init>(Laje;Lajv;)V
+    invoke-direct {v3, p1, v1}, Lcom/snapchat/android/util/AlertDialogUtils$2;-><init>(Laka;Lakp;)V
 
     invoke-virtual {v2, v0, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 273
+    .line 275
     invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 274
+    .line 276
     return-void
 .end method
 
@@ -337,15 +337,15 @@
 
     .prologue
     .line 51
-    invoke-static {p0, p1, p2}, Latg;->a(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;)Latg;
+    invoke-static {p0, p1, p2}, Lauf;->a(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;)Lauf;
 
     move-result-object v0
 
-    iput-object p3, v0, Latg;->mAnalyticsContext:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+    iput-object p3, v0, Lauf;->mAnalyticsContext:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    invoke-virtual {v0}, Lapa;->show()V
+    invoke-virtual {v0}, Lapw;->show()V
 
-    invoke-virtual {v0}, Lapa;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Lapw;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -356,45 +356,45 @@
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;ZLpp$a;)V
+.method public static a(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;ZLqg$a;)V
     .locals 8
     .param p2    # Landroid/os/Message;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 416
-    invoke-static {}, Lajv;->g()Lajv;
+    .line 418
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v1
 
-    .line 417
+    .line 419
     if-nez v1, :cond_0
 
-    .line 569
+    .line 571
     :goto_0
     return-void
 
-    .line 421
+    .line 423
     :cond_0
     new-instance v6, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v6, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 422
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    .line 424
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 423
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->j()Z
+    .line 425
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->n()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 424
+    .line 426
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -413,7 +413,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v2
 
@@ -431,27 +431,27 @@
 
     move-result-object v0
 
-    .line 426
+    .line 428
     :cond_1
     invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 428
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    .line 430
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, v1}, Latm;->f(Ljava/lang/String;Lajv;)Z
+    invoke-static {v0, v1}, Lauk;->f(Ljava/lang/String;Lakp;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 429
+    .line 431
     iget-boolean v0, p1, Lcom/snapchat/android/model/Friend;->mIsBlocked:Z
 
     if-eqz v0, :cond_2
 
-    .line 430
+    .line 432
     const v7, 0x7f070001
 
     new-instance v0, Lcom/snapchat/android/util/AlertDialogUtils$10;
@@ -466,11 +466,11 @@
 
     move-object v5, p5
 
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/util/AlertDialogUtils$10;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lpp$a;)V
+    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/util/AlertDialogUtils$10;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lqg$a;)V
 
     invoke-virtual {v6, v7, v0}, Landroid/app/AlertDialog$Builder;->setItems(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 568
+    .line 570
     :goto_1
     invoke-virtual {v6}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
@@ -480,7 +480,7 @@
 
     goto :goto_0
 
-    .line 463
+    .line 465
     :cond_2
     const v7, 0x7f070004
 
@@ -496,41 +496,41 @@
 
     move-object v5, p5
 
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/util/AlertDialogUtils$11;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lpp$a;)V
+    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/util/AlertDialogUtils$11;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lqg$a;)V
 
     invoke-virtual {v6, v7, v0}, Landroid/app/AlertDialog$Builder;->setItems(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     goto :goto_1
 
-    .line 492
+    .line 494
     :cond_3
-    invoke-virtual {v1, p1}, Lajv;->c(Lcom/snapchat/android/model/Friend;)Z
+    invoke-virtual {v1, p1}, Lakp;->c(Lcom/snapchat/android/model/Friend;)Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 493
+    .line 495
     iget-boolean v0, p1, Lcom/snapchat/android/model/Friend;->mIsBlocked:Z
 
     if-eqz v0, :cond_4
 
-    .line 494
+    .line 496
     const v0, 0x7f070002
 
     new-instance v1, Lcom/snapchat/android/util/AlertDialogUtils$13;
 
-    invoke-direct {v1, p1, p2, p3, p5}, Lcom/snapchat/android/util/AlertDialogUtils$13;-><init>(Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lpp$a;)V
+    invoke-direct {v1, p1, p2, p3, p5}, Lcom/snapchat/android/util/AlertDialogUtils$13;-><init>(Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lqg$a;)V
 
     invoke-virtual {v6, v0, v1}, Landroid/app/AlertDialog$Builder;->setItems(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     goto :goto_1
 
-    .line 506
+    .line 508
     :cond_4
     if-nez p4, :cond_5
 
-    .line 508
+    .line 510
     const v0, 0x7f070006
 
     new-instance v1, Lcom/snapchat/android/util/AlertDialogUtils$14;
@@ -541,7 +541,7 @@
 
     goto :goto_1
 
-    .line 525
+    .line 527
     :cond_5
     const v7, 0x7f070005
 
@@ -557,19 +557,19 @@
 
     move-object v5, p5
 
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/util/AlertDialogUtils$15;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lpp$a;)V
+    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/util/AlertDialogUtils$15;-><init>(Landroid/content/Context;Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lqg$a;)V
 
     invoke-virtual {v6, v7, v0}, Landroid/app/AlertDialog$Builder;->setItems(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     goto :goto_1
 
-    .line 551
+    .line 553
     :cond_6
     const v0, 0x7f070003
 
     new-instance v1, Lcom/snapchat/android/util/AlertDialogUtils$16;
 
-    invoke-direct {v1, p1, p2, p3, p5}, Lcom/snapchat/android/util/AlertDialogUtils$16;-><init>(Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lpp$a;)V
+    invoke-direct {v1, p1, p2, p3, p5}, Lcom/snapchat/android/util/AlertDialogUtils$16;-><init>(Lcom/snapchat/android/model/Friend;Landroid/os/Message;Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;Lqg$a;)V
 
     invoke-virtual {v6, v0, v1}, Landroid/app/AlertDialog$Builder;->setItems(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -688,12 +688,12 @@
     .locals 4
 
     .prologue
-    .line 339
+    .line 341
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 340
+    .line 342
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
@@ -702,7 +702,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0c02e3
+    const v2, 0x7f0c02e1
 
     new-instance v3, Lcom/snapchat/android/util/AlertDialogUtils$7;
 
@@ -720,14 +720,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 354
+    .line 356
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 355
+    .line 357
     return-void
 .end method
 
@@ -769,12 +769,12 @@
     .locals 5
 
     .prologue
-    .line 362
+    .line 364
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 364
+    .line 366
     const-string v0, "layout_inflater"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -783,8 +783,8 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 365
-    const v1, 0x7f0400cf
+    .line 367
+    const v1, 0x7f0400d1
 
     const/4 v3, 0x0
 
@@ -792,7 +792,7 @@
 
     move-result-object v3
 
-    .line 366
+    .line 368
     if-nez v3, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -801,7 +801,7 @@
 
     throw v0
 
-    .line 368
+    .line 370
     :cond_0
     const v0, 0x7f0a0153
 
@@ -811,12 +811,12 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    .line 370
-    const v1, 0x7f0c02e4
+    .line 372
+    const v1, 0x7f0c02e2
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setText(I)V
 
-    .line 371
+    .line 373
     const v1, 0x7f0a0152
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -825,10 +825,10 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 373
+    .line 375
     invoke-virtual {v1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 374
+    .line 376
     invoke-virtual {v2, p1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
@@ -837,7 +837,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0c02e3
+    const v3, 0x7f0c02e1
 
     new-instance v4, Lcom/snapchat/android/util/AlertDialogUtils$9;
 
@@ -855,28 +855,28 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 392
+    .line 394
     invoke-virtual {v2, p3}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 393
+    .line 395
     invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 394
+    .line 396
     return-void
 .end method
 
 .method public static a(Ljava/lang/String;Landroid/content/Context;)V
     .locals 1
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -893,11 +893,11 @@
 .method public static a(Ljava/lang/String;Landroid/content/Context;I)V
     .locals 1
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -907,7 +907,7 @@
 
     invoke-direct {v0, p2, p0, p1}, Lcom/snapchat/android/util/AlertDialogUtils$20;-><init>(ILjava/lang/String;Landroid/content/Context;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     .line 179
     return-void
@@ -972,7 +972,7 @@
     .locals 5
 
     .prologue
-    .line 312
+    .line 314
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->g()Z
 
     move-result v0
@@ -985,18 +985,18 @@
 
     if-eqz v0, :cond_1
 
-    .line 335
+    .line 337
     :cond_0
     :goto_0
     return-void
 
-    .line 314
+    .line 316
     :cond_1
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 315
+    .line 317
     const-string v1, "firstTimeUsingBeta"
 
     const/4 v2, 0x1
@@ -1005,20 +1005,20 @@
 
     move-result v1
 
-    .line 316
+    .line 318
     if-eqz v1, :cond_0
 
-    .line 319
+    .line 321
     new-instance v1, Lcom/snapchat/android/util/AlertDialogUtils$4;
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/util/AlertDialogUtils$4;-><init>(Landroid/content/Context;)V
 
-    .line 320
+    .line 322
     const v2, 0x7f0c0266
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog;->setTitle(I)V
 
-    .line 321
+    .line 323
     const v2, 0x7f0c0042
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1027,12 +1027,12 @@
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 322
+    .line 324
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog;->setCancelable(Z)V
 
-    .line 323
+    .line 325
     const/4 v2, -0x1
 
     const v3, 0x7f0c0195
@@ -1047,7 +1047,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
 
-    .line 332
+    .line 334
     invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
 
     goto :goto_0

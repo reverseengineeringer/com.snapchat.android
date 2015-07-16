@@ -1,72 +1,68 @@
-.class public final Latn;
-.super Ljava/lang/Object;
+.class public Latn;
+.super Landroid/support/v7/widget/RecyclerView$s;
 .source "SourceFile"
 
 
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
-
-
-# static fields
-.field private static final sGson:Lcom/google/gson/Gson;
+# instance fields
+.field public final V:Landroid/widget/TextView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Landroid/view/View;I)V
+    .locals 1
 
     .prologue
     .line 18
-    new-instance v0, Lcom/google/gson/GsonBuilder;
-
-    invoke-direct {v0}, Lcom/google/gson/GsonBuilder;-><init>()V
-
-    const-class v1, Laxu;
-
-    new-instance v2, Laxv;
-
-    invoke-direct {v2}, Laxv;-><init>()V
-
-    invoke-virtual {v2}, Laxv;->nullSafe()Lcom/google/gson/TypeAdapter;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    const-class v1, Layh;
+    check-cast v0, Landroid/widget/TextView;
 
-    new-instance v2, Layi;
+    invoke-direct {p0, p1, v0}, Latn;-><init>(Landroid/view/View;Landroid/widget/TextView;)V
 
-    invoke-direct {v2}, Layi;-><init>()V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/GsonBuilder;->registerTypeAdapter(Ljava/lang/reflect/Type;Ljava/lang/Object;)Lcom/google/gson/GsonBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->enableComplexMapKeySerialization()Lcom/google/gson/GsonBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
-
-    move-result-object v0
-
-    sput-object v0, Latn;->sGson:Lcom/google/gson/Gson;
-
+    .line 19
     return-void
 .end method
 
-.method public static a()Lcom/google/gson/Gson;
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method private constructor <init>(Landroid/view/View;Landroid/widget/TextView;)V
+    .locals 0
 
     .prologue
-    .line 33
-    sget-object v0, Latn;->sGson:Lcom/google/gson/Gson;
+    .line 23
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$s;-><init>(Landroid/view/View;)V
 
-    return-object v0
+    .line 24
+    iput-object p2, p0, Latn;->V:Landroid/widget/TextView;
+
+    .line 25
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/String;)V
+    .locals 1
+
+    .prologue
+    .line 32
+    iget-object v0, p0, Latn;->V:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 33
+    return-void
+.end method
+
+.method public final b(I)V
+    .locals 1
+
+    .prologue
+    .line 40
+    iget-object v0, p0, Latn;->V:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 41
+    return-void
 .end method

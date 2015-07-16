@@ -56,7 +56,7 @@
 
     const/4 v3, 0x0
 
-    .line 51
+    .line 52
     new-instance v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     const-string v1, "INITIATED"
@@ -65,7 +65,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->INITIATED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 52
+    .line 53
     new-instance v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     const-string v1, "WAITING_ON_RECIPIENT"
@@ -74,7 +74,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->WAITING_ON_RECIPIENT:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 53
+    .line 54
     new-instance v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     const-string v1, "COMPLETED"
@@ -83,7 +83,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->COMPLETED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 54
+    .line 55
     new-instance v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     const-string v1, "EXPIRED"
@@ -92,7 +92,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->EXPIRED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 55
+    .line 56
     new-instance v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     const-string v1, "CANCELED"
@@ -101,7 +101,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->CANCELED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 56
+    .line 57
     new-instance v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     const-string v1, "RECIPIENT_CANCELED"
@@ -112,7 +112,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->RECIPIENT_CANCELED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 57
+    .line 58
     new-instance v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     const-string v1, "SENDER_CANCELED"
@@ -123,7 +123,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->SENDER_CANCELED:Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
-    .line 50
+    .line 51
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
@@ -174,7 +174,7 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 51
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 51
     const-class v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -200,7 +200,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 51
     sget-object v0, Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->$VALUES:[Lcom/snapchat/android/model/CashTransaction$TransactionStatus;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/model/CashTransaction$TransactionStatus;->clone()Ljava/lang/Object;

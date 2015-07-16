@@ -1,31 +1,19 @@
 package com.snapchat.android.fragments.chat;
 
-import android.text.Editable;
-import com.snapchat.android.Timber;
-import com.snapchat.android.model.chat.CashFeedItem;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.snapchat.android.ui.CursorCallbackEditText;
-import com.snapchat.android.util.CashUtils;
-import ya.a;
+import android.view.View;
+import bhr;
+import bhr.a;
+import com.snapchat.android.ui.ChatCameraButton;
+import com.snapchat.android.ui.ChatCameraButton.a;
 
 final class ChatFragment$8
-  implements ya.a
+  implements bhr.a
 {
-  ChatFragment$8(ChatFragment paramChatFragment, ChatConversation paramChatConversation, int paramInt, CashFeedItem paramCashFeedItem, String paramString, Editable paramEditable) {}
+  ChatFragment$8(ChatFragment paramChatFragment) {}
   
-  public final void a()
+  public final void a(View paramView)
   {
-    Timber.c("ChatFragment", "CASH-LOG: RECONFIRMED transaction recipient[%s] amount[%s]", new Object[] { a.mTheirUsername, CashUtils.a(b) });
-    ChatFragment.a(f, c);
-    ChatFragment.a(f, a, c, d);
-  }
-  
-  public final void b()
-  {
-    Timber.c("ChatFragment", "CASH-LOG: RECONFIRM CANCELED recipient[%s] amount[%s]", new Object[] { a.mTheirUsername, CashUtils.a(b) });
-    e.clearSpans();
-    ChatFragment.i(f).setText(e);
-    ChatFragment.q(f);
+    ChatFragment.g(a).setTouchSubscriber((ChatCameraButton.a)a.g.a());
   }
 }
 

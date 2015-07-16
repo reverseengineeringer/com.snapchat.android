@@ -1,57 +1,47 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.Map;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bir
-  extends bhl
+public final class bir
 {
-  @SerializedName("here_auth")
-  protected bic hereAuth;
-  @SerializedName("presences")
-  protected Map<String, Boolean> presences;
-  @SerializedName("receiving_video")
-  protected Boolean receivingVideo;
-  @SerializedName("supports_here")
-  protected Boolean supportsHere;
+  @SerializedName("compatibility")
+  protected String compatibility;
+  @SerializedName("get_channels")
+  protected String getChannels;
+  @SerializedName("resource_parameter_name")
+  protected String resourceParameterName;
+  @SerializedName("resource_parameter_value")
+  protected String resourceParameterValue;
+  @SerializedName("video_catalog")
+  protected String videoCatalog;
   
-  public final Map<String, Boolean> a()
+  public final String a()
   {
-    return presences;
+    return getChannels;
   }
   
-  public final void a(Map<String, Boolean> paramMap)
+  public final String b()
   {
-    presences = paramMap;
+    return videoCatalog;
   }
   
-  public final Boolean b()
+  public final String c()
   {
-    return supportsHere;
+    return resourceParameterName;
   }
   
-  public final void b(Boolean paramBoolean)
+  public final String d()
   {
-    supportsHere = paramBoolean;
+    return resourceParameterValue;
   }
   
-  public final Boolean c()
+  public final String e()
   {
-    return receivingVideo;
+    return compatibility;
   }
   
-  public final void c(Boolean paramBoolean)
-  {
-    receivingVideo = paramBoolean;
-  }
-  
-  public final bic d()
-  {
-    return hereAuth;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -60,15 +50,15 @@ public class bir
       return false;
     }
     paramObject = (bir)paramObject;
-    return new EqualsBuilder().append(presences, presences).append(supportsHere, supportsHere).append(receivingVideo, receivingVideo).append(hereAuth, hereAuth).isEquals();
+    return new EqualsBuilder().append(getChannels, getChannels).append(videoCatalog, videoCatalog).append(resourceParameterName, resourceParameterName).append(resourceParameterValue, resourceParameterValue).append(compatibility, compatibility).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(presences).append(supportsHere).append(receivingVideo).append(hereAuth).toHashCode();
+    return new HashCodeBuilder().append(getChannels).append(videoCatalog).append(resourceParameterName).append(resourceParameterValue).append(compatibility).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

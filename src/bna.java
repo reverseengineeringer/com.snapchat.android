@@ -1,23 +1,34 @@
-public final class bna
-  extends bmd
+import java.io.IOException;
+
+public enum bna
 {
-  private final blu a;
-  private final bzw b;
+  private final String e;
   
-  public bna(blu paramblu, bzw parambzw)
+  private bna(String paramString)
   {
-    a = paramblu;
-    b = parambzw;
+    e = paramString;
   }
   
-  public final long a()
+  public static bna a(String paramString)
   {
-    return bmz.a(a);
+    if (paramString.equals(ae)) {
+      return a;
+    }
+    if (paramString.equals(be)) {
+      return b;
+    }
+    if (paramString.equals(de)) {
+      return d;
+    }
+    if (paramString.equals(ce)) {
+      return c;
+    }
+    throw new IOException("Unexpected protocol: " + paramString);
   }
   
-  public final bzw b()
+  public final String toString()
   {
-    return b;
+    return e;
   }
 }
 

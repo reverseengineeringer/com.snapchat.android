@@ -51,7 +51,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$5;->a:Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;
 
-    const v3, 0x7f0c02c4
+    const v3, 0x7f0c02c2
 
     invoke-virtual {v1, v3}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->getString(I)Ljava/lang/String;
 
@@ -59,7 +59,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$5;->a:Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;
 
-    const v4, 0x7f0c02e3
+    const v4, 0x7f0c02e1
 
     invoke-virtual {v1, v4}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->getString(I)Ljava/lang/String;
 
@@ -78,7 +78,7 @@
     invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$5$1;-><init>(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$5;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 121
-    invoke-virtual {v0}, Laqb;->show()V
+    invoke-virtual {v0}, Lara;->show()V
 
     .line 122
     return-void

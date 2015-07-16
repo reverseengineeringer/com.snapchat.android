@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 333
+    .line 330
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$8;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 4
 
     .prologue
-    .line 337
+    .line 334
     :try_start_0
     new-instance v0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$a;
 
@@ -54,11 +54,11 @@
     :try_end_0
     .catch Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$a; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 338
+    .line 335
     :catch_0
     move-exception v0
 
-    .line 340
+    .line 337
     :try_start_1
     new-instance v1, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$b;
 
@@ -72,11 +72,11 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 341
+    .line 338
     :catch_1
     move-exception v0
 
-    .line 343
+    .line 340
     new-instance v1, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$c;
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$8;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;

@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.settings;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.squareup.otto.Bus;
 
 final class SettingsFragment$2
@@ -13,7 +13,7 @@ final class SettingsFragment$2
   
   public final void onClick(View paramView)
   {
-    ban.a().a(new bdw(new WebFragment("https://accounts.snapchat.com", a.getString(2131493479), true, null)));
+    bbo.a().a(new bev(new WebFragment("https://accounts.snapchat.com", a.getString(2131493479), true, null)));
   }
 }
 

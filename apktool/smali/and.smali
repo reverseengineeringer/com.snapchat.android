@@ -1,140 +1,124 @@
-.class public final Land;
-.super Lamd;
+.class public abstract Land;
+.super Lui;
 .source "SourceFile"
 
 # interfaces
-.implements Lts$b;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Land$a;
-    }
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lamd;",
-        "Lts$b",
-        "<",
-        "Lbkm;",
-        ">;"
-    }
-.end annotation
+.implements Lanh;
 
 
 # instance fields
-.field public a:Z
+.field final i:Landroid/content/Intent;
 
-.field public b:Lbkm;
-
-.field private c:Ljava/lang/String;
-
-.field private d:Ljava/lang/String;
+.field protected j:Lur;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
-    .locals 2
+.method protected constructor <init>(Landroid/content/Intent;)V
+    .locals 1
 
     .prologue
-    .line 29
-    invoke-direct {p0, p1}, Lamd;-><init>(Landroid/content/Intent;)V
+    .line 59
+    invoke-direct {p0}, Lui;-><init>()V
 
-    .line 30
-    const-string v0, "refresh_suggestions"
+    .line 60
+    iput-object p1, p0, Land;->i:Landroid/content/Intent;
 
-    const/4 v1, 0x1
+    .line 61
+    iget-object v0, p0, Land;->mProvider:Luj;
 
-    invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Land;->a:Z
-
-    .line 31
-    const-string v0, "email"
-
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Luj;->a()Lur;
 
     move-result-object v0
 
-    iput-object v0, p0, Land;->c:Ljava/lang/String;
+    iput-object v0, p0, Land;->j:Lur;
 
-    .line 32
-    const-string v0, "requested_username"
-
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Land;->d:Ljava/lang/String;
-
-    .line 33
-    const-class v0, Lbkm;
-
-    invoke-virtual {p0, v0, p0}, Land;->a(Ljava/lang/Class;Lts$b;)V
-
-    .line 34
+    .line 62
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Luc;)V
+.method public final a()Landroid/content/Intent;
     .locals 1
 
     .prologue
-    .line 16
-    check-cast p1, Lbkm;
+    .line 66
+    iget-object v0, p0, Land;->i:Landroid/content/Intent;
 
-    invoke-virtual {p2}, Luc;->d()Z
+    return-object v0
+.end method
+
+.method public a(Landroid/content/Context;)V
+    .locals 6
+
+    .prologue
+    .line 71
+    invoke-static {}, Lakr;->H()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_0
+    .line 72
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput-object p1, p0, Land;->b:Lbkm;
+    const-string v1, "Do not send any network request for Snapkidz "
 
-    :cond_0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Land;->getUrl()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 85
+    :goto_0
     return-void
-.end method
 
-.method public final b()Ljava/lang/Object;
-    .locals 3
+    .line 76
+    :cond_0
+    invoke-virtual {p0}, Land;->getUrl()Ljava/lang/String;
 
-    .prologue
-    .line 65
-    new-instance v0, Land$a;
+    move-result-object v1
 
-    iget-object v1, p0, Land;->c:Ljava/lang/String;
+    .line 77
+    invoke-virtual {p0}, Land;->getMethod()Lcom/snapchat/android/api2/framework/HttpMethod;
 
-    iget-object v2, p0, Land;->d:Ljava/lang/String;
+    move-result-object v2
 
-    invoke-direct {v0, p0, v1, v2}, Land$a;-><init>(Land;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 38
-    const-string v0, "/bq/suggest_username"
-
-    return-object v0
-.end method
-
-.method public final i()Z
-    .locals 1
-
-    .prologue
     .line 78
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Land;->getResponseBuffer()Lbgk;
 
-    return v0
+    move-result-object v4
+
+    .line 79
+    invoke-virtual {p0}, Land;->getRequestPayload()Ljava/lang/Object;
+
+    move-result-object v5
+
+    .line 80
+    invoke-virtual {p0, v5}, Land;->getHeaders(Ljava/lang/Object;)Ljava/util/Map;
+
+    move-result-object v3
+
+    .line 82
+    iget-object v0, p0, Land;->j:Lur;
+
+    invoke-interface/range {v0 .. v5}, Lur;->a(Ljava/lang/String;Lcom/snapchat/android/api2/framework/HttpMethod;Ljava/util/Map;Lbgk;Ljava/lang/Object;)Lus;
+
+    move-result-object v0
+
+    .line 84
+    invoke-virtual {p0, v0}, Land;->onResult(Lus;)V
+
+    goto :goto_0
+.end method
+
+.method public b()V
+    .locals 0
+
+    .prologue
+    .line 88
+    return-void
 .end method

@@ -1,17 +1,17 @@
 package com.snapchat.android.fragments.stories;
 
-import afl;
+import agl;
 import android.content.Context;
 import android.text.TextUtils;
-import aop;
-import aqb;
+import apl;
+import ara;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import lp;
-import lr;
-import pu;
+import mh;
+import mj;
+import ql;
 
 final class StoriesAdapter$3$1
-  extends aqb
+  extends ara
 {
   StoriesAdapter$3$1(StoriesAdapter.3 param3, Context paramContext, String paramString1, String paramString2, String paramString3)
   {
@@ -22,17 +22,17 @@ final class StoriesAdapter$3$1
   
   protected final void b()
   {
-    new pu(a.a.h(), false).f();
-    String str = a.a.h();
+    new ql(a.a.l(), false).execute();
+    String str = a.a.l();
     if (!TextUtils.isEmpty(str))
     {
-      lp locallp = new lp();
-      storyType = lr.OUR;
+      mh localmh = new mh();
+      storyType = mj.OUR;
       posterId = str;
-      if (aop.a(str)) {
+      if (apl.a(str)) {
         geoFence = "LOCAL";
       }
-      ScAnalyticsEventEngine.a(locallp);
+      ScAnalyticsEventEngine.a(localmh);
     }
   }
 }

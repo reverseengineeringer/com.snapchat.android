@@ -1,23 +1,23 @@
 package com.snapchat.android.util.crypto;
 
-import ayg;
-import buo;
+import aze;
+import bvp;
 
 public enum SlightlySecurePreferences_Factory
-  implements buo<ayg>
+  implements bvp<aze>
 {
   INSTANCE;
   
   private SlightlySecurePreferences_Factory() {}
   
-  public static buo<ayg> create()
+  public static bvp<aze> create()
   {
     return INSTANCE;
   }
   
-  public final ayg get()
+  public final aze get()
   {
-    return new ayg();
+    return new aze();
   }
 }
 

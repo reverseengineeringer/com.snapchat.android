@@ -1,443 +1,266 @@
 .class public final Lpj;
-.super Lph;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field private static final TASK_NAME:Ljava/lang/String; = "UploadChatMediaTask"
+.field private static final PATTERN:Ljava/lang/String; = "0001110111101110001111010101111011010001001110011000110001000110"
 
+.field private static final SECRET:Ljava/lang/String; = "iEk21fuwZApXlz93750dmW22pw389dPwOk"
 
-# instance fields
-.field private mChatConversation:Lcom/snapchat/android/model/chat/ChatConversation;
+.field private static final STATIC_TOKEN:Ljava/lang/String; = "m198sOkJEn37DjqZ32lpRu76xmw288xSQ9"
 
-.field private mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-.field private mNotificationManager:Lcom/snapchat/android/notification/AndroidNotificationManager;
-
-.field private final mSnapWomb:Lajn;
+.field private static final TAG:Ljava/lang/String; = "RequestAuthorization"
 
 
 # direct methods
-.method public constructor <init>(Laim;)V
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
+    .annotation build Lchd;
+    .end annotation
 
     .prologue
-    .line 33
-    invoke-direct {p0, p1}, Lph;-><init>(Laim;)V
-
-    .line 26
-    invoke-static {}, Lajn;->a()Lajn;
+    .line 74
+    :try_start_0
+    invoke-static {}, Lakr;->F()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lpj;->mSnapWomb:Lajn;
-
-    .line 34
-    invoke-static {}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a()Lcom/snapchat/android/notification/AndroidNotificationManager;
+    invoke-static {v0, p0}, Lpj;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v0
 
-    iput-object v0, p0, Lpj;->mNotificationManager:Lcom/snapchat/android/notification/AndroidNotificationManager;
-
-    .line 35
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 55
-    const-string v0, "/bq/upload_chat_media"
-
+    .line 76
+    :goto_0
     return-object v0
+
+    :catch_0
+    move-exception v0
+
+    :goto_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_1
 .end method
 
-.method protected final a(Ljava/lang/String;I)V
-    .locals 4
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 7
 
     .prologue
-    .line 81
-    iget-object v0, p0, Lpj;->mSnapWomb:Lajn;
+    .line 46
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lpj;->mSnapbryo:Laim;
+    const-string v1, "iEk21fuwZApXlz93750dmW22pw389dPwOk"
 
-    sget-object v2, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->FAILED:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Lajn;->a(Laim;Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;)V
-
-    .line 82
-    iget-object v0, p0, Lpj;->mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-    sget-object v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->FAILED:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-
-    iput-object v1, v0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-
-    .line 83
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    new-instance v1, Lbaz;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v2, p0, Lpj;->mChatConversation:Lcom/snapchat/android/model/chat/ChatConversation;
+    move-result-object v0
 
-    iget-object v2, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
+    .line 47
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x1
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1, v2, v3}, Lbaz;-><init>(Ljava/lang/String;Z)V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 85
-    iget-object v0, p0, Lpj;->mNotificationManager:Lcom/snapchat/android/notification/AndroidNotificationManager;
-
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const-string v2, "iEk21fuwZApXlz93750dmW22pw389dPwOk"
 
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Landroid/content/Context;Z)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 86
-    return-void
-.end method
+    move-result-object v1
 
-.method protected final b()Landroid/os/Bundle;
-    .locals 4
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .prologue
-    .line 60
-    invoke-super {p0}, Lph;->b()Landroid/os/Bundle;
+    move-result-object v1
+
+    .line 49
+    const-string v2, "SHA-256"
+
+    invoke-static {v2}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v2
+
+    .line 50
+    const-string v3, "UTF-8"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 61
-    const-string v1, "type"
+    invoke-virtual {v2, v0}, Ljava/security/MessageDigest;->update([B)V
 
-    sget-object v2, Lcom/snapchat/android/model/chat/ChatMedia$MediaType;->IMAGE:Lcom/snapchat/android/model/chat/ChatMedia$MediaType;
+    .line 51
+    invoke-virtual {v2}, Ljava/security/MessageDigest;->digest()[B
 
-    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/ChatMedia$MediaType;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 62
-    const-string v1, "conversation_id"
-
-    iget-object v2, p0, Lpj;->mChatConversation:Lcom/snapchat/android/model/chat/ChatConversation;
-
-    iget-object v2, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 63
-    const-string v1, "id"
-
-    iget-object v2, p0, Lpj;->mSnapbryo:Laim;
-
-    iget-object v2, v2, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 64
-    const-string v1, "recipient"
-
-    iget-object v2, p0, Lpj;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
-
-    invoke-virtual {v2}, Lcom/snapchat/android/model/MediaMailingMetadata;->e()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 65
-    new-instance v1, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;
-
-    iget-object v2, p0, Lpj;->mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/ChatMedia;->D()Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lpj;->mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->E()Ljava/lang/String;
+    .line 53
+    invoke-static {v0}, Lpj;->a([B)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    .line 55
+    const-string v0, "UTF-8"
 
-    iget-object v2, p0, Lpj;->mData:[B
-
-    const-string v3, "no dataId provided"
-
-    invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->a([BLjava/lang/String;)[B
-
-    move-result-object v1
-
-    .line 66
-    const-string v2, "data"
-
-    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
-
-    .line 67
-    return-object v0
-.end method
-
-.method protected final b(Laku;)V
-    .locals 8
-
-    .prologue
-    .line 72
-    iget-object v0, p0, Lpj;->mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-    iget-object v1, p1, Laku;->media_id:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/chat/ChatMedia;->e(Ljava/lang/String;)V
-
-    .line 73
-    iget-object v0, p0, Lpj;->mSnapWomb:Lajn;
-
-    iget-object v1, p0, Lpj;->mSnapbryo:Laim;
-
-    sget-object v2, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->UPLOADED:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
-
-    invoke-virtual {v0, v1, v2}, Lajn;->a(Laim;Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;)V
-
-    .line 74
-    invoke-static {}, Lyq;->a()Lyq;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lpj;->mChatConversation:Lcom/snapchat/android/model/chat/ChatConversation;
-
-    iget-object v3, p0, Lpj;->mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->W()J
-
-    move-result-wide v4
-
-    invoke-virtual {v2, v4, v5}, Lcom/snapchat/android/model/chat/ChatConversation;->b(J)J
-
-    move-result-wide v4
-
-    invoke-virtual {v3, v4, v5}, Lcom/snapchat/android/model/chat/ChatMedia;->c(J)V
-
-    new-instance v0, Lbih;
-
-    invoke-direct {v0}, Lbih;-><init>()V
-
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->B()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lbih;->a(Ljava/lang/String;)Lbih;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->D()Ljava/lang/String;
+    invoke-virtual {v2, v0}, Ljava/security/MessageDigest;->update([B)V
 
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lbih;->b(Ljava/lang/String;)Lbih;
-
-    move-result-object v0
-
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->E()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4}, Lbih;->c(Ljava/lang/String;)Lbih;
+    .line 56
+    invoke-virtual {v2}, Ljava/security/MessageDigest;->digest()[B
 
     move-result-object v0
 
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->F()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 58
+    invoke-static {v0}, Lpj;->a([B)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v0, v4}, Lbih;->a(Ljava/lang/Integer;)Lbih;
+    .line 60
+    const-string v1, ""
 
-    move-result-object v0
+    .line 61
+    const/4 v0, 0x0
 
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->G()I
+    move v6, v0
 
-    move-result v4
+    move-object v0, v1
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move v1, v6
 
-    move-result-object v4
+    :goto_0
+    const/16 v2, 0x40
 
-    invoke-virtual {v0, v4}, Lbih;->b(Ljava/lang/Integer;)Lbih;
+    if-ge v1, v2, :cond_1
 
-    move-result-object v0
+    .line 62
+    const-string v2, "0001110111101110001111010101111011010001001110011000110001000110"
 
-    new-instance v4, Lbij;
+    invoke-virtual {v2, v1}, Ljava/lang/String;->charAt(I)C
 
-    invoke-direct {v4}, Lbij;-><init>()V
+    move-result v2
 
-    sget-object v5, Lbij$a;->MEDIA:Lbij$a;
+    .line 63
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Lbij$a;->toString()Ljava/lang/String;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Lbij;->a(Ljava/lang/String;)Lbij;
+    const/16 v0, 0x30
 
-    move-result-object v4
+    if-ne v2, v0, :cond_0
 
-    invoke-virtual {v4, v0}, Lbij;->a(Lbih;)Lbij;
+    invoke-virtual {v3, v1}, Ljava/lang/String;->charAt(I)C
 
-    move-result-object v4
+    move-result v0
 
-    sget-object v0, Lbii$a;->CHAT_MESSAGE:Lbii$a;
-
-    iget-object v5, v3, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSender:Ljava/lang/String;
-
-    iget-object v6, v3, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mRecipients:Ljava/util/List;
-
-    iget-object v7, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mMessagingAuthToken:Lbix;
-
-    invoke-static {v0, v5, v6, v7}, Lasz;->a(Lbii$a;Ljava/lang/String;Ljava/util/List;Lbix;)Lbhl;
+    :goto_1
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lbhf;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, v4}, Lbhf;->a(Lbij;)V
+    move-result-object v2
 
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->d()Ljava/lang/String;
+    .line 61
+    add-int/lit8 v0, v1, 0x1
 
-    move-result-object v4
+    move v1, v0
 
-    invoke-virtual {v0, v4}, Lbhf;->a(Ljava/lang/String;)V
+    move-object v0, v2
 
-    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/ChatMedia;->W()J
+    goto :goto_0
 
-    move-result-wide v4
+    .line 63
+    :cond_0
+    invoke-virtual {v4, v1}, Ljava/lang/String;->charAt(I)C
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result v0
 
-    move-result-object v4
+    goto :goto_1
 
-    invoke-virtual {v0, v4}, Lbhf;->b(Ljava/lang/Long;)V
-
-    invoke-virtual {v0}, Lbhf;->k()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcom/snapchat/android/model/chat/ChatMedia;->a(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Lcom/snapchat/android/model/chat/ChatMedia;->a(Lbhf;)V
-
-    invoke-virtual {v1, v2, v3}, Lyq;->a(Lcom/snapchat/android/model/chat/ChatConversation;Lakb;)V
-
-    .line 76
-    iget-object v0, p0, Lpj;->mNotificationManager:Lcom/snapchat/android/notification/AndroidNotificationManager;
-
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Landroid/content/Context;Z)V
-
-    .line 77
-    return-void
+    .line 65
+    :cond_1
+    return-object v0
 .end method
 
-.method protected final c()Ljava/lang/String;
-    .locals 1
+.method private static a([B)Ljava/lang/String;
+    .locals 5
 
     .prologue
-    .line 90
-    const-string v0, "UploadChatMediaTask"
+    const/4 v4, 0x1
+
+    .line 23
+    const-string v0, "%064x"
+
+    new-array v1, v4, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    new-instance v3, Ljava/math/BigInteger;
+
+    invoke-direct {v3, v4, p0}, Ljava/math/BigInteger;-><init>(I[B)V
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method protected final onPreExecute()V
-    .locals 3
+.method public static b(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 39
-    invoke-super {p0}, Lph;->onPreExecute()V
+    .line 87
+    :try_start_0
+    const-string v0, "m198sOkJEn37DjqZ32lpRu76xmw288xSQ9"
 
-    .line 40
-    new-instance v0, Lcom/snapchat/android/model/chat/ChatMedia;
-
-    iget-object v1, p0, Lpj;->mSnapbryo:Laim;
-
-    invoke-direct {v0, v1}, Lcom/snapchat/android/model/chat/ChatMedia;-><init>(Laim;)V
-
-    iput-object v0, p0, Lpj;->mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-    .line 41
-    iget-object v0, p0, Lpj;->mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-    sget-object v1, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->SENDING:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-
-    iput-object v1, v0, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
-
-    .line 42
-    invoke-static {}, Lakc;->b()Lakc;
+    invoke-static {v0, p0}, Lpj;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v0
 
-    iget-object v1, p0, Lpj;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/model/MediaMailingMetadata;->e()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lakc;->a(Ljava/lang/String;)Lcom/snapchat/android/model/chat/ChatConversation;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lpj;->mChatConversation:Lcom/snapchat/android/model/chat/ChatConversation;
-
-    .line 44
-    iget-object v0, p0, Lpj;->mChatConversation:Lcom/snapchat/android/model/chat/ChatConversation;
-
-    if-nez v0, :cond_0
-
-    .line 45
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lpj;->cancel(Z)Z
-
-    .line 51
+    .line 89
     :goto_0
-    return-void
+    return-object v0
 
-    .line 48
-    :cond_0
-    iget-object v0, p0, Lpj;->mChatConversation:Lcom/snapchat/android/model/chat/ChatConversation;
+    :catch_0
+    move-exception v0
 
-    iget-object v1, p0, Lpj;->mChatMedia:Lcom/snapchat/android/model/chat/ChatMedia;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/chat/ChatConversation;->a(Lcom/snapchat/android/model/chat/ChatMedia;)V
-
-    .line 49
-    invoke-static {}, Lyn;->a()Lyn;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lpj;->mChatConversation:Lcom/snapchat/android/model/chat/ChatConversation;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lyn;->a(Lcom/snapchat/android/model/chat/ChatConversation;Z)V
+    :goto_1
+    const/4 v0, 0x0
 
     goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_1
 .end method

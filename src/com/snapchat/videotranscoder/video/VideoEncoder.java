@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.video;
 
 import android.media.MediaFormat;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.cts.InputSurface;
 import com.snapchat.videotranscoder.pipeline.Codec;
 import com.snapchat.videotranscoder.pipeline.Encoder;
@@ -28,7 +28,7 @@ public class VideoEncoder
     mCodec.setupBuffers();
   }
   
-  protected int addOrRetrieveMixerTrack(@cgb MediaFormat paramMediaFormat)
+  protected int addOrRetrieveMixerTrack(@chc MediaFormat paramMediaFormat)
   {
     if (mMixer.hasVideoTrack())
     {

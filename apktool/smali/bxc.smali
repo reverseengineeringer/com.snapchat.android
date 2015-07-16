@@ -1,960 +1,344 @@
 .class public final Lbxc;
-.super Ljava/lang/Object;
+.super Landroid/os/AsyncTask;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/os/AsyncTask",
+        "<",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
+        "Lbwv;",
+        ">;"
+    }
+.end annotation
+
+
 # instance fields
-.field private a:Ljava/lang/Object;
+.field private a:Landroid/content/Context;
 
-.field private b:Ljava/lang/Object;
+.field private b:Ljava/lang/String;
 
-.field private c:Lbzq;
+.field private c:Landroid/os/Handler;
 
-.field private d:Lbzq;
+.field private d:Ljava/lang/String;
 
-.field private e:Lbwz;
+.field private e:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lbwz;Ljava/lang/Object;Ljava/lang/Object;Lbzq;Lbzq;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 1
 
     .prologue
+    .line 71
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+
+    .line 72
+    iput-object p1, p0, Lbxc;->a:Landroid/content/Context;
+
+    .line 73
+    iput-object p2, p0, Lbxc;->b:Ljava/lang/String;
+
+    .line 74
+    iput-object p3, p0, Lbxc;->c:Landroid/os/Handler;
+
+    .line 75
+    iput-object p4, p0, Lbxc;->d:Ljava/lang/String;
+
+    .line 76
     const/4 v0, 0x0
 
-    .line 62
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object v0, p0, Lbxc;->e:Ljava/lang/String;
 
-    .line 32
-    iput-object v0, p0, Lbxc;->a:Ljava/lang/Object;
-
-    .line 35
-    iput-object v0, p0, Lbxc;->b:Ljava/lang/Object;
-
-    .line 38
-    iput-object v0, p0, Lbxc;->c:Lbzq;
-
-    .line 41
-    iput-object v0, p0, Lbxc;->d:Lbzq;
-
-    .line 44
-    iput-object v0, p0, Lbxc;->e:Lbwz;
-
-    .line 64
-    iput-object p1, p0, Lbxc;->e:Lbwz;
-
-    .line 65
-    iput-object p2, p0, Lbxc;->a:Ljava/lang/Object;
-
-    .line 66
-    iput-object p3, p0, Lbxc;->b:Ljava/lang/Object;
-
-    .line 67
-    iput-object p4, p0, Lbxc;->c:Lbzq;
-
-    .line 68
-    iput-object p5, p0, Lbxc;->d:Lbzq;
-
-    .line 69
+    .line 77
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)Ljava/lang/String;
-    .locals 9
+.method protected final synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v7, -0x1
 
-    .line 123
-    .line 129
-    iget-object v0, p0, Lbxc;->a:Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    instance-of v0, v0, Lbxc;
-
-    if-eqz v0, :cond_2
-
-    .line 130
-    iget-object v0, p0, Lbxc;->a:Ljava/lang/Object;
-
-    check-cast v0, Lbxc;
-
-    invoke-virtual {v0, p1}, Lbxc;->a(Z)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 134
-    :try_start_0
-    new-instance v0, Ljava/lang/Double;
-
-    invoke-direct {v0, v1}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object v3, v0
-
-    move-object v4, v2
-
-    .line 235
-    :goto_0
-    iget-object v0, p0, Lbxc;->b:Ljava/lang/Object;
-
-    instance-of v0, v0, Lbxc;
-
-    if-eqz v0, :cond_b
-
-    .line 236
-    iget-object v0, p0, Lbxc;->b:Ljava/lang/Object;
-
-    check-cast v0, Lbxc;
-
-    invoke-virtual {v0, p1}, Lbxc;->a(Z)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 240
-    :try_start_1
-    new-instance v0, Ljava/lang/Double;
-
-    invoke-direct {v0, v1}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_4
-
-    move-object v8, v0
-
-    move-object v0, v2
-
-    move-object v2, v8
-
-    .line 338
-    :cond_0
-    :goto_1
-    if-eqz v3, :cond_12
-
-    if-eqz v2, :cond_12
-
-    .line 339
-    iget-object v0, p0, Lbxc;->c:Lbzq;
-
-    invoke-virtual {v3}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v4
-
-    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v2
-
-    invoke-interface {v0, v4, v5, v2, v3}, Lbzq;->a(DD)D
-
-    move-result-wide v0
-
-    .line 342
-    iget-object v2, p0, Lbxc;->d:Lbzq;
-
-    if-eqz v2, :cond_1
-
-    .line 343
-    iget-object v2, p0, Lbxc;->d:Lbzq;
-
-    invoke-interface {v2, v0, v1}, Lbzq;->a(D)D
-
-    move-result-wide v0
-
-    .line 346
-    :cond_1
-    new-instance v2, Ljava/lang/Double;
-
-    invoke-direct {v2, v0, v1}, Ljava/lang/Double;-><init>(D)V
-
-    invoke-virtual {v2}, Ljava/lang/Double;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 366
-    :goto_2
-    return-object v0
-
-    .line 137
-    :catch_0
-    move-exception v0
-
-    move-object v3, v2
-
-    move-object v4, v1
-
-    .line 138
-    goto :goto_0
-
-    .line 139
-    :cond_2
-    iget-object v0, p0, Lbxc;->a:Ljava/lang/Object;
-
-    instance-of v0, v0, Lbxa;
-
-    if-eqz v0, :cond_5
-
-    .line 141
-    iget-object v0, p0, Lbxc;->a:Ljava/lang/Object;
-
-    check-cast v0, Lbxa;
-
-    .line 143
-    iget-object v1, v0, Lbxa;->a:Ljava/lang/String;
-
-    .line 144
-    iget-object v3, p0, Lbxc;->e:Lbwz;
-
-    invoke-virtual {v3, v1}, Lbwz;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 148
-    iget-object v1, p0, Lbxc;->e:Lbwz;
-
-    invoke-virtual {v1, v3}, Lbwz;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    .line 150
-    :try_start_2
-    new-instance v1, Ljava/lang/Double;
-
-    invoke-direct {v1, v3}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
-    :try_end_2
-    .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_1
-
-    .line 156
-    iget-object v3, v0, Lbxa;->b:Lbzq;
-
-    if-eqz v3, :cond_1e
-
-    .line 157
-    new-instance v3, Ljava/lang/Double;
-
-    iget-object v0, v0, Lbxa;->b:Lbzq;
-
-    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v4
-
-    invoke-interface {v0, v4, v5}, Lbzq;->a(D)D
-
-    move-result-wide v0
-
-    invoke-direct {v3, v0, v1}, Ljava/lang/Double;-><init>(D)V
-
-    move-object v4, v2
-
-    goto :goto_0
-
-    .line 152
-    :catch_1
-    move-exception v0
-
-    .line 153
-    new-instance v1, Lbwx;
-
-    const-string v2, "Expression is invalid."
-
-    invoke-direct {v1, v2, v0}, Lbwx;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v1
-
-    .line 162
-    :cond_3
-    iget-object v0, v0, Lbxa;->b:Lbzq;
+    .line 59
+    iget-object v0, p0, Lbxc;->a:Landroid/content/Context;
 
     if-eqz v0, :cond_4
 
-    .line 163
-    new-instance v0, Lbwx;
+    iget-object v0, p0, Lbxc;->b:Ljava/lang/String;
 
-    const-string v1, "Invalid operand for unary operator."
+    if-eqz v0, :cond_4
 
-    invoke-direct {v0, v1}, Lbwx;-><init>(Ljava/lang/String;)V
+    iget-object v0, p0, Lbxc;->b:Ljava/lang/String;
 
-    throw v0
+    invoke-static {v0}, Lbxh;->a(Ljava/lang/String;)Lbwv;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v0, v2, Lbwv;->b:Lbws;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, v2, Lbwv;->b:Lbws;
+
+    iget-object v0, v0, Lbws;->e:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, -0x1
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbwu;
+
+    iget v0, v0, Lbwu;->g:I
+
+    iget-object v4, p0, Lbxc;->a:Landroid/content/Context;
+
+    const-string v5, "net.hockeyapp.android.feedback"
+
+    invoke-virtual {v4, v5, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lbxc;->d:Ljava/lang/String;
+
+    const-string v6, "send"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    const-string v3, "idLastMessageSend"
+
+    invoke-interface {v1, v3, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    const-string v3, "idLastMessageProcessed"
+
+    invoke-interface {v1, v3, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lbxj;->a(Landroid/content/SharedPreferences$Editor;)V
+
+    :cond_0
+    :goto_0
+    move-object v0, v2
+
+    :goto_1
+    return-object v0
+
+    :cond_1
+    iget-object v5, p0, Lbxc;->d:Ljava/lang/String;
+
+    const-string v6, "fetch"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    const-string v5, "idLastMessageSend"
+
+    invoke-interface {v4, v5, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v5
+
+    const-string v6, "idLastMessageProcessed"
+
+    invoke-interface {v4, v6, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v6
+
+    if-eq v0, v5, :cond_0
+
+    if-eq v0, v6, :cond_0
+
+    invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v4
+
+    const-string v5, "idLastMessageProcessed"
+
+    invoke-interface {v4, v5, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lbxj;->a(Landroid/content/SharedPreferences$Editor;)V
+
+    invoke-static {}, Lbwe;->a()Lbwf;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_5
+
+    invoke-virtual {v0}, Lbwf;->a()Z
+
+    move-result v0
+
+    :goto_2
+    if-nez v0, :cond_0
+
+    iget-object v4, p0, Lbxc;->a:Landroid/content/Context;
+
+    iget-object v0, p0, Lbxc;->e:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "notification"
+
+    invoke-virtual {v4, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/NotificationManager;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    const-string v6, "ic_menu_refresh"
+
+    const-string v7, "drawable"
+
+    const-string v8, "android"
+
+    invoke-virtual {v5, v6, v7, v8}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v5
+
+    new-instance v6, Landroid/app/Notification;
+
+    const-string v7, "New Answer to Your Feedback."
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v8
+
+    invoke-direct {v6, v5, v7, v8, v9}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
+
+    invoke-static {}, Lbwe;->a()Lbwf;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_2
+
+    const-class v1, Lnet/hockeyapp/android/FeedbackActivity;
+
+    :cond_2
+    if-nez v1, :cond_3
+
+    const-class v1, Lnet/hockeyapp/android/FeedbackActivity;
+
+    :cond_3
+    new-instance v5, Landroid/content/Intent;
+
+    invoke-direct {v5}, Landroid/content/Intent;-><init>()V
+
+    const/high16 v7, 0x30000000
+
+    invoke-virtual {v5, v7}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {v5, v4, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+
+    const-string v1, "url"
+
+    iget-object v7, p0, Lbxc;->e:Ljava/lang/String;
+
+    invoke-virtual {v5, v1, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    invoke-static {v4, v3, v5, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v1
+
+    const-string v3, "HockeyApp Feedback"
+
+    const-string v5, "A new answer to your feedback is available."
+
+    invoke-virtual {v6, v4, v3, v5, v1}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1, v6}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    goto/16 :goto_0
 
     :cond_4
-    move-object v0, v2
+    move-object v0, v1
 
-    move-object v1, v3
-
-    :goto_3
-    move-object v3, v0
-
-    move-object v4, v1
-
-    .line 167
-    goto/16 :goto_0
+    goto/16 :goto_1
 
     :cond_5
-    iget-object v0, p0, Lbxc;->a:Ljava/lang/Object;
+    move v0, v3
 
-    instance-of v0, v0, Lbxe;
+    goto :goto_2
+.end method
 
-    if-eqz v0, :cond_a
+.method protected final synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 3
 
-    .line 169
-    iget-object v0, p0, Lbxc;->a:Ljava/lang/Object;
+    .prologue
+    .line 59
+    check-cast p1, Lbwv;
 
-    check-cast v0, Lbxe;
+    if-eqz p1, :cond_0
 
-    .line 170
-    iget-object v3, v0, Lbxe;->a:Lbxg;
+    iget-object v0, p0, Lbxc;->c:Landroid/os/Handler;
 
-    .line 171
-    iget-object v1, v0, Lbxe;->b:Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    .line 172
-    iget-object v4, p0, Lbxc;->e:Lbwz;
+    new-instance v0, Landroid/os/Message;
 
-    invoke-virtual {v4, v1}, Lbwz;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
-    move-result-object v1
+    new-instance v1, Landroid/os/Bundle;
 
-    .line 174
-    iget-object v4, p0, Lbxc;->e:Lbwz;
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    iget-boolean v4, v4, Lbwz;->b:Z
+    const-string v2, "parse_feedback_response"
 
-    if-eqz v4, :cond_6
+    invoke-virtual {v1, v2, p1}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
-    .line 175
-    iget-object v4, p0, Lbxc;->e:Lbwz;
+    invoke-virtual {v0, v1}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
 
-    invoke-virtual {v4, v1}, Lbwz;->c(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v1, p0, Lbxc;->c:Landroid/os/Handler;
 
-    move-result-object v1
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 179
-    :cond_6
-    :try_start_3
-    iget-object v4, p0, Lbxc;->e:Lbwz;
-
-    invoke-interface {v3, v4, v1}, Lbxg;->a(Lbwz;Ljava/lang/String;)Lbxk;
-
-    move-result-object v3
-
-    .line 181
-    iget-object v1, v3, Lbxk;->a:Ljava/lang/String;
-
-    .line 183
-    iget v4, v3, Lbxk;->b:I
-
-    if-nez v4, :cond_7
-
-    .line 186
-    new-instance v3, Ljava/lang/Double;
-
-    invoke-direct {v3, v1}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
-
-    .line 189
-    iget-object v1, v0, Lbxe;->c:Lbzq;
-
-    if-eqz v1, :cond_1d
-
-    .line 190
-    new-instance v1, Ljava/lang/Double;
-
-    iget-object v0, v0, Lbxe;->c:Lbzq;
-
-    invoke-virtual {v3}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v4
-
-    invoke-interface {v0, v4, v5}, Lbzq;->a(D)D
-
-    move-result-wide v4
-
-    invoke-direct {v1, v4, v5}, Ljava/lang/Double;-><init>(D)V
-
-    move-object v0, v1
-
-    .line 196
-    :goto_4
-    invoke-virtual {v0}, Ljava/lang/Double;->toString()Ljava/lang/String;
-    :try_end_3
-    .catch Lbxh; {:try_start_3 .. :try_end_3} :catch_2
-
-    move-result-object v0
-
-    .line 217
-    :goto_5
-    iget-object v1, p0, Lbxc;->e:Lbwz;
-
-    invoke-virtual {v1, v0}, Lbwz;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_9
-
-    .line 219
-    :try_start_4
-    new-instance v1, Ljava/lang/Double;
-
-    invoke-direct {v1, v0}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
-    :try_end_4
-    .catch Ljava/lang/NumberFormatException; {:try_start_4 .. :try_end_4} :catch_3
-
-    move-object v3, v1
-
-    move-object v4, v2
-
-    .line 223
-    goto/16 :goto_0
-
-    .line 198
-    :cond_7
-    :try_start_5
-    iget v3, v3, Lbxk;->b:I
-
-    if-ne v3, v7, :cond_1c
-
-    .line 202
-    if-eqz p1, :cond_8
-
-    .line 203
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v4, p0, Lbxc;->e:Lbwz;
-
-    iget-char v4, v4, Lbwz;->a:C
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v3, p0, Lbxc;->e:Lbwz;
-
-    iget-char v3, v3, Lbwz;->a:C
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 208
-    :cond_8
-    iget-object v0, v0, Lbxe;->c:Lbzq;
-
-    if-eqz v0, :cond_1c
-
-    .line 209
-    new-instance v0, Lbwx;
-
-    const-string v1, "Invalid operand for unary operator."
-
-    invoke-direct {v0, v1}, Lbwx;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_5
-    .catch Lbxh; {:try_start_5 .. :try_end_5} :catch_2
-
-    .line 213
-    :catch_2
-    move-exception v0
-
-    .line 214
-    new-instance v1, Lbwx;
-
-    invoke-virtual {v0}, Lbxh;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2, v0}, Lbwx;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v1
-
-    .line 221
-    :catch_3
-    move-exception v0
-
-    .line 222
-    new-instance v1, Lbwx;
-
-    const-string v2, "Expression is invalid."
-
-    invoke-direct {v1, v2, v0}, Lbwx;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v1
-
-    :cond_9
-    move-object v3, v2
-
-    move-object v4, v0
-
-    .line 225
-    goto/16 :goto_0
-
-    .line 226
-    :cond_a
-    iget-object v0, p0, Lbxc;->a:Ljava/lang/Object;
-
-    if-eqz v0, :cond_1b
-
-    .line 227
-    new-instance v0, Lbwx;
-
-    const-string v1, "Expression is invalid."
-
-    invoke-direct {v0, v1}, Lbwx;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 243
-    :catch_4
-    move-exception v0
-
-    move-object v0, v1
-
-    .line 244
-    goto/16 :goto_1
-
-    .line 246
-    :cond_b
-    iget-object v0, p0, Lbxc;->b:Ljava/lang/Object;
-
-    instance-of v0, v0, Lbxa;
-
-    if-eqz v0, :cond_d
-
-    .line 248
-    iget-object v0, p0, Lbxc;->b:Ljava/lang/Object;
-
-    check-cast v0, Lbxa;
-
-    .line 249
-    iget-object v1, p0, Lbxc;->b:Ljava/lang/Object;
-
-    check-cast v1, Lbxa;
-
-    iget-object v1, v1, Lbxa;->a:Ljava/lang/String;
-
-    .line 250
-    iget-object v5, p0, Lbxc;->e:Lbwz;
-
-    invoke-virtual {v5, v1}, Lbwz;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 254
-    iget-object v1, p0, Lbxc;->e:Lbwz;
-
-    invoke-virtual {v1, v5}, Lbwz;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_c
-
-    .line 256
-    :try_start_6
-    new-instance v1, Ljava/lang/Double;
-
-    invoke-direct {v1, v5}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
-    :try_end_6
-    .catch Ljava/lang/NumberFormatException; {:try_start_6 .. :try_end_6} :catch_5
-
-    .line 262
-    iget-object v5, v0, Lbxa;->b:Lbzq;
-
-    if-eqz v5, :cond_1a
-
-    .line 263
-    new-instance v5, Ljava/lang/Double;
-
-    iget-object v0, v0, Lbxa;->b:Lbzq;
-
-    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v6
-
-    invoke-interface {v0, v6, v7}, Lbzq;->a(D)D
-
-    move-result-wide v0
-
-    invoke-direct {v5, v0, v1}, Ljava/lang/Double;-><init>(D)V
-
-    move-object v0, v2
-
-    move-object v2, v5
-
-    goto/16 :goto_1
-
-    .line 258
-    :catch_5
-    move-exception v0
-
-    .line 259
-    new-instance v1, Lbwx;
-
-    const-string v2, "Expression is invalid."
-
-    invoke-direct {v1, v2, v0}, Lbwx;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v1
-
-    .line 268
-    :cond_c
-    iget-object v0, v0, Lbxa;->b:Lbzq;
-
-    if-eqz v0, :cond_19
-
-    .line 269
-    new-instance v0, Lbwx;
-
-    const-string v1, "Invalid operand for unary operator."
-
-    invoke-direct {v0, v1}, Lbwx;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 273
-    :cond_d
-    iget-object v0, p0, Lbxc;->b:Ljava/lang/Object;
-
-    instance-of v0, v0, Lbxe;
-
-    if-eqz v0, :cond_11
-
-    .line 275
-    iget-object v0, p0, Lbxc;->b:Ljava/lang/Object;
-
-    check-cast v0, Lbxe;
-
-    .line 276
-    iget-object v5, v0, Lbxe;->a:Lbxg;
-
-    .line 277
-    iget-object v1, v0, Lbxe;->b:Ljava/lang/String;
-
-    .line 278
-    iget-object v6, p0, Lbxc;->e:Lbwz;
-
-    invoke-virtual {v6, v1}, Lbwz;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 280
-    iget-object v6, p0, Lbxc;->e:Lbwz;
-
-    iget-boolean v6, v6, Lbwz;->b:Z
-
-    if-eqz v6, :cond_e
-
-    .line 281
-    iget-object v6, p0, Lbxc;->e:Lbwz;
-
-    invoke-virtual {v6, v1}, Lbwz;->c(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 285
-    :cond_e
-    :try_start_7
-    iget-object v6, p0, Lbxc;->e:Lbwz;
-
-    invoke-interface {v5, v6, v1}, Lbxg;->a(Lbwz;Ljava/lang/String;)Lbxk;
-
-    move-result-object v5
-
-    .line 287
-    iget-object v1, v5, Lbxk;->a:Ljava/lang/String;
-
-    .line 289
-    iget v6, v5, Lbxk;->b:I
-
-    if-nez v6, :cond_f
-
-    .line 292
-    new-instance v5, Ljava/lang/Double;
-
-    invoke-direct {v5, v1}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
-
-    .line 295
-    iget-object v1, v0, Lbxe;->c:Lbzq;
-
-    if-eqz v1, :cond_18
-
-    .line 296
-    new-instance v1, Ljava/lang/Double;
-
-    iget-object v0, v0, Lbxe;->c:Lbzq;
-
-    invoke-virtual {v5}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v6
-
-    invoke-interface {v0, v6, v7}, Lbzq;->a(D)D
-
-    move-result-wide v6
-
-    invoke-direct {v1, v6, v7}, Ljava/lang/Double;-><init>(D)V
-
-    move-object v0, v1
-
-    .line 302
-    :goto_6
-    invoke-virtual {v0}, Ljava/lang/Double;->toString()Ljava/lang/String;
-    :try_end_7
-    .catch Lbxh; {:try_start_7 .. :try_end_7} :catch_6
-
-    move-result-object v0
-
-    .line 323
-    :goto_7
-    iget-object v1, p0, Lbxc;->e:Lbwz;
-
-    invoke-virtual {v1, v0}, Lbwz;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 325
-    :try_start_8
-    new-instance v1, Ljava/lang/Double;
-
-    invoke-direct {v1, v0}, Ljava/lang/Double;-><init>(Ljava/lang/String;)V
-    :try_end_8
-    .catch Ljava/lang/NumberFormatException; {:try_start_8 .. :try_end_8} :catch_7
-
-    move-object v0, v2
-
-    move-object v2, v1
-
-    .line 329
-    goto/16 :goto_1
-
-    .line 304
-    :cond_f
-    :try_start_9
-    iget v5, v5, Lbxk;->b:I
-
-    if-ne v5, v7, :cond_17
-
-    .line 308
-    if-eqz p1, :cond_10
-
-    .line 309
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v6, p0, Lbxc;->e:Lbwz;
-
-    iget-char v6, v6, Lbwz;->a:C
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v5, p0, Lbxc;->e:Lbwz;
-
-    iget-char v5, v5, Lbwz;->a:C
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 314
-    :cond_10
-    iget-object v0, v0, Lbxe;->c:Lbzq;
-
-    if-eqz v0, :cond_17
-
-    .line 315
-    new-instance v0, Lbwx;
-
-    const-string v1, "Invalid operand for unary operator."
-
-    invoke-direct {v0, v1}, Lbwx;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_9
-    .catch Lbxh; {:try_start_9 .. :try_end_9} :catch_6
-
-    .line 319
-    :catch_6
-    move-exception v0
-
-    .line 320
-    new-instance v1, Lbwx;
-
-    invoke-virtual {v0}, Lbxh;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2, v0}, Lbwx;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v1
-
-    .line 327
-    :catch_7
-    move-exception v0
-
-    .line 328
-    new-instance v1, Lbwx;
-
-    const-string v2, "Expression is invalid."
-
-    invoke-direct {v1, v2, v0}, Lbwx;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v1
-
-    .line 331
-    :cond_11
-    iget-object v0, p0, Lbxc;->b:Ljava/lang/Object;
-
-    if-eqz v0, :cond_16
-
-    .line 334
-    new-instance v0, Lbwx;
-
-    const-string v1, "Expression is invalid."
-
-    invoke-direct {v0, v1}, Lbwx;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 347
-    :cond_12
-    if-eqz v4, :cond_13
-
-    if-eqz v0, :cond_13
-
-    .line 348
-    iget-object v1, p0, Lbxc;->c:Lbzq;
-
-    invoke-interface {v1, v4, v0}, Lbzq;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_2
-
-    .line 349
-    :cond_13
-    if-eqz v3, :cond_15
-
-    if-nez v2, :cond_15
-
-    .line 350
-    iget-object v0, p0, Lbxc;->d:Lbzq;
-
-    if-eqz v0, :cond_14
-
-    .line 353
-    iget-object v0, p0, Lbxc;->d:Lbzq;
-
-    invoke-virtual {v3}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v2
-
-    invoke-interface {v0, v2, v3}, Lbzq;->a(D)D
-
-    move-result-wide v0
-
-    .line 361
-    new-instance v2, Ljava/lang/Double;
-
-    invoke-direct {v2, v0, v1}, Ljava/lang/Double;-><init>(D)V
-
-    invoke-virtual {v2}, Ljava/lang/Double;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_2
-
-    .line 358
-    :cond_14
-    new-instance v0, Lbwx;
-
-    const-string v1, "Expression is invalid."
-
-    invoke-direct {v0, v1}, Lbwx;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 363
-    :cond_15
-    new-instance v0, Lbwx;
-
-    const-string v1, "Expression is invalid."
-
-    invoke-direct {v0, v1}, Lbwx;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_16
-    move-object v0, v2
-
-    goto/16 :goto_1
-
-    :cond_17
-    move-object v0, v1
-
-    goto/16 :goto_7
-
-    :cond_18
-    move-object v0, v5
-
-    goto/16 :goto_6
-
-    :cond_19
-    move-object v0, v5
-
-    goto/16 :goto_1
-
-    :cond_1a
-    move-object v0, v2
-
-    move-object v2, v1
-
-    goto/16 :goto_1
-
-    :cond_1b
-    move-object v3, v2
-
-    move-object v4, v2
-
-    goto/16 :goto_0
-
-    :cond_1c
-    move-object v0, v1
-
-    goto/16 :goto_5
-
-    :cond_1d
-    move-object v0, v3
-
-    goto/16 :goto_4
-
-    :cond_1e
-    move-object v0, v1
-
-    move-object v1, v2
-
-    goto/16 :goto_3
+    :cond_0
+    return-void
 .end method

@@ -22,6 +22,7 @@ import android.view.ViewConfiguration;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
+import r;
 
 public final class SwipeableRecyclerViewItemTouchListener
   implements View.OnTouchListener
@@ -182,7 +183,7 @@ public final class SwipeableRecyclerViewItemTouchListener
         f2 = paramMotionEvent.getY();
         i1 = c.a() - 1;
         if (i1 < 0) {
-          break label340;
+          break label351;
         }
         paramView = c.b(i1);
         f3 = ViewCompat.getTranslationX(paramView);
@@ -197,6 +198,7 @@ public final class SwipeableRecyclerViewItemTouchListener
       s = paramMotionEvent.getX();
       u = paramMotionEvent.getY();
       paramView = m.a(v.intValue(), false);
+      n.a(paramView, paramMotionEvent);
       if (q) {}
       for (k = ((int)n.c(paramView));; k = 0)
       {
@@ -213,13 +215,14 @@ public final class SwipeableRecyclerViewItemTouchListener
           public final void run()
           {
             RecyclerView.s locals = SwipeableRecyclerViewItemTouchListener.a(SwipeableRecyclerViewItemTouchListener.this).a(i1, false);
+            a.performHapticFeedback(0);
             SwipeableRecyclerViewItemTouchListener.b(SwipeableRecyclerViewItemTouchListener.this).g(locals);
           }
         }, ViewConfiguration.getLongPressTimeout());
         return false;
         i1 -= 1;
         break label86;
-        label340:
+        label351:
         paramView = null;
         break label168;
       }
@@ -250,13 +253,13 @@ public final class SwipeableRecyclerViewItemTouchListener
             }
           }
         }
-        label619:
-        label628:
-        label638:
-        label669:
-        label675:
-        label681:
-        label921:
+        label630:
+        label639:
+        label649:
+        label680:
+        label686:
+        label692:
+        label932:
         do
         {
           for (;;)
@@ -276,21 +279,21 @@ public final class SwipeableRecyclerViewItemTouchListener
               break;
             }
             if ((h > f3) || (f4 >= f3) || (!c)) {
-              break label1819;
+              break label1830;
             }
             if (f2 < 0.0F)
             {
               i1 = 1;
               if (f1 >= 0.0F) {
-                break label669;
+                break label680;
               }
               i2 = 1;
               if (i1 != i2) {
-                break label675;
+                break label686;
               }
               i1 = 1;
               if (f1 <= 0.0F) {
-                break label681;
+                break label692;
               }
             }
             for (i2 = i4;; i2 = 0)
@@ -300,11 +303,11 @@ public final class SwipeableRecyclerViewItemTouchListener
               i2 = i4;
               break;
               i1 = 0;
-              break label619;
+              break label630;
               i2 = 0;
-              break label628;
+              break label639;
               i1 = 0;
-              break label638;
+              break label649;
             }
             a(v, -n.a(paramView), j);
             continue;
@@ -330,7 +333,7 @@ public final class SwipeableRecyclerViewItemTouchListener
             if (f != null)
             {
               if ((v == null) || (v.intValue() == -1) || (!v.equals(w))) {
-                break label1050;
+                break label1061;
               }
               f.f(paramView);
               new Handler().postDelayed(new Runnable()
@@ -348,19 +351,19 @@ public final class SwipeableRecyclerViewItemTouchListener
         {
           f1 = n.a(paramView) / 2.0F;
           if (k <= f1) {
-            break label1061;
+            break label1072;
           }
           k = n.a(paramView);
           if (!o.equals(SwipeDirection.LEFT)) {}
         }
-        label1050:
         label1061:
+        label1072:
         for (k *= -1;; k = 0)
         {
           a(v, k, j);
           break;
           w = v;
-          break label921;
+          break label932;
         }
         if ((z == null) || (d) || (v.intValue() == -1)) {
           break;
@@ -377,15 +380,15 @@ public final class SwipeableRecyclerViewItemTouchListener
           z.computeCurrentVelocity(1000);
           float f5 = z.getXVelocity();
           if ((f5 <= z.getYVelocity()) || (f5 <= h)) {
-            break label1381;
+            break label1392;
           }
           i1 = 1;
-          label1228:
+          label1239:
           if (f3 <= i) {
-            break label1387;
+            break label1398;
           }
           i2 = 1;
-          label1242:
+          label1253:
           if ((i2 != 0) && (i1 != 0)) {
             x = true;
           }
@@ -398,31 +401,31 @@ public final class SwipeableRecyclerViewItemTouchListener
         if (f3 > 0.0F)
         {
           i1 = 1;
-          label1313:
+          label1324:
           i2 = (int)n.c((RecyclerView.s)localObject);
           if (((i2 != 0) || (i1 != 0) || (o != SwipeDirection.RIGHT)) && ((i2 != 0) || (i1 == 0) || (o != SwipeDirection.LEFT))) {
-            break label1399;
+            break label1410;
           }
           paramView = Boolean.valueOf(false);
         }
-        label1381:
-        label1387:
-        label1399:
-        label1455:
-        label1504:
+        label1392:
+        label1398:
+        label1410:
+        label1466:
+        label1515:
         do
         {
           while (paramView != null)
           {
             return paramView.booleanValue();
             i1 = 0;
-            break label1228;
+            break label1239;
             i2 = 0;
-            break label1242;
+            break label1253;
             i1 = 0;
-            break label1313;
+            break label1324;
             if ((!q) || (i1 == 0) || (k < 0)) {
-              break label1455;
+              break label1466;
             }
             if ((localObject != null) && (c)) {
               a(v, 0, j);
@@ -434,7 +437,7 @@ public final class SwipeableRecyclerViewItemTouchListener
           {
             c = true;
             if (i1 == 0) {
-              break label1797;
+              break label1808;
             }
             i1 = a;
             y = i1;
@@ -474,13 +477,13 @@ public final class SwipeableRecyclerViewItemTouchListener
             }
             paramView = Boolean.valueOf(n.a((RecyclerView.s)localObject, l, f2, s, u));
             break;
-            label1797:
+            label1808:
             i1 = -a;
-            break label1504;
+            break label1515;
           }
           f1 = f2;
         }
-        label1819:
+        label1830:
         i1 = 0;
         i2 = 0;
       }
@@ -496,32 +499,34 @@ public final class SwipeableRecyclerViewItemTouchListener
   
   public static abstract interface a<VH extends RecyclerView.s>
   {
-    public abstract void e(VH paramVH);
+    public abstract void e(@r VH paramVH);
   }
   
   public static abstract interface b<VH extends RecyclerView.s>
   {
-    public abstract void f(VH paramVH);
+    public abstract void f(@r VH paramVH);
   }
   
   public static abstract interface c<VH extends RecyclerView.s>
   {
-    public abstract void g(VH paramVH);
+    public abstract void g(@r VH paramVH);
   }
   
   public static abstract interface d<VH extends RecyclerView.s>
   {
-    public abstract int a(VH paramVH);
+    public abstract int a(@r VH paramVH);
     
-    public abstract void a(VH paramVH, boolean paramBoolean);
+    public abstract void a(@r VH paramVH, MotionEvent paramMotionEvent);
     
-    public abstract boolean a(VH paramVH, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4);
+    public abstract void a(@r VH paramVH, boolean paramBoolean);
     
-    public abstract boolean b(VH paramVH);
+    public abstract boolean a(@r VH paramVH, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4);
     
-    public abstract float c(VH paramVH);
+    public abstract boolean b(@r VH paramVH);
     
-    public abstract void d(VH paramVH);
+    public abstract float c(@r VH paramVH);
+    
+    public abstract void d(@r VH paramVH);
   }
 }
 

@@ -4,316 +4,783 @@
 
 
 # static fields
-.field private static final b:Lzd;
+.field private static f:Lzd;
 
 
 # instance fields
-.field protected final a:Lzh$b;
+.field final a:Ltt;
 
-.field private final c:Lcom/squareup/otto/Bus;
+.field final b:Ljava/util/concurrent/ConcurrentHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/ConcurrentHashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/Long;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
-.field private final d:Lajq;
+.field public final c:Ljava/util/concurrent/ConcurrentHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/ConcurrentHashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/Long;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
-.field private final e:Lze;
+.field final d:Ljava/util/concurrent/ConcurrentHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/ConcurrentHashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field final e:Landroid/os/Handler;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>(Ltt;)V
+    .locals 2
+    .param p1    # Ltt;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 31
-    new-instance v0, Lzd;
+    .line 38
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lzd;-><init>()V
+    .line 39
+    iput-object p1, p0, Lzd;->a:Ltt;
 
-    sput-object v0, Lzd;->b:Lzd;
+    .line 40
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    return-void
-.end method
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-.method private constructor <init>()V
-    .locals 3
+    iput-object v0, p0, Lzd;->b:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .prologue
-    .line 51
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 41
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    invoke-static {}, Lajq;->a()Lajq;
+    iput-object v0, p0, Lzd;->c:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 42
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lzd;->d:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 43
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v1
 
-    new-instance v2, Lze;
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-direct {v2}, Lze;-><init>()V
+    iput-object v0, p0, Lzd;->e:Landroid/os/Handler;
 
-    invoke-direct {p0, v0, v1, v2}, Lzd;-><init>(Lcom/squareup/otto/Bus;Lajq;Lze;)V
-
-    .line 52
+    .line 44
     return-void
 .end method
 
-.method private constructor <init>(Lcom/squareup/otto/Bus;Lajq;Lze;)V
-    .locals 1
-
-    .prologue
-    .line 55
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 156
-    new-instance v0, Lzd$1;
-
-    invoke-direct {v0, p0}, Lzd$1;-><init>(Lzd;)V
-
-    iput-object v0, p0, Lzd;->a:Lzh$b;
-
-    .line 56
-    iput-object p1, p0, Lzd;->c:Lcom/squareup/otto/Bus;
-
-    .line 57
-    iput-object p2, p0, Lzd;->d:Lajq;
-
-    .line 58
-    iput-object p3, p0, Lzd;->e:Lze;
-
-    .line 59
-    return-void
-.end method
-
-.method static synthetic a(Lzd;)Lajq;
-    .locals 1
-
-    .prologue
-    .line 29
-    iget-object v0, p0, Lzd;->d:Lajq;
-
-    return-object v0
-.end method
-
-.method public static a()Lzd;
-    .locals 1
-
-    .prologue
-    .line 37
-    sget-object v0, Lzd;->b:Lzd;
-
-    return-object v0
-.end method
-
-.method static synthetic b(Lzd;)Lcom/squareup/otto/Bus;
-    .locals 1
-
-    .prologue
-    .line 29
-    iget-object v0, p0, Lzd;->c:Lcom/squareup/otto/Bus;
-
-    return-object v0
-.end method
-
-.method private b()V
-    .locals 2
-
-    .prologue
-    .line 213
-    iget-object v0, p0, Lzd;->c:Lcom/squareup/otto/Bus;
-
-    new-instance v1, Lbdy;
-
-    invoke-direct {v1}, Lbdy;-><init>()V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 214
-    return-void
-.end method
-
-.method static synthetic c(Lzd;)Lze;
-    .locals 1
-
-    .prologue
-    .line 29
-    iget-object v0, p0, Lzd;->e:Lze;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lzd;)V
-    .locals 0
-
-    .prologue
-    .line 29
-    invoke-direct {p0}, Lzd;->b()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lcom/snapchat/android/model/StoryCollection;)I
-    .locals 6
-    .annotation build Lccm;
-    .end annotation
-
-    .prologue
-    .line 73
-    const/4 v2, 0x3
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    sget-object v5, Lcom/snapchat/android/controller/stories/StoryLoadingContext;->AUTO_LOADED:Lcom/snapchat/android/controller/stories/StoryLoadingContext;
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    invoke-virtual/range {v0 .. v5}, Lzd;->a(Lcom/snapchat/android/model/StoryCollection;ILaje;ZLcom/snapchat/android/controller/stories/StoryLoadingContext;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final a(Lcom/snapchat/android/model/StoryCollection;ILaje;ZLcom/snapchat/android/controller/stories/StoryLoadingContext;)I
+.method public static declared-synchronized a()Lzd;
     .locals 3
-    .annotation build Lccm;
-    .end annotation
 
     .prologue
-    .line 89
-    invoke-static {}, Lbgp;->a()V
+    .line 47
+    const-class v1, Lzd;
 
-    .line 91
-    check-cast p3, Lajr;
+    monitor-enter v1
 
-    invoke-virtual {p1, p2, p3}, Lcom/snapchat/android/model/StoryCollection;->a(ILajr;)Ljava/util/List;
+    :try_start_0
+    sget-object v0, Lzd;->f:Lzd;
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    .line 93
-    new-instance v1, Lzh$a;
+    .line 48
+    new-instance v0, Lzd;
 
-    invoke-direct {v1, p5}, Lzh$a;-><init>(Lcom/snapchat/android/controller/stories/StoryLoadingContext;)V
-
-    iput-boolean p4, v1, Lzh$a;->d:Z
-
-    iput-object p1, v1, Lzh$a;->c:Lcom/snapchat/android/model/StoryCollection;
-
-    .line 97
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-static {}, Ltt;->a()Ltt;
 
     move-result-object v2
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v0, v2}, Lzd;-><init>(Ltt;)V
+
+    sput-object v0, Lzd;->f:Lzd;
+
+    .line 50
+    :cond_0
+    sget-object v0, Lzd;->f:Lzd;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 47
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method static a(Ljava/lang/String;Ljava/util/concurrent/ConcurrentHashMap;J)V
+    .locals 2
+    .param p0    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p1    # Ljava/util/concurrent/ConcurrentHashMap;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/util/concurrent/ConcurrentHashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/Long;",
+            ">;>;J)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 274
+    invoke-virtual {p1, p0}, Ljava/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 275
+    invoke-virtual {p1, p0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Ljava/util/Set;
 
-    .line 98
-    invoke-virtual {v1, v0}, Lzh$a;->a(Lajr;)Lzh$a;
+    .line 280
+    :goto_0
+    monitor-enter v0
+
+    .line 281
+    :try_start_0
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 282
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-void
+
+    .line 277
+    :cond_0
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    .line 278
+    invoke-virtual {p1, p0, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 101
+    .line 282
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
+.end method
+
+.method public static declared-synchronized b()V
+    .locals 3
+
+    .prologue
+    .line 54
+    const-class v1, Lzd;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lzd;->f:Lzd;
+
+    if-eqz v0, :cond_0
+
+    .line 55
+    sget-object v0, Lzd;->f:Lzd;
+
+    iget-object v0, v0, Lzd;->e:Landroid/os/Handler;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+
+    .line 56
+    const/4 v0, 0x0
+
+    sput-object v0, Lzd;->f:Lzd;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 58
     :cond_0
-    invoke-virtual {v1}, Lzh$a;->a()Lzh;
+    monitor-exit v1
+
+    return-void
+
+    .line 54
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/String;)J
+    .locals 4
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 212
+    iget-object v0, p0, Lzd;->b:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 102
-    iget-object v1, p0, Lzd;->a:Lzh$b;
+    check-cast v0, Ljava/util/Set;
 
-    invoke-virtual {v0, v1}, Lzh;->a(Lzh$b;)I
+    .line 213
+    if-eqz v0, :cond_1
 
-    move-result v0
+    .line 214
+    monitor-enter v0
 
-    .line 105
-    invoke-direct {p0}, Lzd;->b()V
-
-    .line 106
-    return v0
-.end method
-
-.method public final a(Lajr;)Z
-    .locals 1
-    .annotation build Lccm;
-    .end annotation
-
-    .prologue
-    .line 116
-    invoke-virtual {p0, p1}, Lzd;->b(Lajr;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final a(Lajr;Lcom/snapchat/android/controller/stories/StoryLoadingContext;)Z
-    .locals 3
-    .annotation build Lccm;
-    .end annotation
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 136
-    invoke-static {}, Lbgp;->a()V
-
-    new-instance v1, Lzh$a;
-
-    invoke-direct {v1, p2}, Lzh$a;-><init>(Lcom/snapchat/android/controller/stories/StoryLoadingContext;)V
-
-    invoke-virtual {v1, p1}, Lzh$a;->a(Lajr;)Lzh$a;
-
-    move-result-object v1
-
-    iput-boolean v0, v1, Lzh$a;->d:Z
-
-    invoke-virtual {v1}, Lzh$a;->a()Lzh;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lzd;->a:Lzh$b;
-
-    invoke-virtual {v1, v2}, Lzh;->a(Lzh$b;)I
+    .line 215
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v1
 
-    if-lez v1, :cond_0
+    if-nez v1, :cond_0
 
-    const/4 v0, 0x1
+    .line 216
+    invoke-static {v0}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
 
-    .line 137
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    monitor-exit v0
+
+    move-wide v0, v2
+
+    .line 220
+    :goto_0
+    return-wide v0
+
+    .line 218
     :cond_0
-    invoke-direct {p0}, Lzd;->b()V
+    monitor-exit v0
 
-    .line 138
-    return v0
+    .line 220
+    :cond_1
+    const-wide v0, 0x7fffffffffffffffL
+
+    goto :goto_0
+
+    .line 218
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method public final b(Lajr;)Z
-    .locals 1
-    .annotation build Lccm;
-    .end annotation
+.method public final a(Lcom/snapchat/android/model/chat/ChatConversation;J)V
+    .locals 12
+    .param p1    # Lcom/snapchat/android/model/chat/ChatConversation;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 126
-    sget-object v0, Lcom/snapchat/android/controller/stories/StoryLoadingContext;->AUTO_LOADED:Lcom/snapchat/android/controller/stories/StoryLoadingContext;
+    const/4 v6, 0x2
 
-    invoke-virtual {p0, p1, v0}, Lzd;->a(Lajr;Lcom/snapchat/android/controller/stories/StoryLoadingContext;)Z
+    const/4 v11, 0x0
+
+    const/4 v10, 0x1
+
+    const-wide/16 v8, 0x1
+
+    .line 120
+    iget-object v2, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mId:Ljava/lang/String;
+
+    .line 121
+    iget-wide v4, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mTheirLastConnSeqNum:J
+
+    .line 122
+    cmp-long v0, p2, v4
+
+    if-gtz v0, :cond_0
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p2, v0
+
+    if-nez v0, :cond_4
+
+    .line 124
+    :cond_0
+    invoke-static {}, Lzb;->a()Lzb;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lzb;->d:Z
+
+    if-eqz v0, :cond_2
+
+    iget-boolean v0, p1, Lcom/snapchat/android/model/chat/ChatConversation;->mIsRecipientPresent:Z
+
+    if-eqz v0, :cond_2
+
+    .line 125
+    sub-long v0, p2, v4
+
+    cmp-long v0, v0, v8
+
+    if-lez v0, :cond_2
+
+    .line 126
+    add-long v0, v4, v8
+
+    :goto_0
+    cmp-long v3, v0, p2
+
+    if-gez v3, :cond_1
+
+    .line 127
+    iget-object v3, p0, Lzd;->c:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-static {v2, v3, v0, v1}, Lzd;->a(Ljava/lang/String;Ljava/util/concurrent/ConcurrentHashMap;J)V
+
+    .line 126
+    add-long/2addr v0, v8
+
+    goto :goto_0
+
+    .line 130
+    :cond_1
+    iget-object v0, p0, Lzd;->d:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
+    if-nez v0, :cond_3
+
+    .line 131
+    new-array v0, v6, [Ljava/lang/Object;
+
+    sub-long v6, p2, v4
+
+    sub-long/2addr v6, v8
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    aput-object v1, v0, v11
+
+    add-long/2addr v4, v8
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    aput-object v1, v0, v10
+
+    .line 134
+    iget-object v0, p0, Lzd;->d:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-static {v10}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 137
+    iget-object v0, p0, Lzd;->e:Landroid/os/Handler;
+
+    new-instance v1, Lzd$2;
+
+    invoke-direct {v1, p0, v2}, Lzd$2;-><init>(Lzd;Ljava/lang/String;)V
+
+    const-wide/16 v2, 0x1f40
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 165
+    :cond_2
+    :goto_1
+    return-void
+
+    .line 153
+    :cond_3
+    new-array v0, v6, [Ljava/lang/Object;
+
+    sub-long v2, p2, v4
+
+    sub-long/2addr v2, v8
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    aput-object v1, v0, v11
+
+    add-long v2, v4, v8
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    aput-object v1, v0, v10
+
+    goto :goto_1
+
+    .line 160
+    :cond_4
+    iget-object v0, p0, Lzd;->c:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    .line 161
+    if-eqz v0, :cond_2
+
+    .line 162
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    goto :goto_1
+.end method
+
+.method public final a(Ljava/lang/String;J)Z
+    .locals 6
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 177
+    iget-object v0, p0, Lzd;->b:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    .line 178
+    if-eqz v0, :cond_2
+
+    .line 179
+    monitor-enter v0
+
+    .line 180
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    .line 181
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    cmp-long v1, v4, p2
+
+    if-gez v1, :cond_0
+
+    .line 182
+    const/4 v1, 0x0
+
+    monitor-exit v0
+
+    move v0, v1
+
+    .line 187
+    :goto_0
     return v0
+
+    .line 185
+    :cond_1
+    monitor-exit v0
+
+    .line 187
+    :cond_2
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    .line 185
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final b(Ljava/lang/String;)Z
+    .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 229
+    iget-object v0, p0, Lzd;->b:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    .line 230
+    if-eqz v0, :cond_1
+
+    .line 231
+    monitor-enter v0
+
+    .line 232
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    monitor-exit v0
+
+    move v0, v1
+
+    .line 235
+    :goto_0
+    return v0
+
+    .line 233
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
+    :cond_1
+    move v0, v1
+
+    .line 235
+    goto :goto_0
+.end method
+
+.method public final b(Ljava/lang/String;J)Z
+    .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 197
+    iget-object v0, p0, Lzd;->b:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    .line 198
+    if-eqz v0, :cond_0
+
+    .line 199
+    monitor-enter v0
+
+    .line 200
+    :try_start_0
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    monitor-exit v0
+
+    move v0, v1
+
+    .line 203
+    :goto_0
+    return v0
+
+    .line 201
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
+    .line 203
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method protected final c(Ljava/lang/String;)Z
+    .locals 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 245
+    iget-object v0, p0, Lzd;->c:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    .line 246
+    if-eqz v0, :cond_1
+
+    .line 247
+    monitor-enter v0
+
+    .line 248
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    monitor-exit v0
+
+    move v0, v1
+
+    .line 251
+    :goto_0
+    return v0
+
+    .line 249
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
+    :cond_1
+    move v0, v1
+
+    .line 251
+    goto :goto_0
 .end method

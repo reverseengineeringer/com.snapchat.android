@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final a:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
+.field private final g:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
 
 
 # direct methods
@@ -69,24 +69,24 @@
     invoke-virtual {p0, v1}, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->setKeepHeaderWhenRefresh(Z)V
 
     .line 44
-    iput-boolean v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->g:Z
+    iput-boolean v1, p0, Lin/srain/cube/views/ptr/PtrFrameLayout;->f:Z
 
     .line 46
     new-instance v0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
 
     invoke-direct {v0, p1}, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->a:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
+    iput-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->g:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
 
     .line 47
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->a:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->g:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->setHeaderView(Landroid/view/View;)V
 
     .line 48
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->a:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->g:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
 
-    invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->a(Lbus;)V
+    invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->a(Lbvt;)V
 
     .line 49
     return-void
@@ -94,45 +94,18 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 8
-
-    .prologue
-    const-wide/16 v0, 0x0
-
-    const/4 v5, 0x0
-
-    .line 55
-    const/4 v4, 0x3
-
-    const/4 v7, 0x0
-
-    move-wide v2, v0
-
-    move v6, v5
-
-    invoke-static/range {v0 .. v7}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
-
-    move-result-object v0
-
-    invoke-super {p0, v0}, Lin/srain/cube/views/ptr/PtrFrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-
-    .line 56
-    return-void
-.end method
-
-.method public final b()Z
+.method public final a()Z
     .locals 2
 
     .prologue
     .line 59
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->a:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->g:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
 
-    iget-object v1, v0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v1, v0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     if-eqz v1, :cond_0
 
-    iget-object v0, v0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->b:Landroid/graphics/drawable/AnimationDrawable;
+    iget-object v0, v0, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->a:Landroid/graphics/drawable/AnimationDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->isRunning()Z
 
@@ -151,12 +124,44 @@
     goto :goto_0
 .end method
 
+.method public final b()Z
+    .locals 2
+
+    .prologue
+    .line 67
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->g:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->getHeight()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->g:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;->getTop()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public getPtrHeader()Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
     .locals 1
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->a:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
+    iget-object v0, p0, Lcom/snapchat/android/ui/ptr/SnapchatPtrFrameLayout;->g:Lcom/snapchat/android/ui/ptr/DancingGhostPtrHeader;
 
     return-object v0
 .end method

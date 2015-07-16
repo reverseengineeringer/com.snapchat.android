@@ -14,7 +14,7 @@
     value = {
         "Lcom/snapchat/android/database/table/DbTable",
         "<",
-        "Lbju;",
+        "Lbkv;",
         ">;"
     }
 .end annotation
@@ -39,7 +39,7 @@
 
 
 # instance fields
-.field private final d:Lajx;
+.field private final d:Lakr;
 
 
 # direct methods
@@ -115,17 +115,17 @@
 
     .prologue
     .line 48
-    new-instance v0, Lajx;
+    new-instance v0, Lakr;
 
-    invoke-direct {v0}, Lajx;-><init>()V
+    invoke-direct {v0}, Lakr;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;-><init>(Lajx;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;-><init>(Lakr;)V
 
     .line 49
     return-void
 .end method
 
-.method private constructor <init>(Lajx;)V
+.method private constructor <init>(Lakr;)V
     .locals 0
 
     .prologue
@@ -133,130 +133,130 @@
     invoke-direct {p0}, Lcom/snapchat/android/database/table/DbTable;-><init>()V
 
     .line 53
-    iput-object p1, p0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->d:Lajx;
+    iput-object p1, p0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->d:Lakr;
 
     .line 54
     return-void
 .end method
 
-.method private static a(Lbju;)Landroid/content/ContentValues;
+.method private static a(Lbkv;)Landroid/content/ContentValues;
     .locals 4
-    .param p0    # Lbju;
-        .annotation build Lcgc;
+    .param p0    # Lbkv;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
     const/4 v1, 0x0
 
-    .line 170
+    .line 171
     if-nez p0, :cond_0
 
     move-object v0, v1
 
-    .line 201
+    .line 207
     :goto_0
     return-object v0
 
-    .line 174
+    .line 175
     :cond_0
-    new-instance v0, Laad;
+    new-instance v0, Labc;
 
-    invoke-direct {v0}, Laad;-><init>()V
+    invoke-direct {v0}, Labc;-><init>()V
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->NAME:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->a()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->a()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->PUBLISHER_FORMAL_NAME:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->d()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->e()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->PUBLISHER_INTERNATIONAL_NAME:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->c()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->d()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->PRIMARY_COLOR:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->i()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->j()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->SECONDARY_COLOR:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->j()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->k()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->FILLED_ICON:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->e()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->f()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INVERTED_ICON:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->f()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->g()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->LOADING_ICON:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->g()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->h()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_MOVIE:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->h()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->i()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v2
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->ENABLED:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->k()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -264,26 +264,26 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     const/4 v0, 0x1
 
     :goto_1
-    invoke-virtual {v2, v3, v0}, Laad;->a(Lzw;Z)Laad;
+    invoke-virtual {v2, v3, v0}, Labc;->a(Laav;Z)Labc;
 
     move-result-object v0
 
-    .line 186
-    invoke-virtual {p0}, Lbju;->b()Ljava/lang/Integer;
+    .line 187
+    invoke-virtual {p0}, Lbkv;->b()Ljava/lang/Integer;
 
     move-result-object v2
 
     if-eqz v2, :cond_1
 
-    .line 187
+    .line 188
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->STORIES_PAGE_POSITION:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {p0}, Lbju;->b()Ljava/lang/Integer;
+    invoke-virtual {p0}, Lbkv;->b()Ljava/lang/Integer;
 
     move-result-object v3
 
@@ -291,59 +291,80 @@
 
     move-result v3
 
-    invoke-virtual {v0, v2, v3}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;I)Labc;
 
-    .line 190
+    .line 191
     :cond_1
-    invoke-virtual {p0}, Lbju;->m()Lbgv;
+    invoke-virtual {p0}, Lbkv;->c()Ljava/lang/Integer;
 
     move-result-object v2
 
+    if-eqz v2, :cond_2
+
     .line 192
-    if-eqz v2, :cond_3
+    sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->PROMOTED_STORIES_PAGE_POSITION:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    .line 193
-    sget-object v1, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
-
-    invoke-virtual {v2}, Lbgv;->a()Ljava/lang/String;
+    invoke-virtual {p0}, Lbkv;->c()Ljava/lang/Integer;
 
     move-result-object v3
 
-    invoke-virtual {v0, v1, v3}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-virtual {v0, v2, v3}, Labc;->a(Laav;I)Labc;
+
+    .line 196
+    :cond_2
+    invoke-virtual {p0}, Lbkv;->n()Lbhv;
+
+    move-result-object v2
+
+    .line 198
+    if-eqz v2, :cond_4
+
+    .line 199
+    sget-object v1, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
+
+    invoke-virtual {v2}, Lbhv;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v3}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v1
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_TARGETING:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {v2}, Lbgv;->b()Ljava/util/Map;
+    invoke-virtual {v2}, Lbhv;->b()Ljava/util/Map;
 
     move-result-object v2
 
-    invoke-virtual {v1, v3, v2}, Laad;->a(Lzw;Ljava/util/Map;)Laad;
+    invoke-virtual {v1, v3, v2}, Labc;->a(Laav;Ljava/util/Map;)Labc;
 
-    .line 201
+    .line 207
     :goto_2
-    iget-object v0, v0, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v0, Labc;->a:Landroid/content/ContentValues;
 
     goto/16 :goto_0
 
-    .line 174
-    :cond_2
+    .line 175
+    :cond_3
     const/4 v0, 0x0
 
     goto :goto_1
 
-    .line 197
-    :cond_3
+    .line 203
+    :cond_4
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_UNIT_ID:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {v0, v2, v1}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v2, v1}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v2
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->INTRO_AD_TARGETING:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
-    invoke-virtual {v2, v3, v1}, Laad;->a(Lzw;Ljava/util/Map;)Laad;
+    invoke-virtual {v2, v3, v1}, Labc;->a(Laav;Ljava/util/Map;)Labc;
 
     goto :goto_2
 .end method
@@ -352,7 +373,7 @@
     .locals 2
 
     .prologue
-    .line 117
+    .line 118
     const-class v1, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;
 
     monitor-enter v1
@@ -362,14 +383,14 @@
 
     if-nez v0, :cond_0
 
-    .line 118
+    .line 119
     new-instance v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;
 
     invoke-direct {v0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;-><init>()V
 
     sput-object v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->c:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;
 
-    .line 120
+    .line 121
     :cond_0
     sget-object v0, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->c:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;
     :try_end_0
@@ -379,7 +400,7 @@
 
     return-object v0
 
-    .line 117
+    .line 118
     :catchall_0
     move-exception v0
 
@@ -394,64 +415,64 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 289
+    .line 295
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 290
+    .line 296
     sget-object v1, Lcom/snapchat/android/content/SnapchatProvider;->b:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    .line 293
+    .line 299
     sget-object v1, Lcom/snapchat/android/content/SnapchatProvider;->c:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;)V
 
-    .line 294
+    .line 300
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Lbjt;)V
-    .locals 10
+.method public static a(Landroid/content/Context;Lbku;)V
+    .locals 8
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    .line 210
-    invoke-static {}, Lajx;->aL()J
+    .line 216
+    invoke-static {}, Lakr;->aK()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    invoke-virtual {p1}, Lbjt;->b()Ljava/lang/Long;
+    invoke-virtual {p1}, Lbku;->b()Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v4
 
-    cmp-long v0, v0, v4
+    cmp-long v1, v2, v4
 
-    if-ltz v0, :cond_0
+    if-ltz v1, :cond_0
 
-    .line 262
+    .line 268
     :goto_0
     return-void
 
-    .line 215
+    .line 221
     :cond_0
     if-nez p1, :cond_2
 
-    .line 216
+    .line 222
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->e()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 217
+    .line 223
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "Attempt to initialize with null channel list response."
@@ -460,29 +481,29 @@
 
     throw v0
 
-    .line 219
+    .line 225
     :cond_1
     invoke-static {p0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a(Landroid/content/Context;)V
 
     goto :goto_0
 
-    .line 223
+    .line 229
     :cond_2
-    invoke-virtual {p1}, Lbjt;->a()Ljava/util/List;
+    invoke-virtual {p1}, Lbku;->a()Ljava/util/List;
 
-    move-result-object v3
+    move-result-object v2
 
-    .line 224
-    if-nez v3, :cond_4
+    .line 230
+    if-nez v2, :cond_4
 
-    .line 225
+    .line 231
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->e()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 226
+    .line 232
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "Attempt to initialize with null channel response list."
@@ -491,116 +512,96 @@
 
     throw v0
 
-    .line 228
+    .line 234
     :cond_3
     invoke-static {p0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a(Landroid/content/Context;)V
 
     goto :goto_0
 
-    .line 232
+    .line 238
     :cond_4
     invoke-static {p0}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Lcom/snapchat/android/database/DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v1}, Lcom/snapchat/android/database/DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 233
-    const-string v0, "PublisherChannelTable"
-
-    const-string v1, "safeUpdate - beginTransaction"
-
-    new-array v5, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 234
-    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-
-    .line 237
-    :try_start_0
-    const-string v0, "PublisherChannelTable"
-
-    const-string v1, "Delete the tables for channels"
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 238
-    const-string v0, "PublisherChannel"
-
-    const/4 v1, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v4, v0, v1, v5}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    .line 239
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
     .line 243
+    :try_start_0
+    const-string v1, "PublisherChannel"
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v3, v1, v4, v5}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+
+    .line 249
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;->a()Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;
 
-    invoke-static {v4}, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;->a(Landroid/database/sqlite/SQLiteDatabase;)I
+    invoke-static {v3}, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;->a(Landroid/database/sqlite/SQLiteDatabase;)I
 
-    .line 244
+    .line 250
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/EditionTable;->a()Lcom/snapchat/android/discover/model/database/table/EditionTable;
 
-    invoke-static {v4}, Lcom/snapchat/android/discover/model/database/table/EditionTable;->a(Landroid/database/sqlite/SQLiteDatabase;)I
+    invoke-static {v3}, Lcom/snapchat/android/discover/model/database/table/EditionTable;->a(Landroid/database/sqlite/SQLiteDatabase;)I
 
-    move v1, v2
+    move v1, v0
 
-    .line 246
+    .line 252
     :goto_1
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-ge v1, v0, :cond_7
 
-    .line 247
-    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 253
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbju;
+    check-cast v0, Lbkv;
 
-    .line 248
-    invoke-static {v0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a(Lbju;)Landroid/content/ContentValues;
+    .line 254
+    invoke-static {v0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a(Lbkv;)Landroid/content/ContentValues;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_6
+
+    sget-object v5, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->POSITION:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
+
+    invoke-virtual {v5}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->getColumnName()Ljava/lang/String;
 
     move-result-object v5
 
-    if-eqz v5, :cond_6
-
-    sget-object v6, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->POSITION:Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
-
-    invoke-virtual {v6}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->getColumnName()Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v4, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    move-result-object v7
+    const-string v5, "PublisherChannel"
 
-    invoke-virtual {v5, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    const/4 v6, 0x0
 
-    const-string v6, "PublisherChannel"
+    const/4 v7, 0x5
 
-    const/4 v7, 0x0
+    invoke-virtual {v3, v5, v6, v4, v7}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
 
-    const/4 v8, 0x5
+    move-result-wide v4
 
-    invoke-virtual {v4, v6, v7, v5, v8}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
+    const-wide/16 v6, -0x1
 
-    move-result-wide v6
+    cmp-long v4, v4, v6
 
-    const-wide/16 v8, -0x1
-
-    cmp-long v5, v6, v8
-
-    if-nez v5, :cond_5
+    if-nez v4, :cond_5
 
     new-instance v0, Landroid/database/sqlite/SQLiteException;
 
@@ -613,72 +614,57 @@
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 254
+    .line 260
     :catch_0
     move-exception v0
 
-    .line 255
+    .line 261
+    const/4 v1, 0x1
+
     :try_start_1
-    const-string v1, "PublisherChannelTable"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const-string v3, "Error while writing to database: %s"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    const/4 v2, 0x0
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v5, v6
-
-    invoke-static {v1, v3, v5}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 257
-    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    .line 263
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 258
-    const-string v0, "PublisherChannelTable"
-
-    const-string v1, "safeUpdate - endTransaction"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 261
+    .line 267
     :goto_2
     invoke-static {p0}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a(Landroid/content/Context;)V
 
     goto/16 :goto_0
 
-    .line 248
+    .line 254
     :cond_5
     if-eqz v0, :cond_6
 
     :try_start_2
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/EditionTable;->a()Lcom/snapchat/android/discover/model/database/table/EditionTable;
 
-    invoke-virtual {v0}, Lbju;->l()Ljava/util/List;
+    invoke-virtual {v0}, Lbkv;->m()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-virtual {v0}, Lbkv;->a()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v0}, Lbju;->a()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v0}, Lbju;->k()Ljava/lang/String;
+    invoke-virtual {v0}, Lbkv;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v4, v5, v6, v0}, Lcom/snapchat/android/discover/model/database/table/EditionTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4, v5, v0}, Lcom/snapchat/android/discover/model/database/table/EditionTable;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 246
+    .line 252
     :cond_6
     add-int/lit8 v0, v1, 0x1
 
@@ -686,12 +672,12 @@
 
     goto :goto_1
 
-    .line 251
+    .line 257
     :cond_7
-    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    .line 253
-    invoke-virtual {p1}, Lbjt;->b()Ljava/lang/Long;
+    .line 259
+    invoke-virtual {p1}, Lbku;->b()Ljava/lang/Long;
 
     move-result-object v0
 
@@ -699,40 +685,22 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lajx;->h(J)V
+    invoke-static {v0, v1}, Lakr;->h(J)V
     :try_end_2
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 257
-    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-
-    .line 258
-    const-string v0, "PublisherChannelTable"
-
-    const-string v1, "safeUpdate - endTransaction"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 263
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     goto :goto_2
 
-    .line 257
     :catchall_0
     move-exception v0
 
-    invoke-virtual {v4}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    invoke-virtual {v3}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 258
-    const-string v1, "PublisherChannelTable"
-
-    const-string v3, "safeUpdate - endTransaction"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v1, v3, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
+    .line 264
     throw v0
 .end method
 
@@ -743,49 +711,49 @@
 
     .prologue
     .line 35
-    check-cast p1, Lbju;
+    check-cast p1, Lbkv;
 
-    invoke-static {p1}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a(Lbju;)Landroid/content/ContentValues;
+    invoke-static {p1}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a(Lbkv;)Landroid/content/ContentValues;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
-            "Lbju;",
+            "Lbkv;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 160
+    .line 161
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
+.method public final b(Lakp;)V
     .locals 0
 
     .prologue
-    .line 166
+    .line 167
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue
-    .line 155
+    .line 156
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->values()[Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
     move-result-object v0
@@ -797,17 +765,17 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 126
     const-string v0, "PublisherChannel"
 
     return-object v0
 .end method
 
-.method public final c(Lajv;)V
+.method public final c(Lakp;)V
     .locals 0
 
     .prologue
-    .line 207
+    .line 213
     return-void
 .end method
 
@@ -815,37 +783,37 @@
     .locals 7
 
     .prologue
-    .line 135
+    .line 136
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 136
+    .line 137
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->values()[Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;
 
     move-result-object v2
 
-    .line 137
+    .line 138
     array-length v3, v2
 
-    .line 138
+    .line 139
     const/4 v0, 0x0
 
     :goto_0
     if-ge v0, v3, :cond_2
 
-    .line 139
+    .line 140
     aget-object v4, v2, v0
 
-    .line 140
+    .line 141
     if-lez v0, :cond_0
 
-    .line 141
+    .line 142
     const-string v5, ", "
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 143
+    .line 144
     :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -883,33 +851,33 @@
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 144
+    .line 145
     invoke-virtual {v4}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable$PublisherChannelSchema;->getConstraints()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 145
+    .line 146
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-nez v5, :cond_1
 
-    .line 146
+    .line 147
     const-string v5, " "
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 147
+    .line 148
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 138
+    .line 139
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 150
+    .line 151
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -922,7 +890,7 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 131
     const/4 v0, 0x0
 
     return v0

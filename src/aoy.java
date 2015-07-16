@@ -1,40 +1,24 @@
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.view.View;
+import android.content.Context;
+import com.snapchat.android.SnapchatApplication;
 
 public final class aoy
-  extends aow
+  implements ahh
 {
-  public aoy(View paramView1, View paramView2)
+  private final Context a;
+  
+  public aoy()
   {
-    super(paramView1, paramView2);
+    this(SnapchatApplication.b());
   }
   
-  public final ObjectAnimator a()
+  private aoy(Context paramContext)
   {
-    float f = -avh.a(c) / 2.0F;
-    return ObjectAnimator.ofFloat(b, "translationY", new float[] { f });
+    a = paramContext;
   }
   
-  protected final ObjectAnimator b()
+  public final String d()
   {
-    return ObjectAnimator.ofFloat(c, "alpha", new float[] { 1.0F });
-  }
-  
-  public final void onAnimationCancel(Animator paramAnimator)
-  {
-    b.setTranslationY(0.0F);
-    c.setVisibility(8);
-  }
-  
-  public final void onAnimationEnd(Animator paramAnimator)
-  {
-    if (d) {
-      return;
-    }
-    b.setTranslationY(0.0F);
-    c.setAlpha(1.0F);
-    c.setVisibility(0);
+    return a.getString(2131493594);
   }
 }
 

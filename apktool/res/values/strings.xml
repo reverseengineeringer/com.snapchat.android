@@ -291,7 +291,6 @@ to send to a friend."</string>
     <string name="discover_sharing_success">Snap sent!</string>
     <string name="discover_sharing_unavailable">%s does not allow sending of this Snap.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%s</g> Tap here to check out Discover!</string>
     <string name="discover_unavailable">"Sorry!
 
 Discover is currently unavailable."</string>
@@ -343,6 +342,7 @@ Discover is currently unavailable in your region."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Forgot your password?</a>" "</string>
     <string name="friend_suggest_hide">Hide</string>
     <string name="friend_suggest_new_contact"><g id="username">%s</g> - New contact</string>
+    <string name="friend_suggest_reason_display" formatted="false"><g id="username">%s</g> - <g id="reason">%s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%s</g> - Recently joined</string>
     <string name="friends">Friends</string>
     <string name="friends_context_block">Block</string>
@@ -656,7 +656,7 @@ Read our "<a href="http://www.snapchat.com/privacy">Privacy Policy</a> to learn 
     <string name="snap_delete_failure">Snap failed to delete.</string>
     <string name="snap_failed_to_post">1 Snap failed to post.</string>
     <string name="snap_list_empty_list_msg">"You don't have any Snaps :("</string>
-    <string name="snap_tag_help_description">Snapchatters can add you by pointing their camera at your ghost and tapping their screen!</string>
+    <string name="snap_tag_help_description">Snapchatters can add you by pointing their camera at your Snapcode and tapping their screen!</string>
     <string name="snap_tag_no_connection">No connection!</string>
     <string name="snap_to_add">Snap or screenshot to add</string>
     <string name="snapchat_data">Snapchat</string>
@@ -695,8 +695,6 @@ Read our "<a href="http://www.snapchat.com/privacy">Privacy Policy</a> to learn 
     <string name="tap_to_view_edition">Tap to view in Discover</string>
     <string name="tap_to_view_full_story">Tap to view the full story</string>
     <string name="tap_to_view_more">Tap to explore other channels</string>
-    <string name="tap_to_view_snaps">Tap to view Snaps!</string>
-    <string name="tap_to_view_stories">Tap to view Stories!</string>
     <string name="tap_to_view_video_in_discover">Tap to view this video in Discover</string>
     <string name="too_many_attempts">Too many attempts.</string>
     <string name="tos_accept">ACCEPT</string>

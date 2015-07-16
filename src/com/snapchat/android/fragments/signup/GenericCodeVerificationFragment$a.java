@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.signup;
 
 import android.os.Handler;
-import bgo;
+import bho;
 
 final class GenericCodeVerificationFragment$a
-  extends bgo
+  extends bho
 {
   public GenericCodeVerificationFragment$a(GenericCodeVerificationFragment paramGenericCodeVerificationFragment, int paramInt, long paramLong, Handler paramHandler)
   {

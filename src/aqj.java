@@ -1,26 +1,45 @@
-import android.view.ActionMode;
-import android.view.ActionMode.Callback;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.graphics.Bitmap;
+import android.support.v7.widget.RecyclerView;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 
 public final class aqj
-  implements ActionMode.Callback
 {
-  public final boolean onActionItemClicked(ActionMode paramActionMode, MenuItem paramMenuItem)
+  final ImageView a;
+  private final RecyclerView b;
+  
+  public aqj(ImageView paramImageView, RecyclerView paramRecyclerView)
   {
-    return false;
+    a = paramImageView;
+    b = paramRecyclerView;
   }
   
-  public final boolean onCreateActionMode(ActionMode paramActionMode, Menu paramMenu)
+  public final void a(int paramInt1, int paramInt2)
   {
-    return false;
-  }
-  
-  public final void onDestroyActionMode(ActionMode paramActionMode) {}
-  
-  public final boolean onPrepareActionMode(ActionMode paramActionMode, Menu paramMenu)
-  {
-    return false;
+    b.setDrawingCacheEnabled(true);
+    Object localObject = b.getDrawingCache();
+    localObject = avp.a((Bitmap)localObject, paramInt1, ((Bitmap)localObject).getWidth(), ((Bitmap)localObject).getHeight() - paramInt1);
+    b.setDrawingCacheEnabled(false);
+    a.setImageBitmap((Bitmap)localObject);
+    a.setVisibility(0);
+    localObject = new TranslateAnimation(0.0F, 0.0F, paramInt1, paramInt1 + paramInt2);
+    ((TranslateAnimation)localObject).setInterpolator(new AccelerateDecelerateInterpolator());
+    ((TranslateAnimation)localObject).setDuration(300L);
+    ((TranslateAnimation)localObject).setAnimationListener(new Animation.AnimationListener()
+    {
+      public final void onAnimationEnd(Animation paramAnonymousAnimation)
+      {
+        a.setVisibility(8);
+      }
+      
+      public final void onAnimationRepeat(Animation paramAnonymousAnimation) {}
+      
+      public final void onAnimationStart(Animation paramAnonymousAnimation) {}
+    });
+    a.startAnimation((Animation)localObject);
   }
 }
 

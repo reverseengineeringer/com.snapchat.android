@@ -22,7 +22,7 @@
 .field protected mFrameSyncObject:Ljava/lang/Object;
 
 .field private final mOverlayBitmap:Landroid/graphics/Bitmap;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -39,15 +39,15 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;II[FLandroid/graphics/Bitmap;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # [F
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p5    # Landroid/graphics/Bitmap;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -137,15 +137,15 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;[FLandroid/graphics/Bitmap;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # [F
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/graphics/Bitmap;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -485,7 +485,7 @@
 
 # virtual methods
 .method public awaitNewImage()V
-    .locals 4
+    .locals 3
 
     .prologue
     .line 230
@@ -510,13 +510,6 @@
 
     .line 237
     :try_start_1
-    iget-object v0, p0, Lcom/snapchat/videotranscoder/cts/OutputSurface;->mFrameSyncObject:Ljava/lang/Object;
-
-    const-wide/16 v2, 0x1f4
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/Object;->wait(J)V
-
-    .line 238
     iget-boolean v0, p0, Lcom/snapchat/videotranscoder/cts/OutputSurface;->mFrameAvailable:Z
 
     if-nez v0, :cond_0
@@ -619,7 +612,7 @@
 .method public changeFragmentShader(Lcom/snapchat/videotranscoder/video/FragmentShader;)V
     .locals 1
     .param p1    # Lcom/snapchat/videotranscoder/video/FragmentShader;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -634,7 +627,7 @@
 .end method
 
 .method public checkForNewImage(I)Z
-    .locals 6
+    .locals 4
 
     .prologue
     const/4 v0, 0x0
@@ -662,13 +655,6 @@
 
     .line 270
     :try_start_1
-    iget-object v2, p0, Lcom/snapchat/videotranscoder/cts/OutputSurface;->mFrameSyncObject:Ljava/lang/Object;
-
-    int-to-long v4, p1
-
-    invoke-virtual {v2, v4, v5}, Ljava/lang/Object;->wait(J)V
-
-    .line 271
     iget-boolean v2, p0, Lcom/snapchat/videotranscoder/cts/OutputSurface;->mFrameAvailable:Z
 
     if-nez v2, :cond_0
@@ -836,7 +822,7 @@
 
     throw v0
 
-    .line 305
+    .line 304
     :catchall_0
     move-exception v0
 
@@ -854,11 +840,6 @@
     iput-boolean v0, p0, Lcom/snapchat/videotranscoder/cts/OutputSurface;->mFrameAvailable:Z
 
     .line 304
-    iget-object v0, p0, Lcom/snapchat/videotranscoder/cts/OutputSurface;->mFrameSyncObject:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
-    .line 305
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

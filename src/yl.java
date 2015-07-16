@@ -1,64 +1,36 @@
-import android.content.Context;
-import android.content.res.Resources;
-import android.text.TextUtils;
-import com.snapchat.android.model.chat.ChatConversation;
-import com.squareup.otto.Bus;
+import javax.inject.Provider;
 
 public final class yl
+  implements bvk<yj>
 {
-  private final Context a;
-  private final yq b;
+  private final Provider<aze> b;
+  private final Provider<aum> c;
   
-  public yl(Context paramContext)
+  static
   {
-    this(paramContext, yq.a());
-  }
-  
-  @cf
-  private yl(Context paramContext, yq paramyq)
-  {
-    a = paramContext;
-    b = paramyq;
-  }
-  
-  public final void a(@cgb ChatConversation paramChatConversation, @cgb ako paramako, @cgc String paramString)
-  {
-    if (!paramako.e()) {
-      throw new IllegalStateException("The provided chatFeedItem cannot be saved/unsaved. Please check canSaveOrUnsave before calling this method.");
-    }
-    int i = a.getResources().getColor(2131230727);
-    int j = a.getResources().getColor(2131230811);
-    String str2;
-    int k;
-    String str1;
-    if (paramako.g())
+    if (!yl.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      str2 = a.getResources().getString(2131493009);
-      k = paramako.m();
-      str1 = str2;
-      if ((paramako instanceof akb))
-      {
-        b.a(paramChatConversation, (akb)paramako, k, false);
-        str1 = str2;
-      }
-    }
-    for (;;)
-    {
-      if (!TextUtils.isEmpty(paramString))
-      {
-        paramChatConversation = new bbg(null, str1, i, j, true, paramString);
-        ban.a().a(paramChatConversation);
-      }
+      a = bool;
       return;
-      str2 = a.getResources().getString(2131493004);
-      k = paramako.l();
-      str1 = str2;
-      if ((paramako instanceof akb))
-      {
-        b.a(paramChatConversation, (akb)paramako, k, true);
-        str1 = str2;
-      }
     }
+  }
+  
+  private yl(Provider<aze> paramProvider, Provider<aum> paramProvider1)
+  {
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    b = paramProvider;
+    if ((!a) && (paramProvider1 == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider1;
+  }
+  
+  public static bvk<yj> a(Provider<aze> paramProvider, Provider<aum> paramProvider1)
+  {
+    return new yl(paramProvider, paramProvider1);
   }
 }
 

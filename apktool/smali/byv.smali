@@ -3,218 +3,121 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbxi;
-
-
-# instance fields
-.field private a:Ljava/util/List;
+.implements Lbyh;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 42
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    .line 43
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyi;
-
-    invoke-direct {v1}, Lbyi;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 44
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyj;
-
-    invoke-direct {v1}, Lbyj;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 45
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyk;
-
-    invoke-direct {v1}, Lbyk;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 46
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyl;
-
-    invoke-direct {v1}, Lbyl;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 47
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbym;
-
-    invoke-direct {v1}, Lbym;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 48
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyn;
-
-    invoke-direct {v1}, Lbyn;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 49
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyo;
-
-    invoke-direct {v1}, Lbyo;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 50
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyp;
-
-    invoke-direct {v1}, Lbyp;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 51
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyq;
-
-    invoke-direct {v1}, Lbyq;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 52
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyr;
-
-    invoke-direct {v1}, Lbyr;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 53
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbys;
-
-    invoke-direct {v1}, Lbys;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 54
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyt;
-
-    invoke-direct {v1}, Lbyt;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 55
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyu;
-
-    invoke-direct {v1}, Lbyu;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 56
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyw;
-
-    invoke-direct {v1}, Lbyw;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 57
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyx;
-
-    invoke-direct {v1}, Lbyx;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 58
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyy;
-
-    invoke-direct {v1}, Lbyy;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 59
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
-
-    new-instance v1, Lbyz;
-
-    invoke-direct {v1}, Lbyz;-><init>()V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 60
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbwz;)V
-    .locals 2
+.method public final a(Lbya;Ljava/lang/String;)Lbyl;
+    .locals 6
 
     .prologue
-    .line 87
-    iget-object v0, p0, Lbyv;->a:Ljava/util/List;
+    const/4 v5, 0x0
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    .line 63
+    invoke-static {p2}, Lbyk;->a(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 89
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    .line 68
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    const/4 v2, 0x2
 
-    .line 90
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eq v0, v2, :cond_0
+
+    .line 69
+    new-instance v0, Lbyi;
+
+    const-string v1, "Two numeric arguments are required."
+
+    invoke-direct {v0, v1}, Lbyi;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 73
+    :cond_0
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbxg;
+    check-cast v0, Ljava/lang/Double;
 
-    invoke-virtual {p1, v0}, Lbwz;->a(Lbxg;)V
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
-    goto :goto_0
+    move-result-wide v2
 
-    .line 92
-    :cond_0
-    return-void
+    .line 74
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Double;
+
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v0
+
+    .line 75
+    new-instance v4, Ljava/lang/Double;
+
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->IEEEremainder(DD)D
+
+    move-result-wide v0
+
+    invoke-direct {v4, v0, v1}, Ljava/lang/Double;-><init>(D)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 80
+    new-instance v0, Lbyl;
+
+    invoke-virtual {v4}, Ljava/lang/Double;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, v5}, Lbyl;-><init>(Ljava/lang/String;I)V
+
+    return-object v0
+
+    .line 76
+    :catch_0
+    move-exception v0
+
+    .line 77
+    new-instance v1, Lbyi;
+
+    const-string v2, "Two numeric arguments are required."
+
+    invoke-direct {v1, v2, v0}, Lbyi;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
+
+    throw v1
+.end method
+
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 42
+    const-string v0, "IEEEremainder"
+
+    return-object v0
 .end method

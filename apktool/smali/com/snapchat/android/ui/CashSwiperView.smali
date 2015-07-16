@@ -25,7 +25,7 @@
 
 .field private C:Lcom/snapchat/android/ui/cash/ParticleSparkleView;
 
-.field private D:Lxw;
+.field private D:Lys;
 
 .field public b:Lcom/snapchat/android/ui/CashSwiperView$b;
 
@@ -178,7 +178,7 @@
     .line 103
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lxw;
+    iput-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lys;
 
     .line 107
     invoke-direct {p0, p1}, Lcom/snapchat/android/ui/CashSwiperView;->a(Landroid/content/Context;)V
@@ -197,7 +197,7 @@
     .line 103
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lxw;
+    iput-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lys;
 
     .line 112
     invoke-direct {p0, p1}, Lcom/snapchat/android/ui/CashSwiperView;->a(Landroid/content/Context;)V
@@ -216,7 +216,7 @@
     .line 103
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lxw;
+    iput-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lys;
 
     .line 117
     invoke-direct {p0, p1}, Lcom/snapchat/android/ui/CashSwiperView;->a(Landroid/content/Context;)V
@@ -331,7 +331,7 @@
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lxw;
+    iget-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lys;
 
     if-nez v0, :cond_3
 
@@ -341,15 +341,15 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v2}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
     float-to-int v0, v0
 
-    new-instance v2, Lxw$a;
+    new-instance v2, Lys$a;
 
-    invoke-direct {v2}, Lxw$a;-><init>()V
+    invoke-direct {v2}, Lys$a;-><init>()V
 
     iget-object v3, p0, Lcom/snapchat/android/ui/CashSwiperView;->C:Lcom/snapchat/android/ui/cash/ParticleSparkleView;
 
@@ -359,7 +359,7 @@
 
     sub-int v0, v3, v0
 
-    iput v0, v2, Lxw$a;->b:I
+    iput v0, v2, Lys$a;->b:I
 
     iget-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->C:Lcom/snapchat/android/ui/cash/ParticleSparkleView;
 
@@ -367,7 +367,7 @@
 
     move-result v0
 
-    iput v0, v2, Lxw$a;->a:I
+    iput v0, v2, Lys$a;->a:I
 
     const/high16 v0, 0x42fa0000    # 125.0f
 
@@ -375,7 +375,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v3}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -383,19 +383,19 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    iput v0, v2, Lxw$a;->c:I
+    iput v0, v2, Lys$a;->c:I
 
-    new-instance v0, Lxw;
+    new-instance v0, Lys;
 
-    invoke-direct {v0, v2, v1}, Lxw;-><init>(Lxw$a;B)V
+    invoke-direct {v0, v2, v1}, Lys;-><init>(Lys$a;B)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lxw;
+    iput-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lys;
 
     iget-object v0, p0, Lcom/snapchat/android/ui/CashSwiperView;->C:Lcom/snapchat/android/ui/cash/ParticleSparkleView;
 
-    iget-object v2, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lxw;
+    iget-object v2, p0, Lcom/snapchat/android/ui/CashSwiperView;->D:Lys;
 
-    iput-object v2, v0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->b:Lxv;
+    iput-object v2, v0, Lcom/snapchat/android/ui/cash/ParticleSparkleView;->b:Lyr;
 
     :cond_3
     invoke-virtual {p0}, Lcom/snapchat/android/ui/CashSwiperView;->getHotness()F
@@ -682,7 +682,7 @@
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/CashSwiperView;->setBackgroundColor(I)V
 
     .line 202
-    const v0, 0x7f0a01f2
+    const v0, 0x7f0a01f0
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -711,7 +711,7 @@
 
     add-double/2addr v4, v6
 
-    invoke-static {v2, v3, v4, v5}, Lavh;->a(DD)Landroid/graphics/ColorFilter;
+    invoke-static {v2, v3, v4, v5}, Lawf;->a(DD)Landroid/graphics/ColorFilter;
 
     move-result-object v1
 
@@ -753,7 +753,7 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 122
-    const v1, 0x7f040023
+    const v1, 0x7f040024
 
     const/4 v2, 0x1
 
@@ -1151,7 +1151,7 @@
 
     move-result-object v4
 
-    invoke-static {v2, v4}, Lavh;->b(FLandroid/content/Context;)F
+    invoke-static {v2, v4}, Lawf;->b(FLandroid/content/Context;)F
 
     move-result v2
 
@@ -1393,7 +1393,7 @@
 
     const v2, 0x7f0c0289
 
-    invoke-static {v1, v2, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1425,7 +1425,7 @@
 
     const v2, 0x7f0c028b
 
-    invoke-static {v1, v2, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1574,7 +1574,7 @@
 
 .method private h()Landroid/view/View;
     .locals 4
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
@@ -1603,7 +1603,7 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 683
-    const v1, 0x7f040053
+    const v1, 0x7f040054
 
     iget-object v2, p0, Lcom/snapchat/android/ui/CashSwiperView;->u:Landroid/view/ViewGroup;
 
@@ -1678,7 +1678,7 @@
 
     const v2, 0x7f0c028a
 
-    invoke-static {v1, v2, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1946,7 +1946,7 @@
     const v1, 0x3f6147ae    # 0.88f
 
     .line 171
-    invoke-static {p1}, Lavh;->c(Landroid/view/View;)V
+    invoke-static {p1}, Lawf;->c(Landroid/view/View;)V
 
     .line 172
     const/4 v0, 0x0

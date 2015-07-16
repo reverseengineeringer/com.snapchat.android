@@ -1,8 +1,7 @@
-public enum axp$a
+public final class axp$a
+  extends Enum<a>
 {
-  AWAITING_CONNECTION,  CONNECTED;
-  
-  private axp$a() {}
+  private static axp sInstance = new axp((byte)0);
 }
 
 /* Location:

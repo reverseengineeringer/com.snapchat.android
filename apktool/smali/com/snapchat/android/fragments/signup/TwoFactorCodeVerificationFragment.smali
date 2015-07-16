@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public f:Layg;
+.field public f:Laze;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
@@ -20,15 +20,15 @@
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private final k:Laol;
+.field private final k:Laph;
 
-.field private l:Lpw$a;
+.field private l:Lcom/snapchat/android/api2/LoginTask$a;
 
 .field private final m:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -41,7 +41,7 @@
     .end annotation
 .end field
 
-.field private n:Laok;
+.field private n:Lapg;
 
 
 # direct methods
@@ -50,19 +50,19 @@
 
     .prologue
     .line 146
-    sget-object v0, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    sget-object v0, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;-><init>(Ljavax/inject/Provider;Laol;)V
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;-><init>(Ljavax/inject/Provider;Laph;)V
 
     .line 147
     return-void
 .end method
 
-.method private constructor <init>(Ljavax/inject/Provider;Laol;)V
+.method private constructor <init>(Ljavax/inject/Provider;Laph;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -75,9 +75,9 @@
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;",
-            "Laol;",
+            "Laph;",
             ")V"
         }
     .end annotation
@@ -91,7 +91,7 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment$1;-><init>(Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->l:Lpw$a;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->l:Lcom/snapchat/android/api2/LoginTask$a;
 
     .line 103
     new-instance v0, Ljava/util/HashSet;
@@ -105,24 +105,24 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment$2;-><init>(Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->n:Laok;
+    iput-object v0, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->n:Lapg;
 
     .line 152
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;)V
 
     .line 153
     iput-object p1, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->j:Ljavax/inject/Provider;
 
     .line 154
-    iput-object p2, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->k:Laol;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->k:Laph;
 
     .line 155
     return-void
@@ -183,7 +183,7 @@
 
     .prologue
     .line 208
-    new-instance v0, Lpw;
+    new-instance v0, Lcom/snapchat/android/api2/LoginTask;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->h:Ljava/lang/String;
 
@@ -197,17 +197,17 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->l:Lpw$a;
+    iget-object v3, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->l:Lcom/snapchat/android/api2/LoginTask$a;
 
     iget-object v4, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->i:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->f:Layg;
+    iget-object v5, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->f:Laze;
 
     iget-object v6, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->j:Ljavax/inject/Provider;
 
-    invoke-direct/range {v0 .. v6}, Lpw;-><init>(Ljava/lang/String;Ljava/lang/String;Lpw$a;Ljava/lang/String;Layg;Ljavax/inject/Provider;)V
+    invoke-direct/range {v0 .. v6}, Lcom/snapchat/android/api2/LoginTask;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/api2/LoginTask$a;Ljava/lang/String;Laze;Ljavax/inject/Provider;)V
 
-    invoke-virtual {v0}, Lpw;->f()V
+    invoke-virtual {v0}, Lcom/snapchat/android/api2/LoginTask;->execute()V
 
     .line 210
     return-void
@@ -220,7 +220,7 @@
     .line 214
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->m:Ljava/util/Set;
 
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v1
 
@@ -232,7 +232,7 @@
 
     iget-object v4, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->i:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Laol;->b(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-virtual {v1, v2}, Laph;->b(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v5
 
@@ -250,7 +250,7 @@
 
     invoke-virtual {v5, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {v1, v2, v5}, Laol;->a(Landroid/content/Context;Landroid/content/Intent;)I
+    invoke-virtual {v1, v2, v5}, Laph;->a(Landroid/content/Context;Landroid/content/Intent;)I
 
     move-result v1
 
@@ -281,9 +281,9 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0c02c7
+    const v2, 0x7f0c02c5
 
-    invoke-static {v1, v2, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -344,7 +344,7 @@
 
     .prologue
     .line 170
-    const v0, 0x7f0400c7
+    const v0, 0x7f0400c9
 
     const/4 v1, 0x0
 
@@ -383,15 +383,15 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->onPause()V
 
     .line 188
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
     const/16 v1, 0x3fe
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->n:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->n:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->b(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->b(ILapg;)V
 
     .line 190
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->m:Ljava/util/Set;
@@ -410,28 +410,28 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->onResume()V
 
     .line 182
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
     const/16 v1, 0x3fe
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->n:Laok;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/signup/TwoFactorCodeVerificationFragment;->n:Lapg;
 
-    invoke-virtual {v0, v1, v2}, Laol;->a(ILaok;)V
+    invoke-virtual {v0, v1, v2}, Laph;->a(ILapg;)V
 
     .line 183
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 230
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->onVerificationCodeReceivedEvent(Lbet;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->onVerificationCodeReceivedEvent(Lbfs;)V
 
     .line 231
     return-void

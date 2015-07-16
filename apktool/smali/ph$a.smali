@@ -1,5 +1,5 @@
-.class public final Lph$a;
-.super Ljava/lang/Exception;
+.class public interface abstract Lph$a;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -9,10 +9,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x609
     name = "a"
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lph;
+# virtual methods
+.method public abstract a(Laji;)V
+.end method
+
+.method public abstract b(Laji;)V
+.end method

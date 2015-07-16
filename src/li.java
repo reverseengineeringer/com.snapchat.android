@@ -2,21 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class li
-  extends lt
+  extends ml
 {
-  private final String eventName = "STORY_CELL_VIEW";
-  public String posterId;
-  public Long storyCellCount;
+  private String additionalInfo;
+  private final String eventName = "REGISTRATION_USER_PHONE_ATTEMPT";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "STORY_CELL_VIEW");
-    if (posterId != null) {
-      localHashMap.put("poster_id", posterId);
-    }
-    if (storyCellCount != null) {
-      localHashMap.put("story_cell_count", storyCellCount);
+    localHashMap.put("event_name", "REGISTRATION_USER_PHONE_ATTEMPT");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -35,23 +31,14 @@ public final class li
         return false;
       }
       paramObject = (li)paramObject;
-      if (posterId != null)
-      {
-        if (posterId.equals(posterId)) {}
-      }
-      else {
-        while (posterId != null) {
-          return false;
-        }
-      }
-      if (storyCellCount == null) {
+      if (additionalInfo == null) {
         break;
       }
-    } while (storyCellCount.equals(storyCellCount));
+    } while (additionalInfo.equals(additionalInfo));
     for (;;)
     {
       return false;
-      if (storyCellCount == null) {
+      if (additionalInfo == null) {
         break;
       }
     }
@@ -59,15 +46,10 @@ public final class li
   
   public final int hashCode()
   {
-    int j = 0;
-    int k = super.hashCode();
-    if (posterId != null) {}
-    for (int i = posterId.hashCode();; i = 0)
-    {
-      if (storyCellCount != null) {
-        j = storyCellCount.hashCode();
-      }
-      return (i + k * 31) * 31 + j;
+    int j = super.hashCode();
+    if (additionalInfo != null) {}
+    for (int i = additionalInfo.hashCode();; i = 0) {
+      return i + j * 31;
     }
   }
 }

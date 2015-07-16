@@ -1,80 +1,40 @@
-import java.util.Map.Entry;
-import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 @cd
-final class dt<K, V>
-  extends db<K, V>
+public final class dt
 {
-  final transient K a;
-  final transient V b;
-  transient db<V, K> c;
-  
-  dt(K paramK, V paramV)
+  @cd
+  public static <E> ArrayList<E> a(int paramInt)
   {
-    if (paramK == null)
-    {
-      paramK = String.valueOf(String.valueOf(paramV));
-      throw new NullPointerException(paramK.length() + 24 + "null key in entry: null=" + paramK);
+    cx.a(paramInt, "initialArraySize");
+    return new ArrayList(paramInt);
+  }
+  
+  @cd
+  public static <E> ArrayList<E> a(Iterable<? extends E> paramIterable)
+  {
+    co.a(paramIterable);
+    if ((paramIterable instanceof Collection)) {
+      return new ArrayList(cy.a(paramIterable));
     }
-    if (paramV == null)
-    {
-      paramK = String.valueOf(String.valueOf(paramK));
-      throw new NullPointerException(paramK.length() + 26 + "null value in entry: " + paramK + "=null");
-    }
-    a = paramK;
-    b = paramV;
+    paramIterable = paramIterable.iterator();
+    ArrayList localArrayList = new ArrayList();
+    ds.a(localArrayList, paramIterable);
+    return localArrayList;
   }
   
-  private dt(K paramK, V paramV, db<V, K> paramdb)
+  @cd
+  public static <E> ArrayList<E> a(E... paramVarArgs)
   {
-    a = paramK;
-    b = paramV;
-    c = paramdb;
-  }
-  
-  public final db<V, K> a()
-  {
-    db localdb = c;
-    Object localObject = localdb;
-    if (localdb == null)
-    {
-      localObject = new dt(b, a, this);
-      c = ((db)localObject);
-    }
-    return (db<V, K>)localObject;
-  }
-  
-  public final boolean containsKey(@Nullable Object paramObject)
-  {
-    return a.equals(paramObject);
-  }
-  
-  public final boolean containsValue(@Nullable Object paramObject)
-  {
-    return b.equals(paramObject);
-  }
-  
-  final di<Map.Entry<K, V>> d()
-  {
-    return di.a(dl.a(a, b));
-  }
-  
-  final di<K> f()
-  {
-    return di.a(a);
-  }
-  
-  public final V get(@Nullable Object paramObject)
-  {
-    if (a.equals(paramObject)) {
-      return (V)b;
-    }
-    return null;
-  }
-  
-  public final int size()
-  {
-    return 1;
+    co.a(paramVarArgs);
+    int i = paramVarArgs.length;
+    cx.a(i, "arraySize");
+    long l = i;
+    ArrayList localArrayList = new ArrayList(ep.a(i / 10 + (5L + l)));
+    Collections.addAll(localArrayList, paramVarArgs);
+    return localArrayList;
   }
 }
 

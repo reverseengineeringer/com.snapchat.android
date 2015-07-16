@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1250
+    .line 1276
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$4;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +40,12 @@
     .locals 0
 
     .prologue
-    .line 1253
+    .line 1279
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
-    .line 1254
-    invoke-static {p1}, Lavh;->b(Landroid/view/View;)V
+    .line 1280
+    invoke-static {p1}, Lawf;->b(Landroid/view/View;)V
 
-    .line 1255
+    .line 1281
     return-void
 .end method

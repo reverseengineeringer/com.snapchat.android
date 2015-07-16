@@ -1,14 +1,17 @@
-.class public interface abstract Lye;
+.class public final Lye;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
 
-.method public abstract b()V
-.end method
+    .prologue
+    .line 19
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract c()V
+    return-void
 .end method

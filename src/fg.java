@@ -1,25 +1,23 @@
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.Closeable;
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
 
-public final class fg
-  extends fi
+public abstract interface fg
+  extends Closeable
 {
-  Logger a;
+  public abstract int a(ByteBuffer paramByteBuffer);
   
-  public fg(String paramString)
-  {
-    a = Logger.getLogger(paramString);
-  }
+  public abstract long a();
   
-  public final void a(String paramString)
-  {
-    a.log(Level.FINE, paramString);
-  }
+  public abstract long a(long paramLong1, long paramLong2, WritableByteChannel paramWritableByteChannel);
   
-  public final void b(String paramString)
-  {
-    a.log(Level.SEVERE, paramString);
-  }
+  public abstract ByteBuffer a(long paramLong1, long paramLong2);
+  
+  public abstract void a(long paramLong);
+  
+  public abstract long b();
+  
+  public abstract void close();
 }
 
 /* Location:

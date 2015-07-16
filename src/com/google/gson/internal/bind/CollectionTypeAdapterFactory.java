@@ -7,7 +7,7 @@ import com.google.gson.internal..Gson.Types;
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.ObjectConstructor;
 import com.google.gson.reflect.TypeToken;
-import ej;
+import es;
 import java.lang.reflect.Type;
 import java.util.Collection;
 
@@ -40,7 +40,7 @@ public final class CollectionTypeAdapterFactory
     
     public a(Gson paramGson, Type paramType, TypeAdapter<E> paramTypeAdapter, ObjectConstructor<? extends Collection<E>> paramObjectConstructor)
     {
-      a = new ej(paramGson, paramTypeAdapter, paramType);
+      a = new es(paramGson, paramTypeAdapter, paramType);
       b = paramObjectConstructor;
     }
   }

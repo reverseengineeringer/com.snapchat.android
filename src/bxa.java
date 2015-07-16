@@ -1,12 +1,42 @@
+import android.content.Context;
+import java.net.URL;
+import java.net.URLConnection;
+
 public final class bxa
+  extends bwz
 {
-  String a = null;
-  bzq b = null;
+  public long g;
   
-  public bxa(String paramString, bzq parambzq)
+  public bxa(Context paramContext, String paramString, bwq parambwq)
   {
-    a = paramString;
-    b = parambzq;
+    super(paramContext, paramString, parambwq);
+  }
+  
+  protected final void a(Long paramLong)
+  {
+    g = paramLong.longValue();
+    if (g > 0L)
+    {
+      b.a(this);
+      return;
+    }
+    b.a(Boolean.valueOf(false));
+  }
+  
+  protected final void a(Integer... paramVarArgs) {}
+  
+  protected final Long b()
+  {
+    try
+    {
+      long l = a(new URL(c()), 6).getContentLength();
+      return Long.valueOf(l);
+    }
+    catch (Exception localException)
+    {
+      localException.printStackTrace();
+    }
+    return Long.valueOf(0L);
   }
 }
 

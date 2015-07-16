@@ -143,9 +143,6 @@
     iput-boolean v2, p0, Lcom/addlive/view/GLThread$GLThreadManager;->mMultipleGLESContextsAllowed:Z
 
     .line 879
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-
-    .line 881
     :cond_0
     iget-boolean v2, p0, Lcom/addlive/view/GLThread$GLThreadManager;->mMultipleGLESContextsAllowed:Z
 
@@ -209,9 +206,6 @@
 
     .line 857
     :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-
-    .line 858
     return-void
 .end method
 
@@ -299,14 +293,11 @@
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/addlive/view/GLThread$GLThreadManager;->mEglOwner:Lcom/addlive/view/GLThread;
-
-    .line 819
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 820
+    .line 819
+    :cond_0
     monitor-exit p0
 
     return-void
@@ -338,9 +329,6 @@
     .line 831
     :cond_0
     iput-object p1, p0, Lcom/addlive/view/GLThread$GLThreadManager;->mEglOwner:Lcom/addlive/view/GLThread;
-
-    .line 832
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
     .line 846
     :cond_1

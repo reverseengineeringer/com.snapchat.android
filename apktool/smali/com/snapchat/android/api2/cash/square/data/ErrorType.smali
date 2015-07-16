@@ -424,7 +424,7 @@
 .method public static isNonRecoverableError(Lcom/snapchat/android/api2/cash/square/data/ErrorType;)Z
     .locals 1
     .param p0    # Lcom/snapchat/android/api2/cash/square/data/ErrorType;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

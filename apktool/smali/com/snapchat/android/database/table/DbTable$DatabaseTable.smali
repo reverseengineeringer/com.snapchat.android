@@ -140,6 +140,8 @@
 
 .field public static final enum STORY_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
+.field public static final enum SUGGESTED_FRIENDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
 .field public static final enum VERIFIED_DEVICE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
 .field public static final enum VIEWING_SESSIONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
@@ -169,7 +171,7 @@
 
     const-string v1, "CONTACTS_ON_SNAPCHAT"
 
-    invoke-static {}, Laac;->a()Laac;
+    invoke-static {}, Labb;->a()Labb;
 
     move-result-object v2
 
@@ -182,7 +184,7 @@
 
     const-string v1, "CONTACTS_NOT_ON_SNAPCHAT"
 
-    invoke-static {}, Laab;->a()Laab;
+    invoke-static {}, Laba;->a()Laba;
 
     move-result-object v2
 
@@ -195,7 +197,7 @@
 
     const-string v1, "FRIENDS_WHO_ADDED_ME"
 
-    invoke-static {}, Laal;->a()Laal;
+    invoke-static {}, Labk;->a()Labk;
 
     move-result-object v2
 
@@ -206,35 +208,50 @@
     .line 399
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
+    const-string v1, "SUGGESTED_FRIENDS"
+
+    invoke-static {}, Lacd;->a()Lacd;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v7, v2}, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;-><init>(Ljava/lang/String;ILcom/snapchat/android/database/table/DbTable;)V
+
+    sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SUGGESTED_FRIENDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
+    .line 400
+    new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
     const-string v1, "FRIENDS"
 
     invoke-static {}, Lcom/snapchat/android/database/table/FriendTable;->f()Lcom/snapchat/android/database/table/FriendTable;
 
     move-result-object v2
 
-    invoke-direct {v0, v1, v7, v2}, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;-><init>(Ljava/lang/String;ILcom/snapchat/android/database/table/DbTable;)V
-
-    sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FRIENDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
-
-    .line 400
-    new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
-
-    const-string v1, "SENT_SNAPS"
-
-    invoke-static {}, Lcom/snapchat/android/database/table/SentSnapTable;->a()Lcom/snapchat/android/database/table/SentSnapTable;
-
-    move-result-object v2
-
     invoke-direct {v0, v1, v8, v2}, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;-><init>(Ljava/lang/String;ILcom/snapchat/android/database/table/DbTable;)V
 
-    sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENT_SNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FRIENDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     .line 401
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    const-string v1, "RECEIVED_SNAPS"
+    const-string v1, "SENT_SNAPS"
 
     const/4 v2, 0x5
+
+    invoke-static {}, Lcom/snapchat/android/database/table/SentSnapTable;->a()Lcom/snapchat/android/database/table/SentSnapTable;
+
+    move-result-object v3
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;-><init>(Ljava/lang/String;ILcom/snapchat/android/database/table/DbTable;)V
+
+    sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENT_SNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
+    .line 402
+    new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
+    const-string v1, "RECEIVED_SNAPS"
+
+    const/4 v2, 0x6
 
     invoke-static {}, Lcom/snapchat/android/database/table/ReceivedSnapTable;->a()Lcom/snapchat/android/database/table/ReceivedSnapTable;
 
@@ -244,12 +261,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 402
+    .line 403
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "VIEWING_SESSIONS"
 
-    const/4 v2, 0x6
+    const/4 v2, 0x7
 
     invoke-static {}, Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable;->a()Lcom/snapchat/android/database/table/ScreenshotDetectionSessionTable;
 
@@ -259,14 +276,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->VIEWING_SESSIONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 403
+    .line 404
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "DISCOVER_SHARE_FILES"
 
-    const/4 v2, 0x7
+    const/16 v2, 0x8
 
-    invoke-static {}, Laaf;->a()Laaf;
+    invoke-static {}, Labe;->a()Labe;
 
     move-result-object v3
 
@@ -274,14 +291,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DISCOVER_SHARE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 404
+    .line 405
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "CHAT_MEDIA_FILES"
 
-    const/16 v2, 0x8
+    const/16 v2, 0x9
 
-    invoke-static {}, Laaa;->a()Laaa;
+    invoke-static {}, Laaz;->a()Laaz;
 
     move-result-object v3
 
@@ -289,14 +306,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHAT_MEDIA_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 405
+    .line 406
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "RECEIVED_SNAP_IMAGE_FILES"
 
-    const/16 v2, 0x9
+    const/16 v2, 0xa
 
-    invoke-static {}, Laaw;->a()Laaw;
+    invoke-static {}, Labv;->a()Labv;
 
     move-result-object v3
 
@@ -304,14 +321,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 406
+    .line 407
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "RECEIVED_SNAP_VIDEO_FILES"
 
-    const/16 v2, 0xa
+    const/16 v2, 0xb
 
-    invoke-static {}, Laax;->a()Laax;
+    invoke-static {}, Labw;->a()Labw;
 
     move-result-object v3
 
@@ -319,14 +336,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 407
+    .line 408
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "STORY_SNAP_IMAGE_FILES"
 
-    const/16 v2, 0xb
+    const/16 v2, 0xc
 
-    invoke-static {}, Labb;->a()Labb;
+    invoke-static {}, Laca;->a()Laca;
 
     move-result-object v3
 
@@ -334,14 +351,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 408
+    .line 409
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "RECEIVED_STORY_SNAP_THUMBNAIL_FILES"
 
-    const/16 v2, 0xc
+    const/16 v2, 0xd
 
-    invoke-static {}, Laay;->a()Laay;
+    invoke-static {}, Labx;->a()Labx;
 
     move-result-object v3
 
@@ -349,14 +366,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_STORY_SNAP_THUMBNAIL_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 409
+    .line 410
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "MY_STORY_SNAP_THUMBNAIL_FILES"
 
-    const/16 v2, 0xd
+    const/16 v2, 0xe
 
-    invoke-static {}, Laau;->a()Laau;
+    invoke-static {}, Labt;->a()Labt;
 
     move-result-object v3
 
@@ -364,14 +381,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_STORY_SNAP_THUMBNAIL_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 410
+    .line 411
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "STORY_SNAP_VIDEO_FILES"
 
-    const/16 v2, 0xe
+    const/16 v2, 0xf
 
-    invoke-static {}, Labd;->a()Labd;
+    invoke-static {}, Lacc;->a()Lacc;
 
     move-result-object v3
 
@@ -379,14 +396,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 411
+    .line 412
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "DSNAP_MEDIA_FILES"
 
-    const/16 v2, 0xf
+    const/16 v2, 0x10
 
-    invoke-static {}, Laae;->a()Laae;
+    invoke-static {}, Labd;->a()Labd;
 
     move-result-object v3
 
@@ -394,14 +411,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_MEDIA_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 412
+    .line 413
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "MY_SNAP_VIDEO_FILES"
 
-    const/16 v2, 0x10
+    const/16 v2, 0x11
 
-    invoke-static {}, Laat;->a()Laat;
+    invoke-static {}, Labs;->a()Labs;
 
     move-result-object v3
 
@@ -409,14 +426,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 413
+    .line 414
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "MY_SNAP_IMAGE_FILES"
 
-    const/16 v2, 0x11
+    const/16 v2, 0x12
 
-    invoke-static {}, Laas;->a()Laas;
+    invoke-static {}, Labr;->a()Labr;
 
     move-result-object v3
 
@@ -424,12 +441,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 414
+    .line 415
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "STORY_GROUPS"
 
-    const/16 v2, 0x12
+    const/16 v2, 0x13
 
     invoke-static {}, Lcom/snapchat/android/database/table/StoryGroupTable;->a()Lcom/snapchat/android/database/table/StoryGroupTable;
 
@@ -439,14 +456,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_GROUPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 415
+    .line 416
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "MY_POSTED_STORYSNAPS"
 
-    const/16 v2, 0x13
+    const/16 v2, 0x14
 
-    invoke-static {}, Laar;->a()Laar;
+    invoke-static {}, Labq;->a()Labq;
 
     move-result-object v3
 
@@ -454,14 +471,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_POSTED_STORYSNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 416
+    .line 417
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "FRIEND_STORIES"
 
-    const/16 v2, 0x14
+    const/16 v2, 0x15
 
-    invoke-static {}, Laak;->a()Laak;
+    invoke-static {}, Labj;->a()Labj;
 
     move-result-object v3
 
@@ -469,12 +486,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FRIEND_STORIES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 417
+    .line 418
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "STORY_METADATA"
 
-    const/16 v2, 0x15
+    const/16 v2, 0x16
 
     invoke-static {}, Lcom/snapchat/android/database/table/StoryMetadataTable;->a()Lcom/snapchat/android/database/table/StoryMetadataTable;
 
@@ -484,12 +501,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_METADATA:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 418
+    .line 419
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "STORY_AD_STREAM_DATA_TABLE"
 
-    const/16 v2, 0x16
+    const/16 v2, 0x17
 
     invoke-static {}, Lcom/snapchat/android/ads/StoryAdStreamDataTable;->a()Lcom/snapchat/android/ads/StoryAdStreamDataTable;
 
@@ -499,12 +516,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_AD_STREAM_DATA_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 419
+    .line 420
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "ANALYTICS_EVENTS"
 
-    const/16 v2, 0x17
+    const/16 v2, 0x18
 
     invoke-static {}, Lcom/snapchat/android/database/table/UpdateSnapsAnalyticsTable;->a()Lcom/snapchat/android/database/table/UpdateSnapsAnalyticsTable;
 
@@ -514,14 +531,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->ANALYTICS_EVENTS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 420
+    .line 421
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "FAILED_POST_SNAPBRYOS"
 
-    const/16 v2, 0x18
+    const/16 v2, 0x19
 
-    invoke-static {}, Laah;->a()Laah;
+    invoke-static {}, Labg;->a()Labg;
 
     move-result-object v3
 
@@ -529,14 +546,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_POST_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 421
+    .line 422
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "FAILED_SEND_SNAPBRYOS"
 
-    const/16 v2, 0x19
+    const/16 v2, 0x1a
 
-    invoke-static {}, Laaj;->a()Laaj;
+    invoke-static {}, Labi;->a()Labi;
 
     move-result-object v3
 
@@ -544,14 +561,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_SEND_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 422
+    .line 423
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "FAILED_SEND_DSNAPBRYOS"
 
-    const/16 v2, 0x1a
+    const/16 v2, 0x1b
 
-    invoke-static {}, Laai;->a()Laai;
+    invoke-static {}, Labh;->a()Labh;
 
     move-result-object v3
 
@@ -559,14 +576,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_SEND_DSNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 423
+    .line 424
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "FAILED_CHAT_MEDIA_SNAPBRYOS"
 
-    const/16 v2, 0x1b
+    const/16 v2, 0x1c
 
-    invoke-static {}, Laag;->a()Laag;
+    invoke-static {}, Labf;->a()Labf;
 
     move-result-object v3
 
@@ -574,14 +591,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_CHAT_MEDIA_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 424
+    .line 425
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "SENDING_SNAPBRYOS"
 
-    const/16 v2, 0x1c
+    const/16 v2, 0x1d
 
-    invoke-static {}, Laba;->a()Laba;
+    invoke-static {}, Labz;->a()Labz;
 
     move-result-object v3
 
@@ -589,14 +606,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENDING_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 425
+    .line 426
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "SENDING_DSNAPBRYOS"
 
-    const/16 v2, 0x1d
+    const/16 v2, 0x1e
 
-    invoke-static {}, Laaz;->a()Laaz;
+    invoke-static {}, Laby;->a()Laby;
 
     move-result-object v3
 
@@ -604,12 +621,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENDING_DSNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 428
+    .line 429
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "CONVERSATION"
 
-    const/16 v2, 0x1e
+    const/16 v2, 0x1f
 
     invoke-static {}, Lcom/snapchat/android/database/table/ConversationTable;->a()Lcom/snapchat/android/database/table/ConversationTable;
 
@@ -619,12 +636,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CONVERSATION:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 429
+    .line 430
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "CHAT"
 
-    const/16 v2, 0x1f
+    const/16 v2, 0x20
 
     invoke-static {}, Lcom/snapchat/android/database/table/ChatTable;->a()Lcom/snapchat/android/database/table/ChatTable;
 
@@ -634,12 +651,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHAT:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 430
+    .line 431
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "NOTIFICATION"
 
-    const/16 v2, 0x20
+    const/16 v2, 0x21
 
     invoke-static {}, Lcom/snapchat/android/database/table/NotificationTable;->a()Lcom/snapchat/android/database/table/NotificationTable;
 
@@ -649,12 +666,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->NOTIFICATION:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 431
+    .line 432
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "CHATS_FROM_LAST_HOUR"
 
-    const/16 v2, 0x21
+    const/16 v2, 0x22
 
     invoke-static {}, Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;->a()Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;
 
@@ -664,12 +681,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHATS_FROM_LAST_HOUR:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 432
+    .line 433
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "CLEARED_CHAT_IDS"
 
-    const/16 v2, 0x22
+    const/16 v2, 0x23
 
     invoke-static {}, Lcom/snapchat/android/database/table/ClearedChatIdsTable;->a()Lcom/snapchat/android/database/table/ClearedChatIdsTable;
 
@@ -679,14 +696,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CLEARED_CHAT_IDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 433
+    .line 434
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "GEOFILTER_FILES"
 
-    const/16 v2, 0x23
+    const/16 v2, 0x24
 
-    invoke-static {}, Laam;->a()Laam;
+    invoke-static {}, Labl;->a()Labl;
 
     move-result-object v3
 
@@ -694,14 +711,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->GEOFILTER_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 434
+    .line 435
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "GEOFILTER_METADATA"
 
-    const/16 v2, 0x24
+    const/16 v2, 0x25
 
-    invoke-static {}, Lzz;->a()Lzz;
+    invoke-static {}, Laay;->a()Laay;
 
     move-result-object v3
 
@@ -709,14 +726,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->GEOFILTER_METADATA:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 435
+    .line 436
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "FONT"
 
-    const/16 v2, 0x25
+    const/16 v2, 0x26
 
-    invoke-static {}, Lzy;->a()Lzy;
+    invoke-static {}, Laax;->a()Laax;
 
     move-result-object v3
 
@@ -724,14 +741,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FONT:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 436
+    .line 437
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "HAS_SEEN_OUR_STORY_DIALOG_TABLE"
 
-    const/16 v2, 0x26
+    const/16 v2, 0x27
 
-    invoke-static {}, Laap;->a()Laap;
+    invoke-static {}, Labo;->a()Labo;
 
     move-result-object v3
 
@@ -739,14 +756,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HAS_SEEN_OUR_STORY_DIALOG_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 437
+    .line 438
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "HAS_SEEN_OUR_CAMPUS_STORY_DIALOG_TABLE"
 
-    const/16 v2, 0x27
+    const/16 v2, 0x28
 
-    invoke-static {}, Laao;->a()Laao;
+    invoke-static {}, Labn;->a()Labn;
 
     move-result-object v3
 
@@ -754,14 +771,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HAS_SEEN_OUR_CAMPUS_STORY_DIALOG_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 438
+    .line 439
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "STORY_SNAP_NOTE_TABLE"
 
-    const/16 v2, 0x28
+    const/16 v2, 0x29
 
-    invoke-static {}, Labc;->a()Labc;
+    invoke-static {}, Lacb;->a()Lacb;
 
     move-result-object v3
 
@@ -769,12 +786,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_NOTE_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 439
+    .line 440
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "DATA_CONSUMPTION_RECORDS"
 
-    const/16 v2, 0x29
+    const/16 v2, 0x2a
 
     invoke-static {}, Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;->a()Lcom/snapchat/android/networkmanager/consumption/DataConsumptionRecordTable;
 
@@ -784,14 +801,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DATA_CONSUMPTION_RECORDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 442
+    .line 443
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "VERIFIED_DEVICE"
 
-    const/16 v2, 0x2a
+    const/16 v2, 0x2b
 
-    invoke-static {}, Labf;->a()Labf;
+    invoke-static {}, Lacf;->a()Lacf;
 
     move-result-object v3
 
@@ -799,14 +816,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->VERIFIED_DEVICE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 445
+    .line 446
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "HTTP_METRICS"
 
-    const/16 v2, 0x2b
+    const/16 v2, 0x2c
 
-    invoke-static {}, Laaq;->a()Laaq;
+    invoke-static {}, Labp;->a()Labp;
 
     move-result-object v3
 
@@ -814,12 +831,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HTTP_METRICS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 446
+    .line 447
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "CASH_FEED_ITEM"
 
-    const/16 v2, 0x2c
+    const/16 v2, 0x2d
 
     invoke-static {}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a()Lcom/snapchat/android/database/table/CashFeedItemTable;
 
@@ -829,12 +846,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CASH_FEED_ITEM:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 449
+    .line 450
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "PUBLISHER_CHANNELS"
 
-    const/16 v2, 0x2d
+    const/16 v2, 0x2e
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;->a()Lcom/snapchat/android/discover/model/database/table/PublisherChannelTable;
 
@@ -844,12 +861,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PUBLISHER_CHANNELS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 450
+    .line 451
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "EDITIONS"
 
-    const/16 v2, 0x2e
+    const/16 v2, 0x2f
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/EditionTable;->a()Lcom/snapchat/android/discover/model/database/table/EditionTable;
 
@@ -859,12 +876,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITIONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 451
+    .line 452
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "EDITION_CHUNKS"
 
-    const/16 v2, 0x2f
+    const/16 v2, 0x30
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;->a()Lcom/snapchat/android/discover/model/database/table/EditionChunkTable;
 
@@ -874,12 +891,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_CHUNKS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 452
+    .line 453
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "DSNAPS"
 
-    const/16 v2, 0x30
+    const/16 v2, 0x31
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/DSnapTable;->a()Lcom/snapchat/android/discover/model/database/table/DSnapTable;
 
@@ -889,12 +906,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 453
+    .line 454
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "DSNAP_ITEMS"
 
-    const/16 v2, 0x31
+    const/16 v2, 0x32
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/DSnapItemTable;->a()Lcom/snapchat/android/discover/model/database/table/DSnapItemTable;
 
@@ -904,14 +921,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_ITEMS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 454
+    .line 455
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "INTRO_VIDEO_FILES"
 
-    const/16 v2, 0x32
+    const/16 v2, 0x33
 
-    invoke-static {}, Ladh;->a()Ladh;
+    invoke-static {}, Laeh;->a()Laeh;
 
     move-result-object v3
 
@@ -919,14 +936,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->INTRO_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 455
+    .line 456
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "PUBLISHER_ICONS"
 
-    const/16 v2, 0x33
+    const/16 v2, 0x34
 
-    invoke-static {}, Ladi;->a()Ladi;
+    invoke-static {}, Laei;->a()Laei;
 
     move-result-object v3
 
@@ -934,14 +951,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PUBLISHER_ICONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 456
+    .line 457
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "EDITION_CHUNK_FILES"
 
-    const/16 v2, 0x34
+    const/16 v2, 0x35
 
-    invoke-static {}, Ladg;->a()Ladg;
+    invoke-static {}, Laeg;->a()Laeg;
 
     move-result-object v3
 
@@ -949,12 +966,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_CHUNK_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 457
+    .line 458
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "EDITION_VIEW_STATE"
 
-    const/16 v2, 0x35
+    const/16 v2, 0x36
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;->a()Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;
 
@@ -964,12 +981,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 458
+    .line 459
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "CHANNEL_VIEW_STATE"
 
-    const/16 v2, 0x36
+    const/16 v2, 0x37
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/ChannelViewStateTable;->a()Lcom/snapchat/android/discover/model/database/table/ChannelViewStateTable;
 
@@ -979,12 +996,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHANNEL_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 459
+    .line 460
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "DSNAP_VIEW_STATE"
 
-    const/16 v2, 0x37
+    const/16 v2, 0x38
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/DSnapViewStateTable;->a()Lcom/snapchat/android/discover/model/database/table/DSnapViewStateTable;
 
@@ -994,14 +1011,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 460
+    .line 461
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "PROFILE_IMAGE_FILE_TABLE"
 
-    const/16 v2, 0x38
+    const/16 v2, 0x39
 
-    invoke-static {}, Laav;->a()Laav;
+    invoke-static {}, Labu;->a()Labu;
 
     move-result-object v3
 
@@ -1009,12 +1026,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PROFILE_IMAGE_FILE_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 461
+    .line 462
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "FINDFRIENDS_REQUEST_CACHE"
 
-    const/16 v2, 0x39
+    const/16 v2, 0x3a
 
     invoke-static {}, Lcom/snapchat/android/database/table/FindFriendRequestCacheTable;->a()Lcom/snapchat/android/database/table/FindFriendRequestCacheTable;
 
@@ -1024,12 +1041,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FINDFRIENDS_REQUEST_CACHE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
-    .line 462
+    .line 463
     new-instance v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     const-string v1, "CHANNEL_VIEW_DATES"
 
-    const/16 v2, 0x3a
+    const/16 v2, 0x3b
 
     invoke-static {}, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;->a()Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable;
 
@@ -1040,7 +1057,7 @@
     sput-object v0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHANNEL_VIEW_DATES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     .line 395
-    const/16 v0, 0x3b
+    const/16 v0, 0x3c
 
     new-array v0, v0, [Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
@@ -1056,333 +1073,339 @@
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FRIENDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v1, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SUGGESTED_FRIENDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v1, v0, v7
 
-    sget-object v1, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENT_SNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v1, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FRIENDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v1, v0, v8
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENT_SNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->VIEWING_SESSIONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DISCOVER_SHARE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->VIEWING_SESSIONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHAT_MEDIA_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DISCOVER_SHARE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHAT_MEDIA_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_STORY_SNAP_THUMBNAIL_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_STORY_SNAP_THUMBNAIL_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->RECEIVED_STORY_SNAP_THUMBNAIL_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_STORY_SNAP_THUMBNAIL_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_MEDIA_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x10
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_MEDIA_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x11
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_SNAP_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_GROUPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_SNAP_IMAGE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x13
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_POSTED_STORYSNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_GROUPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x14
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FRIEND_STORIES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->MY_POSTED_STORYSNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x15
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_METADATA:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FRIEND_STORIES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x16
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_AD_STREAM_DATA_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_METADATA:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x17
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->ANALYTICS_EVENTS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_AD_STREAM_DATA_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x18
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_POST_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->ANALYTICS_EVENTS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x19
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_SEND_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_POST_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1a
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_SEND_DSNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_SEND_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1b
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_CHAT_MEDIA_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_SEND_DSNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1c
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENDING_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_CHAT_MEDIA_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1d
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENDING_DSNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENDING_SNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1e
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CONVERSATION:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->SENDING_DSNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1f
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHAT:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CONVERSATION:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x20
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->NOTIFICATION:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHAT:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x21
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHATS_FROM_LAST_HOUR:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->NOTIFICATION:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x22
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CLEARED_CHAT_IDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHATS_FROM_LAST_HOUR:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x23
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->GEOFILTER_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CLEARED_CHAT_IDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x24
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->GEOFILTER_METADATA:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->GEOFILTER_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x25
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FONT:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->GEOFILTER_METADATA:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x26
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HAS_SEEN_OUR_STORY_DIALOG_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FONT:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x27
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HAS_SEEN_OUR_CAMPUS_STORY_DIALOG_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HAS_SEEN_OUR_STORY_DIALOG_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x28
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_NOTE_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HAS_SEEN_OUR_CAMPUS_STORY_DIALOG_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x29
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DATA_CONSUMPTION_RECORDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->STORY_SNAP_NOTE_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2a
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->VERIFIED_DEVICE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DATA_CONSUMPTION_RECORDS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2b
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HTTP_METRICS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->VERIFIED_DEVICE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2c
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CASH_FEED_ITEM:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->HTTP_METRICS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2d
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PUBLISHER_CHANNELS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CASH_FEED_ITEM:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2e
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITIONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PUBLISHER_CHANNELS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2f
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_CHUNKS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITIONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x30
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_CHUNKS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x31
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_ITEMS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAPS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x32
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->INTRO_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_ITEMS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x33
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PUBLISHER_ICONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->INTRO_VIDEO_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x34
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_CHUNK_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PUBLISHER_ICONS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x35
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_CHUNK_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x36
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHANNEL_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->EDITION_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x37
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHANNEL_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x38
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PROFILE_IMAGE_FILE_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DSNAP_VIEW_STATE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x39
 
-    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FINDFRIENDS_REQUEST_CACHE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->PROFILE_IMAGE_FILE_TABLE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3a
+
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FINDFRIENDS_REQUEST_CACHE:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x3b
 
     sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CHANNEL_VIEW_DATES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
@@ -1404,13 +1427,13 @@
     .end annotation
 
     .prologue
-    .line 467
+    .line 468
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 468
+    .line 469
     iput-object p3, p0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->a:Lcom/snapchat/android/database/table/DbTable;
 
-    .line 469
+    .line 470
     return-void
 .end method
 
@@ -1452,7 +1475,7 @@
     .locals 1
 
     .prologue
-    .line 472
+    .line 473
     iget-object v0, p0, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->a:Lcom/snapchat/android/database/table/DbTable;
 
     return-object v0

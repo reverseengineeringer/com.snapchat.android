@@ -1,8 +1,7 @@
 package com.snapchat.android.fragments.signup;
 
-import ajv;
-import ajx;
-import amk;
+import akp;
+import akr;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,39 +13,40 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import ang;
-import aok;
-import aol;
-import atx;
-import aud;
-import ayg;
-import aza;
-import bet;
-import big;
-import bkj;
-import boh;
+import anh;
+import aod;
+import apg;
+import aph;
+import auv;
+import avb;
+import aze;
+import azy;
+import bfs;
+import bjg;
+import blk;
+import bpi;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.api2.LoginTask;
+import com.snapchat.android.api2.LoginTask.a;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.debug.ReleaseManager;
 import java.util.HashSet;
 import java.util.Set;
 import javax.inject.Inject;
 import javax.inject.Provider;
-import pw;
-import pw.a;
 
 public class TwoFactorCodeVerificationFragment
   extends GenericCodeVerificationFragment
 {
   @Inject
-  public ayg f;
+  public aze f;
   private String g;
   private String h;
   private String i;
-  private final Provider<ajv> j;
-  private final aol k;
-  private pw.a l = new pw.a()
+  private final Provider<akp> j;
+  private final aph k;
+  private LoginTask.a l = new LoginTask.a()
   {
     public final void a()
     {
@@ -65,12 +65,12 @@ public class TwoFactorCodeVerificationFragment
       a(paramAnonymousString);
     }
     
-    public final void a(big paramAnonymousbig)
+    public final void a(bjg paramAnonymousbjg)
     {
       getActivity().onBackPressed();
     }
     
-    public final void b(big paramAnonymousbig)
+    public final void b(bjg paramAnonymousbjg)
     {
       if (!isAdded()) {}
       TwoFactorCodeVerificationFragment localTwoFactorCodeVerificationFragment;
@@ -78,16 +78,16 @@ public class TwoFactorCodeVerificationFragment
       {
         return;
         localTwoFactorCodeVerificationFragment = TwoFactorCodeVerificationFragment.this;
-      } while (ajx.l() == null);
+      } while (akr.l() == null);
       FragmentActivity localFragmentActivity = localTwoFactorCodeVerificationFragment.getActivity();
       Intent localIntent = new Intent(localFragmentActivity, LandingPageActivity.class);
       localIntent.addFlags(67108864);
-      localIntent.putExtra("recovery_code_used", aud.a(paramAnonymousbig.u()));
+      localIntent.putExtra("recovery_code_used", avb.a(paramAnonymousbjg.u()));
       localTwoFactorCodeVerificationFragment.startActivity(localIntent);
       localFragmentActivity.finish();
     }
     
-    public final void x_()
+    public final void w_()
     {
       if (ReleaseManager.f()) {
         throw new RuntimeException("Verification required for two-factor authentication");
@@ -96,15 +96,15 @@ public class TwoFactorCodeVerificationFragment
     }
   };
   private final Set<Integer> m = new HashSet();
-  private aok n = new aok()
+  private apg n = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
-      if ((TwoFactorCodeVerificationFragment.a(TwoFactorCodeVerificationFragment.this).contains(Integer.valueOf(i))) && ((paramAnonymousamk instanceof ang)))
+      int i = aph.a(paramAnonymousanh);
+      if ((TwoFactorCodeVerificationFragment.a(TwoFactorCodeVerificationFragment.this).contains(Integer.valueOf(i))) && ((paramAnonymousanh instanceof aod)))
       {
         TwoFactorCodeVerificationFragment.a(TwoFactorCodeVerificationFragment.this).remove(Integer.valueOf(i));
-        paramAnonymousamk = (ang)paramAnonymousamk;
+        paramAnonymousanh = (aod)paramAnonymousanh;
         if (b) {
           getActivity().onBackPressed();
         }
@@ -113,11 +113,11 @@ public class TwoFactorCodeVerificationFragment
       {
         return;
       }
-      paramAnonymousamk = a;
+      paramAnonymousanh = a;
       e.setVisibility(8);
       d.setClickable(true);
       a.setEnabled(true);
-      if (aud.a(paramAnonymousamk.a()))
+      if (avb.a(paramAnonymousanh.a()))
       {
         a.setText("");
         a.requestFocus();
@@ -127,22 +127,22 @@ public class TwoFactorCodeVerificationFragment
       {
         t();
         return;
-        AlertDialogUtils.a(getActivity(), paramAnonymousamk.b());
+        AlertDialogUtils.a(getActivity(), paramAnonymousanh.b());
       }
     }
   };
   
   public TwoFactorCodeVerificationFragment()
   {
-    this(ajv.UNSAFE_USER_PROVIDER, aol.a());
+    this(akp.UNSAFE_USER_PROVIDER, aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private TwoFactorCodeVerificationFragment(Provider<ajv> paramProvider, aol paramaol)
+  private TwoFactorCodeVerificationFragment(Provider<akp> paramProvider, aph paramaph)
   {
     SnapchatApplication.b().c().a(this);
     j = paramProvider;
-    k = paramaol;
+    k = paramaph;
   }
   
   public static final TwoFactorCodeVerificationFragment a(String paramString1, String paramString2, String paramString3)
@@ -158,25 +158,25 @@ public class TwoFactorCodeVerificationFragment
   
   public final void i()
   {
-    new pw(h, a.getText().toString(), l, i, f, j).f();
+    new LoginTask(h, a.getText().toString(), l, i, f, j).execute();
   }
   
   public final void m()
   {
     Set localSet = m;
-    aol localaol = aol.a();
+    aph localaph = aph.a();
     FragmentActivity localFragmentActivity = getActivity();
     String str = i;
-    Intent localIntent = localaol.b(localFragmentActivity);
+    Intent localIntent = localaph.b(localFragmentActivity);
     localIntent.putExtra("op_code", 1022);
     localIntent.putExtra("action", "requestTwoFactorCode");
     localIntent.putExtra("pre_auth_token", str);
-    localSet.add(Integer.valueOf(localaol.a(localFragmentActivity, localIntent)));
+    localSet.add(Integer.valueOf(localaph.a(localFragmentActivity, localIntent)));
   }
   
   public final String n()
   {
-    return atx.a(null, 2131493575, new Object[] { g });
+    return auv.a(null, 2131493573, new Object[] { g });
   }
   
   public void onCreate(Bundle paramBundle)
@@ -193,7 +193,7 @@ public class TwoFactorCodeVerificationFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968775, null);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968777, null);
     o();
     p();
     q();
@@ -205,20 +205,20 @@ public class TwoFactorCodeVerificationFragment
   public void onPause()
   {
     super.onPause();
-    aol.a().b(1022, n);
+    aph.a().b(1022, n);
     m.clear();
   }
   
   public void onResume()
   {
     super.onResume();
-    aol.a().a(1022, n);
+    aph.a().a(1022, n);
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
-    super.onVerificationCodeReceivedEvent(parambet);
+    super.onVerificationCodeReceivedEvent(parambfs);
   }
 }
 

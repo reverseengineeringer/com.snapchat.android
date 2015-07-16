@@ -1,52 +1,31 @@
 import com.google.gson.annotations.SerializedName;
+import java.util.Map;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bin
 {
-  @SerializedName("display_name")
-  protected String displayName;
-  @SerializedName("friend_name")
-  protected String friendName;
-  @SerializedName("geofence")
-  protected bhz geofence;
-  @SerializedName("is_whitelisted")
-  protected Boolean isWhitelisted;
-  @SerializedName("local_story")
-  protected Boolean localStory;
-  @SerializedName("my_stories_display_name")
-  protected String myStoriesDisplayName;
-  @SerializedName("story_id")
-  protected String storyId;
-  @SerializedName("time_left")
-  protected Long timeLeft = Long.valueOf(0L);
-  @SerializedName("venue")
-  protected String venue;
+  @SerializedName("user_chat_releases")
+  protected Map<String, Map<String, Long>> userChatReleases;
+  @SerializedName("user_sequences")
+  protected Map<String, Long> userSequences;
+  @SerializedName("user_snap_releases")
+  protected Map<String, Map<String, Long>> userSnapReleases;
   
-  public final String a()
+  public final Map<String, Long> a()
   {
-    return storyId;
+    return userSequences;
   }
   
-  public final String b()
+  public final Map<String, Map<String, Long>> b()
   {
-    return displayName;
+    return userChatReleases;
   }
   
-  public final bhz c()
+  public final Map<String, Map<String, Long>> c()
   {
-    return geofence;
-  }
-  
-  public final String d()
-  {
-    return myStoriesDisplayName;
-  }
-  
-  public final String e()
-  {
-    return venue;
+    return userSnapReleases;
   }
   
   public final boolean equals(Object paramObject)
@@ -58,32 +37,12 @@ public final class bin
       return false;
     }
     paramObject = (bin)paramObject;
-    return new EqualsBuilder().append(storyId, storyId).append(displayName, displayName).append(geofence, geofence).append(myStoriesDisplayName, myStoriesDisplayName).append(venue, venue).append(friendName, friendName).append(localStory, localStory).append(isWhitelisted, isWhitelisted).append(timeLeft, timeLeft).isEquals();
-  }
-  
-  public final String f()
-  {
-    return friendName;
-  }
-  
-  public final Boolean g()
-  {
-    return localStory;
-  }
-  
-  public final Boolean h()
-  {
-    return isWhitelisted;
+    return new EqualsBuilder().append(userSequences, userSequences).append(userChatReleases, userChatReleases).append(userSnapReleases, userSnapReleases).isEquals();
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(storyId).append(displayName).append(geofence).append(myStoriesDisplayName).append(venue).append(friendName).append(localStory).append(isWhitelisted).append(timeLeft).toHashCode();
-  }
-  
-  public final Long i()
-  {
-    return timeLeft;
+    return new HashCodeBuilder().append(userSequences).append(userChatReleases).append(userSnapReleases).toHashCode();
   }
   
   public final String toString()

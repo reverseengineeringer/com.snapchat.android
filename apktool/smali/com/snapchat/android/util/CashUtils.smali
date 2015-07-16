@@ -20,18 +20,18 @@
 .method public static a(Lcom/snapchat/android/model/chat/ChatConversation;Lcom/snapchat/android/model/chat/CashFeedItem;Lcom/snapchat/android/model/chat/CashFeedItem;)Lcom/snapchat/android/model/chat/CashFeedItem;
     .locals 10
     .param p0    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p1    # Lcom/snapchat/android/model/chat/CashFeedItem;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/model/chat/CashFeedItem;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -241,19 +241,13 @@
 
     .line 117
     :cond_e
-    const-string v0, "CashUtils"
-
-    const-string v1, "CASH-LOG: Cash Item %s is being updated"
-
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v0, v2, [Ljava/lang/Object;
 
     invoke-virtual {p1}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    aput-object v5, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v3
 
     .line 118
     iget-object v0, p1, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
@@ -270,7 +264,7 @@
     if-eqz v1, :cond_10
 
     .line 122
-    invoke-static {p1}, Laxi;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;)Z
+    invoke-static {p1}, Layg;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;)Z
 
     move-result v1
 
@@ -306,14 +300,14 @@
     iput-wide v2, v0, Lcom/snapchat/android/model/CashTransaction;->mUpdatedTimestamp:J
 
     .line 141
-    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->i()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->l()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
     .line 142
-    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->i()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/snapchat/android/model/chat/CashFeedItem;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -355,19 +349,13 @@
     if-eqz p1, :cond_14
 
     .line 155
-    const-string v0, "CashUtils"
-
-    const-string v1, "CASH-LOG: Cash Item is not found on server for %s "
-
-    new-array v4, v2, [Ljava/lang/Object;
+    new-array v0, v2, [Ljava/lang/Object;
 
     invoke-virtual {p1}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    aput-object v5, v4, v3
-
-    invoke-static {v0, v1, v4}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v3
 
     .line 156
     iget-object v0, p1, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
@@ -509,7 +497,7 @@
 .method public static a(Lcom/snapchat/android/model/Friend;)Z
     .locals 1
     .param p0    # Lcom/snapchat/android/model/Friend;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -517,13 +505,13 @@
     .line 55
     if-eqz p0, :cond_0
 
-    invoke-static {}, Lajx;->ao()Z
+    invoke-static {}, Lakr;->an()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lajx;->aq()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+    invoke-static {}, Lakr;->ap()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
     move-result-object v0
 
@@ -533,7 +521,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->s()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->r()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
     move-result-object v0
 
@@ -557,11 +545,11 @@
 .method public static a(Ljava/lang/String;Lcom/snapchat/android/model/chat/CashFeedItem;)Z
     .locals 3
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p1    # Lcom/snapchat/android/model/chat/CashFeedItem;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

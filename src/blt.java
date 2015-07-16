@@ -1,70 +1,108 @@
-import java.security.cert.Certificate;
-import java.util.Collections;
-import java.util.List;
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSession;
+import com.google.gson.annotations.SerializedName;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class blt
+public class blt
+  extends bhy
 {
-  final String a;
-  final List<Certificate> b;
-  final List<Certificate> c;
+  @SerializedName("action")
+  protected String action;
+  @SerializedName("code")
+  protected String code;
+  @SerializedName("dsig")
+  protected String dsig;
+  @SerializedName("dtoken1i")
+  protected String dtoken1i;
+  @SerializedName("password")
+  protected String password;
+  @SerializedName("type")
+  protected String type;
   
-  blt(String paramString, List<Certificate> paramList1, List<Certificate> paramList2)
+  public final blt a(String paramString)
   {
-    a = paramString;
-    b = paramList1;
-    c = paramList2;
+    action = paramString;
+    return this;
   }
   
-  public static blt a(SSLSession paramSSLSession)
+  public final blt b(String paramString)
   {
-    String str = paramSSLSession.getCipherSuite();
-    if (str == null) {
-      throw new IllegalStateException("cipherSuite == null");
-    }
-    try
-    {
-      Object localObject = paramSSLSession.getPeerCertificates();
-      if (localObject != null)
-      {
-        localObject = bmp.a((Object[])localObject);
-        paramSSLSession = paramSSLSession.getLocalCertificates();
-        if (paramSSLSession == null) {
-          break label77;
-        }
-        paramSSLSession = bmp.a(paramSSLSession);
-        return new blt(str, (List)localObject, paramSSLSession);
-      }
-    }
-    catch (SSLPeerUnverifiedException localSSLPeerUnverifiedException)
-    {
-      for (;;)
-      {
-        List localList = null;
-        continue;
-        localList = Collections.emptyList();
-        continue;
-        label77:
-        paramSSLSession = Collections.emptyList();
-      }
-    }
+    code = paramString;
+    return this;
   }
   
-  public final boolean equals(Object paramObject)
+  public boolean equals(Object paramObject)
   {
-    if (!(paramObject instanceof blt)) {}
-    do
-    {
+    if (paramObject == this) {
+      return true;
+    }
+    if (!(paramObject instanceof blt)) {
       return false;
-      paramObject = (blt)paramObject;
-    } while ((!a.equals(a)) || (!b.equals(b)) || (!c.equals(c)));
-    return true;
+    }
+    paramObject = (blt)paramObject;
+    return new EqualsBuilder().append(action, action).append(code, code).append(type, type).append(password, password).append(dtoken1i, dtoken1i).append(dsig, dsig).isEquals();
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    return ((a.hashCode() + 527) * 31 + b.hashCode()) * 31 + c.hashCode();
+    return new HashCodeBuilder().append(action).append(code).append(type).append(password).append(dtoken1i).append(dsig).toHashCode();
+  }
+  
+  public final blt i(String paramString)
+  {
+    type = paramString;
+    return this;
+  }
+  
+  public final void j(String paramString)
+  {
+    password = paramString;
+  }
+  
+  public final void k(String paramString)
+  {
+    dtoken1i = paramString;
+  }
+  
+  public final void l(String paramString)
+  {
+    dsig = paramString;
+  }
+  
+  public String toString()
+  {
+    String str2 = ToStringBuilder.reflectionToString(this);
+    String str3 = String.valueOf(password);
+    String str1 = str2;
+    if (!StringUtils.isEmpty(str2))
+    {
+      str1 = str2;
+      if (StringUtils.length(str3) > 0)
+      {
+        str1 = "password" + "=";
+        String str4 = StringUtils.repeat('*', StringUtils.length(str3) + 0);
+        str1 = str2.replace(str1 + str3, str1 + str4);
+      }
+    }
+    return str1;
+  }
+  
+  public static enum a
+  {
+    DEFAULT_TYPE("DEFAULT_TYPE"),  TWO_FA_TYPE("TWO_FA_TYPE"),  UNRECOGNIZED_VALUE("UNRECOGNIZED_VALUE");
+    
+    public final String value;
+    
+    private a(String paramString)
+    {
+      value = paramString;
+    }
+    
+    public final String toString()
+    {
+      return value;
+    }
   }
 }
 

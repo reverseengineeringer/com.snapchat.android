@@ -1,12 +1,4 @@
-public final class ber
-{
-  public ajv user;
-  
-  public ber(ajv paramajv)
-  {
-    user = paramajv;
-  }
-}
+public final class ber {}
 
 /* Location:
  * Qualified Name:     ber

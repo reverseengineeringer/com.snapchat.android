@@ -74,7 +74,7 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 56
-    const v1, 0x7f04008c
+    const v1, 0x7f04008e
 
     const/4 v2, 0x1
 
@@ -110,7 +110,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080046
+    const v1, 0x7f080047
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -120,7 +120,7 @@
 
     .line 65
     :cond_1
-    const v0, 0x7f0a0313
+    const v0, 0x7f0a0312
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->findViewById(I)Landroid/view/View;
 
@@ -131,7 +131,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->c:Landroid/widget/FrameLayout;
 
     .line 66
-    const v0, 0x7f0a0314
+    const v0, 0x7f0a0313
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->findViewById(I)Landroid/view/View;
 

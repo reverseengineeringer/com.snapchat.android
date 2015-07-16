@@ -1,13 +1,4 @@
-final class zi$1
-  implements als.a
-{
-  zi$1(zi paramzi) {}
-  
-  public final void a(als.b paramb)
-  {
-    a.a(paramb);
-  }
-}
+public final class zi$1 {}
 
 /* Location:
  * Qualified Name:     zi.1

@@ -1,44 +1,51 @@
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.util.eventbus.ShowDialogEvent;
-import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.model.Friend;
 import com.squareup.otto.Bus;
-import java.util.HashMap;
-import java.util.Map;
-import javax.inject.Inject;
-import javax.inject.Singleton;
 
-@Singleton
 public final class qh
+  extends tx
+  implements ui.b<qh.b>
 {
-  private Map<String, qo> mProviderMap;
-  @Inject
-  protected qs mScProvider;
-  @Inject
-  protected sn mSquareProvider;
+  public static final int MIN_USERNAME_LENGTH = 3;
+  private static final String TAG = "FriendExistsTask";
+  private Bus mBus;
+  public final Friend mFriend;
   
-  @Inject
-  public qh()
+  public qh(Friend paramFriend)
   {
-    SnapchatApplication.b().c().a(this);
-    mProviderMap = new HashMap();
-    mProviderMap.put("snapcash", mScProvider);
-    mProviderMap.put("SQUARE", mSquareProvider);
+    this(paramFriend, bbo.a());
   }
   
-  public static void a()
+  private qh(Friend paramFriend, Bus paramBus)
   {
-    ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131493341));
+    mFriend = paramFriend;
+    mBus = paramBus;
+    registerCallback(qh.b.class, this);
   }
   
-  @cgc
-  public final qo a(@cgb String paramString)
+  public final String getPath()
   {
-    return (qo)mProviderMap.get(paramString);
+    return "/bq/user_exists";
   }
   
-  public final boolean b(@cgb String paramString)
+  @ud
+  public final class a
+    extends qc
   {
-    return mProviderMap.containsKey(paramString);
+    @SerializedName("request_username")
+    String request_username = mFriend.l();
+    
+    public a() {}
+  }
+  
+  static class b
+  {
+    @SerializedName("exists")
+    boolean exists;
+    @SerializedName("logged")
+    boolean logged;
+    @SerializedName("throttled")
+    boolean throttled;
   }
 }
 

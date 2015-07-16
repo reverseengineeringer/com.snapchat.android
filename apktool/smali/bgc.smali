@@ -4,156 +4,84 @@
 
 
 # static fields
-.field private static final sInstance:Lbgc;
-
-
-# instance fields
-.field public final mContext:Landroid/content/Context;
+.field private static final TAG:Ljava/lang/String; = "ShaderHelper"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static a(ILjava/lang/String;)I
+    .locals 4
 
     .prologue
-    .line 16
-    new-instance v0, Lbgc;
+    const/4 v3, 0x0
 
-    invoke-direct {v0}, Lbgc;-><init>()V
+    .line 31
+    invoke-static {p0}, Landroid/opengl/GLES20;->glCreateShader(I)I
 
-    sput-object v0, Lbgc;->sInstance:Lbgc;
+    move-result v0
 
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 25
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lbgc;-><init>(Landroid/content/Context;)V
-
-    .line 26
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/content/Context;)V
-    .locals 0
-    .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 29
-    iput-object p1, p0, Lbgc;->mContext:Landroid/content/Context;
-
-    .line 30
-    return-void
-.end method
-
-.method public static a()Lbgc;
-    .locals 1
-
-    .prologue
-    .line 21
-    sget-object v0, Lbgc;->sInstance:Lbgc;
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final b()V
-    .locals 3
-
-    .prologue
     .line 33
-    iget-object v0, p0, Lbgc;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0c01cf
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgc;->mContext:Landroid/content/Context;
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/util/AlertDialogUtils;->a(Ljava/lang/String;Landroid/content/Context;I)V
+    if-eqz v0, :cond_0
 
     .line 35
-    return-void
-.end method
+    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glShaderSource(ILjava/lang/String;)V
 
-.method public final c()V
-    .locals 2
-
-    .prologue
     .line 38
-    invoke-static {}, Lcom/snapchat/android/util/AlertDialogUtils;->a()V
+    invoke-static {v0}, Landroid/opengl/GLES20;->glCompileShader(I)V
 
-    .line 39
-    iget-object v0, p0, Lbgc;->mContext:Landroid/content/Context;
+    .line 41
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    new-array v1, v1, [I
 
-    move-result-object v0
+    .line 42
+    const v2, 0x8b81
 
-    const v1, 0x7f0c01ce
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgc;->mContext:Landroid/content/Context;
-
-    invoke-static {v0, v1}, Lcom/snapchat/android/util/AlertDialogUtils;->a(Ljava/lang/String;Landroid/content/Context;)V
-
-    .line 40
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    .prologue
-    .line 43
-    invoke-static {}, Lcom/snapchat/android/util/AlertDialogUtils;->a()V
+    invoke-static {v0, v2, v1, v3}, Landroid/opengl/GLES20;->glGetShaderiv(II[II)V
 
     .line 44
-    iget-object v0, p0, Lbgc;->mContext:Landroid/content/Context;
+    aget v1, v1, v3
 
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0c01cd
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgc;->mContext:Landroid/content/Context;
-
-    invoke-static {v0, v1}, Lcom/snapchat/android/util/AlertDialogUtils;->a(Ljava/lang/String;Landroid/content/Context;)V
+    if-nez v1, :cond_0
 
     .line 45
-    return-void
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Error compiling shader: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glGetShaderInfoLog(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 49
+    :cond_0
+    if-nez v0, :cond_1
+
+    .line 50
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "Error creating shader."
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 53
+    :cond_1
+    return v0
 .end method

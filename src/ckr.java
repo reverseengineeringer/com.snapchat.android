@@ -1,32 +1,62 @@
 public final class ckr
+  extends ckg
 {
-  public static final class a
+  private final chg a;
+  private final int b;
+  private transient int c;
+  
+  public ckr(chg paramchg, chi paramchi)
   {
-    public static final int scroll_bar = 2131362833;
-    public static final int scroll_handle = 2131362834;
-    public static final int section_indicator_text = 2131362601;
-    public static final int section_title_popup = 2131362600;
+    this(paramchg, paramchi, (byte)0);
   }
   
-  public static final class b
+  private ckr(chg paramchg, chi paramchi, byte paramByte)
   {
-    public static final int section_indicator_with_title = 2130968721;
-    public static final int vertical_recycler_fast_scroller_layout = 2130968776;
+    super(paramchi);
+    a = paramchg;
+    paramByte = super.g();
+    if (paramByte < 0) {
+      c = (paramByte - 1);
+    }
+    for (;;)
+    {
+      b = 0;
+      return;
+      if (paramByte == 0) {
+        c = 1;
+      } else {
+        c = paramByte;
+      }
+    }
   }
   
-  public static final class c
+  public final int a(long paramLong)
   {
-    public static final int[] AbsRecyclerViewFastScroller = { 2130771970, 2130771971, 2130771972, 2130771973, 2130771974 };
-    public static final int AbsRecyclerViewFastScroller_rfs_barBackground = 2;
-    public static final int AbsRecyclerViewFastScroller_rfs_barColor = 1;
-    public static final int AbsRecyclerViewFastScroller_rfs_fast_scroller_layout = 0;
-    public static final int AbsRecyclerViewFastScroller_rfs_handleBackground = 4;
-    public static final int AbsRecyclerViewFastScroller_rfs_handleColor = 3;
-    public static final int[] AbsSectionIndicator = { 2130771975 };
-    public static final int AbsSectionIndicator_rfs_section_indicator_layout = 0;
-    public static final int[] SectionTitleIndicator = { 2130772034, 2130772035 };
-    public static final int SectionTitleIndicator_rfs_backgroundColor = 1;
-    public static final int SectionTitleIndicator_rfs_textColor = 0;
+    int j = super.a(paramLong);
+    int i = j;
+    if (j <= b) {
+      i = j - 1;
+    }
+    return i;
+  }
+  
+  public final long b(long paramLong, int paramInt)
+  {
+    cki.a(this, paramInt, c, h());
+    int i = paramInt;
+    if (paramInt <= b)
+    {
+      if (paramInt == b) {
+        throw new chp(chj.s(), Integer.valueOf(paramInt), null, null);
+      }
+      i = paramInt + 1;
+    }
+    return super.b(paramLong, i);
+  }
+  
+  public final int g()
+  {
+    return c;
   }
 }
 

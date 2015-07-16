@@ -1,7 +1,4 @@
-public abstract interface aub<T>
-{
-  public abstract boolean a(T paramT);
-}
+public final class aub {}
 
 /* Location:
  * Qualified Name:     aub

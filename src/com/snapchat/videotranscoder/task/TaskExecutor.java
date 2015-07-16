@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.locks.Lock;
@@ -21,7 +21,7 @@ public class TaskExecutor
     mTaskLock.unlock();
   }
   
-  private void completeTask(@cgb TaskWrapper paramTaskWrapper, Task.Status paramStatus)
+  private void completeTask(@chc TaskWrapper paramTaskWrapper, Task.Status paramStatus)
   {
     paramTaskWrapper = mDoneCallback;
     if (paramTaskWrapper != null) {
@@ -51,7 +51,7 @@ public class TaskExecutor
     }, mProgressUpdateCallback);
   }
   
-  public void execute(@cgb Task paramTask, @cgc Task.DoneCallback paramDoneCallback, @cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  public void execute(@chc Task paramTask, @chd Task.DoneCallback paramDoneCallback, @chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     if (paramTask == null) {
       throw new NullPointerException("task is null");
@@ -63,7 +63,7 @@ public class TaskExecutor
   }
   
   /* Error */
-  public void tryAbort(@cgb Task paramTask)
+  public void tryAbort(@chc Task paramTask)
   {
     // Byte code:
     //   0: aload_1
@@ -213,7 +213,7 @@ public class TaskExecutor
     Task.ProgressUpdateCallback mProgressUpdateCallback;
     Task mTask;
     
-    public TaskWrapper(@cgb Task paramTask, @cgc Task.DoneCallback paramDoneCallback, @cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+    public TaskWrapper(@chc Task paramTask, @chd Task.DoneCallback paramDoneCallback, @chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
     {
       mTask = paramTask;
       mDoneCallback = paramDoneCallback;

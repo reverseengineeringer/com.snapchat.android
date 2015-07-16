@@ -1,6 +1,6 @@
 package com.snapchat.android;
 
-import aaq;
+import abp;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -14,14 +14,16 @@ import android.widget.AbsListView;
 import android.widget.Button;
 import com.snapchat.android.content.SnapchatProvider;
 import com.snapchat.android.database.schema.HttpMetricSchema;
-import lz;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
+import mr;
 
 public class HttpMetricsActivity
   extends FragmentActivity
   implements LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener
 {
   private AbsListView a;
-  private lz b;
+  private mr b;
   private Button c;
   private Button d;
   private Button e;
@@ -63,25 +65,27 @@ public class HttpMetricsActivity
   
   protected void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
-    setContentView(2130968685);
-    a = ((AbsListView)findViewById(2131362388));
-    b = new lz(this);
-    c = ((Button)findViewById(2131362387));
+    setContentView(2130968686);
+    a = ((AbsListView)findViewById(2131362386));
+    b = new mr(this);
+    c = ((Button)findViewById(2131362385));
     c.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        aaq.a(HttpMetricsActivity.this);
+        abp.a(HttpMetricsActivity.this);
       }
     });
-    d = ((Button)findViewById(2131362383));
+    d = ((Button)findViewById(2131362381));
     d.setOnClickListener(this);
-    e = ((Button)findViewById(2131362384));
+    e = ((Button)findViewById(2131362382));
     e.setOnClickListener(this);
-    f = ((Button)findViewById(2131362386));
+    f = ((Button)findViewById(2131362384));
     f.setOnClickListener(this);
-    g = ((Button)findViewById(2131362385));
+    g = ((Button)findViewById(2131362383));
     g.setOnClickListener(this);
     a.setAdapter(b);
     getSupportLoaderManager().initLoader$71be8de6(900, this);
@@ -94,7 +98,7 @@ public class HttpMetricsActivity
     default: 
       return null;
     }
-    return new CursorLoader(this, SnapchatProvider.a, aaq.a, h);
+    return new CursorLoader(this, SnapchatProvider.a, abp.a, h);
   }
   
   public void onLoaderReset(Loader<Cursor> paramLoader) {}

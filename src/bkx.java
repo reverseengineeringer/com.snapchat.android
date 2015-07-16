@@ -6,12 +6,12 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bkx
 {
-  @SerializedName("sections")
-  protected List<bky> sections;
+  @SerializedName("results")
+  protected List<bky> results;
   
   public final List<bky> a()
   {
-    return sections;
+    return results;
   }
   
   public boolean equals(Object paramObject)
@@ -23,12 +23,12 @@ public class bkx
       return false;
     }
     paramObject = (bkx)paramObject;
-    return new EqualsBuilder().append(sections, sections).isEquals();
+    return new EqualsBuilder().append(results, results).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(sections).toHashCode();
+    return new HashCodeBuilder().append(results).toHashCode();
   }
   
   public String toString()

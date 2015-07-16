@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 1747
+    .line 1762
     iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity$5;->b:Lcom/snapchat/android/LandingPageActivity;
 
     iput-object p2, p0, Lcom/snapchat/android/LandingPageActivity$5;->a:Lcom/snapchat/android/util/fragment/SnapchatFragment;
@@ -44,13 +44,13 @@
     .locals 2
 
     .prologue
-    .line 1750
+    .line 1765
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$5;->a:Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->f(Z)V
 
-    .line 1751
+    .line 1766
     return-void
 .end method

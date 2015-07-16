@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 538
+    .line 537
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$17;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 541
+    .line 540
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$17;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->h(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->g(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
 
-    .line 542
+    .line 541
     return-void
 .end method

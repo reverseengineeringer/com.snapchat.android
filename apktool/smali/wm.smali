@@ -1,410 +1,291 @@
 .class public final Lwm;
-.super Lwq;
+.super Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Lxg;
+.field private final b:F
+
+.field private final c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
 
 
 # direct methods
-.method public constructor <init>(Lxg;)V
-    .locals 0
-    .param p1    # Lxg;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
+    .locals 4
 
     .prologue
-    .line 40
-    invoke-direct {p0}, Lwq;-><init>()V
+    .line 32
+    invoke-direct {p0, p3}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;-><init>(Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
+
+    .line 33
+    invoke-virtual {p2}, Landroid/widget/RelativeLayout;->removeAllViews()V
+
+    .line 35
+    invoke-static {p1}, Lwm;->a(Landroid/content/Context;)F
+
+    move-result v0
+
+    iput v0, p0, Lwm;->b:F
+
+    .line 37
+    new-instance v0, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
+
+    invoke-direct {v0, p1}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lwm;->c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
+
+    .line 38
+    iget-object v0, p0, Lwm;->c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
+
+    invoke-virtual {p2, v0}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;)V
+
+    .line 39
+    iget-object v0, p0, Lwm;->c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
+
+    iget v1, p0, Lwm;->b:F
+
+    float-to-int v1, v1
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->setHeightThreshold(I)V
 
     .line 41
-    iput-object p1, p0, Lwm;->a:Lxg;
+    invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
 
     .line 42
+    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->QUICKSNAP_ONBOARDING_REPEATS:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    .line 46
+    invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-gt v2, v3, :cond_0
+
+    .line 47
+    iget-object v0, p0, Lwm;->c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->setVisibility(I)V
+
+    .line 56
+    :goto_0
     return-void
-.end method
 
-.method private static a(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Laue;",
-            ">;",
-            "Ljava/util/List",
-            "<",
-            "Laue;",
-            ">;)",
-            "Ljava/util/List",
-            "<",
-            "Laue;",
-            ">;"
-        }
-    .end annotation
+    .line 48
+    :cond_0
+    const/4 v2, 0x5
 
-    .prologue
-    .line 111
-    new-instance v1, Ljava/util/ArrayList;
+    if-ge v1, v2, :cond_1
 
-    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    .line 49
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    .line 112
-    invoke-static {p1}, Lwm;->c(Ljava/util/List;)Ljava/util/Set;
+    move-result-object v0
+
+    .line 50
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->QUICKSNAP_ONBOARDING_REPEATS:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 113
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    add-int/lit8 v1, v1, 0x1
 
-    move-result-object v3
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 114
-    :cond_0
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    .line 51
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    move-result v0
+    .line 52
+    iget-object v0, p0, Lwm;->c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
 
-    if-eqz v0, :cond_1
+    sget-object v1, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay$OverlayMode;->MODE_SOLID:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay$OverlayMode;
 
-    .line 115
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laue;
-
-    .line 116
-    invoke-virtual {v0}, Laue;->c()D
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v0
-
-    invoke-interface {v2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 117
-    invoke-interface {v3}, Ljava/util/Iterator;->remove()V
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->setOverlayMode(Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay$OverlayMode;)V
 
     goto :goto_0
 
-    .line 120
+    .line 54
     :cond_1
-    return-object v1
+    iget-object v0, p0, Lwm;->c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
+
+    sget-object v1, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay$OverlayMode;->MODE_BLINK:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay$OverlayMode;
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->setOverlayMode(Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay$OverlayMode;)V
+
+    goto :goto_0
 .end method
 
-.method private static b(Landroid/hardware/Camera$Parameters;Z)Ljava/util/List;
+.method public static a(Landroid/content/Context;)F
     .locals 3
-    .param p0    # Landroid/hardware/Camera$Parameters;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/hardware/Camera$Parameters;",
-            "Z)",
-            "Ljava/util/List",
-            "<",
-            "Laue;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
-    .line 133
-    invoke-virtual {p0}, Landroid/hardware/Camera$Parameters;->getSupportedPreviewSizes()Ljava/util/List;
+    const/4 v2, -0x1
 
-    move-result-object v0
+    .line 86
+    if-nez p0, :cond_0
 
-    .line 134
-    invoke-static {v0}, Lwm;->b(Ljava/util/List;)Ljava/util/List;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
-    .line 135
-    if-eqz p1, :cond_2
+    throw v0
 
-    .line 136
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
+    .line 87
     :cond_0
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    check-cast v0, Laue;
+    .line 89
+    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->KEYBOARD_HEIGHT_PORTRAIT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    invoke-virtual {v0}, Laue;->e()Z
+    invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    .line 91
+    if-ne v0, v2, :cond_1
 
-    invoke-interface {v2}, Ljava/util/Iterator;->remove()V
+    .line 92
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    goto :goto_0
+    move-result-object v0
 
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    .line 93
+    iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    int-to-float v0, v0
+
+    const/high16 v1, 0x3f000000    # 0.5f
+
+    mul-float/2addr v0, v1
+
+    .line 96
+    :goto_0
+    return v0
+
+    .line 95
     :cond_1
-    move-object v0, v1
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    .line 138
-    :cond_2
-    new-instance v1, Ljava/util/ArrayList;
+    move-result-object v1
 
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    const v2, 0x7f090019
 
-    invoke-static {}, Lxg;->b()Ljava/util/Collection;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result-object v0
+    move-result v1
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
+    .line 96
+    sub-int/2addr v0, v1
 
-    .line 139
-    return-object v1
-.end method
-
-.method private static c(Ljava/util/List;)Ljava/util/Set;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Laue;",
-            ">;)",
-            "Ljava/util/Set",
-            "<",
-            "Ljava/lang/Double;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 124
-    new-instance v1, Ljava/util/HashSet;
-
-    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
-
-    .line 125
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laue;
-
-    .line 126
-    invoke-virtual {v0}, Laue;->c()D
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    int-to-float v0, v0
 
     goto :goto_0
-
-    .line 128
-    :cond_0
-    return-object v1
-.end method
-
-.method private static d(Ljava/util/List;)Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Laue;",
-            ">;)",
-            "Ljava/util/List",
-            "<",
-            "Laue;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 192
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    .line 193
-    invoke-static {v0}, Lwm;->a(Ljava/util/List;)V
-
-    .line 194
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/hardware/Camera$Parameters;D)Laue;
-    .locals 4
-    .param p1    # Landroid/hardware/Camera$Parameters;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgc;
-    .end annotation
+.method public final a(Landroid/view/MotionEvent;)Z
+    .locals 3
 
     .prologue
-    const/4 v3, 0x1
-
-    .line 89
-    const-string v0, "CameraPreviewSizeFinder"
-
-    const-string v1, "Preview Size Finding: finding best HQ preview"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 90
-    invoke-static {p1, v3}, Lwm;->a(Landroid/hardware/Camera$Parameters;Z)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 91
-    invoke-static {p1, v3}, Lwm;->b(Landroid/hardware/Camera$Parameters;Z)Ljava/util/List;
-
-    move-result-object v1
-
-    .line 94
-    invoke-static {v1, v0}, Lwm;->a(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 96
-    invoke-static {v0}, Lwm;->d(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 98
-    invoke-virtual {p0, v0, p2, p3, v3}, Lwm;->a(Ljava/util/List;DZ)Laue;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(Landroid/hardware/Camera$Parameters;IDZ)Laue;
-    .locals 7
-    .param p1    # Landroid/hardware/Camera$Parameters;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgb;
-    .end annotation
-
-    .prologue
-    const/4 v5, 0x0
-
-    .line 58
-    const-string v0, "CameraPreviewSizeFinder"
-
-    const-string v1, "Preview Size Finding: finding best fit preview size for AspectRatio[%f]"
-
     const/4 v2, 0x1
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .line 60
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    invoke-static {p3, p4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    move-result v0
 
-    move-result-object v3
+    packed-switch v0, :pswitch_data_0
 
-    aput-object v3, v2, v5
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 59
-    invoke-super/range {p0 .. p5}, Lwq;->a(Landroid/hardware/Camera$Parameters;IDZ)Laue;
-
-    move-result-object v0
+    .line 76
+    :goto_0
+    return v2
 
     .line 63
-    invoke-virtual {v0}, Laue;->c()D
+    :pswitch_0
+    iget-object v0, p0, Lwm;->a:Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;
 
-    move-result-wide v2
+    sget-object v1, Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface$TakeSnapButtonAction;->FINGER_UP:Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface$TakeSnapButtonAction;
 
-    invoke-static {p1, v5}, Lwm;->a(Landroid/hardware/Camera$Parameters;Z)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-static {p1, v5}, Lwm;->b(Landroid/hardware/Camera$Parameters;Z)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lwm;->d(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-static {v1, v0}, Lwm;->a(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    :goto_0
-    const-string v1, "CameraPreviewSizeFinder"
-
-    const-string v4, "Preview Size Finding: finding best preview size from list of supported preview sizes"
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v1, v4, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-virtual {p0, v0, v2, v3, p5}, Lwm;->a(Ljava/util/List;DZ)Laue;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    move-object v0, v1
+    invoke-interface {v0, v1}, Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;->a(Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface$TakeSnapButtonAction;)V
 
     goto :goto_0
+
+    .line 66
+    :pswitch_1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v0
+
+    .line 67
+    iget v1, p0, Lwm;->b:F
+
+    cmpl-float v0, v0, v1
+
+    if-lez v0, :cond_0
+
+    .line 68
+    iget-object v0, p0, Lwm;->c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->setUpperRegionHighlight(Z)V
+
+    .line 69
+    iget-object v0, p0, Lwm;->a:Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;
+
+    sget-object v1, Lcom/snapchat/android/camera/model/CameraModel$CameraType;->FRONT_FACING:Lcom/snapchat/android/camera/model/CameraModel$CameraType;
+
+    invoke-interface {v0, v1}, Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;->a(Lcom/snapchat/android/camera/model/CameraModel$CameraType;)V
+
+    goto :goto_0
+
+    .line 71
+    :cond_0
+    iget-object v0, p0, Lwm;->c:Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;
+
+    invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/QuickSnapOnboardingOverlay;->setUpperRegionHighlight(Z)V
+
+    .line 72
+    iget-object v0, p0, Lwm;->a:Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;
+
+    sget-object v1, Lcom/snapchat/android/camera/model/CameraModel$CameraType;->BACK_FACING:Lcom/snapchat/android/camera/model/CameraModel$CameraType;
+
+    invoke-interface {v0, v1}, Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;->a(Lcom/snapchat/android/camera/model/CameraModel$CameraType;)V
+
+    goto :goto_0
+
+    .line 60
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,13 +1,13 @@
 package com.snapchat.videotranscoder.video;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.utils.TranscodingResources;
 
 public class VertexShader
 {
   private final String mText;
   
-  public VertexShader(@cgb TranscodingResources paramTranscodingResources)
+  public VertexShader(@chc TranscodingResources paramTranscodingResources)
   {
     if (paramTranscodingResources == null) {
       throw new NullPointerException("transcodingResources is null");

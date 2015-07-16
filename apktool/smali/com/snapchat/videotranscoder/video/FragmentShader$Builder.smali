@@ -68,7 +68,7 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -642,7 +642,7 @@
 .method public setFilter(Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;)Lcom/snapchat/videotranscoder/video/FragmentShader$Builder;
     .locals 0
     .param p1    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -657,7 +657,7 @@
 .method public setLeftFilter(Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;)Lcom/snapchat/videotranscoder/video/FragmentShader$Builder;
     .locals 0
     .param p1    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -672,7 +672,7 @@
 .method public setRightFilter(Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;)Lcom/snapchat/videotranscoder/video/FragmentShader$Builder;
     .locals 0
     .param p1    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

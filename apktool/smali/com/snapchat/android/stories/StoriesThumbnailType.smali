@@ -23,12 +23,16 @@
 
 .field public static final enum SOME_SNAPS:Lcom/snapchat/android/stories/StoriesThumbnailType;
 
+.field public static final enum SPECIFIED_BY_METADATA:Lcom/snapchat/android/stories/StoriesThumbnailType;
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
     .prologue
+    const/4 v5, 0x3
+
     const/4 v4, 0x2
 
     const/4 v3, 0x1
@@ -62,8 +66,17 @@
 
     sput-object v0, Lcom/snapchat/android/stories/StoriesThumbnailType;->OLDEST_SNAP_THUMBNAIL_WITHOUT_DECAY:Lcom/snapchat/android/stories/StoriesThumbnailType;
 
+    .line 28
+    new-instance v0, Lcom/snapchat/android/stories/StoriesThumbnailType;
+
+    const-string v1, "SPECIFIED_BY_METADATA"
+
+    invoke-direct {v0, v1, v5}, Lcom/snapchat/android/stories/StoriesThumbnailType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/snapchat/android/stories/StoriesThumbnailType;->SPECIFIED_BY_METADATA:Lcom/snapchat/android/stories/StoriesThumbnailType;
+
     .line 8
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/snapchat/android/stories/StoriesThumbnailType;
 
@@ -78,6 +91,10 @@
     sget-object v1, Lcom/snapchat/android/stories/StoriesThumbnailType;->OLDEST_SNAP_THUMBNAIL_WITHOUT_DECAY:Lcom/snapchat/android/stories/StoriesThumbnailType;
 
     aput-object v1, v0, v4
+
+    sget-object v1, Lcom/snapchat/android/stories/StoriesThumbnailType;->SPECIFIED_BY_METADATA:Lcom/snapchat/android/stories/StoriesThumbnailType;
+
+    aput-object v1, v0, v5
 
     sput-object v0, Lcom/snapchat/android/stories/StoriesThumbnailType;->$VALUES:[Lcom/snapchat/android/stories/StoriesThumbnailType;
 

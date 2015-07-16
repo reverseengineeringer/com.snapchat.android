@@ -1,32 +1,22 @@
-import java.util.ArrayList;
-
 public final class byw
-  implements bxg
+  implements byh
 {
-  public final bxk a(bwz parambwz, String paramString)
+  public final byl a(bya parambya, String paramString)
   {
-    paramString = bxj.e(paramString);
-    if (paramString.size() != 3) {
-      throw new bxh("One string argument and two integer arguments are required.");
-    }
     try
     {
-      parambwz = bxj.a((String)paramString.get(0), a).substring(((Integer)paramString.get(1)).intValue(), ((Integer)paramString.get(2)).intValue());
-      return new bxk(parambwz, 1);
+      parambya = new Double(paramString);
+      return new byl(new Double(Math.log(parambya.doubleValue())).toString(), 0);
     }
-    catch (bxh parambwz)
+    catch (Exception parambya)
     {
-      throw new bxh(parambwz.getMessage(), parambwz);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("One string argument and two integer arguments are required.", parambwz);
+      throw new byi("Invalid argument.", parambya);
     }
   }
   
   public final String a()
   {
-    return "substring";
+    return "log";
   }
 }
 

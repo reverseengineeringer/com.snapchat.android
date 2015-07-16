@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.settings;
 
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import azn;
+import bam;
 
 final class DeveloperSettingsFragment$15
   implements CompoundButton.OnCheckedChangeListener

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.MeasureSpec;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
@@ -11,15 +12,15 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import aom;
-import aom.a;
-import aou;
-import aov;
-import aqb;
-import aud;
-import ban;
-import bjh;
-import bjj;
+import api;
+import api.a;
+import apt;
+import apu;
+import ara;
+import avb;
+import bbo;
+import bki;
+import bkk;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.model.StorySnapLogbook;
 import com.snapchat.android.notification.AndroidNotificationManager;
@@ -30,21 +31,22 @@ import javax.validation.constraints.NotNull;
 public class MyStoryView
   extends FrameLayout
 {
-  public static final String a = b + "_NOTIFICATION";
-  private static final String b = MyStoryView.class.getSimpleName();
-  private final Context c;
-  private final StorySnapLogbook d;
-  private final aom e;
-  private final LayoutInflater f;
-  private final a g;
+  public static final String a = c + "_NOTIFICATION";
+  private static final String c = MyStoryView.class.getSimpleName();
+  public ImageView b;
+  private final Context d;
+  private final StorySnapLogbook e;
+  private final api f;
+  private final LayoutInflater g;
   private final Bus h;
-  private boolean i = false;
-  private aou j;
-  private bjh k;
-  private List<bjj> l;
-  private ListView m;
-  private View n;
-  private final View.OnClickListener o = new View.OnClickListener()
+  private a i;
+  private boolean j = false;
+  private apt k;
+  private bki l;
+  private List<bkk> m;
+  private ListView n;
+  private View o;
+  private final View.OnClickListener p = new View.OnClickListener()
   {
     public final void onClick(View paramAnonymousView)
     {
@@ -52,11 +54,11 @@ public class MyStoryView
       paramAnonymousView = ((Resources)localObject).getString(2131493106);
       String str = ((Resources)localObject).getString(2131493110);
       localObject = ((Resources)localObject).getString(2131492952);
-      new aqb(MyStoryView.a(MyStoryView.this), paramAnonymousView, str, (String)localObject)
+      new ara(MyStoryView.a(MyStoryView.this), paramAnonymousView, str, (String)localObject)
       {
         protected final void a()
         {
-          MyStoryView.e(MyStoryView.this).a(MyStoryView.b(MyStoryView.this), new aom.a()
+          MyStoryView.e(MyStoryView.this).a(MyStoryView.b(MyStoryView.this), new api.a()
           {
             public final void a()
             {
@@ -70,7 +72,7 @@ public class MyStoryView
             {
               String str = MyStoryView.a(MyStoryView.this).getResources().getString(2131493109);
               MyStoryView.c(MyStoryView.this).a(MyStoryView.a(str, -16777216));
-              MyStoryView.d(MyStoryView.this).a();
+              MyStoryView.d(MyStoryView.this).c();
             }
             
             public final void d()
@@ -85,11 +87,11 @@ public class MyStoryView
       }.show();
     }
   };
-  private final View.OnClickListener p = new View.OnClickListener()
+  private final View.OnClickListener q = new View.OnClickListener()
   {
     public final void onClick(View paramAnonymousView)
     {
-      MyStoryView.e(MyStoryView.this).b(MyStoryView.b(MyStoryView.this), new aom.a()
+      MyStoryView.e(MyStoryView.this).b(MyStoryView.b(MyStoryView.this), new api.a()
       {
         public final void a()
         {
@@ -113,7 +115,7 @@ public class MyStoryView
       });
     }
   };
-  private View.OnClickListener q = new View.OnClickListener()
+  private View.OnClickListener r = new View.OnClickListener()
   {
     public final void onClick(View paramAnonymousView)
     {
@@ -121,53 +123,54 @@ public class MyStoryView
     }
   };
   
-  public MyStoryView(@NotNull final Context paramContext, @NotNull final a parama, @NotNull final StorySnapLogbook paramStorySnapLogbook)
+  public MyStoryView(@NotNull final Context paramContext, @NotNull final StorySnapLogbook paramStorySnapLogbook, @NotNull final a parama)
   {
-    this(paramContext, parama, paramStorySnapLogbook, ban.a(), new aom(paramContext), (LayoutInflater)paramContext.getSystemService("layout_inflater"));
-    paramContext = f.inflate(2130968700, this);
-    parama = new FrameLayout.LayoutParams(-1, -1);
+    this(paramContext, paramStorySnapLogbook, bbo.a(), new api(paramContext), parama, (LayoutInflater)paramContext.getSystemService("layout_inflater"));
+    paramContext = g.inflate(2130968701, this);
+    paramStorySnapLogbook = new FrameLayout.LayoutParams(-1, -1);
     gravity = 17;
-    setLayoutParams(parama);
-    ImageView localImageView = (ImageView)paramContext.findViewById(2131362448);
-    parama = (ImageView)paramContext.findViewById(2131362446);
+    setLayoutParams(paramStorySnapLogbook);
+    paramStorySnapLogbook = (ImageView)paramContext.findViewById(2131362446);
     View localView1 = paramContext.findViewById(2131362450);
     View localView2 = paramContext.findViewById(2131362449);
     TextView localTextView = (TextView)paramContext.findViewById(2131362444);
-    paramStorySnapLogbook = (TextView)paramContext.findViewById(2131362447);
+    parama = (TextView)paramContext.findViewById(2131362447);
     RelativeLayout localRelativeLayout1 = (RelativeLayout)paramContext.findViewById(2131362445);
     RelativeLayout localRelativeLayout2 = (RelativeLayout)paramContext.findViewById(2131362442);
-    j = new aou(c);
-    m = ((ListView)paramContext.findViewById(2131362451));
-    m.setAdapter(j);
-    n = f.inflate(2130968764, null, false);
-    localImageView.setOnClickListener(q);
-    localView1.setOnClickListener(o);
-    localView2.setOnClickListener(p);
-    k = d.mStorySnapExtra;
-    l = d.mStorySnapNotes;
-    if (k == null)
+    b = ((ImageView)paramContext.findViewById(2131362448));
+    k = new apt(d);
+    n = ((ListView)paramContext.findViewById(2131362451));
+    n.setAdapter(k);
+    o = g.inflate(2130968766, null, false);
+    b.setOnClickListener(r);
+    localView1.setOnClickListener(p);
+    localView2.setOnClickListener(q);
+    l = e.mStorySnapExtra;
+    m = e.mStorySnapNotes;
+    if (l == null)
     {
       localTextView.setText("0");
-      paramStorySnapLogbook.setText("0");
+      parama.setText("0");
     }
     do
     {
       return;
-      localTextView.setText(Integer.toString(aud.a(k.a())));
-      paramStorySnapLogbook.setText(Integer.toString(aud.a(k.b())));
-    } while (l == null);
-    paramContext = new aov(k, l);
-    a(paramContext, parama, paramStorySnapLogbook);
+      localTextView.setText(Integer.toString(avb.a(l.a())));
+      parama.setText(Integer.toString(avb.a(l.b())));
+    } while (m == null);
+    paramContext = new apu(l, m);
+    a(paramContext, paramStorySnapLogbook, parama);
     localRelativeLayout1.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
+        MyStoryView.d(MyStoryView.this).a();
         paramAnonymousView = MyStoryView.this;
         if (!MyStoryView.f(MyStoryView.this)) {}
         for (boolean bool = true;; bool = false)
         {
           MyStoryView.a(paramAnonymousView, bool);
-          MyStoryView.a(MyStoryView.this, paramContext, parama, paramStorySnapLogbook);
+          MyStoryView.a(MyStoryView.this, paramContext, paramStorySnapLogbook, parama);
           return;
         }
       }
@@ -176,63 +179,78 @@ public class MyStoryView
     {
       public final void onClick(View paramAnonymousView)
       {
+        MyStoryView.d(MyStoryView.this).a();
         if (MyStoryView.f(MyStoryView.this))
         {
           MyStoryView.a(MyStoryView.this, false);
-          MyStoryView.a(MyStoryView.this, paramContext, parama, paramStorySnapLogbook);
+          MyStoryView.a(MyStoryView.this, paramContext, paramStorySnapLogbook, parama);
         }
       }
     });
   }
   
-  private MyStoryView(Context paramContext, a parama, StorySnapLogbook paramStorySnapLogbook, Bus paramBus, aom paramaom, LayoutInflater paramLayoutInflater)
+  private MyStoryView(Context paramContext, StorySnapLogbook paramStorySnapLogbook, Bus paramBus, api paramapi, a parama, LayoutInflater paramLayoutInflater)
   {
     super(paramContext);
-    c = paramContext;
-    g = parama;
+    d = paramContext;
     h = paramBus;
-    d = paramStorySnapLogbook;
-    e = paramaom;
-    f = paramLayoutInflater;
+    e = paramStorySnapLogbook;
+    i = parama;
+    f = paramapi;
+    g = paramLayoutInflater;
   }
   
-  private void a(aov paramaov, ImageView paramImageView, TextView paramTextView)
+  private void a(apu paramapu, ImageView paramImageView, TextView paramTextView)
   {
-    m.removeFooterView(n);
-    j.clear();
-    b = i;
-    j.addAll(paramaov.a());
+    n.removeFooterView(o);
+    k.clear();
+    b = j;
+    k.addAll(paramapu.a());
     Integer localInteger;
     if (b)
     {
       localInteger = a.b();
-      i1 = aud.a(localInteger) - paramaov.a().size();
+      i1 = avb.a(localInteger) - paramapu.a().size();
       if (i1 > 0)
       {
-        ((TextView)n.findViewById(2131362793)).setText(String.format(c.getString(2131493242), new Object[] { Integer.valueOf(i1) }));
-        m.addFooterView(n, null, false);
+        ((TextView)o.findViewById(2131362786)).setText(String.format(d.getString(2131493242), new Object[] { Integer.valueOf(i1) }));
+        n.addFooterView(o, null, false);
       }
-      j.notifyDataSetChanged();
-      m.invalidate();
-      paramImageView.setSelected(i);
-      paramaov = getResources();
-      if (!i) {
+      k.notifyDataSetChanged();
+      n.invalidate();
+      paramImageView.setSelected(j);
+      paramapu = getResources();
+      if (!j) {
         break label192;
       }
     }
     label192:
-    for (int i1 = 2131230765;; i1 = 2131230810)
+    for (int i1 = 2131230766;; i1 = 2131230812)
     {
-      paramTextView.setTextColor(paramaov.getColor(i1));
+      paramTextView.setTextColor(paramapu.getColor(i1));
       return;
       localInteger = a.a();
       break;
     }
   }
   
-  public boolean canScrollVertically(int paramInt)
+  public int getViewersInfoHeight()
   {
-    return m.canScrollVertically(paramInt);
+    return findViewById(2131362441).getMeasuredHeight();
+  }
+  
+  public int getVisibleViewersListHeight()
+  {
+    int i1 = 0;
+    int i2 = 0;
+    while (i1 < k.getCount())
+    {
+      View localView = k.getView(i1, null, n);
+      localView.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
+      i2 += localView.getMeasuredHeight();
+      i1 += 1;
+    }
+    return i2;
   }
   
   public static abstract interface a
@@ -240,6 +258,8 @@ public class MyStoryView
     public abstract void a();
     
     public abstract void b();
+    
+    public abstract void c();
   }
 }
 

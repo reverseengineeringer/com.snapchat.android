@@ -2,7 +2,7 @@ package com.snapchat.videotranscoder.rendering;
 
 import android.media.MediaCodec.BufferInfo;
 import android.media.MediaFormat;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.cts.InputSurface;
 import com.snapchat.videotranscoder.cts.OutputSurface;
 import com.snapchat.videotranscoder.cts.SplitOutputSurface;
@@ -24,7 +24,7 @@ public class VideoFilterDecoder
   private long mPrevMonoUsec = 0L;
   private long mPrevPresentUsec = 0L;
   
-  public VideoFilterDecoder(@cgb TranscodingResources paramTranscodingResources, @cgb MediaFormat paramMediaFormat, StageDoneCallback paramStageDoneCallback, float[] paramArrayOfFloat)
+  public VideoFilterDecoder(@chc TranscodingResources paramTranscodingResources, @chc MediaFormat paramMediaFormat, StageDoneCallback paramStageDoneCallback, float[] paramArrayOfFloat)
   {
     super(paramTranscodingResources, paramMediaFormat, new SplitOutputSurface(paramTranscodingResources, paramArrayOfFloat), paramStageDoneCallback);
   }
@@ -94,7 +94,7 @@ public class VideoFilterDecoder
     mInputSurface = paramInputSurface;
   }
   
-  public void setShader(@cgb FragmentShader.Filter paramFilter1, @cgb FragmentShader.Filter paramFilter2)
+  public void setShader(@chc FragmentShader.Filter paramFilter1, @chc FragmentShader.Filter paramFilter2)
   {
     ((SplitOutputSurface)mDecoderOutputSurface).setShader(paramFilter1, paramFilter2);
   }

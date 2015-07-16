@@ -1,669 +1,653 @@
 .class public final Labq;
-.super Ljava/lang/Object;
+.super Lcom/snapchat/android/database/table/StorySnapTable;
 .source "SourceFile"
 
 
 # static fields
-.field private static final c:Labq;
+.field private static a:Labq;
 
 
 # instance fields
-.field public final a:Lale;
-
-.field public final b:Ljava/util/concurrent/ConcurrentHashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/ConcurrentHashMap",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Lcom/snapchat/android/analytics/framework/EasyMetric;",
-            ">;>;"
-        }
-    .end annotation
-.end field
-
-.field private final d:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-
-.field private final e:Ladd;
+.field private final b:Lacb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 28
-    new-instance v0, Labq;
-
-    invoke-direct {v0}, Labq;-><init>()V
-
-    sput-object v0, Labq;->c:Labq;
-
-    return-void
-.end method
-
 .method private constructor <init>()V
     .locals 3
 
     .prologue
-    .line 69
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+    .line 35
+    new-instance v0, Layv;
 
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
+    invoke-direct {v0}, Layv;-><init>()V
 
-    invoke-static {}, Lale;->a()Lale;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v1
 
-    invoke-static {}, Ladd;->a()Ladd;
+    invoke-static {}, Lacb;->a()Lacb;
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, v2}, Labq;-><init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lale;Ladd;)V
+    invoke-direct {p0, v0, v1, v2}, Labq;-><init>(Layv;Lakr;Lacb;)V
 
-    .line 71
+    .line 36
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lale;Ladd;)V
+.method private constructor <init>(Layv;Lakr;Lacb;)V
     .locals 1
 
     .prologue
-    .line 76
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 41
+    sget-object v0, Lazh;->MY_STORY_KEYS_AND_IVS:Lazf;
 
-    .line 77
-    iput-object p1, p0, Labq;->d:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+    invoke-direct {p0, p2, p1, v0}, Lcom/snapchat/android/database/table/StorySnapTable;-><init>(Lakr;Layv;Lazf;)V
 
-    .line 78
-    iput-object p2, p0, Labq;->a:Lale;
+    .line 42
+    iput-object p3, p0, Labq;->b:Lacb;
 
-    .line 79
-    iput-object p3, p0, Labq;->e:Ladd;
-
-    .line 80
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v0, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 81
+    .line 43
     return-void
 .end method
 
-.method public static a()Labq;
-    .locals 1
+.method public static declared-synchronized a()Labq;
+    .locals 2
 
     .prologue
-    .line 84
-    sget-object v0, Labq;->c:Labq;
+    .line 46
+    const-class v1, Labq;
 
-    return-object v0
-.end method
+    monitor-enter v1
 
-.method private b(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 1
+    :try_start_0
+    sget-object v0, Labq;->a:Labq;
 
-    .prologue
-    .line 537
-    iget-object v0, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map;
-
-    .line 538
     if-nez v0, :cond_0
 
-    .line 539
-    const/4 v0, 0x0
+    .line 47
+    new-instance v0, Labq;
 
-    .line 541
-    :goto_0
-    return v0
+    invoke-direct {v0}, Labq;-><init>()V
 
+    sput-object v0, Labq;->a:Labq;
+
+    .line 49
     :cond_0
-    invoke-interface {v0, p2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    sget-object v0, Labq;->a:Labq;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v0
+    monitor-exit v1
 
-    goto :goto_0
+    return-object v0
+
+    .line 46
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-    .locals 2
-    .annotation build Lcgc;
+.method protected final a(Lakp;)Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lakp;",
+            ")",
+            "Ljava/util/Collection",
+            "<",
+            "Lakl;",
+            ">;"
+        }
     .end annotation
 
     .prologue
-    .line 510
-    iget-object v1, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    monitor-enter v1
-
-    .line 511
-    :try_start_0
-    iget-object v0, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map;
-
-    .line 512
-    if-eqz v0, :cond_0
-
-    .line 513
-    invoke-interface {v0, p2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    monitor-exit v1
-
-    .line 515
-    :goto_0
-    return-object v0
-
-    :cond_0
+    .line 68
     const/4 v0, 0x0
 
-    monitor-exit v1
-
-    goto :goto_0
-
-    .line 516
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-object v0
 .end method
 
-.method public final a(Lcom/snapchat/android/discover/model/ChannelPage;)V
-    .locals 4
-
-    .prologue
-    .line 92
-    iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
-
-    .line 95
-    const-string v1, "DISCOVER_INTRO_MEDIA_UNLOADED_WAIT_TIME"
-
-    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    .line 97
-    iget-object v2, p0, Labq;->e:Ladd;
-
-    invoke-virtual {v2, p1}, Ladd;->a(Lcom/snapchat/android/discover/model/ChannelPage;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 99
-    const-string v0, "publisher_name"
-
-    iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v0, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "intro_video_url"
-
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->d()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(J)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "reachability"
-
-    iget-object v2, p0, Labq;->a:Lale;
-
-    invoke-virtual {v2}, Lale;->f()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "success"
-
-    iget-object v2, p0, Labq;->e:Ladd;
-
-    invoke-virtual {v2, p1}, Ladd;->b(Lcom/snapchat/android/discover/model/ChannelPage;)Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
-
-    .line 114
-    :goto_0
-    return-void
-
-    .line 107
-    :cond_0
-    iget-object v2, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    monitor-enter v2
-
-    .line 110
-    :try_start_0
-    const-string v3, "DISCOVER_INTRO_MEDIA_UNLOADED_WAIT_TIME"
-
-    invoke-direct {p0, v3, v0}, Labq;->b(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    .line 111
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    .line 112
-    const-string v3, "DISCOVER_INTRO_MEDIA_UNLOADED_WAIT_TIME"
-
-    invoke-virtual {p0, v3, v0, v1}, Labq;->a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
-
-    .line 114
-    :cond_1
-    monitor-exit v2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
-    .locals 3
-
-    .prologue
-    .line 526
-    iget-object v1, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    monitor-enter v1
-
-    .line 527
-    :try_start_0
-    iget-object v0, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map;
-
-    .line 528
-    if-nez v0, :cond_0
-
-    .line 529
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    .line 531
-    :cond_0
-    invoke-interface {v0, p2, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 532
-    iget-object v2, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v2, p1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 533
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final a(Ljava/lang/String;ZZ)V
-    .locals 3
-
-    .prologue
-    .line 285
-    const-string v0, "DISCOVER_REMOTE_VIDEO_UNLOADED_WAIT_TIME"
-
-    invoke-virtual {p0, v0, p1}, Labq;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    .line 286
-    if-eqz v0, :cond_0
-
-    .line 287
-    const-string v1, "success"
-
-    invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "abandoned"
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "reachability"
-
-    iget-object v2, p0, Labq;->a:Lale;
-
-    invoke-virtual {v2}, Lale;->f()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
-
-    .line 292
-    :cond_0
-    return-void
-.end method
-
-.method public final b(Lcom/snapchat/android/discover/model/ChannelPage;)V
-    .locals 4
-
-    .prologue
-    .line 123
-    iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
-
-    .line 126
-    iget-object v1, p0, Labq;->b:Ljava/util/concurrent/ConcurrentHashMap;
-
-    monitor-enter v1
-
-    .line 129
-    :try_start_0
-    const-string v2, "DISCOVER_INTRO_MEDIA_DOWNLOAD_TIME"
-
-    invoke-direct {p0, v2, v0}, Labq;->b(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 130
-    const-string v2, "DISCOVER_INTRO_MEDIA_DOWNLOAD_TIME"
-
-    invoke-static {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v2
-
-    .line 131
-    const-string v3, "DISCOVER_INTRO_MEDIA_DOWNLOAD_TIME"
-
-    invoke-virtual {p0, v3, v0, v2}, Labq;->a(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/analytics/framework/EasyMetric;)V
-
-    .line 133
-    :cond_0
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final b(Ljava/lang/String;ZZ)V
-    .locals 3
-
-    .prologue
-    .line 322
-    const-string v0, "DISCOVER_REMOTE_VIDEO_BUFFER_TIME"
-
-    invoke-virtual {p0, v0, p1}, Labq;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    .line 323
-    if-eqz v0, :cond_0
-
-    .line 324
-    const-string v1, "success"
-
-    invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "abandoned"
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "reachability"
-
-    iget-object v2, p0, Labq;->a:Lale;
-
-    invoke-virtual {v2}, Lale;->f()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
-
-    .line 329
-    :cond_0
-    return-void
-.end method
-
-.method public final c(Lcom/snapchat/android/discover/model/ChannelPage;)V
-    .locals 5
+.method protected final a(Ljava/util/List;)V
+    .locals 12
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lakl;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
     const/4 v4, 0x0
 
-    .line 145
-    iget-object v0, p0, Labq;->e:Ladd;
+    .line 60
+    iget-object v0, p0, Labq;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    invoke-virtual {v0, p1}, Ladd;->a(Lcom/snapchat/android/discover/model/ChannelPage;)Z
+    invoke-static {v0}, Lacb;->a(Landroid/database/sqlite/SQLiteDatabase;)Ljava/util/Map;
+
+    move-result-object v6
+
+    .line 62
+    invoke-static {}, Lakk;->a()Lakk;
+
+    move-result-object v7
+
+    iget-object v8, v7, Lakk;->mMyPostedStorySnapLogbooksForDatabase:Ljava/util/List;
+
+    monitor-enter v8
+
+    :try_start_0
+    iget-object v0, v7, Lakk;->mMyPostedStorySnapLogbooksForDatabase:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v9
+
+    :goto_0
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_4
 
-    .line 167
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakl;
+
+    invoke-virtual {v0}, Lakl;->ay()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0}, Lakl;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    aput-object v0, v1, v2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
     :cond_0
-    :goto_0
-    return-void
+    :try_start_1
+    iget-object v10, v0, Lakl;->mStoryId:Ljava/lang/String;
 
-    .line 149
+    if-nez v10, :cond_1
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object v0, v1, v2
+
+    goto :goto_0
+
     :cond_1
-    iget-object v0, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+    iget-object v1, v7, Lakk;->mStories:Ljava/util/Map;
 
-    .line 151
-    const-string v1, "DISCOVER_INTRO_MEDIA_DOWNLOAD_TIME"
-
-    invoke-virtual {p0, v1, v0}, Labq;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    invoke-interface {v1, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 152
-    if-eqz v1, :cond_2
+    check-cast v1, Lcom/snapchat/android/model/StoryGroup;
 
-    .line 153
-    const-string v2, "publisher_name"
+    if-nez v1, :cond_9
 
-    invoke-virtual {v1, v2, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    new-instance v1, Lcom/snapchat/android/model/StoryGroup;
 
-    move-result-object v1
+    invoke-direct {v1, v10}, Lcom/snapchat/android/model/StoryGroup;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "reachability"
+    iget-object v2, v7, Lakk;->mStories:Ljava/util/Map;
 
-    iget-object v3, p0, Labq;->a:Lale;
+    invoke-interface {v2, v10, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v3}, Lale;->f()Ljava/lang/String;
+    move-object v5, v1
 
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    :goto_1
+    invoke-interface {v6, v10}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    const-string v2, "success"
+    check-cast v1, Ljava/util/Map;
 
-    iget-object v3, p0, Labq;->e:Ladd;
+    if-eqz v1, :cond_8
 
-    invoke-virtual {v3, p1}, Ladd;->b(Lcom/snapchat/android/discover/model/ChannelPage;)Z
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v4}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
-
-    .line 159
-    :cond_2
-    const-string v1, "DISCOVER_INTRO_MEDIA_UNLOADED_WAIT_TIME"
-
-    invoke-virtual {p0, v1, v0}, Labq;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    .line 160
-    if-eqz v0, :cond_0
-
-    .line 161
-    const-string v1, "publisher_name"
-
-    iget-object v2, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "intro_video_url"
-
-    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->d()Ljava/lang/String;
+    invoke-virtual {v0}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "reachability"
+    check-cast v1, Ljava/util/List;
 
-    iget-object v2, p0, Labq;->a:Lale;
+    if-eqz v1, :cond_7
 
-    invoke-virtual {v2}, Lale;->f()Ljava/lang/String;
+    new-instance v3, Lbki;
 
-    move-result-object v2
+    invoke-direct {v3}, Lbki;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v0
-
-    const-string v1, "success"
-
-    iget-object v2, p0, Labq;->e:Ladd;
-
-    invoke-virtual {v2, p1}, Ladd;->b(Lcom/snapchat/android/discover/model/ChannelPage;)Z
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v2
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-nez v2, :cond_3
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    invoke-virtual {v3, v2}, Lbki;->a(Ljava/lang/Integer;)V
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v11
+
+    :cond_2
+    :goto_2
+    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lbkk;
+
+    invoke-virtual {v2}, Lbkk;->b()Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v3}, Lbki;->b()Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lavb;->a(Ljava/lang/Integer;)I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v2}, Lbki;->b(Ljava/lang/Integer;)V
+
+    goto :goto_2
+
+    :cond_3
+    move-object v2, v1
+
+    move-object v1, v3
+
+    :goto_3
+    new-instance v3, Lcom/snapchat/android/model/StorySnapLogbook;
+
+    invoke-direct {v3, v0, v2, v1}, Lcom/snapchat/android/model/StorySnapLogbook;-><init>(Lakl;Ljava/util/List;Lbki;)V
+
+    iput-object v10, v3, Lcom/snapchat/android/model/StorySnapLogbook;->mStoryId:Ljava/lang/String;
+
+    invoke-virtual {v5}, Lcom/snapchat/android/model/StoryGroup;->h()Ljava/util/List;
 
     move-result-object v0
 
-    invoke-virtual {v0, v4}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    invoke-virtual {v7, v3}, Lakk;->a(Lcom/snapchat/android/model/StorySnapLogbook;)V
+
+    goto/16 :goto_0
+
+    :cond_4
+    monitor-exit v8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object v1, v7, Lakk;->mStories:Ljava/util/Map;
+
+    monitor-enter v1
+
+    :try_start_2
+    iget-object v0, v7, Lakk;->mStories:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_4
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/model/StoryGroup;
+
+    instance-of v3, v0, Lajx;
+
+    if-nez v3, :cond_5
+
+    invoke-virtual {v0}, Lcom/snapchat/android/model/StoryGroup;->k()I
+
+    move-result v3
+
+    if-nez v3, :cond_5
+
+    invoke-interface {v2}, Ljava/util/Iterator;->remove()V
+
+    goto :goto_4
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw v0
+
+    :cond_5
+    :try_start_3
+    invoke-virtual {v0}, Lcom/snapchat/android/model/StoryGroup;->h()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+
+    goto :goto_4
+
+    :cond_6
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    invoke-virtual {v7}, Lakk;->j()V
+
+    .line 63
+    return-void
+
+    :cond_7
+    move-object v2, v1
+
+    move-object v1, v4
+
+    goto :goto_3
+
+    :cond_8
+    move-object v1, v4
+
+    move-object v2, v4
+
+    goto :goto_3
+
+    :cond_9
+    move-object v5, v1
+
+    goto/16 :goto_1
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 54
+    const-string v0, "MyPostedStorySnapTable"
+
+    return-object v0
+.end method
+
+.method public final c(Lakp;)V
+    .locals 6
+
+    .prologue
+    .line 73
+    invoke-virtual {p0}, Labq;->m()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 108
+    :goto_0
+    return-void
+
+    .line 75
+    :cond_0
+    invoke-static {}, Labq;->i()Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+
+    .line 77
+    :try_start_0
+    iget-object v0, p0, Labq;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+
+    .line 82
+    invoke-static {}, Lakk;->a()Lakk;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lakk;->g()Ljava/util/List;
+
+    move-result-object v1
+
+    .line 84
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :cond_1
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
+
+    iget-object v0, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_1
+
+    .line 106
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Labq;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    .line 107
+    invoke-static {}, Labq;->i()Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    throw v0
+
+    .line 86
+    :cond_2
+    :try_start_1
+    new-instance v0, Layv;
+
+    invoke-direct {v0}, Layv;-><init>()V
+
+    sget-object v3, Lazh;->MY_STORY_KEYS_AND_IVS:Lazf;
+
+    invoke-virtual {v0, v2, v3}, Layv;->a(Ljava/util/List;Lazf;)V
+
+    .line 89
+    invoke-virtual {p0}, Labq;->j()V
+
+    .line 91
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    .line 92
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v3, "saveToDatabase MyPostedStorySnapTable "
+
+    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, " item(s)"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 93
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_3
+    :goto_2
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakl;
+
+    .line 94
+    invoke-static {v0}, Labq;->a(Lakl;)Landroid/content/ContentValues;
+
+    move-result-object v0
+
+    .line 95
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Landroid/content/ContentValues;->size()I
+
+    move-result v3
+
+    if-lez v3, :cond_3
+
+    .line 96
+    iget-object v3, p0, Labq;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    const-string v4, "MyPostedStorySnapTable"
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v3, v4, v5, v0}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+
+    goto :goto_2
+
+    .line 102
+    :cond_4
+    invoke-static {}, Lacb;->a()Lacb;
+
+    move-result-object v0
+
+    iget-object v2, p0, Labq;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0, v2, v1}, Lacb;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/List;)V
+
+    .line 104
+    iget-object v0, p0, Labq;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 106
+    iget-object v0, p0, Labq;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    .line 107
+    invoke-static {}, Labq;->i()Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    goto/16 :goto_0
 .end method

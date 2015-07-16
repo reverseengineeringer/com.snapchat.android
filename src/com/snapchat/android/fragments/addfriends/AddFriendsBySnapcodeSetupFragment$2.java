@@ -2,8 +2,7 @@ package com.snapchat.android.fragments.addfriends;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import bdw;
-import com.snapchat.android.Timber;
+import bev;
 import com.snapchat.android.analytics.ProfileEventAnalytics;
 import com.squareup.otto.Bus;
 
@@ -14,8 +13,8 @@ final class AddFriendsBySnapcodeSetupFragment$2
   
   public final void onClick(View paramView)
   {
-    Timber.c(AddFriendsBySnapcodeSetupFragment.a(), "Show the gallery scanning view here!!!", new Object[0]);
-    AddFriendsBySnapcodeSetupFragment.a(a).a(new bdw(LeftSwipeContentFragment.ADD_FRIENDS_FROM_CAMERAROLL_FRAGMENT));
+    AddFriendsBySnapcodeSetupFragment.a();
+    AddFriendsBySnapcodeSetupFragment.a(a).a(new bev(LeftSwipeContentFragment.ADD_FRIENDS_FROM_CAMERAROLL_FRAGMENT));
     ProfileEventAnalytics.e();
   }
 }

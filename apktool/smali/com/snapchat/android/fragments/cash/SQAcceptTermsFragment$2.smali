@@ -41,7 +41,7 @@
 
     .prologue
     .line 51
-    invoke-static {}, Lajx;->U()V
+    invoke-static {}, Lakr;->U()V
 
     .line 52
     invoke-static {}, Lcom/snapchat/android/analytics/AnalyticsEvents;->M()V

@@ -16,7 +16,7 @@
 .method public abstract getType()Ljava/lang/String;
 .end method
 
-.method public abstract parse(Lex;Ljava/nio/ByteBuffer;JLal;)V
+.method public abstract parse(Lfg;Ljava/nio/ByteBuffer;JLal;)V
 .end method
 
 .method public abstract setParent(Lau;)V

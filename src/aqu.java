@@ -1,14 +1,12 @@
-import android.view.View;
-
-public final class aqu
+public abstract interface aqu
 {
-  public View a;
-  public final apd b;
+  public abstract int[] a();
   
-  public aqu(@cgb apd paramapd)
-  {
-    b = paramapd;
-  }
+  public abstract int b();
+  
+  public abstract int c();
+  
+  public abstract float d();
 }
 
 /* Location:

@@ -25,16 +25,15 @@ import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView.BufferType;
-import apo;
-import apq;
-import aps;
-import aqe;
-import aqe.a;
-import avh;
-import ban;
-import baw;
-import bbh;
-import com.snapchat.android.Timber;
+import aqn;
+import aqp;
+import aqr;
+import ard;
+import ard.a;
+import awf;
+import bbo;
+import bbx;
+import bch;
 import com.squareup.otto.Bus;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,7 +43,7 @@ import java.util.StringTokenizer;
 
 public class FatCaptionEditText
   extends CaptionEditText
-  implements aqe.a<FatCaptionEditText>
+  implements ard.a<FatCaptionEditText>
 {
   private final GestureDetector A;
   private final ScaleGestureDetector B;
@@ -60,7 +59,7 @@ public class FatCaptionEditText
   protected boolean w = false;
   protected boolean x = false;
   public boolean y = false;
-  private aqe<FatCaptionEditText> z = new aqe(this);
+  private ard<FatCaptionEditText> z = new ard(this);
   
   public FatCaptionEditText(Context paramContext, AttributeSet paramAttributeSet)
   {
@@ -136,7 +135,7 @@ public class FatCaptionEditText
           if ((!h) || (FatCaptionEditText.this.i)) {
             break;
           }
-          ban.a().a(new baw(-1));
+          bbo.a().a(new bbx(-1));
           return;
           i = 0;
         }
@@ -147,7 +146,7 @@ public class FatCaptionEditText
       public final void onTextChanged(CharSequence paramAnonymousCharSequence, int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3) {}
     };
     addTextChangedListener(p);
-    setOnLongClickListener(new apq());
+    setOnLongClickListener(new aqp());
   }
   
   private void a(double paramDouble)
@@ -247,7 +246,9 @@ public class FatCaptionEditText
     while (((Iterator)localObject1).hasNext())
     {
       localObject2 = (ForegroundColorSpan)((Iterator)localObject1).next();
-      Timber.c("FatCaptionEditText", "removing a color span: %s [%s, %s]", new Object[] { Integer.valueOf(((ForegroundColorSpan)localObject2).getForegroundColor()), Integer.valueOf(paramEditable.getSpanStart(localObject2)), Integer.valueOf(paramEditable.getSpanEnd(localObject2)) });
+      ((ForegroundColorSpan)localObject2).getForegroundColor();
+      paramEditable.getSpanStart(localObject2);
+      paramEditable.getSpanEnd(localObject2);
       paramEditable.removeSpan(localObject2);
     }
     a(paramEditable, localArrayList);
@@ -260,7 +261,9 @@ public class FatCaptionEditText
     while (paramList.hasNext())
     {
       CaptionColorRange localCaptionColorRange = (CaptionColorRange)paramList.next();
-      Timber.c("FatCaptionEditText", "adding a new color span: %s [%s, %s]", new Object[] { Integer.valueOf(a), Integer.valueOf(b), Integer.valueOf(c) });
+      int i = a;
+      i = b;
+      i = c;
       E = new ForegroundColorSpan(a);
       paramEditable.setSpan(E, b, c, 34);
     }
@@ -302,17 +305,17 @@ public class FatCaptionEditText
     {
       localObject2 = localStringTokenizer.nextToken();
       if (getPaint().measureText((String)localObject2) <= getPaint().measureText((String)localObject1)) {
-        break label135;
+        break label134;
       }
       localObject1 = localObject2;
     }
-    label135:
+    label134:
     for (;;)
     {
       break;
       localObject2 = getContext().getResources().getDisplayMetrics();
       float f = getPaint().getTextSize() / getPaint().measureText((String)localObject1);
-      a((avh.a((DisplayMetrics)localObject2, h) - getPaddingLeft() - getPaddingRight() - 15) * f);
+      a((awf.a((DisplayMetrics)localObject2, h) - getPaddingLeft() - getPaddingRight() - 15) * f);
       return;
     }
   }
@@ -407,7 +410,7 @@ public class FatCaptionEditText
     }
     for (;;)
     {
-      ban.a().a(new bbh(false));
+      bbo.a().a(new bch(false));
       if (!TextUtils.isEmpty(getText()))
       {
         d();
@@ -435,7 +438,7 @@ public class FatCaptionEditText
     arrayOfFloat[0] = paramMotionEvent.getX();
     arrayOfFloat[1] = paramMotionEvent.getY();
     localMatrix.mapPoints(arrayOfFloat);
-    float f4 = getResources().getDimension(2131296323) / t / 2.0F;
+    float f4 = getResources().getDimension(2131296322) / t / 2.0F;
     float f1 = getHeight() / 2;
     float f2 = Math.max(f1, f4);
     float f3 = getWidth() / 2;
@@ -486,13 +489,13 @@ public class FatCaptionEditText
     }
   }
   
-  protected apo getAnalyticsDetails()
+  protected aqn getAnalyticsDetails()
   {
     CaptionTypeEnums localCaptionTypeEnums = CaptionTypeEnums.FAT_CAPTION_TYPE;
     boolean bool2 = m;
     if (getColorSpans().size() > 0) {}
     for (boolean bool1 = true;; bool1 = false) {
-      return new apo(localCaptionTypeEnums, bool2, bool1, x);
+      return new aqn(localCaptionTypeEnums, bool2, bool1, x);
     }
   }
   
@@ -513,14 +516,16 @@ public class FatCaptionEditText
   {
     ArrayList localArrayList = new ArrayList();
     ForegroundColorSpan[] arrayOfForegroundColorSpan = (ForegroundColorSpan[])getText().getSpans(0, getText().length(), ForegroundColorSpan.class);
-    Timber.c("FatCaptionEditText", "Total colors : %s", new Object[] { Integer.valueOf(arrayOfForegroundColorSpan.length) });
+    int i = arrayOfForegroundColorSpan.length;
     int k = arrayOfForegroundColorSpan.length;
     int j = 0;
-    int i = 0;
+    i = 0;
     while (j < k)
     {
       ForegroundColorSpan localForegroundColorSpan = arrayOfForegroundColorSpan[j];
-      Timber.c("FatCaptionEditText", "[%s] color : %s (%s, %s)", new Object[] { Integer.valueOf(i), Integer.valueOf(localForegroundColorSpan.getForegroundColor()), Integer.valueOf(getText().getSpanStart(localForegroundColorSpan)), Integer.valueOf(getText().getSpanEnd(localForegroundColorSpan)) });
+      localForegroundColorSpan.getForegroundColor();
+      getText().getSpanStart(localForegroundColorSpan);
+      getText().getSpanEnd(localForegroundColorSpan);
       localArrayList.add(new CaptionColorRange(localForegroundColorSpan.getForegroundColor(), getText().getSpanStart(localForegroundColorSpan), getText().getSpanEnd(localForegroundColorSpan)));
       j += 1;
       i += 1;

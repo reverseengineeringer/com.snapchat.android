@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuo;
+.implements Lbvp;
 
 
 # annotations
@@ -13,9 +13,9 @@
         "<",
         "Lcom/snapchat/android/cash/CashtagParser_Factory;",
         ">;",
-        "Lbuo",
+        "Lbvp",
         "<",
-        "Lxu;",
+        "Lyq;",
         ">;"
     }
 .end annotation
@@ -74,14 +74,14 @@
     return-void
 .end method
 
-.method public static create()Lbuo;
+.method public static create()Lbvp;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lbuo",
+            "Lbvp",
             "<",
-            "Lxu;",
+            "Lyq;",
             ">;"
         }
     .end annotation
@@ -132,21 +132,21 @@
 
     .prologue
     .line 6
-    invoke-virtual {p0}, Lcom/snapchat/android/cash/CashtagParser_Factory;->get()Lxu;
+    invoke-virtual {p0}, Lcom/snapchat/android/cash/CashtagParser_Factory;->get()Lyq;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final get()Lxu;
+.method public final get()Lyq;
     .locals 1
 
     .prologue
     .line 12
-    new-instance v0, Lxu;
+    new-instance v0, Lyq;
 
-    invoke-direct {v0}, Lxu;-><init>()V
+    invoke-direct {v0}, Lyq;-><init>()V
 
     return-object v0
 .end method

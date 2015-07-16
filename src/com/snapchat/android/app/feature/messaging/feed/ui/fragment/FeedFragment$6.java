@@ -9,9 +9,8 @@ final class FeedFragment$6
   
   public final void run()
   {
-    ma).a = false;
-    FeedFragment.n(a).remove(FeedFragment.m(a));
-    FeedFragment.o(a).d(FeedFragment.n(a).size());
+    ma).a = true;
+    FeedFragment.o(a).c(FeedFragment.n(a).size() - 1);
   }
 }
 

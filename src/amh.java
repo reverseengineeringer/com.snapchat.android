@@ -1,31 +1,20 @@
-import android.content.Context;
-import android.content.Intent;
-import com.snapchat.android.Timber;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public final class amh
-  extends amq
+  implements ThreadFactory
 {
-  public amh(Intent paramIntent)
+  private static final amh a = new amh();
+  private final AtomicInteger b = new AtomicInteger(1);
+  
+  public static amh a()
   {
-    super(paramIntent);
+    return a;
   }
   
-  public final void a(Context paramContext)
+  public final Thread newThread(Runnable paramRunnable)
   {
-    Timber.c("LogoutOperation", "LogoutOperation process", new Object[0]);
-    super.a(paramContext);
-  }
-  
-  public final void a(@cgb uc paramuc)
-  {
-    super.a(paramuc);
-    Timber.c("LogoutOperation", "onResult - wasSuccessful " + paramuc.d(), new Object[0]);
-    h.v();
-  }
-  
-  protected final String e()
-  {
-    return "/ph/logout";
+    return new Thread(new bhu(paramRunnable, 10), String.format("Download Manager Thread %d", new Object[] { Integer.valueOf(b.getAndIncrement()) }));
   }
 }
 

@@ -24,11 +24,6 @@
                 <CheckBox android:id="@id/settings_front_facing_flash_checkbox" style="@style/settings_checkbox" />
             </LinearLayout>
             <include layout="@layout/list_separator" />
-            <LinearLayout android:gravity="center_vertical" android:id="@id/settings_replay" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight">
-                <TextView android:text="@string/settings_replay" android:layout_weight="1.0" style="@style/settings_item_name_linear" />
-                <CheckBox android:id="@id/settings_replay_checkbox" style="@style/settings_checkbox" />
-            </LinearLayout>
-            <include layout="@layout/list_separator" />
             <LinearLayout android:gravity="center_vertical" android:id="@id/settings_permissions" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight">
                 <TextView android:text="@string/settings_permissions" android:layout_weight="1.0" style="@style/settings_item_name_linear" />
             </LinearLayout>

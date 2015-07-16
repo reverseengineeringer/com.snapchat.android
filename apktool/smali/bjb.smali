@@ -1,36 +1,45 @@
-.class public Lbjb;
-.super Lbhl;
+.class public final Lbjb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field protected replayed:Ljava/lang/Boolean;
+.field protected auth:Lbjy;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "replayed"
+        value = "auth"
     .end annotation
 .end field
 
-.field protected screenshotCount:Ljava/lang/Long;
+.field protected connSeqNum:Ljava/lang/Long;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "screenshot_count"
+        value = "conn_seq_num"
     .end annotation
 .end field
 
-.field protected snapId:Ljava/lang/String;
+.field protected convId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "snap_id"
+        value = "conv_id"
     .end annotation
 .end field
 
-.field protected timestamp:Ljava/lang/Long;
+.field protected from:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "timestamp"
+        value = "from"
     .end annotation
 .end field
 
-.field protected viewed:Ljava/lang/Boolean;
+.field protected to:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "viewed"
+        value = "to"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
     .end annotation
 .end field
 
@@ -40,105 +49,135 @@
     .locals 0
 
     .prologue
-    .line 17
-    invoke-direct {p0}, Lbhl;-><init>()V
+    .line 18
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Long;
+.method public final a(Ljava/lang/String;)Lbjb;
+    .locals 0
+
+    .prologue
+    .line 41
+    iput-object p1, p0, Lbjb;->from:Ljava/lang/String;
+
+    .line 42
+    return-object p0
+.end method
+
+.method public final a(Ljava/util/List;)Lbjb;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lbjb;"
+        }
+    .end annotation
+
+    .prologue
+    .line 59
+    iput-object p1, p0, Lbjb;->to:Ljava/util/List;
+
+    .line 60
+    return-object p0
+.end method
+
+.method public final a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 45
-    iget-object v0, p0, Lbjb;->timestamp:Ljava/lang/Long;
+    .line 46
+    iget-object v0, p0, Lbjb;->from:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public final a(Lbjy;)V
+    .locals 0
+
+    .prologue
+    .line 91
+    iput-object p1, p0, Lbjb;->auth:Lbjy;
+
+    .line 92
+    return-void
 .end method
 
 .method public final a(Ljava/lang/Long;)V
     .locals 0
 
     .prologue
-    .line 36
-    iput-object p1, p0, Lbjb;->timestamp:Ljava/lang/Long;
-
-    .line 37
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 54
-    iput-object p1, p0, Lbjb;->snapId:Ljava/lang/String;
-
-    .line 55
-    return-void
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 63
-    iget-object v0, p0, Lbjb;->snapId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final b(Ljava/lang/Boolean;)V
-    .locals 0
-
-    .prologue
-    .line 72
-    iput-object p1, p0, Lbjb;->viewed:Ljava/lang/Boolean;
-
-    .line 73
-    return-void
-.end method
-
-.method public final b(Ljava/lang/Long;)V
-    .locals 0
-
-    .prologue
-    .line 108
-    iput-object p1, p0, Lbjb;->screenshotCount:Ljava/lang/Long;
-
     .line 109
+    iput-object p1, p0, Lbjb;->connSeqNum:Ljava/lang/Long;
+
+    .line 110
     return-void
 .end method
 
-.method public final c()Ljava/lang/Boolean;
-    .locals 1
+.method public final b(Lbjy;)Lbjb;
+    .locals 0
 
     .prologue
-    .line 81
-    iget-object v0, p0, Lbjb;->viewed:Ljava/lang/Boolean;
+    .line 95
+    iput-object p1, p0, Lbjb;->auth:Lbjy;
+
+    .line 96
+    return-object p0
+.end method
+
+.method public final b(Ljava/lang/String;)Lbjb;
+    .locals 0
+
+    .prologue
+    .line 77
+    iput-object p1, p0, Lbjb;->convId:Ljava/lang/String;
+
+    .line 78
+    return-object p0
+.end method
+
+.method public final b()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 64
+    iget-object v0, p0, Lbjb;->to:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public final c(Ljava/lang/Boolean;)V
-    .locals 0
-
-    .prologue
-    .line 90
-    iput-object p1, p0, Lbjb;->replayed:Ljava/lang/Boolean;
-
-    .line 91
-    return-void
-.end method
-
-.method public final d()Ljava/lang/Boolean;
+.method public final c()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 99
-    iget-object v0, p0, Lbjb;->replayed:Ljava/lang/Boolean;
+    .line 82
+    iget-object v0, p0, Lbjb;->convId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final d()Lbjy;
+    .locals 1
+
+    .prologue
+    .line 100
+    iget-object v0, p0, Lbjb;->auth:Lbjy;
 
     return-object v0
 .end method
@@ -147,81 +186,81 @@
     .locals 1
 
     .prologue
-    .line 117
-    iget-object v0, p0, Lbjb;->screenshotCount:Ljava/lang/Long;
+    .line 118
+    iget-object v0, p0, Lbjb;->connSeqNum:Ljava/lang/Long;
 
     return-object v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 142
+    .line 143
     if-ne p1, p0, :cond_0
 
-    .line 143
+    .line 144
     const/4 v0, 0x1
 
-    .line 149
+    .line 150
     :goto_0
     return v0
 
-    .line 145
+    .line 146
     :cond_0
     instance-of v0, p1, Lbjb;
 
     if-nez v0, :cond_1
 
-    .line 146
+    .line 147
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 148
+    .line 149
     :cond_1
     check-cast p1, Lbjb;
 
-    .line 149
+    .line 150
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjb;->timestamp:Ljava/lang/Long;
+    iget-object v1, p0, Lbjb;->from:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjb;->timestamp:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbjb;->snapId:Ljava/lang/String;
-
-    iget-object v2, p1, Lbjb;->snapId:Ljava/lang/String;
+    iget-object v2, p1, Lbjb;->from:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjb;->viewed:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbjb;->to:Ljava/util/List;
 
-    iget-object v2, p1, Lbjb;->viewed:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbjb;->replayed:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbjb;->replayed:Ljava/lang/Boolean;
+    iget-object v2, p1, Lbjb;->to:Ljava/util/List;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjb;->screenshotCount:Ljava/lang/Long;
+    iget-object v1, p0, Lbjb;->convId:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjb;->screenshotCount:Ljava/lang/Long;
+    iget-object v2, p1, Lbjb;->convId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjb;->auth:Lbjy;
+
+    iget-object v2, p1, Lbjb;->auth:Lbjy;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjb;->connSeqNum:Ljava/lang/Long;
+
+    iget-object v2, p1, Lbjb;->connSeqNum:Ljava/lang/Long;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -234,40 +273,60 @@
     goto :goto_0
 .end method
 
-.method public hashCode()I
+.method public final f()Z
+    .locals 1
+
+    .prologue
+    .line 122
+    iget-object v0, p0, Lbjb;->connSeqNum:Ljava/lang/Long;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
     .locals 2
 
     .prologue
-    .line 131
+    .line 132
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjb;->timestamp:Ljava/lang/Long;
+    iget-object v1, p0, Lbjb;->from:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjb;->snapId:Ljava/lang/String;
+    iget-object v1, p0, Lbjb;->to:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjb;->viewed:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbjb;->convId:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjb;->replayed:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbjb;->auth:Lbjy;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjb;->screenshotCount:Ljava/lang/Long;
+    iget-object v1, p0, Lbjb;->connSeqNum:Ljava/lang/Long;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -280,11 +339,11 @@
     return v0
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public final toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 126
+    .line 127
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

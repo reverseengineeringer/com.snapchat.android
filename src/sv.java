@@ -1,14 +1,32 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.api2.cash.square.data.CardBrand;
+import com.snapchat.android.api2.framework.HttpMethod;
 
 public final class sv
+  extends tg
+  implements ui.b<tm>
 {
-  @SerializedName("brand")
-  @cgb
-  public CardBrand mBrand;
-  @SerializedName("pan_suffix")
-  @cgb
-  public String mPanSuffix;
+  private static final String TAG = "RetrieveCashCustomerStatusTask";
+  private sz mListener;
+  
+  public sv(@chc sz paramsz)
+  {
+    mListener = paramsz;
+    registerCallback(tm.class, this);
+  }
+  
+  protected final String a()
+  {
+    return "cash";
+  }
+  
+  public final HttpMethod getMethod()
+  {
+    return HttpMethod.GET;
+  }
+  
+  public final Object getRequestPayload()
+  {
+    return null;
+  }
 }
 
 /* Location:

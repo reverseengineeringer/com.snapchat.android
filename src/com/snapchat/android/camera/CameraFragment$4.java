@@ -1,9 +1,9 @@
 package com.snapchat.android.camera;
 
-import wc.c;
+import wy.c;
 
 final class CameraFragment$4
-  implements wc.c
+  implements wy.c
 {
   CameraFragment$4(CameraFragment paramCameraFragment) {}
   

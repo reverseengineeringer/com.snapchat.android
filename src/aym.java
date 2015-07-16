@@ -1,27 +1,56 @@
+import com.snapchat.android.util.chat.SecureChatSession.ConnectionState;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
 public final class aym
-  implements buo<mj>
+  implements ayc
 {
-  private final ayl module;
+  private static final String TAG = "SecureChatSessionMessageRateLimiter";
+  final int mMaxMessagesPerSecond;
+  final AtomicInteger mMessagesCounter = new AtomicInteger(0);
+  final aym.a mRateLimiterInterface;
+  volatile boolean mRunning = false;
+  private final ScheduledExecutorService mScheduledExecutorService;
   
-  static
+  public aym(aym.a parama, ScheduledExecutorService paramScheduledExecutorService)
   {
-    if (!aym.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
+    mRateLimiterInterface = parama;
+    mScheduledExecutorService = paramScheduledExecutorService;
+    mMaxMessagesPerSecond = 32;
+  }
+  
+  final void a()
+  {
+    if (mRunning) {
+      mScheduledExecutorService.schedule(new Runnable()
+      {
+        public final void run()
+        {
+          mMessagesCounter.set(0);
+          a();
+        }
+      }, 1L, TimeUnit.SECONDS);
     }
   }
   
-  private aym(ayl paramayl)
+  public final void a(SecureChatSession.ConnectionState paramConnectionState)
   {
-    assert (paramayl != null);
-    module = paramayl;
+    if (paramConnectionState == SecureChatSession.ConnectionState.CONNECTED)
+    {
+      mRunning = true;
+      mMessagesCounter.set(0);
+      a();
+    }
+    while (paramConnectionState != SecureChatSession.ConnectionState.DISCONNECTED) {
+      return;
+    }
+    mRunning = false;
   }
   
-  public static buo<mj> a(ayl paramayl)
+  public static abstract interface a
   {
-    return new aym(paramayl);
+    public abstract void e();
   }
 }
 

@@ -1,142 +1,348 @@
-.class public Lafe;
+.class public final Lafe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Z
+.field public final a:Landroid/view/View;
+
+.field final b:Landroid/widget/ImageView;
+
+.field final c:Landroid/widget/ImageView;
+
+.field final d:Landroid/graphics/drawable/AnimationDrawable;
+
+.field final e:Lawn;
+
+.field public f:Z
+
+.field public g:Landroid/animation/Animator;
+
+.field h:Landroid/animation/ObjectAnimator;
+
+.field final i:Laww;
+
+.field private final j:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Lcom/snapchat/android/discover/ui/DSnapView;)V
+    .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/ui/DSnapView;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 28
+    .line 51
+    new-instance v0, Lawn;
+
+    invoke-direct {v0, p1}, Lawn;-><init>(Landroid/content/Context;)V
+
+    invoke-direct {p0, p1, p2, v0}, Lafe;-><init>(Landroid/content/Context;Lcom/snapchat/android/discover/ui/DSnapView;Lawn;)V
+
+    .line 52
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;Lcom/snapchat/android/discover/ui/DSnapView;Lawn;)V
+    .locals 2
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/ui/DSnapView;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    .line 46
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lafe;->f:Z
+
+    .line 133
+    new-instance v0, Lafe$1;
+
+    invoke-direct {v0, p0}, Lafe$1;-><init>(Lafe;)V
+
+    iput-object v0, p0, Lafe;->i:Laww;
+
+    .line 57
+    iput-object p3, p0, Lafe;->e:Lawn;
+
+    .line 58
+    iput-object p1, p0, Lafe;->j:Landroid/content/Context;
+
+    .line 60
+    const v0, 0x7f0a01fa
+
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/ui/DSnapView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 30
-    const-string v1, "phone"
+    iput-object v0, p0, Lafe;->a:Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    .line 61
+    const v0, 0x7f0a01fc
 
-    move-result-object v0
-
-    check-cast v0, Landroid/telephony/TelephonyManager;
-
-    .line 31
-    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getNetworkCountryIso()Ljava/lang/String;
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/ui/DSnapView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    const-string v1, "US"
+    check-cast v0, Landroid/widget/ImageView;
 
-    invoke-static {v0, v1}, Laui;->c(Ljava/lang/String;Ljava/lang/String;)Z
+    iput-object v0, p0, Lafe;->b:Landroid/widget/ImageView;
 
-    move-result v0
+    .line 62
+    const v0, 0x7f0a01fb
 
-    iput-boolean v0, p0, Lafe;->a:Z
+    invoke-virtual {p2, v0}, Lcom/snapchat/android/discover/ui/DSnapView;->findViewById(I)Landroid/view/View;
 
-    .line 32
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lafe;->c:Landroid/widget/ImageView;
+
+    .line 63
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f020106
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
+
+    iput-object v0, p0, Lafe;->d:Landroid/graphics/drawable/AnimationDrawable;
+
+    .line 65
+    invoke-virtual {p0}, Lafe;->a()V
+
+    .line 66
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/snapchat/android/model/Friend;)Ljava/lang/String;
-    .locals 1
-    .param p1    # Lcom/snapchat/android/model/Friend;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a()V
+    .locals 5
 
     .prologue
-    .line 35
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->k()Ljava/lang/String;
+    const/4 v4, 0x2
+
+    .line 80
+    iget-object v0, p0, Lafe;->a:Landroid/view/View;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+
+    .line 81
+    iget-object v0, p0, Lafe;->a:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 82
+    iget-object v0, p0, Lafe;->b:Landroid/widget/ImageView;
+
+    sget-object v1, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    new-array v2, v4, [F
+
+    fill-array-data v2, :array_0
+
+    invoke-static {v0, v1, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
-    return-object v0
+    iput-object v0, p0, Lafe;->h:Landroid/animation/ObjectAnimator;
+
+    .line 83
+    iget-object v0, p0, Lafe;->h:Landroid/animation/ObjectAnimator;
+
+    const-wide/16 v2, 0x320
+
+    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    .line 84
+    iget-object v0, p0, Lafe;->h:Landroid/animation/ObjectAnimator;
+
+    const/4 v1, -0x1
+
+    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setRepeatCount(I)V
+
+    .line 85
+    iget-object v0, p0, Lafe;->h:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {v0, v4}, Landroid/animation/ObjectAnimator;->setRepeatMode(I)V
+
+    .line 86
+    return-void
+
+    .line 82
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x0
+    .end array-data
 .end method
 
-.method public a(Lcom/snapchat/android/model/Friend;Z)Ljava/lang/String;
-    .locals 1
-    .param p1    # Lcom/snapchat/android/model/Friend;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a(I)V
+    .locals 4
 
     .prologue
-    .line 43
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->j()Z
+    .line 180
+    iget-object v0, p0, Lafe;->a:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    iget-object v0, p0, Lafe;->g:Landroid/animation/Animator;
 
-    move-result-object v0
+    if-eqz v0, :cond_1
 
-    :goto_0
-    return-object v0
-
+    .line 186
     :cond_0
-    const-string v0, ""
+    :goto_0
+    return-void
+
+    .line 184
+    :cond_1
+    int-to-long v0, p1
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const/4 v3, 0x1
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lafe;->a(JFZ)V
 
     goto :goto_0
 .end method
 
-.method protected final b(Lcom/snapchat/android/model/Friend;)Ljava/lang/String;
-    .locals 4
-    .param p1    # Lcom/snapchat/android/model/Friend;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a(JFZ)V
+    .locals 5
 
     .prologue
-    .line 58
-    const/4 v0, 0x1
+    .line 208
+    iget-object v0, p0, Lafe;->a:Landroid/view/View;
 
-    new-array v1, v0, [Ljava/lang/Object;
+    sget-object v1, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    iget-object v0, p1, Lcom/snapchat/android/model/Friend;->mPhoneNumber:Ljava/lang/String;
+    new-array v2, v2, [F
 
-    iget-boolean v3, p0, Lafe;->a:Z
+    const/4 v3, 0x0
 
-    if-eqz v3, :cond_0
+    aput p3, v2, v3
 
-    invoke-static {}, Landroid/text/Editable$Factory;->getInstance()Landroid/text/Editable$Factory;
+    const/4 v3, 0x1
 
-    move-result-object v3
+    const/4 v4, 0x0
 
-    invoke-virtual {v3, v0}, Landroid/text/Editable$Factory;->newEditable(Ljava/lang/CharSequence;)Landroid/text/Editable;
+    aput v4, v2, v3
 
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->formatNanpNumber(Landroid/text/Editable;)V
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
-    :cond_0
-    aput-object v0, v1, v2
+    iput-object v0, p0, Lafe;->g:Landroid/animation/Animator;
 
+    .line 209
+    iget-object v0, p0, Lafe;->g:Landroid/animation/Animator;
+
+    invoke-virtual {v0, p1, p2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+
+    .line 210
+    iget-object v0, p0, Lafe;->g:Landroid/animation/Animator;
+
+    new-instance v1, Landroid/view/animation/AccelerateInterpolator;
+
+    const/high16 v2, 0x3fc00000    # 1.5f
+
+    invoke-direct {v1, v2}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 211
+    iget-object v0, p0, Lafe;->g:Landroid/animation/Animator;
+
+    new-instance v1, Lafe$2;
+
+    invoke-direct {v1, p0, p4}, Lafe$2;-><init>(Lafe;Z)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 226
+    iget-object v0, p0, Lafe;->g:Landroid/animation/Animator;
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
+
+    .line 227
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    .prologue
+    .line 192
+    iget-object v0, p0, Lafe;->a:Landroid/view/View;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 193
+    iget-object v0, p0, Lafe;->d:Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+
+    .line 194
+    iget-object v0, p0, Lafe;->h:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
+
+    .line 195
+    iget-object v0, p0, Lafe;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->clearAnimation()V
+
+    .line 196
     const/4 v0, 0x0
 
-    const v2, 0x7f0c00d0
+    iput-boolean v0, p0, Lafe;->f:Z
 
-    invoke-static {v0, v2, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    .line 197
+    const/4 v0, 0x0
 
-    move-result-object v0
+    iput-object v0, p0, Lafe;->g:Landroid/animation/Animator;
 
-    return-object v0
+    .line 198
+    iget-object v0, p0, Lafe;->e:Lawn;
+
+    iget-object v1, p0, Lafe;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v1}, Lawn;->a(Landroid/widget/ImageView;)V
+
+    .line 199
+    return-void
 .end method

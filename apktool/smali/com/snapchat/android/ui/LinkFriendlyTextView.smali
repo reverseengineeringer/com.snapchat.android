@@ -31,7 +31,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080033
+    const v1, 0x7f080034
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -50,7 +50,7 @@
 .method private static a(Landroid/widget/TextView;)V
     .locals 9
     .param p0    # Landroid/widget/TextView;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

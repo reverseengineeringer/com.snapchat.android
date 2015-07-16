@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment$a;
-.super Lbgo;
+.super Lbho;
 .source "SourceFile"
 
 
@@ -27,7 +27,7 @@
     iput-object p1, p0, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment$a;->a:Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;
 
     .line 753
-    invoke-direct {p0, p2, p3, p4, p5}, Lbgo;-><init>(IJLandroid/os/Handler;)V
+    invoke-direct {p0, p2, p3, p4, p5}, Lbho;-><init>(IJLandroid/os/Handler;)V
 
     .line 754
     invoke-static {p1, p2}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->a(Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;I)I

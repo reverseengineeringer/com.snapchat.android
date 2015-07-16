@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.stories;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import bfa;
+import bfz;
 
 final class StoriesFragment$15
   implements View.OnClickListener
@@ -12,9 +12,9 @@ final class StoriesFragment$15
   public final void onClick(View paramView)
   {
     if (a.h) {
-      StoriesFragment.e(a);
+      StoriesFragment.d(a);
     }
-    StoriesFragment.f(a).a(4, true);
+    StoriesFragment.e(a).a(4, true);
   }
 }
 

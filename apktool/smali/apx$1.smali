@@ -1,9 +1,6 @@
-.class public final Lapx$1;
-.super Ljava/lang/Object;
+.class final Lapx$1;
+.super Landroid/support/v4/util/LruCache;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/snapchat/android/util/AlertDialogUtils$a;
 
 
 # annotations
@@ -12,92 +9,85 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x8
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic a:Lapx;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/support/v4/util/LruCache",
+        "<",
+        "Ljava/lang/String;",
+        "Landroid/graphics/Bitmap;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Lapx;)V
+.method constructor <init>(I)V
     .locals 0
 
     .prologue
-    .line 65
-    iput-object p1, p0, Lapx$1;->a:Lapx;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 54
+    invoke-direct {p0, p1}, Landroid/support/v4/util/LruCache;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;)V
+.method protected final synthetic entryRemoved$7ef8fcad(ZLjava/lang/Object;)V
+    .locals 1
+
+    .prologue
+    .line 54
+    check-cast p2, Landroid/graphics/Bitmap;
+
+    if-eqz p1, :cond_0
+
+    invoke-static {}, Lapx;->b()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    if-eqz p2, :cond_0
+
+    invoke-static {}, Lawo;->a()Lawo;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lawo;->a(Landroid/graphics/Bitmap;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method protected final synthetic sizeOf$2838e5a0(Ljava/lang/Object;)I
     .locals 2
 
     .prologue
-    .line 68
-    sget-object v0, Lapx$4;->a:[I
+    .line 54
+    check-cast p1, Landroid/graphics/Bitmap;
 
-    invoke-virtual {p1}, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;->ordinal()I
+    invoke-static {p1}, Lavp;->f(Landroid/graphics/Bitmap;)I
 
-    move-result v1
+    move-result v0
 
-    aget v0, v0, v1
+    int-to-float v0, v0
 
-    packed-switch v0, :pswitch_data_0
+    const/high16 v1, 0x44800000    # 1024.0f
 
-    .line 80
-    new-instance v0, Ljava/lang/IllegalStateException;
+    div-float/2addr v0, v1
 
-    const-string v1, "Illegal dialog option"
+    float-to-double v0, v0
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
-    throw v0
+    move-result-wide v0
 
-    .line 70
-    :pswitch_0
-    invoke-static {}, Lajx;->aI()V
+    double-to-int v0, v0
 
-    .line 71
-    iget-object v0, p0, Lapx$1;->a:Lapx;
-
-    invoke-virtual {v0}, Lapx;->a()V
-
-    .line 78
-    :goto_0
-    return-void
-
-    .line 74
-    :pswitch_1
-    iget-object v0, p0, Lapx$1;->a:Lapx;
-
-    invoke-virtual {v0}, Lapx;->a()V
-
-    goto :goto_0
-
-    .line 77
-    :pswitch_2
-    iget-object v0, p0, Lapx$1;->a:Lapx;
-
-    iget-object v0, v0, Lapx;->b:Lcom/snapchat/android/model/StoryGroup;
-
-    sget-object v1, Lcom/snapchat/android/model/StoryGroup$ActionState;->READY:Lcom/snapchat/android/model/StoryGroup$ActionState;
-
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/StoryGroup;->a(Lcom/snapchat/android/model/StoryGroup$ActionState;)V
-
-    goto :goto_0
-
-    .line 68
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    return v0
 .end method

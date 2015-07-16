@@ -3,7 +3,7 @@ package com.snapchat.videotranscoder.cts;
 import android.graphics.Bitmap;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.utils.TranscodingResources;
 import com.snapchat.videotranscoder.video.FragmentShader;
 import com.snapchat.videotranscoder.video.FragmentShader.Builder;
@@ -18,7 +18,7 @@ public class SplitTextureRenderer
   private int mTransformHandle;
   private int muSplitHandle;
   
-  public SplitTextureRenderer(@cgb TranscodingResources paramTranscodingResources, @cgb float[] paramArrayOfFloat)
+  public SplitTextureRenderer(@chc TranscodingResources paramTranscodingResources, @chc float[] paramArrayOfFloat)
   {
     super(paramTranscodingResources, paramArrayOfFloat);
     Matrix.invertM(mInvertedSTM, 0, mSTMatrix, 0);
@@ -69,7 +69,7 @@ public class SplitTextureRenderer
     }
   }
   
-  public void setOverlayBitmap(@cgb Bitmap paramBitmap)
+  public void setOverlayBitmap(@chc Bitmap paramBitmap)
   {
     throw new UnsupportedOperationException();
   }

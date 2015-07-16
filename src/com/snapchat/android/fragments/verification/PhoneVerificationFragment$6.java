@@ -1,13 +1,13 @@
 package com.snapchat.android.fragments.verification;
 
-import ajx;
+import akr;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
-import avh;
+import awf;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
-import kl;
+import ld;
 
 final class PhoneVerificationFragment$6
   implements View.OnFocusChangeListener
@@ -19,13 +19,13 @@ final class PhoneVerificationFragment$6
     if (paramBoolean)
     {
       PhoneVerificationFragment.a(a, WindowConfiguration.StatusBarDrawMode.DRAW_BELOW_FOR_ADJUSTABLE_UI);
-      avh.g(a.getActivity());
+      awf.g(a.getActivity());
       paramView = a.c;
-      if (ajx.v())
+      if (akr.v())
       {
-        ScAnalyticsEventEngine.a(new kl());
-        if (ajx.v()) {
-          new EasyMetric("R01_FOCUS_ON_PHONE_NUMBER").d();
+        ScAnalyticsEventEngine.a(new ld());
+        if (akr.v()) {
+          new EasyMetric("R01_FOCUS_ON_PHONE_NUMBER").e();
         }
       }
       return;

@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.ViewPropertyAnimator;
-import bgr;
+import bhr;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.ui.CashSwiperView;
 import com.snapchat.android.ui.CashSwiperView.2;

@@ -1,41 +1,16 @@
-import android.graphics.Paint;
-import android.graphics.PointF;
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
-import java.util.Random;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.TreeMap;
 
 public final class bux
-  extends Animation
+  extends buv
 {
-  public PointF a;
-  public float b;
-  public final Paint c;
-  public PointF d;
-  public PointF e;
-  private float f;
-  private float g;
-  
-  public final void a(float paramFloat)
+  public bux(Map paramMap)
   {
-    c.setAlpha((int)(255.0F * paramFloat));
-  }
-  
-  public final void a(float paramFloat1, float paramFloat2)
-  {
-    f = paramFloat1;
-    g = paramFloat2;
-    super.start();
-  }
-  
-  public final void a(int paramInt)
-  {
-    b = (-new Random().nextInt(paramInt) + paramInt);
-  }
-  
-  protected final void applyTransformation(float paramFloat, Transformation paramTransformation)
-  {
-    float f1 = f;
-    a(f1 + (g - f1) * paramFloat);
+    super(paramMap);
+    TreeMap localTreeMap = new TreeMap(new Comparator() {});
+    localTreeMap.putAll(paramMap);
+    a = localTreeMap;
   }
 }
 

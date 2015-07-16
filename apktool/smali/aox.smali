@@ -1,148 +1,92 @@
 .class public final Laox;
-.super Laow;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Laox$a;
+    }
+.end annotation
+
+
 # direct methods
-.method public constructor <init>(Landroid/view/View;Landroid/view/View;)V
-    .locals 0
+.method public static a(Landroid/content/Context;)Lbqe;
+    .locals 3
+    .annotation build Lchd;
+    .end annotation
 
     .prologue
-    .line 15
-    invoke-direct {p0, p1, p2}, Laow;-><init>(Landroid/view/View;Landroid/view/View;)V
+    .line 37
+    :try_start_0
+    new-instance v0, Lbqe$a;
 
-    .line 16
-    return-void
-.end method
+    invoke-direct {v0, p0}, Lbqe$a;-><init>(Landroid/content/Context;)V
 
+    new-instance v1, Laox$a;
 
-# virtual methods
-.method public final a()Landroid/animation/ObjectAnimator;
-    .locals 5
+    const/4 v2, 0x0
 
-    .prologue
-    .line 24
-    iget-object v0, p0, Laox;->c:Landroid/view/View;
+    invoke-direct {v1, v2}, Laox$a;-><init>(B)V
 
-    invoke-static {v0}, Lavh;->a(Landroid/view/View;)I
+    iget-object v2, v0, Lbqe$a;->c:Lbqe$f;
 
-    move-result v0
+    if-eqz v2, :cond_0
 
-    int-to-float v0, v0
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const/high16 v1, 0x40000000    # 2.0f
+    const-string v1, "Transformer already set."
 
-    div-float/2addr v0, v1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 25
-    iget-object v1, p0, Laox;->b:Landroid/view/View;
-
-    const-string v2, "translationY"
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [F
-
-    const/4 v4, 0x0
-
-    aput v0, v3, v4
-
-    invoke-static {v1, v2, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected final b()Landroid/animation/ObjectAnimator;
-    .locals 5
-
-    .prologue
-    .line 30
-    iget-object v0, p0, Laox;->c:Landroid/view/View;
-
-    const-string v1, "alpha"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [F
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    aput v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 2
-
-    .prologue
-    .line 46
-    iget-object v0, p0, Laox;->b:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
-
-    .line 47
-    iget-object v0, p0, Laox;->c:Landroid/view/View;
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
-
-    .line 48
-    iget-object v0, p0, Laox;->c:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 49
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-
-    .prologue
-    .line 35
-    iget-boolean v0, p0, Laow;->d:Z
-
-    if-eqz v0, :cond_0
-
-    .line 42
-    :goto_0
-    return-void
-
-    .line 39
-    :cond_0
-    iget-object v0, p0, Laox;->b:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
-
-    .line 40
-    iget-object v0, p0, Laox;->c:Landroid/view/View;
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+    throw v0
 
     .line 41
-    iget-object v0, p0, Laox;->c:Landroid/view/View;
+    :catch_0
+    move-exception v0
 
-    const/16 v1, 0x8
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    :goto_0
+    return-object v0
+
+    .line 37
+    :cond_0
+    iput-object v1, v0, Lbqe$a;->c:Lbqe$f;
+
+    invoke-virtual {v0}, Lbqe$a;->a()Lbqe;
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public static a()Z
+    .locals 1
+
+    .prologue
+    .line 27
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-static {v0}, Lbqe;->a(Lbqe;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 28
+    const/4 v0, 0x0
+
+    .line 30
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method

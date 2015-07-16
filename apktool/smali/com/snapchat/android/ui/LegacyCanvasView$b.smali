@@ -98,7 +98,7 @@
 # virtual methods
 .method public final a()V
     .locals 4
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
@@ -134,18 +134,18 @@
 
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v0, v1, v2, v3}, Laur;->a(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/BitmapFactory$Options;
+    invoke-static {v0, v1, v2, v3}, Lavp;->a(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/BitmapFactory$Options;
 
     move-result-object v0
 
     .line 438
-    invoke-static {}, Lavq;->a()Lavq;
+    invoke-static {}, Lawo;->a()Lawo;
 
     move-result-object v1
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, v0, v2}, Lavq;->a(Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
+    invoke-virtual {v1, v0, v2}, Lawo;->a(Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -184,7 +184,7 @@
 
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v0, v1, v2}, Laur;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v0, v1, v2}, Lavp;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -203,13 +203,13 @@
     iput-object v2, p0, Lcom/snapchat/android/ui/LegacyCanvasView$b;->d:Landroid/graphics/Canvas;
 
     .line 464
-    invoke-static {}, Lavq;->a()Lavq;
+    invoke-static {}, Lawo;->a()Lawo;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/snapchat/android/ui/LegacyCanvasView$b;->e:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v0, v1}, Lavq;->a(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v0, v1}, Lawo;->a(Landroid/graphics/Bitmap;)V
 
     .line 465
     iput-object v2, p0, Lcom/snapchat/android/ui/LegacyCanvasView$b;->e:Landroid/graphics/Bitmap;

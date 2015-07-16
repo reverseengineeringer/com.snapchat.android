@@ -1,28 +1,36 @@
-import java.lang.reflect.Array;
+import javax.annotation.Nullable;
 
-@cd
-public final class dn
+@ce
+abstract class dn<K, V>
+  extends dk<K, V>
 {
-  static final Object[] a = new Object[0];
-  
-  static Object a(Object paramObject, int paramInt)
+  dn(dn<K, V> paramdn)
   {
-    if (paramObject == null) {
-      throw new NullPointerException(20 + "at index " + paramInt);
+    super(paramdn.getKey(), paramdn.getValue());
+  }
+  
+  dn(K paramK, V paramV)
+  {
+    super(paramK, paramV);
+    cx.a(paramK, paramV);
+  }
+  
+  @Nullable
+  abstract dn<K, V> a();
+  
+  static final class a<K, V>
+    extends dn<K, V>
+  {
+    a(K paramK, V paramV)
+    {
+      super(paramV);
     }
-    return paramObject;
-  }
-  
-  public static <T> T[] a(T[] paramArrayOfT, int paramInt)
-  {
-    return (Object[])Array.newInstance(paramArrayOfT.getClass().getComponentType(), paramInt);
-  }
-  
-  static <T> T[] b(T[] paramArrayOfT, int paramInt)
-  {
-    Object[] arrayOfObject = a(paramArrayOfT, paramInt);
-    System.arraycopy(paramArrayOfT, 0, arrayOfObject, 0, Math.min(paramArrayOfT.length, paramInt));
-    return arrayOfObject;
+    
+    @Nullable
+    final dn<K, V> a()
+    {
+      return null;
+    }
   }
 }
 

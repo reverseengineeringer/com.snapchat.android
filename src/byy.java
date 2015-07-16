@@ -1,26 +1,28 @@
+import java.util.ArrayList;
+
 public final class byy
-  implements bxg
+  implements byh
 {
-  public final bxk a(bwz parambwz, String paramString)
+  public final byl a(bya parambya, String paramString)
   {
+    parambya = byk.a(paramString);
+    if (parambya.size() != 2) {
+      throw new byi("Two numeric arguments are required.");
+    }
     try
     {
-      parambwz = bxj.a(paramString, a).toUpperCase();
-      return new bxk(parambwz, 1);
+      parambya = new Double(Math.max(((Double)parambya.get(0)).doubleValue(), ((Double)parambya.get(1)).doubleValue()));
+      return new byl(parambya.toString(), 0);
     }
-    catch (bxh parambwz)
+    catch (Exception parambya)
     {
-      throw new bxh(parambwz.getMessage(), parambwz);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("One string argument is required.", parambwz);
+      throw new byi("Two numeric arguments are required.", parambya);
     }
   }
   
   public final String a()
   {
-    return "toUpperCase";
+    return "max";
   }
 }
 

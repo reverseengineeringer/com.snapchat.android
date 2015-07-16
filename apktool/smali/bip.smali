@@ -1,6 +1,20 @@
-.class public Lbip;
-.super Lbii;
+.class public final Lbip;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+
+# instance fields
+.field protected lat:Ljava/lang/Double;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "lat"
+    .end annotation
+.end field
+
+.field protected longValue:Ljava/lang/Double;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "long"
+    .end annotation
+.end field
 
 
 # direct methods
@@ -8,44 +22,83 @@
     .locals 0
 
     .prologue
-    .line 17
-    invoke-direct {p0}, Lbii;-><init>()V
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
+.method public final a()Ljava/lang/Double;
     .locals 1
 
     .prologue
-    .line 32
+    .line 50
+    iget-object v0, p0, Lbip;->lat:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public final b()Ljava/lang/Double;
+    .locals 1
+
+    .prologue
+    .line 77
+    iget-object v0, p0, Lbip;->longValue:Ljava/lang/Double;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .prologue
+    .line 99
     if-ne p1, p0, :cond_0
 
-    .line 33
+    .line 100
     const/4 v0, 0x1
 
-    .line 38
+    .line 106
     :goto_0
     return v0
 
-    .line 35
+    .line 102
     :cond_0
     instance-of v0, p1, Lbip;
 
     if-nez v0, :cond_1
 
-    .line 36
+    .line 103
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 38
+    .line 105
     :cond_1
+    check-cast p1, Lbip;
+
+    .line 106
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
+
+    iget-object v1, p0, Lbip;->lat:Ljava/lang/Double;
+
+    iget-object v2, p1, Lbip;->lat:Ljava/lang/Double;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbip;->longValue:Ljava/lang/Double;
+
+    iget-object v2, p1, Lbip;->longValue:Ljava/lang/Double;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
 
@@ -54,14 +107,26 @@
     goto :goto_0
 .end method
 
-.method public hashCode()I
-    .locals 1
+.method public final hashCode()I
+    .locals 2
 
     .prologue
-    .line 26
+    .line 91
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+
+    iget-object v1, p0, Lbip;->lat:Ljava/lang/Double;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbip;->longValue:Ljava/lang/Double;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
 
@@ -70,11 +135,11 @@
     return v0
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public final toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 21
+    .line 86
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

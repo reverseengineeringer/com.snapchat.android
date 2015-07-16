@@ -1,29 +1,23 @@
+import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
+
 public final class xo
-  implements buo<xn>
 {
-  private final buj<xn> b;
+  private static final xo b = new xo();
+  public final TranscodingPreferencesWrapper a;
   
-  static
+  private xo()
   {
-    if (!xo.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
+    this(TranscodingPreferencesWrapper.a());
   }
   
-  private xo(buj<xn> parambuj)
+  private xo(TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper)
   {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
+    a = paramTranscodingPreferencesWrapper;
   }
   
-  public static buo<xn> a(buj<xn> parambuj)
+  public static xo a()
   {
-    return new xo(parambuj);
+    return b;
   }
 }
 

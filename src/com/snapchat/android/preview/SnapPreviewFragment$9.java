@@ -22,14 +22,14 @@ final class SnapPreviewFragment$9
     {
       public final void onAnimationEnd(Animation paramAnonymousAnimation)
       {
-        SnapPreviewFragment.y(a).setVisibility(8);
+        SnapPreviewFragment.z(a).setVisibility(8);
       }
       
       public final void onAnimationRepeat(Animation paramAnonymousAnimation) {}
       
       public final void onAnimationStart(Animation paramAnonymousAnimation) {}
     });
-    SnapPreviewFragment.y(a).startAnimation(paramAnimation);
+    SnapPreviewFragment.z(a).startAnimation(paramAnimation);
   }
 }
 

@@ -1,28 +1,88 @@
-import com.snapchat.android.Timber;
-import java.util.ArrayList;
-import java.util.List;
+import android.os.Handler;
+import com.addlive.service.listener.AddLiveServiceListener;
+import com.addlive.service.listener.AddLiveServiceListenerAdapter;
+import com.addlive.service.listener.ConnectionLostEvent;
+import com.addlive.service.listener.MessageEvent;
+import com.addlive.service.listener.SessionReconnectedEvent;
+import com.addlive.service.listener.UserStateChangedEvent;
+import com.addlive.service.listener.VideoFrameSizeChangedEvent;
 
 public final class aie
-  extends aia
+  extends AddLiveServiceListenerAdapter
 {
-  public List<aiv> d = new ArrayList();
-  public cgs e = new cgs();
+  private final AddLiveServiceListener a;
+  private final Handler b;
   
-  @caq
-  public final List<aiv> c()
+  public aie(AddLiveServiceListener paramAddLiveServiceListener, Handler paramHandler)
   {
-    if (e.b(2).c(cgs.c()))
-    {
-      Timber.c("InMemoryGeofilterProvider", "Filters are expired(" + e + ")", new Object[0]);
-      return new ArrayList();
-    }
-    return new ArrayList(d);
+    a = paramAddLiveServiceListener;
+    b = paramHandler;
   }
   
-  @caq
-  public final void d()
+  public final void onConnectionLost(final ConnectionLostEvent paramConnectionLostEvent)
   {
-    d.clear();
+    b.post(new Runnable()
+    {
+      public final void run()
+      {
+        aie.a(aie.this).onConnectionLost(paramConnectionLostEvent);
+      }
+    });
+  }
+  
+  public final void onMediaStreamEvent(final UserStateChangedEvent paramUserStateChangedEvent)
+  {
+    b.post(new Runnable()
+    {
+      public final void run()
+      {
+        aie.a(aie.this).onMediaStreamEvent(paramUserStateChangedEvent);
+      }
+    });
+  }
+  
+  public final void onMessage(final MessageEvent paramMessageEvent)
+  {
+    b.post(new Runnable()
+    {
+      public final void run()
+      {
+        aie.a(aie.this).onMessage(paramMessageEvent);
+      }
+    });
+  }
+  
+  public final void onSessionReconnected(final SessionReconnectedEvent paramSessionReconnectedEvent)
+  {
+    b.post(new Runnable()
+    {
+      public final void run()
+      {
+        aie.a(aie.this).onSessionReconnected(paramSessionReconnectedEvent);
+      }
+    });
+  }
+  
+  public final void onUserEvent(final UserStateChangedEvent paramUserStateChangedEvent)
+  {
+    b.post(new Runnable()
+    {
+      public final void run()
+      {
+        aie.a(aie.this).onUserEvent(paramUserStateChangedEvent);
+      }
+    });
+  }
+  
+  public final void onVideoFrameSizeChanged(final VideoFrameSizeChangedEvent paramVideoFrameSizeChangedEvent)
+  {
+    b.post(new Runnable()
+    {
+      public final void run()
+      {
+        aie.a(aie.this).onVideoFrameSizeChanged(paramVideoFrameSizeChangedEvent);
+      }
+    });
   }
 }
 

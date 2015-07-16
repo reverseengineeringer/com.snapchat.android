@@ -1,29 +1,16 @@
-import com.snapchat.android.discover.analytics.EditionPerformanceAnalytics;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 public final class abr
+  extends aaw
 {
-  public final Set<String> a = new HashSet();
-  public final Set<String> b = new HashSet();
-  public final Map<String, ld> c = new HashMap();
-  public final EditionPerformanceAnalytics d;
+  private static final abr a = new abr();
   
-  public abr()
+  private abr()
   {
-    this(new EditionPerformanceAnalytics());
+    super("MySnapImageFileTable", axo.MY_SNAP_IMAGE_CACHE);
   }
   
-  private abr(EditionPerformanceAnalytics paramEditionPerformanceAnalytics)
+  public static abr a()
   {
-    d = paramEditionPerformanceAnalytics;
-  }
-  
-  public final void a(@cgb String paramString, @cgb ld paramld)
-  {
-    c.put(paramString, paramld);
+    return a;
   }
 }
 

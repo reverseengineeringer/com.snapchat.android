@@ -1,59 +1,108 @@
 import java.io.Serializable;
+import java.util.Map;
+import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 @cd
-final class dm<T>
-  extends do<T>
-  implements Serializable
+public abstract class dm<K, V>
+  implements Serializable, Map<K, V>
 {
-  final do<? super T> a;
+  private static final Map.Entry<?, ?>[] a = new Map.Entry[0];
+  private transient dr<Map.Entry<K, V>> b;
+  private transient dr<K> c;
+  private transient dj<V> d;
   
-  dm(do<? super T> paramdo)
+  public static <K, V> dm<K, V> a(K paramK1, V paramV1, K paramK2, V paramV2)
   {
-    a = paramdo;
+    return new ea(new dn.a[] { a(paramK1, paramV1), a(paramK2, paramV2) });
   }
   
-  public final <S extends T> do<S> a()
+  private static <K, V> dn.a<K, V> a(K paramK, V paramV)
   {
-    return this;
+    cx.a(paramK, paramV);
+    return new dn.a(paramK, paramV);
   }
   
-  public final int compare(@Nullable T paramT1, @Nullable T paramT2)
+  private dj<V> c()
   {
-    if (paramT1 == paramT2) {
-      return 0;
-    }
-    if (paramT1 == null) {
-      return 1;
-    }
-    if (paramT2 == null) {
-      return -1;
-    }
-    return a.compare(paramT1, paramT2);
-  }
-  
-  public final boolean equals(@Nullable Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
-    }
-    if ((paramObject instanceof dm))
+    dj localdj = d;
+    Object localObject = localdj;
+    if (localdj == null)
     {
-      paramObject = (dm)paramObject;
-      return a.equals(a);
+      localObject = new dq(this);
+      d = ((dj)localObject);
     }
-    return false;
+    return (dj<V>)localObject;
   }
   
-  public final int hashCode()
+  public final dr<Map.Entry<K, V>> a()
   {
-    return a.hashCode() ^ 0xC9177248;
+    dr localdr2 = b;
+    dr localdr1 = localdr2;
+    if (localdr2 == null)
+    {
+      localdr1 = b();
+      b = localdr1;
+    }
+    return localdr1;
   }
   
-  public final String toString()
+  abstract dr<Map.Entry<K, V>> b();
+  
+  @Deprecated
+  public final void clear()
   {
-    String str = String.valueOf(String.valueOf(a));
-    return str.length() + 12 + str + ".nullsLast()";
+    throw new UnsupportedOperationException();
+  }
+  
+  public boolean containsKey(@Nullable Object paramObject)
+  {
+    return get(paramObject) != null;
+  }
+  
+  public boolean containsValue(@Nullable Object paramObject)
+  {
+    return c().contains(paramObject);
+  }
+  
+  public boolean equals(@Nullable Object paramObject)
+  {
+    return du.a(this, paramObject);
+  }
+  
+  public abstract V get(@Nullable Object paramObject);
+  
+  public int hashCode()
+  {
+    return a().hashCode();
+  }
+  
+  public boolean isEmpty()
+  {
+    return size() == 0;
+  }
+  
+  @Deprecated
+  public final V put(K paramK, V paramV)
+  {
+    throw new UnsupportedOperationException();
+  }
+  
+  @Deprecated
+  public final void putAll(Map<? extends K, ? extends V> paramMap)
+  {
+    throw new UnsupportedOperationException();
+  }
+  
+  @Deprecated
+  public final V remove(Object paramObject)
+  {
+    throw new UnsupportedOperationException();
+  }
+  
+  public String toString()
+  {
+    return du.a(this);
   }
 }
 

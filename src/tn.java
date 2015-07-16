@@ -1,11 +1,18 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import com.google.gson.annotations.SerializedName;
 
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-public @interface tn {}
+public final class tn
+{
+  @SerializedName("statement_description")
+  private final String mStatementDesc;
+  @SerializedName("subject")
+  private final String mSubject;
+  
+  public tn(@chd String paramString)
+  {
+    mSubject = paramString;
+    mStatementDesc = paramString;
+  }
+}
 
 /* Location:
  * Qualified Name:     tn

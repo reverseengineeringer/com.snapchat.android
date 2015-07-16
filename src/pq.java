@@ -1,51 +1,99 @@
-import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.model.Friend;
-import com.squareup.otto.Bus;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import org.json.JSONObject;
 
 public final class pq
-  extends th
-  implements ts.b<pq.b>
 {
-  public static final int MIN_USERNAME_LENGTH = 3;
-  private static final String TAG = "FriendExistsTask";
-  private Bus mBus;
-  public final Friend mFriend;
+  private static final pq sInstance = new pq(akn.a());
+  private Map<String, Collection<pq.b>> mFeatures;
+  private akn mStudySettings;
   
-  public pq(Friend paramFriend)
+  private pq(akn paramakn)
   {
-    this(paramFriend, ban.a());
+    mStudySettings = paramakn;
+    paramakn = new pq.b("stories_delta_response", new pq.a("DELTA_RESPONSE", "FRIENDS_STORY_DELTA", "on"));
+    pq.b localb = new pq.b("conversations_delta_response", new pq.a("DELTA_RESPONSE", "CONVERSATIONS_DELTA", "on"));
+    mFeatures = new HashMap();
+    mFeatures.put("/loq/all_updates", Arrays.asList(new pq.b[] { paramakn, localb }));
+    mFeatures.put("/loq/conversations", Arrays.asList(new pq.b[] { localb }));
+    mFeatures.put("/bq/stories", Arrays.asList(new pq.b[] { paramakn }));
   }
   
-  private pq(Friend paramFriend, Bus paramBus)
+  public static pq a()
   {
-    mFriend = paramFriend;
-    mBus = paramBus;
-    a(pq.b.class, this);
+    return sInstance;
   }
   
-  public final String d()
+  public final String a(String paramString)
   {
-    return "/bq/user_exists";
+    HashMap localHashMap = new HashMap();
+    paramString = (Collection)mFeatures.get(paramString);
+    if (paramString != null)
+    {
+      paramString = paramString.iterator();
+      label149:
+      while (paramString.hasNext())
+      {
+        pq.b localb = (pq.b)paramString.next();
+        Object localObject = mStudySettings;
+        boolean bool;
+        if (mABTestForFeature == null) {
+          bool = mOnByDefault;
+        }
+        for (;;)
+        {
+          if (!bool) {
+            break label149;
+          }
+          localHashMap.put(mFeatureName, Boolean.valueOf(true));
+          break;
+          localObject = ((akn)localObject).a(mABTestForFeature.studyId, mABTestForFeature.variable, null);
+          if ((localObject != null) && (((String)localObject).equals(mABTestForFeature.onValue))) {
+            bool = true;
+          } else {
+            bool = false;
+          }
+        }
+      }
+    }
+    return new JSONObject(localHashMap).toString();
   }
   
-  @tn
-  public final class a
-    extends pl
+  public static final class a
   {
-    @SerializedName("request_username")
-    String request_username = mFriend.h();
+    public String onValue;
+    public String studyId;
+    public String variable;
     
-    public a() {}
+    a(String paramString1, String paramString2, String paramString3)
+    {
+      studyId = paramString1;
+      variable = paramString2;
+      onValue = paramString3;
+    }
   }
   
-  static class b
+  public static final class b
   {
-    @SerializedName("exists")
-    boolean exists;
-    @SerializedName("logged")
-    boolean logged;
-    @SerializedName("throttled")
-    boolean throttled;
+    @chd
+    pq.a mABTestForFeature;
+    String mFeatureName;
+    boolean mOnByDefault;
+    
+    b(String paramString, pq.a parama)
+    {
+      this(paramString, parama, (byte)0);
+    }
+    
+    private b(String paramString, pq.a parama, byte paramByte)
+    {
+      mFeatureName = paramString;
+      mOnByDefault = false;
+      mABTestForFeature = parama;
+    }
   }
 }
 

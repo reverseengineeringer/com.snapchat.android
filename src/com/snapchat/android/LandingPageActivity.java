@@ -1,30 +1,31 @@
 package com.snapchat.android;
 
-import abh;
-import abw.b;
-import adf;
-import adj;
-import adj.9;
-import ady;
-import aeh;
+import ach;
+import acr;
+import acw.b;
+import aef;
 import aej;
-import aej.1;
-import aew;
-import aex;
-import aez;
-import ahq;
-import ahq.a;
-import ahr;
+import aej.10;
+import aey;
+import afh;
+import afj;
+import afj.1;
+import afw;
+import afx;
+import afz;
 import aim;
-import ajj.a;
-import ajk;
-import ajn;
-import ajq;
-import ajv;
-import ajx;
-import akc;
-import alx;
-import alz;
+import aim.a;
+import ain;
+import aji;
+import akf.a;
+import akg;
+import aki;
+import akk;
+import akp;
+import akr;
+import akx;
+import amu;
+import amw;
 import android.animation.ObjectAnimator;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -69,79 +70,80 @@ import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.Window;
 import android.view.WindowManager.LayoutParams;
-import anw;
-import aol;
-import apd;
-import aqf;
-import ari;
-import asr;
-import atm;
-import atx;
-import auh;
-import aup;
-import aur;
-import aut;
-import auu;
-import auw;
-import aux;
-import aux.a;
+import aot;
+import aph;
+import apz;
+import ash;
+import atq;
+import auk;
+import auv;
 import avf;
-import avh;
-import avl;
-import awq;
-import awv;
-import aww;
-import axi;
-import aya;
-import aza;
-import azu;
-import azz;
-import baa;
-import ban;
-import bap;
-import bar;
-import bas;
+import avn;
+import avp;
+import avr;
+import avs;
+import avu;
+import avv;
+import avv.a;
+import awd;
+import awf;
+import awj;
+import axo;
+import axt;
+import axu;
+import ayg;
+import ayy;
+import azy;
 import bat;
-import bav;
-import baw;
-import bbg;
-import bbj;
+import baz;
+import bbb;
 import bbm;
-import bbr;
+import bbo;
+import bbq;
+import bbs;
 import bbt;
-import bbv;
-import bca;
-import bcb;
-import bcd;
+import bbu;
+import bbw;
+import bbx;
 import bcg;
-import bch;
-import bci;
-import bcs;
-import bcu;
-import bcy;
-import bcz;
+import bcj;
+import bcm;
+import bcr;
+import bct;
+import bcv;
+import bda;
+import bdb;
+import bdd;
 import bdg;
-import bdj;
-import bdn;
-import bdo;
-import bdr;
-import bdt;
-import bdw;
-import bec;
-import bee;
-import bel;
+import bdh;
+import bdi;
+import bds;
+import bdu;
+import bdy;
+import bdz;
+import beg;
+import bej;
+import ben;
 import beo;
-import bep;
-import bes;
-import beu;
-import bez;
-import bfa;
+import ber;
+import bet;
+import bev;
+import bfb;
+import bfd;
+import bfk;
+import bfn;
+import bfo;
+import bfr;
 import bft;
-import bgp;
+import bfy;
+import bfz;
 import bgt;
-import bog;
-import boh;
-import cgc;
+import bhp;
+import bht;
+import bph;
+import bpi;
+import chd;
+import co;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsSendSnapSource;
 import com.snapchat.android.analytics.CameraEventAnalytics;
@@ -153,6 +155,7 @@ import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.SnapViewEventAnalytics.EndReason;
 import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetricManager;
 import com.snapchat.android.analytics.framework.ErrorMetric;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.app.feature.messaging.feed.ui.fragment.FeedFragment.a;
@@ -182,6 +185,7 @@ import com.snapchat.android.ui.CustomVolumeView;
 import com.snapchat.android.ui.SnapEditorView;
 import com.snapchat.android.ui.SnapView;
 import com.snapchat.android.ui.VerticalSwipeLayout;
+import com.snapchat.android.ui.gesturedetectors.TapToViewTouchListener;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.SnapchatViewPager;
 import com.snapchat.android.util.TitleBarManager;
@@ -199,10 +203,10 @@ import com.snapchat.android.util.eventbus.SnapCaptureContext;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.snapchat.android.util.fragment.SnapchatFragment.a;
 import com.squareup.otto.Bus;
-import gm;
-import gq;
-import gy;
-import hd;
+import gv;
+import gz;
+import hh;
+import hm;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -210,79 +214,83 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import javax.inject.Inject;
-import lt;
-import ly;
-import ma;
-import ma.a;
-import me;
-import nf;
-import ni;
-import nj;
-import nn;
-import nq;
-import pf;
-import vb;
-import vf;
-import yf;
-import ym;
-import yq;
-import ys;
-import yt;
-import yv;
-import yv.1;
-import yv.2;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
+import lv;
+import ml;
+import mq;
+import ms;
+import ms.a;
+import mw;
+import nw;
+import nz;
+import oa;
+import oe;
+import oh;
+import pw;
+import vx;
+import wb;
+import zb;
+import zi;
+import zm;
+import zo;
+import zp;
+import zr;
+import zr.1;
+import zr.2;
 
-@avl
+@awj
 public class LandingPageActivity
   extends SnapchatActivity
-  implements ari, bfa, SnapchatFragment.a, vb
+  implements ash, bfz, SnapchatFragment.a, vx
 {
   static SecureChatService i;
   private static LandingPageActivity t;
   private int A;
   private boolean B = false;
-  private auu C;
-  private aez D;
+  private avs C;
+  private afz D;
   private boolean E = false;
   private boolean F = false;
   private boolean G = false;
-  private ys H;
+  private zo H;
   private final DictionaryEasyMetric I;
-  private final nf J;
+  private final nw J;
   private final CameraEventAnalytics K;
   private final NetworkAnalytics L;
-  private final nj M;
-  private final auw N;
+  private final oa M;
+  private final avu N;
   private final AndroidNotificationManager O;
-  private final adj P;
-  private final yf Q;
+  private final aej P;
+  private final zb Q;
   private final ConnectivityReceiver R;
-  private final ahr S;
-  private final ahq T;
-  private final anw U;
+  private final ain S;
+  private final aim T;
+  private final aot U;
   private final TitleBarManager V;
-  private final nn W;
-  private final ni X;
-  private final baa Y;
-  private final aol Z;
+  private final oe W;
+  private final nz X;
+  private final bbb Y;
+  private final bbb Z;
   protected SnapchatViewPager a;
-  private final atm aa;
-  private alx ab;
-  private ViewStub ac;
-  private vf ad;
-  private CustomVolumeView ae;
-  private SnapView af;
-  private boolean ag = false;
+  private final aph aa;
+  private final auk ab;
+  private amu ac;
+  private ViewStub ad;
+  private wb ae;
+  private CustomVolumeView af;
+  private SnapView ag;
   private boolean ah = false;
-  private final Runnable ai = new Runnable()
+  private boolean ai = false;
+  private final Runnable aj = new Runnable()
   {
     public final void run()
     {
       LandingPageActivity.a(LandingPageActivity.this);
     }
   };
-  private Handler aj = new Handler();
-  private ServiceConnection ak = new ServiceConnection()
+  private Handler ak = new Handler();
+  private ServiceConnection al = new ServiceConnection()
   {
     public final void onServiceConnected(ComponentName paramAnonymousComponentName, IBinder paramAnonymousIBinder)
     {
@@ -307,29 +315,29 @@ public class LandingPageActivity
       LandingPageActivity.i = null;
       LandingPageActivity.a(LandingPageActivity.this, false);
       LandingPageActivity.b(LandingPageActivity.this, false);
-      yq.a().c();
+      zm.a().c();
     }
   };
   protected int b = 2;
-  protected bdj c;
-  protected bcz d;
+  protected bej c;
+  protected bdz d;
   protected InChatSnapEvent e;
   protected QuickSnapEvent f;
-  protected aex g;
+  protected afx g;
   ProgressDialog h;
   @Inject
-  public abh j;
+  public ach j;
   @Inject
-  public apd k;
-  protected bez l = new bez();
-  protected yt m;
-  protected yv n;
-  protected aux o;
-  protected aup p;
+  public apz k;
+  protected bfy l = new bfy();
+  protected zp m;
+  protected zr n;
+  protected avv o;
+  protected avn p;
   public final NotificationAnalytics q = new NotificationAnalytics();
   protected Bus r;
-  public ma s;
-  private final me u;
+  public ms s;
+  private final mw u;
   private boolean v = false;
   private float w = -1.0F;
   private float x = -1.0F;
@@ -338,38 +346,39 @@ public class LandingPageActivity
   
   public LandingPageActivity()
   {
-    this(AndroidNotificationManager.a(), new yt(), new ys(), new yv(), aux.a(), DictionaryEasyMetric.a(), nf.a(), CameraEventAnalytics.a(), NetworkAnalytics.a(), nj.a(), auw.a(), new me(), adj.a(), yf.a(), ban.a(), new ConnectivityReceiver(), ahr.a(), new ahq(), anw.a(), new TitleBarManager(), nn.a(), ni.a(), baa.a(), alx.a(), aol.a(), atm.a());
+    this(AndroidNotificationManager.a(), new zp(), new zo(), new zr(), avv.a(), DictionaryEasyMetric.a(), nw.a(), CameraEventAnalytics.a(), NetworkAnalytics.a(), oa.a(), avu.a(), new mw(), aej.a(), zb.a(), bbo.a(), new ConnectivityReceiver(), ain.a(), new aim(), aot.a(), new TitleBarManager(), oe.a(), nz.a(), bbb.b(), bbb.a(), amu.a(), aph.a(), auk.a());
   }
   
-  LandingPageActivity(AndroidNotificationManager paramAndroidNotificationManager, yt paramyt, ys paramys, yv paramyv, aux paramaux, DictionaryEasyMetric paramDictionaryEasyMetric, nf paramnf, CameraEventAnalytics paramCameraEventAnalytics, NetworkAnalytics paramNetworkAnalytics, nj paramnj, auw paramauw, me paramme, adj paramadj, yf paramyf, Bus paramBus, ConnectivityReceiver paramConnectivityReceiver, ahr paramahr, ahq paramahq, anw paramanw, TitleBarManager paramTitleBarManager, nn paramnn, ni paramni, baa parambaa, alx paramalx, aol paramaol, atm paramatm)
+  LandingPageActivity(AndroidNotificationManager paramAndroidNotificationManager, zp paramzp, zo paramzo, zr paramzr, avv paramavv, DictionaryEasyMetric paramDictionaryEasyMetric, nw paramnw, CameraEventAnalytics paramCameraEventAnalytics, NetworkAnalytics paramNetworkAnalytics, oa paramoa, avu paramavu, mw parammw, aej paramaej, zb paramzb, Bus paramBus, ConnectivityReceiver paramConnectivityReceiver, ain paramain, aim paramaim, aot paramaot, TitleBarManager paramTitleBarManager, oe paramoe, nz paramnz, bbb parambbb1, bbb parambbb2, amu paramamu, aph paramaph, auk paramauk)
   {
     SnapchatApplication.b().c().a(this);
     O = paramAndroidNotificationManager;
-    m = paramyt;
-    H = paramys;
-    n = paramyv;
-    o = paramaux;
+    m = paramzp;
+    H = paramzo;
+    n = paramzr;
+    o = paramavv;
     I = paramDictionaryEasyMetric;
-    J = paramnf;
+    J = paramnw;
     K = paramCameraEventAnalytics;
     L = paramNetworkAnalytics;
-    M = paramnj;
-    N = paramauw;
-    u = paramme;
+    M = paramoa;
+    N = paramavu;
+    u = parammw;
     r = paramBus;
-    P = paramadj;
-    Q = paramyf;
+    P = paramaej;
+    Q = paramzb;
     R = paramConnectivityReceiver;
-    S = paramahr;
-    T = paramahq;
-    U = paramanw;
+    S = paramain;
+    T = paramaim;
+    U = paramaot;
     V = paramTitleBarManager;
-    W = paramnn;
-    X = paramni;
-    Y = parambaa;
-    ab = paramalx;
-    Z = paramaol;
-    aa = paramatm;
+    W = paramoe;
+    X = paramnz;
+    Y = parambbb1;
+    Z = parambbb2;
+    ac = paramamu;
+    aa = paramaph;
+    ab = paramauk;
   }
   
   private static SnapchatFragment a(android.support.v4.app.FragmentManager paramFragmentManager, int paramInt)
@@ -396,14 +405,11 @@ public class LandingPageActivity
     }
     catch (IllegalStateException localIllegalStateException)
     {
-      for (;;)
-      {
-        Timber.a("LandingPageActivity", localIllegalStateException);
-      }
+      for (;;) {}
     }
   }
   
-  private void a(aim paramaim)
+  private void a(aji paramaji)
   {
     Object localObject = mMediaMailingMetadata;
     if (mSnapType == Mediabryo.SnapType.SNAP)
@@ -418,21 +424,21 @@ public class LandingPageActivity
         ((MediaMailingMetadata)localObject).a(e.mRecipients);
       }
       localObject = n;
-      yv.a(mClientId);
+      zr.a(mClientId);
       d.a();
-      c.a(paramaim, MediaMailingMetadata.UploadStatus.WILL_UPLOAD_AFTER_SAVE);
-      localObject = new yv.1((yv)localObject, paramaim);
-      yv.a.put(mClientId, localObject);
-      ((aww)localObject).executeOnExecutor(auh.MISCELLANEOUS_EXECUTOR, new aim[] { paramaim });
+      c.a(paramaji, MediaMailingMetadata.UploadStatus.WILL_UPLOAD_AFTER_SAVE);
+      localObject = new zr.1((zr)localObject, paramaji);
+      zr.a.put(mClientId, localObject);
+      ((axu)localObject).executeOnExecutor(avf.MISCELLANEOUS_EXECUTOR, new aji[] { paramaji });
       return;
     }
     localObject = n;
-    yv.b(mClientId);
-    c.a(paramaim, MediaMailingMetadata.UploadStatus.WILL_UPLOAD_AFTER_SAVE);
+    zr.b(mClientId);
+    c.a(paramaji, MediaMailingMetadata.UploadStatus.WILL_UPLOAD_AFTER_SAVE);
     d.a();
-    localObject = new yv.2((yv)localObject, paramaim);
-    yv.b.put(mClientId, localObject);
-    ((awv)localObject).executeOnExecutor(auh.MISCELLANEOUS_EXECUTOR, new aim[] { paramaim });
+    localObject = new zr.2((zr)localObject, paramaji);
+    zr.b.put(mClientId, localObject);
+    ((axt)localObject).executeOnExecutor(avf.MISCELLANEOUS_EXECUTOR, new aji[] { paramaji });
   }
   
   private void a(final SnapchatFragment paramSnapchatFragment, String paramString, boolean paramBoolean)
@@ -457,12 +463,12 @@ public class LandingPageActivity
     if ((paramBoolean) && (localSnapchatFragment1 != null)) {
       ((FragmentTransaction)localObject).hide(localSnapchatFragment1);
     }
-    ((FragmentTransaction)localObject).add(2131362376, paramSnapchatFragment, paramString);
+    ((FragmentTransaction)localObject).add(2131362374, paramSnapchatFragment, paramString);
     ((FragmentTransaction)localObject).addToBackStack(paramString);
     try
     {
       ((FragmentTransaction)localObject).commit();
-      aj.post(new Runnable()
+      ak.post(new Runnable()
       {
         public final void run()
         {
@@ -471,10 +477,7 @@ public class LandingPageActivity
       });
       return;
     }
-    catch (IllegalStateException paramSnapchatFragment)
-    {
-      Timber.a("LandingPageActivity", paramSnapchatFragment);
-    }
+    catch (IllegalStateException paramSnapchatFragment) {}
   }
   
   private boolean a(int paramInt, KeyEvent paramKeyEvent)
@@ -482,7 +485,7 @@ public class LandingPageActivity
     switch (paramInt)
     {
     default: 
-      r.a(new bbv(paramInt, paramKeyEvent));
+      r.a(new bcv(paramInt, paramKeyEvent));
       if (d()) {
         if ((paramInt != 27) && (paramInt != 25) && (paramInt != 24) && (paramInt != 66)) {
           break label181;
@@ -494,7 +497,7 @@ public class LandingPageActivity
     {
       return true;
       if (t == null) {}
-      for (boolean bool = false;; bool = avh.a(t.getWindow()))
+      for (boolean bool = false;; bool = awf.a(t.getWindow()))
       {
         if ((!bool) || (paramKeyEvent.getAction() != 0) || ((paramInt != 25) && (paramInt != 24))) {
           break label181;
@@ -503,11 +506,11 @@ public class LandingPageActivity
         if (paramInt != 24) {
           break;
         }
-        ae.a(1);
+        af.a(1);
         return true;
       }
     } while (paramInt != 25);
-    ae.a(-1);
+    af.a(-1);
     return true;
     label181:
     return false;
@@ -527,21 +530,19 @@ public class LandingPageActivity
   
   static void j()
   {
-    if (i != null)
-    {
-      i.a();
-      return;
+    if (i != null) {
+      imSecureChatSession.b();
     }
-    Timber.f("LandingPageActivity", "Cannot start a session because sSecureChatService is null.", new Object[0]);
   }
   
-  @avl
+  @awj
   private void n()
   {
     FragmentManagerImpl localFragmentManagerImpl = mFragments;
     while (localFragmentManagerImpl.getBackStackEntryCount() > 0) {
       localFragmentManagerImpl.popBackStackImmediate();
     }
+    r.a(new bbm());
     if (a != null) {
       a.setPagingEnabled(true);
     }
@@ -559,13 +560,13 @@ public class LandingPageActivity
   
   private void p()
   {
-    if (ae != null) {
+    if (af != null) {
       return;
     }
-    ae = ((CustomVolumeView)((ViewStub)findViewById(2131362381)).inflate().findViewById(2131362197));
+    af = ((CustomVolumeView)((ViewStub)findViewById(2131362379)).inflate().findViewById(2131362197));
   }
   
-  @cgc
+  @chd
   private SnapchatFragment q()
   {
     Object localObject = mFragments;
@@ -601,7 +602,7 @@ public class LandingPageActivity
   {
     Intent localIntent = new Intent(this, SecureChatService.class);
     startService(localIntent);
-    if (!bindService(localIntent, ak, 1)) {
+    if (!bindService(localIntent, al, 1)) {
       stopService(localIntent);
     }
   }
@@ -616,8 +617,8 @@ public class LandingPageActivity
     if (s != null) {
       return;
     }
-    ((ViewStub)findViewById(2131362380)).inflate();
-    s = new ma(this, findViewById(2131362396));
+    ((ViewStub)findViewById(2131362378)).inflate();
+    s = new ms(this, findViewById(2131362394));
   }
   
   public final void a(int paramInt, boolean paramBoolean)
@@ -628,16 +629,16 @@ public class LandingPageActivity
     a.setCurrentItem(paramInt, paramBoolean);
   }
   
-  @avl
-  protected final void a(ajv paramajv)
+  @awj
+  protected final void a(akp paramakp)
   {
-    super.a(paramajv);
-    nf localnf = J;
+    super.a(paramakp);
+    nw localnw = J;
     if ((mUserLoadMetric != null) && (mDidLoadFromDatabase)) {
       mUserLoadMetric.a(false);
     }
     mUserLoadMetric = null;
-    Timber.c("LandingPageActivity", "onUserLoaded " + paramajv, new Object[0]);
+    new StringBuilder("onUserLoaded ").append(paramakp);
     if ((mUser != null) && (b()))
     {
       b(true);
@@ -649,25 +650,25 @@ public class LandingPageActivity
     }
     for (;;)
     {
-      if ((ajx.m()) && (F))
+      if ((akr.m()) && (F))
       {
-        ajx.g(true);
+        akr.g(true);
         AnalyticsEvents.a();
-        nf.a(getIntent());
-        new alz(this).a(this);
+        nw.a(getIntent());
+        new amw(this).a(this);
         if (mUser != null) {
-          Z.a(false, true);
+          aa.a(false, true);
         }
         t();
         F = false;
       }
       return;
-      if (ajx.H())
+      if (akr.H())
       {
         o();
         return;
       }
-      asr.a(this);
+      atq.a(this);
       b(false);
     }
   }
@@ -693,19 +694,19 @@ public class LandingPageActivity
   
   final boolean b()
   {
-    if (ajx.v()) {}
+    if (akr.v()) {}
     do
     {
       do
       {
         return false;
-        if (ajx.m()) {
+        if (akr.m()) {
           break;
         }
       } while (mUser == null);
       mUser.w();
       return false;
-    } while (ajx.H());
+    } while (akr.H());
     return true;
   }
   
@@ -722,18 +723,16 @@ public class LandingPageActivity
   public boolean dispatchTouchEvent(MotionEvent paramMotionEvent)
   {
     int i2 = 0;
-    if ((!a.mIsPagingEnabled) && (a.mIsAnimating) && (f()))
-    {
-      Timber.a("LandingPageActivity", "Animating pager while paging is disabled. Ignoring touch event.", new Object[0]);
+    if ((!a.mIsPagingEnabled) && (a.mIsAnimating) && (f())) {
       return true;
     }
     if (paramMotionEvent.getAction() == 0) {
-      Y.a(a.getLastScrolledPage());
+      Y.a(new String[] { a.getLastScrolledPage() });
     }
     Object localObject;
     int i1;
-    label179:
-    label183:
+    label173:
+    label177:
     for (;;)
     {
       localObject = q();
@@ -752,20 +751,20 @@ public class LandingPageActivity
         {
           localObject = a;
           if ((mUserSwipedIntoChatEvent == null) || (!mUserSwipedIntoChatEvent.mIsFlinging)) {
-            break label179;
+            break label173;
           }
         }
         for (i1 = 1;; i1 = 0)
         {
           if (i1 == 0) {
-            break label183;
+            break label177;
           }
           Y.mDeferPause = true;
           break;
         }
       }
     }
-    label231:
+    label225:
     float f1;
     float f2;
     if ((a.getCurrentItem() == 1) && (f()))
@@ -774,19 +773,19 @@ public class LandingPageActivity
       if (i1 == 0)
       {
         if ((a.getCurrentItem() != 0) || (!f())) {
-          break label291;
+          break label285;
         }
         i1 = 1;
         if (i1 == 0) {
-          break label386;
+          break label378;
         }
       }
       localObject = p;
       f1 = w;
       f2 = x;
       i1 = y;
-      if (!mSnapView.c()) {
-        break label297;
+      if (!mSnapView.b()) {
+        break label291;
       }
       mTapToViewTouchListener.a(paramMotionEvent);
     }
@@ -795,10 +794,10 @@ public class LandingPageActivity
       return super.dispatchTouchEvent(paramMotionEvent);
       i1 = 0;
       break;
-      label291:
+      label285:
       i1 = 0;
-      break label231;
-      label297:
+      break label225;
+      label291:
       switch (paramMotionEvent.getActionMasked())
       {
       default: 
@@ -809,7 +808,7 @@ public class LandingPageActivity
       case 2: 
         for (;;)
         {
-          ((aup)localObject).f();
+          ((avn)localObject).f();
           break;
           if (!mLongPressStarted) {
             break;
@@ -820,7 +819,7 @@ public class LandingPageActivity
             }
           }
         }
-        label386:
+        label378:
         if (c())
         {
           localObject = p;
@@ -834,7 +833,7 @@ public class LandingPageActivity
           while (bool)
           {
             return true;
-            if (mSnapView.c())
+            if (mSnapView.b())
             {
               i1 = i2;
               if (mVerticalSwipeMyStory != null)
@@ -859,7 +858,7 @@ public class LandingPageActivity
             else
             {
               if ((paramMotionEvent.getActionMasked() == 2) && ((Math.abs(paramMotionEvent.getRawY() - f2) > i1) || (Math.abs(paramMotionEvent.getRawX() - f1) > i1))) {
-                ((aup)localObject).f();
+                ((avn)localObject).f();
               }
               bool = false;
             }
@@ -883,30 +882,29 @@ public class LandingPageActivity
     return mFragments.getBackStackEntryCount() == 0;
   }
   
-  public final bcz g()
+  public final bdz g()
   {
     return d;
   }
   
-  public final bdj h()
+  public final bej h()
   {
     return c;
   }
   
   public final FeedFragment.a k()
   {
-    return ad;
+    return ae;
   }
   
   public final SnapView l()
   {
-    return af;
+    return ag;
   }
   
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
     e();
-    Timber.c("LandingPageActivity", "Activity Request with code %d, and Result with code %d", new Object[] { Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) });
     if (paramInt2 == 1) {
       onLogoutEvent(null);
     }
@@ -922,24 +920,24 @@ public class LandingPageActivity
       case 1001: 
         if (paramInt2 == -1)
         {
-          paramIntent = aur.a(paramIntent.getData(), this);
+          paramIntent = avp.a(paramIntent.getData(), this);
           if (paramIntent == null)
           {
             AlertDialogUtils.a(2131493329, this);
             return;
           }
-          mUser = ajv.a(this);
-          ajj.a locala = new ajj.a();
+          mUser = akp.a(this);
+          akf.a locala = new akf.a();
           mRawImageBitmap = paramIntent;
-          locala = (ajj.a)locala;
+          locala = (akf.a)locala;
           mWidth = paramIntent.getWidth();
-          locala = (ajj.a)locala;
+          locala = (akf.a)locala;
           mHeight = paramIntent.getHeight();
-          paramIntent = (ajj.a)locala;
+          paramIntent = (akf.a)locala;
           mSnapType = Mediabryo.SnapType.SNAP;
-          paramIntent = (ajj.a)paramIntent;
+          paramIntent = (akf.a)paramIntent;
           mIsChatMedia = true;
-          onSnapCapturedEvent(new bdj(((ajj.a)paramIntent).c(), SnapCaptureContext.PHONE_GALLERY));
+          onSnapCapturedEvent(new bej(((akf.a)paramIntent).c(), SnapCaptureContext.PHONE_GALLERY));
           return;
         }
         break;
@@ -1004,16 +1002,16 @@ public class LandingPageActivity
     a(localFragmentManagerImpl, i1 - 1 - 1).f(true);
   }
   
-  @boh
-  public void onCameraStateEvent(bap parambap)
+  @bpi
+  public void onCameraStateEvent(bbq parambbq)
   {
-    if (parambap.a()) {
+    if (parambbq.a()) {
       p.a(SnapViewEventAnalytics.EndReason.SWIPED_DOWN);
     }
   }
   
-  @boh
-  public void onCancelInChatSnapEvent(bar parambar)
+  @bpi
+  public void onCancelInChatSnapEvent(bbs parambbs)
   {
     int i1;
     if (e != null)
@@ -1030,8 +1028,8 @@ public class LandingPageActivity
     a(0, false);
   }
   
-  @boh
-  public void onCancelQuickSnapEvent(bas parambas)
+  @bpi
+  public void onCancelQuickSnapEvent(bbt parambbt)
   {
     int i1;
     if (f != null)
@@ -1048,24 +1046,24 @@ public class LandingPageActivity
     a(0, false);
   }
   
-  @boh
-  public void onCancelReplyEvent(bat parambat)
+  @bpi
+  public void onCancelReplyEvent(bbu parambbu)
   {
     d = null;
     g = null;
     M.d();
   }
   
-  @boh
-  public void onChangeBrightnessEvent(bav parambav)
+  @bpi
+  public void onChangeBrightnessEvent(bbw parambbw)
   {
     WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
     screenBrightness = mBrightness;
     getWindow().setAttributes(localLayoutParams);
   }
   
-  @boh
-  public void onChangeOrientationEvent(baw parambaw)
+  @bpi
+  public void onChangeOrientationEvent(bbx parambbx)
   {
     if (getRequestedOrientation() == mRequestedOrientation) {
       return;
@@ -1076,13 +1074,13 @@ public class LandingPageActivity
   public void onConfigurationChanged(Configuration paramConfiguration)
   {
     super.onConfigurationChanged(paramConfiguration);
-    int i1 = avh.d(this);
+    int i1 = awf.d(this);
     boolean bool;
     if (A != i1)
     {
       A = i1;
-      bool = avh.e(this);
-      Timber.a("LandingPageActivity", "Rotated to " + i1 + " isPortrait? " + bool, new Object[0]);
+      bool = awf.e(this);
+      new StringBuilder("Rotated to ").append(i1).append(" isPortrait? ").append(bool);
       paramConfiguration = N;
       if ((mIsImmersiveModeSupported) && (mDecorView != null)) {}
     }
@@ -1095,11 +1093,13 @@ public class LandingPageActivity
   
   protected void onCreate(Bundle paramBundle)
   {
-    nf.d();
-    o.a(aux.a.ACTIVITY_CREATE_CHECKPOINT$6dad94c5);
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
+    nw.d();
+    o.a(avv.a.ACTIVITY_CREATE_CHECKPOINT$6dad94c5);
     J.c();
     q.a();
-    K.mDictionaryEasyMetric.a("CAMERA_READY", true);
+    K.mEasyMetricManager.b("CAMERA_READY").b();
     super.onCreate(paramBundle);
     boolean bool;
     if (paramBundle != null)
@@ -1108,22 +1108,21 @@ public class LandingPageActivity
       b = paramBundle.getInt("view_pager_index", 2);
       bool = paramBundle.getBoolean("should_pop_fragments");
       if ((b != 2) || (mWaitingForActivityResult)) {
-        break label574;
+        break label564;
       }
       n();
       e = null;
     }
     for (;;)
     {
-      Timber.c("LandingPageActivity", "Native free space = %d", new Object[] { Long.valueOf(Debug.getNativeHeapFreeSize()) });
+      Debug.getNativeHeapFreeSize();
       paramBundle = getAssets();
-      atj.mRobotoBoldCondensed = Typeface.createFromAsset(paramBundle, "Roboto-BoldCondensed.ttf");
-      bwu.a = Typeface.createFromAsset(paramBundle, "Roboto-Light.ttf");
+      auh.mRobotoBoldCondensed = Typeface.createFromAsset(paramBundle, "Roboto-BoldCondensed.ttf");
+      bxv.a = Typeface.createFromAsset(paramBundle, "Roboto-Light.ttf");
       r.c(this);
       z = true;
       System.setProperty("org.joda.time.DateTimeZone.Provider", "com.snapchat.android.util.DateTimeZoneProvider");
-      Timber.c("LandingPageActivity", "Landing Page Activity content view set", new Object[0]);
-      setContentView(2130968683);
+      setContentView(2130968684);
       getWindow().setBackgroundDrawable(null);
       paramBundle = N;
       Object localObject = getWindow();
@@ -1135,44 +1134,41 @@ public class LandingPageActivity
         mDefaultBottomPadding = mDecorView.getPaddingBottom();
       }
       k.a(this);
-      a = ((SnapchatViewPager)findViewById(2131362377));
-      ac = ((ViewStub)findViewById(2131362378));
-      ad = new vf(this, a);
+      a = ((SnapchatViewPager)findViewById(2131362375));
+      ad = ((ViewStub)findViewById(2131362376));
       try
       {
         a.getRootView().getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
         {
           public final void onGlobalLayout()
           {
-            r.a(new bbt());
+            r.a(new bct());
           }
         });
-        p = aup.d();
-        af = ((SnapView)findViewById(2131362379));
+        p = avn.d();
+        ag = ((SnapView)findViewById(2131362377));
         paramBundle = p;
-        mSnapView = af;
-        mVerticalSwipeMyStory = ((VerticalSwipeLayout)mSnapView.findViewById(2131362846));
+        mSnapView = ag;
+        mVerticalSwipeMyStory = ((VerticalSwipeLayout)mSnapView.findViewById(2131362839));
         y = ViewConfiguration.get(this).getScaledTouchSlop();
-        awq.a();
+        ae = new wb(this, a, ag);
+        axo.a();
         if (Build.VERSION.SDK_INT >= 18)
         {
           paramBundle = getWindow().getAttributes();
           rotationAnimation = 1;
           getWindow().setAttributes(paramBundle);
         }
-        C = new ly(mFragments);
+        C = new mq(mFragments);
         a.setAdapter(C);
         C.mObservable.notifyChanged();
-      }
-      catch (NullPointerException paramBundle)
-      {
         try
         {
           a.getRootView().getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
           {
             public final void onGlobalLayout()
             {
-              r.a(new bbt());
+              r.a(new bct());
             }
           });
           a.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener()
@@ -1182,7 +1178,7 @@ public class LandingPageActivity
             private int d = 0;
             private boolean e = false;
             
-            @avl
+            @awj
             private void a(int paramAnonymousInt)
             {
               Object localObject2 = mFragments;
@@ -1191,7 +1187,7 @@ public class LandingPageActivity
                 return;
               }
               if ((paramAnonymousInt == c) && ((c == 1) || (c == 3))) {
-                bmDictionaryEasyMetric.a("CAMERA_DELAY");
+                bmEasyMetricManager.b("CAMERA_DELAY", "");
               }
               Object localObject1 = a.a(paramAnonymousInt);
               if (localObject1 != null)
@@ -1206,7 +1202,7 @@ public class LandingPageActivity
                   }
                 }
               }
-              Timber.g("LandingPageActivity", "markFragmentVisibilityChanged to: " + paramAnonymousInt + " from: " + c, new Object[0]);
+              new StringBuilder("markFragmentVisibilityChanged to: ").append(paramAnonymousInt).append(" from: ").append(c);
               c = paramAnonymousInt;
               if (c == 4) {
                 LandingPageActivity.d(LandingPageActivity.this);
@@ -1224,7 +1220,7 @@ public class LandingPageActivity
               {
                 e = false;
                 if (cmDeferPause) {
-                  LandingPageActivity.c(LandingPageActivity.this).a(SnapchatViewPager.a(Integer.valueOf(b)), false);
+                  LandingPageActivity.c(LandingPageActivity.this).b(new String[] { SnapchatViewPager.a(Integer.valueOf(b)), "HORIZONTAL" });
                 }
                 e();
                 a(b);
@@ -1233,29 +1229,32 @@ public class LandingPageActivity
                 i = c;
                 j = b;
                 if (j != 1) {
-                  break label129;
+                  break label163;
                 }
                 if (i == 2)
                 {
-                  mDictionaryEasyMetric.a("EXIT_CAMERA_VIEW", "context", "feed");
-                  mDictionaryEasyMetric.b("EXIT_CAMERA_VIEW");
+                  co.a(mEasyMetricManager.c("EXIT_CAMERA_VIEW", ""), "CameraEventAnalytics::onFeedPageSelected: EXIT_CAMERA_VIEW has not been created.");
+                  mEasyMetricManager.a("EXIT_CAMERA_VIEW", "").a("context", "feed");
+                  mEasyMetricManager.c("EXIT_CAMERA_VIEW");
                 }
               }
               for (;;)
               {
                 d = paramAnonymousInt;
                 return;
-                label129:
+                label163:
                 if ((j == 3) && (i == 2))
                 {
-                  mDictionaryEasyMetric.a("EXIT_CAMERA_VIEW", "context", "story");
-                  mDictionaryEasyMetric.b("EXIT_CAMERA_VIEW");
+                  co.a(mEasyMetricManager.c("EXIT_CAMERA_VIEW", ""), "CameraEventAnalytics::onStoryPageSelected: EXIT_CAMERA_VIEW has not been created.");
+                  mEasyMetricManager.a("EXIT_CAMERA_VIEW", "").a("context", "story");
+                  mEasyMetricManager.c("EXIT_CAMERA_VIEW");
                 }
               }
             }
             
             public final void onPageScrolled(int paramAnonymousInt1, float paramAnonymousFloat, int paramAnonymousInt2)
             {
+              boolean bool = false;
               SnapchatFragment localSnapchatFragment;
               if (paramAnonymousInt2 == 0)
               {
@@ -1263,7 +1262,7 @@ public class LandingPageActivity
                 {
                   localSnapchatFragment = a.a(b);
                   if (f()) {
-                    break label71;
+                    break label74;
                   }
                   paramAnonymousInt1 = 1;
                   if ((localSnapchatFragment != null) && (paramAnonymousInt1 == 0)) {
@@ -1272,30 +1271,27 @@ public class LandingPageActivity
                 }
                 e = false;
               }
-              label71:
-              while (e) {
-                for (;;)
+              label74:
+              do
+              {
+                do
                 {
                   return;
                   paramAnonymousInt1 = 0;
+                  break;
+                } while (e);
+                if ((c != 2) && ((paramAnonymousInt1 == 1) || (paramAnonymousInt1 == 2))) {
+                  LandingPageActivity.b(LandingPageActivity.this).a(CameraEventAnalytics.CameraContext.SWIPE);
                 }
-              }
-              if ((c != 2) && ((paramAnonymousInt1 == 1) || (paramAnonymousInt1 == 2))) {
-                LandingPageActivity.b(LandingPageActivity.this).a(CameraEventAnalytics.CameraContext.SWIPE);
-              }
-              if (paramAnonymousInt2 < a.getWidth() / 2) {}
-              for (boolean bool = true;; bool = false)
-              {
+                if (paramAnonymousInt2 < a.getWidth() / 2) {
+                  bool = true;
+                }
                 e = true;
                 localSnapchatFragment = a.a(b);
-                Timber.g("LandingPageActivity", "onScrollStart from: " + b, new Object[0]);
-                if (localSnapchatFragment == null) {
-                  break;
-                }
-                localSnapchatFragment.e(bool);
-                LandingPageActivity.a(LandingPageActivity.this, localSnapchatFragment, bool);
-                return;
-              }
+                new StringBuilder("onScrollStart from: ").append(b);
+              } while (localSnapchatFragment == null);
+              localSnapchatFragment.e(bool);
+              LandingPageActivity.a(LandingPageActivity.this, localSnapchatFragment, bool);
             }
             
             public final void onPageSelected(int paramAnonymousInt)
@@ -1307,19 +1303,19 @@ public class LandingPageActivity
             }
           });
           registerReceiver(R, ConnectivityReceiver.a);
-          azu.a(this);
+          bat.a(this);
           paramBundle = V;
-          localObject = aj;
+          localObject = ak;
           Window localWindow = getWindow();
           Resources localResources = getResources();
           mHandler = ((Handler)localObject);
           mWindow = localWindow;
           mResources = localResources;
-          onTitleBarEvent(new bel(TitleBarManager.Visibility.HIDDEN));
+          onTitleBarEvent(new bfk(TitleBarManager.Visibility.HIDDEN));
           r();
-          nf.e();
+          nw.e();
           return;
-          label574:
+          label564:
           if ((b == 0) && (!mWaitingForActivityResult))
           {
             n();
@@ -1330,17 +1326,15 @@ public class LandingPageActivity
           }
           b = 2;
           n();
-          continue;
-          paramBundle = paramBundle;
-          Timber.a("LandingPageActivity", paramBundle);
         }
         catch (NullPointerException paramBundle)
         {
-          for (;;)
-          {
-            Timber.a("LandingPageActivity", paramBundle);
-          }
+          for (;;) {}
         }
+      }
+      catch (NullPointerException paramBundle)
+      {
+        for (;;) {}
       }
     }
   }
@@ -1356,19 +1350,19 @@ public class LandingPageActivity
     }
     unregisterReceiver(R);
     z = false;
-    ajx.r(false);
-    azu.a();
+    akr.q(false);
+    bat.a();
   }
   
-  @boh
-  public void onDisplayInAppNotificationEvent(bbg parambbg)
+  @bpi
+  public void onDisplayInAppNotificationEvent(bcg parambcg)
   {
     a();
-    s.a(parambbg);
+    s.a(parambcg);
   }
   
-  @boh
-  public void onEditionClose(aew paramaew)
+  @bpi
+  public void onEditionClose(afw paramafw)
   {
     Object localObject = mFragments;
     int i1 = ((android.support.v4.app.FragmentManager)localObject).getBackStackEntryCount() - 1;
@@ -1387,68 +1381,68 @@ public class LandingPageActivity
     a(4);
   }
   
-  @boh
-  public void onEnableLargeUiUpdatesOnFragment(bbj parambbj)
+  @bpi
+  public void onEnableLargeUiUpdatesOnFragment(bcj parambcj)
   {
     if (a == null) {}
     do
     {
       return;
-      parambbj = a.a(pageNumber);
-    } while ((parambbj == null) || (mAreLargeUiUpdatesEnabled));
-    parambbj.c();
+      parambcj = a.a(pageNumber);
+    } while ((parambcj == null) || (mAreLargeUiUpdatesEnabled));
+    parambcj.c();
   }
   
-  @boh
-  public void onForceVerificationEvent(final bbm parambbm)
+  @bpi
+  public void onForceVerificationEvent(final bcm parambcm)
   {
-    ajx.p(true);
+    akr.o(true);
     new AlertDialog.Builder(this).setTitle(2131493223).setMessage(mErrorMessage).setCancelable(false).setPositiveButton(2131493224, new DialogInterface.OnClickListener()
     {
       public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
       {
-        PhoneVerificationAnalytics.a(false, ajx.f());
-        r.a(new bdw(new SettingsPhoneVerificationFragment(parambbm)));
+        PhoneVerificationAnalytics.a(false, akr.f());
+        r.a(new bev(new SettingsPhoneVerificationFragment(parambcm)));
       }
     }).setNegativeButton(2131493222, new DialogInterface.OnClickListener()
     {
       public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
       {
-        PhoneVerificationAnalytics.a(true, ajx.f());
+        PhoneVerificationAnalytics.a(true, akr.f());
         paramAnonymousDialogInterface.cancel();
       }
     }).show();
   }
   
-  @boh
-  public void onGetCurrentActivityEvent(bbr parambbr) {}
+  @bpi
+  public void onGetCurrentActivityEvent(bcr parambcr) {}
   
-  @boh
-  public void onImageSnapBitmapReadyForSnapPreview(bca parambca)
+  @bpi
+  public void onImageSnapBitmapReadyForSnapPreview(bda parambda)
   {
-    parambca = mBitmap;
+    parambda = mBitmap;
     SnapPreviewFragment localSnapPreviewFragment = (SnapPreviewFragment)mFragments.findFragmentByTag("PreviewFragment");
     if (localSnapPreviewFragment != null)
     {
-      a.mRawImageBitmap = parambca;
+      a.mRawImageBitmap = parambda;
       b.setMediabryo(a);
       f.b();
       return;
     }
-    c.mMediabryo.mRawImageBitmap = parambca;
+    c.mMediabryo.mRawImageBitmap = parambda;
   }
   
-  @boh
-  public void onInAppNotificationEvent(bcb parambcb)
+  @bpi
+  public void onInAppNotificationEvent(bdb parambdb)
   {
-    parambcb = q();
-    if (parambcb == null) {
+    parambdb = q();
+    if (parambdb == null) {
       return;
     }
-    ab.a(parambcb.k(), ac);
+    ac.a(parambdb.k(), ad);
   }
   
-  @boh
+  @bpi
   public void onInChatSnapEvent(InChatSnapEvent paramInChatSnapEvent)
   {
     if (a != null) {
@@ -1473,28 +1467,25 @@ public class LandingPageActivity
     return super.onKeyUp(paramInt, paramKeyEvent);
   }
   
-  @boh
-  public void onLeaveInAppNotificationPosterEvent(bcd parambcd)
+  @bpi
+  public void onLeaveInAppNotificationPosterEvent(bdd parambdd)
   {
     a();
     s.a(sourceId);
   }
   
-  @boh
-  public void onLogoutEvent(bch parambch)
+  @bpi
+  public void onLogoutEvent(bdh parambdh)
   {
-    if (i != null)
-    {
-      parambch = i;
-      Timber.g("SecureChatService", "CHAT-LOG: SecureChatService STOP SESSION", new Object[0]);
-      mSecureChatSession.c();
+    if (i != null) {
+      imSecureChatSession.c();
     }
-    AlertDialogUtils.a(2131493606, this);
-    asr.a(this);
+    AlertDialogUtils.a(2131493604, this);
+    atq.a(this);
   }
   
-  @boh
-  public void onMessagingGatewayInfoUpdatedEvent(bci parambci)
+  @bpi
+  public void onMessagingGatewayInfoUpdatedEvent(bdi parambdi)
   {
     if (i == null)
     {
@@ -1515,7 +1506,7 @@ public class LandingPageActivity
   {
     super.onPause();
     t = null;
-    r.a(new bel(TitleBarManager.LockedState.NOT_LOCKED));
+    r.a(new bfk(TitleBarManager.LockedState.NOT_LOCKED));
     if (i != null) {
       imIsAppInForeground = false;
     }
@@ -1524,43 +1515,44 @@ public class LandingPageActivity
     SnapchatFragment localSnapchatFragment = q();
     if (localSnapchatFragment != null)
     {
-      localSnapchatFragment.f_();
-      ag = localSnapchatFragment.l_();
-      long l1 = localSnapchatFragment.z_();
+      localSnapchatFragment.e_();
+      ah = localSnapchatFragment.j_();
+      long l1 = localSnapchatFragment.y_();
       if (l1 >= 0L)
       {
-        Timber.a("LandingPageActivity", "Schedule to set flag to pop stacked fragments after " + l1 + " ms.", new Object[0]);
-        aj.postDelayed(ai, l1);
+        new StringBuilder("Schedule to set flag to pop stacked fragments after ").append(l1).append(" ms.");
+        ak.postDelayed(aj, l1);
       }
     }
     S.c();
     p.a(SnapViewEventAnalytics.EndReason.ENTER_BACKGROUND);
-    aut.a();
+    avr.a();
     r.b(a);
     r.b(this);
     z = false;
     if (mUser != null)
     {
       mUser.x();
-      bgp.b(new adj.9(P));
+      bhp.b(new aej.10(P));
     }
-    Y.a("Unknown", false);
+    Y.b(new String[] { "Unknown", "HORIZONTAL" });
+    Z.b(new String[0]);
   }
   
-  @boh
-  public void onPushDelayedInAppNotificationEvent(bcs parambcs)
+  @bpi
+  public void onPushDelayedInAppNotificationEvent(bds parambds)
   {
     a();
-    ma localma = s;
-    parambcs = sourceId;
-    ma.a locala = (ma.a)g.get(parambcs);
-    g.remove(parambcs);
+    ms localms = s;
+    parambds = sourceId;
+    ms.a locala = (ms.a)g.get(parambds);
+    g.remove(parambds);
     if (locala != null) {
-      localma.a(locala);
+      localms.a(locala);
     }
   }
   
-  @boh
+  @bpi
   public void onQuickSnapEvent(QuickSnapEvent paramQuickSnapEvent)
   {
     if (a != null) {
@@ -1569,18 +1561,18 @@ public class LandingPageActivity
     f = paramQuickSnapEvent;
   }
   
-  @boh
-  public void onRecentStoryReplyEvent(bcu parambcu)
+  @bpi
+  public void onRecentStoryReplyEvent(bdu parambdu)
   {
-    nj localnj = M;
-    Timber.a("RecentStoryReplyAnalyticsManager", "startReplying to " + friendUsername, new Object[0]);
-    mRecentStoryReplyEvent = parambcu;
+    oa localoa = M;
+    new StringBuilder("startReplying to ").append(friendUsername);
+    mRecentStoryReplyEvent = parambdu;
     mHasReplied = false;
     a(0, false);
   }
   
-  @boh
-  public void onReplaceInAppNotificationEvent(bcy parambcy)
+  @bpi
+  public void onReplaceInAppNotificationEvent(bdy parambdy)
   {
     a();
     if (s.a(sourceId)) {
@@ -1588,27 +1580,27 @@ public class LandingPageActivity
     }
   }
   
-  @boh
-  public void onReplySnapEvent(bcz parambcz)
+  @bpi
+  public void onReplySnapEvent(bdz parambdz)
   {
-    d = parambcz;
+    d = parambdz;
     n();
     a.setCurrentItem(2, false);
   }
   
   protected void onRestart()
   {
-    o.a(aux.a.ACTIVITY_RESTART_CHECKPOINT$6dad94c5);
+    o.a(avv.a.ACTIVITY_RESTART_CHECKPOINT$6dad94c5);
     J.c();
     q.a();
-    K.mDictionaryEasyMetric.a("CAMERA_READY", true);
+    K.mEasyMetricManager.b("CAMERA_READY").b();
     super.onRestart();
   }
   
-  @avl
+  @awj
   protected void onResume()
   {
-    nf.d();
+    nw.d();
     super.onResume();
     t = this;
     if (i != null) {
@@ -1616,12 +1608,12 @@ public class LandingPageActivity
     }
     O.d = true;
     Q.a(true);
-    aj.removeCallbacks(ai);
+    ak.removeCallbacks(aj);
     if (!z) {
       r.c(this);
     }
     r.c(a);
-    if (ajx.H())
+    if (akr.H())
     {
       J.b();
       o();
@@ -1630,7 +1622,7 @@ public class LandingPageActivity
     if (mUser == null) {
       F = true;
     }
-    while ((ajx.m()) && (!ajx.V()))
+    while ((akr.m()) && (!akr.V()))
     {
       J.b();
       startActivityForResult(new Intent(this, ScAcceptTermsActivity.class), 1002);
@@ -1638,15 +1630,15 @@ public class LandingPageActivity
       if (!b())
       {
         J.b();
-        asr.a(this);
+        atq.a(this);
         b(false);
         return;
       }
       AnalyticsEvents.a();
-      nf.a(getIntent());
-      new alz(this).a(this);
-      Z.a(false, true);
-      ajq.a().e();
+      nw.a(getIntent());
+      new amw(this).a(this);
+      aa.a(false, true);
+      akk.a().e();
       t();
     }
     if (((KeyguardManager)getSystemService("keyguard")).inKeyguardRestrictedInputMode()) {
@@ -1656,14 +1648,14 @@ public class LandingPageActivity
     label257:
     int i1;
     boolean bool;
-    if (ah)
+    if (ai)
     {
       n();
-      ah = false;
+      ai = false;
       i1 = localIntent.getIntExtra("goToFragmentNum", 2);
       bool = f();
-      if ((!bool) || (abh.a(localIntent) == null)) {
-        break label624;
+      if ((!bool) || (ach.a(localIntent) == null)) {
+        break label635;
       }
       i1 = 3;
     }
@@ -1684,16 +1676,16 @@ public class LandingPageActivity
         }
         localObject1 = getIntent();
         if (localObject1 == null) {
-          break label1027;
+          break label1005;
         }
         if (((Intent)localObject1).getBooleanExtra("fromServerNotification", false))
         {
-          ni.c(((Intent)localObject1).getStringExtra("type"));
+          nz.c(((Intent)localObject1).getStringExtra("type"));
           ((Intent)localObject1).removeExtra("fromServerNotification");
         }
         if (((Intent)localObject1).getBooleanExtra("recovery_code_used", false))
         {
-          AlertDialogUtils.b(this, getString(2131493568), getString(2131493567));
+          AlertDialogUtils.b(this, getString(2131493566), getString(2131493565));
           ((Intent)localObject1).removeExtra("recovery_code_used");
         }
         AnalyticsEvents.i(((Intent)localObject1).getBooleanExtra("fromNotification", false));
@@ -1707,33 +1699,34 @@ public class LandingPageActivity
           ((SharedPreferences.Editor)localObject1).remove("RESUMING_FROM_SWIPE_MESSAGE");
           ((SharedPreferences.Editor)localObject1).apply();
         }
-        if (ajx.m())
+        if (akr.m())
         {
-          aya.a().b();
-          bft.a();
-          bft.b();
+          ayy.a().b();
+          bgt.a();
+          bgt.b();
         }
-        if (ajx.ab()) {
+        if (akr.aa()) {
           S.b();
         }
         localObject1 = N;
-        bool = avh.e(this);
+        bool = awf.e(this);
         if ((mIsImmersiveModeSupported) && (mDecorView != null)) {
-          break label1034;
+          break label1012;
         }
         label594:
-        nf.e();
+        nw.e();
+        Z.a(new String[0]);
         return;
-        if ((!localIntent.getBooleanExtra("fromServerNotification", false)) || (ag)) {
+        if ((!localIntent.getBooleanExtra("fromServerNotification", false)) || (ah)) {
           break label257;
         }
         n();
         break label257;
-        label624:
+        label635:
         if ((!bool) || (i1 == 2)) {
           if ((ChatFragment.n()) || (ChatFragment.m())) {
             i1 = 0;
-          } else if ((bool) && (b == 4)) {
+          } else if ((bool) && ((b == 4) || (b == 3))) {
             i1 = 2;
           } else {
             i1 = b;
@@ -1743,26 +1736,24 @@ public class LandingPageActivity
       }
     }
     Object localObject1 = localIntent.getStringExtra("friendUsername");
-    if ((ChatFragment.n()) && ((TextUtils.isEmpty((CharSequence)localObject1)) || (TextUtils.equals((CharSequence)localObject1, axi.b(ChatFragment.b)))))
+    if ((ChatFragment.n()) && ((TextUtils.isEmpty((CharSequence)localObject1)) || (TextUtils.equals((CharSequence)localObject1, ayg.b(ChatFragment.b)))))
     {
       ((AlarmManager)getSystemService("alarm")).cancel(ChatFragment.a);
-      localObject1 = axi.b(ChatFragment.b);
+      localObject1 = ayg.b(ChatFragment.b);
       ChatFragment.o();
     }
     for (int i2 = 1;; i2 = 0)
     {
-      label824:
+      label802:
       long l1;
       if (!TextUtils.isEmpty((CharSequence)localObject1))
       {
-        Timber.g("LandingPageActivity", "CHAT-LOG: LandingPageActivity setInitialFragment setFriendUsername: " + (String)localObject1, new Object[0]);
         ChatFragment.a((String)localObject1);
         localObject2 = (ChatFragment)a.a(0);
         if (localObject2 != null)
         {
-          Timber.g("LandingPageActivity", "CHAT-LOG: LandingPageActivity setInitialFragment updateFriendIfNecessary", new Object[0]);
           if (i2 != 0) {
-            break label910;
+            break label888;
           }
           bool = true;
           ((ChatFragment)localObject2).a(bool);
@@ -1771,12 +1762,12 @@ public class LandingPageActivity
         l1 = localIntent.getLongExtra("seq_num", 0L);
         if ((bool) && (l1 != 0L))
         {
-          localObject1 = akc.b().a((String)localObject1);
+          localObject1 = akx.c().a((String)localObject1);
           if (localObject1 == null) {
-            break label926;
+            break label904;
           }
           if (mLastSeqNumOfTheirChatIReleased < l1) {
-            break label915;
+            break label893;
           }
           AnalyticsEvents.Z();
         }
@@ -1786,12 +1777,12 @@ public class LandingPageActivity
         localIntent.removeExtra("friendUsername");
         a.setChatFragmentAccessible(true);
         break;
-        label910:
+        label888:
         bool = false;
-        break label824;
-        label915:
+        break label802;
+        label893:
         if (mTheirLastSeqNum < l1) {
-          label926:
+          label904:
           AnalyticsEvents.Y();
         }
       }
@@ -1801,22 +1792,21 @@ public class LandingPageActivity
       if ((!bool) || (TextUtils.isEmpty((CharSequence)localObject1)) || (TextUtils.isEmpty((CharSequence)localObject2))) {
         break;
       }
-      localObject2 = ym.b((String)localObject2);
+      localObject2 = zi.b((String)localObject2);
       if ((localObject2 == null) || (localObject1 == null)) {
         break;
       }
-      ni.a((ChatConversation)localObject2, (String)localObject1 + 'r');
+      nz.a((ChatConversation)localObject2, (String)localObject1 + 'r');
       break;
-      label1027:
+      label1005:
       AnalyticsEvents.i(false);
       break label462;
-      label1034:
-      Timber.a("SoftNavigationBarManager", "adding flags and padding onresume", new Object[0]);
+      label1012:
       mWindow.addFlags(134217728);
       mDefaultFlags = (mDecorView.getSystemUiVisibility() | 0x100 | 0x400);
       mDecorView.setSystemUiVisibility(mDefaultFlags);
       mDecorView.setBackgroundColor(-16777216);
-      ((auw)localObject1).a(bool, mIsImmersiveModeOn);
+      ((avu)localObject1).a(bool, mIsImmersiveModeOn);
       break label594;
     }
   }
@@ -1828,7 +1818,7 @@ public class LandingPageActivity
       paramBundle.putParcelable("in_chat_snap_event", e);
     }
     SnapchatFragment localSnapchatFragment = q();
-    if ((localSnapchatFragment != null) && (localSnapchatFragment.g_())) {
+    if ((localSnapchatFragment != null) && (localSnapchatFragment.f_())) {
       paramBundle.putBoolean("should_pop_fragments", true);
     }
     if (!f())
@@ -1840,17 +1830,17 @@ public class LandingPageActivity
     b = 2;
   }
   
-  @boh
-  public void onSetPagingEnabledEvent(bdg parambdg)
+  @bpi
+  public void onSetPagingEnabledEvent(beg parambeg)
   {
     a.setPagingEnabled(enablePaging);
   }
   
-  @boh
-  public void onShareDSnapEvent(aex paramaex)
+  @bpi
+  public void onShareDSnapEvent(afx paramafx)
   {
     a.setCurrentItem(4, false);
-    g = paramaex;
+    g = paramafx;
     Object localObject1 = g.a;
     float f1 = b;
     float f2 = c;
@@ -1860,9 +1850,9 @@ public class LandingPageActivity
       i1 = 0;
       if (i1 != 0)
       {
-        paramaex = q();
-        if (paramaex != null) {
-          paramaex.f(false);
+        paramafx = q();
+        if (paramafx != null) {
+          paramafx.f(false);
         }
       }
       return;
@@ -1871,48 +1861,48 @@ public class LandingPageActivity
     label98:
     long l1;
     Object localObject3;
-    Object localObject4;
     int i2;
     int i3;
-    String str;
     int i4;
     int i5;
     if (((DSnapView)localObject1).getCurrentPanel() == DSnapPage.Form.TOP_SNAP.getIndex())
     {
       bool = true;
       l1 = SystemClock.elapsedRealtime() - k;
-      paramaex = ((ady)localObject2).e();
+      paramafx = ((aey)localObject2).e();
       if (g.o) {
-        break label781;
+        break label820;
       }
-      localObject2 = atx.a(2131493136, new Object[] { h.c });
-      r.a(new bbg(null, (CharSequence)localObject2, h.h, h.i, true, ((DSnapView)localObject1).getInAppNotificationSourceId()));
+      localObject2 = auv.a(2131493136, new Object[] { h.c });
+      r.a(new bcg((CharSequence)localObject2, h.h, h.i, ((DSnapView)localObject1).getInAppNotificationSourceId()));
       localObject2 = g.a();
       localObject3 = g.g;
       localObject4 = g.a;
       i2 = g.f.intValue();
       i3 = l.d(g.g);
       i1 = g.k.intValue();
-      str = g.d;
+      localObject5 = g.d;
       i4 = g.e;
       i5 = l.e(g.g);
+      localObject1 = f.c.getSourceType();
       if (i1 != 0) {
-        break label526;
+        break label551;
       }
       if (!bool) {
-        break label423;
+        break label441;
       }
-      localObject1 = new hd();
+      localObject5 = new hm();
       publisherId = ((String)localObject2);
       dsnapId = ((String)localObject4);
       editionId = ((String)localObject3);
-      timeViewed = Double.valueOf(avf.a(l1));
-      mediaType = DiscoverUsageAnalytics.a(paramaex);
+      timeViewed = Double.valueOf(awd.a(l1));
+      mediaType = DiscoverUsageAnalytics.a(paramafx);
+      source = ((lv)localObject1);
       if (i3 >= 0) {
-        break label417;
+        break label435;
       }
     }
-    label417:
+    label435:
     for (int i1 = 1;; i1 = 0)
     {
       if (i1 == 0)
@@ -1920,19 +1910,20 @@ public class LandingPageActivity
         snapIndexCount = Long.valueOf(i3);
         snapIndexPos = Long.valueOf(i2 + 1);
       }
-      ScAnalyticsEventEngine.a((lt)localObject1);
+      ScAnalyticsEventEngine.a((ml)localObject5);
       i1 = 0;
       break;
       bool = false;
       break label98;
     }
-    label423:
-    localObject1 = new gy();
+    label441:
+    Object localObject5 = new hh();
     publisherId = ((String)localObject2);
     dsnapId = ((String)localObject4);
     editionId = ((String)localObject3);
-    longformType = DiscoverUsageAnalytics.b(paramaex);
-    timeViewed = Double.valueOf(avf.a(l1));
+    longformType = DiscoverUsageAnalytics.b(paramafx);
+    timeViewed = Double.valueOf(awd.a(l1));
+    source = ((lv)localObject1);
     if (i3 < 0) {}
     for (i1 = 1;; i1 = 0)
     {
@@ -1941,18 +1932,19 @@ public class LandingPageActivity
         snapIndexCount = Long.valueOf(i3);
         snapIndexPos = Long.valueOf(i2 + 1);
       }
-      ScAnalyticsEventEngine.a((lt)localObject1);
+      ScAnalyticsEventEngine.a((ml)localObject5);
       break;
     }
-    label526:
+    label551:
     if (bool)
     {
-      localObject1 = new gq();
+      localObject4 = new gz();
       publisherId = ((String)localObject2);
-      adsnapId = str;
+      adsnapId = ((String)localObject5);
       editionId = ((String)localObject3);
-      timeViewed = Double.valueOf(avf.a(l1));
-      mediaType = DiscoverUsageAnalytics.a(paramaex);
+      timeViewed = Double.valueOf(awd.a(l1));
+      mediaType = DiscoverUsageAnalytics.a(paramafx);
+      source = ((lv)localObject1);
       if (i3 < 0) {}
       for (i1 = 1;; i1 = 0)
       {
@@ -1963,16 +1955,17 @@ public class LandingPageActivity
           adIndexPos = Long.valueOf(i4);
           adIndexCount = Long.valueOf(i5);
         }
-        ScAnalyticsEventEngine.a((lt)localObject1);
+        ScAnalyticsEventEngine.a((ml)localObject4);
         break;
       }
     }
-    localObject1 = new gm();
+    Object localObject4 = new gv();
     publisherId = ((String)localObject2);
-    adsnapId = str;
+    adsnapId = ((String)localObject5);
     editionId = ((String)localObject3);
-    timeViewed = Double.valueOf(avf.a(l1));
-    longformType = DiscoverUsageAnalytics.b(paramaex);
+    timeViewed = Double.valueOf(awd.a(l1));
+    longformType = DiscoverUsageAnalytics.b(paramafx);
+    source = ((lv)localObject1);
     if (i3 < 0) {}
     for (i1 = 1;; i1 = 0)
     {
@@ -1983,37 +1976,41 @@ public class LandingPageActivity
         adIndexPos = Long.valueOf(i4);
         adIndexCount = Long.valueOf(i5);
       }
-      ScAnalyticsEventEngine.a((lt)localObject1);
+      ScAnalyticsEventEngine.a((ml)localObject4);
       break;
     }
-    label781:
+    label820:
     if (localObject2 != null)
     {
-      if (((ady)localObject2).e() != DSnapPanel.MediaType.REMOTE_VIDEO) {
-        break label1019;
+      if (((aey)localObject2).e() != DSnapPanel.MediaType.REMOTE_VIDEO) {
+        break label1042;
       }
       localObject4 = ((DSnapView)localObject1).b(DSnapPage.Form.TOP_SNAP.getIndex());
       if (localObject4 != null)
       {
         localObject2 = d;
         localObject3 = b;
-        paramaex = new DSnapView.2((DSnapView)localObject1, f1, f2, (ady)localObject4, bool, paramaex, l1);
+        paramafx = new DSnapView.2((DSnapView)localObject1, f1, f2, (aey)localObject4, bool, paramafx, l1);
         if (((VerticalSwipeLayout)localObject3).getCurrentPanel() > 0) {
-          break label883;
+          break label975;
         }
         i1 = 0;
-        label859:
-        if (i1 != 0) {
-          break label950;
+        label898:
+        if (i1 != 0)
+        {
+          localObject1 = ObjectAnimator.ofInt(a, "top", new int[] { -a.getMeasuredHeight(), 0 });
+          ((ObjectAnimator)localObject1).setDuration(200L);
+          ((ObjectAnimator)localObject1).addUpdateListener(new afj.1((afj)localObject2));
+          ((ObjectAnimator)localObject1).addListener(paramafx);
+          ((ObjectAnimator)localObject1).start();
         }
-        Timber.a("TopSnapSlideAnimator", "Could not prepare animation. Skipping animation.", new Object[0]);
       }
     }
     for (;;)
     {
       i1 = 1;
       break;
-      label883:
+      label975:
       a = ((VerticalSwipeLayout)localObject3).getChildAt(0);
       i1 = a.getMeasuredHeight();
       a.setVisibility(4);
@@ -2021,20 +2018,13 @@ public class LandingPageActivity
       ((DSnapView)localObject1).addView(a);
       a.setTop(-i1);
       i1 = 1;
-      break label859;
-      label950:
-      localObject1 = ObjectAnimator.ofInt(a, "top", new int[] { -a.getMeasuredHeight(), 0 });
-      ((ObjectAnimator)localObject1).setDuration(200L);
-      ((ObjectAnimator)localObject1).addUpdateListener(new aej.1((aej)localObject2));
-      ((ObjectAnimator)localObject1).addListener(paramaex);
-      ((ObjectAnimator)localObject1).start();
-      continue;
-      label1019:
-      ((DSnapView)localObject1).a(f1, f2, (ady)localObject2, bool, paramaex, l1);
+      break label898;
+      label1042:
+      ((DSnapView)localObject1).a(f1, f2, (aey)localObject2, bool, paramafx, l1);
     }
   }
   
-  @boh
+  @bpi
   public void onShowDialogEvent(ShowDialogEvent paramShowDialogEvent)
   {
     String str;
@@ -2067,23 +2057,23 @@ public class LandingPageActivity
     AlertDialogUtils.a(str, this);
   }
   
-  @boh
-  public void onSnapCapturedEvent(bdj parambdj)
+  @bpi
+  public void onSnapCapturedEvent(bej parambej)
   {
     if (a == null) {
       return;
     }
-    mUser = ajv.g();
-    c = parambdj;
-    parambdj = c.mMediabryo.mMediaMailingMetadata;
+    mUser = akp.g();
+    c = parambej;
+    parambej = c.mMediabryo.mMediaMailingMetadata;
     if (d != null)
     {
-      parambdj.a(d.mRecipients);
+      parambej.a(d.mRecipients);
       label49:
       if ((!f()) && ((g == null) || (mFragments.getBackStackEntryCount() > 1))) {
         break label214;
       }
-      parambdj = new SnapPreviewFragment();
+      parambej = new SnapPreviewFragment();
       if (d == null) {
         break label216;
       }
@@ -2091,36 +2081,36 @@ public class LandingPageActivity
     }
     for (;;)
     {
-      a(parambdj, "PreviewFragment", true);
-      parambdj = PreferenceManager.getDefaultSharedPreferences(SnapchatApplication.b());
-      if (ajx.R()) {
+      a(parambej, "PreviewFragment", true);
+      parambej = PreferenceManager.getDefaultSharedPreferences(SnapchatApplication.b());
+      if (akr.R()) {
         break;
       }
-      ajx.S();
-      if (((parambdj.getBoolean(SharedPreferenceKey.ALLOWED_GPS.getKey(), false)) && (T.a())) || (ajx.ab())) {
+      akr.S();
+      if (((parambej.getBoolean(SharedPreferenceKey.ALLOWED_GPS.getKey(), false)) && (T.a())) || (akr.aa())) {
         break;
       }
-      T.a(this, new ahq.a()
+      T.a(this, new aim.a()
       {
         public final void a(boolean paramAnonymousBoolean)
         {
           if (paramAnonymousBoolean)
           {
             AnalyticsEvents.g();
-            new pf().executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+            new pw().executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
           }
         }
       }).show();
       return;
       if (e != null)
       {
-        parambdj.a(e.mRecipients);
+        parambej.a(e.mRecipients);
         break label49;
       }
       if (f == null) {
         break label49;
       }
-      parambdj.a(f.mRecipients);
+      parambej.a(f.mRecipients);
       break label49;
       label214:
       break;
@@ -2131,49 +2121,49 @@ public class LandingPageActivity
     }
   }
   
-  @boh
-  public void onSnapReadyForRecipientsEvent(bdn parambdn)
+  @bpi
+  public void onSnapReadyForRecipientsEvent(ben paramben)
   {
-    aim localaim = mMediabryo;
+    aji localaji = mMediabryo;
     if (mIsChatMedia)
     {
-      a(localaim);
+      a(localaji);
       return;
     }
     if (u.a()) {
-      a(localaim);
+      a(localaji);
     }
     MediaMailingMetadata localMediaMailingMetadata = mMediaMailingMetadata;
     if ((mShouldGoToSendTo) || (localMediaMailingMetadata.d().size() == 0))
     {
-      a(SendToFragment.a(localaim), "SendToFrag", true);
+      a(SendToFragment.a(localaji), "SendToFrag", true);
       return;
     }
     if ((e != null) || (f != null) || (d != null))
     {
-      r.a(new bdo(localaim, true));
+      r.a(new beo(localaji, true));
       return;
     }
-    a(SendToFragment.a(localaim), "SendToFrag", true);
+    a(SendToFragment.a(localaji), "SendToFrag", true);
   }
   
-  @boh
-  public void onSnapReadyForSendingEvent(bdo parambdo)
+  @bpi
+  public void onSnapReadyForSendingEvent(beo parambeo)
   {
-    aim localaim = mMediabryo;
+    aji localaji = mMediabryo;
     boolean bool2 = mFromPreview;
     if (!u.a()) {
-      a(localaim);
+      a(localaji);
     }
     try
     {
       if (mSnapType == Mediabryo.SnapType.SNAP) {
-        m.e(localaim);
+        m.e(localaji);
       }
       for (;;)
       {
         if (!mMediaMailingMetadata.d().isEmpty()) {
-          r.a(new bdr());
+          r.a(new ber());
         }
         localMediaMailingMetadata = mMediaMailingMetadata;
         if ((!localMediaMailingMetadata.d().isEmpty()) && (mSnapType == Mediabryo.SnapType.SNAP)) {
@@ -2181,16 +2171,16 @@ public class LandingPageActivity
         }
         M.c();
         M.d();
-        parambdo = mMediaMailingMetadata;
-        if (!parambdo.d().isEmpty()) {
+        parambeo = mMediaMailingMetadata;
+        if (!parambeo.d().isEmpty()) {
           break label321;
         }
         a(3);
         return;
-        H.a(localaim);
+        H.a(localaji);
       }
     }
-    catch (abw.b parambdo)
+    catch (acw.b parambeo)
     {
       label208:
       label212:
@@ -2204,14 +2194,14 @@ public class LandingPageActivity
           MediaMailingMetadata localMediaMailingMetadata;
           for (;;)
           {
-            new ErrorMetric(parambdo.getMessage()).a(parambdo).d();
+            new ErrorMetric(parambeo.getMessage()).a(parambeo).e();
           }
-          ajk localajk = (ajk)localMediaMailingMetadata;
-          parambdo = AnalyticsEvents.AnalyticsSendSnapSource.CAMERA;
+          akg localakg = (akg)localMediaMailingMetadata;
+          parambeo = AnalyticsEvents.AnalyticsSendSnapSource.CAMERA;
           if (d != null) {
             if (d.mOriginatingFragment == 1)
             {
-              parambdo = AnalyticsEvents.AnalyticsSendSnapSource.DOUBLE_TAP_FEED;
+              parambeo = AnalyticsEvents.AnalyticsSendSnapSource.DOUBLE_TAP_FEED;
               AnalyticsEvents.j(true);
               if (mPostToStories.isEmpty()) {
                 break label316;
@@ -2220,51 +2210,51 @@ public class LandingPageActivity
           }
           for (boolean bool1 = true;; bool1 = false)
           {
-            AnalyticsEvents.a(localaim, parambdo, bool1, bool2, M.b(), localMediaMailingMetadata.d().size(), mUser);
+            AnalyticsEvents.a(localaji, parambeo, bool1, bool2, M.b(), localMediaMailingMetadata.d().size(), mUser);
             break;
             if (d.mOriginatingFragment != 3) {
               break label208;
             }
-            parambdo = AnalyticsEvents.AnalyticsSendSnapSource.DOUBLE_TAP_FRIENDS;
+            parambeo = AnalyticsEvents.AnalyticsSendSnapSource.DOUBLE_TAP_FRIENDS;
             break label208;
             if (e != null)
             {
-              parambdo = AnalyticsEvents.AnalyticsSendSnapSource.IN_CHAT;
+              parambeo = AnalyticsEvents.AnalyticsSendSnapSource.IN_CHAT;
               break label212;
             }
             if (f != null)
             {
-              parambdo = AnalyticsEvents.AnalyticsSendSnapSource.QUICK_SNAP;
+              parambeo = AnalyticsEvents.AnalyticsSendSnapSource.QUICK_SNAP;
               break label212;
             }
             if (g == null) {
               break label212;
             }
-            parambdo = AnalyticsEvents.AnalyticsSendSnapSource.DOUBLE_TAP_DISCOVER;
+            parambeo = AnalyticsEvents.AnalyticsSendSnapSource.DOUBLE_TAP_DISCOVER;
             break label212;
           }
           if (mSnapType != Mediabryo.SnapType.DISCOVER) {
             break;
           }
           g = null;
-          parambdo = mFragments;
-          parambdo.popBackStackImmediate("EditionViewerFragment", 0);
-          i1 = parambdo.getBackStackEntryCount() - 1;
+          parambeo = mFragments;
+          parambeo.popBackStackImmediate("EditionViewerFragment", 0);
+          i1 = parambeo.getBackStackEntryCount() - 1;
         } while (i1 < 0);
-        parambdo = a(parambdo, i1);
-      } while (parambdo == null);
-      parambdo.f(true);
+        parambeo = a(parambeo, i1);
+      } while (parambeo == null);
+      parambeo.f(true);
       return;
-      if (parambdo.d().size() <= 1)
+      if (parambeo.d().size() <= 1)
       {
         if (e != null)
         {
-          r.a(new bar());
+          r.a(new bbs());
           return;
         }
         if (f != null)
         {
-          r.a(new bas());
+          r.a(new bbt());
           return;
         }
       }
@@ -2272,30 +2262,28 @@ public class LandingPageActivity
     }
   }
   
-  @boh
-  public void onSoftNavigationBarEvent(bdt parambdt)
+  @bpi
+  public void onSoftNavigationBarEvent(bet parambet)
   {
     boolean bool;
     if (shouldShow)
     {
-      parambdt = N;
-      bool = avh.e(this);
+      parambet = N;
+      bool = awf.e(this);
       if ((mIsImmersiveModeSupported) && (mDecorView != null)) {}
     }
     do
     {
       return;
-      Timber.a("SoftNavigationBarManager", "Turning immersive mode OFF", new Object[0]);
       mDecorView.setSystemUiVisibility(mDefaultFlags);
-      parambdt.a(bool, false);
+      parambet.a(bool, false);
       mIsImmersiveModeOn = false;
       return;
-      parambdt = N;
-      bool = avh.e(this);
+      parambet = N;
+      bool = awf.e(this);
     } while ((!mIsImmersiveModeSupported) || (mDecorView == null));
-    Timber.a("SoftNavigationBarManager", "Turning immersive mode ON", new Object[0]);
     mWindow.addFlags(134217728);
-    parambdt.a(bool, true);
+    parambet.a(bool, true);
     mDecorView.setKeepScreenOn(true);
     mDecorView.setSystemUiVisibility(5890);
     mIsImmersiveModeOn = true;
@@ -2303,17 +2291,17 @@ public class LandingPageActivity
   
   protected void onStart()
   {
-    nf.d();
+    nw.d();
     super.onStart();
     if (i == null) {
       s();
     }
     RegistrationAnalytics.a(false);
-    nf.e();
+    nw.e();
   }
   
-  @boh
-  public void onStartFragmentEvent(bdw parambdw)
+  @bpi
+  public void onStartFragmentEvent(bev parambev)
   {
     SnapchatFragment localSnapchatFragment = mFragmentToStart;
     if (!TextUtils.isEmpty(mBaseFragmentTag)) {
@@ -2332,8 +2320,11 @@ public class LandingPageActivity
     J.b();
     q.mEasyMetric = null;
     ??? = K;
-    mDictionaryEasyMetric.a("EXIT_CAMERA_VIEW", "context", "exit");
-    mDictionaryEasyMetric.b("EXIT_CAMERA_VIEW");
+    if (mEasyMetricManager.c("EXIT_CAMERA_VIEW", ""))
+    {
+      mEasyMetricManager.a("EXIT_CAMERA_VIEW", "").a("context", "exit");
+      mEasyMetricManager.c("EXIT_CAMERA_VIEW");
+    }
     W.b();
     super.onStop();
     DictionaryEasyMetric localDictionaryEasyMetric = I;
@@ -2343,100 +2334,88 @@ public class LandingPageActivity
       b.clear();
       c.clear();
       d.clear();
-      azz.a();
+      baz.a();
       if (i != null)
       {
         ??? = i;
         mMainHandler.postDelayed(new SecureChatService.1((SecureChatService)???), 5000L);
         if (E)
         {
-          unbindService(ak);
+          unbindService(al);
           E = false;
         }
         i = null;
         G = false;
       }
-      new ahq();
-      if (ajx.ab()) {
+      new aim();
+      if (akr.aa()) {
         S.c();
       }
       return;
     }
   }
   
-  @boh
-  public void onStorySnapPostedFromSnapPreviewEvent(bec parambec)
+  @bpi
+  public void onStorySnapPostedFromSnapPreviewEvent(bfb parambfb)
   {
     a(3);
   }
   
-  @boh
-  public void onSwitchToChatEvent(bee parambee)
+  @bpi
+  public void onSwitchToChatEvent(bfd parambfd)
   {
     n();
     ChatFragment.a(mFriendUsername);
     a(0, false);
   }
   
-  @boh
-  public void onTapToViewDiscoverEvent(aez paramaez)
+  @bpi
+  public void onTapToViewDiscoverEvent(afz paramafz)
   {
-    D = paramaez;
+    D = paramafz;
     a.setPagingEnabled(false);
     a.setAnimating(true);
     a.setCurrentItem(4, true);
   }
   
-  @boh
-  public void onTitleBarEvent(bel parambel)
+  @bpi
+  public void onTitleBarEvent(bfk parambfk)
   {
     boolean bool = true;
     TitleBarManager localTitleBarManager = V;
-    int i1;
-    TitleBarManager.Visibility localVisibility1;
-    TitleBarManager.LockedState localLockedState;
-    if ((mWindow == null) || (mResources == null) || (mHandler == null))
+    if ((mWindow == null) || (mResources == null) || (mHandler == null)) {}
+    for (int i1 = 1;; i1 = 0)
     {
-      i1 = 1;
       if (i1 == 0)
       {
-        localVisibility1 = mVisibility;
+        TitleBarManager.Visibility localVisibility1 = mVisibility;
         TitleBarManager.Visibility localVisibility2 = mUnlockedVisibility;
-        localLockedState = mLockedState;
-        Timber.a("TitleBarManager", "Target visibility: " + localVisibility1 + " locked: " + localLockedState + " unlocked visibility: " + localVisibility2, new Object[0]);
+        TitleBarManager.LockedState localLockedState = mLockedState;
+        new StringBuilder("Target visibility: ").append(localVisibility1).append(" locked: ").append(localLockedState).append(" unlocked visibility: ").append(localVisibility2);
         if (localVisibility2 != null) {
           mTitleBarTargetUnlockedVisibility = localVisibility2;
         }
-        if ((mTitleBarLockedState != TitleBarManager.LockedState.LOCKED) || (localLockedState == TitleBarManager.LockedState.NOT_LOCKED)) {
-          break label156;
+        if ((mTitleBarLockedState != TitleBarManager.LockedState.LOCKED) || (localLockedState == TitleBarManager.LockedState.NOT_LOCKED))
+        {
+          if (localLockedState != null) {
+            mTitleBarLockedState = localLockedState;
+          }
+          parambfk = localVisibility1;
+          if (localLockedState == TitleBarManager.LockedState.NOT_LOCKED)
+          {
+            if (localVisibility1 != null) {
+              mTitleBarTargetUnlockedVisibility = localVisibility1;
+            }
+            parambfk = mTitleBarTargetUnlockedVisibility;
+          }
+          if ((parambfk != null) && ((parambfk != TitleBarManager.Visibility.VISIBLE) || (!mTitleBarShown)) && ((parambfk != TitleBarManager.Visibility.HIDDEN) || (mTitleBarShown))) {
+            break;
+          }
         }
-        Timber.a("TitleBarManager", "Title bar was locked. Do nothing.", new Object[0]);
       }
-    }
-    label156:
-    do
-    {
-      return;
-      i1 = 0;
-      break;
-      if (localLockedState != null) {
-        mTitleBarLockedState = localLockedState;
-      }
-      parambel = localVisibility1;
-      if (localLockedState == TitleBarManager.LockedState.NOT_LOCKED)
-      {
-        if (localVisibility1 != null) {
-          mTitleBarTargetUnlockedVisibility = localVisibility1;
-        }
-        parambel = mTitleBarTargetUnlockedVisibility;
-      }
-    } while (parambel == null);
-    if (((parambel == TitleBarManager.Visibility.VISIBLE) && (mTitleBarShown)) || ((parambel == TitleBarManager.Visibility.HIDDEN) && (!mTitleBarShown)))
-    {
-      Timber.a("TitleBarManager", "Already in target state. Do nothing.", new Object[0]);
       return;
     }
-    if (parambel == TitleBarManager.Visibility.VISIBLE) {}
+    if (parambfk == TitleBarManager.Visibility.VISIBLE) {}
     for (;;)
     {
       mTitleBarShown = bool;
@@ -2446,8 +2425,8 @@ public class LandingPageActivity
     }
   }
   
-  @boh
-  public void onUpdatingUserToDatabasesCompleteEvent(beo parambeo)
+  @bpi
+  public void onUpdatingUserToDatabasesCompleteEvent(bfn parambfn)
   {
     if (h != null)
     {
@@ -2458,28 +2437,26 @@ public class LandingPageActivity
     }
   }
   
-  @boh
-  public void onUpdatingUserToDatabasesEvent(bep parambep)
+  @bpi
+  public void onUpdatingUserToDatabasesEvent(bfo parambfo)
   {
     h = ProgressDialog.show(this, "Upgrading Snapchat", "Loading...");
   }
   
-  @boh
-  public void onVolumeViewChangedEvent(beu parambeu)
+  @bpi
+  public void onVolumeViewChangedEvent(bft parambft)
   {
     p();
-    ae.a(mVolumeViewType);
+    af.a(mVolumeViewType);
   }
   
   public void onWindowFocusChanged(boolean paramBoolean)
   {
     super.onWindowFocusChanged(paramBoolean);
-    Timber.c("LandingPageActivity", "On ac Should we onWindowFocusChanged has focus? " + paramBoolean, new Object[0]);
     if ((paramBoolean) && (v))
     {
-      Timber.c("LandingPageActivity", "On ac Calling onResume from window focus fn", new Object[0]);
       v = false;
-      r.a(new bcg());
+      r.a(new bdg());
     }
     KeyguardManager localKeyguardManager = (KeyguardManager)getSystemService("keyguard");
     if ((!paramBoolean) && (localKeyguardManager.inKeyguardRestrictedInputMode())) {
@@ -2487,13 +2464,13 @@ public class LandingPageActivity
     }
   }
   
-  @bog
+  @bph
   public InChatSnapEvent produceInChatSnapEvent()
   {
     return e;
   }
   
-  @bog
+  @bph
   public QuickSnapEvent produceQuickSnapEvent()
   {
     return f;

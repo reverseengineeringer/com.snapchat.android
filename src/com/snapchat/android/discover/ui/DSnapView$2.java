@@ -1,14 +1,14 @@
 package com.snapchat.android.discover.ui;
 
-import ady;
+import aey;
 import android.animation.Animator;
-import avj;
+import awh;
 import com.snapchat.android.discover.model.DSnapPanel.MediaType;
 
 public final class DSnapView$2
-  extends avj
+  extends awh
 {
-  public DSnapView$2(DSnapView paramDSnapView, float paramFloat1, float paramFloat2, ady paramady, boolean paramBoolean, DSnapPanel.MediaType paramMediaType, long paramLong) {}
+  public DSnapView$2(DSnapView paramDSnapView, float paramFloat1, float paramFloat2, aey paramaey, boolean paramBoolean, DSnapPanel.MediaType paramMediaType, long paramLong) {}
   
   public final void onAnimationEnd(Animator paramAnimator)
   {

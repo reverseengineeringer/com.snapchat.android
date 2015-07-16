@@ -1,26 +1,26 @@
-import android.text.TextUtils;
-import android.widget.ImageView;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import com.snapchat.android.util.AlertDialogUtils;
 
 public final class awc
-  implements avy
 {
-  public final void a(avo paramavo, avx paramavx)
+  public static void a(Context paramContext, String paramString1, String paramString2)
   {
-    
-    if (mBitmap != null)
+    Intent localIntent = new Intent("android.intent.action.VIEW");
+    localIntent.setData(Uri.parse("smsto:" + paramString1));
+    localIntent.putExtra("address", paramString1);
+    localIntent.putExtra("sms_body", paramString2);
+    localIntent.putExtra("android.intent.extra.TEXT", paramString2);
+    try
     {
-      ImageView localImageView = mImageView;
-      if (localImageView != null)
-      {
-        Object localObject = localImageView.getDrawable();
-        if ((localObject instanceof awe))
-        {
-          localObject = (awe)localObject;
-          if (TextUtils.equals(mRequestId, mLoaderTask.mRequest.mRequestId)) {
-            localImageView.setImageBitmap(mBitmap);
-          }
-        }
-      }
+      paramContext.startActivity(localIntent);
+      return;
+    }
+    catch (ActivityNotFoundException paramString1)
+    {
+      AlertDialogUtils.a(2131493255, paramContext);
     }
   }
 }

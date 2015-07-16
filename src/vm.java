@@ -1,8 +1,28 @@
-import android.graphics.Bitmap;
-
-public abstract interface vm
+public abstract class vm<T>
 {
-  public abstract void a(Bitmap paramBitmap);
+  protected final vl<T> a;
+  protected final vm.a b;
+  
+  public vm(vl<T> paramvl, vm.a parama)
+  {
+    a = paramvl;
+    b = parama;
+  }
+  
+  public abstract void b();
+  
+  public abstract boolean c();
+  
+  public static abstract interface a
+  {
+    public abstract void b_();
+    
+    public abstract void c_();
+    
+    public abstract void d();
+    
+    public abstract void d_();
+  }
 }
 
 /* Location:

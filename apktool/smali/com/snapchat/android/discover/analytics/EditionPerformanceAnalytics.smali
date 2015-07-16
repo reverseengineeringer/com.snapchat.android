@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public final a:Labq;
+.field public final a:Lacq;
 
 .field public final b:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -39,16 +39,56 @@
 
 .field public final d:Ljava/lang/String;
 
-.field public e:I
+.field public final e:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+
+.field public f:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>(Lacq;Ljava/lang/String;Lcom/snapchat/android/discover/model/EditionOpenOrigin;)V
+    .locals 1
+
+    .prologue
+    .line 51
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 38
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->b:Ljava/util/Set;
+
+    .line 39
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->c:Ljava/util/Map;
+
+    .line 52
+    iput-object p1, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->a:Lacq;
+
+    .line 53
+    iput-object p2, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->d:Ljava/lang/String;
+
+    .line 54
+    iput-object p3, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->e:Lcom/snapchat/android/discover/model/EditionOpenOrigin;
+
+    .line 55
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/snapchat/android/discover/model/EditionOpenOrigin;)V
     .locals 2
 
     .prologue
-    .line 44
-    invoke-static {}, Labq;->a()Labq;
+    .line 46
+    invoke-static {}, Lacq;->a()Lacq;
 
     move-result-object v0
 
@@ -60,44 +100,9 @@
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;-><init>(Labq;Ljava/lang/String;)V
+    invoke-direct {p0, v0, v1, p1}, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;-><init>(Lacq;Ljava/lang/String;Lcom/snapchat/android/discover/model/EditionOpenOrigin;)V
 
-    .line 45
-    return-void
-.end method
-
-.method private constructor <init>(Labq;Ljava/lang/String;)V
-    .locals 1
-
-    .prologue
-    .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 37
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->b:Ljava/util/Set;
-
-    .line 38
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->c:Ljava/util/Map;
-
-    .line 49
-    iput-object p1, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->a:Labq;
-
-    .line 50
-    iput-object p2, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->d:Ljava/lang/String;
-
-    .line 51
+    .line 47
     return-void
 .end method
 
@@ -106,7 +111,7 @@
 .method public final a(Ljava/util/List;)V
     .locals 6
     .param p1    # Ljava/util/List;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -120,16 +125,16 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 100
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->e:I
+    iput v0, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->f:I
 
-    .line 100
+    .line 104
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -148,7 +153,7 @@
 
     check-cast v0, Lcom/snapchat/android/discover/model/DSnapPage;
 
-    .line 101
+    .line 105
     iget-object v1, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->c:Ljava/util/Map;
 
     iget-object v3, v0, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
@@ -159,14 +164,14 @@
 
     check-cast v1, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
-    .line 102
+    .line 106
     if-eqz v1, :cond_0
 
     sget-object v3, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;->TIMING:Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics$WaitTimeMetricState;
 
     if-ne v1, v3, :cond_0
 
-    .line 103
+    .line 107
     invoke-virtual {v0}, Lcom/snapchat/android/discover/model/DSnapPage;->c()Lcom/snapchat/android/discover/model/MediaState;
 
     move-result-object v1
@@ -177,8 +182,8 @@
 
     if-nez v1, :cond_0
 
-    .line 104
-    iget-object v3, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->a:Labq;
+    .line 108
+    iget-object v3, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->a:Lacq;
 
     iget-object v1, v0, Lcom/snapchat/android/discover/model/DSnapPage;->a:Ljava/lang/String;
 
@@ -188,7 +193,7 @@
 
     const-string v5, "DISCOVER_DSNAP_WAIT_TIME"
 
-    invoke-virtual {v3, v5, v1}, Labq;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    invoke-virtual {v3, v5, v1}, Lacq;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     move-result-object v5
 
@@ -211,9 +216,9 @@
 
     const-string v4, "reachability"
 
-    iget-object v3, v3, Labq;->a:Lale;
+    iget-object v3, v3, Lacq;->a:Lama;
 
-    invoke-virtual {v3}, Lale;->f()Ljava/lang/String;
+    invoke-virtual {v3}, Lama;->f()Ljava/lang/String;
 
     move-result-object v3
 
@@ -225,7 +230,7 @@
 
     invoke-virtual {v1, v3}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
-    .line 105
+    .line 109
     :cond_1
     iget-object v1, p0, Lcom/snapchat/android/discover/analytics/EditionPerformanceAnalytics;->c:Ljava/util/Map;
 
@@ -237,7 +242,7 @@
 
     goto :goto_0
 
-    .line 104
+    .line 108
     :cond_2
     invoke-virtual {v4}, Lcom/snapchat/android/discover/model/MediaState;->toString()Ljava/lang/String;
 
@@ -251,7 +256,7 @@
 
     goto :goto_1
 
-    .line 109
+    .line 113
     :cond_3
     return-void
 .end method

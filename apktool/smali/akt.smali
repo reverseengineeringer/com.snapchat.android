@@ -4,47 +4,108 @@
 
 
 # instance fields
-.field private mDirectoryUrls:Ljava/util/ArrayList;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "gae_proxy_directory_list"
-    .end annotation
-
+.field private final pair:Landroid/util/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/ArrayList",
+            "Landroid/util/Pair",
             "<",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private mProxies:Ljava/util/ArrayList;
-    .annotation build Lcgc;
-    .end annotation
 
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "gae_proxy_list"
-    .end annotation
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
 
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lajd;",
-            ">;"
-        }
-    .end annotation
-.end field
+    .prologue
+    .line 8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field private mVersion:J
-    .annotation build Lcgc;
-    .end annotation
+    .line 9
+    new-instance v0, Landroid/util/Pair;
 
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "gae_proxy_list_version"
-    .end annotation
-.end field
+    invoke-direct {v0, p1, p2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lakt;->pair:Landroid/util/Pair;
+
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 13
+    iget-object v0, p0, Lakt;->pair:Landroid/util/Pair;
+
+    iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 16
+    iget-object v0, p0, Lakt;->pair:Landroid/util/Pair;
+
+    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .prologue
+    .line 21
+    instance-of v0, p1, Lakt;
+
+    if-eqz v0, :cond_0
+
+    .line 22
+    iget-object v0, p0, Lakt;->pair:Landroid/util/Pair;
+
+    check-cast p1, Lakt;
+
+    iget-object v1, p1, Lakt;->pair:Landroid/util/Pair;
+
+    invoke-virtual {v0, v1}, Landroid/util/Pair;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    .line 24
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .prologue
+    .line 29
+    iget-object v0, p0, Lakt;->pair:Landroid/util/Pair;
+
+    invoke-virtual {v0}, Landroid/util/Pair;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method

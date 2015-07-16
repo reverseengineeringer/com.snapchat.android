@@ -4,6 +4,8 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 import com.google.android.gms.analytics.CampaignTrackingService;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public final class InstallReferrerService
   extends IntentService
@@ -27,6 +29,13 @@ public final class InstallReferrerService
       zzayQ = new CampaignTrackingService();
     }
     zzayQ.zza(paramContext, paramIntent);
+  }
+  
+  public void onCreate()
+  {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
+    super.onCreate();
   }
   
   protected final void onHandleIntent(Intent paramIntent)

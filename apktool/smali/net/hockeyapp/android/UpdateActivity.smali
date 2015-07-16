@@ -4,17 +4,17 @@
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
-.implements Lbvl;
+.implements Lbwm;
 
 
 # instance fields
-.field protected a:Lbvy;
+.field protected a:Lbwz;
 
-.field protected b:Lbwm;
+.field protected b:Lbxn;
 
 .field private final c:I
 
-.field private d:Lbvq;
+.field private d:Lbwr;
 
 .field private e:Landroid/content/Context;
 
@@ -35,14 +35,14 @@
     return-void
 .end method
 
-.method static synthetic a(Lnet/hockeyapp/android/UpdateActivity;)Lbvq;
+.method static synthetic a(Lnet/hockeyapp/android/UpdateActivity;)Lbwr;
     .locals 1
 
     .prologue
     .line 63
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbvq;
+    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbwr;
 
     return-object v0
 .end method
@@ -186,15 +186,15 @@
 
     invoke-direct {v1, p0}, Lnet/hockeyapp/android/UpdateActivity$2;-><init>(Lnet/hockeyapp/android/UpdateActivity;)V
 
-    new-instance v2, Lbvy;
+    new-instance v2, Lbwz;
 
-    invoke-direct {v2, p0, v0, v1}, Lbvy;-><init>(Landroid/content/Context;Ljava/lang/String;Lbvp;)V
+    invoke-direct {v2, p0, v0, v1}, Lbwz;-><init>(Landroid/content/Context;Ljava/lang/String;Lbwq;)V
 
-    iput-object v2, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbvy;
+    iput-object v2, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbwz;
 
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbvy;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbwz;
 
-    invoke-static {v0}, Lbwd;->a(Landroid/os/AsyncTask;)V
+    invoke-static {v0}, Lbxe;->a(Landroid/os/AsyncTask;)V
 
     .line 176
     return-void
@@ -280,18 +280,18 @@
     if-nez v0, :cond_1
 
     .line 303
-    new-instance v0, Lbvq;
+    new-instance v0, Lbwr;
 
-    invoke-direct {v0}, Lbvq;-><init>()V
+    invoke-direct {v0}, Lbwr;-><init>()V
 
-    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbvq;
+    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbwr;
 
     .line 304
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbvq;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbwr;
 
     const-string v1, "The permission to access the external storage permission is not set. Please contact the developer."
 
-    iput-object v1, v0, Lbvq;->a:Ljava/lang/String;
+    iput-object v1, v0, Lbwr;->a:Ljava/lang/String;
 
     .line 306
     new-instance v0, Lnet/hockeyapp/android/UpdateActivity$3;
@@ -319,18 +319,18 @@
     if-nez v0, :cond_2
 
     .line 318
-    new-instance v0, Lbvq;
+    new-instance v0, Lbwr;
 
-    invoke-direct {v0}, Lbvq;-><init>()V
+    invoke-direct {v0}, Lbwr;-><init>()V
 
-    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbvq;
+    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbwr;
 
     .line 319
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbvq;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbwr;
 
     const-string v1, "The installation from unknown sources is not enabled. Please check the device settings."
 
-    iput-object v1, v0, Lbvq;->a:Ljava/lang/String;
+    iput-object v1, v0, Lbwr;->a:Ljava/lang/String;
 
     .line 321
     new-instance v0, Lnet/hockeyapp/android/UpdateActivity$4;
@@ -357,6 +357,18 @@
     .prologue
     const/4 v9, 0x1
 
+    invoke-virtual {p0}, Lnet/hockeyapp/android/UpdateActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lnet/hockeyapp/android/UpdateActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 88
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -376,7 +388,7 @@
     iput-object p0, p0, Lnet/hockeyapp/android/UpdateActivity;->e:Landroid/content/Context;
 
     .line 94
-    new-instance v0, Lbwm;
+    new-instance v0, Lbxn;
 
     invoke-virtual {p0}, Lnet/hockeyapp/android/UpdateActivity;->getIntent()Landroid/content/Intent;
 
@@ -388,9 +400,9 @@
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1, p0}, Lbwm;-><init>(Landroid/content/Context;Ljava/lang/String;Lbvl;)V
+    invoke-direct {v0, p0, v1, p0}, Lbxn;-><init>(Landroid/content/Context;Ljava/lang/String;Lbwm;)V
 
-    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbwm;
+    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbxn;
 
     .line 95
     const/16 v0, 0x1002
@@ -421,9 +433,9 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbwm;
+    iget-object v2, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbxn;
 
-    invoke-virtual {v2}, Lbwm;->a()Ljava/lang/String;
+    invoke-virtual {v2}, Lbxn;->a()Ljava/lang/String;
 
     move-result-object v2
 
@@ -435,17 +447,17 @@
 
     move-result-object v2
 
-    iget-object v1, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbwm;
+    iget-object v1, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbxn;
 
-    invoke-virtual {v1}, Lbwm;->b()Ljava/lang/String;
+    invoke-virtual {v1}, Lbxn;->b()Ljava/lang/String;
 
     move-result-object v3
 
     const-string v1, "Unknown size"
 
-    iget-object v4, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbwm;
+    iget-object v4, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbxn;
 
-    invoke-virtual {v4}, Lbwm;->c()J
+    invoke-virtual {v4}, Lbxn;->c()J
 
     move-result-wide v4
 
@@ -554,9 +566,9 @@
 
     const-string v1, "https://sdk.hockeyapp.net/"
 
-    iget-object v2, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbwm;
+    iget-object v2, p0, Lnet/hockeyapp/android/UpdateActivity;->b:Lbxn;
 
-    invoke-virtual {v2}, Lbwm;->d()Ljava/lang/String;
+    invoke-virtual {v2}, Lbxn;->d()Ljava/lang/String;
 
     move-result-object v2
 
@@ -573,19 +585,19 @@
 
     move-result-object v0
 
-    check-cast v0, Lbvy;
+    check-cast v0, Lbwz;
 
-    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbvy;
+    iput-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbwz;
 
     .line 98
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbvy;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbwz;
 
     if-eqz v0, :cond_0
 
     .line 99
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbvy;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbwz;
 
-    invoke-virtual {v0, p0}, Lbvy;->a(Landroid/content/Context;)V
+    invoke-virtual {v0, p0}, Lbwz;->a(Landroid/content/Context;)V
 
     .line 101
     :cond_0
@@ -593,7 +605,7 @@
 
     .line 95
     :cond_1
-    new-instance v4, Lbvz;
+    new-instance v4, Lbxa;
 
     invoke-virtual {p0}, Lnet/hockeyapp/android/UpdateActivity;->getIntent()Landroid/content/Intent;
 
@@ -609,9 +621,9 @@
 
     invoke-direct {v6, p0, v0, v2, v3}, Lnet/hockeyapp/android/UpdateActivity$1;-><init>(Lnet/hockeyapp/android/UpdateActivity;Landroid/widget/TextView;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {v4, p0, v5, v6}, Lbvz;-><init>(Landroid/content/Context;Ljava/lang/String;Lbvp;)V
+    invoke-direct {v4, p0, v5, v6}, Lbxa;-><init>(Landroid/content/Context;Ljava/lang/String;Lbwq;)V
 
-    invoke-static {v4}, Lbwd;->a(Landroid/os/AsyncTask;)V
+    invoke-static {v4}, Lbxe;->a(Landroid/os/AsyncTask;)V
 
     goto :goto_0
 .end method
@@ -704,14 +716,14 @@
     check-cast p2, Landroid/app/AlertDialog;
 
     .line 361
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbvq;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbwr;
 
     if-eqz v0, :cond_0
 
     .line 363
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbvq;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->d:Lbwr;
 
-    iget-object v0, v0, Lbvq;->a:Ljava/lang/String;
+    iget-object v0, v0, Lbwr;->a:Ljava/lang/String;
 
     invoke-virtual {p2, v0}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
@@ -737,18 +749,18 @@
 
     .prologue
     .line 162
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbvy;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbwz;
 
     if-eqz v0, :cond_0
 
     .line 163
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbvy;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbwz;
 
-    invoke-virtual {v0}, Lbvy;->a()V
+    invoke-virtual {v0}, Lbwz;->a()V
 
     .line 165
     :cond_0
-    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbvy;
+    iget-object v0, p0, Lnet/hockeyapp/android/UpdateActivity;->a:Lbwz;
 
     return-object v0
 .end method

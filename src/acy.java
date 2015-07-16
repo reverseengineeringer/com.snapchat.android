@@ -1,79 +1,105 @@
-import android.content.Context;
-import android.database.Cursor;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import com.snapchat.android.discover.ui.OpenChannelAnimationView;
-import com.snapchat.android.fragments.stories.StoriesAdapter.StoriesViewType;
-import com.snapchat.android.stories.StoriesSection;
+import com.snapchat.android.discover.model.ChannelPage;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.squareup.otto.Bus;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public final class acy
-  extends aoq
 {
-  private final acz c;
+  private static final acy d = new acy();
+  public final aej a;
+  public final List<ade> b;
+  public final aed c;
+  private final Bus e;
+  private final alw f;
+  private adf g = new adf();
   
-  public acy(Context paramContext, aeh paramaeh, OpenChannelAnimationView paramOpenChannelAnimationView)
+  private acy()
   {
-    super(paramContext);
-    c = new acz(a, paramaeh, paramOpenChannelAnimationView);
+    this(localaej, localArrayList, aed.a(), bbo.a(), alw.a());
   }
   
-  @cgb
-  public final View a(@cgc View paramView, ViewGroup paramViewGroup, @cgb LayoutInflater paramLayoutInflater)
+  private acy(aej paramaej, List<ade> paramList, aed paramaed, Bus paramBus, alw paramalw)
   {
-    View localView;
-    if (paramView != null)
-    {
-      localView = paramView;
-      if (paramView.getTag() == StoriesAdapter.StoriesViewType.DISCOVER) {}
+    b = paramList;
+    a = paramaej;
+    c = paramaed;
+    e = paramBus;
+    f = paramalw;
+  }
+  
+  public static acy a()
+  {
+    return d;
+  }
+  
+  public static void a(String paramString)
+  {
+    if (paramString == null) {
+      return;
     }
-    else
+    new acu(paramString).a();
+  }
+  
+  public final void a(@chd ChannelPage paramChannelPage, @chd DSnapPage paramDSnapPage)
+  {
+    if ((paramChannelPage == null) && (paramDSnapPage != null) && (g.a != null)) {}
+    for (Object localObject = new adf(g.a, paramDSnapPage);; localObject = new adf(paramChannelPage, paramDSnapPage))
     {
-      localView = paramLayoutInflater.inflate(2130968656, paramViewGroup, false);
-      a(localView);
-      localView.setTag(StoriesAdapter.StoriesViewType.DISCOVER);
+      adf localadf = g;
+      g = ((adf)localObject);
+      localObject = b.iterator();
+      while (((Iterator)localObject).hasNext()) {
+        ((ade)((Iterator)localObject).next()).a(g);
+      }
     }
-    return localView;
+    localObject = f.b();
+    if (paramDSnapPage != null) {
+      localObject = ((alv)localObject).a(h).a(g);
+    }
+    for (;;)
+    {
+      f.a((alv)localObject);
+      if (paramDSnapPage != null) {
+        f.a.a("DISCOVER", paramDSnapPage.b());
+      }
+      if (paramChannelPage != null) {
+        f.a.a("DISCOVER", paramChannelPage.d());
+      }
+      a.c();
+      return;
+      if (paramChannelPage != null) {
+        localObject = ((alv)localObject).a(b);
+      } else {
+        localObject = new alv(new String[] { "DISCOVER" });
+      }
+    }
   }
   
-  public final void a(Cursor paramCursor, boolean paramBoolean)
+  @awj
+  public final void b()
   {
-    c.a(paramCursor, paramBoolean);
+    e.c(this);
+    Iterator localIterator = b.iterator();
+    while (localIterator.hasNext()) {
+      ((ade)localIterator.next()).a();
+    }
   }
   
-  public final void b() {}
-  
-  public final StoriesAdapter.StoriesViewType c()
+  public final void c()
   {
-    return StoriesAdapter.StoriesViewType.DISCOVER;
+    Iterator localIterator = b.iterator();
+    while (localIterator.hasNext()) {
+      ((ade)localIterator.next()).c();
+    }
   }
   
-  public final void d() {}
-  
-  @cgb
-  public final BaseAdapter e()
+  @bpi
+  public final void onUserLoadedEvent(bfq parambfq)
   {
-    return c;
-  }
-  
-  public final void f() {}
-  
-  public final void g() {}
-  
-  public final String h()
-  {
-    return "discover&";
-  }
-  
-  public final StoriesSection i()
-  {
-    return StoriesSection.DISCOVER;
-  }
-  
-  public final boolean m_()
-  {
-    return c.isEmpty();
+    a.e();
+    a.b();
   }
 }
 

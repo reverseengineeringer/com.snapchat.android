@@ -1,318 +1,347 @@
-.class public final Lamx;
-.super Lamd;
+.class public Lamx;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lts$b;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lamx$a;
-    }
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lamd;",
-        "Lts$b",
-        "<",
-        "Lbkf;",
-        ">;"
-    }
-.end annotation
 
 
 # instance fields
-.field public a:Lbkf;
+.field public a:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "id"
+    .end annotation
+.end field
 
-.field private final b:D
+.field public b:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "sn"
+    .end annotation
+.end field
 
-.field private final c:D
+.field public c:J
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "sts"
+    .end annotation
+.end field
 
-.field private final d:Ljava/lang/Float;
+.field public d:I
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "m"
+    .end annotation
+.end field
 
-.field private final e:J
+.field public e:Z
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "zipped"
+    .end annotation
+.end field
 
-.field private final f:Ljava/lang/String;
+.field public f:D
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "timer"
+    .end annotation
+.end field
 
-.field private final g:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+.field public g:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "cap_text"
+    .end annotation
+.end field
+
+.field private h:J
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "cap_ori"
+    .end annotation
+.end field
+
+.field private i:D
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "cap_pos"
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
-    .locals 5
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    const/4 v4, 0x1
+    .line 18
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v2, 0x1
-
-    .line 46
-    invoke-direct {p0, p1}, Lamd;-><init>(Landroid/content/Intent;)V
-
-    .line 41
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
-
-    iput-object v0, p0, Lamx;->g:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-
-    .line 47
-    const-string v0, "lat"
-
-    invoke-virtual {p1, v0, v2, v3}, Landroid/content/Intent;->getDoubleExtra(Ljava/lang/String;D)D
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lamx;->b:D
-
-    .line 48
-    const-string v0, "long"
-
-    invoke-virtual {p1, v0, v2, v3}, Landroid/content/Intent;->getDoubleExtra(Ljava/lang/String;D)D
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lamx;->c:D
-
-    .line 49
-    const-string v0, "accuracyMeters"
-
-    invoke-virtual {p1, v0, v4}, Landroid/content/Intent;->getFloatExtra(Ljava/lang/String;F)F
-
-    move-result v0
-
-    .line 50
-    cmpl-float v1, v0, v4
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    :goto_0
-    iput-object v0, p0, Lamx;->d:Ljava/lang/Float;
-
-    .line 51
-    const-string v0, "totalPollingDurationMillis"
-
-    const-wide/high16 v2, -0x8000000000000000L
-
-    invoke-virtual {p1, v0, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lamx;->e:J
-
-    .line 52
-    const-string v0, "action"
-
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lamx;->f:Ljava/lang/String;
-
-    .line 54
-    const-class v0, Lbkf;
-
-    invoke-virtual {p0, v0, p0}, Lamx;->a(Ljava/lang/Class;Lts$b;)V
-
-    .line 55
     return-void
+.end method
+
+.method public static a(Ljava/lang/String;)Lamx;
+    .locals 6
+    .param p0    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v5, 0x0
+
+    const/4 v1, 0x0
+
+    .line 44
+    const-string v0, ":"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 45
+    array-length v2, v0
+
+    const/4 v3, 0x2
+
+    if-eq v2, v3, :cond_0
+
+    move-object v0, v1
+
+    .line 72
+    :goto_0
+    return-object v0
 
     .line 50
     :cond_0
-    const/4 v0, 0x0
+    invoke-static {}, Lakr;->F()Ljava/lang/String;
 
+    move-result-object v2
+
+    .line 51
+    if-nez v2, :cond_1
+
+    move-object v0, v1
+
+    .line 52
+    goto :goto_0
+
+    .line 56
+    :cond_1
+    invoke-virtual {v2}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v2
+
+    .line 57
+    aget-object v3, v0, v5
+
+    invoke-static {v3, v5}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+
+    move-result-object v3
+
+    .line 58
+    const/4 v4, 0x1
+
+    aget-object v0, v0, v4
+
+    invoke-static {v0, v5}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+
+    move-result-object v0
+
+    .line 60
+    new-instance v4, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;
+
+    invoke-direct {v4, v2, v3}, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;-><init>([B[B)V
+
+    .line 61
+    const-string v2, "no dataId provided"
+
+    invoke-virtual {v4, v0, v2}, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->b([BLjava/lang/String;)[B
+
+    move-result-object v0
+
+    .line 63
+    if-nez v0, :cond_2
+
+    move-object v0, v1
+
+    .line 64
+    goto :goto_0
+
+    .line 69
+    :cond_2
+    :try_start_0
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v0}, Ljava/lang/String;-><init>([B)V
+
+    const-class v0, Lamx;
+
+    invoke-virtual {v2, v3, v0}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lamx;
+    :try_end_0
+    .catch Lcom/google/gson/JsonSyntaxException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 70
+    :catch_0
+    move-exception v0
+
+    .line 71
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "SNAP-LOG: Error deserializing decrypted snap push metadata: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object v0, v1
+
+    .line 72
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)V
-    .locals 6
+.method public toString()Ljava/lang/String;
+    .locals 5
 
     .prologue
-    const/4 v1, 0x0
+    const/16 v4, 0x27
 
-    .line 89
-    iget-wide v2, p0, Lamx;->b:D
+    .line 114
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
+    const-string v1, "SnapPushMetadata{mId=\'"
 
-    move-result-wide v2
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-wide v4, 0x4056800000000000L    # 90.0
+    iget-object v1, p0, Lamx;->a:Ljava/lang/String;
 
-    cmpl-double v0, v2, v4
-
-    if-lez v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    if-eqz v0, :cond_4
-
-    .line 90
-    invoke-super {p0, p1}, Lamd;->a(Landroid/content/Context;)V
-
-    .line 94
-    :goto_1
-    return-void
-
-    .line 89
-    :cond_0
-    iget-wide v2, p0, Lamx;->c:D
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide v2
-
-    const-wide v4, 0x4066800000000000L    # 180.0
-
-    cmpl-double v0, v2, v4
-
-    if-lez v0, :cond_1
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    iget-wide v2, p0, Lamx;->e:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v0, v2, v4
-
-    if-gez v0, :cond_2
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lamx;->f:Ljava/lang/String;
-
-    const-string v2, "update"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Lamx;->f:Ljava/lang/String;
-
-    const-string v2, "delete"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 92
-    :cond_4
-    const-string v0, "FindNearbyFriendsOperation"
-
-    const-string v2, "Skipping find nearby friends request due to invalid params"
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v1}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-.end method
-
-.method public final synthetic a(Ljava/lang/Object;Luc;)V
-    .locals 2
-
-    .prologue
-    .line 24
-    check-cast p1, Lbkf;
-
-    iget v0, p2, Luc;->mResponseCode:I
-
-    const/16 v1, 0x190
-
-    if-ne v0, v1, :cond_0
-
-    const-string v0, "ANF_RATE_LIMIT"
-
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->a(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b(Z)V
+    move-result-object v0
 
-    :cond_0
-    invoke-virtual {p2}, Luc;->d()Z
+    const-string v1, ", mSender=\'"
 
-    move-result v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_1
+    move-result-object v0
 
-    if-eqz p1, :cond_1
+    iget-object v1, p0, Lamx;->b:Ljava/lang/String;
 
-    iput-object p1, p0, Lamx;->a:Lbkf;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_0
-    return-void
+    move-result-object v0
 
-    :cond_1
-    const/4 v0, 0x0
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lamx;->a:Lbkf;
+    move-result-object v0
 
-    goto :goto_0
-.end method
+    const-string v1, ", mTimestamp="
 
-.method public final b()Ljava/lang/Object;
-    .locals 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .prologue
-    .line 119
-    new-instance v0, Lamx$a;
+    move-result-object v0
 
-    iget-wide v2, p0, Lamx;->b:D
+    iget-wide v2, p0, Lamx;->c:J
 
-    iget-wide v4, p0, Lamx;->c:D
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object v6, p0, Lamx;->d:Ljava/lang/Float;
+    move-result-object v0
 
-    iget-wide v7, p0, Lamx;->e:J
+    const-string v1, ", mMediaType="
 
-    iget-object v9, p0, Lamx;->f:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v1, p0
+    move-result-object v0
 
-    invoke-direct/range {v0 .. v9}, Lamx$a;-><init>(Lamx;DDLjava/lang/Float;JLjava/lang/String;)V
+    iget v1, p0, Lamx;->d:I
 
-    return-object v0
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method protected final e()Ljava/lang/String;
-    .locals 1
+    move-result-object v0
 
-    .prologue
-    .line 114
-    const-string v0, "/bq/and/find_nearby_friends"
+    const-string v1, ", mZipped="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lamx;->e:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", mDisplayTime="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-wide v2, p0, Lamx;->f:D
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", mCaptionText=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lamx;->g:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", mCaptionOrientation="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-wide v2, p0, Lamx;->h:J
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", mCaptionPosition="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-wide v2, p0, Lamx;->i:D
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x7d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -6,7 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/snapchat/android/notification/AndroidNotificationManager$2;,
+        Lcom/snapchat/android/notification/AndroidNotificationManager$3;,
         Lcom/snapchat/android/notification/AndroidNotificationManager$b;,
         Lcom/snapchat/android/notification/AndroidNotificationManager$a;,
         Lcom/snapchat/android/notification/AndroidNotificationManager$Type;,
@@ -28,23 +28,25 @@
 
 
 # instance fields
-.field public final b:Laol;
+.field public final b:Laph;
 
-.field public final c:Lakc;
+.field public final c:Lakx;
 
 .field public d:Z
 
 .field private final i:Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;
 
-.field private final j:Ltd;
+.field private final j:Ltt;
 
-.field private final k:Lni;
+.field private final k:Lnz;
 
-.field private l:Lalx;
+.field private final l:Log;
 
-.field private m:Laly;
+.field private m:Lamu;
 
-.field private final n:Lajx;
+.field private n:Lamv;
+
+.field private final o:Lakr;
 
 
 # direct methods
@@ -52,7 +54,7 @@
     .locals 3
 
     .prologue
-    .line 79
+    .line 81
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -79,14 +81,14 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->e:[Ljava/lang/String;
 
-    .line 147
+    .line 149
     new-instance v0, Lcom/snapchat/android/notification/AndroidNotificationManager;
 
     invoke-direct {v0}, Lcom/snapchat/android/notification/AndroidNotificationManager;-><init>()V
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->f:Lcom/snapchat/android/notification/AndroidNotificationManager;
 
-    .line 151
+    .line 153
     const/4 v0, 0x4
 
     new-array v0, v0, [J
@@ -95,7 +97,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->g:[J
 
-    .line 153
+    .line 155
     const-string v0, "#AAAAAA"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -106,7 +108,7 @@
 
     return-void
 
-    .line 151
+    .line 153
     nop
 
     :array_0
@@ -119,82 +121,89 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 9
+    .locals 10
 
     .prologue
-    .line 191
+    .line 194
     invoke-static {}, Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;->a()Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;
 
     move-result-object v1
 
-    invoke-static {}, Laol;->a()Laol;
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v2
 
-    invoke-static {}, Lakc;->b()Lakc;
+    invoke-static {}, Lakx;->c()Lakx;
 
     move-result-object v3
 
-    invoke-static {}, Ltd;->a()Ltd;
+    invoke-static {}, Ltt;->a()Ltt;
 
     move-result-object v4
 
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v5
 
-    invoke-static {}, Lalx;->a()Lalx;
+    invoke-static {}, Lamu;->a()Lamu;
 
     move-result-object v6
 
-    new-instance v7, Laly;
+    new-instance v7, Lamv;
 
-    invoke-direct {v7}, Laly;-><init>()V
+    invoke-direct {v7}, Lamv;-><init>()V
 
-    invoke-static {}, Lni;->a()Lni;
+    invoke-static {}, Lnz;->a()Lnz;
 
     move-result-object v8
 
+    invoke-static {}, Log;->a()Log;
+
+    move-result-object v9
+
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v8}, Lcom/snapchat/android/notification/AndroidNotificationManager;-><init>(Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;Laol;Lakc;Ltd;Lajx;Lalx;Laly;Lni;)V
+    invoke-direct/range {v0 .. v9}, Lcom/snapchat/android/notification/AndroidNotificationManager;-><init>(Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;Laph;Lakx;Ltt;Lakr;Lamu;Lamv;Lnz;Log;)V
 
-    .line 195
+    .line 198
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;Laol;Lakc;Ltd;Lajx;Lalx;Laly;Lni;)V
+.method private constructor <init>(Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;Laph;Lakx;Ltt;Lakr;Lamu;Lamv;Lnz;Log;)V
     .locals 0
 
     .prologue
-    .line 204
+    .line 208
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 205
+    .line 209
     iput-object p1, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->i:Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable;
 
-    .line 206
-    iput-object p2, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->b:Laol;
-
-    .line 207
-    iput-object p3, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->c:Lakc;
-
-    .line 208
-    iput-object p4, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->j:Ltd;
-
-    .line 209
-    iput-object p5, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->n:Lajx;
-
     .line 210
-    iput-object p6, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->l:Lalx;
+    iput-object p2, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->b:Laph;
 
     .line 211
-    iput-object p7, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->m:Laly;
+    iput-object p3, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->c:Lakx;
 
     .line 212
-    iput-object p8, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->k:Lni;
+    iput-object p4, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->j:Ltt;
 
     .line 213
+    iput-object p5, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->o:Lakr;
+
+    .line 214
+    iput-object p6, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->m:Lamu;
+
+    .line 215
+    iput-object p7, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->n:Lamv;
+
+    .line 216
+    iput-object p8, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->k:Lnz;
+
+    .line 217
+    iput-object p9, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->l:Log;
+
+    .line 218
     return-void
 .end method
 
@@ -202,7 +211,7 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 221
     sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->f:Lcom/snapchat/android/notification/AndroidNotificationManager;
 
     return-object v0
@@ -215,7 +224,7 @@
             "(",
             "Ljava/util/LinkedHashMap",
             "<",
-            "Lajz;",
+            "Lakt;",
             "Lcom/snapchat/android/notification/AndroidNotificationManager$a;",
             ">;)",
             "Ljava/lang/String;"
@@ -223,12 +232,12 @@
     .end annotation
 
     .prologue
-    .line 865
+    .line 870
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 867
+    .line 872
     invoke-virtual {p0}, Ljava/util/LinkedHashMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -249,60 +258,60 @@
 
     move-result-object v0
 
-    check-cast v0, Lajz;
+    check-cast v0, Lakt;
 
-    .line 868
+    .line 873
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
 
     if-lez v3, :cond_1
 
-    .line 869
+    .line 874
     const-string v3, ", "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 871
+    .line 876
     :cond_1
-    invoke-virtual {v0}, Lajz;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lakt;->b()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 872
+    .line 877
     invoke-virtual {p0, v0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/snapchat/android/notification/AndroidNotificationManager$a;
 
-    .line 873
+    .line 878
     iget v3, v0, Lcom/snapchat/android/notification/AndroidNotificationManager$a;->b:I
 
     const/4 v4, 0x1
 
     if-le v3, v4, :cond_0
 
-    .line 874
+    .line 879
     const-string v3, " ("
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 875
+    .line 880
     iget v0, v0, Lcom/snapchat/android/notification/AndroidNotificationManager$a;->b:I
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 876
+    .line 881
     const-string v0, ")"
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 880
+    .line 885
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -315,18 +324,7 @@
     .locals 6
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 224
-    const-string v0, "AndroidNotificationManager"
-
-    const-string v2, "clearAllNotifications"
-
-    new-array v3, v1, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 225
+    .line 229
     const-string v0, "notification"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -335,45 +333,47 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 228
+    .line 233
     invoke-static {}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->values()[Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     move-result-object v2
 
     array-length v3, v2
 
+    const/4 v1, 0x0
+
     :goto_0
     if-ge v1, v3, :cond_0
 
     aget-object v4, v2, v1
 
-    .line 229
+    .line 234
     invoke-virtual {v4}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->getNotificationId()I
 
     move-result v5
 
     invoke-virtual {v0, v5}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 230
+    .line 235
     invoke-virtual {v4}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->name()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-static {p0, v4}, Lcom/snapchat/android/database/table/NotificationTable;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 228
+    .line 233
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 232
+    .line 237
     :cond_0
     return-void
 .end method
 
 .method private a(Landroid/content/Context;Landroid/content/res/Resources;Landroid/database/Cursor;)V
     .locals 11
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .prologue
@@ -383,10 +383,10 @@
 
     const/4 v0, 0x0
 
-    .line 738
+    .line 743
     sget-object v5, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CASH:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 739
+    .line 744
     if-eqz p3, :cond_0
 
     invoke-interface {p3}, Landroid/database/Cursor;->getCount()I
@@ -401,15 +401,15 @@
 
     if-nez v1, :cond_1
 
-    .line 740
+    .line 745
     :cond_0
     invoke-static {p1, v5}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Landroid/content/Context;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
 
-    .line 790
+    .line 795
     :goto_0
     return-void
 
-    .line 744
+    .line 749
     :cond_1
     new-instance v3, Ljava/util/LinkedHashMap;
 
@@ -417,7 +417,7 @@
 
     move v8, v0
 
-    .line 749
+    .line 754
     :cond_2
     sget-object v1, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->SENDER:Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;
 
@@ -429,7 +429,7 @@
 
     move-result-object v1
 
-    .line 750
+    .line 755
     sget-object v4, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->SENDER_USERNAME:Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;
 
     invoke-virtual {v4}, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->getColumnNumber()I
@@ -440,7 +440,7 @@
 
     move-result-object v4
 
-    .line 752
+    .line 757
     sget-object v6, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->CASH_AMOUNT:Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;
 
     invoke-virtual {v6}, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->getColumnNumber()I
@@ -451,17 +451,17 @@
 
     move-result-object v6
 
-    .line 756
+    .line 761
     invoke-virtual {v3, v1, v6}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 758
+    .line 763
     invoke-interface {p3}, Landroid/database/Cursor;->isLast()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 759
+    .line 764
     sget-object v1, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->NINJA_MODE:Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;
 
     invoke-virtual {v1}, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->getColumnNumber()I
@@ -479,7 +479,7 @@
     :goto_1
     move v8, v1
 
-    .line 762
+    .line 767
     :cond_3
     invoke-interface {p3}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -487,22 +487,22 @@
 
     if-nez v1, :cond_2
 
-    .line 764
+    .line 769
     invoke-static {v5}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)I
 
     move-result v1
 
-    .line 765
+    .line 770
     invoke-virtual {p2, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 766
+    .line 771
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 767
+    .line 772
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/LinkedHashMap;->keySet()Ljava/util/Set;
@@ -511,17 +511,17 @@
 
     invoke-direct {v9, v10}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 769
+    .line 774
     invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v10
 
     packed-switch v10, :pswitch_data_0
 
-    .line 776
+    .line 781
     invoke-interface {v6, v9}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 780
+    .line 785
     :goto_2
     invoke-interface {v9}, Ljava/util/List;->size()I
 
@@ -537,7 +537,7 @@
 
     move-result v0
 
-    .line 781
+    .line 786
     aget-object v0, v1, v0
 
     invoke-interface {v6}, Ljava/util/List;->toArray()[Ljava/lang/Object;
@@ -548,19 +548,19 @@
 
     move-result-object v3
 
-    .line 785
+    .line 790
     invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-ne v0, v2, :cond_5
 
-    .line 786
+    .line 791
     new-instance v6, Lcom/snapchat/android/notification/AndroidNotificationManager$a;
 
     invoke-direct {v6, v4}, Lcom/snapchat/android/notification/AndroidNotificationManager$a;-><init>(Ljava/lang/String;)V
 
-    .line 788
+    .line 793
     :goto_3
     invoke-static {p1}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Landroid/content/Context;)Ljava/lang/String;
 
@@ -579,10 +579,10 @@
     :cond_4
     move v1, v0
 
-    .line 759
+    .line 764
     goto :goto_1
 
-    .line 771
+    .line 776
     :pswitch_0
     invoke-interface {v9, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -590,10 +590,10 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 772
+    .line 777
     invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 773
+    .line 778
     invoke-virtual {v3, v0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -607,7 +607,7 @@
 
     goto :goto_3
 
-    .line 769
+    .line 774
     nop
 
     :pswitch_data_0
@@ -618,7 +618,7 @@
 
 .method private a(Landroid/content/Context;Landroid/content/res/Resources;Landroid/database/Cursor;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
     .locals 10
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .prologue
@@ -628,7 +628,7 @@
 
     const/4 v7, 0x0
 
-    .line 683
+    .line 688
     if-eqz p3, :cond_0
 
     invoke-interface {p3}, Landroid/database/Cursor;->moveToFirst()Z
@@ -637,22 +637,22 @@
 
     if-nez v0, :cond_2
 
-    .line 684
+    .line 689
     :cond_0
     invoke-static {p1, p4}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Landroid/content/Context;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
 
-    .line 734
+    .line 739
     :cond_1
     :goto_0
     return-void
 
-    .line 688
+    .line 693
     :cond_2
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 689
+    .line 694
     new-instance v6, Ljava/util/LinkedHashSet;
 
     invoke-direct {v6}, Ljava/util/LinkedHashSet;-><init>()V
@@ -661,7 +661,7 @@
 
     move-object v1, v7
 
-    .line 694
+    .line 699
     :goto_1
     sget-object v0, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->SENDER:Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;
 
@@ -673,7 +673,7 @@
 
     move-result-object v4
 
-    .line 695
+    .line 700
     sget-object v0, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->SENDER_USERNAME:Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;
 
     invoke-virtual {v0}, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->getColumnNumber()I
@@ -684,21 +684,21 @@
 
     move-result-object v0
 
-    .line 698
+    .line 703
     invoke-virtual {v6, v0}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
     move-result v9
 
     if-eqz v9, :cond_a
 
-    .line 699
+    .line 704
     if-nez v1, :cond_9
 
-    .line 700
+    .line 705
     :goto_2
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 703
+    .line 708
     :goto_3
     sget-object v1, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->TEXT:Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;
 
@@ -710,14 +710,14 @@
 
     move-result-object v4
 
-    .line 705
+    .line 710
     invoke-interface {p3}, Landroid/database/Cursor;->isLast()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 706
+    .line 711
     sget-object v1, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->NINJA_MODE:Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;
 
     invoke-virtual {v1}, Lcom/snapchat/android/database/table/NotificationTable$NotificationSchema;->getColumnNumber()I
@@ -735,7 +735,7 @@
     :goto_4
     move v8, v1
 
-    .line 709
+    .line 714
     :cond_3
     invoke-interface {p3}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -743,12 +743,12 @@
 
     if-nez v1, :cond_b
 
-    .line 711
+    .line 716
     invoke-static {p4}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)I
 
     move-result v1
 
-    .line 712
+    .line 717
     if-gez v1, :cond_4
 
     invoke-static {p4}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)Z
@@ -757,7 +757,7 @@
 
     if-eqz v9, :cond_1
 
-    .line 718
+    .line 723
     :cond_4
     invoke-virtual {v6}, Ljava/util/LinkedHashSet;->size()I
 
@@ -765,12 +765,12 @@
 
     if-ne v6, v2, :cond_8
 
-    .line 719
+    .line 724
     new-instance v6, Lcom/snapchat/android/notification/AndroidNotificationManager$a;
 
     invoke-direct {v6, v0}, Lcom/snapchat/android/notification/AndroidNotificationManager$a;-><init>(Ljava/lang/String;)V
 
-    .line 723
+    .line 728
     :goto_5
     invoke-static {p4}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)Z
 
@@ -778,28 +778,28 @@
 
     if-eqz v0, :cond_7
 
-    .line 724
+    .line 729
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 725
-    invoke-static {p4}, Lni;->b(Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
+    .line 730
+    invoke-static {p4}, Lnz;->b(Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
 
     goto :goto_0
 
     :cond_5
     move v1, v3
 
-    .line 706
+    .line 711
     goto :goto_4
 
     :cond_6
     move-object v3, v4
 
-    .line 732
+    .line 737
     :goto_6
     invoke-static {p1}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Landroid/content/Context;)Ljava/lang/String;
 
@@ -817,7 +817,7 @@
 
     goto/16 :goto_0
 
-    .line 730
+    .line 735
     :cond_7
     invoke-virtual {p2, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -922,41 +922,27 @@
 .end method
 
 .method public static a(Landroid/content/Context;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
-    .locals 3
+    .locals 2
     .param p0    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p1    # Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 235
-    const-string v0, "AndroidNotificationManager"
+    .line 240
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "clearNotifications type="
 
-    const-string v2, "clearNotifications type="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 236
+    .line 241
     const-string v0, "notification"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -965,49 +951,49 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 238
+    .line 243
     invoke-virtual {p1}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->getNotificationId()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 239
+    .line 244
     invoke-virtual {p1}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->name()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/snapchat/android/database/table/NotificationTable;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 240
+    .line 245
     return-void
 .end method
 
 .method private a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;Lcom/snapchat/android/notification/AndroidNotificationManager$a;Lcom/snapchat/android/notification/AndroidNotificationManager$b;Z)V
     .locals 6
     .param p6    # Lcom/snapchat/android/notification/AndroidNotificationManager$a;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p7    # Lcom/snapchat/android/notification/AndroidNotificationManager$b;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 902
-    invoke-static {}, Lajx;->bL()Z
+    .line 907
+    invoke-static {}, Lakr;->bG()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 956
+    .line 961
     :cond_0
     :goto_0
     return-void
 
-    .line 906
+    .line 911
     :cond_1
     const-string v0, "notification"
 
@@ -1017,12 +1003,12 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 909
+    .line 914
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    invoke-static {p1, p5, p6, p7, v2}, Laly;->a(Landroid/content/Context;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;Lcom/snapchat/android/notification/AndroidNotificationManager$a;Lcom/snapchat/android/notification/AndroidNotificationManager$b;Z)Landroid/content/Intent;
+    invoke-static {p1, p5, p6, p7, v2}, Lamv;->a(Landroid/content/Context;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;Lcom/snapchat/android/notification/AndroidNotificationManager$a;Lcom/snapchat/android/notification/AndroidNotificationManager$b;Z)Landroid/content/Intent;
 
     move-result-object v2
 
@@ -1032,14 +1018,14 @@
 
     move-result-object v1
 
-    .line 910
-    iget-object v2, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->b:Laol;
+    .line 915
+    iget-object v2, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->b:Laph;
 
     invoke-virtual {p5}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->name()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2, p1}, Laol;->b(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-virtual {v2, p1}, Laph;->b(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v2
 
@@ -1067,7 +1053,7 @@
 
     move-result-object v2
 
-    .line 911
+    .line 916
     new-instance v3, Landroid/support/v4/app/NotificationCompat$Builder;
 
     invoke-direct {v3, p1}, Landroid/support/v4/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
@@ -1127,7 +1113,7 @@
 
     move-result-object v2
 
-    .line 923
+    .line 928
     invoke-static {p1}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -1136,7 +1122,7 @@
 
     move-result v1
 
-    .line 924
+    .line 929
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const v4, 0x7f020187
@@ -1152,13 +1138,13 @@
     const v1, 0x7f020183
 
     :goto_1
-    invoke-static {p1, v1}, Laur;->a(Landroid/content/Context;I)Landroid/graphics/Bitmap;
+    invoke-static {p1, v1}, Lavp;->a(Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     iput-object v1, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mLargeIcon:Landroid/graphics/Bitmap;
 
-    sget-object v1, Lcom/snapchat/android/notification/AndroidNotificationManager$2;->a:[I
+    sget-object v1, Lcom/snapchat/android/notification/AndroidNotificationManager$3;->a:[I
 
     invoke-virtual {p5}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->ordinal()I
 
@@ -1173,7 +1159,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f080047
+    const v3, 0x7f080048
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1182,11 +1168,11 @@
     :goto_2
     iput v1, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mColor:I
 
-    .line 927
+    .line 932
     :goto_3
     if-nez p8, :cond_a
 
-    invoke-static {}, Lajx;->bH()Z
+    invoke-static {}, Lakr;->bC()Z
 
     move-result v1
 
@@ -1194,20 +1180,20 @@
 
     const/4 v1, 0x1
 
-    .line 928
+    .line 933
     :goto_4
     if-eqz v1, :cond_3
 
-    .line 929
+    .line 934
     sget-object v1, Lcom/snapchat/android/notification/AndroidNotificationManager;->g:[J
 
     invoke-virtual {v2, v1}, Landroid/support/v4/app/NotificationCompat$Builder;->setVibrate([J)Landroid/support/v4/app/NotificationCompat$Builder;
 
-    .line 933
+    .line 938
     :cond_3
     if-nez p8, :cond_b
 
-    invoke-static {}, Lajx;->bI()Z
+    invoke-static {}, Lakr;->bD()Z
 
     move-result v1
 
@@ -1215,26 +1201,26 @@
 
     const/4 v1, 0x1
 
-    .line 934
+    .line 939
     :goto_5
     if-eqz v1, :cond_4
 
-    .line 935
+    .line 940
     iget-object v1, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
     const/4 v3, 0x1
 
     iput v3, v1, Landroid/app/Notification;->defaults:I
 
-    .line 938
+    .line 943
     :cond_4
-    invoke-static {}, Lajx;->bJ()Z
+    invoke-static {}, Lakr;->bE()Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    .line 939
+    .line 944
     iget-object v1, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
     const/16 v3, -0x100
@@ -1285,13 +1271,13 @@
 
     iput v1, v3, Landroid/app/Notification;->flags:I
 
-    .line 943
+    .line 948
     :cond_5
     new-instance v1, Landroid/support/v4/app/NotificationCompat$WearableExtender;
 
     invoke-direct {v1}, Landroid/support/v4/app/NotificationCompat$WearableExtender;-><init>()V
 
-    .line 944
+    .line 949
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -1304,20 +1290,20 @@
 
     iput-object v3, v1, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mBackground:Landroid/graphics/Bitmap;
 
-    .line 945
+    .line 950
     invoke-interface {v1, v2}, Landroid/support/v4/app/NotificationCompat$Extender;->extend(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/support/v4/app/NotificationCompat$Builder;
 
-    .line 947
-    sget-boolean v1, Lasu;->SUPPORTS_NOTIFICATION_PRIORITY:Z
+    .line 952
+    sget-boolean v1, Latt;->SUPPORTS_NOTIFICATION_PRIORITY:Z
 
     if-eqz v1, :cond_6
 
-    .line 948
+    .line 953
     const/4 v1, 0x1
 
     iput v1, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mPriority:I
 
-    .line 950
+    .line 955
     :cond_6
     invoke-virtual {p5}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->getNotificationId()I
 
@@ -1329,10 +1315,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
-    .line 952
+    .line 957
     if-nez p8, :cond_e
 
-    invoke-static {}, Lajx;->bK()Z
+    invoke-static {}, Lakr;->bF()Z
 
     move-result v0
 
@@ -1340,11 +1326,11 @@
 
     const/4 v0, 0x1
 
-    .line 953
+    .line 958
     :goto_8
     if-eqz v0, :cond_0
 
-    .line 954
+    .line 959
     const-string v0, "power"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1373,7 +1359,7 @@
 
     goto/16 :goto_0
 
-    .line 924
+    .line 929
     :cond_7
     const v1, 0x7f020185
 
@@ -1384,7 +1370,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f080047
+    const v3, 0x7f080048
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1410,7 +1396,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f080052
+    const v3, 0x7f080053
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1423,7 +1409,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f080040
+    const v3, 0x7f080041
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -1437,7 +1423,7 @@
     const v1, 0x7f020184
 
     :goto_9
-    invoke-static {p1, v1}, Laur;->a(Landroid/content/Context;I)Landroid/graphics/Bitmap;
+    invoke-static {p1, v1}, Lavp;->a(Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
@@ -1450,19 +1436,19 @@
 
     goto :goto_9
 
-    .line 927
+    .line 932
     :cond_a
     const/4 v1, 0x0
 
     goto/16 :goto_4
 
-    .line 933
+    .line 938
     :cond_b
     const/4 v1, 0x0
 
     goto/16 :goto_5
 
-    .line 939
+    .line 944
     :cond_c
     const/4 v1, 0x0
 
@@ -1473,13 +1459,13 @@
 
     goto/16 :goto_7
 
-    .line 952
+    .line 957
     :cond_e
     const/4 v0, 0x0
 
     goto :goto_8
 
-    .line 924
+    .line 929
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2
@@ -1503,8 +1489,8 @@
     .locals 2
 
     .prologue
-    .line 793
-    sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$2;->a:[I
+    .line 798
+    sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$3;->a:[I
 
     invoke-virtual {p0}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->ordinal()I
 
@@ -1514,19 +1500,19 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 798
+    .line 803
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 796
+    .line 801
     :pswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 793
+    .line 798
     nop
 
     :pswitch_data_0
@@ -1540,8 +1526,8 @@
     .locals 2
 
     .prologue
-    .line 803
-    sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$2;->a:[I
+    .line 808
+    sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$3;->a:[I
 
     invoke-virtual {p0}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->ordinal()I
 
@@ -1551,44 +1537,44 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 827
+    .line 832
     :pswitch_0
     const/4 v0, -0x1
 
     :goto_0
     return v0
 
-    .line 805
+    .line 810
     :pswitch_1
     const v0, 0x7f070008
 
     goto :goto_0
 
-    .line 809
+    .line 814
     :pswitch_2
     const v0, 0x7f070009
 
     goto :goto_0
 
-    .line 815
+    .line 820
     :pswitch_3
     const v0, 0x7f07000a
 
     goto :goto_0
 
-    .line 819
+    .line 824
     :pswitch_4
     const v0, 0x7f070007
 
     goto :goto_0
 
-    .line 823
+    .line 828
     :pswitch_5
     const v0, 0x7f07000b
 
     goto :goto_0
 
-    .line 803
+    .line 808
     nop
 
     :pswitch_data_0
@@ -1609,7 +1595,7 @@
     .locals 1
 
     .prologue
-    .line 243
+    .line 248
     sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->h:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1618,7 +1604,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 244
+    .line 249
     const v0, 0x7f0c0193
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1627,7 +1613,7 @@
 
     sput-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->h:Ljava/lang/String;
 
-    .line 246
+    .line 251
     :cond_0
     sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->h:Ljava/lang/String;
 
@@ -1637,7 +1623,7 @@
 .method public static c(Landroid/content/Context;Ljava/lang/String;)V
     .locals 10
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -1648,18 +1634,18 @@
 
     const/4 v2, 0x0
 
-    .line 1029
+    .line 1034
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->f()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1078
+    .line 1076
     :goto_0
     return-void
 
-    .line 1033
+    .line 1038
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1687,24 +1673,24 @@
 
     move-result-object v0
 
-    .line 1035
+    .line 1040
     new-instance v3, Landroid/content/Intent;
 
     const-string v4, "android.intent.action.SEND"
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1036
+    .line 1041
     const-string v4, "plain/text"
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1037
+    .line 1042
     const/high16 v4, 0x10000000
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1038
+    .line 1043
     const-string v4, "android.intent.extra.EMAIL"
 
     new-array v5, v1, [Ljava/lang/String;
@@ -1715,43 +1701,43 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1039
+    .line 1044
     const-string v4, "android.intent.extra.SUBJECT"
 
     const-string v5, "[Android] New ANR Report"
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1040
+    .line 1045
     const-string v4, "android.intent.extra.TEXT"
 
     invoke-virtual {v3, v4, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1041
+    .line 1046
     const/high16 v0, 0x8000000
 
     invoke-static {p0, v2, v3, v0}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v3
 
-    .line 1044
+    .line 1049
     invoke-static {p0}, Landroid/support/v4/app/NotificationManagerCompat;->from(Landroid/content/Context;)Landroid/support/v4/app/NotificationManagerCompat;
 
     move-result-object v4
 
-    .line 1046
+    .line 1051
     new-instance v5, Landroid/support/v4/app/NotificationCompat$InboxStyle;
 
     invoke-direct {v5}, Landroid/support/v4/app/NotificationCompat$InboxStyle;-><init>()V
 
-    .line 1047
+    .line 1052
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1048
+    .line 1053
     const-string v0, "\n"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
@@ -1760,31 +1746,31 @@
 
     move v0, v1
 
-    .line 1050
+    .line 1055
     :goto_1
     array-length v7, v6
 
     if-ge v0, v7, :cond_1
 
-    .line 1051
+    .line 1056
     aget-object v7, v6, v0
 
     invoke-virtual {v5, v7}, Landroid/support/v4/app/NotificationCompat$InboxStyle;->addLine(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$InboxStyle;
 
-    .line 1050
+    .line 1055
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1055
+    .line 1060
     :cond_1
-    const/16 v0, 0x19
+    const/4 v0, 0x2
 
     new-array v0, v0, [J
 
     fill-array-data v0, :array_0
 
-    .line 1065
+    .line 1063
     new-instance v6, Landroid/support/v4/app/NotificationCompat$Builder;
 
     invoke-direct {v6, p0}, Landroid/support/v4/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
@@ -1835,7 +1821,7 @@
 
     move-result-object v0
 
-    .line 1077
+    .line 1075
     invoke-virtual {v0}, Landroid/support/v4/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object v0
@@ -1891,34 +1877,13 @@
 
     goto/16 :goto_0
 
-    .line 1055
+    .line 1060
+    nop
+
     :array_0
     .array-data 8
         0x0
-        0x190
-        0xc8
-        0x190
-        0xc8
-        0x190
-        0xc8
-        0x64
-        0x64
-        0x64
-        0x64
-        0x64
-        0x64
-        0x190
-        0xc8
-        0x190
-        0xc8
-        0x190
-        0xc8
-        0x64
-        0x64
-        0x64
-        0x64
-        0x64
-        0x64
+        0x32
     .end array-data
 .end method
 
@@ -1928,14 +1893,14 @@
     .locals 1
 
     .prologue
-    .line 579
+    .line 584
     invoke-virtual {p1, p2, p3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 580
+    .line 585
     return-void
 .end method
 
@@ -1947,7 +1912,7 @@
 
     const/4 v6, 0x0
 
-    .line 479
+    .line 484
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -1956,11 +1921,11 @@
 
     const v1, 0x7f0c018d
 
-    invoke-static {v6, v1, v0}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v1, v0}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 482
+    .line 487
     invoke-static {p1}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
@@ -1977,27 +1942,27 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;Lcom/snapchat/android/notification/AndroidNotificationManager$a;Lcom/snapchat/android/notification/AndroidNotificationManager$b;Z)V
 
-    .line 485
+    .line 490
     return-void
 .end method
 
 .method public final a(Landroid/content/Context;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLcom/snapchat/android/notification/AndroidNotificationManager$Type;ZLjava/lang/String;)V
     .locals 15
     .param p13    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 372
+    .line 377
     iget-boolean v2, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->d:Z
 
     if-eqz v2, :cond_5
 
-    .line 373
-    iget-object v9, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->l:Lalx;
+    .line 378
+    iget-object v9, p0, Lcom/snapchat/android/notification/AndroidNotificationManager;->m:Lamu;
 
-    sget-object v2, Lalx;->g:Ljava/util/Set;
+    sget-object v2, Lamu;->g:Ljava/util/Set;
 
     move-object/from16 v0, p11
 
@@ -2017,12 +1982,12 @@
 
     if-ne v0, v2, :cond_2
 
-    iget-object v3, v9, Lalx;->e:Ljava/util/Map;
+    iget-object v3, v9, Lamu;->e:Ljava/util/Map;
 
     monitor-enter v3
 
     :try_start_0
-    iget-object v2, v9, Lalx;->e:Ljava/util/Map;
+    iget-object v2, v9, Lamu;->e:Ljava/util/Map;
 
     move-object/from16 v0, p6
 
@@ -2032,7 +1997,7 @@
 
     if-eqz v2, :cond_1
 
-    iget-object v2, v9, Lalx;->e:Ljava/util/Map;
+    iget-object v2, v9, Lamu;->e:Ljava/util/Map;
 
     move-object/from16 v0, p6
 
@@ -2056,14 +2021,14 @@
 
     monitor-exit v3
 
-    .line 378
+    .line 383
     :cond_0
     :goto_0
     return-void
 
-    .line 373
+    .line 378
     :cond_1
-    iget-object v2, v9, Lalx;->e:Ljava/util/Map;
+    iget-object v2, v9, Lamu;->e:Ljava/util/Map;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -2084,12 +2049,12 @@
 
     if-ne v0, v2, :cond_4
 
-    iget-object v3, v9, Lalx;->f:Ljava/util/Map;
+    iget-object v3, v9, Lamu;->f:Ljava/util/Map;
 
     monitor-enter v3
 
     :try_start_1
-    iget-object v2, v9, Lalx;->f:Ljava/util/Map;
+    iget-object v2, v9, Lamu;->f:Ljava/util/Map;
 
     move-object/from16 v0, p6
 
@@ -2099,7 +2064,7 @@
 
     if-eqz v2, :cond_3
 
-    iget-object v2, v9, Lalx;->f:Ljava/util/Map;
+    iget-object v2, v9, Lamu;->f:Ljava/util/Map;
 
     move-object/from16 v0, p6
 
@@ -2146,7 +2111,7 @@
 
     :cond_3
     :try_start_3
-    iget-object v2, v9, Lalx;->f:Ljava/util/Map;
+    iget-object v2, v9, Lamu;->f:Ljava/util/Map;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -2161,14 +2126,14 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :cond_4
-    iget-object v10, v9, Lalx;->c:Ljava/util/List;
+    iget-object v10, v9, Lamu;->c:Ljava/util/List;
 
     monitor-enter v10
 
     :try_start_4
-    new-instance v2, Lalx$a;
+    new-instance v2, Lamu$a;
 
-    iget-object v3, v9, Lalx;->d:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v3, v9, Lamu;->d:Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicLong;->getAndIncrement()J
 
@@ -2182,9 +2147,9 @@
 
     move-object/from16 v8, p2
 
-    invoke-direct/range {v2 .. v8}, Lalx$a;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;JLjava/lang/String;)V
+    invoke-direct/range {v2 .. v8}, Lamu$a;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;JLjava/lang/String;)V
 
-    iget-object v3, v9, Lalx;->c:Ljava/util/List;
+    iget-object v3, v9, Lamu;->c:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -2201,7 +2166,7 @@
 
     throw v2
 
-    .line 375
+    .line 380
     :cond_5
     invoke-virtual/range {p11 .. p11}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->name()Ljava/lang/String;
 
@@ -2236,34 +2201,34 @@
     .locals 19
 
     .prologue
-    .line 496
+    .line 501
     const/4 v9, 0x0
 
-    .line 497
+    .line 502
     const/4 v8, 0x0
 
-    .line 499
+    .line 504
     const/4 v7, 0x0
 
-    .line 500
+    .line 505
     const/4 v6, 0x0
 
-    .line 502
+    .line 507
     const-wide/16 v4, 0x0
 
-    .line 503
+    .line 508
     const-wide/16 v2, 0x0
 
-    .line 505
+    .line 510
     move-object/from16 v0, p0
 
-    iget-object v10, v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->c:Lakc;
+    iget-object v10, v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->c:Lakx;
 
-    invoke-virtual {v10}, Lakc;->e()Ljava/util/List;
+    invoke-virtual {v10}, Lakx;->f()Ljava/util/List;
 
     move-result-object v10
 
-    .line 506
+    .line 511
     invoke-interface {v10}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v14
@@ -2296,18 +2261,18 @@
 
     check-cast v2, Lcom/snapchat/android/model/chat/ChatConversation;
 
-    .line 507
+    .line 512
     invoke-virtual {v2}, Lcom/snapchat/android/model/chat/ChatConversation;->o()Ljava/util/List;
 
     move-result-object v15
 
-    .line 508
+    .line 513
     if-eqz v15, :cond_0
 
-    .line 509
+    .line 514
     monitor-enter v15
 
-    .line 512
+    .line 517
     :try_start_0
     invoke-interface {v15}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2335,62 +2300,62 @@
 
     check-cast v3, Lcom/snapchat/android/model/chat/ChatFeedItem;
 
-    .line 513
-    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->O()Z
+    .line 518
+    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->P()Z
 
     move-result v12
 
     if-eqz v12, :cond_1
 
-    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->P()Z
+    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->Q()Z
 
     move-result v12
 
     if-nez v12, :cond_1
 
-    .line 514
-    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->W()J
+    .line 519
+    invoke-interface {v3}, Lcom/snapchat/android/model/chat/ChatFeedItem;->U()J
 
     move-result-wide v12
 
-    .line 515
-    instance-of v0, v3, Lakb;
+    .line 520
+    instance-of v0, v3, Lakw;
 
     move/from16 v17, v0
 
     if-eqz v17, :cond_3
 
-    .line 516
-    check-cast v3, Lakb;
+    .line 521
+    check-cast v3, Lakw;
 
-    .line 517
+    .line 522
     sget-object v17, Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;->FAILED_AND_USER_NOTIFIED_OF_FAILURE:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
 
     move-object/from16 v0, v17
 
     iput-object v0, v3, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSendReceiveStatus:Lcom/snapchat/android/model/chat/StatefulChatFeedItem$SendReceiveStatus;
 
-    .line 518
+    .line 523
     cmp-long v3, v4, v12
 
     if-gez v3, :cond_10
 
-    .line 521
+    .line 526
     :goto_2
     add-int/lit8 v10, v10, 0x1
 
-    .line 523
+    .line 528
     iget-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mIsUserInConversation:Z
 
     if-nez v3, :cond_2
 
-    .line 524
+    .line 529
     add-int/lit8 v8, v8, 0x1
 
     :cond_2
     move-wide v4, v12
 
-    .line 526
+    .line 531
     goto :goto_1
 
     :cond_3
@@ -2400,24 +2365,24 @@
 
     if-eqz v17, :cond_1
 
-    .line 527
-    instance-of v0, v3, Laji;
+    .line 532
+    instance-of v0, v3, Lake;
 
     move/from16 v17, v0
 
     if-eqz v17, :cond_4
 
-    .line 528
-    check-cast v3, Laji;
+    .line 533
+    check-cast v3, Lake;
 
-    .line 529
+    .line 534
     sget-object v17, Lcom/snapchat/android/model/Snap$ClientSnapStatus;->FAILED_AND_USER_NOTIFIED_OF_FAILURE:Lcom/snapchat/android/model/Snap$ClientSnapStatus;
 
     move-object/from16 v0, v17
 
-    invoke-virtual {v3, v0}, Laji;->a(Lcom/snapchat/android/model/Snap$ClientSnapStatus;)V
+    invoke-virtual {v3, v0}, Lake;->a(Lcom/snapchat/android/model/Snap$ClientSnapStatus;)V
 
-    .line 531
+    .line 536
     :cond_4
     cmp-long v3, v6, v12
 
@@ -2425,21 +2390,21 @@
 
     move-wide v6, v12
 
-    .line 534
+    .line 539
     :cond_5
     add-int/lit8 v11, v11, 0x1
 
-    .line 536
+    .line 541
     iget-boolean v3, v2, Lcom/snapchat/android/model/chat/ChatConversation;->mIsUserInConversation:Z
 
     if-nez v3, :cond_1
 
-    .line 537
+    .line 542
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_1
 
-    .line 542
+    .line 547
     :cond_6
     monitor-exit v15
 
@@ -2462,25 +2427,25 @@
 
     throw v2
 
-    .line 543
+    .line 548
     :cond_7
     if-nez v9, :cond_9
 
     if-nez v10, :cond_9
 
-    .line 575
+    .line 580
     :cond_8
     :goto_3
     return-void
 
-    .line 550
+    .line 555
     :cond_9
     if-lez v9, :cond_b
 
     if-nez v10, :cond_b
 
-    .line 551
-    invoke-static/range {p1 .. p1}, Lajv;->a(Landroid/content/Context;)Lajv;
+    .line 556
+    invoke-static/range {p1 .. p1}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v2
 
@@ -2494,21 +2459,21 @@
 
     aput-object v11, v9, v10
 
-    invoke-virtual {v2, v9}, Lajv;->a([Lcom/snapchat/android/database/table/DbTable$DatabaseTable;)V
+    invoke-virtual {v2, v9}, Lakp;->a([Lcom/snapchat/android/database/table/DbTable$DatabaseTable;)V
 
-    .line 558
+    .line 563
     :goto_4
     if-nez v3, :cond_a
 
     if-eqz v8, :cond_8
 
-    .line 560
+    .line 565
     :cond_a
     if-lez v3, :cond_d
 
     if-nez v8, :cond_d
 
-    .line 561
+    .line 566
     const v2, 0x7f0c018c
 
     move-object/from16 v0, p1
@@ -2519,7 +2484,7 @@
 
     move-object v5, v6
 
-    .line 572
+    .line 577
     :goto_5
     invoke-static/range {p1 .. p1}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Landroid/content/Context;)Ljava/lang/String;
 
@@ -2541,14 +2506,14 @@
 
     goto :goto_3
 
-    .line 552
+    .line 557
     :cond_b
     if-nez v9, :cond_c
 
     if-lez v10, :cond_c
 
-    .line 553
-    invoke-static/range {p1 .. p1}, Lajv;->a(Landroid/content/Context;)Lajv;
+    .line 558
+    invoke-static/range {p1 .. p1}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v2
 
@@ -2562,13 +2527,13 @@
 
     aput-object v11, v9, v10
 
-    invoke-virtual {v2, v9}, Lajv;->a([Lcom/snapchat/android/database/table/DbTable$DatabaseTable;)V
+    invoke-virtual {v2, v9}, Lakp;->a([Lcom/snapchat/android/database/table/DbTable$DatabaseTable;)V
 
     goto :goto_4
 
-    .line 555
+    .line 560
     :cond_c
-    invoke-static/range {p1 .. p1}, Lajv;->a(Landroid/content/Context;)Lajv;
+    invoke-static/range {p1 .. p1}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v2
 
@@ -2588,17 +2553,17 @@
 
     aput-object v11, v9, v10
 
-    invoke-virtual {v2, v9}, Lajv;->a([Lcom/snapchat/android/database/table/DbTable$DatabaseTable;)V
+    invoke-virtual {v2, v9}, Lakp;->a([Lcom/snapchat/android/database/table/DbTable$DatabaseTable;)V
 
     goto :goto_4
 
-    .line 563
+    .line 568
     :cond_d
     if-nez v3, :cond_e
 
     if-lez v8, :cond_e
 
-    .line 564
+    .line 569
     const v2, 0x7f0c018e
 
     move-object/from16 v0, p1
@@ -2609,10 +2574,10 @@
 
     move-object v5, v6
 
-    .line 565
+    .line 570
     goto :goto_5
 
-    .line 567
+    .line 572
     :cond_e
     const v2, 0x7f0c018f
 
@@ -2622,7 +2587,7 @@
 
     move-result-object v3
 
-    .line 568
+    .line 573
     cmp-long v2, v6, v4
 
     if-lez v2, :cond_f
@@ -2653,39 +2618,39 @@
 
 .method public final b(Landroid/content/Context;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
     .locals 18
-    .annotation build Lcaq;
+    .annotation build Lcbr;
     .end annotation
 
     .prologue
-    .line 446
+    .line 451
     move-object/from16 v0, p0
 
     iget-boolean v4, v0, Lcom/snapchat/android/notification/AndroidNotificationManager;->d:Z
 
     if-eqz v4, :cond_0
 
-    .line 447
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 452
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v4
 
-    new-instance v5, Lbcb;
+    new-instance v5, Lbdb;
 
-    invoke-direct {v5}, Lbcb;-><init>()V
+    invoke-direct {v5}, Lbdb;-><init>()V
 
     invoke-virtual {v4, v5}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 467
+    .line 472
     :goto_0
     return-void
 
-    .line 451
+    .line 456
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
 
-    .line 452
+    .line 457
     sget-object v4, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->SNAP:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
     move-object/from16 v0, p2
@@ -2703,7 +2668,7 @@
 
     move v5, v4
 
-    .line 453
+    .line 458
     :goto_1
     if-eqz v5, :cond_8
 
@@ -2716,10 +2681,10 @@
 
     move-result-object v14
 
-    .line 456
+    .line 461
     if-eqz v5, :cond_e
 
-    .line 457
+    .line 462
     :try_start_0
     new-instance v15, Ljava/util/LinkedHashMap;
 
@@ -2784,9 +2749,9 @@
 
     move-result-wide v10
 
-    new-instance v13, Lajz;
+    new-instance v13, Lakt;
 
-    invoke-direct {v13, v8, v6}, Lajz;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v13, v8, v6}, Lakt;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v6, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->SNAP:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
@@ -2826,7 +2791,7 @@
 
     new-instance v4, Lcom/snapchat/android/notification/AndroidNotificationManager$a;
 
-    invoke-virtual {v13}, Lajz;->a()Ljava/lang/String;
+    invoke-virtual {v13}, Lakt;->a()Ljava/lang/String;
 
     move-result-object v6
 
@@ -2898,13 +2863,13 @@
 
     move-result-object v7
 
-    invoke-virtual {v13}, Lajz;->b()Ljava/lang/String;
+    invoke-virtual {v13}, Lakt;->b()Ljava/lang/String;
 
     move-result-object v4
 
     if-nez v4, :cond_4
 
-    invoke-virtual {v13}, Lajz;->a()Ljava/lang/String;
+    invoke-virtual {v13}, Lakt;->a()Ljava/lang/String;
 
     move-result-object v4
 
@@ -2921,7 +2886,7 @@
 
     const v10, 0x7f0c0192
 
-    invoke-static {v4, v10, v8}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v10, v8}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -2961,19 +2926,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 464
+    .line 469
     :goto_9
     if-eqz v14, :cond_6
 
     invoke-interface {v14}, Landroid/database/Cursor;->close()V
 
-    .line 466
+    .line 471
     :cond_6
-    invoke-static/range {p2 .. p2}, Lni;->a(Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
+    invoke-static/range {p2 .. p2}, Lnz;->a(Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
 
     goto/16 :goto_0
 
-    .line 452
+    .line 457
     :cond_7
     const/4 v4, 0x0
 
@@ -2981,7 +2946,7 @@
 
     goto/16 :goto_1
 
-    .line 453
+    .line 458
     :cond_8
     const/4 v4, 0x1
 
@@ -2997,7 +2962,7 @@
 
     goto/16 :goto_2
 
-    .line 457
+    .line 462
     :cond_9
     const/4 v6, 0x0
 
@@ -3016,7 +2981,7 @@
 
     goto :goto_9
 
-    .line 464
+    .line 469
     :catchall_0
     move-exception v4
 
@@ -3027,7 +2992,7 @@
     :cond_c
     throw v4
 
-    .line 457
+    .line 462
     :pswitch_0
     :try_start_2
     invoke-static/range {p1 .. p2}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Landroid/content/Context;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;)V
@@ -3037,7 +3002,7 @@
     :cond_d
     new-instance v11, Lcom/snapchat/android/notification/AndroidNotificationManager$b;
 
-    invoke-virtual {v13}, Lajz;->a()Ljava/lang/String;
+    invoke-virtual {v13}, Lakt;->a()Ljava/lang/String;
 
     move-result-object v4
 
@@ -3045,7 +3010,7 @@
 
     goto :goto_8
 
-    .line 458
+    .line 463
     :cond_e
     sget-object v4, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CASH:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
@@ -3053,7 +3018,7 @@
 
     if-ne v0, v4, :cond_f
 
-    .line 459
+    .line 464
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -3062,7 +3027,7 @@
 
     goto :goto_9
 
-    .line 461
+    .line 466
     :cond_f
     move-object/from16 v0, p0
 
@@ -3097,7 +3062,7 @@
 
     goto/16 :goto_3
 
-    .line 457
+    .line 462
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -3110,7 +3075,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 583
+    .line 588
     invoke-static {p1}, Lcom/snapchat/android/notification/AndroidNotificationManager;->b(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
@@ -3131,6 +3096,6 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/notification/AndroidNotificationManager$Type;Lcom/snapchat/android/notification/AndroidNotificationManager$a;Lcom/snapchat/android/notification/AndroidNotificationManager$b;Z)V
 
-    .line 585
+    .line 590
     return-void
 .end method

@@ -1,16 +1,26 @@
-import java.io.Closeable;
-import java.io.Flushable;
-
-public abstract interface cai
-  extends Closeable, Flushable
+public final class cai
+  extends cab
 {
-  public abstract cak E_();
+  public cai()
+  {
+    super("==", 3);
+  }
   
-  public abstract void a_(bzu parambzu, long paramLong);
+  public final double a(double paramDouble1, double paramDouble2)
+  {
+    if (paramDouble1 == paramDouble2) {
+      return 1.0D;
+    }
+    return 0.0D;
+  }
   
-  public abstract void close();
-  
-  public abstract void flush();
+  public final String a(String paramString1, String paramString2)
+  {
+    if (paramString1.compareTo(paramString2) == 0) {
+      return "1.0";
+    }
+    return "0.0";
+  }
 }
 
 /* Location:

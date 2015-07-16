@@ -2,407 +2,203 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvk;
+
 
 # annotations
-.annotation runtime Lbwr;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lws;",
+        ">;"
+    }
 .end annotation
 
 
+# static fields
+.field static final synthetic a:Z
+
+
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field private final b:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxf;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public b:I
-
-.field private final c:Laxc;
-
-.field private d:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-.field private e:Ljava/lang/String;
+.field private final c:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 24
-    invoke-static {}, Laxc;->a()Laxc;
+    .line 9
+    const-class v0, Lwu;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    invoke-direct {p0, v0}, Lwu;-><init>(Laxc;)V
+    move-result v0
 
-    .line 25
-    return-void
-.end method
+    if-nez v0, :cond_0
 
-.method private constructor <init>(Laxc;)V
-    .locals 1
-
-    .prologue
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 18
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lwu;->a:Ljava/lang/Object;
-
-    .line 19
-    sget-object v0, Lcom/snapchat/videotranscoder/task/Task$Status;->INVALID:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    iput-object v0, p0, Lwu;->d:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    .line 20
-    const/4 v0, 0x5
-
-    iput v0, p0, Lwu;->b:I
-
-    .line 29
-    iput-object p1, p0, Lwu;->c:Laxc;
-
-    .line 30
-    return-void
-.end method
-
-.method private f()Z
-    .locals 3
-
-    .prologue
-    .line 80
-    iget-object v1, p0, Lwu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 81
-    :try_start_0
-    iget-object v0, p0, Lwu;->d:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    sget-object v2, Lcom/snapchat/videotranscoder/task/Task$Status;->RUNNING:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    if-eq v0, v2, :cond_0
-
-    iget-object v0, p0, Lwu;->d:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    sget-object v2, Lcom/snapchat/videotranscoder/task/Task$Status;->CONFIGURED:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    if-ne v0, v2, :cond_1
-
-    :cond_0
     const/4 v0, 0x1
 
     :goto_0
-    monitor-exit v1
+    sput-boolean v0, Lwu;->a:Z
 
-    return v0
+    return-void
 
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
 
-    .line 83
-    :catchall_0
-    move-exception v0
+.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxf;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;)V"
+        }
+    .end annotation
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .prologue
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 15
+    sget-boolean v0, Lwu;->a:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
+
+    .line 16
+    :cond_0
+    iput-object p1, p0, Lwu;->b:Ljavax/inject/Provider;
+
+    .line 17
+    sget-boolean v0, Lwu;->a:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 18
+    :cond_1
+    iput-object p2, p0, Lwu;->c:Ljavax/inject/Provider;
+
+    .line 19
+    return-void
+.end method
+
+.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxf;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lcom/snapchat/android/camera/model/CameraModel;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lws;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 31
+    new-instance v0, Lwu;
+
+    invoke-direct {v0, p0, p1}, Lwu;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
     .prologue
-    .line 36
-    iget-object v1, p0, Lwu;->a:Ljava/lang/Object;
+    .line 9
+    check-cast p1, Lws;
 
-    monitor-enter v1
+    if-nez p1, :cond_0
 
-    .line 37
-    :try_start_0
-    iget v0, p0, Lwu;->b:I
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    rsub-int/lit8 v0, v0, 0x5
+    const-string v1, "Cannot inject members into a null reference"
 
-    monitor-exit v1
-
-    return v0
-
-    .line 38
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
 
-.method public final a(Lcom/snapchat/videotranscoder/task/Task$Status;)V
-    .locals 2
+    :cond_0
+    iget-object v0, p0, Lwu;->b:Ljavax/inject/Provider;
 
-    .prologue
-    .line 69
-    iget-object v1, p0, Lwu;->a:Ljava/lang/Object;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    monitor-enter v1
+    move-result-object v0
 
-    .line 70
-    :try_start_0
-    iput-object p1, p0, Lwu;->d:Lcom/snapchat/videotranscoder/task/Task$Status;
+    check-cast v0, Lxf;
 
-    .line 71
-    monitor-exit v1
+    iput-object v0, p1, Lws;->a:Lxf;
+
+    iget-object v0, p0, Lwu;->c:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/camera/model/CameraModel;
+
+    iput-object v0, p1, Lws;->b:Lcom/snapchat/android/camera/model/CameraModel;
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final a(Z)Z
-    .locals 5
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v0, 0x0
-
-    .line 94
-    iget-object v3, p0, Lwu;->a:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    .line 95
-    if-eqz p1, :cond_2
-
-    :try_start_0
-    iget-object v2, p0, Lwu;->d:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    sget-object v4, Lcom/snapchat/videotranscoder/task/Task$Status;->INVALID:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    if-ne v2, v4, :cond_2
-
-    move v2, v1
-
-    .line 96
-    :goto_0
-    invoke-direct {p0}, Lwu;->f()Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    if-eqz v2, :cond_1
-
-    :cond_0
-    move v0, v1
-
-    :cond_1
-    monitor-exit v3
-
-    return v0
-
-    :cond_2
-    move v2, v0
-
-    .line 95
-    goto :goto_0
-
-    .line 97
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 45
-    iget-object v1, p0, Lwu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 46
-    :try_start_0
-    iget-object v0, p0, Lwu;->e:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lwu;->e:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 47
-    :cond_0
-    iget-object v0, p0, Lwu;->c:Laxc;
-
-    invoke-virtual {v0}, Laxc;->b()Ljava/io/File;
-
-    move-result-object v0
-
-    .line 48
-    if-eqz v0, :cond_1
-
-    .line 49
-    invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lwu;->e:Ljava/lang/String;
-
-    .line 52
-    :cond_1
-    iget-object v0, p0, Lwu;->e:Ljava/lang/String;
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 53
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final c()Lcom/snapchat/videotranscoder/task/Task$Status;
-    .locals 2
-
-    .prologue
-    .line 60
-    iget-object v1, p0, Lwu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 61
-    :try_start_0
-    iget-object v0, p0, Lwu;->d:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 62
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final d()Z
-    .locals 2
-
-    .prologue
-    .line 106
-    iget-object v1, p0, Lwu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 107
-    :try_start_0
-    iget v0, p0, Lwu;->b:I
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    monitor-exit v1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 108
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final e()Z
-    .locals 3
-
-    .prologue
-    .line 116
-    iget-object v1, p0, Lwu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 117
-    :try_start_0
-    iget-object v0, p0, Lwu;->d:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    sget-object v2, Lcom/snapchat/videotranscoder/task/Task$Status;->CONFIG_ERROR:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    if-eq v0, v2, :cond_0
-
-    iget-object v0, p0, Lwu;->d:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    sget-object v2, Lcom/snapchat/videotranscoder/task/Task$Status;->FAILED:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    if-ne v0, v2, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    monitor-exit v1
-
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 118
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

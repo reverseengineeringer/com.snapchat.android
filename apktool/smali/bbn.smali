@@ -4,20 +4,22 @@
 
 
 # instance fields
-.field public final mFriendUsername:Ljava/lang/String;
+.field public allow:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 9
+    .line 6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10
-    iput-object p1, p0, Lbbn;->mFriendUsername:Ljava/lang/String;
+    .line 7
+    const/4 v0, 0x0
 
-    .line 11
+    iput-boolean v0, p0, Lbbn;->allow:Z
+
+    .line 8
     return-void
 .end method

@@ -1,10 +1,10 @@
 package com.snapchat.android.camera;
 
-import ahs;
-import ajj.a;
-import ajm.a;
-import ajt;
-import ajx;
+import aio;
+import akf.a;
+import akn;
+import akr;
+import aku.a;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
@@ -56,58 +56,57 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
-import anr;
-import anr.1;
-import ans;
-import aol;
-import asu;
-import atz;
-import aue;
-import auh;
+import aoo;
+import aoo.1;
+import aop;
+import aph;
+import att;
 import aux;
-import avh;
-import avl;
-import avr;
-import awa;
-import aza;
-import azo;
-import bak;
-import bal;
+import avc;
+import avf;
+import avv;
+import awf;
+import awj;
+import awp;
+import awy;
+import azy;
 import ban;
-import bao;
-import bap;
-import baq;
-import bar;
-import bas;
-import bat;
-import bbg;
-import bbv;
-import bcd;
+import bbk;
+import bbl;
+import bbo;
+import bbp;
+import bbq;
+import bbr;
+import bbs;
+import bbt;
+import bbu;
 import bcg;
-import bcr;
 import bcv;
-import bcz;
-import bda;
 import bdd;
 import bdg;
-import bdj;
-import bdm;
-import bdw;
-import bef;
+import bdr;
+import bdv;
+import bdz;
+import bea;
+import bed;
 import beg;
-import bel;
-import bfa;
-import bgp;
-import boh;
-import cgb;
-import cgc;
+import bej;
+import bem;
+import bev;
+import bfe;
+import bff;
+import bfk;
+import bfz;
+import bhp;
+import bpi;
+import chc;
+import chd;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.SnapkidzHomeActivity;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.CameraEventAnalytics;
-import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetricManager;
 import com.snapchat.android.analytics.framework.ErrorMetric;
 import com.snapchat.android.camera.cameradecor.CameraDecor;
 import com.snapchat.android.camera.cameradecor.CameraDecor.CameraDecorInterface;
@@ -143,96 +142,96 @@ import com.snapchat.android.util.eventbus.SnapMessageFeedRefreshedEvent;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.snapchat.android.util.fragment.SnapchatFragment.a;
 import com.squareup.otto.Bus;
-import di;
+import dr;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import javax.inject.Inject;
-import nf;
-import no;
-import np;
-import ns;
+import nw;
+import of;
 import og;
-import vk;
-import vm;
-import vn;
-import vp;
-import vq;
-import vr;
-import vs;
-import vt;
-import vv;
-import vw;
-import vz;
-import wc.a;
-import wc.b;
-import wc.c;
-import wf;
+import oj;
+import ox;
 import wg;
+import wi;
 import wj;
-import wk;
 import wl;
 import wm;
 import wn;
-import wq;
+import wo;
+import wp;
 import wr;
+import ws;
+import wv;
+import wy.a;
+import wy.b;
+import wy.c;
+import xb;
+import xc;
+import xf;
+import xg;
 import xh;
+import xi;
+import xj;
+import xm;
+import xn;
+import yd;
 
 public class CameraFragment
   extends BaseCameraFragment
-  implements SharedPreferences.OnSharedPreferenceChangeListener, ans, CameraDecor.CameraDecorInterface, CameraView.b, VideoCameraHandler.c, vm, wc.a, wg
+  implements SharedPreferences.OnSharedPreferenceChangeListener, aop, CameraDecor.CameraDecorInterface, CameraView.b, VideoCameraHandler.c, wi, wy.a, xc
 {
-  private static final Set<String> H = di.a(SharedPreferenceKey.HAS_SEEN_NEW_FRIEND_REQUEST_ONBOARDING_MESSAGE.getKey(), SharedPreferenceKey.HAS_SEEN_PROFILE_PAGE_ONBOARDING_MESSAGE.getKey());
+  private static final Set<String> H = dr.a(SharedPreferenceKey.HAS_SEEN_NEW_FRIEND_REQUEST_ONBOARDING_MESSAGE.getKey(), SharedPreferenceKey.HAS_SEEN_PROFILE_PAGE_ONBOARDING_MESSAGE.getKey());
   protected static boolean a = false;
-  private final nf A;
+  private final nw A;
   private final CameraEventAnalytics B;
-  private final no C;
-  private final np D;
-  private final ahs E;
-  private anr F;
+  private final of C;
+  private final og D;
+  private final aio E;
+  private aoo F;
   private ImageView G;
   protected final TakeSnapButtonTouchIntent k;
   protected CameraViewFlipper l;
   @Inject
-  public vw m;
+  public ws m;
   @Inject
-  public vz n;
+  public wv n;
   @Inject
-  public wl o;
+  public xh o;
   @Inject
-  public wj p;
+  public xf p;
   @Inject
-  public wk q;
+  public xg q;
   @Inject
-  public wn r;
+  public xj r;
   @Inject
-  public azo s;
-  private bfa t;
+  public ban s;
+  private bfz t;
   private byte[] u;
   private TextView v;
-  private vv w;
+  private wr w;
   private boolean x = false;
   private final Handler y;
   private final Bus z;
   
   public CameraFragment()
   {
-    this(ban.a(), new Handler(Looper.getMainLooper()), nf.a(), CameraEventAnalytics.a(), no.a(), np.a(), ahs.c(), new TakeSnapButtonTouchIntent());
+    this(bbo.a(), new Handler(Looper.getMainLooper()), nw.a(), CameraEventAnalytics.a(), of.a(), og.a(), aio.c(), new TakeSnapButtonTouchIntent());
   }
   
   @SuppressLint({"ValidFragment"})
-  private CameraFragment(Bus paramBus, Handler paramHandler, nf paramnf, CameraEventAnalytics paramCameraEventAnalytics, no paramno, np paramnp, ahs paramahs, TakeSnapButtonTouchIntent paramTakeSnapButtonTouchIntent)
+  private CameraFragment(Bus paramBus, Handler paramHandler, nw paramnw, CameraEventAnalytics paramCameraEventAnalytics, of paramof, og paramog, aio paramaio, TakeSnapButtonTouchIntent paramTakeSnapButtonTouchIntent)
   {
     SnapchatApplication.b().c().a(this);
     z = paramBus;
     y = paramHandler;
-    A = paramnf;
+    A = paramnw;
     B = paramCameraEventAnalytics;
-    C = paramno;
-    D = paramnp;
-    E = paramahs;
+    C = paramof;
+    D = paramog;
+    E = paramaio;
     k = paramTakeSnapButtonTouchIntent;
   }
   
@@ -242,11 +241,11 @@ public class CameraFragment
     {
       v.setText(paramString);
       v.setVisibility(0);
-      int i1 = avh.a(v);
+      int i1 = awf.a(v);
       int j = PreferenceManager.getDefaultSharedPreferences(getActivity()).getInt(SharedPreferenceKey.KEYBOARD_HEIGHT_PORTRAIT.getKey(), -1);
       int i = j;
       if (j == -1) {
-        i = (int)(xhheightPixels * 0.5F);
+        i = (int)(ydheightPixels * 0.5F);
       }
       paramString = (FrameLayout.LayoutParams)v.getLayoutParams();
       paramString.setMargins(leftMargin, i - i1, rightMargin, bottomMargin);
@@ -256,27 +255,27 @@ public class CameraFragment
     v.setVisibility(4);
   }
   
-  private boolean a(@cgc Surface paramSurface, @cgb aue paramaue)
+  private boolean a(@chd Surface paramSurface, @chc avc paramavc)
   {
     if (q.a) {
       return false;
     }
-    if ((!asu.HAS_SURFACE_TEXTURE_RECORDING) && (paramSurface == null))
+    if ((!att.HAS_SURFACE_TEXTURE_RECORDING) && (paramSurface == null))
     {
       a(VideoCameraHandler.VideoFailureType.NO_SURFACE_PROVIDED);
       return false;
     }
-    return n.a(this, w, paramaue, paramSurface);
+    return n.a(this, w, paramavc, paramSurface);
   }
   
-  @avl
+  @awj
   private void c(boolean paramBoolean)
   {
     CameraViewFlipper localCameraViewFlipper;
     if (l != null)
     {
       localCameraViewFlipper = l;
-      if ((!paramBoolean) || (!d.getClass().equals(vn.class))) {
+      if ((!paramBoolean) || (!d.getClass().equals(wj.class))) {
         break label40;
       }
     }
@@ -293,11 +292,11 @@ public class CameraFragment
     return "CameraFragment";
   }
   
-  @avl
+  @awj
   private void u()
   {
-    if (!d.getClass().equals(vn.class)) {
-      a(new vn(getActivity(), e, this));
+    if (!d.getClass().equals(wj.class)) {
+      a(new wj(getActivity(), e, this));
     }
   }
   
@@ -307,7 +306,7 @@ public class CameraFragment
       return;
     }
     C.a(false);
-    g.edit().putInt(SharedPreferenceKey.SNAP_CAPTURE_ROTATION.getKey(), avh.d(getActivity())).apply();
+    g.edit().putInt(SharedPreferenceKey.SNAP_CAPTURE_ROTATION.getKey(), awf.d(getActivity())).apply();
     m.a(b, this, w);
     e.setVisibility(8);
   }
@@ -323,7 +322,7 @@ public class CameraFragment
     d.e();
   }
   
-  private anr x()
+  private aoo x()
   {
     int j = 0;
     for (;;)
@@ -335,7 +334,7 @@ public class CameraFragment
         if (bool)
         {
           localObject1 = null;
-          return (anr)localObject1;
+          return (aoo)localObject1;
         }
         if ((F == null) && (c != null))
         {
@@ -349,7 +348,7 @@ public class CameraFragment
           {
             i = width;
             j = height;
-            F = new anr(i1, i, j, this);
+            F = new aoo(i1, i, j, this);
           }
         }
         else
@@ -369,53 +368,54 @@ public class CameraFragment
   
   private void y()
   {
-    anr localanr = x();
-    if (localanr != null)
+    aoo localaoo = x();
+    if (localaoo != null)
     {
-      if (!e.get()) {
-        break label69;
+      if (!d.get()) {
+        break label56;
       }
-      h.set(System.nanoTime());
+      g.set(System.nanoTime());
     }
     for (;;)
     {
-      Timber.c(anr.a, "Enable Scanner...", new Object[0]);
       if ((G != null) && (G.getVisibility() == 0)) {
         G.setVisibility(8);
       }
       return;
-      label69:
-      f.set(false);
-      e.set(true);
+      label56:
+      e.set(false);
+      d.set(true);
     }
   }
   
   protected final int a()
   {
-    return 2130968595;
+    return 2130968596;
   }
   
-  @cgb
-  protected final aue a(@cgb xh paramxh, @cgb wm paramwm, @cgb Camera.Parameters paramParameters)
+  @chc
+  protected final avc a(@chc yd paramyd, @chc xi paramxi, @chc Camera.Parameters paramParameters)
   {
     if (paramParameters.getSupportedVideoSizes() == null) {}
-    for (int i = 1; (i != 0) && (!asu.HAS_SURFACE_TEXTURE_RECORDING); i = 0)
+    for (int i = 1; (i != 0) && (!att.HAS_SURFACE_TEXTURE_RECORDING); i = 0)
     {
-      Timber.c("CameraFragment", "Preview Size Finding: display [%d,%d]", new Object[] { Integer.valueOf(heightPixels), Integer.valueOf(widthPixels) });
-      return j.a(paramParameters, ic, vk.a(paramxh), false);
+      i = heightPixels;
+      i = widthPixels;
+      return j.a(paramParameters, ic, wg.a(paramyd), false);
     }
-    paramxh = super.a(paramxh, paramwm, paramParameters);
-    Timber.c("CameraFragment", "Camera Preview Size: [%d,%d]", new Object[] { Integer.valueOf(paramxh.a()), Integer.valueOf(paramxh.b()) });
-    return paramxh;
+    paramyd = super.a(paramyd, paramxi, paramParameters);
+    paramyd.a();
+    paramyd.b();
+    return paramyd;
   }
   
   public final CameraDecor a(RelativeLayout paramRelativeLayout)
   {
     paramRelativeLayout = getActivity();
     if ((paramRelativeLayout instanceof SnapkidzHomeActivity)) {
-      return new vs(paramRelativeLayout, e, this);
+      return new wo(paramRelativeLayout, e, this);
     }
-    return new vn(paramRelativeLayout, e, this);
+    return new wj(paramRelativeLayout, e, this);
   }
   
   public final void a(float paramFloat)
@@ -462,7 +462,7 @@ public class CameraFragment
       localObject1 = c;
       if (localObject4 != null)
       {
-        localObject2 = ((wc.b)localObject1).c();
+        localObject2 = ((wy.b)localObject1).c();
         if ((localObject2 != null) && (((Camera.Parameters)localObject2).getMaxNumFocusAreas() != 0)) {
           break label219;
         }
@@ -470,7 +470,7 @@ public class CameraFragment
     }
     for (;;)
     {
-      c.a(new wf(new Handler(Looper.getMainLooper()), c, new wc.c()
+      c.a(new xb(new Handler(Looper.getMainLooper()), c, new wy.c()
       {
         public final void a()
         {
@@ -510,8 +510,8 @@ public class CameraFragment
         ((ArrayList)localObject3).add(new Camera.Area(new Rect(), 1));
       }
       localObject4 = get0rect;
-      paramInt1 = vk.a(paramInt1 - 133, j - 266);
-      paramInt2 = vk.a(paramInt2 - 133, i - 266);
+      paramInt1 = wg.a(paramInt1 - 133, j - 266);
+      paramInt2 = wg.a(paramInt2 - 133, i - 266);
       RectF localRectF = new RectF(paramInt1, paramInt2, paramInt1 + 266, paramInt2 + 266);
       localMatrix.mapRect(localRectF);
       left = Math.round(left);
@@ -522,55 +522,50 @@ public class CameraFragment
       if (((Camera.Parameters)localObject2).getMaxNumMeteringAreas() != 0) {
         ((Camera.Parameters)localObject2).setMeteringAreas((List)localObject3);
       }
-      ((wc.b)localObject1).a((Camera.Parameters)localObject2);
+      ((wy.b)localObject1).a((Camera.Parameters)localObject2);
     }
   }
   
   public final void a(int paramInt, boolean paramBoolean)
   {
-    if (t != null)
+    if ((t != null) && (l.getCurrentPanel() == 1))
     {
-      if (l.getCurrentPanel() == 1)
-      {
-        l.setEnabled(false);
-        t.a(paramInt, paramBoolean);
-      }
-      return;
+      l.setEnabled(false);
+      t.a(paramInt, paramBoolean);
     }
-    Timber.f("CameraFragment", "FragmentPageChangeCallback is null. Is it implemented by your Activity?", new Object[0]);
   }
   
   public final void a(int paramInt, byte[] paramArrayOfByte)
   {
     if (paramArrayOfByte != null)
     {
-      z.a(new bbg("CameraFragment"));
-      aol.a().a(getActivity(), paramInt, paramArrayOfByte);
+      z.a(new bcg("CameraFragment"));
+      aph.a().a(getActivity(), paramInt, paramArrayOfByte);
     }
   }
   
   public final void a(Bitmap paramBitmap)
   {
     if (paramBitmap != null) {
-      new awa(paramBitmap, new xh()).executeOnExecutor(auh.HIGH_PRIORITY_EXECUTOR, new Void[0]);
+      new awy(paramBitmap, new yd()).executeOnExecutor(avf.HIGH_PRIORITY_EXECUTOR, new Void[0]);
     }
-    boolean bool = d instanceof vr;
-    paramBitmap = new ajj.a();
+    boolean bool = d instanceof wn;
+    paramBitmap = new akf.a();
     mSnapType = Mediabryo.SnapType.SNAP;
-    paramBitmap = (ajj.a)paramBitmap;
+    paramBitmap = (akf.a)paramBitmap;
     mIsFrontFacingSnap = i.b();
-    paramBitmap = (ajj.a)paramBitmap;
+    paramBitmap = (akf.a)paramBitmap;
     mIsFlashOn = p.a;
-    paramBitmap = (ajj.a)paramBitmap;
+    paramBitmap = (akf.a)paramBitmap;
     mIsReply = bool;
-    paramBitmap = (ajj.a)paramBitmap;
+    paramBitmap = (akf.a)paramBitmap;
     Camera.CameraInfo localCameraInfo = i.e();
     if (localCameraInfo != null) {
       mSnapOrientation = orientation;
     }
     paramBitmap = paramBitmap.c();
-    np.a(paramBitmap);
-    z.a(new bdj(paramBitmap, SnapCaptureContext.CAMERA));
+    og.a(paramBitmap);
+    z.a(new bej(paramBitmap, SnapCaptureContext.CAMERA));
   }
   
   protected final void a(Camera.Parameters paramParameters)
@@ -606,48 +601,48 @@ public class CameraFragment
       n.b();
       e.setVisibility(8);
       CameraEventAnalytics.e();
-      boolean bool2 = d instanceof vr;
-      localObject = new ajm.a();
+      boolean bool2 = d instanceof wn;
+      localObject = new aku.a();
       mVideoUri = paramUri;
-      paramUri = (ajm.a)localObject;
+      paramUri = (aku.a)localObject;
       mSnapType = Mediabryo.SnapType.SNAP;
-      paramUri = (ajm.a)paramUri;
+      paramUri = (aku.a)paramUri;
       mIsFrontFacingSnap = bool1;
-      paramUri = (ajm.a)paramUri;
+      paramUri = (aku.a)paramUri;
       mIsFlashOn = p.a;
-      paramUri = (ajm.a)paramUri;
+      paramUri = (aku.a)paramUri;
       mSnapOrientation = i;
-      paramUri = (ajm.a)paramUri;
+      paramUri = (aku.a)paramUri;
       mIsReply = bool2;
-      paramUri = ((ajm.a)paramUri).c();
-      np.a(paramUri);
-      z.a(new bdj(paramUri, SnapCaptureContext.CAMERA));
+      paramUri = ((aku.a)paramUri).c();
+      og.a(paramUri);
+      z.a(new bej(paramUri, SnapCaptureContext.CAMERA));
       return;
     }
   }
   
   public final void a(Surface paramSurface)
   {
-    aue localaue = r.a();
-    if (localaue == null)
+    avc localavc = r.a();
+    if (localavc == null)
     {
       a(VideoCameraHandler.VideoFailureType.INITIALIZATION_ERROR);
       return;
     }
     Object localObject1 = b;
-    Object localObject2 = new xh();
+    Object localObject2 = new yd();
     int i1;
     int i2;
     int j;
     int i;
     if (b != null)
     {
-      i1 = localaue.b();
-      i2 = localaue.a();
+      i1 = localavc.b();
+      i2 = localavc.a();
       j = heightPixels;
       i = widthPixels;
       double d = heightPixels / widthPixels;
-      if (!CameraView.a(localaue.c(), d)) {
+      if (!CameraView.a(localavc.c(), d)) {
         break label177;
       }
       d = i2;
@@ -655,12 +650,12 @@ public class CameraFragment
     }
     for (;;)
     {
-      localObject2 = new aue(i, j);
+      localObject2 = new avc(i, j);
       localObject1 = b;
-      localObject2 = new FrameLayout.LayoutParams(((aue)localObject2).a(), ((aue)localObject2).b());
+      localObject2 = new FrameLayout.LayoutParams(((avc)localObject2).a(), ((avc)localObject2).b());
       gravity = 17;
       ((SurfaceView)localObject1).setLayoutParams((ViewGroup.LayoutParams)localObject2);
-      a(paramSurface, localaue);
+      a(paramSurface, localavc);
       return;
       label177:
       i = (int)(i1 * (j / i2));
@@ -685,9 +680,9 @@ public class CameraFragment
           m();
         }
       }, 500L);
-      ajx.L();
+      akr.L();
       c(false);
-      z.a(new bdg(false));
+      z.a(new beg(false));
       return;
     }
     c(true);
@@ -710,13 +705,13 @@ public class CameraFragment
       label143:
       B.d();
       v();
-      if (ajt.a().a("ENABLE_SNAP_TO_SCAN", "option", "on").equals("on")) {
+      if (akn.a().a("ENABLE_SNAP_TO_SCAN", "option", "on").equals("on")) {
         y();
       }
     }
   }
   
-  @avl
+  @awj
   protected final void a(CameraDecor paramCameraDecor)
   {
     super.a(paramCameraDecor);
@@ -729,25 +724,25 @@ public class CameraFragment
       return;
     }
     i.a(paramCameraType);
-    i_();
+    g_();
   }
   
-  public final void a(@cgb VideoCameraHandler.VideoFailureType paramVideoFailureType)
+  public final void a(@chc VideoCameraHandler.VideoFailureType paramVideoFailureType)
   {
     int j = 1;
-    bgp.a();
+    bhp.a();
     if (mFragmentInterface != null) {
       mFragmentInterface.a(true);
     }
     d.e();
     q.a = false;
     q.c = false;
-    z.a(new bdg(true));
+    z.a(new beg(true));
     int i;
     switch (6.c[paramVideoFailureType.ordinal()])
     {
     default: 
-      i = 2131493595;
+      i = 2131493593;
     }
     for (;;)
     {
@@ -755,16 +750,16 @@ public class CameraFragment
       if (j != 0)
       {
         z.a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, i));
-        s.a(new og(paramVideoFailureType.name()));
+        s.a(new ox(paramVideoFailureType.name()));
         CameraEventAnalytics.a(paramVideoFailureType);
       }
-      if ((b != null) && (!asu.HAS_SURFACE_TEXTURE_RECORDING))
+      if ((b != null) && (!att.HAS_SURFACE_TEXTURE_RECORDING))
       {
         b.a();
         a(false);
         n.b();
         b.setAlpha(0.0F);
-        i_();
+        g_();
       }
       d.a();
       return;
@@ -813,7 +808,7 @@ public class CameraFragment
     }
   }
   
-  public final void a(wc.b paramb, int paramInt)
+  public final void a(wy.b paramb, int paramInt)
   {
     super.a(paramb, paramInt);
     if ((i.e) || (i.h == null)) {
@@ -824,8 +819,8 @@ public class CameraFragment
     Object localObject2 = A;
     if (mOldStartupMetric != null)
     {
-      localObject1 = aux.b();
-      paramb = (wc.b)localObject1;
+      localObject1 = avv.b();
+      paramb = (wy.b)localObject1;
       if (localObject1 == StartupPath.FROM_DESTROYED_STATE) {
         paramb = StartupPath.FROM_KILLED_STATE;
       }
@@ -835,18 +830,18 @@ public class CameraFragment
     }
     StreamView.setCameraInfo(i.e());
     StreamView.setCameraPreviewSize(i.f);
-    paramb = new avr(auh.HIGH_PRIORITY_EXECUTOR);
+    paramb = new awp(avf.HIGH_PRIORITY_EXECUTOR);
     Object localObject1 = i.f;
     localObject2 = getResources().getDisplayMetrics();
     if (!a)
     {
       if (localObject1 != null) {
-        paramb.a(((aue)localObject1).b(), ((aue)localObject1).a(), Bitmap.Config.ARGB_8888);
+        paramb.a(((avc)localObject1).b(), ((avc)localObject1).a(), Bitmap.Config.ARGB_8888);
       }
       paramb.a(widthPixels, heightPixels, Bitmap.Config.ARGB_8888);
       a = true;
     }
-    z.a(new bao(true, i.j));
+    z.a(new bbp(true, i.j));
     i.j = false;
   }
   
@@ -855,13 +850,13 @@ public class CameraFragment
     super.a(paramBoolean);
     x = true;
     u = null;
-    z.a(new bao(false, i.j));
+    z.a(new bbp(false, i.j));
   }
   
-  public final void a(byte[] paramArrayOfByte, wc.b paramb)
+  public final void a(byte[] paramArrayOfByte, wy.b paramb)
   {
     super.a(paramArrayOfByte, paramb);
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -881,35 +876,33 @@ public class CameraFragment
       do
       {
         return;
-        bgp.b();
+        bhp.b();
         HoldToStreamView localHoldToStreamView = HoldToStreamView.getLastInstance();
         if (localHoldToStreamView != null) {
           localHoldToStreamView.a(paramArrayOfByte);
         }
         paramb.a(u);
         paramb = x();
-      } while ((paramb == null) || (paramArrayOfByte == null) || (c != 17) || (!e.get()));
+      } while ((paramb == null) || (paramArrayOfByte == null) || (b != 17) || (!d.get()));
       if (!SnapScan.a())
       {
-        Timber.f(anr.a, "SnapScan native lib failed to load! -- Scanning disabled!!", new Object[0]);
         paramb.a();
         return;
       }
-      if (f.compareAndSet(false, true))
+      if (e.compareAndSet(false, true))
       {
-        Timber.c(anr.a, "Started scanning...", new Object[0]);
-        j = 0;
-        g.set(false);
-        i = System.nanoTime();
-        h.set(i);
+        i = 0;
+        f.set(false);
+        h = System.nanoTime();
+        g.set(h);
       }
-      if (anr.a(h.get()) >= d)
+      if (aoo.a(g.get()) >= c)
       {
-        Timber.c(anr.a, "Stopped scanning - Scan time is expired: " + anr.a(i) + " seconds.", new Object[0]);
+        new StringBuilder("Stopped scanning - Scan time is expired: ").append(aoo.a(h)).append(" seconds.");
         paramb.a();
       }
-    } while (!g.compareAndSet(false, true));
-    new anr.1(paramb, paramArrayOfByte).executeOnExecutor(b, new Void[0]);
+    } while (!f.compareAndSet(false, true));
+    new aoo.1(paramb, paramArrayOfByte).executeOnExecutor(a, new Void[0]);
   }
   
   public final boolean a(MotionEvent paramMotionEvent)
@@ -917,10 +910,10 @@ public class CameraFragment
     return d.a(paramMotionEvent);
   }
   
-  protected final byte[] a(@cgb aue paramaue)
+  protected final byte[] a(@chc avc paramavc)
   {
-    int i = atz.a((int)(paramaue.d() * ImageFormat.getBitsPerPixel(17) / 8.0D));
-    Timber.c("CameraUtils", "Allocating a Callback Buffer of " + paramaue.d() * ImageFormat.getBitsPerPixel(17) + " divided by 8 = " + i + " bytes", new Object[0]);
+    int i = aux.a((int)(paramavc.d() * ImageFormat.getBitsPerPixel(17) / 8.0D));
+    new StringBuilder("Allocating a Callback Buffer of ").append(paramavc.d() * ImageFormat.getBitsPerPixel(17)).append(" divided by 8 = ").append(i).append(" bytes");
     u = new byte[i];
     return u;
   }
@@ -944,7 +937,7 @@ public class CameraFragment
           paramAnonymousDialogInterface.cancel();
         }
       });
-      ((AlertDialog.Builder)localObject).setPositiveButton(2131493160, new DialogInterface.OnClickListener()
+      ((AlertDialog.Builder)localObject).setPositiveButton(2131493159, new DialogInterface.OnClickListener()
       {
         public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
         {
@@ -954,32 +947,25 @@ public class CameraFragment
       ((AlertDialog.Builder)localObject).show();
     }
     d.a();
-    s.a(new ns());
-    new ErrorMetric("CAMERA_FAILED_TO_OPEN").d();
+    s.a(new oj());
+    new ErrorMetric("CAMERA_FAILED_TO_OPEN").e();
   }
   
   public final void b(Bitmap paramBitmap)
   {
-    if (Property.ENABLE_SNAPSCAN_DEBUG.getBoolean())
+    if ((Property.ENABLE_SNAPSCAN_DEBUG.getBoolean()) && (paramBitmap != null))
     {
-      if (paramBitmap != null)
+      if (G == null)
       {
-        if (G == null)
-        {
-          G = new ImageView(getActivity());
-          localObject = new RelativeLayout.LayoutParams(-2, -2);
-          ((RelativeLayout.LayoutParams)localObject).addRule(13);
-          ((RelativeLayout)mFragmentLayout.findViewById(2131361945)).addView(G, (ViewGroup.LayoutParams)localObject);
-        }
-        Object localObject = G;
-        ((ImageView)localObject).setImageBitmap(paramBitmap);
-        ((ImageView)localObject).setVisibility(0);
+        G = new ImageView(getActivity());
+        localObject = new RelativeLayout.LayoutParams(-2, -2);
+        ((RelativeLayout.LayoutParams)localObject).addRule(13);
+        ((RelativeLayout)mFragmentLayout.findViewById(2131361945)).addView(G, (ViewGroup.LayoutParams)localObject);
       }
+      Object localObject = G;
+      ((ImageView)localObject).setImageBitmap(paramBitmap);
+      ((ImageView)localObject).setVisibility(0);
     }
-    else {
-      return;
-    }
-    Timber.f("CameraFragment", "The debug scanner image was null.", new Object[0]);
   }
   
   public final void b(boolean paramBoolean)
@@ -990,23 +976,22 @@ public class CameraFragment
     i.a();
     boolean bool = i.b(i.b);
     CameraEventAnalytics localCameraEventAnalytics = B;
-    mDictionaryEasyMetric.a("CAMERA_SWITCH", true);
+    String str1;
     if (paramBoolean)
     {
-      str = "double_tap";
-      mDictionaryEasyMetric.a("CAMERA_SWITCH", "context", str);
+      str1 = "double_tap";
       if (!bool) {
-        break label116;
+        break label103;
       }
     }
-    label116:
-    for (String str = "front_facing_camera";; str = "back_facing_camera")
+    label103:
+    for (String str2 = "front_facing_camera";; str2 = "back_facing_camera")
     {
-      mDictionaryEasyMetric.a("CAMERA_SWITCH", "switch_to", str);
+      mEasyMetricManager.b("CAMERA_SWITCH").a("context", str1).a("switch_to", str2).b();
       x = true;
-      i_();
+      g_();
       return;
-      str = "toggle_button";
+      str1 = "toggle_button";
       break;
     }
   }
@@ -1022,22 +1007,22 @@ public class CameraFragment
   
   protected final void e()
   {
-    nf.d();
+    nw.d();
     a(b());
     E.b();
     if (l.getCurrentPanel() == 1) {
-      z.a(new bel(TitleBarManager.Visibility.HIDDEN));
+      z.a(new bfk(TitleBarManager.Visibility.HIDDEN));
     }
-    z.a(new bdd());
+    z.a(new bed());
     Object localObject = getActivity();
     if ((localObject instanceof LandingPageActivity))
     {
       localObject = ((LandingPageActivity)localObject).g();
       if ((localObject == null) || (mOriginatingFragment != 3)) {
-        z.a(new bda());
+        z.a(new bea());
       }
     }
-    z.a(new bap(CameraDisplayState.SHOW));
+    z.a(new bbq(CameraDisplayState.SHOW));
     if (getView() != null) {
       ((InputMethodManager)getActivity().getSystemService("input_method")).hideSoftInputFromWindow(getView().getWindowToken(), 0);
     }
@@ -1051,22 +1036,22 @@ public class CameraFragment
     }
     l.setEnabled(true);
     if (l.getCurrentPanel() == 0) {
-      z.a(new bdg(false));
+      z.a(new beg(false));
     }
     l.a(l.getCurrentPanel(), 0.0D);
     B.b();
-    nf.e();
+    nw.e();
   }
   
   public final void f()
   {
     super.f();
-    anr localanr = x();
-    if (localanr != null) {
-      localanr.a();
+    aoo localaoo = x();
+    if (localaoo != null) {
+      localaoo.a();
     }
     l.setEnabled(false);
-    z.a(new bcd("CameraFragment"));
+    z.a(new bdd("CameraFragment"));
   }
   
   public final boolean g()
@@ -1074,12 +1059,12 @@ public class CameraFragment
     if (l.getCurrentPanel() == 0)
     {
       ProfileFragment localProfileFragment = (ProfileFragment)getChildFragmentManager().findFragmentById(2131361940);
-      if ((localProfileFragment != null) && (localProfileFragment.m()))
+      if ((localProfileFragment != null) && (localProfileFragment.n()))
       {
-        if (!localProfileFragment.l()) {
+        if (!localProfileFragment.m()) {
           return true;
         }
-        if (localProfileFragment.i()) {
+        if (localProfileFragment.l()) {
           return true;
         }
       }
@@ -1094,7 +1079,7 @@ public class CameraFragment
     return super.getActivity();
   }
   
-  public final boolean k_()
+  public final boolean i_()
   {
     return p.a;
   }
@@ -1109,7 +1094,7 @@ public class CameraFragment
     if (i.d()) {
       return false;
     }
-    if (asu.HAS_SURFACE_TEXTURE_RECORDING)
+    if (att.HAS_SURFACE_TEXTURE_RECORDING)
     {
       localObject = r.a();
       if (localObject == null)
@@ -1117,7 +1102,7 @@ public class CameraFragment
         a(VideoCameraHandler.VideoFailureType.INITIALIZATION_ERROR);
         return false;
       }
-      return a(null, (aue)localObject);
+      return a(null, (avc)localObject);
     }
     c.b(true);
     Object localObject = b;
@@ -1139,7 +1124,7 @@ public class CameraFragment
     boolean bool2 = false;
     boolean bool1;
     if (i.b()) {
-      bool1 = ajx.ac();
+      bool1 = akr.ab();
     }
     Object localObject;
     do
@@ -1152,7 +1137,7 @@ public class CameraFragment
           localObject = c;
           bool1 = bool2;
         } while (localObject == null);
-        localObject = ((wc.b)localObject).c();
+        localObject = ((wy.b)localObject).c();
         bool1 = bool2;
       } while (localObject == null);
       localObject = ((Camera.Parameters)localObject).getSupportedFlashModes();
@@ -1177,8 +1162,8 @@ public class CameraFragment
     }
   }
   
-  @boh
-  public void onAdjustForQuickSnapEvent(bal parambal)
+  @bpi
+  public void onAdjustForQuickSnapEvent(bbl parambbl)
   {
     if (b == null) {
       return;
@@ -1186,31 +1171,31 @@ public class CameraFragment
     if (mShouldPrepare) {
       i.a(CameraModel.CameraType.FRONT_FACING);
     }
-    i_();
+    g_();
   }
   
   public void onAttach(Activity paramActivity)
   {
     super.onAttach(paramActivity);
-    if ((paramActivity instanceof bfa)) {
-      t = ((bfa)paramActivity);
+    if ((paramActivity instanceof bfz)) {
+      t = ((bfz)paramActivity);
     }
   }
   
-  @boh
-  public void onCameraStateEvent(bap parambap)
+  @bpi
+  public void onCameraStateEvent(bbq parambbq)
   {
     int j = 0;
-    if (parambap.a())
+    if (parambbq.a())
     {
       if (cameraToResume != null) {
         this.i.a(cameraToResume);
       }
-      i_();
+      g_();
       if (displayState == CameraDisplayState.SHOW)
       {
         i = 1;
-        parambap = e;
+        parambbq = e;
         if (i == 0) {
           break label65;
         }
@@ -1218,7 +1203,7 @@ public class CameraFragment
       label65:
       for (int i = j;; i = 4)
       {
-        parambap.setVisibility(i);
+        parambbq.setVisibility(i);
         return;
         i = 0;
         break;
@@ -1231,34 +1216,34 @@ public class CameraFragment
     n.b();
   }
   
-  @boh
-  public void onCancelCardLinkEvent(baq parambaq)
+  @bpi
+  public void onCancelCardLinkEvent(bbr parambbr)
   {
     u();
-    avh.a(getActivity(), b);
+    awf.a(getActivity(), b);
   }
   
-  @boh
-  public void onCancelInChatSnapEvent(bar parambar)
-  {
-    u();
-    a(null);
-  }
-  
-  @boh
-  public void onCancelQuickSnapEvent(bas parambas)
+  @bpi
+  public void onCancelInChatSnapEvent(bbs parambbs)
   {
     u();
     a(null);
   }
   
-  @boh
-  public void onCancelReplyEvent(bat parambat)
+  @bpi
+  public void onCancelQuickSnapEvent(bbt parambbt)
+  {
+    u();
+    a(null);
+  }
+  
+  @bpi
+  public void onCancelReplyEvent(bbu parambbu)
   {
     u();
   }
   
-  @boh
+  @bpi
   public void onChangePreviewQualityEvent(ChangePreviewQualityEvent paramChangePreviewQualityEvent)
   {
     switch (6.a[previewQuality.ordinal()])
@@ -1273,53 +1258,53 @@ public class CameraFragment
       i.j = true;
       a(true);
       i.i = false;
-      i_();
+      g_();
       return;
     } while (i.i);
     i.j = true;
     a(true);
     i.i = true;
-    i_();
+    g_();
   }
   
   public void onCreate(Bundle paramBundle)
   {
-    nf.d();
+    nw.d();
     super.onCreate(paramBundle);
-    nf.e();
+    nw.e();
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    nf.d();
+    nw.d();
     super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    if ((b != null) && (asu.HAS_SURFACE_TEXTURE_RECORDING)) {
+    if ((b != null) && (att.HAS_SURFACE_TEXTURE_RECORDING)) {
       c(2131361943).setVisibility(8);
     }
     l = ((CameraViewFlipper)c(2131361939));
     l.setEnabled(false);
     l.setScrollable(true);
     this.i.a(g.getInt(SharedPreferenceKey.CAMERA_NUMBER_PREFERENCE.getKey(), 0));
-    w = new vt(c(2131361942));
+    w = new wp(c(2131361942));
     v = ((TextView)c(2131361944));
-    paramLayoutInflater = new xh();
+    paramLayoutInflater = new yd();
     int i = Math.min(widthPixels, heightPixels);
     int j = Math.max(widthPixels, heightPixels);
     v.setTextSize(Math.min(i, j) * 0.053125F / density);
-    nf.e();
+    nw.e();
     return mFragmentLayout;
   }
   
-  @boh
+  @bpi
   public void onFeedRefreshedEvent(SnapMessageFeedRefreshedEvent paramSnapMessageFeedRefreshedEvent)
   {
     d.a();
   }
   
-  @boh
-  public void onKeyDownEvent(bbv parambbv)
+  @bpi
+  public void onKeyDownEvent(bcv parambcv)
   {
-    if ((!h_()) || (l.getCurrentPanel() == 0) || (l.e())) {
+    if ((!mIsVisible) || (l.getCurrentPanel() == 0) || (l.e())) {
       return;
     }
     switch (keyCode)
@@ -1336,8 +1321,8 @@ public class CameraFragment
     }
   }
   
-  @boh
-  public void onLockScreenOpenedEvent(bcg parambcg)
+  @bpi
+  public void onLockScreenOpenedEvent(bdg parambdg)
   {
     onResume();
   }
@@ -1356,28 +1341,28 @@ public class CameraFragment
     }
   }
   
-  @boh
-  public void onProfileViewScrollEvent(bcr parambcr)
+  @bpi
+  public void onProfileViewScrollEvent(bdr parambdr)
   {
     l.a(destinationPage, 1.0D);
   }
   
-  @boh
-  public void onRefreshCameraNotificationBoxesEvent(bcv parambcv)
+  @bpi
+  public void onRefreshCameraNotificationBoxesEvent(bdv parambdv)
   {
     d.b();
   }
   
-  @boh
-  public void onReplySnapEvent(bcz parambcz)
+  @bpi
+  public void onReplySnapEvent(bdz parambdz)
   {
-    a(new vr(getActivity(), e, this, parambcz));
+    a(new wn(getActivity(), e, this, parambdz));
     a(null);
   }
   
   public void onResume()
   {
-    nf.d();
+    nw.d();
     super.onResume();
     Intent localIntent = getActivity().getIntent();
     if ((AndroidNotificationManager.Destination)localIntent.getSerializableExtra("destinationPage") == AndroidNotificationManager.Destination.ADD_FRIENDS)
@@ -1385,11 +1370,11 @@ public class CameraFragment
       if (getActivitymFragments.getBackStackEntryCount() == 0)
       {
         l.a(0, 0.0D);
-        ban.a().a(new bdw(new AddedMeFragment()));
+        bbo.a().a(new bev(new AddedMeFragment()));
       }
       localIntent.removeExtra("destinationPage");
     }
-    nf.e();
+    nw.e();
   }
   
   public void onSharedPreferenceChanged(SharedPreferences paramSharedPreferences, String paramString)
@@ -1399,8 +1384,8 @@ public class CameraFragment
     }
   }
   
-  @boh
-  public void onSnapViewingEvent(bdm parambdm)
+  @bpi
+  public void onSnapViewingEvent(bem parambem)
   {
     d.a();
   }
@@ -1408,36 +1393,36 @@ public class CameraFragment
   public void onStart()
   {
     super.onStart();
-    ajx.a(this);
+    akr.a(this);
   }
   
   public void onStop()
   {
     super.onStop();
-    ajx.b(this);
+    akr.b(this);
     if (getFragmentManager().getBackStackEntryCount() == 0) {
       l.a(1, 1.0D);
     }
   }
   
-  @boh
-  public void onSwitchToInChatCameraEvent(bef parambef)
+  @bpi
+  public void onSwitchToInChatCameraEvent(bfe parambfe)
   {
-    a(new vp(getActivity(), e, this, parambef));
+    a(new wl(getActivity(), e, this, parambfe));
     a(mCaptionText);
-    z.a(new bdg(false));
+    z.a(new beg(false));
   }
   
-  @boh
-  public void onSwitchToQuickSnapCameraEvent(beg parambeg)
+  @bpi
+  public void onSwitchToQuickSnapCameraEvent(bff parambff)
   {
-    a(new vq(getActivity(), e, this));
+    a(new wm(getActivity(), e, this));
     a(mCaptionText);
-    z.a(new bdg(false));
+    z.a(new beg(false));
   }
   
-  @boh
-  public void onViewedFriendFeedEvent(bak parambak)
+  @bpi
+  public void onViewedFriendFeedEvent(bbk parambbk)
   {
     d.a();
   }
@@ -1447,7 +1432,7 @@ public class CameraFragment
     if (!o()) {
       return;
     }
-    wj localwj = p;
+    xf localxf = p;
     if (!a) {}
     for (boolean bool = true;; bool = false)
     {
@@ -1460,7 +1445,7 @@ public class CameraFragment
   
   public final void q()
   {
-    bgp.a();
+    bhp.a();
     B.a(true);
     d.d();
     if (mFragmentInterface != null) {
@@ -1473,7 +1458,7 @@ public class CameraFragment
   
   public final void r()
   {
-    bgp.a();
+    bhp.a();
     d.e();
     w();
   }
@@ -1484,7 +1469,7 @@ public class CameraFragment
   }
   
   final class a
-    implements wr
+    implements xn
   {
     private a() {}
     
@@ -1495,12 +1480,12 @@ public class CameraFragment
       b.setTranslationY(paramFloat3);
     }
     
-    public final void a(vm paramvm)
+    public final void a(wi paramwi)
     {
       if (b == null) {
         return;
       }
-      m.b(b, paramvm, CameraFragment.b(CameraFragment.this));
+      m.b(b, paramwi, CameraFragment.b(CameraFragment.this));
     }
     
     public final boolean a()

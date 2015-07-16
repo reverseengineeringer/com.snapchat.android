@@ -1,11 +1,11 @@
 public final class aay
-  extends zx
+  extends aaw
 {
   private static final aay a = new aay();
   
-  private aay()
+  protected aay()
   {
-    super("ReceivedStorySnapThumbnailFileTable", awq.STORY_SNAP_RECEIVED_THUMBNAIL_CACHE);
+    super("CachedGeofilterMetaDataFileTable", axo.GEOFILTER_METADATA_CACHE);
   }
   
   public static aay a()

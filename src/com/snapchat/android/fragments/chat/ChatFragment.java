@@ -1,39 +1,40 @@
 package com.snapchat.android.fragments.chat;
 
-import adl;
-import adm;
-import afr;
-import afr.a;
-import afr.c;
-import aft;
-import afu;
-import afu.a;
-import afv;
-import afw;
-import afw.a;
-import agb;
-import agb.a;
-import aio;
-import aiq;
-import aje;
-import aji;
-import ajr;
-import ajv;
-import ajx;
-import akb;
-import akc;
+import ael;
+import aem;
+import agr;
+import agr.a;
+import agr.c;
+import agt;
+import agu;
+import agu.a;
+import agv;
+import agw;
+import agw.a;
+import ahb;
+import ahb.a;
+import ajk;
+import ajm;
+import aka;
 import ake;
-import akf;
-import akg;
-import akh;
-import akj;
-import ako;
+import akl;
+import akn;
+import akp;
+import akr;
+import akw;
+import akx;
+import akz;
 import ala;
-import ald;
+import alb;
+import alc;
 import ale;
-import alw;
-import alx;
-import alx.a;
+import alj;
+import alv;
+import alz;
+import ama;
+import amt;
+import amu;
+import amu.a;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.AnimatorSet;
@@ -99,74 +100,73 @@ import android.widget.AbsListView.OnScrollListener;
 import android.widget.AbsListView.RecyclerListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import ant;
-import aol;
-import apb;
-import aqi;
-import aql;
-import aqn;
+import aoq;
+import aph;
+import apx;
+import arg;
 import ari;
-import asr;
-import asu;
-import asz;
-import ata;
-import atm;
+import ark;
+import ash;
+import atq;
+import att;
+import aty;
 import atz;
-import aup;
-import aut;
-import avh;
-import avl;
-import axf;
-import axi;
-import axj;
-import aza;
-import baa;
-import bal;
-import bam;
-import ban;
-import bap;
-import bar;
-import bas;
-import bau;
-import bax;
-import bay;
-import baz;
-import bba;
+import auk;
+import aux;
+import avn;
+import avn.d;
+import avr;
+import awf;
+import awj;
+import ayd;
+import ayg;
+import ayh;
+import azy;
+import bbb;
 import bbl;
-import bcd;
-import bce;
-import bcp;
-import bcu;
-import bdb;
+import bbn;
+import bbo;
+import bbq;
+import bbs;
+import bbt;
+import bbv;
+import bby;
+import bbz;
+import bca;
+import bcb;
+import bcl;
 import bdd;
 import bde;
-import bdg;
-import bdm;
 import bdp;
-import bel;
-import bfd;
-import bfr.a;
-import bgp;
-import bgr;
+import bdu;
+import beb;
+import bed;
+import bee;
+import beg;
+import bem;
+import bep;
+import bfk;
+import bgd;
 import bgr.a;
-import bha;
-import bhl;
-import bii.a;
-import bit.a;
-import boh;
+import bhp;
+import bhr;
+import bhr.a;
+import bia;
+import bil;
+import bji.a;
+import bju.a;
+import bpi;
 import br;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.AnalyticsEvents.LogoutReason;
 import com.snapchat.android.analytics.NotificationAnalytics;
@@ -180,6 +180,7 @@ import com.snapchat.android.api2.chat.LoadConversationPageTask.TaskStatus;
 import com.snapchat.android.camera.model.CameraModel.CameraType;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.snapchat.android.database.table.NotificationTable;
+import com.snapchat.android.livechat.AdlHelper.PresenceSource;
 import com.snapchat.android.model.CashTransaction;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.Snap;
@@ -232,7 +233,8 @@ import com.snapchat.android.util.eventbus.LoadSnapMediaEvent;
 import com.snapchat.android.util.eventbus.SnapMessageFeedRefreshedEvent;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
-import di;
+import ct;
+import dr;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -247,178 +249,180 @@ import java.util.Random;
 import java.util.Set;
 import javax.inject.Inject;
 import javax.inject.Provider;
-import ma;
-import nf;
-import ni;
-import nj;
+import ms;
+import nw;
+import nz;
+import oa;
 import org.apache.commons.lang3.StringUtils;
-import qm;
-import td;
-import ts.b;
-import xu;
-import xx;
-import ya;
-import ya.a;
-import ya.b;
-import yd;
-import yd.1;
-import yd.a;
-import yi;
-import yj;
-import yl;
+import rc;
+import tt;
+import ui.b;
 import yq;
-import ys;
-import yu;
+import yt;
+import yw;
+import yw.a;
+import yw.b;
+import yz;
+import yz.1;
+import yz.a;
+import ze;
+import zf;
+import zh;
+import zm;
+import zo;
+import zq;
 
-@avl
+@awj
 public class ChatFragment
   extends SnapchatFragment
-  implements afr.a, afu.a, ald, aqi, br, CashSwiperView.b, LockingAboveTheFoldListView.c<ChatFeedItem>, StreamView.a, SwipeableListItemTouchListener.a, yd.a, yu
+  implements agr.a, agu.a, alz, arg, br, CashSwiperView.b, LockingAboveTheFoldListView.c<ChatFeedItem>, StreamView.a, SwipeableListItemTouchListener.a, yz.a, zq
 {
   public static PendingIntent a;
-  private static boolean az;
+  private static boolean aB;
   public static String b;
   public static String c;
-  private static final Set<AndroidNotificationManager.Type> l = di.a(AndroidNotificationManager.Type.ADDFRIEND);
-  private static String m;
-  private TextView A;
-  private CursorCallbackEditText B;
-  private float C;
-  private float D;
-  private ChatCameraButton E;
-  private LockingAboveTheFoldListView<ChatFeedItem> F;
-  private afr G;
-  private boolean H;
-  private boolean I;
-  private CashSwiperView.SwipeActivationMethod J;
+  private static int l = 20;
+  private static final Set<AndroidNotificationManager.Type> m = dr.a(AndroidNotificationManager.Type.ADDFRIEND);
+  private static String n;
+  private View A;
+  private TextView B;
+  private TextView C;
+  private CursorCallbackEditText D;
+  private float E;
+  private float F;
+  private ChatCameraButton G;
+  private LockingAboveTheFoldListView<ChatFeedItem> H;
+  private agr I;
+  private boolean J;
   private boolean K;
-  private List<ChatFeedItem> L;
-  private int M;
-  private boolean N = false;
-  private View O;
-  private View P;
+  private CashSwiperView.SwipeActivationMethod L;
+  private boolean M;
+  private List<ChatFeedItem> N;
+  private int O;
+  private boolean P = false;
   private View Q;
-  private long R = -1L;
-  private bgr<CashSwiperView> S;
-  private bgr<DismissAnimationView> T;
-  private boolean U = true;
-  private boolean V;
-  private bgr<CashReceiverView> W;
+  private View R;
+  private View S;
+  private long T = -1L;
+  private bhr<CashSwiperView> U;
+  private bhr<DismissAnimationView> V;
+  private boolean W = true;
   private boolean X;
-  private Handler Y;
-  private DictionaryEasyMetric Z;
-  private HereTooltip aA;
-  private CashTooltip aB;
-  private CashFeedItem aC;
-  private boolean aD = false;
-  private afw aE;
-  private afv aF;
-  private Map<String, afv> aG;
-  private boolean aH = false;
-  private axf aa;
-  private yj ab;
-  private akc ac;
-  private yl ad;
-  private Handler ae;
-  private yd af;
-  private aqn ag;
-  private ViewStub ah;
-  private boolean ai = false;
-  private boolean aj = true;
-  private yi ak;
-  private View al;
-  private ChatMediaExpansionCalculator am;
-  private int an;
-  private int ao;
+  private bhr<CashReceiverView> Y;
+  private boolean Z;
+  private boolean aA;
+  private HereTooltip aC;
+  private CashTooltip aD;
+  private CashFeedItem aE;
+  private boolean aF = false;
+  private agw aG;
+  private agv aH;
+  private Map<String, agv> aI;
+  private boolean aJ = false;
+  private Handler aa;
+  private DictionaryEasyMetric ab;
+  private ayd ac;
+  private zf ad;
+  private akx ae;
+  private zh af;
+  private Handler ag;
+  private yz ah;
+  private ark ai;
+  private ViewStub aj;
+  private boolean ak = false;
+  private boolean al = true;
+  private ze am;
+  private View an;
+  private ChatMediaExpansionCalculator ao;
   private int ap;
   private int aq;
-  private AnimatorSet ar;
+  private int ar;
   private int as;
-  private boolean at = false;
-  private float au = 0.0F;
-  private GestureDetectorCompat av;
-  private final HashMap<String, String> aw = new HashMap();
-  private final HashMap<String, List<Integer>> ax = new HashMap();
-  private boolean ay;
+  private AnimatorSet at;
+  private int au;
+  private boolean av = false;
+  private float aw = 0.0F;
+  private GestureDetectorCompat ax;
+  private final HashMap<String, String> ay = new HashMap();
+  private final HashMap<String, List<Integer>> az = new HashMap();
   protected SnapView d;
   ChatConversation e;
   protected Friend f;
-  protected bgr<StreamView> g;
+  protected bhr<StreamView> g;
   @Inject
-  public xu h;
+  public yq h;
   @Inject
-  public ya i;
+  public yw i;
   @Inject
-  public xx j;
+  public yt j;
   public boolean k;
-  private final yq n;
-  private final aol o;
-  private final nj p;
-  private final baa q;
-  private final td r;
-  private final alx s;
-  private final adl t;
-  private final ale u;
-  private View v;
-  private View w;
+  private String o;
+  private final zm p;
+  private final aph q;
+  private final oa r;
+  private final bbb s;
+  private final tt t;
+  private final amu u;
+  private final ael v;
+  private final ama w;
   private View x;
   private View y;
-  private TextView z;
+  private View z;
   
   public ChatFragment()
   {
-    this(akc.b(), yq.a(), new afw(), new yj(), new ChatMediaExpansionCalculator(), aol.a(), ale.a(), nj.a(), baa.a(), td.a(), alx.a(), new yl(SnapchatApplication.b()), new adl());
+    this(akx.c(), zm.a(), new agw(), new zf(), new ChatMediaExpansionCalculator(), aph.a(), ama.a(), oa.a(), bbb.b(), tt.a(), amu.a(), new zh(SnapchatApplication.b()), new ael());
   }
   
   @SuppressLint({"ValidFragment"})
-  private ChatFragment(akc paramakc, yq paramyq, afw paramafw, yj paramyj, ChatMediaExpansionCalculator paramChatMediaExpansionCalculator, aol paramaol, ale paramale, nj paramnj, baa parambaa, td paramtd, alx paramalx, yl paramyl, adl paramadl)
+  private ChatFragment(akx paramakx, zm paramzm, agw paramagw, zf paramzf, ChatMediaExpansionCalculator paramChatMediaExpansionCalculator, aph paramaph, ama paramama, oa paramoa, bbb parambbb, tt paramtt, amu paramamu, zh paramzh, ael paramael)
   {
     SnapchatApplication.b().c().a(this);
-    ac = paramakc;
-    n = paramyq;
-    aE = paramafw;
-    ab = paramyj;
-    am = paramChatMediaExpansionCalculator;
-    o = paramaol;
-    u = paramale;
-    p = paramnj;
-    q = parambaa;
-    r = paramtd;
-    s = paramalx;
-    ad = paramyl;
-    t = paramadl;
-    paramakc = aE;
-    paramyq = t;
-    a.a = paramyq;
-    aG = new HashMap();
+    ae = paramakx;
+    p = paramzm;
+    aG = paramagw;
+    ad = paramzf;
+    ao = paramChatMediaExpansionCalculator;
+    q = paramaph;
+    w = paramama;
+    r = paramoa;
+    s = parambbb;
+    t = paramtt;
+    u = paramamu;
+    af = paramzh;
+    v = paramael;
+    paramakx = aG;
+    paramzm = v;
+    a.a = paramzm;
+    aI = new HashMap();
   }
   
-  private void A()
+  private void B()
   {
     int i1 = 0;
     if (f == null) {
       return;
     }
-    Object localObject2 = f.h();
-    Object localObject1 = F();
+    Object localObject2 = f.l();
+    Object localObject1 = H();
     if ((localObject1 == null) || (((String)localObject1).isEmpty())) {
-      aw.remove(localObject2);
+      ay.remove(localObject2);
     }
-    while (!E())
+    while (!F())
     {
-      ax.remove(localObject2);
+      az.remove(localObject2);
       return;
-      aw.put(localObject2, localObject1);
+      ay.put(localObject2, localObject1);
     }
-    localObject1 = (List)ax.get(localObject2);
+    localObject1 = (List)az.get(localObject2);
     if (localObject1 == null)
     {
       localObject1 = new ArrayList();
-      ax.put(localObject2, localObject1);
+      az.put(localObject2, localObject1);
     }
     for (;;)
     {
-      localObject2 = B.getEditableText();
+      localObject2 = D.getEditableText();
       ImageSpan[] arrayOfImageSpan = (ImageSpan[])((Editable)localObject2).getSpans(0, ((Editable)localObject2).length(), ImageSpan.class);
       int i2 = arrayOfImageSpan.length;
       while (i1 < i2)
@@ -431,144 +435,65 @@ public class ChatFragment
     }
   }
   
-  private void B()
+  private void C()
   {
     if (f == null) {
       return;
     }
-    ant.a().a(f.h());
+    aoq.a().a(f.l());
   }
   
-  private void C()
+  private void D()
   {
     if (g.b()) {
       ((StreamView)g.a()).b();
     }
   }
   
-  private void D()
+  private void E()
   {
-    if (R > 0L)
+    if (T > 0L)
     {
-      AnalyticsEvents.a(SystemClock.elapsedRealtime() - R);
-      R = -1L;
+      AnalyticsEvents.a(SystemClock.elapsedRealtime() - T);
+      T = -1L;
     }
   }
   
-  private boolean E()
+  private boolean F()
   {
-    return xu.a(B.getEditableText()) > 0;
+    return yq.a(D.getEditableText()) > 0;
   }
   
-  private String F()
+  private void G()
   {
-    Editable localEditable = B.getText();
+    if ((!(g.a() instanceof HoldToStreamView)) && (att.b())) {
+      g = new bhr(mFragmentLayout, 2131362068, 2131362082, new bhr.a()
+      {
+        public final void a(View paramAnonymousView)
+        {
+          ChatFragment.g(ChatFragment.this).setTouchSubscriber((ChatCameraButton.a)g.a());
+        }
+      });
+    }
+    ((StreamView)g.a()).a(getActivity(), this);
+  }
+  
+  private String H()
+  {
+    Editable localEditable = D.getText();
     if (localEditable == null) {
       return null;
     }
     return localEditable.toString();
   }
   
-  private void G()
+  @awj
+  private void L()
   {
-    boolean bool3 = true;
-    final boolean bool1;
-    int i1;
-    label37:
-    final boolean bool2;
-    label47:
-    String str;
-    if ((e.mIsRecipientPresent) && (e.mAmIPresent))
+    if ((X) && (!K) && (D.requestFocus()))
     {
-      bool1 = true;
-      if (e.mHereAuth == null) {
-        break label247;
-      }
-      i1 = 1;
-      if ((!bool1) || (i1 == 0)) {
-        break label252;
-      }
-      bool2 = true;
-      if (bool2)
-      {
-        if ((!(g.a() instanceof HoldToStreamView)) && (asu.b())) {
-          g = new bgr(mFragmentLayout, 2131362068, 2131362082, new bgr.a()
-          {
-            public final void a(View paramAnonymousView)
-            {
-              ChatFragment.g(ChatFragment.this).setTouchSubscriber((ChatCameraButton.a)g.a());
-            }
-          });
-        }
-        ((StreamView)g.a()).a(getActivity(), this);
-        ((StreamView)g.a()).a(e);
-        ((StreamView)g.a()).setCanStreamVideo(true, DisconnectReason.REMOTE_PEER_LEFT);
-      }
-      ChatCameraButton localChatCameraButton = E;
-      if (!bool1) {
-        break label257;
-      }
-      str = "blue";
-      label166:
-      localChatCameraButton.setContentDescription(str);
-      E.setPresent(bool1);
-      if ((E.getVisibility() != 0) || (E.getCashtagDetected()) || (F.c)) {
-        break label265;
-      }
-    }
-    for (;;)
-    {
-      aA.a(e, bool3);
-      E.setOnLongClickListener(new View.OnLongClickListener()
-      {
-        public final boolean onLongClick(View paramAnonymousView)
-        {
-          if ((ChatFragment.g(ChatFragment.this).getIsEmoji()) || (ChatFragment.g(ChatFragment.this).getCashtagDetected()) || (ChatFragment.g(ChatFragment.this).getCashSwipeDetected())) {
-            return false;
-          }
-          if (bool2)
-          {
-            p();
-            ((StreamView)g.a()).c();
-            paramAnonymousView = la.edit();
-            paramAnonymousView.putInt(SharedPreferenceKey.TIMES_DISPLAYED_HERE_TOOLTIP.getKey(), 3);
-            paramAnonymousView.apply();
-          }
-          for (;;)
-          {
-            return true;
-            if (bool1) {
-              ChatFragment.l(ChatFragment.this).a(true);
-            } else {
-              ChatFragment.s(ChatFragment.this);
-            }
-          }
-        }
-      });
-      return;
-      bool1 = false;
-      break;
-      label247:
-      i1 = 0;
-      break label37;
-      label252:
-      bool2 = false;
-      break label47;
-      label257:
-      str = "yellow";
-      break label166;
-      label265:
-      bool3 = false;
-    }
-  }
-  
-  @avl
-  private void J()
-  {
-    if ((V) && (!I) && (B.requestFocus()))
-    {
-      avh.g(getActivity());
-      h(true);
+      awf.g(getActivity());
+      g(true);
       new Handler().post(new Runnable()
       {
         public final void run()
@@ -578,29 +503,29 @@ public class ChatFragment
         }
       });
     }
-    V = false;
+    X = false;
   }
   
-  private void K()
-  {
-    az = true;
-    U = false;
-    ban.a().a(new bdg(false));
-  }
-  
-  private void L()
-  {
-    az = false;
-    U = true;
-    ban.a().a(new bdg(true));
-  }
-  
-  @avl
   private void M()
+  {
+    aB = true;
+    W = false;
+    bbo.a().a(new beg(false));
+  }
+  
+  private void N()
+  {
+    aB = false;
+    W = true;
+    bbo.a().a(new beg(true));
+  }
+  
+  @awj
+  private void O()
   {
     if ((mIsVisible) && (e.mPendingRainBills > 0))
     {
-      if (aH) {
+      if (aJ) {
         break label58;
       }
       a(e.mPendingRainBills, e.mPendingRainTransactionTimestamp);
@@ -612,48 +537,57 @@ public class ChatFragment
       mPendingRainTransactionTimestamp = 0L;
       return;
       label58:
-      aH = false;
+      aJ = false;
     }
   }
   
-  private void N()
+  private void P()
   {
-    i(false);
-    if ((v.getTranslationY() == -an) && (w.getTranslationY() == -(an + ap)) && (x.getTranslationY() == ao) && (y.getTranslationY() == ao + aq)) {
+    h(false);
+    if ((x.getTranslationY() == -ap) && (y.getTranslationY() == -(ap + ar)) && (z.getTranslationY() == aq) && (A.getTranslationY() == aq + as)) {
       return;
     }
-    if (ar != null) {
-      ar.cancel();
+    if (at != null) {
+      at.cancel();
     }
-    ar = new AnimatorSet();
-    AnimatorSet.Builder localBuilder = ar.play(ObjectAnimator.ofFloat(v, "translationY", new float[] { v.getTranslationY(), -an }));
-    localBuilder.with(ObjectAnimator.ofFloat(w, "translationY", new float[] { w.getTranslationY(), -(an + ap) }));
-    localBuilder.with(ObjectAnimator.ofFloat(x, "translationY", new float[] { x.getTranslationY(), ao }));
-    localBuilder.with(ObjectAnimator.ofFloat(y, "translationY", new float[] { y.getTranslationY(), ao + aq }));
-    ar.start();
+    at = new AnimatorSet();
+    AnimatorSet.Builder localBuilder = at.play(ObjectAnimator.ofFloat(x, "translationY", new float[] { x.getTranslationY(), -ap }));
+    localBuilder.with(ObjectAnimator.ofFloat(y, "translationY", new float[] { y.getTranslationY(), -(ap + ar) }));
+    localBuilder.with(ObjectAnimator.ofFloat(z, "translationY", new float[] { z.getTranslationY(), aq }));
+    localBuilder.with(ObjectAnimator.ofFloat(A, "translationY", new float[] { A.getTranslationY(), aq + as }));
+    at.start();
   }
   
-  private void O()
+  private void Q()
   {
-    i(true);
-    if ((v.getTranslationY() == 0.0F) && (w.getTranslationY() == 0.0F) && (x.getTranslationY() == 0.0F) && (y.getTranslationY() == 0.0F)) {
+    h(true);
+    if ((x.getTranslationY() == 0.0F) && (y.getTranslationY() == 0.0F) && (z.getTranslationY() == 0.0F) && (A.getTranslationY() == 0.0F)) {
       return;
     }
-    if (ar != null) {
-      ar.cancel();
+    if (at != null) {
+      at.cancel();
     }
-    ar = new AnimatorSet();
-    AnimatorSet.Builder localBuilder = ar.play(ObjectAnimator.ofFloat(v, "translationY", new float[] { v.getTranslationY(), 0.0F }));
-    localBuilder.with(ObjectAnimator.ofFloat(w, "translationY", new float[] { w.getTranslationY(), 0.0F }));
-    localBuilder.with(ObjectAnimator.ofFloat(x, "translationY", new float[] { x.getTranslationY(), 0.0F }));
+    at = new AnimatorSet();
+    AnimatorSet.Builder localBuilder = at.play(ObjectAnimator.ofFloat(x, "translationY", new float[] { x.getTranslationY(), 0.0F }));
     localBuilder.with(ObjectAnimator.ofFloat(y, "translationY", new float[] { y.getTranslationY(), 0.0F }));
-    ar.start();
+    localBuilder.with(ObjectAnimator.ofFloat(z, "translationY", new float[] { z.getTranslationY(), 0.0F }));
+    localBuilder.with(ObjectAnimator.ofFloat(A, "translationY", new float[] { A.getTranslationY(), 0.0F }));
+    at.start();
+  }
+  
+  private static boolean R()
+  {
+    boolean bool = false;
+    if ((akn.a().a("ADDLIVE_PRESENCE", "ENABLED", false)) || (ReleaseManager.f())) {
+      bool = true;
+    }
+    return bool;
   }
   
   public static String a(ChatFeedItem paramChatFeedItem)
   {
     Object localObject;
-    if ((paramChatFeedItem instanceof aji))
+    if ((paramChatFeedItem instanceof ake))
     {
       paramChatFeedItem = mClientId;
       localObject = paramChatFeedItem.substring(0, Math.min(paramChatFeedItem.length(), 30));
@@ -674,14 +608,14 @@ public class ChatFragment
   private void a(float paramFloat)
   {
     int i1 = 0;
-    while (i1 <= F.getLastVisiblePosition())
+    while (i1 <= H.getLastVisiblePosition())
     {
-      Object localObject = F.getChildAt(i1);
+      Object localObject = H.getChildAt(i1);
       if (localObject != null)
       {
         localObject = ((View)localObject).getTag();
-        if ((localObject instanceof afr.c)) {
-          ((afr.c)localObject).a(paramFloat);
+        if ((localObject instanceof agr.c)) {
+          ((agr.c)localObject).a(paramFloat);
         }
       }
       i1 += 1;
@@ -690,7 +624,7 @@ public class ChatFragment
   
   private void a(final int paramInt, final long paramLong)
   {
-    ((CashReceiverView)W.a()).post(new Runnable()
+    ((CashReceiverView)Y.a()).post(new Runnable()
     {
       public final void run()
       {
@@ -725,10 +659,10 @@ public class ChatFragment
             }
             ImageView localImageView = new ImageView(localCashReceiverView.getContext());
             localImageView.setImageDrawable(localCashReceiverView.getResources().getDrawable(2130837672));
-            localImageView.setLayoutParams(new ViewGroup.LayoutParams((int)avh.a(72.0F, localCashReceiverView.getContext()), (int)avh.a(36.0F, localCashReceiverView.getContext())));
+            localImageView.setLayoutParams(new ViewGroup.LayoutParams((int)awf.a(72.0F, localCashReceiverView.getContext()), (int)awf.a(36.0F, localCashReceiverView.getContext())));
             localImageView.setTag("FALLING_DOLLAR_TAG");
-            float f4 = atz.a().nextFloat();
-            float f5 = 0.9F + atz.a().nextFloat() * 0.2F;
+            float f4 = aux.a().nextFloat();
+            float f5 = 0.9F + aux.a().nextFloat() * 0.2F;
             localImageView.setScaleX(f5);
             localImageView.setScaleY(f5);
             int k = 0;
@@ -743,16 +677,16 @@ public class ChatFragment
               }
             }
             localCashReceiverView.addView(localImageView, k);
-            float f1 = avh.a(3.33F - 1.66F * f4, localCashReceiverView.getContext());
-            float f2 = avh.a(0.2F + 0.1F * f4, localCashReceiverView.getContext());
-            float f3 = avh.a(0.0015F + -5.0E-4F * f4, localCashReceiverView.getContext());
-            f4 = avh.a(133.0F * f5 + f4 * -66.0F, localCashReceiverView.getContext());
+            float f1 = awf.a(3.33F - 1.66F * f4, localCashReceiverView.getContext());
+            float f2 = awf.a(0.2F + 0.1F * f4, localCashReceiverView.getContext());
+            float f3 = awf.a(0.0015F + -5.0E-4F * f4, localCashReceiverView.getContext());
+            f4 = awf.a(133.0F * f5 + f4 * -66.0F, localCashReceiverView.getContext());
             f5 = localCashReceiverView.getMeasuredWidth();
-            float f6 = atz.a().nextFloat();
+            float f6 = aux.a().nextFloat();
             float f7 = getLayoutParamswidth / 2.0F;
-            float f8 = (float)(6.283185307179586D * atz.a().nextFloat());
+            float f8 = (float)(6.283185307179586D * aux.a().nextFloat());
             float f9 = -getLayoutParamsheight;
-            float f10 = avh.a(5.0F, localCashReceiverView.getContext());
+            float f10 = awf.a(5.0F, localCashReceiverView.getContext());
             ValueAnimator localValueAnimator = ValueAnimator.ofFloat(new float[] { 0.0F, 1.0F });
             localValueAnimator.setDuration(5000L);
             localValueAnimator.setInterpolator(new LinearInterpolator());
@@ -763,15 +697,15 @@ public class ChatFragment
             {
               localImageView = new ImageView(localCashReceiverView.getContext());
               localImageView.setImageResource(2130837671);
-              k = (int)avh.a(9.0F, localCashReceiverView.getContext());
-              int m = (int)avh.a(18.0F, localCashReceiverView.getContext());
-              f1 = 0.9F + 0.2F * atz.a().nextFloat();
+              k = (int)awf.a(9.0F, localCashReceiverView.getContext());
+              int m = (int)awf.a(18.0F, localCashReceiverView.getContext());
+              f1 = 0.9F + 0.2F * aux.a().nextFloat();
               localImageView.setScaleX(f1);
               localImageView.setScaleY(f1);
               localImageView.setLayoutParams(new ViewGroup.LayoutParams(k, m));
               localImageView.setTag("CAUGHT_DOLLAR_TAG");
               c.addView(localImageView);
-              f2 = -2.0F + 2.0F * atz.a().nextFloat();
+              f2 = -2.0F + 2.0F * aux.a().nextFloat();
               if ((!d) || (paramInt % 2 != 0))
               {
                 f1 = f2;
@@ -785,9 +719,9 @@ public class ChatFragment
               {
                 f1 = f2 + 32.0F;
               }
-              localImageView.setTranslationX(avh.a(f1, localCashReceiverView.getContext()));
-              localImageView.setTranslationY(avh.a(4.0F + 2.0F * atz.a().nextFloat(), localCashReceiverView.getContext()));
-              localImageView.setRotation(-30.0F + 60.0F * atz.a().nextFloat());
+              localImageView.setTranslationX(awf.a(f1, localCashReceiverView.getContext()));
+              localImageView.setTranslationY(awf.a(4.0F + 2.0F * aux.a().nextFloat(), localCashReceiverView.getContext()));
+              localImageView.setRotation(-30.0F + 60.0F * aux.a().nextFloat());
             }
             b.add(Long.valueOf(SystemClock.elapsedRealtime()));
             paramInt += 1;
@@ -807,117 +741,218 @@ public class ChatFragment
     });
   }
   
-  private void a(@cgb Friend paramFriend)
+  private void a(AdlHelper.PresenceSource paramPresenceSource)
   {
-    z.setText(paramFriend.f());
-    String str = paramFriend.h();
-    Object localObject = (String)aw.get(str);
-    B.setText((CharSequence)localObject);
-    CursorCallbackEditText localCursorCallbackEditText = B;
-    if (localObject == null) {}
+    boolean bool4 = true;
+    int i1;
+    label52:
+    final boolean bool2;
+    label63:
+    final boolean bool3;
+    if ((e.mIsRecipientPresent) && (e.mAmIPresent))
+    {
+      bool1 = true;
+      boolean bool5 = ((StreamView)g.a()).getPresence();
+      if (e.mHereAuth == null) {
+        break label251;
+      }
+      i1 = 1;
+      if ((!bool1) || (i1 == 0)) {
+        break label256;
+      }
+      bool2 = true;
+      if (bool2)
+      {
+        G();
+        ((StreamView)g.a()).a(e);
+        ((StreamView)g.a()).setCanStreamVideo(true, DisconnectReason.REMOTE_PEER_LEFT);
+      }
+      bool3 = bool1;
+      if (paramPresenceSource == AdlHelper.PresenceSource.ADDLIVE)
+      {
+        bool3 = bool1;
+        if (att.b())
+        {
+          bool3 = bool1;
+          if (e.mRecipientSupportsHere)
+          {
+            bool3 = bool1;
+            if (R()) {
+              bool3 = bool5;
+            }
+          }
+        }
+      }
+      ChatCameraButton localChatCameraButton = G;
+      if (!bool3) {
+        break label262;
+      }
+      paramPresenceSource = "blue";
+      label166:
+      localChatCameraButton.setContentDescription(paramPresenceSource);
+      G.setPresent(bool3);
+      if ((G.getVisibility() != 0) || (G.getCashtagDetected()) || (H.b)) {
+        break label269;
+      }
+    }
+    label251:
+    label256:
+    label262:
+    label269:
+    for (boolean bool1 = bool4;; bool1 = false)
+    {
+      aC.a(e, bool1);
+      G.setOnLongClickListener(new View.OnLongClickListener()
+      {
+        public final boolean onLongClick(View paramAnonymousView)
+        {
+          if ((ChatFragment.g(ChatFragment.this).getIsEmoji()) || (ChatFragment.g(ChatFragment.this).getCashtagDetected()) || (ChatFragment.g(ChatFragment.this).getCashSwipeDetected())) {
+            return false;
+          }
+          if (bool2)
+          {
+            p();
+            ((StreamView)g.a()).c();
+            paramAnonymousView = la.edit();
+            paramAnonymousView.putInt(SharedPreferenceKey.TIMES_DISPLAYED_HERE_TOOLTIP.getKey(), 3);
+            paramAnonymousView.apply();
+          }
+          for (;;)
+          {
+            return true;
+            if (bool3) {
+              ChatFragment.l(ChatFragment.this).a(true);
+            } else {
+              ChatFragment.s(ChatFragment.this);
+            }
+          }
+        }
+      });
+      return;
+      bool1 = false;
+      break;
+      i1 = 0;
+      break label52;
+      bool2 = false;
+      break label63;
+      paramPresenceSource = "yellow";
+      break label166;
+    }
+  }
+  
+  private void a(@chc Friend paramFriend)
+  {
+    B.setText(paramFriend.g());
+    String str = paramFriend.l();
+    Object localObject = ct.a((String)ay.get(str));
+    CursorCallbackEditText localCursorCallbackEditText;
+    if (!TextUtils.equals((CharSequence)localObject, D.getText()))
+    {
+      D.setText((CharSequence)localObject);
+      localCursorCallbackEditText = D;
+      if (localObject != null) {
+        break label155;
+      }
+    }
+    label155:
     for (int i1 = 0;; i1 = ((String)localObject).length())
     {
       localCursorCallbackEditText.setSelection(i1);
-      localObject = (List)ax.get(str);
+      localObject = (List)az.get(str);
       if (localObject == null) {
         return;
       }
-      if ((!CashUtils.a(ajx.aq())) || (!CashUtils.a(paramFriend.s()))) {
+      if ((!CashUtils.a(akr.ap())) || (!CashUtils.a(paramFriend.r()))) {
         break;
       }
       paramFriend = ((List)localObject).iterator();
       while (paramFriend.hasNext())
       {
         localObject = (Integer)paramFriend.next();
-        xu.a(B, ((Integer)localObject).intValue());
+        yq.a(D, ((Integer)localObject).intValue());
       }
     }
-    ax.remove(str);
+    az.remove(str);
   }
   
-  private void a(@cgb Friend paramFriend, boolean paramBoolean)
+  private void a(@chc Friend paramFriend, boolean paramBoolean)
   {
-    if (!aD)
-    {
-      Timber.g("ChatFragment", "CHAT-LOG: ChatFragment setFriend won't update the friend because the ChatFragment is not created yet.", new Object[0]);
+    if (!aF) {
       return;
     }
-    Timber.g("ChatFragment", "CHAT-LOG: ChatFragment setFriend " + paramFriend.h(), new Object[0]);
-    if (a(paramFriend.h()))
+    new StringBuilder("CHAT-LOG: ChatFragment setFriend ").append(paramFriend.l());
+    if (a(paramFriend.l()))
     {
-      Timber.g("ChatFragment", "CHAT-LOG: ChatFragment setFriend changed. Resetting some state.", new Object[0]);
-      aa.a();
-      if (W.b())
+      ac.a();
+      if (Y.b())
       {
-        ((CashReceiverView)W.a()).a();
-        ((CashReceiverView)W.a()).setAlpha(0.0F);
+        ((CashReceiverView)Y.a()).a();
+        ((CashReceiverView)Y.a()).setAlpha(0.0F);
       }
-      F.c();
+      H.c();
       b(0.0F);
     }
     f = paramFriend;
-    I = false;
-    e = ac.a(f.h(), false);
+    K = false;
+    e = ae.a(f.l(), false);
     if (e == null)
     {
       AnalyticsEvents.a(AnalyticsEvents.LogoutReason.NO_USERNAME);
-      o.e();
+      q.e();
       paramFriend = getActivity();
-      asr.a(paramFriend);
+      atq.a(paramFriend);
       paramFriend.finish();
       return;
     }
-    e.mEnteredConversationFromRecentStoryReply = p.b();
+    e.mEnteredConversationFromRecentStoryReply = r.b();
     a(f);
     if (ReleaseManager.f()) {
-      a(u.b());
+      a(w.b());
     }
-    aC = null;
-    if (!CashUtils.a(ajx.aq())) {
-      j.a(e.E());
+    aE = null;
+    if (!CashUtils.a(akr.ap())) {
+      j.a(e.D());
     }
     if (paramBoolean) {
       e.a(false);
     }
-    n.c(e);
-    e.t();
-    g(e.z());
-    F.setIsActive(true);
-    paramFriend = F;
-    if (d == null) {
-      throw new IllegalStateException("setAdapter() must be called first");
+    e.u();
+    a(e.A(), true);
+    H.setIsActive(true);
+    H.setSelection(N.size() - 1);
+    if (R()) {
+      a(AdlHelper.PresenceSource.ADDLIVE);
     }
-    if (e == null) {
-      throw new IllegalStateException("setInterface() must be called first.");
-    }
-    if (b)
+    for (;;)
     {
-      paramFriend.b(0);
-      paramFriend.setSelection(d.getCount() - 1);
+      bbo.a().a(new bbq(CameraDisplayState.SHOW, CameraModel.CameraType.FRONT_FACING));
+      return;
+      a(AdlHelper.PresenceSource.CHAT_GATEWAY);
     }
-    F.setSelection(L.size() - 1);
-    G();
-    ban.a().a(new bap(CameraDisplayState.SHOW, CameraModel.CameraType.FRONT_FACING));
   }
   
-  private void a(@cgb CashFeedItem paramCashFeedItem)
+  private void a(@chc CashFeedItem paramCashFeedItem)
   {
     paramCashFeedItem = mCashTransaction;
     mSenderBankStatementMessage = getString(2131493282, new Object[] { StringUtils.substring(mRecipientUsername, 0, 7) });
     mRecipientBankStatementMessage = getString(2131493282, new Object[] { StringUtils.substring(mSenderUsername, 0, 7) });
   }
   
-  private void a(@cgb final ChatConversation paramChatConversation, @cgb final CashFeedItem paramCashFeedItem, @cgb String paramString)
+  private void a(@chc final ChatConversation paramChatConversation, @chc final CashFeedItem paramCashFeedItem, @chc String paramString)
   {
-    Timber.c("ChatFragment", "CASH-LOG: SEND transaction id[%s] recipient[%s] amount[%s]", new Object[] { paramCashFeedItem.d(), mTheirUsername, mCashTransaction.a() });
-    K();
+    paramCashFeedItem.d();
+    String str = mTheirUsername;
+    mCashTransaction.a();
+    M();
     a(paramCashFeedItem);
-    i.a(paramChatConversation, paramCashFeedItem, paramString, new ya.b()
+    i.a(paramChatConversation, paramCashFeedItem, paramString, new yw.b()
     {
       public final void a()
       {
-        Timber.c("ChatFragment", "CASH-LOG: SENDING transaction id[%s] recipient[%s] amount[%s]", new Object[] { paramCashFeedItem.d(), paramChatConversationmTheirUsername, paramCashFeedItemmCashTransaction.a() });
-        bgp.a(new Runnable()
+        paramCashFeedItem.d();
+        String str = paramChatConversationmTheirUsername;
+        paramCashFeedItemmCashTransaction.a();
+        bhp.a(new Runnable()
         {
           public final void run()
           {
@@ -927,7 +962,7 @@ public class ChatFragment
         ChatFragment.a(ChatFragment.this, null);
         ChatFragment.B(ChatFragment.this).remove(paramChatConversationmTheirUsername);
         ChatFragment.q(ChatFragment.this);
-        ban.a().a(new bdd());
+        bbo.a().a(new bed());
         AnalyticsEvents.b(paramCashFeedItemmCashTransaction.a(), paramCashFeedItemmCashTransaction.mFromRain);
       }
       
@@ -940,21 +975,21 @@ public class ChatFragment
   
   private void a(final CashSwiperView.SwipeActivationMethod paramSwipeActivationMethod)
   {
-    if ((e == null) || (I)) {
+    if ((e == null) || (K)) {
       return;
     }
-    ((CashSwiperView)S.a()).a(5000);
-    J = paramSwipeActivationMethod;
-    I = true;
-    V = B.hasFocus();
-    aB.a();
-    CashFeedItem localCashFeedItem = ya.a(e, 1, false);
-    K();
-    i.a(localCashFeedItem, new ya.a()
+    ((CashSwiperView)U.a()).a(5000);
+    L = paramSwipeActivationMethod;
+    K = true;
+    X = D.hasFocus();
+    aD.a();
+    CashFeedItem localCashFeedItem = yw.a(e, 1, false);
+    M();
+    i.a(localCashFeedItem, new yw.a()
     {
       public final void a()
       {
-        bgp.a(new Runnable()
+        bhp.a(new Runnable()
         {
           public final void run()
           {
@@ -992,7 +1027,7 @@ public class ChatFragment
         });
         ChatFragment.y();
         ChatFragment.C(ChatFragment.this);
-        ban.a().a(new bdg(false));
+        bbo.a().a(new beg(false));
       }
       
       public final void b()
@@ -1003,42 +1038,266 @@ public class ChatFragment
     });
   }
   
-  private void a(List<ChatFeedItem> paramList, ChatFeedItem paramChatFeedItem)
+  private void a(List<ChatFeedItem> paramList, ChatFeedItem paramChatFeedItem, boolean paramBoolean)
   {
-    int i1;
-    boolean bool;
-    if (M == -1)
+    if ((O == -1) && (a(paramChatFeedItem, paramBoolean))) {
+      O = paramList.size();
+    }
+    paramList.add(paramChatFeedItem);
+  }
+  
+  @awj
+  private void a(final boolean paramBoolean1, boolean paramBoolean2)
+  {
+    Object localObject2 = new ArrayList(e.o());
+    N.clear();
+    o = akr.l();
+    O = -1;
+    int i1 = ((List)localObject2).size();
+    if (i1 == 0)
     {
-      if (!(paramChatFeedItem instanceof StatefulChatFeedItem)) {
-        break label77;
+      N.add(new akz(null));
+      O = 0;
+      I.notifyDataSetChanged();
+      return;
+    }
+    ac.mMessageCount = i1;
+    Object localObject1;
+    if ((!I.isEmpty()) && (H.getFirstVisiblePosition() < l))
+    {
+      i2 = ac.mRenderSize;
+      localObject1 = ac;
+      if (mRenderSize < mMessageCount) {
+        mRenderSize += 30;
       }
-      if (TextUtils.equals(paramChatFeedItem.j(), ajx.l())) {
-        break label72;
-      }
-      i1 = 1;
-      if ((i1 == 0) || (paramChatFeedItem.ao())) {
-        break label100;
-      }
-      bool = true;
+    }
+    int i2 = ac.mRenderSize;
+    if (i2 < i1) {
+      localObject2 = ((List)localObject2).subList(i1 - i2, i1);
     }
     for (;;)
     {
-      if (bool) {
-        M = paramList.size();
+      boolean bool = DateUtils.isToday(((ChatFeedItem)((List)localObject2).get(((List)localObject2).size() - 1)).U());
+      if (paramBoolean2)
+      {
+        i1 = 0;
+        for (;;)
+        {
+          if (i1 < ((List)localObject2).size())
+          {
+            if (a((ChatFeedItem)((List)localObject2).get(i1), bool)) {
+              O = i1;
+            }
+          }
+          else
+          {
+            if (O != -1) {
+              break;
+            }
+            N.add(new akz(null));
+            O = 0;
+            I.notifyDataSetChanged();
+            return;
+          }
+          i1 += 1;
+        }
+        if (O > 0)
+        {
+          ((List)localObject2).subList(0, O).clear();
+          O = 0;
+        }
       }
-      paramList.add(paramChatFeedItem);
-      return;
-      label72:
-      i1 = 0;
-      break;
-      label77:
-      if (((paramChatFeedItem instanceof aje)) && (!((aje)paramChatFeedItem).z())) {
-        bool = true;
-      } else {
-        label100:
-        bool = DateUtils.isToday(paramChatFeedItem.W());
+      Calendar localCalendar = Calendar.getInstance();
+      HashSet localHashSet = new HashSet();
+      i2 = 0;
+      if (i2 < ((List)localObject2).size())
+      {
+        ChatFeedItem localChatFeedItem = (ChatFeedItem)((List)localObject2).get(i2);
+        if (i2 > 0) {}
+        for (localObject1 = (ChatFeedItem)((List)localObject2).get(i2 - 1); localChatFeedItem == null; localObject1 = null) {
+          throw new NullPointerException();
+        }
+        label437:
+        Object localObject3;
+        if ((localObject1 == null) || (atz.a(((ChatFeedItem)localObject1).U(), localChatFeedItem.U())))
+        {
+          i1 = 1;
+          if (i1 != 0)
+          {
+            localCalendar.setTimeInMillis(Long.valueOf(localChatFeedItem.U()).longValue());
+            atz.a(localCalendar);
+            if (localHashSet.add(Long.valueOf(localCalendar.getTimeInMillis())))
+            {
+              localObject3 = new akz(localChatFeedItem);
+              a(N, (ChatFeedItem)localObject3, bool);
+            }
+          }
+          if ((localChatFeedItem instanceof alb)) {
+            break label752;
+          }
+          if (i1 == 0) {
+            break label653;
+          }
+          i1 = 1;
+          label517:
+          if (i1 != 0)
+          {
+            localObject3 = localChatFeedItem.j();
+            if (!(localChatFeedItem instanceof ale)) {
+              break label757;
+            }
+            localObject1 = getResources().getString(2131493002);
+            label550:
+            localObject1 = new ala((String)localObject1, localChatFeedItem);
+            N.add(localObject1);
+          }
+          a(N, localChatFeedItem, bool);
+          localObject1 = localChatFeedItem.aj();
+          localChatFeedItem.d();
+          localObject3 = e.mId;
+          if (!TextUtils.isEmpty((CharSequence)localObject1)) {
+            break label777;
+          }
+          label621:
+          if (!(localChatFeedItem instanceof akw)) {
+            break label797;
+          }
+        }
+        label653:
+        label752:
+        label757:
+        label777:
+        label797:
+        for (long l1 = ((akw)localChatFeedItem).t();; l1 = -1L)
+        {
+          i2 += 1;
+          break;
+          i1 = 0;
+          break label437;
+          if ((localObject1 instanceof alb))
+          {
+            i1 = 1;
+            break label517;
+          }
+          if (((localObject1 instanceof Snap)) && (((Snap)localObject1).ao()))
+          {
+            i1 = 1;
+            break label517;
+          }
+          if ((((localChatFeedItem instanceof ale)) && (!(localObject1 instanceof ale))) || (((localObject1 instanceof ale)) && (!(localChatFeedItem instanceof ale))))
+          {
+            i1 = 1;
+            break label517;
+          }
+          if (!TextUtils.equals(((ChatFeedItem)localObject1).j(), localChatFeedItem.j()))
+          {
+            i1 = 1;
+            break label517;
+          }
+          i1 = 0;
+          break label517;
+          localObject1 = localObject3;
+          if (!TextUtils.isEmpty((CharSequence)localObject3)) {
+            break label550;
+          }
+          localObject1 = "";
+          break label550;
+          localObject1 = ((String)localObject1).substring(0, Math.min(3, ((String)localObject1).length()));
+          break label621;
+        }
+      }
+      if (!bool)
+      {
+        if (O == -1) {
+          O = N.size();
+        }
+        N.add(new akz(null));
+      }
+      N.size();
+      if (!J)
+      {
+        I.notifyDataSetChanged();
+        new Handler().post(new Runnable()
+        {
+          public final void run()
+          {
+            ChatFragment.z(ChatFragment.this);
+            if (paramBoolean1)
+            {
+              ChatFragment.e(ChatFragment.this).c();
+              ChatFragment.A(ChatFragment.this);
+              ChatFragment.n(ChatFragment.this).a();
+            }
+          }
+        });
+        return;
+      }
+      if (paramBoolean1)
+      {
+        I.notifyDataSetChanged();
+        H.c();
+        Q();
+        am.a();
+        return;
+      }
+      int i3 = H.getFirstVisiblePosition();
+      localObject1 = null;
+      i1 = i3;
+      i2 = i3;
+      if (i1 <= H.getLastVisiblePosition())
+      {
+        localObject2 = I.a(i1);
+        if (localObject2 == null) {
+          break label1124;
+        }
+        localObject1 = localObject2;
+        i2 = i1;
+        if ((localObject2 instanceof ala))
+        {
+          i2 = i1;
+          localObject1 = localObject2;
+        }
+      }
+      label1124:
+      for (;;)
+      {
+        i1 += 1;
+        break;
+        if (localObject1 != null)
+        {
+          localObject1 = ((ChatFeedItem)localObject1).d();
+          localObject2 = H.getChildAt(i2 - i3);
+          if (localObject2 == null) {}
+          for (i1 = 0;; i1 = ((View)localObject2).getTop())
+          {
+            I.notifyDataSetChanged();
+            localObject2 = N.iterator();
+            i2 = 0;
+            while ((((Iterator)localObject2).hasNext()) && (!TextUtils.equals(((ChatFeedItem)((Iterator)localObject2).next()).d(), (CharSequence)localObject1))) {
+              i2 += 1;
+            }
+          }
+          H.setSelectionFromTop(i2, i1);
+          return;
+        }
+        I.notifyDataSetChanged();
+        return;
       }
     }
+  }
+  
+  private boolean a(ChatFeedItem paramChatFeedItem, boolean paramBoolean)
+  {
+    if ((paramChatFeedItem instanceof StatefulChatFeedItem))
+    {
+      if ((!paramChatFeedItem.am()) && (!TextUtils.equals(paramChatFeedItem.j(), o))) {
+        return true;
+      }
+    }
+    else if (((paramChatFeedItem instanceof aka)) && (!((aka)paramChatFeedItem).A())) {
+      return true;
+    }
+    return (paramBoolean) && (DateUtils.isToday(paramChatFeedItem.U()));
   }
   
   public static boolean a(String paramString)
@@ -1053,8 +1312,8 @@ public class ChatFragment
   
   private void b(float paramFloat)
   {
-    if (ar != null) {
-      ar.cancel();
+    if (at != null) {
+      at.cancel();
     }
     boolean bool;
     float f1;
@@ -1064,15 +1323,15 @@ public class ChatFragment
     if (paramFloat != 1.0F)
     {
       bool = true;
-      i(bool);
-      f1 = v.getTranslationY();
-      f2 = x.getTranslationY();
-      f3 = w.getTranslationY();
-      f4 = y.getTranslationY();
-      if ((paramFloat == 0.0F) || (!ak.b()) || (bfd.b(F))) {
+      h(bool);
+      f1 = x.getTranslationY();
+      f2 = z.getTranslationY();
+      f3 = y.getTranslationY();
+      f4 = A.getTranslationY();
+      if ((paramFloat == 0.0F) || (!am.b()) || (bgd.b(H))) {
         break label100;
       }
-      N();
+      P();
     }
     label100:
     int i4;
@@ -1083,33 +1342,33 @@ public class ChatFragment
         return;
         bool = false;
         break;
-      } while (((paramFloat == 0.0F) && (f1 == 0.0F) && (f2 == 0.0F) && (f3 == 0.0F) && (f4 == 0.0F)) || ((paramFloat == 1.0F) && (f1 == -an) && (f2 == ao) && (f3 == -(an + ap)) && (f4 == ao + aq)));
-      int i1 = (int)-(an * paramFloat);
-      int i2 = (int)(ao * paramFloat);
-      int i3 = (int)-((an + ap) * paramFloat);
-      i4 = (int)((ao + aq) * paramFloat);
+      } while (((paramFloat == 0.0F) && (f1 == 0.0F) && (f2 == 0.0F) && (f3 == 0.0F) && (f4 == 0.0F)) || ((paramFloat == 1.0F) && (f1 == -ap) && (f2 == aq) && (f3 == -(ap + ar)) && (f4 == aq + as)));
+      int i1 = (int)-(ap * paramFloat);
+      int i2 = (int)(aq * paramFloat);
+      int i3 = (int)-((ap + ar) * paramFloat);
+      i4 = (int)((aq + as) * paramFloat);
       if (i1 != f1) {
-        v.setTranslationY(i1);
+        x.setTranslationY(i1);
       }
       if (i2 != f2) {
-        x.setTranslationY(i2);
+        z.setTranslationY(i2);
       }
       if (i3 != f3) {
-        w.setTranslationY(i3);
+        y.setTranslationY(i3);
       }
     } while (i4 == f4);
-    y.setTranslationY(i4);
+    A.setTranslationY(i4);
   }
   
-  private void b(@cgb String paramString)
+  private void b(@chc String paramString)
   {
-    if (!H) {}
+    if (!J) {}
     int i2;
     label36:
-    label177:
+    label176:
     long l1;
-    label195:
-    label275:
+    label194:
+    label239:
     do
     {
       Object localObject2;
@@ -1118,297 +1377,80 @@ public class ChatFragment
       do
       {
         return;
-        i2 = F.getFirstVisiblePosition();
-        int i3 = F.getLastVisiblePosition();
-        localObject2 = F.getAdapter();
+        i2 = H.getFirstVisiblePosition();
+        int i3 = H.getLastVisiblePosition();
+        localObject2 = H.getAdapter();
         i1 = i2;
         if (i1 > i3) {
-          break label441;
+          break label405;
         }
-        localView = F.getChildAt(i1 - i2);
-        localObject1 = (afr.c)localView.getTag();
+        localView = H.getChildAt(i1 - i2);
+        localObject1 = (agr.c)localView.getTag();
         if ((localObject1 == null) || (((ListAdapter)localObject2).getCount() <= i1)) {
-          break label436;
+          break label400;
         }
         localObject1 = a;
-        Object localObject3 = (ChatFeedItem)((ListAdapter)localObject2).getItem(i1);
-        if ((localObject1 == null) || (localObject3 == null) || (!TextUtils.equals(((ChatFeedItem)localObject1).d(), ((ChatFeedItem)localObject3).d())) || (!TextUtils.equals(((ChatFeedItem)localObject1).d(), paramString))) {
-          break label436;
+        ChatFeedItem localChatFeedItem = (ChatFeedItem)((ListAdapter)localObject2).getItem(i1);
+        if ((localObject1 == null) || (localChatFeedItem == null) || (!TextUtils.equals(((ChatFeedItem)localObject1).d(), localChatFeedItem.d())) || (!TextUtils.equals(((ChatFeedItem)localObject1).d(), paramString))) {
+          break label400;
         }
-        paramString = ((ChatFeedItem)localObject1).al();
-        localObject2 = ((ChatFeedItem)localObject1).d();
-        localObject3 = e.mId;
+        paramString = ((ChatFeedItem)localObject1).aj();
+        ((ChatFeedItem)localObject1).d();
+        localObject2 = e.mId;
         if (!TextUtils.isEmpty(paramString)) {
-          break label411;
+          break label375;
         }
-        if (!(localObject1 instanceof akb)) {
-          break label428;
+        if (!(localObject1 instanceof akw)) {
+          break label392;
         }
-        l1 = ((akb)localObject1).s();
-        Timber.g("ChatFragment", "CHAT-LOG: Refreshing Chat View with message id[%s] conv[%s] text[%s] seq_num[%d]", new Object[] { localObject2, localObject3, paramString, Long.valueOf(l1) });
-        F.getAdapter().getView(i1, localView, F);
-        int i4 = F.getFirstVisiblePosition();
-        paramString = F.getAdapter();
+        l1 = ((akw)localObject1).t();
+        H.getAdapter().getView(i1, localView, H);
+        int i4 = H.getFirstVisiblePosition();
+        paramString = H.getAdapter();
         i3 = 0;
         i2 = i1;
         i1 = i3;
         if (i2 < i4) {
           break;
         }
-        localView = F.getChildAt(i2 - i4);
-        localObject1 = (afr.c)localView.getTag();
+        localView = H.getChildAt(i2 - i4);
+        localObject1 = (agr.c)localView.getTag();
         if (localObject1 == null) {
-          break label443;
+          break label407;
         }
         localObject1 = a;
         localObject2 = (ChatFeedItem)paramString.getItem(i2);
-      } while ((i1 != 0) && (!(localObject2 instanceof ake)));
-      if ((localObject1 == null) || (localObject2 == null) || (!(localObject1 instanceof akf)) || (!TextUtils.equals(((ChatFeedItem)localObject1).d(), ((ChatFeedItem)localObject2).d()))) {
-        break label443;
+      } while ((i1 != 0) && (!(localObject2 instanceof akz)));
+      if ((localObject1 == null) || (localObject2 == null) || (!(localObject1 instanceof ala)) || (!TextUtils.equals(((ChatFeedItem)localObject1).d(), ((ChatFeedItem)localObject2).d()))) {
+        break label407;
       }
-      F.getAdapter().getView(i2, localView, F);
+      H.getAdapter().getView(i2, localView, H);
     } while (i1 != 0);
     int i1 = 1;
-    label411:
-    label428:
-    label436:
-    label441:
-    label443:
+    label375:
+    label392:
+    label400:
+    label405:
+    label407:
     for (;;)
     {
       i2 -= 1;
-      break label275;
+      break label239;
       break;
       paramString = paramString.substring(0, Math.min(3, paramString.length()));
-      break label177;
+      break label176;
       l1 = -1L;
-      break label195;
+      break label194;
       i1 += 1;
       break label36;
       break;
     }
   }
   
-  @avl
-  private void g(final boolean paramBoolean)
-  {
-    Object localObject2 = new ArrayList(e.o());
-    L.clear();
-    M = -1;
-    int i1 = ((List)localObject2).size();
-    if (i1 == 0)
-    {
-      a(L, new ake(null));
-      return;
-    }
-    aa.mMessageCount = i1;
-    Object localObject1;
-    if ((!G.isEmpty()) && (F.getFirstVisiblePosition() < 20))
-    {
-      Timber.g("ChatFragment", "CHAT-LOG: Incrementing paginator render size (old size: %d)", new Object[] { Integer.valueOf(aa.mRenderSize) });
-      localObject1 = aa;
-      if (mRenderSize < mMessageCount) {
-        mRenderSize += 30;
-      }
-    }
-    int i2 = aa.mRenderSize;
-    if (i2 < i1) {
-      localObject2 = ((List)localObject2).subList(i1 - i2, i1);
-    }
-    for (;;)
-    {
-      Timber.g("ChatFragment", "CHAT-LOG: ChatMessagePaginator has render size of %d messages", new Object[] { Integer.valueOf(i2) });
-      Calendar localCalendar = Calendar.getInstance();
-      HashSet localHashSet = new HashSet();
-      i1 = 0;
-      int i3 = 0;
-      ChatFeedItem localChatFeedItem;
-      label305:
-      Object localObject3;
-      if (i3 < ((List)localObject2).size())
-      {
-        if (i3 > 0) {}
-        for (localObject1 = (ChatFeedItem)((List)localObject2).get(i3 - 1);; localObject1 = null)
-        {
-          localChatFeedItem = (ChatFeedItem)((List)localObject2).get(i3);
-          if (localChatFeedItem != null) {
-            break;
-          }
-          throw new NullPointerException();
-        }
-        if ((localObject1 == null) || (ata.a(((ChatFeedItem)localObject1).W(), localChatFeedItem.W())))
-        {
-          i2 = 1;
-          if (i2 == 0) {
-            break label1112;
-          }
-          localCalendar.setTimeInMillis(Long.valueOf(localChatFeedItem.W()).longValue());
-          ata.a(localCalendar);
-          if (!localHashSet.add(Long.valueOf(localCalendar.getTimeInMillis()))) {
-            break label574;
-          }
-          localObject3 = new ake(localChatFeedItem);
-          a(L, (ChatFeedItem)localObject3);
-          i2 = 1;
-          label371:
-          if (i2 == 0) {
-            break label1112;
-          }
-        }
-      }
-      label403:
-      label436:
-      label504:
-      label574:
-      label700:
-      label720:
-      label740:
-      label1112:
-      for (i2 = L.size();; i2 = i1)
-      {
-        String str;
-        if (!(localChatFeedItem instanceof akg)) {
-          if ((localObject1 instanceof akg))
-          {
-            i1 = 1;
-            if (i1 != 0)
-            {
-              localObject3 = localChatFeedItem.j();
-              if (!(localChatFeedItem instanceof akj)) {
-                break label700;
-              }
-              localObject1 = getResources().getString(2131493002);
-              localObject1 = new akf((String)localObject1, localChatFeedItem);
-              a(L, (ChatFeedItem)localObject1);
-            }
-            a(L, localChatFeedItem);
-            localObject1 = localChatFeedItem.al();
-            localObject3 = localChatFeedItem.d();
-            str = e.mId;
-            if (!TextUtils.isEmpty((CharSequence)localObject1)) {
-              break label720;
-            }
-            if (!(localChatFeedItem instanceof akb)) {
-              break label740;
-            }
-          }
-        }
-        for (long l1 = ((akb)localChatFeedItem).s();; l1 = -1L)
-        {
-          Timber.g("ChatFragment", "CHAT-LOG: Populating Chat View with message id[%s] conv[%s] text[%s] seq_num[%d]", new Object[] { localObject3, str, localObject1, Long.valueOf(l1) });
-          i3 += 1;
-          i1 = i2;
-          break;
-          i2 = 0;
-          break label305;
-          i2 = 0;
-          break label371;
-          if (((localObject1 instanceof Snap)) && (((Snap)localObject1).aq()))
-          {
-            i1 = 1;
-            break label403;
-          }
-          if ((localObject1 == null) || (ata.a(((ChatFeedItem)localObject1).W(), localChatFeedItem.W())))
-          {
-            i1 = 1;
-            break label403;
-          }
-          if ((((localChatFeedItem instanceof akj)) && (!(localObject1 instanceof akj))) || (((localObject1 instanceof akj)) && (!(localChatFeedItem instanceof akj))))
-          {
-            i1 = 1;
-            break label403;
-          }
-          if (!TextUtils.equals(((ChatFeedItem)localObject1).j(), localChatFeedItem.j()))
-          {
-            i1 = 1;
-            break label403;
-          }
-          i1 = 0;
-          break label403;
-          localObject1 = localObject3;
-          if (!TextUtils.isEmpty((CharSequence)localObject3)) {
-            break label436;
-          }
-          localObject1 = "";
-          break label436;
-          localObject1 = ((String)localObject1).substring(0, Math.min(3, ((String)localObject1).length()));
-          break label504;
-        }
-        if (!DateUtils.isToday(((ChatFeedItem)L.get(i1)).W())) {
-          a(L, new ake(null));
-        }
-        Timber.g("ChatFragment", "CHAT-LOG: Repopulated chat messages should have %d items", new Object[] { Integer.valueOf(L.size()) });
-        if (!H)
-        {
-          Timber.g("ChatFragment", "CHAT-LOG: ChatFragment repopulateChatMessages calling notifyDataSetChanged message view hasn't been loaded yet", new Object[0]);
-          G.notifyDataSetChanged();
-          new Handler().post(new Runnable()
-          {
-            public final void run()
-            {
-              ChatFragment.z(ChatFragment.this);
-              if (paramBoolean)
-              {
-                ChatFragment.e(ChatFragment.this).c();
-                ChatFragment.A(ChatFragment.this);
-                ChatFragment.n(ChatFragment.this).a();
-              }
-            }
-          });
-          return;
-        }
-        if (paramBoolean)
-        {
-          Timber.g("ChatFragment", "CHAT-LOG: ChatFragment repopulateChatMessages calling notifyDataSetChanged and scrolling to bottom", new Object[0]);
-          G.notifyDataSetChanged();
-          F.c();
-          O();
-          ak.a();
-          return;
-        }
-        i2 = F.getFirstVisiblePosition();
-        localObject1 = null;
-        i1 = i2;
-        if (i1 <= F.getLastVisiblePosition())
-        {
-          localObject1 = G.a(i1);
-          if ((localObject1 == null) || ((localObject1 instanceof akf))) {}
-        }
-        for (;;)
-        {
-          if (localObject1 != null)
-          {
-            localObject1 = ((ChatFeedItem)localObject1).d();
-            localObject2 = F.getChildAt(i1 - i2);
-            if (localObject2 == null) {}
-            for (i1 = 0;; i1 = ((View)localObject2).getTop())
-            {
-              Timber.g("ChatFragment", "CHAT-LOG: ChatFragment repopulateChatMessages calling notifyDataSetChanged while maintaining scroll position", new Object[0]);
-              G.notifyDataSetChanged();
-              localObject2 = L.iterator();
-              i2 = 0;
-              while ((((Iterator)localObject2).hasNext()) && (!TextUtils.equals(((ChatFeedItem)((Iterator)localObject2).next()).d(), (CharSequence)localObject1))) {
-                i2 += 1;
-              }
-              i1 += 1;
-              break;
-            }
-            F.setSelectionFromTop(i2, i1);
-            return;
-          }
-          Timber.g("ChatFragment", "CHAT-LOG: ChatFragment repopulateChatMessages calling notifyDataSetChanged while maintaining scroll position but no saved item", new Object[0]);
-          G.notifyDataSetChanged();
-          return;
-          i1 = i2;
-        }
-      }
-    }
-  }
-  
-  private void h(boolean paramBoolean)
+  private void g(boolean paramBoolean)
   {
     int i2 = 1;
-    Object localObject = F;
+    Object localObject = H;
     boolean bool;
     if (!paramBoolean)
     {
@@ -1436,24 +1478,24 @@ public class ChatFragment
       }
       i1 = (int)getResources().getDimension(2131296258);
       label114:
-      localObject = s;
+      localObject = u;
       if (paramBoolean) {
         break label266;
       }
       label124:
-      int i3 = (int)getResources().getDimension(2131296416);
-      ViewStub localViewStub = ah;
-      bgp.a();
-      ((alx)localObject).a(localViewStub);
+      int i3 = (int)getResources().getDimension(2131296417);
+      ViewStub localViewStub = aj;
+      bhp.a();
+      ((amu)localObject).a(localViewStub);
       a.getLayoutParams().height = i1;
       if (i2 == 0) {
         break label271;
       }
-      a.findViewById(2131362397).setPadding(0, i3, 0, 0);
+      a.findViewById(2131362395).setPadding(0, i3, 0, 0);
     }
     for (;;)
     {
-      localObject = (RelativeLayout.LayoutParams)v.getLayoutParams();
+      localObject = (RelativeLayout.LayoutParams)x.getLayoutParams();
       if (localObject != null) {
         break label292;
       }
@@ -1476,38 +1518,38 @@ public class ChatFragment
       i2 = 0;
       break label124;
       label271:
-      a.findViewById(2131362397).setPadding(0, 0, 0, 0);
+      a.findViewById(2131362395).setPadding(0, 0, 0, 0);
     }
     label292:
     i2 = height;
     if (paramBoolean) {
-      an = ((int)getResources().getDimension(2131296258));
+      ap = ((int)getResources().getDimension(2131296258));
     }
-    for (int i1 = 0;; i1 = (int)getResources().getDimension(2131296416))
+    for (int i1 = 0;; i1 = (int)getResources().getDimension(2131296417))
     {
-      if (an != i2)
+      if (ap != i2)
       {
-        height = an;
-        v.setLayoutParams((ViewGroup.LayoutParams)localObject);
-        localObject = (AbsListView.LayoutParams)al.getLayoutParams();
+        height = ap;
+        x.setLayoutParams((ViewGroup.LayoutParams)localObject);
+        localObject = (AbsListView.LayoutParams)an.getLayoutParams();
         if (localObject != null)
         {
-          height = an;
-          al.setLayoutParams((ViewGroup.LayoutParams)localObject);
+          height = ap;
+          an.setLayoutParams((ViewGroup.LayoutParams)localObject);
         }
       }
-      if (i1 == v.getPaddingTop()) {
+      if (i1 == x.getPaddingTop()) {
         break;
       }
-      v.setPadding(0, i1, 0, 0);
+      x.setPadding(0, i1, 0, 0);
       return;
-      an = ((int)getResources().getDimension(2131296259));
+      ap = ((int)getResources().getDimension(2131296259));
     }
   }
   
-  private void i(boolean paramBoolean)
+  private void h(boolean paramBoolean)
   {
-    if (aj != paramBoolean) {
+    if (al != paramBoolean) {
       if (!paramBoolean) {
         break label36;
       }
@@ -1515,15 +1557,15 @@ public class ChatFragment
     label36:
     for (TitleBarManager.Visibility localVisibility = TitleBarManager.Visibility.VISIBLE;; localVisibility = TitleBarManager.Visibility.HIDDEN)
     {
-      ban.a().a(new bel(localVisibility));
-      aj = paramBoolean;
+      bbo.a().a(new bfk(localVisibility));
+      al = paramBoolean;
       return;
     }
   }
   
   public static boolean m()
   {
-    return az;
+    return aB;
   }
   
   public static boolean n()
@@ -1539,7 +1581,7 @@ public class ChatFragment
   
   public static String t()
   {
-    return m;
+    return n;
   }
   
   public final float a(View paramView)
@@ -1548,7 +1590,7 @@ public class ChatFragment
       return 0.0F;
     }
     paramView = paramView.getTag();
-    if ((paramView instanceof afr.c)) {
+    if ((paramView instanceof agr.c)) {
       return c.getTranslationX();
     }
     return 0.0F;
@@ -1558,11 +1600,11 @@ public class ChatFragment
   {
     int i1 = (int)paramMotionEvent.getX();
     int i2 = (int)paramMotionEvent.getY();
-    i1 = F.pointToPosition(i1, i2);
-    if (i1 >= G.getCount() + F.getHeaderViewsCount()) {
+    i1 = H.pointToPosition(i1, i2);
+    if (i1 >= I.getCount() + H.getHeaderViewsCount()) {
       return null;
     }
-    return (ChatFeedItem)F.getItemAtPosition(i1);
+    return (ChatFeedItem)H.getItemAtPosition(i1);
   }
   
   public final void a()
@@ -1572,8 +1614,8 @@ public class ChatFragment
   
   public final void a(int paramInt)
   {
-    at = false;
-    au = 0.0F;
+    av = false;
+    aw = 0.0F;
   }
   
   public final void a(int paramInt, boolean paramBoolean1, boolean paramBoolean2)
@@ -1585,25 +1627,25 @@ public class ChatFragment
       if ((paramBoolean1) && (paramBoolean2))
       {
         p();
-        ai = true;
+        ak = true;
       }
-    } while ((bfd.b(F)) || (at) || (!ai));
-    int i1 = F.getFirstVisiblePosition();
-    int i2 = F.getLastVisiblePosition();
-    Object localObject3 = (ChatFeedItem)F.getItemAtPosition(i1);
+    } while ((bgd.b(H)) || (av) || (!ak));
+    int i1 = H.getFirstVisiblePosition();
+    int i2 = H.getLastVisiblePosition();
+    Object localObject3 = (ChatFeedItem)H.getItemAtPosition(i1);
     if (i1 != i2) {}
-    for (Object localObject1 = (ChatFeedItem)F.getItemAtPosition(i2); !yi.a((ChatFeedItem)localObject3, (ChatFeedItem)localObject1); localObject1 = null)
+    for (Object localObject1 = (ChatFeedItem)H.getItemAtPosition(i2); !ze.a((ChatFeedItem)localObject3, (ChatFeedItem)localObject1); localObject1 = null)
     {
-      if (!ak.b())
+      if (!am.b())
       {
         b(0.0F);
         break label696;
       }
-      as = paramInt;
+      au = paramInt;
       return;
     }
-    am.a = F.getHeight();
-    Object localObject4 = F.getChildAt(0);
+    ao.a = H.getHeight();
+    Object localObject4 = H.getChildAt(0);
     Object localObject2;
     label184:
     label213:
@@ -1616,12 +1658,12 @@ public class ChatFragment
     float f1;
     if (i1 != i2)
     {
-      localObject2 = F.getChildAt(i2 - i1);
-      if (paramInt - as <= 0) {
+      localObject2 = H.getChildAt(i2 - i1);
+      if (paramInt - au <= 0) {
         break label731;
       }
       localObject1 = new ChatMediaExpansionCalculator.a((ChatFeedItem)localObject3, (ChatFeedItem)localObject1, (View)localObject4, (View)localObject2, ChatMediaExpansionCalculator.ScrollDirection.UP);
-      localObject2 = am;
+      localObject2 = ao;
       localObject4 = a;
       localChatFeedItem = b;
       localView = c;
@@ -1646,7 +1688,7 @@ public class ChatFragment
       if (localObject4 != null)
       {
         i3 = i5;
-        if (((ChatFeedItem)localObject4).am())
+        if (((ChatFeedItem)localObject4).ak())
         {
           i3 = i5;
           if (i2 <= a * 0.5F + a * 0.125F) {
@@ -1658,7 +1700,7 @@ public class ChatFragment
       if (localChatFeedItem != null)
       {
         i2 = i4;
-        if (localChatFeedItem.am())
+        if (localChatFeedItem.ak())
         {
           i2 = i4;
           if (i1 <= a * 0.5F) {
@@ -1670,19 +1712,19 @@ public class ChatFragment
         break label766;
       }
       f2 = Math.max(f2, 0.0F);
-      localObject2 = (afr.c)localView.getTag();
+      localObject2 = (agr.c)localView.getTag();
       localObject1 = null;
       f1 = -1.0F;
     }
     for (;;)
     {
       label486:
-      localObject3 = new ChatMediaExpansionCalculator.b((afr.c)localObject2, (afr.c)localObject1, f2, f1);
+      localObject3 = new ChatMediaExpansionCalculator.b((agr.c)localObject2, (agr.c)localObject1, f2, f1);
       localObject1 = a;
       localObject2 = b;
       f1 = c;
       f2 = d;
-      localObject3 = ak;
+      localObject3 = am;
       i2 = a.getFirstVisiblePosition();
       i3 = a.getLastVisiblePosition();
       i1 = i2;
@@ -1690,14 +1732,14 @@ public class ChatFragment
       if (i1 > i3) {
         break label1106;
       }
-      localObject4 = (afr.c)a.getChildAt(i1 - i2).getTag();
+      localObject4 = (agr.c)a.getChildAt(i1 - i2).getTag();
       if (localObject4 == null) {
         break label1091;
       }
       if ((i1 != i2) && (i1 != i3)) {
         break label1074;
       }
-      if (a.am()) {
+      if (a.ak()) {
         break label1097;
       }
       i1 = 0;
@@ -1705,19 +1747,19 @@ public class ChatFragment
       if ((f1 == -1.0F) || (f2 == -1.0F)) {
         break label1112;
       }
-      N();
+      P();
       if ((f1 != -1.0F) && (localObject1 != null)) {
-        ak.a((afr.c)localObject1, f1);
+        am.a((agr.c)localObject1, f1);
       }
       if ((f2 != -1.0F) && (localObject2 != null)) {
         label685:
-        ak.a((afr.c)localObject2, f2);
+        am.a((agr.c)localObject2, f2);
       }
       label696:
-      if (Float.compare(x.getTranslationY(), 0.0F) == 0) {
+      if (Float.compare(z.getTranslationY(), 0.0F) == 0) {
         break label1158;
       }
-      aA.a(e, false);
+      aC.a(e, false);
       break;
       localObject2 = null;
       break label184;
@@ -1734,7 +1776,7 @@ public class ChatFragment
       if ((i3 == 0) && (i2 != 0))
       {
         f1 = Math.min(f1, 1.0F);
-        localObject1 = (afr.c)((View)localObject3).getTag();
+        localObject1 = (agr.c)((View)localObject3).getTag();
         localObject2 = null;
         f2 = -1.0F;
       }
@@ -1744,9 +1786,9 @@ public class ChatFragment
           break label1215;
         }
         f2 = Math.max(f2, 0.0F);
-        localObject2 = (afr.c)localView.getTag();
+        localObject2 = (agr.c)localView.getTag();
         f1 = Math.min(f1, 1.0F);
-        localObject1 = (afr.c)((View)localObject3).getTag();
+        localObject1 = (agr.c)((View)localObject3).getTag();
       }
     }
     label854:
@@ -1754,7 +1796,7 @@ public class ChatFragment
     if (localObject4 != null)
     {
       i3 = i6;
-      if (((ChatFeedItem)localObject4).am())
+      if (((ChatFeedItem)localObject4).ak())
       {
         i3 = i6;
         if (i2 >= a * 0.5F) {
@@ -1762,13 +1804,13 @@ public class ChatFragment
         }
       }
     }
-    if ((localChatFeedItem != null) && (localChatFeedItem.am()) && (i1 >= a * 0.5F - a * 0.125F)) {}
+    if ((localChatFeedItem != null) && (localChatFeedItem.ak()) && (i1 >= a * 0.5F - a * 0.125F)) {}
     for (i1 = 1;; i1 = 0)
     {
       if ((i3 != 0) && (i1 == 0))
       {
         f2 = Math.min(f2, 1.0F);
-        localObject2 = (afr.c)localView.getTag();
+        localObject2 = (agr.c)localView.getTag();
         localObject1 = null;
         f1 = -1.0F;
         break label486;
@@ -1776,7 +1818,7 @@ public class ChatFragment
       if ((i3 == 0) && (i1 != 0))
       {
         f1 = Math.max(f1, 0.0F);
-        localObject1 = (afr.c)((View)localObject3).getTag();
+        localObject1 = (agr.c)((View)localObject3).getTag();
         localObject2 = null;
         f2 = -1.0F;
         break label486;
@@ -1784,12 +1826,12 @@ public class ChatFragment
       if ((i3 != 0) && (i1 != 0))
       {
         f2 = Math.min(f2, 1.0F);
-        localObject2 = (afr.c)localView.getTag();
+        localObject2 = (agr.c)localView.getTag();
         f1 = Math.max(f1, 0.0F);
-        localObject1 = (afr.c)((View)localObject3).getTag();
+        localObject1 = (agr.c)((View)localObject3).getTag();
         break label486;
         label1074:
-        if (!(a instanceof akf))
+        if (!(a instanceof ala))
         {
           i1 = 0;
           break label624;
@@ -1806,12 +1848,12 @@ public class ChatFragment
         label1112:
         if ((f1 != -1.0F) && (localObject1 != null))
         {
-          if ((ak.b()) || (i1 != 0)) {
+          if ((am.b()) || (i1 != 0)) {
             b(1.0F);
           }
           for (;;)
           {
-            ak.a((afr.c)localObject1, f1);
+            am.a((agr.c)localObject1, f1);
             break label696;
             label1158:
             break;
@@ -1821,7 +1863,7 @@ public class ChatFragment
         if ((f2 == -1.0F) || (localObject2 == null)) {
           break;
         }
-        if ((ak.b()) || (i1 != 0))
+        if ((am.b()) || (i1 != 0))
         {
           b(1.0F);
           break label685;
@@ -1838,37 +1880,35 @@ public class ChatFragment
     }
   }
   
-  public final void a(@cgb aio paramaio) {}
+  public final void a(@chc ajk paramajk) {}
   
-  public final void a(@cgb aje paramaje) {}
+  public final void a(@chc aka paramaka, @chc ajk paramajk) {}
   
-  public final void a(@cgb aje paramaje, @cgb aio paramaio) {}
-  
-  public final void a(@cgb aje paramaje, @cgb SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt)
+  public final void a(@chc aka paramaka, @chc SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt)
   {
-    if ((!(paramaje instanceof ajr)) && (paramSnapViewSessionStopReason == SnapViewSessionStopReason.ABORT_REQUESTED)) {
-      T.a()).a.start();
+    if ((!(paramaka instanceof akl)) && (paramSnapViewSessionStopReason == SnapViewSessionStopReason.ABORT_REQUESTED)) {
+      V.a()).a.start();
     }
   }
   
-  public final void a(@cgb akh paramakh)
+  public final void a(@chc alc paramalc)
   {
     Friend localFriend = f;
-    if (axi.a(paramakh))
+    if (ayg.a(paramalc))
     {
       if (localFriend == null) {
         break label85;
       }
-      String str = localFriend.h();
-      if ((!TextUtils.equals(ajx.l(), str)) || (!paramakh.k().contains(localFriend.h()))) {
+      String str = localFriend.l();
+      if ((!TextUtils.equals(akr.l(), str)) || (!paramalc.k().contains(localFriend.l()))) {
         break label85;
       }
     }
     label85:
     for (int i1 = 1;; i1 = 0)
     {
-      if ((i1 != 0) && (!paramakh.w()) && (paramakh.e())) {
-        ad.a(e, paramakh, null);
+      if ((i1 != 0) && (!paramalc.x()) && (paramalc.e())) {
+        af.a(e, paramalc, null);
       }
       return;
     }
@@ -1882,7 +1922,7 @@ public class ChatFragment
     }
     for (;;)
     {
-      A.setText(paramNetworkInfo);
+      C.setText(paramNetworkInfo);
       return;
       switch (paramNetworkInfo.getType())
       {
@@ -1900,11 +1940,9 @@ public class ChatFragment
   
   public final void a(View paramView, int paramInt, boolean paramBoolean) {}
   
-  public final void a(View paramView, boolean paramBoolean) {}
-  
   public final void a(LoadConversationPageTask.TaskStatus paramTaskStatus)
   {
-    ViewGroup.LayoutParams localLayoutParams = O.getLayoutParams();
+    ViewGroup.LayoutParams localLayoutParams = Q.getLayoutParams();
     if (localLayoutParams == null) {
       return;
     }
@@ -1914,39 +1952,38 @@ public class ChatFragment
       return;
     case 1: 
       height = -2;
-      O.setLayoutParams(localLayoutParams);
-      O.setVisibility(0);
-      P.setVisibility(0);
-      Q.setVisibility(4);
+      Q.setLayoutParams(localLayoutParams);
+      Q.setVisibility(0);
+      R.setVisibility(0);
+      S.setVisibility(4);
       return;
     case 2: 
       height = -2;
-      O.setLayoutParams(localLayoutParams);
-      O.setVisibility(0);
-      P.setVisibility(4);
+      Q.setLayoutParams(localLayoutParams);
       Q.setVisibility(0);
+      R.setVisibility(4);
+      S.setVisibility(0);
       return;
     }
     height = 1;
-    O.setLayoutParams(localLayoutParams);
-    O.setVisibility(8);
+    Q.setLayoutParams(localLayoutParams);
+    Q.setVisibility(8);
   }
   
-  @avl
+  @awj
   public final void a(boolean paramBoolean)
   {
-    Timber.g("ChatFragment", "CHAT-LOG: ChatFragment updateFriendIfNecessary %b", new Object[] { Boolean.valueOf(paramBoolean) });
-    ajv localajv = ajv.g();
-    if ((localajv == null) || (TextUtils.isEmpty(c))) {}
-    while ((f != null) && (TextUtils.equals(f.h(), c))) {
+    akp localakp = akp.g();
+    if ((localakp == null) || (TextUtils.isEmpty(c))) {}
+    while ((f != null) && (TextUtils.equals(f.l(), c))) {
       return;
     }
-    Timber.g("ChatFragment", "CHAT-LOG: ChatFragment updateFriendIfNecessary no displayed friend or username or displayed friend is different, setting to %s", new Object[] { c });
-    a(atm.b(c, localajv), paramBoolean);
+    String str = c;
+    a(auk.b(c, localakp), paramBoolean);
     b(0.0F);
   }
   
-  public final boolean a(View paramView, float paramFloat1, float paramFloat2, float paramFloat3)
+  public final boolean a(View paramView, float paramFloat)
   {
     boolean bool = true;
     if (paramView == null) {
@@ -1957,23 +1994,23 @@ public class ChatFragment
     {
       return bool;
       i1 = b(null);
-    } while ((Math.abs(paramFloat1) >= i1) && (a(paramView) >= i1));
-    if ((Math.abs(paramFloat1) >= i1) && (a(paramView) < i1))
+    } while ((Math.abs(paramFloat) >= i1) && (a(paramView) >= i1));
+    if ((Math.abs(paramFloat) >= i1) && (a(paramView) < i1))
     {
       a(i1);
       return true;
     }
-    a(paramFloat1);
+    a(paramFloat);
     return true;
   }
   
-  public final int b(@cgc View paramView)
+  public final int b(@chd View paramView)
   {
     paramView = getActivity();
     if (paramView == null) {
       return 0;
     }
-    return (int)avh.a(51.0F, paramView);
+    return (int)awf.a(51.0F, paramView);
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
@@ -1983,50 +2020,49 @@ public class ChatFragment
   
   public final void b(boolean paramBoolean)
   {
-    if (aF != null)
+    if (aH != null)
     {
       if (!paramBoolean) {
         break label21;
       }
-      aF.b();
+      aH.b();
     }
     label21:
-    while (!F.c) {
+    while (!H.b) {
       return;
     }
-    aF.a();
+    aH.a();
   }
   
   public final void c(View paramView)
   {
-    Timber.g("ChatFragment", "CHAT-LOG: ChatFragment onLocked", new Object[0]);
-    paramView = (afr.c)paramView.getTag();
-    if ((aF == null) || (!TextUtils.equals(aF.h(), a.d()))) {
-      aF = ((afv)aG.get(a.d()));
+    paramView = (agr.c)paramView.getTag();
+    if ((aH == null) || (!TextUtils.equals(aH.h(), a.d()))) {
+      aH = ((agv)aI.get(a.d()));
     }
     if ((a instanceof ChatMedia))
     {
-      N();
-      ak.a(paramView, 1.0F);
+      P();
+      am.a(paramView, 1.0F);
     }
-    if (aF != null)
+    if (aH != null)
     {
-      if ((aF instanceof afu)) {
-        ((afu)aF).a(this);
+      if ((aH instanceof agu)) {
+        ((agu)aH).a(this);
       }
-      aF.a();
+      aH.a();
     }
   }
   
   public final void c(boolean paramBoolean)
   {
     int i2 = 8;
-    Object localObject = v;
+    Object localObject = x;
     if (paramBoolean)
     {
       i1 = 8;
       ((View)localObject).setVisibility(i1);
-      localObject = F;
+      localObject = H;
       if (!paramBoolean) {
         break label46;
       }
@@ -2043,12 +2079,14 @@ public class ChatFragment
   
   public final void d()
   {
-    az = true;
+    aB = true;
   }
   
-  public final void d(@cgb View paramView)
+  public final void d(@chc aka paramaka) {}
+  
+  public final void d(@chc View paramView)
   {
-    afr.c localc;
+    agr.c localc;
     boolean bool3;
     boolean bool2;
     long l1;
@@ -2057,40 +2095,42 @@ public class ChatFragment
     Object localObject2;
     if ((e != null) && (e.mAmIPresent))
     {
-      localc = (afr.c)paramView.getTag();
+      localc = (agr.c)paramView.getTag();
       bool3 = false;
       bool2 = false;
       l1 = System.currentTimeMillis();
-      if ((a instanceof akb))
+      if ((a instanceof akw))
       {
-        localObject1 = (akb)a;
+        localObject1 = (akw)a;
         if (!mRecipients.contains(e.mMyUsername)) {
-          break label793;
+          break label800;
         }
-        long l2 = ((akb)localObject1).s();
+        long l2 = ((akw)localObject1).t();
         if (l2 > e.mLastSeqNumOfTheirChatIDisplayed)
         {
-          bool2 = yj.c(e, l2);
-          l1 = ((akb)localObject1).A();
+          bool2 = zf.c(e, l2);
+          l1 = ((akw)localObject1).B();
           bool1 = false;
           bool3 = bool1;
           if (bool2)
           {
             if (l1 <= 0L) {
-              break label609;
+              break label616;
             }
             localObject1 = e;
-            ae.postDelayed(new Runnable()
+            ag.postDelayed(new Runnable()
             {
               public final void run()
               {
                 ChatFragment.L(ChatFragment.this);
-                if (yj.a(localObject1)) {
-                  ChatFragment.L(ChatFragment.this).a(ChatFragment.f(ChatFragment.this), bit.a.RELEASE);
+                if (zf.a(localObject1))
+                {
+                  ChatFragment.L(ChatFragment.this).a(ChatFragment.f(ChatFragment.this), bju.a.RELEASE);
+                  ChatFragment.f(ChatFragment.this).r();
                 }
               }
             }, l1);
-            localObject1 = ab;
+            localObject1 = ad;
             localObject2 = e;
             l1 = mLastSeqNumOfTheirChatIDisplayed;
             l2 = mLastSeqNumOfTheirChatIReleased;
@@ -2100,77 +2140,79 @@ public class ChatFragment
             bool3 = bool1;
             if (l1 > l2)
             {
-              localObject3 = yj.a((ChatConversation)localObject2, Long.valueOf(l3), Long.valueOf(l1));
-              Map localMap = yj.a((ChatConversation)localObject2, Long.valueOf(l5), Long.valueOf(l4));
-              b.a((ChatConversation)localObject2, (Map)localObject3, localMap, bit.a.DISPLAY);
+              localObject3 = zf.a((ChatConversation)localObject2, Long.valueOf(l3), Long.valueOf(l1));
+              Map localMap = zf.a((ChatConversation)localObject2, Long.valueOf(l5), Long.valueOf(l4));
+              b.a((ChatConversation)localObject2, (Map)localObject3, localMap, bju.a.DISPLAY);
               bool3 = bool1;
             }
           }
-          if (bool3) {
-            ab.a(e, bit.a.RELEASE);
+          if (bool3)
+          {
+            ad.a(e, bju.a.RELEASE);
+            e.r();
           }
-          if ((afv)aG.get(a.d()) != null) {
-            break label663;
+          if ((agv)aI.get(a.d()) != null) {
+            break label670;
           }
-          localObject2 = aE;
+          localObject2 = aG;
           localObject1 = a;
-          if (!(localObject1 instanceof akh)) {
-            break label782;
+          if (!(localObject1 instanceof alc)) {
+            break label789;
           }
-          Object localObject3 = (akh)localObject1;
-          localObject1 = (afr.c)paramView.getTag();
-          if (!((akh)localObject3).V()) {
-            break label737;
+          Object localObject3 = (alc)localObject1;
+          localObject1 = (agr.c)paramView.getTag();
+          if (!((alc)localObject3).X()) {
+            break label744;
           }
           localObject2 = a;
           if (a != null) {
-            break label620;
+            break label627;
           }
           throw new IllegalStateException("Discover deep link controller not initialized!");
         }
-        if (!((akb)localObject1).g(l1)) {
-          break label793;
+        if (!((akw)localObject1).g(l1)) {
+          break label800;
         }
       }
     }
-    label609:
-    label620:
-    label663:
-    label737:
-    label782:
-    label788:
-    label793:
+    label616:
+    label627:
+    label670:
+    label744:
+    label789:
+    label795:
+    label800:
     for (boolean bool1 = true;; bool1 = false)
     {
       bool2 = false;
       l1 = 0L;
       break;
-      if ((a instanceof aji))
+      if ((a instanceof ake))
       {
-        localObject1 = (aji)a;
+        localObject1 = (ake)a;
         bool1 = bool2;
-        if (((aji)localObject1).i())
+        if (((ake)localObject1).l())
         {
-          l1 = ((aji)localObject1).W();
+          l1 = ((ake)localObject1).U();
           bool1 = bool2;
           if (l1 > e.mLastTimestampOfSentSnapReadReceiptIReleased) {
-            bool1 = yj.a(e, l1);
+            bool1 = zf.a(e, l1);
           }
         }
         l1 = 0L;
         bool2 = false;
         break;
       }
-      if ((a instanceof aje))
+      if ((a instanceof aka))
       {
-        localObject1 = (aje)a;
+        localObject1 = (aka)a;
         bool1 = bool3;
-        if (((aje)localObject1).z())
+        if (((aka)localObject1).A())
         {
-          l1 = ((aje)localObject1).W();
+          l1 = ((aka)localObject1).U();
           bool1 = bool3;
           if (l1 > e.mLastTimestampOfReceivedSnapReadReceiptIReleased) {
-            bool1 = yj.b(e, l1);
+            bool1 = zf.b(e, l1);
           }
         }
         l1 = 0L;
@@ -2180,41 +2222,41 @@ public class ChatFragment
       if ((a instanceof CashFeedItem))
       {
         localObject1 = (CashFeedItem)a;
-        if (!((CashFeedItem)localObject1).h()) {
-          ab.a(e, (CashFeedItem)localObject1);
+        if (!((CashFeedItem)localObject1).i()) {
+          ad.a(e, (CashFeedItem)localObject1);
         }
       }
       bool1 = false;
       l1 = 0L;
       bool2 = false;
       break;
-      bool1 = yj.a(e);
+      bool1 = zf.a(e);
       break label160;
-      localObject1 = new aft((afr.c)localObject1, a);
+      localObject1 = new agt((agr.c)localObject1, a);
       if (localObject1 != null) {
-        aG.put(a.d(), localObject1);
+        aI.put(a.d(), localObject1);
       }
-      if (bfd.b(F))
+      if (bgd.b(H))
       {
         localObject1 = new Rect();
         paramView.getHitRect((Rect)localObject1);
         paramView = new Rect();
-        x.getHitRect(paramView);
+        z.getHitRect(paramView);
         if ((!Rect.intersects((Rect)localObject1, paramView)) && (!paramView.contains((Rect)localObject1))) {
-          break label788;
+          break label795;
         }
       }
       for (int i1 = 1;; i1 = 0)
       {
         if (i1 != 0) {
-          F.b();
+          H.b();
         }
         return;
         localObject2 = a;
         if (a == null) {
           throw new IllegalStateException("Discover deep link controller not initialized!");
         }
-        localObject1 = new afu((afr.c)localObject1, a);
+        localObject1 = new agu((agr.c)localObject1, a);
         break;
         localObject1 = null;
         break;
@@ -2224,7 +2266,7 @@ public class ChatFragment
   
   public final void d(boolean paramBoolean)
   {
-    View localView = x;
+    View localView = z;
     if (paramBoolean) {}
     for (int i1 = 8;; i1 = 0)
     {
@@ -2235,79 +2277,88 @@ public class ChatFragment
   
   protected final void e()
   {
-    nf.d();
-    Z.a("FIRST_MEDIA_OPENED");
-    ban.a().a(new bel(TitleBarManager.Visibility.VISIBLE));
+    nw.d();
+    ab.a("FIRST_MEDIA_OPENED");
+    bbo.a().a(new bfk(TitleBarManager.Visibility.VISIBLE));
     d.a(this);
-    Timber.g("ChatFragment", "CHAT-LOG: ChatFragment onVisible", new Object[0]);
     if (ReleaseManager.f())
     {
-      a(u.b());
-      u.a(this);
+      a(w.b());
+      w.a(this);
+    }
+    if (e != null) {
+      p.c(e);
     }
     a(false);
     super.e();
     FragmentActivity localFragmentActivity = getActivity();
-    h(false);
-    aj = false;
-    i(true);
-    ban.a().a(new bal(true));
+    g(false);
+    al = false;
+    h(true);
+    bbo.a().a(new bbl(true));
     localFragmentActivity.setVolumeControlStream(3);
-    if (((localFragmentActivity instanceof LandingPageActivity)) && (ajv.g() != null) && (p.b()))
+    if (((localFragmentActivity instanceof LandingPageActivity)) && (akp.g() != null) && (r.b()))
     {
-      localObject1 = p;
+      localObject1 = r;
       if (mRecentStoryReplyEvent != null) {
-        break label249;
+        break label254;
       }
     }
-    label249:
-    for (final Object localObject1 = null;; localObject1 = atm.b(mRecentStoryReplyEvent.friendUsername, (ajv)mUserProvider.get()))
+    label254:
+    for (final Object localObject1 = null;; localObject1 = auk.b(mRecentStoryReplyEvent.friendUsername, (akp)mUserProvider.get()))
     {
       a((Friend)localObject1, true);
-      if ((f != null) && (TextUtils.isEmpty(z.getText()))) {
-        z.setText(f.f());
+      if ((f != null) && (TextUtils.isEmpty(B.getText()))) {
+        B.setText(f.g());
       }
-      ban.a().a(new ChangePreviewQualityEvent(ChangePreviewQualityEvent.PreviewQuality.HIGH));
-      G.c.a = true;
+      bbo.a().a(new ChangePreviewQualityEvent(ChangePreviewQualityEvent.PreviewQuality.HIGH));
+      I.c.a = true;
       if ((f != null) && (e != null)) {
         break;
       }
       return;
     }
-    z.setText(f.f());
-    Timber.g("ChatFragment", "CHAT-LOG: ENTERED CHAT with %s", new Object[] { e.mTheirUsername });
+    B.setText(f.g());
+    localObject1 = e.mTheirUsername;
     e.mIsUserInConversation = true;
-    if (R < 0L)
+    if (T < 0L)
     {
-      R = SystemClock.elapsedRealtime();
+      T = SystemClock.elapsedRealtime();
       AnalyticsEvents.j();
     }
-    B();
+    C();
     e.b(true);
-    G();
-    F.setLockingEnabled(true);
-    aH = false;
-    M();
-    if (!ak.b()) {
-      ab.a(e, false);
+    if (R())
+    {
+      G();
+      ((StreamView)g.a()).a(e);
+      H.setLockingEnabled(true);
+      aJ = false;
+      O();
+      if (!am.b()) {
+        ad.a(e, false);
+      }
+      a(true, false);
+      NotificationTable.c(SnapchatApplication.b(), AndroidNotificationManager.Type.CHAT.name(), e.mTheirUsername);
+      n = f.l();
+      localObject1 = f;
+      if (((Friend)localObject1).r() != ScCashResponsePayload.Status.OK) {
+        break label646;
+      }
     }
-    g(true);
-    NotificationTable.c(SnapchatApplication.b(), AndroidNotificationManager.Type.CHAT.name(), e.mTheirUsername);
-    m = f.h();
-    localObject1 = f;
-    if (((Friend)localObject1).s() == ScCashResponsePayload.Status.OK) {}
+    label646:
     for (int i1 = 1;; i1 = 0)
     {
       if (i1 == 0)
       {
-        Timber.b("ChatFragment", "CASH-LOG: Refreshing CASH ELIGIBILITY for %s", new Object[] { ((Friend)localObject1).h() });
-        localObject2 = new qm(((Friend)localObject1).h());
-        ((qm)localObject2).a(ScCashResponsePayload.class, new ts.b() {});
-        ((qm)localObject2).f();
+        ((Friend)localObject1).l();
+        localObject2 = new rc(((Friend)localObject1).l());
+        ((rc)localObject2).registerCallback(ScCashResponsePayload.class, new ui.b() {});
+        ((rc)localObject2).execute();
       }
-      J();
-      localObject1 = s;
-      Object localObject2 = f.h();
+      L();
+      localObject1 = u;
+      Object localObject2 = f.l();
       e.remove(localObject2);
       f.remove(localObject2);
       localObject1 = getActivity().getIntent();
@@ -2322,8 +2373,10 @@ public class ChatFragment
           }
         }
       }
-      nf.e();
+      nw.e();
       return;
+      a(AdlHelper.PresenceSource.CHAT_GATEWAY);
+      break;
     }
   }
   
@@ -2331,209 +2384,215 @@ public class ChatFragment
   {
     if ((paramBoolean) && ((g.b()) || (!((StreamView)g.a()).d())))
     {
-      if (aF != null) {
-        aF.b();
+      if (aH != null) {
+        aH.b();
       }
-      if (B != null) {
+      if (D != null) {
         p();
       }
     }
+  }
+  
+  public final void e_()
+  {
+    if (mIsVisible) {
+      P = true;
+    }
+    super.e_();
   }
   
   protected final void f()
   {
     super.f();
     d.b(this);
-    if ((I) && (!az))
+    if ((K) && (!aB))
     {
-      ??? = (CashSwiperView)S.a();
+      ??? = (CashSwiperView)U.a();
       ((CashSwiperView)???).setVisibility(8);
       ((CashSwiperView)???).a();
       ((CashSwiperView)???).setEnabled(false);
       b.v();
       ((CashSwiperView)???).c();
       ??? = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
-      ((SharedPreferences.Editor)???).putString("RESUMING_FROM_SWIPE_MESSAGE", getResources().getString(2131493516, new Object[] { atm.e(e.mTheirUsername, ajv.g()) }));
+      ((SharedPreferences.Editor)???).putString("RESUMING_FROM_SWIPE_MESSAGE", getResources().getString(2131493516, new Object[] { auk.e(e.mTheirUsername, akp.g()) }));
       ((SharedPreferences.Editor)???).apply();
     }
-    if (B != null) {
+    if (D != null) {
       p();
     }
-    if (U) {
-      ban.a().a(new bal(false));
+    if (W) {
+      bbo.a().a(new bbl(false));
     }
-    if (aF != null)
+    if (aH != null)
     {
-      aF.c();
-      aF = null;
+      aH.c();
+      aH = null;
     }
-    ??? = aG.values().iterator();
+    ??? = aI.values().iterator();
     while (((Iterator)???).hasNext()) {
-      ((afv)((Iterator)???).next()).c();
+      ((agv)((Iterator)???).next()).c();
     }
-    aG.clear();
+    aI.clear();
     if (g.b()) {
       ((StreamView)g.a()).b(DisconnectReason.L2S_SWIPE_OUT);
     }
-    adl localadl;
     if (e != null)
     {
       e.b(false);
-      G();
+      if (!R()) {
+        break label634;
+      }
+      a(AdlHelper.PresenceSource.ADDLIVE);
+    }
+    for (;;)
+    {
       e.e(false);
-      ae.removeCallbacksAndMessages(null);
-      ak.a();
-      if ((N) || (ay) || (az))
+      ag.removeCallbacksAndMessages(null);
+      am.a();
+      ael localael;
+      if ((P) || (aA) || (aB))
       {
-        Timber.g("ChatFragment", "CHAT-LOG: LEFT CHAT with %s due to app pause when ChatFragment visible or entering in-chat camera or quick snap", new Object[] { e.mTheirUsername });
-        ab.a(e, true);
-      }
-    }
-    else
-    {
-      G.c.a = false;
-      ban.a().a(new bcd("ChatFragment"));
-      A();
-      ant.a().b();
-      F.setLockingEnabled(false);
-      F.a();
-      ai = false;
-      if ((!ay) && (!az)) {
-        D();
-      }
-      if ((!N) && (!ay) && (!az))
-      {
-        if ((e != null) && (e.mIsStub)) {
-          ac.b(e.mId, true);
+        ??? = e.mTheirUsername;
+        ad.a(e, true);
+        I.c.a = false;
+        bbo.a().a(new bdd("ChatFragment"));
+        B();
+        aoq.a().b();
+        H.setLockingEnabled(false);
+        H.a();
+        ak = false;
+        if ((!aA) && (!aB)) {
+          E();
         }
-        F.c();
-        b(0.0F);
-        ban.a().a(new bam(false));
-        F.setIsActive(false);
-        e = null;
-        f = null;
-        aC = null;
-        H = false;
-      }
-      apb.a(false);
-      aa.a();
-      m = null;
-      localadl = t;
-    }
-    synchronized (i)
-    {
-      j.clear();
-      k.clear();
-      adm localadm = c;
-      synchronized (a)
-      {
-        b.clear();
-        c.clear();
-        l.clear();
-        n = false;
-        if (ReleaseManager.f()) {
-          u.b(this);
+        if ((!P) && (!aA) && (!aB))
+        {
+          if ((e != null) && (e.mIsStub)) {
+            ae.b(e.mId, true);
+          }
+          H.c();
+          b(0.0F);
+          bbo.a().a(new bbn());
+          H.setIsActive(false);
+          e = null;
+          f = null;
+          aE = null;
+          J = false;
         }
-        return;
-        Timber.g("ChatFragment", "CHAT-LOG: SWIPED OUT OF CHAT with %s", new Object[] { e.mTheirUsername });
-        aut.b();
-        ab.a(e, bit.a.DELETE);
-        e.r();
-        e.mIsUserInConversation = false;
-        o();
+        apx.a(false);
+        ac.a();
+        n = null;
+        localael = v;
+      }
+      synchronized (i)
+      {
+        j.clear();
+        k.clear();
+        aem localaem = c;
+        synchronized (a)
+        {
+          b.clear();
+          c.clear();
+          l.clear();
+          n = false;
+          if (ReleaseManager.f()) {
+            w.b(this);
+          }
+          return;
+          label634:
+          a(AdlHelper.PresenceSource.CHAT_GATEWAY);
+          continue;
+          ??? = e.mTheirUsername;
+          avr.b();
+          ad.a(e, bju.a.DELETE);
+          e.s();
+          e.mIsUserInConversation = false;
+          o();
+        }
       }
     }
-  }
-  
-  public final void f_()
-  {
-    if (mIsVisible) {
-      N = true;
-    }
-    super.f_();
   }
   
   public final boolean g()
   {
-    if (I)
+    if (K)
     {
-      ((CashSwiperView)S.a()).b();
+      ((CashSwiperView)U.a()).b();
       return true;
     }
     return false;
   }
   
-  protected final ala h()
+  protected final alv h()
   {
-    return new ala(new String[] { "CHAT" });
+    return new alv(new String[] { "CHAT" });
   }
   
   public final void i()
   {
-    az = false;
+    aB = false;
   }
   
-  public final alw k()
+  public final amt k()
   {
-    new alw()
+    new amt()
     {
-      public final boolean a(alx.a paramAnonymousa)
+      public final boolean a(amu.a paramAnonymousa)
       {
         if (ChatFragment.n(ChatFragment.this).b()) {}
         do
         {
           return false;
-          if ((alx.h.contains(c)) && (!TextUtils.equals(f.h(), a))) {
+          if ((amu.h.contains(c)) && (!TextUtils.equals(f.l(), a))) {
             return true;
           }
-        } while (!ChatFragment.z().contains(c));
+        } while (!ChatFragment.A().contains(c));
         return true;
       }
       
-      public final boolean b(alx.a paramAnonymousa)
+      public final boolean b(amu.a paramAnonymousa)
       {
-        return (alx.h.contains(c)) && (f != null) && (TextUtils.equals(f.h(), a));
+        return (amu.h.contains(c)) && (f != null) && (TextUtils.equals(f.l(), a));
       }
     };
   }
   
-  @boh
-  public void onCancelInChatSnapEvent(bar parambar)
+  @bpi
+  public void onCancelInChatSnapEvent(bbs parambbs)
   {
-    ay = false;
+    aA = false;
     if (mShouldDisplayHereTooltip) {
-      aA.setCancelInChatSnapTime(System.currentTimeMillis());
+      aC.setCancelInChatSnapTime(System.currentTimeMillis());
     }
   }
   
-  @boh
-  public void onCancelQuickSnapEvent(bas parambas)
+  @bpi
+  public void onCancelQuickSnapEvent(bbt parambbt)
   {
-    ay = false;
+    aA = false;
   }
   
-  @boh
-  public void onCashRainEvent(bau parambau)
+  @bpi
+  public void onCashRainEvent(bbv parambbv)
   {
     if (!mConversation.equals(e)) {
       return;
     }
     a((int)mCount, mCreatedAt);
-    aH = true;
+    aJ = true;
   }
   
-  @boh
-  public void onChatLinkClickedEvent(bax parambax)
+  @bpi
+  public void onChatLinkClickedEvent(bby parambby)
   {
     final Object localObject = snapchatUrlSpan;
-    final ako localako = mMessage;
-    parambax = new AlertDialog.Builder(getActivity());
+    final alj localalj = mMessage;
+    parambby = new AlertDialog.Builder(getActivity());
     String str1;
     if (mType == UrlType.TEL)
     {
       i1 = 2131492998;
       str1 = getString(i1);
-      if (!localako.g()) {
+      if (!localalj.g()) {
         break label130;
       }
     }
@@ -2557,11 +2616,11 @@ public class ChatFragment
               paramAnonymousDialogInterface = new Intent("android.intent.action.VIEW", Uri.parse(localObject.getURL()));
               startActivity(paramAnonymousDialogInterface);
               return;
-            } while ((ChatFragment.f(ChatFragment.this) == null) || (!localako.e()));
-            if ((localako instanceof ChatMedia)) {}
+            } while ((ChatFragment.f(ChatFragment.this) == null) || (!localalj.e()));
+            if ((localalj instanceof ChatMedia)) {}
             for (paramAnonymousDialogInterface = ChatFragment.x();; paramAnonymousDialogInterface = null)
             {
-              ChatFragment.x(ChatFragment.this).a(ChatFragment.f(ChatFragment.this), localako, paramAnonymousDialogInterface);
+              ChatFragment.x(ChatFragment.this).a(ChatFragment.f(ChatFragment.this), localalj, paramAnonymousDialogInterface);
               ChatFragment.t(ChatFragment.this).notifyDataSetChanged();
               return;
             }
@@ -2569,16 +2628,16 @@ public class ChatFragment
           paramAnonymousDialogInterface.dismiss();
         }
       };
-      parambax.setItems(new CharSequence[] { str1, str2, str3 }, (DialogInterface.OnClickListener)localObject);
-      parambax.create().show();
+      parambby.setItems(new CharSequence[] { str1, str2, str3 }, (DialogInterface.OnClickListener)localObject);
+      parambby.create().show();
       return;
       i1 = 2131492999;
       break;
     }
   }
   
-  @boh
-  public void onChatSwipeStartedEvent(bay parambay)
+  @bpi
+  public void onChatSwipeStartedEvent(bbz parambbz)
   {
     if (friend == null) {
       throw new NullPointerException();
@@ -2586,8 +2645,8 @@ public class ChatFragment
     a(friend, true);
   }
   
-  @boh
-  public void onChatUpdatedEvent(baz parambaz)
+  @bpi
+  public void onChatUpdatedEvent(bca parambca)
   {
     if (e == null) {}
     do
@@ -2596,62 +2655,62 @@ public class ChatFragment
       {
         return;
       } while (!TextUtils.equals(mId, e.mId));
-      M();
+      O();
       if (mMessageId == null) {
         break;
       }
       b(mMessageId);
-    } while ((!mScrollToBottom) || (F.c));
-    F.c();
-    O();
+    } while ((!mScrollToBottom) || (H.b));
+    H.c();
+    Q();
     return;
-    if ((mScrollToBottom) && (!F.c)) {}
+    if ((mScrollToBottom) && (!H.b)) {}
     for (boolean bool = true;; bool = false)
     {
-      g(bool);
+      a(bool, false);
       return;
     }
   }
   
-  @boh
-  public void onClearChatTextEvent(bba parambba)
+  @bpi
+  public void onClearChatTextEvent(bcb parambcb)
   {
-    if (!E()) {
-      B.setText("");
+    if (!F()) {
+      D.setText("");
     }
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    nf.d();
-    Z = DictionaryEasyMetric.a();
-    mFragmentLayout = paramLayoutInflater.inflate(2130968616, paramViewGroup, false);
+    nw.d();
+    ab = DictionaryEasyMetric.a();
+    mFragmentLayout = paramLayoutInflater.inflate(2130968617, paramViewGroup, false);
     paramLayoutInflater = getResources();
-    an = ((int)paramLayoutInflater.getDimension(2131296259));
-    ao = ((int)paramLayoutInflater.getDimension(2131296281));
-    aq = ((int)paramLayoutInflater.getDimension(2131296282));
-    ap = ((int)paramLayoutInflater.getDimension(2131296290));
-    aA = ((HereTooltip)c(2131362074));
-    aB = ((CashTooltip)c(2131362075));
-    ae = new Handler(Looper.getMainLooper());
-    Y = new Handler(Looper.getMainLooper());
-    W = new bgr(mFragmentLayout, 2131362076, 2131362079);
-    S = new bgr(mFragmentLayout, 2131362077, 2131362080, new bgr.a()
+    ap = ((int)paramLayoutInflater.getDimension(2131296259));
+    aq = ((int)paramLayoutInflater.getDimension(2131296281));
+    as = ((int)paramLayoutInflater.getDimension(2131296282));
+    ar = ((int)paramLayoutInflater.getDimension(2131296290));
+    aC = ((HereTooltip)c(2131362074));
+    aD = ((CashTooltip)c(2131362075));
+    ag = new Handler(Looper.getMainLooper());
+    aa = new Handler(Looper.getMainLooper());
+    Y = new bhr(mFragmentLayout, 2131362076, 2131362079);
+    U = new bhr(mFragmentLayout, 2131362077, 2131362080, new bhr.a()
     {
       public final void a(View paramAnonymousView)
       {
         ((CashSwiperView)ChatFragment.b(ChatFragment.this).a()).setListener(ChatFragment.this);
       }
     });
-    av = new GestureDetectorCompat(getActivity(), new a((byte)0));
-    af = new yd(getActivity(), this);
+    ax = new GestureDetectorCompat(getActivity(), new a((byte)0));
+    ah = new yz(getActivity(), this);
     paramLayoutInflater = (SpyRelativeLayout)mFragmentLayout.findViewById(2131362062);
     paramViewGroup = new SpyRelativeLayout.a()
     {
       public final void a(MotionEvent paramAnonymousMotionEvent)
       {
         if ((!CashUtils.a(f)) || ((g.b()) && (((StreamView)g.a()).e()))) {}
-        yd localyd;
+        yz localyz;
         label91:
         label198:
         label203:
@@ -2661,11 +2720,11 @@ public class ChatFragment
           do
           {
             return;
-            localyd = ChatFragment.c(ChatFragment.this);
+            localyz = ChatFragment.c(ChatFragment.this);
             i = paramAnonymousMotionEvent.getActionMasked();
             if ((i == 1) || (i == 3))
             {
-              localyd.a();
+              localyz.a();
               return;
             }
             if (i == 2)
@@ -2693,7 +2752,7 @@ public class ChatFragment
                   break;
                 }
               }
-              localyd.a();
+              localyz.a();
               return;
             }
           } while ((i != 0) && (i != 5));
@@ -2703,8 +2762,8 @@ public class ChatFragment
           if ((paramAnonymousMotionEvent.getPointerCount() > 1) && (a[1] == null)) {
             a[1] = new PointF(paramAnonymousMotionEvent.getX(1), paramAnonymousMotionEvent.getY(1));
           }
-        } while ((b.hasMessages(5)) || (paramAnonymousMotionEvent.getPointerCount() < 2) || (d.v_()));
-        b.postDelayed(new yd.1(localyd), ViewConfiguration.getLongPressTimeout());
+        } while ((b.hasMessages(5)) || (paramAnonymousMotionEvent.getPointerCount() < 2) || (d.u_()));
+        b.postDelayed(new yz.1(localyz), ViewConfiguration.getLongPressTimeout());
         b.sendEmptyMessage(5);
       }
     };
@@ -2716,23 +2775,23 @@ public class ChatFragment
         getActivity().onBackPressed();
       }
     });
-    g = new bgr(mFragmentLayout, 2131362069, 2131362081);
-    v = c(2131361821);
-    w = c(2131362067);
-    x = c(2131362070);
-    y = c(2131362073);
-    L = new ArrayList();
-    z = ((TextView)c(2131362065));
-    A = ((TextView)c(2131362066));
-    B = ((CursorCallbackEditText)c(2131362071));
-    C = Float.MIN_VALUE;
-    D = Float.MIN_VALUE;
-    B.setInputType(49153);
-    B.setHorizontallyScrolling(false);
-    B.setMaxLines(8);
-    B.setOnEditorActionListener(new TextView.OnEditorActionListener()
+    g = new bhr(mFragmentLayout, 2131362069, 2131362081);
+    x = c(2131361822);
+    y = c(2131362067);
+    z = c(2131362070);
+    A = c(2131362073);
+    N = new ArrayList();
+    B = ((TextView)c(2131362065));
+    C = ((TextView)c(2131362066));
+    D = ((CursorCallbackEditText)c(2131362071));
+    E = Float.MIN_VALUE;
+    F = Float.MIN_VALUE;
+    D.setInputType(49153);
+    D.setHorizontallyScrolling(false);
+    D.setMaxLines(8);
+    D.setOnEditorActionListener(new TextView.OnEditorActionListener()
     {
-      public final boolean onEditorAction(TextView paramAnonymousTextView, int paramAnonymousInt, @cgc KeyEvent paramAnonymousKeyEvent)
+      public final boolean onEditorAction(TextView paramAnonymousTextView, int paramAnonymousInt, @chd KeyEvent paramAnonymousKeyEvent)
       {
         if ((paramAnonymousInt == 4) || ((paramAnonymousKeyEvent != null) && (paramAnonymousKeyEvent.getKeyCode() == 66)))
         {
@@ -2742,7 +2801,7 @@ public class ChatFragment
         return false;
       }
     });
-    B.setOnFocusChangeListener(new View.OnFocusChangeListener()
+    D.setOnFocusChangeListener(new View.OnFocusChangeListener()
     {
       public final void onFocusChange(View paramAnonymousView, boolean paramAnonymousBoolean)
       {
@@ -2754,7 +2813,7 @@ public class ChatFragment
         }
       }
     });
-    B.addTextChangedListener(new TextWatcher()
+    D.addTextChangedListener(new TextWatcher()
     {
       private boolean b;
       private boolean c;
@@ -2872,7 +2931,7 @@ public class ChatFragment
         if (paramAnonymousInt3 <= 2)
         {
           paramAnonymousCharSequence = paramAnonymousCharSequence.subSequence(paramAnonymousInt1, paramAnonymousInt1 + paramAnonymousInt3).toString();
-          ChatFragment.g(ChatFragment.this).setIsEmoji(axj.a(paramAnonymousCharSequence, false));
+          ChatFragment.g(ChatFragment.this).setIsEmoji(ayh.a(paramAnonymousCharSequence, false));
         }
         for (;;)
         {
@@ -2886,7 +2945,7 @@ public class ChatFragment
         }
       }
     });
-    paramLayoutInflater = B;
+    paramLayoutInflater = D;
     paramViewGroup = new CursorCallbackEditText.a()
     {
       public final void a()
@@ -2898,7 +2957,7 @@ public class ChatFragment
       a = new ArrayList();
     }
     a.add(paramViewGroup);
-    B.setOnTouchListener(new View.OnTouchListener()
+    D.setOnTouchListener(new View.OnTouchListener()
     {
       public final boolean onTouch(View paramAnonymousView, MotionEvent paramAnonymousMotionEvent)
       {
@@ -2918,8 +2977,8 @@ public class ChatFragment
         return false;
       }
     });
-    E = ((ChatCameraButton)c(2131362072));
-    E.setOnClickListener(new View.OnClickListener()
+    G = ((ChatCameraButton)c(2131362072));
+    G.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(final View paramAnonymousView)
       {
@@ -2944,25 +3003,25 @@ public class ChatFragment
         ChatFragment.a(ChatFragment.this, ChatFragment.i(ChatFragment.this).hasFocus());
         ChatFragment.p(ChatFragment.this).a();
         paramAnonymousView = h;
-        final int i = xu.a(ChatFragment.i(ChatFragment.this));
+        final int i = yq.a(ChatFragment.i(ChatFragment.this));
         paramAnonymousView = h;
-        int j = xu.a(ChatFragment.i(ChatFragment.this).getEditableText());
+        int j = yq.a(ChatFragment.i(ChatFragment.this).getEditableText());
         final int k = ChatFragment.i(ChatFragment.this).getSelectionEnd();
         paramAnonymousView = ChatFragment.this.i;
-        paramAnonymousView = ya.a(ChatFragment.f(ChatFragment.this), j + i, false);
-        ChatFragment.this.i.a(paramAnonymousView, new ya.a()
+        paramAnonymousView = yw.a(ChatFragment.f(ChatFragment.this), j + i, false);
+        ChatFragment.this.i.a(paramAnonymousView, new yw.a()
         {
           public final void a()
           {
             ChatFragment.a(ChatFragment.this, paramAnonymousView);
-            bgp.a(new Runnable()
+            bhp.a(new Runnable()
             {
               public final void run()
               {
-                xu localxu = h;
-                xu.a(ChatFragment.i(ChatFragment.this), b);
+                yq localyq = h;
+                yq.a(ChatFragment.i(ChatFragment.this), b);
                 ChatFragment.q(ChatFragment.this);
-                AnalyticsEvents.u(CashUtils.a(c));
+                AnalyticsEvents.t(CashUtils.a(c));
               }
             });
           }
@@ -2976,7 +3035,7 @@ public class ChatFragment
         ChatFragment.r(ChatFragment.this);
       }
     });
-    E.setOnLongClickListener(new View.OnLongClickListener()
+    G.setOnLongClickListener(new View.OnLongClickListener()
     {
       public final boolean onLongClick(View paramAnonymousView)
       {
@@ -2984,30 +3043,30 @@ public class ChatFragment
         return true;
       }
     });
-    aa = new axf();
-    F = ((LockingAboveTheFoldListView)c(2131362063));
-    F.setInterface(this);
-    F.setTranscriptMode(1);
-    F.setDivider(null);
-    F.setDividerHeight(0);
-    F.setRecyclerListener(new AbsListView.RecyclerListener()
+    ac = new ayd();
+    H = ((LockingAboveTheFoldListView)c(2131362063));
+    H.setInterface(this);
+    H.setTranscriptMode(1);
+    H.setDivider(null);
+    H.setDividerHeight(0);
+    H.setRecyclerListener(new AbsListView.RecyclerListener()
     {
       public final void onMovedToScrapHeap(View paramAnonymousView)
       {
         paramAnonymousView.getTag();
-        avh.b(paramAnonymousView);
+        awf.b(paramAnonymousView);
       }
     });
-    F.setLockingEnabled(true);
-    F.setScrollViewCallbacks(this);
-    F.setMinimumFooterHeight(ao);
-    F.setShouldSubtractStatusBarHeightFromFooter(true);
-    ak = new yi(F);
+    H.setLockingEnabled(true);
+    H.setScrollViewCallbacks(this);
+    H.setMinimumFooterHeight(aq);
+    H.setShouldSubtractStatusBarHeightFromFooter(true);
+    am = new ze(H);
     paramLayoutInflater = (LayoutInflater)getActivity().getSystemService("layout_inflater");
-    al = paramLayoutInflater.inflate(2130968620, null);
-    F.addHeaderView(al, null, false);
-    O = paramLayoutInflater.inflate(2130968622, null);
-    O.setOnClickListener(new View.OnClickListener()
+    an = paramLayoutInflater.inflate(2130968621, null);
+    H.addHeaderView(an, null, false);
+    Q = paramLayoutInflater.inflate(2130968623, null);
+    Q.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
@@ -3018,13 +3077,15 @@ public class ChatFragment
         }
       }
     });
-    P = O.findViewById(2131362083);
-    Q = O.findViewById(2131362085);
-    F.addHeaderView(O, null, false);
-    G = new afr(getActivity(), L, this, this);
-    F.setAdapter(G);
-    G.b = aG;
-    F.setOnItemClickListener(new AdapterView.OnItemClickListener()
+    R = Q.findViewById(2131362083);
+    S = Q.findViewById(2131362085);
+    H.addHeaderView(Q, null, false);
+    N.add(new akz(null));
+    O = 0;
+    I = new agr(getActivity(), N, this, this);
+    H.setAdapter(I);
+    I.b = aI;
+    H.setOnItemClickListener(new AdapterView.OnItemClickListener()
     {
       public final void onItemClick(AdapterView<?> paramAnonymousAdapterView, View paramAnonymousView, int paramAnonymousInt, long paramAnonymousLong)
       {
@@ -3042,25 +3103,25 @@ public class ChatFragment
                 paramAnonymousInt -= ChatFragment.e(ChatFragment.this).getHeaderViewsCount();
               } while (paramAnonymousInt >= ChatFragment.u(ChatFragment.this).size());
               localChatFeedItem = (ChatFeedItem)ChatFragment.u(ChatFragment.this).get(paramAnonymousInt);
-            } while ((localChatFeedItem.d() == null) || ((localChatFeedItem instanceof Snap)) || ((localChatFeedItem instanceof akg)));
-            if ((!localChatFeedItem.O()) || (!localChatFeedItem.Q())) {
+            } while ((localChatFeedItem.d() == null) || ((localChatFeedItem instanceof Snap)) || ((localChatFeedItem instanceof alb)));
+            if ((!localChatFeedItem.P()) || (!localChatFeedItem.R())) {
               break;
             }
-            if ((localChatFeedItem instanceof akh))
+            if ((localChatFeedItem instanceof alc))
             {
-              new ys().a((akh)localChatFeedItem);
+              new zo().a((alc)localChatFeedItem, ChatFragment.f(ChatFragment.this));
               return;
             }
-            if ((localChatFeedItem instanceof akb))
+            if ((localChatFeedItem instanceof akw))
             {
-              ChatFragment.w(ChatFragment.this).a(ChatFragment.f(ChatFragment.this), (akb)localChatFeedItem, true, true);
+              ChatFragment.w(ChatFragment.this).a(ChatFragment.f(ChatFragment.this), (akw)localChatFeedItem, true, true);
               return;
             }
           } while (!(localChatFeedItem instanceof CashFeedItem));
           paramAnonymousAdapterView = (CashFeedItem)localChatFeedItem;
-          AnalyticsEvents.o(mCashTransaction.a());
+          AnalyticsEvents.n(mCashTransaction.a());
           ChatFragment.o(ChatFragment.this);
-          i.a(ChatFragment.f(ChatFragment.this), paramAnonymousAdapterView, new ya.b()
+          i.a(ChatFragment.f(ChatFragment.this), paramAnonymousAdapterView, new yw.b()
           {
             public final void a()
             {
@@ -3086,19 +3147,19 @@ public class ChatFragment
               }
             }
           }
-        } while ((!(localChatFeedItem instanceof ako)) || (!((ako)localChatFeedItem).e()));
+        } while ((!(localChatFeedItem instanceof alj)) || (!((alj)localChatFeedItem).e()));
         if ((localChatFeedItem instanceof ChatMedia)) {}
         for (paramAnonymousAdapterView = ChatFragment.x();; paramAnonymousAdapterView = null)
         {
-          ChatFragment.x(ChatFragment.this).a(ChatFragment.f(ChatFragment.this), (ako)localChatFeedItem, paramAnonymousAdapterView);
+          ChatFragment.x(ChatFragment.this).a(ChatFragment.f(ChatFragment.this), (alj)localChatFeedItem, paramAnonymousAdapterView);
           ChatFragment.a(ChatFragment.this, localChatFeedItem.d());
           return;
         }
       }
     });
-    paramLayoutInflater = new SwipeableListItemTouchListener(F, SwipeableListItemTouchListener.SwipeDirection.RIGHT, this)
+    paramLayoutInflater = new SwipeableListItemTouchListener(H, SwipeableListItemTouchListener.SwipeDirection.RIGHT, this)
     {
-      private long j;
+      private long i;
       
       public final boolean onTouch(View paramAnonymousView, MotionEvent paramAnonymousMotionEvent)
       {
@@ -3109,39 +3170,41 @@ public class ChatFragment
         {
           ymImpl.onTouchEvent(paramAnonymousMotionEvent);
           return super.onTouch(paramAnonymousView, paramAnonymousMotionEvent);
-          j = SystemClock.uptimeMillis();
+          i = SystemClock.uptimeMillis();
           Object localObject1 = ChatFragment.this;
           Object localObject2 = ((ChatFragment)localObject1).a(paramAnonymousMotionEvent);
           if ((localObject2 instanceof Snap))
           {
-            aup localaup = aup.d();
+            avn localavn = avn.d();
             localObject2 = (Snap)localObject2;
             localObject1 = ((ChatFragment)localObject1).getActivity();
-            if (!((Snap)localObject2).f())
+            if ((!((Snap)localObject2).f()) && (((Snap)localObject2).an()))
             {
-              localaup.a((Context)localObject1, (Snap)localObject2, null);
+              mReplaySnapRunnable = new avn.d(localavn, (aka)localObject2, null, (Context)localObject1);
+              mOpenSnapHandler.postDelayed(mReplaySnapRunnable, 191L);
+              mLongPressStarted = true;
               continue;
-              if (SystemClock.uptimeMillis() - j <= 190L)
+              if (SystemClock.uptimeMillis() - i <= 190L)
               {
                 localObject1 = ChatFragment.this;
                 localObject2 = ((ChatFragment)localObject1).a(paramAnonymousMotionEvent);
                 if ((localObject2 instanceof Snap))
                 {
-                  localaup = aup.d();
+                  localavn = avn.d();
                   localObject2 = (Snap)localObject2;
                   localObject1 = e;
                   if (((Snap)localObject2).f()) {
-                    if ((localObject2 instanceof aje))
+                    if ((localObject2 instanceof aka))
                     {
                       mSnapViewEventAnalytics.a(SnapViewEventAnalytics.SnapViewEventSourceType.CHAT);
-                      localaup.a((aje)localObject2, new aiq(false), "chat");
+                      localavn.a((aka)localObject2, new ajm(false), "chat");
                     }
-                    else if ((localObject2 instanceof aji))
+                    else if ((localObject2 instanceof ake))
                     {
-                      yq.a((aji)localObject2);
-                      ban.a().a(new baz(mId, ((Snap)localObject2).d()));
-                      ban.a().a(new bdb());
-                      ni.a("chat");
+                      zm.a((ake)localObject2, (ChatConversation)localObject1);
+                      bbo.a().a(new bca(mId, ((Snap)localObject2).d()));
+                      bbo.a().a(new beb());
+                      nz.a("chat");
                     }
                   }
                 }
@@ -3151,19 +3214,19 @@ public class ChatFragment
         }
       }
     };
-    F.setOnTouchListener(paramLayoutInflater);
+    H.setOnTouchListener(paramLayoutInflater);
     paramViewGroup = new ArrayList(4);
     paramViewGroup.add(paramLayoutInflater.a());
     paramViewGroup.add(new b((byte)0));
     paramViewGroup.add(new c((byte)0));
-    paramViewGroup.add(new aql(q, "Chat"));
-    ag = new aqn(paramViewGroup);
-    F.setOnScrollListener(ag);
-    ah = ((ViewStub)getActivity().findViewById(2131362378));
-    T = new bgr(mFragmentLayout, 2131362078, 2131362280);
+    paramViewGroup.add(new ari(s, "Chat"));
+    ai = new ark(paramViewGroup);
+    H.setOnScrollListener(ai);
+    aj = ((ViewStub)getActivity().findViewById(2131362376));
+    V = new bhr(mFragmentLayout, 2131362078, 2131362278);
     try
     {
-      d = ((ari)getActivity()).l();
+      d = ((ash)getActivity()).l();
       if (paramBundle != null)
       {
         paramLayoutInflater = paramBundle.getString("friend_username");
@@ -3171,17 +3234,17 @@ public class ChatFragment
           c = paramLayoutInflater;
         }
         paramLayoutInflater = (HashMap)paramBundle.getSerializable("message_drafts");
-        aw.putAll(paramLayoutInflater);
+        ay.putAll(paramLayoutInflater);
         paramLayoutInflater = (HashMap)paramBundle.getSerializable("cashtag_positions");
-        ax.putAll(paramLayoutInflater);
+        az.putAll(paramLayoutInflater);
       }
       paramLayoutInflater = ((WindowManager)getActivity().getSystemService("window")).getDefaultDisplay();
       paramViewGroup = new Point();
       paramLayoutInflater.getSize(paramViewGroup);
-      ak.b = x;
-      aD = true;
+      am.b = x;
+      aF = true;
       a(true);
-      nf.e();
+      nw.e();
       return mFragmentLayout;
     }
     catch (ClassCastException paramLayoutInflater)
@@ -3193,43 +3256,43 @@ public class ChatFragment
   public void onDestroyView()
   {
     super.onDestroyView();
-    ChatCameraButton localChatCameraButton = E;
+    ChatCameraButton localChatCameraButton = G;
     if (a != null) {
       a.release();
     }
   }
   
-  @boh
-  public void onEndpointsRefreshedEvent(bfr.a parama)
+  @bpi
+  public void onEndpointsRefreshedEvent(bgr.a parama)
   {
-    C();
+    D();
   }
   
-  @boh
+  @bpi
   public void onFeedRefreshedEvent(SnapMessageFeedRefreshedEvent paramSnapMessageFeedRefreshedEvent)
   {
-    G.notifyDataSetChanged();
+    I.notifyDataSetChanged();
   }
   
-  @boh
-  public void onFeedTimerChangeEvent(bbl parambbl)
+  @bpi
+  public void onFeedTimerChangeEvent(bcl parambcl)
   {
     if (!TextUtils.equals(c, mFriendUsername)) {
       return;
     }
-    G.notifyDataSetChanged();
+    I.notifyDataSetChanged();
   }
   
-  @boh
-  public void onLoadConversationPageTaskEvent(bce parambce)
+  @bpi
+  public void onLoadConversationPageTaskEvent(bde parambde)
   {
     a(mTaskStatus);
   }
   
-  @boh
+  @bpi
   public void onLoadSnapMediaEvent(LoadSnapMediaEvent paramLoadSnapMediaEvent)
   {
-    G.notifyDataSetChanged();
+    I.notifyDataSetChanged();
   }
   
   public void onPause()
@@ -3239,7 +3302,7 @@ public class ChatFragment
     Object localObject1;
     if ((mIsVisible) && (e != null))
     {
-      N = true;
+      P = true;
       localObject2 = getActivity();
       localObject1 = e.o();
       if ((localObject1 == null) || (((List)localObject1).size() == 0))
@@ -3256,30 +3319,30 @@ public class ChatFragment
     else
     {
       label87:
-      C();
-      B.clearFocus();
-      A();
-      ant.a().b();
       D();
+      D.clearFocus();
+      B();
+      aoq.a().b();
+      E();
       return;
     }
     label143:
     Object localObject3;
     if (((KeyguardManager)((Context)localObject2).getSystemService("keyguard")).inKeyguardRestrictedInputMode())
     {
-      localObject2 = ajx.l();
+      localObject2 = akr.l();
       i1 = ((List)localObject1).size();
       if (i1 <= 0) {
-        break label433;
+        break label421;
       }
       localObject3 = (ChatFeedItem)((List)localObject1).get(i1 - 1);
-      if ((((ChatFeedItem)localObject3).j().equals(localObject2)) || (((localObject3 instanceof ako)) && (((ako)localObject3).g()))) {
-        break label433;
+      if ((((ChatFeedItem)localObject3).j().equals(localObject2)) || (((localObject3 instanceof alj)) && (((alj)localObject3).g()))) {
+        break label421;
       }
       if (!(localObject3 instanceof StatefulChatFeedItem)) {}
     }
     label229:
-    label433:
+    label421:
     for (int i1 = 0;; i1 = 1)
     {
       if (i1 == 0)
@@ -3292,14 +3355,14 @@ public class ChatFragment
       i1 = 0;
       break;
       localObject1 = getActivity();
-      localObject2 = G.c;
-      ((agb)localObject2).a(System.currentTimeMillis());
-      Timber.c("ReleaseWindow", "getLatestSeenItemTimestamp - latestItemTimestamp " + c.a + " lastNotifiedTimestamp " + c.b, new Object[0]);
+      localObject2 = I.c;
+      ((ahb)localObject2).a(System.currentTimeMillis());
+      new StringBuilder("getLatestSeenItemTimestamp - latestItemTimestamp ").append(c.a).append(" lastNotifiedTimestamp ").append(c.b);
       long l1 = c.a;
       localObject2 = (AlarmManager)((Context)localObject1).getSystemService("alarm");
-      Object localObject4 = o;
+      Object localObject4 = q;
       localObject3 = e.mId;
-      localObject4 = ((aol)localObject4).b((Context)localObject1);
+      localObject4 = ((aph)localObject4).b((Context)localObject1);
       ((Intent)localObject4).putExtra("op_code", 1001);
       ((Intent)localObject4).putExtra("conversationId", (String)localObject3);
       ((Intent)localObject4).putExtra("latestSeenItemTimestamp", l1);
@@ -3311,35 +3374,35 @@ public class ChatFragment
     }
   }
   
-  @boh
-  public void onPresenceUpdatedEvent(bcp parambcp)
+  @bpi
+  public void onPresenceUpdatedEvent(bdp parambdp)
   {
     if ((mIsVisible) && (e != null) && (TextUtils.equals(username, e.i())))
     {
-      G();
+      a(presenceSource);
       if (g.b()) {
-        ((StreamView)g.a()).b(videoReceived);
+        ((StreamView)g.a()).c(videoReceived);
       }
     }
   }
   
   public void onResume()
   {
-    nf.d();
+    nw.d();
     super.onResume();
-    Timber.g("ChatFragment", "CHAT-LOG: ChatFragment onResume", new Object[0]);
-    N = false;
-    G.notifyDataSetChanged();
+    P = false;
+    I.notifyDataSetChanged();
     if (k)
     {
       k = false;
-      Timber.c("ChatFragment", "Make this fragment visible because it was selected as the current item of the view pager before it was created", new Object[0]);
       f(true);
       b(0.0F);
     }
-    nf.e();
-    if (e != null) {
+    nw.e();
+    if ((e != null) && (R()))
+    {
       G();
+      ((StreamView)g.a()).a(e);
     }
   }
   
@@ -3347,55 +3410,54 @@ public class ChatFragment
   {
     super.onSaveInstanceState(paramBundle);
     if (f != null) {
-      paramBundle.putString("friend_username", f.h());
+      paramBundle.putString("friend_username", f.l());
     }
-    paramBundle.putSerializable("message_drafts", aw);
-    paramBundle.putSerializable("cashtag_positions", ax);
+    paramBundle.putSerializable("message_drafts", ay);
+    paramBundle.putSerializable("cashtag_positions", az);
   }
   
-  @boh
-  public void onSecureChatSessionConnectedEvent(bde parambde)
+  @bpi
+  public void onSecureChatSessionConnectedEvent(bee parambee)
   {
     if (e != null) {
       e.b(mIsVisible);
     }
   }
   
-  @boh
-  public void onSnapSelectedForReplayEvent(bdp parambdp)
+  @bpi
+  public void onSnapSelectedForReplayEvent(bep parambep)
   {
-    G.notifyDataSetChanged();
+    I.notifyDataSetChanged();
   }
   
-  @boh
-  public void onSnapViewingEvent(bdm parambdm)
+  @bpi
+  public void onSnapViewingEvent(bem parambem)
   {
     if (mBeingViewed) {
-      ant.a().b();
+      aoq.a().b();
     }
     while (f == null) {
       return;
     }
-    B();
-    g(false);
+    C();
+    a(false, false);
   }
   
   public final void p()
   {
-    avh.a(getActivity(), B);
-    h(false);
+    awf.a(getActivity(), D);
+    g(false);
   }
   
   public final int q()
   {
-    return M;
+    return O;
   }
   
   public final void r()
   {
-    Timber.g("ChatFragment", "CHAT-LOG: ChatFragment onUnlocked", new Object[0]);
-    if (aF != null) {
-      aF.b();
+    if (aH != null) {
+      aH.b();
     }
   }
   
@@ -3403,47 +3465,47 @@ public class ChatFragment
   {
     if ((e != null) && (e.mIsRecipientPresent))
     {
-      yq localyq = n;
+      zm localzm = p;
       ChatConversation localChatConversation = e;
-      long l1 = ((CashSwiperView)S.a()).getDollarsSwiped();
-      long l2 = ((CashSwiperView)S.a()).getFirstSwipeMillis();
-      Object localObject = ajx.l();
+      long l1 = ((CashSwiperView)U.a()).getDollarsSwiped();
+      long l2 = ((CashSwiperView)U.a()).getFirstSwipeMillis();
+      Object localObject = akr.l();
       if (localObject != null)
       {
-        localObject = (bha)asz.a(bii.a.CASH_RAIN, (String)localObject, localChatConversation.y(), mMessagingAuthToken);
-        ((bha)localObject).b(Long.valueOf(l1));
-        ((bha)localObject).a(Long.valueOf(l2));
-        localyq.a(localChatConversation, (bhl)localObject);
+        localObject = (bia)aty.a(bji.a.CASH_RAIN, (String)localObject, localChatConversation.z(), mMessagingAuthToken);
+        ((bia)localObject).b(Long.valueOf(l1));
+        ((bia)localObject).a(Long.valueOf(l2));
+        localzm.a(localChatConversation, (bil)localObject);
       }
     }
   }
   
-  public final void v()
+  public final boolean u_()
   {
-    I = false;
-    J = null;
-    if (!az) {
-      J();
-    }
-    if (((CashSwiperView)S.a()).getDollarsSwiped() == 0) {
-      L();
-    }
+    return K;
   }
   
-  public final boolean v_()
+  public final void v()
   {
-    return I;
+    K = false;
+    L = null;
+    if (!aB) {
+      L();
+    }
+    if (((CashSwiperView)U.a()).getDollarsSwiped() == 0) {
+      N();
+    }
   }
   
   public final void w()
   {
-    if ((((CashSwiperView)S.a()).getDollarsSwiped() == 0) || (e == null)) {
+    if ((((CashSwiperView)U.a()).getDollarsSwiped() == 0) || (e == null)) {
       return;
     }
-    if (J == CashSwiperView.SwipeActivationMethod.DOLLARS) {
-      B.setText("");
+    if (L == CashSwiperView.SwipeActivationMethod.DOLLARS) {
+      D.setText("");
     }
-    K();
+    M();
     new AsyncTask() {}.execute(new Void[0]);
   }
   
@@ -3486,8 +3548,8 @@ public class ChatFragment
       int i = j;
       if (i <= k)
       {
-        paramMotionEvent1 = (afr.c)a.getChildAt(i - j).getTag();
-        if ((paramMotionEvent1 == null) || (a == null) || (!a.am())) {}
+        paramMotionEvent1 = (agr.c)a.getChildAt(i - j).getTag();
+        if ((paramMotionEvent1 == null) || (a == null) || (!a.ak())) {}
       }
       for (;;)
       {
@@ -3522,7 +3584,7 @@ public class ChatFragment
         for (paramAbsListView = (ChatFeedItem)ChatFragment.e(ChatFragment.this).getItemAtPosition(i);; paramAbsListView = null)
         {
           ChatFragment.n(ChatFragment.this);
-          if (((!yi.a(localChatFeedItem, paramAbsListView)) && (!ChatFragment.n(ChatFragment.this).b())) || (bfd.a(ChatFragment.e(ChatFragment.this))) || (bfd.b(ChatFragment.e(ChatFragment.this))))
+          if (((!ze.a(localChatFeedItem, paramAbsListView)) && (!ChatFragment.n(ChatFragment.this).b())) || (bgd.a(ChatFragment.e(ChatFragment.this))) || (bgd.b(ChatFragment.e(ChatFragment.this))))
           {
             ChatFragment.A(ChatFragment.this);
             ChatFragment.n(ChatFragment.this).a();
@@ -3546,14 +3608,14 @@ public class ChatFragment
       if (paramInt == 0) {
         ChatFragment.M(ChatFragment.this);
       }
-      if ((!ChatFragment.t(ChatFragment.this).isEmpty()) && (paramAbsListView.getFirstVisiblePosition() < 20) && (!ChatFragment.u(ChatFragment.this).isEmpty()) && (ChatFragment.f(ChatFragment.this) != null))
+      if ((!ChatFragment.t(ChatFragment.this).isEmpty()) && (paramAbsListView.getFirstVisiblePosition() < ChatFragment.z()) && (!ChatFragment.u(ChatFragment.this).isEmpty()) && (ChatFragment.f(ChatFragment.this) != null))
       {
         paramAbsListView = ChatFragment.N(ChatFragment.this);
         if (mRenderSize >= mMessageCount) {
-          break label91;
+          break label92;
         }
       }
-      label91:
+      label92:
       for (paramInt = 1; paramInt != 0; paramInt = 0)
       {
         ChatFragment.O(ChatFragment.this);

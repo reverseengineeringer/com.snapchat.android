@@ -56,7 +56,7 @@
     .locals 2
 
     .prologue
-    const v0, 0x7f0a03c3
+    const v0, 0x7f0a03c0
 
     .line 19
     if-eqz p1, :cond_0
@@ -105,7 +105,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -205,7 +205,7 @@
 
 # virtual methods
 .method public final a(Ljava/lang/String;)V
-    .locals 5
+    .locals 3
 
     .prologue
     .line 34
@@ -248,19 +248,13 @@
     move-result-object v0
 
     .line 39
-    sget-object v1, Lcom/snapchat/android/fragments/verification/URLVerificationFragment;->f:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    const-string v2, "CASH-LOG: Setting the URL to %s"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/4 v3, 0x1
+    const/4 v2, 0x0
 
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    aput-object v0, v3, v4
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v2
 
     .line 40
     invoke-super {p0, v0}, Lcom/snapchat/android/fragments/settings/WebFragment;->a(Ljava/lang/String;)V
@@ -317,7 +311,7 @@
     const/4 v2, 0x0
 
     .line 45
-    const v0, 0x7f0400af
+    const v0, 0x7f0400b1
 
     invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

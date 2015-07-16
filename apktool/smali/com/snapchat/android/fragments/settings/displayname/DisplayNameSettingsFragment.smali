@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpp$a;
+.implements Lqg$a;
 
 
 # instance fields
@@ -17,7 +17,7 @@
 
 .field private e:Landroid/widget/TextView;
 
-.field private f:Lajx;
+.field private f:Lakr;
 
 
 # direct methods
@@ -26,17 +26,17 @@
 
     .prologue
     .line 47
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;-><init>(Lajx;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;-><init>(Lakr;)V
 
     .line 48
     return-void
 .end method
 
-.method private constructor <init>(Lajx;)V
+.method private constructor <init>(Lakr;)V
     .locals 0
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -49,7 +49,7 @@
     invoke-direct {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;-><init>()V
 
     .line 52
-    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->f:Lajx;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->f:Lakr;
 
     .line 53
     return-void
@@ -68,7 +68,7 @@
 .method private a(Ljava/lang/String;)V
     .locals 3
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -169,12 +169,12 @@
     return-object v0
 .end method
 
-.method static synthetic g(Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;)Lajx;
+.method static synthetic g(Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;)Lakr;
     .locals 1
 
     .prologue
     .line 35
-    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->f:Lajx;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->f:Lakr;
 
     return-object v0
 .end method
@@ -264,7 +264,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->H()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->J()Landroid/view/Window;
 
     move-result-object v1
 
@@ -276,10 +276,22 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 156
     return-void
+.end method
+
+.method protected final h_()Z
+    .locals 1
+
+    .prologue
+    .line 213
+    invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->isAdded()Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method protected final i()V
@@ -307,7 +319,7 @@
     if-nez v0, :cond_0
 
     .line 175
-    invoke-static {}, Lajx;->x()Ljava/lang/String;
+    invoke-static {}, Lakr;->x()Ljava/lang/String;
 
     move-result-object v0
 
@@ -362,24 +374,12 @@
     goto :goto_0
 .end method
 
-.method protected final j_()Z
-    .locals 1
-
-    .prologue
-    .line 213
-    invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->isAdded()Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
 
     .prologue
     .line 57
-    const v0, 0x7f040052
+    const v0, 0x7f040053
 
     const/4 v1, 0x0
 
@@ -390,7 +390,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 58
-    const v0, 0x7f0a01e9
+    const v0, 0x7f0a01e7
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->c(I)Landroid/view/View;
 
@@ -402,7 +402,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01f0
+    const v0, 0x7f0a01ee
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->c(I)Landroid/view/View;
 
@@ -420,9 +420,9 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
-    const v0, 0x7f0a01f1
+    const v0, 0x7f0a01ef
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->c(I)Landroid/view/View;
 
@@ -430,7 +430,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->c:Landroid/view/View;
 
-    const v0, 0x7f0a01ee
+    const v0, 0x7f0a01ec
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->c(I)Landroid/view/View;
 
@@ -438,7 +438,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->d:Landroid/view/View;
 
-    const v0, 0x7f0a01ef
+    const v0, 0x7f0a01ed
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->c(I)Landroid/view/View;
 
@@ -456,7 +456,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a01ed
+    const v0, 0x7f0a01eb
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->c(I)Landroid/view/View;
 
@@ -466,7 +466,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->a:Landroid/widget/EditText;
 
-    invoke-static {}, Lajx;->y()Ljava/lang/String;
+    invoke-static {}, Lakr;->y()Ljava/lang/String;
 
     move-result-object v0
 
@@ -478,7 +478,7 @@
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/displayname/DisplayNameSettingsFragment;->a:Landroid/widget/EditText;
 
-    invoke-static {}, Lajx;->y()Ljava/lang/String;
+    invoke-static {}, Lakr;->y()Ljava/lang/String;
 
     move-result-object v1
 

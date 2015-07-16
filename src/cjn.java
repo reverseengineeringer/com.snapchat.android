@@ -1,79 +1,19 @@
-public final class cjn
-  extends cjc
+import java.util.Date;
+
+final class cjn
+  extends cji
+  implements cjp, cjt
 {
-  private final long a;
+  static final cjn a = new cjn();
   
-  public cjn(cgn paramcgn, long paramLong)
+  public final long a(Object paramObject)
   {
-    super(paramcgn);
-    a = paramLong;
+    return ((Date)paramObject).getTime();
   }
   
-  public final long a(long paramLong, int paramInt)
+  public final Class<?> a()
   {
-    return cjh.a(paramLong, paramInt * a);
-  }
-  
-  public final long a(long paramLong1, long paramLong2)
-  {
-    long l1 = a;
-    if (l1 == 1L) {}
-    for (;;)
-    {
-      return cjh.a(paramLong1, paramLong2);
-      if (paramLong2 == 1L)
-      {
-        paramLong2 = l1;
-      }
-      else if ((paramLong2 == 0L) || (l1 == 0L))
-      {
-        paramLong2 = 0L;
-      }
-      else
-      {
-        long l2 = paramLong2 * l1;
-        if ((l2 / l1 != paramLong2) || ((paramLong2 == Long.MIN_VALUE) && (l1 == -1L)) || ((l1 == Long.MIN_VALUE) && (paramLong2 == -1L))) {
-          throw new ArithmeticException("Multiplication overflows a long: " + paramLong2 + " * " + l1);
-        }
-        paramLong2 = l2;
-      }
-    }
-  }
-  
-  public final long c(long paramLong1, long paramLong2)
-  {
-    return cjh.b(paramLong1, paramLong2) / a;
-  }
-  
-  public final boolean c()
-  {
-    return true;
-  }
-  
-  public final long d()
-  {
-    return a;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (this == paramObject) {}
-    do
-    {
-      return true;
-      if (!(paramObject instanceof cjn)) {
-        break;
-      }
-      paramObject = (cjn)paramObject;
-    } while ((d == d) && (a == a));
-    return false;
-    return false;
-  }
-  
-  public final int hashCode()
-  {
-    long l = a;
-    return (int)(l ^ l >>> 32) + d.hashCode();
+    return Date.class;
   }
 }
 

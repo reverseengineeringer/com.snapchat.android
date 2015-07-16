@@ -259,7 +259,6 @@ Snapcash сейчас."</string>
     <string name="discover_sharing_success">Снимок отправлен!</string>
     <string name="discover_sharing_unavailable">%1$s не разрешает отправку этого снимка.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Коснитесь, чтобы посмотреть Discover!</string>
     <string name="discover_unavailable">"Приносим извинения!
 
 Discover в данный момент недоступен."</string>
@@ -307,6 +306,7 @@ Discover в данный момент недоступен в вашем рег�
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Забыли пароль?</a>" "</string>
     <string name="friend_suggest_hide">Скрыть</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - новый контакт</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - недавно присоединился</string>
     <string name="friends">Друзья</string>
     <string name="friends_context_block">Блокировать</string>
@@ -454,7 +454,7 @@ Discover в данный момент недоступен в вашем рег�
     <string name="problem_opening_image_file">При открытии выбранного изображения возникла проблема. Повторите попытку.</string>
     <string name="problem_searching_nearby">Ой! Что-то пошло не так.</string>
     <string name="profile_images_go">НАЧАТЬ!</string>
-    <string name="profile_images_notice">Your selfie will be shown to other Snapchatters.</string>
+    <string name="profile_images_notice">Ваше селфи увидят другие пользователи Snapchat.</string>
     <string name="profile_images_ready">Готово</string>
     <string name="profile_images_remove">Удалить</string>
     <string name="profile_images_remove_message">Вы уверены, что хотите удалить существующее изображение профиля?</string>
@@ -616,7 +616,7 @@ Discover в данный момент недоступен в вашем рег�
     <string name="snap_delete_failure">Ошибка удаления снимка.</string>
     <string name="snap_failed_to_post">Не удалось опубликовать 1 снимок.</string>
     <string name="snap_list_empty_list_msg">У вас нет снимков :(</string>
-    <string name="snap_tag_help_description">Пользователи Snapchat могут добавить вас, наведя камеру на ваш силуэт и коснувшись экрана!</string>
+    <string name="snap_tag_help_description">Пользователи Snapchat могут добавить вас, наведя камеру на ваш код Snapchat и коснувшись экрана!</string>
     <string name="snap_tag_no_connection">Нет подключения!</string>
     <string name="snap_to_add">Сделайте фото или снимок экрана для добавления</string>
     <string name="snapkidz_welcome">Добро пожаловать в Snapkidz!</string>
@@ -652,8 +652,6 @@ Discover в данный момент недоступен в вашем рег�
     <string name="tap_to_view_edition">Коснитесь для просмотра в Discover</string>
     <string name="tap_to_view_full_story">Коснитесь для просмотра всего рассказа</string>
     <string name="tap_to_view_more">Коснитесь для просмотра других каналов</string>
-    <string name="tap_to_view_snaps">Коснитесь, чтобы просмотреть снимки!</string>
-    <string name="tap_to_view_stories">Коснитесь, чтобы просмотреть рассказы!</string>
     <string name="tap_to_view_video_in_discover">Коснитесь для просмотра этого видео в Discover</string>
     <string name="too_many_attempts">"Слишком много попыток.
 "</string>
@@ -662,7 +660,7 @@ Discover в данный момент недоступен в вашем рег�
     <string name="tos_privacy_policy">Политика конфиденциальности</string>
     <string name="tos_terms">Наши %1$s и %2$s изменились. Коснувшись «Принимаю», вы соглашаетесь с изменениями %3$s и %4$s.</string>
     <string name="tos_terms_of_use">Условия использования</string>
-    <string name="turn_on_high_accuracy">Включите определение местоположения с высокой точностью (GPS) на вашем устройстве.</string>
+    <string name="turn_on_high_accuracy">Включите режим определения местоположения с высокой точностью (GPS) на вашем устройстве.</string>
     <string name="two_fa_disabled_phone_verification_info">Подтвердите номер телефона перед использованием подтверждения логина.</string>
     <string name="two_fa_disabled_settings_help_verified">Если этот номер неверен, <a href="">вы можете изменить его</a></string>
     <string name="two_fa_password_validation_explanation">В целях безопасности введите пароль.</string>

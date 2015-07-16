@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 137
+    .line 184
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$3;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 140
+    .line 187
     iget-object v1, p0, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView$3;->a:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -55,6 +55,6 @@
 
     invoke-virtual {v1, v0}, Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;->setBackgroundColor(I)V
 
-    .line 141
+    .line 188
     return-void
 .end method

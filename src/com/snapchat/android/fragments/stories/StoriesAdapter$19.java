@@ -1,19 +1,19 @@
 package com.snapchat.android.fragments.stories;
 
-import ahd;
+import aia;
 import android.view.View;
 import android.view.View.OnClickListener;
-import bem;
+import bfl;
 import com.squareup.otto.Bus;
 
 final class StoriesAdapter$19
   implements View.OnClickListener
 {
-  StoriesAdapter$19(StoriesAdapter paramStoriesAdapter, ahd paramahd) {}
+  StoriesAdapter$19(StoriesAdapter paramStoriesAdapter, aia paramaia) {}
   
   public final void onClick(View paramView)
   {
-    StoriesAdapter.e(b).a(new bem(a.d()));
+    StoriesAdapter.e(b).a(new bfl(a.d()));
   }
 }
 

@@ -23,11 +23,11 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;Landroid/media/MediaFormat;Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;[F)V
     .locals 4
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -313,11 +313,11 @@
 .method public setShader(Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;)V
     .locals 1
     .param p1    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

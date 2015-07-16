@@ -1,33 +1,39 @@
-import com.snapchat.android.api2.cash.square.data.CashPayment;
-import com.snapchat.android.api2.framework.HttpMethod;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.api2.cash.blockers.BlockerOrder;
 import com.snapchat.android.model.CashTransaction;
+import java.util.List;
+import javax.inject.Inject;
 
 public final class sb
-  extends sq
-  implements ts.b<CashPayment>
+  extends rl
 {
-  private static final String TAG = "DeleteCashPaymentTask";
-  private final CashTransaction mCashTransaction;
+  @Inject
+  protected yn mCashCardManager;
   
-  public sb(@cgb CashTransaction paramCashTransaction)
+  public sb()
   {
-    a(CashPayment.class, this);
-    mCashTransaction = paramCashTransaction;
+    SnapchatApplication.b().c().a(this);
   }
   
-  public final Object b()
+  public final void a(@chd CashTransaction paramCashTransaction)
   {
-    return null;
+    mCashCardManager.b();
+    super.a(null, false);
   }
   
-  public final HttpMethod c()
+  protected final void a(@chd List<rl> paramList, boolean paramBoolean)
   {
-    return HttpMethod.DELETE;
+    super.a(paramList, paramBoolean);
   }
   
-  public final String e()
+  public final BlockerOrder c()
   {
-    return "cash/payments/" + mCashTransaction.mTransactionId;
+    return BlockerOrder.SQ_CONFLICT_BLOCKER;
+  }
+  
+  public final boolean d()
+  {
+    return true;
   }
 }
 

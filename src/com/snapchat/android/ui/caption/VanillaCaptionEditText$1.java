@@ -4,9 +4,9 @@ import android.text.Editable;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import aps;
-import ban;
-import baw;
+import aqr;
+import bbo;
+import bbx;
 import com.squareup.otto.Bus;
 
 final class VanillaCaptionEditText$1
@@ -50,7 +50,7 @@ final class VanillaCaptionEditText$1
           if (!a.e()) {
             continue;
           }
-          ban.a().a(new baw(6));
+          bbo.a().a(new bbx(6));
         }
       }
       else
@@ -73,7 +73,7 @@ final class VanillaCaptionEditText$1
         break;
       }
     } while (a.i);
-    ban.a().a(new baw(-1));
+    bbo.a().a(new bbx(-1));
   }
   
   public final void beforeTextChanged(CharSequence paramCharSequence, int paramInt1, int paramInt2, int paramInt3) {}

@@ -4,56 +4,43 @@
 
 
 # instance fields
-.field public final a:Lale;
+.field public mPrompt:Ljava/lang/String;
+    .annotation build Lchd;
+    .end annotation
 
-.field private final b:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "prompt"
+    .end annotation
+.end field
 
 
-# direct methods
-.method public constructor <init>()V
+# virtual methods
+.method public final toString()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 32
-    new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+    .line 16
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
+    const-string v1, "CaptchaResponse [prompt="
 
-    invoke-static {}, Lale;->a()Lale;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v1
+    iget-object v1, p0, Lalm;->mPrompt:Ljava/lang/String;
 
-    invoke-direct {p0, v0, v1}, Lalm;-><init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lale;)V
-
-    .line 33
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lale;)V
-    .locals 1
-
-    .prologue
-    .line 37
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 38
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
+    const-string v1, "]"
 
-    iput-object v0, p0, Lalm;->b:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
-
-    .line 39
-    invoke-static {p2}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lale;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput-object v0, p0, Lalm;->a:Lale;
+    move-result-object v0
 
-    .line 40
-    return-void
+    return-object v0
 .end method

@@ -1,30 +1,35 @@
 package com.snapchat.android.fragments.addfriends;
 
 import android.graphics.Bitmap;
-import bfx;
-import com.snapchat.android.Timber;
+import bgx;
+import com.snapchat.android.ui.ProfilePictureView;
 import java.util.List;
 
-final class ProfileFragment$a
-  implements bfx
+public final class ProfileFragment$a
+  implements bgx
 {
-  private ProfileFragment$a(ProfileFragment paramProfileFragment) {}
+  protected ProfileFragment$a(ProfileFragment paramProfileFragment) {}
   
   public final void a(List<Bitmap> paramList)
   {
-    if (paramList == null)
+    if ((paramList != null) && (paramList.size() == 5))
     {
-      Timber.f("ProfileFragment", "profile images - onProfileImagesLoaded but bitmapList is null", new Object[0]);
+      if ((a.e == null) || (!a.e.f))
+      {
+        a.a = paramList;
+        a.a(paramList);
+      }
+    }
+    else {
       return;
     }
-    if (paramList.size() != 5)
+    paramList = new StringBuilder("profile images - pictures were loaded but user is capturing pictures now with mProfileImagesList size: ");
+    if (a.a == null) {}
+    for (int i = 0;; i = a.a.size())
     {
-      Timber.f("ProfileFragment", "profile images - loaded profile images from cache but the number of images is wrong!", new Object[0]);
+      paramList.append(i);
       return;
     }
-    ProfileFragment.b(a, paramList);
-    ProfileFragment.a(a, paramList);
-    Timber.c("ProfileFragment", "profile images - pictures were loaded from cache", new Object[0]);
   }
 }
 

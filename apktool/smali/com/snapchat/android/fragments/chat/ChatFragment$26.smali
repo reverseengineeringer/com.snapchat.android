@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1060
+    .line 1082
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$26;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,10 +40,10 @@
     .locals 2
 
     .prologue
-    .line 1063
+    .line 1085
     if-eqz p2, :cond_0
 
-    .line 1064
+    .line 1086
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$26;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->e(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lcom/snapchat/android/ui/LockingAboveTheFoldListView;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/LockingAboveTheFoldListView;->setIsActive(Z)V
 
-    .line 1066
+    .line 1088
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$26;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1067
+    .line 1089
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$26;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->f(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lcom/snapchat/android/model/chat/ChatConversation;
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/model/chat/ChatConversation;->e(Z)V
 
-    .line 1069
+    .line 1091
     :cond_1
     return-void
 .end method

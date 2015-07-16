@@ -1,62 +1,36 @@
-import android.net.NetworkInfo;
-import android.net.wifi.WifiInfo;
-import java.util.HashMap;
-import java.util.Map;
+import com.snapchat.android.model.chat.ChatConversation;
+import javax.inject.Provider;
 
 public final class aky
+  implements bvk<ChatConversation>
 {
-  private static final aky b = new aky();
-  public final ale a;
-  private final Object c = new Object();
-  private final Map<String, alj> d = new HashMap();
+  private final Provider<aum> mGsonWrapperProvider;
+  private final Provider<yw> mSendingCashManagerProvider;
+  private final Provider<aze> mSlightlySecurePreferencesProvider;
   
-  private aky()
+  static
   {
-    this(ale.a());
-  }
-  
-  private aky(ale paramale)
-  {
-    a = paramale;
-  }
-  
-  public static aky a()
-  {
-    return b;
-  }
-  
-  @cgb
-  public final alj a(String paramString)
-  {
-    synchronized (c)
+    if (!aky.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      alj localalj2 = (alj)d.get(paramString);
-      alj localalj1 = localalj2;
-      if (localalj2 == null)
-      {
-        localalj1 = new alj();
-        d.put(paramString, localalj1);
-      }
-      return localalj1;
+      $assertionsDisabled = bool;
+      return;
     }
   }
   
-  @cgb
-  public final String b()
+  private aky(Provider<aze> paramProvider, Provider<yw> paramProvider1, Provider<aum> paramProvider2)
   {
-    int i = 1;
-    Object localObject = a.c();
-    if ((localObject != null) && (((WifiInfo)localObject).getSSID() != null) && (((WifiInfo)localObject).getBSSID() != null)) {
-      return String.format("WIFI-%s-%s", new Object[] { ((WifiInfo)localObject).getSSID(), ((WifiInfo)localObject).getBSSID() });
-    }
-    localObject = a.b();
-    if ((localObject != null) && (((NetworkInfo)localObject).isConnected()) && (((NetworkInfo)localObject).getType() == 0)) {}
-    while (i != 0)
-    {
-      return "WAN";
-      i = 0;
-    }
-    return "NO_NETWORK";
+    assert (paramProvider != null);
+    mSlightlySecurePreferencesProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mSendingCashManagerProvider = paramProvider1;
+    assert (paramProvider2 != null);
+    mGsonWrapperProvider = paramProvider2;
+  }
+  
+  public static bvk<ChatConversation> a(Provider<aze> paramProvider, Provider<yw> paramProvider1, Provider<aum> paramProvider2)
+  {
+    return new aky(paramProvider, paramProvider1, paramProvider2);
   }
 }
 

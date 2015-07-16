@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->w_()V
+    value = Lcom/snapchat/android/fragments/settings/ClearConversationsFragment;->v_()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

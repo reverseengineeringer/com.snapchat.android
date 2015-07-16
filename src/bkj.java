@@ -1,38 +1,21 @@
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bkj
+public final class bkj
+  extends bjo
 {
-  @SerializedName("message")
-  protected String message;
-  @SerializedName("success")
-  protected Boolean success;
+  @SerializedName("story_notes")
+  protected List<bkk> storyNotes;
   
-  public final bkj a(Boolean paramBoolean)
+  public final List<bkk> c()
   {
-    success = paramBoolean;
-    return this;
+    return storyNotes;
   }
   
-  public final bkj a(String paramString)
-  {
-    message = paramString;
-    return this;
-  }
-  
-  public final Boolean a()
-  {
-    return success;
-  }
-  
-  public final String b()
-  {
-    return message;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -41,15 +24,15 @@ public class bkj
       return false;
     }
     paramObject = (bkj)paramObject;
-    return new EqualsBuilder().append(success, success).append(message, message).isEquals();
+    return new EqualsBuilder().append(storyNotes, storyNotes).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(success).append(message).toHashCode();
+    return new HashCodeBuilder().append(storyNotes).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

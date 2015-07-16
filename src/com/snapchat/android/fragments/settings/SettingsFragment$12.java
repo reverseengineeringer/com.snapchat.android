@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.settings;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.squareup.otto.Bus;
 
@@ -15,7 +15,7 @@ final class SettingsFragment$12
   public final void onClick(View paramView)
   {
     AnalyticsEvents.f();
-    ban.a().a(new bdw(new ClearConversationsFragment()));
+    bbo.a().a(new bev(new ClearConversationsFragment()));
   }
 }
 

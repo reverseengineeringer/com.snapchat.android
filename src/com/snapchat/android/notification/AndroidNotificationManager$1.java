@@ -1,24 +1,23 @@
 package com.snapchat.android.notification;
 
-import ajv;
-import com.snapchat.android.Timber;
+import akp;
 import com.snapchat.android.api2.chat.LoadConversationPageTask.a;
 import com.snapchat.android.database.table.ConversationTable;
 import com.snapchat.android.model.chat.ChatConversation;
-import ym;
+import zi;
 
 public final class AndroidNotificationManager$1
   implements LoadConversationPageTask.a
 {
-  public AndroidNotificationManager$1(AndroidNotificationManager paramAndroidNotificationManager, String paramString, ajv paramajv) {}
+  public AndroidNotificationManager$1(AndroidNotificationManager paramAndroidNotificationManager, String paramString, akp paramakp) {}
   
   public final void a(boolean paramBoolean)
   {
-    Timber.g("AndroidNotificationManager", "CHAT-LOG: AndroidNotificationManager LoadConversationPageTask completed for %s with success: %s", new Object[] { a, Boolean.valueOf(paramBoolean) });
+    Object localObject = a;
     if (paramBoolean)
     {
-      ChatConversation localChatConversation = ym.a(a);
-      if (localChatConversation != null)
+      localObject = zi.a(a);
+      if (localObject != null)
       {
         if (mIsStub) {
           mIsStub = false;

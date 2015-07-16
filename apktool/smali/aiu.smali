@@ -2,282 +2,180 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lair;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lair",
+        "<",
+        "Ljava/lang/String;",
+        "Lcom/snapchat/android/model/GeofilterMarkup;",
+        ">;"
+    }
+.end annotation
+
 
 # instance fields
-.field public final mId:Ljava/lang/String;
+.field private a:Ljava/lang/String;
 
-.field final mPoints:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/gms/maps/model/LatLng;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private b:Landroid/graphics/Typeface;
+
+.field private c:Lcom/snapchat/android/model/GeofilterMarkup;
 
 
 # direct methods
-.method public constructor <init>(Lbhz;)V
-    .locals 8
-    .param p1    # Lbhz;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>(Ljava/lang/String;Landroid/graphics/Typeface;Lcom/snapchat/android/model/GeofilterMarkup;)V
+    .locals 0
 
     .prologue
-    .line 18
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Laiu;->mPoints:Ljava/util/List;
-
-    .line 19
-    invoke-virtual {p1}, Lbhz;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Laiu;->mId:Ljava/lang/String;
-
-    .line 20
-    invoke-virtual {p1}, Lbhz;->b()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbhp;
-
-    .line 21
-    iget-object v2, p0, Laiu;->mPoints:Ljava/util/List;
-
-    new-instance v3, Lcom/google/android/gms/maps/model/LatLng;
-
-    invoke-virtual {v0}, Lbhp;->a()Ljava/lang/Double;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v4
-
-    invoke-virtual {v0}, Lbhp;->b()Ljava/lang/Double;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v6
-
-    invoke-direct {v3, v4, v5, v6, v7}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
-
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
+    .line 22
+    iput-object p1, p0, Laiu;->a:Ljava/lang/String;
 
     .line 23
-    :cond_0
+    iput-object p2, p0, Laiu;->b:Landroid/graphics/Typeface;
+
+    .line 24
+    iput-object p3, p0, Laiu;->c:Lcom/snapchat/android/model/GeofilterMarkup;
+
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/location/Location;)Z
-    .locals 12
-    .param p1    # Landroid/location/Location;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a(Landroid/graphics/Bitmap;)V
+    .locals 7
 
     .prologue
-    .line 39
-    const-wide/16 v2, 0x0
+    .line 28
+    if-nez p1, :cond_0
 
-    .line 41
-    const/4 v0, 0x0
-
-    move-wide v4, v2
-
-    move v2, v0
-
+    .line 35
     :goto_0
-    iget-object v0, p0, Laiu;->mPoints:Ljava/util/List;
+    return-void
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    .line 32
+    :cond_0
+    new-instance v0, Landroid/graphics/Canvas;
 
-    move-result v0
+    invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    if-ge v2, v0, :cond_2
+    .line 33
+    new-instance v1, Landroid/graphics/Paint;
 
-    .line 42
-    iget-object v0, p0, Laiu;->mPoints:Ljava/util/List;
+    const/4 v2, 0x1
 
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
-    move-result-object v0
+    .line 34
+    iget-object v2, p0, Laiu;->c:Lcom/snapchat/android/model/GeofilterMarkup;
 
-    check-cast v0, Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v2, v2, Lcom/snapchat/android/model/GeofilterMarkup;->layoutParameters:Lajt;
 
-    .line 43
-    iget-object v1, p0, Laiu;->mPoints:Ljava/util/List;
+    iget-object v3, p0, Laiu;->c:Lcom/snapchat/android/model/GeofilterMarkup;
 
-    add-int/lit8 v3, v2, 0x1
+    iget-object v3, v3, Lcom/snapchat/android/model/GeofilterMarkup;->displayParameters:Lajs;
 
-    iget-object v6, p0, Laiu;->mPoints:Ljava/util/List;
+    iget-object v4, v3, Lajs;->color:Ljava/lang/String;
 
-    invoke-interface {v6}, Ljava/util/List;->size()I
+    invoke-static {v4}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget v3, v3, Lajs;->size:I
+
+    int-to-float v3, v3
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setTextSize(F)V
+
+    iget-object v3, p0, Laiu;->b:Landroid/graphics/Typeface;
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+
+    new-instance v3, Landroid/graphics/Rect;
+
+    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
+
+    iget-object v4, p0, Laiu;->a:Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    iget-object v6, p0, Laiu;->a:Ljava/lang/String;
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     move-result v6
 
-    rem-int/2addr v3, v6
+    invoke-virtual {v1, v4, v5, v6, v3}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget v4, v2, Lajt;->xOffset:F
 
-    move-result-object v1
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    check-cast v1, Lcom/google/android/gms/maps/model/LatLng;
+    move-result v5
 
-    .line 45
-    iget-wide v6, v0, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
+    int-to-float v5, v5
 
-    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
+    mul-float/2addr v4, v5
 
-    move-result-wide v8
+    float-to-int v4, v4
 
-    sub-double/2addr v6, v8
+    iget v5, v2, Lajt;->yOffset:F
 
-    .line 46
-    iget-wide v8, v0, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
-    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
+    move-result v6
 
-    move-result-wide v10
+    int-to-float v6, v6
 
-    sub-double/2addr v8, v10
+    mul-float/2addr v5, v6
 
-    .line 47
-    new-instance v0, Lcom/google/android/gms/maps/model/LatLng;
+    float-to-int v5, v5
 
-    invoke-direct {v0, v6, v7, v8, v9}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
+    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
 
-    .line 49
-    iget-wide v6, v1, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
+    move-result v6
 
-    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
+    div-int/lit8 v6, v6, 0x2
 
-    move-result-wide v8
+    add-int/2addr v6, v4
 
-    sub-double/2addr v6, v8
+    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
 
-    .line 50
-    iget-wide v8, v1, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
+    move-result v3
 
-    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
+    div-int/lit8 v3, v3, 0x2
 
-    move-result-wide v10
+    add-int/2addr v3, v5
 
-    sub-double/2addr v8, v10
+    invoke-virtual {v0}, Landroid/graphics/Canvas;->save()I
 
-    .line 51
-    new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
+    iget v2, v2, Lajt;->rotation:F
 
-    invoke-direct {v1, v6, v7, v8, v9}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
+    int-to-float v6, v6
 
-    .line 53
-    iget-wide v6, v0, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
+    int-to-float v3, v3
 
-    iget-wide v8, v0, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
+    invoke-virtual {v0, v2, v6, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->atan2(DD)D
+    iget-object v2, p0, Laiu;->a:Ljava/lang/String;
 
-    move-result-wide v6
+    int-to-float v3, v4
 
-    iget-wide v8, v1, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
+    int-to-float v4, v5
 
-    iget-wide v0, v1, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
+    invoke-virtual {v0, v2, v3, v4, v1}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    invoke-static {v8, v9, v0, v1}, Ljava/lang/Math;->atan2(DD)D
-
-    move-result-wide v0
-
-    sub-double/2addr v0, v6
-
-    const-wide v6, 0x401921fb54442d18L    # 6.283185307179586
-
-    rem-double/2addr v0, v6
-
-    const-wide v6, 0x400921fb54442d18L    # Math.PI
-
-    cmpl-double v3, v0, v6
-
-    if-ltz v3, :cond_1
-
-    const-wide v6, 0x401921fb54442d18L    # 6.283185307179586
-
-    sub-double/2addr v0, v6
-
-    :cond_0
-    :goto_1
-    add-double/2addr v4, v0
-
-    .line 41
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
+    invoke-virtual {v0}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
-
-    .line 53
-    :cond_1
-    const-wide v6, -0x3ff6de04abbbd2e8L    # -3.141592653589793
-
-    cmpg-double v3, v0, v6
-
-    if-gez v3, :cond_0
-
-    const-wide v6, 0x401921fb54442d18L    # 6.283185307179586
-
-    add-double/2addr v0, v6
-
-    goto :goto_1
-
-    .line 56
-    :cond_2
-    invoke-static {v4, v5}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide v0
-
-    const-wide v2, 0x400921fb54442d18L    # Math.PI
-
-    cmpl-double v0, v0, v2
-
-    if-ltz v0, :cond_3
-
-    const/4 v0, 0x1
-
-    :goto_2
-    return v0
-
-    :cond_3
-    const/4 v0, 0x0
-
-    goto :goto_2
 .end method

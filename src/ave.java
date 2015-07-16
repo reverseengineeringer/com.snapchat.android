@@ -1,27 +1,47 @@
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import com.snapchat.android.util.AlertDialogUtils;
+import android.net.NetworkInfo;
+import java.io.IOException;
+import java.util.concurrent.Callable;
 
 public final class ave
 {
-  public static void a(Context paramContext, String paramString1, String paramString2)
+  private static final long DEFAULT_INIT_MILLIS = 500L;
+  private static final long DEFAULT_MAX_MILLIS = 32000L;
+  
+  public final <T> Callable<T> a(final Callable<T> paramCallable)
   {
-    Intent localIntent = new Intent("android.intent.action.VIEW");
-    localIntent.setData(Uri.parse("smsto:" + paramString1));
-    localIntent.putExtra("address", paramString1);
-    localIntent.putExtra("sms_body", paramString2);
-    localIntent.putExtra("android.intent.extra.TEXT", paramString2);
-    try
+    new Callable()
     {
-      paramContext.startActivity(localIntent);
-      return;
-    }
-    catch (ActivityNotFoundException paramString1)
-    {
-      AlertDialogUtils.a(2131493255, paramContext);
-    }
+      public final T call()
+      {
+        long l = val$initMills;
+        try
+        {
+          Object localObject = paramCallable.call();
+          return (T)localObject;
+        }
+        catch (IOException localIOException) {}
+        for (;;)
+        {
+          try
+          {
+            NetworkInfo localNetworkInfo = bgp.a();
+            if ((localNetworkInfo == null) || (!localNetworkInfo.isConnected())) {
+              break label75;
+            }
+            i = 1;
+            if ((i == 0) || (l > val$maxMills)) {
+              throw localIOException;
+            }
+            Thread.sleep(l);
+            l = 2L * l;
+          }
+          catch (InterruptedException localInterruptedException) {}
+          break;
+          label75:
+          int i = 0;
+        }
+      }
+    };
   }
 }
 

@@ -1,16 +1,17 @@
 package com.snapchat.android.fragments.sendto;
 
-import adb;
-import agg;
-import agg.a;
-import agk;
-import aim;
-import aja;
-import ajc;
-import ajk;
-import ajq;
-import ajv;
-import ajx;
+import aas;
+import aeb;
+import ahd;
+import ahd.a;
+import ahh;
+import aji;
+import ajw;
+import ajy;
+import akg;
+import akk;
+import akp;
+import akr;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.app.AlertDialog;
@@ -38,35 +39,35 @@ import android.widget.Filter;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import aoc;
-import aod;
-import aoe;
-import aof;
-import apk;
-import aqa;
-import aqa.a;
-import aqt;
-import asv;
-import atm;
-import avh;
-import aza;
-import ban;
-import bap;
-import bar;
-import bas;
-import bat;
-import baw;
-import bco;
-import bcw;
-import bcx;
+import aoz;
+import apa;
+import apb;
+import aqj;
+import aqz;
+import aqz.a;
+import ars;
+import atu;
+import auk;
+import avr;
+import awf;
+import azy;
+import bbo;
+import bbq;
+import bbs;
+import bbt;
+import bbu;
+import bbx;
 import bdo;
-import bdt;
 import bdw;
-import bel;
-import boh;
-import bpr;
-import bps;
-import cgb;
+import bdx;
+import beo;
+import bet;
+import bev;
+import bfk;
+import bpi;
+import bqs;
+import bqt;
+import chc;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.analytics.AnalyticsEvents;
@@ -96,43 +97,42 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import javax.inject.Inject;
-import nb;
-import no;
+import ns;
+import of;
 import xyz.danoz.recyclerviewfastscroller.vertical.VerticalRecyclerViewFastScroller;
-import zs;
 
 public class SendToFragment
   extends SnapchatFragment
-  implements agg.a
+  implements ahd.a
 {
-  private static aim b;
+  private static aji b;
   @Inject
-  public zs a;
+  public aas a;
   private View c;
   private View d;
-  private agg e;
+  private ahd e;
   private Handler f = new Handler();
   private InputMethodManager g;
   private EditText h;
   private View i;
   private boolean j = false;
-  private ajv k;
+  private akp k;
   private LinkedHashSet<Friend> l = new LinkedHashSet();
-  private ArrayList<ajc> m = new ArrayList();
+  private ArrayList<ajy> m = new ArrayList();
   private SendToBottomPanelView n;
-  private final no o = no.a();
+  private final of o = of.a();
   private final NetworkAnalytics p = NetworkAnalytics.a();
   private final DiscoverUsageAnalytics q = new DiscoverUsageAnalytics();
-  private final nb r = new nb();
+  private final ns r = new ns();
   
   public SendToFragment()
   {
     SnapchatApplication.b().c().a(this);
   }
   
-  public static SendToFragment a(@cgb aim paramaim)
+  public static SendToFragment a(@chc aji paramaji)
   {
-    b = paramaim;
+    b = paramaji;
     return new SendToFragment();
   }
   
@@ -171,12 +171,12 @@ public class SendToFragment
     a(WindowConfiguration.StatusBarDrawMode.DRAW_BACKGROUND_BEHIND);
   }
   
-  public final void a(agk paramagk, boolean paramBoolean)
+  public final void a(ahh paramahh, boolean paramBoolean)
   {
     final Object localObject;
-    if ((paramagk instanceof Friend))
+    if ((paramahh instanceof Friend))
     {
-      paramagk = (Friend)paramagk;
+      paramahh = (Friend)paramahh;
       localObject = o;
       boolean bool = j;
       mNumTotalActions += 1;
@@ -189,7 +189,7 @@ public class SendToFragment
         if (l.size() >= 200) {
           break label175;
         }
-        l.add(paramagk);
+        l.add(paramahh);
       }
     }
     for (;;)
@@ -197,7 +197,7 @@ public class SendToFragment
       e.a.b();
       i();
       return;
-      if (paramagk.o())
+      if (paramahh.j())
       {
         mNumBestFriends += 1;
         break;
@@ -215,34 +215,34 @@ public class SendToFragment
       mNumOtherFriends += 1;
       break;
       label175:
-      ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131492953));
+      bbo.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131492953));
       continue;
       label197:
-      l.remove(paramagk);
+      l.remove(paramahh);
       continue;
-      if ((paramagk instanceof ajc))
+      if ((paramahh instanceof ajy))
       {
         int i1;
         if (paramBoolean)
         {
-          localObject = (ajc)paramagk;
-          if (!(localObject instanceof aja)) {
+          localObject = (ajy)paramahh;
+          if (!(localObject instanceof ajw)) {
             break label406;
           }
-          if (ajx.P()) {
+          if (akr.P()) {
             break label426;
           }
           i1 = 1;
           label242:
           if (i1 != 0)
           {
-            localObject = (ajc)paramagk;
-            if (!(localObject instanceof aja)) {
+            localObject = (ajy)paramahh;
+            if (!(localObject instanceof ajw)) {
               break label431;
             }
             localObject = new AlertDialog.Builder(getActivity());
-            View localView = LayoutInflater.from(getActivity()).inflate(2130968709, null);
-            CheckBox localCheckBox = (CheckBox)localView.findViewById(2131362544);
+            View localView = LayoutInflater.from(getActivity()).inflate(2130968711, null);
+            CheckBox localCheckBox = (CheckBox)localView.findViewById(2131362543);
             ((LinearLayout)localView).removeView(localCheckBox);
             ((AlertDialog.Builder)localObject).setInverseBackgroundForced(true);
             ((AlertDialog.Builder)localObject).setView(localView).setTitle(2131492904).setNegativeButton(2131492952, null).setPositiveButton(2131492866, null);
@@ -251,14 +251,14 @@ public class SendToFragment
         }
         for (;;)
         {
-          paramagk = (ajc)paramagk;
+          paramahh = (ajy)paramahh;
           localObject = o;
           mNumTotalActions += 1;
           mNumStories += 1;
           if (!paramBoolean) {
             break label464;
           }
-          m.add(paramagk);
+          m.add(paramahh);
           break;
           label406:
           if (!a.a(mStoryId))
@@ -270,7 +270,7 @@ public class SendToFragment
           i1 = 0;
           break label242;
           label431:
-          new aqa(getActivity(), (ajc)localObject, a, new aqa.a()
+          new aqz(getActivity(), (ajy)localObject, a, new aqz.a()
           {
             public final void a(boolean paramAnonymousBoolean)
             {
@@ -284,36 +284,47 @@ public class SendToFragment
           }).show();
         }
         label464:
-        m.remove(paramagk);
+        m.remove(paramahh);
       }
     }
   }
   
-  public final boolean a(agk paramagk)
+  public final boolean a(ahh paramahh)
   {
-    if ((paramagk instanceof Friend)) {
-      return l.contains(paramagk);
+    if ((paramahh instanceof Friend)) {
+      return l.contains(paramahh);
     }
-    if ((paramagk instanceof ajc)) {
-      return m.contains(paramagk);
+    if ((paramahh instanceof ajy)) {
+      return m.contains(paramahh);
     }
     return false;
   }
   
   public final void e()
   {
-    ban.a().a(new bel(TitleBarManager.Visibility.VISIBLE));
-    no localno = o;
-    mSelectFriendMetric = EasyMetric.EasyMetricFactory.b("SELECT_FRIEND").b();
-    localno.c();
+    bbo.a().a(new bfk(TitleBarManager.Visibility.VISIBLE));
+    bbo.a().a(new bet(true));
+    bbo.a().a(new bbx(1));
+    boolean bool = avr.a(b);
+    of localof = o;
+    mSelectFriendMetric = EasyMetric.EasyMetricFactory.b("SELECT_FRIEND").a("type", of.b(bool)).b();
+    localof.c();
     mNumSelectFriendSession += 1;
-    ban.a().a(new bdt(true));
-    ban.a().a(new baw(1));
+    if (mPrepareSnapMetric != null)
+    {
+      mPrepareSnapMetric.a("type", of.b(bool)).a("session_number", Integer.valueOf(mNumSelectFriendSession)).b(false);
+      mPrepareSnapMetric = null;
+    }
   }
   
   public final void f()
   {
     super.f();
+  }
+  
+  public final boolean f_()
+  {
+    return true;
   }
   
   public final boolean g()
@@ -327,11 +338,6 @@ public class SendToFragment
     return false;
   }
   
-  public final boolean g_()
-  {
-    return true;
-  }
-  
   protected final void i()
   {
     Iterator localIterator = m.iterator();
@@ -339,21 +345,21 @@ public class SendToFragment
     Object localObject;
     for (String str1 = ""; localIterator.hasNext(); str1 = ", ")
     {
-      localObject = (ajc)localIterator.next();
+      localObject = (ajy)localIterator.next();
       str2 = str2 + str1 + mDisplayName;
     }
     localIterator = l.iterator();
     while (localIterator.hasNext())
     {
       localObject = (Friend)localIterator.next();
-      str2 = str2 + str1 + ((Friend)localObject).k();
+      str2 = str2 + str1 + ((Friend)localObject).e();
       str1 = ", ";
     }
     n.setText(str2);
     n();
   }
   
-  public final boolean l_()
+  public final boolean j_()
   {
     return true;
   }
@@ -362,21 +368,20 @@ public class SendToFragment
   {
     super.onActivityCreated(paramBundle);
     g = ((InputMethodManager)getActivity().getSystemService("input_method"));
-    k = ajv.a(getActivity());
+    k = akp.a(getActivity());
     l = bmMediaMailingMetadata.d();
     if (bmSnapType == Mediabryo.SnapType.SNAP) {
       m = bmMediaMailingMetadata).mPostToStories;
     }
     Object localObject = (RecyclerView)c(2131362195);
-    ImageView localImageView = (ImageView)c(2131362617);
+    ImageView localImageView = (ImageView)c(2131362616);
     FragmentActivity localFragmentActivity = getActivity();
-    new aof();
     paramBundle = b;
-    ajv localajv = k;
+    akp localakp = k;
     if (mSnapType == Mediabryo.SnapType.DISCOVER) {}
-    for (paramBundle = new aoc(localajv);; paramBundle = new aod(localajv, ajq.a()))
+    for (paramBundle = new aoz(localakp);; paramBundle = new apa(localakp, akk.a()))
     {
-      e = new agg(localFragmentActivity, paramBundle, new Friend.a(), this, new aqt(), new apk(localImageView, (RecyclerView)localObject));
+      e = new ahd(localFragmentActivity, paramBundle, new Friend.a(), this, new ars(), new aqj(localImageView, (RecyclerView)localObject));
       getActivity();
       ((RecyclerView)localObject).setLayoutManager(new LinearLayoutManager());
       ((RecyclerView)localObject).setAdapter(e);
@@ -392,19 +397,19 @@ public class SendToFragment
           return false;
         }
       });
-      paramBundle = new bpr(e);
+      paramBundle = new bqs(e);
       ((RecyclerView)localObject).a(paramBundle);
-      paramBundle = new bps((RecyclerView)localObject, paramBundle);
+      paramBundle = new bqt((RecyclerView)localObject, paramBundle);
       b = e;
       f.add(paramBundle);
-      paramBundle = (VerticalRecyclerViewFastScroller)c(2131362616);
+      paramBundle = (VerticalRecyclerViewFastScroller)c(2131362615);
       paramBundle.setRecyclerView((RecyclerView)localObject);
       ((RecyclerView)localObject).setOnScrollListener(paramBundle.getOnScrollListener());
-      c = c(2131362612);
-      d = c(2131362609);
-      h = ((EditText)c(2131362610));
-      i = c(2131361836);
-      c(2131362611).setOnClickListener(new View.OnClickListener()
+      c = c(2131362611);
+      d = c(2131362608);
+      h = ((EditText)c(2131362609));
+      i = c(2131361837);
+      c(2131362610).setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
         {
@@ -414,7 +419,7 @@ public class SendToFragment
           paramAnonymousView = SendToFragment.a(SendToFragment.this);
           paramAnonymousView.a("add_friend");
           paramAnonymousView.c();
-          ban.a().a(new bdw(new AddFriendsMenuFragment()));
+          bbo.a().a(new bev(new AddFriendsMenuFragment()));
         }
       });
       c.setOnClickListener(new View.OnClickListener()
@@ -458,7 +463,7 @@ public class SendToFragment
           return false;
         }
       });
-      n = ((SendToBottomPanelView)c(2131362615));
+      n = ((SendToBottomPanelView)c(2131362614));
       n.setSendButtonOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
@@ -486,7 +491,7 @@ public class SendToFragment
           if (mmSnapType == Mediabryo.SnapType.SNAP) {
             if (!SendToFragment.c(SendToFragment.this).isEmpty())
             {
-              ajx.Q();
+              akr.Q();
               if (paramAnonymousView.g() != null)
               {
                 bool1 = true;
@@ -495,7 +500,7 @@ public class SendToFragment
                   break label368;
                 }
                 bool2 = true;
-                AnalyticsEvents.a((aim)localObject2, bool1, bool2, "SEND_TO_SCREEN");
+                AnalyticsEvents.a((aji)localObject2, bool1, bool2, "SEND_TO_SCREEN");
               }
             }
             else
@@ -521,12 +526,12 @@ public class SendToFragment
             if (j != 0) {
               ((NetworkAnalytics)localObject1).a("STORY_POST_DELAY", (String)localObject2, "send_to_screen");
             }
-            ban.a().a(new bdo(SendToFragment.m(), false));
-            ban.a().a(new bat());
-            ban.a().a(new bar(false, false));
-            ban.a().a(new bas((byte)0));
-            ban.a().a(new bap(CameraDisplayState.SHOW));
-            avh.a(paramAnonymousView, SendToFragment.g(SendToFragment.this));
+            bbo.a().a(new beo(SendToFragment.m(), false));
+            bbo.a().a(new bbu());
+            bbo.a().a(new bbs(false, false));
+            bbo.a().a(new bbt((byte)0));
+            bbo.a().a(new bbq(CameraDisplayState.SHOW));
+            awf.a(paramAnonymousView, SendToFragment.g(SendToFragment.this));
             return;
             bool1 = false;
             break;
@@ -537,7 +542,7 @@ public class SendToFragment
               break label200;
             }
             SendToFragment.e(SendToFragment.this);
-            SendToFragment.a(SendToFragment.this, (adb)mmMediaExtras);
+            SendToFragment.a(SendToFragment.this, (aeb)mmMediaExtras);
             break label200;
             label412:
             i = 0;
@@ -547,9 +552,9 @@ public class SendToFragment
           }
         }
       });
-      n.setSendButtonOnTouchListener(new asv(n.getSendButton()));
+      n.setSendButtonOnTouchListener(new atu(n.getSendButton()));
       n();
-      c(2131362607).setOnClickListener(new View.OnClickListener()
+      c(2131362606).setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
         {
@@ -561,7 +566,7 @@ public class SendToFragment
       while (paramBundle.hasNext())
       {
         localObject = (Friend)paramBundle.next();
-        if (!atm.f(((Friend)localObject).h(), k)) {
+        if (!auk.f(((Friend)localObject).l(), k)) {
           mSuggestionState = Friend.SuggestState.PENDING;
         }
       }
@@ -579,7 +584,7 @@ public class SendToFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968723, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968725, paramViewGroup, false);
     return mFragmentLayout;
   }
   
@@ -606,34 +611,34 @@ public class SendToFragment
     }
   }
   
-  @boh
-  public void onPostToStoriesUpdatedEvent(bco parambco)
+  @bpi
+  public void onPostToStoriesUpdatedEvent(bdo parambdo)
   {
-    parambco = e;
+    parambdo = e;
     e = c.a();
     a.b();
     e.b().filter(h.getText().toString());
   }
   
-  @boh
-  public void onRefreshFriendExistsTask(bcx parambcx)
+  @bpi
+  public void onRefreshFriendExistsTask(bdx parambdx)
   {
     e.a.b();
   }
   
-  @boh
-  public void onRefreshOnFriendActionEvent(bcw parambcw)
+  @bpi
+  public void onRefreshOnFriendActionEvent(bdw parambdw)
   {
     int i1 = 0;
     Friend localFriend = mFriend;
-    parambcw = mAction;
+    parambdw = mAction;
     if (localFriend != null)
     {
-      if (FriendAction.ADD != parambcw) {
+      if (FriendAction.ADD != parambdw) {
         break label94;
       }
       mJustAdded = true;
-      parambcw = e;
+      parambdw = e;
       if (e.indexOf(localFriend) == -1)
       {
         e.add(0, localFriend);
@@ -646,9 +651,9 @@ public class SendToFragment
       e.b().filter(h.getText().toString());
       return;
       label94:
-      if (FriendAction.DELETE == parambcw)
+      if (FriendAction.DELETE == parambdw)
       {
-        parambcw = e;
+        parambdw = e;
         if ((e.remove(localFriend)) || (f.remove(localFriend))) {
           i1 = 1;
         }

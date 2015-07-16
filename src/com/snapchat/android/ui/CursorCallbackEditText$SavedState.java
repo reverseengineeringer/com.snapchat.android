@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Parcelable.Creator;
 import android.view.View.BaseSavedState;
-import cgb;
+import chc;
 
 class CursorCallbackEditText$SavedState
   extends View.BaseSavedState
@@ -23,7 +23,7 @@ class CursorCallbackEditText$SavedState
     super(paramParcelable);
   }
   
-  public void writeToParcel(@cgb Parcel paramParcel, int paramInt)
+  public void writeToParcel(@chc Parcel paramParcel, int paramInt)
   {
     super.writeToParcel(paramParcel, paramInt);
     paramParcel.writeString(a);

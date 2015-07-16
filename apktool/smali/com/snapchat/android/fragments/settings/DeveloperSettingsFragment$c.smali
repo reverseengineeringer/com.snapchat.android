@@ -23,12 +23,12 @@
     .locals 0
 
     .prologue
-    .line 597
+    .line 574
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$c;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    .line 598
+    .line 575
     invoke-direct {p0, p2, p3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 599
+    .line 576
     return-void
 .end method

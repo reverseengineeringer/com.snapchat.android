@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 390
+    .line 392
     iput-object p1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$11;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 393
+    .line 395
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$11;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->h(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Z
@@ -51,19 +51,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 394
+    .line 396
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$11;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->o(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lcom/snapchat/android/ui/window/WindowConfiguration;
 
     move-result-object v0
 
-    .line 395
+    .line 397
     sget-object v1, Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;->DRAW_BACKGROUND_BEHIND:Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/window/WindowConfiguration;->a(Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;)V
 
-    .line 396
+    .line 398
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$11;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->p(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Landroid/view/inputmethod/InputMethodManager;
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 398
+    .line 400
     :cond_0
     return v2
 .end method

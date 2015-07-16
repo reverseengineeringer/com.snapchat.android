@@ -1,8 +1,8 @@
 package com.snapchat.android.fragments.chat;
 
-import bit.a;
+import bju.a;
 import com.snapchat.android.model.chat.ChatConversation;
-import yj;
+import zf;
 
 final class ChatFragment$20
   implements Runnable
@@ -12,8 +12,10 @@ final class ChatFragment$20
   public final void run()
   {
     ChatFragment.L(b);
-    if (yj.a(a)) {
-      ChatFragment.L(b).a(ChatFragment.f(b), bit.a.RELEASE);
+    if (zf.a(a))
+    {
+      ChatFragment.L(b).a(ChatFragment.f(b), bju.a.RELEASE);
+      ChatFragment.f(b).r();
     }
   }
 }

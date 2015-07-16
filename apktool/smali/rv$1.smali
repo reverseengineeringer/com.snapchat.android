@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqv$a;
+.implements Lqs$a;
 
 
 # annotations
@@ -20,14 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lrv;
 
+.field final synthetic val$transaction:Lcom/snapchat/android/model/CashTransaction;
+
 
 # direct methods
-.method constructor <init>(Lrv;)V
+.method constructor <init>(Lrv;Lcom/snapchat/android/model/CashTransaction;)V
     .locals 0
 
     .prologue
-    .line 41
+    .line 55
     iput-object p1, p0, Lrv$1;->this$0:Lrv;
+
+    iput-object p2, p0, Lrv$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,131 +40,113 @@
 
 
 # virtual methods
-.method public final a(Lqv;)V
-    .locals 1
-    .param p1    # Lqv;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 72
-    iget-object v0, p0, Lrv$1;->this$0:Lrv;
-
-    invoke-static {v0}, Lrv;->c(Lrv;)V
-
-    .line 73
-    return-void
-.end method
-
-.method public final a(Lqv;Ljava/util/List;Z)V
+.method public final a(Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;I)V
     .locals 3
-    .param p1    # Lqv;
-        .annotation build Lcgb;
+    .param p1    # Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lqv;",
-            "Ljava/util/List",
-            "<",
-            "Lqv;",
-            ">;Z)V"
-        }
-    .end annotation
 
     .prologue
-    .line 46
-    if-eqz p2, :cond_0
+    .line 66
+    const/4 v0, 0x2
 
-    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    .line 68
+    iget-object v0, p0, Lrv$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
+
+    if-eqz v0, :cond_0
+
+    .line 69
+    iget-object v0, p0, Lrv$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
+
+    iget-object v0, v0, Lcom/snapchat/android/model/CashTransaction;->mSenderUsername:Ljava/lang/String;
+
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 47
+    .line 70
+    const-string v0, "GENERATE_SQUARE_ACCESS_TOKEN_FAILED"
+
+    invoke-static {v0, p2}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Ljava/lang/String;I)V
+
+    .line 75
     :cond_0
-    new-instance v0, Lrv$1$1;
-
-    invoke-direct {v0, p0}, Lrv$1$1;-><init>(Lrv$1;)V
-
-    invoke-static {v0}, Lrv;->a(Lss$a;)Lsq;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lsq;->f()V
-
-    .line 68
     :goto_0
-    return-void
+    iget-object v0, p0, Lrv$1;->val$transaction:Lcom/snapchat/android/model/CashTransaction;
 
-    .line 66
-    :cond_1
+    invoke-static {v0, p1}, Lqw;->a(Lcom/snapchat/android/model/CashTransaction;Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;)V
+
+    .line 76
     iget-object v0, p0, Lrv$1;->this$0:Lrv;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lrv;->a(Lrv;)V
 
-    const/4 v2, 0x0
+    .line 77
+    return-void
 
-    invoke-virtual {v0, v1, v2}, Lrv;->b(Ljava/util/List;Z)V
+    .line 72
+    :cond_1
+    const-string v0, "GENERATE_SQUARE_ACCESS_TOKEN_FAILED"
+
+    invoke-static {v0, p2}, Lcom/snapchat/android/analytics/AnalyticsEvents;->b(Ljava/lang/String;I)V
 
     goto :goto_0
 .end method
 
-.method public final b(Lqv;)V
-    .locals 1
-    .param p1    # Lqv;
-        .annotation build Lcgb;
+.method public final a(Lcom/snapchat/android/api2/cash/ScCashResponsePayload;)V
+    .locals 3
+    .param p1    # Lcom/snapchat/android/api2/cash/ScCashResponsePayload;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 77
+    .line 58
+    check-cast p1, Lrb$a;
+
+    .line 60
     iget-object v0, p0, Lrv$1;->this$0:Lrv;
 
-    invoke-static {v0}, Lrv;->d(Lrv;)V
+    iget-object v0, v0, Lrv;->mCashAuthManager:Lyj;
 
-    .line 78
-    return-void
-.end method
+    iget-object v1, p1, Lrb$a;->accessToken:Lym;
 
-.method public final b(Lqv;Ljava/util/List;Z)V
-    .locals 3
-    .param p1    # Lqv;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/util/List;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lqv;",
-            "Ljava/util/List",
-            "<",
-            "Lqv;",
-            ">;Z)V"
-        }
-    .end annotation
+    invoke-virtual {v0, v1}, Lyj;->a(Lym;)V
 
-    .prologue
-    .line 83
+    .line 61
     iget-object v0, p0, Lrv$1;->this$0:Lrv;
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Lrv;->b(Ljava/util/List;Z)V
+    invoke-virtual {v0, v1, v2}, Lrv;->a(Ljava/util/List;Z)V
 
-    .line 84
+    .line 62
     return-void
 .end method

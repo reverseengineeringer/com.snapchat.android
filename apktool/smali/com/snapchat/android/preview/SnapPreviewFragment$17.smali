@@ -48,7 +48,7 @@
     .line 855
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$17;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laim;
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laji;
 
     move-result-object v0
 

@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
-import bwn;
+import bxo;
 
 public class UpdateView
   extends RelativeLayout
@@ -151,7 +151,7 @@ public class UpdateView
     for (;;)
     {
       paramContext.setLayoutParams((ViewGroup.LayoutParams)localObject1);
-      paramContext.setBackgroundDrawable(bwn.a());
+      paramContext.setBackgroundDrawable(bxo.a());
       addView(paramContext);
       return;
       b = false;
@@ -169,7 +169,7 @@ public class UpdateView
       label884:
       localObject1 = new RelativeLayout.LayoutParams(-1, i);
       ((RelativeLayout.LayoutParams)localObject1).addRule(10, -1);
-      ((ImageView)localObject3).setBackgroundDrawable(bwn.a());
+      ((ImageView)localObject3).setBackgroundDrawable(bxo.a());
       break label750;
       label915:
       ((RelativeLayout.LayoutParams)localObject1).addRule(3, 4097);

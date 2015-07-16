@@ -1,12 +1,4 @@
-public final class bdg
-{
-  public boolean enablePaging;
-  
-  public bdg(boolean paramBoolean)
-  {
-    enablePaging = paramBoolean;
-  }
-}
+public final class bdg {}
 
 /* Location:
  * Qualified Name:     bdg

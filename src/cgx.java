@@ -1,8 +1,7 @@
-public abstract interface cgx
-  extends cgz
-{
-  public abstract cgg a();
-}
+import java.lang.annotation.Annotation;
+
+@cgw
+public @interface cgx {}
 
 /* Location:
  * Qualified Name:     cgx

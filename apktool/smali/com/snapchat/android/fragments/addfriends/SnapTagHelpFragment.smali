@@ -102,10 +102,10 @@
 
     .prologue
     .line 39
-    invoke-static {}, Lnf;->d()V
+    invoke-static {}, Lnw;->d()V
 
     .line 41
-    const v0, 0x7f0400a6
+    const v0, 0x7f0400a8
 
     const/4 v1, 0x0
 
@@ -116,7 +116,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/addfriends/SnapTagHelpFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 42
-    const v0, 0x7f0a03a9
+    const v0, 0x7f0a03a8
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/SnapTagHelpFragment;->c(I)Landroid/view/View;
 
@@ -136,7 +136,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 55
-    invoke-static {}, Lnf;->e()V
+    invoke-static {}, Lnw;->e()V
 
     .line 56
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/SnapTagHelpFragment;->mFragmentLayout:Landroid/view/View;
@@ -157,15 +157,15 @@
     invoke-virtual {v0}, Lcom/snapchat/android/ui/TextureVideoView;->a()V
 
     .line 93
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -181,15 +181,15 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 65
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->CLOSE:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

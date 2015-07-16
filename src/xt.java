@@ -1,31 +1,30 @@
-import javax.inject.Provider;
+import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
 
 public final class xt
-  implements buj<xr>
 {
-  private final Provider<ayg> b;
+  private static final xt b = new xt();
+  TranscodingPreferencesWrapper a;
   
-  static
+  private xt()
   {
-    if (!xt.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
+    this(TranscodingPreferencesWrapper.a());
   }
   
-  private xt(Provider<ayg> paramProvider)
+  private xt(TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper)
   {
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    b = paramProvider;
+    a = paramTranscodingPreferencesWrapper;
   }
   
-  public static buj<xr> a(Provider<ayg> paramProvider)
+  public static xt a()
   {
-    return new xt(paramProvider);
+    return b;
+  }
+  
+  public static boolean b()
+  {
+    boolean bool1 = akr.bH();
+    boolean bool2 = TranscodingPreferencesWrapper.c();
+    return (bool1) && (bool2);
   }
 }
 

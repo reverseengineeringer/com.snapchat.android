@@ -1,16 +1,7 @@
 package com.facebook.crypto.util;
 
-import java.io.IOException;
-
 public class Assertions
 {
-  public static void checkArgumentForIO(boolean paramBoolean, String paramString)
-  {
-    if (!paramBoolean) {
-      throw new IOException(paramString);
-    }
-  }
-  
   public static void checkState(boolean paramBoolean, String paramString)
   {
     if (!paramBoolean) {

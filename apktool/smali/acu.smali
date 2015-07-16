@@ -1,268 +1,301 @@
-.class final Lacu;
-.super Lacn;
+.class public final Lacu;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lui$b;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lui$b",
+        "<",
+        "Lbkx;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final TAG:Ljava/lang/String;
+
+.field final mDiscoverRepository:Laej;
+
+.field final mEditionId:Ljava/lang/String;
+
+.field final mMediaStateTracker:Laed;
+
+.field protected final mSetRemoteVideoToStartedListener:Laej$b;
+
+.field final mTempVideoCatalog:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lbky;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field protected final mUpdatePanelStateWithNetworkError:Laej$b;
+
+.field protected final mUpdateRemoteUrlInPanelListener:Laej$b;
+
+.field final mVideoCatalog:Laee;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 6
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 20
-    new-instance v0, Lajx;
+    .line 41
+    invoke-static {}, Laej;->a()Laej;
 
-    invoke-direct {v0}, Lajx;-><init>()V
+    move-result-object v2
 
-    invoke-static {}, Ladf;->a()Ladf;
+    invoke-static {}, Laed;->a()Laed;
 
-    move-result-object v1
+    move-result-object v3
 
-    new-instance v2, Lacd;
+    invoke-static {}, Laee;->a()Laee;
 
-    invoke-direct {v2}, Lacd;-><init>()V
+    move-result-object v4
 
-    new-instance v3, Lact;
+    new-instance v5, Ljava/util/HashMap;
 
-    invoke-direct {v3}, Lact;-><init>()V
+    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
-    invoke-direct {p0, v0, v1, v2, v3}, Lacu;-><init>(Lajx;Ladf;Lacd;Lact;)V
+    move-object v0, p0
 
-    .line 22
+    move-object v1, p1
+
+    invoke-direct/range {v0 .. v5}, Lacu;-><init>(Ljava/lang/String;Laej;Laed;Laee;Ljava/util/Map;)V
+
+    .line 43
     return-void
 .end method
 
-.method private constructor <init>(Lajx;Ladf;Lacd;Lact;)V
-    .locals 0
+.method private constructor <init>(Ljava/lang/String;Laej;Laed;Laee;Ljava/util/Map;)V
+    .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Laej;",
+            "Laed;",
+            "Laee;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lbky;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 27
-    invoke-direct {p0, p1, p2, p3, p4}, Lacn;-><init>(Lajx;Ladf;Lacd;Lact;)V
+    .line 50
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 32
+    const-string v0, "FetchVideoCatalogOperation"
+
+    iput-object v0, p0, Lacu;->TAG:Ljava/lang/String;
+
+    .line 72
+    new-instance v0, Lacu$1;
+
+    invoke-direct {v0, p0}, Lacu$1;-><init>(Lacu;)V
+
+    iput-object v0, p0, Lacu;->mSetRemoteVideoToStartedListener:Laej$b;
+
+    .line 108
+    new-instance v0, Lacu$2;
+
+    invoke-direct {v0, p0}, Lacu$2;-><init>(Lacu;)V
+
+    iput-object v0, p0, Lacu;->mUpdateRemoteUrlInPanelListener:Laej$b;
+
+    .line 155
+    new-instance v0, Lacu$3;
+
+    invoke-direct {v0, p0}, Lacu$3;-><init>(Lacu;)V
+
+    iput-object v0, p0, Lacu;->mUpdatePanelStateWithNetworkError:Laej$b;
+
+    .line 51
+    iput-object p2, p0, Lacu;->mDiscoverRepository:Laej;
+
+    .line 52
+    iput-object p3, p0, Lacu;->mMediaStateTracker:Laed;
+
+    .line 53
+    iput-object p4, p0, Lacu;->mVideoCatalog:Laee;
+
+    .line 54
+    iput-object p1, p0, Lacu;->mEditionId:Ljava/lang/String;
+
+    .line 55
+    iput-object p5, p0, Lacu;->mTempVideoCatalog:Ljava/util/Map;
+
+    .line 56
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lacf;Lcom/snapchat/android/discover/model/DSnapPage;Lalc$a;)Z
-    .locals 9
+.method public final a()V
+    .locals 4
 
     .prologue
-    const/4 v8, 0x1
+    .line 62
+    iget-object v0, p0, Lacu;->mMediaStateTracker:Laed;
 
-    const/4 v7, 0x0
+    iget-object v0, v0, Laed;->b:Ljava/util/Map;
 
-    .line 32
-    iget-object v0, p1, Lacf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    if-eqz v0, :cond_0
+    .line 63
+    iget-object v0, p0, Lacu;->mVideoCatalog:Laee;
 
-    iget-object v0, p1, Lacf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
+    iget-object v0, v0, Laee;->a:Ljava/util/Map;
 
-    iget-object v0, v0, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    if-eqz v0, :cond_0
+    .line 64
+    iget-object v0, p0, Lacu;->mDiscoverRepository:Laej;
 
-    iget-object v0, p1, Lacf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Lcom/snapchat/android/discover/model/ChannelPage;->e:Ljava/lang/String;
+    new-array v1, v1, [Laej$b;
 
-    iget-object v1, p2, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v3, p0, Lacu;->mSetRemoteVideoToStartedListener:Laej$b;
+
+    aput-object v3, v1, v2
+
+    invoke-virtual {v0, v1}, Laej;->a([Laej$b;)V
+
+    .line 65
+    return-void
+.end method
+
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 6
+
+    .prologue
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    .line 31
+    check-cast p1, Lbkx;
+
+    invoke-virtual {p2}, Lus;->d()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
+
+    if-eqz p1, :cond_2
+
+    new-array v0, v5, [Ljava/lang/Object;
+
+    iget-object v1, p0, Lacu;->mEditionId:Ljava/lang/String;
+
+    aput-object v1, v0, v4
+
+    invoke-virtual {p1}, Lbkx;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
 
     :cond_0
-    move v0, v7
-
     :goto_0
-    if-eqz v0, :cond_6
-
-    .line 33
-    const-string v0, "WanDSnapLoadingStrategy"
-
-    const-string v1, "DISCOVER-MEDIA: Elected to download %s, it is in range in the selected edition"
-
-    new-array v2, v8, [Ljava/lang/Object;
-
-    aput-object p2, v2, v7
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    move v7, v8
-
-    .line 43
-    :cond_1
-    :goto_1
-    return v7
-
-    .line 32
-    :cond_2
-    iget-object v0, p1, Lacf;->b:Lcom/snapchat/android/discover/model/DSnapPage;
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p1, Lacf;->b:Lcom/snapchat/android/discover/model/DSnapPage;
-
-    iget-object v0, v0, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    :goto_2
-    iget-object v1, p0, Lacu;->b:Lacd;
-
-    iget-object v1, v1, Lacd;->a:Lajt;
-
-    const-string v2, "DISCOVER_V2"
-
-    const-string v3, "WAN_NUM_DSNAPS_TO_LOAD_BEFORE_CURRENT"
-
-    invoke-virtual {v1, v2, v3, v8}, Lajt;->a(Ljava/lang/String;Ljava/lang/String;I)I
-
-    move-result v1
-
-    sub-int v1, v0, v1
-
-    iget-object v2, p0, Lacu;->b:Lacd;
-
-    iget-object v2, v2, Lacd;->a:Lajt;
-
-    const-string v3, "DISCOVER_V2"
-
-    const-string v4, "WAN_NUM_DSNAPS_TO_LOAD_AFTER_CURRENT"
-
-    const/16 v5, 0x64
-
-    invoke-virtual {v2, v3, v4, v5}, Lajt;->a(Ljava/lang/String;Ljava/lang/String;I)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    iget-object v2, p2, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    if-ge v2, v1, :cond_4
-
-    move v0, v7
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v7
-
-    goto :goto_2
-
-    :cond_4
-    iget-object v1, p2, Lcom/snapchat/android/discover/model/DSnapPage;->f:Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-le v1, v0, :cond_5
-
-    move v0, v7
-
-    goto :goto_0
-
-    :cond_5
-    iput-boolean v7, p3, Lalc$a;->c:Z
-
-    move v0, v8
-
-    goto :goto_0
-
-    .line 37
-    :cond_6
-    iget-object v0, p0, Lacu;->c:Ladf;
-
-    iget-object v1, p2, Lcom/snapchat/android/discover/model/DSnapPage;->h:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ladf;->c(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iget-object v0, p0, Lacu;->b:Lacd;
-
-    iget-object v0, v0, Lacd;->a:Lajt;
-
-    const-string v1, "DISCOVER_V2"
-
-    const-string v4, "WAN_RECENT_CHANNEL_THRESHOLD_HOURS"
-
-    const/16 v5, 0x30
-
-    invoke-virtual {v0, v1, v4, v5}, Lajt;->a(Ljava/lang/String;Ljava/lang/String;I)I
-
-    move-result v0
-
-    int-to-long v4, v0
-
-    iget-object v0, p0, Lacu;->b:Lacd;
-
-    iget-object v0, v0, Lacd;->a:Lajt;
-
-    const-string v1, "DISCOVER_V2"
-
-    const-string v6, "WAN_RECENT_CHANNEL_NUM_DSNAPS_TO_LOAD"
-
-    invoke-virtual {v0, v1, v6, v8}, Lajt;->a(Ljava/lang/String;Ljava/lang/String;I)I
-
-    move-result v6
-
-    move-object v1, p2
-
-    invoke-static/range {v1 .. v6}, Lact;->a(Lcom/snapchat/android/discover/model/DSnapPage;JJI)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    iput-boolean v7, p3, Lalc$a;->c:Z
-
-    move v0, v8
-
-    :goto_3
     if-eqz v0, :cond_1
 
-    .line 38
-    const-string v0, "WanDSnapLoadingStrategy"
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string v1, "DISCOVER-MEDIA: Elected to download %s, user has seen this channel recently"
+    move-result-object v0
 
-    const/4 v2, 0x2
+    check-cast v0, Lbky;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    aput-object p2, v2, v7
+    invoke-virtual {v0}, Lbky;->a()Ljava/lang/String;
 
-    sget-object v3, Lcom/snapchat/android/networkmanager/DownloadPriority;->LOW:Lcom/snapchat/android/networkmanager/DownloadPriority;
+    move-result-object v2
 
-    invoke-virtual {v3}, Lcom/snapchat/android/networkmanager/DownloadPriority;->name()Ljava/lang/String;
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    iget-object v2, p0, Lacu;->mTempVideoCatalog:Ljava/util/Map;
+
+    invoke-virtual {v0}, Lbky;->a()Ljava/lang/String;
 
     move-result-object v3
 
-    aput-object v3, v2, v8
+    invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    goto :goto_0
 
-    move v7, v8
+    :cond_1
+    iget-object v0, p0, Lacu;->mDiscoverRepository:Laej;
 
-    .line 40
-    goto/16 :goto_1
+    new-array v1, v5, [Laej$b;
 
-    :cond_7
-    move v0, v7
+    iget-object v2, p0, Lacu;->mUpdateRemoteUrlInPanelListener:Laej$b;
 
-    .line 37
-    goto :goto_3
+    aput-object v2, v1, v4
+
+    invoke-virtual {v0, v1}, Laej;->a([Laej$b;)V
+
+    :goto_1
+    return-void
+
+    :cond_2
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget-object v1, p0, Lacu;->mEditionId:Ljava/lang/String;
+
+    aput-object v1, v0, v4
+
+    aput-object p2, v0, v5
+
+    iget-object v0, p0, Lacu;->mDiscoverRepository:Laej;
+
+    new-array v1, v5, [Laej$b;
+
+    iget-object v2, p0, Lacu;->mUpdatePanelStateWithNetworkError:Laej$b;
+
+    aput-object v2, v1, v4
+
+    invoke-virtual {v0, v1}, Laej;->a([Laej$b;)V
+
+    goto :goto_1
 .end method

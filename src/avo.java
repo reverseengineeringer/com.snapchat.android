@@ -1,20 +1,29 @@
-import android.graphics.Bitmap;
+import javax.inject.Provider;
 
 public final class avo
+  implements bvk<avn>
 {
-  @cgc
-  public final Bitmap mBitmap;
-  public final boolean mIsFromPool;
+  private final Provider<aaq> mOurCampusStoryDialogLogProvider;
   
-  public avo()
+  static
   {
-    this(null, false);
+    if (!avo.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  public avo(@cgc Bitmap paramBitmap, boolean paramBoolean)
+  private avo(Provider<aaq> paramProvider)
   {
-    mBitmap = paramBitmap;
-    mIsFromPool = paramBoolean;
+    assert (paramProvider != null);
+    mOurCampusStoryDialogLogProvider = paramProvider;
+  }
+  
+  public static bvk<avn> a(Provider<aaq> paramProvider)
+  {
+    return new avo(paramProvider);
   }
 }
 

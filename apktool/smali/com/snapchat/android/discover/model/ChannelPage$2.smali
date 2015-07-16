@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 515
+    .line 533
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
     .locals 2
 
     .prologue
-    .line 515
+    .line 533
     new-instance v0, Lcom/snapchat/android/discover/model/ChannelPage;
 
     const/4 v1, 0x0
@@ -58,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 515
+    .line 533
     new-array v0, p1, [Lcom/snapchat/android/discover/model/ChannelPage;
 
     return-object v0

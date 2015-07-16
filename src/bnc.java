@@ -1,58 +1,66 @@
-import java.net.ProtocolException;
+import java.io.Closeable;
+import java.io.File;
+import java.nio.charset.Charset;
 
-public final class bnc
-  implements cai
+public abstract class bnc
 {
-  public final bzu a = new bzu();
-  private boolean b;
-  private final int c;
-  
-  public bnc()
+  public static bnc a(bmx parambmx, String paramString)
   {
-    this(-1);
-  }
-  
-  public bnc(int paramInt)
-  {
-    c = paramInt;
-  }
-  
-  public final cak E_()
-  {
-    return cak.b;
-  }
-  
-  public final void a(cai paramcai)
-  {
-    bzu localbzu = new bzu();
-    a.a(localbzu, 0L, a.b);
-    paramcai.a_(localbzu, b);
-  }
-  
-  public final void a_(bzu parambzu, long paramLong)
-  {
-    if (b) {
-      throw new IllegalStateException("closed");
+    Object localObject = bnq.c;
+    bmx localbmx = parambmx;
+    if (parambmx != null) {
+      if (b == null) {
+        break label74;
+      }
     }
-    bmp.a(b, paramLong);
-    if ((c != -1) && (a.b > c - paramLong)) {
-      throw new ProtocolException("exceeded content-length limit of " + c + " bytes");
-    }
-    a.a_(parambzu, paramLong);
-  }
-  
-  public final void close()
-  {
-    if (b) {}
-    do
+    label74:
+    for (Charset localCharset = Charset.forName(b);; localCharset = null)
     {
-      return;
-      b = true;
-    } while (a.b >= c);
-    throw new ProtocolException("content-length promised " + c + " bytes, but received " + a.b);
+      localObject = localCharset;
+      localbmx = parambmx;
+      if (localCharset == null)
+      {
+        localObject = bnq.c;
+        localbmx = bmx.a(parambmx + "; charset=utf-8");
+      }
+      return a(localbmx, paramString.getBytes((Charset)localObject));
+    }
   }
   
-  public final void flush() {}
+  public static bnc a(bmx parambmx, final byte[] paramArrayOfByte)
+  {
+    final int i = paramArrayOfByte.length;
+    if (paramArrayOfByte == null) {
+      throw new NullPointerException("content == null");
+    }
+    bnq.a(paramArrayOfByte.length, i);
+    new bnc()
+    {
+      public final bmx a()
+      {
+        return a;
+      }
+      
+      public final void a(caw paramAnonymouscaw)
+      {
+        paramAnonymouscaw.c(paramArrayOfByte, d, i);
+      }
+      
+      public final long b()
+      {
+        return i;
+      }
+    };
+  }
+  
+  public abstract bmx a();
+  
+  public abstract void a(caw paramcaw);
+  
+  public long b()
+  {
+    return -1L;
+  }
 }
 
 /* Location:

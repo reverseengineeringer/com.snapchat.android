@@ -4,12 +4,12 @@
 
 
 # instance fields
-.field private f:Lckx;
+.field private f:Lcly;
     .annotation build Lr;
     .end annotation
 .end field
 
-.field private g:Lckt;
+.field private g:Lclu;
     .annotation build Lr;
     .end annotation
 .end field
@@ -100,7 +100,7 @@
 
     .prologue
     .line 59
-    new-instance v0, Lcks;
+    new-instance v0, Lclt;
 
     new-instance v1, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller$1;
 
@@ -110,21 +110,21 @@
 
     invoke-direct {v2, p0}, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller$2;-><init>(Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;)V
 
-    invoke-direct {v0, v1, v2}, Lcks;-><init>(Lcks$a;Lcks$a;)V
+    invoke-direct {v0, v1, v2}, Lclt;-><init>(Lclt$a;Lclt$a;)V
 
     .line 72
-    new-instance v1, Lckw;
+    new-instance v1, Lclx;
 
-    invoke-direct {v1, v0}, Lckw;-><init>(Lcks;)V
+    invoke-direct {v1, v0}, Lclx;-><init>(Lclt;)V
 
-    iput-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->f:Lckx;
+    iput-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->f:Lcly;
 
     .line 73
-    new-instance v1, Lckt;
+    new-instance v1, Lclu;
 
-    invoke-direct {v1, v0}, Lckt;-><init>(Lcks;)V
+    invoke-direct {v1, v0}, Lclu;-><init>(Lclt;)V
 
-    iput-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->g:Lckt;
+    iput-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->g:Lclu;
 
     .line 74
     return-void
@@ -135,7 +135,7 @@
 
     .prologue
     .line 52
-    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->g:Lckt;
+    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->g:Lclu;
 
     if-nez v0, :cond_0
 
@@ -147,9 +147,9 @@
     :cond_0
     iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->b:Landroid/view/View;
 
-    iget-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->g:Lckt;
+    iget-object v1, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->g:Lclu;
 
-    invoke-virtual {v1, p1}, Lckt;->a(F)F
+    invoke-virtual {v1, p1}, Lclu;->a(F)F
 
     move-result v1
 
@@ -163,19 +163,19 @@
 
     .prologue
     .line 41
-    sget v0, Lckr$b;->vertical_recycler_fast_scroller_layout:I
+    sget v0, Lcls$b;->vertical_recycler_fast_scroller_layout:I
 
     return v0
 .end method
 
-.method protected getScrollProgressCalculator()Lckv;
+.method protected getScrollProgressCalculator()Lclw;
     .locals 1
     .annotation build Lr;
     .end annotation
 
     .prologue
     .line 47
-    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->f:Lckx;
+    iget-object v0, p0, Lxyz/danoz/recyclerviewfastscroller/vertical/VerticalRecyclerViewFastScroller;->f:Lcly;
 
     return-object v0
 .end method

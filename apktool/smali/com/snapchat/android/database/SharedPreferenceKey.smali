@@ -33,8 +33,6 @@
 
 .field public static final enum BIRTHDAY_THIS_YEAR_IN_MILLIS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-.field public static final enum BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
-
 .field public static final enum CAMERA_NUMBER_PREFERENCE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum CAPTCHA_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
@@ -73,15 +71,13 @@
 
 .field public static final enum DEVELOPER_OPTIONS_ADD_FRIENDS_FROM_SCREENSHOT_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-.field public static final enum DEVELOPER_OPTIONS_CUSTOM_DISCOVER_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
-
 .field public static final enum DEVELOPER_OPTIONS_CUSTOM_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+.field public static final enum DEVELOPER_OPTIONS_DISCOVER_CUSTOM_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum DEVELOPER_OPTIONS_FAKE_FRIENDMOJI_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum DEVELOPER_OPTIONS_HORIZONTAL_SCROLL:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-.field public static final enum DEVELOPER_OPTIONS_NEW_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum DEVELOPER_OPTIONS_NUM_STORIES_PER_THUMBNAIL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
@@ -137,8 +133,6 @@
 
 .field public static final enum HAS_SEEN_CAPTION_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-.field public static final enum HAS_SEEN_DISCOVER_PAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
-
 .field public static final enum HAS_SEEN_NEW_FRIEND_REQUEST_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum HAS_SEEN_PROFILE_PAGE_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
@@ -147,13 +141,9 @@
 
 .field public static final enum HAS_SEEN_PROMPT_FOR_LOCATION_IN_CAMERA:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-.field public static final enum HAS_SEEN_STORIES_TTV_TOOLTIP:Lcom/snapchat/android/database/SharedPreferenceKey;
-
 .field public static final enum HAS_SEEN_SWIPE_FILTERS_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum HAS_SEEN_TAKE_SNAP_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-.field public static final enum HAS_SEEN_TAP_TO_VIEW_SNAPS_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum HAS_SHARED_DISCOVER_SNAP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
@@ -277,6 +267,8 @@
 
 .field public static final enum SEEN_SWIPE_DOWN_TUTORIAL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
+.field public static final enum SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
+
 .field public static final enum SHOULD_SHOW_CLEAR_CONVERSATION_DIALOG:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum SHOULD_SHOW_POST_STORY_DIALOG:Lcom/snapchat/android/database/SharedPreferenceKey;
@@ -332,6 +324,8 @@
 .field public static final enum USER_JSON:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum USER_TARGETING:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+.field public static final enum USE_ADDLIVE_PRESENCE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
 .field public static final enum VIBRATION_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
@@ -672,22 +666,9 @@
     .line 38
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    const-string v1, "BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING"
-
-    const/16 v2, 0x18
-
-    const-string v3, "bounceTeamSnapchatConversationOnboarding"
-
-    invoke-direct {v0, v1, v2, v3, v5}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    .line 39
-    new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
-
     const-string v1, "CAMERA_NUMBER_PREFERENCE"
 
-    const/16 v2, 0x19
+    const/16 v2, 0x18
 
     const-string v3, "snapchatCameraPreference"
 
@@ -695,12 +676,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CAMERA_NUMBER_PREFERENCE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 40
+    .line 39
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "ALLOWED_GPS"
 
-    const/16 v2, 0x1a
+    const/16 v2, 0x19
 
     const-string v3, "allowedGps"
 
@@ -708,12 +689,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->ALLOWED_GPS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 41
+    .line 40
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SYNC_ON_FEED_OPEN"
 
-    const/16 v2, 0x1b
+    const/16 v2, 0x1a
 
     const-string v3, "sync_on_feed_open"
 
@@ -721,12 +702,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SYNC_ON_FEED_OPEN:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 42
+    .line 41
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "STUDY_SETTINGS"
 
-    const/16 v2, 0x1c
+    const/16 v2, 0x1b
 
     const-string v3, "study_settings"
 
@@ -734,12 +715,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->STUDY_SETTINGS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 43
+    .line 42
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "ANDROID_DISPLAY_NAME"
 
-    const/16 v2, 0x1d
+    const/16 v2, 0x1c
 
     const-string v3, "android_display_name"
 
@@ -747,12 +728,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->ANDROID_DISPLAY_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 46
+    .line 45
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_PROFILE_IMAGES_TAKEN_TIMESTAMP"
 
-    const/16 v2, 0x1e
+    const/16 v2, 0x1d
 
     const-string v3, "last_profile_images_taken_timestamp"
 
@@ -760,12 +741,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_TAKEN_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 47
+    .line 46
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_PROFILE_IMAGES_DELETED_TIMESTAMP"
 
-    const/16 v2, 0x1f
+    const/16 v2, 0x1e
 
     const-string v3, "last_profile_images_deleted_timestamp"
 
@@ -773,12 +754,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_DELETED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 48
+    .line 47
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_PROFILE_IMAGES_CACHED_TIMESTAMP"
 
-    const/16 v2, 0x20
+    const/16 v2, 0x1f
 
     const-string v3, "last_profile_images_cached_timestamp"
 
@@ -786,12 +767,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_CACHED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 49
+    .line 48
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "PROFILE_IMAGES_UPLOADED"
 
-    const/16 v2, 0x21
+    const/16 v2, 0x20
 
     const-string v3, "profile_images_uploaded"
 
@@ -799,12 +780,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->PROFILE_IMAGES_UPLOADED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 50
+    .line 49
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "HAS_PROFILE_IMAGES"
 
-    const/16 v2, 0x22
+    const/16 v2, 0x21
 
     const-string v3, "has_profile_images"
 
@@ -812,12 +793,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_PROFILE_IMAGES:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 51
+    .line 50
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "PROFILE_IMAGES_SHARING_COUNT"
 
-    const/16 v2, 0x23
+    const/16 v2, 0x22
 
     const-string v3, "profile_images_sharing_count"
 
@@ -825,12 +806,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->PROFILE_IMAGES_SHARING_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 52
+    .line 51
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "HAS_SEEN_PROFILE_PICTURES_ONBOARDING_MESSAGE"
 
-    const/16 v2, 0x24
+    const/16 v2, 0x23
 
     const-string v3, "has_seen_profile_pictures_onboarding_message"
 
@@ -838,12 +819,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_PROFILE_PICTURES_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 55
+    .line 54
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "TAP_TO_SKIP_COUNT"
 
-    const/16 v2, 0x25
+    const/16 v2, 0x24
 
     const-string v3, "tap_that_count"
 
@@ -851,12 +832,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->TAP_TO_SKIP_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 56
+    .line 55
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SEEN_SWIPE_DOWN_TUTORIAL"
 
-    const/16 v2, 0x26
+    const/16 v2, 0x25
 
     const-string v3, "seen_swipe_down_tutorial"
 
@@ -864,12 +845,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SEEN_SWIPE_DOWN_TUTORIAL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 57
+    .line 56
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SWIPED_DOWN_IN_VIEWER"
 
-    const/16 v2, 0x27
+    const/16 v2, 0x26
 
     const-string v3, "swiped_down_in_viewer"
 
@@ -877,12 +858,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SWIPED_DOWN_IN_VIEWER:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 66
+    .line 65
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IS_REGISTERING"
 
-    const/16 v2, 0x28
+    const/16 v2, 0x27
 
     const-string v3, "is_registering"
 
@@ -890,12 +871,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_REGISTERING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 67
+    .line 66
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "NEEDS_PHONE_VERIFICATION"
 
-    const/16 v2, 0x29
+    const/16 v2, 0x28
 
     const-string v3, "needs_phone_verification"
 
@@ -903,12 +884,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->NEEDS_PHONE_VERIFICATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 68
+    .line 67
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "NEEDS_CAPTCHA_VERIFICATION"
 
-    const/16 v2, 0x2a
+    const/16 v2, 0x29
 
     const-string v3, "needs_captcha_verification"
 
@@ -916,12 +897,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->NEEDS_CAPTCHA_VERIFICATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 69
+    .line 68
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CAPTCHA_PROMPT"
 
-    const/16 v2, 0x2b
+    const/16 v2, 0x2a
 
     const-string v3, "captcha_prompt"
 
@@ -929,12 +910,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CAPTCHA_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 70
+    .line 69
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "USER_JSON"
 
-    const/16 v2, 0x2c
+    const/16 v2, 0x2b
 
     const-string v3, "user_json"
 
@@ -942,12 +923,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->USER_JSON:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 71
+    .line 70
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "RESPONSE_CHECKSUM_FRIENDS"
 
-    const/16 v2, 0x2d
+    const/16 v2, 0x2c
 
     const-string v3, "checksum_friends"
 
@@ -955,12 +936,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_FRIENDS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 72
+    .line 71
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "RESPONSE_CHECKSUM_UPDATES"
 
-    const/16 v2, 0x2e
+    const/16 v2, 0x2d
 
     const-string v3, "checksum_updates"
 
@@ -968,12 +949,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_UPDATES:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 73
+    .line 72
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "RESPONSE_CHECKSUM_CONVERSATIONS"
 
-    const/16 v2, 0x2f
+    const/16 v2, 0x2e
 
     const-string v3, "checksum_conversations"
 
@@ -981,18 +962,31 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_CONVERSATIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 74
+    .line 73
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "RESPONSE_CHECKSUM_STORIES"
 
-    const/16 v2, 0x30
+    const/16 v2, 0x2f
 
     const-string v3, "checksums_stories"
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_STORIES:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    .line 75
+    new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    const-string v1, "SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED"
+
+    const/16 v2, 0x30
+
+    const-string v3, "should_bounce_team_snapchat_cell_in_feed"
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+
+    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     .line 76
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
@@ -1085,25 +1079,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_PROMPT_FOR_LOCATION_IN_CAMERA:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 85
-    new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    const-string v1, "HAS_SEEN_TAP_TO_VIEW_SNAPS_IN_FEED"
-
-    const/16 v2, 0x38
-
-    const-string v3, "has_seen_tap_to_view_snaps_in_feed"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_TAP_TO_VIEW_SNAPS_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    .line 87
+    .line 86
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_PING_RESULTS"
 
-    const/16 v2, 0x39
+    const/16 v2, 0x38
 
     const-string v3, "last_ping_results"
 
@@ -1111,12 +1092,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PING_RESULTS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 88
+    .line 87
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "PROXY_ENDPOINT"
 
-    const/16 v2, 0x3a
+    const/16 v2, 0x39
 
     const-string v3, "proxy_endpoint"
 
@@ -1124,12 +1105,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->PROXY_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 89
+    .line 88
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "ENDPOINT_SET"
 
-    const/16 v2, 0x3b
+    const/16 v2, 0x3a
 
     const-string v3, "endpoint_set"
 
@@ -1137,12 +1118,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->ENDPOINT_SET:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 91
+    .line 90
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "FILTERS_ENABLED"
 
-    const/16 v2, 0x3c
+    const/16 v2, 0x3b
 
     const-string v3, "smart_filters_setting"
 
@@ -1150,12 +1131,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->FILTERS_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 92
+    .line 91
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "REPLAY_SETTING"
 
-    const/16 v2, 0x3d
+    const/16 v2, 0x3c
 
     const-string v3, "replay_setting"
 
@@ -1163,12 +1144,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->REPLAY_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 93
+    .line 92
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "FRONT_FACING_FLASH_SETTING"
 
-    const/16 v2, 0x3e
+    const/16 v2, 0x3d
 
     const-string v3, "front_facing_flash_setting"
 
@@ -1176,12 +1157,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->FRONT_FACING_FLASH_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 94
+    .line 93
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_ADDRESS_BOOK_UPDATED_TIMESTAMP"
 
-    const/16 v2, 0x3f
+    const/16 v2, 0x3e
 
     const-string v3, "last_address_book_updated_timestamp"
 
@@ -1189,12 +1170,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_ADDRESS_BOOK_UPDATED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 95
+    .line 94
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "USER_TARGETING"
 
-    const/16 v2, 0x40
+    const/16 v2, 0x3f
 
     const-string v3, "user_targeting"
 
@@ -1202,12 +1183,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->USER_TARGETING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 97
+    .line 96
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_EXTERNAL_IMAGE_TAKEN_TIMESTAMP"
 
-    const/16 v2, 0x41
+    const/16 v2, 0x40
 
     const-string v3, "last_external_image_taken_timestamp"
 
@@ -1215,12 +1196,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_EXTERNAL_IMAGE_TAKEN_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 99
+    .line 98
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "KEYBOARD_HEIGHT_PORTRAIT"
 
-    const/16 v2, 0x42
+    const/16 v2, 0x41
 
     const-string v3, "caption_view_keyboard_height_portrait"
 
@@ -1228,12 +1209,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->KEYBOARD_HEIGHT_PORTRAIT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 100
+    .line 99
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "KEYBOARD_HEIGHT_LANDSCAPE"
 
-    const/16 v2, 0x43
+    const/16 v2, 0x42
 
     const-string v3, "caption_view_keyboard_height_landscape"
 
@@ -1241,12 +1222,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->KEYBOARD_HEIGHT_LANDSCAPE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 102
+    .line 101
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IS_TEMPERATURE_SCALE_IMPERIAL"
 
-    const/16 v2, 0x44
+    const/16 v2, 0x43
 
     const-string v3, "isTemperatureScaleImperial"
 
@@ -1254,12 +1235,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_TEMPERATURE_SCALE_IMPERIAL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 103
+    .line 102
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SPEED_USE_MPH"
 
-    const/16 v2, 0x45
+    const/16 v2, 0x44
 
     const-string v3, "speedUseMph"
 
@@ -1267,12 +1248,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SPEED_USE_MPH:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 105
+    .line 104
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CONVERSATIONS_ITER_TOKEN"
 
-    const/16 v2, 0x46
+    const/16 v2, 0x45
 
     const-string v3, "conversationsIterToken"
 
@@ -1280,12 +1261,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CONVERSATIONS_ITER_TOKEN:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 106
+    .line 105
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "PENDING_CLEAR_CHAT_CONVERSATION_ID"
 
-    const/16 v2, 0x47
+    const/16 v2, 0x46
 
     const-string v3, "pendingClearChatConversationId"
 
@@ -1293,18 +1274,31 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->PENDING_CLEAR_CHAT_CONVERSATION_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 107
+    .line 106
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "TIMES_DISPLAYED_HERE_TOOLTIP"
 
-    const/16 v2, 0x48
+    const/16 v2, 0x47
 
     const-string v3, "timesDisplayedHereTooltip_3"
 
     invoke-direct {v0, v1, v2, v3, v5}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->TIMES_DISPLAYED_HERE_TOOLTIP:Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    .line 107
+    new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
+
+    const-string v1, "USE_ADDLIVE_PRESENCE"
+
+    const/16 v2, 0x48
+
+    const-string v3, "useAddlivePresence"
+
+    invoke-direct {v0, v1, v2, v3, v5}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+
+    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->USE_ADDLIVE_PRESENCE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     .line 109
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
@@ -1387,22 +1381,9 @@
     .line 117
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    const-string v1, "DEVELOPER_OPTIONS_NEW_FEED"
-
-    const/16 v2, 0x4f
-
-    const-string v3, "developerOptionsNewFeed"
-
-    invoke-direct {v0, v1, v2, v3, v5}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_NEW_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    .line 118
-    new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
-
     const-string v1, "DEVELOPER_OPTIONS_ADD_FRIENDS_FROM_SCREENSHOT_ENABLED"
 
-    const/16 v2, 0x50
+    const/16 v2, 0x4f
 
     const-string v3, "developerOptionsAddFriendsFromScreenshotEnabled"
 
@@ -1410,12 +1391,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_ADD_FRIENDS_FROM_SCREENSHOT_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 119
+    .line 118
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEVELOPER_OPTIONS_SNI_ENABLED"
 
-    const/16 v2, 0x51
+    const/16 v2, 0x50
 
     const-string v3, "developerOptionsSniEnabled"
 
@@ -1423,12 +1404,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SNI_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 120
+    .line 119
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEVELOPER_OPTIONS_CUSTOM_ENDPOINT"
 
-    const/16 v2, 0x52
+    const/16 v2, 0x51
 
     const-string v3, "developerOptionsCustomEndpoint"
 
@@ -1436,25 +1417,25 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_CUSTOM_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 121
+    .line 120
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    const-string v1, "DEVELOPER_OPTIONS_CUSTOM_DISCOVER_ENDPOINT"
+    const-string v1, "DEVELOPER_OPTIONS_DISCOVER_CUSTOM_ENDPOINT"
 
-    const/16 v2, 0x53
+    const/16 v2, 0x52
 
-    const-string v3, "developerOptionsCustomDiscoverEndpoint"
+    const-string v3, "developerOptionsDiscoverCustomEndpoint"
 
     invoke-direct {v0, v1, v2, v3, v5}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
-    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_CUSTOM_DISCOVER_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_DISCOVER_CUSTOM_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 122
+    .line 121
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEVELOPER_OPTIONS_SQUARE_SANDBOX"
 
-    const/16 v2, 0x54
+    const/16 v2, 0x53
 
     const-string v3, "developerOptionsSquareSandbox"
 
@@ -1462,12 +1443,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SQUARE_SANDBOX:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 123
+    .line 122
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEVELOPER_OPTIONS_RELEASE_DELAY_TIMER"
 
-    const/16 v2, 0x55
+    const/16 v2, 0x54
 
     const-string v3, "developerOptionsReleaseDelayTimer"
 
@@ -1475,12 +1456,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_RELEASE_DELAY_TIMER:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 124
+    .line 123
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEVELOPER_OPTIONS_SHOULD_SHOW_DEVICE_TOKEN_TOASTS"
 
-    const/16 v2, 0x56
+    const/16 v2, 0x55
 
     const-string v3, "developerOptionsShouldShowDeviceTokenToasts"
 
@@ -1488,12 +1469,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOULD_SHOW_DEVICE_TOKEN_TOASTS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 125
+    .line 124
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEVELOPER_OPTIONS_NUM_STORIES_PER_THUMBNAIL"
 
-    const/16 v2, 0x57
+    const/16 v2, 0x56
 
     const-string v3, "developerOptionsNumStoriesPerThumbnail"
 
@@ -1501,12 +1482,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_NUM_STORIES_PER_THUMBNAIL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 126
+    .line 125
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEVELOPER_OPTIONS_SHOW_DIAGNOSTIC_OVERLAY"
 
-    const/16 v2, 0x58
+    const/16 v2, 0x57
 
     const-string v3, "developerOptionsShowDiagnosticOverlay"
 
@@ -1514,12 +1495,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOW_DIAGNOSTIC_OVERLAY:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 127
+    .line 126
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEVELOPER_OPTIONS_SHOW_PROFILE_PICTURES"
 
-    const/16 v2, 0x59
+    const/16 v2, 0x58
 
     const-string v3, "developerOptionsShowProfilePictures"
 
@@ -1527,12 +1508,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOW_PROFILE_PICTURES:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 128
+    .line 127
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "REGISTRATION_TESTING_ENDPOINT"
 
-    const/16 v2, 0x5a
+    const/16 v2, 0x59
 
     const-string v3, "RegistrationTestingEndpoint"
 
@@ -1540,12 +1521,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->REGISTRATION_TESTING_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 129
+    .line 128
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "REGISTRATION_CONTACTBOOK_EXPERIMENT"
 
-    const/16 v2, 0x5b
+    const/16 v2, 0x5a
 
     const-string v3, "RegistrationContactBookExperimentGroup"
 
@@ -1553,12 +1534,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->REGISTRATION_CONTACTBOOK_EXPERIMENT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 130
+    .line 129
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_START_TRACKING_ANR"
 
-    const/16 v2, 0x5c
+    const/16 v2, 0x5b
 
     const-string v3, "lastTrackingAnr"
 
@@ -1566,12 +1547,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_START_TRACKING_ANR:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 132
+    .line 131
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "NOTIFICATIONS_ENABLED"
 
-    const/16 v2, 0x5d
+    const/16 v2, 0x5c
 
     const-string v3, "notificationsEnabled"
 
@@ -1579,12 +1560,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->NOTIFICATIONS_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 133
+    .line 132
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LEGACY_SOUND_VIBRATION_ENABLED"
 
-    const/16 v2, 0x5e
+    const/16 v2, 0x5d
 
     const-string v3, "notificationSoundVibration"
 
@@ -1592,12 +1573,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LEGACY_SOUND_VIBRATION_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 134
+    .line 133
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "VIBRATION_ENABLED"
 
-    const/16 v2, 0x5f
+    const/16 v2, 0x5e
 
     const-string v3, "notificationVibration"
 
@@ -1605,12 +1586,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->VIBRATION_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 135
+    .line 134
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SOUND_ENABLED"
 
-    const/16 v2, 0x60
+    const/16 v2, 0x5f
 
     const-string v3, "notificationSound"
 
@@ -1618,12 +1599,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SOUND_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 136
+    .line 135
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LED_ENABLED"
 
-    const/16 v2, 0x61
+    const/16 v2, 0x60
 
     const-string v3, "notificationLed"
 
@@ -1631,12 +1612,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LED_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 137
+    .line 136
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "WAKE_SCREEN_ENABLED"
 
-    const/16 v2, 0x62
+    const/16 v2, 0x61
 
     const-string v3, "notificationWakeScreen"
 
@@ -1644,12 +1625,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->WAKE_SCREEN_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 139
+    .line 138
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_SERVICE_ACTIVE"
 
-    const/16 v2, 0x63
+    const/16 v2, 0x62
 
     const-string v3, "cash_service_active"
 
@@ -1657,12 +1638,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SERVICE_ACTIVE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 140
+    .line 139
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_PROVIDER_NAME"
 
-    const/16 v2, 0x64
+    const/16 v2, 0x63
 
     const-string v3, "cash_provider_name"
 
@@ -1670,12 +1651,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_PROVIDER_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 141
+    .line 140
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_CUSTOMER_ID"
 
-    const/16 v2, 0x65
+    const/16 v2, 0x64
 
     const-string v3, "cash_customer_id"
 
@@ -1683,12 +1664,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CUSTOMER_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 142
+    .line 141
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_CUSTOMER_ALLOWED"
 
-    const/16 v2, 0x66
+    const/16 v2, 0x65
 
     const-string v3, "cash_customer_allowed"
 
@@ -1696,12 +1677,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CUSTOMER_ALLOWED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 143
+    .line 142
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_CARD_LINKED"
 
-    const/16 v2, 0x67
+    const/16 v2, 0x66
 
     const-string v3, "cash_card_linked"
 
@@ -1709,12 +1690,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_LINKED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 144
+    .line 143
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_CARD_SUFFIX"
 
-    const/16 v2, 0x68
+    const/16 v2, 0x67
 
     const-string v3, "cash_card_suffix"
 
@@ -1722,12 +1703,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_SUFFIX:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 145
+    .line 144
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_CARD_BRAND"
 
-    const/16 v2, 0x69
+    const/16 v2, 0x68
 
     const-string v3, "cash_card_brand"
 
@@ -1735,12 +1716,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_BRAND:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 146
+    .line 145
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_HAS_TRANSACTIONS"
 
-    const/16 v2, 0x6a
+    const/16 v2, 0x69
 
     const-string v3, "cash_has_transactions"
 
@@ -1748,12 +1729,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_HAS_TRANSACTIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 147
+    .line 146
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_OUTDATED_PROFILE"
 
-    const/16 v2, 0x6b
+    const/16 v2, 0x6a
 
     const-string v3, "cash_outdated_profile"
 
@@ -1761,12 +1742,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_OUTDATED_PROFILE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 148
+    .line 147
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_SEND_CONFIRMATION"
 
-    const/16 v2, 0x6c
+    const/16 v2, 0x6b
 
     const-string v3, "cash_send_confirmation"
 
@@ -1774,12 +1755,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SEND_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 149
+    .line 148
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_SWIPE_SEND_CONFIRMATION"
 
-    const/16 v2, 0x6d
+    const/16 v2, 0x6c
 
     const-string v3, "cash_swipe_send_confirmation"
 
@@ -1787,12 +1768,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SWIPE_SEND_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 150
+    .line 149
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SECURITY_CODE_SETTING"
 
-    const/16 v2, 0x6e
+    const/16 v2, 0x6d
 
     const-string v3, "security_code_setting"
 
@@ -1800,12 +1781,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SECURITY_CODE_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 152
+    .line 151
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IS_ACCOUNT_LOCKED"
 
-    const/16 v2, 0x6f
+    const/16 v2, 0x6e
 
     const-string v3, "isAccountLocked"
 
@@ -1813,12 +1794,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_ACCOUNT_LOCKED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 153
+    .line 152
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "HAS_ACCEPTED_SQUARE_TOS"
 
-    const/16 v2, 0x70
+    const/16 v2, 0x6f
 
     const-string v3, "square_tos_accepted"
 
@@ -1826,12 +1807,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_SQUARE_TOS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 154
+    .line 153
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "HAS_ACCEPTED_SNAPCASH_TOS"
 
-    const/16 v2, 0x71
+    const/16 v2, 0x70
 
     const-string v3, "snapcash_tos_accepted"
 
@@ -1839,12 +1820,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_SNAPCASH_TOS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 155
+    .line 154
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_CARD_DIGITS"
 
-    const/16 v2, 0x72
+    const/16 v2, 0x71
 
     const-string v3, "last_card_digits"
 
@@ -1852,12 +1833,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_CARD_DIGITS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 156
+    .line 155
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CASH_TOOLTIP_DISPLAY_COUNT"
 
-    const/16 v2, 0x73
+    const/16 v2, 0x72
 
     const-string v3, "cash_tooltip_display_count"
 
@@ -1865,12 +1846,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_TOOLTIP_DISPLAY_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 159
+    .line 158
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "TRANSCODING_HISTORY"
 
-    const/16 v2, 0x74
+    const/16 v2, 0x73
 
     const-string v3, "transcodingHistory"
 
@@ -1878,12 +1859,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_HISTORY:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 160
+    .line 159
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "TRANSCODING_STATE"
 
-    const/16 v2, 0x75
+    const/16 v2, 0x74
 
     const-string v3, "transcodingState"
 
@@ -1891,12 +1872,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_STATE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 161
+    .line 160
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "TRANSCODING_IN_PROGRESS_FLAG"
 
-    const/16 v2, 0x76
+    const/16 v2, 0x75
 
     const-string v3, "transcoding_in_progress"
 
@@ -1904,12 +1885,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_IN_PROGRESS_FLAG:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 163
+    .line 162
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "VIDEO_FILTERS"
 
-    const/16 v2, 0x77
+    const/16 v2, 0x76
 
     const-string v3, "video_filters"
 
@@ -1917,12 +1898,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->VIDEO_FILTERS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 164
+    .line 163
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "VIDEO_ENCODING_RESOLUTIONS"
 
-    const/16 v2, 0x78
+    const/16 v2, 0x77
 
     const-string v3, "video_encoding_resolutions"
 
@@ -1930,12 +1911,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->VIDEO_ENCODING_RESOLUTIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 167
+    .line 166
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DEMOGRAPHICS_TRACKING_SENT_FLAG"
 
-    const/16 v2, 0x79
+    const/16 v2, 0x78
 
     const-string v3, "demographics_tracking_sent_flag"
 
@@ -1943,12 +1924,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEMOGRAPHICS_TRACKING_SENT_FLAG:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 170
+    .line 169
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SAVE_STORY_TO_GALLERY_CONFIRMATION"
 
-    const/16 v2, 0x7a
+    const/16 v2, 0x79
 
     const-string v3, "save_story_to_gallery_confirmation"
 
@@ -1956,12 +1937,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SAVE_STORY_TO_GALLERY_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 171
+    .line 170
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SAVE_STORY_TO_GALLERY_ENABLED"
 
-    const/16 v2, 0x7b
+    const/16 v2, 0x7a
 
     const-string v3, "save_story_to_gallery_enabled"
 
@@ -1969,25 +1950,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SAVE_STORY_TO_GALLERY_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 172
-    new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    const-string v1, "HAS_SEEN_STORIES_TTV_TOOLTIP"
-
-    const/16 v2, 0x7c
-
-    const-string v3, "has_seen_stories_ttv_tooltip"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_STORIES_TTV_TOOLTIP:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    .line 175
+    .line 173
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "RAW_THUMBNAIL_UPLOAD_ENABLED"
 
-    const/16 v2, 0x7d
+    const/16 v2, 0x7b
 
     const-string v3, "raw_thumbnail_upload_enabled"
 
@@ -1995,12 +1963,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->RAW_THUMBNAIL_UPLOAD_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 178
+    .line 176
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "YEAR_CLASS"
 
-    const/16 v2, 0x7e
+    const/16 v2, 0x7c
 
     const-string v3, "year_class"
 
@@ -2008,12 +1976,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->YEAR_CLASS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 181
+    .line 179
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CURRENT_EDITION_IDS"
 
-    const/16 v2, 0x7f
+    const/16 v2, 0x7d
 
     const-string v3, "current_edition_ids"
 
@@ -2021,12 +1989,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CURRENT_EDITION_IDS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 182
+    .line 180
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DISCOVER_TIME_LAST_SEEN"
 
-    const/16 v2, 0x80
+    const/16 v2, 0x7e
 
     const-string v3, "discover_time_last_seen"
 
@@ -2034,12 +2002,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_TIME_LAST_SEEN:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 183
+    .line 181
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DISCOVER_SEEN_ONBOARDING"
 
-    const/16 v2, 0x81
+    const/16 v2, 0x7f
 
     const-string v3, "discover_seen_onboarding"
 
@@ -2047,12 +2015,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_SEEN_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 184
+    .line 182
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "HAS_SHARED_DISCOVER_SNAP"
 
-    const/16 v2, 0x82
+    const/16 v2, 0x80
 
     const-string v3, "has_shared_discover_snap"
 
@@ -2060,12 +2028,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SHARED_DISCOVER_SNAP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 185
+    .line 183
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DISCOVER_RESOURCE_PARAM_NAME"
 
-    const/16 v2, 0x83
+    const/16 v2, 0x81
 
     const-string v3, "discover_resource_param_name"
 
@@ -2073,12 +2041,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_RESOURCE_PARAM_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 186
+    .line 184
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "DISCOVER_RESOURCE_PARAM_VALUE"
 
-    const/16 v2, 0x84
+    const/16 v2, 0x82
 
     const-string v3, "discover_resource_param_value"
 
@@ -2086,25 +2054,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_RESOURCE_PARAM_VALUE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 187
-    new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    const-string v1, "HAS_SEEN_DISCOVER_PAGE"
-
-    const/16 v2, 0x85
-
-    const-string v3, "has_seen_discover_page"
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/snapchat/android/database/SharedPreferenceKey;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_DISCOVER_PAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    .line 188
+    .line 185
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "CHANNEL_LIST_TIMESTAMP"
 
-    const/16 v2, 0x86
+    const/16 v2, 0x83
 
     const-string v3, "last_channel_list_generation_ts"
 
@@ -2112,12 +2067,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->CHANNEL_LIST_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 190
+    .line 187
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "HAS_SEEN_PROFILE_PAGE_ONBOARDING_MESSAGE"
 
-    const/16 v2, 0x87
+    const/16 v2, 0x84
 
     const-string v3, "has_seen_profile_page_onboarding_message"
 
@@ -2125,12 +2080,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_PROFILE_PAGE_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 191
+    .line 188
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "HAS_SEEN_NEW_FRIEND_REQUEST_ONBOARDING_MESSAGE"
 
-    const/16 v2, 0x88
+    const/16 v2, 0x85
 
     const-string v3, "has_seen_new_friend_request_onboarding_message"
 
@@ -2138,12 +2093,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_NEW_FRIEND_REQUEST_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 193
+    .line 190
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "HAS_ACCEPTED_ADD_NEARBY_PROMPT"
 
-    const/16 v2, 0x89
+    const/16 v2, 0x86
 
     const-string v3, "has_accepted_add_nearby_prompt"
 
@@ -2151,12 +2106,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_ADD_NEARBY_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 195
+    .line 192
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SNAP_TAG_IMAGE_ID"
 
-    const/16 v2, 0x8a
+    const/16 v2, 0x87
 
     const-string v3, "snap_tag_image"
 
@@ -2164,12 +2119,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SNAP_TAG_IMAGE_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 199
+    .line 196
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_IDENTITY_ACTION_TIMESTAMP"
 
-    const/16 v2, 0x8b
+    const/16 v2, 0x88
 
     const-string v3, "last_identity_action_timestamp"
 
@@ -2177,12 +2132,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_IDENTITY_ACTION_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 201
+    .line 198
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_RED_GEAR_IS_ON"
 
-    const/16 v2, 0x8c
+    const/16 v2, 0x89
 
     const-string v3, "identity_red_gear_is_on"
 
@@ -2190,12 +2145,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_RED_GEAR_IS_ON:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 203
+    .line 200
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_IS_EMAIL_VERIFIED"
 
-    const/16 v2, 0x8d
+    const/16 v2, 0x8a
 
     const-string v3, "identity_is_email_verified"
 
@@ -2203,12 +2158,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_EMAIL_VERIFIED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 205
+    .line 202
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_IS_PHONE_PASSWORD_CONFIRMED"
 
-    const/16 v2, 0x8e
+    const/16 v2, 0x8b
 
     const-string v3, "identity_is_phone_password_confirmed"
 
@@ -2216,12 +2171,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_PHONE_PASSWORD_CONFIRMED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 207
+    .line 204
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_PENDING_EMAIL"
 
-    const/16 v2, 0x8f
+    const/16 v2, 0x8c
 
     const-string v3, "identity_pending_email"
 
@@ -2229,12 +2184,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_PENDING_EMAIL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 210
+    .line 207
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_IS_TWO_FA_ENABLED"
 
-    const/16 v2, 0x90
+    const/16 v2, 0x8d
 
     const-string v3, "is_two_fa_enabled"
 
@@ -2242,12 +2197,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_TWO_FA_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 212
+    .line 209
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_IS_ADD_NEARBY_ENABLED"
 
-    const/16 v2, 0x91
+    const/16 v2, 0x8e
 
     const-string v3, "is_add_nearby_enabled"
 
@@ -2255,12 +2210,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_ADD_NEARBY_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 215
+    .line 212
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_IS_HIGH_LOCATION_REQUIRED"
 
-    const/16 v2, 0x92
+    const/16 v2, 0x8f
 
     const-string v3, "is_high_accuracy_required_for_nearby"
 
@@ -2268,12 +2223,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_HIGH_LOCATION_REQUIRED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 218
+    .line 215
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_SUGGESTED_FRIEND_FETCH_THRESHOLD"
 
-    const/16 v2, 0x93
+    const/16 v2, 0x90
 
     const-string v3, "suggested_friend_fetch_threshold"
 
@@ -2281,12 +2236,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_SUGGESTED_FRIEND_FETCH_THRESHOLD:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 219
+    .line 216
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "IDENTITY_SUGGESTED_FRIEND_FIND_TIMESTAMPS"
 
-    const/16 v2, 0x94
+    const/16 v2, 0x91
 
     const-string v3, "suggested_friend_find_timestamps"
 
@@ -2294,12 +2249,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_SUGGESTED_FRIEND_FIND_TIMESTAMPS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 220
+    .line 217
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_FIND_FRIENDS_WITHOUT_CACHE_TIMESTAMP"
 
-    const/16 v2, 0x95
+    const/16 v2, 0x92
 
     const-string v3, "last_find_friend_without_cache"
 
@@ -2307,12 +2262,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_FIND_FRIENDS_WITHOUT_CACHE_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 223
+    .line 220
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "URL_ROUTING_MAP"
 
-    const/16 v2, 0x96
+    const/16 v2, 0x93
 
     const-string v3, "url_routing_map"
 
@@ -2320,12 +2275,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->URL_ROUTING_MAP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 225
+    .line 222
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SHOULD_SHOW_SUGGESTION_PROMPT"
 
-    const/16 v2, 0x97
+    const/16 v2, 0x94
 
     const-string v3, "should_show_suggestion_prompt"
 
@@ -2333,12 +2288,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SHOULD_SHOW_SUGGESTION_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 226
+    .line 223
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SUGGESTION_PROMPT_LINK"
 
-    const/16 v2, 0x98
+    const/16 v2, 0x95
 
     const-string v3, "suggestion_prompt_link"
 
@@ -2346,12 +2301,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_LINK:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 227
+    .line 224
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SUGGESTION_PROMPT_TEXT"
 
-    const/16 v2, 0x99
+    const/16 v2, 0x96
 
     const-string v3, "suggestion_prompt_text"
 
@@ -2359,12 +2314,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_TEXT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 228
+    .line 225
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SUGGESTION_PROMPT_BUTTON_TEXT"
 
-    const/16 v2, 0x9a
+    const/16 v2, 0x97
 
     const-string v3, "suggestion_prompt_button_text"
 
@@ -2372,12 +2327,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_BUTTON_TEXT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 229
+    .line 226
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SUGGESTION_PROMPT_LAST_DISMISSED_TIMESTAMP"
 
-    const/16 v2, 0x9b
+    const/16 v2, 0x98
 
     const-string v3, "suggestion_prompt_last_dismissed_timestamp"
 
@@ -2385,12 +2340,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_LAST_DISMISSED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 230
+    .line 227
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "SUGGESTION_PROMPT_DURATION_IN_MILLIS"
 
-    const/16 v2, 0x9c
+    const/16 v2, 0x99
 
     const-string v3, "suggestion_prompt_duration_in_millis"
 
@@ -2398,12 +2353,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_DURATION_IN_MILLIS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 232
+    .line 229
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "PHONE_VERIFICATION_SMS_FORMAT"
 
-    const/16 v2, 0x9d
+    const/16 v2, 0x9a
 
     const-string v3, "phone_verification_sms_format"
 
@@ -2411,12 +2366,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->PHONE_VERIFICATION_SMS_FORMAT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 235
+    .line 232
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "UNIQUE_DEVICE_ID"
 
-    const/16 v2, 0x9e
+    const/16 v2, 0x9b
 
     const-string v3, "device_id"
 
@@ -2424,12 +2379,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->UNIQUE_DEVICE_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 237
+    .line 234
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "FINDFRIENDS_TIMESTAMPS"
 
-    const/16 v2, 0x9f
+    const/16 v2, 0x9c
 
     const-string v3, "recent_findfriends_requests_timestamps"
 
@@ -2437,12 +2392,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->FINDFRIENDS_TIMESTAMPS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 240
+    .line 237
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "AUTO_LIBRARY_SCANNING_FIRST_LAUNCHED_ON"
 
-    const/16 v2, 0xa0
+    const/16 v2, 0x9d
 
     const-string v3, "auto_library_scanning_first_launched_on"
 
@@ -2450,12 +2405,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->AUTO_LIBRARY_SCANNING_FIRST_LAUNCHED_ON:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 241
+    .line 238
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "AUTO_LIBRARY_SCANNING_ENABLED"
 
-    const/16 v2, 0xa1
+    const/16 v2, 0x9e
 
     const-string v3, "auto_library_scanning_enabled"
 
@@ -2463,12 +2418,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->AUTO_LIBRARY_SCANNING_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 242
+    .line 239
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "AUTO_LIBRARY_SCANNING_SHOWN_FIRST_NOTIFICATION"
 
-    const/16 v2, 0xa2
+    const/16 v2, 0x9f
 
     const-string v3, "auto_library_scanning_shown_first_notification"
 
@@ -2476,12 +2431,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->AUTO_LIBRARY_SCANNING_SHOWN_FIRST_NOTIFICATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
-    .line 243
+    .line 240
     new-instance v0, Lcom/snapchat/android/database/SharedPreferenceKey;
 
     const-string v1, "LAST_SCANNED_LIBRARY_IMAGE"
 
-    const/16 v2, 0xa3
+    const/16 v2, 0xa0
 
     const-string v3, "last_scanned_library_image_file"
 
@@ -2490,7 +2445,7 @@
     sput-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_SCANNED_LIBRARY_IMAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     .line 12
-    const/16 v0, 0xa4
+    const/16 v0, 0xa1
 
     new-array v0, v0, [Lcom/snapchat/android/database/SharedPreferenceKey;
 
@@ -2630,151 +2585,151 @@
 
     const/16 v1, 0x18
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CAMERA_NUMBER_PREFERENCE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x19
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CAMERA_NUMBER_PREFERENCE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->ALLOWED_GPS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1a
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->ALLOWED_GPS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SYNC_ON_FEED_OPEN:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1b
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SYNC_ON_FEED_OPEN:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->STUDY_SETTINGS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1c
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->STUDY_SETTINGS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->ANDROID_DISPLAY_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1d
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->ANDROID_DISPLAY_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_TAKEN_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1e
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_TAKEN_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_DELETED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_DELETED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_CACHED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x20
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PROFILE_IMAGES_CACHED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PROFILE_IMAGES_UPLOADED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x21
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PROFILE_IMAGES_UPLOADED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_PROFILE_IMAGES:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x22
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_PROFILE_IMAGES:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PROFILE_IMAGES_SHARING_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x23
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PROFILE_IMAGES_SHARING_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_PROFILE_PICTURES_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x24
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_PROFILE_PICTURES_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TAP_TO_SKIP_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x25
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TAP_TO_SKIP_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SEEN_SWIPE_DOWN_TUTORIAL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x26
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SEEN_SWIPE_DOWN_TUTORIAL:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SWIPED_DOWN_IN_VIEWER:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x27
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SWIPED_DOWN_IN_VIEWER:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_REGISTERING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x28
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_REGISTERING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->NEEDS_PHONE_VERIFICATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x29
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->NEEDS_PHONE_VERIFICATION:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->NEEDS_CAPTCHA_VERIFICATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2a
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->NEEDS_CAPTCHA_VERIFICATION:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CAPTCHA_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2b
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CAPTCHA_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->USER_JSON:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2c
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->USER_JSON:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_FRIENDS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2d
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_FRIENDS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_UPDATES:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2e
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_UPDATES:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_CONVERSATIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_CONVERSATIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_STORIES:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x30
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RESPONSE_CHECKSUM_STORIES:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
@@ -2822,103 +2777,103 @@
 
     const/16 v1, 0x38
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_TAP_TO_VIEW_SNAPS_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PING_RESULTS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x39
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_PING_RESULTS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PROXY_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3a
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PROXY_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->ENDPOINT_SET:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3b
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->ENDPOINT_SET:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->FILTERS_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3c
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->FILTERS_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->REPLAY_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3d
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->REPLAY_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->FRONT_FACING_FLASH_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3e
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->FRONT_FACING_FLASH_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_ADDRESS_BOOK_UPDATED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_ADDRESS_BOOK_UPDATED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->USER_TARGETING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x40
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->USER_TARGETING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_EXTERNAL_IMAGE_TAKEN_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x41
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_EXTERNAL_IMAGE_TAKEN_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->KEYBOARD_HEIGHT_PORTRAIT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x42
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->KEYBOARD_HEIGHT_PORTRAIT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->KEYBOARD_HEIGHT_LANDSCAPE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x43
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->KEYBOARD_HEIGHT_LANDSCAPE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_TEMPERATURE_SCALE_IMPERIAL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x44
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_TEMPERATURE_SCALE_IMPERIAL:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SPEED_USE_MPH:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x45
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SPEED_USE_MPH:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CONVERSATIONS_ITER_TOKEN:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x46
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CONVERSATIONS_ITER_TOKEN:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PENDING_CLEAR_CHAT_CONVERSATION_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x47
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PENDING_CLEAR_CHAT_CONVERSATION_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TIMES_DISPLAYED_HERE_TOOLTIP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x48
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TIMES_DISPLAYED_HERE_TOOLTIP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->USE_ADDLIVE_PRESENCE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
@@ -2960,509 +2915,491 @@
 
     const/16 v1, 0x4f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_NEW_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_ADD_FRIENDS_FROM_SCREENSHOT_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x50
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_ADD_FRIENDS_FROM_SCREENSHOT_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SNI_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x51
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SNI_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_CUSTOM_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x52
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_CUSTOM_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_DISCOVER_CUSTOM_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x53
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_CUSTOM_DISCOVER_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SQUARE_SANDBOX:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x54
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SQUARE_SANDBOX:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_RELEASE_DELAY_TIMER:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x55
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_RELEASE_DELAY_TIMER:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOULD_SHOW_DEVICE_TOKEN_TOASTS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x56
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOULD_SHOW_DEVICE_TOKEN_TOASTS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_NUM_STORIES_PER_THUMBNAIL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x57
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_NUM_STORIES_PER_THUMBNAIL:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOW_DIAGNOSTIC_OVERLAY:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x58
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOW_DIAGNOSTIC_OVERLAY:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOW_PROFILE_PICTURES:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x59
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_SHOW_PROFILE_PICTURES:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->REGISTRATION_TESTING_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x5a
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->REGISTRATION_TESTING_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->REGISTRATION_CONTACTBOOK_EXPERIMENT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x5b
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->REGISTRATION_CONTACTBOOK_EXPERIMENT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_START_TRACKING_ANR:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x5c
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_START_TRACKING_ANR:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->NOTIFICATIONS_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x5d
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->NOTIFICATIONS_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LEGACY_SOUND_VIBRATION_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x5e
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LEGACY_SOUND_VIBRATION_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->VIBRATION_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x5f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->VIBRATION_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SOUND_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x60
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SOUND_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LED_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x61
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LED_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->WAKE_SCREEN_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x62
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->WAKE_SCREEN_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SERVICE_ACTIVE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x63
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SERVICE_ACTIVE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_PROVIDER_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x64
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_PROVIDER_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CUSTOMER_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x65
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CUSTOMER_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CUSTOMER_ALLOWED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x66
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CUSTOMER_ALLOWED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_LINKED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x67
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_LINKED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_SUFFIX:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x68
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_SUFFIX:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_BRAND:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x69
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_CARD_BRAND:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_HAS_TRANSACTIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x6a
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_HAS_TRANSACTIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_OUTDATED_PROFILE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x6b
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_OUTDATED_PROFILE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SEND_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x6c
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SEND_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SWIPE_SEND_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x6d
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_SWIPE_SEND_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SECURITY_CODE_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x6e
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SECURITY_CODE_SETTING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_ACCOUNT_LOCKED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x6f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IS_ACCOUNT_LOCKED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_SQUARE_TOS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x70
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_SQUARE_TOS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_SNAPCASH_TOS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x71
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_SNAPCASH_TOS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_CARD_DIGITS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x72
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_CARD_DIGITS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_TOOLTIP_DISPLAY_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x73
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CASH_TOOLTIP_DISPLAY_COUNT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_HISTORY:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x74
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_HISTORY:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_STATE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x75
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_STATE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_IN_PROGRESS_FLAG:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x76
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->TRANSCODING_IN_PROGRESS_FLAG:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->VIDEO_FILTERS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x77
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->VIDEO_FILTERS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->VIDEO_ENCODING_RESOLUTIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x78
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->VIDEO_ENCODING_RESOLUTIONS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEMOGRAPHICS_TRACKING_SENT_FLAG:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x79
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DEMOGRAPHICS_TRACKING_SENT_FLAG:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SAVE_STORY_TO_GALLERY_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x7a
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SAVE_STORY_TO_GALLERY_CONFIRMATION:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SAVE_STORY_TO_GALLERY_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x7b
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SAVE_STORY_TO_GALLERY_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RAW_THUMBNAIL_UPLOAD_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x7c
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_STORIES_TTV_TOOLTIP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->YEAR_CLASS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x7d
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->RAW_THUMBNAIL_UPLOAD_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CURRENT_EDITION_IDS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x7e
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->YEAR_CLASS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_TIME_LAST_SEEN:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x7f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CURRENT_EDITION_IDS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_SEEN_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x80
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_TIME_LAST_SEEN:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SHARED_DISCOVER_SNAP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x81
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_SEEN_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_RESOURCE_PARAM_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x82
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SHARED_DISCOVER_SNAP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_RESOURCE_PARAM_VALUE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x83
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_RESOURCE_PARAM_NAME:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CHANNEL_LIST_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x84
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->DISCOVER_RESOURCE_PARAM_VALUE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_PROFILE_PAGE_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x85
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_DISCOVER_PAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_NEW_FRIEND_REQUEST_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x86
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->CHANNEL_LIST_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_ADD_NEARBY_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x87
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_PROFILE_PAGE_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SNAP_TAG_IMAGE_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x88
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_NEW_FRIEND_REQUEST_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_IDENTITY_ACTION_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x89
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_ADD_NEARBY_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_RED_GEAR_IS_ON:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8a
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SNAP_TAG_IMAGE_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_EMAIL_VERIFIED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8b
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_IDENTITY_ACTION_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_PHONE_PASSWORD_CONFIRMED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8c
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_RED_GEAR_IS_ON:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_PENDING_EMAIL:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8d
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_EMAIL_VERIFIED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_TWO_FA_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8e
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_PHONE_PASSWORD_CONFIRMED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_ADD_NEARBY_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_PENDING_EMAIL:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_HIGH_LOCATION_REQUIRED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x90
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_TWO_FA_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_SUGGESTED_FRIEND_FETCH_THRESHOLD:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x91
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_ADD_NEARBY_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_SUGGESTED_FRIEND_FIND_TIMESTAMPS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x92
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_IS_HIGH_LOCATION_REQUIRED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_FIND_FRIENDS_WITHOUT_CACHE_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x93
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_SUGGESTED_FRIEND_FETCH_THRESHOLD:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->URL_ROUTING_MAP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x94
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->IDENTITY_SUGGESTED_FRIEND_FIND_TIMESTAMPS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SHOULD_SHOW_SUGGESTION_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x95
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_FIND_FRIENDS_WITHOUT_CACHE_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_LINK:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x96
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->URL_ROUTING_MAP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_TEXT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x97
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SHOULD_SHOW_SUGGESTION_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_BUTTON_TEXT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x98
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_LINK:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_LAST_DISMISSED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x99
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_TEXT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_DURATION_IN_MILLIS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9a
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_BUTTON_TEXT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PHONE_VERIFICATION_SMS_FORMAT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9b
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_LAST_DISMISSED_TIMESTAMP:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->UNIQUE_DEVICE_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9c
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->SUGGESTION_PROMPT_DURATION_IN_MILLIS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->FINDFRIENDS_TIMESTAMPS:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9d
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->PHONE_VERIFICATION_SMS_FORMAT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->AUTO_LIBRARY_SCANNING_FIRST_LAUNCHED_ON:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9e
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->UNIQUE_DEVICE_ID:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->AUTO_LIBRARY_SCANNING_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9f
 
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->FINDFRIENDS_TIMESTAMPS:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa0
-
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->AUTO_LIBRARY_SCANNING_FIRST_LAUNCHED_ON:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa1
-
-    sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->AUTO_LIBRARY_SCANNING_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa2
-
     sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->AUTO_LIBRARY_SCANNING_SHOWN_FIRST_NOTIFICATION:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0xa3
+    const/16 v1, 0xa0
 
     sget-object v2, Lcom/snapchat/android/database/SharedPreferenceKey;->LAST_SCANNED_LIBRARY_IMAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
@@ -3484,16 +3421,16 @@
     .end annotation
 
     .prologue
-    .line 249
+    .line 246
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 250
+    .line 247
     iput-object p3, p0, Lcom/snapchat/android/database/SharedPreferenceKey;->a:Ljava/lang/String;
 
-    .line 251
+    .line 248
     iput-boolean p4, p0, Lcom/snapchat/android/database/SharedPreferenceKey;->b:Z
 
-    .line 252
+    .line 249
     return-void
 .end method
 
@@ -3501,7 +3438,7 @@
     .locals 6
 
     .prologue
-    .line 260
+    .line 257
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
@@ -3510,12 +3447,12 @@
 
     move-result-object v0
 
-    .line 261
+    .line 258
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    .line 262
+    .line 259
     invoke-static {}, Lcom/snapchat/android/database/SharedPreferenceKey;->values()[Lcom/snapchat/android/database/SharedPreferenceKey;
 
     move-result-object v2
@@ -3529,27 +3466,27 @@
 
     aget-object v4, v2, v0
 
-    .line 263
+    .line 260
     iget-boolean v5, v4, Lcom/snapchat/android/database/SharedPreferenceKey;->b:Z
 
     if-nez v5, :cond_0
 
-    .line 264
+    .line 261
     iget-object v4, v4, Lcom/snapchat/android/database/SharedPreferenceKey;->a:Ljava/lang/String;
 
     invoke-interface {v1, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 262
+    .line 259
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 268
+    .line 265
     :cond_1
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 269
+    .line 266
     return-void
 .end method
 
@@ -3557,12 +3494,12 @@
     .locals 5
 
     .prologue
-    .line 273
+    .line 270
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    .line 274
+    .line 271
     invoke-static {}, Lcom/snapchat/android/database/SharedPreferenceKey;->values()[Lcom/snapchat/android/database/SharedPreferenceKey;
 
     move-result-object v2
@@ -3576,21 +3513,21 @@
 
     aget-object v4, v2, v0
 
-    .line 275
+    .line 272
     iget-object v4, v4, Lcom/snapchat/android/database/SharedPreferenceKey;->a:Ljava/lang/String;
 
     invoke-interface {v1, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 274
+    .line 271
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 278
+    .line 275
     :cond_0
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 279
+    .line 276
     return-void
 .end method
 
@@ -3632,7 +3569,7 @@
     .locals 1
 
     .prologue
-    .line 255
+    .line 252
     iget-object v0, p0, Lcom/snapchat/android/database/SharedPreferenceKey;->a:Ljava/lang/String;
 
     return-object v0

@@ -3,485 +3,93 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbom;
+.implements Lboz;
 
 
-# instance fields
-.field final b:Ljava/util/LinkedHashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/LinkedHashMap",
-            "<",
-            "Ljava/lang/String;",
-            "Landroid/graphics/Bitmap;",
-            ">;"
-        }
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbow$b;,
+        Lbow$a;
+    }
+.end annotation
 
-.field private final c:I
 
-.field private d:I
-
-.field private e:I
-
-.field private f:I
-
-.field private g:I
-
-.field private h:I
+# static fields
+.field static final a:[B
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 2
 
     .prologue
-    .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 60
+    :try_start_0
+    const-string v0, "\u0000\u0000\u0000\u0007options\u0000\u0000\u0000\u0004head\u0000\u0000\u0000\u0004post\u0000\u0000\u0000\u0003put\u0000\u0000\u0000\u0006delete\u0000\u0000\u0000\u0005trace\u0000\u0000\u0000\u0006accept\u0000\u0000\u0000\u000eaccept-charset\u0000\u0000\u0000\u000faccept-encoding\u0000\u0000\u0000\u000faccept-language\u0000\u0000\u0000\raccept-ranges\u0000\u0000\u0000\u0003age\u0000\u0000\u0000\u0005allow\u0000\u0000\u0000\rauthorization\u0000\u0000\u0000\rcache-control\u0000\u0000\u0000\nconnection\u0000\u0000\u0000\u000ccontent-base\u0000\u0000\u0000\u0010content-encoding\u0000\u0000\u0000\u0010content-language\u0000\u0000\u0000\u000econtent-length\u0000\u0000\u0000\u0010content-location\u0000\u0000\u0000\u000bcontent-md5\u0000\u0000\u0000\rcontent-range\u0000\u0000\u0000\u000ccontent-type\u0000\u0000\u0000\u0004date\u0000\u0000\u0000\u0004etag\u0000\u0000\u0000\u0006expect\u0000\u0000\u0000\u0007expires\u0000\u0000\u0000\u0004from\u0000\u0000\u0000\u0004host\u0000\u0000\u0000\u0008if-match\u0000\u0000\u0000\u0011if-modified-since\u0000\u0000\u0000\rif-none-match\u0000\u0000\u0000\u0008if-range\u0000\u0000\u0000\u0013if-unmodified-since\u0000\u0000\u0000\rlast-modified\u0000\u0000\u0000\u0008location\u0000\u0000\u0000\u000cmax-forwards\u0000\u0000\u0000\u0006pragma\u0000\u0000\u0000\u0012proxy-authenticate\u0000\u0000\u0000\u0013proxy-authorization\u0000\u0000\u0000\u0005range\u0000\u0000\u0000\u0007referer\u0000\u0000\u0000\u000bretry-after\u0000\u0000\u0000\u0006server\u0000\u0000\u0000\u0002te\u0000\u0000\u0000\u0007trailer\u0000\u0000\u0000\u0011transfer-encoding\u0000\u0000\u0000\u0007upgrade\u0000\u0000\u0000\nuser-agent\u0000\u0000\u0000\u0004vary\u0000\u0000\u0000\u0003via\u0000\u0000\u0000\u0007warning\u0000\u0000\u0000\u0010www-authenticate\u0000\u0000\u0000\u0006method\u0000\u0000\u0000\u0003get\u0000\u0000\u0000\u0006status\u0000\u0000\u0000\u0006200 OK\u0000\u0000\u0000\u0007version\u0000\u0000\u0000\u0008HTTP/1.1\u0000\u0000\u0000\u0003url\u0000\u0000\u0000\u0006public\u0000\u0000\u0000\nset-cookie\u0000\u0000\u0000\nkeep-alive\u0000\u0000\u0000\u0006origin100101201202205206300302303304305306307402405406407408409410411412413414415416417502504505203 Non-Authoritative Information204 No Content301 Moved Permanently400 Bad Request401 Unauthorized403 Forbidden404 Not Found500 Internal Server Error501 Not Implemented503 Service UnavailableJan Feb Mar Apr May Jun Jul Aug Sept Oct Nov Dec 00:00:00 Mon, Tue, Wed, Thu, Fri, Sat, Sun, GMTchunked,text/html,image/png,image/jpg,image/gif,application/xml,application/xhtml+xml,text/plain,text/javascript,publicprivatemax-age=gzip,deflate,sdchcharset=utf-8charset=iso-8859-1,utf-,*,enq=0."
 
-    .line 44
-    if-gtz p1, :cond_0
-
-    .line 45
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Max size must be positive."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 47
-    :cond_0
-    iput p1, p0, Lbow;->c:I
-
-    .line 48
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    const/4 v1, 0x0
-
-    const/high16 v2, 0x3f400000    # 0.75f
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
-
-    iput-object v0, p0, Lbow;->b:Ljava/util/LinkedHashMap;
-
-    .line 49
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    .prologue
-    .line 39
-    invoke-static {p1}, Lbpo;->c(Landroid/content/Context;)I
-
-    move-result v0
-
-    invoke-direct {p0, v0}, Lbow;-><init>(I)V
-
-    .line 40
-    return-void
-.end method
-
-.method private a(I)V
-    .locals 3
-
-    .prologue
-    .line 91
-    :goto_0
-    monitor-enter p0
+    sget-object v1, Lbnq;->c:Ljava/nio/charset/Charset;
 
     .line 92
-    :try_start_0
-    iget v0, p0, Lbow;->d:I
-
-    if-ltz v0, :cond_0
-
-    iget-object v0, p0, Lbow;->b:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v0}, Ljava/util/LinkedHashMap;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget v0, p0, Lbow;->d:I
-
-    if-eqz v0, :cond_1
-
-    .line 93
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 94
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, ".sizeOf() is reporting inconsistent results!"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 107
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
+    sput-object v0, Lbow;->a:[B
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    throw v0
-
-    .line 97
-    :cond_1
-    :try_start_1
-    iget v0, p0, Lbow;->d:I
-
-    if-le v0, p1, :cond_2
-
-    iget-object v0, p0, Lbow;->b:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v0}, Ljava/util/LinkedHashMap;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 98
-    :cond_2
-    monitor-exit p0
-
+    .line 95
     return-void
 
-    .line 101
-    :cond_3
-    iget-object v0, p0, Lbow;->b:Ljava/util/LinkedHashMap;
+    .line 94
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v0}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    throw v0
+.end method
 
-    move-result-object v0
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .prologue
+    .line 36
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    .line 102
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    .line 103
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    .line 104
-    iget-object v2, p0, Lbow;->b:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v2, v1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 105
-    iget v1, p0, Lbow;->d:I
-
-    invoke-static {v0}, Lbpo;->a(Landroid/graphics/Bitmap;)I
-
-    move-result v0
-
-    sub-int v0, v1, v0
-
-    iput v0, p0, Lbow;->d:I
-
-    .line 106
-    iget v0, p0, Lbow;->f:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lbow;->f:I
-
-    .line 107
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
+    .line 287
+    return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()I
+.method public final a(Lcax;Z)Lbok;
     .locals 1
 
     .prologue
-    .line 117
-    monitor-enter p0
+    .line 99
+    new-instance v0, Lbow$a;
 
-    :try_start_0
-    iget v0, p0, Lbow;->d:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0, p1, p2}, Lbow$a;-><init>(Lcax;Z)V
 
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final a(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .locals 2
-
-    .prologue
-    .line 52
-    if-nez p1, :cond_0
-
-    .line 53
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "key == null"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 57
-    :cond_0
-    monitor-enter p0
-
-    .line 58
-    :try_start_0
-    iget-object v0, p0, Lbow;->b:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    .line 59
-    if-eqz v0, :cond_1
-
-    .line 60
-    iget v1, p0, Lbow;->g:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, p0, Lbow;->g:I
-
-    .line 61
-    monitor-exit p0
-
-    .line 66
-    :goto_0
     return-object v0
-
-    .line 63
-    :cond_1
-    iget v0, p0, Lbow;->h:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lbow;->h:I
-
-    .line 64
-    monitor-exit p0
-
-    .line 66
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 64
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method
 
-.method public final a(Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .locals 2
-
-    .prologue
-    .line 70
-    if-eqz p1, :cond_0
-
-    if-nez p2, :cond_1
-
-    .line 71
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "key == null || bitmap == null"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 75
-    :cond_1
-    monitor-enter p0
-
-    .line 76
-    :try_start_0
-    iget v0, p0, Lbow;->e:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lbow;->e:I
-
-    .line 77
-    iget v0, p0, Lbow;->d:I
-
-    invoke-static {p2}, Lbpo;->a(Landroid/graphics/Bitmap;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lbow;->d:I
-
-    .line 78
-    iget-object v0, p0, Lbow;->b:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v0, p1, p2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    .line 79
-    if-eqz v0, :cond_2
-
-    .line 80
-    iget v1, p0, Lbow;->d:I
-
-    invoke-static {v0}, Lbpo;->a(Landroid/graphics/Bitmap;)I
-
-    move-result v0
-
-    sub-int v0, v1, v0
-
-    iput v0, p0, Lbow;->d:I
-
-    .line 82
-    :cond_2
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 84
-    iget v0, p0, Lbow;->c:I
-
-    invoke-direct {p0, v0}, Lbow;->a(I)V
-
-    .line 85
-    return-void
-
-    .line 82
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized b()I
+.method public final a(Lcaw;Z)Lbol;
     .locals 1
 
     .prologue
-    .line 121
-    monitor-enter p0
+    .line 103
+    new-instance v0, Lbow$b;
 
-    :try_start_0
-    iget v0, p0, Lbow;->c:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0, p1, p2}, Lbow$b;-><init>(Lcaw;Z)V
 
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized c()V
-    .locals 1
-
-    .prologue
-    .line 125
-    monitor-enter p0
-
-    const/4 v0, -0x1
-
-    :try_start_0
-    invoke-direct {p0, v0}, Lbow;->a(I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 126
-    monitor-exit p0
-
-    return-void
-
-    .line 125
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return-object v0
 .end method

@@ -1,14 +1,22 @@
-public abstract interface ako
+public final class ako
 {
-  public abstract boolean e();
+  public int mNumWithOnlyUnreadChats;
+  public int mNumWithOnlyUnviewedCash;
+  public int mNumWithUnviewedContent;
   
-  public abstract boolean f();
+  private ako(ako.a parama)
+  {
+    mNumWithUnviewedContent = numWithUnviewedContent;
+    mNumWithOnlyUnreadChats = numWithOnlyUnviewedChats;
+    mNumWithOnlyUnviewedCash = numWithOnlyUnviewedCash;
+  }
   
-  public abstract boolean g();
-  
-  public abstract int l();
-  
-  public abstract int m();
+  public static final class a
+  {
+    public int numWithOnlyUnviewedCash;
+    public int numWithOnlyUnviewedChats;
+    public int numWithUnviewedContent;
+  }
 }
 
 /* Location:

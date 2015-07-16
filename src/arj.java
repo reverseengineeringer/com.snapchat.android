@@ -1,31 +1,29 @@
-import com.snapchat.android.rendering.SnapMediaRenderer;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.j;
 
-public abstract interface arj
+public final class arj
+  extends RecyclerView.j
 {
-  @cgb
-  public abstract aje a();
+  private final bbb a;
+  private final String b;
   
-  public abstract void a(ark paramark);
+  public arj(bbb parambbb, String paramString)
+  {
+    a = parambbb;
+    b = paramString;
+  }
   
-  public abstract void a(boolean paramBoolean);
+  public final void a(RecyclerView paramRecyclerView, int paramInt)
+  {
+    if (paramInt == 0)
+    {
+      a.b(new String[] { b, "VERTICAL" });
+      return;
+    }
+    a.mDeferPause = true;
+  }
   
-  @cgc
-  public abstract aio b();
-  
-  @cgb
-  public abstract SnapMediaRenderer c();
-  
-  public abstract boolean e();
-  
-  public abstract boolean f();
-  
-  public abstract void g();
-  
-  public abstract void h();
-  
-  public abstract void i();
-  
-  public abstract void j();
+  public final void a(RecyclerView paramRecyclerView, int paramInt1, int paramInt2) {}
 }
 
 /* Location:

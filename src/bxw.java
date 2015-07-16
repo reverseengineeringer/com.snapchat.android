@@ -1,44 +1,78 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.Enumeration;
 
 public final class bxw
-  implements bxi
+  implements Enumeration
 {
-  private List a = new ArrayList();
+  public final char a = ',';
+  private String b = null;
+  private char c = ',';
   
-  public bxw()
+  public bxw(String paramString)
   {
-    a.add(new bxl());
-    a.add(new bxm());
-    a.add(new bxn());
-    a.add(new bxo());
-    a.add(new bxp());
-    a.add(new bxq());
-    a.add(new bxr());
-    a.add(new bxs());
-    a.add(new bxt());
-    a.add(new bxu());
-    a.add(new bxv());
-    a.add(new bxx());
-    a.add(new bxy());
-    a.add(new bxz());
-    a.add(new bya());
-    a.add(new byb());
-    a.add(new byc());
-    a.add(new byd());
-    a.add(new bye());
-    a.add(new byf());
-    a.add(new byg());
-    a.add(new byh());
+    b = paramString;
+    c = ',';
   }
   
-  public final void a(bwz parambwz)
+  public final boolean a()
   {
-    Iterator localIterator = a.iterator();
-    while (localIterator.hasNext()) {
-      parambwz.a((bxg)localIterator.next());
+    return b.length() > 0;
+  }
+  
+  public final String b()
+  {
+    int m = b.length();
+    int k = 0;
+    int j = 0;
+    label65:
+    String str1;
+    if (j < m)
+    {
+      int i;
+      if (b.charAt(j) == '(') {
+        i = k + 1;
+      }
+      do
+      {
+        do
+        {
+          for (;;)
+          {
+            j += 1;
+            k = i;
+            break;
+            if (b.charAt(j) != ')') {
+              break label65;
+            }
+            i = k - 1;
+          }
+          i = k;
+        } while (b.charAt(j) != c);
+        i = k;
+      } while (k != 0);
+      str1 = b.substring(0, j);
+      b = b.substring(j + 1);
     }
+    for (;;)
+    {
+      String str2 = str1;
+      if (str1 == null)
+      {
+        str2 = b;
+        b = "";
+      }
+      return str2;
+      str1 = null;
+    }
+  }
+  
+  public final boolean hasMoreElements()
+  {
+    return a();
+  }
+  
+  public final Object nextElement()
+  {
+    return b();
   }
 }
 

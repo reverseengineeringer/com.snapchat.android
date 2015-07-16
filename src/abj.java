@@ -1,73 +1,57 @@
-import android.content.Context;
-import android.database.Cursor;
-import android.support.v4.content.AsyncTaskLoader;
-import com.snapchat.android.database.table.DbTable;
-import com.snapchat.android.database.vtable.DbVirtualTable;
+import com.snapchat.android.database.table.StorySnapTable;
+import com.snapchat.android.model.StoryCollection;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 public final class abj
-  extends AsyncTaskLoader<Cursor>
+  extends StorySnapTable
 {
-  private Cursor a;
-  private final DbTable b;
-  private final DbVirtualTable c;
+  private static abj a;
   
-  public abj(Context paramContext, DbTable paramDbTable)
+  private abj()
   {
-    super(paramContext);
-    b = paramDbTable;
-    c = null;
+    this(new ayv(), akr.a());
   }
   
-  public abj(Context paramContext, DbVirtualTable paramDbVirtualTable)
+  private abj(ayv paramayv, akr paramakr)
   {
-    super(paramContext);
-    b = null;
-    c = paramDbVirtualTable;
+    super(paramakr, paramayv, azh.FRIEND_STORY_KEYS_AND_IVS);
   }
   
-  private void a(Cursor paramCursor)
+  public static abj a()
   {
-    if (isReset()) {
-      if (paramCursor != null) {
-        paramCursor.close();
-      }
-    }
-    Cursor localCursor;
-    do
+    try
     {
-      return;
-      localCursor = a;
-      a = paramCursor;
-      if (isStarted()) {
-        super.deliverResult(paramCursor);
+      if (a == null) {
+        a = new abj();
       }
-    } while ((localCursor == null) || (localCursor == paramCursor) || (localCursor.isClosed()));
-    localCursor.close();
+      abj localabj = a;
+      return localabj;
+    }
+    finally {}
   }
   
-  protected final void onReset()
+  protected final Collection<akl> a(akp paramakp)
   {
-    super.onReset();
-    onStopLoading();
-    if ((a != null) && (!a.isClosed())) {
-      a.close();
+    Object localObject = akk.a().k();
+    paramakp = dt.a(((Collection)localObject).size() * 10);
+    localObject = ((Collection)localObject).iterator();
+    while (((Iterator)localObject).hasNext()) {
+      paramakp.addAll(((StoryCollection)((Iterator)localObject).next()).f());
     }
-    a = null;
+    new ayv().a(paramakp, azh.FRIEND_STORY_KEYS_AND_IVS);
+    return paramakp;
   }
   
-  protected final void onStartLoading()
+  protected final void a(List<akl> paramList)
   {
-    if (a != null) {
-      a(a);
-    }
-    if ((takeContentChanged()) || (a == null)) {
-      forceLoad();
-    }
+    akk.a().d(paramList);
   }
   
-  protected final void onStopLoading()
+  public final String c()
   {
-    cancelLoad();
+    return "FriendStorySnapTable";
   }
 }
 

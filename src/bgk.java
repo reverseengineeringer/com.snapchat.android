@@ -1,6 +1,13 @@
-import javax.inject.Inject;
+import java.io.InputStream;
 
-public final class bgk {}
+public abstract interface bgk
+{
+  public abstract int a();
+  
+  public abstract int a(@chc InputStream paramInputStream);
+  
+  public abstract byte[] b();
+}
 
 /* Location:
  * Qualified Name:     bgk

@@ -13,11 +13,11 @@
 .method public constructor <init>(Ljava/lang/String;Landroid/media/MediaFormat;)V
     .locals 0
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

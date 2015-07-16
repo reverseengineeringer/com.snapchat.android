@@ -12,8 +12,8 @@ final class SwipeableListItemTouchListener$2
   public final void onAnimationUpdate(ValueAnimator paramValueAnimator)
   {
     SwipeableListItemTouchListener.a(b, ((Integer)paramValueAnimator.getAnimatedValue()).intValue());
-    SwipeableListItemTouchListener.a(b).b(b.g);
-    SwipeableListItemTouchListener.a(b).a(a, SwipeableListItemTouchListener.b(b), SwipeableListItemTouchListener.c(b), SwipeableListItemTouchListener.d(b));
+    SwipeableListItemTouchListener.a(b).b(b.f);
+    SwipeableListItemTouchListener.a(b).a(a, SwipeableListItemTouchListener.b(b));
   }
 }
 

@@ -2,200 +2,197 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lti;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic $assertionsDisabled:Z
+
 
 # instance fields
-.field private mConnectionReleased:Z
+.field private final mCashCardManagerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyn;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private mDuration:J
-
-.field private mMethod:Ljava/lang/String;
-
-.field private mNeedToSaveMetrics:Z
-
-.field private mPath:Ljava/lang/String;
-
-.field private mReceivedBytes:J
-
-.field private mRequestTime:J
-
-.field private mResponseStatusReady:Z
-
-.field private mSentBytes:J
-
-.field private mStatusCode:I
-
-.field private mStatusLine:Ljava/lang/String;
+.field private final supertypeInjector:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Ltg;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    const/4 v0, 0x0
+    .line 8
+    const-class v0, Ltj;
 
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    .line 10
-    iput-boolean v0, p0, Ltj;->mConnectionReleased:Z
+    move-result v0
 
-    .line 11
-    iput-boolean v0, p0, Ltj;->mResponseStatusReady:Z
+    if-nez v0, :cond_0
 
-    .line 12
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Ltj;->mNeedToSaveMetrics:Z
+    :goto_0
+    sput-boolean v0, Ltj;->$assertionsDisabled:Z
 
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Ltg;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyn;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 14
+    sget-boolean v0, Ltj;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 15
+    :cond_0
+    iput-object p1, p0, Ltj;->supertypeInjector:Lbvk;
+
+    .line 16
+    sget-boolean v0, Ltj;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 17
+    :cond_1
+    iput-object p2, p0, Ltj;->mCashCardManagerProvider:Ljavax/inject/Provider;
+
+    .line 18
     return-void
 .end method
 
-.method private a()V
-    .locals 14
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Ltg;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyn;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lti;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 52
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    .line 30
+    new-instance v0, Ltj;
 
-    move-result-object v1
+    invoke-direct {v0, p0, p1}, Ltj;-><init>(Lbvk;Ljavax/inject/Provider;)V
 
-    iget-wide v2, p0, Ltj;->mRequestTime:J
-
-    iget-object v4, p0, Ltj;->mMethod:Ljava/lang/String;
-
-    iget-object v5, p0, Ltj;->mPath:Ljava/lang/String;
-
-    iget-wide v6, p0, Ltj;->mSentBytes:J
-
-    iget-wide v8, p0, Ltj;->mReceivedBytes:J
-
-    iget-wide v10, p0, Ltj;->mDuration:J
-
-    iget-object v12, p0, Ltj;->mStatusLine:Ljava/lang/String;
-
-    iget v13, p0, Ltj;->mStatusCode:I
-
-    invoke-static/range {v1 .. v13}, Laaq;->a(Landroid/content/Context;JLjava/lang/String;Ljava/lang/String;JJJLjava/lang/String;I)V
-
-    .line 54
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(JJ)V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
     .prologue
-    .line 25
-    monitor-enter p0
+    .line 8
+    check-cast p1, Lti;
 
-    :try_start_0
-    iput-wide p1, p0, Ltj;->mReceivedBytes:J
+    if-nez p1, :cond_0
 
-    .line 26
-    iput-wide p3, p0, Ltj;->mSentBytes:J
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    .line 28
-    const/4 v0, 0x1
+    const-string v1, "Cannot inject members into a null reference"
 
-    iput-boolean v0, p0, Ltj;->mConnectionReleased:Z
-
-    .line 29
-    iget-boolean v0, p0, Ltj;->mResponseStatusReady:Z
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Ltj;->mNeedToSaveMetrics:Z
-
-    if-eqz v0, :cond_0
-
-    .line 30
-    invoke-direct {p0}, Ltj;->a()V
-
-    .line 31
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ltj;->mNeedToSaveMetrics:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 33
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    .line 25
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
 
-.method public final declared-synchronized a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IJJ)V
-    .locals 1
-
-    .prologue
-    .line 37
-    monitor-enter p0
-
-    :try_start_0
-    iput-object p1, p0, Ltj;->mMethod:Ljava/lang/String;
-
-    .line 38
-    iput-object p2, p0, Ltj;->mPath:Ljava/lang/String;
-
-    .line 39
-    iput-object p3, p0, Ltj;->mStatusLine:Ljava/lang/String;
-
-    .line 40
-    iput p4, p0, Ltj;->mStatusCode:I
-
-    .line 41
-    iput-wide p5, p0, Ltj;->mRequestTime:J
-
-    .line 42
-    iput-wide p7, p0, Ltj;->mDuration:J
-
-    .line 44
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ltj;->mResponseStatusReady:Z
-
-    .line 45
-    iget-boolean v0, p0, Ltj;->mConnectionReleased:Z
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Ltj;->mNeedToSaveMetrics:Z
-
-    if-eqz v0, :cond_0
-
-    .line 46
-    invoke-direct {p0}, Ltj;->a()V
-
-    .line 47
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ltj;->mNeedToSaveMetrics:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 49
     :cond_0
-    monitor-exit p0
+    iget-object v0, p0, Ltj;->supertypeInjector:Lbvk;
+
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Ltj;->mCashCardManagerProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lyn;
+
+    iput-object v0, p1, Lti;->mCashCardManager:Lyn;
 
     return-void
-
-    .line 37
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

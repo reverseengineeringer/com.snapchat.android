@@ -1,10 +1,36 @@
-import com.snapchat.android.api2.cash.square.data.CashPayment;
+import javax.inject.Provider;
 
-public abstract interface sk
+public final class sk
+  implements bvk<sj>
 {
-  public abstract void a(int paramInt);
+  private final Provider<qw> mCashErrorReporterProvider;
+  private final Provider<td> mSquareProvider;
+  private final bvk<rl> supertypeInjector;
   
-  public abstract void a(@cgb CashPayment paramCashPayment);
+  static
+  {
+    if (!sk.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
+  }
+  
+  private sk(bvk<rl> parambvk, Provider<td> paramProvider, Provider<qw> paramProvider1)
+  {
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mSquareProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mCashErrorReporterProvider = paramProvider1;
+  }
+  
+  public static bvk<sj> a(bvk<rl> parambvk, Provider<td> paramProvider, Provider<qw> paramProvider1)
+  {
+    return new sk(parambvk, paramProvider, paramProvider1);
+  }
 }
 
 /* Location:

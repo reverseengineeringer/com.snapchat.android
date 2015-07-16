@@ -1,9 +1,9 @@
-import com.snapchat.android.util.debug.ReleaseManager;
+import javax.inject.Provider;
 
 public final class ayu
-  implements buo<ReleaseManager>
+  implements bvk<ays>
 {
-  private final ayl module;
+  private final Provider<bhk> mClockProvider;
   
   static
   {
@@ -15,15 +15,15 @@ public final class ayu
     }
   }
   
-  private ayu(ayl paramayl)
+  private ayu(Provider<bhk> paramProvider)
   {
-    assert (paramayl != null);
-    module = paramayl;
+    assert (paramProvider != null);
+    mClockProvider = paramProvider;
   }
   
-  public static buo<ReleaseManager> a(ayl paramayl)
+  public static bvk<ays> a(Provider<bhk> paramProvider)
   {
-    return new ayu(paramayl);
+    return new ayu(paramProvider);
   }
 }
 

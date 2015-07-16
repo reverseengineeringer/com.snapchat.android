@@ -485,7 +485,7 @@
 .method public setDecoderCodec(Lcom/snapchat/videotranscoder/pipeline/Codec;)V
     .locals 0
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/Codec;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

@@ -1,10 +1,10 @@
 package com.snapchat.android.discover.model.database.table;
 
+import aav;
 import com.snapchat.android.database.DataType;
-import zw;
 
 public enum DSnapViewStateTable$DSnapViewStateSchema
-  implements zw
+  implements aav
 {
   ID(DataType.TEXT, "PRIMARY KEY"),  TIME_LAST_VIEWED_MILLISECONDS("time_last_viewed_milli", DataType.INTEGER);
   

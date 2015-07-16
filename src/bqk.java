@@ -1,103 +1,39 @@
-import org.apache.http.Header;
-import org.apache.http.ParseException;
-import org.apache.http.message.BasicLineParser;
-import org.apache.http.util.CharArrayBuffer;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory.Options;
+import android.net.Uri;
 
-public abstract class bqk
-  extends bqf
+final class bqk
+  extends bqj
 {
-  boolean d = false;
-  int e;
-  boolean f = false;
-  private boolean g = false;
-  private boolean h = false;
+  private final Context a;
   
-  public bqk(bqf parambqf)
+  bqk(Context paramContext)
   {
-    super(parambqf);
+    a = paramContext;
   }
   
-  public final boolean a(CharArrayBuffer paramCharArrayBuffer)
+  public final boolean a(bqh parambqh)
   {
-    int i = b.length();
-    if ((i == 0) || ((i == 1) && (b.charAt(0) == '\r')))
-    {
-      i = 1;
-      if (i == 0) {
-        break label48;
-      }
-      h = true;
-    }
-    for (;;)
-    {
+    if (e != 0) {
       return true;
-      i = 0;
-      break;
-      try
-      {
-        label48:
-        paramCharArrayBuffer = BasicLineParser.DEFAULT.parseHeader(paramCharArrayBuffer);
-        if ((!d) && (paramCharArrayBuffer.getName().equalsIgnoreCase("content-length")))
-        {
-          i = Integer.parseInt(paramCharArrayBuffer.getValue());
-          if (i < 0) {
-            return false;
-          }
-          d = true;
-          e = i;
-          return true;
-        }
-        if (paramCharArrayBuffer.getName().equalsIgnoreCase("transfer-encoding"))
-        {
-          f = paramCharArrayBuffer.getValue().equalsIgnoreCase("chunked");
-          return true;
-        }
-        if ((!g) && (paramCharArrayBuffer.getName().equalsIgnoreCase("host")))
-        {
-          paramCharArrayBuffer = paramCharArrayBuffer.getValue();
-          if (paramCharArrayBuffer != null)
-          {
-            g = true;
-            a.a(paramCharArrayBuffer);
-            return true;
-          }
-        }
-      }
-      catch (ParseException paramCharArrayBuffer)
-      {
-        return false;
-      }
-      catch (NumberFormatException paramCharArrayBuffer) {}
     }
-    return false;
+    return "android.resource".equals(d.getScheme());
   }
   
-  public final bqf b()
+  public final bqj.a b(bqh parambqh)
   {
-    if (h) {
-      return g();
+    Resources localResources = bqp.a(a, parambqh);
+    int i = bqp.a(localResources, parambqh);
+    BitmapFactory.Options localOptions = d(parambqh);
+    if (a(localOptions))
+    {
+      BitmapFactory.decodeResource(localResources, i, localOptions);
+      a(h, i, localOptions, parambqh);
     }
-    b.clear();
-    return this;
+    return new bqj.a(BitmapFactory.decodeResource(localResources, i, localOptions), bqe.d.b);
   }
-  
-  public final bqf c()
-  {
-    b.clear();
-    return new bqr(this);
-  }
-  
-  protected final int d()
-  {
-    return 32;
-  }
-  
-  protected final int e()
-  {
-    return 128;
-  }
-  
-  protected abstract bqf g();
 }
 
 /* Location:

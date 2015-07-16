@@ -1,16 +1,16 @@
 package com.snapchat.android.fragments.stories;
 
-import agx;
+import ahu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-import bgr.a;
+import bhr.a;
 import com.snapchat.android.model.StorySnapLogbook;
 
 final class StoriesAdapter$14
-  implements bgr.a
+  implements bhr.a
 {
-  StoriesAdapter$14(StoriesAdapter paramStoriesAdapter, StorySnapLogbook paramStorySnapLogbook, agx paramagx) {}
+  StoriesAdapter$14(StoriesAdapter paramStoriesAdapter, StorySnapLogbook paramStorySnapLogbook, ahu paramahu) {}
   
   public final void a(View paramView)
   {

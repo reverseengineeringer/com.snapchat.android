@@ -12,14 +12,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import bvf;
-import bvi;
-import bwa;
-import bwd;
+import bwg;
+import bwj;
+import bxb;
+import bxe;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 import net.hockeyapp.android.views.LoginView;
 
 public class LoginActivity
@@ -29,7 +31,7 @@ public class LoginActivity
   private String a;
   private String b;
   private int c;
-  private bwa d;
+  private bxb d;
   private Handler e;
   
   private static String a(String paramString)
@@ -81,8 +83,8 @@ public class LoginActivity
     {
       if (i != 0)
       {
-        d = new bwa(this, e, a, c, localHashMap);
-        bwd.a(d);
+        d = new bxb(this, e, a, c, localHashMap);
+        bxe.a(d);
         return;
         i = 0;
         break;
@@ -98,7 +100,7 @@ public class LoginActivity
           i = 0;
         }
       }
-      Toast.makeText(this, bvi.a(1281), 1000).show();
+      Toast.makeText(this, bwj.a(1281), 1000).show();
       return;
       label242:
       i = 0;
@@ -107,6 +109,8 @@ public class LoginActivity
   
   protected void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
     setContentView(new LoginView(this));
     paramBundle = getIntent().getExtras();
@@ -127,7 +131,7 @@ public class LoginActivity
         if (paramAnonymousMessage.getData().getBoolean("success"))
         {
           finish();
-          if (bvf.b != null) {}
+          if (bwg.b != null) {}
           return;
         }
         Toast.makeText(LoginActivity.this, "Login failed. Check your credentials.", 2000).show();
@@ -136,7 +140,7 @@ public class LoginActivity
     paramBundle = getLastNonConfigurationInstance();
     if (paramBundle != null)
     {
-      d = ((bwa)paramBundle);
+      d = ((bxb)paramBundle);
       paramBundle = d;
       Handler localHandler = e;
       a = this;
@@ -146,9 +150,9 @@ public class LoginActivity
   
   public boolean onKeyDown(int paramInt, KeyEvent paramKeyEvent)
   {
-    if ((paramInt == 4) && (bvf.b == null))
+    if ((paramInt == 4) && (bwg.b == null))
     {
-      paramKeyEvent = new Intent(this, bvf.a);
+      paramKeyEvent = new Intent(this, bwg.a);
       paramKeyEvent.setFlags(67108864);
       paramKeyEvent.putExtra("net.hockeyapp.android.EXIT", true);
       startActivity(paramKeyEvent);
@@ -161,7 +165,7 @@ public class LoginActivity
   {
     if (d != null)
     {
-      bwa localbwa = d;
+      bxb localbxb = d;
       a = null;
       b = null;
       c = null;

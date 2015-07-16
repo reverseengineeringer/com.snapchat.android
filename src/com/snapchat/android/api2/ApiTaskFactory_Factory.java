@@ -1,23 +1,23 @@
 package com.snapchat.android.api2;
 
-import buo;
-import pk;
+import bvp;
+import qb;
 
 public enum ApiTaskFactory_Factory
-  implements buo<pk>
+  implements bvp<qb>
 {
   INSTANCE;
   
   private ApiTaskFactory_Factory() {}
   
-  public static buo<pk> create()
+  public static bvp<qb> create()
   {
     return INSTANCE;
   }
   
-  public final pk get()
+  public final qb get()
   {
-    return new pk();
+    return new qb();
   }
 }
 

@@ -76,36 +76,22 @@
 .end method
 
 .method public final a(Z)V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 27
     invoke-super {p0, p1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
     .line 28
-    const-string v0, "ErrorMetric"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Reporting Error: "
 
-    const-string v2, "Reporting Error: "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 29
     return-void

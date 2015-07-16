@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.chat;
 
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
-import bgr;
+import bhr;
 import com.snapchat.android.ui.CashReceiverView;
 
 final class ChatFragment$19

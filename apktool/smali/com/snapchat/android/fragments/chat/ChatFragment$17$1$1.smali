@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lya$b;
+.implements Lyw$b;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 2518
+    .line 2616
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$17$1$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$17$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 2523
+    .line 2621
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$17$1$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$17$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$17$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
@@ -61,7 +61,7 @@
 
     invoke-static {v0, v1}, Lcom/snapchat/android/analytics/AnalyticsEvents;->b(Ljava/lang/String;Z)V
 
-    .line 2525
+    .line 2623
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$17$1$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$17$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$17$1;->b:Lcom/snapchat/android/fragments/chat/ChatFragment$17;
@@ -70,7 +70,7 @@
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->q(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 2526
+    .line 2624
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .locals 1
 
     .prologue
-    .line 2529
+    .line 2627
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$17$1$1;->a:Lcom/snapchat/android/fragments/chat/ChatFragment$17$1;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment$17$1;->b:Lcom/snapchat/android/fragments/chat/ChatFragment$17;
@@ -87,6 +87,6 @@
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->q(Lcom/snapchat/android/fragments/chat/ChatFragment;)V
 
-    .line 2530
+    .line 2628
     return-void
 .end method

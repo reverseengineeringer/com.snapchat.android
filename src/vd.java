@@ -1,38 +1,12 @@
-import com.snapchat.android.app.feature.messaging.feed.ui.fragment.FeedFragment;
-import com.snapchat.android.util.fragment.SnapchatFragment;
-import javax.inject.Provider;
-
 public final class vd
-  implements buj<FeedFragment>
+  implements ve
 {
-  private final buj<SnapchatFragment> b;
-  private final Provider<azo> c;
-  
-  static
+  public final long a(int paramInt)
   {
-    if (!vd.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
+    if (paramInt <= 0) {
+      return 0L;
     }
-  }
-  
-  private vd(buj<SnapchatFragment> parambuj, Provider<azo> paramProvider)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-  }
-  
-  public static buj<FeedFragment> a(buj<SnapchatFragment> parambuj, Provider<azo> paramProvider)
-  {
-    return new vd(parambuj, paramProvider);
+    return 1 << paramInt - 1;
   }
 }
 

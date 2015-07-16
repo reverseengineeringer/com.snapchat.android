@@ -1,61 +1,65 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afa;
-import afe;
-import afi;
-import afm;
-import ajv;
-import alw;
-import alx;
-import alx.a;
-import amk;
-import amo;
+import aga;
+import age;
+import agi;
+import agm;
+import akp;
+import amt;
+import amu;
+import amu.a;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import aok;
-import aol;
-import auc;
-import avc;
-import ban;
-import bcw;
+import anh;
+import anl;
+import apg;
+import aph;
+import ava;
+import awa;
+import bbo;
 import bdw;
-import bel;
-import ber;
-import boh;
-import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
+import bev;
+import bfk;
+import bfq;
+import bpi;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.analytics.ProfileEventAnalytics;
+import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.database.SharedPreferenceKey;
+import com.snapchat.android.model.FriendAction;
 import com.snapchat.android.model.SuggestedFriendAction;
 import com.snapchat.android.util.FriendSectionizer.FriendSection;
 import com.snapchat.android.util.FriendSectionizer.f;
 import com.snapchat.android.util.TitleBarManager.Visibility;
 import com.squareup.otto.Bus;
+import in;
 import java.util.List;
 import java.util.Set;
 import javax.inject.Provider;
-import nf;
+import kf;
+import nw;
 
 public class AddFriendsMenuFragment
   extends SwipeableFriendsFragment
 {
   private View a;
   private final ProfileEventAnalytics b;
-  private final Provider<ajv> c;
-  private final aol m;
-  private final avc n;
-  private afi o;
-  private aok p = new aok()
+  private final Provider<akp> c;
+  private final aph n;
+  private final awa o;
+  private agi p;
+  private AnalyticsEvents.AnalyticsContext q;
+  private apg r = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      if ((paramAnonymousamk instanceof amo))
+      if ((paramAnonymousanh instanceof anl))
       {
-        paramAnonymousamk = (amo)paramAnonymousamk;
+        paramAnonymousanh = (anl)paramAnonymousanh;
         if ((c) && (a == SuggestedFriendAction.HIDE)) {
           AddFriendsMenuFragment.a(AddFriendsMenuFragment.this, b);
         }
@@ -69,35 +73,39 @@ public class AddFriendsMenuFragment
     this(ProfileEventAnalytics.a());
   }
   
-  private AddFriendsMenuFragment(aol paramaol, Provider<ajv> paramProvider, avc paramavc, ProfileEventAnalytics paramProfileEventAnalytics, afi paramafi)
+  private AddFriendsMenuFragment(aph paramaph, Provider<akp> paramProvider, awa paramawa, ProfileEventAnalytics paramProfileEventAnalytics, agi paramagi)
   {
-    super(paramaol, paramProvider);
-    m = paramaol;
+    super(paramaph, paramProvider);
+    n = paramaph;
     c = paramProvider;
     g = null;
-    n = paramavc;
+    o = paramawa;
     b = paramProfileEventAnalytics;
-    o = paramafi;
+    p = paramagi;
   }
   
   private AddFriendsMenuFragment(ProfileEventAnalytics paramProfileEventAnalytics)
   {
-    this(aol.a(), ajv.UNSAFE_USER_PROVIDER, avc.a(), paramProfileEventAnalytics, afi.a());
+    this(aph.a(), akp.UNSAFE_USER_PROVIDER, awa.a(), paramProfileEventAnalytics, agi.a());
   }
   
-  private void p()
+  private void q()
   {
     if (g != null) {
       g.notifyDataSetChanged();
     }
-    if (!l.isEmpty())
+    if (!m.isEmpty())
     {
-      h.setVisibility(0);
       a.setVisibility(8);
       return;
     }
-    h.setVisibility(8);
     a.setVisibility(0);
+  }
+  
+  public final void H()
+  {
+    q = AnalyticsEvents.AnalyticsContext.CAMERA_PAGE;
+    super.H();
   }
   
   public final AnalyticsEvents.AnalyticsContext a()
@@ -107,12 +115,33 @@ public class AddFriendsMenuFragment
   
   public final void a(int paramInt) {}
   
+  protected final void a(kf paramkf)
+  {
+    AnalyticsEvents.AnalyticsContext localAnalyticsContext = q;
+    int i = m.size();
+    int j = g.a(FriendAction.ADD, false);
+    in localin = new in();
+    exitEvent = paramkf;
+    if (localAnalyticsContext != null) {
+      nextPage = localAnalyticsContext.name();
+    }
+    suggestFriendCount = Long.valueOf(i);
+    suggestFriendAddCount = Long.valueOf(j);
+    ScAnalyticsEventEngine.a(localin);
+  }
+  
   protected final void e()
   {
     super.e();
     ProfileEventAnalytics.a(AnalyticsEvents.AnalyticsContext.PROFILE_ADD_FRIENDS_MENU_PAGE, false);
-    m();
-    ban.a().a(new bel(TitleBarManager.Visibility.VISIBLE));
+    n();
+    bbo.a().a(new bfk(TitleBarManager.Visibility.VISIBLE));
+  }
+  
+  public final boolean g()
+  {
+    q = AnalyticsEvents.AnalyticsContext.CAMERA_PAGE;
+    return super.g();
   }
   
   protected final int i()
@@ -120,41 +149,46 @@ public class AddFriendsMenuFragment
     return 2130968580;
   }
   
-  public final alw k()
+  public final amt k()
   {
-    new alw()
+    new amt()
     {
-      public final boolean a(alx.a paramAnonymousa)
+      public final boolean a(amu.a paramAnonymousa)
       {
-        return alx.g.contains(c);
+        return amu.g.contains(c);
       }
       
-      public final boolean b(alx.a paramAnonymousa)
+      public final boolean b(amu.a paramAnonymousa)
       {
         return false;
       }
     };
   }
   
-  protected final afe l()
+  protected final Integer l()
   {
-    return new afm();
+    return Integer.valueOf(2130968581);
   }
   
-  protected final void m()
+  protected final age m()
   {
-    ajv localajv = (ajv)c.get();
-    if (localajv != null) {}
-    synchronized (l)
+    return new agm();
+  }
+  
+  protected final void n()
+  {
+    akp localakp = (akp)c.get();
+    if (localakp != null) {}
+    synchronized (m)
     {
-      l.clear();
-      l.addAll(avc.a(localajv, FriendSectionizer.FriendSection.SUGGESTED_FRIEND));
-      p();
+      m.clear();
+      m.addAll(awa.a(localakp, FriendSectionizer.FriendSection.SUGGESTED_FRIEND));
+      q();
       return;
     }
   }
   
-  protected final FriendListProperty n()
+  protected final FriendListProperty o()
   {
     FriendListProperty localFriendListProperty = new FriendListProperty(FriendListProperty.TouchMode.SWIPEABLE, FriendListProperty.Style.OPAQUE_CHECKBOX);
     k = true;
@@ -164,47 +198,55 @@ public class AddFriendsMenuFragment
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     paramLayoutInflater = super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    c(2131361878).setOnClickListener(new View.OnClickListener()
+    i.findViewById(2131361882).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(LeftSwipeContentFragment.ADD_FRIENDS_BY_USERNAME_FRAGMENT));
+        bbo.a().a(new bev(LeftSwipeContentFragment.ADD_FRIENDS_BY_USERNAME_FRAGMENT));
         ProfileEventAnalytics.b();
+        AddFriendsMenuFragment.a(AddFriendsMenuFragment.this, AnalyticsEvents.AnalyticsContext.PROFILE_ADD_FRIENDS_BY_USERNAME_PAGE);
+        a(kf.OTHER);
       }
     });
-    c(2131361879).setOnClickListener(new View.OnClickListener()
+    i.findViewById(2131361883).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(LeftSwipeContentFragment.ADDRESS_BOOK_FRAGMENT));
+        bbo.a().a(new bev(LeftSwipeContentFragment.ADDRESS_BOOK_FRAGMENT));
         ProfileEventAnalytics.c();
+        AddFriendsMenuFragment.a(AddFriendsMenuFragment.this, AnalyticsEvents.AnalyticsContext.PROFILE_ADD_FRIENDS_BY_CONTACTS_PAGE);
+        a(kf.OTHER);
       }
     });
-    c(2131361880).setOnClickListener(new View.OnClickListener()
+    i.findViewById(2131361884).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(LeftSwipeContentFragment.ADD_FRIENDS_FROM_CAMERAROLL_FRAGMENT));
+        bbo.a().a(new bev(LeftSwipeContentFragment.ADD_FRIENDS_FROM_CAMERAROLL_FRAGMENT));
         ProfileEventAnalytics.d();
+        AddFriendsMenuFragment.a(AddFriendsMenuFragment.this, AnalyticsEvents.AnalyticsContext.SNAPCODE_PAGE);
+        a(kf.OTHER);
       }
     });
-    c(2131361882).setOnClickListener(new View.OnClickListener()
+    i.findViewById(2131361886).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(LeftSwipeContentFragment.ADD_NEARBY_FRIENDS_FRAGMENT));
+        bbo.a().a(new bev(LeftSwipeContentFragment.ADD_NEARBY_FRIENDS_FRAGMENT));
         ProfileEventAnalytics.f();
+        AddFriendsMenuFragment.a(AddFriendsMenuFragment.this, AnalyticsEvents.AnalyticsContext.PROFILE_ADD_NEARBY_FRIENDS_PAGE);
+        a(kf.OTHER);
       }
     });
-    if (!auc.a(SharedPreferenceKey.IDENTITY_IS_ADD_NEARBY_ENABLED.getKey(), true))
+    if (!ava.a(SharedPreferenceKey.IDENTITY_IS_ADD_NEARBY_ENABLED.getKey(), true))
     {
-      c(2131361882).setVisibility(8);
-      c(2131361883).setVisibility(8);
+      c(2131361886).setVisibility(8);
+      c(2131361887).setVisibility(8);
     }
-    a = c(2131361884);
-    g.a = new FriendSectionizer.f();
-    m();
-    paramViewGroup = m;
+    a = c(2131361880);
+    g.b = new FriendSectionizer.f();
+    n();
+    paramViewGroup = n;
     paramBundle = paramViewGroup.b(c);
     paramBundle.putExtra("op_code", 1033);
     paramBundle.putExtra("action", SuggestedFriendAction.SEEN.toString());
@@ -215,29 +257,29 @@ public class AddFriendsMenuFragment
   public void onPause()
   {
     super.onPause();
-    o.b();
+    p.b();
   }
   
-  @boh
-  public void onRefreshOnFriendActionEvent(bcw parambcw)
+  @bpi
+  public void onRefreshOnFriendActionEvent(bdw parambdw)
   {
-    super.a(parambcw);
+    super.a(parambdw);
   }
   
   public void onResume()
   {
-    nf.d();
+    nw.d();
     super.onResume();
-    m.a(1033, p);
-    nf.e();
-    o.a(getActivity());
+    n.a(1033, r);
+    nw.e();
+    p.a(getActivity());
   }
   
-  @boh
-  public void onUserLoadedEvent(ber paramber)
+  @bpi
+  public void onUserLoadedEvent(bfq parambfq)
   {
-    if ((paramber != null) && (user != null)) {
-      m();
+    if ((parambfq != null) && (user != null)) {
+      n();
     }
   }
 }

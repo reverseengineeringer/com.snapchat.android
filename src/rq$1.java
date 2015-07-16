@@ -1,94 +1,30 @@
-import android.text.TextUtils;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.AnalyticsEvents;
-import com.snapchat.android.api2.cash.ScCashResponsePayload;
-import com.snapchat.android.api2.cash.ScCashResponsePayload.Status;
-import com.snapchat.android.api2.cash.square.data.CashPayment;
-import com.snapchat.android.model.CashTransaction;
-import java.util.List;
+import com.snapchat.android.util.AlertDialogUtils.YesNoOption;
+import com.snapchat.android.util.AlertDialogUtils.a;
 
 final class rq$1
-  implements qc.a
+  implements AlertDialogUtils.a
 {
-  rq$1(rq paramrq, CashTransaction paramCashTransaction) {}
+  rq$1(rq paramrq, boolean paramBoolean) {}
   
-  public final void a(@cgb ScCashResponsePayload.Status paramStatus, int paramInt)
+  public final void a(AlertDialogUtils.YesNoOption paramYesNoOption)
   {
-    paramStatus = sn.a(this$0, paramInt);
-    if (paramStatus != null)
+    switch (rq.2.$SwitchMap$com$snapchat$android$util$AlertDialogUtils$YesNoOption[paramYesNoOption.ordinal()])
     {
-      rq.b(this$0, paramStatus);
+    default: 
       return;
-    }
-    if (val$transaction != null)
-    {
-      paramStatus = val$transaction.mSenderUsername;
-      if (!TextUtils.equals(ajx.l(), paramStatus)) {
-        break label70;
+    case 1: 
+      if (val$isFromRain) {
+        akr.am();
       }
-      AnalyticsEvents.a("SQUARE_PHONE_VERIFICATION_FAILED", paramInt);
-      qg.a(2131493290, new Object[0]);
-    }
-    for (;;)
-    {
-      rq.c(this$0);
-      return;
-      label70:
-      AnalyticsEvents.b("SQUARE_PHONE_VERIFICATION_FAILED", paramInt);
-    }
-  }
-  
-  public final void a(@cgb ScCashResponsePayload paramScCashResponsePayload)
-  {
-    Timber.b("SQPhoneNumberBlocker", "CASH-LOG: SUCCESS received phone signature", new Object[0]);
-    paramScCashResponsePayload = (qk.a)paramScCashResponsePayload;
-    if ((phoneNumber == null) || (signature == null))
-    {
-      rq.a(this$0);
-      return;
-    }
-    sh.a local1 = new sh.a()
-    {
-      public final void a(@cgc si paramAnonymoussi)
+    case 2: 
+      for (;;)
       {
-        Object localObject2 = null;
-        Object localObject3 = null;
-        if (paramAnonymoussi != null)
-        {
-          Object localObject1 = localObject3;
-          if (blockers != null)
-          {
-            localObject1 = localObject3;
-            if (blockers.a()) {
-              localObject1 = blockers.b();
-            }
-          }
-          localObject2 = localObject1;
-          if (val$transaction != null)
-          {
-            localObject2 = localObject1;
-            if (payment != null)
-            {
-              val$transaction.a(sn.a(payment.mState, payment.mCancellationReason));
-              localObject2 = localObject1;
-            }
-          }
-        }
-        rq.a(this$0, (List)localObject2);
+        this$0.a(null, true);
+        return;
+        akr.al();
       }
-      
-      public final void a(@cgc si paramAnonymoussi, int paramAnonymousInt)
-      {
-        Timber.b("SQPhoneNumberBlocker", "CASH-LOG: FAILED resolve SQPhoneNumberBlocker statusCode[%d]", new Object[] { Integer.valueOf(paramAnonymousInt) });
-        rq.b(this$0);
-      }
-    };
-    if ((val$transaction != null) && (!val$transaction.mIsInFlight))
-    {
-      new se(val$transaction.mTransactionId, phoneNumber, signature, local1).f();
-      return;
     }
-    new se(phoneNumber, signature, local1).f();
+    rq.a(this$0);
   }
 }
 

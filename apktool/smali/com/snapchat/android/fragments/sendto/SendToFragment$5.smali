@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 317
+    .line 319
     iput-object p1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$5;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 320
+    .line 322
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$5;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->h(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Z
@@ -53,35 +53,35 @@
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->i(Lcom/snapchat/android/fragments/sendto/SendToFragment;)V
 
-    .line 321
+    .line 323
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$5;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lno;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->a(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lof;
 
     move-result-object v0
 
     const-string v1, "add_friend"
 
-    invoke-virtual {v0, v1}, Lno;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lof;->a(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lno;->c()V
+    invoke-virtual {v0}, Lof;->c()V
 
-    .line 322
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 324
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;
 
     invoke-direct {v2}, Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;-><init>()V
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 323
+    .line 325
     return-void
 .end method

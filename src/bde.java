@@ -1,4 +1,14 @@
-public final class bde {}
+import com.snapchat.android.api2.chat.LoadConversationPageTask.TaskStatus;
+
+public final class bde
+{
+  public LoadConversationPageTask.TaskStatus mTaskStatus;
+  
+  public bde(LoadConversationPageTask.TaskStatus paramTaskStatus)
+  {
+    mTaskStatus = paramTaskStatus;
+  }
+}
 
 /* Location:
  * Qualified Name:     bde

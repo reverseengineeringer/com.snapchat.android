@@ -1,14 +1,6 @@
-public abstract interface cgz
-  extends Comparable<cgz>
-{
-  public abstract boolean a(cgz paramcgz);
-  
-  public abstract cgq b();
-  
-  public abstract long c();
-  
-  public abstract cgf d();
-}
+import java.lang.annotation.Annotation;
+
+public @interface cgz {}
 
 /* Location:
  * Qualified Name:     cgz

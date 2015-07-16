@@ -1,45 +1,90 @@
-import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import android.os.Handler;
+import android.os.Looper;
+import com.snapchat.android.SnapchatApplication;
+import java.util.concurrent.ExecutorService;
 
 public final class bhp
 {
-  @SerializedName("lat")
-  protected Double lat;
-  @SerializedName("long")
-  protected Double longValue;
+  private static final String TAG = "ThreadUtils";
+  private static boolean sAssertionsEnabled;
+  private static Handler sMainThreadHandler;
   
-  public final Double a()
+  static
   {
-    return lat;
-  }
-  
-  public final Double b()
-  {
-    return longValue;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
+    if (!SnapchatApplication.a()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      sAssertionsEnabled = bool;
+      return;
     }
-    if (!(paramObject instanceof bhp)) {
-      return false;
+  }
+  
+  public static void a()
+  {
+    if ((sAssertionsEnabled) && (!c())) {
+      throw new IllegalStateException("This method must be called only from the Main Thread.");
     }
-    paramObject = (bhp)paramObject;
-    return new EqualsBuilder().append(lat, lat).append(longValue, longValue).isEquals();
   }
   
-  public final int hashCode()
+  public static void a(long paramLong)
   {
-    return new HashCodeBuilder().append(lat).append(longValue).toHashCode();
+    try
+    {
+      Thread.sleep(paramLong);
+      return;
+    }
+    catch (InterruptedException localInterruptedException) {}
   }
   
-  public final String toString()
+  public static void a(Runnable paramRunnable)
   {
-    return ToStringBuilder.reflectionToString(this);
+    if (sMainThreadHandler == null) {
+      sMainThreadHandler = new Handler(Looper.getMainLooper());
+    }
+    paramRunnable = new bhu(paramRunnable, -2);
+    sMainThreadHandler.post(paramRunnable);
+  }
+  
+  public static void a(Thread paramThread)
+  {
+    int i = 0;
+    for (;;)
+    {
+      try
+      {
+        paramThread.join();
+        if (i != 0) {
+          Thread.currentThread().interrupt();
+        }
+        return;
+      }
+      catch (InterruptedException localInterruptedException)
+      {
+        i = 1;
+      }
+    }
+  }
+  
+  public static void a(ExecutorService paramExecutorService, Runnable paramRunnable)
+  {
+    paramExecutorService.execute(paramRunnable);
+  }
+  
+  public static void b()
+  {
+    if ((sAssertionsEnabled) && (c())) {
+      throw new IllegalStateException("This method must not be called from the Main Thread.");
+    }
+  }
+  
+  public static void b(Runnable paramRunnable)
+  {
+    avf.MISCELLANEOUS_EXECUTOR.execute(paramRunnable);
+  }
+  
+  public static boolean c()
+  {
+    return Thread.currentThread() == Looper.getMainLooper().getThread();
   }
 }
 

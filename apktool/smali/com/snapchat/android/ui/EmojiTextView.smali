@@ -196,13 +196,13 @@
     move-result v3
 
     .line 64
-    const-class v0, Lbai;
+    const-class v0, Lbbi;
 
     invoke-interface {p1, v2, v3, v0}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lbai;
+    check-cast v0, [Lbbi;
 
     move v1, v2
 
@@ -248,9 +248,9 @@
     if-lez v0, :cond_1
 
     .line 75
-    new-instance v4, Lbai;
+    new-instance v4, Lbbi;
 
-    invoke-direct {v4, p0, v0, p2}, Lbai;-><init>(Landroid/content/Context;II)V
+    invoke-direct {v4, p0, v0, p2}, Lbbi;-><init>(Landroid/content/Context;II)V
 
     add-int v0, v2, v1
 

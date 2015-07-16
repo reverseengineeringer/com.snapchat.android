@@ -1,11 +1,11 @@
 package com.snapchat.android.fragments.settings.phone;
 
-import ajx;
+import akr;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import aol;
+import aph;
 import java.util.Set;
 
 final class PhonePasswordValidationFragment$2
@@ -15,7 +15,7 @@ final class PhonePasswordValidationFragment$2
   
   public final void onClick(View paramView)
   {
-    PhonePasswordValidationFragment.a(a).add(Integer.valueOf(PhonePasswordValidationFragment.c(a).a(a.getActivity(), "pwConfirmPhoneNumber", ajx.e(), PhonePasswordValidationFragment.b(a).getText().toString())));
+    PhonePasswordValidationFragment.a(a).add(Integer.valueOf(PhonePasswordValidationFragment.c(a).a(a.getActivity(), "pwConfirmPhoneNumber", akr.e(), PhonePasswordValidationFragment.b(a).getText().toString())));
     PhonePasswordValidationFragment.d(a).setClickable(false);
     PhonePasswordValidationFragment.e(a).setText("");
     PhonePasswordValidationFragment.f(a).setVisibility(0);

@@ -4,7 +4,7 @@ import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import kf;
+import kx;
 
 final class NewUserContactBookFragment$1
   implements AbsListView.OnScrollListener
@@ -19,7 +19,7 @@ final class NewUserContactBookFragment$1
     {
       AnalyticsEvents.J();
       NewUserContactBookFragment.a(a);
-      ScAnalyticsEventEngine.a(new kf());
+      ScAnalyticsEventEngine.a(new kx());
     }
   }
 }

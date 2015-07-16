@@ -1,21 +1,25 @@
 package com.snapchat.android.fragments.stories;
 
-import android.content.res.Resources;
-import android.view.View;
-import android.widget.TextView;
-import baj;
-import bgr.a;
-import com.snapchat.android.util.emoji.Emoji;
+import ady;
+import adz;
+import aea;
+import java.util.List;
 
 final class StoriesFragment$14
-  implements bgr.a
+  implements Runnable
 {
-  StoriesFragment$14(StoriesFragment paramStoriesFragment) {}
+  StoriesFragment$14(StoriesFragment paramStoriesFragment, List paramList, int paramInt) {}
   
-  public final void a(View paramView)
+  public final void run()
   {
-    a.o = ((TextView)StoriesFragment.d(a).findViewById(2131362771));
-    a.o.setText(a.getResources().getString(2131493138, new Object[] { baj.a(Emoji.GRINNING_FACE_WITH_SMILING_EYES) }));
+    ady localady = StoriesFragment.q(c);
+    List localList = a;
+    int i = b;
+    localList = a.a(localList, i);
+    b.clear();
+    b.addAll(localList);
+    c.notifyDataSetChanged();
+    c.r();
   }
 }
 

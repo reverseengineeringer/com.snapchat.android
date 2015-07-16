@@ -1,12 +1,12 @@
-import android.graphics.Bitmap;
+import com.snapchat.android.model.Friend;
 
 public final class bbz
 {
-  public Bitmap mBitmap;
+  public final Friend friend;
   
-  public bbz(Bitmap paramBitmap)
+  public bbz(Friend paramFriend)
   {
-    mBitmap = paramBitmap;
+    friend = paramFriend;
   }
 }
 

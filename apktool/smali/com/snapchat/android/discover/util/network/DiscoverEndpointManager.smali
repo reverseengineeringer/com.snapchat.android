@@ -38,9 +38,9 @@
 
 .field public c:Ljava/lang/String;
 
-.field private final e:Lajx;
+.field private final e:Lakr;
 
-.field private final f:Lazn;
+.field private final f:Lbam;
 
 .field private g:Ljava/lang/String;
 
@@ -54,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 80
     new-instance v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
 
     invoke-direct {v0}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;-><init>()V
@@ -68,29 +68,29 @@
     .locals 2
 
     .prologue
-    .line 95
-    new-instance v0, Lajx;
+    .line 98
+    new-instance v0, Lakr;
 
-    invoke-direct {v0}, Lajx;-><init>()V
+    invoke-direct {v0}, Lakr;-><init>()V
 
-    invoke-static {}, Lazn;->a()Lazn;
+    invoke-static {}, Lbam;->a()Lbam;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;-><init>(Lajx;Lazn;)V
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;-><init>(Lakr;Lbam;)V
 
-    .line 96
+    .line 99
     return-void
 .end method
 
-.method private constructor <init>(Lajx;Lazn;)V
+.method private constructor <init>(Lakr;Lbam;)V
     .locals 1
 
     .prologue
-    .line 99
+    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 84
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -101,23 +101,23 @@
 
     iput-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->a:Ljava/util/Set;
 
-    .line 84
+    .line 87
     sget-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->UNKNOWN:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->b:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    .line 100
-    iput-object p1, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->e:Lajx;
-
-    .line 101
-    iput-object p2, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->f:Lazn;
-
-    .line 102
-    iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->f:Lazn;
-
-    invoke-virtual {v0, p0}, Lazn;->addObserver(Ljava/util/Observer;)V
-
     .line 103
+    iput-object p1, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->e:Lakr;
+
+    .line 104
+    iput-object p2, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->f:Lbam;
+
+    .line 105
+    iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->f:Lbam;
+
+    invoke-virtual {v0, p0}, Lbam;->addObserver(Ljava/util/Observer;)V
+
+    .line 106
     return-void
 .end method
 
@@ -125,7 +125,7 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 94
     sget-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->d:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;
 
     return-object v0
@@ -136,41 +136,41 @@
 .method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p5    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 121
+    .line 124
     invoke-static {p1}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->fromString(Ljava/lang/String;)Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->b:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    .line 122
+    .line 125
     iput-object p4, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->h:Ljava/lang/String;
 
-    .line 123
+    .line 126
     iput-object p5, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->i:Ljava/lang/String;
 
-    .line 124
+    .line 127
     iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->g:Ljava/lang/String;
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -179,24 +179,24 @@
 
     if-nez v0, :cond_0
 
-    .line 126
+    .line 129
     const-wide/16 v0, -0x1
 
-    invoke-static {v0, v1}, Lajx;->h(J)V
+    invoke-static {v0, v1}, Lakr;->h(J)V
 
-    .line 128
+    .line 131
     :cond_0
     iput-object p2, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->g:Ljava/lang/String;
 
-    .line 130
+    .line 133
     iput-object p3, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->c:Ljava/lang/String;
 
-    .line 132
+    .line 135
     iget-object v1, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->a:Ljava/util/Set;
 
     monitor-enter v1
 
-    .line 133
+    .line 136
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->a:Ljava/util/Set;
 
@@ -217,12 +217,12 @@
 
     check-cast v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$a;
 
-    .line 134
+    .line 137
     invoke-interface {v0}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$a;->a()V
 
     goto :goto_0
 
-    .line 136
+    .line 139
     :catchall_0
     move-exception v0
 
@@ -238,33 +238,33 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 138
-    invoke-static {p4}, Lajx;->n(Ljava/lang/String;)V
+    .line 141
+    invoke-static {p4}, Lakr;->n(Ljava/lang/String;)V
 
-    .line 139
-    invoke-static {p5}, Lajx;->o(Ljava/lang/String;)V
+    .line 142
+    invoke-static {p5}, Lakr;->o(Ljava/lang/String;)V
 
-    .line 140
+    .line 143
     return-void
 .end method
 
 .method public final b()Ljava/lang/String;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 147
-    iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->f:Lazn;
+    .line 150
+    iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->f:Lbam;
 
-    invoke-virtual {v0}, Lazn;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lbam;->b()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 148
+    .line 151
     if-eqz v0, :cond_0
 
-    .line 151
+    .line 154
     :goto_0
     return-object v0
 
@@ -276,21 +276,21 @@
 
 .method public final c()Ljava/lang/String;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 176
+    .line 203
     iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->h:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 177
-    invoke-static {}, Lajx;->aM()Ljava/lang/String;
+    .line 204
+    invoke-static {}, Lakr;->aL()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 179
+    .line 206
     :goto_0
     return-object v0
 
@@ -302,21 +302,21 @@
 
 .method public final d()Ljava/lang/String;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 187
+    .line 214
     iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->i:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    .line 188
-    invoke-static {}, Lajx;->aN()Ljava/lang/String;
+    .line 215
+    invoke-static {}, Lakr;->aM()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 190
+    .line 217
     :goto_0
     return-object v0
 
@@ -330,14 +330,14 @@
     .locals 6
 
     .prologue
-    .line 195
+    .line 222
     instance-of v0, p2, Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     check-cast p2, Ljava/lang/String;
 
-    sget-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_CUSTOM_DISCOVER_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_DISCOVER_CUSTOM_ENDPOINT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     invoke-virtual {v0}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
 
@@ -349,21 +349,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 197
+    .line 224
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->g:Ljava/lang/String;
 
-    .line 198
+    .line 225
     sget-object v0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->SUPPORTED:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
     invoke-virtual {v0}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;->name()Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->f:Lazn;
+    iget-object v0, p0, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->f:Lbam;
 
-    invoke-virtual {v0}, Lazn;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Lbam;->b()Ljava/lang/String;
 
     move-result-object v2
 
@@ -377,7 +377,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 201
+    .line 229
     :cond_0
     return-void
 .end method

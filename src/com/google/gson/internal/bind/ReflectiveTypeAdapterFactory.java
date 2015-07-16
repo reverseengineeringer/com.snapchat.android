@@ -15,7 +15,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-import ej;
+import es;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.Collection;
@@ -78,7 +78,7 @@ public final class ReflectiveTypeAdapterFactory
               final void a(JsonWriter paramAnonymousJsonWriter, Object paramAnonymousObject)
               {
                 paramAnonymousObject = localField.get(paramAnonymousObject);
-                new ej(paramGson, a, localObject2.getType()).write(paramAnonymousJsonWriter, paramAnonymousObject);
+                new es(paramGson, a, localObject2.getType()).write(paramAnonymousJsonWriter, paramAnonymousObject);
               }
             };
             localObject1 = (a)localLinkedHashMap.put(g, localObject1);

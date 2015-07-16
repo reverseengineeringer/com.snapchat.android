@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kg
-  extends lt
+  extends ml
 {
-  public Boolean dialogAction;
-  private final String eventName = "REGISTRATION_USER_CONTACT_SKIP_DIALOG";
+  private String additionalInfo;
+  private final String eventName = "PROFILE_PAGE_VIEW";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_CONTACT_SKIP_DIALOG");
-    if (dialogAction != null) {
-      localHashMap.put("dialog_action", dialogAction);
+    localHashMap.put("event_name", "PROFILE_PAGE_VIEW");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class kg
         return false;
       }
       paramObject = (kg)paramObject;
-      if (dialogAction == null) {
+      if (additionalInfo == null) {
         break;
       }
-    } while (dialogAction.equals(dialogAction));
+    } while (additionalInfo.equals(additionalInfo));
     for (;;)
     {
       return false;
-      if (dialogAction == null) {
+      if (additionalInfo == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class kg
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (dialogAction != null) {}
-    for (int i = dialogAction.hashCode();; i = 0) {
+    if (additionalInfo != null) {}
+    for (int i = additionalInfo.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

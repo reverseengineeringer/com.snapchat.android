@@ -1,37 +1,27 @@
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-
 public final class bsw
 {
-  private ConnectivityManager a;
+  public static final bsw a = new bsw();
+  private volatile int b = 1;
+  private final long c = System.currentTimeMillis();
   
-  public bsw(Context paramContext)
+  private int b()
   {
-    if (paramContext == null)
+    try
     {
-      btd.e();
-      return;
+      int i = b;
+      b = (i + 1);
+      return i;
     }
-    if (paramContext.getPackageManager().checkPermission("android.permission.ACCESS_NETWORK_STATE", paramContext.getPackageName()) == 0)
+    finally
     {
-      a = ((ConnectivityManager)paramContext.getSystemService("connectivity"));
-      return;
+      localObject = finally;
+      throw ((Throwable)localObject);
     }
-    btd.e();
   }
   
-  public final bra a()
+  public final String a()
   {
-    if (a == null) {
-      return bra.c;
-    }
-    NetworkInfo localNetworkInfo = a.getActiveNetworkInfo();
-    if ((localNetworkInfo == null) || (!localNetworkInfo.isConnected())) {
-      return bra.d;
-    }
-    return bra.a(localNetworkInfo.getType());
+    return "1." + c + "." + b();
   }
 }
 

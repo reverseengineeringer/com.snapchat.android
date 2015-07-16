@@ -1,56 +1,14 @@
-import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import com.snapchat.android.SnapchatApplication;
+import javax.inject.Inject;
 
-public class bhl
-  extends bii
+public final class bhl
 {
-  @SerializedName("header")
-  protected bib header;
-  @SerializedName("retried")
-  protected Boolean retried;
+  @Inject
+  public bhk mClock;
   
-  public final void a(bib parambib)
+  public bhl()
   {
-    header = parambib;
-  }
-  
-  public final void a(Boolean paramBoolean)
-  {
-    retried = paramBoolean;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
-    }
-    if (!(paramObject instanceof bhl)) {
-      return false;
-    }
-    paramObject = (bhl)paramObject;
-    return new EqualsBuilder().append(header, header).append(retried, retried).isEquals();
-  }
-  
-  public final bib g()
-  {
-    return header;
-  }
-  
-  public final Boolean h()
-  {
-    return retried;
-  }
-  
-  public int hashCode()
-  {
-    return new HashCodeBuilder().append(header).append(retried).toHashCode();
-  }
-  
-  public String toString()
-  {
-    return ToStringBuilder.reflectionToString(this);
+    SnapchatApplication.b().c().a(this);
   }
 }
 

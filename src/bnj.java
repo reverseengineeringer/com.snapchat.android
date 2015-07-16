@@ -1,31 +1,33 @@
-import java.io.Closeable;
-import java.util.List;
+import java.util.logging.Logger;
 
-public abstract interface bnj
-  extends Closeable
+public abstract class bnj
 {
-  public abstract void a();
+  public static final Logger a = Logger.getLogger(bmz.class.getName());
+  public static bnj b;
   
-  public abstract boolean a(bnj.a parama);
+  public abstract bnk a(bmz parambmz);
   
-  public static abstract interface a
-  {
-    public abstract void a(int paramInt, long paramLong);
-    
-    public abstract void a(int paramInt, bni parambni);
-    
-    public abstract void a(int paramInt, bzx parambzx);
-    
-    public abstract void a(int paramInt, List<bnl> paramList);
-    
-    public abstract void a(boolean paramBoolean, int paramInt1, int paramInt2);
-    
-    public abstract void a(boolean paramBoolean, int paramInt1, bzw parambzw, int paramInt2);
-    
-    public abstract void a(boolean paramBoolean, bnu parambnu);
-    
-    public abstract void a(boolean paramBoolean1, boolean paramBoolean2, int paramInt, List<bnl> paramList, bnm parambnm);
-  }
+  public abstract boh a(bmp parambmp, bnx parambnx);
+  
+  public abstract void a(bmp parambmp, bna parambna);
+  
+  public abstract void a(bmq parambmq, bmp parambmp);
+  
+  public abstract void a(bmv.a parama, String paramString);
+  
+  public abstract void a(bmz parambmz, bmp parambmp, bnx parambnx, bnb parambnb);
+  
+  public abstract boolean a(bmp parambmp);
+  
+  public abstract int b(bmp parambmp);
+  
+  public abstract bnp b(bmz parambmz);
+  
+  public abstract void b(bmp parambmp, bnx parambnx);
+  
+  public abstract bnm c(bmz parambmz);
+  
+  public abstract boolean c(bmp parambmp);
 }
 
 /* Location:

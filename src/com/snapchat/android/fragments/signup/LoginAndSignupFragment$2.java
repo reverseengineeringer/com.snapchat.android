@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.signup;
 
-import ajx;
+import akr;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import ky;
+import lq;
 
 final class LoginAndSignupFragment$2
   implements View.OnClickListener
@@ -21,9 +21,9 @@ final class LoginAndSignupFragment$2
       return;
     }
     b.getFragmentManager().beginTransaction().replace(a.getId(), new SignupFragment(LoginAndSignupFragment.c(b))).addToBackStack("SignupFragment").commit();
-    ajx.c(true);
+    akr.c(true);
     LoginAndSignupFragment.d(b);
-    ScAnalyticsEventEngine.a(new ky());
+    ScAnalyticsEventEngine.a(new lq());
     AnalyticsEvents.l();
   }
 }

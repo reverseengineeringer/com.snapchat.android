@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 212
+    .line 227
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$29;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,15 +40,15 @@
     .locals 1
 
     .prologue
-    .line 215
-    sget-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_UPGRADE_PROMPT_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
+    .line 230
+    sget-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->DEVELOPER_OPTIONS_FAKE_FRIENDMOJI_ENABLED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     invoke-virtual {v0}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lauc;->b(Ljava/lang/String;Z)V
+    invoke-static {v0, p2}, Lava;->b(Ljava/lang/String;Z)V
 
-    .line 216
+    .line 231
     return-void
 .end method

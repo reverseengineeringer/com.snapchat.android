@@ -1,15 +1,13 @@
+import java.util.Iterator;
+
 @cd
-public final class ef
+public abstract class ef<E>
+  implements Iterator<E>
 {
-  public static int a(boolean paramBoolean1, boolean paramBoolean2)
+  @Deprecated
+  public final void remove()
   {
-    if (paramBoolean1 == paramBoolean2) {
-      return 0;
-    }
-    if (paramBoolean1) {
-      return 1;
-    }
-    return -1;
+    throw new UnsupportedOperationException();
   }
 }
 

@@ -1,15 +1,15 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.widget.TextView;
-import auh;
-import ban;
-import bdw;
+import avf;
+import bbo;
+import bev;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.squareup.otto.Bus;
-import pa;
+import pr;
 
 final class SettingsFragment$15$1
   implements DialogInterface.OnClickListener
@@ -18,18 +18,18 @@ final class SettingsFragment$15$1
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    AnalyticsEvents.a(SettingsFragment.PrivacyOptions.values()[ajx.h()].toString(), SettingsFragment.PrivacyOptions.values()[paramInt].toString());
-    ajx.d(paramInt);
+    AnalyticsEvents.a(SettingsFragment.PrivacyOptions.values()[akr.h()].toString(), SettingsFragment.PrivacyOptions.values()[paramInt].toString());
+    akr.d(paramInt);
     SettingsFragment.c(a.a).setText(a.a.getResources().getStringArray(2131165198)[paramInt]);
     String str = SettingsFragment.PrivacyOptions.values()[paramInt].toString();
     if (str.equals("CUSTOM")) {
-      ban.a().a(new bdw(new CustomStoryPrivacyFragment()));
+      bbo.a().a(new bev(new CustomStoryPrivacyFragment()));
     }
     for (;;)
     {
       paramDialogInterface.dismiss();
       return;
-      new pa("updateStoryPrivacy", new String[] { str }).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+      new pr("updateStoryPrivacy", new String[] { str }).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
     }
   }
 }

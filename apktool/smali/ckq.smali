@@ -1,148 +1,331 @@
 .class public final Lckq;
-.super Ljava/lang/Object;
+.super Lckf;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field private final a:Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;
+.field private final a:I
 
 
 # direct methods
-.method public constructor <init>(Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;)V
-    .locals 0
+.method public constructor <init>(Lchn;Lcho;)V
+    .locals 1
 
     .prologue
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 47
+    invoke-direct {p0, p1, p2}, Lckf;-><init>(Lchn;Lcho;)V
 
-    .line 21
-    iput-object p1, p0, Lckq;->a:Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;
+    .line 48
+    const/16 v0, 0x64
 
-    .line 22
+    iput v0, p0, Lckq;->a:I
+
+    .line 52
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 4
+.method public final a(JI)J
+    .locals 5
 
     .prologue
-    .line 26
-    iget-object v0, p0, Lckq;->a:Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;
+    .line 91
+    int-to-long v0, p3
 
-    invoke-virtual {v0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getSectionIndicator()Lcky;
+    iget v2, p0, Lckq;->a:I
 
-    move-result-object v0
+    int-to-long v2, v2
 
-    .line 27
-    if-eqz v0, :cond_0
+    mul-long/2addr v0, v2
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
+    .line 92
+    iget-object v2, p0, Lckf;->b:Lchn;
 
-    .line 29
-    :cond_0
-    iget-object v0, p0, Lckq;->a:Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;
+    invoke-virtual {v2, p1, p2, v0, v1}, Lchn;->a(JJ)J
 
-    invoke-virtual {v0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getScrollProgressCalculator()Lckv;
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final a(JJ)J
+    .locals 7
+
+    .prologue
+    .line 96
+    iget v2, p0, Lckq;->a:I
+
+    packed-switch v2, :pswitch_data_0
+
+    int-to-long v0, v2
+
+    mul-long/2addr v0, p3
+
+    int-to-long v4, v2
+
+    div-long v4, v0, v4
+
+    cmp-long v3, v4, p3
+
+    if-eqz v3, :cond_1
+
+    new-instance v0, Ljava/lang/ArithmeticException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v3, "Multiplication overflows a long: "
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    if-eqz v1, :cond_2
+    const-string v3, " * "
 
-    invoke-virtual {v0}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->getScrollProgressCalculator()Lckv;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {v0, p2}, Lckv;->a(Landroid/view/MotionEvent;)F
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result v0
+    move-result-object v1
 
-    move v1, v0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 30
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_0
+    const-wide/high16 v0, -0x8000000000000000L
+
+    cmp-long v0, p3, v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/ArithmeticException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v3, "Multiplication overflows a long: "
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, " * "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    neg-long p3, p3
+
+    .line 97
     :goto_0
-    iget-object v2, p0, Lckq;->a:Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;
+    :pswitch_1
+    iget-object v0, p0, Lckf;->b:Lchn;
 
-    iget-object v0, v2, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->c:Landroid/support/v7/widget/RecyclerView;
+    invoke-virtual {v0, p1, p2, p3, p4}, Lchn;->a(JJ)J
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->getAdapter()Landroid/support/v7/widget/RecyclerView$a;
+    move-result-wide v0
 
-    move-result-object v0
+    return-wide v0
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$a;->a()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    mul-float/2addr v0, v1
-
-    float-to-int v3, v0
-
-    iget-object v0, v2, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->c:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v0, v3}, Landroid/support/v7/widget/RecyclerView;->a(I)V
-
-    iget-object v0, v2, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->d:Lcky;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, v2, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->d:Lcky;
-
-    invoke-interface {v0, v1}, Lcky;->setProgress(F)V
-
-    iget-object v0, v2, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->c:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->getAdapter()Landroid/support/v7/widget/RecyclerView$a;
-
-    move-result-object v0
-
-    instance-of v0, v0, Landroid/widget/SectionIndexer;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, v2, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->c:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->getAdapter()Landroid/support/v7/widget/RecyclerView$a;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/SectionIndexer;
-
-    invoke-interface {v0, v3}, Landroid/widget/SectionIndexer;->getSectionForPosition(I)I
-
-    move-result v3
-
-    invoke-interface {v0}, Landroid/widget/SectionIndexer;->getSections()[Ljava/lang/Object;
-
-    move-result-object v0
-
-    iget-object v2, v2, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->d:Lcky;
-
-    aget-object v0, v0, v3
-
-    invoke-interface {v2, v0}, Lcky;->setSection(Ljava/lang/Object;)V
-
-    .line 31
-    :cond_1
-    iget-object v0, p0, Lckq;->a:Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;
-
-    invoke-virtual {v0, v1}, Lxyz/danoz/recyclerviewfastscroller/AbsRecyclerViewFastScroller;->a(F)V
-
-    .line 32
-    const/4 v0, 0x1
-
-    return v0
-
-    .line 29
-    :cond_2
-    const/4 v0, 0x0
-
-    move v1, v0
+    .line 96
+    :pswitch_2
+    const-wide/16 p3, 0x0
 
     goto :goto_0
+
+    :cond_1
+    move-wide p3, v0
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch -0x1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public final b(JJ)I
+    .locals 3
+
+    .prologue
+    .line 101
+    iget-object v0, p0, Lckf;->b:Lchn;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lchn;->b(JJ)I
+
+    move-result v0
+
+    iget v1, p0, Lckq;->a:I
+
+    div-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final c(JJ)J
+    .locals 5
+
+    .prologue
+    .line 105
+    iget-object v0, p0, Lckf;->b:Lchn;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lchn;->c(JJ)J
+
+    move-result-wide v0
+
+    iget v2, p0, Lckq;->a:I
+
+    int-to-long v2, v2
+
+    div-long/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public final d()J
+    .locals 4
+
+    .prologue
+    .line 109
+    iget-object v0, p0, Lckf;->b:Lchn;
+
+    invoke-virtual {v0}, Lchn;->d()J
+
+    move-result-wide v0
+
+    iget v2, p0, Lckq;->a:I
+
+    int-to-long v2, v2
+
+    mul-long/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 130
+    if-ne p0, p1, :cond_1
+
+    .line 138
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 132
+    :cond_1
+    instance-of v2, p1, Lckq;
+
+    if-eqz v2, :cond_3
+
+    .line 133
+    check-cast p1, Lckq;
+
+    .line 134
+    iget-object v2, p0, Lckf;->b:Lchn;
+
+    iget-object v3, p1, Lckf;->b:Lchn;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lckd;->d:Lcho;
+
+    iget-object v3, p1, Lckd;->d:Lcho;
+
+    if-ne v2, v3, :cond_2
+
+    iget v2, p0, Lckq;->a:I
+
+    iget v3, p1, Lckq;->a:I
+
+    if-eq v2, v3, :cond_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    .line 138
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    .prologue
+    .line 147
+    iget v0, p0, Lckq;->a:I
+
+    int-to-long v0, v0
+
+    .line 148
+    const/16 v2, 0x20
+
+    ushr-long v2, v0, v2
+
+    xor-long/2addr v0, v2
+
+    long-to-int v0, v0
+
+    .line 149
+    iget-object v1, p0, Lckd;->d:Lcho;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 150
+    iget-object v1, p0, Lckf;->b:Lchn;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 151
+    return v0
 .end method

@@ -1,9 +1,6 @@
-import org.json.JSONObject;
-
-public abstract interface bsi
-{
-  public abstract void a(boolean paramBoolean, int paramInt, JSONObject paramJSONObject);
-}
+public abstract class bsi
+  implements bsx
+{}
 
 /* Location:
  * Qualified Name:     bsi

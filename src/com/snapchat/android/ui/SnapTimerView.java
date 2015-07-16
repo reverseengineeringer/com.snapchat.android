@@ -11,9 +11,9 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
-import atf;
-import avh;
-import cgb;
+import aue;
+import awf;
+import chc;
 
 public class SnapTimerView
   extends TextView
@@ -80,7 +80,7 @@ public class SnapTimerView
       if (e) {}
       for (n = 18;; n = 12)
       {
-        m = (int)avh.a(m * 12 + n, getContext());
+        m = (int)awf.a(m * 12 + n, getContext());
         localObject = getLayoutParams();
         width = m;
         height = m;
@@ -102,7 +102,7 @@ public class SnapTimerView
     invalidate();
   }
   
-  public void onDraw(@cgb Canvas paramCanvas)
+  public void onDraw(@chc Canvas paramCanvas)
   {
     if (d) {
       g = SystemClock.elapsedRealtime();
@@ -124,7 +124,7 @@ public class SnapTimerView
           break label426;
         }
         m = 2130838155;
-        h = atf.a(getContext(), m, n, i1);
+        h = aue.a(getContext(), m, n, i1);
         i.setShader(new BitmapShader(h, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
       }
       if ((j == null) || (j.getWidth() != n) || (j.getHeight() != i1))
@@ -136,7 +136,7 @@ public class SnapTimerView
           break label432;
         }
         m = 2130838154;
-        j = atf.a(getContext(), m, n, i1);
+        j = aue.a(getContext(), m, n, i1);
         k.setShader(new BitmapShader(j, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
       }
       m = Math.max(n, i1) / 2;

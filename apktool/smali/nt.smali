@@ -1,90 +1,61 @@
-.class public final Lnt;
-.super Ljava/lang/Exception;
+.class public Lnt;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final TAG:Ljava/lang/String;
+
+
+# instance fields
+.field public final mData:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lnu;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public mGeofilterIndexCount:J
+
+.field public mGeofilterIndexPos:J
+
+
 # direct methods
-.method public constructor <init>(Laue;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 13
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 14
+    const-class v0, Lnt;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
-
-    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, ","
+    sput-object v0, Lnt;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
+.end method
 
-    move-result-object v0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-virtual {p1}, Laue;->b()I
+    .prologue
+    .line 43
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v1
+    .line 16
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, Lnt;->mData:Ljava/util/Map;
 
-    const-string v1, "x"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Laue;->a()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ","
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ","
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
-
-    .line 17
+    .line 44
     return-void
 .end method

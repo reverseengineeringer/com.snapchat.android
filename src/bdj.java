@@ -1,16 +1,4 @@
-import com.snapchat.android.util.eventbus.SnapCaptureContext;
-
-public final class bdj
-{
-  private final SnapCaptureContext mCaptureContext;
-  public final aim mMediabryo;
-  
-  public bdj(@cgb aim paramaim, @cgb SnapCaptureContext paramSnapCaptureContext)
-  {
-    mMediabryo = ((aim)ck.a(paramaim));
-    mCaptureContext = ((SnapCaptureContext)ck.a(paramSnapCaptureContext));
-  }
-}
+public final class bdj {}
 
 /* Location:
  * Qualified Name:     bdj

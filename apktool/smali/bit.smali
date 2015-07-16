@@ -1,58 +1,30 @@
-.class public Lbit;
-.super Lbhl;
+.class public final Lbit;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lbit$a;
-    }
-.end annotation
-
-
 # instance fields
-.field protected knownChatSequenceNumbers:Ljava/util/Map;
+.field protected frontFacingFlash:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "known_chat_sequence_numbers"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;"
-        }
+        value = "front_facing_flash"
     .end annotation
 .end field
 
-.field protected knownReceivedSnapsTs:Ljava/util/Map;
+.field protected replaySnaps:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "known_received_snaps_ts"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;"
-        }
+        value = "replay_snaps"
     .end annotation
 .end field
 
-.field protected releaseType:Ljava/lang/String;
+.field protected smartFilters:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "release_type"
+        value = "smart_filters"
     .end annotation
 .end field
 
-.field protected timestamp:Ljava/lang/Long;
+.field protected visualFilters:Ljava/lang/Boolean;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "timestamp"
+        value = "visual_filters"
     .end annotation
 .end field
 
@@ -62,193 +34,117 @@
     .locals 0
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Lbhl;-><init>()V
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lbit$a;
+.method public final a(Ljava/lang/Boolean;)Lbit;
+    .locals 0
+
+    .prologue
+    .line 36
+    iput-object p1, p0, Lbit;->smartFilters:Ljava/lang/Boolean;
+
+    .line 37
+    return-object p0
+.end method
+
+.method public final a()Ljava/lang/Boolean;
     .locals 1
 
     .prologue
-    .line 84
-    iget-object v0, p0, Lbit;->releaseType:Ljava/lang/String;
-
-    invoke-static {v0}, Lbit$a;->a(Ljava/lang/String;)Lbit$a;
-
-    move-result-object v0
+    .line 41
+    iget-object v0, p0, Lbit;->smartFilters:Ljava/lang/Boolean;
 
     return-object v0
 .end method
 
-.method public final a(Ljava/lang/String;)V
+.method public final b(Ljava/lang/Boolean;)Lbit;
     .locals 0
 
     .prologue
-    .line 71
-    iput-object p1, p0, Lbit;->releaseType:Ljava/lang/String;
-
     .line 72
-    return-void
+    iput-object p1, p0, Lbit;->frontFacingFlash:Ljava/lang/Boolean;
+
+    .line 73
+    return-object p0
 .end method
 
-.method public final a(Ljava/util/Map;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 93
-    iput-object p1, p0, Lbit;->knownChatSequenceNumbers:Ljava/util/Map;
-
-    .line 94
-    return-void
-.end method
-
-.method public final b()Ljava/util/Map;
+.method public final b()Ljava/lang/Boolean;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
-    .line 102
-    iget-object v0, p0, Lbit;->knownChatSequenceNumbers:Ljava/util/Map;
+    .line 77
+    iget-object v0, p0, Lbit;->frontFacingFlash:Ljava/lang/Boolean;
 
     return-object v0
 .end method
 
-.method public final b(Ljava/util/Map;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 111
-    iput-object p1, p0, Lbit;->knownReceivedSnapsTs:Ljava/util/Map;
-
-    .line 112
-    return-void
-.end method
-
-.method public final c()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 120
-    iget-object v0, p0, Lbit;->knownReceivedSnapsTs:Ljava/util/Map;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/Long;
-    .locals 1
-
-    .prologue
-    .line 138
-    iget-object v0, p0, Lbit;->timestamp:Ljava/lang/Long;
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 162
+    .line 119
     if-ne p1, p0, :cond_0
 
-    .line 163
+    .line 120
     const/4 v0, 0x1
 
-    .line 169
+    .line 126
     :goto_0
     return v0
 
-    .line 165
+    .line 122
     :cond_0
     instance-of v0, p1, Lbit;
 
     if-nez v0, :cond_1
 
-    .line 166
+    .line 123
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 168
+    .line 125
     :cond_1
     check-cast p1, Lbit;
 
-    .line 169
+    .line 126
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbit;->releaseType:Ljava/lang/String;
+    iget-object v1, p0, Lbit;->smartFilters:Ljava/lang/Boolean;
 
-    iget-object v2, p1, Lbit;->releaseType:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbit;->knownChatSequenceNumbers:Ljava/util/Map;
-
-    iget-object v2, p1, Lbit;->knownChatSequenceNumbers:Ljava/util/Map;
+    iget-object v2, p1, Lbit;->smartFilters:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbit;->knownReceivedSnapsTs:Ljava/util/Map;
+    iget-object v1, p0, Lbit;->visualFilters:Ljava/lang/Boolean;
 
-    iget-object v2, p1, Lbit;->knownReceivedSnapsTs:Ljava/util/Map;
+    iget-object v2, p1, Lbit;->visualFilters:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbit;->timestamp:Ljava/lang/Long;
+    iget-object v1, p0, Lbit;->frontFacingFlash:Ljava/lang/Boolean;
 
-    iget-object v2, p1, Lbit;->timestamp:Ljava/lang/Long;
+    iget-object v2, p1, Lbit;->frontFacingFlash:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbit;->replaySnaps:Ljava/lang/Boolean;
+
+    iget-object v2, p1, Lbit;->replaySnaps:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -261,34 +157,34 @@
     goto :goto_0
 .end method
 
-.method public hashCode()I
+.method public final hashCode()I
     .locals 2
 
     .prologue
-    .line 152
+    .line 109
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbit;->releaseType:Ljava/lang/String;
+    iget-object v1, p0, Lbit;->smartFilters:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbit;->knownChatSequenceNumbers:Ljava/util/Map;
+    iget-object v1, p0, Lbit;->visualFilters:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbit;->knownReceivedSnapsTs:Ljava/util/Map;
+    iget-object v1, p0, Lbit;->frontFacingFlash:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbit;->timestamp:Ljava/lang/Long;
+    iget-object v1, p0, Lbit;->replaySnaps:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -301,11 +197,11 @@
     return v0
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public final toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 147
+    .line 104
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

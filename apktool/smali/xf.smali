@@ -3,13 +3,30 @@
 .source "SourceFile"
 
 
+# annotations
+.annotation runtime Ljavax/inject/Singleton;
+.end annotation
+
+
+# instance fields
+.field public a:Z
+
+
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
+    .annotation runtime Ljavax/inject/Inject;
+    .end annotation
 
     .prologue
-    .line 17
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 16
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lxf;->a:Z
+
+    .line 20
     return-void
 .end method

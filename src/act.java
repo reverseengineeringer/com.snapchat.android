@@ -1,26 +1,9 @@
-import com.snapchat.android.discover.model.DSnapPage;
-
-final class act
+public final class act
+  extends IllegalArgumentException
 {
-  private final bgk a;
-  
-  public act()
+  public act(String paramString1, String paramString2, String paramString3, String paramString4, int paramInt)
   {
-    this(new bgk());
-  }
-  
-  private act(bgk parambgk)
-  {
-    a = parambgk;
-  }
-  
-  public static boolean a(DSnapPage paramDSnapPage, long paramLong1, long paramLong2, int paramInt)
-  {
-    if (Math.max(0L, System.currentTimeMillis() - paramLong1) > 3600000L * paramLong2) {}
-    while (f.intValue() >= paramInt) {
-      return false;
-    }
-    return true;
+    super(paramString1 + "\n Publisher: " + paramString2 + " Edition: " + paramString3 + " DSnap: " + paramString4 + " AdType: " + paramInt);
   }
 }
 

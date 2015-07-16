@@ -115,26 +115,26 @@
     move-result-object v0
 
     .line 134
-    invoke-static {}, Lcom/snapchat/android/fragments/signup/LoginFragment;->i()Lauo;
+    invoke-static {}, Lcom/snapchat/android/fragments/signup/LoginFragment;->i()Lavm;
 
     move-result-object v3
 
-    invoke-virtual {v3, v2}, Lauo;->a(Ljava/lang/String;)Z
+    invoke-virtual {v3, v2}, Lavm;->a(Ljava/lang/String;)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
     .line 135
-    invoke-static {}, Lcom/snapchat/android/fragments/signup/LoginFragment;->i()Lauo;
+    invoke-static {}, Lcom/snapchat/android/fragments/signup/LoginFragment;->i()Lavm;
 
     move-result-object v3
 
-    invoke-virtual {v3, v2}, Lauo;->b(Ljava/lang/String;)I
+    invoke-virtual {v3, v2}, Lavm;->b(Ljava/lang/String;)I
 
     move-result v4
 
-    iget-object v3, v3, Lauo;->mSharedPreferences:Landroid/content/SharedPreferences;
+    iget-object v3, v3, Lavm;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     new-instance v5, Ljava/lang/StringBuilder;
 

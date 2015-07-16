@@ -1,5 +1,5 @@
 .class public final Lcom/snapchat/android/api2/chat/LoadConversationPageTask$b;
-.super Lpl;
+.super Lqc;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
     name = "b"
 .end annotation
 
-.annotation runtime Ltn;
+.annotation runtime Lud;
 .end annotation
 
 
@@ -37,11 +37,11 @@
 .method constructor <init>(Lcom/snapchat/android/api2/chat/LoadConversationPageTask;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -49,7 +49,7 @@
     .line 153
     iput-object p1, p0, Lcom/snapchat/android/api2/chat/LoadConversationPageTask$b;->this$0:Lcom/snapchat/android/api2/chat/LoadConversationPageTask;
 
-    invoke-direct {p0}, Lpl;-><init>()V
+    invoke-direct {p0}, Lqc;-><init>()V
 
     .line 154
     iput-object p2, p0, Lcom/snapchat/android/api2/chat/LoadConversationPageTask$b;->mConversationId:Ljava/lang/String;

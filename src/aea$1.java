@@ -1,4 +1,11 @@
-public final class aea$1 {}
+import com.snapchat.android.discover.model.ChannelPage;
+import java.util.Comparator;
+
+final class aea$1
+  implements Comparator<ChannelPage>
+{
+  aea$1(aea paramaea) {}
+}
 
 /* Location:
  * Qualified Name:     aea.1

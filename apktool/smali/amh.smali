@@ -1,97 +1,105 @@
 .class public final Lamh;
-.super Lamq;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
+
+
+# static fields
+.field private static final a:Lamh;
+
+
+# instance fields
+.field private final b:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 19
-    invoke-direct {p0, p1}, Lamq;-><init>(Landroid/content/Intent;)V
+    .line 15
+    new-instance v0, Lamh;
 
-    .line 20
+    invoke-direct {v0}, Lamh;-><init>()V
+
+    sput-object v0, Lamh;->a:Lamh;
+
     return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 2
+
+    .prologue
+    .line 29
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 17
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v0, p0, Lamh;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 29
+    return-void
+.end method
+
+.method public static a()Lamh;
+    .locals 1
+
+    .prologue
+    .line 23
+    sget-object v0, Lamh;->a:Lamh;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)V
-    .locals 3
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 6
 
     .prologue
-    .line 29
-    const-string v0, "LogoutOperation"
-
-    const-string v1, "LogoutOperation process"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 31
-    invoke-super {p0, p1}, Lamq;->a(Landroid/content/Context;)V
-
     .line 32
-    return-void
-.end method
+    new-instance v0, Lbhu;
 
-.method public final a(Luc;)V
-    .locals 3
-    .param p1    # Luc;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+    const/16 v1, 0xa
 
-    .prologue
-    .line 36
-    invoke-super {p0, p1}, Lamq;->a(Luc;)V
+    invoke-direct {v0, p1, v1}, Lbhu;-><init>(Ljava/lang/Runnable;I)V
 
-    .line 37
-    const-string v0, "LogoutOperation"
+    .line 34
+    new-instance v1, Ljava/lang/Thread;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v2, "Download Manager Thread %d"
 
-    const-string v2, "onResult - wasSuccessful "
+    const/4 v3, 0x1
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-virtual {p1}, Luc;->d()Z
+    const/4 v4, 0x0
 
-    move-result v2
+    iget-object v5, p0, Lamh;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
-    move-result-object v1
+    move-result v5
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v5
 
-    const/4 v2, 0x0
+    aput-object v5, v3, v4
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v2
 
-    .line 40
-    iget-object v0, p0, Lamh;->h:Lajv;
+    invoke-direct {v1, v0, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lajv;->v()V
-
-    .line 41
-    return-void
-.end method
-
-.method protected final e()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 24
-    const-string v0, "/ph/logout"
-
-    return-object v0
+    return-object v1
 .end method

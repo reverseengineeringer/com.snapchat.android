@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 428
+    .line 434
     invoke-static {}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;->values()[Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
     move-result-object v0

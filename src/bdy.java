@@ -1,4 +1,14 @@
-public final class bdy {}
+public final class bdy
+{
+  public bcg newEvent;
+  public String sourceId;
+  
+  public bdy(@chc String paramString, bcg parambcg)
+  {
+    sourceId = paramString;
+    newEvent = parambcg;
+  }
+}
 
 /* Location:
  * Qualified Name:     bdy

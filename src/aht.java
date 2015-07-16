@@ -1,21 +1,9 @@
 public final class aht
+  extends aia
 {
-  private static final aht c = new aht();
-  final Object a = new Object();
-  aka b;
-  
-  public static aht a()
+  public aht()
   {
-    return c;
-  }
-  
-  public final aka b()
-  {
-    synchronized (a)
-    {
-      aka localaka = b;
-      return localaka;
-    }
+    super(ajx.a());
   }
 }
 

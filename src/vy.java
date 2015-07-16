@@ -1,37 +1,35 @@
-import com.snapchat.android.camera.model.CameraModel;
-import javax.inject.Provider;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public final class vy
-  implements buj<vw>
+  extends bge<vp>
 {
-  private final Provider<wj> b;
-  private final Provider<CameraModel> c;
+  private final List<vp> a;
   
-  static
+  public vy(@chc List<vp> paramList, @chc ban paramban, @chc bge.a<vp> parama)
   {
-    if (!vy.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    super(paramban, parama);
+    a = paramList;
+  }
+  
+  @chd
+  protected final List<vp> a(@chd String paramString)
+  {
+    if (TextUtils.isEmpty(paramString)) {
+      return a;
+    }
+    ArrayList localArrayList = new ArrayList();
+    Iterator localIterator = a.iterator();
+    while (localIterator.hasNext())
     {
-      a = bool;
-      return;
+      vp localvp = (vp)localIterator.next();
+      if (localvp.a(paramString)) {
+        localArrayList.add(localvp);
+      }
     }
-  }
-  
-  private vy(Provider<wj> paramProvider, Provider<CameraModel> paramProvider1)
-  {
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    b = paramProvider;
-    if ((!a) && (paramProvider1 == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider1;
-  }
-  
-  public static buj<vw> a(Provider<wj> paramProvider, Provider<CameraModel> paramProvider1)
-  {
-    return new vy(paramProvider, paramProvider1);
+    return localArrayList;
   }
 }
 

@@ -3,10 +3,6 @@
 .source "SourceFile"
 
 
-# static fields
-.field private static final UPDATE_BUFFER_SIZE:I = 0x400
-
-
 # instance fields
 .field private final mCipher:Lcom/facebook/crypto/cipher/NativeCBCCipher;
 

@@ -1,80 +1,26 @@
-import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
+import com.snapchat.android.util.profileimages.ProfileImageUtils;
+import java.util.List;
+import java.util.concurrent.Executor;
 
 public class bgw
-  extends bgy
 {
-  @SerializedName("checksums_dict")
-  protected String checksumsDict;
-  @SerializedName("features_map")
-  protected String featuresMap;
-  @SerializedName("height")
-  protected Integer height;
-  @SerializedName("max_video_height")
-  protected Integer maxVideoHeight;
-  @SerializedName("max_video_width")
-  protected Integer maxVideoWidth;
-  @SerializedName("width")
-  protected Integer width;
+  private static final String TAG = bgw.class.getSimpleName();
+  private final axn mCache;
+  public final Executor mExecutor;
+  private final ProfileImageUtils mProfileImageUtils;
   
-  public final bgw a(Integer paramInteger)
+  public bgw()
   {
-    height = paramInteger;
-    return this;
+    this(avf.HIGH_PRIORITY_EXECUTOR, axo.PROFILE_IMAGE_CACHE, ProfileImageUtils.a());
   }
   
-  public final bgw a(String paramString)
+  private bgw(Executor paramExecutor, axn paramaxn, ProfileImageUtils paramProfileImageUtils)
   {
-    checksumsDict = paramString;
-    return this;
-  }
-  
-  public final bgw b(Integer paramInteger)
-  {
-    width = paramInteger;
-    return this;
-  }
-  
-  public final bgw b(String paramString)
-  {
-    featuresMap = paramString;
-    return this;
-  }
-  
-  public final bgw c(Integer paramInteger)
-  {
-    maxVideoHeight = paramInteger;
-    return this;
-  }
-  
-  public final bgw d(Integer paramInteger)
-  {
-    maxVideoWidth = paramInteger;
-    return this;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
-    }
-    if (!(paramObject instanceof bgw)) {
-      return false;
-    }
-    paramObject = (bgw)paramObject;
-    return new EqualsBuilder().append(checksumsDict, checksumsDict).append(height, height).append(width, width).append(maxVideoHeight, maxVideoHeight).append(maxVideoWidth, maxVideoWidth).append(featuresMap, featuresMap).isEquals();
-  }
-  
-  public int hashCode()
-  {
-    return new HashCodeBuilder().append(checksumsDict).append(height).append(width).append(maxVideoHeight).append(maxVideoWidth).append(featuresMap).toHashCode();
-  }
-  
-  public String toString()
-  {
-    return ToStringBuilder.reflectionToString(this);
+    mExecutor = paramExecutor;
+    mCache = paramaxn;
+    mProfileImageUtils = paramProfileImageUtils;
   }
 }
 

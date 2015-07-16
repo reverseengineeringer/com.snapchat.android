@@ -1,512 +1,467 @@
-.class public Lcjf;
-.super Lcgh;
+.class public final Lcjf;
+.super Lcip;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Serializable;
 
+# static fields
+.field private static final F:Lcjf;
 
-# instance fields
-.field private final a:Lcgh;
-
-.field private final b:Lcgi;
+.field private static final G:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Lchl;",
+            "[",
+            "Lcjf;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcgh;)V
-    .locals 1
-
-    .prologue
-    .line 52
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lcjf;-><init>(Lcgh;Lcgi;)V
-
-    .line 53
-    return-void
-.end method
-
-.method public constructor <init>(Lcgh;Lcgi;)V
+.method static constructor <clinit>()V
     .locals 2
 
     .prologue
-    .line 62
-    invoke-direct {p0}, Lcgh;-><init>()V
+    .line 71
+    new-instance v0, Ljava/util/HashMap;
 
-    .line 63
-    if-nez p1, :cond_0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 64
+    sput-object v0, Lcjf;->G:Ljava/util/Map;
+
+    .line 74
+    sget-object v0, Lchl;->a:Lchl;
+
+    const/4 v1, 0x4
+
+    invoke-static {v0, v1}, Lcjf;->a(Lchl;I)Lcjf;
+
+    move-result-object v0
+
+    sput-object v0, Lcjf;->F:Lcjf;
+
+    .line 75
+    return-void
+.end method
+
+.method private constructor <init>(Lchg;I)V
+    .locals 0
+
+    .prologue
+    .line 162
+    invoke-direct {p0, p1, p2}, Lcip;-><init>(Lchg;I)V
+
+    .line 163
+    return-void
+.end method
+
+.method public static a(Lchl;I)Lcjf;
+    .locals 4
+
+    .prologue
+    .line 125
+    if-nez p0, :cond_0
+
+    .line 126
+    invoke-static {}, Lchl;->a()Lchl;
+
+    move-result-object p0
+
+    .line 129
+    :cond_0
+    sget-object v2, Lcjf;->G:Ljava/util/Map;
+
+    monitor-enter v2
+
+    .line 130
+    :try_start_0
+    sget-object v0, Lcjf;->G:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lcjf;
+
+    .line 131
+    if-nez v0, :cond_1
+
+    .line 132
+    const/4 v0, 0x7
+
+    new-array v0, v0, [Lcjf;
+
+    .line 133
+    sget-object v1, Lcjf;->G:Ljava/util/Map;
+
+    invoke-interface {v1, p0, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    move-object v1, v0
+
+    .line 136
+    add-int/lit8 v0, p1, -0x1
+
+    :try_start_1
+    aget-object v0, v1, v0
+    :try_end_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 141
+    if-nez v0, :cond_2
+
+    .line 142
+    :try_start_2
+    sget-object v0, Lchl;->a:Lchl;
+
+    if-ne p0, v0, :cond_3
+
+    .line 143
+    new-instance v0, Lcjf;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v3, p1}, Lcjf;-><init>(Lchg;I)V
+
+    .line 149
+    :goto_0
+    add-int/lit8 v3, p1, -0x1
+
+    aput-object v0, v1, v3
+
+    .line 151
+    :cond_2
+    monitor-exit v2
+
+    .line 152
+    return-object v0
+
+    .line 138
+    :catch_0
+    move-exception v0
+
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "The field must not be null"
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v3, "Invalid min days in first week: "
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 66
-    :cond_0
-    iput-object p1, p0, Lcjf;->a:Lcgh;
+    .line 151
+    :catchall_0
+    move-exception v0
 
-    .line 67
-    if-nez p2, :cond_1
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-virtual {p1}, Lcgh;->a()Lcgi;
+    throw v0
 
-    move-result-object p2
+    .line 145
+    :cond_3
+    :try_start_3
+    sget-object v0, Lchl;->a:Lchl;
 
-    :cond_1
-    iput-object p2, p0, Lcjf;->b:Lcgi;
+    invoke-static {v0, p1}, Lcjf;->a(Lchl;I)Lcjf;
 
-    .line 68
-    return-void
+    move-result-object v3
+
+    .line 146
+    new-instance v0, Lcjf;
+
+    invoke-static {v3, p0}, Lcjh;->a(Lchg;Lchl;)Lcjh;
+
+    move-result-object v3
+
+    invoke-direct {v0, v3, p1}, Lcjf;-><init>(Lchg;I)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    goto :goto_0
+.end method
+
+.method public static b(Lchl;)Lcjf;
+    .locals 1
+
+    .prologue
+    .line 114
+    const/4 v0, 0x4
+
+    invoke-static {p0, v0}, Lcjf;->a(Lchl;I)Lcjf;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(J)I
+.method final N()I
     .locals 1
 
     .prologue
-    .line 96
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->a(J)I
-
-    move-result v0
+    .line 241
+    const v0, -0x116babfe
 
     return v0
 .end method
 
-.method public final a(Ljava/util/Locale;)I
+.method final O()I
     .locals 1
 
     .prologue
-    .line 244
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1}, Lcgh;->a(Ljava/util/Locale;)I
-
-    move-result v0
+    .line 245
+    const v0, 0x116bbb60
 
     return v0
 .end method
 
-.method public final a(JI)J
-    .locals 3
-
-    .prologue
-    .line 140
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcgh;->a(JI)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final a(JJ)J
-    .locals 3
-
-    .prologue
-    .line 144
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcgh;->a(JJ)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final a(JLjava/lang/String;Ljava/util/Locale;)J
-    .locals 3
-
-    .prologue
-    .line 176
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcgh;->a(JLjava/lang/String;Ljava/util/Locale;)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final a()Lcgi;
-    .locals 1
-
-    .prologue
-    .line 80
-    iget-object v0, p0, Lcjf;->b:Lcgi;
-
-    return-object v0
-.end method
-
-.method public final a(ILjava/util/Locale;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 116
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->a(ILjava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(JLjava/util/Locale;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 100
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcgh;->a(JLjava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(Lchb;Ljava/util/Locale;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 112
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->a(Lchb;Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b(JJ)I
-    .locals 1
-
-    .prologue
-    .line 164
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcgh;->b(JJ)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public b(JI)J
-    .locals 3
-
-    .prologue
-    .line 172
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 84
-    iget-object v0, p0, Lcjf;->b:Lcgi;
-
-    iget-object v0, v0, Lcgi;->a:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final b(ILjava/util/Locale;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 136
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->b(ILjava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b(JLjava/util/Locale;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 120
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcgh;->b(JLjava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b(Lchb;Ljava/util/Locale;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 132
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->b(Lchb;Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b(J)Z
-    .locals 1
-
-    .prologue
-    .line 200
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->b(J)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c(J)I
-    .locals 1
-
-    .prologue
-    .line 232
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->c(J)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c(JJ)J
-    .locals 3
-
-    .prologue
-    .line 168
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcgh;->c(JJ)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0}, Lcgh;->c()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d(J)J
-    .locals 3
-
-    .prologue
-    .line 252
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->d(J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final d()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 192
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0}, Lcgh;->d()Lcgm;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e(J)J
-    .locals 3
-
-    .prologue
-    .line 256
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->e(J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final e()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 196
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0}, Lcgh;->e()Lcgm;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final f(J)J
-    .locals 3
-
-    .prologue
-    .line 260
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->f(J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final f()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 208
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0}, Lcgh;->f()Lcgm;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public g()I
-    .locals 1
-
-    .prologue
-    .line 212
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0}, Lcgh;->g()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final g(J)J
-    .locals 3
-
-    .prologue
-    .line 264
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->g(J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final h()I
-    .locals 1
-
-    .prologue
-    .line 228
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0}, Lcgh;->h()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final h(J)J
-    .locals 3
-
-    .prologue
-    .line 268
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->h(J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final i(J)J
-    .locals 3
-
-    .prologue
-    .line 272
-    iget-object v0, p0, Lcjf;->a:Lcgh;
-
-    invoke-virtual {v0, p1, p2}, Lcgh;->i(J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public toString()Ljava/lang/String;
+.method final Q()J
     .locals 2
 
     .prologue
-    .line 276
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 249
+    const-wide v0, 0x758fac300L
 
-    const-string v1, "DateTimeField["
+    return-wide v0
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+.method final R()J
+    .locals 2
 
-    iget-object v1, p0, Lcjf;->b:Lcgi;
+    .prologue
+    .line 253
+    const-wide v0, 0x3ac7d6180L
 
-    iget-object v1, v1, Lcgi;->a:Ljava/lang/String;
+    return-wide v0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method final S()J
+    .locals 2
+
+    .prologue
+    .line 257
+    const-wide v0, 0x9cbf9040L
+
+    return-wide v0
+.end method
+
+.method final T()J
+    .locals 2
+
+    .prologue
+    .line 261
+    const-wide v0, 0x1c453aba2980L
+
+    return-wide v0
+.end method
+
+.method public final a(Lchl;)Lchg;
+    .locals 1
+
+    .prologue
+    .line 195
+    if-nez p1, :cond_0
+
+    .line 196
+    invoke-static {}, Lchl;->a()Lchl;
+
+    move-result-object p1
+
+    .line 198
+    :cond_0
+    invoke-virtual {p0}, Lcjf;->a()Lchl;
 
     move-result-object v0
 
-    const/16 v1, 0x5d
+    if-ne p1, v0, :cond_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    .line 201
+    :goto_0
+    return-object p0
 
-    move-result-object v0
+    :cond_1
+    const/4 v0, 0x4
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1, v0}, Lcjf;->a(Lchl;I)Lcjf;
 
-    move-result-object v0
+    move-result-object p0
+
+    goto :goto_0
+.end method
+
+.method protected final a(Lcik$a;)V
+    .locals 2
+
+    .prologue
+    .line 265
+    iget-object v0, p0, Lcik;->a:Lchg;
+
+    if-nez v0, :cond_0
+
+    .line 266
+    invoke-super {p0, p1}, Lcip;->a(Lcik$a;)V
+
+    .line 268
+    new-instance v0, Lckr;
+
+    iget-object v1, p1, Lcik$a;->E:Lchi;
+
+    invoke-direct {v0, p0, v1}, Lckr;-><init>(Lchg;Lchi;)V
+
+    iput-object v0, p1, Lcik$a;->E:Lchi;
+
+    .line 269
+    new-instance v0, Lckr;
+
+    iget-object v1, p1, Lcik$a;->B:Lchi;
+
+    invoke-direct {v0, p0, v1}, Lckr;-><init>(Lchg;Lchi;)V
+
+    iput-object v0, p1, Lcik$a;->B:Lchi;
+
+    .line 271
+    :cond_0
+    return-void
+.end method
+
+.method final b(III)J
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 207
+    if-gtz p1, :cond_1
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Lchp;
+
+    invoke-static {}, Lchj;->s()Lchj;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2, v3, v3}, Lchp;-><init>(Lchj;Ljava/lang/Number;Ljava/lang/Number;Ljava/lang/Number;)V
+
+    throw v0
+
+    :cond_0
+    add-int/lit8 p1, p1, 0x1
+
+    :cond_1
+    invoke-super {p0, p1, p2, p3}, Lcip;->b(III)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final b()Lchg;
+    .locals 1
+
+    .prologue
+    .line 185
+    sget-object v0, Lcjf;->F:Lcjf;
 
     return-object v0
+.end method
+
+.method final c(I)Z
+    .locals 1
+
+    .prologue
+    .line 211
+    and-int/lit8 v0, p1, 0x3
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method final d(I)J
+    .locals 6
+
+    .prologue
+    .line 219
+    add-int/lit16 v1, p1, -0x7b0
+
+    .line 221
+    if-gtz v1, :cond_1
+
+    .line 224
+    add-int/lit8 v0, v1, 0x3
+
+    shr-int/lit8 v0, v0, 0x2
+
+    .line 233
+    :cond_0
+    :goto_0
+    int-to-long v2, v1
+
+    const-wide/16 v4, 0x16d
+
+    mul-long/2addr v2, v4
+
+    int-to-long v0, v0
+
+    add-long/2addr v0, v2
+
+    const-wide/32 v2, 0x5265c00
+
+    mul-long/2addr v0, v2
+
+    .line 237
+    const-wide v2, 0xe71960800L
+
+    sub-long/2addr v0, v2
+
+    return-wide v0
+
+    .line 226
+    :cond_1
+    shr-int/lit8 v0, v1, 0x2
+
+    .line 228
+    invoke-virtual {p0, p1}, Lcjf;->c(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 229
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
 .end method

@@ -3,8 +3,8 @@ package com.snapchat.android.ui.cash;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import atb;
-import ye;
+import aua;
+import za;
 
 final class CardNumberEditText$a
   implements TextWatcher
@@ -39,7 +39,7 @@ final class CardNumberEditText$a
       localStringBuilder1 = localStringBuilder2;
       if (CardNumberEditText.a(a) != null)
       {
-        if (!atb.a(a.getUnformattedText())) {
+        if (!aua.a(a.getUnformattedText())) {
           break label192;
         }
         CardNumberEditText.a(a).b();

@@ -1,140 +1,139 @@
-import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnCompletionListener;
-import android.media.MediaPlayer.OnErrorListener;
-import android.media.MediaPlayer.OnInfoListener;
-import android.media.MediaPlayer.OnPreparedListener;
-import com.snapchat.android.Timber;
-import com.snapchat.android.ui.TextureVideoView;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.FrameLayout.LayoutParams;
+import android.widget.ImageView;
+import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics.ViewStatus;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.DSnapPanel;
+import com.snapchat.android.discover.model.DSnapPanel.MediaType;
+import com.snapchat.android.discover.ui.DSnapView;
+import com.snapchat.android.model.Mediabryo.SnapType;
+import com.snapchat.android.ui.FitWidthImageView;
+import com.snapchat.android.ui.FitWidthViewGroup;
+import java.util.List;
 
 public final class aeu
+  extends aey
 {
-  final boolean a;
-  TextureVideoView b;
-  public String c;
-  public boolean d;
-  public aeq e;
-  int f = 2;
-  public int g = -1;
-  public float h = 0.0F;
-  public float i = 0.0F;
-  protected MediaPlayer.OnCompletionListener j = new MediaPlayer.OnCompletionListener()
+  boolean a;
+  private final Context b;
+  private final awn c;
+  private final afv d;
+  private FrameLayout e;
+  private FitWidthViewGroup f;
+  private ImageView g;
+  private aww h = new aww()
   {
-    public final void onCompletion(MediaPlayer paramAnonymousMediaPlayer)
+    public final void a(awm paramAnonymousawm, awv paramAnonymousawv)
     {
-      paramAnonymousMediaPlayer = e;
-      if (paramAnonymousMediaPlayer != null) {
-        paramAnonymousMediaPlayer.r_();
+      if (j != null) {
+        j.b();
       }
-      if (d) {
-        b.start();
-      }
+      a = true;
     }
   };
-  protected MediaPlayer.OnPreparedListener k = new MediaPlayer.OnPreparedListener()
+  
+  public aeu(Context paramContext)
   {
-    public final void onPrepared(MediaPlayer paramAnonymousMediaPlayer)
+    this(paramContext, new awn(paramContext), new afv());
+  }
+  
+  private aeu(Context paramContext, awn paramawn, afv paramafv)
+  {
+    b = paramContext;
+    c = paramawn;
+    d = paramafv;
+  }
+  
+  public final aji a(View paramView, aeb paramaeb, @chc List<View> paramList)
+  {
+    if (f != null)
     {
-      h = paramAnonymousMediaPlayer.getVideoWidth();
-      i = paramAnonymousMediaPlayer.getVideoHeight();
-      g = paramAnonymousMediaPlayer.getDuration();
-      final aeq localaeq = e;
-      if (localaeq != null)
-      {
-        if (!a) {
-          b.postDelayed(new Runnable()
-          {
-            public final void run()
-            {
-              localaeq.b();
-            }
-          }, 250L);
-        }
-        return;
-      }
-      paramAnonymousMediaPlayer.setLooping(d);
+      paramList = aws.a(f, paramList);
+      afv.a(paramaeb, 0, 0, paramList.getWidth(), paramList.getHeight());
+      paramView = new akh.a();
+      mShouldHideSystemUi = true;
+      paramView = paramView.a();
+      akf.a locala = new akf.a();
+      mSnapType = Mediabryo.SnapType.DISCOVER;
+      locala = (akf.a)locala;
+      mShouldEnableVisualFilters = false;
+      locala = (akf.a)locala;
+      mRawImageBitmap = paramList;
+      locala = (akf.a)locala;
+      mWidth = paramList.getWidth();
+      locala = (akf.a)locala;
+      mHeight = paramList.getHeight();
+      paramList = (akf.a)locala;
+      mMediaExtras = paramaeb;
+      paramaeb = (akf.a)paramList;
+      mPreviewConfiguration = paramView;
+      return ((akf.a)paramaeb).c();
     }
-  };
-  protected MediaPlayer.OnInfoListener l = new MediaPlayer.OnInfoListener()
+    return null;
+  }
+  
+  public final DiscoverUsageAnalytics.ViewStatus a(long paramLong)
   {
-    public final boolean onInfo(MediaPlayer paramAnonymousMediaPlayer, int paramAnonymousInt1, int paramAnonymousInt2)
+    return DiscoverUsageAnalytics.ViewStatus.COMPLETED;
+  }
+  
+  public final void a(DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel) {}
+  
+  public final boolean a(DSnapView paramDSnapView, DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
+  {
+    e = new FrameLayout(b);
+    paramDSnapView = new FrameLayout.LayoutParams(-1, -1);
+    gravity = 17;
+    e.setLayoutParams(paramDSnapView);
+    f = new FitWidthViewGroup(b);
+    g = new FitWidthImageView(b);
+    switch (aeu.2.a[i.ordinal()])
     {
-      paramAnonymousMediaPlayer = e;
-      if ((paramAnonymousMediaPlayer != null) && (a) && (paramAnonymousInt1 == 3)) {
-        paramAnonymousMediaPlayer.b();
-      }
-      return false;
+    default: 
+      f.setGravity(1);
     }
-  };
-  protected MediaPlayer.OnErrorListener m = new MediaPlayer.OnErrorListener()
-  {
-    public final boolean onError(MediaPlayer paramAnonymousMediaPlayer, int paramAnonymousInt1, int paramAnonymousInt2)
+    for (;;)
     {
-      paramAnonymousMediaPlayer = String.format("Error=%s extra=%d", new Object[] { ann.a(paramAnonymousInt1), Integer.valueOf(paramAnonymousInt2) });
-      Timber.f("VideoViewController", paramAnonymousMediaPlayer, new Object[0]);
-      if (f > 0)
-      {
-        paramAnonymousMediaPlayer = aeu.this;
-        f -= 1;
-        Timber.c("VideoViewController", "Retrying the media player following an error, %d retries remain", new Object[] { Integer.valueOf(f) });
-        b.post(new Runnable()
-        {
-          public final void run()
-          {
-            b();
-            a();
-          }
-        });
-      }
-      aeq localaeq;
-      do
-      {
-        return true;
-        Timber.c("VideoViewController", "Aborting retry following an error, %d retries were attempted", new Object[] { Integer.valueOf(2) });
-        localaeq = e;
-      } while (localaeq == null);
-      localaeq.a(paramAnonymousMediaPlayer);
+      f.addView(g);
+      g.setAdjustViewBounds(true);
+      paramDSnapPage = c + a;
+      paramDSnapPanel = new awv.a();
+      mImageView = g;
+      paramDSnapPage = paramDSnapPanel.a(paramDSnapPage);
+      mRequireExactDimensions = true;
+      paramDSnapPage = paramDSnapPage.a();
+      c.a(paramDSnapPage, new aww[] { h });
+      e.addView(f, paramDSnapView);
       return true;
+      f.setGravity(2);
+      continue;
+      f.setGravity(0);
     }
-  };
-  private int n = 0;
-  
-  public aeu(boolean paramBoolean) {}
-  
-  private aeu(boolean paramBoolean1, boolean paramBoolean2)
-  {
-    d = paramBoolean1;
-    a = paramBoolean2;
   }
   
-  @avl
-  public final void a()
+  public final void c()
   {
-    if (c == null)
-    {
-      Timber.f("VideoViewController", "Calling start on an uninitialized controller.", new Object[0]);
-      return;
+    c.a(g);
+  }
+  
+  public final View d()
+  {
+    return e;
+  }
+  
+  public final DSnapPanel.MediaType e()
+  {
+    return DSnapPanel.MediaType.IMAGE;
+  }
+  
+  public final void m_()
+  {
+    if ((a) && (j != null)) {
+      j.b();
     }
-    b.setVideoPath(c);
-    b.start();
-  }
-  
-  public final void a(@cgb TextureVideoView paramTextureVideoView, boolean paramBoolean)
-  {
-    f = 2;
-    b = paramTextureVideoView;
-    d = paramBoolean;
-    b.setOnPreparedListener(k);
-    b.setOnCompletionListener(j);
-    b.setOnInfoListener(l);
-    b.setOnErrorListener(m);
-  }
-  
-  @avl
-  public final void b()
-  {
-    n = 0;
-    b.a();
-    b.b();
   }
 }
 

@@ -1,7 +1,6 @@
 package com.snapchat.android.fragments.addfriends;
 
-import com.snapchat.android.Timber;
-import wr;
+import xn;
 
 final class ProfileFragment$d$1
   implements Runnable
@@ -10,8 +9,8 @@ final class ProfileFragment$d$1
   
   public final void run()
   {
-    Timber.c("ProfileFragment", "profile images - Capturing profile photo at index " + ProfileFragment.j(a.a), new Object[0]);
-    ProfileFragment.h(a.a).a(new ProfileFragment.d(a.a, (byte)0));
+    new StringBuilder("profile images - Capturing profile photo at index ").append(ProfileFragment.i(a.a));
+    ProfileFragment.g(a.a).a(new ProfileFragment.d(a.a, (byte)0));
   }
 }
 

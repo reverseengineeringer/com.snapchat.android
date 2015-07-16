@@ -1,37 +1,46 @@
+import java.util.Map.Entry;
+import javax.annotation.Nullable;
+
 @cd
-final class dp<E>
-  extends da<E>
+final class dp<K, V>
+  extends dr<K>
 {
-  private final dc<E> b;
-  private final de<? extends E> c;
+  private final dm<K, V> a;
   
-  private dp(dc<E> paramdc, de<? extends E> paramde)
+  dp(dm<K, V> paramdm)
   {
-    b = paramdc;
-    c = paramde;
+    a = paramdm;
   }
   
-  dp(dc<E> paramdc, Object[] paramArrayOfObject) {}
-  
-  @ce
-  final int a(Object[] paramArrayOfObject, int paramInt)
+  public final ef<K> a()
   {
-    return c.a(paramArrayOfObject, paramInt);
+    return b().a();
   }
   
-  public final dx<E> a(int paramInt)
+  public final boolean contains(@Nullable Object paramObject)
   {
-    return c.a(paramInt);
+    return a.containsKey(paramObject);
   }
   
-  final dc<E> c()
+  final dl<K> d()
   {
-    return b;
+    new di()
+    {
+      final dj<K> c()
+      {
+        return dp.this;
+      }
+      
+      public final K get(int paramAnonymousInt)
+      {
+        return (K)((Map.Entry)b.get(paramAnonymousInt)).getKey();
+      }
+    };
   }
   
-  public final E get(int paramInt)
+  public final int size()
   {
-    return (E)c.get(paramInt);
+    return a.size();
   }
 }
 

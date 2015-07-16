@@ -1,28 +1,27 @@
 package com.snapchat.android.ui;
 
-import ajx;
+import akr;
 import android.content.Context;
 import android.util.AttributeSet;
-import bgk;
-import com.snapchat.android.Timber;
+import bhk;
 
 public class InAppPromptFlipper
   extends VerticalSwipeLayout
 {
-  private final bgk c;
-  private final ajx d;
+  private final bhk c;
+  private final akr d;
   private boolean e = false;
   
   public InAppPromptFlipper(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, new bgk(), ajx.a());
+    this(paramContext, paramAttributeSet, new bhk(), akr.a());
   }
   
-  InAppPromptFlipper(Context paramContext, AttributeSet paramAttributeSet, bgk parambgk, ajx paramajx)
+  InAppPromptFlipper(Context paramContext, AttributeSet paramAttributeSet, bhk parambhk, akr paramakr)
   {
     super(paramContext, paramAttributeSet);
     a(1, 0.0D);
-    setOnScrolledListener(new VerticalSwipeLayout.a()
+    a(new VerticalSwipeLayout.a()
     {
       public final void a(int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3) {}
       
@@ -42,13 +41,12 @@ public class InAppPromptFlipper
         setVisibility(8);
       }
     });
-    c = parambgk;
-    d = paramajx;
+    c = parambhk;
+    d = paramakr;
   }
   
   public final void a()
   {
-    Timber.c("UpgradePromptView", "showPrompt()", new Object[0]);
     post(new Runnable()
     {
       public final void run()

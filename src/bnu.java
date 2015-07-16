@@ -1,79 +1,41 @@
 public final class bnu
 {
-  int a;
-  int b;
-  int c;
-  final int[] d = new int[10];
-  
-  final int a()
+  public static int a(String paramString, int paramInt)
   {
-    if ((a & 0x2) != 0) {
-      return d[1];
+    while (paramInt < paramString.length())
+    {
+      int i = paramString.charAt(paramInt);
+      if ((i != 32) && (i != 9)) {
+        break;
+      }
+      paramInt += 1;
     }
-    return -1;
+    return paramInt;
   }
   
-  final bnu a(int paramInt1, int paramInt2, int paramInt3)
+  public static int a(String paramString1, int paramInt, String paramString2)
   {
-    if (paramInt1 >= d.length) {
-      return this;
+    while ((paramInt < paramString1.length()) && (paramString2.indexOf(paramString1.charAt(paramInt)) == -1)) {
+      paramInt += 1;
     }
-    int i = 1 << paramInt1;
-    a |= i;
-    if ((paramInt2 & 0x1) != 0)
-    {
-      b |= i;
-      if ((paramInt2 & 0x2) == 0) {
-        break label86;
-      }
-    }
-    label86:
-    for (c = (i | c);; c = ((i ^ 0xFFFFFFFF) & c))
-    {
-      d[paramInt1] = paramInt3;
-      return this;
-      b &= (i ^ 0xFFFFFFFF);
-      break;
-    }
+    return paramInt;
   }
   
-  final boolean a(int paramInt)
+  public static int b(String paramString, int paramInt)
   {
-    return (1 << paramInt & a) != 0;
-  }
-  
-  public final int b()
-  {
-    if ((a & 0x80) != 0) {
-      return d[7];
-    }
-    return 65536;
-  }
-  
-  final int b(int paramInt)
-  {
-    int j = 0;
-    if ((1 << paramInt & c) != 0)
+    try
     {
-      i = 1;
-      if (i == 0) {
-        break label51;
+      long l = Long.parseLong(paramString);
+      if (l > 2147483647L) {
+        return Integer.MAX_VALUE;
       }
+      if (l < 0L) {
+        return 0;
+      }
+      return (int)l;
     }
-    label51:
-    for (int i = 2;; i = 0)
-    {
-      if ((1 << paramInt & b) != 0) {
-        j = 1;
-      }
-      paramInt = i;
-      if (j != 0) {
-        paramInt = i | 0x1;
-      }
-      return paramInt;
-      i = 0;
-      break;
-    }
+    catch (NumberFormatException paramString) {}
+    return paramInt;
   }
 }
 

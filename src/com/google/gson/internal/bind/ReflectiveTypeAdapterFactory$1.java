@@ -5,7 +5,7 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import ej;
+import es;
 import java.lang.reflect.Field;
 
 final class ReflectiveTypeAdapterFactory$1
@@ -29,7 +29,7 @@ final class ReflectiveTypeAdapterFactory$1
   final void a(JsonWriter paramJsonWriter, Object paramObject)
   {
     paramObject = d.get(paramObject);
-    new ej(b, a, c.getType()).write(paramJsonWriter, paramObject);
+    new es(b, a, c.getType()).write(paramJsonWriter, paramObject);
   }
 }
 

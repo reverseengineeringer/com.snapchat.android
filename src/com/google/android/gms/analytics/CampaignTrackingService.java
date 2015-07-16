@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import java.io.IOException;
 import java.io.OutputStream;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class CampaignTrackingService
   extends IntentService
@@ -17,6 +19,13 @@ public class CampaignTrackingService
   public CampaignTrackingService(String paramString)
   {
     super(paramString);
+  }
+  
+  public void onCreate()
+  {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
+    super.onCreate();
   }
   
   public void onHandleIntent(Intent paramIntent)

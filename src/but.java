@@ -1,89 +1,40 @@
-import in.srain.cube.views.ptr.PtrFrameLayout;
+import java.lang.reflect.Constructor;
 
 public final class but
-  implements bus
 {
-  public bus a;
-  public but b;
-  
-  public final void a(PtrFrameLayout paramPtrFrameLayout)
+  public static Constructor a(String paramString, String[] paramArrayOfString)
   {
-    Object localObject1 = this;
-    Object localObject2;
-    do
+    paramString = Class.forName(paramString).getDeclaredConstructors();
+    int j = 0;
+    while (j < paramString.length)
     {
-      localObject2 = a;
-      if (localObject2 != null) {
-        ((bus)localObject2).a(paramPtrFrameLayout);
+      Class[] arrayOfClass = paramString[j].getParameterTypes();
+      int i;
+      if (arrayOfClass.length != paramArrayOfString.length) {
+        i = 0;
       }
-      localObject2 = b;
-      localObject1 = localObject2;
-    } while (localObject2 != null);
-  }
-  
-  public final void a(PtrFrameLayout paramPtrFrameLayout, boolean paramBoolean, byte paramByte, int paramInt1, int paramInt2, float paramFloat1, float paramFloat2)
-  {
-    Object localObject1 = this;
-    Object localObject2;
-    do
-    {
-      localObject2 = a;
-      if (localObject2 != null) {
-        ((bus)localObject2).a(paramPtrFrameLayout, paramBoolean, paramByte, paramInt1, paramInt2, paramFloat1, paramFloat2);
+      while (i != 0)
+      {
+        return paramString[j];
+        i = 0;
+        for (;;)
+        {
+          if (i >= arrayOfClass.length) {
+            break label79;
+          }
+          if (!arrayOfClass[i].getName().equals(paramArrayOfString[i]))
+          {
+            i = 0;
+            break;
+          }
+          i += 1;
+        }
+        label79:
+        i = 1;
       }
-      localObject2 = b;
-      localObject1 = localObject2;
-    } while (localObject2 != null);
-  }
-  
-  public final boolean a()
-  {
-    return a != null;
-  }
-  
-  public final void b(PtrFrameLayout paramPtrFrameLayout)
-  {
-    Object localObject1 = this;
-    Object localObject2;
-    do
-    {
-      localObject2 = a;
-      if (localObject2 != null) {
-        ((bus)localObject2).b(paramPtrFrameLayout);
-      }
-      localObject2 = b;
-      localObject1 = localObject2;
-    } while (localObject2 != null);
-  }
-  
-  public final void c(PtrFrameLayout paramPtrFrameLayout)
-  {
-    Object localObject1 = this;
-    Object localObject2;
-    do
-    {
-      localObject2 = a;
-      if (localObject2 != null) {
-        ((bus)localObject2).c(paramPtrFrameLayout);
-      }
-      localObject2 = b;
-      localObject1 = localObject2;
-    } while (localObject2 != null);
-  }
-  
-  public final void d(PtrFrameLayout paramPtrFrameLayout)
-  {
-    Object localObject1 = this;
-    Object localObject2;
-    do
-    {
-      localObject2 = a;
-      if (localObject2 != null) {
-        ((bus)localObject2).d(paramPtrFrameLayout);
-      }
-      localObject2 = b;
-      localObject1 = localObject2;
-    } while (localObject2 != null);
+      j += 1;
+    }
+    return null;
   }
 }
 

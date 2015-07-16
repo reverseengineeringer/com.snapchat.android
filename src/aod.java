@@ -1,21 +1,47 @@
-import java.util.List;
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
 
 public final class aod
-  extends aoc
+  extends ana
+  implements ui.b<blk>
 {
-  private final ajq a;
+  public blk a;
+  public boolean b = false;
+  private final String c;
+  private final String d;
   
-  public aod(ahe paramahe, ajq paramajq)
+  public aod(Intent paramIntent)
   {
-    super(paramahe);
-    a = paramajq;
+    super(paramIntent);
+    c = paramIntent.getStringExtra("action");
+    d = paramIntent.getStringExtra("pre_auth_token");
+    registerCallback(blk.class, this);
   }
   
-  public final List<agk> a()
+  public final Object getRequestPayload()
   {
-    List localList = super.a();
-    localList.addAll(0, a.d());
-    return localList;
+    return new aod.a(c, d);
+  }
+  
+  protected final String l_()
+  {
+    return "/loq/two_fa_phone_verify";
+  }
+  
+  @ud
+  static final class a
+    extends qp
+  {
+    @SerializedName("action")
+    String a;
+    @SerializedName("pre_auth_token")
+    String b;
+    
+    public a(String paramString1, String paramString2)
+    {
+      a = paramString1;
+      b = paramString2;
+    }
   }
 }
 

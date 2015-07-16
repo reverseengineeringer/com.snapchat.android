@@ -11,7 +11,7 @@ public abstract interface as
   
   public abstract String getType();
   
-  public abstract void parse(ex paramex, ByteBuffer paramByteBuffer, long paramLong, al paramal);
+  public abstract void parse(fg paramfg, ByteBuffer paramByteBuffer, long paramLong, al paramal);
   
   public abstract void setParent(au paramau);
 }

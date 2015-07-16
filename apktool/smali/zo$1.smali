@@ -1,5 +1,5 @@
-.class final Lzo$1;
-.super Ljava/util/HashMap;
+.class final synthetic Lzo$1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -9,59 +9,114 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x1008
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/util/HashMap",
-        "<",
-        "Ljava/lang/String;",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
+
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 12
-    invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
-
-    .line 14
-    sget-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_SQUARE_TOS:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
+    .line 73
+    invoke-static {}, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->values()[Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
 
     move-result-object v0
 
-    sget-object v1, Lcom/snapchat/android/database/ClientProperty;->SQUARE_TOS_ACCEPTED:Lcom/snapchat/android/database/ClientProperty;
+    array-length v0, v0
 
-    invoke-virtual {v1}, Lcom/snapchat/android/database/ClientProperty;->name()Ljava/lang/String;
+    new-array v0, v0, [I
 
-    move-result-object v1
+    sput-object v0, Lzo$1;->a:[I
 
-    invoke-virtual {p0, v0, v1}, Lzo$1;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_start_0
+    sget-object v0, Lzo$1;->a:[I
 
-    .line 15
-    sget-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_SNAPCASH_TOS:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v1, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->UPLOADED:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->ordinal()I
 
-    move-result-object v0
+    move-result v1
 
-    sget-object v1, Lcom/snapchat/android/database/ClientProperty;->SNAPCASH_NEW_TOS_ACCEPTED:Lcom/snapchat/android/database/ClientProperty;
+    const/4 v2, 0x1
 
-    invoke-virtual {v1}, Lcom/snapchat/android/database/ClientProperty;->name()Ljava/lang/String;
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_3
 
-    move-result-object v1
+    :goto_0
+    :try_start_1
+    sget-object v0, Lzo$1;->a:[I
 
-    invoke-virtual {p0, v0, v1}, Lzo$1;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v1, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->FAILED:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
 
-    .line 16
+    invoke-virtual {v1}, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_2
+
+    :goto_1
+    :try_start_2
+    sget-object v0, Lzo$1;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->UPLOADING:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_1
+
+    :goto_2
+    :try_start_3
+    sget-object v0, Lzo$1;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->WILL_UPLOAD_AFTER_SAVE:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
+
+    :goto_3
     return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_3
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_2
+
+    :catch_2
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_0
 .end method

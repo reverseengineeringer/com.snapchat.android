@@ -16,7 +16,7 @@ public final class ProfilePictureView$4
     ProfilePictureView.c(a).setScaleX(1.0F);
     ProfilePictureView.c(a).setScaleY(1.0F);
     ProfilePictureView.c(a).setAlpha(0.0F);
-    ProfilePictureView.d(a).p();
+    ProfilePictureView.d(a).q();
   }
   
   public final void onAnimationRepeat(Animator paramAnimator) {}

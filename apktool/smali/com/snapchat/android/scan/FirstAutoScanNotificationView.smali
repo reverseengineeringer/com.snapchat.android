@@ -92,7 +92,7 @@
     invoke-virtual {p0, v0}, Lcom/snapchat/android/scan/FirstAutoScanNotificationView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 57
-    const v0, 0x7f0a023b
+    const v0, 0x7f0a0239
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/scan/FirstAutoScanNotificationView;->findViewById(I)Landroid/view/View;
 

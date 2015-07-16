@@ -1,11 +1,4 @@
-public final class bex
-  extends Exception
-{
-  public bex(String paramString)
-  {
-    super(paramString);
-  }
-}
+public final class bex {}
 
 /* Location:
  * Qualified Name:     bex

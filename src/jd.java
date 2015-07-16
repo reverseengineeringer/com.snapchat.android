@@ -2,17 +2,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class jd
-  extends lt
+  extends ml
 {
-  public Long charCount;
-  private final String eventName = "PROFILE_MY_CONTACTS_SEARCH_CLEAR";
+  private final String eventName = "PROFILE_FRIEND_REQUEST_ACCEPT";
+  public Boolean hasDisplayName;
+  public kh source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_MY_CONTACTS_SEARCH_CLEAR");
-    if (charCount != null) {
-      localHashMap.put("char_count", charCount);
+    localHashMap.put("event_name", "PROFILE_FRIEND_REQUEST_ACCEPT");
+    if (hasDisplayName != null) {
+      localHashMap.put("has_display_name", hasDisplayName);
+    }
+    if (source != null) {
+      localHashMap.put("source", source);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +35,23 @@ public final class jd
         return false;
       }
       paramObject = (jd)paramObject;
-      if (charCount == null) {
+      if (hasDisplayName != null)
+      {
+        if (hasDisplayName.equals(hasDisplayName)) {}
+      }
+      else {
+        while (hasDisplayName != null) {
+          return false;
+        }
+      }
+      if (source == null) {
         break;
       }
-    } while (charCount.equals(charCount));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (charCount == null) {
+      if (source == null) {
         break;
       }
     }
@@ -46,10 +59,15 @@ public final class jd
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (charCount != null) {}
-    for (int i = charCount.hashCode();; i = 0) {
-      return i + j * 31;
+    int j = 0;
+    int k = super.hashCode();
+    if (hasDisplayName != null) {}
+    for (int i = hasDisplayName.hashCode();; i = 0)
+    {
+      if (source != null) {
+        j = source.hashCode();
+      }
+      return (i + k * 31) * 31 + j;
     }
   }
 }

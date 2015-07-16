@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laok;
+.implements Lapg;
 
 
 # annotations
@@ -36,14 +36,14 @@
 
 
 # virtual methods
-.method public final a(Lamk;)V
+.method public final a(Lanh;)V
     .locals 4
 
     .prologue
     const/4 v3, 0x0
 
     .line 45
-    invoke-static {p1}, Laol;->a(Lamk;)I
+    invoke-static {p1}, Laph;->a(Lanh;)I
 
     move-result v0
 
@@ -64,7 +64,7 @@
 
     if-eqz v1, :cond_0
 
-    instance-of v1, p1, Lanc;
+    instance-of v1, p1, Lanz;
 
     if-eqz v1, :cond_0
 
@@ -82,9 +82,9 @@
     invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     .line 48
-    check-cast p1, Lanc;
+    check-cast p1, Lanz;
 
-    iget-object v0, p1, Lanc;->b:Lanc$c;
+    iget-object v0, p1, Lanz;->b:Lanz$c;
 
     .line 51
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment$1;->a:Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;
@@ -107,7 +107,7 @@
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 54
-    iget-boolean v1, v0, Lanc$c;->a:Z
+    iget-boolean v1, v0, Lanz$c;->a:Z
 
     if-eqz v1, :cond_1
 
@@ -118,7 +118,7 @@
 
     invoke-direct {v0, v1}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$a;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;)V
 
-    const v1, 0x7f0c0120
+    const v1, 0x7f0c011f
 
     iput v1, v0, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$a;->mTitleResId:I
 
@@ -128,9 +128,9 @@
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment$1;->a:Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;->d(Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;)Lajx;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;->d(Lcom/snapchat/android/fragments/settings/email/EmailVerificationSentFragment;)Lakr;
 
-    invoke-static {}, Lajx;->bn()Ljava/lang/String;
+    invoke-static {}, Lakr;->bk()Ljava/lang/String;
 
     move-result-object v2
 
@@ -138,9 +138,9 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f0c011f
+    const v3, 0x7f0c011e
 
-    invoke-static {v2, v3, v1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v3, v1}, Lauv;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -151,7 +151,7 @@
     move-result-object v0
 
     .line 60
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
@@ -164,7 +164,7 @@
 
     .line 62
     :cond_1
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
@@ -172,7 +172,7 @@
 
     sget-object v3, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
 
-    iget-object v0, v0, Lanc$c;->d:Ljava/lang/String;
+    iget-object v0, v0, Lanz$c;->d:Ljava/lang/String;
 
     invoke-direct {v2, v3, v0}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;Ljava/lang/String;)V
 

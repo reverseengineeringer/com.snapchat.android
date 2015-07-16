@@ -1,7 +1,6 @@
 package com.snapchat.android.ui;
 
-import apj;
-import com.snapchat.android.Timber;
+import aqf;
 import com.snapchat.videotranscoder.task.Task.ProgressUpdateCallback;
 
 final class VideoFilterView$a
@@ -15,12 +14,12 @@ final class VideoFilterView$a
   {
     if (b)
     {
-      apj localapj = VideoFilterView.f(a);
+      aqf localaqf = VideoFilterView.f(a);
       a = VideoFilterView.a(a);
-      localapj.a();
+      localaqf.a();
       b = false;
     }
-    Timber.c("VideoFilterView", "Rendering is " + Integer.toString(paramInt) + "% complete", new Object[0]);
+    new StringBuilder("Rendering is ").append(Integer.toString(paramInt)).append("% complete");
   }
 }
 

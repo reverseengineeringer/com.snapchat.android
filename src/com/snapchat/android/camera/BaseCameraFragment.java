@@ -1,6 +1,6 @@
 package com.snapchat.android.camera;
 
-import ala;
+import alv;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,13 +26,12 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import atc;
-import aue;
-import avl;
-import aza;
-import cgb;
+import aub;
+import avc;
+import awj;
+import azy;
+import chc;
 import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
 import com.snapchat.android.camera.cameradecor.CameraDecor;
 import com.snapchat.android.camera.cameraview.CameraView;
 import com.snapchat.android.camera.cameraview.CameraView.b;
@@ -41,55 +40,55 @@ import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import java.util.List;
 import javax.inject.Inject;
-import vk;
-import wc;
-import wc.a;
-import wc.b;
-import wd;
 import wg;
-import wh;
-import wi;
-import wm;
-import wq;
-import xf;
-import xg;
-import xh;
+import wy;
+import wy.a;
+import wy.b;
+import wz;
+import xc;
+import xd;
+import xe;
+import xi;
+import xm;
+import yb;
+import yc;
+import yd;
 
-@avl
+@awj
 public abstract class BaseCameraFragment
   extends SnapchatFragment
-  implements CameraView.b, wc.a, wg
+  implements CameraView.b, wy.a, xc
 {
-  private final atc a;
+  private final aub a;
   protected CameraView b;
-  protected wc.b c;
+  protected wy.b c;
   protected CameraDecor d;
   protected RelativeLayout e;
   protected FrameLayout f;
   protected SharedPreferences g;
-  protected wi h;
+  protected xe h;
   @Inject
   public CameraModel i;
   @Inject
-  public wq j;
-  private final xf k;
-  private final wm l;
-  private final wh m = new wh(new Handler(Looper.getMainLooper()), this);
+  public xm j;
+  private final yb k;
+  private final xi l;
+  private final xd m = new xd(new Handler(Looper.getMainLooper()), this);
   
   public BaseCameraFragment()
   {
-    this(new atc(), new xf(), new wm(xg.a()));
+    this(new aub(), new yb(), new xi(yc.a()));
   }
   
-  private BaseCameraFragment(atc paramatc, xf paramxf, wm paramwm)
+  private BaseCameraFragment(aub paramaub, yb paramyb, xi paramxi)
   {
     SnapchatApplication.b().c().a(this);
-    a = paramatc;
-    k = paramxf;
-    l = paramwm;
+    a = paramaub;
+    k = paramyb;
+    l = paramxi;
   }
   
-  private void a(@cgb SurfaceTexture paramSurfaceTexture, byte[] paramArrayOfByte)
+  private void a(@chc SurfaceTexture paramSurfaceTexture, byte[] paramArrayOfByte)
   {
     if ((i.e) || (c == null)) {
       return;
@@ -103,7 +102,7 @@ public abstract class BaseCameraFragment
       }
       paramSurfaceTexture = new HandlerThread("Preview Data Thread");
       paramSurfaceTexture.start();
-      h = new wi(new Handler(paramSurfaceTexture.getLooper()), c, this);
+      h = new xe(new Handler(paramSurfaceTexture.getLooper()), c, this);
       c.a(h);
     }
     c.g();
@@ -111,27 +110,30 @@ public abstract class BaseCameraFragment
   
   protected abstract int a();
   
-  @cgb
-  protected aue a(@cgb xh paramxh, @cgb wm paramwm, @cgb Camera.Parameters paramParameters)
+  @chc
+  protected avc a(@chc yd paramyd, @chc xi paramxi, @chc Camera.Parameters paramParameters)
   {
     if (i.i)
     {
-      aue localaue = wm.a(paramParameters);
-      if (localaue != null)
+      avc localavc = xi.a(paramParameters);
+      if (localavc != null)
       {
-        Timber.c("BaseCameraFragment", "Preview Size Finding: preview size %d x %d", new Object[] { Integer.valueOf(localaue.a()), Integer.valueOf(localaue.b()) });
-        return localaue;
+        localavc.a();
+        localavc.b();
+        return localavc;
       }
     }
-    Timber.c("BaseCameraFragment", "Preview Size Finding: display [%d, %d]", new Object[] { Integer.valueOf(heightPixels), Integer.valueOf(widthPixels) });
-    double d1 = vk.a(paramxh);
-    paramwm = paramwm.a(paramParameters, d1);
-    paramxh = paramwm;
-    if (paramwm == null) {
-      paramxh = l.a(paramParameters, i.c, d1, true);
+    int n = heightPixels;
+    n = widthPixels;
+    double d1 = wg.a(paramyd);
+    paramxi = paramxi.a(paramParameters, d1);
+    paramyd = paramxi;
+    if (paramxi == null) {
+      paramyd = l.a(paramParameters, i.c, d1, true);
     }
-    Timber.c("BaseCameraFragment", "Preview Size Finding: preview size [%d, %d]", new Object[] { Integer.valueOf(paramxh.a()), Integer.valueOf(paramxh.b()) });
-    return paramxh;
+    paramyd.a();
+    paramyd.b();
+    return paramyd;
   }
   
   protected abstract CameraDecor a(RelativeLayout paramRelativeLayout);
@@ -139,14 +141,14 @@ public abstract class BaseCameraFragment
   public final void a(SurfaceTexture paramSurfaceTexture)
   {
     if (i.e) {}
-    aue localaue;
+    avc localavc;
     do
     {
       return;
-      localaue = i.f;
-    } while (localaue == null);
-    a(paramSurfaceTexture, a(localaue));
-    b.a(localaue, new xh());
+      localavc = i.f;
+    } while (localavc == null);
+    a(paramSurfaceTexture, a(localavc));
+    b.a(localavc, new yd());
   }
   
   protected void a(Camera.Parameters paramParameters) {}
@@ -158,7 +160,7 @@ public abstract class BaseCameraFragment
     d = paramCameraDecor;
   }
   
-  public void a(wc.b paramb, int paramInt)
+  public void a(wy.b paramb, int paramInt)
   {
     int i2 = 90;
     if (paramb == null) {}
@@ -170,9 +172,9 @@ public abstract class BaseCameraFragment
     } while ((i.e) || (paramb == null) || (getActivity() == null));
     i.h = c;
     i.c = paramInt;
-    Object localObject1 = a(new xh(), l, paramb);
-    i.f = ((aue)localObject1);
-    paramb.setPreviewSize(((aue)localObject1).a(), ((aue)localObject1).b());
+    Object localObject1 = a(new yd(), l, paramb);
+    i.f = ((avc)localObject1);
+    paramb.setPreviewSize(((avc)localObject1).a(), ((avc)localObject1).b());
     if ((Build.VERSION.SDK_INT >= 16) && (Build.MODEL.equals("Nexus 4")))
     {
       paramb.setRecordingHint(true);
@@ -195,34 +197,34 @@ public abstract class BaseCameraFragment
     localObject2 = ((Context)localObject2).getResources().getConfiguration();
     paramInt = ((WindowManager)localObject1).getDefaultDisplay().getRotation();
     int n;
-    label274:
+    label273:
     int i1;
     if ((paramInt == 0) || (paramInt == 2))
     {
       paramInt = 1;
       if (orientation != 2) {
-        break label369;
+        break label368;
       }
       n = 1;
       if (orientation != 1) {
-        break label374;
+        break label373;
       }
       i1 = 1;
-      label286:
+      label285:
       if (((paramInt == 0) || (n == 0)) && ((paramInt != 0) || (i1 == 0))) {
-        break label380;
+        break label379;
       }
       paramInt = 3;
-      label305:
+      label304:
       localObject1 = paramb.e();
       if (localObject1 != null) {
-        break label385;
+        break label384;
       }
       paramInt = i2;
-      label319:
+      label318:
       c.a(paramInt);
       if (b != null) {
-        break label517;
+        break label490;
       }
       d();
     }
@@ -233,27 +235,26 @@ public abstract class BaseCameraFragment
       return;
       paramInt = 0;
       break;
-      label369:
+      label368:
       n = 0;
-      break label274;
-      label374:
+      break label273;
+      label373:
       i1 = 0;
-      break label286;
-      label380:
+      break label285;
+      label379:
       paramInt = 0;
-      break label305;
+      break label304;
       switch (paramInt)
       {
       default: 
-        label385:
+        label384:
         paramInt = 0;
       }
       for (;;)
       {
         n = orientation;
-        Timber.c("CameraPreviewRotationFinder", "Camera Orientation [%d] and Display Orientation [%d]", new Object[] { Integer.valueOf(n), Integer.valueOf(paramInt) });
         if (!paramb.b()) {
-          break label502;
+          break label475;
         }
         paramInt = (360 - (paramInt + n) % 360) % 360;
         break;
@@ -265,10 +266,10 @@ public abstract class BaseCameraFragment
         continue;
         paramInt = 270;
       }
-      label502:
+      label475:
       paramInt = (n - paramInt + 360) % 360;
-      break label319;
-      label517:
+      break label318;
+      label490:
       paramb = b;
       if (c == null)
       {
@@ -280,7 +281,7 @@ public abstract class BaseCameraFragment
       if ((paramb != null) && (i.f != null))
       {
         a(paramb, a(i.f));
-        b.a(i.f, new xh());
+        b.a(i.f, new yd());
       }
     }
   }
@@ -304,9 +305,9 @@ public abstract class BaseCameraFragment
     d = false;
   }
   
-  public void a(byte[] paramArrayOfByte, wc.b paramb) {}
+  public void a(byte[] paramArrayOfByte, wy.b paramb) {}
   
-  protected byte[] a(@cgb aue paramaue)
+  protected byte[] a(@chc avc paramavc)
   {
     return null;
   }
@@ -341,12 +342,7 @@ public abstract class BaseCameraFragment
     return d.f();
   }
   
-  protected final ala h()
-  {
-    return new ala(new String[] { "CAMERA" });
-  }
-  
-  protected final void i_()
+  protected final void g_()
   {
     d();
     if ((i.b == i.c) || (i.e)) {
@@ -354,7 +350,12 @@ public abstract class BaseCameraFragment
     }
     a(true);
     i.d = true;
-    wd.a().a(i.b, m);
+    wz.a().a(i.b, m);
+  }
+  
+  protected final alv h()
+  {
+    return new alv(new String[] { "CAMERA" });
   }
   
   public void onActivityCreated(Bundle paramBundle)
@@ -375,11 +376,10 @@ public abstract class BaseCameraFragment
   public void onPause()
   {
     super.onPause();
-    Timber.a("BaseCameraFragment", "BaseCameraFragment onPause", new Object[0]);
     i.e = true;
     if (i.d())
     {
-      wd.a().a();
+      wz.a().a();
       return;
     }
     a(true);
@@ -388,13 +388,12 @@ public abstract class BaseCameraFragment
   public void onResume()
   {
     super.onResume();
-    Timber.a("BaseCameraFragment", "BaseCameraFragment onResume", new Object[0]);
     if (!((PowerManager)c("power")).isScreenOn()) {}
     for (boolean bool = true; bool; bool = ((KeyguardManager)c("keyguard")).inKeyguardRestrictedInputMode()) {
       return;
     }
     i.e = false;
-    i_();
+    g_();
   }
   
   public void onSaveInstanceState(Bundle paramBundle)

@@ -20,19 +20,7 @@ public abstract class zzfy
   
   private boolean zzd(long paramLong)
   {
-    paramLong = 60000L - (SystemClock.elapsedRealtime() - paramLong);
-    if (paramLong <= 1L) {
-      return false;
-    }
-    try
-    {
-      zznh.wait(paramLong);
-      return true;
-    }
-    catch (InterruptedException localInterruptedException)
-    {
-      throw new zzgb.zza("Ad request cancelled.", -1);
-    }
+    return 60000L - (SystemClock.elapsedRealtime() - paramLong) > 1L;
   }
   
   public void onStop()
@@ -58,7 +46,6 @@ public abstract class zzfy
         {
           paramBoolean = bool;
           zzsg = paramBoolean;
-          zznh.notify();
           return;
         }
       }

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1011
+    .line 1034
     iput-object p1, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$23;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
     const/4 v3, 0x1
 
-    .line 1014
+    .line 1037
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$23;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment;->f:Lcom/snapchat/android/model/Friend;
@@ -61,9 +61,9 @@
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$23;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment;->g:Lbgr;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment;->g:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->b()Z
+    invoke-virtual {v0}, Lbhr;->b()Z
 
     move-result v0
 
@@ -71,9 +71,9 @@
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$23;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment;->g:Lbgr;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/chat/ChatFragment;->g:Lbhr;
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -85,16 +85,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 1020
+    .line 1043
     :cond_0
     :goto_0
     return-void
 
-    .line 1019
+    .line 1042
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/fragments/chat/ChatFragment$23;->a:Lcom/snapchat/android/fragments/chat/ChatFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->c(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lyd;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/chat/ChatFragment;->c(Lcom/snapchat/android/fragments/chat/ChatFragment;)Lyz;
 
     move-result-object v4
 
@@ -109,7 +109,7 @@
     if-ne v0, v2, :cond_3
 
     :cond_2
-    invoke-virtual {v4}, Lyd;->a()V
+    invoke-virtual {v4}, Lyz;->a()V
 
     goto :goto_0
 
@@ -125,13 +125,13 @@
     move v0, v1
 
     :goto_1
-    iget-object v2, v4, Lyd;->a:[Landroid/graphics/PointF;
+    iget-object v2, v4, Lyz;->a:[Landroid/graphics/PointF;
 
     array-length v2, v2
 
     if-ge v0, v2, :cond_0
 
-    iget-object v2, v4, Lyd;->a:[Landroid/graphics/PointF;
+    iget-object v2, v4, Lyz;->a:[Landroid/graphics/PointF;
 
     aget-object v2, v2, v0
 
@@ -149,7 +149,7 @@
 
     invoke-direct {v2, v5, v6}, Landroid/graphics/PointF;-><init>(FF)V
 
-    iget-object v5, v4, Lyd;->a:[Landroid/graphics/PointF;
+    iget-object v5, v4, Lyz;->a:[Landroid/graphics/PointF;
 
     aget-object v5, v5, v0
 
@@ -163,7 +163,7 @@
 
     move-result v6
 
-    iget v7, v4, Lyd;->c:F
+    iget v7, v4, Lyz;->c:F
 
     cmpl-float v6, v6, v7
 
@@ -179,7 +179,7 @@
 
     move-result v2
 
-    iget v5, v4, Lyd;->c:F
+    iget v5, v4, Lyz;->c:F
 
     cmpl-float v2, v2, v5
 
@@ -202,7 +202,7 @@
     goto :goto_2
 
     :cond_7
-    invoke-virtual {v4}, Lyd;->a()V
+    invoke-virtual {v4}, Lyz;->a()V
 
     goto :goto_0
 
@@ -212,13 +212,13 @@
     if-ne v0, v7, :cond_0
 
     :cond_9
-    iget-object v0, v4, Lyd;->a:[Landroid/graphics/PointF;
+    iget-object v0, v4, Lyz;->a:[Landroid/graphics/PointF;
 
     aget-object v0, v0, v1
 
     if-nez v0, :cond_a
 
-    iget-object v0, v4, Lyd;->a:[Landroid/graphics/PointF;
+    iget-object v0, v4, Lyz;->a:[Landroid/graphics/PointF;
 
     new-instance v2, Landroid/graphics/PointF;
 
@@ -241,13 +241,13 @@
 
     if-le v0, v3, :cond_b
 
-    iget-object v0, v4, Lyd;->a:[Landroid/graphics/PointF;
+    iget-object v0, v4, Lyz;->a:[Landroid/graphics/PointF;
 
     aget-object v0, v0, v3
 
     if-nez v0, :cond_b
 
-    iget-object v0, v4, Lyd;->a:[Landroid/graphics/PointF;
+    iget-object v0, v4, Lyz;->a:[Landroid/graphics/PointF;
 
     new-instance v1, Landroid/graphics/PointF;
 
@@ -264,7 +264,7 @@
     aput-object v1, v0, v3
 
     :cond_b
-    iget-object v0, v4, Lyd;->b:Landroid/os/Handler;
+    iget-object v0, v4, Lyz;->b:Landroid/os/Handler;
 
     invoke-virtual {v0, v7}, Landroid/os/Handler;->hasMessages(I)Z
 
@@ -278,19 +278,19 @@
 
     if-lt v0, v8, :cond_0
 
-    iget-object v0, v4, Lyd;->d:Lyd$a;
+    iget-object v0, v4, Lyz;->d:Lyz$a;
 
-    invoke-interface {v0}, Lyd$a;->v_()Z
+    invoke-interface {v0}, Lyz$a;->u_()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    iget-object v0, v4, Lyd;->b:Landroid/os/Handler;
+    iget-object v0, v4, Lyz;->b:Landroid/os/Handler;
 
-    new-instance v1, Lyd$1;
+    new-instance v1, Lyz$1;
 
-    invoke-direct {v1, v4}, Lyd$1;-><init>(Lyd;)V
+    invoke-direct {v1, v4}, Lyz$1;-><init>(Lyz;)V
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
@@ -300,7 +300,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    iget-object v0, v4, Lyd;->b:Landroid/os/Handler;
+    iget-object v0, v4, Lyz;->b:Landroid/os/Handler;
 
     invoke-virtual {v0, v7}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 

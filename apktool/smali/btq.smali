@@ -2,224 +2,202 @@
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field a:Ljava/util/List;
+
+.field private b:Landroid/content/Context;
+
+
 # direct methods
-.method public static a(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
     .prologue
-    const/4 v0, 0x0
+    .line 20
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
-    .line 32
-    if-nez p0, :cond_1
+    .line 21
+    iput-object p1, p0, Lbtq;->b:Landroid/content/Context;
 
-    .line 49
-    :cond_0
+    .line 23
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lbtq;->a:Ljava/util/List;
+
+    .line 24
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 4
+
+    .prologue
+    .line 66
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 67
+    iget-object v0, p0, Lbtq;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
     :goto_0
-    return-object v0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 37
-    :cond_1
-    if-eqz p0, :cond_0
+    move-result v0
 
-    .line 38
-    const/4 v0, 0x1
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-
-    .line 41
-    :try_start_0
-    invoke-virtual {p0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Lbtt;
+
+    .line 68
+    new-instance v3, Ljava/lang/Thread;
+
+    invoke-direct {v3, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     goto :goto_0
 
-    .line 42
-    :catch_0
-    move-exception v0
+    .line 71
+    :cond_0
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    throw v0
+    move-result-object v2
 
-    .line 44
-    :catch_1
-    move-exception v0
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 45
-    new-instance v1, Lbrz;
+    move-result v0
 
-    const-string v2, "Unable to get value of field"
+    if-eqz v0, :cond_1
 
-    invoke-direct {v1, v2, v0}, Lbrz;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    throw v1
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Thread;
+
+    .line 72
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    goto :goto_1
+
+    .line 75
+    :cond_1
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Thread;
+
+    .line 76
+    invoke-virtual {v0}, Ljava/lang/Thread;->join()V
+
+    goto :goto_2
+
+    .line 78
+    :cond_2
+    return-void
 .end method
 
-.method public static a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Field;
+.method public final declared-synchronized a(Lbsl;Lbtk;Ljava/lang/String;Lbrv;)V
     .locals 7
 
     .prologue
-    .line 82
-    invoke-virtual {p0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
+    .line 31
+    monitor-enter p0
 
-    move-result-object v2
+    :try_start_0
+    invoke-virtual {p1}, Lbsl;->b()I
 
-    .line 83
-    const/4 v1, 0x0
+    move-result v0
 
-    .line 85
-    const/4 v0, 0x0
+    if-lez v0, :cond_0
 
-    move v6, v0
+    .line 36
+    iget-object v0, p0, Lbtq;->b:Landroid/content/Context;
 
-    move-object v0, v1
-
-    move v1, v6
-
-    :goto_0
-    array-length v3, v2
-
-    if-ge v1, v3, :cond_2
-
-    .line 86
-    aget-object v3, v2, v1
-
-    invoke-virtual {v3}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 87
-    if-eqz v0, :cond_0
-
-    .line 88
-    new-instance v3, Lbrz;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "Field is ambiguous: "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v4, ", "
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    aget-object v1, v2, v1
-
-    invoke-virtual {v1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+    invoke-virtual {p1, v0}, Lbsl;->a(Landroid/content/Context;)Lbsl;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lbtq;->b:Landroid/content/Context;
 
-    move-result-object v0
+    invoke-interface {p4}, Lbrv;->i()Lbud;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v0
+    move-object v0, p2
 
-    invoke-direct {v3, v0}, Lbrz;-><init>(Ljava/lang/String;)V
+    move-object v2, p1
 
-    throw v3
+    move-object v3, p3
 
-    .line 91
+    move-object v5, p4
+
+    invoke-interface/range {v0 .. v6}, Lbtk;->a(Lbsl;Lbsl;Ljava/lang/String;Landroid/content/Context;Lbrv;Lbud;)Lbtj;
+
+    move-result-object v5
+
+    new-instance v0, Lbts;
+
+    new-instance v2, Lbtm;
+
+    iget-object v3, v1, Lbsl;->b:Ljava/lang/String;
+
+    invoke-direct {v2, p3, v3}, Lbtm;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Lbtm;->a()Ljava/net/URL;
+
+    move-result-object v4
+
+    move-object v2, p1
+
+    move-object v3, p4
+
+    invoke-direct/range {v0 .. v5}, Lbts;-><init>(Lbsl;Lbsl;Lbrv;Ljava/net/URL;Lbtj;)V
+
+    .line 37
+    iget-object v1, p0, Lbtq;->a:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 39
     :cond_0
-    aget-object v0, v2, v1
+    monitor-exit p0
 
-    .line 85
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
+    return-void
 
-    goto :goto_0
+    .line 31
+    :catchall_0
+    move-exception v0
 
-    .line 95
-    :cond_2
-    if-nez v0, :cond_3
-
-    .line 96
-    new-instance v0, Lbrz;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Could not find field matching type: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lbrz;-><init>(Ljava/lang/String;)V
+    monitor-exit p0
 
     throw v0
-
-    .line 100
-    :cond_3
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-
-    .line 101
-    return-object v0
-.end method
-
-.method public static a([Ljava/lang/reflect/AccessibleObject;)V
-    .locals 3
-
-    .prologue
-    .line 125
-    const/4 v0, 0x0
-
-    :goto_0
-    array-length v1, p0
-
-    if-ge v0, v1, :cond_1
-
-    .line 128
-    aget-object v1, p0, v0
-
-    .line 129
-    if-eqz v1, :cond_0
-
-    .line 132
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-
-    .line 127
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 135
-    :cond_1
-    return-void
 .end method

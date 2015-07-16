@@ -11,14 +11,14 @@ final class SignupFragment$5
   
   public final void afterTextChanged(Editable paramEditable)
   {
-    SignupFragment.f(a);
-    SignupFragment.g(a);
-    if (!SignupFragment.h(a))
+    SignupFragment.d(a);
+    SignupFragment.e(a);
+    if (!SignupFragment.f(a))
     {
       AnalyticsEvents.p();
       SignupFragment.a(a, true);
     }
-    SignupFragment.i(a);
+    SignupFragment.g(a);
   }
   
   public final void beforeTextChanged(CharSequence paramCharSequence, int paramInt1, int paramInt2, int paramInt3) {}

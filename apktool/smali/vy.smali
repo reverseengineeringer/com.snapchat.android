@@ -1,45 +1,26 @@
 .class public final Lvy;
-.super Ljava/lang/Object;
+.super Lbge;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuj;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
+        "Lbge",
         "<",
-        "Lvw;",
+        "Lvp;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field static final synthetic a:Z
-
-
 # instance fields
-.field private final b:Ljavax/inject/Provider;
+.field private final a:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljavax/inject/Provider",
+            "Ljava/util/List",
             "<",
-            "Lwj;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final c:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
+            "Lvp;",
             ">;"
         }
     .end annotation
@@ -47,158 +28,126 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 9
-    const-class v0, Lvy;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lvy;->a:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
+.method public constructor <init>(Ljava/util/List;Lban;Lbge$a;)V
+    .locals 0
+    .param p1    # Ljava/util/List;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lban;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Lbge$a;
+        .annotation build Lchc;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljavax/inject/Provider",
+            "Ljava/util/List",
             "<",
-            "Lwj;",
+            "Lvp;",
             ">;",
-            "Ljavax/inject/Provider",
+            "Lban;",
+            "Lbge$a",
             "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
+            "Lvp;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 23
+    invoke-direct {p0, p2, p3}, Lbge;-><init>(Lban;Lbge$a;)V
 
-    .line 15
-    sget-boolean v0, Lvy;->a:Z
+    .line 24
+    iput-object p1, p0, Lvy;->a:Ljava/util/List;
 
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 16
-    :cond_0
-    iput-object p1, p0, Lvy;->b:Ljavax/inject/Provider;
-
-    .line 17
-    sget-boolean v0, Lvy;->a:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 18
-    :cond_1
-    iput-object p2, p0, Lvy;->c:Ljavax/inject/Provider;
-
-    .line 19
+    .line 25
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
+
+# virtual methods
+.method protected final a(Ljava/lang/String;)Ljava/util/List;
+    .locals 4
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .annotation build Lchd;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljavax/inject/Provider",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List",
             "<",
-            "Lwj;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/camera/model/CameraModel;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lvw;",
+            "Lvp;",
             ">;"
         }
     .end annotation
 
     .prologue
+    .line 30
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     .line 31
-    new-instance v0, Lvy;
+    iget-object v0, p0, Lvy;->a:Ljava/util/List;
 
-    invoke-direct {v0, p0, p1}, Lvy;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
+    .line 40
+    :goto_0
     return-object v0
-.end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
-
-    .prologue
-    .line 9
-    check-cast p1, Lvw;
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "Cannot inject members into a null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
+    .line 34
     :cond_0
-    iget-object v0, p0, Lvy;->b:Ljavax/inject/Provider;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 35
+    iget-object v0, p0, Lvy;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_1
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lwj;
+    check-cast v0, Lvp;
 
-    iput-object v0, p1, Lvw;->a:Lwj;
+    .line 36
+    invoke-interface {v0, p1}, Lvp;->a(Ljava/lang/String;)Z
 
-    iget-object v0, p0, Lvy;->c:Ljavax/inject/Provider;
+    move-result v3
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    if-eqz v3, :cond_1
 
-    move-result-object v0
+    .line 37
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    check-cast v0, Lcom/snapchat/android/camera/model/CameraModel;
+    goto :goto_1
 
-    iput-object v0, p1, Lvw;->b:Lcom/snapchat/android/camera/model/CameraModel;
+    :cond_2
+    move-object v0, v1
 
-    return-void
+    .line 40
+    goto :goto_0
 .end method

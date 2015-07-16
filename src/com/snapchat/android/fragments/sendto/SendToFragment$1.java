@@ -1,19 +1,19 @@
 package com.snapchat.android.fragments.sendto;
 
-import adb;
-import aim;
-import ajk;
-import ajv;
-import ajx;
+import aeb;
+import aji;
+import akg;
+import akp;
+import akr;
 import android.view.View;
 import android.view.View.OnClickListener;
-import avh;
-import ban;
-import bap;
-import bar;
-import bas;
-import bat;
-import bdo;
+import awf;
+import bbo;
+import bbq;
+import bbs;
+import bbt;
+import bbu;
+import beo;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.NetworkAnalytics;
@@ -25,7 +25,7 @@ import com.snapchat.android.util.eventbus.CameraDisplayState;
 import com.squareup.otto.Bus;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import no;
+import of;
 
 final class SendToFragment$1
   implements View.OnClickListener
@@ -57,7 +57,7 @@ final class SendToFragment$1
     if (mmSnapType == Mediabryo.SnapType.SNAP) {
       if (!SendToFragment.c(a).isEmpty())
       {
-        ajx.Q();
+        akr.Q();
         if (paramView.g() != null)
         {
           bool1 = true;
@@ -66,7 +66,7 @@ final class SendToFragment$1
             break label368;
           }
           bool2 = true;
-          AnalyticsEvents.a((aim)localObject2, bool1, bool2, "SEND_TO_SCREEN");
+          AnalyticsEvents.a((aji)localObject2, bool1, bool2, "SEND_TO_SCREEN");
         }
       }
       else
@@ -92,12 +92,12 @@ final class SendToFragment$1
       if (j != 0) {
         ((NetworkAnalytics)localObject1).a("STORY_POST_DELAY", (String)localObject2, "send_to_screen");
       }
-      ban.a().a(new bdo(SendToFragment.m(), false));
-      ban.a().a(new bat());
-      ban.a().a(new bar(false, false));
-      ban.a().a(new bas((byte)0));
-      ban.a().a(new bap(CameraDisplayState.SHOW));
-      avh.a(paramView, SendToFragment.g(a));
+      bbo.a().a(new beo(SendToFragment.m(), false));
+      bbo.a().a(new bbu());
+      bbo.a().a(new bbs(false, false));
+      bbo.a().a(new bbt((byte)0));
+      bbo.a().a(new bbq(CameraDisplayState.SHOW));
+      awf.a(paramView, SendToFragment.g(a));
       return;
       bool1 = false;
       break;
@@ -108,7 +108,7 @@ final class SendToFragment$1
         break label200;
       }
       SendToFragment.e(a);
-      SendToFragment.a(a, (adb)mmMediaExtras);
+      SendToFragment.a(a, (aeb)mmMediaExtras);
       break label200;
       label412:
       i = 0;

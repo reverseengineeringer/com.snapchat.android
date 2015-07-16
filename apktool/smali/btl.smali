@@ -1,5 +1,8 @@
-.class public final Lbtl;
+.class public Lbtl;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lbtj;
 
 
 # annotations
@@ -11,229 +14,74 @@
 
 
 # instance fields
-.field a:Ljava/util/List;
+.field private a:Lbsl;
 
-.field final b:Ljava/util/Set;
-
-.field final c:Ljava/util/Set;
-
-.field private d:Ljava/util/concurrent/Executor;
+.field private b:Lbsl;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;)V
-    .locals 2
+.method public constructor <init>(Lbsl;Lbsl;)V
+    .locals 0
 
     .prologue
-    .line 29
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    new-instance v1, Ljava/util/LinkedList;
-
-    invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
-
-    invoke-direct {p0, p1, v0, v1}, Lbtl;-><init>(Ljava/util/concurrent/Executor;Ljava/util/List;Ljava/util/List;)V
-
-    .line 30
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/util/concurrent/Executor;Ljava/util/List;Ljava/util/List;)V
-    .locals 1
-
-    .prologue
-    .line 22
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
-    new-instance v0, Ljava/util/LinkedList;
+    .line 29
+    iput-object p1, p0, Lbtl;->a:Lbsl;
 
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+    .line 32
+    iput-object p2, p0, Lbtl;->b:Lbsl;
 
-    iput-object v0, p0, Lbtl;->a:Ljava/util/List;
-
-    .line 15
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lbtl;->b:Ljava/util/Set;
-
-    .line 16
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lbtl;->c:Ljava/util/Set;
-
-    .line 23
-    iput-object p1, p0, Lbtl;->d:Ljava/util/concurrent/Executor;
-
-    .line 24
-    invoke-virtual {p0, p2}, Lbtl;->a(Ljava/util/List;)V
-
-    .line 25
-    invoke-virtual {p0, p3}, Lbtl;->b(Ljava/util/List;)V
-
-    .line 26
+    .line 33
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbsb;)V
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 72
-    sget-object v0, Lbsb$a;->e:Lbsb$a;
-
-    invoke-virtual {p0, p1, v0}, Lbtl;->a(Lbsb;Lbsb$a;)V
-
-    .line 73
-    return-void
-.end method
-
-.method public final a(Lbsb;Lbsb$a;)V
-    .locals 3
-
-    .prologue
-    .line 77
-    iget-boolean v0, p1, Lbsb;->b:Z
-
-    if-eqz v0, :cond_0
-
-    .line 89
-    :goto_0
-    return-void
-
-    .line 81
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p1, Lbsb;->b:Z
-
-    .line 82
-    iput-object p2, p1, Lbsb;->c:Lbsb$a;
-
-    .line 88
-    iget-object v0, p0, Lbtl;->d:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lbtl$a;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, p1, v2}, Lbtl$a;-><init>(Lbtl;Lbsb;B)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    goto :goto_0
-.end method
-
-.method public final a(Lbtm;)V
+.method public a(ZILorg/json/JSONObject;)V
     .locals 2
 
     .prologue
-    .line 33
-    iget-object v1, p0, Lbtl;->a:Ljava/util/List;
+    .line 40
+    if-nez p1, :cond_0
 
-    monitor-enter v1
+    const/16 v0, 0xc8
 
-    .line 36
-    :try_start_0
-    iget-object v0, p0, Lbtl;->a:Ljava/util/List;
+    if-lt p2, v0, :cond_1
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    const/16 v0, 0x12c
 
-    .line 37
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-ge p2, v0, :cond_1
 
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    if-eqz v0, :cond_2
+
+    .line 41
+    iget-object v0, p0, Lbtl;->a:Lbsl;
+
+    invoke-virtual {v0}, Lbsl;->a()V
+
+    .line 45
+    :goto_1
     return-void
 
-    :catchall_0
-    move-exception v0
+    .line 40
+    :cond_1
+    const/4 v0, 0x0
 
-    monitor-exit v1
+    goto :goto_0
 
-    throw v0
-.end method
+    .line 43
+    :cond_2
+    iget-object v0, p0, Lbtl;->a:Lbsl;
 
-.method public final a(Ljava/util/List;)V
-    .locals 3
+    iget-object v1, p0, Lbtl;->b:Lbsl;
 
-    .prologue
-    .line 48
-    iget-object v1, p0, Lbtl;->b:Ljava/util/Set;
+    invoke-virtual {v0, v1}, Lbsl;->a(Lbsl;)V
 
-    monitor-enter v1
-
-    .line 49
-    :try_start_0
-    iget-object v0, p0, Lbtl;->b:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
-
-    .line 52
-    iget-object v0, p0, Lbtl;->b:Ljava/util/Set;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    .line 53
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method public final b(Ljava/util/List;)V
-    .locals 3
-
-    .prologue
-    .line 57
-    iget-object v1, p0, Lbtl;->c:Ljava/util/Set;
-
-    monitor-enter v1
-
-    .line 58
-    :try_start_0
-    iget-object v0, p0, Lbtl;->c:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
-
-    .line 61
-    iget-object v0, p0, Lbtl;->c:Ljava/util/Set;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    .line 62
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    goto :goto_1
 .end method

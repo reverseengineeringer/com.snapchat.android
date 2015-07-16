@@ -8,6 +8,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import java.util.Iterator;
 import java.util.List;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class es
   extends BroadcastReceiver
@@ -164,6 +166,8 @@ public class es
   
   public void onReceive(Context paramContext, Intent paramIntent)
   {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     boolean bool = a(paramContext);
     if (a != bool)
     {

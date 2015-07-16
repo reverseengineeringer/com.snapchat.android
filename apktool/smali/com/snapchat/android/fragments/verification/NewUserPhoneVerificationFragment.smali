@@ -23,7 +23,7 @@
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lajx;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
+.method private constructor <init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lakr;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
     .locals 0
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -33,7 +33,7 @@
 
     .prologue
     .line 56
-    invoke-direct {p0, p1, p2, p3}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;-><init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lajx;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;-><init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lakr;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
 
     .line 57
     return-void
@@ -53,11 +53,11 @@
 
     move-result-object v0
 
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1, p1}, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;-><init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lajx;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
+    invoke-direct {p0, v0, v1, p1}, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;-><init>(Lcom/snapchat/android/analytics/RegistrationAnalytics;Lakr;Lcom/snapchat/android/ui/window/WindowConfiguration;)V
 
     .line 51
     return-void
@@ -65,14 +65,14 @@
 
 
 # virtual methods
-.method protected final a(Lbkr;)V
+.method protected final a(Lbls;)V
     .locals 0
 
     .prologue
     .line 153
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    invoke-static {p1}, Lcom/snapchat/android/LoginAndSignupActivity;->a(Lbkr;)V
+    invoke-static {p1}, Lcom/snapchat/android/LoginAndSignupActivity;->a(Lbls;)V
 
     .line 154
     return-void
@@ -93,13 +93,13 @@
 
     .prologue
     .line 158
-    invoke-static {}, Lajx;->r()Z
+    invoke-static {}, Lakr;->r()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lajx;->q()Z
+    invoke-static {}, Lakr;->q()Z
 
     move-result v0
 
@@ -107,15 +107,15 @@
 
     .line 159
     :cond_0
-    new-instance v0, Lapy;
+    new-instance v0, Laqx;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->e:Landroid/support/v4/app/FragmentActivity;
 
     iget v2, p0, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->a:I
 
-    invoke-direct {v0, v1, v2}, Lapy;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v0, v1, v2}, Laqx;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {v0}, Lapy;->show()V
+    invoke-virtual {v0}, Laqx;->show()V
 
     .line 163
     :goto_0
@@ -125,25 +125,25 @@
 
     .line 161
     :cond_1
-    new-instance v0, Lapw;
+    new-instance v0, Laqv;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->e:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-direct {v0, v1}, Lapw;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Laqv;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0}, Lapw;->show()V
+    invoke-virtual {v0}, Laqv;->show()V
 
     goto :goto_0
 .end method
 
 .method protected final i()V
-    .locals 5
+    .locals 4
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 108
-    invoke-static {}, Lajx;->r()Z
+    invoke-static {}, Lakr;->r()Z
 
     move-result v0
 
@@ -161,7 +161,7 @@
 
     new-instance v1, Lcom/snapchat/android/fragments/captcha/CaptchaFragment;
 
-    invoke-static {}, Lajx;->s()Ljava/lang/String;
+    invoke-static {}, Lakr;->s()Ljava/lang/String;
 
     move-result-object v2
 
@@ -177,36 +177,22 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
     :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 116
     :goto_0
     return-void
 
-    .line 109
-    :catch_0
-    move-exception v0
-
-    const-string v0, "NewUserPhoneVerificationFragment"
-
-    const-string v1, "Attempted to go to CaptchaFragment"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
-
     .line 110
     :cond_0
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
     .line 111
-    invoke-static {v4}, Lajx;->c(Z)V
+    invoke-static {v3}, Lakr;->c(Z)V
 
     :try_start_1
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->e:Landroid/support/v4/app/FragmentActivity;
@@ -231,20 +217,12 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
     :try_end_1
-    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
-    :catch_1
+    :catch_0
     move-exception v0
-
-    const-string v0, "NewUserPhoneVerificationFragment"
-
-    const-string v1, "Attempted to go to NewUserAddFriendsFragment"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -265,7 +243,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING:Lcom/snapchat/android/database/SharedPreferenceKey;
+    sget-object v1, Lcom/snapchat/android/database/SharedPreferenceKey;->SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     invoke-virtual {v1}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
 
@@ -277,7 +255,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    invoke-static {v4}, Lajx;->c(Z)V
+    invoke-static {v3}, Lakr;->c(Z)V
 
     new-instance v0, Landroid/content/Intent;
 
@@ -292,6 +270,12 @@
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->e:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->finish()V
+
+    goto :goto_0
+
+    .line 109
+    :catch_1
+    move-exception v0
 
     goto :goto_0
 .end method
@@ -313,7 +297,7 @@
     iput v0, p0, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->a:I
 
     .line 82
-    const v0, 0x7f0a000f
+    const v0, 0x7f0a0010
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->c(I)Landroid/view/View;
 
@@ -328,10 +312,10 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     .line 85
-    invoke-static {}, Lajx;->q()Z
+    invoke-static {}, Lakr;->q()Z
 
     move-result v1
 
@@ -360,7 +344,7 @@
     .line 97
     iget-object v0, p0, Lcom/snapchat/android/fragments/verification/NewUserPhoneVerificationFragment;->e:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-static {v0}, Lavh;->f(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->f(Landroid/content/Context;)V
 
     .line 100
     :cond_1
@@ -369,17 +353,17 @@
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 102
-    invoke-static {}, Lajx;->v()Z
+    invoke-static {}, Lakr;->v()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    new-instance v0, Lku;
+    new-instance v0, Llm;
 
-    invoke-direct {v0}, Lku;-><init>()V
+    invoke-direct {v0}, Llm;-><init>()V
 
-    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Llt;)V
+    invoke-static {v0}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
 
     .line 103
     :cond_2
@@ -396,7 +380,7 @@
     invoke-super {p0}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onResume()V
 
     .line 66
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v0
 
@@ -410,14 +394,14 @@
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 170
-    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbet;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/fragments/verification/PhoneVerificationFragment;->onVerificationCodeReceivedEvent(Lbfs;)V
 
     .line 171
     return-void

@@ -1,12 +1,12 @@
 package com.snapchat.android.fragments.cash;
 
-import cgb;
+import chc;
 
 public abstract interface SecurityCodeFragment$a
 {
   public abstract void a();
   
-  public abstract void a(@cgb String paramString);
+  public abstract void a(@chc String paramString);
   
   public abstract void b();
 }

@@ -22,13 +22,13 @@
 .method public final a(Landroid/app/Activity;)V
     .locals 2
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 28
-    sget-object v0, Lauh;->SERIAL_BACKGROUND_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v0, Lavf;->SERIAL_BACKGROUND_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform$1;
 
@@ -43,23 +43,23 @@
 .method public final a(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
     .locals 5
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p5    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -110,37 +110,23 @@
 
     if-le v0, v4, :cond_2
 
-    const-string v0, "FlurryAnalyticsPlatform"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Flurry only supports up to 10 parameters. Found: "
 
-    const-string v2, "Flurry only supports up to 10 parameters. Found: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-interface {p2}, Ljava/util/Map;->size()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, ". Truncating!"
+    const-string v1, ". Truncating!"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     new-instance v1, Ljava/util/HashMap;
 
@@ -252,13 +238,13 @@
 .method public final b(Landroid/app/Activity;)V
     .locals 2
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 40
-    sget-object v0, Lauh;->SERIAL_BACKGROUND_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v0, Lavf;->SERIAL_BACKGROUND_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lcom/snapchat/android/analytics/framework/FlurryAnalyticsPlatform$2;
 

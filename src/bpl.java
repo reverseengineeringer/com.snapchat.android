@@ -1,41 +1,42 @@
-public final class bpl
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.net.Uri;
+import java.util.List;
+import kkkkkk.xkkkxk;
+
+final class bpl
+  extends bqj
 {
-  public final int a;
-  public final int b;
-  public final long c;
-  public final long d;
-  public final long e;
-  public final long f;
-  public final long g;
-  public final long h;
-  public final long i;
-  public final long j;
-  public final int k;
-  public final int l;
-  public final int m;
-  public final long n;
+  private static final int a = 22;
+  private final AssetManager b;
   
-  public bpl(int paramInt1, int paramInt2, long paramLong1, long paramLong2, long paramLong3, long paramLong4, long paramLong5, long paramLong6, long paramLong7, long paramLong8, int paramInt3, int paramInt4, int paramInt5, long paramLong9)
+  public bpl(Context paramContext)
   {
-    a = paramInt1;
-    b = paramInt2;
-    c = paramLong1;
-    d = paramLong2;
-    e = paramLong3;
-    f = paramLong4;
-    g = paramLong5;
-    h = paramLong6;
-    i = paramLong7;
-    j = paramLong8;
-    k = paramInt3;
-    l = paramInt4;
-    m = paramInt5;
-    n = paramLong9;
+    b = paramContext.getAssets();
   }
   
-  public final String toString()
+  public final boolean a(bqh parambqh)
   {
-    return "StatsSnapshot{maxSize=" + a + ", size=" + b + ", cacheHits=" + c + ", cacheMisses=" + d + ", downloadCount=" + k + ", totalDownloadSize=" + e + ", averageDownloadSize=" + h + ", totalOriginalBitmapSize=" + f + ", totalTransformedBitmapSize=" + g + ", averageOriginalBitmapSize=" + i + ", averageTransformedBitmapSize=" + j + ", originalBitmapCount=" + l + ", transformedBitmapCount=" + m + ", timeStamp=" + n + '}';
+    boolean bool2 = false;
+    parambqh = d;
+    boolean bool1 = bool2;
+    if ("file".equals(parambqh.getScheme()))
+    {
+      bool1 = bool2;
+      if (!parambqh.getPathSegments().isEmpty())
+      {
+        bool1 = bool2;
+        if ("android_asset".equals(parambqh.getPathSegments().get(0))) {
+          bool1 = true;
+        }
+      }
+    }
+    return bool1;
+  }
+  
+  public final bqj.a b(bqh parambqh)
+  {
+    return new bqj.a(xkkkxk.bООООО041E(b, d.toString().substring(a)), bqe.d.b);
   }
 }
 

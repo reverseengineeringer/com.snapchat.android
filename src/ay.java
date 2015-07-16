@@ -2,7 +2,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
 public final class ay
-  extends eu
+  extends fd
 {
   public ay()
   {
@@ -14,9 +14,9 @@ public final class ay
     super.getBox(paramWritableByteChannel);
   }
   
-  public final void parse(ex paramex, ByteBuffer paramByteBuffer, long paramLong, al paramal)
+  public final void parse(fg paramfg, ByteBuffer paramByteBuffer, long paramLong, al paramal)
   {
-    super.parse(paramex, paramByteBuffer, paramLong, paramal);
+    super.parse(paramfg, paramByteBuffer, paramLong, paramal);
   }
 }
 

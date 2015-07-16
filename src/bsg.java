@@ -1,28 +1,24 @@
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
-import org.json.JSONArray;
+import org.json.JSONObject;
 
 public final class bsg
+  implements bsx
 {
-  public Map a = new HashMap();
+  private JSONObject a = new bsm().a(new bsp.c()).a(new bsp.b()).a(new bsp.f()).a(new bsp.k()).a(new bsp.n()).a(new bsp.p()).a(new bsp.u()).a(new bsp.v()).a();
+  private String b = bsw.a.a();
   
-  public bsg(bqu parambqu)
+  public final void a(OutputStream paramOutputStream)
   {
-    a.put("app_id", parambqu.a());
-    a.put("hashed_device_id", parambqu.c());
-    a.put("library_version", "4.5.4");
+    HashMap localHashMap = new HashMap();
+    localHashMap.put("app_state", a);
+    paramOutputStream.write(new JSONObject(localHashMap).toString().getBytes());
   }
   
-  public final bsg a(String paramString1, String paramString2)
+  public final String b()
   {
-    a.put(paramString1, paramString2);
-    return this;
-  }
-  
-  public final bsg a(String paramString, JSONArray paramJSONArray)
-  {
-    a.put(paramString, paramJSONArray);
-    return this;
+    return b;
   }
 }
 

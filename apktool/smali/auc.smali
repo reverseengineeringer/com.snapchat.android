@@ -4,133 +4,159 @@
 
 
 # static fields
-.field private static final SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+.field private static final OPT_OUT_RESPONSE:Ljava/lang/String; = "optout"
+
+.field private static final TAG:Ljava/lang/String; = "DemographicsTrackingUtils"
+
+
+# instance fields
+.field public final mContext:Landroid/content/Context;
+
+.field private final mDeviceUtils:Laud;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 1
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 15
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    .line 32
+    invoke-static {}, Laud;->a()Laud;
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-direct {p0, p1, v0}, Lauc;-><init>(Landroid/content/Context;Laud;)V
 
-    move-result-object v0
-
-    sput-object v0, Lauc;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
-
+    .line 33
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+.method private constructor <init>(Landroid/content/Context;Laud;)V
+    .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 28
-    sget-object v0, Lauc;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+    .line 35
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    .line 36
+    iput-object p1, p0, Lauc;->mContext:Landroid/content/Context;
 
-    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 37
+    iput-object p2, p0, Lauc;->mDeviceUtils:Laud;
+
+    .line 38
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 4
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 77
+    iget-object v0, p0, Lauc;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->isGooglePlayServicesAvailable(Landroid/content/Context;)I
+
+    move-result v0
+
+    .line 78
+    if-nez v0, :cond_1
+
+    .line 82
+    :try_start_0
+    iget-object v0, p0, Lauc;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->getAdvertisingIdInfo(Landroid/content/Context;)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+
+    move-result-object v1
+
+    .line 83
+    invoke-virtual {v1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->getId()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 84
+    invoke-virtual {v1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->isLimitAdTrackingEnabled()Z
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Lcom/google/android/gms/common/GooglePlayServicesRepairableException; {:try_start_0 .. :try_end_0} :catch_2
+
+    move-result v1
+
+    .line 90
+    if-eqz v1, :cond_0
+
+    const-string v0, "optout"
+
+    .line 96
+    :cond_0
+    :goto_0
     return-object v0
-.end method
 
-.method public static a(Ljava/lang/String;I)V
-    .locals 1
+    .line 85
+    :catch_0
+    move-exception v0
 
-    .prologue
-    .line 56
-    sget-object v0, Lauc;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
+    .line 86
+    :goto_1
+    const-string v1, "Google advertising id lookup failed, by error %s"
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+    const/4 v3, 0x0
 
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    .line 57
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    .prologue
-    .line 44
-    sget-object v0, Lauc;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    aput-object v0, v2, v3
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 87
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    .line 95
+    :cond_1
+    iget-object v0, p0, Lauc;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    const-string v1, "android_id"
 
-    .line 45
-    return-void
-.end method
-
-.method public static a(Ljava/lang/String;Z)Z
-    .locals 1
-
-    .prologue
-    .line 20
-    sget-object v0, Lauc;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static b(Ljava/lang/String;)I
-    .locals 2
-
-    .prologue
-    .line 40
-    sget-object v0, Lauc;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static b(Ljava/lang/String;Z)V
-    .locals 1
-
-    .prologue
-    .line 48
-    sget-object v0, Lauc;->SHARED_PREFERENCES:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-static {v0, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    goto :goto_0
 
-    move-result-object v0
+    .line 85
+    :catch_1
+    move-exception v0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    goto :goto_1
 
-    .line 49
-    return-void
+    :catch_2
+    move-exception v0
+
+    goto :goto_1
 .end method

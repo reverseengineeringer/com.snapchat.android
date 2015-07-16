@@ -3,70 +3,47 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class bhy
-  extends bja
+public class bhy
 {
-  @SerializedName("broadcast")
-  protected Integer broadcast;
-  @SerializedName("broadcast_action_text")
-  protected String broadcastActionText;
-  @SerializedName("broadcast_hide_timer")
-  protected Boolean broadcastHideTimer;
-  @SerializedName("broadcast_media_url")
-  protected String broadcastMediaUrl;
-  @SerializedName("broadcast_url")
-  protected String broadcastUrl;
-  @SerializedName("c")
-  protected Integer c;
-  @SerializedName("c_id")
-  protected String cId;
-  @SerializedName("cap_ori")
-  protected Long capOri;
-  @SerializedName("cap_pos")
-  protected Double capPos;
-  @SerializedName("cap_text")
-  protected String capText;
-  @SerializedName("filter_id")
-  protected String filterId;
-  @SerializedName("pending")
-  protected Boolean pending;
-  @SerializedName("replayed")
-  protected Boolean replayed;
-  @SerializedName("rp")
-  protected String rp;
-  @SerializedName("sn")
-  protected String sn;
-  @SerializedName("t")
-  protected Integer t;
-  @SerializedName("timer")
-  protected Double timer;
+  @SerializedName("req_token")
+  protected String reqToken;
+  @SerializedName("timestamp")
+  protected String timestamp;
+  @SerializedName("username")
+  protected String username;
   
   public final String a()
   {
-    return sn;
+    return timestamp;
   }
   
-  public final Integer b()
+  public final String b()
   {
-    return t;
+    return reqToken;
   }
   
-  public final Double c()
+  public final String c()
   {
-    return timer;
+    return username;
   }
   
-  public final String d()
+  public final void c(String paramString)
   {
-    return capText;
+    timestamp = paramString;
   }
   
-  public final Double e()
+  public final bhy d(String paramString)
   {
-    return capPos;
+    timestamp = paramString;
+    return this;
   }
   
-  public final boolean equals(Object paramObject)
+  public final void e(String paramString)
+  {
+    reqToken = paramString;
+  }
+  
+  public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -75,70 +52,32 @@ public final class bhy
       return false;
     }
     paramObject = (bhy)paramObject;
-    return new EqualsBuilder().append(sn, sn).append(t, t).append(timer, timer).append(capText, capText).append(capPos, capPos).append(capOri, capOri).append(broadcast, broadcast).append(broadcastMediaUrl, broadcastMediaUrl).append(broadcastUrl, broadcastUrl).append(broadcastActionText, broadcastActionText).append(broadcastHideTimer, broadcastHideTimer).append(filterId, filterId).append(rp, rp).append(cId, cId).append(replayed, replayed).append(pending, pending).append(c, c).isEquals();
+    return new EqualsBuilder().append(timestamp, timestamp).append(reqToken, reqToken).append(username, username).isEquals();
   }
   
-  public final Long f()
+  public final bhy f(String paramString)
   {
-    return capOri;
+    reqToken = paramString;
+    return this;
   }
   
-  public final Integer g()
+  public final void g(String paramString)
   {
-    return broadcast;
+    username = paramString;
   }
   
-  public final String h()
+  public final bhy h(String paramString)
   {
-    return broadcastMediaUrl;
+    username = paramString;
+    return this;
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    return new HashCodeBuilder().append(sn).append(t).append(timer).append(capText).append(capPos).append(capOri).append(broadcast).append(broadcastMediaUrl).append(broadcastUrl).append(broadcastActionText).append(broadcastHideTimer).append(filterId).append(rp).append(cId).append(replayed).append(pending).append(c).toHashCode();
+    return new HashCodeBuilder().append(timestamp).append(reqToken).append(username).toHashCode();
   }
   
-  public final String i()
-  {
-    return broadcastUrl;
-  }
-  
-  public final String j()
-  {
-    return broadcastActionText;
-  }
-  
-  public final Boolean k()
-  {
-    return broadcastHideTimer;
-  }
-  
-  public final String l()
-  {
-    return filterId;
-  }
-  
-  public final String m()
-  {
-    return rp;
-  }
-  
-  public final String n()
-  {
-    return cId;
-  }
-  
-  public final Boolean o()
-  {
-    return replayed;
-  }
-  
-  public final Boolean p()
-  {
-    return pending;
-  }
-  
-  public final String toString()
+  public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

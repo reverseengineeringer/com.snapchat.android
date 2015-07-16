@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.cash;
 
-import ajx;
+import akr;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
@@ -18,15 +18,15 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import atx;
-import aza;
-import ban;
-import bbf;
-import bdw;
-import bgp;
-import boh;
-import cgb;
-import cgc;
+import auv;
+import azy;
+import bbo;
+import bcf;
+import bev;
+import bhp;
+import bpi;
+import chc;
+import chd;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.api2.cash.square.data.CardBrand;
 import com.snapchat.android.api2.cash.square.data.ErrorType;
@@ -38,22 +38,22 @@ import com.squareup.otto.Bus;
 import java.util.Iterator;
 import java.util.List;
 import javax.inject.Inject;
-import qh;
-import qo;
-import qv;
-import qv.a;
-import rf;
-import rh;
+import qx;
+import re;
+import rl;
+import rl.a;
 import rv;
-import sq;
-import su;
-import su.b;
+import rx;
+import sl;
+import tg;
+import tk;
+import tk.b;
 
 public class CashSettingsFragment
   extends SnapchatFragment
 {
   @Inject
-  public qh a;
+  public qx a;
   protected AlertDialog b;
   private ImageView c;
   private TextView d;
@@ -72,31 +72,31 @@ public class CashSettingsFragment
     SnapchatApplication.b().c().a(this);
   }
   
-  protected static sq a(@cgb String paramString, @cgb su.b paramb)
+  protected static tg a(@chc String paramString, @chc tk.b paramb)
   {
-    return new su(paramString, paramb);
+    return new tk(paramString, paramb);
   }
   
-  protected static sq a(@cgb su.b paramb)
+  protected static tg a(@chc tk.b paramb)
   {
-    return new su(paramb);
+    return new tk(paramb);
   }
   
-  private void a(@cgc final Integer paramInteger)
+  private void a(@chd final Integer paramInteger)
   {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
         CashSettingsFragment.a(CashSettingsFragment.this).setVisibility(8);
-        if (ajx.ar()) {
+        if (akr.aq()) {
           CashSettingsFragment.f(CashSettingsFragment.this);
         }
         for (;;)
         {
           CashSettingsFragment.h(CashSettingsFragment.this);
           if (paramInteger != null) {
-            ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, paramInteger.intValue()));
+            bbo.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, paramInteger.intValue()));
           }
           return;
           CashSettingsFragment.g(CashSettingsFragment.this);
@@ -105,14 +105,14 @@ public class CashSettingsFragment
     });
   }
   
-  protected static qv i()
-  {
-    return new rf();
-  }
-  
-  protected static rv l()
+  protected static rl i()
   {
     return new rv();
+  }
+  
+  protected static sl l()
+  {
+    return new sl();
   }
   
   protected static SecurityCodeFragment m()
@@ -122,11 +122,11 @@ public class CashSettingsFragment
   
   private void n()
   {
-    String str = ajx.at();
+    String str = akr.as();
     if (str != null) {
       d.setText(str);
     }
-    str = ajx.as();
+    str = akr.ar();
     if (str != null) {
       c.setImageResource(CardBrand.getDrawable(CardBrand.valueOf(str)));
     }
@@ -155,7 +155,7 @@ public class CashSettingsFragment
   
   private void p()
   {
-    if (!ajx.av())
+    if (!akr.au())
     {
       m.setEnabled(false);
       m.setAlpha(0.4F);
@@ -165,13 +165,13 @@ public class CashSettingsFragment
     m.setAlpha(1.0F);
   }
   
-  protected final su.b a(@cgc final SecurityCodeFragment paramSecurityCodeFragment, final boolean paramBoolean)
+  protected final tk.b a(@chd final SecurityCodeFragment paramSecurityCodeFragment, final boolean paramBoolean)
   {
-    new su.b()
+    new tk.b()
     {
       public final void a()
       {
-        bgp.a(new Runnable()
+        bhp.a(new Runnable()
         {
           public final void run()
           {
@@ -180,7 +180,7 @@ public class CashSettingsFragment
             CashSettingsFragment.e(CashSettingsFragment.this).setVisibility(8);
           }
         });
-        ajx.n(paramBoolean);
+        akr.m(paramBoolean);
         if (paramSecurityCodeFragment != null) {
           paramSecurityCodeFragment.l();
         }
@@ -189,7 +189,7 @@ public class CashSettingsFragment
       public final void a(int paramAnonymousInt)
       {
         boolean bool = false;
-        String str = atx.a(null, 2131492918, new Object[0]) + '\n' + atx.a(null, 2131493314, new Object[0]);
+        String str = auv.a(null, 2131492918, new Object[0]) + '\n' + auv.a(null, 2131493314, new Object[0]);
         ErrorType localErrorType = ErrorType.UNKNOWN;
         switch (paramAnonymousInt)
         {
@@ -208,10 +208,10 @@ public class CashSettingsFragment
             paramSecurityCodeFragment.a(localErrorType, paramAnonymousInt);
           }
           return;
-          str = atx.a(null, 2131493204, new Object[0]) + '\n' + atx.a(null, 2131493314, new Object[0]);
+          str = auv.a(null, 2131493204, new Object[0]) + '\n' + auv.a(null, 2131493314, new Object[0]);
           localErrorType = ErrorType.INVALID_PASSCODE;
           continue;
-          str = atx.a(null, 2131493536, new Object[0]) + '\n' + atx.a(null, 2131493315, new Object[0]);
+          str = auv.a(null, 2131493534, new Object[0]) + '\n' + auv.a(null, 2131493315, new Object[0]);
           localErrorType = ErrorType.TOO_MANY_ATTEMPTS;
         }
       }
@@ -220,7 +220,7 @@ public class CashSettingsFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968610, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968611, paramViewGroup, false);
     c = ((ImageView)c(2131362025));
     d = ((TextView)c(2131362026));
     e = ((RelativeLayout)c(2131362024));
@@ -232,31 +232,31 @@ public class CashSettingsFragment
     k = ((TextView)c(2131362032));
     l = ((ProgressBar)c(2131362033));
     m = c(2131362035);
-    c(2131361893).setOnClickListener(new View.OnClickListener()
+    c(2131361895).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         getActivity().onBackPressed();
       }
     });
-    i.setChecked(ajx.aw());
+    i.setChecked(akr.av());
     e.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        paramAnonymousView = new rh((byte)0);
-        mListener = new qv.a()
+        paramAnonymousView = new rx((byte)0);
+        mListener = new rl.a()
         {
-          public final void a(@cgb qv paramAnonymous2qv) {}
+          public final void a(@chc rl paramAnonymous2rl) {}
           
-          public final void a(@cgb qv paramAnonymous2qv, @cgc List<qv> paramAnonymous2List, boolean paramAnonymous2Boolean)
+          public final void a(@chc rl paramAnonymous2rl, @chd List<rl> paramAnonymous2List, boolean paramAnonymous2Boolean)
           {
             if (paramAnonymous2List != null)
             {
-              paramAnonymous2qv = paramAnonymous2List.iterator();
-              while (paramAnonymous2qv.hasNext())
+              paramAnonymous2rl = paramAnonymous2List.iterator();
+              while (paramAnonymous2rl.hasNext())
               {
-                paramAnonymous2List = (qv)paramAnonymous2qv.next();
+                paramAnonymous2List = (rl)paramAnonymous2rl.next();
                 if (paramAnonymous2List.d()) {
                   paramAnonymous2List.a(null);
                 }
@@ -265,9 +265,9 @@ public class CashSettingsFragment
             CashSettingsFragment.a(CashSettingsFragment.this, null);
           }
           
-          public final void b(@cgb qv paramAnonymous2qv) {}
+          public final void b(@chc rl paramAnonymous2rl) {}
           
-          public final void b(@cgb qv paramAnonymous2qv, @cgc List<qv> paramAnonymous2List, boolean paramAnonymous2Boolean)
+          public final void b(@chc rl paramAnonymous2rl, @chd List<rl> paramAnonymous2List, boolean paramAnonymous2Boolean)
           {
             CashSettingsFragment.a(CashSettingsFragment.this, Integer.valueOf(2131493195));
           }
@@ -280,31 +280,31 @@ public class CashSettingsFragment
       public final void onClick(View paramAnonymousView)
       {
         paramAnonymousView = new AlertDialog.Builder(getActivity());
-        paramAnonymousView.setTitle(2131493581);
-        paramAnonymousView.setMessage(2131493580);
+        paramAnonymousView.setTitle(2131493579);
+        paramAnonymousView.setMessage(2131493578);
         paramAnonymousView.setCancelable(true);
-        paramAnonymousView.setPositiveButton(2131493603, new DialogInterface.OnClickListener()
+        paramAnonymousView.setPositiveButton(2131493601, new DialogInterface.OnClickListener()
         {
           public final void onClick(DialogInterface paramAnonymous2DialogInterface, int paramAnonymous2Int)
           {
             CashSettingsFragment.a(CashSettingsFragment.this).setVisibility(0);
             CashSettingsFragment.b(CashSettingsFragment.this).setVisibility(8);
             paramAnonymous2DialogInterface = CashSettingsFragment.l();
-            mListener = new qv.a()
+            mListener = new rl.a()
             {
-              public final void a(@cgb qv paramAnonymous3qv) {}
+              public final void a(@chc rl paramAnonymous3rl) {}
               
-              public final void a(@cgb qv paramAnonymous3qv, @cgc List<qv> paramAnonymous3List, boolean paramAnonymous3Boolean)
+              public final void a(@chc rl paramAnonymous3rl, @chd List<rl> paramAnonymous3List, boolean paramAnonymous3Boolean)
               {
                 CashSettingsFragment.a(CashSettingsFragment.this, null);
               }
               
-              public final void b(@cgb qv paramAnonymous3qv)
+              public final void b(@chc rl paramAnonymous3rl)
               {
                 CashSettingsFragment.a(CashSettingsFragment.this, Integer.valueOf(2131492954));
               }
               
-              public final void b(@cgb qv paramAnonymous3qv, @cgc List<qv> paramAnonymous3List, boolean paramAnonymous3Boolean)
+              public final void b(@chc rl paramAnonymous3rl, @chd List<rl> paramAnonymous3List, boolean paramAnonymous3Boolean)
               {
                 CashSettingsFragment.a(CashSettingsFragment.this, Integer.valueOf(2131492954));
               }
@@ -343,28 +343,28 @@ public class CashSettingsFragment
         CashSettingsFragment.c(CashSettingsFragment.this).setVisibility(8);
         CashSettingsFragment.e(CashSettingsFragment.this).setVisibility(0);
         paramAnonymousCompoundButton = CashSettingsFragment.i();
-        mListener = new qv.a()
+        mListener = new rl.a()
         {
-          public final void a(@cgb qv paramAnonymous2qv) {}
+          public final void a(@chc rl paramAnonymous2rl) {}
           
-          public final void a(@cgb qv paramAnonymous2qv, @cgc List<qv> paramAnonymous2List, boolean paramAnonymous2Boolean)
+          public final void a(@chc rl paramAnonymous2rl, @chd List<rl> paramAnonymous2List, boolean paramAnonymous2Boolean)
           {
             paramAnonymous2Boolean = true;
             if ((paramAnonymous2List == null) || (paramAnonymous2List.isEmpty()))
             {
               if (!paramAnonymousBoolean)
               {
-                paramAnonymous2qv = CashSettingsFragment.m();
-                b = new CashSettingsFragment.10(CashSettingsFragment.this, paramAnonymous2qv, CashSettingsFragment.c(CashSettingsFragment.this));
-                ban.a().a(new bdw(paramAnonymous2qv));
+                paramAnonymous2rl = CashSettingsFragment.m();
+                b = new CashSettingsFragment.10(CashSettingsFragment.this, paramAnonymous2rl, CashSettingsFragment.c(CashSettingsFragment.this));
+                bbo.a().a(new bev(paramAnonymous2rl));
                 return;
               }
-              paramAnonymous2qv = CashSettingsFragment.this;
+              paramAnonymous2rl = CashSettingsFragment.this;
               CashSettingsFragment.c(CashSettingsFragment.this);
-              CashSettingsFragment.a(paramAnonymous2qv.a(null, true)).f();
+              CashSettingsFragment.a(paramAnonymous2rl.a(null, true)).execute();
               return;
             }
-            paramAnonymous2qv = atx.a(null, 2131492918, new Object[0]) + '\n' + atx.a(null, 2131493314, new Object[0]);
+            paramAnonymous2rl = auv.a(null, 2131492918, new Object[0]) + '\n' + auv.a(null, 2131493314, new Object[0]);
             paramAnonymous2List = CashSettingsFragment.this;
             CheckBox localCheckBox = CashSettingsFragment.c(CashSettingsFragment.this);
             RelativeLayout localRelativeLayout = CashSettingsFragment.d(CashSettingsFragment.this);
@@ -372,18 +372,18 @@ public class CashSettingsFragment
             if (!paramAnonymousBoolean) {}
             for (;;)
             {
-              CashSettingsFragment.a(paramAnonymous2List, localCheckBox, localRelativeLayout, localProgressBar, paramAnonymous2Boolean, paramAnonymous2qv);
+              CashSettingsFragment.a(paramAnonymous2List, localCheckBox, localRelativeLayout, localProgressBar, paramAnonymous2Boolean, paramAnonymous2rl);
               return;
               paramAnonymous2Boolean = false;
             }
           }
           
-          public final void b(@cgb qv paramAnonymous2qv) {}
+          public final void b(@chc rl paramAnonymous2rl) {}
           
-          public final void b(@cgb qv paramAnonymous2qv, @cgc List<qv> paramAnonymous2List, boolean paramAnonymous2Boolean)
+          public final void b(@chc rl paramAnonymous2rl, @chd List<rl> paramAnonymous2List, boolean paramAnonymous2Boolean)
           {
             paramAnonymous2Boolean = false;
-            paramAnonymous2qv = atx.a(null, 2131492918, new Object[0]) + '\n' + atx.a(null, 2131493314, new Object[0]);
+            paramAnonymous2rl = auv.a(null, 2131492918, new Object[0]) + '\n' + auv.a(null, 2131493314, new Object[0]);
             paramAnonymous2List = CashSettingsFragment.this;
             CheckBox localCheckBox = CashSettingsFragment.c(CashSettingsFragment.this);
             RelativeLayout localRelativeLayout = CashSettingsFragment.d(CashSettingsFragment.this);
@@ -391,7 +391,7 @@ public class CashSettingsFragment
             if (!paramAnonymousBoolean) {
               paramAnonymous2Boolean = true;
             }
-            CashSettingsFragment.a(paramAnonymous2List, localCheckBox, localRelativeLayout, localProgressBar, paramAnonymous2Boolean, paramAnonymous2qv);
+            CashSettingsFragment.a(paramAnonymous2List, localCheckBox, localRelativeLayout, localProgressBar, paramAnonymous2Boolean, paramAnonymous2rl);
           }
         };
         paramAnonymousCompoundButton.a(null);
@@ -408,17 +408,17 @@ public class CashSettingsFragment
           paramAnonymousView.a(getString(2131493437));
           return;
         }
-        qh.a();
+        qx.a();
       }
     });
     c(2131362036).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(new WebFragment("https://accounts.snapchat.com", getString(2131493436), true, "/ca/snapcash")));
+        bbo.a().a(new bev(new WebFragment("https://accounts.snapchat.com", getString(2131493436), true, "/ca/snapcash")));
       }
     });
-    if ((ajx.ar()) && (a.b(ajx.ap()))) {
+    if ((akr.aq()) && (a.b(akr.ao()))) {
       n();
     }
     for (;;)
@@ -429,8 +429,8 @@ public class CashSettingsFragment
     }
   }
   
-  @boh
-  public void updateCardDetailsViewOnDetailsProvided(bbf parambbf)
+  @bpi
+  public void updateCardDetailsViewOnDetailsProvided(bcf parambcf)
   {
     a(null);
   }

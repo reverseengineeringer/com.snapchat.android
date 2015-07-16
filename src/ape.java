@@ -1,6 +1,6 @@
-public abstract interface ape
+public abstract interface ape<T>
 {
-  public abstract void d();
+  public abstract boolean a(T paramT);
 }
 
 /* Location:

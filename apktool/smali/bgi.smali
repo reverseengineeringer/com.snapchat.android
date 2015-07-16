@@ -1,74 +1,97 @@
 .class public final Lbgi;
-.super Lbgj;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private final mCache:Lawp;
+.field private final mExceptionReporter:Lban;
 
-.field private final mKey:Ljava/lang/String;
+.field private final mInitializer:Lbgh;
+
+.field private final mRetrieverFactory:Lbgg;
 
 
 # direct methods
-.method public constructor <init>(Lawp;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 3
 
     .prologue
     .line 22
-    invoke-direct {p0}, Lbgj;-><init>()V
+    new-instance v0, Lbgh;
+
+    invoke-direct {v0}, Lbgh;-><init>()V
+
+    new-instance v1, Lbgg;
+
+    invoke-direct {v1}, Lbgg;-><init>()V
+
+    new-instance v2, Lban;
+
+    invoke-direct {v2}, Lban;-><init>()V
+
+    invoke-direct {p0, v0, v1, v2}, Lbgi;-><init>(Lbgh;Lbgg;Lban;)V
 
     .line 23
-    iput-object p1, p0, Lbgi;->mCache:Lawp;
+    return-void
+.end method
 
-    .line 24
-    iput-object p2, p0, Lbgi;->mKey:Ljava/lang/String;
+.method private constructor <init>(Lbgh;Lbgg;Lban;)V
+    .locals 0
 
-    .line 25
+    .prologue
+    .line 28
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 29
+    iput-object p1, p0, Lbgi;->mInitializer:Lbgh;
+
+    .line 30
+    iput-object p2, p0, Lbgi;->mRetrieverFactory:Lbgg;
+
+    .line 31
+    iput-object p3, p0, Lbgi;->mExceptionReporter:Lban;
+
+    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfl;
+.method public final a(Ljava/lang/String;)Landroid/media/MediaMetadataRetriever;
     .locals 2
+    .annotation build Lchd;
+    .end annotation
 
     .prologue
-    .line 29
-    iget-object v0, p0, Lbgi;->mCache:Lawp;
+    .line 41
+    new-instance v0, Landroid/media/MediaMetadataRetriever;
 
-    iget-object v1, p0, Lbgi;->mKey:Ljava/lang/String;
+    invoke-direct {v0}, Landroid/media/MediaMetadataRetriever;-><init>()V
 
-    invoke-virtual {v0, v1}, Lawp;->a(Ljava/lang/String;)[B
+    .line 44
+    :try_start_0
+    invoke-static {v0, p1}, Lbgh;->a(Landroid/media/MediaMetadataRetriever;Ljava/lang/String;)Landroid/media/MediaMetadataRetriever;
+    :try_end_0
+    .catch Lbfv; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v0
-
-    .line 30
-    if-nez v0, :cond_0
-
-    .line 31
-    const/4 v0, 0x0
-
-    .line 37
+    .line 49
     :goto_0
     return-object v0
 
-    .line 34
-    :cond_0
-    new-instance v1, Ljava/io/ByteArrayInputStream;
+    .line 46
+    :catch_0
+    move-exception v1
 
-    invoke-direct {v1, v0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+    .line 47
+    invoke-virtual {v0}, Landroid/media/MediaMetadataRetriever;->release()V
 
-    .line 35
-    new-instance v0, Lfm;
+    .line 48
+    iget-object v0, p0, Lbgi;->mExceptionReporter:Lban;
 
-    invoke-direct {v0}, Lfm;-><init>()V
+    invoke-virtual {v0, v1}, Lban;->b(Ljava/lang/Throwable;)V
 
-    .line 36
-    iput-object v1, v0, Lfm;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Lfm;->a()Lfl;
-
-    move-result-object v0
+    .line 49
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

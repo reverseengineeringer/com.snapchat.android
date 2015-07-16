@@ -1,4 +1,4 @@
-.class public Lalq$a;
+.class public final Lalq$a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -15,72 +15,66 @@
 
 
 # instance fields
-.field public final a:J
+.field public id:Ljava/lang/String;
 
-.field public final b:J
-
-.field public final c:I
+.field public timestamp:J
 
 
 # direct methods
-.method public constructor <init>(JJI)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 28
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    iput-wide p3, p0, Lalq$a;->b:J
-
-    .line 30
-    iput-wide p1, p0, Lalq$a;->a:J
-
-    .line 31
-    iput p5, p0, Lalq$a;->c:I
-
-    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
+.method public final toString()Ljava/lang/String;
     .locals 4
 
     .prologue
-    .line 48
-    const-class v0, Lalq$a;
+    .line 39
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lci;->a(Ljava/lang/Class;)Lci$a;
+    const-string v1, "SnapData{id=\'"
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "durationMs"
+    iget-object v1, p0, Lalq$a;->id:Ljava/lang/String;
 
-    iget-wide v2, p0, Lalq$a;->a:J
-
-    invoke-virtual {v0, v1, v2, v3}, Lci$a;->a(Ljava/lang/String;J)Lci$a;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "bytesReceived"
+    const/16 v1, 0x27
 
-    iget-wide v2, p0, Lalq$a;->b:J
-
-    invoke-virtual {v0, v1, v2, v3}, Lci$a;->a(Ljava/lang/String;J)Lci$a;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "downloadCount"
+    const-string v1, ", timestamp="
 
-    iget v2, p0, Lalq$a;->c:I
-
-    invoke-virtual {v0, v1, v2}, Lci$a;->a(Ljava/lang/String;I)Lci$a;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lci$a;->toString()Ljava/lang/String;
+    iget-wide v2, p0, Lalq$a;->timestamp:J
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x7d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

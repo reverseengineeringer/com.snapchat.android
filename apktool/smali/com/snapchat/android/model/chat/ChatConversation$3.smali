@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Ljava/util/Comparator",
         "<",
-        "Lakb;",
+        "Lakw;",
         ">;"
     }
 .end annotation
@@ -36,7 +36,7 @@
     .locals 0
 
     .prologue
-    .line 961
+    .line 1015
     iput-object p1, p0, Lcom/snapchat/android/model/chat/ChatConversation$3;->this$0:Lcom/snapchat/android/model/chat/ChatConversation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,16 +50,16 @@
     .locals 4
 
     .prologue
-    .line 961
-    check-cast p1, Lakb;
+    .line 1015
+    check-cast p1, Lakw;
 
-    check-cast p2, Lakb;
+    check-cast p2, Lakw;
 
-    invoke-virtual {p1}, Lakb;->s()J
+    invoke-virtual {p1}, Lakw;->t()J
 
     move-result-wide v0
 
-    invoke-virtual {p2}, Lakb;->s()J
+    invoke-virtual {p2}, Lakw;->t()J
 
     move-result-wide v2
 
@@ -73,11 +73,11 @@
     return v0
 
     :cond_0
-    invoke-virtual {p1}, Lakb;->s()J
+    invoke-virtual {p1}, Lakw;->t()J
 
     move-result-wide v0
 
-    invoke-virtual {p2}, Lakb;->s()J
+    invoke-virtual {p2}, Lakw;->t()J
 
     move-result-wide v2
 

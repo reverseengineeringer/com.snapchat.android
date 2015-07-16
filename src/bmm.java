@@ -1,135 +1,79 @@
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.security.Principal;
+import java.security.PublicKey;
+import java.security.cert.Certificate;
+import java.security.cert.X509Certificate;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import javax.net.ssl.SSLPeerUnverifiedException;
 
-final class bmm<T>
+public final class bmm
 {
-  private final Class<?> a;
-  private final String b;
-  private final Class[] c;
+  public static final bmm a = new bmm(new bmm.a(), (byte)0);
+  private final Map<String, List<cay>> b;
   
-  public bmm(Class<?> paramClass, String paramString, Class... paramVarArgs)
+  private bmm(bmm.a parama)
   {
-    a = paramClass;
-    b = paramString;
-    c = paramVarArgs;
+    b = bnq.a(a);
   }
   
-  private Method a(Class<?> paramClass)
+  private static cay a(X509Certificate paramX509Certificate)
   {
-    if (b != null)
-    {
-      paramClass = a(paramClass, b, c);
-      if ((paramClass == null) || (a == null) || (a.isAssignableFrom(paramClass.getReturnType()))) {}
-    }
-    else
-    {
-      return null;
-    }
-    return paramClass;
+    return bnq.a(cay.a(paramX509Certificate.getPublicKey().getEncoded()));
   }
   
-  private static Method a(Class<?> paramClass, String paramString, Class[] paramArrayOfClass)
+  public static String a(Certificate paramCertificate)
   {
-    try
-    {
-      paramClass = paramClass.getMethod(paramString, paramArrayOfClass);
-      int i;
-      return paramClass;
+    if (!(paramCertificate instanceof X509Certificate)) {
+      throw new IllegalArgumentException("Certificate pinning requires X509 certificates");
     }
-    catch (NoSuchMethodException paramClass)
+    return "sha1/" + cau.a(ac);
+  }
+  
+  public final void a(String paramString, List<Certificate> paramList)
+  {
+    int j = 0;
+    List localList = (List)b.get(paramString);
+    if (localList == null) {
+      return;
+    }
+    int k = paramList.size();
+    int i = 0;
+    for (;;)
     {
-      try
-      {
-        i = paramClass.getModifiers();
-        if ((i & 0x1) != 0) {
-          return paramClass;
-        }
-        return null;
+      if (i >= k) {
+        break label70;
       }
-      catch (NoSuchMethodException paramString)
-      {
-        return paramClass;
+      if (localList.contains(a((X509Certificate)paramList.get(i)))) {
+        break;
       }
-      paramClass = paramClass;
-      return null;
+      i += 1;
     }
+    label70:
+    StringBuilder localStringBuilder = new StringBuilder("Certificate pinning failure!\n  Peer certificate chain:");
+    k = paramList.size();
+    i = 0;
+    while (i < k)
+    {
+      X509Certificate localX509Certificate = (X509Certificate)paramList.get(i);
+      localStringBuilder.append("\n    ").append(a(localX509Certificate)).append(": ").append(localX509Certificate.getSubjectDN().getName());
+      i += 1;
+    }
+    localStringBuilder.append("\n  Pinned certificates for ").append(paramString).append(":");
+    k = localList.size();
+    i = j;
+    while (i < k)
+    {
+      paramString = (cay)localList.get(i);
+      localStringBuilder.append("\n    sha1/").append(cau.a(c));
+      i += 1;
+    }
+    throw new SSLPeerUnverifiedException(localStringBuilder.toString());
   }
   
-  private Object c(T paramT, Object... paramVarArgs)
+  public static final class a
   {
-    Method localMethod = a(paramT.getClass());
-    if (localMethod == null) {
-      return null;
-    }
-    try
-    {
-      paramT = localMethod.invoke(paramT, paramVarArgs);
-      return paramT;
-    }
-    catch (IllegalAccessException paramT) {}
-    return null;
-  }
-  
-  private Object d(T paramT, Object... paramVarArgs)
-  {
-    Method localMethod = a(paramT.getClass());
-    if (localMethod == null) {
-      throw new AssertionError("Method " + b + " not supported for object " + paramT);
-    }
-    try
-    {
-      paramT = localMethod.invoke(paramT, paramVarArgs);
-      return paramT;
-    }
-    catch (IllegalAccessException paramT)
-    {
-      paramVarArgs = new AssertionError("Unexpectedly could not call: " + localMethod);
-      paramVarArgs.initCause(paramT);
-      throw paramVarArgs;
-    }
-  }
-  
-  public final Object a(T paramT, Object... paramVarArgs)
-  {
-    try
-    {
-      paramT = c(paramT, paramVarArgs);
-      return paramT;
-    }
-    catch (InvocationTargetException paramT)
-    {
-      paramT = paramT.getTargetException();
-      if ((paramT instanceof RuntimeException)) {
-        throw ((RuntimeException)paramT);
-      }
-      paramVarArgs = new AssertionError("Unexpected exception");
-      paramVarArgs.initCause(paramT);
-      throw paramVarArgs;
-    }
-  }
-  
-  public final boolean a(T paramT)
-  {
-    return a(paramT.getClass()) != null;
-  }
-  
-  public final Object b(T paramT, Object... paramVarArgs)
-  {
-    try
-    {
-      paramT = d(paramT, paramVarArgs);
-      return paramT;
-    }
-    catch (InvocationTargetException paramT)
-    {
-      paramT = paramT.getTargetException();
-      if ((paramT instanceof RuntimeException)) {
-        throw ((RuntimeException)paramT);
-      }
-      paramVarArgs = new AssertionError("Unexpected exception");
-      paramVarArgs.initCause(paramT);
-      throw paramVarArgs;
-    }
+    final Map<String, List<cay>> a = new LinkedHashMap();
   }
 }
 

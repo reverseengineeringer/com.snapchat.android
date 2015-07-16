@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$5$1;
-.super Laqb;
+.super Lara;
 .source "SourceFile"
 
 
@@ -26,7 +26,7 @@
     .line 105
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$5$1;->a:Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$5;
 
-    invoke-direct {p0, p2, p3, p4, p5}, Laqb;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p2, p3, p4, p5}, Lara;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -52,7 +52,7 @@
 
     iget-object v1, v1, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment$5;->a:Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;
 
-    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;)Laol;
+    invoke-static {v1}, Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;->c(Lcom/snapchat/android/fragments/settings/twofa/TwoFactorSettingsEnabledFragment;)Laph;
 
     move-result-object v1
 
@@ -62,7 +62,7 @@
 
     const-string v3, "disableTwoFA"
 
-    invoke-virtual {v1, v2, v3, v4, v4}, Laol;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v3, v4, v4}, Laph;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 

@@ -1,94 +1,32 @@
-import android.os.Handler;
-import android.os.Looper;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
-import java.util.concurrent.ExecutorService;
 
+@Deprecated
 public final class bgp
 {
-  private static final String TAG = "ThreadUtils";
-  private static boolean sAssertionsEnabled;
-  private static Handler sMainThreadHandler;
-  
-  static
+  @chd
+  public static NetworkInfo a()
   {
-    if (!SnapchatApplication.a()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      sAssertionsEnabled = bool;
-      return;
-    }
+    return ((ConnectivityManager)SnapchatApplication.b().getSystemService("connectivity")).getActiveNetworkInfo();
   }
   
-  public static void a()
+  @chc
+  public static String b()
   {
-    if ((sAssertionsEnabled) && (!c())) {
-      throw new IllegalStateException("This method must be called only from the Main Thread.");
-    }
-  }
-  
-  public static void a(long paramLong)
-  {
-    try
+    NetworkInfo localNetworkInfo = a();
+    String str = "unknown";
+    if ((localNetworkInfo != null) && (localNetworkInfo.isConnectedOrConnecting()))
     {
-      Thread.sleep(paramLong);
-      return;
-    }
-    catch (InterruptedException localInterruptedException)
-    {
-      Timber.a("ThreadUtils", localInterruptedException);
-    }
-  }
-  
-  public static void a(Runnable paramRunnable)
-  {
-    if (sMainThreadHandler == null) {
-      sMainThreadHandler = new Handler(Looper.getMainLooper());
-    }
-    paramRunnable = new bgu(paramRunnable, -2);
-    sMainThreadHandler.post(paramRunnable);
-  }
-  
-  public static void a(Thread paramThread)
-  {
-    int i = 0;
-    for (;;)
-    {
-      try
-      {
-        paramThread.join();
-        if (i != 0) {
-          Thread.currentThread().interrupt();
-        }
-        return;
+      if (localNetworkInfo.getType() == 1) {
+        str = "wifi";
       }
-      catch (InterruptedException localInterruptedException)
-      {
-        i = 1;
+      while (localNetworkInfo.getType() != 0) {
+        return str;
       }
+      return "wwan";
     }
-  }
-  
-  public static void a(ExecutorService paramExecutorService, Runnable paramRunnable)
-  {
-    paramExecutorService.execute(paramRunnable);
-  }
-  
-  public static void b()
-  {
-    if ((sAssertionsEnabled) && (c())) {
-      throw new IllegalStateException("This method must not be called from the Main Thread.");
-    }
-  }
-  
-  public static void b(Runnable paramRunnable)
-  {
-    auh.MISCELLANEOUS_EXECUTOR.execute(paramRunnable);
-  }
-  
-  public static boolean c()
-  {
-    return Thread.currentThread() == Looper.getMainLooper().getThread();
+    return "not_reachable";
   }
 }
 

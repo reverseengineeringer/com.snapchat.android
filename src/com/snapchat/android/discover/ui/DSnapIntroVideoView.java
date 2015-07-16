@@ -1,23 +1,23 @@
 package com.snapchat.android.discover.ui;
 
-import abq;
-import aby;
-import aca;
-import adf;
-import aeq;
-import aeu;
-import ajt;
+import acq;
+import acr;
+import acy;
+import ada;
+import aef;
+import afq;
+import afu;
+import akn;
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import avf;
-import azm;
-import bdt;
-import bgk;
-import cgb;
-import com.snapchat.android.Timber;
+import awd;
+import bal;
+import bet;
+import bhk;
+import chc;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
@@ -25,30 +25,32 @@ import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics;
 import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics.ViewStatus;
 import com.snapchat.android.discover.model.ChannelPage;
 import com.snapchat.android.discover.model.DSnapPanel.MediaType;
+import com.snapchat.android.discover.model.EditionOpenOrigin;
 import com.snapchat.android.discover.ui.media.DiscoverEditionPageView;
 import com.snapchat.android.discover.ui.media.DiscoverEditionPageView.a;
 import com.snapchat.android.ui.TextureVideoView;
 import com.squareup.otto.Bus;
-import hj;
+import hs;
 import java.util.Map;
-import mj;
-import mj.2;
-import mk;
-import ml;
-import mp.a;
+import lv;
+import na;
+import na.2;
+import nb;
+import nc;
+import ng.a;
 
 public class DSnapIntroVideoView
   extends DiscoverEditionPageView
 {
-  protected aeq a = new aeq()
+  protected afq a = new afq()
   {
     public final void a(String paramAnonymousString)
     {
-      Timber.e("DSnapIntroVideoView", "Skipping intro video for %s because the media failed to load (%s).", new Object[] { DSnapIntroVideoView.e(DSnapIntroVideoView.this), paramAnonymousString });
+      DSnapIntroVideoView.e(DSnapIntroVideoView.this);
       String str1 = eb;
       String str2 = DSnapIntroVideoView.e(DSnapIntroVideoView.this).d();
       EasyMetric.EasyMetricFactory.a("DISCOVER_INTRO_MEDIA_PLAYBACK_ERROR").a("publisher_name", str1).a("url", str2).a("description", paramAnonymousString).a(false);
-      r_();
+      p_();
       DSnapIntroVideoView.a(DSnapIntroVideoView.this, DiscoverUsageAnalytics.ViewStatus.ERROR);
     }
     
@@ -58,7 +60,7 @@ public class DSnapIntroVideoView
       DSnapIntroVideoView.d(DSnapIntroVideoView.this).setVisibility(8);
     }
     
-    public final void r_()
+    public final void p_()
     {
       if (DSnapIntroVideoView.a(DSnapIntroVideoView.this) != null)
       {
@@ -67,31 +69,32 @@ public class DSnapIntroVideoView
       }
     }
   };
-  private final aeu b;
+  private final afu b;
   private View c;
   private TextureVideoView d;
   private ChannelPage e;
-  private aca f;
+  private ada f;
   private boolean g = false;
   private long h = 0L;
   private boolean i = false;
   private DiscoverUsageAnalytics.ViewStatus j = DiscoverUsageAnalytics.ViewStatus.INCOMPLETE;
+  private acr k;
   
-  public DSnapIntroVideoView(@cgb Context paramContext, AttributeSet paramAttributeSet)
+  public DSnapIntroVideoView(@chc Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, new aeu(false), azm.a());
+    this(paramContext, paramAttributeSet, new afu(false), bal.a());
   }
   
-  protected DSnapIntroVideoView(Context paramContext, AttributeSet paramAttributeSet, aby paramaby, abq paramabq, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, adf paramadf, bgk parambgk, Bus paramBus, aeu paramaeu, azm paramazm)
+  protected DSnapIntroVideoView(Context paramContext, AttributeSet paramAttributeSet, acy paramacy, acq paramacq, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, aef paramaef, bhk parambhk, Bus paramBus, afu paramafu, bal parambal)
   {
-    super(paramContext, paramAttributeSet, paramaby, paramabq, paramDiscoverUsageAnalytics, paramadf, paramazm, parambgk, paramBus);
-    b = paramaeu;
+    super(paramContext, paramAttributeSet, paramacy, paramacq, paramDiscoverUsageAnalytics, paramaef, parambal, parambhk, paramBus);
+    b = paramafu;
   }
   
-  private DSnapIntroVideoView(@cgb Context paramContext, AttributeSet paramAttributeSet, aeu paramaeu, azm paramazm)
+  private DSnapIntroVideoView(@chc Context paramContext, AttributeSet paramAttributeSet, afu paramafu, bal parambal)
   {
     super(paramContext, paramAttributeSet);
-    b = paramaeu;
+    b = paramafu;
   }
   
   private void h()
@@ -106,57 +109,67 @@ public class DSnapIntroVideoView
     if (!g) {
       return;
     }
-    Timber.c("DSnapIntroVideoView", "Exited intro video page for channel %s", new Object[] { e });
-    long l1;
-    String str1;
-    int k;
-    long l2;
+    Object localObject1 = e;
+    int m;
     if (h != 0L) {
       if (e != null)
       {
-        Object localObject1 = o;
-        l1 = System.currentTimeMillis() - h;
+        m = d.getDuration();
+        int i1 = Math.min(m, d.getCurrentPosition());
+        localObject1 = o;
+        long l1 = System.currentTimeMillis() - h;
         Object localObject3 = j;
         String str2 = e.d();
         Object localObject2 = e.e;
-        str1 = e.b;
-        int m = l.d(e.e);
+        String str1 = e.b;
+        int n = l.d(e.e);
         DSnapPanel.MediaType localMediaType = DSnapPanel.MediaType.VIDEO;
+        long l2 = i1;
+        long l3 = m;
+        lv locallv = k.c.getSourceType();
         if (localObject3 != DiscoverUsageAnalytics.ViewStatus.ERROR)
         {
-          hj localhj = new hj();
-          timeViewed = Double.valueOf(avf.a(l1));
+          hs localhs = new hs();
+          timeViewed = Double.valueOf(awd.a(l1));
           fullView = Boolean.valueOf(((DiscoverUsageAnalytics.ViewStatus)localObject3).wasFullView());
           splashId = str2;
           editionId = ((String)localObject2);
           publisherId = str1;
           mediaType = DiscoverUsageAnalytics.a(localMediaType);
-          if (m >= 0) {
-            break label364;
+          source = locallv;
+          if (l2 >= 0L) {
+            mediaDisplayTimeSec = Double.valueOf(awd.a(l2));
           }
-          k = 1;
-          if (k == 0)
+          if (l3 >= 0L) {
+            snapTimeSec = Double.valueOf(awd.a(l3));
+          }
+          if (n >= 0) {
+            break label420;
+          }
+          m = 1;
+          if (m == 0)
           {
-            snapIndexCount = Long.valueOf(m);
+            snapIndexCount = Long.valueOf(n);
             snapIndexPos = Long.valueOf(0L);
           }
-          ScAnalyticsEventEngine.a(localhj);
-          localObject3 = new mp.a();
+          ScAnalyticsEventEngine.a(localhs);
+          localObject3 = new ng.a();
           mChannelName = str1;
           mEditionName = ((String)localObject2);
           mPosition = 0;
-          localObject2 = ((mp.a)localObject3).a();
+          localObject2 = ((ng.a)localObject3).a();
           localObject1 = a;
-          str1 = ((ml)localObject2).b();
-          Timber.c("AdManager", "EndAdSplash for adKey:%s, viewTime:%s ms", new Object[] { str1, Long.valueOf(l1) });
+          str1 = ((nc)localObject2).b();
           l2 = mConfiguration.mStudySettings.a("AdManager", "ad_splash_impression_duration");
           if (l1 < l2) {
-            break label369;
+            break label425;
           }
-          mUIThreadHandler.post(new mj.2((mj)localObject1, (ml)localObject2, str1));
+          mUIThreadHandler.post(new na.2((na)localObject1, (nc)localObject2, str1));
         }
       }
     }
+    label420:
+    label425:
     for (;;)
     {
       h = 0L;
@@ -165,11 +178,8 @@ public class DSnapIntroVideoView
       setCanAdvance(true);
       g = false;
       return;
-      label364:
-      k = 0;
+      m = 0;
       break;
-      label369:
-      Timber.c("AdManager", "endAdSplash(%s,%d) not shown long enough %d for recordImpression", new Object[] { str1, Long.valueOf(l1), Long.valueOf(l2) });
     }
   }
   
@@ -178,16 +188,16 @@ public class DSnapIntroVideoView
     if (g) {
       return;
     }
-    Timber.c("DSnapIntroVideoView", "Entering intro video page for channel %s", new Object[] { e });
+    Object localObject1 = e;
     g = true;
-    r.a(new bdt(false));
+    r.a(new bet(false));
     h = System.currentTimeMillis();
-    Object localObject1 = o;
+    localObject1 = o;
     Object localObject2 = e.l;
     Map localMap = e.f();
     String str1 = e.e;
     String str2 = e.b;
-    mp.a locala = new mp.a();
+    ng.a locala = new ng.a();
     mChannelName = str2;
     mEditionName = str1;
     mPosition = 0;
@@ -195,19 +205,20 @@ public class DSnapIntroVideoView
     mTargetingParams = localMap;
     localObject2 = locala.a();
     localObject1 = a;
-    Timber.c("AdManager", "BeginAdSplash for adKey: ", new Object[] { ((ml)localObject2).b() });
-    ((mj)localObject1).a((ml)localObject2, null);
+    ((nc)localObject2).b();
+    ((na)localObject1).a((nc)localObject2, null);
     m.a(e, null);
     b.c = e.g();
     b.a();
   }
   
-  public final void a(@cgb ChannelPage paramChannelPage)
+  public final void a(@chc ChannelPage paramChannelPage, acr paramacr)
   {
     e = paramChannelPage;
-    Timber.c("DSnapIntroVideoView", "Initializing for intro video URI: %s", new Object[] { e.g() });
-    d = ((TextureVideoView)findViewById(2131362291));
-    c = findViewById(2131362292);
+    k = paramacr;
+    e.g();
+    d = ((TextureVideoView)findViewById(2131362289));
+    c = findViewById(2131362290);
     c.setBackgroundColor(e.h);
     paramChannelPage = b;
     paramChannelPage.a(d, d);
@@ -244,6 +255,17 @@ public class DSnapIntroVideoView
     return false;
   }
   
+  public final void o_()
+  {
+    super.o_();
+    h();
+    e = null;
+    g = false;
+    h = 0L;
+    i = false;
+    j = DiscoverUsageAnalytics.ViewStatus.INCOMPLETE;
+  }
+  
   public boolean onInterceptTouchEvent(MotionEvent paramMotionEvent)
   {
     return false;
@@ -255,17 +277,6 @@ public class DSnapIntroVideoView
       s.a();
     }
     return true;
-  }
-  
-  public final void q_()
-  {
-    super.q_();
-    h();
-    e = null;
-    g = false;
-    h = 0L;
-    i = false;
-    j = DiscoverUsageAnalytics.ViewStatus.INCOMPLETE;
   }
   
   public void setCanAdvance(boolean paramBoolean)

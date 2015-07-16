@@ -43,27 +43,16 @@
     .line 260
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$6;->a:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->c(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;)Lahr;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->c(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;)Lain;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lahr;->d()Landroid/location/Location;
+    invoke-virtual {v0}, Lain;->d()Landroid/location/Location;
 
     move-result-object v4
 
     .line 261
     if-nez v4, :cond_0
-
-    .line 262
-    const-string v0, "FindNearbyFriendsWorker"
-
-    const-string v1, "Could not get location, can\'t cancel polling."
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 273
     :goto_0
@@ -73,7 +62,7 @@
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$6;->a:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->d(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;)Lbgk;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->d(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;)Lbhk;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -106,7 +95,7 @@
     :goto_1
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$6;->a:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->g(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;)Laol;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;->g(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;)Laph;
 
     move-result-object v0
 
@@ -126,14 +115,14 @@
 
     const-string v9, "delete"
 
-    invoke-virtual/range {v0 .. v9}, Laol;->a(Landroid/content/Context;DDLjava/lang/Float;JLjava/lang/String;)Landroid/content/Intent;
+    invoke-virtual/range {v0 .. v9}, Laph;->a(Landroid/content/Context;DDLjava/lang/Float;JLjava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
     .line 271
-    new-instance v1, Lamx;
+    new-instance v1, Lanu;
 
-    invoke-direct {v1, v0}, Lamx;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v1, v0}, Lanu;-><init>(Landroid/content/Intent;)V
 
     .line 272
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$6;->a:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
@@ -142,7 +131,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lamx;->a(Landroid/content/Context;)V
+    invoke-virtual {v1, v0}, Lanu;->a(Landroid/content/Context;)V
 
     goto :goto_0
 

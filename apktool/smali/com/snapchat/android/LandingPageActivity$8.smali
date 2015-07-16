@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/LandingPageActivity;->onForceVerificationEvent(Lbbm;)V
+    value = Lcom/snapchat/android/LandingPageActivity;->onForceVerificationEvent(Lbcm;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 2235
+    .line 2250
     iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity$8;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,18 +40,18 @@
     .locals 2
 
     .prologue
-    .line 2237
+    .line 2252
     const/4 v0, 0x1
 
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/snapchat/android/analytics/PhoneVerificationAnalytics;->a(ZZ)V
 
-    .line 2239
+    .line 2254
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 2240
+    .line 2255
     return-void
 .end method

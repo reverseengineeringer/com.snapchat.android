@@ -1,28 +1,56 @@
+import android.graphics.Bitmap;
+
 public final class ajl
+  extends bgm
 {
-  public final int mGravity;
-  public final int mHeight;
-  public final boolean mShouldHideSystemUi;
-  public final int mWidth;
+  private static final String TAG = "DecryptedSnapVideo";
+  private final axn mCache;
+  private final String mKey;
+  @chd
+  private final Bitmap mOverlay;
   
-  private ajl(ajl.a parama)
+  private ajl(@chc axn paramaxn, @chc String paramString, @chd Bitmap paramBitmap)
   {
-    mGravity = mGravity;
-    mWidth = mWidth;
-    mHeight = mHeight;
-    mShouldHideSystemUi = mShouldHideSystemUi;
+    mCache = paramaxn;
+    mKey = paramString;
+    mOverlay = paramBitmap;
+  }
+  
+  @chd
+  public final String a()
+  {
+    f();
+    return mCache.b(mKey);
+  }
+  
+  @chd
+  public final Bitmap b()
+  {
+    f();
+    return mOverlay;
+  }
+  
+  protected final void c()
+  {
+    mCache.c(mKey);
   }
   
   public static final class a
   {
-    public int mGravity = 0;
-    public int mHeight = -1;
-    public boolean mShouldHideSystemUi = false;
-    public int mWidth = -1;
+    public Bitmap mBitmap = null;
+    public final axn mCache;
+    public final String mKey;
     
-    public final ajl a()
+    public a(@chc axn paramaxn, @chc String paramString)
     {
-      return new ajl(this, (byte)0);
+      mCache = ((axn)co.a(paramaxn));
+      mKey = ((String)co.a(paramString));
+    }
+    
+    public final a a(@chc Bitmap paramBitmap)
+    {
+      mBitmap = ((Bitmap)co.a(paramBitmap));
+      return this;
     }
   }
 }

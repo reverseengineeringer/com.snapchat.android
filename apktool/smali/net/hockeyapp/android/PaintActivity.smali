@@ -123,6 +123,18 @@
 
     const/4 v7, -0x1
 
+    invoke-virtual {p0}, Lnet/hockeyapp/android/PaintActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lnet/hockeyapp/android/PaintActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 41
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -268,7 +280,7 @@
     .line 82
     const/16 v0, 0x600
 
-    invoke-static {v0}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v0}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -298,7 +310,7 @@
     .line 90
     const/16 v0, 0x601
 
-    invoke-static {v0}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v0}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -309,7 +321,7 @@
 
     const/16 v1, 0x602
 
-    invoke-static {v1}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v1}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -320,7 +332,7 @@
 
     const/16 v1, 0x603
 
-    invoke-static {v1}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v1}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -363,7 +375,7 @@
     .line 141
     const/16 v2, 0x604
 
-    invoke-static {v2}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v2}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -374,7 +386,7 @@
     const/16 v2, 0x606
 
     .line 142
-    invoke-static {v2}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v2}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -385,7 +397,7 @@
     const/16 v2, 0x605
 
     .line 143
-    invoke-static {v2}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v2}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v2
 

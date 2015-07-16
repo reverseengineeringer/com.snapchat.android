@@ -27,23 +27,23 @@
 .method protected constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;Lcom/snapchat/videotranscoder/cts/OutputSurfaceFactory;Lcom/snapchat/videotranscoder/pipeline/Encoder;Landroid/graphics/Bitmap;IJLcom/snapchat/videotranscoder/pipeline/StageDoneCallback;)V
     .locals 6
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/cts/OutputSurfaceFactory;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/Encoder;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Landroid/graphics/Bitmap;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p8    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -222,19 +222,19 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;Lcom/snapchat/videotranscoder/pipeline/Encoder;Landroid/graphics/Bitmap;IJLcom/snapchat/videotranscoder/pipeline/StageDoneCallback;)V
     .locals 9
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/pipeline/Encoder;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/graphics/Bitmap;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p7    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

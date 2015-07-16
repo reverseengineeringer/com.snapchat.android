@@ -1,24 +1,88 @@
 import android.content.Context;
-import com.snapchat.android.SnapchatApplication;
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.api2.framework.HttpMethod;
+import com.snapchat.android.util.profileimages.ProfileImageUtils;
 
 public final class aob
-  implements agk
+  extends ana
 {
-  private final Context a;
+  private final akr a;
+  private final ProfileImageUtils b;
+  private final axn c;
+  private byte[] d;
   
-  public aob()
+  public aob(Intent paramIntent)
   {
-    this(SnapchatApplication.b());
+    this(paramIntent, akr.a(), axo.PROFILE_IMAGE_CACHE, ProfileImageUtils.a());
   }
   
-  private aob(Context paramContext)
+  private aob(Intent paramIntent, akr paramakr, axn paramaxn, ProfileImageUtils paramProfileImageUtils)
   {
-    a = paramContext;
+    super(paramIntent);
+    a = paramakr;
+    b = paramProfileImageUtils;
+    c = paramaxn;
   }
   
-  public final String d()
+  public final void a(Context paramContext)
   {
-    return a.getString(2131493596);
+    try
+    {
+      d = ProfileImageUtils.a(ProfileImageUtils.c(c), akr.z());
+      if (d != null) {
+        super.a(paramContext);
+      }
+      return;
+    }
+    catch (Exception paramContext) {}
+  }
+  
+  public final HttpMethod getMethod()
+  {
+    return HttpMethod.POST;
+  }
+  
+  public final Object getRequestPayload()
+  {
+    return new aob.a(Long.toString(System.currentTimeMillis()), d);
+  }
+  
+  protected final String l_()
+  {
+    return "/bq/upload_profile_data";
+  }
+  
+  public final void onResult(@chc us paramus)
+  {
+    super.onResult(paramus);
+    if (paramus.d())
+    {
+      akr.d(true);
+      return;
+    }
+    new StringBuilder().append(paramus.e()).append(" + code: ").append(mResponseCode).toString();
+  }
+  
+  @uo
+  public final class a
+  {
+    @SerializedName("timestamp")
+    vc a;
+    @SerializedName("req_token")
+    vc b;
+    @SerializedName("username")
+    vc c;
+    @SerializedName("data")
+    ty d;
+    
+    a(String paramString, byte[] paramArrayOfByte)
+    {
+      a = new vc(paramString);
+      b = new vc(pj.a(paramString));
+      c = new vc(akr.l());
+      d = new ty(paramArrayOfByte);
+    }
   }
 }
 

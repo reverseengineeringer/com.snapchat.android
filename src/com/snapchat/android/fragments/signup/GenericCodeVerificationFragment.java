@@ -12,12 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import atj;
-import avh;
-import bet;
-import bgo;
-import boh;
-import com.snapchat.android.Timber;
+import auh;
+import awf;
+import bfs;
+import bho;
+import bpi;
 import com.snapchat.android.receiver.SmsReceiver;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.fragment.SnapchatFragment;
@@ -72,20 +71,19 @@ public abstract class GenericCodeVerificationFragment
     a = ((EditText)c(2131362014));
     b = ((TextView)c(2131362016));
     c = c(2131362015);
-    d = ((Button)c(2131362806));
+    d = ((Button)c(2131362799));
     Button localButton = d;
     getActivity().getAssets();
-    atj.a(localButton);
+    auh.a(localButton);
     e = ((ProgressBar)c(2131362019));
     if (a.requestFocus()) {
-      avh.f(getActivity());
+      awf.f(getActivity());
     }
   }
   
   public void onPause()
   {
     super.onPause();
-    Timber.c("GenericCodeVerificationFragment", "unregisterSmsReceiver()", new Object[0]);
     if (i != null)
     {
       getActivity().unregisterReceiver(i);
@@ -96,7 +94,6 @@ public abstract class GenericCodeVerificationFragment
   public void onResume()
   {
     super.onResume();
-    Timber.c("GenericCodeVerificationFragment", "registerSmsReceiver()", new Object[0]);
     if (i == null)
     {
       i = new SmsReceiver();
@@ -104,8 +101,8 @@ public abstract class GenericCodeVerificationFragment
     }
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
     if (TextUtils.isEmpty(a.getText()))
     {
@@ -191,7 +188,7 @@ public abstract class GenericCodeVerificationFragment
   }
   
   final class a
-    extends bgo
+    extends bho
   {
     public a(int paramInt, long paramLong, Handler paramHandler)
     {

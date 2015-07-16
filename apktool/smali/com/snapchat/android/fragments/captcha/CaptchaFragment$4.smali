@@ -89,17 +89,17 @@
     invoke-virtual {v0, v2}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
     .line 176
-    new-instance v0, Lom;
+    new-instance v0, Lpd;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/captcha/CaptchaFragment$4;->d:Lcom/snapchat/android/fragments/captcha/CaptchaFragment;
 
-    invoke-direct {v0, v1}, Lom;-><init>(Lom$b;)V
+    invoke-direct {v0, v1}, Lpd;-><init>(Lpd$b;)V
 
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     new-array v2, v2, [Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Lom;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1, v2}, Lpd;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto :goto_0
 .end method

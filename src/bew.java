@@ -1,6 +1,4 @@
-public final class bew
-  extends Exception
-{}
+public final class bew {}
 
 /* Location:
  * Qualified Name:     bew

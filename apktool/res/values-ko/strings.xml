@@ -49,7 +49,7 @@ Snapchat은 스팸 메일을 보내거나 친구를 자동으로 추가하지 �
     <string name="add_from_camera_roll">사진첩에서 추가</string>
     <string name="add_nearby">내 주변에 있는 사람 추가</string>
     <string name="add_nearby_friends_title">내 주변에 있는 사람 추가</string>
-    <string name="add_nearby_prompt">주변 스냅챗터 추가 기능은 회원님의 위치 정보를 사용하여 가까이 있는 스냅챗터를 찾을 수 있는 기능입니다. 회원님의 이름이 다른 스냅챗터에게 보여집니다.</string>
+    <string name="add_nearby_prompt">주변 사람 추가 기능은 회원님의 위치 정보를 사용하여 가까이 있는 스냅챗터를 찾을 수 있는 기능입니다. 회원님의 이름이 다른 스냅챗터에게 보여집니다.</string>
     <string name="add_to_your_story">스토리에 추가하시겠어요?</string>
     <string name="add_to_your_story_explanation">스토리에 스냅을 추가하면 다른 친구들이 24시간 동안 무제한으로 내가 게시한 스냅을 볼 수 있습니다. 이 스냅을 스토리에 추가할까요?</string>
     <string name="added">추가했습니다!</string>
@@ -261,7 +261,6 @@ Snapchat이 보다 좋은 서비스를 제공하는 데 도움을 주셔서 감�
     <string name="discover_sharing_success">스냅이 전송되었습니다!</string>
     <string name="discover_sharing_unavailable">%1$s이(가) 이 스냅의 전송을 허용하지 않습니다.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> 여기를 눌러 Discover에 대해 알아보세요!</string>
     <string name="discover_unavailable">"죄송합니다!
 
 현재 Discover를 사용할 수 없습니다."</string>
@@ -312,6 +311,7 @@ Discover는 현재 해당 지역에서
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">비밀번호를 잊으셨나요?</a>" "</string>
     <string name="friend_suggest_hide">숨기기</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - 새 연락처</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - 최근 가입</string>
     <string name="friends">친구</string>
     <string name="friends_context_block">차단</string>
@@ -380,7 +380,7 @@ Discover는 현재 해당 지역에서
     <string name="no_blocked_snapchatters">차단된 스냅챗터가 없습니다.</string>
     <string name="no_connection">"네트워크 상태가 원활하지 않습니다. "</string>
     <string name="no_internet_connection">인터넷에 연결되지 않았습니다.</string>
-    <string name="no_one_searching">주변에 검색 중인 스냅챗터 없습니다.</string>
+    <string name="no_one_searching">주변에 검색 중인 스냅챗터가 없습니다.</string>
     <string name="no_results">검색 결과 없음</string>
     <string name="no_sms_application">"설치된 SMS 애플리케이션 없음 "</string>
     <string name="no_thanks">아니요, 괜찮습니다.</string>
@@ -620,7 +620,7 @@ Discover는 현재 해당 지역에서
     <string name="snap_delete_failure">"스냅 삭제를 실패하였습니다. "</string>
     <string name="snap_failed_to_post">1개의 스냅을 게시하지 못함</string>
     <string name="snap_list_empty_list_msg">스냅이 없습니다 :(</string>
-    <string name="snap_tag_help_description">Snapchatter는 유령 이미지를 QR코드처럼 스캔한 후 스크린을 눌러 회원님을 친구로 추가할 수 있습니다!</string>
+    <string name="snap_tag_help_description">다른 스냅챗터들이 회원님의 스냅코드에 카메라의 초점을 맞춘 다음 스냅을 촬영하면 회원님을 추가할 수 있습니다!</string>
     <string name="snap_tag_no_connection">연결되지 않았습니다!</string>
     <string name="snap_to_add">스냅 촬영 혹은 스크린샷으로 친구를 추가해 보세요!</string>
     <string name="snapkidz_welcome">Snapkidz를 시작합니다!</string>
@@ -656,8 +656,6 @@ Discover는 현재 해당 지역에서
     <string name="tap_to_view_edition">Discover에서 보려면 여기를 누르세요.</string>
     <string name="tap_to_view_full_story">전체 내용을 보려면 여기를 눌러주세요.</string>
     <string name="tap_to_view_more">여기를 눌러 다른 채널을 둘러보세요!</string>
-    <string name="tap_to_view_snaps">눌러서 스냅 보기!</string>
-    <string name="tap_to_view_stories">눌러서 스토리 보기!</string>
     <string name="tap_to_view_video_in_discover">Discover에서 이 동영상을 보려면 여기를 누르세요.</string>
     <string name="too_many_attempts">시도 횟수를 초과하였습니다.</string>
     <string name="tos_accept">동의함</string>

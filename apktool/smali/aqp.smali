@@ -1,115 +1,129 @@
 .class public final Laqp;
-.super Lbpi;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field private final a:Landroid/content/ContentResolver;
+# interfaces
+.implements Landroid/view/View$OnLongClickListener;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/ContentResolver;)V
-    .locals 1
-    .param p1    # Landroid/content/ContentResolver;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 37
-    invoke-direct {p0}, Lbpi;-><init>()V
+    .line 8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/ContentResolver;
-
-    iput-object v0, p0, Laqp;->a:Landroid/content/ContentResolver;
-
-    .line 39
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbpg;)Z
-    .locals 2
-
-    .prologue
-    .line 46
-    const-string v0, "content"
-
-    iget-object v1, p1, Lbpg;->d:Landroid/net/Uri;
-
-    invoke-virtual {v1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "media"
-
-    iget-object v1, p1, Lbpg;->d:Landroid/net/Uri;
-
-    invoke-virtual {v1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final b(Lbpg;)Lbpi$a;
+.method public final onLongClick(Landroid/view/View;)Z
     .locals 5
 
     .prologue
-    .line 57
-    iget-object v0, p1, Lbpg;->d:Landroid/net/Uri;
+    const/4 v4, 0x1
 
-    invoke-virtual {v0}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
+    .line 12
+    instance-of v0, p1, Lcom/snapchat/android/ui/caption/FatCaptionEditText;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    .line 13
+    check-cast p1, Lcom/snapchat/android/ui/caption/FatCaptionEditText;
 
-    move-result-wide v0
+    .line 14
+    iget-boolean v0, p1, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->y:Z
 
-    .line 58
-    iget-object v2, p0, Laqp;->a:Landroid/content/ContentResolver;
+    if-nez v0, :cond_1
 
-    const/4 v3, 0x1
+    .line 36
+    :cond_0
+    :goto_0
+    return v4
 
-    const/4 v4, 0x0
+    .line 17
+    :cond_1
+    invoke-virtual {p1}, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->getSelectionStart()I
 
-    invoke-static {v2, v0, v1, v3, v4}, Landroid/provider/MediaStore$Images$Thumbnails;->getThumbnail(Landroid/content/ContentResolver;JILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    move-result v1
 
-    move-result-object v0
+    .line 18
+    invoke-virtual {p1}, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->getSelectionEnd()I
 
-    .line 60
-    new-instance v1, Lbpi$a;
+    move-result v0
 
-    sget-object v2, Lbpd$d;->b:Lbpd$d;
+    .line 19
+    invoke-virtual {p1}, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->getText()Landroid/text/Editable;
 
-    invoke-direct {v1, v0, v2}, Lbpi$a;-><init>(Landroid/graphics/Bitmap;Lbpd$d;)V
+    move-result-object v2
 
-    return-object v1
+    .line 20
+    if-ne v1, v0, :cond_0
+
+    if-lez v1, :cond_0
+
+    add-int/lit8 v3, v1, -0x1
+
+    invoke-interface {v2, v3}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Character;->isWhitespace(C)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 21
+    :goto_1
+    if-lez v1, :cond_2
+
+    add-int/lit8 v3, v1, -0x1
+
+    invoke-interface {v2, v3}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Character;->isWhitespace(C)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    .line 22
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_1
+
+    .line 24
+    :cond_2
+    :goto_2
+    invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
+
+    move-result v3
+
+    if-ge v0, v3, :cond_3
+
+    invoke-interface {v2, v0}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Character;->isWhitespace(C)Z
+
+    move-result v3
+
+    if-nez v3, :cond_3
+
+    .line 25
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    .line 28
+    :cond_3
+    invoke-virtual {p1, v1, v0}, Lcom/snapchat/android/ui/caption/FatCaptionEditText;->setSelection(II)V
+
+    goto :goto_0
 .end method

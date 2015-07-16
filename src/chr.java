@@ -1,62 +1,44 @@
-final class chr
-  extends cjm
+import java.io.Serializable;
+
+public final class chr
+  extends cif
+  implements cia, Serializable
 {
-  private final chl b;
+  public final long a;
   
-  chr(chl paramchl, cgm paramcgm)
+  public chr()
   {
-    super(cgi.o(), paramcgm);
-    b = paramchl;
+    a = chk.a();
   }
   
-  public final int a(long paramLong)
+  public chr(long paramLong)
   {
-    return b.c(paramLong);
+    a = paramLong;
   }
   
-  public final int c(long paramLong)
+  public final chh a()
   {
-    int i = b.b(paramLong);
-    return b.a(i);
+    return new chh(a, cjd.M());
   }
   
-  protected final int c(long paramLong, int paramInt)
+  public final chr b()
   {
-    int i = 52;
-    if (paramInt > 52) {
-      i = c(paramLong);
-    }
-    return i;
+    return this;
   }
   
-  public final long d(long paramLong)
+  public final long c()
   {
-    return super.d(paramLong + 259200000L) - 259200000L;
+    return a;
   }
   
-  public final long e(long paramLong)
+  public final chg d()
   {
-    return super.e(paramLong + 259200000L) - 259200000L;
+    return cjd.L();
   }
   
-  public final cgm e()
+  public final chu e()
   {
-    return b.e;
-  }
-  
-  public final int g()
-  {
-    return 1;
-  }
-  
-  public final int h()
-  {
-    return 53;
-  }
-  
-  public final long i(long paramLong)
-  {
-    return super.i(259200000L + paramLong);
+    return new chu(a, cjd.M());
   }
 }
 

@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field private final b:Lale;
+.field private final b:Lama;
 
 
 # direct methods
@@ -33,17 +33,17 @@
 
     .prologue
     .line 26
-    invoke-static {}, Lale;->a()Lale;
+    invoke-static {}, Lama;->a()Lama;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/receiver/ConnectivityReceiver;-><init>(Lale;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/receiver/ConnectivityReceiver;-><init>(Lama;)V
 
     .line 27
     return-void
 .end method
 
-.method private constructor <init>(Lale;)V
+.method private constructor <init>(Lama;)V
     .locals 0
 
     .prologue
@@ -51,7 +51,7 @@
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     .line 31
-    iput-object p1, p0, Lcom/snapchat/android/receiver/ConnectivityReceiver;->b:Lale;
+    iput-object p1, p0, Lcom/snapchat/android/receiver/ConnectivityReceiver;->b:Lama;
 
     .line 32
     return-void
@@ -60,9 +60,13 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .locals 6
 
     .prologue
+    invoke-static {p1}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-static {p1}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 36
     const-string v0, "connectivity"
 
@@ -81,44 +85,38 @@
     if-eqz v0, :cond_1
 
     .line 41
-    iget-object v1, p0, Lcom/snapchat/android/receiver/ConnectivityReceiver;->b:Lale;
+    iget-object v1, p0, Lcom/snapchat/android/receiver/ConnectivityReceiver;->b:Lama;
 
-    iget-object v2, v1, Lale;->a:Ljava/lang/Object;
+    iget-object v2, v1, Lama;->a:Ljava/lang/Object;
 
     monitor-enter v2
 
+    const/4 v3, 0x2
+
     :try_start_0
-    const-string v3, "NetworkStatusManager"
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const-string v4, "Network status changed from %s to %s"
+    const/4 v4, 0x0
 
-    const/4 v5, 0x2
+    iget-object v5, v1, Lama;->c:Landroid/net/NetworkInfo;
 
-    new-array v5, v5, [Ljava/lang/Object;
+    invoke-static {v5}, Lama;->a(Landroid/net/NetworkInfo;)Ljava/lang/String;
 
-    const/4 v6, 0x0
+    move-result-object v5
 
-    iget-object v7, v1, Lale;->c:Landroid/net/NetworkInfo;
+    aput-object v5, v3, v4
 
-    invoke-static {v7}, Lale;->a(Landroid/net/NetworkInfo;)Ljava/lang/String;
+    const/4 v4, 0x1
 
-    move-result-object v7
+    invoke-static {v0}, Lama;->a(Landroid/net/NetworkInfo;)Ljava/lang/String;
 
-    aput-object v7, v5, v6
+    move-result-object v5
 
-    const/4 v6, 0x1
+    aput-object v5, v3, v4
 
-    invoke-static {v0}, Lale;->a(Landroid/net/NetworkInfo;)Ljava/lang/String;
+    iput-object v0, v1, Lama;->c:Landroid/net/NetworkInfo;
 
-    move-result-object v7
-
-    aput-object v7, v5, v6
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iput-object v0, v1, Lale;->c:Landroid/net/NetworkInfo;
-
-    iget-object v0, v1, Lale;->b:Ljava/util/Set;
+    iget-object v0, v1, Lama;->b:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -135,11 +133,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lald;
+    check-cast v0, Lalz;
 
-    iget-object v4, v1, Lale;->c:Landroid/net/NetworkInfo;
+    iget-object v4, v1, Lama;->c:Landroid/net/NetworkInfo;
 
-    invoke-interface {v0, v4}, Lald;->a(Landroid/net/NetworkInfo;)V
+    invoke-interface {v0, v4}, Lalz;->a(Landroid/net/NetworkInfo;)V
 
     goto :goto_0
 

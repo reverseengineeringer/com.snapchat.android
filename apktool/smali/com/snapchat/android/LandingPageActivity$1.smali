@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 291
+    .line 295
     iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity$1;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 294
+    .line 298
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$1;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-static {v0}, Lcom/snapchat/android/LandingPageActivity;->a(Lcom/snapchat/android/LandingPageActivity;)Z
 
-    .line 295
+    .line 299
     return-void
 .end method

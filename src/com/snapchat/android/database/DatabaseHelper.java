@@ -1,13 +1,12 @@
 package com.snapchat.android.database;
 
-import ajx;
+import akr;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.text.TextUtils;
-import cgb;
-import com.snapchat.android.Timber;
+import chc;
 import com.snapchat.android.database.table.DbTable;
 import com.snapchat.android.database.table.DbTable.DatabaseTable;
 import com.snapchat.android.database.vtable.DbVirtualTable;
@@ -19,12 +18,12 @@ public final class DatabaseHelper
   extends SQLiteOpenHelper
 {
   private static DatabaseHelper a;
-  private final ajx b;
+  private final akr b;
   
-  private DatabaseHelper(Context paramContext, ajx paramajx)
+  private DatabaseHelper(Context paramContext, akr paramakr)
   {
-    super(paramContext, "tcspahn.db", null, 199);
-    b = paramajx;
+    super(paramContext, "tcspahn.db", null, 206);
+    b = paramakr;
   }
   
   public static DatabaseHelper a(Context paramContext)
@@ -32,7 +31,7 @@ public final class DatabaseHelper
     try
     {
       if (a == null) {
-        a = new DatabaseHelper(paramContext, ajx.a());
+        a = new DatabaseHelper(paramContext, akr.a());
       }
       paramContext = a;
       return paramContext;
@@ -45,10 +44,10 @@ public final class DatabaseHelper
     a(paramSQLiteDatabase, TableType.TABLE);
     a(paramSQLiteDatabase, TableType.VIEW);
     onCreate(paramSQLiteDatabase);
-    ajx.aC();
+    akr.aB();
   }
   
-  private static void a(@cgb SQLiteDatabase paramSQLiteDatabase, @cgb TableType paramTableType)
+  private static void a(@chc SQLiteDatabase paramSQLiteDatabase, @chc TableType paramTableType)
   {
     Object localObject1 = new ArrayList();
     Object localObject2 = paramTableType.getType();
@@ -66,13 +65,9 @@ public final class DatabaseHelper
     while (((Iterator)localObject1).hasNext())
     {
       localObject2 = (String)((Iterator)localObject1).next();
-      if (paramTableType == TableType.TABLE)
-      {
+      if (paramTableType == TableType.TABLE) {
         DbTable.b(paramSQLiteDatabase, (String)localObject2);
-      }
-      else if (paramTableType == TableType.VIEW)
-      {
-        Timber.c("DbVirtualTable", "Drop virtual table " + (String)localObject2, new Object[0]);
+      } else if (paramTableType == TableType.VIEW) {
         paramSQLiteDatabase.execSQL("DROP VIEW IF EXISTS " + (String)localObject2);
       }
     }
@@ -85,10 +80,9 @@ public final class DatabaseHelper
   
   public final void onCreate(SQLiteDatabase paramSQLiteDatabase)
   {
-    int i = 0;
-    Timber.c("DatabaseHelper", "Creating Database", new Object[0]);
     DbTable.DatabaseTable[] arrayOfDatabaseTable = DbTable.DatabaseTable.values();
     int j = arrayOfDatabaseTable.length;
+    int i = 0;
     while (i < j)
     {
       DbTable localDbTable = arrayOfDatabaseTable[i].getTable();
@@ -100,13 +94,11 @@ public final class DatabaseHelper
   
   public final void onDowngrade(SQLiteDatabase paramSQLiteDatabase, int paramInt1, int paramInt2)
   {
-    Timber.e("DatabaseHelper", "Downgrading database from version %d to %d, which will destroy all old data", new Object[] { Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) });
     a(paramSQLiteDatabase);
   }
   
   public final void onUpgrade(SQLiteDatabase paramSQLiteDatabase, int paramInt1, int paramInt2)
   {
-    Timber.e("DatabaseHelper", "Upgrading database from version %d to %d, which will destroy all old data", new Object[] { Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) });
     a(paramSQLiteDatabase);
   }
   

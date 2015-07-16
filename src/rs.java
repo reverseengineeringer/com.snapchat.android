@@ -1,63 +1,32 @@
-import com.snapchat.android.api2.cash.blockers.BlockerOrder;
-import com.snapchat.android.api2.cash.square.data.CashPayment;
-import com.snapchat.android.model.CashTransaction;
-import java.util.List;
+import javax.inject.Provider;
 
 public final class rs
-  extends qv
+  implements bvk<rr>
 {
-  protected final void a()
-  {
-    super.a();
-  }
+  private final Provider<qw> mCashErrorReporterProvider;
+  private final bvk<rl> supertypeInjector;
   
-  public final void a(@cgb final CashTransaction paramCashTransaction)
+  static
   {
-    new sg(mTransactionId, new sk()
+    if (!rs.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      public final void a(int paramAnonymousInt)
-      {
-        List localList = sn.a(rs.this, paramAnonymousInt);
-        if (localList != null)
-        {
-          b(localList, true);
-          return;
-        }
-        b(null, false);
-      }
-      
-      public final void a(@cgb CashPayment paramAnonymousCashPayment)
-      {
-        paramCashTransaction.a(sn.a(mState, mCancellationReason));
-        Object localObject = null;
-        ta localta = mBlockers;
-        paramAnonymousCashPayment = (CashPayment)localObject;
-        if (localta != null) {
-          paramAnonymousCashPayment = localta.b();
-        }
-        if ((paramAnonymousCashPayment != null) && (!paramAnonymousCashPayment.isEmpty()))
-        {
-          a(paramAnonymousCashPayment, true);
-          return;
-        }
-        a();
-      }
-    }).f();
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  protected final void a(@cgc List<qv> paramList, boolean paramBoolean)
+  private rs(bvk<rl> parambvk, Provider<qw> paramProvider)
   {
-    super.a(paramList, paramBoolean);
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mCashErrorReporterProvider = paramProvider;
   }
   
-  protected final void b(@cgc List<qv> paramList, boolean paramBoolean)
+  public static bvk<rr> a(bvk<rl> parambvk, Provider<qw> paramProvider)
   {
-    super.b(paramList, paramBoolean);
-  }
-  
-  public final BlockerOrder c()
-  {
-    return BlockerOrder.SQ_RETRIEVE_RECEIVING_CASH_PAYMENT_BLOCKER;
+    return new rs(parambvk, paramProvider);
   }
 }
 

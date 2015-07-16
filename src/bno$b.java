@@ -1,123 +1,104 @@
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.net.ssl.SSLSocket;
+
 final class bno$b
+  extends bno
 {
-  private static final String[] a;
-  private static final String[] b;
-  private static final String[] c;
+  private final Method a;
+  private final Method b;
+  private final Method c;
+  private final Class<?> d;
+  private final Class<?> e;
   
-  static
+  public bno$b(Method paramMethod1, Method paramMethod2, Method paramMethod3, Class<?> paramClass1, Class<?> paramClass2)
   {
-    int k = 0;
-    a = new String[] { "DATA", "HEADERS", "PRIORITY", "RST_STREAM", "SETTINGS", "PUSH_PROMISE", "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION" };
-    b = new String[64];
-    c = new String['Ā'];
-    int i = 0;
-    while (i < c.length)
+    a = paramMethod1;
+    b = paramMethod2;
+    c = paramMethod3;
+    d = paramClass1;
+    e = paramClass2;
+  }
+  
+  public final void a(SSLSocket paramSSLSocket)
+  {
+    try
     {
-      c[i] = String.format("%8s", new Object[] { Integer.toBinaryString(i) }).replace(' ', '0');
-      i += 1;
+      c.invoke(null, new Object[] { paramSSLSocket });
+      return;
     }
-    b[0] = "";
-    b[1] = "END_STREAM";
-    int[] arrayOfInt = new int[1];
-    arrayOfInt[0] = 1;
-    b[8] = "PADDED";
-    i = 0;
-    int j;
-    while (i <= 0)
+    catch (IllegalAccessException paramSSLSocket)
     {
-      j = arrayOfInt[i];
-      b[(j | 0x8)] = (b[j] + "|PADDED");
-      i += 1;
+      throw new AssertionError();
     }
-    b[4] = "END_HEADERS";
-    b[32] = "PRIORITY";
-    b[36] = "END_HEADERS|PRIORITY";
-    i = 0;
-    for (;;)
+    catch (InvocationTargetException paramSSLSocket)
     {
-      j = k;
-      if (i >= 3) {
-        break;
-      }
-      int m = new int[] { 4, 32, 36 }[i];
-      j = 0;
-      while (j <= 0)
-      {
-        int n = arrayOfInt[j];
-        b[(n | m)] = (b[n] + '|' + b[m]);
-        b[(n | m | 0x8)] = (b[n] + '|' + b[m] + "|PADDED");
-        j += 1;
-      }
-      i += 1;
-    }
-    while (j < b.length)
-    {
-      if (b[j] == null) {
-        b[j] = c[j];
-      }
-      j += 1;
+      for (;;) {}
     }
   }
   
-  static String a(boolean paramBoolean, int paramInt1, int paramInt2, byte paramByte1, byte paramByte2)
+  public final void a(SSLSocket paramSSLSocket, String paramString, List<bna> paramList)
   {
-    String str2;
+    paramString = new ArrayList(paramList.size());
+    int j = paramList.size();
+    int i = 0;
     Object localObject;
-    if (paramByte1 < a.length)
+    while (i < j)
     {
-      str2 = a[paramByte1];
-      if (paramByte2 != 0) {
-        break label92;
+      localObject = (bna)paramList.get(i);
+      if (localObject != bna.a) {
+        paramString.add(((bna)localObject).toString());
       }
-      localObject = "";
-      label24:
-      if (!paramBoolean) {
-        break label259;
-      }
+      i += 1;
     }
-    label92:
-    label225:
-    label259:
-    for (String str1 = "<<";; str1 = ">>")
+    try
     {
-      return String.format("%s 0x%08x %5d %-13s %s", new Object[] { str1, Integer.valueOf(paramInt1), Integer.valueOf(paramInt2), str2, localObject });
-      str2 = String.format("0x%02x", new Object[] { Byte.valueOf(paramByte1) });
-      break;
-      switch (paramByte1)
+      paramList = bno.class.getClassLoader();
+      localObject = d;
+      Class localClass = e;
+      paramString = new bno.c(paramString);
+      paramString = Proxy.newProxyInstance(paramList, new Class[] { localObject, localClass }, paramString);
+      a.invoke(null, new Object[] { paramSSLSocket, paramString });
+      return;
+    }
+    catch (InvocationTargetException paramSSLSocket)
+    {
+      throw new AssertionError(paramSSLSocket);
+    }
+    catch (IllegalAccessException paramSSLSocket)
+    {
+      for (;;) {}
+    }
+  }
+  
+  public final String b(SSLSocket paramSSLSocket)
+  {
+    try
+    {
+      paramSSLSocket = (bno.c)Proxy.getInvocationHandler(b.invoke(null, new Object[] { paramSSLSocket }));
+      if ((!bno.c.a(paramSSLSocket)) && (bno.c.b(paramSSLSocket) == null))
       {
-      case 5: 
-      default: 
-        if (paramByte2 >= b.length) {
-          break;
-        }
+        bnj.a.log(Level.INFO, "ALPN callback dropped: SPDY and HTTP/2 are disabled. Is alpn-boot on the boot class path?");
+        return null;
       }
-      for (str1 = b[paramByte2];; str1 = c[paramByte2])
-      {
-        if ((paramByte1 != 5) || ((paramByte2 & 0x4) == 0)) {
-          break label225;
-        }
-        localObject = str1.replace("HEADERS", "PUSH_PROMISE");
-        break;
-        if (paramByte2 == 1)
-        {
-          localObject = "ACK";
-          break;
-        }
-        localObject = c[paramByte2];
-        break;
-        localObject = c[paramByte2];
-        break;
+      if (bno.c.a(paramSSLSocket)) {
+        return null;
       }
-      localObject = str1;
-      if (paramByte1 != 0) {
-        break label24;
-      }
-      localObject = str1;
-      if ((paramByte2 & 0x20) == 0) {
-        break label24;
-      }
-      localObject = str1.replace("PRIORITY", "COMPRESSED");
-      break label24;
+      paramSSLSocket = bno.c.b(paramSSLSocket);
+      return paramSSLSocket;
+    }
+    catch (InvocationTargetException paramSSLSocket)
+    {
+      throw new AssertionError();
+    }
+    catch (IllegalAccessException paramSSLSocket)
+    {
+      for (;;) {}
     }
   }
 }

@@ -5,26 +5,48 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bjn
 {
-  @SerializedName("attribute")
-  protected bhg attribute;
-  @SerializedName("end")
-  protected Integer end;
-  @SerializedName("start")
-  protected Integer start;
+  @SerializedName("display_name")
+  protected String displayName;
+  @SerializedName("friend_name")
+  protected String friendName;
+  @SerializedName("geofence")
+  protected biz geofence;
+  @SerializedName("is_whitelisted")
+  protected Boolean isWhitelisted;
+  @SerializedName("local_story")
+  protected Boolean localStory;
+  @SerializedName("my_stories_display_name")
+  protected String myStoriesDisplayName;
+  @SerializedName("story_id")
+  protected String storyId;
+  @SerializedName("time_left")
+  protected Long timeLeft = Long.valueOf(0L);
+  @SerializedName("venue")
+  protected String venue;
   
-  public final Integer a()
+  public final String a()
   {
-    return start;
+    return storyId;
   }
   
-  public final Integer b()
+  public final String b()
   {
-    return end;
+    return displayName;
   }
   
-  public final bhg c()
+  public final biz c()
   {
-    return attribute;
+    return geofence;
+  }
+  
+  public final String d()
+  {
+    return myStoriesDisplayName;
+  }
+  
+  public final String e()
+  {
+    return venue;
   }
   
   public final boolean equals(Object paramObject)
@@ -36,12 +58,32 @@ public final class bjn
       return false;
     }
     paramObject = (bjn)paramObject;
-    return new EqualsBuilder().append(start, start).append(end, end).append(attribute, attribute).isEquals();
+    return new EqualsBuilder().append(storyId, storyId).append(displayName, displayName).append(geofence, geofence).append(myStoriesDisplayName, myStoriesDisplayName).append(venue, venue).append(friendName, friendName).append(localStory, localStory).append(isWhitelisted, isWhitelisted).append(timeLeft, timeLeft).isEquals();
+  }
+  
+  public final String f()
+  {
+    return friendName;
+  }
+  
+  public final Boolean g()
+  {
+    return localStory;
+  }
+  
+  public final Boolean h()
+  {
+    return isWhitelisted;
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(start).append(end).append(attribute).toHashCode();
+    return new HashCodeBuilder().append(storyId).append(displayName).append(geofence).append(myStoriesDisplayName).append(venue).append(friendName).append(localStory).append(isWhitelisted).append(timeLeft).toHashCode();
+  }
+  
+  public final Long i()
+  {
+    return timeLeft;
   }
   
   public final String toString()

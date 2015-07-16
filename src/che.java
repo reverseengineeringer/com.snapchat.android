@@ -1,54 +1,13 @@
-import org.joda.convert.ToString;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-public abstract class che
-  implements cgz
-{
-  public cgg a()
-  {
-    return new cgg(c(), d().a());
-  }
-  
-  public final boolean a(cgz paramcgz)
-  {
-    long l = cgj.a(paramcgz);
-    return c() < l;
-  }
-  
-  public cgq b()
-  {
-    return new cgq(c());
-  }
-  
-  public cgt e()
-  {
-    return new cgt(c(), d().a());
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if (this == paramObject) {}
-    do
-    {
-      return true;
-      if (!(paramObject instanceof cgz)) {
-        return false;
-      }
-      paramObject = (cgz)paramObject;
-    } while ((c() == ((cgz)paramObject).c()) && (cjh.a(d(), ((cgz)paramObject).d())));
-    return false;
-  }
-  
-  public int hashCode()
-  {
-    return (int)(c() ^ c() >>> 32) + d().hashCode();
-  }
-  
-  @ToString
-  public String toString()
-  {
-    return ckc.a.b().a(this);
-  }
-}
+@Documented
+@Retention(RetentionPolicy.CLASS)
+@Target({java.lang.annotation.ElementType.PARAMETER, java.lang.annotation.ElementType.LOCAL_VARIABLE, java.lang.annotation.ElementType.FIELD})
+public @interface che {}
 
 /* Location:
  * Qualified Name:     che

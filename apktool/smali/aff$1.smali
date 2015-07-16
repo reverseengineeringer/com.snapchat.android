@@ -1,80 +1,57 @@
-.class final Laff$1;
-.super Ljava/lang/Object;
+.class public final Laff$1;
+.super Lawh;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Laff;->a(Landroid/view/View;Landroid/view/View;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Laff;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Landroid/view/View;
+.field final synthetic a:Lawh;
 
 .field final synthetic b:Laff;
 
 
 # direct methods
-.method constructor <init>(Laff;Landroid/view/View;)V
+.method public constructor <init>(Laff;Lawh;)V
     .locals 0
 
     .prologue
-    .line 225
+    .line 103
     iput-object p1, p0, Laff$1;->b:Laff;
 
-    iput-object p2, p0, Laff$1;->a:Landroid/view/View;
+    iput-object p2, p0, Laff$1;->a:Lawh;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lawh;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
-
-    .prologue
-    .line 235
-    return-void
-.end method
-
 .method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 232
-    return-void
-.end method
+    .line 106
+    iget-object v0, p0, Laff$1;->a:Lawh;
 
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
+    if-eqz v0, :cond_0
 
-    .prologue
-    .line 238
-    return-void
-.end method
+    .line 107
+    iget-object v0, p0, Laff$1;->a:Lawh;
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+    invoke-virtual {v0, p1}, Lawh;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .prologue
-    .line 228
-    iget-object v0, p0, Laff$1;->a:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 229
+    .line 109
+    :cond_0
     return-void
 .end method

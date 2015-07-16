@@ -21,19 +21,19 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;Landroid/media/MediaFormat;Lcom/snapchat/videotranscoder/cts/OutputSurface;Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/cts/OutputSurface;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -92,23 +92,23 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;Landroid/media/MediaFormat;Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;[FLandroid/graphics/Bitmap;)V
     .locals 7
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # [F
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p5    # Landroid/graphics/Bitmap;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -139,27 +139,27 @@
 .method private constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;Lcom/snapchat/videotranscoder/cts/OutputSurfaceFactory;Landroid/media/MediaFormat;Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;[FLandroid/graphics/Bitmap;)V
     .locals 1
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/cts/OutputSurfaceFactory;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/media/MediaFormat;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p5    # [F
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p6    # Landroid/graphics/Bitmap;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -498,7 +498,7 @@
 .method public setShader(Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;Z)V
     .locals 3
     .param p1    # Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

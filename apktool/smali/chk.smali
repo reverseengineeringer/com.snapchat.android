@@ -1,831 +1,359 @@
-.class public abstract Lchk;
-.super Lcgf;
+.class public final Lchk;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Serializable;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lchk$b;,
+        Lchk$a;
+    }
+.end annotation
+
+
+# static fields
+.field private static final a:Lchk$b;
+
+.field private static volatile b:Lchk$a;
+
+.field private static volatile c:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lchl;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
+    .line 39
+    new-instance v0, Lchk$b;
+
+    invoke-direct {v0}, Lchk$b;-><init>()V
+
+    .line 41
+    sput-object v0, Lchk;->a:Lchk$b;
+
+    sput-object v0, Lchk;->b:Lchk$a;
+
+    .line 47
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+
+    .line 48
+    const-string v1, "UT"
+
+    sget-object v2, Lchl;->a:Lchl;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 49
+    const-string v1, "UTC"
+
+    sget-object v2, Lchl;->a:Lchl;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 50
+    const-string v1, "GMT"
+
+    sget-object v2, Lchl;->a:Lchl;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 51
+    const-string v1, "EST"
+
+    const-string v2, "America/New_York"
+
+    invoke-static {v0, v1, v2}, Lchk;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 52
+    const-string v1, "EDT"
+
+    const-string v2, "America/New_York"
+
+    invoke-static {v0, v1, v2}, Lchk;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 53
+    const-string v1, "CST"
+
+    const-string v2, "America/Chicago"
+
+    invoke-static {v0, v1, v2}, Lchk;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 54
-    invoke-direct {p0}, Lcgf;-><init>()V
+    const-string v1, "CDT"
+
+    const-string v2, "America/Chicago"
+
+    invoke-static {v0, v1, v2}, Lchk;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 55
+    const-string v1, "MST"
+
+    const-string v2, "America/Denver"
+
+    invoke-static {v0, v1, v2}, Lchk;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 56
+    const-string v1, "MDT"
+
+    const-string v2, "America/Denver"
+
+    invoke-static {v0, v1, v2}, Lchk;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 57
+    const-string v1, "PST"
+
+    const-string v2, "America/Los_Angeles"
+
+    invoke-static {v0, v1, v2}, Lchk;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 58
+    const-string v1, "PDT"
+
+    const-string v2, "America/Los_Angeles"
+
+    invoke-static {v0, v1, v2}, Lchk;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 59
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v0
+
+    sput-object v0, Lchk;->c:Ljava/util/Map;
+
+    .line 60
     return-void
 .end method
 
-
-# virtual methods
-.method public A()Lcgh;
+.method public static final a()J
     .locals 2
 
     .prologue
-    .line 571
-    invoke-static {}, Lcgi;->q()Lcgi;
+    .line 86
+    sget-object v0, Lchk;->b:Lchk$a;
 
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->y()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public B()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 582
-    invoke-static {}, Lcgn;->i()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public C()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 591
-    invoke-static {}, Lcgi;->r()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->B()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public D()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 602
-    invoke-static {}, Lcgn;->j()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public E()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 611
-    invoke-static {}, Lcgi;->s()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->D()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public F()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 620
-    invoke-static {}, Lcgi;->t()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->D()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public G()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 629
-    invoke-static {}, Lcgi;->u()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->D()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public H()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 640
-    invoke-static {}, Lcgn;->k()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public I()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 649
-    invoke-static {}, Lcgi;->v()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->H()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public J()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 660
-    invoke-static {}, Lcgn;->l()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public K()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 669
-    invoke-static {}, Lcgi;->w()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->J()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a(IIII)J
-    .locals 4
-
-    .prologue
-    .line 102
-    invoke-virtual {p0}, Lchk;->E()Lcgh;
-
-    move-result-object v0
-
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, v2, v3, p1}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    .line 103
-    invoke-virtual {p0}, Lchk;->C()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p2}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    .line 104
-    invoke-virtual {p0}, Lchk;->u()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p3}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    .line 105
-    invoke-virtual {p0}, Lchk;->e()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p4}, Lcgh;->b(JI)J
+    invoke-interface {v0}, Lchk$a;->a()J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public a(IIIIIII)J
-    .locals 4
+.method public static final a(Lcia;)J
+    .locals 2
 
     .prologue
-    .line 132
-    invoke-virtual {p0}, Lchk;->E()Lcgh;
+    .line 176
+    if-nez p0, :cond_0
 
-    move-result-object v0
-
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, v2, v3, p1}, Lcgh;->b(JI)J
+    .line 177
+    invoke-static {}, Lchk;->a()J
 
     move-result-wide v0
 
-    .line 133
-    invoke-virtual {p0}, Lchk;->C()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p2}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    .line 134
-    invoke-virtual {p0}, Lchk;->u()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p3}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    .line 135
-    invoke-virtual {p0}, Lchk;->m()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p4}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    .line 136
-    invoke-virtual {p0}, Lchk;->j()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p5}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    .line 137
-    invoke-virtual {p0}, Lchk;->g()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p6}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    .line 138
-    invoke-virtual {p0}, Lchk;->d()Lcgh;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1, p7}, Lcgh;->b(JI)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final a(Lchb;J)J
-    .locals 4
-
-    .prologue
-    .line 239
-    const/4 v0, 0x0
-
-    invoke-interface {p1}, Lchb;->a()I
-
-    move-result v1
-
+    .line 179
     :goto_0
-    if-ge v0, v1, :cond_0
+    return-wide v0
 
-    .line 240
-    invoke-interface {p1, v0}, Lchb;->c(I)Lcgi;
+    :cond_0
+    invoke-interface {p0}, Lcia;->c()J
 
-    move-result-object v2
-
-    invoke-virtual {v2, p0}, Lcgi;->a(Lcgf;)Lcgh;
-
-    move-result-object v2
-
-    invoke-interface {p1, v0}, Lchb;->a(I)I
-
-    move-result v3
-
-    invoke-virtual {v2, p2, p3, v3}, Lcgh;->b(JI)J
-
-    move-result-wide p2
-
-    .line 239
-    add-int/lit8 v0, v0, 0x1
+    move-result-wide v0
 
     goto :goto_0
+.end method
 
-    .line 242
+.method public static final a(Lchg;)Lchg;
+    .locals 0
+
+    .prologue
+    .line 282
+    if-nez p0, :cond_0
+
+    .line 283
+    invoke-static {}, Lcjd;->M()Lcjd;
+
+    move-result-object p0
+
+    .line 285
     :cond_0
-    return-wide p2
+    return-object p0
 .end method
 
-.method public c()Lcgm;
-    .locals 1
+.method public static final a(Lchl;)Lchl;
+    .locals 0
 
     .prologue
-    .line 337
-    invoke-static {}, Lcgn;->a()Lcgn;
+    .line 299
+    if-nez p0, :cond_0
 
-    move-result-object v0
+    .line 300
+    invoke-static {}, Lchl;->a()Lchl;
 
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
+    move-result-object p0
 
-    move-result-object v0
-
-    return-object v0
+    .line 302
+    :cond_0
+    return-object p0
 .end method
 
-.method public d()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 346
-    invoke-static {}, Lcgi;->a()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->c()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public e()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 355
-    invoke-static {}, Lcgi;->b()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->c()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public f()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 366
-    invoke-static {}, Lcgn;->b()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public g()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 375
-    invoke-static {}, Lcgi;->c()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->f()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public h()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 384
-    invoke-static {}, Lcgi;->d()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->f()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public i()Lcgm;
-    .locals 1
+.method public static final a(Ljava/util/Locale;)Ljava/text/DateFormatSymbols;
+    .locals 5
 
     .prologue
     .line 395
-    invoke-static {}, Lcgn;->c()Lcgn;
+    :try_start_0
+    const-class v0, Ljava/text/DateFormatSymbols;
+
+    const-string v1, "getInstance"
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Class;
+
+    const/4 v3, 0x0
+
+    const-class v4, Ljava/util/Locale;
+
+    aput-object v4, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
+    .line 396
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object p0, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Ljava/text/DateFormatSymbols;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 398
+    :goto_0
     return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v0, Ljava/text/DateFormatSymbols;
+
+    invoke-direct {v0, p0}, Ljava/text/DateFormatSymbols;-><init>(Ljava/util/Locale;)V
+
+    goto :goto_0
 .end method
 
-.method public j()Lcgh;
-    .locals 2
+.method private static a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lchl;",
+            ">;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 404
-    invoke-static {}, Lcgi;->e()Lcgi;
+    .line 63
+    :try_start_0
+    invoke-static {p2}, Lchl;->a(Ljava/lang/String;)Lchl;
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lchk;->i()Lcgm;
+    invoke-interface {p0, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v1
+    .line 67
+    :goto_0
+    return-void
 
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
+    :catch_0
+    move-exception v0
 
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 .end method
 
-.method public k()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 413
-    invoke-static {}, Lcgi;->f()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->i()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public l()Lcgm;
+.method public static final b(Lcia;)Lchg;
     .locals 1
 
     .prologue
-    .line 424
-    invoke-static {}, Lcgn;->d()Lcgn;
+    .line 194
+    if-nez p0, :cond_1
+
+    .line 195
+    invoke-static {}, Lcjd;->M()Lcjd;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
+    .line 201
+    :cond_0
+    :goto_0
     return-object v0
+
+    .line 197
+    :cond_1
+    invoke-interface {p0}, Lcia;->d()Lchg;
+
+    move-result-object v0
+
+    .line 198
+    if-nez v0, :cond_0
+
+    .line 199
+    invoke-static {}, Lcjd;->M()Lcjd;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
-.method public m()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 433
-    invoke-static {}, Lcgi;->g()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->l()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public n()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 442
-    invoke-static {}, Lcgi;->h()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->l()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public o()Lcgm;
+.method public static final b()Ljava/util/Map;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lchl;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 453
-    invoke-static {}, Lcgn;->e()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public p()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 462
-    invoke-static {}, Lcgi;->i()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->l()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public q()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 471
-    invoke-static {}, Lcgi;->j()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->l()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public r()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 480
-    invoke-static {}, Lcgi;->k()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->o()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public s()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 491
-    invoke-static {}, Lcgn;->f()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public t()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 504
-    invoke-static {}, Lcgi;->l()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->s()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public u()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 513
-    invoke-static {}, Lcgi;->m()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->s()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public v()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 522
-    invoke-static {}, Lcgi;->n()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->s()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public w()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 533
-    invoke-static {}, Lcgn;->g()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public x()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 542
-    invoke-static {}, Lcgi;->o()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->w()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public y()Lcgm;
-    .locals 1
-
-    .prologue
-    .line 553
-    invoke-static {}, Lcgn;->h()Lcgn;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcjt;->a(Lcgn;)Lcjt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public z()Lcgh;
-    .locals 2
-
-    .prologue
-    .line 562
-    invoke-static {}, Lcgi;->p()Lcgi;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lchk;->y()Lcgm;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcjs;->a(Lcgi;Lcgm;)Lcjs;
-
-    move-result-object v0
+    .line 427
+    sget-object v0, Lchk;->c:Ljava/util/Map;
 
     return-object v0
 .end method

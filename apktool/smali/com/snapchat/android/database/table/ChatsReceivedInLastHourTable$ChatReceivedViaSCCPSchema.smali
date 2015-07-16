@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzw;
+.implements Laav;
 
 
 # annotations
@@ -22,7 +22,7 @@
         "<",
         "Lcom/snapchat/android/database/table/ChatsReceivedInLastHourTable$ChatReceivedViaSCCPSchema;",
         ">;",
-        "Lzw;"
+        "Laav;"
     }
 .end annotation
 

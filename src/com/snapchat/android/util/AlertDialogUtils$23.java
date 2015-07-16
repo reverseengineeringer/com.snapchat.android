@@ -1,13 +1,13 @@
 package com.snapchat.android.util;
 
-import aio;
-import aje;
-import ajv;
+import ajk;
+import aka;
+import akp;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import aut;
-import ban;
-import bdp;
+import avr;
+import bbo;
+import bep;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.model.chat.ChatConversation;
 import com.snapchat.android.model.chat.ChatFeedItem;
@@ -18,11 +18,11 @@ import java.util.List;
 final class AlertDialogUtils$23
   implements DialogInterface.OnClickListener
 {
-  AlertDialogUtils$23(aje paramaje, ajv paramajv, aio paramaio) {}
+  AlertDialogUtils$23(aka paramaka, akp paramakp, ajk paramajk) {}
   
   public final void onClick(DialogInterface arg1, int paramInt)
   {
-    val$snap.s();
+    val$snap.t();
     val$user.mNextReplayAvailableRealtime = -1L;
     if ((val$provider != null) && ((val$provider instanceof ChatConversation)))
     {
@@ -33,14 +33,15 @@ final class AlertDialogUtils$23
         while (((Iterator)localObject1).hasNext())
         {
           ChatFeedItem localChatFeedItem = (ChatFeedItem)((Iterator)localObject1).next();
-          if (((localChatFeedItem instanceof aje)) && (((aje)localChatFeedItem).ap())) {
-            ((aje)localChatFeedItem).s();
+          if (((localChatFeedItem instanceof aka)) && (((aka)localChatFeedItem).an())) {
+            ((aka)localChatFeedItem).t();
           }
         }
       }
+      ((ChatConversation)val$provider).r();
     }
-    aut.b();
-    ban.a().a(new bdp());
+    avr.b();
+    bbo.a().a(new bep());
     AnalyticsEvents.a(true, val$snap);
   }
 }

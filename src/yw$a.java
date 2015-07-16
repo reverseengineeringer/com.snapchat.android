@@ -1,4 +1,9 @@
-public final class yw$a {}
+public abstract interface yw$a
+{
+  public abstract void a();
+  
+  public abstract void b();
+}
 
 /* Location:
  * Qualified Name:     yw.a

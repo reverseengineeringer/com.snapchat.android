@@ -3,7 +3,7 @@ import java.nio.ByteBuffer;
 
 public final class ao
 {
-  private static ff a = new ff();
+  private static fo a = new fo();
   private static byte[] b = new byte[4];
   
   private static int a(byte paramByte)

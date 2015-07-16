@@ -1,11 +1,11 @@
 package com.snapchat.android.analytics.framework;
 
-import akq;
-import akq.a;
+import all;
+import all.a;
 import android.app.Activity;
-import aol;
-import cgb;
-import cgc;
+import aph;
+import chc;
+import chd;
 import com.snapchat.android.util.debug.ReleaseManager;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,17 +17,17 @@ import java.util.Set;
 public class UpdateSnapsAnalyticsPlatform
   implements AnalyticsPlatform
 {
-  protected List<akq> a = new ArrayList();
-  private final aol b;
+  protected List<all> a = new ArrayList();
+  private final aph b;
   
   public UpdateSnapsAnalyticsPlatform()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
-  private UpdateSnapsAnalyticsPlatform(aol paramaol)
+  private UpdateSnapsAnalyticsPlatform(aph paramaph)
   {
-    b = paramaol;
+    b = paramaph;
   }
   
   private void c()
@@ -47,7 +47,7 @@ public class UpdateSnapsAnalyticsPlatform
   }
   
   /* Error */
-  public final List<akq> a()
+  public final List<all> a()
   {
     // Byte code:
     //   0: aload_0
@@ -90,15 +90,15 @@ public class UpdateSnapsAnalyticsPlatform
     //   22	38	41	finally
   }
   
-  public final void a(@cgb Activity paramActivity) {}
+  public final void a(@chc Activity paramActivity) {}
   
-  public final void a(@cgb String paramString, @cgc Map<String, Object> paramMap1, @cgc Map<String, Object> paramMap2, @cgc Map<String, Long> paramMap3, @cgc Map<String, Long> paramMap4)
+  public final void a(@chc String paramString, @chd Map<String, Object> paramMap1, @chd Map<String, Object> paramMap2, @chd Map<String, Long> paramMap3, @chd Map<String, Long> paramMap4)
   {
     if ((PerformanceMetric.b(paramString)) && (!ReleaseManager.f()) && (Math.random() < 0.9D)) {}
     for (int i = 1; i != 0; i = 0) {
       return;
     }
-    paramString = new akq.a(paramString);
+    paramString = new all.a(paramString);
     paramString.a(paramMap1);
     paramString.a(paramMap2);
     if (paramMap3 != null)
@@ -123,7 +123,7 @@ public class UpdateSnapsAnalyticsPlatform
     c();
   }
   
-  public final void a(List<akq> paramList)
+  public final void a(List<all> paramList)
   {
     if (paramList != null) {}
     try
@@ -138,12 +138,12 @@ public class UpdateSnapsAnalyticsPlatform
     }
   }
   
-  public final List<akq> b()
+  public final List<all> b()
   {
     return a;
   }
   
-  public final void b(@cgb Activity paramActivity) {}
+  public final void b(@chc Activity paramActivity) {}
 }
 
 /* Location:

@@ -1,4 +1,4 @@
-.class public final Lyw$a;
+.class public interface abstract Lyw$a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -9,18 +9,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x609
     name = "a"
 .end annotation
 
 
-# direct methods
-.method protected constructor <init>()V
-    .locals 0
+# virtual methods
+.method public abstract a()V
+.end method
 
-    .prologue
-    .line 128
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+.method public abstract b()V
 .end method

@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kj
-  extends lt
+  extends ml
 {
-  public String emailSuggestion;
-  private final String eventName = "REGISTRATION_USER_FOCUS_ON_EMAIL";
+  private final String eventName = "PROFILE_USERNAME_FRIEND_REQUEST_SENT";
+  public kh source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_FOCUS_ON_EMAIL");
-    if (emailSuggestion != null) {
-      localHashMap.put("email_suggestion", emailSuggestion);
+    localHashMap.put("event_name", "PROFILE_USERNAME_FRIEND_REQUEST_SENT");
+    if (source != null) {
+      localHashMap.put("source", source);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class kj
         return false;
       }
       paramObject = (kj)paramObject;
-      if (emailSuggestion == null) {
+      if (source == null) {
         break;
       }
-    } while (emailSuggestion.equals(emailSuggestion));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (emailSuggestion == null) {
+      if (source == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class kj
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (emailSuggestion != null) {}
-    for (int i = emailSuggestion.hashCode();; i = 0) {
+    if (source != null) {}
+    for (int i = source.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

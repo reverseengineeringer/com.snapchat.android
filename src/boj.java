@@ -1,79 +1,62 @@
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import java.lang.ref.ReferenceQueue;
-import java.lang.ref.WeakReference;
-
-abstract class boj<T>
+public enum boj
 {
-  final bpd a;
-  final bpg b;
-  final WeakReference<T> c;
-  final boolean d;
-  final int e;
-  final int f;
-  final int g;
-  final Drawable h;
-  final String i;
-  final Object j;
-  boolean k;
-  boolean l;
+  public final int s;
+  public final int t;
+  public final int u;
   
-  boj(bpd parambpd, T paramT, bpg parambpg, int paramInt1, int paramInt2, int paramInt3, Drawable paramDrawable, String paramString, Object paramObject, boolean paramBoolean)
+  private boj(int paramInt1, int paramInt2, int paramInt3)
   {
-    a = parambpd;
-    b = parambpg;
-    if (paramT == null)
+    s = paramInt1;
+    t = paramInt2;
+    u = paramInt3;
+  }
+  
+  public static boj a(int paramInt)
+  {
+    boj[] arrayOfboj = values();
+    int i2 = arrayOfboj.length;
+    int i1 = 0;
+    while (i1 < i2)
     {
-      parambpd = null;
-      c = parambpd;
-      e = paramInt1;
-      f = paramInt2;
-      d = paramBoolean;
-      g = paramInt3;
-      h = paramDrawable;
-      i = paramString;
-      if (paramObject == null) {
-        break label90;
+      boj localboj = arrayOfboj[i1];
+      if (t == paramInt) {
+        return localboj;
       }
+      i1 += 1;
     }
-    for (;;)
+    return null;
+  }
+  
+  public static boj b(int paramInt)
+  {
+    boj[] arrayOfboj = values();
+    int i2 = arrayOfboj.length;
+    int i1 = 0;
+    while (i1 < i2)
     {
-      j = paramObject;
-      return;
-      parambpd = new boj.a(this, paramT, l);
-      break;
-      label90:
-      paramObject = this;
+      boj localboj = arrayOfboj[i1];
+      if (s == paramInt) {
+        return localboj;
+      }
+      i1 += 1;
     }
+    return null;
   }
   
-  abstract void a();
-  
-  abstract void a(Bitmap paramBitmap, bpd.d paramd);
-  
-  void b()
+  public static boj c(int paramInt)
   {
-    l = true;
-  }
-  
-  T c()
-  {
-    if (c == null) {
-      return null;
-    }
-    return (T)c.get();
-  }
-  
-  static final class a<M>
-    extends WeakReference<M>
-  {
-    final boj a;
-    
-    public a(boj paramboj, M paramM, ReferenceQueue<? super M> paramReferenceQueue)
+    boj[] arrayOfboj = values();
+    int i2 = arrayOfboj.length;
+    int i1 = 0;
+    while (i1 < i2)
     {
-      super(paramReferenceQueue);
-      a = paramboj;
+      boj localboj = arrayOfboj[i1];
+      if (u == paramInt) {
+        return localboj;
+      }
+      i1 += 1;
     }
+    return null;
   }
 }
 

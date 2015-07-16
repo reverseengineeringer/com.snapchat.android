@@ -37,7 +37,7 @@ public class FeedLoadingAnimationView
     //   17: invokevirtual 46	android/graphics/Canvas:getWidth	()I
     //   20: aload_1
     //   21: invokevirtual 49	android/graphics/Canvas:getHeight	()I
-    //   24: invokestatic 54	atf:a	(Landroid/content/Context;III)Landroid/graphics/Bitmap;
+    //   24: invokestatic 54	aue:a	(Landroid/content/Context;III)Landroid/graphics/Bitmap;
     //   27: putfield 35	com/snapchat/android/ui/FeedLoadingAnimationView:a	Landroid/graphics/Bitmap;
     //   30: aload_0
     //   31: getfield 56	com/snapchat/android/ui/FeedLoadingAnimationView:b	Landroid/graphics/Bitmap;
@@ -50,7 +50,7 @@ public class FeedLoadingAnimationView
     //   45: invokevirtual 46	android/graphics/Canvas:getWidth	()I
     //   48: aload_1
     //   49: invokevirtual 49	android/graphics/Canvas:getHeight	()I
-    //   52: invokestatic 54	atf:a	(Landroid/content/Context;III)Landroid/graphics/Bitmap;
+    //   52: invokestatic 54	aue:a	(Landroid/content/Context;III)Landroid/graphics/Bitmap;
     //   55: putfield 56	com/snapchat/android/ui/FeedLoadingAnimationView:b	Landroid/graphics/Bitmap;
     //   58: aload_0
     //   59: invokevirtual 60	com/snapchat/android/ui/FeedLoadingAnimationView:invalidate	()V

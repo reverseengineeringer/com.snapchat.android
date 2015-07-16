@@ -1,225 +1,807 @@
 .class public final Lmi;
-.super Landroid/support/v4/content/AsyncTaskLoader;
+.super Lml;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/support/v4/content/AsyncTaskLoader",
-        "<",
-        "Lajv;",
-        ">;"
-    }
-.end annotation
-
-
 # instance fields
-.field private final a:Landroid/app/Activity;
+.field private final eventName:Ljava/lang/String;
 
-.field private final b:Lnf;
+.field public exitEvent:Lhu;
+
+.field public fullView:Ljava/lang/Boolean;
+
+.field public geoFence:Ljava/lang/String;
+
+.field public numSnapsViewed:Ljava/lang/Long;
+
+.field public posterId:Ljava/lang/String;
+
+.field private snapIndexCount:Ljava/lang/Long;
+
+.field private sponsor:Ljava/lang/String;
+
+.field public storyType:Lmj;
+
+.field public timeViewed:Ljava/lang/Double;
+
+.field public viewLocation:Ljava/lang/Long;
+
+.field public viewLocationPos:Ljava/lang/Long;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;Lnf;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 27
-    invoke-direct {p0, p1}, Landroid/support/v4/content/AsyncTaskLoader;-><init>(Landroid/content/Context;)V
+    .line 10
+    invoke-direct {p0}, Lml;-><init>()V
 
-    .line 28
-    iput-object p1, p0, Lmi;->a:Landroid/app/Activity;
+    .line 100
+    const-string v0, "STORY_STORY_VIEW"
 
-    .line 29
-    iput-object p2, p0, Lmi;->b:Lnf;
+    iput-object v0, p0, Lmi;->eventName:Ljava/lang/String;
 
-    .line 30
     return-void
-.end method
-
-.method private a()Lajv;
-    .locals 9
-
-    .prologue
-    const/4 v8, 0x0
-
-    .line 44
-    iget-object v0, p0, Lmi;->b:Lnf;
-
-    const-string v1, "USER_LOAD_TIME"
-
-    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->b(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lnf;->mUserLoadMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    iput-boolean v8, v0, Lnf;->mDidLoadFromDatabase:Z
-
-    .line 46
-    invoke-virtual {p0}, Lmi;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    .line 48
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    .line 52
-    :try_start_0
-    invoke-static {v0}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/content/Context;)Lcom/snapchat/android/database/DatabaseHelper;
-
-    move-result-object v1
-
-    .line 53
-    invoke-virtual {v1}, Lcom/snapchat/android/database/DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    .line 54
-    new-instance v4, Ljava/io/File;
-
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v4, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4}, Ljava/io/File;->length()J
-
-    move-result-wide v4
-
-    .line 55
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v6, "UserLoader.loadInBackground DB SIZE "
-
-    invoke-direct {v1, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v4, " bytes"
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lazz;->c(Ljava/lang/String;)V
-    :try_end_0
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 62
-    invoke-static {v0}, Lajv;->a(Landroid/content/Context;)Lajv;
-
-    move-result-object v0
-
-    .line 63
-    const-string v1, "UserLoader"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "loadInBackground() Elapsed Time: "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    sub-long v2, v6, v2
-
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v8, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 64
-    :goto_0
-    return-object v0
-
-    .line 56
-    :catch_0
-    move-exception v0
-
-    .line 57
-    const-string v1, "UserLoader"
-
-    const-string v2, "Error while opening database: %s"
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, v3, v8
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 58
-    iget-object v0, p0, Lmi;->a:Landroid/app/Activity;
-
-    invoke-static {v0}, Lasr;->a(Landroid/app/Activity;)V
-
-    .line 59
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic loadInBackground()Ljava/lang/Object;
-    .locals 1
+.method public final a()Ljava/util/Map;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 21
-    invoke-direct {p0}, Lmi;->a()Lajv;
+    .line 107
+    new-instance v0, Ljava/util/HashMap;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
+    .line 109
+    const-string v1, "event_name"
+
+    const-string v2, "STORY_STORY_VIEW"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 110
+    iget-object v1, p0, Lmi;->exitEvent:Lhu;
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "exit_event"
+
+    iget-object v2, p0, Lmi;->exitEvent:Lhu;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 111
+    :cond_0
+    iget-object v1, p0, Lmi;->fullView:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "full_view"
+
+    iget-object v2, p0, Lmi;->fullView:Ljava/lang/Boolean;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 112
+    :cond_1
+    iget-object v1, p0, Lmi;->geoFence:Ljava/lang/String;
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "geo_fence"
+
+    iget-object v2, p0, Lmi;->geoFence:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 113
+    :cond_2
+    iget-object v1, p0, Lmi;->numSnapsViewed:Ljava/lang/Long;
+
+    if-eqz v1, :cond_3
+
+    const-string v1, "num_snaps_viewed"
+
+    iget-object v2, p0, Lmi;->numSnapsViewed:Ljava/lang/Long;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 114
+    :cond_3
+    iget-object v1, p0, Lmi;->posterId:Ljava/lang/String;
+
+    if-eqz v1, :cond_4
+
+    const-string v1, "poster_id"
+
+    iget-object v2, p0, Lmi;->posterId:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 115
+    :cond_4
+    iget-object v1, p0, Lmi;->snapIndexCount:Ljava/lang/Long;
+
+    if-eqz v1, :cond_5
+
+    const-string v1, "snap_index_count"
+
+    iget-object v2, p0, Lmi;->snapIndexCount:Ljava/lang/Long;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 116
+    :cond_5
+    iget-object v1, p0, Lmi;->sponsor:Ljava/lang/String;
+
+    if-eqz v1, :cond_6
+
+    const-string v1, "sponsor"
+
+    iget-object v2, p0, Lmi;->sponsor:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 117
+    :cond_6
+    iget-object v1, p0, Lmi;->storyType:Lmj;
+
+    if-eqz v1, :cond_7
+
+    const-string v1, "story_type"
+
+    iget-object v2, p0, Lmi;->storyType:Lmj;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 118
+    :cond_7
+    iget-object v1, p0, Lmi;->timeViewed:Ljava/lang/Double;
+
+    if-eqz v1, :cond_8
+
+    const-string v1, "time_viewed"
+
+    iget-object v2, p0, Lmi;->timeViewed:Ljava/lang/Double;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 119
+    :cond_8
+    iget-object v1, p0, Lmi;->viewLocation:Ljava/lang/Long;
+
+    if-eqz v1, :cond_9
+
+    const-string v1, "view_location"
+
+    iget-object v2, p0, Lmi;->viewLocation:Ljava/lang/Long;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 120
+    :cond_9
+    iget-object v1, p0, Lmi;->viewLocationPos:Ljava/lang/Long;
+
+    if-eqz v1, :cond_a
+
+    const-string v1, "view_location_pos"
+
+    iget-object v2, p0, Lmi;->viewLocationPos:Ljava/lang/Long;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 121
+    :cond_a
+    invoke-super {p0}, Lml;->a()Ljava/util/Map;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+    .line 123
     return-object v0
 .end method
 
-.method protected final onStartLoading()V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .prologue
-    .line 34
-    invoke-virtual {p0}, Lmi;->forceLoad()V
+    const/4 v0, 0x1
 
-    .line 35
-    return-void
+    const/4 v1, 0x0
+
+    .line 128
+    if-ne p0, p1, :cond_1
+
+    .line 145
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 129
+    :cond_1
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_3
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    .line 130
+    :cond_3
+    invoke-super {p0, p1}, Lml;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_4
+
+    move v0, v1
+
+    goto :goto_0
+
+    .line 132
+    :cond_4
+    check-cast p1, Lmi;
+
+    .line 134
+    iget-object v2, p0, Lmi;->exitEvent:Lhu;
+
+    if-eqz v2, :cond_6
+
+    iget-object v2, p0, Lmi;->exitEvent:Lhu;
+
+    iget-object v3, p1, Lmi;->exitEvent:Lhu;
+
+    invoke-virtual {v2, v3}, Lhu;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_7
+
+    :cond_5
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_6
+    iget-object v2, p1, Lmi;->exitEvent:Lhu;
+
+    if-nez v2, :cond_5
+
+    .line 135
+    :cond_7
+    iget-object v2, p0, Lmi;->fullView:Ljava/lang/Boolean;
+
+    if-eqz v2, :cond_9
+
+    iget-object v2, p0, Lmi;->fullView:Ljava/lang/Boolean;
+
+    iget-object v3, p1, Lmi;->fullView:Ljava/lang/Boolean;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_a
+
+    :cond_8
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_9
+    iget-object v2, p1, Lmi;->fullView:Ljava/lang/Boolean;
+
+    if-nez v2, :cond_8
+
+    .line 136
+    :cond_a
+    iget-object v2, p0, Lmi;->geoFence:Ljava/lang/String;
+
+    if-eqz v2, :cond_c
+
+    iget-object v2, p0, Lmi;->geoFence:Ljava/lang/String;
+
+    iget-object v3, p1, Lmi;->geoFence:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_d
+
+    :cond_b
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_c
+    iget-object v2, p1, Lmi;->geoFence:Ljava/lang/String;
+
+    if-nez v2, :cond_b
+
+    .line 137
+    :cond_d
+    iget-object v2, p0, Lmi;->numSnapsViewed:Ljava/lang/Long;
+
+    if-eqz v2, :cond_f
+
+    iget-object v2, p0, Lmi;->numSnapsViewed:Ljava/lang/Long;
+
+    iget-object v3, p1, Lmi;->numSnapsViewed:Ljava/lang/Long;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_10
+
+    :cond_e
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_f
+    iget-object v2, p1, Lmi;->numSnapsViewed:Ljava/lang/Long;
+
+    if-nez v2, :cond_e
+
+    .line 138
+    :cond_10
+    iget-object v2, p0, Lmi;->posterId:Ljava/lang/String;
+
+    if-eqz v2, :cond_12
+
+    iget-object v2, p0, Lmi;->posterId:Ljava/lang/String;
+
+    iget-object v3, p1, Lmi;->posterId:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_13
+
+    :cond_11
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_12
+    iget-object v2, p1, Lmi;->posterId:Ljava/lang/String;
+
+    if-nez v2, :cond_11
+
+    .line 139
+    :cond_13
+    iget-object v2, p0, Lmi;->snapIndexCount:Ljava/lang/Long;
+
+    if-eqz v2, :cond_15
+
+    iget-object v2, p0, Lmi;->snapIndexCount:Ljava/lang/Long;
+
+    iget-object v3, p1, Lmi;->snapIndexCount:Ljava/lang/Long;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_16
+
+    :cond_14
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_15
+    iget-object v2, p1, Lmi;->snapIndexCount:Ljava/lang/Long;
+
+    if-nez v2, :cond_14
+
+    .line 140
+    :cond_16
+    iget-object v2, p0, Lmi;->sponsor:Ljava/lang/String;
+
+    if-eqz v2, :cond_18
+
+    iget-object v2, p0, Lmi;->sponsor:Ljava/lang/String;
+
+    iget-object v3, p1, Lmi;->sponsor:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_19
+
+    :cond_17
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_18
+    iget-object v2, p1, Lmi;->sponsor:Ljava/lang/String;
+
+    if-nez v2, :cond_17
+
+    .line 141
+    :cond_19
+    iget-object v2, p0, Lmi;->storyType:Lmj;
+
+    if-eqz v2, :cond_1b
+
+    iget-object v2, p0, Lmi;->storyType:Lmj;
+
+    iget-object v3, p1, Lmi;->storyType:Lmj;
+
+    invoke-virtual {v2, v3}, Lmj;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1c
+
+    :cond_1a
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_1b
+    iget-object v2, p1, Lmi;->storyType:Lmj;
+
+    if-nez v2, :cond_1a
+
+    .line 142
+    :cond_1c
+    iget-object v2, p0, Lmi;->timeViewed:Ljava/lang/Double;
+
+    if-eqz v2, :cond_1e
+
+    iget-object v2, p0, Lmi;->timeViewed:Ljava/lang/Double;
+
+    iget-object v3, p1, Lmi;->timeViewed:Ljava/lang/Double;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Double;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1f
+
+    :cond_1d
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_1e
+    iget-object v2, p1, Lmi;->timeViewed:Ljava/lang/Double;
+
+    if-nez v2, :cond_1d
+
+    .line 143
+    :cond_1f
+    iget-object v2, p0, Lmi;->viewLocation:Ljava/lang/Long;
+
+    if-eqz v2, :cond_21
+
+    iget-object v2, p0, Lmi;->viewLocation:Ljava/lang/Long;
+
+    iget-object v3, p1, Lmi;->viewLocation:Ljava/lang/Long;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_22
+
+    :cond_20
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_21
+    iget-object v2, p1, Lmi;->viewLocation:Ljava/lang/Long;
+
+    if-nez v2, :cond_20
+
+    .line 144
+    :cond_22
+    iget-object v2, p0, Lmi;->viewLocationPos:Ljava/lang/Long;
+
+    if-eqz v2, :cond_23
+
+    iget-object v2, p0, Lmi;->viewLocationPos:Ljava/lang/Long;
+
+    iget-object v3, p1, Lmi;->viewLocationPos:Ljava/lang/Long;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :goto_1
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_23
+    iget-object v2, p1, Lmi;->viewLocationPos:Ljava/lang/Long;
+
+    if-eqz v2, :cond_0
+
+    goto :goto_1
 .end method
 
-.method protected final onStopLoading()V
-    .locals 0
+.method public final hashCode()I
+    .locals 3
 
     .prologue
-    .line 39
-    invoke-virtual {p0}, Lmi;->cancelLoad()Z
+    const/4 v1, 0x0
 
-    .line 40
-    return-void
+    .line 150
+    invoke-super {p0}, Lml;->hashCode()I
+
+    move-result v0
+
+    .line 151
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->exitEvent:Lhu;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lmi;->exitEvent:Lhu;
+
+    invoke-virtual {v0}, Lhu;->hashCode()I
+
+    move-result v0
+
+    :goto_0
+    add-int/2addr v0, v2
+
+    .line 152
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->fullView:Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lmi;->fullView:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    add-int/2addr v0, v2
+
+    .line 153
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->geoFence:Ljava/lang/String;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lmi;->geoFence:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    .line 154
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->numSnapsViewed:Ljava/lang/Long;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lmi;->numSnapsViewed:Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
+
+    move-result v0
+
+    :goto_3
+    add-int/2addr v0, v2
+
+    .line 155
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->posterId:Ljava/lang/String;
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, p0, Lmi;->posterId:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_4
+    add-int/2addr v0, v2
+
+    .line 156
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->snapIndexCount:Ljava/lang/Long;
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, p0, Lmi;->snapIndexCount:Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
+
+    move-result v0
+
+    :goto_5
+    add-int/2addr v0, v2
+
+    .line 157
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->sponsor:Ljava/lang/String;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p0, Lmi;->sponsor:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_6
+    add-int/2addr v0, v2
+
+    .line 158
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->storyType:Lmj;
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Lmi;->storyType:Lmj;
+
+    invoke-virtual {v0}, Lmj;->hashCode()I
+
+    move-result v0
+
+    :goto_7
+    add-int/2addr v0, v2
+
+    .line 159
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->timeViewed:Ljava/lang/Double;
+
+    if-eqz v0, :cond_9
+
+    iget-object v0, p0, Lmi;->timeViewed:Ljava/lang/Double;
+
+    invoke-virtual {v0}, Ljava/lang/Double;->hashCode()I
+
+    move-result v0
+
+    :goto_8
+    add-int/2addr v0, v2
+
+    .line 160
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lmi;->viewLocation:Ljava/lang/Long;
+
+    if-eqz v0, :cond_a
+
+    iget-object v0, p0, Lmi;->viewLocation:Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
+
+    move-result v0
+
+    :goto_9
+    add-int/2addr v0, v2
+
+    .line 161
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lmi;->viewLocationPos:Ljava/lang/Long;
+
+    if-eqz v2, :cond_0
+
+    iget-object v1, p0, Lmi;->viewLocationPos:Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->hashCode()I
+
+    move-result v1
+
+    :cond_0
+    add-int/2addr v0, v1
+
+    .line 162
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    .line 151
+    goto/16 :goto_0
+
+    :cond_2
+    move v0, v1
+
+    .line 152
+    goto :goto_1
+
+    :cond_3
+    move v0, v1
+
+    .line 153
+    goto :goto_2
+
+    :cond_4
+    move v0, v1
+
+    .line 154
+    goto :goto_3
+
+    :cond_5
+    move v0, v1
+
+    .line 155
+    goto :goto_4
+
+    :cond_6
+    move v0, v1
+
+    .line 156
+    goto :goto_5
+
+    :cond_7
+    move v0, v1
+
+    .line 157
+    goto :goto_6
+
+    :cond_8
+    move v0, v1
+
+    .line 158
+    goto :goto_7
+
+    :cond_9
+    move v0, v1
+
+    .line 159
+    goto :goto_8
+
+    :cond_a
+    move v0, v1
+
+    .line 160
+    goto :goto_9
 .end method

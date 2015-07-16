@@ -4,146 +4,180 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static varargs a(I[Ljava/lang/Object;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 31
-    const/4 v0, 0x0
-
-    invoke-static {v0, p0, p1}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static varargs a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
-    .locals 3
-    .param p0    # Landroid/content/Context;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .annotation runtime Ljava/lang/Deprecated;
+.method public static a(Ljava/util/SortedSet;Ljava/util/SortedSet;Z)I
+    .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Ljava/lang/Comparable",
+            "<TT;>;>(",
+            "Ljava/util/SortedSet",
+            "<TT;>;",
+            "Ljava/util/SortedSet",
+            "<TT;>;Z)I"
+        }
     .end annotation
 
     .prologue
-    .line 46
-    if-nez p0, :cond_0
-
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object p0
-
-    .line 48
-    :cond_0
-    :try_start_0
-    invoke-virtual {p0, p1, p2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/util/UnknownFormatConversionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    .line 56
-    :goto_0
-    return-object v0
-
-    .line 49
-    :catch_0
-    move-exception v0
-
-    .line 50
-    new-instance v1, Lcom/snapchat/android/analytics/framework/ErrorMetric;
-
-    const-string v2, "Invalid string resource"
-
-    invoke-direct {v1, v2}, Lcom/snapchat/android/analytics/framework/ErrorMetric;-><init>(Ljava/lang/String;)V
-
-    .line 51
-    invoke-virtual {v1, v0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/Throwable;)Lcom/snapchat/android/analytics/framework/ErrorMetric;
-
-    .line 52
-    const-string v0, "string"
-
     const/4 v2, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .line 37
+    if-eqz p0, :cond_0
 
-    invoke-static {p0, p1, v2}, Latx;->a(Landroid/content/Context;I[Ljava/lang/Object;)Ljava/lang/String;
+    if-eqz p1, :cond_0
 
-    move-result-object v2
-
-    invoke-virtual {v1, v0, v2}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    .line 53
-    const-string v0, "displayLanguage"
-
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/Locale;->getDisplayLanguage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v0, v2}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    .line 54
-    const-string v0, "arguments"
-
-    invoke-static {}, Latn;->a()Lcom/google/gson/Gson;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v0, v2}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
-
-    .line 55
-    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->d()V
-
-    .line 56
-    const-string v0, "error :("
-
-    goto :goto_0
-.end method
-
-.method public static a()Z
-    .locals 2
-
-    .prologue
-    .line 20
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 21
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-virtual {v1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 22
-    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-interface {p0}, Ljava/util/SortedSet;->isEmpty()Z
 
     move-result v0
 
-    return v0
+    if-nez v0, :cond_0
+
+    invoke-interface {p1}, Ljava/util/SortedSet;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 73
+    :cond_0
+    :goto_0
+    return v2
+
+    .line 40
+    :cond_1
+    invoke-interface {p0}, Ljava/util/SortedSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    .line 41
+    invoke-interface {p1}, Ljava/util/SortedSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    .line 42
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    .line 43
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Comparable;
+
+    move-object v3, v0
+
+    move-object v6, v1
+
+    move v1, v2
+
+    move-object v2, v6
+
+    .line 46
+    :goto_1
+    invoke-interface {v3, v2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    move-result v0
+
+    .line 48
+    if-nez v0, :cond_3
+
+    .line 49
+    if-eqz p2, :cond_2
+
+    .line 50
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    .line 52
+    :cond_2
+    add-int/lit8 v2, v1, 0x1
+
+    .line 53
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 54
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    .line 55
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Comparable;
+
+    move-object v3, v0
+
+    move-object v6, v1
+
+    move v1, v2
+
+    move-object v2, v6
+
+    goto :goto_1
+
+    .line 59
+    :cond_3
+    if-gez v0, :cond_4
+
+    .line 60
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    .line 61
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    move-object v3, v0
+
+    goto :goto_1
+
+    .line 66
+    :cond_4
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    .line 67
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    move-object v2, v0
+
+    .line 72
+    goto :goto_1
+
+    :cond_5
+    move v2, v1
+
+    goto :goto_0
 .end method

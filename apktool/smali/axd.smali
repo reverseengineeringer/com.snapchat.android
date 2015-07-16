@@ -1,516 +1,483 @@
 .class public final Laxd;
-.super Lawp;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "ZipFileCache"
+.field private static final TAG:Ljava/lang/String; = "BitmapDecoder"
+
+
+# instance fields
+.field private mBitmapOptionsProvider:Laxl;
+    .annotation build Lchc;
+    .end annotation
+.end field
+
+.field private final mBitmapPool:Lawo;
+    .annotation build Lchc;
+    .end annotation
+.end field
+
+.field private final mContentResolver:Landroid/content/ContentResolver;
+    .annotation build Lchc;
+    .end annotation
+.end field
+
+.field private final mDisplayMetrics:Landroid/util/DisplayMetrics;
+    .annotation build Lchc;
+    .end annotation
+.end field
+
+.field private mMemoryAnalytics:Lny;
+    .annotation build Lchc;
+    .end annotation
+.end field
+
+.field private final mResources:Landroid/content/res/Resources;
+    .annotation build Lchc;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/util/cache/CacheType;)V
-    .locals 2
-
-    .prologue
-    .line 38
-    const-wide/16 v0, 0x2760
-
-    invoke-direct {p0, p1, v0, v1}, Lawp;-><init>(Lcom/snapchat/android/util/cache/CacheType;J)V
-
-    .line 39
-    return-void
-.end method
-
-.method private static a(Ljava/lang/String;Ljava/util/zip/ZipInputStream;)Z
-    .locals 5
-    .param p1    # Ljava/util/zip/ZipInputStream;
-        .annotation build Lcgb;
+.method public constructor <init>(Landroid/util/DisplayMetrics;Landroid/content/ContentResolver;Landroid/content/res/Resources;Lawo;)V
+    .locals 7
+    .param p1    # Landroid/util/DisplayMetrics;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Landroid/content/ContentResolver;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Landroid/content/res/Resources;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Lawo;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 108
-    :goto_0
-    invoke-virtual {p1}, Ljava/util/zip/ZipInputStream;->getNextEntry()Ljava/util/zip/ZipEntry;
+    .line 48
+    new-instance v5, Laxl;
 
-    move-result-object v0
+    invoke-direct {v5}, Laxl;-><init>()V
 
-    if-eqz v0, :cond_4
+    new-instance v6, Lny;
 
-    .line 109
-    const/4 v1, 0x0
+    invoke-direct {v6}, Lny;-><init>()V
 
-    :try_start_0
-    new-instance v3, Ljava/io/File;
+    move-object v0, p0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-object v1, p1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-object v2, p2
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object v3, p3
 
-    move-result-object v2
+    move-object v4, p4
 
-    const-string v4, "/"
+    invoke-direct/range {v0 .. v6}, Laxd;-><init>(Landroid/util/DisplayMetrics;Landroid/content/ContentResolver;Landroid/content/res/Resources;Lawo;Laxl;Lny;)V
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 50
+    return-void
+.end method
 
-    move-result-object v2
+.method private constructor <init>(Landroid/util/DisplayMetrics;Landroid/content/ContentResolver;Landroid/content/res/Resources;Lawo;Laxl;Lny;)V
+    .locals 0
+    .param p1    # Landroid/util/DisplayMetrics;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Landroid/content/ContentResolver;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Landroid/content/res/Resources;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Lawo;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p5    # Laxl;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p6    # Lny;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+    .prologue
+    .line 58
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    .line 59
+    iput-object p1, p0, Laxd;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 60
+    iput-object p2, p0, Laxd;->mContentResolver:Landroid/content/ContentResolver;
 
-    move-result-object v0
+    .line 61
+    iput-object p3, p0, Laxd;->mResources:Landroid/content/res/Resources;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 62
+    iput-object p4, p0, Laxd;->mBitmapPool:Lawo;
 
-    move-result-object v0
+    .line 63
+    iput-object p5, p0, Laxd;->mBitmapOptionsProvider:Laxl;
 
-    invoke-direct {v3, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    .line 64
+    iput-object p6, p0, Laxd;->mMemoryAnalytics:Lny;
 
-    invoke-virtual {v3}, Ljava/io/File;->getParentFile()Ljava/io/File;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Ljava/io/IOException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Could not create directory "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    :goto_1
-    invoke-static {v1}, Lbfo;->a(Ljava/io/Closeable;)V
-
-    throw v0
-
-    :cond_0
-    :try_start_1
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v3}, Ljava/io/File;->delete()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v4, "Could not delete file "
-
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    invoke-virtual {v3}, Ljava/io/File;->createNewFile()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v4, "Could not create new file "
-
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const/16 v0, 0x400
-
-    new-array v0, v0, [B
-
-    new-instance v2, Ljava/io/BufferedOutputStream;
-
-    new-instance v4, Ljava/io/FileOutputStream;
-
-    invoke-direct {v4, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    const/16 v3, 0x400
-
-    invoke-direct {v2, v4, v3}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :goto_2
-    :try_start_2
-    invoke-virtual {p1, v0}, Ljava/util/zip/ZipInputStream;->read([B)I
-
-    move-result v1
-
-    const/4 v3, -0x1
-
-    if-eq v1, v3, :cond_3
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v0, v3, v1}, Ljava/io/BufferedOutputStream;->write([BII)V
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception v0
-
-    move-object v1, v2
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {v2}, Ljava/io/BufferedOutputStream;->flush()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    invoke-static {v2}, Lbfo;->a(Ljava/io/Closeable;)V
-
-    goto/16 :goto_0
-
-    .line 111
-    :cond_4
-    const/4 v0, 0x1
-
-    return v0
+    .line 65
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Ljava/lang/String;Layc;)Landroid/graphics/Bitmap;
-    .locals 2
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+.method public final a(Laxf;IIZ)Lawm;
+    .locals 8
+    .param p1    # Laxf;
+        .annotation build Lchc;
         .end annotation
     .end param
-
-    .prologue
-    .line 49
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "Not supported by ZipFileCache"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final a(Landroid/content/Context;Ljava/lang/String;Layc;Landroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-    .locals 2
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 55
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "Not supported by ZipFileCache"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method protected final a([BI)Ljava/lang/String;
-    .locals 6
-    .annotation build Lcaq;
+    .annotation build Lawj;
     .end annotation
 
-    .annotation build Lcgc;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v7, 0x3
 
-    const/4 v5, 0x0
+    const/4 v6, 0x2
 
-    .line 67
-    new-instance v1, Ljava/io/File;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v3, p0, Laxd;->mCacheType:Lcom/snapchat/android/util/cache/CacheType;
-
-    invoke-virtual {v3}, Lcom/snapchat/android/util/cache/CacheType;->getDirectory()Ljava/io/File;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "/"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Laxd;->mCacheType:Lcom/snapchat/android/util/cache/CacheType;
-
-    invoke-virtual {v3}, Lcom/snapchat/android/util/cache/CacheType;->generateFilename()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 69
-    :try_start_0
-    iget-object v2, p0, Laxd;->mCacheType:Lcom/snapchat/android/util/cache/CacheType;
-
-    invoke-virtual {v2}, Lcom/snapchat/android/util/cache/CacheType;->getDirectory()Ljava/io/File;
-
-    move-result-object v2
-
-    .line 70
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    .line 71
-    const-string v1, "ZipFileCache"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Failed to create directory "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
+    const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    new-array v3, v3, [Ljava/lang/Object;
+    .line 82
+    iget-object v0, p0, Laxd;->mContentResolver:Landroid/content/ContentResolver;
 
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    iget-object v1, p0, Laxd;->mResources:Landroid/content/res/Resources;
 
-    .line 90
-    :goto_0
-    return-object v0
+    invoke-interface {p1, v0, v1}, Laxf;->a(Landroid/content/ContentResolver;Landroid/content/res/Resources;)V
 
-    .line 75
+    .line 85
+    if-lez p2, :cond_0
+
+    if-gtz p3, :cond_3
+
+    .line 87
     :cond_0
-    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+    new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
-    move-result v2
+    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    if-eqz v2, :cond_1
+    iput-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 76
-    invoke-static {v1}, Lorg/apache/commons/io/FileUtils;->deleteDirectory(Ljava/io/File;)V
+    .line 88
+    invoke-interface {p1, v0}, Laxf;->a(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 79
-    :cond_1
-    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
+    .line 89
+    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    .line 80
-    new-instance v2, Ljava/io/ByteArrayInputStream;
+    if-lez v1, :cond_1
 
-    const/4 v3, 0x0
+    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    invoke-direct {v2, p1, v3, p2}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
-
-    new-instance v3, Ljava/util/zip/ZipInputStream;
-
-    invoke-direct {v3, v2}, Ljava/util/zip/ZipInputStream;-><init>(Ljava/io/InputStream;)V
-    :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-
-    :try_start_1
-    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2, v3}, Laxd;->a(Ljava/lang/String;Ljava/util/zip/ZipInputStream;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    invoke-static {v3}, Lbfo;->a(Ljava/io/Closeable;)V
-    :try_end_2
-    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+    if-gtz v1, :cond_2
 
     .line 90
-    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    :cond_1
+    new-array v1, v6, [Ljava/lang/Object;
+
+    iget v4, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v1, v3
+
+    iget v0, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
+    aput-object v0, v1, v2
+
+    .line 91
+    new-instance v0, Lawm;
+
+    invoke-direct {v0}, Lawm;-><init>()V
+
+    .line 116
+    :goto_0
+    return-object v0
+
+    .line 93
+    :cond_2
+    iget p2, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+
+    .line 94
+    iget p3, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+
+    .line 97
+    :cond_3
+    if-lez p2, :cond_4
+
+    if-gtz p3, :cond_6
+
+    :cond_4
+    new-instance v0, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    iput-boolean v3, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+
+    iput-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inMutable:Z
+
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    iput-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
+
+    .line 98
+    :cond_5
+    :goto_1
+    iget-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v1, :cond_7
+
+    move v1, v2
+
+    .line 101
+    :goto_2
+    :try_start_0
+    invoke-interface {p1, v0}, Laxf;->a(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v5
+
+    .line 102
+    if-eqz v5, :cond_8
+
+    .line 103
+    new-instance v4, Lawm;
+
+    invoke-direct {v4, v5, v1}, Lawm;-><init>(Landroid/graphics/Bitmap;Z)V
+    :try_end_0
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-object v0, v4
+
     goto :goto_0
 
-    .line 80
-    :catchall_0
-    move-exception v1
+    .line 97
+    :cond_6
+    iget-object v0, p0, Laxd;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    :try_start_3
-    invoke-static {v3}, Lbfo;->a(Ljava/io/Closeable;)V
+    invoke-static {v0, p2, p3}, Laxl;->a(Landroid/util/DisplayMetrics;II)Landroid/graphics/BitmapFactory$Options;
 
-    throw v1
-    :try_end_3
-    .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    move-result-object v0
 
-    .line 88
+    iget-object v1, p0, Laxd;->mBitmapPool:Lawo;
+
+    if-eqz v1, :cond_5
+
+    iget-object v1, p0, Laxd;->mBitmapPool:Lawo;
+
+    invoke-virtual {v1, v0, p4}, Lawo;->a(Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    iput-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
+
+    goto :goto_1
+
+    :cond_7
+    move v1, v3
+
+    .line 98
+    goto :goto_2
+
+    .line 105
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    .line 82
-    const-string v2, "ZipFileCache"
+    invoke-static {v0}, Lny;->a(Ljava/lang/Throwable;)V
 
-    invoke-static {v2, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 116
+    :cond_8
+    new-instance v0, Lawm;
+
+    invoke-direct {v0}, Lawm;-><init>()V
 
     goto :goto_0
 
-    .line 84
+    .line 108
     :catch_1
     move-exception v1
 
-    .line 85
-    const-string v2, "ZipFileCache"
+    iget-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
 
-    const-string v3, "Failed to write file..."
+    new-array v4, v7, [Ljava/lang/Object;
 
-    new-array v4, v5, [Ljava/lang/Object;
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v5
 
-    .line 86
-    const-string v2, "ZipFileCache"
+    aput-object v5, v4, v3
 
-    invoke-static {v2, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    goto :goto_0
-.end method
+    move-result-object v5
 
-.method public final a(Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap$CompressFormat;)V
-    .locals 2
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Landroid/graphics/Bitmap;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Landroid/graphics/Bitmap$CompressFormat;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+    aput-object v5, v4, v2
 
-    .prologue
-    .line 44
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-static {p4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const-string v1, "Not supported by ZipFileCache"
+    move-result-object v5
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    aput-object v5, v4, v6
 
-    throw v0
-.end method
+    new-array v4, v7, [Ljava/lang/Object;
 
-.method public final a(Ljava/lang/String;)[B
-    .locals 2
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+    iget v5, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .prologue
-    .line 60
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const-string v1, "Not supported by ZipFileCache"
+    move-result-object v5
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    aput-object v5, v4, v3
 
-    throw v0
+    iget v5, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, v2
+
+    iget-object v5, v0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
+
+    if-nez v5, :cond_a
+
+    const-string v0, "null"
+
+    :goto_3
+    aput-object v0, v4, v6
+
+    if-eqz v1, :cond_9
+
+    const/4 v0, 0x5
+
+    new-array v4, v0, [Ljava/lang/Object;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    aput-object v0, v4, v3
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    aput-object v0, v4, v2
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->isMutable()Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    aput-object v0, v4, v6
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    aput-object v0, v4, v7
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    move-result-object v0
+
+    if-nez v0, :cond_b
+
+    const-string v0, "null"
+
+    :goto_4
+    aput-object v0, v4, v2
+
+    .line 109
+    :cond_9
+    iget-object v0, p0, Laxd;->mDisplayMetrics:Landroid/util/DisplayMetrics;
+
+    invoke-static {v0, p2, p3}, Laxl;->a(Landroid/util/DisplayMetrics;II)Landroid/graphics/BitmapFactory$Options;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
+
+    .line 110
+    invoke-interface {p1, v0}, Laxf;->a(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    .line 111
+    if-eqz v1, :cond_8
+
+    .line 112
+    new-instance v0, Lawm;
+
+    invoke-direct {v0, v1, v3}, Lawm;-><init>(Landroid/graphics/Bitmap;Z)V
+
+    goto/16 :goto_0
+
+    .line 108
+    :cond_a
+    iget-object v0, v0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap$Config;->name()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_3
+
+    :cond_b
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap$Config;->name()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_4
 .end method

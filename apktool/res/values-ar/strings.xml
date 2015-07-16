@@ -259,7 +259,6 @@ Snapchatter!"</string>
     <string name="discover_sharing_success">تم إرسال Snap!</string>
     <string name="discover_sharing_unavailable">%1$s لا يتيح إرسال Snap.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> انقر هنا لتجربة \"اكتشف\"!</string>
     <string name="discover_unavailable">"عذرًا!
 
 \"اكتشف\" غير متوفر حاليًا."</string>
@@ -309,6 +308,7 @@ Snapchatter!"</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request"> نسيت كلمة السر؟</a>" "</string>
     <string name="friend_suggest_hide">إخفاء</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - جهة اتصال جديدة</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - منضم مؤخرًا</string>
     <string name="friends">أصدقاء</string>
     <string name="friends_context_block">حظر</string>
@@ -616,7 +616,7 @@ Snapchatter!"</string>
     <string name="snap_delete_failure">فشل في حذف Snap.</string>
     <string name="snap_failed_to_post">فشل في نشر 1 Snap.</string>
     <string name="snap_list_empty_list_msg">ما عندك أي Snaps :(</string>
-    <string name="snap_tag_help_description">يستطيع Snapchatters إضافتك بالإشارة إلى الكاميرا في صورتك والنقر فوق الشاشة!</string>
+    <string name="snap_tag_help_description">يستطيع Snapchatters إضافتك بالإشارة إلى الكاميرا في Snapcode والنقر فوق شاشتهم!</string>
     <string name="snap_tag_no_connection">لا يوجد اتصال!</string>
     <string name="snap_to_add">Snap أو لقطة شاشة لإضافتها</string>
     <string name="snapkidz_welcome">مرحبًا بك في Snapkidz!</string>
@@ -652,8 +652,6 @@ Snapchatter!"</string>
     <string name="tap_to_view_edition">انقر لعرضه في Discover</string>
     <string name="tap_to_view_full_story">انقر لعرض القصة بأكملها</string>
     <string name="tap_to_view_more">انقر لاكتشاف قنوات أخرى</string>
-    <string name="tap_to_view_snaps">اضغط لمشاهدة ال Snaps!</string>
-    <string name="tap_to_view_stories">اضغط لمشاهدة ال Stories!</string>
     <string name="tap_to_view_video_in_discover">انقر لعرض هذا الفيديو في Discover</string>
     <string name="too_many_attempts">الكثير من المحاولات.</string>
     <string name="tos_accept">أوافق</string>

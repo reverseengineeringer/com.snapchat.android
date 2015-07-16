@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
+.implements Laim$a;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;->i()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 136
+    .line 146
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment$7;->a:Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,23 +36,40 @@
 
 
 # virtual methods
-.method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 1
+.method public final a(Z)V
+    .locals 2
 
     .prologue
-    .line 139
+    .line 149
+    if-nez p1, :cond_0
+
+    .line 150
+    iget-object v0, p0, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment$7;->a:Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;
+
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;->a(Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;)Landroid/widget/CheckBox;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
+
+    .line 155
+    :goto_0
+    return-void
+
+    .line 152
+    :cond_0
+    const-string v0, "TOGGLE_SETTING_FILTERS"
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Ljava/lang/String;Z)V
+
+    .line 153
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment$7;->a:Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;->b(Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;)Z
 
-    .line 140
-    invoke-static {p2}, Lajx;->l(Z)V
-
-    .line 141
-    const-string v0, "TOGGLE_SETTING_FLASH"
-
-    invoke-static {v0, p2}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Ljava/lang/String;Z)V
-
-    .line 142
-    return-void
+    goto :goto_0
 .end method

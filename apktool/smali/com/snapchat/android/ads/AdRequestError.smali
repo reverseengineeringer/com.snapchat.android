@@ -23,7 +23,7 @@
 .method public constructor <init>(Lcom/snapchat/android/ads/AdRequestError$ErrorCode;Ljava/lang/String;)V
     .locals 2
     .param p1    # Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

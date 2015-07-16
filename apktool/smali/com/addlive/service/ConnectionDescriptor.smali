@@ -322,24 +322,13 @@
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 266
-    const-string v1, "authDetails"
-
-    iget-object v2, p0, Lcom/addlive/service/ConnectionDescriptor;->authDetails:Lcom/addlive/service/AuthDetails;
-
-    invoke-virtual {v2}, Lcom/addlive/service/AuthDetails;->toJSON()Lorg/json/JSONObject;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 267
     const-string v1, "endpointDetails"
 
     iget-object v2, p0, Lcom/addlive/service/ConnectionDescriptor;->endpointDetails:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 268
+    .line 267
     iget-object v1, p0, Lcom/addlive/service/ConnectionDescriptor;->connectionType:Lcom/addlive/service/ConnectionDescriptor$ConnectionType;
 
     if-eqz v1, :cond_0
@@ -350,7 +339,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 269
+    .line 268
     :cond_0
     iget-wide v2, p0, Lcom/addlive/service/ConnectionDescriptor;->applicationId:J
 
@@ -366,9 +355,62 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
-    .line 270
+    .line 269
     :cond_1
+    iget-object v1, p0, Lcom/addlive/service/ConnectionDescriptor;->authDetails:Lcom/addlive/service/AuthDetails;
+
+    invoke-virtual {v1}, Lcom/addlive/service/AuthDetails;->getSignature()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 270
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 271
+    const-string v1, "authDetails"
+
+    iget-object v2, p0, Lcom/addlive/service/ConnectionDescriptor;->authDetails:Lcom/addlive/service/AuthDetails;
+
+    invoke-virtual {v2}, Lcom/addlive/service/AuthDetails;->toJSON()Lorg/json/JSONObject;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 276
+    :goto_0
     return-object v0
+
+    .line 273
+    :cond_2
+    const-string v1, "authToken"
+
+    iget-object v2, p0, Lcom/addlive/service/ConnectionDescriptor;->authDetails:Lcom/addlive/service/AuthDetails;
+
+    invoke-virtual {v2}, Lcom/addlive/service/AuthDetails;->getToken()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 274
+    const-string v1, "authMac"
+
+    iget-object v2, p0, Lcom/addlive/service/ConnectionDescriptor;->authDetails:Lcom/addlive/service/AuthDetails;
+
+    invoke-virtual {v2}, Lcom/addlive/service/AuthDetails;->getMac()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    goto :goto_0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -377,7 +419,7 @@
     .prologue
     const/16 v2, 0x27
 
-    .line 275
+    .line 281
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "ConnectionDescriptor{autopublishVideo="

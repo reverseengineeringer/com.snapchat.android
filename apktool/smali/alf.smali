@@ -1,16 +1,29 @@
-.class public final Lalf;
-.super Ljava/lang/Exception;
+.class public interface abstract Lalf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+# virtual methods
+.method public abstract a(Lalg;)V
+.end method
 
-    .prologue
-    .line 9
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+.method public abstract a()Z
+.end method
 
-    .line 10
-    return-void
+.method public abstract b()V
+.end method
+
+.method public abstract c()V
+.end method
+
+.method public abstract d()V
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract f()V
+.end method
+
+.method public abstract g()J
 .end method

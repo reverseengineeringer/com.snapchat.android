@@ -1,30 +1,6 @@
-public final class cgt$a
-  extends cja
-{
-  public cgt a;
-  public cgh b;
-  
-  public cgt$a(cgt paramcgt, cgh paramcgh)
-  {
-    a = paramcgt;
-    b = paramcgh;
-  }
-  
-  public final cgh a()
-  {
-    return b;
-  }
-  
-  protected final long b()
-  {
-    return a.a;
-  }
-  
-  protected final cgf c()
-  {
-    return a.b;
-  }
-}
+import java.lang.annotation.Annotation;
+
+public @interface cgt$a {}
 
 /* Location:
  * Qualified Name:     cgt.a

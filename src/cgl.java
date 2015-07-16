@@ -1,146 +1,134 @@
-import java.util.List;
-import org.joda.convert.ToString;
+import java.util.Hashtable;
+import java.util.StringTokenizer;
 
 public final class cgl
-  extends chi
 {
-  public static final cgl a = new cgl(0);
-  public static final cgl b = new cgl(1);
-  public static final cgl c = new cgl(2);
-  public static final cgl d = new cgl(3);
-  public static final cgl e = new cgl(4);
-  public static final cgl f = new cgl(5);
-  public static final cgl g = new cgl(6);
-  public static final cgl h = new cgl(7);
-  public static final cgl i = new cgl(Integer.MAX_VALUE);
-  public static final cgl j = new cgl(Integer.MIN_VALUE);
-  private static final cke l;
+  static Hashtable e;
+  static Class f;
+  private static Object[] g = new Object[0];
+  Class a;
+  ClassLoader b;
+  String c;
+  int d;
   
   static
   {
-    Object localObject1;
-    if (ckd.a == null)
+    Hashtable localHashtable = new Hashtable();
+    e = localHashtable;
+    localHashtable.put("void", Void.TYPE);
+    e.put("boolean", Boolean.TYPE);
+    e.put("byte", Byte.TYPE);
+    e.put("char", Character.TYPE);
+    e.put("short", Short.TYPE);
+    e.put("int", Integer.TYPE);
+    e.put("long", Long.TYPE);
+    e.put("float", Float.TYPE);
+    e.put("double", Double.TYPE);
+  }
+  
+  public cgl(String paramString, Class paramClass)
+  {
+    c = paramString;
+    a = paramClass;
+    d = 0;
+    b = paramClass.getClassLoader();
+  }
+  
+  public static cfl a(cfl.a parama, Object paramObject1, Object paramObject2)
+  {
+    return new cgm(parama, paramObject1, paramObject2, g);
+  }
+  
+  public static cfl a(cfl.a parama, Object paramObject1, Object paramObject2, Object paramObject3)
+  {
+    return new cgm(parama, paramObject1, paramObject2, new Object[] { paramObject3 });
+  }
+  
+  private static Class a(String paramString)
+  {
+    try
     {
-      localObject1 = new ckf();
-      ((ckf)localObject1).b();
-      localObject2 = new ckf.d("P");
-      ((ckf)localObject1).a((ckh)localObject2, (ckg)localObject2);
-      ((ckf)localObject1).a(0);
-      localObject1 = ((ckf)localObject1).a("Y");
-      ((ckf)localObject1).a(1);
-      localObject1 = ((ckf)localObject1).a("M");
-      ((ckf)localObject1).a(2);
-      localObject1 = ((ckf)localObject1).a("W");
-      ((ckf)localObject1).a(3);
-      ckf localckf = ((ckf)localObject1).a("D");
-      localckf.b();
-      localObject1 = a;
-      if (((List)localObject1).size() == 0)
-      {
-        localObject1 = new ckf.f("T", "T", ckf.d.a, ckf.d.a);
-        localckf.a((ckh)localObject1, (ckg)localObject1);
-        localckf.a(4);
-        localObject1 = localckf.a("H");
-        ((ckf)localObject1).a(5);
-        localObject1 = ((ckf)localObject1).a("M");
-        ((ckf)localObject1).a(9);
-        ckd.a = ((ckf)localObject1).a("S").a();
-      }
+      paramString = Class.forName(paramString);
+      return paramString;
     }
-    else
+    catch (ClassNotFoundException paramString)
     {
-      localObject1 = ckd.a;
-      localObject2 = cgu.a();
-      if (localObject2 != d) {
-        break label444;
-      }
-      label298:
-      l = (cke)localObject1;
-      return;
+      throw new NoClassDefFoundError(paramString.getMessage());
     }
-    Object localObject2 = null;
-    int k = ((List)localObject1).size();
-    label312:
-    k -= 1;
-    if (k >= 0) {
-      if ((((List)localObject1).get(k) instanceof ckf.f))
-      {
-        localObject2 = (ckf.f)((List)localObject1).get(k);
-        localObject1 = ((List)localObject1).subList(k + 1, ((List)localObject1).size());
-      }
+  }
+  
+  static Class a(String paramString, ClassLoader paramClassLoader)
+  {
+    Object localObject;
+    if (paramString.equals("*")) {
+      localObject = null;
     }
-    for (;;)
+    Class localClass;
+    do
     {
-      if ((localObject2 != null) && (((List)localObject1).size() == 0))
-      {
-        throw new IllegalStateException("Cannot have two adjacent separators");
-        k -= 1;
-        break label312;
-      }
-      localObject2 = ckf.a((List)localObject1);
-      ((List)localObject1).clear();
-      localObject2 = new ckf.f("T", "T", (ckh)localObject2[0], (ckg)localObject2[1]);
-      ((List)localObject1).add(localObject2);
-      ((List)localObject1).add(localObject2);
-      break;
-      label444:
-      localObject1 = new cke(a, b, c, (cgu)localObject2);
-      break label298;
-    }
-  }
-  
-  private cgl(int paramInt)
-  {
-    super(paramInt);
-  }
-  
-  public static cgl a(cgz paramcgz1, cgz paramcgz2)
-  {
-    cgn localcgn = cgn.f();
-    if ((paramcgz1 == null) || (paramcgz2 == null)) {
-      throw new IllegalArgumentException("ReadableInstant objects must not be null");
-    }
-    int k = localcgn.a(cgj.b(paramcgz1)).b(paramcgz2.c(), paramcgz1.c());
-    switch (k)
+      return (Class)localObject;
+      localClass = (Class)e.get(paramString);
+      localObject = localClass;
+    } while (localClass != null);
+    if (paramClassLoader == null) {}
+    try
     {
-    default: 
-      return new cgl(k);
-    case 0: 
-      return a;
-    case 1: 
-      return b;
-    case 2: 
-      return c;
-    case 3: 
-      return d;
-    case 4: 
-      return e;
-    case 5: 
-      return f;
-    case 6: 
-      return g;
-    case 7: 
-      return h;
-    case 2147483647: 
-      return i;
+      return Class.forName(paramString);
     }
-    return j;
+    catch (ClassNotFoundException paramString)
+    {
+      if (f != null) {
+        break label67;
+      }
+      paramString = a("java.lang.ClassNotFoundException");
+      f = paramString;
+      return paramString;
+    }
+    paramString = Class.forName(paramString, false, paramClassLoader);
+    return paramString;
+    label67:
+    return f;
   }
   
-  public final cgn a()
+  public final cfl.a a(String paramString, cfo paramcfo, int paramInt)
   {
-    return cgn.f();
+    int i = d;
+    d = (i + 1);
+    return new cgm.a(i, paramString, paramcfo, new cgq(a, c, paramInt));
   }
   
-  public final cgu b()
+  public final cgh a(String paramString1, String paramString2, String paramString3, String paramString4, String paramString5, String paramString6, String paramString7)
   {
-    return cgu.a();
-  }
-  
-  @ToString
-  public final String toString()
-  {
-    return "P" + String.valueOf(k) + "D";
+    int j = Integer.parseInt(paramString1, 16);
+    paramString1 = a(paramString3, b);
+    paramString4 = new StringTokenizer(paramString4, ":");
+    int k = paramString4.countTokens();
+    paramString3 = new Class[k];
+    int i = 0;
+    while (i < k)
+    {
+      paramString3[i] = a(paramString4.nextToken(), b);
+      i += 1;
+    }
+    paramString5 = new StringTokenizer(paramString5, ":");
+    k = paramString5.countTokens();
+    paramString4 = new String[k];
+    i = 0;
+    while (i < k)
+    {
+      paramString4[i] = paramString5.nextToken();
+      i += 1;
+    }
+    paramString5 = new StringTokenizer(paramString6, ":");
+    k = paramString5.countTokens();
+    paramString6 = new Class[k];
+    i = 0;
+    while (i < k)
+    {
+      paramString6[i] = a(paramString5.nextToken(), b);
+      i += 1;
+    }
+    return new cgo(j, paramString2, paramString1, paramString3, paramString4, paramString6, a(paramString7, b));
   }
 }
 

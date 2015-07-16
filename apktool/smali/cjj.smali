@@ -1,13 +1,14 @@
-.class public final Lcjj;
-.super Lcgm;
+.class final Lcjj;
+.super Lcji;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Lcjp;
+.implements Lcjt;
 
 
 # static fields
-.field public static final a:Lcgm;
+.field static final a:Lcjj;
 
 
 # direct methods
@@ -15,203 +16,171 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 43
     new-instance v0, Lcjj;
 
     invoke-direct {v0}, Lcjj;-><init>()V
 
-    sput-object v0, Lcjj;->a:Lcgm;
+    sput-object v0, Lcjj;->a:Lcjj;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method protected constructor <init>()V
     .locals 0
 
     .prologue
-    .line 44
-    invoke-direct {p0}, Lcgm;-><init>()V
+    .line 49
+    invoke-direct {p0}, Lcji;-><init>()V
 
-    .line 45
+    .line 50
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JI)J
-    .locals 3
-
-    .prologue
-    .line 117
-    int-to-long v0, p3
-
-    invoke-static {p1, p2, v0, v1}, Lcjh;->a(JJ)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final a(JJ)J
-    .locals 3
-
-    .prologue
-    .line 121
-    invoke-static {p1, p2, p3, p4}, Lcjh;->a(JJ)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final a()Lcgn;
-    .locals 1
-
-    .prologue
-    .line 49
-    invoke-static {}, Lcgn;->a()Lcgn;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b(JJ)I
-    .locals 3
-
-    .prologue
-    .line 125
-    invoke-static {p1, p2, p3, p4}, Lcjh;->b(JJ)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Lcjh;->a(J)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    .prologue
-    .line 62
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final c(JJ)J
-    .locals 3
-
-    .prologue
-    .line 129
-    invoke-static {p1, p2, p3, p4}, Lcjh;->b(JJ)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    .prologue
-    .line 71
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final synthetic compareTo(Ljava/lang/Object;)I
-    .locals 6
-
-    .prologue
-    const-wide/16 v4, 0x1
-
-    .line 32
-    check-cast p1, Lcgm;
-
-    invoke-virtual {p1}, Lcgm;->d()J
-
-    move-result-wide v0
-
-    cmp-long v2, v4, v0
-
-    if-nez v2, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    cmp-long v0, v4, v0
-
-    if-gez v0, :cond_1
-
-    const/4 v0, -0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
-.method public final d()J
+.method public final a(Ljava/lang/Object;)J
     .locals 2
 
     .prologue
-    .line 80
-    const-wide/16 v0, 0x1
+    .line 121
+    check-cast p1, Ljava/util/Calendar;
+
+    .line 122
+    invoke-virtual {p1}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a()Ljava/lang/Class;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/Class",
+            "<*>;"
+        }
+    .end annotation
 
     .prologue
-    const-wide/16 v2, 0x1
+    .line 132
+    const-class v0, Ljava/util/Calendar;
 
-    const/4 v0, 0x0
+    return-object v0
+.end method
 
-    .line 148
-    instance-of v1, p1, Lcjj;
+.method public final b(Ljava/lang/Object;)Lchg;
+    .locals 6
+
+    .prologue
+    .line 68
+    check-cast p1, Ljava/util/Calendar;
+
+    .line 72
+    :try_start_0
+    invoke-virtual {p1}, Ljava/util/Calendar;->getTimeZone()Ljava/util/TimeZone;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lchl;->a(Ljava/util/TimeZone;)Lchl;
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    .line 79
+    :goto_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, ".BuddhistCalendar"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 149
-    cmp-long v1, v2, v2
+    invoke-static {v0}, Lciv;->b(Lchl;)Lciv;
 
-    if-nez v1, :cond_0
+    move-result-object v0
 
-    const/4 v0, 0x1
-
-    .line 151
-    :cond_0
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .prologue
-    .line 155
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 164
-    const-string v0, "DurationField[millis]"
-
+    :goto_1
     return-object v0
+
+    .line 77
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, Lchl;->a()Lchl;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 79
+    :cond_0
+    instance-of v1, p1, Ljava/util/GregorianCalendar;
+
+    if-eqz v1, :cond_3
+
+    check-cast p1, Ljava/util/GregorianCalendar;
+
+    invoke-virtual {p1}, Ljava/util/GregorianCalendar;->getGregorianChange()Ljava/util/Date;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v2
+
+    const-wide/high16 v4, -0x8000000000000000L
+
+    cmp-long v1, v2, v4
+
+    if-nez v1, :cond_1
+
+    invoke-static {v0}, Lcjc;->b(Lchl;)Lcjc;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_1
+    const-wide v4, 0x7fffffffffffffffL
+
+    cmp-long v1, v2, v4
+
+    if-nez v1, :cond_2
+
+    invoke-static {v0}, Lcjf;->b(Lchl;)Lcjf;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {v0, v2, v3}, Lciw;->a(Lchl;J)Lciw;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {v0}, Lcjd;->b(Lchl;)Lcjd;
+
+    move-result-object v0
+
+    goto :goto_1
 .end method

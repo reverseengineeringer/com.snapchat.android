@@ -140,12 +140,12 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 112
-    const v2, 0x7f0400cb
+    const v2, 0x7f0400cd
 
     invoke-virtual {v0, v2, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 114
-    const v0, 0x7f0a041a
+    const v0, 0x7f0a0413
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ColorPickerView;->findViewById(I)Landroid/view/View;
 
@@ -154,14 +154,14 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/ColorPickerView;->i:Landroid/view/View;
 
     .line 115
-    const v0, 0x7f0a041b
+    const v0, 0x7f0a0414
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/ColorPickerView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 116
-    const v2, 0x7f0a0419
+    const v2, 0x7f0a0412
 
     invoke-virtual {p0, v2}, Lcom/snapchat/android/ui/ColorPickerView;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
     iput-object v2, p0, Lcom/snapchat/android/ui/ColorPickerView;->j:Landroid/view/View;
 
     .line 117
-    const v2, 0x7f0a0415
+    const v2, 0x7f0a040e
 
     invoke-virtual {p0, v2}, Lcom/snapchat/android/ui/ColorPickerView;->findViewById(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v3}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v2
 
@@ -241,7 +241,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v2, v3}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v2
 
@@ -253,7 +253,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v3, v4}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v3
 
@@ -372,7 +372,7 @@
 
     move-result-object v8
 
-    invoke-static {v13, v8}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v13, v8}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v8
 
@@ -501,7 +501,7 @@
 
     move-result-object v5
 
-    invoke-static {v13, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v13, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v5
 
@@ -519,7 +519,7 @@
 
     move-result-object v5
 
-    invoke-static {v13, v5}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v13, v5}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v5
 
@@ -761,7 +761,7 @@
 
     move-result-object v3
 
-    invoke-static {v13, v3}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v13, v3}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v3
 
@@ -963,13 +963,13 @@
 
     .prologue
     .line 301
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbbc;
+    new-instance v1, Lbcc;
 
-    invoke-direct {v1, p1}, Lbbc;-><init>(I)V
+    invoke-direct {v1, p1}, Lbcc;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

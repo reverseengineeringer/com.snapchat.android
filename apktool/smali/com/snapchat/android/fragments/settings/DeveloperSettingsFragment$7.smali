@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 323
+    .line 320
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$7;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,32 +40,32 @@
     .locals 2
 
     .prologue
-    .line 326
-    invoke-static {}, Lajx;->ai()V
+    .line 323
+    invoke-static {}, Lakr;->ah()V
 
-    .line 327
+    .line 324
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$7;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->a:Lxn;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->a:Lyj;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lxn;->a(Lxq;)V
+    invoke-virtual {v0, v1}, Lyj;->a(Lym;)V
 
-    .line 328
+    .line 325
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$7;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->b:Lxr;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->b:Lyn;
 
-    invoke-virtual {v0}, Lxr;->b()V
+    invoke-virtual {v0}, Lyn;->b()V
 
-    .line 329
-    new-instance v0, Lqq;
+    .line 326
+    new-instance v0, Lrg;
 
-    invoke-direct {v0}, Lqq;-><init>()V
+    invoke-direct {v0}, Lrg;-><init>()V
 
-    invoke-virtual {v0}, Lqq;->f()V
+    invoke-virtual {v0}, Lrg;->execute()V
 
-    .line 330
+    .line 327
     return-void
 .end method

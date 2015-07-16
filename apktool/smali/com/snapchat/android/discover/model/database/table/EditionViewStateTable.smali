@@ -14,7 +14,7 @@
     value = {
         "Lcom/snapchat/android/database/table/DbTable",
         "<",
-        "Ladf$c;",
+        "Laef$c;",
         ">;"
     }
 .end annotation
@@ -39,7 +39,7 @@
 
 
 # instance fields
-.field public final c:Ladf;
+.field public final c:Laef;
 
 
 # direct methods
@@ -122,17 +122,17 @@
 
     .prologue
     .line 44
-    invoke-static {}, Ladf;->a()Ladf;
+    invoke-static {}, Laef;->a()Laef;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;-><init>(Ladf;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;-><init>(Laef;)V
 
     .line 45
     return-void
 .end method
 
-.method private constructor <init>(Ladf;)V
+.method private constructor <init>(Laef;)V
     .locals 0
 
     .prologue
@@ -140,50 +140,50 @@
     invoke-direct {p0}, Lcom/snapchat/android/database/table/DbTable;-><init>()V
 
     .line 48
-    iput-object p1, p0, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;->c:Ladf;
+    iput-object p1, p0, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;->c:Laef;
 
     .line 49
     return-void
 .end method
 
-.method public static a(Ladf$c;)Landroid/content/ContentValues;
+.method public static a(Laef$c;)Landroid/content/ContentValues;
     .locals 3
-    .param p0    # Ladf$c;
-        .annotation build Lcgb;
+    .param p0    # Laef$c;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 204
-    new-instance v0, Laad;
+    new-instance v0, Labc;
 
-    invoke-direct {v0}, Laad;-><init>()V
+    invoke-direct {v0}, Labc;-><init>()V
 
     sget-object v1, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable$EditionViewStateSchema;->ID:Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable$EditionViewStateSchema;
 
-    iget-object v2, p0, Ladf$c;->a:Ljava/lang/String;
+    iget-object v2, p0, Laef$c;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     move-result-object v0
 
     sget-object v1, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable$EditionViewStateSchema;->LAST_INDEX_VIEWED:Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable$EditionViewStateSchema;
 
-    iget v2, p0, Ladf$c;->b:I
+    iget v2, p0, Laef$c;->b:I
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;I)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;I)Labc;
 
     move-result-object v0
 
     sget-object v1, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable$EditionViewStateSchema;->VIEWED_ALL_DSNAPS:Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable$EditionViewStateSchema;
 
-    iget-boolean v2, p0, Ladf$c;->c:Z
+    iget-boolean v2, p0, Laef$c;->c:Z
 
-    invoke-virtual {v0, v1, v2}, Laad;->a(Lzw;Z)Laad;
+    invoke-virtual {v0, v1, v2}, Labc;->a(Laav;Z)Labc;
 
     move-result-object v0
 
-    iget-object v0, v0, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v0, Labc;->a:Landroid/content/ContentValues;
 
     return-object v0
 .end method
@@ -201,7 +201,7 @@
 .method private static a(Landroid/database/sqlite/SQLiteDatabase;)Ljava/util/List;
     .locals 9
     .param p0    # Landroid/database/sqlite/SQLiteDatabase;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -211,7 +211,7 @@
             ")",
             "Ljava/util/List",
             "<",
-            "Ladf$c;",
+            "Laef$c;",
             ">;"
         }
     .end annotation
@@ -290,17 +290,17 @@
     const/4 v0, 0x1
 
     :goto_0
-    new-instance v4, Ladf$c$a;
+    new-instance v4, Laef$c$a;
 
-    invoke-direct {v4}, Ladf$c$a;-><init>()V
+    invoke-direct {v4}, Laef$c$a;-><init>()V
 
-    iput-object v2, v4, Ladf$c$a;->a:Ljava/lang/String;
+    iput-object v2, v4, Laef$c$a;->a:Ljava/lang/String;
 
-    iput v3, v4, Ladf$c$a;->b:I
+    iput v3, v4, Laef$c$a;->b:I
 
-    iput-boolean v0, v4, Ladf$c$a;->c:Z
+    iput-boolean v0, v4, Laef$c$a;->c:Z
 
-    invoke-virtual {v4}, Ladf$c$a;->a()Ladf$c;
+    invoke-virtual {v4}, Laef$c$a;->a()Laef$c;
 
     move-result-object v0
 
@@ -351,25 +351,25 @@
 
     .prologue
     .line 32
-    check-cast p1, Ladf$c;
+    check-cast p1, Laef$c;
 
-    invoke-static {p1}, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;->a(Ladf$c;)Landroid/content/ContentValues;
+    invoke-static {p1}, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;->a(Laef$c;)Landroid/content/ContentValues;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
-            "Ladf$c;",
+            "Laef$c;",
             ">;"
         }
     .end annotation
@@ -381,14 +381,12 @@
     return-object v0
 .end method
 
-.method public final b(Lajv;)V
-    .locals 7
+.method public final b(Lakp;)V
+    .locals 6
 
     .prologue
-    const/4 v6, 0x0
-
     .line 139
-    invoke-static {}, Lajv;->y()Landroid/content/Context;
+    invoke-static {}, Lakp;->y()Landroid/content/Context;
 
     move-result-object v0
 
@@ -401,15 +399,6 @@
     move-result-object v1
 
     .line 141
-    const-string v0, "EditionViewStateTable"
-
-    const-string v2, "populateUserObjectFromTable - beginTransaction"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 142
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
     .line 145
@@ -419,7 +408,7 @@
     move-result-object v0
 
     .line 147
-    iget-object v2, p0, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;->c:Ladf;
+    iget-object v2, p0, Lcom/snapchat/android/discover/model/database/table/EditionViewStateTable;->c:Laef;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -436,19 +425,19 @@
 
     move-result-object v0
 
-    check-cast v0, Ladf$c;
+    check-cast v0, Laef$c;
 
-    iget-object v4, v0, Ladf$c;->a:Ljava/lang/String;
+    iget-object v4, v0, Laef$c;->a:Ljava/lang/String;
 
-    iget v5, v0, Ladf$c;->b:I
+    iget v5, v0, Laef$c;->b:I
 
-    invoke-virtual {v2, v4, v5}, Ladf;->a(Ljava/lang/String;I)V
+    invoke-virtual {v2, v4, v5}, Laef;->a(Ljava/lang/String;I)V
 
-    iget-object v4, v0, Ladf$c;->a:Ljava/lang/String;
+    iget-object v4, v0, Laef$c;->a:Ljava/lang/String;
 
-    iget-boolean v0, v0, Ladf$c;->c:Z
+    iget-boolean v0, v0, Laef$c;->c:Z
 
-    invoke-virtual {v2, v4, v0}, Ladf;->a(Ljava/lang/String;Z)V
+    invoke-virtual {v2, v4, v0}, Laef;->a(Ljava/lang/String;Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -461,22 +450,14 @@
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     .line 150
-    const-string v1, "EditionViewStateTable"
-
-    const-string v2, "populateUserObjectFromTable - endTransaction"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     throw v0
 
     .line 147
     :cond_0
     :try_start_1
-    iget-object v0, v2, Ladf;->a:Ladj;
+    iget-object v0, v2, Laef;->a:Laej;
 
-    invoke-virtual {v0}, Ladj;->b()V
+    invoke-virtual {v0}, Laej;->c()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -484,19 +465,10 @@
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     .line 150
-    const-string v0, "EditionViewStateTable"
-
-    const-string v1, "populateUserObjectFromTable - endTransaction"
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 151
     return-void
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue
@@ -518,7 +490,7 @@
     return-object v0
 .end method
 
-.method public final c(Lajv;)V
+.method public final c(Lakp;)V
     .locals 0
 
     .prologue

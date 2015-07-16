@@ -1,14 +1,27 @@
-import com.snapchat.android.database.DataType;
+import com.snapchat.android.model.StoryCollection;
+import com.snapchat.android.model.StorySnapLogbook;
+import java.util.List;
 
-public abstract interface zw
+public final class zw
 {
-  public abstract String getColumnName();
-  
-  public abstract int getColumnNumber();
-  
-  public abstract String getConstraints();
-  
-  public abstract DataType getDataType();
+  @chc
+  public static ajk a(@chc akl paramakl, @chd StoryCollection paramStoryCollection, @chd List<StorySnapLogbook> paramList)
+  {
+    if (paramStoryCollection == null)
+    {
+      if (paramList != null) {}
+      for (boolean bool = true;; bool = false) {
+        return new ajm(bool);
+      }
+    }
+    if ((paramStoryCollection.k() != null) && (paramStoryCollection.k().b() != null)) {
+      return new zv(paramakl, paramStoryCollection);
+    }
+    if (paramList == null) {
+      return new zy(paramakl, paramStoryCollection);
+    }
+    return new zx(paramakl, paramStoryCollection, paramList);
+  }
 }
 
 /* Location:

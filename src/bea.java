@@ -1,12 +1,4 @@
-public final class bea
-{
-  public ahb mStoriesListItem;
-  
-  public bea(ahb paramahb)
-  {
-    mStoriesListItem = paramahb;
-  }
-}
+public final class bea {}
 
 /* Location:
  * Qualified Name:     bea

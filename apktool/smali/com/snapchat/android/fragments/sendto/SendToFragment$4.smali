@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 642
+    .line 645
     iput-object p1, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$4;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 0
 
     .prologue
-    .line 656
+    .line 659
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 650
+    .line 653
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$4;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->q(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lcom/snapchat/android/ui/SendToBottomPanelView;
@@ -57,7 +57,7 @@
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SendToBottomPanelView;->b()V
 
-    .line 651
+    .line 654
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .locals 0
 
     .prologue
-    .line 661
+    .line 664
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .locals 1
 
     .prologue
-    .line 645
+    .line 648
     iget-object v0, p0, Lcom/snapchat/android/fragments/sendto/SendToFragment$4;->a:Lcom/snapchat/android/fragments/sendto/SendToFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/sendto/SendToFragment;->q(Lcom/snapchat/android/fragments/sendto/SendToFragment;)Lcom/snapchat/android/ui/SendToBottomPanelView;
@@ -82,6 +82,6 @@
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/SendToBottomPanelView;->a()V
 
-    .line 646
+    .line 649
     return-void
 .end method

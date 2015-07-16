@@ -29,11 +29,11 @@
 .method private constructor <init>(Lcom/snapchat/videotranscoder/pipeline/Encoder;JIILcom/snapchat/videotranscoder/pipeline/StageDoneCallback;)V
     .locals 6
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/Encoder;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p6    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -189,11 +189,11 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/pipeline/Encoder;JLcom/snapchat/videotranscoder/pipeline/StageDoneCallback;)V
     .locals 8
     .param p1    # Lcom/snapchat/videotranscoder/pipeline/Encoder;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # Lcom/snapchat/videotranscoder/pipeline/StageDoneCallback;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

@@ -1,66 +1,41 @@
-import android.graphics.Bitmap;
+import android.content.Intent;
+import com.google.gson.annotations.SerializedName;
 
-final class anq
-  extends bfm
+public final class anq
+  extends ana
+  implements ui.b<blk>
 {
-  private final aje a;
-  @cgc
-  private final aip b;
+  public blk a;
+  public boolean b = false;
+  private final String c;
   
-  private anq(aje paramaje, aip paramaip)
+  public anq(Intent paramIntent)
   {
-    a = paramaje;
-    b = paramaip;
+    super(paramIntent);
+    c = paramIntent.getStringExtra("new_password");
+    registerCallback(blk.class, this);
   }
   
-  @cgb
-  public final aje a()
+  public final Object getRequestPayload()
   {
-    f();
-    return a;
+    return new anq.a(c);
   }
   
-  @cgc
-  public final String b()
+  protected final String l_()
   {
-    f();
-    if (b != null) {
-      return b.a();
-    }
-    return null;
+    return "/loq/and/change_password";
   }
   
-  protected final void c()
+  @ud
+  public final class a
+    extends qc
   {
-    if (b != null) {
-      b.e();
-    }
-  }
-  
-  @cgc
-  public final Bitmap d()
-  {
-    f();
-    if (b != null) {
-      return b.b();
-    }
-    return null;
-  }
-  
-  public static final class a
-  {
-    final aje a;
-    final awz b;
+    @SerializedName("new_password")
+    String a;
     
-    public a(@cgb aje paramaje)
+    public a(@chc String paramString)
     {
-      this(paramaje, new awz());
-    }
-    
-    private a(@cgb aje paramaje, @cgb awz paramawz)
-    {
-      a = ((aje)ck.a(paramaje));
-      b = ((awz)ck.a(paramawz));
+      a = paramString;
     }
   }
 }

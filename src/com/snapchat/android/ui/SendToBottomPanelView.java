@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
-import avh;
+import awf;
 
 public class SendToBottomPanelView
   extends RelativeLayout
@@ -40,12 +40,12 @@ public class SendToBottomPanelView
   public SendToBottomPanelView(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
   {
     super(paramContext, paramAttributeSet, paramInt);
-    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968724, this, true);
-    d = ((ImageView)findViewById(2131362618));
-    e = ((HorizontalScrollView)findViewById(2131362619));
-    f = ((LinearLayout)findViewById(2131362620));
-    a = ((TextView)findViewById(2131362621));
-    b = ((TextView)findViewById(2131362622));
+    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968726, this, true);
+    d = ((ImageView)findViewById(2131362617));
+    e = ((HorizontalScrollView)findViewById(2131362618));
+    f = ((LinearLayout)findViewById(2131362619));
+    a = ((TextView)findViewById(2131362620));
+    b = ((TextView)findViewById(2131362621));
   }
   
   public final void a()
@@ -62,7 +62,7 @@ public class SendToBottomPanelView
   public final void a(boolean paramBoolean)
   {
     RelativeLayout.LayoutParams localLayoutParams = new RelativeLayout.LayoutParams(getLayoutParams());
-    bottomMargin = ((int)avh.a(0.0F, getContext()));
+    bottomMargin = ((int)awf.a(0.0F, getContext()));
     localLayoutParams.addRule(12);
     if (paramBoolean) {
       setVisibility(0);

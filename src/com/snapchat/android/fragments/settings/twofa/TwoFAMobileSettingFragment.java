@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import ajx;
+import akr;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import avh;
-import ban;
-import bdw;
-import bet;
-import bkr;
-import bks.a;
-import boh;
+import awf;
+import bbo;
+import bev;
+import bfs;
+import bls;
+import blt.a;
+import bpi;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.fragments.verification.PhoneVerificationFragment;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
@@ -24,7 +24,7 @@ import com.squareup.otto.Bus;
 public class TwoFAMobileSettingFragment
   extends PhoneVerificationFragment
 {
-  protected final void a(bkr parambkr) {}
+  protected final void a(bls parambls) {}
   
   protected final WindowConfiguration.StatusBarDrawMode b()
   {
@@ -35,50 +35,50 @@ public class TwoFAMobileSettingFragment
   {
     super.e();
     if ((TextUtils.isEmpty(g.getText())) && (g.requestFocus())) {
-      avh.g(getActivity());
+      awf.g(getActivity());
     }
   }
   
   protected final void f()
   {
     super.f();
-    avh.a(getActivity(), mFragmentLayout);
+    awf.a(getActivity(), mFragmentLayout);
   }
   
   protected final void i()
   {
-    ban.a().a(new bdw(new TwoFactorSettingsEnabledFragment(), TwoFactorSettingsEnabledFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
+    bbo.a().a(new bev(new TwoFactorSettingsEnabledFragment(), TwoFactorSettingsEnabledFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
   }
   
-  protected final bks.a m()
+  protected final blt.a m()
   {
-    return bks.a.TWO_FA_TYPE;
+    return blt.a.TWO_FA_TYPE;
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968773, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968775, paramViewGroup, false);
     q();
     p();
     u();
     n();
     o();
-    c(2131362828).setOnClickListener(new View.OnClickListener()
+    c(2131362821).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        avh.a(getActivity(), TwoFAMobileSettingFragment.a(TwoFAMobileSettingFragment.this));
+        awf.a(getActivity(), TwoFAMobileSettingFragment.a(TwoFAMobileSettingFragment.this));
         getActivity().onBackPressed();
       }
     });
-    if (ajx.f()) {
-      g.setText(ajx.e());
+    if (akr.f()) {
+      g.setText(akr.e());
     }
     for (;;)
     {
       return mFragmentLayout;
-      if ((g.requestFocus()) && (!ajx.aF())) {
-        avh.g(e);
+      if ((g.requestFocus()) && (!akr.aE())) {
+        awf.g(e);
       }
     }
   }
@@ -89,10 +89,10 @@ public class TwoFAMobileSettingFragment
     g.clearFocus();
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
-    super.onVerificationCodeReceivedEvent(parambet);
+    super.onVerificationCodeReceivedEvent(parambfs);
   }
 }
 

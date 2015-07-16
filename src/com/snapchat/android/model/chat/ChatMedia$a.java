@@ -1,9 +1,9 @@
 package com.snapchat.android.model.chat;
 
-import akb.a;
+import akw.a;
 
 public class ChatMedia$a
-  extends akb.a
+  extends akw.a
 {
   public int height;
   String iv;

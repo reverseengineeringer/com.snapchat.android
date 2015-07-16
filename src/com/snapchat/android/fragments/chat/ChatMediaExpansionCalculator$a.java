@@ -1,8 +1,8 @@
 package com.snapchat.android.fragments.chat;
 
 import android.view.View;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.android.model.chat.ChatFeedItem;
 
 final class ChatMediaExpansionCalculator$a
@@ -13,7 +13,7 @@ final class ChatMediaExpansionCalculator$a
   View d;
   ChatMediaExpansionCalculator.ScrollDirection e;
   
-  ChatMediaExpansionCalculator$a(@cgc ChatFeedItem paramChatFeedItem1, @cgc ChatFeedItem paramChatFeedItem2, @cgc View paramView1, @cgc View paramView2, @cgb ChatMediaExpansionCalculator.ScrollDirection paramScrollDirection)
+  ChatMediaExpansionCalculator$a(@chd ChatFeedItem paramChatFeedItem1, @chd ChatFeedItem paramChatFeedItem2, @chd View paramView1, @chd View paramView2, @chc ChatMediaExpansionCalculator.ScrollDirection paramScrollDirection)
   {
     a = paramChatFeedItem1;
     b = paramChatFeedItem2;

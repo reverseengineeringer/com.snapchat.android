@@ -2,13 +2,13 @@ package com.snapchat.android.fragments.cash;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import java.util.Iterator;
 import java.util.List;
-import qv;
-import qv.a;
-import rh;
+import rl;
+import rl.a;
+import rx;
 
 final class CashSettingsFragment$4
   implements View.OnClickListener
@@ -17,19 +17,19 @@ final class CashSettingsFragment$4
   
   public final void onClick(View paramView)
   {
-    paramView = new rh((byte)0);
-    mListener = new qv.a()
+    paramView = new rx((byte)0);
+    mListener = new rl.a()
     {
-      public final void a(@cgb qv paramAnonymousqv) {}
+      public final void a(@chc rl paramAnonymousrl) {}
       
-      public final void a(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+      public final void a(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean)
       {
         if (paramAnonymousList != null)
         {
-          paramAnonymousqv = paramAnonymousList.iterator();
-          while (paramAnonymousqv.hasNext())
+          paramAnonymousrl = paramAnonymousList.iterator();
+          while (paramAnonymousrl.hasNext())
           {
-            paramAnonymousList = (qv)paramAnonymousqv.next();
+            paramAnonymousList = (rl)paramAnonymousrl.next();
             if (paramAnonymousList.d()) {
               paramAnonymousList.a(null);
             }
@@ -38,9 +38,9 @@ final class CashSettingsFragment$4
         CashSettingsFragment.a(a, null);
       }
       
-      public final void b(@cgb qv paramAnonymousqv) {}
+      public final void b(@chc rl paramAnonymousrl) {}
       
-      public final void b(@cgb qv paramAnonymousqv, @cgc List<qv> paramAnonymousList, boolean paramAnonymousBoolean)
+      public final void b(@chc rl paramAnonymousrl, @chd List<rl> paramAnonymousList, boolean paramAnonymousBoolean)
       {
         CashSettingsFragment.a(a, Integer.valueOf(2131493195));
       }

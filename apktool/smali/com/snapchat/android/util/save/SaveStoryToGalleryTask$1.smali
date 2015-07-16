@@ -55,15 +55,15 @@
 
     check-cast p2, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    iget-object v0, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v0, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    invoke-virtual {v0}, Lajr;->W()J
+    invoke-virtual {v0}, Lakl;->U()J
 
     move-result-wide v0
 
-    iget-object v2, p2, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v2, p2, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    invoke-virtual {v2}, Lajr;->W()J
+    invoke-virtual {v2}, Lakl;->U()J
 
     move-result-wide v2
 
@@ -77,15 +77,15 @@
     return v0
 
     :cond_0
-    iget-object v0, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v0, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    invoke-virtual {v0}, Lajr;->W()J
+    invoke-virtual {v0}, Lakl;->U()J
 
     move-result-wide v0
 
-    iget-object v2, p2, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v2, p2, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    invoke-virtual {v2}, Lajr;->W()J
+    invoke-virtual {v2}, Lakl;->U()J
 
     move-result-wide v2
 

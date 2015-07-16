@@ -42,7 +42,6 @@ public class BasicFuture<T>
       }
       completed = true;
       cancelled = true;
-      notifyAll();
       if (callback != null)
       {
         callback.cancelled();
@@ -62,7 +61,6 @@ public class BasicFuture<T>
       }
       completed = true;
       result = paramT;
-      notifyAll();
       if (callback != null)
       {
         callback.completed(paramT);
@@ -82,7 +80,6 @@ public class BasicFuture<T>
       }
       completed = true;
       ex = paramException;
-      notifyAll();
       if (callback != null)
       {
         callback.failed(paramException);
@@ -97,47 +94,43 @@ public class BasicFuture<T>
   {
     try
     {
-      while (!completed) {
-        wait();
-      }
-      localObject2 = getResult();
+      while (!completed) {}
+      Object localObject1 = getResult();
+      return (T)localObject1;
     }
-    finally {}
-    Object localObject2;
-    return (T)localObject2;
+    finally
+    {
+      localObject2 = finally;
+      throw ((Throwable)localObject2);
+    }
   }
   
   public T get(long paramLong, TimeUnit paramTimeUnit)
   {
-    long l2;
+    long l;
     try
     {
       Args.notNull(paramTimeUnit, "Time unit");
-      l2 = paramTimeUnit.toMillis(paramLong);
-      if (l2 <= 0L) {}
+      l = paramTimeUnit.toMillis(paramLong);
+      if (l <= 0L) {}
       for (paramLong = 0L; completed; paramLong = System.currentTimeMillis())
       {
         paramTimeUnit = getResult();
         return paramTimeUnit;
       }
-      if (l2 <= 0L) {
+      if (l <= 0L) {
         throw new TimeoutException();
       }
     }
     finally {}
-    long l1 = l2;
-    long l3;
     do
     {
-      wait(l1);
       if (completed)
       {
         paramTimeUnit = getResult();
         break;
       }
-      l3 = l2 - (System.currentTimeMillis() - paramLong);
-      l1 = l3;
-    } while (l3 > 0L);
+    } while (l - (System.currentTimeMillis() - paramLong) > 0L);
     throw new TimeoutException();
   }
   

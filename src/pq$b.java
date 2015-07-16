@@ -1,13 +1,21 @@
-import com.google.gson.annotations.SerializedName;
-
-class pq$b
+public final class pq$b
 {
-  @SerializedName("exists")
-  boolean exists;
-  @SerializedName("logged")
-  boolean logged;
-  @SerializedName("throttled")
-  boolean throttled;
+  @chd
+  pq.a mABTestForFeature;
+  String mFeatureName;
+  boolean mOnByDefault;
+  
+  pq$b(String paramString, pq.a parama)
+  {
+    this(paramString, parama, (byte)0);
+  }
+  
+  private pq$b(String paramString, pq.a parama, byte paramByte)
+  {
+    mFeatureName = paramString;
+    mOnByDefault = false;
+    mABTestForFeature = parama;
+  }
 }
 
 /* Location:

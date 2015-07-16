@@ -1,8 +1,18 @@
-public abstract interface cjy
+final class cjy
+  extends cji
+  implements cjt
 {
-  public abstract int a(cjz paramcjz, String paramString, int paramInt);
+  static final cjy a = new cjy();
   
-  public abstract int b();
+  public final Class<?> a()
+  {
+    return cic.class;
+  }
+  
+  public final chg b(Object paramObject)
+  {
+    return chk.a(((cic)paramObject).b());
+  }
 }
 
 /* Location:

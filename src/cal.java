@@ -1,43 +1,25 @@
-import java.nio.charset.Charset;
-
-final class cal
+public final class cal
+  extends cab
 {
-  public static final Charset a = Charset.forName("UTF-8");
-  
-  public static int a(int paramInt)
+  public cal()
   {
-    return (0xFF000000 & paramInt) >>> 24 | (0xFF0000 & paramInt) >>> 8 | (0xFF00 & paramInt) << 8 | (paramInt & 0xFF) << 24;
+    super("<", 4);
   }
   
-  public static short a(short paramShort)
+  public final double a(double paramDouble1, double paramDouble2)
   {
-    paramShort = 0xFFFF & paramShort;
-    return (short)((paramShort & 0xFF) << 8 | (0xFF00 & paramShort) >>> 8);
-  }
-  
-  public static void a(long paramLong1, long paramLong2, long paramLong3)
-  {
-    if (((paramLong2 | paramLong3) < 0L) || (paramLong2 > paramLong1) || (paramLong1 - paramLong2 < paramLong3)) {
-      throw new ArrayIndexOutOfBoundsException(String.format("size=%s offset=%s byteCount=%s", new Object[] { Long.valueOf(paramLong1), Long.valueOf(paramLong2), Long.valueOf(paramLong3) }));
+    if (paramDouble1 < paramDouble2) {
+      return 1.0D;
     }
+    return 0.0D;
   }
   
-  public static void a(Throwable paramThrowable)
+  public final String a(String paramString1, String paramString2)
   {
-    throw paramThrowable;
-  }
-  
-  public static boolean a(byte[] paramArrayOfByte1, byte[] paramArrayOfByte2, int paramInt)
-  {
-    int i = 0;
-    while (i < paramInt)
-    {
-      if (paramArrayOfByte1[(i + 0)] != paramArrayOfByte2[(i + 0)]) {
-        return false;
-      }
-      i += 1;
+    if (paramString1.compareTo(paramString2) < 0) {
+      return "1.0";
     }
-    return true;
+    return "0.0";
   }
 }
 

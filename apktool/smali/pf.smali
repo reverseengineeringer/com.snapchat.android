@@ -1,166 +1,184 @@
 .class public final Lpf;
-.super Lot;
+.super Lul;
 .source "SourceFile"
+
+# interfaces
+.implements Lui$b;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lpf$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lul;",
+        "Lui$b",
+        "<",
+        "Lpf$a;",
+        ">;"
+    }
+.end annotation
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "UpdateFeatureSettingsTask"
+.field public static final PATH:Ljava/lang/String; = "/shared/description"
 
-.field private static final TASK_NAME:Ljava/lang/String; = "UpdateFeatureSettingsTask"
+.field private static final TASK_NAME:Ljava/lang/String; = "GetSharedStoryDescriptionTask"
 
 
 # instance fields
-.field private mSnapchatServiceManager:Laol;
+.field mSharedStoryId:Ljava/lang/String;
+
+.field private final mUiHandler:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 2
 
     .prologue
-    .line 20
-    invoke-static {}, Laol;->a()Laol;
+    .line 35
+    new-instance v0, Landroid/os/Handler;
 
-    move-result-object v0
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    invoke-direct {p0, v0}, Lpf;-><init>(Laol;)V
+    move-result-object v1
 
-    .line 21
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    invoke-direct {p0, p1, v0}, Lpf;-><init>(Ljava/lang/String;Landroid/os/Handler;)V
+
+    .line 36
     return-void
 .end method
 
-.method private constructor <init>(Laol;)V
-    .locals 0
+.method private constructor <init>(Ljava/lang/String;Landroid/os/Handler;)V
+    .locals 1
 
     .prologue
-    .line 24
-    invoke-direct {p0}, Lot;-><init>()V
+    .line 38
+    invoke-direct {p0}, Lul;-><init>()V
 
-    .line 25
-    iput-object p1, p0, Lpf;->mSnapchatServiceManager:Laol;
+    .line 39
+    iput-object p1, p0, Lpf;->mSharedStoryId:Ljava/lang/String;
 
-    .line 26
+    .line 40
+    iput-object p2, p0, Lpf;->mUiHandler:Landroid/os/Handler;
+
+    .line 41
+    const-class v0, Lpf$a;
+
+    invoke-virtual {p0, v0, p0}, Lpf;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 42
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Ljava/lang/String;
+.method public final getMethod()Lcom/snapchat/android/api2/framework/HttpMethod;
     .locals 1
 
     .prologue
-    .line 30
-    const-string v0, "/bq/update_feature_settings"
+    .line 51
+    sget-object v0, Lcom/snapchat/android/api2/framework/HttpMethod;->GET:Lcom/snapchat/android/api2/framework/HttpMethod;
 
     return-object v0
 .end method
 
-.method protected final b()Landroid/os/Bundle;
-    .locals 4
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 1
 
     .prologue
-    .line 35
-    new-instance v0, Landroid/os/Bundle;
+    .line 56
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    .line 36
-    const-string v1, "username"
-
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 38
-    new-instance v1, Lbht;
-
-    invoke-direct {v1}, Lbht;-><init>()V
-
-    invoke-static {}, Lajx;->ab()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lbht;->a(Ljava/lang/Boolean;)Lbht;
-
-    move-result-object v1
-
-    invoke-static {}, Lajx;->aa()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lbht;->c(Ljava/lang/Boolean;)Lbht;
-
-    move-result-object v1
-
-    invoke-static {}, Lajx;->ac()Z
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lbht;->b(Ljava/lang/Boolean;)Lbht;
-
-    move-result-object v1
-
-    .line 44
-    const-string v2, "settings"
-
-    invoke-static {}, Latn;->a()Lcom/google/gson/Gson;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 45
     return-object v0
 .end method
 
-.method protected final b(Laku;)V
-    .locals 4
+.method public final getUrl()Ljava/lang/String;
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
+    .line 46
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 55
-    const-string v0, "UpdateFeatureSettingsTask"
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "UpdateFeatureSettingsTask: SUCCESS"
+    const-string v1, "/shared/description"
 
-    new-array v2, v3, [Ljava/lang/Object;
+    invoke-static {v1}, Lbal;->b(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v1
 
-    .line 59
-    iget-object v0, p0, Lpf;->mSnapchatServiceManager:Laol;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v3, v3}, Laol;->a(ZZ)I
+    move-result-object v0
 
-    .line 60
+    const-string v1, "/shared/description?shared_id="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lpf;->mSharedStoryId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "&ln="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 3
+
+    .prologue
+    .line 25
+    check-cast p1, Lpf$a;
+
+    invoke-static {}, Lakp;->g()Lakp;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    if-eqz p1, :cond_0
+
+    iget-object v1, p0, Lpf;->mUiHandler:Landroid/os/Handler;
+
+    new-instance v2, Lpf$1;
+
+    invoke-direct {v2, p0, p1, p2, v0}, Lpf$1;-><init>(Lpf;Lpf$a;Lus;Lakp;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :cond_0
     return-void
-.end method
-
-.method protected final c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 50
-    const-string v0, "UpdateFeatureSettingsTask"
-
-    return-object v0
 .end method

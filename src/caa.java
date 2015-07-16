@@ -1,34 +1,26 @@
-public abstract class caa
-  implements caj
+public final class caa
+  implements byh
 {
-  private final caj a;
-  
-  public caa(caj paramcaj)
+  public final byl a(bya parambya, String paramString)
   {
-    if (paramcaj == null) {
-      throw new IllegalArgumentException("delegate == null");
+    try
+    {
+      parambya = byk.a(paramString, a).trim();
+      return new byl(parambya, 1);
     }
-    a = paramcaj;
+    catch (byi parambya)
+    {
+      throw new byi(parambya.getMessage(), parambya);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("One string argument is required.", parambya);
+    }
   }
   
-  public final cak E_()
+  public final String a()
   {
-    return a.E_();
-  }
-  
-  public long a(bzu parambzu, long paramLong)
-  {
-    return a.a(parambzu, paramLong);
-  }
-  
-  public void close()
-  {
-    a.close();
-  }
-  
-  public String toString()
-  {
-    return getClass().getSimpleName() + "(" + a.toString() + ")";
+    return "trim";
   }
 }
 

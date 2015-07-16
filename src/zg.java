@@ -1,53 +1,31 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.model.StoryCollection;
+import javax.inject.Provider;
 
 public final class zg
+  implements bvk<zf>
 {
-  public final aop a;
-  public final StoryCollection b;
-  public final zf c;
-  public ajr d = null;
-  public ajr e = null;
-  public ajp f = null;
-  public int g;
-  public int h;
+  private final Provider<yw> b;
   
-  public zg(@cgb ajr paramajr, @cgb StoryCollection paramStoryCollection) {}
-  
-  private zg(ajr paramajr, StoryCollection paramStoryCollection, aop paramaop, zf paramzf)
+  static
   {
-    a = paramaop;
-    c = paramzf;
-    h = a;
-    d = paramajr;
-    e = paramajr;
-    b = paramStoryCollection;
-    g = 1;
-    if ((b instanceof ajg))
+    if (!zg.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      h = (b.d() + 1);
-      b.a(h);
-    }
-    for (;;)
-    {
-      Timber.c("StoryAdSequencer", "STORY-ADS: Created story ad sequencer for %s and %s with config:%s, index:%d, snapsSinceAd:%d", new Object[] { d, b, c, Integer.valueOf(g), Integer.valueOf(h) });
+      a = bool;
       return;
-      h = 1;
     }
   }
   
-  public final boolean a()
+  private zg(Provider<yw> paramProvider)
   {
-    ajr localajr = d;
-    zf localzf = c;
-    int i = g;
-    int j = h;
-    int k = b.b(e);
-    if ((localajr != null) && (!mCanAdFollow)) {}
-    while ((i < c) || (j < a) || (k < b)) {
-      return false;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
     }
-    return true;
+    b = paramProvider;
+  }
+  
+  public static bvk<zf> a(Provider<yw> paramProvider)
+  {
+    return new zg(paramProvider);
   }
 }
 

@@ -3,11 +3,11 @@ package com.snapchat.android.preview;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
-import bgr;
-import bgr.a;
+import bhr;
+import bhr.a;
 
 final class SnapPreviewFragment$15
-  implements bgr.a
+  implements bhr.a
 {
   SnapPreviewFragment$15(SnapPreviewFragment paramSnapPreviewFragment) {}
   

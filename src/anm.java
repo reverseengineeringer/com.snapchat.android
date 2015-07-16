@@ -1,14 +1,37 @@
-import android.os.AsyncTask;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
 
-class anm
-  extends AsyncTask<Void, Void, anq>
+public final class anm
+  implements anh
 {
-  private final aje a;
+  private final Intent a;
+  private final ContentValues b;
+  private final boolean c;
   
-  public anm(aje paramaje)
+  public anm(Intent paramIntent)
   {
-    a = paramaje;
+    a = paramIntent;
+    b = ((ContentValues)a.getParcelableExtra("content_values"));
+    c = a.getBooleanExtra("clear", false);
   }
+  
+  public final Intent a()
+  {
+    return a;
+  }
+  
+  public final void a(Context paramContext)
+  {
+    if (c)
+    {
+      abp.b(paramContext);
+      return;
+    }
+    abp.a(paramContext, b);
+  }
+  
+  public final void b() {}
 }
 
 /* Location:

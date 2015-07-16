@@ -1,16 +1,15 @@
 package com.snapchat.android.ui;
 
-import apl;
-import apl.b;
-import bff;
+import aqk;
+import aqk.b;
+import bgf;
 import bj;
 import bj.a;
-import cgb;
-import ck;
-import com.snapchat.android.Timber;
+import chc;
+import co;
 
 final class VerticalFlinger$b
-  implements apl.b
+  implements aqk.b
 {
   VerticalFlinger$b(VerticalFlinger paramVerticalFlinger) {}
   
@@ -20,13 +19,11 @@ final class VerticalFlinger$b
     {
     default: 
       throw new IllegalStateException("Unhandled state: " + VerticalFlinger.a(a));
-    case 2: 
-      Timber.e("VerticalFlinger", "Received spring rest event while in DRAG state. Weird. Ignoring.", new Object[0]);
-    case 1: 
-    case 4: 
-      return;
     case 3: 
       VerticalFlinger.a(a, VerticalFlinger.MovementState.GONE);
+    case 1: 
+    case 2: 
+    case 4: 
       return;
     case 5: 
       VerticalFlinger.a(a, VerticalFlinger.MovementState.CENTER);
@@ -35,16 +32,16 @@ final class VerticalFlinger$b
     VerticalFlinger.a(a, VerticalFlinger.MovementState.CENTER);
   }
   
-  public final void a(@cgb apl paramapl)
+  public final void a(@chc aqk paramaqk)
   {
     VerticalFlinger localVerticalFlinger = a;
-    paramapl.f();
+    paramaqk.f();
     if (d) {}
-    for (paramapl = new bff(a.d.a, b.d.a);; paramapl = e)
+    for (paramaqk = new bgf(a.d.a, b.d.a);; paramaqk = e)
     {
-      VerticalFlinger.a(localVerticalFlinger, paramapl);
+      VerticalFlinger.a(localVerticalFlinger, paramaqk);
       return;
-      ck.a(e);
+      co.a(e);
     }
   }
 }

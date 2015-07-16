@@ -1,106 +1,244 @@
 .class public final Lsa;
-.super Lsh;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbvk;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lsa$a;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lsh",
+        "Ljava/lang/Object;",
+        "Lbvk",
         "<",
-        "Lsi;",
+        "Lrz;",
         ">;"
     }
 .end annotation
 
 
-# instance fields
-.field final mPasscode:Ljava/lang/String;
+# static fields
+.field static final synthetic $assertionsDisabled:Z
 
-.field private final mPaymentId:Ljava/lang/String;
+
+# instance fields
+.field private final mCashErrorReporterProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lqw;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final mSquareProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Ltd;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final supertypeInjector:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lsh$a;)V
+.method static constructor <clinit>()V
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Ljava/lang/String;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p3    # Lsh$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
+    .line 10
+    const-class v0, Lsa;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lsa;->$assertionsDisabled:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lqw;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Ltd;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 17
-    invoke-direct {p0, p3}, Lsh;-><init>(Lsh$a;)V
+    sget-boolean v0, Lsa;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
 
     .line 18
-    iput-object p1, p0, Lsa;->mPaymentId:Ljava/lang/String;
+    :cond_0
+    iput-object p1, p0, Lsa;->supertypeInjector:Lbvk;
 
     .line 19
-    iput-object p2, p0, Lsa;->mPasscode:Ljava/lang/String;
+    sget-boolean v0, Lsa;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
 
     .line 20
-    const-class v0, Lsi;
-
-    invoke-virtual {p0, v0, p0}, Lsa;->a(Ljava/lang/Class;Lts$b;)V
+    :cond_1
+    iput-object p2, p0, Lsa;->mCashErrorReporterProvider:Ljavax/inject/Provider;
 
     .line 21
+    sget-boolean v0, Lsa;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_2
+
+    if-nez p3, :cond_2
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 22
+    :cond_2
+    iput-object p3, p0, Lsa;->mSquareProvider:Ljavax/inject/Provider;
+
+    .line 23
     return-void
+.end method
+
+.method public static a(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lrl;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lqw;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Ltd;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lrz;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 36
+    new-instance v0, Lsa;
+
+    invoke-direct {v0, p0, p1, p2}, Lsa;-><init>(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 36
-    new-instance v0, Lsa$a;
-
-    invoke-direct {v0, p0}, Lsa$a;-><init>(Lsa;)V
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/lang/String;
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
     .prologue
-    .line 25
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 10
+    check-cast p1, Lrz;
 
-    const-string v1, "cash/payments/"
+    if-nez p1, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    iget-object v1, p0, Lsa;->mPaymentId:Ljava/lang/String;
+    const-string v1, "Cannot inject members into a null reference"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lsa;->supertypeInjector:Lbvk;
+
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lsa;->mCashErrorReporterProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "/confirm"
+    check-cast v0, Lqw;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v0, p1, Lrz;->mCashErrorReporter:Lqw;
+
+    iget-object v0, p0, Lsa;->mSquareProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v0, Ltd;
 
-    move-result-object v0
+    iput-object v0, p1, Lrz;->mSquareProvider:Ltd;
 
-    return-object v0
+    return-void
 .end method

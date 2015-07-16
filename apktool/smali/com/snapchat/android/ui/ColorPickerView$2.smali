@@ -143,7 +143,7 @@
     .line 173
     iget-object v1, p0, Lcom/snapchat/android/ui/ColorPickerView$2;->a:Lcom/snapchat/android/ui/ColorPickerView;
 
-    const v2, 0x7f0a0417
+    const v2, 0x7f0a0410
 
     invoke-virtual {v1, v2}, Lcom/snapchat/android/ui/ColorPickerView;->findViewById(I)Landroid/view/View;
 
@@ -154,7 +154,7 @@
     .line 174
     iget-object v1, p0, Lcom/snapchat/android/ui/ColorPickerView$2;->a:Lcom/snapchat/android/ui/ColorPickerView;
 
-    const v2, 0x7f0a0416
+    const v2, 0x7f0a040f
 
     invoke-virtual {v1, v2}, Lcom/snapchat/android/ui/ColorPickerView;->findViewById(I)Landroid/view/View;
 

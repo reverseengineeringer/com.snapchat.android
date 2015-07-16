@@ -7,7 +7,7 @@ import com.google.gson.internal..Gson.Types;
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.ObjectConstructor;
 import com.google.gson.reflect.TypeToken;
-import ej;
+import es;
 import java.lang.reflect.Type;
 import java.util.Map;
 
@@ -49,8 +49,8 @@ public final class MapTypeAdapterFactory
     
     public a(Type paramType1, TypeAdapter<K> paramTypeAdapter, Type paramType2, TypeAdapter<V> paramTypeAdapter1, ObjectConstructor<? extends Map<K, V>> paramObjectConstructor)
     {
-      b = new ej(paramType1, paramType2, paramTypeAdapter);
-      c = new ej(paramType1, paramObjectConstructor, paramTypeAdapter1);
+      b = new es(paramType1, paramType2, paramTypeAdapter);
+      c = new es(paramType1, paramObjectConstructor, paramTypeAdapter1);
       ObjectConstructor localObjectConstructor;
       d = localObjectConstructor;
     }

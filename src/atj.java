@@ -1,14 +1,39 @@
-import android.graphics.Typeface;
 import android.view.View;
-import android.widget.TextView;
+import com.snapchat.android.ui.SwipeImageView;
+import com.snapchat.android.ui.swipefilters.FilterPageType;
+import java.util.ArrayList;
 
 public final class atj
 {
-  public static Typeface mRobotoBoldCondensed;
+  public final ArrayList<ati> a = new ArrayList(11);
+  public final SwipeImageView b;
+  public final asv<asm> c;
   
-  public static void a(View paramView)
+  public atj(SwipeImageView paramSwipeImageView, asv<asm> paramasv)
   {
-    ((TextView)paramView).setTypeface(mRobotoBoldCondensed);
+    b = paramSwipeImageView;
+    c = paramasv;
+  }
+  
+  public final void a()
+  {
+    while (!a.isEmpty()) {
+      ((ati)a.remove(0)).a(b, c);
+    }
+    int i = 0;
+    while (i < c.b())
+    {
+      asm localasm = c.a(i);
+      if ((localasm.b() == FilterPageType.INFOFILTER) && (localasm.d() != null)) {
+        localasm.d().bringToFront();
+      }
+      i += 1;
+    }
+  }
+  
+  public final void a(ati paramati)
+  {
+    a.add(paramati);
   }
 }
 

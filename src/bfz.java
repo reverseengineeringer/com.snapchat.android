@@ -1,18 +1,6 @@
-import java.security.SecureRandom;
-
-public final class bfz
+public abstract interface bfz
 {
-  final SecureRandom mRgen;
-  
-  public bfz()
-  {
-    this(new SecureRandom());
-  }
-  
-  private bfz(SecureRandom paramSecureRandom)
-  {
-    mRgen = paramSecureRandom;
-  }
+  public abstract void a(int paramInt, boolean paramBoolean);
 }
 
 /* Location:

@@ -1,11 +1,4 @@
-import com.google.gson.reflect.TypeToken;
-import java.util.Map;
-
-final class ayg$2
-  extends TypeToken<Map<ayh, String>>
-{
-  ayg$2(ayg paramayg) {}
-}
+public final class ayg$2 {}
 
 /* Location:
  * Qualified Name:     ayg.2

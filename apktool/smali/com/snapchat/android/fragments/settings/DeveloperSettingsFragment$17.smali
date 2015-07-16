@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 425
+    .line 422
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;->b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     iput-object p2, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;->a:Landroid/content/Context;
@@ -44,26 +44,26 @@
     .locals 3
 
     .prologue
-    .line 428
+    .line 425
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;->b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lazm;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lbal;
 
-    invoke-static {}, Lazm;->d()Z
+    invoke-static {}, Lbal;->d()Z
 
     move-result v0
 
-    .line 429
+    .line 426
     if-eq v0, p2, :cond_0
 
-    .line 430
+    .line 427
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;->b:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lazm;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;->c(Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;)Lbal;
 
-    invoke-static {p2}, Lazm;->b(Z)V
+    invoke-static {p2}, Lbal;->b(Z)V
 
-    .line 431
+    .line 428
     iget-object v0, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$17;->a:Landroid/content/Context;
 
     const-string v1, "You will need to refresh your Stories page to see an update since you have changed your horizontal scroll setting! Thanks for testing TTV/HS :D"
@@ -72,7 +72,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/snapchat/android/util/AlertDialogUtils;->c(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 437
+    .line 434
     :cond_0
     return-void
 .end method

@@ -73,13 +73,25 @@
     .locals 4
 
     .prologue
-    const v3, 0x7f0a031f
+    const v3, 0x7f0a031e
+
+    invoke-virtual {p0}, Lcom/snapchat/android/ScAcceptTermsActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/ScAcceptTermsActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
 
     .line 19
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 21
-    const v0, 0x7f04008e
+    const v0, 0x7f040090
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ScAcceptTermsActivity;->setContentView(I)V
 
@@ -130,7 +142,7 @@
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onPause()V
 
     .line 41
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -148,7 +160,7 @@
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onResume()V
 
     .line 35
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -158,14 +170,14 @@
     return-void
 .end method
 
-.method public onStartFragmentEvent(Lbdw;)V
+.method public onStartFragmentEvent(Lbev;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 62
-    iget-object v0, p1, Lbdw;->mFragmentToStart:Lcom/snapchat/android/util/fragment/SnapchatFragment;
+    iget-object v0, p1, Lbev;->mFragmentToStart:Lcom/snapchat/android/util/fragment/SnapchatFragment;
 
     .line 63
     invoke-virtual {v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->toString()Ljava/lang/String;
@@ -178,7 +190,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a031f
+    const v3, 0x7f0a031e
 
     invoke-virtual {v2, v3, v0, v1}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 

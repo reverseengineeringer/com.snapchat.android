@@ -1,13 +1,21 @@
+import android.graphics.Bitmap;
+
 public final class ajl$a
 {
-  public int mGravity = 0;
-  public int mHeight = -1;
-  public boolean mShouldHideSystemUi = false;
-  public int mWidth = -1;
+  public Bitmap mBitmap = null;
+  public final axn mCache;
+  public final String mKey;
   
-  public final ajl a()
+  public ajl$a(@chc axn paramaxn, @chc String paramString)
   {
-    return new ajl(this, (byte)0);
+    mCache = ((axn)co.a(paramaxn));
+    mKey = ((String)co.a(paramString));
+  }
+  
+  public final a a(@chc Bitmap paramBitmap)
+  {
+    mBitmap = ((Bitmap)co.a(paramBitmap));
+    return this;
   }
 }
 

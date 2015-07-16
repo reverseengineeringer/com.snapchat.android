@@ -1,9 +1,15 @@
+import java.util.concurrent.ThreadFactory;
+
 final class bnq$1
-  implements bnq
+  implements ThreadFactory
 {
-  public final void a(bnx parambnx)
+  bnq$1(String paramString) {}
+  
+  public final Thread newThread(Runnable paramRunnable)
   {
-    parambnx.a(bni.k);
+    paramRunnable = new Thread(paramRunnable, a);
+    paramRunnable.setDaemon(b);
+    return paramRunnable;
   }
 }
 

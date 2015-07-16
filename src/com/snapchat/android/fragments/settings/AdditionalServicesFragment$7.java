@@ -1,20 +1,23 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+import aim.a;
+import android.widget.CheckBox;
 import com.snapchat.android.analytics.AnalyticsEvents;
 
 final class AdditionalServicesFragment$7
-  implements CompoundButton.OnCheckedChangeListener
+  implements aim.a
 {
   AdditionalServicesFragment$7(AdditionalServicesFragment paramAdditionalServicesFragment) {}
   
-  public final void onCheckedChanged(CompoundButton paramCompoundButton, boolean paramBoolean)
+  public final void a(boolean paramBoolean)
   {
+    if (!paramBoolean)
+    {
+      AdditionalServicesFragment.a(a).setChecked(false);
+      return;
+    }
+    AnalyticsEvents.a("TOGGLE_SETTING_FILTERS", true);
     AdditionalServicesFragment.b(a);
-    ajx.l(paramBoolean);
-    AnalyticsEvents.a("TOGGLE_SETTING_FLASH", paramBoolean);
   }
 }
 

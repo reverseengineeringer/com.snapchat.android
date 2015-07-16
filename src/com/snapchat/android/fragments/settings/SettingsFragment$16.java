@@ -1,21 +1,21 @@
 package com.snapchat.android.fragments.settings;
 
-import alw;
-import alx;
-import alx.a;
+import amt;
+import amu;
+import amu.a;
 import java.util.Set;
 
 final class SettingsFragment$16
-  implements alw
+  implements amt
 {
   SettingsFragment$16(SettingsFragment paramSettingsFragment) {}
   
-  public final boolean a(alx.a parama)
+  public final boolean a(amu.a parama)
   {
-    return alx.g.contains(c);
+    return amu.g.contains(c);
   }
   
-  public final boolean b(alx.a parama)
+  public final boolean b(amu.a parama)
   {
     return false;
   }

@@ -1,41 +1,43 @@
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.view.View;
+import android.content.Context;
 
 public final class aox
-  extends aow
 {
-  public aox(View paramView1, View paramView2)
+  @chd
+  public static bqe a(Context paramContext)
   {
-    super(paramView1, paramView2);
-  }
-  
-  public final ObjectAnimator a()
-  {
-    float f = avh.a(c) / 2.0F;
-    return ObjectAnimator.ofFloat(b, "translationY", new float[] { f });
-  }
-  
-  protected final ObjectAnimator b()
-  {
-    return ObjectAnimator.ofFloat(c, "alpha", new float[] { 0.0F });
-  }
-  
-  public final void onAnimationCancel(Animator paramAnimator)
-  {
-    b.setTranslationY(0.0F);
-    c.setAlpha(1.0F);
-    c.setVisibility(0);
-  }
-  
-  public final void onAnimationEnd(Animator paramAnimator)
-  {
-    if (d) {
-      return;
+    try
+    {
+      paramContext = new bqe.a(paramContext);
+      aox.a locala = new aox.a((byte)0);
+      if (c != null) {
+        throw new IllegalStateException("Transformer already set.");
+      }
+      c = locala;
+      paramContext = paramContext.a();
+      return paramContext;
     }
-    b.setTranslationY(0.0F);
-    c.setAlpha(1.0F);
-    c.setVisibility(8);
+    catch (NullPointerException paramContext) {}
+    return null;
+  }
+  
+  public static boolean a()
+  {
+    try
+    {
+      bqe.a(null);
+      return false;
+    }
+    catch (IllegalStateException localIllegalStateException) {}
+    return true;
+  }
+  
+  static final class a
+    implements bqe.f
+  {
+    public final bqh a(bqh parambqh)
+    {
+      throw new RuntimeException("Attempt to make request on disabled Picasso instance");
+    }
   }
 }
 

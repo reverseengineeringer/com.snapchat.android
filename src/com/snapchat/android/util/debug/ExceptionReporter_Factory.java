@@ -1,23 +1,23 @@
 package com.snapchat.android.util.debug;
 
-import azo;
-import buo;
+import ban;
+import bvp;
 
 public enum ExceptionReporter_Factory
-  implements buo<azo>
+  implements bvp<ban>
 {
   INSTANCE;
   
   private ExceptionReporter_Factory() {}
   
-  public static buo<azo> create()
+  public static bvp<ban> create()
   {
     return INSTANCE;
   }
   
-  public final azo get()
+  public final ban get()
   {
-    return new azo();
+    return new ban();
   }
 }
 

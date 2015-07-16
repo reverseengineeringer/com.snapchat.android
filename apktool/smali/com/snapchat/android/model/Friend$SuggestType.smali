@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 119
+    .line 120
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestType;
 
     const-string v1, "USERNAME"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestType;->USERNAME:Lcom/snapchat/android/model/Friend$SuggestType;
 
-    .line 120
+    .line 121
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestType;
 
     const-string v1, "ADDRESS_BOOK"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestType;->ADDRESS_BOOK:Lcom/snapchat/android/model/Friend$SuggestType;
 
-    .line 121
+    .line 122
     new-instance v0, Lcom/snapchat/android/model/Friend$SuggestType;
 
     const-string v1, "NONE"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/Friend$SuggestType;->NONE:Lcom/snapchat/android/model/Friend$SuggestType;
 
-    .line 118
+    .line 119
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/model/Friend$SuggestType;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 118
+    .line 119
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 119
     const-class v0, Lcom/snapchat/android/model/Friend$SuggestType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 119
     sget-object v0, Lcom/snapchat/android/model/Friend$SuggestType;->$VALUES:[Lcom/snapchat/android/model/Friend$SuggestType;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/model/Friend$SuggestType;->clone()Ljava/lang/Object;

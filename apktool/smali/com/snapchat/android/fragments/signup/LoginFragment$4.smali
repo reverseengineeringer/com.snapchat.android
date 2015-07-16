@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 334
+    .line 354
     iput-object p1, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$4;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +40,12 @@
     .locals 1
 
     .prologue
-    .line 338
+    .line 358
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/LoginFragment$4;->a:Lcom/snapchat/android/fragments/signup/LoginFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/signup/LoginFragment;->c(Lcom/snapchat/android/fragments/signup/LoginFragment;)V
 
-    .line 339
+    .line 359
     const/4 v0, 0x0
 
     return v0

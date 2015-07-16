@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Lbkf;
+.field final synthetic a:Lblg;
 
 .field final synthetic b:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;Lbkf;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;Lblg;)V
     .locals 0
 
     .prologue
     .line 192
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$5;->b:Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker;
 
-    iput-object p2, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$5;->a:Lbkf;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$5;->a:Lblg;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -51,9 +51,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$5;->a:Lbkf;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/FindNearbyFriendsWorker$5;->a:Lblg;
 
-    invoke-virtual {v1}, Lbkf;->b()Ljava/util/List;
+    invoke-virtual {v1}, Lblg;->b()Ljava/util/List;
 
     move-result-object v1
 

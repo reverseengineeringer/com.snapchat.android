@@ -1,6 +1,6 @@
 package com.snapchat.android.analytics;
 
-import ale;
+import ama;
 import android.text.TextUtils;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
@@ -25,19 +25,19 @@ public final class ChatPerformanceAnalytics
   protected static final String TYPE_KEY = "type";
   protected static final String VIDEO_ERROR_KEY = "video_error";
   private final EasyMetric.EasyMetricFactory mEasyMetricFactory;
-  public final ale mNetworkStatusManager;
+  public final ama mNetworkStatusManager;
   private final Set<String> mReportedLockedVideoLoadMetricIds = new HashSet();
   private final ConcurrentHashMap<String, Map<String, EasyMetric>> mTimedMetricsMap;
   
   private ChatPerformanceAnalytics()
   {
-    this(new EasyMetric.EasyMetricFactory(), ale.a());
+    this(new EasyMetric.EasyMetricFactory(), ama.a());
   }
   
-  private ChatPerformanceAnalytics(EasyMetric.EasyMetricFactory paramEasyMetricFactory, ale paramale)
+  private ChatPerformanceAnalytics(EasyMetric.EasyMetricFactory paramEasyMetricFactory, ama paramama)
   {
     mEasyMetricFactory = paramEasyMetricFactory;
-    mNetworkStatusManager = paramale;
+    mNetworkStatusManager = paramama;
     mTimedMetricsMap = new ConcurrentHashMap();
   }
   

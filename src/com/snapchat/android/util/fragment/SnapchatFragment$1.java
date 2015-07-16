@@ -1,11 +1,11 @@
 package com.snapchat.android.util.fragment;
 
-import aux;
+import avv;
 import com.snapchat.android.analytics.CameraEventAnalytics;
-import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetricManager;
 import com.snapchat.android.util.StartupPath;
-import nf;
+import nw;
 
 final class SnapchatFragment$1
   implements Runnable
@@ -15,10 +15,10 @@ final class SnapchatFragment$1
   public final void run()
   {
     this$0.f(true);
-    nf localnf = SnapchatFragment.a(this$0);
+    nw localnw = SnapchatFragment.a(this$0);
     if (mStartupMetric != null)
     {
-      StartupPath localStartupPath2 = aux.b();
+      StartupPath localStartupPath2 = avv.b();
       StartupPath localStartupPath1 = localStartupPath2;
       if (localStartupPath2 == StartupPath.FROM_DESTROYED_STATE) {
         localStartupPath1 = StartupPath.FROM_KILLED_STATE;
@@ -28,7 +28,7 @@ final class SnapchatFragment$1
       mStartupMetric = null;
     }
     if (this$0.mPageIndex != 2) {
-      amDictionaryEasyMetric.a("CAMERA_READY");
+      amEasyMetricManager.b("CAMERA_READY", "");
     }
   }
 }

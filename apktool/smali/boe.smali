@@ -4,279 +4,392 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field final a:Lbmh;
 
-.field public b:Z
+.field final b:Ljava/net/URI;
 
-.field private final c:Ljava/lang/reflect/Method;
+.field final c:Lbnp;
 
-.field private final d:I
+.field d:Ljava/net/Proxy;
+
+.field e:Ljava/net/InetSocketAddress;
+
+.field f:Lbmr;
+
+.field g:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/net/Proxy;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field h:I
+
+.field i:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/net/InetSocketAddress;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field j:I
+
+.field k:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbmr;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field l:I
+
+.field final m:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbnf;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final n:Lbnm;
+
+.field private final o:Lbmz;
+
+.field private final p:Lbnb;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Object;Ljava/lang/reflect/Method;)V
+.method public constructor <init>(Lbmh;Ljava/net/URI;Lbmz;Lbnb;)V
     .locals 2
 
     .prologue
-    const/4 v0, 0x1
-
-    .line 41
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
-    iput-boolean v0, p0, Lboe;->b:Z
+    .line 62
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    .line 42
-    if-nez p1, :cond_0
+    move-result-object v0
 
-    .line 43
-    new-instance v0, Ljava/lang/NullPointerException;
+    iput-object v0, p0, Lboe;->g:Ljava/util/List;
 
-    const-string v1, "EventProducer target cannot be null."
+    .line 66
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw v0
+    iput-object v0, p0, Lboe;->i:Ljava/util/List;
 
-    .line 45
-    :cond_0
-    if-nez p2, :cond_1
+    .line 70
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    .line 46
-    new-instance v0, Ljava/lang/NullPointerException;
+    move-result-object v0
 
-    const-string v1, "EventProducer method cannot be null."
+    iput-object v0, p0, Lboe;->k:Ljava/util/List;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    .line 74
+    new-instance v0, Ljava/util/ArrayList;
 
-    throw v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 49
-    :cond_1
-    iput-object p1, p0, Lboe;->a:Ljava/lang/Object;
+    iput-object v0, p0, Lboe;->m:Ljava/util/List;
 
-    .line 50
-    iput-object p2, p0, Lboe;->c:Ljava/lang/reflect/Method;
+    .line 77
+    iput-object p1, p0, Lboe;->a:Lbmh;
 
-    .line 51
-    invoke-virtual {p2, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    .line 78
+    iput-object p2, p0, Lboe;->b:Ljava/net/URI;
 
-    .line 55
-    invoke-virtual {p2}, Ljava/lang/reflect/Method;->hashCode()I
+    .line 79
+    iput-object p3, p0, Lboe;->o:Lbmz;
 
-    move-result v0
+    .line 80
+    sget-object v0, Lbnj;->b:Lbnj;
 
-    add-int/lit8 v0, v0, 0x1f
+    invoke-virtual {v0, p3}, Lbnj;->b(Lbmz;)Lbnp;
 
-    mul-int/lit8 v0, v0, 0x1f
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+    iput-object v0, p0, Lboe;->c:Lbnp;
 
-    move-result v1
+    .line 81
+    sget-object v0, Lbnj;->b:Lbnj;
 
-    add-int/2addr v0, v1
+    invoke-virtual {v0, p3}, Lbnj;->c(Lbmz;)Lbnm;
 
-    iput v0, p0, Lboe;->d:I
+    move-result-object v0
 
-    .line 57
+    iput-object v0, p0, Lboe;->n:Lbnm;
+
+    .line 82
+    iput-object p4, p0, Lboe;->p:Lbnb;
+
+    .line 84
+    iget-object v0, p1, Lbmh;->a:Ljava/net/Proxy;
+
+    if-eqz v0, :cond_0
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lboe;->g:Ljava/util/List;
+
+    :goto_0
+    const/4 v0, 0x0
+
+    iput v0, p0, Lboe;->h:I
+
+    .line 85
     return-void
+
+    .line 84
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lboe;->g:Ljava/util/List;
+
+    iget-object v0, p0, Lboe;->o:Lbmz;
+
+    iget-object v0, v0, Lbmz;->j:Ljava/net/ProxySelector;
+
+    invoke-virtual {v0, p2}, Ljava/net/ProxySelector;->select(Ljava/net/URI;)Ljava/util/List;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Lboe;->g:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    :cond_1
+    iget-object v0, p0, Lboe;->g:Ljava/util/List;
+
+    sget-object v1, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
+
+    invoke-static {v1}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
+
+    iget-object v0, p0, Lboe;->g:Ljava/util/List;
+
+    sget-object v1, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 3
+.method public final a(Lbnf;Ljava/io/IOException;)V
+    .locals 6
 
     .prologue
-    .line 80
-    iget-boolean v0, p0, Lboe;->b:Z
+    .line 141
+    iget-object v0, p1, Lbnf;->b:Ljava/net/Proxy;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
 
-    .line 81
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    sget-object v1, Ljava/net/Proxy$Type;->DIRECT:Ljava/net/Proxy$Type;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    if-eq v0, v1, :cond_0
 
-    invoke-virtual {p0}, Lboe;->toString()Ljava/lang/String;
+    iget-object v0, p0, Lboe;->a:Lbmh;
+
+    iget-object v0, v0, Lbmh;->k:Ljava/net/ProxySelector;
+
+    if-eqz v0, :cond_0
+
+    .line 143
+    iget-object v0, p0, Lboe;->a:Lbmh;
+
+    iget-object v0, v0, Lbmh;->k:Ljava/net/ProxySelector;
+
+    iget-object v1, p0, Lboe;->b:Ljava/net/URI;
+
+    iget-object v2, p1, Lbnf;->b:Ljava/net/Proxy;
+
+    invoke-virtual {v2}, Ljava/net/Proxy;->address()Ljava/net/SocketAddress;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2, p2}, Ljava/net/ProxySelector;->connectFailed(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V
 
-    move-result-object v1
-
-    const-string v2, " has been invalidated and can no longer produce events."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 84
+    .line 146
     :cond_0
-    :try_start_0
-    iget-object v0, p0, Lboe;->c:Ljava/lang/reflect/Method;
+    iget-object v0, p0, Lboe;->c:Lbnp;
 
-    iget-object v1, p0, Lboe;->a:Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lbnp;->a(Lbnf;)V
 
+    .line 151
+    instance-of v0, p2, Ljavax/net/ssl/SSLHandshakeException;
+
+    if-nez v0, :cond_1
+
+    instance-of v0, p2, Ljavax/net/ssl/SSLProtocolException;
+
+    if-nez v0, :cond_1
+
+    .line 152
+    :goto_0
+    iget v0, p0, Lboe;->l:I
+
+    iget-object v1, p0, Lboe;->k:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_1
+
+    .line 153
+    iget-object v0, p0, Lboe;->k:Ljava/util/List;
+
+    iget v1, p0, Lboe;->l:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lboe;->l:I
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lbmr;
+
+    .line 155
+    invoke-virtual {p0, v4}, Lboe;->a(Lbmr;)Z
+
+    move-result v5
+
+    .line 156
+    new-instance v0, Lbnf;
+
+    iget-object v1, p0, Lboe;->a:Lbmh;
+
+    iget-object v2, p0, Lboe;->d:Ljava/net/Proxy;
+
+    iget-object v3, p0, Lboe;->e:Ljava/net/InetSocketAddress;
+
+    invoke-direct/range {v0 .. v5}, Lbnf;-><init>(Lbmh;Ljava/net/Proxy;Ljava/net/InetSocketAddress;Lbmr;Z)V
+
+    .line 158
+    iget-object v1, p0, Lboe;->c:Lbnp;
+
+    invoke-virtual {v1, v0}, Lbnp;->a(Lbnf;)V
+
+    goto :goto_0
+
+    .line 161
+    :cond_1
+    return-void
+.end method
+
+.method final a(Ljava/net/Proxy;)V
+    .locals 9
+
+    .prologue
     const/4 v2, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .line 200
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, Lboe;->i:Ljava/util/List;
 
-    return-object v0
-
-    .line 85
-    :catch_0
-    move-exception v0
-
-    .line 86
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
-
-    .line 87
-    :catch_1
-    move-exception v0
-
-    .line 88
-    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v1
-
-    instance-of v1, v1, Ljava/lang/Error;
-
-    if-eqz v1, :cond_1
-
-    .line 89
-    invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+    .line 204
+    invoke-virtual {p1}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Error;
+    sget-object v1, Ljava/net/Proxy$Type;->DIRECT:Ljava/net/Proxy$Type;
 
-    throw v0
+    if-eq v0, v1, :cond_0
 
-    .line 91
-    :cond_1
-    throw v0
-.end method
+    invoke-virtual {p1}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    move-result-object v0
 
-    .prologue
-    const/4 v0, 0x1
+    sget-object v1, Ljava/net/Proxy$Type;->SOCKS:Ljava/net/Proxy$Type;
 
-    const/4 v1, 0x0
+    if-ne v0, v1, :cond_2
 
-    .line 104
-    if-ne p0, p1, :cond_1
-
-    .line 118
+    .line 205
     :cond_0
+    iget-object v0, p0, Lboe;->a:Lbmh;
+
+    iget-object v1, v0, Lbmh;->b:Ljava/lang/String;
+
+    .line 206
+    iget-object v0, p0, Lboe;->b:Ljava/net/URI;
+
+    invoke-static {v0}, Lbnq;->a(Ljava/net/URI;)I
+
+    move-result v0
+
+    move v8, v0
+
+    move-object v0, v1
+
+    move v1, v8
+
+    .line 218
     :goto_0
-    return v0
+    if-lez v1, :cond_1
 
-    .line 108
+    const v3, 0xffff
+
+    if-le v1, v3, :cond_5
+
+    .line 219
     :cond_1
-    if-nez p1, :cond_2
+    new-instance v2, Ljava/net/SocketException;
 
-    move v0, v1
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    .line 109
-    goto :goto_0
+    const-string v4, "No route to "
 
-    .line 112
-    :cond_2
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_3
-
-    move v0, v1
-
-    .line 113
-    goto :goto_0
-
-    .line 116
-    :cond_3
-    check-cast p1, Lboe;
-
-    .line 118
-    iget-object v2, p0, Lboe;->c:Ljava/lang/reflect/Method;
-
-    iget-object v3, p1, Lboe;->c:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v2, v3}, Ljava/lang/reflect/Method;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lboe;->a:Ljava/lang/Object;
-
-    iget-object v3, p1, Lboe;->a:Ljava/lang/Object;
-
-    if-eq v2, v3, :cond_0
-
-    :cond_4
-    move v0, v1
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .prologue
-    .line 100
-    iget v0, p0, Lboe;->d:I
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 96
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "[EventProducer "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lboe;->c:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "]"
+    const-string v3, ":"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "; port is out of range"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -286,5 +399,314 @@
 
     move-result-object v0
 
-    return-object v0
+    invoke-direct {v2, v0}, Ljava/net/SocketException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    .line 208
+    :cond_2
+    invoke-virtual {p1}, Ljava/net/Proxy;->address()Ljava/net/SocketAddress;
+
+    move-result-object v0
+
+    .line 209
+    instance-of v1, v0, Ljava/net/InetSocketAddress;
+
+    if-nez v1, :cond_3
+
+    .line 210
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Proxy.address() is not an InetSocketAddress: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 211
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 213
+    :cond_3
+    check-cast v0, Ljava/net/InetSocketAddress;
+
+    .line 214
+    invoke-virtual {v0}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
+
+    move-result-object v1
+
+    if-nez v1, :cond_4
+
+    invoke-virtual {v0}, Ljava/net/InetSocketAddress;->getHostName()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 215
+    :goto_1
+    invoke-virtual {v0}, Ljava/net/InetSocketAddress;->getPort()I
+
+    move-result v0
+
+    move v8, v0
+
+    move-object v0, v1
+
+    move v1, v8
+
+    goto :goto_0
+
+    .line 214
+    :cond_4
+    invoke-virtual {v1}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_1
+
+    .line 224
+    :cond_5
+    iget-object v3, p0, Lboe;->n:Lbnm;
+
+    invoke-interface {v3, v0}, Lbnm;->a(Ljava/lang/String;)[Ljava/net/InetAddress;
+
+    move-result-object v3
+
+    array-length v4, v3
+
+    move v0, v2
+
+    :goto_2
+    if-ge v0, v4, :cond_6
+
+    aget-object v5, v3, v0
+
+    .line 225
+    iget-object v6, p0, Lboe;->i:Ljava/util/List;
+
+    new-instance v7, Ljava/net/InetSocketAddress;
+
+    invoke-direct {v7, v5, v1}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
+
+    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 224
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    .line 227
+    :cond_6
+    iput v2, p0, Lboe;->j:I
+
+    .line 228
+    return-void
+.end method
+
+.method public final a()Z
+    .locals 2
+
+    .prologue
+    .line 183
+    iget v0, p0, Lboe;->h:I
+
+    iget-object v1, p0, Lboe;->g:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method final a(Lbmr;)Z
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 132
+    iget-object v1, p0, Lboe;->k:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eq p1, v1, :cond_0
+
+    .line 133
+    iget-boolean v1, p1, Lbmr;->d:Z
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
+.method public final b()Z
+    .locals 2
+
+    .prologue
+    .line 250
+    iget v0, p0, Lboe;->j:I
+
+    iget-object v1, p0, Lboe;->i:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method final c()V
+    .locals 7
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 266
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lboe;->k:Ljava/util/List;
+
+    .line 267
+    iget-object v0, p0, Lboe;->a:Lbmh;
+
+    iget-object v3, v0, Lbmh;->j:Ljava/util/List;
+
+    .line 268
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    move v1, v2
+
+    :goto_0
+    if-ge v1, v4, :cond_1
+
+    .line 269
+    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbmr;
+
+    .line 270
+    iget-object v5, p0, Lboe;->p:Lbnb;
+
+    invoke-virtual {v5}, Lbnb;->e()Z
+
+    move-result v5
+
+    iget-boolean v6, v0, Lbmr;->d:Z
+
+    if-ne v5, v6, :cond_0
+
+    .line 271
+    iget-object v5, p0, Lboe;->k:Ljava/util/List;
+
+    invoke-interface {v5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 268
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 274
+    :cond_1
+    iput v2, p0, Lboe;->l:I
+
+    .line 275
+    return-void
+.end method
+
+.method public final d()Z
+    .locals 2
+
+    .prologue
+    .line 279
+    iget v0, p0, Lboe;->l:I
+
+    iget-object v1, p0, Lboe;->k:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final e()Z
+    .locals 1
+
+    .prologue
+    .line 299
+    iget-object v0, p0, Lboe;->m:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

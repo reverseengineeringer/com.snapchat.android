@@ -1,11 +1,11 @@
 .class final Lcom/snapchat/android/fragments/stories/StoriesFragment$9;
-.super Lapz;
+.super Laqy;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/fragments/stories/StoriesFragment;->onSharedStoryButtonClickedEvent(Lbdh;)V
+    value = Lcom/snapchat/android/fragments/stories/StoriesFragment;->onSharedStoryButtonClickedEvent(Lbeh;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,10 +23,10 @@
     .locals 0
 
     .prologue
-    .line 1330
+    .line 1327
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$9;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    invoke-direct {p0, p2, p3}, Lapz;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {p0, p2, p3}, Laqy;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -37,6 +37,6 @@
     .locals 0
 
     .prologue
-    .line 1333
+    .line 1330
     return-void
 .end method

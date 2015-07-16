@@ -97,7 +97,7 @@
 
     .prologue
     .line 42
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->k()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->e()Ljava/lang/String;
 
     move-result-object v0
 

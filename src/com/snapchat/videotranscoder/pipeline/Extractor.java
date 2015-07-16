@@ -2,7 +2,7 @@ package com.snapchat.videotranscoder.pipeline;
 
 import android.media.MediaExtractor;
 import android.media.MediaFormat;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.task.SetupException;
 import com.snapchat.videotranscoder.task.TranscodingException;
 import com.snapchat.videotranscoder.utils.MimeTools;
@@ -110,7 +110,7 @@ public abstract class Extractor
     }
   }
   
-  public void setDecoderCodec(@cgb Codec paramCodec)
+  public void setDecoderCodec(@chc Codec paramCodec)
   {
     mDecoderCodec = paramCodec;
   }

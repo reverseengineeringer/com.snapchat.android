@@ -1,9 +1,6 @@
-.class final Laeu$2;
+.class final synthetic Laeu$2;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/media/MediaPlayer$OnPreparedListener;
 
 
 # annotations
@@ -12,105 +9,93 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1008
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic a:Laeu;
+# static fields
+.field static final synthetic a:[I
 
 
 # direct methods
-.method constructor <init>(Laeu;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 197
-    iput-object p1, p0, Laeu$2;->a:Laeu;
+    .line 72
+    invoke-static {}, Lcom/snapchat/android/discover/model/DSnapPanel$Docking;->values()[Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
-    return-void
-.end method
+    array-length v0, v0
 
+    new-array v0, v0, [I
 
-# virtual methods
-.method public final onPrepared(Landroid/media/MediaPlayer;)V
-    .locals 6
+    sput-object v0, Laeu$2;->a:[I
 
-    .prologue
-    .line 200
-    iget-object v0, p0, Laeu$2;->a:Laeu;
+    :try_start_0
+    sget-object v0, Laeu$2;->a:[I
 
-    invoke-virtual {p1}, Landroid/media/MediaPlayer;->getVideoWidth()I
+    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$Docking;->MEDIA_BOTTOM:Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
 
-    move-result v1
-
-    int-to-float v1, v1
-
-    iput v1, v0, Laeu;->h:F
-
-    .line 201
-    iget-object v0, p0, Laeu$2;->a:Laeu;
-
-    invoke-virtual {p1}, Landroid/media/MediaPlayer;->getVideoHeight()I
+    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$Docking;->ordinal()I
 
     move-result v1
 
-    int-to-float v1, v1
+    const/4 v2, 0x1
 
-    iput v1, v0, Laeu;->i:F
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 202
-    iget-object v0, p0, Laeu$2;->a:Laeu;
-
-    invoke-virtual {p1}, Landroid/media/MediaPlayer;->getDuration()I
-
-    move-result v1
-
-    iput v1, v0, Laeu;->g:I
-
-    .line 204
-    iget-object v0, p0, Laeu$2;->a:Laeu;
-
-    iget-object v0, v0, Laeu;->e:Laeq;
-
-    .line 205
-    if-eqz v0, :cond_1
-
-    .line 209
-    iget-object v1, p0, Laeu$2;->a:Laeu;
-
-    iget-boolean v1, v1, Laeu;->a:Z
-
-    if-nez v1, :cond_0
-
-    .line 215
-    iget-object v1, p0, Laeu$2;->a:Laeu;
-
-    iget-object v1, v1, Laeu;->b:Lcom/snapchat/android/ui/TextureVideoView;
-
-    new-instance v2, Laeu$2$1;
-
-    invoke-direct {v2, p0, v0}, Laeu$2$1;-><init>(Laeu$2;Laeq;)V
-
-    const-wide/16 v4, 0xfa
-
-    invoke-virtual {v1, v2, v4, v5}, Lcom/snapchat/android/ui/TextureVideoView;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 230
-    :cond_0
     :goto_0
+    :try_start_1
+    sget-object v0, Laeu$2;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$Docking;->MEDIA_CENTER:Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$Docking;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :goto_1
+    :try_start_2
+    sget-object v0, Laeu$2;->a:[I
+
+    sget-object v1, Lcom/snapchat/android/discover/model/DSnapPanel$Docking;->MEDIA_TOP:Lcom/snapchat/android/discover/model/DSnapPanel$Docking;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/discover/model/DSnapPanel$Docking;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
+
+    :goto_2
     return-void
 
-    .line 228
-    :cond_1
-    iget-object v0, p0, Laeu$2;->a:Laeu;
+    :catch_0
+    move-exception v0
 
-    iget-boolean v0, v0, Laeu;->d:Z
+    goto :goto_2
 
-    invoke-virtual {p1, v0}, Landroid/media/MediaPlayer;->setLooping(Z)V
+    :catch_1
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_2
+    move-exception v0
 
     goto :goto_0
 .end method

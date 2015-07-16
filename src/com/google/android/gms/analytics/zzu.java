@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 class zzu
   extends BroadcastReceiver
@@ -19,6 +21,8 @@ class zzu
   public void onReceive(Context paramContext, Intent paramIntent)
   {
     boolean bool1 = false;
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     paramContext = paramIntent.getAction();
     if ("android.net.conn.CONNECTIVITY_CHANGE".equals(paramContext))
     {

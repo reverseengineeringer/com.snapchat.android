@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.pipeline.EncoderConfiguration;
 
 public class TranscodingConfiguration
@@ -13,7 +13,7 @@ public class TranscodingConfiguration
   private final MediaSource[] mSources;
   private final EncoderConfiguration mVideoEncoderConfiguration;
   
-  public TranscodingConfiguration(@cgb MediaSource[] paramArrayOfMediaSource, @cgb String paramString, @cgc EncoderConfiguration paramEncoderConfiguration1, @cgc EncoderConfiguration paramEncoderConfiguration2, boolean paramBoolean)
+  public TranscodingConfiguration(@chc MediaSource[] paramArrayOfMediaSource, @chc String paramString, @chd EncoderConfiguration paramEncoderConfiguration1, @chd EncoderConfiguration paramEncoderConfiguration2, boolean paramBoolean)
   {
     if (paramArrayOfMediaSource == null) {
       throw new NullPointerException("sources is null");

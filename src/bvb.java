@@ -1,24 +1,170 @@
-public abstract class bvb
-  extends bvh
+import java.io.IOException;
+import java.io.InputStream;
+
+public final class bvb
+  extends InputStream
 {
-  public boolean a()
+  private final InputStream a;
+  private final bum b;
+  private final btc c;
+  
+  public bvb(InputStream paramInputStream, bum parambum, btc parambtc)
   {
-    return false;
+    if (paramInputStream == null) {
+      throw new NullPointerException("delegate was null");
+    }
+    if (parambum == null) {
+      throw new NullPointerException("dispatch was null");
+    }
+    if (parambtc == null) {
+      throw new NullPointerException("stats were null");
+    }
+    a = paramInputStream;
+    b = parambum;
+    c = parambtc;
   }
   
-  public String b()
+  private void a(int paramInt1, int paramInt2)
   {
-    return null;
+    try
+    {
+      if (c != null)
+      {
+        if (paramInt1 == -1)
+        {
+          b.a(c);
+          return;
+        }
+        c.a(paramInt2);
+        return;
+      }
+    }
+    catch (ThreadDeath localThreadDeath)
+    {
+      throw localThreadDeath;
+    }
+    catch (Throwable localThrowable)
+    {
+      bue.a(localThrowable);
+    }
   }
   
-  public String c()
+  private void a(Exception paramException)
   {
-    return null;
+    try
+    {
+      c.g = btb.a(paramException);
+      b.a(c);
+      return;
+    }
+    catch (ThreadDeath paramException)
+    {
+      throw paramException;
+    }
+    catch (Throwable paramException)
+    {
+      bue.a(paramException);
+    }
   }
   
-  public String d()
+  public final int available()
   {
-    return null;
+    return a.available();
+  }
+  
+  public final void close()
+  {
+    a.close();
+  }
+  
+  public final void mark(int paramInt)
+  {
+    a.mark(paramInt);
+  }
+  
+  public final boolean markSupported()
+  {
+    return a.markSupported();
+  }
+  
+  public final int read()
+  {
+    try
+    {
+      int i = a.read();
+      a(i, 1);
+      return i;
+    }
+    catch (IOException localIOException)
+    {
+      a(localIOException);
+      throw localIOException;
+    }
+  }
+  
+  public final int read(byte[] paramArrayOfByte)
+  {
+    try
+    {
+      int i = a.read(paramArrayOfByte);
+      a(i, i);
+      return i;
+    }
+    catch (IOException paramArrayOfByte)
+    {
+      a(paramArrayOfByte);
+      throw paramArrayOfByte;
+    }
+  }
+  
+  public final int read(byte[] paramArrayOfByte, int paramInt1, int paramInt2)
+  {
+    try
+    {
+      paramInt1 = a.read(paramArrayOfByte, paramInt1, paramInt2);
+      a(paramInt1, paramInt1);
+      return paramInt1;
+    }
+    catch (IOException paramArrayOfByte)
+    {
+      a(paramArrayOfByte);
+      throw paramArrayOfByte;
+    }
+  }
+  
+  public final void reset()
+  {
+    try
+    {
+      a.reset();
+      return;
+    }
+    finally
+    {
+      localObject = finally;
+      throw ((Throwable)localObject);
+    }
+  }
+  
+  public final long skip(long paramLong)
+  {
+    paramLong = a.skip(paramLong);
+    try
+    {
+      if (c != null) {
+        c.a(paramLong);
+      }
+      return paramLong;
+    }
+    catch (ThreadDeath localThreadDeath)
+    {
+      throw localThreadDeath;
+    }
+    catch (Throwable localThrowable)
+    {
+      bue.a(localThrowable);
+    }
+    return paramLong;
   }
 }
 

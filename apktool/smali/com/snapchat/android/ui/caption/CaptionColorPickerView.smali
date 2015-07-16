@@ -22,13 +22,13 @@
 
     .prologue
     .line 19
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lapp;
+    new-instance v1, Laqo;
 
-    invoke-direct {v1, p1}, Lapp;-><init>(I)V
+    invoke-direct {v1, p1}, Laqo;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

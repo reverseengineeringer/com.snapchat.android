@@ -1,143 +1,75 @@
 .class public final Lwo;
-.super Ljava/lang/Object;
+.super Lwj;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuo;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
-        "<",
-        "Lwn;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic a:Z
-
-
-# instance fields
-.field private final b:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lwn;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
+    .locals 2
 
     .prologue
-    .line 7
-    const-class v0, Lwo;
+    .line 16
+    invoke-direct {p0, p1, p2, p3}, Lwj;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    .line 18
+    iget-object v0, p0, Lwo;->g:Landroid/widget/TextView;
 
-    move-result v0
+    const/16 v1, 0x8
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    const/4 v0, 0x1
+    .line 20
+    iget-object v0, p0, Lwo;->f:Landroid/widget/TextView;
 
-    :goto_0
-    sput-boolean v0, Lwo;->a:Z
+    const v1, 0x7f020025
 
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    .line 21
+    iget-object v0, p0, Lwo;->f:Landroid/widget/TextView;
+
+    new-instance v1, Lwo$1;
+
+    invoke-direct {v1, p0}, Lwo$1;-><init>(Lwo;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 29
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lwn;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    sget-boolean v0, Lwo;->a:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 13
-    :cond_0
-    iput-object p1, p0, Lwo;->b:Lbuj;
-
-    .line 14
-    return-void
-.end method
-
-.method public static a(Lbuj;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lwn;",
-            ">;)",
-            "Lbuo",
-            "<",
-            "Lwn;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 24
-    new-instance v0, Lwo;
-
-    invoke-direct {v0, p0}, Lwo;-><init>(Lbuj;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 2
+.method public final b()V
+    .locals 0
 
     .prologue
-    .line 7
-    new-instance v0, Lwn;
+    .line 32
+    return-void
+.end method
 
-    invoke-direct {v0}, Lwn;-><init>()V
+.method public final c()V
+    .locals 0
 
-    iget-object v1, p0, Lwo;->b:Lbuj;
+    .prologue
+    .line 35
+    return-void
+.end method
 
-    invoke-interface {v1, v0}, Lbuj;->a(Ljava/lang/Object;)V
+.method protected final c(Z)V
+    .locals 0
 
-    return-object v0
+    .prologue
+    .line 40
+    return-void
+.end method
+
+.method protected final h()Z
+    .locals 1
+
+    .prologue
+    .line 44
+    const/4 v0, 0x0
+
+    return v0
 .end method

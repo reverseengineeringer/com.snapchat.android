@@ -1,66 +1,29 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.a;
-import android.support.v7.widget.RecyclerView.h;
-import android.support.v7.widget.RecyclerView.j;
-import avh;
-import com.snapchat.android.ui.listeners.SwipeableRecyclerViewItemTouchListener;
-import us;
+import android.view.View;
+import bvs;
+import in.srain.cube.views.ptr.PtrFrameLayout;
 
 final class FeedFragment$2
-  extends RecyclerView.j
+  implements bvs
 {
-  private int d;
+  FeedFragment$2(FeedFragment paramFeedFragment) {}
   
-  FeedFragment$2(FeedFragment paramFeedFragment, RecyclerView.j paramj, SwipeableRecyclerViewItemTouchListener paramSwipeableRecyclerViewItemTouchListener) {}
-  
-  public final void a(RecyclerView paramRecyclerView, int paramInt)
+  public final void a(PtrFrameLayout paramPtrFrameLayout)
   {
-    a.a(paramRecyclerView, paramInt);
-    if (paramInt == 0) {
-      b.a(true);
-    }
-    for (;;)
-    {
-      d = paramInt;
-      return;
-      if (d == 0)
-      {
-        b.a(false);
-        FeedFragment.d(c).c();
-      }
-      avh.a(c.getActivity(), FeedFragment.k(c));
-    }
+    paramPtrFrameLayout.post(FeedFragment.j(a));
   }
   
-  public final void a(RecyclerView paramRecyclerView, int paramInt1, int paramInt2)
+  public final boolean a()
   {
-    a.a(paramRecyclerView, paramInt1, paramInt2);
-    if (!FeedFragment.l(c).c())
-    {
-      paramInt2 = FeedFragment.i(c).l();
-      paramRecyclerView = FeedFragment.i(c);
-      if (q == null) {
-        break label95;
-      }
-      paramRecyclerView = q.getAdapter();
-      if (paramRecyclerView == null) {
-        break label100;
-      }
+    Object localObject = FeedFragment.i(a);
+    localObject = ((LinearLayoutManager)localObject).a(0, ((LinearLayoutManager)localObject).l(), true);
+    if (localObject == null) {}
+    for (int i = -1; i == 0; i = LinearLayoutManager.a((View)localObject)) {
+      return true;
     }
-    label95:
-    label100:
-    for (paramInt1 = paramRecyclerView.a();; paramInt1 = 0)
-    {
-      if (paramInt2 + FeedFragment.i(c).h() >= paramInt1 - 5) {
-        FeedFragment.l(c).b();
-      }
-      return;
-      paramRecyclerView = null;
-      break;
-    }
+    return false;
   }
 }
 

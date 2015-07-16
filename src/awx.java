@@ -1,95 +1,26 @@
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
-import com.snapchat.android.Timber;
-import com.snapchat.android.model.Mediabryo;
-import java.util.concurrent.Callable;
+import com.snapchat.android.util.profileimages.ProfileImageUtils;
 
-@bwq
 public final class awx
+  extends AsyncTask<Void, Void, Bitmap>
 {
-  private static final String TAG = "SendSnapCacheWrapper";
-  private static awx sInstance;
+  private Bitmap mBitmap;
+  private Bitmap mMask;
+  private int mProfileImageIndex;
+  private ProfileImageUtils mProfileImageUtils;
   
-  public static awx a()
+  public awx(@chc Bitmap paramBitmap1, @chc Bitmap paramBitmap2, int paramInt)
   {
-    if (sInstance == null) {
-      sInstance = new awx();
-    }
-    return sInstance;
+    this(paramBitmap1, paramBitmap2, paramInt, ProfileImageUtils.a());
   }
   
-  @caq
-  public static byte[] a(@cgb aim paramaim)
+  private awx(Bitmap paramBitmap1, Bitmap paramBitmap2, int paramInt, ProfileImageUtils paramProfileImageUtils)
   {
-    bgp.b();
-    String str = mClientId;
-    if (aut.a(paramaim)) {
-      return awq.MY_SNAP_VIDEO_CACHE.a(str);
-    }
-    return awq.MY_SNAP_IMAGE_CACHE.a(str);
-  }
-  
-  public static boolean c(@cgb aim paramaim)
-  {
-    Object localObject = mClientId;
-    byte[] arrayOfByte = paramaim.g();
-    if (arrayOfByte == null)
-    {
-      Timber.e("SendSnapCacheWrapper", "Invalid image Snap with null media bytes. Client Id: %s", new Object[] { mClientId });
-      return false;
-    }
-    try
-    {
-      awq.MY_SNAP_IMAGE_CACHE.a((String)localObject, arrayOfByte);
-      localObject = aur.c(mCompositeImageBitmap);
-      if (localObject != null) {
-        awq.MY_STORY_SNAP_THUMBNAIL_CACHE.a(mClientId, (byte[])localObject);
-      } else {
-        Timber.e("SendSnapCacheWrapper", "Not able to create thumbnail for image snap: %s", new Object[] { mClientId });
-      }
-    }
-    catch (aws paramaim)
-    {
-      Timber.f("SendSnapCacheWrapper", "saveImageToCache exception: " + paramaim, new Object[0]);
-      return false;
-    }
-    return true;
-  }
-  
-  public final boolean a(ajm paramajm, bfj parambfj)
-  {
-    final String str = mClientId;
-    final byte[] arrayOfByte = paramajm.g();
-    if (arrayOfByte == null)
-    {
-      Timber.e("SendSnapCacheWrapper", "Invalid video Snap with null media bytes. Client Id: %s", new Object[] { mClientId });
-      return false;
-    }
-    try
-    {
-      new aug().a(new Callable() {}).call();
-      parambfj = parambfj.b(paramajm.n());
-      if (parambfj != null)
-      {
-        str = mClientId;
-        paramajm = aur.a(parambfj, mCompositeImageBitmap);
-        if (paramajm != null) {
-          awq.MY_STORY_SNAP_THUMBNAIL_CACHE.a(str, paramajm);
-        }
-        parambfj.recycle();
-      }
-      return true;
-    }
-    catch (Exception paramajm)
-    {
-      Timber.f("SendSnapCacheWrapper", "saveVideoToCache exception: " + paramajm, new Object[0]);
-    }
-    return false;
-  }
-  
-  public final void b(final aim paramaim)
-  {
-    new AsyncTask() {}.executeOnExecutor(auh.MISCELLANEOUS_EXECUTOR, new Void[0]);
+    mBitmap = paramBitmap1;
+    mMask = paramBitmap2;
+    mProfileImageIndex = paramInt;
+    mProfileImageUtils = paramProfileImageUtils;
   }
 }
 

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
+import kf;
 
 public class MyFriendsSearchViewFragment
   extends MyFriendsFragment
@@ -13,6 +14,7 @@ public class MyFriendsSearchViewFragment
   public final boolean g()
   {
     G();
+    a(kf.BACK_BUTTON);
     return false;
   }
   
@@ -21,7 +23,7 @@ public class MyFriendsSearchViewFragment
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     paramLayoutInflater = super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
-    C = AnalyticsEvents.AnalyticsContext.PROFILE_MY_FRIENDS_SEARCH_PAGE;
+    D = AnalyticsEvents.AnalyticsContext.PROFILE_MY_FRIENDS_SEARCH_PAGE;
     m.setText(l());
     F();
     return paramLayoutInflater;

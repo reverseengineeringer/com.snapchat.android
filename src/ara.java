@@ -1,28 +1,72 @@
-import android.view.MotionEvent;
-import com.snapchat.android.ui.snapeditormotion.SwipeHandlerType;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.os.Bundle;
+import android.text.TextUtils;
 
-public final class ara
-  implements aqy
+public abstract class ara
+  extends AlertDialog
 {
-  public final SwipeHandlerType a(aph paramaph, arf paramarf, int paramInt)
+  private String a;
+  private String b;
+  private String c;
+  private String d;
+  
+  public ara(Context paramContext, String paramString)
   {
-    if (paramInt == 0)
-    {
-      paramarf.a(0);
-      paramaph.a(c);
-      return SwipeHandlerType.SWIPE_STARTED;
+    this(paramContext, null, paramString);
+  }
+  
+  public ara(Context paramContext, String paramString1, String paramString2)
+  {
+    this(paramContext, paramString1, paramString2, paramContext.getString(2131493601), paramContext.getString(2131493248));
+  }
+  
+  public ara(Context paramContext, String paramString1, String paramString2, String paramString3)
+  {
+    this(paramContext, null, paramString1, paramString2, paramString3);
+  }
+  
+  private ara(Context paramContext, String paramString1, String paramString2, String paramString3, String paramString4)
+  {
+    super(paramContext);
+    a = paramString1;
+    b = paramString2;
+    c = paramString3;
+    d = paramString4;
+  }
+  
+  public abstract void a();
+  
+  public abstract void b();
+  
+  protected void onCreate(Bundle paramBundle)
+  {
+    if (!TextUtils.isEmpty(a)) {
+      setTitle(a);
     }
-    return null;
-  }
-  
-  public final SwipeHandlerType a(aph paramaph, arf paramarf, int paramInt1, int paramInt2)
-  {
-    return null;
-  }
-  
-  public final SwipeHandlerType a(aph paramaph, arf paramarf, MotionEvent paramMotionEvent)
-  {
-    return null;
+    if (!TextUtils.isEmpty(b)) {
+      setMessage(b);
+    }
+    setCancelable(true);
+    setButton(-1, c, new DialogInterface.OnClickListener()
+    {
+      public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+      {
+        paramAnonymousDialogInterface.cancel();
+        a();
+      }
+    });
+    setButton(-2, d, new DialogInterface.OnClickListener()
+    {
+      public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+      {
+        paramAnonymousDialogInterface.cancel();
+        b();
+      }
+    });
+    super.onCreate(paramBundle);
   }
 }
 

@@ -1,7 +1,5 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import amk;
-import amy;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,12 +12,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import aok;
-import aol;
-import atx;
-import ban;
-import bdw;
-import bkj;
+import anh;
+import anv;
+import apg;
+import aph;
+import auv;
+import bbo;
+import bev;
+import blk;
 import cf;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.eventbus.ShowDialogEvent;
@@ -35,54 +35,54 @@ public class RecoveryCodeFragment
   protected Button a;
   protected ProgressBar b;
   private final Set<Integer> c = new HashSet();
-  private final aol d;
-  private aok e = new aok()
+  private final aph d;
+  private apg e = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (RecoveryCodeFragment.a(RecoveryCodeFragment.this).contains(Integer.valueOf(i)))
       {
         RecoveryCodeFragment.a(RecoveryCodeFragment.this).remove(Integer.valueOf(i));
-        if ((paramAnonymousamk instanceof amy))
+        if ((paramAnonymousanh instanceof anv))
         {
           b.setVisibility(8);
-          a.setText(2131493566);
+          a.setText(2131493564);
           a.setClickable(true);
-          paramAnonymousamk = (amy)paramAnonymousamk;
+          paramAnonymousanh = (anv)paramAnonymousanh;
           if (!b) {
             break label116;
           }
-          ban.a().a(new bdw(new RecoveryCodePasswordValidationFragment()));
+          bbo.a().a(new bev(new RecoveryCodePasswordValidationFragment()));
         }
       }
       return;
       label116:
-      paramAnonymousamk = a;
-      RecoveryCodeFragment.a(RecoveryCodeFragment.this, paramAnonymousamk);
+      paramAnonymousanh = a;
+      RecoveryCodeFragment.a(RecoveryCodeFragment.this, paramAnonymousanh);
     }
   };
   
   public RecoveryCodeFragment()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
   @cf
-  private RecoveryCodeFragment(aol paramaol)
+  private RecoveryCodeFragment(aph paramaph)
   {
-    d = paramaol;
+    d = paramaph;
   }
   
-  private void a(bkj parambkj)
+  private void a(blk paramblk)
   {
-    if (parambkj.a().booleanValue())
+    if (paramblk.a().booleanValue())
     {
-      AlertDialogUtils.a(getActivity(), atx.a(null, 2131493564, new Object[] { parambkj.b() }), getString(2131493563), getString(2131493569));
+      AlertDialogUtils.a(getActivity(), auv.a(null, 2131493562, new Object[] { paramblk.b() }), getString(2131493561), getString(2131493567));
       return;
     }
-    ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, parambkj.b()));
+    bbo.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, paramblk.b()));
   }
   
   public final void e()
@@ -91,10 +91,10 @@ public class RecoveryCodeFragment
     Intent localIntent = getActivity().getIntent();
     if ((localIntent != null) && (!TextUtils.isEmpty(localIntent.getStringExtra("recovery_code_message_key"))))
     {
-      bkj localbkj = new bkj().a(Boolean.valueOf(localIntent.getBooleanExtra("recovery_code_succeed_key", false))).a(localIntent.getStringExtra("recovery_code_message_key"));
+      blk localblk = new blk().a(Boolean.valueOf(localIntent.getBooleanExtra("recovery_code_succeed_key", false))).a(localIntent.getStringExtra("recovery_code_message_key"));
       localIntent.removeExtra("recovery_code_succeed_key");
       localIntent.removeExtra("recovery_code_message_key");
-      a(localbkj);
+      a(localblk);
     }
   }
   
@@ -108,17 +108,17 @@ public class RecoveryCodeFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968772, paramViewGroup, false);
-    c(2131362822).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968774, paramViewGroup, false);
+    c(2131362815).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         getActivity().onBackPressed();
       }
     });
-    a = ((Button)c(2131362826));
-    b = ((ProgressBar)c(2131362827));
-    ((TextView)c(2131362825)).setText(2131493565);
+    a = ((Button)c(2131362819));
+    b = ((ProgressBar)c(2131362820));
+    ((TextView)c(2131362818)).setText(2131493563);
     a.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)

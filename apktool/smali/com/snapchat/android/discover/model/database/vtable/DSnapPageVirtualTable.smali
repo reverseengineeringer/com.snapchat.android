@@ -36,9 +36,9 @@
 
 
 # instance fields
-.field public final c:Ladd;
+.field public final c:Laed;
 
-.field public final d:Lade;
+.field public final d:Laee;
 
 .field private final e:Lcom/snapchat/android/util/debug/ReleaseManager;
 
@@ -129,7 +129,7 @@
 
     aget-object v2, v5, v4
 
-    invoke-static {v2}, Lath;->a(Ljava/lang/Enum;)Ljava/lang/String;
+    invoke-static {v2}, Laug;->a(Ljava/lang/Enum;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -259,11 +259,11 @@
 
     .prologue
     .line 91
-    invoke-static {}, Ladd;->a()Ladd;
+    invoke-static {}, Laed;->a()Laed;
 
     move-result-object v0
 
-    invoke-static {}, Lade;->a()Lade;
+    invoke-static {}, Laee;->a()Laee;
 
     move-result-object v1
 
@@ -271,13 +271,13 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable;-><init>(Ladd;Lade;Lcom/snapchat/android/util/debug/ReleaseManager;)V
+    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable;-><init>(Laed;Laee;Lcom/snapchat/android/util/debug/ReleaseManager;)V
 
     .line 92
     return-void
 .end method
 
-.method private constructor <init>(Ladd;Lade;Lcom/snapchat/android/util/debug/ReleaseManager;)V
+.method private constructor <init>(Laed;Laee;Lcom/snapchat/android/util/debug/ReleaseManager;)V
     .locals 0
 
     .prologue
@@ -285,10 +285,10 @@
     invoke-direct {p0}, Lcom/snapchat/android/database/vtable/DbVirtualTable;-><init>()V
 
     .line 97
-    iput-object p1, p0, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable;->c:Ladd;
+    iput-object p1, p0, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable;->c:Laed;
 
     .line 98
-    iput-object p2, p0, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable;->d:Lade;
+    iput-object p2, p0, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable;->d:Laee;
 
     .line 99
     iput-object p3, p0, Lcom/snapchat/android/discover/model/database/vtable/DSnapPageVirtualTable;->e:Lcom/snapchat/android/util/debug/ReleaseManager;
@@ -302,7 +302,7 @@
 
     .prologue
     .line 272
-    invoke-static {p0}, Lath;->a(Ljava/lang/Enum;)Ljava/lang/String;
+    invoke-static {p0}, Laug;->a(Ljava/lang/Enum;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -473,7 +473,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->PUBLISHER_NAME:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -502,7 +502,7 @@
 
     const-string v7, "chunk_dsnap_items"
 
-    invoke-static {v7, v5}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v7, v5}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
@@ -540,7 +540,7 @@
 
     const-string v7, "chunk_dsnap_items"
 
-    invoke-static {v7, v5}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v7, v5}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
@@ -660,7 +660,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/DSnapPage$Form;->TOP_SNAP:Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
-    invoke-static {v4}, Lath;->a(Ljava/lang/Enum;)Ljava/lang/String;
+    invoke-static {v4}, Laug;->a(Ljava/lang/Enum;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -686,7 +686,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/DSnapPage$Form;->LONGFORM:Lcom/snapchat/android/discover/model/DSnapPage$Form;
 
-    invoke-static {v4}, Lath;->a(Ljava/lang/Enum;)Ljava/lang/String;
+    invoke-static {v4}, Laug;->a(Ljava/lang/Enum;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -732,7 +732,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/database/table/DSnapTable$DSnapSchema;->HASH:Lcom/snapchat/android/discover/model/database/table/DSnapTable$DSnapSchema;
 
-    invoke-static {v3, v4}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -750,7 +750,7 @@
 
     sget-object v4, Lcom/snapchat/android/discover/model/database/table/DSnapItemTable$DSnapItemSchema;->HASH:Lcom/snapchat/android/discover/model/database/table/DSnapItemTable$DSnapItemSchema;
 
-    invoke-static {v3, v4}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -782,7 +782,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->HASH:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -800,7 +800,7 @@
 
     sget-object v3, Lcom/snapchat/android/discover/model/database/table/DSnapTable$DSnapSchema;->HASH:Lcom/snapchat/android/discover/model/database/table/DSnapTable$DSnapSchema;
 
-    invoke-static {v2, v3}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -832,7 +832,7 @@
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;->ID:Lcom/snapchat/android/discover/model/database/table/EditionTable$EditionSchema;
 
-    invoke-static {v1, v2}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v2}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -850,7 +850,7 @@
 
     sget-object v2, Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;->EDITION_ID:Lcom/snapchat/android/discover/model/database/table/EditionChunkTable$EditionChunkSchema;
 
-    invoke-static {v1, v2}, Lzv;->a(Ljava/lang/String;Lzw;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v2}, Laau;->a(Ljava/lang/String;Laav;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -887,7 +887,7 @@
     return-object v0
 .end method
 
-.method public final c()[Lzw;
+.method public final c()[Laav;
     .locals 1
 
     .prologue

@@ -1,88 +1,64 @@
-import android.os.Handler;
-import com.addlive.service.listener.AddLiveServiceListener;
-import com.addlive.service.listener.AddLiveServiceListenerAdapter;
-import com.addlive.service.listener.ConnectionLostEvent;
-import com.addlive.service.listener.MessageEvent;
-import com.addlive.service.listener.SessionReconnectedEvent;
-import com.addlive.service.listener.UserStateChangedEvent;
-import com.addlive.service.listener.VideoFrameSizeChangedEvent;
+import android.content.Context;
+import android.support.v7.widget.RecyclerView.a;
+import android.support.v7.widget.RecyclerView.b;
+import android.support.v7.widget.RecyclerView.s;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
+import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.FriendAction;
+import com.snapchat.android.util.AlertDialogUtils;
+import com.snapchat.android.util.AlertDialogUtils.YesNoOption;
+import com.snapchat.android.util.AlertDialogUtils.a;
+import java.util.List;
 
 public final class ahi
-  extends AddLiveServiceListenerAdapter
+  extends RecyclerView.a<ahi.a>
 {
-  private final AddLiveServiceListener a;
-  private final Handler b;
+  final Context c;
+  final List<Friend> d;
+  final String e;
+  final akr f;
   
-  public ahi(AddLiveServiceListener paramAddLiveServiceListener, Handler paramHandler)
+  public ahi(Context paramContext, List<Friend> paramList, akr paramakr)
   {
-    a = paramAddLiveServiceListener;
-    b = paramHandler;
+    c = paramContext;
+    d = paramList;
+    e = c.getString(2131493117);
+    f = paramakr;
   }
   
-  public final void onConnectionLost(final ConnectionLostEvent paramConnectionLostEvent)
+  public final int a()
   {
-    b.post(new Runnable()
-    {
-      public final void run()
-      {
-        ahi.a(ahi.this).onConnectionLost(paramConnectionLostEvent);
-      }
-    });
+    return d.size();
   }
   
-  public final void onMediaStreamEvent(final UserStateChangedEvent paramUserStateChangedEvent)
+  protected final void e(int paramInt)
   {
-    b.post(new Runnable()
+    if ((paramInt >= 0) && (paramInt < a()))
     {
-      public final void run()
-      {
-        ahi.a(ahi.this).onMediaStreamEvent(paramUserStateChangedEvent);
-      }
-    });
+      d.remove(paramInt);
+      d(paramInt);
+      return;
+    }
+    a.b();
   }
   
-  public final void onMessage(final MessageEvent paramMessageEvent)
+  public static final class a
+    extends RecyclerView.s
   {
-    b.post(new Runnable()
+    public TextView k;
+    public View l;
+    public View m;
+    
+    public a(View paramView)
     {
-      public final void run()
-      {
-        ahi.a(ahi.this).onMessage(paramMessageEvent);
-      }
-    });
-  }
-  
-  public final void onSessionReconnected(final SessionReconnectedEvent paramSessionReconnectedEvent)
-  {
-    b.post(new Runnable()
-    {
-      public final void run()
-      {
-        ahi.a(ahi.this).onSessionReconnected(paramSessionReconnectedEvent);
-      }
-    });
-  }
-  
-  public final void onUserEvent(final UserStateChangedEvent paramUserStateChangedEvent)
-  {
-    b.post(new Runnable()
-    {
-      public final void run()
-      {
-        ahi.a(ahi.this).onUserEvent(paramUserStateChangedEvent);
-      }
-    });
-  }
-  
-  public final void onVideoFrameSizeChanged(final VideoFrameSizeChangedEvent paramVideoFrameSizeChangedEvent)
-  {
-    b.post(new Runnable()
-    {
-      public final void run()
-      {
-        ahi.a(ahi.this).onVideoFrameSizeChanged(paramVideoFrameSizeChangedEvent);
-      }
-    });
+      super();
+      k = ((TextView)paramView.findViewById(2131361916));
+      l = paramView.findViewById(2131361917);
+      m = paramView.findViewById(2131361918);
+    }
   }
 }
 

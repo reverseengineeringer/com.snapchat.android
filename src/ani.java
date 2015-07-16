@@ -1,37 +1,39 @@
-import javax.inject.Provider;
+import android.content.Context;
+import android.content.Intent;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
 public final class ani
-  implements buj<anh>
+  implements anh
 {
-  private final buj<apf<ajc>> b;
-  private final Provider<zs> c;
+  private final Intent a;
+  private final String b;
   
-  static
+  public ani(Intent paramIntent)
   {
-    if (!ani.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    a = paramIntent;
+    b = paramIntent.getStringExtra("url");
+  }
+  
+  public final Intent a()
+  {
+    return a;
+  }
+  
+  public final void a(Context paramContext)
+  {
+    paramContext = b;
+    if (paramContext == null) {}
+    try
     {
-      a = bool;
-      return;
+      throw new IllegalArgumentException();
     }
+    catch (Exception paramContext) {}
+    new DefaultHttpClient().execute(new HttpGet(paramContext));
+    return;
   }
   
-  private ani(buj<apf<ajc>> parambuj, Provider<zs> paramProvider)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
-  }
-  
-  public static buj<anh> a(buj<apf<ajc>> parambuj, Provider<zs> paramProvider)
-  {
-    return new ani(parambuj, paramProvider);
-  }
+  public final void b() {}
 }
 
 /* Location:

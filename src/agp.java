@@ -1,12 +1,12 @@
-import com.snapchat.android.fragments.settings.WebFragment;
+import com.snapchat.android.fragments.cash.CashSettingsFragment;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import javax.inject.Provider;
 
 public final class agp
-  implements buj<WebFragment>
+  implements bvk<CashSettingsFragment>
 {
-  private final buj<SnapchatFragment> b;
-  private final Provider<ato> c;
+  private final bvk<SnapchatFragment> b;
+  private final Provider<qx> c;
   
   static
   {
@@ -18,21 +18,21 @@ public final class agp
     }
   }
   
-  private agp(buj<SnapchatFragment> parambuj, Provider<ato> paramProvider)
+  private agp(bvk<SnapchatFragment> parambvk, Provider<qx> paramProvider)
   {
-    if ((!a) && (parambuj == null)) {
+    if ((!a) && (parambvk == null)) {
       throw new AssertionError();
     }
-    b = parambuj;
+    b = parambvk;
     if ((!a) && (paramProvider == null)) {
       throw new AssertionError();
     }
     c = paramProvider;
   }
   
-  public static buj<WebFragment> a(buj<SnapchatFragment> parambuj, Provider<ato> paramProvider)
+  public static bvk<CashSettingsFragment> a(bvk<SnapchatFragment> parambvk, Provider<qx> paramProvider)
   {
-    return new agp(parambuj, paramProvider);
+    return new agp(parambvk, paramProvider);
   }
 }
 

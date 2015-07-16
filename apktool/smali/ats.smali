@@ -3,80 +3,52 @@
 .source "SourceFile"
 
 
-# static fields
-.field private static coefficients:[F
-
-.field private static final lhmatrix:[F
-
-.field private static xvector:[F
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lats$a;
+    }
+.end annotation
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
     .prologue
-    const/4 v1, 0x4
+    .line 56
+    if-nez p0, :cond_0
 
-    .line 8
-    const/16 v0, 0x10
+    .line 57
+    const/4 v0, 0x0
 
-    new-array v0, v0, [F
+    .line 62
+    :goto_0
+    return-object v0
 
-    fill-array-data v0, :array_0
+    .line 59
+    :cond_0
+    invoke-static {}, Lats$a;->a()Ljava/util/regex/Pattern;
 
-    sput-object v0, Lats;->lhmatrix:[F
+    move-result-object v0
 
-    .line 13
-    new-array v0, v1, [F
+    .line 60
+    sget-object v1, Ljava/text/Normalizer$Form;->NFD:Ljava/text/Normalizer$Form;
 
-    sput-object v0, Lats;->xvector:[F
+    invoke-static {p0, v1}, Ljava/text/Normalizer;->normalize(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Ljava/lang/String;
 
-    .line 14
-    new-array v0, v1, [F
+    move-result-object v1
 
-    sput-object v0, Lats;->coefficients:[F
+    .line 62
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    return-void
+    move-result-object v0
 
-    .line 8
-    nop
+    const-string v1, ""
 
-    :array_0
-    .array-data 4
-        0x0
-        -0x41000000    # -0.5f
-        0x3f800000    # 1.0f
-        -0x41000000    # -0.5f
-        0x3f800000    # 1.0f
-        0x0
-        -0x3fe00000    # -2.5f
-        0x3fc00000    # 1.5f
-        0x0
-        0x3f000000    # 0.5f
-        0x40000000    # 2.0f
-        -0x40400000    # -1.5f
-        0x0
-        0x0
-        -0x41000000    # -0.5f
-        0x3f000000    # 0.5f
-    .end array-data
-.end method
+    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
 
-.method public static a(FFF)F
-    .locals 2
+    move-result-object v0
 
-    .prologue
-    .line 33
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    sub-float/2addr v0, p2
-
-    mul-float/2addr v0, p0
-
-    mul-float v1, p2, p1
-
-    add-float/2addr v0, v1
-
-    return v0
+    goto :goto_0
 .end method

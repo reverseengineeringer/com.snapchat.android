@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field protected mClock:Lbgk;
+.field protected mClock:Lbhk;
 
 .field public mDeleteCacheAfterSent:Z
 
@@ -93,11 +93,11 @@
     iput-boolean v1, p0, Lcom/snapchat/android/model/MediaMailingMetadata;->mShouldExecuteSendSnapTaskAfterUpload:Z
 
     .line 90
-    new-instance v0, Lbgk;
+    new-instance v0, Lbhk;
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    invoke-direct {v0}, Lbhk;-><init>()V
 
-    iput-object v0, p0, Lcom/snapchat/android/model/MediaMailingMetadata;->mClock:Lbgk;
+    iput-object v0, p0, Lcom/snapchat/android/model/MediaMailingMetadata;->mClock:Lbhk;
 
     return-void
 .end method
@@ -127,7 +127,7 @@
 .method public final a(Lcom/snapchat/android/model/MediaMailingMetadata$PostStatus;)V
     .locals 4
     .param p1    # Lcom/snapchat/android/model/MediaMailingMetadata$PostStatus;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -247,7 +247,7 @@
 .method public final a(Ljava/lang/String;)V
     .locals 4
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -276,7 +276,7 @@
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     .line 144
-    invoke-static {}, Lajv;->g()Lajv;
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v1
 
@@ -299,7 +299,7 @@
     check-cast v0, Ljava/lang/String;
 
     .line 146
-    invoke-static {v0, v1}, Latm;->b(Ljava/lang/String;Lajv;)Lcom/snapchat/android/model/Friend;
+    invoke-static {v0, v1}, Lauk;->b(Ljava/lang/String;Lakp;)Lcom/snapchat/android/model/Friend;
 
     move-result-object v0
 
@@ -334,7 +334,7 @@
 .method public final a(Ljava/util/List;)V
     .locals 4
     .param p1    # Ljava/util/List;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -356,7 +356,7 @@
     iput-object v0, p0, Lcom/snapchat/android/model/MediaMailingMetadata;->mRecipients:Ljava/util/LinkedHashSet;
 
     .line 154
-    invoke-static {}, Lajv;->g()Lajv;
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v1
 
@@ -379,7 +379,7 @@
     check-cast v0, Ljava/lang/String;
 
     .line 156
-    invoke-static {v0, v1}, Latm;->b(Ljava/lang/String;Lajv;)Lcom/snapchat/android/model/Friend;
+    invoke-static {v0, v1}, Lauk;->b(Ljava/lang/String;Lakp;)Lcom/snapchat/android/model/Friend;
 
     move-result-object v0
 
@@ -522,7 +522,7 @@
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 170
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
@@ -584,7 +584,7 @@
     check-cast v0, Lcom/snapchat/android/model/Friend;
 
     .line 180
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 

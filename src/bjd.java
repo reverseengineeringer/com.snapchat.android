@@ -3,49 +3,40 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class bjd
+public final class bjd
 {
-  @SerializedName("action")
-  protected String action;
-  @SerializedName("fallback_message")
-  protected String fallbackMessage;
-  @SerializedName("friend_action_status")
-  protected String friendActionStatus;
-  @SerializedName("logged")
-  protected Boolean logged;
-  @SerializedName("message")
-  protected String message;
-  @SerializedName("object")
-  protected bhu object;
-  @SerializedName("username")
-  protected String username;
+  @SerializedName("last_read_timestamp")
+  protected Long lastReadTimestamp;
+  @SerializedName("last_reader")
+  protected String lastReader;
+  @SerializedName("last_write_timestamp")
+  protected Long lastWriteTimestamp;
+  @SerializedName("last_write_type")
+  protected String lastWriteType;
+  @SerializedName("last_writer")
+  protected String lastWriter;
   
-  public final String a()
+  public final Long a()
   {
-    return action;
+    return lastReadTimestamp;
   }
   
   public final String b()
   {
-    return message;
+    return lastWriter;
   }
   
-  public final String c()
+  public final Long c()
   {
-    return fallbackMessage;
+    return lastWriteTimestamp;
   }
   
-  public final bhu d()
+  public final String d()
   {
-    return object;
+    return lastWriteType;
   }
   
-  public final String e()
-  {
-    return friendActionStatus;
-  }
-  
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -54,15 +45,15 @@ public class bjd
       return false;
     }
     paramObject = (bjd)paramObject;
-    return new EqualsBuilder().append(action, action).append(message, message).append(fallbackMessage, fallbackMessage).append(username, username).append(object, object).append(friendActionStatus, friendActionStatus).append(logged, logged).isEquals();
+    return new EqualsBuilder().append(lastReader, lastReader).append(lastReadTimestamp, lastReadTimestamp).append(lastWriter, lastWriter).append(lastWriteTimestamp, lastWriteTimestamp).append(lastWriteType, lastWriteType).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(action).append(message).append(fallbackMessage).append(username).append(object).append(friendActionStatus).append(logged).toHashCode();
+    return new HashCodeBuilder().append(lastReader).append(lastReadTimestamp).append(lastWriter).append(lastWriteTimestamp).append(lastWriteType).toHashCode();
   }
   
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

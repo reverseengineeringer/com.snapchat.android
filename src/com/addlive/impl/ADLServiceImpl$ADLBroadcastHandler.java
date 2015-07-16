@@ -3,6 +3,8 @@ package com.addlive.impl;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 class ADLServiceImpl$ADLBroadcastHandler
   extends BroadcastReceiver
@@ -11,6 +13,8 @@ class ADLServiceImpl$ADLBroadcastHandler
   
   public void onReceive(Context paramContext, Intent paramIntent)
   {
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
     if (paramIntent.getAction().equals("android.intent.action.HEADSET_PLUG")) {
       ADLServiceImpl.access$200(this$0).updateAudioSettings();
     }

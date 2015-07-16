@@ -1,10 +1,8 @@
-public abstract class bvp
-  extends bvh
-{
-  public void a(bvy parambvy) {}
-  
-  public void a(Boolean paramBoolean) {}
-}
+import javax.inject.Provider;
+
+public abstract interface bvp<T>
+  extends Provider<T>
+{}
 
 /* Location:
  * Qualified Name:     bvp

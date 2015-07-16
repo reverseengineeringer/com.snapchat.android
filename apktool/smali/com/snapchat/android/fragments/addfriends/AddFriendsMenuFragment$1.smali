@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laok;
+.implements Lapg;
 
 
 # annotations
@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 59
+    .line 62
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,43 +36,43 @@
 
 
 # virtual methods
-.method public final a(Lamk;)V
+.method public final a(Lanh;)V
     .locals 2
 
     .prologue
-    .line 62
-    instance-of v0, p1, Lamo;
+    .line 65
+    instance-of v0, p1, Lanl;
 
     if-eqz v0, :cond_1
 
-    .line 63
-    check-cast p1, Lamo;
+    .line 66
+    check-cast p1, Lanl;
 
-    .line 64
-    iget-boolean v0, p1, Lamo;->c:Z
+    .line 67
+    iget-boolean v0, p1, Lanl;->c:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p1, Lamo;->a:Lcom/snapchat/android/model/SuggestedFriendAction;
+    iget-object v0, p1, Lanl;->a:Lcom/snapchat/android/model/SuggestedFriendAction;
 
     sget-object v1, Lcom/snapchat/android/model/SuggestedFriendAction;->HIDE:Lcom/snapchat/android/model/SuggestedFriendAction;
 
     if-ne v0, v1, :cond_0
 
-    .line 65
+    .line 68
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;
 
-    iget-object v1, p1, Lamo;->b:Ljava/lang/String;
+    iget-object v1, p1, Lanl;->b:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;->a(Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;Ljava/lang/String;)V
 
-    .line 67
+    .line 70
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment$1;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;->a(Lcom/snapchat/android/fragments/addfriends/AddFriendsMenuFragment;)V
 
-    .line 69
+    .line 72
     :cond_1
     return-void
 .end method

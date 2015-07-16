@@ -1,31 +1,16 @@
-import javax.inject.Provider;
-
 public final class abl
-  implements buj<abk>
+  extends aaw
 {
-  private final Provider<ato> b;
+  private static final abl a = new abl();
   
-  static
+  private abl()
   {
-    if (!abl.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
+    super("GeofilterFiles", axo.GEOFILTER_CACHE);
   }
   
-  private abl(Provider<ato> paramProvider)
+  public static abl a()
   {
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    b = paramProvider;
-  }
-  
-  public static buj<abk> a(Provider<ato> paramProvider)
-  {
-    return new abl(paramProvider);
+    return a;
   }
 }
 

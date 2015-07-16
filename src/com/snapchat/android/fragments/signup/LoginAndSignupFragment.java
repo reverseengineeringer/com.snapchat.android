@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.signup;
 
-import ajx;
+import akr;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.res.Resources;
@@ -12,8 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import aol;
-import atj;
+import aph;
+import auh;
 import com.snapchat.android.SnapchatCameraBackgroundActivity;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.RegistrationAnalytics;
@@ -21,27 +21,27 @@ import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import java.util.HashSet;
 import java.util.Set;
-import ky;
+import lq;
 
 public class LoginAndSignupFragment
   extends SnapchatFragment
 {
   private FragmentActivity a;
   private final Set<Integer> b = new HashSet();
-  private final ajx c;
-  private final aol d;
+  private final akr c;
+  private final aph d;
   private final RegistrationAnalytics e;
   
   public LoginAndSignupFragment()
   {
-    this(ajx.a(), aol.a(), RegistrationAnalytics.a());
+    this(akr.a(), aph.a(), RegistrationAnalytics.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private LoginAndSignupFragment(ajx paramajx, aol paramaol, RegistrationAnalytics paramRegistrationAnalytics)
+  private LoginAndSignupFragment(akr paramakr, aph paramaph, RegistrationAnalytics paramRegistrationAnalytics)
   {
-    c = paramajx;
-    d = paramaol;
+    c = paramakr;
+    d = paramaph;
     e = paramRegistrationAnalytics;
   }
   
@@ -53,13 +53,13 @@ public class LoginAndSignupFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, final ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968696, null);
-    paramLayoutInflater = c(2131362418);
-    paramBundle = c(2131362419);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968697, null);
+    paramLayoutInflater = c(2131362416);
+    paramBundle = c(2131362417);
     a.getAssets();
-    atj.a(paramLayoutInflater);
+    auh.a(paramLayoutInflater);
     a.getAssets();
-    atj.a(paramBundle);
+    auh.a(paramBundle);
     paramLayoutInflater.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -78,9 +78,9 @@ public class LoginAndSignupFragment
           return;
         }
         getFragmentManager().beginTransaction().replace(paramViewGroup.getId(), new SignupFragment(LoginAndSignupFragment.c(LoginAndSignupFragment.this))).addToBackStack("SignupFragment").commit();
-        ajx.c(true);
+        akr.c(true);
         LoginAndSignupFragment.d(LoginAndSignupFragment.this);
-        ScAnalyticsEventEngine.a(new ky());
+        ScAnalyticsEventEngine.a(new lq());
         AnalyticsEvents.l();
       }
     });

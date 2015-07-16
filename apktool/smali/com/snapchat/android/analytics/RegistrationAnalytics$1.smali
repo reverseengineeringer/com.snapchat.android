@@ -25,7 +25,7 @@
     .locals 3
 
     .prologue
-    .line 387
+    .line 386
     invoke-static {}, Lcom/snapchat/android/analytics/RegistrationAnalytics$PhoneVerificationMethod;->values()[Lcom/snapchat/android/analytics/RegistrationAnalytics$PhoneVerificationMethod;
 
     move-result-object v0
@@ -83,9 +83,9 @@
     :try_end_2
     .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_6
 
-    .line 251
+    .line 250
     :goto_2
-    invoke-static {}, Ljw;->values()[Ljw;
+    invoke-static {}, Lko;->values()[Lko;
 
     move-result-object v0
 
@@ -98,9 +98,9 @@
     :try_start_3
     sget-object v0, Lcom/snapchat/android/analytics/RegistrationAnalytics$1;->$SwitchMap$com$snapchat$analytics$types$RegistrationErrorType:[I
 
-    sget-object v1, Ljw;->EMAIL_INVALID:Ljw;
+    sget-object v1, Lko;->EMAIL_INVALID:Lko;
 
-    invoke-virtual {v1}, Ljw;->ordinal()I
+    invoke-virtual {v1}, Lko;->ordinal()I
 
     move-result v1
 
@@ -114,9 +114,9 @@
     :try_start_4
     sget-object v0, Lcom/snapchat/android/analytics/RegistrationAnalytics$1;->$SwitchMap$com$snapchat$analytics$types$RegistrationErrorType:[I
 
-    sget-object v1, Ljw;->EMAIL_EXISTS:Ljw;
+    sget-object v1, Lko;->EMAIL_EXISTS:Lko;
 
-    invoke-virtual {v1}, Ljw;->ordinal()I
+    invoke-virtual {v1}, Lko;->ordinal()I
 
     move-result v1
 
@@ -130,9 +130,9 @@
     :try_start_5
     sget-object v0, Lcom/snapchat/android/analytics/RegistrationAnalytics$1;->$SwitchMap$com$snapchat$analytics$types$RegistrationErrorType:[I
 
-    sget-object v1, Ljw;->PASSWORD_TOO_SHORT:Ljw;
+    sget-object v1, Lko;->PASSWORD_TOO_SHORT:Lko;
 
-    invoke-virtual {v1}, Ljw;->ordinal()I
+    invoke-virtual {v1}, Lko;->ordinal()I
 
     move-result v1
 
@@ -146,9 +146,9 @@
     :try_start_6
     sget-object v0, Lcom/snapchat/android/analytics/RegistrationAnalytics$1;->$SwitchMap$com$snapchat$analytics$types$RegistrationErrorType:[I
 
-    sget-object v1, Ljw;->PASSWORD_TOO_COMMON:Ljw;
+    sget-object v1, Lko;->PASSWORD_TOO_COMMON:Lko;
 
-    invoke-virtual {v1}, Ljw;->ordinal()I
+    invoke-virtual {v1}, Lko;->ordinal()I
 
     move-result v1
 
@@ -162,9 +162,9 @@
     :try_start_7
     sget-object v0, Lcom/snapchat/android/analytics/RegistrationAnalytics$1;->$SwitchMap$com$snapchat$analytics$types$RegistrationErrorType:[I
 
-    sget-object v1, Ljw;->PASSWORD_TOO_EASY:Ljw;
+    sget-object v1, Lko;->PASSWORD_TOO_EASY:Lko;
 
-    invoke-virtual {v1}, Ljw;->ordinal()I
+    invoke-virtual {v1}, Lko;->ordinal()I
 
     move-result v1
 
@@ -178,9 +178,9 @@
     :try_start_8
     sget-object v0, Lcom/snapchat/android/analytics/RegistrationAnalytics$1;->$SwitchMap$com$snapchat$analytics$types$RegistrationErrorType:[I
 
-    sget-object v1, Ljw;->PASSWORD_TOO_SIMILAR_TO_USERNAME:Ljw;
+    sget-object v1, Lko;->PASSWORD_TOO_SIMILAR_TO_USERNAME:Lko;
 
-    invoke-virtual {v1}, Ljw;->ordinal()I
+    invoke-virtual {v1}, Lko;->ordinal()I
 
     move-result v1
 

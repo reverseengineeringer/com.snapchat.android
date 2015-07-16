@@ -4,13 +4,13 @@
 
 # interfaces
 .implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
-.implements Lans;
+.implements Laop;
 .implements Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;
 .implements Lcom/snapchat/android/camera/cameraview/CameraView$b;
 .implements Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;
-.implements Lvm;
-.implements Lwc$a;
-.implements Lwg;
+.implements Lwi;
+.implements Lwy$a;
+.implements Lxc;
 
 
 # annotations
@@ -38,17 +38,17 @@
 
 
 # instance fields
-.field private final A:Lnf;
+.field private final A:Lnw;
 
 .field private final B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
-.field private final C:Lno;
+.field private final C:Lof;
 
-.field private final D:Lnp;
+.field private final D:Log;
 
-.field private final E:Lahs;
+.field private final E:Laio;
 
-.field private F:Lanr;
+.field private F:Laoo;
 
 .field private G:Landroid/widget/ImageView;
 
@@ -56,48 +56,48 @@
 
 .field protected l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
-.field public m:Lvw;
+.field public m:Lws;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field public n:Lvz;
+.field public n:Lwv;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field public o:Lwl;
+.field public o:Lxh;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field public p:Lwj;
+.field public p:Lxf;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field public q:Lwk;
+.field public q:Lxg;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field public r:Lwn;
+.field public r:Lxj;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field public s:Lazo;
+.field public s:Lban;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
-.field private t:Lbfa;
+.field private t:Lbfz;
 
 .field private u:[B
 
 .field private v:Landroid/widget/TextView;
 
-.field private w:Lvv;
+.field private w:Lwr;
 
 .field private x:Z
 
@@ -111,12 +111,12 @@
     .locals 2
 
     .prologue
-    .line 173
+    .line 171
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/snapchat/android/camera/CameraFragment;->a:Z
 
-    .line 211
+    .line 209
     sget-object v0, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_NEW_FRIEND_REQUEST_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
     invoke-virtual {v0}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
@@ -129,7 +129,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Ldi;->a(Ljava/lang/Object;Ljava/lang/Object;)Ldi;
+    invoke-static {v0, v1}, Ldr;->a(Ljava/lang/Object;Ljava/lang/Object;)Ldr;
 
     move-result-object v0
 
@@ -142,8 +142,8 @@
     .locals 9
 
     .prologue
-    .line 217
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    .line 215
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v1
 
@@ -155,7 +155,7 @@
 
     invoke-direct {v2, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-static {}, Lnf;->a()Lnf;
+    invoke-static {}, Lnw;->a()Lnw;
 
     move-result-object v3
 
@@ -163,15 +163,15 @@
 
     move-result-object v4
 
-    invoke-static {}, Lno;->a()Lno;
+    invoke-static {}, Lof;->a()Lof;
 
     move-result-object v5
 
-    invoke-static {}, Lnp;->a()Lnp;
+    invoke-static {}, Log;->a()Log;
 
     move-result-object v6
 
-    invoke-static {}, Lahs;->c()Lahs;
+    invoke-static {}, Laio;->c()Laio;
 
     move-result-object v7
 
@@ -181,13 +181,13 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v8}, Lcom/snapchat/android/camera/CameraFragment;-><init>(Lcom/squareup/otto/Bus;Landroid/os/Handler;Lnf;Lcom/snapchat/android/analytics/CameraEventAnalytics;Lno;Lnp;Lahs;Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;)V
+    invoke-direct/range {v0 .. v8}, Lcom/snapchat/android/camera/CameraFragment;-><init>(Lcom/squareup/otto/Bus;Landroid/os/Handler;Lnw;Lcom/snapchat/android/analytics/CameraEventAnalytics;Lof;Log;Laio;Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;)V
 
-    .line 225
+    .line 223
     return-void
 .end method
 
-.method private constructor <init>(Lcom/squareup/otto/Bus;Landroid/os/Handler;Lnf;Lcom/snapchat/android/analytics/CameraEventAnalytics;Lno;Lnp;Lahs;Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;)V
+.method private constructor <init>(Lcom/squareup/otto/Bus;Landroid/os/Handler;Lnw;Lcom/snapchat/android/analytics/CameraEventAnalytics;Lof;Log;Laio;Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -196,50 +196,50 @@
     .end annotation
 
     .prologue
-    .line 236
+    .line 234
     invoke-direct {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;-><init>()V
 
-    .line 180
+    .line 178
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/snapchat/android/camera/CameraFragment;->x:Z
 
-    .line 237
+    .line 235
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/camera/CameraFragment;)V
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/camera/CameraFragment;)V
 
-    .line 238
+    .line 236
     iput-object p1, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    .line 239
+    .line 237
     iput-object p2, p0, Lcom/snapchat/android/camera/CameraFragment;->y:Landroid/os/Handler;
 
-    .line 240
-    iput-object p3, p0, Lcom/snapchat/android/camera/CameraFragment;->A:Lnf;
+    .line 238
+    iput-object p3, p0, Lcom/snapchat/android/camera/CameraFragment;->A:Lnw;
 
-    .line 241
+    .line 239
     iput-object p4, p0, Lcom/snapchat/android/camera/CameraFragment;->B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
+    .line 240
+    iput-object p5, p0, Lcom/snapchat/android/camera/CameraFragment;->C:Lof;
+
+    .line 241
+    iput-object p6, p0, Lcom/snapchat/android/camera/CameraFragment;->D:Log;
+
     .line 242
-    iput-object p5, p0, Lcom/snapchat/android/camera/CameraFragment;->C:Lno;
+    iput-object p7, p0, Lcom/snapchat/android/camera/CameraFragment;->E:Laio;
 
     .line 243
-    iput-object p6, p0, Lcom/snapchat/android/camera/CameraFragment;->D:Lnp;
-
-    .line 244
-    iput-object p7, p0, Lcom/snapchat/android/camera/CameraFragment;->E:Lahs;
-
-    .line 245
     iput-object p8, p0, Lcom/snapchat/android/camera/CameraFragment;->k:Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;
 
-    .line 246
+    .line 244
     return-void
 .end method
 
@@ -247,7 +247,7 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 162
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
     return-object v0
@@ -259,29 +259,29 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 434
+    .line 432
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 435
+    .line 433
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->v:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 436
+    .line 434
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->v:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 437
+    .line 435
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->v:Landroid/widget/TextView;
 
-    invoke-static {v0}, Lavh;->a(Landroid/view/View;)I
+    invoke-static {v0}, Lawf;->a(Landroid/view/View;)I
 
     move-result v1
 
@@ -305,11 +305,11 @@
 
     if-ne v0, v3, :cond_0
 
-    new-instance v0, Lxh;
+    new-instance v0, Lyd;
 
-    invoke-direct {v0}, Lxh;-><init>()V
+    invoke-direct {v0}, Lyd;-><init>()V
 
-    iget v0, v0, Lxh;->heightPixels:I
+    iget v0, v0, Lyd;->heightPixels:I
 
     int-to-float v0, v0
 
@@ -342,11 +342,11 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 441
+    .line 439
     :goto_0
     return-void
 
-    .line 439
+    .line 437
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->v:Landroid/widget/TextView;
 
@@ -357,81 +357,81 @@
     goto :goto_0
 .end method
 
-.method private a(Landroid/view/Surface;Laue;)Z
+.method private a(Landroid/view/Surface;Lavc;)Z
     .locals 2
     .param p1    # Landroid/view/Surface;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .param p2    # Laue;
-        .annotation build Lcgb;
+    .param p2    # Lavc;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     const/4 v0, 0x0
 
-    .line 842
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    .line 840
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
-    iget-boolean v1, v1, Lwk;->a:Z
+    iget-boolean v1, v1, Lxg;->a:Z
 
     if-eqz v1, :cond_0
 
-    .line 850
+    .line 848
     :goto_0
     return v0
 
-    .line 846
+    .line 844
     :cond_0
-    sget-boolean v1, Lasu;->HAS_SURFACE_TEXTURE_RECORDING:Z
+    sget-boolean v1, Latt;->HAS_SURFACE_TEXTURE_RECORDING:Z
 
     if-nez v1, :cond_1
 
     if-nez p1, :cond_1
 
-    .line 847
+    .line 845
     sget-object v1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->NO_SURFACE_PROVIDED:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
 
     goto :goto_0
 
-    .line 850
+    .line 848
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lvz;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
 
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lvv;
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lwr;
 
-    invoke-virtual {v0, p0, v1, p2, p1}, Lvz;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lvv;Laue;Landroid/view/Surface;)Z
+    invoke-virtual {v0, p0, v1, p2, p1}, Lwv;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lwr;Lavc;Landroid/view/Surface;)Z
 
     move-result v0
 
     goto :goto_0
 .end method
 
-.method static synthetic b(Lcom/snapchat/android/camera/CameraFragment;)Lvv;
+.method static synthetic b(Lcom/snapchat/android/camera/CameraFragment;)Lwr;
     .locals 1
 
     .prologue
-    .line 164
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lvv;
+    .line 162
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lwr;
 
     return-object v0
 .end method
 
 .method private c(Z)V
     .locals 3
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    .line 756
+    .line 754
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     if-eqz v0, :cond_0
 
-    .line 758
+    .line 756
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     if-eqz p1, :cond_1
@@ -442,7 +442,7 @@
 
     move-result-object v0
 
-    const-class v2, Lvn;
+    const-class v2, Lwj;
 
     invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -455,11 +455,11 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setScrollable(Z)V
 
-    .line 760
+    .line 758
     :cond_0
     return-void
 
-    .line 758
+    .line 756
     :cond_1
     const/4 v0, 0x0
 
@@ -470,7 +470,7 @@
     .locals 1
 
     .prologue
-    .line 1344
+    .line 1342
     const-string v0, "CameraFragment"
 
     return-object v0
@@ -478,18 +478,18 @@
 
 .method private u()V
     .locals 3
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    .line 428
+    .line 426
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    const-class v1, Lvn;
+    const-class v1, Lwj;
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -497,8 +497,8 @@
 
     if-nez v0, :cond_0
 
-    .line 429
-    new-instance v0, Lvn;
+    .line 427
+    new-instance v0, Lwj;
 
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -506,11 +506,11 @@
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
-    invoke-direct {v0, v1, v2, p0}, Lvn;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
+    invoke-direct {v0, v1, v2, p0}, Lwj;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/cameradecor/CameraDecor;)V
 
-    .line 431
+    .line 429
     :cond_0
     return-void
 .end method
@@ -519,24 +519,24 @@
     .locals 3
 
     .prologue
-    .line 739
+    .line 737
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-nez v0, :cond_0
 
-    .line 748
+    .line 746
     :goto_0
     return-void
 
-    .line 741
+    .line 739
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->C:Lno;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->C:Lof;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lno;->a(Z)V
+    invoke-virtual {v0, v1}, Lof;->a(Z)V
 
-    .line 743
+    .line 741
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->g:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -553,7 +553,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lavh;->d(Landroid/content/Context;)I
+    invoke-static {v2}, Lawf;->d(Landroid/content/Context;)I
 
     move-result v2
 
@@ -563,16 +563,16 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 746
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->m:Lvw;
+    .line 744
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->m:Lws;
 
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
-    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lvv;
+    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lwr;
 
-    invoke-virtual {v0, v1, p0, v2}, Lvw;->a(Lvl;Lvm;Lvv;)V
+    invoke-virtual {v0, v1, p0, v2}, Lws;->a(Lwh;Lwi;Lwr;)V
 
-    .line 747
+    .line 745
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
     const/16 v1, 0x8
@@ -588,38 +588,38 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 864
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    .line 862
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
-    iget-boolean v0, v0, Lwk;->c:Z
+    iget-boolean v0, v0, Lxg;->c:Z
 
     if-eqz v0, :cond_0
 
-    .line 872
+    .line 870
     :goto_0
     return-void
 
-    .line 867
+    .line 865
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->C:Lno;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->C:Lof;
 
-    invoke-virtual {v0, v1}, Lno;->a(Z)V
+    invoke-virtual {v0, v1}, Lof;->a(Z)V
+
+    .line 866
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
+
+    iput-boolean v1, v0, Lxg;->c:Z
 
     .line 868
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
 
-    iput-boolean v1, v0, Lwk;->c:Z
-
-    .line 870
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lvz;
-
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lvv;
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lwr;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, p0, v1, v2}, Lvz;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lvv;Z)V
+    invoke-virtual {v0, p0, v1, v2}, Lwv;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lwr;Z)V
 
-    .line 871
+    .line 869
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->e()V
@@ -627,13 +627,13 @@
     goto :goto_0
 .end method
 
-.method private declared-synchronized x()Lanr;
+.method private declared-synchronized x()Laoo;
     .locals 4
 
     .prologue
     const/4 v0, 0x0
 
-    .line 1309
+    .line 1307
     monitor-enter p0
 
     :try_start_0
@@ -649,73 +649,73 @@
 
     if-eqz v1, :cond_0
 
-    .line 1310
+    .line 1308
     const/4 v0, 0x0
 
-    .line 1332
+    .line 1330
     :goto_0
     monitor-exit p0
 
     return-object v0
 
-    .line 1313
+    .line 1311
     :cond_0
     :try_start_1
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->F:Lanr;
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->F:Laoo;
 
     if-nez v1, :cond_1
 
-    .line 1314
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    .line 1312
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
     if-eqz v1, :cond_1
 
-    .line 1318
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    .line 1316
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
-    invoke-interface {v1}, Lwc$b;->c()Landroid/hardware/Camera$Parameters;
+    invoke-interface {v1}, Lwy$b;->c()Landroid/hardware/Camera$Parameters;
 
     move-result-object v1
 
-    .line 1319
+    .line 1317
     if-eqz v1, :cond_3
 
-    .line 1320
+    .line 1318
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getPreviewFormat()I
 
     move-result v2
 
-    .line 1321
+    .line 1319
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
 
     move-result-object v3
 
-    .line 1322
+    .line 1320
     if-eqz v3, :cond_2
 
-    .line 1323
+    .line 1321
     iget v1, v3, Landroid/hardware/Camera$Size;->width:I
 
-    .line 1324
+    .line 1322
     iget v0, v3, Landroid/hardware/Camera$Size;->height:I
 
-    .line 1327
+    .line 1325
     :goto_1
-    new-instance v3, Lanr;
+    new-instance v3, Laoo;
 
-    invoke-direct {v3, v2, v1, v0, p0}, Lanr;-><init>(IIILans;)V
+    invoke-direct {v3, v2, v1, v0, p0}, Laoo;-><init>(IIILaop;)V
 
-    iput-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->F:Lanr;
+    iput-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->F:Laoo;
 
-    .line 1332
+    .line 1330
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->F:Lanr;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->F:Laoo;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 1309
+    .line 1307
     :catchall_0
     move-exception v0
 
@@ -737,21 +737,19 @@
 .end method
 
 .method private y()V
-    .locals 5
+    .locals 4
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 1400
-    invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->x()Lanr;
+    .line 1398
+    invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->x()Laoo;
 
     move-result-object v0
 
-    .line 1401
+    .line 1399
     if-eqz v0, :cond_0
 
-    .line 1402
-    iget-object v1, v0, Lanr;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 1400
+    iget-object v1, v0, Laoo;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
@@ -759,7 +757,7 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v0, v0, Lanr;->h:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v0, v0, Laoo;->g:Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
@@ -767,16 +765,8 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
+    .line 1404
     :goto_0
-    sget-object v0, Lanr;->a:Ljava/lang/String;
-
-    const-string v1, "Enable Scanner..."
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1406
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->G:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_0
@@ -789,24 +779,26 @@
 
     if-nez v0, :cond_0
 
-    .line 1407
+    .line 1405
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->G:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1410
+    .line 1408
     :cond_0
     return-void
 
-    .line 1402
+    .line 1400
     :cond_1
-    iget-object v1, v0, Lanr;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v1, v0, Laoo;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v1, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    const/4 v2, 0x0
 
-    iget-object v0, v0, Lanr;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v0, v0, Laoo;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
@@ -821,37 +813,37 @@
     .locals 1
 
     .prologue
-    .line 285
-    const v0, 0x7f040013
+    .line 283
+    const v0, 0x7f040014
 
     return v0
 .end method
 
-.method protected final a(Lxh;Lwm;Landroid/hardware/Camera$Parameters;)Laue;
+.method protected final a(Lyd;Lxi;Landroid/hardware/Camera$Parameters;)Lavc;
     .locals 7
-    .param p1    # Lxh;
-        .annotation build Lcgb;
+    .param p1    # Lyd;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Lwm;
-        .annotation build Lcgb;
+    .param p2    # Lxi;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/hardware/Camera$Parameters;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
     const/4 v1, 0x1
 
     const/4 v6, 0x0
 
-    .line 1110
+    .line 1108
     invoke-virtual {p3}, Landroid/hardware/Camera$Parameters;->getSupportedVideoSizes()Ljava/util/List;
 
     move-result-object v0
@@ -863,96 +855,84 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    sget-boolean v0, Lasu;->HAS_SURFACE_TEXTURE_RECORDING:Z
+    sget-boolean v0, Latt;->HAS_SURFACE_TEXTURE_RECORDING:Z
 
     if-nez v0, :cond_1
 
-    .line 1111
-    const-string v0, "CameraFragment"
+    .line 1109
+    new-array v0, v2, [Ljava/lang/Object;
 
-    const-string v2, "Preview Size Finding: display [%d,%d]"
+    iget v2, p1, Lyd;->heightPixels:I
 
-    new-array v3, v4, [Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget v4, p1, Lxh;->heightPixels:I
+    move-result-object v2
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v2, v0, v6
 
-    move-result-object v4
+    iget v2, p1, Lyd;->widthPixels:I
 
-    aput-object v4, v3, v6
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget v4, p1, Lxh;->widthPixels:I
+    move-result-object v2
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v2, v0, v1
 
-    move-result-object v4
-
-    aput-object v4, v3, v1
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1114
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->j:Lwq;
+    .line 1112
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->j:Lxm;
 
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     iget v3, v0, Lcom/snapchat/android/camera/model/CameraModel;->c:I
 
-    invoke-static {p1}, Lvk;->a(Lxh;)D
+    invoke-static {p1}, Lwg;->a(Lyd;)D
 
     move-result-wide v4
 
     move-object v2, p3
 
-    invoke-virtual/range {v1 .. v6}, Lwq;->a(Landroid/hardware/Camera$Parameters;IDZ)Laue;
+    invoke-virtual/range {v1 .. v6}, Lxm;->a(Landroid/hardware/Camera$Parameters;IDZ)Lavc;
 
     move-result-object v0
 
-    .line 1119
+    .line 1117
     :goto_1
     return-object v0
 
     :cond_0
     move v0, v6
 
-    .line 1110
+    .line 1108
     goto :goto_0
 
-    .line 1117
+    .line 1115
     :cond_1
-    invoke-super {p0, p1, p2, p3}, Lcom/snapchat/android/camera/BaseCameraFragment;->a(Lxh;Lwm;Landroid/hardware/Camera$Parameters;)Laue;
+    invoke-super {p0, p1, p2, p3}, Lcom/snapchat/android/camera/BaseCameraFragment;->a(Lyd;Lxi;Landroid/hardware/Camera$Parameters;)Lavc;
 
     move-result-object v0
 
-    .line 1118
-    const-string v2, "CameraFragment"
+    .line 1116
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const-string v3, "Camera Preview Size: [%d,%d]"
+    invoke-virtual {v0}, Lavc;->a()I
 
-    new-array v4, v4, [Ljava/lang/Object;
+    move-result v3
 
-    invoke-virtual {v0}, Laue;->a()I
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v5
+    move-result-object v3
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v3, v2, v6
 
-    move-result-object v5
+    invoke-virtual {v0}, Lavc;->b()I
 
-    aput-object v5, v4, v6
+    move-result v3
 
-    invoke-virtual {v0}, Laue;->b()I
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v5
+    move-result-object v3
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v4, v1
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v2, v1
 
     goto :goto_1
 .end method
@@ -961,33 +941,33 @@
     .locals 3
 
     .prologue
-    .line 325
+    .line 323
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    .line 326
+    .line 324
     instance-of v0, v1, Lcom/snapchat/android/SnapkidzHomeActivity;
 
     if-eqz v0, :cond_0
 
-    .line 327
-    new-instance v0, Lvs;
+    .line 325
+    new-instance v0, Lwo;
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
-    invoke-direct {v0, v1, v2, p0}, Lvs;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
+    invoke-direct {v0, v1, v2, p0}, Lwo;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
 
-    .line 329
+    .line 327
     :goto_0
     return-object v0
 
     :cond_0
-    new-instance v0, Lvn;
+    new-instance v0, Lwj;
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
-    invoke-direct {v0, v1, v2, p0}, Lvn;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
+    invoke-direct {v0, v1, v2, p0}, Lwj;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
 
     goto :goto_0
 .end method
@@ -998,7 +978,7 @@
     .prologue
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 496
+    .line 494
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/model/CameraModel;->b()Z
@@ -1007,26 +987,26 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
     if-nez v0, :cond_1
 
-    .line 507
+    .line 505
     :cond_0
     :goto_0
     return-void
 
-    .line 498
+    .line 496
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->o:Lwl;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->o:Lxh;
 
-    iget v1, v0, Lwl;->a:F
+    iget v1, v0, Lxh;->a:F
 
     mul-float/2addr v1, p1
 
-    iput v1, v0, Lwl;->a:F
+    iput v1, v0, Lxh;->a:F
 
-    iget v1, v0, Lwl;->a:F
+    iget v1, v0, Lxh;->a:F
 
     const v2, 0x3fe66666    # 1.8f
 
@@ -1038,12 +1018,12 @@
 
     move-result v1
 
-    iput v1, v0, Lwl;->a:F
+    iput v1, v0, Lxh;->a:F
 
-    .line 499
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->o:Lwl;
+    .line 497
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->o:Lxh;
 
-    iget v0, v0, Lwl;->a:F
+    iget v0, v0, Lxh;->a:F
 
     sub-float/2addr v0, v4
 
@@ -1051,14 +1031,14 @@
 
     div-float/2addr v0, v1
 
-    .line 500
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    .line 498
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
-    invoke-interface {v1}, Lwc$b;->c()Landroid/hardware/Camera$Parameters;
+    invoke-interface {v1}, Lwy$b;->c()Landroid/hardware/Camera$Parameters;
 
     move-result-object v1
 
-    .line 501
+    .line 499
     if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->isZoomSupported()Z
@@ -1070,18 +1050,18 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 502
+    .line 500
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 503
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    .line 501
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
-    invoke-interface {v0, v1}, Lwc$b;->a(Landroid/hardware/Camera$Parameters;)V
+    invoke-interface {v0, v1}, Lwy$b;->a(Landroid/hardware/Camera$Parameters;)V
 
     goto :goto_0
 
-    .line 501
+    .line 499
     :cond_3
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getMaxZoom()I
 
@@ -1105,11 +1085,11 @@
 
     goto :goto_1
 
-    .line 505
+    .line 503
     :cond_4
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->o:Lwl;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->o:Lxh;
 
-    iput v4, v0, Lwl;->a:F
+    iput v4, v0, Lxh;->a:F
 
     goto :goto_0
 .end method
@@ -1128,8 +1108,8 @@
 
     const/4 v2, 0x0
 
-    .line 1174
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    .line 1172
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
     if-eqz v0, :cond_0
 
@@ -1139,19 +1119,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 1175
+    .line 1173
     :cond_0
     :goto_0
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->y()V
 
-    .line 1176
+    .line 1174
     return-void
 
-    .line 1174
+    .line 1172
     :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
-    invoke-interface {v0}, Lwc$b;->c()Landroid/hardware/Camera$Parameters;
+    invoke-interface {v0}, Lwy$b;->c()Landroid/hardware/Camera$Parameters;
 
     move-result-object v0
 
@@ -1181,11 +1161,11 @@
 
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
-    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
     if-eqz v0, :cond_3
 
-    invoke-interface {v3}, Lwc$b;->c()Landroid/hardware/Camera$Parameters;
+    invoke-interface {v3}, Lwy$b;->c()Landroid/hardware/Camera$Parameters;
 
     move-result-object v4
 
@@ -1199,9 +1179,9 @@
 
     :cond_3
     :goto_2
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
-    new-instance v1, Lwf;
+    new-instance v1, Lxb;
 
     new-instance v2, Landroid/os/Handler;
 
@@ -1211,15 +1191,15 @@
 
     invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
     new-instance v4, Lcom/snapchat/android/camera/CameraFragment$4;
 
     invoke-direct {v4, p0}, Lcom/snapchat/android/camera/CameraFragment$4;-><init>(Lcom/snapchat/android/camera/CameraFragment;)V
 
-    invoke-direct {v1, v2, v3, v4}, Lwf;-><init>(Landroid/os/Handler;Lwc$b;Lwc$c;)V
+    invoke-direct {v1, v2, v3, v4}, Lxb;-><init>(Landroid/os/Handler;Lwy$b;Lwy$c;)V
 
-    invoke-interface {v0, v1}, Lwc$b;->a(Lwf;)V
+    invoke-interface {v0, v1}, Lwy$b;->a(Lxb;)V
 
     goto :goto_0
 
@@ -1260,9 +1240,9 @@
 
     invoke-virtual {v0, v3}, Landroid/hardware/Camera$Parameters;->setFocusMode(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
-    invoke-interface {v3, v0}, Lwc$b;->a(Landroid/hardware/Camera$Parameters;)V
+    invoke-interface {v3, v0}, Lwy$b;->a(Landroid/hardware/Camera$Parameters;)V
 
     :cond_7
     move v0, v1
@@ -1355,7 +1335,7 @@
 
     add-int/lit16 v2, v7, -0x10a
 
-    invoke-static {v1, v2}, Lvk;->a(II)I
+    invoke-static {v1, v2}, Lwg;->a(II)I
 
     move-result v1
 
@@ -1363,7 +1343,7 @@
 
     add-int/lit16 v7, v8, -0x10a
 
-    invoke-static {v2, v7}, Lvk;->a(II)I
+    invoke-static {v2, v7}, Lwg;->a(II)I
 
     move-result v2
 
@@ -1428,23 +1408,21 @@
     invoke-virtual {v4, v6}, Landroid/hardware/Camera$Parameters;->setMeteringAreas(Ljava/util/List;)V
 
     :cond_a
-    invoke-interface {v3, v4}, Lwc$b;->a(Landroid/hardware/Camera$Parameters;)V
+    invoke-interface {v3, v4}, Lwy$b;->a(Landroid/hardware/Camera$Parameters;)V
 
     goto/16 :goto_2
 .end method
 
 .method public final a(IZ)V
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
+    .line 471
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->t:Lbfz;
+
+    if-eqz v0, :cond_0
 
     .line 473
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->t:Lbfa;
-
-    if-eqz v0, :cond_1
-
-    .line 475
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->getCurrentPanel()I
@@ -1455,54 +1433,43 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 477
+    .line 475
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
-    invoke-virtual {v0, v2}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setEnabled(Z)V
+    const/4 v1, 0x0
 
-    .line 478
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->t:Lbfa;
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setEnabled(Z)V
 
-    invoke-interface {v0, p1, p2}, Lbfa;->a(IZ)V
+    .line 476
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->t:Lbfz;
 
-    .line 483
+    invoke-interface {v0, p1, p2}, Lbfz;->a(IZ)V
+
+    .line 479
     :cond_0
-    :goto_0
     return-void
-
-    .line 481
-    :cond_1
-    const-string v0, "CameraFragment"
-
-    const-string v1, "FragmentPageChangeCallback is null. Is it implemented by your Activity?"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
 .end method
 
 .method public final a(I[B)V
     .locals 3
 
     .prologue
-    .line 1337
+    .line 1335
     if-eqz p2, :cond_0
 
-    .line 1338
+    .line 1336
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbbg;
+    new-instance v1, Lbcg;
 
     const-string v2, "CameraFragment"
 
-    invoke-direct {v1, v2}, Lbbg;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lbcg;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1339
-    invoke-static {}, Laol;->a()Laol;
+    .line 1337
+    invoke-static {}, Laph;->a()Laph;
 
     move-result-object v0
 
@@ -1510,9 +1477,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1, p1, p2}, Laol;->a(Landroid/content/Context;I[B)I
+    invoke-virtual {v0, v1, p1, p2}, Laph;->a(Landroid/content/Context;I[B)I
 
-    .line 1341
+    .line 1339
     :cond_0
     return-void
 .end method
@@ -1521,42 +1488,42 @@
     .locals 4
 
     .prologue
-    .line 1221
+    .line 1219
     if-eqz p1, :cond_0
 
-    .line 1222
-    new-instance v0, Lawa;
+    .line 1220
+    new-instance v0, Lawy;
 
-    new-instance v1, Lxh;
+    new-instance v1, Lyd;
 
-    invoke-direct {v1}, Lxh;-><init>()V
+    invoke-direct {v1}, Lyd;-><init>()V
 
-    invoke-direct {v0, p1, v1}, Lawa;-><init>(Landroid/graphics/Bitmap;Landroid/util/DisplayMetrics;)V
+    invoke-direct {v0, p1, v1}, Lawy;-><init>(Landroid/graphics/Bitmap;Landroid/util/DisplayMetrics;)V
 
-    sget-object v1, Lauh;->HIGH_PRIORITY_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->HIGH_PRIORITY_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
     const/4 v2, 0x0
 
     new-array v2, v2, [Ljava/lang/Void;
 
-    invoke-virtual {v0, v1, v2}, Lawa;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v1, v2}, Lawy;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 1227
+    .line 1225
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
-    instance-of v1, v0, Lvr;
+    instance-of v1, v0, Lwn;
 
-    .line 1229
-    new-instance v0, Lajj$a;
+    .line 1227
+    new-instance v0, Lakf$a;
 
-    invoke-direct {v0}, Lajj$a;-><init>()V
+    invoke-direct {v0}, Lakf$a;-><init>()V
 
     sget-object v2, Lcom/snapchat/android/model/Mediabryo$SnapType;->SNAP:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
     iput-object v2, v0, Lcom/snapchat/android/model/Mediabryo$a;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
@@ -1566,56 +1533,56 @@
 
     iput-boolean v2, v0, Lcom/snapchat/android/model/Mediabryo$a;->mIsFrontFacingSnap:Z
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
-    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lwj;
+    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lxf;
 
-    iget-boolean v2, v2, Lwj;->a:Z
+    iget-boolean v2, v2, Lxf;->a:Z
 
     iput-boolean v2, v0, Lcom/snapchat/android/model/Mediabryo$a;->mIsFlashOn:Z
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
     iput-boolean v1, v0, Lcom/snapchat/android/model/Mediabryo$a;->mIsReply:Z
 
-    check-cast v0, Lajj$a;
+    check-cast v0, Lakf$a;
 
-    .line 1235
+    .line 1233
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v1}, Lcom/snapchat/android/camera/model/CameraModel;->e()Landroid/hardware/Camera$CameraInfo;
 
     move-result-object v1
 
-    .line 1236
+    .line 1234
     if-eqz v1, :cond_1
 
-    .line 1237
+    .line 1235
     iget v1, v1, Landroid/hardware/Camera$CameraInfo;->orientation:I
 
     iput v1, v0, Lcom/snapchat/android/model/Mediabryo$a;->mSnapOrientation:I
 
-    .line 1240
+    .line 1238
     :cond_1
-    invoke-virtual {v0}, Lajj$a;->c()Lajj;
+    invoke-virtual {v0}, Lakf$a;->c()Lakf;
 
     move-result-object v0
 
-    .line 1242
-    invoke-static {v0}, Lnp;->a(Laim;)V
+    .line 1240
+    invoke-static {v0}, Log;->a(Laji;)V
 
-    .line 1243
+    .line 1241
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbdj;
+    new-instance v2, Lbej;
 
     sget-object v3, Lcom/snapchat/android/util/eventbus/SnapCaptureContext;->CAMERA:Lcom/snapchat/android/util/eventbus/SnapCaptureContext;
 
-    invoke-direct {v2, v0, v3}, Lbdj;-><init>(Laim;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
+    invoke-direct {v2, v0, v3}, Lbej;-><init>(Laji;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
 
     invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1244
+    .line 1242
     return-void
 .end method
 
@@ -1623,16 +1590,16 @@
     .locals 2
 
     .prologue
-    .line 1092
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lvv;
+    .line 1090
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lwr;
 
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lwj;
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lxf;
 
-    iget-boolean v1, v1, Lwj;->a:Z
+    iget-boolean v1, v1, Lxf;->a:Z
 
-    invoke-virtual {v0, p1, v1}, Lvv;->a(Landroid/hardware/Camera$Parameters;Z)V
+    invoke-virtual {v0, p1, v1}, Lwr;->a(Landroid/hardware/Camera$Parameters;Z)V
 
-    .line 1093
+    .line 1091
     return-void
 .end method
 
@@ -1642,167 +1609,167 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 956
-    invoke-static {}, Lbgp;->a()V
+    .line 954
+    invoke-static {}, Lbhp;->a()V
 
-    .line 958
+    .line 956
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->mFragmentInterface:Lcom/snapchat/android/util/fragment/SnapchatFragment$a;
 
     if-eqz v1, :cond_0
 
-    .line 959
+    .line 957
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->mFragmentInterface:Lcom/snapchat/android/util/fragment/SnapchatFragment$a;
 
     const/4 v2, 0x1
 
     invoke-interface {v1, v2}, Lcom/snapchat/android/util/fragment/SnapchatFragment$a;->a(Z)V
 
-    .line 961
+    .line 959
     :cond_0
     if-nez p1, :cond_1
 
-    .line 962
+    .line 960
     sget-object v0, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->VIDEO_STORAGE_EXCEPTION:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
 
-    .line 995
+    .line 993
     :goto_0
     return-void
 
-    .line 965
+    .line 963
     :cond_1
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v1}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->e()V
 
-    .line 966
+    .line 964
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v1}, Lcom/snapchat/android/camera/model/CameraModel;->b()Z
 
     move-result v2
 
-    .line 967
+    .line 965
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v1}, Lcom/snapchat/android/camera/model/CameraModel;->e()Landroid/hardware/Camera$CameraInfo;
 
     move-result-object v1
 
-    .line 968
+    .line 966
     if-nez v1, :cond_3
 
     move v1, v0
 
-    .line 969
+    .line 967
     :goto_1
-    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
-    iput-boolean v0, v3, Lwk;->a:Z
+    iput-boolean v0, v3, Lxg;->a:Z
 
-    .line 970
-    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    .line 968
+    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
-    iput-boolean v0, v3, Lwk;->c:Z
+    iput-boolean v0, v3, Lxg;->c:Z
 
-    .line 971
+    .line 969
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Z)V
 
-    .line 972
+    .line 970
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-eqz v0, :cond_2
 
-    .line 973
+    .line 971
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameraview/CameraView;->a()V
 
-    .line 974
+    .line 972
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Lcom/snapchat/android/camera/cameraview/CameraView;->setAlpha(F)V
 
-    .line 977
+    .line 975
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lvz;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
 
-    invoke-virtual {v0}, Lvz;->b()V
+    invoke-virtual {v0}, Lwv;->b()V
 
-    .line 978
+    .line 976
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
     const/16 v3, 0x8
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 979
+    .line 977
     invoke-static {}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->e()V
 
-    .line 981
+    .line 979
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
-    instance-of v3, v0, Lvr;
+    instance-of v3, v0, Lwn;
 
-    .line 984
-    new-instance v0, Lajm$a;
+    .line 982
+    new-instance v0, Laku$a;
 
-    invoke-direct {v0}, Lajm$a;-><init>()V
+    invoke-direct {v0}, Laku$a;-><init>()V
 
     iput-object p1, v0, Lcom/snapchat/android/model/Mediabryo$a;->mVideoUri:Landroid/net/Uri;
 
-    check-cast v0, Lajm$a;
+    check-cast v0, Laku$a;
 
     sget-object v4, Lcom/snapchat/android/model/Mediabryo$SnapType;->SNAP:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
     iput-object v4, v0, Lcom/snapchat/android/model/Mediabryo$a;->mSnapType:Lcom/snapchat/android/model/Mediabryo$SnapType;
 
-    check-cast v0, Lajm$a;
+    check-cast v0, Laku$a;
 
     iput-boolean v2, v0, Lcom/snapchat/android/model/Mediabryo$a;->mIsFrontFacingSnap:Z
 
-    check-cast v0, Lajm$a;
+    check-cast v0, Laku$a;
 
-    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lwj;
+    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lxf;
 
-    iget-boolean v2, v2, Lwj;->a:Z
+    iget-boolean v2, v2, Lxf;->a:Z
 
     iput-boolean v2, v0, Lcom/snapchat/android/model/Mediabryo$a;->mIsFlashOn:Z
 
-    check-cast v0, Lajm$a;
+    check-cast v0, Laku$a;
 
     iput v1, v0, Lcom/snapchat/android/model/Mediabryo$a;->mSnapOrientation:I
 
-    check-cast v0, Lajm$a;
+    check-cast v0, Laku$a;
 
     iput-boolean v3, v0, Lcom/snapchat/android/model/Mediabryo$a;->mIsReply:Z
 
-    check-cast v0, Lajm$a;
+    check-cast v0, Laku$a;
 
-    invoke-virtual {v0}, Lajm$a;->c()Lajm;
+    invoke-virtual {v0}, Laku$a;->c()Laku;
 
     move-result-object v0
 
-    .line 993
-    invoke-static {v0}, Lnp;->a(Laim;)V
+    .line 991
+    invoke-static {v0}, Log;->a(Laji;)V
 
-    .line 994
+    .line 992
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbdj;
+    new-instance v2, Lbej;
 
     sget-object v3, Lcom/snapchat/android/util/eventbus/SnapCaptureContext;->CAMERA:Lcom/snapchat/android/util/eventbus/SnapCaptureContext;
 
-    invoke-direct {v2, v0, v3}, Lbdj;-><init>(Laim;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
+    invoke-direct {v2, v0, v3}, Lbej;-><init>(Laji;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
 
     invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 968
+    .line 966
     :cond_3
     iget v1, v1, Landroid/hardware/Camera$CameraInfo;->orientation:I
 
@@ -1813,60 +1780,60 @@
     .locals 12
 
     .prologue
-    .line 1157
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->r:Lwn;
+    .line 1155
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->r:Lxj;
 
-    invoke-virtual {v0}, Lwn;->a()Laue;
+    invoke-virtual {v0}, Lxj;->a()Lavc;
 
     move-result-object v2
 
-    .line 1158
+    .line 1156
     if-nez v2, :cond_0
 
-    .line 1159
+    .line 1157
     sget-object v0, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->INITIALIZATION_ERROR:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
 
-    .line 1164
+    .line 1162
     :goto_0
     return-void
 
-    .line 1161
+    .line 1159
     :cond_0
     iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
-    new-instance v4, Lxh;
+    new-instance v4, Lyd;
 
-    invoke-direct {v4}, Lxh;-><init>()V
+    invoke-direct {v4}, Lyd;-><init>()V
 
     iget-object v0, v3, Lcom/snapchat/android/camera/cameraview/CameraView;->b:Landroid/view/SurfaceView;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v2}, Laue;->b()I
+    invoke-virtual {v2}, Lavc;->b()I
 
     move-result v5
 
-    invoke-virtual {v2}, Laue;->a()I
+    invoke-virtual {v2}, Lavc;->a()I
 
     move-result v6
 
-    iget v1, v4, Lxh;->heightPixels:I
+    iget v1, v4, Lyd;->heightPixels:I
 
-    iget v0, v4, Lxh;->widthPixels:I
+    iget v0, v4, Lyd;->widthPixels:I
 
-    iget v7, v4, Lxh;->heightPixels:I
+    iget v7, v4, Lyd;->heightPixels:I
 
     int-to-double v8, v7
 
-    iget v4, v4, Lxh;->widthPixels:I
+    iget v4, v4, Lyd;->widthPixels:I
 
     int-to-double v10, v4
 
     div-double/2addr v8, v10
 
-    invoke-virtual {v2}, Laue;->c()D
+    invoke-virtual {v2}, Lavc;->c()D
 
     move-result-wide v10
 
@@ -1889,19 +1856,19 @@
     double-to-int v1, v4
 
     :goto_1
-    new-instance v4, Laue;
+    new-instance v4, Lavc;
 
-    invoke-direct {v4, v0, v1}, Laue;-><init>(II)V
+    invoke-direct {v4, v0, v1}, Lavc;-><init>(II)V
 
     iget-object v0, v3, Lcom/snapchat/android/camera/cameraview/CameraView;->b:Landroid/view/SurfaceView;
 
     new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-virtual {v4}, Laue;->a()I
+    invoke-virtual {v4}, Lavc;->a()I
 
     move-result v3
 
-    invoke-virtual {v4}, Laue;->b()I
+    invoke-virtual {v4}, Lavc;->b()I
 
     move-result v4
 
@@ -1913,13 +1880,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/SurfaceView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1162
+    .line 1160
     :cond_1
-    invoke-direct {p0, p1, v2}, Lcom/snapchat/android/camera/CameraFragment;->a(Landroid/view/Surface;Laue;)Z
+    invoke-direct {p0, p1, v2}, Lcom/snapchat/android/camera/CameraFragment;->a(Landroid/view/Surface;Lavc;)Z
 
     goto :goto_0
 
-    .line 1161
+    .line 1159
     :cond_2
     int-to-double v4, v5
 
@@ -1944,7 +1911,7 @@
 
     const/4 v1, 0x0
 
-    .line 768
+    .line 766
     sget-object v2, Lcom/snapchat/android/camera/CameraFragment$6;->b:[I
 
     invoke-virtual {p1}, Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface$TakeSnapButtonAction;->ordinal()I
@@ -1955,11 +1922,11 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 810
+    .line 808
     :goto_0
     return-void
 
-    .line 770
+    .line 768
     :pswitch_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->k:Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;
 
@@ -1967,7 +1934,7 @@
 
     iput-object v2, v0, Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;->a:Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent$MediaCaptureType;
 
-    .line 771
+    .line 769
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->y:Landroid/os/Handler;
 
     new-instance v2, Lcom/snapchat/android/camera/CameraFragment$1;
@@ -1978,28 +1945,28 @@
 
     invoke-virtual {v0, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 780
-    invoke-static {}, Lajx;->L()V
+    .line 778
+    invoke-static {}, Lakr;->L()V
 
-    .line 781
+    .line 779
     invoke-direct {p0, v1}, Lcom/snapchat/android/camera/CameraFragment;->c(Z)V
 
-    .line 782
+    .line 780
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbdg;
+    new-instance v2, Lbeg;
 
-    invoke-direct {v2, v1}, Lbdg;-><init>(Z)V
+    invoke-direct {v2, v1}, Lbeg;-><init>(Z)V
 
     invoke-virtual {v0, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 785
+    .line 783
     :pswitch_1
     invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->c(Z)V
 
-    .line 786
+    .line 784
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->k:Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;
 
     iget-object v2, v2, Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent;->a:Lcom/snapchat/android/camera/TakeSnapButtonTouchIntent$MediaCaptureType;
@@ -2008,28 +1975,28 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 788
+    .line 786
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 790
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    .line 788
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
-    iget-boolean v0, v0, Lwk;->a:Z
+    iget-boolean v0, v0, Lxg;->a:Z
 
     if-eqz v0, :cond_0
 
-    .line 791
+    .line 789
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->w()V
 
-    .line 803
+    .line 801
     :cond_0
     :goto_2
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->e()V
 
-    .line 807
+    .line 805
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->y:Landroid/os/Handler;
 
     const/4 v1, 0x0
@@ -2041,20 +2008,20 @@
     :cond_1
     move v0, v1
 
-    .line 786
+    .line 784
     goto :goto_1
 
-    .line 794
+    .line 792
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
     invoke-virtual {v0}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->d()V
 
-    .line 795
+    .line 793
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->v()V
 
-    .line 797
-    invoke-static {}, Lajt;->a()Lajt;
+    .line 795
+    invoke-static {}, Lakn;->a()Lakn;
 
     move-result-object v0
 
@@ -2064,7 +2031,7 @@
 
     const-string v3, "on"
 
-    invoke-virtual {v0, v1, v2, v3}, Lajt;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2, v3}, Lakn;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2076,12 +2043,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 799
+    .line 797
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->y()V
 
     goto :goto_2
 
-    .line 768
+    .line 766
     nop
 
     :pswitch_data_0
@@ -2093,19 +2060,19 @@
 
 .method protected final a(Lcom/snapchat/android/camera/cameradecor/CameraDecor;)V
     .locals 1
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    .line 421
+    .line 419
     invoke-super {p0, p1}, Lcom/snapchat/android/camera/BaseCameraFragment;->a(Lcom/snapchat/android/camera/cameradecor/CameraDecor;)V
 
-    .line 423
+    .line 421
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->c(Z)V
 
-    .line 424
+    .line 422
     return-void
 .end method
 
@@ -2113,23 +2080,23 @@
     .locals 1
 
     .prologue
-    .line 914
+    .line 912
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-nez v0, :cond_0
 
-    .line 917
+    .line 915
     :goto_0
     return-void
 
-    .line 915
+    .line 913
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v0, p1}, Lcom/snapchat/android/camera/model/CameraModel;->a(Lcom/snapchat/android/camera/model/CameraModel$CameraType;)V
 
-    .line 916
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->i_()V
+    .line 914
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->g_()V
 
     goto :goto_0
 .end method
@@ -2137,7 +2104,7 @@
 .method public final a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
     .locals 6
     .param p1    # Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -2146,45 +2113,45 @@
 
     const/4 v1, 0x0
 
-    .line 999
-    invoke-static {}, Lbgp;->a()V
+    .line 997
+    invoke-static {}, Lbhp;->a()V
 
-    .line 1001
+    .line 999
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->mFragmentInterface:Lcom/snapchat/android/util/fragment/SnapchatFragment$a;
 
     if-eqz v2, :cond_0
 
-    .line 1002
+    .line 1000
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->mFragmentInterface:Lcom/snapchat/android/util/fragment/SnapchatFragment$a;
 
     invoke-interface {v2, v0}, Lcom/snapchat/android/util/fragment/SnapchatFragment$a;->a(Z)V
 
-    .line 1004
+    .line 1002
     :cond_0
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v2}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->e()V
 
+    .line 1003
+    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
+
+    iput-boolean v1, v2, Lxg;->a:Z
+
+    .line 1004
+    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
+
+    iput-boolean v1, v2, Lxg;->c:Z
+
     .line 1005
-    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
-
-    iput-boolean v1, v2, Lwk;->a:Z
-
-    .line 1006
-    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
-
-    iput-boolean v1, v2, Lwk;->c:Z
-
-    .line 1007
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v3, Lbdg;
+    new-instance v3, Lbeg;
 
-    invoke-direct {v3, v0}, Lbdg;-><init>(Z)V
+    invoke-direct {v3, v0}, Lbeg;-><init>(Z)V
 
     invoke-virtual {v2, v3}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1011
+    .line 1009
     sget-object v2, Lcom/snapchat/android/camera/CameraFragment$6;->c:[I
 
     invoke-virtual {p1}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->ordinal()I
@@ -2195,14 +2162,14 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 1020
-    const v2, 0x7f0c02db
+    .line 1018
+    const v2, 0x7f0c02d9
 
-    .line 1023
+    .line 1021
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 1024
+    .line 1022
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
     new-instance v3, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
@@ -2213,65 +2180,65 @@
 
     invoke-virtual {v0, v3}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1025
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->s:Lazo;
+    .line 1023
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->s:Lban;
 
-    new-instance v2, Log;
+    new-instance v2, Lox;
 
     invoke-virtual {p1}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->name()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Log;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Lox;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2}, Lazo;->a(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v2}, Lban;->a(Ljava/lang/Throwable;)V
 
-    .line 1026
+    .line 1024
     invoke-static {p1}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
 
-    .line 1029
+    .line 1027
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-eqz v0, :cond_2
 
-    sget-boolean v0, Lasu;->HAS_SURFACE_TEXTURE_RECORDING:Z
+    sget-boolean v0, Latt;->HAS_SURFACE_TEXTURE_RECORDING:Z
 
     if-nez v0, :cond_2
 
-    .line 1030
+    .line 1028
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameraview/CameraView;->a()V
 
-    .line 1031
+    .line 1029
     invoke-virtual {p0, v1}, Lcom/snapchat/android/camera/CameraFragment;->a(Z)V
 
-    .line 1032
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lvz;
+    .line 1030
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
 
-    invoke-virtual {v0}, Lvz;->b()V
+    invoke-virtual {v0}, Lwv;->b()V
 
-    .line 1033
+    .line 1031
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/cameraview/CameraView;->setAlpha(F)V
 
-    .line 1034
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->i_()V
+    .line 1032
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->g_()V
 
-    .line 1038
+    .line 1036
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
-    .line 1039
+    .line 1037
     return-void
 
-    .line 1013
+    .line 1011
     :pswitch_0
     invoke-static {}, Lcom/snapchat/android/util/debug/ReleaseManager;->e()Z
 
@@ -2326,10 +2293,10 @@
 
     const v2, 0x7f0c0056
 
-    .line 1014
+    .line 1012
     goto :goto_0
 
-    .line 1013
+    .line 1011
     :sswitch_0
     const-string v4, "shared"
 
@@ -2384,7 +2351,7 @@
 
     goto/16 :goto_0
 
-    .line 1017
+    .line 1015
     :pswitch_4
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->v()V
 
@@ -2392,17 +2359,17 @@
 
     move v2, v1
 
-    .line 1018
+    .line 1016
     goto/16 :goto_0
 
-    .line 1011
+    .line 1009
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_4
     .end packed-switch
 
-    .line 1013
+    .line 1011
     :sswitch_data_0
     .sparse-switch
         -0x35db539b -> :sswitch_0
@@ -2418,7 +2385,7 @@
     .end packed-switch
 .end method
 
-.method public final a(Lwc$b;I)V
+.method public final a(Lwy$b;I)V
     .locals 7
 
     .prologue
@@ -2426,10 +2393,10 @@
 
     const/4 v5, 0x0
 
-    .line 1052
-    invoke-super {p0, p1, p2}, Lcom/snapchat/android/camera/BaseCameraFragment;->a(Lwc$b;I)V
+    .line 1050
+    invoke-super {p0, p1, p2}, Lcom/snapchat/android/camera/BaseCameraFragment;->a(Lwy$b;I)V
 
-    .line 1053
+    .line 1051
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     iget-boolean v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->e:Z
@@ -2438,34 +2405,34 @@
 
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
-    iget-object v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->h:Lwc$b;
+    iget-object v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->h:Lwy$b;
 
     if-nez v0, :cond_1
 
-    .line 1066
+    .line 1064
     :cond_0
     :goto_0
     return-void
 
-    .line 1057
+    .line 1055
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
-    .line 1058
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lvz;
+    .line 1056
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
 
-    invoke-virtual {v0}, Lvz;->a()V
+    invoke-virtual {v0}, Lwv;->a()V
 
-    .line 1059
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->A:Lnf;
+    .line 1057
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->A:Lnw;
 
-    iget-object v0, v1, Lnf;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-object v0, v1, Lnw;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     if-eqz v0, :cond_3
 
-    invoke-static {}, Laux;->b()Lcom/snapchat/android/util/StartupPath;
+    invoke-static {}, Lavv;->b()Lcom/snapchat/android/util/StartupPath;
 
     move-result-object v0
 
@@ -2476,21 +2443,21 @@
     sget-object v0, Lcom/snapchat/android/util/StartupPath;->FROM_KILLED_STATE:Lcom/snapchat/android/util/StartupPath;
 
     :cond_2
-    iget-object v2, v1, Lnf;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-object v2, v1, Lnw;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     const-string v3, "type"
 
     invoke-virtual {v2, v3, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    iget-object v0, v1, Lnf;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iget-object v0, v1, Lnw;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     invoke-virtual {v0, v5}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
     const/4 v0, 0x0
 
-    iput-object v0, v1, Lnf;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+    iput-object v0, v1, Lnw;->mOldStartupMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 1060
+    .line 1058
     :cond_3
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
@@ -2500,23 +2467,23 @@
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/StreamView;->setCameraInfo(Landroid/hardware/Camera$CameraInfo;)V
 
-    .line 1061
+    .line 1059
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
-    iget-object v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->f:Laue;
+    iget-object v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->f:Lavc;
 
-    invoke-static {v0}, Lcom/snapchat/android/ui/here/StreamView;->setCameraPreviewSize(Laue;)V
+    invoke-static {v0}, Lcom/snapchat/android/ui/here/StreamView;->setCameraPreviewSize(Lavc;)V
 
-    .line 1062
-    new-instance v0, Lavr;
+    .line 1060
+    new-instance v0, Lawp;
 
-    sget-object v1, Lauh;->HIGH_PRIORITY_EXECUTOR:Ljava/util/concurrent/ExecutorService;
+    sget-object v1, Lavf;->HIGH_PRIORITY_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    invoke-direct {v0, v1}, Lavr;-><init>(Ljava/util/concurrent/ExecutorService;)V
+    invoke-direct {v0, v1}, Lawp;-><init>(Ljava/util/concurrent/ExecutorService;)V
 
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
-    iget-object v1, v1, Lcom/snapchat/android/camera/model/CameraModel;->f:Laue;
+    iget-object v1, v1, Lcom/snapchat/android/camera/model/CameraModel;->f:Lavc;
 
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getResources()Landroid/content/res/Resources;
 
@@ -2532,17 +2499,17 @@
 
     if-eqz v1, :cond_4
 
-    invoke-virtual {v1}, Laue;->b()I
+    invoke-virtual {v1}, Lavc;->b()I
 
     move-result v3
 
-    invoke-virtual {v1}, Laue;->a()I
+    invoke-virtual {v1}, Lavc;->a()I
 
     move-result v1
 
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-virtual {v0, v3, v1, v4}, Lavr;->a(IILandroid/graphics/Bitmap$Config;)V
+    invoke-virtual {v0, v3, v1, v4}, Lawp;->a(IILandroid/graphics/Bitmap$Config;)V
 
     :cond_4
     iget v1, v2, Landroid/util/DisplayMetrics;->widthPixels:I
@@ -2551,25 +2518,25 @@
 
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-virtual {v0, v1, v2, v3}, Lavr;->a(IILandroid/graphics/Bitmap$Config;)V
+    invoke-virtual {v0, v1, v2, v3}, Lawp;->a(IILandroid/graphics/Bitmap$Config;)V
 
     sput-boolean v6, Lcom/snapchat/android/camera/CameraFragment;->a:Z
 
-    .line 1064
+    .line 1062
     :cond_5
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbao;
+    new-instance v1, Lbbp;
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     iget-boolean v2, v2, Lcom/snapchat/android/camera/model/CameraModel;->j:Z
 
-    invoke-direct {v1, v6, v2}, Lbao;-><init>(ZZ)V
+    invoke-direct {v1, v6, v2}, Lbbp;-><init>(ZZ)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1065
+    .line 1063
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     iput-boolean v5, v0, Lcom/snapchat/android/camera/model/CameraModel;->j:Z
@@ -2581,23 +2548,23 @@
     .locals 4
 
     .prologue
-    .line 732
+    .line 730
     invoke-super {p0, p1}, Lcom/snapchat/android/camera/BaseCameraFragment;->a(Z)V
 
-    .line 733
+    .line 731
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/camera/CameraFragment;->x:Z
 
-    .line 734
+    .line 732
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->u:[B
 
-    .line 735
+    .line 733
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbao;
+    new-instance v1, Lbbp;
 
     const/4 v2, 0x0
 
@@ -2605,15 +2572,15 @@
 
     iget-boolean v3, v3, Lcom/snapchat/android/camera/model/CameraModel;->j:Z
 
-    invoke-direct {v1, v2, v3}, Lbao;-><init>(ZZ)V
+    invoke-direct {v1, v2, v3}, Lbbp;-><init>(ZZ)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 736
+    .line 734
     return-void
 .end method
 
-.method public final a([BLwc$b;)V
+.method public final a([BLwy$b;)V
     .locals 8
 
     .prologue
@@ -2621,77 +2588,77 @@
 
     const/4 v6, 0x0
 
-    .line 1250
-    invoke-super {p0, p1, p2}, Lcom/snapchat/android/camera/BaseCameraFragment;->a([BLwc$b;)V
+    .line 1248
+    invoke-super {p0, p1, p2}, Lcom/snapchat/android/camera/BaseCameraFragment;->a([BLwy$b;)V
 
-    .line 1251
+    .line 1249
     new-instance v0, Lcom/snapchat/android/camera/CameraFragment$5;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/camera/CameraFragment$5;-><init>(Lcom/snapchat/android/camera/CameraFragment;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
-    .line 1260
+    .line 1258
     iget-boolean v0, p0, Lcom/snapchat/android/camera/CameraFragment;->x:Z
 
     if-eqz v0, :cond_0
 
-    .line 1261
+    .line 1259
     iput-boolean v6, p0, Lcom/snapchat/android/camera/CameraFragment;->x:Z
 
-    .line 1262
+    .line 1260
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
     invoke-virtual {v0}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->c()V
 
-    .line 1265
+    .line 1263
     :cond_0
     if-nez p2, :cond_2
 
-    .line 1278
+    .line 1276
     :cond_1
     :goto_0
     return-void
 
-    .line 1266
+    .line 1264
     :cond_2
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
-    .line 1268
+    .line 1266
     invoke-static {}, Lcom/snapchat/android/ui/here/HoldToStreamView;->getLastInstance()Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     move-result-object v0
 
-    .line 1269
+    .line 1267
     if-eqz v0, :cond_3
 
-    .line 1270
+    .line 1268
     invoke-virtual {v0, p1}, Lcom/snapchat/android/ui/here/HoldToStreamView;->a([B)V
 
-    .line 1272
+    .line 1270
     :cond_3
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->u:[B
 
-    invoke-interface {p2, v0}, Lwc$b;->a([B)V
+    invoke-interface {p2, v0}, Lwy$b;->a([B)V
 
-    .line 1274
-    invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->x()Lanr;
+    .line 1272
+    invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->x()Laoo;
 
     move-result-object v0
 
-    .line 1275
+    .line 1273
     if-eqz v0, :cond_1
 
-    .line 1276
+    .line 1274
     if-eqz p1, :cond_1
 
-    iget v1, v0, Lanr;->c:I
+    iget v1, v0, Laoo;->b:I
 
     const/16 v2, 0x11
 
     if-ne v1, v2, :cond_1
 
-    iget-object v1, v0, Lanr;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v1, v0, Laoo;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
@@ -2705,20 +2672,12 @@
 
     if-nez v1, :cond_4
 
-    sget-object v1, Lanr;->a:Ljava/lang/String;
-
-    const-string v2, "SnapScan native lib failed to load! -- Scanning disabled!!"
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lanr;->a()V
+    invoke-virtual {v0}, Laoo;->a()V
 
     goto :goto_0
 
     :cond_4
-    iget-object v1, v0, Lanr;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v1, v0, Laoo;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v1, v6, v7}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
@@ -2726,17 +2685,9 @@
 
     if-eqz v1, :cond_5
 
-    sget-object v1, Lanr;->a:Ljava/lang/String;
+    iput v6, v0, Laoo;->i:I
 
-    const-string v2, "Started scanning..."
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iput v6, v0, Lanr;->j:I
-
-    iget-object v1, v0, Lanr;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v1, v0, Laoo;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v1, v6}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
@@ -2744,67 +2695,55 @@
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lanr;->i:J
+    iput-wide v2, v0, Laoo;->h:J
 
-    iget-object v1, v0, Lanr;->h:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v1, v0, Laoo;->g:Ljava/util/concurrent/atomic/AtomicLong;
 
-    iget-wide v2, v0, Lanr;->i:J
+    iget-wide v2, v0, Laoo;->h:J
 
     invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
     :cond_5
-    iget-object v1, v0, Lanr;->h:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v1, v0, Laoo;->g:Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v2
 
-    invoke-static {v2, v3}, Lanr;->a(J)D
+    invoke-static {v2, v3}, Laoo;->a(J)D
 
     move-result-wide v2
 
-    iget-wide v4, v0, Lanr;->d:D
+    iget-wide v4, v0, Laoo;->c:D
 
     cmpl-double v1, v2, v4
 
     if-ltz v1, :cond_6
 
-    sget-object v1, Lanr;->a:Ljava/lang/String;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Stopped scanning - Scan time is expired: "
 
-    const-string v3, "Stopped scanning - Scan time is expired: "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-wide v2, v0, Laoo;->h:J
 
-    iget-wide v4, v0, Lanr;->i:J
+    invoke-static {v2, v3}, Laoo;->a(J)D
 
-    invoke-static {v4, v5}, Lanr;->a(J)D
+    move-result-wide v2
 
-    move-result-wide v4
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    const-string v2, " seconds."
 
-    const-string v3, " seconds."
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v6, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lanr;->a()V
+    invoke-virtual {v0}, Laoo;->a()V
 
     :cond_6
-    iget-object v1, v0, Lanr;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v1, v0, Laoo;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v1, v6, v7}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
@@ -2812,15 +2751,15 @@
 
     if-eqz v1, :cond_1
 
-    new-instance v1, Lanr$1;
+    new-instance v1, Laoo$1;
 
-    invoke-direct {v1, v0, p1}, Lanr$1;-><init>(Lanr;[B)V
+    invoke-direct {v1, v0, p1}, Laoo$1;-><init>(Laoo;[B)V
 
-    iget-object v0, v0, Lanr;->b:Ljava/util/concurrent/Executor;
+    iget-object v0, v0, Laoo;->a:Ljava/util/concurrent/Executor;
 
     new-array v2, v6, [Ljava/lang/Void;
 
-    invoke-virtual {v1, v0, v2}, Lanr$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v0, v2}, Laoo$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto/16 :goto_0
 .end method
@@ -2829,7 +2768,7 @@
     .locals 1
 
     .prologue
-    .line 460
+    .line 458
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0, p1}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a(Landroid/view/MotionEvent;)Z
@@ -2839,18 +2778,18 @@
     return v0
 .end method
 
-.method protected final a(Laue;)[B
+.method protected final a(Lavc;)[B
     .locals 5
-    .param p1    # Laue;
-        .annotation build Lcgb;
+    .param p1    # Lavc;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     const/16 v4, 0x11
 
-    .line 1097
-    invoke-virtual {p1}, Laue;->d()I
+    .line 1095
+    invoke-virtual {p1}, Lavc;->d()I
 
     move-result v0
 
@@ -2868,63 +2807,49 @@
 
     double-to-int v0, v0
 
-    invoke-static {v0}, Latz;->a(I)I
+    invoke-static {v0}, Laux;->a(I)I
 
     move-result v0
 
-    const-string v1, "CameraUtils"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Allocating a Callback Buffer of "
 
-    const-string v3, "Allocating a Callback Buffer of "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1}, Lavc;->d()I
 
-    invoke-virtual {p1}, Laue;->d()I
-
-    move-result v3
+    move-result v2
 
     invoke-static {v4}, Landroid/graphics/ImageFormat;->getBitsPerPixel(I)I
 
-    move-result v4
+    move-result v3
 
-    mul-int/2addr v3, v4
+    mul-int/2addr v2, v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, " divided by 8 = "
+    const-string v2, " divided by 8 = "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, " bytes"
+    const-string v2, " bytes"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     new-array v0, v0, [B
 
     iput-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->u:[B
 
-    .line 1098
+    .line 1096
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->u:[B
 
     return-object v0
@@ -2934,45 +2859,45 @@
     .locals 3
 
     .prologue
-    .line 1125
+    .line 1123
     invoke-super {p0, p1}, Lcom/snapchat/android/camera/BaseCameraFragment;->b(I)V
 
-    .line 1127
+    .line 1125
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getUserVisibleHint()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1150
+    .line 1148
     :goto_0
     return-void
 
-    .line 1129
+    .line 1127
     :cond_0
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    .line 1130
+    .line 1128
     if-eqz v0, :cond_1
 
-    .line 1131
+    .line 1129
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1132
+    .line 1130
     const v0, 0x7f0c00da
 
     invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
-    .line 1133
+    .line 1131
     const/4 v0, 0x1
 
     invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 1134
+    .line 1132
     const v0, 0x7f0c0058
 
     new-instance v2, Lcom/snapchat/android/camera/CameraFragment$2;
@@ -2981,8 +2906,8 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 1139
-    const v0, 0x7f0c0128
+    .line 1137
+    const v0, 0x7f0c0127
 
     new-instance v2, Lcom/snapchat/android/camera/CameraFragment$3;
 
@@ -2990,45 +2915,43 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 1144
+    .line 1142
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 1146
+    .line 1144
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
-    .line 1148
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->s:Lazo;
+    .line 1146
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->s:Lban;
 
-    new-instance v1, Lns;
+    new-instance v1, Loj;
 
-    invoke-direct {v1}, Lns;-><init>()V
+    invoke-direct {v1}, Loj;-><init>()V
 
-    invoke-virtual {v0, v1}, Lazo;->a(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1}, Lban;->a(Ljava/lang/Throwable;)V
 
-    .line 1149
+    .line 1147
     new-instance v0, Lcom/snapchat/android/analytics/framework/ErrorMetric;
 
     const-string v1, "CAMERA_FAILED_TO_OPEN"
 
     invoke-direct {v0, v1}, Lcom/snapchat/android/analytics/framework/ErrorMetric;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->e()V
 
     goto :goto_0
 .end method
 
 .method public final b(Landroid/graphics/Bitmap;)V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
-
     const/4 v2, -0x2
 
-    .line 1349
+    .line 1347
     sget-object v0, Lcom/snapchat/android/util/Property;->ENABLE_SNAPSCAN_DEBUG:Lcom/snapchat/android/util/Property;
 
     invoke-virtual {v0}, Lcom/snapchat/android/util/Property;->getBoolean()Z
@@ -3037,10 +2960,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 1350
-    if-eqz p1, :cond_2
+    .line 1348
+    if-eqz p1, :cond_1
 
-    .line 1351
+    .line 1349
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->G:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
@@ -3080,54 +3003,41 @@
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->G:Landroid/widget/ImageView;
 
-    .line 1352
+    .line 1350
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 1353
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    .line 1351
+    const/4 v1, 0x0
 
-    .line 1358
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 1352
     :cond_1
-    :goto_0
     return-void
-
-    .line 1355
-    :cond_2
-    const-string v0, "CameraFragment"
-
-    const-string v1, "The debug scanner image was null."
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
 .end method
 
 .method public final b(Z)V
-    .locals 7
+    .locals 4
 
     .prologue
-    const/4 v6, 0x1
+    .line 894
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
-    .line 896
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
-
-    iget-boolean v0, v0, Lwk;->a:Z
+    iget-boolean v0, v0, Lxg;->a:Z
 
     if-eqz v0, :cond_0
 
-    .line 905
+    .line 903
     :goto_0
     return-void
 
-    .line 900
+    .line 898
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/model/CameraModel;->a()V
 
-    .line 901
+    .line 899
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
@@ -3136,54 +3046,60 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/model/CameraModel;->b(I)Z
 
-    move-result v1
+    move-result v2
 
-    .line 902
-    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
-
-    iget-object v0, v2, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    const-string v3, "CAMERA_SWITCH"
-
-    invoke-virtual {v0, v3, v6}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Z)V
+    .line 900
+    iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
     if-eqz p1, :cond_1
 
     const-string v0, "double_tap"
 
+    move-object v1, v0
+
     :goto_1
-    iget-object v3, v2, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    const-string v4, "CAMERA_SWITCH"
-
-    const-string v5, "context"
-
-    invoke-virtual {v3, v4, v5, v0}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
-
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
     const-string v0, "front_facing_camera"
 
     :goto_2
-    iget-object v1, v2, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    iget-object v2, v3, Lcom/snapchat/android/analytics/CameraEventAnalytics;->mEasyMetricManager:Lcom/snapchat/android/analytics/framework/EasyMetricManager;
 
-    const-string v2, "CAMERA_SWITCH"
+    const-string v3, "CAMERA_SWITCH"
 
-    const-string v3, "switch_to"
+    invoke-virtual {v2, v3}, Lcom/snapchat/android/analytics/framework/EasyMetricManager;->b(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    invoke-virtual {v1, v2, v3, v0}, Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
+    move-result-object v2
 
-    .line 903
-    iput-boolean v6, p0, Lcom/snapchat/android/camera/CameraFragment;->x:Z
+    const-string v3, "context"
 
-    .line 904
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->i_()V
+    invoke-virtual {v2, v3, v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    move-result-object v1
+
+    const-string v2, "switch_to"
+
+    invoke-virtual {v1, v2, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 901
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/snapchat/android/camera/CameraFragment;->x:Z
+
+    .line 902
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->g_()V
 
     goto :goto_0
 
-    .line 902
+    .line 900
     :cond_1
     const-string v0, "toggle_button"
+
+    move-object v1, v0
 
     goto :goto_1
 
@@ -3197,12 +3113,12 @@
     .locals 3
 
     .prologue
-    .line 724
+    .line 722
     invoke-super {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;->d()Z
 
     move-result v0
 
-    .line 726
+    .line 724
     if-eqz v0, :cond_0
 
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
@@ -3215,7 +3131,7 @@
 
     invoke-virtual {v1, v2}, Lcom/snapchat/android/camera/cameraview/CameraView;->setAlpha(F)V
 
-    .line 727
+    .line 725
     :cond_0
     return v0
 .end method
@@ -3228,22 +3144,22 @@
 
     const/4 v3, 0x0
 
-    .line 573
-    invoke-static {}, Lnf;->d()V
+    .line 571
+    invoke-static {}, Lnw;->d()V
 
-    .line 575
+    .line 573
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->b()Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/ui/window/WindowConfiguration$StatusBarDrawMode;)V
 
+    .line 574
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->E:Laio;
+
+    invoke-virtual {v0}, Laio;->b()V
+
     .line 576
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->E:Lahs;
-
-    invoke-virtual {v0}, Lahs;->b()V
-
-    .line 578
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->getCurrentPanel()I
@@ -3252,24 +3168,24 @@
 
     if-ne v0, v4, :cond_0
 
-    .line 579
+    .line 577
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbel;
+    new-instance v1, Lbfk;
 
     sget-object v2, Lcom/snapchat/android/util/TitleBarManager$Visibility;->HIDDEN:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    invoke-direct {v1, v2}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
+    invoke-direct {v1, v2}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 582
+    .line 580
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbdd;
+    new-instance v1, Lbed;
 
-    invoke-direct {v1}, Lbdd;-><init>()V
+    invoke-direct {v1}, Lbed;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -3283,13 +3199,13 @@
 
     check-cast v0, Lcom/snapchat/android/LandingPageActivity;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/LandingPageActivity;->g()Lbcz;
+    invoke-virtual {v0}, Lcom/snapchat/android/LandingPageActivity;->g()Lbdz;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    iget v0, v0, Lbcz;->mOriginatingFragment:I
+    iget v0, v0, Lbdz;->mOriginatingFragment:I
 
     const/4 v1, 0x3
 
@@ -3298,32 +3214,32 @@
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbda;
+    new-instance v1, Lbea;
 
-    invoke-direct {v1}, Lbda;-><init>()V
+    invoke-direct {v1}, Lbea;-><init>()V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 583
+    :cond_2
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
+
+    new-instance v1, Lbbq;
+
+    sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
+
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 585
-    :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
-
-    new-instance v1, Lbap;
-
-    sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
-
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 587
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getView()Landroid/view/View;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    .line 588
+    .line 586
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -3336,7 +3252,7 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 590
+    .line 588
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getView()Landroid/view/View;
 
     move-result-object v1
@@ -3347,34 +3263,34 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 593
+    .line 591
     :cond_3
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     if-eqz v0, :cond_4
 
-    .line 594
+    .line 592
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
-    .line 595
+    .line 593
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->c()V
 
-    .line 597
+    .line 595
     :cond_4
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
     if-eqz v0, :cond_5
 
-    .line 598
+    .line 596
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 601
+    .line 599
     :cond_5
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
@@ -3390,9 +3306,9 @@
 
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbdg;
+    new-instance v1, Lbeg;
 
-    invoke-direct {v1, v3}, Lbdg;-><init>(Z)V
+    invoke-direct {v1, v3}, Lbeg;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -3409,15 +3325,15 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->a(ID)V
 
-    .line 603
+    .line 601
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
     invoke-virtual {v0}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->b()V
 
-    .line 605
-    invoke-static {}, Lnf;->e()V
+    .line 603
+    invoke-static {}, Lnw;->e()V
 
-    .line 606
+    .line 604
     return-void
 .end method
 
@@ -3425,19 +3341,19 @@
     .locals 3
 
     .prologue
-    .line 641
+    .line 639
     invoke-super {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;->f()V
 
-    .line 642
-    invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->x()Lanr;
+    .line 640
+    invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->x()Laoo;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lanr;->a()V
+    invoke-virtual {v0}, Laoo;->a()V
 
-    .line 644
+    .line 642
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
@@ -3445,18 +3361,18 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setEnabled(Z)V
 
-    .line 645
+    .line 643
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbcd;
+    new-instance v1, Lbdd;
 
     const-string v2, "CameraFragment"
 
-    invoke-direct {v1, v2}, Lbcd;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lbdd;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 646
+    .line 644
     return-void
 .end method
 
@@ -3466,7 +3382,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1283
+    .line 1281
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->getCurrentPanel()I
@@ -3475,12 +3391,12 @@
 
     if-nez v0, :cond_2
 
-    .line 1284
+    .line 1282
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getChildFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
 
-    .line 1285
+    .line 1283
     const v2, 0x7f0a0094
 
     invoke-virtual {v0, v2}, Landroid/support/v4/app/FragmentManager;->findFragmentById(I)Landroid/support/v4/app/Fragment;
@@ -3489,17 +3405,17 @@
 
     check-cast v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;
 
-    .line 1287
+    .line 1285
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->m()Z
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->n()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 1288
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->l()Z
+    .line 1286
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->m()Z
 
     move-result v2
 
@@ -3507,13 +3423,13 @@
 
     move v0, v1
 
-    .line 1299
+    .line 1297
     :goto_0
     return v0
 
-    .line 1291
+    .line 1289
     :cond_0
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->i()Z
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->l()Z
 
     move-result v0
 
@@ -3521,10 +3437,10 @@
 
     move v0, v1
 
-    .line 1292
+    .line 1290
     goto :goto_0
 
-    .line 1296
+    .line 1294
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
@@ -3534,10 +3450,10 @@
 
     move v0, v1
 
-    .line 1297
+    .line 1295
     goto :goto_0
 
-    .line 1299
+    .line 1297
     :cond_2
     invoke-super {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;->g()Z
 
@@ -3550,7 +3466,7 @@
     .locals 1
 
     .prologue
-    .line 488
+    .line 486
     invoke-super {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -3558,14 +3474,14 @@
     return-object v0
 .end method
 
-.method public final k_()Z
+.method public final i_()Z
     .locals 1
 
     .prologue
-    .line 525
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lwj;
+    .line 523
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lxf;
 
-    iget-boolean v0, v0, Lwj;->a:Z
+    iget-boolean v0, v0, Lxf;->a:Z
 
     return v0
 .end method
@@ -3574,7 +3490,7 @@
     .locals 1
 
     .prologue
-    .line 530
+    .line 528
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/model/CameraModel;->b()Z
@@ -3592,7 +3508,7 @@
 
     const/4 v0, 0x0
 
-    .line 816
+    .line 814
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v2}, Lcom/snapchat/android/camera/model/CameraModel;->d()Z
@@ -3601,50 +3517,50 @@
 
     if-eqz v2, :cond_0
 
-    .line 835
+    .line 833
     :goto_0
     return v0
 
-    .line 820
+    .line 818
     :cond_0
-    sget-boolean v2, Lasu;->HAS_SURFACE_TEXTURE_RECORDING:Z
+    sget-boolean v2, Latt;->HAS_SURFACE_TEXTURE_RECORDING:Z
 
     if-eqz v2, :cond_2
 
-    .line 821
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->r:Lwn;
+    .line 819
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->r:Lxj;
 
-    invoke-virtual {v1}, Lwn;->a()Laue;
+    invoke-virtual {v1}, Lxj;->a()Lavc;
 
     move-result-object v1
 
-    .line 822
+    .line 820
     if-nez v1, :cond_1
 
-    .line 823
+    .line 821
     sget-object v1, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->INITIALIZATION_ERROR:Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;)V
 
     goto :goto_0
 
-    .line 826
+    .line 824
     :cond_1
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/camera/CameraFragment;->a(Landroid/view/Surface;Laue;)Z
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/camera/CameraFragment;->a(Landroid/view/Surface;Lavc;)Z
 
     move-result v0
 
     goto :goto_0
 
-    .line 831
+    .line 829
     :cond_2
-    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
-    invoke-interface {v2, v1}, Lwc$b;->b(Z)V
+    invoke-interface {v2, v1}, Lwy$b;->b(Z)V
 
-    .line 832
+    .line 830
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     new-instance v3, Landroid/view/SurfaceView;
@@ -3687,7 +3603,7 @@
 
     move v0, v1
 
-    .line 835
+    .line 833
     goto :goto_0
 .end method
 
@@ -3695,10 +3611,10 @@
     .locals 1
 
     .prologue
-    .line 857
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    .line 855
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
-    iget-boolean v0, v0, Lwk;->a:Z
+    iget-boolean v0, v0, Lxg;->a:Z
 
     return v0
 .end method
@@ -3709,7 +3625,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 921
+    .line 919
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     invoke-virtual {v1}, Lcom/snapchat/android/camera/model/CameraModel;->b()Z
@@ -3718,22 +3634,22 @@
 
     if-eqz v1, :cond_1
 
-    .line 922
-    invoke-static {}, Lajx;->ac()Z
+    .line 920
+    invoke-static {}, Lakr;->ab()Z
 
     move-result v0
 
-    .line 924
+    .line 922
     :cond_0
     :goto_0
     return v0
 
     :cond_1
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwc$b;
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->c:Lwy$b;
 
     if-eqz v1, :cond_0
 
-    invoke-interface {v1}, Lwc$b;->c()Landroid/hardware/Camera$Parameters;
+    invoke-interface {v1}, Lwy$b;->c()Landroid/hardware/Camera$Parameters;
 
     move-result-object v1
 
@@ -3760,10 +3676,10 @@
     .prologue
     const v4, 0x7f0a0094
 
-    .line 299
+    .line 297
     invoke-super {p0, p1}, Lcom/snapchat/android/camera/BaseCameraFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 301
+    .line 299
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getChildFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v1
@@ -3791,7 +3707,7 @@
 
     invoke-direct {v2, p0, v3}, Lcom/snapchat/android/camera/CameraFragment$a;-><init>(Lcom/snapchat/android/camera/CameraFragment;B)V
 
-    iput-object v2, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->c:Lwr;
+    iput-object v2, v0, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->c:Lxn;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/ProfileFragment;->isAdded()Z
 
@@ -3809,42 +3725,42 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
 
-    .line 302
+    .line 300
     :cond_1
     return-void
 .end method
 
-.method public onAdjustForQuickSnapEvent(Lbal;)V
+.method public onAdjustForQuickSnapEvent(Lbbl;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 359
+    .line 357
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-nez v0, :cond_0
 
-    .line 364
+    .line 362
     :goto_0
     return-void
 
-    .line 360
+    .line 358
     :cond_0
-    iget-boolean v0, p1, Lbal;->mShouldPrepare:Z
+    iget-boolean v0, p1, Lbbl;->mShouldPrepare:Z
 
     if-eqz v0, :cond_1
 
-    .line 361
+    .line 359
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     sget-object v1, Lcom/snapchat/android/camera/model/CameraModel$CameraType;->FRONT_FACING:Lcom/snapchat/android/camera/model/CameraModel$CameraType;
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/model/CameraModel;->a(Lcom/snapchat/android/camera/model/CameraModel$CameraType;)V
 
-    .line 363
+    .line 361
     :cond_1
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->i_()V
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->g_()V
 
     goto :goto_0
 .end method
@@ -3853,57 +3769,57 @@
     .locals 1
 
     .prologue
-    .line 465
+    .line 463
     invoke-super {p0, p1}, Lcom/snapchat/android/camera/BaseCameraFragment;->onAttach(Landroid/app/Activity;)V
 
-    .line 466
-    instance-of v0, p1, Lbfa;
+    .line 464
+    instance-of v0, p1, Lbfz;
 
     if-eqz v0, :cond_0
 
+    .line 465
+    check-cast p1, Lbfz;
+
+    iput-object p1, p0, Lcom/snapchat/android/camera/CameraFragment;->t:Lbfz;
+
     .line 467
-    check-cast p1, Lbfa;
-
-    iput-object p1, p0, Lcom/snapchat/android/camera/CameraFragment;->t:Lbfa;
-
-    .line 469
     :cond_0
     return-void
 .end method
 
-.method public onCameraStateEvent(Lbap;)V
+.method public onCameraStateEvent(Lbbq;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v1, 0x0
 
-    .line 677
-    invoke-virtual {p1}, Lbap;->a()Z
+    .line 675
+    invoke-virtual {p1}, Lbbq;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 678
-    iget-object v0, p1, Lbap;->cameraToResume:Lcom/snapchat/android/camera/model/CameraModel$CameraType;
+    .line 676
+    iget-object v0, p1, Lbbq;->cameraToResume:Lcom/snapchat/android/camera/model/CameraModel$CameraType;
 
     if-eqz v0, :cond_0
 
-    .line 679
+    .line 677
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
-    iget-object v2, p1, Lbap;->cameraToResume:Lcom/snapchat/android/camera/model/CameraModel$CameraType;
+    iget-object v2, p1, Lbbq;->cameraToResume:Lcom/snapchat/android/camera/model/CameraModel$CameraType;
 
     invoke-virtual {v0, v2}, Lcom/snapchat/android/camera/model/CameraModel;->a(Lcom/snapchat/android/camera/model/CameraModel$CameraType;)V
 
-    .line 681
+    .line 679
     :cond_0
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->i_()V
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->g_()V
 
-    .line 683
-    iget-object v0, p1, Lbap;->displayState:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
+    .line 681
+    iget-object v0, p1, Lbbq;->displayState:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
@@ -3911,7 +3827,7 @@
 
     const/4 v0, 0x1
 
-    .line 684
+    .line 682
     :goto_0
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
@@ -3920,127 +3836,127 @@
     :goto_1
     invoke-virtual {v2, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 692
+    .line 690
     :goto_2
     return-void
 
     :cond_1
     move v0, v1
 
-    .line 683
+    .line 681
     goto :goto_0
 
-    .line 684
+    .line 682
     :cond_2
     const/4 v1, 0x4
 
     goto :goto_1
 
-    .line 686
+    .line 684
     :cond_3
     invoke-virtual {p0, v1}, Lcom/snapchat/android/camera/CameraFragment;->a(Z)V
 
-    .line 687
+    .line 685
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-eqz v0, :cond_4
 
-    .line 688
+    .line 686
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/cameraview/CameraView;->setAlpha(F)V
 
-    .line 690
+    .line 688
     :cond_4
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lvz;
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
 
-    invoke-virtual {v0}, Lvz;->b()V
+    invoke-virtual {v0}, Lwv;->b()V
 
     goto :goto_2
 .end method
 
-.method public onCancelCardLinkEvent(Lbaq;)V
+.method public onCancelCardLinkEvent(Lbbr;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 381
+    .line 379
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->u()V
 
-    .line 382
+    .line 380
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
-    .line 383
+    .line 381
     return-void
 .end method
 
-.method public onCancelInChatSnapEvent(Lbar;)V
+.method public onCancelInChatSnapEvent(Lbbs;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
+    .line 351
+    invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->u()V
+
+    .line 352
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Ljava/lang/String;)V
+
     .line 353
-    invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->u()V
-
-    .line 354
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Ljava/lang/String;)V
-
-    .line 355
     return-void
 .end method
 
-.method public onCancelQuickSnapEvent(Lbas;)V
+.method public onCancelQuickSnapEvent(Lbbt;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 375
+    .line 373
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->u()V
 
-    .line 376
+    .line 374
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Ljava/lang/String;)V
 
-    .line 377
+    .line 375
     return-void
 .end method
 
-.method public onCancelReplyEvent(Lbat;)V
+.method public onCancelReplyEvent(Lbbu;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 341
+    .line 339
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->u()V
 
-    .line 342
+    .line 340
     return-void
 .end method
 
 .method public onChangePreviewQualityEvent(Lcom/snapchat/android/util/eventbus/ChangePreviewQualityEvent;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     const/4 v2, 0x1
 
-    .line 696
+    .line 694
     sget-object v0, Lcom/snapchat/android/camera/CameraFragment$6;->a:[I
 
     iget-object v1, p1, Lcom/snapchat/android/util/eventbus/ChangePreviewQualityEvent;->previewQuality:Lcom/snapchat/android/util/eventbus/ChangePreviewQualityEvent$PreviewQuality;
@@ -4053,12 +3969,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 704
+    .line 702
     :cond_0
     :goto_0
     return-void
 
-    .line 698
+    .line 696
     :pswitch_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
@@ -4078,11 +3994,11 @@
 
     iput-boolean v1, v0, Lcom/snapchat/android/camera/model/CameraModel;->i:Z
 
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->i_()V
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->g_()V
 
     goto :goto_0
 
-    .line 701
+    .line 699
     :pswitch_1
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
@@ -4100,11 +4016,11 @@
 
     iput-boolean v2, v0, Lcom/snapchat/android/camera/model/CameraModel;->i:Z
 
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->i_()V
+    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->g_()V
 
     goto :goto_0
 
-    .line 696
+    .line 694
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -4116,16 +4032,16 @@
     .locals 0
 
     .prologue
-    .line 250
-    invoke-static {}, Lnf;->d()V
+    .line 248
+    invoke-static {}, Lnw;->d()V
 
-    .line 251
+    .line 249
     invoke-super {p0, p1}, Lcom/snapchat/android/camera/BaseCameraFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 252
-    invoke-static {}, Lnf;->e()V
+    .line 250
+    invoke-static {}, Lnw;->e()V
 
-    .line 253
+    .line 251
     return-void
 .end method
 
@@ -4135,22 +4051,22 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 257
-    invoke-static {}, Lnf;->d()V
+    .line 255
+    invoke-static {}, Lnw;->d()V
 
-    .line 258
+    .line 256
     invoke-super {p0, p1, p2, p3}, Lcom/snapchat/android/camera/BaseCameraFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
-    .line 261
+    .line 259
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-eqz v0, :cond_0
 
-    sget-boolean v0, Lasu;->HAS_SURFACE_TEXTURE_RECORDING:Z
+    sget-boolean v0, Latt;->HAS_SURFACE_TEXTURE_RECORDING:Z
 
     if-eqz v0, :cond_0
 
-    .line 263
+    .line 261
     const v0, 0x7f0a0097
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->c(I)Landroid/view/View;
@@ -4161,7 +4077,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 266
+    .line 264
     :cond_0
     const v0, 0x7f0a0093
 
@@ -4173,7 +4089,7 @@
 
     iput-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
-    .line 267
+    .line 265
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
     invoke-virtual {v0, v3}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setEnabled(Z)V
@@ -4184,7 +4100,7 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;->setScrollable(Z)V
 
-    .line 270
+    .line 268
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->i:Lcom/snapchat/android/camera/model/CameraModel;
 
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->g:Landroid/content/SharedPreferences;
@@ -4201,8 +4117,8 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/model/CameraModel;->a(I)V
 
-    .line 272
-    new-instance v0, Lvt;
+    .line 270
+    new-instance v0, Lwp;
 
     const v1, 0x7f0a0096
 
@@ -4210,11 +4126,11 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lvt;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, v1}, Lwp;-><init>(Landroid/view/View;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lvv;
+    iput-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lwr;
 
-    .line 273
+    .line 271
     const v0, 0x7f0a0098
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->c(I)Landroid/view/View;
@@ -4225,30 +4141,30 @@
 
     iput-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->v:Landroid/widget/TextView;
 
-    .line 274
-    new-instance v0, Lxh;
+    .line 272
+    new-instance v0, Lyd;
 
-    invoke-direct {v0}, Lxh;-><init>()V
+    invoke-direct {v0}, Lyd;-><init>()V
 
-    .line 275
-    iget v1, v0, Lxh;->widthPixels:I
+    .line 273
+    iget v1, v0, Lyd;->widthPixels:I
 
-    iget v2, v0, Lxh;->heightPixels:I
+    iget v2, v0, Lyd;->heightPixels:I
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    .line 276
-    iget v2, v0, Lxh;->widthPixels:I
+    .line 274
+    iget v2, v0, Lyd;->widthPixels:I
 
-    iget v3, v0, Lxh;->heightPixels:I
+    iget v3, v0, Lyd;->heightPixels:I
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v2
 
-    .line 277
+    .line 275
     iget-object v3, p0, Lcom/snapchat/android/camera/CameraFragment;->v:Landroid/widget/TextView;
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
@@ -4261,16 +4177,16 @@
 
     mul-float/2addr v1, v2
 
-    iget v0, v0, Lxh;->density:F
+    iget v0, v0, Lyd;->density:F
 
     div-float v0, v1, v0
 
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 279
-    invoke-static {}, Lnf;->e()V
+    .line 277
+    invoke-static {}, Lnw;->e()V
 
-    .line 280
+    .line 278
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->mFragmentLayout:Landroid/view/View;
 
     return-object v0
@@ -4278,29 +4194,27 @@
 
 .method public onFeedRefreshedEvent(Lcom/snapchat/android/util/eventbus/SnapMessageFeedRefreshedEvent;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 886
+    .line 884
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
-    .line 887
+    .line 885
     return-void
 .end method
 
-.method public onKeyDownEvent(Lbbv;)V
+.method public onKeyDownEvent(Lbcv;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 399
-    invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->h_()Z
-
-    move-result v0
+    .line 397
+    iget-boolean v0, p0, Lcom/snapchat/android/util/fragment/SnapchatFragment;->mIsVisible:Z
 
     if-eqz v0, :cond_0
 
@@ -4320,14 +4234,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 405
+    .line 403
     :cond_0
     :goto_0
     return-void
 
-    .line 404
+    .line 402
     :cond_1
-    iget v0, p1, Lbbv;->keyCode:I
+    iget v0, p1, Lbcv;->keyCode:I
 
     sparse-switch v0, :sswitch_data_0
 
@@ -4336,7 +4250,7 @@
     :sswitch_0
     iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
-    iget-object v0, p1, Lbbv;->event:Landroid/view/KeyEvent;
+    iget-object v0, p1, Lbcv;->event:Landroid/view/KeyEvent;
 
     invoke-virtual {v0}, Landroid/view/KeyEvent;->getAction()I
 
@@ -4365,16 +4279,16 @@
     .end sparse-switch
 .end method
 
-.method public onLockScreenOpenedEvent(Lbcg;)V
+.method public onLockScreenOpenedEvent(Lbdg;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 535
+    .line 533
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->onResume()V
 
-    .line 536
+    .line 534
     return-void
 .end method
 
@@ -4382,41 +4296,41 @@
     .locals 4
 
     .prologue
-    .line 650
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    .line 648
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
-    iget-boolean v0, v0, Lwk;->a:Z
+    iget-boolean v0, v0, Lxg;->a:Z
 
     if-eqz v0, :cond_0
 
-    .line 651
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lvz;
+    .line 649
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lvv;
+    iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lwr;
 
     const/4 v3, 0x1
 
-    invoke-virtual {v0, v1, v2, v3}, Lvz;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lvv;Z)V
+    invoke-virtual {v0, v1, v2, v3}, Lwv;->a(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$c;Lwr;Z)V
 
-    .line 652
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lwk;
+    .line 650
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lwk;->a:Z
+    iput-boolean v1, v0, Lxg;->a:Z
 
-    .line 654
+    .line 652
     :cond_0
     invoke-super {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;->onPause()V
 
-    .line 655
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lvz;
+    .line 653
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
 
-    invoke-virtual {v0}, Lvz;->b()V
+    invoke-virtual {v0}, Lwv;->b()V
 
-    .line 656
+    .line 654
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     if-eqz v0, :cond_1
@@ -4427,53 +4341,53 @@
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/camera/cameraview/CameraView;->setAlpha(F)V
 
-    .line 657
+    .line 655
     :cond_1
     return-void
 .end method
 
-.method public onProfileViewScrollEvent(Lbcr;)V
+.method public onProfileViewScrollEvent(Lbdr;)V
     .locals 4
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 387
+    .line 385
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->l:Lcom/snapchat/android/camera/ui/viewflipper/CameraViewFlipper;
 
-    iget v1, p1, Lbcr;->destinationPage:I
+    iget v1, p1, Lbdr;->destinationPage:I
 
     const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->a(ID)V
 
-    .line 388
+    .line 386
     return-void
 .end method
 
-.method public onRefreshCameraNotificationBoxesEvent(Lbcv;)V
+.method public onRefreshCameraNotificationBoxesEvent(Lbdv;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 881
+    .line 879
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->b()V
 
-    .line 882
+    .line 880
     return-void
 .end method
 
-.method public onReplySnapEvent(Lbcz;)V
+.method public onReplySnapEvent(Lbdz;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 335
-    new-instance v0, Lvr;
+    .line 333
+    new-instance v0, Lwn;
 
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -4481,16 +4395,16 @@
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
-    invoke-direct {v0, v1, v2, p0, p1}, Lvr;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;Lbcz;)V
+    invoke-direct {v0, v1, v2, p0, p1}, Lwn;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;Lbdz;)V
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/cameradecor/CameraDecor;)V
 
-    .line 336
+    .line 334
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Ljava/lang/String;)V
 
-    .line 337
+    .line 335
     return-void
 .end method
 
@@ -4498,13 +4412,13 @@
     .locals 6
 
     .prologue
-    .line 546
-    invoke-static {}, Lnf;->d()V
+    .line 544
+    invoke-static {}, Lnw;->d()V
 
-    .line 547
+    .line 545
     invoke-super {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;->onResume()V
 
-    .line 549
+    .line 547
     invoke-virtual {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -4545,17 +4459,17 @@
 
     invoke-virtual {v0, v2, v4, v5}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->a(ID)V
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v2, Lbdw;
+    new-instance v2, Lbev;
 
     new-instance v3, Lcom/snapchat/android/fragments/addfriends/AddedMeFragment;
 
     invoke-direct {v3}, Lcom/snapchat/android/fragments/addfriends/AddedMeFragment;-><init>()V
 
-    invoke-direct {v2, v3}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v2, v3}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -4564,11 +4478,11 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
-    .line 550
+    .line 548
     :cond_1
-    invoke-static {}, Lnf;->e()V
+    invoke-static {}, Lnw;->e()V
 
-    .line 551
+    .line 549
     return-void
 .end method
 
@@ -4576,7 +4490,7 @@
     .locals 1
 
     .prologue
-    .line 1421
+    .line 1419
     sget-object v0, Lcom/snapchat/android/camera/CameraFragment;->H:Ljava/util/Set;
 
     invoke-interface {v0, p2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -4589,28 +4503,28 @@
 
     if-eqz v0, :cond_0
 
-    .line 1422
+    .line 1420
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
-    .line 1424
+    .line 1422
     :cond_0
     return-void
 .end method
 
-.method public onSnapViewingEvent(Lbdm;)V
+.method public onSnapViewingEvent(Lbem;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 891
+    .line 889
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
-    .line 892
+    .line 890
     return-void
 .end method
 
@@ -4618,13 +4532,13 @@
     .locals 0
 
     .prologue
-    .line 540
+    .line 538
     invoke-super {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;->onStart()V
 
-    .line 541
-    invoke-static {p0}, Lajx;->a(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
+    .line 539
+    invoke-static {p0}, Lakr;->a(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
-    .line 542
+    .line 540
     return-void
 .end method
 
@@ -4632,13 +4546,13 @@
     .locals 4
 
     .prologue
-    .line 661
+    .line 659
     invoke-super {p0}, Lcom/snapchat/android/camera/BaseCameraFragment;->onStop()V
 
-    .line 662
-    invoke-static {p0}, Lajx;->b(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
+    .line 660
+    invoke-static {p0}, Lakr;->b(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
-    .line 665
+    .line 663
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
@@ -4657,19 +4571,19 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/ui/VerticalSwipeLayout;->a(ID)V
 
-    .line 666
+    .line 664
     :cond_0
     return-void
 .end method
 
-.method public onSwitchToInChatCameraEvent(Lbef;)V
+.method public onSwitchToInChatCameraEvent(Lbfe;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 346
-    new-instance v0, Lvp;
+    .line 344
+    new-instance v0, Lwl;
 
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -4677,38 +4591,38 @@
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
-    invoke-direct {v0, v1, v2, p0, p1}, Lvp;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;Lbef;)V
+    invoke-direct {v0, v1, v2, p0, p1}, Lwl;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;Lbfe;)V
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/cameradecor/CameraDecor;)V
+
+    .line 345
+    iget-object v0, p1, Lbfe;->mCaptionText:Ljava/lang/String;
+
+    invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Ljava/lang/String;)V
+
+    .line 346
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
+
+    new-instance v1, Lbeg;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lbeg;-><init>(Z)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 347
-    iget-object v0, p1, Lbef;->mCaptionText:Ljava/lang/String;
-
-    invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Ljava/lang/String;)V
-
-    .line 348
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
-
-    new-instance v1, Lbdg;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lbdg;-><init>(Z)V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 349
     return-void
 .end method
 
-.method public onSwitchToQuickSnapCameraEvent(Lbeg;)V
+.method public onSwitchToQuickSnapCameraEvent(Lbff;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 368
-    new-instance v0, Lvq;
+    .line 366
+    new-instance v0, Lwm;
 
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -4716,42 +4630,42 @@
 
     iget-object v2, p0, Lcom/snapchat/android/camera/CameraFragment;->e:Landroid/widget/RelativeLayout;
 
-    invoke-direct {v0, v1, v2, p0}, Lvq;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
+    invoke-direct {v0, v1, v2, p0}, Lwm;-><init>(Landroid/content/Context;Landroid/widget/RelativeLayout;Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface;)V
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Lcom/snapchat/android/camera/cameradecor/CameraDecor;)V
 
-    .line 369
-    iget-object v0, p1, Lbeg;->mCaptionText:Ljava/lang/String;
+    .line 367
+    iget-object v0, p1, Lbff;->mCaptionText:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->a(Ljava/lang/String;)V
 
-    .line 370
+    .line 368
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->z:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbdg;
+    new-instance v1, Lbeg;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Lbdg;-><init>(Z)V
+    invoke-direct {v1, v2}, Lbeg;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 371
+    .line 369
     return-void
 .end method
 
-.method public onViewedFriendFeedEvent(Lbak;)V
+.method public onViewedFriendFeedEvent(Lbbk;)V
     .locals 1
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
-    .line 876
+    .line 874
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
-    .line 877
+    .line 875
     return-void
 .end method
 
@@ -4759,49 +4673,49 @@
     .locals 3
 
     .prologue
-    .line 930
+    .line 928
     invoke-virtual {p0}, Lcom/snapchat/android/camera/CameraFragment;->o()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 934
+    .line 932
     :goto_0
     return-void
 
-    .line 931
+    .line 929
     :cond_0
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lwj;
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lxf;
 
-    iget-boolean v0, v1, Lwj;->a:Z
+    iget-boolean v0, v1, Lxf;->a:Z
 
     if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
     :goto_1
-    iput-boolean v0, v1, Lwj;->a:Z
+    iput-boolean v0, v1, Lxf;->a:Z
 
-    .line 932
-    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lvv;
+    .line 930
+    iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->w:Lwr;
 
-    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lwj;
+    iget-object v1, p0, Lcom/snapchat/android/camera/CameraFragment;->p:Lxf;
 
-    iget-boolean v1, v1, Lwj;->a:Z
+    iget-boolean v1, v1, Lxf;->a:Z
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2, v1}, Lvv;->a(Landroid/hardware/Camera$Parameters;Z)V
+    invoke-virtual {v0, v2, v1}, Lwr;->a(Landroid/hardware/Camera$Parameters;Z)V
 
-    .line 933
+    .line 931
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->a()V
 
     goto :goto_0
 
-    .line 931
+    .line 929
     :cond_1
     const/4 v0, 0x0
 
@@ -4812,34 +4726,34 @@
     .locals 4
 
     .prologue
-    .line 939
-    invoke-static {}, Lbgp;->a()V
+    .line 937
+    invoke-static {}, Lbhp;->a()V
 
-    .line 940
+    .line 938
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->B:Lcom/snapchat/android/analytics/CameraEventAnalytics;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/analytics/CameraEventAnalytics;->a(Z)V
 
-    .line 941
+    .line 939
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->d()V
 
-    .line 942
+    .line 940
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->mFragmentInterface:Lcom/snapchat/android/util/fragment/SnapchatFragment$a;
 
     if-eqz v0, :cond_0
 
-    .line 943
+    .line 941
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->mFragmentInterface:Lcom/snapchat/android/util/fragment/SnapchatFragment$a;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/util/fragment/SnapchatFragment$a;->a(Z)V
 
-    .line 949
+    .line 947
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
@@ -4857,7 +4771,7 @@
 
     if-nez v0, :cond_1
 
-    .line 950
+    .line 948
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->b:Lcom/snapchat/android/camera/cameraview/CameraView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameraview/CameraView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -4878,7 +4792,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 952
+    .line 950
     :cond_1
     return-void
 .end method
@@ -4887,18 +4801,18 @@
     .locals 1
 
     .prologue
-    .line 1043
-    invoke-static {}, Lbgp;->a()V
+    .line 1041
+    invoke-static {}, Lbhp;->a()V
 
-    .line 1045
+    .line 1043
     iget-object v0, p0, Lcom/snapchat/android/camera/CameraFragment;->d:Lcom/snapchat/android/camera/cameradecor/CameraDecor;
 
     invoke-virtual {v0}, Lcom/snapchat/android/camera/cameradecor/CameraDecor;->e()V
 
-    .line 1046
+    .line 1044
     invoke-direct {p0}, Lcom/snapchat/android/camera/CameraFragment;->w()V
 
-    .line 1047
+    .line 1045
     return-void
 .end method
 
@@ -4906,11 +4820,11 @@
     .locals 1
 
     .prologue
-    .line 1169
+    .line 1167
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/camera/CameraFragment;->b(Z)V
 
-    .line 1170
+    .line 1168
     return-void
 .end method

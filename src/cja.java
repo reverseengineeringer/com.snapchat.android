@@ -1,55 +1,36 @@
-import java.io.Serializable;
 import java.util.Locale;
+import java.util.TreeMap;
 
-public abstract class cja
-  implements Serializable
+final class cja
+  extends ciq
 {
-  private int d()
+  cja(cim paramcim)
   {
-    return a().a(b());
+    super(paramcim);
   }
   
-  public abstract cgh a();
-  
-  public final String a(Locale paramLocale)
+  protected final int a(String paramString, Locale paramLocale)
   {
-    return a().a(b(), paramLocale);
+    paramLocale = (Integer)ai.get(paramString);
+    if (paramLocale != null) {
+      return paramLocale.intValue();
+    }
+    throw new chp(chj.r(), paramString);
   }
   
-  public abstract long b();
-  
-  public final String b(Locale paramLocale)
+  public final int a(Locale paramLocale)
   {
-    return a().b(b(), paramLocale);
+    return al;
   }
   
-  public cgf c()
+  public final String a(int paramInt, Locale paramLocale)
   {
-    throw new UnsupportedOperationException("The method getChronology() was added in v1.4 and needs to be implemented by subclasses of AbstractReadableInstantFieldProperty");
+    return ad[paramInt];
   }
   
-  public boolean equals(Object paramObject)
+  public final String b(int paramInt, Locale paramLocale)
   {
-    if (this == paramObject) {}
-    do
-    {
-      return true;
-      if (!(paramObject instanceof cja)) {
-        return false;
-      }
-      paramObject = (cja)paramObject;
-    } while ((d() == ((cja)paramObject).d()) && (a().a().equals(((cja)paramObject).a().a())) && (cjh.a(c(), ((cja)paramObject).c())));
-    return false;
-  }
-  
-  public int hashCode()
-  {
-    return d() * 17 + a().a().hashCode() + c().hashCode();
-  }
-  
-  public String toString()
-  {
-    return "Property[" + a().b() + "]";
+    return ae[paramInt];
   }
 }
 

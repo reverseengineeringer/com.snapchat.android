@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lalw;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->k()Lalw;
+    value = Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->b(Ljava/util/List;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,16 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
+.field final synthetic a:Ljava/util/List;
+
+.field final synthetic b:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;)V
+.method constructor <init>(Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;Ljava/util/List;)V
     .locals 0
 
     .prologue
-    .line 453
-    iput-object p1, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$5;->a:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
+    .line 361
+    iput-object p1, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$5;->b:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
+
+    iput-object p2, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$5;->a:Ljava/util/List;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,28 +40,17 @@
 
 
 # virtual methods
-.method public final a(Lalx$a;)Z
+.method public final run()V
     .locals 2
 
     .prologue
-    .line 456
-    sget-object v0, Lalx;->g:Ljava/util/Set;
+    .line 364
+    iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$5;->b:Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;
 
-    iget-object v1, p1, Lalx$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+    iget-object v1, p0, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment$5;->a:Ljava/util/List;
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;->a(Lcom/snapchat/android/discover/ui/fragment/DiscoverFragment;Ljava/util/List;)V
 
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b(Lalx$a;)Z
-    .locals 1
-
-    .prologue
-    .line 460
-    const/4 v0, 0x0
-
-    return v0
+    .line 365
+    return-void
 .end method

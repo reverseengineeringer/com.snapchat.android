@@ -3,8 +3,8 @@ package com.snapchat.videotranscoder.video;
 import android.graphics.Bitmap;
 import android.media.MediaCodec.BufferInfo;
 import android.media.MediaFormat;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.cts.InputSurface;
 import com.snapchat.videotranscoder.cts.OutputSurface;
 import com.snapchat.videotranscoder.cts.OutputSurfaceFactory;
@@ -24,7 +24,7 @@ public class VideoDecoder
   private final TranscodingResources mTranscodingResources;
   int tries = 0;
   
-  public VideoDecoder(@cgb TranscodingResources paramTranscodingResources, @cgb MediaFormat paramMediaFormat, @cgb OutputSurface paramOutputSurface, @cgb StageDoneCallback paramStageDoneCallback)
+  public VideoDecoder(@chc TranscodingResources paramTranscodingResources, @chc MediaFormat paramMediaFormat, @chc OutputSurface paramOutputSurface, @chc StageDoneCallback paramStageDoneCallback)
   {
     super(paramMediaFormat, paramOutputSurface.getSurface(), paramStageDoneCallback);
     if (paramTranscodingResources == null) {
@@ -37,12 +37,12 @@ public class VideoDecoder
     mDecoderOutputSurface = paramOutputSurface;
   }
   
-  public VideoDecoder(@cgb TranscodingResources paramTranscodingResources, @cgb MediaFormat paramMediaFormat, @cgb StageDoneCallback paramStageDoneCallback, @cgb float[] paramArrayOfFloat, @cgc Bitmap paramBitmap)
+  public VideoDecoder(@chc TranscodingResources paramTranscodingResources, @chc MediaFormat paramMediaFormat, @chc StageDoneCallback paramStageDoneCallback, @chc float[] paramArrayOfFloat, @chd Bitmap paramBitmap)
   {
     this(paramTranscodingResources, new OutputSurfaceFactory(), paramMediaFormat, paramStageDoneCallback, paramArrayOfFloat, paramBitmap);
   }
   
-  private VideoDecoder(@cgb TranscodingResources paramTranscodingResources, @cgb OutputSurfaceFactory paramOutputSurfaceFactory, @cgb MediaFormat paramMediaFormat, @cgb StageDoneCallback paramStageDoneCallback, @cgb float[] paramArrayOfFloat, @cgc Bitmap paramBitmap)
+  private VideoDecoder(@chc TranscodingResources paramTranscodingResources, @chc OutputSurfaceFactory paramOutputSurfaceFactory, @chc MediaFormat paramMediaFormat, @chc StageDoneCallback paramStageDoneCallback, @chc float[] paramArrayOfFloat, @chd Bitmap paramBitmap)
   {
     this(paramTranscodingResources, paramMediaFormat, paramOutputSurfaceFactory.createOutputSurface(paramTranscodingResources, paramArrayOfFloat, paramBitmap), paramStageDoneCallback);
   }
@@ -110,7 +110,7 @@ public class VideoDecoder
     VerboseLogging.verboseLog("VIDEODECODER", "Setting encoder:" + mEncoder);
   }
   
-  public void setShader(@cgb FragmentShader.Filter paramFilter, boolean paramBoolean)
+  public void setShader(@chc FragmentShader.Filter paramFilter, boolean paramBoolean)
   {
     if (mDecoderOutputSurface == null) {
       throw new NullPointerException("mDecoderOutputSurface not created");

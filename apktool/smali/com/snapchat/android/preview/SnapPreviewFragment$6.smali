@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 993
+    .line 994
     iput-object p1, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,31 +42,31 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 996
+    .line 997
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->n()Z
 
     move-result v0
 
-    .line 997
+    .line 998
     if-nez v0, :cond_0
 
-    .line 1024
+    .line 1025
     :goto_0
     return-void
 
-    .line 1000
+    .line 1001
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->u(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/snapchat/android/analytics/NetworkAnalytics;
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->v(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/snapchat/android/analytics/NetworkAnalytics;
 
     move-result-object v0
 
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laim;
+    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laji;
 
     move-result-object v2
 
@@ -78,16 +78,16 @@
 
     invoke-virtual {v0, v3, v2, v4}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1002
+    .line 1003
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laim;
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laji;
 
     move-result-object v0
 
     iget-object v0, v0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
 
-    .line 1003
+    .line 1004
     invoke-virtual {v0}, Lcom/snapchat/android/model/MediaMailingMetadata;->d()Ljava/util/LinkedHashSet;
 
     move-result-object v2
@@ -98,7 +98,7 @@
 
     if-nez v2, :cond_1
 
-    .line 1004
+    .line 1005
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
     iget-object v3, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
@@ -107,26 +107,26 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lajv;->a(Landroid/content/Context;)Lajv;
+    invoke-static {v3}, Lakp;->a(Landroid/content/Context;)Lakp;
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/snapchat/android/preview/SnapPreviewFragment;->a(Lcom/snapchat/android/preview/SnapPreviewFragment;Lajv;)Lajv;
+    invoke-static {v2, v3}, Lcom/snapchat/android/preview/SnapPreviewFragment;->a(Lcom/snapchat/android/preview/SnapPreviewFragment;Lakp;)Lakp;
 
-    .line 1005
+    .line 1006
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->v(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lajv;
+    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->w(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lakp;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lajv;->e()V
+    invoke-virtual {v2}, Lakp;->e()V
 
-    .line 1008
+    .line 1009
     :cond_1
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laim;
+    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laji;
 
     move-result-object v2
 
@@ -136,11 +136,11 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 1009
-    check-cast v0, Lajk;
-
     .line 1010
-    iget-object v2, v0, Lajk;->mPostToStories:Ljava/util/ArrayList;
+    check-cast v0, Lakg;
+
+    .line 1011
+    iget-object v2, v0, Lakg;->mPostToStories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -148,14 +148,14 @@
 
     if-nez v2, :cond_2
 
-    .line 1011
+    .line 1012
     iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laim;
+    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laji;
 
     move-result-object v2
 
-    invoke-virtual {v0}, Lajk;->d()Ljava/util/LinkedHashSet;
+    invoke-virtual {v0}, Lakg;->d()Ljava/util/LinkedHashSet;
 
     move-result-object v0
 
@@ -170,64 +170,64 @@
     :goto_1
     const-string v3, "SEND_TO_SCREEN"
 
-    invoke-static {v2, v1, v0, v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Laim;ZZLjava/lang/String;)V
+    invoke-static {v2, v1, v0, v3}, Lcom/snapchat/android/analytics/AnalyticsEvents;->a(Laji;ZZLjava/lang/String;)V
 
-    .line 1017
+    .line 1018
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->w(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/squareup/otto/Bus;
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->x(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 1020
-    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->w(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/squareup/otto/Bus;
-
-    move-result-object v0
-
-    new-instance v1, Lbba;
-
-    invoke-direct {v1}, Lbba;-><init>()V
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 1021
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->w(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/squareup/otto/Bus;
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->x(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdn;
+    new-instance v1, Lbcb;
 
-    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
-
-    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laim;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lbdn;-><init>(Laim;)V
+    invoke-direct {v1}, Lbcb;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 1023
+    .line 1022
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->x(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbgr;
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->x(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lbgr;->a()Landroid/view/View;
+    new-instance v1, Lben;
+
+    iget-object v2, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
+
+    invoke-static {v2}, Lcom/snapchat/android/preview/SnapPreviewFragment;->i(Lcom/snapchat/android/preview/SnapPreviewFragment;)Laji;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Lben;-><init>(Laji;)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 1024
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$6;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
+
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->y(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lbhr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
@@ -239,7 +239,7 @@
 
     goto/16 :goto_0
 
-    .line 1011
+    .line 1012
     :cond_3
     const/4 v0, 0x0
 

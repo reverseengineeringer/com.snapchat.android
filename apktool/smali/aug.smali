@@ -3,44 +3,29 @@
 .source "SourceFile"
 
 
-# static fields
-.field private static final DEFAULT_INIT_MILLIS:J = 0x1f4L
-
-.field private static final DEFAULT_MAX_MILLIS:J = 0x7d00L
-
-
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 12
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;
-    .locals 1
+.method public static a(Ljava/lang/Enum;)Ljava/lang/String;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/concurrent/Callable",
-            "<TT;>;)",
-            "Ljava/util/concurrent/Callable",
-            "<TT;>;"
+            "<E:",
+            "Ljava/lang/Enum",
+            "<TE;>;>(TE;)",
+            "Ljava/lang/String;"
         }
     .end annotation
 
     .prologue
-    .line 17
-    new-instance v0, Laug$1;
+    .line 14
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    invoke-direct {v0, p0, p1}, Laug$1;-><init>(Laug;Ljava/util/concurrent/Callable;)V
+    move-result-object v0
+
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

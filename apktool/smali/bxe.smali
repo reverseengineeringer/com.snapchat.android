@@ -3,31 +3,45 @@
 .source "SourceFile"
 
 
-# instance fields
-.field final a:Lbxg;
-
-.field final b:Ljava/lang/String;
-
-.field final c:Lbzq;
-
-
 # direct methods
-.method public constructor <init>(Lbxg;Ljava/lang/String;Lbzq;)V
-    .locals 0
+.method public static a(Landroid/os/AsyncTask;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/AsyncTask",
+            "<",
+            "Ljava/lang/Void;",
+            "**>;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 48
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
-    .line 50
-    iput-object p1, p0, Lbxe;->a:Lbxg;
+    .line 44
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 51
-    iput-object p2, p0, Lbxe;->b:Ljava/lang/String;
+    const/16 v1, 0xc
 
-    .line 52
-    iput-object p3, p0, Lbxe;->c:Lbzq;
+    if-gt v0, v1, :cond_0
 
-    .line 53
+    .line 45
+    new-array v0, v2, [Ljava/lang/Void;
+
+    invoke-virtual {p0, v0}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 49
+    :goto_0
     return-void
+
+    .line 47
+    :cond_0
+    sget-object v0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
+
+    new-array v1, v2, [Ljava/lang/Void;
+
+    invoke-virtual {p0, v0, v1}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    goto :goto_0
 .end method

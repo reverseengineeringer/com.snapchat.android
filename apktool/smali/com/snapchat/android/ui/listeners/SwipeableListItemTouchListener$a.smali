@@ -21,15 +21,12 @@
 .method public abstract a(Landroid/view/View;IZ)V
 .end method
 
-.method public abstract a(Landroid/view/View;Z)V
-.end method
-
-.method public abstract a(Landroid/view/View;FFF)Z
+.method public abstract a(Landroid/view/View;F)Z
 .end method
 
 .method public abstract b(Landroid/view/View;)I
     .param p1    # Landroid/view/View;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 .end method

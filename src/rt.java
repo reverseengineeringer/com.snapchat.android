@@ -1,85 +1,98 @@
+import android.text.TextUtils;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.api2.cash.blockers.BlockerOrder;
 import com.snapchat.android.api2.cash.square.data.CashPayment;
-import com.snapchat.android.api2.cash.square.data.CashPayment.CancellationReason;
-import com.snapchat.android.api2.cash.square.data.CashPayment.State;
 import com.snapchat.android.model.CashTransaction;
 import java.util.List;
 import javax.inject.Inject;
 
 public final class rt
-  extends qv
+  extends rl
 {
   @Inject
-  protected qg mCashErrorReporter;
-  @Inject
-  protected sn mSquareProvider;
+  protected qw mCashErrorReporter;
   
   public rt()
   {
     SnapchatApplication.b().c().a(this);
   }
   
-  public final void a(@cgb final CashTransaction paramCashTransaction)
+  public final void a(@chd final CashTransaction paramCashTransaction)
   {
-    new sg(mTransactionId, new sk()
+    sx.a local1 = new sx.a()
     {
-      public final void a(int paramAnonymousInt)
+      public final void a(@chd sy paramAnonymoussy)
       {
-        if (paramAnonymousInt == 404)
+        Object localObject2 = null;
+        Object localObject3 = null;
+        if (paramAnonymoussy != null)
         {
-          a(atv.a(new rn()), true);
-          return;
-        }
-        List localList = sn.a(rt.this, paramAnonymousInt);
-        if (localList != null)
-        {
-          b(localList, true);
-          return;
-        }
-        AnalyticsEvents.a("SQUARE_RETRIEVE_PAYMENT_FAILED", paramAnonymousInt);
-        qg.a(2131493290, new Object[0]);
-        b(null, false);
-      }
-      
-      public final void a(@cgb CashPayment paramAnonymousCashPayment)
-      {
-        if (mState == CashPayment.State.CANCELED)
-        {
-          localCancellationReason = mCancellationReason;
-          sn.a(localCancellationReason);
-          if ((localCancellationReason != CashPayment.CancellationReason.SQUARE_CANCELED) && (localCancellationReason != CashPayment.CancellationReason.RECIPIENT_CANCELED))
+          Object localObject1 = localObject3;
+          if (blockers != null)
           {
-            rt.a(rt.this);
-            return;
+            localObject1 = localObject3;
+            if (blockers.a()) {
+              localObject1 = blockers.b();
+            }
+          }
+          localObject2 = localObject1;
+          if (paramCashTransaction != null)
+          {
+            localObject2 = localObject1;
+            if (payment != null)
+            {
+              paramCashTransaction.a(td.a(payment.mState, payment.mCancellationReason));
+              localObject2 = localObject1;
+            }
           }
         }
-        paramCashTransaction.a(sn.a(mState, mCancellationReason));
-        CashPayment.CancellationReason localCancellationReason = null;
-        ta localta = mBlockers;
-        paramAnonymousCashPayment = localCancellationReason;
-        if (localta != null) {
-          paramAnonymousCashPayment = localta.b();
-        }
-        a(paramAnonymousCashPayment, true);
+        akr.aj();
+        rt.a(rt.this, (List)localObject2);
       }
-    }).f();
-  }
-  
-  protected final void a(@cgc List<qv> paramList, boolean paramBoolean)
-  {
-    super.a(paramList, paramBoolean);
-  }
-  
-  protected final void b(@cgc List<qv> paramList, boolean paramBoolean)
-  {
-    super.b(paramList, paramBoolean);
+      
+      public final void a(@chd sy paramAnonymoussy, int paramAnonymousInt)
+      {
+        paramAnonymoussy = td.a(rt.this, paramAnonymousInt);
+        if (paramAnonymoussy != null)
+        {
+          rt.b(rt.this, paramAnonymoussy);
+          return;
+        }
+        if (paramCashTransaction != null)
+        {
+          paramAnonymoussy = paramCashTransactionmSenderUsername;
+          if (!TextUtils.equals(akr.l(), paramAnonymoussy)) {
+            break label70;
+          }
+          AnalyticsEvents.a("SQUARE_ACCEPT_TERMS_FAILED", paramAnonymousInt);
+          qw.a(2131493290, new Object[0]);
+        }
+        for (;;)
+        {
+          rt.a(rt.this);
+          return;
+          label70:
+          AnalyticsEvents.b("SQUARE_ACCEPT_TERMS_FAILED", paramAnonymousInt);
+        }
+      }
+    };
+    if ((paramCashTransaction != null) && (!mIsInFlight))
+    {
+      new sp(mTransactionId, local1).execute();
+      return;
+    }
+    new sp(local1).execute();
   }
   
   public final BlockerOrder c()
   {
-    return BlockerOrder.SQ_RETRIEVE_SENDING_CASH_PAYMENT_BLOCKER;
+    return BlockerOrder.SQ_ACCEPT_TERMS_BLOCKER;
+  }
+  
+  public final boolean d()
+  {
+    return true;
   }
 }
 

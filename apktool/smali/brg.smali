@@ -1,66 +1,368 @@
-.class public final Lbrg;
+.class public abstract Lbrg;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:Lorg/json/JSONArray;
+.field a:Lbrm;
+
+.field b:Lorg/apache/http/util/CharArrayBuffer;
+
+.field protected c:I
+
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(Lbrk;)V
-    .locals 3
+.method public constructor <init>(Lbrg;)V
+    .locals 2
 
     .prologue
-    .line 10
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
-    new-instance v0, Lorg/json/JSONArray;
+    .line 32
+    iget-object v0, p1, Lbrg;->a:Lbrm;
 
-    invoke-direct {v0}, Lorg/json/JSONArray;-><init>()V
+    iget v1, p1, Lbrg;->c:I
 
-    iput-object v0, p0, Lbrg;->a:Lorg/json/JSONArray;
+    invoke-direct {p0, v0, v1}, Lbrg;->a(Lbrm;I)V
 
-    .line 12
-    invoke-virtual {p1}, Lbrk;->c()Ljava/util/List;
+    .line 33
+    return-void
+.end method
 
-    move-result-object v0
+.method public constructor <init>(Lbrm;)V
+    .locals 1
 
-    .line 14
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    .prologue
+    .line 27
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v1
+    .line 28
+    const/4 v0, 0x0
 
-    :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {p0, p1, v0}, Lbrg;->a(Lbrm;I)V
+
+    .line 29
+    return-void
+.end method
+
+.method private a(Lbrm;I)V
+    .locals 2
+
+    .prologue
+    .line 36
+    iput-object p1, p0, Lbrg;->a:Lbrm;
+
+    .line 37
+    invoke-virtual {p0}, Lbrg;->e()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    iput v0, p0, Lbrg;->d:I
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 38
+    new-instance v0, Lorg/apache/http/util/CharArrayBuffer;
 
-    move-result-object v0
+    invoke-virtual {p0}, Lbrg;->d()I
 
-    check-cast v0, Lbri;
+    move-result v1
 
-    .line 15
-    invoke-virtual {v0}, Lbri;->a()Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lorg/apache/http/util/CharArrayBuffer;-><init>(I)V
 
-    move-result-object v0
+    iput-object v0, p0, Lbrg;->b:Lorg/apache/http/util/CharArrayBuffer;
 
-    .line 18
-    if-eqz v0, :cond_0
+    .line 39
+    iput p2, p0, Lbrg;->c:I
 
-    .line 19
-    iget-object v2, p0, Lbrg;->a:Lorg/json/JSONArray;
+    .line 40
+    return-void
+.end method
 
-    invoke-virtual {v2, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+.method private g()V
+    .locals 2
+
+    .prologue
+    .line 163
+    iget-object v0, p0, Lbrg;->a:Lbrm;
+
+    sget-object v1, Lbrt;->d:Lbrt;
+
+    invoke-interface {v0, v1}, Lbrm;->a(Lbrg;)V
+
+    .line 164
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 1
+
+    .prologue
+    .line 140
+    iget v0, p0, Lbrg;->c:I
+
+    return v0
+.end method
+
+.method public final a([BII)V
+    .locals 4
+
+    .prologue
+    .line 93
+    invoke-virtual {p0, p1, p2, p3}, Lbrg;->b([BII)I
+
+    move-result v0
+
+    .line 95
+    :goto_0
+    if-lez v0, :cond_0
+
+    if-ge v0, p3, :cond_0
+
+    .line 96
+    iget-object v1, p0, Lbrg;->a:Lbrm;
+
+    invoke-interface {v1}, Lbrm;->a()Lbrg;
+
+    move-result-object v1
+
+    .line 97
+    add-int v2, p2, v0
+
+    sub-int v3, p3, v0
+
+    invoke-virtual {v1, p1, v2, v3}, Lbrg;->b([BII)I
+
+    move-result v1
+
+    .line 99
+    if-lez v1, :cond_0
+
+    .line 101
+    add-int/2addr v0, v1
+
+    .line 105
+    goto :goto_0
+
+    .line 106
+    :cond_0
+    return-void
+.end method
+
+.method public a(I)Z
+    .locals 4
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 51
+    const/4 v1, -0x1
+
+    if-ne p1, v1, :cond_1
+
+    .line 54
+    invoke-direct {p0}, Lbrg;->g()V
+
+    .line 82
+    :cond_0
+    :goto_0
+    return v0
+
+    .line 58
+    :cond_1
+    iget v1, p0, Lbrg;->c:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Lbrg;->c:I
+
+    .line 60
+    int-to-char v1, p1
+
+    .line 61
+    const/16 v2, 0xa
+
+    if-ne v1, v2, :cond_4
+
+    .line 62
+    iget-object v1, p0, Lbrg;->b:Lorg/apache/http/util/CharArrayBuffer;
+
+    invoke-virtual {p0, v1}, Lbrg;->a(Lorg/apache/http/util/CharArrayBuffer;)Z
+
+    move-result v1
+
+    .line 64
+    if-eqz v1, :cond_3
+
+    .line 65
+    invoke-virtual {p0}, Lbrg;->b()Lbrg;
+
+    move-result-object v1
+
+    .line 76
+    :goto_1
+    if-eq v1, p0, :cond_2
+
+    .line 79
+    iget-object v2, p0, Lbrg;->a:Lbrm;
+
+    invoke-interface {v2, v1}, Lbrm;->a(Lbrg;)V
+
+    .line 82
+    :cond_2
+    if-ne v1, p0, :cond_0
+
+    const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 22
+    .line 67
+    :cond_3
+    sget-object v1, Lbrt;->d:Lbrt;
+
+    goto :goto_1
+
+    .line 69
+    :cond_4
+    iget-object v2, p0, Lbrg;->b:Lorg/apache/http/util/CharArrayBuffer;
+
+    invoke-virtual {v2}, Lorg/apache/http/util/CharArrayBuffer;->length()I
+
+    move-result v2
+
+    iget v3, p0, Lbrg;->d:I
+
+    if-ge v2, v3, :cond_5
+
+    .line 70
+    iget-object v2, p0, Lbrg;->b:Lorg/apache/http/util/CharArrayBuffer;
+
+    invoke-virtual {v2, v1}, Lorg/apache/http/util/CharArrayBuffer;->append(C)V
+
+    move-object v1, p0
+
+    .line 71
+    goto :goto_1
+
+    .line 73
+    :cond_5
+    invoke-virtual {p0}, Lbrg;->c()Lbrg;
+
+    move-result-object v1
+
+    goto :goto_1
+.end method
+
+.method public abstract a(Lorg/apache/http/util/CharArrayBuffer;)Z
+.end method
+
+.method protected b([BII)I
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x0
+
+    const/4 v0, -0x1
+
+    .line 110
+    if-ne p3, v0, :cond_1
+
+    .line 111
+    invoke-direct {p0}, Lbrg;->g()V
+
+    .line 128
+    :cond_0
+    return v0
+
+    .line 116
     :cond_1
+    if-eqz p1, :cond_0
+
+    if-eqz p3, :cond_0
+
+    move v0, v1
+
+    .line 122
+    :goto_0
+    if-nez v1, :cond_0
+
+    if-ge v0, p3, :cond_0
+
+    .line 123
+    add-int v1, p2, v0
+
+    aget-byte v1, p1, v1
+
+    int-to-char v1, v1
+
+    .line 124
+    invoke-virtual {p0, v1}, Lbrg;->a(I)Z
+
+    move-result v1
+
+    .line 125
+    add-int/lit8 v0, v0, 0x1
+
+    .line 126
+    goto :goto_0
+.end method
+
+.method public abstract b()Lbrg;
+.end method
+
+.method public final b(I)V
+    .locals 0
+
+    .prologue
+    .line 144
+    iput p1, p0, Lbrg;->c:I
+
+    .line 145
     return-void
+.end method
+
+.method public abstract c()Lbrg;
+.end method
+
+.method protected abstract d()I
+.end method
+
+.method protected abstract e()I
+.end method
+
+.method public f()V
+    .locals 2
+
+    .prologue
+    .line 189
+    iget-object v0, p0, Lbrg;->a:Lbrm;
+
+    if-eqz v0, :cond_0
+
+    .line 190
+    iget-object v0, p0, Lbrg;->a:Lbrm;
+
+    sget-object v1, Lbrt;->d:Lbrt;
+
+    invoke-interface {v0, v1}, Lbrm;->a(Lbrg;)V
+
+    .line 192
+    :cond_0
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 152
+    iget-object v0, p0, Lbrg;->b:Lorg/apache/http/util/CharArrayBuffer;
+
+    invoke-virtual {v0}, Lorg/apache/http/util/CharArrayBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

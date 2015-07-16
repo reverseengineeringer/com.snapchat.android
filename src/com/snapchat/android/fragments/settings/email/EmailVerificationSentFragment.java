@@ -1,9 +1,6 @@
 package com.snapchat.android.fragments.settings.email;
 
-import ajx;
-import amk;
-import anc;
-import anc.c;
+import akr;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -14,11 +11,14 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import aok;
-import aol;
-import atx;
-import ban;
-import bdw;
+import anh;
+import anz;
+import anz.c;
+import apg;
+import aph;
+import auv;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.util.eventbus.ShowDialogEvent;
 import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
@@ -35,48 +35,48 @@ public class EmailVerificationSentFragment
   private View b;
   private TextView c;
   private TextView d;
-  private ajx e;
+  private akr e;
   private final Set<Integer> f = new HashSet();
-  private final aol g;
-  private aok h = new aok()
+  private final aph g;
+  private apg h = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
-      if ((EmailVerificationSentFragment.a(EmailVerificationSentFragment.this).contains(Integer.valueOf(i))) && ((paramAnonymousamk instanceof anc)))
+      int i = aph.a(paramAnonymousanh);
+      if ((EmailVerificationSentFragment.a(EmailVerificationSentFragment.this).contains(Integer.valueOf(i))) && ((paramAnonymousanh instanceof anz)))
       {
         EmailVerificationSentFragment.a(EmailVerificationSentFragment.this).remove(Integer.valueOf(i));
-        paramAnonymousamk = b;
+        paramAnonymousanh = b;
         EmailVerificationSentFragment.b(EmailVerificationSentFragment.this).setVisibility(8);
         EmailVerificationSentFragment.c(EmailVerificationSentFragment.this).setVisibility(0);
         if (a)
         {
-          paramAnonymousamk = new ShowDialogEvent.a(ShowDialogEvent.DialogType.ONE_BUTTON);
-          mTitleResId = 2131493152;
+          paramAnonymousanh = new ShowDialogEvent.a(ShowDialogEvent.DialogType.ONE_BUTTON);
+          mTitleResId = 2131493151;
           EmailVerificationSentFragment.d(EmailVerificationSentFragment.this);
-          mMessage = atx.a(null, 2131493151, new Object[] { ajx.bn() });
-          paramAnonymousamk = paramAnonymousamk.a();
-          ban.a().a(paramAnonymousamk);
+          mMessage = auv.a(null, 2131493150, new Object[] { akr.bk() });
+          paramAnonymousanh = paramAnonymousanh.a();
+          bbo.a().a(paramAnonymousanh);
         }
       }
       else
       {
         return;
       }
-      ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, d));
+      bbo.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, d));
     }
   };
   
   public EmailVerificationSentFragment()
   {
-    this(ajx.a(), aol.a());
+    this(akr.a(), aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private EmailVerificationSentFragment(ajx paramajx, aol paramaol)
+  private EmailVerificationSentFragment(akr paramakr, aph paramaph)
   {
-    e = paramajx;
-    g = paramaol;
+    e = paramakr;
+    g = paramaph;
   }
   
   public final boolean g()
@@ -89,20 +89,20 @@ public class EmailVerificationSentFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968727, paramViewGroup, false);
-    c = ((TextView)c(2131362669));
-    c.setText(ajx.bn());
-    d = ((TextView)c(2131362670));
-    if (ajx.bm())
+    mFragmentLayout = paramLayoutInflater.inflate(2130968729, paramViewGroup, false);
+    c = ((TextView)c(2131362668));
+    c.setText(akr.bk());
+    d = ((TextView)c(2131362669));
+    if (akr.bj())
     {
-      d.setText(atx.a(null, 2131493154, new Object[] { ajx.G() }));
+      d.setText(auv.a(null, 2131493153, new Object[] { akr.G() }));
       d.setVisibility(0);
     }
     for (;;)
     {
-      b = c(2131362671);
-      a = c(2131362672);
-      c(2131362665).setOnClickListener(new View.OnClickListener()
+      b = c(2131362670);
+      a = c(2131362671);
+      c(2131362664).setOnClickListener(new View.OnClickListener()
       {
         public final void onClick(View paramAnonymousView)
         {
@@ -114,10 +114,10 @@ public class EmailVerificationSentFragment
         public final void onClick(View paramAnonymousView)
         {
           paramAnonymousView = EmailVerificationSentFragment.a(EmailVerificationSentFragment.this);
-          aol localaol = EmailVerificationSentFragment.e(EmailVerificationSentFragment.this);
+          aph localaph = EmailVerificationSentFragment.e(EmailVerificationSentFragment.this);
           FragmentActivity localFragmentActivity = getActivity();
           EmailVerificationSentFragment.d(EmailVerificationSentFragment.this);
-          paramAnonymousView.add(Integer.valueOf(localaol.a(localFragmentActivity, "verifyEmail", ajx.bn(), null)));
+          paramAnonymousView.add(Integer.valueOf(localaph.a(localFragmentActivity, "verifyEmail", akr.bk(), null)));
           EmailVerificationSentFragment.b(EmailVerificationSentFragment.this).setVisibility(0);
           EmailVerificationSentFragment.c(EmailVerificationSentFragment.this).setVisibility(8);
         }
@@ -128,7 +128,7 @@ public class EmailVerificationSentFragment
         {
           if (paramAnonymousMotionEvent.getAction() == 0)
           {
-            ban.a().a(new bdw(new EmailSettingsFragment(), EmailSettingsFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
+            bbo.a().a(new bev(new EmailSettingsFragment(), EmailSettingsFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
             return true;
           }
           return false;

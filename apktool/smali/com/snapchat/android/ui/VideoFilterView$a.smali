@@ -28,12 +28,12 @@
     .locals 1
 
     .prologue
-    .line 363
+    .line 365
     iput-object p1, p0, Lcom/snapchat/android/ui/VideoFilterView$a;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 364
+    .line 366
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/ui/VideoFilterView$a;->b:Z
@@ -45,7 +45,7 @@
     .locals 0
 
     .prologue
-    .line 363
+    .line 365
     invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VideoFilterView$a;-><init>(Lcom/snapchat/android/ui/VideoFilterView;)V
 
     return-void
@@ -54,20 +54,18 @@
 
 # virtual methods
 .method public final onProgressUpdated(I)V
-    .locals 4
+    .locals 2
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 367
+    .line 369
     iget-boolean v0, p0, Lcom/snapchat/android/ui/VideoFilterView$a;->b:Z
 
     if-eqz v0, :cond_0
 
-    .line 368
+    .line 370
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$a;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
-    invoke-static {v0}, Lcom/snapchat/android/ui/VideoFilterView;->f(Lcom/snapchat/android/ui/VideoFilterView;)Lapj;
+    invoke-static {v0}, Lcom/snapchat/android/ui/VideoFilterView;->f(Lcom/snapchat/android/ui/VideoFilterView;)Laqf;
 
     move-result-object v0
 
@@ -77,45 +75,35 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lapj;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
+    iput-object v1, v0, Laqf;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
-    invoke-virtual {v0}, Lapj;->a()V
-
-    .line 369
-    iput-boolean v3, p0, Lcom/snapchat/android/ui/VideoFilterView$a;->b:Z
+    invoke-virtual {v0}, Laqf;->a()V
 
     .line 371
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/snapchat/android/ui/VideoFilterView$a;->b:Z
+
+    .line 373
     :cond_0
-    const-string v0, "VideoFilterView"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Rendering is "
 
-    const-string v2, "Rendering is "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    const-string v2, "% complete"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "% complete"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 372
+    .line 374
     return-void
 .end method

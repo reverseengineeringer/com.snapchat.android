@@ -1,45 +1,59 @@
-import java.io.Serializable;
-import java.util.Comparator;
-import javax.annotation.Nullable;
+import java.util.NoSuchElementException;
 
 @cd
-public final class cv<T>
-  extends do<T>
-  implements Serializable
+abstract class cv<E>
+  extends eg<E>
 {
-  final Comparator<T> a;
+  private final int a;
+  private int b;
   
-  public cv(Comparator<T> paramComparator)
+  protected cv(int paramInt1, int paramInt2)
   {
-    a = ((Comparator)ck.a(paramComparator));
+    co.b(paramInt2, paramInt1);
+    a = paramInt1;
+    b = paramInt2;
   }
   
-  public final int compare(T paramT1, T paramT2)
+  protected abstract E a(int paramInt);
+  
+  public final boolean hasNext()
   {
-    return a.compare(paramT1, paramT2);
+    return b < a;
   }
   
-  public final boolean equals(@Nullable Object paramObject)
+  public final boolean hasPrevious()
   {
-    if (paramObject == this) {
-      return true;
+    return b > 0;
+  }
+  
+  public final E next()
+  {
+    if (!hasNext()) {
+      throw new NoSuchElementException();
     }
-    if ((paramObject instanceof cv))
-    {
-      paramObject = (cv)paramObject;
-      return a.equals(a);
+    int i = b;
+    b = (i + 1);
+    return (E)a(i);
+  }
+  
+  public final int nextIndex()
+  {
+    return b;
+  }
+  
+  public final E previous()
+  {
+    if (!hasPrevious()) {
+      throw new NoSuchElementException();
     }
-    return false;
+    int i = b - 1;
+    b = i;
+    return (E)a(i);
   }
   
-  public final int hashCode()
+  public final int previousIndex()
   {
-    return a.hashCode();
-  }
-  
-  public final String toString()
-  {
-    return a.toString();
+    return b - 1;
   }
 }
 

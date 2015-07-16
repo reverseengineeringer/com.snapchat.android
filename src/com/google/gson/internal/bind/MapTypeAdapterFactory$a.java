@@ -3,7 +3,7 @@ package com.google.gson.internal.bind;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.internal.ObjectConstructor;
-import ej;
+import es;
 import java.lang.reflect.Type;
 import java.util.Map;
 
@@ -16,8 +16,8 @@ final class MapTypeAdapterFactory$a<K, V>
   
   public MapTypeAdapterFactory$a(Gson paramGson, Type paramType1, TypeAdapter<K> paramTypeAdapter, Type paramType2, TypeAdapter<V> paramTypeAdapter1, ObjectConstructor<? extends Map<K, V>> paramObjectConstructor)
   {
-    b = new ej(paramType1, paramType2, paramTypeAdapter);
-    c = new ej(paramType1, paramObjectConstructor, paramTypeAdapter1);
+    b = new es(paramType1, paramType2, paramTypeAdapter);
+    c = new es(paramType1, paramObjectConstructor, paramTypeAdapter1);
     ObjectConstructor localObjectConstructor;
     d = localObjectConstructor;
   }

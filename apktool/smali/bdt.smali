@@ -4,20 +4,20 @@
 
 
 # instance fields
-.field public final shouldShow:Z
+.field public final mStorySnap:Lakl;
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>(Lakl;)V
     .locals 0
 
     .prologue
-    .line 10
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
-    iput-boolean p1, p0, Lbdt;->shouldShow:Z
+    .line 10
+    iput-object p1, p0, Lbdt;->mStorySnap:Lakl;
 
-    .line 12
+    .line 11
     return-void
 .end method

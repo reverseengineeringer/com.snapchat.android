@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.utils;
 
 import android.media.MediaMetadataRetriever;
-import cgb;
+import chc;
 import java.io.File;
 import java.io.IOException;
 
@@ -11,12 +11,12 @@ public class VideoMetadataReader
   private MediaMetadataRetriever mMediaMetadataRetriever;
   private final File mVideoFile;
   
-  public VideoMetadataReader(@cgb File paramFile)
+  public VideoMetadataReader(@chc File paramFile)
   {
     this(paramFile, new MediaMetadataRetriever());
   }
   
-  protected VideoMetadataReader(@cgb File paramFile, @cgb MediaMetadataRetriever paramMediaMetadataRetriever)
+  protected VideoMetadataReader(@chc File paramFile, @chc MediaMetadataRetriever paramMediaMetadataRetriever)
   {
     if (paramFile == null) {
       throw new NullPointerException("videoFile is null");

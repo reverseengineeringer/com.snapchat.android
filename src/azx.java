@@ -1,14 +1,27 @@
-import com.snapchat.android.util.debug.ReleaseManager;
-import javax.inject.Inject;
-
 public final class azx
+  implements bvp<akq>
 {
-  private final ReleaseManager mReleaseManager;
+  private final azj module;
   
-  @Inject
-  azx(ReleaseManager paramReleaseManager)
+  static
   {
-    mReleaseManager = paramReleaseManager;
+    if (!azx.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
+  }
+  
+  private azx(azj paramazj)
+  {
+    assert (paramazj != null);
+    module = paramazj;
+  }
+  
+  public static bvp<akq> a(azj paramazj)
+  {
+    return new azx(paramazj);
   }
 }
 

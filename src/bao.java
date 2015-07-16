@@ -1,12 +1,38 @@
+import com.snapchat.android.util.debug.ReleaseManager;
+import com.snapchat.android.util.eventbus.ShowDialogEvent;
+import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
+import com.squareup.otto.Bus;
+import javax.inject.Inject;
+
 public final class bao
 {
-  public final boolean isChangingQuality;
-  public final boolean ready;
+  private static final String GRACEFUL_EXCEPTION_WARNING = "See logs for error output: ";
+  private static final String TAG = "GracefulExceptionHandler";
+  private final Bus mBus;
+  private final bah mCrashSampler;
+  private final ReleaseManager mReleaseManager;
   
-  public bao(boolean paramBoolean1, boolean paramBoolean2)
+  @Inject
+  bao(bah parambah, ReleaseManager paramReleaseManager)
   {
-    ready = paramBoolean1;
-    isChangingQuality = paramBoolean2;
+    this(parambah, paramReleaseManager, bbo.a());
+  }
+  
+  private bao(bah parambah, ReleaseManager paramReleaseManager, Bus paramBus)
+  {
+    mCrashSampler = parambah;
+    mReleaseManager = paramReleaseManager;
+    mBus = paramBus;
+  }
+  
+  public final void a(@chc Throwable paramThrowable)
+  {
+    if (ReleaseManager.b()) {
+      mBus.a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, "See logs for error output: " + paramThrowable.getMessage()));
+    }
+    if (mCrashSampler.b()) {
+      az.a(paramThrowable);
+    }
   }
 }
 

@@ -1,70 +1,53 @@
-import android.text.TextUtils;
-import com.snapchat.android.model.Friend;
-import com.snapchat.android.model.Friend.AddSourceType;
-import com.snapchat.android.model.Friend.Direction;
-import javax.inject.Provider;
+import android.database.DataSetObservable;
+import android.support.v4.view.PagerAdapter;
+import com.snapchat.android.discover.analytics.EditionPerformanceAnalytics;
+import com.snapchat.android.discover.model.ChannelPage;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.util.debug.ReleaseManager;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public final class afk
-  extends afe
+  extends afm
 {
-  private final Provider<ajv> a;
-  private ajv b;
-  private final boolean c;
-  
-  private afk(Provider<ajv> paramProvider, boolean paramBoolean)
+  public afk(@chc ChannelPage paramChannelPage, @chc String paramString, @chc acr paramacr)
   {
-    a = paramProvider;
-    c = paramBoolean;
+    this(paramChannelPage, paramString, paramacr, apz.a(), aef.a(), aej.a(), ReleaseManager.a());
   }
   
-  public afk(boolean paramBoolean)
+  private afk(@chc ChannelPage paramChannelPage, @chc String paramString, @chc acr paramacr, @chc apz paramapz, @chc aef paramaef, @chc aej paramaej, @chc ReleaseManager paramReleaseManager)
   {
-    this(ajv.UNSAFE_USER_PROVIDER, paramBoolean);
+    super(paramChannelPage, paramString, paramacr, paramapz, paramaef, paramaej, paramReleaseManager);
   }
   
-  private String c(@cgb Friend paramFriend)
+  public final int a(int paramInt)
   {
-    if (b == null) {
-      b = ((ajv)a.get());
-    }
-    if ((b != null) && (b.b(paramFriend))) {}
-    for (int i = 1; i != 0; i = 0) {
-      return atx.a(null, 2131493201, new Object[0]);
-    }
-    if (mAddSourceType == Friend.AddSourceType.ADDED_BY_QR_CODE) {
-      return atx.a(null, 2131492913, new Object[0]);
-    }
-    if (mAddSourceType == Friend.AddSourceType.ADDED_BY_PHONE) {
-      return atx.a(null, 2131492912, new Object[0]);
-    }
-    if (mAddSourceType == Friend.AddSourceType.ADDED_BY_USERNAME) {
-      return atx.a(null, 2131492914, new Object[0]);
-    }
-    return null;
+    return paramInt;
   }
   
-  public final String a(@cgb Friend paramFriend, boolean paramBoolean)
+  public final void a(@chc List<DSnapPage> paramList)
   {
-    if ((c) || (mDirection == Friend.Direction.INCOMING))
-    {
-      String str = mAddSource;
-      if (!TextUtils.isEmpty(str)) {
-        return str;
-      }
-      if (paramFriend.j())
-      {
-        str = c(paramFriend);
-        if (!TextUtils.isEmpty(str)) {
-          return atx.a(null, 2131493360, new Object[] { str, paramFriend.h() });
-        }
-        return paramFriend.h();
-      }
-      return c(paramFriend);
-    }
-    if (paramFriend.n()) {
-      return b(paramFriend);
-    }
-    return super.a(paramFriend, paramBoolean);
+    i.clear();
+    i.addAll(paramList);
+    paramList = a;
+    String str = e;
+    List localList = i;
+    ArrayList localArrayList = new ArrayList(localList.size());
+    localArrayList.addAll(localList);
+    e.put(str, localArrayList);
+    f.d.a(i);
+    mObservable.notifyChanged();
+  }
+  
+  public final int b(int paramInt)
+  {
+    return paramInt;
+  }
+  
+  public final int getCount()
+  {
+    return i.size();
   }
 }
 

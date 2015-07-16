@@ -1,17 +1,18 @@
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-import android.util.DisplayMetrics;
+import java.lang.reflect.Method;
 
-public class awb
-  extends AsyncTask<Void, Void, Bitmap>
+public final class awb
 {
-  private Bitmap mBitmap;
-  private DisplayMetrics mDisplayMetrics;
+  private static final String TAG = "SystemProperties";
   
-  public awb(Bitmap paramBitmap, DisplayMetrics paramDisplayMetrics)
+  public static String a(String paramString1, String paramString2)
   {
-    mBitmap = paramBitmap;
-    mDisplayMetrics = paramDisplayMetrics;
+    try
+    {
+      paramString1 = (String)Class.forName("android.os.SystemProperties").getMethod("get", new Class[] { String.class, String.class }).invoke(null, new Object[] { paramString1, paramString2 });
+      return paramString1;
+    }
+    catch (Exception paramString1) {}
+    return paramString2;
   }
 }
 

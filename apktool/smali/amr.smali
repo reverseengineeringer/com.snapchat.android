@@ -1,198 +1,132 @@
-.class public final Lamr;
+.class public abstract Lamr;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lamq;",
-        ">;"
-    }
-.end annotation
-
-
-# static fields
-.field static final synthetic a:Z
-
 
 # instance fields
-.field private final b:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lamd;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final a:Ljava/util/concurrent/CountDownLatch;
 
-.field private final c:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final b:Lalw;
+
+.field volatile c:Z
+
+.field d:Ljava/lang/String;
+
+.field protected final e:Lalw$a;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method protected constructor <init>(Lalw;)V
+    .locals 2
 
     .prologue
-    .line 8
-    const-class v0, Lamr;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lamr;->a:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lamd;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 13
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
-    sget-boolean v0, Lamr;->a:Z
+    .line 23
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
-    if-nez v0, :cond_0
+    const/4 v1, 0x1
 
-    if-nez p1, :cond_0
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    new-instance v0, Ljava/lang/AssertionError;
+    iput-object v0, p0, Lamr;->a:Ljava/util/concurrent/CountDownLatch;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    .line 26
+    const/4 v0, 0x0
 
-    throw v0
+    iput-boolean v0, p0, Lamr;->c:Z
 
-    .line 15
-    :cond_0
-    iput-object p1, p0, Lamr;->b:Lbuj;
+    .line 87
+    new-instance v0, Lamr$1;
 
-    .line 16
-    sget-boolean v0, Lamr;->a:Z
+    invoke-direct {v0, p0}, Lamr$1;-><init>(Lamr;)V
 
-    if-nez v0, :cond_1
+    iput-object v0, p0, Lamr;->e:Lalw$a;
 
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 17
-    :cond_1
-    iput-object p2, p0, Lamr;->c:Ljavax/inject/Provider;
-
-    .line 18
-    return-void
-.end method
-
-.method public static a(Lbuj;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lamd;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lamq;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
     .line 30
-    new-instance v0, Lamr;
+    iput-object p1, p0, Lamr;->b:Lalw;
 
-    invoke-direct {v0, p0, p1}, Lamr;-><init>(Lbuj;Ljavax/inject/Provider;)V
-
-    return-object v0
+    .line 31
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method protected abstract a(Lbgl;)Z
+.end method
+
+.method protected final b(Ljava/lang/String;Landroid/os/Bundle;Lcom/snapchat/android/networkmanager/DownloadPriority;Lcom/snapchat/android/networkmanager/DownloadPriority;Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 3
 
     .prologue
-    .line 8
-    check-cast p1, Lamq;
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "Cannot inject members into a null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iget-object v0, p0, Lamr;->b:Lbuj;
-
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lamr;->c:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .line 47
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v0
 
-    check-cast v0, Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;
+    invoke-virtual {v0}, Ljava/util/UUID;->toString()Ljava/lang/String;
 
-    iput-object v0, p1, Lamq;->c:Lcom/snapchat/android/analytics/framework/UpdateSnapsAnalyticsPlatform;
+    move-result-object v0
 
-    return-void
+    iput-object v0, p0, Lamr;->d:Ljava/lang/String;
+
+    .line 48
+    new-instance v0, Laly$a;
+
+    invoke-direct {v0}, Laly$a;-><init>()V
+
+    iput-object p3, v0, Laly$a;->a:Lcom/snapchat/android/networkmanager/DownloadPriority;
+
+    iput-object p4, v0, Laly$a;->b:Lcom/snapchat/android/networkmanager/DownloadPriority;
+
+    iput-object p1, v0, Laly$a;->d:Ljava/lang/String;
+
+    iget-object v1, p0, Lamr;->d:Ljava/lang/String;
+
+    iput-object v1, v0, Laly$a;->e:Ljava/lang/String;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    aput-object p5, v1, v2
+
+    iput-object v1, v0, Laly$a;->h:[Ljava/lang/String;
+
+    iput-object p6, v0, Laly$a;->g:Ljava/lang/String;
+
+    iput-object p2, v0, Laly$a;->f:Landroid/os/Bundle;
+
+    invoke-virtual {v0}, Laly$a;->a()Laly;
+
+    move-result-object v0
+
+    .line 58
+    iget-object v1, p0, Lamr;->b:Lalw;
+
+    iget-object v2, p0, Lamr;->e:Lalw$a;
+
+    invoke-virtual {v1, v0, v2}, Lalw;->a(Laly;Lalw$a;)V
+
+    .line 62
+    :try_start_0
+    iget-object v0, p0, Lamr;->a:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 64
+    :goto_0
+    iget-boolean v0, p0, Lamr;->c:Z
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
 .end method

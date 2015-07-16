@@ -1,44 +1,15 @@
-import android.content.Context;
-import android.media.ExifInterface;
-import android.net.Uri;
-import java.io.InputStream;
-
-final class bou
-  extends bop
+public abstract interface bou
 {
-  bou(Context paramContext)
+  public static final bou a = new bou()
   {
-    super(paramContext);
-  }
-  
-  public final boolean a(bpg parambpg)
-  {
-    return "file".equals(d.getScheme());
-  }
-  
-  public final bpi.a b(bpg parambpg)
-  {
-    InputStream localInputStream = c(parambpg);
-    bpd.d locald = bpd.d.b;
-    int i;
-    switch (new ExifInterface(d.getPath()).getAttributeInt("Orientation", 1))
+    public final boolean a(cax paramAnonymouscax, int paramAnonymousInt)
     {
-    case 4: 
-    case 5: 
-    case 7: 
-    default: 
-      i = 0;
+      paramAnonymouscax.f(paramAnonymousInt);
+      return true;
     }
-    for (;;)
-    {
-      return new bpi.a(null, localInputStream, locald, i);
-      i = 90;
-      continue;
-      i = 180;
-      continue;
-      i = 270;
-    }
-  }
+  };
+  
+  public abstract boolean a(cax paramcax, int paramInt);
 }
 
 /* Location:

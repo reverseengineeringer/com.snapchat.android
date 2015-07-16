@@ -41,37 +41,31 @@
 
 # virtual methods
 .method public final run()V
-    .locals 10
+    .locals 8
 
     .prologue
-    const v9, 0x7f0c0113
+    const v7, 0x7f0c0112
 
-    const/16 v8, 0x8
+    const/16 v6, 0x8
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
     .line 86
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter$2;->b:Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;
 
     iget-object v1, p0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter$2;->a:Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter$LoadingState;
 
-    const-string v2, "DiscoverLoadingStatePresenter"
+    const/4 v2, 0x2
 
-    const-string v3, "Setting loading state %s (compatibility is %s)"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x2
+    aput-object v1, v2, v5
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const/4 v3, 0x1
 
-    aput-object v1, v4, v7
+    iget-object v4, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->i:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
-    const/4 v5, 0x1
-
-    iget-object v6, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->i:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
-
-    aput-object v6, v4, v5
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v4, v2, v3
 
     iget-object v2, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->i:Lcom/snapchat/android/discover/util/network/DiscoverEndpointManager$Compatibility;
 
@@ -97,7 +91,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    invoke-virtual {v0, v9}, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->a(I)V
+    invoke-virtual {v0, v7}, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->a(I)V
 
     .line 87
     :cond_0
@@ -106,20 +100,20 @@
 
     .line 86
     :pswitch_0
-    const v1, 0x7f0c0115
+    const v1, 0x7f0c0114
 
     invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->a(I)V
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->h:Lael;
+    iget-object v2, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->h:Lafl;
 
     if-eqz v2, :cond_0
 
-    iget-object v2, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->h:Lael;
+    iget-object v2, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->h:Lafl;
 
-    invoke-virtual {v2}, Lael;->a()I
+    invoke-virtual {v2}, Lafl;->a()I
 
     move-result v2
 
@@ -153,19 +147,19 @@
     :pswitch_3
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->f:Lcom/snapchat/android/discover/ui/ChannelGroupView;
 
-    invoke-virtual {v1, v8}, Lcom/snapchat/android/discover/ui/ChannelGroupView;->setVisibility(I)V
+    invoke-virtual {v1, v6}, Lcom/snapchat/android/discover/ui/ChannelGroupView;->setVisibility(I)V
 
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->a:Landroid/view/View;
 
-    invoke-virtual {v1, v7}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v5}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->c:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v7}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->b:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->b:Landroid/widget/TextView;
 
@@ -180,19 +174,19 @@
     :pswitch_4
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->f:Lcom/snapchat/android/discover/ui/ChannelGroupView;
 
-    invoke-virtual {v1, v8}, Lcom/snapchat/android/discover/ui/ChannelGroupView;->setVisibility(I)V
+    invoke-virtual {v1, v6}, Lcom/snapchat/android/discover/ui/ChannelGroupView;->setVisibility(I)V
 
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->a:Landroid/view/View;
 
-    invoke-virtual {v1, v7}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v5}, Landroid/view/View;->setVisibility(I)V
 
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->c:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v8}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->b:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
     iget-object v1, v0, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->b:Landroid/widget/TextView;
 
@@ -205,9 +199,11 @@
     goto :goto_0
 
     :pswitch_5
-    invoke-virtual {v0, v9}, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->a(I)V
+    invoke-virtual {v0, v7}, Lcom/snapchat/android/discover/ui/DiscoverLoadingStatePresenter;->a(I)V
 
     goto :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

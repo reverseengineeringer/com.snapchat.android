@@ -1,43 +1,19 @@
-import com.snapchat.android.fragments.addfriends.LeftSwipeContainerFragment;
-import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
-import com.snapchat.android.util.fragment.SnapchatFragment;
+import com.snapchat.android.model.Friend;
+import com.snapchat.android.model.FriendAction;
 
 public final class bdw
 {
-  @cgc
-  public String mBaseFragmentTag;
-  public SnapchatFragment mFragmentToStart;
-  @cgc
-  public boolean mHideOldFragmentFlag;
-  @cgc
-  public String mTag;
+  @chc
+  public FriendAction mAction = FriendAction.NONE;
+  @chd
+  public Friend mFriend;
   
-  public bdw(LeftSwipeContentFragment paramLeftSwipeContentFragment)
-  {
-    this(LeftSwipeContainerFragment.a(paramLeftSwipeContentFragment), paramLeftSwipeContentFragment.tag(), null, false);
-  }
+  public bdw() {}
   
-  public bdw(SnapchatFragment paramSnapchatFragment)
+  public bdw(@chd Friend paramFriend, @chc FriendAction paramFriendAction)
   {
-    this(paramSnapchatFragment, (byte)0);
-  }
-  
-  private bdw(SnapchatFragment paramSnapchatFragment, byte paramByte)
-  {
-    this(paramSnapchatFragment, null, null, true);
-  }
-  
-  public bdw(SnapchatFragment paramSnapchatFragment, String paramString1, String paramString2)
-  {
-    this(paramSnapchatFragment, paramString1, paramString2, true);
-  }
-  
-  private bdw(SnapchatFragment paramSnapchatFragment, String paramString1, String paramString2, boolean paramBoolean)
-  {
-    mFragmentToStart = paramSnapchatFragment;
-    mTag = paramString1;
-    mBaseFragmentTag = paramString2;
-    mHideOldFragmentFlag = paramBoolean;
+    mFriend = paramFriend;
+    mAction = paramFriendAction;
   }
 }
 

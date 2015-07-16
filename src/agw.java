@@ -1,9 +1,22 @@
 public final class agw
-  extends ahd
 {
+  public final agw.a a;
+  private final pm b;
+  
   public agw()
   {
-    super(ajb.a());
+    this(pm.a(), new agw.a());
+  }
+  
+  private agw(pm parampm, agw.a parama)
+  {
+    b = parampm;
+    a = parama;
+  }
+  
+  public static final class a
+  {
+    public ael a;
   }
 }
 

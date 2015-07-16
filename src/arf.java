@@ -1,22 +1,29 @@
+import com.snapchat.android.ui.layertype.LayerType;
+import java.util.HashMap;
+import java.util.Map;
+
 public final class arf
 {
-  final float[] a = new float[2];
-  public final int[] b = { -1, -1 };
-  public float c;
-  public float d;
-  public int e;
-  public int f;
-  boolean g = false;
+  protected static final LayerType a = LayerType.HARDWARE;
+  private static final Map<Integer, LayerType> b;
   
-  public final void a(int paramInt)
+  static
   {
-    b[paramInt] = f;
-    a[paramInt] = c;
+    HashMap localHashMap = new HashMap(LayerType.values().length);
+    b = localHashMap;
+    localHashMap.put(Integer.valueOf(0), LayerType.NONE);
+    b.put(Integer.valueOf(2), LayerType.HARDWARE);
+    b.put(Integer.valueOf(1), LayerType.SOFTWARE);
   }
   
-  public final boolean a()
+  public static LayerType a(int paramInt)
   {
-    return (b[0] == -1) && (b[1] == -1);
+    LayerType localLayerType2 = (LayerType)b.get(Integer.valueOf(paramInt));
+    LayerType localLayerType1 = localLayerType2;
+    if (localLayerType2 == null) {
+      localLayerType1 = a;
+    }
+    return localLayerType1;
   }
 }
 

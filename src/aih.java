@@ -1,19 +1,40 @@
-public final class aih
-  extends aif<String>
+import android.app.Activity;
+import com.addlive.service.AddLiveService.VideoFrameMetadata;
+import com.addlive.view.ALVideoTextureView;
+import com.snapchat.android.analytics.HereAnalytics;
+import com.snapchat.android.ui.here.DisconnectReason;
+
+public abstract interface aih
 {
-  public aih()
-  {
-    this(alb.a(), awq.GEOFILTER_METADATA_CACHE);
-  }
+  public abstract void a();
   
-  private aih(@cgb alb paramalb, @cgb awp paramawp)
-  {
-    super(paramalb, paramawp);
-  }
+  public abstract void a(@chc Activity paramActivity, @chc aih.a parama, @chc HereAnalytics paramHereAnalytics);
   
-  public final void b(@cgb String paramString, @cgb aij.a parama)
+  public abstract void a(@chc bjc parambjc);
+  
+  public abstract void a(ALVideoTextureView paramALVideoTextureView);
+  
+  public abstract void a(@chc DisconnectReason paramDisconnectReason);
+  
+  public abstract void a(@chc byte[] paramArrayOfByte, @chc AddLiveService.VideoFrameMetadata paramVideoFrameMetadata);
+  
+  public abstract boolean b();
+  
+  public abstract boolean c();
+  
+  public abstract void d();
+  
+  public abstract void e();
+  
+  public static abstract interface a
   {
-    parama.a();
+    public abstract void a();
+    
+    public abstract void a(@chc DisconnectReason paramDisconnectReason);
+    
+    public abstract void a(boolean paramBoolean);
+    
+    public abstract void b(boolean paramBoolean);
   }
 }
 

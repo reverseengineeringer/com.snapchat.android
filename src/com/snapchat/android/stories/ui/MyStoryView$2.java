@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.view.View;
 import android.view.View.OnClickListener;
-import aom;
-import aom.a;
+import api;
+import api.a;
 import com.snapchat.android.notification.AndroidNotificationManager;
 import com.squareup.otto.Bus;
 
@@ -16,7 +16,7 @@ final class MyStoryView$2
   
   public final void onClick(View paramView)
   {
-    MyStoryView.e(a).b(MyStoryView.b(a), new aom.a()
+    MyStoryView.e(a).b(MyStoryView.b(a), new api.a()
     {
       public final void a()
       {

@@ -90,7 +90,7 @@
     .line 155
     new-instance v3, Ljava/io/File;
 
-    sget-object v4, Lbuz;->a:Ljava/lang/String;
+    sget-object v4, Lbwa;->a:Ljava/lang/String;
 
     iget-object v5, p0, Lnet/hockeyapp/android/NativeCrashManager$2;->b:Ljava/lang/String;
 
@@ -108,7 +108,7 @@
     .line 158
     new-instance v3, Ljava/io/File;
 
-    sget-object v4, Lbuz;->a:Ljava/lang/String;
+    sget-object v4, Lbwa;->a:Ljava/lang/String;
 
     iget-object v5, p0, Lnet/hockeyapp/android/NativeCrashManager$2;->c:Ljava/lang/String;
 
@@ -170,7 +170,7 @@
 
     new-instance v4, Lorg/apache/http/entity/mime/content/StringBody;
 
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
     move-result-object v5
 
@@ -189,7 +189,7 @@
 
     new-instance v4, Lorg/apache/http/entity/mime/content/StringBody;
 
-    invoke-static {}, Lajx;->G()Ljava/lang/String;
+    invoke-static {}, Lakr;->G()Ljava/lang/String;
 
     move-result-object v5
 
@@ -235,31 +235,17 @@
 
     .line 175
     :try_start_2
-    const-string v1, "NativeCrashManager"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Failed to upload crashes: "
 
-    const-string v3, "Failed to upload crashes: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 

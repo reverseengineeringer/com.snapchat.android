@@ -17,7 +17,7 @@
 .method public constructor <init>(Ljava/io/File;)V
     .locals 1
     .param p1    # Ljava/io/File;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -36,11 +36,11 @@
 .method protected constructor <init>(Ljava/io/File;Landroid/media/MediaMetadataRetriever;)V
     .locals 2
     .param p1    # Ljava/io/File;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/media/MediaMetadataRetriever;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

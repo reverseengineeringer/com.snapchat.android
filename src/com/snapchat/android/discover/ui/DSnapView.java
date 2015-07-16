@@ -1,33 +1,33 @@
 package com.snapchat.android.discover.ui;
 
-import abq;
-import abr;
-import aby;
-import aca;
-import acb;
+import acq;
+import acr;
+import acy;
+import ada;
 import adb;
-import adf;
-import adf.c;
-import adt;
-import adu;
-import adv;
-import adw;
-import adx;
-import ady;
-import aea;
 import aeb;
-import aec;
-import aed;
-import aed.a;
-import aee;
 import aef;
-import aef.1;
-import aej;
-import aeq;
+import aef.c;
+import aet;
+import aeu;
 import aev;
+import aew;
 import aex;
-import aim;
-import ale;
+import aey;
+import afa;
+import afb;
+import afc;
+import afd;
+import afd.a;
+import afe;
+import aff;
+import aff.1;
+import afj;
+import afq;
+import afv;
+import afx;
+import aji;
+import ama;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -47,19 +47,18 @@ import android.view.ViewPropertyAnimator;
 import android.view.ViewStub;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.LinearLayout;
-import atx;
-import avf;
-import avj;
-import avl;
-import ayd;
-import azm;
-import bcd;
-import bdj;
-import bdt;
-import bgk;
-import cgb;
-import cgc;
-import com.snapchat.android.Timber;
+import auv;
+import awd;
+import awh;
+import awj;
+import azb;
+import bal;
+import bdd;
+import bej;
+import bet;
+import bhk;
+import chc;
+import chd;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
@@ -74,6 +73,7 @@ import com.snapchat.android.discover.model.DSnapPage.Form;
 import com.snapchat.android.discover.model.DSnapPanel;
 import com.snapchat.android.discover.model.DSnapPanel.Docking;
 import com.snapchat.android.discover.model.DSnapPanel.MediaType;
+import com.snapchat.android.discover.model.EditionOpenOrigin;
 import com.snapchat.android.discover.model.MediaState;
 import com.snapchat.android.discover.ui.media.DiscoverEditionPageView;
 import com.snapchat.android.discover.ui.media.DiscoverEditionPageView.a;
@@ -82,15 +82,15 @@ import com.snapchat.android.ui.VerticalSwipeLayout.a;
 import com.snapchat.android.util.debug.ReleaseManager;
 import com.snapchat.android.util.eventbus.SnapCaptureContext;
 import com.squareup.otto.Bus;
-import fq;
-import gl;
-import gp;
-import gt;
+import fz;
 import gu;
-import gx;
-import ha;
+import gy;
 import hc;
-import hh;
+import hd;
+import hg;
+import hj;
+import hl;
+import hq;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -100,21 +100,21 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import ld;
-import lt;
-import mj;
+import lv;
 import ml;
-import mp.a;
+import na;
+import nc;
+import ng.a;
 
 public class DSnapView
   extends DiscoverEditionPageView
-  implements aeq, VerticalSwipeLayout.a
+  implements afq, VerticalSwipeLayout.a
 {
   private final a A;
   private final int B;
   private float C;
   private float D;
-  private aca E;
+  private ada E;
   private boolean F = false;
   private boolean G;
   private boolean H = false;
@@ -122,70 +122,70 @@ public class DSnapView
   private MediaState J = MediaState.NOT_STARTED;
   private DSnapPage K;
   private int L = -1;
-  private aed.a M = new aed.a()
+  private afd.a M = new afd.a()
   {
     public final void a()
     {
       DSnapView.a(DSnapView.this).c();
     }
   };
-  public final aed a;
+  public final afd a;
   public VerticalSwipeLayout b;
   LinearLayout c;
-  public aej d;
-  aef e;
-  public abr f;
+  public afj d;
+  aff e;
+  public acr f;
   public DSnapPage g;
   public ChannelPage h;
   boolean i = false;
   protected boolean j = false;
   public long k = 0L;
-  private final aea t;
-  private final acb u;
-  private final Map<Integer, ady> v;
+  private final afa t;
+  private final adb u;
+  private final Map<Integer, aey> v;
   private final ReleaseManager w;
-  private final aev x;
-  private final atx y;
+  private final afv x;
+  private final auv y;
   private final Handler z;
   
   public DSnapView(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, new aea(), new aed(paramContext), acb.a(), ReleaseManager.a(), new Handler(), ViewConfiguration.get(paramContext).getScaledTouchSlop(), new DiscoverUsageAnalytics(), new aev(), new aej(), new atx());
+    this(paramContext, paramAttributeSet, new afa(), new afd(paramContext), adb.a(), ReleaseManager.a(), new Handler(), ViewConfiguration.get(paramContext).getScaledTouchSlop(), new DiscoverUsageAnalytics(), new afv(), new afj(), new auv());
   }
   
-  DSnapView(Context paramContext, AttributeSet paramAttributeSet, aby paramaby, abq paramabq, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, adf paramadf, bgk parambgk, Bus paramBus, aea paramaea, aed paramaed, acb paramacb, ReleaseManager paramReleaseManager, Handler paramHandler, int paramInt, aev paramaev, aej paramaej, atx paramatx, azm paramazm)
+  DSnapView(Context paramContext, AttributeSet paramAttributeSet, acy paramacy, acq paramacq, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, aef paramaef, bhk parambhk, Bus paramBus, afa paramafa, afd paramafd, adb paramadb, ReleaseManager paramReleaseManager, Handler paramHandler, int paramInt, afv paramafv, afj paramafj, auv paramauv, bal parambal)
   {
-    super(paramContext, paramAttributeSet, paramaby, paramabq, paramDiscoverUsageAnalytics, paramadf, paramazm, parambgk, paramBus);
-    t = paramaea;
-    u = paramacb;
+    super(paramContext, paramAttributeSet, paramacy, paramacq, paramDiscoverUsageAnalytics, paramaef, parambal, parambhk, paramBus);
+    t = paramafa;
+    u = paramadb;
     v = new HashMap();
-    a = paramaed;
+    a = paramafd;
     w = paramReleaseManager;
     z = paramHandler;
     A = new a(this);
     B = paramInt;
-    x = paramaev;
-    d = paramaej;
-    y = paramatx;
+    x = paramafv;
+    d = paramafj;
+    y = paramauv;
   }
   
-  private DSnapView(Context paramContext, AttributeSet paramAttributeSet, aea paramaea, aed paramaed, acb paramacb, ReleaseManager paramReleaseManager, Handler paramHandler, int paramInt, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, aev paramaev, aej paramaej, atx paramatx)
+  private DSnapView(Context paramContext, AttributeSet paramAttributeSet, afa paramafa, afd paramafd, adb paramadb, ReleaseManager paramReleaseManager, Handler paramHandler, int paramInt, DiscoverUsageAnalytics paramDiscoverUsageAnalytics, afv paramafv, afj paramafj, auv paramauv)
   {
     super(paramContext, paramAttributeSet);
-    t = paramaea;
-    u = paramacb;
+    t = paramafa;
+    u = paramadb;
     v = new HashMap();
-    a = paramaed;
+    a = paramafd;
     w = paramReleaseManager;
     z = paramHandler;
     A = new a(this);
     B = paramInt;
-    x = paramaev;
-    d = paramaej;
-    y = paramatx;
+    x = paramafv;
+    d = paramafj;
+    y = paramauv;
   }
   
-  private void a(@cgb DSnapPage paramDSnapPage, @cgc DSnapPanel paramDSnapPanel, DSnapPage.Form paramForm)
+  private void a(@chc DSnapPage paramDSnapPage, @chd DSnapPanel paramDSnapPanel, DSnapPage.Form paramForm)
   {
     if (paramDSnapPanel == null) {}
     while (J != MediaState.SUCCESS) {
@@ -198,7 +198,7 @@ public class DSnapView
     {
       localContext = getContext();
       localObject1 = g;
-      switch (aea.1.a[localObject1.ordinal()])
+      switch (afa.1.a[localObject1.ordinal()])
       {
       default: 
         localObject1 = null;
@@ -213,30 +213,30 @@ public class DSnapView
       localObject2 = localObject1;
       if (localObject1 != null)
       {
-        ((ady)localObject1).a(this);
+        ((aey)localObject1).a(this);
         v.put(Integer.valueOf(paramForm.getIndex()), localObject1);
         if (b.getChildCount() > paramForm.getIndex()) {
           b.removeViewAt(paramForm.getIndex());
         }
-        b.addView(((ady)localObject1).d(), paramForm.getIndex());
+        b.addView(((aey)localObject1).d(), paramForm.getIndex());
         localObject2 = localObject1;
       }
       if (localObject2 == null) {
         break;
       }
-      ((ady)localObject2).a(paramDSnapPage, paramDSnapPanel);
+      ((aey)localObject2).a(paramDSnapPage, paramDSnapPanel);
       return;
-      localObject1 = new adu(localContext);
+      localObject1 = new aeu(localContext);
       continue;
-      localObject1 = new aeb(localContext);
+      localObject1 = new afb(localContext);
       continue;
-      localObject1 = new adx(localContext);
+      localObject1 = new aex(localContext);
       continue;
-      localObject1 = new adv(localContext);
+      localObject1 = new aev(localContext);
     }
     label243:
     if ((!TextUtils.isEmpty(c)) && (d.isScreenDocking())) {
-      localObject1 = new adw(localContext, (ady)localObject1);
+      localObject1 = new aew(localContext, (aey)localObject1);
     }
     for (;;)
     {
@@ -245,11 +245,11 @@ public class DSnapView
       {
         localObject2 = localObject1;
         if (paramDSnapPage.d() == paramDSnapPanel) {
-          localObject2 = new adt(localContext, (ady)localObject1);
+          localObject2 = new aet(localContext, (aey)localObject1);
         }
       }
       localObject1 = localObject2;
-      if (((ady)localObject2).a(this, paramDSnapPage, paramDSnapPanel)) {
+      if (((aey)localObject2).a(this, paramDSnapPage, paramDSnapPanel)) {
         break;
       }
       localObject1 = null;
@@ -257,7 +257,7 @@ public class DSnapView
     }
   }
   
-  private static boolean a(@cgb List<DSnapPage> paramList, int paramInt)
+  private static boolean a(@chc List<DSnapPage> paramList, int paramInt)
   {
     if (paramInt < paramList.size() - 1) {
       return ((DSnapPage)paramList.get(paramInt + 1)).g();
@@ -267,31 +267,14 @@ public class DSnapView
   
   private void e(int paramInt)
   {
-    Timber.c("DSnapView", "Enter %s panel %d", new Object[] { g, Integer.valueOf(paramInt) });
-    int m;
-    Object localObject2;
-    if (DSnapPage.Form.LONGFORM.getIndex() == paramInt)
+    Object localObject1 = g;
+    if ((i) && (!u.a.getBoolean(SharedPreferenceKey.DISCOVER_SEEN_ONBOARDING.getKey(), false))) {}
+    for (int m = 1;; m = 0)
     {
-      m = 1;
-      if (m == 0) {
-        break label208;
-      }
-      localObject1 = f;
-      localObject2 = g;
-      b.add(a);
-      label71:
-      if ((!i) || (u.a.getBoolean(SharedPreferenceKey.DISCOVER_SEEN_ONBOARDING.getKey(), false))) {
-        break label239;
-      }
-    }
-    label208:
-    label239:
-    for (int n = 1;; n = 0)
-    {
-      if (n != 0)
+      if (m != 0)
       {
         if (c == null) {
-          c = ((LinearLayout)((ViewStub)findViewById(2131362303)).inflate());
+          c = ((LinearLayout)((ViewStub)findViewById(2131362301)).inflate());
         }
         c.setVisibility(0);
         c.animate().alpha(1.0F).setDuration(300L);
@@ -300,46 +283,53 @@ public class DSnapView
         ((SharedPreferences.Editor)localObject1).apply();
       }
       if (!i()) {
-        break label244;
+        break;
       }
       return;
-      m = 0;
-      break;
-      localObject1 = f;
-      localObject2 = g;
-      a.add(a);
-      break label71;
     }
-    label244:
     if (J != MediaState.SUCCESS)
     {
-      Timber.c("DSnapView", "Cannot enter %s panel %d yet, loading state is %s", new Object[] { g, Integer.valueOf(paramInt), J.name() });
+      localObject1 = g;
+      J.name();
       return;
     }
-    label327:
+    label175:
+    Object localObject2;
+    label205:
+    label240:
     Object localObject3;
-    if ((m != 0) && (g.e().g == DSnapPanel.MediaType.REMOTE_VIDEO))
+    if (DSnapPage.Form.LONGFORM.getIndex() == paramInt)
     {
-      r.a(new bdt(true));
+      m = 1;
+      if (m == 0) {
+        break label417;
+      }
+      localObject1 = f;
+      localObject2 = g;
+      b.add(a);
+      if ((m == 0) || (g.e().g != DSnapPanel.MediaType.REMOTE_VIDEO)) {
+        break label446;
+      }
+      r.a(new bet(true));
       if (H) {
-        break label518;
+        break label462;
       }
       localObject1 = b(paramInt);
       if (localObject1 != null)
       {
-        ((ady)localObject1).o_();
+        ((aey)localObject1).m_();
         if (g.g())
         {
           localObject1 = o;
           localObject2 = g.g;
           localObject3 = g.a();
           paramInt = g.e;
-          mp.a locala = new mp.a();
+          ng.a locala = new ng.a();
           mChannelName = ((String)localObject3);
           mEditionName = ((String)localObject2);
           mPosition = paramInt;
           localObject2 = locala.a();
-          a.a((ml)localObject2);
+          a.a((nc)localObject2);
         }
       }
       k = SystemClock.elapsedRealtime();
@@ -347,59 +337,78 @@ public class DSnapView
       localObject2 = h;
       localObject3 = g;
       if (m == 0) {
-        break label520;
+        break label464;
       }
     }
-    label518:
-    label520:
-    for (Object localObject1 = g.e();; localObject1 = g.d())
+    label417:
+    label446:
+    label462:
+    label464:
+    for (localObject1 = g.e();; localObject1 = g.d())
     {
       j();
-      E = new aca((ChannelPage)localObject2, (DSnapPage)localObject3, (DSnapPanel)localObject1, getResources());
+      E = new ada((ChannelPage)localObject2, (DSnapPage)localObject3, (DSnapPanel)localObject1, getResources(), f);
       return;
-      r.a(new bdt(false));
-      break label327;
+      m = 0;
+      break label175;
+      localObject1 = f;
+      localObject2 = g;
+      a.add(a);
+      break label205;
+      r.a(new bet(false));
+      break label240;
       break;
     }
   }
   
-  @avl
+  @awj
   private void f(int paramInt)
   {
-    Timber.c("DSnapView", "Leaving %s panel %d", new Object[] { g, Integer.valueOf(paramInt) });
+    Object localObject1 = g;
     b.setScrollable(false);
-    ady localady = b(paramInt);
-    long l;
-    Object localObject1;
-    Object localObject6;
-    if (localady != null) {
+    localObject1 = b(paramInt);
+    long l1;
+    long l2;
+    long l3;
+    Object localObject7;
+    if (localObject1 != null) {
       if ((H) && (k != 0L))
       {
-        l = SystemClock.elapsedRealtime() - k;
+        l1 = SystemClock.elapsedRealtime() - k;
         if (!g.g()) {
-          break label394;
+          break label446;
         }
-        localObject1 = o;
-        localObject3 = localady.a(l);
-        localObject4 = g.d;
-        localObject2 = g.g;
+        localObject2 = o;
+        localObject4 = ((aey)localObject1).a(l1);
+        localObject5 = g.d;
+        localObject3 = g.g;
         str = g.a();
         m = g.f.intValue();
-        n = this.l.d(g.g);
+        n = l.d(g.g);
         int i1 = g.e;
-        int i2 = this.l.e(g.g);
-        localObject5 = localady.e();
-        if (localObject3 != DiscoverUsageAnalytics.ViewStatus.ERROR)
+        int i2 = l.e(g.g);
+        localObject6 = ((aey)localObject1).e();
+        l2 = ((aey)localObject1).k();
+        l3 = ((aey)localObject1).j();
+        localObject7 = f.c.getSourceType();
+        if (localObject4 != DiscoverUsageAnalytics.ViewStatus.ERROR)
         {
-          localObject6 = new gu();
-          timeViewed = Double.valueOf(avf.a(l));
-          fullView = Boolean.valueOf(((DiscoverUsageAnalytics.ViewStatus)localObject3).wasFullView());
-          adsnapId = ((String)localObject4);
-          editionId = ((String)localObject2);
+          hd localhd = new hd();
+          timeViewed = Double.valueOf(awd.a(l1));
+          fullView = Boolean.valueOf(((DiscoverUsageAnalytics.ViewStatus)localObject4).wasFullView());
+          adsnapId = ((String)localObject5);
+          editionId = ((String)localObject3);
           publisherId = str;
-          mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject5);
+          mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject6);
+          source = ((lv)localObject7);
+          if (l2 >= 0L) {
+            mediaDisplayTimeSec = Double.valueOf(awd.a(l2));
+          }
+          if (l3 >= 0L) {
+            snapTimeSec = Double.valueOf(awd.a(l3));
+          }
           if (n >= 0) {
-            break label389;
+            break label441;
           }
           paramInt = 1;
           if (paramInt == 0)
@@ -409,26 +418,24 @@ public class DSnapView
             adIndexPos = Long.valueOf(i1);
             adIndexCount = Long.valueOf(i2);
           }
-          ScAnalyticsEventEngine.a((lt)localObject6);
-          localObject3 = new mp.a();
+          ScAnalyticsEventEngine.a(localhd);
+          localObject4 = new ng.a();
           mChannelName = str;
-          mEditionName = ((String)localObject2);
+          mEditionName = ((String)localObject3);
           mPosition = i1;
-          localObject2 = ((mp.a)localObject3).a();
-          a.a((ml)localObject2, l);
+          localObject3 = ((ng.a)localObject4).a();
+          a.a((nc)localObject3, l1);
         }
       }
     }
-    label389:
-    label394:
     label441:
-    label658:
-    label671:
+    label446:
+    label717:
     do
     {
       do
       {
-        localady.p_();
+        ((aey)localObject1).n_();
         j();
         h();
         k = 0L;
@@ -436,32 +443,34 @@ public class DSnapView
         return;
         paramInt = 0;
         break;
-        localObject1 = f;
-        localObject2 = g.a;
-        if (!c.containsKey(localObject2)) {
-          break label658;
-        }
-        localObject1 = (ld)c.get(localObject2);
-        f.a(g.a, ld.DISCOVER);
         if (DSnapPage.Form.TOP_SNAP.getIndex() != paramInt) {
-          break label671;
+          break label717;
         }
-        localObject2 = localady.a(l);
-        str = g.a;
-        localObject3 = g.g;
+        localObject2 = ((aey)localObject1).a(l1);
+        localObject3 = g.a;
+        str = g.g;
         localObject4 = g.a();
         m = g.f.intValue();
-        n = this.l.d(g.g);
-        localObject5 = localady.e();
+        n = l.d(g.g);
+        localObject5 = f.c.getSourceType();
+        localObject6 = ((aey)localObject1).e();
+        l2 = ((aey)localObject1).k();
+        l3 = ((aey)localObject1).j();
       } while (localObject2 == DiscoverUsageAnalytics.ViewStatus.ERROR);
-      localObject6 = new hh();
-      timeViewed = Double.valueOf(avf.a(l));
+      localObject7 = new hq();
+      timeViewed = Double.valueOf(awd.a(l1));
       fullView = Boolean.valueOf(((DiscoverUsageAnalytics.ViewStatus)localObject2).wasFullView());
-      dsnapId = str;
-      editionId = ((String)localObject3);
+      dsnapId = ((String)localObject3);
+      editionId = str;
       publisherId = ((String)localObject4);
-      source = ((ld)localObject1);
-      mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject5);
+      source = ((lv)localObject5);
+      mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject6);
+      if (l2 >= 0L) {
+        mediaDisplayTimeSec = Double.valueOf(awd.a(l2));
+      }
+      if (l3 >= 0L) {
+        snapTimeSec = Double.valueOf(awd.a(l3));
+      }
       if (n < 0) {}
       for (paramInt = 1;; paramInt = 0)
       {
@@ -470,25 +479,24 @@ public class DSnapView
           snapIndexCount = Long.valueOf(n);
           snapIndexPos = Long.valueOf(m + 1);
         }
-        ScAnalyticsEventEngine.a((lt)localObject6);
+        ScAnalyticsEventEngine.a((ml)localObject7);
         break;
-        localObject1 = ld.DISCOVER;
-        break label441;
       }
     } while (DSnapPage.Form.LONGFORM.getIndex() != paramInt);
     Object localObject2 = g.a;
-    String str = g.g;
-    Object localObject3 = g.a();
-    Object localObject4 = localady.e();
+    Object localObject3 = g.g;
+    String str = g.a();
+    Object localObject4 = ((aey)localObject1).e();
     int m = g.f.intValue();
-    int n = this.l.d(g.g);
-    Object localObject5 = new ha();
-    timeViewed = Double.valueOf(avf.a(l));
+    int n = l.d(g.g);
+    Object localObject5 = f.c.getSourceType();
+    Object localObject6 = new hj();
+    timeViewed = Double.valueOf(awd.a(l1));
     dsnapId = ((String)localObject2);
-    editionId = str;
-    publisherId = ((String)localObject3);
+    editionId = ((String)localObject3);
+    publisherId = str;
     longformType = DiscoverUsageAnalytics.b((DSnapPanel.MediaType)localObject4);
-    source = ((ld)localObject1);
+    source = ((lv)localObject5);
     if (n < 0) {}
     for (paramInt = 1;; paramInt = 0)
     {
@@ -497,7 +505,7 @@ public class DSnapView
         snapIndexPos = Long.valueOf(m + 1);
         snapIndexCount = Long.valueOf(n);
       }
-      ScAnalyticsEventEngine.a((lt)localObject5);
+      ScAnalyticsEventEngine.a((ml)localObject6);
       break;
     }
   }
@@ -520,7 +528,7 @@ public class DSnapView
     }
   }
   
-  @avl
+  @awj
   public final void a()
   {
     if (!j) {
@@ -528,54 +536,53 @@ public class DSnapView
     }
     h();
     int m = getCurrentPanel();
-    Timber.c("DSnapView", "Exit page %s with current panel %d", new Object[] { g, Integer.valueOf(m) });
+    DSnapPage localDSnapPage = g;
     f(m);
     j = false;
-    r.a(new bcd(getInAppNotificationSourceId()));
+    r.a(new bdd(getInAppNotificationSourceId()));
   }
   
-  public final void a(float paramFloat1, float paramFloat2, @cgb final ady paramady, final boolean paramBoolean, final DSnapPanel.MediaType paramMediaType, final long paramLong)
+  public final void a(float paramFloat1, float paramFloat2, @chc final aey paramaey, final boolean paramBoolean, final DSnapPanel.MediaType paramMediaType, final long paramLong)
   {
-    if (paramady.e() == DSnapPanel.MediaType.VIDEO) {}
-    aef localaef;
-    for (int m = 1;; m = 0)
+    int m;
+    aff localaff;
+    if (paramaey.e() == DSnapPanel.MediaType.VIDEO)
     {
-      localaef = e;
-      paramady = new avj()
+      m = 1;
+      localaff = e;
+      paramaey = new awh()
       {
         public final void onAnimationEnd(Animator paramAnonymousAnimator)
         {
           Object localObject2 = DSnapView.this;
-          Object localObject3 = paramady;
+          Object localObject3 = paramaey;
           boolean bool = paramBoolean;
           Object localObject1 = paramMediaType;
           long l = paramLong;
+          Object localObject4 = g;
+          Object localObject6 = h;
+          if ((localObject4 == null) || (localObject6 == null)) {}
           int j;
           int m;
-          Object localObject5;
-          Object localObject6;
-          Object localObject4;
-          int k;
-          int n;
-          if (g != null)
+          do
           {
-            j = l.d(g.g);
-            m = l.e(g.g);
+            return;
+            j = l.d(g);
+            m = l.e(g);
             paramAnonymousAnimator = null;
             if (!bool) {
               paramAnonymousAnimator = (Animator)localObject1;
             }
-            localObject5 = g;
-            localObject6 = h;
-            DSnapPanel.MediaType localMediaType = ((ady)localObject3).e();
-            localObject4 = new adb();
+            localObject7 = ((aey)localObject3).e();
+            lv locallv = f.c.getSourceType();
+            localObject5 = new aeb();
             a = b;
             b = c;
             c = d;
             e = a;
             d = g;
-            l = ayd.a();
-            m = ayd.b();
+            l = azb.a();
+            m = azb.b();
             if (paramAnonymousAnimator == DSnapPanel.MediaType.LOCAL_WEBPAGE) {
               n = true;
             }
@@ -587,86 +594,82 @@ public class DSnapView
             x = d;
             y = e;
             z = m;
-            A = localMediaType;
+            A = ((DSnapPanel.MediaType)localObject7);
             B = paramAnonymousAnimator;
             C = bool;
             D = l;
+            E = locallv;
             if (localObject1 != DSnapPanel.MediaType.LOCAL_WEBPAGE) {
-              break label539;
+              break;
             }
             e.b();
             localObject1 = ((DSnapView)localObject2).getRootView();
-            localObject1 = ((ady)localObject3).a((View)localObject1, (adb)localObject4, new ArrayList());
-            if (localObject1 != null)
+            localObject1 = ((aey)localObject3).a((View)localObject1, (aeb)localObject5, new ArrayList());
+          } while (localObject1 == null);
+          r.a(new bej((aji)localObject1, SnapCaptureContext.DISCOVER));
+          localObject1 = ((DSnapPage)localObject4).a();
+          Object localObject5 = g;
+          localObject6 = a;
+          int k = f.intValue();
+          int i = k.intValue();
+          Object localObject7 = d;
+          int n = e;
+          localObject3 = ((aey)localObject3).e();
+          localObject2 = f.c.getSourceType();
+          if (i == 0)
+          {
+            if (bool)
             {
-              r.a(new bdj((aim)localObject1, SnapCaptureContext.DISCOVER));
-              localObject1 = g.a();
-              localObject4 = g.g;
-              localObject5 = g.a;
-              k = g.f.intValue();
-              i = g.k.intValue();
-              localObject6 = g.d;
-              n = g.e;
-              localObject2 = ((ady)localObject3).e();
-              if (i != 0) {
-                break label669;
-              }
-              if (!bool) {
-                break label562;
-              }
-              paramAnonymousAnimator = new hc();
+              paramAnonymousAnimator = new hl();
               publisherId = ((String)localObject1);
-              dsnapId = ((String)localObject5);
-              editionId = ((String)localObject4);
-              mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject2, false);
-              timeViewed = Double.valueOf(avf.a(l));
-              if (j >= 0) {
-                break label557;
+              dsnapId = ((String)localObject6);
+              editionId = ((String)localObject5);
+              mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject3, false);
+              timeViewed = Double.valueOf(awd.a(l));
+              source = ((lv)localObject2);
+              if (j < 0) {}
+              for (i = 1;; i = 0)
+              {
+                if (i == 0)
+                {
+                  snapIndexCount = Long.valueOf(j);
+                  snapIndexPos = Long.valueOf(k + 1);
+                }
+                ScAnalyticsEventEngine.a(paramAnonymousAnimator);
+                return;
+                localObject1 = b.getChildAt(((DSnapView)localObject2).getCurrentPanel());
+                break;
               }
             }
-          }
-          label539:
-          label557:
-          for (int i = 1;; i = 0)
-          {
-            if (i == 0)
+            localObject4 = new hg();
+            publisherId = ((String)localObject1);
+            dsnapId = ((String)localObject6);
+            editionId = ((String)localObject5);
+            mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject3, false);
+            longformType = DiscoverUsageAnalytics.b(paramAnonymousAnimator);
+            timeViewed = Double.valueOf(awd.a(l));
+            source = ((lv)localObject2);
+            if (j < 0) {}
+            for (i = 1;; i = 0)
             {
-              snapIndexCount = Long.valueOf(j);
-              snapIndexPos = Long.valueOf(k + 1);
+              if (i == 0)
+              {
+                snapIndexCount = Long.valueOf(j);
+                snapIndexPos = Long.valueOf(k + 1);
+              }
+              ScAnalyticsEventEngine.a((ml)localObject4);
+              return;
             }
-            ScAnalyticsEventEngine.a(paramAnonymousAnimator);
-            return;
-            localObject1 = b.getChildAt(((DSnapView)localObject2).getCurrentPanel());
-            break;
           }
-          label562:
-          localObject3 = new gx();
-          publisherId = ((String)localObject1);
-          dsnapId = ((String)localObject5);
-          editionId = ((String)localObject4);
-          mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject2, false);
-          longformType = DiscoverUsageAnalytics.b(paramAnonymousAnimator);
-          timeViewed = Double.valueOf(avf.a(l));
-          if (j < 0) {}
-          for (i = 1;; i = 0)
-          {
-            if (i == 0)
-            {
-              snapIndexCount = Long.valueOf(j);
-              snapIndexPos = Long.valueOf(k + 1);
-            }
-            ScAnalyticsEventEngine.a((lt)localObject3);
-            return;
-          }
-          label669:
           if (bool)
           {
-            paramAnonymousAnimator = new gp();
+            paramAnonymousAnimator = new gy();
             publisherId = ((String)localObject1);
-            adsnapId = ((String)localObject6);
-            editionId = ((String)localObject4);
-            mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject2, false);
-            timeViewed = Double.valueOf(avf.a(l));
+            adsnapId = ((String)localObject7);
+            editionId = ((String)localObject5);
+            mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject3, false);
+            timeViewed = Double.valueOf(awd.a(l));
+            source = ((lv)localObject2);
             if (j < 0) {}
             for (i = 1;; i = 0)
             {
@@ -681,13 +684,14 @@ public class DSnapView
               return;
             }
           }
-          localObject3 = new gl();
+          localObject4 = new gu();
           publisherId = ((String)localObject1);
-          adsnapId = ((String)localObject6);
-          editionId = ((String)localObject4);
-          mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject2, false);
-          timeViewed = Double.valueOf(avf.a(l));
+          adsnapId = ((String)localObject7);
+          editionId = ((String)localObject5);
+          mediaType = DiscoverUsageAnalytics.a((DSnapPanel.MediaType)localObject3, false);
+          timeViewed = Double.valueOf(awd.a(l));
           longformType = DiscoverUsageAnalytics.b(paramAnonymousAnimator);
+          source = ((lv)localObject2);
           if (j < 0) {}
           for (i = 1;; i = 0)
           {
@@ -698,25 +702,24 @@ public class DSnapView
               adIndexPos = Long.valueOf(n);
               adIndexCount = Long.valueOf(m);
             }
-            ScAnalyticsEventEngine.a((lt)localObject3);
+            ScAnalyticsEventEngine.a((ml)localObject4);
             return;
           }
         }
       };
-      localaef.a();
-      if (d != null) {
-        break;
+      localaff.a();
+      if (d != null)
+      {
+        e.setVisibility(0);
+        c.setAlpha(0.0F);
+        d.setVisibility(0);
+        c.setVisibility(0);
+        paramMediaType = c.findViewById(2131362275);
+        if (m == 0) {
+          break label544;
+        }
+        paramMediaType.setVisibility(0);
       }
-      Timber.f("DSnapPreviewToolPresenter", "Inflation failed!", new Object[0]);
-      return;
-    }
-    e.setVisibility(0);
-    c.setAlpha(0.0F);
-    d.setVisibility(0);
-    c.setVisibility(0);
-    paramMediaType = c.findViewById(2131362277);
-    if (m != 0) {
-      paramMediaType.setVisibility(0);
     }
     for (;;)
     {
@@ -739,15 +742,18 @@ public class DSnapView
       localArrayList.add(ObjectAnimator.ofFloat(c, View.ALPHA, new float[] { 0.0F, 1.0F }));
       localArrayList.add(ObjectAnimator.ofFloat(c, View.TRANSLATION_X, new float[] { paramFloat1 - 0.5F * a, 0.0F }));
       localArrayList.add(ObjectAnimator.ofFloat(c, View.TRANSLATION_Y, new float[] { paramFloat2 - 0.5F * b, 0.0F }));
-      paramMediaType.addListener(new aef.1(localaef, paramady));
+      paramMediaType.addListener(new aff.1(localaff, paramaey));
       paramMediaType.playTogether(localArrayList);
       paramMediaType.start();
       return;
+      m = 0;
+      break;
+      label544:
       paramMediaType.setVisibility(8);
     }
   }
   
-  @avl
+  @awj
   public final void a(int paramInt)
   {
     if (j)
@@ -772,13 +778,14 @@ public class DSnapView
     this.m.a(h, g);
     localObject2 = this.l;
     Object localObject4 = g.g;
-    ((adf)localObject2).b(g.a, System.currentTimeMillis());
+    ((aef)localObject2).b(g.a, System.currentTimeMillis());
     for (;;)
     {
       Object localObject5;
       boolean bool;
       Object localObject6;
       String str1;
+      Object localObject7;
       String str2;
       String str3;
       String str4;
@@ -786,33 +793,34 @@ public class DSnapView
       int n;
       synchronized (b)
       {
-        localObject5 = (adf.c)b.get(localObject4);
+        localObject5 = (aef.c)b.get(localObject4);
         if (localObject5 == null) {
-          break label1124;
+          break label1171;
         }
-        bool = ((adf)localObject2).a(f);
-        ((adf)localObject2).a((String)localObject4, bool);
+        bool = ((aef)localObject2).a(f);
+        ((aef)localObject2).a((String)localObject4, bool);
         if ((K == null) || (!K.g()))
         {
           ??? = f.d;
           localObject2 = g;
           bool = F;
-          localObject4 = (EditionPerformanceAnalytics.WaitTimeMetricState)c.get(a);
-          if ((localObject4 == null) || (localObject4 == EditionPerformanceAnalytics.WaitTimeMetricState.NOT_STARTED))
+          localObject4 = f.c;
+          localObject5 = (EditionPerformanceAnalytics.WaitTimeMetricState)c.get(a);
+          if ((localObject5 == null) || (localObject5 == EditionPerformanceAnalytics.WaitTimeMetricState.NOT_STARTED))
           {
             if (!((DSnapPage)localObject2).c().isLoading()) {
-              break label900;
+              break label936;
             }
-            localObject4 = a;
             localObject5 = a;
-            localObject6 = d;
-            str1 = h;
+            localObject6 = a;
+            str1 = d;
+            localObject7 = h;
             str2 = g;
             str3 = a;
             str4 = ((DSnapPage)localObject2).b();
             m = f.intValue();
-            n = e;
-            ((abq)localObject4).a("DISCOVER_DSNAP_WAIT_TIME", (String)localObject5, EasyMetric.EasyMetricFactory.a("DISCOVER_DSNAP_WAIT_TIME").a("session_id", localObject6).a("publisher_name", str1).a("edition_id", str2).a("dsnap_id", str3).a("has_ad", Boolean.valueOf(bool)).a("hash", str4).a("snap_index_pos", Integer.toString(m + 1)).a("snap_index_count", Integer.toString(n)).b());
+            n = f;
+            ((acq)localObject5).a("DISCOVER_DSNAP_WAIT_TIME", (String)localObject6, EasyMetric.EasyMetricFactory.a("DISCOVER_DSNAP_WAIT_TIME").a("session_id", str1).a("publisher_name", localObject7).a("edition_id", str2).a("dsnap_id", str3).a("has_ad", Boolean.valueOf(bool)).a("hash", str4).a("snap_index_pos", Integer.toString(m + 1)).a("source", ((EditionOpenOrigin)localObject4).toString()).a("snap_index_count", Integer.toString(n)).b());
             c.put(a, EditionPerformanceAnalytics.WaitTimeMetricState.TIMING);
             b.add(a);
           }
@@ -832,8 +840,9 @@ public class DSnapView
         n = this.l.d(K.g);
         int i1 = K.e;
         int i2 = this.l.e(K.g);
+        localObject7 = f.c.getSourceType();
         long l = m + 1;
-        localObject6 = new gt();
+        localObject6 = new hc();
         adsnapId = str1;
         editionId = ((String)localObject4);
         publisherId = ((String)localObject5);
@@ -841,67 +850,68 @@ public class DSnapView
         snapIndexCount = Long.valueOf(n);
         adIndexPos = Long.valueOf(i1);
         adIndexCount = Long.valueOf(i2);
+        source = ((lv)localObject7);
         if ((??? == null) || (!((MediaState)???).isError())) {
-          ??? = fq.FAILED;
+          ??? = fz.FAILED;
         }
         for (;;)
         {
-          additionalInfo = ((fq)???);
-          ScAnalyticsEventEngine.a((lt)localObject6);
-          ??? = new mp.a();
+          additionalInfo = ((fz)???);
+          ScAnalyticsEventEngine.a((ml)localObject6);
+          ??? = new ng.a();
           mChannelName = ((String)localObject5);
           mEditionName = ((String)localObject4);
           mPosition = i1;
-          ??? = ((mp.a)???).a();
-          a.b((ml)???);
+          ??? = ((ng.a)???).a();
+          a.b((nc)???);
           break;
           switch (com.snapchat.android.discover.analytics.DiscoverUsageAnalytics.1.b[???.ordinal()])
           {
           default: 
-            ??? = fq.FAILED;
+            ??? = fz.FAILED;
             break;
           case 1: 
-            ??? = fq.SERVER_INTERNAL_ERROR;
+            ??? = fz.SERVER_INTERNAL_ERROR;
             break;
           case 2: 
-            ??? = fq.SERVER_INVALID_REQUEST_ERROR;
+            ??? = fz.SERVER_INVALID_REQUEST_ERROR;
             break;
           case 3: 
-            ??? = fq.SERVER_NETWORK_ERROR;
+            ??? = fz.SERVER_NETWORK_ERROR;
             break;
           case 4: 
-            ??? = fq.SERVER_NO_FILL_ERROR;
+            ??? = fz.SERVER_NO_FILL_ERROR;
             break;
           case 5: 
-            ??? = fq.SERVER_OTHER_ERROR;
+            ??? = fz.SERVER_OTHER_ERROR;
             break;
           case 6: 
-            ??? = fq.CONTENT_NO_FILL;
+            ??? = fz.CONTENT_NO_FILL;
             break;
           case 7: 
-            ??? = fq.TIMEOUT;
+            ??? = fz.TIMEOUT;
             break;
           case 8: 
-            ??? = fq.CLIENT_ERROR;
+            ??? = fz.CLIENT_ERROR;
           }
         }
-        label900:
-        localObject4 = a;
+        label936:
         localObject5 = a;
-        localObject6 = d;
-        str1 = h;
+        localObject6 = a;
+        str1 = d;
+        localObject7 = h;
         str2 = g;
         str3 = a;
         str4 = localDiscoverUsageAnalytics.b();
         m = f.intValue();
-        n = e;
+        n = f;
         MediaState localMediaState = localDiscoverUsageAnalytics.c();
-        if (!b.contains(localObject5)) {
-          EasyMetric.EasyMetricFactory.a("DISCOVER_DSNAP_WAIT_TIME").a("session_id", localObject6).a("publisher_name", str1).a("edition_id", str2).a("dsnap_id", str3).a("has_ad", Boolean.valueOf(bool)).a("hash", str4).a("type", localMediaState.toString().toLowerCase(Locale.ENGLISH)).a("snap_index_pos", Integer.toString(m + 1)).a("snap_index_count", Integer.toString(n)).a("reachability", a.f()).a(0L).a(false);
+        if (!b.contains(localObject6)) {
+          EasyMetric.EasyMetricFactory.a("DISCOVER_DSNAP_WAIT_TIME").a("session_id", str1).a("publisher_name", localObject7).a("edition_id", str2).a("dsnap_id", str3).a("has_ad", Boolean.valueOf(bool)).a("hash", str4).a("type", localMediaState.toString().toLowerCase(Locale.ENGLISH)).a("snap_index_pos", Integer.toString(m + 1)).a("snap_index_count", Integer.toString(n)).a("source", ((EditionOpenOrigin)localObject4).toString()).a("reachability", a.f()).a(0L).a(false);
         }
         c.put(a, EditionPerformanceAnalytics.WaitTimeMetricState.REPORTED);
         continue;
-        label1124:
+        label1171:
         bool = false;
       }
     }
@@ -910,7 +920,7 @@ public class DSnapView
   public final void a(int paramInt1, int paramInt2, int paramInt3)
   {
     if (g == null) {}
-    ady localady;
+    aey localaey;
     do
     {
       do
@@ -927,9 +937,9 @@ public class DSnapView
           return;
         }
       } while (paramInt1 != 1);
-      localady = b(paramInt2);
-    } while (localady == null);
-    localady.f();
+      localaey = b(paramInt2);
+    } while (localaey == null);
+    localaey.f();
   }
   
   public final void a(int paramInt, boolean paramBoolean)
@@ -949,19 +959,19 @@ public class DSnapView
   {
     if (j)
     {
-      Timber.f("DSnapView", "Error playing DSnap %s (%s)", new Object[] { g, paramString });
-      String str1 = g.a();
-      String str2 = g.g;
-      String str3 = g.a;
-      String str4 = g.b();
-      EasyMetric.EasyMetricFactory.a("DISCOVER_DSNAP_MEDIA_PLAYBACK_ERROR").a("publisher_name", str1).a("dsnap_id", str3).a("edition_id", str2).a("hash", str4).a("description", paramString).a(false);
+      Object localObject = g;
+      localObject = g.a();
+      String str1 = g.g;
+      String str2 = g.a;
+      String str3 = g.b();
+      EasyMetric.EasyMetricFactory.a("DISCOVER_DSNAP_MEDIA_PLAYBACK_ERROR").a("publisher_name", localObject).a("dsnap_id", str2).a("edition_id", str1).a("hash", str3).a("description", paramString).a(false);
       a.a(MediaState.GENERIC_ERROR);
       I = false;
     }
   }
   
   /* Error */
-  public final void a(@cgb List<DSnapPage> paramList, @cgb DSnapPage paramDSnapPage1, int paramInt, @cgc DSnapPage paramDSnapPage2)
+  public final void a(@chc List<DSnapPage> paramList, @chc DSnapPage paramDSnapPage1, int paramInt, @chd DSnapPage paramDSnapPage2)
   {
     // Byte code:
     //   0: aload_0
@@ -972,37 +982,37 @@ public class DSnapView
     //   7: aload_0
     //   8: aload_1
     //   9: iload_3
-    //   10: invokestatic 1064	com/snapchat/android/discover/ui/DSnapView:a	(Ljava/util/List;I)Z
+    //   10: invokestatic 1053	com/snapchat/android/discover/ui/DSnapView:a	(Ljava/util/List;I)Z
     //   13: putfield 131	com/snapchat/android/discover/ui/DSnapView:F	Z
     //   16: aload_0
     //   17: aload 4
-    //   19: putfield 873	com/snapchat/android/discover/ui/DSnapView:K	Lcom/snapchat/android/discover/model/DSnapPage;
+    //   19: putfield 859	com/snapchat/android/discover/ui/DSnapView:K	Lcom/snapchat/android/discover/model/DSnapPage;
     //   22: aload_0
-    //   23: getfield 160	com/snapchat/android/discover/ui/DSnapView:a	Laed;
+    //   23: getfield 160	com/snapchat/android/discover/ui/DSnapView:a	Lafd;
     //   26: astore 4
     //   28: aload_0
     //   29: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
-    //   32: getfield 1066	com/snapchat/android/discover/model/DSnapPage:j	Ljava/lang/String;
-    //   35: invokestatic 1071	android/graphics/Color:parseColor	(Ljava/lang/String;)I
+    //   32: getfield 1055	com/snapchat/android/discover/model/DSnapPage:j	Ljava/lang/String;
+    //   35: invokestatic 1060	android/graphics/Color:parseColor	(Ljava/lang/String;)I
     //   38: istore 5
     //   40: iload 5
     //   42: aload 4
-    //   44: getfield 1073	aed:j	I
+    //   44: getfield 1062	afd:j	I
     //   47: if_icmpeq +26 -> 73
     //   50: aload 4
     //   52: iload 5
-    //   54: putfield 1073	aed:j	I
+    //   54: putfield 1062	afd:j	I
     //   57: aload 4
     //   59: iconst_1
-    //   60: putfield 1075	aed:e	Z
+    //   60: putfield 1064	afd:e	Z
     //   63: aload 4
     //   65: aload 4
-    //   67: getfield 1077	aed:g	Lcom/snapchat/android/discover/model/MediaState;
-    //   70: invokevirtual 1061	aed:a	(Lcom/snapchat/android/discover/model/MediaState;)V
+    //   67: getfield 1066	afd:g	Lcom/snapchat/android/discover/model/MediaState;
+    //   70: invokevirtual 1050	afd:a	(Lcom/snapchat/android/discover/model/MediaState;)V
     //   73: aload_1
     //   74: iload_3
-    //   75: invokestatic 1064	com/snapchat/android/discover/ui/DSnapView:a	(Ljava/util/List;I)Z
-    //   78: ifeq +162 -> 240
+    //   75: invokestatic 1053	com/snapchat/android/discover/ui/DSnapView:a	(Ljava/util/List;I)Z
+    //   78: ifeq +141 -> 219
     //   81: aload_1
     //   82: iload_3
     //   83: iconst_1
@@ -1011,152 +1021,134 @@ public class DSnapView
     //   90: checkcast 292	com/snapchat/android/discover/model/DSnapPage
     //   93: astore_1
     //   94: aload_1
-    //   95: invokevirtual 887	com/snapchat/android/discover/model/DSnapPage:c	()Lcom/snapchat/android/discover/model/MediaState;
-    //   98: invokevirtual 890	com/snapchat/android/discover/model/MediaState:isLoading	()Z
-    //   101: ifeq +139 -> 240
+    //   95: invokevirtual 874	com/snapchat/android/discover/model/DSnapPage:c	()Lcom/snapchat/android/discover/model/MediaState;
+    //   98: invokevirtual 877	com/snapchat/android/discover/model/MediaState:isLoading	()Z
+    //   101: ifeq +118 -> 219
     //   104: aload_1
-    //   105: invokevirtual 887	com/snapchat/android/discover/model/DSnapPage:c	()Lcom/snapchat/android/discover/model/MediaState;
+    //   105: invokevirtual 874	com/snapchat/android/discover/model/DSnapPage:c	()Lcom/snapchat/android/discover/model/MediaState;
     //   108: astore_1
-    //   109: ldc_w 334
-    //   112: ldc_w 1079
-    //   115: iconst_3
-    //   116: anewarray 338	java/lang/Object
-    //   119: dup
-    //   120: iconst_0
-    //   121: aload_0
-    //   122: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
-    //   125: invokevirtual 887	com/snapchat/android/discover/model/DSnapPage:c	()Lcom/snapchat/android/discover/model/MediaState;
-    //   128: aastore
-    //   129: dup
-    //   130: iconst_1
-    //   131: aload_1
-    //   132: aastore
-    //   133: dup
-    //   134: iconst_2
-    //   135: aload_0
-    //   136: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
-    //   139: aastore
-    //   140: invokestatic 343	com/snapchat/android/Timber:c	(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    //   143: aload_0
-    //   144: getfield 140	com/snapchat/android/discover/ui/DSnapView:J	Lcom/snapchat/android/discover/model/MediaState;
-    //   147: getstatic 190	com/snapchat/android/discover/model/MediaState:SUCCESS	Lcom/snapchat/android/discover/model/MediaState;
-    //   150: if_acmpeq +98 -> 248
-    //   153: aload_1
-    //   154: getstatic 190	com/snapchat/android/discover/model/MediaState:SUCCESS	Lcom/snapchat/android/discover/model/MediaState;
-    //   157: if_acmpne +91 -> 248
-    //   160: iconst_1
-    //   161: istore_3
-    //   162: aload_0
-    //   163: aload_1
-    //   164: putfield 140	com/snapchat/android/discover/ui/DSnapView:J	Lcom/snapchat/android/discover/model/MediaState;
-    //   167: aload_0
-    //   168: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
-    //   171: invokevirtual 297	com/snapchat/android/discover/model/DSnapPage:d	()Lcom/snapchat/android/discover/model/DSnapPanel;
-    //   174: astore_1
+    //   109: aload_0
+    //   110: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
+    //   113: invokevirtual 874	com/snapchat/android/discover/model/DSnapPage:c	()Lcom/snapchat/android/discover/model/MediaState;
+    //   116: pop
+    //   117: aload_0
+    //   118: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
+    //   121: astore_2
+    //   122: aload_0
+    //   123: getfield 140	com/snapchat/android/discover/ui/DSnapView:J	Lcom/snapchat/android/discover/model/MediaState;
+    //   126: getstatic 190	com/snapchat/android/discover/model/MediaState:SUCCESS	Lcom/snapchat/android/discover/model/MediaState;
+    //   129: if_acmpeq +98 -> 227
+    //   132: aload_1
+    //   133: getstatic 190	com/snapchat/android/discover/model/MediaState:SUCCESS	Lcom/snapchat/android/discover/model/MediaState;
+    //   136: if_acmpne +91 -> 227
+    //   139: iconst_1
+    //   140: istore_3
+    //   141: aload_0
+    //   142: aload_1
+    //   143: putfield 140	com/snapchat/android/discover/ui/DSnapView:J	Lcom/snapchat/android/discover/model/MediaState;
+    //   146: aload_0
+    //   147: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
+    //   150: invokevirtual 297	com/snapchat/android/discover/model/DSnapPage:d	()Lcom/snapchat/android/discover/model/DSnapPanel;
+    //   153: astore_1
+    //   154: aload_0
+    //   155: aload_0
+    //   156: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
+    //   159: aload_1
+    //   160: getstatic 634	com/snapchat/android/discover/model/DSnapPage$Form:TOP_SNAP	Lcom/snapchat/android/discover/model/DSnapPage$Form;
+    //   163: invokespecial 1068	com/snapchat/android/discover/ui/DSnapView:a	(Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;Lcom/snapchat/android/discover/model/DSnapPage$Form;)V
+    //   166: aload_0
+    //   167: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
+    //   170: invokevirtual 423	com/snapchat/android/discover/model/DSnapPage:e	()Lcom/snapchat/android/discover/model/DSnapPanel;
+    //   173: astore_1
+    //   174: aload_0
     //   175: aload_0
-    //   176: aload_0
-    //   177: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
-    //   180: aload_1
-    //   181: getstatic 643	com/snapchat/android/discover/model/DSnapPage$Form:TOP_SNAP	Lcom/snapchat/android/discover/model/DSnapPage$Form;
-    //   184: invokespecial 1081	com/snapchat/android/discover/ui/DSnapView:a	(Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;Lcom/snapchat/android/discover/model/DSnapPage$Form;)V
-    //   187: aload_0
-    //   188: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
-    //   191: invokevirtual 438	com/snapchat/android/discover/model/DSnapPage:e	()Lcom/snapchat/android/discover/model/DSnapPanel;
-    //   194: astore_1
-    //   195: aload_0
-    //   196: aload_0
-    //   197: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
-    //   200: aload_1
-    //   201: getstatic 347	com/snapchat/android/discover/model/DSnapPage$Form:LONGFORM	Lcom/snapchat/android/discover/model/DSnapPage$Form;
-    //   204: invokespecial 1081	com/snapchat/android/discover/ui/DSnapView:a	(Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;Lcom/snapchat/android/discover/model/DSnapPage$Form;)V
-    //   207: aload_0
-    //   208: getfield 160	com/snapchat/android/discover/ui/DSnapView:a	Laed;
-    //   211: aload_0
-    //   212: getfield 140	com/snapchat/android/discover/ui/DSnapView:J	Lcom/snapchat/android/discover/model/MediaState;
-    //   215: invokevirtual 1061	aed:a	(Lcom/snapchat/android/discover/model/MediaState;)V
-    //   218: iload_3
-    //   219: ifeq +18 -> 237
-    //   222: aload_0
-    //   223: getfield 129	com/snapchat/android/discover/ui/DSnapView:j	Z
-    //   226: ifeq +11 -> 237
-    //   229: aload_0
-    //   230: aload_0
-    //   231: getfield 144	com/snapchat/android/discover/ui/DSnapView:L	I
-    //   234: invokevirtual 834	com/snapchat/android/discover/ui/DSnapView:d	(I)V
-    //   237: aload_0
-    //   238: monitorexit
-    //   239: return
-    //   240: aload_2
-    //   241: invokevirtual 887	com/snapchat/android/discover/model/DSnapPage:c	()Lcom/snapchat/android/discover/model/MediaState;
-    //   244: astore_1
-    //   245: goto -136 -> 109
-    //   248: iconst_0
-    //   249: istore_3
-    //   250: goto -88 -> 162
-    //   253: astore_1
-    //   254: aload_0
-    //   255: monitorexit
-    //   256: aload_1
-    //   257: athrow
+    //   176: getfield 324	com/snapchat/android/discover/ui/DSnapView:g	Lcom/snapchat/android/discover/model/DSnapPage;
+    //   179: aload_1
+    //   180: getstatic 406	com/snapchat/android/discover/model/DSnapPage$Form:LONGFORM	Lcom/snapchat/android/discover/model/DSnapPage$Form;
+    //   183: invokespecial 1068	com/snapchat/android/discover/ui/DSnapView:a	(Lcom/snapchat/android/discover/model/DSnapPage;Lcom/snapchat/android/discover/model/DSnapPanel;Lcom/snapchat/android/discover/model/DSnapPage$Form;)V
+    //   186: aload_0
+    //   187: getfield 160	com/snapchat/android/discover/ui/DSnapView:a	Lafd;
+    //   190: aload_0
+    //   191: getfield 140	com/snapchat/android/discover/ui/DSnapView:J	Lcom/snapchat/android/discover/model/MediaState;
+    //   194: invokevirtual 1050	afd:a	(Lcom/snapchat/android/discover/model/MediaState;)V
+    //   197: iload_3
+    //   198: ifeq +18 -> 216
+    //   201: aload_0
+    //   202: getfield 129	com/snapchat/android/discover/ui/DSnapView:j	Z
+    //   205: ifeq +11 -> 216
+    //   208: aload_0
+    //   209: aload_0
+    //   210: getfield 144	com/snapchat/android/discover/ui/DSnapView:L	I
+    //   213: invokevirtual 817	com/snapchat/android/discover/ui/DSnapView:d	(I)V
+    //   216: aload_0
+    //   217: monitorexit
+    //   218: return
+    //   219: aload_2
+    //   220: invokevirtual 874	com/snapchat/android/discover/model/DSnapPage:c	()Lcom/snapchat/android/discover/model/MediaState;
+    //   223: astore_1
+    //   224: goto -115 -> 109
+    //   227: iconst_0
+    //   228: istore_3
+    //   229: goto -88 -> 141
+    //   232: astore_1
+    //   233: aload_0
+    //   234: monitorexit
+    //   235: aload_1
+    //   236: athrow
     // Local variable table:
     //   start	length	slot	name	signature
-    //   0	258	0	this	DSnapView
-    //   0	258	1	paramList	List<DSnapPage>
-    //   0	258	2	paramDSnapPage1	DSnapPage
-    //   0	258	3	paramInt	int
-    //   0	258	4	paramDSnapPage2	DSnapPage
+    //   0	237	0	this	DSnapView
+    //   0	237	1	paramList	List<DSnapPage>
+    //   0	237	2	paramDSnapPage1	DSnapPage
+    //   0	237	3	paramInt	int
+    //   0	237	4	paramDSnapPage2	DSnapPage
     //   38	15	5	m	int
     // Exception table:
     //   from	to	target	type
-    //   2	73	253	finally
-    //   73	109	253	finally
-    //   109	160	253	finally
-    //   162	218	253	finally
-    //   222	237	253	finally
-    //   240	245	253	finally
+    //   2	73	232	finally
+    //   73	109	232	finally
+    //   109	139	232	finally
+    //   141	197	232	finally
+    //   201	216	232	finally
+    //   219	224	232	finally
   }
   
-  @cgc
-  public final ady b(int paramInt)
+  @chd
+  public final aey b(int paramInt)
   {
-    return (ady)v.get(Integer.valueOf(paramInt));
+    return (aey)v.get(Integer.valueOf(paramInt));
   }
   
   public final void b()
   {
     Object localObject;
-    aec localaec;
-    if (!J.isLoading())
+    afc localafc;
+    if ((!J.isLoading()) && (!J.isError()))
     {
       localObject = a;
-      Timber.a("DSnapLoadingStatePresenter", "LOADING-STATE %s: Hiding loading state quickly.", new Object[] { ((aed)localObject).a() });
-      localaec = d;
+      ((afd)localObject).a();
+      localafc = d;
       float f1;
-      long l;
       if (!e)
       {
         e = true;
         if (f == null) {
-          break label233;
+          break label152;
         }
         f.cancel();
         f1 = a.getAlpha();
-        l = Math.abs(300.0F * f1);
-        Timber.a("DSnapLoadingErrorViewHolder", "LOADING-STATE: Cancel slow and hide fast with duration: " + l, new Object[0]);
-        localaec.a(l, f1, false);
+        localafc.a(Math.abs(300.0F * f1), f1, false);
       }
       localObject = c;
       if (!f)
       {
         f = true;
         if (g == null) {
-          break label257;
+          break label162;
         }
         g.cancel();
         f1 = a.getAlpha();
-        l = Math.abs(300.0F * f1);
-        Timber.a("DSnapLoadingViewHolder", "LOADING-STATE: Cancel slow and hide fast with duration: " + l, new Object[0]);
-        ((aee)localObject).a(l, f1, false);
+        ((afe)localObject).a(Math.abs(300.0F * f1), f1, false);
       }
     }
     for (;;)
@@ -1164,13 +1156,11 @@ public class DSnapView
       b.setScrollable(true);
       I = true;
       return;
-      label233:
-      Timber.a("DSnapLoadingErrorViewHolder", "LOADING-STATE: Hiding fast", new Object[0]);
-      localaec.a(300);
+      label152:
+      localafc.a(300);
       break;
-      label257:
-      Timber.a("DSnapLoadingViewHolder", "LOADING-STATE: Hiding fast", new Object[0]);
-      ((aee)localObject).a(300);
+      label162:
+      ((afe)localObject).a(300);
     }
   }
   
@@ -1221,22 +1211,26 @@ public class DSnapView
   public final boolean f()
   {
     if ((b == null) || (b.e())) {}
-    ady localady;
+    aey localaey;
     do
     {
       return false;
-      localady = b(getCurrentPanel());
-    } while (localady == null);
-    return localady.h();
+      localaey = b(getCurrentPanel());
+    } while (localaey == null);
+    return localaey.i();
   }
   
   public final boolean g()
   {
-    if (DSnapPage.Form.LONGFORM.getIndex() == getCurrentPanel()) {}
-    for (int m = 1; (m != 0) && (g.e().g == DSnapPanel.MediaType.REMOTE_VIDEO); m = 0) {
-      return true;
+    if (g == null) {}
+    for (;;)
+    {
+      return false;
+      if (DSnapPage.Form.LONGFORM.getIndex() == getCurrentPanel()) {}
+      for (int m = 1; (m != 0) && (g.e().g == DSnapPanel.MediaType.REMOTE_VIDEO); m = 0) {
+        return true;
+      }
     }
-    return false;
   }
   
   public int getCurrentPanel()
@@ -1247,7 +1241,7 @@ public class DSnapView
     return 0;
   }
   
-  @cgc
+  @chd
   public DSnapPage getDSnapPage()
   {
     return g;
@@ -1279,22 +1273,70 @@ public class DSnapView
     return L;
   }
   
+  public final void o_()
+  {
+    super.o_();
+    new StringBuilder("Resetting view containing ").append(g);
+    Object localObject1 = a;
+    Object localObject2;
+    if (c != null)
+    {
+      localObject2 = c;
+      ((afe)localObject2).b();
+      ((afe)localObject2).a();
+    }
+    if (d != null)
+    {
+      localObject2 = d;
+      ((afc)localObject2).a();
+      ((afc)localObject2).b();
+    }
+    i = null;
+    j = 0;
+    g = MediaState.NOT_STARTED;
+    h = MediaState.NOT_STARTED;
+    e = true;
+    f = false;
+    localObject1 = v.values().iterator();
+    while (((Iterator)localObject1).hasNext()) {
+      ((aey)((Iterator)localObject1).next()).c();
+    }
+    v.clear();
+    b.removeAllViews();
+    b.d();
+    b.setScrollable(false);
+    g = null;
+    h = null;
+    E = null;
+    F = false;
+    G = false;
+    i = false;
+    j = false;
+    H = false;
+    J = MediaState.NOT_STARTED;
+    k = 0L;
+    L = -1;
+  }
+  
   public void onConfigurationChanged(Configuration paramConfiguration)
   {
     super.onConfigurationChanged(paramConfiguration);
-    ady localady = b(getCurrentPanel());
-    if (localady != null) {
-      localady.a(orientation);
+    aey localaey = b(getCurrentPanel());
+    if (localaey != null)
+    {
+      int m = orientation;
+      localaey.g();
     }
   }
   
   public void onFinishInflate()
   {
     super.onFinishInflate();
-    b = ((VerticalSwipeLayout)findViewById(2131362299));
+    b = ((VerticalSwipeLayout)findViewById(2131362297));
     a.k = M;
-    b.setOnScrolledListener(this);
-    e = new aef(getContext(), this);
+    b.f();
+    b.a(this);
+    e = new aff(getContext(), this);
   }
   
   public boolean onInterceptTouchEvent(MotionEvent paramMotionEvent)
@@ -1330,7 +1372,7 @@ public class DSnapView
             Object localObject = e;
             paramMotionEvent.getX();
             paramMotionEvent.getY();
-            ((aef)localObject).a();
+            ((aff)localObject).a();
             localObject = A;
             float f1 = paramMotionEvent.getX();
             float f2 = paramMotionEvent.getY();
@@ -1364,7 +1406,7 @@ public class DSnapView
     if ((c != null) && (c.isShown()))
     {
       if (paramMotionEvent.getAction() == 1) {
-        c.animate().alpha(0.0F).setDuration(300L).setListener(new avj()
+        c.animate().alpha(0.0F).setDuration(300L).setListener(new awh()
         {
           public final void onAnimationEnd(Animator paramAnonymousAnimator)
           {
@@ -1379,66 +1421,29 @@ public class DSnapView
       }
       return true;
     }
-    ady localady = b(getCurrentPanel());
-    if (localady != null) {
-      return localady.d().dispatchTouchEvent(paramMotionEvent);
+    aey localaey = b(getCurrentPanel());
+    if (localaey != null) {
+      return localaey.d().dispatchTouchEvent(paramMotionEvent);
     }
     return false;
   }
   
-  public final void q_()
-  {
-    super.q_();
-    Object localObject = a;
-    if (c != null)
-    {
-      aee localaee = c;
-      localaee.b();
-      localaee.a();
-    }
-    i = null;
-    j = 0;
-    g = MediaState.NOT_STARTED;
-    h = MediaState.NOT_STARTED;
-    e = true;
-    f = false;
-    localObject = v.values().iterator();
-    while (((Iterator)localObject).hasNext()) {
-      ((ady)((Iterator)localObject).next()).c();
-    }
-    v.clear();
-    b.removeAllViews();
-    b.d();
-    b.setScrollable(false);
-    g = null;
-    h = null;
-    E = null;
-    F = false;
-    G = false;
-    i = false;
-    j = false;
-    H = false;
-    J = MediaState.NOT_STARTED;
-    k = 0L;
-    L = -1;
-  }
-  
-  public final void r_()
+  public final void p_()
   {
     if ((s != null) && (TextUtils.equals(g.b, "auto_advancing"))) {
       s.a();
     }
   }
   
-  void setDSnapItemViewAdapterMap(HashMap<Integer, ady> paramHashMap)
+  void setDSnapItemViewAdapterMap(HashMap<Integer, aey> paramHashMap)
   {
     v.clear();
     v.putAll(paramHashMap);
   }
   
-  void setDSnapPreviewToolPresenter(aef paramaef)
+  void setDSnapPreviewToolPresenter(aff paramaff)
   {
-    e = paramaef;
+    e = paramaff;
   }
   
   public void setOnboardingEnabled(boolean paramBoolean)
@@ -1464,7 +1469,7 @@ public class DSnapView
       {
         ReleaseManager.k();
         if (DSnapView.c(DSnapView.this)) {
-          DSnapView.d(DSnapView.this).a(new aex(a, b, c));
+          DSnapView.d(DSnapView.this).a(new afx(a, b, c));
         }
       }
       DSnapView.e(DSnapView.this);

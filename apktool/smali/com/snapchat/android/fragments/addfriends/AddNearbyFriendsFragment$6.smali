@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 456
+    .line 460
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$6;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +37,21 @@
 
 # virtual methods
 .method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 2
+
+    .prologue
+    .line 475
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$6;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->a(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;Z)Z
+
+    .line 476
+    return-void
+.end method
+
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
     .prologue
@@ -51,26 +66,11 @@
     return-void
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-
-    .prologue
-    .line 467
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$6;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->a(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;Z)Z
-
-    .line 468
-    return-void
-.end method
-
 .method public final onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
 
     .prologue
-    .line 475
+    .line 479
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .locals 2
 
     .prologue
-    .line 459
+    .line 463
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$6;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 
     invoke-static {v0}, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;->d(Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;)Z
@@ -87,14 +87,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 460
+    .line 464
     invoke-virtual {p1}, Landroid/animation/Animator;->cancel()V
 
-    .line 464
+    .line 468
     :goto_0
     return-void
 
-    .line 462
+    .line 466
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment$6;->a:Lcom/snapchat/android/fragments/addfriends/AddNearbyFriendsFragment;
 

@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kx
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_PHONE_VERIFY_CODE_RESEND";
+  private final String eventName = "REGISTRATION_USER_CONTACT_SCROLL";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_PHONE_VERIFY_CODE_RESEND");
+    localHashMap.put("event_name", "REGISTRATION_USER_CONTACT_SCROLL");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

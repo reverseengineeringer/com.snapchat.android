@@ -40,7 +40,7 @@
 # instance fields
 .field private final mEasyMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
-.field public final mNetworkStatusManager:Lale;
+.field public final mNetworkStatusManager:Lama;
 
 .field private final mReportedLockedVideoLoadMetricIds:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -93,17 +93,17 @@
 
     invoke-direct {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;-><init>()V
 
-    invoke-static {}, Lale;->a()Lale;
+    invoke-static {}, Lama;->a()Lama;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;-><init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lale;)V
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;-><init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lama;)V
 
     .line 50
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lale;)V
+.method private constructor <init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lama;)V
     .locals 1
 
     .prologue
@@ -121,7 +121,7 @@
     iput-object p1, p0, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->mEasyMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
     .line 55
-    iput-object p2, p0, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->mNetworkStatusManager:Lale;
+    iput-object p2, p0, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->mNetworkStatusManager:Lama;
 
     .line 56
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
@@ -231,9 +231,9 @@
 
     const-string v1, "reachability"
 
-    iget-object v2, p0, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->mNetworkStatusManager:Lale;
+    iget-object v2, p0, Lcom/snapchat/android/analytics/ChatPerformanceAnalytics;->mNetworkStatusManager:Lama;
 
-    invoke-virtual {v2}, Lale;->f()Ljava/lang/String;
+    invoke-virtual {v2}, Lama;->f()Ljava/lang/String;
 
     move-result-object v2
 

@@ -1,45 +1,36 @@
-.class public final Lbib;
-.super Ljava/lang/Object;
+.class public Lbib;
+.super Lbil;
 .source "SourceFile"
 
 
 # instance fields
-.field protected auth:Lbix;
+.field protected amount:Ljava/lang/Integer;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "auth"
+        value = "amount"
     .end annotation
 .end field
 
-.field protected connSeqNum:Ljava/lang/Long;
+.field protected createdAt:Ljava/lang/Long;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "conn_seq_num"
+        value = "created_at"
     .end annotation
 .end field
 
-.field protected convId:Ljava/lang/String;
+.field protected currencyCode:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "conv_id"
+        value = "currency_code"
     .end annotation
 .end field
 
-.field protected from:Ljava/lang/String;
+.field protected message:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "from"
+        value = "message"
     .end annotation
 .end field
 
-.field protected to:Ljava/util/List;
+.field protected paymentId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "to"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
+        value = "payment_id"
     .end annotation
 .end field
 
@@ -50,217 +41,93 @@
 
     .prologue
     .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lbil;-><init>()V
 
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Lbib;
-    .locals 0
-
-    .prologue
-    .line 41
-    iput-object p1, p0, Lbib;->from:Ljava/lang/String;
-
-    .line 42
-    return-object p0
-.end method
-
-.method public final a(Ljava/util/List;)Lbib;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;)",
-            "Lbib;"
-        }
-    .end annotation
-
-    .prologue
-    .line 59
-    iput-object p1, p0, Lbib;->to:Ljava/util/List;
-
-    .line 60
-    return-object p0
-.end method
-
 .method public final a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 46
-    iget-object v0, p0, Lbib;->from:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final a(Lbix;)V
-    .locals 0
-
-    .prologue
-    .line 91
-    iput-object p1, p0, Lbib;->auth:Lbix;
-
-    .line 92
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Long;)V
-    .locals 0
-
-    .prologue
-    .line 109
-    iput-object p1, p0, Lbib;->connSeqNum:Ljava/lang/Long;
-
-    .line 110
-    return-void
-.end method
-
-.method public final b(Lbix;)Lbib;
-    .locals 0
-
-    .prologue
     .line 95
-    iput-object p1, p0, Lbib;->auth:Lbix;
-
-    .line 96
-    return-object p0
-.end method
-
-.method public final b(Ljava/lang/String;)Lbib;
-    .locals 0
-
-    .prologue
-    .line 77
-    iput-object p1, p0, Lbib;->convId:Ljava/lang/String;
-
-    .line 78
-    return-object p0
-.end method
-
-.method public final b()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 64
-    iget-object v0, p0, Lbib;->to:Ljava/util/List;
+    iget-object v0, p0, Lbib;->paymentId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 82
-    iget-object v0, p0, Lbib;->convId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final d()Lbix;
-    .locals 1
-
-    .prologue
-    .line 100
-    iget-object v0, p0, Lbib;->auth:Lbix;
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/lang/Long;
-    .locals 1
-
-    .prologue
-    .line 118
-    iget-object v0, p0, Lbib;->connSeqNum:Ljava/lang/Long;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 143
+    .line 178
     if-ne p1, p0, :cond_0
 
-    .line 144
+    .line 179
     const/4 v0, 0x1
 
-    .line 150
+    .line 185
     :goto_0
     return v0
 
-    .line 146
+    .line 181
     :cond_0
     instance-of v0, p1, Lbib;
 
     if-nez v0, :cond_1
 
-    .line 147
+    .line 182
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 149
+    .line 184
     :cond_1
     check-cast p1, Lbib;
 
-    .line 150
+    .line 185
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbib;->from:Ljava/lang/String;
+    iget-object v1, p0, Lbib;->createdAt:Ljava/lang/Long;
 
-    iget-object v2, p1, Lbib;->from:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbib;->to:Ljava/util/List;
-
-    iget-object v2, p1, Lbib;->to:Ljava/util/List;
+    iget-object v2, p1, Lbib;->createdAt:Ljava/lang/Long;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbib;->convId:Ljava/lang/String;
+    iget-object v1, p0, Lbib;->paymentId:Ljava/lang/String;
 
-    iget-object v2, p1, Lbib;->convId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbib;->auth:Lbix;
-
-    iget-object v2, p1, Lbib;->auth:Lbix;
+    iget-object v2, p1, Lbib;->paymentId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbib;->connSeqNum:Ljava/lang/Long;
+    iget-object v1, p0, Lbib;->amount:Ljava/lang/Integer;
 
-    iget-object v2, p1, Lbib;->connSeqNum:Ljava/lang/Long;
+    iget-object v2, p1, Lbib;->amount:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbib;->currencyCode:Ljava/lang/String;
+
+    iget-object v2, p1, Lbib;->currencyCode:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbib;->message:Ljava/lang/String;
+
+    iget-object v2, p1, Lbib;->message:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -273,60 +140,40 @@
     goto :goto_0
 .end method
 
-.method public final f()Z
-    .locals 1
-
-    .prologue
-    .line 122
-    iget-object v0, p0, Lbib;->connSeqNum:Ljava/lang/Long;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
+.method public hashCode()I
     .locals 2
 
     .prologue
-    .line 132
+    .line 167
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbib;->from:Ljava/lang/String;
+    iget-object v1, p0, Lbib;->createdAt:Ljava/lang/Long;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbib;->to:Ljava/util/List;
+    iget-object v1, p0, Lbib;->paymentId:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbib;->convId:Ljava/lang/String;
+    iget-object v1, p0, Lbib;->amount:Ljava/lang/Integer;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbib;->auth:Lbix;
+    iget-object v1, p0, Lbib;->currencyCode:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbib;->connSeqNum:Ljava/lang/Long;
+    iget-object v1, p0, Lbib;->message:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -339,11 +186,11 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 127
+    .line 162
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

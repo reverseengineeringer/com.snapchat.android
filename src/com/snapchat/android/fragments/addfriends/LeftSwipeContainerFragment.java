@@ -1,19 +1,20 @@
 package com.snapchat.android.fragments.addfriends;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import avh;
-import cgb;
-import cgc;
+import awf;
+import chc;
+import chd;
 import com.snapchat.android.LeftSwipeViewPager;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.debug.ReleaseManager;
 import com.snapchat.android.util.fragment.SnapchatFragment;
-import mc;
+import mu;
 
 public class LeftSwipeContainerFragment
   extends SnapchatFragment
@@ -21,18 +22,21 @@ public class LeftSwipeContainerFragment
   public LeftSwipeViewPager a;
   private LeftSwipeContentFragment b;
   private Bundle c;
-  private mc d;
+  private mu d;
   
-  public static LeftSwipeContainerFragment a(@cgb LeftSwipeContentFragment paramLeftSwipeContentFragment)
+  public static LeftSwipeContainerFragment a(@chc LeftSwipeContentFragment paramLeftSwipeContentFragment, @chd Bundle paramBundle)
   {
     LeftSwipeContainerFragment localLeftSwipeContainerFragment = new LeftSwipeContainerFragment();
     Bundle localBundle = new Bundle();
     localBundle.putSerializable("content_fragment", paramLeftSwipeContentFragment);
+    if (paramBundle != null) {
+      localBundle.putBundle("content_fragment_arguments", paramBundle);
+    }
     localLeftSwipeContainerFragment.setArguments(localBundle);
     return localLeftSwipeContainerFragment;
   }
   
-  @cgc
+  @chd
   public final SnapchatFragment a()
   {
     return (SnapchatFragment)d.a;
@@ -70,9 +74,9 @@ public class LeftSwipeContainerFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968690, paramViewGroup, false);
-    a = ((LeftSwipeViewPager)c(2131362407));
-    d = new mc(getChildFragmentManager(), b, c);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968691, paramViewGroup, false);
+    a = ((LeftSwipeViewPager)c(2131362405));
+    d = new mu(getChildFragmentManager(), b, c);
     a.setAdapter(d);
     a.setCurrentItem(1);
     a.setOnPageChangeListener(new ViewPager.OnPageChangeListener()
@@ -81,16 +85,25 @@ public class LeftSwipeContainerFragment
       
       public final void onPageScrolled(int paramAnonymousInt1, float paramAnonymousFloat, int paramAnonymousInt2)
       {
+        Fragment localFragment = aa;
         if ((paramAnonymousInt1 == 0) && (paramAnonymousFloat <= 0.05F))
         {
-          avh.a(getActivity(), LeftSwipeContainerFragment.a(LeftSwipeContainerFragment.this));
+          awf.a(getActivity(), LeftSwipeContainerFragment.b(LeftSwipeContainerFragment.this));
           getActivity().onBackPressed();
+          if ((localFragment instanceof LeftSwipeContainerFragment.a)) {
+            ((LeftSwipeContainerFragment.a)localFragment).H();
+          }
         }
       }
       
       public final void onPageSelected(int paramAnonymousInt) {}
     });
     return mFragmentLayout;
+  }
+  
+  static abstract interface a
+  {
+    public abstract void H();
   }
 }
 

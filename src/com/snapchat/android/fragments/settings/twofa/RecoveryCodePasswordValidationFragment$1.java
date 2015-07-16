@@ -1,33 +1,33 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import amk;
-import amy;
-import ana;
-import aok;
-import aol;
+import anh;
+import anv;
+import anx;
+import apg;
+import aph;
 import java.util.Set;
 
 final class RecoveryCodePasswordValidationFragment$1
-  implements aok
+  implements apg
 {
   RecoveryCodePasswordValidationFragment$1(RecoveryCodePasswordValidationFragment paramRecoveryCodePasswordValidationFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
+    int i = aph.a(paramanh);
     if (RecoveryCodePasswordValidationFragment.a(a).contains(Integer.valueOf(i)))
     {
       RecoveryCodePasswordValidationFragment.a(a).remove(Integer.valueOf(i));
-      if (!(paramamk instanceof ana)) {
+      if (!(paramanh instanceof anx)) {
         break label60;
       }
-      RecoveryCodePasswordValidationFragment.a(a, (ana)paramamk);
+      RecoveryCodePasswordValidationFragment.a(a, (anx)paramanh);
     }
     label60:
-    while (!(paramamk instanceof amy)) {
+    while (!(paramanh instanceof anv)) {
       return;
     }
-    RecoveryCodePasswordValidationFragment.a(a, (amy)paramamk);
+    RecoveryCodePasswordValidationFragment.a(a, (anv)paramanh);
   }
 }
 

@@ -1,14 +1,13 @@
-public final class axf
+import android.content.ContentResolver;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory.Options;
+
+public abstract interface axf
 {
-  public static final int PAGE_SIZE = 30;
-  public int mMessageCount = 0;
-  public int mRenderSize = 30;
+  public abstract Bitmap a(BitmapFactory.Options paramOptions);
   
-  public final void a()
-  {
-    mRenderSize = 30;
-    mMessageCount = 0;
-  }
+  public abstract void a(ContentResolver paramContentResolver, Resources paramResources);
 }
 
 /* Location:

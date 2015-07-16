@@ -1,25 +1,23 @@
-import java.net.URL;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.json.JSONObject;
 
 public final class bsm
+  implements bsn
 {
-  public URL a;
-  public Map b = new HashMap();
-  public int c = 0;
-  public boolean d = true;
-  public boolean e = true;
-  public String f = "POST";
-  public boolean g = false;
-  public int h = 2500;
+  private Map a = new HashMap();
   
-  public bsm(URL paramURL)
+  public final bsm a(bso parambso)
   {
-    a = paramURL;
-    b.put("User-Agent", Arrays.asList(new String[] { "4.5.4" }));
-    b.put("Content-Type", Arrays.asList(new String[] { "application/json" }));
-    b.put("Accept", Arrays.asList(new String[] { "text/plain", "application/json" }));
+    if (parambso.b() != null) {
+      a.put(parambso.a(), parambso.b());
+    }
+    return this;
+  }
+  
+  public final JSONObject a()
+  {
+    return new JSONObject(a);
   }
 }
 

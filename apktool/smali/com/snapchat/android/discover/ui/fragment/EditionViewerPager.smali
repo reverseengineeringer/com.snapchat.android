@@ -125,7 +125,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -139,7 +139,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -183,28 +183,28 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 402
+    .line 401
     iput-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
-    .line 403
+    .line 402
     iput-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->g:Z
 
-    .line 404
+    .line 403
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->p:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_0
 
-    .line 405
+    .line 404
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->p:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 406
+    .line 405
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->p:Landroid/view/VelocityTracker;
 
-    .line 408
+    .line 407
     :cond_0
     return-void
 .end method
@@ -213,13 +213,13 @@
     .locals 0
 
     .prologue
-    .line 227
+    .line 226
     iput p1, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->i:F
 
-    .line 228
+    .line 227
     iput p2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->j:F
 
-    .line 229
+    .line 228
     return-void
 .end method
 
@@ -229,7 +229,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 237
+    .line 236
     if-nez p3, :cond_1
 
     iget v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->i:F
@@ -242,18 +242,18 @@
 
     if-lez v0, :cond_1
 
-    .line 239
+    .line 238
     iput-boolean v2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
-    .line 240
+    .line 239
     iput-boolean v2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->f:Z
 
-    .line 251
+    .line 250
     :cond_0
     :goto_0
     return-void
 
-    .line 241
+    .line 240
     :cond_1
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
 
@@ -283,17 +283,17 @@
 
     if-nez v0, :cond_2
 
-    .line 244
+    .line 243
     iput-boolean v2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
-    .line 245
+    .line 244
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->f:Z
 
     goto :goto_0
 
-    .line 246
+    .line 245
     :cond_2
     iget v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->j:F
 
@@ -305,10 +305,10 @@
 
     if-lez v0, :cond_0
 
-    .line 248
+    .line 247
     iput-boolean v2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
-    .line 249
+    .line 248
     iput-boolean v2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->g:Z
 
     goto :goto_0
@@ -318,18 +318,18 @@
     .locals 1
 
     .prologue
-    .line 486
+    .line 485
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentView()Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;
 
     move-result-object v0
 
-    .line 487
+    .line 486
     if-eqz v0, :cond_0
 
-    .line 488
+    .line 487
     invoke-virtual {v0, p1}, Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 490
+    .line 489
     :cond_0
     return-void
 .end method
@@ -348,14 +348,14 @@
     .locals 1
 
     .prologue
-    .line 551
+    .line 550
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
 
     move-result-object v0
 
-    check-cast v0, Laem;
+    check-cast v0, Lafm;
 
-    invoke-virtual {v0, p0, p1}, Laem;->a(Landroid/view/ViewGroup;I)Landroid/view/View;
+    invoke-virtual {v0, p0, p1}, Lafm;->a(Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object v0
 
@@ -372,7 +372,7 @@
 
     const/4 v1, 0x0
 
-    .line 259
+    .line 258
     iget v2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->i:F
 
     sub-float/2addr v2, p1
@@ -408,21 +408,21 @@
     :cond_0
     move v0, v1
 
-    .line 267
+    .line 266
     :cond_1
     :goto_0
     return v0
 
-    .line 263
+    .line 262
     :cond_2
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentView()Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;
 
     move-result-object v2
 
-    .line 264
+    .line 263
     if-eqz v2, :cond_1
 
-    .line 265
+    .line 264
     invoke-virtual {v2}, Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;->c()Z
 
     move-result v2
@@ -440,18 +440,18 @@
     .locals 1
 
     .prologue
-    .line 519
+    .line 518
     invoke-direct {p0, p1}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->b(I)Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;
 
     move-result-object v0
 
-    .line 520
+    .line 519
     if-eqz v0, :cond_0
 
-    .line 521
+    .line 520
     invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;->a()V
 
-    .line 523
+    .line 522
     :cond_0
     return-void
 .end method
@@ -460,18 +460,18 @@
     .locals 1
 
     .prologue
-    .line 510
+    .line 509
     invoke-direct {p0, p1}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->b(I)Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;
 
     move-result-object v0
 
-    .line 511
+    .line 510
     if-eqz v0, :cond_0
 
-    .line 512
+    .line 511
     invoke-virtual {v0, p2}, Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;->a(I)V
 
-    .line 514
+    .line 513
     :cond_0
     return-void
 .end method
@@ -480,27 +480,27 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 444
     invoke-super {p0, p1, p2, p3}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 454
+    .line 453
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->t:Z
 
     if-nez v0, :cond_0
 
-    .line 455
+    .line 454
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->t:Z
 
-    .line 457
+    .line 456
     new-instance v0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$1;
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$1;-><init>(Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;)V
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->post(Ljava/lang/Runnable;)Z
 
-    .line 464
+    .line 463
     :cond_0
     return-void
 .end method
@@ -509,7 +509,7 @@
     .locals 1
 
     .prologue
-    .line 547
+    .line 546
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentItem()I
 
     move-result v0
@@ -525,30 +525,30 @@
     .locals 1
 
     .prologue
-    .line 212
+    .line 211
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->g:Z
 
     if-eqz v0, :cond_0
 
-    .line 213
+    .line 212
     sget-object v0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;->SWIPE_DOWN:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;
 
-    .line 217
+    .line 216
     :goto_0
     return-object v0
 
-    .line 214
+    .line 213
     :cond_0
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->f:Z
 
     if-eqz v0, :cond_1
 
-    .line 215
+    .line 214
     sget-object v0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;->SWIPE_BEGINNING:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;
 
     goto :goto_0
 
-    .line 217
+    .line 216
     :cond_1
     sget-object v0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;->SWIPE_END:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;
 
@@ -563,23 +563,23 @@
 
     const/4 v0, 0x1
 
-    .line 155
+    .line 154
     iget-boolean v2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->c:Z
 
     if-eqz v2, :cond_1
 
-    .line 204
+    .line 203
     :cond_0
     :goto_0
     return v0
 
-    .line 157
+    .line 156
     :cond_1
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentView()Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;
 
     move-result-object v2
 
-    .line 158
+    .line 157
     if-eqz v2, :cond_2
 
     invoke-virtual {v2}, Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;->d()Z
@@ -588,30 +588,30 @@
 
     if-nez v2, :cond_0
 
-    .line 162
+    .line 161
     :cond_2
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentItem()I
 
     move-result v2
 
-    .line 163
+    .line 162
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
 
-    .line 164
+    .line 163
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
 
-    .line 166
+    .line 165
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v5
 
     packed-switch v5, :pswitch_data_0
 
-    .line 191
+    .line 190
     :cond_3
     :goto_1
     :pswitch_0
@@ -619,14 +619,14 @@
 
     if-nez v2, :cond_0
 
-    .line 193
+    .line 192
     invoke-direct {p0, v3, v4}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->b(FF)Z
 
     move-result v2
 
     if-nez v2, :cond_5
 
-    .line 199
+    .line 198
     :try_start_0
     invoke-super {p0, p1}, Landroid/support/v4/view/ViewPager;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     :try_end_0
@@ -636,11 +636,11 @@
 
     goto :goto_0
 
-    .line 168
+    .line 167
     :pswitch_1
     invoke-direct {p0, v3, v4}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(FF)V
 
-    .line 169
+    .line 168
     invoke-super {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v5
@@ -649,7 +649,7 @@
 
     iput v5, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->k:F
 
-    .line 170
+    .line 169
     invoke-direct {p0, v2}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->b(I)Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;
 
     move-result-object v2
@@ -658,7 +658,7 @@
 
     goto :goto_1
 
-    .line 175
+    .line 174
     :pswitch_2
     iget-object v5, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->n:Landroid/view/View;
 
@@ -674,42 +674,38 @@
 
     if-nez v5, :cond_3
 
-    .line 177
+    .line 176
     :cond_4
     invoke-direct {p0, v3, v4, v2}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(FFI)V
 
-    .line 179
+    .line 178
     iget-boolean v2, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
     if-eqz v2, :cond_3
 
-    .line 180
+    .line 179
     invoke-direct {p0, v3, v4}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(FF)V
 
     goto :goto_1
 
-    .line 200
+    .line 199
     :catch_0
     move-exception v2
 
-    .line 201
-    const-string v3, "EditionViewerPager"
-
-    const-string v4, "Swallowing exception from ViewPager.onInterceptTouchEvent: %s"
-
+    .line 200
     new-array v0, v0, [Ljava/lang/Object;
 
     aput-object v2, v0, v1
 
-    invoke-static {v3, v4, v0}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     :cond_5
     move v0, v1
 
-    .line 204
+    .line 203
     goto :goto_0
 
-    .line 166
+    .line 165
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -764,27 +760,27 @@
 
     const/4 v1, 0x1
 
-    .line 286
+    .line 285
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->c:Z
 
     if-eqz v0, :cond_0
 
-    .line 287
+    .line 286
     invoke-direct {p0, p1}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(Landroid/view/MotionEvent;)V
 
     move v0, v1
 
-    .line 373
+    .line 372
     :goto_0
     return v0
 
-    .line 291
+    .line 290
     :cond_0
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentView()Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;
 
     move-result-object v0
 
-    .line 292
+    .line 291
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView;->d()Z
@@ -793,15 +789,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 293
+    .line 292
     invoke-direct {p0, p1}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(Landroid/view/MotionEvent;)V
 
     move v0, v1
 
-    .line 294
+    .line 293
     goto :goto_0
 
-    .line 297
+    .line 296
     :cond_1
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->e:Z
 
@@ -809,56 +805,56 @@
 
     move v0, v1
 
-    .line 298
+    .line 297
     goto :goto_0
 
-    .line 302
+    .line 301
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->p:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_3
 
-    .line 303
+    .line 302
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->p:Landroid/view/VelocityTracker;
 
-    .line 305
+    .line 304
     :cond_3
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->p:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 308
+    .line 307
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentItem()I
 
     move-result v0
 
-    .line 309
+    .line 308
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
 
-    .line 310
+    .line 309
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
 
-    .line 311
+    .line 310
     invoke-super {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v5
 
-    .line 313
+    .line 312
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v6
 
     packed-switch v6, :pswitch_data_0
 
-    .line 358
+    .line 357
     :cond_4
     :goto_1
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
@@ -867,10 +863,10 @@
 
     move v0, v1
 
-    .line 359
+    .line 358
     goto :goto_0
 
-    .line 317
+    .line 316
     :pswitch_0
     iget-boolean v6, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
@@ -884,16 +880,16 @@
 
     if-nez v5, :cond_5
 
-    .line 318
+    .line 317
     invoke-direct {p0, v3, v4, v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(FFI)V
 
-    .line 321
+    .line 320
     :cond_5
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
     if-eqz v0, :cond_4
 
-    .line 322
+    .line 321
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->f:Z
 
     if-eqz v0, :cond_8
@@ -918,7 +914,7 @@
 
     move-result v0
 
-    .line 323
+    .line 322
     :goto_2
     iget-object v5, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
 
@@ -928,21 +924,21 @@
 
     invoke-interface {v5, v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;->a(F)V
 
-    .line 324
+    .line 323
     :cond_6
     cmpl-float v0, v0, v7
 
     if-nez v0, :cond_4
 
-    .line 325
+    .line 324
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getExitMethod()Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;
 
     move-result-object v0
 
-    .line 326
+    .line 325
     invoke-direct {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a()V
 
-    .line 327
+    .line 326
     iget-object v5, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
 
     if-eqz v5, :cond_7
@@ -951,13 +947,13 @@
 
     invoke-interface {v5, v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;->a(Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;)V
 
-    .line 328
+    .line 327
     :cond_7
     iput-boolean v1, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->e:Z
 
     goto :goto_1
 
-    .line 322
+    .line 321
     :cond_8
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->g:Z
 
@@ -1000,18 +996,18 @@
 
     goto :goto_2
 
-    .line 335
+    .line 334
     :pswitch_1
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
     if-eqz v0, :cond_d
 
-    .line 336
+    .line 335
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
 
     if-eqz v0, :cond_d
 
-    .line 337
+    .line 336
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->p:Landroid/view/VelocityTracker;
 
     const/16 v5, 0x3e8
@@ -1068,7 +1064,7 @@
     :goto_3
     if-eqz v0, :cond_f
 
-    .line 338
+    .line 337
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
 
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getExitMethod()Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;
@@ -1077,10 +1073,10 @@
 
     invoke-interface {v0, v5}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;->a(Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;)V
 
-    .line 339
+    .line 338
     iput-boolean v1, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->e:Z
 
-    .line 345
+    .line 344
     :cond_d
     :goto_4
     invoke-direct {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a()V
@@ -1090,10 +1086,10 @@
     :cond_e
     move v0, v2
 
-    .line 337
+    .line 336
     goto :goto_3
 
-    .line 341
+    .line 340
     :cond_f
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
 
@@ -1101,23 +1097,23 @@
 
     goto :goto_4
 
-    .line 350
+    .line 349
     :pswitch_2
     invoke-direct {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a()V
 
-    .line 351
+    .line 350
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
 
     if-eqz v0, :cond_4
 
-    .line 352
+    .line 351
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
 
     invoke-interface {v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;->i()V
 
     goto/16 :goto_1
 
-    .line 363
+    .line 362
     :cond_10
     iget-boolean v0, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->d:Z
 
@@ -1129,7 +1125,7 @@
 
     if-nez v0, :cond_11
 
-    .line 368
+    .line 367
     :try_start_0
     invoke-super {p0, p1}, Landroid/support/v4/view/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
     :try_end_0
@@ -1139,28 +1135,24 @@
 
     goto/16 :goto_0
 
-    .line 369
+    .line 368
     :catch_0
     move-exception v0
 
-    .line 370
-    const-string v3, "EditionViewerPager"
-
-    const-string v4, "Swallowing exception from ViewPager.onTouchEvent: %s"
-
+    .line 369
     new-array v1, v1, [Ljava/lang/Object;
 
     aput-object v0, v1, v2
 
-    invoke-static {v3, v4, v1}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     :cond_11
     move v0, v2
 
-    .line 373
+    .line 372
     goto/16 :goto_0
 
-    .line 313
+    .line 312
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1173,12 +1165,12 @@
     .locals 1
 
     .prologue
-    .line 440
+    .line 439
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->setCurrentItem(IZ)V
 
-    .line 441
+    .line 440
     return-void
 .end method
 
@@ -1186,29 +1178,29 @@
     .locals 1
 
     .prologue
-    .line 431
+    .line 430
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentItem()I
 
     move-result v0
 
     if-eq p1, v0, :cond_0
 
-    .line 432
+    .line 431
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentItem()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(I)V
 
-    .line 433
+    .line 432
     invoke-super {p0, p1, p2}, Landroid/support/v4/view/ViewPager;->setCurrentItem(IZ)V
 
-    .line 434
+    .line 433
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(II)V
 
-    .line 436
+    .line 435
     :cond_0
     return-void
 .end method
@@ -1217,10 +1209,10 @@
     .locals 0
 
     .prologue
-    .line 472
+    .line 471
     iput-boolean p1, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->c:Z
 
-    .line 473
+    .line 472
     return-void
 .end method
 
@@ -1228,10 +1220,10 @@
     .locals 0
 
     .prologue
-    .line 143
+    .line 142
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
 
-    .line 144
+    .line 143
     return-void
 .end method
 
@@ -1239,13 +1231,13 @@
     .locals 1
 
     .prologue
-    .line 425
+    .line 424
     invoke-virtual {p0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentItem()I
 
     move-result v0
 
     invoke-virtual {p0, v0, p1}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a(II)V
 
-    .line 426
+    .line 425
     return-void
 .end method

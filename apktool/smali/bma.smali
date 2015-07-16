@@ -3,338 +3,182 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lbma$a;
-    }
-.end annotation
-
-
 # instance fields
-.field final a:Ljava/lang/String;
+.field public a:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbmc;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Lblu;
-
-.field public final d:Lbmb;
-
-.field final e:Ljava/lang/Object;
-
-.field volatile f:Ljava/net/URL;
-
-.field private volatile g:Ljava/net/URI;
-
-.field private volatile h:Lblj;
+.field public b:Ljava/lang/Thread$UncaughtExceptionHandler;
 
 
 # direct methods
-.method private constructor <init>(Lbma$a;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
     .prologue
-    .line 43
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
-    iget-object v0, p1, Lbma$a;->a:Ljava/lang/String;
+    .line 34
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-object v0, p0, Lbma;->a:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    .line 45
-    iget-object v0, p1, Lbma$a;->c:Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    iput-object v0, p0, Lbma;->b:Ljava/lang/String;
+    iput-object v0, p0, Lbma;->a:Ljava/util/List;
 
-    .line 46
-    iget-object v0, p1, Lbma$a;->d:Lblu$a;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lblu$a;->a()Lblu;
+.method static a(Landroid/content/Context;)I
+    .locals 3
+
+    .prologue
+    .line 139
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    iput-object v0, p0, Lbma;->c:Lblu;
+    .line 141
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    .line 47
-    iget-object v0, p1, Lbma$a;->e:Lbmb;
+    move-result-object v1
 
-    iput-object v0, p0, Lbma;->d:Lbmb;
+    const/4 v2, 0x0
 
-    .line 48
-    iget-object v0, p1, Lbma$a;->f:Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    iget-object v0, p1, Lbma$a;->f:Ljava/lang/Object;
+    iget v0, v0, Landroid/content/pm/PackageInfo;->versionCode:I
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_0
-    iput-object v0, p0, Lbma;->e:Ljava/lang/Object;
+    return v0
 
-    .line 49
-    iget-object v0, p1, Lbma$a;->b:Ljava/net/URL;
+    .line 142
+    :catch_0
+    move-exception v0
 
-    iput-object v0, p0, Lbma;->f:Ljava/net/URL;
+    .line 143
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    .line 50
-    return-void
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    :cond_0
-    move-object v0, p0
-
-    .line 48
-    goto :goto_0
+    throw v1
 .end method
 
-.method synthetic constructor <init>(Lbma$a;B)V
-    .locals 0
+.method static a(Lbmg;Ljava/io/FileReader;)Lbme;
+    .locals 8
+    .annotation build Lchd;
+    .end annotation
 
     .prologue
-    .line 32
-    invoke-direct {p0, p1}, Lbma;-><init>(Lbma$a;)V
+    const/4 v0, 0x0
 
-    return-void
+    .line 108
+    new-instance v2, Ljava/io/BufferedReader;
+
+    invoke-direct {v2, p1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+
+    .line 110
+    :try_start_0
+    invoke-virtual {p0, v2}, Lbmg;->a(Ljava/io/BufferedReader;)J
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-wide v4
+
+    const-wide/16 v6, -0x1
+
+    cmp-long v1, v4, v6
+
+    if-nez v1, :cond_1
+
+    .line 114
+    :cond_0
+    :goto_0
+    invoke-static {v2}, Lbmd;->a(Ljava/io/Closeable;)V
+
+    .line 116
+    :goto_1
+    return-object v0
+
+    .line 110
+    :cond_1
+    :try_start_1
+    invoke-static {v2}, Lbmg;->b(Ljava/io/BufferedReader;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "android.os.MessageQueue.nativePollOnce(Native Method)"
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lbme;
+
+    invoke-direct {v1, v4, v5, v3}, Lbme;-><init>(JLjava/lang/String;)V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    .line 111
+    :catch_0
+    move-exception v1
+
+    :try_start_2
+    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 114
+    invoke-static {v2}, Lbmd;->a(Ljava/io/Closeable;)V
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v0
+
+    invoke-static {v2}, Lbmd;->a(Ljava/io/Closeable;)V
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Ljava/lang/String;
+.method public final a(Lbmc;)V
     .locals 1
 
     .prologue
-    .line 83
-    iget-object v0, p0, Lbma;->c:Lblu;
+    .line 38
+    iget-object v0, p0, Lbma;->a:Ljava/util/List;
 
-    invoke-virtual {v0, p1}, Lblu;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a()Ljava/net/URL;
-    .locals 4
-
-    .prologue
-    .line 54
-    :try_start_0
-    iget-object v0, p0, Lbma;->f:Ljava/net/URL;
-
-    .line 55
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/net/URL;
-
-    iget-object v1, p0, Lbma;->a:Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lbma;->f:Ljava/net/URL;
-    :try_end_0
-    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 56
-    :catch_0
-    move-exception v0
-
-    .line 57
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Malformed URL: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p0, Lbma;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method public final b()Ljava/net/URI;
-    .locals 2
-
-    .prologue
-    .line 63
-    :try_start_0
-    iget-object v0, p0, Lbma;->g:Ljava/net/URI;
-
-    .line 64
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-static {}, Lbmn;->a()Lbmn;
-
-    invoke-virtual {p0}, Lbma;->a()Ljava/net/URL;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lbmn;->a(Ljava/net/URL;)Ljava/net/URI;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbma;->g:Ljava/net/URI;
-    :try_end_0
-    .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 65
-    :catch_0
-    move-exception v0
-
-    .line 66
-    new-instance v1, Ljava/io/IOException;
-
-    invoke-virtual {v0}, Ljava/net/URISyntaxException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-.end method
-
-.method public final c()Lbma$a;
-    .locals 2
-
-    .prologue
-    .line 99
-    new-instance v0, Lbma$a;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lbma$a;-><init>(Lbma;B)V
-
-    return-object v0
-.end method
-
-.method public final d()Lblj;
-    .locals 1
-
-    .prologue
-    .line 107
-    iget-object v0, p0, Lbma;->h:Lblj;
-
-    .line 108
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lbma;->c:Lblu;
-
-    invoke-static {v0}, Lblj;->a(Lblu;)Lblj;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbma;->h:Lblj;
-
-    goto :goto_0
-.end method
-
-.method public final e()Z
-    .locals 2
-
-    .prologue
-    .line 112
-    invoke-virtual {p0}, Lbma;->a()Ljava/net/URL;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "https"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 116
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Request{method="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lbma;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", url="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbma;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", tag="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v0, p0, Lbma;->e:Ljava/lang/Object;
-
-    if-eq v0, p0, :cond_0
-
-    iget-object v0, p0, Lbma;->e:Ljava/lang/Object;
-
-    :goto_0
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/16 v1, 0x7d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    .line 39
+    return-void
 .end method

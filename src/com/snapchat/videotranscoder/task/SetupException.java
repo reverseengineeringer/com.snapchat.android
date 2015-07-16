@@ -1,23 +1,23 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
+import chc;
 
 public class SetupException
   extends Exception
 {
   public SetupException() {}
   
-  public SetupException(@cgb String paramString)
+  public SetupException(@chc String paramString)
   {
     super(paramString);
   }
   
-  public SetupException(@cgb String paramString, @cgb Throwable paramThrowable)
+  public SetupException(@chc String paramString, @chc Throwable paramThrowable)
   {
     super(paramString, paramThrowable);
   }
   
-  public SetupException(@cgb Throwable paramThrowable)
+  public SetupException(@chc Throwable paramThrowable)
   {
     super(paramThrowable);
   }

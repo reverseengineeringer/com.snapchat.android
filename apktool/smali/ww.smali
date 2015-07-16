@@ -3,133 +3,141 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/snapchat/videotranscoder/task/Task$DoneCallback;
+.implements Lbvp;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvp",
+        "<",
+        "Lwv;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic a:Z
 
 
 # instance fields
-.field private final a:Lajm;
-
-.field private final b:Loh;
-
-.field private final c:Lwz;
-
-.field private final d:Lazo;
-
-.field private final e:Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
+.field private final b:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lwv;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lwz;Lajm;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Loh;)V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 28
-    new-instance v5, Lazo;
+    .line 7
+    const-class v0, Lww;
 
-    invoke-direct {v5}, Lazo;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    move-object v0, p0
+    move-result v0
 
-    move-object v1, p1
+    if-nez v0, :cond_0
 
-    move-object v2, p2
+    const/4 v0, 0x1
 
-    move-object v3, p3
+    :goto_0
+    sput-boolean v0, Lww;->a:Z
 
-    move-object v4, p4
+    return-void
 
-    invoke-direct/range {v0 .. v5}, Lww;-><init>(Lwz;Lajm;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Loh;Lazo;)V
+    :cond_0
+    const/4 v0, 0x0
 
-    .line 29
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lwv;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    sget-boolean v0, Lww;->a:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 13
+    :cond_0
+    iput-object p1, p0, Lww;->b:Lbvk;
+
+    .line 14
     return-void
 .end method
 
-.method private constructor <init>(Lwz;Lajm;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Loh;Lazo;)V
-    .locals 0
+.method public static a(Lbvk;)Lbvp;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lwv;",
+            ">;)",
+            "Lbvp",
+            "<",
+            "Lwv;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 24
+    new-instance v0, Lww;
 
-    .line 36
-    iput-object p2, p0, Lww;->a:Lajm;
+    invoke-direct {v0, p0}, Lww;-><init>(Lbvk;)V
 
-    .line 37
-    iput-object p4, p0, Lww;->b:Loh;
-
-    .line 38
-    iput-object p3, p0, Lww;->e:Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
-
-    .line 39
-    iput-object p1, p0, Lww;->c:Lwz;
-
-    .line 40
-    iput-object p5, p0, Lww;->d:Lazo;
-
-    .line 41
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final done(Lcom/snapchat/videotranscoder/task/Task$Status;)V
-    .locals 3
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 2
 
     .prologue
-    .line 45
-    iget-object v0, p0, Lww;->b:Loh;
+    .line 7
+    new-instance v0, Lwv;
 
-    iget-object v1, p0, Lww;->a:Lajm;
+    invoke-direct {v0}, Lwv;-><init>()V
 
-    iget-object v2, p0, Lww;->e:Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;
+    iget-object v1, p0, Lww;->b:Lbvk;
 
-    invoke-virtual {v0, v1, v2, p1}, Loh;->a(Lajm;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Lcom/snapchat/videotranscoder/task/Task$Status;)V
+    invoke-interface {v1, v0}, Lbvk;->a(Ljava/lang/Object;)V
 
-    .line 46
-    iget-object v0, p0, Lww;->c:Lwz;
-
-    iget-object v1, p0, Lww;->a:Lajm;
-
-    invoke-virtual {v0, v1, p1}, Lwz;->a(Lajm;Lcom/snapchat/videotranscoder/task/Task$Status;)V
-
-    .line 48
-    sget-object v0, Lcom/snapchat/videotranscoder/task/Task$Status;->FINISHED:Lcom/snapchat/videotranscoder/task/Task$Status;
-
-    if-eq p1, v0, :cond_0
-
-    .line 49
-    iget-object v0, p0, Lww;->d:Lazo;
-
-    new-instance v1, Loc;
-
-    invoke-direct {v1, p1}, Loc;-><init>(Lcom/snapchat/videotranscoder/task/Task$Status;)V
-
-    invoke-virtual {v0, v1}, Lazo;->a(Ljava/lang/Throwable;)V
-
-    .line 50
-    const-string v0, "TranscodingDone"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Transcoding failed. Status : "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 52
-    :cond_0
-    return-void
+    return-object v0
 .end method

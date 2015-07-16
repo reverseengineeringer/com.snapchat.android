@@ -6,11 +6,11 @@ import android.graphics.Canvas;
 import android.hardware.Camera.CameraInfo;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import aue;
-import bao;
-import boh;
-import cgb;
-import cgc;
+import avc;
+import bbp;
+import bpi;
+import chc;
+import chd;
 import com.snapchat.android.model.chat.ChatConversation;
 
 public class DummyStreamView
@@ -38,17 +38,17 @@ public class DummyStreamView
   
   public static void setCameraInfo(Camera.CameraInfo paramCameraInfo) {}
   
-  public static void setCameraPreviewSize(aue paramaue) {}
+  public static void setCameraPreviewSize(avc paramavc) {}
   
   public final void a() {}
   
-  public final void a(@cgb Activity paramActivity, @cgb StreamView.a parama) {}
+  public final void a(@chc Activity paramActivity, @chc StreamView.a parama) {}
   
-  public final void a(@cgb MotionEvent paramMotionEvent) {}
+  public final void a(@chc MotionEvent paramMotionEvent) {}
   
   public final void a(ChatConversation paramChatConversation) {}
   
-  public final void a(@cgc DisconnectReason paramDisconnectReason) {}
+  public final void a(@chd DisconnectReason paramDisconnectReason) {}
   
   public final void a(boolean paramBoolean) {}
   
@@ -60,20 +60,27 @@ public class DummyStreamView
   
   public final void c() {}
   
+  public final void c(boolean paramBoolean) {}
+  
   public final boolean d()
   {
     return false;
   }
   
-  protected void dispatchDraw(@cgb Canvas paramCanvas) {}
+  protected void dispatchDraw(@chc Canvas paramCanvas) {}
   
   public final boolean e()
   {
     return false;
   }
   
-  @boh
-  public void onCameraReadyEvent(bao parambao) {}
+  public boolean getPresence()
+  {
+    return false;
+  }
+  
+  @bpi
+  public void onCameraReadyEvent(bbp parambbp) {}
   
   protected void onSizeChanged(int paramInt1, int paramInt2, int paramInt3, int paramInt4) {}
   
@@ -82,7 +89,7 @@ public class DummyStreamView
     return false;
   }
   
-  public void setCanStreamVideo(boolean paramBoolean, @cgc DisconnectReason paramDisconnectReason) {}
+  public void setCanStreamVideo(boolean paramBoolean, @chd DisconnectReason paramDisconnectReason) {}
 }
 
 /* Location:

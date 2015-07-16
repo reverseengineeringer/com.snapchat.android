@@ -5,7 +5,7 @@ import android.opengl.GLES20;
 import android.opengl.GLU;
 import android.opengl.GLUtils;
 import android.opengl.Matrix;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.utils.Debug;
 import com.snapchat.videotranscoder.utils.TranscodingResources;
 import com.snapchat.videotranscoder.utils.Utils;
@@ -44,7 +44,7 @@ class TextureRenderer
   protected int muSTMatrixHandle;
   protected Map<String, Integer> shaderMap = new HashMap();
   
-  public TextureRenderer(@cgb TranscodingResources paramTranscodingResources, @cgb float[] paramArrayOfFloat)
+  public TextureRenderer(@chc TranscodingResources paramTranscodingResources, @chc float[] paramArrayOfFloat)
   {
     if (paramTranscodingResources == null) {
       throw new NullPointerException("transcodingResources is null");
@@ -325,7 +325,7 @@ class TextureRenderer
     }
   }
   
-  public void changeFragmentShader(@cgb FragmentShader paramFragmentShader)
+  public void changeFragmentShader(@chc FragmentShader paramFragmentShader)
   {
     paramFragmentShader = paramFragmentShader.getText();
     if (mProgram == 0) {
@@ -517,7 +517,7 @@ class TextureRenderer
     GLES20.glDeleteTextures(3, new int[] { mExternalTextureID, mOverlayTextureID, mMissEtikateLookupTextureID }, 0);
   }
   
-  public void setOverlayBitmap(@cgb Bitmap paramBitmap)
+  public void setOverlayBitmap(@chc Bitmap paramBitmap)
   {
     if (!mIsInitialized) {}
     for (boolean bool = true;; bool = false)

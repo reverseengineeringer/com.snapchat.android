@@ -1,53 +1,67 @@
+import android.text.TextUtils;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.api2.cash.square.data.CashPayment;
-import com.snapchat.android.api2.cash.square.data.CashPayment.CancellationReason;
-import com.snapchat.android.api2.cash.square.data.CashPayment.State;
 import com.snapchat.android.model.CashTransaction;
 import java.util.List;
 
 final class rt$1
-  implements sk
+  implements sx.a
 {
   rt$1(rt paramrt, CashTransaction paramCashTransaction) {}
   
-  public final void a(int paramInt)
+  public final void a(@chd sy paramsy)
   {
-    if (paramInt == 404)
+    Object localObject2 = null;
+    Object localObject3 = null;
+    if (paramsy != null)
     {
-      this$0.a(atv.a(new rn()), true);
-      return;
-    }
-    List localList = sn.a(this$0, paramInt);
-    if (localList != null)
-    {
-      this$0.b(localList, true);
-      return;
-    }
-    AnalyticsEvents.a("SQUARE_RETRIEVE_PAYMENT_FAILED", paramInt);
-    qg.a(2131493290, new Object[0]);
-    this$0.b(null, false);
-  }
-  
-  public final void a(@cgb CashPayment paramCashPayment)
-  {
-    if (mState == CashPayment.State.CANCELED)
-    {
-      localCancellationReason = mCancellationReason;
-      sn.a(localCancellationReason);
-      if ((localCancellationReason != CashPayment.CancellationReason.SQUARE_CANCELED) && (localCancellationReason != CashPayment.CancellationReason.RECIPIENT_CANCELED))
+      Object localObject1 = localObject3;
+      if (blockers != null)
       {
-        rt.a(this$0);
-        return;
+        localObject1 = localObject3;
+        if (blockers.a()) {
+          localObject1 = blockers.b();
+        }
+      }
+      localObject2 = localObject1;
+      if (val$transaction != null)
+      {
+        localObject2 = localObject1;
+        if (payment != null)
+        {
+          val$transaction.a(td.a(payment.mState, payment.mCancellationReason));
+          localObject2 = localObject1;
+        }
       }
     }
-    val$transaction.a(sn.a(mState, mCancellationReason));
-    CashPayment.CancellationReason localCancellationReason = null;
-    ta localta = mBlockers;
-    paramCashPayment = localCancellationReason;
-    if (localta != null) {
-      paramCashPayment = localta.b();
+    akr.aj();
+    rt.a(this$0, (List)localObject2);
+  }
+  
+  public final void a(@chd sy paramsy, int paramInt)
+  {
+    paramsy = td.a(this$0, paramInt);
+    if (paramsy != null)
+    {
+      rt.b(this$0, paramsy);
+      return;
     }
-    this$0.a(paramCashPayment, true);
+    if (val$transaction != null)
+    {
+      paramsy = val$transaction.mSenderUsername;
+      if (!TextUtils.equals(akr.l(), paramsy)) {
+        break label70;
+      }
+      AnalyticsEvents.a("SQUARE_ACCEPT_TERMS_FAILED", paramInt);
+      qw.a(2131493290, new Object[0]);
+    }
+    for (;;)
+    {
+      rt.a(this$0);
+      return;
+      label70:
+      AnalyticsEvents.b("SQUARE_ACCEPT_TERMS_FAILED", paramInt);
+    }
   }
 }
 

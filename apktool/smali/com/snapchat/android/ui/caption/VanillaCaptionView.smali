@@ -91,15 +91,15 @@
     if-eqz v0, :cond_2
 
     .line 47
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbaw;
+    new-instance v1, Lbbx;
 
     const/4 v2, 0x6
 
-    invoke-direct {v1, v2}, Lbaw;-><init>(I)V
+    invoke-direct {v1, v2}, Lbbx;-><init>(I)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -270,7 +270,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04001a
+    const v1, 0x7f04001b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getLayout(I)Landroid/content/res/XmlResourceParser;
 
@@ -279,9 +279,9 @@
     return-object v0
 .end method
 
-.method public onGlobalLayoutEvent(Lbbt;)V
+.method public onGlobalLayoutEvent(Lbct;)V
     .locals 3
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue

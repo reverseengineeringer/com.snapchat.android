@@ -1,124 +1,66 @@
 import java.io.Serializable;
-import java.util.AbstractCollection;
+import java.util.ArrayDeque;
 import java.util.Collection;
-import java.util.Iterator;
-import javax.annotation.Nullable;
+import java.util.Queue;
 
-@cd
-public abstract class dc<E>
-  extends AbstractCollection<E>
+@cc
+@ce
+public final class dc<E>
+  extends df<E>
   implements Serializable
 {
-  private transient de<E> a;
+  @cf
+  final int a;
+  private final Queue<E> b;
   
-  int a(Object[] paramArrayOfObject, int paramInt)
+  private dc()
   {
-    Iterator localIterator = iterator();
-    while (localIterator.hasNext())
-    {
-      paramArrayOfObject[paramInt] = localIterator.next();
-      paramInt += 1;
-    }
-    return paramInt;
+    co.a(true, "maxSize (%s) must >= 0", new Object[] { Integer.valueOf(5) });
+    b = new ArrayDeque(5);
+    a = 5;
   }
   
-  public abstract dw<E> a();
+  public static <E> dc<E> a()
+  {
+    return new dc();
+  }
   
-  @Deprecated
   public final boolean add(E paramE)
   {
-    throw new UnsupportedOperationException();
+    co.a(paramE);
+    if (a == 0) {
+      return true;
+    }
+    if (size() == a) {
+      b.remove();
+    }
+    b.add(paramE);
+    return true;
   }
   
-  @Deprecated
   public final boolean addAll(Collection<? extends E> paramCollection)
   {
-    throw new UnsupportedOperationException();
+    return ds.a(this, paramCollection.iterator());
   }
   
-  public de<E> b()
+  protected final Queue<E> b()
   {
-    de localde2 = a;
-    de localde1 = localde2;
-    if (localde2 == null)
-    {
-      localde1 = d();
-      a = localde1;
-    }
-    return localde1;
+    return b;
   }
   
-  @Deprecated
-  public final void clear()
+  public final boolean contains(Object paramObject)
   {
-    throw new UnsupportedOperationException();
+    return b.contains(co.a(paramObject));
   }
   
-  public boolean contains(@Nullable Object paramObject)
+  public final boolean offer(E paramE)
   {
-    return (paramObject != null) && (super.contains(paramObject));
+    return add(paramE);
   }
   
-  de<E> d()
-  {
-    switch (size())
-    {
-    default: 
-      return new dp(this, toArray());
-    case 0: 
-      return de.e();
-    }
-    return de.a(a().next());
-  }
-  
-  @Deprecated
   public final boolean remove(Object paramObject)
   {
-    throw new UnsupportedOperationException();
-  }
-  
-  @Deprecated
-  public final boolean removeAll(Collection<?> paramCollection)
-  {
-    throw new UnsupportedOperationException();
-  }
-  
-  @Deprecated
-  public final boolean retainAll(Collection<?> paramCollection)
-  {
-    throw new UnsupportedOperationException();
-  }
-  
-  public final Object[] toArray()
-  {
-    int i = size();
-    if (i == 0) {
-      return dn.a;
-    }
-    Object[] arrayOfObject = new Object[i];
-    a(arrayOfObject, 0);
-    return arrayOfObject;
-  }
-  
-  public final <T> T[] toArray(T[] paramArrayOfT)
-  {
-    ck.a(paramArrayOfT);
-    int i = size();
-    Object localObject;
-    if (paramArrayOfT.length < i) {
-      localObject = dn.a(paramArrayOfT, i);
-    }
-    for (;;)
-    {
-      a((Object[])localObject, 0);
-      return (T[])localObject;
-      localObject = paramArrayOfT;
-      if (paramArrayOfT.length > i)
-      {
-        paramArrayOfT[i] = null;
-        localObject = paramArrayOfT;
-      }
-    }
+    return b.remove(co.a(paramObject));
   }
 }
 

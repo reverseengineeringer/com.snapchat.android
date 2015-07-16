@@ -1,5 +1,5 @@
-.class final Lazz$a;
-.super Ljava/lang/Enum;
+.class public final Lazz$a;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -9,84 +9,35 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4018
+    accessFlags = 0x19
     name = "a"
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "Lazz$a;",
-        ">;"
-    }
-.end annotation
 
+# instance fields
+.field public androidModule:Lazj;
 
-# static fields
-.field private static final synthetic $VALUES$16eae95:[I
-
-.field public static final enum BEGIN$1a20a190:I
-
-.field public static final enum END$1a20a190:I
-
-.field public static final enum ONE_TIME_EVENT$1a20a190:I
+.field public discoverModule:Lbaa;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method private constructor <init>()V
+    .locals 0
 
     .prologue
-    const/4 v0, 0x3
+    .line 1078
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    .line 25
-    sput v3, Lazz$a;->BEGIN$1a20a190:I
-
-    .line 26
-    sput v4, Lazz$a;->END$1a20a190:I
-
-    .line 27
-    sput v0, Lazz$a;->ONE_TIME_EVENT$1a20a190:I
-
-    .line 24
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    sget v2, Lazz$a;->BEGIN$1a20a190:I
-
-    aput v2, v0, v1
-
-    sget v1, Lazz$a;->END$1a20a190:I
-
-    aput v1, v0, v3
-
-    sget v1, Lazz$a;->ONE_TIME_EVENT$1a20a190:I
-
-    aput v1, v0, v4
-
-    sput-object v0, Lazz$a;->$VALUES$16eae95:[I
-
+    .line 1079
     return-void
 .end method
 
-.method public static a()[I
-    .locals 1
+.method synthetic constructor <init>(B)V
+    .locals 0
 
     .prologue
-    .line 24
-    sget-object v0, Lazz$a;->$VALUES$16eae95:[I
+    .line 1074
+    invoke-direct {p0}, Lazz$a;-><init>()V
 
-    invoke-virtual {v0}, [I->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [I
-
-    return-object v0
+    return-void
 .end method

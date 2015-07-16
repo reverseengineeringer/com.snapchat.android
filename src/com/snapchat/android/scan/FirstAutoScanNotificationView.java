@@ -1,6 +1,6 @@
 package com.snapchat.android.scan;
 
-import afi;
+import agi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -9,11 +9,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
-import ban;
-import bbx;
-import bdw;
-import bdx;
-import com.snapchat.android.Timber;
+import bbo;
+import bcx;
+import bev;
+import bew;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.snapchat.android.fragments.addfriends.AddFriendsBySnapcodeSetupFragment;
 import com.squareup.otto.Bus;
@@ -49,20 +48,20 @@ public class FirstAutoScanNotificationView
     {
       public final void onClick(View paramAnonymousView)
       {
-        Timber.c(FirstAutoScanNotificationView.a(), "More info!", new Object[0]);
-        ban.a().a(new bbx());
-        ban.a().a(new bdw(new AddFriendsBySnapcodeSetupFragment(ban.a(), afi.a())));
+        FirstAutoScanNotificationView.a();
+        bbo.a().a(new bcx());
+        bbo.a().a(new bev(new AddFriendsBySnapcodeSetupFragment(bbo.a(), agi.a())));
       }
     });
-    findViewById(2131362363).setOnClickListener(new View.OnClickListener()
+    findViewById(2131362361).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        Timber.c(FirstAutoScanNotificationView.a(), "Set library scanning enabled! YES!", new Object[0]);
+        FirstAutoScanNotificationView.a();
         paramAnonymousView = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
         paramAnonymousView.putBoolean(SharedPreferenceKey.AUTO_LIBRARY_SCANNING_ENABLED.getKey(), true);
         paramAnonymousView.commit();
-        ban.a().a(new bdx());
+        bbo.a().a(new bew());
       }
     });
   }

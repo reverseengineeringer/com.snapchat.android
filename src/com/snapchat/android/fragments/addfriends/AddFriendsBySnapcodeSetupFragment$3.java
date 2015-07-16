@@ -6,7 +6,7 @@ import android.preference.PreferenceManager;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
-import bdx;
+import bew;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.squareup.otto.Bus;
@@ -23,12 +23,12 @@ final class AddFriendsBySnapcodeSetupFragment$3
     paramCompoundButton.apply();
     if (paramBoolean)
     {
-      ((TextView)a.c(2131361825)).setText(2131492868);
-      AddFriendsBySnapcodeSetupFragment.a(a).a(new bdx());
+      ((TextView)a.c(2131361826)).setText(2131492868);
+      AddFriendsBySnapcodeSetupFragment.a(a).a(new bew());
       new EasyMetric("SNAPCODE_AUTOSCAN_ENABLED").b(false);
       return;
     }
-    ((TextView)a.c(2131361825)).setText(2131492869);
+    ((TextView)a.c(2131361826)).setText(2131492869);
     new EasyMetric("SNAPCODE_AUTOSCAN_DISABLED").b(false);
   }
 }

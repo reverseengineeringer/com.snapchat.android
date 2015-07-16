@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzw;
+.implements Laav;
 
 
 # annotations
@@ -13,7 +13,7 @@
         "<",
         "Lcom/snapchat/android/database/schema/StorySnapNoteSchema;",
         ">;",
-        "Lzw;"
+        "Laav;"
     }
 .end annotation
 

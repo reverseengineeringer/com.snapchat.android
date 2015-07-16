@@ -1,72 +1,32 @@
-import android.os.Bundle;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.NetworkAnalytics;
-import com.snapchat.android.analytics.framework.ErrorMetric;
-import com.snapchat.android.model.MediaMailingMetadata.SendStatus;
+import android.annotation.TargetApi;
+import android.media.MediaFormat;
+import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.model.Mediabryo;
+import com.snapchat.videotranscoder.pipeline.EncoderConfiguration;
+import com.snapchat.videotranscoder.task.Task.Status;
+import com.snapchat.videotranscoder.task.TranscodingConfiguration;
 
+@TargetApi(18)
 public final class oy
-  extends ox
+  extends EasyMetric
 {
-  private static final String PATH = "/loq/retry";
-  private static final String TASK_NAME = "SendSnapWithMediaTask";
-  private byte[] mData;
-  private final awx mSendSnapCacheWrapper;
-  private final ajn mSnapWomb;
-  
-  public oy(aim paramaim, ox.a parama)
+  public oy()
   {
-    this(paramaim, parama, awx.a(), ajn.a());
+    super("TRANSCODING");
+    b();
   }
   
-  private oy(aim paramaim, ox.a parama, awx paramawx, ajn paramajn)
+  public final void a(aku paramaku, TranscodingConfiguration paramTranscodingConfiguration, Task.Status paramStatus)
   {
-    super(paramaim, parama);
-    mSendSnapCacheWrapper = paramawx;
-    mSnapWomb = paramajn;
-  }
-  
-  @caq
-  protected final aku a(String... paramVarArgs)
-  {
-    mData = awx.a(mSnapbryo);
-    if (mData == null)
-    {
-      paramVarArgs = mSnapbryo;
-      mSnapWomb.a(paramVarArgs);
-      mSnapWomb.a(paramVarArgs, MediaMailingMetadata.SendStatus.FAILED);
-      cancel(true);
-      paramVarArgs = new oa(String.format("Snap media is no longer accessible :( | Client ID: %s", new Object[] { mSnapbryo.mClientId }));
-      new ErrorMetric(paramVarArgs.getMessage()).a(paramVarArgs).a(false);
-      Timber.e("SendSnapWithMediaTask", paramVarArgs.getMessage(), new Object[0]);
-      return null;
-    }
-    long l = mData.length;
-    mNetworkAnalytics.a("SNAP_SENT_DELAY", "SNAP_SENT_SNAP_DUMMY", mSnapbryo.mClientId, "/loq/retry", l);
-    return super.a(paramVarArgs);
-  }
-  
-  protected final String a()
-  {
-    return "/loq/retry";
-  }
-  
-  protected final Bundle b()
-  {
-    Bundle localBundle = super.b();
-    localBundle.putString("type", String.valueOf(mSnapbryo.h()));
-    localBundle.putByteArray("data", mData);
-    return localBundle;
-  }
-  
-  protected final String c()
-  {
-    return "SendSnapWithMediaTask";
-  }
-  
-  protected final void d()
-  {
-    new oy(mSnapbryo, mSendSnapCallback).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+    a("transcoding_status", paramStatus.name());
+    a("retries", Integer.valueOf(mTranscodingState.a()));
+    a("video_width", Integer.valueOf(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getInteger("width")));
+    a("video_height", Integer.valueOf(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getInteger("height")));
+    a("bit_rate", Integer.valueOf(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getInteger("bitrate")));
+    a("frame_rate", Integer.valueOf(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getInteger("frame-rate")));
+    a("media_duration", Integer.valueOf((int)Math.ceil(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getLong("durationUs") / 1000000L)));
+    a("transcoding_orientation", Integer.valueOf(mSnapOrientation));
+    super.a(true);
   }
 }
 

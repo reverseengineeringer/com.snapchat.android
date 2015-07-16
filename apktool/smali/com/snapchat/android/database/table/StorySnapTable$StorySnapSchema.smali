@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzw;
+.implements Laav;
 
 
 # annotations
@@ -22,7 +22,7 @@
         "<",
         "Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;",
         ">;",
-        "Lzw;"
+        "Laav;"
     }
 .end annotation
 
@@ -31,10 +31,6 @@
 .field private static final synthetic $VALUES:[Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
 .field public static final enum AD_CAN_FOLLOW:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-.field public static final enum CAPTION_ORIENTATION:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-.field public static final enum CAPTION_POSITION:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
 .field public static final enum CAPTION_TEXT:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
@@ -65,14 +61,6 @@
 .field public static final enum MEDIA_URL:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
 .field public static final enum NEEDS_AUTH:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-.field public static final enum SPONSORED_POSTVIEW_DISPLAY_NAME:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-.field public static final enum SPONSORED_PREVIEW_DISPLAY_NAME:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-.field public static final enum SPONSORED_SPONSOR:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-.field public static final enum SPONSORED_TAG_URL:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
 .field public static final enum STATUS:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
@@ -106,7 +94,7 @@
     .locals 6
 
     .prologue
-    .line 217
+    .line 186
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "STORY_SNAP_ID"
@@ -123,7 +111,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->STORY_SNAP_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 219
+    .line 188
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "CLIENT_ID"
@@ -140,7 +128,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->CLIENT_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 221
+    .line 190
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "MEDIA_ID"
@@ -157,7 +145,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->MEDIA_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 223
+    .line 192
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "TIMESTAMP"
@@ -174,7 +162,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->TIMESTAMP:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 225
+    .line 194
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "MEDIA_TYPE"
@@ -191,7 +179,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->MEDIA_TYPE:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 227
+    .line 196
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "MEDIA_URL"
@@ -208,7 +196,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->MEDIA_URL:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 229
+    .line 198
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "THUMBNAIL_URL"
@@ -225,7 +213,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->THUMBNAIL_URL:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 231
+    .line 200
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "STATUS"
@@ -242,7 +230,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->STATUS:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 233
+    .line 202
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "USERNAME"
@@ -259,7 +247,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->USERNAME:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 235
+    .line 204
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "DISPLAY_TIME"
@@ -276,7 +264,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->DISPLAY_TIME:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 237
+    .line 206
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "CAPTION_TEXT"
@@ -293,48 +281,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->CAPTION_TEXT:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 239
-    new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    const-string v1, "CAPTION_ORIENTATION"
-
-    const/16 v2, 0xb
-
-    const/16 v3, 0xc
-
-    const-string v4, "CaptionOrientation"
-
-    sget-object v5, Lcom/snapchat/android/database/DataType;->INTEGER:Lcom/snapchat/android/database/DataType;
-
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
-
-    sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->CAPTION_ORIENTATION:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    .line 241
-    new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    const-string v1, "CAPTION_POSITION"
-
-    const/16 v2, 0xc
-
-    const/16 v3, 0xd
-
-    const-string v4, "CaptionPosition"
-
-    sget-object v5, Lcom/snapchat/android/database/DataType;->REAL:Lcom/snapchat/android/database/DataType;
-
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
-
-    sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->CAPTION_POSITION:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    .line 243
+    .line 208
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "IS_VIEWED"
 
-    const/16 v2, 0xd
+    const/16 v2, 0xb
 
-    const/16 v3, 0xe
+    const/16 v3, 0xc
 
     const-string v4, "IsViewed"
 
@@ -344,14 +298,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_VIEWED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 245
+    .line 210
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "IS_SCREENSHOTTED"
 
-    const/16 v2, 0xe
+    const/16 v2, 0xc
 
-    const/16 v3, 0xf
+    const/16 v3, 0xd
 
     const-string v4, "IsScreenshotted"
 
@@ -361,14 +315,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_SCREENSHOTTED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 247
+    .line 212
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "VIEWED_TIMESTAMP"
 
-    const/16 v2, 0xf
+    const/16 v2, 0xd
 
-    const/16 v3, 0x10
+    const/16 v3, 0xe
 
     const-string v4, "ViewedTimestamp"
 
@@ -378,14 +332,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->VIEWED_TIMESTAMP:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 249
+    .line 214
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "IS_UPDATED"
 
-    const/16 v2, 0x10
+    const/16 v2, 0xe
 
-    const/16 v3, 0x11
+    const/16 v3, 0xf
 
     const-string v4, "IsUpdated"
 
@@ -395,14 +349,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_UPDATED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 251
+    .line 216
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "IS_FAILED"
 
-    const/16 v2, 0x11
+    const/16 v2, 0xf
 
-    const/16 v3, 0x12
+    const/16 v3, 0x10
 
     const-string v4, "IsFailed"
 
@@ -412,14 +366,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_FAILED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 253
+    .line 218
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "IS_ZIPPED"
 
-    const/16 v2, 0x12
+    const/16 v2, 0x10
 
-    const/16 v3, 0x13
+    const/16 v3, 0x11
 
     const-string v4, "IsZipped"
 
@@ -429,14 +383,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_ZIPPED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 255
+    .line 220
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "FILTER_ID"
 
-    const/16 v2, 0x13
+    const/16 v2, 0x11
 
-    const/16 v3, 0x14
+    const/16 v3, 0x12
 
     const-string v4, "FilterId"
 
@@ -446,14 +400,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->FILTER_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 257
+    .line 222
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "WAS_404_RESPONSE_RECEIVED"
 
-    const/16 v2, 0x14
+    const/16 v2, 0x12
 
-    const/16 v3, 0x15
+    const/16 v3, 0x13
 
     const-string v4, "Was404ResponseReceived"
 
@@ -463,14 +417,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->WAS_404_RESPONSE_RECEIVED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 259
+    .line 224
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "STORY_ID"
 
-    const/16 v2, 0x15
+    const/16 v2, 0x13
 
-    const/16 v3, 0x16
+    const/16 v3, 0x14
 
     const-string v4, "StoryId"
 
@@ -480,14 +434,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->STORY_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 261
+    .line 226
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "IS_SHARED"
 
-    const/16 v2, 0x16
+    const/16 v2, 0x14
 
-    const/16 v3, 0x17
+    const/16 v3, 0x15
 
     const-string v4, "IsShared"
 
@@ -497,82 +451,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_SHARED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 263
-    new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    const-string v1, "SPONSORED_PREVIEW_DISPLAY_NAME"
-
-    const/16 v2, 0x17
-
-    const/16 v3, 0x18
-
-    const-string v4, "SponsoredPreviewDisplayName"
-
-    sget-object v5, Lcom/snapchat/android/database/DataType;->TEXT:Lcom/snapchat/android/database/DataType;
-
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
-
-    sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->SPONSORED_PREVIEW_DISPLAY_NAME:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    .line 265
-    new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    const-string v1, "SPONSORED_POSTVIEW_DISPLAY_NAME"
-
-    const/16 v2, 0x18
-
-    const/16 v3, 0x19
-
-    const-string v4, "SponsoredPostviewDisplayName"
-
-    sget-object v5, Lcom/snapchat/android/database/DataType;->TEXT:Lcom/snapchat/android/database/DataType;
-
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
-
-    sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->SPONSORED_POSTVIEW_DISPLAY_NAME:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    .line 267
-    new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    const-string v1, "SPONSORED_SPONSOR"
-
-    const/16 v2, 0x19
-
-    const/16 v3, 0x1a
-
-    const-string v4, "SponsoredSponsor"
-
-    sget-object v5, Lcom/snapchat/android/database/DataType;->TEXT:Lcom/snapchat/android/database/DataType;
-
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
-
-    sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->SPONSORED_SPONSOR:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    .line 269
-    new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    const-string v1, "SPONSORED_TAG_URL"
-
-    const/16 v2, 0x1a
-
-    const/16 v3, 0x1b
-
-    const-string v4, "SponsoredTagUrl"
-
-    sget-object v5, Lcom/snapchat/android/database/DataType;->TEXT:Lcom/snapchat/android/database/DataType;
-
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;-><init>(Ljava/lang/String;IILjava/lang/String;Lcom/snapchat/android/database/DataType;)V
-
-    sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->SPONSORED_TAG_URL:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    .line 271
+    .line 228
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "AD_CAN_FOLLOW"
 
-    const/16 v2, 0x1b
+    const/16 v2, 0x15
 
-    const/16 v3, 0x1c
+    const/16 v3, 0x16
 
     const-string v4, "AdCanFollow"
 
@@ -582,14 +468,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->AD_CAN_FOLLOW:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 273
+    .line 230
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "NEEDS_AUTH"
 
-    const/16 v2, 0x1c
+    const/16 v2, 0x16
 
-    const/16 v3, 0x1d
+    const/16 v3, 0x17
 
     const-string v4, "NeedsAuth"
 
@@ -599,14 +485,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->NEEDS_AUTH:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 275
+    .line 232
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "EXPIRATION_TIMESTAMP"
 
-    const/16 v2, 0x1d
+    const/16 v2, 0x17
 
-    const/16 v3, 0x1e
+    const/16 v3, 0x18
 
     const-string v4, "ExpirationTimestamp"
 
@@ -616,14 +502,14 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->EXPIRATION_TIMESTAMP:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 277
+    .line 234
     new-instance v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     const-string v1, "STORY_FILTER_ID"
 
-    const/16 v2, 0x1e
+    const/16 v2, 0x18
 
-    const/16 v3, 0x1f
+    const/16 v3, 0x19
 
     const-string v4, "StoryFilterId"
 
@@ -633,8 +519,8 @@
 
     sput-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->STORY_FILTER_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
-    .line 216
-    const/16 v0, 0x1f
+    .line 185
+    const/16 v0, 0x19
 
     new-array v0, v0, [Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
@@ -706,119 +592,83 @@
 
     const/16 v1, 0xb
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->CAPTION_ORIENTATION:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_VIEWED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->CAPTION_POSITION:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_SCREENSHOTTED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_VIEWED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->VIEWED_TIMESTAMP:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_SCREENSHOTTED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_UPDATED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->VIEWED_TIMESTAMP:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_FAILED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x10
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_UPDATED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_ZIPPED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x11
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_FAILED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->FILTER_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_ZIPPED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->WAS_404_RESPONSE_RECEIVED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x13
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->FILTER_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->STORY_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x14
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->WAS_404_RESPONSE_RECEIVED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_SHARED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x15
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->STORY_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->AD_CAN_FOLLOW:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x16
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->IS_SHARED:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
+    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->NEEDS_AUTH:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x17
 
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->SPONSORED_PREVIEW_DISPLAY_NAME:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x18
-
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->SPONSORED_POSTVIEW_DISPLAY_NAME:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x19
-
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->SPONSORED_SPONSOR:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1a
-
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->SPONSORED_TAG_URL:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1b
-
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->AD_CAN_FOLLOW:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1c
-
-    sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->NEEDS_AUTH:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1d
-
     sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->EXPIRATION_TIMESTAMP:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0x1e
+    const/16 v1, 0x18
 
     sget-object v2, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->STORY_FILTER_ID:Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
@@ -841,19 +691,19 @@
     .end annotation
 
     .prologue
-    .line 285
+    .line 242
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 286
+    .line 243
     iput p3, p0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->a:I
 
-    .line 287
+    .line 244
     iput-object p4, p0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->b:Ljava/lang/String;
 
-    .line 288
+    .line 245
     iput-object p5, p0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->c:Lcom/snapchat/android/database/DataType;
 
-    .line 289
+    .line 246
     return-void
 .end method
 
@@ -861,7 +711,7 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 185
     iget-object v0, p0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->b:Ljava/lang/String;
 
     return-object v0
@@ -871,7 +721,7 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 185
     iget-object v0, p0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->c:Lcom/snapchat/android/database/DataType;
 
     return-object v0
@@ -881,7 +731,7 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 185
     const-class v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -897,7 +747,7 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 185
     sget-object v0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->$VALUES:[Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->clone()Ljava/lang/Object;
@@ -915,7 +765,7 @@
     .locals 1
 
     .prologue
-    .line 300
+    .line 257
     iget-object v0, p0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->b:Ljava/lang/String;
 
     return-object v0
@@ -925,7 +775,7 @@
     .locals 1
 
     .prologue
-    .line 296
+    .line 253
     iget v0, p0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->a:I
 
     return v0
@@ -935,7 +785,7 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 261
     const/4 v0, 0x0
 
     return-object v0
@@ -945,7 +795,7 @@
     .locals 1
 
     .prologue
-    .line 292
+    .line 249
     iget-object v0, p0, Lcom/snapchat/android/database/table/StorySnapTable$StorySnapSchema;->c:Lcom/snapchat/android/database/DataType;
 
     return-object v0

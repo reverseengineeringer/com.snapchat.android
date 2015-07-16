@@ -1,23 +1,23 @@
 package com.snapchat.android.camera.model;
 
-import buo;
-import wj;
+import bvp;
+import xf;
 
 public enum FlashModel_Factory
-  implements buo<wj>
+  implements bvp<xf>
 {
   INSTANCE;
   
   private FlashModel_Factory() {}
   
-  public static buo<wj> create()
+  public static bvp<xf> create()
   {
     return INSTANCE;
   }
   
-  public final wj get()
+  public final xf get()
   {
-    return new wj();
+    return new xf();
   }
 }
 

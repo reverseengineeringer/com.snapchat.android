@@ -1,38 +1,41 @@
-import com.snapchat.android.analytics.framework.EasyMetric;
-import java.util.HashMap;
+import java.util.Map;
 
 public final class nm
 {
-  public final HashMap<String, EasyMetric> mSendingChatTimers = new HashMap();
+  private static final nm INSTANCE = new nm();
+  public Map<String, ni> mStreams = du.a();
   
-  public final void a(@cgb bhf parambhf)
+  public static nm a()
   {
-    EasyMetric localEasyMetric2 = (EasyMetric)mSendingChatTimers.remove(parambhf.c());
-    EasyMetric localEasyMetric1 = localEasyMetric2;
-    if (localEasyMetric2 == null) {
-      localEasyMetric1 = new EasyMetric();
-    }
-    localEasyMetric1.a("CHAT_SENT").a("success", Boolean.valueOf(true)).d();
-    localEasyMetric1.a("CHAT_SENT_SUCCESS").d();
-    if (parambhf.b()) {
-      localEasyMetric1.a("CHAT_" + parambhf.a().c() + "_SENT_SUCCESS").d();
-    }
-    new EasyMetric("CHAT_SEND_SUCCESS_AFTER_DURATION").a("time", Long.valueOf(System.currentTimeMillis() - parambhf.f().longValue())).a(false);
+    return INSTANCE;
   }
   
-  public final void b(@cgb bhf parambhf)
+  public final ni a(nn paramnn, nl paramnl)
   {
-    EasyMetric localEasyMetric2 = (EasyMetric)mSendingChatTimers.remove(parambhf.c());
-    EasyMetric localEasyMetric1 = localEasyMetric2;
-    if (localEasyMetric2 == null) {
-      localEasyMetric1 = new EasyMetric();
+    String str = paramnn.a();
+    if (!mStreams.containsKey(str)) {
+      paramnn = new ni(paramnn, paramnl);
     }
-    localEasyMetric1.a("CHAT_SENT").a("success", Boolean.valueOf(false)).d();
-    localEasyMetric1.a("CHAT_SENT_FAILED").d();
-    if (parambhf.b()) {
-      localEasyMetric1.a("CHAT_" + parambhf.a().c() + "_SENT_FAILED").d();
+    for (;;)
+    {
+      mStreams.put(str, paramnn);
+      return paramnn;
+      ni localni = (ni)mStreams.get(str);
+      synchronized (mMutex)
+      {
+        mInPlayback = false;
+        mInLiveSection = false;
+        mStoryAdStreamRequestInfo = paramnn;
+        int i = mFirstPosition;
+        if (i > mNextUnviewedPosition) {
+          mNextUnviewedPosition = i;
+        }
+        mNextPosition = i;
+        mStoryAdStreamListener = paramnl;
+        mTimeBetweenRetriesMilliSeconds = 0;
+        paramnn = localni;
+      }
     }
-    new EasyMetric("CHAT_SEND_FAILED_AFTER_DURATION").a("time", Long.valueOf(System.currentTimeMillis() - parambhf.f().longValue())).a(false);
   }
 }
 

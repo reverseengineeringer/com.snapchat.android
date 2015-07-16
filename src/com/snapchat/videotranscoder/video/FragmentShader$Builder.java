@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.video;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.task.SetupException;
 import com.snapchat.videotranscoder.utils.TranscodingResources;
 
@@ -30,7 +30,7 @@ public class FragmentShader$Builder
   private boolean mSplitEnabled = false;
   private final TranscodingResources mTranscodingResources;
   
-  public FragmentShader$Builder(@cgb TranscodingResources paramTranscodingResources)
+  public FragmentShader$Builder(@chc TranscodingResources paramTranscodingResources)
   {
     if (paramTranscodingResources == null) {
       throw new NullPointerException("transcodingResources is null");
@@ -153,19 +153,19 @@ public class FragmentShader$Builder
     return this;
   }
   
-  public Builder setFilter(@cgb FragmentShader.Filter paramFilter)
+  public Builder setFilter(@chc FragmentShader.Filter paramFilter)
   {
     mFilter = paramFilter;
     return this;
   }
   
-  public Builder setLeftFilter(@cgb FragmentShader.Filter paramFilter)
+  public Builder setLeftFilter(@chc FragmentShader.Filter paramFilter)
   {
     mLeftFilter = paramFilter;
     return this;
   }
   
-  public Builder setRightFilter(@cgb FragmentShader.Filter paramFilter)
+  public Builder setRightFilter(@chc FragmentShader.Filter paramFilter)
   {
     mRightFilter = paramFilter;
     return this;

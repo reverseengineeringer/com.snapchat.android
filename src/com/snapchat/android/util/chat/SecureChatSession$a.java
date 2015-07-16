@@ -1,25 +1,24 @@
 package com.snapchat.android.util.chat;
 
-import ajv;
-import ajx;
+import akp;
+import akr;
 import android.os.Build.VERSION;
 import android.util.Log;
 import android.util.Pair;
-import asz;
-import aud;
-import axk;
-import axl;
-import axn;
-import axp;
-import axs;
-import bfo;
-import bhj;
-import bhk;
-import bii;
-import bii.a;
-import bil;
-import bix;
-import com.snapchat.android.Timber;
+import aty;
+import avb;
+import ayi;
+import ayj;
+import ayl;
+import ayn;
+import ayq;
+import bgo;
+import bij;
+import bik;
+import bji;
+import bji.a;
+import bjl;
+import bjy;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.util.debug.ScApplicationInfo;
 import java.net.InetSocketAddress;
@@ -72,34 +71,28 @@ final class SecureChatSession$a
   
   public final void run()
   {
-    Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession executing CONNECT runnable", new Object[0]);
     long l = System.currentTimeMillis();
-    if (SecureChatSession.a(this$0) != SecureChatSession.b.CONNECTED$7133d94d)
+    if (SecureChatSession.a(this$0) != SecureChatSession.b.CONNECTED$7133d94d) {}
+    final Object localObject1;
+    Object localObject3;
+    final Object localObject4;
+    int i;
+    do
     {
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession CONNECT returning because intended connection state != CONNECTED", new Object[0]);
-      return;
-    }
-    if (SecureChatSession.b(this$0) != SecureChatSession.ConnectionState.DISCONNECTED)
-    {
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession CONNECT returning because connection state != DISCONNECTED", new Object[0]);
-      return;
-    }
-    final Object localObject1 = aethis$0)).mMessagingGatewayInfo;
-    if (localObject1 == null)
-    {
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession CONNECT returning because messaging gateway info is null", new Object[0]);
-      return;
-    }
-    Object localObject3 = ((bil)localObject1).b().split(":");
-    localObject3 = new Pair(localObject3[0], Integer.valueOf(Integer.parseInt(localObject3[1])));
-    final Object localObject4 = (String)first;
-    int i = ((Integer)second).intValue();
-    localObject3 = ((bil)localObject1).a();
-    if (localObject3 == null)
-    {
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession CONNECT returning because messaging gateway auth token is null", new Object[0]);
-      return;
-    }
+      do
+      {
+        do
+        {
+          return;
+        } while (SecureChatSession.b(this$0) != SecureChatSession.ConnectionState.DISCONNECTED);
+        localObject1 = aethis$0)).mMessagingGatewayInfo;
+      } while (localObject1 == null);
+      localObject3 = ((bjl)localObject1).b().split(":");
+      localObject3 = new Pair(localObject3[0], Integer.valueOf(Integer.parseInt(localObject3[1])));
+      localObject4 = (String)first;
+      i = ((Integer)second).intValue();
+      localObject3 = ((bjl)localObject1).a();
+    } while (localObject3 == null);
     SecureChatSession.a(this$0, System.currentTimeMillis());
     SecureChatSession.i(this$0).set(false);
     SecureChatSession.j(this$0);
@@ -107,22 +100,21 @@ final class SecureChatSession$a
     try
     {
       a((String)localObject4, i);
-      SecureChatSession.a(this$0, new axk(SecureChatSession.g(this$0).getInputStream(), this$0.mGson));
-      SecureChatSession.a(this$0, new axl(SecureChatSession.g(this$0).getOutputStream(), this$0.mGson));
+      SecureChatSession.a(this$0, new ayi(SecureChatSession.g(this$0).getInputStream(), this$0.mGson));
+      SecureChatSession.a(this$0, new ayj(SecureChatSession.g(this$0).getOutputStream(), this$0.mGson));
       localObject4 = new AtomicBoolean(false);
       localObject1 = SecureChatSession.g(this$0);
       final Object localObject5 = SecureChatSession.k(this$0);
-      final axl localaxl = SecureChatSession.h(this$0);
+      final ayj localayj = SecureChatSession.h(this$0);
       SecureChatSession.l(this$0).schedule(new Runnable()
       {
         public final void run()
         {
           if (localObject4.compareAndSet(false, true))
           {
-            Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession DISCONNECT due to ConnectMessage timeout", new Object[0]);
-            bfo.a(localObject1);
-            bfo.a(localaxl);
-            bfo.a(localObject5);
+            bgo.a(localObject1);
+            bgo.a(localayj);
+            bgo.a(localObject5);
           }
         }
       }, 20000L, TimeUnit.MILLISECONDS);
@@ -132,7 +124,6 @@ final class SecureChatSession$a
         {
           if (!this$0.d())
           {
-            Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession ran into soft-timeout", new Object[0]);
             Iterator localIterator = SecureChatSession.m(this$0).iterator();
             while (localIterator.hasNext()) {
               localIterator.next();
@@ -142,23 +133,23 @@ final class SecureChatSession$a
       }, 3000L, TimeUnit.MILLISECONDS);
       localObject1 = ScApplicationInfo.b(SecureChatSession.e(this$0));
       if (!ScApplicationInfo.DEFAULT_VERSION_NAME.equals(localObject1)) {
-        break label917;
+        break label802;
       }
       localObject1 = "unknown";
-      localObject5 = (bhj)asz.b(bii.a.CONNECT);
-      ((bhj)localObject5).a(ajx.l()).b("android").c(Integer.toString(Build.VERSION.SDK_INT)).d((String)localObject1).a((bix)localObject3);
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession writeConnectMessage: " + localObject5, new Object[0]);
-      SecureChatSession.h(this$0).a((bii)localObject5);
+      localObject5 = (bij)aty.b(bji.a.CONNECT);
+      ((bij)localObject5).a(akr.l()).b("android").c(Integer.toString(Build.VERSION.SDK_INT)).d((String)localObject1).a((bjy)localObject3);
+      new StringBuilder("CHAT-LOG: SecureChatSession writeConnectMessage: ").append(localObject5);
+      SecureChatSession.h(this$0).a((bji)localObject5);
       localObject1 = SecureChatSession.k(this$0).a();
       if (!((AtomicBoolean)localObject4).compareAndSet(false, true)) {
-        break label885;
+        break label782;
       }
-      if (((bii)localObject1).j() != bii.a.CONNECT_RESPONSE) {
-        break label911;
+      if (((bji)localObject1).j() != bji.a.CONNECT_RESPONSE) {
+        break label796;
       }
-      localObject1 = (bhk)localObject1;
-      if (!aud.a(((bhk)localObject1).a())) {
-        break label814;
+      localObject1 = (bik)localObject1;
+      if (!avb.a(((bik)localObject1).a())) {
+        break label722;
       }
       SecureChatSession.a(this$0, new CountDownLatch(2));
       localObject1 = SecureChatSession.n(this$0);
@@ -169,11 +160,11 @@ final class SecureChatSession$a
     }
     catch (Exception localException)
     {
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession DISCONNECT due to exception when attempting to connect " + Log.getStackTraceString(localException), new Object[0]);
+      new StringBuilder("CHAT-LOG: SecureChatSession DISCONNECT due to exception when attempting to connect ").append(Log.getStackTraceString(localException));
       SecureChatSession.c(this$0);
       SecureChatSession.f(this$0);
       return;
-      axp localaxp = SecureChatSession.o(this$0);
+      ayn localayn = SecureChatSession.o(this$0);
       localObject3 = SecureChatSession.h(this$0);
       if (!mOutputStreamQueue.offer(localObject3)) {
         throw new IllegalStateException();
@@ -196,30 +187,28 @@ final class SecureChatSession$a
     {
       AnalyticsEvents.c(bool, System.currentTimeMillis() - l);
       return;
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession DISCONNECT due to countdown latch timeout", new Object[0]);
       SecureChatSession.c(this$0);
       SecureChatSession.f(this$0);
       bool = false;
       continue;
-      label814:
-      Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession DISCONNECT due to unsuccessful ConnectResponse " + localObject2, new Object[0]);
+      label722:
+      new StringBuilder("CHAT-LOG: SecureChatSession DISCONNECT due to unsuccessful ConnectResponse ").append(localObject2);
       SecureChatSession.c(this$0);
-      if (((bhk)localObject2).b().equals("wrong_server"))
+      if (((bik)localObject2).b().equals("wrong_server"))
       {
         SecureChatSession.t(this$0);
-        SecureChatSession.a(this$0, ((bhk)localObject2).c());
-        break label920;
-        label885:
-        Timber.g("SecureChatSession", "CHAT-LOG: SecureChatSession DISCONNECT due to ConnectMessage timeout", new Object[0]);
+        SecureChatSession.a(this$0, ((bik)localObject2).c());
+        break label805;
+        label782:
         SecureChatSession.c(this$0);
         SecureChatSession.f(this$0);
-        label911:
+        label796:
         bool = false;
         continue;
-        label917:
+        label802:
         break;
       }
-      label920:
+      label805:
       bool = false;
     }
   }

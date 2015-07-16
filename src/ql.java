@@ -1,26 +1,52 @@
 import com.google.gson.annotations.SerializedName;
-import com.snapchat.android.api2.cash.ScCashResponsePayload;
 
 public final class ql
-  extends qc<ql.a>
+  extends tx
 {
-  public ql(@cgb qc.a parama)
+  final String mFriend;
+  final boolean mHide;
+  private final akr mUserPrefs;
+  
+  public ql(String paramString)
   {
-    super(parama);
-    a(ql.a.class, this);
+    this(paramString, true);
   }
   
-  protected final String d()
+  public ql(String paramString, boolean paramBoolean)
   {
-    return "/cash/generate_access_token";
+    this(paramString, paramBoolean, akr.a());
   }
   
-  public static class a
-    extends ScCashResponsePayload
+  private ql(String paramString, boolean paramBoolean, akr paramakr)
   {
-    @SerializedName("access_token")
-    @cgc
-    public xq accessToken;
+    mFriend = paramString;
+    mHide = paramBoolean;
+    mUserPrefs = paramakr;
+  }
+  
+  protected final String getPath()
+  {
+    return "/loq/friend_hide";
+  }
+  
+  public final void onResult(@chc us paramus)
+  {
+    super.onResult(paramus);
+    if (paramus.d()) {
+      akr.aB();
+    }
+  }
+  
+  @ud
+  public final class a
+    extends qc
+  {
+    @SerializedName("friend")
+    final String friend = mFriend;
+    @SerializedName("hide")
+    final boolean hide = mHide;
+    
+    a() {}
   }
 }
 

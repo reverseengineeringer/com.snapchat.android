@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.addfriends;
 
-import ajx;
+import akr;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 
@@ -12,7 +12,7 @@ final class AddNearbyFriendsFragment$4
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
     AddNearbyFriendsFragment.b(a);
-    ajx.aV();
+    akr.aS();
     AddNearbyFriendsFragment.c(a).a();
   }
 }

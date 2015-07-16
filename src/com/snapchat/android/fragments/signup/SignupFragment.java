@@ -1,7 +1,7 @@
 package com.snapchat.android.fragments.signup;
 
-import ajv;
-import ajx;
+import akp;
+import akr;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
@@ -35,20 +35,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import asu;
-import atj;
-import auo;
-import avh;
-import axz;
-import aya;
-import ayg;
-import aza;
-import ban;
-import biz;
-import co;
+import att;
+import auh;
+import avm;
+import awf;
+import ayx;
+import ayy;
+import aze;
+import azy;
+import bbo;
+import bka;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.SnapchatCameraBackgroundActivity;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
@@ -59,7 +57,8 @@ import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
-import di;
+import ct;
+import dr;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -70,20 +69,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.inject.Inject;
 import javax.inject.Provider;
-import jw;
-import kj;
-import kk;
 import ko;
-import lt;
+import lb;
+import lc;
+import lg;
 import org.apache.commons.lang3.StringUtils;
-import py.b;
+import qo.b;
 
 public class SignupFragment
   extends SnapchatFragment
-  implements py.b
+  implements qo.b
 {
-  static final di<String> a = di.a("gmail", "hotmail", "yahoo", "ymail", "outlook", "aol", new String[0]);
-  private static auo g;
+  static final dr<String> a = dr.a("gmail", "hotmail", "yahoo", "ymail", "outlook", "aol", new String[0]);
+  private static avm g;
   private static int h = -1;
   private static int i = -1;
   private static int j = -1;
@@ -91,14 +89,14 @@ public class SignupFragment
   private boolean B = false;
   private boolean C = false;
   private boolean D = false;
-  private final Provider<ajv> E;
+  private final Provider<akp> E;
   private final Bus F;
-  private final aya G;
-  private final ajx H;
+  private final ayy G;
+  private final akr H;
   String b;
   TextView c;
   @Inject
-  public ayg d;
+  public aze d;
   protected final DatePickerDialog.OnDateSetListener e = new DatePickerDialog.OnDateSetListener()
   {
     public final void onDateSet(DatePicker paramAnonymousDatePicker, int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3)
@@ -106,12 +104,12 @@ public class SignupFragment
       boolean bool2 = false;
       paramAnonymousDatePicker = new GregorianCalendar(paramAnonymousInt1, paramAnonymousInt2, paramAnonymousInt3);
       SignupFragment localSignupFragment = SignupFragment.this;
-      if ((SignupFragment.n(SignupFragment.this)) || (SignupFragment.o(SignupFragment.this).get(1) != paramAnonymousDatePicker.get(1)))
+      if ((SignupFragment.l(SignupFragment.this)) || (SignupFragment.m(SignupFragment.this).get(1) != paramAnonymousDatePicker.get(1)))
       {
         bool1 = true;
         SignupFragment.c(localSignupFragment, bool1);
         localSignupFragment = SignupFragment.this;
-        if ((!SignupFragment.p(SignupFragment.this)) && (SignupFragment.o(SignupFragment.this).get(2) == paramAnonymousDatePicker.get(2))) {
+        if ((!SignupFragment.n(SignupFragment.this)) && (SignupFragment.m(SignupFragment.this).get(2) == paramAnonymousDatePicker.get(2))) {
           break label272;
         }
       }
@@ -120,21 +118,21 @@ public class SignupFragment
       {
         SignupFragment.d(localSignupFragment, bool1);
         localSignupFragment = SignupFragment.this;
-        if (!SignupFragment.q(SignupFragment.this))
+        if (!SignupFragment.o(SignupFragment.this))
         {
           bool1 = bool2;
-          if (SignupFragment.o(SignupFragment.this).get(5) == paramAnonymousDatePicker.get(5)) {}
+          if (SignupFragment.m(SignupFragment.this).get(5) == paramAnonymousDatePicker.get(5)) {}
         }
         else
         {
           bool1 = true;
         }
         SignupFragment.e(localSignupFragment, bool1);
-        if ((SignupFragment.o(SignupFragment.this).get(1) != paramAnonymousDatePicker.get(1)) || (SignupFragment.o(SignupFragment.this).get(2) != paramAnonymousDatePicker.get(2)) || (SignupFragment.o(SignupFragment.this).get(5) != paramAnonymousDatePicker.get(5)))
+        if ((SignupFragment.m(SignupFragment.this).get(1) != paramAnonymousDatePicker.get(1)) || (SignupFragment.m(SignupFragment.this).get(2) != paramAnonymousDatePicker.get(2)) || (SignupFragment.m(SignupFragment.this).get(5) != paramAnonymousDatePicker.get(5)))
         {
           SignupFragment.a(SignupFragment.this, paramAnonymousDatePicker);
-          SignupFragment.r(SignupFragment.this).setText(new SimpleDateFormat("MM/dd/yyyy").format(SignupFragment.o(SignupFragment.this).getTime()));
-          SignupFragment.f(SignupFragment.this);
+          SignupFragment.p(SignupFragment.this).setText(new SimpleDateFormat("MM/dd/yyyy").format(SignupFragment.m(SignupFragment.this).getTime()));
+          SignupFragment.d(SignupFragment.this);
           AnalyticsEvents.z();
         }
         return;
@@ -163,25 +161,25 @@ public class SignupFragment
   
   public SignupFragment()
   {
-    this(ban.a(), ajv.UNSAFE_USER_PROVIDER, aya.a(), RegistrationAnalytics.a(), ajx.a(), new WindowConfiguration());
+    this(bbo.a(), akp.UNSAFE_USER_PROVIDER, ayy.a(), RegistrationAnalytics.a(), akr.a(), new WindowConfiguration());
   }
   
   @SuppressLint({"ValidFragment"})
   public SignupFragment(WindowConfiguration paramWindowConfiguration)
   {
-    this(ban.a(), ajv.UNSAFE_USER_PROVIDER, aya.a(), RegistrationAnalytics.a(), ajx.a(), paramWindowConfiguration);
+    this(bbo.a(), akp.UNSAFE_USER_PROVIDER, ayy.a(), RegistrationAnalytics.a(), akr.a(), paramWindowConfiguration);
   }
   
   @SuppressLint({"ValidFragment"})
-  private SignupFragment(Bus paramBus, Provider<ajv> paramProvider, aya paramaya, RegistrationAnalytics paramRegistrationAnalytics, ajx paramajx, WindowConfiguration paramWindowConfiguration)
+  private SignupFragment(Bus paramBus, Provider<akp> paramProvider, ayy paramayy, RegistrationAnalytics paramRegistrationAnalytics, akr paramakr, WindowConfiguration paramWindowConfiguration)
   {
     super(paramWindowConfiguration);
     SnapchatApplication.b().c().a(this);
     F = paramBus;
     E = paramProvider;
-    G = paramaya;
+    G = paramayy;
     f = paramRegistrationAnalytics;
-    H = paramajx;
+    H = paramakr;
   }
   
   private void a(String paramString)
@@ -219,10 +217,7 @@ public class SignupFragment
       k.mFragments.beginTransaction().replace(l, localPickUsernameFragment).commit();
       return;
     }
-    catch (IllegalStateException paramString)
-    {
-      Timber.f("SignupFragment", "Attempted to go to PickUsernameFragment", new Object[0]);
-    }
+    catch (IllegalStateException paramString) {}
   }
   
   private void b(String paramString)
@@ -265,57 +260,57 @@ public class SignupFragment
       AlertDialogUtils.a(k, paramString);
       return;
     case -200: 
-      RegistrationAnalytics.a(jw.EMAIL_INVALID);
+      RegistrationAnalytics.a(ko.EMAIL_INVALID);
       a(paramString);
       return;
     case -201: 
-      RegistrationAnalytics.a(jw.EMAIL_EXISTS);
+      RegistrationAnalytics.a(ko.EMAIL_EXISTS);
       a(paramString);
       return;
     case 7: 
-      RegistrationAnalytics.a(jw.PASSWORD_TOO_SHORT);
+      RegistrationAnalytics.a(ko.PASSWORD_TOO_SHORT);
       b(paramString);
       return;
     case 8: 
-      RegistrationAnalytics.a(jw.PASSWORD_TOO_COMMON);
+      RegistrationAnalytics.a(ko.PASSWORD_TOO_COMMON);
       b(paramString);
       return;
     case 9: 
-      RegistrationAnalytics.a(jw.PASSWORD_TOO_EASY);
+      RegistrationAnalytics.a(ko.PASSWORD_TOO_EASY);
       b(paramString);
       return;
     case 10: 
-      RegistrationAnalytics.a(jw.PASSWORD_TOO_SIMILAR_TO_USERNAME);
+      RegistrationAnalytics.a(ko.PASSWORD_TOO_SIMILAR_TO_USERNAME);
       b(paramString);
       return;
     }
-    RegistrationAnalytics.a(jw.PASSWORD_TOO_SIMILAR_TO_EMAIL);
+    RegistrationAnalytics.a(ko.PASSWORD_TOO_SIMILAR_TO_EMAIL);
     b(paramString);
   }
   
-  public final void a(String paramString1, String paramString2, biz parambiz)
+  public final void a(String paramString1, String paramString2, bka parambka)
   {
     if (isAdded())
     {
-      ajv localajv = (ajv)E.get();
-      if (localajv != null)
+      akp localakp = (akp)E.get();
+      if (localakp != null)
       {
-        ajx.a(parambiz);
-        localajv.a(null);
+        akr.a(parambka);
+        localakp.a(null);
       }
-      a(parambiz.j(), parambiz.k().booleanValue(), parambiz.l());
-      if ((parambiz.g()) && (parambiz.i())) {
-        G.a(new axz(parambiz.f(), parambiz.h()));
+      a(parambka.j(), parambka.k().booleanValue(), parambka.l());
+      if ((parambka.g()) && (parambka.i())) {
+        G.a(new ayx(parambka.f(), parambka.h()));
       }
     }
     boolean bool1 = B;
     boolean bool2 = C;
     boolean bool3 = D;
-    parambiz = new ko();
+    parambka = new lg();
     editBirthdayYear = Boolean.valueOf(bool1);
     editBirthdayMonth = Boolean.valueOf(bool2);
     editBirthdayDay = Boolean.valueOf(bool3);
-    ScAnalyticsEventEngine.a(parambiz);
+    ScAnalyticsEventEngine.a(parambka);
     AnalyticsEvents.b(paramString1, paramString2);
   }
   
@@ -335,7 +330,7 @@ public class SignupFragment
   
   protected final WindowConfiguration.StatusBarDrawMode b()
   {
-    if (asu.SUPPORTS_TRANSPARENT_STATUS_BAR) {
+    if (att.SUPPORTS_TRANSPARENT_STATUS_BAR) {
       return super.b();
     }
     return WindowConfiguration.StatusBarDrawMode.DRAW_BELOW_FOR_ADJUSTABLE_UI;
@@ -350,82 +345,68 @@ public class SignupFragment
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
     int i1 = 0;
-    mFragmentLayout = paramLayoutInflater.inflate(2130968731, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968733, paramViewGroup, false);
     if (h == -1) {
-      h = getResources().getColor(2131230814);
+      h = getResources().getColor(2131230816);
     }
     if (i == -1) {
-      i = getResources().getColor(2131230795);
+      i = getResources().getColor(2131230796);
     }
     if (j == -1) {
-      j = getResources().getColor(2131230796);
+      j = getResources().getColor(2131230797);
     }
     r = ((GregorianCalendar)GregorianCalendar.getInstance());
     r.add(1, -1);
-    g = auo.a();
+    g = avm.a();
     l = paramViewGroup.getId();
-    n = (getResources().getDimensionPixelSize(2131296296) + getResources().getDimensionPixelSize(2131296306));
-    o = (n + getResources().getDimensionPixelSize(2131296302));
-    m = ((EditText)c(2131362687));
-    c = ((TextView)c(2131362689));
+    n = (getResources().getDimensionPixelSize(2131296296) + getResources().getDimensionPixelSize(2131296305));
+    o = (n + getResources().getDimensionPixelSize(2131296301));
+    m = ((EditText)c(2131362686));
+    c = ((TextView)c(2131362688));
     c.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        if (!co.c(SignupFragment.a(SignupFragment.this))) {
+        if (!ct.c(SignupFragment.a(SignupFragment.this))) {
           SignupFragment.b(SignupFragment.this).setText(SignupFragment.a(SignupFragment.this));
         }
       }
     });
-    u = ((ImageView)c(2131362688));
-    p = ((EditText)c(2131362690));
-    v = ((TextView)c(2131362692));
-    w = ((ImageView)c(2131362691));
-    q = ((EditText)c(2131362693));
-    t = ((Button)c(2131362695));
+    u = ((ImageView)c(2131362687));
+    p = ((EditText)c(2131362689));
+    v = ((TextView)c(2131362691));
+    w = ((ImageView)c(2131362690));
+    q = ((EditText)c(2131362692));
+    t = ((Button)c(2131362694));
     m.setOnFocusChangeListener(new View.OnFocusChangeListener()
     {
       public final void onFocusChange(View paramAnonymousView, boolean paramAnonymousBoolean)
       {
-        Object localObject1 = null;
         if (paramAnonymousBoolean)
         {
-          SignupFragment.e(SignupFragment.this);
-          if ((SignupFragment.c(SignupFragment.this)) && (!SignupFragment.d(SignupFragment.this)))
-          {
-            paramAnonymousView = SignupFragment.b(SignupFragment.this).getText().toString();
-            localObject1 = new kj();
-            emailSuggestion = paramAnonymousView;
-            ScAnalyticsEventEngine.a((lt)localObject1);
-            AnalyticsEvents.n();
-          }
+          SignupFragment.c(SignupFragment.this);
+          ScAnalyticsEventEngine.a(new lb());
+          AnalyticsEvents.n();
         }
         for (;;)
         {
           return;
-          paramAnonymousView = null;
-          break;
           SignupFragment.a(SignupFragment.this, false);
           paramAnonymousView = SignupFragment.b(SignupFragment.this).getText().toString().trim().toLowerCase(Locale.US);
           SignupFragment localSignupFragment = SignupFragment.this;
-          Object localObject2 = paramAnonymousView.split("@");
-          if (localObject2.length == 2)
+          Object localObject1 = paramAnonymousView.split("@");
+          if (localObject1.length == 2)
           {
-            String[] arrayOfString = localObject2[1].split("\\.");
-            if (arrayOfString.length == 2)
+            Object localObject2 = localObject1[1].split("\\.");
+            if (localObject2.length == 2)
             {
-              String str = arrayOfString[0];
-              paramAnonymousView = (View)localObject1;
-              if (!TextUtils.isEmpty(str))
-              {
-                if (!SignupFragment.a.contains(str)) {
-                  break label370;
-                }
-                paramAnonymousView = (View)localObject1;
+              CharSequence localCharSequence = localObject2[0];
+              if ((TextUtils.isEmpty(localCharSequence)) || (SignupFragment.a.contains(localCharSequence))) {
+                paramAnonymousView = null;
               }
               while (paramAnonymousView != null)
               {
-                paramAnonymousView = localObject2[0] + "@" + paramAnonymousView + "." + arrayOfString[1];
+                paramAnonymousView = localObject1[0] + "@" + paramAnonymousView + "." + localObject2[1];
                 localObject1 = new SpannableStringBuilder();
                 localObject2 = localSignupFragment.getString(2131493118, new Object[] { paramAnonymousView });
                 int i = ((String)localObject2).indexOf(paramAnonymousView);
@@ -439,17 +420,19 @@ public class SignupFragment
                 c.setLinksClickable(true);
                 b = paramAnonymousView;
                 return;
-                label370:
                 Iterator localIterator = SignupFragment.a.iterator();
-                do
+                for (;;)
                 {
-                  paramAnonymousView = (View)localObject1;
-                  if (!localIterator.hasNext()) {
-                    break;
+                  if (localIterator.hasNext())
+                  {
+                    paramAnonymousView = (String)localIterator.next();
+                    i = StringUtils.getLevenshteinDistance(paramAnonymousView, localCharSequence);
+                    if ((i <= 2) && (i > 0)) {
+                      break;
+                    }
                   }
-                  paramAnonymousView = (String)localIterator.next();
-                  i = StringUtils.getLevenshteinDistance(paramAnonymousView, str);
-                } while ((i > 2) || (i <= 0));
+                }
+                paramAnonymousView = null;
               }
             }
           }
@@ -478,14 +461,14 @@ public class SignupFragment
         {
           public final void afterTextChanged(Editable paramAnonymousEditable)
           {
-            SignupFragment.f(SignupFragment.this);
-            SignupFragment.g(SignupFragment.this);
-            if (!SignupFragment.h(SignupFragment.this))
+            SignupFragment.d(SignupFragment.this);
+            SignupFragment.e(SignupFragment.this);
+            if (!SignupFragment.f(SignupFragment.this))
             {
               AnalyticsEvents.p();
               SignupFragment.a(SignupFragment.this, true);
             }
-            SignupFragment.i(SignupFragment.this);
+            SignupFragment.g(SignupFragment.this);
           }
           
           public final void beforeTextChanged(CharSequence paramAnonymousCharSequence, int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3) {}
@@ -500,7 +483,7 @@ public class SignupFragment
           }
         });
         if (m.requestFocus()) {
-          avh.f(k);
+          awf.f(k);
         }
         p.setTypeface(Typeface.DEFAULT);
         p.setTransformationMethod(new PasswordTransformationMethod());
@@ -508,9 +491,9 @@ public class SignupFragment
         {
           public final void afterTextChanged(Editable paramAnonymousEditable)
           {
-            SignupFragment.f(SignupFragment.this);
-            SignupFragment.j(SignupFragment.this);
-            if (!SignupFragment.k(SignupFragment.this))
+            SignupFragment.d(SignupFragment.this);
+            SignupFragment.h(SignupFragment.this);
+            if (!SignupFragment.i(SignupFragment.this))
             {
               AnalyticsEvents.t();
               SignupFragment.b(SignupFragment.this, true);
@@ -525,7 +508,7 @@ public class SignupFragment
         {
           public final boolean onEditorAction(TextView paramAnonymousTextView, int paramAnonymousInt, KeyEvent paramAnonymousKeyEvent)
           {
-            SignupFragment.l(SignupFragment.this);
+            SignupFragment.j(SignupFragment.this);
             return true;
           }
         });
@@ -535,8 +518,8 @@ public class SignupFragment
           {
             if (paramAnonymousBoolean)
             {
-              SignupFragment.e(SignupFragment.this);
-              ScAnalyticsEventEngine.a(new kk());
+              SignupFragment.c(SignupFragment.this);
+              ScAnalyticsEventEngine.a(new lc());
               AnalyticsEvents.s();
               return;
             }
@@ -547,17 +530,17 @@ public class SignupFragment
         {
           public final void onClick(View paramAnonymousView)
           {
-            SignupFragment.m(SignupFragment.this).setText("");
+            SignupFragment.k(SignupFragment.this).setText("");
           }
         });
         q.setOnTouchListener(new View.OnTouchListener()
         {
           public final boolean onTouch(View paramAnonymousView, MotionEvent paramAnonymousMotionEvent)
           {
-            paramAnonymousView = SignupFragment.m(SignupFragment.this).getOnFocusChangeListener();
+            paramAnonymousView = SignupFragment.k(SignupFragment.this).getOnFocusChangeListener();
             if ((1 == paramAnonymousMotionEvent.getAction()) && (paramAnonymousView != null))
             {
-              SignupFragment.l(SignupFragment.this);
+              SignupFragment.j(SignupFragment.this);
               return true;
             }
             return false;
@@ -568,18 +551,18 @@ public class SignupFragment
           public final void onClick(View paramAnonymousView)
           {
             paramAnonymousView = SignupFragment.b(SignupFragment.this).getText().toString().trim().toLowerCase(Locale.US);
-            String str = SignupFragment.m(SignupFragment.this).getText().toString().trim();
+            String str = SignupFragment.k(SignupFragment.this).getText().toString().trim();
             if (SignupFragment.i().a(paramAnonymousView))
             {
-              AlertDialogUtils.a(SignupFragment.s(SignupFragment.this), getString(2131493227, new Object[] { paramAnonymousView }));
+              AlertDialogUtils.a(SignupFragment.q(SignupFragment.this), getString(2131493227, new Object[] { paramAnonymousView }));
               return;
             }
             Object localObject = (GregorianCalendar)GregorianCalendar.getInstance();
             ((GregorianCalendar)localObject).add(1, -13);
-            if (!SignupFragment.o(SignupFragment.this).before(localObject))
+            if (!SignupFragment.m(SignupFragment.this).before(localObject))
             {
               localObject = SignupFragment.i();
-              if (!((auo)localObject).a(paramAnonymousView))
+              if (!((avm)localObject).a(paramAnonymousView))
               {
                 mSharedPreferencesEditor.putString("SnapKidzLoginManager_username_" + numAccounts, paramAnonymousView);
                 mSharedPreferencesEditor.putInt("SnapKidzLoginManager_passkey_" + numAccounts, str.hashCode());
@@ -587,17 +570,17 @@ public class SignupFragment
                 mSharedPreferencesEditor.putInt("SnapKidzLoginManager_numAccounts", numAccounts);
                 mSharedPreferencesEditor.apply();
               }
-              AlertDialogUtils.a(2131493498, SignupFragment.s(SignupFragment.this));
+              AlertDialogUtils.a(2131493498, SignupFragment.q(SignupFragment.this));
               SignupFragment.a(SignupFragment.this, paramAnonymousView);
               return;
             }
-            SignupFragment.t(SignupFragment.this);
+            SignupFragment.r(SignupFragment.this);
           }
         });
         paramLayoutInflater = t;
         k.getAssets();
-        atj.a(paramLayoutInflater);
-        s = c(2131362696);
+        auh.a(paramLayoutInflater);
+        s = c(2131362695);
         return mFragmentLayout;
         i1 += 1;
         break;
@@ -619,14 +602,14 @@ public class SignupFragment
     if ((k != null) && ((k instanceof SnapchatCameraBackgroundActivity))) {
       ((SnapchatCameraBackgroundActivity)k).a(h);
     }
-    I();
-    if (ajx.o()) {
+    K();
+    if (akr.o()) {
       a(null, false, null);
     }
-    while (!ajx.p()) {
+    while (!akr.p()) {
       return;
     }
-    if (!ajx.f()) {
+    if (!akr.f()) {
       try
       {
         k.mFragments.beginTransaction().replace(l, new NewUserPhoneVerificationFragment(mWindowConfiguration)).commit();
@@ -634,21 +617,17 @@ public class SignupFragment
       }
       catch (IllegalStateException localIllegalStateException1)
       {
-        Timber.f("SignupFragment", "Attempted to go to PhoneVerificationFragment", new Object[0]);
         return;
       }
     }
     try
     {
       FragmentTransaction localFragmentTransaction = k.mFragments.beginTransaction();
-      CaptchaFragment localCaptchaFragment = new CaptchaFragment(ajx.s(), mWindowConfiguration);
+      CaptchaFragment localCaptchaFragment = new CaptchaFragment(akr.s(), mWindowConfiguration);
       localFragmentTransaction.replace(l, localCaptchaFragment).commit();
       return;
     }
-    catch (IllegalStateException localIllegalStateException2)
-    {
-      Timber.f("SignupFragment", "Attempted to go to CaptchaFragment", new Object[0]);
-    }
+    catch (IllegalStateException localIllegalStateException2) {}
   }
 }
 

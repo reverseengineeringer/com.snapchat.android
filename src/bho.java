@@ -1,38 +1,99 @@
-import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import android.os.Handler;
+import android.os.SystemClock;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-public final class bho
+public abstract class bho
 {
-  @SerializedName("is_delta")
-  protected Boolean isDelta;
-  
-  public final Boolean a()
+  final long mCountdownInterval;
+  final long mDuration;
+  private final Runnable mFinishMessage = new Runnable()
   {
-    return isDelta;
-  }
-  
-  public final boolean equals(Object paramObject)
-  {
-    if (paramObject == this) {
-      return true;
+    public final void run()
+    {
+      b();
     }
-    if (!(paramObject instanceof bho)) {
-      return false;
+  };
+  final Handler mHandler;
+  final AtomicBoolean mIsCancelled = new AtomicBoolean(false);
+  private final AtomicBoolean mIsFinished = new AtomicBoolean(false);
+  final Runnable mTickMessage = new Runnable()
+  {
+    public final void run()
+    {
+      a();
     }
-    paramObject = (bho)paramObject;
-    return new EqualsBuilder().append(isDelta, isDelta).isEquals();
+  };
+  
+  public bho(int paramInt, long paramLong, Handler paramHandler)
+  {
+    mDuration = (paramInt * paramLong);
+    mCountdownInterval = paramLong;
+    mHandler = paramHandler;
   }
   
-  public final int hashCode()
+  public abstract void a();
+  
+  public abstract void b();
+  
+  public final void c()
   {
-    return new HashCodeBuilder().append(isDelta).toHashCode();
+    synchronized (mIsCancelled)
+    {
+      mIsCancelled.set(true);
+      return;
+    }
   }
   
-  public final String toString()
+  final void d()
   {
-    return ToStringBuilder.reflectionToString(this);
+    synchronized (mIsCancelled)
+    {
+      if (mHandler != null)
+      {
+        mHandler.post(mFinishMessage);
+        mIsFinished.set(true);
+        return;
+      }
+      b();
+    }
+  }
+  
+  public final void e()
+  {
+    new Thread(new Runnable()
+    {
+      public final void run()
+      {
+        bho localbho = bho.this;
+        long l2 = SystemClock.elapsedRealtime();
+        long l3 = mDuration + l2;
+        long l1 = l2;
+        if (l2 >= l3) {
+          localbho.d();
+        }
+        do
+        {
+          do
+          {
+            return;
+            if (l1 >= l3) {
+              break;
+            }
+            bhp.a(mCountdownInterval);
+          } while (mIsCancelled.get());
+          if (mHandler != null) {
+            mHandler.post(mTickMessage);
+          }
+          for (;;)
+          {
+            l1 += mCountdownInterval;
+            break;
+            localbho.a();
+          }
+        } while (mIsCancelled.get());
+        localbho.d();
+      }
+    }).start();
   }
 }
 

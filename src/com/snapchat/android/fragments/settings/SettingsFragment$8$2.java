@@ -1,30 +1,30 @@
 package com.snapchat.android.fragments.settings;
 
-import ban;
-import bdw;
-import cgb;
-import cgc;
+import bbo;
+import bev;
+import chc;
+import chd;
 import com.snapchat.android.fragments.cash.CashSettingsFragment;
 import com.squareup.otto.Bus;
 import java.util.List;
-import qv;
-import qv.a;
+import rl;
+import rl.a;
 
 final class SettingsFragment$8$2
-  implements qv.a
+  implements rl.a
 {
   SettingsFragment$8$2(SettingsFragment.8 param8) {}
   
-  public final void a(@cgb qv paramqv) {}
+  public final void a(@chc rl paramrl) {}
   
-  public final void a(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean)
+  public final void a(@chc rl paramrl, @chd List<rl> paramList, boolean paramBoolean)
   {
-    ban.a().a(new bdw(new CashSettingsFragment()));
+    bbo.a().a(new bev(new CashSettingsFragment()));
   }
   
-  public final void b(@cgb qv paramqv) {}
+  public final void b(@chc rl paramrl) {}
   
-  public final void b(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean) {}
+  public final void b(@chc rl paramrl, @chd List<rl> paramList, boolean paramBoolean) {}
 }
 
 /* Location:

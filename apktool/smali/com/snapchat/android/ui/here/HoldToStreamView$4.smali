@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1094
+    .line 1126
     iput-object p1, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$4;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -37,7 +37,7 @@
     .locals 2
 
     .prologue
-    .line 1097
+    .line 1129
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$4;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     iget-object v0, v0, Lcom/snapchat/android/ui/here/HoldToStreamView;->h:Lcom/addlive/view/ALVideoTextureView;
@@ -50,12 +50,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1098
+    .line 1130
     iget-object v0, p0, Lcom/snapchat/android/ui/here/HoldToStreamView$4;->a:Lcom/snapchat/android/ui/here/HoldToStreamView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/here/HoldToStreamView;->g(Lcom/snapchat/android/ui/here/HoldToStreamView;)V
 
-    .line 1101
+    .line 1133
     :cond_0
     return-void
 .end method

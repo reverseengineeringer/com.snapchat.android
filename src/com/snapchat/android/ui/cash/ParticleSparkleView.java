@@ -13,22 +13,22 @@ import android.util.AttributeSet;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import avh;
-import cgb;
+import awf;
+import chc;
 import java.util.Random;
-import md.a;
-import xv;
+import mv.a;
+import yr;
 
 public class ParticleSparkleView
   extends ViewGroup
   implements ParticleView.a
 {
   public int a;
-  @cgb
-  public xv b;
+  @chc
+  public yr b;
   Random c = new Random();
   public boolean d = false;
-  @cgb
+  @chc
   private Drawable e;
   private Context f;
   private int g;
@@ -38,14 +38,14 @@ public class ParticleSparkleView
   {
     super(paramContext, paramAttributeSet);
     f = paramContext;
-    paramContext = paramContext.obtainStyledAttributes(paramAttributeSet, md.a.ParticleSparkleView);
+    paramContext = paramContext.obtainStyledAttributes(paramAttributeSet, mv.a.ParticleSparkleView);
     try
     {
       e = paramContext.getDrawable(0);
       a = paramContext.getInt(1, 1);
       paramContext.recycle();
-      g = ((int)avh.a(25.0F, f));
-      h = ((int)avh.a(125.0F, f));
+      g = ((int)awf.a(25.0F, f));
+      h = ((int)awf.a(125.0F, f));
       return;
     }
     finally

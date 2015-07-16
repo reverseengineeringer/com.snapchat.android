@@ -1,10 +1,32 @@
 .class public final Laao;
-.super Laan;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field private static a:Laao;
+.field public static a:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static b:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -12,63 +34,19 @@
     .locals 1
 
     .prologue
-    .line 8
-    new-instance v0, Laao;
+    .line 12
+    new-instance v0, Laao$1;
 
-    invoke-direct {v0}, Laao;-><init>()V
+    invoke-direct {v0}, Laao$1;-><init>()V
 
-    sput-object v0, Laao;->a:Laao;
+    sput-object v0, Laao;->a:Ljava/util/HashMap;
+
+    .line 19
+    new-instance v0, Laao$2;
+
+    invoke-direct {v0}, Laao$2;-><init>()V
+
+    sput-object v0, Laao;->b:Ljava/util/HashMap;
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 2
-
-    .prologue
-    .line 11
-    const-string v0, "HasSeenOurCampusStoryDialog"
-
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Laza;->b()Lzq;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Laan;-><init>(Ljava/lang/String;Lzp;)V
-
-    .line 13
-    return-void
-.end method
-
-.method public static declared-synchronized a()Laao;
-    .locals 2
-
-    .prologue
-    .line 16
-    const-class v0, Laao;
-
-    monitor-enter v0
-
-    :try_start_0
-    sget-object v1, Laao;->a:Laao;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
 .end method

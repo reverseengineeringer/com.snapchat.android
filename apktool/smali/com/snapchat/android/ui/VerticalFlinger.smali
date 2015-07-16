@@ -38,28 +38,28 @@
 
 .field private k:D
 
-.field private final l:Lapl;
+.field private final l:Laqk;
 
 .field private m:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
 
 .field private n:Z
 
 .field private o:Landroid/view/VelocityTracker;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 .field private p:Lcom/snapchat/android/ui/VerticalFlinger$a;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
-.field private q:Lbff;
+.field private q:Lbgf;
 
-.field private r:Lbff;
+.field private r:Lbgf;
 
-.field private s:Lbff;
-    .annotation build Lcgc;
+.field private s:Lbgf;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -70,19 +70,19 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 6
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/util/AttributeSet;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
     .line 139
-    new-instance v0, Lapl;
+    new-instance v0, Laqk;
 
-    invoke-direct {v0}, Lapl;-><init>()V
+    invoke-direct {v0}, Laqk;-><init>()V
 
     new-instance v1, Lbl;
 
@@ -92,28 +92,28 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Lbl;-><init>(DD)V
 
-    invoke-virtual {v0, v1}, Lapl;->a(Lbl;)Lapl;
+    invoke-virtual {v0, v1}, Laqk;->a(Lbl;)Laqk;
 
     move-result-object v0
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/snapchat/android/ui/VerticalFlinger;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lapl;)V
+    invoke-direct {p0, p1, p2, v0}, Lcom/snapchat/android/ui/VerticalFlinger;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Laqk;)V
 
     .line 141
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lapl;)V
+.method private constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Laqk;)V
     .locals 6
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/util/AttributeSet;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .param p3    # Lapl;
-        .annotation build Lcgb;
+    .param p3    # Laqk;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -180,21 +180,21 @@
     iput-object v5, p0, Lcom/snapchat/android/ui/VerticalFlinger;->p:Lcom/snapchat/android/ui/VerticalFlinger$a;
 
     .line 114
-    invoke-static {}, Lbff;->a()Lbff;
+    invoke-static {}, Lbgf;->a()Lbgf;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->q:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->q:Lbgf;
 
     .line 118
-    invoke-static {}, Lbff;->a()Lbff;
+    invoke-static {}, Lbgf;->a()Lbgf;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->r:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->r:Lbgf;
 
     .line 121
-    iput-object v5, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbff;
+    iput-object v5, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbgf;
 
     .line 131
     sget v0, Lcom/snapchat/android/ui/VerticalFlinger$c;->a:I
@@ -202,32 +202,32 @@
     iput v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->t:I
 
     .line 149
-    iput-object p3, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iput-object p3, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
     .line 150
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
     new-instance v1, Lcom/snapchat/android/ui/VerticalFlinger$b;
 
     invoke-direct {v1, p0}, Lcom/snapchat/android/ui/VerticalFlinger$b;-><init>(Lcom/snapchat/android/ui/VerticalFlinger;)V
 
-    invoke-virtual {v0}, Lapl;->f()V
+    invoke-virtual {v0}, Laqk;->f()V
 
-    invoke-static {v1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lapl;->c:Lbh;
+    iget-object v0, v0, Laqk;->c:Lbh;
 
     invoke-virtual {v0, v1}, Lbh;->a(Ljava/lang/Object;)V
 
     .line 151
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    invoke-virtual {v0, v4}, Lapl;->b(Z)Lapl;
+    invoke-virtual {v0, v4}, Laqk;->b(Z)Laqk;
 
     .line 153
     const/high16 v0, 0x42480000    # 50.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -236,7 +236,7 @@
     .line 154
     const/high16 v0, 0x42700000    # 60.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -245,7 +245,7 @@
     .line 155
     const/high16 v0, 0x43fa0000    # 500.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -254,7 +254,7 @@
     .line 156
     const/high16 v0, 0x41c80000    # 25.0f
 
-    invoke-static {v0, p1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, p1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -327,20 +327,20 @@
 
     .line 224
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    invoke-static {}, Lbff;->a()Lbff;
+    invoke-static {}, Lbgf;->a()Lbgf;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lapl;->a(Lbff;)Lapl;
+    invoke-virtual {v0, v1}, Laqk;->a(Lbgf;)Laqk;
 
     .line 225
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lapl;->a(Z)Lapl;
+    invoke-virtual {v0, v1}, Laqk;->a(Z)Laqk;
 
     .line 226
     sget-object v0, Lcom/snapchat/android/ui/VerticalFlinger$MovementState;->RETURN:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
@@ -351,70 +351,68 @@
 .end method
 
 .method private a(Landroid/view/MotionEvent;)V
-    .locals 10
+    .locals 8
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    const/4 v2, 0x0
-
     .line 356
     invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->b(Landroid/view/MotionEvent;)V
 
     .line 358
-    new-instance v0, Lbff;
+    new-instance v0, Lbgf;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v1
 
-    float-to-double v4, v1
+    float-to-double v2, v1
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v1
 
-    float-to-double v6, v1
+    float-to-double v4, v1
 
-    invoke-direct {v0, v4, v5, v6, v7}, Lbff;-><init>(DD)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lbgf;-><init>(DD)V
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->q:Lbff;
+    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->q:Lbgf;
 
-    new-instance v3, Lbff;
+    new-instance v2, Lbgf;
 
-    iget-wide v4, v0, Lbff;->x:D
+    iget-wide v4, v0, Lbgf;->x:D
 
-    iget-wide v6, v1, Lbff;->x:D
+    iget-wide v6, v1, Lbgf;->x:D
 
     sub-double/2addr v4, v6
 
-    iget-wide v6, v0, Lbff;->y:D
+    iget-wide v6, v0, Lbgf;->y:D
 
-    iget-wide v0, v1, Lbff;->y:D
+    iget-wide v0, v1, Lbgf;->y:D
 
     sub-double v0, v6, v0
 
-    invoke-direct {v3, v4, v5, v0, v1}, Lbff;-><init>(DD)V
+    invoke-direct {v2, v4, v5, v0, v1}, Lbgf;-><init>(DD)V
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->r:Lbff;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->r:Lbgf;
 
-    new-instance v4, Lbff;
+    new-instance v3, Lbgf;
 
-    iget-wide v6, v3, Lbff;->x:D
+    iget-wide v4, v2, Lbgf;->x:D
 
-    iget-wide v8, v0, Lbff;->x:D
+    iget-wide v6, v0, Lbgf;->x:D
 
-    add-double/2addr v6, v8
+    add-double/2addr v4, v6
 
-    iget-wide v8, v3, Lbff;->y:D
+    iget-wide v6, v2, Lbgf;->y:D
 
-    iget-wide v0, v0, Lbff;->y:D
+    iget-wide v0, v0, Lbgf;->y:D
 
-    add-double/2addr v0, v8
+    add-double/2addr v0, v6
 
-    invoke-direct {v4, v6, v7, v0, v1}, Lbff;-><init>(DD)V
+    invoke-direct {v3, v4, v5, v0, v1}, Lbgf;-><init>(DD)V
 
     .line 362
     sget-object v0, Lcom/snapchat/android/ui/VerticalFlinger$1;->a:[I
@@ -454,63 +452,63 @@
 
     .line 364
     :pswitch_0
-    iget-wide v0, v4, Lbff;->y:D
+    iget-wide v0, v3, Lbgf;->y:D
 
     invoke-static {v0, v1}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v0
 
-    iget v3, p0, Lcom/snapchat/android/ui/VerticalFlinger;->i:F
+    iget v2, p0, Lcom/snapchat/android/ui/VerticalFlinger;->i:F
 
-    float-to-double v6, v3
+    float-to-double v4, v2
 
-    cmpl-double v0, v0, v6
+    cmpl-double v0, v0, v4
 
     if-gtz v0, :cond_0
 
-    iget-wide v0, v4, Lbff;->x:D
+    iget-wide v0, v3, Lbgf;->x:D
 
     invoke-static {v0, v1}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v0
 
-    iget v3, p0, Lcom/snapchat/android/ui/VerticalFlinger;->i:F
+    iget v2, p0, Lcom/snapchat/android/ui/VerticalFlinger;->i:F
 
-    float-to-double v6, v3
+    float-to-double v4, v2
 
-    cmpl-double v0, v0, v6
+    cmpl-double v0, v0, v4
 
     if-lez v0, :cond_2
 
     :cond_0
-    iget-wide v0, v4, Lbff;->y:D
+    iget-wide v0, v3, Lbgf;->y:D
 
-    iget-wide v6, v4, Lbff;->x:D
+    iget-wide v4, v3, Lbgf;->x:D
 
-    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->atan2(DD)D
+    invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->atan2(DD)D
 
     move-result-wide v0
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v4, 0x0
 
-    cmpg-double v3, v0, v6
+    cmpg-double v2, v0, v4
 
-    if-gez v3, :cond_1
+    if-gez v2, :cond_1
 
-    const-wide v6, 0x400921fb54442d18L    # Math.PI
+    const-wide v4, 0x400921fb54442d18L    # Math.PI
 
-    add-double/2addr v0, v6
+    add-double/2addr v0, v4
 
     :cond_1
-    iget-wide v6, p0, Lcom/snapchat/android/ui/VerticalFlinger;->j:D
+    iget-wide v4, p0, Lcom/snapchat/android/ui/VerticalFlinger;->j:D
 
-    cmpl-double v3, v0, v6
+    cmpl-double v2, v0, v4
 
-    if-ltz v3, :cond_3
+    if-ltz v2, :cond_3
 
-    iget-wide v6, p0, Lcom/snapchat/android/ui/VerticalFlinger;->k:D
+    iget-wide v4, p0, Lcom/snapchat/android/ui/VerticalFlinger;->k:D
 
-    cmpg-double v0, v0, v6
+    cmpg-double v0, v0, v4
 
     if-gtz v0, :cond_3
 
@@ -523,7 +521,7 @@
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->setMovementState(Lcom/snapchat/android/ui/VerticalFlinger$MovementState;)V
 
-    invoke-direct {p0, v4}, Lcom/snapchat/android/ui/VerticalFlinger;->setPosition(Lbff;)V
+    invoke-direct {p0, v3}, Lcom/snapchat/android/ui/VerticalFlinger;->setPosition(Lbgf;)V
 
     .line 384
     :cond_2
@@ -534,10 +532,10 @@
     .line 385
     return-void
 
-    :cond_3
-    move v0, v2
-
     .line 364
+    :cond_3
+    const/4 v0, 0x0
+
     goto :goto_0
 
     :cond_4
@@ -549,74 +547,36 @@
 
     .line 367
     :pswitch_2
-    invoke-direct {p0, v4}, Lcom/snapchat/android/ui/VerticalFlinger;->setPosition(Lbff;)V
-
-    goto :goto_1
-
-    .line 370
-    :pswitch_3
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Received touch move event while in FLING state. Weird. Ignoring."
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    .line 373
-    :pswitch_4
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Received touch move event while in GONE state. Weird. Ignoring."
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    .line 376
-    :pswitch_5
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Received touch move event while in RETURN state. Weird. Ignoring."
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {p0, v3}, Lcom/snapchat/android/ui/VerticalFlinger;->setPosition(Lbgf;)V
 
     goto :goto_1
 
     .line 362
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
         :pswitch_1
     .end packed-switch
 .end method
 
-.method private a(Lbff;)V
+.method private a(Lbgf;)V
     .locals 10
-    .param p1    # Lbff;
-        .annotation build Lcgb;
+    .param p1    # Lbgf;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 415
-    iget-object v2, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v2, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    iget-wide v0, p1, Lbff;->y:D
+    iget-wide v0, p1, Lbgf;->y:D
 
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v3
 
@@ -630,7 +590,7 @@
 
     int-to-double v0, v0
 
-    iget-wide v4, p1, Lbff;->y:D
+    iget-wide v4, p1, Lbgf;->y:D
 
     const-wide/16 v6, 0x0
 
@@ -641,34 +601,34 @@
     neg-double v0, v0
 
     :cond_0
-    iget-wide v4, v3, Lbff;->x:D
+    iget-wide v4, v3, Lbgf;->x:D
 
-    iget-wide v6, p1, Lbff;->x:D
+    iget-wide v6, p1, Lbgf;->x:D
 
-    iget-wide v8, v3, Lbff;->y:D
+    iget-wide v8, v3, Lbgf;->y:D
 
     sub-double v8, v0, v8
 
     mul-double/2addr v6, v8
 
-    iget-wide v8, p1, Lbff;->y:D
+    iget-wide v8, p1, Lbgf;->y:D
 
     div-double/2addr v6, v8
 
     add-double/2addr v4, v6
 
-    new-instance v3, Lbff;
+    new-instance v3, Lbgf;
 
-    invoke-direct {v3, v4, v5, v0, v1}, Lbff;-><init>(DD)V
+    invoke-direct {v3, v4, v5, v0, v1}, Lbgf;-><init>(DD)V
 
-    invoke-virtual {v2, v3}, Lapl;->a(Lbff;)Lapl;
+    invoke-virtual {v2, v3}, Laqk;->a(Lbgf;)Laqk;
 
     .line 416
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lapl;->a(Z)Lapl;
+    invoke-virtual {v0, v1}, Laqk;->a(Z)Laqk;
 
     .line 417
     sget-object v0, Lcom/snapchat/android/ui/VerticalFlinger$MovementState;->FLING:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
@@ -679,12 +639,12 @@
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/ui/VerticalFlinger;Lbff;)V
+.method static synthetic a(Lcom/snapchat/android/ui/VerticalFlinger;Lbgf;)V
     .locals 0
 
     .prologue
     .line 39
-    invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->setViewPosition(Lbff;)V
+    invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->setViewPosition(Lbgf;)V
 
     return-void
 .end method
@@ -749,56 +709,56 @@
 
     .line 334
     :pswitch_0
-    invoke-direct {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getTouchVelocity()Lbff;
+    invoke-direct {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getTouchVelocity()Lbgf;
 
     move-result-object v7
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    new-instance v3, Lbff;
+    new-instance v3, Lbgf;
 
-    iget-wide v4, v7, Lbff;->x:D
+    iget-wide v4, v7, Lbgf;->x:D
 
     mul-double/2addr v4, v10
 
-    iget-wide v8, v7, Lbff;->y:D
+    iget-wide v8, v7, Lbgf;->y:D
 
     mul-double/2addr v8, v10
 
-    invoke-direct {v3, v4, v5, v8, v9}, Lbff;-><init>(DD)V
+    invoke-direct {v3, v4, v5, v8, v9}, Lbgf;-><init>(DD)V
 
-    invoke-virtual {v0}, Lapl;->f()V
+    invoke-virtual {v0}, Laqk;->f()V
 
-    invoke-static {v3}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v3}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-boolean v4, v0, Lapl;->d:Z
+    iget-boolean v4, v0, Laqk;->d:Z
 
     if-eqz v4, :cond_1
 
-    iget-object v4, v0, Lapl;->a:Lbj;
+    iget-object v4, v0, Laqk;->a:Lbj;
 
-    iget-wide v8, v3, Lbff;->x:D
+    iget-wide v8, v3, Lbgf;->x:D
 
     invoke-virtual {v4, v8, v9}, Lbj;->c(D)Lbj;
 
-    iget-object v0, v0, Lapl;->b:Lbj;
+    iget-object v0, v0, Laqk;->b:Lbj;
 
-    iget-wide v4, v3, Lbff;->y:D
+    iget-wide v4, v3, Lbgf;->y:D
 
     invoke-virtual {v0, v4, v5}, Lbj;->c(D)Lbj;
 
     :goto_0
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v0
 
-    iget-wide v4, v0, Lbff;->y:D
+    iget-wide v4, v0, Lbgf;->y:D
 
     invoke-static {v4, v5}, Ljava/lang/Math;->signum(D)D
 
     move-result-wide v4
 
-    iget-wide v8, v7, Lbff;->y:D
+    iget-wide v8, v7, Lbgf;->y:D
 
     invoke-static {v8, v9}, Ljava/lang/Math;->signum(D)D
 
@@ -811,11 +771,11 @@
     move v0, v1
 
     :goto_1
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v3
 
-    iget-wide v4, v3, Lbff;->y:D
+    iget-wide v4, v3, Lbgf;->y:D
 
     invoke-static {v4, v5}, Ljava/lang/Math;->abs(D)D
 
@@ -832,7 +792,7 @@
     move v3, v1
 
     :goto_2
-    iget-wide v4, v7, Lbff;->y:D
+    iget-wide v4, v7, Lbgf;->y:D
 
     invoke-static {v4, v5}, Ljava/lang/Math;->abs(D)D
 
@@ -887,7 +847,7 @@
     :goto_6
     if-eqz v0, :cond_8
 
-    invoke-direct {p0, v7}, Lcom/snapchat/android/ui/VerticalFlinger;->a(Lbff;)V
+    invoke-direct {p0, v7}, Lcom/snapchat/android/ui/VerticalFlinger;->a(Lbgf;)V
 
     .line 352
     :goto_7
@@ -899,7 +859,7 @@
 
     .line 334
     :cond_1
-    iput-object v3, v0, Lapl;->f:Lbff;
+    iput-object v3, v0, Laqk;->f:Lbgf;
 
     goto :goto_0
 
@@ -950,11 +910,11 @@
 
     mul-float/2addr v0, v3
 
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v3
 
-    iget-wide v4, v3, Lbff;->y:D
+    iget-wide v4, v3, Lbgf;->y:D
 
     invoke-static {v4, v5}, Ljava/lang/Math;->abs(D)D
 
@@ -969,23 +929,23 @@
     :goto_8
     if-eqz v1, :cond_a
 
-    new-instance v0, Lbff;
+    new-instance v0, Lbgf;
 
     const-wide/16 v2, 0x0
 
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v1
 
-    iget-wide v4, v1, Lbff;->y:D
+    iget-wide v4, v1, Lbgf;->y:D
 
     invoke-static {v4, v5}, Ljava/lang/Math;->signum(D)D
 
     move-result-wide v4
 
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lbgf;-><init>(DD)V
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->a(Lbff;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->a(Lbgf;)V
 
     goto :goto_7
 
@@ -999,44 +959,8 @@
 
     goto :goto_7
 
-    .line 337
-    :pswitch_2
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Received touch up event while in FLING state. Weird. Ignoring."
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_7
-
-    .line 340
-    :pswitch_3
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Received touch up event while in GONE state. Weird. Ignoring."
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_7
-
-    .line 343
-    :pswitch_4
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Received touch up event while in RETURN state. Weird. Ignoring."
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_7
-
     .line 346
-    :pswitch_5
+    :pswitch_2
     sget-object v0, Lcom/snapchat/android/ui/VerticalFlinger$MovementState;->CENTER:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->setMovementState(Lcom/snapchat/android/ui/VerticalFlinger$MovementState;)V
@@ -1048,17 +972,17 @@
     .packed-switch 0x1
         :pswitch_1
         :pswitch_0
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
         :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
     .end packed-switch
 .end method
 
 .method private b(Landroid/view/MotionEvent;)V
     .locals 8
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -1105,23 +1029,9 @@
     .line 534
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 538
-    :goto_0
-    return-void
-
-    .line 536
+    .line 535
     :cond_0
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Velocity tracker not available! Did Android send us events in the wrong order?"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
+    return-void
 .end method
 
 .method private c()V
@@ -1129,11 +1039,11 @@
 
     .prologue
     .line 465
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lapl;->a(Z)Lapl;
+    invoke-virtual {v0, v1}, Laqk;->a(Z)Laqk;
 
     .line 466
     sget-object v0, Lcom/snapchat/android/ui/VerticalFlinger$MovementState;->DRAG:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
@@ -1151,17 +1061,17 @@
     const-wide/16 v6, 0x0
 
     .line 546
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v0
 
     .line 549
-    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbff;
+    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbgf;
 
     if-nez v1, :cond_0
 
     .line 550
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbgf;
 
     .line 571
     :goto_0
@@ -1169,11 +1079,11 @@
 
     .line 554
     :cond_0
-    iget-wide v2, v0, Lbff;->y:D
+    iget-wide v2, v0, Lbgf;->y:D
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbff;
+    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbgf;
 
-    iget-wide v4, v1, Lbff;->y:D
+    iget-wide v4, v1, Lbgf;->y:D
 
     sub-double/2addr v2, v4
 
@@ -1196,7 +1106,7 @@
     .line 570
     :cond_1
     :goto_1
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbgf;
 
     goto :goto_0
 
@@ -1217,11 +1127,11 @@
 
     .line 561
     :cond_3
-    iget-wide v2, v0, Lbff;->y:D
+    iget-wide v2, v0, Lbgf;->y:D
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbff;
+    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbgf;
 
-    iget-wide v4, v1, Lbff;->y:D
+    iget-wide v4, v1, Lbgf;->y:D
 
     sub-double/2addr v2, v4
 
@@ -1267,23 +1177,23 @@
     invoke-direct {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->f()V
 
     .line 635
-    invoke-static {}, Lbff;->a()Lbff;
+    invoke-static {}, Lbgf;->a()Lbgf;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->q:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->q:Lbgf;
 
     .line 636
-    invoke-static {}, Lbff;->a()Lbff;
+    invoke-static {}, Lbgf;->a()Lbgf;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->r:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->r:Lbgf;
 
     .line 637
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->s:Lbgf;
 
     .line 638
     sget v0, Lcom/snapchat/android/ui/VerticalFlinger$c;->a:I
@@ -1318,7 +1228,7 @@
     return-void
 .end method
 
-.method private getTouchVelocity()Lbff;
+.method private getTouchVelocity()Lbgf;
     .locals 6
 
     .prologue
@@ -1328,18 +1238,7 @@
     if-nez v0, :cond_0
 
     .line 446
-    const-string v0, "VerticalFlinger"
-
-    const-string v1, "Velocity tracker not available! Did Android send us events in the wrong order?"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 447
-    invoke-static {}, Lbff;->a()Lbff;
+    invoke-static {}, Lbgf;->a()Lbgf;
 
     move-result-object v0
 
@@ -1358,7 +1257,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
     .line 452
-    new-instance v0, Lbff;
+    new-instance v0, Lbgf;
 
     iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->o:Landroid/view/VelocityTracker;
 
@@ -1376,7 +1275,7 @@
 
     float-to-double v4, v1
 
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lbgf;-><init>(DD)V
 
     goto :goto_0
 .end method
@@ -1384,7 +1283,7 @@
 .method private setMovementState(Lcom/snapchat/android/ui/VerticalFlinger$MovementState;)V
     .locals 3
     .param p1    # Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -1522,52 +1421,52 @@
     .end packed-switch
 .end method
 
-.method private setPosition(Lbff;)V
+.method private setPosition(Lbgf;)V
     .locals 4
-    .param p1    # Lbff;
-        .annotation build Lcgb;
+    .param p1    # Lbgf;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 234
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v0
 
     .line 235
-    invoke-virtual {p1, v0}, Lbff;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Lbgf;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
     .line 236
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    invoke-virtual {v0}, Lapl;->f()V
+    invoke-virtual {v0}, Laqk;->f()V
 
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-boolean v1, v0, Lapl;->d:Z
+    iget-boolean v1, v0, Laqk;->d:Z
 
     if-eqz v1, :cond_1
 
-    iget-object v1, v0, Lapl;->a:Lbj;
+    iget-object v1, v0, Laqk;->a:Lbj;
 
-    iget-wide v2, p1, Lbff;->x:D
+    iget-wide v2, p1, Lbgf;->x:D
 
     invoke-virtual {v1, v2, v3}, Lbj;->a(D)Lbj;
 
-    iget-object v0, v0, Lapl;->b:Lbj;
+    iget-object v0, v0, Laqk;->b:Lbj;
 
-    iget-wide v2, p1, Lbff;->y:D
+    iget-wide v2, p1, Lbgf;->y:D
 
     invoke-virtual {v0, v2, v3}, Lbj;->a(D)Lbj;
 
     .line 237
     :goto_0
-    invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->setViewPosition(Lbff;)V
+    invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->setViewPosition(Lbgf;)V
 
     .line 239
     :cond_0
@@ -1575,7 +1474,7 @@
 
     .line 236
     :cond_1
-    iput-object p1, v0, Lapl;->e:Lbff;
+    iput-object p1, v0, Laqk;->e:Lbgf;
 
     goto :goto_0
 .end method
@@ -1594,10 +1493,10 @@
     return-void
 .end method
 
-.method private setRotationBasedOnDistanceFromCenter(Lbff;)V
+.method private setRotationBasedOnDistanceFromCenter(Lbgf;)V
     .locals 7
-    .param p1    # Lbff;
-        .annotation build Lcgb;
+    .param p1    # Lbgf;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -1618,7 +1517,7 @@
     div-float/2addr v0, v6
 
     .line 501
-    iget-wide v2, p1, Lbff;->x:D
+    iget-wide v2, p1, Lbgf;->x:D
 
     double-to-float v1, v2
 
@@ -1643,7 +1542,7 @@
     div-float/2addr v1, v6
 
     .line 505
-    iget-wide v2, p1, Lbff;->y:D
+    iget-wide v2, p1, Lbgf;->y:D
 
     double-to-float v2, v2
 
@@ -1676,13 +1575,13 @@
 .method private setTouchDownPosition(Landroid/view/MotionEvent;)V
     .locals 6
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 471
-    new-instance v0, Lbff;
+    new-instance v0, Lbgf;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
@@ -1696,12 +1595,12 @@
 
     float-to-double v4, v1
 
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lbgf;-><init>(DD)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->q:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->q:Lbgf;
 
     .line 473
-    new-instance v0, Lbff;
+    new-instance v0, Lbgf;
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getTranslationX()F
 
@@ -1715,9 +1614,9 @@
 
     float-to-double v4, v1
 
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lbgf;-><init>(DD)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->r:Lbff;
+    iput-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->r:Lbgf;
 
     .line 476
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -1737,10 +1636,10 @@
     return-void
 .end method
 
-.method private setViewPosition(Lbff;)V
+.method private setViewPosition(Lbgf;)V
     .locals 2
-    .param p1    # Lbff;
-        .annotation build Lcgb;
+    .param p1    # Lbgf;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -1750,7 +1649,7 @@
 
     if-eqz v0, :cond_1
 
-    iget-wide v0, p1, Lbff;->x:D
+    iget-wide v0, p1, Lbgf;->x:D
 
     double-to-float v0, v0
 
@@ -1758,7 +1657,7 @@
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->setTranslationX(F)V
 
     .line 482
-    iget-wide v0, p1, Lbff;->y:D
+    iget-wide v0, p1, Lbgf;->y:D
 
     double-to-float v0, v0
 
@@ -1770,7 +1669,7 @@
     if-eqz v0, :cond_0
 
     .line 485
-    invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->setRotationBasedOnDistanceFromCenter(Lbff;)V
+    invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->setRotationBasedOnDistanceFromCenter(Lbgf;)V
 
     .line 488
     :cond_0
@@ -1788,12 +1687,12 @@
 
 
 # virtual methods
-.method public getCurrentPosition()Lbff;
+.method public getCurrentPosition()Lbgf;
     .locals 6
 
     .prologue
     .line 919
-    new-instance v0, Lbff;
+    new-instance v0, Lbgf;
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getTranslationX()F
 
@@ -1807,7 +1706,7 @@
 
     float-to-double v4, v1
 
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lbgf;-><init>(DD)V
 
     return-object v0
 .end method
@@ -1857,7 +1756,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->b(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->b(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -1875,7 +1774,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->b(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->b(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -1911,15 +1810,15 @@
 
     .prologue
     .line 895
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    invoke-virtual {v0}, Lapl;->f()V
+    invoke-virtual {v0}, Laqk;->f()V
 
-    iget-object v0, v0, Lapl;->a:Lbj;
+    iget-object v0, v0, Laqk;->a:Lbj;
 
     iget-object v0, v0, Lbj;->a:Lbl;
 
-    invoke-static {v0}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -1935,7 +1834,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->b(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->b(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -1953,7 +1852,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->b(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->b(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -1968,9 +1867,9 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     .line 179
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    iget-boolean v0, v0, Lbfm;->mIsReleased:Z
+    iget-boolean v0, v0, Lbgm;->mIsReleased:Z
 
     if-eqz v0, :cond_0
 
@@ -2010,9 +1909,9 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
     .line 168
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    invoke-virtual {v0}, Lapl;->e()V
+    invoke-virtual {v0}, Laqk;->e()V
 
     invoke-direct {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->f()V
 
@@ -2021,9 +1920,9 @@
 .end method
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 4
+    .locals 3
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -2125,13 +2024,9 @@
     goto :goto_1
 
     :pswitch_3
-    const-string v1, "VerticalFlinger"
+    invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->setTouchDownPosition(Landroid/view/MotionEvent;)V
 
-    const-string v2, "Received touch down event while in DRAG state. Weird. Ignoring."
-
-    new-array v3, v0, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->c()V
 
     goto :goto_2
 
@@ -2142,32 +2037,14 @@
 
     goto :goto_2
 
-    :pswitch_5
-    const-string v1, "VerticalFlinger"
-
-    const-string v2, "Received touch down event while in GONE state. Weird. Ignoring."
-
-    new-array v3, v0, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :pswitch_6
-    invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->setTouchDownPosition(Landroid/view/MotionEvent;)V
-
-    invoke-direct {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->c()V
-
-    goto :goto_2
-
     .line 259
-    :pswitch_7
+    :pswitch_5
     invoke-direct {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->b()V
 
     goto :goto_1
 
     .line 262
-    :pswitch_8
+    :pswitch_6
     invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VerticalFlinger;->a(Landroid/view/MotionEvent;)V
 
     goto :goto_1
@@ -2178,18 +2055,18 @@
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
-        :pswitch_7
-        :pswitch_8
+        :pswitch_5
+        :pswitch_6
     .end packed-switch
 
     .line 256
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_1
+        :pswitch_2
         :pswitch_3
+        :pswitch_2
         :pswitch_4
-        :pswitch_5
-        :pswitch_6
         :pswitch_2
     .end packed-switch
 .end method
@@ -2197,7 +2074,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
     .param p1    # Landroid/view/MotionEvent;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -2277,7 +2154,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Lck;->a(Z)V
+    invoke-static {v0}, Lco;->a(Z)V
 
     .line 815
     iput p1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->e:F
@@ -2305,19 +2182,19 @@
     iput-boolean p1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->a:Z
 
     .line 690
-    new-instance v0, Lbff;
+    new-instance v0, Lbgf;
 
     const-wide/16 v2, 0x0
 
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v1
 
-    iget-wide v4, v1, Lbff;->y:D
+    iget-wide v4, v1, Lbgf;->y:D
 
-    invoke-direct {v0, v2, v3, v4, v5}, Lbff;-><init>(DD)V
+    invoke-direct {v0, v2, v3, v4, v5}, Lbgf;-><init>(DD)V
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->setPosition(Lbff;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->setPosition(Lbgf;)V
 
     .line 692
     :cond_0
@@ -2327,7 +2204,7 @@
 .method public setListener(Lcom/snapchat/android/ui/VerticalFlinger$a;)V
     .locals 0
     .param p1    # Lcom/snapchat/android/ui/VerticalFlinger$a;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -2368,7 +2245,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Lck;->a(Z)V
+    invoke-static {v0}, Lco;->a(Z)V
 
     .line 747
     iput p1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->d:F
@@ -2397,14 +2274,14 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Lck;->a(Z)V
+    invoke-static {v0}, Lco;->a(Z)V
 
     .line 798
     invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {p1, v0}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -2434,14 +2311,14 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Lck;->a(Z)V
+    invoke-static {v0}, Lco;->a(Z)V
 
     .line 781
     invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {p1, v0}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -2486,14 +2363,14 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Lck;->a(Z)V
+    invoke-static {v0}, Lco;->a(Z)V
 
     .line 764
     invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {p1, v0}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 
@@ -2514,9 +2391,9 @@
 
     .prologue
     .line 672
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    invoke-virtual {v0, p1}, Lapl;->b(Z)Lapl;
+    invoke-virtual {v0, p1}, Laqk;->b(Z)Laqk;
 
     .line 673
     return-void
@@ -2540,9 +2417,9 @@
     if-eqz p1, :cond_1
 
     .line 867
-    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    invoke-virtual {v1, v0}, Lapl;->a(Z)Lapl;
+    invoke-virtual {v1, v0}, Laqk;->a(Z)Laqk;
 
     .line 872
     :cond_0
@@ -2551,7 +2428,7 @@
 
     .line 869
     :cond_1
-    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v1, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/VerticalFlinger;->m:Lcom/snapchat/android/ui/VerticalFlinger$MovementState;
 
@@ -2569,7 +2446,7 @@
     const/4 v0, 0x1
 
     :cond_3
-    invoke-virtual {v1, v0}, Lapl;->a(Z)Lapl;
+    invoke-virtual {v1, v0}, Laqk;->a(Z)Laqk;
 
     goto :goto_0
 .end method
@@ -2590,11 +2467,11 @@
     if-eqz p1, :cond_1
 
     .line 710
-    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbff;
+    invoke-virtual {p0}, Lcom/snapchat/android/ui/VerticalFlinger;->getCurrentPosition()Lbgf;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->setRotationBasedOnDistanceFromCenter(Lbff;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/ui/VerticalFlinger;->setRotationBasedOnDistanceFromCenter(Lbgf;)V
 
     .line 715
     :cond_0
@@ -2613,15 +2490,15 @@
 .method public setSpringConfig(Lbl;)V
     .locals 1
     .param p1    # Lbl;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 887
-    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Lapl;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VerticalFlinger;->l:Laqk;
 
-    invoke-virtual {v0, p1}, Lapl;->a(Lbl;)Lapl;
+    invoke-virtual {v0, p1}, Laqk;->a(Lbl;)Laqk;
 
     .line 888
     return-void
@@ -2638,7 +2515,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lavh;->a(FLandroid/content/Context;)F
+    invoke-static {v0, v1}, Lawf;->a(FLandroid/content/Context;)F
 
     move-result v0
 

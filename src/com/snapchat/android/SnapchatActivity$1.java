@@ -1,23 +1,23 @@
 package com.snapchat.android;
 
-import ajv;
+import akp;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.Loader;
-import mi;
-import nf;
+import mz;
+import nw;
 
 final class SnapchatActivity$1
-  implements LoaderManager.LoaderCallbacks<ajv>
+  implements LoaderManager.LoaderCallbacks<akp>
 {
   SnapchatActivity$1(SnapchatActivity paramSnapchatActivity) {}
   
-  public final Loader<ajv> onCreateLoader(int paramInt, Bundle paramBundle)
+  public final Loader<akp> onCreateLoader(int paramInt, Bundle paramBundle)
   {
-    return new mi(a, nf.a());
+    return new mz(a, nw.a());
   }
   
-  public final void onLoaderReset(Loader<ajv> paramLoader) {}
+  public final void onLoaderReset(Loader<akp> paramLoader) {}
 }
 
 /* Location:

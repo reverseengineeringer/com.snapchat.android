@@ -3,242 +3,226 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lrh;",
-        ">;"
-    }
-.end annotation
+.implements Lre;
 
 
 # static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
-# instance fields
-.field private final mCashCardManagerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lxr;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final mSquareProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final supertypeInjector:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final NAME:Ljava/lang/String; = "snapcash"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 10
-    const-class v0, Lri;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lri;->$assertionsDisabled:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lxr;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;)V"
-        }
+.method public constructor <init>()V
+    .locals 0
+    .annotation runtime Ljavax/inject/Inject;
     .end annotation
 
     .prologue
-    .line 16
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
-    sget-boolean v0, Lri;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 18
-    :cond_0
-    iput-object p1, p0, Lri;->supertypeInjector:Lbuj;
-
-    .line 19
-    sget-boolean v0, Lri;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 20
-    :cond_1
-    iput-object p2, p0, Lri;->mCashCardManagerProvider:Ljavax/inject/Provider;
-
-    .line 21
-    sget-boolean v0, Lri;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_2
-
-    if-nez p3, :cond_2
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 22
-    :cond_2
-    iput-object p3, p0, Lri;->mSquareProvider:Ljavax/inject/Provider;
-
-    .line 23
     return-void
-.end method
-
-.method public static a(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lxr;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lsn;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lrh;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 36
-    new-instance v0, Lri;
-
-    invoke-direct {v0, p0, p1, p2}, Lri;-><init>(Lbuj;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final a()V
+    .locals 0
 
     .prologue
-    .line 10
-    check-cast p1, Lrh;
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "Cannot inject members into a null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iget-object v0, p0, Lri;->supertypeInjector:Lbuj;
-
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lri;->mCashCardManagerProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lxr;
-
-    iput-object v0, p1, Lrh;->mCashCardManager:Lxr;
-
-    iget-object v0, p0, Lri;->mSquareProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lsn;
-
-    iput-object v0, p1, Lrh;->mSquareProvider:Lsn;
-
+    .line 62
     return-void
+.end method
+
+.method public final a(Lcom/snapchat/android/model/chat/CashFeedItem;)V
+    .locals 0
+    .param p1    # Lcom/snapchat/android/model/chat/CashFeedItem;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 70
+    return-void
+.end method
+
+.method public final a(Ljava/lang/String;)V
+    .locals 0
+
+    .prologue
+    .line 66
+    return-void
+.end method
+
+.method public final b()Ljava/util/Collection;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection",
+            "<",
+            "Lrl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 32
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Lrl;
+
+    const/4 v1, 0x0
+
+    new-instance v2, Lro;
+
+    invoke-direct {v2}, Lro;-><init>()V
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c()Ljava/util/Collection;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection",
+            "<",
+            "Lrl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 37
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Lrl;
+
+    const/4 v1, 0x0
+
+    new-instance v2, Lrq;
+
+    invoke-direct {v2}, Lrq;-><init>()V
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final d()Ljava/util/Collection;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection",
+            "<",
+            "Lrl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 42
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Lrl;
+
+    const/4 v1, 0x0
+
+    new-instance v2, Lrr;
+
+    invoke-direct {v2}, Lrr;-><init>()V
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e()Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection",
+            "<",
+            "Lrl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 47
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    return-object v0
+.end method
+
+.method public final f()Ljava/util/Collection;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection",
+            "<",
+            "Lrl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 52
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Lrl;
+
+    const/4 v1, 0x0
+
+    new-instance v2, Lro;
+
+    invoke-direct {v2}, Lro;-><init>()V
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final g()Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection",
+            "<",
+            "Lrl;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 57
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    return-object v0
 .end method

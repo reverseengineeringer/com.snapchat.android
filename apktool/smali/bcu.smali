@@ -4,27 +4,22 @@
 
 
 # instance fields
-.field public final friendUsername:Ljava/lang/String;
-    .annotation build Lcgb;
-    .end annotation
-.end field
+.field public final mHasGivenAccessToContacts:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 13
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
-    iput-object p1, p0, Lbcu;->friendUsername:Ljava/lang/String;
+    .line 11
+    const/4 v0, 0x1
 
-    .line 15
+    iput-boolean v0, p0, Lbcu;->mHasGivenAccessToContacts:Z
+
+    .line 12
     return-void
 .end method

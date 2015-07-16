@@ -27,7 +27,7 @@ class GLThread$GLThreadManager
   public void checkGLDriver(GL10 paramGL10)
   {
     boolean bool2 = false;
-    label98:
+    label94:
     for (;;)
     {
       try
@@ -42,17 +42,16 @@ class GLThread$GLThreadManager
             {
               bool1 = true;
               mMultipleGLESContextsAllowed = bool1;
-              notifyAll();
             }
           }
           else
           {
             if (!mMultipleGLESContextsAllowed) {
-              break label98;
+              break label94;
             }
             bool1 = bool2;
             if (paramGL10.startsWith("Adreno")) {
-              break label98;
+              break label94;
             }
             mLimitedGLESContexts = bool1;
             mGLESDriverCheckComplete = true;
@@ -75,7 +74,6 @@ class GLThread$GLThreadManager
     if (mEglOwner == paramGLThread) {
       mEglOwner = null;
     }
-    notifyAll();
   }
   
   public boolean shouldReleaseEGLContextWhenPausing()
@@ -137,18 +135,19 @@ class GLThread$GLThreadManager
       if (mEglOwner == paramGLThread) {
         mEglOwner = null;
       }
-      notifyAll();
       return;
     }
-    finally {}
+    finally
+    {
+      paramGLThread = finally;
+      throw paramGLThread;
+    }
   }
   
   public boolean tryAcquireEglContextLocked(GLThread paramGLThread)
   {
-    if ((mEglOwner == paramGLThread) || (mEglOwner == null))
-    {
+    if ((mEglOwner == paramGLThread) || (mEglOwner == null)) {
       mEglOwner = paramGLThread;
-      notifyAll();
     }
     do
     {

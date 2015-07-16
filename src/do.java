@@ -1,17 +1,36 @@
-import java.util.Comparator;
+import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 @cd
-public abstract class do<T>
-  implements Comparator<T>
+abstract class do<K, V>
+  extends dr<Map.Entry<K, V>>
 {
-  @cd
-  public <S extends T> do<S> a()
+  public boolean contains(@Nullable Object paramObject)
   {
-    return new dm(this);
+    boolean bool2 = false;
+    boolean bool1 = bool2;
+    if ((paramObject instanceof Map.Entry))
+    {
+      paramObject = (Map.Entry)paramObject;
+      Object localObject = e().get(((Map.Entry)paramObject).getKey());
+      bool1 = bool2;
+      if (localObject != null)
+      {
+        bool1 = bool2;
+        if (localObject.equals(((Map.Entry)paramObject).getValue())) {
+          bool1 = true;
+        }
+      }
+    }
+    return bool1;
   }
   
-  public abstract int compare(@Nullable T paramT1, @Nullable T paramT2);
+  abstract dm<K, V> e();
+  
+  public int size()
+  {
+    return e().size();
+  }
 }
 
 /* Location:

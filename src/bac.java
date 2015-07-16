@@ -1,72 +1,27 @@
-import android.content.Context;
-import com.snapchat.android.Timber;
-import com.snapchat.android.notification.AndroidNotificationManager;
-import com.snapchat.android.util.AlertDialogUtils;
-import com.snapchat.android.util.debug.ReleaseManager;
-import javax.inject.Inject;
-
 public final class bac
+  implements bvp<acy>
 {
-  private static final String TAG = "AnrReporter";
-  public final bkz mAnrDetector;
-  private final azi mCrashSampler;
-  final azp mExceptionHandler;
-  private final ReleaseManager mReleaseManager;
+  private final baa module;
   
-  @Inject
-  bac(azi paramazi, bkz parambkz, ReleaseManager paramReleaseManager, azp paramazp, Context paramContext)
+  static
   {
-    mCrashSampler = paramazi;
-    mAnrDetector = parambkz;
-    mReleaseManager = paramReleaseManager;
-    mExceptionHandler = paramazp;
-    if (mCrashSampler.b())
+    if (!bac.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      paramazi = new baf(paramContext, "c06b8797877eb662616000c11de0d338", ReleaseManager.d());
-      mAnrDetector.a(paramazi);
-      mAnrDetector.a(new bae());
+      $assertionsDisabled = bool;
+      return;
     }
-    if (ReleaseManager.c()) {
-      mAnrDetector.a(new bac.a(paramContext, (byte)0));
-    }
-    mAnrDetector.a(new blb()
-    {
-      public final void a(String paramAnonymousString, bla paramAnonymousbla)
-      {
-        Timber.f("AnrReporter", paramAnonymousString, new Object[0]);
-      }
-    });
-    mAnrDetector.b = new Thread.UncaughtExceptionHandler()
-    {
-      public final void uncaughtException(Thread paramAnonymousThread, Throwable paramAnonymousThrowable)
-      {
-        mExceptionHandler.a(paramAnonymousThrowable);
-      }
-    };
   }
   
-  static final class a
-    implements blb
+  private bac(baa parambaa)
   {
-    final Context mContext;
-    
-    private a(@cgb Context paramContext)
-    {
-      mContext = paramContext;
-    }
-    
-    public final void a(String paramString, bla parambla)
-    {
-      bgp.a(new Runnable()
-      {
-        public final void run()
-        {
-          AlertDialogUtils.a("ANR detected from Snapchat! See more details in notification", mContext, 1);
-        }
-      });
-      AndroidNotificationManager.a();
-      AndroidNotificationManager.c(mContext, paramString);
-    }
+    assert (parambaa != null);
+    module = parambaa;
+  }
+  
+  public static bvp<acy> a(baa parambaa)
+  {
+    return new bac(parambaa);
   }
 }
 

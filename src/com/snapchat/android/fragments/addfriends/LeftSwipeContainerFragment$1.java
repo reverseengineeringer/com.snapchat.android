@@ -1,8 +1,10 @@
 package com.snapchat.android.fragments.addfriends;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import avh;
+import awf;
+import mu;
 
 final class LeftSwipeContainerFragment$1
   implements ViewPager.OnPageChangeListener
@@ -13,10 +15,14 @@ final class LeftSwipeContainerFragment$1
   
   public final void onPageScrolled(int paramInt1, float paramFloat, int paramInt2)
   {
+    Fragment localFragment = aa).a;
     if ((paramInt1 == 0) && (paramFloat <= 0.05F))
     {
-      avh.a(a.getActivity(), LeftSwipeContainerFragment.a(a));
+      awf.a(a.getActivity(), LeftSwipeContainerFragment.b(a));
       a.getActivity().onBackPressed();
+      if ((localFragment instanceof LeftSwipeContainerFragment.a)) {
+        ((LeftSwipeContainerFragment.a)localFragment).H();
+      }
     }
   }
   

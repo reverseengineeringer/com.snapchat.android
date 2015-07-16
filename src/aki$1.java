@@ -1,10 +1,4 @@
-import java.util.Comparator;
-
-final class aki$1
-  implements Comparator<bjn>
-{
-  aki$1(aki paramaki) {}
-}
+final class aki$1 {}
 
 /* Location:
  * Qualified Name:     aki.1

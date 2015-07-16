@@ -57,7 +57,7 @@
     move-result-object v0
 
     .line 67
-    invoke-static {v0, p0}, Laur;->a(Landroid/net/Uri;Landroid/content/Context;)Landroid/graphics/Bitmap;
+    invoke-static {v0, p0}, Lavp;->a(Landroid/net/Uri;Landroid/content/Context;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
@@ -76,7 +76,7 @@
 
     .line 73
     :cond_1
-    invoke-static {p0, v1}, Lazg;->a(Landroid/app/Activity;Landroid/graphics/Bitmap;)Ljava/lang/String;
+    invoke-static {p0, v1}, Lbaf;->a(Landroid/app/Activity;Landroid/graphics/Bitmap;)Ljava/lang/String;
 
     .line 75
     const v0, 0x7f0a0087
@@ -143,11 +143,23 @@
     .locals 2
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/util/debug/BugReportActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/util/debug/BugReportActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 27
     invoke-super {p0, p1}, Lcom/snapchat/android/SnapchatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 28
-    const v0, 0x7f04000f
+    const v0, 0x7f040010
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/util/debug/BugReportActivity;->setContentView(I)V
 
@@ -185,9 +197,9 @@
     invoke-super {p0}, Lcom/snapchat/android/SnapchatActivity;->onStart()V
 
     .line 41
-    iget-object v0, p0, Lcom/snapchat/android/util/debug/BugReportActivity;->mShakeReporter:Lazv;
+    iget-object v0, p0, Lcom/snapchat/android/util/debug/BugReportActivity;->mShakeReporter:Lbau;
 
-    invoke-virtual {v0}, Lazv;->a()V
+    invoke-virtual {v0}, Lbau;->a()V
 
     .line 42
     return-void

@@ -1,5 +1,5 @@
-.class final Lqr$a;
-.super Lpl;
+.class public final Lqr$a;
+.super Lqc;
 .source "SourceFile"
 
 
@@ -9,53 +9,86 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = "a"
 .end annotation
 
-.annotation runtime Ltn;
+.annotation runtime Lud;
 .end annotation
 
 
 # instance fields
-.field conversationId:Ljava/lang/String;
+.field clientProperties:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "conversation_id"
+        value = "client_properties"
+    .end annotation
+.end field
+
+.field seenTooltips:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "seen_tooltips"
     .end annotation
 .end field
 
 .field final synthetic this$0:Lqr;
 
-.field transactionId:Ljava/lang/String;
+.field username:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "transaction_id"
+        value = "username"
     .end annotation
 .end field
 
 
 # direct methods
-.method constructor <init>(Lqr;)V
-    .locals 1
+.method public constructor <init>(Lqr;)V
+    .locals 2
 
     .prologue
-    .line 29
+    .line 46
     iput-object p1, p0, Lqr$a;->this$0:Lqr;
 
-    invoke-direct {p0}, Lpl;-><init>()V
+    invoke-direct {p0}, Lqc;-><init>()V
 
-    .line 30
-    iget-object v0, p0, Lqr$a;->this$0:Lqr;
+    .line 47
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
 
-    iget-object v0, v0, Lqr;->mTransactionId:Ljava/lang/String;
+    move-result-object v0
 
-    iput-object v0, p0, Lqr$a;->transactionId:Ljava/lang/String;
+    iput-object v0, p0, Lqr$a;->username:Ljava/lang/String;
 
-    .line 32
-    iget-object v0, p0, Lqr$a;->this$0:Lqr;
+    .line 49
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
 
-    iget-object v0, v0, Lqr;->mConversationId:Ljava/lang/String;
+    move-result-object v0
 
-    iput-object v0, p0, Lqr$a;->conversationId:Ljava/lang/String;
+    iget-object v1, p0, Lqr$a;->this$0:Lqr;
+
+    invoke-static {v1}, Lqr;->a(Lqr;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lqr$a;->seenTooltips:Ljava/lang/String;
+
+    .line 51
+    invoke-static {}, Laul;->a()Lcom/google/gson/Gson;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lqr$a;->this$0:Lqr;
+
+    invoke-static {v1}, Lqr;->b(Lqr;)Ljava/util/Map;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lqr$a;->clientProperties:Ljava/lang/String;
 
     return-void
 .end method

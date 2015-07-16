@@ -1,19 +1,23 @@
 import com.google.gson.annotations.SerializedName;
-import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class bjo
-  extends bgy
 {
-  @SerializedName("story_ids")
-  protected List<String> storyIds;
+  @SerializedName("story")
+  protected bkh story;
+  @SerializedName("story_extras")
+  protected bki storyExtras;
   
-  public final bjo a(List<String> paramList)
+  public final bkh a()
   {
-    storyIds = paramList;
-    return this;
+    return story;
+  }
+  
+  public final bki b()
+  {
+    return storyExtras;
   }
   
   public boolean equals(Object paramObject)
@@ -25,12 +29,12 @@ public class bjo
       return false;
     }
     paramObject = (bjo)paramObject;
-    return new EqualsBuilder().append(storyIds, storyIds).isEquals();
+    return new EqualsBuilder().append(story, story).append(storyExtras, storyExtras).isEquals();
   }
   
   public int hashCode()
   {
-    return new HashCodeBuilder().append(storyIds).toHashCode();
+    return new HashCodeBuilder().append(story).append(storyExtras).toHashCode();
   }
   
   public String toString()

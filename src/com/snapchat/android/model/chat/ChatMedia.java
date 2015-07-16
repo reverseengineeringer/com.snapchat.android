@@ -1,31 +1,30 @@
 package com.snapchat.android.model.chat;
 
-import aim;
-import ajx;
-import akb;
-import akb.a;
+import aji;
+import akr;
+import akw;
+import akw.a;
 import android.net.Uri;
-import aud;
-import ayd;
-import bgk;
-import bhf;
-import bih;
-import bij;
-import cgb;
-import com.snapchat.android.Timber;
+import avb;
+import azb;
+import bhk;
+import bif;
+import bjh;
+import bjj;
+import chc;
 import com.snapchat.android.model.MediaMailingMetadata;
 import com.snapchat.android.model.Mediabryo;
 import java.util.Date;
 
 public class ChatMedia
-  extends akb
+  extends akw
 {
   public static final String CHAT_MEDIA_PATH = "/bq/chat_media";
   private static final long MAX_PRESERVATION_PERIOD = 120000L;
   private static final String TAG = "ChatMedia";
   public static final String TYPE = "media";
   private static final long UNINITIALIZED_PRESERVATION_TIMESTAMP = -1L;
-  private bgk mClock;
+  private bhk mClock;
   protected int mHeight;
   public boolean mIsLoaded = false;
   protected String mIv;
@@ -35,32 +34,32 @@ public class ChatMedia
   protected long mPreservationTimestamp = -1L;
   protected int mWidth;
   
-  public ChatMedia(aim paramaim)
+  public ChatMedia(aji paramaji)
   {
-    super(ajx.l(), mMediaMailingMetadata.e(), Long.valueOf(mTime.getTime()));
+    super(akr.l(), mMediaMailingMetadata.e(), Long.valueOf(mTime.getTime()));
     mId = mClientId;
-    mKey = ayd.a();
-    mIv = ayd.b();
+    mKey = azb.a();
+    mIv = azb.b();
     mWidth = mWidth;
     mHeight = mHeight;
-    mMediaType = MediaType.fromSnapMediaType(paramaim.h());
-    mClock = new bgk();
+    mMediaType = MediaType.fromSnapMediaType(paramaji.h());
+    mClock = new bhk();
   }
   
-  public ChatMedia(bhf parambhf)
+  public ChatMedia(bif parambif)
   {
-    super(parambhf);
-    if ((parambhf.b()) && (parambhf.a().b()))
+    super(parambif);
+    if ((parambif.b()) && (parambif.a().b()))
     {
-      parambhf = parambhf.a().a();
-      mMediaId = parambhf.a();
-      mKey = parambhf.c();
-      mIv = parambhf.d();
-      mWidth = aud.a(parambhf.e());
-      mHeight = aud.a(parambhf.f());
+      parambif = parambif.a().a();
+      mMediaId = parambif.a();
+      mKey = parambif.c();
+      mIv = parambif.d();
+      mWidth = avb.a(parambif.e());
+      mHeight = avb.a(parambif.f());
     }
     mMediaType = MediaType.IMAGE;
-    mClock = new bgk();
+    mClock = new bhk();
   }
   
   public ChatMedia(a parama)
@@ -72,40 +71,40 @@ public class ChatMedia
     mMediaType = mediaType;
     mWidth = width;
     mHeight = height;
-    mClock = new bgk();
+    mClock = new bhk();
   }
   
-  public final String B()
+  public final String C()
   {
     return mMediaId;
   }
   
-  public final MediaType C()
+  public final MediaType D()
   {
     return mMediaType;
   }
   
-  public final String D()
+  public final String E()
   {
     return mKey;
   }
   
-  public final String E()
+  public final String F()
   {
     return mIv;
   }
   
-  public final int F()
+  public final int G()
   {
     return mWidth;
   }
   
-  public final int G()
+  public final int H()
   {
     return mHeight;
   }
   
-  public final boolean H()
+  public final boolean I()
   {
     if ((!mIsDisplayedToRecipient) && (!mIsLoaded))
     {
@@ -117,28 +116,24 @@ public class ChatMedia
     return false;
   }
   
-  public final void I()
+  public final void J()
   {
     if (mPreservationTimestamp == -1L)
     {
       mPreservationTimestamp = System.currentTimeMillis();
-      Timber.c("ChatMedia", "set preservation timestamp of chat media with id[%s] to %d", new Object[] { mId, Long.valueOf(mPreservationTimestamp) });
+      String str = mId;
+      long l = mPreservationTimestamp;
     }
   }
   
-  public Uri J()
+  public Uri K()
   {
     return null;
   }
   
-  public String K()
+  public String L()
   {
     return null;
-  }
-  
-  public boolean L()
-  {
-    return false;
   }
   
   public boolean M()
@@ -146,9 +141,9 @@ public class ChatMedia
     return false;
   }
   
-  public float R()
+  public boolean N()
   {
-    return 0.0F;
+    return false;
   }
   
   public float S()
@@ -161,12 +156,17 @@ public class ChatMedia
     return 0.0F;
   }
   
-  public float U()
+  public float V()
   {
     return 0.0F;
   }
   
-  public final void a(@cgb ChatMedia paramChatMedia)
+  public float W()
+  {
+    return 0.0F;
+  }
+  
+  public final void a(@chc ChatMedia paramChatMedia)
   {
     if (mKey == null) {
       mKey = mKey;
@@ -176,7 +176,7 @@ public class ChatMedia
     }
   }
   
-  public final boolean am()
+  public final boolean ak()
   {
     return true;
   }
@@ -191,12 +191,12 @@ public class ChatMedia
     mMediaId = paramString;
   }
   
-  public final void f(@cgb String paramString)
+  public final void f(@chc String paramString)
   {
     mKey = paramString;
   }
   
-  public final void g(@cgb String paramString)
+  public final void g(@chc String paramString)
   {
     mIv = paramString;
   }
@@ -238,7 +238,7 @@ public class ChatMedia
   }
   
   public static class a
-    extends akb.a
+    extends akw.a
   {
     public int height;
     String iv;

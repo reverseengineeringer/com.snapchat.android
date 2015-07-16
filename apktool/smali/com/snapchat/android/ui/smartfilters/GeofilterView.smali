@@ -6,15 +6,15 @@
 # instance fields
 .field public final a:Lcom/snapchat/android/ui/SelfScalingImageView;
 
-.field public final b:Lapc;
+.field public final b:Lapy;
 
 .field public c:Z
 
 .field private final d:Lcom/snapchat/android/ui/SelfScalingImageView;
 
-.field private final e:Laiv;
+.field private final e:Lajr;
 
-.field private final f:Lbgq;
+.field private final f:Lbhq;
 
 .field private g:F
 
@@ -24,10 +24,10 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Laiv;)V
+.method public constructor <init>(Landroid/content/Context;Lajr;)V
     .locals 3
-    .param p2    # Laiv;
-        .annotation build Lcgb;
+    .param p2    # Lajr;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -50,14 +50,14 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 36
-    const v1, 0x7f040068
+    const v1, 0x7f040069
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 37
-    const v0, 0x7f0a0245
+    const v0, 0x7f0a0243
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->findViewById(I)Landroid/view/View;
 
@@ -68,7 +68,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->d:Lcom/snapchat/android/ui/SelfScalingImageView;
 
     .line 38
-    const v0, 0x7f0a0246
+    const v0, 0x7f0a0244
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->findViewById(I)Landroid/view/View;
 
@@ -79,7 +79,7 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->a:Lcom/snapchat/android/ui/SelfScalingImageView;
 
     .line 39
-    iput-object p2, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iput-object p2, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
     .line 40
     const/4 v0, 0x0
@@ -87,22 +87,22 @@
     iput-boolean v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->c:Z
 
     .line 41
-    new-instance v0, Lapc;
+    new-instance v0, Lapy;
 
     iget-object v1, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->a:Lcom/snapchat/android/ui/SelfScalingImageView;
 
-    invoke-direct {v0, p0, v1}, Lapc;-><init>(Lcom/snapchat/android/ui/smartfilters/GeofilterView;Landroid/view/View;)V
+    invoke-direct {v0, p0, v1}, Lapy;-><init>(Lcom/snapchat/android/ui/smartfilters/GeofilterView;Landroid/view/View;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->b:Lapc;
+    iput-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->b:Lapy;
 
     .line 43
-    new-instance v0, Lbgq;
+    new-instance v0, Lbhq;
 
-    iget-object v1, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v1, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    invoke-direct {v0, v1, p0}, Lbgq;-><init>(Laiv;Lcom/snapchat/android/ui/smartfilters/GeofilterView;)V
+    invoke-direct {v0, v1, p0}, Lbhq;-><init>(Lajr;Lcom/snapchat/android/ui/smartfilters/GeofilterView;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->f:Lbgq;
+    iput-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->f:Lbhq;
 
     .line 44
     invoke-direct {p0}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->b()V
@@ -113,79 +113,79 @@
 
 .method private b()V
     .locals 6
-    .annotation build Lccm;
+    .annotation build Lcdn;
     .end annotation
 
     .prologue
     const v5, 0x7f02026d
 
     .line 65
-    invoke-static {}, Lbgp;->a()V
+    invoke-static {}, Lbhp;->a()V
 
     .line 66
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    iget-boolean v0, v0, Laiv;->mIsDynamic:Z
+    iget-boolean v0, v0, Lajr;->mIsDynamic:Z
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    invoke-virtual {v0}, Laiv;->a()Landroid/graphics/Bitmap;
+    invoke-virtual {v0}, Lajr;->a()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    invoke-virtual {v0}, Laiv;->b()Lcgs;
+    invoke-virtual {v0}, Lajr;->b()Lcht;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    invoke-virtual {v0}, Laiv;->b()Lcgs;
+    invoke-virtual {v0}, Lajr;->b()Lcht;
 
     move-result-object v0
 
-    invoke-static {}, Lcgs;->c()Lcgs;
+    invoke-static {}, Lcht;->c()Lcht;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcgs;->b(Lchb;)Z
+    invoke-virtual {v0, v1}, Lcht;->b(Lcic;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
     .line 72
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    invoke-virtual {v0}, Laiv;->a()Landroid/graphics/Bitmap;
+    invoke-virtual {v0}, Lajr;->a()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     .line 76
     :goto_0
-    iget-object v1, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->f:Lbgq;
+    iget-object v1, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->f:Lbhq;
 
     iget-object v2, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->d:Lcom/snapchat/android/ui/SelfScalingImageView;
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v3, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    iget v3, v3, Laiv;->mLayoutGravity:I
+    iget v3, v3, Lajr;->mLayoutGravity:I
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v0, v3, v4}, Lbgq;->a(Lcom/snapchat/android/ui/SelfScalingImageView;Landroid/graphics/Bitmap;IZ)V
+    invoke-virtual {v1, v2, v0, v3, v4}, Lbhq;->a(Lcom/snapchat/android/ui/SelfScalingImageView;Landroid/graphics/Bitmap;IZ)V
 
     .line 79
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    iget-boolean v0, v0, Laiv;->mIsSponsored:Z
+    iget-boolean v0, v0, Lajr;->mIsSponsored:Z
 
     if-eqz v0, :cond_1
 
@@ -194,21 +194,21 @@
     if-nez v0, :cond_1
 
     .line 80
-    iget-object v2, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->f:Lbgq;
+    iget-object v2, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->f:Lbhq;
 
     iget-object v3, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->a:Lcom/snapchat/android/ui/SelfScalingImageView;
 
     const/4 v0, 0x0
 
-    iget-object v1, v2, Lbgq;->mGeofilter:Laiv;
+    iget-object v1, v2, Lbhq;->mGeofilter:Lajr;
 
-    iget-object v1, v1, Laiv;->mSponsoredSlugImageUrl:Ljava/lang/String;
+    iget-object v1, v1, Lajr;->mSponsoredSlugImageUrl:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    iget-object v0, v2, Lbgq;->mGeofilter:Laiv;
+    iget-object v0, v2, Lbhq;->mGeofilter:Lajr;
 
-    iget-object v0, v0, Laiv;->mSponsoredSlugImageUrl:Ljava/lang/String;
+    iget-object v0, v0, Lajr;->mSponsoredSlugImageUrl:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
@@ -225,13 +225,13 @@
     :goto_1
     if-eqz v1, :cond_1
 
-    iget-object v0, v2, Lbgq;->mGeofilter:Laiv;
+    iget-object v0, v2, Lbhq;->mGeofilter:Lajr;
 
-    iget-object v0, v0, Laiv;->mSponsoredSlugPosition:Lcom/snapchat/android/model/server/GeofilterResponse$SponsoredSlugPosition;
+    iget-object v0, v0, Lajr;->mSponsoredSlugPosition:Lcom/snapchat/android/model/server/GeofilterResponse$SponsoredSlugPosition;
 
     if-eqz v0, :cond_0
 
-    sget-object v4, Lbgq$1;->$SwitchMap$com$snapchat$android$model$server$GeofilterResponse$SponsoredSlugPosition:[I
+    sget-object v4, Lbhq$1;->$SwitchMap$com$snapchat$android$model$server$GeofilterResponse$SponsoredSlugPosition:[I
 
     invoke-virtual {v0}, Lcom/snapchat/android/model/server/GeofilterResponse$SponsoredSlugPosition;->ordinal()I
 
@@ -247,7 +247,7 @@
     :goto_2
     const/4 v4, 0x1
 
-    invoke-virtual {v2, v3, v1, v0, v4}, Lbgq;->a(Lcom/snapchat/android/ui/SelfScalingImageView;Landroid/graphics/Bitmap;IZ)V
+    invoke-virtual {v2, v3, v1, v0, v4}, Lbhq;->a(Lcom/snapchat/android/ui/SelfScalingImageView;Landroid/graphics/Bitmap;IZ)V
 
     .line 82
     :cond_1
@@ -255,15 +255,15 @@
 
     .line 74
     :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    iget-object v0, v0, Laiv;->mBitmap:Landroid/graphics/Bitmap;
+    iget-object v0, v0, Lajr;->mBitmap:Landroid/graphics/Bitmap;
 
     goto :goto_0
 
     .line 80
     :cond_3
-    iget-object v1, v2, Lbgq;->mGeofilterView:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
+    iget-object v1, v2, Lbhq;->mGeofilterView:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
 
     invoke-virtual {v1}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->getResources()Landroid/content/res/Resources;
 
@@ -275,7 +275,7 @@
 
     if-eqz v1, :cond_4
 
-    iget-object v0, v2, Lbgq;->mGeofilterView:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
+    iget-object v0, v2, Lbhq;->mGeofilterView:Lcom/snapchat/android/ui/smartfilters/GeofilterView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->getResources()Landroid/content/res/Resources;
 
@@ -375,17 +375,17 @@
     if-nez v0, :cond_1
 
     .line 100
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->b:Lapc;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->b:Lapy;
 
-    iget-object v1, v0, Lapc;->f:Ljava/util/Date;
+    iget-object v1, v0, Lapy;->f:Ljava/util/Date;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, v0, Lapc;->e:Landroid/view/animation/Animation;
+    iget-object v1, v0, Lapy;->e:Landroid/view/animation/Animation;
 
     invoke-virtual {v1}, Landroid/view/animation/Animation;->cancel()V
 
-    iget-object v1, v0, Lapc;->f:Ljava/util/Date;
+    iget-object v1, v0, Lapy;->f:Ljava/util/Date;
 
     if-eqz v1, :cond_0
 
@@ -393,7 +393,7 @@
 
     invoke-direct {v1}, Ljava/util/Date;-><init>()V
 
-    iget-object v2, v0, Lapc;->f:Ljava/util/Date;
+    iget-object v2, v0, Lapy;->f:Ljava/util/Date;
 
     if-eqz v2, :cond_0
 
@@ -401,7 +401,7 @@
 
     move-result-wide v2
 
-    iget-object v1, v0, Lapc;->f:Ljava/util/Date;
+    iget-object v1, v0, Lapy;->f:Ljava/util/Date;
 
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
@@ -409,50 +409,50 @@
 
     sub-long/2addr v2, v4
 
-    iget-wide v4, v0, Lapc;->c:J
+    iget-wide v4, v0, Lapy;->c:J
 
     sub-long v2, v4, v2
 
-    iput-wide v2, v0, Lapc;->c:J
+    iput-wide v2, v0, Lapy;->c:J
 
-    iget-wide v2, v0, Lapc;->c:J
+    iget-wide v2, v0, Lapy;->c:J
 
     cmp-long v1, v2, v8
 
     if-gez v1, :cond_0
 
-    iget v1, v0, Lapc;->d:I
+    iget v1, v0, Lapy;->d:I
 
     int-to-long v2, v1
 
-    iget-wide v4, v0, Lapc;->c:J
+    iget-wide v4, v0, Lapy;->c:J
 
     add-long/2addr v2, v4
 
     long-to-int v1, v2
 
-    iput v1, v0, Lapc;->d:I
+    iput v1, v0, Lapy;->d:I
 
-    iput-wide v8, v0, Lapc;->c:J
+    iput-wide v8, v0, Lapy;->c:J
 
-    iget v1, v0, Lapc;->d:I
+    iget v1, v0, Lapy;->d:I
 
     if-gez v1, :cond_0
 
-    iput v6, v0, Lapc;->d:I
+    iput v6, v0, Lapy;->d:I
 
     :cond_0
-    iget-object v1, v0, Lapc;->b:Landroid/view/View;
+    iget-object v1, v0, Lapy;->b:Landroid/view/View;
 
     invoke-virtual {v1, v6}, Landroid/view/View;->setVisibility(I)V
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lapc;->f:Ljava/util/Date;
+    iput-object v1, v0, Lapy;->f:Ljava/util/Date;
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Lapc;->g:Z
+    iput-boolean v1, v0, Lapy;->g:Z
 
     .line 102
     :cond_1
@@ -464,19 +464,19 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
-    iget-object v0, v0, Laiv;->mFilterId:Ljava/lang/String;
+    iget-object v0, v0, Lajr;->mFilterId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getGeofilter()Laiv;
+.method public getGeofilter()Lajr;
     .locals 1
 
     .prologue
     .line 85
-    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Laiv;
+    iget-object v0, p0, Lcom/snapchat/android/ui/smartfilters/GeofilterView;->e:Lajr;
 
     return-object v0
 .end method

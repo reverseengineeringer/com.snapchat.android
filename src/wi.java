@@ -1,39 +1,8 @@
-import android.hardware.Camera;
-import android.hardware.Camera.PreviewCallback;
-import android.os.Handler;
-import android.os.Looper;
+import android.graphics.Bitmap;
 
-public final class wi
-  implements Camera.PreviewCallback
+public abstract interface wi
 {
-  private final Handler a;
-  private final wc.b b;
-  private final wc.a c;
-  
-  public wi(Handler paramHandler, wc.b paramb, wc.a parama)
-  {
-    a = paramHandler;
-    c = parama;
-    b = paramb;
-  }
-  
-  public final void a()
-  {
-    if (a != null) {
-      a.getLooper().quit();
-    }
-  }
-  
-  public final void onPreviewFrame(final byte[] paramArrayOfByte, Camera paramCamera)
-  {
-    a.post(new Runnable()
-    {
-      public final void run()
-      {
-        wi.b(wi.this).a(paramArrayOfByte, wi.a(wi.this));
-      }
-    });
-  }
+  public abstract void a(Bitmap paramBitmap);
 }
 
 /* Location:

@@ -3,8 +3,8 @@ package com.snapchat.android.fragments.stories;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-import aom;
-import aom.a;
+import api;
+import api.a;
 import com.snapchat.android.util.AlertDialogUtils;
 
 final class StoriesAdapter$12$1
@@ -15,7 +15,7 @@ final class StoriesAdapter$12$1
   public final void onClick(View paramView)
   {
     StoriesAdapter.c(a.b).hideSoftInputFromWindow(paramView.getWindowToken(), 0);
-    StoriesAdapter.b(a.b).b(a.a, new aom.a()
+    StoriesAdapter.b(a.b).b(a.a, new api.a()
     {
       public final void a() {}
       

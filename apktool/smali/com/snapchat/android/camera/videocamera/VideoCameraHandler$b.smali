@@ -43,35 +43,29 @@
 
 # virtual methods
 .method public final onInfo(Landroid/media/MediaRecorder;II)V
-    .locals 5
+    .locals 3
 
     .prologue
     .line 420
-    const-string v0, "VideoCameraHandler"
+    const/4 v0, 0x2
 
-    const-string v1, "Video InfoListener: Info event #[%d, %d] has occured"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    aput-object v2, v0, v1
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v1
 
     .line 421
     packed-switch p2, :pswitch_data_0
@@ -86,13 +80,11 @@
 
     invoke-direct {v0, p0}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$b$1;-><init>(Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$b;)V
 
-    invoke-static {v0}, Lbgp;->a(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lbhp;->a(Ljava/lang/Runnable;)V
 
     goto :goto_0
 
     .line 421
-    nop
-
     :pswitch_data_0
     .packed-switch 0x320
         :pswitch_0

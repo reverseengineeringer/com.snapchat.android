@@ -1,16 +1,18 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
 import android.support.v7.widget.RecyclerView.a;
+import arm;
 import java.util.List;
-import ut;
-import ux;
+import vp;
+import vt;
 
 public class FeedAdapter
-  extends RecyclerView.a<ux>
+  extends RecyclerView.a<vt>
 {
-  public List<ut> c;
+  public List<vp> c;
+  public arm d;
   
-  public FeedAdapter(List<ut> paramList)
+  public FeedAdapter(List<vp> paramList)
   {
     c = paramList;
   }
@@ -22,7 +24,7 @@ public class FeedAdapter
   
   public final int a(int paramInt)
   {
-    FeedViewType localFeedViewType = ((ut)c.get(paramInt)).C_();
+    FeedViewType localFeedViewType = ((vp)c.get(paramInt)).B_();
     switch (1.a[localFeedViewType.ordinal()])
     {
     default: 
@@ -33,10 +35,18 @@ public class FeedAdapter
     return FeedViewType.LOADING.ordinal();
   }
   
-  public void a(ux paramux, int paramInt)
+  public final void a(arm paramarm)
   {
-    paramux.b(false);
-    paramux.a((ut)c.get(paramInt));
+    d = paramarm;
+  }
+  
+  public void a(vt paramvt, int paramInt)
+  {
+    paramvt.b(false);
+    paramvt.a((vp)c.get(paramInt));
+    if (d != null) {
+      d.a(paramvt);
+    }
   }
   
   public static enum FeedViewType

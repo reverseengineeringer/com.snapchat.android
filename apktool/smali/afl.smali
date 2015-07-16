@@ -1,185 +1,254 @@
 .class public final Lafl;
-.super Lcom/snapchat/android/model/Friend;
+.super Landroid/support/v7/widget/RecyclerView$a;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/support/v7/widget/RecyclerView$a",
+        "<",
+        "Laer;",
+        ">;"
+    }
+.end annotation
+
+
 # instance fields
-.field public a:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "username"
-    .end annotation
-.end field
+.field final c:Lafh;
 
-.field public b:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "display_name"
-    .end annotation
-.end field
+.field final d:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
 
-.field public c:Ljava/util/ArrayList;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "keywords"
-    .end annotation
-
+.field public final e:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/ArrayList",
+            "Ljava/util/List",
             "<",
-            "Ljava/lang/String;",
+            "Lcom/snapchat/android/discover/model/ChannelPage;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public d:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "description"
-    .end annotation
-.end field
+.field protected final f:Landroid/view/View$OnClickListener;
+
+.field private final g:Landroid/view/LayoutInflater;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Lafh;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)V
+    .locals 2
 
     .prologue
-    .line 31
-    const/4 v0, 0x0
+    .line 41
+    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$a;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/model/Friend;-><init>(Ljava/lang/String;)V
-
-    .line 21
+    .line 38
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lafl;->c:Ljava/util/ArrayList;
+    iput-object v0, p0, Lafl;->e:Ljava/util/List;
 
-    .line 32
+    .line 113
+    new-instance v0, Lafl$1;
+
+    invoke-direct {v0, p0}, Lafl$1;-><init>(Lafl;)V
+
+    iput-object v0, p0, Lafl;->f:Landroid/view/View$OnClickListener;
+
+    .line 42
+    iput-object p2, p0, Lafl;->c:Lafh;
+
+    .line 43
+    const-string v0, "layout_inflater"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/LayoutInflater;
+
+    iput-object v0, p0, Lafl;->g:Landroid/view/LayoutInflater;
+
+    .line 44
+    iput-object p3, p0, Lafl;->d:Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;
+
+    .line 48
+    iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$a;->a:Landroid/support/v7/widget/RecyclerView$b;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$b;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Cannot change whether this adapter has stable IDs while the adapter has registered observers."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/support/v7/widget/RecyclerView$a;->b:Z
+
+    .line 49
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public final a()I
     .locals 1
 
     .prologue
-    .line 41
-    iget-object v0, p0, Lafl;->b:Ljava/lang/String;
+    .line 88
+    iget-object v0, p0, Lafl;->e:Ljava/util/List;
 
-    return-object v0
-.end method
-
-.method public final b()Z
-    .locals 2
-
-    .prologue
-    .line 58
-    invoke-super {p0}, Lcom/snapchat/android/model/Friend;->b()Z
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    return v0
+.end method
 
-    iget-object v0, p0, Lafl;->a:Ljava/lang/String;
+.method public final synthetic a(Landroid/view/ViewGroup;I)Landroid/support/v7/widget/RecyclerView$s;
+    .locals 3
 
-    invoke-static {}, Lajv;->g()Lajv;
+    .prologue
+    .line 31
+    iget-object v0, p0, Lafl;->g:Landroid/view/LayoutInflater;
+
+    const v1, 0x7f040027
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v0
+
+    new-instance v1, Laer;
+
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getMeasuredWidth()I
+
+    move-result v2
+
+    div-int/lit8 v2, v2, 0x3
+
+    invoke-direct {v1, v0, v2}, Laer;-><init>(Landroid/view/View;I)V
+
+    return-object v1
+.end method
+
+.method public final synthetic a(Landroid/support/v7/widget/RecyclerView$s;I)V
+    .locals 5
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 31
+    check-cast p1, Laer;
+
+    if-ltz p2, :cond_0
+
+    iget-object v0, p0, Lafl;->e:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lt p2, v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Latm;->f(Ljava/lang/String;Lajv;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
+    aput-object v1, v0, v4
 
     :goto_0
-    return v0
+    return-void
 
     :cond_1
-    const/4 v0, 0x0
+    iget-object v2, p1, Laer;->k:Lcom/snapchat/android/discover/ui/ChannelView;
+
+    const v0, 0x7f0a0001
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v0, v1}, Lcom/snapchat/android/discover/ui/ChannelView;->setTag(ILjava/lang/Object;)V
+
+    iget-object v0, p0, Lafl;->e:Ljava/util/List;
+
+    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/ChannelPage;
+
+    if-eqz v0, :cond_4
+
+    invoke-virtual {v2}, Lcom/snapchat/android/discover/ui/ChannelView;->getChannelPage()Lcom/snapchat/android/discover/model/ChannelPage;
+
+    move-result-object v1
+
+    if-nez v1, :cond_3
+
+    const/4 v1, 0x0
+
+    :goto_1
+    iget-object v3, v0, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    invoke-virtual {v2, v4}, Lcom/snapchat/android/discover/ui/ChannelView;->setProgressBarVisibility(Z)V
+
+    invoke-virtual {v2}, Lcom/snapchat/android/discover/ui/ChannelView;->a()V
+
+    :cond_2
+    invoke-virtual {v2, v0}, Lcom/snapchat/android/discover/ui/ChannelView;->setChannelPage(Lcom/snapchat/android/discover/model/ChannelPage;)V
+
+    iget-object v0, p0, Lafl;->f:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {v2, v0}, Lcom/snapchat/android/discover/ui/ChannelView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    invoke-virtual {v2, v4}, Lcom/snapchat/android/discover/ui/ChannelView;->setVisibility(I)V
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v1, v1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    goto :goto_1
+
+    :cond_4
+    const/16 v0, 0x8
+
+    invoke-virtual {v2, v0}, Lcom/snapchat/android/discover/ui/ChannelView;->setVisibility(I)V
 
     goto :goto_0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final b(I)J
     .locals 2
-    .param p1    # Ljava/lang/Object;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
 
     .prologue
-    .line 64
-    if-ne p0, p1, :cond_0
+    .line 53
+    int-to-long v0, p1
 
-    const/4 v0, 0x1
-
-    .line 69
-    :goto_0
-    return v0
-
-    .line 65
-    :cond_0
-    instance-of v0, p1, Lafl;
-
-    if-nez v0, :cond_1
-
-    .line 66
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 68
-    :cond_1
-    check-cast p1, Lafl;
-
-    .line 69
-    iget-object v0, p0, Lafl;->a:Ljava/lang/String;
-
-    iget-object v1, p1, Lafl;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final h()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 36
-    iget-object v0, p0, Lafl;->a:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .prologue
-    .line 74
-    iget-object v0, p0, Lafl;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final i()Lcom/snapchat/android/stories/StoriesSection;
-    .locals 1
-
-    .prologue
-    .line 79
-    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->LIVE:Lcom/snapchat/android/stories/StoriesSection;
-
-    return-object v0
+    return-wide v0
 .end method

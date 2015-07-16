@@ -1,38 +1,33 @@
-import javax.inject.Provider;
+import com.snapchat.android.api2.cash.square.data.CashPayment;
+import com.snapchat.android.api2.framework.HttpMethod;
+import com.snapchat.android.model.CashTransaction;
 
 public final class sr
-  implements buj<sq>
+  extends tg
+  implements ui.b<CashPayment>
 {
-  private final Provider<xn> mCashAuthManagerProvider;
-  private final Provider<tl> mEntityFactoryProvider;
-  private final Provider<uj> mSquareOkHttpClientFactoryProvider;
-  private final buj<tv> supertypeInjector;
+  private static final String TAG = "DeleteCashPaymentTask";
+  private final CashTransaction mCashTransaction;
   
-  static
+  public sr(@chc CashTransaction paramCashTransaction)
   {
-    if (!sr.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
+    registerCallback(CashPayment.class, this);
+    mCashTransaction = paramCashTransaction;
   }
   
-  private sr(buj<tv> parambuj, Provider<xn> paramProvider, Provider<uj> paramProvider1, Provider<tl> paramProvider2)
+  public final String a()
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
-    assert (paramProvider != null);
-    mCashAuthManagerProvider = paramProvider;
-    assert (paramProvider1 != null);
-    mSquareOkHttpClientFactoryProvider = paramProvider1;
-    assert (paramProvider2 != null);
-    mEntityFactoryProvider = paramProvider2;
+    return "cash/payments/" + mCashTransaction.mTransactionId;
   }
   
-  public static buj<sq> a(buj<tv> parambuj, Provider<xn> paramProvider, Provider<uj> paramProvider1, Provider<tl> paramProvider2)
+  public final HttpMethod getMethod()
   {
-    return new sr(parambuj, paramProvider, paramProvider1, paramProvider2);
+    return HttpMethod.DELETE;
+  }
+  
+  public final Object getRequestPayload()
+  {
+    return null;
   }
 }
 

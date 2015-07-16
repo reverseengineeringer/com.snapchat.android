@@ -4,8 +4,7 @@ import android.content.Context;
 import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import cgc;
-import com.snapchat.android.Timber;
+import chd;
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
@@ -24,7 +23,7 @@ public class UniqueDeviceIdBuilder
     return paramContext;
   }
   
-  @cgc
+  @chd
   private static UUID b(Context paramContext)
   {
     paramContext = Settings.Secure.getString(paramContext.getContentResolver(), "android_id");
@@ -36,14 +35,11 @@ public class UniqueDeviceIdBuilder
       paramContext = UUID.nameUUIDFromBytes(paramContext.getBytes("utf8"));
       return paramContext;
     }
-    catch (UnsupportedEncodingException paramContext)
-    {
-      Timber.a("UniqueDeviceIdentifier", paramContext);
-    }
+    catch (UnsupportedEncodingException paramContext) {}
     return null;
   }
   
-  @cgc
+  @chd
   private static UUID c(Context paramContext)
   {
     paramContext = ((TelephonyManager)paramContext.getSystemService("phone")).getDeviceId();
@@ -55,10 +51,7 @@ public class UniqueDeviceIdBuilder
       paramContext = UUID.nameUUIDFromBytes(paramContext.getBytes("utf8"));
       return paramContext;
     }
-    catch (UnsupportedEncodingException paramContext)
-    {
-      Timber.a("UniqueDeviceIdentifier", paramContext);
-    }
+    catch (UnsupportedEncodingException paramContext) {}
     return null;
   }
 }

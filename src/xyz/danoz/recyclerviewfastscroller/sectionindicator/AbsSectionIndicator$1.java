@@ -1,9 +1,9 @@
 package xyz.danoz.recyclerviewfastscroller.sectionindicator;
 
-import cks.a;
+import clt.a;
 
 final class AbsSectionIndicator$1
-  implements cks.a
+  implements clt.a
 {
   AbsSectionIndicator$1(AbsSectionIndicator paramAbsSectionIndicator) {}
   

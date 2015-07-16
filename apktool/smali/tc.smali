@@ -1,94 +1,166 @@
 .class public final Ltc;
-.super Lth;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Ltc$a;
-    }
-.end annotation
+# interfaces
+.implements Lrd;
 
 
 # instance fields
-.field private mCallback:Ltc$a;
+.field private final mCardSummary:Ltl;
+    .annotation build Lchd;
+    .end annotation
+.end field
+
+.field private final mCashCustomer:Lcom/snapchat/android/api2/cash/square/data/CashCustomer;
+    .annotation build Lchd;
+    .end annotation
+.end field
+
+.field private final mCashCustomerStatus:Ltm;
+    .annotation build Lchc;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ltc$a;)V
-    .locals 0
-    .param p1    # Ltc$a;
-        .annotation build Lcgb;
+.method public constructor <init>(Ltm;)V
+    .locals 1
+    .param p1    # Ltm;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Lth;-><init>()V
+    .line 21
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
-    iput-object p1, p0, Ltc;->mCallback:Ltc$a;
+    .line 22
+    iput-object p1, p0, Ltc;->mCashCustomerStatus:Ltm;
 
-    .line 20
+    .line 23
+    iget-object v0, p1, Ltm;->mCustomer:Lcom/snapchat/android/api2/cash/square/data/CashCustomer;
+
+    iput-object v0, p0, Ltc;->mCashCustomer:Lcom/snapchat/android/api2/cash/square/data/CashCustomer;
+
+    .line 24
+    iget-object v0, p1, Ltm;->mCardSummary:Ltl;
+
+    iput-object v0, p0, Ltc;->mCardSummary:Ltl;
+
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Luc;)V
-    .locals 2
-    .param p1    # Luc;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final a()Z
+    .locals 1
 
     .prologue
-    .line 29
-    invoke-super {p0, p1}, Lth;->a(Luc;)V
-
-    .line 31
-    invoke-virtual {p1}, Luc;->d()Z
-
-    move-result v0
+    .line 38
+    iget-object v0, p0, Ltc;->mCardSummary:Ltl;
 
     if-eqz v0, :cond_0
 
-    .line 32
-    iget-object v0, p0, Ltc;->mCallback:Ltc$a;
+    .line 39
+    const/4 v0, 0x1
 
-    invoke-interface {v0}, Ltc$a;->a()V
-
-    .line 36
+    .line 41
     :goto_0
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    return v0
 
-    move-result-object v0
-
-    new-instance v1, Lben;
-
-    invoke-direct {v1}, Lben;-><init>()V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 37
-    return-void
-
-    .line 34
     :cond_0
-    iget-object v0, p0, Ltc;->mCallback:Ltc$a;
-
-    invoke-interface {v0}, Ltc$a;->w_()V
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method protected final d()Ljava/lang/String;
+.method public final b()Z
     .locals 1
 
     .prologue
-    .line 24
-    const-string v0, "/loq/clear_feed"
+    .line 64
+    iget-object v0, p0, Ltc;->mCashCustomerStatus:Ltm;
 
+    iget-boolean v0, v0, Ltm;->mPasswordConfirmationEnabled:Z
+
+    return v0
+.end method
+
+.method public final c()Z
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 78
+    iget-object v1, p0, Ltc;->mCashCustomerStatus:Ltm;
+
+    if-eqz v1, :cond_0
+
+    .line 79
+    iget-object v1, p0, Ltc;->mCashCustomerStatus:Ltm;
+
+    iget v1, v1, Ltm;->mNumberOfPayments:I
+
+    if-lez v1, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 81
+    :cond_0
+    return v0
+.end method
+
+.method public final d()Lcom/snapchat/android/api2/cash/square/data/CardBrand;
+    .locals 1
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 47
+    iget-object v0, p0, Ltc;->mCardSummary:Ltl;
+
+    if-eqz v0, :cond_0
+
+    .line 48
+    iget-object v0, p0, Ltc;->mCardSummary:Ltl;
+
+    iget-object v0, v0, Ltl;->mBrand:Lcom/snapchat/android/api2/cash/square/data/CardBrand;
+
+    .line 50
+    :goto_0
     return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final e()Ljava/lang/String;
+    .locals 1
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 56
+    iget-object v0, p0, Ltc;->mCardSummary:Ltl;
+
+    if-eqz v0, :cond_0
+
+    .line 57
+    iget-object v0, p0, Ltc;->mCardSummary:Ltl;
+
+    iget-object v0, v0, Ltl;->mPanSuffix:Ljava/lang/String;
+
+    .line 59
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

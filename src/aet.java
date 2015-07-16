@@ -1,113 +1,63 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.discover.ui.media.VideoProperties;
-import com.snapchat.android.discover.ui.media.VideoProperties.Protocol;
-import com.snapchat.android.discover.ui.media.VideoStreamingConfiguration;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
+import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.DSnapPage.Form;
+import com.snapchat.android.discover.model.DSnapPanel;
+import com.snapchat.android.discover.ui.DSnapView;
 
 public final class aet
+  extends aez
 {
-  final VideoStreamingConfiguration a;
-  private final ov b;
-  private final aky c;
+  private final Context d;
+  private aen e;
   
-  public aet()
+  public aet(Context paramContext, aey paramaey)
   {
-    this(ov.a(), new VideoStreamingConfiguration(), aky.a());
+    super(paramaey);
+    d = paramContext;
   }
   
-  private aet(ov paramov, VideoStreamingConfiguration paramVideoStreamingConfiguration, aky paramaky)
+  public final boolean a(final DSnapView paramDSnapView, DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
   {
-    b = paramov;
-    a = paramVideoStreamingConfiguration;
-    c = paramaky;
-  }
-  
-  @cgc
-  final VideoProperties a(List<bjy> paramList)
-  {
-    ArrayList localArrayList = new ArrayList(paramList);
-    Collections.sort(localArrayList, new aet.a());
-    int i = 0;
-    paramList = null;
-    bjy localbjy;
-    int j;
-    label182:
-    long l;
-    if (i < localArrayList.size())
+    super.a(paramDSnapView, paramDSnapPage, paramDSnapPanel);
+    e = new aen(d);
+    a = e.c;
+    b = e.d;
+    e.a(paramDSnapView.getPublisherPrimaryColor(), paramDSnapView.getPublisherSecondaryColor());
+    e.a(new View.OnClickListener()
     {
-      localbjy = (bjy)localArrayList.get(i);
-      if ((localbjy.f() == null) || (!"MP4".equals(localbjy.f().toUpperCase(Locale.ENGLISH)))) {
-        break label369;
-      }
-      localObject = localbjy;
-      if (paramList != null)
+      public final void onClick(View paramAnonymousView)
       {
-        j = Math.max(localbjy.b().intValue(), localbjy.c().intValue());
-        int k = Math.min(localbjy.b().intValue(), localbjy.c().intValue());
-        int m = Math.max(b.mMaxVideoHeight, b.mMaxVideoWidth);
-        int n = Math.min(b.mMaxVideoHeight, b.mMaxVideoWidth);
-        if ((j > m) || (k > n)) {
-          break label275;
-        }
-        j = 1;
-        if (j == 0) {
-          break label369;
-        }
-        float f = a.b.a("STREAMING", "BANDWIDTH_USAGE_FACTOR", 0.7F);
-        localObject = c;
-        l = ((aky)localObject).a(((aky)localObject).b()).a();
-        if (l == 0L) {
-          break label281;
-        }
-        label232:
-        j = (int)(f * (float)l);
-        if (localbjy.a().intValue() > j) {
-          break label308;
-        }
-        j = 1;
-        label256:
-        if (j == 0) {
-          break label369;
-        }
+        paramDSnapView.a(DSnapPage.Form.LONGFORM.getIndex(), true);
       }
+    });
+    return true;
+  }
+  
+  public final void c()
+  {
+    super.c();
+    aen localaen = e;
+    if (g != null) {
+      b.a(g, true);
     }
-    label275:
-    label281:
-    label308:
-    label369:
-    for (Object localObject = localbjy;; localObject = paramList)
-    {
-      i += 1;
-      paramList = (List<bjy>)localObject;
-      break;
-      j = 0;
-      break label182;
-      if (a.e())
-      {
-        l = 3000000L;
-        break label232;
-      }
-      l = 600000L;
-      break label232;
-      j = 0;
-      break label256;
-      if (paramList != null)
-      {
-        Timber.c("VideoRenditionSelector", "Selected rendition %s", new Object[] { paramList });
-        return new VideoProperties(paramList.e(), VideoProperties.Protocol.MP4, paramList.a(), paramList.d());
-      }
-      Timber.f("VideoRenditionSelector", "No valid MP4 rendition was found!", new Object[0]);
-      return null;
+    if (c != null) {
+      a.a(2130968662, c);
     }
   }
   
-  public static final class a
-    implements Comparator<bjy>
-  {}
+  public final void m_()
+  {
+    super.m_();
+    e.a();
+  }
+  
+  public final void n_()
+  {
+    super.n_();
+    e.b();
+  }
 }
 
 /* Location:

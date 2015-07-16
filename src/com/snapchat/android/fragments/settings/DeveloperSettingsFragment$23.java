@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -12,11 +12,11 @@ final class DeveloperSettingsFragment$23
   public final void onClick(View paramView)
   {
     DeveloperSettingsFragment.a(a);
-    ajx.z(false);
+    akr.y(false);
     DeveloperSettingsFragment.a(a);
-    ajx.y(false);
+    akr.x(false);
     DeveloperSettingsFragment.a(a);
-    ajx.bD();
+    akr.by();
   }
 }
 

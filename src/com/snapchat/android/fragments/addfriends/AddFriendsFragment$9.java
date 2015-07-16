@@ -10,7 +10,7 @@ final class AddFriendsFragment$9
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
-    a.y();
+    a.x();
   }
 }
 

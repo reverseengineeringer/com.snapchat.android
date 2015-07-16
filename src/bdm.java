@@ -1,12 +1,4 @@
-public final class bdm
-{
-  public boolean mBeingViewed;
-  
-  public bdm(boolean paramBoolean)
-  {
-    mBeingViewed = paramBoolean;
-  }
-}
+public final class bdm {}
 
 /* Location:
  * Qualified Name:     bdm

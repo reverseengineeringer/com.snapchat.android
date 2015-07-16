@@ -3,8 +3,8 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lagk;
-.implements Lahb;
+.implements Lahh;
+.implements Lahy;
 .implements Ljava/lang/Comparable;
 
 
@@ -22,8 +22,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lagk;",
-        "Lahb;",
+        "Lahh;",
+        "Lahy;",
         "Ljava/lang/Comparable",
         "<",
         "Lcom/snapchat/android/model/Friend;",
@@ -50,12 +50,12 @@
 .field public mCashEligibility:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
 .field public mCustomDescription:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 .field public mCustomTitle:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -103,7 +103,9 @@
 
 .field public mStubFriend:Z
 
-.field public mSuggestReason:Lbkn$a;
+.field public mSuggestReason:Lblo$a;
+
+.field public mSuggestReasonDisplay:Ljava/lang/String;
 
 .field public mSuggestType:Lcom/snapchat/android/model/Friend$SuggestType;
 
@@ -117,7 +119,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lbhu;)V
+.method public constructor <init>(Lbiu;)V
     .locals 6
 
     .prologue
@@ -125,128 +127,128 @@
 
     const/4 v1, 0x1
 
-    .line 174
-    invoke-virtual {p1}, Lbhu;->a()Ljava/lang/String;
+    .line 175
+    invoke-virtual {p1}, Lbiu;->a()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lbhu;->d()Ljava/lang/String;
+    invoke-virtual {p1}, Lbiu;->d()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {p0, v0, v3}, Lcom/snapchat/android/model/Friend;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 175
-    invoke-virtual {p1}, Lbhu;->c()Lbhu$a;
+    .line 176
+    invoke-virtual {p1}, Lbiu;->c()Lbiu$a;
 
     move-result-object v3
 
-    .line 176
-    sget-object v0, Lbhu$a;->BLOCKED:Lbhu$a;
+    .line 177
+    sget-object v0, Lbiu$a;->BLOCKED:Lbiu$a;
 
     if-ne v3, v0, :cond_0
 
-    .line 177
+    .line 178
     iput-boolean v1, p0, Lcom/snapchat/android/model/Friend;->mIsBlocked:Z
 
-    .line 197
+    .line 198
     :goto_0
     return-void
 
-    .line 180
+    .line 181
     :cond_0
-    invoke-virtual {p1}, Lbhu;->b()Ljava/lang/String;
+    invoke-virtual {p1}, Lbiu;->b()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mUserId:Ljava/lang/String;
 
-    .line 181
-    invoke-virtual {p1}, Lbhu;->e()Ljava/lang/Long;
+    .line 182
+    invoke-virtual {p1}, Lbiu;->e()Ljava/lang/Long;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Long;)J
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Long;)J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/snapchat/android/model/Friend;->mTheyAddedMeTimestamp:J
 
-    .line 182
-    invoke-virtual {p1}, Lbhu;->h()Ljava/lang/Integer;
+    .line 183
+    invoke-virtual {p1}, Lbiu;->h()Ljava/lang/Integer;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v0
 
     iput v0, p0, Lcom/snapchat/android/model/Friend;->mPendingSnapsCount:I
 
-    .line 183
-    invoke-virtual {p1}, Lbhu;->i()Ljava/lang/Boolean;
+    .line 184
+    invoke-virtual {p1}, Lbiu;->i()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsSharedStory:Z
 
-    .line 184
-    invoke-virtual {p1}, Lbhu;->j()Ljava/lang/Boolean;
+    .line 185
+    invoke-virtual {p1}, Lbiu;->j()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mShouldFetchCustomDescription:Z
 
-    .line 185
-    invoke-virtual {p1}, Lbhu;->k()Ljava/lang/String;
+    .line 186
+    invoke-virtual {p1}, Lbiu;->k()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mSharedStoryId:Ljava/lang/String;
 
-    .line 186
-    invoke-virtual {p1}, Lbhu;->l()Ljava/lang/Boolean;
+    .line 187
+    invoke-virtual {p1}, Lbiu;->l()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsLocalStory:Z
 
-    .line 187
-    invoke-virtual {p1}, Lbhu;->m()Ljava/lang/Boolean;
+    .line 188
+    invoke-virtual {p1}, Lbiu;->m()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsIgnored:Z
 
-    .line 188
-    invoke-virtual {p1}, Lbhu;->n()Ljava/lang/Boolean;
+    .line 189
+    invoke-virtual {p1}, Lbiu;->n()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsHidden:Z
 
-    .line 189
-    invoke-virtual {p1}, Lbhu;->f()Ljava/lang/String;
+    .line 190
+    invoke-virtual {p1}, Lbiu;->f()Ljava/lang/String;
 
     move-result-object v0
 
@@ -256,15 +258,15 @@
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mDirection:Lcom/snapchat/android/model/Friend$Direction;
 
-    .line 190
-    invoke-virtual {p1}, Lbhu;->o()Ljava/lang/String;
+    .line 191
+    invoke-virtual {p1}, Lbiu;->o()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mAddSource:Ljava/lang/String;
 
-    .line 191
-    invoke-virtual {p1}, Lbhu;->p()Ljava/lang/String;
+    .line 192
+    invoke-virtual {p1}, Lbiu;->p()Ljava/lang/String;
 
     move-result-object v0
 
@@ -274,8 +276,8 @@
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mAddSourceType:Lcom/snapchat/android/model/Friend$AddSourceType;
 
-    .line 192
-    sget-object v0, Lbhu$a;->PENDING:Lbhu$a;
+    .line 193
+    sget-object v0, Lbiu$a;->PENDING:Lbiu$a;
 
     if-ne v3, v0, :cond_2
 
@@ -284,16 +286,16 @@
     :goto_1
     iput-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsPending:Z
 
-    .line 193
-    sget-object v0, Lbhu$a;->FOLLOWING:Lbhu$a;
+    .line 194
+    sget-object v0, Lbiu$a;->FOLLOWING:Lbiu$a;
 
     if-ne v3, v0, :cond_3
 
     :goto_2
     iput-boolean v1, p0, Lcom/snapchat/android/model/Friend;->mIsFollowing:Z
 
-    .line 194
-    invoke-virtual {p1}, Lbhu;->f()Ljava/lang/String;
+    .line 195
+    invoke-virtual {p1}, Lbiu;->f()Ljava/lang/String;
 
     move-result-object v0
 
@@ -309,7 +311,7 @@
 
     if-ne v0, v1, :cond_1
 
-    sget-object v0, Lbhu$a;->FRIEND:Lbhu$a;
+    sget-object v0, Lbiu$a;->FRIEND:Lbiu$a;
 
     if-ne v3, v0, :cond_1
 
@@ -317,20 +319,20 @@
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mDirection:Lcom/snapchat/android/model/Friend$Direction;
 
-    .line 195
+    .line 196
     :cond_1
-    invoke-virtual {p1}, Lbhu;->q()Ljava/lang/String;
+    invoke-virtual {p1}, Lbiu;->q()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mFriendmojiString:Ljava/lang/String;
 
-    .line 196
-    invoke-virtual {p1}, Lbhu;->r()Ljava/lang/Boolean;
+    .line 197
+    invoke-virtual {p1}, Lbiu;->r()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
@@ -341,29 +343,29 @@
     :cond_2
     move v0, v2
 
-    .line 192
+    .line 193
     goto :goto_1
 
     :cond_3
     move v1, v2
 
-    .line 193
+    .line 194
     goto :goto_2
 .end method
 
-.method public constructor <init>(Lbhu;Lajv;)V
+.method public constructor <init>(Lbiu;Lakp;)V
     .locals 1
 
     .prologue
-    .line 204
-    invoke-direct {p0, p1}, Lcom/snapchat/android/model/Friend;-><init>(Lbhu;)V
-
     .line 205
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/snapchat/android/model/Friend;-><init>(Lbiu;)V
+
+    .line 206
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Latm;->f(Ljava/lang/String;Lajv;)Z
+    invoke-static {v0, p2}, Lauk;->f(Ljava/lang/String;Lakp;)Z
 
     move-result v0
 
@@ -373,41 +375,48 @@
 
     iput-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mHasBeenAddedAsFriend:Z
 
-    .line 206
+    .line 207
     :cond_0
     return-void
 .end method
 
-.method public constructor <init>(Lbkn;)V
+.method public constructor <init>(Lblo;)V
     .locals 2
 
     .prologue
-    .line 213
-    invoke-virtual {p1}, Lbkn;->b()Ljava/lang/String;
+    .line 214
+    invoke-virtual {p1}, Lblo;->b()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lbkn;->d()Ljava/lang/String;
+    invoke-virtual {p1}, Lblo;->e()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {p0, v0, v1}, Lcom/snapchat/android/model/Friend;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 214
-    invoke-virtual {p1}, Lbkn;->a()Ljava/lang/String;
+    .line 215
+    invoke-virtual {p1}, Lblo;->a()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mUserId:Ljava/lang/String;
 
-    .line 215
-    invoke-virtual {p1}, Lbkn;->c()Lbkn$a;
+    .line 216
+    invoke-virtual {p1}, Lblo;->c()Lblo$a;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestReason:Lbkn$a;
+    iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestReason:Lblo$a;
 
-    .line 216
+    .line 217
+    invoke-virtual {p1}, Lblo;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestReasonDisplay:Ljava/lang/String;
+
+    .line 218
     return-void
 .end method
 
@@ -415,12 +424,12 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 142
     const-string v0, ""
 
     invoke-direct {p0, p1, v0}, Lcom/snapchat/android/model/Friend;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 142
+    .line 143
     return-void
 .end method
 
@@ -428,12 +437,12 @@
     .locals 1
 
     .prologue
-    .line 145
+    .line 146
     const-string v0, ""
 
     invoke-direct {p0, p1, p2, v0}, Lcom/snapchat/android/model/Friend;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 146
+    .line 147
     return-void
 .end method
 
@@ -443,7 +452,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 154
+    .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
@@ -491,52 +500,131 @@
     iput-boolean v2, p0, Lcom/snapchat/android/model/Friend;->mProfileImagesFetched:Z
 
     .line 72
-    sget-object v0, Lbkn$a;->UNKNOWN:Lbkn$a;
+    sget-object v0, Lblo$a;->UNKNOWN:Lblo$a;
 
-    iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestReason:Lbkn$a;
+    iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestReason:Lblo$a;
 
-    .line 104
+    .line 105
     sget-object v0, Lcom/snapchat/android/util/FriendSectionizer$FriendSection;->NONE:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mFriendSection:Lcom/snapchat/android/util/FriendSectionizer$FriendSection;
 
-    .line 107
+    .line 108
     iput-boolean v2, p0, Lcom/snapchat/android/model/Friend;->mStubFriend:Z
 
-    .line 155
+    .line 156
     if-nez p1, :cond_0
 
     const-string p1, ""
 
-    .line 156
+    .line 157
     :cond_0
     iput-object p1, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
-    .line 157
+    .line 158
     if-nez p2, :cond_1
 
     const-string p2, ""
 
-    .line 159
+    .line 160
     :cond_1
     iput-object p2, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
 
-    .line 160
+    .line 161
     iput-object p3, p0, Lcom/snapchat/android/model/Friend;->mPhoneNumber:Ljava/lang/String;
 
-    .line 161
+    .line 162
     return-void
 .end method
 
 
 # virtual methods
+.method public a(Z)Lcom/snapchat/android/stories/StoriesSection;
+    .locals 2
+
+    .prologue
+    .line 652
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->o()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 653
+    if-eqz p1, :cond_0
+
+    .line 654
+    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->NONE:Lcom/snapchat/android/stories/StoriesSection;
+
+    .line 672
+    :goto_0
+    return-object v0
+
+    .line 656
+    :cond_0
+    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->ALL_STORIES:Lcom/snapchat/android/stories/StoriesSection;
+
+    goto :goto_0
+
+    .line 660
+    :cond_1
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestType:Lcom/snapchat/android/model/Friend$SuggestType;
+
+    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestType;->USERNAME:Lcom/snapchat/android/model/Friend$SuggestType;
+
+    if-ne v0, v1, :cond_2
+
+    .line 661
+    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->USERNAME:Lcom/snapchat/android/stories/StoriesSection;
+
+    goto :goto_0
+
+    .line 664
+    :cond_2
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestType:Lcom/snapchat/android/model/Friend$SuggestType;
+
+    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestType;->ADDRESS_BOOK:Lcom/snapchat/android/model/Friend$SuggestType;
+
+    if-ne v0, v1, :cond_3
+
+    .line 665
+    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->ADDRESS_BOOK:Lcom/snapchat/android/stories/StoriesSection;
+
+    goto :goto_0
+
+    .line 668
+    :cond_3
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
+
+    invoke-static {}, Lakp;->g()Lakp;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lauk;->f(Ljava/lang/String;Lakp;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    .line 669
+    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->FRIENDS:Lcom/snapchat/android/stories/StoriesSection;
+
+    goto :goto_0
+
+    .line 672
+    :cond_4
+    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->NONE:Lcom/snapchat/android/stories/StoriesSection;
+
+    goto :goto_0
+.end method
+
 .method public a()Ljava/lang/String;
     .locals 1
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 275
+    .line 277
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
 
     return-object v0
@@ -546,7 +634,7 @@
     .locals 1
 
     .prologue
-    .line 359
+    .line 361
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mHasBeenAddedAsFriend:Z
 
     return v0
@@ -556,7 +644,7 @@
     .locals 1
 
     .prologue
-    .line 667
+    .line 677
     sget-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->DEFAULT:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     return-object v0
@@ -569,7 +657,7 @@
     .line 34
     check-cast p1, Lcom/snapchat/android/model/Friend;
 
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->k()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->e()Ljava/lang/String;
 
     move-result-object v0
 
@@ -579,7 +667,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->k()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->e()Ljava/lang/String;
 
     move-result-object v1
 
@@ -589,11 +677,11 @@
 
     move-result-object v1
 
-    invoke-static {v0}, Laui;->a(Ljava/lang/String;)I
+    invoke-static {v0}, Lavg;->a(Ljava/lang/String;)I
 
     move-result v2
 
-    invoke-static {v1}, Laui;->a(Ljava/lang/String;)I
+    invoke-static {v1}, Lavg;->a(Ljava/lang/String;)I
 
     move-result v3
 
@@ -623,8 +711,8 @@
     .locals 1
 
     .prologue
-    .line 641
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->k()Ljava/lang/String;
+    .line 647
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->e()Ljava/lang/String;
 
     move-result-object v0
 
@@ -632,10 +720,12 @@
 .end method
 
 .method public final e()Ljava/lang/String;
-    .locals 2
+    .locals 1
+    .annotation build Lchc;
+    .end annotation
 
     .prologue
-    .line 312
+    .line 285
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -644,37 +734,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 313
+    .line 286
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
-    .line 318
+    .line 288
     :goto_0
     return-object v0
 
-    .line 316
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
-
-    const-string v1, " "
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 317
-    array-length v1, v0
-
-    if-gtz v1, :cond_1
-
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 318
-    :cond_1
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
 
     goto :goto_0
 .end method
@@ -683,31 +751,31 @@
     .locals 2
 
     .prologue
-    .line 535
+    .line 537
     if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    .line 548
+    .line 550
     :goto_0
     return v0
 
-    .line 538
+    .line 540
     :cond_0
     instance-of v0, p1, Lcom/snapchat/android/model/Friend;
 
     if-nez v0, :cond_1
 
-    .line 539
+    .line 541
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 543
+    .line 545
     :cond_1
     check-cast p1, Lcom/snapchat/android/model/Friend;
 
-    .line 545
+    .line 547
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -716,7 +784,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 546
+    .line 548
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mPhoneNumber:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/snapchat/android/model/Friend;->mPhoneNumber:Ljava/lang/String;
@@ -727,11 +795,11 @@
 
     goto :goto_0
 
-    .line 548
+    .line 550
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v1
 
@@ -743,20 +811,68 @@
 .end method
 
 .method public final f()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 326
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->e()Ljava/lang/String;
+    .line 314
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 315
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
+
+    .line 320
+    :goto_0
+    return-object v0
+
+    .line 318
+    :cond_0
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 327
-    invoke-static {}, Lajv;->g()Lajv;
+    .line 319
+    array-length v1, v0
+
+    if-gtz v1, :cond_1
+
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
+
+    goto :goto_0
+
+    .line 320
+    :cond_1
+    const/4 v1, 0x0
+
+    aget-object v0, v0, v1
+
+    goto :goto_0
+.end method
+
+.method public final g()Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 328
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->f()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 329
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v1
 
-    .line 328
+    .line 330
     if-eqz v1, :cond_0
 
     sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
@@ -765,7 +881,7 @@
 
     move-result-object v2
 
-    iget-object v1, v1, Lajv;->mDuplicateFirstNames:Ljava/util/Set;
+    iget-object v1, v1, Lakp;->mDuplicateFirstNames:Ljava/util/Set;
 
     invoke-interface {v1, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
@@ -773,22 +889,22 @@
 
     if-eqz v1, :cond_1
 
-    .line 329
+    .line 331
     :cond_0
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->k()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->e()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 331
+    .line 333
     :cond_1
     return-object v0
 .end method
 
-.method public final g()Z
+.method public final h()Z
     .locals 1
 
     .prologue
-    .line 395
+    .line 397
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -808,11 +924,87 @@
     goto :goto_0
 .end method
 
-.method public h()Ljava/lang/String;
+.method public hashCode()I
     .locals 1
 
     .prologue
-    .line 379
+    .line 556
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final i()Z
+    .locals 1
+
+    .prologue
+    .line 404
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mPhoneNumber:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final j()Z
+    .locals 1
+
+    .prologue
+    .line 424
+    iget v0, p0, Lcom/snapchat/android/model/Friend;->mBestFriendIndex:I
+
+    if-ltz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final k()Z
+    .locals 2
+
+    .prologue
+    .line 526
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
+
+    invoke-static {}, Lakr;->l()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public l()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 381
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -823,102 +1015,40 @@
 
     throw v0
 
-    .line 380
+    .line 382
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public hashCode()I
-    .locals 1
-
-    .prologue
-    .line 554
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public i()Lcom/snapchat/android/stories/StoriesSection;
+.method public final m()Z
     .locals 2
 
     .prologue
-    .line 646
-    invoke-virtual {p0}, Lcom/snapchat/android/model/Friend;->l()Z
+    .line 585
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestionState:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    move-result v0
+    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestState;->NOT_SUGGESTION:Lcom/snapchat/android/model/Friend$SuggestState;
 
-    if-eqz v0, :cond_0
+    if-eq v0, v1, :cond_0
 
-    .line 647
-    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->ALPHABETICAL:Lcom/snapchat/android/stories/StoriesSection;
+    const/4 v0, 0x1
 
-    .line 662
     :goto_0
-    return-object v0
+    return v0
 
-    .line 650
     :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestType:Lcom/snapchat/android/model/Friend$SuggestType;
-
-    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestType;->USERNAME:Lcom/snapchat/android/model/Friend$SuggestType;
-
-    if-ne v0, v1, :cond_1
-
-    .line 651
-    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->USERNAME:Lcom/snapchat/android/stories/StoriesSection;
-
-    goto :goto_0
-
-    .line 654
-    :cond_1
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestType:Lcom/snapchat/android/model/Friend$SuggestType;
-
-    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestType;->ADDRESS_BOOK:Lcom/snapchat/android/model/Friend$SuggestType;
-
-    if-ne v0, v1, :cond_2
-
-    .line 655
-    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->ADDRESS_BOOK:Lcom/snapchat/android/stories/StoriesSection;
-
-    goto :goto_0
-
-    .line 658
-    :cond_2
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
-
-    invoke-static {}, Lajv;->g()Lajv;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Latm;->f(Ljava/lang/String;Lajv;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 659
-    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->FRIENDS:Lcom/snapchat/android/stories/StoriesSection;
-
-    goto :goto_0
-
-    .line 662
-    :cond_3
-    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->NONE:Lcom/snapchat/android/stories/StoriesSection;
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public final j()Z
+.method public final n()Z
     .locals 1
 
     .prologue
-    .line 347
+    .line 349
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -938,46 +1068,18 @@
     goto :goto_0
 .end method
 
-.method public final k()Ljava/lang/String;
-    .locals 1
-    .annotation build Lcgb;
-    .end annotation
-
-    .prologue
-    .line 283
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 284
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
-
-    .line 286
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mDisplayName:Ljava/lang/String;
-
-    goto :goto_0
-.end method
-
-.method public final l()Z
+.method public final o()Z
     .locals 2
 
     .prologue
-    .line 352
-    invoke-static {}, Lajq;->a()Lajq;
+    .line 354
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lajq;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
+    invoke-virtual {v0, v1}, Lakk;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
 
     move-result-object v0
 
@@ -994,45 +1096,45 @@
     goto :goto_0
 .end method
 
-.method public final m()Lauz;
+.method public final p()Lavx;
     .locals 5
 
     .prologue
-    .line 672
+    .line 682
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsSharedStory:Z
 
     if-eqz v0, :cond_1
 
     sget-object v0, Lcom/snapchat/android/stories/StoriesThumbnailType;->OLDEST_SNAP_THUMBNAIL_WITHOUT_DECAY:Lcom/snapchat/android/stories/StoriesThumbnailType;
 
-    .line 674
+    .line 684
     :goto_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 675
-    invoke-static {}, Lajq;->a()Lajq;
+    .line 685
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lajq;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
+    invoke-virtual {v2, v3}, Lakk;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
 
     move-result-object v2
 
-    .line 676
+    .line 686
     if-eqz v2, :cond_0
 
-    .line 677
+    .line 687
     invoke-virtual {v2}, Lcom/snapchat/android/model/StoryCollection;->f()Ljava/util/List;
 
     move-result-object v1
 
-    .line 680
+    .line 690
     :cond_0
-    new-instance v2, Lauz;
+    new-instance v2, Lavx;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1054,106 +1156,22 @@
 
     move-result-object v3
 
-    invoke-direct {v2, v0, v1, v3}, Lauz;-><init>(Lcom/snapchat/android/stories/StoriesThumbnailType;Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {v2, v0, v1, v3}, Lavx;-><init>(Lcom/snapchat/android/stories/StoriesThumbnailType;Ljava/util/List;Ljava/lang/String;)V
 
     return-object v2
 
-    .line 672
+    .line 682
     :cond_1
     sget-object v0, Lcom/snapchat/android/stories/StoriesThumbnailType;->SOME_SNAPS:Lcom/snapchat/android/stories/StoriesThumbnailType;
 
     goto :goto_0
 .end method
 
-.method public final n()Z
-    .locals 1
-
-    .prologue
-    .line 402
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mPhoneNumber:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final o()Z
-    .locals 1
-
-    .prologue
-    .line 422
-    iget v0, p0, Lcom/snapchat/android/model/Friend;->mBestFriendIndex:I
-
-    if-ltz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final p()Z
-    .locals 2
-
-    .prologue
-    .line 524
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mUsername:Ljava/lang/String;
-
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public final q()Z
-    .locals 2
-
-    .prologue
-    .line 579
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mSuggestionState:Lcom/snapchat/android/model/Friend$SuggestState;
-
-    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestState;->NOT_SUGGESTION:Lcom/snapchat/android/model/Friend$SuggestState;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final r()Z
     .locals 1
 
     .prologue
-    .line 608
+    .line 614
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsSharedStory:Z
 
     if-nez v0, :cond_0
@@ -1174,34 +1192,34 @@
     goto :goto_0
 .end method
 
-.method public final s()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
+.method public final r()Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
     .locals 1
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 688
+    .line 698
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mCashEligibility:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
     if-nez v0, :cond_0
 
-    .line 689
+    .line 699
     sget-object v0, Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;->SERVICE_NOT_AVAILABLE_TO_RECIPIENT:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
     iput-object v0, p0, Lcom/snapchat/android/model/Friend;->mCashEligibility:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
-    .line 691
+    .line 701
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mCashEligibility:Lcom/snapchat/android/api2/cash/ScCashResponsePayload$Status;
 
     return-object v0
 .end method
 
-.method public final t()V
+.method public final s()V
     .locals 2
 
     .prologue
-    .line 700
+    .line 710
     iget-boolean v0, p0, Lcom/snapchat/android/model/Friend;->mIsSharedStory:Z
 
     if-nez v0, :cond_0
@@ -1215,25 +1233,59 @@
 
     if-eqz v0, :cond_1
 
-    .line 701
-    new-instance v0, Loo;
+    .line 711
+    new-instance v0, Lpf;
 
     iget-object v1, p0, Lcom/snapchat/android/model/Friend;->mSharedStoryId:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Loo;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lpf;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Loo;->f()V
+    invoke-virtual {v0}, Lpf;->execute()V
 
-    .line 703
+    .line 713
     :cond_1
     return-void
+.end method
+
+.method public final t()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 774
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mFriendmojiString:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lbbj;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 775
+    invoke-static {}, Lbbj;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 778
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mFriendmojiString:Ljava/lang/String;
+
+    goto :goto_0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 529
+    .line 531
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Friend [mDisplayName="
@@ -1269,38 +1321,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final u()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 764
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mFriendmojiString:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lbaj;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 765
-    invoke-static {}, Lbaj;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 768
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/model/Friend;->mFriendmojiString:Ljava/lang/String;
-
-    goto :goto_0
 .end method

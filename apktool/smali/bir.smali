@@ -1,40 +1,36 @@
-.class public Lbir;
-.super Lbhl;
+.class public final Lbir;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field protected hereAuth:Lbic;
+.field protected compatibility:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "here_auth"
+        value = "compatibility"
     .end annotation
 .end field
 
-.field protected presences:Ljava/util/Map;
+.field protected getChannels:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "presences"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
+        value = "get_channels"
     .end annotation
 .end field
 
-.field protected receivingVideo:Ljava/lang/Boolean;
+.field protected resourceParameterName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "receiving_video"
+        value = "resource_parameter_name"
     .end annotation
 .end field
 
-.field protected supportsHere:Ljava/lang/Boolean;
+.field protected resourceParameterValue:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "supports_here"
+        value = "resource_parameter_value"
+    .end annotation
+.end field
+
+.field protected videoCatalog:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "video_catalog"
     .end annotation
 .end field
 
@@ -44,168 +40,133 @@
     .locals 0
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Lbhl;-><init>()V
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Map;
+.method public final a()Ljava/lang/String;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
-    .line 43
-    iget-object v0, p0, Lbir;->presences:Ljava/util/Map;
+    .line 44
+    iget-object v0, p0, Lbir;->getChannels:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final a(Ljava/util/Map;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Boolean;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 34
-    iput-object p1, p0, Lbir;->presences:Ljava/util/Map;
-
-    .line 35
-    return-void
-.end method
-
-.method public final b()Ljava/lang/Boolean;
+.method public final b()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lbir;->supportsHere:Ljava/lang/Boolean;
+    .line 62
+    iget-object v0, p0, Lbir;->videoCatalog:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final b(Ljava/lang/Boolean;)V
-    .locals 0
-
-    .prologue
-    .line 52
-    iput-object p1, p0, Lbir;->supportsHere:Ljava/lang/Boolean;
-
-    .line 53
-    return-void
-.end method
-
-.method public final c()Ljava/lang/Boolean;
+.method public final c()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 79
-    iget-object v0, p0, Lbir;->receivingVideo:Ljava/lang/Boolean;
+    .line 80
+    iget-object v0, p0, Lbir;->resourceParameterName:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final c(Ljava/lang/Boolean;)V
-    .locals 0
-
-    .prologue
-    .line 70
-    iput-object p1, p0, Lbir;->receivingVideo:Ljava/lang/Boolean;
-
-    .line 71
-    return-void
-.end method
-
-.method public final d()Lbic;
+.method public final d()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 97
-    iget-object v0, p0, Lbir;->hereAuth:Lbic;
+    .line 98
+    iget-object v0, p0, Lbir;->resourceParameterValue:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
+.method public final e()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 116
+    iget-object v0, p0, Lbir;->compatibility:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 121
+    .line 141
     if-ne p1, p0, :cond_0
 
-    .line 122
+    .line 142
     const/4 v0, 0x1
 
-    .line 128
+    .line 148
     :goto_0
     return v0
 
-    .line 124
+    .line 144
     :cond_0
     instance-of v0, p1, Lbir;
 
     if-nez v0, :cond_1
 
-    .line 125
+    .line 145
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 127
+    .line 147
     :cond_1
     check-cast p1, Lbir;
 
-    .line 128
+    .line 148
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbir;->presences:Ljava/util/Map;
+    iget-object v1, p0, Lbir;->getChannels:Ljava/lang/String;
 
-    iget-object v2, p1, Lbir;->presences:Ljava/util/Map;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbir;->supportsHere:Ljava/lang/Boolean;
-
-    iget-object v2, p1, Lbir;->supportsHere:Ljava/lang/Boolean;
+    iget-object v2, p1, Lbir;->getChannels:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbir;->receivingVideo:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbir;->videoCatalog:Ljava/lang/String;
 
-    iget-object v2, p1, Lbir;->receivingVideo:Ljava/lang/Boolean;
+    iget-object v2, p1, Lbir;->videoCatalog:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbir;->hereAuth:Lbic;
+    iget-object v1, p0, Lbir;->resourceParameterName:Ljava/lang/String;
 
-    iget-object v2, p1, Lbir;->hereAuth:Lbic;
+    iget-object v2, p1, Lbir;->resourceParameterName:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbir;->resourceParameterValue:Ljava/lang/String;
+
+    iget-object v2, p1, Lbir;->resourceParameterValue:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbir;->compatibility:Ljava/lang/String;
+
+    iget-object v2, p1, Lbir;->compatibility:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -218,34 +179,40 @@
     goto :goto_0
 .end method
 
-.method public hashCode()I
+.method public final hashCode()I
     .locals 2
 
     .prologue
-    .line 111
+    .line 130
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbir;->presences:Ljava/util/Map;
+    iget-object v1, p0, Lbir;->getChannels:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbir;->supportsHere:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbir;->videoCatalog:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbir;->receivingVideo:Ljava/lang/Boolean;
+    iget-object v1, p0, Lbir;->resourceParameterName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbir;->hereAuth:Lbic;
+    iget-object v1, p0, Lbir;->resourceParameterValue:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbir;->compatibility:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -258,11 +225,11 @@
     return v0
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public final toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 106
+    .line 125
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

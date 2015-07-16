@@ -1,22 +1,14 @@
 public final class byf
-  implements bxg
 {
-  public final bxk a(bwz parambwz, String paramString)
-  {
-    try
-    {
-      parambwz = new Double(paramString);
-      return new bxk(new Double(Math.tan(parambwz.doubleValue())).toString(), 0);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Invalid argument.", parambwz);
-    }
-  }
+  final byh a;
+  final String b;
+  final car c;
   
-  public final String a()
+  public byf(byh parambyh, String paramString, car paramcar)
   {
-    return "tan";
+    a = parambyh;
+    b = paramString;
+    c = paramcar;
   }
 }
 

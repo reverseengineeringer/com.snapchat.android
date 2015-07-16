@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
@@ -12,7 +12,7 @@ final class NotificationSettingsFragment$3
   public final void onCheckedChanged(CompoundButton paramCompoundButton, boolean paramBoolean)
   {
     NotificationSettingsFragment.a(a);
-    ajx.D(paramBoolean);
+    akr.C(paramBoolean);
   }
 }
 

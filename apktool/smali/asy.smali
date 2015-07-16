@@ -1,183 +1,112 @@
 .class public final Lasy;
-.super Ljava/lang/Object;
+.super Latb;
 .source "SourceFile"
 
 
+# instance fields
+.field private final b:Lart;
+
+
 # direct methods
-.method public static a(Ljava/util/SortedSet;Ljava/util/SortedSet;Z)I
-    .locals 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T::",
-            "Ljava/lang/Comparable",
-            "<TT;>;>(",
-            "Ljava/util/SortedSet",
-            "<TT;>;",
-            "Ljava/util/SortedSet",
-            "<TT;>;Z)I"
-        }
-    .end annotation
+.method public constructor <init>(Lart;)V
+    .locals 0
 
     .prologue
-    const/4 v2, 0x0
+    .line 14
+    invoke-direct {p0}, Latb;-><init>()V
 
-    .line 37
-    if-eqz p0, :cond_0
+    .line 15
+    iput-object p1, p0, Lasy;->b:Lart;
 
-    if-eqz p1, :cond_0
+    .line 16
+    return-void
+.end method
 
-    invoke-interface {p0}, Ljava/util/SortedSet;->isEmpty()Z
 
-    move-result v0
+# virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    if-nez v0, :cond_0
+    .prologue
+    .line 19
+    const-string v0, "Battery"
 
-    invoke-interface {p1}, Ljava/util/SortedSet;->isEmpty()Z
+    return-object v0
+.end method
 
-    move-result v0
+.method public final a(ILandroid/content/Context;)V
+    .locals 3
 
-    if-eqz v0, :cond_1
+    .prologue
+    .line 32
+    iget-object v0, p0, Lasy;->b:Lart;
 
-    .line 73
-    :cond_0
+    iget-object v0, v0, Lart;->a:Landroid/view/View;
+
+    const v1, 0x7f0a0076
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    const/high16 v1, 0x42640000    # 57.0f
+
+    invoke-static {v1, p2}, Lawf;->a(FLandroid/content/Context;)F
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    if-ne p1, v2, :cond_0
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationY(F)V
+
+    .line 33
     :goto_0
-    return v2
+    return-void
 
-    .line 40
-    :cond_1
-    invoke-interface {p0}, Ljava/util/SortedSet;->iterator()Ljava/util/Iterator;
+    .line 32
+    :cond_0
+    const/4 v1, 0x0
 
-    move-result-object v4
-
-    .line 41
-    invoke-interface {p1}, Ljava/util/SortedSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    .line 42
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Comparable;
-
-    .line 43
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Comparable;
-
-    move-object v3, v0
-
-    move-object v6, v1
-
-    move v1, v2
-
-    move-object v2, v6
-
-    .line 46
-    :goto_1
-    invoke-interface {v3, v2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
-
-    move-result v0
-
-    .line 48
-    if-nez v0, :cond_3
-
-    .line 49
-    if-eqz p2, :cond_2
-
-    .line 50
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
     goto :goto_0
+.end method
 
-    .line 52
-    :cond_2
-    add-int/lit8 v2, v1, 0x1
+.method public final d()Landroid/view/View;
+    .locals 1
 
-    .line 53
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    .prologue
+    .line 23
+    iget-object v0, p0, Lasy;->b:Lart;
 
-    move-result v0
+    iget-object v0, v0, Lart;->a:Landroid/view/View;
 
-    if-eqz v0, :cond_0
+    return-object v0
+.end method
 
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+.method public final e()V
+    .locals 4
 
-    move-result v0
+    .prologue
+    .line 27
+    iget-object v0, p0, Lasy;->b:Lart;
 
-    if-eqz v0, :cond_0
+    iget-object v1, v0, Lart;->b:Lapz;
 
-    .line 54
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const v2, 0x7f04000a
 
-    move-result-object v0
+    iget-object v3, v0, Lart;->a:Landroid/view/View;
 
-    check-cast v0, Ljava/lang/Comparable;
+    invoke-virtual {v1, v2, v3}, Lapz;->a(ILandroid/view/View;)V
 
-    .line 55
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    iput-object v1, v0, Lart;->a:Landroid/view/View;
 
-    check-cast v1, Ljava/lang/Comparable;
-
-    move-object v3, v0
-
-    move-object v6, v1
-
-    move v1, v2
-
-    move-object v2, v6
-
-    goto :goto_1
-
-    .line 59
-    :cond_3
-    if-gez v0, :cond_4
-
-    .line 60
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 61
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Comparable;
-
-    move-object v3, v0
-
-    goto :goto_1
-
-    .line 66
-    :cond_4
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 67
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Comparable;
-
-    move-object v2, v0
-
-    .line 72
-    goto :goto_1
-
-    :cond_5
-    move v2, v1
-
-    goto :goto_0
+    .line 28
+    return-void
 .end method

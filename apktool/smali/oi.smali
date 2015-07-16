@@ -1,37 +1,30 @@
 .class public final Loi;
-.super Ljava/lang/Object;
+.super Ljava/lang/Exception;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Ljava/lang/String;
-
-.field public b:Ljava/lang/String;
-
-.field public c:Lcom/snapchat/android/ui/swipefilters/FilterPageType;
-
-
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 2
 
     .prologue
-    const/4 v1, 0x0
+    .line 8
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "User was unable to deserialize geofilter: "
 
-    .line 13
-    const-string v0, "None"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Loi;->a:Ljava/lang/String;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 14
-    iput-object v1, p0, Loi;->b:Ljava/lang/String;
+    move-result-object v0
 
-    .line 15
-    iput-object v1, p0, Loi;->c:Lcom/snapchat/android/ui/swipefilters/FilterPageType;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 18
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    .line 9
     return-void
 .end method

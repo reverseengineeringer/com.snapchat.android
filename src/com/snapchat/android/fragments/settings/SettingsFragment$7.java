@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.settings;
 
-import ajx;
+import akr;
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.fragments.settings.twofa.TwoFactorSettingsDisabledFragment;
 import com.snapchat.android.fragments.settings.twofa.TwoFactorSettingsEnabledFragment;
@@ -18,12 +18,12 @@ final class SettingsFragment$7
   public final void onClick(View paramView)
   {
     SettingsFragment.a(a);
-    if (ajx.bq())
+    if (akr.bn())
     {
-      ban.a().a(new bdw(new TwoFactorSettingsEnabledFragment(), TwoFactorSettingsEnabledFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
+      bbo.a().a(new bev(new TwoFactorSettingsEnabledFragment(), TwoFactorSettingsEnabledFragment.class.getSimpleName(), LeftSwipeContentFragment.SETTINGS_FRAGMENT.tag()));
       return;
     }
-    ban.a().a(new bdw(new TwoFactorSettingsDisabledFragment()));
+    bbo.a().a(new bev(new TwoFactorSettingsDisabledFragment()));
   }
 }
 

@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field public A:Lcom/snapchat/android/discover/model/MediaState;
+
 .field public a:Ljava/lang/String;
 
 .field public b:Ljava/lang/String;
@@ -43,11 +45,11 @@
 
 .field public n:I
 
-.field public o:Ljava/lang/String;
+.field public o:I
 
-.field public p:I
+.field public p:Ljava/lang/String;
 
-.field public q:Ljava/lang/String;
+.field public q:I
 
 .field public r:Ljava/lang/String;
 
@@ -59,7 +61,7 @@
 
 .field public v:Ljava/lang/String;
 
-.field public w:Lcom/snapchat/android/discover/model/MediaState;
+.field public w:Ljava/lang/String;
 
 .field public x:Lcom/snapchat/android/discover/model/MediaState;
 
@@ -73,33 +75,33 @@
     .locals 1
 
     .prologue
-    .line 322
+    .line 334
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 337
+    .line 350
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage$a;->o:Ljava/lang/String;
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage$a;->p:Ljava/lang/String;
 
-    .line 345
-    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
-
-    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage$a;->w:Lcom/snapchat/android/discover/model/MediaState;
-
-    .line 346
+    .line 358
     sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage$a;->x:Lcom/snapchat/android/discover/model/MediaState;
 
-    .line 347
+    .line 359
     sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage$a;->y:Lcom/snapchat/android/discover/model/MediaState;
 
-    .line 348
+    .line 360
     sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
 
     iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage$a;->z:Lcom/snapchat/android/discover/model/MediaState;
+
+    .line 361
+    sget-object v0, Lcom/snapchat/android/discover/model/MediaState;->NOT_STARTED:Lcom/snapchat/android/discover/model/MediaState;
+
+    iput-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage$a;->A:Lcom/snapchat/android/discover/model/MediaState;
 
     return-void
 .end method
@@ -107,12 +109,12 @@
 .method private static a(Ljava/lang/String;)I
     .locals 2
     .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 351
+    .line 364
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
@@ -123,7 +125,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 352
+    .line 365
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "#"
@@ -138,7 +140,7 @@
 
     move-result-object p0
 
-    .line 354
+    .line 367
     :cond_0
     invoke-static {p0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -153,18 +155,18 @@
     .locals 3
 
     .prologue
-    .line 485
+    .line 502
     iget-object v0, p0, Lcom/snapchat/android/discover/model/ChannelPage$a;->a:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     const-string v1, "Cannot build ChannelPage with null publisher name."
 
     const-string v2, "publisher_name"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 
@@ -182,7 +184,7 @@
     if-nez v0, :cond_2
 
     :cond_1
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -202,7 +204,7 @@
 
     const-string v2, "primary_color"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 
@@ -228,7 +230,7 @@
     if-nez v0, :cond_4
 
     :cond_3
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -248,7 +250,7 @@
 
     const-string v2, "secondary_color"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 
@@ -265,13 +267,13 @@
 
     if-nez v0, :cond_5
 
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     const-string v1, "Cannot build ChannelPage with null filled icon URL."
 
     const-string v2, "filled_icon"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 
@@ -280,13 +282,13 @@
 
     if-nez v0, :cond_6
 
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     const-string v1, "Cannot build ChannelPage with null inverted icon URL."
 
     const-string v2, "inverted_icon"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 
@@ -295,17 +297,17 @@
 
     if-nez v0, :cond_7
 
-    new-instance v0, Labs;
+    new-instance v0, Lacs;
 
     const-string v1, "Cannot build ChannelPage with null intro video URL."
 
     const-string v2, "intro_video"
 
-    invoke-direct {v0, v1, v2}, Labs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lacs;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     throw v0
 
-    .line 486
+    .line 503
     :cond_7
     new-instance v0, Lcom/snapchat/android/discover/model/ChannelPage;
 

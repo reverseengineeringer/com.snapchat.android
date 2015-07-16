@@ -21,7 +21,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-import bvi;
+import bwj;
 
 public class LoginView
   extends LinearLayout
@@ -53,7 +53,7 @@ public class LoginView
     LinearLayout.LayoutParams localLayoutParams = new LinearLayout.LayoutParams(-1, -2);
     localLayoutParams.setMargins(0, 0, 0, (int)TypedValue.applyDimension(1, 30.0F, getResources().getDisplayMetrics()));
     ((TextView)localObject).setLayoutParams(localLayoutParams);
-    ((TextView)localObject).setText(bvi.a(1280));
+    ((TextView)localObject).setText(bwj.a(1280));
     ((TextView)localObject).setTextColor(-7829368);
     ((TextView)localObject).setTextSize(2, 18.0F);
     ((TextView)localObject).setTypeface(null, 0);
@@ -63,7 +63,7 @@ public class LoginView
     localLayoutParams = new LinearLayout.LayoutParams(-1, -2);
     localLayoutParams.setMargins(0, 0, 0, (int)TypedValue.applyDimension(1, 30.0F, getResources().getDisplayMetrics()));
     ((EditText)localObject).setLayoutParams(localLayoutParams);
-    ((EditText)localObject).setHint(bvi.a(1282));
+    ((EditText)localObject).setHint(bwj.a(1282));
     ((EditText)localObject).setImeOptions(5);
     ((EditText)localObject).setInputType(33);
     ((EditText)localObject).setTextColor(-7829368);
@@ -77,7 +77,7 @@ public class LoginView
     localLayoutParams = new LinearLayout.LayoutParams(-1, -2);
     localLayoutParams.setMargins(0, 0, 0, (int)TypedValue.applyDimension(1, 30.0F, getResources().getDisplayMetrics()));
     ((EditText)localObject).setLayoutParams(localLayoutParams);
-    ((EditText)localObject).setHint(bvi.a(1283));
+    ((EditText)localObject).setHint(bwj.a(1283));
     ((EditText)localObject).setImeOptions(5);
     ((EditText)localObject).setInputType(128);
     ((EditText)localObject).setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -93,7 +93,7 @@ public class LoginView
     ((LinearLayout.LayoutParams)localObject).setMargins(0, 0, 0, (int)TypedValue.applyDimension(1, 30.0F, getResources().getDisplayMetrics()));
     paramContext.setLayoutParams((ViewGroup.LayoutParams)localObject);
     paramContext.setBackgroundDrawable(getButtonSelector());
-    paramContext.setText(bvi.a(1284));
+    paramContext.setText(bwj.a(1284));
     paramContext.setTextColor(-1);
     paramContext.setTextSize(2, 15.0F);
     a.addView(paramContext);

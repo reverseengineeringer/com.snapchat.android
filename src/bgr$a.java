@@ -1,9 +1,4 @@
-import android.view.View;
-
-public abstract interface bgr$a
-{
-  public abstract void a(View paramView);
-}
+public final class bgr$a {}
 
 /* Location:
  * Qualified Name:     bgr.a

@@ -1,30 +1,28 @@
-public final class wa
-  implements buo<vz>
+import android.view.MotionEvent;
+
+public abstract interface wa
 {
-  private final buj<vz> b;
+  public abstract void a(vs paramvs);
   
-  static
-  {
-    if (!wa.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
-  }
+  public abstract void a(vs paramvs, MotionEvent paramMotionEvent);
   
-  private wa(buj<vz> parambuj)
-  {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-  }
+  public abstract void a(vs paramvs, boolean paramBoolean);
   
-  public static buo<vz> a(buj<vz> parambuj)
-  {
-    return new wa(parambuj);
-  }
+  public abstract boolean a(vs paramvs, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4);
+  
+  public abstract void a_();
+  
+  public abstract float b(vs paramvs);
+  
+  public abstract boolean c(vs paramvs);
+  
+  public abstract int d(vs paramvs);
+  
+  public abstract void e(vs paramvs);
+  
+  public abstract void f(vs paramvs);
+  
+  public abstract void i();
 }
 
 /* Location:

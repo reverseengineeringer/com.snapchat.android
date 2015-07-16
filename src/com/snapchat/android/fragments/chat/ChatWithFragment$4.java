@@ -2,7 +2,7 @@ package com.snapchat.android.fragments.chat;
 
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
-import avh;
+import awf;
 
 final class ChatWithFragment$4
   implements AbsListView.OnScrollListener
@@ -14,7 +14,7 @@ final class ChatWithFragment$4
   public final void onScrollStateChanged(AbsListView paramAbsListView, int paramInt)
   {
     if (paramInt != 0) {
-      avh.a(a.getActivity(), ChatWithFragment.b(a));
+      awf.a(a.getActivity(), ChatWithFragment.b(a));
     }
   }
 }

@@ -2,17 +2,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kp
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "REGISTRATION_USER_LOGIN_PAGEVIEW";
+  public Long attemptCount;
+  private final String eventName = "REGISTRATION_USER_CAPTCHA_FAIL";
+  public Long imageCount;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_LOGIN_PAGEVIEW");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "REGISTRATION_USER_CAPTCHA_FAIL");
+    if (attemptCount != null) {
+      localHashMap.put("attempt_count", attemptCount);
+    }
+    if (imageCount != null) {
+      localHashMap.put("image_count", imageCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +35,23 @@ public final class kp
         return false;
       }
       paramObject = (kp)paramObject;
-      if (additionalInfo == null) {
+      if (attemptCount != null)
+      {
+        if (attemptCount.equals(attemptCount)) {}
+      }
+      else {
+        while (attemptCount != null) {
+          return false;
+        }
+      }
+      if (imageCount == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (imageCount.equals(imageCount));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (imageCount == null) {
         break;
       }
     }
@@ -46,10 +59,15 @@ public final class kp
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
-      return i + j * 31;
+    int j = 0;
+    int k = super.hashCode();
+    if (attemptCount != null) {}
+    for (int i = attemptCount.hashCode();; i = 0)
+    {
+      if (imageCount != null) {
+        j = imageCount.hashCode();
+      }
+      return (i + k * 31) * 31 + j;
     }
   }
 }

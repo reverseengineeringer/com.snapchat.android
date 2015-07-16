@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class iq
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "PROFILE_DISPLAY_NAME_CHANGE";
+  private final String eventName = "PROFILE_ADDED_ME_PAGE_VIEW";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_DISPLAY_NAME_CHANGE");
+    localHashMap.put("event_name", "PROFILE_ADDED_ME_PAGE_VIEW");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

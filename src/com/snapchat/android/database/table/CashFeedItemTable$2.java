@@ -1,10 +1,9 @@
 package com.snapchat.android.database.table;
 
-import ajx;
+import akr;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
-import com.snapchat.android.Timber;
 import com.snapchat.android.database.DatabaseHelper;
 import com.snapchat.android.model.Snap.TargetView;
 import com.snapchat.android.model.chat.CashFeedItem;
@@ -31,26 +30,28 @@ final class CashFeedItemTable$2
       while (((Iterator)localObject1).hasNext())
       {
         localObject2 = (Map.Entry)((Iterator)localObject1).next();
-        Timber.b(CashFeedItemTable.g(), "CASH-LOG: Saving a cash feed item with ID " + (String)((Map.Entry)localObject2).getKey(), new Object[0]);
+        CashFeedItemTable.g();
+        new StringBuilder("CASH-LOG: Saving a cash feed item with ID ").append((String)((Map.Entry)localObject2).getKey());
         localHashSet.add(((Map.Entry)localObject2).getKey());
         CashFeedItemTable.a(localSQLiteDatabase, (CashFeedItem)((Map.Entry)localObject2).getValue(), Snap.TargetView.CHAT);
       }
       if (localCollection.isEmpty()) {
-        break label143;
+        break label135;
       }
     }
     finally
     {
       localSQLiteDatabase.endTransaction();
     }
-    ajx.al();
-    label143:
+    akr.ak();
+    label135:
     Object localObject1 = new HashSet();
     Object localObject2 = CashFeedItemTable.h().entrySet().iterator();
     while (((Iterator)localObject2).hasNext())
     {
       Map.Entry localEntry = (Map.Entry)((Iterator)localObject2).next();
-      Timber.b(CashFeedItemTable.g(), "CASH-LOG: Deleting a cash feed item with ID " + (String)localEntry.getKey(), new Object[0]);
+      CashFeedItemTable.g();
+      new StringBuilder("CASH-LOG: Deleting a cash feed item with ID ").append((String)localEntry.getKey());
       ((Set)localObject1).add(localEntry.getKey());
       localSQLiteDatabase.delete("CashFeedItem", CashFeedItemTable.CashSchema.ID.getColumnName() + "=?", new String[] { ((CashFeedItem)localEntry.getValue()).d() });
     }

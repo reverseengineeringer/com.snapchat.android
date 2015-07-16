@@ -1,11 +1,21 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target({java.lang.annotation.ElementType.METHOD})
-public @interface boh {}
+public abstract interface boh
+{
+  public abstract bne a(bnd parambnd);
+  
+  public abstract cbj a(bnb parambnb, long paramLong);
+  
+  public abstract void a();
+  
+  public abstract void a(bnb parambnb);
+  
+  public abstract void a(bod parambod);
+  
+  public abstract bnd.a b();
+  
+  public abstract void c();
+  
+  public abstract boolean d();
+}
 
 /* Location:
  * Qualified Name:     boh

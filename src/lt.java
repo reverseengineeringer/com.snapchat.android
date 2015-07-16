@@ -1,22 +1,40 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class lt
-  extends hk
+public final class lt
+  extends ml
 {
-  public String userId;
+  private String additionalInfo;
+  private final String eventName = "REGISTRATION_USER_USERNAME_SUCCESS";
+  public String username;
+  public Long usernameIndexPos;
+  public String usernameSuggestion;
+  public mm usernameType;
   
-  public Map<String, Object> a()
+  public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    if (userId != null) {
-      localHashMap.put("user_id", userId);
+    localHashMap.put("event_name", "REGISTRATION_USER_USERNAME_SUCCESS");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
+    }
+    if (username != null) {
+      localHashMap.put("username", username);
+    }
+    if (usernameIndexPos != null) {
+      localHashMap.put("username_index_pos", usernameIndexPos);
+    }
+    if (usernameSuggestion != null) {
+      localHashMap.put("username_suggestion", usernameSuggestion);
+    }
+    if (usernameType != null) {
+      localHashMap.put("username_type", usernameType);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
   }
   
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (this == paramObject) {}
     do
@@ -29,25 +47,94 @@ public class lt
         return false;
       }
       paramObject = (lt)paramObject;
-      if (userId == null) {
+      if (additionalInfo != null)
+      {
+        if (additionalInfo.equals(additionalInfo)) {}
+      }
+      else {
+        while (additionalInfo != null) {
+          return false;
+        }
+      }
+      if (username != null)
+      {
+        if (username.equals(username)) {}
+      }
+      else {
+        while (username != null) {
+          return false;
+        }
+      }
+      if (usernameIndexPos != null)
+      {
+        if (usernameIndexPos.equals(usernameIndexPos)) {}
+      }
+      else {
+        while (usernameIndexPos != null) {
+          return false;
+        }
+      }
+      if (usernameSuggestion != null)
+      {
+        if (usernameSuggestion.equals(usernameSuggestion)) {}
+      }
+      else {
+        while (usernameSuggestion != null) {
+          return false;
+        }
+      }
+      if (usernameType == null) {
         break;
       }
-    } while (userId.equals(userId));
+    } while (usernameType.equals(usernameType));
     for (;;)
     {
       return false;
-      if (userId == null) {
+      if (usernameType == null) {
         break;
       }
     }
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    int j = super.hashCode();
-    if (userId != null) {}
-    for (int i = userId.hashCode();; i = 0) {
-      return i + j * 31;
+    int n = 0;
+    int i1 = super.hashCode();
+    int i;
+    int j;
+    label39:
+    int k;
+    if (additionalInfo != null)
+    {
+      i = additionalInfo.hashCode();
+      if (username == null) {
+        break label121;
+      }
+      j = username.hashCode();
+      if (usernameIndexPos == null) {
+        break label126;
+      }
+      k = usernameIndexPos.hashCode();
+      label54:
+      if (usernameSuggestion == null) {
+        break label131;
+      }
+    }
+    label121:
+    label126:
+    label131:
+    for (int m = usernameSuggestion.hashCode();; m = 0)
+    {
+      if (usernameType != null) {
+        n = usernameType.hashCode();
+      }
+      return (m + (k + (j + (i + i1 * 31) * 31) * 31) * 31) * 31 + n;
+      i = 0;
+      break;
+      j = 0;
+      break label39;
+      k = 0;
+      break label54;
     }
   }
 }

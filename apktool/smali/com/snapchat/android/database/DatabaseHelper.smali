@@ -16,11 +16,11 @@
 
 
 # instance fields
-.field private final b:Lajx;
+.field private final b:Lakr;
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;Lajx;)V
+.method private constructor <init>(Landroid/content/Context;Lakr;)V
     .locals 3
 
     .prologue
@@ -29,12 +29,12 @@
 
     const/4 v1, 0x0
 
-    const/16 v2, 0xc7
+    const/16 v2, 0xce
 
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
     .line 66
-    iput-object p2, p0, Lcom/snapchat/android/database/DatabaseHelper;->b:Lajx;
+    iput-object p2, p0, Lcom/snapchat/android/database/DatabaseHelper;->b:Lakr;
 
     .line 67
     return-void
@@ -57,11 +57,11 @@
     .line 58
     new-instance v0, Lcom/snapchat/android/database/DatabaseHelper;
 
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     move-result-object v2
 
-    invoke-direct {v0, p0, v2}, Lcom/snapchat/android/database/DatabaseHelper;-><init>(Landroid/content/Context;Lajx;)V
+    invoke-direct {v0, p0, v2}, Lcom/snapchat/android/database/DatabaseHelper;-><init>(Landroid/content/Context;Lakr;)V
 
     sput-object v0, Lcom/snapchat/android/database/DatabaseHelper;->a:Lcom/snapchat/android/database/DatabaseHelper;
 
@@ -101,7 +101,7 @@
     invoke-virtual {p0, p1}, Lcom/snapchat/android/database/DatabaseHelper;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
 
     .line 125
-    invoke-static {}, Lajx;->aC()V
+    invoke-static {}, Lakr;->aB()V
 
     .line 126
     return-void
@@ -110,11 +110,11 @@
 .method private static a(Landroid/database/sqlite/SQLiteDatabase;Lcom/snapchat/android/database/DatabaseHelper$TableType;)V
     .locals 10
     .param p0    # Landroid/database/sqlite/SQLiteDatabase;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p1    # Lcom/snapchat/android/database/DatabaseHelper$TableType;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -235,26 +235,6 @@
     if-ne p1, v2, :cond_3
 
     .line 139
-    const-string v2, "DbVirtualTable"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Drop virtual table "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v9, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "DROP VIEW IF EXISTS "
@@ -295,23 +275,14 @@
     .locals 6
 
     .prologue
-    const/4 v0, 0x0
-
     .line 88
-    const-string v1, "DatabaseHelper"
-
-    const-string v2, "Creating Database"
-
-    new-array v3, v0, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 91
     invoke-static {}, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->values()[Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
 
     move-result-object v1
 
     array-length v2, v1
+
+    const/4 v0, 0x0
 
     :goto_0
     if-ge v0, v2, :cond_0
@@ -377,35 +348,29 @@
 .end method
 
 .method public final onDowngrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 5
+    .locals 3
 
     .prologue
     .line 113
-    const-string v0, "DatabaseHelper"
+    const/4 v0, 0x2
 
-    const-string v1, "Downgrading database from version %d to %d, which will destroy all old data"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    aput-object v2, v0, v1
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v1
 
     .line 114
     invoke-direct {p0, p1}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/database/sqlite/SQLiteDatabase;)V
@@ -415,35 +380,29 @@
 .end method
 
 .method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 5
+    .locals 3
 
     .prologue
     .line 107
-    const-string v0, "DatabaseHelper"
+    const/4 v0, 0x2
 
-    const-string v1, "Upgrading database from version %d to %d, which will destroy all old data"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    aput-object v2, v0, v1
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v1
 
     .line 108
     invoke-direct {p0, p1}, Lcom/snapchat/android/database/DatabaseHelper;->a(Landroid/database/sqlite/SQLiteDatabase;)V

@@ -30,7 +30,7 @@
 .field public transient mChangedListener:Lcom/snapchat/android/model/StoryGroup$b;
 
 .field protected mCustomDescription:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -95,7 +95,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lbim;)V
+.method public constructor <init>(Lbjm;)V
     .locals 3
 
     .prologue
@@ -132,25 +132,25 @@
     iput-object v0, p0, Lcom/snapchat/android/model/StoryGroup;->mChangedListener:Lcom/snapchat/android/model/StoryGroup$b;
 
     .line 64
-    invoke-virtual {p1}, Lbim;->a()Ljava/lang/String;
+    invoke-virtual {p1}, Lbjm;->a()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/model/StoryGroup;->mStoryId:Ljava/lang/String;
 
     .line 65
-    invoke-virtual {p1}, Lbim;->b()Ljava/lang/String;
+    invoke-virtual {p1}, Lbjm;->b()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/snapchat/android/model/StoryGroup;->mDisplayName:Ljava/lang/String;
 
     .line 66
-    invoke-virtual {p1}, Lbim;->d()Ljava/lang/Boolean;
+    invoke-virtual {p1}, Lbjm;->d()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
@@ -162,7 +162,7 @@
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     .line 68
-    invoke-virtual {p1}, Lbim;->c()Ljava/util/List;
+    invoke-virtual {p1}, Lbjm;->c()Ljava/util/List;
 
     move-result-object v0
 
@@ -191,12 +191,12 @@
 
     move-result-object v0
 
-    check-cast v0, Lbio;
+    check-cast v0, Lbjo;
 
     .line 71
     new-instance v2, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    invoke-direct {v2, v0}, Lcom/snapchat/android/model/StorySnapLogbook;-><init>(Lbio;)V
+    invoke-direct {v2, v0}, Lcom/snapchat/android/model/StorySnapLogbook;-><init>(Lbjo;)V
 
     .line 72
     iget-object v0, p0, Lcom/snapchat/android/model/StoryGroup;->mStoryId:Ljava/lang/String;
@@ -431,7 +431,7 @@
 
     iget-object v3, p0, Lcom/snapchat/android/model/StoryGroup;->mStoryId:Ljava/lang/String;
 
-    invoke-static {v0, v3}, Laut;->a(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {v0, v3}, Lavr;->a(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -442,7 +442,7 @@
 
     iget-object v2, p0, Lcom/snapchat/android/model/StoryGroup;->mStoryId:Ljava/lang/String;
 
-    invoke-static {v1, v2}, Laut;->a(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {v1, v2}, Lavr;->a(Ljava/util/List;Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -509,7 +509,7 @@
 .method public final a(Lcom/snapchat/android/model/StoryGroup$ActionState;)V
     .locals 2
     .param p1    # Lcom/snapchat/android/model/StoryGroup$ActionState;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -660,7 +660,7 @@
             "()",
             "Ljava/util/List",
             "<",
-            "Laim;",
+            "Laji;",
             ">;"
         }
     .end annotation
@@ -669,13 +669,13 @@
     .line 152
     new-instance v0, Ljava/util/ArrayList;
 
-    invoke-static {}, Lajn;->a()Lajn;
+    invoke-static {}, Laki;->a()Laki;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/snapchat/android/model/StoryGroup;->mStoryId:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Lajn;->a(Ljava/lang/String;)Ljava/util/LinkedHashMap;
+    invoke-virtual {v1, v2}, Laki;->a(Ljava/lang/String;)Ljava/util/LinkedHashMap;
 
     move-result-object v1
 
@@ -695,7 +695,7 @@
             "()",
             "Ljava/util/List",
             "<",
-            "Laim;",
+            "Laji;",
             ">;"
         }
     .end annotation
@@ -704,13 +704,13 @@
     .line 156
     new-instance v0, Ljava/util/ArrayList;
 
-    invoke-static {}, Lajn;->a()Lajn;
+    invoke-static {}, Laki;->a()Laki;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/snapchat/android/model/StoryGroup;->mStoryId:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Lajn;->b(Ljava/lang/String;)Ljava/util/LinkedHashMap;
+    invoke-virtual {v1, v2}, Laki;->b(Ljava/lang/String;)Ljava/util/LinkedHashMap;
 
     move-result-object v1
 
@@ -728,7 +728,7 @@
 
     .prologue
     .line 160
-    invoke-static {}, Lajn;->a()Lajn;
+    invoke-static {}, Laki;->a()Laki;
 
     move-result-object v0
 
@@ -741,7 +741,7 @@
 
     iget-object v2, p0, Lcom/snapchat/android/model/StoryGroup;->mStoryId:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lajn;->a(Ljava/lang/String;)Ljava/util/LinkedHashMap;
+    invoke-virtual {v0, v2}, Laki;->a(Ljava/lang/String;)Ljava/util/LinkedHashMap;
 
     move-result-object v2
 
@@ -753,7 +753,7 @@
 
     iget-object v2, p0, Lcom/snapchat/android/model/StoryGroup;->mStoryId:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lajn;->b(Ljava/lang/String;)Ljava/util/LinkedHashMap;
+    invoke-virtual {v0, v2}, Laki;->b(Ljava/lang/String;)Ljava/util/LinkedHashMap;
 
     move-result-object v0
 
@@ -773,7 +773,7 @@
             "()",
             "Ljava/util/Collection",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;"
         }
     .end annotation
@@ -811,7 +811,7 @@
     check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
     .line 168
-    iget-object v0, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v0, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
     invoke-interface {v1, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 

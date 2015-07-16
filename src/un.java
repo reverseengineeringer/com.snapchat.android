@@ -1,7 +1,11 @@
-public abstract interface un
-{
-  public abstract long a(int paramInt);
-}
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+public @interface un {}
 
 /* Location:
  * Qualified Name:     un

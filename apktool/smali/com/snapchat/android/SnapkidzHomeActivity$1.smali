@@ -41,13 +41,13 @@
 
     .prologue
     .line 123
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbbt;
+    new-instance v1, Lbct;
 
-    invoke-direct {v1}, Lbbt;-><init>()V
+    invoke-direct {v1}, Lbct;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

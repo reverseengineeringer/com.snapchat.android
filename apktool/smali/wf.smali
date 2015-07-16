@@ -3,63 +3,488 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/hardware/Camera$AutoFocusCallback;
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lcom/snapchat/android/camera/CameraFragment;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic a:Z
 
 
 # instance fields
-.field private final a:Landroid/os/Handler;
+.field private final b:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/camera/BaseCameraFragment;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private final b:Lwc$b;
+.field private final c:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lws;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private final c:Lwc$c;
+.field private final d:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lwv;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final e:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxh;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final f:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxf;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final g:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxg;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final h:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxj;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final i:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider",
+            "<",
+            "Lban;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/Handler;Lwc$b;Lwc$c;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 14
+    const-class v0, Lwf;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Lwf;->a:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/camera/BaseCameraFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lws;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lwv;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxh;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxf;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxg;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxj;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lban;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
     .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
-    iput-object p1, p0, Lwf;->a:Landroid/os/Handler;
+    sget-boolean v0, Lwf;->a:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
 
     .line 27
-    iput-object p3, p0, Lwf;->c:Lwc$c;
+    :cond_0
+    iput-object p1, p0, Lwf;->b:Lbvk;
 
     .line 28
-    iput-object p2, p0, Lwf;->b:Lwc$b;
+    sget-boolean v0, Lwf;->a:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
 
     .line 29
+    :cond_1
+    iput-object p2, p0, Lwf;->c:Ljavax/inject/Provider;
+
+    .line 30
+    sget-boolean v0, Lwf;->a:Z
+
+    if-nez v0, :cond_2
+
+    if-nez p3, :cond_2
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 31
+    :cond_2
+    iput-object p3, p0, Lwf;->d:Ljavax/inject/Provider;
+
+    .line 32
+    sget-boolean v0, Lwf;->a:Z
+
+    if-nez v0, :cond_3
+
+    if-nez p4, :cond_3
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 33
+    :cond_3
+    iput-object p4, p0, Lwf;->e:Ljavax/inject/Provider;
+
+    .line 34
+    sget-boolean v0, Lwf;->a:Z
+
+    if-nez v0, :cond_4
+
+    if-nez p5, :cond_4
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 35
+    :cond_4
+    iput-object p5, p0, Lwf;->f:Ljavax/inject/Provider;
+
+    .line 36
+    sget-boolean v0, Lwf;->a:Z
+
+    if-nez v0, :cond_5
+
+    if-nez p6, :cond_5
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 37
+    :cond_5
+    iput-object p6, p0, Lwf;->g:Ljavax/inject/Provider;
+
+    .line 38
+    sget-boolean v0, Lwf;->a:Z
+
+    if-nez v0, :cond_6
+
+    if-nez p7, :cond_6
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 39
+    :cond_6
+    iput-object p7, p0, Lwf;->h:Ljavax/inject/Provider;
+
+    .line 40
+    sget-boolean v0, Lwf;->a:Z
+
+    if-nez v0, :cond_7
+
+    if-nez p8, :cond_7
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 41
+    :cond_7
+    iput-object p8, p0, Lwf;->i:Ljavax/inject/Provider;
+
+    .line 42
     return-void
 .end method
 
-.method static synthetic a(Lwf;)Lwc$c;
-    .locals 1
+.method public static a(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
+    .locals 9
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/camera/BaseCameraFragment;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lws;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lwv;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxh;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxf;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxg;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lxj;",
+            ">;",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lban;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lcom/snapchat/android/camera/CameraFragment;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 13
-    iget-object v0, p0, Lwf;->c:Lwc$c;
+    .line 60
+    new-instance v0, Lwf;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move-object v7, p6
+
+    move-object/from16 v8, p7
+
+    invoke-direct/range {v0 .. v8}, Lwf;-><init>(Lbvk;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final onAutoFocus(ZLandroid/hardware/Camera;)V
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
     .prologue
-    .line 33
-    iget-object v0, p0, Lwf;->a:Landroid/os/Handler;
+    .line 14
+    check-cast p1, Lcom/snapchat/android/camera/CameraFragment;
 
-    new-instance v1, Lwf$1;
+    if-nez p1, :cond_0
 
-    invoke-direct {v1, p0, p1}, Lwf$1;-><init>(Lwf;Z)V
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    const-string v1, "Cannot inject members into a null reference"
 
-    .line 39
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lwf;->b:Lbvk;
+
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lwf;->c:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lws;
+
+    iput-object v0, p1, Lcom/snapchat/android/camera/CameraFragment;->m:Lws;
+
+    iget-object v0, p0, Lwf;->d:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lwv;
+
+    iput-object v0, p1, Lcom/snapchat/android/camera/CameraFragment;->n:Lwv;
+
+    iget-object v0, p0, Lwf;->e:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxh;
+
+    iput-object v0, p1, Lcom/snapchat/android/camera/CameraFragment;->o:Lxh;
+
+    iget-object v0, p0, Lwf;->f:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxf;
+
+    iput-object v0, p1, Lcom/snapchat/android/camera/CameraFragment;->p:Lxf;
+
+    iget-object v0, p0, Lwf;->g:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxg;
+
+    iput-object v0, p1, Lcom/snapchat/android/camera/CameraFragment;->q:Lxg;
+
+    iget-object v0, p0, Lwf;->h:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxj;
+
+    iput-object v0, p1, Lcom/snapchat/android/camera/CameraFragment;->r:Lxj;
+
+    iget-object v0, p0, Lwf;->i:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lban;
+
+    iput-object v0, p1, Lcom/snapchat/android/camera/CameraFragment;->s:Lban;
+
     return-void
 .end method

@@ -13,9 +13,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import atj;
-import avh;
-import cgc;
+import auh;
+import awf;
+import chd;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 
@@ -28,7 +28,7 @@ public class BasePasswordValidationFragment
   protected View d;
   protected TextView e;
   
-  public final void a(@cgc String paramString)
+  public final void a(@chd String paramString)
   {
     if (!TextUtils.isEmpty(paramString))
     {
@@ -50,34 +50,34 @@ public class BasePasswordValidationFragment
   {
     super.e();
     if (a.requestFocus()) {
-      avh.f(getActivity());
+      awf.f(getActivity());
     }
   }
   
   public final void f()
   {
     super.f();
-    avh.a(getActivity(), H().getDecorView().getRootView());
+    awf.a(getActivity(), J().getDecorView().getRootView());
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968729, paramViewGroup, false);
-    c(2131362673).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968731, paramViewGroup, false);
+    c(2131362672).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        avh.a(getActivity(), getView());
+        awf.a(getActivity(), getView());
         getActivity().onBackPressed();
       }
     });
-    b = ((Button)c(2131362680));
+    b = ((Button)c(2131362679));
     paramLayoutInflater = b;
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
-    c = c(2131362681);
-    d = c(2131362678);
-    e = ((TextView)c(2131362679));
+    auh.a(paramLayoutInflater);
+    c = c(2131362680);
+    d = c(2131362677);
+    e = ((TextView)c(2131362678));
     d.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -86,7 +86,7 @@ public class BasePasswordValidationFragment
         a(null);
       }
     });
-    a = ((EditText)c(2131362677));
+    a = ((EditText)c(2131362676));
     a.addTextChangedListener(new TextWatcher()
     {
       public final void afterTextChanged(Editable paramAnonymousEditable)

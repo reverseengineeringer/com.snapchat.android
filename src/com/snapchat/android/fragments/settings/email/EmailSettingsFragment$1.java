@@ -1,33 +1,33 @@
 package com.snapchat.android.fragments.settings.email;
 
-import amk;
-import ams;
-import anc;
-import aok;
-import aol;
+import anh;
+import anp;
+import anz;
+import apg;
+import aph;
 import java.util.Set;
 
 final class EmailSettingsFragment$1
-  implements aok
+  implements apg
 {
   EmailSettingsFragment$1(EmailSettingsFragment paramEmailSettingsFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
+    int i = aph.a(paramanh);
     if (EmailSettingsFragment.a(a).contains(Integer.valueOf(i)))
     {
       EmailSettingsFragment.a(a).remove(Integer.valueOf(i));
-      if (!(paramamk instanceof anc)) {
+      if (!(paramanh instanceof anz)) {
         break label63;
       }
       EmailSettingsFragment.a(a, b);
     }
     label63:
-    while (!(paramamk instanceof ams)) {
+    while (!(paramanh instanceof anp)) {
       return;
     }
-    EmailSettingsFragment.a(a, (ams)paramamk);
+    EmailSettingsFragment.a(a, (anp)paramanh);
   }
 }
 

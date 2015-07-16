@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 2139
+    .line 2154
     iput-object p1, p0, Lcom/snapchat/android/LandingPageActivity$7;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,41 +42,41 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2142
+    .line 2157
     instance-of v0, p2, Lcom/snapchat/android/util/chat/SecureChatService$a;
 
     if-eqz v0, :cond_0
 
-    .line 2143
+    .line 2158
     check-cast p2, Lcom/snapchat/android/util/chat/SecureChatService$a;
 
     iget-object v0, p2, Lcom/snapchat/android/util/chat/SecureChatService$a;->this$0:Lcom/snapchat/android/util/chat/SecureChatService;
 
     sput-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
-    .line 2144
+    .line 2159
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$7;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/LandingPageActivity;->a(Lcom/snapchat/android/LandingPageActivity;Z)Z
 
-    .line 2145
+    .line 2160
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$7;->a:Lcom/snapchat/android/LandingPageActivity;
 
-    iget-object v0, v0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    iget-object v0, v0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
     if-nez v0, :cond_1
 
-    .line 2146
+    .line 2161
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$7;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/LandingPageActivity;->b(Lcom/snapchat/android/LandingPageActivity;Z)Z
 
-    .line 2151
+    .line 2166
     :cond_0
     :goto_0
     return-void
 
-    .line 2147
+    .line 2162
     :cond_1
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$7;->a:Lcom/snapchat/android/LandingPageActivity;
 
@@ -88,13 +88,13 @@
 
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$7;->a:Lcom/snapchat/android/LandingPageActivity;
 
-    iget-object v0, v0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lajv;
+    iget-object v0, v0, Lcom/snapchat/android/LandingPageActivity;->mUser:Lakp;
 
-    iget-object v0, v0, Lajv;->mMessagingGatewayInfo:Lbil;
+    iget-object v0, v0, Lakp;->mMessagingGatewayInfo:Lbjl;
 
     if-eqz v0, :cond_0
 
-    .line 2148
+    .line 2163
     invoke-static {}, Lcom/snapchat/android/LandingPageActivity;->j()V
 
     goto :goto_0
@@ -106,28 +106,28 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2155
+    .line 2170
     const/4 v0, 0x0
 
     sput-object v0, Lcom/snapchat/android/LandingPageActivity;->i:Lcom/snapchat/android/util/chat/SecureChatService;
 
-    .line 2156
+    .line 2171
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$7;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/LandingPageActivity;->a(Lcom/snapchat/android/LandingPageActivity;Z)Z
 
-    .line 2157
+    .line 2172
     iget-object v0, p0, Lcom/snapchat/android/LandingPageActivity$7;->a:Lcom/snapchat/android/LandingPageActivity;
 
     invoke-static {v0, v1}, Lcom/snapchat/android/LandingPageActivity;->b(Lcom/snapchat/android/LandingPageActivity;Z)Z
 
-    .line 2158
-    invoke-static {}, Lyq;->a()Lyq;
+    .line 2173
+    invoke-static {}, Lzm;->a()Lzm;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lyq;->c()V
+    invoke-virtual {v0}, Lzm;->c()V
 
-    .line 2159
+    .line 2174
     return-void
 .end method

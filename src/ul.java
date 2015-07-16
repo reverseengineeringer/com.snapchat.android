@@ -1,21 +1,50 @@
-public final class ul
-  implements tr
+import com.snapchat.android.api2.framework.HttpMethod;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+
+public abstract class ul
+  extends ui
 {
-  private String mString;
+  private static final String TAG = "HyperRequestOperation";
+  public ur mNetworkInterface = mProvider.a();
+  public final UUID mUUID = UUID.randomUUID();
   
-  public ul(String paramString)
+  public void execute()
   {
-    mString = paramString;
+    avf.NETWORK_EXECUTOR.execute(new Runnable()
+    {
+      public final void run()
+      {
+        executeSynchronously();
+      }
+    });
   }
   
-  public final blu a(String paramString)
+  @chc
+  public us executeSynchronously()
   {
-    return blu.a(new String[] { "Content-Disposition", "form-data; name=\"" + paramString + "\"" });
-  }
-  
-  public final bmb a()
-  {
-    return bmb.a(tl.STRING_MEDIA_TYPE, mString);
+    
+    if (akr.H())
+    {
+      new StringBuilder("Do not send any network request for Snapkidz ").append(getUrl());
+      return new us();
+    }
+    String str = getUrl();
+    Object localObject1 = getMethod();
+    bgk localbgk = getResponseBuffer();
+    Object localObject2 = getRequestPayload();
+    Map localMap = getHeaders(localObject2);
+    try
+    {
+      localObject1 = mNetworkInterface.a(str, (HttpMethod)localObject1, localMap, localbgk, localObject2);
+      onResult((us)localObject1);
+      return (us)localObject1;
+    }
+    catch (Throwable localThrowable)
+    {
+      throw new RuntimeException("An error occurred while executing request: " + str, localThrowable);
+    }
   }
 }
 

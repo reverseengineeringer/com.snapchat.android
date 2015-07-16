@@ -1,130 +1,122 @@
 .class public final Layt;
-.super Ljava/lang/Object;
+.super Lcom/google/gson/TypeAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuo;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
+        "Lcom/google/gson/TypeAdapter",
         "<",
-        "Lapd;",
+        "Lays;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field static final synthetic $assertionsDisabled:Z
-
-
-# instance fields
-.field private final module:Layl;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 7
-    const-class v0, Layt;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Layt;->$assertionsDisabled:Z
+    .line 14
+    invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     return-void
+.end method
 
-    :cond_0
+.method private static a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 28
     const/4 v0, 0x0
+
+    .line 29
+    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+
+    if-ne v1, v2, :cond_0
+
+    .line 30
+    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->nextNull()V
+
+    .line 34
+    :goto_0
+    return-object v0
+
+    .line 32
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 .end method
 
-.method private constructor <init>(Layl;)V
-    .locals 1
+
+# virtual methods
+.method public final synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    .locals 6
 
     .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    sget-boolean v0, Layt;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 13
-    :cond_0
-    iput-object p1, p0, Layt;->module:Layl;
-
     .line 14
-    return-void
-.end method
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginArray()V
 
-.method public static a(Layl;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Layl;",
-            ")",
-            "Lbuo",
-            "<",
-            "Lapd;",
-            ">;"
-        }
-    .end annotation
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
-    .prologue
-    .line 26
-    new-instance v0, Layt;
+    move-result-object v1
 
-    invoke-direct {v0, p0}, Layt;-><init>(Layl;)V
+    invoke-static {p1}, Layt;->a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1}, Layt;->a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextLong()J
+
+    move-result-wide v4
+
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endArray()V
+
+    new-instance v0, Lays;
+
+    invoke-direct/range {v0 .. v5}, Lays;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
 
     return-object v0
 .end method
 
-
-# virtual methods
-.method public final synthetic get()Ljava/lang/Object;
+.method public final synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 2
 
     .prologue
-    .line 7
-    invoke-static {}, Lapd;->a()Lapd;
+    .line 14
+    check-cast p2, Lays;
 
-    move-result-object v0
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginArray()Lcom/google/gson/stream/JsonWriter;
 
-    if-nez v0, :cond_0
+    iget-object v0, p2, Lays;->mKey:Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    invoke-virtual {p1, v0}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p2, Lays;->mIv:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
-    throw v0
+    iget-object v0, p2, Lays;->mThumbnailIv:Ljava/lang/String;
 
-    :cond_0
-    return-object v0
+    invoke-virtual {p1, v0}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+
+    iget-wide v0, p2, Lays;->mTimestamp:J
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/gson/stream/JsonWriter;->value(J)Lcom/google/gson/stream/JsonWriter;
+
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endArray()Lcom/google/gson/stream/JsonWriter;
+
+    return-void
 .end method

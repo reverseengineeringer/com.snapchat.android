@@ -1,20 +1,17 @@
-import java.util.Collections;
-import java.util.Comparator;
+import com.google.gson.annotations.SerializedName;
+import java.util.ArrayList;
 
-final class alo
-  implements Comparator<alc>
+public final class alo
 {
-  private final ala a;
-  
-  private alo(@cgb ala paramala)
-  {
-    a = paramala;
-  }
-  
-  public static Comparator<alc> a(ala paramala)
-  {
-    return Collections.reverseOrder(new alo(paramala));
-  }
+  @SerializedName("gae_proxy_directory_list")
+  @chd
+  private ArrayList<String> mDirectoryUrls;
+  @SerializedName("gae_proxy_list")
+  @chd
+  private ArrayList<ajz> mProxies;
+  @SerializedName("gae_proxy_list_version")
+  @chd
+  private long mVersion;
 }
 
 /* Location:

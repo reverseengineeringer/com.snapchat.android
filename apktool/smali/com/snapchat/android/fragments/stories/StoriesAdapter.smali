@@ -1,10 +1,10 @@
 .class public final Lcom/snapchat/android/fragments/stories/StoriesAdapter;
-.super Lapf;
+.super Laqb;
 .source "SourceFile"
 
 # interfaces
 .implements Landroid/widget/Filterable;
-.implements Lbfe$a;
+.implements Lbge$a;
 .implements Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersAdapter;
 
 
@@ -23,14 +23,14 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lapf",
+        "Laqb",
         "<",
-        "Lahb;",
+        "Lahy;",
         ">;",
         "Landroid/widget/Filterable;",
-        "Lbfe$a",
+        "Lbge$a",
         "<",
-        "Lahb;",
+        "Lahy;",
         ">;",
         "Lcom/emilsjolander/components/stickylistheaders/StickyListHeadersAdapter;"
     }
@@ -43,13 +43,13 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lahb;",
+            "Lahy;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public b:Lazo;
+.field public b:Lban;
     .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
@@ -58,20 +58,20 @@
 
 .field private final d:Lcom/squareup/otto/Bus;
 
-.field private final e:Lajq;
+.field private final e:Lakk;
 
-.field private final f:Lng;
+.field private final f:Lnx;
 
-.field private final g:Lzd;
+.field private final g:Lzz;
 
-.field private final h:Latm;
+.field private final h:Lauk;
 
 .field private final i:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;"
         }
     .end annotation
@@ -82,7 +82,7 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lahb;",
+            "Lahy;",
             ">;"
         }
     .end annotation
@@ -105,19 +105,19 @@
 
 .field private final n:Landroid/view/inputmethod/InputMethodManager;
 
-.field private final o:Laop;
+.field private final o:Lapl;
 
-.field private final p:Lauy;
+.field private final p:Lavw;
 
 .field private q:I
 
 .field private final r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-.field private s:Laom;
+.field private s:Lapi;
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;Landroid/view/LayoutInflater;Ljava/util/ArrayList;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Landroid/view/inputmethod/InputMethodManager;Lauy;Laom;Laop;Lcom/squareup/otto/Bus;Lajq;Lng;Lzd;Latm;Ljavax/inject/Provider;)V
+.method private constructor <init>(Landroid/content/Context;Landroid/view/LayoutInflater;Ljava/util/ArrayList;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Landroid/view/inputmethod/InputMethodManager;Lavw;Lapi;Lapl;Lcom/squareup/otto/Bus;Lakk;Lnx;Lzz;Lauk;Ljavax/inject/Provider;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -126,104 +126,104 @@
             "Landroid/view/LayoutInflater;",
             "Ljava/util/ArrayList",
             "<",
-            "Lahb;",
+            "Lahy;",
             ">;",
             "Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;",
             "Landroid/view/inputmethod/InputMethodManager;",
-            "Lauy;",
-            "Laom;",
-            "Laop;",
+            "Lavw;",
+            "Lapi;",
+            "Lapl;",
             "Lcom/squareup/otto/Bus;",
-            "Lajq;",
-            "Lng;",
-            "Lzd;",
-            "Latm;",
+            "Lakk;",
+            "Lnx;",
+            "Lzz;",
+            "Lauk;",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 191
-    const v0, 0x7f0400b2
+    .line 193
+    const v0, 0x7f0400b3
 
-    invoke-direct {p0, p1, v0, p3}, Lapf;-><init>(Landroid/content/Context;ILjava/util/List;)V
+    invoke-direct {p0, p1, v0, p3}, Laqb;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
-    .line 110
+    .line 111
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->l:Ljava/util/HashSet;
 
-    .line 117
+    .line 118
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->q:I
 
-    .line 192
+    .line 194
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Laza;->a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)V
-
-    .line 193
-    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->k:Landroid/view/LayoutInflater;
-
-    .line 194
-    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+    invoke-interface {v0, p0}, Lazy;->a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)V
 
     .line 195
-    iput-object p3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->j:Ljava/util/List;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->k:Landroid/view/LayoutInflater;
 
     .line 196
-    iput-object p3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
+    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
 
     .line 197
-    iput-object p4, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
+    iput-object p3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->j:Ljava/util/List;
 
     .line 198
-    iput-object p5, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->n:Landroid/view/inputmethod/InputMethodManager;
+    iput-object p3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
 
     .line 199
-    iput-object p6, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->p:Lauy;
+    iput-object p4, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
     .line 200
-    iput-object p7, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->s:Laom;
+    iput-object p5, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->n:Landroid/view/inputmethod/InputMethodManager;
 
     .line 201
-    iput-object p8, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->o:Laop;
+    iput-object p6, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->p:Lavw;
 
     .line 202
-    iput-object p9, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->d:Lcom/squareup/otto/Bus;
+    iput-object p7, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->s:Lapi;
 
     .line 203
-    iput-object p10, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lajq;
+    iput-object p8, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->o:Lapl;
 
     .line 204
-    iput-object p11, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->f:Lng;
+    iput-object p9, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->d:Lcom/squareup/otto/Bus;
 
     .line 205
-    iput-object p12, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->g:Lzd;
+    iput-object p10, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lakk;
 
     .line 206
-    iput-object p13, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->h:Latm;
+    iput-object p11, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->f:Lnx;
 
     .line 207
-    iput-object p14, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->i:Ljavax/inject/Provider;
+    iput-object p12, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->g:Lzz;
 
     .line 208
+    iput-object p13, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->h:Lauk;
+
+    .line 209
+    iput-object p14, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->i:Ljavax/inject/Provider;
+
+    .line 210
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/util/ArrayList;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Lauy;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/util/ArrayList;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Lavw;)V
     .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -231,16 +231,16 @@
             "Landroid/content/Context;",
             "Ljava/util/ArrayList",
             "<",
-            "Lahb;",
+            "Lahy;",
             ">;",
             "Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;",
-            "Lauy;",
+            "Lavw;",
             ")V"
         }
     .end annotation
 
     .prologue
-    .line 161
+    .line 163
     const-string v1, "layout_inflater"
 
     move-object/from16 v0, p1
@@ -261,37 +261,37 @@
 
     check-cast v6, Landroid/view/inputmethod/InputMethodManager;
 
-    new-instance v8, Laom;
+    new-instance v8, Lapi;
 
     move-object/from16 v0, p1
 
-    invoke-direct {v8, v0}, Laom;-><init>(Landroid/content/Context;)V
+    invoke-direct {v8, v0}, Lapi;-><init>(Landroid/content/Context;)V
 
-    invoke-static {}, Laop;->a()Laop;
+    invoke-static {}, Lapl;->a()Lapl;
 
     move-result-object v9
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v10
 
-    invoke-static {}, Lajq;->a()Lajq;
+    invoke-static {}, Lakk;->a()Lakk;
 
     move-result-object v11
 
-    invoke-static {}, Lng;->a()Lng;
+    invoke-static {}, Lnx;->a()Lnx;
 
     move-result-object v12
 
-    invoke-static {}, Lzd;->a()Lzd;
+    invoke-static {}, Lzz;->a()Lzz;
 
     move-result-object v13
 
-    invoke-static {}, Latm;->a()Latm;
+    invoke-static {}, Lauk;->a()Lauk;
 
     move-result-object v14
 
-    sget-object v15, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    sget-object v15, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
     move-object/from16 v1, p0
 
@@ -303,9 +303,9 @@
 
     move-object/from16 v7, p4
 
-    invoke-direct/range {v1 .. v15}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;-><init>(Landroid/content/Context;Landroid/view/LayoutInflater;Ljava/util/ArrayList;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Landroid/view/inputmethod/InputMethodManager;Lauy;Laom;Laop;Lcom/squareup/otto/Bus;Lajq;Lng;Lzd;Latm;Ljavax/inject/Provider;)V
+    invoke-direct/range {v1 .. v15}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;-><init>(Landroid/content/Context;Landroid/view/LayoutInflater;Ljava/util/ArrayList;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Landroid/view/inputmethod/InputMethodManager;Lavw;Lapi;Lapl;Lcom/squareup/otto/Bus;Lakk;Lnx;Lzz;Lauk;Ljavax/inject/Provider;)V
 
-    .line 174
+    .line 176
     return-void
 .end method
 
@@ -313,7 +313,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 91
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
     return-object v0
@@ -323,16 +323,16 @@
     .locals 2
 
     .prologue
-    .line 90
-    new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;
+    .line 91
+    new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$10;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
 
-    invoke-direct {v0, p0, v1, p1, p1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Landroid/content/Context;Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/model/Friend;)V
+    invoke-direct {v0, p0, v1, p1, p1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$10;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Landroid/content/Context;Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/model/Friend;)V
 
-    invoke-virtual {v0}, Latg;->show()V
+    invoke-virtual {v0}, Lauf;->show()V
 
-    invoke-virtual {v0}, Latg;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Lauf;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -343,12 +343,12 @@
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;Lahc;)V
+.method static synthetic a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;Lahz;)V
     .locals 5
 
     .prologue
-    .line 90
-    invoke-static {}, Lajv;->g()Lajv;
+    .line 91
+    invoke-static {}, Lakp;->g()Lakp;
 
     move-result-object v1
 
@@ -360,11 +360,11 @@
 
     invoke-direct {v2, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->j()Z
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->n()Z
 
     move-result v3
 
@@ -388,7 +388,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v3
 
@@ -409,11 +409,11 @@
     :cond_0
     invoke-virtual {v2, v0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, v1}, Latm;->f(Ljava/lang/String;Lajv;)Z
+    invoke-static {v0, v1}, Lauk;->f(Ljava/lang/String;Lakp;)Z
 
     move-result v0
 
@@ -459,9 +459,9 @@
 
     aput-object v3, v0, v1
 
-    new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$8;
+    new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$8;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;Lahc;)V
+    invoke-direct {v1, p0, p1, p2}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$9;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;Lahz;)V
 
     invoke-virtual {v2, v0, v1}, Landroid/app/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -476,11 +476,11 @@
     return-void
 .end method
 
-.method static synthetic a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;Lahc;)V
+.method static synthetic a(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;Lahz;)V
     .locals 8
 
     .prologue
-    .line 90
+    .line 91
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
@@ -495,7 +495,7 @@
 
     move-result-object v3
 
-    const v1, 0x7f0c02e3
+    const v1, 0x7f0c02e1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -517,7 +517,7 @@
 
     move-object v7, p2
 
-    invoke-direct/range {v0 .. v7}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/model/StorySnapLogbook;Lahc;)V
+    invoke-direct/range {v0 .. v7}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/model/StorySnapLogbook;Lahz;)V
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$1;->show()V
 
@@ -528,55 +528,55 @@
     .locals 3
 
     .prologue
-    .line 90
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->g:Lzd;
+    .line 91
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->g:Lzz;
 
-    iget-object v1, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v1, p1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
     sget-object v2, Lcom/snapchat/android/controller/stories/StoryLoadingContext;->TAP_TO_LOAD:Lcom/snapchat/android/controller/stories/StoryLoadingContext;
 
-    invoke-virtual {v0, v1, v2}, Lzd;->a(Lajr;Lcom/snapchat/android/controller/stories/StoryLoadingContext;)Z
+    invoke-virtual {v0, v1, v2}, Lzz;->a(Lakl;Lcom/snapchat/android/controller/stories/StoryLoadingContext;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->f:Lng;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->f:Lnx;
 
     const-string v1, "story"
 
     const-string v2, "tap_to_load"
 
-    invoke-virtual {v0, v1, v2}, Lng;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Lnx;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    invoke-static {}, Laup;->d()Laup;
+    invoke-static {}, Lavn;->d()Lavn;
 
     move-result-object v0
 
-    iget-object v1, v0, Laup;->mSnapView:Lcom/snapchat/android/ui/SnapView;
+    iget-object v1, v0, Lavn;->mSnapView:Lcom/snapchat/android/ui/SnapView;
 
     if-eqz v1, :cond_0
 
-    new-instance v1, Laup$c;
+    new-instance v1, Lavn$c;
 
-    invoke-direct {v1, v0, p1, p2}, Laup$c;-><init>(Laup;Lcom/snapchat/android/model/StorySnapLogbook;Landroid/content/Context;)V
+    invoke-direct {v1, v0, p1, p2}, Lavn$c;-><init>(Lavn;Lcom/snapchat/android/model/StorySnapLogbook;Landroid/content/Context;)V
 
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 .end method
 
-.method static synthetic b(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)Laom;
+.method static synthetic b(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)Lapi;
     .locals 1
 
     .prologue
-    .line 90
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->s:Laom;
+    .line 91
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->s:Lapi;
 
     return-object v0
 .end method
@@ -587,12 +587,12 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 90
+    .line 91
     new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;
 
     sget-object v2, Lcom/snapchat/android/model/FriendAction;->DELETE:Lcom/snapchat/android/model/FriendAction;
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v4
 
@@ -610,7 +610,7 @@
 
     invoke-direct/range {v0 .. v9}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/FriendAction;Lcom/snapchat/android/model/Friend;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/snapchat/android/model/FriendAction$BlockReason;B)V
 
-    invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->f()V
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$c;->execute()V
 
     return-void
 .end method
@@ -619,7 +619,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 91
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->n:Landroid/view/inputmethod/InputMethodManager;
 
     return-object v0
@@ -629,14 +629,14 @@
     .locals 2
 
     .prologue
-    .line 90
-    new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$10;
+    .line 91
+    new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$11;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
 
-    invoke-direct {v0, p0, v1, p1, p1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$10;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Landroid/content/Context;Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/model/Friend;)V
+    invoke-direct {v0, p0, v1, p1, p1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$11;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Landroid/content/Context;Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/model/Friend;)V
 
-    invoke-virtual {v0}, Lafh;->a()V
+    invoke-virtual {v0}, Lagh;->a()V
 
     return-void
 .end method
@@ -645,7 +645,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 91
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
 
     return-object v0
@@ -655,7 +655,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 91
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->d:Lcom/squareup/otto/Bus;
 
     return-object v0
@@ -666,7 +666,7 @@
 .method public final a(Ljava/util/List;)V
     .locals 1
     .param p1    # Ljava/util/List;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -674,28 +674,28 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lahb;",
+            "Lahy;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 221
+    .line 223
     if-nez p1, :cond_0
 
-    .line 223
+    .line 225
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->j:Ljava/util/List;
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
 
-    .line 227
+    .line 229
     :goto_0
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->notifyDataSetChanged()V
 
-    .line 228
+    .line 230
     return-void
 
-    .line 225
+    .line 227
     :cond_0
     iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
 
@@ -706,7 +706,7 @@
     .locals 1
 
     .prologue
-    .line 986
+    .line 1009
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -720,25 +720,25 @@
     .locals 4
 
     .prologue
-    .line 212
+    .line 214
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->m:Landroid/widget/Filter;
 
     if-nez v0, :cond_0
 
-    .line 213
-    new-instance v0, Lagz;
+    .line 215
+    new-instance v0, Lahw;
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->j:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->b:Lazo;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->b:Lban;
 
     iget-object v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-    invoke-direct {v0, v1, v2, p0, v3}, Lagz;-><init>(Ljava/util/List;Lazo;Lbfe$a;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;)V
+    invoke-direct {v0, v1, v2, p0, v3}, Lahw;-><init>(Ljava/util/List;Lban;Lbge$a;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;)V
 
     iput-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->m:Landroid/widget/Filter;
 
-    .line 216
+    .line 218
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->m:Landroid/widget/Filter;
 
@@ -746,36 +746,38 @@
 .end method
 
 .method public final getHeaderId(I)J
-    .locals 3
-    .annotation build Lavl;
+    .locals 2
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    .line 978
+    .line 1001
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lahb;
+    check-cast v0, Lahy;
 
-    .line 979
-    invoke-interface {v0}, Lahb;->i()Lcom/snapchat/android/stories/StoriesSection;
+    .line 1002
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-    move-result-object v1
+    invoke-interface {v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->l()Z
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+    move-result v1
 
-    invoke-interface {v0}, Lahb;->k()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v2, v0}, Lcom/snapchat/android/stories/StoriesSection;->getString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v1}, Lahy;->a(Z)Lcom/snapchat/android/stories/StoriesSection;
 
     move-result-object v0
 
-    .line 981
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/stories/StoriesSection;->getString(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1004
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -786,45 +788,36 @@
 .end method
 
 .method public final getHeaderView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 5
-    .annotation build Lavl;
+    .locals 4
+    .annotation build Lawj;
     .end annotation
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    .line 950
+    .line 973
     if-nez p2, :cond_1
 
-    .line 951
-    new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;
-
-    invoke-direct {v1, p0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;)V
-
-    .line 952
+    .line 974
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->k:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f04008b
+    const v1, 0x7f0400b8
 
-    invoke-virtual {v0, v2, p3, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {v0, v1, p3, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object p2
 
-    .line 953
-    const v0, 0x7f0a007f
+    .line 975
+    new-instance v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-direct {v0, p0, p2}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Landroid/view/View;)V
 
-    move-result-object v0
+    .line 976
+    invoke-virtual {p2, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    check-cast v0, Landroid/widget/TextView;
+    move-object v1, v0
 
-    iput-object v0, v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;->a:Landroid/widget/TextView;
-
-    .line 954
-    invoke-virtual {p2, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    .line 959
+    .line 981
     :goto_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
 
@@ -832,35 +825,38 @@
 
     move-result-object v0
 
-    check-cast v0, Lahb;
+    check-cast v0, Lahy;
 
-    .line 960
-    invoke-interface {v0}, Lahb;->i()Lcom/snapchat/android/stories/StoriesSection;
+    .line 982
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-    move-result-object v2
+    invoke-interface {v2}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->l()Z
 
-    .line 963
-    sget-object v3, Lcom/snapchat/android/stories/StoriesSection;->ME:Lcom/snapchat/android/stories/StoriesSection;
+    move-result v2
 
-    if-eq v2, v3, :cond_0
+    .line 983
+    invoke-interface {v0, v2}, Lahy;->a(Z)Lcom/snapchat/android/stories/StoriesSection;
 
-    sget-object v3, Lcom/snapchat/android/stories/StoriesSection;->NONE:Lcom/snapchat/android/stories/StoriesSection;
+    move-result-object v0
 
-    if-ne v2, v3, :cond_2
+    .line 985
+    sget-object v2, Lcom/snapchat/android/stories/StoriesSection;->ME:Lcom/snapchat/android/stories/StoriesSection;
 
-    .line 965
+    if-eq v0, v2, :cond_0
+
+    sget-object v2, Lcom/snapchat/android/stories/StoriesSection;->NONE:Lcom/snapchat/android/stories/StoriesSection;
+
+    if-ne v0, v2, :cond_2
+
+    .line 987
     :cond_0
-    iget-object v0, v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;->a:Landroid/widget/TextView;
+    invoke-virtual {v1, v3}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;->a(Z)V
 
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 972
+    .line 995
     :goto_1
     return-object p2
 
-    .line 956
+    .line 978
     :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -872,27 +868,28 @@
 
     goto :goto_0
 
-    .line 967
+    .line 989
     :cond_2
-    iget-object v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+    const/4 v2, 0x1
 
-    invoke-interface {v0}, Lahb;->k()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;->a(Z)V
+
+    .line 990
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+
+    invoke-virtual {v0, v2}, Lcom/snapchat/android/stories/StoriesSection;->getString(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v3, v0}, Lcom/snapchat/android/stories/StoriesSection;->getString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 968
+    .line 991
     iget-object v2, v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;->a:Landroid/widget/TextView;
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 969
+    .line 992
     iget-object v0, v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$a;->a:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_1
 .end method
@@ -901,7 +898,7 @@
     .locals 1
 
     .prologue
-    .line 241
+    .line 243
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -910,27 +907,27 @@
 
     if-lt p1, v0, :cond_0
 
-    .line 242
+    .line 244
     sget-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->DEFAULT:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->ordinal()I
 
     move-result v0
 
-    .line 246
+    .line 248
     :goto_0
     return v0
 
-    .line 245
+    .line 247
     :cond_0
     invoke-virtual {p0, p1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lahb;
+    check-cast v0, Lahy;
 
-    .line 246
-    invoke-interface {v0}, Lahb;->c()Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
+    .line 248
+    invoke-interface {v0}, Lahy;->c()Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
 
     move-result-object v0
 
@@ -945,59 +942,59 @@
     .locals 10
 
     .prologue
-    .line 251
+    .line 253
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lahb;
+    check-cast v0, Lahy;
 
-    .line 253
-    instance-of v1, v0, Laoq;
+    .line 255
+    instance-of v1, v0, Lapm;
 
     if-eqz v1, :cond_0
 
-    .line 254
-    check-cast v0, Laoq;
+    .line 256
+    check-cast v0, Lapm;
 
-    .line 255
+    .line 257
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->k:Landroid/view/LayoutInflater;
 
-    invoke-virtual {v0, p2, p3, v1}, Laoq;->a(Landroid/view/View;Landroid/view/ViewGroup;Landroid/view/LayoutInflater;)Landroid/view/View;
+    invoke-virtual {v0, p2, p3, v1}, Lapm;->a(Landroid/view/View;Landroid/view/ViewGroup;Landroid/view/LayoutInflater;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 335
+    .line 337
     :goto_0
     return-object v0
 
-    .line 260
+    .line 262
     :cond_0
     const/4 v1, 0x0
 
-    .line 262
+    .line 264
     instance-of v2, v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_10
 
-    .line 263
+    .line 265
     if-eqz p2, :cond_1
 
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
-    instance-of v2, v2, Lagx;
+    instance-of v2, v2, Lahu;
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_e
 
-    .line 264
+    .line 266
     :cond_1
     iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->k:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f04007d
+    const v3, 0x7f04007e
 
     const/4 v4, 0x0
 
@@ -1005,41 +1002,41 @@
 
     move-result-object p2
 
-    .line 265
-    new-instance v3, Lagx;
+    .line 267
+    new-instance v3, Lahu;
 
-    invoke-direct {v3, p2}, Lagx;-><init>(Landroid/view/View;)V
+    invoke-direct {v3, p2}, Lahu;-><init>(Landroid/view/View;)V
 
-    .line 266
+    .line 268
     invoke-virtual {p2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     move-object v6, p2
 
-    .line 295
+    .line 297
     :goto_1
     if-eqz v1, :cond_2
 
-    .line 296
-    invoke-virtual {v3}, Lahc;->q()V
-
-    .line 297
-    const/4 v1, 0x0
-
-    invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
     .line 298
-    const/4 v1, 0x0
-
-    invoke-virtual {v6, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v3}, Lahz;->q()V
 
     .line 299
     const/4 v1, 0x0
 
+    invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 300
+    const/4 v1, 0x0
+
+    invoke-virtual {v6, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    .line 301
+    const/4 v1, 0x0
+
     invoke-virtual {v6, v1}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 302
+    .line 304
     :cond_2
-    iget-object v1, v3, Lahc;->P:Lahb;
+    iget-object v1, v3, Lahz;->O:Lahy;
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -1047,44 +1044,38 @@
 
     if-nez v1, :cond_3
 
-    .line 303
-    iget-object v1, v3, Lahc;->O:Laow;
+    .line 305
+    iget-object v1, v3, Lahz;->N:Laqg;
 
     if-eqz v1, :cond_3
 
-    iget-object v1, v3, Lahc;->O:Laow;
+    iget-object v1, v3, Lahz;->N:Laqg;
 
-    const/4 v2, 0x1
+    invoke-virtual {v1}, Laqg;->c()V
 
-    iput-boolean v2, v1, Laow;->d:Z
-
-    iget-object v1, v1, Laow;->a:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
-
-    .line 306
+    .line 308
     :cond_3
-    iput-object v0, v3, Lahc;->P:Lahb;
-
-    .line 307
-    iput p1, v3, Lahc;->Q:I
+    iput-object v0, v3, Lahz;->O:Lahy;
 
     .line 309
-    invoke-interface {v0}, Lahb;->j()Z
+    iput p1, v3, Lahz;->P:I
+
+    .line 311
+    invoke-interface {v0}, Lahy;->n()Z
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_14
 
-    invoke-interface {v0}, Lahb;->a()Ljava/lang/String;
+    invoke-interface {v0}, Lahy;->a()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Lahc;->a(Ljava/lang/String;)V
+    invoke-virtual {v3, v1}, Lahz;->a(Ljava/lang/String;)V
 
-    iget-object v1, v3, Lahc;->B:Landroid/widget/TextView;
+    iget-object v1, v3, Lahz;->B:Landroid/widget/TextView;
 
-    invoke-interface {v0}, Lahb;->h()Ljava/lang/String;
+    invoke-interface {v0}, Lahy;->l()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1093,7 +1084,7 @@
     :goto_2
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-    invoke-interface {v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->y_()Ljava/lang/String;
+    invoke-interface {v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->x_()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1103,22 +1094,22 @@
 
     if-eqz v1, :cond_4
 
-    instance-of v1, v0, Lahd;
+    instance-of v1, v0, Laia;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_15
 
     move-object v1, v0
 
-    check-cast v1, Lahd;
+    check-cast v1, Laia;
 
-    invoke-virtual {v3, v1}, Lahc;->a(Lahd;)V
+    invoke-virtual {v3, v1}, Lahz;->a(Laia;)V
 
-    .line 310
+    .line 312
     :cond_4
     :goto_3
     const/16 v5, 0x8
 
-    iget-object v1, v3, Lahc;->B:Landroid/widget/TextView;
+    iget-object v1, v3, Lahz;->B:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -1130,15 +1121,15 @@
 
     if-nez v1, :cond_8
 
-    instance-of v1, v0, Lahd;
+    instance-of v1, v0, Laia;
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1c
 
     move-object v1, v0
 
-    check-cast v1, Lahd;
+    check-cast v1, Laia;
 
-    invoke-virtual {v1}, Lahd;->d()Lcom/snapchat/android/model/StoryGroup;
+    invoke-virtual {v1}, Laia;->d()Lcom/snapchat/android/model/StoryGroup;
 
     move-result-object v2
 
@@ -1150,12 +1141,12 @@
 
     move-result v2
 
-    if-lez v2, :cond_1b
+    if-lez v2, :cond_1a
 
     const/4 v2, 0x1
 
     :goto_4
-    invoke-virtual {v1}, Lahd;->d()Lcom/snapchat/android/model/StoryGroup;
+    invoke-virtual {v1}, Laia;->d()Lcom/snapchat/android/model/StoryGroup;
 
     move-result-object v4
 
@@ -1167,14 +1158,14 @@
 
     move-result v4
 
-    if-lez v4, :cond_1c
+    if-lez v4, :cond_1b
 
     const/4 v4, 0x1
 
     :goto_5
     iget-object v7, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-    invoke-virtual {v1}, Lahd;->b()Ljava/lang/String;
+    invoke-virtual {v1}, Laia;->b()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1207,22 +1198,22 @@
     :cond_7
     instance-of v1, v0, Lcom/snapchat/android/model/Friend;
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1d
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lajq;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lakk;
 
-    invoke-interface {v0}, Lahb;->h()Ljava/lang/String;
+    invoke-interface {v0}, Lahy;->l()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lajq;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
+    invoke-virtual {v1, v2}, Lakk;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
 
     move-result-object v1
 
     :goto_8
     if-eqz v1, :cond_8
 
-    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->o()Z
+    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->i()Z
 
     move-result v1
 
@@ -1231,52 +1222,52 @@
     const/4 v5, 0x0
 
     :cond_8
-    if-nez v5, :cond_1f
+    if-nez v5, :cond_1e
 
-    invoke-virtual {v3}, Lahc;->t()Z
+    invoke-virtual {v3}, Lahz;->t()Z
 
-    .line 312
+    .line 314
     :goto_9
     new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;
 
-    invoke-direct {v1, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahb;)V
+    invoke-direct {v1, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$d;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahy;)V
 
     invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 313
+    .line 315
     new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;
 
-    invoke-direct {v1, p0, v3}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahc;)V
+    invoke-direct {v1, p0, v3}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$f;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahz;)V
 
     invoke-virtual {v6, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 314
+    .line 316
     new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$e;
 
-    invoke-direct {v1, p0, v3}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$e;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahc;)V
+    invoke-direct {v1, p0, v3}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$e;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahz;)V
 
     invoke-virtual {v6, v1}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 316
-    invoke-interface {v0}, Lahb;->m()Lauz;
+    .line 318
+    invoke-interface {v0}, Lahy;->p()Lavx;
 
     move-result-object v1
 
-    .line 317
+    .line 319
     if-eqz v1, :cond_a
 
-    .line 318
-    iget-object v2, v3, Lahc;->x:Landroid/widget/ImageView;
+    .line 320
+    iget-object v2, v3, Lahz;->x:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->clearAnimation()V
 
-    iget-object v2, v3, Lahc;->x:Landroid/widget/ImageView;
+    iget-object v2, v3, Lahz;->x:Landroid/widget/ImageView;
 
-    iget-object v4, v1, Lauz;->mCacheKey:Ljava/lang/String;
+    iget-object v4, v1, Lavx;->mCacheKey:Ljava/lang/String;
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    iget-object v2, v3, Lahc;->x:Landroid/widget/ImageView;
+    iget-object v2, v3, Lahz;->x:Landroid/widget/ImageView;
 
     const/4 v4, 0x0
 
@@ -1284,44 +1275,119 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v3, v2}, Lahc;->f(Z)V
+    invoke-virtual {v3, v2}, Lahz;->f(Z)V
 
-    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->p:Lauy;
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->p:Lavw;
 
-    invoke-virtual {v2, v1}, Lauy;->a(Lauz;)Landroid/graphics/Bitmap;
+    invoke-virtual {v2, v1}, Lavw;->a(Lavx;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    if-nez v2, :cond_20
+
+    iget-object v2, v3, Lahz;->x:Landroid/widget/ImageView;
+
+    iget-object v4, v1, Lavx;->mStorySnaps:Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1f
+
+    const/4 v1, 0x0
+
+    :goto_a
+    const/high16 v4, 0x43b40000    # 360.0f
+
+    mul-float/2addr v1, v4
+
+    const/high16 v4, 0x43870000    # 270.0f
+
+    sub-float/2addr v4, v1
+
+    new-instance v5, Landroid/graphics/drawable/ShapeDrawable;
+
+    new-instance v7, Landroid/graphics/drawable/shapes/ArcShape;
+
+    invoke-direct {v7, v4, v1}, Landroid/graphics/drawable/shapes/ArcShape;-><init>(FF)V
+
+    invoke-direct {v5, v7}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
+
+    invoke-virtual {v5}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
     move-result-object v1
 
-    if-nez v1, :cond_20
+    iget-object v4, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
 
-    iget-object v1, v3, Lahc;->x:Landroid/widget/ImageView;
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    const v2, 0x7f02027e
+    move-result-object v4
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+    const v7, 0x7f080058
 
-    :goto_a
-    instance-of v1, v0, Lajg;
+    invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getColor(I)I
 
-    if-eqz v1, :cond_24
+    move-result v4
+
+    invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v4, 0x7f09009f
+
+    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-virtual {v5, v1}, Landroid/graphics/drawable/ShapeDrawable;->setIntrinsicHeight(I)V
+
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v4, 0x7f09009f
+
+    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-virtual {v5, v1}, Landroid/graphics/drawable/ShapeDrawable;->setIntrinsicWidth(I)V
+
+    invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :goto_b
+    instance-of v1, v0, Lakc;
+
+    if-eqz v1, :cond_23
 
     move-object v1, v0
 
-    check-cast v1, Lajg;
+    check-cast v1, Lakc;
 
-    invoke-virtual {v1}, Lajg;->B()Z
+    invoke-virtual {v1}, Lakc;->y()Z
 
     move-result v2
 
-    invoke-virtual {v3, v2}, Lahc;->e(Z)V
+    invoke-virtual {v3, v2}, Lahz;->e(Z)V
 
-    invoke-virtual {v1}, Lajg;->B()Z
+    invoke-virtual {v1}, Lakc;->y()Z
 
     move-result v2
 
     if-nez v2, :cond_9
 
-    invoke-virtual {v1}, Lajg;->C()Z
+    invoke-virtual {v1}, Lakc;->z()Z
 
     move-result v2
 
@@ -1330,166 +1396,126 @@
     :cond_9
     const/4 v2, 0x1
 
-    :goto_b
-    invoke-virtual {v3, v2}, Lahc;->f(Z)V
+    :goto_c
+    invoke-virtual {v3, v2}, Lahz;->f(Z)V
 
-    invoke-virtual {v1}, Lajg;->w()Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+    invoke-virtual {v1}, Lakc;->s()I
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-nez v2, :cond_a
 
-    iget-object v2, v3, Lahc;->x:Landroid/widget/ImageView;
+    iget-object v2, v3, Lahz;->x:Landroid/widget/ImageView;
 
     const/16 v4, 0x8
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    invoke-virtual {v1}, Lajg;->E()Z
+    invoke-virtual {v1}, Lakc;->A()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_22
+    if-eqz v1, :cond_22
 
-    iget-object v1, v3, Lahc;->J:Landroid/widget/FrameLayout;
+    iget-object v1, v3, Lahz;->J:Landroid/widget/FrameLayout;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 321
+    .line 323
     :cond_a
-    :goto_c
+    :goto_d
     iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
     invoke-interface {v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->l()Z
 
-    move-result v5
+    move-result v4
 
-    const/4 v4, 0x0
-
-    const/4 v2, 0x0
-
-    add-int/lit8 v1, p1, 0x1
-
-    iget-object v7, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
-
-    invoke-interface {v7}, Ljava/util/List;->size()I
-
-    move-result v7
-
-    if-ge v1, v7, :cond_2a
-
-    invoke-interface {v0}, Lahb;->i()Lcom/snapchat/android/stories/StoriesSection;
-
-    move-result-object v7
-
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
-
-    add-int/lit8 v8, p1, 0x1
-
-    invoke-interface {v1, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lahb;
-
-    invoke-interface {v1}, Lahb;->i()Lcom/snapchat/android/stories/StoriesSection;
-
-    move-result-object v8
-
-    if-nez v5, :cond_b
-
-    if-eq v7, v8, :cond_b
-
-    sget-object v5, Lcom/snapchat/android/stories/StoriesSection;->ALPHABETICAL:Lcom/snapchat/android/stories/StoriesSection;
-
-    if-ne v8, v5, :cond_b
-
-    const/4 v2, 0x1
-
-    :cond_b
-    iget-object v5, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
-
-    invoke-interface {v0}, Lahb;->k()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v7, v5, v9}, Lcom/snapchat/android/stories/StoriesSection;->getString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v4}, Lahy;->a(Z)Lcom/snapchat/android/stories/StoriesSection;
 
     move-result-object v5
 
-    iget-object v7, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+    const/4 v2, 0x0
 
-    invoke-interface {v1}, Lahb;->k()Ljava/lang/String;
+    add-int/lit8 v1, p1, -0x1
+
+    if-ltz v1, :cond_29
+
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->a:Ljava/util/List;
+
+    add-int/lit8 v7, p1, -0x1
+
+    invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v8, v7, v1}, Lcom/snapchat/android/stories/StoriesSection;->getString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    check-cast v1, Lahy;
+
+    invoke-interface {v1, v4}, Lahy;->a(Z)Lcom/snapchat/android/stories/StoriesSection;
 
     move-result-object v1
 
-    invoke-static {v5, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    iget-object v4, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+
+    invoke-virtual {v5, v4}, Lcom/snapchat/android/stories/StoriesSection;->getString(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
+
+    invoke-virtual {v1, v5}, Lcom/snapchat/android/stories/StoriesSection;->getString(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v4, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_41
+    if-eqz v1, :cond_41
 
     const/4 v1, 0x1
 
-    :goto_d
-    iget-object v4, v3, Lahc;->L:Landroid/view/View;
+    :goto_e
+    iget-object v2, v3, Lahz;->L:Landroid/view/View;
 
     if-eqz v1, :cond_2b
-
-    const/16 v1, 0x8
-
-    :goto_e
-    invoke-virtual {v4, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v3, v3, Lahc;->M:Landroid/view/View;
-
-    if-eqz v2, :cond_2c
 
     const/4 v1, 0x0
 
     :goto_f
-    invoke-virtual {v3, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 323
+    .line 325
     instance-of v1, v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_30
 
-    .line 324
+    .line 326
     check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
     invoke-virtual {v6}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lagx;
+    check-cast v1, Lahu;
 
-    iget-object v4, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v4, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    iget v2, v1, Lagx;->Q:I
+    iget v2, v1, Lahu;->P:I
 
     iget v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->q:I
 
-    if-ne v2, v3, :cond_2d
+    if-ne v2, v3, :cond_2c
 
     const/4 v2, 0x1
 
     :goto_10
     iput-object v1, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mChangedListener:Lcom/snapchat/android/model/StorySnapLogbook$a;
 
-    iget-object v5, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v5, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    invoke-virtual {v5}, Lajr;->aF()Z
+    invoke-virtual {v5}, Lakl;->aA()Z
 
     move-result v3
 
@@ -1500,137 +1526,137 @@
     move v3, v2
 
     :goto_11
-    iget-object v2, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnapExtra:Lbjh;
+    iget-object v2, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnapExtra:Lbki;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_b
 
-    invoke-virtual {v2}, Lbjh;->a()Ljava/lang/Integer;
+    invoke-virtual {v2}, Lbki;->a()Ljava/lang/Integer;
 
     move-result-object v7
 
-    invoke-static {v7}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v7}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v7
 
-    invoke-virtual {v2}, Lbjh;->b()Ljava/lang/Integer;
+    invoke-virtual {v2}, Lbki;->b()Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-static {v2}, Laud;->a(Ljava/lang/Integer;)I
+    invoke-static {v2}, Lavb;->a(Ljava/lang/Integer;)I
 
     move-result v8
 
-    if-lez v7, :cond_2e
+    if-lez v7, :cond_2d
 
-    iget-object v2, v1, Lagx;->l:Lbgr;
-
-    const/4 v9, 0x0
-
-    invoke-virtual {v2, v9}, Lbgr;->a(I)V
-
-    iget-object v2, v1, Lagx;->m:Lbgr;
+    iget-object v2, v1, Lahu;->l:Lbhr;
 
     const/4 v9, 0x0
 
-    invoke-virtual {v2, v9}, Lbgr;->a(I)V
+    invoke-virtual {v2, v9}, Lbhr;->a(I)V
 
-    iget-object v2, v1, Lagx;->m:Lbgr;
+    iget-object v2, v1, Lahu;->m:Lbhr;
 
-    invoke-virtual {v2}, Lbgr;->a()Landroid/view/View;
+    const/4 v9, 0x0
+
+    invoke-virtual {v2, v9}, Lbhr;->a(I)V
+
+    iget-object v2, v1, Lahu;->m:Lbhr;
+
+    invoke-virtual {v2}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/TextView;
 
-    invoke-static {v7}, Laua;->a(I)Ljava/lang/String;
+    invoke-static {v7}, Lauy;->a(I)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v2, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :goto_12
-    if-lez v8, :cond_2f
+    if-lez v8, :cond_2e
 
-    iget-object v2, v1, Lagx;->n:Lbgr;
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v2, v7}, Lbgr;->a(I)V
-
-    iget-object v2, v1, Lagx;->o:Lbgr;
+    iget-object v2, v1, Lahu;->n:Lbhr;
 
     const/4 v7, 0x0
 
-    invoke-virtual {v2, v7}, Lbgr;->a(I)V
+    invoke-virtual {v2, v7}, Lbhr;->a(I)V
 
-    iget-object v2, v1, Lagx;->o:Lbgr;
+    iget-object v2, v1, Lahu;->o:Lbhr;
 
-    invoke-virtual {v2}, Lbgr;->a()Landroid/view/View;
+    const/4 v7, 0x0
+
+    invoke-virtual {v2, v7}, Lbhr;->a(I)V
+
+    iget-object v2, v1, Lahu;->o:Lbhr;
+
+    invoke-virtual {v2}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/TextView;
 
-    invoke-static {v8}, Laua;->a(I)Ljava/lang/String;
+    invoke-static {v8}, Lauy;->a(I)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v2, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_c
+    :cond_b
     :goto_13
-    iget-boolean v2, v5, Lajr;->mFailed:Z
+    iget-boolean v2, v5, Lakl;->mFailed:Z
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_c
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_c
 
-    iget-object v2, v1, Lagx;->l:Lbgr;
-
-    const/16 v3, 0x8
-
-    invoke-virtual {v2, v3}, Lbgr;->a(I)V
-
-    iget-object v2, v1, Lagx;->m:Lbgr;
+    iget-object v2, v1, Lahu;->l:Lbhr;
 
     const/16 v3, 0x8
 
-    invoke-virtual {v2, v3}, Lbgr;->a(I)V
+    invoke-virtual {v2, v3}, Lbhr;->a(I)V
 
-    iget-object v2, v1, Lagx;->n:Lbgr;
-
-    const/16 v3, 0x8
-
-    invoke-virtual {v2, v3}, Lbgr;->a(I)V
-
-    iget-object v2, v1, Lagx;->o:Lbgr;
+    iget-object v2, v1, Lahu;->m:Lbhr;
 
     const/16 v3, 0x8
 
-    invoke-virtual {v2, v3}, Lbgr;->a(I)V
+    invoke-virtual {v2, v3}, Lbhr;->a(I)V
 
-    invoke-virtual {v1}, Lagx;->s()V
+    iget-object v2, v1, Lahu;->n:Lbhr;
 
-    :cond_d
-    iget-object v2, v1, Lagx;->t:Lbgr;
+    const/16 v3, 0x8
+
+    invoke-virtual {v2, v3}, Lbhr;->a(I)V
+
+    iget-object v2, v1, Lahu;->o:Lbhr;
+
+    const/16 v3, 0x8
+
+    invoke-virtual {v2, v3}, Lbhr;->a(I)V
+
+    invoke-virtual {v1}, Lahu;->s()V
+
+    :cond_c
+    iget-object v2, v1, Lahu;->t:Lbhr;
 
     new-instance v3, Lcom/snapchat/android/fragments/stories/StoriesAdapter$12;
 
     invoke-direct {v3, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$12;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;)V
 
-    invoke-virtual {v2, v3}, Lbgr;->a(Lbgr$a;)V
+    invoke-virtual {v2, v3}, Lbhr;->a(Lbhr$a;)V
 
-    iget-object v2, v1, Lagx;->q:Lbgr;
+    iget-object v2, v1, Lahu;->q:Lbhr;
 
     new-instance v3, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;
 
-    invoke-direct {v3, p0, v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;Lagx;)V
+    invoke-direct {v3, p0, v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$14;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;Lahu;)V
 
-    invoke-virtual {v2, v3}, Lbgr;->a(Lbgr$a;)V
+    invoke-virtual {v2, v3}, Lbhr;->a(Lbhr$a;)V
 
-    iget-boolean v1, v4, Lajr;->mFailed:Z
+    iget-boolean v1, v4, Lakl;->mFailed:Z
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2f
 
     new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$15;
 
@@ -1648,39 +1674,39 @@
 
     invoke-virtual {v6, v0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    :cond_e
+    :cond_d
     :goto_14
     move-object v0, v6
 
-    .line 335
+    .line 337
     goto/16 :goto_0
 
-    .line 269
-    :cond_f
+    .line 271
+    :cond_e
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lagx;
+    check-cast v1, Lahu;
 
-    .line 272
-    iget-object v2, v1, Lagx;->v:Lcom/snapchat/android/model/StorySnapLogbook;
+    .line 274
+    iget-object v2, v1, Lahu;->v:Lcom/snapchat/android/model/StorySnapLogbook;
 
     invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_10
+    if-nez v2, :cond_f
 
-    .line 273
-    iget-object v2, v1, Lahc;->y:Lbgr;
+    .line 275
+    iget-object v2, v1, Lahz;->y:Lbhr;
 
     const/16 v3, 0x8
 
-    invoke-virtual {v2, v3}, Lbgr;->a(I)V
+    invoke-virtual {v2, v3}, Lbhr;->a(I)V
 
-    .line 276
-    :cond_10
+    .line 278
+    :cond_f
     const/4 v2, 0x1
 
     move-object v3, v1
@@ -1689,34 +1715,34 @@
 
     move v1, v2
 
-    .line 277
+    .line 279
     goto/16 :goto_1
 
-    .line 279
-    :cond_11
-    if-eqz p2, :cond_12
+    .line 281
+    :cond_10
+    if-eqz p2, :cond_11
 
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
-    instance-of v2, v2, Lahc;
+    instance-of v2, v2, Lahz;
+
+    if-eqz v2, :cond_11
+
+    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
+
+    instance-of v2, v2, Lahu;
 
     if-eqz v2, :cond_12
 
-    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v2
-
-    instance-of v2, v2, Lagx;
-
-    if-eqz v2, :cond_13
-
-    .line 281
-    :cond_12
+    .line 283
+    :cond_11
     iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->k:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f0400b2
+    const v3, 0x7f0400b3
 
     const/4 v4, 0x0
 
@@ -1724,44 +1750,44 @@
 
     move-result-object p2
 
-    .line 282
-    new-instance v3, Lahc;
+    .line 284
+    new-instance v3, Lahz;
 
-    invoke-direct {v3, p2}, Lahc;-><init>(Landroid/view/View;)V
+    invoke-direct {v3, p2}, Lahz;-><init>(Landroid/view/View;)V
 
-    .line 283
+    .line 285
     invoke-virtual {p2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     move-object v6, p2
 
     goto/16 :goto_1
 
-    .line 286
-    :cond_13
+    .line 288
+    :cond_12
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lahc;
+    check-cast v1, Lahz;
 
-    .line 287
-    iget-object v2, v1, Lahc;->P:Lahb;
+    .line 289
+    iget-object v2, v1, Lahz;->O:Lahy;
 
     invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_14
+    if-nez v2, :cond_13
 
-    .line 288
-    iget-object v2, v1, Lahc;->y:Lbgr;
+    .line 290
+    iget-object v2, v1, Lahz;->y:Lbhr;
 
     const/16 v3, 0x8
 
-    invoke-virtual {v2, v3}, Lbgr;->a(I)V
+    invoke-virtual {v2, v3}, Lbhr;->a(I)V
 
-    .line 291
-    :cond_14
+    .line 293
+    :cond_13
     const/4 v2, 0x1
 
     move-object v3, v1
@@ -1772,15 +1798,15 @@
 
     goto/16 :goto_1
 
-    .line 309
-    :cond_15
-    invoke-interface {v0}, Lahb;->h()Ljava/lang/String;
+    .line 311
+    :cond_14
+    invoke-interface {v0}, Lahy;->l()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Lahc;->a(Ljava/lang/String;)V
+    invoke-virtual {v3, v1}, Lahz;->a(Ljava/lang/String;)V
 
-    iget-object v1, v3, Lahc;->B:Landroid/widget/TextView;
+    iget-object v1, v3, Lahz;->B:Landroid/widget/TextView;
 
     const-string v2, ""
 
@@ -1788,10 +1814,10 @@
 
     goto/16 :goto_2
 
-    :cond_16
+    :cond_15
     instance-of v1, v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_17
 
     move-object v1, v0
 
@@ -1799,37 +1825,37 @@
 
     move-object v2, v3
 
-    check-cast v2, Lagx;
+    check-cast v2, Lahu;
 
-    iget-object v4, v1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v4, v1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
-    invoke-virtual {v4}, Lajr;->T()Ljava/lang/String;
+    invoke-virtual {v4}, Lakl;->T()Ljava/lang/String;
 
     move-result-object v4
 
-    if-eqz v4, :cond_17
+    if-eqz v4, :cond_16
 
     invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v4
 
-    :cond_17
-    invoke-virtual {v2, v4}, Lagx;->a(Ljava/lang/String;)V
+    :cond_16
+    invoke-virtual {v2, v4}, Lahu;->a(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v1}, Lagx;->a(Lcom/snapchat/android/model/StorySnapLogbook;)V
+    invoke-virtual {v2, v1}, Lahu;->a(Lcom/snapchat/android/model/StorySnapLogbook;)V
 
     goto/16 :goto_3
 
-    :cond_18
-    instance-of v1, v0, Lajg;
+    :cond_17
+    instance-of v1, v0, Lakc;
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_18
 
     move-object v1, v0
 
-    check-cast v1, Lajg;
+    check-cast v1, Lakc;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->x()Ljava/util/List;
+    invoke-virtual {v1}, Lakc;->t()Ljava/util/List;
 
     move-result-object v2
 
@@ -1839,11 +1865,11 @@
 
     if-nez v2, :cond_4
 
-    invoke-virtual {v3, v1}, Lahc;->a(Lcom/snapchat/android/model/StoryCollection;)V
+    invoke-virtual {v3, v1}, Lahz;->a(Lcom/snapchat/android/model/StoryCollection;)V
 
     goto/16 :goto_3
 
-    :cond_19
+    :cond_18
     instance-of v1, v0, Lcom/snapchat/android/model/Friend;
 
     if-eqz v1, :cond_4
@@ -1852,35 +1878,35 @@
 
     check-cast v1, Lcom/snapchat/android/model/Friend;
 
-    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend;->j()Z
+    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend;->n()Z
 
     move-result v2
 
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_19
 
-    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v3, v2}, Lahc;->a(Ljava/lang/String;)V
+    invoke-virtual {v3, v2}, Lahz;->a(Ljava/lang/String;)V
 
-    :cond_1a
-    invoke-virtual {v3, v1}, Lahc;->a(Lcom/snapchat/android/model/Friend;)V
+    :cond_19
+    invoke-virtual {v3, v1}, Lahz;->a(Lcom/snapchat/android/model/Friend;)V
 
     goto/16 :goto_3
 
-    .line 310
-    :cond_1b
+    .line 312
+    :cond_1a
     const/4 v2, 0x0
 
     goto/16 :goto_4
 
-    :cond_1c
+    :cond_1b
     const/4 v4, 0x0
 
     goto/16 :goto_5
 
-    :cond_1d
+    :cond_1c
     instance-of v1, v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
     if-eqz v1, :cond_6
@@ -1891,74 +1917,74 @@
 
     goto/16 :goto_7
 
-    :cond_1e
+    :cond_1d
     move-object v1, v0
 
     check-cast v1, Lcom/snapchat/android/model/StoryCollection;
 
     goto/16 :goto_8
 
-    :cond_1f
-    invoke-virtual {v3}, Lahc;->u()Z
+    :cond_1e
+    invoke-virtual {v3}, Lahz;->u()Z
 
     goto/16 :goto_9
 
-    .line 318
-    :cond_20
-    iget-object v2, v3, Lahc;->x:Landroid/widget/ImageView;
+    .line 320
+    :cond_1f
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    move-result-wide v4
+
+    iget-object v1, v1, Lavx;->mStorySnaps:Ljava/util/List;
+
+    const/4 v7, 0x0
+
+    invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lakl;
+
+    invoke-virtual {v1}, Lakl;->U()J
+
+    move-result-wide v8
+
+    sub-long/2addr v4, v8
+
+    long-to-float v1, v4
+
+    const v4, 0x4ca4cb80    # 8.64E7f
+
+    div-float/2addr v1, v4
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    sub-float v1, v4, v1
 
     goto/16 :goto_a
+
+    :cond_20
+    iget-object v1, v3, Lahz;->x:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+    goto/16 :goto_b
 
     :cond_21
     const/4 v2, 0x0
 
-    goto/16 :goto_b
-
-    :cond_22
-    iget-object v2, v3, Lahc;->z:Lbgr;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, v4}, Lbgr;->a(I)V
-
-    instance-of v2, v1, Lajo;
-
-    if-eqz v2, :cond_23
-
-    iget-object v2, v3, Lahc;->z:Lbgr;
-
-    invoke-virtual {v2}, Lbgr;->a()Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/ImageView;
-
-    const v4, 0x7f02027f
-
-    invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    iget-object v2, v3, Lahc;->z:Lbgr;
-
-    invoke-virtual {v2}, Lbgr;->a()Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/ImageView;
-
-    new-instance v4, Lcom/snapchat/android/fragments/stories/StoriesAdapter$11;
-
-    invoke-direct {v4, p0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$11;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lajg;)V
-
-    invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
     goto/16 :goto_c
 
-    :cond_23
-    iget-object v1, v3, Lahc;->z:Lbgr;
+    :cond_22
+    iget-object v1, v3, Lahz;->z:Lbhr;
 
-    invoke-virtual {v1}, Lbgr;->a()Landroid/view/View;
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lbhr;->a(I)V
+
+    iget-object v1, v3, Lahz;->z:Lbhr;
+
+    invoke-virtual {v1}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v1
 
@@ -1968,9 +1994,9 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    iget-object v1, v3, Lahc;->z:Lbgr;
+    iget-object v1, v3, Lahz;->z:Lbhr;
 
-    invoke-virtual {v1}, Lbgr;->a()Landroid/view/View;
+    invoke-virtual {v1}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v1
 
@@ -1978,157 +2004,161 @@
 
     new-instance v2, Lcom/snapchat/android/fragments/stories/StoriesAdapter$13;
 
-    invoke-direct {v2, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$13;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahb;)V
+    invoke-direct {v2, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$13;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahy;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto/16 :goto_c
+    goto/16 :goto_d
 
-    :cond_24
+    :cond_23
     instance-of v1, v0, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_26
 
     move-object v1, v0
 
     check-cast v1, Lcom/snapchat/android/model/StorySnapLogbook;
 
-    iget-object v4, v1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lajr;
+    iget-object v4, v1, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
 
     move-object v1, v3
 
-    check-cast v1, Lagx;
+    check-cast v1, Lahu;
 
-    invoke-virtual {v4}, Lajr;->aF()Z
-
-    move-result v2
-
-    if-nez v2, :cond_25
-
-    invoke-virtual {v4}, Lajr;->R()Z
+    invoke-virtual {v4}, Lakl;->aA()Z
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-nez v2, :cond_24
 
-    :cond_25
+    invoke-virtual {v4}, Lakl;->S()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_25
+
+    :cond_24
     const/4 v2, 0x1
 
     :goto_15
-    invoke-virtual {v1, v2}, Lagx;->e(Z)V
+    invoke-virtual {v1, v2}, Lahu;->e(Z)V
 
-    iget-boolean v2, v4, Lajr;->mFailed:Z
+    iget-boolean v2, v4, Lakl;->mFailed:Z
 
-    invoke-virtual {v1, v2}, Lagx;->b(Z)V
+    invoke-virtual {v1, v2}, Lahu;->b(Z)V
 
-    goto/16 :goto_c
+    goto/16 :goto_d
 
-    :cond_26
+    :cond_25
     const/4 v2, 0x0
 
     goto :goto_15
 
-    :cond_27
+    :cond_26
     instance-of v1, v0, Lcom/snapchat/android/model/Friend;
 
     if-eqz v1, :cond_a
 
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lajq;
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lakk;
 
-    invoke-interface {v0}, Lahb;->h()Ljava/lang/String;
+    invoke-interface {v0}, Lahy;->l()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lajq;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
+    invoke-virtual {v1, v2}, Lakk;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
 
     move-result-object v1
 
     if-eqz v1, :cond_a
 
-    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->o()Z
+    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->i()Z
 
     move-result v2
 
-    invoke-virtual {v3, v2}, Lahc;->e(Z)V
+    invoke-virtual {v3, v2}, Lahz;->e(Z)V
 
-    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->o()Z
+    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->i()Z
 
     move-result v2
 
-    if-nez v2, :cond_28
+    if-nez v2, :cond_27
 
-    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->n()Z
+    invoke-virtual {v1}, Lcom/snapchat/android/model/StoryCollection;->h()Z
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_28
 
-    :cond_28
+    :cond_27
     const/4 v1, 0x1
 
     :goto_16
-    invoke-virtual {v3, v1}, Lahc;->f(Z)V
+    invoke-virtual {v3, v1}, Lahz;->f(Z)V
 
-    goto/16 :goto_c
+    goto/16 :goto_d
 
-    :cond_29
+    :cond_28
     const/4 v1, 0x0
 
     goto :goto_16
 
-    .line 321
+    .line 323
+    :cond_29
+    sget-object v1, Lcom/snapchat/android/stories/StoriesSection;->ME:Lcom/snapchat/android/stories/StoriesSection;
+
+    if-eq v5, v1, :cond_2a
+
+    sget-object v1, Lcom/snapchat/android/stories/StoriesSection;->NONE:Lcom/snapchat/android/stories/StoriesSection;
+
+    if-ne v5, v1, :cond_41
+
     :cond_2a
     const/4 v1, 0x1
 
-    goto/16 :goto_d
-
-    :cond_2b
-    const/4 v1, 0x0
-
     goto/16 :goto_e
 
-    :cond_2c
+    :cond_2b
     const/16 v1, 0x8
 
     goto/16 :goto_f
 
-    .line 324
-    :cond_2d
+    .line 326
+    :cond_2c
     const/4 v2, 0x0
 
     goto/16 :goto_10
 
-    :cond_2e
-    iget-object v2, v1, Lagx;->l:Lbgr;
+    :cond_2d
+    iget-object v2, v1, Lahu;->l:Lbhr;
 
     const/16 v7, 0x8
 
-    invoke-virtual {v2, v7}, Lbgr;->a(I)V
+    invoke-virtual {v2, v7}, Lbhr;->a(I)V
 
-    iget-object v2, v1, Lagx;->m:Lbgr;
+    iget-object v2, v1, Lahu;->m:Lbhr;
 
     const/16 v7, 0x8
 
-    invoke-virtual {v2, v7}, Lbgr;->a(I)V
+    invoke-virtual {v2, v7}, Lbhr;->a(I)V
 
     goto/16 :goto_12
 
-    :cond_2f
-    iget-object v2, v1, Lagx;->n:Lbgr;
+    :cond_2e
+    iget-object v2, v1, Lahu;->n:Lbhr;
 
     const/16 v7, 0x8
 
-    invoke-virtual {v2, v7}, Lbgr;->a(I)V
+    invoke-virtual {v2, v7}, Lbhr;->a(I)V
 
-    iget-object v2, v1, Lagx;->o:Lbgr;
+    iget-object v2, v1, Lahu;->o:Lbhr;
 
     const/16 v7, 0x8
 
-    invoke-virtual {v2, v7}, Lbgr;->a(I)V
+    invoke-virtual {v2, v7}, Lbhr;->a(I)V
 
     goto/16 :goto_13
 
-    :cond_30
+    :cond_2f
     new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$17;
 
     invoke-direct {v1, p0, v0, v6}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$17;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/StorySnapLogbook;Landroid/view/View;)V
@@ -2145,22 +2175,22 @@
 
     goto/16 :goto_14
 
-    .line 325
-    :cond_31
-    instance-of v1, v0, Lahd;
+    .line 327
+    :cond_30
+    instance-of v1, v0, Laia;
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_35
 
-    .line 326
-    check-cast v0, Lahd;
+    .line 328
+    check-cast v0, Laia;
 
     invoke-virtual {v6}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lahc;
+    check-cast v1, Lahz;
 
-    invoke-virtual {v0}, Lahd;->d()Lcom/snapchat/android/model/StoryGroup;
+    invoke-virtual {v0}, Laia;->d()Lcom/snapchat/android/model/StoryGroup;
 
     move-result-object v3
 
@@ -2168,7 +2198,7 @@
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-    invoke-virtual {v0}, Lahd;->b()Ljava/lang/String;
+    invoke-virtual {v0}, Laia;->b()Ljava/lang/String;
 
     move-result-object v4
 
@@ -2176,46 +2206,46 @@
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Lahc;->c(Z)V
+    invoke-virtual {v1, v2}, Lahz;->c(Z)V
 
-    invoke-virtual {v1}, Lahc;->s()V
+    invoke-virtual {v1}, Lahz;->s()V
 
-    instance-of v2, v0, Lagw;
+    instance-of v2, v0, Laht;
 
-    if-nez v2, :cond_32
+    if-nez v2, :cond_31
 
-    iget-object v2, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->F:Landroid/widget/Button;
 
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4}, Landroid/widget/Button;->setVisibility(I)V
 
-    iget-object v2, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->F:Landroid/widget/Button;
 
     const v4, 0x7f020253
 
     invoke-virtual {v2, v4}, Landroid/widget/Button;->setBackgroundResource(I)V
 
-    iget-object v2, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->F:Landroid/widget/Button;
 
     new-instance v4, Lcom/snapchat/android/fragments/stories/StoriesAdapter$18;
 
-    invoke-direct {v4, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$18;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahd;)V
+    invoke-direct {v4, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$18;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Laia;)V
 
     invoke-virtual {v2, v4}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :cond_32
-    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lajq;
+    :cond_31
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lakk;
 
     invoke-virtual {v3}, Lcom/snapchat/android/model/StoryGroup;->c()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v2, v4}, Lajq;->a(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
+    invoke-virtual {v2, v4}, Lakk;->a(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
 
     move-result-object v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_32
 
     const/4 v4, 0x1
 
@@ -2223,14 +2253,14 @@
 
     move-result-object v4
 
-    new-instance v5, Laon;
+    new-instance v5, Lapj;
 
-    invoke-direct {v5, v2, v4}, Laon;-><init>(Lcom/snapchat/android/model/StoryCollection;Ljava/util/List;)V
+    invoke-direct {v5, v2, v4}, Lapj;-><init>(Lcom/snapchat/android/model/StoryCollection;Ljava/util/List;)V
 
     invoke-virtual {v6, v5}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :cond_33
-    invoke-virtual {v0}, Lahd;->d()Lcom/snapchat/android/model/StoryGroup;
+    :cond_32
+    invoke-virtual {v0}, Laia;->d()Lcom/snapchat/android/model/StoryGroup;
 
     move-result-object v2
 
@@ -2242,41 +2272,41 @@
 
     move-result v2
 
-    if-lez v2, :cond_34
+    if-lez v2, :cond_33
 
     const/4 v2, 0x1
 
     :goto_17
-    iget-object v4, v1, Lahc;->G:Landroid/widget/Button;
+    iget-object v4, v1, Lahz;->G:Landroid/widget/Button;
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_34
 
     const v2, 0x7f02026f
 
     :goto_18
     invoke-virtual {v4, v2}, Landroid/widget/Button;->setBackgroundResource(I)V
 
-    iget-object v2, v1, Lahc;->G:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->G:Landroid/widget/Button;
 
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4}, Landroid/widget/Button;->setVisibility(I)V
 
-    iget-object v2, v1, Lahc;->G:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->G:Landroid/widget/Button;
 
     new-instance v4, Lcom/snapchat/android/fragments/stories/StoriesAdapter$19;
 
-    invoke-direct {v4, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$19;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahd;)V
+    invoke-direct {v4, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$19;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Laia;)V
 
     invoke-virtual {v2, v4}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     new-instance v2, Lcom/snapchat/android/fragments/stories/StoriesAdapter$20;
 
-    invoke-direct {v2, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$20;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lahd;)V
+    invoke-direct {v2, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$20;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Laia;)V
 
     invoke-virtual {v6, v2}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    iget-object v0, v1, Lahc;->D:Lcom/snapchat/android/ui/ProgressiveSaveButton;
+    iget-object v0, v1, Lahz;->D:Lcom/snapchat/android/ui/ProgressiveSaveButton;
 
     new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$2;
 
@@ -2286,46 +2316,46 @@
 
     goto/16 :goto_14
 
-    :cond_34
+    :cond_33
     const/4 v2, 0x0
 
     goto :goto_17
 
-    :cond_35
+    :cond_34
     const v2, 0x7f020270
 
     goto :goto_18
 
-    .line 327
-    :cond_36
-    instance-of v1, v0, Lafl;
+    .line 329
+    :cond_35
+    instance-of v1, v0, Lagl;
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_36
 
-    .line 328
-    check-cast v0, Lafl;
+    .line 330
+    check-cast v0, Lagl;
 
     invoke-virtual {v6}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lahc;
+    check-cast v1, Lahz;
 
-    iget-object v2, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->F:Landroid/widget/Button;
 
     new-instance v3, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;
 
-    invoke-direct {v3, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lafl;)V
+    invoke-direct {v3, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$3;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lagl;)V
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {v0}, Lafl;->a()Ljava/lang/String;
+    invoke-virtual {v0}, Lagl;->a()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lahc;->a(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lahz;->a(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v0, v1, Lahz;->F:Landroid/widget/Button;
 
     const/4 v1, 0x0
 
@@ -2333,22 +2363,22 @@
 
     goto/16 :goto_14
 
-    .line 329
-    :cond_37
-    instance-of v1, v0, Lajg;
+    .line 331
+    :cond_36
+    instance-of v1, v0, Lakc;
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_39
 
-    .line 330
-    check-cast v0, Lajg;
+    .line 332
+    check-cast v0, Lakc;
 
     invoke-virtual {v6}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lahc;
+    check-cast v1, Lahz;
 
-    invoke-virtual {v0}, Lajg;->h()Ljava/lang/String;
+    invoke-virtual {v0}, Lakc;->l()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2358,15 +2388,15 @@
 
     move-result-object v2
 
-    check-cast v2, Lajv;
+    check-cast v2, Lakp;
 
-    invoke-static {v3, v2}, Latm;->a(Ljava/lang/String;Lajv;)Lcom/snapchat/android/model/Friend;
+    invoke-static {v3, v2}, Lauk;->a(Ljava/lang/String;Lakp;)Lcom/snapchat/android/model/Friend;
 
     move-result-object v2
 
     iget-boolean v3, v2, Lcom/snapchat/android/model/Friend;->mIsSharedStory:Z
 
-    if-eqz v3, :cond_38
+    if-eqz v3, :cond_37
 
     iget-object v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->c:Landroid/content/Context;
 
@@ -2374,27 +2404,27 @@
 
     move-result-object v3
 
-    const v4, 0x7f080040
+    const v4, 0x7f080041
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Lahc;->b(I)V
+    invoke-virtual {v1, v3}, Lahz;->b(I)V
 
-    iget-object v3, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v3, v1, Lahz;->F:Landroid/widget/Button;
 
     const v4, 0x7f020254
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setBackgroundResource(I)V
 
-    iget-object v3, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v3, v1, Lahz;->F:Landroid/widget/Button;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setVisibility(I)V
 
-    iget-object v1, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v1, v1, Lahz;->F:Landroid/widget/Button;
 
     new-instance v3, Lcom/snapchat/android/fragments/stories/StoriesAdapter$4;
 
@@ -2402,96 +2432,92 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :cond_38
-    invoke-virtual {v0}, Lajg;->w()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    :cond_37
+    invoke-virtual {v0}, Lakc;->s()I
 
     move-result v1
 
-    if-eqz v1, :cond_39
+    if-nez v1, :cond_38
 
     iget-boolean v1, v2, Lcom/snapchat/android/model/Friend;->mIsSharedStory:Z
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_d
 
     new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$5;
 
-    invoke-direct {v1, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$5;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lajg;)V
+    invoke-direct {v1, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$5;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lakc;)V
 
     invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto/16 :goto_14
 
+    :cond_38
+    new-instance v1, Lapj;
+
+    invoke-direct {v1, v0}, Lapj;-><init>(Lcom/snapchat/android/model/StoryCollection;)V
+
+    invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    goto/16 :goto_14
+
+    .line 333
     :cond_39
-    new-instance v1, Laon;
-
-    invoke-direct {v1, v0}, Laon;-><init>(Lcom/snapchat/android/model/StoryCollection;)V
-
-    invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    goto/16 :goto_14
-
-    .line 331
-    :cond_3a
     instance-of v1, v0, Lcom/snapchat/android/model/Friend;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_d
 
-    .line 332
+    .line 334
     check-cast v0, Lcom/snapchat/android/model/Friend;
 
     invoke-virtual {v6}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lahc;
+    check-cast v1, Lahz;
 
-    iget-object v2, v1, Lahc;->E:Lbgr;
-
-    new-instance v3, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;
-
-    invoke-direct {v3, p0, v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;Lahc;)V
-
-    invoke-virtual {v2, v3}, Lbgr;->a(Lbgr$a;)V
-
-    iget-object v2, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->E:Lbhr;
 
     new-instance v3, Lcom/snapchat/android/fragments/stories/StoriesAdapter$7;
 
-    invoke-direct {v3, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$7;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;)V
+    invoke-direct {v3, p0, v0, v1}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$7;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;Lahz;)V
+
+    invoke-virtual {v2, v3}, Lbhr;->a(Lbhr$a;)V
+
+    iget-object v2, v1, Lahz;->F:Landroid/widget/Button;
+
+    new-instance v3, Lcom/snapchat/android/fragments/stories/StoriesAdapter$8;
+
+    invoke-direct {v3, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$8;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;)V
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget v2, v1, Lahc;->Q:I
+    iget v2, v1, Lahz;->P:I
 
     iget v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->q:I
 
-    if-ne v2, v3, :cond_3d
+    if-ne v2, v3, :cond_3c
 
     iget-boolean v2, v0, Lcom/snapchat/android/model/Friend;->mIsSharedStory:Z
 
-    if-nez v2, :cond_3b
+    if-nez v2, :cond_3a
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, v2}, Lahc;->c(Z)V
+    invoke-virtual {v1, v2}, Lahz;->c(Z)V
 
-    :cond_3b
+    :cond_3a
     :goto_19
     iget-boolean v2, v0, Lcom/snapchat/android/model/Friend;->mIsSharedStory:Z
 
-    if-eqz v2, :cond_3e
+    if-eqz v2, :cond_3d
 
-    iget-object v2, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->F:Landroid/widget/Button;
 
     const v3, 0x7f020254
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundResource(I)V
 
-    iget-object v2, v1, Lahc;->F:Landroid/widget/Button;
+    iget-object v2, v1, Lahz;->F:Landroid/widget/Button;
 
     const/4 v3, 0x0
 
@@ -2503,74 +2529,93 @@
 
     move-result-object v2
 
-    const v3, 0x7f080040
+    const v3, 0x7f080041
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Lahc;->b(I)V
+    invoke-virtual {v1, v2}, Lahz;->b(I)V
 
-    :cond_3c
+    :cond_3b
     :goto_1a
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lajq;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->o()Z
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->h()Ljava/lang/String;
+    move-result v1
+
+    if-eqz v1, :cond_3f
+
+    new-instance v1, Lapj;
+
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->e:Lakk;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lajq;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
+    invoke-virtual {v2, v0}, Lakk;->b(Ljava/lang/String;)Lcom/snapchat/android/model/StoryCollection;
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
-
-    new-instance v1, Laon;
-
-    invoke-direct {v1, v0}, Laon;-><init>(Lcom/snapchat/android/model/StoryCollection;)V
+    invoke-direct {v1, v0}, Lapj;-><init>(Lcom/snapchat/android/model/StoryCollection;)V
 
     invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto/16 :goto_14
 
-    :cond_3d
+    :cond_3c
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Lahc;->c(Z)V
+    invoke-virtual {v1, v2}, Lahz;->c(Z)V
 
     goto :goto_19
 
-    :cond_3e
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->q()Z
+    :cond_3d
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->m()Z
 
     move-result v2
 
-    if-nez v2, :cond_3f
+    if-nez v2, :cond_3e
 
-    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->l()Z
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->o()Z
 
     move-result v2
 
-    if-nez v2, :cond_3c
+    if-nez v2, :cond_3b
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
     iget-object v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->l:Ljava/util/HashSet;
 
-    invoke-virtual {v1, v0, v2, v3}, Lahc;->a(Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Ljava/util/Set;)V
+    invoke-virtual {v1, v0, v2, v3}, Lahz;->a(Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Ljava/util/Set;)V
 
-    invoke-virtual {v1}, Lahc;->v()V
+    invoke-virtual {v1}, Lahz;->v()V
+
+    goto :goto_1a
+
+    :cond_3e
+    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
+
+    iget-object v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->l:Ljava/util/HashSet;
+
+    invoke-virtual {v1, v0, v2, v3}, Lahz;->a(Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Ljava/util/Set;)V
 
     goto :goto_1a
 
     :cond_3f
-    iget-object v2, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
+    invoke-virtual {v0}, Lcom/snapchat/android/model/Friend;->m()Z
 
-    iget-object v3, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->l:Ljava/util/HashSet;
+    move-result v1
 
-    invoke-virtual {v1, v0, v2, v3}, Lahc;->a(Lcom/snapchat/android/model/Friend;Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;Ljava/util/Set;)V
+    if-nez v1, :cond_d
 
-    goto :goto_1a
+    new-instance v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;
+
+    invoke-direct {v1, p0, v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$6;-><init>(Lcom/snapchat/android/fragments/stories/StoriesAdapter;Lcom/snapchat/android/model/Friend;)V
+
+    invoke-virtual {v6, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    goto/16 :goto_14
 
     :cond_40
     move v3, v2
@@ -2578,9 +2623,9 @@
     goto/16 :goto_11
 
     :cond_41
-    move v1, v4
+    move v1, v2
 
-    goto/16 :goto_d
+    goto/16 :goto_e
 
     :cond_42
     move v1, v5
@@ -2592,7 +2637,7 @@
     .locals 1
 
     .prologue
-    .line 232
+    .line 234
     invoke-static {}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->a()I
 
     move-result v0
@@ -2604,10 +2649,10 @@
     .locals 2
 
     .prologue
-    .line 1098
+    .line 1134
     iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesAdapter;->r:Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;
 
-    invoke-interface {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->m()Ljava/util/List;
+    invoke-interface {v0}, Lcom/snapchat/android/fragments/stories/StoriesAdapter$b;->n()Ljava/util/List;
 
     move-result-object v0
 
@@ -2626,17 +2671,17 @@
 
     move-result-object v0
 
-    check-cast v0, Laoq;
+    check-cast v0, Lapm;
 
-    .line 1099
-    invoke-virtual {v0}, Laoq;->g()V
+    .line 1135
+    invoke-virtual {v0}, Lapm;->g()V
 
     goto :goto_0
 
-    .line 1101
+    .line 1137
     :cond_0
-    invoke-super {p0}, Lapf;->notifyDataSetChanged()V
+    invoke-super {p0}, Laqb;->notifyDataSetChanged()V
 
-    .line 1102
+    .line 1138
     return-void
 .end method

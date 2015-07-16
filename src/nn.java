@@ -1,50 +1,49 @@
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
-import java.util.concurrent.atomic.AtomicInteger;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 public final class nn
 {
-  private static final nn INSTANCE = new nn();
-  private EasyMetric.EasyMetricFactory mMetricFactory;
-  public AtomicInteger mSnapEngagement;
-  public AtomicInteger mSnapSends;
-  public AtomicInteger mSnapViews;
+  String mAdUnitId;
+  public int mFirstPosition;
+  int mMinimumRemaining;
+  Bundle mTargetingParams;
+  private int mTimeoutSeconds;
   
-  private nn()
+  private nn(int paramInt1, int paramInt2, int paramInt3, String paramString, Bundle paramBundle)
   {
-    this(new EasyMetric.EasyMetricFactory());
+    mTimeoutSeconds = paramInt1;
+    mFirstPosition = paramInt2;
+    mMinimumRemaining = paramInt3;
+    mAdUnitId = paramString;
+    mTargetingParams = paramBundle;
   }
   
-  private nn(EasyMetric.EasyMetricFactory paramEasyMetricFactory)
+  public final String a()
   {
-    mMetricFactory = paramEasyMetricFactory;
-    mSnapViews = new AtomicInteger();
-    mSnapSends = new AtomicInteger();
-    mSnapEngagement = new AtomicInteger();
-  }
-  
-  public static nn a()
-  {
-    return INSTANCE;
-  }
-  
-  public final void b()
-  {
-    try
+    StringBuilder localStringBuilder = new StringBuilder();
+    localStringBuilder.append(mAdUnitId);
+    localStringBuilder.append("~");
+    Object localObject = new ArrayList(mTargetingParams.keySet());
+    Collections.sort((List)localObject);
+    localObject = ((List)localObject).iterator();
+    while (((Iterator)localObject).hasNext())
     {
-      EasyMetric.EasyMetricFactory.a("SNAP_VIEWS_IN_SESSION").a("count", Integer.valueOf(mSnapViews.get())).b(false);
-      EasyMetric.EasyMetricFactory.a("SNAP_SENDS_IN_SESSION").a("count", Integer.valueOf(mSnapSends.get())).b(false);
-      EasyMetric.EasyMetricFactory.a("SNAP_ENGAGEMENT_IN_SESSION").a("count", Integer.valueOf(mSnapEngagement.get())).b(false);
-      mSnapViews.set(0);
-      mSnapSends.set(0);
-      mSnapEngagement.set(0);
-      return;
+      String str = (String)((Iterator)localObject).next();
+      localStringBuilder.append(str + ":" + mTargetingParams.get(str) + "|");
     }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
-    }
+    return localStringBuilder.toString();
+  }
+  
+  public static final class a
+  {
+    public String mAdUnitId;
+    public int mFirstPosition = -1;
+    public int mMinimumRemaining;
+    public Bundle mTargetingParams;
+    public int mTimeoutSeconds = 600;
   }
 }
 

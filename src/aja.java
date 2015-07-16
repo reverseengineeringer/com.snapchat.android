@@ -1,32 +1,27 @@
-import android.content.res.Resources;
-import com.snapchat.android.SnapchatApplication;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class aja
-  extends ajc
+  extends aiw
 {
-  private static aja sInstance;
+  public List<ajr> d = new ArrayList();
+  public cht e = new cht();
   
-  private aja()
+  @cbr
+  public final List<ajr> c()
   {
-    super("my_story_ads79sdf", SnapchatApplication.b().getResources().getString(2131493240));
-  }
-  
-  public static aja a()
-  {
-    try
+    if (e.b(2).c(cht.c()))
     {
-      if (sInstance == null) {
-        sInstance = new aja();
-      }
-      aja localaja = sInstance;
-      return localaja;
+      new StringBuilder("Filters are expired(").append(e).append(")");
+      return new ArrayList();
     }
-    finally {}
+    return new ArrayList(d);
   }
   
-  public final boolean b()
+  @cbr
+  public final void d()
   {
-    return false;
+    d.clear();
   }
 }
 

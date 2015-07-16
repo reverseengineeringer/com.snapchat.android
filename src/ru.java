@@ -1,11 +1,10 @@
 import javax.inject.Provider;
 
 public final class ru
-  implements buj<rt>
+  implements bvk<rt>
 {
-  private final Provider<qg> mCashErrorReporterProvider;
-  private final Provider<sn> mSquareProvider;
-  private final buj<qv> supertypeInjector;
+  private final Provider<qw> mCashErrorReporterProvider;
+  private final bvk<rl> supertypeInjector;
   
   static
   {
@@ -17,19 +16,17 @@ public final class ru
     }
   }
   
-  private ru(buj<qv> parambuj, Provider<sn> paramProvider, Provider<qg> paramProvider1)
+  private ru(bvk<rl> parambvk, Provider<qw> paramProvider)
   {
-    assert (parambuj != null);
-    supertypeInjector = parambuj;
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
     assert (paramProvider != null);
-    mSquareProvider = paramProvider;
-    assert (paramProvider1 != null);
-    mCashErrorReporterProvider = paramProvider1;
+    mCashErrorReporterProvider = paramProvider;
   }
   
-  public static buj<rt> a(buj<qv> parambuj, Provider<sn> paramProvider, Provider<qg> paramProvider1)
+  public static bvk<rt> a(bvk<rl> parambvk, Provider<qw> paramProvider)
   {
-    return new ru(parambuj, paramProvider, paramProvider1);
+    return new ru(parambvk, paramProvider);
   }
 }
 

@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 public class PtrClassicFrameLayout
   extends PtrFrameLayout
 {
-  private PtrClassicDefaultHeader a;
+  private PtrClassicDefaultHeader g;
   
   public PtrClassicFrameLayout(Context paramContext)
   {
@@ -28,27 +28,27 @@ public class PtrClassicFrameLayout
   
   private void a()
   {
-    a = new PtrClassicDefaultHeader(getContext());
-    setHeaderView(a);
-    a(a);
+    g = new PtrClassicDefaultHeader(getContext());
+    setHeaderView(g);
+    a(g);
   }
   
   public PtrClassicDefaultHeader getHeader()
   {
-    return a;
+    return g;
   }
   
   public void setLastUpdateTimeKey(String paramString)
   {
-    if (a != null) {
-      a.setLastUpdateTimeKey(paramString);
+    if (g != null) {
+      g.setLastUpdateTimeKey(paramString);
     }
   }
   
   public void setLastUpdateTimeRelateObject(Object paramObject)
   {
-    if (a != null) {
-      a.setLastUpdateTimeRelateObject(paramObject);
+    if (g != null) {
+      g.setLastUpdateTimeRelateObject(paramObject);
     }
   }
 }

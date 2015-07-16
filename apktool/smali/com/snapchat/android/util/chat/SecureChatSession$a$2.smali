@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 487
@@ -52,17 +52,6 @@
     if-nez v0, :cond_0
 
     .line 488
-    const-string v0, "SecureChatSession"
-
-    const-string v1, "CHAT-LOG: SecureChatSession ran into soft-timeout"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 489
     iget-object v0, p0, Lcom/snapchat/android/util/chat/SecureChatSession$a$2;->this$1:Lcom/snapchat/android/util/chat/SecureChatSession$a;
 
     iget-object v0, v0, Lcom/snapchat/android/util/chat/SecureChatSession$a;->this$0:Lcom/snapchat/android/util/chat/SecureChatSession;

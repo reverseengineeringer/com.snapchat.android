@@ -1,12 +1,4 @@
-public final class bee
-{
-  public String mFriendUsername;
-  
-  public bee(String paramString)
-  {
-    mFriendUsername = paramString;
-  }
-}
+public final class bee {}
 
 /* Location:
  * Qualified Name:     bee

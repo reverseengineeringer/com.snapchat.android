@@ -2,12 +2,12 @@ package com.snapchat.videotranscoder.mp4;
 
 import ao;
 import ar;
-import cgb;
-import ev;
+import chc;
+import fe;
 import java.nio.ByteBuffer;
 
 public class SnapSegmentsBox
-  extends ev
+  extends fe
 {
   public static final String TYPE = "sseg";
   private static final int VERSION = 1;
@@ -47,7 +47,7 @@ public class SnapSegmentsBox
     return mSnapSegments;
   }
   
-  public void setSnapSegments(@cgb SnapSegments paramSnapSegments)
+  public void setSnapSegments(@chc SnapSegments paramSnapSegments)
   {
     mSnapSegments = paramSnapSegments;
   }

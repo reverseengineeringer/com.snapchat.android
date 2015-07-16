@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;->a(Lalc;)V
+    value = Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;->a(Laly;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,20 +18,20 @@
 
 
 # instance fields
-.field final synthetic a:Lalc;
+.field final synthetic a:Laly;
 
 .field final synthetic b:Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;Lalc;)V
+.method constructor <init>(Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;Laly;)V
     .locals 0
 
     .prologue
     .line 260
     iput-object p1, p0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d$2;->b:Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;
 
-    iput-object p2, p0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d$2;->a:Lalc;
+    iput-object p2, p0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d$2;->a:Laly;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,7 +47,7 @@
     .line 263
     iget-object v0, p0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d$2;->b:Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;
 
-    iget-object v1, v0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;->a:[Lalb$c;
+    iget-object v1, v0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d;->a:[Lalw$c;
 
     array-length v2, v1
 
@@ -59,9 +59,9 @@
     aget-object v3, v1, v0
 
     .line 264
-    iget-object v4, p0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d$2;->a:Lalc;
+    iget-object v4, p0, Lcom/snapchat/android/ui/diagnostics/DiagnosticsView$d$2;->a:Laly;
 
-    invoke-interface {v3, v4}, Lalb$c;->a(Lalc;)V
+    invoke-interface {v3, v4}, Lalw$c;->a(Laly;)V
 
     .line 263
     add-int/lit8 v0, v0, 0x1

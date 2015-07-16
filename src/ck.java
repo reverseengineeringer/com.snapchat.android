@@ -1,138 +1,119 @@
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import javax.annotation.CheckReturnValue;
 import javax.annotation.Nullable;
 
 @cd
-public final class ck
+public class ck
 {
-  public static int a(int paramInt1, int paramInt2)
+  final String a;
+  
+  private ck(ck paramck)
   {
-    if ((paramInt1 < 0) || (paramInt1 >= paramInt2))
+    a = a;
+  }
+  
+  ck(String paramString)
+  {
+    a = ((String)co.a(paramString));
+  }
+  
+  public static ck a(String paramString)
+  {
+    return new ck(paramString);
+  }
+  
+  CharSequence a(Object paramObject)
+  {
+    co.a(paramObject);
+    if ((paramObject instanceof CharSequence)) {
+      return (CharSequence)paramObject;
+    }
+    return paramObject.toString();
+  }
+  
+  public final StringBuilder a(StringBuilder paramStringBuilder, Iterator<?> paramIterator)
+  {
+    try
     {
-      if (paramInt1 < 0) {}
-      for (String str = a("%s (%s) must not be negative", new Object[] { "index", Integer.valueOf(paramInt1) });; str = a("%s (%s) must be less than size (%s)", new Object[] { "index", Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) }))
+      co.a(paramStringBuilder);
+      if (paramIterator.hasNext())
       {
-        throw new IndexOutOfBoundsException(str);
-        if (paramInt2 < 0) {
-          throw new IllegalArgumentException(26 + "negative size: " + paramInt2);
+        paramStringBuilder.append(a(paramIterator.next()));
+        while (paramIterator.hasNext())
+        {
+          paramStringBuilder.append(a);
+          paramStringBuilder.append(a(paramIterator.next()));
         }
       }
+      return paramStringBuilder;
     }
-    return paramInt1;
-  }
-  
-  public static <T> T a(T paramT)
-  {
-    if (paramT == null) {
-      throw new NullPointerException();
-    }
-    return paramT;
-  }
-  
-  public static <T> T a(T paramT, @Nullable Object paramObject)
-  {
-    if (paramT == null) {
-      throw new NullPointerException(String.valueOf(paramObject));
-    }
-    return paramT;
-  }
-  
-  private static String a(int paramInt1, int paramInt2, String paramString)
-  {
-    if (paramInt1 < 0) {
-      return a("%s (%s) must not be negative", new Object[] { paramString, Integer.valueOf(paramInt1) });
-    }
-    if (paramInt2 < 0) {
-      throw new IllegalArgumentException(26 + "negative size: " + paramInt2);
-    }
-    return a("%s (%s) must not be greater than size (%s)", new Object[] { paramString, Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) });
-  }
-  
-  private static String a(String paramString, @Nullable Object... paramVarArgs)
-  {
-    int i = 0;
-    paramString = String.valueOf(paramString);
-    StringBuilder localStringBuilder = new StringBuilder(paramString.length() + paramVarArgs.length * 16);
-    int j = 0;
-    while (i < paramVarArgs.length)
+    catch (IOException paramStringBuilder)
     {
-      int k = paramString.indexOf("%s", j);
-      if (k == -1) {
-        break;
-      }
-      localStringBuilder.append(paramString.substring(j, k));
-      localStringBuilder.append(paramVarArgs[i]);
-      j = k + 2;
-      i += 1;
+      throw new AssertionError(paramStringBuilder);
     }
-    localStringBuilder.append(paramString.substring(j));
-    if (i < paramVarArgs.length)
+  }
+  
+  @CheckReturnValue
+  public ck b(final String paramString)
+  {
+    co.a(paramString);
+    new ck(this, paramString)
     {
-      localStringBuilder.append(" [");
-      localStringBuilder.append(paramVarArgs[i]);
-      i += 1;
-      while (i < paramVarArgs.length)
+      final CharSequence a(@Nullable Object paramAnonymousObject)
       {
-        localStringBuilder.append(", ");
-        localStringBuilder.append(paramVarArgs[i]);
-        i += 1;
-      }
-      localStringBuilder.append(']');
-    }
-    return localStringBuilder.toString();
-  }
-  
-  public static void a(int paramInt1, int paramInt2, int paramInt3)
-  {
-    if ((paramInt1 < 0) || (paramInt2 < paramInt1) || (paramInt2 > paramInt3))
-    {
-      String str;
-      if ((paramInt1 < 0) || (paramInt1 > paramInt3)) {
-        str = a(paramInt1, paramInt3, "start index");
-      }
-      for (;;)
-      {
-        throw new IndexOutOfBoundsException(str);
-        if ((paramInt2 < 0) || (paramInt2 > paramInt3)) {
-          str = a(paramInt2, paramInt3, "end index");
-        } else {
-          str = a("end index (%s) must not be less than start index (%s)", new Object[] { Integer.valueOf(paramInt2), Integer.valueOf(paramInt1) });
+        if (paramAnonymousObject == null) {
+          return paramString;
         }
+        return ck.this.a(paramAnonymousObject);
       }
-    }
+      
+      public final ck b(String paramAnonymousString)
+      {
+        throw new UnsupportedOperationException("already specified useForNull");
+      }
+    };
   }
   
-  public static void a(boolean paramBoolean)
+  public static final class a
   {
-    if (!paramBoolean) {
-      throw new IllegalArgumentException();
+    private final ck a;
+    private final String b;
+    
+    private a(ck paramck, String paramString)
+    {
+      a = paramck;
+      b = ((String)co.a(paramString));
     }
-  }
-  
-  public static void a(boolean paramBoolean, @Nullable Object paramObject)
-  {
-    if (!paramBoolean) {
-      throw new IllegalArgumentException(String.valueOf(paramObject));
-    }
-  }
-  
-  public static void a(boolean paramBoolean, @Nullable String paramString, @Nullable Object... paramVarArgs)
-  {
-    if (!paramBoolean) {
-      throw new IllegalArgumentException(a(paramString, paramVarArgs));
-    }
-  }
-  
-  public static int b(int paramInt1, int paramInt2)
-  {
-    if ((paramInt1 < 0) || (paramInt1 > paramInt2)) {
-      throw new IndexOutOfBoundsException(a(paramInt1, paramInt2, "index"));
-    }
-    return paramInt1;
-  }
-  
-  public static void b(boolean paramBoolean, @Nullable Object paramObject)
-  {
-    if (!paramBoolean) {
-      throw new IllegalStateException(String.valueOf(paramObject));
+    
+    @cc
+    public final StringBuilder a(StringBuilder paramStringBuilder, Iterator<? extends Map.Entry<?, ?>> paramIterator)
+    {
+      try
+      {
+        co.a(paramStringBuilder);
+        if (paramIterator.hasNext())
+        {
+          Map.Entry localEntry = (Map.Entry)paramIterator.next();
+          paramStringBuilder.append(a.a(localEntry.getKey()));
+          paramStringBuilder.append(b);
+          paramStringBuilder.append(a.a(localEntry.getValue()));
+          while (paramIterator.hasNext())
+          {
+            paramStringBuilder.append(a.a);
+            localEntry = (Map.Entry)paramIterator.next();
+            paramStringBuilder.append(a.a(localEntry.getKey()));
+            paramStringBuilder.append(b);
+            paramStringBuilder.append(a.a(localEntry.getValue()));
+          }
+        }
+        return paramStringBuilder;
+      }
+      catch (IOException paramStringBuilder)
+      {
+        throw new AssertionError(paramStringBuilder);
+      }
     }
   }
 }

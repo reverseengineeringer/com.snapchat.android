@@ -2,22 +2,15 @@ package com.snapchat.android.fragments.settings;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.CheckBox;
 
 final class AdditionalServicesFragment$5
   implements View.OnClickListener
 {
-  AdditionalServicesFragment$5(AdditionalServicesFragment paramAdditionalServicesFragment, CheckBox paramCheckBox) {}
+  AdditionalServicesFragment$5(AdditionalServicesFragment paramAdditionalServicesFragment) {}
   
   public final void onClick(View paramView)
   {
-    paramView = a;
-    if (!a.isChecked()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      paramView.setChecked(bool);
-      return;
-    }
+    a.i();
   }
 }
 

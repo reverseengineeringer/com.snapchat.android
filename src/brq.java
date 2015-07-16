@@ -1,33 +1,51 @@
-import java.io.File;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.apache.http.ParseException;
+import org.apache.http.StatusLine;
+import org.apache.http.message.BasicLineParser;
+import org.apache.http.message.ParserCursor;
+import org.apache.http.util.CharArrayBuffer;
 
 public final class brq
-  extends bri
+  extends brg
 {
-  private brq(File paramFile)
+  private int d = -1;
+  
+  public brq(brm parambrm)
   {
-    super(paramFile);
+    super(parambrm);
   }
   
-  public final Object a()
+  public final boolean a(CharArrayBuffer paramCharArrayBuffer)
   {
+    ParserCursor localParserCursor = new ParserCursor(0, paramCharArrayBuffer.length());
     try
     {
-      JSONObject localJSONObject = new JSONObject((String)super.a());
-      return localJSONObject;
+      paramCharArrayBuffer = BasicLineParser.DEFAULT.parseStatusLine(paramCharArrayBuffer, localParserCursor);
+      d = paramCharArrayBuffer.getStatusCode();
+      a.a(paramCharArrayBuffer.getStatusCode());
+      return true;
     }
-    catch (JSONException localJSONException) {}
-    return null;
+    catch (ParseException paramCharArrayBuffer) {}
+    return false;
   }
   
-  public static final class a
-    extends brx
+  public final brg b()
   {
-    public final bri a(File paramFile)
-    {
-      return new brq(paramFile, (byte)0);
-    }
+    return new brp(this, d);
+  }
+  
+  public final brg c()
+  {
+    return brt.d;
+  }
+  
+  protected final int d()
+  {
+    return 20;
+  }
+  
+  protected final int e()
+  {
+    return 64;
   }
 }
 

@@ -56,7 +56,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
     .line 466
-    invoke-static {}, Lajx;->ar()Z
+    invoke-static {}, Lakr;->aq()Z
 
     move-result v0
 
@@ -79,7 +79,7 @@
     if-eqz v0, :cond_0
 
     .line 473
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 

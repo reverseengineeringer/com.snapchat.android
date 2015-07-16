@@ -1,24 +1,26 @@
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import android.view.ActionMode;
+import android.view.ActionMode.Callback;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public final class arh
+  implements ActionMode.Callback
 {
-  public long a = -1L;
-  public int b = 0;
-  public boolean c = false;
-  private final bgk d;
-  private final SharedPreferences e;
-  
-  public arh(Context paramContext)
+  public final boolean onActionItemClicked(ActionMode paramActionMode, MenuItem paramMenuItem)
   {
-    this(new bgk(), PreferenceManager.getDefaultSharedPreferences(paramContext));
+    return false;
   }
   
-  private arh(bgk parambgk, SharedPreferences paramSharedPreferences)
+  public final boolean onCreateActionMode(ActionMode paramActionMode, Menu paramMenu)
   {
-    d = parambgk;
-    e = paramSharedPreferences;
+    return false;
+  }
+  
+  public final void onDestroyActionMode(ActionMode paramActionMode) {}
+  
+  public final boolean onPrepareActionMode(ActionMode paramActionMode, Menu paramMenu)
+  {
+    return false;
   }
 }
 

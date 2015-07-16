@@ -1,25 +1,25 @@
 package com.snapchat.android.app.feature.messaging.feed.ui.fragment;
 
 import android.view.View;
-import ut;
+import vp;
 
 public abstract interface FeedFragment$a
 {
   public abstract void a();
   
-  public abstract void a(ut paramut);
+  public abstract void a(vp paramvp);
   
-  public abstract void a(ut paramut, View paramView, boolean paramBoolean);
+  public abstract void a(vp paramvp, View paramView, boolean paramBoolean);
   
   public abstract void b();
   
-  public abstract void b(ut paramut);
+  public abstract void b(vp paramvp);
   
   public abstract void c();
   
-  public abstract void c(ut paramut);
+  public abstract void c(vp paramvp);
   
-  public abstract void d(ut paramut);
+  public abstract void d(vp paramvp);
 }
 
 /* Location:

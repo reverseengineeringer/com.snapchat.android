@@ -1,6 +1,20 @@
-public enum bnm
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public abstract interface bnm
 {
-  private bnm() {}
+  public static final bnm a = new bnm()
+  {
+    public final InetAddress[] a(String paramAnonymousString)
+    {
+      if (paramAnonymousString == null) {
+        throw new UnknownHostException("host == null");
+      }
+      return InetAddress.getAllByName(paramAnonymousString);
+    }
+  };
+  
+  public abstract InetAddress[] a(String paramString);
 }
 
 /* Location:

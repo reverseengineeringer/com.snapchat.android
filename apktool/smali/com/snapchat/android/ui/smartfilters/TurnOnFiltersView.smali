@@ -21,7 +21,7 @@
     check-cast v0, Landroid/view/LayoutInflater;
 
     .line 22
-    const v1, 0x7f0400bd
+    const v1, 0x7f0400bf
 
     const/4 v2, 0x1
 
@@ -43,7 +43,7 @@
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     .line 33
-    const v1, 0x7f0a03eb
+    const v1, 0x7f0a03e4
 
     invoke-virtual {p0, v1}, Lcom/snapchat/android/ui/smartfilters/TurnOnFiltersView;->findViewById(I)Landroid/view/View;
 
@@ -71,17 +71,17 @@
     if-eqz v0, :cond_0
 
     .line 36
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;
 
     invoke-direct {v2}, Lcom/snapchat/android/fragments/settings/AdditionalServicesFragment;-><init>()V
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

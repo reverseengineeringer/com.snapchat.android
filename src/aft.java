@@ -1,158 +1,111 @@
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.widget.TextView;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.ChatPerformanceAnalytics;
-import com.snapchat.android.analytics.framework.EasyMetric;
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
-import com.snapchat.android.discover.model.server.DiscoverLinkStatusResult;
-import com.snapchat.android.discover.model.server.DiscoverLinkStatusResult.LinkStatus;
+import com.snapchat.android.discover.ui.media.VideoProperties;
+import com.snapchat.android.discover.ui.media.VideoProperties.Protocol;
+import com.snapchat.android.discover.ui.media.VideoStreamingConfiguration;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Locale;
 
 public final class aft
-  extends afu
-  implements akl, akm.a
 {
-  private final akk o = new akm(paramc, (akh)a, this);
-  private final abp p = new abp();
-  private boolean q;
-  private boolean r = false;
-  private Long s;
+  final VideoStreamingConfiguration a;
+  private final pm b;
+  private final alt c;
   
-  public aft(@cgb afr.c paramc, adl paramadl)
+  public aft()
   {
-    super(paramc, paramadl);
-    o.a(this);
+    this(pm.a(), new VideoStreamingConfiguration(), alt.a());
   }
   
-  private void l()
+  private aft(pm parampm, VideoStreamingConfiguration paramVideoStreamingConfiguration, alt paramalt)
   {
-    d.setText(2131492984);
-    e.setText(2131493535);
+    b = parampm;
+    a = paramVideoStreamingConfiguration;
+    c = paramalt;
   }
   
-  public final void a()
+  @chd
+  final VideoProperties a(List<bkz> paramList)
   {
-    ChatPerformanceAnalytics localChatPerformanceAnalytics = n;
-    String str = a.d();
-    if (localChatPerformanceAnalytics.a("DISCOVER_SHARE_LOCKED_VIDEO_LOAD", str) == null) {
-      localChatPerformanceAnalytics.a("DISCOVER_SHARE_LOCKED_VIDEO_LOAD", str, EasyMetric.EasyMetricFactory.a("DISCOVER_SHARE_LOCKED_VIDEO_LOAD").a("reachability", mNetworkStatusManager.f()).b());
-    }
-    super.a();
-    if (!q)
+    Object localObject2 = null;
+    ArrayList localArrayList = new ArrayList(paramList);
+    Collections.sort(localArrayList, new aft.a());
+    int i = 0;
+    paramList = null;
+    bkz localbkz;
+    int j;
+    label185:
+    long l;
+    if (i < localArrayList.size())
     {
-      q = true;
-      o.b();
-      if (!o.a()) {
-        o.c();
+      localbkz = (bkz)localArrayList.get(i);
+      if ((localbkz.f() == null) || (!"MP4".equals(localbkz.f().toUpperCase(Locale.ENGLISH)))) {
+        break label352;
+      }
+      localObject1 = localbkz;
+      if (paramList != null)
+      {
+        j = Math.max(localbkz.b().intValue(), localbkz.c().intValue());
+        int k = Math.min(localbkz.b().intValue(), localbkz.c().intValue());
+        int m = Math.max(b.mMaxVideoHeight, b.mMaxVideoWidth);
+        int n = Math.min(b.mMaxVideoHeight, b.mMaxVideoWidth);
+        if ((j > m) || (k > n)) {
+          break label278;
+        }
+        j = 1;
+        if (j == 0) {
+          break label352;
+        }
+        float f = a.b.a("STREAMING", "BANDWIDTH_USAGE_FACTOR", 0.7F);
+        localObject1 = c;
+        l = ((alt)localObject1).a(((alt)localObject1).b()).a();
+        if (l == 0L) {
+          break label284;
+        }
+        label235:
+        j = (int)(f * (float)l);
+        if (localbkz.a().intValue() > j) {
+          break label311;
+        }
+        j = 1;
+        label259:
+        if (j == 0) {
+          break label352;
+        }
       }
     }
-  }
-  
-  public final void b()
-  {
-    if (s == null) {
-      n.b(a.d(), true, r);
-    }
-    super.b();
-    if (q)
+    label278:
+    label284:
+    label311:
+    label352:
+    for (Object localObject1 = localbkz;; localObject1 = paramList)
     {
-      q = false;
-      o.d();
-      o.f();
-    }
-    DiscoverLinkStatusResult.LinkStatus localLinkStatus;
-    Double localDouble1;
-    label78:
-    Double localDouble2;
-    if (j == null)
-    {
-      localLinkStatus = null;
-      if (s != null) {
-        break label147;
-      }
-      localDouble1 = null;
-      if (o.g() != -1L) {
-        break label168;
-      }
-      localDouble2 = null;
-      label96:
-      if ((!k) || (TextUtils.isEmpty(a.mAdId))) {
-        break label187;
-      }
-      na.b(a, j(), localDouble1, localLinkStatus, localDouble2);
-    }
-    for (;;)
-    {
-      s = null;
-      return;
-      localLinkStatus = j.mLinkStatus;
+      i += 1;
+      paramList = (List<bkz>)localObject1;
       break;
-      label147:
-      localDouble1 = Double.valueOf(avf.a(SystemClock.elapsedRealtime() - s.longValue()));
-      break label78;
-      label168:
-      localDouble2 = Double.valueOf(avf.a(o.g()));
-      break label96;
-      label187:
-      if (!TextUtils.isEmpty(a.mDSnapId)) {
-        na.a(a, j(), localDouble1, localLinkStatus, localDouble2);
+      j = 0;
+      break label185;
+      if (a.e())
+      {
+        l = 3000000L;
+        break label235;
       }
-    }
-  }
-  
-  public final void c()
-  {
-    super.c();
-    q = false;
-    o.e();
-  }
-  
-  public final void d()
-  {
-    Timber.f("ChatDiscoverVideoViewingSession", "Could not play video for ChatShareDSnap\n" + a, new Object[0]);
-    n.b(a.d(), false, true);
-    r = true;
-    if (j()) {}
-    for (Object localObject = j.mLinkStatus;; localObject = null)
-    {
-      if ((localObject == DiscoverLinkStatusResult.LinkStatus.ARCHIVED) || (localObject == DiscoverLinkStatusResult.LinkStatus.LIVE)) {
-        l();
+      l = 600000L;
+      break label235;
+      j = 0;
+      break label259;
+      localObject1 = localObject2;
+      if (paramList != null) {
+        localObject1 = new VideoProperties(paramList.e(), VideoProperties.Protocol.MP4, paramList.a(), paramList.d());
       }
-      localObject = a.mPublisherName;
-      String str = a.mDSnapId;
-      float f1 = a.mVideoWidth;
-      float f2 = a.mVideoHeight;
-      EasyMetric.EasyMetricFactory.a("DISCOVER_SHARED_VIDEO_PLAYBACK_ERROR").a("publisher_name", localObject).a("dsnap_id", str).a("video_width", Float.valueOf(f1)).a("video_height", Float.valueOf(f2)).a(false);
-      s = null;
-      return;
+      return (VideoProperties)localObject1;
     }
   }
   
-  protected final void e()
-  {
-    if (r)
-    {
-      l();
-      return;
-    }
-    super.e();
-  }
-  
-  protected final void f()
-  {
-    if (r)
-    {
-      l();
-      return;
-    }
-    super.f();
-  }
-  
-  public final void g()
-  {
-    n.b(a.d(), false, false);
-    s = Long.valueOf(SystemClock.elapsedRealtime());
-  }
+  public static final class a
+    implements Comparator<bkz>
+  {}
 }
 
 /* Location:

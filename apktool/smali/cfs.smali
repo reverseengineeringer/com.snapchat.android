@@ -1,25 +1,18 @@
-.class public final Lcfs;
+.class public interface abstract annotation Lcfs;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Target;
     value = {
-        Lcfs$k;,
-        Lcfs$l;,
-        Lcfs$n;,
-        Lcfs$m;,
-        Lcfs$f;,
-        Lcfs$o;,
-        Lcfs$i;,
-        Lcfs$b;,
-        Lcfs$j;,
-        Lcfs$c;,
-        Lcfs$a;,
-        Lcfs$h;,
-        Lcfs$d;,
-        Lcfs$e;,
-        Lcfs$g;
+        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;
     }
 .end annotation

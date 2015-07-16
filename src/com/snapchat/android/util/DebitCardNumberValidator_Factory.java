@@ -1,23 +1,23 @@
 package com.snapchat.android.util;
 
-import atb;
-import buo;
+import aua;
+import bvp;
 
 public enum DebitCardNumberValidator_Factory
-  implements buo<atb>
+  implements bvp<aua>
 {
   INSTANCE;
   
   private DebitCardNumberValidator_Factory() {}
   
-  public static buo<atb> create()
+  public static bvp<aua> create()
   {
     return INSTANCE;
   }
   
-  public final atb get()
+  public final aua get()
   {
-    return new atb();
+    return new aua();
   }
 }
 

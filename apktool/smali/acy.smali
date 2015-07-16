@@ -1,180 +1,479 @@
 .class public final Lacy;
-.super Laoq;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lacy$1;
+    }
+.end annotation
+
+
+# static fields
+.field private static final d:Lacy;
+
+
 # instance fields
-.field private final c:Lacz;
+.field public final a:Laej;
+
+.field public final b:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lade;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final c:Laed;
+
+.field private final e:Lcom/squareup/otto/Bus;
+
+.field private final f:Lalw;
+
+.field private g:Ladf;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Laeh;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)V
-    .locals 2
-
-    .prologue
-    .line 31
-    invoke-direct {p0, p1}, Laoq;-><init>(Landroid/content/Context;)V
-
-    .line 33
-    new-instance v0, Lacz;
-
-    iget-object v1, p0, Lacy;->a:Landroid/content/Context;
-
-    invoke-direct {v0, v1, p2, p3}, Lacz;-><init>(Landroid/content/Context;Laeh;Lcom/snapchat/android/discover/ui/OpenChannelAnimationView;)V
-
-    iput-object v0, p0, Lacy;->c:Lacz;
-
-    .line 34
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Landroid/view/View;Landroid/view/ViewGroup;Landroid/view/LayoutInflater;)Landroid/view/View;
-    .locals 2
-    .param p1    # Landroid/view/View;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p3    # Landroid/view/LayoutInflater;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgb;
-    .end annotation
-
-    .prologue
-    .line 63
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->DISCOVER:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
-
-    if-eq v0, v1, :cond_1
-
-    .line 64
-    :cond_0
-    const v0, 0x7f040050
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p3, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p1
-
-    .line 65
-    invoke-virtual {p0, p1}, Lacy;->a(Landroid/view/View;)V
-
-    .line 69
-    sget-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->DISCOVER:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    .line 72
-    :cond_1
-    return-object p1
-.end method
-
-.method public final a(Landroid/database/Cursor;Z)V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 37
-    iget-object v0, p0, Lacy;->c:Lacz;
-
-    invoke-virtual {v0, p1, p2}, Lacz;->a(Landroid/database/Cursor;Z)Landroid/database/Cursor;
-
     .line 38
+    new-instance v0, Lacy;
+
+    invoke-direct {v0}, Lacy;-><init>()V
+
+    sput-object v0, Lacy;->d:Lacy;
+
     return-void
 .end method
 
-.method public final b()V
-    .locals 0
+.method private constructor <init>()V
+    .locals 6
 
     .prologue
-    .line 48
-    return-void
-.end method
+    .line 56
+    invoke-static {}, Laej;->a()Laej;
 
-.method public final c()Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
-    .locals 1
+    move-result-object v1
 
-    .prologue
-    .line 52
-    sget-object v0, Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;->DISCOVER:Lcom/snapchat/android/fragments/stories/StoriesAdapter$StoriesViewType;
+    new-instance v2, Ljava/util/ArrayList;
 
-    return-object v0
-.end method
+    const/4 v0, 0x3
 
-.method public final d()V
-    .locals 0
+    invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .prologue
+    new-instance v0, Ladh;
+
+    invoke-direct {v0}, Ladh;-><init>()V
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    new-instance v0, Ladi;
+
+    invoke-direct {v0}, Ladi;-><init>()V
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    new-instance v0, Ladg;
+
+    invoke-direct {v0}, Ladg;-><init>()V
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-static {}, Laed;->a()Laed;
+
+    move-result-object v3
+
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
+
+    move-result-object v4
+
+    invoke-static {}, Lalw;->a()Lalw;
+
+    move-result-object v5
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, Lacy;-><init>(Laej;Ljava/util/List;Laed;Lcom/squareup/otto/Bus;Lalw;)V
+
     .line 58
     return-void
 .end method
 
-.method public final e()Landroid/widget/BaseAdapter;
+.method private constructor <init>(Laej;Ljava/util/List;Laed;Lcom/squareup/otto/Bus;Lalw;)V
     .locals 1
-    .annotation build Lcgb;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Laej;",
+            "Ljava/util/List",
+            "<",
+            "Lade;",
+            ">;",
+            "Laed;",
+            "Lcom/squareup/otto/Bus;",
+            "Lalw;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 64
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 46
+    new-instance v0, Ladf;
+
+    invoke-direct {v0}, Ladf;-><init>()V
+
+    iput-object v0, p0, Lacy;->g:Ladf;
+
+    .line 65
+    iput-object p2, p0, Lacy;->b:Ljava/util/List;
+
+    .line 66
+    iput-object p1, p0, Lacy;->a:Laej;
+
+    .line 67
+    iput-object p3, p0, Lacy;->c:Laed;
+
+    .line 68
+    iput-object p4, p0, Lacy;->e:Lcom/squareup/otto/Bus;
+
+    .line 69
+    iput-object p5, p0, Lacy;->f:Lalw;
+
+    .line 70
+    return-void
+.end method
+
+.method public static a()Lacy;
+    .locals 1
+
+    .prologue
+    .line 52
+    sget-object v0, Lacy;->d:Lacy;
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/lang/String;)V
+    .locals 2
+
+    .prologue
+    .line 185
+    if-nez p0, :cond_0
+
+    .line 191
+    :goto_0
+    return-void
+
+    .line 188
+    :cond_0
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p0, v0, v1
+
+    .line 189
+    new-instance v0, Lacu;
+
+    invoke-direct {v0, p0}, Lacu;-><init>(Ljava/lang/String;)V
+
+    .line 190
+    invoke-virtual {v0}, Lacu;->a()V
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public final a(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/DSnapPage;)V
+    .locals 5
+    .param p1    # Lcom/snapchat/android/discover/model/ChannelPage;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/model/DSnapPage;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+
+    .prologue
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    .line 93
+    if-nez p1, :cond_0
+
+    if-eqz p2, :cond_0
+
+    iget-object v0, p0, Lacy;->g:Ladf;
+
+    iget-object v0, v0, Ladf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    if-eqz v0, :cond_0
+
+    .line 97
+    new-instance v0, Ladf;
+
+    iget-object v1, p0, Lacy;->g:Ladf;
+
+    iget-object v1, v1, Ladf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
+
+    invoke-direct {v0, v1, p2}, Ladf;-><init>(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/DSnapPage;)V
+
+    .line 102
+    :goto_0
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    iget-object v2, p0, Lacy;->g:Ladf;
+
+    aput-object v2, v1, v3
+
+    aput-object v0, v1, v4
+
+    .line 103
+    iput-object v0, p0, Lacy;->g:Ladf;
+
+    .line 105
+    iget-object v0, p0, Lacy;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lade;
+
+    .line 106
+    iget-object v2, p0, Lacy;->g:Ladf;
+
+    invoke-interface {v0, v2}, Lade;->a(Ladf;)V
+
+    goto :goto_1
+
+    .line 100
+    :cond_0
+    new-instance v0, Ladf;
+
+    invoke-direct {v0, p1, p2}, Ladf;-><init>(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/DSnapPage;)V
+
+    goto :goto_0
+
+    .line 111
+    :cond_1
+    iget-object v0, p0, Lacy;->f:Lalw;
+
+    invoke-virtual {v0}, Lalw;->b()Lalv;
+
+    move-result-object v0
+
+    .line 114
+    if-eqz p2, :cond_4
+
+    .line 116
+    iget-object v1, p2, Lcom/snapchat/android/discover/model/DSnapPage;->h:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lalv;->a(Ljava/lang/String;)Lalv;
+
+    move-result-object v0
+
+    iget-object v1, p2, Lcom/snapchat/android/discover/model/DSnapPage;->g:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lalv;->a(Ljava/lang/String;)Lalv;
+
+    move-result-object v0
+
+    .line 125
+    :goto_2
+    iget-object v1, p0, Lacy;->f:Lalw;
+
+    invoke-virtual {v1, v0}, Lalw;->a(Lalv;)V
+
+    .line 126
+    if-eqz p2, :cond_2
+
+    .line 127
+    iget-object v0, p0, Lacy;->f:Lalw;
+
+    iget-object v0, v0, Lalw;->a:Lamd;
+
+    const-string v1, "DISCOVER"
+
+    invoke-virtual {p2}, Lcom/snapchat/android/discover/model/DSnapPage;->b()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lamd;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 130
+    :cond_2
+    if-eqz p1, :cond_3
+
+    .line 131
+    iget-object v0, p0, Lacy;->f:Lalw;
+
+    iget-object v0, v0, Lalw;->a:Lamd;
+
+    const-string v1, "DISCOVER"
+
+    invoke-virtual {p1}, Lcom/snapchat/android/discover/model/ChannelPage;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lamd;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 135
+    :cond_3
+    iget-object v0, p0, Lacy;->a:Laej;
+
+    invoke-virtual {v0}, Laej;->c()V
+
+    .line 136
+    return-void
+
+    .line 117
+    :cond_4
+    if-eqz p1, :cond_5
+
+    .line 120
+    iget-object v1, p1, Lcom/snapchat/android/discover/model/ChannelPage;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lalv;->a(Ljava/lang/String;)Lalv;
+
+    move-result-object v0
+
+    goto :goto_2
+
+    .line 123
+    :cond_5
+    new-instance v0, Lalv;
+
+    new-array v1, v4, [Ljava/lang/String;
+
+    const-string v2, "DISCOVER"
+
+    aput-object v2, v1, v3
+
+    invoke-direct {v0, v1}, Lalv;-><init>([Ljava/lang/String;)V
+
+    goto :goto_2
+.end method
+
+.method public final b()V
+    .locals 2
+    .annotation build Lawj;
     .end annotation
 
     .prologue
     .line 78
-    iget-object v0, p0, Lacy;->c:Lacz;
+    iget-object v0, p0, Lacy;->e:Lcom/squareup/otto/Bus;
 
-    return-object v0
-.end method
+    invoke-virtual {v0, p0}, Lcom/squareup/otto/Bus;->c(Ljava/lang/Object;)V
 
-.method public final f()V
-    .locals 0
+    .line 79
+    iget-object v0, p0, Lacy;->b:Ljava/util/List;
 
-    .prologue
-    .line 84
-    return-void
-.end method
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-.method public final g()V
-    .locals 0
+    move-result-object v1
 
-    .prologue
-    .line 89
-    return-void
-.end method
-
-.method public final h()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 93
-    const-string v0, "discover&"
-
-    return-object v0
-.end method
-
-.method public final i()Lcom/snapchat/android/stories/StoriesSection;
-    .locals 1
-
-    .prologue
-    .line 98
-    sget-object v0, Lcom/snapchat/android/stories/StoriesSection;->DISCOVER:Lcom/snapchat/android/stories/StoriesSection;
-
-    return-object v0
-.end method
-
-.method public final m_()Z
-    .locals 1
-
-    .prologue
-    .line 42
-    iget-object v0, p0, Lacy;->c:Lacz;
-
-    invoke-virtual {v0}, Lacz;->isEmpty()Z
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lade;
+
+    .line 80
+    invoke-interface {v0}, Lade;->a()V
+
+    goto :goto_0
+
+    .line 82
+    :cond_0
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    .prologue
+    .line 152
+    iget-object v0, p0, Lacy;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lade;
+
+    .line 154
+    invoke-interface {v0}, Lade;->c()V
+
+    goto :goto_0
+
+    .line 156
+    :cond_0
+    return-void
+.end method
+
+.method public final onUserLoadedEvent(Lbfq;)V
+    .locals 1
+    .annotation runtime Lbpi;
+    .end annotation
+
+    .prologue
+    .line 235
+    iget-object v0, p0, Lacy;->a:Laej;
+
+    invoke-virtual {v0}, Laej;->e()V
+
+    .line 236
+    iget-object v0, p0, Lacy;->a:Laej;
+
+    invoke-virtual {v0}, Laej;->b()V
+
+    .line 237
+    return-void
 .end method

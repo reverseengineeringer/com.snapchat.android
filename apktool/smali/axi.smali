@@ -2,385 +2,177 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Laxi$2;
-    }
-.end annotation
+# interfaces
+.implements Laxf;
 
 
 # static fields
-.field private static final SCCP_HTTP_PERSISTENCE_DELAY:I = 0x1388
+.field private static final TAG:Ljava/lang/String; = "EncryptedFileBitmapSource"
+
+
+# instance fields
+.field private final mEncryptionAlgorithm:Laza;
+
+.field private final mPath:Ljava/lang/String;
 
 
 # direct methods
-.method public static a(Lcom/snapchat/android/model/chat/ChatConversation;Lbik;Z)Lakb;
-    .locals 4
-    .annotation build Lcgc;
-    .end annotation
+.method public constructor <init>(Ljava/lang/String;Laza;)V
+    .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Laza;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 101
-    invoke-virtual {p1}, Lbik;->a()Ljava/lang/String;
+    .line 30
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v1
+    .line 31
+    iput-object p1, p0, Laxi;->mPath:Ljava/lang/String;
 
-    .line 102
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/model/chat/ChatConversation;->f(Ljava/lang/String;)Lakb;
+    .line 32
+    iput-object p2, p0, Laxi;->mEncryptionAlgorithm:Laza;
 
-    move-result-object v0
+    .line 33
+    return-void
+.end method
 
-    .line 103
-    if-eqz v0, :cond_0
 
-    .line 104
-    invoke-virtual {v0, p1, p2}, Lakb;->a(Lbik;Z)V
+# virtual methods
+.method public final a(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    .locals 7
 
-    .line 120
-    :goto_0
-    return-object v0
+    .prologue
+    const/4 v6, 0x0
 
-    .line 106
-    :cond_0
-    if-eqz p2, :cond_1
-
-    invoke-virtual {p1}, Lbik;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    sget-object v2, Lbik$a;->SAVED:Lbik$a;
-
-    invoke-virtual {v2}, Lbik$a;->name()Ljava/lang/String;
-
-    move-result-object v2
-
-    sget-object v3, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 111
-    invoke-virtual {p0, v1}, Lcom/snapchat/android/model/chat/ChatConversation;->b(Ljava/lang/String;)V
-
-    .line 112
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
-
-    new-instance v1, Laxi$1;
-
-    invoke-direct {v1, p0}, Laxi$1;-><init>(Lcom/snapchat/android/model/chat/ChatConversation;)V
-
-    const-wide/16 v2, 0x1388
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 120
-    :cond_1
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
+    .line 46
+    new-instance v1, Ljava/io/File;
 
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-    .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgb;
-    .end annotation
+    iget-object v2, p0, Laxi;->mPath:Ljava/lang/String;
 
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .prologue
-    .line 37
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
+    .line 48
+    invoke-virtual {v1}, Ljava/io/File;->length()J
 
-    move-result-object v0
+    move-result-wide v2
 
-    .line 39
-    if-nez v0, :cond_0
-
-    .line 40
-    const-string v0, ""
-
-    .line 43
-    :cond_0
-    invoke-static {v0, p0}, Laxi;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-    .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgb;
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
     .line 49
-    invoke-virtual {p0, p1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    const-wide/32 v4, 0x7fffffff
 
-    move-result v0
+    cmp-long v4, v2, v4
 
-    if-gtz v0, :cond_0
+    if-lez v4, :cond_1
 
-    .line 50
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "~"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 52
+    .line 70
+    :cond_0
     :goto_0
     return-object v0
 
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 54
+    :cond_1
+    long-to-int v3, v2
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 55
+    new-array v4, v3, [B
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 57
+    :try_start_0
+    new-instance v2, Ljava/io/BufferedInputStream;
 
-    move-result-object v0
+    new-instance v5, Ljava/io/FileInputStream;
 
-    const-string v1, "~"
+    invoke-direct {v5, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v5}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;
-    .locals 2
-    .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p1    # Ljava/util/List;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgb;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;)",
-            "Ljava/lang/String;"
-        }
-    .end annotation
-
-    .prologue
     .line 58
-    new-instance v0, Ljava/util/ArrayList;
+    const/4 v1, 0x0
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 59
-    invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 60
-    invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    .line 61
-    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+    :try_start_1
+    invoke-virtual {v2, v4, v1, v3}, Ljava/io/InputStream;->read([BII)I
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 62
-    const-string v1, "~"
+    invoke-static {v2}, Lbgo;->a(Ljava/io/Closeable;)V
 
-    invoke-static {v0, v1}, Lavb;->a(Ljava/util/Collection;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static a(Lcom/snapchat/android/model/chat/ChatConversation;)Z
-    .locals 2
-    .param p0    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 92
-    iget-object v0, p0, Lcom/snapchat/android/model/chat/ChatConversation;->mTheirUsername:Ljava/lang/String;
-
-    const/16 v1, 0x2c
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public static a(Lcom/snapchat/android/model/chat/ChatFeedItem;)Z
-    .locals 2
-
-    .prologue
-    .line 124
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p0}, Lcom/snapchat/android/model/chat/ChatFeedItem;->j()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static b(Ljava/lang/String;)Ljava/lang/String;
-    .locals 7
-    .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgc;
-    .end annotation
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 73
-    const-string v1, "~"
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 74
-    invoke-static {}, Lajx;->l()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 76
-    array-length v5, v4
-
-    move v2, v0
-
-    move v3, v0
-
-    :goto_0
-    if-ge v2, v5, :cond_1
-
-    aget-object v0, v4, v2
-
-    .line 77
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_0
-
-    .line 88
+    .line 65
     :goto_1
-    return-object v0
+    iget-object v1, p0, Laxi;->mEncryptionAlgorithm:Laza;
 
-    .line 80
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
+    invoke-interface {v1, v4}, Laza;->b([B)[B
 
-    .line 76
-    add-int/lit8 v0, v2, 0x1
+    move-result-object v1
 
-    move v2, v0
+    .line 66
+    if-eqz v1, :cond_0
+
+    .line 70
+    array-length v0, v1
+
+    invoke-static {v1, v6, v0, p1}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
 
     goto :goto_0
 
-    .line 84
-    :cond_1
-    const/4 v0, 0x1
+    .line 59
+    :catch_0
+    move-exception v1
 
-    if-le v3, v0, :cond_2
+    move-object v2, v0
+
+    :goto_2
+    :try_start_2
+    invoke-static {v1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    .line 62
+    invoke-static {v2}, Lbgo;->a(Ljava/io/Closeable;)V
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v1
+
+    move-object v2, v0
 
     move-object v0, v1
 
-    .line 85
-    goto :goto_1
+    :goto_3
+    invoke-static {v2}, Lbgo;->a(Ljava/io/Closeable;)V
 
-    .line 88
-    :cond_2
-    const/4 v0, 0x0
+    throw v0
 
-    goto :goto_1
+    :catchall_1
+    move-exception v0
+
+    goto :goto_3
+
+    .line 59
+    :catch_1
+    move-exception v1
+
+    goto :goto_2
+.end method
+
+.method public final a(Landroid/content/ContentResolver;Landroid/content/res/Resources;)V
+    .locals 0
+
+    .prologue
+    .line 42
+    return-void
 .end method

@@ -6,52 +6,60 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public final class bkv
 {
-  @SerializedName("background")
-  protected String background;
-  @SerializedName("background_type")
-  protected String backgroundType;
-  @SerializedName("docking")
-  protected String docking;
-  @SerializedName("file")
-  protected String file;
-  @SerializedName("images")
-  protected List<String> images;
-  @SerializedName("mode")
-  protected String mode;
-  @SerializedName("overlay")
-  protected String overlay;
-  @SerializedName("sponsored_overlay")
-  protected String sponsoredOverlay;
-  @SerializedName("video_first_frame")
-  protected String videoFirstFrame;
-  @SerializedName("video_id")
-  protected String videoId;
-  @SerializedName("z_index")
-  protected Integer zIndex;
+  @SerializedName("dsnaps_data")
+  protected List<bkw> dsnapsData;
+  @SerializedName("edition_id")
+  protected String editionId;
+  @SerializedName("filled_icon")
+  protected String filledIcon;
+  @SerializedName("intro_movie")
+  protected String introMovie;
+  @SerializedName("intro_video_ad_metadata")
+  protected bhv introVideoAdMetadata;
+  @SerializedName("inverted_icon")
+  protected String invertedIcon;
+  @SerializedName("loading_icon")
+  protected String loadingIcon;
+  @SerializedName("name")
+  protected String name;
+  @SerializedName("position")
+  protected Integer position;
+  @SerializedName("primary_color")
+  protected String primaryColor;
+  @SerializedName("promoted_stories_page_position")
+  protected Integer promotedStoriesPagePosition;
+  @SerializedName("publisher_formal_name")
+  protected String publisherFormalName;
+  @SerializedName("publisher_name")
+  protected String publisherName;
+  @SerializedName("secondary_color")
+  protected String secondaryColor;
+  @SerializedName("stories_page_position")
+  protected Integer storiesPagePosition;
   
   public final String a()
   {
-    return file;
+    return name;
   }
   
-  public final String b()
+  public final Integer b()
   {
-    return background;
+    return storiesPagePosition;
   }
   
-  public final String c()
+  public final Integer c()
   {
-    return backgroundType;
+    return promotedStoriesPagePosition;
   }
   
   public final String d()
   {
-    return overlay;
+    return publisherName;
   }
   
   public final String e()
   {
-    return videoId;
+    return publisherFormalName;
   }
   
   public final boolean equals(Object paramObject)
@@ -63,32 +71,57 @@ public final class bkv
       return false;
     }
     paramObject = (bkv)paramObject;
-    return new EqualsBuilder().append(file, file).append(images, images).append(background, background).append(backgroundType, backgroundType).append(overlay, overlay).append(videoId, videoId).append(mode, mode).append(docking, docking).append(sponsoredOverlay, sponsoredOverlay).append(videoFirstFrame, videoFirstFrame).append(zIndex, zIndex).isEquals();
+    return new EqualsBuilder().append(name, name).append(position, position).append(storiesPagePosition, storiesPagePosition).append(promotedStoriesPagePosition, promotedStoriesPagePosition).append(publisherName, publisherName).append(publisherFormalName, publisherFormalName).append(filledIcon, filledIcon).append(invertedIcon, invertedIcon).append(loadingIcon, loadingIcon).append(introMovie, introMovie).append(primaryColor, primaryColor).append(secondaryColor, secondaryColor).append(editionId, editionId).append(dsnapsData, dsnapsData).append(introVideoAdMetadata, introVideoAdMetadata).isEquals();
   }
   
   public final String f()
   {
-    return mode;
+    return filledIcon;
   }
   
   public final String g()
   {
-    return docking;
+    return invertedIcon;
   }
   
   public final String h()
   {
-    return videoFirstFrame;
+    return loadingIcon;
   }
   
   public final int hashCode()
   {
-    return new HashCodeBuilder().append(file).append(images).append(background).append(backgroundType).append(overlay).append(videoId).append(mode).append(docking).append(sponsoredOverlay).append(videoFirstFrame).append(zIndex).toHashCode();
+    return new HashCodeBuilder().append(name).append(position).append(storiesPagePosition).append(promotedStoriesPagePosition).append(publisherName).append(publisherFormalName).append(filledIcon).append(invertedIcon).append(loadingIcon).append(introMovie).append(primaryColor).append(secondaryColor).append(editionId).append(dsnapsData).append(introVideoAdMetadata).toHashCode();
   }
   
-  public final Integer i()
+  public final String i()
   {
-    return zIndex;
+    return introMovie;
+  }
+  
+  public final String j()
+  {
+    return primaryColor;
+  }
+  
+  public final String k()
+  {
+    return secondaryColor;
+  }
+  
+  public final String l()
+  {
+    return editionId;
+  }
+  
+  public final List<bkw> m()
+  {
+    return dsnapsData;
+  }
+  
+  public final bhv n()
+  {
+    return introVideoAdMetadata;
   }
   
   public final String toString()

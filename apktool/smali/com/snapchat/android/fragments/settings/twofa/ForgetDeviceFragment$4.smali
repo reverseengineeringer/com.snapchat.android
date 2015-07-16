@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment$4;
-.super Lapz;
+.super Laqy;
 .source "SourceFile"
 
 
@@ -26,7 +26,7 @@
     .line 165
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment$4;->a:Lcom/snapchat/android/fragments/settings/twofa/ForgetDeviceFragment;
 
-    invoke-direct {p0, p2, p3}, Lapz;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {p0, p2, p3}, Laqy;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     return-void
 .end method

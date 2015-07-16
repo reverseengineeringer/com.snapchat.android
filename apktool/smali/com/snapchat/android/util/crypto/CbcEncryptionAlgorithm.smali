@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Layc;
+.implements Laza;
 
 
 # annotations
@@ -53,11 +53,11 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -82,11 +82,11 @@
 .method public constructor <init>([B[B)V
     .locals 0
     .param p1    # [B
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # [B
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -105,15 +105,13 @@
 .end method
 
 .method private a(Ljava/io/InputStream;Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm$MODE;)Ljava/io/InputStream;
-    .locals 6
+    .locals 4
     .param p1    # Ljava/io/InputStream;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    const/4 v5, 0x0
-
     .line 73
     invoke-static {}, Lcom/facebook/crypto/CBCCrypto;->getInstance()Lcom/facebook/crypto/CBCCrypto;
 
@@ -127,25 +125,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_1
 
     .line 79
-    const-string v0, "CbcEncryptionAlgorithm"
-
-    const-string v2, "Crypto not available."
-
-    new-array v3, v5, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    move-object v0, v1
-
-    .line 90
-    :goto_0
-    return-object v0
-
-    .line 84
-    :cond_0
     :try_start_0
     sget-object v2, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm$MODE;->ENCRYPT:Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm$MODE;
 
@@ -153,7 +135,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     iget-object v2, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mKey:[B
 
@@ -163,9 +145,12 @@
 
     move-result-object v0
 
-    goto :goto_0
+    .line 90
+    :goto_0
+    return-object v0
 
-    :cond_1
+    .line 79
+    :cond_0
     iget-object v2, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mKey:[B
 
     iget-object v3, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mIv:[B
@@ -186,26 +171,15 @@
 
     .line 87
     :goto_1
-    const-string v2, "CbcEncryptionAlgorithm"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v3, "Exception during native encryption/decryption "
 
-    const-string v4, "Exception during native encryption/decryption "
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v3, v5, [Ljava/lang/Object;
-
-    invoke-static {v2, v0, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
+    :cond_1
     move-object v0, v1
 
     goto :goto_0
@@ -279,8 +253,8 @@
 .end method
 
 .method private static e()[B
-    .locals 4
-    .annotation build Lcgc;
+    .locals 2
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -312,23 +286,12 @@
     :try_end_0
     .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 223
+    .line 221
     :goto_0
     return-object v0
 
-    .line 221
     :catch_0
     move-exception v1
-
-    const-string v1, "CbcEncryptionAlgorithm"
-
-    const-string v2, "Could not generate iv"
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
@@ -354,10 +317,10 @@
 .method public final a([B)[B
     .locals 1
     .param p1    # [B
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -372,21 +335,19 @@
 .end method
 
 .method public final a([BLjava/lang/String;)[B
-    .locals 9
+    .locals 7
     .param p1    # [B
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    const/4 v7, 0x1
-
-    const/4 v6, 0x0
+    const/4 v6, 0x1
 
     .line 111
     const/4 v1, 0x0
@@ -413,7 +374,7 @@
     move-result-object v2
 
     .line 116
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     .line 117
     :try_start_1
@@ -422,23 +383,18 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    move-result-object v0
 
     .line 122
-    :cond_0
+    :goto_0
     :try_start_2
     invoke-static {v2}, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
-    :try_end_2
-    .catch Ljava/security/GeneralSecurityException; {:try_start_2 .. :try_end_2} :catch_2
-
-    move-object v0, v1
 
     .line 126
-    :goto_0
-    if-nez v0, :cond_1
+    :goto_1
+    if-nez v0, :cond_0
 
     .line 127
-    :try_start_3
     invoke-static {}, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->c()Ljavax/crypto/Cipher;
 
     move-result-object v1
@@ -465,14 +421,14 @@
 
     .line 130
     invoke-virtual {v1, p1}, Ljavax/crypto/Cipher;->doFinal([B)[B
-    :try_end_3
-    .catch Ljava/security/GeneralSecurityException; {:try_start_3 .. :try_end_3} :catch_3
+    :try_end_2
+    .catch Ljava/security/GeneralSecurityException; {:try_start_2 .. :try_end_2} :catch_2
 
     move-result-object v0
 
     .line 138
-    :cond_1
-    :goto_1
+    :cond_0
+    :goto_2
     return-object v0
 
     .line 119
@@ -480,39 +436,25 @@
     move-exception v0
 
     .line 120
-    :try_start_4
-    const-string v3, "CbcEncryptionAlgorithm"
+    :try_start_3
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    const-string v4, "Exception during native encryption"
 
-    const-string v5, "Exception during native encryption"
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v3, v0, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 122
-    :try_start_5
+    :try_start_4
     invoke-static {v2}, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
 
     move-object v0, v1
 
     .line 123
-    goto :goto_0
+    goto :goto_1
 
     .line 122
     :catchall_0
@@ -521,97 +463,76 @@
     invoke-static {v2}, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
 
     throw v0
-    :try_end_5
-    .catch Ljava/security/GeneralSecurityException; {:try_start_5 .. :try_end_5} :catch_1
+    :try_end_4
+    .catch Ljava/security/GeneralSecurityException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 132
+    .line 133
     :catch_1
     move-exception v0
 
-    move-object v8, v0
-
     move-object v0, v1
 
-    move-object v1, v8
+    :goto_3
+    const/4 v1, 0x4
 
-    .line 133
-    :goto_2
-    const-string v2, "CbcEncryptionAlgorithm"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-static {v2, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    const/4 v2, 0x0
 
-    .line 134
-    const-string v1, "CbcEncryptionAlgorithm"
+    aput-object p2, v1, v2
 
-    const-string v2, "Unable to encrypt data [dataId:%s, length:%d, key:%s, iv:%s]"
+    array-length v2, p1
 
-    const/4 v3, 0x4
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    move-result-object v2
 
-    aput-object p2, v3, v6
+    aput-object v2, v1, v6
 
-    array-length v4, p1
+    const/4 v2, 0x2
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {}, Lej;->a()Lej;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v3, v7
+    iget-object v4, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mKey:[B
 
-    const/4 v4, 0x2
+    invoke-virtual {v3, v4}, Lej;->a([B)Ljava/lang/String;
 
-    invoke-static {}, Lea;->a()Lea;
+    move-result-object v3
 
-    move-result-object v5
+    aput-object v3, v1, v2
 
-    iget-object v6, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mKey:[B
+    const/4 v2, 0x3
 
-    invoke-virtual {v5, v6}, Lea;->a([B)Ljava/lang/String;
+    invoke-static {}, Lej;->a()Lej;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v3, v4
+    iget-object v4, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mIv:[B
 
-    const/4 v4, 0x3
+    invoke-virtual {v3, v4}, Lej;->a([B)Ljava/lang/String;
 
-    invoke-static {}, Lea;->a()Lea;
+    move-result-object v3
 
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mIv:[B
-
-    invoke-virtual {v5, v6}, Lea;->a([B)Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    .line 132
-    :catch_2
-    move-exception v0
-
-    move-object v8, v0
-
-    move-object v0, v1
-
-    move-object v1, v8
+    aput-object v3, v1, v2
 
     goto :goto_2
 
-    :catch_3
+    :catch_2
     move-exception v1
 
-    goto :goto_2
+    goto :goto_3
+
+    :cond_1
+    move-object v0, v1
+
+    goto :goto_0
 
     :cond_2
     move-object v0, v1
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public final b()Ljava/lang/String;
@@ -633,10 +554,10 @@
 .method public final b([B)[B
     .locals 1
     .param p1    # [B
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
@@ -651,21 +572,19 @@
 .end method
 
 .method public final b([BLjava/lang/String;)[B
-    .locals 9
+    .locals 7
     .param p1    # [B
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lavl;
+    .annotation build Lawj;
     .end annotation
 
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    const/4 v7, 0x2
-
-    const/4 v6, 0x0
+    const/4 v6, 0x2
 
     .line 151
     const/4 v1, 0x0
@@ -692,7 +611,7 @@
     move-result-object v2
 
     .line 156
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     .line 157
     :try_start_1
@@ -701,23 +620,18 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    move-result-object v0
 
     .line 162
-    :cond_0
+    :goto_0
     :try_start_2
     invoke-static {v2}, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
-    :try_end_2
-    .catch Ljava/security/GeneralSecurityException; {:try_start_2 .. :try_end_2} :catch_2
-
-    move-object v0, v1
 
     .line 166
-    :goto_0
-    if-nez v0, :cond_1
+    :goto_1
+    if-nez v0, :cond_0
 
     .line 167
-    :try_start_3
     invoke-static {}, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->c()Ljavax/crypto/Cipher;
 
     move-result-object v1
@@ -744,14 +658,14 @@
 
     .line 170
     invoke-virtual {v1, p1}, Ljavax/crypto/Cipher;->doFinal([B)[B
-    :try_end_3
-    .catch Ljava/security/GeneralSecurityException; {:try_start_3 .. :try_end_3} :catch_3
+    :try_end_2
+    .catch Ljava/security/GeneralSecurityException; {:try_start_2 .. :try_end_2} :catch_2
 
     move-result-object v0
 
     .line 177
-    :cond_1
-    :goto_1
+    :cond_0
+    :goto_2
     return-object v0
 
     .line 159
@@ -759,39 +673,25 @@
     move-exception v0
 
     .line 160
-    :try_start_4
-    const-string v3, "CbcEncryptionAlgorithm"
+    :try_start_3
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    const-string v4, "Exception during native decryption"
 
-    const-string v5, "Exception during native decryption"
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v3, v0, v4}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 162
-    :try_start_5
+    :try_start_4
     invoke-static {v2}, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
 
     move-object v0, v1
 
     .line 163
-    goto :goto_0
+    goto :goto_1
 
     .line 162
     :catchall_0
@@ -800,95 +700,74 @@
     invoke-static {v2}, Lorg/apache/commons/io/IOUtils;->closeQuietly(Ljava/io/InputStream;)V
 
     throw v0
-    :try_end_5
-    .catch Ljava/security/GeneralSecurityException; {:try_start_5 .. :try_end_5} :catch_1
+    :try_end_4
+    .catch Ljava/security/GeneralSecurityException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 172
+    .line 173
     :catch_1
     move-exception v0
 
-    move-object v8, v0
-
     move-object v0, v1
 
-    move-object v1, v8
+    :goto_3
+    const/4 v1, 0x4
 
-    .line 173
-    :goto_2
-    const-string v2, "CbcEncryptionAlgorithm"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-static {v2, v1}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    const/4 v2, 0x0
 
-    .line 174
-    const-string v1, "CbcEncryptionAlgorithm"
+    aput-object p2, v1, v2
 
-    const-string v2, "Unable to decrypt data [dataId:%s, length:%d, key:%s, iv:%s]"
+    const/4 v2, 0x1
 
-    const/4 v3, 0x4
+    array-length v3, p1
 
-    new-array v3, v3, [Ljava/lang/Object;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object p2, v3, v6
+    move-result-object v3
 
-    const/4 v4, 0x1
+    aput-object v3, v1, v2
 
-    array-length v5, p1
+    invoke-static {}, Lej;->a()Lej;
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
 
-    move-result-object v5
+    iget-object v3, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mKey:[B
 
-    aput-object v5, v3, v4
+    invoke-virtual {v2, v3}, Lej;->a([B)Ljava/lang/String;
 
-    invoke-static {}, Lea;->a()Lea;
+    move-result-object v2
 
-    move-result-object v4
+    aput-object v2, v1, v6
 
-    iget-object v5, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mKey:[B
+    const/4 v2, 0x3
 
-    invoke-virtual {v4, v5}, Lea;->a([B)Ljava/lang/String;
+    invoke-static {}, Lej;->a()Lej;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v3, v7
+    iget-object v4, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mIv:[B
 
-    const/4 v4, 0x3
+    invoke-virtual {v3, v4}, Lej;->a([B)Ljava/lang/String;
 
-    invoke-static {}, Lea;->a()Lea;
+    move-result-object v3
 
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/snapchat/android/util/crypto/CbcEncryptionAlgorithm;->mIv:[B
-
-    invoke-virtual {v5, v6}, Lea;->a([B)Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    .line 172
-    :catch_2
-    move-exception v0
-
-    move-object v8, v0
-
-    move-object v0, v1
-
-    move-object v1, v8
+    aput-object v3, v1, v2
 
     goto :goto_2
 
-    :catch_3
+    :catch_2
     move-exception v1
 
-    goto :goto_2
+    goto :goto_3
+
+    :cond_1
+    move-object v0, v1
+
+    goto :goto_0
 
     :cond_2
     move-object v0, v1
 
-    goto :goto_0
+    goto :goto_1
 .end method

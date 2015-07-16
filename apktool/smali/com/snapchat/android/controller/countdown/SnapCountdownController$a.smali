@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field public final a:Lyw;
+.field public final a:Lzs;
 
 
 # direct methods
@@ -23,27 +23,27 @@
     .locals 1
 
     .prologue
-    .line 309
-    new-instance v0, Lyw;
+    .line 325
+    new-instance v0, Lzs;
 
-    invoke-direct {v0}, Lyw;-><init>()V
+    invoke-direct {v0}, Lzs;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/controller/countdown/SnapCountdownController$a;-><init>(Lyw;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/controller/countdown/SnapCountdownController$a;-><init>(Lzs;)V
 
-    .line 310
+    .line 326
     return-void
 .end method
 
-.method private constructor <init>(Lyw;)V
+.method private constructor <init>(Lzs;)V
     .locals 0
 
     .prologue
-    .line 312
+    .line 328
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 313
-    iput-object p1, p0, Lcom/snapchat/android/controller/countdown/SnapCountdownController$a;->a:Lyw;
+    .line 329
+    iput-object p1, p0, Lcom/snapchat/android/controller/countdown/SnapCountdownController$a;->a:Lzs;
 
-    .line 314
+    .line 330
     return-void
 .end method

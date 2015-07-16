@@ -5,13 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import aza;
+import azy;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.camera.cameradecor.CameraDecor;
 import com.snapchat.android.camera.model.CameraModel;
 import com.snapchat.android.camera.model.CameraModel.CameraType;
 import javax.inject.Inject;
-import vo;
+import wk;
 
 public class BackgroundCameraFragment
   extends BaseCameraFragment
@@ -26,12 +26,12 @@ public class BackgroundCameraFragment
   
   public final int a()
   {
-    return 2130968584;
+    return 2130968585;
   }
   
   protected final CameraDecor a(RelativeLayout paramRelativeLayout)
   {
-    return new vo(getActivity(), paramRelativeLayout);
+    return new wk(getActivity(), paramRelativeLayout);
   }
   
   public final void a(int paramInt)

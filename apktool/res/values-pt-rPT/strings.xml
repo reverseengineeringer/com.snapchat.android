@@ -261,7 +261,6 @@ para enviar a um amigo."</string>
     <string name="discover_sharing_success">Snap enviado!</string>
     <string name="discover_sharing_unavailable">%1$s não permite o envio deste Snap.</string>
     <string name="discover_stories_header">DISCOVER</string>
-    <string name="discover_tooltip_message"><g id="grinning_face_emoji">%1$s</g> Toca aqui para experimentar o Discover!</string>
     <string name="discover_unavailable">"Lamentamos!
 
 O Discover não está disponível neste momento."</string>
@@ -312,6 +311,7 @@ indisponível na tua região."</string>
     <string name="forgot_password"><a href="https://accounts.snapchat.com/accounts/password_reset_request">Esqueceste-te da palavra-passe?</a>" "</string>
     <string name="friend_suggest_hide">Ocultar</string>
     <string name="friend_suggest_new_contact"><g id="username">%1$s</g> - Novo contacto</string>
+    <string name="friend_suggest_reason_display"><g id="username">%1$s</g> - <g id="reason">%2$s</g></string>
     <string name="friend_suggest_recently_joined"><g id="username">%1$s</g> - Registou-se recentemente</string>
     <string name="friends">Amigos</string>
     <string name="friends_context_block">Bloquear</string>
@@ -622,7 +622,7 @@ enviar dinheiro?"</string>
     <string name="snap_delete_failure">Falha ao eliminar o Snap.</string>
     <string name="snap_failed_to_post">Falha ao publicar 1 Snap</string>
     <string name="snap_list_empty_list_msg">Não tens Snaps :(</string>
-    <string name="snap_tag_help_description">Os Snapchatters podem adicionar-te apontando a câmara ao teu fantasma e tocando no ecrã!</string>
+    <string name="snap_tag_help_description">Os Snapchatters podem adicionar-te apontando a câmara ao teu Snapcode e tocando no ecrã!</string>
     <string name="snap_tag_no_connection">Sem ligação!</string>
     <string name="snap_to_add">Snap ou captura de ecrã para adicionar</string>
     <string name="snapkidz_welcome">Bem-vindo/a ao Snapkidz!</string>
@@ -658,8 +658,6 @@ enviar dinheiro?"</string>
     <string name="tap_to_view_edition">Tocar para ver no Discover</string>
     <string name="tap_to_view_full_story">Tocar para ver a história completa</string>
     <string name="tap_to_view_more">Tocar para explorar outros canais</string>
-    <string name="tap_to_view_snaps">Toca para ver Snaps!</string>
-    <string name="tap_to_view_stories">Tocar para ver Histórias!</string>
     <string name="tap_to_view_video_in_discover">Tocar para este vídeo no Discover</string>
     <string name="too_many_attempts">"Demasiadas tentativas.
 "</string>
@@ -668,7 +666,7 @@ enviar dinheiro?"</string>
     <string name="tos_privacy_policy">Política de Privacidade</string>
     <string name="tos_terms">As %1$s e a %2$s foram alteradas. Ao tocares em Aceitar, estás a concordar com as %3$s e a %4$s revistas do Snapchat.</string>
     <string name="tos_terms_of_use">Condições de Utilização</string>
-    <string name="turn_on_high_accuracy">Please enable Location Services with High Accuracy location mode (GPS) on your device.</string>
+    <string name="turn_on_high_accuracy">Ativa os Serviços de Localização no modo de localização Precisão Elevada (GPS) no teu dispositivo.</string>
     <string name="two_fa_disabled_phone_verification_info">Verifica um número de telefone antes de utilizares a verificação do início de sessão.</string>
     <string name="two_fa_disabled_settings_help_verified">Se este número estiver errado, <a href="">podes alterá-lo</a></string>
     <string name="two_fa_password_validation_explanation">Para a tua segurança, introduz a tua palavra-passe.</string>

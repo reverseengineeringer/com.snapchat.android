@@ -5,8 +5,8 @@ import com.snapchat.android.analytics.HereAnalytics;
 import com.snapchat.android.analytics.framework.EasyMetric;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
 import com.snapchat.android.model.chat.ChatConversation;
-import hu;
-import yq;
+import id;
+import zm;
 
 final class HoldToStreamView$10
   implements Runnable
@@ -20,7 +20,7 @@ final class HoldToStreamView$10
     if (mIsDisplayingVideo != bool)
     {
       mIsDisplayingVideo = bool;
-      yq.a().a((ChatConversation)localObject, mAmIPresent, mIsRecipientPresent, mIsDisplayingVideo);
+      zm.a().a((ChatConversation)localObject, mAmIPresent, mIsRecipientPresent, mIsDisplayingVideo);
     }
     b.a.b(a);
     b.a.c(a);
@@ -38,7 +38,7 @@ final class HoldToStreamView$10
         if (!mIsVideoIncoming) {
           break label228;
         }
-        new EasyMetric("HERE_INCOMING_SESSION_START").d();
+        new EasyMetric("HERE_INCOMING_SESSION_START").e();
         mVideoIncomingStart = SystemClock.elapsedRealtime();
       }
     }
@@ -51,10 +51,10 @@ final class HoldToStreamView$10
       break;
       label228:
       long l = SystemClock.elapsedRealtime() - mVideoIncomingStart;
-      hu localhu = new hu();
+      id localid = new id();
       view_time_sec = Double.valueOf(l / 1000.0D);
-      ScAnalyticsEventEngine.a(localhu);
-      new EasyMetric("HERE_INCOMING_SESSION_END").a(l).a("reason", null).d();
+      ScAnalyticsEventEngine.a(localid);
+      new EasyMetric("HERE_INCOMING_SESSION_END").a(l).a("reason", null).e();
     }
   }
 }

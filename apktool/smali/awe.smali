@@ -1,31 +1,60 @@
 .class public final Lawe;
-.super Landroid/graphics/drawable/BitmapDrawable;
+.super Ljava/util/PriorityQueue;
 .source "SourceFile"
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
+.annotation system Ldalvik/annotation/Signature;
     value = {
-        Lawe$a;
+        "<E:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/util/PriorityQueue",
+        "<TE;>;"
     }
 .end annotation
 
 
-# instance fields
-.field public final mLoaderTask:Lawd;
-
-
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;Lawd;)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 20
-    invoke-direct {p0, p1, p2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+    .line 5
+    invoke-direct {p0}, Ljava/util/PriorityQueue;-><init>()V
 
-    .line 21
-    iput-object p3, p0, Lawe;->mLoaderTask:Lawd;
-
-    .line 22
     return-void
+.end method
+
+
+# virtual methods
+.method public final offer(Ljava/lang/Object;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;)Z"
+        }
+    .end annotation
+
+    .prologue
+    .line 9
+    invoke-virtual {p0, p1}, Lawe;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 10
+    const/4 v0, 0x0
+
+    .line 12
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-super {p0, p1}, Ljava/util/PriorityQueue;->offer(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    goto :goto_0
 .end method

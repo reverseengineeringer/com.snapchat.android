@@ -30,6 +30,8 @@
 
 .field public static final enum CONTACTS:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
+.field public static final enum HELP_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
 .field public static final enum MY_FRIENDS_POPUP:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
 .field public static final enum NEW_USER_CONTACT_BOOK_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
@@ -66,6 +68,8 @@
 
 .field public static final enum SETTINGS_DISPLAYNAME_CHANGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
+.field public static final enum SNAPCODE_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
 .field public static final enum STORIES:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
 
@@ -84,7 +88,7 @@
 
     const/4 v3, 0x0
 
-    .line 81
+    .line 80
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "MY_FRIENDS_POPUP"
@@ -93,7 +97,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->MY_FRIENDS_POPUP:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 82
+    .line 81
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "REQUESTS"
@@ -102,7 +106,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->REQUESTS:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 83
+    .line 82
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "SEARCH"
@@ -111,7 +115,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->SEARCH:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 84
+    .line 83
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "CONTACTS"
@@ -120,7 +124,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->CONTACTS:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 85
+    .line 84
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "SEND"
@@ -129,7 +133,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->SEND:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 86
+    .line 85
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "STORIES"
@@ -140,7 +144,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->STORIES:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 88
+    .line 87
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_MAIN_PAGE"
@@ -151,7 +155,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MAIN_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 89
+    .line 88
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_ADDED_ME_PAGE"
@@ -162,7 +166,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_ADDED_ME_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 90
+    .line 89
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_ADD_FRIENDS_MENU_PAGE"
@@ -173,7 +177,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_ADD_FRIENDS_MENU_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 91
+    .line 90
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_ADD_FRIENDS_BY_USERNAME_PAGE"
@@ -184,7 +188,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_ADD_FRIENDS_BY_USERNAME_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 92
+    .line 91
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_ADD_NEARBY_FRIENDS_PAGE"
@@ -195,7 +199,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_ADD_NEARBY_FRIENDS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 93
+    .line 92
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_ADD_FRIENDS_BY_CONTACTS_PAGE"
@@ -206,7 +210,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_ADD_FRIENDS_BY_CONTACTS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 94
+    .line 93
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_MY_CONTACTS_PAGE"
@@ -217,7 +221,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MY_CONTACTS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 95
+    .line 94
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_MY_CONTACTS_SEARCH_PAGE"
@@ -228,7 +232,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MY_CONTACTS_SEARCH_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 96
+    .line 95
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_MY_FRIENDS_PAGE"
@@ -239,7 +243,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MY_FRIENDS_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 97
+    .line 96
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_MY_FRIENDS_SEARCH_PAGE"
@@ -250,7 +254,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_MY_FRIENDS_SEARCH_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 98
+    .line 97
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "PROFILE_PICTURES_PAGE_VIEW"
@@ -261,7 +265,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->PROFILE_PICTURES_PAGE_VIEW:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 100
+    .line 99
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "NEW_USER_CONTACT_BOOK_PAGE"
@@ -272,7 +276,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->NEW_USER_CONTACT_BOOK_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 101
+    .line 100
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "SETTINGS"
@@ -283,7 +287,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->SETTINGS:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 102
+    .line 101
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "SETTINGS_DISPLAYNAME_CHANGE"
@@ -294,7 +298,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->SETTINGS_DISPLAYNAME_CHANGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 103
+    .line 102
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     const-string v1, "CAMERA_PAGE"
@@ -305,8 +309,30 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->CAMERA_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
-    .line 80
-    const/16 v0, 0x15
+    .line 103
+    new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
+    const-string v1, "HELP_PAGE"
+
+    const/16 v2, 0x15
+
+    invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->HELP_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
+    .line 104
+    new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
+    const-string v1, "SNAPCODE_PAGE"
+
+    const/16 v2, 0x16
+
+    invoke-direct {v0, v1, v2}, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->SNAPCODE_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
+    .line 79
+    const/16 v0, 0x17
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
@@ -426,6 +452,18 @@
 
     aput-object v2, v0, v1
 
+    const/16 v1, 0x15
+
+    sget-object v2, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->HELP_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x16
+
+    sget-object v2, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->SNAPCODE_PAGE:Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
+
+    aput-object v2, v0, v1
+
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->$VALUES:[Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     return-void
@@ -440,7 +478,7 @@
     .end annotation
 
     .prologue
-    .line 80
+    .line 79
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -450,7 +488,7 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 79
     const-class v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -466,7 +504,7 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 79
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->$VALUES:[Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/AnalyticsEvents$AnalyticsContext;->clone()Ljava/lang/Object;

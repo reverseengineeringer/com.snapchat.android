@@ -1,75 +1,28 @@
-public abstract class bza
-  implements bzq
+import java.util.ArrayList;
+
+public final class bza
+  implements byh
 {
-  private String a = null;
-  private int b = 0;
-  private boolean c = false;
-  
-  public bza(String paramString, int paramInt)
+  public final byl a(bya parambya, String paramString)
   {
-    a = paramString;
-    b = paramInt;
-  }
-  
-  public bza(String paramString, int paramInt, byte paramByte)
-  {
-    a = paramString;
-    b = paramInt;
-    c = true;
-  }
-  
-  public double a(double paramDouble)
-  {
-    return 0.0D;
-  }
-  
-  public double a(double paramDouble1, double paramDouble2)
-  {
-    return 0.0D;
+    parambya = byk.a(paramString);
+    if (parambya.size() != 2) {
+      throw new byi("Two numeric arguments are required.");
+    }
+    try
+    {
+      parambya = new Double(Math.pow(((Double)parambya.get(0)).doubleValue(), ((Double)parambya.get(1)).doubleValue()));
+      return new byl(parambya.toString(), 0);
+    }
+    catch (Exception parambya)
+    {
+      throw new byi("Two numeric arguments are required.", parambya);
+    }
   }
   
   public final String a()
   {
-    return a;
-  }
-  
-  public String a(String paramString1, String paramString2)
-  {
-    throw new bwx("Invalid operation for a string.");
-  }
-  
-  public final int b()
-  {
-    return b;
-  }
-  
-  public final int c()
-  {
-    return a.length();
-  }
-  
-  public final boolean d()
-  {
-    return c;
-  }
-  
-  public boolean equals(Object paramObject)
-  {
-    if (paramObject == null) {}
-    do
-    {
-      return false;
-      if (!(paramObject instanceof bza)) {
-        throw new IllegalStateException("Invalid operator object.");
-      }
-      paramObject = (bza)paramObject;
-    } while (!a.equals(a));
-    return true;
-  }
-  
-  public String toString()
-  {
-    return a;
+    return "pow";
   }
 }
 

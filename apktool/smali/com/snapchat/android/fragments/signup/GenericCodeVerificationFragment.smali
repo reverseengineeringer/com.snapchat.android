@@ -236,7 +236,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->c:Landroid/view/View;
 
     .line 66
-    const v0, 0x7f0a03f6
+    const v0, 0x7f0a03ef
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->c(I)Landroid/view/View;
 
@@ -255,7 +255,7 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     .line 68
     const v0, 0x7f0a00e3
@@ -282,7 +282,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lavh;->f(Landroid/content/Context;)V
+    invoke-static {v0}, Lawf;->f(Landroid/content/Context;)V
 
     .line 73
     :cond_0
@@ -290,24 +290,13 @@
 .end method
 
 .method public onPause()V
-    .locals 3
+    .locals 2
 
     .prologue
     .line 131
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onPause()V
 
     .line 132
-    const-string v0, "GenericCodeVerificationFragment"
-
-    const-string v1, "unregisterSmsReceiver()"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 133
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->i:Lcom/snapchat/android/receiver/SmsReceiver;
 
     if-eqz v0, :cond_0
@@ -339,17 +328,6 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onResume()V
 
     .line 122
-    const-string v0, "GenericCodeVerificationFragment"
-
-    const-string v1, "registerSmsReceiver()"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 123
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->i:Lcom/snapchat/android/receiver/SmsReceiver;
 
     if-nez v0, :cond_0
@@ -381,9 +359,9 @@
     return-void
 .end method
 
-.method public onVerificationCodeReceivedEvent(Lbet;)V
+.method public onVerificationCodeReceivedEvent(Lbfs;)V
     .locals 2
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
@@ -404,7 +382,7 @@
     .line 209
     iget-object v0, p0, Lcom/snapchat/android/fragments/signup/GenericCodeVerificationFragment;->a:Landroid/widget/EditText;
 
-    iget-object v1, p1, Lbet;->code:Ljava/lang/String;
+    iget-object v1, p1, Lbfs;->code:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 

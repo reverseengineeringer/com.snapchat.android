@@ -43,7 +43,7 @@
     .line 43
     iget-object v0, p0, Lcom/snapchat/android/HttpMetricsActivity$1;->a:Lcom/snapchat/android/HttpMetricsActivity;
 
-    invoke-static {v0}, Laaq;->a(Landroid/content/Context;)V
+    invoke-static {v0}, Labp;->a(Landroid/content/Context;)V
 
     .line 44
     return-void

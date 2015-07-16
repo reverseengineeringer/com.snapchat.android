@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 42
+    .line 39
     iput-object p1, p0, Lcom/snapchat/android/discover/ui/DiscoverButtonView$1;->a:Lcom/snapchat/android/discover/ui/DiscoverButtonView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 4
 
     .prologue
-    .line 45
+    .line 42
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DiscoverButtonView$1;->a:Lcom/snapchat/android/discover/ui/DiscoverButtonView;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -49,11 +49,11 @@
 
     invoke-static {v0, v2, v3}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->a(Lcom/snapchat/android/discover/ui/DiscoverButtonView;J)J
 
-    .line 46
+    .line 43
     iget-object v0, p0, Lcom/snapchat/android/discover/ui/DiscoverButtonView$1;->a:Lcom/snapchat/android/discover/ui/DiscoverButtonView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/DiscoverButtonView;->invalidate()V
 
-    .line 47
+    .line 44
     return-void
 .end method

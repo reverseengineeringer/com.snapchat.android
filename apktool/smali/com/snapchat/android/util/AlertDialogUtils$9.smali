@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 376
+    .line 378
     iput-object p1, p0, Lcom/snapchat/android/util/AlertDialogUtils$9;->val$dontAskAgainCheckBox:Landroid/widget/CheckBox;
 
     iput-object p2, p0, Lcom/snapchat/android/util/AlertDialogUtils$9;->val$listener:Lcom/snapchat/android/util/AlertDialogUtils$a;
@@ -44,7 +44,7 @@
     .locals 2
 
     .prologue
-    .line 379
+    .line 381
     iget-object v0, p0, Lcom/snapchat/android/util/AlertDialogUtils$9;->val$dontAskAgainCheckBox:Landroid/widget/CheckBox;
 
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
@@ -53,18 +53,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 380
+    .line 382
     iget-object v0, p0, Lcom/snapchat/android/util/AlertDialogUtils$9;->val$listener:Lcom/snapchat/android/util/AlertDialogUtils$a;
 
     sget-object v1, Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;->YES_DONT_ASK_AGAIN:Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;
 
     invoke-interface {v0, v1}, Lcom/snapchat/android/util/AlertDialogUtils$a;->a(Lcom/snapchat/android/util/AlertDialogUtils$YesNoOption;)V
 
-    .line 384
+    .line 386
     :goto_0
     return-void
 
-    .line 382
+    .line 384
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/util/AlertDialogUtils$9;->val$listener:Lcom/snapchat/android/util/AlertDialogUtils$a;
 

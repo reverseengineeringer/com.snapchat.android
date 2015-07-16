@@ -1,66 +1,35 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.api2.cash.blockers.BlockerOrder;
-import com.snapchat.android.fragments.verification.URLVerificationFragment;
-import com.snapchat.android.fragments.verification.URLVerificationFragment.a;
-import com.snapchat.android.model.CashTransaction;
-import com.squareup.otto.Bus;
+import javax.inject.Provider;
 
 public final class ry
-  extends qv
+  implements bvk<rx>
 {
-  private static final String TAG = "SQUrlBlocker";
-  @cgb
-  private final String mUrl;
+  private final Provider<yn> mCashCardManagerProvider;
+  private final Provider<td> mSquareProvider;
+  private final bvk<rl> supertypeInjector;
   
-  public ry(@cgb String paramString)
+  static
   {
-    mUrl = paramString;
-  }
-  
-  public final void a(@cgb CashTransaction paramCashTransaction)
-  {
-    Timber.b("SQUrlBlocker", "CASH-LOG: ATTEMPT resolve SQUrlBlocker", new Object[0]);
-    paramCashTransaction = new URLVerificationFragment();
-    paramCashTransaction.a(mUrl);
-    URLVerificationFragment.a local1 = new URLVerificationFragment.a()
+    if (!ry.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      public final void a()
-      {
-        ry.a(ry.this);
-      }
-      
-      public final void b()
-      {
-        ry.b(ry.this);
-      }
-    };
-    e = false;
-    d = false;
-    a = local1;
-    ban.a().a(new bdw(paramCashTransaction));
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  public final BlockerOrder c()
+  private ry(bvk<rl> parambvk, Provider<yn> paramProvider, Provider<td> paramProvider1)
   {
-    return BlockerOrder.SQ_URL_BLOCKER;
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mCashCardManagerProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mSquareProvider = paramProvider1;
   }
   
-  public final boolean equals(Object paramObject)
+  public static bvk<rx> a(bvk<rl> parambvk, Provider<yn> paramProvider, Provider<td> paramProvider1)
   {
-    if (this == paramObject) {}
-    do
-    {
-      return true;
-      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
-        return false;
-      }
-    } while (super.equals(paramObject));
-    return false;
-  }
-  
-  public final int hashCode()
-  {
-    return super.hashCode();
+    return new ry(parambvk, paramProvider, paramProvider1);
   }
 }
 

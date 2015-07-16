@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbxg;
+.implements Lbyh;
 
 
 # direct methods
@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 35
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,137 +19,105 @@
 
 
 # virtual methods
-.method public final a(Lbwz;Ljava/lang/String;)Lbxk;
+.method public final a(Lbya;Ljava/lang/String;)Lbyl;
     .locals 6
 
     .prologue
     const/4 v5, 0x0
 
-    .line 72
-    const-string v1, "Two string arguments and one integer argument are required."
+    .line 61
+    invoke-static {p2}, Lbyk;->a(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    .line 76
-    invoke-static {p2}, Lbxj;->d(Ljava/lang/String;)Ljava/util/ArrayList;
+    move-result-object v1
 
-    move-result-object v2
-
-    .line 79
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    .line 66
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    const/4 v3, 0x3
+    const/4 v2, 0x2
 
-    if-eq v0, v3, :cond_0
+    if-eq v0, v2, :cond_0
 
-    .line 80
-    new-instance v0, Lbxh;
+    .line 67
+    new-instance v0, Lbyi;
 
-    invoke-direct {v0, v1}, Lbxh;-><init>(Ljava/lang/String;)V
+    const-string v1, "Two numeric arguments are required."
+
+    invoke-direct {v0, v1}, Lbyi;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 84
+    .line 71
     :cond_0
     const/4 v0, 0x0
 
     :try_start_0
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v0, Ljava/lang/Double;
 
-    iget-char v3, p1, Lbwz;->a:C
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
-    invoke-static {v0, v3}, Lbxj;->a(Ljava/lang/String;C)Ljava/lang/String;
+    move-result-wide v2
 
-    move-result-object v3
-
-    .line 86
+    .line 72
     const/4 v0, 0x1
 
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v0, Ljava/lang/Double;
 
-    iget-char v4, p1, Lbwz;->a:C
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
-    invoke-static {v0, v4}, Lbxj;->a(Ljava/lang/String;C)Ljava/lang/String;
+    move-result-wide v0
 
-    move-result-object v4
+    .line 73
+    new-instance v4, Ljava/lang/Double;
 
-    .line 88
-    const/4 v0, 0x2
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->atan2(DD)D
 
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-wide v0
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    .line 89
-    new-instance v2, Ljava/lang/Integer;
-
-    invoke-virtual {v3, v4, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
-
-    move-result v0
-
-    invoke-direct {v2, v0}, Ljava/lang/Integer;-><init>(I)V
+    invoke-direct {v4, v0, v1}, Ljava/lang/Double;-><init>(D)V
     :try_end_0
-    .catch Lbxh; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 96
-    new-instance v0, Lbxk;
+    .line 78
+    new-instance v0, Lbyl;
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Double;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, v5}, Lbxk;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v5}, Lbyl;-><init>(Ljava/lang/String;I)V
 
     return-object v0
 
-    .line 90
+    .line 74
     :catch_0
     move-exception v0
 
-    .line 91
-    new-instance v1, Lbxh;
+    .line 75
+    new-instance v1, Lbyi;
 
-    invoke-virtual {v0}, Lbxh;->getMessage()Ljava/lang/String;
+    const-string v2, "Two numeric arguments are required."
 
-    move-result-object v2
-
-    invoke-direct {v1, v2, v0}, Lbxh;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
+    invoke-direct {v1, v2, v0}, Lbyi;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
 
     throw v1
-
-    .line 92
-    :catch_1
-    move-exception v0
-
-    .line 93
-    new-instance v2, Lbxh;
-
-    invoke-direct {v2, v1, v0}, Lbxh;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
-
-    throw v2
 .end method
 
 .method public final a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 42
-    const-string v0, "indexOf"
+    .line 41
+    const-string v0, "atan2"
 
     return-object v0
 .end method

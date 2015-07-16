@@ -7,12 +7,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentManager.OnBackStackChangedListener;
 import android.widget.ImageView;
-import aur;
-import azg;
-import azv;
+import avp;
+import baf;
+import bau;
 import com.snapchat.android.SnapchatActivity;
 import com.snapchat.android.util.AlertDialogUtils;
 import java.util.List;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class BugReportActivity
   extends SnapchatActivity
@@ -30,7 +32,7 @@ public class BugReportActivity
     super.onActivityResult(paramInt1, paramInt2, paramIntent);
     if ((paramInt1 == 1001) && (paramInt2 == -1))
     {
-      paramIntent = aur.a(paramIntent.getData(), this);
+      paramIntent = avp.a(paramIntent.getData(), this);
       if (paramIntent == null) {
         AlertDialogUtils.a(2131493329, this);
       }
@@ -39,7 +41,7 @@ public class BugReportActivity
     {
       return;
     }
-    azg.a(this, paramIntent);
+    baf.a(this, paramIntent);
     ((ImageView)findViewById(2131361927)).setImageBitmap(paramIntent);
   }
   
@@ -56,8 +58,10 @@ public class BugReportActivity
   
   protected void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
-    setContentView(2130968591);
+    setContentView(2130968592);
     if (!ReleaseManager.f()) {
       throw new SecurityException("Someone directly hacked and called  an activity they are not supposed to!");
     }

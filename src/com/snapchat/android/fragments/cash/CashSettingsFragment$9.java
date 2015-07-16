@@ -2,8 +2,8 @@ package com.snapchat.android.fragments.cash;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.snapchat.android.fragments.settings.WebFragment;
 import com.squareup.otto.Bus;
 
@@ -14,7 +14,7 @@ final class CashSettingsFragment$9
   
   public final void onClick(View paramView)
   {
-    ban.a().a(new bdw(new WebFragment("https://accounts.snapchat.com", a.getString(2131493436), true, "/ca/snapcash")));
+    bbo.a().a(new bev(new WebFragment("https://accounts.snapchat.com", a.getString(2131493436), true, "/ca/snapcash")));
   }
 }
 

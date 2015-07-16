@@ -1,5 +1,5 @@
-.class public abstract Ldc;
-.super Ljava/util/AbstractCollection;
+.class public final Ldc;
+.super Ldf;
 .source "SourceFile"
 
 # interfaces
@@ -7,7 +7,10 @@
 
 
 # annotations
-.annotation build Lcd;
+.annotation build Lcc;
+.end annotation
+
+.annotation build Lce;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -15,7 +18,7 @@
         "<E:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/util/AbstractCollection",
+        "Ldf",
         "<TE;>;",
         "Ljava/io/Serializable;"
     }
@@ -23,10 +26,15 @@
 
 
 # instance fields
-.field private transient a:Lde;
+.field final a:I
+    .annotation build Lcf;
+    .end annotation
+.end field
+
+.field private final b:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lde",
+            "Ljava/util/Queue",
             "<TE;>;"
         }
     .end annotation
@@ -34,81 +42,114 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method private constructor <init>()V
+    .locals 6
 
     .prologue
-    .line 50
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    const/4 v5, 0x1
 
+    const/4 v4, 0x5
+
+    .line 53
+    invoke-direct {p0}, Ldf;-><init>()V
+
+    .line 54
+    const-string v0, "maxSize (%s) must >= 0"
+
+    new-array v1, v5, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v5, v0, v1}, Lco;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
+
+    .line 55
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0, v4}, Ljava/util/ArrayDeque;-><init>(I)V
+
+    iput-object v0, p0, Ldc;->b:Ljava/util/Queue;
+
+    .line 56
+    iput v4, p0, Ldc;->a:I
+
+    .line 57
     return-void
+.end method
+
+.method public static a()Ldc;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Ldc",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 66
+    new-instance v0, Ldc;
+
+    invoke-direct {v0}, Ldc;-><init>()V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method a([Ljava/lang/Object;I)I
-    .locals 3
-
-    .prologue
-    .line 199
-    invoke-virtual {p0}, Ldc;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 200
-    add-int/lit8 v0, p2, 0x1
-
-    aput-object v2, p1, p2
-
-    move p2, v0
-
-    .line 201
-    goto :goto_0
-
-    .line 202
-    :cond_0
-    return p2
-.end method
-
-.method public abstract a()Ldw;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ldw",
-            "<TE;>;"
-        }
-    .end annotation
-.end method
-
 .method public final add(Ljava/lang/Object;)Z
-    .locals 1
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
         }
     .end annotation
 
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
     .prologue
-    .line 96
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    const/4 v2, 0x1
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    .line 100
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    throw v0
+    .line 101
+    iget v0, p0, Ldc;->a:I
+
+    if-nez v0, :cond_0
+
+    .line 108
+    :goto_0
+    return v2
+
+    .line 104
+    :cond_0
+    invoke-virtual {p0}, Ldc;->size()I
+
+    move-result v0
+
+    iget v1, p0, Ldc;->a:I
+
+    if-ne v0, v1, :cond_1
+
+    .line 105
+    iget-object v0, p0, Ldc;->b:Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->remove()Ljava/lang/Object;
+
+    .line 107
+    :cond_1
+    iget-object v0, p0, Ldc;->b:Ljava/util/Queue;
+
+    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 .end method
 
 .method public final addAll(Ljava/util/Collection;)Z
@@ -121,301 +162,105 @@
         }
     .end annotation
 
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
     .prologue
-    .line 120
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public b()Lde;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lde",
-            "<TE;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 171
-    iget-object v0, p0, Ldc;->a:Lde;
-
-    .line 172
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Ldc;->d()Lde;
+    .line 112
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    iput-object v0, p0, Ldc;->a:Lde;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public final clear()V
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 156
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public contains(Ljava/lang/Object;)Z
-    .locals 1
-    .param p1    # Ljava/lang/Object;
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 84
-    if-eqz p1, :cond_0
-
-    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->contains(Ljava/lang/Object;)Z
+    invoke-static {p0, v0}, Lds;->a(Ljava/util/Collection;Ljava/util/Iterator;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
-.method d()Lde;
-    .locals 2
+.method protected final b()Ljava/util/Queue;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lde",
+            "Ljava/util/Queue",
             "<TE;>;"
         }
     .end annotation
 
     .prologue
-    .line 176
-    invoke-virtual {p0}, Ldc;->size()I
+    .line 80
+    iget-object v0, p0, Ldc;->b:Ljava/util/Queue;
 
-    move-result v0
+    return-object v0
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method protected final bridge synthetic c()Ljava/util/Collection;
+    .locals 1
 
-    .line 182
-    new-instance v0, Ldp;
+    .prologue
+    .line 44
+    iget-object v0, p0, Ldc;->b:Ljava/util/Queue;
 
-    invoke-virtual {p0}, Ldc;->toArray()[Ljava/lang/Object;
+    return-object v0
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 2
+
+    .prologue
+    .line 117
+    iget-object v0, p0, Ldc;->b:Ljava/util/Queue;
+
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Ldp;-><init>(Ldc;[Ljava/lang/Object;)V
+    invoke-interface {v0, v1}, Ljava/util/Queue;->contains(Ljava/lang/Object;)Z
 
-    :goto_0
-    return-object v0
+    move-result v0
 
-    .line 178
-    :pswitch_0
-    invoke-static {}, Lde;->e()Lde;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 180
-    :pswitch_1
-    invoke-virtual {p0}, Ldc;->a()Ldw;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ldw;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lde;->a(Ljava/lang/Object;)Lde;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 176
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    return v0
 .end method
 
-.method public synthetic iterator()Ljava/util/Iterator;
+.method protected final bridge synthetic d()Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 45
-    invoke-virtual {p0}, Ldc;->a()Ldw;
-
-    move-result-object v0
+    .line 44
+    iget-object v0, p0, Ldc;->b:Ljava/util/Queue;
 
     return-object v0
+.end method
+
+.method public final offer(Ljava/lang/Object;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;)Z"
+        }
+    .end annotation
+
+    .prologue
+    .line 90
+    invoke-virtual {p0, p1}, Ldc;->add(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public final remove(Ljava/lang/Object;)Z
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 108
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection",
-            "<*>;)Z"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 132
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final retainAll(Ljava/util/Collection;)Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection",
-            "<*>;)Z"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 144
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final toArray()[Ljava/lang/Object;
     .locals 2
 
     .prologue
-    .line 60
-    invoke-virtual {p0}, Ldc;->size()I
+    .line 122
+    iget-object v0, p0, Ldc;->b:Ljava/util/Queue;
+
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Queue;->remove(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 61
-    if-nez v0, :cond_0
-
-    .line 62
-    sget-object v0, Ldn;->a:[Ljava/lang/Object;
-
-    .line 66
-    :goto_0
-    return-object v0
-
-    .line 64
-    :cond_0
-    new-array v0, v0, [Ljava/lang/Object;
-
-    .line 65
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Ldc;->a([Ljava/lang/Object;I)I
-
-    goto :goto_0
-.end method
-
-.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">([TT;)[TT;"
-        }
-    .end annotation
-
-    .prologue
-    .line 71
-    invoke-static {p1}, Lck;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 72
-    invoke-virtual {p0}, Ldc;->size()I
-
-    move-result v0
-
-    .line 73
-    array-length v1, p1
-
-    if-ge v1, v0, :cond_1
-
-    .line 74
-    invoke-static {p1, v0}, Ldn;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p1
-
-    .line 78
-    :cond_0
-    :goto_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Ldc;->a([Ljava/lang/Object;I)I
-
-    .line 79
-    return-object p1
-
-    .line 75
-    :cond_1
-    array-length v1, p1
-
-    if-le v1, v0, :cond_0
-
-    .line 76
-    const/4 v1, 0x0
-
-    aput-object v1, p1, v0
-
-    goto :goto_0
+    return v0
 .end method

@@ -1,8 +1,11 @@
-@tn
 public final class amf$a
-  extends bkd
 {
-  public amf$a(amf paramamf) {}
+  public final long a;
+  
+  public amf$a(long paramLong)
+  {
+    a = paramLong;
+  }
 }
 
 /* Location:

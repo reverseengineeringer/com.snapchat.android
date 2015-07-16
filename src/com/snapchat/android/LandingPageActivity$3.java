@@ -1,7 +1,7 @@
 package com.snapchat.android;
 
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import bbt;
+import bct;
 import com.squareup.otto.Bus;
 
 final class LandingPageActivity$3
@@ -11,7 +11,7 @@ final class LandingPageActivity$3
   
   public final void onGlobalLayout()
   {
-    a.r.a(new bbt());
+    a.r.a(new bct());
   }
 }
 

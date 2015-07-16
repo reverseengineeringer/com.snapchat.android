@@ -1,6 +1,6 @@
 package com.snapchat.android.util;
 
-import afh;
+import agh;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -8,14 +8,14 @@ import android.os.Message;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.FriendAction;
-import ic;
-import pp;
-import pp.a;
+import il;
+import qg;
+import qg.a;
 
 final class AlertDialogUtils$15
   implements DialogInterface.OnClickListener
 {
-  AlertDialogUtils$15(Context paramContext, Friend paramFriend, Message paramMessage, AnalyticsEvents.AnalyticsContext paramAnalyticsContext, pp.a parama) {}
+  AlertDialogUtils$15(Context paramContext, Friend paramFriend, Message paramMessage, AnalyticsEvents.AnalyticsContext paramAnalyticsContext, qg.a parama) {}
   
   public final void onClick(DialogInterface paramDialogInterface, int paramInt)
   {
@@ -27,16 +27,16 @@ final class AlertDialogUtils$15
       AlertDialogUtils.a(val$context, val$friend, val$onFriendActionMessage, val$analyticsContext);
       return;
     case 1: 
-      paramDialogInterface = new pp(val$friend, FriendAction.IGNORE);
+      paramDialogInterface = new qg(val$friend, FriendAction.IGNORE);
       mOnFriendActionMessage = val$onFriendActionMessage;
       mAnalyticsContext = val$analyticsContext;
       mFriendActionCompleteCallback = val$friendActionCompleteCallback;
-      paramDialogInterface = paramDialogInterface.e();
-      mActionMethod = ic.SETTING_GEAR;
-      paramDialogInterface.f();
+      paramDialogInterface = paramDialogInterface.a();
+      mActionMethod = il.SETTING_GEAR;
+      paramDialogInterface.execute();
       return;
     }
-    new afh(val$context, val$friend, ic.SETTING_GEAR).a();
+    new agh(val$context, val$friend, il.SETTING_GEAR).a();
   }
 }
 

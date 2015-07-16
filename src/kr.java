@@ -2,17 +2,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kr
-  extends lt
+  extends ml
 {
-  private final String eventName = "REGISTRATION_USER_PHONE_ATTEMPT_DIALOG";
-  public String verificationMethod;
+  public Long attemptCount;
+  private final String eventName = "REGISTRATION_USER_CAPTCHA_SUCCESS";
+  public Long imageCount;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_PHONE_ATTEMPT_DIALOG");
-    if (verificationMethod != null) {
-      localHashMap.put("verification_method", verificationMethod);
+    localHashMap.put("event_name", "REGISTRATION_USER_CAPTCHA_SUCCESS");
+    if (attemptCount != null) {
+      localHashMap.put("attempt_count", attemptCount);
+    }
+    if (imageCount != null) {
+      localHashMap.put("image_count", imageCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +35,23 @@ public final class kr
         return false;
       }
       paramObject = (kr)paramObject;
-      if (verificationMethod == null) {
+      if (attemptCount != null)
+      {
+        if (attemptCount.equals(attemptCount)) {}
+      }
+      else {
+        while (attemptCount != null) {
+          return false;
+        }
+      }
+      if (imageCount == null) {
         break;
       }
-    } while (verificationMethod.equals(verificationMethod));
+    } while (imageCount.equals(imageCount));
     for (;;)
     {
       return false;
-      if (verificationMethod == null) {
+      if (imageCount == null) {
         break;
       }
     }
@@ -46,10 +59,15 @@ public final class kr
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (verificationMethod != null) {}
-    for (int i = verificationMethod.hashCode();; i = 0) {
-      return i + j * 31;
+    int j = 0;
+    int k = super.hashCode();
+    if (attemptCount != null) {}
+    for (int i = attemptCount.hashCode();; i = 0)
+    {
+      if (imageCount != null) {
+        j = imageCount.hashCode();
+      }
+      return (i + k * 31) * 31 + j;
     }
   }
 }

@@ -17,7 +17,7 @@
 # virtual methods
 .method public abstract done(Lcom/snapchat/videotranscoder/task/Task$Status;)V
     .param p1    # Lcom/snapchat/videotranscoder/task/Task$Status;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method

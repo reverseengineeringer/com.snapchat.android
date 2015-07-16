@@ -1,36 +1,20 @@
-import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
-import com.snapchat.android.util.debug.ReleaseManager;
 
 public final class awm
-  implements awh
 {
-  private final int mResourceId;
-  private Resources mResources;
+  @chd
+  public final Bitmap mBitmap;
+  private final boolean mIsFromPool;
   
-  public awm(int paramInt)
+  public awm()
   {
-    mResourceId = paramInt;
+    this(null, false);
   }
   
-  public final Bitmap a(BitmapFactory.Options paramOptions)
+  public awm(@chd Bitmap paramBitmap, boolean paramBoolean)
   {
-    if (mResources == null)
-    {
-      if (ReleaseManager.e()) {
-        throw new IllegalStateException("Cannot decode bitmap without calling prepare!");
-      }
-      return null;
-    }
-    return BitmapFactory.decodeResource(mResources, mResourceId, paramOptions);
-  }
-  
-  public final void a(ContentResolver paramContentResolver, Resources paramResources)
-  {
-    mResources = paramResources;
+    mBitmap = paramBitmap;
+    mIsFromPool = paramBoolean;
   }
 }
 

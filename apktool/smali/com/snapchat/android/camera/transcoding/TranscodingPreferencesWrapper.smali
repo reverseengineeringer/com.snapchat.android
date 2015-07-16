@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field private final b:Lwx;
+.field private final b:Lxs;
 
 
 # direct methods
@@ -24,7 +24,7 @@
     .locals 1
 
     .prologue
-    .line 12
+    .line 14
     const/4 v0, 0x0
 
     sput-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
@@ -36,44 +36,44 @@
     .locals 1
 
     .prologue
-    .line 20
-    new-instance v0, Lwx;
+    .line 22
+    new-instance v0, Lxs;
 
-    invoke-direct {v0}, Lwx;-><init>()V
+    invoke-direct {v0}, Lxs;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;-><init>(Lwx;)V
+    invoke-direct {p0, v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;-><init>(Lxs;)V
 
-    .line 21
+    .line 23
     return-void
 .end method
 
-.method private constructor <init>(Lwx;)V
+.method private constructor <init>(Lxs;)V
     .locals 2
 
     .prologue
-    .line 24
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
-    iput-object p1, p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b:Lwx;
+    .line 27
+    iput-object p1, p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b:Lxs;
 
-    .line 26
+    .line 28
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x12
 
     if-ge v0, v1, :cond_0
 
-    .line 27
+    .line 29
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->TRANSCODING_NOT_SUPPORTED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     invoke-static {v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;)V
 
-    .line 29
+    .line 31
     :cond_0
     sput-object p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
-    .line 30
+    .line 32
     return-void
 .end method
 
@@ -81,19 +81,19 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 40
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
     if-nez v0, :cond_0
 
-    .line 39
+    .line 41
     new-instance v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
     invoke-direct {v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;-><init>()V
 
     sput-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
-    .line 41
+    .line 43
     :cond_0
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
@@ -104,41 +104,27 @@
     .locals 3
 
     .prologue
-    .line 135
-    const-string v0, "TranscodingPreferencesWrapper"
+    .line 139
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "storeTranscodingState "
 
-    const-string v2, "storeTranscodingState "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->name()Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 136
+    .line 140
     invoke-virtual {p0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->name()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lajx;->q(Ljava/lang/String;)V
+    invoke-static {v0}, Lakr;->q(Ljava/lang/String;)V
 
-    .line 137
+    .line 141
     new-instance v0, Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     const-string v1, "STORE_TRANSCODING_STATE"
@@ -159,9 +145,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->d()V
+    invoke-virtual {v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->e()V
 
-    .line 139
+    .line 143
     return-void
 .end method
 
@@ -169,12 +155,12 @@
     .locals 2
 
     .prologue
-    .line 87
-    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->c()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+    .line 91
+    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->d()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     move-result-object v0
 
-    .line 88
+    .line 92
     if-eqz p0, :cond_2
 
     sget-object v1, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->UNKNOWN:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
@@ -185,18 +171,18 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 89
+    .line 93
     :cond_0
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->ENABLED_FOR_LOW_QUALITY:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     invoke-static {v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;)V
 
-    .line 93
+    .line 97
     :cond_1
     :goto_0
     return-void
 
-    .line 90
+    .line 94
     :cond_2
     if-nez p0, :cond_1
 
@@ -204,7 +190,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 91
+    .line 95
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->BLOCKED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     invoke-static {v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;)V
@@ -213,78 +199,24 @@
 .end method
 
 .method public static b()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
-    .locals 4
+    .locals 3
 
     .prologue
-    .line 67
-    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->c()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+    .line 71
+    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->d()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     move-result-object v0
 
-    .line 68
-    const-string v1, "TranscodingPreferencesWrapper"
+    .line 72
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "ShouldUseTranscoding "
 
-    const-string v3, "ShouldUseTranscoding "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 69
-    return-object v0
-.end method
-
-.method private static c()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
-    .locals 4
-
-    .prologue
-    .line 142
-    invoke-static {}, Lajx;->bg()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 143
-    const-string v1, "TranscodingPreferencesWrapper"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "loadTranscodingState "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 144
-    invoke-static {v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->valueOf(Ljava/lang/String;)Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
-
-    move-result-object v0
-
+    .line 73
     return-object v0
 .end method
 
@@ -292,11 +224,68 @@
     .locals 0
 
     .prologue
-    .line 108
-    invoke-static {p0}, Lajx;->r(Z)V
+    .line 112
+    invoke-static {p0}, Lakr;->q(Z)V
 
-    .line 109
+    .line 113
     return-void
+.end method
+
+.method public static c()Z
+    .locals 2
+
+    .prologue
+    .line 81
+    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+
+    move-result-object v0
+
+    .line 82
+    sget-object v1, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->ENABLED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+
+    if-eq v0, v1, :cond_0
+
+    sget-object v1, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->ENABLED_FOR_LOW_QUALITY:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+
+    if-ne v0, v1, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private static d()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+    .locals 2
+
+    .prologue
+    .line 146
+    invoke-static {}, Lakr;->bd()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 147
+    const-class v1, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+
+    invoke-static {v1, v0}, Lcj;->a(Ljava/lang/Class;Ljava/lang/String;)Lcn;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->UNKNOWN:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+
+    invoke-virtual {v0, v1}, Lcn;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+
+    return-object v0
 .end method
 
 
@@ -307,62 +296,66 @@
     .prologue
     const/16 v5, 0x9
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    .line 100
-    iget-object v1, p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b:Lwx;
+    .line 104
+    iget-object v2, p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b:Lxs;
 
-    iget-object v0, v1, Lwx;->a:[Z
+    iget-object v1, v2, Lxs;->a:[Z
 
     const/4 v3, 0x1
 
-    iget-object v4, v1, Lwx;->a:[Z
+    iget-object v4, v2, Lxs;->a:[Z
 
-    invoke-static {v0, v3, v4, v2, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v1, v3, v4, v0, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    iget-object v0, v1, Lwx;->a:[Z
+    iget-object v1, v2, Lxs;->a:[Z
 
-    aput-boolean p1, v0, v5
+    aput-boolean p1, v1, v5
 
-    const-string v0, ""
+    const-string v1, ""
 
-    iget-object v4, v1, Lwx;->a:[Z
+    iget-object v3, v2, Lxs;->a:[Z
 
-    array-length v5, v4
+    array-length v4, v3
 
-    move v1, v2
+    move v6, v0
+
+    move-object v0, v1
+
+    move v1, v6
 
     :goto_0
-    if-ge v1, v5, :cond_1
+    if-ge v1, v4, :cond_1
 
-    aget-boolean v3, v4, v1
+    aget-boolean v2, v3, v1
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
     const-string v0, "1"
 
     :goto_1
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
-    move-object v0, v3
+    move-object v0, v2
 
     goto :goto_0
 
@@ -372,12 +365,12 @@
     goto :goto_1
 
     :cond_1
-    invoke-static {v0}, Lajx;->r(Ljava/lang/String;)V
+    invoke-static {v0}, Lakr;->r(Ljava/lang/String;)V
 
-    .line 101
-    iget-object v0, p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b:Lwx;
+    .line 105
+    iget-object v0, p0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->b:Lxs;
 
-    invoke-virtual {v0}, Lwx;->a()I
+    invoke-virtual {v0}, Lxs;->a()I
 
     move-result v0
 
@@ -385,21 +378,13 @@
 
     if-lt v0, v1, :cond_2
 
-    const-string v0, "TranscodingPreferencesWrapper"
-
-    const-string v1, "Transcoding has failed too many times disabling for phone"
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->DISABLED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     invoke-static {v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;)V
 
-    .line 102
+    .line 106
     :cond_2
-    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->c()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
+    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->d()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     move-result-object v0
 
@@ -407,19 +392,19 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 103
+    .line 107
     if-eqz p1, :cond_4
 
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->ENABLED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 
     invoke-static {v0}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;)V
 
-    .line 105
+    .line 109
     :cond_3
     :goto_2
     return-void
 
-    .line 103
+    .line 107
     :cond_4
     sget-object v0, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;->DISABLED:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper$TranscodingEnabled;
 

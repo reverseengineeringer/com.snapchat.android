@@ -1,26 +1,56 @@
-import android.content.Intent;
+import android.content.Context;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public final class amy
-  extends amd
-  implements ts.b<bkj>
 {
-  public bkj a;
-  public boolean b = false;
+  protected File[] a;
+  protected List<qf> b;
+  private final Context c;
+  private final String d;
+  private final String e = "^_^";
   
-  public amy(Intent paramIntent)
+  public amy(Context paramContext, String paramString)
   {
-    super(paramIntent);
-    a(bkj.class, this);
+    c = paramContext;
+    d = paramString;
   }
   
-  public final Object b()
+  public final void a()
   {
-    return new pl();
+    try
+    {
+      a = baj.a(c, false);
+      return;
+    }
+    catch (IOException localIOException) {}
   }
   
-  protected final String e()
+  public final void b()
   {
-    return "/loq/two_fa_recovery_code";
+    String str = d.split(java.util.regex.Pattern.quote("^_^"))[1];
+    str = "&taskId=" + str;
+    b = new ArrayList(a.length);
+    File[] arrayOfFile = a;
+    int j = arrayOfFile.length;
+    int i = 0;
+    while (i < j)
+    {
+      File localFile = arrayOfFile[i];
+      b.add(new qf(str, localFile));
+      i += 1;
+    }
+  }
+  
+  public final void c()
+  {
+    Iterator localIterator = b.iterator();
+    while (localIterator.hasNext()) {
+      ((qf)localIterator.next()).execute();
+    }
   }
 }
 

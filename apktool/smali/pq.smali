@@ -1,9 +1,6 @@
 .class public final Lpq;
-.super Lth;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lts$b;
 
 
 # annotations
@@ -14,191 +11,279 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lth;",
-        "Lts$b",
-        "<",
-        "Lpq$b;",
-        ">;"
-    }
-.end annotation
-
 
 # static fields
-.field public static final MIN_USERNAME_LENGTH:I = 0x3
-
-.field private static final TAG:Ljava/lang/String; = "FriendExistsTask"
+.field private static final sInstance:Lpq;
 
 
 # instance fields
-.field private mBus:Lcom/squareup/otto/Bus;
+.field private mFeatures:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/util/Collection",
+            "<",
+            "Lpq$b;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
-.field public final mFriend:Lcom/snapchat/android/model/Friend;
+.field private mStudySettings:Lakn;
 
 
 # direct methods
-.method public constructor <init>(Lcom/snapchat/android/model/Friend;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
     .prologue
+    .line 20
+    new-instance v0, Lpq;
+
+    invoke-static {}, Lakn;->a()Lakn;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lpq;-><init>(Lakn;)V
+
+    sput-object v0, Lpq;->sInstance:Lpq;
+
+    return-void
+.end method
+
+.method private constructor <init>(Lakn;)V
+    .locals 9
+
+    .prologue
+    const/4 v8, 0x1
+
+    const/4 v7, 0x0
+
+    .line 30
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 31
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    iput-object p1, p0, Lpq;->mStudySettings:Lakn;
 
-    move-result-object v0
-
-    invoke-direct {p0, p1, v0}, Lpq;-><init>(Lcom/snapchat/android/model/Friend;Lcom/squareup/otto/Bus;)V
-
-    .line 32
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/snapchat/android/model/Friend;Lcom/squareup/otto/Bus;)V
-    .locals 1
-
-    .prologue
     .line 34
-    invoke-direct {p0}, Lth;-><init>()V
+    new-instance v0, Lpq$b;
 
-    .line 35
-    iput-object p1, p0, Lpq;->mFriend:Lcom/snapchat/android/model/Friend;
+    const-string v1, "stories_delta_response"
 
-    .line 36
-    iput-object p2, p0, Lpq;->mBus:Lcom/squareup/otto/Bus;
+    new-instance v2, Lpq$a;
 
-    .line 37
-    const-class v0, Lpq$b;
+    const-string v3, "DELTA_RESPONSE"
 
-    invoke-virtual {p0, v0, p0}, Lpq;->a(Ljava/lang/Class;Lts$b;)V
+    const-string v4, "FRIENDS_STORY_DELTA"
 
-    .line 38
-    return-void
-.end method
+    const-string v5, "on"
 
+    invoke-direct {v2, v3, v4, v5}, Lpq$a;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;Luc;)V
-    .locals 5
+    invoke-direct {v0, v1, v2}, Lpq$b;-><init>(Ljava/lang/String;Lpq$a;)V
 
-    .prologue
-    .line 22
-    check-cast p1, Lpq$b;
+    .line 39
+    new-instance v1, Lpq$b;
 
-    invoke-virtual {p2}, Luc;->d()Z
+    const-string v2, "conversations_delta_response"
 
-    move-result v0
+    new-instance v3, Lpq$a;
 
-    if-eqz v0, :cond_2
+    const-string v4, "DELTA_RESPONSE"
 
-    if-eqz p1, :cond_2
+    const-string v5, "CONVERSATIONS_DELTA"
 
-    sget-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->DOES_NOT_EXIST:Lcom/snapchat/android/model/Friend$SuggestState;
+    const-string v6, "on"
 
-    iget-boolean v1, p1, Lpq$b;->exists:Z
+    invoke-direct {v3, v4, v5, v6}, Lpq$a;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v1, :cond_1
+    invoke-direct {v1, v2, v3}, Lpq$b;-><init>(Ljava/lang/String;Lpq$a;)V
 
-    sget-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->EXISTS:Lcom/snapchat/android/model/Friend$SuggestState;
+    .line 44
+    new-instance v2, Ljava/util/HashMap;
 
-    :cond_0
-    :goto_0
-    iget-object v1, p0, Lpq;->mFriend:Lcom/snapchat/android/model/Friend;
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, v1, Lcom/snapchat/android/model/Friend;->mSuggestionState:Lcom/snapchat/android/model/Friend$SuggestState;
+    iput-object v2, p0, Lpq;->mFeatures:Ljava/util/Map;
 
-    iget-object v0, p0, Lpq;->mBus:Lcom/squareup/otto/Bus;
+    .line 45
+    iget-object v2, p0, Lpq;->mFeatures:Ljava/util/Map;
 
-    new-instance v1, Lbcx;
+    const-string v3, "/loq/all_updates"
 
-    invoke-direct {v1}, Lbcx;-><init>()V
+    const/4 v4, 0x2
 
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+    new-array v4, v4, [Lpq$b;
 
-    :goto_1
-    return-void
+    aput-object v0, v4, v7
 
-    :cond_1
-    iget-boolean v1, p1, Lpq$b;->throttled:Z
+    aput-object v1, v4, v8
 
-    if-eqz v1, :cond_0
-
-    iget-boolean v1, p1, Lpq$b;->logged:Z
-
-    if-nez v1, :cond_0
-
-    sget-object v0, Lcom/snapchat/android/model/Friend$SuggestState;->FAILED:Lcom/snapchat/android/model/Friend$SuggestState;
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lpq;->mFriend:Lcom/snapchat/android/model/Friend;
-
-    sget-object v1, Lcom/snapchat/android/model/Friend$SuggestState;->FAILED:Lcom/snapchat/android/model/Friend$SuggestState;
-
-    iput-object v1, v0, Lcom/snapchat/android/model/Friend;->mSuggestionState:Lcom/snapchat/android/model/Friend$SuggestState;
-
-    iget-object v0, p0, Lpq;->mBus:Lcom/squareup/otto/Bus;
-
-    new-instance v1, Lbcx;
-
-    invoke-direct {v1}, Lbcx;-><init>()V
-
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    if-eqz p2, :cond_3
-
-    const-string v0, "FriendExistsTask"
-
-    const-string v1, "Request failed: %s"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p2}, Luc;->e()Ljava/lang/String;
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v4
 
-    aput-object v4, v2, v3
+    invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 46
+    iget-object v2, p0, Lpq;->mFeatures:Ljava/util/Map;
 
-    :cond_3
-    iget-object v0, p0, Lpq;->mBus:Lcom/squareup/otto/Bus;
+    const-string v3, "/loq/conversations"
 
-    new-instance v1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
+    new-array v4, v8, [Lpq$b;
 
-    sget-object v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
+    aput-object v1, v4, v7
 
-    const v3, 0x7f0c01d0
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;I)V
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+    invoke-interface {v2, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_1
+    .line 47
+    iget-object v1, p0, Lpq;->mFeatures:Ljava/util/Map;
+
+    const-string v2, "/bq/stories"
+
+    new-array v3, v8, [Lpq$b;
+
+    aput-object v0, v3, v7
+
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 48
+    return-void
 .end method
 
-.method public final synthetic b()Ljava/lang/Object;
+.method public static a()Lpq;
     .locals 1
 
     .prologue
     .line 22
-    new-instance v0, Lpq$a;
-
-    invoke-direct {v0, p0}, Lpq$a;-><init>(Lpq;)V
+    sget-object v0, Lpq;->sInstance:Lpq;
 
     return-object v0
 .end method
 
-.method public final d()Ljava/lang/String;
-    .locals 1
+
+# virtual methods
+.method public final a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 8
 
     .prologue
-    .line 46
-    const-string v0, "/bq/user_exists"
+    const/4 v2, 0x1
+
+    .line 104
+    new-instance v3, Ljava/util/HashMap;
+
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+
+    .line 105
+    iget-object v0, p0, Lpq;->mFeatures:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    .line 106
+    if-eqz v0, :cond_3
+
+    .line 107
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_0
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lpq$b;
+
+    .line 108
+    iget-object v1, p0, Lpq;->mStudySettings:Lakn;
+
+    iget-object v5, v0, Lpq$b;->mABTestForFeature:Lpq$a;
+
+    if-nez v5, :cond_1
+
+    iget-boolean v1, v0, Lpq$b;->mOnByDefault:Z
+
+    :goto_1
+    if-eqz v1, :cond_0
+
+    .line 109
+    iget-object v0, v0, Lpq$b;->mFeatureName:Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v3, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    .line 108
+    :cond_1
+    iget-object v5, v0, Lpq$b;->mABTestForFeature:Lpq$a;
+
+    iget-object v5, v5, Lpq$a;->studyId:Ljava/lang/String;
+
+    iget-object v6, v0, Lpq$b;->mABTestForFeature:Lpq$a;
+
+    iget-object v6, v6, Lpq$a;->variable:Ljava/lang/String;
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v1, v5, v6, v7}, Lakn;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    iget-object v5, v0, Lpq$b;->mABTestForFeature:Lpq$a;
+
+    iget-object v5, v5, Lpq$a;->onValue:Ljava/lang/String;
+
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    .line 113
+    :cond_3
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, v3}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
+
+    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

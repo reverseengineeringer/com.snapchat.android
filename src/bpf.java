@@ -1,41 +1,75 @@
-import java.util.concurrent.Future;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.PriorityBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public final class bpf
-  extends ThreadPoolExecutor
 {
-  bpf()
-  {
-    super(3, 3, 0L, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), new bpo.b());
-  }
+  public final Object a;
+  public boolean b = true;
+  private final Method c;
+  private final int d;
   
-  final void a(int paramInt)
+  bpf(Object paramObject, Method paramMethod)
   {
-    setCorePoolSize(paramInt);
-    setMaximumPoolSize(paramInt);
-  }
-  
-  public final Future<?> submit(Runnable paramRunnable)
-  {
-    paramRunnable = new bpf.a((bol)paramRunnable);
-    execute(paramRunnable);
-    return paramRunnable;
-  }
-  
-  static final class a
-    extends FutureTask<bol>
-    implements Comparable<a>
-  {
-    private final bol a;
-    
-    public a(bol parambol)
-    {
-      super(null);
-      a = parambol;
+    if (paramObject == null) {
+      throw new NullPointerException("EventProducer target cannot be null.");
     }
+    if (paramMethod == null) {
+      throw new NullPointerException("EventProducer method cannot be null.");
+    }
+    a = paramObject;
+    c = paramMethod;
+    paramMethod.setAccessible(true);
+    d = ((paramMethod.hashCode() + 31) * 31 + paramObject.hashCode());
+  }
+  
+  public final Object a()
+  {
+    if (!b) {
+      throw new IllegalStateException(toString() + " has been invalidated and can no longer produce events.");
+    }
+    try
+    {
+      Object localObject = c.invoke(a, new Object[0]);
+      return localObject;
+    }
+    catch (IllegalAccessException localIllegalAccessException)
+    {
+      throw new AssertionError(localIllegalAccessException);
+    }
+    catch (InvocationTargetException localInvocationTargetException)
+    {
+      if ((localInvocationTargetException.getCause() instanceof Error)) {
+        throw ((Error)localInvocationTargetException.getCause());
+      }
+      throw localInvocationTargetException;
+    }
+  }
+  
+  public final boolean equals(Object paramObject)
+  {
+    if (this == paramObject) {}
+    do
+    {
+      return true;
+      if (paramObject == null) {
+        return false;
+      }
+      if (getClass() != paramObject.getClass()) {
+        return false;
+      }
+      paramObject = (bpf)paramObject;
+    } while ((c.equals(c)) && (a == a));
+    return false;
+  }
+  
+  public final int hashCode()
+  {
+    return d;
+  }
+  
+  public final String toString()
+  {
+    return "[EventProducer " + c + "]";
   }
 }
 

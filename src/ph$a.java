@@ -1,6 +1,9 @@
-public final class ph$a
-  extends Exception
-{}
+public abstract interface ph$a
+{
+  public abstract void a(aji paramaji);
+  
+  public abstract void b(aji paramaji);
+}
 
 /* Location:
  * Qualified Name:     ph.a

@@ -1,68 +1,84 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public final class ht
-  extends lt
+public class ht
 {
-  public String encFilterGeofilterId;
-  private final String eventName = "GEOFILTER_STORY_SNAP_VIEW";
-  public hl exitEvent;
-  private String filterGeofilterId;
-  public Boolean fullView;
-  public String geoFence;
-  public hy mediaType;
-  private Long postCount;
-  public String posterId;
-  public Double snapTimeSec;
-  public lr storyType;
-  private Long viewLocation;
-  public Double viewTimeSec;
+  private String appVersion;
+  private String city;
+  public Double clientTs;
+  public Double clientUploadTs;
+  public String country;
+  private gl deviceConnectivity;
+  private String deviceModel;
+  private Double eventTime;
+  private Double eventTs;
+  public Long friendCount;
+  private ij osType;
+  private String osVersion;
+  private String region;
+  private Long sequenceId;
+  private Double serverTs;
+  public String sessionId;
+  public String userAgent;
   
-  public final Map<String, Object> a()
+  public Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "GEOFILTER_STORY_SNAP_VIEW");
-    if (encFilterGeofilterId != null) {
-      localHashMap.put("enc_filter_geofilter_id", encFilterGeofilterId);
+    if (appVersion != null) {
+      localHashMap.put("app_version", appVersion);
     }
-    if (exitEvent != null) {
-      localHashMap.put("exit_event", exitEvent);
+    if (city != null) {
+      localHashMap.put("city", city);
     }
-    if (filterGeofilterId != null) {
-      localHashMap.put("filter_geofilter_id", filterGeofilterId);
+    if (clientTs != null) {
+      localHashMap.put("client_ts", clientTs);
     }
-    if (fullView != null) {
-      localHashMap.put("full_view", fullView);
+    if (clientUploadTs != null) {
+      localHashMap.put("client_upload_ts", clientUploadTs);
     }
-    if (geoFence != null) {
-      localHashMap.put("geo_fence", geoFence);
+    if (country != null) {
+      localHashMap.put("country", country);
     }
-    if (mediaType != null) {
-      localHashMap.put("media_type", mediaType);
+    if (deviceConnectivity != null) {
+      localHashMap.put("device_connectivity", deviceConnectivity);
     }
-    if (postCount != null) {
-      localHashMap.put("post_count", postCount);
+    if (deviceModel != null) {
+      localHashMap.put("device_model", deviceModel);
     }
-    if (posterId != null) {
-      localHashMap.put("poster_id", posterId);
+    if (eventTime != null) {
+      localHashMap.put("event_time", eventTime);
     }
-    if (snapTimeSec != null) {
-      localHashMap.put("snap_time_sec", snapTimeSec);
+    if (eventTs != null) {
+      localHashMap.put("event_ts", eventTs);
     }
-    if (storyType != null) {
-      localHashMap.put("story_type", storyType);
+    if (friendCount != null) {
+      localHashMap.put("friend_count", friendCount);
     }
-    if (viewLocation != null) {
-      localHashMap.put("view_location", viewLocation);
+    if (osType != null) {
+      localHashMap.put("os_type", osType);
     }
-    if (viewTimeSec != null) {
-      localHashMap.put("view_time_sec", viewTimeSec);
+    if (osVersion != null) {
+      localHashMap.put("os_version", osVersion);
     }
-    localHashMap.putAll(super.a());
+    if (region != null) {
+      localHashMap.put("region", region);
+    }
+    if (sequenceId != null) {
+      localHashMap.put("sequence_id", sequenceId);
+    }
+    if (serverTs != null) {
+      localHashMap.put("server_ts", serverTs);
+    }
+    if (sessionId != null) {
+      localHashMap.put("session_id", sessionId);
+    }
+    if (userAgent != null) {
+      localHashMap.put("user_agent", userAgent);
+    }
     return localHashMap;
   }
   
-  public final boolean equals(Object paramObject)
+  public boolean equals(Object paramObject)
   {
     if (this == paramObject) {}
     do
@@ -71,224 +87,310 @@ public final class ht
       if ((paramObject == null) || (getClass() != paramObject.getClass())) {
         return false;
       }
-      if (!super.equals(paramObject)) {
-        return false;
-      }
       paramObject = (ht)paramObject;
-      if (encFilterGeofilterId != null)
+      if (appVersion != null)
       {
-        if (encFilterGeofilterId.equals(encFilterGeofilterId)) {}
+        if (appVersion.equals(appVersion)) {}
       }
       else {
-        while (encFilterGeofilterId != null) {
+        while (appVersion != null) {
           return false;
         }
       }
-      if (exitEvent != null)
+      if (city != null)
       {
-        if (exitEvent.equals(exitEvent)) {}
+        if (city.equals(city)) {}
       }
       else {
-        while (exitEvent != null) {
+        while (city != null) {
           return false;
         }
       }
-      if (filterGeofilterId != null)
+      if (clientTs != null)
       {
-        if (filterGeofilterId.equals(filterGeofilterId)) {}
+        if (clientTs.equals(clientTs)) {}
       }
       else {
-        while (filterGeofilterId != null) {
+        while (clientTs != null) {
           return false;
         }
       }
-      if (fullView != null)
+      if (clientUploadTs != null)
       {
-        if (fullView.equals(fullView)) {}
+        if (clientUploadTs.equals(clientUploadTs)) {}
       }
       else {
-        while (fullView != null) {
+        while (clientUploadTs != null) {
           return false;
         }
       }
-      if (geoFence != null)
+      if (country != null)
       {
-        if (geoFence.equals(geoFence)) {}
+        if (country.equals(country)) {}
       }
       else {
-        while (geoFence != null) {
+        while (country != null) {
           return false;
         }
       }
-      if (mediaType != null)
+      if (deviceConnectivity != null)
       {
-        if (mediaType.equals(mediaType)) {}
+        if (deviceConnectivity.equals(deviceConnectivity)) {}
       }
       else {
-        while (mediaType != null) {
+        while (deviceConnectivity != null) {
           return false;
         }
       }
-      if (postCount != null)
+      if (deviceModel != null)
       {
-        if (postCount.equals(postCount)) {}
+        if (deviceModel.equals(deviceModel)) {}
       }
       else {
-        while (postCount != null) {
+        while (deviceModel != null) {
           return false;
         }
       }
-      if (posterId != null)
+      if (eventTime != null)
       {
-        if (posterId.equals(posterId)) {}
+        if (eventTime.equals(eventTime)) {}
       }
       else {
-        while (posterId != null) {
+        while (eventTime != null) {
           return false;
         }
       }
-      if (snapTimeSec != null)
+      if (eventTs != null)
       {
-        if (snapTimeSec.equals(snapTimeSec)) {}
+        if (eventTs.equals(eventTs)) {}
       }
       else {
-        while (snapTimeSec != null) {
+        while (eventTs != null) {
           return false;
         }
       }
-      if (storyType != null)
+      if (friendCount != null)
       {
-        if (storyType.equals(storyType)) {}
+        if (friendCount.equals(friendCount)) {}
       }
       else {
-        while (storyType != null) {
+        while (friendCount != null) {
           return false;
         }
       }
-      if (viewLocation != null)
+      if (osType != null)
       {
-        if (viewLocation.equals(viewLocation)) {}
+        if (osType.equals(osType)) {}
       }
       else {
-        while (viewLocation != null) {
+        while (osType != null) {
           return false;
         }
       }
-      if (viewTimeSec == null) {
+      if (osVersion != null)
+      {
+        if (osVersion.equals(osVersion)) {}
+      }
+      else {
+        while (osVersion != null) {
+          return false;
+        }
+      }
+      if (region != null)
+      {
+        if (region.equals(region)) {}
+      }
+      else {
+        while (region != null) {
+          return false;
+        }
+      }
+      if (sequenceId != null)
+      {
+        if (sequenceId.equals(sequenceId)) {}
+      }
+      else {
+        while (sequenceId != null) {
+          return false;
+        }
+      }
+      if (serverTs != null)
+      {
+        if (serverTs.equals(serverTs)) {}
+      }
+      else {
+        while (serverTs != null) {
+          return false;
+        }
+      }
+      if (sessionId != null)
+      {
+        if (sessionId.equals(sessionId)) {}
+      }
+      else {
+        while (sessionId != null) {
+          return false;
+        }
+      }
+      if (userAgent == null) {
         break;
       }
-    } while (viewTimeSec.equals(viewTimeSec));
+    } while (userAgent.equals(userAgent));
     for (;;)
     {
       return false;
-      if (viewTimeSec == null) {
+      if (userAgent == null) {
         break;
       }
     }
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    int i7 = 0;
-    int i8 = super.hashCode();
+    int i12 = 0;
     int i;
     int j;
-    label39:
+    label33:
     int k;
-    label54:
+    label48:
     int m;
-    label70:
+    label64:
     int n;
-    label86:
+    label80:
     int i1;
-    label102:
+    label96:
     int i2;
-    label118:
+    label112:
     int i3;
-    label134:
+    label128:
     int i4;
-    label150:
+    label144:
     int i5;
-    if (encFilterGeofilterId != null)
+    label160:
+    int i6;
+    label176:
+    int i7;
+    label192:
+    int i8;
+    label208:
+    int i9;
+    label224:
+    int i10;
+    if (appVersion != null)
     {
-      i = encFilterGeofilterId.hashCode();
-      if (exitEvent == null) {
-        break label275;
+      i = appVersion.hashCode();
+      if (city == null) {
+        break label375;
       }
-      j = exitEvent.hashCode();
-      if (filterGeofilterId == null) {
-        break label280;
+      j = city.hashCode();
+      if (clientTs == null) {
+        break label380;
       }
-      k = filterGeofilterId.hashCode();
-      if (fullView == null) {
-        break label285;
+      k = clientTs.hashCode();
+      if (clientUploadTs == null) {
+        break label385;
       }
-      m = fullView.hashCode();
-      if (geoFence == null) {
-        break label291;
+      m = clientUploadTs.hashCode();
+      if (country == null) {
+        break label391;
       }
-      n = geoFence.hashCode();
-      if (mediaType == null) {
-        break label297;
+      n = country.hashCode();
+      if (deviceConnectivity == null) {
+        break label397;
       }
-      i1 = mediaType.hashCode();
-      if (postCount == null) {
-        break label303;
+      i1 = deviceConnectivity.hashCode();
+      if (deviceModel == null) {
+        break label403;
       }
-      i2 = postCount.hashCode();
-      if (posterId == null) {
-        break label309;
+      i2 = deviceModel.hashCode();
+      if (eventTime == null) {
+        break label409;
       }
-      i3 = posterId.hashCode();
-      if (snapTimeSec == null) {
-        break label315;
+      i3 = eventTime.hashCode();
+      if (eventTs == null) {
+        break label415;
       }
-      i4 = snapTimeSec.hashCode();
-      if (storyType == null) {
-        break label321;
+      i4 = eventTs.hashCode();
+      if (friendCount == null) {
+        break label421;
       }
-      i5 = storyType.hashCode();
-      label166:
-      if (viewLocation == null) {
-        break label327;
+      i5 = friendCount.hashCode();
+      if (osType == null) {
+        break label427;
+      }
+      i6 = osType.hashCode();
+      if (osVersion == null) {
+        break label433;
+      }
+      i7 = osVersion.hashCode();
+      if (region == null) {
+        break label439;
+      }
+      i8 = region.hashCode();
+      if (sequenceId == null) {
+        break label445;
+      }
+      i9 = sequenceId.hashCode();
+      if (serverTs == null) {
+        break label451;
+      }
+      i10 = serverTs.hashCode();
+      label240:
+      if (sessionId == null) {
+        break label457;
       }
     }
-    label275:
-    label280:
-    label285:
-    label291:
-    label297:
-    label303:
-    label309:
-    label315:
-    label321:
-    label327:
-    for (int i6 = viewLocation.hashCode();; i6 = 0)
+    label375:
+    label380:
+    label385:
+    label391:
+    label397:
+    label403:
+    label409:
+    label415:
+    label421:
+    label427:
+    label433:
+    label439:
+    label445:
+    label451:
+    label457:
+    for (int i11 = sessionId.hashCode();; i11 = 0)
     {
-      if (viewTimeSec != null) {
-        i7 = viewTimeSec.hashCode();
+      if (userAgent != null) {
+        i12 = userAgent.hashCode();
       }
-      return (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i8 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i7;
+      return (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + 0) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i12;
       i = 0;
       break;
       j = 0;
-      break label39;
+      break label33;
       k = 0;
-      break label54;
+      break label48;
       m = 0;
-      break label70;
+      break label64;
       n = 0;
-      break label86;
+      break label80;
       i1 = 0;
-      break label102;
+      break label96;
       i2 = 0;
-      break label118;
+      break label112;
       i3 = 0;
-      break label134;
+      break label128;
       i4 = 0;
-      break label150;
+      break label144;
       i5 = 0;
-      break label166;
+      break label160;
+      i6 = 0;
+      break label176;
+      i7 = 0;
+      break label192;
+      i8 = 0;
+      break label208;
+      i9 = 0;
+      break label224;
+      i10 = 0;
+      break label240;
     }
   }
 }

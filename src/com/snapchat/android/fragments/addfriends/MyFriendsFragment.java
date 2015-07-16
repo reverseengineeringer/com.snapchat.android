@@ -1,9 +1,9 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afa;
-import afn;
-import ajv;
-import ajx;
+import aga;
+import agn;
+import akp;
+import akr;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,15 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import bbd;
-import bbo;
-import bcw;
-import bcx;
-import boh;
-import cgb;
+import bcd;
+import bco;
+import bdw;
+import bdx;
+import bpi;
+import chc;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
+import com.snapchat.android.analytics.ProfileEventAnalytics;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.FriendAction;
 import com.snapchat.android.ui.window.WindowConfiguration;
@@ -30,6 +30,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import javax.inject.Provider;
+import kf;
 
 public class MyFriendsFragment
   extends AddFriendsFragment
@@ -44,7 +45,7 @@ public class MyFriendsFragment
   
   protected final void B()
   {
-    TextView localTextView = u;
+    TextView localTextView = v;
     if (d.isEmpty()) {}
     for (int i = 0;; i = 8)
     {
@@ -53,23 +54,29 @@ public class MyFriendsFragment
     }
   }
   
-  protected final void a(@cgb ajv paramajv)
+  protected final void a(@chc akp paramakp)
   {
     f.clear();
-    paramajv = paramajv.o().iterator();
-    while (paramajv.hasNext())
+    paramakp = paramakp.o().iterator();
+    while (paramakp.hasNext())
     {
-      Friend localFriend = (Friend)paramajv.next();
-      if ((!TextUtils.equals(ajx.l(), localFriend.h())) && (!mIsBlocked) && (!localFriend.r())) {
+      Friend localFriend = (Friend)paramakp.next();
+      if ((!TextUtils.equals(akr.l(), localFriend.l())) && (!mIsBlocked) && (!localFriend.q())) {
         f.add(localFriend);
       }
     }
     Collections.sort(f);
   }
   
-  protected final void b(@cgb ajv paramajv)
+  protected final void a(kf paramkf)
   {
-    a(paramajv);
+    ProfileEventAnalytics.a();
+    ProfileEventAnalytics.a(paramkf, d.getCount(), d.a(false), d.a(FriendAction.ADD, false), d.a(FriendAction.DELETE, false), d.a(FriendAction.BLOCK, false), d.a(FriendAction.SET_DISPLAY_NAME, false), d.a(true), d.a(FriendAction.ADD, true), d.a(FriendAction.DELETE, true), d.a(FriendAction.BLOCK, true), d.a(FriendAction.SET_DISPLAY_NAME, true));
+  }
+  
+  protected final void b(@chc akp paramakp)
+  {
+    a(paramakp);
     f.addAll(0, mBests);
   }
   
@@ -79,14 +86,14 @@ public class MyFriendsFragment
     q();
   }
   
+  public final boolean j_()
+  {
+    return true;
+  }
+  
   protected final int l()
   {
     return 2131493239;
-  }
-  
-  public final boolean l_()
-  {
-    return true;
   }
   
   protected final FriendListProperty n()
@@ -109,76 +116,76 @@ public class MyFriendsFragment
     }
   }
   
-  @boh
-  public void onContactsOnSnapchatUpdatedEvent(bbd parambbd)
+  @bpi
+  public void onContactsOnSnapchatUpdatedEvent(bcd parambcd)
   {
-    super.onContactsOnSnapchatUpdatedEvent(parambbd);
+    super.onContactsOnSnapchatUpdatedEvent(parambcd);
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    C = AnalyticsEvents.AnalyticsContext.PROFILE_MY_FRIENDS_PAGE;
+    D = AnalyticsEvents.AnalyticsContext.PROFILE_MY_FRIENDS_PAGE;
     b = new a(this.i);
     c = new FriendSectionizer.b();
     paramLayoutInflater = super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
     m.setText(2131493239);
-    d.e = new afn();
-    d.g = true;
+    d.f = new agn();
     d.h = true;
-    u.setText(2131493254);
+    d.i = true;
+    v.setText(2131493254);
     paramViewGroup = getArguments();
     final int i;
     if (paramViewGroup != null)
     {
       paramViewGroup = paramViewGroup.getString("selected_friend_username");
       if (TextUtils.isEmpty(paramViewGroup)) {
-        break label227;
+        break label218;
       }
       i = 0;
       if (i >= f.size()) {
-        break label227;
-      }
-      if (!TextUtils.equals(((Friend)f.get(i)).h(), paramViewGroup)) {
         break label218;
+      }
+      if (!TextUtils.equals(((Friend)f.get(i)).l(), paramViewGroup)) {
+        break label209;
       }
     }
     for (;;)
     {
-      Timber.c("MyFriendsFragment", "restorePreviousSelectionStatus() selected_friend_username: " + paramViewGroup + " selectedFriendIndex: " + i, new Object[0]);
+      new StringBuilder("restorePreviousSelectionStatus() selected_friend_username: ").append(paramViewGroup).append(" selectedFriendIndex: ").append(i);
       if (i >= 0)
       {
         d.a(i);
-        t.post(new Runnable()
+        u.post(new Runnable()
         {
           public final void run()
           {
-            t.setSelection(i);
+            u.setSelection(i);
           }
         });
       }
       return paramLayoutInflater;
-      label218:
+      label209:
       i += 1;
       break;
-      label227:
+      label218:
       i = -1;
     }
   }
   
-  @boh
-  public void onFriendProfileUpdateCompleteEvent(bbo parambbo)
+  @bpi
+  public void onFriendProfileUpdateCompleteEvent(bco parambco)
   {
     d.notifyDataSetChanged();
   }
   
-  @boh
-  public void onRefreshFriendExistsTask(bcx parambcx)
+  @bpi
+  public void onRefreshFriendExistsTask(bdx parambdx)
   {
-    super.onRefreshFriendExistsTask(parambcx);
+    super.onRefreshFriendExistsTask(parambdx);
   }
   
-  @boh
-  public void onRefreshOnFriendActionEvent(bcw parambcw)
+  @bpi
+  public void onRefreshOnFriendActionEvent(bdw parambdw)
   {
     Friend localFriend = mFriend;
     if ((localFriend != null) && (mAction == FriendAction.DELETE))
@@ -197,9 +204,9 @@ public class MyFriendsFragment
   public static final class a
     extends FriendSectionizer<Friend>
   {
-    private final Provider<ajv> a;
+    private final Provider<akp> a;
     
-    public a(Provider<ajv> paramProvider)
+    public a(Provider<akp> paramProvider)
     {
       a = paramProvider;
     }

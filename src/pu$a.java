@@ -1,19 +1,10 @@
-import com.google.gson.annotations.SerializedName;
-
-@tn
-public final class pu$a
-  extends pl
+public abstract interface pu$a
 {
-  @SerializedName("friend")
-  final String friend;
-  @SerializedName("hide")
-  final boolean hide;
+  public abstract void d();
   
-  pu$a(pu parampu)
-  {
-    friend = mFriend;
-    hide = mHide;
-  }
+  public abstract void s_();
+  
+  public abstract void t_();
 }
 
 /* Location:

@@ -74,7 +74,7 @@
 
     move-result v3
 
-    invoke-static {v0, v1, v2, v3}, Latf;->a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
+    invoke-static {v0, v1, v2, v3}, Laue;->a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -101,7 +101,7 @@
 
     move-result v3
 
-    invoke-static {v0, v1, v2, v3}, Latf;->a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
+    invoke-static {v0, v1, v2, v3}, Laue;->a(Landroid/content/Context;III)Landroid/graphics/Bitmap;
 
     move-result-object v0
 

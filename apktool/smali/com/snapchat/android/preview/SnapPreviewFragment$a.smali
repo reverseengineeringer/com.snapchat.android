@@ -64,7 +64,7 @@
 
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$a;->b:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->A(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->B(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
 
     .line 1548
     :cond_0

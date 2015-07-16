@@ -1,27 +1,58 @@
 public final class cks
+  extends ckg
 {
-  private final cks.a a;
-  private final cks.a b;
+  private final chg a;
+  private final int b;
+  private transient int c;
   
-  public cks(cks.a parama1, cks.a parama2)
+  public cks(chg paramchg, chi paramchi)
   {
-    a = parama1;
-    b = parama2;
+    this(paramchg, paramchi, (byte)0);
   }
   
-  public final float a()
+  private cks(chg paramchg, chi paramchi, byte paramByte)
   {
-    return a.a();
+    super(paramchi);
+    a = paramchg;
+    paramByte = super.g();
+    if (paramByte < 0) {
+      c = (paramByte + 1);
+    }
+    for (;;)
+    {
+      b = 0;
+      return;
+      if (paramByte == 1) {
+        c = 0;
+      } else {
+        c = paramByte;
+      }
+    }
   }
   
-  public final float b()
+  public final int a(long paramLong)
   {
-    return b.a();
+    int j = super.a(paramLong);
+    int i = j;
+    if (j < b) {
+      i = j + 1;
+    }
+    return i;
   }
   
-  public static abstract interface a
+  public final long b(long paramLong, int paramInt)
   {
-    public abstract float a();
+    cki.a(this, paramInt, c, h());
+    int i = paramInt;
+    if (paramInt <= b) {
+      i = paramInt - 1;
+    }
+    return super.b(paramLong, i);
+  }
+  
+  public final int g()
+  {
+    return c;
   }
 }
 

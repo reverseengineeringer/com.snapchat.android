@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.ViewPropertyAnimator;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import asu;
-import cgb;
+import att;
+import chc;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.snapchat.android.model.chat.ChatConversation;
 
@@ -32,14 +32,14 @@ public class HereTooltip
   public HereTooltip(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968682, this, true);
+    ((LayoutInflater)paramContext.getSystemService("layout_inflater")).inflate(2130968683, this, true);
     d = ((TextView)findViewById(2131362040));
     c = 0L;
     a = PreferenceManager.getDefaultSharedPreferences(paramContext);
     setAlpha(0.0F);
   }
   
-  public final void a(@cgb ChatConversation paramChatConversation, boolean paramBoolean)
+  public final void a(@chc ChatConversation paramChatConversation, boolean paramBoolean)
   {
     boolean bool1 = true;
     boolean bool2;
@@ -146,7 +146,7 @@ public class HereTooltip
   
   protected boolean getWeSupportHere()
   {
-    return (asu.b()) && (LocalPreview.a());
+    return (att.b()) && (LocalPreview.a());
   }
   
   public void setCancelInChatSnapTime(long paramLong)

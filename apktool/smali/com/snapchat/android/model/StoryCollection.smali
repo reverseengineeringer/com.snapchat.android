@@ -31,14 +31,14 @@
 # instance fields
 .field protected mAdIntervalIndex:I
 
-.field protected mAdMetadata:Lbjr;
+.field protected mAdMetadata:Lbks;
 
 .field public final mStorySnaps:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;"
         }
     .end annotation
@@ -46,12 +46,14 @@
 
 .field public final mStorySnapsMutex:Ljava/lang/Object;
 
+.field protected mThumbnails:Lbkn;
+
 .field public final mUnviewedStorySnaps:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;"
         }
     .end annotation
@@ -64,7 +66,7 @@
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;"
         }
     .end annotation
@@ -78,63 +80,66 @@
     .locals 1
 
     .prologue
-    .line 53
-    sget-object v0, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    .line 59
+    sget-object v0, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
     invoke-direct {p0, v0}, Lcom/snapchat/android/model/StoryCollection;-><init>(Ljavax/inject/Provider;)V
 
-    .line 54
+    .line 60
     return-void
 .end method
 
-.method public constructor <init>(Lbhv;)V
-    .locals 7
+.method public constructor <init>(Lbiv;)V
+    .locals 6
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    .line 91
+    .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 53
+    iput-boolean v5, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
+
+    .line 54
+    iput v4, p0, Lcom/snapchat/android/model/StoryCollection;->mAdIntervalIndex:I
+
+    .line 99
+    iput-boolean v4, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
+
+    .line 100
+    invoke-virtual {p1}, Lbiv;->b()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    invoke-static {v0}, Ldt;->a(I)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    .line 101
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    .line 102
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
-    .line 47
-    iput-boolean v6, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
-
-    .line 48
-    iput v5, p0, Lcom/snapchat/android/model/StoryCollection;->mAdIntervalIndex:I
-
-    .line 92
-    iput-boolean v5, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
-
-    .line 93
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Lbhv;->b()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-static {v0}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    .line 95
-    invoke-virtual {p1}, Lbhv;->b()Ljava/util/List;
+    .line 103
+    invoke-virtual {p1}, Lbiv;->b()Ljava/util/List;
 
     move-result-object v0
 
@@ -153,96 +158,90 @@
 
     move-result-object v0
 
-    check-cast v0, Lbhw;
+    check-cast v0, Lbiw;
 
-    .line 96
-    new-instance v2, Lajr;
+    .line 104
+    new-instance v2, Lakl;
 
-    invoke-virtual {v0}, Lbhw;->a()Lbjg;
+    invoke-virtual {v0}, Lbiw;->a()Lbkh;
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Lajr;-><init>(Lbjg;)V
+    invoke-direct {v2, v3}, Lakl;-><init>(Lbkh;)V
 
-    .line 99
-    invoke-virtual {v2}, Lajr;->aI()Z
+    .line 107
+    invoke-virtual {v2}, Lakl;->aD()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 100
-    const-string v0, "StoryCollection"
+    .line 108
+    new-array v0, v5, [Ljava/lang/Object;
 
-    const-string v3, "Ignoring legacy ad slot %s from server response."
-
-    new-array v4, v6, [Ljava/lang/Object;
-
-    aput-object v2, v4, v5
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v4
 
     goto :goto_0
 
-    .line 103
+    .line 111
     :cond_0
-    invoke-virtual {v0}, Lbhw;->b()Ljava/lang/Boolean;
+    invoke-virtual {v0}, Lbiw;->b()Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Laud;->a(Ljava/lang/Boolean;)Z
+    invoke-static {v0}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v0
 
-    iput-boolean v0, v2, Lajr;->mHasBeenViewed:Z
+    iput-boolean v0, v2, Lakl;->mHasBeenViewed:Z
 
-    .line 104
-    invoke-virtual {v2}, Lajr;->aE()V
+    .line 112
+    invoke-virtual {v2}, Lakl;->az()V
 
-    .line 105
+    .line 113
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 107
+    .line 115
     :cond_1
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    .line 108
-    invoke-virtual {p1}, Lbhv;->d()Lbjr;
+    invoke-virtual {p1}, Lbiv;->d()Lbks;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbjr;
+    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbks;
 
-    .line 110
-    sget-object v0, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    .line 116
+    invoke-virtual {p1}, Lbiv;->e()Lbkn;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    .line 118
+    sget-object v0, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
     iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
 
-    .line 111
+    .line 119
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
-    invoke-interface {v0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    iget-object v0, v0, Lajr;->mUsername:Ljava/lang/String;
+    iget-object v0, v0, Lakl;->mUsername:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
-    .line 112
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->a()V
+    .line 120
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->c()V
 
-    .line 113
+    .line 121
     return-void
 .end method
 
@@ -253,85 +252,78 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 57
-    sget-object v0, Lajv;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
+    .line 63
+    sget-object v0, Lakp;->UNSAFE_USER_PROVIDER:Ljavax/inject/Provider;
 
     invoke-direct {p0, p1, v0}, Lcom/snapchat/android/model/StoryCollection;-><init>(Ljava/util/List;Ljavax/inject/Provider;)V
 
-    .line 58
+    .line 64
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/List;Ljava/util/List;Ljavax/inject/Provider;Lbjr;)V
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;Ljava/lang/Object;Ljavax/inject/Provider;Lbks;Lbkn;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;",
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;",
+            "Ljava/lang/Object;",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;",
-            "Lbjr;",
+            "Lbks;",
+            "Lbkn;",
             ")V"
         }
     .end annotation
 
     .prologue
-    .line 73
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    .line 47
+    .line 53
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
 
-    .line 48
+    .line 54
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/snapchat/android/model/StoryCollection;->mAdIntervalIndex:I
 
-    .line 74
-    invoke-static {p1}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    .line 75
-    invoke-static {p2}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    .line 76
-    iput-object p3, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
-
-    .line 77
-    iput-object p4, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbjr;
-
     .line 78
+    iput-object p1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    .line 79
+    iput-object p2, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    .line 80
+    iput-object p3, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    .line 81
+    iput-object p4, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
+
+    .line 82
+    iput-object p5, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbks;
+
+    .line 83
+    iput-object p6, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    .line 84
     return-void
 .end method
 
@@ -342,11 +334,11 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;)V"
         }
     .end annotation
@@ -354,120 +346,347 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 81
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 53
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
+
+    .line 54
+    iput v1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdIntervalIndex:I
+
+    .line 88
+    iput-object p2, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
+
+    .line 89
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/List;
+
+    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    .line 90
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    .line 91
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
-    .line 47
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
-
-    .line 48
-    iput v1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdIntervalIndex:I
-
-    .line 82
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
-
-    throw v0
-
-    .line 83
-    :cond_0
-    iput-object p2, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
-
-    .line 84
-    invoke-static {p1}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    .line 85
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    .line 86
+    .line 92
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
-    .line 89
-    :goto_0
-    return-void
-
-    .line 87
-    :cond_1
+    .line 93
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    iget-object v0, v0, Lajr;->mUsername:Ljava/lang/String;
+    iget-object v0, v0, Lakl;->mUsername:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
-    .line 88
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->a()V
+    .line 94
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->c()V
 
-    goto :goto_0
+    .line 96
+    :cond_0
+    return-void
 .end method
 
 .method private constructor <init>(Ljavax/inject/Provider;)V
-    .locals 3
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 66
-    new-instance v0, Ljava/util/ArrayList;
+    const/4 v5, 0x0
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
+    .line 72
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {v1}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
+    new-instance v2, Ljava/util/ArrayList;
 
-    move-result-object v1
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v3, Ljava/lang/Object;
+
+    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+
+    move-object v0, p0
+
+    move-object v4, p1
+
+    move-object v6, v5
+
+    invoke-direct/range {v0 .. v6}, Lcom/snapchat/android/model/StoryCollection;-><init>(Ljava/util/List;Ljava/util/List;Ljava/lang/Object;Ljavax/inject/Provider;Lbks;Lbkn;)V
+
+    .line 73
+    return-void
+.end method
+
+.method private E()Z
+    .locals 3
+
+    .prologue
+    .line 412
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 413
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;Z)Z
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    .line 414
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method private F()Z
+    .locals 3
+
+    .prologue
+    .line 424
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 425
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
     const/4 v2, 0x0
 
-    invoke-direct {p0, v0, v1, p1, v2}, Lcom/snapchat/android/model/StoryCollection;-><init>(Ljava/util/List;Ljava/util/List;Ljavax/inject/Provider;Lbjr;)V
+    invoke-static {v0, v2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;Z)Z
 
-    .line 69
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    .line 426
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method private G()J
+    .locals 3
+
+    .prologue
+    .line 602
+    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    .line 603
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    .line 604
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakl;
+
+    invoke-virtual {v0}, Lakl;->U()J
+
+    move-result-wide v0
+
+    monitor-exit v2
+
+    .line 607
+    :goto_0
+    return-wide v0
+
+    .line 606
+    :cond_0
+    monitor-exit v2
+
+    .line 607
+    const-wide/16 v0, -0x1
+
+    goto :goto_0
+
+    .line 606
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method private H()V
+    .locals 6
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 755
+    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    .line 756
+    const/4 v1, 0x3
+
+    :try_start_0
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
+
+    aput-object v4, v1, v3
+
+    const/4 v3, 0x1
+
+    iget-object v4, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v1, v3
+
+    const/4 v3, 0x2
+
+    iget-object v4, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v1, v3
+
+    move v1, v0
+
+    .line 758
+    :goto_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_0
+
+    .line 759
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakl;
+
+    .line 760
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    aput-object v0, v3, v4
+
+    .line 758
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 762
+    :cond_0
+    monitor-exit v2
+
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
 .method private static a(Ljava/util/List;)Ljava/util/LinkedHashMap;
@@ -477,18 +696,18 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;)",
             "Ljava/util/LinkedHashMap",
             "<",
             "Ljava/lang/String;",
-            "Lajr;",
+            "Lakl;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 454
+    .line 507
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -497,7 +716,7 @@
 
     invoke-direct {v1, v0}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 455
+    .line 508
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -513,10 +732,10 @@
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    .line 456
-    invoke-virtual {v0}, Lajr;->d()Ljava/lang/String;
+    .line 509
+    invoke-virtual {v0}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v3
 
@@ -524,27 +743,146 @@
 
     goto :goto_0
 
-    .line 458
+    .line 511
     :cond_0
     return-object v1
 .end method
 
-.method private a()V
+.method private static a(Ljava/util/List;Z)Z
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lakl;",
+            ">;Z)Z"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 430
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    .line 431
+    invoke-static {}, Lzz;->a()Lzz;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lzz;->b()I
+
+    move-result v3
+
+    sub-int v3, v0, v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
+
+    move-result v4
+
+    move v3, v0
+
+    .line 434
+    :goto_0
+    if-lt v3, v4, :cond_3
+
+    .line 435
+    invoke-interface {p0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakl;
+
+    .line 436
+    invoke-virtual {v0}, Lakl;->N()Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    .line 437
+    if-eqz p1, :cond_0
+
+    .line 440
+    invoke-virtual {v0}, Lakl;->S()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    move v0, v1
+
+    .line 450
+    :goto_1
+    return v0
+
+    .line 444
+    :cond_0
+    invoke-virtual {v0}, Lakl;->M()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    invoke-virtual {v0}, Lakl;->S()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    move v0, v2
+
+    .line 445
+    goto :goto_1
+
+    .line 434
+    :cond_2
+    add-int/lit8 v0, v3, -0x1
+
+    move v3, v0
+
+    goto :goto_0
+
+    .line 450
+    :cond_3
+    if-nez p1, :cond_4
+
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_4
+    move v0, v2
+
+    goto :goto_1
+.end method
+
+.method private c()V
     .locals 4
 
     .prologue
-    .line 157
+    .line 184
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 158
+    .line 185
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 159
+    .line 186
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -563,23 +901,23 @@
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    .line 160
-    invoke-virtual {v0}, Lajr;->z()Z
+    .line 187
+    invoke-virtual {v0}, Lakl;->A()Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 161
+    .line 188
     iget-object v3, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 164
+    .line 191
     :catchall_0
     move-exception v0
 
@@ -598,209 +936,23 @@
     return-void
 .end method
 
-.method private static a(Ljava/util/List;Z)Z
+.method private h(Lakl;)Lakl;
     .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lajr;",
-            ">;Z)Z"
-        }
-    .end annotation
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 377
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    .line 378
-    add-int/lit8 v3, v0, -0x3
-
-    add-int/lit8 v3, v3, 0x1
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
-
-    move-result v4
-
-    move v3, v0
-
-    .line 381
-    :goto_0
-    if-lt v3, v4, :cond_3
-
-    .line 382
-    invoke-interface {p0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lajr;
-
-    .line 383
-    invoke-virtual {v0}, Lajr;->M()Z
-
-    move-result v5
-
-    if-nez v5, :cond_2
-
-    .line 384
-    if-eqz p1, :cond_0
-
-    .line 387
-    invoke-virtual {v0}, Lajr;->R()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    move v0, v1
-
-    .line 397
-    :goto_1
-    return v0
-
-    .line 391
-    :cond_0
-    invoke-virtual {v0}, Lajr;->L()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    invoke-virtual {v0}, Lajr;->R()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    move v0, v2
-
-    .line 392
-    goto :goto_1
-
-    .line 381
-    :cond_2
-    add-int/lit8 v0, v3, -0x1
-
-    move v3, v0
-
-    goto :goto_0
-
-    .line 397
-    :cond_3
-    if-nez p1, :cond_4
-
-    move v0, v1
-
-    goto :goto_1
-
-    :cond_4
-    move v0, v2
-
-    goto :goto_1
-.end method
-
-.method private b()Ljava/util/List;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lajr;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 215
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 216
-    :try_start_0
-    new-instance v0, Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 217
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method private c()Z
-    .locals 3
-
-    .prologue
-    .line 359
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 360
-    :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;Z)Z
-
-    move-result v0
-
-    monitor-exit v1
-
-    return v0
-
-    .line 361
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method private h(Lajr;)Lajr;
-    .locals 6
-    .param p1    # Lajr;
-        .annotation build Lcgb;
+    .param p1    # Lakl;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 309
+    .line 357
     const/4 v0, 0x0
 
-    .line 310
+    .line 358
     iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 311
+    .line 359
     :try_start_0
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
@@ -821,14 +973,14 @@
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    .line 314
-    invoke-virtual {v0}, Lajr;->d()Ljava/lang/String;
+    .line 362
+    invoke-virtual {v0}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {p1}, Lajr;->d()Ljava/lang/String;
+    invoke-virtual {p1}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v5
 
@@ -840,17 +992,17 @@
 
     move-object v1, v0
 
-    .line 320
+    .line 368
     goto :goto_0
 
-    .line 321
+    .line 369
     :cond_0
     monitor-exit v2
 
-    .line 322
+    .line 370
     return-object v1
 
-    .line 321
+    .line 369
     :catchall_0
     move-exception v0
 
@@ -861,22 +1013,20 @@
     throw v0
 .end method
 
-.method private i()Z
-    .locals 3
+.method private o()I
+    .locals 2
 
     .prologue
-    .line 371
+    .line 320
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 372
+    .line 321
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;Z)Z
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
@@ -884,173 +1034,11 @@
 
     return v0
 
-    .line 373
+    .line 322
     :catchall_0
     move-exception v0
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method private j()J
-    .locals 2
-
-    .prologue
-    .line 568
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    .line 569
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lajr;
-
-    invoke-virtual {v0}, Lajr;->W()J
-
-    move-result-wide v0
-
-    .line 572
-    :goto_0
-    return-wide v0
-
-    :cond_0
-    const-wide/16 v0, -0x1
-
-    goto :goto_0
-.end method
-
-.method private k()V
-    .locals 8
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 699
-    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 700
-    :try_start_0
-    const-string v1, "StoryCollection"
-
-    const-string v3, "Collection for %s - unviewed:%d, total:%d"
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    iget-object v6, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x1
-
-    iget-object v6, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x2
-
-    iget-object v6, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    aput-object v6, v4, v5
-
-    invoke-static {v1, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    move v1, v0
-
-    .line 702
-    :goto_0
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_0
-
-    .line 703
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lajr;
-
-    .line 704
-    const-string v3, "StoryCollection"
-
-    const-string v4, "Unviewed #%d %s"
-
-    const/4 v5, 0x2
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    aput-object v0, v5, v6
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 702
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-
-    .line 706
-    :cond_0
-    monitor-exit v2
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1059,231 +1047,18 @@
 
 
 # virtual methods
-.method public final A()Lajr;
-    .locals 6
-
-    .prologue
-    .line 335
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 336
-    :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 337
-    const/4 v0, 0x0
-
-    monitor-exit v1
-
-    .line 343
-    :goto_0
-    return-object v0
-
-    .line 340
-    :cond_0
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, -0x1
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lajr;
-
-    .line 341
-    const-string v2, "StoryCollection"
-
-    const-string v3, "Returning story snap %s"
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    aput-object v0, v4, v5
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 342
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->k()V
-
-    .line 343
-    monitor-exit v1
-
-    goto :goto_0
-
-    .line 344
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final B()Z
-    .locals 3
-
-    .prologue
-    .line 353
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 354
-    :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;Z)Z
-
-    move-result v0
-
-    monitor-exit v1
-
-    return v0
-
-    .line 355
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final C()Z
-    .locals 3
-
-    .prologue
-    .line 365
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 366
-    :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;Z)Z
-
-    move-result v0
-
-    monitor-exit v1
-
-    return v0
-
-    .line 367
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final D()Z
-    .locals 3
-
-    .prologue
-    .line 602
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 603
-    :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lajr;
-
-    .line 604
-    invoke-virtual {v0}, Lajr;->aw()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    monitor-exit v1
-
-    .line 607
-    :goto_0
-    return v0
-
-    .line 606
-    :cond_1
-    monitor-exit v1
-
-    .line 607
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 606
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final E()Z
+.method public final A()Z
     .locals 4
 
     .prologue
     const/4 v1, 0x0
 
-    .line 617
+    .line 638
     iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 618
+    .line 639
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
@@ -1293,14 +1068,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 619
+    .line 640
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Lakp;
 
     if-nez v0, :cond_0
 
@@ -1309,15 +1084,15 @@
     :goto_0
     monitor-exit v2
 
-    .line 621
+    .line 642
     :goto_1
     return v0
 
-    .line 619
+    .line 640
     :cond_0
     iget-object v3, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
-    invoke-virtual {v0, v3}, Lajv;->a(Ljava/lang/String;)Lcom/snapchat/android/model/Friend;
+    invoke-virtual {v0, v3}, Lakp;->a(Ljava/lang/String;)Lcom/snapchat/android/model/Friend;
 
     move-result-object v0
 
@@ -1332,7 +1107,7 @@
 
     goto :goto_0
 
-    .line 621
+    .line 642
     :cond_2
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
@@ -1342,15 +1117,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    iget-boolean v0, v0, Lajr;->mIsShared:Z
+    iget-boolean v0, v0, Lakl;->mIsShared:Z
 
     monitor-exit v2
 
     goto :goto_1
 
-    .line 623
+    .line 644
     :catchall_0
     move-exception v0
 
@@ -1361,21 +1136,21 @@
     throw v0
 .end method
 
-.method public final F()Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
+.method public final B()Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
     .locals 1
 
     .prologue
-    .line 657
-    invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->E()Z
+    .line 678
+    invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->A()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 658
+    .line 679
     sget-object v0, Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;->LIVE:Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
 
-    .line 661
+    .line 682
     :goto_0
     return-object v0
 
@@ -1385,82 +1160,288 @@
     goto :goto_0
 .end method
 
-.method public final a(Landroid/content/Context;)Ljava/lang/String;
+.method public final C()Ljava/util/List;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lavx;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 697
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 699
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    .line 700
+    if-eqz v1, :cond_1
+
+    .line 701
+    invoke-virtual {v1}, Lbkn;->d()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 702
+    new-instance v2, Lavx;
+
+    iget-object v3, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    invoke-virtual {v3}, Lbkn;->c()Lbkm;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Lavx;-><init>(Lbkm;)V
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 704
+    :cond_0
+    invoke-virtual {v1}, Lbkn;->b()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 705
+    new-instance v1, Lavx;
+
+    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    invoke-virtual {v2}, Lbkn;->a()Lbkm;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Lavx;-><init>(Lbkm;)V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 709
+    :cond_1
+    return-object v0
+.end method
+
+.method public final D()Lavx;
+    .locals 2
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 714
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    if-nez v1, :cond_1
+
+    .line 724
+    :cond_0
+    :goto_0
+    return-object v0
+
+    .line 718
+    :cond_1
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    invoke-virtual {v1}, Lbkn;->d()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 719
+    new-instance v0, Lavx;
+
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    invoke-virtual {v1}, Lbkn;->c()Lbkm;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lavx;-><init>(Lbkm;)V
+
+    goto :goto_0
+
+    .line 720
+    :cond_2
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    invoke-virtual {v1}, Lbkn;->b()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 721
+    new-instance v0, Lavx;
+
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    invoke-virtual {v1}, Lbkn;->a()Lbkm;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lavx;-><init>(Lbkm;)V
+
+    goto :goto_0
+.end method
+
+.method public final a()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 348
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+    .line 290
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakp;
 
-    .line 349
-    invoke-virtual {v0, p1}, Lajr;->b(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lauk;->e(Ljava/lang/String;Lakp;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public a(ILajr;)Ljava/util/List;
+.method public final a(Landroid/content/Context;)Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 396
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 397
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    .line 398
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakl;
+
+    .line 399
+    invoke-virtual {v0, p1}, Lakl;->b(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    .line 402
+    :goto_0
+    return-object v0
+
+    .line 401
+    :cond_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 402
+    const-string v0, ""
+
+    goto :goto_0
+
+    .line 401
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public a(ILakl;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
-            "Lajr;",
+            "Lakl;",
             ")",
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 402
+    .line 455
     invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->f()Ljava/util/List;
 
     move-result-object v3
 
-    .line 403
+    .line 456
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v0
 
     add-int/lit8 v1, v0, -0x1
 
-    .line 404
+    .line 457
     if-eqz p2, :cond_1
 
     move v2, v1
 
-    .line 405
+    .line 458
     :goto_0
     if-ltz v2, :cond_1
 
-    .line 406
+    .line 459
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    invoke-virtual {v0, p2}, Lajr;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2}, Lakl;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 407
+    .line 460
     add-int/lit8 v0, v2, -0x1
 
-    .line 414
+    .line 467
     :goto_1
     const/4 v1, 0x0
 
@@ -1480,7 +1461,7 @@
 
     return-object v0
 
-    .line 405
+    .line 458
     :cond_0
     add-int/lit8 v0, v2, -0x1
 
@@ -1498,121 +1479,104 @@
     .locals 0
 
     .prologue
-    .line 136
+    .line 159
     iput p1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdIntervalIndex:I
 
-    .line 137
+    .line 160
     return-void
 .end method
 
-.method public final a(Lbhv;Ljava/util/List;Z)V
-    .locals 12
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbhv;",
-            "Ljava/util/List",
-            "<",
-            "Lajr;",
-            ">;Z)V"
-        }
-    .end annotation
+.method public final a(Lbiv;Z)V
+    .locals 11
 
     .prologue
-    .line 462
-    iget-object v5, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+    const/4 v4, 0x1
 
-    monitor-enter v5
+    const/4 v3, 0x0
 
-    .line 463
-    :try_start_0
-    const-string v2, "StoryCollection"
+    .line 515
+    iget-object v7, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
-    const-string v3, "Updating story %s with result from server (delta:%s, ads:%b)"
+    monitor-enter v7
 
+    .line 516
     const/4 v1, 0x3
 
-    new-array v4, v1, [Ljava/lang/Object;
+    :try_start_0
+    new-array v2, v1, [Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    invoke-virtual {p1}, Lbhv;->a()Ljava/lang/String;
+    invoke-virtual {p1}, Lbiv;->a()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v4, v1
+    aput-object v5, v2, v1
 
     const/4 v1, 0x1
 
-    invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v4, v1
+    aput-object v5, v2, v1
 
-    const/4 v6, 0x2
+    const/4 v5, 0x2
 
-    invoke-virtual {p1}, Lbhv;->d()Lbjr;
+    invoke-virtual {p1}, Lbiv;->d()Lbks;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    const/4 v1, 0x1
+    move v1, v4
 
     :goto_0
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    aput-object v1, v4, v6
+    aput-object v1, v2, v5
 
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 469
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbjr;
+    .line 522
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbks;
 
     if-nez v1, :cond_0
 
-    .line 471
-    invoke-virtual {p1}, Lbhv;->d()Lbjr;
+    .line 524
+    invoke-virtual {p1}, Lbiv;->d()Lbks;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbjr;
+    iput-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbks;
 
-    .line 474
+    .line 527
     :cond_0
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
     invoke-static {v1}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;)Ljava/util/LinkedHashMap;
 
-    move-result-object v6
+    move-result-object v8
 
-    .line 475
+    .line 528
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
 
     invoke-static {v1}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;)Ljava/util/LinkedHashMap;
 
-    move-result-object v7
+    move-result-object v9
 
-    .line 476
-    invoke-static {p2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;)Ljava/util/LinkedHashMap;
-
-    move-result-object v8
-
-    .line 479
+    .line 531
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 480
+    .line 532
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 483
-    invoke-virtual {p1}, Lbhv;->b()Ljava/util/List;
+    .line 535
+    invoke-virtual {p1}, Lbiv;->b()Ljava/util/List;
 
     move-result-object v1
 
@@ -1620,77 +1584,71 @@
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v5
 
-    invoke-direct {v2, v3}, Ljava/util/HashMap;-><init>(I)V
+    invoke-direct {v2, v5}, Ljava/util/HashMap;-><init>(I)V
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v5
 
     :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lbhw;
+    check-cast v1, Lbiw;
 
-    invoke-virtual {v1}, Lbhw;->a()Lbjg;
+    invoke-virtual {v1}, Lbiw;->a()Lbkh;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v4}, Lbjg;->a()Ljava/lang/String;
+    invoke-virtual {v6}, Lbkh;->a()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-interface {v2, v4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {v2, v6}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v10
 
-    if-nez v9, :cond_2
+    if-nez v10, :cond_2
 
-    invoke-interface {v2, v4, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2, v6, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 542
+    .line 576
     :catchall_0
     move-exception v1
 
-    monitor-exit v5
+    monitor-exit v7
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 
-    .line 463
     :cond_1
-    const/4 v1, 0x0
+    move v1, v3
 
+    .line 516
     goto :goto_0
 
-    .line 483
+    .line 535
     :cond_2
+    const/4 v1, 0x1
+
     :try_start_1
-    const-string v1, "StoryCollection"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const-string v9, "Found duplicated story ID in server response: %s"
+    const/4 v10, 0x0
 
-    const/4 v10, 0x1
-
-    new-array v10, v10, [Ljava/lang/Object;
-
-    const/4 v11, 0x0
-
-    aput-object v4, v10, v11
-
-    invoke-static {v1, v9, v10}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v6, v1, v10
 
     goto :goto_1
 
@@ -1699,349 +1657,249 @@
 
     move-result-object v1
 
-    .line 486
+    .line 538
     invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v9
+    move-result-object v10
 
     :cond_4
     :goto_2
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_10
-
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v0, v1
-
-    check-cast v0, Lbhw;
-
-    move-object v2, v0
-
-    .line 487
-    new-instance v1, Lajr;
-
-    invoke-virtual {v2}, Lbhw;->a()Lbjg;
-
-    move-result-object v3
-
-    invoke-direct {v1, v3}, Lajr;-><init>(Lbjg;)V
-
-    .line 490
-    invoke-virtual {v1}, Lajr;->aI()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    .line 491
-    const-string v2, "StoryCollection"
-
-    const-string v3, "Ignoring legacy ad slot %s from server response."
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v10, 0x0
-
-    aput-object v1, v4, v10
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    .line 495
-    :cond_5
-    invoke-virtual {v1}, Lajr;->d()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v3}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    .line 496
-    if-eqz v3, :cond_a
-
-    .line 497
-    iget-object v4, v1, Lajr;->mSponsoredStoryMetadata:Lbje;
-
-    .line 498
-    invoke-virtual {v1}, Lajr;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v6, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lajr;
-
-    .line 499
-    iput-object v4, v1, Lajr;->mSponsoredStoryMetadata:Lbje;
-
-    move-object v4, v1
-
-    .line 510
-    :goto_3
-    if-eqz p3, :cond_6
-
-    if-nez v3, :cond_7
-
-    .line 512
-    :cond_6
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 515
-    :cond_7
-    if-eqz p3, :cond_8
-
-    invoke-virtual {v4}, Lajr;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v7, v1}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_c
-
-    :cond_8
-    const/4 v1, 0x1
-
-    move v3, v1
-
-    .line 516
-    :goto_4
-    invoke-virtual {v4}, Lajr;->aw()Z
+    invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-eqz v1, :cond_d
 
-    .line 519
-    invoke-virtual {v2}, Lbhw;->b()Ljava/lang/Boolean;
+    invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v1}, Laud;->a(Ljava/lang/Boolean;)Z
+    move-object v0, v1
+
+    check-cast v0, Lbiw;
+
+    move-object v2, v0
+
+    .line 539
+    new-instance v1, Lakl;
+
+    invoke-virtual {v2}, Lbiw;->a()Lbkh;
+
+    move-result-object v5
+
+    invoke-direct {v1, v5}, Lakl;-><init>(Lbkh;)V
+
+    .line 542
+    invoke-virtual {v1}, Lakl;->aD()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5
+
+    .line 543
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    aput-object v1, v2, v5
+
+    goto :goto_2
+
+    .line 547
+    :cond_5
+    invoke-virtual {v1}, Lakl;->d()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v8, v5}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    .line 548
+    if-eqz v5, :cond_a
+
+    .line 549
+    invoke-virtual {v1}, Lakl;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v8, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lakl;
+
+    move-object v6, v1
+
+    .line 555
+    :goto_3
+    if-eqz p2, :cond_6
+
+    if-nez v5, :cond_7
+
+    .line 557
+    :cond_6
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 560
+    :cond_7
+    if-eqz p2, :cond_8
+
+    invoke-virtual {v6}, Lakl;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v9, v1}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_b
+
+    :cond_8
+    move v5, v4
+
+    .line 562
+    :goto_4
+    invoke-virtual {v2}, Lbiw;->b()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lavb;->a(Ljava/lang/Boolean;)Z
 
     move-result v1
 
     if-nez v1, :cond_9
 
-    .line 520
-    const/4 v1, 0x0
-
-    iput-boolean v1, v4, Lajr;->mHasBeenViewed:Z
-
-    .line 522
-    :cond_9
-    invoke-virtual {v4}, Lajr;->z()Z
+    invoke-virtual {v6}, Lakl;->A()Z
 
     move-result v1
 
+    if-eqz v1, :cond_c
+
+    :cond_9
+    move v1, v4
+
+    .line 563
+    :goto_5
+    iput-boolean v1, v6, Lakl;->mHasBeenViewed:Z
+
+    .line 564
     if-nez v1, :cond_4
 
-    if-eqz v3, :cond_4
+    if-eqz v5, :cond_4
 
-    .line 523
+    .line 565
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
 
-    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 501
+    .line 551
     :cond_a
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
-    iput-boolean v4, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
+    iput-boolean v6, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
 
-    .line 502
-    invoke-virtual {v1}, Lajr;->aE()V
+    .line 552
+    invoke-virtual {v1}, Lakl;->az()V
 
-    .line 503
-    invoke-virtual {v1}, Lajr;->d()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v8, v4}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_b
-
-    .line 504
-    invoke-interface {p2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    move-object v4, v1
+    move-object v6, v1
 
     goto :goto_3
 
-    .line 506
     :cond_b
-    const-string v4, "StoryCollection"
+    move v5, v3
 
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    const-string v11, "Story "
-
-    invoke-direct {v10, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Lajr;->d()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, " was found in database but not in the data model."
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    const/4 v11, 0x0
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    invoke-static {v4, v10, v11}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    move-object v4, v1
-
-    goto :goto_3
-
-    .line 515
-    :cond_c
-    const/4 v1, 0x0
-
-    move v3, v1
-
+    .line 560
     goto :goto_4
 
-    .line 527
-    :cond_d
-    invoke-virtual {v2}, Lbhw;->b()Ljava/lang/Boolean;
+    :cond_c
+    move v1, v3
 
-    move-result-object v1
-
-    invoke-static {v1}, Laud;->a(Ljava/lang/Boolean;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_e
-
-    invoke-virtual {v4}, Lajr;->z()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_f
-
-    :cond_e
-    const/4 v1, 0x1
-
-    .line 528
-    :goto_5
-    iput-boolean v1, v4, Lajr;->mHasBeenViewed:Z
-
-    .line 529
-    if-nez v1, :cond_4
-
-    if-eqz v3, :cond_4
-
-    .line 530
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_2
-
-    .line 527
-    :cond_f
-    const/4 v1, 0x0
-
+    .line 562
     goto :goto_5
 
-    .line 534
-    :cond_10
-    if-eqz p3, :cond_11
+    .line 568
+    :cond_d
+    if-eqz p2, :cond_e
 
-    .line 535
+    .line 569
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
-    invoke-virtual {v6}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v8}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
     move-result-object v2
 
     invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 536
+    .line 570
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
 
-    invoke-virtual {v7}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v9}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
     move-result-object v2
 
     invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 541
-    :cond_11
-    invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->v()V
+    .line 575
+    :cond_e
+    invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->r()V
 
-    .line 542
-    monitor-exit v5
+    .line 576
+    monitor-exit v7
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     return-void
 .end method
 
-.method public final a(Lbjr;)V
-    .locals 5
-    .param p1    # Lbjr;
-        .annotation build Lcgc;
+.method public final a(Lbkn;)V
+    .locals 0
+    .param p1    # Lbkn;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
-    .line 143
-    const-string v0, "StoryCollection"
+    .line 135
+    iput-object p1, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
 
-    const-string v1, "Setting ad metadata for %s to: %s"
+    .line 136
+    return-void
+.end method
 
-    const/4 v2, 0x2
+.method public final a(Lbks;)V
+    .locals 3
+    .param p1    # Lbks;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 
-    new-array v2, v2, [Ljava/lang/Object;
+    .prologue
+    .line 166
+    const/4 v0, 0x2
 
-    const/4 v3, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
-    iget-object v4, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
+    const/4 v1, 0x0
 
-    aput-object v4, v2, v3
+    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
-    const/4 v3, 0x1
+    aput-object v2, v0, v1
 
-    aput-object p1, v2, v3
+    const/4 v1, 0x1
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object p1, v0, v1
 
-    .line 144
-    iput-object p1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbjr;
+    .line 167
+    iput-object p1, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbks;
 
-    .line 145
+    .line 168
     return-void
 .end method
 
@@ -2049,23 +1907,23 @@
     .locals 0
 
     .prologue
-    .line 248
+    .line 282
     iput-object p1, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
-    .line 249
+    .line 283
     return-void
 .end method
 
-.method public a(Lajr;)Z
+.method public a(Lakl;)Z
     .locals 1
-    .param p1    # Lajr;
-        .annotation build Lcgb;
+    .param p1    # Lakl;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 430
-    invoke-direct {p0, p1}, Lcom/snapchat/android/model/StoryCollection;->h(Lajr;)Lajr;
+    .line 483
+    invoke-direct {p0, p1}, Lcom/snapchat/android/model/StoryCollection;->h(Lakl;)Lakl;
 
     move-result-object v0
 
@@ -2082,23 +1940,33 @@
     goto :goto_0
 .end method
 
-.method public b(Lajr;)I
+.method public b()I
+    .locals 1
+
+    .prologue
+    .line 152
+    iget v0, p0, Lcom/snapchat/android/model/StoryCollection;->mAdIntervalIndex:I
+
+    return v0
+.end method
+
+.method public b(Lakl;)I
     .locals 5
-    .param p1    # Lajr;
-        .annotation build Lcgb;
+    .param p1    # Lakl;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 437
+    .line 490
     const/4 v0, 0x0
 
-    .line 438
+    .line 491
     iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 439
+    .line 492
     :try_start_0
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
@@ -2119,14 +1987,14 @@
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    .line 442
-    invoke-virtual {v0}, Lajr;->d()Ljava/lang/String;
+    .line 495
+    invoke-virtual {v0}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lajr;->d()Ljava/lang/String;
+    invoke-virtual {p1}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v4
 
@@ -2136,22 +2004,22 @@
 
     if-nez v0, :cond_0
 
-    .line 443
+    .line 496
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
-    .line 448
+    .line 501
     goto :goto_0
 
-    .line 449
+    .line 502
     :cond_0
     monitor-exit v2
 
-    .line 450
+    .line 503
     return v1
 
-    .line 449
+    .line 502
     :catchall_0
     move-exception v0
 
@@ -2162,16 +2030,16 @@
     throw v0
 .end method
 
-.method public final b(Ljava/lang/String;)Lajr;
+.method public final b(Ljava/lang/String;)Lakl;
     .locals 4
 
     .prologue
-    .line 263
+    .line 309
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 264
+    .line 310
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
@@ -2190,10 +2058,10 @@
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    .line 265
-    invoke-virtual {v0}, Lajr;->d()Ljava/lang/String;
+    .line 311
+    invoke-virtual {v0}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2203,23 +2071,23 @@
 
     if-eqz v3, :cond_0
 
-    .line 266
+    .line 312
     monitor-exit v1
 
-    .line 270
+    .line 316
     :goto_0
     return-object v0
 
-    .line 269
+    .line 315
     :cond_1
     monitor-exit v1
 
-    .line 270
+    .line 316
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 269
+    .line 315
     :catchall_0
     move-exception v0
 
@@ -2230,18 +2098,18 @@
     throw v0
 .end method
 
-.method public c(Lajr;)Lajr;
+.method public c(Lakl;)Lakl;
     .locals 1
-    .param p1    # Lajr;
-        .annotation build Lcgb;
+    .param p1    # Lakl;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 305
-    invoke-direct {p0, p1}, Lcom/snapchat/android/model/StoryCollection;->h(Lajr;)Lajr;
+    .line 353
+    invoke-direct {p0, p1}, Lcom/snapchat/android/model/StoryCollection;->h(Lakl;)Lakl;
 
     move-result-object v0
 
@@ -2252,127 +2120,182 @@
     .locals 4
 
     .prologue
-    .line 36
+    .line 40
     check-cast p1, Lcom/snapchat/android/model/StoryCollection;
 
-    invoke-direct {p1}, Lcom/snapchat/android/model/StoryCollection;->j()J
+    invoke-direct {p1}, Lcom/snapchat/android/model/StoryCollection;->G()J
 
     move-result-wide v0
 
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->j()J
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->G()J
 
     move-result-wide v2
 
-    invoke-static {v0, v1, v2, v3}, Lbfu;->a(JJ)I
+    invoke-static {v0, v1, v2, v3}, Lbgu;->a(JJ)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public d()I
-    .locals 1
-
-    .prologue
-    .line 129
-    iget v0, p0, Lcom/snapchat/android/model/StoryCollection;->mAdIntervalIndex:I
-
-    return v0
-.end method
-
-.method public d(Lajr;)Lajr;
-    .locals 5
-    .param p1    # Lajr;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .annotation build Lcgc;
+.method public d()Lakl;
+    .locals 3
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 293
-    invoke-direct {p0, p1}, Lcom/snapchat/android/model/StoryCollection;->h(Lajr;)Lajr;
-
-    move-result-object v0
-
-    .line 294
-    const-string v1, "StoryCollection"
-
-    const-string v2, "getNextSnapToView returning %s. Supplied current snap is %s"
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    aput-object v0, v3, v4
-
-    const/4 v4, 0x1
-
-    aput-object p1, v3, v4
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 295
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->k()V
-
-    .line 296
-    return-object v0
-.end method
-
-.method public e()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lajr;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 190
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public final e(Lajr;)V
-    .locals 2
-
-    .prologue
-    .line 168
+    .line 234
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 169
+    .line 235
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    .line 236
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakl;
+
+    monitor-exit v1
+
+    .line 239
+    :goto_0
+    return-object v0
+
+    .line 238
+    :cond_0
+    monitor-exit v1
+
+    .line 239
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    .line 238
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public d(Lakl;)Lakl;
+    .locals 3
+    .param p1    # Lakl;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 341
+    invoke-direct {p0, p1}, Lcom/snapchat/android/model/StoryCollection;->h(Lakl;)Lakl;
+
+    move-result-object v0
+
+    .line 342
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object v0, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    .line 343
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->H()V
+
+    .line 344
+    return-object v0
+.end method
+
+.method public e()I
+    .locals 2
+
+    .prologue
+    .line 215
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 216
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    .line 217
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final e(Lakl;)V
+    .locals 2
+
+    .prologue
+    .line 195
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 196
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 170
-    invoke-virtual {p1}, Lajr;->z()Z
+    .line 197
+    invoke-virtual {p1}, Lakl;->A()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 171
+    .line 198
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
 
-    .line 172
+    .line 199
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 174
+    .line 201
     :cond_0
     monitor-exit v1
 
@@ -2391,22 +2314,22 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
     .param p1    # Ljava/lang/Object;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
     const/4 v0, 0x0
 
-    .line 673
+    .line 729
     if-nez p1, :cond_1
 
-    .line 677
+    .line 733
     :cond_0
     :goto_0
     return v0
 
-    .line 674
+    .line 730
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -2420,7 +2343,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 675
+    .line 731
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
     check-cast p1, Lcom/snapchat/android/model/StoryCollection;
@@ -2435,36 +2358,56 @@
 .end method
 
 .method public f()Ljava/util/List;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Ljava/util/List",
             "<",
-            "Lajr;",
+            "Lakl;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 203
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->b()Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final f(Lajr;)V
-    .locals 6
-
-    .prologue
-    .line 256
+    .line 246
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 257
+    .line 247
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    invoke-static {v0}, Ldt;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 248
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final f(Lakl;)V
+    .locals 4
+
+    .prologue
+    .line 302
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 303
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
 
@@ -2472,30 +2415,24 @@
 
     move-result v0
 
-    .line 258
-    const-string v2, "StoryCollection"
+    .line 304
+    const/4 v2, 0x2
 
-    const-string v3, "Removing %s from unviewed story snaps, %s"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x2
+    const/4 v3, 0x0
 
-    new-array v4, v4, [Ljava/lang/Object;
+    aput-object p1, v2, v3
 
-    const/4 v5, 0x0
-
-    aput-object p1, v4, v5
-
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    aput-object v0, v4, v5
+    aput-object v0, v2, v3
 
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 259
+    .line 305
     monitor-exit v1
 
     return-void
@@ -2510,23 +2447,23 @@
     throw v0
 .end method
 
-.method public final g(Lajr;)I
+.method public final g(Lakl;)I
     .locals 7
-    .param p1    # Lajr;
-        .annotation build Lcgb;
+    .param p1    # Lakl;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    .line 580
+    .line 615
     const-wide/16 v0, 0x0
 
-    .line 581
+    .line 616
     iget-object v4, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 582
+    .line 617
     :try_start_0
     iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
@@ -2547,14 +2484,14 @@
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    .line 585
-    invoke-virtual {v0}, Lajr;->d()Ljava/lang/String;
+    .line 620
+    invoke-virtual {v0}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lajr;->d()Ljava/lang/String;
+    invoke-virtual {p1}, Lakl;->d()Ljava/lang/String;
 
     move-result-object v6
 
@@ -2564,8 +2501,8 @@
 
     if-nez v1, :cond_0
 
-    .line 586
-    invoke-virtual {v0}, Lajr;->F()D
+    .line 621
+    invoke-virtual {v0}, Lakl;->G()D
 
     move-result-wide v0
 
@@ -2573,16 +2510,16 @@
 
     move-wide v2, v0
 
-    .line 591
+    .line 626
     goto :goto_0
 
-    .line 592
+    .line 627
     :cond_0
     monitor-exit v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 593
+    .line 628
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -2591,7 +2528,7 @@
 
     return v0
 
-    .line 592
+    .line 627
     :catchall_0
     move-exception v0
 
@@ -2604,15 +2541,15 @@
 .end method
 
 .method public g()Z
-    .locals 8
+    .locals 6
 
     .prologue
-    .line 232
+    .line 266
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 233
+    .line 267
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
@@ -2620,7 +2557,7 @@
 
     move-result-object v2
 
-    .line 234
+    .line 268
     :cond_0
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -2629,72 +2566,66 @@
 
     if-eqz v0, :cond_2
 
-    .line 235
+    .line 269
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
-    .line 236
-    invoke-virtual {v0}, Lajr;->aD()Z
+    .line 270
+    invoke-virtual {v0}, Lakl;->ay()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    iget-boolean v3, v0, Lajr;->mWas404ResponseReceived:Z
+    iget-boolean v3, v0, Lakl;->mWas404ResponseReceived:Z
 
     if-eqz v3, :cond_0
 
-    .line 237
+    .line 271
     :cond_1
-    const-string v3, "StoryCollection"
+    const/4 v3, 0x4
 
-    const-string v4, "Removing story snap %s from %s, expired:%b 404ed:%b"
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v5, 0x4
+    const/4 v4, 0x0
 
-    new-array v5, v5, [Ljava/lang/Object;
+    aput-object v0, v3, v4
 
-    const/4 v6, 0x0
+    const/4 v4, 0x1
 
-    aput-object v0, v5, v6
+    aput-object p0, v3, v4
 
-    const/4 v6, 0x1
+    const/4 v4, 0x2
 
-    aput-object p0, v5, v6
+    invoke-virtual {v0}, Lakl;->ay()Z
 
-    const/4 v6, 0x2
+    move-result v5
 
-    invoke-virtual {v0}, Lajr;->aD()Z
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result v7
+    move-result-object v5
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    aput-object v5, v3, v4
 
-    move-result-object v7
+    const/4 v4, 0x3
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    iget-boolean v0, v0, Lajr;->mWas404ResponseReceived:Z
+    iget-boolean v0, v0, Lakl;->mWas404ResponseReceived:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    aput-object v0, v5, v6
+    aput-object v0, v3, v4
 
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 239
+    .line 273
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 244
+    .line 278
     :catchall_0
     move-exception v0
 
@@ -2704,12 +2635,12 @@
 
     throw v0
 
-    .line 242
+    .line 276
     :cond_2
     :try_start_1
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->a()V
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->c()V
 
-    .line 243
+    .line 277
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -2723,21 +2654,23 @@
     return v0
 .end method
 
-.method public final h()Ljava/lang/String;
+.method public h()Z
     .locals 1
 
     .prologue
-    .line 252
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
+    .line 471
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->F()Z
 
-    return-object v0
+    move-result v0
+
+    return v0
 .end method
 
 .method public hashCode()I
     .locals 2
 
     .prologue
-    .line 682
+    .line 738
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -2746,7 +2679,7 @@
 
     add-int/lit16 v0, v0, 0x24d
 
-    .line 684
+    .line 740
     mul-int/lit8 v0, v0, 0x1f
 
     const-string v1, "StoryCollection"
@@ -2757,26 +2690,120 @@
 
     add-int/2addr v0, v1
 
-    .line 685
+    .line 741
     return v0
 .end method
 
-.method public m()Lauz;
-    .locals 5
+.method public i()Z
+    .locals 1
 
     .prologue
-    .line 665
-    invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->E()Z
+    .line 475
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->E()Z
 
     move-result v0
 
+    return v0
+.end method
+
+.method public final j()Lbkn;
+    .locals 1
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 128
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mThumbnails:Lbkn;
+
+    return-object v0
+.end method
+
+.method public final k()Lbks;
+    .locals 1
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    .line 144
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbks;
+
+    return-object v0
+.end method
+
+.method public final l()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 286
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final m()V
+    .locals 1
+
+    .prologue
+    .line 171
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
+
+    .line 172
+    return-void
+.end method
+
+.method public final n()Z
+    .locals 2
+
+    .prologue
+    .line 298
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
+
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakp;
+
+    invoke-static {v1, v0}, Lauk;->d(Ljava/lang/String;Lakp;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public p()Lavx;
+    .locals 5
+
+    .prologue
+    .line 686
+    invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->D()Lavx;
+
+    move-result-object v0
+
+    .line 687
     if-eqz v0, :cond_0
+
+    .line 693
+    :goto_0
+    return-object v0
+
+    .line 691
+    :cond_0
+    invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->A()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     sget-object v0, Lcom/snapchat/android/stories/StoriesThumbnailType;->OLDEST_SNAP_THUMBNAIL_WITHOUT_DECAY:Lcom/snapchat/android/stories/StoriesThumbnailType;
 
-    .line 668
-    :goto_0
-    new-instance v1, Lauz;
+    .line 693
+    :goto_1
+    new-instance v1, Lavx;
 
     invoke-virtual {p0}, Lcom/snapchat/android/model/StoryCollection;->f()Ljava/util/List;
 
@@ -2802,76 +2829,188 @@
 
     move-result-object v3
 
-    invoke-direct {v1, v0, v2, v3}, Lauz;-><init>(Lcom/snapchat/android/stories/StoriesThumbnailType;Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {v1, v0, v2, v3}, Lavx;-><init>(Lcom/snapchat/android/stories/StoriesThumbnailType;Ljava/util/List;Ljava/lang/String;)V
 
-    return-object v1
-
-    .line 665
-    :cond_0
-    sget-object v0, Lcom/snapchat/android/stories/StoriesThumbnailType;->SOME_SNAPS:Lcom/snapchat/android/stories/StoriesThumbnailType;
+    move-object v0, v1
 
     goto :goto_0
+
+    .line 691
+    :cond_1
+    sget-object v0, Lcom/snapchat/android/stories/StoriesThumbnailType;->SOME_SNAPS:Lcom/snapchat/android/stories/StoriesThumbnailType;
+
+    goto :goto_1
 .end method
 
-.method public n()Z
-    .locals 1
+.method public final q()Z
+    .locals 2
 
     .prologue
-    .line 418
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->i()Z
+    .line 175
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 176
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
+    if-eqz v0, :cond_0
+
+    .line 177
+    const/4 v0, 0x1
+
+    monitor-exit v1
+
+    .line 180
+    :goto_0
     return v0
+
+    .line 179
+    :cond_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 180
+    iget-boolean v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
+
+    goto :goto_0
+
+    .line 179
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method
 
-.method public o()Z
-    .locals 1
+.method public final r()V
+    .locals 2
 
     .prologue
-    .line 422
-    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->c()Z
+    .line 205
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 206
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+
+    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+
+    .line 207
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+
+    .line 208
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final s()I
+    .locals 2
+
+    .prologue
+    .line 224
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 225
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
+    monitor-exit v1
+
     return v0
+
+    .line 226
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public final s()Lbjr;
-    .locals 1
-    .annotation build Lcgc;
+.method public final t()Ljava/util/List;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lakl;",
+            ">;"
+        }
     .end annotation
 
     .prologue
-    .line 121
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mAdMetadata:Lbjr;
+    .line 255
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 256
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-static {v0}, Ldt;->a(Ljava/lang/Iterable;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    monitor-exit v1
 
     return-object v0
-.end method
 
-.method public final t()V
-    .locals 1
+    .line 257
+    :catchall_0
+    move-exception v0
 
-    .prologue
-    .line 148
-    const/4 v0, 0x1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iput-boolean v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
-
-    .line 149
-    return-void
+    throw v0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
     .prologue
-    .line 690
+    .line 746
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 691
+    .line 747
     :try_start_0
     new-instance v0, Lorg/apache/commons/lang3/builder/ToStringBuilder;
 
@@ -2919,7 +3058,7 @@
 
     return-object v0
 
-    .line 695
+    .line 751
     :catchall_0
     move-exception v0
 
@@ -2930,142 +3069,42 @@
     throw v0
 .end method
 
-.method public final u()Z
-    .locals 1
-
-    .prologue
-    .line 152
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    .line 153
-    :goto_0
-    return v0
-
-    :cond_0
-    iget-boolean v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserHasSeenInFeed:Z
-
-    goto :goto_0
-.end method
-
-.method public final v()V
+.method public final u()Ljava/lang/String;
     .locals 2
 
     .prologue
-    .line 178
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+    .line 294
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mUsername:Ljava/lang/String;
 
-    monitor-enter v1
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUserProvider:Ljavax/inject/Provider;
 
-    .line 179
-    :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+    move-result-object v0
 
-    .line 180
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+    check-cast v0, Lakp;
 
-    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+    invoke-static {v1, v0}, Lauk;->e(Ljava/lang/String;Lakp;)Ljava/lang/String;
 
-    .line 181
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final w()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lajr;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 199
-    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final x()Ljava/util/List;
+.method public final v()Lakl;
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lajr;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
-    .line 221
+    .line 330
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 222
-    :try_start_0
-    new-instance v0, Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
-
-    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 223
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final y()Lajr;
-    .locals 3
-
-    .prologue
-    .line 282
-    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 283
+    .line 331
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnaps:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->o()I
 
     move-result v2
 
@@ -3075,13 +3114,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lajr;
+    check-cast v0, Lakl;
 
     monitor-exit v1
 
     return-object v0
 
-    .line 284
+    .line 332
     :catchall_0
     move-exception v0
 
@@ -3092,16 +3131,16 @@
     throw v0
 .end method
 
-.method public final z()I
+.method public final w()I
     .locals 4
 
     .prologue
-    .line 329
+    .line 377
     iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 330
+    .line 378
     const/4 v0, 0x0
 
     :try_start_0
@@ -3127,7 +3166,149 @@
 
     return v0
 
-    .line 331
+    .line 379
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final x()Lakl;
+    .locals 4
+
+    .prologue
+    .line 383
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 384
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 385
+    const/4 v0, 0x0
+
+    monitor-exit v1
+
+    .line 391
+    :goto_0
+    return-object v0
+
+    .line 388
+    :cond_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    iget-object v2, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakl;
+
+    .line 389
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object v0, v2, v3
+
+    .line 390
+    invoke-direct {p0}, Lcom/snapchat/android/model/StoryCollection;->H()V
+
+    .line 391
+    monitor-exit v1
+
+    goto :goto_0
+
+    .line 392
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final y()Z
+    .locals 3
+
+    .prologue
+    .line 406
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 407
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;Z)Z
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    .line 408
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final z()Z
+    .locals 3
+
+    .prologue
+    .line 418
+    iget-object v1, p0, Lcom/snapchat/android/model/StoryCollection;->mStorySnapsMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 419
+    :try_start_0
+    iget-object v0, p0, Lcom/snapchat/android/model/StoryCollection;->mUnviewedStorySnaps:Ljava/util/List;
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2}, Lcom/snapchat/android/model/StoryCollection;->a(Ljava/util/List;Z)Z
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    .line 420
     :catchall_0
     move-exception v0
 

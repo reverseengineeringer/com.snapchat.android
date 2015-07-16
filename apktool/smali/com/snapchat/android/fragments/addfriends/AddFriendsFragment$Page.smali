@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 78
+    .line 80
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
     const-string v1, "PHONE_VERIFICATION"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;->PHONE_VERIFICATION:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
-    .line 79
+    .line 81
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
     const-string v1, "CONTACTS_ACCESS"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;->CONTACTS_ACCESS:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
-    .line 80
+    .line 82
     new-instance v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
     const-string v1, "ADD_FRIENDS"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;->ADD_FRIENDS:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
-    .line 76
+    .line 78
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 79
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 78
     const-class v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 78
     sget-object v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;->$VALUES:[Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$Page;->clone()Ljava/lang/Object;

@@ -5,12 +5,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentManager.BackStackEntry;
 import android.support.v4.app.FragmentTransaction;
-import ban;
-import bdw;
-import boh;
+import bbo;
+import bev;
+import bpi;
 import com.snapchat.android.fragments.ScAcceptTermsFragment;
 import com.snapchat.android.util.fragment.SnapchatFragment;
 import com.squareup.otto.Bus;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class ScAcceptTermsActivity
   extends SnapchatActivity
@@ -31,35 +33,37 @@ public class ScAcceptTermsActivity
   
   public void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
-    setContentView(2130968718);
+    setContentView(2130968720);
     paramBundle = mFragments;
-    if (paramBundle.findFragmentById(2131362591) == null)
+    if (paramBundle.findFragmentById(2131362590) == null)
     {
       ScAcceptTermsFragment localScAcceptTermsFragment = new ScAcceptTermsFragment();
-      paramBundle.beginTransaction().add(2131362591, localScAcceptTermsFragment, "ScAcceptTermsFragment").addToBackStack("ScAcceptTermsFragment").commit();
+      paramBundle.beginTransaction().add(2131362590, localScAcceptTermsFragment, "ScAcceptTermsFragment").addToBackStack("ScAcceptTermsFragment").commit();
     }
   }
   
   public void onPause()
   {
     super.onPause();
-    ban.a().b(this);
+    bbo.a().b(this);
   }
   
   public void onResume()
   {
     super.onResume();
-    ban.a().c(this);
+    bbo.a().c(this);
   }
   
-  @boh
-  public void onStartFragmentEvent(bdw parambdw)
+  @bpi
+  public void onStartFragmentEvent(bev parambev)
   {
-    parambdw = mFragmentToStart;
-    String str = parambdw.toString();
+    parambev = mFragmentToStart;
+    String str = parambev.toString();
     FragmentTransaction localFragmentTransaction = mFragments.beginTransaction();
-    localFragmentTransaction.add(2131362591, parambdw, str);
+    localFragmentTransaction.add(2131362590, parambev, str);
     localFragmentTransaction.addToBackStack(null);
     localFragmentTransaction.commit();
   }

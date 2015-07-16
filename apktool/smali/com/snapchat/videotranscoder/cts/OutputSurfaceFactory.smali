@@ -19,15 +19,15 @@
 .method public createOutputSurface(Lcom/snapchat/videotranscoder/utils/TranscodingResources;II[FLandroid/graphics/Bitmap;)Lcom/snapchat/videotranscoder/cts/OutputSurface;
     .locals 6
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p4    # [F
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p5    # Landroid/graphics/Bitmap;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -53,15 +53,15 @@
 .method public createOutputSurface(Lcom/snapchat/videotranscoder/utils/TranscodingResources;[FLandroid/graphics/Bitmap;)Lcom/snapchat/videotranscoder/cts/OutputSurface;
     .locals 1
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # [F
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p3    # Landroid/graphics/Bitmap;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

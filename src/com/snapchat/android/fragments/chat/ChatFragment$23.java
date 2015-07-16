@@ -4,13 +4,13 @@ import android.graphics.PointF;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
-import bgr;
+import bhr;
 import com.snapchat.android.ui.SpyRelativeLayout.a;
 import com.snapchat.android.ui.here.StreamView;
 import com.snapchat.android.util.CashUtils;
-import yd;
-import yd.1;
-import yd.a;
+import yz;
+import yz.1;
+import yz.a;
 
 final class ChatFragment$23
   implements SpyRelativeLayout.a
@@ -20,7 +20,7 @@ final class ChatFragment$23
   public final void a(MotionEvent paramMotionEvent)
   {
     if ((!CashUtils.a(a.f)) || ((a.g.b()) && (((StreamView)a.g.a()).e()))) {}
-    yd localyd;
+    yz localyz;
     label91:
     label198:
     label203:
@@ -30,11 +30,11 @@ final class ChatFragment$23
       do
       {
         return;
-        localyd = ChatFragment.c(a);
+        localyz = ChatFragment.c(a);
         i = paramMotionEvent.getActionMasked();
         if ((i == 1) || (i == 3))
         {
-          localyd.a();
+          localyz.a();
           return;
         }
         if (i == 2)
@@ -62,7 +62,7 @@ final class ChatFragment$23
               break;
             }
           }
-          localyd.a();
+          localyz.a();
           return;
         }
       } while ((i != 0) && (i != 5));
@@ -72,8 +72,8 @@ final class ChatFragment$23
       if ((paramMotionEvent.getPointerCount() > 1) && (a[1] == null)) {
         a[1] = new PointF(paramMotionEvent.getX(1), paramMotionEvent.getY(1));
       }
-    } while ((b.hasMessages(5)) || (paramMotionEvent.getPointerCount() < 2) || (d.v_()));
-    b.postDelayed(new yd.1(localyd), ViewConfiguration.getLongPressTimeout());
+    } while ((b.hasMessages(5)) || (paramMotionEvent.getPointerCount() < 2) || (d.u_()));
+    b.postDelayed(new yz.1(localyz), ViewConfiguration.getLongPressTimeout());
     b.sendEmptyMessage(5);
   }
 }

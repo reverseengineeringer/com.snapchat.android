@@ -1,23 +1,23 @@
 package com.snapchat.android.fragments.addfriends;
 
-import afd;
-import buo;
+import agd;
+import bvp;
 
 public enum AddFriendsSearchModel_Factory
-  implements buo<afd>
+  implements bvp<agd>
 {
   INSTANCE;
   
   private AddFriendsSearchModel_Factory() {}
   
-  public static buo<afd> create()
+  public static bvp<agd> create()
   {
     return INSTANCE;
   }
   
-  public final afd get()
+  public final agd get()
   {
-    return new afd();
+    return new agd();
   }
 }
 

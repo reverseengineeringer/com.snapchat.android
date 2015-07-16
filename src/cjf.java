@@ -1,184 +1,152 @@
-import java.io.Serializable;
-import java.util.Locale;
+import java.util.HashMap;
+import java.util.Map;
 
-public class cjf
-  extends cgh
-  implements Serializable
+public final class cjf
+  extends cip
 {
-  private final cgh a;
-  private final cgi b;
+  private static final cjf F = a(chl.a, 4);
+  private static final Map<chl, cjf[]> G = new HashMap();
   
-  public cjf(cgh paramcgh)
+  private cjf(chg paramchg, int paramInt)
   {
-    this(paramcgh, null);
+    super(paramchg, paramInt);
   }
   
-  public cjf(cgh paramcgh, cgi paramcgi)
+  public static cjf a(chl paramchl, int paramInt)
   {
-    if (paramcgh == null) {
-      throw new IllegalArgumentException("The field must not be null");
+    chl localchl = paramchl;
+    if (paramchl == null) {
+      localchl = chl.a();
     }
-    a = paramcgh;
-    cgi localcgi = paramcgi;
-    if (paramcgi == null) {
-      localcgi = paramcgh.a();
+    for (;;)
+    {
+      Object localObject1;
+      synchronized (G)
+      {
+        paramchl = (cjf[])G.get(localchl);
+        localObject1 = paramchl;
+        if (paramchl == null)
+        {
+          localObject1 = new cjf[7];
+          G.put(localchl, localObject1);
+        }
+        Object localObject2 = localObject1[(paramInt - 1)];
+        paramchl = (chl)localObject2;
+        if (localObject2 == null)
+        {
+          if (localchl == chl.a)
+          {
+            paramchl = new cjf(null, paramInt);
+            break label120;
+          }
+        }
+        else {
+          return paramchl;
+        }
+      }
+      paramchl = new cjf(cjh.a(a(chl.a, paramInt), localchl), paramInt);
+      label120:
+      localObject1[(paramInt - 1)] = paramchl;
     }
-    b = localcgi;
   }
   
-  public int a(long paramLong)
+  public static cjf b(chl paramchl)
   {
-    return a.a(paramLong);
+    return a(paramchl, 4);
   }
   
-  public final int a(Locale paramLocale)
+  final int N()
   {
-    return a.a(paramLocale);
+    return -292269054;
   }
   
-  public final long a(long paramLong, int paramInt)
+  final int O()
   {
-    return a.a(paramLong, paramInt);
+    return 292272992;
   }
   
-  public final long a(long paramLong1, long paramLong2)
+  final long Q()
   {
-    return a.a(paramLong1, paramLong2);
+    return 31557600000L;
   }
   
-  public final long a(long paramLong, String paramString, Locale paramLocale)
+  final long R()
   {
-    return a.a(paramLong, paramString, paramLocale);
+    return 15778800000L;
   }
   
-  public final cgi a()
+  final long S()
   {
-    return b;
+    return 2629800000L;
   }
   
-  public final String a(int paramInt, Locale paramLocale)
+  final long T()
   {
-    return a.a(paramInt, paramLocale);
+    return 31083663600000L;
   }
   
-  public final String a(long paramLong, Locale paramLocale)
+  public final chg a(chl paramchl)
   {
-    return a.a(paramLong, paramLocale);
+    chl localchl = paramchl;
+    if (paramchl == null) {
+      localchl = chl.a();
+    }
+    if (localchl == a()) {
+      return this;
+    }
+    return a(localchl, 4);
   }
   
-  public final String a(chb paramchb, Locale paramLocale)
+  protected final void a(cik.a parama)
   {
-    return a.a(paramchb, paramLocale);
+    if (a == null)
+    {
+      super.a(parama);
+      E = new ckr(this, E);
+      B = new ckr(this, B);
+    }
   }
   
-  public final int b(long paramLong1, long paramLong2)
+  final long b(int paramInt1, int paramInt2, int paramInt3)
   {
-    return a.b(paramLong1, paramLong2);
+    int i = paramInt1;
+    if (paramInt1 <= 0)
+    {
+      if (paramInt1 == 0) {
+        throw new chp(chj.s(), Integer.valueOf(paramInt1), null, null);
+      }
+      i = paramInt1 + 1;
+    }
+    return super.b(i, paramInt2, paramInt3);
   }
   
-  public long b(long paramLong, int paramInt)
+  public final chg b()
   {
-    return a.b(paramLong, paramInt);
+    return F;
   }
   
-  public final String b()
+  final boolean c(int paramInt)
   {
-    return b.a;
+    return (paramInt & 0x3) == 0;
   }
   
-  public final String b(int paramInt, Locale paramLocale)
+  final long d(int paramInt)
   {
-    return a.b(paramInt, paramLocale);
-  }
-  
-  public final String b(long paramLong, Locale paramLocale)
-  {
-    return a.b(paramLong, paramLocale);
-  }
-  
-  public final String b(chb paramchb, Locale paramLocale)
-  {
-    return a.b(paramchb, paramLocale);
-  }
-  
-  public final boolean b(long paramLong)
-  {
-    return a.b(paramLong);
-  }
-  
-  public final int c(long paramLong)
-  {
-    return a.c(paramLong);
-  }
-  
-  public final long c(long paramLong1, long paramLong2)
-  {
-    return a.c(paramLong1, paramLong2);
-  }
-  
-  public final boolean c()
-  {
-    return a.c();
-  }
-  
-  public final long d(long paramLong)
-  {
-    return a.d(paramLong);
-  }
-  
-  public final cgm d()
-  {
-    return a.d();
-  }
-  
-  public final long e(long paramLong)
-  {
-    return a.e(paramLong);
-  }
-  
-  public final cgm e()
-  {
-    return a.e();
-  }
-  
-  public final long f(long paramLong)
-  {
-    return a.f(paramLong);
-  }
-  
-  public final cgm f()
-  {
-    return a.f();
-  }
-  
-  public int g()
-  {
-    return a.g();
-  }
-  
-  public final long g(long paramLong)
-  {
-    return a.g(paramLong);
-  }
-  
-  public final int h()
-  {
-    return a.h();
-  }
-  
-  public final long h(long paramLong)
-  {
-    return a.h(paramLong);
-  }
-  
-  public final long i(long paramLong)
-  {
-    return a.i(paramLong);
-  }
-  
-  public String toString()
-  {
-    return "DateTimeField[" + b.a + ']';
+    int k = paramInt - 1968;
+    int i;
+    if (k <= 0) {
+      i = k + 3 >> 2;
+    }
+    for (;;)
+    {
+      long l = k;
+      return (i + l * 365L) * 86400000L - 62035200000L;
+      int j = k >> 2;
+      i = j;
+      if (!c(paramInt)) {
+        i = j + 1;
+      }
+    }
   }
 }
 

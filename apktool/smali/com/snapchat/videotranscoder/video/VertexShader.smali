@@ -11,7 +11,7 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

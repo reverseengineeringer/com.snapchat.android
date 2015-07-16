@@ -9,7 +9,9 @@ final class VideoFilterView$2
   
   public final void run()
   {
-    VideoFilterView.b(a).execute(VideoFilterView.a(a), new VideoFilterView.b(a, (byte)0), new VideoFilterView.a(a, (byte)0));
+    if (VideoFilterView.a(a) != null) {
+      VideoFilterView.b(a).execute(VideoFilterView.a(a), new VideoFilterView.b(a, (byte)0), new VideoFilterView.a(a, (byte)0));
+    }
   }
 }
 

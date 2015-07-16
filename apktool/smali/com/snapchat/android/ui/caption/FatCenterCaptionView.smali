@@ -182,40 +182,40 @@
     return-object v0
 .end method
 
-.method public onCaptionColorPickedEvent(Lapp;)V
+.method public onCaptionColorPickedEvent(Laqo;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 63
-    invoke-super {p0, p1}, Lcom/snapchat/android/ui/caption/FatCaptionView;->onCaptionColorPickedEvent(Lapp;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/ui/caption/FatCaptionView;->onCaptionColorPickedEvent(Laqo;)V
 
     .line 64
     return-void
 .end method
 
-.method public onEditCaptionEvent(Lbbh;)V
+.method public onEditCaptionEvent(Lbch;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 29
-    invoke-super {p0, p1}, Lcom/snapchat/android/ui/caption/FatCaptionView;->onEditCaptionEvent(Lbbh;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/ui/caption/FatCaptionView;->onEditCaptionEvent(Lbch;)V
 
     .line 30
     return-void
 .end method
 
-.method public onGlobalLayoutEvent(Lbbt;)V
+.method public onGlobalLayoutEvent(Lbct;)V
     .locals 0
-    .annotation runtime Lboh;
+    .annotation runtime Lbpi;
     .end annotation
 
     .prologue
     .line 24
-    invoke-super {p0, p1}, Lcom/snapchat/android/ui/caption/FatCaptionView;->onGlobalLayoutEvent(Lbbt;)V
+    invoke-super {p0, p1}, Lcom/snapchat/android/ui/caption/FatCaptionView;->onGlobalLayoutEvent(Lbct;)V
 
     .line 25
     return-void

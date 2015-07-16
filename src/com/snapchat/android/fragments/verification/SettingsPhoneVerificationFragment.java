@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.verification;
 
-import ajx;
+import akr;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -15,32 +15,32 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import auh;
-import avh;
-import ban;
-import bbm;
+import avf;
+import awf;
+import bbo;
 import bcm;
-import bet;
-import bkr;
-import boh;
+import bdm;
+import bfs;
+import bls;
+import bpi;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.squareup.otto.Bus;
-import ot;
-import pa;
+import pk;
+import pr;
 
 public class SettingsPhoneVerificationFragment
   extends PhoneVerificationFragment
 {
   private View a;
-  private bbm b;
+  private bcm b;
   private Button p;
-  private ajx q = ajx.a();
+  private akr q = akr.a();
   
   public SettingsPhoneVerificationFragment()
   {
-    if ((ajx.aF()) && (ajx.f())) {}
+    if ((akr.aE()) && (akr.f())) {}
     for (boolean bool = true;; bool = false)
     {
       n = bool;
@@ -49,13 +49,13 @@ public class SettingsPhoneVerificationFragment
   }
   
   @SuppressLint({"ValidFragment"})
-  public SettingsPhoneVerificationFragment(bbm parambbm)
+  public SettingsPhoneVerificationFragment(bcm parambcm)
   {
     this();
-    b = parambbm;
+    b = parambcm;
   }
   
-  protected final void a(bkr parambkr) {}
+  protected final void a(bls parambls) {}
   
   protected final WindowConfiguration.StatusBarDrawMode b()
   {
@@ -66,27 +66,27 @@ public class SettingsPhoneVerificationFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968698, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968699, paramViewGroup, false);
     q();
     p();
     u();
     n();
     o();
-    if (ajx.aF())
+    if (akr.aE())
     {
-      a = c(2131362435);
+      a = c(2131362433);
       a.setVisibility(0);
     }
-    c(2131361893).setOnClickListener(new View.OnClickListener()
+    c(2131361895).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        avh.a(getActivity(), SettingsPhoneVerificationFragment.a(SettingsPhoneVerificationFragment.this));
+        awf.a(getActivity(), SettingsPhoneVerificationFragment.a(SettingsPhoneVerificationFragment.this));
         getActivity().onBackPressed();
       }
     });
-    paramLayoutInflater = (CheckBox)c(2131362433);
-    paramLayoutInflater.setChecked(ajx.ag());
+    paramLayoutInflater = (CheckBox)c(2131362431);
+    paramLayoutInflater.setChecked(akr.af());
     paramLayoutInflater.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
     {
       public final void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
@@ -94,20 +94,20 @@ public class SettingsPhoneVerificationFragment
         if (paramAnonymousBoolean) {}
         for (paramAnonymousCompoundButton = "1";; paramAnonymousCompoundButton = "0")
         {
-          new pa("updateSearchableByPhoneNumber", new String[] { paramAnonymousCompoundButton }).executeOnExecutor(auh.NETWORK_EXECUTOR, new String[0]);
+          new pr("updateSearchableByPhoneNumber", new String[] { paramAnonymousCompoundButton }).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
           AnalyticsEvents.b(paramAnonymousBoolean);
           return;
         }
       }
     });
-    if (ajx.f()) {
-      g.setText(ajx.e());
+    if (akr.f()) {
+      g.setText(akr.e());
     }
     for (;;)
     {
       return mFragmentLayout;
-      if ((g.requestFocus()) && (!ajx.aF())) {
-        avh.f(e);
+      if ((g.requestFocus()) && (!akr.aE())) {
+        awf.f(e);
       }
     }
   }
@@ -115,19 +115,19 @@ public class SettingsPhoneVerificationFragment
   public void onPause()
   {
     super.onPause();
-    avh.a(getActivity(), mFragmentLayout);
+    awf.a(getActivity(), mFragmentLayout);
   }
   
-  @boh
-  public void onVerificationCodeReceivedEvent(bet parambet)
+  @bpi
+  public void onVerificationCodeReceivedEvent(bfs parambfs)
   {
-    super.onVerificationCodeReceivedEvent(parambet);
+    super.onVerificationCodeReceivedEvent(parambfs);
   }
   
   protected final void q()
   {
     super.q();
-    p = ((Button)c(2131362436));
+    p = ((Button)c(2131362434));
     p.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView) {}
@@ -149,12 +149,12 @@ public class SettingsPhoneVerificationFragment
     j.setVisibility(8);
     h.setVisibility(8);
     i.setVisibility(8);
-    ban.a().a(new bcm());
-    if (ajx.aF())
+    bbo.a().a(new bdm());
+    if (akr.aE())
     {
       a.setVisibility(8);
-      AlertDialogUtils.a(2131493582, e);
-      ajx.p(false);
+      AlertDialogUtils.a(2131493580, e);
+      akr.o(false);
       if ((b != null) && (b.mOnSuccessTask != null)) {
         b.mOnSuccessTask.execute(new String[0]);
       }

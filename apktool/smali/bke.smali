@@ -4,75 +4,108 @@
 
 
 # instance fields
-.field protected lastAddressBookUpdatedDate:Ljava/lang/Long;
+.field protected action:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "last_address_book_updated_date"
+        value = "action"
     .end annotation
 .end field
 
-.field protected results:Ljava/util/List;
+.field protected fallbackMessage:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "results"
+        value = "fallback_message"
     .end annotation
+.end field
 
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhu;",
-            ">;"
-        }
+.field protected friendActionStatus:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "friend_action_status"
+    .end annotation
+.end field
+
+.field protected logged:Ljava/lang/Boolean;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "logged"
+    .end annotation
+.end field
+
+.field protected message:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "message"
+    .end annotation
+.end field
+
+.field protected object:Lbiu;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "object"
+    .end annotation
+.end field
+
+.field protected username:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "username"
     .end annotation
 .end field
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 18
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 29
-    const-wide/16 v0, 0x0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbke;->lastAddressBookUpdatedDate:Ljava/lang/Long;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
+.method public final a()Ljava/lang/String;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lbhu;",
-            ">;"
-        }
-    .end annotation
 
     .prologue
-    .line 52
-    iget-object v0, p0, Lbke;->results:Ljava/util/List;
+    .line 54
+    iget-object v0, p0, Lbke;->action:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final b()Ljava/lang/Long;
+.method public final b()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 79
-    iget-object v0, p0, Lbke;->lastAddressBookUpdatedDate:Ljava/lang/Long;
+    .line 72
+    iget-object v0, p0, Lbke;->message:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 90
+    iget-object v0, p0, Lbke;->fallbackMessage:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final d()Lbiu;
+    .locals 1
+
+    .prologue
+    .line 135
+    iget-object v0, p0, Lbke;->object:Lbiu;
+
+    return-object v0
+.end method
+
+.method public final e()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 153
+    iget-object v0, p0, Lbke;->friendActionStatus:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -81,47 +114,87 @@
     .locals 3
 
     .prologue
-    .line 101
+    .line 198
     if-ne p1, p0, :cond_0
 
-    .line 102
+    .line 199
     const/4 v0, 0x1
 
-    .line 108
+    .line 205
     :goto_0
     return v0
 
-    .line 104
+    .line 201
     :cond_0
     instance-of v0, p1, Lbke;
 
     if-nez v0, :cond_1
 
-    .line 105
+    .line 202
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 107
+    .line 204
     :cond_1
     check-cast p1, Lbke;
 
-    .line 108
+    .line 205
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbke;->results:Ljava/util/List;
+    iget-object v1, p0, Lbke;->action:Ljava/lang/String;
 
-    iget-object v2, p1, Lbke;->results:Ljava/util/List;
+    iget-object v2, p1, Lbke;->action:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbke;->lastAddressBookUpdatedDate:Ljava/lang/Long;
+    iget-object v1, p0, Lbke;->message:Ljava/lang/String;
 
-    iget-object v2, p1, Lbke;->lastAddressBookUpdatedDate:Ljava/lang/Long;
+    iget-object v2, p1, Lbke;->message:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->fallbackMessage:Ljava/lang/String;
+
+    iget-object v2, p1, Lbke;->fallbackMessage:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->username:Ljava/lang/String;
+
+    iget-object v2, p1, Lbke;->username:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->object:Lbiu;
+
+    iget-object v2, p1, Lbke;->object:Lbiu;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->friendActionStatus:Ljava/lang/String;
+
+    iget-object v2, p1, Lbke;->friendActionStatus:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->logged:Ljava/lang/Boolean;
+
+    iget-object v2, p1, Lbke;->logged:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -138,18 +211,48 @@
     .locals 2
 
     .prologue
-    .line 93
+    .line 185
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbke;->results:Ljava/util/List;
+    iget-object v1, p0, Lbke;->action:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbke;->lastAddressBookUpdatedDate:Ljava/lang/Long;
+    iget-object v1, p0, Lbke;->message:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->fallbackMessage:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->username:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->object:Lbiu;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->friendActionStatus:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbke;->logged:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -166,7 +269,7 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 180
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

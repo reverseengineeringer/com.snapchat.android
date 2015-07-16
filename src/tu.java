@@ -1,32 +1,43 @@
-import javax.inject.Provider;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.model.chat.ChatConversation;
+import java.util.List;
 
 public final class tu
-  implements buj<tt>
+  extends tx
 {
-  private final Provider<ato> mGsonWrapperProvider;
-  private final Provider<ud> mNetworkInterfaceProvider;
+  public static final String CHAT_TYPING_PATH = "/bq/chat_typing";
+  private static final String TAG = "TellThemIAmTypingTask";
+  private ChatConversation mConversation;
   
-  static
+  public tu(@chc ChatConversation paramChatConversation)
   {
-    if (!tu.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    mConversation = paramChatConversation;
+    mConversation.mIsNotifyingRecipientAboutTyping = true;
+  }
+  
+  protected final String getPath()
+  {
+    return "/bq/chat_typing";
+  }
+  
+  public final void onResult(@chc us paramus)
+  {
+    super.onResult(paramus);
+    mConversation.mIsNotifyingRecipientAboutTyping = false;
+  }
+  
+  @ud
+  public final class a
+    extends qc
+  {
+    @SerializedName("recipient_usernames")
+    private String recipientUsernames;
+    
+    public a()
     {
-      $assertionsDisabled = bool;
-      return;
+      Object localObject;
+      recipientUsernames = mGsonWrapper.a(localObject);
     }
-  }
-  
-  private tu(Provider<ud> paramProvider, Provider<ato> paramProvider1)
-  {
-    assert (paramProvider != null);
-    mNetworkInterfaceProvider = paramProvider;
-    assert (paramProvider1 != null);
-    mGsonWrapperProvider = paramProvider1;
-  }
-  
-  public static buj<tt> a(Provider<ud> paramProvider, Provider<ato> paramProvider1)
-  {
-    return new tu(paramProvider, paramProvider1);
   }
 }
 

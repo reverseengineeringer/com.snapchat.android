@@ -1,52 +1,40 @@
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.AnalyticsEvents;
-import javax.inject.Provider;
-import javax.inject.Singleton;
+import android.os.Bundle;
 
-@Singleton
 public final class nj
+  extends nc
 {
-  private static final nj INSTANCE = new nj(ajv.UNSAFE_USER_PROVIDER);
-  private static final String TAG = "RecentStoryReplyAnalyticsManager";
-  public boolean mHasReplied = false;
-  public bcu mRecentStoryReplyEvent;
-  public final Provider<ajv> mUserProvider;
+  public static final String AD_PLACEMENT_PRODUCT_ID = "story";
+  public static final String POSITION_PARAM = "position";
+  public static final String STORY_AD_PAGE_IMPRESSION_DURATION_KEY = "story_ad_page_impression_duration";
+  private final int mPosition;
+  private final ni mStream;
   
-  private nj(Provider<ajv> paramProvider)
+  public nj(ni paramni, int paramInt)
   {
-    mUserProvider = paramProvider;
+    mPosition = paramInt;
+    mStream = paramni;
   }
   
-  public static nj a()
+  public final String a()
   {
-    return INSTANCE;
+    return mStream.mStoryAdStreamRequestInfo.mAdUnitId;
   }
   
-  public final boolean b()
+  public final String b()
   {
-    return mRecentStoryReplyEvent != null;
+    return mStream.b() + ":" + mPosition;
   }
   
-  public final void c()
+  public final Bundle c()
   {
-    if (mRecentStoryReplyEvent != null)
-    {
-      Timber.a("RecentStoryReplyAnalyticsManager", "markHasReplied true " + mRecentStoryReplyEvent.friendUsername, new Object[0]);
-      mHasReplied = true;
-    }
+    Bundle localBundle = mStream.mStoryAdStreamRequestInfo.mTargetingParams;
+    localBundle.putInt("position", mPosition);
+    return localBundle;
   }
   
-  public final void d()
+  public final String d()
   {
-    if (mRecentStoryReplyEvent == null)
-    {
-      Timber.a("RecentStoryReplyAnalyticsManager", "stopReplyingAndReport null event, nothing to do", new Object[0]);
-      return;
-    }
-    Timber.a("RecentStoryReplyAnalyticsManager", "stopReplyingAndReport REPORTING " + mHasReplied, new Object[0]);
-    AnalyticsEvents.f(mHasReplied);
-    mRecentStoryReplyEvent = null;
-    mHasReplied = false;
+    return "story_ad_page_impression_duration";
   }
 }
 

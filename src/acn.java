@@ -1,17 +1,31 @@
-abstract class acn
-  implements acq
+import javax.inject.Provider;
+
+public final class acn
+  implements bvk<acm>
 {
-  protected final ajx a;
-  protected final acd b;
-  protected final adf c;
-  protected final act d;
+  private final Provider<aum> b;
   
-  protected acn(ajx paramajx, adf paramadf, acd paramacd, act paramact)
+  static
   {
-    a = paramajx;
-    c = paramadf;
-    b = paramacd;
-    d = paramact;
+    if (!acn.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
+  }
+  
+  private acn(Provider<aum> paramProvider)
+  {
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    b = paramProvider;
+  }
+  
+  public static bvk<acm> a(Provider<aum> paramProvider)
+  {
+    return new acn(paramProvider);
   }
 }
 

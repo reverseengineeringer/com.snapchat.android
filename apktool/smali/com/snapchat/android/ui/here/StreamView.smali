@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lahl$a;
+.implements Laih$a;
 .implements Lcom/snapchat/android/ui/ChatCameraButton$a;
 
 
@@ -18,7 +18,7 @@
 # static fields
 .field protected static final j:Lcom/addlive/service/AddLiveService$VideoFrameMetadata;
 
-.field protected static final k:Laqg;
+.field protected static final k:Lare;
 
 
 # direct methods
@@ -34,11 +34,11 @@
     sput-object v0, Lcom/snapchat/android/ui/here/StreamView;->j:Lcom/addlive/service/AddLiveService$VideoFrameMetadata;
 
     .line 31
-    new-instance v0, Laqg;
+    new-instance v0, Lare;
 
-    invoke-direct {v0}, Laqg;-><init>()V
+    invoke-direct {v0}, Lare;-><init>()V
 
-    sput-object v0, Lcom/snapchat/android/ui/here/StreamView;->k:Laqg;
+    sput-object v0, Lcom/snapchat/android/ui/here/StreamView;->k:Lare;
 
     return-void
 .end method
@@ -96,22 +96,22 @@
     invoke-virtual {v0, p0}, Lcom/addlive/service/AddLiveService$VideoFrameMetadata;->setInfo(Landroid/hardware/Camera$CameraInfo;)V
 
     .line 143
-    sget-object v0, Lcom/snapchat/android/ui/here/StreamView;->k:Laqg;
+    sget-object v0, Lcom/snapchat/android/ui/here/StreamView;->k:Lare;
 
-    invoke-virtual {v0}, Laqg;->b()V
+    invoke-virtual {v0}, Lare;->b()V
 
     .line 144
     return-void
 .end method
 
-.method public static setCameraPreviewSize(Laue;)V
+.method public static setCameraPreviewSize(Lavc;)V
     .locals 2
 
     .prologue
     .line 147
     sget-object v0, Lcom/snapchat/android/ui/here/StreamView;->j:Lcom/addlive/service/AddLiveService$VideoFrameMetadata;
 
-    invoke-virtual {p0}, Laue;->a()I
+    invoke-virtual {p0}, Lavc;->a()I
 
     move-result v1
 
@@ -120,16 +120,16 @@
     .line 148
     sget-object v0, Lcom/snapchat/android/ui/here/StreamView;->j:Lcom/addlive/service/AddLiveService$VideoFrameMetadata;
 
-    invoke-virtual {p0}, Laue;->b()I
+    invoke-virtual {p0}, Lavc;->b()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/addlive/service/AddLiveService$VideoFrameMetadata;->setHeight(I)V
 
     .line 150
-    sget-object v0, Lcom/snapchat/android/ui/here/StreamView;->k:Laqg;
+    sget-object v0, Lcom/snapchat/android/ui/here/StreamView;->k:Lare;
 
-    invoke-virtual {v0}, Laqg;->b()V
+    invoke-virtual {v0}, Lare;->b()V
 
     .line 151
     return-void
@@ -139,11 +139,11 @@
 # virtual methods
 .method public abstract a(Landroid/app/Activity;Lcom/snapchat/android/ui/here/StreamView$a;)V
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/android/ui/here/StreamView$a;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method
@@ -156,15 +156,15 @@
 
 .method public abstract b(Lcom/snapchat/android/ui/here/DisconnectReason;)V
     .param p1    # Lcom/snapchat/android/ui/here/DisconnectReason;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 .end method
 
-.method public abstract b(Z)V
+.method public abstract c()V
 .end method
 
-.method public abstract c()V
+.method public abstract c(Z)V
 .end method
 
 .method public abstract d()Z
@@ -173,7 +173,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 0
     .param p1    # Landroid/graphics/Canvas;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -188,6 +188,9 @@
 .method public abstract e()Z
 .end method
 
+.method public abstract getPresence()Z
+.end method
+
 .method public onAttachedToWindow()V
     .locals 1
 
@@ -196,7 +199,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     .line 59
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -206,8 +209,8 @@
     return-void
 .end method
 
-.method public abstract onCameraReadyEvent(Lbao;)V
-    .annotation runtime Lboh;
+.method public abstract onCameraReadyEvent(Lbbp;)V
+    .annotation runtime Lbpi;
     .end annotation
 .end method
 
@@ -219,7 +222,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
     .line 65
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
@@ -246,7 +249,7 @@
 
 .method public abstract setCanStreamVideo(ZLcom/snapchat/android/ui/here/DisconnectReason;)V
     .param p2    # Lcom/snapchat/android/ui/here/DisconnectReason;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 .end method

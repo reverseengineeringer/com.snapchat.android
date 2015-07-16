@@ -1,7 +1,7 @@
 package com.snapchat.android.preview;
 
-import ajq;
-import ajx;
+import akk;
+import akr;
 import android.app.AlertDialog;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,12 +14,12 @@ final class SnapPreviewFragment$2
   
   public final void onClick(View paramView)
   {
-    if (ajx.J())
+    if (akr.J())
     {
       SnapPreviewFragment.n(a).show();
       return;
     }
-    if (ajq.a().d().size() > 1)
+    if (akk.a().d().size() > 1)
     {
       SnapPreviewFragment.o(a);
       return;

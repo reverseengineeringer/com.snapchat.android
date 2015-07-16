@@ -1,48 +1,98 @@
-import android.hardware.Camera;
-import android.hardware.Camera.CameraInfo;
+import android.animation.Animator;
+import android.animation.Animator.AnimatorListener;
+import android.animation.AnimatorSet;
+import android.os.SystemClock;
+import android.support.v4.util.ArrayMap;
+import android.view.View;
+import android.widget.TextView;
+import com.snapchat.android.model.chat.ChatConversation;
+import java.util.Map;
 
 public final class vk
+  extends vn<vs>
 {
-  public static double a(@cgb xh paramxh)
+  final Map<String, aqg> a = new ArrayMap();
+  private final bga b;
+  private final bhk c;
+  private final Map<String, Long> d = new ArrayMap();
+  
+  public vk(bga parambga)
   {
-    return heightPixels / widthPixels;
+    this(parambga, new bhk());
   }
   
-  public static int a(int paramInt1, int paramInt2)
+  private vk(bga parambga, bhk parambhk)
   {
-    if (paramInt1 > paramInt2) {
-      return paramInt2;
-    }
-    if (paramInt1 < 0) {
-      return 0;
-    }
-    return paramInt1;
+    b = parambga;
+    c = parambhk;
   }
   
-  @cgc
-  public static Camera a(int paramInt)
+  private void a(final vs paramvs)
   {
-    try
+    final String str = n.mId;
+    final Object localObject1 = l;
+    final TextView localTextView = m;
+    d.put(str, Long.valueOf(SystemClock.elapsedRealtime() + 3000L));
+    Object localObject2 = (aqg)a.get(str);
+    if ((localObject2 != null) && (a.isStarted()))
     {
-      Camera localCamera = Camera.open(paramInt);
-      return localCamera;
+      ((aqg)localObject2).c();
+      paramvs.q();
+      localObject1 = new aqh((View)localObject1, localTextView, 3000L);
+      o = ((aqg)localObject1);
+      a.put(str, localObject1);
+      a.start();
+      return;
     }
-    catch (RuntimeException localRuntimeException) {}
-    return null;
+    localObject2 = new aqi((View)localObject1, localTextView);
+    localObject1 = new awh()
+    {
+      public final void onAnimationEnd(Animator paramAnonymousAnimator)
+      {
+        paramAnonymousAnimator = new aqh(localObject1, localTextView, 3000L);
+        paramvso = paramAnonymousAnimator;
+        a.put(str, paramAnonymousAnimator);
+        a.start();
+      }
+    };
+    a.addListener((Animator.AnimatorListener)localObject1);
+    o = ((aqg)localObject2);
+    a.put(str, localObject2);
+    a.start();
   }
   
-  public static Camera.CameraInfo[] a()
+  private void b(vs paramvs)
   {
-    int j = Camera.getNumberOfCameras();
-    Camera.CameraInfo[] arrayOfCameraInfo = new Camera.CameraInfo[j];
-    int i = 0;
-    while (i < j)
+    String str = n.mId;
+    Object localObject = (Long)d.get(str);
+    Long localLong;
+    if (localObject != null)
     {
-      arrayOfCameraInfo[i] = new Camera.CameraInfo();
-      Camera.getCameraInfo(i, arrayOfCameraInfo[i]);
-      i += 1;
+      localLong = Long.valueOf(SystemClock.elapsedRealtime());
+      if (((Long)localObject).longValue() < localLong.longValue()) {
+        paramvs.r();
+      }
     }
-    return arrayOfCameraInfo;
+    else
+    {
+      return;
+    }
+    TextView localTextView1 = l;
+    TextView localTextView2 = m;
+    aqg localaqg = (aqg)a.get(str);
+    if (localaqg != null) {
+      localaqg.c();
+    }
+    paramvs.q();
+    localObject = new aqh(localTextView1, localTextView2, ((Long)localObject).longValue() - localLong.longValue());
+    o = ((aqg)localObject);
+    a.put(str, localObject);
+    a.start();
+  }
+  
+  public final void a()
+  {
+    d.clear();
   }
 }
 

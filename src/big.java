@@ -1,35 +1,38 @@
 import com.google.gson.annotations.SerializedName;
+import java.util.Locale;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class big
-  extends bgx
+public final class big
 {
-  @SerializedName("dtoken1i")
-  protected String dtoken1i;
-  @SerializedName("dtoken1v")
-  protected String dtoken1v;
-  @SerializedName("message")
-  protected String message;
-  @SerializedName("message_format")
-  protected String messageFormat;
-  @SerializedName("phone_number")
-  protected String phoneNumber;
-  @SerializedName("pre_auth_token")
-  protected String preAuthToken;
-  @SerializedName("recovery_code_used")
-  protected Boolean recoveryCodeUsed;
-  @SerializedName("status")
-  protected Integer status;
-  @SerializedName("two_fa_needed")
-  protected Boolean twoFaNeeded;
-  @SerializedName("username")
-  protected String username;
-  @SerializedName("verification_needed")
-  protected bkr verificationNeeded;
+  @SerializedName("android_href")
+  protected String androidHref;
+  @SerializedName("href")
+  protected String href;
+  @SerializedName("ios_href")
+  protected String iosHref;
+  @SerializedName("itunes_id")
+  protected String itunesId;
+  @SerializedName("type")
+  protected String type;
   
-  public boolean equals(Object paramObject)
+  public final big.a a()
+  {
+    return big.a.a(type);
+  }
+  
+  public final String b()
+  {
+    return androidHref;
+  }
+  
+  public final String c()
+  {
+    return href;
+  }
+  
+  public final boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -38,77 +41,45 @@ public class big
       return false;
     }
     paramObject = (big)paramObject;
-    return new EqualsBuilder().append(message, message).append(status, status).append(dtoken1i, dtoken1i).append(dtoken1v, dtoken1v).append(twoFaNeeded, twoFaNeeded).append(username, username).append(messageFormat, messageFormat).append(phoneNumber, phoneNumber).append(preAuthToken, preAuthToken).append(recoveryCodeUsed, recoveryCodeUsed).append(verificationNeeded, verificationNeeded).isEquals();
+    return new EqualsBuilder().append(type, type).append(iosHref, iosHref).append(itunesId, itunesId).append(androidHref, androidHref).append(href, href).isEquals();
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    return new HashCodeBuilder().append(message).append(status).append(dtoken1i).append(dtoken1v).append(twoFaNeeded).append(username).append(messageFormat).append(phoneNumber).append(preAuthToken).append(recoveryCodeUsed).append(verificationNeeded).toHashCode();
+    return new HashCodeBuilder().append(type).append(iosHref).append(itunesId).append(androidHref).append(href).toHashCode();
   }
   
-  public final String l()
-  {
-    return message;
-  }
-  
-  public final Integer m()
-  {
-    return status;
-  }
-  
-  public final String n()
-  {
-    return dtoken1i;
-  }
-  
-  public final String o()
-  {
-    return dtoken1v;
-  }
-  
-  public final Boolean p()
-  {
-    return twoFaNeeded;
-  }
-  
-  public final String q()
-  {
-    return username;
-  }
-  
-  public final String r()
-  {
-    return messageFormat;
-  }
-  
-  public final String s()
-  {
-    return phoneNumber;
-  }
-  
-  public final String t()
-  {
-    return preAuthToken;
-  }
-  
-  public String toString()
+  public final String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }
   
-  public final Boolean u()
+  public static enum a
   {
-    return recoveryCodeUsed;
-  }
-  
-  public final bkr v()
-  {
-    return verificationNeeded;
-  }
-  
-  public final boolean w()
-  {
-    return verificationNeeded != null;
+    LINK("link"),  UNRECOGNIZED_VALUE("UNRECOGNIZED_VALUE");
+    
+    private final String value;
+    
+    private a(String paramString)
+    {
+      value = paramString;
+    }
+    
+    public static a a(String paramString)
+    {
+      try
+      {
+        paramString = valueOf(paramString.toUpperCase(Locale.US));
+        return paramString;
+      }
+      catch (Exception paramString) {}
+      return UNRECOGNIZED_VALUE;
+    }
+    
+    public final String toString()
+    {
+      return value;
+    }
   }
 }
 

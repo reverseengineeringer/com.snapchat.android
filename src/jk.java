@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class jk
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "PROFILE_MY_FRIENDS_PAGE_VIEW";
+  private final String eventName = "PROFILE_MY_CONTACTS_CONTACT_PERMISSION_DENY";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_MY_FRIENDS_PAGE_VIEW");
+    localHashMap.put("event_name", "PROFILE_MY_CONTACTS_CONTACT_PERMISSION_DENY");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

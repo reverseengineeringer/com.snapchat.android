@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 652
+    .line 673
     new-instance v0, Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
 
     const-string v1, "RECENT_UPDATES"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;->RECENT_UPDATES:Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
 
-    .line 653
+    .line 674
     new-instance v0, Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
 
     const-string v1, "LIVE"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;->LIVE:Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
 
-    .line 651
+    .line 672
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 651
+    .line 672
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 651
+    .line 672
     const-class v0, Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -111,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 651
+    .line 672
     sget-object v0, Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;->$VALUES:[Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/model/StoryCollection$StoriesFragmentRecentsPriority;->clone()Ljava/lang/Object;

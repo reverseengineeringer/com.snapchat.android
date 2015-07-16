@@ -1,73 +1,48 @@
-import com.snapchat.android.Timber;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import com.snapchat.android.SnapchatApplication;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
+import javax.inject.Inject;
 
 public abstract class tg
-  extends th
+  extends ul
 {
-  public static final int DEFAULT_RETRIES = 2;
-  public static final um EXPONENTIAL_STRATEGY = new um();
-  private static final String TAG = "BaseRetriableScRequestTask";
-  protected static ScheduledExecutorService sScheduledExecutor;
-  @cgc
-  private final un mBackoffStrategy;
-  protected int mCurrentRetryAttempt = 0;
-  protected boolean mIsExecutedAsynchronous;
-  private final int mNumRetries = 2;
+  @Inject
+  protected yj mCashAuthManager;
+  @Inject
+  protected ub mEntityFactory;
+  @Inject
+  protected va mSquareOkHttpClientFactory;
   
-  public tg()
+  protected tg()
   {
-    this(null, (byte)0);
+    SnapchatApplication.b().c().a(this);
+    mNetworkInterface = new ut(mEntityFactory, mSquareOkHttpClientFactory);
   }
   
-  public tg(@cgc un paramun)
-  {
-    this(paramun, (byte)0);
-  }
+  protected abstract String a();
   
-  private tg(@cgc un paramun, byte paramByte)
+  public Map<String, String> getHeaders(Object paramObject)
   {
-    mBackoffStrategy = paramun;
-    sScheduledExecutor = auh.SCHEDULING_EXECUTOR;
-  }
-  
-  public final void a(@cgb uc paramuc)
-  {
-    if ((mIsExecutedAsynchronous) && (!paramuc.d()) && (mCurrentRetryAttempt < mNumRetries) && (mResponseCode != 401))
-    {
-      mCurrentRetryAttempt += 1;
-      if (mBackoffStrategy == null) {
-        break label138;
-      }
+    Object localObject = mCashAuthManager.a();
+    if (localObject == null) {
+      throw new RuntimeException("We shouldn't ever be creating a SquareRequestTask with a null CashAuthToken!" + getClass().getName() + " " + getUrl());
     }
-    label138:
-    for (long l = mBackoffStrategy.a(mCurrentRetryAttempt);; l = 0L)
-    {
-      Timber.b("NETWORK-LOG: %s is failed to complete. Going for %d attempt, backingoff for %d seconds", getClass().getSimpleName(), new Object[] { Integer.valueOf(mCurrentRetryAttempt), Long.valueOf(l) });
-      if (l > 0L)
-      {
-        sScheduledExecutor.schedule(new Runnable()
-        {
-          public final void run()
-          {
-            Timber.b("BaseRetriableScRequestTask", "NETWORK-LOG: %s is executing for %d attempt", new Object[] { getClass().getSimpleName(), Integer.valueOf(mCurrentRetryAttempt) });
-            f();
-          }
-        }, l, TimeUnit.SECONDS);
-        return;
-      }
-      f();
-      return;
-      super.a(paramuc);
-      return;
+    paramObject = new TreeMap();
+    ((Map)paramObject).put("Authorization", "Bearer " + a);
+    ((Map)paramObject).put("Accept", "application/json; charset=utf-8");
+    ((Map)paramObject).put("Content-Type", "application/json");
+    localObject = ayy.a().c(false);
+    if (localObject != null) {
+      ((Map)paramObject).put("X-SQ-DEVICE-ID", localObject);
     }
+    return (Map<String, String>)paramObject;
   }
   
-  public final void f()
+  public String getUrl()
   {
-    mIsExecutedAsynchronous = true;
-    Timber.b("BaseRetriableScRequestTask", "NETWORK-LOG: %s is executing for first attempt", new Object[] { getClass().getSimpleName(), Integer.valueOf(mCurrentRetryAttempt) });
-    super.f();
+    bgr.a();
+    return avz.a(Arrays.asList(new String[] { bgr.e(), "v1/me", a() }), "/");
   }
 }
 

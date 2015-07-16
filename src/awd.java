@@ -1,25 +1,10 @@
-import android.os.AsyncTask;
+import java.math.BigDecimal;
 
 public final class awd
-  extends AsyncTask<String, Void, avo>
 {
-  private final awf mBitmapDecoder;
-  private final avy[] mCallbacks;
-  public final avx mRequest;
-  
-  public awd(@cgb avx paramavx, awf paramawf, @cgb avy... paramVarArgs)
+  public static double a(long paramLong)
   {
-    mRequest = paramavx;
-    mBitmapDecoder = paramawf;
-    mCallbacks = paramVarArgs;
-  }
-  
-  public static final class a
-  {
-    public static awd a(avx paramavx, awf paramawf, avy[] paramArrayOfavy)
-    {
-      return new awd(paramavx, paramawf, paramArrayOfavy);
-    }
+    return new BigDecimal(paramLong).divide(new BigDecimal(1000), 1, 4).doubleValue();
   }
 }
 

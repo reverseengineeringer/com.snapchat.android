@@ -298,7 +298,7 @@
 
     sget-object v1, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE:Ljavax/microedition/khronos/egl/EGLSurface;
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_6
 
     :cond_5
     iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
@@ -309,123 +309,8 @@
 
     const/16 v1, 0x300b
 
-    if-ne v0, v1, :cond_8
-
-    const-string v0, "GLTextureView"
-
-    const-string v1, "createWindowSurface returned EGL_BAD_NATIVE_WINDOW."
-
-    new-array v2, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 95
-    :cond_6
-    iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->this$0:Lcom/snapchat/android/util/gl/GlTextureView;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/util/gl/GlTextureView;->a()V
-
-    .line 97
-    :goto_1
-    iget-boolean v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mFinished:Z
-
-    if-nez v0, :cond_b
-
-    .line 99
-    iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->this$0:Lcom/snapchat/android/util/gl/GlTextureView;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/util/gl/GlTextureView;->b()V
-
-    .line 101
-    iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
-
-    iget-object v1, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
-
-    iget-object v2, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
-
-    invoke-interface {v0, v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglSwapBuffers(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
-
-    .line 102
-    iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
-
-    invoke-interface {v0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
-
-    move-result v0
-
-    const/16 v1, 0x3000
-
     if-eq v0, v1, :cond_7
 
-    const-string v1, "GLTextureView"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "EGL error = 0x"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v2, v7, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 105
-    :cond_7
-    monitor-enter p0
-
-    .line 106
-    :goto_2
-    :try_start_0
-    iget-boolean v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mRenderRequested:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez v0, :cond_a
-
-    .line 108
-    :try_start_1
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_2
-
-    .line 109
-    :catch_0
-    move-exception v0
-
-    .line 110
-    :try_start_2
-    const-string v1, "GLTextureView"
-
-    invoke-static {v1, v0}, Lcom/snapchat/android/Timber;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_2
-
-    .line 114
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v0
-
-    .line 94
-    :cond_8
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -450,7 +335,7 @@
 
     throw v1
 
-    :cond_9
+    :cond_6
     iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v1, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -465,7 +350,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -497,22 +382,87 @@
 
     throw v0
 
-    .line 113
-    :cond_a
+    .line 95
+    :cond_7
+    iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->this$0:Lcom/snapchat/android/util/gl/GlTextureView;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/util/gl/GlTextureView;->a()V
+
+    .line 97
+    :goto_1
+    iget-boolean v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mFinished:Z
+
+    if-nez v0, :cond_a
+
+    .line 99
+    iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->this$0:Lcom/snapchat/android/util/gl/GlTextureView;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/util/gl/GlTextureView;->b()V
+
+    .line 101
+    iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+
+    iget-object v1, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+
+    iget-object v2, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+
+    invoke-interface {v0, v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglSwapBuffers(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
+
+    .line 102
+    iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+
+    invoke-interface {v0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
+
+    move-result v0
+
+    const/16 v1, 0x3000
+
+    if-eq v0, v1, :cond_8
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "EGL error = 0x"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 105
+    :cond_8
+    monitor-enter p0
+
+    .line 106
+    :cond_9
+    :try_start_0
+    iget-boolean v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mRenderRequested:Z
+
+    if-eqz v0, :cond_9
+
+    .line 108
     const/4 v0, 0x0
 
-    :try_start_3
     iput-boolean v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mRenderRequested:Z
 
     .line 114
     monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto/16 :goto_1
+    goto :goto_1
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 
     .line 117
-    :cond_b
+    :cond_a
     iget-object v0, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v1, p0, Lcom/snapchat/android/util/gl/GlTextureView$a;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -533,6 +483,8 @@
     return-void
 
     .line 94
+    nop
+
     :array_0
     .array-data 4
         0x3040

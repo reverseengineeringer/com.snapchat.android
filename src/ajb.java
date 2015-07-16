@@ -1,62 +1,69 @@
-import android.content.res.Resources;
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.model.StoryGroup;
-import com.snapchat.android.model.StorySnapLogbook;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
-public final class ajb
-  extends StoryGroup
+public abstract class ajb<T>
+  implements ajf
 {
-  public static final String MY_STORY_ID = "my_story_ads79sdf";
-  private static ajb sInstance;
+  protected final axn a;
+  private final alw b;
+  @bxp
+  private final Map<String, Set<ajf.a>> c = new ConcurrentHashMap();
   
-  protected ajb()
+  protected ajb(@chc alw paramalw, @chc axn paramaxn)
   {
-    mStoryId = "my_story_ads79sdf";
-    mDisplayName = SnapchatApplication.b().getResources().getString(2131493240);
-    mStorySnapLogbooks = new ArrayList();
+    b = ((alw)co.a(paramalw));
+    a = ((axn)co.a(paramaxn));
   }
   
-  public static ajb a()
+  @cbr
+  protected final void a(@chc String paramString, @chc ajf.a parama)
   {
-    try
+    synchronized (c)
     {
-      if (sInstance == null) {
-        sInstance = new ajb();
+      if (c.containsKey(paramString))
+      {
+        ((Set)c.get(paramString)).add(parama);
+        return;
       }
-      ajb localajb = sInstance;
-      return localajb;
-    }
-    finally {}
-  }
-  
-  public static void b()
-  {
-    try
-    {
-      sInstance = null;
+      c.put(paramString, new HashSet());
+      ((Set)c.get(paramString)).add(parama);
+      parama = new aly.a();
+      e = paramString;
+      d = paramString;
+      h = new String[] { "CAMERA" };
+      paramString = parama.a();
+      parama = new aiv(a, this);
+      b.a(paramString, parama);
       return;
     }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
-    }
   }
   
-  public final void a(List<StorySnapLogbook> paramList)
+  @cbr
+  public void a(@chc String paramString, boolean paramBoolean)
   {
-    mStorySnapLogbooks.clear();
-    Iterator localIterator = paramList.iterator();
-    while (localIterator.hasNext())
+    for (;;)
     {
-      StorySnapLogbook localStorySnapLogbook = (StorySnapLogbook)localIterator.next();
-      mStoryId = "my_story_ads79sdf";
-      mStorySnap.mStoryId = "my_story_ads79sdf";
+      ajf.a locala;
+      synchronized (c)
+      {
+        paramString = (Set)c.remove(paramString);
+        if (paramString == null) {
+          return;
+        }
+        paramString = paramString.iterator();
+        if (!paramString.hasNext()) {
+          break;
+        }
+        locala = (ajf.a)paramString.next();
+        if (paramBoolean) {
+          locala.a();
+        }
+      }
+      locala.b();
     }
-    mStorySnapLogbooks.addAll(paramList);
   }
 }
 

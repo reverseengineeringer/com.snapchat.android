@@ -1,130 +1,132 @@
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import java.io.File;
-import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public final class bsf
-  extends bsk
+  implements bsx
 {
-  private String a;
-  private Context b;
-  private bqu c;
-  private btc d;
+  public long a;
+  public JSONArray b;
+  public String c = "uhe";
+  public JSONObject d;
   private JSONObject e;
-  private JSONObject f;
-  private JSONObject g;
-  private boolean h;
+  private JSONArray f;
+  private String g;
+  private String h = "";
+  private String i;
+  private JSONArray j;
+  private String k;
+  private String l = bsw.a.a();
   
-  public bsf(brk parambrk1, brk parambrk2, String paramString, Context paramContext, bqu parambqu, btc parambtc)
+  public bsf(Throwable paramThrowable, long paramLong)
   {
-    super(parambrk1, parambrk2);
-    a = paramString;
-    b = paramContext;
-    c = parambqu;
-    d = parambtc;
-    h = false;
+    bsm localbsm = new bsm();
+    localbsm.a(new bsp.a()).a(new bsp.c()).a(new bsp.b()).a(new bsp.d()).a(new bsp.e()).a(new bsp.f()).a(new bsp.i()).a(new bsp.j()).a(new bsp.h()).a(new bsp.x()).a(new bsp.y()).a(new bsp.k()).a(new bsp.l()).a(new bsp.n()).a(new bsp.m()).a(new bsp.o()).a(new bsp.p()).a(new bsp.q()).a(new bsp.r()).a(new bsp.s()).a(new bsp.t()).a(new bsp.u()).a(new bsp.v()).a(new bsp.w());
+    d = localbsm.a();
+    e = new JSONObject();
+    a = paramLong;
+    g = a(paramThrowable);
+    if (paramThrowable.getMessage() != null) {
+      h = paramThrowable.getMessage();
+    }
+    i = "android";
+    k = buk.a.a();
+    j = new JSONArray();
+    paramThrowable = b(paramThrowable);
+    int n = paramThrowable.length;
+    int m = 0;
+    while (m < n)
+    {
+      localbsm = paramThrowable[m];
+      j.put(localbsm);
+      m += 1;
+    }
   }
   
-  public final void a(boolean paramBoolean, int paramInt, JSONObject paramJSONObject)
+  private static String a(Throwable paramThrowable)
   {
-    super.a(paramBoolean, paramInt, paramJSONObject);
-    if (paramJSONObject != null)
-    {
-      if (!paramJSONObject.optBoolean("report_internal_exceptions", false)) {
-        break label337;
-      }
-      btd.a = btd.a.b;
-      btp.d();
-    }
     for (;;)
     {
-      Object localObject1 = paramJSONObject.optJSONObject("me");
-      if (localObject1 != null)
-      {
-        e = ((JSONObject)localObject1).optJSONObject("notify");
-        localObject1 = d.a();
-        if (e == null) {
-          ((bsz)localObject1).c();
-        }
+      String str = paramThrowable.getClass().getName();
+      Throwable localThrowable = paramThrowable.getCause();
+      if ((localThrowable == null) || (localThrowable == paramThrowable)) {
+        return str;
       }
-      else
-      {
-        label75:
-        localObject1 = paramJSONObject.optJSONObject("app_settings");
-        if (localObject1 != null) {
-          g = ((JSONObject)localObject1).optJSONObject("settings");
-        }
-        if ((g == null) || (g.optInt("need_pkg", 0) != 1)) {}
-      }
-      try
-      {
-        new bsu(new bsg(c).a("device_name", c.f()).a("pkg", b.getPackageName()), new bsm(new bsl(a, "/android_v2/update_package_name").a()), null).run();
-        h = true;
-        f = paramJSONObject.optJSONObject("apm");
-        if (f != null)
-        {
-          paramJSONObject = new bto(f);
-          localObject1 = b;
-          if (c)
-          {
-            bto.b((Context)localObject1);
-            localObject1 = ((Context)localObject1).getSharedPreferences("com.crittercism.optmz.config", 0).edit();
-            if (!b) {
-              break label521;
-            }
-            ((SharedPreferences.Editor)localObject1).putBoolean("enabled", a);
-            ((SharedPreferences.Editor)localObject1).putBoolean("kill", c);
-            ((SharedPreferences.Editor)localObject1).putBoolean("persist", b);
-            ((SharedPreferences.Editor)localObject1).putInt("interval", d);
-            ((SharedPreferences.Editor)localObject1).commit();
-            bqy.t().a(paramJSONObject);
-          }
-        }
-        else
-        {
-          return;
-          label337:
-          btd.a = btd.a.c;
-          continue;
-          if ((e.optString("type") == null) || (!e.optString("type").equals("rate_my_app"))) {
-            break label75;
-          }
-          localObject1 = new bsz((bsz)localObject1);
-          localObject2 = e;
-          d = ((JSONObject)localObject2).optInt("rate_after_load_num", 5);
-          e = ((JSONObject)localObject2).optInt("remind_after_load_num", 5);
-          f = ((JSONObject)localObject2).optString("message", "Would you mind taking a second to rate my app?  I would really appreciate it!");
-          g = ((JSONObject)localObject2).optString("title", "Rate My App");
-          ((bsz)localObject1).a();
-          d.a((bsz)localObject1);
-        }
-      }
-      catch (IOException localIOException)
-      {
-        for (;;)
-        {
-          new StringBuilder("IOException in handleResponse(): ").append(localIOException.getMessage());
-          btd.b();
-          btd.c();
-          continue;
-          Object localObject2 = bto.a(localIOException);
-          if ((!((File)localObject2).delete()) && (((File)localObject2).exists()))
-          {
-            btd.e();
-            continue;
-            label521:
-            localIOException.clear();
-          }
-        }
-      }
+      paramThrowable = localThrowable;
     }
   }
   
-  public static final class a
-    implements bsj
-  {}
+  private static String[] b(Throwable paramThrowable)
+  {
+    StringWriter localStringWriter = new StringWriter();
+    PrintWriter localPrintWriter = new PrintWriter(localStringWriter);
+    for (;;)
+    {
+      paramThrowable.printStackTrace(localPrintWriter);
+      Throwable localThrowable = paramThrowable.getCause();
+      if ((localThrowable == null) || (localThrowable == paramThrowable)) {
+        return localStringWriter.toString().split("\n");
+      }
+      paramThrowable = localThrowable;
+    }
+  }
+  
+  public final JSONObject a()
+  {
+    HashMap localHashMap = new HashMap();
+    localHashMap.put("app_state", d);
+    localHashMap.put("breadcrumbs", e);
+    localHashMap.put("current_thread_id", Long.valueOf(a));
+    if (f != null) {
+      localHashMap.put("endpoints", f);
+    }
+    localHashMap.put("exception_name", g);
+    localHashMap.put("exception_reason", h);
+    localHashMap.put("platform", i);
+    if (b != null) {
+      localHashMap.put("threads", b);
+    }
+    localHashMap.put("ts", k);
+    String str2 = c;
+    String str1 = str2;
+    if (a != 1L) {
+      str1 = str2 + "-bg";
+    }
+    localHashMap.put("type", str1);
+    localHashMap.put("unsymbolized_stacktrace", j);
+    return new JSONObject(localHashMap);
+  }
+  
+  public final void a(bsl parambsl)
+  {
+    f = bsha;
+  }
+  
+  public final void a(OutputStream paramOutputStream)
+  {
+    paramOutputStream.write(a().toString().getBytes());
+  }
+  
+  public final void a(String paramString, bsl parambsl)
+  {
+    parambsl = bsha;
+    try
+    {
+      e.put(paramString, parambsl);
+      return;
+    }
+    catch (JSONException paramString) {}
+  }
+  
+  public final String b()
+  {
+    return l;
+  }
 }
 
 /* Location:

@@ -1,156 +1,143 @@
 .class public final Lqu;
-.super Lqc;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbvp;
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lqu$b;,
-        Lqu$a;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lqc",
+        "Ljava/lang/Object;",
+        "Lbvp",
         "<",
-        "Lqu$b;",
+        "Lqt;",
         ">;"
     }
 .end annotation
 
 
+# static fields
+.field static final synthetic $assertionsDisabled:Z
+
+
 # instance fields
-.field private final mAmount:I
-
-.field private final mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
-
-.field private final mIsRain:Z
-
-.field private final mMessage:Ljava/lang/String;
-
-.field private final mRecipient:Ljava/lang/String;
+.field private final membersInjector:Lbvk;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lbvk",
+            "<",
+            "Lqt;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILcom/snapchat/android/util/CashUtils$CurrencyCode;Ljava/lang/String;ZLqc$a;)V
+.method static constructor <clinit>()V
     .locals 1
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lcom/snapchat/android/util/CashUtils$CurrencyCode;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p4    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p6    # Lqc$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 30
-    invoke-direct {p0, p6}, Lqc;-><init>(Lqc$a;)V
+    .line 7
+    const-class v0, Lqu;
 
-    .line 32
-    iput-object p1, p0, Lqu;->mRecipient:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
-    .line 33
-    iput p2, p0, Lqu;->mAmount:I
+    move-result v0
 
-    .line 34
-    iput-object p3, p0, Lqu;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
+    if-nez v0, :cond_0
 
-    .line 35
-    iput-object p4, p0, Lqu;->mMessage:Ljava/lang/String;
+    const/4 v0, 0x1
 
-    .line 36
-    iput-boolean p5, p0, Lqu;->mIsRain:Z
+    :goto_0
+    sput-boolean v0, Lqu;->$assertionsDisabled:Z
 
-    .line 38
-    const-class v0, Lqu$b;
+    return-void
 
-    invoke-virtual {p0, v0, p0}, Lqu;->a(Ljava/lang/Class;Lts$b;)V
+    :cond_0
+    const/4 v0, 0x0
 
-    .line 39
+    goto :goto_0
+.end method
+
+.method private constructor <init>(Lbvk;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lqt;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    sget-boolean v0, Lqu;->$assertionsDisabled:Z
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+
+    .line 13
+    :cond_0
+    iput-object p1, p0, Lqu;->membersInjector:Lbvk;
+
+    .line 14
     return-void
 .end method
 
-.method static synthetic a(Lqu;)Ljava/lang/String;
+.method public static a(Lbvk;)Lbvp;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbvk",
+            "<",
+            "Lqt;",
+            ">;)",
+            "Lbvp",
+            "<",
+            "Lqt;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 18
-    iget-object v0, p0, Lqu;->mRecipient:Ljava/lang/String;
+    .line 24
+    new-instance v0, Lqu;
+
+    invoke-direct {v0, p0}, Lqu;-><init>(Lbvk;)V
 
     return-object v0
-.end method
-
-.method static synthetic b(Lqu;)I
-    .locals 1
-
-    .prologue
-    .line 18
-    iget v0, p0, Lqu;->mAmount:I
-
-    return v0
-.end method
-
-.method static synthetic c(Lqu;)Lcom/snapchat/android/util/CashUtils$CurrencyCode;
-    .locals 1
-
-    .prologue
-    .line 18
-    iget-object v0, p0, Lqu;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
-
-    return-object v0
-.end method
-
-.method static synthetic d(Lqu;)Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 18
-    iget-object v0, p0, Lqu;->mMessage:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic e(Lqu;)Z
-    .locals 1
-
-    .prologue
-    .line 18
-    iget-boolean v0, p0, Lqu;->mIsRain:Z
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/lang/Object;
-    .locals 1
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 2
 
     .prologue
-    .line 62
-    new-instance v0, Lqu$a;
+    .line 7
+    new-instance v0, Lqt;
 
-    invoke-direct {v0, p0}, Lqu$a;-><init>(Lqu;)V
+    invoke-direct {v0}, Lqt;-><init>()V
 
-    return-object v0
-.end method
+    iget-object v1, p0, Lqu;->membersInjector:Lbvk;
 
-.method protected final d()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 43
-    const-string v0, "/cash/validate_transaction"
+    invoke-interface {v1, v0}, Lbvk;->a(Ljava/lang/Object;)V
 
     return-object v0
 .end method

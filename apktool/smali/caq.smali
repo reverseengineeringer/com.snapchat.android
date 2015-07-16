@@ -1,18 +1,20 @@
-.class public interface abstract annotation Lcaq;
-.super Ljava/lang/Object;
+.class public final Lcaq;
+.super Lcab;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
 
+# direct methods
+.method public constructor <init>()V
+    .locals 2
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->CLASS:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+    .prologue
+    .line 28
+    const-string v0, "("
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcab;-><init>(Ljava/lang/String;I)V
+
+    .line 29
+    return-void
+.end method

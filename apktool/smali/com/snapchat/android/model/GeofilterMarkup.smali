@@ -12,19 +12,19 @@
 
 
 # instance fields
-.field public final displayParameters:Laiw;
+.field public final displayParameters:Lajs;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "display_parameters"
     .end annotation
 .end field
 
-.field public final displaySchedule:Laiy;
+.field public final displaySchedule:Laju;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "display_schedule"
     .end annotation
 .end field
 
-.field public final layoutParameters:Laix;
+.field public final layoutParameters:Lajt;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "layout_parameters"
     .end annotation

@@ -1,84 +1,102 @@
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.FrameLayout;
-import com.snapchat.android.discover.analytics.DiscoverUsageAnalytics.ViewStatus;
-import com.snapchat.android.discover.model.DSnapPage;
-import com.snapchat.android.discover.model.DSnapPanel;
-import com.snapchat.android.discover.model.DSnapPanel.MediaType;
-import com.snapchat.android.discover.ui.DSnapView;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import com.snapchat.android.discover.model.ChannelPage;
+import com.snapchat.android.discover.model.EditionOpenOrigin;
+import com.snapchat.android.discover.ui.ChannelView;
+import com.snapchat.android.discover.ui.OpenChannelAnimationView;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public abstract class adz
-  extends ady
+public final class adz
+  extends aqb<ChannelPage>
 {
-  protected View a;
-  protected FrameLayout b;
-  protected ady c;
-  private boolean d = false;
-  
-  adz(ady paramady)
+  protected final Map<String, aes> a = new HashMap();
+  protected final View.OnClickListener b = new View.OnClickListener()
   {
-    c = paramady;
-  }
-  
-  public aim a(View paramView, adb paramadb, @cgb List<View> paramList)
-  {
-    return c.a(paramView, paramadb, paramList);
-  }
-  
-  public final DiscoverUsageAnalytics.ViewStatus a(long paramLong)
-  {
-    return c.a(paramLong);
-  }
-  
-  public final void a(@cgb aeq paramaeq)
-  {
-    c.a(paramaeq);
-  }
-  
-  public final void a(DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
-  {
-    c.a(paramDSnapPage, paramDSnapPanel);
-  }
-  
-  public boolean a(DSnapView paramDSnapView, DSnapPage paramDSnapPage, DSnapPanel paramDSnapPanel)
-  {
-    return c.a(paramDSnapView, paramDSnapPage, paramDSnapPanel);
-  }
-  
-  public void c()
-  {
-    c.c();
-  }
-  
-  public final View d()
-  {
-    if (!d)
+    public final void onClick(View paramAnonymousView)
     {
-      View localView = c.d();
-      b.addView(localView);
-      d = true;
+      Object localObject = (ChannelView)paramAnonymousView;
+      int i = -1;
+      if (paramAnonymousView.getTag(2131361793) != null) {
+        i = ((Integer)paramAnonymousView.getTag(2131361793)).intValue();
+      }
+      if (!adz.b(adz.this).a((ChannelView)localObject, adz.a(adz.this), EditionOpenOrigin.STORIES, i))
+      {
+        String str = getChannelPageb;
+        localObject = (aes)a.get(str);
+        paramAnonymousView = (View)localObject;
+        if (localObject == null) {
+          paramAnonymousView = new aes();
+        }
+        a = true;
+        a.put(str, paramAnonymousView);
+      }
     }
-    return a;
+  };
+  private final afh c;
+  private final LayoutInflater d;
+  private final OpenChannelAnimationView e;
+  
+  public adz(Context paramContext, afh paramafh, OpenChannelAnimationView paramOpenChannelAnimationView, List<ChannelPage> paramList)
+  {
+    this(paramContext, paramafh, paramOpenChannelAnimationView, paramList, (LayoutInflater)paramContext.getSystemService("layout_inflater"));
   }
   
-  public final DSnapPanel.MediaType e()
+  private adz(Context paramContext, afh paramafh, OpenChannelAnimationView paramOpenChannelAnimationView, List<ChannelPage> paramList, LayoutInflater paramLayoutInflater)
   {
-    return c.e();
+    super(paramContext, 2130968616, paramList);
+    d = paramLayoutInflater;
+    c = paramafh;
+    e = paramOpenChannelAnimationView;
   }
   
-  public final boolean h()
+  public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
   {
-    return c.h();
-  }
-  
-  public void o_()
-  {
-    c.o_();
-  }
-  
-  public void p_()
-  {
-    c.p_();
+    ChannelPage localChannelPage;
+    Object localObject;
+    if (paramView == null)
+    {
+      paramView = d.inflate(2130968616, paramViewGroup, false);
+      paramViewGroup = (ChannelView)paramView.findViewById(2131362057);
+      paramView.setTag(2131362057, paramViewGroup);
+      paramViewGroup.setTag(2131361793, Integer.valueOf(paramInt));
+      localChannelPage = (ChannelPage)getItem(paramInt);
+      localObject = paramViewGroup.getChannelPage();
+      if (localObject != null) {
+        break label169;
+      }
+      localObject = null;
+      label67:
+      if (!TextUtils.equals((CharSequence)localObject, b)) {
+        paramViewGroup.a();
+      }
+      if (localChannelPage.e()) {
+        a.remove(b);
+      }
+      localObject = (aes)a.get(b);
+      if (localObject == null) {
+        break label179;
+      }
+      paramViewGroup.setProgressBarVisibility(a);
+    }
+    for (;;)
+    {
+      paramViewGroup.setChannelPage(localChannelPage);
+      paramViewGroup.setOnClickListener(b);
+      return paramView;
+      paramViewGroup = (ChannelView)paramView.getTag(2131362057);
+      break;
+      label169:
+      localObject = b;
+      break label67;
+      label179:
+      paramViewGroup.setProgressBarVisibility(false);
+    }
   }
 }
 

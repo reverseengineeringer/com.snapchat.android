@@ -9,11 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import di;
+import dr;
 import java.util.Iterator;
 import java.util.Locale;
-import kj;
-import lt;
+import lb;
 import org.apache.commons.lang3.StringUtils;
 
 final class SignupFragment$4
@@ -23,45 +22,31 @@ final class SignupFragment$4
   
   public final void onFocusChange(View paramView, boolean paramBoolean)
   {
-    Object localObject1 = null;
     if (paramBoolean)
     {
-      SignupFragment.e(a);
-      if ((SignupFragment.c(a)) && (!SignupFragment.d(a)))
-      {
-        paramView = SignupFragment.b(a).getText().toString();
-        localObject1 = new kj();
-        emailSuggestion = paramView;
-        ScAnalyticsEventEngine.a((lt)localObject1);
-        AnalyticsEvents.n();
-      }
+      SignupFragment.c(a);
+      ScAnalyticsEventEngine.a(new lb());
+      AnalyticsEvents.n();
     }
     for (;;)
     {
       return;
-      paramView = null;
-      break;
       SignupFragment.a(a, false);
       paramView = SignupFragment.b(a).getText().toString().trim().toLowerCase(Locale.US);
       SignupFragment localSignupFragment = a;
-      Object localObject2 = paramView.split("@");
-      if (localObject2.length == 2)
+      Object localObject1 = paramView.split("@");
+      if (localObject1.length == 2)
       {
-        String[] arrayOfString = localObject2[1].split("\\.");
-        if (arrayOfString.length == 2)
+        Object localObject2 = localObject1[1].split("\\.");
+        if (localObject2.length == 2)
         {
-          String str = arrayOfString[0];
-          paramView = (View)localObject1;
-          if (!TextUtils.isEmpty(str))
-          {
-            if (!SignupFragment.a.contains(str)) {
-              break label370;
-            }
-            paramView = (View)localObject1;
+          CharSequence localCharSequence = localObject2[0];
+          if ((TextUtils.isEmpty(localCharSequence)) || (SignupFragment.a.contains(localCharSequence))) {
+            paramView = null;
           }
           while (paramView != null)
           {
-            paramView = localObject2[0] + "@" + paramView + "." + arrayOfString[1];
+            paramView = localObject1[0] + "@" + paramView + "." + localObject2[1];
             localObject1 = new SpannableStringBuilder();
             localObject2 = localSignupFragment.getString(2131493118, new Object[] { paramView });
             int i = ((String)localObject2).indexOf(paramView);
@@ -75,17 +60,19 @@ final class SignupFragment$4
             c.setLinksClickable(true);
             b = paramView;
             return;
-            label370:
             Iterator localIterator = SignupFragment.a.iterator();
-            do
+            for (;;)
             {
-              paramView = (View)localObject1;
-              if (!localIterator.hasNext()) {
-                break;
+              if (localIterator.hasNext())
+              {
+                paramView = (String)localIterator.next();
+                i = StringUtils.getLevenshteinDistance(paramView, localCharSequence);
+                if ((i <= 2) && (i > 0)) {
+                  break;
+                }
               }
-              paramView = (String)localIterator.next();
-              i = StringUtils.getLevenshteinDistance(paramView, str);
-            } while ((i > 2) || (i <= 0));
+            }
+            paramView = null;
           }
         }
       }

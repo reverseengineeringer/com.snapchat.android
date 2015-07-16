@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
-import fl;
+import fu;
 
 public class SharedProfileSnapcodeView
   extends FrameLayout
@@ -55,9 +55,9 @@ public class SharedProfileSnapcodeView
   
   protected void onFinishInflate()
   {
-    a = ((ViewGroup)findViewById(2131362682));
-    c = ((ImageView)findViewById(2131362683));
-    d = ((TextView)findViewById(2131362684));
+    a = ((ViewGroup)findViewById(2131362681));
+    c = ((ImageView)findViewById(2131362682));
+    d = ((TextView)findViewById(2131362683));
   }
   
   public void setProfileImage(Bitmap paramBitmap)
@@ -70,20 +70,20 @@ public class SharedProfileSnapcodeView
     c.setImageBitmap(paramBitmap);
   }
   
-  public void setSnapcodeSvg(fl paramfl)
+  public void setSnapcodeSvg(fu paramfu)
   {
     if (b == null)
     {
       b = new ImageView(getContext());
       b.setLayerType(1, null);
-      int i = getResources().getDimensionPixelSize(2131296398);
+      int i = getResources().getDimensionPixelSize(2131296399);
       RelativeLayout.LayoutParams localLayoutParams = new RelativeLayout.LayoutParams(i, i);
       localLayoutParams.addRule(13, -1);
       a.addView(b, localLayoutParams);
       b.setVisibility(0);
     }
-    paramfl = paramfl.a();
-    b.setImageDrawable(paramfl);
+    paramfu = paramfu.a();
+    b.setImageDrawable(paramfu);
   }
   
   public void setUsername(String paramString)

@@ -3,127 +3,154 @@
 .source "SourceFile"
 
 
+# instance fields
+.field private a:I
+
+.field private b:I
+
+.field private final c:Ljava/util/Deque;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final d:Ljava/util/Deque;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final e:Ljava/util/Deque;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "Lbml;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
-.method public static a(Ljava/lang/String;I)I
-    .locals 2
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 39
-    :goto_0
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-ge p1, v0, :cond_1
-
-    .line 40
-    invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    .line 41
-    const/16 v1, 0x20
-
-    if-eq v0, v1, :cond_0
-
-    const/16 v1, 0x9
-
-    if-ne v0, v1, :cond_1
-
-    .line 42
-    :cond_0
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_0
-
-    .line 45
-    :cond_1
-    return p1
-.end method
-
-.method public static a(Ljava/lang/String;ILjava/lang/String;)I
-    .locals 2
-
-    .prologue
-    .line 26
-    :goto_0
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-ge p1, v0, :cond_0
-
-    .line 27
-    invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    .line 28
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_0
-
-    .line 31
-    :cond_0
-    return p1
-.end method
-
-.method public static b(Ljava/lang/String;I)I
-    .locals 4
-
-    .prologue
-    .line 54
-    :try_start_0
-    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-wide v0
-
-    .line 55
-    const-wide/32 v2, 0x7fffffff
-
-    cmp-long v2, v0, v2
-
-    if-lez v2, :cond_0
-
     .line 56
-    const p1, 0x7fffffff
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
-    :goto_0
-    return p1
+    .line 37
+    const/16 v0, 0x40
+
+    iput v0, p0, Lbmt;->a:I
+
+    .line 38
+    const/4 v0, 0x5
+
+    iput v0, p0, Lbmt;->b:I
+
+    .line 44
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lbmt;->c:Ljava/util/Deque;
+
+    .line 47
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lbmt;->d:Ljava/util/Deque;
+
+    .line 50
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lbmt;->e:Ljava/util/Deque;
 
     .line 57
-    :cond_0
-    const-wide/16 v2, 0x0
+    return-void
+.end method
 
-    cmp-long v2, v0, v2
 
-    if-gez v2, :cond_1
+# virtual methods
+.method final declared-synchronized a(Lbml;)V
+    .locals 1
 
-    .line 58
-    const/4 p1, 0x0
+    .prologue
+    .line 173
+    monitor-enter p0
 
-    goto :goto_0
+    :try_start_0
+    iget-object v0, p0, Lbmt;->e:Ljava/util/Deque;
 
-    .line 60
-    :cond_1
-    long-to-int p1, v0
+    invoke-interface {v0, p1}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    .line 174
+    monitor-exit p0
 
-    .line 63
-    :catch_0
+    return-void
+
+    .line 173
+    :catchall_0
     move-exception v0
 
-    goto :goto_0
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method final declared-synchronized b(Lbml;)V
+    .locals 2
+
+    .prologue
+    .line 178
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lbmt;->e:Ljava/util/Deque;
+
+    invoke-interface {v0, p1}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    const-string v1, "Call wasn\'t in-flight!"
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 179
+    :cond_0
+    monitor-exit p0
+
+    return-void
 .end method

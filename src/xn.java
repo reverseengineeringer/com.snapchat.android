@@ -1,46 +1,16 @@
-import com.snapchat.android.SnapchatApplication;
-import com.squareup.otto.Bus;
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-@Singleton
-public final class xn
+public abstract interface xn
 {
-  @Inject
-  protected ayg a;
-  @Inject
-  protected ato b;
-  private xq c;
+  public abstract void a(float paramFloat1, float paramFloat2, float paramFloat3);
   
-  @Inject
-  protected xn()
-  {
-    SnapchatApplication.b().c().a(this);
-    ban.a().c(this);
-  }
+  public abstract void a(wi paramwi);
   
-  @cgc
-  public final xq a()
-  {
-    if (c == null)
-    {
-      String str = a.a(ayj.SQ_AUTH_TOKEN);
-      c = ((xq)b.a(str, xq.class));
-    }
-    return c;
-  }
+  public abstract boolean a();
   
-  public final void a(@cgc xq paramxq)
-  {
-    c = paramxq;
-    a.a(ayj.SQ_AUTH_TOKEN, b.a(c));
-  }
+  public abstract boolean b();
   
-  @boh
-  public final void onLogoutEvent(bch parambch)
-  {
-    a(null);
-  }
+  public abstract void c();
+  
+  public abstract boolean d();
 }
 
 /* Location:

@@ -1,52 +1,38 @@
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
+import com.snapchat.android.fragments.stories.StoriesFragment;
+import com.snapchat.android.util.fragment.SnapchatFragment;
+import javax.inject.Provider;
 
 public final class ahx
+  implements bvk<StoriesFragment>
 {
-  private static String c = "CONSTRUCTED_DYANMIC_GEOFILTER_DELAY";
-  public final ExecutorService a;
-  private final EasyMetric.EasyMetricFactory b;
+  private final bvk<SnapchatFragment> b;
+  private final Provider<ach> c;
   
-  public ahx(ExecutorService paramExecutorService)
+  static
   {
-    this(paramExecutorService, new EasyMetric.EasyMetricFactory());
-  }
-  
-  private ahx(ExecutorService paramExecutorService, EasyMetric.EasyMetricFactory paramEasyMetricFactory)
-  {
-    a = paramExecutorService;
-    b = paramEasyMetricFactory;
-  }
-  
-  public final class a
-    extends AsyncTask<Void, Void, Bitmap>
-  {
-    private final Bitmap b;
-    private final ahx.b c;
-    private final List<ahv> d;
-    private final avq e;
-    
-    public a(@cgb ahx.b paramb, @cgb List<ahv> paramList)
+    if (!ahx.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      this(paramb, paramList, localList, avq.a());
-    }
-    
-    private a(@cgb ahx.b paramb, @cgb List<ahv> paramList, @cgb avq paramavq)
-    {
-      b = ((Bitmap)ck.a(paramb));
-      c = ((ahx.b)ck.a(paramList));
-      d = ((List)ck.a(paramavq));
-      Object localObject;
-      e = ((avq)ck.a(localObject));
+      a = bool;
+      return;
     }
   }
   
-  public static abstract interface b
+  private ahx(bvk<SnapchatFragment> parambvk, Provider<ach> paramProvider)
   {
-    public abstract void a(Bitmap paramBitmap);
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider;
+  }
+  
+  public static bvk<StoriesFragment> a(bvk<SnapchatFragment> parambvk, Provider<ach> paramProvider)
+  {
+    return new ahx(parambvk, paramProvider);
   }
 }
 

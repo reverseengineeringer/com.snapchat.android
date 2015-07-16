@@ -1,5 +1,5 @@
 .class final Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;
-.super Lbgo;
+.super Lbho;
 .source "SourceFile"
 
 
@@ -27,30 +27,30 @@
     .prologue
     const/4 v3, 0x3
 
-    .line 822
+    .line 834
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
-    .line 823
+    .line 835
     const-wide/16 v0, 0x3e8
 
     new-instance v2, Landroid/os/Handler;
 
     invoke-direct {v2}, Landroid/os/Handler;-><init>()V
 
-    invoke-direct {p0, v3, v0, v1, v2}, Lbgo;-><init>(IJLandroid/os/Handler;)V
+    invoke-direct {p0, v3, v0, v1, v2}, Lbho;-><init>(IJLandroid/os/Handler;)V
 
-    .line 824
-    iget-object v0, p1, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->A:Landroid/widget/Button;
+    .line 836
+    iget-object v0, p1, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->B:Landroid/widget/Button;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 825
+    .line 837
     iput v3, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->b:I
 
-    .line 826
-    iget-object v0, p1, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->A:Landroid/widget/Button;
+    .line 838
+    iget-object v0, p1, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->B:Landroid/widget/Button;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 827
+    .line 839
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .locals 4
 
     .prologue
-    .line 831
+    .line 843
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->isAdded()Z
@@ -103,11 +103,11 @@
 
     if-nez v0, :cond_0
 
-    .line 834
+    .line 846
     :goto_0
     return-void
 
-    .line 832
+    .line 844
     :cond_0
     iget v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->b:I
 
@@ -115,10 +115,10 @@
 
     iput v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->b:I
 
-    .line 833
+    .line 845
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->A:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->B:Landroid/widget/Button;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -161,7 +161,7 @@
     .locals 2
 
     .prologue
-    .line 838
+    .line 850
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->isAdded()Z
@@ -170,24 +170,24 @@
 
     if-nez v0, :cond_0
 
-    .line 841
+    .line 853
     :goto_0
     return-void
 
-    .line 839
+    .line 851
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->A:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->B:Landroid/widget/Button;
 
     const v1, 0x7f0c01ec
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
-    .line 840
+    .line 852
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$a;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->A:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->B:Landroid/widget/Button;
 
     const/4 v1, 0x1
 

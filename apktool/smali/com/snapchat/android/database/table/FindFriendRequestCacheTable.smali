@@ -78,12 +78,12 @@
     throw v0
 .end method
 
-.method public static a(Lajv;Ljava/util/Map;)V
-    .locals 8
+.method public static a(Lakp;Ljava/util/Map;)V
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
@@ -93,25 +93,23 @@
     .end annotation
 
     .prologue
-    const/4 v7, 0x0
-
     .line 61
     if-eqz p0, :cond_0
 
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 78
+    .line 77
     :cond_0
     :goto_0
     return-void
 
     .line 65
     :cond_1
-    invoke-static {}, Lajv;->y()Landroid/content/Context;
+    invoke-static {}, Lakp;->y()Landroid/content/Context;
 
     move-result-object v0
 
@@ -124,15 +122,6 @@
     move-result-object v2
 
     .line 66
-    const-string v0, "FindFriendRequestCacheTable"
-
-    const-string v1, "saveEntriesToDatabase - beginTransaction"
-
-    new-array v3, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 67
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
     .line 70
@@ -191,13 +180,11 @@
 
     invoke-virtual {v4, v5, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    const-string v5, "FindFriendRequestCacheTable"
-
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v1, "Save hashed phone number:"
 
-    invoke-direct {v6, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -205,13 +192,13 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v6, "requested at timestamp:"
+    const-string v5, "requested at timestamp:"
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -220,18 +207,6 @@
     move-result-object v0
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-static {v5, v0, v1}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     const-string v0, "FindFriendRequestCacheTable"
 
@@ -252,55 +227,27 @@
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     .line 77
-    const-string v1, "FindFriendRequestCacheTable"
-
-    const-string v2, "saveEntriesToDatabase - endTransaction"
-
-    new-array v3, v7, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     throw v0
 
     .line 73
     :cond_2
     :try_start_1
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-
-    .line 74
-    const-string v0, "FindFriendRequestCacheTable"
-
-    const-string v1, "saveEntriesToDatabase - TransactionSuccessful"
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 76
+    .line 74
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 77
-    const-string v0, "FindFriendRequestCacheTable"
-
-    const-string v1, "saveEntriesToDatabase - endTransaction"
-
-    new-array v2, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
-.method public static a(Lajv;Ljava/util/Set;)V
-    .locals 8
+.method public static a(Lakp;Ljava/util/Set;)V
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             "Ljava/util/Set",
             "<",
             "Ljava/lang/String;",
@@ -309,28 +256,26 @@
     .end annotation
 
     .prologue
-    const/4 v7, 0x0
-
     .line 91
-    invoke-static {}, Lbgp;->b()V
+    invoke-static {}, Lbhp;->b()V
 
     .line 92
     if-eqz p0, :cond_0
 
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 109
+    .line 108
     :cond_0
     :goto_0
     return-void
 
     .line 96
     :cond_1
-    invoke-static {}, Lajv;->y()Landroid/content/Context;
+    invoke-static {}, Lakp;->y()Landroid/content/Context;
 
     move-result-object v0
 
@@ -343,15 +288,6 @@
     move-result-object v1
 
     .line 97
-    const-string v0, "FindFriendRequestCacheTable"
-
-    const-string v2, "removeEntriesFromDatabase - beginTransaction"
-
-    new-array v3, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 98
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
     .line 101
@@ -374,29 +310,7 @@
     check-cast v0, Ljava/lang/String;
 
     .line 102
-    invoke-static {}, Lbgp;->b()V
-
-    const-string v3, "FindFriendRequestCacheTable"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "delete entry for hashed phone number:"
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {}, Lbhp;->b()V
 
     const-string v3, "FindFriendRequestCacheTable"
 
@@ -445,58 +359,30 @@
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
     .line 108
-    const-string v1, "FindFriendRequestCacheTable"
-
-    const-string v2, "removeEntriesFromDatabase - endTransaction"
-
-    new-array v3, v7, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
     throw v0
 
     .line 104
     :cond_2
     :try_start_1
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-
-    .line 105
-    const-string v0, "FindFriendRequestCacheTable"
-
-    const-string v2, "removeEntriesFromDatabase - TransactionSuccessful"
-
-    const/4 v3, 0x0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 107
+    .line 105
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 108
-    const-string v0, "FindFriendRequestCacheTable"
-
-    const-string v1, "removeEntriesFromDatabase - endTransaction"
-
-    new-array v2, v7, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
-.method public static e(Lajv;)Ljava/util/Map;
+.method public static e(Lakp;)Ljava/util/Map;
     .locals 9
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Map",
             "<",
@@ -517,7 +403,7 @@
     .line 38
     if-eqz p0, :cond_0
 
-    invoke-static {}, Lajx;->m()Z
+    invoke-static {}, Lakr;->m()Z
 
     move-result v0
 
@@ -539,7 +425,7 @@
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     .line 42
-    invoke-static {}, Lajv;->y()Landroid/content/Context;
+    invoke-static {}, Lakp;->y()Landroid/content/Context;
 
     move-result-object v0
 
@@ -569,22 +455,16 @@
     move-result-object v1
 
     .line 45
+    const/4 v0, 0x1
+
     :try_start_0
-    const-string v0, "FindFriendRequestCacheTable"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const-string v2, "Querying [%s] database table"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const-string v3, "FindFriendRequestCacheTable"
 
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    const-string v5, "FindFriendRequestCacheTable"
-
-    aput-object v5, v3, v4
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v0, v2
 
     .line 46
     if-eqz v1, :cond_3
@@ -688,9 +568,9 @@
     return-object v0
 
     :cond_0
-    new-instance v1, Laad;
+    new-instance v1, Labc;
 
-    invoke-direct {v1}, Laad;-><init>()V
+    invoke-direct {v1}, Labc;-><init>()V
 
     sget-object v2, Lcom/snapchat/android/database/table/FindFriendRequestCacheTable$NumberToTimestampSchema;->HASHED_NUMBER:Lcom/snapchat/android/database/table/FindFriendRequestCacheTable$NumberToTimestampSchema;
 
@@ -700,7 +580,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v0}, Laad;->a(Lzw;Ljava/lang/String;)Laad;
+    invoke-virtual {v1, v2, v0}, Labc;->a(Laav;Ljava/lang/String;)Labc;
 
     sget-object v2, Lcom/snapchat/android/database/table/FindFriendRequestCacheTable$NumberToTimestampSchema;->REQUEST_TIMESTAMP:Lcom/snapchat/android/database/table/FindFriendRequestCacheTable$NumberToTimestampSchema;
 
@@ -714,9 +594,9 @@
 
     move-result-wide v4
 
-    invoke-virtual {v1, v2, v4, v5}, Laad;->a(Lzw;J)Laad;
+    invoke-virtual {v1, v2, v4, v5}, Labc;->a(Laav;J)Labc;
 
-    iget-object v0, v1, Laad;->a:Landroid/content/ContentValues;
+    iget-object v0, v1, Labc;->a:Landroid/content/ContentValues;
 
     goto :goto_0
 .end method
@@ -731,12 +611,12 @@
     return-object v0
 .end method
 
-.method protected final a(Lajv;)Ljava/util/Collection;
+.method protected final a(Lakp;)Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<",
@@ -755,7 +635,7 @@
     return-object v0
 .end method
 
-.method public final b()[Lzw;
+.method public final b()[Laav;
     .locals 1
 
     .prologue

@@ -1,11 +1,32 @@
-import java.lang.annotation.Annotation;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Retention(RetentionPolicy.CLASS)
-@Target({java.lang.annotation.ElementType.TYPE})
-public @interface caw {}
+public abstract interface caw
+  extends cbj
+{
+  public abstract long a(cbk paramcbk);
+  
+  public abstract cav b();
+  
+  public abstract caw b(cay paramcay);
+  
+  public abstract caw b(String paramString);
+  
+  public abstract caw b(byte[] paramArrayOfByte);
+  
+  public abstract caw c();
+  
+  public abstract caw c(byte[] paramArrayOfByte, int paramInt1, int paramInt2);
+  
+  public abstract caw e(int paramInt);
+  
+  public abstract caw f(int paramInt);
+  
+  public abstract caw g(int paramInt);
+  
+  public abstract caw i(long paramLong);
+  
+  public abstract caw j(long paramLong);
+  
+  public abstract caw q();
+}
 
 /* Location:
  * Qualified Name:     caw

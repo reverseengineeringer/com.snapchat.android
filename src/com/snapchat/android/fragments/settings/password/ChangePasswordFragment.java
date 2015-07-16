@@ -1,9 +1,5 @@
 package com.snapchat.android.fragments.settings.password;
 
-import amk;
-import amt;
-import amz;
-import amz.b;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -21,12 +17,16 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import aok;
-import aol;
-import atj;
-import avh;
-import baj;
-import cgc;
+import anh;
+import anq;
+import anw;
+import anw.b;
+import apg;
+import aph;
+import auh;
+import awf;
+import bbj;
+import chd;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.emoji.Emoji;
@@ -49,46 +49,46 @@ public class ChangePasswordFragment
   protected View j;
   protected PasswordStrength k = PasswordStrength.UNKNOWN;
   private final Set<Integer> l = new HashSet();
-  private final aol m;
+  private final aph m;
   private String n;
   private String o;
   private String p;
   private int q;
   private int r;
   private int s;
-  private aok t = new aok()
+  private apg t = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (ChangePasswordFragment.a(ChangePasswordFragment.this).contains(Integer.valueOf(i)))
       {
         ChangePasswordFragment.a(ChangePasswordFragment.this).remove(Integer.valueOf(i));
-        if (!(paramAnonymousamk instanceof amz)) {
+        if (!(paramAnonymousanh instanceof anw)) {
           break label60;
         }
-        a((amz)paramAnonymousamk);
+        a((anw)paramAnonymousanh);
       }
       label60:
-      while (!(paramAnonymousamk instanceof amt)) {
+      while (!(paramAnonymousanh instanceof anq)) {
         return;
       }
-      ChangePasswordFragment.a(ChangePasswordFragment.this, (amt)paramAnonymousamk);
+      ChangePasswordFragment.a(ChangePasswordFragment.this, (anq)paramAnonymousanh);
     }
   };
   
   public ChangePasswordFragment()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private ChangePasswordFragment(aol paramaol)
+  private ChangePasswordFragment(aph paramaph)
   {
-    m = paramaol;
+    m = paramaph;
   }
   
-  private void a(@cgc String paramString)
+  private void a(@chd String paramString)
   {
     if (!TextUtils.isEmpty(paramString))
     {
@@ -124,7 +124,7 @@ public class ChangePasswordFragment
     }
   }
   
-  protected final void a(amz paramamz)
+  protected final void a(anw paramanw)
   {
     if (TextUtils.equals(a.getText(), a))
     {
@@ -148,14 +148,14 @@ public class ChangePasswordFragment
   {
     super.e();
     if (a.requestFocus()) {
-      avh.f(getActivity());
+      awf.f(getActivity());
     }
   }
   
   public final void f()
   {
     super.f();
-    avh.a(getActivity(), H().getDecorView().getRootView());
+    awf.a(getActivity(), J().getDecorView().getRootView());
   }
   
   public final boolean g()
@@ -180,14 +180,14 @@ public class ChangePasswordFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968613, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968614, paramViewGroup, false);
     paramLayoutInflater = getResources();
-    n = paramLayoutInflater.getString(2131493281, new Object[] { baj.a(Emoji.CONFUSED_FACE) });
-    o = paramLayoutInflater.getString(2131493279, new Object[] { baj.a(Emoji.OK_HAND_SIGN) });
-    p = paramLayoutInflater.getString(2131493280, new Object[] { baj.a(Emoji.SMILING_FACE_WITH_SUNGLASSES) });
-    q = paramLayoutInflater.getColor(2131230779);
-    r = paramLayoutInflater.getColor(2131230777);
-    s = paramLayoutInflater.getColor(2131230778);
+    n = paramLayoutInflater.getString(2131493281, new Object[] { bbj.a(Emoji.CONFUSED_FACE) });
+    o = paramLayoutInflater.getString(2131493279, new Object[] { bbj.a(Emoji.OK_HAND_SIGN) });
+    p = paramLayoutInflater.getString(2131493280, new Object[] { bbj.a(Emoji.SMILING_FACE_WITH_SUNGLASSES) });
+    q = paramLayoutInflater.getColor(2131230780);
+    r = paramLayoutInflater.getColor(2131230778);
+    s = paramLayoutInflater.getColor(2131230779);
     a = ((EditText)c(2131362046));
     b = ((TextView)c(2131362048));
     c = c(2131362047);
@@ -199,13 +199,13 @@ public class ChangePasswordFragment
     i = ((Button)c(2131362054));
     paramLayoutInflater = i;
     getActivity().getAssets();
-    atj.a(paramLayoutInflater);
+    auh.a(paramLayoutInflater);
     j = c(2131362055);
     c(2131362042).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        avh.a(getActivity(), getView());
+        awf.a(getActivity(), getView());
         getActivity().onBackPressed();
       }
     });
@@ -230,13 +230,13 @@ public class ChangePasswordFragment
         if ((!paramAnonymousBoolean) && (!TextUtils.isEmpty(a.getText())))
         {
           paramAnonymousView = ChangePasswordFragment.a(ChangePasswordFragment.this);
-          aol localaol = ChangePasswordFragment.d(ChangePasswordFragment.this);
+          aph localaph = ChangePasswordFragment.d(ChangePasswordFragment.this);
           FragmentActivity localFragmentActivity = getActivity();
           String str = a.getText().toString();
-          Intent localIntent = localaol.b(localFragmentActivity);
+          Intent localIntent = localaph.b(localFragmentActivity);
           localIntent.putExtra("op_code", 1018);
           localIntent.putExtra("new_password", str);
-          paramAnonymousView.add(Integer.valueOf(localaol.a(localFragmentActivity, localIntent)));
+          paramAnonymousView.add(Integer.valueOf(localaph.a(localFragmentActivity, localIntent)));
           e.setVisibility(0);
           b.setVisibility(8);
         }
@@ -275,13 +275,13 @@ public class ChangePasswordFragment
       public final void onClick(View paramAnonymousView)
       {
         paramAnonymousView = ChangePasswordFragment.a(ChangePasswordFragment.this);
-        aol localaol = ChangePasswordFragment.d(ChangePasswordFragment.this);
+        aph localaph = ChangePasswordFragment.d(ChangePasswordFragment.this);
         FragmentActivity localFragmentActivity = getActivity();
         String str = a.getText().toString();
-        Intent localIntent = localaol.b(localFragmentActivity);
+        Intent localIntent = localaph.b(localFragmentActivity);
         localIntent.putExtra("op_code", 1017);
         localIntent.putExtra("new_password", str);
-        paramAnonymousView.add(Integer.valueOf(localaol.a(localFragmentActivity, localIntent)));
+        paramAnonymousView.add(Integer.valueOf(localaph.a(localFragmentActivity, localIntent)));
         i.setClickable(false);
         i.setText("");
         j.setVisibility(0);

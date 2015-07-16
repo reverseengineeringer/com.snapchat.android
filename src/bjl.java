@@ -3,14 +3,29 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class bjl
+public class bjl
 {
-  @SerializedName("needs_auth")
-  protected Boolean needsAuth;
-  @SerializedName("url")
-  protected String url;
+  @SerializedName("gateway_auth_token")
+  protected bjy gatewayAuthToken;
+  @SerializedName("gateway_server")
+  protected String gatewayServer;
   
-  public final boolean equals(Object paramObject)
+  public final bjy a()
+  {
+    return gatewayAuthToken;
+  }
+  
+  public final void a(String paramString)
+  {
+    gatewayServer = paramString;
+  }
+  
+  public final String b()
+  {
+    return gatewayServer;
+  }
+  
+  public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -19,15 +34,15 @@ public final class bjl
       return false;
     }
     paramObject = (bjl)paramObject;
-    return new EqualsBuilder().append(needsAuth, needsAuth).append(url, url).isEquals();
+    return new EqualsBuilder().append(gatewayAuthToken, gatewayAuthToken).append(gatewayServer, gatewayServer).isEquals();
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    return new HashCodeBuilder().append(needsAuth).append(url).toHashCode();
+    return new HashCodeBuilder().append(gatewayAuthToken).append(gatewayServer).toHashCode();
   }
   
-  public final String toString()
+  public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

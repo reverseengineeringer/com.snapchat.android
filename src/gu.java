@@ -2,28 +2,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class gu
-  extends lt
+  extends ml
 {
   public Long adIndexCount;
   public Long adIndexPos;
   public String adsnapId;
   public String editionId;
-  private final String eventName = "DISCOVER_AD_VIEW";
-  private hl exitEvent;
-  public Boolean fullView;
-  private Double mediaDisplayTimeSec;
-  public hy mediaType;
+  private final String eventName = "DISCOVER_AD_LONGFORM_SHARE_CREATE";
+  public ih longformType;
+  public ih mediaType;
   public String publisherId;
   public Long snapIndexCount;
   public Long snapIndexPos;
-  private Double snapTimeSec;
-  private ld source;
+  public lv source;
   public Double timeViewed;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "DISCOVER_AD_VIEW");
+    localHashMap.put("event_name", "DISCOVER_AD_LONGFORM_SHARE_CREATE");
     if (adIndexCount != null) {
       localHashMap.put("ad_index_count", adIndexCount);
     }
@@ -36,14 +33,8 @@ public final class gu
     if (editionId != null) {
       localHashMap.put("edition_id", editionId);
     }
-    if (exitEvent != null) {
-      localHashMap.put("exit_event", exitEvent);
-    }
-    if (fullView != null) {
-      localHashMap.put("full_view", fullView);
-    }
-    if (mediaDisplayTimeSec != null) {
-      localHashMap.put("media_display_time_sec", mediaDisplayTimeSec);
+    if (longformType != null) {
+      localHashMap.put("longform_type", longformType);
     }
     if (mediaType != null) {
       localHashMap.put("media_type", mediaType);
@@ -56,9 +47,6 @@ public final class gu
     }
     if (snapIndexPos != null) {
       localHashMap.put("snap_index_pos", snapIndexPos);
-    }
-    if (snapTimeSec != null) {
-      localHashMap.put("snap_time_sec", snapTimeSec);
     }
     if (source != null) {
       localHashMap.put("source", source);
@@ -119,30 +107,12 @@ public final class gu
           return false;
         }
       }
-      if (exitEvent != null)
+      if (longformType != null)
       {
-        if (exitEvent.equals(exitEvent)) {}
+        if (longformType.equals(longformType)) {}
       }
       else {
-        while (exitEvent != null) {
-          return false;
-        }
-      }
-      if (fullView != null)
-      {
-        if (fullView.equals(fullView)) {}
-      }
-      else {
-        while (fullView != null) {
-          return false;
-        }
-      }
-      if (mediaDisplayTimeSec != null)
-      {
-        if (mediaDisplayTimeSec.equals(mediaDisplayTimeSec)) {}
-      }
-      else {
-        while (mediaDisplayTimeSec != null) {
+        while (longformType != null) {
           return false;
         }
       }
@@ -182,15 +152,6 @@ public final class gu
           return false;
         }
       }
-      if (snapTimeSec != null)
-      {
-        if (snapTimeSec.equals(snapTimeSec)) {}
-      }
-      else {
-        while (snapTimeSec != null) {
-          return false;
-        }
-      }
       if (source != null)
       {
         if (source.equals(source)) {}
@@ -215,8 +176,8 @@ public final class gu
   
   public final int hashCode()
   {
-    int i9 = 0;
-    int i10 = super.hashCode();
+    int i6 = 0;
+    int i7 = super.hashCode();
     int i;
     int j;
     label39:
@@ -233,82 +194,61 @@ public final class gu
     int i3;
     label134:
     int i4;
-    label150:
-    int i5;
-    label166:
-    int i6;
-    label182:
-    int i7;
     if (adIndexCount != null)
     {
       i = adIndexCount.hashCode();
       if (adIndexPos == null) {
-        break label319;
+        break label253;
       }
       j = adIndexPos.hashCode();
       if (adsnapId == null) {
-        break label324;
+        break label258;
       }
       k = adsnapId.hashCode();
       if (editionId == null) {
-        break label329;
+        break label263;
       }
       m = editionId.hashCode();
-      if (exitEvent == null) {
-        break label335;
+      if (longformType == null) {
+        break label269;
       }
-      n = exitEvent.hashCode();
-      if (fullView == null) {
-        break label341;
-      }
-      i1 = fullView.hashCode();
-      if (mediaDisplayTimeSec == null) {
-        break label347;
-      }
-      i2 = mediaDisplayTimeSec.hashCode();
+      n = longformType.hashCode();
       if (mediaType == null) {
-        break label353;
+        break label275;
       }
-      i3 = mediaType.hashCode();
+      i1 = mediaType.hashCode();
       if (publisherId == null) {
-        break label359;
+        break label281;
       }
-      i4 = publisherId.hashCode();
+      i2 = publisherId.hashCode();
       if (snapIndexCount == null) {
-        break label365;
+        break label287;
       }
-      i5 = snapIndexCount.hashCode();
+      i3 = snapIndexCount.hashCode();
       if (snapIndexPos == null) {
-        break label371;
+        break label293;
       }
-      i6 = snapIndexPos.hashCode();
-      if (snapTimeSec == null) {
-        break label377;
-      }
-      i7 = snapTimeSec.hashCode();
-      label198:
+      i4 = snapIndexPos.hashCode();
+      label150:
       if (source == null) {
-        break label383;
+        break label299;
       }
     }
-    label319:
-    label324:
-    label329:
-    label335:
-    label341:
-    label347:
-    label353:
-    label359:
-    label365:
-    label371:
-    label377:
-    label383:
-    for (int i8 = source.hashCode();; i8 = 0)
+    label253:
+    label258:
+    label263:
+    label269:
+    label275:
+    label281:
+    label287:
+    label293:
+    label299:
+    for (int i5 = source.hashCode();; i5 = 0)
     {
       if (timeViewed != null) {
-        i9 = timeViewed.hashCode();
+        i6 = timeViewed.hashCode();
       }
-      return (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i10 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i9;
+      return (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i7 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i6;
       i = 0;
       break;
       j = 0;
@@ -327,12 +267,6 @@ public final class gu
       break label134;
       i4 = 0;
       break label150;
-      i5 = 0;
-      break label166;
-      i6 = 0;
-      break label182;
-      i7 = 0;
-      break label198;
     }
   }
 }

@@ -1,335 +1,194 @@
 .class public final Lrj;
-.super Lqv;
+.super Ltw;
 .source "SourceFile"
 
+# interfaces
+.implements Lui$b;
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "SQConfirmBlocker"
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lrj$b;,
+        Lrj$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ltw;",
+        "Lui$b",
+        "<",
+        "Ljava/lang/Boolean;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field protected mCashErrorReporter:Lqg;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
+.field private final mCallback:Lrj$b;
 
-.field protected mRequiresPasscode:Z
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "requires_passcode"
-    .end annotation
-.end field
+.field private final mConversationId:Ljava/lang/String;
 
-.field protected mSquareProvider:Lsn;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
+.field private final mSaved:Ljava/lang/Boolean;
+
+.field private final mTransactionId:Ljava/lang/String;
+
+.field private final mVersion:Ljava/lang/Integer;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Integer;Lrj$b;)V
     .locals 1
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Ljava/lang/Boolean;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Ljava/lang/Integer;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p5    # Lrj$b;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 46
-    invoke-direct {p0}, Lqv;-><init>()V
+    .line 28
+    sget-object v0, Ltw;->EXPONENTIAL_STRATEGY:Lvd;
 
-    .line 47
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+    invoke-direct {p0, v0}, Ltw;-><init>(Lve;)V
 
-    move-result-object v0
+    .line 29
+    iput-object p1, p0, Lrj;->mTransactionId:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
+    .line 30
+    iput-object p2, p0, Lrj;->mConversationId:Ljava/lang/String;
 
-    move-result-object v0
+    .line 31
+    iput-object p3, p0, Lrj;->mSaved:Ljava/lang/Boolean;
 
-    invoke-interface {v0, p0}, Laza;->a(Lrj;)V
+    .line 32
+    iput-object p4, p0, Lrj;->mVersion:Ljava/lang/Integer;
 
-    .line 48
+    .line 33
+    iput-object p5, p0, Lrj;->mCallback:Lrj$b;
+
+    .line 35
+    const-class v0, Ljava/lang/Boolean;
+
+    invoke-virtual {p0, v0, p0}, Lrj;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 36
     return-void
 .end method
 
-.method protected static a(Ljava/lang/String;Ljava/lang/String;Lsh$a;)Lsa;
+.method static synthetic a(Lrj;)Ljava/lang/String;
     .locals 1
-    .param p0    # Ljava/lang/String;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-    .param p2    # Lsh$a;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 245
-    new-instance v0, Lsa;
-
-    invoke-direct {v0, p0, p1, p2}, Lsa;-><init>(Ljava/lang/String;Ljava/lang/String;Lsh$a;)V
+    .line 17
+    iget-object v0, p0, Lrj;->mTransactionId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic a(Lrj;)V
-    .locals 0
-
-    .prologue
-    .line 33
-    invoke-virtual {p0}, Lrj;->b()V
-
-    return-void
-.end method
-
-.method static synthetic a(Lrj;Ljava/util/List;)V
+.method static synthetic b(Lrj;)Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 33
-    const/4 v0, 0x1
+    .line 17
+    iget-object v0, p0, Lrj;->mConversationId:Ljava/lang/String;
 
-    invoke-virtual {p0, p1, v0}, Lrj;->b(Ljava/util/List;Z)V
-
-    return-void
+    return-object v0
 .end method
 
-.method static synthetic a(Lrj;Ljava/util/List;Z)V
-    .locals 0
-
-    .prologue
-    .line 33
-    invoke-virtual {p0, p1, p2}, Lrj;->a(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic b(Lrj;)V
-    .locals 2
-
-    .prologue
-    .line 33
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lrj;->a(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic b(Lrj;Ljava/util/List;)V
+.method static synthetic c(Lrj;)Ljava/lang/Boolean;
     .locals 1
 
     .prologue
-    .line 33
-    const/4 v0, 0x1
+    .line 17
+    iget-object v0, p0, Lrj;->mSaved:Ljava/lang/Boolean;
 
-    invoke-virtual {p0, p1, v0}, Lrj;->a(Ljava/util/List;Z)V
-
-    return-void
+    return-object v0
 .end method
 
-.method static synthetic c(Lrj;)V
-    .locals 2
-
-    .prologue
-    .line 33
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lrj;->b(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic c(Lrj;Ljava/util/List;)V
+.method static synthetic d(Lrj;)Ljava/lang/Integer;
     .locals 1
 
     .prologue
-    .line 33
-    const/4 v0, 0x1
+    .line 17
+    iget-object v0, p0, Lrj;->mVersion:Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1, v0}, Lrj;->a(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic d(Lrj;)V
-    .locals 0
-
-    .prologue
-    .line 33
-    invoke-virtual {p0}, Lrj;->b()V
-
-    return-void
-.end method
-
-.method static synthetic d(Lrj;Ljava/util/List;)V
-    .locals 1
-
-    .prologue
-    .line 33
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p1, v0}, Lrj;->b(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic e(Lrj;)V
-    .locals 2
-
-    .prologue
-    .line 33
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lrj;->a(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic e(Lrj;Ljava/util/List;)V
-    .locals 1
-
-    .prologue
-    .line 33
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p1, v0}, Lrj;->b(Ljava/util/List;Z)V
-
-    return-void
-.end method
-
-.method static synthetic f(Lrj;)V
-    .locals 0
-
-    .prologue
-    .line 33
-    invoke-virtual {p0}, Lrj;->a()V
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/snapchat/android/model/CashTransaction;)V
-    .locals 5
-    .param p1    # Lcom/snapchat/android/model/CashTransaction;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 52
-    const-string v0, "SQConfirmBlocker"
-
-    const-string v1, "CASH-LOG: ATTEMPT resolve SQConfirmBlocker id[%s] recipient[%s] amount[%s]"
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    iget-object v4, p1, Lcom/snapchat/android/model/CashTransaction;->mTransactionId:Ljava/lang/String;
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    iget-object v4, p1, Lcom/snapchat/android/model/CashTransaction;->mRecipientUsername:Ljava/lang/String;
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x2
-
-    invoke-virtual {p1}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 56
-    iget-boolean v0, p0, Lrj;->mRequiresPasscode:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p1, Lcom/snapchat/android/model/CashTransaction;->mSecurityCode:Ljava/lang/String;
-
-    .line 57
-    :goto_0
-    iget-boolean v1, p0, Lrj;->mRequiresPasscode:Z
-
-    if-eqz v1, :cond_1
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 58
-    new-instance v0, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;
-
-    invoke-direct {v0}, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;-><init>()V
-
-    .line 59
-    new-instance v1, Lrj$2;
-
-    invoke-direct {v1, p0, p1, v0}, Lrj$2;-><init>(Lrj;Lcom/snapchat/android/model/CashTransaction;Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;)V
-
-    iput-object v1, v0, Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;->b:Lcom/snapchat/android/fragments/cash/SecurityCodeFragment$a;
-
-    .line 60
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v1
-
-    new-instance v2, Lbdw;
-
-    invoke-direct {v2, v0}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
-
-    invoke-virtual {v1, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
-
-    .line 145
-    :goto_1
-    return-void
-
-    .line 56
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 63
-    :cond_1
-    iget-object v1, p1, Lcom/snapchat/android/model/CashTransaction;->mTransactionId:Ljava/lang/String;
-
-    new-instance v2, Lrj$1;
-
-    invoke-direct {v2, p0, p1}, Lrj$1;-><init>(Lrj;Lcom/snapchat/android/model/CashTransaction;)V
-
-    invoke-static {v1, v0, v2}, Lrj;->a(Ljava/lang/String;Ljava/lang/String;Lsh$a;)Lsa;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lsa;->f()V
-
-    goto :goto_1
-.end method
-
-.method public final c()Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+.method protected final getPath()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 250
-    sget-object v0, Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;->SQ_CONFIRM_BLOCKER:Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+    .line 40
+    const-string v0, "/cash/update_transaction"
 
     return-object v0
+.end method
+
+.method public final getRequestPayload()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 57
+    new-instance v0, Lrj$a;
+
+    invoke-direct {v0, p0}, Lrj$a;-><init>(Lrj;)V
+
+    return-object v0
+.end method
+
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 2
+
+    .prologue
+    .line 17
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Lus;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lrj;->mCallback:Lrj$b;
+
+    invoke-interface {v0}, Lrj$b;->a()V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lrj;->mCallback:Lrj$b;
+
+    iget v1, p2, Lus;->mResponseCode:I
+
+    invoke-interface {v0, v1}, Lrj$b;->a(I)V
+
+    goto :goto_0
 .end method

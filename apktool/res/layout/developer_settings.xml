@@ -29,13 +29,6 @@
                 <include layout="@layout/list_separator" />
                 <CheckBox android:id="@id/device_token_checkbox" style="@style/settings_checkbox" />
             </RelativeLayout>
-            <TextView android:text="FEED" style="@style/settings_section_header" />
-            <include layout="@layout/settings_header_separator" />
-            <RelativeLayout android:id="@id/new_feed_option" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight">
-                <TextView android:text="Use FeedV2" android:layout_centerVertical="true" style="@style/settings_item_name" />
-                <include layout="@layout/list_separator" />
-                <CheckBox android:id="@id/new_feed_checkbox" style="@style/settings_checkbox" />
-            </RelativeLayout>
             <TextView android:text="DISCOVER" style="@style/settings_section_header" />
             <include layout="@layout/settings_header_separator" />
             <RelativeLayout android:id="@id/discover_endpoint_button" android:layout_width="fill_parent" android:layout_height="?android:listPreferredItemHeight">

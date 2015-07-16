@@ -1,8 +1,31 @@
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.model.chat.ChatFeedItem;
+import java.util.Locale;
+
 public final class akz
+  extends ala
 {
-  public static long a(long paramLong1, long paramLong2)
+  private String mDateText;
+  
+  public akz(ChatFeedItem paramChatFeedItem)
   {
-    return (8L * paramLong2 / (paramLong1 / 1000.0D));
+    super(null, paramChatFeedItem);
+    if (paramChatFeedItem == null)
+    {
+      mDateText = SnapchatApplication.b().getString(2131492993).toUpperCase(Locale.getDefault());
+      return;
+    }
+    mDateText = atz.a(paramChatFeedItem.U()).toUpperCase(Locale.getDefault());
+  }
+  
+  public final String b()
+  {
+    return mDateText;
+  }
+  
+  public final String d()
+  {
+    return mDateText;
   }
 }
 

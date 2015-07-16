@@ -133,7 +133,7 @@
 
     const/16 v1, 0x500
 
-    invoke-static {v1}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v1}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -190,7 +190,7 @@
 
     const/16 v1, 0x502
 
-    invoke-static {v1}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v1}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -261,7 +261,7 @@
 
     const/16 v1, 0x503
 
-    invoke-static {v1}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v1}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -344,7 +344,7 @@
 
     const/16 v1, 0x504
 
-    invoke-static {v1}, Lbvi;->a(I)Ljava/lang/String;
+    invoke-static {v1}, Lbwj;->a(I)Ljava/lang/String;
 
     move-result-object v1
 

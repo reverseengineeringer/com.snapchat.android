@@ -472,7 +472,7 @@
 
     const v1, 0x7f020161
 
-    invoke-static {v0, v1, v2}, Laur;->a(Landroid/content/Context;IZ)Landroid/graphics/Bitmap;
+    invoke-static {v0, v1, v2}, Lavp;->a(Landroid/content/Context;IZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -485,7 +485,7 @@
 
     const v1, 0x7f020086
 
-    invoke-static {v0, v1, v2}, Laur;->a(Landroid/content/Context;IZ)Landroid/graphics/Bitmap;
+    invoke-static {v0, v1, v2}, Lavp;->a(Landroid/content/Context;IZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 

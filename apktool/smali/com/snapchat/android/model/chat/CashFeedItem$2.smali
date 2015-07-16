@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqt$b;
+.implements Lrj$b;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/snapchat/android/model/chat/CashFeedItem;->b(Z)I
+    value = Lcom/snapchat/android/model/chat/CashFeedItem;->a(Z)I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -49,23 +49,19 @@
 
 # virtual methods
 .method public final a()V
-    .locals 7
+    .locals 5
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     .line 614
-    invoke-static {}, Lcom/snapchat/android/model/chat/CashFeedItem;->o()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "CASH-LOG: SUCCEEDED %s cash id[%s] sender[%s] recipient[%s]"
+    invoke-static {}, Lcom/snapchat/android/model/chat/CashFeedItem;->s()Ljava/lang/String;
 
     const/4 v0, 0x4
 
-    new-array v3, v0, [Ljava/lang/Object;
+    new-array v1, v0, [Ljava/lang/Object;
 
     iget-boolean v0, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->val$saved:Z
 
@@ -74,7 +70,7 @@
     const-string v0, "SAVING"
 
     :goto_0
-    aput-object v0, v3, v5
+    aput-object v0, v1, v3
 
     iget-object v0, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
 
@@ -82,38 +78,36 @@
 
     move-result-object v0
 
-    aput-object v0, v3, v6
+    aput-object v0, v1, v4
 
     const/4 v0, 0x2
 
-    iget-object v4, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
+    iget-object v2, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    iget-object v4, v4, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSender:Ljava/lang/String;
+    iget-object v2, v2, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSender:Ljava/lang/String;
 
-    aput-object v4, v3, v0
+    aput-object v2, v1, v0
 
     const/4 v0, 0x3
 
-    iget-object v4, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
+    iget-object v2, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    invoke-virtual {v4}, Lcom/snapchat/android/model/chat/CashFeedItem;->Y()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/CashFeedItem;->Z()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v3, v0
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v1, v0
 
     .line 616
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
     move-result-object v0
 
-    new-array v1, v6, [Lcom/snapchat/android/model/chat/CashFeedItem;
+    new-array v1, v4, [Lcom/snapchat/android/model/chat/CashFeedItem;
 
     iget-object v2, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    aput-object v2, v1, v5
+    aput-object v2, v1, v3
 
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -132,7 +126,7 @@
 .end method
 
 .method public final a(I)V
-    .locals 7
+    .locals 5
 
     .prologue
     const/4 v1, 0x1
@@ -140,15 +134,11 @@
     const/4 v2, 0x0
 
     .line 621
-    invoke-static {}, Lcom/snapchat/android/model/chat/CashFeedItem;->o()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "CASH-LOG: FAILED %s cash id[%s] sender[%s] recipient[%s] statusCode[%d]"
+    invoke-static {}, Lcom/snapchat/android/model/chat/CashFeedItem;->s()Ljava/lang/String;
 
     const/4 v0, 0x5
 
-    new-array v5, v0, [Ljava/lang/Object;
+    new-array v3, v0, [Ljava/lang/Object;
 
     iget-boolean v0, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->val$saved:Z
 
@@ -157,7 +147,7 @@
     const-string v0, "SAVING"
 
     :goto_0
-    aput-object v0, v5, v2
+    aput-object v0, v3, v2
 
     iget-object v0, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
 
@@ -165,35 +155,33 @@
 
     move-result-object v0
 
-    aput-object v0, v5, v1
+    aput-object v0, v3, v1
 
     const/4 v0, 0x2
 
-    iget-object v6, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
+    iget-object v4, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    iget-object v6, v6, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSender:Ljava/lang/String;
+    iget-object v4, v4, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSender:Ljava/lang/String;
 
-    aput-object v6, v5, v0
+    aput-object v4, v3, v0
 
     const/4 v0, 0x3
 
-    iget-object v6, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
+    iget-object v4, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    invoke-virtual {v6}, Lcom/snapchat/android/model/chat/CashFeedItem;->Y()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/snapchat/android/model/chat/CashFeedItem;->Z()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v5, v0
+    aput-object v4, v3, v0
 
     const/4 v0, 0x4
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v5, v0
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v4, v3, v0
 
     .line 624
     iget-object v0, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
@@ -253,15 +241,15 @@
     invoke-static {v0, v1}, Lcom/snapchat/android/database/table/CashFeedItemTable;->a(Landroid/content/Context;Ljava/util/Collection;)V
 
     .line 629
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbaz;
+    new-instance v1, Lbca;
 
     iget-object v2, p0, Lcom/snapchat/android/model/chat/CashFeedItem$2;->this$0:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/CashFeedItem;->X()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/CashFeedItem;->Y()Ljava/lang/String;
 
     move-result-object v2
 
@@ -271,7 +259,7 @@
 
     move-result-object v3
 
-    invoke-direct {v1, v2, v3}, Lbaz;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3}, Lbca;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 

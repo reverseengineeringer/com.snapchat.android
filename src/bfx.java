@@ -1,9 +1,39 @@
-import android.graphics.Bitmap;
-import java.util.List;
+import android.os.SystemClock;
+import com.snapchat.android.util.debug.ReleaseManager;
 
-public abstract interface bfx
+public final class bfx
+  implements aui
 {
-  public abstract void a(List<Bitmap> paramList);
+  private static final String TAG = "FpsLogger";
+  private final bhk mClock;
+  protected int mFramesDrawn = 0;
+  private long mLastDrawTime;
+  private final ReleaseManager mReleaseManager;
+  
+  public bfx()
+  {
+    this(ReleaseManager.a(), new bhk());
+  }
+  
+  private bfx(ReleaseManager paramReleaseManager, bhk parambhk)
+  {
+    mReleaseManager = paramReleaseManager;
+    mClock = parambhk;
+  }
+  
+  public final void a()
+  {
+    if (!ReleaseManager.b()) {}
+    do
+    {
+      return;
+      mFramesDrawn += 1;
+    } while (mFramesDrawn < 30);
+    long l = SystemClock.elapsedRealtime();
+    float f = mFramesDrawn * 1000.0F / (float)(l - mLastDrawTime);
+    mLastDrawTime = l;
+    mFramesDrawn = 0;
+  }
 }
 
 /* Location:

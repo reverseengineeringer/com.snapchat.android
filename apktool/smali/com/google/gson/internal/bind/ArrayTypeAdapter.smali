@@ -74,9 +74,9 @@
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     .line 58
-    new-instance v0, Lej;
+    new-instance v0, Les;
 
-    invoke-direct {v0, p1, p2, p3}, Lej;-><init>(Lcom/google/gson/Gson;Lcom/google/gson/TypeAdapter;Ljava/lang/reflect/Type;)V
+    invoke-direct {v0, p1, p2, p3}, Les;-><init>(Lcom/google/gson/Gson;Lcom/google/gson/TypeAdapter;Ljava/lang/reflect/Type;)V
 
     iput-object v0, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->b:Lcom/google/gson/TypeAdapter;
 

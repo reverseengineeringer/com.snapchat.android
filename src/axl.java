@@ -1,32 +1,51 @@
-import java.io.BufferedOutputStream;
-import java.io.Closeable;
-import java.io.DataOutputStream;
-import java.io.OutputStream;
-import org.apache.commons.io.Charsets;
+import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory.Options;
+import android.util.DisplayMetrics;
 
 public final class axl
-  implements Closeable
 {
-  private final ato mGson;
-  private final DataOutputStream mOutputStream;
-  
-  public axl(OutputStream paramOutputStream, ato paramato)
+  public static BitmapFactory.Options a(DisplayMetrics paramDisplayMetrics, int paramInt1, int paramInt2)
   {
-    mOutputStream = new DataOutputStream(new BufferedOutputStream(paramOutputStream));
-    mGson = paramato;
+    Bitmap.Config localConfig = Bitmap.Config.ARGB_8888;
+    BitmapFactory.Options localOptions = new BitmapFactory.Options();
+    inJustDecodeBounds = false;
+    inSampleSize = b(paramDisplayMetrics, paramInt1, paramInt2);
+    inMutable = true;
+    inPreferredConfig = localConfig;
+    outHeight = paramInt2;
+    outWidth = paramInt1;
+    return localOptions;
   }
   
-  public final void a(bii parambii)
+  private static int b(DisplayMetrics paramDisplayMetrics, int paramInt1, int paramInt2)
   {
-    parambii = mGson.a(parambii).getBytes(Charsets.UTF_8);
-    mOutputStream.writeInt(parambii.length);
-    mOutputStream.write(parambii);
-    mOutputStream.flush();
-  }
-  
-  public final void close()
-  {
-    mOutputStream.close();
+    int m = Math.min(widthPixels, 3379);
+    int n = Math.min(heightPixels, 3379);
+    int k = 1;
+    int j = 1;
+    int i = k;
+    if (paramInt1 > m)
+    {
+      i = k;
+      if (paramInt2 > n)
+      {
+        paramInt2 /= 2;
+        k = paramInt1 / 2;
+        paramInt1 = j;
+        while ((paramInt2 / paramInt1 > n) && (k / paramInt1 > m)) {
+          paramInt1 *= 2;
+        }
+        i = paramInt1;
+        if (paramInt2 / paramInt1 == n)
+        {
+          i = paramInt1;
+          if (k / paramInt1 == m) {
+            i = paramInt1 * 2;
+          }
+        }
+      }
+    }
+    return i;
   }
 }
 

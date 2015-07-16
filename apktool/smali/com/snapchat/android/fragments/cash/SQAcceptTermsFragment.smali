@@ -65,7 +65,7 @@
 
     iget-object v1, p0, Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment;->mFragmentLayout:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lavh;->a(Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1}, Lawf;->a(Landroid/content/Context;Landroid/view/View;)V
 
     .line 76
     return-void
@@ -105,7 +105,7 @@
 
     .prologue
     .line 28
-    const v0, 0x7f0400ae
+    const v0, 0x7f0400b0
 
     const/4 v1, 0x0
 
@@ -116,7 +116,7 @@
     iput-object v0, p0, Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment;->mFragmentLayout:Landroid/view/View;
 
     .line 30
-    const v0, 0x7f0a03bc
+    const v0, 0x7f0a03b9
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -128,7 +128,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0a03c0
+    const v0, 0x7f0a03bd
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment;->c(I)Landroid/view/View;
 
@@ -142,7 +142,7 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    invoke-static {v0}, Latj;->a(Landroid/view/View;)V
+    invoke-static {v0}, Lauh;->a(Landroid/view/View;)V
 
     new-instance v1, Lcom/snapchat/android/fragments/cash/SQAcceptTermsFragment$2;
 

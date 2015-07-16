@@ -1,14 +1,24 @@
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Drawable.Callback;
 
 final class bvx$1
-  implements DialogInterface.OnClickListener
+  implements Drawable.Callback
 {
   bvx$1(bvx parambvx) {}
   
-  public final void onClick(DialogInterface paramDialogInterface, int paramInt)
+  public final void invalidateDrawable(Drawable paramDrawable)
   {
-    a.b();
+    a.invalidateSelf();
+  }
+  
+  public final void scheduleDrawable(Drawable paramDrawable, Runnable paramRunnable, long paramLong)
+  {
+    a.scheduleSelf(paramRunnable, paramLong);
+  }
+  
+  public final void unscheduleDrawable(Drawable paramDrawable, Runnable paramRunnable)
+  {
+    a.unscheduleSelf(paramRunnable);
   }
 }
 

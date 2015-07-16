@@ -1,53 +1,88 @@
 .class public final Lajw;
-.super Ljava/lang/Object;
+.super Lajy;
 .source "SourceFile"
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "UserDatabaseLoader"
-
-
-# instance fields
-.field private final mClock:Lbgk;
-
-.field final mLifecycleAnalytics:Lnf;
+.field private static sInstance:Lajw;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method private constructor <init>()V
+    .locals 3
 
     .prologue
-    .line 20
-    invoke-static {}, Lnf;->a()Lnf;
+    .line 10
+    const-string v0, "my_story_ads79sdf"
 
-    move-result-object v0
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    new-instance v1, Lbgl;
+    move-result-object v1
 
-    invoke-direct {v1}, Lbgl;-><init>()V
+    invoke-virtual {v1}, Lcom/snapchat/android/SnapchatApplication;->getResources()Landroid/content/res/Resources;
 
-    iget-object v1, v1, Lbgl;->mClock:Lbgk;
+    move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lajw;-><init>(Lnf;Lbgk;)V
+    const v2, 0x7f0c0178
 
-    .line 21
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v0, v1}, Lajy;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 11
     return-void
 .end method
 
-.method private constructor <init>(Lnf;Lbgk;)V
-    .locals 0
+.method public static declared-synchronized a()Lajw;
+    .locals 2
 
     .prologue
-    .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 14
+    const-class v1, Lajw;
 
-    .line 24
-    iput-object p1, p0, Lajw;->mLifecycleAnalytics:Lnf;
+    monitor-enter v1
 
-    .line 25
-    iput-object p2, p0, Lajw;->mClock:Lbgk;
+    :try_start_0
+    sget-object v0, Lajw;->sInstance:Lajw;
 
-    .line 26
-    return-void
+    if-nez v0, :cond_0
+
+    .line 15
+    new-instance v0, Lajw;
+
+    invoke-direct {v0}, Lajw;-><init>()V
+
+    sput-object v0, Lajw;->sInstance:Lajw;
+
+    .line 17
+    :cond_0
+    sget-object v0, Lajw;->sInstance:Lajw;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 14
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method public final b()Z
+    .locals 1
+
+    .prologue
+    .line 22
+    const/4 v0, 0x0
+
+    return v0
 .end method

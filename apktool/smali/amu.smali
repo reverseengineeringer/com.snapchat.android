@@ -1,276 +1,666 @@
 .class public final Lamu;
-.super Lamd;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzq;
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lamu$a;
+        Lamu$a;,
+        Lamu$b;
     }
 .end annotation
 
 
+# static fields
+.field public static final g:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Lcom/snapchat/android/notification/AndroidNotificationManager$Type;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final h:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Lcom/snapchat/android/notification/AndroidNotificationManager$Type;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
-.field public final a:J
+.field public a:Lcom/snapchat/android/ui/InAppPromptFlipper;
 
-.field public b:Z
+.field protected b:Z
 
-.field private final c:Lawp;
+.field public final c:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lamu$a;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private final d:Lajx;
+.field public final d:Ljava/util/concurrent/atomic/AtomicLong;
 
-.field private final e:Lcom/squareup/otto/Bus;
+.field public final e:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private final f:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
+.field public final f:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private i:Z
+
+.field private final j:Lbhk;
+
+.field private final k:Lcom/squareup/otto/Bus;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 10
 
     .prologue
-    .line 38
-    sget-object v2, Lawq;->PROFILE_IMAGE_CACHE:Lawp;
+    const/4 v9, 0x1
 
-    invoke-static {}, Lajx;->a()Lajx;
+    const/4 v8, 0x0
 
-    move-result-object v3
+    .line 57
+    sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->SNAP:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    sget-object v1, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CHAT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    move-result-object v4
+    sget-object v2, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->ADDFRIEND:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    invoke-static {}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils;->a()Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
+    sget-object v3, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->REPLAY:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    move-result-object v5
+    sget-object v4, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->TYPING:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    move-object v0, p0
+    sget-object v5, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->SCREENSHOT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    move-object v1, p1
+    const/4 v6, 0x2
 
-    invoke-direct/range {v0 .. v5}, Lamu;-><init>(Landroid/content/Intent;Lawp;Lajx;Lcom/squareup/otto/Bus;Lcom/snapchat/android/util/profileimages/ProfileImageUtils;)V
+    new-array v6, v6, [Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
 
-    .line 40
+    sget-object v7, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CHAT_SCREENSHOT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    aput-object v7, v6, v8
+
+    sget-object v7, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CASH:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    aput-object v7, v6, v9
+
+    invoke-static/range {v0 .. v6}, Ldr;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ldr;
+
+    move-result-object v0
+
+    sput-object v0, Lamu;->g:Ljava/util/Set;
+
+    .line 72
+    sget-object v0, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->SNAP:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    sget-object v1, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CHAT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    sget-object v2, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->REPLAY:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    sget-object v3, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->TYPING:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    sget-object v4, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->SCREENSHOT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    sget-object v5, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CHAT_SCREENSHOT:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    new-array v6, v9, [Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    sget-object v7, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->CASH:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    aput-object v7, v6, v8
+
+    invoke-static/range {v0 .. v6}, Ldr;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ldr;
+
+    move-result-object v0
+
+    sput-object v0, Lamu;->h:Ljava/util/Set;
+
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Intent;Lawp;Lajx;Lcom/squareup/otto/Bus;Lcom/snapchat/android/util/profileimages/ProfileImageUtils;)V
+.method private constructor <init>()V
+    .locals 7
+
+    .prologue
+    .line 92
+    new-instance v1, Ljava/util/LinkedList;
+
+    invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
+
+    new-instance v2, Ljava/util/concurrent/atomic/AtomicLong;
+
+    const-wide/16 v4, 0x0
+
+    invoke-direct {v2, v4, v5}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+
+    new-instance v3, Lbhk;
+
+    invoke-direct {v3}, Lbhk;-><init>()V
+
+    new-instance v4, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v4}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    new-instance v5, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v5}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
+
+    move-result-object v6
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v6}, Lamu;-><init>(Ljava/util/List;Ljava/util/concurrent/atomic/AtomicLong;Lbhk;Ljava/util/Map;Ljava/util/Map;Lcom/squareup/otto/Bus;)V
+
+    .line 95
+    return-void
+.end method
+
+.method synthetic constructor <init>(B)V
+    .locals 0
+
+    .prologue
+    .line 41
+    invoke-direct {p0}, Lamu;-><init>()V
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/util/List;Ljava/util/concurrent/atomic/AtomicLong;Lbhk;Ljava/util/Map;Ljava/util/Map;Lcom/squareup/otto/Bus;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lamu$a;",
+            ">;",
+            "Ljava/util/concurrent/atomic/AtomicLong;",
+            "Lbhk;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;",
+            "Lcom/squareup/otto/Bus;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 99
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 46
+    iput-boolean v0, p0, Lamu;->i:Z
+
+    .line 47
+    iput-boolean v0, p0, Lamu;->b:Z
+
+    .line 100
+    iput-object p1, p0, Lamu;->c:Ljava/util/List;
+
+    .line 101
+    iput-object p2, p0, Lamu;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    .line 102
+    iput-object p3, p0, Lamu;->j:Lbhk;
+
+    .line 103
+    iput-object p4, p0, Lamu;->e:Ljava/util/Map;
+
+    .line 104
+    iput-object p5, p0, Lamu;->f:Ljava/util/Map;
+
+    .line 105
+    iput-object p6, p0, Lamu;->k:Lcom/squareup/otto/Bus;
+
+    .line 106
+    return-void
+.end method
+
+.method private a(Lamt;)Lamu$a;
     .locals 4
 
     .prologue
-    .line 45
-    invoke-direct {p0, p1}, Lamd;-><init>(Landroid/content/Intent;)V
+    .line 195
+    iget-object v1, p0, Lamu;->c:Ljava/util/List;
 
-    .line 46
-    const-string v0, "last_deleted"
+    monitor-enter v1
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    .line 196
+    :try_start_0
+    iget-object v0, p0, Lamu;->c:Ljava/util/List;
 
-    move-result-wide v2
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {p1, v0, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    move-result-object v2
 
-    move-result-wide v0
+    .line 197
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    iput-wide v0, p0, Lamu;->a:J
+    move-result v0
 
-    .line 47
-    iput-object p2, p0, Lamu;->c:Lawp;
+    if-eqz v0, :cond_1
 
-    .line 48
-    iput-object p3, p0, Lamu;->d:Lajx;
+    .line 198
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 49
-    iput-object p4, p0, Lamu;->e:Lcom/squareup/otto/Bus;
+    move-result-object v0
 
-    .line 50
-    iput-object p5, p0, Lamu;->f:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
+    check-cast v0, Lamu$a;
 
-    .line 51
+    .line 199
+    invoke-interface {p1, v0}, Lamt;->b(Lamu$a;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 200
+    invoke-interface {v2}, Ljava/util/Iterator;->remove()V
+
+    goto :goto_0
+
+    .line 211
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    .line 204
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Lamu;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_2
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lamu$a;
+
+    .line 205
+    invoke-interface {p1, v0}, Lamt;->a(Lamu$a;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 206
+    monitor-exit v1
+
+    .line 210
+    :goto_1
+    return-object v0
+
+    :cond_3
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lamu;->b:Z
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 52
-    return-void
+    goto :goto_1
+.end method
+
+.method public static a()Lamu;
+    .locals 1
+
+    .prologue
+    .line 110
+    sget v0, Lamu$b;->a:I
+
+    invoke-static {}, Lamu$b;->a()Lamu;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic a(Lamu;)Lcom/squareup/otto/Bus;
+    .locals 1
+
+    .prologue
+    .line 41
+    iget-object v0, p0, Lamu;->k:Lcom/squareup/otto/Bus;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Luc;)V
-    .locals 8
-    .param p1    # Luc;
-        .annotation build Lcgb;
+.method public final a(Lajk;)V
+    .locals 2
+    .param p1    # Lajk;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    const/4 v7, 0x1
+    .line 339
+    const/4 v0, 0x0
 
-    const/4 v6, 0x0
+    iput-boolean v0, p0, Lamu;->b:Z
 
-    .line 83
-    invoke-super {p0, p1}, Lamd;->a(Luc;)V
+    .line 340
+    iget-object v0, p0, Lamu;->k:Lcom/squareup/otto/Bus;
 
-    .line 88
-    iget v0, p1, Luc;->mResponseCode:I
+    new-instance v1, Lbdb;
 
-    const/16 v1, 0x194
+    invoke-direct {v1}, Lbdb;-><init>()V
 
-    if-eq v0, v1, :cond_0
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    iget v0, p1, Luc;->mResponseCode:I
+    .line 341
+    return-void
+.end method
 
-    const/16 v1, 0xc8
+.method public final a(Laka;Lajk;)V
+    .locals 1
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lajk;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
-    if-ne v0, v1, :cond_2
+    .prologue
+    .line 324
+    const/4 v0, 0x1
 
-    .line 89
+    iput-boolean v0, p0, Lamu;->b:Z
+
+    .line 325
+    return-void
+.end method
+
+.method public final a(Laka;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;I)V
+    .locals 0
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 335
+    return-void
+.end method
+
+.method public final a(Lamt;Landroid/view/ViewStub;)V
+    .locals 8
+
+    .prologue
+    const/4 v4, 0x1
+
+    .line 239
+    invoke-static {}, Lbhp;->a()V
+
+    .line 240
+    if-nez p1, :cond_1
+
+    .line 255
     :cond_0
-    const-string v0, "DeleteProfileImagesOperation"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "profile images - delete succeeded with timestamp: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v2, p0, Lamu;->a:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 90
-    iput-boolean v7, p0, Lamu;->b:Z
-
-    .line 91
-    iget-wide v0, p0, Lamu;->a:J
-
-    iget-object v2, p0, Lamu;->c:Lawp;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils;->a(JLawp;)V
-
-    .line 92
-    iget-wide v0, p0, Lamu;->a:J
-
-    invoke-static {v0, v1}, Lajx;->c(J)V
-
-    .line 94
-    iget-wide v0, p0, Lamu;->a:J
-
-    invoke-static {}, Lajx;->z()J
-
-    move-result-wide v2
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_1
-
-    .line 95
-    invoke-static {v7}, Lajx;->d(Z)V
-
-    .line 102
-    :cond_1
     :goto_0
     return-void
 
-    .line 98
-    :cond_2
-    const-string v0, "DeleteProfileImagesOperation"
+    .line 245
+    :cond_1
+    iget-boolean v0, p0, Lamu;->i:Z
 
-    const-string v1, "profile images - delete failed with timestamp %d : %s"
+    if-nez v0, :cond_0
+
+    iget-boolean v0, p0, Lamu;->b:Z
+
+    if-nez v0, :cond_0
+
+    .line 247
+    invoke-direct {p0, p1}, Lamu;->a(Lamt;)Lamu$a;
+
+    move-result-object v1
+
+    .line 249
+    if-eqz v1, :cond_0
+
+    .line 254
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    iget-object v3, v1, Lamu$a;->a:Ljava/lang/String;
+
+    aput-object v3, v0, v2
+
+    iget-object v2, v1, Lamu$a;->c:Lcom/snapchat/android/notification/AndroidNotificationManager$Type;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/notification/AndroidNotificationManager$Type;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v4
 
     const/4 v2, 0x2
 
-    new-array v2, v2, [Ljava/lang/Object;
+    iget-object v3, v1, Lamu$a;->d:Ljava/lang/String;
 
-    iget-wide v4, p0, Lamu;->a:J
+    aput-object v3, v0, v2
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0, p2}, Lamu;->a(Landroid/view/ViewStub;)V
 
-    move-result-object v3
+    iput-boolean v4, p0, Lamu;->i:Z
 
-    aput-object v3, v2, v6
+    iget-object v0, p0, Lamu;->a:Lcom/snapchat/android/ui/InAppPromptFlipper;
 
-    invoke-virtual {p1}, Luc;->e()Ljava/lang/String;
+    const v2, 0x7f0a025b
 
-    move-result-object v3
+    invoke-virtual {v0, v2}, Lcom/snapchat/android/ui/InAppPromptFlipper;->findViewById(I)Landroid/view/View;
 
-    aput-object v3, v2, v7
+    move-result-object v0
 
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    check-cast v0, Lcom/snapchat/android/ui/InAppPromptView;
 
-    .line 99
-    iput-boolean v6, p0, Lamu;->b:Z
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/ui/InAppPromptView;->set(Lamu$a;)V
 
-    .line 100
-    iget-object v0, p0, Lamu;->e:Lcom/squareup/otto/Bus;
+    iget-object v0, p0, Lamu;->a:Lcom/snapchat/android/ui/InAppPromptFlipper;
 
-    new-instance v1, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/InAppPromptFlipper;->a()V
 
-    sget-object v2, Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;->TOAST:Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;
+    iget-wide v2, v1, Lamu$a;->e:J
 
-    const v3, 0x7f0c00d8
+    iget-object v1, p0, Lamu;->c:Ljava/util/List;
 
-    invoke-direct {v1, v2, v3}, Lcom/snapchat/android/util/eventbus/ShowDialogEvent;-><init>(Lcom/snapchat/android/util/eventbus/ShowDialogEvent$DialogType;I)V
+    monitor-enter v1
 
-    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+    :try_start_0
+    iget-object v0, p0, Lamu;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_2
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lamu$a;
+
+    iget-wide v6, v0, Lamu$a;->e:J
+
+    cmp-long v0, v6, v2
+
+    if-nez v0, :cond_2
+
+    invoke-interface {v4}, Ljava/util/Iterator;->remove()V
+
+    :cond_3
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lamu;->a:Lcom/snapchat/android/ui/InAppPromptFlipper;
+
+    new-instance v1, Lamu$1;
+
+    invoke-direct {v1, p0}, Lamu$1;-><init>(Lamu;)V
+
+    const-wide/16 v2, 0x9c4
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/snapchat/android/ui/InAppPromptFlipper;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public final a(Landroid/view/ViewStub;)V
+    .locals 1
+
+    .prologue
+    .line 297
+    iget-object v0, p0, Lamu;->a:Lcom/snapchat/android/ui/InAppPromptFlipper;
+
+    if-eqz v0, :cond_0
+
+    .line 301
+    :goto_0
+    return-void
+
+    .line 300
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/ui/InAppPromptFlipper;
+
+    iput-object v0, p0, Lamu;->a:Lcom/snapchat/android/ui/InAppPromptFlipper;
 
     goto :goto_0
 .end method
 
-.method public final b()Ljava/lang/Object;
-    .locals 4
-
-    .prologue
-    .line 64
-    new-instance v0, Lamu$a;
-
-    invoke-direct {v0}, Lamu$a;-><init>()V
-
-    iget-wide v2, p0, Lamu;->a:J
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lamu$a;->a(Ljava/lang/Long;)Lbka;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lamu;->a(Lbgy;)Lbgy;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Lcom/snapchat/android/api2/framework/HttpMethod;
+.method public final b()V
     .locals 1
 
     .prologue
-    .line 73
-    sget-object v0, Lcom/snapchat/android/api2/framework/HttpMethod;->POST:Lcom/snapchat/android/api2/framework/HttpMethod;
+    .line 287
+    invoke-static {}, Lbhp;->a()V
 
-    return-object v0
+    .line 288
+    iget-boolean v0, p0, Lamu;->i:Z
+
+    if-nez v0, :cond_0
+
+    .line 294
+    :goto_0
+    return-void
+
+    .line 292
+    :cond_0
+    iget-object v0, p0, Lamu;->a:Lcom/snapchat/android/ui/InAppPromptFlipper;
+
+    invoke-virtual {v0}, Lcom/snapchat/android/ui/InAppPromptFlipper;->b()V
+
+    .line 293
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lamu;->i:Z
+
+    goto :goto_0
 .end method
 
-.method protected final e()Ljava/lang/String;
-    .locals 1
+.method public final d(Laka;)V
+    .locals 0
+    .param p1    # Laka;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 78
-    const-string v0, "/bq/delete_profile_data"
-
-    return-object v0
+    .line 329
+    return-void
 .end method

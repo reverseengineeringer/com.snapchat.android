@@ -32,6 +32,8 @@
 
 .field public static final enum DEBUG:Lcom/snapchat/android/Timber$LogType;
 
+.field public static final enum DOWNLOAD_PROGRESS:Lcom/snapchat/android/Timber$LogType;
+
 .field public static final enum ERROR_WITHOUT_TRACE:Lcom/snapchat/android/Timber$LogType;
 
 .field public static final enum ERROR_WITH_TRACE:Lcom/snapchat/android/Timber$LogType;
@@ -149,8 +151,19 @@
 
     sput-object v0, Lcom/snapchat/android/Timber$LogType;->BITMAP_POOL_MONITOR:Lcom/snapchat/android/Timber$LogType;
 
+    .line 36
+    new-instance v0, Lcom/snapchat/android/Timber$LogType;
+
+    const-string v1, "DOWNLOAD_PROGRESS"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2}, Lcom/snapchat/android/Timber$LogType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/snapchat/android/Timber$LogType;->DOWNLOAD_PROGRESS:Lcom/snapchat/android/Timber$LogType;
+
     .line 26
-    const/16 v0, 0x9
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/snapchat/android/Timber$LogType;
 
@@ -195,6 +208,12 @@
     const/16 v1, 0x8
 
     sget-object v2, Lcom/snapchat/android/Timber$LogType;->BITMAP_POOL_MONITOR:Lcom/snapchat/android/Timber$LogType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    sget-object v2, Lcom/snapchat/android/Timber$LogType;->DOWNLOAD_PROGRESS:Lcom/snapchat/android/Timber$LogType;
 
     aput-object v2, v0, v1
 

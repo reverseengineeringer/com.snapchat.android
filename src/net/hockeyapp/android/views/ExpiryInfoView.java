@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
-import bwn;
+import bxo;
 
 public class ExpiryInfoView
   extends RelativeLayout
@@ -27,7 +27,7 @@ public class ExpiryInfoView
     localLayoutParams.addRule(10, -1);
     ImageView localImageView = new ImageView(paramContext);
     localImageView.setLayoutParams(localLayoutParams);
-    localImageView.setBackgroundDrawable(bwn.a());
+    localImageView.setBackgroundDrawable(bxo.a());
     addView(localImageView);
     int i = (int)TypedValue.applyDimension(1, 20.0F, getResources().getDisplayMetrics());
     localLayoutParams = new RelativeLayout.LayoutParams(-1, -2);

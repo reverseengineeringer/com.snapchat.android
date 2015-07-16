@@ -1,10 +1,34 @@
-import com.snapchat.android.util.cache.CacheType;
+import android.os.Bundle;
+import com.snapchat.android.discover.util.network.DiscoverEndpointManager;
+import javax.inject.Provider;
 
 public final class adc
+  implements Provider<Bundle>
 {
-  public static final awp a = new awp(CacheType.DISCOVER_INTRO_VIDEOS, 40000L);
-  public static final awp b = new axd(CacheType.DISCOVER_EDITIONS_CHUNKS);
-  public static final awp c = new awp(CacheType.DISCOVER_PUBLISHER_ICONS, 40000L);
+  private final DiscoverEndpointManager a;
+  
+  public adc()
+  {
+    this(DiscoverEndpointManager.a());
+  }
+  
+  private adc(DiscoverEndpointManager paramDiscoverEndpointManager)
+  {
+    a = paramDiscoverEndpointManager;
+  }
+  
+  @chd
+  public final Bundle a()
+  {
+    String str1 = a.c();
+    String str2 = a.d();
+    if ((str1 == null) || (str2 == null)) {
+      return null;
+    }
+    Bundle localBundle = new Bundle();
+    localBundle.putString(str1, str2);
+    return localBundle;
+  }
 }
 
 /* Location:

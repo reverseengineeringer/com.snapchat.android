@@ -13,7 +13,7 @@
 
 # instance fields
 .field private final mEmail:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -22,7 +22,7 @@
 .end field
 
 .field private final mId:Ljava/lang/String;
-    .annotation build Lcgb;
+    .annotation build Lchc;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -31,7 +31,7 @@
 .end field
 
 .field private final mPhoneNumber:Ljava/lang/String;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -44,7 +44,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

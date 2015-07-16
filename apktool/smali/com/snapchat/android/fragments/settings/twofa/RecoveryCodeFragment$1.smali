@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laok;
+.implements Lapg;
 
 
 # annotations
@@ -36,12 +36,12 @@
 
 
 # virtual methods
-.method public final a(Lamk;)V
+.method public final a(Lanh;)V
     .locals 3
 
     .prologue
     .line 48
-    invoke-static {p1}, Laol;->a(Lamk;)I
+    invoke-static {p1}, Laph;->a(Lanh;)I
 
     move-result v0
 
@@ -76,7 +76,7 @@
     invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     .line 51
-    instance-of v0, p1, Lamy;
+    instance-of v0, p1, Lanv;
 
     if-eqz v0, :cond_0
 
@@ -94,7 +94,7 @@
 
     iget-object v0, v0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;->a:Landroid/widget/Button;
 
-    const v1, 0x7f0c02be
+    const v1, 0x7f0c02bc
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
@@ -108,25 +108,25 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setClickable(Z)V
 
     .line 55
-    check-cast p1, Lamy;
+    check-cast p1, Lanv;
 
     .line 57
-    iget-boolean v0, p1, Lamy;->b:Z
+    iget-boolean v0, p1, Lanv;->b:Z
 
     if-eqz v0, :cond_1
 
     .line 58
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbdw;
+    new-instance v1, Lbev;
 
     new-instance v2, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;
 
     invoke-direct {v2}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodePasswordValidationFragment;-><init>()V
 
-    invoke-direct {v1, v2}, Lbdw;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
+    invoke-direct {v1, v2}, Lbev;-><init>(Lcom/snapchat/android/util/fragment/SnapchatFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -137,12 +137,12 @@
 
     .line 61
     :cond_1
-    iget-object v0, p1, Lamy;->a:Lbkj;
+    iget-object v0, p1, Lanv;->a:Lblk;
 
     .line 63
     iget-object v1, p0, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment$1;->a:Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;
 
-    invoke-static {v1, v0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;->a(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;Lbkj;)V
+    invoke-static {v1, v0}, Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;->a(Lcom/snapchat/android/fragments/settings/twofa/RecoveryCodeFragment;Lblk;)V
 
     goto :goto_0
 .end method

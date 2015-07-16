@@ -3,113 +3,110 @@
 .source "SourceFile"
 
 
-# instance fields
-.field final a:[F
+# static fields
+.field protected static final a:Lcom/snapchat/android/ui/layertype/LayerType;
 
-.field public final b:[I
-
-.field public c:F
-
-.field public d:F
-
-.field public e:I
-
-.field public f:I
-
-.field g:Z
+.field private static final b:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/Integer;",
+            "Lcom/snapchat/android/ui/layertype/LayerType;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    const/4 v1, 0x2
+    .line 13
+    sget-object v0, Lcom/snapchat/android/ui/layertype/LayerType;->HARDWARE:Lcom/snapchat/android/ui/layertype/LayerType;
 
-    .line 8
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Larf;->a:Lcom/snapchat/android/ui/layertype/LayerType;
 
-    .line 9
-    new-array v0, v1, [F
+    .line 21
+    new-instance v0, Ljava/util/HashMap;
 
-    iput-object v0, p0, Larf;->a:[F
+    invoke-static {}, Lcom/snapchat/android/ui/layertype/LayerType;->values()[Lcom/snapchat/android/ui/layertype/LayerType;
 
-    .line 10
-    new-array v0, v1, [I
+    move-result-object v1
 
-    fill-array-data v0, :array_0
+    array-length v1, v1
 
-    iput-object v0, p0, Larf;->b:[I
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 17
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Larf;->g:Z
-
-    return-void
-
-    .line 10
-    nop
-
-    :array_0
-    .array-data 4
-        -0x1
-        -0x1
-    .end array-data
-.end method
-
-
-# virtual methods
-.method public final a(I)V
-    .locals 2
-
-    .prologue
-    .line 95
-    iget-object v0, p0, Larf;->b:[I
-
-    iget v1, p0, Larf;->f:I
-
-    aput v1, v0, p1
-
-    .line 96
-    iget-object v0, p0, Larf;->a:[F
-
-    iget v1, p0, Larf;->c:F
-
-    aput v1, v0, p1
-
-    .line 97
-    return-void
-.end method
-
-.method public final a()Z
-    .locals 4
-
-    .prologue
-    const/4 v0, 0x1
+    .line 24
+    sput-object v0, Larf;->b:Ljava/util/Map;
 
     const/4 v1, 0x0
 
-    const/4 v3, -0x1
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 51
-    iget-object v2, p0, Larf;->b:[I
+    move-result-object v1
 
-    aget v2, v2, v1
+    sget-object v2, Lcom/snapchat/android/ui/layertype/LayerType;->NONE:Lcom/snapchat/android/ui/layertype/LayerType;
 
-    if-ne v2, v3, :cond_0
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, p0, Larf;->b:[I
+    .line 25
+    sget-object v0, Larf;->b:Ljava/util/Map;
 
-    aget v2, v2, v0
+    const/4 v1, 0x2
 
-    if-ne v2, v3, :cond_0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :goto_0
-    return v0
+    move-result-object v1
 
+    sget-object v2, Lcom/snapchat/android/ui/layertype/LayerType;->HARDWARE:Lcom/snapchat/android/ui/layertype/LayerType;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 26
+    sget-object v0, Larf;->b:Ljava/util/Map;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/snapchat/android/ui/layertype/LayerType;->SOFTWARE:Lcom/snapchat/android/ui/layertype/LayerType;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 27
+    return-void
+.end method
+
+.method public static a(I)Lcom/snapchat/android/ui/layertype/LayerType;
+    .locals 2
+
+    .prologue
+    .line 34
+    sget-object v0, Larf;->b:Ljava/util/Map;
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/ui/layertype/LayerType;
+
+    .line 35
+    if-nez v0, :cond_0
+
+    .line 36
+    sget-object v0, Larf;->a:Lcom/snapchat/android/ui/layertype/LayerType;
+
+    .line 38
     :cond_0
-    move v0, v1
-
-    goto :goto_0
+    return-object v0
 .end method

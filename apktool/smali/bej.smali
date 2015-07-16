@@ -4,39 +4,45 @@
 
 
 # instance fields
-.field public final eventTimeMilliseconds:J
+.field private final mCaptureContext:Lcom/snapchat/android/util/eventbus/SnapCaptureContext;
+
+.field public final mMediabryo:Laji;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
-
-    .prologue
-    .line 12
-    new-instance v0, Lbgk;
-
-    invoke-direct {v0}, Lbgk;-><init>()V
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    invoke-direct {p0, v0, v1}, Lbej;-><init>(J)V
-
-    .line 13
-    return-void
-.end method
-
-.method private constructor <init>(J)V
+.method public constructor <init>(Laji;Lcom/snapchat/android/util/eventbus/SnapCaptureContext;)V
     .locals 1
+    .param p1    # Laji;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/util/eventbus/SnapCaptureContext;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 15
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
-    iput-wide p1, p0, Lbej;->eventTimeMilliseconds:J
+    .line 23
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 17
+    move-result-object v0
+
+    check-cast v0, Laji;
+
+    iput-object v0, p0, Lbej;->mMediabryo:Laji;
+
+    .line 24
+    invoke-static {p2}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/util/eventbus/SnapCaptureContext;
+
+    iput-object v0, p0, Lbej;->mCaptureContext:Lcom/snapchat/android/util/eventbus/SnapCaptureContext;
+
+    .line 25
     return-void
 .end method

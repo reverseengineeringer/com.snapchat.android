@@ -1,64 +1,92 @@
-import android.text.TextUtils;
-import com.google.gson.annotations.SerializedName;
+import android.os.Bundle;
+import com.snapchat.android.SnapchatApplication;
+import com.snapchat.android.model.MediaMailingMetadata;
+import com.snapchat.android.model.MediaMailingMetadata.UploadStatus;
+import com.snapchat.android.model.Mediabryo;
+import com.snapchat.android.model.chat.ChatConversation;
+import com.snapchat.android.model.chat.ChatMedia;
+import com.snapchat.android.model.chat.ChatMedia.MediaType;
+import com.snapchat.android.model.chat.StatefulChatFeedItem;
+import com.snapchat.android.model.chat.StatefulChatFeedItem.SendReceiveStatus;
+import com.snapchat.android.notification.AndroidNotificationManager;
+import com.snapchat.android.util.crypto.CbcEncryptionAlgorithm;
 import com.squareup.otto.Bus;
 
 public final class qa
-  extends th
-  implements ajv.b, ts.b<bjf>
+  extends py
 {
-  public static final String PATH = "/bq/stories";
-  private static final String TAG = "SyncStoryTask";
-  private final Bus mBus;
-  private final String mChecksum;
-  private biw mServerInfoResponse;
-  private final ajx mUserPrefs;
+  private static final String TASK_NAME = "UploadChatMediaTask";
+  private ChatConversation mChatConversation;
+  private ChatMedia mChatMedia;
+  private AndroidNotificationManager mNotificationManager = AndroidNotificationManager.a();
+  private final aki mSnapWomb = aki.a();
   
-  public qa()
+  public qa(aji paramaji)
   {
-    this(ban.a(), ajx.a());
+    super(paramaji);
   }
   
-  private qa(Bus paramBus, ajx paramajx)
+  protected final String a()
   {
-    mBus = paramBus;
-    mUserPrefs = paramajx;
-    mChecksum = ajx.az();
-    a(bjf.class, this);
+    return "/bq/upload_chat_media";
   }
   
-  public final void D_()
+  protected final void a(String paramString, int paramInt)
   {
-    if ((mServerInfoResponse != null) && (mServerInfoResponse.e() == biw.a.NOT_EQUAL))
+    mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.FAILED);
+    mChatMedia.mSendReceiveStatus = StatefulChatFeedItem.SendReceiveStatus.FAILED;
+    bbo.a().a(new bca(mChatConversation.mId, true));
+    mNotificationManager.a(SnapchatApplication.b(), false);
+  }
+  
+  protected final Bundle b()
+  {
+    Bundle localBundle = super.b();
+    localBundle.putString("type", ChatMedia.MediaType.IMAGE.toString());
+    localBundle.putString("conversation_id", mChatConversation.mId);
+    localBundle.putString("id", mSnapbryo.mClientId);
+    localBundle.putString("recipient", mMediaMailingMetadata.e());
+    localBundle.putByteArray("data", new CbcEncryptionAlgorithm(mChatMedia.E(), mChatMedia.F()).a(mData, "no dataId provided"));
+    return localBundle;
+  }
+  
+  protected final void b(alp paramalp)
+  {
+    mChatMedia.e(media_id);
+    mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.UPLOADED);
+    paramalp = zm.a();
+    ChatConversation localChatConversation = mChatConversation;
+    ChatMedia localChatMedia = mChatMedia;
+    localChatMedia.c(localChatConversation.b(localChatMedia.U()));
+    Object localObject = new bjh().a(localChatMedia.C()).b(localChatMedia.E()).c(localChatMedia.F()).a(Integer.valueOf(localChatMedia.G())).b(Integer.valueOf(localChatMedia.H()));
+    localObject = new bjj().a(bjj.a.MEDIA.toString()).a((bjh)localObject);
+    bif localbif = (bif)aty.a(bji.a.CHAT_MESSAGE, mSender, mRecipients, mMessagingAuthToken);
+    localbif.a((bjj)localObject);
+    localbif.a(localChatMedia.d());
+    localbif.b(Long.valueOf(localChatMedia.U()));
+    localChatMedia.a(localbif.k());
+    localChatMedia.a(localbif);
+    paramalp.a(localChatConversation, localChatMedia);
+    mNotificationManager.a(SnapchatApplication.b(), true);
+  }
+  
+  protected final String c()
+  {
+    return "UploadChatMediaTask";
+  }
+  
+  protected final void onPreExecute()
+  {
+    super.onPreExecute();
+    mChatMedia = new ChatMedia(mSnapbryo);
+    mChatMedia.mSendReceiveStatus = StatefulChatFeedItem.SendReceiveStatus.SENDING;
+    mChatConversation = akx.c().a(mMediaMailingMetadata.e());
+    if (mChatConversation == null)
     {
-      if (TextUtils.equals(mChecksum, ajx.az())) {
-        ajx.k(mServerInfoResponse.b());
-      }
-    }
-    else {
+      cancel(true);
       return;
     }
-    new qa().f();
-  }
-  
-  protected final String d()
-  {
-    return "/bq/stories";
-  }
-  
-  public final void f()
-  {
-    mBus.a(new bei());
-    super.f();
-  }
-  
-  @tn
-  public static final class a
-    extends pl
-  {
-    @SerializedName("checksum")
-    String mChecksum;
-    @SerializedName("features_map")
-    String mFeatureMap;
+    mChatConversation.a(mChatMedia);
   }
 }
 

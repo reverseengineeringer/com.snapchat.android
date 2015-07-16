@@ -1,196 +1,647 @@
-import android.accounts.Account;
-import android.accounts.AccountManager;
-import android.content.Context;
-import android.util.Base64;
-import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
-import com.google.android.gms.auth.UserRecoverableAuthException;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.GoogleApiClient.Builder;
-import com.google.android.gms.safetynet.SafetyNet;
-import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
-import java.io.IOException;
-import java.util.concurrent.Callable;
-import javax.inject.Singleton;
+import java.util.HashMap;
+import java.util.Map;
 
-@Singleton
 public final class lx
+  extends ml
 {
-  private static lx c = new lx();
-  private String a = null;
-  private String b = null;
-  private final aug d;
-  private final GoogleApiClient e;
-  private final Context f;
+  private Long adIndexCount;
+  public Long adIndexPos;
+  public fz additionalInfo;
+  public String adsnapId;
+  private Long camera;
+  private Long caption;
+  private Boolean drawing;
+  private final String eventName = "STORY_AD_SKIP";
+  private String filter;
+  private String filterGeofence;
+  private hv filterInfo;
+  private String filterSponsor;
+  private hw filterType;
+  private hx filterVisual;
+  private Boolean flash;
+  private Boolean fullView;
+  public String geoFence;
+  private ih mediaType;
+  public String posterId;
+  private String skipInfo;
+  private Long snapIndexCount;
+  private Long snapIndexPos;
+  private Double snapTime;
+  private lu source;
+  private String sponsor;
+  public String storySnapId;
+  public mj storyType;
+  private Double timeViewed;
+  public Long viewLocation;
   
-  private lx()
+  public final Map<String, Object> a()
   {
-    this(SnapchatApplication.b().getApplicationContext(), new aug(), new GoogleApiClient.Builder(SnapchatApplication.b().getApplicationContext()).addApi(SafetyNet.API).build());
-  }
-  
-  private lx(Context paramContext, aug paramaug, GoogleApiClient paramGoogleApiClient)
-  {
-    f = paramContext;
-    d = paramaug;
-    e = paramGoogleApiClient;
-  }
-  
-  public static lx a()
-  {
-    return c;
-  }
-  
-  /* Error */
-  @q
-  public final String a(final String... paramVarArgs)
-  {
-    // Byte code:
-    //   0: aload_0
-    //   1: getfield 75	lx:e	Lcom/google/android/gms/common/api/GoogleApiClient;
-    //   4: invokeinterface 89 1 0
-    //   9: invokevirtual 95	com/google/android/gms/common/ConnectionResult:isSuccess	()Z
-    //   12: ifeq +125 -> 137
-    //   15: aload_0
-    //   16: getfield 75	lx:e	Lcom/google/android/gms/common/api/GoogleApiClient;
-    //   19: invokeinterface 98 1 0
-    //   24: ifeq +113 -> 137
-    //   27: ldc 100
-    //   29: invokestatic 106	java/security/MessageDigest:getInstance	(Ljava/lang/String;)Ljava/security/MessageDigest;
-    //   32: aload_1
-    //   33: ldc 108
-    //   35: invokestatic 114	org/apache/commons/lang3/StringUtils:join	([Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
-    //   38: ldc 116
-    //   40: invokevirtual 122	java/lang/String:getBytes	(Ljava/lang/String;)[B
-    //   43: invokevirtual 126	java/security/MessageDigest:digest	([B)[B
-    //   46: astore_1
-    //   47: aload_0
-    //   48: getfield 73	lx:d	Laug;
-    //   51: new 8	lx$2
-    //   54: dup
-    //   55: aload_0
-    //   56: aload_1
-    //   57: invokespecial 129	lx$2:<init>	(Llx;[B)V
-    //   60: invokevirtual 132	aug:a	(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;
-    //   63: invokeinterface 138 1 0
-    //   68: checkcast 118	java/lang/String
-    //   71: astore_1
-    //   72: ldc -116
-    //   74: new 142	java/lang/StringBuilder
-    //   77: dup
-    //   78: ldc -112
-    //   80: invokespecial 147	java/lang/StringBuilder:<init>	(Ljava/lang/String;)V
-    //   83: aload_1
-    //   84: invokevirtual 151	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    //   87: invokevirtual 155	java/lang/StringBuilder:toString	()Ljava/lang/String;
-    //   90: iconst_0
-    //   91: anewarray 4	java/lang/Object
-    //   94: invokestatic 160	com/snapchat/android/Timber:c	(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    //   97: aload_1
-    //   98: areturn
-    //   99: astore_2
-    //   100: ldc -94
-    //   102: astore_1
-    //   103: ldc -116
-    //   105: new 142	java/lang/StringBuilder
-    //   108: dup
-    //   109: ldc -92
-    //   111: invokespecial 147	java/lang/StringBuilder:<init>	(Ljava/lang/String;)V
-    //   114: aload_2
-    //   115: invokevirtual 167	java/lang/Exception:getMessage	()Ljava/lang/String;
-    //   118: invokevirtual 151	java/lang/StringBuilder:append	(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    //   121: invokevirtual 155	java/lang/StringBuilder:toString	()Ljava/lang/String;
-    //   124: iconst_0
-    //   125: anewarray 4	java/lang/Object
-    //   128: invokestatic 169	com/snapchat/android/Timber:f	(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-    //   131: aload_1
-    //   132: areturn
-    //   133: astore_2
-    //   134: goto -31 -> 103
-    //   137: ldc -94
-    //   139: areturn
-    // Local variable table:
-    //   start	length	slot	name	signature
-    //   0	140	0	this	lx
-    //   0	140	1	paramVarArgs	String[]
-    //   99	16	2	localException1	Exception
-    //   133	1	2	localException2	Exception
-    // Exception table:
-    //   from	to	target	type
-    //   0	72	99	java/lang/Exception
-    //   72	97	133	java/lang/Exception
-  }
-  
-  public final String b()
-  {
-    if (b == null) {
-      return null;
+    HashMap localHashMap = new HashMap();
+    localHashMap.put("event_name", "STORY_AD_SKIP");
+    if (adIndexCount != null) {
+      localHashMap.put("ad_index_count", adIndexCount);
     }
-    String str = Base64.encodeToString(b.getBytes(), 11);
-    Timber.c("GoogleAuthManager", "GoogleOauthToken exception: " + str, new Object[0]);
-    return str;
+    if (adIndexPos != null) {
+      localHashMap.put("ad_index_pos", adIndexPos);
+    }
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
+    }
+    if (adsnapId != null) {
+      localHashMap.put("adsnap_id", adsnapId);
+    }
+    if (camera != null) {
+      localHashMap.put("camera", camera);
+    }
+    if (caption != null) {
+      localHashMap.put("caption", caption);
+    }
+    if (drawing != null) {
+      localHashMap.put("drawing", drawing);
+    }
+    if (filter != null) {
+      localHashMap.put("filter", filter);
+    }
+    if (filterGeofence != null) {
+      localHashMap.put("filter_geofence", filterGeofence);
+    }
+    if (filterInfo != null) {
+      localHashMap.put("filter_info", filterInfo);
+    }
+    if (filterSponsor != null) {
+      localHashMap.put("filter_sponsor", filterSponsor);
+    }
+    if (filterType != null) {
+      localHashMap.put("filter_type", filterType);
+    }
+    if (filterVisual != null) {
+      localHashMap.put("filter_visual", filterVisual);
+    }
+    if (flash != null) {
+      localHashMap.put("flash", flash);
+    }
+    if (fullView != null) {
+      localHashMap.put("full_view", fullView);
+    }
+    if (geoFence != null) {
+      localHashMap.put("geo_fence", geoFence);
+    }
+    if (mediaType != null) {
+      localHashMap.put("media_type", mediaType);
+    }
+    if (posterId != null) {
+      localHashMap.put("poster_id", posterId);
+    }
+    if (skipInfo != null) {
+      localHashMap.put("skip_info", skipInfo);
+    }
+    if (snapIndexCount != null) {
+      localHashMap.put("snap_index_count", snapIndexCount);
+    }
+    if (snapIndexPos != null) {
+      localHashMap.put("snap_index_pos", snapIndexPos);
+    }
+    if (snapTime != null) {
+      localHashMap.put("snap_time", snapTime);
+    }
+    if (source != null) {
+      localHashMap.put("source", source);
+    }
+    if (sponsor != null) {
+      localHashMap.put("sponsor", sponsor);
+    }
+    if (storySnapId != null) {
+      localHashMap.put("story_snap_id", storySnapId);
+    }
+    if (storyType != null) {
+      localHashMap.put("story_type", storyType);
+    }
+    if (timeViewed != null) {
+      localHashMap.put("time_viewed", timeViewed);
+    }
+    if (viewLocation != null) {
+      localHashMap.put("view_location", viewLocation);
+    }
+    localHashMap.putAll(super.a());
+    return localHashMap;
   }
   
-  public final void c()
+  public final boolean equals(Object paramObject)
   {
-    if (a == null) {
-      return;
-    }
-    try
+    if (this == paramObject) {}
+    do
     {
-      d.a(new Callable() {}).call();
-      return;
-    }
-    catch (Exception localException)
-    {
-      Timber.f("GoogleAuthManager", "clearGoogleOauthToken exception: " + localException.getMessage(), new Object[0]);
-    }
-  }
-  
-  @q
-  public final String d()
-  {
-    Account[] arrayOfAccount = AccountManager.get(f).getAccountsByType("com.google");
-    final String str1 = "ng";
-    int j = arrayOfAccount.length;
-    int i = 0;
+      return true;
+      if ((paramObject == null) || (getClass() != paramObject.getClass())) {
+        return false;
+      }
+      if (!super.equals(paramObject)) {
+        return false;
+      }
+      paramObject = (lx)paramObject;
+      if (adIndexCount != null)
+      {
+        if (adIndexCount.equals(adIndexCount)) {}
+      }
+      else {
+        while (adIndexCount != null) {
+          return false;
+        }
+      }
+      if (adIndexPos != null)
+      {
+        if (adIndexPos.equals(adIndexPos)) {}
+      }
+      else {
+        while (adIndexPos != null) {
+          return false;
+        }
+      }
+      if (additionalInfo != null)
+      {
+        if (additionalInfo.equals(additionalInfo)) {}
+      }
+      else {
+        while (additionalInfo != null) {
+          return false;
+        }
+      }
+      if (adsnapId != null)
+      {
+        if (adsnapId.equals(adsnapId)) {}
+      }
+      else {
+        while (adsnapId != null) {
+          return false;
+        }
+      }
+      if (camera != null)
+      {
+        if (camera.equals(camera)) {}
+      }
+      else {
+        while (camera != null) {
+          return false;
+        }
+      }
+      if (caption != null)
+      {
+        if (caption.equals(caption)) {}
+      }
+      else {
+        while (caption != null) {
+          return false;
+        }
+      }
+      if (drawing != null)
+      {
+        if (drawing.equals(drawing)) {}
+      }
+      else {
+        while (drawing != null) {
+          return false;
+        }
+      }
+      if (filter != null)
+      {
+        if (filter.equals(filter)) {}
+      }
+      else {
+        while (filter != null) {
+          return false;
+        }
+      }
+      if (filterGeofence != null)
+      {
+        if (filterGeofence.equals(filterGeofence)) {}
+      }
+      else {
+        while (filterGeofence != null) {
+          return false;
+        }
+      }
+      if (filterInfo != null)
+      {
+        if (filterInfo.equals(filterInfo)) {}
+      }
+      else {
+        while (filterInfo != null) {
+          return false;
+        }
+      }
+      if (filterSponsor != null)
+      {
+        if (filterSponsor.equals(filterSponsor)) {}
+      }
+      else {
+        while (filterSponsor != null) {
+          return false;
+        }
+      }
+      if (filterType != null)
+      {
+        if (filterType.equals(filterType)) {}
+      }
+      else {
+        while (filterType != null) {
+          return false;
+        }
+      }
+      if (filterVisual != null)
+      {
+        if (filterVisual.equals(filterVisual)) {}
+      }
+      else {
+        while (filterVisual != null) {
+          return false;
+        }
+      }
+      if (flash != null)
+      {
+        if (flash.equals(flash)) {}
+      }
+      else {
+        while (flash != null) {
+          return false;
+        }
+      }
+      if (fullView != null)
+      {
+        if (fullView.equals(fullView)) {}
+      }
+      else {
+        while (fullView != null) {
+          return false;
+        }
+      }
+      if (geoFence != null)
+      {
+        if (geoFence.equals(geoFence)) {}
+      }
+      else {
+        while (geoFence != null) {
+          return false;
+        }
+      }
+      if (mediaType != null)
+      {
+        if (mediaType.equals(mediaType)) {}
+      }
+      else {
+        while (mediaType != null) {
+          return false;
+        }
+      }
+      if (posterId != null)
+      {
+        if (posterId.equals(posterId)) {}
+      }
+      else {
+        while (posterId != null) {
+          return false;
+        }
+      }
+      if (skipInfo != null)
+      {
+        if (skipInfo.equals(skipInfo)) {}
+      }
+      else {
+        while (skipInfo != null) {
+          return false;
+        }
+      }
+      if (snapIndexCount != null)
+      {
+        if (snapIndexCount.equals(snapIndexCount)) {}
+      }
+      else {
+        while (snapIndexCount != null) {
+          return false;
+        }
+      }
+      if (snapIndexPos != null)
+      {
+        if (snapIndexPos.equals(snapIndexPos)) {}
+      }
+      else {
+        while (snapIndexPos != null) {
+          return false;
+        }
+      }
+      if (snapTime != null)
+      {
+        if (snapTime.equals(snapTime)) {}
+      }
+      else {
+        while (snapTime != null) {
+          return false;
+        }
+      }
+      if (source != null)
+      {
+        if (source.equals(source)) {}
+      }
+      else {
+        while (source != null) {
+          return false;
+        }
+      }
+      if (sponsor != null)
+      {
+        if (sponsor.equals(sponsor)) {}
+      }
+      else {
+        while (sponsor != null) {
+          return false;
+        }
+      }
+      if (storySnapId != null)
+      {
+        if (storySnapId.equals(storySnapId)) {}
+      }
+      else {
+        while (storySnapId != null) {
+          return false;
+        }
+      }
+      if (storyType != null)
+      {
+        if (storyType.equals(storyType)) {}
+      }
+      else {
+        while (storyType != null) {
+          return false;
+        }
+      }
+      if (timeViewed != null)
+      {
+        if (timeViewed.equals(timeViewed)) {}
+      }
+      else {
+        while (timeViewed != null) {
+          return false;
+        }
+      }
+      if (viewLocation == null) {
+        break;
+      }
+    } while (viewLocation.equals(viewLocation));
     for (;;)
     {
-      if (i < j) {
-        str1 = name;
-      }
-      try
-      {
-        a = ((String)d.a(new Callable() {}).call());
-        Timber.c("GoogleAuthManager", "getGoogleOauthToken: " + a, new Object[0]);
-        b = null;
-        str1 = a;
-        return str1;
-      }
-      catch (IOException localIOException)
-      {
-        Timber.f("GoogleAuthManager", "getGoogleOauthToken IOException: " + localIOException.getMessage(), new Object[0]);
-        throw localIOException;
-      }
-      catch (GooglePlayServicesAvailabilityException localGooglePlayServicesAvailabilityException)
-      {
-        Timber.f("GoogleAuthManager", "getGoogleOauthToken GooglePlayServicesAvailabilityException: " + localGooglePlayServicesAvailabilityException.getMessage(), new Object[0]);
-        b = localGooglePlayServicesAvailabilityException.getMessage();
-        return "pe";
-      }
-      catch (UserRecoverableAuthException localUserRecoverableAuthException)
-      {
-        Timber.f("GoogleAuthManager", "getGoogleOauthToken UserRecoverableAuthException: " + localUserRecoverableAuthException.getMessage(), new Object[0]);
-        b = localUserRecoverableAuthException.getMessage();
-        i += 1;
-        String str2 = "ue";
-      }
-      catch (Exception localException)
-      {
-        Timber.f("GoogleAuthManager", "getGoogleOauthToken GoogleAuthException: " + localException.getMessage(), new Object[0]);
-        b = localException.getMessage();
+      return false;
+      if (viewLocation == null) {
+        break;
       }
     }
-    return "ae";
+  }
+  
+  public final int hashCode()
+  {
+    int i23 = 0;
+    int i24 = super.hashCode();
+    int i;
+    int j;
+    label39:
+    int k;
+    label54:
+    int m;
+    label70:
+    int n;
+    label86:
+    int i1;
+    label102:
+    int i2;
+    label118:
+    int i3;
+    label134:
+    int i4;
+    label150:
+    int i5;
+    label166:
+    int i6;
+    label182:
+    int i7;
+    label198:
+    int i8;
+    label214:
+    int i9;
+    label230:
+    int i10;
+    label246:
+    int i11;
+    label262:
+    int i12;
+    label278:
+    int i13;
+    label294:
+    int i14;
+    label310:
+    int i15;
+    label326:
+    int i16;
+    label342:
+    int i17;
+    label358:
+    int i18;
+    label374:
+    int i19;
+    label390:
+    int i20;
+    label406:
+    int i21;
+    if (adIndexCount != null)
+    {
+      i = adIndexCount.hashCode();
+      if (adIndexPos == null) {
+        break label627;
+      }
+      j = adIndexPos.hashCode();
+      if (additionalInfo == null) {
+        break label632;
+      }
+      k = additionalInfo.hashCode();
+      if (adsnapId == null) {
+        break label637;
+      }
+      m = adsnapId.hashCode();
+      if (camera == null) {
+        break label643;
+      }
+      n = camera.hashCode();
+      if (caption == null) {
+        break label649;
+      }
+      i1 = caption.hashCode();
+      if (drawing == null) {
+        break label655;
+      }
+      i2 = drawing.hashCode();
+      if (filter == null) {
+        break label661;
+      }
+      i3 = filter.hashCode();
+      if (filterGeofence == null) {
+        break label667;
+      }
+      i4 = filterGeofence.hashCode();
+      if (filterInfo == null) {
+        break label673;
+      }
+      i5 = filterInfo.hashCode();
+      if (filterSponsor == null) {
+        break label679;
+      }
+      i6 = filterSponsor.hashCode();
+      if (filterType == null) {
+        break label685;
+      }
+      i7 = filterType.hashCode();
+      if (filterVisual == null) {
+        break label691;
+      }
+      i8 = filterVisual.hashCode();
+      if (flash == null) {
+        break label697;
+      }
+      i9 = flash.hashCode();
+      if (fullView == null) {
+        break label703;
+      }
+      i10 = fullView.hashCode();
+      if (geoFence == null) {
+        break label709;
+      }
+      i11 = geoFence.hashCode();
+      if (mediaType == null) {
+        break label715;
+      }
+      i12 = mediaType.hashCode();
+      if (posterId == null) {
+        break label721;
+      }
+      i13 = posterId.hashCode();
+      if (skipInfo == null) {
+        break label727;
+      }
+      i14 = skipInfo.hashCode();
+      if (snapIndexCount == null) {
+        break label733;
+      }
+      i15 = snapIndexCount.hashCode();
+      if (snapIndexPos == null) {
+        break label739;
+      }
+      i16 = snapIndexPos.hashCode();
+      if (snapTime == null) {
+        break label745;
+      }
+      i17 = snapTime.hashCode();
+      if (source == null) {
+        break label751;
+      }
+      i18 = source.hashCode();
+      if (sponsor == null) {
+        break label757;
+      }
+      i19 = sponsor.hashCode();
+      if (storySnapId == null) {
+        break label763;
+      }
+      i20 = storySnapId.hashCode();
+      if (storyType == null) {
+        break label769;
+      }
+      i21 = storyType.hashCode();
+      label422:
+      if (timeViewed == null) {
+        break label775;
+      }
+    }
+    label627:
+    label632:
+    label637:
+    label643:
+    label649:
+    label655:
+    label661:
+    label667:
+    label673:
+    label679:
+    label685:
+    label691:
+    label697:
+    label703:
+    label709:
+    label715:
+    label721:
+    label727:
+    label733:
+    label739:
+    label745:
+    label751:
+    label757:
+    label763:
+    label769:
+    label775:
+    for (int i22 = timeViewed.hashCode();; i22 = 0)
+    {
+      if (viewLocation != null) {
+        i23 = viewLocation.hashCode();
+      }
+      return (i22 + (i21 + (i20 + (i19 + (i18 + (i17 + (i16 + (i15 + (i14 + (i13 + (i12 + (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + i24 * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i23;
+      i = 0;
+      break;
+      j = 0;
+      break label39;
+      k = 0;
+      break label54;
+      m = 0;
+      break label70;
+      n = 0;
+      break label86;
+      i1 = 0;
+      break label102;
+      i2 = 0;
+      break label118;
+      i3 = 0;
+      break label134;
+      i4 = 0;
+      break label150;
+      i5 = 0;
+      break label166;
+      i6 = 0;
+      break label182;
+      i7 = 0;
+      break label198;
+      i8 = 0;
+      break label214;
+      i9 = 0;
+      break label230;
+      i10 = 0;
+      break label246;
+      i11 = 0;
+      break label262;
+      i12 = 0;
+      break label278;
+      i13 = 0;
+      break label294;
+      i14 = 0;
+      break label310;
+      i15 = 0;
+      break label326;
+      i16 = 0;
+      break label342;
+      i17 = 0;
+      break label358;
+      i18 = 0;
+      break label374;
+      i19 = 0;
+      break label390;
+      i20 = 0;
+      break label406;
+      i21 = 0;
+      break label422;
+    }
   }
 }
 

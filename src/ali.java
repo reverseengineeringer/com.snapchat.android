@@ -1,15 +1,6 @@
-public final class ali
+public abstract interface ali
 {
-  public final String a;
-  public final String b;
-  public final long c;
-  
-  public ali(@cgb String paramString1, @cgb String paramString2, long paramLong)
-  {
-    a = ((String)ck.a(paramString2));
-    b = ((String)ck.a(paramString1));
-    c = paramLong;
-  }
+  public abstract String l();
 }
 
 /* Location:

@@ -27,7 +27,7 @@
     .locals 3
 
     .prologue
-    .line 1011
+    .line 1009
     invoke-static {}, Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;->values()[Lcom/snapchat/android/camera/videocamera/VideoCameraHandler$VideoFailureType;
 
     move-result-object v0
@@ -69,7 +69,7 @@
     :try_end_1
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 768
+    .line 766
     :goto_1
     invoke-static {}, Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface$TakeSnapButtonAction;->values()[Lcom/snapchat/android/camera/cameradecor/CameraDecor$CameraDecorInterface$TakeSnapButtonAction;
 
@@ -112,7 +112,7 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 696
+    .line 694
     :goto_3
     invoke-static {}, Lcom/snapchat/android/util/eventbus/ChangePreviewQualityEvent$PreviewQuality;->values()[Lcom/snapchat/android/util/eventbus/ChangePreviewQualityEvent$PreviewQuality;
 

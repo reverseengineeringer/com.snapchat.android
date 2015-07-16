@@ -1,48 +1,36 @@
-import com.snapchat.android.SnapchatApplication;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.TreeMap;
-import javax.inject.Inject;
+import com.google.gson.annotations.SerializedName;
 
-public abstract class sq
-  extends tv
+public final class sq
+  extends sx<sy>
 {
-  @Inject
-  protected xn mCashAuthManager;
-  @Inject
-  protected tl mEntityFactory;
-  @Inject
-  protected uj mSquareOkHttpClientFactory;
+  final String mPasscode;
+  private final String mPaymentId;
   
-  protected sq()
+  public sq(@chc String paramString1, @chd String paramString2, @chc sx.a parama)
   {
-    SnapchatApplication.b().c().a(this);
-    mNetworkInterface = new ud(mEntityFactory, mSquareOkHttpClientFactory);
+    super(parama);
+    mPaymentId = paramString1;
+    mPasscode = paramString2;
+    registerCallback(sy.class, this);
   }
   
-  protected abstract String e();
-  
-  public final Map<String, String> g()
+  public final String a()
   {
-    Object localObject = mCashAuthManager.a();
-    if (localObject == null) {
-      throw new RuntimeException("We shouldn't ever be creating a SquareRequestTask with a null CashAuthToken!" + getClass().getName() + " " + n_());
-    }
-    TreeMap localTreeMap = new TreeMap();
-    localTreeMap.put("Authorization", "Bearer " + a);
-    localTreeMap.put("Accept", "application/json; charset=utf-8");
-    localTreeMap.put("Content-Type", "application/json");
-    localObject = aya.a().c(false);
-    if (localObject != null) {
-      localTreeMap.put("X-SQ-DEVICE-ID", localObject);
-    }
-    return localTreeMap;
+    return "cash/payments/" + mPaymentId + "/confirm";
   }
   
-  public final String n_()
+  public final Object getRequestPayload()
   {
-    bfr.a();
-    return avb.a(Arrays.asList(new String[] { bfr.e(), "v1/me", e() }), "/");
+    return new sq.a();
+  }
+  
+  @un
+  final class a
+  {
+    @SerializedName("passcode")
+    final String passcode = mPasscode;
+    
+    a() {}
   }
 }
 

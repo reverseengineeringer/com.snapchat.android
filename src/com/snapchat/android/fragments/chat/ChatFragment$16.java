@@ -4,26 +4,26 @@ import android.animation.ValueAnimator;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.ViewPropertyAnimator;
-import ban;
-import bdg;
-import bgp;
-import bgr;
+import bbo;
+import beg;
+import bhp;
+import bhr;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.ui.CashSwiperView;
 import com.snapchat.android.ui.CashSwiperView.2;
 import com.snapchat.android.ui.CashSwiperView.SwipeActivationMethod;
 import com.squareup.otto.Bus;
 import java.io.IOException;
-import ya.a;
+import yw.a;
 
 final class ChatFragment$16
-  implements ya.a
+  implements yw.a
 {
   ChatFragment$16(ChatFragment paramChatFragment, CashSwiperView.SwipeActivationMethod paramSwipeActivationMethod) {}
   
   public final void a()
   {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -61,7 +61,7 @@ final class ChatFragment$16
     });
     ChatFragment.y();
     ChatFragment.C(b);
-    ban.a().a(new bdg(false));
+    bbo.a().a(new beg(false));
   }
   
   public final void b()

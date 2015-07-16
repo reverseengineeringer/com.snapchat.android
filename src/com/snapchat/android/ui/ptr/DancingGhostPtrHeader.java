@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import bus;
+import bvt;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -16,23 +16,23 @@ import java.util.Set;
 
 public class DancingGhostPtrHeader
   extends FrameLayout
-  implements bus
+  implements bvt
 {
-  public final Set<a> a = new HashSet();
-  AnimationDrawable b;
+  AnimationDrawable a;
+  private final Set<Object> b = new HashSet();
   private Context c;
   
   public DancingGhostPtrHeader(Context paramContext)
   {
     super(paramContext);
-    setBackgroundColor(getResources().getColor(2131230783));
+    setBackgroundColor(getResources().getColor(2131230784));
     c = paramContext;
   }
   
   private void a()
   {
-    if (b != null) {
-      b.stop();
+    if (a != null) {
+      a.stop();
     }
   }
   
@@ -76,25 +76,25 @@ public class DancingGhostPtrHeader
   
   public final void a(PtrFrameLayout paramPtrFrameLayout)
   {
-    paramPtrFrameLayout = a.iterator();
+    paramPtrFrameLayout = b.iterator();
     while (paramPtrFrameLayout.hasNext()) {
-      ((a)paramPtrFrameLayout.next()).a();
+      paramPtrFrameLayout.next();
     }
-    if (b != null)
+    if (a != null)
     {
-      b.stop();
-      b.selectDrawable(0);
+      a.stop();
+      a.selectDrawable(0);
     }
-    setBackgroundColor(getResources().getColor(2131230783));
+    setBackgroundColor(getResources().getColor(2131230784));
   }
   
   public final void a(PtrFrameLayout paramPtrFrameLayout, boolean paramBoolean, byte paramByte, int paramInt1, int paramInt2, float paramFloat1, float paramFloat2)
   {
-    if (b == null)
+    if (a == null)
     {
-      paramPtrFrameLayout = (ImageView)((ViewGroup)LayoutInflater.from(c).inflate(2130968714, this)).findViewById(2131362578);
+      paramPtrFrameLayout = (ImageView)((ViewGroup)LayoutInflater.from(c).inflate(2130968716, this)).findViewById(2131362577);
       paramPtrFrameLayout.setBackgroundResource(2130837766);
-      b = ((AnimationDrawable)paramPtrFrameLayout.getBackground());
+      a = ((AnimationDrawable)paramPtrFrameLayout.getBackground());
     }
   }
   
@@ -105,8 +105,8 @@ public class DancingGhostPtrHeader
   
   public final void c(PtrFrameLayout paramPtrFrameLayout)
   {
-    if (b != null) {
-      b.start();
+    if (a != null) {
+      a.start();
     }
     a(2130838164);
   }
@@ -114,11 +114,6 @@ public class DancingGhostPtrHeader
   public final void d(PtrFrameLayout paramPtrFrameLayout)
   {
     a();
-  }
-  
-  public static abstract interface a
-  {
-    public abstract void a();
   }
 }
 

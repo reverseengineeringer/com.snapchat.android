@@ -2,7 +2,7 @@ package com.snapchat.videotranscoder.utils;
 
 import android.opengl.GLES20;
 import android.os.Looper;
-import cgb;
+import chc;
 import java.io.File;
 
 public class Utils
@@ -18,7 +18,7 @@ public class Utils
   }
   
   /* Error */
-  public void copyFile(@cgb File paramFile1, @cgb File paramFile2)
+  public void copyFile(@chc File paramFile1, @chc File paramFile2)
   {
     // Byte code:
     //   0: aconst_null
@@ -86,7 +86,7 @@ public class Utils
     //   27	38	85	finally
   }
   
-  public String createFileSizeLogMessage(@cgb String paramString)
+  public String createFileSizeLogMessage(@chc String paramString)
   {
     double d = mMimeTools.getFileSize(paramString) / 1048576.0D;
     return "File: " + paramString + ", size is " + d + "MB";
@@ -114,7 +114,7 @@ public class Utils
     return Looper.myLooper() == Looper.getMainLooper();
   }
   
-  public void moveFile(@cgb File paramFile1, @cgb File paramFile2)
+  public void moveFile(@chc File paramFile1, @chc File paramFile2)
   {
     copyFile(paramFile1, paramFile2);
     paramFile1.delete();

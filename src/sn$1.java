@@ -1,30 +1,29 @@
-import com.snapchat.android.fragments.cash.TransactionHistoryFragment;
-import com.snapchat.android.util.eventbus.ShowDialogEvent;
-import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
+import com.snapchat.android.api2.cash.square.data.CashPayment;
+import com.snapchat.android.model.CashTransaction;
 import com.squareup.otto.Bus;
-import java.util.Arrays;
 import java.util.List;
 
 final class sn$1
-  implements qv.a
+  implements ta
 {
-  sn$1(sn paramsn, String paramString) {}
+  sn$1(sn paramsn, CashTransaction paramCashTransaction) {}
   
-  public final void a(@cgb qv paramqv) {}
-  
-  public final void a(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean)
+  public final void a(int paramInt)
   {
-    paramqv = new TransactionHistoryFragment(val$title);
-    bfr.a();
-    paramqv.a(avb.a(Arrays.asList(new String[] { bfr.f(), "cash/history" }), "/"));
-    ban.a().a(new bdw(paramqv));
+    String str = val$transaction.mTransactionId;
+    this$0.a(null, false);
   }
   
-  public final void b(@cgb qv paramqv) {}
-  
-  public final void b(@cgb qv paramqv, @cgc List<qv> paramList, boolean paramBoolean)
+  public final void a(@chc CashPayment paramCashPayment)
   {
-    ban.a().a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, 2131493195));
+    List localList = null;
+    tq localtq = mBlockers;
+    if (localtq != null) {
+      localList = localtq.b();
+    }
+    val$transaction.a(td.a(mState, mCancellationReason));
+    this$0.a(localList, false);
+    bbo.a().a(new bca(val$transaction.mConversationId, val$transaction.mTransactionId));
   }
 }
 

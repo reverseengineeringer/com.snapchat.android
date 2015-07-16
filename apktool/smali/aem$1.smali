@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView$a;
+.implements Laej$a;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Laem;->a(Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;)Lcom/snapchat/android/discover/ui/media/DiscoverEditionPageView$a;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Laem;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,20 +18,16 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;
-
-.field final synthetic b:Laem;
+.field final synthetic a:Laem;
 
 
 # direct methods
-.method constructor <init>(Laem;Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;)V
+.method constructor <init>(Laem;)V
     .locals 0
 
     .prologue
-    .line 302
-    iput-object p1, p0, Laem$1;->b:Laem;
-
-    iput-object p2, p0, Laem$1;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;
+    .line 201
+    iput-object p1, p0, Laem$1;->a:Laem;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,53 +36,88 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final a(Ljava/util/List;)V
+    .locals 5
+    .param p1    # Ljava/util/List;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/snapchat/android/discover/model/ChannelPage;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 305
-    iget-object v0, p0, Laem$1;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;
+    .line 204
+    iget-object v0, p0, Laem$1;->a:Laem;
 
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentItem()I
+    iget-object v1, v0, Laem;->a:Ljava/lang/Object;
 
-    move-result v1
+    monitor-enter v1
 
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
+    .line 205
+    :try_start_0
+    iget-object v0, p0, Laem$1;->a:Laem;
+
+    iget-object v0, v0, Laem;->d:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->clear()V
+
+    .line 206
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/support/v4/view/PagerAdapter;->getCount()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, -0x1
-
-    if-ne v1, v2, :cond_1
-
-    iget-object v1, v0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->a:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;
-
-    sget-object v1, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;->AUTO_ADVANCE:Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;
-
-    invoke-interface {v0, v1}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$b;->a(Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager$SwipeToExitMethod;)V
-
-    .line 306
-    :cond_0
     :goto_0
-    return-void
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 305
-    :cond_1
-    invoke-virtual {v0}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->getCurrentItem()I
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_0
 
-    add-int/lit8 v1, v1, 0x1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lcom/snapchat/android/discover/ui/fragment/EditionViewerPager;->setCurrentItem(I)V
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/discover/model/ChannelPage;
+
+    .line 207
+    iget-object v3, p0, Laem$1;->a:Laem;
+
+    iget-object v3, v3, Laem;->d:Ljava/util/concurrent/ConcurrentHashMap;
+
+    iget-object v4, v0, Lcom/snapchat/android/discover/model/ChannelPage;->d:Ljava/lang/String;
+
+    invoke-virtual {v3, v4, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
+
+    .line 210
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    .line 209
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Laem$1;->a:Laem;
+
+    invoke-virtual {v0}, Laem;->a()V
+
+    .line 210
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-void
 .end method

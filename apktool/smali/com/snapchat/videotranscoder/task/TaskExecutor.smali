@@ -98,7 +98,7 @@
 .method private completeTask(Lcom/snapchat/videotranscoder/task/TaskExecutor$TaskWrapper;Lcom/snapchat/videotranscoder/task/Task$Status;)V
     .locals 1
     .param p1    # Lcom/snapchat/videotranscoder/task/TaskExecutor$TaskWrapper;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -193,15 +193,15 @@
 .method public execute(Lcom/snapchat/videotranscoder/task/Task;Lcom/snapchat/videotranscoder/task/Task$DoneCallback;Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;)V
     .locals 2
     .param p1    # Lcom/snapchat/videotranscoder/task/Task;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/task/Task$DoneCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Lcom/snapchat/videotranscoder/task/Task$ProgressUpdateCallback;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -248,7 +248,7 @@
 .method public tryAbort(Lcom/snapchat/videotranscoder/task/Task;)V
     .locals 6
     .param p1    # Lcom/snapchat/videotranscoder/task/Task;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

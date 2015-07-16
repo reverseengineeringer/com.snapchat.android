@@ -25,6 +25,10 @@
 
 # virtual methods
 .method public abstract e(Landroid/support/v7/widget/RecyclerView$s;)V
+    .param p1    # Landroid/support/v7/widget/RecyclerView$s;
+        .annotation build Lr;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TVH;)V"

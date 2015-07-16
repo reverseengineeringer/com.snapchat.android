@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.utils.FileUtils;
 
 public abstract class FileMediaSource
@@ -9,12 +9,12 @@ public abstract class FileMediaSource
   private static final String TAG = "FileMediaSource";
   private final String mMediaPath;
   
-  public FileMediaSource(@cgb String paramString)
+  public FileMediaSource(@chc String paramString)
   {
     this(paramString, FileUtils.getInstance());
   }
   
-  protected FileMediaSource(@cgb String paramString, @cgb FileUtils paramFileUtils)
+  protected FileMediaSource(@chc String paramString, @chc FileUtils paramFileUtils)
   {
     if (paramString == null) {
       throw new NullPointerException("mediaPath is null");

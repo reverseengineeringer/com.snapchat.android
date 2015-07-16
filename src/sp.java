@@ -1,29 +1,33 @@
-import javax.inject.Provider;
+import android.text.TextUtils;
 
 public final class sp
-  implements buj<sn>
+  extends sx<sy>
 {
-  private final Provider<qg> mCashErrorReporterProvider;
+  private final String mPaymentId;
   
-  static
+  public sp(@chd String paramString, @chc sx.a parama)
   {
-    if (!sp.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
+    super(parama);
+    mPaymentId = paramString;
+    registerCallback(sy.class, this);
+  }
+  
+  public sp(@chc sx.a parama)
+  {
+    this(null, parama);
+  }
+  
+  public final String a()
+  {
+    if (!TextUtils.isEmpty(mPaymentId)) {
+      return "cash/payments/" + mPaymentId + "/accept-terms";
     }
+    return "cash/accept-terms";
   }
   
-  private sp(Provider<qg> paramProvider)
+  public final Object getRequestPayload()
   {
-    assert (paramProvider != null);
-    mCashErrorReporterProvider = paramProvider;
-  }
-  
-  public static buj<sn> a(Provider<qg> paramProvider)
-  {
-    return new sp(paramProvider);
+    return null;
   }
 }
 

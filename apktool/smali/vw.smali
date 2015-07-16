@@ -2,160 +2,278 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$d;
 
-# instance fields
-.field protected a:Lwj;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
 
-.field protected b:Lcom/snapchat/android/camera/model/CameraModel;
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
-.end field
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/snapchat/android/ui/listeners/SwipeableRecyclerViewItemTouchListener$d",
+        "<",
+        "Lvs;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
-    .annotation runtime Ljavax/inject/Inject;
-    .end annotation
+    .locals 0
 
     .prologue
-    .line 32
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
-    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Laza;
-
-    move-result-object v0
-
-    invoke-interface {v0, p0}, Laza;->a(Lvw;)V
-
-    .line 34
     return-void
+.end method
+
+.method private static a(Lvs;)F
+    .locals 1
+
+    .prologue
+    .line 71
+    iget-object v0, p0, Lvs;->k:Landroid/view/View;
+
+    .line 72
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {v0}, Landroid/view/View;->getTranslationX()F
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method private static b(Lvs;)I
+    .locals 5
+
+    .prologue
+    .line 90
+    iget-object v0, p0, Lvs;->a:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 91
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v1
+
+    .line 92
+    if-nez v1, :cond_0
+
+    const/4 v0, 0x0
+
+    .line 98
+    :goto_0
+    return v0
+
+    .line 93
+    :cond_0
+    new-instance v2, Landroid/util/TypedValue;
+
+    invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
+
+    .line 94
+    const v3, 0x101004d
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v1, v3, v2, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    .line 95
+    iget v1, v2, Landroid/util/TypedValue;->type:I
+
+    iget v3, v2, Landroid/util/TypedValue;->data:I
+
+    invoke-static {v1, v3}, Landroid/util/TypedValue;->coerceToString(II)Ljava/lang/String;
+
+    .line 97
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    .line 98
+    invoke-virtual {v2, v0}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Lvl;Lvm;Lvv;)V
-    .locals 4
-    .param p1    # Lvl;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
+.method public final synthetic a(Landroid/support/v7/widget/RecyclerView$s;)I
+    .locals 1
 
     .prologue
-    const/4 v1, 0x1
+    .line 21
+    check-cast p1, Lvs;
 
-    .line 38
-    iget-object v0, p0, Lvw;->a:Lwj;
-
-    iget-boolean v0, v0, Lwj;->a:Z
-
-    if-eqz v0, :cond_2
-
-    .line 39
-    iget-object v0, p0, Lvw;->b:Lcom/snapchat/android/camera/model/CameraModel;
-
-    invoke-virtual {v0}, Lcom/snapchat/android/camera/model/CameraModel;->b()Z
+    invoke-static {p1}, Lvw;->b(Lvs;)I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    return v0
+.end method
 
-    invoke-virtual {p3, v1}, Lvv;->a(Z)V
+.method public final bridge synthetic a(Landroid/support/v7/widget/RecyclerView$s;Landroid/view/MotionEvent;)V
+    .locals 0
 
-    new-instance v0, Landroid/os/Handler;
+    .prologue
+    .line 21
+    return-void
+.end method
 
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+.method public final bridge synthetic a(Landroid/support/v7/widget/RecyclerView$s;Z)V
+    .locals 0
 
-    new-instance v1, Lvw$2;
+    .prologue
+    .line 21
+    return-void
+.end method
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lvw$2;-><init>(Lvw;Lvl;Lvm;Lvv;)V
+.method public final synthetic a(Landroid/support/v7/widget/RecyclerView$s;FFFF)Z
+    .locals 6
 
-    const-wide/16 v2, 0x2bc
+    .prologue
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    .line 21
+    check-cast p1, Lvs;
 
-    .line 43
+    iget-object v1, p1, Lvs;->k:Landroid/view/View;
+
+    if-nez v1, :cond_1
+
     :cond_0
     :goto_0
-    return-void
+    return v0
 
-    .line 39
     :cond_1
-    iget-object v0, p0, Lvw;->b:Lcom/snapchat/android/camera/model/CameraModel;
+    const/high16 v2, 0x3fc00000    # 1.5f
 
-    iget-object v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->h:Lwc$b;
+    mul-float/2addr v2, p2
 
-    if-eqz v0, :cond_0
+    invoke-static {p1}, Lvw;->b(Lvs;)I
 
-    invoke-virtual {p3, v1}, Lvv;->b(Z)V
+    move-result v3
 
-    new-instance v1, Lwf;
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
-    new-instance v2, Landroid/os/Handler;
+    move-result v4
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    int-to-float v5, v3
 
-    move-result-object v3
+    cmpl-float v4, v4, v5
 
-    invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    if-ltz v4, :cond_2
 
-    new-instance v3, Lvw$1;
+    invoke-static {p1}, Lvw;->a(Lvs;)F
 
-    invoke-direct {v3, p0, p1, p2, p3}, Lvw$1;-><init>(Lvw;Lvl;Lvm;Lvv;)V
+    move-result v4
 
-    invoke-direct {v1, v2, v0, v3}, Lwf;-><init>(Landroid/os/Handler;Lwc$b;Lwc$c;)V
+    int-to-float v5, v3
 
-    invoke-interface {v0, v1}, Lwc$b;->a(Lwf;)V
+    cmpl-float v4, v4, v5
+
+    if-gez v4, :cond_0
+
+    :cond_2
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    int-to-float v4, v3
+
+    cmpl-float v0, v0, v4
+
+    if-ltz v0, :cond_3
+
+    invoke-static {p1}, Lvw;->a(Lvs;)F
+
+    move-result v0
+
+    int-to-float v4, v3
+
+    cmpg-float v0, v0, v4
+
+    if-gez v0, :cond_3
+
+    int-to-float v0, v3
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationX(F)V
+
+    :goto_1
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 41
-    :cond_2
-    iget-object v0, p0, Lvw;->b:Lcom/snapchat/android/camera/model/CameraModel;
+    :cond_3
+    invoke-virtual {v1, v2}, Landroid/view/View;->setTranslationX(F)V
 
-    iget-object v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->f:Laue;
+    goto :goto_1
+.end method
 
-    invoke-interface {p1, v0, p2}, Lvl;->a(Laue;Lvm;)V
+.method public final synthetic b(Landroid/support/v7/widget/RecyclerView$s;)Z
+    .locals 1
+
+    .prologue
+    .line 21
+    check-cast p1, Lvs;
+
+    iget-object v0, p1, Lvs;->n:Lcom/snapchat/android/model/chat/ChatConversation;
+
+    invoke-static {v0}, Layg;->a(Lcom/snapchat/android/model/chat/ChatConversation;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public final b(Lvl;Lvm;Lvv;)V
+.method public final synthetic c(Landroid/support/v7/widget/RecyclerView$s;)F
     .locals 1
-    .param p1    # Lvl;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
 
     .prologue
-    .line 47
-    iget-object v0, p0, Lvw;->a:Lwj;
+    .line 21
+    check-cast p1, Lvs;
 
-    iget-boolean v0, v0, Lwj;->a:Z
+    invoke-static {p1}, Lvw;->a(Lvs;)F
 
-    if-eqz v0, :cond_0
+    move-result v0
 
-    .line 48
-    const/4 v0, 0x0
+    return v0
+.end method
 
-    invoke-virtual {p3, v0}, Lvv;->a(Z)V
+.method public final bridge synthetic d(Landroid/support/v7/widget/RecyclerView$s;)V
+    .locals 0
 
-    .line 50
-    :cond_0
-    iget-object v0, p0, Lvw;->b:Lcom/snapchat/android/camera/model/CameraModel;
-
-    iget-object v0, v0, Lcom/snapchat/android/camera/model/CameraModel;->f:Laue;
-
-    invoke-interface {p1, v0, p2}, Lvl;->a(Laue;Lvm;)V
-
-    .line 51
+    .prologue
+    .line 21
     return-void
 .end method

@@ -3,236 +3,238 @@
 .source "SourceFile"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbhr$a;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Landroid/view/View;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
 # instance fields
-.field protected compatibility:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "compatibility"
-    .end annotation
-.end field
+.field private mCallback:Lbhr$a;
 
-.field protected getChannels:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "get_channels"
-    .end annotation
-.end field
+.field private mLayout:Landroid/view/View;
 
-.field protected resourceParameterName:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "resource_parameter_name"
-    .end annotation
-.end field
+.field private mResourceId:I
 
-.field protected resourceParameterValue:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "resource_parameter_value"
-    .end annotation
-.end field
+.field private mStubId:I
 
-.field protected videoCatalog:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "video_catalog"
+.field private mView:Landroid/view/View;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/view/View;II)V
+    .locals 1
+
+    .prologue
+    .line 18
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, p2, p3, v0}, Lbhr;-><init>(Landroid/view/View;IILbhr$a;)V
+
+    .line 19
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/view/View;IILbhr$a;)V
     .locals 0
 
     .prologue
-    .line 16
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 29
+    iput-object p1, p0, Lbhr;->mLayout:Landroid/view/View;
+
+    .line 30
+    iput p2, p0, Lbhr;->mStubId:I
+
+    .line 31
+    iput p3, p0, Lbhr;->mResourceId:I
+
+    .line 32
+    iput-object p4, p0, Lbhr;->mCallback:Lbhr$a;
+
+    .line 33
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
+.method public final a()Landroid/view/View;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 
     .prologue
-    .line 44
-    iget-object v0, p0, Lbhr;->getChannels:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 62
-    iget-object v0, p0, Lbhr;->videoCatalog:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 80
-    iget-object v0, p0, Lbhr;->resourceParameterName:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 98
-    iget-object v0, p0, Lbhr;->resourceParameterValue:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 116
-    iget-object v0, p0, Lbhr;->compatibility:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .prologue
-    .line 141
-    if-ne p1, p0, :cond_0
-
-    .line 142
-    const/4 v0, 0x1
-
-    .line 148
-    :goto_0
-    return v0
-
-    .line 144
-    :cond_0
-    instance-of v0, p1, Lbhr;
+    .line 40
+    iget-object v0, p0, Lbhr;->mView:Landroid/view/View;
 
     if-nez v0, :cond_1
 
-    .line 145
-    const/4 v0, 0x0
+    .line 41
+    iget-object v0, p0, Lbhr;->mLayout:Landroid/view/View;
 
-    goto :goto_0
+    iget v1, p0, Lbhr;->mStubId:I
 
-    .line 147
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewStub;
+
+    .line 42
+    if-eqz v0, :cond_0
+
+    .line 43
+    invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+
+    .line 45
+    :cond_0
+    iget-object v0, p0, Lbhr;->mLayout:Landroid/view/View;
+
+    iget v1, p0, Lbhr;->mResourceId:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbhr;->mView:Landroid/view/View;
+
+    .line 46
+    iget-object v0, p0, Lbhr;->mCallback:Lbhr$a;
+
+    if-eqz v0, :cond_1
+
+    .line 47
+    iget-object v0, p0, Lbhr;->mCallback:Lbhr$a;
+
+    iget-object v1, p0, Lbhr;->mView:Landroid/view/View;
+
+    invoke-interface {v0, v1}, Lbhr$a;->a(Landroid/view/View;)V
+
+    .line 50
     :cond_1
-    check-cast p1, Lbhr;
+    iget-object v0, p0, Lbhr;->mView:Landroid/view/View;
 
-    .line 148
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
-
-    iget-object v1, p0, Lbhr;->getChannels:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhr;->getChannels:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhr;->videoCatalog:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhr;->videoCatalog:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhr;->resourceParameterName:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhr;->resourceParameterName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhr;->resourceParameterValue:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhr;->resourceParameterValue:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhr;->compatibility:Ljava/lang/String;
-
-    iget-object v2, p1, Lbhr;->compatibility:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
-
-    move-result v0
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public final hashCode()I
-    .locals 2
-
-    .prologue
-    .line 130
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
-
-    iget-object v1, p0, Lbhr;->getChannels:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhr;->videoCatalog:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhr;->resourceParameterName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhr;->resourceParameterValue:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbhr;->compatibility:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(I)V
     .locals 1
 
     .prologue
-    .line 125
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+    .line 86
+    iget-object v0, p0, Lbhr;->mView:Landroid/view/View;
+
+    if-nez v0, :cond_0
+
+    if-eqz p1, :cond_0
+
+    .line 90
+    :goto_0
+    return-void
+
+    .line 89
+    :cond_0
+    invoke-virtual {p0}, Lbhr;->a()Landroid/view/View;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_0
+.end method
+
+.method public final a(Lbhr$a;)V
+    .locals 2
+
+    .prologue
+    .line 73
+    iput-object p1, p0, Lbhr;->mCallback:Lbhr$a;
+
+    .line 75
+    invoke-virtual {p0}, Lbhr;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 76
+    iget-object v0, p0, Lbhr;->mCallback:Lbhr$a;
+
+    iget-object v1, p0, Lbhr;->mView:Landroid/view/View;
+
+    invoke-interface {v0, v1}, Lbhr$a;->a(Landroid/view/View;)V
+
+    .line 78
+    :cond_0
+    return-void
+.end method
+
+.method public final b()Z
+    .locals 1
+
+    .prologue
+    .line 57
+    iget-object v0, p0, Lbhr;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final c()Z
+    .locals 1
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lbhr;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbhr;->mView:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

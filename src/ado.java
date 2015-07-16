@@ -1,45 +1,64 @@
-import com.brightcove.player.event.Event;
-import com.brightcove.player.event.EventListener;
+import android.os.Handler;
+import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
+import com.snapchat.android.discover.model.DSnapPage;
+import com.snapchat.android.discover.model.MediaState;
+import java.util.Map;
+import java.util.Timer;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class ado
-  implements EventListener
+  implements nd.a<DSnapPage>
 {
-  private final ado.a a;
-  private int b;
-  private int c = 0;
+  private final aej a;
+  private final aed b;
+  private final Map<String, adk> c = new ConcurrentHashMap();
+  private final Object d = new Object();
   
-  public ado(@cgb ado.a parama)
+  public ado()
   {
-    a = parama;
+    this(aej.a(), aed.a());
   }
   
-  public final void processEvent(Event paramEvent)
+  private ado(aej paramaej, aed paramaed)
   {
-    if (!paramEvent.getType().equals("progress")) {}
-    int i;
-    do
+    b = paramaed;
+    a = paramaej;
+  }
+  
+  private void a(DSnapPage paramDSnapPage, MediaState paramMediaState)
+  {
+    aej localaej = a;
+    h.postAtFrontOfQueue(new aej.9(localaej, paramDSnapPage, paramMediaState));
+  }
+  
+  @awj
+  public final boolean a(DSnapPage paramDSnapPage)
+  {
+    synchronized (d)
     {
-      return;
-      i = paramEvent.getIntegerProperty("playheadPosition");
-      if (b != i) {
-        break;
+      if (c.containsKey(a)) {
+        return false;
       }
-      c += 1;
-    } while (c != 3);
-    a.a();
-    return;
-    if (c >= 3) {
-      a.b();
+      adk localadk = new adk(paramDSnapPage, this);
+      c.put(a, localadk);
+      b.b(paramDSnapPage, MediaState.RESOLVING_AD);
+      paramDSnapPage = new ng.a();
+      mAdType = mAdContainer).k.intValue();
+      mChannelName = mAdContainer).h;
+      mEditionName = mAdContainer).g;
+      mPosition = mAdContainer).e;
+      mAdUnitId = mAdContainer).n;
+      mTargetingParams = ((DSnapPage)mAdContainer).h();
+      paramDSnapPage = paramDSnapPage.a();
+      mMetric = EasyMetric.EasyMetricFactory.a("AD_RESOLVE_TIME");
+      mMetric.a("type", localadk.a());
+      mMetric.a("reachability", mNetworkStatusManager.f());
+      mMetric.b();
+      mAdManager.a(paramDSnapPage, localadk);
+      mTimeoutTimer.schedule(mTimeoutRunnable, 10000L);
+      return true;
     }
-    c = 0;
-    b = i;
-  }
-  
-  public static abstract interface a
-  {
-    public abstract void a();
-    
-    public abstract void b();
   }
 }
 

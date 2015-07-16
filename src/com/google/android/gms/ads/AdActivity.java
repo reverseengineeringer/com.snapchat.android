@@ -8,6 +8,8 @@ import android.view.ViewGroup.LayoutParams;
 import com.google.android.gms.internal.zzeu;
 import com.google.android.gms.internal.zzev;
 import com.google.android.gms.internal.zzhx;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class AdActivity
   extends Activity
@@ -32,6 +34,8 @@ public class AdActivity
   
   protected void onCreate(Bundle paramBundle)
   {
+    kkxxkk.b041E041EОО041EО(getApplicationContext());
+    xkkkxk.b041E041EООО041E(getApplicationContext());
     super.onCreate(paramBundle);
     zzlf = zzeu.zzb(this);
     if (zzlf == null)

@@ -3,7 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <com.snapchat.android.ui.SnapVideoView android:layout_gravity="center" android:id="@id/video" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
     <com.snapchat.android.ui.FitWidthImageView android:layout_gravity="center" android:id="@id/snap_video_image_overlay" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" />
-    <RelativeLayout android:id="@id/horizontal_video_snap_caption_area" android:background="@android:color/transparent" android:visibility="gone" android:clipChildren="false" android:layout_width="9000.0dip" android:layout_height="fill_parent">
-        <com.snapchat.android.ui.WideTextView android:textSize="@dimen/image_preview_text_size" android:textColor="@android:color/white" android:gravity="center" android:id="@id/snap_video_caption" android:background="@color/camera_activity_picture_text_message_background" android:paddingLeft="10.0dip" android:paddingTop="2.0dip" android:paddingRight="10.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:longClickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    </RelativeLayout>
 </FrameLayout>

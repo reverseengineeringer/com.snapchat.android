@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
+.implements Lbvk;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuj",
+        "Lbvk",
         "<",
         "Lcom/snapchat/android/analytics/framework/EasyMetric;",
         ">;"
@@ -163,7 +163,7 @@
     return-void
 .end method
 
-.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbuj;
+.method public static a(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)Lbvk;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -180,7 +180,7 @@
             "<",
             "Lcom/snapchat/android/analytics/framework/UserActionTracePlatform;",
             ">;)",
-            "Lbuj",
+            "Lbvk",
             "<",
             "Lcom/snapchat/android/analytics/framework/EasyMetric;",
             ">;"

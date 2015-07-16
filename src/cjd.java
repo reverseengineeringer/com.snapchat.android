@@ -1,53 +1,114 @@
-public abstract class cjd
-  extends cjb
+import java.util.HashMap;
+import java.util.Map;
+
+public final class cjd
+  extends cik
 {
-  public final cgh b;
+  private static final cjd E;
+  private static final cjd[] F;
+  private static final Map<chl, cjd> G = new HashMap();
   
-  public cjd(cgh paramcgh, cgi paramcgi)
+  static
   {
-    super(paramcgi);
-    if (paramcgh == null) {
-      throw new IllegalArgumentException("The field must not be null");
+    F = new cjd[64];
+    E = new cjd(cjc.W());
+    G.put(chl.a, E);
+  }
+  
+  private cjd(chg paramchg)
+  {
+    super(paramchg, null);
+  }
+  
+  public static cjd L()
+  {
+    return E;
+  }
+  
+  public static cjd M()
+  {
+    return b(chl.a());
+  }
+  
+  public static cjd b(chl paramchl)
+  {
+    chl localchl = paramchl;
+    if (paramchl == null) {
+      localchl = chl.a();
     }
-    if (!paramcgh.c()) {
-      throw new IllegalArgumentException("The field must be supported");
+    int i = System.identityHashCode(localchl) & 0x3F;
+    paramchl = F[i];
+    if ((paramchl != null) && (paramchl.a() == localchl)) {
+      return paramchl;
     }
-    b = paramcgh;
+    synchronized (G)
+    {
+      cjd localcjd = (cjd)G.get(localchl);
+      paramchl = localcjd;
+      if (localcjd == null)
+      {
+        paramchl = new cjd(cjh.a(E, localchl));
+        G.put(localchl, paramchl);
+      }
+      F[i] = paramchl;
+      return paramchl;
+    }
   }
   
-  public int a(long paramLong)
+  public final chg a(chl paramchl)
   {
-    return b.a(paramLong);
+    chl localchl = paramchl;
+    if (paramchl == null) {
+      localchl = chl.a();
+    }
+    if (localchl == a()) {
+      return this;
+    }
+    return b(localchl);
   }
   
-  public long b(long paramLong, int paramInt)
+  protected final void a(cik.a parama)
   {
-    return b.b(paramLong, paramInt);
+    if (a.a() == chl.a)
+    {
+      H = new ckh(cje.a, chj.v());
+      G = new ckp((ckh)H, chj.u());
+      C = new ckp((ckh)H, chj.q());
+      k = H.d();
+    }
   }
   
-  public long d(long paramLong)
+  public final chg b()
   {
-    return b.d(paramLong);
+    return E;
   }
   
-  public cgm d()
+  public final boolean equals(Object paramObject)
   {
-    return b.d();
+    if (this == paramObject) {
+      return true;
+    }
+    if ((paramObject instanceof cjd))
+    {
+      paramObject = (cjd)paramObject;
+      return a().equals(((cjd)paramObject).a());
+    }
+    return false;
   }
   
-  public cgm e()
+  public final int hashCode()
   {
-    return b.e();
+    return "ISO".hashCode() * 11 + a().hashCode();
   }
   
-  public int g()
+  public final String toString()
   {
-    return b.g();
-  }
-  
-  public int h()
-  {
-    return b.h();
+    String str = "ISOChronology";
+    chl localchl = a();
+    if (localchl != null) {
+      str = "ISOChronology" + '[' + c + ']';
+    }
+    return str;
   }
 }
 

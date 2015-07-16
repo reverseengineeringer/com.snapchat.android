@@ -33,7 +33,7 @@
 
 .field protected b:Lcom/snapchat/android/ui/caption/CaptionEditText$IMMResult;
 
-.field protected c:Laps;
+.field protected c:Laqr;
 
 .field protected d:I
 
@@ -378,13 +378,13 @@
     invoke-virtual {p0, v3}, Lcom/snapchat/android/ui/caption/CaptionEditText;->setCursorVisible(Z)V
 
     .line 198
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbbh;
+    new-instance v1, Lbch;
 
-    invoke-direct {v1, v3}, Lbbh;-><init>(Z)V
+    invoke-direct {v1, v3}, Lbch;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -490,13 +490,13 @@
     invoke-virtual {p0}, Lcom/snapchat/android/ui/caption/CaptionEditText;->requestFocus()Z
 
     .line 238
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    new-instance v1, Lbbh;
+    new-instance v1, Lbch;
 
-    invoke-direct {v1, v2}, Lbbh;-><init>(Z)V
+    invoke-direct {v1, v2}, Lbch;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -650,7 +650,7 @@
     return-void
 .end method
 
-.method protected abstract getAnalyticsDetails()Lapo;
+.method protected abstract getAnalyticsDetails()Laqn;
 .end method
 
 .method protected abstract getCaptionEditPosition()I
@@ -1206,12 +1206,12 @@
     return-void
 .end method
 
-.method public setInterface(Laps;)V
+.method public setInterface(Laqr;)V
     .locals 0
 
     .prologue
     .line 527
-    iput-object p1, p0, Lcom/snapchat/android/ui/caption/CaptionEditText;->c:Laps;
+    iput-object p1, p0, Lcom/snapchat/android/ui/caption/CaptionEditText;->c:Laqr;
 
     .line 528
     return-void
@@ -1262,43 +1262,22 @@
 .end method
 
 .method protected setMaxTextLengthInputFilter(I)V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
-
     .line 202
-    const-string v0, "CaptionEditText"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Set Input filter with max text length: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 203
     const/4 v0, 0x1
 
     new-array v0, v0, [Landroid/text/InputFilter;
 
     .line 204
-    new-instance v1, Landroid/text/InputFilter$LengthFilter;
+    const/4 v1, 0x0
 
-    invoke-direct {v1, p1}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
+    new-instance v2, Landroid/text/InputFilter$LengthFilter;
 
-    aput-object v1, v0, v3
+    invoke-direct {v2, p1}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
+
+    aput-object v2, v0, v1
 
     .line 205
     invoke-virtual {p0, v0}, Lcom/snapchat/android/ui/caption/CaptionEditText;->setFilters([Landroid/text/InputFilter;)V

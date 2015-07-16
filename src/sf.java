@@ -1,31 +1,52 @@
-import com.snapchat.android.api2.framework.HttpMethod;
+import android.text.TextUtils;
+import com.snapchat.android.api2.cash.blockers.BlockerOrder;
+import com.snapchat.android.fragments.cash.SecurityCodeFragment;
+import com.snapchat.android.fragments.cash.SecurityCodeFragment.a;
+import com.snapchat.android.model.CashTransaction;
+import com.snapchat.android.util.fragment.SnapchatFragment;
+import com.squareup.otto.Bus;
 
 public final class sf
-  extends sq
-  implements ts.b<sw>
+  extends rl
 {
-  private static final String TAG = "RetrieveCashCustomerStatusTask";
-  private sj mListener;
+  private static final String TAG = "SQInitiationConfirmBlocker";
   
-  public sf(@cgb sj paramsj)
+  public final void a(@chc final CashTransaction paramCashTransaction)
   {
-    mListener = paramsj;
-    a(sw.class, this);
+    final Object localObject = mTransactionId;
+    localObject = mRecipientUsername;
+    paramCashTransaction.a();
+    if (TextUtils.isEmpty(mSecurityCode))
+    {
+      localObject = new SecurityCodeFragment();
+      b = new SecurityCodeFragment.a()
+      {
+        public final void a()
+        {
+          sf.b(sf.this);
+        }
+        
+        public final void a(@chc String paramAnonymousString)
+        {
+          paramCashTransactionmSecurityCode = paramAnonymousString;
+          localObject.l();
+          sf.a(sf.this);
+        }
+        
+        public final void b()
+        {
+          sf.c(sf.this);
+        }
+      };
+      bbo.a().a(new bev((SnapchatFragment)localObject));
+      return;
+    }
+    a(null, true);
   }
   
-  public final Object b()
+  public final BlockerOrder c()
   {
-    return null;
-  }
-  
-  public final HttpMethod c()
-  {
-    return HttpMethod.GET;
-  }
-  
-  protected final String e()
-  {
-    return "cash";
+    return BlockerOrder.SQ_INITIATION_CONFIRM_BLOCKER;
   }
 }
 

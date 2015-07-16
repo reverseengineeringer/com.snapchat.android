@@ -273,8 +273,6 @@
 
     invoke-virtual {p0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->finish()V
 
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
     return-void
 .end method
 

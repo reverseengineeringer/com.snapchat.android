@@ -52,12 +52,12 @@
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 144
-    const v1, 0x7f0c02cd
+    const v1, 0x7f0c02cb
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     .line 145
-    const v1, 0x7f0c02cc
+    const v1, 0x7f0c02ca
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -67,7 +67,7 @@
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
     .line 148
-    const v1, 0x7f0c02e3
+    const v1, 0x7f0c02e1
 
     new-instance v2, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$5$1;
 

@@ -8,7 +8,6 @@ import java.io.InputStream;
 public class NativeCBCCipherInputStream
   extends FilterInputStream
 {
-  private static final int UPDATE_BUFFER_SIZE = 1024;
   private final NativeCBCCipher mCipher;
   private boolean mDidFinal = false;
   private final byte[] mUpdateBuffer;

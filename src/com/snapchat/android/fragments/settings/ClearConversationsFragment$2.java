@@ -11,7 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.snapchat.android.analytics.AnalyticsEvents;
 import com.snapchat.android.util.AlertDialogUtils;
-import tc;
+import ts;
 
 final class ClearConversationsFragment$2
   implements View.OnClickListener
@@ -31,7 +31,7 @@ final class ClearConversationsFragment$2
         AnalyticsEvents.K();
         AnalyticsEvents.L();
         ClearConversationsFragment.c(a);
-        new tc(a).f();
+        new ts(a).execute();
         ClearConversationsFragment.d(a).notifyDataSetChanged();
       }
     }).setNegativeButton(a.getString(2131492952), null);

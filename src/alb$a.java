@@ -1,8 +1,15 @@
-public abstract interface alb$a
+public final class alb$a
+  extends akw.a
 {
-  public abstract void a(alc paramalc);
+  public alb$a(String paramString1, String paramString2)
+  {
+    super(paramString1, paramString2);
+  }
   
-  public abstract void a(alc paramalc, bfl parambfl, uc paramuc);
+  public final alb a()
+  {
+    return new alb(this, (byte)0);
+  }
 }
 
 /* Location:

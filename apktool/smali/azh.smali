@@ -1,128 +1,131 @@
 .class public final Lazh;
-.super Lapf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lapf",
-        "<",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field public static final CHAT_MEDIA_KEYS_AND_IVS:Lazf;
 
+.field public static final CREDIT_CARD_TOKEN:Lazf;
 
-# instance fields
-.field private mContext:Landroid/content/Context;
+.field public static final DEVICE_TOKEN_1_KEY_AND_IV:Lazf;
 
-.field private mFriends:[Ljava/lang/String;
+.field public static final FRIEND_STORY_KEYS_AND_IVS:Lazf;
 
-.field private mLayoutId:I
+.field public static final MESSAGING_GATEWAY_INFO:Lazf;
 
-.field private mSectionLeftPadding:I
+.field public static final MY_STORY_KEYS_AND_IVS:Lazf;
+
+.field public static final PER_CONVERSATION_AUTH:Lazf;
+
+.field public static final SNAPS_ON_EXTERNAL_STORAGE_KEYS_AND_IVS:Lazf;
+
+.field public static final SQ_AUTH_TOKEN:Lazf;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;[Ljava/lang/String;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 21
-    invoke-direct {p0, p1, p2}, Lapf;-><init>(Landroid/content/Context;[Ljava/lang/Object;)V
+    .line 10
+    new-instance v0, Lazf;
+
+    const-string v1, "messagingGatewayInfo"
+
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
+
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
+
+    sput-object v0, Lazh;->MESSAGING_GATEWAY_INFO:Lazf;
+
+    .line 14
+    new-instance v0, Lazf;
+
+    const-string v1, "perConversationAuth/"
+
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
+
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
+
+    sput-object v0, Lazh;->PER_CONVERSATION_AUTH:Lazf;
+
+    .line 18
+    new-instance v0, Lazf;
+
+    const-string v1, "myStorySnapKeysAndIvs"
+
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
+
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
+
+    sput-object v0, Lazh;->MY_STORY_KEYS_AND_IVS:Lazf;
 
     .line 22
-    iput-object p1, p0, Lazh;->mContext:Landroid/content/Context;
+    new-instance v0, Lazf;
 
-    .line 23
-    const v0, 0x7f040012
+    const-string v1, "snapsOnExternalStorageKeysAndIvs"
 
-    iput v0, p0, Lazh;->mLayoutId:I
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_DIFFERENT_USER_LOGIN:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
 
-    .line 24
-    iput-object p2, p0, Lazh;->mFriends:[Ljava/lang/String;
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
+
+    sput-object v0, Lazh;->SNAPS_ON_EXTERNAL_STORAGE_KEYS_AND_IVS:Lazf;
 
     .line 26
-    iget-object v0, p0, Lazh;->mContext:Landroid/content/Context;
+    new-instance v0, Lazf;
 
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    const-string v1, "friendStorySnapKeysAndIvs"
 
-    move-result-object v0
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
 
-    const v1, 0x7f09002d
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+    sput-object v0, Lazh;->FRIEND_STORY_KEYS_AND_IVS:Lazf;
 
-    move-result v0
+    .line 30
+    new-instance v0, Lazf;
 
-    float-to-int v0, v0
+    const-string v1, "chatMediaKeysAndIvs"
 
-    iput v0, p0, Lazh;->mSectionLeftPadding:I
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
 
-    .line 27
-    return-void
-.end method
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
 
-
-# virtual methods
-.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 5
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 33
-    iget-object v0, p0, Lazh;->mContext:Landroid/content/Context;
-
-    check-cast v0, Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
-
-    move-result-object v0
+    sput-object v0, Lazh;->CHAT_MEDIA_KEYS_AND_IVS:Lazf;
 
     .line 34
-    iget v1, p0, Lazh;->mLayoutId:I
+    new-instance v0, Lazf;
 
-    invoke-virtual {v0, v1, p3, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    const-string v1, "creditCardToken"
 
-    move-result-object v1
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_DIFFERENT_USER_LOGIN:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
 
-    .line 37
-    const v0, 0x7f0a0092
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
+    sput-object v0, Lazh;->CREDIT_CARD_TOKEN:Lazf;
 
     .line 38
-    iget-object v2, p0, Lazh;->mFriends:[Ljava/lang/String;
+    new-instance v0, Lazf;
 
-    aget-object v2, v2, p1
+    const-string v1, "sqAuthToken"
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_PURGE_ON_LOGOUT:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
 
-    .line 39
-    iget-object v2, p0, Lazh;->mFriends:[Ljava/lang/String;
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
 
-    aget-object v2, v2, p1
+    sput-object v0, Lazh;->SQ_AUTH_TOKEN:Lazf;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    .line 42
+    new-instance v0, Lazf;
 
-    move-result v2
+    const-string v1, "deviceToken1KeyAndIv"
 
-    const/4 v3, 0x1
+    sget-object v2, Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;->SHOULD_ALWAYS_PERSIST:Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;
 
-    if-ne v2, v3, :cond_0
+    invoke-direct {v0, v1, v2}, Lazf;-><init>(Ljava/lang/String;Lcom/snapchat/android/util/crypto/SlightlySecurePreferencesKeyType;)V
 
-    .line 40
-    iget v2, p0, Lazh;->mSectionLeftPadding:I
+    sput-object v0, Lazh;->DEVICE_TOKEN_1_KEY_AND_IV:Lazf;
 
-    invoke-virtual {v0, v2, v4, v4, v4}, Landroid/widget/TextView;->setPadding(IIII)V
-
-    .line 43
-    :cond_0
-    return-object v1
+    return-void
 .end method

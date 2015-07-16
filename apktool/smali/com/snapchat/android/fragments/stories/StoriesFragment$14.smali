@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbgr$a;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -18,16 +18,24 @@
 
 
 # instance fields
-.field final synthetic a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+.field final synthetic a:Ljava/util/List;
+
+.field final synthetic b:I
+
+.field final synthetic c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesFragment;)V
+.method constructor <init>(Lcom/snapchat/android/fragments/stories/StoriesFragment;Ljava/util/List;I)V
     .locals 0
 
     .prologue
-    .line 498
-    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+    .line 1985
+    iput-object p1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+
+    iput-object p2, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->a:Ljava/util/List;
+
+    iput p3, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,62 +44,44 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)V
-    .locals 6
+.method public final run()V
+    .locals 4
 
     .prologue
-    .line 501
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
+    .line 1988
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->d(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Landroid/view/View;
+    invoke-static {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->q(Lcom/snapchat/android/fragments/stories/StoriesFragment;)Lady;
 
     move-result-object v0
 
-    const v2, 0x7f0a03d3
+    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->a:Ljava/util/List;
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iget v2, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->b:I
 
-    move-result-object v0
+    iget-object v3, v0, Lady;->a:Laea;
 
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, v1, Lcom/snapchat/android/fragments/stories/StoriesFragment;->o:Landroid/widget/TextView;
-
-    .line 502
-    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    iget-object v0, v0, Lcom/snapchat/android/fragments/stories/StoriesFragment;->o:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->a:Lcom/snapchat/android/fragments/stories/StoriesFragment;
-
-    invoke-virtual {v1}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v3, v1, v2}, Laea;->a(Ljava/util/List;I)Ljava/util/List;
 
     move-result-object v1
 
-    const v2, 0x7f0c0112
+    iget-object v2, v0, Lady;->b:Ljava/util/List;
 
-    const/4 v3, 0x1
+    invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    new-array v3, v3, [Ljava/lang/Object;
+    iget-object v2, v0, Lady;->b:Ljava/util/List;
 
-    const/4 v4, 0x0
+    invoke-interface {v2, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    sget-object v5, Lcom/snapchat/android/util/emoji/Emoji;->GRINNING_FACE_WITH_SMILING_EYES:Lcom/snapchat/android/util/emoji/Emoji;
+    iget-object v0, v0, Lady;->c:Ladz;
 
-    invoke-static {v5}, Lbaj;->a(Lcom/snapchat/android/util/emoji/Emoji;)Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Ladz;->notifyDataSetChanged()V
 
-    move-result-object v5
+    .line 1989
+    iget-object v0, p0, Lcom/snapchat/android/fragments/stories/StoriesFragment$14;->c:Lcom/snapchat/android/fragments/stories/StoriesFragment;
 
-    aput-object v5, v3, v4
+    invoke-virtual {v0}, Lcom/snapchat/android/fragments/stories/StoriesFragment;->r()V
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 504
+    .line 1990
     return-void
 .end method

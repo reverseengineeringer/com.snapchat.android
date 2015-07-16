@@ -1,28 +1,14 @@
-import java.util.ArrayList;
-
 public final class bxy
-  implements bxg
+  extends Exception
 {
-  public final bxk a(bwz parambwz, String paramString)
+  public bxy(String paramString)
   {
-    parambwz = bxj.a(paramString);
-    if (parambwz.size() != 2) {
-      throw new bxh("Two numeric arguments are required.");
-    }
-    try
-    {
-      parambwz = new Double(Math.min(((Double)parambwz.get(0)).doubleValue(), ((Double)parambwz.get(1)).doubleValue()));
-      return new bxk(parambwz.toString(), 0);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Two numeric arguments are required.", parambwz);
-    }
+    super(paramString);
   }
   
-  public final String a()
+  public bxy(String paramString, Exception paramException)
   {
-    return "min";
+    super(paramString, paramException);
   }
 }
 

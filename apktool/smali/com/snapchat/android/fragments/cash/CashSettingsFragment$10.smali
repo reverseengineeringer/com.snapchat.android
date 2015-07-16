@@ -99,7 +99,7 @@
 .method public final a(Ljava/lang/String;)V
     .locals 3
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -111,15 +111,15 @@
 
     iget-boolean v2, p0, Lcom/snapchat/android/fragments/cash/CashSettingsFragment$10;->c:Z
 
-    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a(Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;Z)Lsu$b;
+    invoke-virtual {v0, v1, v2}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a(Lcom/snapchat/android/fragments/cash/SecurityCodeFragment;Z)Ltk$b;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a(Ljava/lang/String;Lsu$b;)Lsq;
+    invoke-static {p1, v0}, Lcom/snapchat/android/fragments/cash/CashSettingsFragment;->a(Ljava/lang/String;Ltk$b;)Ltg;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lsq;->f()V
+    invoke-virtual {v0}, Ltg;->execute()V
 
     .line 364
     return-void

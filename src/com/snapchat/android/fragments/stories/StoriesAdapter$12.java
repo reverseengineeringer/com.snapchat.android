@@ -3,14 +3,14 @@ package com.snapchat.android.fragments.stories;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-import aom;
-import aom.a;
-import bgr.a;
+import api;
+import api.a;
+import bhr.a;
 import com.snapchat.android.model.StorySnapLogbook;
 import com.snapchat.android.util.AlertDialogUtils;
 
 final class StoriesAdapter$12
-  implements bgr.a
+  implements bhr.a
 {
   StoriesAdapter$12(StoriesAdapter paramStoriesAdapter, StorySnapLogbook paramStorySnapLogbook) {}
   
@@ -21,7 +21,7 @@ final class StoriesAdapter$12
       public final void onClick(View paramAnonymousView)
       {
         StoriesAdapter.c(b).hideSoftInputFromWindow(paramAnonymousView.getWindowToken(), 0);
-        StoriesAdapter.b(b).b(a, new aom.a()
+        StoriesAdapter.b(b).b(a, new api.a()
         {
           public final void a() {}
           

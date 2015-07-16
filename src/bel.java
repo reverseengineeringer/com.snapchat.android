@@ -1,34 +1,33 @@
-import com.snapchat.android.util.TitleBarManager.LockedState;
-import com.snapchat.android.util.TitleBarManager.Visibility;
+import com.squareup.otto.Bus;
+import javax.inject.Provider;
 
 public final class bel
+  implements bvk<bek>
 {
-  @cgc
-  public TitleBarManager.LockedState mLockedState;
-  @cgc
-  public TitleBarManager.Visibility mUnlockedVisibility;
-  @cgc
-  public TitleBarManager.Visibility mVisibility;
+  private final Provider<ban> mExceptionReporterProvider;
+  private final bvk<Bus> supertypeInjector;
   
-  public bel(TitleBarManager.LockedState paramLockedState)
+  static
   {
-    mVisibility = null;
-    mUnlockedVisibility = null;
-    mLockedState = paramLockedState;
+    if (!bel.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      $assertionsDisabled = bool;
+      return;
+    }
   }
   
-  public bel(TitleBarManager.Visibility paramVisibility)
+  private bel(bvk<Bus> parambvk, Provider<ban> paramProvider)
   {
-    mVisibility = paramVisibility;
-    mUnlockedVisibility = paramVisibility;
-    mLockedState = null;
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mExceptionReporterProvider = paramProvider;
   }
   
-  public bel(TitleBarManager.Visibility paramVisibility, TitleBarManager.LockedState paramLockedState)
+  public static bvk<bek> a(bvk<Bus> parambvk, Provider<ban> paramProvider)
   {
-    mVisibility = paramVisibility;
-    mUnlockedVisibility = null;
-    mLockedState = paramLockedState;
+    return new bel(parambvk, paramProvider);
   }
 }
 

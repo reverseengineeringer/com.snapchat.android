@@ -1,12 +1,11 @@
-public abstract interface cek
-{
-  public abstract Object a();
-  
-  public static abstract interface a
-  {
-    public abstract String toString();
-  }
-}
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.CLASS)
+@Target({java.lang.annotation.ElementType.METHOD})
+public @interface cek {}
 
 /* Location:
  * Qualified Name:     cek

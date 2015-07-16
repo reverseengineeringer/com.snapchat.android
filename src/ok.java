@@ -1,9 +1,14 @@
+import android.os.Build;
+import android.os.Build.VERSION;
+import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
+import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper.TranscodingEnabled;
+
 public final class ok
-  implements pe
+  extends Exception
 {
-  public final int a()
+  public ok(avc paramavc)
   {
-    return 45000;
+    super(TranscodingPreferencesWrapper.b().name() + "," + paramavc.b() + "x" + paramavc.a() + "," + Build.MODEL + "," + Build.VERSION.SDK_INT);
   }
 }
 

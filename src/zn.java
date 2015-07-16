@@ -1,28 +1,31 @@
-import com.snapchat.android.Timber;
-import com.squareup.otto.Bus;
+import javax.inject.Provider;
 
 public final class zn
+  implements bvk<zm>
 {
-  private final Bus a;
-  private final atx b;
+  private final Provider<yw> b;
   
-  public zn()
+  static
   {
-    this(ban.a(), new atx());
+    if (!zn.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
   }
   
-  private zn(Bus paramBus, atx paramatx)
+  private zn(Provider<yw> paramProvider)
   {
-    a = paramBus;
-    b = paramatx;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
+    }
+    b = paramProvider;
   }
   
-  public final void a(int paramInt)
+  public static bvk<zm> a(Provider<yw> paramProvider)
   {
-    Object localObject = atx.a(paramInt, new Object[0]);
-    Timber.c("TutorialToolTipGenerator", "Showing tutorial tool tip: %s", new Object[] { localObject });
-    localObject = new bbg(null, (CharSequence)localObject, -1275068416, -1, true, "TutorialToolTipGenerator");
-    a.a(localObject);
+    return new zn(paramProvider);
   }
 }
 

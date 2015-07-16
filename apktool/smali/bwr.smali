@@ -1,21 +1,22 @@
-.class public interface abstract annotation Lbwr;
+.class public final Lbwr;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/annotation/Annotation;
+.implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Documented;
-.end annotation
+# instance fields
+.field public a:Ljava/lang/String;
 
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->TYPE:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .prologue
+    .line 39
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

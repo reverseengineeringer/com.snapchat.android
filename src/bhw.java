@@ -3,24 +3,59 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public final class bhw
+public class bhw
+  extends bhy
 {
-  @SerializedName("story")
-  protected bjg story;
-  @SerializedName("viewed")
-  protected Boolean viewed;
+  @SerializedName("checksums_dict")
+  protected String checksumsDict;
+  @SerializedName("features_map")
+  protected String featuresMap;
+  @SerializedName("height")
+  protected Integer height;
+  @SerializedName("max_video_height")
+  protected Integer maxVideoHeight;
+  @SerializedName("max_video_width")
+  protected Integer maxVideoWidth;
+  @SerializedName("width")
+  protected Integer width;
   
-  public final bjg a()
+  public final bhw a(Integer paramInteger)
   {
-    return story;
+    height = paramInteger;
+    return this;
   }
   
-  public final Boolean b()
+  public final bhw a(String paramString)
   {
-    return viewed;
+    checksumsDict = paramString;
+    return this;
   }
   
-  public final boolean equals(Object paramObject)
+  public final bhw b(Integer paramInteger)
+  {
+    width = paramInteger;
+    return this;
+  }
+  
+  public final bhw b(String paramString)
+  {
+    featuresMap = paramString;
+    return this;
+  }
+  
+  public final bhw c(Integer paramInteger)
+  {
+    maxVideoHeight = paramInteger;
+    return this;
+  }
+  
+  public final bhw d(Integer paramInteger)
+  {
+    maxVideoWidth = paramInteger;
+    return this;
+  }
+  
+  public boolean equals(Object paramObject)
   {
     if (paramObject == this) {
       return true;
@@ -29,15 +64,15 @@ public final class bhw
       return false;
     }
     paramObject = (bhw)paramObject;
-    return new EqualsBuilder().append(story, story).append(viewed, viewed).isEquals();
+    return new EqualsBuilder().append(checksumsDict, checksumsDict).append(height, height).append(width, width).append(maxVideoHeight, maxVideoHeight).append(maxVideoWidth, maxVideoWidth).append(featuresMap, featuresMap).isEquals();
   }
   
-  public final int hashCode()
+  public int hashCode()
   {
-    return new HashCodeBuilder().append(story).append(viewed).toHashCode();
+    return new HashCodeBuilder().append(checksumsDict).append(height).append(width).append(maxVideoHeight).append(maxVideoWidth).append(featuresMap).toHashCode();
   }
   
-  public final String toString()
+  public String toString()
   {
     return ToStringBuilder.reflectionToString(this);
   }

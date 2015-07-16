@@ -1,23 +1,8 @@
-import java.io.IOException;
+import java.text.DateFormat;
 
 final class bnw$1
-  extends bmk
-{
-  bnw$1(bnw parambnw, String paramString, Object[] paramArrayOfObject, int paramInt, bni paramVarArgs)
-  {
-    super(paramString, paramArrayOfObject);
-  }
-  
-  public final void a()
-  {
-    try
-    {
-      d.b(b, c);
-      return;
-    }
-    catch (IOException localIOException) {}
-  }
-}
+  extends ThreadLocal<DateFormat>
+{}
 
 /* Location:
  * Qualified Name:     bnw.1

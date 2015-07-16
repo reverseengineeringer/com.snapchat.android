@@ -3,344 +3,156 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzj;
+.implements Lbvk;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbvk",
+        "<",
+        "Lzk;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field static final synthetic a:Z
 
 
 # instance fields
-.field private final a:Lajx;
-
-.field private final b:Lzn;
-
-.field private final c:Lcom/squareup/otto/Bus;
-
-.field private final d:Ljava/util/LinkedList;
+.field private final b:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/LinkedList",
+            "Ljavax/inject/Provider",
             "<",
-            "Ljava/lang/Long;",
+            "Lyw;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private e:Z
-
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 41
-    new-instance v0, Lajx;
+    .line 8
+    const-class v0, Lzl;
 
-    invoke-direct {v0}, Lajx;-><init>()V
-
-    new-instance v1, Lzn;
-
-    invoke-direct {v1}, Lzn;-><init>()V
-
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
-
-    move-result-object v2
-
-    invoke-direct {p0, v0, v1, v2}, Lzl;-><init>(Lajx;Lzn;Lcom/squareup/otto/Bus;)V
-
-    .line 42
-    return-void
-.end method
-
-.method private constructor <init>(Lajx;Lzn;Lcom/squareup/otto/Bus;)V
-    .locals 5
-    .param p1    # Lajx;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lzn;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p3    # Lcom/squareup/otto/Bus;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 47
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 36
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Lzl;->d:Ljava/util/LinkedList;
-
-    .line 38
-    iput-boolean v4, p0, Lzl;->e:Z
-
-    .line 48
-    iput-object p1, p0, Lzl;->a:Lajx;
-
-    .line 49
-    iput-object p2, p0, Lzl;->b:Lzn;
-
-    .line 50
-    iput-object p3, p0, Lzl;->c:Lcom/squareup/otto/Bus;
-
-    .line 51
-    iget-object v0, p0, Lzl;->c:Lcom/squareup/otto/Bus;
-
-    invoke-virtual {v0, p0}, Lcom/squareup/otto/Bus;->c(Ljava/lang/Object;)V
-
-    .line 52
-    const-string v0, "SwipeDownToExitTutorial"
-
-    const-string v1, "Existing values: hasSeenSwipeDownTutorial:%b, hasSwipedDownInViewer:%b"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {}, Lajx;->bC()Z
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    aput-object v3, v2, v4
-
-    const/4 v3, 0x1
-
-    invoke-static {}, Lajx;->bE()Z
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 54
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Laio;)V
-    .locals 0
-    .param p1    # Laio;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 82
-    return-void
-.end method
-
-.method public final a(Laje;)V
-    .locals 6
-    .param p1    # Laje;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    const/4 v1, 0x1
-
-    .line 64
-    instance-of v0, p1, Lajr;
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lajx;->bE()Z
+    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    iget-boolean v0, p0, Lzl;->e:Z
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1}, Laje;->Y()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lzl;->d:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
-
-    move-result v0
-
-    int-to-long v2, v0
-
-    const-wide/16 v4, 0x3
-
-    cmp-long v0, v2, v4
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lzl;->d:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->peekLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    iget-object v0, p0, Lzl;->d:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->peekFirst()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    const-wide/16 v4, 0x5dc
-
-    cmp-long v0, v2, v4
-
-    if-gtz v0, :cond_1
-
-    move v0, v1
+    const/4 v0, 0x1
 
     :goto_0
-    if-eqz v0, :cond_0
+    sput-boolean v0, Lzl;->a:Z
 
-    .line 66
-    iput-boolean v1, p0, Lzl;->e:Z
-
-    .line 67
-    iget-object v0, p0, Lzl;->b:Lzn;
-
-    const v1, 0x7f0c0291
-
-    invoke-virtual {v0, v1}, Lzn;->a(I)V
-
-    .line 69
-    :cond_0
     return-void
 
-    .line 64
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public final a(Laje;Laio;)V
+.method private constructor <init>(Ljavax/inject/Provider;)V
     .locals 1
-    .param p1    # Laje;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Laio;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 58
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lzl;->e:Z
-
-    .line 59
-    iget-object v0, p0, Lzl;->d:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
-
-    .line 60
-    return-void
-.end method
-
-.method public final a(Laje;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;I)V
-    .locals 1
-    .param p1    # Laje;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 74
-    sget-object v0, Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;->ABORT_REQUESTED:Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
-
-    if-ne p2, v0, :cond_0
-
-    .line 75
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Lajx;->z(Z)V
-
-    .line 77
-    :cond_0
-    return-void
-.end method
-
-.method public final handleTapWhileViewingEvent(Lbej;)V
-    .locals 4
-    .annotation runtime Lboh;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyw;",
+            ">;)V"
+        }
     .end annotation
 
     .prologue
-    .line 86
-    iget-object v0, p0, Lzl;->d:Ljava/util/LinkedList;
+    .line 12
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+    .line 13
+    sget-boolean v0, Lzl;->a:Z
 
-    move-result v0
+    if-nez v0, :cond_0
 
-    int-to-long v0, v0
+    if-nez p1, :cond_0
 
-    const-wide/16 v2, 0x3
+    new-instance v0, Ljava/lang/AssertionError;
 
-    cmp-long v0, v0, v2
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    if-ltz v0, :cond_0
+    throw v0
 
-    .line 87
-    iget-object v0, p0, Lzl;->d:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
-
-    .line 89
+    .line 14
     :cond_0
-    iget-object v0, p0, Lzl;->d:Ljava/util/LinkedList;
+    iput-object p1, p0, Lzl;->b:Ljavax/inject/Provider;
 
-    iget-wide v2, p1, Lbej;->eventTimeMilliseconds:J
+    .line 15
+    return-void
+.end method
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+.method public static a(Ljavax/inject/Provider;)Lbvk;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljavax/inject/Provider",
+            "<",
+            "Lyw;",
+            ">;)",
+            "Lbvk",
+            "<",
+            "Lzk;",
+            ">;"
+        }
+    .end annotation
 
-    move-result-object v1
+    .prologue
+    .line 26
+    new-instance v0, Lzl;
 
-    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v0, p0}, Lzl;-><init>(Ljavax/inject/Provider;)V
 
-    .line 90
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
+
+    .prologue
+    .line 8
+    check-cast p1, Lzk;
+
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Cannot inject members into a null reference"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lzl;->b:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lyw;
+
+    iput-object v0, p1, Lzk;->a:Lyw;
+
     return-void
 .end method

@@ -1,129 +1,125 @@
-.class public final Laag;
-.super Lcom/snapchat/android/database/table/SnapbryoTable;
+.class public abstract Laag;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Laah$a;
 
 
 # static fields
-.field private static a:Laag;
+.field private static final TAG:Ljava/lang/String; = "BuildThumbnailTask"
+
+
+# instance fields
+.field private final mBitmapLoader:Lawn;
+
+.field public final mCache:Laxn;
+
+.field public final mCacheKey:Ljava/lang/String;
+
+.field public final mDownloader:Laah;
+
+.field public final mUrl:Ljava/lang/String;
 
 
 # direct methods
-.method private constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 6
 
     .prologue
-    .line 15
-    invoke-direct {p0}, Lcom/snapchat/android/database/table/SnapbryoTable;-><init>()V
+    .line 27
+    new-instance v1, Lawn;
 
+    invoke-direct {v1, p1}, Lawn;-><init>(Landroid/content/Context;)V
+
+    new-instance v2, Laah;
+
+    invoke-direct {v2}, Laah;-><init>()V
+
+    sget-object v3, Laxo;->STORY_SNAP_RECEIVED_THUMBNAIL_CACHE:Laxn;
+
+    move-object v0, p0
+
+    move-object v4, p2
+
+    move-object v5, p3
+
+    invoke-direct/range {v0 .. v5}, Laag;-><init>(Lawn;Laah;Laxn;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 29
     return-void
 .end method
 
-.method public static declared-synchronized a()Laag;
-    .locals 2
+.method private constructor <init>(Lawn;Laah;Laxn;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
     .prologue
-    .line 18
-    const-class v1, Laag;
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    monitor-enter v1
+    .line 34
+    iput-object p2, p0, Laag;->mDownloader:Laah;
 
-    :try_start_0
-    sget-object v0, Laag;->a:Laag;
+    .line 35
+    iput-object p3, p0, Laag;->mCache:Laxn;
 
-    if-nez v0, :cond_0
+    .line 36
+    iput-object p1, p0, Laag;->mBitmapLoader:Lawn;
 
-    .line 19
-    new-instance v0, Laag;
+    .line 37
+    iput-object p4, p0, Laag;->mUrl:Ljava/lang/String;
 
-    invoke-direct {v0}, Laag;-><init>()V
+    .line 38
+    iput-object p5, p0, Laag;->mCacheKey:Ljava/lang/String;
 
-    sput-object v0, Laag;->a:Laag;
-
-    .line 21
-    :cond_0
-    sget-object v0, Laag;->a:Laag;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 18
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
+    .line 39
+    return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lajv;)Ljava/util/Collection;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lajv;",
-            ")",
-            "Ljava/util/Collection",
-            "<",
-            "Laim;",
-            ">;"
-        }
-    .end annotation
+.method public final a(I)V
+    .locals 4
 
     .prologue
-    .line 36
-    new-instance v0, Ljava/util/ArrayList;
+    .line 61
+    new-instance v0, Lawv$a;
 
-    invoke-static {}, Lajn;->a()Lajn;
+    invoke-direct {v0}, Lawv$a;-><init>()V
 
-    move-result-object v1
+    iget-object v1, p0, Laag;->mUrl:Ljava/lang/String;
 
-    iget-object v2, v1, Lajn;->mFailedChatMediaSnapbryos:Ljava/util/Map;
+    iget-object v2, p0, Laag;->mCache:Laxn;
 
-    invoke-virtual {v1, v2}, Lajn;->a(Ljava/util/Map;)Ljava/util/ArrayList;
+    iget-object v3, p0, Laag;->mCacheKey:Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    return-object v0
-.end method
-
-.method public final b(Lajv;)V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 31
-    invoke-static {}, Lajn;->a()Lajn;
+    invoke-virtual {v0, v1, v2, v3}, Lawv$a;->a(Ljava/lang/String;Laxn;Ljava/lang/String;)Lawv$a;
 
     move-result-object v0
 
-    invoke-virtual {p0, v1, v1}, Laag;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+    invoke-virtual {v0}, Lawv$a;->a()Lawv;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lajn;->c(Ljava/util/List;)Ljava/util/LinkedHashMap;
+    .line 64
+    iget-object v1, p0, Laag;->mBitmapLoader:Lawn;
 
-    move-result-object v1
+    invoke-virtual {v1, v0}, Lawn;->a(Lawv;)Lawm;
 
-    iput-object v1, v0, Lajn;->mFailedChatMediaSnapbryos:Ljava/util/Map;
+    move-result-object v0
 
-    .line 32
+    .line 68
+    iget-object v0, v0, Lawm;->mBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p0, v0}, Laag;->a(Landroid/graphics/Bitmap;)V
+
+    .line 69
     return-void
 .end method
 
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 26
-    const-string v0, "FailedChatMediaSnapbryoTable"
-
-    return-object v0
+.method public abstract a(Landroid/graphics/Bitmap;)V
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Lchd;
+        .end annotation
+    .end param
 .end method

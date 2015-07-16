@@ -1,33 +1,30 @@
-.class public final Lbjz;
-.super Ljava/lang/Object;
+.class public Lbjz;
+.super Lbjf;
 .source "SourceFile"
 
 
 # instance fields
-.field protected renditions:Ljava/util/List;
+.field protected age:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "renditions"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbjy;",
-            ">;"
-        }
+        value = "age"
     .end annotation
 .end field
 
-.field protected type:Ljava/lang/String;
+.field protected birthday:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "type"
+        value = "birthday"
     .end annotation
 .end field
 
-.field protected url:Ljava/lang/String;
+.field protected email:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "url"
+        value = "email"
+    .end annotation
+.end field
+
+.field protected studySettings:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "study_settings"
     .end annotation
 .end field
 
@@ -37,106 +34,75 @@
     .locals 0
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 17
+    invoke-direct {p0}, Lbjf;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 40
-    iget-object v0, p0, Lbjz;->type:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 58
-    iget-object v0, p0, Lbjz;->url:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lbjy;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 76
-    iget-object v0, p0, Lbjz;->renditions:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 99
+    .line 120
     if-ne p1, p0, :cond_0
 
-    .line 100
+    .line 121
     const/4 v0, 0x1
 
-    .line 106
+    .line 127
     :goto_0
     return v0
 
-    .line 102
+    .line 123
     :cond_0
     instance-of v0, p1, Lbjz;
 
     if-nez v0, :cond_1
 
-    .line 103
+    .line 124
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 105
+    .line 126
     :cond_1
     check-cast p1, Lbjz;
 
-    .line 106
+    .line 127
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjz;->type:Ljava/lang/String;
+    iget-object v1, p0, Lbjz;->email:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjz;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbjz;->url:Ljava/lang/String;
-
-    iget-object v2, p1, Lbjz;->url:Ljava/lang/String;
+    iget-object v2, p1, Lbjz;->email:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjz;->renditions:Ljava/util/List;
+    iget-object v1, p0, Lbjz;->age:Ljava/lang/String;
 
-    iget-object v2, p1, Lbjz;->renditions:Ljava/util/List;
+    iget-object v2, p1, Lbjz;->age:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjz;->birthday:Ljava/lang/String;
+
+    iget-object v2, p1, Lbjz;->birthday:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjz;->studySettings:Ljava/lang/String;
+
+    iget-object v2, p1, Lbjz;->studySettings:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -149,28 +115,34 @@
     goto :goto_0
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 2
 
     .prologue
-    .line 90
+    .line 110
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbjz;->type:Ljava/lang/String;
+    iget-object v1, p0, Lbjz;->email:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjz;->url:Ljava/lang/String;
+    iget-object v1, p0, Lbjz;->age:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbjz;->renditions:Ljava/util/List;
+    iget-object v1, p0, Lbjz;->birthday:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbjz;->studySettings:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -183,11 +155,55 @@
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final p(Ljava/lang/String;)V
+    .locals 0
+
+    .prologue
+    .line 33
+    iput-object p1, p0, Lbjz;->email:Ljava/lang/String;
+
+    .line 34
+    return-void
+.end method
+
+.method public final q(Ljava/lang/String;)V
+    .locals 0
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbjz;->age:Ljava/lang/String;
+
+    .line 52
+    return-void
+.end method
+
+.method public final r(Ljava/lang/String;)V
+    .locals 0
+
+    .prologue
+    .line 69
+    iput-object p1, p0, Lbjz;->birthday:Ljava/lang/String;
+
+    .line 70
+    return-void
+.end method
+
+.method public final s(Ljava/lang/String;)V
+    .locals 0
+
+    .prologue
+    .line 87
+    iput-object p1, p0, Lbjz;->studySettings:Ljava/lang/String;
+
+    .line 88
+    return-void
+.end method
+
+.method public toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 85
+    .line 105
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

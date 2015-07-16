@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
     .prologue
     .line 911
@@ -52,14 +52,33 @@
     .line 912
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$3;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->r(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->r(Lcom/snapchat/android/preview/SnapPreviewFragment;)Lof;
 
-    .line 914
+    move-result-object v0
+
+    const-string v1, "PREPARE_SNAP"
+
+    invoke-static {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;->b(Ljava/lang/String;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/snapchat/android/analytics/framework/EasyMetric;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lof;->mPrepareSnapMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 913
+    iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$3;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
+
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->s(Lcom/snapchat/android/preview/SnapPreviewFragment;)V
+
+    .line 915
     :cond_0
     iget-object v0, p0, Lcom/snapchat/android/preview/SnapPreviewFragment$3;->a:Lcom/snapchat/android/preview/SnapPreviewFragment;
 
-    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->s(Lcom/snapchat/android/preview/SnapPreviewFragment;)Z
+    invoke-static {v0}, Lcom/snapchat/android/preview/SnapPreviewFragment;->t(Lcom/snapchat/android/preview/SnapPreviewFragment;)Z
 
-    .line 915
+    .line 916
     return-void
 .end method

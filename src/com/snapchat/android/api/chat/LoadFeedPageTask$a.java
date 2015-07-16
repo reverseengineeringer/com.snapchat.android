@@ -1,9 +1,6 @@
 package com.snapchat.android.api.chat;
 
-public abstract interface LoadFeedPageTask$a
-{
-  public abstract void a(LoadFeedPageTask.TaskStatus paramTaskStatus);
-}
+public abstract interface LoadFeedPageTask$a {}
 
 /* Location:
  * Qualified Name:     com.snapchat.android.api.chat.LoadFeedPageTask.a

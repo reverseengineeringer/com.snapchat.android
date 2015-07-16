@@ -41,15 +41,15 @@
 
 .field private final mEasyMetricFactory:Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;
 
-.field private final mStartupContext:Laux;
+.field private final mStartupContext:Lavv;
 
 .field public mViewNextSnapMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
 .field public mViewSnapMetric:Lcom/snapchat/android/analytics/framework/EasyMetric;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -82,17 +82,17 @@
 
     move-result-object v1
 
-    invoke-static {}, Laux;->a()Laux;
+    invoke-static {}, Lavv;->a()Lavv;
 
     move-result-object v2
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics;-><init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Laux;)V
+    invoke-direct {p0, v0, v1, v2}, Lcom/snapchat/android/analytics/SnapViewEventAnalytics;-><init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Lavv;)V
 
     .line 87
     return-void
 .end method
 
-.method private constructor <init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Laux;)V
+.method private constructor <init>(Lcom/snapchat/android/analytics/framework/EasyMetric$EasyMetricFactory;Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;Lavv;)V
     .locals 0
 
     .prologue
@@ -106,7 +106,7 @@
     iput-object p2, p0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics;->mDictionaryEasyMetric:Lcom/snapchat/android/analytics/framework/DictionaryEasyMetric;
 
     .line 94
-    iput-object p3, p0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics;->mStartupContext:Laux;
+    iput-object p3, p0, Lcom/snapchat/android/analytics/SnapViewEventAnalytics;->mStartupContext:Lavv;
 
     .line 95
     return-void
@@ -127,7 +127,7 @@
 .method public final a(Lcom/snapchat/android/analytics/SnapViewEventAnalytics$SnapViewEventSourceType;)V
     .locals 4
     .param p1    # Lcom/snapchat/android/analytics/SnapViewEventAnalytics$SnapViewEventSourceType;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -176,7 +176,7 @@
 
     const-string v2, "type"
 
-    invoke-static {}, Laux;->b()Lcom/snapchat/android/util/StartupPath;
+    invoke-static {}, Lavv;->b()Lcom/snapchat/android/util/StartupPath;
 
     move-result-object v3
 

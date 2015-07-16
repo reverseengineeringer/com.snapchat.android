@@ -1,20 +1,20 @@
 package com.snapchat.android.fragments.addfriends;
 
-import amk;
-import amo;
-import aok;
+import anh;
+import anl;
+import apg;
 import com.snapchat.android.model.SuggestedFriendAction;
 
 final class AddFriendsMenuFragment$1
-  implements aok
+  implements apg
 {
   AddFriendsMenuFragment$1(AddFriendsMenuFragment paramAddFriendsMenuFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    if ((paramamk instanceof amo))
+    if ((paramanh instanceof anl))
     {
-      paramamk = (amo)paramamk;
+      paramanh = (anl)paramanh;
       if ((c) && (a == SuggestedFriendAction.HIDE)) {
         AddFriendsMenuFragment.a(a, b);
       }

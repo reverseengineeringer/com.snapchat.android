@@ -23,7 +23,7 @@
 # instance fields
 .field private a:Landroid/widget/AbsListView;
 
-.field private b:Llz;
+.field private b:Lmr;
 
 .field private c:Landroid/widget/Button;
 
@@ -259,16 +259,28 @@
     .locals 2
 
     .prologue
+    invoke-virtual {p0}, Lcom/snapchat/android/HttpMetricsActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/kkxxkk;->b041E041EОО041EО(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/snapchat/android/HttpMetricsActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkkkkkk/xkkkxk;->b041E041EООО041E(Landroid/content/Context;)V
+
     .line 34
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 35
-    const v0, 0x7f04006d
+    const v0, 0x7f04006e
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/HttpMetricsActivity;->setContentView(I)V
 
     .line 37
-    const v0, 0x7f0a0254
+    const v0, 0x7f0a0252
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/HttpMetricsActivity;->findViewById(I)Landroid/view/View;
 
@@ -279,14 +291,14 @@
     iput-object v0, p0, Lcom/snapchat/android/HttpMetricsActivity;->a:Landroid/widget/AbsListView;
 
     .line 38
-    new-instance v0, Llz;
+    new-instance v0, Lmr;
 
-    invoke-direct {v0, p0}, Llz;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Lmr;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/snapchat/android/HttpMetricsActivity;->b:Llz;
+    iput-object v0, p0, Lcom/snapchat/android/HttpMetricsActivity;->b:Lmr;
 
     .line 39
-    const v0, 0x7f0a0253
+    const v0, 0x7f0a0251
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/HttpMetricsActivity;->findViewById(I)Landroid/view/View;
 
@@ -306,7 +318,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 47
-    const v0, 0x7f0a024f
+    const v0, 0x7f0a024d
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/HttpMetricsActivity;->findViewById(I)Landroid/view/View;
 
@@ -322,7 +334,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 49
-    const v0, 0x7f0a0250
+    const v0, 0x7f0a024e
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/HttpMetricsActivity;->findViewById(I)Landroid/view/View;
 
@@ -338,7 +350,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 51
-    const v0, 0x7f0a0252
+    const v0, 0x7f0a0250
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/HttpMetricsActivity;->findViewById(I)Landroid/view/View;
 
@@ -354,7 +366,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 53
-    const v0, 0x7f0a0251
+    const v0, 0x7f0a024f
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/HttpMetricsActivity;->findViewById(I)Landroid/view/View;
 
@@ -372,7 +384,7 @@
     .line 56
     iget-object v0, p0, Lcom/snapchat/android/HttpMetricsActivity;->a:Landroid/widget/AbsListView;
 
-    iget-object v1, p0, Lcom/snapchat/android/HttpMetricsActivity;->b:Llz;
+    iget-object v1, p0, Lcom/snapchat/android/HttpMetricsActivity;->b:Lmr;
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -419,7 +431,7 @@
 
     sget-object v1, Lcom/snapchat/android/content/SnapchatProvider;->a:Landroid/net/Uri;
 
-    sget-object v2, Laaq;->a:[Ljava/lang/String;
+    sget-object v2, Labp;->a:[Ljava/lang/String;
 
     iget-object v3, p0, Lcom/snapchat/android/HttpMetricsActivity;->h:Ljava/lang/String;
 
@@ -456,9 +468,9 @@
     :pswitch_0
     if-eqz p2, :cond_0
 
-    iget-object v0, p0, Lcom/snapchat/android/HttpMetricsActivity;->b:Llz;
+    iget-object v0, p0, Lcom/snapchat/android/HttpMetricsActivity;->b:Lmr;
 
-    invoke-virtual {v0, p2}, Llz;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
+    invoke-virtual {v0, p2}, Lmr;->swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
 
     goto :goto_0
 

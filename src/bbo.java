@@ -1,10 +1,12 @@
+import com.squareup.otto.Bus;
+
 public final class bbo
 {
-  private boolean mSuccessful;
+  private static final Bus BUS = new bek();
   
-  public bbo(boolean paramBoolean)
+  public static Bus a()
   {
-    mSuccessful = paramBoolean;
+    return BUS;
   }
 }
 

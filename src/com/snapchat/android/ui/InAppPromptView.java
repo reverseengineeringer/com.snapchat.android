@@ -1,8 +1,8 @@
 package com.snapchat.android.ui;
 
-import alx;
-import alx.a;
-import aly;
+import amu;
+import amu.a;
+import amv;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
@@ -11,9 +11,9 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import ban;
-import bcr;
-import bdg;
+import bbo;
+import bdr;
+import beg;
 import com.snapchat.android.notification.AndroidNotificationManager.Type;
 import com.snapchat.android.notification.AndroidNotificationManager.a;
 import com.snapchat.android.notification.AndroidNotificationManager.b;
@@ -25,29 +25,29 @@ public class InAppPromptView
   private Context a;
   private ImageView b;
   private TextView c;
-  private aly d;
-  private alx e;
+  private amv d;
+  private amu e;
   
   public InAppPromptView(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, new aly(), alx.a());
+    this(paramContext, paramAttributeSet, new amv(), amu.a());
   }
   
-  InAppPromptView(Context paramContext, AttributeSet paramAttributeSet, aly paramaly, alx paramalx)
+  InAppPromptView(Context paramContext, AttributeSet paramAttributeSet, amv paramamv, amu paramamu)
   {
     super(paramContext, paramAttributeSet);
     a = paramContext;
-    d = paramaly;
-    e = paramalx;
+    d = paramamv;
+    e = paramamu;
   }
   
   public void onFinishInflate()
   {
-    b = ((ImageView)findViewById(2131362398));
-    c = ((TextView)findViewById(2131362403));
+    b = ((ImageView)findViewById(2131362396));
+    c = ((TextView)findViewById(2131362401));
   }
   
-  public void set(final alx.a parama)
+  public void set(final amu.a parama)
   {
     Object localObject = getResources();
     AndroidNotificationManager.Type localType = c;
@@ -55,7 +55,7 @@ public class InAppPromptView
     switch (2.a[localType.ordinal()])
     {
     default: 
-      i = 2131230791;
+      i = 2131230792;
       setBackgroundColor(((Resources)localObject).getColor(i));
       localObject = b;
       localType = c;
@@ -86,11 +86,11 @@ public class InAppPromptView
           if (paramad != null) {}
           for (paramAnonymousView = new AndroidNotificationManager.b(paramaa, paramad);; paramAnonymousView = null)
           {
-            paramAnonymousView = aly.a(InAppPromptView.b(InAppPromptView.this), paramac, locala, paramAnonymousView, false);
+            paramAnonymousView = amv.a(InAppPromptView.b(InAppPromptView.this), paramac, locala, paramAnonymousView, false);
             if (paramac != AndroidNotificationManager.Type.ADDFRIEND)
             {
-              ban.a().a(new bdg(true));
-              ban.a().a(new bcr(1));
+              bbo.a().a(new beg(true));
+              bbo.a().a(new bdr(1));
             }
             InAppPromptView.b(InAppPromptView.this).startActivity(paramAnonymousView);
             return;
@@ -99,11 +99,11 @@ public class InAppPromptView
         }
       });
       return;
-      i = 2131230784;
+      i = 2131230785;
       break;
       i = 2131230727;
       break;
-      i = 2131230802;
+      i = 2131230803;
       break;
       i = 2130837849;
       break label139;

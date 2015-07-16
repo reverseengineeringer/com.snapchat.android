@@ -1,34 +1,13 @@
-import javax.inject.Inject;
+import com.google.gson.annotations.SerializedName;
 
-final class to
-  extends tf<Object, String>
+public final class to
 {
-  private final ato mGson;
+  @SerializedName("swipe")
+  private final boolean mSwipe;
   
-  @Inject
-  protected to(ato paramato)
+  public to(boolean paramBoolean)
   {
-    super(Object.class);
-    mGson = paramato;
-  }
-  
-  private String c(@cgb Object paramObject)
-  {
-    if ((paramObject instanceof String)) {
-      return (String)paramObject;
-    }
-    if (aud.a(paramObject.getClass())) {
-      return paramObject.toString();
-    }
-    try
-    {
-      String str = mGson.a(paramObject);
-      return str;
-    }
-    catch (Exception localException)
-    {
-      throw new RuntimeException("Trouble serializing: Class=" + paramObject.getClass().getName() + ", with toString()=" + paramObject.toString(), localException);
-    }
+    mSwipe = paramBoolean;
   }
 }
 

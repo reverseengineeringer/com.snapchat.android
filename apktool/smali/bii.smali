@@ -3,24 +3,28 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lbii$a;
-    }
-.end annotation
-
-
 # instance fields
-.field protected id:Ljava/lang/String;
+.field protected conversationsChecksum:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "id"
+        value = "conversations_checksum"
     .end annotation
 .end field
 
-.field protected type:Ljava/lang/String;
+.field protected friendsChecksum:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "type"
+        value = "friends_checksum"
+    .end annotation
+.end field
+
+.field protected storiesChecksum:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "stories_checksum"
+    .end annotation
+.end field
+
+.field protected updatesChecksum:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "updates_checksum"
     .end annotation
 .end field
 
@@ -30,71 +34,159 @@
     .locals 0
 
     .prologue
-    .line 17
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final e(Ljava/lang/String;)Lbii;
+.method public final a(Ljava/lang/String;)Lbii;
     .locals 0
 
     .prologue
-    .line 110
-    iput-object p1, p0, Lbii;->type:Ljava/lang/String;
+    .line 36
+    iput-object p1, p0, Lbii;->storiesChecksum:Ljava/lang/String;
 
-    .line 111
+    .line 37
     return-object p0
+.end method
+
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 41
+    iget-object v0, p0, Lbii;->storiesChecksum:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final b(Ljava/lang/String;)Lbii;
+    .locals 0
+
+    .prologue
+    .line 54
+    iput-object p1, p0, Lbii;->updatesChecksum:Ljava/lang/String;
+
+    .line 55
+    return-object p0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 59
+    iget-object v0, p0, Lbii;->updatesChecksum:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final c(Ljava/lang/String;)Lbii;
+    .locals 0
+
+    .prologue
+    .line 72
+    iput-object p1, p0, Lbii;->friendsChecksum:Ljava/lang/String;
+
+    .line 73
+    return-object p0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 77
+    iget-object v0, p0, Lbii;->friendsChecksum:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final d(Ljava/lang/String;)Lbii;
+    .locals 0
+
+    .prologue
+    .line 90
+    iput-object p1, p0, Lbii;->conversationsChecksum:Ljava/lang/String;
+
+    .line 91
+    return-object p0
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 95
+    iget-object v0, p0, Lbii;->conversationsChecksum:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
 
     .prologue
-    .line 159
+    .line 119
     if-ne p1, p0, :cond_0
 
-    .line 160
+    .line 120
     const/4 v0, 0x1
 
-    .line 166
+    .line 126
     :goto_0
     return v0
 
-    .line 162
+    .line 122
     :cond_0
     instance-of v0, p1, Lbii;
 
     if-nez v0, :cond_1
 
-    .line 163
+    .line 123
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 165
+    .line 125
     :cond_1
     check-cast p1, Lbii;
 
-    .line 166
+    .line 126
     new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
 
-    iget-object v1, p0, Lbii;->type:Ljava/lang/String;
+    iget-object v1, p0, Lbii;->storiesChecksum:Ljava/lang/String;
 
-    iget-object v2, p1, Lbii;->type:Ljava/lang/String;
+    iget-object v2, p1, Lbii;->storiesChecksum:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbii;->id:Ljava/lang/String;
+    iget-object v1, p0, Lbii;->updatesChecksum:Ljava/lang/String;
 
-    iget-object v2, p1, Lbii;->id:Ljava/lang/String;
+    iget-object v2, p1, Lbii;->updatesChecksum:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbii;->friendsChecksum:Ljava/lang/String;
+
+    iget-object v2, p1, Lbii;->friendsChecksum:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbii;->conversationsChecksum:Ljava/lang/String;
+
+    iget-object v2, p1, Lbii;->conversationsChecksum:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
 
@@ -107,33 +199,34 @@
     goto :goto_0
 .end method
 
-.method public final f(Ljava/lang/String;)V
-    .locals 0
-
-    .prologue
-    .line 128
-    iput-object p1, p0, Lbii;->id:Ljava/lang/String;
-
-    .line 129
-    return-void
-.end method
-
 .method public hashCode()I
     .locals 2
 
     .prologue
-    .line 151
+    .line 109
     new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
 
-    iget-object v1, p0, Lbii;->type:Ljava/lang/String;
+    iget-object v1, p0, Lbii;->storiesChecksum:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Lbii;->id:Ljava/lang/String;
+    iget-object v1, p0, Lbii;->updatesChecksum:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbii;->friendsChecksum:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbii;->conversationsChecksum:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
 
@@ -146,45 +239,11 @@
     return v0
 .end method
 
-.method public final i()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 115
-    iget-object v0, p0, Lbii;->type:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final j()Lbii$a;
-    .locals 1
-
-    .prologue
-    .line 119
-    iget-object v0, p0, Lbii;->type:Ljava/lang/String;
-
-    invoke-static {v0}, Lbii$a;->a(Ljava/lang/String;)Lbii$a;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final k()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lbii;->id:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 146
+    .line 104
     invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

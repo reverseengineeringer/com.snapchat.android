@@ -8,18 +8,18 @@ import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
-import ckr.a;
-import ckr.b;
-import ckr.c;
+import cls.a;
+import cls.b;
+import cls.c;
 import xyz.danoz.recyclerviewfastscroller.sectionindicator.AbsSectionIndicator;
 
 public abstract class SectionTitleIndicator<T>
   extends AbsSectionIndicator<T>
 {
-  private static final int[] a = ckr.c.SectionTitleIndicator;
-  private static final int b = ckr.b.section_indicator_with_title;
-  private final View c = findViewById(ckr.a.section_title_popup);
-  private final TextView d = (TextView)findViewById(ckr.a.section_indicator_text);
+  private static final int[] a = cls.c.SectionTitleIndicator;
+  private static final int b = cls.b.section_indicator_with_title;
+  private final View c = findViewById(cls.a.section_title_popup);
+  private final TextView d = (TextView)findViewById(cls.a.section_indicator_text);
   
   public SectionTitleIndicator(Context paramContext)
   {
@@ -37,8 +37,8 @@ public abstract class SectionTitleIndicator<T>
     paramContext = getContext().getTheme().obtainStyledAttributes(paramAttributeSet, a, 0, 0);
     try
     {
-      setIndicatorBackgroundColor(paramContext.getColor(ckr.c.SectionTitleIndicator_rfs_backgroundColor, getDefaultBackgroundColor()));
-      setIndicatorTextColor(paramContext.getColor(ckr.c.SectionTitleIndicator_rfs_textColor, getDefaultBackgroundColor()));
+      setIndicatorBackgroundColor(paramContext.getColor(cls.c.SectionTitleIndicator_rfs_backgroundColor, getDefaultBackgroundColor()));
+      setIndicatorTextColor(paramContext.getColor(cls.c.SectionTitleIndicator_rfs_textColor, getDefaultBackgroundColor()));
       return;
     }
     finally

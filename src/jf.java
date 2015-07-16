@@ -2,17 +2,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class jf
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  private final String eventName = "PROFILE_MY_FRIENDS_CHAT_BUTTON_CLICK";
+  private final String eventName = "PROFILE_FRIEND_REQUEST_DELETE";
+  public Boolean hasDisplayName;
+  public il method;
+  public kh source;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_MY_FRIENDS_CHAT_BUTTON_CLICK");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "PROFILE_FRIEND_REQUEST_DELETE");
+    if (hasDisplayName != null) {
+      localHashMap.put("has_display_name", hasDisplayName);
+    }
+    if (method != null) {
+      localHashMap.put("method", method);
+    }
+    if (source != null) {
+      localHashMap.put("source", source);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +39,32 @@ public final class jf
         return false;
       }
       paramObject = (jf)paramObject;
-      if (additionalInfo == null) {
+      if (hasDisplayName != null)
+      {
+        if (hasDisplayName.equals(hasDisplayName)) {}
+      }
+      else {
+        while (hasDisplayName != null) {
+          return false;
+        }
+      }
+      if (method != null)
+      {
+        if (method.equals(method)) {}
+      }
+      else {
+        while (method != null) {
+          return false;
+        }
+      }
+      if (source == null) {
         break;
       }
-    } while (additionalInfo.equals(additionalInfo));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (additionalInfo == null) {
+      if (source == null) {
         break;
       }
     }
@@ -46,10 +72,25 @@ public final class jf
   
   public final int hashCode()
   {
-    int j = super.hashCode();
-    if (additionalInfo != null) {}
-    for (int i = additionalInfo.hashCode();; i = 0) {
-      return i + j * 31;
+    int k = 0;
+    int m = super.hashCode();
+    int i;
+    if (hasDisplayName != null)
+    {
+      i = hasDisplayName.hashCode();
+      if (method == null) {
+        break label76;
+      }
+    }
+    label76:
+    for (int j = method.hashCode();; j = 0)
+    {
+      if (source != null) {
+        k = source.hashCode();
+      }
+      return (j + (i + m * 31) * 31) * 31 + k;
+      i = 0;
+      break;
     }
   }
 }

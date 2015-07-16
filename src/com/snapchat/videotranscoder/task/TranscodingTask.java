@@ -1,8 +1,8 @@
 package com.snapchat.videotranscoder.task;
 
 import android.graphics.Bitmap;
-import cgb;
-import cgc;
+import chc;
+import chd;
 import com.snapchat.videotranscoder.audio.AudioProvider;
 import com.snapchat.videotranscoder.audio.SilenceProvider;
 import com.snapchat.videotranscoder.mp4.MP4Metadata;
@@ -36,7 +36,7 @@ public class TranscodingTask
   private long mTotalDurationMs;
   private final TranscodingResources mTranscodingResources;
   
-  public TranscodingTask(@cgb TranscodingResources paramTranscodingResources, @cgb TranscodingConfiguration paramTranscodingConfiguration)
+  public TranscodingTask(@chc TranscodingResources paramTranscodingResources, @chc TranscodingConfiguration paramTranscodingConfiguration)
   {
     if (paramTranscodingResources == null) {
       throw new NullPointerException("transcodingResources is null");
@@ -64,17 +64,17 @@ public class TranscodingTask
     }
   }
   
-  private boolean concatenateBitmap(@cgb final BitmapMediaSource paramBitmapMediaSource, @cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  private boolean concatenateBitmap(@chc final BitmapMediaSource paramBitmapMediaSource, @chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     long l = paramBitmapMediaSource.getDisplayTimeMs();
     mCurrentTranscoder = new Transcoder(mMixer, mConfiguration.getVideoEncoderConfiguration(), mConfiguration.getAudioEncoderConfiguration())
     {
-      protected MediaProvider createAudioProvider(@cgb Encoder paramAnonymousEncoder, @cgb EncoderConfiguration paramAnonymousEncoderConfiguration, @cgb StageDoneCallback paramAnonymousStageDoneCallback)
+      protected MediaProvider createAudioProvider(@chc Encoder paramAnonymousEncoder, @chc EncoderConfiguration paramAnonymousEncoderConfiguration, @chc StageDoneCallback paramAnonymousStageDoneCallback)
       {
         return new SilenceProvider(paramAnonymousEncoder, val$durationUs, paramAnonymousStageDoneCallback);
       }
       
-      protected MediaProvider createVideoProvider(@cgb Encoder paramAnonymousEncoder, @cgb EncoderConfiguration paramAnonymousEncoderConfiguration, @cgb StageDoneCallback paramAnonymousStageDoneCallback)
+      protected MediaProvider createVideoProvider(@chc Encoder paramAnonymousEncoder, @chc EncoderConfiguration paramAnonymousEncoderConfiguration, @chc StageDoneCallback paramAnonymousStageDoneCallback)
       {
         return new ImageProvider(mTranscodingResources, paramAnonymousEncoder, paramBitmapMediaSource.getBitmap(), 30, val$durationUs, paramAnonymousStageDoneCallback);
       }
@@ -86,7 +86,7 @@ public class TranscodingTask
     return true;
   }
   
-  private boolean concatenateImageFile(@cgb final ImageFileMediaSource paramImageFileMediaSource, @cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  private boolean concatenateImageFile(@chc final ImageFileMediaSource paramImageFileMediaSource, @chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     long l = paramImageFileMediaSource.getDisplayTimeMs();
     paramImageFileMediaSource = paramImageFileMediaSource.getBitmap();
@@ -95,12 +95,12 @@ public class TranscodingTask
     }
     mCurrentTranscoder = new Transcoder(mMixer, mConfiguration.getVideoEncoderConfiguration(), mConfiguration.getAudioEncoderConfiguration())
     {
-      protected MediaProvider createAudioProvider(@cgb Encoder paramAnonymousEncoder, @cgb EncoderConfiguration paramAnonymousEncoderConfiguration, @cgb StageDoneCallback paramAnonymousStageDoneCallback)
+      protected MediaProvider createAudioProvider(@chc Encoder paramAnonymousEncoder, @chc EncoderConfiguration paramAnonymousEncoderConfiguration, @chc StageDoneCallback paramAnonymousStageDoneCallback)
       {
         return new SilenceProvider(paramAnonymousEncoder, val$durationUs, paramAnonymousStageDoneCallback);
       }
       
-      protected MediaProvider createVideoProvider(@cgb Encoder paramAnonymousEncoder, @cgb EncoderConfiguration paramAnonymousEncoderConfiguration, @cgb StageDoneCallback paramAnonymousStageDoneCallback)
+      protected MediaProvider createVideoProvider(@chc Encoder paramAnonymousEncoder, @chc EncoderConfiguration paramAnonymousEncoderConfiguration, @chc StageDoneCallback paramAnonymousStageDoneCallback)
       {
         return new ImageProvider(mTranscodingResources, paramAnonymousEncoder, paramImageFileMediaSource, 30, val$durationUs, paramAnonymousStageDoneCallback);
       }
@@ -113,11 +113,11 @@ public class TranscodingTask
     return true;
   }
   
-  private boolean concatenateVideoFile(@cgb final VideoFileMediaSource paramVideoFileMediaSource, @cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  private boolean concatenateVideoFile(@chc final VideoFileMediaSource paramVideoFileMediaSource, @chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     mCurrentTranscoder = new Transcoder(mMixer, mConfiguration.getVideoEncoderConfiguration(), mConfiguration.getAudioEncoderConfiguration())
     {
-      protected MediaProvider createAudioProvider(@cgb Encoder paramAnonymousEncoder, @cgb EncoderConfiguration paramAnonymousEncoderConfiguration, @cgb StageDoneCallback paramAnonymousStageDoneCallback)
+      protected MediaProvider createAudioProvider(@chc Encoder paramAnonymousEncoder, @chc EncoderConfiguration paramAnonymousEncoderConfiguration, @chc StageDoneCallback paramAnonymousStageDoneCallback)
       {
         switch (TranscodingTask.4.$SwitchMap$com$snapchat$videotranscoder$task$VideoFileMediaSource$AudioChannelSource[paramVideoFileMediaSource.getAudioChannelSource().ordinal()])
         {
@@ -131,7 +131,7 @@ public class TranscodingTask
         throw new IllegalStateException("Attempt to create an audio provider for a disabled track.");
       }
       
-      protected MediaProvider createVideoProvider(@cgb Encoder paramAnonymousEncoder, @cgb EncoderConfiguration paramAnonymousEncoderConfiguration, @cgb StageDoneCallback paramAnonymousStageDoneCallback)
+      protected MediaProvider createVideoProvider(@chc Encoder paramAnonymousEncoder, @chc EncoderConfiguration paramAnonymousEncoderConfiguration, @chc StageDoneCallback paramAnonymousStageDoneCallback)
       {
         switch (TranscodingTask.4.$SwitchMap$com$snapchat$videotranscoder$task$VideoFileMediaSource$VideoChannelSource[paramVideoFileMediaSource.getVideoChannelSource().ordinal()])
         {
@@ -150,7 +150,7 @@ public class TranscodingTask
     return true;
   }
   
-  private void runInternal(@cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  private void runInternal(@chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     boolean bool2 = true;
     boolean bool1 = true;
@@ -323,7 +323,7 @@ public class TranscodingTask
     new MP4Metadata(mConfiguration.getOutputPath()).setSnapSegments(new SnapSegments(arrayOfLong));
   }
   
-  public void run(@cgc Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  public void run(@chd Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     try
     {
@@ -360,7 +360,7 @@ public class TranscodingTask
     final long mSourceDuration;
     final Task.ProgressUpdateCallback mTotalProgressUpdateCallback;
     
-    public ConcatenationProgressCallback(@cgb MediaSource paramMediaSource, @cgb Task.ProgressUpdateCallback paramProgressUpdateCallback)
+    public ConcatenationProgressCallback(@chc MediaSource paramMediaSource, @chc Task.ProgressUpdateCallback paramProgressUpdateCallback)
     {
       mMediaSource = paramMediaSource;
       mTotalProgressUpdateCallback = paramProgressUpdateCallback;

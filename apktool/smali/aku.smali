@@ -1,1308 +1,690 @@
-.class public Laku;
-.super Ljava/lang/Object;
+.class public final Laku;
+.super Laji;
 .source "SourceFile"
 
 
 # annotations
-.annotation runtime Ljava/lang/Deprecated;
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Laku$a;
+    }
 .end annotation
 
 
+# static fields
+.field private static final MAX_UPLOAD_MEDIA_SIZE:I = 0x500000
+
+.field private static final TAG:Ljava/lang/String; = "VideoSnapbryo"
+
+
 # instance fields
-.field public added_friends:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
+.field public mFirstFrameBitmap:Landroid/graphics/Bitmap;
 
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhu;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public mShaderFilter:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
-.field public added_friends_timestamp:J
+.field private final mSnapWomb:Laki;
 
-.field public allowed_to_use_cash:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
+.field private final mSnapbryoAnalytics:Loh;
 
-.field public auth_token:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public bests:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public birthday:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public broken_cameras:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public captcha:Lakr;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public conv_id:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public conversation:Lbhd;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public conversations:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhd;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public conversations_response:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhd;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public conversations_response_info:Lbho;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public current_timestamp:J
-
-.field public device_token:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public discover:Lbhr;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public email:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public enable_save_story_to_gallery:Z
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public enable_video_transcoding_android:Z
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public feature_settings:Lbht;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public friend_stories:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhv;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public friends:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhu;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public friends_response:Lbhx;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public gae_proxy_update:Lakt;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public gateway_auth_token:Lbix;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public gateway_server:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public get_channels:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public group_stories:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/StoryGroup;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public id:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public identity_check_response:Lbki;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public is_two_fa_enabled:Z
-
-.field public json:Loq$b;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public last_address_book_updated_date:J
-
-.field public last_replayed_snap_timestamp:J
-
-.field public last_updated:J
-
-.field public logged:Z
-
-.field public media_id:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public message:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public message_format:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public messaging_gateway_info:Lbil;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public mobile:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public mobile_verification_key:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public my_stories:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/StorySnapLogbook;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public number_of_best_friends:I
-
-.field public object:Lbhu;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public raw_thumbnail_upload_enabled:Z
-
-.field public received:I
-
-.field public recents:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public result:Ljava/util/ArrayList;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList",
-            "<",
-            "Lafl;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public results:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhu;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public score:I
-
-.field public searchable_by_phone_number:Z
-
-.field public sent:I
-
-.field public server_info:Lbiw;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public should_call_to_verify_phone_number:Z
-
-.field public should_text_to_verify_phone_number:Z
-
-.field public snap_p:I
-
-.field public snap_response:Lakv;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public snapchat_phone_number:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public snaps:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lbhy;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public status:I
-
-.field public stories_response:Lbjf;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public story_privacy:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public story_response:Lakv;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public targeting:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public two_fa_verified_device_num:I
-
-.field public updates_response:Lbjp;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public url:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public username:Ljava/lang/String;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public verification_needed:Lbkr;
-    .annotation build Lcgc;
-    .end annotation
-.end field
-
-.field public video_filters_enabled:Z
-    .annotation build Lcgc;
-    .end annotation
-.end field
+.field public mTranscodingState:Lxp;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method protected constructor <init>(Laku$a;)V
+    .locals 1
 
     .prologue
-    .line 124
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 44
+    invoke-direct {p0, p1}, Laji;-><init>(Laji$a;)V
 
+    .line 45
+    iget-object v0, p1, Laku$a;->mTranscodingState:Lxp;
+
+    iput-object v0, p0, Laku;->mTranscodingState:Lxp;
+
+    .line 46
+    iget-object v0, p1, Laku$a;->mShaderFilter:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    iput-object v0, p0, Laku;->mShaderFilter:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+
+    .line 47
+    iget-object v0, p1, Laku$a;->mSnapWomb:Laki;
+
+    iput-object v0, p0, Laku;->mSnapWomb:Laki;
+
+    .line 48
+    iget-object v0, p1, Laku$a;->mSnapbryoAnalytics:Loh;
+
+    iput-object v0, p0, Laku;->mSnapbryoAnalytics:Loh;
+
+    .line 49
+    iget-object v0, p1, Laku$a;->mFirstFrameBitmap:Landroid/graphics/Bitmap;
+
+    iput-object v0, p0, Laku;->mFirstFrameBitmap:Landroid/graphics/Bitmap;
+
+    .line 50
     return-void
 .end method
 
-
-# virtual methods
-.method public toString()Ljava/lang/String;
-    .locals 5
+.method static synthetic a(Laku;)Lxp;
+    .locals 1
 
     .prologue
-    const/16 v4, 0x27
+    .line 29
+    iget-object v0, p0, Laku;->mTranscodingState:Lxp;
 
-    .line 128
-    new-instance v0, Ljava/lang/StringBuilder;
+    return-object v0
+.end method
 
-    const-string v1, "ServerResponse{logged="
+.method static synthetic b(Laku;)Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
+    .locals 1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .prologue
+    .line 29
+    iget-object v0, p0, Laku;->mShaderFilter:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
-    iget-boolean v1, p0, Laku;->logged:Z
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+.method static synthetic c(Laku;)Landroid/graphics/Bitmap;
+    .locals 1
 
-    move-result-object v0
-
-    const-string v1, ", username=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->username:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", auth_token=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->auth_token:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", device_token=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->device_token:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", email=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->email:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", mobile=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->mobile:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", mobile_verification_key=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->mobile_verification_key:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", enable_video_transcoding_android=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Laku;->enable_video_transcoding_android:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", enable_save_story_to_gallery=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Laku;->enable_save_story_to_gallery:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", video_filters_enabled=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Laku;->video_filters_enabled:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", birthday=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->birthday:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", snap_p="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Laku;->snap_p:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", story_privacy=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->story_privacy:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", sent="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Laku;->sent:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", received="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Laku;->received:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", score="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Laku;->score:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", snaps="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->snaps:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", friends="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->friends:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", added_friends="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->added_friends:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", bests="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->bests:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", recents="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->recents:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", my_stories="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->my_stories:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", friend_stories="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->friend_stories:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", last_updated="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Laku;->last_updated:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", added_friends_timestamp="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Laku;->added_friends_timestamp:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", current_timestamp="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Laku;->current_timestamp:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", last_replayed_snap_timestamp="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Laku;->last_replayed_snap_timestamp:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", message=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->message:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", status="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Laku;->status:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", results="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->results:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", object="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->object:Lbhu;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", broken_cameras="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->broken_cameras:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", snapchat_phone_number=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->snapchat_phone_number:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", story_response="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->story_response:Lakv;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", snap_response="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->snap_response:Lakv;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", json="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->json:Loq$b;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", searchable_by_phone_number="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Laku;->searchable_by_phone_number:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", should_call_to_verify_phone_number="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Laku;->should_call_to_verify_phone_number:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", should_text_to_verify_phone_number="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Laku;->should_text_to_verify_phone_number:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", captcha="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->captcha:Lakr;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", updates_response="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->updates_response:Lbjp;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", friends_response="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->friends_response:Lbhx;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", stories_response="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->stories_response:Lbjf;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", conversations_response="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->conversations_response:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", conversations_response_info="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->conversations_response_info:Lbho;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", conversations="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->conversations:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", conv_id=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->conv_id:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", messaging_gateway_info="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->messaging_gateway_info:Lbil;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", id=\'"
+    .prologue
+    .line 29
+    iget-object v0, p0, Laku;->mFirstFrameBitmap:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v0
+.end method
 
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->id:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", url=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->url:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", media_id=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->media_id:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", gateway_server=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->gateway_server:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", gateway_auth_token="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->gateway_auth_token:Lbix;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", conversation="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->conversation:Lbhd;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", feature_settings="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->feature_settings:Lbht;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", number_of_best_friends="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Laku;->number_of_best_friends:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", server_info="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->server_info:Lbiw;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", last_address_book_updated_date="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Laku;->last_address_book_updated_date:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", identity_check_response="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Laku;->identity_check_response:Lbki;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", targeting="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v0, p0, Laku;->targeting:Ljava/util/Map;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", two_fa_verified_device_num"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Laku;->two_fa_verified_device_num:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+.method private r()Laku;
+    .locals 1
 
-    move-result-object v0
-
-    const-string v1, ", is_two_fa_enabled"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Laku;->is_two_fa_enabled:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", raw_thumbnail_upload_enabled="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Laku;->raw_thumbnail_upload_enabled:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    .prologue
+    .line 54
+    new-instance v0, Laku$a;
 
-    const/16 v1, 0x7d
+    invoke-direct {v0}, Laku$a;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Laku$a;->a(Laku;)Laku$a;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Laku$a;->c()Laku;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Laji;
+    .locals 1
+
+    .prologue
+    .line 29
+    invoke-direct {p0}, Laku;->r()Laku;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Landroid/graphics/Bitmap;)V
+    .locals 1
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Lchd;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 141
+    invoke-super {p0, p1}, Laji;->a(Landroid/graphics/Bitmap;)V
+
+    .line 142
+    iget-object v0, p0, Laji;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_0
+
+    .line 143
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/snapchat/android/model/Mediabryo;->mIsZipUpload:Z
+
+    .line 147
+    :goto_0
+    return-void
+
+    .line 145
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/snapchat/android/model/Mediabryo;->mIsZipUpload:Z
+
+    goto :goto_0
+.end method
+
+.method public final a(Lcom/snapchat/videotranscoder/task/Task$Status;)V
+    .locals 1
+
+    .prologue
+    .line 117
+    iget-object v0, p0, Laku;->mTranscodingState:Lxp;
+
+    invoke-virtual {v0, p1}, Lxp;->a(Lcom/snapchat/videotranscoder/task/Task$Status;)V
+
+    .line 118
+    return-void
+.end method
+
+.method public final b(Lcom/snapchat/videotranscoder/task/Task$Status;)V
+    .locals 2
+
+    .prologue
+    .line 121
+    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mMediaMailingMetadata:Lcom/snapchat/android/model/MediaMailingMetadata;
+
+    .line 122
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lcom/snapchat/android/model/MediaMailingMetadata;->mRetried:Z
+
+    .line 123
+    sget-object v1, Lcom/snapchat/android/model/MediaMailingMetadata$SendStatus;->FAILED:Lcom/snapchat/android/model/MediaMailingMetadata$SendStatus;
+
+    iput-object v1, v0, Lcom/snapchat/android/model/MediaMailingMetadata;->mSendStatus:Lcom/snapchat/android/model/MediaMailingMetadata$SendStatus;
+
+    .line 124
+    sget-object v1, Lcom/snapchat/android/model/MediaMailingMetadata$PostStatus;->FAILED:Lcom/snapchat/android/model/MediaMailingMetadata$PostStatus;
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/android/model/MediaMailingMetadata;->a(Lcom/snapchat/android/model/MediaMailingMetadata$PostStatus;)V
+
+    .line 125
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Transcoding failed with: "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " failing upload"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 126
+    iget-object v0, p0, Laku;->mSnapbryoAnalytics:Loh;
+
+    invoke-virtual {v0}, Loh;->b()V
+
+    .line 127
+    iget-object v0, p0, Laku;->mSnapWomb:Laki;
+
+    sget-object v1, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->FAILED:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
+
+    invoke-virtual {v0, p0, v1}, Laki;->a(Laji;Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;)V
+
+    .line 128
+    return-void
+.end method
+
+.method public final synthetic clone()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 29
+    invoke-direct {p0}, Laku;->r()Laku;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final g()[B
+    .locals 10
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    const/high16 v9, 0x500000
+
+    const/4 v8, 0x1
+
+    const/4 v7, 0x0
+
+    const/4 v0, 0x0
+
+    .line 152
+    iget-object v1, p0, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
+
+    if-nez v1, :cond_0
+
+    .line 153
+    const-string v1, "Null Video Uri"
+
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
+
+    .line 196
+    :goto_0
+    return-object v0
+
+    .line 157
+    :cond_0
+    invoke-virtual {p0}, Laku;->n()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 158
+    if-nez v1, :cond_1
+
+    .line 159
+    const-string v1, "Null Video File"
+
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 163
+    :cond_1
+    iget-object v2, p0, Laji;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
+
+    .line 164
+    if-eqz v2, :cond_4
+
+    .line 167
+    :try_start_0
+    const-string v3, "Snapchat-"
+
+    const-string v4, ".zip.nomedia"
+
+    invoke-static {v3, v4}, Laxr;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v4, Lawg;
+
+    invoke-direct {v4}, Lawg;-><init>()V
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    const-string v6, "media~"
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5, v1}, Lawg;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v5, "overlay~"
+
+    invoke-direct {v1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2}, Lavp;->a(Landroid/graphics/Bitmap;)[B
+
+    move-result-object v2
+
+    invoke-virtual {v4, v1, v2}, Lawg;->a(Ljava/lang/String;[B)V
+
+    iget-object v1, v4, Lawg;->out:Ljava/util/zip/ZipOutputStream;
+
+    invoke-virtual {v1}, Ljava/util/zip/ZipOutputStream;->close()V
+
+    iget-object v1, v4, Lawg;->mByteArrayOutputStream:Ljava/io/ByteArrayOutputStream;
+
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    .line 173
+    if-nez v1, :cond_2
+
+    .line 174
+    const-string v1, "Null Zipped Video"
+
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 168
+    :catch_0
+    move-exception v1
+
+    .line 169
+    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 177
+    :cond_2
+    array-length v2, v1
+
+    if-lt v2, v9, :cond_3
+
+    .line 178
+    const-string v2, "Large Zipped Video (File Size: %s)"
+
+    new-array v3, v8, [Ljava/lang/Object;
+
+    array-length v1, v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v3, v7
+
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_3
+    move-object v0, v1
+
+    .line 182
+    goto :goto_0
+
+    .line 186
+    :cond_4
+    :try_start_1
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v2}, Lorg/apache/commons/io/FileUtils;->readFileToByteArray(Ljava/io/File;)[B
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+
+    move-result-object v1
+
+    .line 191
+    array-length v2, v1
+
+    if-lt v2, v9, :cond_5
+
+    .line 192
+    const-string v2, "Large UnZipped Video (File Size: %s)"
+
+    new-array v3, v8, [Ljava/lang/Object;
+
+    array-length v1, v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v3, v7
+
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    .line 187
+    :catch_1
+    move-exception v1
+
+    .line 188
+    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    :cond_5
+    move-object v0, v1
+
+    .line 196
+    goto/16 :goto_0
+.end method
+
+.method public final h()I
+    .locals 1
+
+    .prologue
+    .line 132
+    invoke-virtual {p0}, Laku;->m()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 133
+    const/4 v0, 0x2
+
+    .line 135
+    :goto_0
+    return v0
 
     :cond_0
-    iget-object v0, p0, Laku;->targeting:Ljava/util/Map;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    goto :goto_0
+.end method
+
+.method public final l()V
+    .locals 3
+
+    .prologue
+    .line 82
+    invoke-super {p0}, Laji;->l()V
+
+    .line 83
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Landroid/graphics/Bitmap;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Laku;->mFirstFrameBitmap:Landroid/graphics/Bitmap;
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Laku;->a([Landroid/graphics/Bitmap;)V
+
+    .line 84
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Laku;->mFirstFrameBitmap:Landroid/graphics/Bitmap;
+
+    .line 85
+    return-void
+.end method
+
+.method public final n()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 70
+    iget-object v0, p0, Laku;->mTranscodingState:Lxp;
+
+    invoke-virtual {v0}, Lxp;->c()Lcom/snapchat/videotranscoder/task/Task$Status;
+
+    move-result-object v0
+
+    .line 71
+    sget-object v1, Lcom/snapchat/videotranscoder/task/Task$Status;->FINISHED:Lcom/snapchat/videotranscoder/task/Task$Status;
+
+    if-ne v0, v1, :cond_0
+
+    .line 72
+    iget-object v0, p0, Laku;->mTranscodingState:Lxp;
+
+    invoke-virtual {v0}, Lxp;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 77
+    :goto_0
+    return-object v0
+
+    .line 74
+    :cond_0
+    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
+
+    if-nez v0, :cond_1
+
+    .line 75
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    .line 77
+    :cond_1
+    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
+.end method
+
+.method public final o()Z
+    .locals 4
+
+    .prologue
+    .line 216
+    invoke-virtual {p0}, Laku;->p()J
+
+    move-result-wide v0
+
+    const-wide/32 v2, 0x1a6667
+
+    cmp-long v0, v0, v2
+
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final p()J
+    .locals 2
+
+    .prologue
+    .line 223
+    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
+
+    if-eqz v0, :cond_0
+
+    .line 224
+    iget-object v0, p0, Lcom/snapchat/android/model/Mediabryo;->mVideoUri:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Laxr;->a(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    .line 226
+    :goto_0
+    return-wide v0
+
+    :cond_0
+    const-wide/16 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final q()[F
+    .locals 2
+
+    .prologue
+    .line 238
+    new-instance v0, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrixFactory;
+
+    invoke-direct {v0}, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrixFactory;-><init>()V
+
+    iget-boolean v1, p0, Lcom/snapchat/android/model/Mediabryo;->mIsFrontFacingSnap:Z
+
+    invoke-virtual {v0, v1}, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrixFactory;->getTransformationMatrix(Z)Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;
+
+    move-result-object v0
+
+    .line 240
+    iget v1, p0, Lcom/snapchat/android/model/Mediabryo;->mSnapOrientation:I
+
+    sparse-switch v1, :sswitch_data_0
+
+    .line 248
+    invoke-virtual {v0}, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;->rotateLeft()[F
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    .line 242
+    :sswitch_0
+    invoke-virtual {v0}, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;->adjustForTranscoderTransformation()[F
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 244
+    :sswitch_1
+    invoke-virtual {v0}, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;->rotateRight()[F
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 246
+    :sswitch_2
+    invoke-virtual {v0}, Lcom/snapchat/videotranscoder/utils/ImageTransformationMatrix;->rotate180Degrees()[F
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 240
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x5a -> :sswitch_1
+        0xb4 -> :sswitch_2
+    .end sparse-switch
 .end method

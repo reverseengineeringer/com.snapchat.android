@@ -1,30 +1,72 @@
-import com.snapchat.android.database.table.FriendTable;
-import com.snapchat.android.model.Friend;
-import java.util.Collection;
+import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
+import com.squareup.otto.Bus;
+import java.util.LinkedList;
 
 public final class aal
-  extends FriendTable
+  implements aaj
 {
-  private static aal a = new aal();
+  private final akr a;
+  private final aan b;
+  private final Bus c;
+  private final LinkedList<Long> d = new LinkedList();
+  private boolean e = false;
   
-  public static aal a()
+  public aal()
   {
-    return a;
+    this(new akr(), new aan(), bbo.a());
   }
   
-  protected final Collection<Friend> a(ajv paramajv)
+  private aal(@chc akr paramakr, @chc aan paramaan, @chc Bus paramBus)
   {
-    return paramajv.q();
+    a = paramakr;
+    b = paramaan;
+    c = paramBus;
+    c.c(this);
+    akr.bx();
+    akr.bz();
   }
   
-  public final void b(ajv paramajv)
+  public final void a(@chc ajk paramajk) {}
+  
+  public final void a(@chc aka paramaka, @chc ajk paramajk)
   {
-    paramajv.a(a(null, g()));
+    e = false;
+    d.clear();
   }
   
-  public final String c()
+  public final void a(@chc aka paramaka, @chc SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt)
   {
-    return "FriendsWhoAddedMe";
+    if (paramSnapViewSessionStopReason == SnapViewSessionStopReason.ABORT_REQUESTED) {
+      akr.y(true);
+    }
+  }
+  
+  public final void d(@chc aka paramaka)
+  {
+    if (((paramaka instanceof akl)) && (!akr.bz()) && (!e) && (!paramaka.W())) {
+      if ((d.size() != 3L) || (((Long)d.peekLast()).longValue() - ((Long)d.peekFirst()).longValue() > 1500L)) {
+        break label97;
+      }
+    }
+    label97:
+    for (int i = 1;; i = 0)
+    {
+      if (i != 0)
+      {
+        e = true;
+        b.a(2131493521);
+      }
+      return;
+    }
+  }
+  
+  @bpi
+  public final void handleTapWhileViewingEvent(bfi parambfi)
+  {
+    if (d.size() >= 3L) {
+      d.removeFirst();
+    }
+    d.add(Long.valueOf(eventTimeMilliseconds));
   }
 }
 

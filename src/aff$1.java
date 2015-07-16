@@ -1,21 +1,15 @@
 import android.animation.Animator;
-import android.animation.Animator.AnimatorListener;
-import android.view.View;
 
-final class aff$1
-  implements Animator.AnimatorListener
+public final class aff$1
+  extends awh
 {
-  aff$1(aff paramaff, View paramView) {}
+  public aff$1(aff paramaff, awh paramawh) {}
   
-  public final void onAnimationCancel(Animator paramAnimator) {}
-  
-  public final void onAnimationEnd(Animator paramAnimator) {}
-  
-  public final void onAnimationRepeat(Animator paramAnimator) {}
-  
-  public final void onAnimationStart(Animator paramAnimator)
+  public final void onAnimationEnd(Animator paramAnimator)
   {
-    a.setVisibility(0);
+    if (a != null) {
+      a.onAnimationEnd(paramAnimator);
+    }
   }
 }
 

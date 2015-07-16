@@ -1,29 +1,17 @@
-import com.snapchat.android.analytics.framework.UpdateSnapsAnalyticsPlatform;
-
-public final class ayx
-  implements buo<UpdateSnapsAnalyticsPlatform>
+public class ayx
 {
-  private final ayl module;
+  public final String mId;
+  public final String mValue;
   
-  static
+  public ayx(String paramString1, String paramString2)
   {
-    if (!ayx.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      $assertionsDisabled = bool;
-      return;
-    }
+    mId = paramString1;
+    mValue = paramString2;
   }
   
-  private ayx(ayl paramayl)
+  public String toString()
   {
-    assert (paramayl != null);
-    module = paramayl;
-  }
-  
-  public static buo<UpdateSnapsAnalyticsPlatform> a(ayl paramayl)
-  {
-    return new ayx(paramayl);
+    return "DeviceToken{id=" + mId + " value=" + mValue + "}";
   }
 }
 

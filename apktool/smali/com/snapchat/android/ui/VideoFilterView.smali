@@ -19,9 +19,9 @@
 
 .field private b:Landroid/net/Uri;
 
-.field private final c:Lazo;
+.field private final c:Lban;
 
-.field private final d:Lwz;
+.field private final d:Lxu;
 
 .field private e:I
 
@@ -31,7 +31,7 @@
 
 .field private h:[F
 
-.field private i:Lapj;
+.field private i:Laqf;
 
 .field private j:Lcom/snapchat/videotranscoder/cts/InputSurface;
 
@@ -42,7 +42,7 @@
 .field private m:F
 
 .field private n:Lcom/snapchat/android/ui/VideoFilterView$d;
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 .end field
 
@@ -51,21 +51,21 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 71
-    new-instance v0, Lazo;
+    new-instance v0, Lban;
 
-    invoke-direct {v0}, Lazo;-><init>()V
+    invoke-direct {v0}, Lban;-><init>()V
 
-    invoke-static {}, Lwz;->a()Lwz;
+    invoke-static {}, Lxu;->a()Lxu;
 
     move-result-object v1
 
-    invoke-direct {p0, p1, v0, v1}, Lcom/snapchat/android/ui/VideoFilterView;-><init>(Landroid/content/Context;Lazo;Lwz;)V
+    invoke-direct {p0, p1, v0, v1}, Lcom/snapchat/android/ui/VideoFilterView;-><init>(Landroid/content/Context;Lban;Lxu;)V
 
     .line 72
     return-void
@@ -74,11 +74,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 6
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/util/AttributeSet;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
@@ -86,11 +86,11 @@
     .line 75
     const/4 v3, 0x0
 
-    new-instance v4, Lazo;
+    new-instance v4, Lban;
 
-    invoke-direct {v4}, Lazo;-><init>()V
+    invoke-direct {v4}, Lban;-><init>()V
 
-    invoke-static {}, Lwz;->a()Lwz;
+    invoke-static {}, Lxu;->a()Lxu;
 
     move-result-object v5
 
@@ -100,7 +100,7 @@
 
     move-object v2, p2
 
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/ui/VideoFilterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILazo;Lwz;)V
+    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/ui/VideoFilterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILban;Lxu;)V
 
     .line 76
     return-void
@@ -109,21 +109,21 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 6
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/util/AttributeSet;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 
     .prologue
     .line 79
-    new-instance v4, Lazo;
+    new-instance v4, Lban;
 
-    invoke-direct {v4}, Lazo;-><init>()V
+    invoke-direct {v4}, Lban;-><init>()V
 
-    invoke-static {}, Lwz;->a()Lwz;
+    invoke-static {}, Lxu;->a()Lxu;
 
     move-result-object v5
 
@@ -135,28 +135,28 @@
 
     move v3, p3
 
-    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/ui/VideoFilterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILazo;Lwz;)V
+    invoke-direct/range {v0 .. v5}, Lcom/snapchat/android/ui/VideoFilterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILban;Lxu;)V
 
     .line 80
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;ILazo;Lwz;)V
+.method private constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;ILban;Lxu;)V
     .locals 2
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Landroid/util/AttributeSet;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .param p4    # Lazo;
-        .annotation build Lcgb;
+    .param p4    # Lban;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p5    # Lwz;
-        .annotation build Lcgb;
+    .param p5    # Lxu;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -204,10 +204,10 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->a:Landroid/view/SurfaceHolder$Callback;
 
     .line 101
-    iput-object p4, p0, Lcom/snapchat/android/ui/VideoFilterView;->c:Lazo;
+    iput-object p4, p0, Lcom/snapchat/android/ui/VideoFilterView;->c:Lban;
 
     .line 102
-    iput-object p5, p0, Lcom/snapchat/android/ui/VideoFilterView;->d:Lwz;
+    iput-object p5, p0, Lcom/snapchat/android/ui/VideoFilterView;->d:Lxu;
 
     .line 104
     invoke-direct {p0}, Lcom/snapchat/android/ui/VideoFilterView;->c()V
@@ -216,18 +216,18 @@
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Context;Lazo;Lwz;)V
+.method private constructor <init>(Landroid/content/Context;Lban;Lxu;)V
     .locals 2
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Lazo;
-        .annotation build Lcgb;
+    .param p2    # Lban;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p3    # Lwz;
-        .annotation build Lcgb;
+    .param p3    # Lxu;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -275,10 +275,10 @@
     iput-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->a:Landroid/view/SurfaceHolder$Callback;
 
     .line 87
-    iput-object p2, p0, Lcom/snapchat/android/ui/VideoFilterView;->c:Lazo;
+    iput-object p2, p0, Lcom/snapchat/android/ui/VideoFilterView;->c:Lban;
 
     .line 88
-    iput-object p3, p0, Lcom/snapchat/android/ui/VideoFilterView;->d:Lwz;
+    iput-object p3, p0, Lcom/snapchat/android/ui/VideoFilterView;->d:Lxu;
 
     .line 90
     invoke-direct {p0}, Lcom/snapchat/android/ui/VideoFilterView;->c()V
@@ -413,9 +413,9 @@
     .line 282
     new-instance v1, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
-    iget-object v2, p0, Lcom/snapchat/android/ui/VideoFilterView;->d:Lwz;
+    iget-object v2, p0, Lcom/snapchat/android/ui/VideoFilterView;->d:Lxu;
 
-    iget-object v2, v2, Lwz;->a:Lcom/snapchat/videotranscoder/utils/TranscodingResources;
+    iget-object v2, v2, Lxu;->a:Lcom/snapchat/videotranscoder/utils/TranscodingResources;
 
     sget-object v4, Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;->NORMAL:Lcom/snapchat/videotranscoder/video/FragmentShader$Filter;
 
@@ -481,12 +481,12 @@
     return-object v0
 .end method
 
-.method static synthetic f(Lcom/snapchat/android/ui/VideoFilterView;)Lapj;
+.method static synthetic f(Lcom/snapchat/android/ui/VideoFilterView;)Laqf;
     .locals 1
 
     .prologue
     .line 34
-    iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->i:Lapj;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->i:Laqf;
 
     return-object v0
 .end method
@@ -505,12 +505,10 @@
 
 # virtual methods
 .method public final a()V
-    .locals 6
+    .locals 4
 
     .prologue
-    const/4 v5, 0x0
-
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 185
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->g:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
@@ -518,18 +516,9 @@
     if-eqz v0, :cond_0
 
     .line 186
-    const-string v0, "VideoFilterView"
+    iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->i:Laqf;
 
-    const-string v1, "Trying to stop playback"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 188
-    iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->i:Lapj;
-
-    iput-object v5, v0, Lapj;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
+    iput-object v3, v0, Laqf;->a:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
     .line 190
     :try_start_0
@@ -544,48 +533,17 @@
     .line 198
     :goto_0
     :try_start_1
-    const-string v0, "VideoFilterView"
-
-    const-string v1, "Waiting for abort"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 199
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->g:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
     invoke-virtual {v0}, Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;->waitForAbort()V
-
-    .line 200
-    const-string v0, "VideoFilterView"
-
-    const-string v1, "Abort finished"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 208
-    iput-object v5, p0, Lcom/snapchat/android/ui/VideoFilterView;->g:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
+    iput-object v3, p0, Lcom/snapchat/android/ui/VideoFilterView;->g:Lcom/snapchat/videotranscoder/task/VideoFilterRenderingTask;
 
     .line 210
     :cond_0
-    const-string v0, "VideoFilterView"
-
-    const-string v1, "Playback has been stopped"
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 211
     return-void
 
     .line 191
@@ -593,32 +551,26 @@
     move-exception v0
 
     .line 192
-    const-string v1, "VideoFilterView"
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Lcom/snapchat/videotranscoder/task/TranscodingException;->toString()Ljava/lang/String;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    aput-object v0, v3, v4
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v2
 
     .line 193
-    iget-object v1, p0, Lcom/snapchat/android/ui/VideoFilterView;->c:Lazo;
+    iget-object v1, p0, Lcom/snapchat/android/ui/VideoFilterView;->c:Lban;
 
-    new-instance v2, Loe;
+    new-instance v2, Lov;
 
     invoke-virtual {v0}, Lcom/snapchat/videotranscoder/task/TranscodingException;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Loe;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v0}, Lov;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Lazo;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v2}, Lban;->b(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
@@ -627,17 +579,17 @@
     move-exception v0
 
     .line 203
-    iget-object v1, p0, Lcom/snapchat/android/ui/VideoFilterView;->c:Lazo;
+    iget-object v1, p0, Lcom/snapchat/android/ui/VideoFilterView;->c:Lban;
 
-    new-instance v2, Loe;
+    new-instance v2, Lov;
 
     invoke-virtual {v0}, Ljava/lang/InterruptedException;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v2, v3}, Loe;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Lov;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v2}, Lazo;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v2}, Lban;->b(Ljava/lang/Throwable;)V
 
     .line 204
     new-instance v1, Ljava/lang/RuntimeException;
@@ -666,19 +618,17 @@
 .end method
 
 .method public final a(Landroid/net/Uri;[F)Z
-    .locals 6
+    .locals 4
     .param p1    # Landroid/net/Uri;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # [F
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    const/4 v0, 0x0
-
     .line 155
     :try_start_0
     invoke-direct {p0, p2}, Lcom/snapchat/android/ui/VideoFilterView;->setTransformationMatrix([F)V
@@ -687,109 +637,95 @@
     iput-object p1, p0, Lcom/snapchat/android/ui/VideoFilterView;->b:Landroid/net/Uri;
 
     .line 157
-    iget-object v1, p0, Lcom/snapchat/android/ui/VideoFilterView;->b:Landroid/net/Uri;
+    iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->b:Landroid/net/Uri;
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    new-instance v2, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;
+    new-instance v1, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;
 
-    new-instance v1, Ljava/io/File;
+    new-instance v0, Ljava/io/File;
 
-    iget-object v3, p0, Lcom/snapchat/android/ui/VideoFilterView;->b:Landroid/net/Uri;
+    iget-object v2, p0, Lcom/snapchat/android/ui/VideoFilterView;->b:Landroid/net/Uri;
 
-    invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+    invoke-virtual {v2}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;-><init>(Ljava/io/File;)V
+    invoke-direct {v1, v0}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;-><init>(Ljava/io/File;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    invoke-virtual {v2}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->getHeight()I
+    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->getHeight()I
 
-    move-result v1
+    move-result v0
 
-    invoke-virtual {v2}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->getWidth()I
+    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->getWidth()I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result v3
+    move-result v2
 
     :try_start_2
-    invoke-virtual {v2}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->release()V
+    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->release()V
 
-    if-lez v3, :cond_0
+    if-lez v2, :cond_0
 
-    if-lez v1, :cond_0
+    if-lez v0, :cond_0
 
-    int-to-float v2, v3
+    int-to-float v1, v2
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
-    div-float v1, v2, v1
+    div-float v0, v1, v0
 
     invoke-virtual {p0}, Lcom/snapchat/android/ui/VideoFilterView;->getResources()Landroid/content/res/Resources;
 
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    int-to-float v2, v1
+
+    mul-float/2addr v0, v2
+
+    float-to-int v0, v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Setting resolution = "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    const-string v3, " x "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    int-to-float v3, v2
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
 
-    mul-float/2addr v1, v3
+    move-result v2
 
-    float-to-int v1, v1
+    iput v2, p0, Lcom/snapchat/android/ui/VideoFilterView;->k:I
 
-    const-string v3, "VideoFilterView"
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    move-result v0
 
-    const-string v5, "Setting resolution = "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " x "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    invoke-static {v3, v4, v5}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/snapchat/android/ui/VideoFilterView;->k:I
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v1
-
-    iput v1, p0, Lcom/snapchat/android/ui/VideoFilterView;->l:I
+    iput v0, p0, Lcom/snapchat/android/ui/VideoFilterView;->l:I
 
     .line 158
     :cond_0
@@ -810,28 +746,22 @@
 
     .line 157
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    invoke-virtual {v2}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->release()V
+    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/utils/VideoMetadataReader;->release()V
 
-    throw v1
+    throw v0
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 163
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    .line 164
-    const-string v2, "VideoFilterView"
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v3, v0, [Ljava/lang/Object;
-
-    invoke-static {v2, v1, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    .line 165
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -851,7 +781,7 @@
 
     if-nez v0, :cond_1
 
-    .line 318
+    .line 320
     :cond_0
     :goto_0
     return-void
@@ -896,7 +826,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 316
+    .line 318
     iput v2, p0, Lcom/snapchat/android/ui/VideoFilterView;->e:I
 
     goto :goto_0
@@ -997,12 +927,12 @@
     goto :goto_0
 .end method
 
-.method public setSwipeVideoViewController(Lapj;)V
+.method public setSwipeVideoViewController(Laqf;)V
     .locals 0
 
     .prologue
     .line 116
-    iput-object p1, p0, Lcom/snapchat/android/ui/VideoFilterView;->i:Lapj;
+    iput-object p1, p0, Lcom/snapchat/android/ui/VideoFilterView;->i:Laqf;
 
     .line 117
     return-void
@@ -1011,7 +941,7 @@
 .method public setUnrecoverableErrorListener(Lcom/snapchat/android/ui/VideoFilterView$d;)V
     .locals 0
     .param p1    # Lcom/snapchat/android/ui/VideoFilterView$d;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
 

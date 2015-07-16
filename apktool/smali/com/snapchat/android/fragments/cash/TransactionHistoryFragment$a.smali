@@ -60,16 +60,16 @@
     .line 76
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment$a;->a:Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;->a:Lxn;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;->a:Lyj;
 
     if-eqz v0, :cond_1
 
     .line 77
     iget-object v0, p0, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment$a;->a:Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;
 
-    iget-object v0, v0, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;->a:Lxn;
+    iget-object v0, v0, Lcom/snapchat/android/fragments/cash/TransactionHistoryFragment;->a:Lyj;
 
-    invoke-virtual {v0}, Lxn;->a()Lxq;
+    invoke-virtual {v0}, Lyj;->a()Lym;
 
     move-result-object v0
 
@@ -93,7 +93,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, v0, Lxq;->a:Ljava/lang/String;
+    iget-object v0, v0, Lym;->a:Ljava/lang/String;
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -29,7 +29,7 @@
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;"
         }
     .end annotation
@@ -44,19 +44,19 @@
             "(",
             "Ljavax/inject/Provider",
             "<",
-            "Lajv;",
+            "Lakp;",
             ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 45
+    .line 46
     invoke-direct {p0}, Lcom/snapchat/android/util/FriendSectionizer;-><init>()V
 
-    .line 46
+    .line 47
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$a;->a:Ljavax/inject/Provider;
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     check-cast p1, Lcom/snapchat/android/model/Friend;
 
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/MyFriendsFragment$a;->a:Ljavax/inject/Provider;
@@ -75,7 +75,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lajv;
+    check-cast v0, Lakp;
 
     if-nez v0, :cond_0
 
@@ -84,7 +84,7 @@
     :goto_0
     if-ge p2, v0, :cond_1
 
-    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->o()Z
+    invoke-virtual {p1}, Lcom/snapchat/android/model/Friend;->j()Z
 
     move-result v0
 
@@ -96,7 +96,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, v0, Lajv;->mBests:Ljava/util/List;
+    iget-object v0, v0, Lakp;->mBests:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 

@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 75
+    .line 74
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
 
     const-string v1, "USER_INITIATED"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;->USER_INITIATED:Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
 
-    .line 76
+    .line 75
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
 
     const-string v1, "AUTHENTICATION_ERROR"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;->AUTHENTICATION_ERROR:Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
 
-    .line 77
+    .line 76
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
 
     const-string v1, "NO_USERNAME"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;->NO_USERNAME:Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
 
-    .line 74
+    .line 73
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 73
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 73
     const-class v0, Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 73
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;->$VALUES:[Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/AnalyticsEvents$LogoutReason;->clone()Ljava/lang/Object;

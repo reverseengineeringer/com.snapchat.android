@@ -19,11 +19,11 @@
 .method public constructor <init>(Lcom/snapchat/videotranscoder/utils/TranscodingResources;[F)V
     .locals 3
     .param p1    # Lcom/snapchat/videotranscoder/utils/TranscodingResources;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # [F
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -361,7 +361,7 @@
 .method public setOverlayBitmap(Landroid/graphics/Bitmap;)V
     .locals 1
     .param p1    # Landroid/graphics/Bitmap;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

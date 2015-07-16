@@ -34,7 +34,7 @@
     .locals 3
 
     .prologue
-    .line 63
+    .line 62
     new-instance v0, Lcom/snapchat/android/analytics/AnalyticsEvents$b;
 
     const-string v1, "SYNC_ALL"
@@ -43,7 +43,7 @@
 
     sput-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$b;->SYNC_ALL:Lcom/snapchat/android/analytics/AnalyticsEvents$b;
 
-    .line 62
+    .line 61
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/snapchat/android/analytics/AnalyticsEvents$b;
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 61
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 61
     const-class v0, Lcom/snapchat/android/analytics/AnalyticsEvents$b;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -96,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 61
     sget-object v0, Lcom/snapchat/android/analytics/AnalyticsEvents$b;->$VALUES:[Lcom/snapchat/android/analytics/AnalyticsEvents$b;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/analytics/AnalyticsEvents$b;->clone()Ljava/lang/Object;

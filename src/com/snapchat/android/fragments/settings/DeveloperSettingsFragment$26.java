@@ -1,25 +1,24 @@
 package com.snapchat.android.fragments.settings;
 
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import com.snapchat.android.database.SharedPreferenceKey;
+import android.view.View.OnClickListener;
+import android.widget.CheckBox;
 
 final class DeveloperSettingsFragment$26
-  implements AdapterView.OnItemSelectedListener
+  implements View.OnClickListener
 {
-  DeveloperSettingsFragment$26(DeveloperSettingsFragment paramDeveloperSettingsFragment, SharedPreferences paramSharedPreferences) {}
+  DeveloperSettingsFragment$26(DeveloperSettingsFragment paramDeveloperSettingsFragment, CheckBox paramCheckBox) {}
   
-  public final void onItemSelected(AdapterView<?> paramAdapterView, View paramView, int paramInt, long paramLong)
+  public final void onClick(View paramView)
   {
-    paramAdapterView = a.edit();
-    paramAdapterView.putInt(SharedPreferenceKey.REGISTRATION_TESTING_ENDPOINT.getKey(), paramInt);
-    paramAdapterView.apply();
+    paramView = a;
+    if (!a.isChecked()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      paramView.setChecked(bool);
+      return;
+    }
   }
-  
-  public final void onNothingSelected(AdapterView<?> paramAdapterView) {}
 }
 
 /* Location:

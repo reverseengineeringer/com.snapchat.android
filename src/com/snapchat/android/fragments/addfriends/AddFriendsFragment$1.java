@@ -1,23 +1,23 @@
 package com.snapchat.android.fragments.addfriends;
 
-import amk;
-import aok;
-import aol;
+import anh;
+import apg;
+import aph;
 import java.util.HashSet;
 
 final class AddFriendsFragment$1
-  implements aok
+  implements apg
 {
   AddFriendsFragment$1(AddFriendsFragment paramAddFriendsFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
+    int i = aph.a(paramanh);
     if (AddFriendsFragment.a(a).contains(Integer.valueOf(i)))
     {
       AddFriendsFragment.a(a).remove(Integer.valueOf(i));
       a.q();
-      if (a.B.isEmpty())
+      if (a.C.isEmpty())
       {
         a.i();
         a.C();

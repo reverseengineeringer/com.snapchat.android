@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.audio;
 
 import android.media.MediaFormat;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.pipeline.Codec;
 import com.snapchat.videotranscoder.pipeline.Encoder;
 import com.snapchat.videotranscoder.pipeline.EncoderConfiguration;
@@ -23,7 +23,7 @@ public class SilenceProvider
   private final byte[] mSilentFrameData;
   private final long mUsPerFrame;
   
-  private SilenceProvider(@cgb Encoder paramEncoder, long paramLong, int paramInt1, int paramInt2, @cgb StageDoneCallback paramStageDoneCallback)
+  private SilenceProvider(@chc Encoder paramEncoder, long paramLong, int paramInt1, int paramInt2, @chc StageDoneCallback paramStageDoneCallback)
   {
     super(paramEncoder, paramStageDoneCallback);
     if (paramLong <= 0L) {
@@ -44,7 +44,7 @@ public class SilenceProvider
     mSilentFrameData = new byte['ࠀ'];
   }
   
-  public SilenceProvider(@cgb Encoder paramEncoder, long paramLong, @cgb StageDoneCallback paramStageDoneCallback)
+  public SilenceProvider(@chc Encoder paramEncoder, long paramLong, @chc StageDoneCallback paramStageDoneCallback)
   {
     this(paramEncoder, paramLong, paramEncoder.getEncoderConfiguration().getFormat().getInteger("sample-rate"), paramEncoder.getEncoderConfiguration().getFormat().getInteger("channel-count"), paramStageDoneCallback);
   }

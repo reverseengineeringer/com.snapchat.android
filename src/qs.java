@@ -1,48 +1,23 @@
-import com.snapchat.android.model.chat.CashFeedItem;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import javax.inject.Inject;
+import com.snapchat.android.api2.cash.ScCashResponsePayload;
+import com.snapchat.android.api2.cash.ScCashResponsePayload.Status;
 
-public final class qs
-  implements qo
+public abstract class qs<T extends ScCashResponsePayload>
+  extends tw
+  implements ui.b<T>
 {
-  public static final String NAME = "snapcash";
+  private static final String TAG = "BasicScCashRequestTask";
+  private final qs.a mCallback;
   
-  public final void a() {}
-  
-  public final void a(@cgb CashFeedItem paramCashFeedItem) {}
-  
-  public final void a(String paramString) {}
-  
-  public final Collection<qv> b()
+  protected qs(@chc qs.a parama)
   {
-    return Arrays.asList(new qv[] { new qy() });
+    mCallback = parama;
   }
   
-  public final Collection<qv> c()
+  public static abstract interface a
   {
-    return Arrays.asList(new qv[] { new ra() });
-  }
-  
-  public final Collection<qv> d()
-  {
-    return Arrays.asList(new qv[] { new rb() });
-  }
-  
-  public final Collection<qv> e()
-  {
-    return new ArrayList();
-  }
-  
-  public final Collection<qv> f()
-  {
-    return Arrays.asList(new qv[] { new qy() });
-  }
-  
-  public final Collection<qv> g()
-  {
-    return new ArrayList();
+    public abstract void a(@chc ScCashResponsePayload.Status paramStatus, int paramInt);
+    
+    public abstract void a(@chc ScCashResponsePayload paramScCashResponsePayload);
   }
 }
 

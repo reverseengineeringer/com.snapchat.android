@@ -1,27 +1,57 @@
+import com.snapchat.android.analytics.framework.ErrorMetric;
+import java.security.SecureRandom;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+
 public final class ayq
-  implements buo<azn>
 {
-  private final ayl module;
+  private static final String PROTOCOL = "TLS";
+  private static ayq sInstance;
+  @chd
+  public final SSLContext mSslContext;
   
-  static
+  private ayq()
   {
-    if (!ayq.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    for (;;)
     {
-      $assertionsDisabled = bool;
-      return;
+      try
+      {
+        SSLContext localSSLContext = SSLContext.getInstance("TLS");
+        ayr localayr;
+        SecureRandom localSecureRandom;
+        new ErrorMetric("Failed to initialize the client-side SSLContext").a(localException1).e();
+      }
+      catch (Exception localException1)
+      {
+        try
+        {
+          localayr = new ayr((byte)0);
+          localSecureRandom = new SecureRandom();
+          localSSLContext.init(null, new TrustManager[] { localayr }, localSecureRandom);
+          mSslContext = localSSLContext;
+          return;
+        }
+        catch (Exception localException2)
+        {
+          for (;;) {}
+        }
+        localException1 = localException1;
+        localSSLContext = null;
+      }
     }
   }
   
-  private ayq(ayl paramayl)
+  public static ayq a()
   {
-    assert (paramayl != null);
-    module = paramayl;
-  }
-  
-  public static buo<azn> a(ayl paramayl)
-  {
-    return new ayq(paramayl);
+    try
+    {
+      if (sInstance == null) {
+        sInstance = new ayq();
+      }
+      ayq localayq = sInstance;
+      return localayq;
+    }
+    finally {}
   }
 }
 

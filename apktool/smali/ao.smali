@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static a:Lff;
+.field private static a:Lfo;
 
 .field private static b:[B
 
@@ -15,11 +15,11 @@
 
     .prologue
     .line 159
-    new-instance v0, Lff;
+    new-instance v0, Lfo;
 
-    invoke-direct {v0}, Lff;-><init>()V
+    invoke-direct {v0}, Lfo;-><init>()V
 
-    sput-object v0, Lao;->a:Lff;
+    sput-object v0, Lao;->a:Lfo;
 
     .line 160
     const/4 v0, 0x4
@@ -259,9 +259,9 @@
     or-int/2addr v1, v0
 
     .line 171
-    sget-object v0, Lao;->a:Lff;
+    sget-object v0, Lao;->a:Lfo;
 
-    iget-object v0, v0, Lff;->a:[Lff$a;
+    iget-object v0, v0, Lfo;->a:[Lfo$a;
 
     const v2, 0x7fffffff
 
@@ -289,16 +289,16 @@
 
     .line 171
     :cond_0
-    iget v2, v0, Lff$a;->a:I
+    iget v2, v0, Lfo$a;->a:I
 
     if-ne v2, v1, :cond_1
 
-    iget-object v0, v0, Lff$a;->c:Ljava/lang/Object;
+    iget-object v0, v0, Lfo$a;->c:Ljava/lang/Object;
 
     goto :goto_1
 
     :cond_1
-    iget-object v0, v0, Lff$a;->d:Lff$a;
+    iget-object v0, v0, Lfo$a;->d:Lfo$a;
 
     goto :goto_0
 
@@ -314,9 +314,9 @@
     invoke-direct {v0, v2, v3}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
 
     .line 176
-    sget-object v2, Lao;->a:Lff;
+    sget-object v2, Lao;->a:Lfo;
 
-    invoke-virtual {v2, v1, v0}, Lff;->a(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v0}, Lfo;->a(ILjava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 

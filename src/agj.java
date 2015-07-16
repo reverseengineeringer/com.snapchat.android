@@ -1,38 +1,82 @@
-import com.snapchat.android.fragments.sendto.SendToFragment;
-import com.snapchat.android.util.fragment.SnapchatFragment;
-import javax.inject.Provider;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.text.TextUtils;
+import com.snapchat.android.fragments.addfriends.AddressBookFragment;
+import com.snapchat.android.fragments.addfriends.MyFriendsFragment;
+import com.snapchat.android.ui.window.WindowConfiguration;
 
 public final class agj
-  implements buj<SendToFragment>
+  extends FragmentStatePagerAdapter
 {
-  private final buj<SnapchatFragment> b;
-  private final Provider<zs> c;
+  private final String a;
+  private final String b;
+  private final String c;
+  private final WindowConfiguration d;
+  private final agj.a e;
   
-  static
+  public agj(FragmentManager paramFragmentManager, String paramString1, String paramString2, String paramString3, WindowConfiguration paramWindowConfiguration, agj.a parama)
   {
-    if (!agj.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    super(paramFragmentManager);
+    a = paramString1;
+    b = paramString2;
+    c = paramString3;
+    d = paramWindowConfiguration;
+    e = parama;
+  }
+  
+  public final int getCount()
+  {
+    return 2;
+  }
+  
+  public final Fragment getItem(int paramInt)
+  {
+    Bundle localBundle = new Bundle();
+    Object localObject;
+    switch (paramInt)
     {
-      a = bool;
-      return;
+    default: 
+      localObject = null;
+    }
+    for (;;)
+    {
+      if (localObject != null)
+      {
+        localBundle.putBoolean("hide_action_bar", true);
+        ((Fragment)localObject).setArguments(localBundle);
+      }
+      e.a(paramInt, (Fragment)localObject);
+      return (Fragment)localObject;
+      MyFriendsFragment localMyFriendsFragment = new MyFriendsFragment(d);
+      localObject = localMyFriendsFragment;
+      if (!TextUtils.isEmpty(c))
+      {
+        localBundle.putString("selected_friend_username", c);
+        localMyFriendsFragment.setArguments(localBundle);
+        localObject = localMyFriendsFragment;
+        continue;
+        localObject = new AddressBookFragment(d);
+      }
     }
   }
   
-  private agj(buj<SnapchatFragment> parambuj, Provider<zs> paramProvider)
+  public final CharSequence getPageTitle(int paramInt)
   {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
+    switch (paramInt)
+    {
+    default: 
+      return null;
+    case 0: 
+      return a;
     }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
+    return b;
   }
   
-  public static buj<SendToFragment> a(buj<SnapchatFragment> parambuj, Provider<zs> paramProvider)
+  public static abstract interface a
   {
-    return new agj(parambuj, paramProvider);
+    public abstract void a(int paramInt, Fragment paramFragment);
   }
 }
 

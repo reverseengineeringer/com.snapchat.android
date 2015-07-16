@@ -1,128 +1,152 @@
-import android.database.Cursor;
-import android.database.DataSetObservable;
-import android.support.v4.view.PagerAdapter;
-import com.snapchat.android.Timber;
-import com.snapchat.android.discover.analytics.EditionPerformanceAnalytics;
-import com.snapchat.android.discover.model.ChannelPage;
-import com.snapchat.android.discover.model.DSnapPage;
-import com.snapchat.android.discover.model.MediaState;
-import com.snapchat.android.util.debug.ReleaseManager;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import android.animation.Animator;
+import android.animation.Animator.AnimatorListener;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Paint.Cap;
+import android.graphics.Paint.Join;
+import android.graphics.Paint.Style;
+import android.graphics.Path;
+import android.os.Handler;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import com.snapchat.android.ui.CashSwiperView.a;
 
 public final class aen
-  extends aem
 {
-  public aen(@cgb ChannelPage paramChannelPage, @cgb String paramString, @cgb abr paramabr)
+  final apz a;
+  final awq b;
+  public final View c;
+  final FrameLayout d;
+  View e;
+  int f;
+  ImageView g;
+  AnimatorSet h;
+  boolean i;
+  private final awo j;
+  private final Context k;
+  private final View l;
+  private Animator.AnimatorListener m;
+  
+  public aen(Context paramContext)
   {
-    this(paramChannelPage, paramString, paramabr, apd.a(), adf.a(), adj.a(), ReleaseManager.a());
+    this(paramContext, apz.a(), new awq(), awo.a());
   }
   
-  private aen(@cgb ChannelPage paramChannelPage, @cgb String paramString, @cgb abr paramabr, @cgb apd paramapd, @cgb adf paramadf, @cgb adj paramadj, @cgb ReleaseManager paramReleaseManager)
+  private aen(Context paramContext, apz paramapz, awq paramawq, awo paramawo)
   {
-    super(paramChannelPage, paramString, paramabr, paramapd, paramadf, paramadj, paramReleaseManager);
+    k = paramContext;
+    a = paramapz;
+    b = paramawq;
+    j = paramawo;
+    a.a(k);
+    c = a.a(2130968662);
+    d = ((FrameLayout)c.findViewById(2131362291));
+    g = ((ImageView)c.findViewById(2131362294));
+    l = c.findViewById(2131362293);
   }
   
-  public final int a(int paramInt)
+  private static Paint b(int paramInt1, int paramInt2)
   {
-    return paramInt - 1;
+    Paint localPaint = new Paint();
+    localPaint.setColor(paramInt1);
+    localPaint.setAntiAlias(true);
+    localPaint.setStrokeWidth(paramInt2);
+    localPaint.setStyle(Paint.Style.STROKE);
+    localPaint.setStrokeJoin(Paint.Join.ROUND);
+    localPaint.setStrokeCap(Paint.Cap.ROUND);
+    localPaint.setPathEffect(new CornerPathEffect(3.0F));
+    return localPaint;
   }
   
-  public final void a(@cgc Cursor arg1)
+  public final void a()
   {
-    int j = 0;
-    Object localObject1;
-    int i;
-    Object localObject3;
-    String str;
-    if (??? != null)
+    e.animate().y(0.0F).setDuration(200L);
+    if (i) {
+      return;
+    }
+    h.start();
+    i = true;
+  }
+  
+  public final void a(int paramInt1, int paramInt2)
+  {
+    int n = (int)Math.abs(awf.a(k) * 0.1F);
+    int i1 = (int)Math.abs(n * 0.26F);
+    int i2 = (int)Math.abs(n * 0.1F);
+    int i3 = i2 + (int)Math.abs(i2 * 0.375F) * 2;
+    float f1 = i3 / 2.0F;
+    Object localObject2 = j.a(n + i3, i1 + i3, Bitmap.Config.ARGB_8888);
+    Object localObject1 = localObject2;
+    if (localObject2 == null) {
+      localObject1 = Bitmap.createBitmap(n + i3, i1 + i3, Bitmap.Config.ARGB_8888);
+    }
+    localObject2 = new Canvas((Bitmap)localObject1);
+    Paint localPaint1 = b(paramInt1, i2);
+    Paint localPaint2 = b(paramInt2, i3);
+    Path localPath = new Path();
+    localPath.moveTo(f1, i1);
+    localPath.rLineTo(n / 2.0F, -(i1 - f1));
+    localPath.rLineTo(n / 2.0F, i1 - f1);
+    ((Canvas)localObject2).drawPath(localPath, localPaint2);
+    ((Canvas)localObject2).drawPath(localPath, localPaint1);
+    g.setImageBitmap((Bitmap)localObject1);
+    f = ((int)(awf.b(k) * 0.08D));
+    e = c.findViewById(2131362292);
+    e.setY(f);
+    localObject1 = new AnimatorSet();
+    f1 = awf.a(-5.0F, k);
+    localObject2 = ObjectAnimator.ofFloat(e, View.Y, new float[] { 0.0F, f1 });
+    ((ObjectAnimator)localObject2).setRepeatCount(1);
+    ((ObjectAnimator)localObject2).setRepeatMode(2);
+    ((AnimatorSet)localObject1).play((Animator)localObject2);
+    ((AnimatorSet)localObject1).setDuration(200L);
+    ((AnimatorSet)localObject1).setStartDelay(1400L);
+    h = ((AnimatorSet)localObject1);
+    m = new CashSwiperView.a()
     {
-      this.i = new ArrayList(???.getCount());
-      this.j = new ArrayList(???.getCount());
-      localObject1 = new HashSet(???.getCount());
-      i = j;
-      if (??? != null)
+      public final void onAnimationEnd(Animator paramAnonymousAnimator)
       {
-        i = j;
-        if (???.moveToFirst())
+        if (i)
         {
-          i = 0;
-          do
-          {
-            localObject3 = b.a(???);
-            if (localObject3 != null) {
-              break;
-            }
-            Timber.f("EditionCursorPagerAdapter", "Invalid DSnapPage found in the cursor adapter!", new Object[0]);
-            j = i;
-            i = j;
-          } while (???.moveToNext());
-          i = j;
+          h.start();
+          return;
+        }
+        e.setY(f);
+        e.invalidate();
+      }
+    };
+    h.addListener(m);
+  }
+  
+  public final void a(View.OnClickListener paramOnClickListener)
+  {
+    l.setOnClickListener(paramOnClickListener);
+  }
+  
+  public final void b()
+  {
+    i = false;
+    h.cancel();
+    new Handler().postDelayed(new Runnable()
+    {
+      public final void run()
+      {
+        if (!i)
+        {
+          e.setY(f);
+          e.invalidate();
         }
       }
-      h = true;
-      localObject3 = a;
-      str = d.e;
-      j = ???.getCount();
-      if (str == null) {}
-    }
-    for (;;)
-    {
-      synchronized (b)
-      {
-        adf.c.a locala = new adf.c.a();
-        a = str;
-        locala = locala.a((adf.c)b.get(str));
-        e = i;
-        d = (j + 1);
-        f.clear();
-        f.addAll((Collection)localObject1);
-        localObject1 = locala.a();
-        b.put(str, localObject1);
-        f.d.a(this.j);
-        mObservable.notifyChanged();
-        return;
-        j = i;
-        if (((DSnapPage)localObject3).g()) {
-          j = i + 1;
-        }
-        if ((((DSnapPage)localObject3).g()) && (((DSnapPage)localObject3).c().isError()))
-        {
-          Timber.e("EditionCursorPagerAdapter", "Skipping DSnap %s because it is an ad and was not loaded.", new Object[] { localObject3 });
-          this.j.add(localObject3);
-          break;
-        }
-        if ((((DSnapPage)localObject3).c() == MediaState.SUCCESS) && (((DSnapPage)localObject3).f() == 0))
-        {
-          Timber.f("EditionCursorPagerAdapter", "Skipping DSnap %s because it is successfully loaded but has no panels!", new Object[] { localObject3 });
-          continue;
-        }
-        if (l == MediaState.CONTENT_ERROR)
-        {
-          Timber.f("EditionCursorPagerAdapter", "Skipping DSnap %s because there was a content error loading it!", new Object[] { localObject3 });
-          continue;
-        }
-        this.i.add(localObject3);
-        ((Set)localObject1).add(a);
-      }
-      this.i = new ArrayList();
-    }
-  }
-  
-  public final int b(int paramInt)
-  {
-    return paramInt + 1;
-  }
-  
-  public final int getCount()
-  {
-    if (!h) {
-      return 0;
-    }
-    return i.size() + 1;
+    }, h.getDuration());
   }
 }
 

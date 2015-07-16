@@ -1,23 +1,23 @@
 package com.snapchat.android.util.system;
 
-import bgk;
-import buo;
+import bhk;
+import bvp;
 
 public enum Clock_Factory
-  implements buo<bgk>
+  implements bvp<bhk>
 {
   INSTANCE;
   
   private Clock_Factory() {}
   
-  public static buo<bgk> create()
+  public static bvp<bhk> create()
   {
     return INSTANCE;
   }
   
-  public final bgk get()
+  public final bhk get()
   {
-    return new bgk();
+    return new bhk();
   }
 }
 

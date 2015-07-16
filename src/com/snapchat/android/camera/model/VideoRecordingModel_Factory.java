@@ -1,23 +1,23 @@
 package com.snapchat.android.camera.model;
 
-import buo;
-import wk;
+import bvp;
+import xg;
 
 public enum VideoRecordingModel_Factory
-  implements buo<wk>
+  implements bvp<xg>
 {
   INSTANCE;
   
   private VideoRecordingModel_Factory() {}
   
-  public static buo<wk> create()
+  public static bvp<xg> create()
   {
     return INSTANCE;
   }
   
-  public final wk get()
+  public final xg get()
   {
-    return new wk();
+    return new xg();
   }
 }
 

@@ -1,45 +1,28 @@
-import com.snapchat.android.database.table.FriendTable;
-import com.snapchat.android.model.Friend;
-import java.util.Collection;
-import java.util.List;
+import com.snapchat.android.analytics.framework.EasyMetric.EasyMetricFactory;
+import com.snapchat.android.model.StoryCollection;
 
 public final class aab
-  extends FriendTable
 {
-  private static aab a;
+  public final ama a;
+  private final EasyMetric.EasyMetricFactory b;
   
-  public static aab a()
+  public aab()
   {
-    try
-    {
-      if (a == null) {
-        a = new aab();
-      }
-      aab localaab = a;
-      return localaab;
+    this(new EasyMetric.EasyMetricFactory(), ama.a());
+  }
+  
+  private aab(EasyMetric.EasyMetricFactory paramEasyMetricFactory, ama paramama)
+  {
+    b = paramEasyMetricFactory;
+    a = paramama;
+  }
+  
+  public static int a(StoryCollection paramStoryCollection)
+  {
+    if ((paramStoryCollection instanceof akc)) {
+      return 0;
     }
-    finally {}
-  }
-  
-  protected final Collection<Friend> a(ajv paramajv)
-  {
-    return paramajv.m();
-  }
-  
-  public final void b(ajv paramajv)
-  {
-    List localList2 = a(null, g());
-    synchronized (mContactsNotOnSnapchat)
-    {
-      mContactsNotOnSnapchat.clear();
-      mContactsNotOnSnapchat.addAll(localList2);
-      return;
-    }
-  }
-  
-  public final String c()
-  {
-    return "ContactsNotOnSnapchatTable";
+    return 1;
   }
 }
 

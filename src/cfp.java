@@ -1,22 +1,11 @@
-final class cfp
-  implements cfh
-{
-  Class a;
-  String b;
-  int c;
-  
-  cfp(Class paramClass, String paramString, int paramInt)
-  {
-    a = paramClass;
-    b = paramString;
-    c = paramInt;
-  }
-  
-  public final String toString()
-  {
-    return b + ":" + c;
-  }
-}
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target({java.lang.annotation.ElementType.METHOD})
+public @interface cfp {}
 
 /* Location:
  * Qualified Name:     cfp

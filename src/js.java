@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class js
-  extends lt
+  extends ml
 {
-  private final String eventName = "PROFILE_USERNAME_FRIEND_REQUEST_SENT";
-  public jq source;
+  private String additionalInfo;
+  private final String eventName = "PROFILE_MY_FRIENDS_CHAT_BUTTON_CLICK";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_USERNAME_FRIEND_REQUEST_SENT");
-    if (source != null) {
-      localHashMap.put("source", source);
+    localHashMap.put("event_name", "PROFILE_MY_FRIENDS_CHAT_BUTTON_CLICK");
+    if (additionalInfo != null) {
+      localHashMap.put("additional_info", additionalInfo);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -31,14 +31,14 @@ public final class js
         return false;
       }
       paramObject = (js)paramObject;
-      if (source == null) {
+      if (additionalInfo == null) {
         break;
       }
-    } while (source.equals(source));
+    } while (additionalInfo.equals(additionalInfo));
     for (;;)
     {
       return false;
-      if (source == null) {
+      if (additionalInfo == null) {
         break;
       }
     }
@@ -47,8 +47,8 @@ public final class js
   public final int hashCode()
   {
     int j = super.hashCode();
-    if (source != null) {}
-    for (int i = source.hashCode();; i = 0) {
+    if (additionalInfo != null) {}
+    for (int i = additionalInfo.hashCode();; i = 0) {
       return i + j * 31;
     }
   }

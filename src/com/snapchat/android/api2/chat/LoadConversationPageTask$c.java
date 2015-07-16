@@ -1,12 +1,12 @@
 package com.snapchat.android.api2.chat;
 
-import bhd;
+import bid;
 import com.google.gson.annotations.SerializedName;
 
 public class LoadConversationPageTask$c
 {
   @SerializedName("conversation")
-  bhd mConversation;
+  bid mConversation;
 }
 
 /* Location:

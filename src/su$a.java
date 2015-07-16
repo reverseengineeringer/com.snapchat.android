@@ -1,12 +1,12 @@
 import com.google.gson.annotations.SerializedName;
 
-@tx
+@un
 final class su$a
 {
-  @SerializedName("passcode")
-  final String passcode = this$0.mPasscode;
-  @SerializedName("passcode_confirmation_enabled")
-  final boolean passcodeConfirmation = this$0.mPasscodeEnabled;
+  @SerializedName("phone_number")
+  final String phoneNumber = this$0.mPhoneNumber;
+  @SerializedName("signature")
+  final String signature = this$0.mSignature;
   
   su$a(su paramsu) {}
 }

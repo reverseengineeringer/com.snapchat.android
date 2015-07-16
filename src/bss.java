@@ -1,24 +1,8 @@
-public abstract class bss
-  implements Runnable
+import org.json.JSONArray;
+
+public abstract interface bss
 {
-  public abstract void a();
-  
-  public final void run()
-  {
-    try
-    {
-      a();
-      return;
-    }
-    catch (ThreadDeath localThreadDeath)
-    {
-      throw localThreadDeath;
-    }
-    catch (Throwable localThrowable)
-    {
-      btd.a(localThrowable);
-    }
-  }
+  public abstract JSONArray a();
 }
 
 /* Location:

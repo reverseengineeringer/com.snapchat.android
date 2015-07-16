@@ -1,4 +1,12 @@
-public final class bdr {}
+public final class bdr
+{
+  public int destinationPage;
+  
+  public bdr(int paramInt)
+  {
+    destinationPage = paramInt;
+  }
+}
 
 /* Location:
  * Qualified Name:     bdr

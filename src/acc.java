@@ -1,36 +1,16 @@
-import android.os.Bundle;
-import com.snapchat.android.Timber;
-import com.snapchat.android.discover.util.network.DiscoverEndpointManager;
-import javax.inject.Provider;
-
 public final class acc
-  implements Provider<Bundle>
+  extends aaw
 {
-  private final DiscoverEndpointManager a;
+  private static final acc a = new acc();
   
-  public acc()
+  private acc()
   {
-    this(DiscoverEndpointManager.a());
+    super("StorySnapVideoFileTable", axo.STORY_RECEIVED_VIDEO_CACHE);
   }
   
-  private acc(DiscoverEndpointManager paramDiscoverEndpointManager)
+  public static acc a()
   {
-    a = paramDiscoverEndpointManager;
-  }
-  
-  @cgc
-  public final Bundle a()
-  {
-    String str1 = a.c();
-    String str2 = a.d();
-    if ((str1 == null) || (str2 == null))
-    {
-      Timber.e("ContextAwareParamsProvider", "Cannot retrieve params, resource params are null", new Object[0]);
-      return null;
-    }
-    Bundle localBundle = new Bundle();
-    localBundle.putString(str1, str2);
-    return localBundle;
+    return a;
   }
 }
 

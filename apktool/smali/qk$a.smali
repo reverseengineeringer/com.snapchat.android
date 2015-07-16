@@ -1,5 +1,5 @@
-.class public Lqk$a;
-.super Lcom/snapchat/android/api2/cash/ScCashResponsePayload;
+.class public interface abstract Lqk$a;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
@@ -9,38 +9,73 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x609
     name = "a"
 .end annotation
 
 
-# instance fields
-.field public phoneNumber:Ljava/lang/String;
-    .annotation build Lcgc;
+# virtual methods
+.method public abstract a()V
+.end method
+
+.method public abstract a(Lakv;)V
+    .param p1    # Lakv;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract a(Ljava/lang/String;)V
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract a(Ljava/util/List;)V
+    .param p1    # Ljava/util/List;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lajr;",
+            ">;)V"
+        }
     .end annotation
+.end method
 
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "phone_number"
+.method public abstract b(Ljava/util/List;)V
+    .param p1    # Ljava/util/List;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lajy;",
+            ">;)V"
+        }
     .end annotation
-.end field
+.end method
 
-.field public signature:Ljava/lang/String;
-    .annotation build Lcgc;
+.method public abstract c(Ljava/util/List;)V
+    .param p1    # Ljava/util/List;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lajr;",
+            ">;)V"
+        }
     .end annotation
-
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "signature"
-    .end annotation
-.end field
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 27
-    invoke-direct {p0}, Lcom/snapchat/android/api2/cash/ScCashResponsePayload;-><init>()V
-
-    return-void
 .end method

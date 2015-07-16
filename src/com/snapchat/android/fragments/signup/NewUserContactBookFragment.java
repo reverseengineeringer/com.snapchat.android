@@ -1,10 +1,10 @@
 package com.snapchat.android.fragments.signup;
 
-import afa;
-import agr;
-import agu;
-import ajv;
-import ajx;
+import aga;
+import aho;
+import ahr;
+import akp;
+import akr;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -24,11 +24,11 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.Button;
-import aol;
-import bbd;
-import bcw;
-import bcx;
-import boh;
+import aph;
+import bcd;
+import bdw;
+import bdx;
+import bpi;
 import com.emilsjolander.components.stickylistheaders.StickyListHeadersListView;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.analytics.AnalyticsEvents;
@@ -45,17 +45,17 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import javax.inject.Provider;
-import kb;
-import kc;
-import kd;
-import ke;
-import kf;
+import kt;
+import ku;
+import kv;
+import kw;
+import kx;
 
 public class NewUserContactBookFragment
   extends AddFriendsFragment
 {
-  private final RegistrationAnalytics D;
-  private FragmentActivity E;
+  private final RegistrationAnalytics E;
+  private FragmentActivity F;
   
   public NewUserContactBookFragment()
   {
@@ -65,49 +65,43 @@ public class NewUserContactBookFragment
   @SuppressLint({"ValidFragment"})
   public NewUserContactBookFragment(WindowConfiguration paramWindowConfiguration)
   {
-    this(ajv.UNSAFE_USER_PROVIDER, RegistrationAnalytics.a(), paramWindowConfiguration, ajx.a());
+    this(akp.UNSAFE_USER_PROVIDER, RegistrationAnalytics.a(), paramWindowConfiguration, akr.a());
   }
   
   @SuppressLint({"ValidFragment"})
-  private NewUserContactBookFragment(Provider<ajv> paramProvider, RegistrationAnalytics paramRegistrationAnalytics, WindowConfiguration paramWindowConfiguration, ajx paramajx)
+  private NewUserContactBookFragment(Provider<akp> paramProvider, RegistrationAnalytics paramRegistrationAnalytics, WindowConfiguration paramWindowConfiguration, akr paramakr)
   {
-    super(aol.a(), paramProvider, paramWindowConfiguration, paramajx, ProfileEventAnalytics.a());
-    D = paramRegistrationAnalytics;
+    super(aph.a(), paramProvider, paramWindowConfiguration, paramakr, ProfileEventAnalytics.a());
+    E = paramRegistrationAnalytics;
   }
   
-  private void J()
+  private void L()
   {
-    ajv localajv = (ajv)i.get();
-    if (localajv != null) {
-      AnalyticsEvents.a(localajv.p() - 2);
+    akp localakp = (akp)i.get();
+    if (localakp != null) {
+      AnalyticsEvents.a(localakp.p() - 2);
     }
-    K();
+    M();
   }
   
-  private void K()
+  private void M()
   {
     RegistrationAnalytics.n();
     SharedPreferences.Editor localEditor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
-    localEditor.putBoolean(SharedPreferenceKey.BOUNCE_TEAM_SNAPCHAT_CONVERSATION_ONBOARDING.getKey(), true);
+    localEditor.putBoolean(SharedPreferenceKey.SHOULD_BOUNCE_TEAM_SNAPCHAT_CELL_IN_FEED.getKey(), true);
     localEditor.apply();
-    startActivity(new Intent(E, LandingPageActivity.class));
-    E.finish();
-  }
-  
-  protected final void A()
-  {
-    super.A();
-    ScAnalyticsEventEngine.a(new kd());
+    startActivity(new Intent(F, LandingPageActivity.class));
+    F.finish();
   }
   
   final void a(boolean paramBoolean, int paramInt)
   {
-    Object localObject = (ajv)i.get();
-    if ((paramBoolean) && (localObject != null) && (((ajv)localObject).p() + paramInt <= 1))
+    Object localObject = (akp)i.get();
+    if ((paramBoolean) && (localObject != null) && (((akp)localObject).p() + paramInt <= 1))
     {
-      localObject = new AlertDialog.Builder(E);
+      localObject = new AlertDialog.Builder(F);
       ((AlertDialog.Builder)localObject).setMessage(getString(2131493489));
-      ((AlertDialog.Builder)localObject).setPositiveButton(2131493603, new DialogInterface.OnClickListener()
+      ((AlertDialog.Builder)localObject).setPositiveButton(2131493601, new DialogInterface.OnClickListener()
       {
         public final void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
         {
@@ -130,12 +124,12 @@ public class NewUserContactBookFragment
       ((AlertDialog.Builder)localObject).create().show();
       return;
     }
-    J();
+    L();
   }
   
   public final boolean g()
   {
-    if (x())
+    if (q_())
     {
       m();
       return false;
@@ -146,17 +140,17 @@ public class NewUserContactBookFragment
   
   protected final void i()
   {
-    if (!ajx.f())
+    if (!akr.f())
     {
       u();
       return;
     }
-    if (!ajx.Z())
+    if (!akr.Z())
     {
       v();
       return;
     }
-    ScAnalyticsEventEngine.a(new kc());
+    ScAnalyticsEventEngine.a(new ku());
     w();
   }
   
@@ -172,27 +166,27 @@ public class NewUserContactBookFragment
     return 2130838105;
   }
   
-  @boh
-  public void onContactsOnSnapchatUpdatedEvent(bbd parambbd)
+  @bpi
+  public void onContactsOnSnapchatUpdatedEvent(bcd parambcd)
   {
-    super.onContactsOnSnapchatUpdatedEvent(parambbd);
+    super.onContactsOnSnapchatUpdatedEvent(parambcd);
   }
   
   public void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    E = getActivity();
+    F = getActivity();
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    C = AnalyticsEvents.AnalyticsContext.NEW_USER_CONTACT_BOOK_PAGE;
-    e = new agu();
+    D = AnalyticsEvents.AnalyticsContext.NEW_USER_CONTACT_BOOK_PAGE;
+    e = new ahr();
     c = e.b();
     b = e.a();
     super.onCreateView(paramLayoutInflater, paramViewGroup, paramBundle);
     p();
-    t.setOnScrollListener(new AbsListView.OnScrollListener()
+    u.setOnScrollListener(new AbsListView.OnScrollListener()
     {
       public final void onScroll(AbsListView paramAnonymousAbsListView, int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3) {}
       
@@ -202,7 +196,7 @@ public class NewUserContactBookFragment
         {
           AnalyticsEvents.J();
           NewUserContactBookFragment.a(NewUserContactBookFragment.this);
-          ScAnalyticsEventEngine.a(new kf());
+          ScAnalyticsEventEngine.a(new kx());
         }
       }
     });
@@ -212,24 +206,24 @@ public class NewUserContactBookFragment
     return mFragmentLayout;
   }
   
-  @boh
-  public void onRefreshFriendExistsTask(bcx parambcx)
+  @bpi
+  public void onRefreshFriendExistsTask(bdx parambdx)
   {
-    super.onRefreshFriendExistsTask(parambcx);
+    super.onRefreshFriendExistsTask(parambdx);
   }
   
-  @boh
-  public void onRefreshOnFriendActionEvent(bcw parambcw)
+  @bpi
+  public void onRefreshOnFriendActionEvent(bdw parambdw)
   {
-    super.onRefreshOnFriendActionEvent(parambcw);
+    super.onRefreshOnFriendActionEvent(parambdw);
   }
   
   protected final void w()
   {
     super.w();
-    A.setVisibility(0);
-    A.setEnabled(true);
-    A.setOnClickListener(new View.OnClickListener()
+    B.setVisibility(0);
+    B.setEnabled(true);
+    B.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
@@ -253,7 +247,7 @@ public class NewUserContactBookFragment
           if (localFriend.b()) {
             j = k + 1;
           }
-          if (!localFriend.g()) {
+          if (!localFriend.h()) {
             break label227;
           }
           i += 1;
@@ -272,11 +266,11 @@ public class NewUserContactBookFragment
           paramAnonymousView.a(bool, j);
           if (bool)
           {
-            AnalyticsEvents.a(i, j, d.d.size());
+            AnalyticsEvents.a(i, j, d.e.size());
             long l1 = i;
             long l2 = j;
-            long l3 = d.d.size();
-            paramAnonymousView = new kb();
+            long l3 = d.e.size();
+            paramAnonymousView = new kt();
             contactFoundCount = Long.valueOf(l1);
             friendAddCount = Long.valueOf(l2);
             contactInviteCount = Long.valueOf(l3);
@@ -290,16 +284,22 @@ public class NewUserContactBookFragment
     });
   }
   
+  protected final void x()
+  {
+    z();
+    M();
+  }
+  
   protected final void y()
   {
-    A();
-    K();
+    super.y();
+    ScAnalyticsEventEngine.a(new kw());
   }
   
   protected final void z()
   {
     super.z();
-    ScAnalyticsEventEngine.a(new ke());
+    ScAnalyticsEventEngine.a(new kv());
   }
 }
 

@@ -6,8 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import avh;
-import com.snapchat.android.Timber;
+import awf;
 
 final class BugReportFragment$8
   implements View.OnClickListener
@@ -16,21 +15,17 @@ final class BugReportFragment$8
   
   public final void onClick(View paramView)
   {
-    if (BugReportFragment.l(this$0) == null) {
-      try
-      {
-        avh.a(BugReportFragment.c(this$0), paramView);
-        this$0.getActivity().mFragments.beginTransaction().add(val$containerId, new BugReportRemoteLogListFragment()).addToBackStack("BugReportRemoteLogListFragment").commit();
-        return;
-      }
-      catch (IllegalStateException paramView)
-      {
-        Timber.a("BugReportFragment", paramView);
-        return;
-      }
+    if (BugReportFragment.l(this$0) == null) {}
+    try
+    {
+      awf.a(BugReportFragment.c(this$0), paramView);
+      this$0.getActivity().mFragments.beginTransaction().add(val$containerId, new BugReportRemoteLogListFragment()).addToBackStack("BugReportRemoteLogListFragment").commit();
+      return;
     }
+    catch (IllegalStateException paramView) {}
     BugReportFragment.m(this$0);
     BugReportFragment.n(this$0).setText("Remote Log");
+    return;
   }
 }
 

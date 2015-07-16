@@ -1,34 +1,53 @@
-import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper;
-import com.snapchat.android.camera.transcoding.TranscodingPreferencesWrapper.TranscodingEnabled;
+import android.graphics.SurfaceTexture;
+import android.hardware.Camera;
+import android.hardware.Camera.Parameters;
 
-public final class wy
+public abstract interface wy
 {
-  private static final wy b = new wy();
-  TranscodingPreferencesWrapper a;
+  public abstract void a();
   
-  private wy()
+  public abstract void a(int paramInt, xd paramxd);
+  
+  public static abstract interface a
   {
-    this(TranscodingPreferencesWrapper.a());
+    public abstract void a(byte[] paramArrayOfByte, wy.b paramb);
   }
   
-  private wy(TranscodingPreferencesWrapper paramTranscodingPreferencesWrapper)
+  public static abstract interface b
   {
-    a = paramTranscodingPreferencesWrapper;
+    public abstract void a(int paramInt);
+    
+    public abstract void a(SurfaceTexture paramSurfaceTexture);
+    
+    public abstract void a(Camera.Parameters paramParameters);
+    
+    public abstract void a(xb paramxb);
+    
+    public abstract void a(xe paramxe);
+    
+    public abstract void a(boolean paramBoolean);
+    
+    public abstract void a(byte[] paramArrayOfByte);
+    
+    public abstract Camera b();
+    
+    public abstract void b(boolean paramBoolean);
+    
+    @chd
+    public abstract Camera.Parameters c();
+    
+    public abstract void d();
+    
+    public abstract void e();
+    
+    public abstract boolean f();
+    
+    public abstract void g();
   }
   
-  public static wy a()
+  public static abstract interface c
   {
-    return b;
-  }
-  
-  public static boolean b()
-  {
-    boolean bool = ajx.bM();
-    if (TranscodingPreferencesWrapper.b() == TranscodingPreferencesWrapper.TranscodingEnabled.ENABLED) {}
-    for (int i = 1; (bool) && (i != 0); i = 0) {
-      return true;
-    }
-    return false;
+    public abstract void a();
   }
 }
 

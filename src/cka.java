@@ -1,12 +1,19 @@
-import java.util.Locale;
-
-public abstract interface cka
+final class cka
+  extends cji
+  implements cjo, cjp, cjq, cjt, cju
 {
-  public abstract int a();
+  static final cka a = new cka();
   
-  public abstract void a(StringBuffer paramStringBuffer, long paramLong, cgf paramcgf, int paramInt, cgk paramcgk, Locale paramLocale);
+  public final long a(Object paramObject)
+  {
+    paramObject = (String)paramObject;
+    return cld.a.a().a(null).a((String)paramObject);
+  }
   
-  public abstract void a(StringBuffer paramStringBuffer, chb paramchb, Locale paramLocale);
+  public final Class<?> a()
+  {
+    return String.class;
+  }
 }
 
 /* Location:

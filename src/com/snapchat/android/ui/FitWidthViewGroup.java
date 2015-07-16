@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
-import md.a;
+import mv.a;
 
 public class FitWidthViewGroup
   extends ViewGroup
@@ -28,7 +28,7 @@ public class FitWidthViewGroup
   public FitWidthViewGroup(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
   {
     super(paramContext, paramAttributeSet, paramInt);
-    paramContext = paramContext.obtainStyledAttributes(paramAttributeSet, md.a.FitWidthViewGroup);
+    paramContext = paramContext.obtainStyledAttributes(paramAttributeSet, mv.a.FitWidthViewGroup);
     setGravity(paramContext.getInt(0, 0));
     paramContext.recycle();
   }

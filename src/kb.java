@@ -2,29 +2,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class kb
-  extends lt
+  extends ml
 {
-  private String additionalInfo;
-  public Long contactFoundCount;
-  public Long contactInviteCount;
-  private final String eventName = "REGISTRATION_USER_CONTACT_FIND_SUCCESS";
-  public Long friendAddCount;
+  public Long charCount;
+  private final String eventName = "PROFILE_MY_FRIENDS_SEARCH_PERFORM";
+  public Long friendSearchCount;
+  public Long keystrokeCount;
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "REGISTRATION_USER_CONTACT_FIND_SUCCESS");
-    if (additionalInfo != null) {
-      localHashMap.put("additional_info", additionalInfo);
+    localHashMap.put("event_name", "PROFILE_MY_FRIENDS_SEARCH_PERFORM");
+    if (charCount != null) {
+      localHashMap.put("char_count", charCount);
     }
-    if (contactFoundCount != null) {
-      localHashMap.put("contact_found_count", contactFoundCount);
+    if (friendSearchCount != null) {
+      localHashMap.put("friend_search_count", friendSearchCount);
     }
-    if (contactInviteCount != null) {
-      localHashMap.put("contact_invite_count", contactInviteCount);
-    }
-    if (friendAddCount != null) {
-      localHashMap.put("friend_add_count", friendAddCount);
+    if (keystrokeCount != null) {
+      localHashMap.put("keystroke_count", keystrokeCount);
     }
     localHashMap.putAll(super.a());
     return localHashMap;
@@ -43,41 +39,32 @@ public final class kb
         return false;
       }
       paramObject = (kb)paramObject;
-      if (additionalInfo != null)
+      if (charCount != null)
       {
-        if (additionalInfo.equals(additionalInfo)) {}
+        if (charCount.equals(charCount)) {}
       }
       else {
-        while (additionalInfo != null) {
+        while (charCount != null) {
           return false;
         }
       }
-      if (contactFoundCount != null)
+      if (friendSearchCount != null)
       {
-        if (contactFoundCount.equals(contactFoundCount)) {}
+        if (friendSearchCount.equals(friendSearchCount)) {}
       }
       else {
-        while (contactFoundCount != null) {
+        while (friendSearchCount != null) {
           return false;
         }
       }
-      if (contactInviteCount != null)
-      {
-        if (contactInviteCount.equals(contactInviteCount)) {}
-      }
-      else {
-        while (contactInviteCount != null) {
-          return false;
-        }
-      }
-      if (friendAddCount == null) {
+      if (keystrokeCount == null) {
         break;
       }
-    } while (friendAddCount.equals(friendAddCount));
+    } while (keystrokeCount.equals(keystrokeCount));
     for (;;)
     {
       return false;
-      if (friendAddCount == null) {
+      if (keystrokeCount == null) {
         break;
       }
     }
@@ -85,34 +72,25 @@ public final class kb
   
   public final int hashCode()
   {
-    int m = 0;
-    int n = super.hashCode();
+    int k = 0;
+    int m = super.hashCode();
     int i;
-    int j;
-    if (additionalInfo != null)
+    if (charCount != null)
     {
-      i = additionalInfo.hashCode();
-      if (contactFoundCount == null) {
-        break label99;
-      }
-      j = contactFoundCount.hashCode();
-      label39:
-      if (contactInviteCount == null) {
-        break label104;
+      i = charCount.hashCode();
+      if (friendSearchCount == null) {
+        break label76;
       }
     }
-    label99:
-    label104:
-    for (int k = contactInviteCount.hashCode();; k = 0)
+    label76:
+    for (int j = friendSearchCount.hashCode();; j = 0)
     {
-      if (friendAddCount != null) {
-        m = friendAddCount.hashCode();
+      if (keystrokeCount != null) {
+        k = keystrokeCount.hashCode();
       }
-      return (k + (j + (i + n * 31) * 31) * 31) * 31 + m;
+      return (j + (i + m * 31) * 31) * 31 + k;
       i = 0;
       break;
-      j = 0;
-      break label39;
     }
   }
 }

@@ -1,30 +1,75 @@
 .class public final Lbtw;
-.super Lbtu;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static a:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Map;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 11
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lbtw;->a:Z
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;)Ljava/lang/Boolean;
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 22
+    const-string v0, "com.crittercism.usersettings"
+
+    invoke-virtual {p0, v0, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "crashedOnLastLoad"
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Landroid/content/Context;Z)V
     .locals 2
 
     .prologue
-    .line 24
-    invoke-direct {p0, p1}, Lbtu;-><init>(Ljava/util/Map;)V
-
     .line 26
-    new-instance v0, Ljava/util/TreeMap;
+    const-string v0, "com.crittercism.usersettings"
 
-    new-instance v1, Lbtw$1;
+    const/4 v1, 0x0
 
-    invoke-direct {v1, p0}, Lbtw$1;-><init>(Lbtw;)V
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    invoke-direct {v0, v1}, Ljava/util/TreeMap;-><init>(Ljava/util/Comparator;)V
+    move-result-object v0
 
-    .line 41
-    invoke-virtual {v0, p1}, Ljava/util/TreeMap;->putAll(Ljava/util/Map;)V
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    .line 43
-    iput-object v0, p0, Lbtu;->a:Ljava/util/Map;
+    move-result-object v0
 
-    .line 44
+    .line 27
+    const-string v1, "crashedOnLastLoad"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    .line 28
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    .line 29
     return-void
 .end method

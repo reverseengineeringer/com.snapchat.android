@@ -3,103 +3,82 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lakv$a;
-    }
-.end annotation
+# static fields
+.field public static final LOCATION_CACHE_DISTANCE_MILES:I = 0x5
+
+.field public static final LOCATION_CACHE_LIFETIME_MILLIS:I = 0x124f80
+
+.field public static final METERS_PER_MILE:F = 1609.34f
 
 
 # instance fields
-.field public group_stories:Ljava/util/List;
-    .annotation build Lcgc;
-    .end annotation
+.field private final mLastLocation:Landroid/location/Location;
 
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/model/StoryGroup;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final mTempC:Ljava/lang/String;
 
-.field public json:Loq$b;
-    .annotation build Lcgc;
-    .end annotation
-.end field
+.field public final mTempF:Ljava/lang/String;
 
-.field public snaps:Ljava/util/Map;
-    .annotation build Lcgc;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Lakv$a;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public success:Z
+.field private final mTimeLastRequested:J
 
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+# direct methods
+.method public constructor <init>(Lals;)V
+    .locals 4
 
     .prologue
+    .line 20
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 21
+    iget-wide v0, p1, Lals;->mTimestamp:J
+
+    iput-wide v0, p0, Lakv;->mTimeLastRequested:J
+
+    .line 22
+    iget v0, p1, Lals;->mFahrenheit:F
+
+    float-to-int v0, v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lakv;->mTempF:Ljava/lang/String;
+
+    .line 23
+    iget v0, p1, Lals;->mCelsius:F
+
+    float-to-int v0, v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lakv;->mTempC:Ljava/lang/String;
+
+    .line 24
+    new-instance v0, Landroid/location/Location;
+
+    const-string v1, ""
+
+    invoke-direct {v0, v1}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, Lakv;->mLastLocation:Landroid/location/Location;
+
+    .line 25
+    iget-object v0, p0, Lakv;->mLastLocation:Landroid/location/Location;
+
+    iget-wide v2, p1, Lals;->mLatitude:D
+
+    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setLatitude(D)V
+
     .line 26
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lakv;->mLastLocation:Landroid/location/Location;
 
-    const-string v1, "SnapOrStoryDoublePostResponse{success="
+    iget-wide v2, p1, Lals;->mLongitude:D
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setLongitude(D)V
 
-    iget-boolean v1, p0, Lakv;->success:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", snaps="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lakv;->snaps:Ljava/util/Map;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", json="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lakv;->json:Loq$b;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/16 v1, 0x7d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    .line 27
+    return-void
 .end method

@@ -1,126 +1,42 @@
-import android.content.Context;
-import android.hardware.Camera.CameraInfo;
-import android.view.TextureView;
+import android.animation.Animator;
+import android.animation.Animator.AnimatorListener;
+import android.animation.AnimatorSet;
+import android.animation.AnimatorSet.Builder;
+import android.animation.ObjectAnimator;
 import android.view.View;
-import com.snapchat.android.analytics.framework.ErrorMetric;
-import com.snapchat.android.ui.here.LocalPreview;
-import com.snapchat.android.ui.here.LocalPreview.b;
 
-public final class aqg
+public abstract class aqg
+  implements Animator.AnimatorListener
 {
-  @cgc
-  private LocalPreview a;
+  public final AnimatorSet a;
+  protected final View b;
+  protected final View c;
+  boolean d;
   
-  public final View a(Context paramContext)
+  public aqg(View paramView1, View paramView2, long paramLong)
   {
-    for (;;)
-    {
-      try
-      {
-        a = new LocalPreview(paramContext);
-        if (a == null)
-        {
-          paramContext = new TextureView(paramContext);
-          return paramContext;
-        }
-      }
-      catch (LocalPreview.b localb)
-      {
-        new ErrorMetric(localb.getMessage()).a(localb).d();
-        continue;
-      }
-      finally {}
-      paramContext = a.b;
-    }
+    b = paramView1;
+    c = paramView2;
+    a = new AnimatorSet();
+    a.setStartDelay(paramLong);
+    a.setDuration(300L);
+    a.addListener(this);
+    a.play(a()).with(b());
   }
   
-  public final void a()
+  public abstract ObjectAnimator a();
+  
+  protected abstract ObjectAnimator b();
+  
+  public final void c()
   {
-    try
-    {
-      if (a != null) {
-        LocalPreview.g();
-      }
-      return;
-    }
-    finally
-    {
-      localObject = finally;
-      throw ((Throwable)localObject);
-    }
+    d = true;
+    a.cancel();
   }
   
-  public final void a(int paramInt1, int paramInt2, int paramInt3, int paramInt4, Camera.CameraInfo paramCameraInfo)
-  {
-    for (;;)
-    {
-      try
-      {
-        if (a != null)
-        {
-          boolean bool = LocalPreview.c();
-          if (!bool) {}
-        }
-        else
-        {
-          return;
-        }
-        LocalPreview.a(paramInt1, paramInt2, paramInt3, paramInt4);
-        if (facing != 1) {
-          continue;
-        }
-        switch (orientation)
-        {
-        case 0: 
-          throw new RuntimeException("Illegal camera orientation: " + orientation);
-        }
-      }
-      finally {}
-      LocalPreview.f();
-      continue;
-      LocalPreview.e();
-      LocalPreview.f();
-      continue;
-      LocalPreview.e();
-    }
-  }
+  public void onAnimationRepeat(Animator paramAnimator) {}
   
-  public final void a(byte[] paramArrayOfByte)
-  {
-    try
-    {
-      if (a != null) {
-        a.a(paramArrayOfByte);
-      }
-      return;
-    }
-    finally
-    {
-      paramArrayOfByte = finally;
-      throw paramArrayOfByte;
-    }
-  }
-  
-  public final void b()
-  {
-    try
-    {
-      if (a != null) {
-        LocalPreview.d();
-      }
-      return;
-    }
-    catch (UnsatisfiedLinkError localUnsatisfiedLinkError)
-    {
-      for (;;)
-      {
-        LocalPreview.b();
-        a = null;
-        new ErrorMetric("resetPreviewSize() UnsatisfiedLinkError").a(localUnsatisfiedLinkError).d();
-      }
-    }
-    finally {}
-  }
+  public void onAnimationStart(Animator paramAnimator) {}
 }
 
 /* Location:

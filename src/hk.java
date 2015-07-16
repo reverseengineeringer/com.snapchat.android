@@ -1,84 +1,48 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class hk
+public final class hk
+  extends ml
 {
-  private String appVersion;
-  private String city;
-  public Double clientTs;
-  public Double clientUploadTs;
-  public String country;
-  private gc deviceConnectivity;
-  private String deviceModel;
-  private Double eventTime;
-  private Double eventTs;
-  public Long friendCount;
-  private ia osType;
-  private String osVersion;
-  private String region;
-  private Long sequenceId;
-  private Double serverTs;
-  public String sessionId;
-  public String userAgent;
+  public String dsnapId;
+  public String editionId;
+  private final String eventName = "DISCOVER_SNAP_SCREENSHOT";
+  public ih mediaType;
+  public String publisherId;
+  public Long snapIndexCount;
+  public Long snapIndexPos;
+  public lv source;
   
-  public Map<String, Object> a()
+  public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    if (appVersion != null) {
-      localHashMap.put("app_version", appVersion);
+    localHashMap.put("event_name", "DISCOVER_SNAP_SCREENSHOT");
+    if (dsnapId != null) {
+      localHashMap.put("dsnap_id", dsnapId);
     }
-    if (city != null) {
-      localHashMap.put("city", city);
+    if (editionId != null) {
+      localHashMap.put("edition_id", editionId);
     }
-    if (clientTs != null) {
-      localHashMap.put("client_ts", clientTs);
+    if (mediaType != null) {
+      localHashMap.put("media_type", mediaType);
     }
-    if (clientUploadTs != null) {
-      localHashMap.put("client_upload_ts", clientUploadTs);
+    if (publisherId != null) {
+      localHashMap.put("publisher_id", publisherId);
     }
-    if (country != null) {
-      localHashMap.put("country", country);
+    if (snapIndexCount != null) {
+      localHashMap.put("snap_index_count", snapIndexCount);
     }
-    if (deviceConnectivity != null) {
-      localHashMap.put("device_connectivity", deviceConnectivity);
+    if (snapIndexPos != null) {
+      localHashMap.put("snap_index_pos", snapIndexPos);
     }
-    if (deviceModel != null) {
-      localHashMap.put("device_model", deviceModel);
+    if (source != null) {
+      localHashMap.put("source", source);
     }
-    if (eventTime != null) {
-      localHashMap.put("event_time", eventTime);
-    }
-    if (eventTs != null) {
-      localHashMap.put("event_ts", eventTs);
-    }
-    if (friendCount != null) {
-      localHashMap.put("friend_count", friendCount);
-    }
-    if (osType != null) {
-      localHashMap.put("os_type", osType);
-    }
-    if (osVersion != null) {
-      localHashMap.put("os_version", osVersion);
-    }
-    if (region != null) {
-      localHashMap.put("region", region);
-    }
-    if (sequenceId != null) {
-      localHashMap.put("sequence_id", sequenceId);
-    }
-    if (serverTs != null) {
-      localHashMap.put("server_ts", serverTs);
-    }
-    if (sessionId != null) {
-      localHashMap.put("session_id", sessionId);
-    }
-    if (userAgent != null) {
-      localHashMap.put("user_agent", userAgent);
-    }
+    localHashMap.putAll(super.a());
     return localHashMap;
   }
   
-  public boolean equals(Object paramObject)
+  public final boolean equals(Object paramObject)
   {
     if (this == paramObject) {}
     do
@@ -87,310 +51,134 @@ public class hk
       if ((paramObject == null) || (getClass() != paramObject.getClass())) {
         return false;
       }
+      if (!super.equals(paramObject)) {
+        return false;
+      }
       paramObject = (hk)paramObject;
-      if (appVersion != null)
+      if (dsnapId != null)
       {
-        if (appVersion.equals(appVersion)) {}
+        if (dsnapId.equals(dsnapId)) {}
       }
       else {
-        while (appVersion != null) {
+        while (dsnapId != null) {
           return false;
         }
       }
-      if (city != null)
+      if (editionId != null)
       {
-        if (city.equals(city)) {}
+        if (editionId.equals(editionId)) {}
       }
       else {
-        while (city != null) {
+        while (editionId != null) {
           return false;
         }
       }
-      if (clientTs != null)
+      if (mediaType != null)
       {
-        if (clientTs.equals(clientTs)) {}
+        if (mediaType.equals(mediaType)) {}
       }
       else {
-        while (clientTs != null) {
+        while (mediaType != null) {
           return false;
         }
       }
-      if (clientUploadTs != null)
+      if (publisherId != null)
       {
-        if (clientUploadTs.equals(clientUploadTs)) {}
+        if (publisherId.equals(publisherId)) {}
       }
       else {
-        while (clientUploadTs != null) {
+        while (publisherId != null) {
           return false;
         }
       }
-      if (country != null)
+      if (snapIndexCount != null)
       {
-        if (country.equals(country)) {}
+        if (snapIndexCount.equals(snapIndexCount)) {}
       }
       else {
-        while (country != null) {
+        while (snapIndexCount != null) {
           return false;
         }
       }
-      if (deviceConnectivity != null)
+      if (snapIndexPos != null)
       {
-        if (deviceConnectivity.equals(deviceConnectivity)) {}
+        if (snapIndexPos.equals(snapIndexPos)) {}
       }
       else {
-        while (deviceConnectivity != null) {
+        while (snapIndexPos != null) {
           return false;
         }
       }
-      if (deviceModel != null)
-      {
-        if (deviceModel.equals(deviceModel)) {}
-      }
-      else {
-        while (deviceModel != null) {
-          return false;
-        }
-      }
-      if (eventTime != null)
-      {
-        if (eventTime.equals(eventTime)) {}
-      }
-      else {
-        while (eventTime != null) {
-          return false;
-        }
-      }
-      if (eventTs != null)
-      {
-        if (eventTs.equals(eventTs)) {}
-      }
-      else {
-        while (eventTs != null) {
-          return false;
-        }
-      }
-      if (friendCount != null)
-      {
-        if (friendCount.equals(friendCount)) {}
-      }
-      else {
-        while (friendCount != null) {
-          return false;
-        }
-      }
-      if (osType != null)
-      {
-        if (osType.equals(osType)) {}
-      }
-      else {
-        while (osType != null) {
-          return false;
-        }
-      }
-      if (osVersion != null)
-      {
-        if (osVersion.equals(osVersion)) {}
-      }
-      else {
-        while (osVersion != null) {
-          return false;
-        }
-      }
-      if (region != null)
-      {
-        if (region.equals(region)) {}
-      }
-      else {
-        while (region != null) {
-          return false;
-        }
-      }
-      if (sequenceId != null)
-      {
-        if (sequenceId.equals(sequenceId)) {}
-      }
-      else {
-        while (sequenceId != null) {
-          return false;
-        }
-      }
-      if (serverTs != null)
-      {
-        if (serverTs.equals(serverTs)) {}
-      }
-      else {
-        while (serverTs != null) {
-          return false;
-        }
-      }
-      if (sessionId != null)
-      {
-        if (sessionId.equals(sessionId)) {}
-      }
-      else {
-        while (sessionId != null) {
-          return false;
-        }
-      }
-      if (userAgent == null) {
+      if (source == null) {
         break;
       }
-    } while (userAgent.equals(userAgent));
+    } while (source.equals(source));
     for (;;)
     {
       return false;
-      if (userAgent == null) {
+      if (source == null) {
         break;
       }
     }
   }
   
-  public int hashCode()
+  public final int hashCode()
   {
-    int i12 = 0;
+    int i2 = 0;
+    int i3 = super.hashCode();
     int i;
     int j;
-    label33:
+    label39:
     int k;
-    label48:
+    label54:
     int m;
-    label64:
+    label70:
     int n;
-    label80:
-    int i1;
-    label96:
-    int i2;
-    label112:
-    int i3;
-    label128:
-    int i4;
-    label144:
-    int i5;
-    label160:
-    int i6;
-    label176:
-    int i7;
-    label192:
-    int i8;
-    label208:
-    int i9;
-    label224:
-    int i10;
-    if (appVersion != null)
+    if (dsnapId != null)
     {
-      i = appVersion.hashCode();
-      if (city == null) {
-        break label375;
+      i = dsnapId.hashCode();
+      if (editionId == null) {
+        break label165;
       }
-      j = city.hashCode();
-      if (clientTs == null) {
-        break label380;
+      j = editionId.hashCode();
+      if (mediaType == null) {
+        break label170;
       }
-      k = clientTs.hashCode();
-      if (clientUploadTs == null) {
-        break label385;
+      k = mediaType.hashCode();
+      if (publisherId == null) {
+        break label175;
       }
-      m = clientUploadTs.hashCode();
-      if (country == null) {
-        break label391;
+      m = publisherId.hashCode();
+      if (snapIndexCount == null) {
+        break label181;
       }
-      n = country.hashCode();
-      if (deviceConnectivity == null) {
-        break label397;
-      }
-      i1 = deviceConnectivity.hashCode();
-      if (deviceModel == null) {
-        break label403;
-      }
-      i2 = deviceModel.hashCode();
-      if (eventTime == null) {
-        break label409;
-      }
-      i3 = eventTime.hashCode();
-      if (eventTs == null) {
-        break label415;
-      }
-      i4 = eventTs.hashCode();
-      if (friendCount == null) {
-        break label421;
-      }
-      i5 = friendCount.hashCode();
-      if (osType == null) {
-        break label427;
-      }
-      i6 = osType.hashCode();
-      if (osVersion == null) {
-        break label433;
-      }
-      i7 = osVersion.hashCode();
-      if (region == null) {
-        break label439;
-      }
-      i8 = region.hashCode();
-      if (sequenceId == null) {
-        break label445;
-      }
-      i9 = sequenceId.hashCode();
-      if (serverTs == null) {
-        break label451;
-      }
-      i10 = serverTs.hashCode();
-      label240:
-      if (sessionId == null) {
-        break label457;
+      n = snapIndexCount.hashCode();
+      label86:
+      if (snapIndexPos == null) {
+        break label187;
       }
     }
-    label375:
-    label380:
-    label385:
-    label391:
-    label397:
-    label403:
-    label409:
-    label415:
-    label421:
-    label427:
-    label433:
-    label439:
-    label445:
-    label451:
-    label457:
-    for (int i11 = sessionId.hashCode();; i11 = 0)
+    label165:
+    label170:
+    label175:
+    label181:
+    label187:
+    for (int i1 = snapIndexPos.hashCode();; i1 = 0)
     {
-      if (userAgent != null) {
-        i12 = userAgent.hashCode();
+      if (source != null) {
+        i2 = source.hashCode();
       }
-      return (i11 + (i10 + (i9 + (i8 + (i7 + (i6 + (i5 + (i4 + (i3 + (i2 + (i1 + (n + (m + (k + (j + (i + 0) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i12;
+      return (i1 + (n + (m + (k + (j + (i + i3 * 31) * 31) * 31) * 31) * 31) * 31) * 31 + i2;
       i = 0;
       break;
       j = 0;
-      break label33;
+      break label39;
       k = 0;
-      break label48;
+      break label54;
       m = 0;
-      break label64;
+      break label70;
       n = 0;
-      break label80;
-      i1 = 0;
-      break label96;
-      i2 = 0;
-      break label112;
-      i3 = 0;
-      break label128;
-      i4 = 0;
-      break label144;
-      i5 = 0;
-      break label160;
-      i6 = 0;
-      break label176;
-      i7 = 0;
-      break label192;
-      i8 = 0;
-      break label208;
-      i9 = 0;
-      break label224;
-      i10 = 0;
-      break label240;
+      break label86;
     }
   }
 }

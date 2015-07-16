@@ -3,11 +3,11 @@ package com.snapchat.android.fragments.stories;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import bgr;
-import bgr.a;
+import bhr;
+import bhr.a;
 
 final class StoriesFragment$12
-  implements bgr.a
+  implements bhr.a
 {
   StoriesFragment$12(StoriesFragment paramStoriesFragment) {}
   
@@ -17,7 +17,7 @@ final class StoriesFragment$12
     {
       public final void onClick(View paramAnonymousView)
       {
-        ((EditText)a.j.a()).setText("");
+        ((EditText)a.i.a()).setText("");
       }
     });
   }

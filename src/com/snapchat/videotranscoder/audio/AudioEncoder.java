@@ -1,7 +1,7 @@
 package com.snapchat.videotranscoder.audio;
 
 import android.media.MediaFormat;
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.pipeline.Encoder;
 import com.snapchat.videotranscoder.pipeline.EncoderConfiguration;
 import com.snapchat.videotranscoder.pipeline.Mixer;
@@ -18,7 +18,7 @@ public class AudioEncoder
     super(paramMixer, paramStageDoneCallback, paramEncoderConfiguration, false);
   }
   
-  protected int addOrRetrieveMixerTrack(@cgb MediaFormat paramMediaFormat)
+  protected int addOrRetrieveMixerTrack(@chc MediaFormat paramMediaFormat)
   {
     if (mMixer.hasAudioTrack())
     {

@@ -1,37 +1,48 @@
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.database.ClientProperty;
+import com.snapchat.android.database.OnboardingTooltip;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public final class qr
-  extends th
+  extends tw
 {
-  final String mConversationId;
-  final String mTransactionId;
+  private Map<String, String> mClientProperties = new HashMap();
+  private List<String> mSeenTooltips = new ArrayList(1);
   
-  public qr(@cgb String paramString1, @cgb String paramString2)
+  public qr() {}
+  
+  public qr(OnboardingTooltip paramOnboardingTooltip)
   {
-    mTransactionId = paramString1;
-    mConversationId = paramString2;
+    mSeenTooltips.add(aug.a(paramOnboardingTooltip));
   }
   
-  public final Object b()
+  public final qr a(ClientProperty paramClientProperty, String paramString)
   {
-    return new qr.a();
+    mClientProperties.put(aug.a(paramClientProperty), paramString);
+    return this;
   }
   
-  protected final String d()
+  protected final String getPath()
   {
-    return "/cash/transaction";
+    return "/loq/update_user";
   }
   
-  @tn
-  final class a
-    extends pl
+  @ud
+  public final class a
+    extends qc
   {
-    @SerializedName("conversation_id")
-    String conversationId = mConversationId;
-    @SerializedName("transaction_id")
-    String transactionId = mTransactionId;
+    @SerializedName("client_properties")
+    String clientProperties = aul.a().toJson(qr.b(qr.this));
+    @SerializedName("seen_tooltips")
+    String seenTooltips = aul.a().toJson(qr.a(qr.this));
+    @SerializedName("username")
+    String username = akr.l();
     
-    a() {}
+    public a() {}
   }
 }
 

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 316
+    .line 313
     iput-object p1, p0, Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment$6;->a:Lcom/snapchat/android/fragments/settings/DeveloperSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 319
+    .line 316
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "You asked for this."

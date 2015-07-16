@@ -2,37 +2,13 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbuo;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuo",
-        "<",
-        "Lxn;",
-        ">;"
-    }
-.end annotation
-
 
 # static fields
-.field static final synthetic a:Z
+.field private static final b:Lxo;
 
 
 # instance fields
-.field private final b:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lxn;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
 
 # direct methods
@@ -40,104 +16,51 @@
     .locals 1
 
     .prologue
-    .line 7
-    const-class v0, Lxo;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Lxo;->a:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private constructor <init>(Lbuj;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lxn;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    sget-boolean v0, Lxo;->a:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 13
-    :cond_0
-    iput-object p1, p0, Lxo;->b:Lbuj;
-
-    .line 14
-    return-void
-.end method
-
-.method public static a(Lbuj;)Lbuo;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lxn;",
-            ">;)",
-            "Lbuo",
-            "<",
-            "Lxn;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 24
+    .line 8
     new-instance v0, Lxo;
 
-    invoke-direct {v0, p0}, Lxo;-><init>(Lbuj;)V
+    invoke-direct {v0}, Lxo;-><init>()V
 
-    return-object v0
+    sput-object v0, Lxo;->b:Lxo;
+
+    return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 2
+.method private constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 7
-    new-instance v0, Lxn;
+    .line 12
+    invoke-static {}, Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;->a()Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
 
-    invoke-direct {v0}, Lxn;-><init>()V
+    move-result-object v0
 
-    iget-object v1, p0, Lxo;->b:Lbuj;
+    invoke-direct {p0, v0}, Lxo;-><init>(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
 
-    invoke-interface {v1, v0}, Lbuj;->a(Ljava/lang/Object;)V
+    .line 13
+    return-void
+.end method
+
+.method private constructor <init>(Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;)V
+    .locals 0
+
+    .prologue
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 17
+    iput-object p1, p0, Lxo;->a:Lcom/snapchat/android/camera/transcoding/TranscodingPreferencesWrapper;
+
+    .line 18
+    return-void
+.end method
+
+.method public static a()Lxo;
+    .locals 1
+
+    .prologue
+    .line 21
+    sget-object v0, Lxo;->b:Lxo;
 
     return-object v0
 .end method

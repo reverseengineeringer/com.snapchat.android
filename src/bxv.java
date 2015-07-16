@@ -1,23 +1,8 @@
+import android.graphics.Typeface;
+
 public final class bxv
-  implements bxg
 {
-  public final bxk a(bwz parambwz, String paramString)
-  {
-    try
-    {
-      parambwz = new Double(paramString);
-      return new bxk(new Double(Math.log(parambwz.doubleValue())).toString(), 0);
-    }
-    catch (Exception parambwz)
-    {
-      throw new bxh("Invalid argument.", parambwz);
-    }
-  }
-  
-  public final String a()
-  {
-    return "log";
-  }
+  public static Typeface a;
 }
 
 /* Location:

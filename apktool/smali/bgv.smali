@@ -1,168 +1,117 @@
-.class public final Lbgv;
+.class public Lbgv;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String;
+
+
 # instance fields
-.field protected adUnitId:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ad_unit_id"
-    .end annotation
-.end field
+.field private final mCache:Laxn;
 
-.field protected targetingParameters:Ljava/util/Map;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "targeting_parameters"
-    .end annotation
+.field final mExecutor:Ljava/util/concurrent/Executor;
 
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final mKey:Ljava/lang/String;
+
+.field private final mProfileImageUtils:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .prologue
-    .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 19
+    const-class v0, Lbgv;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lbgv;->TAG:Ljava/lang/String;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 35
-    iget-object v0, p0, Lbgv;->adUnitId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final b()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 53
-    iget-object v0, p0, Lbgv;->targetingParameters:Ljava/util/Map;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 3
 
     .prologue
-    .line 75
-    if-ne p1, p0, :cond_0
+    .line 26
+    sget-object v0, Lavf;->HIGH_PRIORITY_EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    .line 76
-    const/4 v0, 0x1
+    sget-object v1, Laxo;->PROFILE_IMAGE_CACHE:Laxn;
 
-    .line 82
-    :goto_0
-    return v0
+    invoke-static {}, Lcom/snapchat/android/util/profileimages/ProfileImageUtils;->a()Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
-    .line 78
-    :cond_0
-    instance-of v0, p1, Lbgv;
+    move-result-object v2
 
-    if-nez v0, :cond_1
+    invoke-direct {p0, v0, v1, p1, v2}, Lbgv;-><init>(Ljava/util/concurrent/Executor;Laxn;Ljava/lang/String;Lcom/snapchat/android/util/profileimages/ProfileImageUtils;)V
 
-    .line 79
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 81
-    :cond_1
-    check-cast p1, Lbgv;
-
-    .line 82
-    new-instance v0, Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;-><init>()V
-
-    iget-object v1, p0, Lbgv;->adUnitId:Ljava/lang/String;
-
-    iget-object v2, p1, Lbgv;->adUnitId:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbgv;->targetingParameters:Ljava/util/Map;
-
-    iget-object v2, p1, Lbgv;->targetingParameters:Ljava/util/Map;
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->append(Ljava/lang/Object;Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/EqualsBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/EqualsBuilder;->isEquals()Z
-
-    move-result v0
-
-    goto :goto_0
+    .line 27
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method private constructor <init>(Ljava/util/concurrent/Executor;Laxn;Ljava/lang/String;Lcom/snapchat/android/util/profileimages/ProfileImageUtils;)V
+    .locals 0
 
     .prologue
-    .line 67
-    new-instance v0, Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 30
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;-><init>()V
+    .line 31
+    iput-object p1, p0, Lbgv;->mExecutor:Ljava/util/concurrent/Executor;
 
-    iget-object v1, p0, Lbgv;->adUnitId:Ljava/lang/String;
+    .line 32
+    iput-object p2, p0, Lbgv;->mCache:Laxn;
 
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
+    .line 33
+    iput-object p3, p0, Lbgv;->mKey:Ljava/lang/String;
 
-    move-result-object v0
+    .line 34
+    iput-object p4, p0, Lbgv;->mProfileImageUtils:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
-    iget-object v1, p0, Lbgv;->targetingParameters:Ljava/util/Map;
-
-    invoke-virtual {v0, v1}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->append(Ljava/lang/Object;)Lorg/apache/commons/lang3/builder/HashCodeBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/apache/commons/lang3/builder/HashCodeBuilder;->toHashCode()I
-
-    move-result v0
-
-    return v0
+    .line 35
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method static synthetic a()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 62
-    invoke-static {p0}, Lorg/apache/commons/lang3/builder/ToStringBuilder;->reflectionToString(Ljava/lang/Object;)Ljava/lang/String;
+    .line 18
+    sget-object v0, Lbgv;->TAG:Ljava/lang/String;
 
-    move-result-object v0
+    return-object v0
+.end method
+
+.method static synthetic a(Lbgv;)Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 18
+    iget-object v0, p0, Lbgv;->mKey:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic b(Lbgv;)Laxn;
+    .locals 1
+
+    .prologue
+    .line 18
+    iget-object v0, p0, Lbgv;->mCache:Laxn;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lbgv;)Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
+    .locals 1
+
+    .prologue
+    .line 18
+    iget-object v0, p0, Lbgv;->mProfileImageUtils:Lcom/snapchat/android/util/profileimages/ProfileImageUtils;
 
     return-object v0
 .end method

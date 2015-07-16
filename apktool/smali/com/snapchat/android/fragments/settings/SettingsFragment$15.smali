@@ -54,7 +54,7 @@
     .line 504
     const v1, 0x7f07000e
 
-    invoke-static {}, Lajx;->h()I
+    invoke-static {}, Lakr;->h()I
 
     move-result v2
 

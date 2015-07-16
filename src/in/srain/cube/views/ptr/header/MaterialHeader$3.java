@@ -2,12 +2,12 @@ package in.srain.cube.views.ptr.header;
 
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
-import buu;
+import bvv;
 
 final class MaterialHeader$3
   implements Animation.AnimationListener
 {
-  MaterialHeader$3(MaterialHeader paramMaterialHeader, buu parambuu) {}
+  MaterialHeader$3(MaterialHeader paramMaterialHeader, bvv parambvv) {}
   
   public final void onAnimationEnd(Animation paramAnimation)
   {

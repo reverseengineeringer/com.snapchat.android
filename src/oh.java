@@ -1,32 +1,50 @@
-import android.annotation.TargetApi;
-import android.media.MediaFormat;
+import android.os.SystemClock;
 import com.snapchat.android.analytics.framework.EasyMetric;
+import com.snapchat.android.model.MediaMailingMetadata;
 import com.snapchat.android.model.Mediabryo;
-import com.snapchat.videotranscoder.pipeline.EncoderConfiguration;
-import com.snapchat.videotranscoder.task.Task.Status;
-import com.snapchat.videotranscoder.task.TranscodingConfiguration;
+import com.snapchat.android.util.debug.ReleaseManager;
+import javax.inject.Inject;
 
-@TargetApi(18)
 public final class oh
-  extends EasyMetric
 {
-  public oh()
+  private static final long TIME_UNINITIALIZED = -1L;
+  public String mReachability;
+  public long mTimePressSend = -1L;
+  
+  public static void a(@chc aji paramaji, String paramString)
   {
-    super("TRANSCODING");
-    b();
+    if ((paramaji instanceof aku)) {}
+    for (String str = String.format("Transcoding Status: %s", new Object[] { mTranscodingState.c() });; str = "")
+    {
+      Object localObject = mMediaMailingMetadata;
+      str = String.format("Upload Status: %s | Send Status: %s | Post Status: %s | %s", new Object[] { mUploadStatus, mSendStatus, mPostStatus, str });
+      localObject = mClientId;
+      new EasyMetric("SNAP_BAD_MEDIA").a("clientId", mClientId).a("mediaType", Integer.valueOf(paramaji.h())).a("reason", paramString).a("status_code", str).a(false);
+      return;
+    }
   }
   
-  public final void a(ajm paramajm, TranscodingConfiguration paramTranscodingConfiguration, Task.Status paramStatus)
+  public final void a()
   {
-    a("transcoding_status", paramStatus.name());
-    a("retries", Integer.valueOf(mTranscodingState.a()));
-    a("video_width", Integer.valueOf(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getInteger("width")));
-    a("video_height", Integer.valueOf(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getInteger("height")));
-    a("bit_rate", Integer.valueOf(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getInteger("bitrate")));
-    a("frame_rate", Integer.valueOf(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getInteger("frame-rate")));
-    a("media_duration", Integer.valueOf((int)Math.ceil(paramTranscodingConfiguration.getVideoEncoderConfiguration().getFormat().getLong("durationUs") / 1000000L)));
-    a("transcoding_orientation", Integer.valueOf(mSnapOrientation));
-    super.a(true);
+    mTimePressSend = SystemClock.elapsedRealtime();
+    mReachability = bgp.b();
+  }
+  
+  public final void b()
+  {
+    if (mTimePressSend == -1L)
+    {
+      if (ReleaseManager.e()) {
+        throw new IllegalStateException();
+      }
+    }
+    else
+    {
+      long l1 = SystemClock.elapsedRealtime();
+      long l2 = mTimePressSend;
+      new EasyMetric("SNAP_SEND_TIMED").a("success", Boolean.valueOf(false)).a("reachability", mReachability).a(l1 - l2).e();
+      mTimePressSend = -1L;
+    }
   }
 }
 

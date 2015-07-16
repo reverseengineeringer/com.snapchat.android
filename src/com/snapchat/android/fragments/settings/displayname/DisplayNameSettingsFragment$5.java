@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.settings.displayname;
 
-import ajx;
+import akr;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -8,7 +8,7 @@ import android.widget.EditText;
 import com.snapchat.android.analytics.AnalyticsEvents.AnalyticsContext;
 import com.snapchat.android.model.Friend;
 import com.snapchat.android.model.FriendAction;
-import pp;
+import qg;
 
 final class DisplayNameSettingsFragment$5
   implements View.OnClickListener
@@ -21,16 +21,16 @@ final class DisplayNameSettingsFragment$5
     DisplayNameSettingsFragment.e(a).setClickable(false);
     DisplayNameSettingsFragment.f(a).setVisibility(0);
     DisplayNameSettingsFragment.g(a);
-    paramView = ajx.l();
+    paramView = akr.l();
     DisplayNameSettingsFragment.g(a);
-    paramView = new Friend(paramView, ajx.y());
+    paramView = new Friend(paramView, akr.y());
     String str = paramView.a();
     mDisplayName = DisplayNameSettingsFragment.a(a).getText().toString().trim();
-    paramView = new pp(paramView, FriendAction.SET_DISPLAY_NAME, str);
+    paramView = new qg(paramView, FriendAction.SET_DISPLAY_NAME, str);
     mFriendActionCompleteCallback = a;
     mAnalyticsContext = AnalyticsEvents.AnalyticsContext.SETTINGS_DISPLAYNAME_CHANGE;
     mShowFailureDialog = false;
-    paramView.f();
+    paramView.execute();
   }
 }
 

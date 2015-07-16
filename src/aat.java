@@ -1,16 +1,29 @@
 public final class aat
-  extends zx
+  implements bvp<aas>
 {
-  private static final aat a = new aat();
+  private final bvk<aas> b;
   
-  private aat()
+  static
   {
-    super("MySnapVideoFileTable", awq.MY_SNAP_VIDEO_CACHE);
+    if (!aat.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
   }
   
-  public static aat a()
+  private aat(bvk<aas> parambvk)
   {
-    return a;
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+  }
+  
+  public static bvp<aas> a(bvk<aas> parambvk)
+  {
+    return new aat(parambvk);
   }
 }
 

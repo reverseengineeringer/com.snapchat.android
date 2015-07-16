@@ -1,41 +1,47 @@
-import java.util.Arrays;
+import com.snapchat.android.camera.model.CameraModel;
+import javax.inject.Provider;
 
 public final class wx
+  implements bvk<wv>
 {
-  public final boolean[] a = a(ajx.bi());
+  private final Provider<xg> b;
+  private final Provider<CameraModel> c;
+  private final Provider<xf> d;
+  private final Provider<xj> e;
   
-  private static boolean[] a(String paramString)
+  static
   {
-    boolean[] arrayOfBoolean = new boolean[10];
-    Arrays.fill(arrayOfBoolean, true);
-    int i = 0;
-    if ((i < 10) && (i < paramString.length()))
+    if (!wx.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      if (paramString.charAt(i) == '1') {}
-      for (int j = 1;; j = 0)
-      {
-        arrayOfBoolean[i] = j;
-        i += 1;
-        break;
-      }
+      a = bool;
+      return;
     }
-    return arrayOfBoolean;
   }
   
-  public final int a()
+  private wx(Provider<xg> paramProvider, Provider<CameraModel> paramProvider1, Provider<xf> paramProvider2, Provider<xj> paramProvider3)
   {
-    int j = 0;
-    int i = 0;
-    while (i < 10)
-    {
-      int k = j;
-      if (a[i] == 0) {
-        k = j + 1;
-      }
-      i += 1;
-      j = k;
+    if ((!a) && (paramProvider == null)) {
+      throw new AssertionError();
     }
-    return j;
+    b = paramProvider;
+    if ((!a) && (paramProvider1 == null)) {
+      throw new AssertionError();
+    }
+    c = paramProvider1;
+    if ((!a) && (paramProvider2 == null)) {
+      throw new AssertionError();
+    }
+    d = paramProvider2;
+    if ((!a) && (paramProvider3 == null)) {
+      throw new AssertionError();
+    }
+    e = paramProvider3;
+  }
+  
+  public static bvk<wv> a(Provider<xg> paramProvider, Provider<CameraModel> paramProvider1, Provider<xf> paramProvider2, Provider<xj> paramProvider3)
+  {
+    return new wx(paramProvider, paramProvider1, paramProvider2, paramProvider3);
   }
 }
 

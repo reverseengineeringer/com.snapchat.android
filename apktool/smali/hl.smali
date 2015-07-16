@@ -1,261 +1,621 @@
-.class public final enum Lhl;
-.super Ljava/lang/Enum;
+.class public final Lhl;
+.super Lml;
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Enum",
-        "<",
-        "Lhl;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field public dsnapId:Ljava/lang/String;
 
+.field public editionId:Ljava/lang/String;
 
-# static fields
-.field private static final synthetic $VALUES:[Lhl;
+.field private final eventName:Ljava/lang/String;
 
-.field public static final enum AUTO_ADVANCE:Lhl;
+.field public mediaType:Lih;
 
-.field public static final enum BACK_PRESSED:Lhl;
+.field public publisherId:Ljava/lang/String;
 
-.field public static final enum ENTER_BACKGROUND:Lhl;
+.field public snapIndexCount:Ljava/lang/Long;
 
-.field public static final enum ERROR:Lhl;
+.field public snapIndexPos:Ljava/lang/Long;
 
-.field public static final enum LONG_PRESS_AND_TAP:Lhl;
+.field public source:Llv;
 
-.field public static final enum LONG_PRESS_END:Lhl;
-
-.field public static final enum SWIPE_BEGINNING:Lhl;
-
-.field public static final enum SWIPE_DOWN:Lhl;
-
-.field public static final enum SWIPE_END:Lhl;
-
-.field public static final enum TAP:Lhl;
+.field public timeViewed:Ljava/lang/Double;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    const/4 v7, 0x4
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 5
-    new-instance v0, Lhl;
-
-    const-string v1, "SWIPE_DOWN"
-
-    invoke-direct {v0, v1, v3}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->SWIPE_DOWN:Lhl;
-
-    .line 6
-    new-instance v0, Lhl;
-
-    const-string v1, "SWIPE_BEGINNING"
-
-    invoke-direct {v0, v1, v4}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->SWIPE_BEGINNING:Lhl;
-
-    .line 7
-    new-instance v0, Lhl;
-
-    const-string v1, "SWIPE_END"
-
-    invoke-direct {v0, v1, v5}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->SWIPE_END:Lhl;
-
-    .line 8
-    new-instance v0, Lhl;
-
-    const-string v1, "ENTER_BACKGROUND"
-
-    invoke-direct {v0, v1, v6}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->ENTER_BACKGROUND:Lhl;
-
-    .line 9
-    new-instance v0, Lhl;
-
-    const-string v1, "AUTO_ADVANCE"
-
-    invoke-direct {v0, v1, v7}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->AUTO_ADVANCE:Lhl;
-
-    .line 10
-    new-instance v0, Lhl;
-
-    const-string v1, "BACK_PRESSED"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->BACK_PRESSED:Lhl;
-
     .line 11
-    new-instance v0, Lhl;
+    invoke-direct {p0}, Lml;-><init>()V
 
-    const-string v1, "ERROR"
+    .line 77
+    const-string v0, "DISCOVER_SNAP_SHARE_CREATE"
 
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v1, v2}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->ERROR:Lhl;
-
-    .line 12
-    new-instance v0, Lhl;
-
-    const-string v1, "LONG_PRESS_END"
-
-    const/4 v2, 0x7
-
-    invoke-direct {v0, v1, v2}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->LONG_PRESS_END:Lhl;
-
-    .line 13
-    new-instance v0, Lhl;
-
-    const-string v1, "LONG_PRESS_AND_TAP"
-
-    const/16 v2, 0x8
-
-    invoke-direct {v0, v1, v2}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->LONG_PRESS_AND_TAP:Lhl;
-
-    .line 14
-    new-instance v0, Lhl;
-
-    const-string v1, "TAP"
-
-    const/16 v2, 0x9
-
-    invoke-direct {v0, v1, v2}, Lhl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhl;->TAP:Lhl;
-
-    .line 4
-    const/16 v0, 0xa
-
-    new-array v0, v0, [Lhl;
-
-    sget-object v1, Lhl;->SWIPE_DOWN:Lhl;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lhl;->SWIPE_BEGINNING:Lhl;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lhl;->SWIPE_END:Lhl;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lhl;->ENTER_BACKGROUND:Lhl;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lhl;->AUTO_ADVANCE:Lhl;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lhl;->BACK_PRESSED:Lhl;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lhl;->ERROR:Lhl;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Lhl;->LONG_PRESS_END:Lhl;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    sget-object v2, Lhl;->LONG_PRESS_AND_TAP:Lhl;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    sget-object v2, Lhl;->TAP:Lhl;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lhl;->$VALUES:[Lhl;
+    iput-object v0, p0, Lhl;->eventName:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+
+# virtual methods
+.method public final a()Ljava/util/Map;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()V"
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Object;",
+            ">;"
         }
     .end annotation
 
     .prologue
-    .line 4
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 84
+    new-instance v0, Ljava/util/HashMap;
 
-    return-void
-.end method
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-.method public static valueOf(Ljava/lang/String;)Lhl;
-    .locals 1
+    .line 86
+    const-string v1, "event_name"
 
-    .prologue
-    .line 4
-    const-class v0, Lhl;
+    const-string v2, "DISCOVER_SNAP_SHARE_CREATE"
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    .line 87
+    iget-object v1, p0, Lhl;->dsnapId:Ljava/lang/String;
 
-    check-cast v0, Lhl;
+    if-eqz v1, :cond_0
 
+    const-string v1, "dsnap_id"
+
+    iget-object v2, p0, Lhl;->dsnapId:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 88
+    :cond_0
+    iget-object v1, p0, Lhl;->editionId:Ljava/lang/String;
+
+    if-eqz v1, :cond_1
+
+    const-string v1, "edition_id"
+
+    iget-object v2, p0, Lhl;->editionId:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 89
+    :cond_1
+    iget-object v1, p0, Lhl;->mediaType:Lih;
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "media_type"
+
+    iget-object v2, p0, Lhl;->mediaType:Lih;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 90
+    :cond_2
+    iget-object v1, p0, Lhl;->publisherId:Ljava/lang/String;
+
+    if-eqz v1, :cond_3
+
+    const-string v1, "publisher_id"
+
+    iget-object v2, p0, Lhl;->publisherId:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 91
+    :cond_3
+    iget-object v1, p0, Lhl;->snapIndexCount:Ljava/lang/Long;
+
+    if-eqz v1, :cond_4
+
+    const-string v1, "snap_index_count"
+
+    iget-object v2, p0, Lhl;->snapIndexCount:Ljava/lang/Long;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 92
+    :cond_4
+    iget-object v1, p0, Lhl;->snapIndexPos:Ljava/lang/Long;
+
+    if-eqz v1, :cond_5
+
+    const-string v1, "snap_index_pos"
+
+    iget-object v2, p0, Lhl;->snapIndexPos:Ljava/lang/Long;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 93
+    :cond_5
+    iget-object v1, p0, Lhl;->source:Llv;
+
+    if-eqz v1, :cond_6
+
+    const-string v1, "source"
+
+    iget-object v2, p0, Lhl;->source:Llv;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 94
+    :cond_6
+    iget-object v1, p0, Lhl;->timeViewed:Ljava/lang/Double;
+
+    if-eqz v1, :cond_7
+
+    const-string v1, "time_viewed"
+
+    iget-object v2, p0, Lhl;->timeViewed:Ljava/lang/Double;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 95
+    :cond_7
+    invoke-super {p0}, Lml;->a()Ljava/util/Map;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+    .line 97
     return-object v0
 .end method
 
-.method public static values()[Lhl;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .prologue
-    .line 4
-    sget-object v0, Lhl;->$VALUES:[Lhl;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, [Lhl;->clone()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    .line 102
+    if-ne p0, p1, :cond_1
 
-    check-cast v0, [Lhl;
+    .line 116
+    :cond_0
+    :goto_0
+    return v0
 
-    return-object v0
+    .line 103
+    :cond_1
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_3
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    .line 104
+    :cond_3
+    invoke-super {p0, p1}, Lml;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_4
+
+    move v0, v1
+
+    goto :goto_0
+
+    .line 106
+    :cond_4
+    check-cast p1, Lhl;
+
+    .line 108
+    iget-object v2, p0, Lhl;->dsnapId:Ljava/lang/String;
+
+    if-eqz v2, :cond_6
+
+    iget-object v2, p0, Lhl;->dsnapId:Ljava/lang/String;
+
+    iget-object v3, p1, Lhl;->dsnapId:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_7
+
+    :cond_5
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_6
+    iget-object v2, p1, Lhl;->dsnapId:Ljava/lang/String;
+
+    if-nez v2, :cond_5
+
+    .line 109
+    :cond_7
+    iget-object v2, p0, Lhl;->editionId:Ljava/lang/String;
+
+    if-eqz v2, :cond_9
+
+    iget-object v2, p0, Lhl;->editionId:Ljava/lang/String;
+
+    iget-object v3, p1, Lhl;->editionId:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_a
+
+    :cond_8
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_9
+    iget-object v2, p1, Lhl;->editionId:Ljava/lang/String;
+
+    if-nez v2, :cond_8
+
+    .line 110
+    :cond_a
+    iget-object v2, p0, Lhl;->mediaType:Lih;
+
+    if-eqz v2, :cond_c
+
+    iget-object v2, p0, Lhl;->mediaType:Lih;
+
+    iget-object v3, p1, Lhl;->mediaType:Lih;
+
+    invoke-virtual {v2, v3}, Lih;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_d
+
+    :cond_b
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_c
+    iget-object v2, p1, Lhl;->mediaType:Lih;
+
+    if-nez v2, :cond_b
+
+    .line 111
+    :cond_d
+    iget-object v2, p0, Lhl;->publisherId:Ljava/lang/String;
+
+    if-eqz v2, :cond_f
+
+    iget-object v2, p0, Lhl;->publisherId:Ljava/lang/String;
+
+    iget-object v3, p1, Lhl;->publisherId:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_10
+
+    :cond_e
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_f
+    iget-object v2, p1, Lhl;->publisherId:Ljava/lang/String;
+
+    if-nez v2, :cond_e
+
+    .line 112
+    :cond_10
+    iget-object v2, p0, Lhl;->snapIndexCount:Ljava/lang/Long;
+
+    if-eqz v2, :cond_12
+
+    iget-object v2, p0, Lhl;->snapIndexCount:Ljava/lang/Long;
+
+    iget-object v3, p1, Lhl;->snapIndexCount:Ljava/lang/Long;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_13
+
+    :cond_11
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_12
+    iget-object v2, p1, Lhl;->snapIndexCount:Ljava/lang/Long;
+
+    if-nez v2, :cond_11
+
+    .line 113
+    :cond_13
+    iget-object v2, p0, Lhl;->snapIndexPos:Ljava/lang/Long;
+
+    if-eqz v2, :cond_15
+
+    iget-object v2, p0, Lhl;->snapIndexPos:Ljava/lang/Long;
+
+    iget-object v3, p1, Lhl;->snapIndexPos:Ljava/lang/Long;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_16
+
+    :cond_14
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_15
+    iget-object v2, p1, Lhl;->snapIndexPos:Ljava/lang/Long;
+
+    if-nez v2, :cond_14
+
+    .line 114
+    :cond_16
+    iget-object v2, p0, Lhl;->source:Llv;
+
+    if-eqz v2, :cond_18
+
+    iget-object v2, p0, Lhl;->source:Llv;
+
+    iget-object v3, p1, Lhl;->source:Llv;
+
+    invoke-virtual {v2, v3}, Llv;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_19
+
+    :cond_17
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_18
+    iget-object v2, p1, Lhl;->source:Llv;
+
+    if-nez v2, :cond_17
+
+    .line 115
+    :cond_19
+    iget-object v2, p0, Lhl;->timeViewed:Ljava/lang/Double;
+
+    if-eqz v2, :cond_1a
+
+    iget-object v2, p0, Lhl;->timeViewed:Ljava/lang/Double;
+
+    iget-object v3, p1, Lhl;->timeViewed:Ljava/lang/Double;
+
+    invoke-virtual {v2, v3}, Ljava/lang/Double;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :goto_1
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_1a
+    iget-object v2, p1, Lhl;->timeViewed:Ljava/lang/Double;
+
+    if-eqz v2, :cond_0
+
+    goto :goto_1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 121
+    invoke-super {p0}, Lml;->hashCode()I
+
+    move-result v0
+
+    .line 122
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lhl;->dsnapId:Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lhl;->dsnapId:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_0
+    add-int/2addr v0, v2
+
+    .line 123
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lhl;->editionId:Ljava/lang/String;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lhl;->editionId:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    add-int/2addr v0, v2
+
+    .line 124
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lhl;->mediaType:Lih;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lhl;->mediaType:Lih;
+
+    invoke-virtual {v0}, Lih;->hashCode()I
+
+    move-result v0
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    .line 125
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lhl;->publisherId:Ljava/lang/String;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lhl;->publisherId:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_3
+    add-int/2addr v0, v2
+
+    .line 126
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lhl;->snapIndexCount:Ljava/lang/Long;
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, p0, Lhl;->snapIndexCount:Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
+
+    move-result v0
+
+    :goto_4
+    add-int/2addr v0, v2
+
+    .line 127
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lhl;->snapIndexPos:Ljava/lang/Long;
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, p0, Lhl;->snapIndexPos:Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
+
+    move-result v0
+
+    :goto_5
+    add-int/2addr v0, v2
+
+    .line 128
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lhl;->source:Llv;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p0, Lhl;->source:Llv;
+
+    invoke-virtual {v0}, Llv;->hashCode()I
+
+    move-result v0
+
+    :goto_6
+    add-int/2addr v0, v2
+
+    .line 129
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lhl;->timeViewed:Ljava/lang/Double;
+
+    if-eqz v2, :cond_0
+
+    iget-object v1, p0, Lhl;->timeViewed:Ljava/lang/Double;
+
+    invoke-virtual {v1}, Ljava/lang/Double;->hashCode()I
+
+    move-result v1
+
+    :cond_0
+    add-int/2addr v0, v1
+
+    .line 130
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    .line 122
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    .line 123
+    goto :goto_1
+
+    :cond_3
+    move v0, v1
+
+    .line 124
+    goto :goto_2
+
+    :cond_4
+    move v0, v1
+
+    .line 125
+    goto :goto_3
+
+    :cond_5
+    move v0, v1
+
+    .line 126
+    goto :goto_4
+
+    :cond_6
+    move v0, v1
+
+    .line 127
+    goto :goto_5
+
+    :cond_7
+    move v0, v1
+
+    .line 128
+    goto :goto_6
 .end method

@@ -1,198 +1,140 @@
 .class public final Lrr;
-.super Ljava/lang/Object;
+.super Lrl;
 .source "SourceFile"
-
-# interfaces
-.implements Lbuj;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lbuj",
-        "<",
-        "Lrq;",
-        ">;"
-    }
-.end annotation
 
 
 # static fields
-.field static final synthetic $assertionsDisabled:Z
+.field private static final TAG:Ljava/lang/String; = "ValidateTransactionBlocker"
 
 
 # instance fields
-.field private final mCashErrorReporterProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final supertypeInjector:Lbuj;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;"
-        }
+.field protected mCashErrorReporter:Lqw;
+    .annotation runtime Ljavax/inject/Inject;
     .end annotation
 .end field
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 9
-    const-class v0, Lrr;
+    .line 28
+    invoke-direct {p0}, Lrl;-><init>()V
 
-    invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
+    .line 29
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
 
-    move-result v0
+    move-result-object v0
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Lcom/snapchat/android/SnapchatApplication;->c()Lazy;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
-    :goto_0
-    sput-boolean v0, Lrr;->$assertionsDisabled:Z
+    invoke-interface {v0, p0}, Lazy;->a(Lrr;)V
 
+    .line 30
     return-void
+.end method
 
-    :cond_0
+.method static synthetic a(Lrr;)V
+    .locals 2
+
+    .prologue
+    .line 22
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
+    const/4 v1, 0x1
 
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;)V"
-        }
-    .end annotation
+    invoke-virtual {p0, v0, v1}, Lrr;->a(Ljava/util/List;Z)V
 
-    .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 15
-    sget-boolean v0, Lrr;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 16
-    :cond_0
-    iput-object p1, p0, Lrr;->supertypeInjector:Lbuj;
-
-    .line 17
-    sget-boolean v0, Lrr;->$assertionsDisabled:Z
-
-    if-nez v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-
-    .line 18
-    :cond_1
-    iput-object p2, p0, Lrr;->mCashErrorReporterProvider:Ljavax/inject/Provider;
-
-    .line 19
     return-void
 .end method
 
-.method public static a(Lbuj;Ljavax/inject/Provider;)Lbuj;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lbuj",
-            "<",
-            "Lqv;",
-            ">;",
-            "Ljavax/inject/Provider",
-            "<",
-            "Lqg;",
-            ">;)",
-            "Lbuj",
-            "<",
-            "Lrq;",
-            ">;"
-        }
-    .end annotation
+.method static synthetic b(Lrr;)V
+    .locals 0
 
     .prologue
-    .line 31
-    new-instance v0, Lrr;
+    .line 22
+    invoke-virtual {p0}, Lrr;->b()V
 
-    invoke-direct {v0, p0, p1}, Lrr;-><init>(Lbuj;Ljavax/inject/Provider;)V
+    return-void
+.end method
 
-    return-object v0
+.method static synthetic c(Lrr;)V
+    .locals 2
+
+    .prologue
+    .line 22
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lrr;->b(Ljava/util/List;Z)V
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final a(Lcom/snapchat/android/model/CashTransaction;)V
+    .locals 7
+    .param p1    # Lcom/snapchat/android/model/CashTransaction;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 9
-    check-cast p1, Lrq;
+    .line 34
+    const/4 v0, 0x2
 
-    if-nez p1, :cond_0
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    const/4 v1, 0x0
 
-    const-string v1, "Cannot inject members into a null reference"
+    iget-object v2, p1, Lcom/snapchat/android/model/CashTransaction;->mRecipientUsername:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    aput-object v2, v0, v1
 
-    throw v0
+    const/4 v1, 0x1
 
-    :cond_0
-    iget-object v0, p0, Lrr;->supertypeInjector:Lbuj;
+    invoke-virtual {p1}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
 
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
+    move-result-object v2
 
-    iget-object v0, p0, Lrr;->mCashErrorReporterProvider:Ljavax/inject/Provider;
+    aput-object v2, v0, v1
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    .line 36
+    new-instance v0, Lrk;
 
-    move-result-object v0
+    iget-object v1, p1, Lcom/snapchat/android/model/CashTransaction;->mRecipientUsername:Ljava/lang/String;
 
-    check-cast v0, Lqg;
+    iget v2, p1, Lcom/snapchat/android/model/CashTransaction;->mAmount:I
 
-    iput-object v0, p1, Lrq;->mCashErrorReporter:Lqg;
+    iget-object v3, p1, Lcom/snapchat/android/model/CashTransaction;->mCurrencyCode:Lcom/snapchat/android/util/CashUtils$CurrencyCode;
 
+    iget-object v4, p1, Lcom/snapchat/android/model/CashTransaction;->mMessage:Ljava/lang/String;
+
+    iget-boolean v5, p1, Lcom/snapchat/android/model/CashTransaction;->mFromRain:Z
+
+    new-instance v6, Lrr$1;
+
+    invoke-direct {v6, p0, p1}, Lrr$1;-><init>(Lrr;Lcom/snapchat/android/model/CashTransaction;)V
+
+    invoke-direct/range {v0 .. v6}, Lrk;-><init>(Ljava/lang/String;ILcom/snapchat/android/util/CashUtils$CurrencyCode;Ljava/lang/String;ZLqs$a;)V
+
+    invoke-virtual {v0}, Lrk;->execute()V
+
+    .line 89
     return-void
+.end method
+
+.method public final c()Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+    .locals 1
+
+    .prologue
+    .line 93
+    sget-object v0, Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;->VALIDATE_TRANSACTION_BLOCKER:Lcom/snapchat/android/api2/cash/blockers/BlockerOrder;
+
+    return-object v0
 .end method

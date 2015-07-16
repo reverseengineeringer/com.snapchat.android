@@ -1,167 +1,239 @@
-.class public final Lej;
-.super Lcom/google/gson/TypeAdapter;
+.class public abstract Lej;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation build Lcc;
+.end annotation
+
+.annotation build Lcd;
+.end annotation
+
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Lcom/google/gson/TypeAdapter",
-        "<TT;>;"
+        Lej$b;,
+        Lej$a;
     }
 .end annotation
 
 
-# instance fields
-.field private final a:Lcom/google/gson/Gson;
+# static fields
+.field private static final a:Lej;
 
-.field private final b:Lcom/google/gson/TypeAdapter;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/gson/TypeAdapter",
-            "<TT;>;"
-        }
-    .end annotation
-.end field
+.field private static final b:Lej;
 
-.field private final c:Ljava/lang/reflect/Type;
+.field private static final c:Lej;
+
+.field private static final d:Lej;
+
+.field private static final e:Lej;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/gson/Gson;Lcom/google/gson/TypeAdapter;Ljava/lang/reflect/Type;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/gson/Gson;",
-            "Lcom/google/gson/TypeAdapter",
-            "<TT;>;",
-            "Ljava/lang/reflect/Type;",
-            ")V"
-        }
-    .end annotation
+.method static constructor <clinit>()V
+    .locals 5
 
     .prologue
-    .line 32
-    invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
+    const/16 v4, 0x3d
 
-    .line 33
-    iput-object p1, p0, Lej;->a:Lcom/google/gson/Gson;
+    .line 345
+    new-instance v0, Lej$b;
 
-    .line 34
-    iput-object p2, p0, Lej;->b:Lcom/google/gson/TypeAdapter;
+    const-string v1, "base64()"
 
-    .line 35
-    iput-object p3, p0, Lej;->c:Ljava/lang/reflect/Type;
+    const-string v2, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
-    .line 36
+    invoke-static {v4}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v3
+
+    invoke-direct {v0, v1, v2, v3}, Lej$b;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
+
+    sput-object v0, Lej;->a:Lej;
+
+    .line 365
+    new-instance v0, Lej$b;
+
+    const-string v1, "base64Url()"
+
+    const-string v2, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
+
+    invoke-static {v4}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v3
+
+    invoke-direct {v0, v1, v2, v3}, Lej$b;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
+
+    sput-object v0, Lej;->b:Lej;
+
+    .line 386
+    new-instance v0, Lej$b;
+
+    const-string v1, "base32()"
+
+    const-string v2, "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
+
+    invoke-static {v4}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v3
+
+    invoke-direct {v0, v1, v2, v3}, Lej$b;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
+
+    sput-object v0, Lej;->c:Lej;
+
+    .line 406
+    new-instance v0, Lej$b;
+
+    const-string v1, "base32Hex()"
+
+    const-string v2, "0123456789ABCDEFGHIJKLMNOPQRSTUV"
+
+    invoke-static {v4}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    move-result-object v3
+
+    invoke-direct {v0, v1, v2, v3}, Lej$b;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
+
+    sput-object v0, Lej;->d:Lej;
+
+    .line 425
+    new-instance v0, Lej$b;
+
+    const-string v1, "base16()"
+
+    const-string v2, "0123456789ABCDEF"
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lej$b;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
+
+    sput-object v0, Lej;->e:Lej;
+
     return-void
 .end method
 
-
-# virtual methods
-.method public final read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/gson/stream/JsonReader;",
-            ")TT;"
-        }
-    .end annotation
+.method constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 40
-    iget-object v0, p0, Lej;->b:Lcom/google/gson/TypeAdapter;
+    .line 136
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v0
+.method public static a()Lej;
+    .locals 1
+
+    .prologue
+    .line 443
+    sget-object v0, Lej;->e:Lej;
 
     return-object v0
 .end method
 
-.method public final write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/gson/stream/JsonWriter;",
-            "TT;)V"
-        }
-    .end annotation
+.method private a([BI)Ljava/lang/String;
+    .locals 4
 
     .prologue
-    .line 52
-    iget-object v1, p0, Lej;->b:Lcom/google/gson/TypeAdapter;
+    const/4 v0, 0x0
 
-    .line 53
-    iget-object v0, p0, Lej;->c:Ljava/lang/reflect/Type;
+    .line 166
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p2, :cond_1
+    .line 167
+    add-int/lit8 v1, p2, 0x0
 
-    const-class v2, Ljava/lang/Object;
+    array-length v2, p1
 
-    if-eq v0, v2, :cond_0
+    invoke-static {v0, v1, v2}, Lco;->a(III)V
 
-    instance-of v2, v0, Ljava/lang/reflect/TypeVariable;
+    .line 168
+    invoke-virtual {p0, p2}, Lej;->a(I)I
 
-    if-nez v2, :cond_0
+    move-result v1
 
-    instance-of v2, v0, Ljava/lang/Class;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    if-eqz v2, :cond_1
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :cond_0
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v1, Lel$1;
 
-    move-result-object v0
+    invoke-direct {v1, v2}, Lel$1;-><init>(Ljava/lang/StringBuilder;)V
 
-    .line 54
-    :cond_1
-    iget-object v2, p0, Lej;->c:Ljava/lang/reflect/Type;
+    .line 169
+    invoke-virtual {p0, v1}, Lej;->a(Lel$b;)Lel$a;
 
-    if-eq v0, v2, :cond_3
+    move-result-object v2
 
-    .line 55
-    iget-object v1, p0, Lej;->a:Lcom/google/gson/Gson;
-
-    invoke-static {v0}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/reflect/Type;)Lcom/google/gson/reflect/TypeToken;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lcom/google/gson/Gson;->getAdapter(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
-
-    move-result-object v0
-
-    .line 56
-    instance-of v1, v0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$Adapter;
-
-    if-eqz v1, :cond_2
-
-    .line 58
-    iget-object v1, p0, Lej;->b:Lcom/google/gson/TypeAdapter;
-
-    instance-of v1, v1, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$Adapter;
-
-    if-nez v1, :cond_2
-
-    .line 62
-    iget-object v0, p0, Lej;->b:Lcom/google/gson/TypeAdapter;
-
-    .line 65
-    :cond_2
+    .line 171
     :goto_0
-    invoke-virtual {v0, p1, p2}, Lcom/google/gson/TypeAdapter;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+    if-ge v0, p2, :cond_0
 
-    .line 69
-    return-void
+    .line 172
+    add-int/lit8 v3, v0, 0x0
 
-    :cond_3
-    move-object v0, v1
+    :try_start_0
+    aget-byte v3, p1, v3
+
+    invoke-interface {v2, v3}, Lel$a;->a(B)V
+
+    .line 171
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
+
+    .line 174
+    :cond_0
+    invoke-interface {v2}, Lel$a;->a()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 178
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 176
+    :catch_0
+    move-exception v0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    const-string v1, "impossible"
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method abstract a(I)I
+.end method
+
+.method abstract a(Lel$b;)Lel$a;
+.end method
+
+.method public final a([B)Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 158
+    invoke-static {p1}, Lco;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [B
+
+    array-length v1, p1
+
+    invoke-direct {p0, v0, v1}, Lej;->a([BI)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

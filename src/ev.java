@@ -1,69 +1,26 @@
-import java.nio.ByteBuffer;
-
-public abstract class ev
-  extends et
-  implements av
+public final class ev
+  extends Exception
 {
-  private int flags;
-  private int version;
+  ev.a a;
+  private String b;
   
-  static {}
-  
-  public ev(String paramString)
+  public ev(ev.a parama, String paramString)
   {
     super(paramString);
+    b = paramString;
+    a = parama;
   }
   
-  protected ev(String paramString, byte[] paramArrayOfByte)
+  public final String toString()
   {
-    super(paramString, paramArrayOfByte);
+    String str1 = String.valueOf(String.valueOf(a));
+    String str2 = String.valueOf(String.valueOf(b));
+    return str1.length() + 14 + str2.length() + "Error type: " + str1 + ". " + str2;
   }
   
-  @fa
-  public int getFlags()
+  public static enum a
   {
-    if (!isParsed) {
-      parseDetails();
-    }
-    return flags;
-  }
-  
-  @fa
-  public int getVersion()
-  {
-    if (!isParsed) {
-      parseDetails();
-    }
-    return version;
-  }
-  
-  public final long parseVersionAndFlags(ByteBuffer paramByteBuffer)
-  {
-    version = ao.c(paramByteBuffer);
-    flags = ao.b(paramByteBuffer);
-    return 4L;
-  }
-  
-  public void setFlags(int paramInt)
-  {
-    cek localcek = cfk.a(ajc$tjp_1, this, this, cfi.a(paramInt));
-    ez.a();
-    ez.a(localcek);
-    flags = paramInt;
-  }
-  
-  public void setVersion(int paramInt)
-  {
-    cek localcek = cfk.a(ajc$tjp_0, this, this, cfi.a(paramInt));
-    ez.a();
-    ez.a(localcek);
-    version = paramInt;
-  }
-  
-  public final void writeVersionAndFlags(ByteBuffer paramByteBuffer)
-  {
-    ap.b(paramByteBuffer, version);
-    ap.a(paramByteBuffer, flags);
+    private a() {}
   }
 }
 

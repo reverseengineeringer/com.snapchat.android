@@ -1,14 +1,4 @@
-import com.snapchat.android.api2.chat.LoadConversationPageTask.TaskStatus;
-
-public final class bce
-{
-  public LoadConversationPageTask.TaskStatus mTaskStatus;
-  
-  public bce(LoadConversationPageTask.TaskStatus paramTaskStatus)
-  {
-    mTaskStatus = paramTaskStatus;
-  }
-}
+public final class bce {}
 
 /* Location:
  * Qualified Name:     bce

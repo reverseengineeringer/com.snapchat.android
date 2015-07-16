@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
-import auh;
-import azs;
-import azs.1;
-import bgp;
+import avf;
+import bar;
+import bar.1;
+import bhp;
 import java.io.File;
 
 final class BugReportFragment$10
@@ -47,13 +47,13 @@ final class BugReportFragment$10
       paramView = "null";
       break;
     }
-    azs localazs = new azs();
+    bar localbar = new bar();
     String str1 = BugReportFragment.a(BugReportFragment.c(this$0));
     String str2 = BugReportFragment.s(this$0).getText().toString();
     Object localObject = ((StringBuilder)localObject).toString();
     String str3 = BugReportFragment.l(this$0);
     String str4 = BugReportFragment.p(this$0);
-    bgp.a(auh.SERIAL_EXECUTOR_FOR_DEBUGGING, new azs.1(localazs, paramView, str4, str1, str2, (String)localObject, localFile, arrayOfFile, str3));
+    bhp.a(avf.SERIAL_EXECUTOR_FOR_DEBUGGING, new bar.1(localbar, paramView, str4, str1, str2, (String)localObject, localFile, arrayOfFile, str3));
     BugReportFragment.c(this$0).finish();
   }
 }

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 294
+    .line 296
     iput-object p1, p0, Lcom/snapchat/android/util/AlertDialogUtils$3;->val$context:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 297
+    .line 299
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
@@ -53,12 +53,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 299
+    .line 301
     const v1, 0x8000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 301
+    .line 303
     :try_start_0
     iget-object v1, p0, Lcom/snapchat/android/util/AlertDialogUtils$3;->val$context:Landroid/content/Context;
 
@@ -66,11 +66,11 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 305
+    .line 307
     :goto_0
     return-void
 
-    .line 303
+    .line 305
     :catch_0
     move-exception v0
 

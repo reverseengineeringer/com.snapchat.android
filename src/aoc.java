@@ -1,68 +1,78 @@
-import com.snapchat.android.model.Friend;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import android.content.Intent;
+import android.text.TextUtils;
+import android.util.Pair;
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.util.debug.ReleaseManager;
 import java.util.List;
 
-public class aoc
-  implements aoe
+public final class aoc
+  extends ana
+  implements ui.b<aoc.b>
 {
-  private final ahe a;
-  private final aoi<Friend> b;
-  private final aog c;
+  public boolean a;
+  public blu b;
+  private final String c;
+  private String d;
+  private String e;
+  private akr f;
+  private ayy g;
+  private aph k;
   
-  public aoc(ahe paramahe)
+  public aoc(Intent paramIntent)
   {
-    this(paramahe, new aoh(), new aog(paramahe.c()));
+    this(paramIntent, akr.a(), ayy.a(), aph.a());
   }
   
-  private aoc(ahe paramahe, aoi<Friend> paramaoi, aog paramaog)
+  private aoc(Intent paramIntent, akr paramakr, ayy paramayy, aph paramaph)
   {
-    a = paramahe;
-    b = paramaoi;
-    c = paramaog;
+    super(paramIntent);
+    f = paramakr;
+    g = paramayy;
+    c = paramIntent.getStringExtra("action");
+    d = paramIntent.getStringExtra("code");
+    e = paramIntent.getStringExtra("type");
+    f = akr.a();
+    k = paramaph;
+    registerCallback(aoc.b.class, this);
   }
   
-  public List<agk> a()
+  public final Object getRequestPayload()
   {
-    ArrayList localArrayList = new ArrayList();
-    localArrayList.addAll(a.b());
-    Object localObject = c.a();
-    if (localObject != null) {
-      localArrayList.addAll((Collection)localObject);
-    }
-    if (c.c()) {
-      localArrayList.add(new aob());
-    }
-    localObject = a.d().iterator();
-    while (((Iterator)localObject).hasNext()) {
-      localArrayList.add((Friend)((Iterator)localObject).next());
-    }
-    localObject = a.a().iterator();
-    while (((Iterator)localObject).hasNext())
+    aoc.a locala = (aoc.a)buildAuthPayload(new aoc.a().a(c).b(d).i(e));
+    if ((TextUtils.equals(c, "verifyPhoneNumber")) && (TextUtils.equals(e, TWO_FA_TYPEvalue)))
     {
-      Friend localFriend = (Friend)((Iterator)localObject).next();
-      if (b.a(localFriend)) {
-        localArrayList.add(localFriend);
+      locala.j(akr.l());
+      Pair localPair = g.a(akr.l(), locala.a(), locala.b());
+      if (localPair == null) {
+        break label118;
       }
+      locala.k((String)first);
+      locala.l((String)second);
     }
-    return localArrayList;
+    label118:
+    while (!ReleaseManager.f()) {
+      return locala;
+    }
+    throw new RuntimeException("null deviceTokenAndSignaturePair");
   }
   
-  @cgc
-  public final List<Friend> b()
+  protected final String l_()
   {
-    return c.b();
+    return "/bq/phone_verify";
   }
   
-  public final boolean c()
+  @ud
+  final class a
+    extends blt
   {
-    return c.c();
+    a() {}
   }
   
-  public final List<Friend> d()
+  public class b
+    extends blu
   {
-    return a.d();
+    @SerializedName("two_fa_verified_devices")
+    List<blr> a;
   }
 }
 

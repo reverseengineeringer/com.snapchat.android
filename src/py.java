@@ -1,184 +1,165 @@
-import android.os.Handler;
-import android.os.Looper;
-import com.snapchat.android.Timber;
-import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import org.apache.commons.lang3.StringUtils;
+import android.os.Bundle;
+import android.os.SystemClock;
+import com.snapchat.android.analytics.framework.ErrorMetric;
+import com.snapchat.android.model.MediaMailingMetadata;
+import com.snapchat.android.model.MediaMailingMetadata.UploadStatus;
+import com.snapchat.android.model.Mediabryo;
+import com.snapchat.android.model.Mediabryo.SnapType;
 
 public class py
-  extends th
-  implements ts.b<biz>
+  extends pk
 {
-  static final int MAX_RETRIES = 3;
-  public static final String PATH = "/loq/register";
-  public static final int SC_SIGNUP_FAILED_EMAIL_EXISTS_CODE = -201;
-  public static final int SC_SIGNUP_FAILED_EMAIL_INVALID_CODE = -200;
-  public static final int SC_SIGNUP_FAILED_PASSWORD_TOO_COMMON_CODE = 8;
-  public static final int SC_SIGNUP_FAILED_PASSWORD_TOO_EASY_CODE = 9;
-  public static final int SC_SIGNUP_FAILED_PASSWORD_TOO_SHORT_CODE = 7;
-  public static final int SC_SIGNUP_FAILED_PASSWORD_TOO_SIMILAR_TO_EMAIL_CODE = 11;
-  public static final int SC_SIGNUP_FAILED_PASSWORD_TOO_SIMILAR_TO_USERNAME_CODE = 10;
-  private static final String TAG = "SignupTask";
-  private String mAge = null;
-  protected String mBirthday = null;
-  private final aya mDeviceTokenManager;
-  protected final String mEmail;
-  private final Handler mHandler;
-  private int mNumRetries = 0;
-  private final String mPassword;
-  private long mRetryMillis = 500L;
-  private final py.b mSignupCallback;
+  private static final String TASK_NAME = "UploadMediaTask";
+  @chc
+  public byte[] mData;
+  protected int mDataLength;
+  public MediaMailingMetadata mMediaMailingMetadata;
+  private final nz mMessagingAnalytics;
+  private final aki mSnapWomb;
+  public aji mSnapbryo;
+  protected akp mUser = akp.g();
+  private final xu mVideoTranscoder;
   
-  static
+  public py(aji paramaji)
   {
-    if (!py.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    this(paramaji, mMediaMailingMetadata, aki.a(), xu.a(), nz.a());
+  }
+  
+  private py(aji paramaji, MediaMailingMetadata paramMediaMailingMetadata, aki paramaki, xu paramxu, nz paramnz)
+  {
+    mSnapbryo = paramaji;
+    mMediaMailingMetadata = paramMediaMailingMetadata;
+    mSnapWomb = paramaki;
+    mVideoTranscoder = paramxu;
+    mMessagingAnalytics = paramnz;
+  }
+  
+  private void a(byte[] paramArrayOfByte)
+  {
+    mData = paramArrayOfByte;
+    if (mData == null) {}
+    for (int i = 0;; i = mData.length)
     {
-      $assertionsDisabled = bool;
+      mDataLength = i;
       return;
     }
   }
   
-  public py(String paramString1, String paramString2, GregorianCalendar paramGregorianCalendar, py.b paramb)
+  private void d()
   {
-    this(paramString1, paramString2, paramGregorianCalendar, paramb, aya.a(), new Handler(Looper.getMainLooper()));
-  }
-  
-  private py(String paramString1, String paramString2, GregorianCalendar paramGregorianCalendar, py.b paramb, aya paramaya, Handler paramHandler)
-  {
-    mEmail = paramString1;
-    mPassword = paramString2;
-    if (paramGregorianCalendar != null)
-    {
-      paramString1 = new SimpleDateFormat("yyyy-MM-dd", new Locale("en"));
-      paramString1.setCalendar(paramGregorianCalendar);
-      mBirthday = paramString1.format(paramGregorianCalendar.getTime());
-      paramString1 = new StringBuilder();
-      paramString2 = new GregorianCalendar();
-      int i = paramString2.get(1);
-      int k = paramString2.get(2);
-      int m = paramString2.get(5);
-      int j = i - paramGregorianCalendar.get(1);
-      if (k >= paramGregorianCalendar.get(2))
+    boolean bool = mMediaMailingMetadata.b();
+    if (mSnapbryo.mSnapType == Mediabryo.SnapType.SNAP) {
+      bool = mMediaMailingMetadata).mShouldExecutePostStoryTaskAfterUpload | bool;
+    }
+    while (bool) {
+      try
       {
-        i = j;
-        if (k == paramGregorianCalendar.get(2))
+        if (mSnapbryo.mSnapType == Mediabryo.SnapType.SNAP)
         {
-          i = j;
-          if (m >= paramGregorianCalendar.get(5)) {}
+          new zp().e(mSnapbryo);
+          return;
         }
+        new zo().a(mSnapbryo);
+        return;
       }
-      else
+      catch (acw.b localb)
       {
-        i = j - 1;
+        new ErrorMetric(localb.getMessage()).a(localb).e();
+        return;
       }
-      mAge = i;
     }
-    mSignupCallback = paramb;
-    mDeviceTokenManager = paramaya;
-    mHandler = paramHandler;
-    a(biz.class, this);
   }
   
-  final void a(@cgc biz parambiz, @cgb uc paramuc)
+  @cbr
+  protected final alp a(String... paramVarArgs)
   {
-    if (parambiz == null)
-    {
-      parambiz = atx.a(null, 2131493328, new Object[0]);
-      mSignupCallback.a(mResponseCode, parambiz);
-      return;
-    }
-    if (!StringUtils.isEmpty(parambiz.d()))
-    {
-      mSignupCallback.a(aud.a(parambiz.e()), parambiz.d());
-      return;
-    }
-    mSignupCallback.a(mEmail, mBirthday, parambiz);
-  }
-  
-  public final void a(@cgb uc paramuc)
-  {
-    int i;
-    if (mResponseCode == 401)
-    {
-      i = mNumRetries;
-      mNumRetries = (i + 1);
-      if (i < 3)
-      {
-        i = 1;
-        Timber.e("SignupTask", "Retry signup after receiving SC_UNAUTHORIZED result.", new Object[0]);
-        mHandler.postDelayed(new Runnable()
-        {
-          public final void run()
-          {
-            py.a(py.this);
-            f();
-          }
-        }, mRetryMillis);
-      }
+    if (mSnapbryo.mSnapType == Mediabryo.SnapType.DISCOVER) {
+      a(axp.a.a().a(mSnapbryo));
     }
     for (;;)
     {
-      if (i == 0) {
-        super.a(paramuc);
+      if (mData == null) {
+        mSnapWomb.a(mSnapbryo);
       }
-      return;
-      i = 0;
+      mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.UPLOADING);
+      return super.a(paramVarArgs);
+      axv.a();
+      a(axv.a(mSnapbryo));
     }
   }
   
-  public final Object b()
+  public String a()
   {
-    py.a locala = new py.a();
-    assert ((locala.a() != null) && (locala.b() != null));
-    locala.p(mEmail);
-    locala.b(mPassword);
-    locala.q(mAge);
-    locala.r(mBirthday);
-    locala.n(lx.a().a(new String[] { mEmail, mPassword, locala.a(), "/loq/register" }));
-    Object localObject = ajx.w();
-    if (localObject != null) {
-      locala.i((String)localObject);
-    }
-    localObject = mDeviceTokenManager.a(false);
-    if ((localObject != null) && (mId != null) && (mValue != null))
+    return "/ph/upload";
+  }
+  
+  public void a(alp paramalp)
+  {
+    super.a(paramalp);
+  }
+  
+  public void a(String paramString, int paramInt)
+  {
+    nz.a(mSnapbryo, SystemClock.elapsedRealtime() - mStartMillis, mDataLength, false, bgp.b());
+    if (mMediaMailingMetadata.mUploadStatus == MediaMailingMetadata.UploadStatus.WILL_UPLOAD_AFTER_SAVE) {}
+    for (;;)
     {
-      locala.j(mId);
-      locala.k(aya.a((axz)localObject, mEmail, mPassword, locala.a(), locala.b()));
+      return;
+      if (!mMediaMailingMetadata.mRetried)
+      {
+        mMediaMailingMetadata.mRetried = true;
+        new py(mSnapbryo, mMediaMailingMetadata, mSnapWomb, mVideoTranscoder, mMessagingAnalytics).executeOnExecutor(avf.NETWORK_EXECUTOR, new String[0]);
+      }
+      while (g() == 413)
+      {
+        paramString = new ErrorMetric("413 REQUEST_ENTITY_TOO_LARGE");
+        if (mSnapbryo.mBaseFilter != null) {
+          paramString.a("filter", mSnapbryo.mBaseFilter.a);
+        }
+        paramString.a("size", Integer.valueOf(mDataLength));
+        paramString.a("type", Integer.valueOf(mSnapbryo.h()));
+        paramString.e();
+        return;
+        mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.FAILED);
+        d();
+      }
+    }
+  }
+  
+  public Bundle b()
+  {
+    Bundle localBundle = new Bundle();
+    localBundle.putString("username", akr.l());
+    localBundle.putString("media_id", mSnapbryo.mClientId);
+    if (mSnapbryo.mSnapType == Mediabryo.SnapType.DISCOVER) {
+      localBundle.putString("type", Integer.toString(4));
     }
     for (;;)
     {
-      localObject = ajx.aE();
-      if ((localObject != null) && (!((String)localObject).equals("{}"))) {
-        locala.s((String)localObject);
-      }
-      return locala;
-      locala.l("1");
+      localBundle.putByteArray("data", mData);
+      return localBundle;
+      localBundle.putString("type", Integer.toString(mSnapbryo.h()));
     }
   }
   
-  protected final String d()
+  public void b(alp paramalp)
   {
-    return "/loq/register";
-  }
-  
-  @tn
-  public static final class a
-    extends biy
-  {
-    a()
-    {
-      ts.b(this);
+    if (mMediaMailingMetadata.mUploadStatus == MediaMailingMetadata.UploadStatus.WILL_UPLOAD_AFTER_SAVE) {
+      return;
     }
+    mSnapWomb.a(mSnapbryo, MediaMailingMetadata.UploadStatus.UPLOADED);
+    nz.a(mSnapbryo, SystemClock.elapsedRealtime() - mStartMillis, mDataLength, true, bgp.b());
+    d();
   }
   
-  public static abstract interface b
+  public String c()
   {
-    public abstract void a(int paramInt, String paramString);
-    
-    public abstract void a(String paramString1, String paramString2, biz parambiz);
+    return "UploadMediaTask";
   }
+  
+  public final class a
+    extends Exception
+  {}
 }
 
 /* Location:

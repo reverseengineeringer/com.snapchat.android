@@ -1,141 +1,474 @@
-.class Lbmh;
-.super Lbzz;
+.class public final Lbmh;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field private a:Z
+.field public final a:Ljava/net/Proxy;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:I
+
+.field final d:Ljavax/net/SocketFactory;
+
+.field final e:Ljavax/net/ssl/SSLSocketFactory;
+
+.field final f:Ljavax/net/ssl/HostnameVerifier;
+
+.field final g:Lbmm;
+
+.field final h:Lbmi;
+
+.field final i:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbna;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final j:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lbmr;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final k:Ljava/net/ProxySelector;
 
 
 # direct methods
-.method public constructor <init>(Lcai;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;ILjavax/net/SocketFactory;Ljavax/net/ssl/SSLSocketFactory;Ljavax/net/ssl/HostnameVerifier;Lbmm;Lbmi;Ljava/net/Proxy;Ljava/util/List;Ljava/util/List;Ljava/net/ProxySelector;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "I",
+            "Ljavax/net/SocketFactory;",
+            "Ljavax/net/ssl/SSLSocketFactory;",
+            "Ljavax/net/ssl/HostnameVerifier;",
+            "Lbmm;",
+            "Lbmi;",
+            "Ljava/net/Proxy;",
+            "Ljava/util/List",
+            "<",
+            "Lbna;",
+            ">;",
+            "Ljava/util/List",
+            "<",
+            "Lbmr;",
+            ">;",
+            "Ljava/net/ProxySelector;",
+            ")V"
+        }
+    .end annotation
 
     .prologue
-    .line 13
-    invoke-direct {p0, p1}, Lbzz;-><init>(Lcai;)V
+    .line 54
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
+    .line 55
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "uriHost == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 56
+    :cond_0
+    if-gtz p2, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "uriPort <= 0: "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 57
+    :cond_1
+    if-nez p7, :cond_2
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "authenticator == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 58
+    :cond_2
+    if-nez p9, :cond_3
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "protocols == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 59
+    :cond_3
+    if-nez p11, :cond_4
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "proxySelector == null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 60
+    :cond_4
+    iput-object p8, p0, Lbmh;->a:Ljava/net/Proxy;
+
+    .line 61
+    iput-object p1, p0, Lbmh;->b:Ljava/lang/String;
+
+    .line 62
+    iput p2, p0, Lbmh;->c:I
+
+    .line 63
+    iput-object p3, p0, Lbmh;->d:Ljavax/net/SocketFactory;
+
+    .line 64
+    iput-object p4, p0, Lbmh;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    .line 65
+    iput-object p5, p0, Lbmh;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    .line 66
+    iput-object p6, p0, Lbmh;->g:Lbmm;
+
+    .line 67
+    iput-object p7, p0, Lbmh;->h:Lbmi;
+
+    .line 68
+    invoke-static {p9}, Lbnq;->a(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbmh;->i:Ljava/util/List;
+
+    .line 69
+    invoke-static {p10}, Lbnq;->a(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbmh;->j:Ljava/util/List;
+
+    .line 70
+    iput-object p11, p0, Lbmh;->k:Ljava/net/ProxySelector;
+
+    .line 71
     return-void
 .end method
 
 
 # virtual methods
-.method protected a()V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .prologue
-    .line 50
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method public final a_(Lbzu;J)V
-    .locals 2
+    .line 143
+    instance-of v1, p1, Lbmh;
 
-    .prologue
-    .line 17
-    iget-boolean v0, p0, Lbmh;->a:Z
+    if-eqz v1, :cond_0
 
-    if-eqz v0, :cond_0
+    .line 144
+    check-cast p1, Lbmh;
 
-    .line 18
-    invoke-virtual {p1, p2, p3}, Lbzu;->f(J)V
+    .line 145
+    iget-object v1, p0, Lbmh;->a:Ljava/net/Proxy;
 
-    .line 27
-    :goto_0
-    return-void
+    iget-object v2, p1, Lbmh;->a:Ljava/net/Proxy;
 
-    .line 22
-    :cond_0
-    :try_start_0
-    invoke-super {p0, p1, p2, p3}, Lbzz;->a_(Lbzu;J)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {v1, v2}, Lbnq;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    goto :goto_0
+    move-result v1
 
-    .line 24
-    :catch_0
-    move-exception v0
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbmh;->b:Ljava/lang/String;
+
+    iget-object v2, p1, Lbmh;->b:Ljava/lang/String;
+
+    .line 146
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget v1, p0, Lbmh;->c:I
+
+    iget v2, p1, Lbmh;->c:I
+
+    if-ne v1, v2, :cond_0
+
+    iget-object v1, p0, Lbmh;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    iget-object v2, p1, Lbmh;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    .line 148
+    invoke-static {v1, v2}, Lbnq;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbmh;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    iget-object v2, p1, Lbmh;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    .line 149
+    invoke-static {v1, v2}, Lbnq;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbmh;->g:Lbmm;
+
+    iget-object v2, p1, Lbmh;->g:Lbmm;
+
+    .line 150
+    invoke-static {v1, v2}, Lbnq;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbmh;->h:Lbmi;
+
+    iget-object v2, p1, Lbmh;->h:Lbmi;
+
+    .line 151
+    invoke-static {v1, v2}, Lbnq;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbmh;->i:Ljava/util/List;
+
+    iget-object v2, p1, Lbmh;->i:Ljava/util/List;
+
+    .line 152
+    invoke-static {v1, v2}, Lbnq;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbmh;->j:Ljava/util/List;
+
+    iget-object v2, p1, Lbmh;->j:Ljava/util/List;
+
+    .line 153
+    invoke-static {v1, v2}, Lbnq;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbmh;->k:Ljava/net/ProxySelector;
+
+    iget-object v2, p1, Lbmh;->k:Ljava/net/ProxySelector;
+
+    .line 154
+    invoke-static {v1, v2}, Lbnq;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lbmh;->a:Z
-
-    .line 25
-    invoke-virtual {p0}, Lbmh;->a()V
-
-    goto :goto_0
+    .line 156
+    :cond_0
+    return v0
 .end method
 
-.method public close()V
-    .locals 1
+.method public final hashCode()I
+    .locals 3
 
     .prologue
-    .line 40
-    iget-boolean v0, p0, Lbmh;->a:Z
+    const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    .line 160
+    iget-object v0, p0, Lbmh;->a:Ljava/net/Proxy;
 
-    .line 47
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lbmh;->a:Ljava/net/Proxy;
+
+    invoke-virtual {v0}, Ljava/net/Proxy;->hashCode()I
+
+    move-result v0
+
     :goto_0
-    return-void
+    add-int/lit16 v0, v0, 0x20f
 
-    .line 42
+    .line 162
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lbmh;->b:Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    .line 163
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v2, p0, Lbmh;->c:I
+
+    add-int/2addr v0, v2
+
+    .line 164
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lbmh;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lbmh;->e:Ljavax/net/ssl/SSLSocketFactory;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    add-int/2addr v0, v2
+
+    .line 165
+    mul-int/lit8 v2, v0, 0x1f
+
+    iget-object v0, p0, Lbmh;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lbmh;->f:Ljavax/net/ssl/HostnameVerifier;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    .line 166
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lbmh;->g:Lbmm;
+
+    if-eqz v2, :cond_0
+
+    iget-object v1, p0, Lbmh;->g:Lbmm;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
     :cond_0
-    :try_start_0
-    invoke-super {p0}, Lbzz;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    add-int/2addr v0, v1
 
+    .line 167
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lbmh;->h:Lbmi;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 168
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lbmh;->i:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 169
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lbmh;->j:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 170
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lbmh;->k:Ljava/net/ProxySelector;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 171
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    .line 160
     goto :goto_0
 
-    .line 44
-    :catch_0
-    move-exception v0
+    :cond_2
+    move v0, v1
 
-    const/4 v0, 0x1
+    .line 164
+    goto :goto_1
 
-    iput-boolean v0, p0, Lbmh;->a:Z
+    :cond_3
+    move v0, v1
 
-    .line 45
-    invoke-virtual {p0}, Lbmh;->a()V
-
-    goto :goto_0
-.end method
-
-.method public flush()V
-    .locals 1
-
-    .prologue
-    .line 30
-    iget-boolean v0, p0, Lbmh;->a:Z
-
-    if-eqz v0, :cond_0
-
-    .line 37
-    :goto_0
-    return-void
-
-    .line 32
-    :cond_0
-    :try_start_0
-    invoke-super {p0}, Lbzz;->flush()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 34
-    :catch_0
-    move-exception v0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lbmh;->a:Z
-
-    .line 35
-    invoke-virtual {p0}, Lbmh;->a()V
-
-    goto :goto_0
+    .line 165
+    goto :goto_2
 .end method

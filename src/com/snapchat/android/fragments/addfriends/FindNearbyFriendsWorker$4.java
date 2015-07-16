@@ -7,7 +7,7 @@ final class FindNearbyFriendsWorker$4
   
   public final void run()
   {
-    FindNearbyFriendsWorker.a(a).q();
+    FindNearbyFriendsWorker.a(a).r();
   }
 }
 

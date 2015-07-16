@@ -1,24 +1,24 @@
 package com.snapchat.android.fragments.settings.password;
 
-import amk;
-import ana;
-import aok;
-import aol;
+import anh;
+import anx;
+import apg;
+import aph;
 import java.util.Set;
 
 final class PasswordValidationFragment$1
-  implements aok
+  implements apg
 {
   PasswordValidationFragment$1(PasswordValidationFragment paramPasswordValidationFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
+    int i = aph.a(paramanh);
     if (PasswordValidationFragment.a(a).contains(Integer.valueOf(i)))
     {
       PasswordValidationFragment.a(a).remove(Integer.valueOf(i));
-      if ((paramamk instanceof ana)) {
-        PasswordValidationFragment.a(a, (ana)paramamk);
+      if ((paramanh instanceof anx)) {
+        PasswordValidationFragment.a(a, (anx)paramanh);
       }
     }
   }

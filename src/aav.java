@@ -1,17 +1,14 @@
-public final class aav
-  extends zx
+import com.snapchat.android.database.DataType;
+
+public abstract interface aav
 {
-  private static final aav a = new aav();
+  public abstract String getColumnName();
   
-  private aav()
-  {
-    super("ProfileImageFile", awq.PROFILE_IMAGE_CACHE);
-  }
+  public abstract int getColumnNumber();
   
-  public static aav a()
-  {
-    return a;
-  }
+  public abstract String getConstraints();
+  
+  public abstract DataType getDataType();
 }
 
 /* Location:

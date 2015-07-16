@@ -1,99 +1,146 @@
-import android.content.Context;
-import com.snapchat.android.Timber;
-import com.snapchat.android.model.Mediabryo.SnapType;
-import com.snapchat.android.ui.SwipeImageView;
-import com.snapchat.android.ui.smartfilters.GeofilterView;
-import com.snapchat.android.ui.swipefilters.FilterPageType;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import com.snapchat.android.ads.AdRequestError;
+import com.snapchat.android.ads.AdResolutionState;
+import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
+import com.snapchat.android.rendering.SnapMediaRenderer;
+import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
 
 public final class asl
-  extends asj
+  implements asi
 {
-  final aic a;
-  private final aru b;
-  private final arx c;
-  private Mediabryo.SnapType d;
+  private final zs a;
+  private final aka b;
+  private final ajk c;
+  private final apl d;
+  private asj e;
   
-  private asl(aic paramaic, aru paramaru, arx paramarx, Mediabryo.SnapType paramSnapType)
+  public asl(aka paramaka, ajk paramajk)
   {
-    a = paramaic;
-    b = paramaru;
-    c = paramarx;
-    d = paramSnapType;
+    this(new zs(), paramaka, paramajk, apl.a());
   }
   
-  private asl(aic paramaic, aru paramaru, Mediabryo.SnapType paramSnapType)
+  private asl(zs paramzs, aka paramaka, ajk paramajk, apl paramapl)
   {
-    this(paramaic, paramaru, new arx(), paramSnapType);
+    a = paramzs;
+    b = paramaka;
+    c = paramajk;
+    d = paramapl;
   }
   
-  public asl(Mediabryo.SnapType paramSnapType)
+  @chc
+  public final aka a()
   {
-    this(aid.a(), new ary(), paramSnapType);
+    return b;
   }
   
-  static List<arn> a(List<aiv> paramList, Context paramContext)
+  public final void a(asj paramasj)
   {
-    int i = paramList.size();
-    Timber.c("RefreshGeofilterPagesOperation", "Have " + i + " geofilters returned from server", new Object[0]);
-    ArrayList localArrayList = new ArrayList(i);
-    paramList = paramList.iterator();
-    while (paramList.hasNext())
+    e = paramasj;
+  }
+  
+  public final void a(boolean paramBoolean) {}
+  
+  @chd
+  public final ajk b()
+  {
+    return c;
+  }
+  
+  @chc
+  public final SnapMediaRenderer c()
+  {
+    return null;
+  }
+  
+  public final boolean e()
+  {
+    return false;
+  }
+  
+  public final boolean f()
+  {
+    return false;
+  }
+  
+  public final void g()
+  {
+    akj localakj;
+    Object localObject;
+    apl localapl;
+    lx locallx;
+    if (b.W())
     {
-      aiv localaiv = (aiv)paramList.next();
-      localArrayList.add(new asb(localaiv, new GeofilterView(paramContext, localaiv)));
+      localakj = (akj)b;
+      if (mAdResolutionState != AdResolutionState.NO_FILL) {
+        break label192;
+      }
+      localObject = SnapViewSessionStopReason.UNFILLED_AD_PLACEHOLDER;
+      c.a(localakj, (SnapViewSessionStopReason)localObject, 0);
+      localapl = d;
+      locallx = new lx();
+      posterId = mUsername;
+      adsnapId = mAdKey;
+      storySnapId = localakj.d();
+      localObject = mResponse.mAdRequestError;
+      if ((localObject != null) && (mErrorCode != null)) {
+        break label199;
+      }
+      localObject = fz.FAILED;
     }
-    Timber.c("RefreshGeofilterPagesOperation", "createFilterPagesForGeofilters has " + localArrayList.size() + " current geofilters", new Object[0]);
-    return localArrayList;
-  }
-  
-  final void a(arw<arn> paramarw, SwipeImageView paramSwipeImageView, List<arn> paramList)
-  {
-    int i = paramList.size() - 1;
-    if (i >= 0)
+    for (;;)
     {
-      arn localarn = (arn)paramList.get(i);
-      if (((localarn instanceof asb)) && (d == Mediabryo.SnapType.DISCOVER) && (b.mIsSponsored)) {}
-      for (int j = 0;; j = 1)
+      additionalInfo = ((fz)localObject);
+      viewLocation = b.c;
+      storyType = apl.c(localakj);
+      adIndexPos = Long.valueOf(mAdPosition);
+      if (apl.a(localakj)) {
+        geoFence = "LOCAL";
+      }
+      ScAnalyticsEventEngine.a(locallx);
+      a.b(b);
+      e.a(this, SnapViewSessionStopReason.UNFILLED_AD_PLACEHOLDER);
+      return;
+      label192:
+      localObject = SnapViewSessionStopReason.ERROR_UNABLE_TO_SHOW_MEDIA;
+      break;
+      label199:
+      switch (apl.1.a[mErrorCode.ordinal()])
       {
-        if (j != 0)
-        {
-          paramarw.a((arn)paramList.get(i));
-          b.a(localarn);
-          paramSwipeImageView.a(localarn);
-        }
-        i -= 1;
+      default: 
+        localObject = fz.FAILED;
         break;
+      case 1: 
+        localObject = fz.SERVER_INTERNAL_ERROR;
+        break;
+      case 2: 
+        localObject = fz.SERVER_INVALID_REQUEST_ERROR;
+        break;
+      case 3: 
+        localObject = fz.SERVER_NETWORK_ERROR;
+        break;
+      case 4: 
+        localObject = fz.SERVER_NO_FILL_ERROR;
+        break;
+      case 5: 
+        localObject = fz.SERVER_OTHER_ERROR;
+        break;
+      case 6: 
+        localObject = fz.CONTENT_NO_FILL;
+        break;
+      case 7: 
+        localObject = fz.TIMEOUT;
+        break;
+      case 8: 
+      case 9: 
+      case 10: 
+      case 11: 
+        localObject = fz.CLIENT_ERROR;
       }
     }
   }
   
-  public final void a(final SwipeImageView paramSwipeImageView, final arw<arn> paramarw)
-  {
-    bgp.b(new Runnable()
-    {
-      public final void run()
-      {
-        asl localasl = asl.this;
-        SwipeImageView localSwipeImageView = paramSwipeImageView;
-        arw localarw = paramarw;
-        Timber.c("RefreshGeofilterPagesOperation", "Updating geofilter pages", new Object[0]);
-        Object localObject = a.c();
-        ArrayList localArrayList = new ArrayList(((List)localObject).size());
-        localObject = ((List)localObject).iterator();
-        while (((Iterator)localObject).hasNext())
-        {
-          aiv localaiv = (aiv)((Iterator)localObject).next();
-          if (mBitmap != null) {
-            localArrayList.add(localaiv);
-          }
-        }
-        bgp.a(new asl.2(localasl, localSwipeImageView, localarw, localArrayList));
-      }
-    });
-  }
+  public final void h() {}
+  
+  public final void i() {}
 }
 
 /* Location:

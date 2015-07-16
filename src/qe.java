@@ -1,27 +1,48 @@
+import com.google.gson.annotations.SerializedName;
+import com.snapchat.android.util.debug.ScApplicationInfo;
+
 public final class qe
-  implements buo<qd>
+  extends tx
 {
-  private final buj<qd> membersInjector;
+  private static final String TAG = "DeviceSyncTask";
+  private final String mGcmRegistrationId;
   
-  static
+  public qe(String paramString)
   {
-    if (!qe.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
+    mGcmRegistrationId = paramString;
+  }
+  
+  protected final String getPath()
+  {
+    return "/ph/device";
+  }
+  
+  public final void onResult(@chc us paramus)
+  {
+    super.onResult(paramus);
+    if (paramus.d())
     {
-      $assertionsDisabled = bool;
+      akr.f(mGcmRegistrationId);
       return;
     }
+    new StringBuilder("DeviceSyncTask failed: ").append(mResponseMessage);
   }
   
-  private qe(buj<qd> parambuj)
+  @ud
+  public static final class a
+    extends qc
   {
-    assert (parambuj != null);
-    membersInjector = parambuj;
-  }
-  
-  public static buo<qd> a(buj<qd> parambuj)
-  {
-    return new qe(parambuj);
+    @SerializedName("application_id")
+    static final String APPLICATION_ID = ;
+    @SerializedName("type")
+    static final String DEVICE_TYPE = "android";
+    @SerializedName("device_token")
+    final String mGcmRegistrationId;
+    
+    a(String paramString)
+    {
+      mGcmRegistrationId = paramString;
+    }
   }
 }
 

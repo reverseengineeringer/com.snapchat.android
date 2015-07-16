@@ -1,75 +1,35 @@
-import android.view.View;
-import android.view.View.OnClickListener;
-import com.snapchat.android.Timber;
-import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
-import com.snapchat.android.discover.model.server.DiscoverLinkStatusResult;
-import com.snapchat.android.discover.model.server.DiscoverLinkStatusResult.LinkStatus;
-import com.squareup.otto.Bus;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnPreparedListener;
+import com.snapchat.android.ui.TextureVideoView;
 
 final class afu$2
-  implements View.OnClickListener
+  implements MediaPlayer.OnPreparedListener
 {
   afu$2(afu paramafu) {}
   
-  public final void onClick(View paramView)
+  public final void onPrepared(MediaPlayer paramMediaPlayer)
   {
-    String str1 = null;
-    if (a.l != null) {
-      a.l.a(a.a);
-    }
-    adl localadl = a.b;
-    DiscoverLinkStatusResult localDiscoverLinkStatusResult = a.j;
-    boolean bool = a.a.mLinkToLongform;
-    String str3 = afu.a(a);
-    paramView = mLinkStatus;
-    if (paramView == DiscoverLinkStatusResult.LinkStatus.FAILED)
+    a.j = paramMediaPlayer.getVideoWidth();
+    a.k = paramMediaPlayer.getVideoHeight();
+    a.h = paramMediaPlayer.getDuration();
+    a.f = 2;
+    a.i = 0;
+    a.g = 0;
+    final afq localafq = a.e;
+    if (localafq != null)
     {
-      Timber.e("DiscoverDeepLinkController", "Trying to go back to Discover when linking failed!", new Object[0]);
+      if (!a.a) {
+        a.b.postDelayed(new Runnable()
+        {
+          public final void run()
+          {
+            localafq.b();
+          }
+        }, 250L);
+      }
       return;
     }
-    String str2;
-    if ((mAdType == 0) && ((paramView == DiscoverLinkStatusResult.LinkStatus.ARCHIVED) || (paramView == DiscoverLinkStatusResult.LinkStatus.LIVE)))
-    {
-      str2 = mDSnapId;
-      str1 = mEditionId;
-    }
-    for (;;)
-    {
-      if (str2 == null) {
-        bool = false;
-      }
-      Timber.a("DiscoverDeepLinkController", "DISCOVER-LINK: Going to Discover! Publisher: %s Edition: %s DSnap: %s", new Object[] { mPublisherInternationalName, str1, str2 });
-      if (str2 != null) {
-        if (bool) {
-          paramView = ib.LONG_FORM;
-        }
-      }
-      for (;;)
-      {
-        String str4 = mEditionId;
-        String str5 = mDSnapId;
-        he localhe = new he();
-        if (str3 != null) {
-          publisherId = str3;
-        }
-        if (str5 != null) {
-          dsnapId = str5;
-        }
-        editionId = str4;
-        pageSection = paramView;
-        ScAnalyticsEventEngine.a(localhe);
-        b.a(new aez(mPublisherInternationalName, str1, str2, bool));
-        return;
-        paramView = ib.TOP_SNAP;
-        continue;
-        if (str3 != null) {
-          paramView = ib.SPLASH;
-        } else {
-          paramView = ib.HOME;
-        }
-      }
-      str2 = null;
-    }
+    paramMediaPlayer.setLooping(a.d);
   }
 }
 

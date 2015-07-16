@@ -22,7 +22,7 @@
 .method public final a(Landroid/app/Activity;)V
     .locals 0
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -34,23 +34,23 @@
 .method public final a(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
     .locals 0
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p3    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p4    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p5    # Ljava/util/Map;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
@@ -82,7 +82,7 @@
 
     .prologue
     .line 22
-    invoke-static {p1}, Lazk;->a(Ljava/lang/String;)V
+    invoke-static {p1}, Lbaj;->a(Ljava/lang/String;)V
 
     .line 23
     return-void
@@ -91,7 +91,7 @@
 .method public final b(Landroid/app/Activity;)V
     .locals 0
     .param p1    # Landroid/app/Activity;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

@@ -1,52 +1,58 @@
-import java.lang.reflect.Method;
+import java.net.ProtocolException;
 
 public final class bod
+  implements cbj
 {
-  public final Object a;
-  public final Method b;
-  public boolean c = true;
-  private final int d;
+  public final cav a = new cav();
+  private boolean b;
+  private final int c;
   
-  bod(Object paramObject, Method paramMethod)
+  public bod()
   {
-    if (paramObject == null) {
-      throw new NullPointerException("EventHandler target cannot be null.");
-    }
-    if (paramMethod == null) {
-      throw new NullPointerException("EventHandler method cannot be null.");
-    }
-    a = paramObject;
-    b = paramMethod;
-    paramMethod.setAccessible(true);
-    d = ((paramMethod.hashCode() + 31) * 31 + paramObject.hashCode());
+    this(-1);
   }
   
-  public final boolean equals(Object paramObject)
+  public bod(int paramInt)
   {
-    if (this == paramObject) {}
+    c = paramInt;
+  }
+  
+  public final cbl E_()
+  {
+    return cbl.b;
+  }
+  
+  public final void a(cbj paramcbj)
+  {
+    cav localcav = new cav();
+    a.a(localcav, 0L, a.b);
+    paramcbj.a_(localcav, b);
+  }
+  
+  public final void a_(cav paramcav, long paramLong)
+  {
+    if (b) {
+      throw new IllegalStateException("closed");
+    }
+    bnq.a(b, paramLong);
+    if ((c != -1) && (a.b > c - paramLong)) {
+      throw new ProtocolException("exceeded content-length limit of " + c + " bytes");
+    }
+    a.a_(paramcav, paramLong);
+  }
+  
+  public final void close()
+  {
+    if (b) {}
     do
     {
-      return true;
-      if (paramObject == null) {
-        return false;
-      }
-      if (getClass() != paramObject.getClass()) {
-        return false;
-      }
-      paramObject = (bod)paramObject;
-    } while ((b.equals(b)) && (a == a));
-    return false;
+      return;
+      b = true;
+    } while (a.b >= c);
+    throw new ProtocolException("content-length promised " + c + " bytes, but received " + a.b);
   }
   
-  public final int hashCode()
-  {
-    return d;
-  }
-  
-  public final String toString()
-  {
-    return "[EventHandler " + b + "]";
-  }
+  public final void flush() {}
 }
 
 /* Location:

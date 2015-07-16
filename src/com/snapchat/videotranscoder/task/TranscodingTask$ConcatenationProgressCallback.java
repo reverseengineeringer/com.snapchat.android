@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.task;
 
-import cgb;
+import chc;
 
 class TranscodingTask$ConcatenationProgressCallback
   implements Task.ProgressUpdateCallback
@@ -9,7 +9,7 @@ class TranscodingTask$ConcatenationProgressCallback
   final long mSourceDuration;
   final Task.ProgressUpdateCallback mTotalProgressUpdateCallback;
   
-  public TranscodingTask$ConcatenationProgressCallback(TranscodingTask paramTranscodingTask, @cgb MediaSource paramMediaSource, @cgb Task.ProgressUpdateCallback paramProgressUpdateCallback)
+  public TranscodingTask$ConcatenationProgressCallback(TranscodingTask paramTranscodingTask, @chc MediaSource paramMediaSource, @chc Task.ProgressUpdateCallback paramProgressUpdateCallback)
   {
     mMediaSource = paramMediaSource;
     mTotalProgressUpdateCallback = paramProgressUpdateCallback;

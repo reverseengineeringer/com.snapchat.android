@@ -35,11 +35,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bws.a;
-import bws.b;
-import bws.c;
-import bwt;
-import bwu;
+import bxt.a;
+import bxt.b;
+import bxt.c;
+import bxu;
+import bxv;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -54,8 +54,8 @@ public class SnapchatTimePicker
   private int A;
   private int B = Integer.MIN_VALUE;
   private int C;
-  private final bwt D;
-  private final bwt E;
+  private final bxu D;
+  private final bxu E;
   private int F;
   private b G;
   private float H;
@@ -114,13 +114,13 @@ public class SnapchatTimePicker
   
   public SnapchatTimePicker(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, bws.a.snapchatTimePickerStyle);
+    this(paramContext, paramAttributeSet, bxt.a.snapchatTimePickerStyle);
   }
   
   public SnapchatTimePicker(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
   {
     super(paramContext, paramAttributeSet);
-    paramAttributeSet = paramContext.obtainStyledAttributes(paramAttributeSet, bws.c.SnapchatTimePicker, paramInt, 0);
+    paramAttributeSet = paramContext.obtainStyledAttributes(paramAttributeSet, bxt.c.SnapchatTimePicker, paramInt, 0);
     paramInt = paramAttributeSet.getResourceId(8, 0);
     if (paramInt != 0) {}
     for (boolean bool = true;; bool = false)
@@ -160,7 +160,7 @@ public class SnapchatTimePicker
         public final void onClick(View paramAnonymousView)
         {
           SnapchatTimePicker.a(SnapchatTimePicker.this).clearFocus();
-          if (paramAnonymousView.getId() == bws.b.np__increment)
+          if (paramAnonymousView.getId() == bxt.b.np__increment)
           {
             SnapchatTimePicker.a(SnapchatTimePicker.this, true);
             return;
@@ -173,7 +173,7 @@ public class SnapchatTimePicker
         public final boolean onLongClick(View paramAnonymousView)
         {
           SnapchatTimePicker.a(SnapchatTimePicker.this).clearFocus();
-          if (paramAnonymousView.getId() == bws.b.np__increment)
+          if (paramAnonymousView.getId() == bxt.b.np__increment)
           {
             SnapchatTimePicker.b(SnapchatTimePicker.this, true);
             return true;
@@ -185,20 +185,20 @@ public class SnapchatTimePicker
       if (Q) {
         break label755;
       }
-      b = ((ImageButton)findViewById(bws.b.np__increment));
+      b = ((ImageButton)findViewById(bxt.b.np__increment));
       b.setOnClickListener(paramAttributeSet);
       b.setOnLongClickListener(local2);
       label395:
       if (Q) {
         break label763;
       }
-      c = ((ImageButton)findViewById(bws.b.np__decrement));
+      c = ((ImageButton)findViewById(bxt.b.np__decrement));
       c.setOnClickListener(paramAttributeSet);
       c.setOnLongClickListener(local2);
     }
     for (;;)
     {
-      d = ((TextView)findViewById(bws.b.np__numberpicker_input));
+      d = ((TextView)findViewById(bxt.b.np__numberpicker_input));
       paramContext = ViewConfiguration.get(paramContext);
       L = paramContext.getScaledTouchSlop();
       M = paramContext.getScaledMinimumFlingVelocity();
@@ -214,15 +214,15 @@ public class SnapchatTimePicker
       y = new Paint();
       y.setAntiAlias(true);
       y.setTextAlign(Paint.Align.CENTER);
-      y.setTypeface(bwu.a);
+      y.setTypeface(bxv.a);
       y.setTextSize(e);
       y.setColor(-16777216);
       z = new Paint(y);
       z.setColor(Color.argb(150, 0, 0, 0));
-      z.setTypeface(bwu.a);
+      z.setTypeface(bxv.a);
       z.setTextSize(e / 1.7F);
-      D = new bwt(getContext(), null, (byte)0);
-      E = new bwt(getContext(), new DecelerateInterpolator(2.5F));
+      D = new bxu(getContext(), null, (byte)0);
+      E = new bxu(getContext(), new DecelerateInterpolator(2.5F));
       c();
       if ((Build.VERSION.SDK_INT >= 16) && (getImportantForAccessibility() == 0)) {
         setImportantForAccessibility(1);
@@ -399,7 +399,7 @@ public class SnapchatTimePicker
     }
   }
   
-  private boolean a(bwt parambwt)
+  private boolean a(bxu parambxu)
   {
     d = true;
     int i3 = b - c;
@@ -572,18 +572,18 @@ public class SnapchatTimePicker
   
   public void computeScroll()
   {
-    bwt localbwt2 = D;
-    bwt localbwt1 = localbwt2;
+    bxu localbxu2 = D;
+    bxu localbxu1 = localbxu2;
     if (d)
     {
-      localbwt2 = E;
-      localbwt1 = localbwt2;
+      localbxu2 = E;
+      localbxu1 = localbxu2;
       if (!d) {}
     }
     do
     {
       return;
-      localbwt1.a();
+      localbxu1.a();
       int i1 = c;
       if (F == 0) {
         F = a;
@@ -593,7 +593,7 @@ public class SnapchatTimePicker
       if (!d) {
         break;
       }
-      if (localbwt1 == D)
+      if (localbxu1 == D)
       {
         if (!e()) {
           c();

@@ -1,7 +1,5 @@
 package com.snapchat.android.fragments.settings.twofa;
 
-import amk;
-import anc;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
@@ -11,11 +9,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import aok;
-import aol;
-import aqb;
-import ban;
-import bdw;
+import anh;
+import anz;
+import apg;
+import aph;
+import ara;
+import bbo;
+import bev;
 import cf;
 import com.snapchat.android.fragments.addfriends.LeftSwipeContentFragment;
 import com.snapchat.android.util.fragment.SnapchatFragment;
@@ -28,16 +28,16 @@ public class TwoFactorSettingsEnabledFragment
 {
   private CheckBox a;
   private final Set<Integer> b = new HashSet();
-  private final aol c;
-  private aok d = new aok()
+  private final aph c;
+  private apg d = new apg()
   {
-    public final void a(amk paramAnonymousamk)
+    public final void a(anh paramAnonymousanh)
     {
-      int i = aol.a(paramAnonymousamk);
+      int i = aph.a(paramAnonymousanh);
       if (TwoFactorSettingsEnabledFragment.a(TwoFactorSettingsEnabledFragment.this).contains(Integer.valueOf(i)))
       {
         TwoFactorSettingsEnabledFragment.a(TwoFactorSettingsEnabledFragment.this).remove(Integer.valueOf(i));
-        if ((paramAnonymousamk instanceof anc)) {
+        if ((paramAnonymousanh instanceof anz)) {
           TwoFactorSettingsEnabledFragment.a(TwoFactorSettingsEnabledFragment.this, b);
         }
       }
@@ -46,14 +46,14 @@ public class TwoFactorSettingsEnabledFragment
   
   public TwoFactorSettingsEnabledFragment()
   {
-    this(aol.a());
+    this(aph.a());
   }
   
   @SuppressLint({"ValidFragment"})
   @cf
-  private TwoFactorSettingsEnabledFragment(aol paramaol)
+  private TwoFactorSettingsEnabledFragment(aph paramaph)
   {
-    c = paramaol;
+    c = paramaph;
   }
   
   public final boolean g()
@@ -66,35 +66,35 @@ public class TwoFactorSettingsEnabledFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968768, paramViewGroup, false);
-    c(2131362808).setOnClickListener(new View.OnClickListener()
+    mFragmentLayout = paramLayoutInflater.inflate(2130968770, paramViewGroup, false);
+    c(2131362801).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
         getActivity().onBackPressed();
       }
     });
-    a = ((CheckBox)c(2131362812));
+    a = ((CheckBox)c(2131362805));
     a.setChecked(true);
-    c(2131362813).setOnClickListener(new View.OnClickListener()
+    c(2131362806).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(new RecoveryCodeFragment()));
+        bbo.a().a(new bev(new RecoveryCodeFragment()));
       }
     });
-    c(2131362814).setOnClickListener(new View.OnClickListener()
+    c(2131362807).setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        ban.a().a(new bdw(new ForgetDeviceFragment()));
+        bbo.a().a(new bev(new ForgetDeviceFragment()));
       }
     });
     a.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
       {
-        new aqb(getActivity(), getString(2131493572), getString(2131493603), getString(2131492952))
+        new ara(getActivity(), getString(2131493570), getString(2131493601), getString(2131492952))
         {
           protected final void a()
           {

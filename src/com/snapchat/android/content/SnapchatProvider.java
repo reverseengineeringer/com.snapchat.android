@@ -1,7 +1,7 @@
 package com.snapchat.android.content;
 
-import aaq;
-import abf;
+import abp;
+import acf;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,7 +10,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.snapchat.android.Timber;
 import com.snapchat.android.database.DatabaseHelper;
 import com.snapchat.android.database.schema.HttpMetricSchema;
 import com.snapchat.android.database.schema.VerifiedDeviceSchema;
@@ -21,6 +20,8 @@ import com.snapchat.android.discover.model.database.vtable.DSnapPageVirtualTable
 import com.snapchat.android.discover.model.database.vtable.PublisherAndEditionVirtualTable;
 import com.snapchat.android.discover.model.database.vtable.PublisherAndEditionVirtualTable.ChannelSchema;
 import java.util.List;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class SnapchatProvider
   extends ContentProvider
@@ -75,13 +76,15 @@ public class SnapchatProvider
   
   public boolean onCreate()
   {
+    kkxxkk.b041E041EОО041EО(getContext());
+    xkkkxk.b041E041EООО041E(getContext());
     return false;
   }
   
   public Cursor query(Uri paramUri, String[] paramArrayOfString1, String paramString1, String[] paramArrayOfString2, String paramString2)
   {
     int i = e.match(paramUri);
-    Timber.a("SnapchatProvider", "query " + paramUri + " -> " + i, new Object[0]);
+    new StringBuilder("query ").append(paramUri).append(" -> ").append(i);
     String str2 = paramUri.getQueryParameter("limit");
     SQLiteQueryBuilder localSQLiteQueryBuilder = new SQLiteQueryBuilder();
     Object localObject = paramArrayOfString2;
@@ -97,12 +100,10 @@ public class SnapchatProvider
       throw new IllegalArgumentException("Unknown URI " + paramUri);
     case 4: 
       localObject = (String)paramUri.getPathSegments().get(1);
-      Timber.a("SnapchatProvider", "CODE_CHAT_BY_CONVERSATION_ID " + (String)localObject, new Object[0]);
       localSQLiteQueryBuilder.appendWhere(ChatTable.ChatSchema.CONVERSATION_ID.getColumnName());
       localSQLiteQueryBuilder.appendWhere("=?");
       localObject = a(paramArrayOfString2, new String[] { localObject });
     case 3: 
-      Timber.a("SnapchatProvider", "CODE_CHAT_ALL", new Object[0]);
       localSQLiteQueryBuilder.setTables("Chat");
       localSQLiteQueryBuilder.setProjectionMap(ChatTable.b);
       paramArrayOfString2 = null;
@@ -115,29 +116,26 @@ public class SnapchatProvider
         paramArrayOfString1 = localSQLiteQueryBuilder.query(DatabaseHelper.a(getContext()).getReadableDatabase(), paramArrayOfString1, paramString1, (String[])localObject, null, null, paramString2, str2);
         paramArrayOfString1.setNotificationUri(getContext().getContentResolver(), paramUri);
         return paramArrayOfString1;
-        Timber.a("SnapchatProvider", "CODE_HTTP_METRICS_ALL", new Object[0]);
         localSQLiteQueryBuilder.setTables("HttpMetrics");
-        localSQLiteQueryBuilder.setProjectionMap(aaq.b);
+        localSQLiteQueryBuilder.setProjectionMap(abp.b);
         if (!TextUtils.isEmpty(paramString2)) {
-          break label749;
+          break label632;
         }
         paramString2 = HttpMetricSchema.TIMESTAMP.getColumnName() + " DESC";
         str1 = null;
         localObject = paramArrayOfString2;
         paramArrayOfString2 = str1;
         break;
-        Timber.a("SnapchatProvider", "CODE_VERIFIED_DEVICE_ALL", new Object[0]);
         localSQLiteQueryBuilder.setTables("VerifiedDeviceTable");
-        localSQLiteQueryBuilder.setProjectionMap(abf.a);
+        localSQLiteQueryBuilder.setProjectionMap(acf.a);
         if (!TextUtils.isEmpty(paramString2)) {
-          break label749;
+          break label632;
         }
         paramString2 = VerifiedDeviceSchema.LAST_LOGIN.getColumnName() + " DESC";
         str1 = null;
         localObject = paramArrayOfString2;
         paramArrayOfString2 = str1;
         break;
-        Timber.a("SnapchatProvider", "CODE_DISCOVER_PUBLISHER_EDITION_ALL", new Object[0]);
         localSQLiteQueryBuilder.setTables("PublisherAndEdition");
         localSQLiteQueryBuilder.setProjectionMap(PublisherAndEditionVirtualTable.b);
         str1 = PublisherAndEditionVirtualTable.ChannelSchema.POSITION.getColumnName() + " ASC";
@@ -145,7 +143,6 @@ public class SnapchatProvider
         paramArrayOfString2 = str1;
         break;
         localObject = (String)paramUri.getPathSegments().get(1);
-        Timber.a("SnapchatProvider", "CODE_DISCOVER_DSNAPS_BY_EDITION_ID " + (String)localObject, new Object[0]);
         localSQLiteQueryBuilder.appendWhere(DSnapPageVirtualTable.DSnapPageSchema.EDITION_ID.getColumnName());
         localSQLiteQueryBuilder.appendWhere("=?");
         localObject = a(paramArrayOfString2, new String[] { localObject });
@@ -153,7 +150,6 @@ public class SnapchatProvider
         localSQLiteQueryBuilder.setProjectionMap(DSnapPageVirtualTable.b);
         paramArrayOfString2 = DSnapPageVirtualTable.DSnapPageSchema.POSITION.getColumnName() + " ASC";
         break;
-        Timber.a("SnapchatProvider", "CODE_DISCOVER_DSNAPS_ALL", new Object[0]);
         localSQLiteQueryBuilder.setTables("DSnapPage");
         localSQLiteQueryBuilder.setProjectionMap(DSnapPageVirtualTable.b);
         localObject = DSnapPageVirtualTable.DSnapPageSchema.EDITION_ID.getColumnName() + " ASC";
@@ -163,7 +159,7 @@ public class SnapchatProvider
         break;
         paramString2 = paramArrayOfString2;
       }
-      label749:
+      label632:
       String str1 = null;
       localObject = paramArrayOfString2;
       paramArrayOfString2 = str1;

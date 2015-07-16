@@ -1,17 +1,17 @@
 package com.snapchat.android.fragments.addfriends;
 
-import bkk;
+import bll;
 import java.util.List;
 
 public abstract interface FindNearbyFriendsWorker$a
 {
   public abstract void a(FindNearbyFriendsWorker.InterruptReason paramInterruptReason);
   
-  public abstract void a(List<bkk> paramList);
-  
-  public abstract void p();
+  public abstract void a(List<bll> paramList);
   
   public abstract void q();
+  
+  public abstract void r();
 }
 
 /* Location:

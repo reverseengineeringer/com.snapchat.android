@@ -7,20 +7,20 @@ import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
 import android.widget.EditText;
-import atb;
-import aza;
-import cgc;
+import aua;
+import azy;
+import chd;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.api2.cash.blockers.CardInputError;
 import javax.inject.Inject;
-import ye;
+import za;
 
 public class CardNumberEditText
   extends EditText
 {
   @Inject
-  public atb a;
-  private ye b;
+  public aua a;
+  private za b;
   
   public CardNumberEditText(Context paramContext, AttributeSet paramAttributeSet)
   {
@@ -30,11 +30,11 @@ public class CardNumberEditText
     addTextChangedListener(new a((byte)0));
   }
   
-  @cgc
+  @chd
   public CardInputError getCardInputError()
   {
     if (getUnformattedText().length() == 16) {}
-    for (int i = 1; (i != 0) && (!atb.a(getUnformattedText())); i = 0) {
+    for (int i = 1; (i != 0) && (!aua.a(getUnformattedText())); i = 0) {
       return CardInputError.INVALID_CARD_NUMBER;
     }
     return null;
@@ -55,9 +55,9 @@ public class CardNumberEditText
     return localStringBuilder.toString();
   }
   
-  public void setValidatedInputCallback(@cgc ye paramye)
+  public void setValidatedInputCallback(@chd za paramza)
   {
-    b = paramye;
+    b = paramza;
   }
   
   final class a
@@ -93,7 +93,7 @@ public class CardNumberEditText
         localStringBuilder1 = localStringBuilder2;
         if (CardNumberEditText.a(CardNumberEditText.this) != null)
         {
-          if (!atb.a(getUnformattedText())) {
+          if (!aua.a(getUnformattedText())) {
             break label192;
           }
           CardNumberEditText.a(CardNumberEditText.this).b();

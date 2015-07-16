@@ -11,7 +11,7 @@ final class SnapkidzSettingsActivity$5
   
   public final void onClick(View paramView)
   {
-    SnapkidzSettingsActivity.a(a, new WebFragment("https://www.snapchat.com/snapkidz.jsp", a.getString(2131493602)), "WebFragment");
+    SnapkidzSettingsActivity.a(a, new WebFragment("https://www.snapchat.com/snapkidz.jsp", a.getString(2131493600)), "WebFragment");
   }
 }
 

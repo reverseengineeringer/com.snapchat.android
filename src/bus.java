@@ -1,16 +1,25 @@
-import in.srain.cube.views.ptr.PtrFrameLayout;
+import java.net.InetAddress;
 
-public abstract interface bus
+public final class bus
 {
-  public abstract void a(PtrFrameLayout paramPtrFrameLayout);
+  InetAddress a;
+  String b;
+  public String c = "/";
+  bus.a d = null;
+  int e = -1;
+  boolean f = false;
   
-  public abstract void a(PtrFrameLayout paramPtrFrameLayout, boolean paramBoolean, byte paramByte, int paramInt1, int paramInt2, float paramFloat1, float paramFloat2);
-  
-  public abstract void b(PtrFrameLayout paramPtrFrameLayout);
-  
-  public abstract void c(PtrFrameLayout paramPtrFrameLayout);
-  
-  public abstract void d(PtrFrameLayout paramPtrFrameLayout);
+  public static enum a
+  {
+    private String c;
+    private int d;
+    
+    private a(String paramString1, int paramInt1)
+    {
+      c = paramString1;
+      d = paramInt1;
+    }
+  }
 }
 
 /* Location:

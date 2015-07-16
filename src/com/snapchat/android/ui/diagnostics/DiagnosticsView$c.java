@@ -1,34 +1,34 @@
 package com.snapchat.android.ui.diagnostics;
 
-import ala;
-import alc;
+import alv;
+import aly;
 import android.view.LayoutInflater;
-import cgb;
+import chc;
 import java.util.ArrayList;
 import java.util.List;
-import uc;
+import us;
 
 final class DiagnosticsView$c
   extends DiagnosticsView.a
 {
-  private final List<alc> b = new ArrayList();
+  private final List<aly> b = new ArrayList();
   
   public DiagnosticsView$c(DiagnosticsView paramDiagnosticsView, LayoutInflater paramLayoutInflater)
   {
     super(paramLayoutInflater);
   }
   
-  public final void a(@cgb ala paramala) {}
+  public final void a(@chc alv paramalv) {}
   
-  public final void a(alc paramalc)
+  public final void a(aly paramaly)
   {
-    b.add(paramalc);
+    b.add(paramaly);
     notifyDataSetChanged();
   }
   
-  public final void a(alc paramalc, uc paramuc)
+  public final void a(aly paramaly, us paramus)
   {
-    b.remove(paramalc);
+    b.remove(paramaly);
     notifyDataSetChanged();
   }
   

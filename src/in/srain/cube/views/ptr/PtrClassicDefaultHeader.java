@@ -13,17 +13,17 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bus;
-import buv.a;
-import buv.b;
-import buv.c;
-import buv.d;
+import bvt;
+import bvw.a;
+import bvw.b;
+import bvw.c;
+import bvw.d;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PtrClassicDefaultHeader
   extends FrameLayout
-  implements bus
+  implements bvt
 {
   private static SimpleDateFormat a = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
   private int b = 150;
@@ -70,16 +70,16 @@ public class PtrClassicDefaultHeader
   
   private void a(AttributeSet paramAttributeSet)
   {
-    paramAttributeSet = getContext().obtainStyledAttributes(paramAttributeSet, buv.d.PtrClassicHeader, 0, 0);
+    paramAttributeSet = getContext().obtainStyledAttributes(paramAttributeSet, bvw.d.PtrClassicHeader, 0, 0);
     if (paramAttributeSet != null) {
       b = paramAttributeSet.getInt(0, b);
     }
     a();
-    paramAttributeSet = LayoutInflater.from(getContext()).inflate(buv.b.cube_ptr_classic_default_header, this);
-    f = paramAttributeSet.findViewById(buv.a.ptr_classic_header_rotate_view);
-    e = ((TextView)paramAttributeSet.findViewById(buv.a.ptr_classic_header_rotate_view_header_title));
-    i = ((TextView)paramAttributeSet.findViewById(buv.a.ptr_classic_header_rotate_view_header_last_update));
-    g = paramAttributeSet.findViewById(buv.a.ptr_classic_header_rotate_view_progressbar);
+    paramAttributeSet = LayoutInflater.from(getContext()).inflate(bvw.b.cube_ptr_classic_default_header, this);
+    f = paramAttributeSet.findViewById(bvw.a.ptr_classic_header_rotate_view);
+    e = ((TextView)paramAttributeSet.findViewById(bvw.a.ptr_classic_header_rotate_view_header_title));
+    i = ((TextView)paramAttributeSet.findViewById(bvw.a.ptr_classic_header_rotate_view_header_last_update));
+    g = paramAttributeSet.findViewById(bvw.a.ptr_classic_header_rotate_view_progressbar);
     b();
   }
   
@@ -127,9 +127,9 @@ public class PtrClassicDefaultHeader
       m = (int)(l1 / 1000L);
     } while ((l1 < 0L) || (m <= 0));
     StringBuilder localStringBuilder = new StringBuilder();
-    localStringBuilder.append(getContext().getString(buv.c.cube_ptr_last_update));
+    localStringBuilder.append(getContext().getString(bvw.c.cube_ptr_last_update));
     if (m < 60) {
-      localStringBuilder.append(m + getContext().getString(buv.c.cube_ptr_seconds_ago));
+      localStringBuilder.append(m + getContext().getString(bvw.c.cube_ptr_seconds_ago));
     }
     for (;;)
     {
@@ -145,12 +145,12 @@ public class PtrClassicDefaultHeader
         }
         else
         {
-          localStringBuilder.append(m + getContext().getString(buv.c.cube_ptr_hours_ago));
+          localStringBuilder.append(m + getContext().getString(bvw.c.cube_ptr_hours_ago));
         }
       }
       else
       {
-        localStringBuilder.append(m + getContext().getString(buv.c.cube_ptr_minutes_ago));
+        localStringBuilder.append(m + getContext().getString(bvw.c.cube_ptr_minutes_ago));
       }
     }
   }
@@ -169,10 +169,10 @@ public class PtrClassicDefaultHeader
       if ((paramBoolean) && (paramByte == 2))
       {
         e.setVisibility(0);
-        if (!f) {
+        if (!e) {
           break label87;
         }
-        e.setText(getResources().getString(buv.c.cube_ptr_pull_down_to_refresh));
+        e.setText(getResources().getString(bvw.c.cube_ptr_pull_down_to_refresh));
         if (f != null)
         {
           f.clearAnimation();
@@ -186,13 +186,13 @@ public class PtrClassicDefaultHeader
       do
       {
         return;
-        e.setText(getResources().getString(buv.c.cube_ptr_pull_down));
+        e.setText(getResources().getString(bvw.c.cube_ptr_pull_down));
         break;
       } while ((paramInt2 <= m) || (paramInt1 > m) || (!paramBoolean) || (paramByte != 2));
-      if (!f)
+      if (!e)
       {
         e.setVisibility(0);
-        e.setText(buv.c.cube_ptr_release_to_refresh);
+        e.setText(bvw.c.cube_ptr_release_to_refresh);
       }
     } while (f == null);
     f.clearAnimation();
@@ -207,12 +207,12 @@ public class PtrClassicDefaultHeader
     g.setVisibility(4);
     f.setVisibility(0);
     e.setVisibility(0);
-    if (f)
+    if (e)
     {
-      e.setText(getResources().getString(buv.c.cube_ptr_pull_down_to_refresh));
+      e.setText(getResources().getString(bvw.c.cube_ptr_pull_down_to_refresh));
       return;
     }
-    e.setText(getResources().getString(buv.c.cube_ptr_pull_down));
+    e.setText(getResources().getString(bvw.c.cube_ptr_pull_down));
   }
   
   public final void c(PtrFrameLayout paramPtrFrameLayout)
@@ -221,7 +221,7 @@ public class PtrClassicDefaultHeader
     c();
     g.setVisibility(0);
     e.setVisibility(0);
-    e.setText(buv.c.cube_ptr_refreshing);
+    e.setText(bvw.c.cube_ptr_refreshing);
     d();
     a.b(l);
   }
@@ -231,7 +231,7 @@ public class PtrClassicDefaultHeader
     c();
     g.setVisibility(4);
     e.setVisibility(0);
-    e.setText(getResources().getString(buv.c.cube_ptr_refresh_complete));
+    e.setText(getResources().getString(bvw.c.cube_ptr_refresh_complete));
     paramPtrFrameLayout = getContext().getSharedPreferences("cube_ptr_classic_last_update", 0);
     if (!TextUtils.isEmpty(j))
     {

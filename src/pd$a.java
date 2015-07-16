@@ -1,10 +1,15 @@
-public abstract interface pd$a
+import android.graphics.Bitmap;
+
+final class pd$a
 {
-  public abstract void d();
+  Bitmap mBitmap;
+  String mName;
   
-  public abstract void t_();
-  
-  public abstract void u_();
+  pd$a(pd parampd, String paramString, Bitmap paramBitmap)
+  {
+    mName = paramString;
+    mBitmap = paramBitmap;
+  }
 }
 
 /* Location:

@@ -1,28 +1,15 @@
-import com.snapchat.android.model.Friend;
-import com.snapchat.android.model.Friend.SuggestState;
-import java.util.HashMap;
-import java.util.Map;
-
 public final class atl
 {
-  private static final Map<String, pq> mFriendExistsTaskInstanceMap = new HashMap();
+  private final bhs a;
   
-  public static Friend a(Friend paramFriend)
+  public atl()
   {
-    if (paramFriend.h().length() >= 3)
-    {
-      pq localpq = (pq)mFriendExistsTaskInstanceMap.get(paramFriend.h());
-      if (localpq == null)
-      {
-        localpq = new pq(paramFriend);
-        mFriendExistsTaskInstanceMap.put(paramFriend.h(), localpq);
-        localpq.f();
-        return paramFriend;
-      }
-      return mFriend;
-    }
-    mSuggestionState = Friend.SuggestState.DOES_NOT_EXIST;
-    return paramFriend;
+    this(new bhs());
+  }
+  
+  private atl(bhs parambhs)
+  {
+    a = parambhs;
   }
 }
 

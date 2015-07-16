@@ -37,7 +37,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
     .param p1    # Landroid/content/Context;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -60,11 +60,11 @@
 .method protected constructor <init>(Lcom/snapchat/videotranscoder/utils/RawResourceStringProvider;Lcom/snapchat/videotranscoder/utils/Utils;)V
     .locals 0
     .param p1    # Lcom/snapchat/videotranscoder/utils/RawResourceStringProvider;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
     .param p2    # Lcom/snapchat/videotranscoder/utils/Utils;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 

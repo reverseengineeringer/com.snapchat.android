@@ -8,7 +8,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-import ej;
+import es;
 import java.lang.reflect.Array;
 import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public final class ArrayTypeAdapter<E>
   
   public ArrayTypeAdapter(Gson paramGson, TypeAdapter<E> paramTypeAdapter, Class<E> paramClass)
   {
-    b = new ej(paramGson, paramTypeAdapter, paramClass);
+    b = new es(paramGson, paramTypeAdapter, paramClass);
     a = paramClass;
   }
   

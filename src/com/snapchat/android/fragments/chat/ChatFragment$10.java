@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.view.View;
 import android.view.View.OnLongClickListener;
-import bgr;
+import bhr;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.snapchat.android.ui.ChatCameraButton;
 import com.snapchat.android.ui.here.HereTooltip;

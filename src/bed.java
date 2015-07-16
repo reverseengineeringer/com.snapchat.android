@@ -1,12 +1,4 @@
-public final class bed
-{
-  public final auz mStoriesThumbnailCacheItem;
-  
-  public bed(auz paramauz)
-  {
-    mStoriesThumbnailCacheItem = paramauz;
-  }
-}
+public final class bed {}
 
 /* Location:
  * Qualified Name:     bed

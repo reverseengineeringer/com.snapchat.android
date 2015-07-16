@@ -1,100 +1,82 @@
-.class public Lzx;
-.super Lcom/snapchat/android/database/table/IdToFileTable;
+.class public final Lzx;
+.super Lzy;
 .source "SourceFile"
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
-
-.field private final b:Lawp;
+.field public final a:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcom/snapchat/android/model/StorySnapLogbook;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lawp;)V
-    .locals 0
-    .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+.method public constructor <init>(Lakl;Lcom/snapchat/android/model/StoryCollection;Ljava/util/List;)V
+    .locals 4
+    .param p1    # Lakl;
+        .annotation build Lchc;
         .end annotation
     .end param
-    .param p2    # Lawp;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 18
-    invoke-direct {p0}, Lcom/snapchat/android/database/table/IdToFileTable;-><init>()V
-
-    .line 19
-    iput-object p1, p0, Lzx;->a:Ljava/lang/String;
-
-    .line 20
-    iput-object p2, p0, Lzx;->b:Lawp;
-
-    .line 21
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a(Lajv;)Ljava/util/Collection;
-    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
-            ")",
-            "Ljava/util/Collection",
+            "Lakl;",
+            "Lcom/snapchat/android/model/StoryCollection;",
+            "Ljava/util/List",
             "<",
-            "Ljava/util/Map$Entry",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;>;"
+            "Lcom/snapchat/android/model/StorySnapLogbook;",
+            ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 36
-    iget-object v0, p0, Lzx;->b:Lawp;
+    .line 28
+    invoke-direct {p0, p1, p2}, Lzy;-><init>(Lakl;Lcom/snapchat/android/model/StoryCollection;)V
 
-    invoke-virtual {v0}, Lawp;->d()Ljava/util/Collection;
+    .line 21
+    invoke-static {}, Ldu;->a()Ljava/util/HashMap;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    iput-object v0, p0, Lzx;->a:Ljava/util/Map;
 
-.method public final b(Lajv;)V
-    .locals 2
-
-    .prologue
-    .line 30
-    iget-object v0, p0, Lzx;->b:Lawp;
-
-    invoke-virtual {p0}, Lzx;->f()Ljava/util/Map;
+    .line 29
+    invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lawp;->a(Ljava/util/Map;)V
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 31
-    iget-object v0, p0, Lzx;->b:Lawp;
+    move-result v0
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Lawp;->a(Z)V
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/snapchat/android/model/StorySnapLogbook;
+
+    .line 30
+    iget-object v2, p0, Lzx;->a:Ljava/util/Map;
+
+    iget-object v3, v0, Lcom/snapchat/android/model/StorySnapLogbook;->mStorySnap:Lakl;
+
+    iget-object v3, v3, Lakl;->mClientId:Ljava/lang/String;
+
+    invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
 
     .line 32
+    :cond_0
     return-void
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 25
-    iget-object v0, p0, Lzx;->a:Ljava/lang/String;
-
-    return-object v0
 .end method

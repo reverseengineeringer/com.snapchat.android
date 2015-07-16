@@ -8,13 +8,13 @@ import at;
 import au;
 import ax;
 import ay;
-import cek;
-import cfk;
-import cgb;
-import eu;
-import ey;
-import ez;
-import fj;
+import cfl;
+import cgl;
+import chc;
+import fd;
+import fh;
+import fi;
+import fs;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Iterator;
@@ -25,13 +25,13 @@ public class MP4Metadata
 {
   private final String mMP4Path;
   
-  public MP4Metadata(@cgb String paramString)
+  public MP4Metadata(@chc String paramString)
   {
     checkMp4FileExistsAndIsWriteable(paramString);
     mMP4Path = paramString;
   }
   
-  private void checkMp4FileExistsAndIsWriteable(@cgb String paramString)
+  private void checkMp4FileExistsAndIsWriteable(@chc String paramString)
   {
     File localFile = new File(paramString);
     if (!localFile.exists()) {
@@ -42,9 +42,9 @@ public class MP4Metadata
     }
   }
   
-  private void correctChunkOffsets(@cgb an paraman, long paramLong)
+  private void correctChunkOffsets(@chc an paraman, long paramLong)
   {
-    paraman = fj.b(paraman, "/moov[0]/trak/mdia[0]/minf[0]/stbl[0]/stco[0]").iterator();
+    paraman = fs.b(paraman, "/moov[0]/trak/mdia[0]/minf[0]/stbl[0]/stco[0]").iterator();
     while (paraman.hasNext())
     {
       as localas = (as)paraman.next();
@@ -58,9 +58,9 @@ public class MP4Metadata
         i += 1;
       }
       ax localax = new ax();
-      cek localcek = cfk.a(ax.b, localax, localax, arrayOfLong);
-      ez.a();
-      ez.a(localcek);
+      cfl localcfl = cgl.a(ax.b, localax, localax, arrayOfLong);
+      fi.a();
+      fi.a(localcfl);
       a = arrayOfLong;
       localLinkedList.add(localax);
       localas.getParent().setBoxes(localLinkedList);
@@ -72,7 +72,7 @@ public class MP4Metadata
     Object localObject = new aq(IsoParserProperties.getInstance());
     try
     {
-      localObject = new an(new ey(new File(mMP4Path)), (al)localObject);
+      localObject = new an(new fh(new File(mMP4Path)), (al)localObject);
       return (an)localObject;
     }
     catch (FileNotFoundException localFileNotFoundException)
@@ -81,7 +81,7 @@ public class MP4Metadata
     }
   }
   
-  private boolean needsOffsetCorrection(@cgb an paraman)
+  private boolean needsOffsetCorrection(@chc an paraman)
   {
     paraman = paraman.getBoxes().iterator();
     while (paraman.hasNext())
@@ -112,7 +112,7 @@ public class MP4Metadata
     {
       try
       {
-        localObject1 = (ay)fj.a(localan, "/moov/udta");
+        localObject1 = (ay)fs.a(localan, "/moov/udta");
         if (localObject1 == null)
         {
           if (localan != null) {
@@ -123,7 +123,7 @@ public class MP4Metadata
         do
         {
           return (SnapSegments)localObject1;
-          localObject1 = (SnapMetadataBox)fj.a((eu)localObject1, "smet");
+          localObject1 = (SnapMetadataBox)fs.a((fd)localObject1, "smet");
           if (localObject1 == null)
           {
             if (localan != null) {
@@ -131,7 +131,7 @@ public class MP4Metadata
             }
             return null;
           }
-          localObject1 = (SnapSegmentsBox)fj.a((eu)localObject1, "sseg");
+          localObject1 = (SnapSegmentsBox)fs.a((fd)localObject1, "sseg");
           if (localObject1 == null)
           {
             if (localan != null) {
@@ -161,7 +161,7 @@ public class MP4Metadata
   }
   
   /* Error */
-  public void setSnapSegments(@cgb SnapSegments paramSnapSegments)
+  public void setSnapSegments(@chc SnapSegments paramSnapSegments)
   {
     // Byte code:
     //   0: aconst_null
@@ -171,7 +171,7 @@ public class MP4Metadata
     //   7: astore 6
     //   9: aload 6
     //   11: ldc -78
-    //   13: invokestatic 190	fj:a	(Lau;Ljava/lang/String;)Las;
+    //   13: invokestatic 190	fs:a	(Lau;Ljava/lang/String;)Las;
     //   16: checkcast 212	aw
     //   19: astore 7
     //   21: aload 7
@@ -187,7 +187,7 @@ public class MP4Metadata
     //   41: invokevirtual 217	an:addBox	(Las;)V
     //   44: aload 7
     //   46: ldc -37
-    //   48: invokestatic 200	fj:a	(Leu;Ljava/lang/String;)Las;
+    //   48: invokestatic 200	fs:a	(Lfd;Ljava/lang/String;)Las;
     //   51: checkcast 192	ay
     //   54: astore 8
     //   56: aload 8
@@ -201,7 +201,7 @@ public class MP4Metadata
     //   74: invokevirtual 221	aw:addBox	(Las;)V
     //   77: aload 8
     //   79: ldc -59
-    //   81: invokestatic 200	fj:a	(Leu;Ljava/lang/String;)Las;
+    //   81: invokestatic 200	fs:a	(Lfd;Ljava/lang/String;)Las;
     //   84: checkcast 202	com/snapchat/videotranscoder/mp4/SnapMetadataBox
     //   87: astore 9
     //   89: aload 9
@@ -217,7 +217,7 @@ public class MP4Metadata
     //   112: astore 8
     //   114: aload 8
     //   116: ldc -52
-    //   118: invokestatic 200	fj:a	(Leu;Ljava/lang/String;)Las;
+    //   118: invokestatic 200	fs:a	(Lfd;Ljava/lang/String;)Las;
     //   121: checkcast 206	com/snapchat/videotranscoder/mp4/SnapSegmentsBox
     //   124: astore 11
     //   126: aload 11

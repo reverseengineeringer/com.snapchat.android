@@ -4,214 +4,216 @@
 
 
 # static fields
-.field private static final SUPPLEMENTARY_ENDING_INDEX:I = 0xfe0f
+.field private static final MAX_LIST_SIZE:I = 0x5
 
-.field private static final SUPPLEMENTARY_STARTING_INDEX:I = 0xfe00
 
-.field private static final emojiRanges:[[I
+# instance fields
+.field public mAddedCount:I
+
+.field public mAddedList:Ljava/util/Deque;
+    .annotation build Lchc;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private mConfig:Landroid/graphics/Bitmap$Config;
+    .annotation build Lchd;
+    .end annotation
+.end field
+
+.field private mHeight:I
+
+.field private mReference:Ljava/lang/ref/WeakReference;
+    .annotation build Lchd;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Landroid/graphics/Bitmap;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field mRemovedCount:I
+
+.field mRemovedList:Ljava/util/Deque;
+    .annotation build Lchc;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Deque",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private mWidth:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    .prologue
-    const/4 v3, 0x2
-
-    .line 14
-    const/4 v0, 0x3
-
-    new-array v0, v0, [[I
-
-    const/4 v1, 0x0
-
-    new-array v2, v3, [I
-
-    fill-array-data v2, :array_0
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    new-array v2, v3, [I
-
-    fill-array-data v2, :array_1
-
-    aput-object v2, v0, v1
-
-    new-array v1, v3, [I
-
-    fill-array-data v1, :array_2
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Laxj;->emojiRanges:[[I
-
-    return-void
-
-    :array_0
-    .array-data 4
-        0x1f000
-        0x1ffff
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x20a0
-        0x2bff
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0xfe4e5
-        0xfe4ee
-    .end array-data
-.end method
-
-.method public static a()Z
+.method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 2
-
-    .prologue
-    .line 35
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public static a(Ljava/lang/String;Z)Z
-    .locals 10
-    .param p0    # Ljava/lang/String;
-        .annotation build Lcgc;
+    .param p1    # Landroid/graphics/Bitmap;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
-    const/4 v4, 0x1
-
     const/4 v1, 0x0
 
-    .line 39
-    if-eqz p0, :cond_0
+    .line 35
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
+    .line 26
+    iput v1, p0, Laxj;->mAddedCount:I
 
-    move-result-object v0
+    .line 27
+    new-instance v0, Ljava/util/ArrayDeque;
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Laxj;->mAddedList:Ljava/util/Deque;
+
+    .line 29
+    iput v1, p0, Laxj;->mRemovedCount:I
+
+    .line 30
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Laxj;->mRemovedList:Ljava/util/Deque;
+
+    .line 36
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    iput v0, p0, Laxj;->mWidth:I
 
-    .line 56
-    :cond_0
+    .line 37
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v0
+
+    iput v0, p0, Laxj;->mHeight:I
+
+    .line 38
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    move-result-object v0
+
+    iput-object v0, p0, Laxj;->mConfig:Landroid/graphics/Bitmap$Config;
+
+    .line 39
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Laxj;->mReference:Ljava/lang/ref/WeakReference;
+
+    .line 40
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 2
+
+    .prologue
+    .line 80
+    iget v0, p0, Laxj;->mAddedCount:I
+
+    iget v1, p0, Laxj;->mRemovedCount:I
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final a(Ljava/lang/String;)V
+    .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+
+    .prologue
+    .line 58
+    iget v0, p0, Laxj;->mRemovedCount:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Laxj;->mRemovedCount:I
+
+    .line 59
     :goto_0
-    return v1
+    iget-object v0, p0, Laxj;->mRemovedList:Ljava/util/Deque;
 
-    :cond_1
-    move v0, v1
+    invoke-interface {v0}, Ljava/util/Deque;->size()I
 
-    move v2, v1
+    move-result v0
 
-    .line 43
-    :goto_1
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    const/4 v1, 0x5
 
-    move-result v3
+    if-lt v0, v1, :cond_0
 
-    if-ge v0, v3, :cond_6
+    .line 60
+    iget-object v0, p0, Laxj;->mRemovedList:Ljava/util/Deque;
 
-    .line 44
-    invoke-virtual {p0, v0}, Ljava/lang/String;->codePointAt(I)I
+    invoke-interface {v0}, Ljava/util/Deque;->removeFirst()Ljava/lang/Object;
 
-    move-result v5
+    goto :goto_0
 
-    .line 45
-    sget-object v6, Laxj;->emojiRanges:[[I
+    .line 62
+    :cond_0
+    iget-object v0, p0, Laxj;->mRemovedList:Ljava/util/Deque;
 
-    array-length v7, v6
+    invoke-interface {v0, p1}, Ljava/util/Deque;->addLast(Ljava/lang/Object;)V
 
-    move v3, v1
+    .line 63
+    return-void
+.end method
 
-    :goto_2
-    if-ge v3, v7, :cond_5
+.method public final b()Landroid/graphics/Bitmap;
+    .locals 1
 
-    aget-object v8, v6, v3
+    .prologue
+    .line 100
+    iget-object v0, p0, Laxj;->mReference:Ljava/lang/ref/WeakReference;
 
-    aget v9, v8, v1
+    if-nez v0, :cond_0
 
-    if-lt v5, v9, :cond_4
+    const/4 v0, 0x0
 
-    aget v8, v8, v4
+    :goto_0
+    return-object v0
 
-    if-gt v5, v8, :cond_4
+    :cond_0
+    iget-object v0, p0, Laxj;->mReference:Ljava/lang/ref/WeakReference;
 
-    move v3, v4
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    .line 47
-    :goto_3
-    if-nez v3, :cond_3
+    move-result-object v0
 
-    if-eqz p1, :cond_2
+    check-cast v0, Landroid/graphics/Bitmap;
 
-    invoke-static {v5}, Ljava/lang/Character;->isWhitespace(I)Z
-
-    move-result v6
-
-    if-nez v6, :cond_3
-
-    :cond_2
-    if-lez v0, :cond_0
-
-    const v6, 0xfe00
-
-    if-lt v5, v6, :cond_0
-
-    const v6, 0xfe0f
-
-    if-gt v5, v6, :cond_0
-
-    if-eqz v2, :cond_0
-
-    .line 53
-    :cond_3
-    invoke-static {v5}, Ljava/lang/Character;->charCount(I)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    move v2, v3
-
-    .line 54
-    goto :goto_1
-
-    .line 45
-    :cond_4
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_2
-
-    :cond_5
-    move v3, v1
-
-    goto :goto_3
-
-    :cond_6
-    move v1, v4
-
-    .line 56
     goto :goto_0
 .end method

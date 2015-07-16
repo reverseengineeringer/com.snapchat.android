@@ -1,13 +1,26 @@
-import java.io.Closeable;
-
-public abstract interface caj
-  extends Closeable
+public final class caj
+  extends cab
 {
-  public abstract cak E_();
+  public caj()
+  {
+    super(">", 4);
+  }
   
-  public abstract long a(bzu parambzu, long paramLong);
+  public final double a(double paramDouble1, double paramDouble2)
+  {
+    if (paramDouble1 > paramDouble2) {
+      return 1.0D;
+    }
+    return 0.0D;
+  }
   
-  public abstract void close();
+  public final String a(String paramString1, String paramString2)
+  {
+    if (paramString1.compareTo(paramString2) > 0) {
+      return "1.0";
+    }
+    return "0.0";
+  }
 }
 
 /* Location:

@@ -1,323 +1,362 @@
 .class public final Lasl;
-.super Lasj;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lasi;
 
 
 # instance fields
-.field final a:Laic;
+.field private final a:Lzs;
 
-.field private final b:Laru;
+.field private final b:Laka;
 
-.field private final c:Larx;
+.field private final c:Lajk;
 
-.field private d:Lcom/snapchat/android/model/Mediabryo$SnapType;
+.field private final d:Lapl;
+
+.field private e:Lasj;
 
 
 # direct methods
-.method private constructor <init>(Laic;Laru;Larx;Lcom/snapchat/android/model/Mediabryo$SnapType;)V
-    .locals 0
-
-    .prologue
-    .line 53
-    invoke-direct {p0}, Lasj;-><init>()V
-
-    .line 54
-    iput-object p1, p0, Lasl;->a:Laic;
-
-    .line 55
-    iput-object p2, p0, Lasl;->b:Laru;
-
-    .line 56
-    iput-object p3, p0, Lasl;->c:Larx;
-
-    .line 57
-    iput-object p4, p0, Lasl;->d:Lcom/snapchat/android/model/Mediabryo$SnapType;
-
-    .line 58
-    return-void
-.end method
-
-.method private constructor <init>(Laic;Laru;Lcom/snapchat/android/model/Mediabryo$SnapType;)V
-    .locals 1
-
-    .prologue
-    .line 46
-    new-instance v0, Larx;
-
-    invoke-direct {v0}, Larx;-><init>()V
-
-    invoke-direct {p0, p1, p2, v0, p3}, Lasl;-><init>(Laic;Laru;Larx;Lcom/snapchat/android/model/Mediabryo$SnapType;)V
-
-    .line 47
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/snapchat/android/model/Mediabryo$SnapType;)V
+.method public constructor <init>(Laka;Lajk;)V
     .locals 2
 
     .prologue
-    .line 40
-    invoke-static {}, Laid;->a()Laid;
+    .line 28
+    new-instance v0, Lzs;
 
-    move-result-object v0
+    invoke-direct {v0}, Lzs;-><init>()V
 
-    new-instance v1, Lary;
+    invoke-static {}, Lapl;->a()Lapl;
 
-    invoke-direct {v1}, Lary;-><init>()V
+    move-result-object v1
 
-    invoke-direct {p0, v0, v1, p1}, Lasl;-><init>(Laic;Laru;Lcom/snapchat/android/model/Mediabryo$SnapType;)V
+    invoke-direct {p0, v0, p1, p2, v1}, Lasl;-><init>(Lzs;Laka;Lajk;Lapl;)V
 
-    .line 41
+    .line 29
     return-void
 .end method
 
-.method static a(Ljava/util/List;Landroid/content/Context;)Ljava/util/List;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Laiv;",
-            ">;",
-            "Landroid/content/Context;",
-            ")",
-            "Ljava/util/List",
-            "<",
-            "Larn;",
-            ">;"
-        }
-    .end annotation
+.method private constructor <init>(Lzs;Laka;Lajk;Lapl;)V
+    .locals 0
 
     .prologue
-    const/4 v5, 0x0
+    .line 34
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 148
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    .line 35
+    iput-object p1, p0, Lasl;->a:Lzs;
 
-    move-result v0
+    .line 36
+    iput-object p2, p0, Lasl;->b:Laka;
 
-    .line 149
-    const-string v1, "RefreshGeofilterPagesOperation"
+    .line 37
+    iput-object p3, p0, Lasl;->c:Lajk;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 38
+    iput-object p4, p0, Lasl;->d:Lapl;
 
-    const-string v3, "Have "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " geofilters returned from server"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v5, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 150
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 151
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laiv;
-
-    .line 152
-    new-instance v3, Lasb;
-
-    new-instance v4, Lcom/snapchat/android/ui/smartfilters/GeofilterView;
-
-    invoke-direct {v4, p1, v0}, Lcom/snapchat/android/ui/smartfilters/GeofilterView;-><init>(Landroid/content/Context;Laiv;)V
-
-    invoke-direct {v3, v0, v4}, Lasb;-><init>(Laiv;Lcom/snapchat/android/ui/smartfilters/GeofilterView;)V
-
-    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    .line 154
-    :cond_0
-    const-string v0, "RefreshGeofilterPagesOperation"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "createFilterPagesForGeofilters has "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " current geofilters"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-array v3, v5, [Ljava/lang/Object;
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 155
-    return-object v1
+    .line 39
+    return-void
 .end method
 
 
 # virtual methods
-.method final a(Larw;Lcom/snapchat/android/ui/SwipeImageView;Ljava/util/List;)V
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Larw",
-            "<",
-            "Larn;",
-            ">;",
-            "Lcom/snapchat/android/ui/SwipeImageView;",
-            "Ljava/util/List",
-            "<",
-            "Larn;",
-            ">;)V"
-        }
+.method public final a()Laka;
+    .locals 1
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 124
-    invoke-interface {p3}, Ljava/util/List;->size()I
+    .line 44
+    iget-object v0, p0, Lasl;->b:Laka;
 
-    move-result v0
+    return-object v0
+.end method
 
-    add-int/lit8 v0, v0, -0x1
+.method public final a(Lasj;)V
+    .locals 0
 
-    move v2, v0
+    .prologue
+    .line 76
+    iput-object p1, p0, Lasl;->e:Lasj;
 
-    :goto_0
-    if-ltz v2, :cond_2
-
-    .line 125
-    invoke-interface {p3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Larn;
-
-    .line 126
-    instance-of v1, v0, Lasb;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lasl;->d:Lcom/snapchat/android/model/Mediabryo$SnapType;
-
-    sget-object v3, Lcom/snapchat/android/model/Mediabryo$SnapType;->DISCOVER:Lcom/snapchat/android/model/Mediabryo$SnapType;
-
-    if-ne v1, v3, :cond_1
-
-    move-object v1, v0
-
-    check-cast v1, Lasb;
-
-    iget-object v1, v1, Lasb;->b:Laiv;
-
-    iget-boolean v1, v1, Laiv;->mIsSponsored:Z
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x0
-
-    :goto_1
-    if-eqz v1, :cond_0
-
-    .line 127
-    invoke-interface {p3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Larn;
-
-    invoke-virtual {p1, v1}, Larw;->a(Larn;)V
-
-    .line 128
-    iget-object v1, p0, Lasl;->b:Laru;
-
-    invoke-interface {v1, v0}, Laru;->a(Larn;)V
-
-    .line 129
-    invoke-virtual {p2, v0}, Lcom/snapchat/android/ui/SwipeImageView;->a(Larn;)V
-
-    .line 124
-    :cond_0
-    add-int/lit8 v0, v2, -0x1
-
-    move v2, v0
-
-    goto :goto_0
-
-    .line 126
-    :cond_1
-    const/4 v1, 0x1
-
-    goto :goto_1
-
-    .line 132
-    :cond_2
+    .line 77
     return-void
 .end method
 
-.method public final a(Lcom/snapchat/android/ui/SwipeImageView;Larw;)V
+.method public final a(Z)V
+    .locals 0
+
+    .prologue
+    .line 105
+    return-void
+.end method
+
+.method public final b()Lajk;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/snapchat/android/ui/SwipeImageView;",
-            "Larw",
-            "<",
-            "Larn;",
-            ">;)V"
-        }
+    .annotation build Lchd;
     .end annotation
 
     .prologue
-    .line 62
-    new-instance v0, Lasl$1;
+    .line 50
+    iget-object v0, p0, Lasl;->c:Lajk;
 
-    invoke-direct {v0, p0, p1, p2}, Lasl$1;-><init>(Lasl;Lcom/snapchat/android/ui/SwipeImageView;Larw;)V
+    return-object v0
+.end method
 
-    invoke-static {v0}, Lbgp;->b(Ljava/lang/Runnable;)V
+.method public final c()Lcom/snapchat/android/rendering/SnapMediaRenderer;
+    .locals 1
+    .annotation build Lchc;
+    .end annotation
 
-    .line 68
+    .prologue
+    .line 56
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final e()Z
+    .locals 1
+
+    .prologue
+    .line 66
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final f()Z
+    .locals 1
+
+    .prologue
+    .line 71
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final g()V
+    .locals 6
+
+    .prologue
+    .line 83
+    iget-object v0, p0, Lasl;->b:Laka;
+
+    invoke-virtual {v0}, Laka;->W()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 86
+    iget-object v0, p0, Lasl;->b:Laka;
+
+    check-cast v0, Lakj;
+
+    .line 87
+    iget-object v1, v0, Lakj;->mAdResolutionState:Lcom/snapchat/android/ads/AdResolutionState;
+
+    sget-object v2, Lcom/snapchat/android/ads/AdResolutionState;->NO_FILL:Lcom/snapchat/android/ads/AdResolutionState;
+
+    if-ne v1, v2, :cond_3
+
+    sget-object v1, Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;->UNFILLED_AD_PLACEHOLDER:Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
+
+    .line 89
+    :goto_0
+    iget-object v2, p0, Lasl;->c:Lajk;
+
+    const/4 v3, 0x0
+
+    invoke-interface {v2, v0, v1, v3}, Lajk;->a(Laka;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;I)V
+
+    .line 92
+    iget-object v2, p0, Lasl;->d:Lapl;
+
+    new-instance v3, Llx;
+
+    invoke-direct {v3}, Llx;-><init>()V
+
+    iget-object v1, v0, Lakl;->mUsername:Ljava/lang/String;
+
+    iput-object v1, v3, Llx;->posterId:Ljava/lang/String;
+
+    iget-object v1, v0, Lakj;->mAdKey:Ljava/lang/String;
+
+    iput-object v1, v3, Llx;->adsnapId:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lakj;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v3, Llx;->storySnapId:Ljava/lang/String;
+
+    iget-object v1, v0, Lakj;->mResponse:Lnf;
+
+    iget-object v1, v1, Lnf;->mAdRequestError:Lcom/snapchat/android/ads/AdRequestError;
+
+    if-eqz v1, :cond_0
+
+    iget-object v4, v1, Lcom/snapchat/android/ads/AdRequestError;->mErrorCode:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
+
+    if-nez v4, :cond_4
+
+    :cond_0
+    sget-object v1, Lfz;->FAILED:Lfz;
+
+    :goto_1
+    iput-object v1, v3, Llx;->additionalInfo:Lfz;
+
+    iget-object v1, v2, Lapl;->b:Lapl$a;
+
+    iget-object v1, v1, Lapl$a;->c:Ljava/lang/Long;
+
+    iput-object v1, v3, Llx;->viewLocation:Ljava/lang/Long;
+
+    invoke-static {v0}, Lapl;->c(Lakl;)Lmj;
+
+    move-result-object v1
+
+    iput-object v1, v3, Llx;->storyType:Lmj;
+
+    iget v1, v0, Lakj;->mAdPosition:I
+
+    int-to-long v4, v1
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    iput-object v1, v3, Llx;->adIndexPos:Ljava/lang/Long;
+
+    invoke-static {v0}, Lapl;->a(Lakl;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "LOCAL"
+
+    iput-object v0, v3, Llx;->geoFence:Ljava/lang/String;
+
+    :cond_1
+    invoke-static {v3}, Lcom/snapchat/android/analytics/framework/ScAnalyticsEventEngine;->a(Lml;)V
+
+    .line 96
+    :cond_2
+    iget-object v0, p0, Lasl;->a:Lzs;
+
+    iget-object v1, p0, Lasl;->b:Laka;
+
+    invoke-virtual {v0, v1}, Lzs;->b(Laka;)V
+
+    .line 99
+    iget-object v0, p0, Lasl;->e:Lasj;
+
+    sget-object v1, Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;->UNFILLED_AD_PLACEHOLDER:Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
+
+    invoke-interface {v0, p0, v1}, Lasj;->a(Lasi;Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;)V
+
+    .line 100
+    return-void
+
+    .line 87
+    :cond_3
+    sget-object v1, Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;->ERROR_UNABLE_TO_SHOW_MEDIA:Lcom/snapchat/android/ui/snapview/SnapViewSessionStopReason;
+
+    goto :goto_0
+
+    .line 92
+    :cond_4
+    sget-object v4, Lapl$1;->a:[I
+
+    iget-object v1, v1, Lcom/snapchat/android/ads/AdRequestError;->mErrorCode:Lcom/snapchat/android/ads/AdRequestError$ErrorCode;
+
+    invoke-virtual {v1}, Lcom/snapchat/android/ads/AdRequestError$ErrorCode;->ordinal()I
+
+    move-result v1
+
+    aget v1, v4, v1
+
+    packed-switch v1, :pswitch_data_0
+
+    sget-object v1, Lfz;->FAILED:Lfz;
+
+    goto :goto_1
+
+    :pswitch_0
+    sget-object v1, Lfz;->SERVER_INTERNAL_ERROR:Lfz;
+
+    goto :goto_1
+
+    :pswitch_1
+    sget-object v1, Lfz;->SERVER_INVALID_REQUEST_ERROR:Lfz;
+
+    goto :goto_1
+
+    :pswitch_2
+    sget-object v1, Lfz;->SERVER_NETWORK_ERROR:Lfz;
+
+    goto :goto_1
+
+    :pswitch_3
+    sget-object v1, Lfz;->SERVER_NO_FILL_ERROR:Lfz;
+
+    goto :goto_1
+
+    :pswitch_4
+    sget-object v1, Lfz;->SERVER_OTHER_ERROR:Lfz;
+
+    goto :goto_1
+
+    :pswitch_5
+    sget-object v1, Lfz;->CONTENT_NO_FILL:Lfz;
+
+    goto :goto_1
+
+    :pswitch_6
+    sget-object v1, Lfz;->TIMEOUT:Lfz;
+
+    goto :goto_1
+
+    :pswitch_7
+    sget-object v1, Lfz;->CLIENT_ERROR:Lfz;
+
+    goto :goto_1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_7
+        :pswitch_7
+        :pswitch_7
+    .end packed-switch
+.end method
+
+.method public final h()V
+    .locals 0
+
+    .prologue
+    .line 109
+    return-void
+.end method
+
+.method public final i()V
+    .locals 0
+
+    .prologue
+    .line 113
     return-void
 .end method

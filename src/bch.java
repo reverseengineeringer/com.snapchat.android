@@ -1,4 +1,12 @@
-public final class bch {}
+public final class bch
+{
+  public boolean mIsEditing;
+  
+  public bch(boolean paramBoolean)
+  {
+    mIsEditing = paramBoolean;
+  }
+}
 
 /* Location:
  * Qualified Name:     bch

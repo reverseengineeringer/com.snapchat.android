@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbuj;
+.implements Lbvk;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lbuj",
+        "Lbvk",
         "<",
-        "Lcom/snapchat/android/fragments/signup/LoginFragment;",
+        "Lagr;",
         ">;"
     }
 .end annotation
@@ -23,12 +23,12 @@
 
 
 # instance fields
-.field private final b:Lbuj;
+.field private final b:Lbvk;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lbuj",
+            "Lbvk",
             "<",
-            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            "Landroid/widget/BaseAdapter;",
             ">;"
         }
     .end annotation
@@ -39,7 +39,7 @@
         value = {
             "Ljavax/inject/Provider",
             "<",
-            "Layg;",
+            "Lyt;",
             ">;"
         }
     .end annotation
@@ -73,18 +73,18 @@
     goto :goto_0
 .end method
 
-.method private constructor <init>(Lbuj;Ljavax/inject/Provider;)V
+.method private constructor <init>(Lbvk;Ljavax/inject/Provider;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lbuj",
+            "Lbvk",
             "<",
-            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            "Landroid/widget/BaseAdapter;",
             ">;",
             "Ljavax/inject/Provider",
             "<",
-            "Layg;",
+            "Lyt;",
             ">;)V"
         }
     .end annotation
@@ -108,7 +108,7 @@
 
     .line 16
     :cond_0
-    iput-object p1, p0, Lags;->b:Lbuj;
+    iput-object p1, p0, Lags;->b:Lbvk;
 
     .line 17
     sget-boolean v0, Lags;->a:Z
@@ -131,22 +131,22 @@
     return-void
 .end method
 
-.method public static a(Lbuj;Ljavax/inject/Provider;)Lbuj;
+.method public static a(Lbvk;Ljavax/inject/Provider;)Lbvk;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lbuj",
+            "Lbvk",
             "<",
-            "Lcom/snapchat/android/util/fragment/SnapchatFragment;",
+            "Landroid/widget/BaseAdapter;",
             ">;",
             "Ljavax/inject/Provider",
             "<",
-            "Layg;",
+            "Lyt;",
             ">;)",
-            "Lbuj",
+            "Lbvk",
             "<",
-            "Lcom/snapchat/android/fragments/signup/LoginFragment;",
+            "Lagr;",
             ">;"
         }
     .end annotation
@@ -155,7 +155,7 @@
     .line 31
     new-instance v0, Lags;
 
-    invoke-direct {v0, p0, p1}, Lags;-><init>(Lbuj;Ljavax/inject/Provider;)V
+    invoke-direct {v0, p0, p1}, Lags;-><init>(Lbvk;Ljavax/inject/Provider;)V
 
     return-object v0
 .end method
@@ -167,7 +167,7 @@
 
     .prologue
     .line 9
-    check-cast p1, Lcom/snapchat/android/fragments/signup/LoginFragment;
+    check-cast p1, Lagr;
 
     if-nez p1, :cond_0
 
@@ -180,9 +180,9 @@
     throw v0
 
     :cond_0
-    iget-object v0, p0, Lags;->b:Lbuj;
+    iget-object v0, p0, Lags;->b:Lbvk;
 
-    invoke-interface {v0, p1}, Lbuj;->a(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Lbvk;->a(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lags;->c:Ljavax/inject/Provider;
 
@@ -190,9 +190,9 @@
 
     move-result-object v0
 
-    check-cast v0, Layg;
+    check-cast v0, Lyt;
 
-    iput-object v0, p1, Lcom/snapchat/android/fragments/signup/LoginFragment;->a:Layg;
+    iput-object v0, p1, Lagr;->a:Lyt;
 
     return-void
 .end method

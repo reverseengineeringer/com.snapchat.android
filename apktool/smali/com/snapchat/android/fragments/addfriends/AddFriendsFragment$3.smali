@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 154
+    .line 156
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$3;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -37,14 +37,14 @@
     .locals 1
 
     .prologue
-    .line 157
+    .line 159
     invoke-super {p0}, Landroid/database/DataSetObserver;->onChanged()V
 
-    .line 158
+    .line 160
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment$3;->a:Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;
 
     invoke-virtual {v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsFragment;->B()V
 
-    .line 159
+    .line 161
     return-void
 .end method

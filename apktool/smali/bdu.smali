@@ -4,20 +4,27 @@
 
 
 # instance fields
-.field public final mSpeed:F
+.field public final friendUsername:Ljava/lang/String;
+    .annotation build Lchc;
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 9
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10
-    iput p1, p0, Lbdu;->mSpeed:F
+    .line 14
+    iput-object p1, p0, Lbdu;->friendUsername:Ljava/lang/String;
 
-    .line 11
+    .line 15
     return-void
 .end method

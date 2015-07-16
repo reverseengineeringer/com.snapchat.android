@@ -1,22 +1,22 @@
 package com.snapchat.android.fragments.cash;
 
-import ajx;
+import akr;
 import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import atx;
-import bgp;
+import auv;
+import bhp;
 import com.snapchat.android.api2.cash.square.data.ErrorType;
-import su.b;
+import tk.b;
 
 final class CashSettingsFragment$11
-  implements su.b
+  implements tk.b
 {
   CashSettingsFragment$11(CashSettingsFragment paramCashSettingsFragment, boolean paramBoolean, SecurityCodeFragment paramSecurityCodeFragment) {}
   
   public final void a()
   {
-    bgp.a(new Runnable()
+    bhp.a(new Runnable()
     {
       public final void run()
       {
@@ -25,7 +25,7 @@ final class CashSettingsFragment$11
         CashSettingsFragment.e(c).setVisibility(8);
       }
     });
-    ajx.n(a);
+    akr.m(a);
     if (b != null) {
       b.l();
     }
@@ -34,7 +34,7 @@ final class CashSettingsFragment$11
   public final void a(int paramInt)
   {
     boolean bool = false;
-    String str = atx.a(null, 2131492918, new Object[0]) + '\n' + atx.a(null, 2131493314, new Object[0]);
+    String str = auv.a(null, 2131492918, new Object[0]) + '\n' + auv.a(null, 2131493314, new Object[0]);
     ErrorType localErrorType = ErrorType.UNKNOWN;
     switch (paramInt)
     {
@@ -53,10 +53,10 @@ final class CashSettingsFragment$11
         b.a(localErrorType, paramInt);
       }
       return;
-      str = atx.a(null, 2131493204, new Object[0]) + '\n' + atx.a(null, 2131493314, new Object[0]);
+      str = auv.a(null, 2131493204, new Object[0]) + '\n' + auv.a(null, 2131493314, new Object[0]);
       localErrorType = ErrorType.INVALID_PASSCODE;
       continue;
-      str = atx.a(null, 2131493536, new Object[0]) + '\n' + atx.a(null, 2131493315, new Object[0]);
+      str = auv.a(null, 2131493534, new Object[0]) + '\n' + auv.a(null, 2131493315, new Object[0]);
       localErrorType = ErrorType.TOO_MANY_ATTEMPTS;
     }
   }

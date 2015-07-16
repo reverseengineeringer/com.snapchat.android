@@ -1,177 +1,352 @@
 .class public final Lckl;
-.super Lcgk;
+.super Lcke;
 .source "SourceFile"
 
 
 # instance fields
-.field private final d:Ljava/lang/String;
+.field private final a:I
 
-.field private final e:I
+.field private final c:I
 
-.field private final f:I
+.field private final d:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;II)V
-    .locals 0
+.method public constructor <init>(Lchi;I)V
+    .locals 1
 
     .prologue
-    .line 38
-    invoke-direct {p0, p1}, Lcgk;-><init>(Ljava/lang/String;)V
+    .line 47
+    if-nez p1, :cond_0
 
-    .line 39
-    iput-object p2, p0, Lckl;->d:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    .line 40
-    iput p3, p0, Lckl;->e:I
+    :goto_0
+    invoke-direct {p0, p1, v0, p2}, Lckl;-><init>(Lchi;Lchj;I)V
 
-    .line 41
-    iput p4, p0, Lckl;->f:I
-
-    .line 42
+    .line 48
     return-void
+
+    .line 47
+    :cond_0
+    invoke-virtual {p1}, Lchi;->a()Lchj;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public constructor <init>(Lchi;Lchj;)V
+    .locals 1
+
+    .prologue
+    .line 59
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, p2, v0}, Lckl;-><init>(Lchi;Lchj;I)V
+
+    .line 60
+    return-void
+.end method
+
+.method private constructor <init>(Lchi;Lchj;I)V
+    .locals 3
+
+    .prologue
+    const v2, 0x7fffffff
+
+    const/high16 v1, -0x80000000
+
+    .line 74
+    invoke-direct {p0, p1, p2}, Lcke;-><init>(Lchi;Lchj;)V
+
+    .line 76
+    if-nez p3, :cond_0
+
+    .line 77
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "The offset cannot be zero"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 80
+    :cond_0
+    iput p3, p0, Lckl;->a:I
+
+    .line 82
+    invoke-virtual {p1}, Lchi;->g()I
+
+    move-result v0
+
+    add-int/2addr v0, p3
+
+    if-ge v1, v0, :cond_1
+
+    .line 83
+    invoke-virtual {p1}, Lchi;->g()I
+
+    move-result v0
+
+    add-int/2addr v0, p3
+
+    iput v0, p0, Lckl;->c:I
+
+    .line 87
+    :goto_0
+    invoke-virtual {p1}, Lchi;->h()I
+
+    move-result v0
+
+    add-int/2addr v0, p3
+
+    if-le v2, v0, :cond_2
+
+    .line 88
+    invoke-virtual {p1}, Lchi;->h()I
+
+    move-result v0
+
+    add-int/2addr v0, p3
+
+    iput v0, p0, Lckl;->d:I
+
+    .line 92
+    :goto_1
+    return-void
+
+    .line 85
+    :cond_1
+    iput v1, p0, Lckl;->c:I
+
+    goto :goto_0
+
+    .line 90
+    :cond_2
+    iput v2, p0, Lckl;->d:I
+
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final a(J)Ljava/lang/String;
+.method public final a(J)I
+    .locals 3
+
+    .prologue
+    .line 101
+    invoke-super {p0, p1, p2}, Lcke;->a(J)I
+
+    move-result v0
+
+    iget v1, p0, Lckl;->a:I
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final a(JI)J
+    .locals 5
+
+    .prologue
+    .line 113
+    invoke-super {p0, p1, p2, p3}, Lcke;->a(JI)J
+
+    move-result-wide v0
+
+    .line 114
+    invoke-virtual {p0, v0, v1}, Lckl;->a(J)I
+
+    move-result v2
+
+    iget v3, p0, Lckl;->c:I
+
+    iget v4, p0, Lckl;->d:I
+
+    invoke-static {p0, v2, v3, v4}, Lcki;->a(Lchi;III)V
+
+    .line 115
+    return-wide v0
+.end method
+
+.method public final a(JJ)J
+    .locals 5
+
+    .prologue
+    .line 127
+    invoke-super {p0, p1, p2, p3, p4}, Lcke;->a(JJ)J
+
+    move-result-wide v0
+
+    .line 128
+    invoke-virtual {p0, v0, v1}, Lckl;->a(J)I
+
+    move-result v2
+
+    iget v3, p0, Lckl;->c:I
+
+    iget v4, p0, Lckl;->d:I
+
+    invoke-static {p0, v2, v3, v4}, Lcki;->a(Lchi;III)V
+
+    .line 129
+    return-wide v0
+.end method
+
+.method public final b(JI)J
+    .locals 3
+
+    .prologue
+    .line 153
+    iget v0, p0, Lckl;->c:I
+
+    iget v1, p0, Lckl;->d:I
+
+    invoke-static {p0, p3, v0, v1}, Lcki;->a(Lchi;III)V
+
+    .line 154
+    iget v0, p0, Lckl;->a:I
+
+    sub-int v0, p3, v0
+
+    invoke-super {p0, p1, p2, v0}, Lcke;->b(JI)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final b(J)Z
     .locals 1
 
     .prologue
-    .line 45
-    iget-object v0, p0, Lckl;->d:Ljava/lang/String;
+    .line 158
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2}, Lchi;->b(J)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final d(J)J
+    .locals 3
+
+    .prologue
+    .line 188
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2}, Lchi;->d(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final e(J)J
+    .locals 3
+
+    .prologue
+    .line 192
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2}, Lchi;->e(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final f(J)J
+    .locals 3
+
+    .prologue
+    .line 196
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2}, Lchi;->f(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final f()Lchn;
+    .locals 1
+
+    .prologue
+    .line 166
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0}, Lchi;->f()Lchn;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b(J)I
+.method public final g()I
     .locals 1
 
     .prologue
-    .line 49
-    iget v0, p0, Lckl;->e:I
+    .line 175
+    iget v0, p0, Lckl;->c:I
 
     return v0
-.end method
-
-.method public final c(J)I
-    .locals 1
-
-    .prologue
-    .line 57
-    iget v0, p0, Lckl;->e:I
-
-    return v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    .prologue
-    .line 61
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 88
-    if-ne p0, p1, :cond_1
-
-    .line 98
-    :cond_0
-    :goto_0
-    return v0
-
-    .line 91
-    :cond_1
-    instance-of v2, p1, Lckl;
-
-    if-eqz v2, :cond_3
-
-    .line 92
-    check-cast p1, Lckl;
-
-    .line 93
-    iget-object v2, p0, Lcgk;->c:Ljava/lang/String;
-
-    iget-object v3, p1, Lcgk;->c:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget v2, p0, Lckl;->f:I
-
-    iget v3, p1, Lckl;->f:I
-
-    if-ne v2, v3, :cond_2
-
-    iget v2, p0, Lckl;->e:I
-
-    iget v3, p1, Lckl;->e:I
-
-    if-eq v2, v3, :cond_0
-
-    :cond_2
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v1
-
-    .line 98
-    goto :goto_0
-.end method
-
-.method public final f(J)J
-    .locals 1
-
-    .prologue
-    .line 65
-    return-wide p1
 .end method
 
 .method public final g(J)J
+    .locals 3
+
+    .prologue
+    .line 200
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2}, Lchi;->g(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final h()I
     .locals 1
 
     .prologue
-    .line 69
-    return-wide p1
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .prologue
-    .line 102
-    iget-object v0, p0, Lcgk;->c:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    iget v1, p0, Lckl;->f:I
-
-    mul-int/lit8 v1, v1, 0x25
-
-    add-int/2addr v0, v1
-
-    iget v1, p0, Lckl;->e:I
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    add-int/2addr v0, v1
+    .line 184
+    iget v0, p0, Lckl;->d:I
 
     return v0
+.end method
+
+.method public final h(J)J
+    .locals 3
+
+    .prologue
+    .line 204
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2}, Lchi;->h(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final i(J)J
+    .locals 3
+
+    .prologue
+    .line 208
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2}, Lchi;->i(J)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

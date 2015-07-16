@@ -1,16 +1,4 @@
-import com.snapchat.android.database.ClientProperty;
-import com.snapchat.android.database.SharedPreferenceKey;
-import java.util.HashMap;
-
-final class zo$1
-  extends HashMap<String, String>
-{
-  zo$1()
-  {
-    put(SharedPreferenceKey.HAS_ACCEPTED_SQUARE_TOS.getKey(), ClientProperty.SQUARE_TOS_ACCEPTED.name());
-    put(SharedPreferenceKey.HAS_ACCEPTED_SNAPCASH_TOS.getKey(), ClientProperty.SNAPCASH_NEW_TOS_ACCEPTED.name());
-  }
-}
+final class zo$1 {}
 
 /* Location:
  * Qualified Name:     zo.1

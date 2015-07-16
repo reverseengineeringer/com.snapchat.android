@@ -1,16 +1,12 @@
 .class public final Lit;
-.super Llt;
+.super Lml;
 .source "SourceFile"
 
 
 # instance fields
+.field private additionalInfo:Ljava/lang/String;
+
 .field private final eventName:Ljava/lang/String;
-
-.field public hasDisplayName:Ljava/lang/Boolean;
-
-.field public method:Lic;
-
-.field public source:Ljq;
 
 
 # direct methods
@@ -19,10 +15,10 @@
 
     .prologue
     .line 10
-    invoke-direct {p0}, Llt;-><init>()V
+    invoke-direct {p0}, Lml;-><init>()V
 
-    .line 36
-    const-string v0, "PROFILE_FRIEND_REQUEST_DELETE"
+    .line 20
+    const-string v0, "PROFILE_ADDRESS_BOOK_CONTACT_PERMISSION_DENY"
 
     iput-object v0, p0, Lit;->eventName:Ljava/lang/String;
 
@@ -45,62 +41,38 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 27
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 45
+    .line 29
     const-string v1, "event_name"
 
-    const-string v2, "PROFILE_FRIEND_REQUEST_DELETE"
+    const-string v2, "PROFILE_ADDRESS_BOOK_CONTACT_PERMISSION_DENY"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 46
-    iget-object v1, p0, Lit;->hasDisplayName:Ljava/lang/Boolean;
+    .line 30
+    iget-object v1, p0, Lit;->additionalInfo:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    const-string v1, "has_display_name"
+    const-string v1, "additional_info"
 
-    iget-object v2, p0, Lit;->hasDisplayName:Ljava/lang/Boolean;
+    iget-object v2, p0, Lit;->additionalInfo:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 47
+    .line 31
     :cond_0
-    iget-object v1, p0, Lit;->method:Lic;
-
-    if-eqz v1, :cond_1
-
-    const-string v1, "method"
-
-    iget-object v2, p0, Lit;->method:Lic;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 48
-    :cond_1
-    iget-object v1, p0, Lit;->source:Ljq;
-
-    if-eqz v1, :cond_2
-
-    const-string v1, "source"
-
-    iget-object v2, p0, Lit;->source:Ljq;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 49
-    :cond_2
-    invoke-super {p0}, Llt;->a()Ljava/util/Map;
+    invoke-super {p0}, Lml;->a()Ljava/util/Map;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 51
+    .line 33
     return-object v0
 .end method
 
@@ -112,15 +84,15 @@
 
     const/4 v1, 0x0
 
-    .line 56
+    .line 38
     if-ne p0, p1, :cond_1
 
-    .line 65
+    .line 45
     :cond_0
     :goto_0
     return v0
 
-    .line 57
+    .line 39
     :cond_1
     if-eqz p1, :cond_2
 
@@ -139,9 +111,9 @@
 
     goto :goto_0
 
-    .line 58
+    .line 40
     :cond_3
-    invoke-super {p0, p1}, Llt;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Lml;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -151,72 +123,20 @@
 
     goto :goto_0
 
-    .line 60
+    .line 42
     :cond_4
     check-cast p1, Lit;
 
-    .line 62
-    iget-object v2, p0, Lit;->hasDisplayName:Ljava/lang/Boolean;
+    .line 44
+    iget-object v2, p0, Lit;->additionalInfo:Ljava/lang/String;
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_5
 
-    iget-object v2, p0, Lit;->hasDisplayName:Ljava/lang/Boolean;
+    iget-object v2, p0, Lit;->additionalInfo:Ljava/lang/String;
 
-    iget-object v3, p1, Lit;->hasDisplayName:Ljava/lang/Boolean;
+    iget-object v3, p1, Lit;->additionalInfo:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_7
-
-    :cond_5
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_6
-    iget-object v2, p1, Lit;->hasDisplayName:Ljava/lang/Boolean;
-
-    if-nez v2, :cond_5
-
-    .line 63
-    :cond_7
-    iget-object v2, p0, Lit;->method:Lic;
-
-    if-eqz v2, :cond_9
-
-    iget-object v2, p0, Lit;->method:Lic;
-
-    iget-object v3, p1, Lit;->method:Lic;
-
-    invoke-virtual {v2, v3}, Lic;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_a
-
-    :cond_8
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_9
-    iget-object v2, p1, Lit;->method:Lic;
-
-    if-nez v2, :cond_8
-
-    .line 64
-    :cond_a
-    iget-object v2, p0, Lit;->source:Ljq;
-
-    if-eqz v2, :cond_b
-
-    iget-object v2, p0, Lit;->source:Ljq;
-
-    iget-object v3, p1, Lit;->source:Ljq;
-
-    invoke-virtual {v2, v3}, Ljq;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -227,8 +147,8 @@
 
     goto :goto_0
 
-    :cond_b
-    iget-object v2, p1, Lit;->source:Ljq;
+    :cond_5
+    iget-object v2, p1, Lit;->additionalInfo:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
@@ -236,76 +156,36 @@
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 70
-    invoke-super {p0}, Llt;->hashCode()I
+    .line 50
+    invoke-super {p0}, Lml;->hashCode()I
 
     move-result v0
 
-    .line 71
-    mul-int/lit8 v2, v0, 0x1f
+    .line 51
+    mul-int/lit8 v1, v0, 0x1f
 
-    iget-object v0, p0, Lit;->hasDisplayName:Ljava/lang/Boolean;
+    iget-object v0, p0, Lit;->additionalInfo:Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lit;->hasDisplayName:Ljava/lang/Boolean;
+    iget-object v0, p0, Lit;->additionalInfo:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
     :goto_0
-    add-int/2addr v0, v2
-
-    .line 72
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v0, p0, Lit;->method:Lic;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lit;->method:Lic;
-
-    invoke-virtual {v0}, Lic;->hashCode()I
-
-    move-result v0
-
-    :goto_1
-    add-int/2addr v0, v2
-
-    .line 73
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lit;->source:Ljq;
-
-    if-eqz v2, :cond_0
-
-    iget-object v1, p0, Lit;->source:Ljq;
-
-    invoke-virtual {v1}, Ljq;->hashCode()I
-
-    move-result v1
-
-    :cond_0
     add-int/2addr v0, v1
 
-    .line 74
+    .line 52
     return v0
 
-    :cond_1
-    move v0, v1
+    .line 51
+    :cond_0
+    const/4 v0, 0x0
 
-    .line 71
     goto :goto_0
-
-    :cond_2
-    move v0, v1
-
-    .line 72
-    goto :goto_1
 .end method

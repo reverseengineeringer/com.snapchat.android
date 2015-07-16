@@ -1,7 +1,7 @@
 package com.snapchat.android.fragments.signup;
 
-import ajv;
-import ajx;
+import akp;
+import akr;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -34,21 +34,21 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import asu;
-import atj;
-import auo;
-import avh;
-import aya;
-import ayg;
-import aza;
-import ban;
-import big;
+import att;
+import auh;
+import avm;
+import awf;
+import ayy;
+import aze;
+import azy;
+import bbo;
+import bjg;
 import com.snapchat.android.LandingPageActivity;
 import com.snapchat.android.SnapchatApplication;
 import com.snapchat.android.SnapchatCameraBackgroundActivity;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.RegistrationAnalytics;
 import com.snapchat.android.analytics.framework.ScAnalyticsEventEngine;
+import com.snapchat.android.api2.LoginTask.a;
 import com.snapchat.android.database.SharedPreferenceKey;
 import com.snapchat.android.fragments.verification.NewUserPhoneVerificationFragment;
 import com.snapchat.android.ui.window.WindowConfiguration;
@@ -59,19 +59,18 @@ import com.squareup.otto.Bus;
 import java.util.Locale;
 import javax.inject.Inject;
 import javax.inject.Provider;
-import kp;
-import pw.a;
+import lh;
 
 public class LoginFragment
   extends SnapchatFragment
-  implements pw.a
+  implements LoginTask.a
 {
   private static int b = -1;
   private static int c = -1;
   private static int d = -1;
-  private static auo e;
+  private static avm e;
   @Inject
-  public ayg a;
+  public aze a;
   private EditText f;
   private TextView g;
   private TextView h;
@@ -85,8 +84,8 @@ public class LoginFragment
   private Drawable p;
   private int q;
   private final Bus r;
-  private final Provider<ajv> s;
-  private final aya t;
+  private final Provider<akp> s;
+  private final ayy t;
   private final RegistrationAnalytics u;
   private final View.OnClickListener v = new View.OnClickListener()
   {
@@ -97,8 +96,8 @@ public class LoginFragment
       String str = LoginFragment.b(LoginFragment.this).getText().toString().trim();
       if (LoginFragment.i().a(paramAnonymousView))
       {
-        auo localauo = LoginFragment.i();
-        int i = localauo.b(paramAnonymousView);
+        avm localavm = LoginFragment.i();
+        int i = localavm.b(paramAnonymousView);
         if (mSharedPreferences.getInt("SnapKidzLoginManager_passkey_" + i, -1) == str.hashCode()) {}
         for (i = 1; i != 0; i = 0)
         {
@@ -127,23 +126,23 @@ public class LoginFragment
   
   public LoginFragment()
   {
-    this(ban.a(), ajv.UNSAFE_USER_PROVIDER, aya.a(), RegistrationAnalytics.a(), new WindowConfiguration());
+    this(bbo.a(), akp.UNSAFE_USER_PROVIDER, ayy.a(), RegistrationAnalytics.a(), new WindowConfiguration());
   }
   
   @SuppressLint({"ValidFragment"})
   public LoginFragment(WindowConfiguration paramWindowConfiguration)
   {
-    this(ban.a(), ajv.UNSAFE_USER_PROVIDER, aya.a(), RegistrationAnalytics.a(), paramWindowConfiguration);
+    this(bbo.a(), akp.UNSAFE_USER_PROVIDER, ayy.a(), RegistrationAnalytics.a(), paramWindowConfiguration);
   }
   
   @SuppressLint({"ValidFragment"})
-  private LoginFragment(Bus paramBus, Provider<ajv> paramProvider, aya paramaya, RegistrationAnalytics paramRegistrationAnalytics, WindowConfiguration paramWindowConfiguration)
+  private LoginFragment(Bus paramBus, Provider<akp> paramProvider, ayy paramayy, RegistrationAnalytics paramRegistrationAnalytics, WindowConfiguration paramWindowConfiguration)
   {
     super(paramWindowConfiguration);
     SnapchatApplication.b().c().a(this);
     r = paramBus;
     s = paramProvider;
-    t = paramaya;
+    t = paramayy;
     u = paramRegistrationAnalytics;
   }
   
@@ -174,6 +173,12 @@ public class LoginFragment
   }
   
   private void o()
+  {
+    l.setVisibility(4);
+    m.setVisibility(4);
+  }
+  
+  private void p()
   {
     if ((!TextUtils.isEmpty(f.getText())) && (!TextUtils.isEmpty(k.getText())))
     {
@@ -214,8 +219,10 @@ public class LoginFragment
   
   public final void a()
   {
-    l.setVisibility(4);
-    m.setVisibility(4);
+    if (!super.isAdded()) {
+      return;
+    }
+    o();
     try
     {
       FragmentTransaction localFragmentTransaction = getFragmentManager().beginTransaction();
@@ -223,19 +230,15 @@ public class LoginFragment
       localFragmentTransaction.replace(q, localPickUsernameFragment).addToBackStack("PickUsernameFragment").commit();
       return;
     }
-    catch (IllegalStateException localIllegalStateException)
-    {
-      Timber.f("LoginFragment", "Attempted to go to PickUsernameFragment", new Object[0]);
-    }
+    catch (IllegalStateException localIllegalStateException) {}
   }
   
   public final void a(int paramInt, String paramString)
   {
-    if (!isAdded()) {
+    if (!super.isAdded()) {
       return;
     }
-    l.setVisibility(4);
-    m.setVisibility(4);
+    o();
     if (paramInt == -101)
     {
       a(paramString);
@@ -246,65 +249,72 @@ public class LoginFragment
       b(paramString);
       return;
     }
-    o();
+    p();
     AlertDialogUtils.a(getActivity(), paramString, getString(2131493229));
   }
   
-  public final void a(big parambig)
+  public final void a(bjg parambjg)
   {
+    if (!super.isAdded()) {
+      return;
+    }
     k.setText("");
-    l.setVisibility(4);
-    m.setVisibility(4);
+    o();
     FragmentTransaction localFragmentTransaction = getFragmentManager().beginTransaction();
-    parambig = TwoFactorCodeVerificationFragment.a(parambig.s(), parambig.q(), parambig.t());
-    localFragmentTransaction.replace(q, parambig).addToBackStack("TwoFactorCodeVerificationFragment").commit();
+    parambjg = TwoFactorCodeVerificationFragment.a(parambjg.s(), parambjg.q(), parambjg.t());
+    localFragmentTransaction.replace(q, parambjg).addToBackStack("TwoFactorCodeVerificationFragment").commit();
   }
   
   protected final WindowConfiguration.StatusBarDrawMode b()
   {
-    if (asu.SUPPORTS_TRANSPARENT_STATUS_BAR) {
+    if (att.SUPPORTS_TRANSPARENT_STATUS_BAR) {
       return super.b();
     }
     return WindowConfiguration.StatusBarDrawMode.DRAW_BELOW_FOR_ADJUSTABLE_UI;
   }
   
-  public final void b(big parambig)
+  public final void b(bjg parambjg)
   {
-    if (!isAdded()) {}
-    while (ajx.l() == null) {
+    if (!super.isAdded()) {}
+    while (akr.l() == null) {
       return;
     }
-    parambig = getActivity();
-    Intent localIntent = new Intent(parambig, LandingPageActivity.class);
+    parambjg = getActivity();
+    Intent localIntent = new Intent(parambjg, LandingPageActivity.class);
     localIntent.addFlags(67108864);
     startActivity(localIntent);
-    parambig.finish();
+    parambjg.finish();
+  }
+  
+  protected final boolean h_()
+  {
+    return super.isAdded();
   }
   
   public void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    e = auo.a();
+    e = avm.a();
   }
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    mFragmentLayout = paramLayoutInflater.inflate(2130968697, paramViewGroup, false);
+    mFragmentLayout = paramLayoutInflater.inflate(2130968698, paramViewGroup, false);
     if (b == -1) {
-      b = getResources().getColor(2131230814);
+      b = getResources().getColor(2131230816);
     }
     if (c == -1) {
-      c = getResources().getColor(2131230795);
+      c = getResources().getColor(2131230796);
     }
     if (d == -1) {
-      d = getResources().getColor(2131230796);
+      d = getResources().getColor(2131230797);
     }
     q = paramViewGroup.getId();
     paramLayoutInflater = getActivity();
-    f = ((EditText)c(2131362422));
+    f = ((EditText)c(2131362420));
     f.addTextChangedListener(w);
-    g = ((TextView)c(2131362424));
-    i = ((ImageView)c(2131362423));
+    g = ((TextView)c(2131362422));
+    i = ((ImageView)c(2131362421));
     i.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -313,7 +323,7 @@ public class LoginFragment
         LoginFragment.e(LoginFragment.this);
       }
     });
-    k = ((EditText)c(2131362425));
+    k = ((EditText)c(2131362423));
     k.setTypeface(Typeface.DEFAULT);
     k.setTransformationMethod(new PasswordTransformationMethod());
     k.addTextChangedListener(w);
@@ -325,8 +335,8 @@ public class LoginFragment
         return false;
       }
     });
-    h = ((TextView)c(2131362427));
-    j = ((ImageView)c(2131362426));
+    h = ((TextView)c(2131362425));
+    j = ((ImageView)c(2131362424));
     j.setOnClickListener(new View.OnClickListener()
     {
       public final void onClick(View paramAnonymousView)
@@ -335,10 +345,10 @@ public class LoginFragment
         LoginFragment.f(LoginFragment.this);
       }
     });
-    m = ((Button)c(2131362429));
+    m = ((Button)c(2131362427));
     paramViewGroup = m;
     paramLayoutInflater.getAssets();
-    atj.a(paramViewGroup);
+    auh.a(paramViewGroup);
     m.setOnClickListener(v);
     m.setOnTouchListener(new View.OnTouchListener()
     {
@@ -348,13 +358,13 @@ public class LoginFragment
         return false;
       }
     });
-    l = c(2131362430);
+    l = c(2131362428);
     paramViewGroup = PreferenceManager.getDefaultSharedPreferences(paramLayoutInflater).getString(SharedPreferenceKey.LAST_SUCCESSFUL_LOGIN_USERNAME.getKey(), null);
     if (paramViewGroup != null)
     {
       f.setText(paramViewGroup);
       if (k.requestFocus()) {
-        avh.f(paramLayoutInflater);
+        awf.f(paramLayoutInflater);
       }
     }
     for (;;)
@@ -362,9 +372,9 @@ public class LoginFragment
       m.setVisibility(4);
       p = getResources().getDrawable(2130838105);
       return mFragmentLayout;
-      ScAnalyticsEventEngine.a(new kp());
+      ScAnalyticsEventEngine.a(new lh());
       if (f.requestFocus()) {
-        avh.f(paramLayoutInflater);
+        awf.f(paramLayoutInflater);
       }
     }
   }
@@ -385,13 +395,15 @@ public class LoginFragment
     if ((localFragmentActivity instanceof SnapchatCameraBackgroundActivity)) {
       ((SnapchatCameraBackgroundActivity)localFragmentActivity).a(b);
     }
-    I();
+    K();
   }
   
-  public final void x_()
+  public final void w_()
   {
-    l.setVisibility(4);
-    m.setVisibility(4);
+    if (!super.isAdded()) {
+      return;
+    }
+    o();
     try
     {
       FragmentTransaction localFragmentTransaction = getFragmentManager().beginTransaction();
@@ -399,10 +411,7 @@ public class LoginFragment
       localFragmentTransaction.replace(q, localNewUserPhoneVerificationFragment).addToBackStack("NewUserPhoneVerificationFragment").commit();
       return;
     }
-    catch (IllegalStateException localIllegalStateException)
-    {
-      Timber.f("LoginFragment", "Attempted to go to NewUserVerificationFragment", new Object[0]);
-    }
+    catch (IllegalStateException localIllegalStateException) {}
   }
 }
 

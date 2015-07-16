@@ -1,33 +1,33 @@
 package com.snapchat.android.fragments.settings.password;
 
-import amk;
-import amt;
-import amz;
-import aok;
-import aol;
+import anh;
+import anq;
+import anw;
+import apg;
+import aph;
 import java.util.Set;
 
 final class ChangePasswordFragment$1
-  implements aok
+  implements apg
 {
   ChangePasswordFragment$1(ChangePasswordFragment paramChangePasswordFragment) {}
   
-  public final void a(amk paramamk)
+  public final void a(anh paramanh)
   {
-    int i = aol.a(paramamk);
+    int i = aph.a(paramanh);
     if (ChangePasswordFragment.a(a).contains(Integer.valueOf(i)))
     {
       ChangePasswordFragment.a(a).remove(Integer.valueOf(i));
-      if (!(paramamk instanceof amz)) {
+      if (!(paramanh instanceof anw)) {
         break label60;
       }
-      a.a((amz)paramamk);
+      a.a((anw)paramanh);
     }
     label60:
-    while (!(paramamk instanceof amt)) {
+    while (!(paramanh instanceof anq)) {
       return;
     }
-    ChangePasswordFragment.a(a, (amt)paramamk);
+    ChangePasswordFragment.a(a, (anq)paramanh);
   }
 }
 

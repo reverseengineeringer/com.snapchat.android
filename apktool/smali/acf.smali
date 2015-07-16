@@ -1,99 +1,345 @@
 .class public final Lacf;
-.super Ljava/lang/Object;
+.super Lcom/snapchat/android/database/table/DbTable;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lcom/snapchat/android/discover/model/ChannelPage;
+# static fields
+.field public static final a:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final b:Lcom/snapchat/android/discover/model/DSnapPage;
+.field public static final b:[Ljava/lang/String;
+
+.field private static c:Lacf;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 6
 
     .prologue
     const/4 v0, 0x0
 
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 35
+    invoke-static {}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->values()[Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;
 
-    .line 16
-    iput-object v0, p0, Lacf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
+    move-result-object v2
 
-    .line 17
-    iput-object v0, p0, Lacf;->b:Lcom/snapchat/android/discover/model/DSnapPage;
+    .line 36
+    array-length v3, v2
 
-    .line 18
+    .line 37
+    new-array v1, v3, [Ljava/lang/String;
+
+    sput-object v1, Lacf;->b:[Ljava/lang/String;
+
+    move v1, v0
+
+    .line 38
+    :goto_0
+    if-ge v1, v3, :cond_0
+
+    .line 39
+    sget-object v4, Lacf;->b:[Ljava/lang/String;
+
+    aget-object v5, v2, v1
+
+    invoke-virtual {v5}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getColumnName()Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v4, v1
+
+    .line 38
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 43
+    :cond_0
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v1, Lacf;->a:Ljava/util/HashMap;
+
+    .line 44
+    invoke-static {}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->values()[Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;
+
+    move-result-object v1
+
+    array-length v2, v1
+
+    :goto_1
+    if-ge v0, v2, :cond_1
+
+    aget-object v3, v1, v0
+
+    .line 45
+    sget-object v4, Lacf;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v3}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getColumnName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getColumnName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 44
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    .line 47
+    :cond_1
     return-void
 .end method
 
-.method public constructor <init>(Lcom/snapchat/android/discover/model/ChannelPage;Lcom/snapchat/android/discover/model/DSnapPage;)V
+.method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 25
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 31
+    invoke-direct {p0}, Lcom/snapchat/android/database/table/DbTable;-><init>()V
 
-    .line 26
-    iput-object p1, p0, Lacf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
-
-    .line 27
-    iput-object p2, p0, Lacf;->b:Lcom/snapchat/android/discover/model/DSnapPage;
-
-    .line 28
     return-void
+.end method
+
+.method public static declared-synchronized a()Lacf;
+    .locals 2
+
+    .prologue
+    .line 50
+    const-class v1, Lacf;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lacf;->c:Lacf;
+
+    if-nez v0, :cond_0
+
+    .line 51
+    new-instance v0, Lacf;
+
+    invoke-direct {v0}, Lacf;-><init>()V
+
+    sput-object v0, Lacf;->c:Lacf;
+
+    .line 53
+    :cond_0
+    sget-object v0, Lacf;->c:Lacf;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 50
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method protected final a(Ljava/lang/Object;)Landroid/content/ContentValues;
+    .locals 1
 
     .prologue
-    .line 42
-    const-string v1, "(%s, %s)"
+    .line 100
+    const/4 v0, 0x0
 
-    const/4 v0, 0x2
+    return-object v0
+.end method
 
-    new-array v2, v0, [Ljava/lang/Object;
+.method protected final bridge synthetic a(Landroid/database/Cursor;)Ljava/lang/Object;
+    .locals 1
 
-    const/4 v3, 0x0
+    .prologue
+    .line 23
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lacf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
+    return-object v0
+.end method
 
-    if-eqz v0, :cond_0
+.method protected final a(Lakp;)Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lakp;",
+            ")",
+            "Ljava/util/Collection",
+            "<",
+            "Lcom/snapchat/android/model/Snap;",
+            ">;"
+        }
+    .end annotation
 
-    iget-object v0, p0, Lacf;->a:Lcom/snapchat/android/discover/model/ChannelPage;
+    .prologue
+    .line 89
+    const/4 v0, 0x0
 
-    :goto_0
-    aput-object v0, v2, v3
+    return-object v0
+.end method
 
-    const/4 v3, 0x1
+.method public final b(Lakp;)V
+    .locals 0
 
-    iget-object v0, p0, Lacf;->b:Lcom/snapchat/android/discover/model/DSnapPage;
+    .prologue
+    .line 95
+    return-void
+.end method
 
-    if-eqz v0, :cond_1
+.method public final b()[Laav;
+    .locals 1
 
-    iget-object v0, p0, Lacf;->b:Lcom/snapchat/android/discover/model/DSnapPage;
-
-    :goto_1
-    aput-object v0, v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    .prologue
+    .line 84
+    invoke-static {}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->values()[Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;
 
     move-result-object v0
 
     return-object v0
+.end method
 
+.method public final c()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 79
+    const-string v0, "VerifiedDeviceTable"
+
+    return-object v0
+.end method
+
+.method public final c(Lakp;)V
+    .locals 0
+
+    .prologue
+    .line 122
+    return-void
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 7
+
+    .prologue
+    .line 58
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 59
+    invoke-static {}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->values()[Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;
+
+    move-result-object v2
+
+    .line 60
+    array-length v3, v2
+
+    .line 61
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v3, :cond_2
+
+    .line 62
+    aget-object v4, v2, v0
+
+    .line 63
+    if-lez v0, :cond_0
+
+    .line 64
+    const-string v5, ", "
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 66
     :cond_0
-    const-string v0, "None"
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v4}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getColumnName()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, " "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getDataType()Lcom/snapchat/android/database/DataType;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/snapchat/android/database/DataType;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 67
+    invoke-virtual {v4}, Lcom/snapchat/android/database/schema/VerifiedDeviceSchema;->getConstraints()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 68
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    .line 69
+    const-string v5, " "
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 70
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 61
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_1
-    const-string v0, "None"
+    .line 74
+    :cond_2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_1
+    move-result-object v0
+
+    return-object v0
 .end method

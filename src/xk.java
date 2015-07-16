@@ -1,16 +1,29 @@
-import android.media.CamcorderProfile;
-
 public final class xk
-  extends xm
+  implements bvp<xj>
 {
-  public final int a(CamcorderProfile paramCamcorderProfile)
+  private final bvk<xj> b;
+  
+  static
   {
-    return 1384000;
+    if (!xk.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
+    {
+      a = bool;
+      return;
+    }
   }
   
-  public final long a()
+  private xk(bvk<xj> parambvk)
   {
-    return 1730151L;
+    if ((!a) && (parambvk == null)) {
+      throw new AssertionError();
+    }
+    b = parambvk;
+  }
+  
+  public static bvp<xj> a(bvk<xj> parambvk)
+  {
+    return new xk(parambvk);
   }
 }
 

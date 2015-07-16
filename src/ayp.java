@@ -1,7 +1,10 @@
+import com.snapchat.android.util.chat.SecureChatSession;
+import javax.inject.Provider;
+
 public final class ayp
-  implements buo<azi>
+  implements bvk<SecureChatSession>
 {
-  private final ayl module;
+  private final Provider<aum> mGsonProvider;
   
   static
   {
@@ -13,15 +16,15 @@ public final class ayp
     }
   }
   
-  private ayp(ayl paramayl)
+  private ayp(Provider<aum> paramProvider)
   {
-    assert (paramayl != null);
-    module = paramayl;
+    assert (paramProvider != null);
+    mGsonProvider = paramProvider;
   }
   
-  public static buo<azi> a(ayl paramayl)
+  public static bvk<SecureChatSession> a(Provider<aum> paramProvider)
   {
-    return new ayp(paramayl);
+    return new ayp(paramProvider);
   }
 }
 

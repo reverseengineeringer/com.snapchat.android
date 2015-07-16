@@ -1,213 +1,120 @@
-import java.io.Serializable;
+import java.lang.reflect.Method;
+import java.text.DateFormatSymbols;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Locale;
+import java.util.Map;
 
-public abstract class chk
-  extends cgf
-  implements Serializable
+public final class chk
 {
-  public cgh A()
+  private static final chk.b a;
+  private static volatile chk.a b;
+  private static volatile Map<String, chl> c;
+  
+  static
   {
-    return cjs.a(cgi.q(), y());
+    Object localObject = new chk.b();
+    a = (chk.b)localObject;
+    b = (chk.a)localObject;
+    localObject = new LinkedHashMap();
+    ((Map)localObject).put("UT", chl.a);
+    ((Map)localObject).put("UTC", chl.a);
+    ((Map)localObject).put("GMT", chl.a);
+    a((Map)localObject, "EST", "America/New_York");
+    a((Map)localObject, "EDT", "America/New_York");
+    a((Map)localObject, "CST", "America/Chicago");
+    a((Map)localObject, "CDT", "America/Chicago");
+    a((Map)localObject, "MST", "America/Denver");
+    a((Map)localObject, "MDT", "America/Denver");
+    a((Map)localObject, "PST", "America/Los_Angeles");
+    a((Map)localObject, "PDT", "America/Los_Angeles");
+    c = Collections.unmodifiableMap((Map)localObject);
   }
   
-  public cgm B()
+  public static final long a()
   {
-    return cjt.a(cgn.i());
+    return b.a();
   }
   
-  public cgh C()
+  public static final long a(cia paramcia)
   {
-    return cjs.a(cgi.r(), B());
-  }
-  
-  public cgm D()
-  {
-    return cjt.a(cgn.j());
-  }
-  
-  public cgh E()
-  {
-    return cjs.a(cgi.s(), D());
-  }
-  
-  public cgh F()
-  {
-    return cjs.a(cgi.t(), D());
-  }
-  
-  public cgh G()
-  {
-    return cjs.a(cgi.u(), D());
-  }
-  
-  public cgm H()
-  {
-    return cjt.a(cgn.k());
-  }
-  
-  public cgh I()
-  {
-    return cjs.a(cgi.v(), H());
-  }
-  
-  public cgm J()
-  {
-    return cjt.a(cgn.l());
-  }
-  
-  public cgh K()
-  {
-    return cjs.a(cgi.w(), J());
-  }
-  
-  public long a(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
-  {
-    long l = E().b(0L, paramInt1);
-    l = C().b(l, paramInt2);
-    l = u().b(l, paramInt3);
-    return e().b(l, paramInt4);
-  }
-  
-  public long a(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6, int paramInt7)
-  {
-    long l = E().b(0L, paramInt1);
-    l = C().b(l, paramInt2);
-    l = u().b(l, paramInt3);
-    l = m().b(l, paramInt4);
-    l = j().b(l, paramInt5);
-    l = g().b(l, paramInt6);
-    return d().b(l, paramInt7);
-  }
-  
-  public final long a(chb paramchb, long paramLong)
-  {
-    int i = 0;
-    int j = paramchb.a();
-    while (i < j)
-    {
-      paramLong = paramchb.c(i).a(this).b(paramLong, paramchb.a(i));
-      i += 1;
+    if (paramcia == null) {
+      return a();
     }
-    return paramLong;
+    return paramcia.c();
   }
   
-  public cgm c()
+  public static final chg a(chg paramchg)
   {
-    return cjt.a(cgn.a());
+    Object localObject = paramchg;
+    if (paramchg == null) {
+      localObject = cjd.M();
+    }
+    return (chg)localObject;
   }
   
-  public cgh d()
+  public static final chl a(chl paramchl)
   {
-    return cjs.a(cgi.a(), c());
+    chl localchl = paramchl;
+    if (paramchl == null) {
+      localchl = chl.a();
+    }
+    return localchl;
   }
   
-  public cgh e()
+  public static final DateFormatSymbols a(Locale paramLocale)
   {
-    return cjs.a(cgi.b(), c());
+    try
+    {
+      DateFormatSymbols localDateFormatSymbols = (DateFormatSymbols)DateFormatSymbols.class.getMethod("getInstance", new Class[] { Locale.class }).invoke(null, new Object[] { paramLocale });
+      return localDateFormatSymbols;
+    }
+    catch (Exception localException) {}
+    return new DateFormatSymbols(paramLocale);
   }
   
-  public cgm f()
+  private static void a(Map<String, chl> paramMap, String paramString1, String paramString2)
   {
-    return cjt.a(cgn.b());
+    try
+    {
+      paramMap.put(paramString1, chl.a(paramString2));
+      return;
+    }
+    catch (RuntimeException paramMap) {}
   }
   
-  public cgh g()
+  public static final chg b(cia paramcia)
   {
-    return cjs.a(cgi.c(), f());
+    if (paramcia == null) {
+      paramcia = cjd.M();
+    }
+    chg localchg;
+    do
+    {
+      return paramcia;
+      localchg = paramcia.d();
+      paramcia = localchg;
+    } while (localchg != null);
+    return cjd.M();
   }
   
-  public cgh h()
+  public static final Map<String, chl> b()
   {
-    return cjs.a(cgi.d(), f());
+    return c;
   }
   
-  public cgm i()
+  public static abstract interface a
   {
-    return cjt.a(cgn.c());
+    public abstract long a();
   }
   
-  public cgh j()
+  static final class b
+    implements chk.a
   {
-    return cjs.a(cgi.e(), i());
-  }
-  
-  public cgh k()
-  {
-    return cjs.a(cgi.f(), i());
-  }
-  
-  public cgm l()
-  {
-    return cjt.a(cgn.d());
-  }
-  
-  public cgh m()
-  {
-    return cjs.a(cgi.g(), l());
-  }
-  
-  public cgh n()
-  {
-    return cjs.a(cgi.h(), l());
-  }
-  
-  public cgm o()
-  {
-    return cjt.a(cgn.e());
-  }
-  
-  public cgh p()
-  {
-    return cjs.a(cgi.i(), l());
-  }
-  
-  public cgh q()
-  {
-    return cjs.a(cgi.j(), l());
-  }
-  
-  public cgh r()
-  {
-    return cjs.a(cgi.k(), o());
-  }
-  
-  public cgm s()
-  {
-    return cjt.a(cgn.f());
-  }
-  
-  public cgh t()
-  {
-    return cjs.a(cgi.l(), s());
-  }
-  
-  public cgh u()
-  {
-    return cjs.a(cgi.m(), s());
-  }
-  
-  public cgh v()
-  {
-    return cjs.a(cgi.n(), s());
-  }
-  
-  public cgm w()
-  {
-    return cjt.a(cgn.g());
-  }
-  
-  public cgh x()
-  {
-    return cjs.a(cgi.o(), w());
-  }
-  
-  public cgm y()
-  {
-    return cjt.a(cgn.h());
-  }
-  
-  public cgh z()
-  {
-    return cjs.a(cgi.p(), y());
+    public final long a()
+    {
+      return System.currentTimeMillis();
+    }
   }
 }
 

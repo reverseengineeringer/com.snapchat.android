@@ -1,84 +1,211 @@
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.Collection;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.RandomAccess;
 import javax.annotation.Nullable;
 
 @cd
-public final class dl
+public abstract class dl<E>
+  extends dj<E>
+  implements List<E>, RandomAccess
 {
-  static final ch.a a = new ch.a(cu.a, "=", (byte)0);
+  static final dl<Object> a = new dz(dw.a);
   
-  static int a(int paramInt)
+  public static <E> dl<E> a(E paramE)
   {
-    if (paramInt < 3)
-    {
-      ct.a(paramInt, "expectedSize");
-      return paramInt + 1;
-    }
-    if (paramInt < 1073741824) {
-      return paramInt / 3 + paramInt;
-    }
-    return Integer.MAX_VALUE;
+    return new ed(paramE);
   }
   
-  static <K, V> dw<V> a(dw<Map.Entry<K, V>> paramdw)
+  public static <E> dl<E> a(E paramE1, E paramE2)
   {
-    new dw()
+    return a(dw.a(new Object[] { paramE1, paramE2 }));
+  }
+  
+  static <E> dl<E> a(Object[] paramArrayOfObject)
+  {
+    int i = paramArrayOfObject.length;
+    switch (i)
     {
-      public final boolean hasNext()
-      {
-        return a.hasNext();
+    default: 
+      Object[] arrayOfObject = paramArrayOfObject;
+      if (i < paramArrayOfObject.length) {
+        arrayOfObject = dw.b(paramArrayOfObject, i);
       }
-      
-      public final V next()
+      return new dz(arrayOfObject);
+    case 0: 
+      return a;
+    }
+    return new ed(paramArrayOfObject[0]);
+  }
+  
+  public static <E> dl<E> e()
+  {
+    return a;
+  }
+  
+  int a(Object[] paramArrayOfObject, int paramInt)
+  {
+    int j = size();
+    int i = 0;
+    while (i < j)
+    {
+      paramArrayOfObject[(paramInt + i)] = get(i);
+      i += 1;
+    }
+    return paramInt + j;
+  }
+  
+  public dl<E> a(int paramInt1, int paramInt2)
+  {
+    co.a(paramInt1, paramInt2, size());
+    switch (paramInt2 - paramInt1)
+    {
+    default: 
+      return b(paramInt1, paramInt2);
+    case 0: 
+      return a;
+    }
+    return a(get(paramInt1));
+  }
+  
+  public ef<E> a()
+  {
+    return a(0);
+  }
+  
+  public eg<E> a(int paramInt)
+  {
+    new cv(size(), paramInt)
+    {
+      protected final E a(int paramAnonymousInt)
       {
-        return (V)((Map.Entry)a.next()).getValue();
+        return (E)get(paramAnonymousInt);
       }
     };
   }
   
-  static String a(Map<?, ?> paramMap)
+  @Deprecated
+  public final void add(int paramInt, E paramE)
   {
-    StringBuilder localStringBuilder = cu.a(paramMap.size()).append('{');
-    a.a(localStringBuilder, paramMap.entrySet().iterator());
-    return '}';
+    throw new UnsupportedOperationException();
   }
   
-  public static <K, V> HashMap<K, V> a()
+  @Deprecated
+  public final boolean addAll(int paramInt, Collection<? extends E> paramCollection)
   {
-    return new HashMap();
+    throw new UnsupportedOperationException();
   }
   
-  @cd
-  public static <K, V> Map.Entry<K, V> a(@Nullable K paramK, @Nullable V paramV)
+  public final dl<E> b()
   {
-    return new dd(paramK, paramV);
+    return this;
   }
   
-  static boolean a(Map<?, ?> paramMap, Object paramObject)
+  dl<E> b(int paramInt1, int paramInt2)
   {
-    if (paramMap == paramObject) {
-      return true;
-    }
-    if ((paramObject instanceof Map))
+    return new dl.a(paramInt1, paramInt2 - paramInt1);
+  }
+  
+  public boolean contains(@Nullable Object paramObject)
+  {
+    return indexOf(paramObject) >= 0;
+  }
+  
+  public boolean equals(@Nullable Object paramObject)
+  {
+    if (paramObject == co.a(this)) {}
+    do
     {
-      paramObject = (Map)paramObject;
-      return paramMap.entrySet().equals(((Map)paramObject).entrySet());
-    }
+      return true;
+      if (!(paramObject instanceof List)) {
+        break;
+      }
+      paramObject = (List)paramObject;
+    } while ((size() == ((List)paramObject).size()) && (ds.a(iterator(), ((List)paramObject).iterator())));
     return false;
   }
   
-  public static <K, V> LinkedHashMap<K, V> b()
+  public int hashCode()
   {
-    return new LinkedHashMap();
+    int j = 1;
+    int k = size();
+    int i = 0;
+    while (i < k)
+    {
+      j = j * 31 + get(i).hashCode() ^ 0xFFFFFFFF ^ 0xFFFFFFFF;
+      i += 1;
+    }
+    return j;
   }
   
-  public static <K extends Comparable, V> TreeMap<K, V> c()
+  public int indexOf(@Nullable Object paramObject)
   {
-    return new TreeMap();
+    if (paramObject != null)
+    {
+      ListIterator localListIterator = listIterator();
+      while (localListIterator.hasNext()) {
+        if (cm.a(paramObject, localListIterator.next())) {
+          return localListIterator.previousIndex();
+        }
+      }
+    }
+    return -1;
+  }
+  
+  public int lastIndexOf(@Nullable Object paramObject)
+  {
+    if (paramObject != null)
+    {
+      ListIterator localListIterator = listIterator(size());
+      while (localListIterator.hasPrevious()) {
+        if (cm.a(paramObject, localListIterator.previous())) {
+          return localListIterator.nextIndex();
+        }
+      }
+    }
+    return -1;
+  }
+  
+  @Deprecated
+  public final E remove(int paramInt)
+  {
+    throw new UnsupportedOperationException();
+  }
+  
+  @Deprecated
+  public final E set(int paramInt, E paramE)
+  {
+    throw new UnsupportedOperationException();
+  }
+  
+  final class a
+    extends dl<E>
+  {
+    final transient int b;
+    final transient int c;
+    
+    a(int paramInt1, int paramInt2)
+    {
+      b = paramInt1;
+      c = paramInt2;
+    }
+    
+    public final dl<E> a(int paramInt1, int paramInt2)
+    {
+      co.a(paramInt1, paramInt2, c);
+      return dl.this.a(b + paramInt1, b + paramInt2);
+    }
+    
+    public final E get(int paramInt)
+    {
+      co.a(paramInt, c);
+      return (E)dl.this.get(b + paramInt);
+    }
+    
+    public final int size()
+    {
+      return c;
+    }
   }
 }
 

@@ -9,7 +9,7 @@ import android.graphics.Point;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
-import aur;
+import avp;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
@@ -120,8 +120,8 @@ public class KarelView
   public void onAttachedToWindow()
   {
     super.onAttachedToWindow();
-    e = aur.a(getContext(), 2130837857, false);
-    i = aur.a(getContext(), 2130837638, false);
+    e = avp.a(getContext(), 2130837857, false);
+    i = avp.a(getContext(), 2130837638, false);
     d.setAntiAlias(false);
     d.setFilterBitmap(false);
   }

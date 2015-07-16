@@ -38,12 +38,12 @@
     return-void
 .end method
 
-.method protected getAnalyticsDetails()Lapo;
+.method protected getAnalyticsDetails()Laqn;
     .locals 5
 
     .prologue
     .line 26
-    new-instance v1, Lapo;
+    new-instance v1, Laqn;
 
     sget-object v2, Lcom/snapchat/android/ui/caption/CaptionTypeEnums;->FAT_CENTER_CAPTION_TYPE:Lcom/snapchat/android/ui/caption/CaptionTypeEnums;
 
@@ -64,7 +64,7 @@
     :goto_0
     iget-boolean v4, p0, Lcom/snapchat/android/ui/caption/FatCenterCaptionEditText;->x:Z
 
-    invoke-direct {v1, v2, v3, v0, v4}, Lapo;-><init>(Lcom/snapchat/android/ui/caption/CaptionTypeEnums;ZZZ)V
+    invoke-direct {v1, v2, v3, v0, v4}, Laqn;-><init>(Lcom/snapchat/android/ui/caption/CaptionTypeEnums;ZZZ)V
 
     return-object v1
 

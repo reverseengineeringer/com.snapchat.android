@@ -2,15 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class ig
-  extends lt
+  extends ml
 {
   private String additionalInfo;
-  private final String eventName = "PROFILE_ADDRESS_BOOK_CONTACT_INVITE_INITIATE";
+  private final String eventName = "HERE_SESSION_START";
   
   public final Map<String, Object> a()
   {
     HashMap localHashMap = new HashMap();
-    localHashMap.put("event_name", "PROFILE_ADDRESS_BOOK_CONTACT_INVITE_INITIATE");
+    localHashMap.put("event_name", "HERE_SESSION_START");
     if (additionalInfo != null) {
       localHashMap.put("additional_info", additionalInfo);
     }

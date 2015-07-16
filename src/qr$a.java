@@ -1,15 +1,18 @@
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
-@tn
-final class qr$a
-  extends pl
+@ud
+public final class qr$a
+  extends qc
 {
-  @SerializedName("conversation_id")
-  String conversationId = this$0.mConversationId;
-  @SerializedName("transaction_id")
-  String transactionId = this$0.mTransactionId;
+  @SerializedName("client_properties")
+  String clientProperties = aul.a().toJson(qr.b(this$0));
+  @SerializedName("seen_tooltips")
+  String seenTooltips = aul.a().toJson(qr.a(this$0));
+  @SerializedName("username")
+  String username = akr.l();
   
-  qr$a(qr paramqr) {}
+  public qr$a(qr paramqr) {}
 }
 
 /* Location:

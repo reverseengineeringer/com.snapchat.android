@@ -1,39 +1,52 @@
-import com.snapchat.android.camera.BackgroundCameraFragment;
-import com.snapchat.android.camera.BaseCameraFragment;
-import com.snapchat.android.camera.model.CameraModel;
-import javax.inject.Provider;
+import com.google.gson.annotations.SerializedName;
+import java.util.List;
 
 public final class vh
-  implements buj<BackgroundCameraFragment>
+  extends tx
+  implements ui.b<vh.c>
 {
-  private final buj<BaseCameraFragment> b;
-  private final Provider<CameraModel> c;
+  private static final String PATH = "/loq/conversations";
+  private final vh.a mCallback;
+  final String mIterToken;
   
-  static
+  public vh(String paramString, vh.a parama)
   {
-    if (!vh.class.desiredAssertionStatus()) {}
-    for (boolean bool = true;; bool = false)
-    {
-      a = bool;
-      return;
-    }
+    mIterToken = paramString;
+    mCallback = parama;
+    registerCallback(vh.c.class, this);
   }
   
-  private vh(buj<BaseCameraFragment> parambuj, Provider<CameraModel> paramProvider)
+  protected final String getPath()
   {
-    if ((!a) && (parambuj == null)) {
-      throw new AssertionError();
-    }
-    b = parambuj;
-    if ((!a) && (paramProvider == null)) {
-      throw new AssertionError();
-    }
-    c = paramProvider;
+    return "/loq/conversations";
   }
   
-  public static buj<BackgroundCameraFragment> a(buj<BaseCameraFragment> parambuj, Provider<CameraModel> paramProvider)
+  public final Object getRequestPayload()
   {
-    return new vh(parambuj, paramProvider);
+    return new vh.b();
+  }
+  
+  public static abstract interface a
+  {
+    public abstract void a();
+    
+    public abstract void a(List<bid> paramList);
+  }
+  
+  @ud
+  final class b
+    extends qc
+  {
+    @SerializedName("offset")
+    String iterToken = mIterToken;
+    
+    b() {}
+  }
+  
+  public static class c
+  {
+    @SerializedName("conversations_response")
+    List<bid> conversations;
   }
 }
 

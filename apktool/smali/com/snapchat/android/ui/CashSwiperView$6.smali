@@ -60,7 +60,7 @@
 
     double-to-float v0, v0
 
-    invoke-static {v0}, Latz;->a(F)F
+    invoke-static {v0}, Laux;->a(F)F
 
     move-result v0
 

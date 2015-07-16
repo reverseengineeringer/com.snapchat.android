@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbus;
+.implements Lbvt;
 
 
 # instance fields
-.field private a:Lbuw;
+.field private a:Lbvx;
 
 .field private b:F
 
@@ -122,40 +122,40 @@
     const/4 v2, -0x1
 
     .line 78
-    new-instance v0, Lbuw;
+    new-instance v0, Lbvx;
 
     invoke-virtual {p0}, Lin/srain/cube/views/ptr/header/MaterialHeader;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p0}, Lbuw;-><init>(Landroid/content/Context;Landroid/view/View;)V
+    invoke-direct {v0, v1, p0}, Lbvx;-><init>(Landroid/content/Context;Landroid/view/View;)V
 
-    iput-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iput-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
     .line 79
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    iput v2, v0, Lbuw;->b:I
+    iput v2, v0, Lbvx;->b:I
 
-    iget-object v0, v0, Lbuw;->a:Lbuw$c;
+    iget-object v0, v0, Lbvx;->a:Lbvx$c;
 
-    iput v2, v0, Lbuw$c;->v:I
+    iput v2, v0, Lbvx$c;->v:I
 
     .line 80
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v0, p0}, Lbuw;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    invoke-virtual {v0, p0}, Lbvx;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     .line 81
     return-void
 .end method
 
-.method static synthetic b(Lin/srain/cube/views/ptr/header/MaterialHeader;)Lbuw;
+.method static synthetic b(Lin/srain/cube/views/ptr/header/MaterialHeader;)Lbvx;
     .locals 1
 
     .prologue
     .line 16
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
     return-object v0
 .end method
@@ -182,9 +182,9 @@
     iput v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->b:F
 
     .line 129
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v0}, Lbuw;->stop()V
+    invoke-virtual {v0}, Lbvx;->stop()V
 
     .line 130
     return-void
@@ -209,7 +209,7 @@
     if-ne p3, v1, :cond_0
 
     .line 167
-    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
     const/high16 v2, 0x437f0000    # 255.0f
 
@@ -217,47 +217,47 @@
 
     float-to-int v2, v2
 
-    invoke-virtual {v1, v2}, Lbuw;->setAlpha(I)V
+    invoke-virtual {v1, v2}, Lbvx;->setAlpha(I)V
 
     .line 168
-    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    iget-object v1, v1, Lbuw;->a:Lbuw$c;
+    iget-object v1, v1, Lbvx;->a:Lbvx$c;
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, v2}, Lbuw$c;->a(Z)V
+    invoke-virtual {v1, v2}, Lbvx$c;->a(Z)V
 
     .line 170
     mul-float v1, v0, v3
 
     .line 171
-    iget-object v2, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v2, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
     invoke-static {v3, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
 
-    iget-object v3, v2, Lbuw;->a:Lbuw$c;
+    iget-object v3, v2, Lbvx;->a:Lbvx$c;
 
     const/4 v4, 0x0
 
-    invoke-virtual {v3, v4}, Lbuw$c;->a(F)V
+    invoke-virtual {v3, v4}, Lbvx$c;->a(F)V
 
-    iget-object v2, v2, Lbuw;->a:Lbuw$c;
+    iget-object v2, v2, Lbvx;->a:Lbvx$c;
 
-    invoke-virtual {v2, v1}, Lbuw$c;->b(F)V
+    invoke-virtual {v2, v1}, Lbvx$c;->b(F)V
 
     .line 172
-    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
     invoke-static {v5, v0}, Ljava/lang/Math;->min(FF)F
 
     move-result v2
 
-    iget-object v1, v1, Lbuw;->a:Lbuw$c;
+    iget-object v1, v1, Lbvx;->a:Lbvx$c;
 
-    invoke-virtual {v1, v2}, Lbuw$c;->d(F)V
+    invoke-virtual {v1, v2}, Lbvx$c;->d(F)V
 
     .line 175
     const/high16 v1, -0x41800000    # -0.25f
@@ -279,11 +279,11 @@
     mul-float/2addr v0, v1
 
     .line 176
-    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    iget-object v1, v1, Lbuw;->a:Lbuw$c;
+    iget-object v1, v1, Lbvx;->a:Lbvx$c;
 
-    invoke-virtual {v1, v0}, Lbuw$c;->c(F)V
+    invoke-virtual {v1, v0}, Lbvx$c;->c(F)V
 
     .line 177
     invoke-virtual {p0}, Lin/srain/cube/views/ptr/header/MaterialHeader;->invalidate()V
@@ -306,16 +306,16 @@
 
     .prologue
     .line 148
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
     const/16 v1, 0xff
 
-    invoke-virtual {v0, v1}, Lbuw;->setAlpha(I)V
+    invoke-virtual {v0, v1}, Lbvx;->setAlpha(I)V
 
     .line 149
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v0}, Lbuw;->start()V
+    invoke-virtual {v0}, Lbvx;->start()V
 
     .line 150
     return-void
@@ -326,9 +326,9 @@
 
     .prologue
     .line 159
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v0}, Lbuw;->stop()V
+    invoke-virtual {v0}, Lbvx;->stop()V
 
     .line 160
     return-void
@@ -339,7 +339,7 @@
 
     .prologue
     .line 85
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
     if-ne p1, v0, :cond_0
 
@@ -367,9 +367,9 @@
     move-result v0
 
     .line 113
-    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v1}, Lbuw;->getBounds()Landroid/graphics/Rect;
+    invoke-virtual {v1}, Lbvx;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
 
@@ -382,9 +382,9 @@
 
     move-result v3
 
-    iget-object v4, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v4, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v4}, Lbuw;->getIntrinsicWidth()I
+    invoke-virtual {v4}, Lbvx;->getIntrinsicWidth()I
 
     move-result v4
 
@@ -421,9 +421,9 @@
     invoke-virtual {p1, v2, v3, v4, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 117
-    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v1, p1}, Lbuw;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v1, p1}, Lbvx;->draw(Landroid/graphics/Canvas;)V
 
     .line 118
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
@@ -439,16 +439,16 @@
     const/4 v2, 0x0
 
     .line 106
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v0}, Lbuw;->getIntrinsicHeight()I
+    invoke-virtual {v0}, Lbvx;->getIntrinsicHeight()I
 
     move-result v0
 
     .line 107
-    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v1, v2, v2, v0, v0}, Lbuw;->setBounds(IIII)V
+    invoke-virtual {v1, v2, v2, v0, v0}, Lbvx;->setBounds(IIII)V
 
     .line 108
     return-void
@@ -459,9 +459,9 @@
 
     .prologue
     .line 99
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    invoke-virtual {v0}, Lbuw;->getIntrinsicHeight()I
+    invoke-virtual {v0}, Lbvx;->getIntrinsicHeight()I
 
     move-result v0
 
@@ -496,17 +496,17 @@
 
     .prologue
     .line 93
-    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbuw;
+    iget-object v0, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->a:Lbvx;
 
-    iget-object v1, v0, Lbuw;->a:Lbuw$c;
+    iget-object v1, v0, Lbvx;->a:Lbvx$c;
 
-    invoke-virtual {v1, p1}, Lbuw$c;->a([I)V
+    invoke-virtual {v1, p1}, Lbvx$c;->a([I)V
 
-    iget-object v0, v0, Lbuw;->a:Lbuw$c;
+    iget-object v0, v0, Lbvx;->a:Lbvx$c;
 
     const/4 v1, 0x0
 
-    iput v1, v0, Lbuw$c;->k:I
+    iput v1, v0, Lbvx$c;->k:I
 
     .line 94
     invoke-virtual {p0}, Lin/srain/cube/views/ptr/header/MaterialHeader;->invalidate()V
@@ -536,7 +536,7 @@
 
     new-instance v2, Lin/srain/cube/views/ptr/header/MaterialHeader$3;
 
-    invoke-direct {v2, p0, v0}, Lin/srain/cube/views/ptr/header/MaterialHeader$3;-><init>(Lin/srain/cube/views/ptr/header/MaterialHeader;Lbuu;)V
+    invoke-direct {v2, p0, v0}, Lin/srain/cube/views/ptr/header/MaterialHeader$3;-><init>(Lin/srain/cube/views/ptr/header/MaterialHeader;Lbvv;)V
 
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
@@ -546,7 +546,7 @@
     .line 74
     iget-object v1, p0, Lin/srain/cube/views/ptr/header/MaterialHeader;->c:Lin/srain/cube/views/ptr/PtrFrameLayout;
 
-    invoke-virtual {v1, v0}, Lin/srain/cube/views/ptr/PtrFrameLayout;->setRefreshCompleteHook(Lbuu;)V
+    invoke-virtual {v1, v0}, Lin/srain/cube/views/ptr/PtrFrameLayout;->setRefreshCompleteHook(Lbvv;)V
 
     .line 75
     return-void

@@ -1,11 +1,13 @@
-import com.snapchat.android.model.chat.ChatMedia.a;
-
 public final class akh$a
-  extends ChatMedia.a
 {
-  public akh$a(String paramString1, String paramString2)
+  public int mGravity = 0;
+  public int mHeight = -1;
+  public boolean mShouldHideSystemUi = false;
+  public int mWidth = -1;
+  
+  public final akh a()
   {
-    super(paramString1, paramString2);
+    return new akh(this, (byte)0);
   }
 }
 

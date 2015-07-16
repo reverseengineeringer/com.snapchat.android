@@ -2,8 +2,7 @@ package com.snapchat.android.ui;
 
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnErrorListener;
-import ann;
-import com.snapchat.android.Timber;
+import aok;
 import com.snapchat.android.model.Mediabryo;
 
 final class SnapEditorView$3
@@ -13,10 +12,10 @@ final class SnapEditorView$3
   
   public final boolean onError(MediaPlayer paramMediaPlayer, int paramInt1, int paramInt2)
   {
-    Timber.f("SnapEditorView", "Media player onError what=%s extra=%d retryCount=%d", new Object[] { ann.a(paramInt1), Integer.valueOf(paramInt2), Integer.valueOf(a) });
+    aok.a(paramInt1);
+    paramInt1 = a;
     if (a > 0)
     {
-      Timber.c("SnapEditorView", "Retrying video playback following error", new Object[0]);
       SnapEditorView.c(c).stopPlayback();
       SnapEditorView.c(c).postDelayed(new Runnable()
       {

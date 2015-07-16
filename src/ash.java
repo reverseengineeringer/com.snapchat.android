@@ -1,33 +1,8 @@
-import com.snapchat.android.ui.SwipeImageView;
+import com.snapchat.android.ui.SnapView;
 
-public final class ash
-  extends asj
+public abstract interface ash
 {
-  private final arn a;
-  private final aru b;
-  
-  public ash(@cgb arn paramarn)
-  {
-    this(paramarn, new art());
-  }
-  
-  public ash(@cgb arn paramarn, aru paramaru)
-  {
-    a = paramarn;
-    b = paramaru;
-  }
-  
-  public final void a()
-  {
-    a.e();
-  }
-  
-  public final void a(SwipeImageView paramSwipeImageView, arw<arn> paramarw)
-  {
-    paramarw.a(a);
-    b.a(a);
-    paramSwipeImageView.a(a);
-  }
+  public abstract SnapView l();
 }
 
 /* Location:

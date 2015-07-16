@@ -1,91 +1,46 @@
+import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 @cd
-final class dq<E>
-  extends de<E>
+final class dq<K, V>
+  extends dj<V>
 {
-  private final transient int b;
-  private final transient int c;
-  private final transient Object[] d;
+  private final dm<K, V> a;
   
-  dq(Object[] paramArrayOfObject)
+  dq(dm<K, V> paramdm)
   {
-    this(paramArrayOfObject, 0, paramArrayOfObject.length);
+    a = paramdm;
   }
   
-  private dq(Object[] paramArrayOfObject, int paramInt1, int paramInt2)
+  public final ef<V> a()
   {
-    b = paramInt1;
-    c = paramInt2;
-    d = paramArrayOfObject;
+    return du.a(a.a().a());
   }
   
-  final int a(Object[] paramArrayOfObject, int paramInt)
+  public final boolean contains(@Nullable Object paramObject)
   {
-    System.arraycopy(d, b, paramArrayOfObject, paramInt, c);
-    return c + paramInt;
+    return (paramObject != null) && (ds.a(a(), paramObject));
   }
   
-  public final dx<E> a(int paramInt)
+  final dl<V> d()
   {
-    return dj.a(d, b, c, paramInt);
-  }
-  
-  final de<E> b(int paramInt1, int paramInt2)
-  {
-    return new dq(d, b + paramInt1, paramInt2 - paramInt1);
-  }
-  
-  public final E get(int paramInt)
-  {
-    ck.a(paramInt, c);
-    return (E)d[(b + paramInt)];
-  }
-  
-  public final int indexOf(@Nullable Object paramObject)
-  {
-    int j;
-    if (paramObject == null)
+    new di()
     {
-      j = -1;
-      return j;
-    }
-    int i = 0;
-    for (;;)
-    {
-      if (i >= c) {
-        break label45;
-      }
-      j = i;
-      if (d[(b + i)].equals(paramObject)) {
-        break;
-      }
-      i += 1;
-    }
-    label45:
-    return -1;
-  }
-  
-  public final int lastIndexOf(@Nullable Object paramObject)
-  {
-    if (paramObject == null) {}
-    for (;;)
-    {
-      return -1;
-      int i = c - 1;
-      while (i >= 0)
+      final dj<V> c()
       {
-        if (d[(b + i)].equals(paramObject)) {
-          return i;
-        }
-        i -= 1;
+        return dq.this;
       }
-    }
+      
+      public final V get(int paramAnonymousInt)
+      {
+        return (V)((Map.Entry)b.get(paramAnonymousInt)).getValue();
+      }
+    };
   }
   
   public final int size()
   {
-    return c;
+    return a.size();
   }
 }
 

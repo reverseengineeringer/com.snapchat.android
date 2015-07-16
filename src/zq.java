@@ -1,10 +1,15 @@
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
 
-@Singleton
-public final class zq
-  extends zp
-{}
+public abstract interface zq
+{
+  public abstract void a(@chc ajk paramajk);
+  
+  public abstract void a(@chc aka paramaka, @chc ajk paramajk);
+  
+  public abstract void a(@chc aka paramaka, @chc SnapViewSessionStopReason paramSnapViewSessionStopReason, int paramInt);
+  
+  public abstract void d(@chc aka paramaka);
+}
 
 /* Location:
  * Qualified Name:     zq

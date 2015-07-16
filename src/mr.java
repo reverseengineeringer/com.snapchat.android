@@ -1,186 +1,68 @@
-import com.snapchat.android.Timber;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.Timer;
-import java.util.TimerTask;
+import android.content.Context;
+import android.database.Cursor;
+import android.support.v4.widget.CursorAdapter;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import com.snapchat.android.database.schema.HttpMetricSchema;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public final class mr
+  extends CursorAdapter
 {
-  private final int MAX_SLEEP_TIME_BETWEEN_RETRIES_MILLISECONDS = 60000;
-  private final int MIN_SLEEP_TIME_BETWEEN_RETRIES_MILLISECONDS = 100;
-  private final String TAG = "StoryAdStream";
-  private final mj mAdManager;
-  public boolean mInLiveSection = false;
-  public boolean mInPlayback = false;
-  public final Object mMutex = new Object();
-  public int mNextPosition;
-  public int mNextUnviewedPosition;
-  final Map<Integer, mo> mPositionAdResponseCache = dl.a();
-  final Set<Integer> mPositionsWithInFlightRequests = new HashSet();
-  mu mStoryAdStreamListener;
-  public mw mStoryAdStreamRequestInfo;
-  int mTimeBetweenRetriesMilliSeconds = 0;
-  final Timer mTimer;
+  private LayoutInflater a;
   
-  public mr(mw parammw, mu parammu)
+  public mr(Context paramContext)
   {
-    this(parammw, parammu, mj.a(), new Timer());
+    super(paramContext, null);
+    a = ((LayoutInflater)paramContext.getSystemService("layout_inflater"));
   }
   
-  private mr(mw parammw, mu parammu, mj parammj, Timer paramTimer)
+  public final void bindView$4693bf34(View paramView, Cursor paramCursor)
   {
-    mStoryAdStreamRequestInfo = parammw;
-    if (parammw != null)
+    int i = paramCursor.getInt(HttpMetricSchema.STATUS_CODE.getColumnNumber());
+    long l;
+    String str;
+    TextView localTextView;
+    if ((i >= 200) && (i < 300))
     {
-      mNextPosition = mFirstPosition;
-      mNextUnviewedPosition = mFirstPosition;
-    }
-    mStoryAdStreamListener = parammu;
-    mAdManager = parammj;
-    mTimer = paramTimer;
-  }
-  
-  public static mr a(int paramInt)
-  {
-    mr localmr = new mr(null, null);
-    synchronized (mMutex)
-    {
-      mNextUnviewedPosition = paramInt;
-      return localmr;
-    }
-  }
-  
-  private mo e()
-  {
-    if (!mPositionAdResponseCache.containsKey(Integer.valueOf(mNextPosition))) {
-      return null;
-    }
-    return (mo)mPositionAdResponseCache.get(Integer.valueOf(mNextPosition));
-  }
-  
-  private void e(int paramInt)
-  {
-    if ((!mInLiveSection) && (paramInt < mStoryAdStreamRequestInfo.mMinimumRemaining)) {
-      Timber.b("StoryAdStream", "Stream being played from A-Z section, and there aren't enough snaps to make an ad request. snapsRemaining: %s, minRequired: %s", new Object[] { Integer.valueOf(paramInt), Integer.valueOf(mStoryAdStreamRequestInfo.mMinimumRemaining) });
-    }
-    while (!c()) {
-      return;
-    }
-    d(mNextPosition);
-  }
-  
-  private ms f(int paramInt)
-  {
-    return new ms(this, paramInt);
-  }
-  
-  public final int a()
-  {
-    synchronized (mMutex)
-    {
-      int i = mNextUnviewedPosition;
-      return i;
-    }
-  }
-  
-  final void a(mo parammo)
-  {
-    if (mInPlayback) {
-      mStoryAdStreamListener.a(parammo);
-    }
-  }
-  
-  public final void a(@cgb mo parammo, long paramLong, int paramInt)
-  {
-    synchronized (mMutex)
-    {
-      b(parammo);
-      c(paramInt);
-      mAdManager.a(parammo, paramLong);
-      mAdManager.d(f(mAdStreamPosition));
-      return;
-    }
-  }
-  
-  public final String b()
-  {
-    return mStoryAdStreamRequestInfo.a();
-  }
-  
-  public final void b(int paramInt)
-  {
-    synchronized (mMutex)
-    {
-      if (!mInPlayback) {
-        return;
-      }
-      e(paramInt);
-      return;
-    }
-  }
-  
-  public final void b(mo parammo)
-  {
-    mPositionAdResponseCache.remove(Integer.valueOf(mAdStreamPosition));
-    if (d())
-    {
-      int i = mAdStreamPosition;
-      mNextPosition = (i + 1);
-      if (i >= mNextUnviewedPosition) {
-        mNextUnviewedPosition = (i + 1);
+      i = 1;
+      l = paramCursor.getLong(HttpMetricSchema.TIMESTAMP.getColumnNumber());
+      str = new SimpleDateFormat("[hh:mm:ss]").format(new Date(l));
+      ((TextView)paramView.findViewById(2131362391)).setText(str);
+      ((TextView)paramView.findViewById(2131362390)).setText(paramCursor.getString(HttpMetricSchema.PATH.getColumnNumber()));
+      l = paramCursor.getLong(HttpMetricSchema.DURATION.getColumnNumber());
+      ((TextView)paramView.findViewById(2131362392)).setText(l + " ms");
+      str = paramCursor.getString(HttpMetricSchema.METHOD.getColumnNumber());
+      localTextView = (TextView)paramView.findViewById(2131362389);
+      localTextView.setText(str);
+      if (i == 0) {
+        break label339;
       }
     }
-  }
-  
-  public final void c(int paramInt)
-  {
-    mo localmo = e();
-    if (localmo != null)
+    label339:
+    for (i = -16729344;; i = -65536)
     {
-      a(localmo);
+      localTextView.setBackgroundColor(i);
+      str = paramCursor.getString(HttpMetricSchema.STATUS_LINE.getColumnNumber());
+      ((TextView)paramView.findViewById(2131362393)).setText(str);
+      l = paramCursor.getLong(HttpMetricSchema.SENT_BYTES.getColumnNumber());
+      ((TextView)paramView.findViewById(2131362387)).setText(NumberFormat.getNumberInstance(Locale.US).format(l) + " ↑");
+      l = paramCursor.getLong(HttpMetricSchema.RECEIVED_BYTES.getColumnNumber());
+      ((TextView)paramView.findViewById(2131362388)).setText(NumberFormat.getNumberInstance(Locale.US).format(l) + " ↓");
       return;
+      i = 0;
+      break;
     }
-    e(paramInt);
   }
   
-  final boolean c()
+  public final View newView$4b8874c5(ViewGroup paramViewGroup)
   {
-    if (!mInPlayback) {}
-    while ((mPositionsWithInFlightRequests.contains(Integer.valueOf(mNextPosition))) || (e() != null)) {
-      return false;
-    }
-    return true;
-  }
-  
-  protected final void d(int paramInt)
-  {
-    mPositionsWithInFlightRequests.add(Integer.valueOf(paramInt));
-    ms localms = f(paramInt);
-    mt localmt = new mt(this, paramInt);
-    mAdManager.a(localms, new mx(localmt));
-  }
-  
-  public final boolean d()
-  {
-    return mStoryAdStreamRequestInfo.mFirstPosition >= 0;
-  }
-  
-  final class a
-    extends TimerTask
-  {
-    private a() {}
-    
-    public final void run()
-    {
-      synchronized (mMutex)
-      {
-        if (c()) {
-          d(mNextPosition);
-        }
-        return;
-      }
-    }
+    return a.inflate(2130968687, paramViewGroup, false);
   }
 }
 

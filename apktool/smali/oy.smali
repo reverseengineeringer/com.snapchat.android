@@ -1,273 +1,205 @@
 .class public final Loy;
-.super Lox;
+.super Lcom/snapchat/android/analytics/framework/EasyMetric;
 .source "SourceFile"
 
 
-# static fields
-.field private static final PATH:Ljava/lang/String; = "/loq/retry"
-
-.field private static final TASK_NAME:Ljava/lang/String; = "SendSnapWithMediaTask"
-
-
-# instance fields
-.field private mData:[B
-
-.field private final mSendSnapCacheWrapper:Lawx;
-
-.field private final mSnapWomb:Lajn;
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x12
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Laim;Lox$a;)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
+    .line 28
+    const-string v0, "TRANSCODING"
+
+    invoke-direct {p0, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;-><init>(Ljava/lang/String;)V
+
     .line 29
-    invoke-static {}, Lawx;->a()Lawx;
-
-    move-result-object v0
-
-    invoke-static {}, Lajn;->a()Lajn;
-
-    move-result-object v1
-
-    invoke-direct {p0, p1, p2, v0, v1}, Loy;-><init>(Laim;Lox$a;Lawx;Lajn;)V
+    invoke-virtual {p0}, Loy;->b()Lcom/snapchat/android/analytics/framework/EasyMetric;
 
     .line 30
     return-void
 .end method
 
-.method private constructor <init>(Laim;Lox$a;Lawx;Lajn;)V
-    .locals 0
-
-    .prologue
-    .line 37
-    invoke-direct {p0, p1, p2}, Lox;-><init>(Laim;Lox$a;)V
-
-    .line 38
-    iput-object p3, p0, Loy;->mSendSnapCacheWrapper:Lawx;
-
-    .line 39
-    iput-object p4, p0, Loy;->mSnapWomb:Lajn;
-
-    .line 40
-    return-void
-.end method
-
 
 # virtual methods
-.method protected final varargs a([Ljava/lang/String;)Laku;
-    .locals 8
-    .annotation build Lcaq;
-    .end annotation
+.method public final a(Laku;Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;Lcom/snapchat/videotranscoder/task/Task$Status;)V
+    .locals 4
 
     .prologue
-    const/4 v3, 0x1
+    .line 33
+    const-string v0, "transcoding_status"
 
-    const/4 v4, 0x0
-
-    .line 58
-    iget-object v0, p0, Loy;->mSnapbryo:Laim;
-
-    invoke-static {v0}, Lawx;->a(Laim;)[B
-
-    move-result-object v0
-
-    iput-object v0, p0, Loy;->mData:[B
-
-    .line 59
-    iget-object v0, p0, Loy;->mData:[B
-
-    if-nez v0, :cond_0
-
-    .line 60
-    iget-object v0, p0, Loy;->mSnapbryo:Laim;
-
-    iget-object v1, p0, Loy;->mSnapWomb:Lajn;
-
-    invoke-virtual {v1, v0}, Lajn;->a(Laim;)V
-
-    iget-object v1, p0, Loy;->mSnapWomb:Lajn;
-
-    sget-object v2, Lcom/snapchat/android/model/MediaMailingMetadata$SendStatus;->FAILED:Lcom/snapchat/android/model/MediaMailingMetadata$SendStatus;
-
-    invoke-virtual {v1, v0, v2}, Lajn;->a(Laim;Lcom/snapchat/android/model/MediaMailingMetadata$SendStatus;)V
-
-    invoke-virtual {p0, v3}, Loy;->cancel(Z)Z
-
-    .line 61
-    new-instance v0, Loa;
-
-    const-string v1, "Snap media is no longer accessible :( | Client ID: %s"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    iget-object v3, p0, Loy;->mSnapbryo:Laim;
-
-    iget-object v3, v3, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
-
-    aput-object v3, v2, v4
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p3}, Lcom/snapchat/videotranscoder/task/Task$Status;->name()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Loa;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, v0, v1}, Loy;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 64
-    new-instance v1, Lcom/snapchat/android/analytics/framework/ErrorMetric;
+    .line 34
+    const-string v0, "retries"
 
-    invoke-virtual {v0}, Loa;->getMessage()Ljava/lang/String;
+    iget-object v1, p1, Laku;->mTranscodingState:Lxp;
 
-    move-result-object v2
+    invoke-virtual {v1}, Lxp;->a()I
 
-    invoke-direct {v1, v2}, Lcom/snapchat/android/analytics/framework/ErrorMetric;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    invoke-virtual {v1, v0}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Ljava/lang/Throwable;)Lcom/snapchat/android/analytics/framework/ErrorMetric;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-virtual {v1, v4}, Lcom/snapchat/android/analytics/framework/ErrorMetric;->a(Z)V
+    invoke-virtual {p0, v0, v1}, Loy;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    .line 65
-    const-string v1, "SendSnapWithMediaTask"
+    .line 35
+    const-string v0, "video_width"
 
-    invoke-virtual {v0}, Loa;->getMessage()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;->getVideoEncoderConfiguration()Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
 
-    move-result-object v0
+    move-result-object v1
 
-    new-array v2, v4, [Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;->getFormat()Landroid/media/MediaFormat;
 
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v1
 
-    .line 66
-    const/4 v0, 0x0
+    const-string v2, "width"
 
-    .line 71
-    :goto_0
-    return-object v0
+    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
-    .line 69
-    :cond_0
-    iget-object v0, p0, Loy;->mData:[B
+    move-result v1
 
-    array-length v0, v0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    int-to-long v6, v0
+    move-result-object v1
 
-    .line 70
-    iget-object v1, p0, Loy;->mNetworkAnalytics:Lcom/snapchat/android/analytics/NetworkAnalytics;
+    invoke-virtual {p0, v0, v1}, Loy;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
 
-    iget-object v0, p0, Loy;->mSnapbryo:Laim;
+    .line 37
+    const-string v0, "video_height"
 
-    iget-object v4, v0, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;->getVideoEncoderConfiguration()Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
 
-    const-string v5, "/loq/retry"
+    move-result-object v1
 
-    const-string v2, "SNAP_SENT_DELAY"
+    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;->getFormat()Landroid/media/MediaFormat;
 
-    const-string v3, "SNAP_SENT_SNAP_DUMMY"
+    move-result-object v1
 
-    invoke-virtual/range {v1 .. v7}, Lcom/snapchat/android/analytics/NetworkAnalytics;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    const-string v2, "height"
 
-    .line 71
-    invoke-super {p0, p1}, Lox;->a([Ljava/lang/String;)Laku;
+    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
-    move-result-object v0
+    move-result v1
 
-    goto :goto_0
-.end method
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.method protected final a()Ljava/lang/String;
-    .locals 1
+    move-result-object v1
 
-    .prologue
+    invoke-virtual {p0, v0, v1}, Loy;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 39
+    const-string v0, "bit_rate"
+
+    invoke-virtual {p2}, Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;->getVideoEncoderConfiguration()Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;->getFormat()Landroid/media/MediaFormat;
+
+    move-result-object v1
+
+    const-string v2, "bitrate"
+
+    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Loy;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 41
+    const-string v0, "frame_rate"
+
+    invoke-virtual {p2}, Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;->getVideoEncoderConfiguration()Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;->getFormat()Landroid/media/MediaFormat;
+
+    move-result-object v1
+
+    const-string v2, "frame-rate"
+
+    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Loy;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
     .line 44
-    const-string v0, "/loq/retry"
-
-    return-object v0
-.end method
-
-.method protected final b()Landroid/os/Bundle;
-    .locals 3
-
-    .prologue
-    .line 49
-    invoke-super {p0}, Lox;->b()Landroid/os/Bundle;
+    invoke-virtual {p2}, Lcom/snapchat/videotranscoder/task/TranscodingConfiguration;->getVideoEncoderConfiguration()Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;
 
     move-result-object v0
+
+    invoke-virtual {v0}, Lcom/snapchat/videotranscoder/pipeline/EncoderConfiguration;->getFormat()Landroid/media/MediaFormat;
+
+    move-result-object v0
+
+    const-string v1, "durationUs"
+
+    invoke-virtual {v0, v1}, Landroid/media/MediaFormat;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    const-wide/32 v2, 0xf4240
+
+    div-long/2addr v0, v2
+
+    long-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v0
+
+    double-to-int v0, v0
+
+    .line 46
+    const-string v1, "media_duration"
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v0}, Loy;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 47
+    const-string v0, "transcoding_orientation"
+
+    iget v1, p1, Lcom/snapchat/android/model/Mediabryo;->mSnapOrientation:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Loy;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/snapchat/android/analytics/framework/EasyMetric;
+
+    .line 49
+    const/4 v0, 0x1
+
+    invoke-super {p0, v0}, Lcom/snapchat/android/analytics/framework/EasyMetric;->a(Z)V
 
     .line 50
-    const-string v1, "type"
-
-    iget-object v2, p0, Loy;->mSnapbryo:Laim;
-
-    invoke-virtual {v2}, Laim;->h()I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 51
-    const-string v1, "data"
-
-    iget-object v2, p0, Loy;->mData:[B
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
-
-    .line 52
-    return-object v0
-.end method
-
-.method protected final c()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 88
-    const-string v0, "SendSnapWithMediaTask"
-
-    return-object v0
-.end method
-
-.method protected final d()V
-    .locals 3
-
-    .prologue
-    .line 83
-    new-instance v0, Loy;
-
-    iget-object v1, p0, Loy;->mSnapbryo:Laim;
-
-    iget-object v2, p0, Loy;->mSendSnapCallback:Lox$a;
-
-    invoke-direct {v0, v1, v2}, Loy;-><init>(Laim;Lox$a;)V
-
-    sget-object v1, Lauh;->NETWORK_EXECUTOR:Ljava/util/concurrent/ExecutorService;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Loy;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    .line 84
     return-void
-.end method
-
-.method protected final synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 18
-    check-cast p1, [Ljava/lang/String;
-
-    invoke-virtual {p0, p1}, Loy;->a([Ljava/lang/String;)Laku;
-
-    move-result-object v0
-
-    return-object v0
 .end method

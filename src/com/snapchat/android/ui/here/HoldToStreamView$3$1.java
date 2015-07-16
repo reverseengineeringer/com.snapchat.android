@@ -1,6 +1,6 @@
 package com.snapchat.android.ui.here;
 
-import bap;
+import bbq;
 import com.snapchat.android.util.eventbus.CameraDisplayState;
 import com.squareup.otto.Bus;
 
@@ -11,7 +11,7 @@ final class HoldToStreamView$3$1
   
   public final void run()
   {
-    HoldToStreamView.n(a.a).a(new bap(CameraDisplayState.SHOW, HoldToStreamView.l(a.a)));
+    HoldToStreamView.n(a.a).a(new bbq(CameraDisplayState.SHOW, HoldToStreamView.l(a.a)));
     HoldToStreamView.o(a.a);
   }
 }

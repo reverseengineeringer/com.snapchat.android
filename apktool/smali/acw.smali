@@ -1,210 +1,373 @@
 .class public final Lacw;
-.super Ljava/lang/Object;
+.super Ltw;
 .source "SourceFile"
 
+# interfaces
+.implements Lui$b;
 
-# static fields
-.field private static final b:Lacw;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lacw$a;,
+        Lacw$b;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ltw;",
+        "Lui$b",
+        "<",
+        "Ljava/lang/String;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field public a:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Lacx;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final TAG:Ljava/lang/String;
 
-.field private final c:Lbgk;
+.field private mContext:Landroid/content/Context;
+
+.field private mData:[B
+
+.field private mDiscoverShareCacheWrapper:Laxp;
+
+.field private final mDiscoverSharingUtils:Lafv;
+
+.field private final mNotificationManager:Lcom/snapchat/android/notification/AndroidNotificationManager;
+
+.field private mSendSnapCallback:Lcom/snapchat/android/discover/api2/SendDSnapTask$c;
+
+.field private final mSnapWomb:Laki;
+
+.field private mSnapbryo:Laji;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Laji;Lcom/snapchat/android/discover/api2/SendDSnapTask$c;)V
+    .locals 7
+    .param p1    # Laji;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/api2/SendDSnapTask$c;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 29
-    new-instance v0, Lacw;
+    .line 53
+    invoke-static {}, Laxp$a;->a()Laxp;
 
-    invoke-direct {v0}, Lacw;-><init>()V
+    move-result-object v3
 
-    sput-object v0, Lacw;->b:Lacw;
+    invoke-static {}, Laki;->a()Laki;
 
+    move-result-object v4
+
+    invoke-static {}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a()Lcom/snapchat/android/notification/AndroidNotificationManager;
+
+    move-result-object v5
+
+    new-instance v6, Lafv;
+
+    invoke-direct {v6}, Lafv;-><init>()V
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    invoke-direct/range {v0 .. v6}, Lacw;-><init>(Laji;Lcom/snapchat/android/discover/api2/SendDSnapTask$c;Laxp;Laki;Lcom/snapchat/android/notification/AndroidNotificationManager;Lafv;)V
+
+    .line 55
     return-void
 .end method
 
-.method private constructor <init>()V
+.method private constructor <init>(Laji;Lcom/snapchat/android/discover/api2/SendDSnapTask$c;Laxp;Laki;Lcom/snapchat/android/notification/AndroidNotificationManager;Lafv;)V
     .locals 1
+    .param p1    # Laji;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p2    # Lcom/snapchat/android/discover/api2/SendDSnapTask$c;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p3    # Laxp;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p4    # Laki;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p5    # Lcom/snapchat/android/notification/AndroidNotificationManager;
+        .annotation build Lchc;
+        .end annotation
+    .end param
+    .param p6    # Lafv;
+        .annotation build Lchc;
+        .end annotation
+    .end param
 
     .prologue
-    .line 38
-    new-instance v0, Lbgk;
+    .line 62
+    invoke-direct {p0}, Ltw;-><init>()V
 
-    invoke-direct {v0}, Lbgk;-><init>()V
+    .line 37
+    const-string v0, "SendDSnapWithMediaTask"
 
-    invoke-direct {p0, v0}, Lacw;-><init>(Lbgk;)V
+    iput-object v0, p0, Lacw;->TAG:Ljava/lang/String;
 
-    .line 39
+    .line 63
+    invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lacw;->mContext:Landroid/content/Context;
+
+    .line 64
+    iput-object p1, p0, Lacw;->mSnapbryo:Laji;
+
+    .line 65
+    iput-object p3, p0, Lacw;->mDiscoverShareCacheWrapper:Laxp;
+
+    .line 66
+    iput-object p2, p0, Lacw;->mSendSnapCallback:Lcom/snapchat/android/discover/api2/SendDSnapTask$c;
+
+    .line 67
+    iput-object p4, p0, Lacw;->mSnapWomb:Laki;
+
+    .line 68
+    iput-object p5, p0, Lacw;->mNotificationManager:Lcom/snapchat/android/notification/AndroidNotificationManager;
+
+    .line 69
+    iput-object p6, p0, Lacw;->mDiscoverSharingUtils:Lafv;
+
+    .line 70
+    const-class v0, Ljava/lang/String;
+
+    invoke-virtual {p0, v0, p0}, Lacw;->registerCallback(Ljava/lang/Class;Lui$b;)V
+
+    .line 71
     return-void
 .end method
 
-.method private constructor <init>(Lbgk;)V
+.method static synthetic a(Lacw;)Laji;
     .locals 1
 
     .prologue
-    .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 35
+    iget-object v0, p0, Lacw;->mSnapbryo:Laji;
 
-    .line 27
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lacw;->a:Ljava/util/Map;
-
-    .line 43
-    iput-object p1, p0, Lacw;->c:Lbgk;
-
-    .line 44
-    return-void
+    return-object v0
 .end method
 
-.method public static a()Lacw;
+.method static synthetic b(Lacw;)[B
     .locals 1
 
     .prologue
-    .line 34
-    sget-object v0, Lacw;->b:Lacw;
+    .line 35
+    iget-object v0, p0, Lacw;->mData:[B
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;)I
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;",
-            ">;)I"
-        }
+.method public final executeSynchronously()Lus;
+    .locals 3
+    .annotation build Lcbr;
+    .end annotation
+
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    .line 51
-    iget-object v0, p0, Lacw;->a:Ljava/util/Map;
+    .line 127
+    iget-object v0, p0, Lacw;->mDiscoverShareCacheWrapper:Laxp;
 
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
+    iget-object v1, p0, Lacw;->mSnapbryo:Laji;
 
-    .line 53
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 54
-    const/4 v0, 0x0
-
-    .line 67
-    :goto_0
-    return v0
-
-    .line 57
-    :cond_0
-    const/4 v1, 0x0
-
-    .line 58
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Laxp;->a(Laji;)[B
 
     move-result-object v0
 
-    check-cast v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;
+    iput-object v0, p0, Lacw;->mData:[B
 
-    .line 59
-    if-eqz v1, :cond_1
+    .line 128
+    iget-object v0, p0, Lacw;->mData:[B
 
-    iget-object v3, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->a:Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    iget-object v4, v1, Lacx;->a:Ljava/lang/String;
+    .line 129
+    invoke-static {}, Laki;->a()Laki;
 
-    invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    move-result-object v0
 
-    move-result v3
+    iget-object v1, p0, Lacw;->mSnapbryo:Laji;
 
-    if-nez v3, :cond_2
+    invoke-virtual {v0, v1}, Laki;->a(Laji;)V
 
-    .line 60
-    :cond_1
-    new-instance v1, Lacx;
+    .line 130
+    const/4 v0, 0x0
 
-    iget-object v3, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->a:Ljava/lang/String;
+    iget-object v1, p0, Lacw;->mSnapbryo:Laji;
 
-    iget-object v4, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->b:Ljava/lang/String;
+    iget-object v1, v1, Lcom/snapchat/android/model/Mediabryo;->mClientId:Ljava/lang/String;
 
-    invoke-direct {v1, v3, v4}, Lacx;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lafv;->a(ZLjava/lang/String;)V
 
-    .line 61
-    iget-object v3, p0, Lacw;->a:Ljava/util/Map;
+    .line 132
+    new-instance v0, Lus$a;
 
-    iget-object v4, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->a:Ljava/lang/String;
+    invoke-virtual {p0}, Lacw;->getUrl()Ljava/lang/String;
 
-    invoke-interface {v3, v4, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v1
 
-    .line 64
-    :cond_2
-    new-instance v3, Lcgg;
+    invoke-static {}, Lbgp;->b()Ljava/lang/String;
 
-    iget-wide v4, v0, Lcom/snapchat/android/discover/model/database/table/ChannelViewDatesTable$a;->c:J
+    move-result-object v2
 
-    invoke-direct {v3, v4, v5}, Lcgg;-><init>(J)V
+    invoke-direct {v0, v1, v2}, Lus$a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v3}, Lacx;->a(Lcgg;)V
+    new-instance v1, Ljava/lang/Exception;
 
-    goto :goto_1
+    const-string v2, "Snap media is no longer accessible"
 
-    .line 67
-    :cond_3
-    iget-object v0, p0, Lacw;->a:Ljava/util/Map;
+    invoke-direct {v1, v2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ljava/util/Map;->size()I
+    iput-object v1, v0, Lus$a;->mCaughtException:Ljava/lang/Exception;
 
-    move-result v0
+    invoke-virtual {v0}, Lus$a;->a()Lus;
+
+    move-result-object v0
+
+    .line 137
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-super {p0}, Ltw;->executeSynchronously()Lus;
+
+    move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/String;)Lacx;
+.method protected final getPath()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 117
-    iget-object v0, p0, Lacw;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lacx;
+    .line 81
+    const-string v0, "/ph/upload"
 
     return-object v0
+.end method
+
+.method public final synthetic getRequestPayload()Ljava/lang/Object;
+    .locals 4
+
+    .prologue
+    .line 35
+    new-instance v0, Lacw$a;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Lacw$a;-><init>(Lacw;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final synthetic onJsonResult(Ljava/lang/Object;Lus;)V
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 35
+    invoke-virtual {p2}, Lus;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lacw;->mSnapWomb:Laki;
+
+    iget-object v1, p0, Lacw;->mSnapbryo:Laji;
+
+    sget-object v2, Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;->UPLOADED:Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;
+
+    invoke-virtual {v0, v1, v2}, Laki;->a(Laji;Lcom/snapchat/android/model/MediaMailingMetadata$UploadStatus;)V
+
+    new-instance v0, Lcom/snapchat/android/discover/api2/SendDSnapTask;
+
+    iget-object v1, p0, Lacw;->mSnapbryo:Laji;
+
+    iget-object v2, p0, Lacw;->mSendSnapCallback:Lcom/snapchat/android/discover/api2/SendDSnapTask$c;
+
+    new-instance v3, Ljava/util/HashMap;
+
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/snapchat/android/discover/api2/SendDSnapTask;-><init>(Laji;Lcom/snapchat/android/discover/api2/SendDSnapTask$c;Ljava/util/HashMap;)V
+
+    invoke-virtual {v0}, Lcom/snapchat/android/discover/api2/SendDSnapTask;->execute()V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lacw;->mSendSnapCallback:Lcom/snapchat/android/discover/api2/SendDSnapTask$c;
+
+    iget-object v1, p0, Lacw;->mSnapbryo:Laji;
+
+    invoke-interface {v0, v1}, Lcom/snapchat/android/discover/api2/SendDSnapTask$c;->d(Laji;)V
+
+    iget-object v0, p0, Lacw;->mNotificationManager:Lcom/snapchat/android/notification/AndroidNotificationManager;
+
+    iget-object v1, p0, Lacw;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0, v1, v3}, Lcom/snapchat/android/notification/AndroidNotificationManager;->a(Landroid/content/Context;Z)V
+
+    iget-object v0, p0, Lacw;->mUser:Lakp;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lacw;->mUser:Lakp;
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
+    sget-object v2, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->DISCOVER_SHARE_FILES:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
+    aput-object v2, v1, v3
+
+    const/4 v2, 0x1
+
+    sget-object v3, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->FAILED_SEND_DSNAPBRYOS:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    sget-object v3, Lcom/snapchat/android/database/table/DbTable$DatabaseTable;->CONVERSATION:Lcom/snapchat/android/database/table/DbTable$DatabaseTable;
+
+    aput-object v3, v1, v2
+
+    invoke-virtual {v0, v1}, Lakp;->a([Lcom/snapchat/android/database/table/DbTable$DatabaseTable;)V
+
+    goto :goto_0
 .end method

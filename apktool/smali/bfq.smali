@@ -2,45 +2,22 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljavax/inject/Provider;
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljavax/inject/Provider",
-        "<",
-        "Ljava/lang/String;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field public user:Lakp;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lakp;)V
     .locals 0
 
     .prologue
-    .line 10
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 12
+    iput-object p1, p0, Lbfq;->user:Lakp;
+
+    .line 13
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 10
-    const-string v0, "dummy"
-
-    invoke-static {v0}, Lazm;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

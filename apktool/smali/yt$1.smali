@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lqt$a;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lyt;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lyt;->a(Lcom/snapchat/android/model/chat/CashFeedItem;Lyt$a;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,28 +18,24 @@
 
 
 # instance fields
-.field final synthetic a:Laim;
+.field final synthetic a:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-.field final synthetic b:Z
+.field final synthetic b:Lyt$a;
 
-.field final synthetic c:Z
-
-.field final synthetic d:Lyt;
+.field final synthetic c:Lyt;
 
 
 # direct methods
-.method constructor <init>(Lyt;Laim;ZZ)V
+.method constructor <init>(Lyt;Lcom/snapchat/android/model/chat/CashFeedItem;Lyt$a;)V
     .locals 0
 
     .prologue
-    .line 215
-    iput-object p1, p0, Lyt$1;->d:Lyt;
+    .line 59
+    iput-object p1, p0, Lyt$1;->c:Lyt;
 
-    iput-object p2, p0, Lyt$1;->a:Laim;
+    iput-object p2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    iput-boolean p3, p0, Lyt$1;->b:Z
-
-    iput-boolean p4, p0, Lyt$1;->c:Z
+    iput-object p3, p0, Lyt$1;->b:Lyt$a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,74 +44,153 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final a()V
     .locals 4
 
     .prologue
-    .line 219
-    iget-object v0, p0, Lyt$1;->a:Laim;
+    .line 62
+    invoke-static {}, Lyt;->b()Ljava/lang/String;
 
-    invoke-static {v0}, Lawx;->a(Laim;)[B
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    iget-object v2, v2, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSender:Ljava/lang/String;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    iget-object v2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    iget-object v2, v2, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    .line 64
+    iget-object v0, p0, Lyt$1;->c:Lyt;
+
+    invoke-virtual {v0}, Lyt;->a()V
+
+    .line 65
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    new-instance v1, Lbca;
 
-    .line 220
-    iget-boolean v0, p0, Lyt$1;->b:Z
+    iget-object v2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/CashFeedItem;->Y()Ljava/lang/String;
 
-    .line 221
-    iget-object v0, p0, Lyt$1;->d:Lyt;
+    move-result-object v2
 
-    iget-object v1, p0, Lyt$1;->a:Laim;
+    iget-object v3, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
 
-    invoke-virtual {v0, v1}, Lyt;->f(Laim;)V
+    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
 
-    .line 222
-    iget-object v0, p0, Lyt$1;->d:Lyt;
+    move-result-object v3
 
-    iget-object v1, p0, Lyt$1;->a:Laim;
+    invoke-direct {v1, v2, v3}, Lbca;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lyt;->g(Laim;)V
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
-    .line 224
-    :cond_0
-    iget-boolean v0, p0, Lyt$1;->c:Z
+    .line 66
+    iget-object v0, p0, Lyt$1;->b:Lyt$a;
 
-    if-eqz v0, :cond_1
+    invoke-interface {v0}, Lyt$a;->a()V
 
-    .line 225
-    iget-object v0, p0, Lyt$1;->d:Lyt;
-
-    iget-object v1, p0, Lyt$1;->a:Laim;
-
-    invoke-virtual {v0, v1}, Lyt;->h(Laim;)V
-
-    .line 226
-    iget-object v0, p0, Lyt$1;->d:Lyt;
-
-    iget-object v1, p0, Lyt$1;->a:Laim;
-
-    invoke-virtual {v0, v1}, Lyt;->i(Laim;)V
-
-    .line 231
-    :cond_1
-    :goto_0
+    .line 67
     return-void
+.end method
 
-    .line 229
-    :cond_2
-    iget-object v0, p0, Lyt$1;->d:Lyt;
+.method public final b()V
+    .locals 4
 
-    iget-object v1, p0, Lyt$1;->a:Laim;
+    .prologue
+    .line 71
+    invoke-static {}, Lyt;->b()Ljava/lang/String;
 
-    iget-boolean v2, p0, Lyt$1;->b:Z
+    const/4 v0, 0x3
 
-    iget-boolean v3, p0, Lyt$1;->c:Z
+    new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v2, v3}, Lyt;->b(Laim;ZZ)V
+    const/4 v1, 0x0
 
-    goto :goto_0
+    iget-object v2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    iget-object v2, v2, Lcom/snapchat/android/model/chat/StatefulChatFeedItem;->mSender:Ljava/lang/String;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    iget-object v2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    iget-object v2, v2, Lcom/snapchat/android/model/chat/CashFeedItem;->mCashTransaction:Lcom/snapchat/android/model/CashTransaction;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/CashTransaction;->a()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    .line 73
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
+
+    move-result-object v0
+
+    new-instance v1, Lbca;
+
+    iget-object v2, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    invoke-virtual {v2}, Lcom/snapchat/android/model/chat/CashFeedItem;->Y()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lyt$1;->a:Lcom/snapchat/android/model/chat/CashFeedItem;
+
+    invoke-virtual {v3}, Lcom/snapchat/android/model/chat/CashFeedItem;->d()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Lbca;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
+
+    .line 74
+    iget-object v0, p0, Lyt$1;->b:Lyt$a;
+
+    invoke-interface {v0}, Lyt$a;->b()V
+
+    .line 75
+    return-void
 .end method

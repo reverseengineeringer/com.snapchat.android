@@ -1,63 +1,153 @@
-.class public final Lcke;
-.super Ljava/lang/Object;
+.class public abstract Lcke;
+.super Lckc;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lckh;
-
-.field public final b:Lckg;
-
-.field public final c:Ljava/util/Locale;
-
-.field public final d:Lcgu;
+.field public final b:Lchi;
 
 
 # direct methods
-.method public constructor <init>(Lckh;Lckg;)V
-    .locals 1
+.method public constructor <init>(Lchi;Lchj;)V
+    .locals 2
 
     .prologue
-    const/4 v0, 0x0
+    .line 55
+    invoke-direct {p0, p2}, Lckc;-><init>(Lchj;)V
 
-    .line 87
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 56
+    if-nez p1, :cond_0
 
-    .line 88
-    iput-object p1, p0, Lcke;->a:Lckh;
+    .line 57
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 89
-    iput-object p2, p0, Lcke;->b:Lckg;
+    const-string v1, "The field must not be null"
 
-    .line 90
-    iput-object v0, p0, Lcke;->c:Ljava/util/Locale;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    .line 91
-    iput-object v0, p0, Lcke;->d:Lcgu;
+    throw v0
 
-    .line 92
+    .line 59
+    :cond_0
+    invoke-virtual {p1}, Lchi;->c()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 60
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "The field must be supported"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 62
+    :cond_1
+    iput-object p1, p0, Lcke;->b:Lchi;
+
+    .line 63
     return-void
 .end method
 
-.method public constructor <init>(Lckh;Lckg;Ljava/util/Locale;Lcgu;)V
-    .locals 0
+
+# virtual methods
+.method public a(J)I
+    .locals 1
 
     .prologue
-    .line 105
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 79
+    iget-object v0, p0, Lcke;->b:Lchi;
 
-    .line 106
-    iput-object p1, p0, Lcke;->a:Lckh;
+    invoke-virtual {v0, p1, p2}, Lchi;->a(J)I
 
-    .line 107
-    iput-object p2, p0, Lcke;->b:Lckg;
+    move-result v0
 
-    .line 108
-    iput-object p3, p0, Lcke;->c:Ljava/util/Locale;
+    return v0
+.end method
 
-    .line 109
-    iput-object p4, p0, Lcke;->d:Lcgu;
+.method public b(JI)J
+    .locals 3
 
-    .line 110
-    return-void
+    .prologue
+    .line 83
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2, p3}, Lchi;->b(JI)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public d(J)J
+    .locals 3
+
+    .prologue
+    .line 103
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0, p1, p2}, Lchi;->d(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public d()Lchn;
+    .locals 1
+
+    .prologue
+    .line 87
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0}, Lchi;->d()Lchn;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public e()Lchn;
+    .locals 1
+
+    .prologue
+    .line 91
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0}, Lchi;->e()Lchn;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public g()I
+    .locals 1
+
+    .prologue
+    .line 95
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0}, Lchi;->g()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public h()I
+    .locals 1
+
+    .prologue
+    .line 99
+    iget-object v0, p0, Lcke;->b:Lchi;
+
+    invoke-virtual {v0}, Lchi;->h()I
+
+    move-result v0
+
+    return v0
 .end method

@@ -1,36 +1,38 @@
-import com.snapchat.android.analytics.AnalyticsEvents;
-import com.snapchat.android.analytics.AnalyticsEvents.LogoutReason;
+import javax.inject.Provider;
 
-public abstract class th
-  extends tv
+public final class th
+  implements bvk<tg>
 {
-  public final ajv mUser = ajv.g();
+  private final Provider<yj> mCashAuthManagerProvider;
+  private final Provider<ub> mEntityFactoryProvider;
+  private final Provider<va> mSquareOkHttpClientFactoryProvider;
+  private final bvk<ul> supertypeInjector;
   
-  public void a(@cgb uc paramuc)
+  static
   {
-    super.a(paramuc);
-    if (mResponseCode == 401)
+    if (!th.class.desiredAssertionStatus()) {}
+    for (boolean bool = true;; bool = false)
     {
-      AnalyticsEvents.a(AnalyticsEvents.LogoutReason.AUTHENTICATION_ERROR);
-      aol.a().e();
+      $assertionsDisabled = bool;
+      return;
     }
   }
   
-  public Object b()
+  private th(bvk<ul> parambvk, Provider<yj> paramProvider, Provider<va> paramProvider1, Provider<ub> paramProvider2)
   {
-    return new pl();
+    assert (parambvk != null);
+    supertypeInjector = parambvk;
+    assert (paramProvider != null);
+    mCashAuthManagerProvider = paramProvider;
+    assert (paramProvider1 != null);
+    mSquareOkHttpClientFactoryProvider = paramProvider1;
+    assert (paramProvider2 != null);
+    mEntityFactoryProvider = paramProvider2;
   }
   
-  public abstract String d();
-  
-  public String h()
+  public static bvk<tg> a(bvk<ul> parambvk, Provider<yj> paramProvider, Provider<va> paramProvider1, Provider<ub> paramProvider2)
   {
-    return azm.b("dummy");
-  }
-  
-  public final String n_()
-  {
-    return h() + d();
+    return new th(parambvk, paramProvider, paramProvider1, paramProvider2);
   }
 }
 

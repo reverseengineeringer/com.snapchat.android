@@ -1,14 +1,15 @@
 package com.snapchat.android.ui;
 
-import adn;
-import aio;
-import aje;
-import ajr;
-import ala;
-import alb;
-import ale;
-import alh;
-import alx;
+import aak;
+import aen;
+import ajk;
+import aka;
+import akl;
+import alv;
+import alw;
+import ama;
+import amd;
+import amu;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -18,34 +19,37 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import ank;
-import aol;
-import aop;
-import aop.a;
-import arg;
-import arh;
-import arj;
-import ark;
-import arl;
-import arm;
-import asu;
-import aup;
-import avh;
-import avl;
-import ban;
-import bby;
-import bcj;
-import bct;
-import bdm;
-import bdz;
-import bgp;
-import ccm;
-import cgb;
+import android.widget.RelativeLayout.LayoutParams;
+import aoh;
+import aph;
+import apl;
+import apl.a;
+import aps;
+import aps.1;
+import aps.2;
+import aps.3;
+import aps.a;
+import asf;
+import asg;
+import asi;
+import asj;
+import ask;
+import asl;
+import att;
+import awf;
+import awj;
+import bbo;
+import bcy;
+import bdj;
+import bdt;
+import bem;
+import bey;
+import bhp;
+import cdn;
+import chc;
 import com.snapchat.android.SnapchatApplication;
-import com.snapchat.android.Timber;
 import com.snapchat.android.analytics.SnapViewEventAnalytics;
 import com.snapchat.android.analytics.SnapViewEventAnalytics.EndReason;
 import com.snapchat.android.analytics.framework.DictionaryEasyMetric;
@@ -59,44 +63,42 @@ import com.snapchat.android.model.StorySnapLogbook;
 import com.snapchat.android.notification.AndroidNotificationManager.Type;
 import com.snapchat.android.rendering.SnapMediaRenderer;
 import com.snapchat.android.stories.ui.MyStoryView;
-import com.snapchat.android.stories.ui.MyStoryView.a;
 import com.snapchat.android.ui.snapview.SnapViewSessionStopReason;
 import com.snapchat.android.util.debug.ReleaseManager;
 import com.snapchat.android.util.eventbus.ShowDialogEvent;
 import com.snapchat.android.util.eventbus.ShowDialogEvent.DialogType;
 import com.squareup.otto.Bus;
-import ds;
+import ec;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import lq;
-import ng;
-import nn;
-import op;
+import mi;
+import nx;
+import oe;
+import pg;
 import r;
-import yu;
-import zb;
-import zd;
-import zk;
+import zq;
+import zx;
+import zz;
 
 public class SnapView
   extends RelativeLayout
-  implements MyStoryView.a
+  implements aps.a
 {
   public final Bus a;
-  public final arh b;
+  public final asg b;
   protected FadeFullScreenAnimationView c;
   protected VerticalSwipeLayout d;
   public boolean e = false;
-  public arj f;
-  protected final ark g = new ark()
+  public asi f;
+  protected final asj g = new asj()
   {
-    public final void a(arj paramAnonymousarj)
+    public final void a(asi paramAnonymousasi)
     {
       int j = 1;
-      Timber.c("SnapView", "SNAP-VIEW: session started for %s", new Object[] { paramAnonymousarj.a() });
+      paramAnonymousasi.a();
       Object localObject1 = SnapView.b(SnapView.this);
-      Object localObject2 = paramAnonymousarj.c();
+      Object localObject2 = paramAnonymousasi.c();
       int i = 0;
       while (i < 2)
       {
@@ -109,71 +111,73 @@ public class SnapView
         i += 1;
       }
       SnapView.a(SnapView.this, true);
-      localObject1 = paramAnonymousarj.b();
-      localObject2 = ((aio)localObject1).d();
-      if (localObject2 != null)
-      {
-        if ((asu.IS_GALAXY_S6) && (((aje)localObject2).ai())) {}
-        for (i = j; i != 0; i = 0)
+      localObject1 = paramAnonymousasi.b();
+      localObject2 = ((ajk)localObject1).d();
+      if (localObject2 != null) {
+        if ((att.IS_GALAXY_S6) && (((aka)localObject2).ag()))
         {
-          Timber.c("SnapView", "SNAP-VIEW: Skipping preload on S6", new Object[0]);
-          return;
+          i = j;
+          if (i == 0) {
+            break label145;
+          }
         }
-        Timber.c("SnapView", "SNAP-VIEW: Preloading next snap: " + localObject2, new Object[0]);
-        SnapView.a(SnapView.this, b((aje)localObject2, (aio)localObject1, paramAnonymousarj.e()));
-        SnapView.d(SnapView.this).a(SnapView.c(SnapView.this));
       }
       for (;;)
       {
+        return;
+        i = 0;
+        break;
+        label145:
+        new StringBuilder("SNAP-VIEW: Preloading next snap: ").append(localObject2);
+        SnapView.a(SnapView.this, b((aka)localObject2, (ajk)localObject1, paramAnonymousasi.e()));
+        SnapView.d(SnapView.this).a(SnapView.c(SnapView.this));
         localObject1 = SnapView.e(SnapView.this).iterator();
         while (((Iterator)localObject1).hasNext()) {
-          ((yu)((Iterator)localObject1).next()).a(paramAnonymousarj.a());
+          ((zq)((Iterator)localObject1).next()).d(paramAnonymousasi.a());
         }
-        break;
-        Timber.c("SnapView", "SNAP-VIEW: No snap to pre-load", new Object[0]);
       }
     }
     
-    public final void a(arj paramAnonymousarj, SnapViewSessionStopReason paramAnonymousSnapViewSessionStopReason)
+    public final void a(asi paramAnonymousasi, SnapViewSessionStopReason paramAnonymousSnapViewSessionStopReason)
     {
-      if (SnapView.a(SnapView.this) == paramAnonymousarj)
+      if (SnapView.a(SnapView.this) == paramAnonymousasi)
       {
-        Timber.c("SnapView", "SNAP-VIEW: primary session stopped for %s, reason %s", new Object[] { paramAnonymousarj.a(), paramAnonymousSnapViewSessionStopReason });
+        paramAnonymousasi.a();
         SnapView.a(SnapView.this, false);
         if (paramAnonymousSnapViewSessionStopReason == SnapViewSessionStopReason.ERROR_STARTING_MEDIA_UNAVAILABLE_LOCALLY)
         {
-          SnapView.a(SnapView.this, paramAnonymousarj.a());
+          SnapView.a(SnapView.this, paramAnonymousasi.a());
           a(SnapViewEventAnalytics.EndReason.KICKED_OUT);
         }
         for (;;)
         {
           Iterator localIterator = SnapView.e(SnapView.this).iterator();
           while (localIterator.hasNext()) {
-            ((yu)localIterator.next()).a(paramAnonymousarj.a(), paramAnonymousSnapViewSessionStopReason, 0);
+            ((zq)localIterator.next()).a(paramAnonymousasi.a(), paramAnonymousSnapViewSessionStopReason, 0);
           }
           if (paramAnonymousSnapViewSessionStopReason == SnapViewSessionStopReason.ERROR_UNABLE_TO_SHOW_MEDIA)
           {
             if (ReleaseManager.f()) {
               SnapView.f(SnapView.this).a(new ShowDialogEvent(ShowDialogEvent.DialogType.TOAST, "ALPHA-ONLY: Snap skipped, media player error"));
             }
-            SnapView.this.a(paramAnonymousarj, paramAnonymousSnapViewSessionStopReason);
+            SnapView.this.a(paramAnonymousasi, paramAnonymousSnapViewSessionStopReason);
           }
           else if (paramAnonymousSnapViewSessionStopReason != SnapViewSessionStopReason.ABORT_REQUESTED)
           {
-            SnapView.this.a(paramAnonymousarj, paramAnonymousSnapViewSessionStopReason);
+            SnapView.this.a(paramAnonymousasi, paramAnonymousSnapViewSessionStopReason);
           }
         }
       }
-      if (SnapView.d(SnapView.this) == paramAnonymousarj)
+      if (SnapView.d(SnapView.this) == paramAnonymousasi)
       {
-        Timber.c("SnapView", "SNAP-VIEW: next session stopped for %s, reason %s", new Object[] { paramAnonymousarj.a(), paramAnonymousSnapViewSessionStopReason });
+        paramAnonymousasi.a();
         if (paramAnonymousSnapViewSessionStopReason == SnapViewSessionStopReason.ERROR_STARTING_MEDIA_UNAVAILABLE_LOCALLY)
         {
-          paramAnonymousSnapViewSessionStopReason = paramAnonymousarj.a();
-          if (!(paramAnonymousSnapViewSessionStopReason instanceof ajr)) {
-            break label280;
+          paramAnonymousSnapViewSessionStopReason = paramAnonymousasi.a();
+          if (!(paramAnonymousSnapViewSessionStopReason instanceof akl)) {
+            break label246;
           }
-          SnapView.g(SnapView.this).a((ajr)paramAnonymousSnapViewSessionStopReason);
+          SnapView.g(SnapView.this).a((akl)paramAnonymousSnapViewSessionStopReason);
         }
       }
       for (;;)
@@ -181,151 +185,167 @@ public class SnapView
         SnapView.d(SnapView.this).h();
         SnapView.a(SnapView.this, null);
         return;
-        label280:
-        SnapView.a(SnapView.this, paramAnonymousarj.a());
+        label246:
+        SnapView.a(SnapView.this, paramAnonymousasi.a());
       }
     }
   };
   private final SnapViewEventAnalytics h;
   private final ViewGroup i;
   private final SnapTimerView j;
-  private final aol k;
-  private final ank l;
+  private final aph k;
+  private final aoh l;
   private final a m;
-  private final ng n;
+  private final nx n;
   private final LayoutInflater o;
-  private final zd p;
-  private final alb q;
-  private final aop r;
-  private final avh s;
-  private final Set<yu> t;
-  private arj u;
-  private ala v = null;
-  private final ark w = new arl(new Handler(Looper.getMainLooper()), g);
+  private final zz p;
+  private final alw q;
+  private final apl r;
+  private final awf s;
+  private final Set<zq> t;
+  private asi u;
+  private alv v = null;
+  private aps w;
+  private final VerticalSwipeLayout.a x = new VerticalSwipeLayout.a()
+  {
+    public final void a(int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3)
+    {
+      asi localasi;
+      if (SnapView.a(SnapView.this) != null)
+      {
+        localasi = SnapView.a(SnapView.this);
+        if (paramAnonymousInt3 == 0) {
+          break label36;
+        }
+      }
+      label36:
+      for (boolean bool = true;; bool = false)
+      {
+        localasi.a(bool);
+        return;
+      }
+    }
+    
+    public final void c(int paramAnonymousInt)
+    {
+      asi localasi;
+      if (SnapView.a(SnapView.this) != null)
+      {
+        localasi = SnapView.a(SnapView.this);
+        if (paramAnonymousInt == 0) {
+          break label32;
+        }
+      }
+      label32:
+      for (boolean bool = true;; bool = false)
+      {
+        localasi.a(bool);
+        return;
+      }
+    }
+  };
+  private final asj y = new ask(new Handler(Looper.getMainLooper()), g);
   
   public SnapView(Context paramContext, AttributeSet paramAttributeSet)
   {
-    this(paramContext, paramAttributeSet, ban.a(), new arh(paramContext), SnapViewEventAnalytics.a(), ng.a(), aol.a(), new ank(paramContext), new a(), zd.a(), alb.a(), aop.a(), new avh(paramContext), ds.a(new yu[] { new zk(), aup.d(), alx.a() }));
+    this(paramContext, paramAttributeSet, bbo.a(), new asg(paramContext), SnapViewEventAnalytics.a(), nx.a(), aph.a(), new aoh(paramContext), new a(), zz.a(), alw.a(), apl.a(), new awf(paramContext), ec.a(new zq[] { new aak(), amu.a() }));
   }
   
-  SnapView(final Context paramContext, AttributeSet paramAttributeSet, Bus paramBus, arh paramarh, SnapViewEventAnalytics paramSnapViewEventAnalytics, ng paramng, aol paramaol, ank paramank, a parama, zd paramzd, alb paramalb, aop paramaop, avh paramavh, Set<yu> paramSet)
+  SnapView(Context paramContext, AttributeSet paramAttributeSet, Bus paramBus, asg paramasg, SnapViewEventAnalytics paramSnapViewEventAnalytics, nx paramnx, aph paramaph, aoh paramaoh, a parama, zz paramzz, alw paramalw, apl paramapl, awf paramawf, Set<zq> paramSet)
   {
     super(paramContext, paramAttributeSet);
     a = paramBus;
-    b = paramarh;
+    b = paramasg;
     h = paramSnapViewEventAnalytics;
-    k = paramaol;
-    l = paramank;
+    k = paramaph;
+    l = paramaoh;
     m = parama;
-    p = paramzd;
-    q = paramalb;
+    p = paramzz;
+    q = paramalw;
     t = paramSet;
     o = ((LayoutInflater)paramContext.getSystemService("layout_inflater"));
-    o.inflate(2130968780, this, true);
-    i = ((ViewGroup)findViewById(2131362844));
-    j = ((SnapTimerView)findViewById(2131362845));
-    d = ((VerticalSwipeLayout)findViewById(2131362846));
-    paramContext = new adn(getContext());
-    paramContext.a(-1, -16777216);
-    paramContext.a();
-    paramContext.a(new View.OnClickListener()
-    {
-      public final void onClick(View paramAnonymousView)
-      {
-        d.a(1, 1.0D);
-      }
-    });
-    paramAttributeSet = new VerticalSwipeLayout.a()
-    {
-      public final void a(int paramAnonymousInt1, int paramAnonymousInt2, int paramAnonymousInt3) {}
-      
-      public final void c(int paramAnonymousInt)
-      {
-        if (paramAnonymousInt == 0)
-        {
-          SnapView.a(SnapView.this).a(false);
-          paramContext.a();
-          return;
-        }
-        SnapView.a(SnapView.this).a(true);
-        paramContext.b();
-        SnapView.a(SnapView.this).j();
-      }
-    };
-    d.addView(c);
-    d.setOnScrolledListener(paramAttributeSet);
-    d.setVisibility(8);
-    d.setEnabled(false);
-    c = ((FadeFullScreenAnimationView)findViewById(2131362847));
-    c.setColorFilter(getResources().getColor(2131230806));
+    o.inflate(2130968782, this, true);
+    i = ((ViewGroup)findViewById(2131362837));
+    j = ((SnapTimerView)findViewById(2131362838));
+    d = ((VerticalSwipeLayout)findViewById(2131362839));
+    c = ((FadeFullScreenAnimationView)findViewById(2131362840));
+    c.setColorFilter(getResources().getColor(2131230807));
     l.a(i);
-    n = paramng;
-    r = paramaop;
-    s = paramavh;
+    n = paramnx;
+    r = paramapl;
+    s = paramawf;
+    w = new aps(getContext(), d, x, this);
   }
   
-  @avl
-  @ccm
-  private void c(@cgb aje paramaje, @cgb aio paramaio, boolean paramBoolean)
+  @awj
+  @cdn
+  private void c(@chc aka paramaka, @chc ajk paramajk, boolean paramBoolean)
   {
-    bgp.a();
-    Timber.c("SnapView", "SNAP-VIEW: Show snap %s", new Object[] { paramaje });
-    Object localObject;
-    if ((paramaio instanceof zb))
+    
+    if (f != null)
     {
-      localObject = (zb)paramaio;
-      ajr localajr = (ajr)paramaje;
-      if (localajr != null)
+      if (f.a() == paramaka)
       {
-        localObject = (StorySnapLogbook)a.get(mClientId);
-        a((StorySnapLogbook)localObject);
-        label70:
-        if (f != null)
-        {
-          if (f.a() == paramaje)
-          {
-            Timber.f("SnapView", "SNAP-VIEW: Viewing previously viewed snap %s", new Object[] { paramaje });
-            Timber.c("SnapView", "SNAP-VIEW: Session active? " + f.f(), new Object[0]);
-            Timber.c("SnapView", "SNAP-VIEW: Session already has snap %s is being viewed / is viewed? %s / %s", new Object[] { paramaje, Boolean.valueOf(paramaje.x()), Boolean.valueOf(paramaje.z()) });
-          }
-          f.h();
-          f = null;
-        }
-        if (u != null)
-        {
-          if (u.a() != paramaje) {
-            break label347;
-          }
-          Timber.c("SnapView", "SNAP-VIEW: Session preloaded for snap " + u.a(), new Object[0]);
-          f = u;
-        }
+        new StringBuilder("SNAP-VIEW: Session active? ").append(f.f());
+        paramaka.y();
+        paramaka.A();
+      }
+      f.h();
+      f = null;
+    }
+    Object localObject;
+    if (u != null)
+    {
+      if (u.a() == paramaka)
+      {
+        new StringBuilder("SNAP-VIEW: Session preloaded for snap ").append(u.a());
+        f = u;
+        u = null;
       }
     }
-    for (u = null;; u = null)
+    else
     {
-      q.a.a(paramaje.ac(), paramaje.i());
+      q.a.a(paramaka.aa(), paramaka.i());
+      if (!(paramajk instanceof zx)) {
+        break label289;
+      }
+      localObject = (zx)paramajk;
+      akl localakl = (akl)paramaka;
+      if (localakl == null) {
+        break label283;
+      }
+      localObject = (StorySnapLogbook)a.get(mClientId);
+      label188:
+      a((StorySnapLogbook)localObject, false);
+    }
+    for (;;)
+    {
       if (f == null)
       {
-        Timber.c("SnapView", "SNAP-VIEW: There was no session preloaded", new Object[0]);
-        f = b(paramaje, paramaio, paramBoolean);
-        f.a(w);
+        f = b(paramaka, paramajk, paramBoolean);
+        f.a(y);
+      }
+      if (f == null) {
+        return;
       }
       f.g();
       return;
-      localObject = null;
-      break;
-      a(null);
-      break label70;
-      label347:
-      Timber.c("SnapView", "SNAP-VIEW: Session preloaded for different snap " + u.a(), new Object[0]);
+      new StringBuilder("SNAP-VIEW: Session preloaded for different snap ").append(u.a());
       u.h();
+      u = null;
+      break;
+      label283:
+      localObject = null;
+      break label188;
+      label289:
+      a(null, false);
     }
   }
   
   public final void a()
   {
     a(f, SnapViewSessionStopReason.DELETED_SNAP);
-    a.a(new bcj());
+    a.a(new bdj());
   }
   
   public final void a(float paramFloat)
@@ -334,58 +354,53 @@ public class SnapView
     c.setAlpha(paramFloat);
   }
   
-  @ccm
-  public final void a(@cgb aje paramaje, aio paramaio)
+  @cdn
+  public final void a(@chc aka paramaka, ajk paramajk)
   {
-    bgp.a();
-    a(paramaje, paramaio, false);
+    bhp.a();
+    a(paramaka, paramajk, false);
   }
   
-  @ccm
-  public final void a(@cgb aje paramaje, @cgb aio paramaio, boolean paramBoolean)
+  @cdn
+  public final void a(@chc aka paramaka, @chc ajk paramajk, boolean paramBoolean)
   {
     if (v == null)
     {
       v = q.b();
-      q.a(v.a(paramaje.j()));
+      q.a(v.a(paramaka.j()));
     }
     setVisibility(0);
     c.setVisibility(8);
     c.b();
-    boolean bool = paramaio.e();
+    boolean bool = paramajk.e();
     Object localObject = b;
     a = SystemClock.elapsedRealtime();
     c = bool;
     b += 1;
-    bool = paramaio.f();
-    localObject = r;
-    if (b == null)
-    {
-      b = new aop.a((byte)0);
-      b.c = Long.valueOf(aop.a(bool));
-    }
-    paramaio.a();
+    bool = paramajk.f();
+    r.a(bool);
+    paramajk.a();
     localObject = t.iterator();
     while (((Iterator)localObject).hasNext()) {
-      ((yu)((Iterator)localObject).next()).a(paramaje, paramaio);
+      ((zq)((Iterator)localObject).next()).a(paramaka, paramajk);
     }
-    c(paramaje, paramaio, paramBoolean);
+    c(paramaka, paramajk, paramBoolean);
     s.a(this, false);
-    avh.a(getContext(), this);
-    if (!paramaio.e()) {
-      NotificationTable.c(SnapchatApplication.b(), AndroidNotificationManager.Type.SNAP.name(), paramaje.j());
+    awf.a(getContext(), this);
+    if (!paramajk.e()) {
+      NotificationTable.c(SnapchatApplication.b(), AndroidNotificationManager.Type.SNAP.name(), paramaka.j());
     }
   }
   
-  protected final void a(arj paramarj, SnapViewSessionStopReason paramSnapViewSessionStopReason)
+  protected final void a(asi paramasi, SnapViewSessionStopReason paramSnapViewSessionStopReason)
   {
     Object localObject;
-    switch (4.a[paramSnapViewSessionStopReason.ordinal()])
+    switch (3.a[paramSnapViewSessionStopReason.ordinal()])
     {
     default: 
       localObject = SnapViewEventAnalytics.EndReason.SWIPED_DOWN;
     }
-    while (paramarj == null)
+    while (paramasi == null)
     {
       a((SnapViewEventAnalytics.EndReason)localObject);
       return;
@@ -397,23 +412,23 @@ public class SnapView
       continue;
       localObject = SnapViewEventAnalytics.EndReason.FINISHED_VIEWING;
     }
-    aio localaio = paramarj.b();
-    localaio.a(7, paramarj.a());
-    if (localaio.g())
+    ajk localajk = paramasi.b();
+    localajk.a(p.c(), paramasi.a());
+    if (localajk.g())
     {
-      paramarj = h;
+      paramasi = h;
       boolean bool;
       if (paramSnapViewSessionStopReason == SnapViewSessionStopReason.SKIP_REQUESTED)
       {
         bool = true;
         mViewNextSnapMetric = EasyMetric.EasyMetricFactory.b("VIEW_NEXT_SNAP").a("wasSkipped", Boolean.valueOf(bool)).b();
-        paramarj = f;
-        paramSnapViewSessionStopReason = paramarj.b();
+        paramasi = f;
+        paramSnapViewSessionStopReason = paramasi.b();
         localObject = paramSnapViewSessionStopReason.c();
         if (localObject != null) {
-          break label227;
+          break label217;
         }
-        Timber.c("SnapView", "SNAP-VIEW: Kicked out after %s, nextSnap is null", new Object[] { paramarj.a() });
+        paramasi.a();
       }
       for (;;)
       {
@@ -421,19 +436,21 @@ public class SnapView
         return;
         bool = false;
         break;
-        label227:
-        if ((((aje)localObject).L()) || (((aje)localObject).M()))
+        label217:
+        if ((((aka)localObject).M()) || (((aka)localObject).N()))
         {
-          Timber.c("SnapView", "SNAP-VIEW: Moving from %s to nextSnap  %s", new Object[] { paramarj.a(), ((aje)localObject).aa() });
-          c((aje)localObject, paramSnapViewSessionStopReason, paramarj.e());
+          paramasi.a();
+          ((aka)localObject).Y();
+          c((aka)localObject, paramSnapViewSessionStopReason, paramasi.e());
           return;
         }
-        Timber.c("SnapView", "SNAP-VIEW: Kicked out after %s, nextSnap is %s", new Object[] { paramarj.a(), ((aje)localObject).aa() });
-        if (!((aje)localObject).R()) {
+        paramasi.a();
+        ((aka)localObject).Y();
+        if (!((aka)localObject).S()) {
           if (paramSnapViewSessionStopReason.e()) {
-            p.a((ajr)localObject, StoryLoadingContext.LOAD_FROM_VIEWING);
+            p.a((akl)localObject, StoryLoadingContext.LOAD_FROM_VIEWING);
           } else {
-            new op((aje)localObject).a();
+            new pg((aka)localObject).a();
           }
         }
       }
@@ -441,38 +458,38 @@ public class SnapView
     a((SnapViewEventAnalytics.EndReason)localObject);
   }
   
-  @avl
-  @ccm
+  @awj
+  @cdn
   public final void a(SnapViewEventAnalytics.EndReason paramEndReason)
   {
-    boolean bool = false;
-    bgp.a();
-    if (!c()) {
+    boolean bool = true;
+    bhp.a();
+    if (!b()) {
       return;
     }
     Object localObject1;
-    aio localaio;
-    label71:
+    ajk localajk;
+    label49:
     Object localObject2;
+    int i1;
     if (f != null)
     {
       localObject1 = f.a();
-      Timber.c("SnapView", "SNAP-VIEW: Hide snap %s with reason %s", new Object[] { localObject1, paramEndReason });
       if (f == null) {
-        break label198;
+        break label176;
       }
-      localaio = f.b();
+      localajk = f.b();
       localObject2 = n;
       if (paramEndReason != SnapViewEventAnalytics.EndReason.KICKED_OUT) {
-        break label204;
+        break label182;
       }
       i1 = 1;
-      label86:
+      label64:
       if (i1 == 0) {
-        break label209;
+        break label187;
       }
-      ((ng)localObject2).a(true);
-      ((ng)localObject2).a("kicked_out");
+      ((nx)localObject2).a(true);
+      ((nx)localObject2).a("kicked_out");
     }
     for (;;)
     {
@@ -492,14 +509,14 @@ public class SnapView
       }
       localObject1 = null;
       break;
-      label198:
-      localaio = null;
-      break label71;
-      label204:
+      label176:
+      localajk = null;
+      break label49;
+      label182:
       i1 = 0;
-      break label86;
-      label209:
-      ((ng)localObject2).a(false);
+      break label64;
+      label187:
+      ((nx)localObject2).a(false);
       mDictionaryEasyMetric.a("MEDIA_VIEW_INTERVAL", "last_action", "end_view_media", false);
     }
     if (f != null)
@@ -507,18 +524,18 @@ public class SnapView
       f.h();
       localObject2 = t.iterator();
       while (((Iterator)localObject2).hasNext()) {
-        ((yu)((Iterator)localObject2).next()).a(f.b());
+        ((zq)((Iterator)localObject2).next()).a(f.b());
       }
       f = null;
       s.a(this, true);
       localObject2 = k;
       SnapchatApplication localSnapchatApplication = SnapchatApplication.b();
-      Intent localIntent = ((aol)localObject2).b(localSnapchatApplication);
+      Intent localIntent = ((aph)localObject2).b(localSnapchatApplication);
       localIntent.putExtra("op_code", 1000);
       localIntent.putExtra("display_notifications", true);
-      ((aol)localObject2).a(localSnapchatApplication, localIntent);
-      if ((localObject1 != null) && (localaio != null) && (localaio.f())) {
-        a.a(new bct((ajr)localObject1));
+      ((aph)localObject2).a(localSnapchatApplication, localIntent);
+      if ((localObject1 != null) && (localajk != null) && (localajk.f())) {
+        a.a(new bdt((akl)localObject1));
       }
     }
     else
@@ -528,17 +545,18 @@ public class SnapView
         u.h();
         u = null;
       }
-      if ((localaio == null) || (localaio.d() == null)) {
-        break label796;
+      if ((localajk == null) || (localajk.d() == null)) {
+        break label802;
+      }
+      i1 = 1;
+      label422:
+      localObject1 = r;
+      if (i1 != 0) {
+        break label807;
       }
     }
-    label796:
-    for (int i1 = 1;; i1 = 0)
+    for (;;)
     {
-      localObject1 = r;
-      if (i1 == 0) {
-        bool = true;
-      }
       if ((b != null) && (b.d != 0.0D))
       {
         b.e = paramEndReason.getExitEvent();
@@ -549,15 +567,18 @@ public class SnapView
         ((EasyMetric)localObject2).a("full_view", Boolean.valueOf(b.a));
         ((EasyMetric)localObject2).a("exit_event", paramEndReason.getEventName());
         ((EasyMetric)localObject2).a("reachability", a.f());
-        ((EasyMetric)localObject2).a(true);
-        paramEndReason = new lq();
+        ((EasyMetric)localObject2).a(false);
+        paramEndReason = new mi();
         exitEvent = b.e;
         viewLocation = b.c;
         numSnapsViewed = b.b;
         fullView = Boolean.valueOf(b.a);
-        timeViewed = Double.valueOf(aop.a(b.d));
+        timeViewed = Double.valueOf(apl.a(b.d));
         storyType = b.f;
         posterId = b.g;
+        if (b.i != -1L) {
+          viewLocationPos = Long.valueOf(b.i);
+        }
         if (b.h) {
           geoFence = "LOCAL";
         }
@@ -569,47 +590,76 @@ public class SnapView
         q.a(v);
         v = null;
       }
-      if (localaio != null) {
-        localaio.b();
+      if (localajk != null) {
+        localajk.b();
       }
-      a.a(new bby());
+      a.a(new bcy());
       return;
-      a.a(new bdm(false));
+      a.a(new bem(false));
       break;
+      label802:
+      i1 = 0;
+      break label422;
+      label807:
+      bool = false;
     }
   }
   
-  public final void a(@r StorySnapLogbook paramStorySnapLogbook)
+  public final void a(StorySnapLogbook paramStorySnapLogbook, boolean paramBoolean)
   {
+    aps localaps = w;
+    a.removeAllViews();
+    a.f();
     if (paramStorySnapLogbook == null)
     {
-      d.setEnabled(false);
-      d.setVisibility(8);
+      a.setEnabled(false);
+      a.setVisibility(8);
+      a.invalidate();
+      return;
+    }
+    a.setEnabled(true);
+    a.setVisibility(0);
+    MyStoryView localMyStoryView = new MyStoryView(b, paramStorySnapLogbook, localaps);
+    localMyStoryView.measure(0, 0);
+    int i1;
+    if (paramBoolean)
+    {
+      i1 = localMyStoryView.getViewersInfoHeight();
+      paramStorySnapLogbook = new View(b);
+      paramStorySnapLogbook.setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
     }
     for (;;)
     {
-      d.invalidate();
-      return;
-      if (d.getChildCount() > 1) {
-        d.removeViewAt(1);
+      a.addView(paramStorySnapLogbook);
+      int i2 = localMyStoryView.getViewersInfoHeight() + localMyStoryView.getVisibleViewersListHeight();
+      a.a(localMyStoryView, i2, i1);
+      if (i2 != i1)
+      {
+        a.a(c);
+        a.a(new aps.3(localaps, localMyStoryView));
       }
-      d.addView(new MyStoryView(getContext(), this, paramStorySnapLogbook));
-      d.a(0, 0.0D);
-      d.setEnabled(true);
-      d.setVisibility(0);
+      a.a(0, 0.0D);
+      break;
+      d = new aen(b);
+      d.a(-1, -16777216);
+      d.a();
+      d.a(new aps.1(localaps));
+      a.a(new aps.2(localaps));
+      paramStorySnapLogbook = d.c;
+      i1 = 0;
     }
   }
   
-  public final void a(yu paramyu)
+  public final void a(zq paramzq)
   {
-    t.add(paramyu);
+    t.add(paramzq);
   }
   
-  @cgb
-  protected final arj b(aje paramaje, @cgb aio paramaio, boolean paramBoolean)
+  @chc
+  protected final asi b(aka paramaka, @chc ajk paramajk, boolean paramBoolean)
   {
-    boolean bool1 = paramaio.e();
-    boolean bool2 = paramaio.f();
+    boolean bool1 = paramajk.e();
+    boolean bool2 = paramajk.f();
     ViewGroup localViewGroup;
     SnapTimerView localSnapTimerView;
     SnapMediaRenderer[] arrayOfSnapMediaRenderer;
@@ -619,20 +669,20 @@ public class SnapView
       bool1 = true;
       localViewGroup = i;
       localSnapTimerView = j;
-      localank = l;
-      if (!paramaje.ai()) {
+      localaoh = l;
+      if (!paramaka.ag()) {
         break label116;
       }
       arrayOfSnapMediaRenderer = a;
       i1 = c;
       c = (i1 + 1);
     }
-    for (ank localank = arrayOfSnapMediaRenderer[(i1 % 2)];; localank = arrayOfSnapMediaRenderer[(i1 % 2)])
+    for (aoh localaoh = arrayOfSnapMediaRenderer[(i1 % 2)];; localaoh = arrayOfSnapMediaRenderer[(i1 % 2)])
     {
-      if ((!paramaje.Y()) || (!paramaje.M())) {
+      if ((!paramaka.W()) || (!paramaka.N())) {
         break label151;
       }
-      return new arm(paramaje, paramaio);
+      return new asl(paramaka, paramajk);
       bool1 = false;
       break;
       label116:
@@ -641,30 +691,25 @@ public class SnapView
       d = (i1 + 1);
     }
     label151:
-    return new arg(paramaje, paramaio, localViewGroup, paramBoolean, localSnapTimerView, bool1, localank, nn.a());
+    return new asf(paramaka, paramajk, localViewGroup, paramBoolean, localSnapTimerView, bool1, localaoh, oe.a());
   }
   
-  public final void b()
+  public final void b(zq paramzq)
   {
-    d.a(0, 1.0D);
+    t.remove(paramzq);
   }
   
-  public final void b(yu paramyu)
-  {
-    t.remove(paramyu);
-  }
-  
-  public final boolean c()
+  public final boolean b()
   {
     return f != null;
   }
   
-  public final void d()
+  public final void c()
   {
     c.b();
   }
   
-  public final boolean e()
+  public final boolean d()
   {
     if (d.getVisibility() == 0)
     {
@@ -676,17 +721,17 @@ public class SnapView
         return true;
       }
     }
-    if (c())
+    if (b())
     {
       a(SnapViewEventAnalytics.EndReason.BACK_PRESSED);
-      a.a(new bdz());
+      a.a(new bey());
       return true;
     }
     return false;
   }
   
   @r
-  public aje getSnap()
+  public aka getSnap()
   {
     if (f == null) {
       return null;

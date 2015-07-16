@@ -1,23 +1,23 @@
 package com.snapchat.android.camera.videocamera;
 
-import buo;
-import xi;
+import bvp;
+import ye;
 
 public enum ScCamcorderProfileProvider_Factory
-  implements buo<xi>
+  implements bvp<ye>
 {
   INSTANCE;
   
   private ScCamcorderProfileProvider_Factory() {}
   
-  public static buo<xi> create()
+  public static bvp<ye> create()
   {
     return INSTANCE;
   }
   
-  public final xi get()
+  public final ye get()
   {
-    return new xi();
+    return new ye();
   }
 }
 

@@ -1,26 +1,26 @@
 package com.snapchat.android.discover.api2;
 
-import adb;
-import aim;
-import ajk;
-import aks;
-import ato;
-import avb;
+import aeb;
+import aji;
+import akg;
+import aln;
+import aum;
+import avz;
 import com.google.gson.annotations.SerializedName;
 import com.snapchat.android.model.Mediabryo;
 import com.snapchat.android.model.chat.ChatMedia.MediaType;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import pl;
-import tn;
+import qc;
+import ud;
 
-@tn
+@ud
 final class SendDSnapTask$a
-  extends pl
+  extends qc
 {
   @SerializedName("body_type")
-  final String mBodyType = aks.DISCOVER_SHARE;
+  final String mBodyType = aln.DISCOVER_SHARE;
   @SerializedName("media_height")
   final int mHeight = athis$0).mHeight;
   @SerializedName("media_id")
@@ -45,9 +45,9 @@ final class SendDSnapTask$a
     String[] arrayOfString = SendDSnapTask.c(paramSendDSnapTask).f();
     List localList = SendDSnapTask.c(paramSendDSnapTask).g();
     SendDSnapTask.d(paramSendDSnapTask).putAll(SendDSnapTask.a(arrayOfString));
-    mRecipients = avb.a(Arrays.asList(arrayOfString), ",");
+    mRecipients = avz.a(Arrays.asList(arrayOfString), ",");
     if (!localList.isEmpty()) {}
-    for (mRecipientIds = avb.a(localList, ",");; mRecipientIds = null)
+    for (mRecipientIds = avz.a(localList, ",");; mRecipientIds = null)
     {
       mSeqNums = SendDSnapTask.e(paramSendDSnapTask).a(SendDSnapTask.d(paramSendDSnapTask));
       return;

@@ -51,11 +51,6 @@
 
     .line 30
     :try_start_0
-    iget-object v0, p0, Lcom/snapchat/android/util/WaitDoneHandler$1;->val$waitDoneLock:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
-    .line 31
     monitor-exit v1
 
     return-void

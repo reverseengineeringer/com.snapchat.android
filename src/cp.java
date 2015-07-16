@@ -1,21 +1,9 @@
-@cc
+import javax.annotation.Nullable;
+
 @cd
-public abstract class cp
+public abstract interface cp<T>
 {
-  private static final cp a = new cp()
-  {
-    public final long a()
-    {
-      return System.nanoTime();
-    }
-  };
-  
-  public static cp b()
-  {
-    return a;
-  }
-  
-  public abstract long a();
+  public abstract boolean a(@Nullable T paramT);
 }
 
 /* Location:

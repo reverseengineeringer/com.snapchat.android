@@ -1,35 +1,21 @@
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 public final class vc
-  extends bfe<ut>
+  implements uh
 {
-  private final List<ut> a;
+  private String mString;
   
-  public vc(@cgb List<ut> paramList, @cgb azo paramazo, @cgb bfe.a<ut> parama)
+  public vc(String paramString)
   {
-    super(paramazo, parama);
-    a = paramList;
+    mString = paramString;
   }
   
-  @cgc
-  protected final List<ut> a(@cgc String paramString)
+  public final bmv a(String paramString)
   {
-    if (TextUtils.isEmpty(paramString)) {
-      return a;
-    }
-    ArrayList localArrayList = new ArrayList();
-    Iterator localIterator = a.iterator();
-    while (localIterator.hasNext())
-    {
-      ut localut = (ut)localIterator.next();
-      if (localut.a(paramString)) {
-        localArrayList.add(localut);
-      }
-    }
-    return localArrayList;
+    return bmv.a(new String[] { "Content-Disposition", "form-data; name=\"" + paramString + "\"" });
+  }
+  
+  public final bnc a()
+  {
+    return bnc.a(ub.STRING_MEDIA_TYPE, mString);
   }
 }
 

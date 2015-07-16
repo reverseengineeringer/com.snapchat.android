@@ -16,7 +16,7 @@
 
 .field private e:Lcom/squareup/otto/Bus;
 
-.field private f:Lafi;
+.field private f:Lagi;
 
 
 # direct methods
@@ -78,21 +78,21 @@
 
     .prologue
     .line 51
-    invoke-static {}, Lban;->a()Lcom/squareup/otto/Bus;
+    invoke-static {}, Lbbo;->a()Lcom/squareup/otto/Bus;
 
     move-result-object v0
 
-    invoke-static {}, Lafi;->a()Lafi;
+    invoke-static {}, Lagi;->a()Lagi;
 
     move-result-object v1
 
-    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;-><init>(Lcom/squareup/otto/Bus;Lafi;)V
+    invoke-direct {p0, v0, v1}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;-><init>(Lcom/squareup/otto/Bus;Lagi;)V
 
     .line 52
     return-void
 .end method
 
-.method public constructor <init>(Lcom/squareup/otto/Bus;Lafi;)V
+.method public constructor <init>(Lcom/squareup/otto/Bus;Lagi;)V
     .locals 0
 
     .prologue
@@ -103,7 +103,7 @@
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->e:Lcom/squareup/otto/Bus;
 
     .line 56
-    iput-object p2, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->f:Lafi;
+    iput-object p2, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->f:Lagi;
 
     .line 57
     return-void
@@ -153,7 +153,7 @@
     .locals 6
 
     .prologue
-    const v5, 0x7f0a0021
+    const v5, 0x7f0a0022
 
     const/4 v4, 0x0
 
@@ -235,16 +235,16 @@
     .line 77
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->e:Lcom/squareup/otto/Bus;
 
-    new-instance v2, Lbel;
+    new-instance v2, Lbfk;
 
     sget-object v3, Lcom/snapchat/android/util/TitleBarManager$Visibility;->VISIBLE:Lcom/snapchat/android/util/TitleBarManager$Visibility;
 
-    invoke-direct {v2, v3}, Lbel;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
+    invoke-direct {v2, v3}, Lbfk;-><init>(Lcom/snapchat/android/util/TitleBarManager$Visibility;)V
 
     invoke-virtual {v0, v2}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
     .line 79
-    const v0, 0x7f0a0023
+    const v0, 0x7f0a0024
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->c(I)Landroid/view/View;
 
@@ -264,7 +264,7 @@
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 82
-    const v0, 0x7f0a001e
+    const v0, 0x7f0a001f
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->c(I)Landroid/view/View;
 
@@ -277,7 +277,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 89
-    const v0, 0x7f0a0027
+    const v0, 0x7f0a0028
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->c(I)Landroid/view/View;
 
@@ -290,7 +290,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 99
-    const v0, 0x7f0a0026
+    const v0, 0x7f0a0027
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->c(I)Landroid/view/View;
 
@@ -355,7 +355,7 @@
 
     .line 129
     :goto_1
-    const v0, 0x7f0a0028
+    const v0, 0x7f0a0029
 
     invoke-virtual {p0, v0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->c(I)Landroid/view/View;
 
@@ -407,9 +407,9 @@
     invoke-super {p0}, Lcom/snapchat/android/util/fragment/SnapchatFragment;->onDestroy()V
 
     .line 182
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->f:Lafi;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->f:Lagi;
 
-    invoke-virtual {v0}, Lafi;->b()V
+    invoke-virtual {v0}, Lagi;->b()V
 
     .line 183
     return-void
@@ -430,11 +430,11 @@
     .line 189
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->e:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->SHOW:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -452,11 +452,11 @@
     .line 150
     iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->e:Lcom/squareup/otto/Bus;
 
-    new-instance v1, Lbap;
+    new-instance v1, Lbbq;
 
     sget-object v2, Lcom/snapchat/android/util/eventbus/CameraDisplayState;->CLOSE:Lcom/snapchat/android/util/eventbus/CameraDisplayState;
 
-    invoke-direct {v1, v2}, Lbap;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
+    invoke-direct {v1, v2}, Lbbq;-><init>(Lcom/snapchat/android/util/eventbus/CameraDisplayState;)V
 
     invoke-virtual {v0, v1}, Lcom/squareup/otto/Bus;->a(Ljava/lang/Object;)V
 
@@ -498,13 +498,13 @@
     invoke-virtual {v0}, Lcom/snapchat/android/ui/TextureVideoView;->start()V
 
     .line 171
-    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->f:Lafi;
+    iget-object v0, p0, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->f:Lagi;
 
     invoke-virtual {p0}, Lcom/snapchat/android/fragments/addfriends/AddFriendsBySnapcodeSetupFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lafi;->a(Landroid/support/v4/app/FragmentActivity;)V
+    invoke-virtual {v0, v1}, Lagi;->a(Landroid/support/v4/app/FragmentActivity;)V
 
     .line 172
     return-void

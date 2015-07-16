@@ -1,24 +1,25 @@
 package com.snapchat.android.receiver;
 
-import ajx;
+import akr;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.text.TextUtils;
-import ban;
-import bet;
-import cgc;
-import com.snapchat.android.Timber;
+import bbo;
+import bfs;
+import chd;
 import com.squareup.otto.Bus;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import kkkkkk.kkxxkk;
+import kkkkkk.xkkkxk;
 
 public class SmsReceiver
   extends BroadcastReceiver
 {
-  @cgc
+  @chd
   private static SmsMessage[] a(Bundle paramBundle)
   {
     if ((paramBundle != null) && (paramBundle.containsKey("pdus"))) {
@@ -30,22 +31,21 @@ public class SmsReceiver
         while (i < paramBundle.length)
         {
           arrayOfSmsMessage[i] = SmsMessage.createFromPdu((byte[])(byte[])paramBundle[i]);
-          Timber.c("SmsReceiver", "getReceivedMessages - body: " + arrayOfSmsMessage[i].getDisplayMessageBody() + " origin: " + arrayOfSmsMessage[i].getDisplayOriginatingAddress() + " service center: " + arrayOfSmsMessage[i].getServiceCenterAddress() + " subject: " + arrayOfSmsMessage[i].getPseudoSubject(), new Object[0]);
+          new StringBuilder("getReceivedMessages - body: ").append(arrayOfSmsMessage[i].getDisplayMessageBody()).append(" origin: ").append(arrayOfSmsMessage[i].getDisplayOriginatingAddress()).append(" service center: ").append(arrayOfSmsMessage[i].getServiceCenterAddress()).append(" subject: ").append(arrayOfSmsMessage[i].getPseudoSubject());
           i += 1;
         }
         return arrayOfSmsMessage;
       }
-      catch (Exception paramBundle)
-      {
-        Timber.f("SmsReceiver", "Failed to parse SMS messages from Intent. ", new Object[] { paramBundle });
-      }
+      catch (Exception paramBundle) {}
     }
     return null;
   }
   
   public void onReceive(Context paramContext, Intent paramIntent)
   {
-    Timber.c("SmsReceiver", "onReceive " + paramIntent, new Object[0]);
+    kkxxkk.b041E041EОО041EО(paramContext);
+    xkkkxk.b041E041EООО041E(paramContext);
+    new StringBuilder("onReceive ").append(paramIntent);
     if (paramIntent != null)
     {
       paramIntent = a(paramIntent.getExtras());
@@ -60,26 +60,26 @@ public class SmsReceiver
           if (paramContext != null)
           {
             str = paramContext.getDisplayMessageBody();
-            paramContext = ajx.bo();
+            paramContext = akr.bl();
             if ((TextUtils.isEmpty(paramContext)) || (TextUtils.isEmpty(str))) {
-              break label212;
+              break label198;
             }
             paramContext = Pattern.compile(paramContext.replace("{0}", "(\\d+)"));
             Matcher localMatcher = paramContext.matcher(str);
             if (!localMatcher.find()) {
-              break label212;
+              break label198;
             }
             paramContext = paramContext.matcher(localMatcher.group());
             if ((!paramContext.matches()) || (paramContext.groupCount() <= 0)) {
-              break label212;
+              break label198;
             }
           }
-          label212:
+          label198:
           for (paramContext = paramContext.group(1);; paramContext = null)
           {
-            Timber.c("SmsReceiver", "messageBody: " + str + " verificationCode: " + paramContext, new Object[0]);
+            new StringBuilder("messageBody: ").append(str).append(" verificationCode: ").append(paramContext);
             if (!TextUtils.isEmpty(paramContext)) {
-              ban.a().a(new bet(paramContext));
+              bbo.a().a(new bfs(paramContext));
             }
             i += 1;
             break;

@@ -1,140 +1,72 @@
-.class public final Lcjr;
-.super Lcjf;
+.class final Lcjr;
+.super Lcji;
 .source "SourceFile"
 
+# interfaces
+.implements Lcjo;
+.implements Lcjp;
+.implements Lcjt;
 
-# instance fields
-.field private final a:Lcgf;
 
-.field private final b:I
-
-.field private transient c:I
+# static fields
+.field static final a:Lcjr;
 
 
 # direct methods
-.method public constructor <init>(Lcgf;Lcgh;)V
+.method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 53
-    const/4 v0, 0x0
+    .line 34
+    new-instance v0, Lcjr;
 
-    invoke-direct {p0, p1, p2, v0}, Lcjr;-><init>(Lcgf;Lcgh;B)V
+    invoke-direct {v0}, Lcjr;-><init>()V
 
-    .line 54
+    sput-object v0, Lcjr;->a:Lcjr;
+
     return-void
 .end method
 
-.method private constructor <init>(Lcgf;Lcgh;B)V
-    .locals 3
+.method protected constructor <init>()V
+    .locals 0
 
     .prologue
-    const/4 v2, 0x0
+    .line 40
+    invoke-direct {p0}, Lcji;-><init>()V
 
-    .line 64
-    invoke-direct {p0, p2}, Lcjf;-><init>(Lcgh;)V
-
-    .line 65
-    iput-object p1, p0, Lcjr;->a:Lcgf;
-
-    .line 66
-    invoke-super {p0}, Lcjf;->g()I
-
-    move-result v0
-
-    .line 67
-    if-gez v0, :cond_0
-
-    .line 68
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcjr;->c:I
-
-    .line 74
-    :goto_0
-    iput v2, p0, Lcjr;->b:I
-
-    .line 75
+    .line 41
     return-void
-
-    .line 69
-    :cond_0
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1
-
-    .line 70
-    iput v2, p0, Lcjr;->c:I
-
-    goto :goto_0
-
-    .line 72
-    :cond_1
-    iput v0, p0, Lcjr;->c:I
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(J)I
-    .locals 3
+.method public final a(Ljava/lang/Object;)J
+    .locals 2
 
     .prologue
-    .line 79
-    invoke-super {p0, p1, p2}, Lcjf;->a(J)I
+    .line 54
+    check-cast p1, Ljava/lang/Long;
 
-    move-result v0
-
-    .line 80
-    iget v1, p0, Lcjr;->b:I
-
-    if-ge v0, v1, :cond_0
-
-    .line 81
-    add-int/lit8 v0, v0, 0x1
-
-    .line 83
-    :cond_0
-    return v0
-.end method
-
-.method public final b(JI)J
-    .locals 3
-
-    .prologue
-    .line 87
-    iget v0, p0, Lcjr;->c:I
-
-    invoke-virtual {p0}, Lcjr;->h()I
-
-    move-result v1
-
-    invoke-static {p0, p3, v0, v1}, Lcjh;->a(Lcgh;III)V
-
-    .line 88
-    iget v0, p0, Lcjr;->b:I
-
-    if-gt p3, v0, :cond_0
-
-    .line 89
-    add-int/lit8 p3, p3, -0x1
-
-    .line 91
-    :cond_0
-    invoke-super {p0, p1, p2, p3}, Lcjf;->b(JI)J
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public final g()I
+.method public final a()Ljava/lang/Class;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/Class",
+            "<*>;"
+        }
+    .end annotation
 
     .prologue
-    .line 95
-    iget v0, p0, Lcjr;->c:I
+    .line 77
+    const-class v0, Ljava/lang/Long;
 
-    return v0
+    return-object v0
 .end method

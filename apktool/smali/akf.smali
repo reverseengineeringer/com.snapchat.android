@@ -1,369 +1,160 @@
-.class public Lakf;
-.super Ljava/lang/Object;
+.class public final Lakf;
+.super Laji;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/snapchat/android/model/chat/ChatFeedItem;
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lakf$a;
+    }
+.end annotation
 
 
 # static fields
-.field private static final HEADER_ID_SUFFIX:Ljava/lang/String; = "CHAT_HEADER"
+.field private static final JPEG_ENCODING_QUALITY:I = 0x3c
 
 
 # instance fields
-.field public mId:Ljava/lang/String;
-
-.field public final mSender:Ljava/lang/String;
-
-.field public mTimestamp:J
+.field private final mSnapbryoAnalytics:Loh;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/snapchat/android/model/chat/ChatFeedItem;)V
-    .locals 2
+.method protected constructor <init>(Lakf$a;)V
+    .locals 1
 
     .prologue
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 21
-    iput-object p1, p0, Lakf;->mSender:Ljava/lang/String;
-
     .line 22
-    if-eqz p2, :cond_0
+    invoke-direct {p0, p1}, Laji;-><init>(Laji$a;)V
 
     .line 23
-    invoke-interface {p2}, Lcom/snapchat/android/model/chat/ChatFeedItem;->W()J
+    iget-object v0, p1, Lakf$a;->mSnapbryoAnalytics:Loh;
 
-    move-result-wide v0
-
-    iput-wide v0, p0, Lakf;->mTimestamp:J
+    iput-object v0, p0, Lakf;->mSnapbryoAnalytics:Loh;
 
     .line 24
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {p2}, Lcom/snapchat/android/fragments/chat/ChatFragment;->a(Lcom/snapchat/android/model/chat/ChatFeedItem;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "CHAT_HEADER"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lakf;->mId:Ljava/lang/String;
-
-    .line 29
-    :goto_0
     return-void
+.end method
 
-    .line 26
-    :cond_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+.method private n()Lakf;
+    .locals 1
 
-    move-result-wide v0
+    .prologue
+    .line 28
+    new-instance v0, Lakf$a;
 
-    iput-wide v0, p0, Lakf;->mTimestamp:J
+    invoke-direct {v0}, Lakf$a;-><init>()V
 
-    .line 27
-    const-string v0, "TODAY_DUMMY_HEADER"
+    invoke-virtual {v0, p0}, Lakf$a;->a(Laji;)Laji$a;
 
-    iput-object v0, p0, Lakf;->mId:Ljava/lang/String;
+    move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Lakf$a;
+
+    invoke-virtual {v0}, Lakf$a;->c()Lakf;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final N()Z
+.method public final synthetic a()Laji;
     .locals 1
 
     .prologue
-    .line 57
-    const/4 v0, 0x0
+    .line 15
+    invoke-direct {p0}, Lakf;->n()Lakf;
 
-    return v0
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public final O()Z
+.method public final synthetic clone()Ljava/lang/Object;
     .locals 1
 
     .prologue
+    .line 15
+    invoke-direct {p0}, Lakf;->n()Lakf;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final g()[B
+    .locals 2
+    .annotation build Lchd;
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 49
+    iget-object v1, p0, Laji;->mCompositeImageBitmap:Landroid/graphics/Bitmap;
+
+    .line 50
+    if-nez v1, :cond_0
+
+    .line 51
+    const-string v1, "Null Composite Image Bitmap"
+
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
+
     .line 61
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final P()Z
-    .locals 1
-
-    .prologue
-    .line 106
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final Q()Z
-    .locals 1
-
-    .prologue
-    .line 130
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final W()J
-    .locals 2
-
-    .prologue
-    .line 33
-    iget-wide v0, p0, Lakf;->mTimestamp:J
-
-    return-wide v0
-.end method
-
-.method public final a(Lcom/snapchat/android/model/chat/ChatConversation;)I
-    .locals 1
-
-    .prologue
-    .line 85
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
-.method public final a(Landroid/view/View;Lcom/snapchat/android/model/chat/ChatConversation;)Lcom/snapchat/android/model/chat/ChatFeedItem$a;
-    .locals 1
-    .param p1    # Landroid/view/View;
-        .annotation build Lcgb;
-        .end annotation
-    .end param
-    .param p2    # Lcom/snapchat/android/model/chat/ChatConversation;
-        .annotation build Lcgc;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 93
-    const/4 v0, 0x0
-
+    :goto_0
     return-object v0
-.end method
 
-.method public final a()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 101
-    const-string v0, ""
-
-    return-object v0
-.end method
-
-.method public final al()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 69
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final am()Z
-    .locals 1
-
-    .prologue
-    .line 135
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final ao()Z
-    .locals 1
-
-    .prologue
-    .line 65
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final b(Lcom/snapchat/android/model/chat/ChatConversation;)J
-    .locals 2
-
-    .prologue
-    .line 89
-    iget-wide v0, p0, Lakf;->mTimestamp:J
-
-    return-wide v0
-.end method
-
-.method public b()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 73
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final c(Lcom/snapchat/android/model/chat/ChatConversation;)J
-    .locals 2
-
-    .prologue
-    .line 38
-    iget-wide v0, p0, Lakf;->mTimestamp:J
-
-    return-wide v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    .prologue
-    .line 97
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public synthetic compareTo(Ljava/lang/Object;)I
-    .locals 4
-
-    .prologue
-    .line 12
-    check-cast p1, Lcom/snapchat/android/model/chat/ChatFeedItem;
-
-    invoke-interface {p1}, Lcom/snapchat/android/model/chat/ChatFeedItem;->W()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lakf;->mTimestamp:J
-
-    sub-long/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->signum(J)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public d()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 43
-    iget-object v0, p0, Lakf;->mId:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .prologue
-    .line 140
-    instance-of v0, p1, Lakf;
-
-    if-eqz v0, :cond_0
-
-    .line 141
-    iget-object v0, p0, Lakf;->mId:Ljava/lang/String;
-
-    check-cast p1, Lakf;
-
-    invoke-virtual {p1}, Lakf;->d()Ljava/lang/String;
+    .line 55
+    :cond_0
+    invoke-static {v1}, Lavp;->e(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 56
+    if-nez v1, :cond_1
 
-    move-result v0
+    .line 57
+    const-string v1, "Null Composite Image Bitmap after SnapMediaUtils.downscaleBitmapForUpload"
 
-    .line 143
-    :goto_0
-    return v0
+    invoke-static {p0, v1}, Loh;->a(Laji;Ljava/lang/String;)V
 
-    :cond_0
-    const/4 v0, 0x0
+    goto :goto_0
+
+    .line 61
+    :cond_1
+    invoke-static {v1}, Lavp;->b(Landroid/graphics/Bitmap;)[B
+
+    move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public hashCode()I
+.method public final h()I
     .locals 1
 
     .prologue
-    .line 148
-    iget-object v0, p0, Lakf;->mId:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
+    .line 43
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public final j()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 48
-    iget-object v0, p0, Lakf;->mSender:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final k()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 53
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final p()V
+.method public final i()V
     .locals 0
 
     .prologue
-    .line 111
+    .line 39
     return-void
 .end method
 
-.method public final q()Z
+.method public final m()Z
     .locals 1
 
     .prologue
-    .line 115
+    .line 33
     const/4 v0, 0x0
 
     return v0

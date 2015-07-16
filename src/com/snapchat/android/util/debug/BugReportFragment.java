@@ -24,14 +24,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import auc;
-import auh;
-import avh;
-import azs;
-import azs.1;
-import bgp;
-import cgc;
-import com.snapchat.android.Timber;
+import ava;
+import avf;
+import awf;
+import bar;
+import bar.1;
+import bhp;
+import chd;
 import com.snapchat.android.ui.window.WindowConfiguration.StatusBarDrawMode;
 import com.snapchat.android.util.AlertDialogUtils;
 import com.snapchat.android.util.fragment.SnapchatFragment;
@@ -84,9 +83,9 @@ public class BugReportFragment
     mActivity = paramActivity;
   }
   
-  public View onCreateView(LayoutInflater paramLayoutInflater, @cgc ViewGroup paramViewGroup, @cgc Bundle paramBundle)
+  public View onCreateView(LayoutInflater paramLayoutInflater, @chd ViewGroup paramViewGroup, @chd Bundle paramBundle)
   {
-    paramLayoutInflater = paramLayoutInflater.inflate(2130968592, paramViewGroup, false);
+    paramLayoutInflater = paramLayoutInflater.inflate(2130968593, paramViewGroup, false);
     mFragmentLayout = paramLayoutInflater;
     mImageFile = getActivity().getIntent().getStringExtra("screenshots");
     mLogFiles = getActivity().getIntent().getStringArrayExtra("logs");
@@ -108,7 +107,7 @@ public class BugReportFragment
         }
         paramAnonymousView = new AlertDialog.Builder(BugReportFragment.c(BugReportFragment.this));
         final EditText localEditText = new EditText(BugReportFragment.c(BugReportFragment.this));
-        final String str = auc.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL");
+        final String str = ava.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL");
         if (str != null)
         {
           localEditText.setText(str);
@@ -124,7 +123,7 @@ public class BugReportFragment
               if (paramAnonymous2DialogInterface.endsWith("@snapchat.com"))
               {
                 if (!paramAnonymous2DialogInterface.equals(str)) {
-                  auc.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL", paramAnonymous2DialogInterface);
+                  ava.a("SHAKE_TO_REPORT_SEND_TO_SELF_EMAIL", paramAnonymous2DialogInterface);
                 }
                 BugReportFragment.b(BugReportFragment.this).setText(paramAnonymous2DialogInterface);
                 BugReportFragment.a(BugReportFragment.this, true);
@@ -226,7 +225,7 @@ public class BugReportFragment
           {
             public final void run()
             {
-              bgp.a(300L);
+              bhp.a(300L);
               BugReportFragment.c(BugReportFragment.this, false);
             }
           }).start();
@@ -259,21 +258,17 @@ public class BugReportFragment
     {
       public final void onClick(View paramAnonymousView)
       {
-        if (BugReportFragment.l(BugReportFragment.this) == null) {
-          try
-          {
-            avh.a(BugReportFragment.c(BugReportFragment.this), paramAnonymousView);
-            getActivity().mFragments.beginTransaction().add(val$containerId, new BugReportRemoteLogListFragment()).addToBackStack("BugReportRemoteLogListFragment").commit();
-            return;
-          }
-          catch (IllegalStateException paramAnonymousView)
-          {
-            Timber.a("BugReportFragment", paramAnonymousView);
-            return;
-          }
+        if (BugReportFragment.l(BugReportFragment.this) == null) {}
+        try
+        {
+          awf.a(BugReportFragment.c(BugReportFragment.this), paramAnonymousView);
+          getActivity().mFragments.beginTransaction().add(val$containerId, new BugReportRemoteLogListFragment()).addToBackStack("BugReportRemoteLogListFragment").commit();
+          return;
         }
+        catch (IllegalStateException paramAnonymousView) {}
         BugReportFragment.m(BugReportFragment.this);
         BugReportFragment.n(BugReportFragment.this).setText("Remote Log");
+        return;
       }
     });
     mProjectNameButton = ((Button)c(2131361935));
@@ -316,13 +311,13 @@ public class BugReportFragment
           paramAnonymousView = "null";
           break;
         }
-        azs localazs = new azs();
+        bar localbar = new bar();
         String str1 = BugReportFragment.a(BugReportFragment.c(BugReportFragment.this));
         String str2 = BugReportFragment.s(BugReportFragment.this).getText().toString();
         Object localObject = ((StringBuilder)localObject).toString();
         String str3 = BugReportFragment.l(BugReportFragment.this);
         String str4 = BugReportFragment.p(BugReportFragment.this);
-        bgp.a(auh.SERIAL_EXECUTOR_FOR_DEBUGGING, new azs.1(localazs, paramAnonymousView, str4, str1, str2, (String)localObject, localFile, arrayOfFile, str3));
+        bhp.a(avf.SERIAL_EXECUTOR_FOR_DEBUGGING, new bar.1(localbar, paramAnonymousView, str4, str1, str2, (String)localObject, localFile, arrayOfFile, str3));
         BugReportFragment.c(BugReportFragment.this).finish();
       }
     });

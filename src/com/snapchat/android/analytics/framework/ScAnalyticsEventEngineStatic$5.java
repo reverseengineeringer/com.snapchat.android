@@ -7,15 +7,19 @@ final class ScAnalyticsEventEngineStatic$5
   
   public final void run()
   {
-    ScAnalyticsEventEngineStatic.a.b(ScAnalyticsEventEngineStatic.g());
+    if (ScAnalyticsEventEngineStatic.g()) {
+      return;
+    }
+    ScAnalyticsEventEngineStatic.a(true);
+    ScAnalyticsEventEngineStatic.a(a);
     long l1 = ScAnalyticsEventEngineStatic.h();
     long l2 = ScAnalyticsEventEngineStatic.i();
-    if ((l1 != -1L) && (a - l2 < 15000L)) {
-      DatabaseHelper.a(ScAnalyticsEventEngineStatic.j()).b(l1);
+    if ((l1 != -1L) && (a - l2 < 15000L))
+    {
+      ScAnalyticsEventEngineStatic.b(l1);
+      return;
     }
-    ScAnalyticsEventEngineStatic.a(a);
-    ScAnalyticsEventEngineStatic.k();
-    ScAnalyticsEventEngineStatic.a();
+    ScAnalyticsEventEngineStatic.c(a);
   }
 }
 

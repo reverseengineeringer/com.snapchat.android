@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 121
+    .line 130
     iput-object p1, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$3;->a:Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 124
+    .line 133
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$3;->a:Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;
 
     invoke-static {v1}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->e(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)Landroid/support/v4/view/ViewPager;
@@ -51,10 +51,10 @@
 
     invoke-virtual {v1, v0}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
-    .line 125
+    .line 134
     iget-object v1, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$3;->a:Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;
 
-    invoke-static {}, Lajx;->f()Z
+    invoke-static {}, Lakr;->f()Z
 
     move-result v2
 
@@ -62,9 +62,9 @@
 
     iget-object v2, p0, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment$3;->a:Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;
 
-    invoke-static {v2}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->d(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)Lajx;
+    invoke-static {v2}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->d(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;)Lakr;
 
-    invoke-static {}, Lajx;->Z()Z
+    invoke-static {}, Lakr;->Z()Z
 
     move-result v2
 
@@ -73,10 +73,10 @@
     :goto_0
     invoke-static {v1, v0}, Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;->a(Lcom/snapchat/android/fragments/addfriends/FriendsContactsToggleFragment;Z)V
 
-    .line 127
+    .line 136
     return-void
 
-    .line 125
+    .line 134
     :cond_0
     const/4 v0, 0x0
 

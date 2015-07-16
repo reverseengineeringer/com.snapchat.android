@@ -1,18 +1,18 @@
 .class public final Lhj;
-.super Llt;
+.super Lml;
 .source "SourceFile"
 
 
 # instance fields
+.field public dsnapId:Ljava/lang/String;
+
 .field public editionId:Ljava/lang/String;
 
 .field private final eventName:Ljava/lang/String;
 
-.field public fullView:Ljava/lang/Boolean;
+.field private exitEvent:Lhu;
 
-.field private mediaDisplayTimeSec:Ljava/lang/Double;
-
-.field public mediaType:Lhy;
+.field public longformType:Lih;
 
 .field public publisherId:Ljava/lang/String;
 
@@ -20,11 +20,7 @@
 
 .field public snapIndexPos:Ljava/lang/Long;
 
-.field private snapTimeSec:Ljava/lang/Double;
-
-.field private source:Lld;
-
-.field public splashId:Ljava/lang/String;
+.field public source:Llv;
 
 .field public timeViewed:Ljava/lang/Double;
 
@@ -35,10 +31,10 @@
 
     .prologue
     .line 11
-    invoke-direct {p0}, Llt;-><init>()V
+    invoke-direct {p0}, Lml;-><init>()V
 
-    .line 101
-    const-string v0, "DISCOVER_SPLASH_VIEW"
+    .line 85
+    const-string v0, "DISCOVER_SNAP_LONGFORM_VIEW"
 
     iput-object v0, p0, Lhj;->eventName:Ljava/lang/String;
 
@@ -61,22 +57,34 @@
     .end annotation
 
     .prologue
-    .line 108
+    .line 92
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 110
+    .line 94
     const-string v1, "event_name"
 
-    const-string v2, "DISCOVER_SPLASH_VIEW"
+    const-string v2, "DISCOVER_SNAP_LONGFORM_VIEW"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 111
-    iget-object v1, p0, Lhj;->editionId:Ljava/lang/String;
+    .line 95
+    iget-object v1, p0, Lhj;->dsnapId:Ljava/lang/String;
 
     if-eqz v1, :cond_0
+
+    const-string v1, "dsnap_id"
+
+    iget-object v2, p0, Lhj;->dsnapId:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 96
+    :cond_0
+    iget-object v1, p0, Lhj;->editionId:Ljava/lang/String;
+
+    if-eqz v1, :cond_1
 
     const-string v1, "edition_id"
 
@@ -84,43 +92,31 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 112
-    :cond_0
-    iget-object v1, p0, Lhj;->fullView:Ljava/lang/Boolean;
-
-    if-eqz v1, :cond_1
-
-    const-string v1, "full_view"
-
-    iget-object v2, p0, Lhj;->fullView:Ljava/lang/Boolean;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 113
+    .line 97
     :cond_1
-    iget-object v1, p0, Lhj;->mediaDisplayTimeSec:Ljava/lang/Double;
+    iget-object v1, p0, Lhj;->exitEvent:Lhu;
 
     if-eqz v1, :cond_2
 
-    const-string v1, "media_display_time_sec"
+    const-string v1, "exit_event"
 
-    iget-object v2, p0, Lhj;->mediaDisplayTimeSec:Ljava/lang/Double;
+    iget-object v2, p0, Lhj;->exitEvent:Lhu;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 114
+    .line 98
     :cond_2
-    iget-object v1, p0, Lhj;->mediaType:Lhy;
+    iget-object v1, p0, Lhj;->longformType:Lih;
 
     if-eqz v1, :cond_3
 
-    const-string v1, "media_type"
+    const-string v1, "longform_type"
 
-    iget-object v2, p0, Lhj;->mediaType:Lhy;
+    iget-object v2, p0, Lhj;->longformType:Lih;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 115
+    .line 99
     :cond_3
     iget-object v1, p0, Lhj;->publisherId:Ljava/lang/String;
 
@@ -132,7 +128,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 116
+    .line 100
     :cond_4
     iget-object v1, p0, Lhj;->snapIndexCount:Ljava/lang/Long;
 
@@ -144,7 +140,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 117
+    .line 101
     :cond_5
     iget-object v1, p0, Lhj;->snapIndexPos:Ljava/lang/Long;
 
@@ -156,47 +152,23 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 118
+    .line 102
     :cond_6
-    iget-object v1, p0, Lhj;->snapTimeSec:Ljava/lang/Double;
+    iget-object v1, p0, Lhj;->source:Llv;
 
     if-eqz v1, :cond_7
 
-    const-string v1, "snap_time_sec"
-
-    iget-object v2, p0, Lhj;->snapTimeSec:Ljava/lang/Double;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 119
-    :cond_7
-    iget-object v1, p0, Lhj;->source:Lld;
-
-    if-eqz v1, :cond_8
-
     const-string v1, "source"
 
-    iget-object v2, p0, Lhj;->source:Lld;
+    iget-object v2, p0, Lhj;->source:Llv;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 120
-    :cond_8
-    iget-object v1, p0, Lhj;->splashId:Ljava/lang/String;
-
-    if-eqz v1, :cond_9
-
-    const-string v1, "splash_id"
-
-    iget-object v2, p0, Lhj;->splashId:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 121
-    :cond_9
+    .line 103
+    :cond_7
     iget-object v1, p0, Lhj;->timeViewed:Ljava/lang/Double;
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_8
 
     const-string v1, "time_viewed"
 
@@ -204,15 +176,15 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 122
-    :cond_a
-    invoke-super {p0}, Llt;->a()Ljava/util/Map;
+    .line 104
+    :cond_8
+    invoke-super {p0}, Lml;->a()Ljava/util/Map;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 124
+    .line 106
     return-object v0
 .end method
 
@@ -224,15 +196,15 @@
 
     const/4 v1, 0x0
 
-    .line 129
+    .line 111
     if-ne p0, p1, :cond_1
 
-    .line 146
+    .line 126
     :cond_0
     :goto_0
     return v0
 
-    .line 130
+    .line 112
     :cond_1
     if-eqz p1, :cond_2
 
@@ -251,9 +223,9 @@
 
     goto :goto_0
 
-    .line 131
+    .line 113
     :cond_3
-    invoke-super {p0, p1}, Llt;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Lml;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -263,18 +235,18 @@
 
     goto :goto_0
 
-    .line 133
+    .line 115
     :cond_4
     check-cast p1, Lhj;
 
-    .line 135
-    iget-object v2, p0, Lhj;->editionId:Ljava/lang/String;
+    .line 117
+    iget-object v2, p0, Lhj;->dsnapId:Ljava/lang/String;
 
     if-eqz v2, :cond_6
 
-    iget-object v2, p0, Lhj;->editionId:Ljava/lang/String;
+    iget-object v2, p0, Lhj;->dsnapId:Ljava/lang/String;
 
-    iget-object v3, p1, Lhj;->editionId:Ljava/lang/String;
+    iget-object v3, p1, Lhj;->dsnapId:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -288,21 +260,21 @@
     goto :goto_0
 
     :cond_6
-    iget-object v2, p1, Lhj;->editionId:Ljava/lang/String;
+    iget-object v2, p1, Lhj;->dsnapId:Ljava/lang/String;
 
     if-nez v2, :cond_5
 
-    .line 136
+    .line 118
     :cond_7
-    iget-object v2, p0, Lhj;->fullView:Ljava/lang/Boolean;
+    iget-object v2, p0, Lhj;->editionId:Ljava/lang/String;
 
     if-eqz v2, :cond_9
 
-    iget-object v2, p0, Lhj;->fullView:Ljava/lang/Boolean;
+    iget-object v2, p0, Lhj;->editionId:Ljava/lang/String;
 
-    iget-object v3, p1, Lhj;->fullView:Ljava/lang/Boolean;
+    iget-object v3, p1, Lhj;->editionId:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -314,21 +286,21 @@
     goto :goto_0
 
     :cond_9
-    iget-object v2, p1, Lhj;->fullView:Ljava/lang/Boolean;
+    iget-object v2, p1, Lhj;->editionId:Ljava/lang/String;
 
     if-nez v2, :cond_8
 
-    .line 137
+    .line 119
     :cond_a
-    iget-object v2, p0, Lhj;->mediaDisplayTimeSec:Ljava/lang/Double;
+    iget-object v2, p0, Lhj;->exitEvent:Lhu;
 
     if-eqz v2, :cond_c
 
-    iget-object v2, p0, Lhj;->mediaDisplayTimeSec:Ljava/lang/Double;
+    iget-object v2, p0, Lhj;->exitEvent:Lhu;
 
-    iget-object v3, p1, Lhj;->mediaDisplayTimeSec:Ljava/lang/Double;
+    iget-object v3, p1, Lhj;->exitEvent:Lhu;
 
-    invoke-virtual {v2, v3}, Ljava/lang/Double;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Lhu;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -340,21 +312,21 @@
     goto :goto_0
 
     :cond_c
-    iget-object v2, p1, Lhj;->mediaDisplayTimeSec:Ljava/lang/Double;
+    iget-object v2, p1, Lhj;->exitEvent:Lhu;
 
     if-nez v2, :cond_b
 
-    .line 138
+    .line 120
     :cond_d
-    iget-object v2, p0, Lhj;->mediaType:Lhy;
+    iget-object v2, p0, Lhj;->longformType:Lih;
 
     if-eqz v2, :cond_f
 
-    iget-object v2, p0, Lhj;->mediaType:Lhy;
+    iget-object v2, p0, Lhj;->longformType:Lih;
 
-    iget-object v3, p1, Lhj;->mediaType:Lhy;
+    iget-object v3, p1, Lhj;->longformType:Lih;
 
-    invoke-virtual {v2, v3}, Lhy;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Lih;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -366,11 +338,11 @@
     goto :goto_0
 
     :cond_f
-    iget-object v2, p1, Lhj;->mediaType:Lhy;
+    iget-object v2, p1, Lhj;->longformType:Lih;
 
     if-nez v2, :cond_e
 
-    .line 139
+    .line 121
     :cond_10
     iget-object v2, p0, Lhj;->publisherId:Ljava/lang/String;
 
@@ -396,7 +368,7 @@
 
     if-nez v2, :cond_11
 
-    .line 140
+    .line 122
     :cond_13
     iget-object v2, p0, Lhj;->snapIndexCount:Ljava/lang/Long;
 
@@ -422,7 +394,7 @@
 
     if-nez v2, :cond_14
 
-    .line 141
+    .line 123
     :cond_16
     iget-object v2, p0, Lhj;->snapIndexPos:Ljava/lang/Long;
 
@@ -448,17 +420,17 @@
 
     if-nez v2, :cond_17
 
-    .line 142
+    .line 124
     :cond_19
-    iget-object v2, p0, Lhj;->snapTimeSec:Ljava/lang/Double;
+    iget-object v2, p0, Lhj;->source:Llv;
 
     if-eqz v2, :cond_1b
 
-    iget-object v2, p0, Lhj;->snapTimeSec:Ljava/lang/Double;
+    iget-object v2, p0, Lhj;->source:Llv;
 
-    iget-object v3, p1, Lhj;->snapTimeSec:Ljava/lang/Double;
+    iget-object v3, p1, Lhj;->source:Llv;
 
-    invoke-virtual {v2, v3}, Ljava/lang/Double;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Llv;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -470,67 +442,15 @@
     goto/16 :goto_0
 
     :cond_1b
-    iget-object v2, p1, Lhj;->snapTimeSec:Ljava/lang/Double;
+    iget-object v2, p1, Lhj;->source:Llv;
 
     if-nez v2, :cond_1a
 
-    .line 143
+    .line 125
     :cond_1c
-    iget-object v2, p0, Lhj;->source:Lld;
-
-    if-eqz v2, :cond_1e
-
-    iget-object v2, p0, Lhj;->source:Lld;
-
-    iget-object v3, p1, Lhj;->source:Lld;
-
-    invoke-virtual {v2, v3}, Lld;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1f
-
-    :cond_1d
-    move v0, v1
-
-    goto/16 :goto_0
-
-    :cond_1e
-    iget-object v2, p1, Lhj;->source:Lld;
-
-    if-nez v2, :cond_1d
-
-    .line 144
-    :cond_1f
-    iget-object v2, p0, Lhj;->splashId:Ljava/lang/String;
-
-    if-eqz v2, :cond_21
-
-    iget-object v2, p0, Lhj;->splashId:Ljava/lang/String;
-
-    iget-object v3, p1, Lhj;->splashId:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_22
-
-    :cond_20
-    move v0, v1
-
-    goto/16 :goto_0
-
-    :cond_21
-    iget-object v2, p1, Lhj;->splashId:Ljava/lang/String;
-
-    if-nez v2, :cond_20
-
-    .line 145
-    :cond_22
     iget-object v2, p0, Lhj;->timeViewed:Ljava/lang/Double;
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1d
 
     iget-object v2, p0, Lhj;->timeViewed:Ljava/lang/Double;
 
@@ -547,7 +467,7 @@
 
     goto/16 :goto_0
 
-    :cond_23
+    :cond_1d
     iget-object v2, p1, Lhj;->timeViewed:Ljava/lang/Double;
 
     if-eqz v2, :cond_0
@@ -561,19 +481,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 151
-    invoke-super {p0}, Llt;->hashCode()I
+    .line 131
+    invoke-super {p0}, Lml;->hashCode()I
 
     move-result v0
 
-    .line 152
+    .line 132
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v0, p0, Lhj;->editionId:Ljava/lang/String;
+    iget-object v0, p0, Lhj;->dsnapId:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lhj;->editionId:Ljava/lang/String;
+    iget-object v0, p0, Lhj;->dsnapId:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -582,55 +502,55 @@
     :goto_0
     add-int/2addr v0, v2
 
-    .line 153
+    .line 133
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v0, p0, Lhj;->fullView:Ljava/lang/Boolean;
+    iget-object v0, p0, Lhj;->editionId:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lhj;->fullView:Ljava/lang/Boolean;
+    iget-object v0, p0, Lhj;->editionId:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
     :goto_1
     add-int/2addr v0, v2
 
-    .line 154
+    .line 134
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v0, p0, Lhj;->mediaDisplayTimeSec:Ljava/lang/Double;
+    iget-object v0, p0, Lhj;->exitEvent:Lhu;
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lhj;->mediaDisplayTimeSec:Ljava/lang/Double;
+    iget-object v0, p0, Lhj;->exitEvent:Lhu;
 
-    invoke-virtual {v0}, Ljava/lang/Double;->hashCode()I
+    invoke-virtual {v0}, Lhu;->hashCode()I
 
     move-result v0
 
     :goto_2
     add-int/2addr v0, v2
 
-    .line 155
+    .line 135
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v0, p0, Lhj;->mediaType:Lhy;
+    iget-object v0, p0, Lhj;->longformType:Lih;
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lhj;->mediaType:Lhy;
+    iget-object v0, p0, Lhj;->longformType:Lih;
 
-    invoke-virtual {v0}, Lhy;->hashCode()I
+    invoke-virtual {v0}, Lih;->hashCode()I
 
     move-result v0
 
     :goto_3
     add-int/2addr v0, v2
 
-    .line 156
+    .line 136
     mul-int/lit8 v2, v0, 0x1f
 
     iget-object v0, p0, Lhj;->publisherId:Ljava/lang/String;
@@ -646,7 +566,7 @@
     :goto_4
     add-int/2addr v0, v2
 
-    .line 157
+    .line 137
     mul-int/lit8 v2, v0, 0x1f
 
     iget-object v0, p0, Lhj;->snapIndexCount:Ljava/lang/Long;
@@ -662,7 +582,7 @@
     :goto_5
     add-int/2addr v0, v2
 
-    .line 158
+    .line 138
     mul-int/lit8 v2, v0, 0x1f
 
     iget-object v0, p0, Lhj;->snapIndexPos:Ljava/lang/Long;
@@ -678,55 +598,23 @@
     :goto_6
     add-int/2addr v0, v2
 
-    .line 159
+    .line 139
     mul-int/lit8 v2, v0, 0x1f
 
-    iget-object v0, p0, Lhj;->snapTimeSec:Ljava/lang/Double;
+    iget-object v0, p0, Lhj;->source:Llv;
 
     if-eqz v0, :cond_8
 
-    iget-object v0, p0, Lhj;->snapTimeSec:Ljava/lang/Double;
+    iget-object v0, p0, Lhj;->source:Llv;
 
-    invoke-virtual {v0}, Ljava/lang/Double;->hashCode()I
+    invoke-virtual {v0}, Llv;->hashCode()I
 
     move-result v0
 
     :goto_7
     add-int/2addr v0, v2
 
-    .line 160
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v0, p0, Lhj;->source:Lld;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, p0, Lhj;->source:Lld;
-
-    invoke-virtual {v0}, Lld;->hashCode()I
-
-    move-result v0
-
-    :goto_8
-    add-int/2addr v0, v2
-
-    .line 161
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v0, p0, Lhj;->splashId:Ljava/lang/String;
-
-    if-eqz v0, :cond_a
-
-    iget-object v0, p0, Lhj;->splashId:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    :goto_9
-    add-int/2addr v0, v2
-
-    .line 162
+    .line 140
     mul-int/lit8 v0, v0, 0x1f
 
     iget-object v2, p0, Lhj;->timeViewed:Ljava/lang/Double;
@@ -742,66 +630,54 @@
     :cond_0
     add-int/2addr v0, v1
 
-    .line 163
+    .line 141
     return v0
 
     :cond_1
     move v0, v1
 
-    .line 152
-    goto/16 :goto_0
+    .line 132
+    goto :goto_0
 
     :cond_2
     move v0, v1
 
-    .line 153
+    .line 133
     goto :goto_1
 
     :cond_3
     move v0, v1
 
-    .line 154
+    .line 134
     goto :goto_2
 
     :cond_4
     move v0, v1
 
-    .line 155
+    .line 135
     goto :goto_3
 
     :cond_5
     move v0, v1
 
-    .line 156
+    .line 136
     goto :goto_4
 
     :cond_6
     move v0, v1
 
-    .line 157
+    .line 137
     goto :goto_5
 
     :cond_7
     move v0, v1
 
-    .line 158
+    .line 138
     goto :goto_6
 
     :cond_8
     move v0, v1
 
-    .line 159
+    .line 139
     goto :goto_7
-
-    :cond_9
-    move v0, v1
-
-    .line 160
-    goto :goto_8
-
-    :cond_a
-    move v0, v1
-
-    .line 161
-    goto :goto_9
 .end method

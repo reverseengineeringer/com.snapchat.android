@@ -41,21 +41,10 @@
 
 # virtual methods
 .method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
-    .locals 3
+    .locals 1
 
     .prologue
     .line 84
-    const-string v0, "CameraView"
-
-    const-string v1, "Camera View: Surface texture available"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 85
     iget-object v0, p0, Lcom/snapchat/android/camera/cameraview/CameraView$1;->a:Lcom/snapchat/android/camera/cameraview/CameraView$b;
 
     invoke-interface {v0, p1}, Lcom/snapchat/android/camera/cameraview/CameraView$b;->a(Landroid/graphics/SurfaceTexture;)V
@@ -65,21 +54,10 @@
 .end method
 
 .method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
-    .locals 3
+    .locals 1
 
     .prologue
     .line 95
-    const-string v0, "CameraView"
-
-    const-string v1, "Surface Destroyed"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 96
     const/4 v0, 0x1
 
     return v0

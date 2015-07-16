@@ -11,7 +11,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -32,7 +32,7 @@
 .method private checkMp4FileExistsAndIsWriteable(Ljava/lang/String;)V
     .locals 3
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -113,7 +113,7 @@
 .method private correctChunkOffsets(Lan;J)V
     .locals 8
     .param p1    # Lan;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -121,7 +121,7 @@
     .line 207
     const-string v0, "/moov[0]/trak/mdia[0]/minf[0]/stbl[0]/stco[0]"
 
-    invoke-static {p1, v0}, Lfj;->b(Lau;Ljava/lang/String;)Ljava/util/List;
+    invoke-static {p1, v0}, Lfs;->b(Lau;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
@@ -195,15 +195,15 @@
     invoke-direct {v1}, Lax;-><init>()V
 
     .line 219
-    sget-object v5, Lax;->b:Lcek$a;
+    sget-object v5, Lax;->b:Lcfl$a;
 
-    invoke-static {v5, v1, v1, v4}, Lcfk;->a(Lcek$a;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcek;
+    invoke-static {v5, v1, v1, v4}, Lcgl;->a(Lcfl$a;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcfl;
 
     move-result-object v5
 
-    invoke-static {}, Lez;->a()Lez;
+    invoke-static {}, Lfi;->a()Lfi;
 
-    invoke-static {v5}, Lez;->a(Lcek;)V
+    invoke-static {v5}, Lfi;->a(Lcfl;)V
 
     iput-object v4, v1, Lax;->a:[J
 
@@ -239,7 +239,7 @@
 
     .line 72
     :try_start_0
-    new-instance v1, Ley;
+    new-instance v1, Lfh;
 
     new-instance v2, Ljava/io/File;
 
@@ -247,12 +247,12 @@
 
     invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ley;-><init>(Ljava/io/File;)V
+    invoke-direct {v1, v2}, Lfh;-><init>(Ljava/io/File;)V
 
     .line 73
     new-instance v2, Lan;
 
-    invoke-direct {v2, v1, v0}, Lan;-><init>(Lex;Lal;)V
+    invoke-direct {v2, v1, v0}, Lan;-><init>(Lfg;Lal;)V
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -275,7 +275,7 @@
 .method private needsOffsetCorrection(Lan;)Z
     .locals 4
     .param p1    # Lan;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -373,7 +373,7 @@
     :try_start_1
     const-string v0, "/moov/udta"
 
-    invoke-static {v2, v0}, Lfj;->a(Lau;Ljava/lang/String;)Las;
+    invoke-static {v2, v0}, Lfs;->a(Lau;Ljava/lang/String;)Las;
 
     move-result-object v0
 
@@ -401,7 +401,7 @@
     :try_start_2
     const-string v3, "smet"
 
-    invoke-static {v0, v3}, Lfj;->a(Leu;Ljava/lang/String;)Las;
+    invoke-static {v0, v3}, Lfs;->a(Lfd;Ljava/lang/String;)Las;
 
     move-result-object v0
 
@@ -427,7 +427,7 @@
     :try_start_3
     const-string v3, "sseg"
 
-    invoke-static {v0, v3}, Lfj;->a(Leu;Ljava/lang/String;)Las;
+    invoke-static {v0, v3}, Lfs;->a(Lfd;Ljava/lang/String;)Las;
 
     move-result-object v0
 
@@ -490,7 +490,7 @@
 .method public setSnapSegments(Lcom/snapchat/videotranscoder/mp4/SnapSegments;)V
     .locals 8
     .param p1    # Lcom/snapchat/videotranscoder/mp4/SnapSegments;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
@@ -510,7 +510,7 @@
     :try_start_1
     const-string v0, "moov"
 
-    invoke-static {v3, v0}, Lfj;->a(Lau;Ljava/lang/String;)Las;
+    invoke-static {v3, v0}, Lfs;->a(Lau;Ljava/lang/String;)Las;
 
     move-result-object v0
 
@@ -535,7 +535,7 @@
     :goto_0
     const-string v0, "udta"
 
-    invoke-static {v6, v0}, Lfj;->a(Leu;Ljava/lang/String;)Las;
+    invoke-static {v6, v0}, Lfs;->a(Lfd;Ljava/lang/String;)Las;
 
     move-result-object v0
 
@@ -557,7 +557,7 @@
     :goto_1
     const-string v0, "smet"
 
-    invoke-static {v2, v0}, Lfj;->a(Leu;Ljava/lang/String;)Las;
+    invoke-static {v2, v0}, Lfs;->a(Lfd;Ljava/lang/String;)Las;
 
     move-result-object v0
 
@@ -579,7 +579,7 @@
     :goto_2
     const-string v0, "sseg"
 
-    invoke-static {v2, v0}, Lfj;->a(Leu;Ljava/lang/String;)Las;
+    invoke-static {v2, v0}, Lfs;->a(Lfd;Ljava/lang/String;)Las;
 
     move-result-object v0
 

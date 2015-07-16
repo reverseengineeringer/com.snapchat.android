@@ -21,8 +21,6 @@
 
 .field public static final enum CAPTION:Lcom/snapchat/android/database/OnboardingTooltip;
 
-.field public static final enum DISCOVER:Lcom/snapchat/android/database/OnboardingTooltip;
-
 .field public static final enum FIRST_LOCATION:Lcom/snapchat/android/database/OnboardingTooltip;
 
 .field public static final enum MY_STORY:Lcom/snapchat/android/database/OnboardingTooltip;
@@ -59,7 +57,7 @@
 
     const/4 v4, 0x0
 
-    .line 23
+    .line 22
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "SNAP"
@@ -74,7 +72,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->SNAP:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 24
+    .line 23
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "CAPTION"
@@ -89,7 +87,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->CAPTION:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 25
+    .line 24
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "SWIPE_FILTERS"
@@ -104,7 +102,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->SWIPE_FILTERS:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 26
+    .line 25
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "MY_STORY"
@@ -119,7 +117,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->MY_STORY:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 27
+    .line 26
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "FIRST_LOCATION"
@@ -134,7 +132,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->FIRST_LOCATION:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 28
+    .line 27
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "PROFILE"
@@ -151,7 +149,7 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->PROFILE:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 29
+    .line 28
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "NEW_FRIEND_REQUEST"
@@ -168,29 +166,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->NEW_FRIEND_REQUEST:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 30
-    new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
-
-    const-string v1, "DISCOVER"
-
-    const/4 v2, 0x7
-
-    sget-object v3, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_DISCOVER_PAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
-
-    invoke-virtual {v3}, Lcom/snapchat/android/database/SharedPreferenceKey;->getKey()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/snapchat/android/database/OnboardingTooltip;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->DISCOVER:Lcom/snapchat/android/database/OnboardingTooltip;
-
-    .line 31
+    .line 29
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "ADD_NEARBY_PROMPT"
 
-    const/16 v2, 0x8
+    const/4 v2, 0x7
 
     sget-object v3, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_ACCEPTED_ADD_NEARBY_PROMPT:Lcom/snapchat/android/database/SharedPreferenceKey;
 
@@ -202,12 +183,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->ADD_NEARBY_PROMPT:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 32
+    .line 30
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "PROFILE_PICTURES"
 
-    const/16 v2, 0x9
+    const/16 v2, 0x8
 
     sget-object v3, Lcom/snapchat/android/database/SharedPreferenceKey;->HAS_SEEN_PROFILE_PICTURES_ONBOARDING_MESSAGE:Lcom/snapchat/android/database/SharedPreferenceKey;
 
@@ -219,12 +200,12 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->PROFILE_PICTURES:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 34
+    .line 31
     new-instance v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     const-string v1, "UNKNOWN"
 
-    const/16 v2, 0xa
+    const/16 v2, 0x9
 
     const/4 v3, 0x0
 
@@ -232,8 +213,8 @@
 
     sput-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->UNKNOWN:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 22
-    const/16 v0, 0xb
+    .line 21
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/snapchat/android/database/OnboardingTooltip;
 
@@ -271,23 +252,17 @@
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/snapchat/android/database/OnboardingTooltip;->DISCOVER:Lcom/snapchat/android/database/OnboardingTooltip;
+    sget-object v2, Lcom/snapchat/android/database/OnboardingTooltip;->ADD_NEARBY_PROMPT:Lcom/snapchat/android/database/OnboardingTooltip;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/snapchat/android/database/OnboardingTooltip;->ADD_NEARBY_PROMPT:Lcom/snapchat/android/database/OnboardingTooltip;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
     sget-object v2, Lcom/snapchat/android/database/OnboardingTooltip;->PROFILE_PICTURES:Lcom/snapchat/android/database/OnboardingTooltip;
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0xa
+    const/16 v1, 0x9
 
     sget-object v2, Lcom/snapchat/android/database/OnboardingTooltip;->UNKNOWN:Lcom/snapchat/android/database/OnboardingTooltip;
 
@@ -309,66 +284,52 @@
     .end annotation
 
     .prologue
-    .line 41
+    .line 38
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 42
+    .line 39
     iput-object p3, p0, Lcom/snapchat/android/database/OnboardingTooltip;->a:Ljava/lang/String;
 
-    .line 43
+    .line 40
     return-void
 .end method
 
 .method public static fromValue(Ljava/lang/String;)Lcom/snapchat/android/database/OnboardingTooltip;
-    .locals 5
-    .annotation build Lcgb;
+    .locals 3
+    .annotation build Lchc;
     .end annotation
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 51
+    .line 48
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 52
-    const-string v0, "OnBoardingTooltip"
+    .line 49
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Failed to convert an empty string("
 
-    const-string v2, "Failed to convert an empty string("
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, ") into OnboardingTooltip. "
 
-    const-string v2, ") into OnboardingTooltip. "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 53
+    .line 50
     sget-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->UNKNOWN:Lcom/snapchat/android/database/OnboardingTooltip;
 
-    .line 60
+    .line 57
     :goto_0
     return-object v0
 
-    .line 57
+    .line 54
     :cond_0
     :try_start_0
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -385,42 +346,30 @@
 
     goto :goto_0
 
-    .line 58
+    .line 55
     :catch_0
     move-exception v0
 
-    .line 59
-    const-string v1, "OnBoardingTooltip"
+    .line 56
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Failed to convert "
 
-    const-string v3, "Failed to convert "
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    const-string v2, " into OnboardingTooltip. "
 
-    const-string v3, " into OnboardingTooltip. "
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 60
+    .line 57
     sget-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->UNKNOWN:Lcom/snapchat/android/database/OnboardingTooltip;
 
     goto :goto_0
@@ -430,7 +379,7 @@
     .locals 1
 
     .prologue
-    .line 22
+    .line 21
     const-class v0, Lcom/snapchat/android/database/OnboardingTooltip;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -446,7 +395,7 @@
     .locals 1
 
     .prologue
-    .line 22
+    .line 21
     sget-object v0, Lcom/snapchat/android/database/OnboardingTooltip;->$VALUES:[Lcom/snapchat/android/database/OnboardingTooltip;
 
     invoke-virtual {v0}, [Lcom/snapchat/android/database/OnboardingTooltip;->clone()Ljava/lang/Object;
@@ -464,7 +413,7 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 43
     iget-object v0, p0, Lcom/snapchat/android/database/OnboardingTooltip;->a:Ljava/lang/String;
 
     return-object v0

@@ -1,5 +1,5 @@
 .class public final Law;
-.super Leu;
+.super Lfd;
 .source "SourceFile"
 
 
@@ -11,7 +11,7 @@
     .line 33
     const-string v0, "moov"
 
-    invoke-direct {p0, v0}, Leu;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lfd;-><init>(Ljava/lang/String;)V
 
     .line 34
     return-void

@@ -1,6 +1,6 @@
 package com.snapchat.videotranscoder.audio;
 
-import cgb;
+import chc;
 import com.snapchat.videotranscoder.pipeline.Extractor;
 import com.snapchat.videotranscoder.pipeline.StageDoneCallback;
 import com.snapchat.videotranscoder.utils.MimeTools;
@@ -11,12 +11,12 @@ public class AudioExtractor
   private static final String TAG = "AudioExtractor";
   private final MimeTools mMimeTools;
   
-  public AudioExtractor(@cgb String paramString, @cgb StageDoneCallback paramStageDoneCallback)
+  public AudioExtractor(@chc String paramString, @chc StageDoneCallback paramStageDoneCallback)
   {
     this(paramString, paramStageDoneCallback, MimeTools.getInstance());
   }
   
-  private AudioExtractor(@cgb String paramString, @cgb StageDoneCallback paramStageDoneCallback, @cgb MimeTools paramMimeTools)
+  private AudioExtractor(@chc String paramString, @chc StageDoneCallback paramStageDoneCallback, @chc MimeTools paramMimeTools)
   {
     super(paramString, paramStageDoneCallback);
     mMimeTools = paramMimeTools;

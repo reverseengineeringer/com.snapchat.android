@@ -1,64 +1,37 @@
-import java.net.Proxy;
-import java.net.URL;
-import java.net.URLConnection;
-import javax.net.ssl.HttpsURLConnection;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 public final class btx
-  extends btt
 {
-  private static final String[] f = { "libcore.net.http.HttpsURLConnectionImpl", "org.apache.harmony.luni.internal.net.www.protocol.https.HttpsURLConnectionImpl", "org.apache.harmony.luni.internal.net.www.protocol.https.HttpsURLConnection" };
+  private ConnectivityManager a;
   
-  public btx(btl parambtl, bsw parambsw)
+  public btx(Context paramContext)
   {
-    super(parambtl, parambsw, f);
+    if (paramContext == null)
+    {
+      bue.e();
+      return;
+    }
+    if (paramContext.getPackageManager().checkPermission("android.permission.ACCESS_NETWORK_STATE", paramContext.getPackageName()) == 0)
+    {
+      a = ((ConnectivityManager)paramContext.getSystemService("connectivity"));
+      return;
+    }
+    bue.e();
   }
   
-  protected final String a()
+  public final bsb a()
   {
-    return "https";
-  }
-  
-  protected final int getDefaultPort()
-  {
-    return 443;
-  }
-  
-  protected final URLConnection openConnection(URL paramURL)
-  {
-    paramURL = (HttpsURLConnection)super.openConnection(paramURL);
-    try
-    {
-      btz localbtz = new btz(paramURL, c, d);
-      return localbtz;
+    if (a == null) {
+      return bsb.c;
     }
-    catch (ThreadDeath paramURL)
-    {
-      throw paramURL;
+    NetworkInfo localNetworkInfo = a.getActiveNetworkInfo();
+    if ((localNetworkInfo == null) || (!localNetworkInfo.isConnected())) {
+      return bsb.d;
     }
-    catch (Throwable localThrowable)
-    {
-      btd.a(localThrowable);
-    }
-    return paramURL;
-  }
-  
-  protected final URLConnection openConnection(URL paramURL, Proxy paramProxy)
-  {
-    paramURL = (HttpsURLConnection)super.openConnection(paramURL, paramProxy);
-    try
-    {
-      paramProxy = new btz(paramURL, c, d);
-      return paramProxy;
-    }
-    catch (ThreadDeath paramURL)
-    {
-      throw paramURL;
-    }
-    catch (Throwable paramProxy)
-    {
-      btd.a(paramProxy);
-    }
-    return paramURL;
+    return bsb.a(localNetworkInfo.getType());
   }
 }
 

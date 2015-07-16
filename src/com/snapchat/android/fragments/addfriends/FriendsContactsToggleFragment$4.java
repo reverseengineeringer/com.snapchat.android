@@ -1,10 +1,11 @@
 package com.snapchat.android.fragments.addfriends;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.View.OnClickListener;
-import ban;
-import bdw;
+import bbo;
+import bev;
 import com.squareup.otto.Bus;
 
 final class FriendsContactsToggleFragment$4
@@ -19,10 +20,12 @@ final class FriendsContactsToggleFragment$4
     default: 
       return;
     case 0: 
-      ban.a().a(new bdw(LeftSwipeContentFragment.MY_FRIENDS_SEARCH_VIEW_FRAGMENT));
+      bbo.a().a(new bev(LeftSwipeContentFragment.MY_FRIENDS_SEARCH_VIEW_FRAGMENT));
       return;
     }
-    ban.a().a(new bdw(LeftSwipeContentFragment.ADDRESS_BOOK_SEARCH_VIEW_FRAGMENT));
+    paramView = new Bundle();
+    paramView.putBoolean("contextIsAdressBook", false);
+    bbo.a().a(new bev(LeftSwipeContentFragment.ADDRESS_BOOK_SEARCH_VIEW_FRAGMENT, paramView));
   }
 }
 

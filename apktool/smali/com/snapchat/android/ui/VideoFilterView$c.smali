@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 320
+    .line 322
     iput-object p1, p0, Lcom/snapchat/android/ui/VideoFilterView$c;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 320
+    .line 322
     invoke-direct {p0, p1}, Lcom/snapchat/android/ui/VideoFilterView$c;-><init>(Lcom/snapchat/android/ui/VideoFilterView;)V
 
     return-void
@@ -50,17 +50,15 @@
     .locals 0
 
     .prologue
-    .line 324
+    .line 326
     return-void
 .end method
 
 .method public final surfaceCreated(Landroid/view/SurfaceHolder;)V
-    .locals 5
+    .locals 4
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 329
+    .line 331
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$c;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
     new-instance v1, Lcom/snapchat/videotranscoder/cts/InputSurface;
@@ -69,11 +67,13 @@
 
     move-result-object v2
 
-    invoke-direct {v1, v2, v4}, Lcom/snapchat/videotranscoder/cts/InputSurface;-><init>(Landroid/view/Surface;Z)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v2, v3}, Lcom/snapchat/videotranscoder/cts/InputSurface;-><init>(Landroid/view/Surface;Z)V
 
     invoke-static {v0, v1}, Lcom/snapchat/android/ui/VideoFilterView;->a(Lcom/snapchat/android/ui/VideoFilterView;Lcom/snapchat/videotranscoder/cts/InputSurface;)Lcom/snapchat/videotranscoder/cts/InputSurface;
 
-    .line 331
+    .line 333
     :try_start_0
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$c;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
@@ -81,51 +81,39 @@
     :try_end_0
     .catch Lcom/snapchat/videotranscoder/task/SetupException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 342
+    .line 344
     :cond_0
     :goto_0
     return-void
 
-    .line 332
+    .line 334
     :catch_0
     move-exception v0
 
-    .line 333
-    const-string v1, "VideoFilterView"
+    .line 335
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Failed to open video: "
 
-    const-string v3, "Failed to open video: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/snapchat/videotranscoder/task/SetupException;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v2, v4, [Ljava/lang/Object;
-
-    invoke-static {v1, v0, v2}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 335
+    .line 337
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$c;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
     invoke-virtual {v0}, Lcom/snapchat/android/ui/VideoFilterView;->a()V
 
-    .line 336
+    .line 338
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$c;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/VideoFilterView;->d(Lcom/snapchat/android/ui/VideoFilterView;)V
 
-    .line 338
+    .line 340
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$c;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/VideoFilterView;->e(Lcom/snapchat/android/ui/VideoFilterView;)Lcom/snapchat/android/ui/VideoFilterView$d;
@@ -134,7 +122,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 339
+    .line 341
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$c;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/VideoFilterView;->e(Lcom/snapchat/android/ui/VideoFilterView;)Lcom/snapchat/android/ui/VideoFilterView$d;
@@ -147,25 +135,14 @@
 .end method
 
 .method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 347
-    const-string v0, "VideoFilterView"
-
-    const-string v1, "Surface destroyed!"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 348
+    .line 349
     iget-object v0, p0, Lcom/snapchat/android/ui/VideoFilterView$c;->a:Lcom/snapchat/android/ui/VideoFilterView;
 
     invoke-static {v0}, Lcom/snapchat/android/ui/VideoFilterView;->d(Lcom/snapchat/android/ui/VideoFilterView;)V
 
-    .line 349
+    .line 351
     return-void
 .end method

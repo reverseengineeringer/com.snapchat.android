@@ -1,14 +1,12 @@
-public final class bte
-  extends Thread
+public enum bte
 {
-  public bte(Runnable paramRunnable)
-  {
-    super(new bso(paramRunnable));
-  }
+  String n;
+  String o;
   
-  public bte(Runnable paramRunnable, String paramString)
+  private bte(String paramString2, String paramString3)
   {
-    super(new bso(paramRunnable), paramString);
+    n = paramString2;
+    o = paramString3;
   }
 }
 

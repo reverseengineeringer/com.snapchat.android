@@ -899,7 +899,7 @@
 .end method
 
 .method zzcP(Ljava/lang/String;)Lcom/google/android/gms/tagmanager/zzag;
-    .locals 2
+    .locals 1
 
     invoke-static {}, Lcom/google/android/gms/tagmanager/zzca;->zztx()Lcom/google/android/gms/tagmanager/zzca;
 
@@ -907,11 +907,7 @@
 
     invoke-virtual {v0}, Lcom/google/android/gms/tagmanager/zzca;->zzty()Lcom/google/android/gms/tagmanager/zzca$zza;
 
-    move-result-object v0
-
-    sget-object v1, Lcom/google/android/gms/tagmanager/zzca$zza;->zzazD:Lcom/google/android/gms/tagmanager/zzca$zza;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/tagmanager/zzca$zza;->equals(Ljava/lang/Object;)Z
+    sget-object v0, Lcom/google/android/gms/tagmanager/zzca$zza;->zzazD:Lcom/google/android/gms/tagmanager/zzca$zza;
 
     new-instance v0, Lcom/google/android/gms/tagmanager/zzbn;
 

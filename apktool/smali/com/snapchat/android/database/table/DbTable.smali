@@ -57,37 +57,14 @@
 .end method
 
 .method public static b(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
-    .locals 3
+    .locals 2
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgb;
+        .annotation build Lchc;
         .end annotation
     .end param
 
     .prologue
     .line 390
-    const-string v0, "DbTable"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Drop table "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 391
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "DROP TABLE IF EXISTS "
@@ -149,11 +126,11 @@
     return-object v0
 .end method
 
-.method public abstract a(Lajv;)Ljava/util/Collection;
+.method public abstract a(Lakp;)Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lajv;",
+            "Lakp;",
             ")",
             "Ljava/util/Collection",
             "<TT;>;"
@@ -164,14 +141,14 @@
 .method public final a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
     .locals 8
     .param p1    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
     .param p2    # Ljava/lang/String;
-        .annotation build Lcgc;
+        .annotation build Lchd;
         .end annotation
     .end param
-    .annotation build Lcgc;
+    .annotation build Lchd;
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -246,23 +223,17 @@
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 282
-    const-string v0, "DbTable"
+    const/4 v0, 0x1
 
-    const-string v3, "Querying [%s] database table"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->c()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v4, v5
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v4, v0, v3
 
     .line 283
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
@@ -295,35 +266,29 @@
 
     .line 289
     :cond_4
-    const-string v0, "DbTable"
+    const/4 v0, 0x2
 
-    const-string v3, "DbTable [%s] retrieved %d elements of data"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->c()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v4, v5
+    aput-object v4, v0, v3
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    move-result v6
+    move-result v4
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v4, v5
-
-    invoke-static {v0, v3, v4}, Lcom/snapchat/android/Timber;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v4, v0, v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -357,7 +322,7 @@
     throw v0
 .end method
 
-.method public b(Lajv;)V
+.method public b(Lakp;)V
     .locals 0
 
     .prologue
@@ -365,24 +330,22 @@
     return-void
 .end method
 
-.method public abstract b()[Lzw;
+.method public abstract b()[Laav;
 .end method
 
 .method public abstract c()Ljava/lang/String;
 .end method
 
-.method public c(Lajv;)V
+.method public c(Lakp;)V
     .locals 6
 
     .prologue
-    const/4 v0, 0x0
-
     .line 237
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->e()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     .line 271
     :cond_0
@@ -393,9 +356,12 @@
     :cond_1
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->m()Landroid/database/sqlite/SQLiteDatabase;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
+
+    .line 240
+    const/4 v0, 0x0
 
     .line 241
     sget-object v1, Lcom/snapchat/android/database/table/DbTable;->sTableLock:Ljava/util/concurrent/locks/Lock;
@@ -412,7 +378,7 @@
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->j()V
 
     .line 247
-    invoke-virtual {p0, p1}, Lcom/snapchat/android/database/table/DbTable;->a(Lajv;)Ljava/util/Collection;
+    invoke-virtual {p0, p1}, Lcom/snapchat/android/database/table/DbTable;->a(Lakp;)Ljava/util/Collection;
 
     move-result-object v1
 
@@ -426,51 +392,37 @@
     if-nez v2, :cond_3
 
     .line 249
-    const-string v2, "DbTable"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const-string v3, "saveAllTablesToDatabaseAsync "
 
-    const-string v4, "saveAllTablesToDatabaseAsync "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->c()Ljava/lang/String;
 
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v3
 
-    const-string v4, " "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    const-string v3, " "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-interface {v1}, Ljava/util/Collection;->size()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    const-string v4, " item(s)"
+    const-string v3, " item(s)"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 250
     invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -549,10 +501,10 @@
     if-eqz v0, :cond_0
 
     .line 267
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     .line 268
-    invoke-static {}, Lajx;->aC()V
+    invoke-static {}, Lakr;->aB()V
 
     goto/16 :goto_0
 
@@ -570,10 +522,10 @@
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     .line 266
-    invoke-static {}, Lajx;->a()Lajx;
+    invoke-static {}, Lakr;->a()Lakr;
 
     .line 268
-    invoke-static {}, Lajx;->aC()V
+    invoke-static {}, Lakr;->aB()V
 
     .line 269
     throw v0
@@ -584,7 +536,7 @@
 
     .prologue
     .line 141
-    invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->b()[Lzw;
+    invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->b()[Laav;
 
     move-result-object v1
 
@@ -612,7 +564,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-interface {v4}, Lzw;->getColumnName()Ljava/lang/String;
+    invoke-interface {v4}, Laav;->getColumnName()Ljava/lang/String;
 
     move-result-object v6
 
@@ -626,7 +578,7 @@
 
     move-result-object v5
 
-    invoke-interface {v4}, Lzw;->getDataType()Lcom/snapchat/android/database/DataType;
+    invoke-interface {v4}, Laav;->getDataType()Lcom/snapchat/android/database/DataType;
 
     move-result-object v6
 
@@ -644,7 +596,7 @@
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v4}, Lzw;->getConstraints()Ljava/lang/String;
+    invoke-interface {v4}, Laav;->getConstraints()Ljava/lang/String;
 
     move-result-object v4
 
@@ -673,9 +625,9 @@
     return-object v0
 .end method
 
-.method public final d(Lajv;)V
-    .locals 5
-    .annotation build Lcaq;
+.method public final d(Lakp;)V
+    .locals 3
+    .annotation build Lcbr;
     .end annotation
 
     .prologue
@@ -697,27 +649,21 @@
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     .line 177
+    const/4 v0, 0x1
+
     :try_start_0
-    const-string v0, "DbTable"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const-string v1, "Calling populateUserObjectFromTable from %s table"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->c()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
-
-    invoke-static {v0, v1, v2}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v0, v1
 
     .line 178
-    invoke-virtual {p0, p1}, Lcom/snapchat/android/database/table/DbTable;->b(Lajv;)V
+    invoke-virtual {p0, p1}, Lcom/snapchat/android/database/table/DbTable;->b(Lakp;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -768,12 +714,12 @@
 .end method
 
 .method public final k()V
-    .locals 8
+    .locals 6
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v5, 0x1
 
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
     .line 204
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->c()Ljava/lang/String;
@@ -788,15 +734,9 @@
     if-nez v0, :cond_0
 
     .line 206
-    const-string v0, "DbTable"
+    new-array v0, v5, [Ljava/lang/Object;
 
-    const-string v2, "DB-LOG: Deleting %s table but openDatabase returned null!"
-
-    new-array v3, v7, [Ljava/lang/Object;
-
-    aput-object v1, v3, v6
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v4
 
     .line 219
     :goto_0
@@ -809,20 +749,14 @@
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     .line 211
+    const/4 v0, 0x1
+
     :try_start_0
-    const-string v0, "DbTable"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const-string v2, "DB-LOG: Deleting %s table"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    aput-object v1, v3, v4
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v2
 
     .line 212
     invoke-virtual {p0}, Lcom/snapchat/android/database/table/DbTable;->j()V
@@ -837,15 +771,9 @@
 
     .line 218
     :goto_1
-    const-string v0, "DbTable"
+    new-array v0, v5, [Ljava/lang/Object;
 
-    const-string v2, "DB-LOG: Deleted %s table"
-
-    new-array v3, v7, [Ljava/lang/Object;
-
-    aput-object v1, v3, v6
-
-    invoke-static {v0, v2, v3}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v4
 
     goto :goto_0
 
@@ -854,28 +782,22 @@
     move-exception v0
 
     .line 214
+    const/4 v2, 0x2
+
     :try_start_1
-    const-string v2, "DbTable"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const-string v3, "DB-LOG: Deleting %s table encountered exception %s"
+    const/4 v3, 0x0
 
-    const/4 v4, 0x2
+    aput-object v1, v2, v3
 
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    aput-object v1, v4, v5
-
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
     invoke-static {v0}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v4, v5
-
-    invoke-static {v2, v3, v4}, Lcom/snapchat/android/Timber;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v2, v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -907,12 +829,10 @@
 .end method
 
 .method public final m()Landroid/database/sqlite/SQLiteDatabase;
-    .locals 4
+    .locals 2
 
     .prologue
     const/4 v0, 0x0
-
-    const/4 v3, 0x0
 
     .line 305
     invoke-static {}, Lcom/snapchat/android/SnapchatApplication;->b()Lcom/snapchat/android/SnapchatApplication;
@@ -924,23 +844,15 @@
     move-result-object v1
 
     .line 306
-    if-nez v1, :cond_0
-
-    .line 307
-    const-string v1, "DbTable"
-
-    const-string v2, "Database helper is null"
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    if-nez v1, :cond_1
 
     .line 315
+    :cond_0
     :goto_0
     return-object v0
 
     .line 310
-    :cond_0
+    :cond_1
     invoke-virtual {v1}, Lcom/snapchat/android/database/DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v1
@@ -950,21 +862,9 @@
     .line 311
     iget-object v1, p0, Lcom/snapchat/android/database/table/DbTable;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    if-nez v1, :cond_1
-
-    .line 312
-    const-string v1, "DbTable"
-
-    const-string v2, "Writeable database is null"
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-static {v1, v2, v3}, Lcom/snapchat/android/Timber;->f(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_0
+    if-eqz v1, :cond_0
 
     .line 315
-    :cond_1
     iget-object v0, p0, Lcom/snapchat/android/database/table/DbTable;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
     goto :goto_0

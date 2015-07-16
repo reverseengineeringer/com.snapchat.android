@@ -1,6 +1,6 @@
 package com.snapchat.android.fragments.addfriends;
 
-import ajx;
+import akr;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,10 +15,10 @@ final class FriendsContactsToggleFragment$3
     boolean bool = true;
     FriendsContactsToggleFragment.e(a).setCurrentItem(1);
     paramView = a;
-    if (ajx.f())
+    if (akr.f())
     {
       FriendsContactsToggleFragment.d(a);
-      if (!ajx.Z()) {}
+      if (!akr.Z()) {}
     }
     for (;;)
     {
